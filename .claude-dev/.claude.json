@@ -34,7 +34,8 @@
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 475,
+  "promptQueueUseCount": 477,
+  "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_mcp_elicitation": true,
     "tengu_pewter_brook": false,

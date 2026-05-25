@@ -204,33 +204,43 @@ class JyhfMarketCollector:
         self.stats["last_subject_success"] = ok
 
     async def _collect_stock_quotes(self) -> None:
+        items = self._universe.get_stock_items()
+        if not items:
+            return
+
+        sem = asyncio.Semaphore(self.config.max_quote_concurrency)
+
+        async def _fetch_one(item: dict) -> tuple[dict | None, str]:
+            async with sem:
+                try:
+                    raw = await self._api.get_stock_realtime(item["api_stock_id"])
+                    quote = normalize_stock_quote(raw, stock_id=item["stock_id"], api_stock_id=item["api_stock_id"])
+                    return (quote, item["api_stock_id"])
+                except Exception as exc:
+                    logger.warning("Stock %s: %s", item["api_stock_id"], exc)
+                    return (None, item["api_stock_id"])
+
+        results = await asyncio.gather(*[_fetch_one(it) for it in items])
+
         ok = 0
         fail = 0
-        for item in self._universe.get_stock_items():
-            try:
-                raw = await self._api.get_stock_realtime(item["api_stock_id"])
-                if self.db and self.config.raw_capture_enabled:
-                    await self.db.write_raw_capture("stock/realtime",
-                        f"/api/app/stock/realtime/{item['api_stock_id']}", raw)
-                quote = normalize_stock_quote(raw, stock_id=item["stock_id"], api_stock_id=item["api_stock_id"])
-                if quote:
-                    if self.db:
-                        await self.db.write_stock_quote(quote)
-                    if self.redis:
-                        await self.redis.push_quote(quote)
-                    self.stats["quotes"] += 1
-                    ok += 1
-                    self._last_quote_cache[item["stock_id"]] = {
-                        "pct_chg": quote.pct_chg,
-                        "amount": quote.amount,
-                        "current": quote.current,
-                        "ts": quote.ts,
-                    }
-                else:
-                    fail += 1
-            except Exception as exc:
-                logger.warning("Stock %s: %s", item["api_stock_id"], exc)
+        for quote, api_sid in results:
+            if quote:
+                if self.db:
+                    await self.db.write_stock_quote(quote)
+                if self.redis:
+                    await self.redis.push_quote(quote)
+                self.stats["quotes"] += 1
+                self._last_quote_cache[quote.stock_id] = {
+                    "pct_chg": quote.pct_chg,
+                    "amount": quote.amount,
+                    "current": quote.current,
+                    "ts": quote.ts,
+                }
+                ok += 1
+            else:
                 fail += 1
+
         self.stats["last_quote_success"] = ok
         self.stats["last_quote_fail"] = fail
         if self.db:
