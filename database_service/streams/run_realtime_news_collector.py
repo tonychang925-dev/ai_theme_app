@@ -134,6 +134,11 @@ async def async_main() -> None:
             "default_mode": "auto",
             "enable_collector_prefilter": True,
             "collector_drop_on_skip": True,
+            "prefilter_mode": "rule_prompt",    # Phase 4E: 灰区 Qwen 判定
+            "prefilter_model_path": os.environ.get(
+                "PREFILTER_MODEL_PATH",
+                str(ROOT / "model_service/models/qwen2.5/qwen2.5-1.5b-instruct-q5_k_m.gguf"),
+            ),
             "enable_semantic_dedup": bool(
                 os.environ.get("ENABLE_SEMANTIC_DEDUP", "true").lower() != "false"
             ),

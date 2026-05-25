@@ -565,7 +565,7 @@ class NewChainPostMarketReportBuilder:
             support_type = str(item.get("support_type") or fact.get("position_label") or "--")
             role = "龙头" if fact.get("is_leader") or item.get("is_leader") else "观察"
             lines.append(
-                f"次日观察：{theme}｜subject_key {subject_key}｜{stock_name}｜角色 {role}｜"
+                f"次日观察：{theme}｜{stock_name}｜subject_key {subject_key}｜角色 {role}｜"
                 f"阶段 {cycle.get('final_cycle_state') or 'rebound'}｜动作 观察竞价承接｜"
                 f"量比 {NewChainPostMarketReportBuilder._fmt(fact.get('volume_ratio'))}｜"
                 f"形态 {NewChainPostMarketReportBuilder._pattern_text(fact) or support_type}｜flag {fact.get('current_flag') or '--'}"

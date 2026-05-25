@@ -2179,3 +2179,70 @@
 {"display":"实时采集我是在前端页面上启动的！[Pasted text #5 +217 lines]","pastedContents":{"5":{"id":5,"type":"text","contentHash":"2613265439aab9db"}},"timestamp":1779633747436,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
 {"display":"怎么回事啊？？？！！！为什么不把启动集成到前端的按钮呢？？？！！需要单独搞这么多启动脚本吗？？！！！需要这么复杂吗？？？！！","pastedContents":{},"timestamp":1779633936558,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
 {"display":"[Pasted text #6 +312 lines]","pastedContents":{"6":{"id":6,"type":"text","contentHash":"0cf5d2f8a1bfaadf"}},"timestamp":1779634052771,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"[Pasted text #7 +88 lines]","pastedContents":{"7":{"id":7,"type":"text","contentHash":"51f4599da2330d09"}},"timestamp":1779634449743,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"服务已经启动，请核查redis相关服务是否正常","pastedContents":{},"timestamp":1779634507410,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"核查一下现在redis相关服务是否正常","pastedContents":{},"timestamp":1779667547206,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"现在新闻事件有在采集中吗？前端页面没有看到新事件产生","pastedContents":{},"timestamp":1779667649301,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"立刻修复！","pastedContents":{},"timestamp":1779667769964,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"旧 AkShare collector 的所有正确功能都要移到新的RealTimeNewsCollector上来！请仔细核查。","pastedContents":{},"timestamp":1779667888178,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"已重启服务，请核查所有相关服务是否正常","pastedContents":{},"timestamp":1779668066236,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"前端页面没有看到显示","pastedContents":{},"timestamp":1779668169176,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"怎么要启动8003啊？？！！！8003是旧链服务！！必须切到新链服务8000上来！！！","pastedContents":{},"timestamp":1779668240998,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"请核查文档“个人投资助理项目-前端技术设计（第四阶段）.md”，必须严格遵守设计文档！！！！","pastedContents":{},"timestamp":1779668314209,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"首页的中栏展示页面","pastedContents":{},"timestamp":1779668371633,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"http://127.0.0.1:5173/?date=2026-05-25&type=all&session=all，前端显示“当日无情报项”！","pastedContents":{},"timestamp":1779668401917,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"现在砍掉一条“太空光伏”的研报报告，怎么公告也显示到新闻事件了？请核查！","pastedContents":{},"timestamp":1779668494139,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"显示一条研报出来了！！","pastedContents":{},"timestamp":1779668515973,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"服务已重启，请核查采集业务和redis是否正常","pastedContents":{},"timestamp":1779668629138,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"核查一下frontend现在的intel feed是否正常","pastedContents":{},"timestamp":1779668717296,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"“353 pending”，为什么有这么多事件？没有rule过滤规则吗？LLM结构化之前的的低质量事件过滤功能也没有启动吗？","pastedContents":{},"timestamp":1779668897482,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"已经重启服务，请核查相关功能","pastedContents":{},"timestamp":1779669021310,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"先手动清理积压的数据","pastedContents":{},"timestamp":1779669106766,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"现在研报全进入到新闻事件了！！请核查根源！！","pastedContents":{},"timestamp":1779669181608,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"是通道源标识错了！","pastedContents":{},"timestamp":1779669243721,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"已经重启服务，请核查相关功能","pastedContents":{},"timestamp":1779669344774,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"把这两条错误","pastedContents":{},"timestamp":1779669500525,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"5d46645e-5dee-44a1-afec-fb7b6baeea01"}
+{"display":"请查找最近的话题，我们继续上次的话题讨论","pastedContents":{},"timestamp":1779669571979,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"继续","pastedContents":{},"timestamp":1779669610101,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"服务已启动，请核查redis相关功能是否正常","pastedContents":{},"timestamp":1779669634259,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"把两条混进新闻事件的公告删除","pastedContents":{},"timestamp":1779669700499,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"清空redis队列中所有的pending事件消息","pastedContents":{},"timestamp":1779669739026,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"优先解决“有部分新闻条目在进入 normalizer 时没有携带            \n  source_channel 字段，导致 fallback 到了不正确的值。 ”","pastedContents":{},"timestamp":1779669793455,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"需要","pastedContents":{},"timestamp":1779670425705,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"把两条混进新闻事件的公告删除","pastedContents":{},"timestamp":1779670615792,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"5/25日的公告","pastedContents":{},"timestamp":1779670725135,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"太空光伏、钠离子","pastedContents":{},"timestamp":1779670804884,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"钠离子电池5/25的公告","pastedContents":{},"timestamp":1779670837067,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"找不到算了！！","pastedContents":{},"timestamp":1779670861541,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"服务已启动，请核查redis相关功能是否正常","pastedContents":{},"timestamp":1779670889602,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"服务已启动，请核查redis相关功能是否正常","pastedContents":{},"timestamp":1779670929014,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"新闻事件采集是否符合设计预期","pastedContents":{},"timestamp":1779670971392,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"检查去重和低质量事件过滤功能是否正常","pastedContents":{},"timestamp":1779671053996,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"5/22日当日复盘报告的“次日观察清单”中的第一列“股票”名称显示错误，现在显示的是类似“subject_key 9034920”字符串，请核查原因！","pastedContents":{},"timestamp":1779671618409,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"服务已启动，请核查redis相关功能是否正常","pastedContents":{},"timestamp":1779671928794,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"现在没有新事件在前端展示，请确认是否正确","pastedContents":{},"timestamp":1779672128362,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"只有久赢恒丰app采集的两条数据展示出来了","pastedContents":{},"timestamp":1779672187711,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"“event:feed 的 push 消费者 realtime_push_service 已空闲 18+ 小时，前端 SSE\n  连接已断开且未恢复。”请核查问题根源！","pastedContents":{},"timestamp":1779672515803,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"这是调试终端的信息输出：[Pasted text #1 +216 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"e92d70f0a68cd1e7"}},"timestamp":1779672601965,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"请阅读文档“个人投资助理项目-前端技术设计（第四阶段）.md”，frontend_bff是旧链设计，已经抛弃，绝不允许再启用！请核查为什么realtime_push_service还连在frontend_bff上！！！","pastedContents":{},"timestamp":1779673128698,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"不应该啊！！！早上还看到两条公告新闻在前端展示了！昨晚5/24日还有1条新闻页正常展示了！！如果从未启用，这些新闻事件是如何推送过来的？？？！！请仔细核查问题根源！！！","pastedContents":{},"timestamp":1779673302455,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"绝不允许自己瞎猜乱下结论！！！","pastedContents":{},"timestamp":1779673465098,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"需要","pastedContents":{},"timestamp":1779674114745,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"服务已启动，请核查redis相关功能是否正常","pastedContents":{},"timestamp":1779674222628,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"去重逻辑、低质量事件过滤，是否正常？","pastedContents":{},"timestamp":1779674573554,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"服务已启动，请核查redis相关功能是否正常","pastedContents":{},"timestamp":1779675386069,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"请核查，新闻事件出现显示不全：题材“电池”，新闻内容“【电池产业链震荡调整 天际股份触及跌停】电池产业链震荡调整，天际股份触及跌停鹏辉”、“算力租赁概念盘中震荡下挫，三人”问题！","pastedContents":{},"timestamp":1779677216582,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"而且这两个新闻也不算是重大新闻事件，只是一个盘中行情的概括总结，怎么会混进新闻事件采集中，请核查原因！","pastedContents":{},"timestamp":1779677316315,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"服务已启动，请核查redis相关功能是否正常","pastedContents":{},"timestamp":1779677556900,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"去重逻辑、低质量事件过滤，是否正常？","pastedContents":{},"timestamp":1779677611915,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"把刚才的两条sina的盘中总结新闻事件删掉","pastedContents":{},"timestamp":1779678208598,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"请查找本地设计文档是否有关于“CDP方式DOM采集久赢恒丰app”的实现","pastedContents":{},"timestamp":1779678667306,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"帮我汇总写一份 CDP DOM 采集持久恒丰的实现设计文档","pastedContents":{},"timestamp":1779678733582,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"以md格式存储到docs\\architecture目录下","pastedContents":{},"timestamp":1779678821898,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"请评估能否实现用DOM方式采集久赢恒丰app的实时行情数据，如股票的分钟级别的行情走势、尾盘、早盘竞价数据、资金流入、流出数据、股价、成交量等数据","pastedContents":{},"timestamp":1779679276579,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"[Pasted text #1 +371 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"ef3214a79864d072"}},"timestamp":1779679949269,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"先做第一步，测试接口数据","pastedContents":{},"timestamp":1779680042814,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"继续啊","pastedContents":{},"timestamp":1779680759062,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"[Pasted text #1 +518 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"45f0301a5a8a5996"}},"timestamp":1779681411771,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"[Pasted text #2 +141 lines]","pastedContents":{"2":{"id":2,"type":"text","contentHash":"26ce702b054b20a7"}},"timestamp":1779681734068,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"[Pasted text #1 +196 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"ab2635f96406f1a7"}},"timestamp":1779682044289,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
