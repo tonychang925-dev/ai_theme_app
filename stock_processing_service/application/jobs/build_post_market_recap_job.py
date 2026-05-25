@@ -616,6 +616,7 @@ class BuildPostMarketRecapJob:
                 "candidate_count_formal": len(formal_candidates),
                 "candidate_count_observe": len(observe_candidates),
                 "observe_candidates_count": len(candidate_service_observe_candidates),
+                "skip_prereqs": bool(skip_prereqs),
             },
             published_events=["snapshot_built"],
             cache_writes=3 if self._cache_port is not None else 0,

@@ -41,7 +41,9 @@ async def main_async() -> int:
     gw = await DatabaseGateway.initialize(config=cfg, auto_warm_cache=False)
 
     try:
-        container = build_container(db_gateway=gw)
+        from stock_processing_service.tests.replay._post_market_replay_runner import _ReplayDatabaseStockFacade
+        facade = _ReplayDatabaseStockFacade(gw)
+        container = build_container(facade)
         registry = get_default_registry()
 
         runner = registry.get(args.runner_key)

@@ -865,7 +865,7 @@ class ProcessIsolatedRunner:
             proc = await asyncio.create_subprocess_exec(
                 *cmd,
                 stdout=asyncio.subprocess.PIPE,
-                stderr=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.STDOUT,  # P2: 合并防 pipe 死锁
                 env={
                     **os.environ,
                     **(context.env or {}),
@@ -895,7 +895,7 @@ class ProcessIsolatedRunner:
                             logs.append(text[:2000])
                     await proc.wait()
             except TimeoutError:
-                self._kill_process(proc)
+                self._kill_process(proc, force=True)
                 return CollectionTaskResult(
                     status="failed",
                     current_label=f"{self.runner_key} 子进程超时 ({timeout_sec}s)",
@@ -903,13 +903,7 @@ class ProcessIsolatedRunner:
                     error_message=f"{self.runner_key} timeout after {timeout_sec}s",
                 )
 
-            return_code = proc.returncode or 1
-
-            # 子进程异常退出时读取 stderr
-            if return_code != 0 and proc.stderr:
-                stderr_text = (await proc.stderr.read()).decode(errors="replace")
-                for line in stderr_text.splitlines()[-10:]:
-                    logs.append(f"STDERR: {line.strip()[:200]}")
+            return_code = 0 if proc.returncode == 0 else int(proc.returncode or 1)
 
             if result_payload:
                 return CollectionTaskResult(
@@ -929,6 +923,11 @@ class ProcessIsolatedRunner:
             )
 
         except asyncio.CancelledError:
+            self._kill_process(proc)
+            try:
+                await asyncio.wait_for(proc.wait(), timeout=3)
+            except Exception:
+                self._kill_process(proc, force=True)
             raise
         except Exception as exc:
             return CollectionTaskResult(
@@ -938,9 +937,10 @@ class ProcessIsolatedRunner:
             )
 
     @staticmethod
-    def _kill_process(proc):
+    def _kill_process(proc, force: bool = False):
         try:
             if proc.returncode is None:
-                os.killpg(os.getpgid(proc.pid), signal.SIGTERM)
+                sig = signal.SIGKILL if force else signal.SIGTERM
+                os.killpg(os.getpgid(proc.pid), sig)
         except (ProcessLookupError, PermissionError, OSError):
             pass

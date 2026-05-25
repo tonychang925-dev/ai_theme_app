@@ -786,8 +786,36 @@ export function RecapPage() {
     [dragonTigerDataSection],
   );
 
+  const [dailyReview, setDailyReview] = useState<DailyReviewView | null>(null);
+
   useEffect(() => {
     let active = true;
+
+    if (reportType === "post_market") {
+      // post_market: DailyReview 决定主 loading/error, fetchRecapSnapshot 仅补充 sections
+      setLoading(true);
+      setError(null);
+      fetchDailyReview(tradeDate)
+        .then((data) => {
+          if (!active) return;
+          setDailyReview(data);
+          const query = new URLSearchParams({ date: tradeDate, report_type: reportType });
+          window.history.replaceState(null, "", `/recap?${query.toString()}`);
+          // 侧面加载旧快照作为 sections 补充
+          fetchRecapSnapshot({ date: tradeDate, reportType })
+            .then((snap) => { if (active) setPayload(snap); })
+            .catch(() => {});  // 静默失败，不影响主页面
+        })
+        .catch((err: Error) => {
+          if (active) setError(err.message);
+        })
+        .finally(() => {
+          if (active) setLoading(false);
+        });
+      return () => { active = false; };
+    }
+
+    // pre_market: 原逻辑
     setLoading(true);
     setError(null);
     fetchRecapSnapshot({ date: tradeDate, reportType })
@@ -807,17 +835,6 @@ export function RecapPage() {
     return () => {
       active = false;
     };
-  }, [tradeDate, reportType]);
-
-  const [dailyReview, setDailyReview] = useState<DailyReviewView | null>(null);
-  useEffect(() => {
-    let active = true;
-    setDailyReview(null);
-    if (reportType !== "post_market") return;
-    fetchDailyReview(tradeDate)
-      .then((data) => { if (active) setDailyReview(data); })
-      .catch(() => { if (active) setDailyReview(null); });
-    return () => { active = false; };
   }, [tradeDate, reportType]);
 
   function toggleAbnormalSort(key: "score" | "turnoverRate" | "volumeRatio" | "volumeVsMa50") {
