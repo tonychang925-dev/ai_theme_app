@@ -64,7 +64,7 @@ def normalize_index_quotes(raw: dict) -> list[JyhfIndexQuote]:
     return results
 
 
-def normalize_stock_quote(raw: dict, stock_id: str) -> JyhfStockQuote | None:
+def normalize_stock_quote(raw: dict, stock_id: str, *, api_stock_id: str | None = None) -> JyhfStockQuote | None:
     d = raw.get("data", {})
     if not isinstance(d, dict) or not d:
         return None

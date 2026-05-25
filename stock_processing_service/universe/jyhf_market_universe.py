@@ -1,44 +1,40 @@
-"""P1-B 多来源候选池 — manual + strong_watch + w2s + subject_pool.
+"""P1-B+ 多来源候选池 — stock_id 内部=XXXX.SZ, API=纯数字.
 
-stock_id 内部统一为 XXXX.SZ / XXXX.SH 格式。
-请求 JYHF API 时去掉后缀转为纯数字。
+接口隔离:
+  - stock_id:   XXXX.SZ / XXXX.SH (系统内部/DB/Redis)
+  - api_stock_id: XXXX         (JYHF API 请求用)
 """
 from __future__ import annotations
 
 import json
 import logging
+import os
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
 logger = logging.getLogger("sps.jyhf_market.universe")
 
-# 金斧头 - 默认最低 subjects
-_DEFAULT_SUBJECTS = ["9019807"]
-
 
 @dataclass
 class UniverseStock:
-    stock_id: str          # 002361.SZ 格式
+    stock_id: str          # 002795.SZ
     stock_name: str = ""
     sources: set[str] = field(default_factory=set)
     subject_ids: set[str] = field(default_factory=set)
-    priority: int = 0      # manual=100, w2s=80, strong_watch=60, subject_pool=40
+    priority: int = 0
 
     @property
     def api_stock_id(self) -> str:
-        """去掉 .SZ/.SH 后缀，供 JYHF API 使用。"""
         return self.stock_id.replace(".SZ", "").replace(".SH", "").replace(".sz", "").replace(".sh", "")
 
 
 class JyhfMarketUniverse:
-    """P1-B: 合并 manual watchlist + strong_watch_pool + w2s_candidates + subject_pool。"""
+    """P1-B+: merged pool — manual + strong_watch + w2s + subject_pool."""
 
     def __init__(self, watchlist_path: str):
         self._path = Path(watchlist_path)
         self._manual: dict = {"watch_stocks": [], "watch_subjects": []}
-
-        # 多来源合并结果
         self._stocks: dict[str, UniverseStock] = {}
         self._subjects: set[str] = set()
         self._breakdown: dict[str, int] = {}
@@ -46,7 +42,6 @@ class JyhfMarketUniverse:
     # ── public ──
 
     def load_manual(self) -> dict:
-        """加载手动 watchlist。返回 raw dict。"""
         try:
             if self._path.exists():
                 self._manual = json.loads(self._path.read_text())
@@ -65,36 +60,37 @@ class JyhfMarketUniverse:
         w2s_stocks: list[dict[str, Any]] | None = None,
         hot_subjects: list[str] | None = None,
     ) -> dict:
-        """合并所有来源，构建统一候选池。
-
-        Returns:
-            {"watch_stocks": [...], "watch_subjects": [...],
-             "api_stock_ids": [...], "source_breakdown": {...}}
-        """
+        """合并所有来源。"""
         self._stocks.clear()
-        self._subjects = set(_DEFAULT_SUBJECTS)
+        self._subjects = set()
 
-        # 1. manual (最高优先级)
+        # default_subjects (env var, 生产态应为空)
+        ds = os.getenv("JYHF_MARKET_DEFAULT_SUBJECTS", "")
+        if ds:
+            for s in ds.split(","):
+                self._subjects.add(s.strip())
+
+        # 1. manual (最优先)
         for sid in self._manual.get("watch_stocks", []):
-            norm = _normalize_stock_id(sid)
-            self._add_stock(norm, source="manual", priority=100)
-
+            self._add_stock(_normalize_stock_id(sid), source="manual", priority=100)
         for sid in self._manual.get("watch_subjects", []):
             self._subjects.add(str(sid))
 
-        # 2. w2s candidates
+        # 2. w2s
         if w2s_stocks:
             for s in w2s_stocks:
                 sid = _normalize_stock_id(str(s.get("stock_id", "")))
-                name = str(s.get("stock_name", ""))
-                self._add_stock(sid, name=name, source="w2s", priority=80)
+                self._add_stock(sid, name=str(s.get("stock_name", "")),
+                                source="w2s", priority=80,
+                                subject_id=s.get("subject_id") or s.get("subject_key"))
 
-        # 3. strong_watch pool
+        # 3. strong_watch (保留 subject/theme 信息)
         if strong_watch_stocks:
             for s in strong_watch_stocks:
                 sid = _normalize_stock_id(str(s.get("stock_id", "")))
-                name = str(s.get("stock_name", ""))
-                self._add_stock(sid, name=name, source="strong_watch", priority=60)
+                self._add_stock(sid, name=str(s.get("stock_name", "")),
+                                source="strong_watch", priority=60,
+                                subject_id=s.get("subject_id") or s.get("subject_key"))
 
         # 4. hot subjects
         if hot_subjects:
@@ -111,10 +107,9 @@ class JyhfMarketUniverse:
             "total_unique": len(stock_list),
         }
 
-        result = {
+        return {
             "watch_stocks": [s.stock_id for s in stock_list],
             "watch_subjects": sorted(self._subjects),
-            "api_stock_ids": [s.api_stock_id for s in stock_list],
             "source_breakdown": dict(self._breakdown),
             "detail": {
                 s.stock_id: {
@@ -128,15 +123,23 @@ class JyhfMarketUniverse:
             },
         }
 
-        logger.info("Universe merged: %d stocks (%s)", len(stock_list), self._breakdown)
-        return result
+    # ── P1-B+: 结构化 items ──
 
-    def get_stocks(self) -> list[str]:
-        """获取内部格式 stock_id 列表。"""
-        return [s.stock_id for s in self._stocks.values()]
+    def get_stock_items(self) -> list[dict]:
+        """返回结构化 stock items，确保 stock_id (系统格式) 和 api_stock_id (API 格式) 分离。"""
+        return [
+            {
+                "stock_id": s.stock_id,
+                "api_stock_id": s.api_stock_id,
+                "stock_name": s.stock_name,
+                "sources": sorted(s.sources),
+                "subject_ids": sorted(s.subject_ids),
+                "priority": s.priority,
+            }
+            for s in sorted(self._stocks.values(), key=lambda x: (-x.priority, x.stock_id))
+        ]
 
     def get_api_stock_ids(self) -> list[str]:
-        """获取 JYHF API 格式 stock_id（纯数字）。"""
         return [s.api_stock_id for s in self._stocks.values()]
 
     def get_subjects(self) -> list[str]:
@@ -148,7 +151,8 @@ class JyhfMarketUniverse:
 
     # ── private ──
 
-    def _add_stock(self, stock_id: str, name: str = "", source: str = "", priority: int = 0) -> None:
+    def _add_stock(self, stock_id: str, name: str = "", source: str = "",
+                   priority: int = 0, subject_id: str | None = None) -> None:
         if not stock_id:
             return
         if stock_id not in self._stocks:
@@ -159,16 +163,18 @@ class JyhfMarketUniverse:
         if source:
             s.sources.add(source)
         s.priority = max(s.priority, priority)
+        if subject_id:
+            s.subject_ids.add(str(subject_id))
+            self._subjects.add(str(subject_id))
 
     def _ensure_default_manual(self) -> None:
         self._path.parent.mkdir(parents=True, exist_ok=True)
-        default = {"watch_stocks": ["002795"], "watch_subjects": ["9019807"]}
+        default = {"watch_stocks": [], "watch_subjects": []}
         self._path.write_text(json.dumps(default, ensure_ascii=False, indent=2))
         self._manual = default
 
 
 def _normalize_stock_id(raw: str) -> str:
-    """统一为 XXXX.SZ / XXXX.SH 格式。"""
     s = raw.strip().upper()
     if "." in s:
         return s
