@@ -24,6 +24,17 @@ def _safe_float(value, default=None):
     except (ValueError, TypeError):
         return default
 
+def _make_ts(trade_date: str, time_str: str) -> str:
+    """Combine YYYY-MM-DD trade_date with HHMMSS time into ISO datetime."""
+    try:
+        td = date.fromisoformat(trade_date)
+        hour = int(time_str[:2]) if len(time_str) >= 2 else 0
+        minute = int(time_str[2:4]) if len(time_str) >= 4 else 0
+        second = int(time_str[4:6]) if len(time_str) >= 6 else 0
+        return datetime(td.year, td.month, td.day, hour, minute, second, tzinfo=TZ_CN).isoformat()
+    except (ValueError, IndexError):
+        return _now()
+
 
 def normalize_index_quotes(raw: dict) -> list[JyhfIndexQuote]:
     data = raw.get("data", {})
@@ -33,9 +44,11 @@ def normalize_index_quotes(raw: dict) -> list[JyhfIndexQuote]:
     for code, item in data.items():
         if not isinstance(item, dict):
             continue
+        trade_date = str(item.get("trade_date", _today()))
+        raw_time = str(item.get("time", ""))
         results.append(JyhfIndexQuote(
-            trade_date=str(item.get("trade_date", _today())),
-            ts=str(item.get("time", _now())),
+            trade_date=trade_date,
+            ts=_make_ts(trade_date, raw_time) if raw_time else _now(),
             index_code=str(code),
             index_name=str(item.get("name", "")).strip(),
             current=_safe_float(item.get("close")),
@@ -84,7 +97,7 @@ def normalize_subject_stock_quotes(raw: dict, subject_id: str) -> list[JyhfSubje
         try:
             results.append(JyhfSubjectStockQuote(
                 trade_date=str(row[0])[:10] if row[0] else _today(),
-                ts=str(row[1]) if row[1] else _now(),
+                ts=_make_ts(str(row[0])[:10], str(row[1])) if row[1] and row[0] else _now(),
                 subject_id=subject_id,
                 stock_id=str(row[2]),
                 stock_name=str(row[3]) if row[3] else "",
