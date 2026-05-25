@@ -260,7 +260,7 @@ export async function fetchDailyReview(date: string): Promise<DailyReviewView> {
   return fetchJsonWithTimeout<DailyReviewView>(
     `/api/v2/daily-review?date=${encodeURIComponent(date)}`,
     undefined,
-    10000,
+    30000,
   );
 }
 

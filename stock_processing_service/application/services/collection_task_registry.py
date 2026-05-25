@@ -110,6 +110,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         JyhfSyncListsRunner,
         JyhfSyncStockDetailsRunner,
         PostMarketRecapRunner,
+        ProcessIsolatedRunner,
         ScriptCommandRunner,
         TushareKlineRunner,
     )
@@ -143,6 +144,24 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     registry.register("auction.snapshot_all", AuctionSnapshotRunner(universe_source="auction_watch_universe"))
     registry.register("auction.snapshot_w2s", AuctionSnapshotRunner(universe_source="weak_to_strong_candidates", max_stocks=120))
     registry.register("auction.signal", AuctionSignalRunner())
+
+    # ── P2: 子进程隔离 Runner ──
+    registry.register(
+        "recap.prerequisites.isolated",
+        ProcessIsolatedRunner(
+            runner_key="recap.prerequisites",
+            timeout_env="RECAP_PREREQ_WORKER_TIMEOUT_SEC",
+            default_timeout_sec=900,
+        ),
+    )
+    registry.register(
+        "recap.snapshot.isolated",
+        ProcessIsolatedRunner(
+            runner_key="recap.snapshot",
+            timeout_env="RECAP_SNAPSHOT_WORKER_TIMEOUT_SEC",
+            default_timeout_sec=1800,
+        ),
+    )
 
 
 __all__ = [

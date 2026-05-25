@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import logging
 import os
 import sys
 from datetime import datetime
@@ -40,11 +41,72 @@ def parse_args():
     parser.add_argument("--trade-date", required=True, help="交易日 YYYY-MM-DD")
     parser.add_argument("--limit", type=int, default=0, help="仅处理前 N 只")
     parser.add_argument("--data-root", default=str(PROJECT_ROOT / "theme_data_complete" / "_stock_kline" / "tushare" / "daily_bar"))
+    parser.add_argument("--universe", default="seed_candidates+strong_watch",
+                        choices=["all", "seed_candidates+strong_watch", "strong_watch", "candidates"],
+                        help="股票范围: all=全市场, seed_candidates+strong_watch=seed候选+强股池(推荐)")
     return parser.parse_args()
 
 
 def _to_date(value: str):
     return datetime.strptime(value, "%Y-%m-%d").date()
+
+
+async def _load_universe_stock_ids(db_config: DatabaseConfig, universe: str, trade_date: str) -> set[str]:
+    """从 seed 候选 + 强股池加载 stock_id 集合，去重并统一格式。"""
+    if universe == "all":
+        return set()
+
+    stock_ids: set[str] = set()
+    td = _to_date(trade_date)
+    manager = PostgresDatabaseManager(db_config)
+    await manager.connect()
+    try:
+        async with manager.pool.acquire() as conn:
+            if "seed_candidates" in universe:
+                # seed candidates: subject_stock_daily_snapshot 中满足条件的股票
+                rows = await conn.fetch(
+                    """SELECT DISTINCT stock_id FROM subject_stock_daily_snapshot
+                       WHERE trade_date = $1
+                         AND (COALESCE(limit_up, FALSE)
+                              OR COALESCE(pct_chg, 0) >= 7.0
+                              OR COALESCE(rank_order, 999) <= 3)""",
+                    td,
+                )
+                for r in rows:
+                    stock_ids.add(_normalize_stock_id(str(r["stock_id"])))
+
+            if "strong_watch" in universe:
+                # 7日窗口强股池
+                rows = await conn.fetch(
+                    """SELECT DISTINCT stock_id FROM strong_stock_watch_pool
+                       WHERE last_trade_date >= ($1::date - INTERVAL '7 days')""",
+                    td,
+                )
+                for r in rows:
+                    stock_ids.add(_normalize_stock_id(str(r["stock_id"])))
+
+            if "candidates" in universe:
+                rows = await conn.fetch(
+                    "SELECT DISTINCT stock_id FROM weak_to_strong_candidate_pool WHERE trade_date <= $1",
+                    td,
+                )
+                for r in rows:
+                    stock_ids.add(_normalize_stock_id(str(r["stock_id"])))
+    finally:
+        await manager.disconnect()
+    return stock_ids
+
+
+def _normalize_stock_id(raw: str) -> str:
+    s = raw.strip().upper()
+    if "." in s:
+        return s
+    if len(s) == 6:
+        if s.startswith(("6", "9")):
+            return f"{s}.SH"
+        elif s.startswith(("0", "3")):
+            return f"{s}.SZ"
+    return s
 
 
 def build_jyhf_current_bar_map(trade_date: str) -> dict[str, StockDailySnapshot]:
@@ -126,6 +188,14 @@ async def main_async() -> int:
     args = parse_args()
     service = StockKlineJudgementService()
     data_root = Path(args.data_root)
+
+    # P1-D: universe 过滤 — 不扫全市场
+    pg_config = get_postgres_config()
+    universe_ids = await _load_universe_stock_ids(pg_config, args.universe, args.trade_date)
+    logger = logging.getLogger("build_stock_kline_judgements")
+    if universe_ids:
+        logger.warning("universe=%s stock_count=%d (filtered from full market)", args.universe, len(universe_ids))
+
     files = sorted(data_root.glob("*.jsonl"))
     jyhf_current_bar_map = build_jyhf_current_bar_map(args.trade_date)
 
@@ -133,6 +203,12 @@ async def main_async() -> int:
     pattern_rows = []
     matched_files = []
     for path in files:
+        # universe 过滤: 跳过不在候选池的股票
+        stock_id = path.stem.upper()
+        if "." in stock_id:
+            stock_id = _normalize_stock_id(stock_id)
+        if universe_ids and stock_id not in universe_ids:
+            continue
         rows = service.load_stock_bars(path)
         rows = [row for row in rows if row.trade_date <= args.trade_date]
         if not rows:

@@ -563,7 +563,13 @@ async def collection_start(payload: dict) -> dict:
 
 @router.get("/collection/status")
 async def collection_status(job_id: str = Query(...)) -> dict:
-    return await _proxy_stock_processing_json("/api/v1/collection/status", {"job_id": job_id})
+    try:
+        return await _proxy_stock_processing_request_json("GET", "/api/v1/collection/status", params={"job_id": job_id}, timeout=120.0)
+    except HTTPException as exc:
+        if exc.status_code == 502:
+            return {"status": "running", "progress_percent": -1, "tasks": [],
+                    "message": "SPS busy, retrying...", "diagnostics": {"code": "BFF_TIMEOUT_WAITING_SPS"}}
+        raise
 
 
 @router.post("/collection/cancel")
@@ -714,6 +720,29 @@ async def jyhf_cdp_collector_logs(request: Request, lines: int = Query(default=3
 async def jyhf_cdp_service_stop(request: Request) -> dict:
     manager = request.app.state.cdp_manager
     return await manager.stop_service()
+
+
+# ── P2-B-4: JYHF 竞价采集 ──
+
+@router.get("/realtime/jyhf-auction/status")
+async def jyhf_auction_status(request: Request) -> dict:
+    mgr = request.app.state.auction_manager
+    return mgr.status()
+
+
+@router.post("/realtime/jyhf-auction/start")
+async def jyhf_auction_start(request: Request, payload: dict | None = None) -> dict:
+    mgr = request.app.state.auction_manager
+    now = datetime.now(ZoneInfo("Asia/Shanghai"))
+    trade_date = (payload or {}).get("trade_date", str(now.date()))
+    candidate_date = (payload or {}).get("candidate_date", str(now.date()))
+    return await mgr.start(trade_date, candidate_date)
+
+
+@router.post("/realtime/jyhf-auction/stop")
+async def jyhf_auction_stop(request: Request) -> dict:
+    mgr = request.app.state.auction_manager
+    return await mgr.stop()
 
 
 @router.post("/realtime/jyhf-cdp/service/force-stop")

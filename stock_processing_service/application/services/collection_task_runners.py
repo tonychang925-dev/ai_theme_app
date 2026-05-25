@@ -2,13 +2,25 @@
 
 - ScriptCommandRunner：兼容旧脚本（subprocess 执行）
 - PostMarketRecapRunner：服务化 recap（直接调 BuildPostMarketRecapJob）
+- ProcessIsolatedRunner：子进程隔离执行重任务
 """
 from __future__ import annotations
 
 import asyncio
+import json
+import logging
 import os
+import signal
+import sys
 from datetime import date
+from pathlib import Path
+from typing import Any
 from uuid import uuid4
+
+logger = logging.getLogger(__name__)
+
+PROJECT_ROOT = Path("/Users/admin/Desktop/ai_theme_app")
+PYTHON_BIN = os.environ.get("COLLECTION_PYTHON_BIN", str(PROJECT_ROOT / ".venv" / "bin" / "python"))
 
 from stock_processing_service.application.services.collection_task_registry import (
     CollectionTaskContext,
@@ -794,6 +806,7 @@ class PostMarketRecapRunner:
             batch_id=uuid4().hex[:12],
             trace_id=uuid4().hex[:12],
             lookback_days=7,
+            skip_prereqs=True,
         )
 
         logs = [
@@ -808,3 +821,126 @@ class PostMarketRecapRunner:
             logs=logs,
             error_message="" if ok else f"recap status={result.status}",
         )
+
+
+# ── P2: 子进程隔离 Runner ──
+
+class ProcessIsolatedRunner:
+    """P2: 将重任务 runner 隔离到独立子进程，不阻塞 SPS 主进程。
+
+    子进程执行真实 runner_key，主进程只做 stdout 读取和超时管理。
+    """
+
+    def __init__(
+        self,
+        runner_key: str,
+        timeout_env: str = "",
+        default_timeout_sec: int = 900,
+    ) -> None:
+        self.runner_key = runner_key
+        self.timeout_env = timeout_env
+        self.default_timeout_sec = default_timeout_sec
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        timeout_sec = int(
+            context.env.get(self.timeout_env)
+            or os.getenv(self.timeout_env, str(self.default_timeout_sec))
+        )
+
+        python_bin = context.python_bin or PYTHON_BIN
+        project_root = context.project_root or os.getenv("AI_THEME_PROJECT_ROOT", str(PROJECT_ROOT))
+        worker_path = str(Path(project_root) / "stock_processing_service" / "workers" / "run_collection_runner.py")
+
+        cmd = [
+            python_bin, worker_path,
+            "--runner-key", self.runner_key,
+            "--trade-date", context.trade_date,
+            "--payload-json",
+            json.dumps(context.payload or {}, ensure_ascii=False),
+        ]
+
+        logger.info("ProcessIsolated: spawning %s", " ".join(cmd[:4]))
+
+        try:
+            proc = await asyncio.create_subprocess_exec(
+                *cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                env={
+                    **os.environ,
+                    **(context.env or {}),
+                    "PYTHONUNBUFFERED": "1",
+                    "SPS_WORKER_CHILD": "1",
+                },
+                start_new_session=True,
+            )
+
+            logs: list[str] = []
+            result_payload: dict[str, Any] | None = None
+
+            try:
+                async with asyncio.timeout(timeout_sec):
+                    assert proc.stdout is not None
+                    while True:
+                        line = await proc.stdout.readline()
+                        if not line:
+                            break
+                        text = line.decode("utf-8", errors="replace").rstrip()
+                        if text.startswith("__SPS_RESULT__"):
+                            try:
+                                result_payload = json.loads(text.removeprefix("__SPS_RESULT__"))
+                            except json.JSONDecodeError:
+                                logs.append(text[:500])
+                        else:
+                            logs.append(text[:2000])
+                    await proc.wait()
+            except TimeoutError:
+                self._kill_process(proc)
+                return CollectionTaskResult(
+                    status="failed",
+                    current_label=f"{self.runner_key} 子进程超时 ({timeout_sec}s)",
+                    logs=logs,
+                    error_message=f"{self.runner_key} timeout after {timeout_sec}s",
+                )
+
+            return_code = proc.returncode or 1
+
+            # 子进程异常退出时读取 stderr
+            if return_code != 0 and proc.stderr:
+                stderr_text = (await proc.stderr.read()).decode(errors="replace")
+                for line in stderr_text.splitlines()[-10:]:
+                    logs.append(f"STDERR: {line.strip()[:200]}")
+
+            if result_payload:
+                return CollectionTaskResult(
+                    status=result_payload.get("status", "failed"),
+                    current_label=result_payload.get("current_label", f"{self.runner_key} 子进程完成"),
+                    logs=logs + result_payload.get("logs", []),
+                    error_message=result_payload.get("error_message", ""),
+                    progress_percent=result_payload.get("progress_percent", 0),
+                )
+
+            ok = return_code == 0
+            return CollectionTaskResult(
+                status="success" if ok else "failed",
+                current_label=f"{self.runner_key} 子进程{'完成' if ok else '失败'} (exit={return_code})",
+                logs=logs,
+                error_message="" if ok else f"worker exit_code={return_code}",
+            )
+
+        except asyncio.CancelledError:
+            raise
+        except Exception as exc:
+            return CollectionTaskResult(
+                status="failed",
+                current_label=f"{self.runner_key} 子进程异常",
+                error_message=f"{type(exc).__name__}: {exc}",
+            )
+
+    @staticmethod
+    def _kill_process(proc):
+        try:
+            if proc.returncode is None:
+                os.killpg(os.getpgid(proc.pid), signal.SIGTERM)
+        except (ProcessLookupError, PermissionError, OSError):
+            pass

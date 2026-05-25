@@ -10,6 +10,66 @@ from stock_processing_service.ports.read_ports import StockReadPorts
 from stock_processing_service.ports.write_ports import StockWritePorts
 
 
+# ── P2-B-3: D1 候选竞价预期预填 ──
+
+_AUCTION_EXPECTATIONS: dict[str, dict] = {
+    "dragon_repair": {
+        "expected_open_low": "1.0", "expected_open_high": "7.0",
+        "expected_auction_pattern": "red_staircase,inverted_l_uphill",
+        "need_last_minute_grab": True, "need_plate_follow": True,
+        "min_carry_ratio": "0.5",
+    },
+    "subdragon_repair": {
+        "expected_open_low": "0.0", "expected_open_high": "5.0",
+        "expected_auction_pattern": "red_staircase,upward_hook",
+        "need_last_minute_grab": True, "need_plate_follow": True,
+        "min_carry_ratio": "0.4",
+    },
+    "bad_limit_repair": {
+        "expected_open_low": "0.0", "expected_open_high": "5.0",
+        "expected_auction_pattern": "red_staircase",
+        "need_last_minute_grab": True, "need_plate_follow": False,
+        "min_carry_ratio": "0.5",
+    },
+    "upper_shadow_repair": {
+        "expected_open_low": "-1.0", "expected_open_high": "3.0",
+        "expected_auction_pattern": "inverted_l_u_shape,u_recovery",
+        "need_last_minute_grab": False, "need_plate_follow": True,
+        "min_carry_ratio": "0.3",
+    },
+    "strong_trend_repair": {
+        "expected_open_low": "-0.5", "expected_open_high": "3.0",
+        "expected_auction_pattern": "step_up,tail_upturn",
+        "need_last_minute_grab": False, "need_plate_follow": False,
+        "min_carry_ratio": "0.3",
+    },
+    "generic_repair": {
+        "expected_open_low": "-1.0", "expected_open_high": "5.0",
+        "expected_auction_pattern": "",
+        "need_last_minute_grab": False, "need_plate_follow": False,
+        "min_carry_ratio": "0.2",
+    },
+}
+
+
+def _build_auction_expectations(candidate_type: str, weak_type: str, is_leader: bool) -> dict:
+    """根据 candidate_type 预填 D2 竞价预期字段。"""
+    base = dict(_AUCTION_EXPECTATIONS.get(candidate_type, _AUCTION_EXPECTATIONS["generic_repair"]))
+
+    # big_negative_line 需要更强的竞价确认
+    if weak_type == "big_negative_line":
+        base["min_carry_ratio"] = str(max(float(base.get("min_carry_ratio", "0.3")), 0.5))
+        base["need_last_minute_grab"] = True
+        if not base["expected_auction_pattern"]:
+            base["expected_auction_pattern"] = "red_staircase,step_up"
+
+    # is_leader 提升最低预期
+    if is_leader:
+        base["min_carry_ratio"] = str(min(float(base.get("min_carry_ratio", "0.3")) + 0.1, 0.6))
+
+    return base
+
+
 @dataclass(slots=True)
 class BuildWeakToStrongCandidateUseCase:
     """Build Layer D1 weak-to-strong candidates from strong watch pool inputs."""
@@ -201,11 +261,7 @@ class BuildWeakToStrongCandidateUseCase:
                 "support_type": support_type,
                 "support_level": str(row.get("support_level") or "0"),
                 "support_strength": str(support_strength),
-                "expected_open_low": "0",
-                "expected_open_high": "0",
-                "expected_auction_pattern": "",
-                "need_last_minute_grab": False,
-                "need_plate_follow": False,
+                **_build_auction_expectations(candidate_type, weak_type, is_leader),
                 "evidence_json": json.dumps({
                     "source": "strong_watch_pool",
                     "pct_chg": str(pct_chg),
