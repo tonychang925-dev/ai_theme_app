@@ -177,6 +177,15 @@ class StockReadGatewayAdapter:
         result: list[StockAuctionDTO] = []
         for row in rows:
             p = _as_dict(row)
+            shape_raw = p.get("shape_features") or []
+            if isinstance(shape_raw, str):
+                try:
+                    import json as _json
+                    shape_raw = _json.loads(shape_raw)
+                except Exception:
+                    shape_raw = []
+            if not isinstance(shape_raw, (list, tuple)):
+                shape_raw = []
             result.append(
                 StockAuctionDTO(
                     trade_date=p.get("trade_date", trade_date),
@@ -191,6 +200,15 @@ class StockReadGatewayAdapter:
                     tail_auction_volume=_d(p.get("tail_auction_volume")) if p.get("tail_auction_volume") is not None else None,
                     tail_auction_amount=_d(p.get("tail_auction_amount")) if p.get("tail_auction_amount") is not None else None,
                     tail_auction_vwap=_d(p.get("tail_auction_vwap")) if p.get("tail_auction_vwap") is not None else None,
+                    # P2-B-1a: DB 回放路径补齐 rich auction fields
+                    last_minute_ratio=_d(p.get("last_minute_ratio")) if p.get("last_minute_ratio") is not None else None,
+                    carry_ratio=_d(p.get("carry_ratio")) if p.get("carry_ratio") is not None else None,
+                    price_path_stability_score=_d(p.get("price_path_stability_score"))
+                    if p.get("price_path_stability_score") is not None else None,
+                    has_end_spike=bool(p.get("has_end_spike", False)),
+                    has_end_drop=bool(p.get("has_end_drop", False)),
+                    shape_features=tuple(shape_raw),
+                    source_snapshot_rule_version=str(p.get("source_snapshot_rule_version") or p.get("rule_version") or ""),
                 )
             )
         return result
