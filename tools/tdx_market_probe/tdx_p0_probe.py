@@ -104,8 +104,53 @@ class TdxP0Probe:
 
     def _init_client(self):
         from mootdx.quotes import Quotes
-        self.client = Quotes.factory(market="std", multithread=True, heartbeat=True)
-        logger.info("mootdx Quotes client initialized (market=std)")
+        import json as _json
+
+        # 尝试 1：默认自动选服
+        try:
+            self.client = Quotes.factory(market="std", multithread=True, heartbeat=True)
+            logger.info("mootdx Quotes client initialized (auto server)")
+            return
+        except Exception as exc:
+            logger.warning("auto server selection failed: %s, trying manual servers...", exc)
+
+        # 尝试 2：从 mootdx 配置文件中读取服务器列表逐个尝试
+        config_path = Path.home() / ".mootdx" / "config.json"
+        servers = []
+        if config_path.exists():
+            try:
+                cfg = _json.loads(config_path.read_text())
+                servers = cfg.get("SERVER", {}).get("HQ", [])
+            except Exception:
+                pass
+
+        if not servers:
+            # 硬编码几个常用服务器兜底
+            servers = [
+                ["深圳双线主站1", "110.41.147.114", 7709],
+                ["深圳双线主站2", "8.129.13.54", 7709],
+                ["深圳双线主站4", "47.113.94.204", 7709],
+                ["上海双线主站1", "124.70.176.52", 7709],
+                ["广州双线主站1", "124.71.85.110", 7709],
+            ]
+
+        last_err = None
+        for name, ip, port in servers:
+            try:
+                self.client = Quotes.factory(
+                    market="std", server=(ip, int(port)),
+                    multithread=True, heartbeat=True,
+                )
+                # 立即测试一次调用验证
+                self.client.quotes(symbol=["000001"])
+                logger.info("mootdx connected via %s (%s:%s)", name, ip, port)
+                return
+            except Exception as exc:
+                last_err = exc
+                logger.debug("server %s (%s:%s) failed: %s", name, ip, port, exc)
+                continue
+
+        raise RuntimeError(f"All TDX servers failed, last error: {last_err}")
 
     def _probe_quote(self, symbol: str) -> dict | None:
         """返回单只股票的 quote 原始 dict。"""
