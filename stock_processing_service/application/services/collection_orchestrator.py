@@ -195,7 +195,7 @@ class CollectionCommandPlanner:
                     ),
                     CollectionTaskStep(
                         key="recap_prerequisites",
-                        runner_key="recap.prerequisites",
+                        runner_key="recap.prerequisites.isolated",
                         label="新链盘后前置构建",
                     ),
                     CollectionTaskStep(
@@ -230,7 +230,7 @@ class CollectionCommandPlanner:
                     ),
                     CollectionTaskStep(
                         key="recap_data",
-                        runner_key="recap.snapshot",
+                        runner_key="recap.snapshot.isolated",
                         label="盘后复盘最终快照生成",
                     ),
                 ],

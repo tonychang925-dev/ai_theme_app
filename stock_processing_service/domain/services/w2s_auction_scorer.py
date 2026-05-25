@@ -112,10 +112,10 @@ class W2SAuctionScorer:
         force_max_decision = None
         if open_pct > Decimal("7") and carry < Decimal("0.5"):
             force_max_decision = "C"
-            evidence.append("degrade:high_open_trap→max_C(open={open_pct},carry={carry})")
+            evidence.append(f"degrade:high_open_trap→max_C(open={open_pct},carry={carry})")
         if open_pct > Decimal("7") and stability < Decimal("40"):
             force_max_decision = "C"
-            evidence.append("degrade:high_open_unstable→max_C(open={open_pct},stab={stability})")
+            evidence.append(f"degrade:high_open_unstable→max_C(open={open_pct},stab={stability})")
 
         if final >= Decimal("75"):
             decision = "A"

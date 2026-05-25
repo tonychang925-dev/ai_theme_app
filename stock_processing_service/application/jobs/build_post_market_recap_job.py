@@ -199,6 +199,7 @@ class BuildPostMarketRecapJob:
         batch_id: str,
         trace_id: str,
         lookback_days: int = 8,
+        skip_prereqs: bool = False,
     ) -> BuildResult:
         job_key = f"build_post_market_recap:{trade_date.isoformat()}:{snapshot_version}"
         acquired = await self._idempotency_port.acquire_job_idempotency(job_key=job_key, ttl_seconds=6 * 3600)
@@ -215,40 +216,40 @@ class BuildPostMarketRecapJob:
             )
 
         # ── Layer A/B 前置（新链自闭环）──
-        # 执行顺序: Evidence → Cycle(pre) → Identity → Cycle(post) → MainlineState。
-        # pre cycle 支撑已确认主线继承；post cycle 覆盖 Identity 当日新确认 subject。
-        if self._evidence_job is not None:
-            await self._evidence_job.execute(
-                trade_date=trade_date,
-                snapshot_version=f"recap_evidence.{snapshot_version}",
-                batch_id=batch_id,
-                trace_id=trace_id,
-            )
-        if self._cycle_judgement_job is not None:
-            await self._cycle_judgement_job.execute(
-                trade_date=trade_date,
-                batch_id=batch_id,
-                trace_id=trace_id,
-            )
-        if self._identity_job is not None:
-            await self._identity_job.execute(
-                trade_date=trade_date,
-                snapshot_version="recap_identity.v1",
-                batch_id=batch_id,
-                trace_id=trace_id,
-            )
-        if self._cycle_judgement_job is not None:
-            await self._cycle_judgement_job.execute(
-                trade_date=trade_date,
-                batch_id=batch_id,
-                trace_id=trace_id,
-            )
-        if self._mainline_state_job is not None:
-            await self._mainline_state_job.execute(
-                trade_date=trade_date,
-                batch_id=batch_id,
-                trace_id=trace_id,
-            )
+        # 当 collection 任务已通过 Step2 (recap.prerequisites) 完成时，跳过重复执行。
+        if not skip_prereqs:
+            if self._evidence_job is not None:
+                await self._evidence_job.execute(
+                    trade_date=trade_date,
+                    snapshot_version=f"recap_evidence.{snapshot_version}",
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                )
+            if self._cycle_judgement_job is not None:
+                await self._cycle_judgement_job.execute(
+                    trade_date=trade_date,
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                )
+            if self._identity_job is not None:
+                await self._identity_job.execute(
+                    trade_date=trade_date,
+                    snapshot_version="recap_identity.v1",
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                )
+            if self._cycle_judgement_job is not None:
+                await self._cycle_judgement_job.execute(
+                    trade_date=trade_date,
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                )
+            if self._mainline_state_job is not None:
+                await self._mainline_state_job.execute(
+                    trade_date=trade_date,
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                )
 
         # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
         layer_c_result = await self._strong_stock_tracking_use_case.execute(
@@ -505,6 +506,7 @@ class BuildPostMarketRecapJob:
         recap_doc["diagnostics"]["coverage"] = self._build_theme_review_coverage(theme_context_map)
         _coverage = recap_doc["diagnostics"]["coverage"]
 
+        recap_doc["capital_reviews"] = self._build_capital_reviews(report_context.get("dragon_tiger") or [])
         recap_doc["report"] = self._report_builder.build(recap_doc)
 
         snapshot = PostMarketRecapSnapshot(
@@ -946,3 +948,21 @@ class BuildPostMarketRecapJob:
             "missing_cycle_subject_keys": missing_sks,
             "snapshot_status": "partial" if missing_sks else "complete",
         }
+
+    @staticmethod
+    def _build_capital_reviews(dragon_tiger_rows: list[dict]) -> list[dict]:
+        """P2-B-0: 从 report_context dragon_tiger 映射为 capital_reviews。"""
+        results: list[dict] = []
+        for row in dragon_tiger_rows:
+            try:
+                results.append({
+                    "stock_code": str(row.get("stock_id") or ""),
+                    "stock_name": str(row.get("stock_name") or ""),
+                    "net_buy_amount": float(row.get("net_amount") or 0),
+                    "seat_type": "INSTITUTION" if (float(row.get("institution_net_buy") or 0) > 0) else "HOT_MONEY",
+                    "related_theme": str(row.get("theme_name") or ""),
+                    "ai_comment": str(row.get("reason") or "")[:200],
+                })
+            except Exception:
+                continue
+        return results

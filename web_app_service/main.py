@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import logging
 import os as _os
 from pathlib import Path
@@ -30,9 +31,58 @@ class _NoCacheStaticFiles(StaticFiles):
 from web_app_service.api.routes import router
 from web_app_service.auth import create_token, verify_token
 from web_app_service.services.jyhf_cdp_manager import JyhfCdpManager
+from web_app_service.services.jyhf_auction_manager import JyhfAuctionManager
 from web_app_service.services.realtime_stack_manager import RealtimeStackManager
 
 app = FastAPI(title="web_app_service", version="0.1.0")
+
+# ── P2-B-4: JYHF collector 9:10 自动启动 ──
+
+_auto_start_task: asyncio.Task | None = None
+
+
+async def _auto_start_jyhf_collectors(sps_base: str):
+    """交易日 9:10:00-9:14:59 自动启动 JYHF 行情采集器和竞价采集器。"""
+    import httpx as _httpx
+    from datetime import datetime, timezone as _tz, timedelta as _td
+
+    CST = _tz(_td(hours=8))
+    _auto_logger = logging.getLogger("web_app_service.auto_start")
+
+    started_quote = False
+    started_auction = False
+
+    while True:
+        await asyncio.sleep(30)
+        now = datetime.now(CST)
+        if now.weekday() >= 5:
+            continue
+        h, m = now.hour, now.minute
+        if not (h == 9 and 10 <= m <= 14):
+            continue
+
+        try:
+            async with _httpx.AsyncClient(timeout=5.0, trust_env=False) as client:
+                if not started_quote:
+                    r = await client.post(f"{sps_base}/api/v1/jyhf-market/collector/start")
+                    if r.status_code == 200:
+                        started_quote = True
+                        _auto_logger.warning("AUTO_START jyhf-market collector at %s", now.strftime("%H:%M:%S"))
+
+                if not started_auction:
+                    r2 = await client.get(f"{sps_base}/api/v1/jyhf-market/status")
+                    if r2.status_code == 200:
+                        await client.post(
+                            "http://127.0.0.1:8000/api/v2/realtime/jyhf-auction/start",
+                            json={"trade_date": str(now.date()), "candidate_date": str(now.date())},
+                        )
+                        started_auction = True
+                        _auto_logger.warning("AUTO_START jyhf-auction collector at %s", now.strftime("%H:%M:%S"))
+        except Exception as exc:
+            _auto_logger.warning("AUTO_START failed: %s", exc)
+
+        if started_quote and started_auction:
+            break
 
 
 @app.on_event("startup")
@@ -63,11 +113,16 @@ async def _startup_cdp_manager() -> None:
         project_root=str(project_root),
         port=int(_os.getenv("JYHF_CDP_SERVICE_PORT", "8095")),
     )
+    app.state.auction_manager = JyhfAuctionManager(project_root=str(project_root))
     app.state.realtime_stack_manager = RealtimeStackManager(
         project_root=str(project_root),
         web_port=int(_os.getenv("WEB_PORT", "8000")),
         sps_port=int(_os.getenv("SPS_PORT", "8090")),
     )
+
+    # ── 启动 9:10 自动 collector 守护任务 ──
+    sps_base = _os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090").rstrip("/")
+    _auto_start_task = asyncio.create_task(_auto_start_jyhf_collectors(sps_base))
 
 
 @app.on_event("shutdown")
