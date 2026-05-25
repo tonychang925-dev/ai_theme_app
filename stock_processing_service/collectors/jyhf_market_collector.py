@@ -54,6 +54,10 @@ class JyhfMarketCollector:
         self._last_cycle_start: float = 0
         self._last_cycle_duration_ms: int = 0
 
+        # 尾盘快照去重 + 最近行情缓存
+        self._emitted_snapshots: dict[str, set] = {}
+        self._last_quote_cache: dict[str, dict] = {}
+
         self.stats = {
             "running": False, "started_at": None, "last_collect_at": None,
             "collections": 0, "quotes": 0, "indexes": 0, "subject_stocks": 0,
@@ -64,8 +68,13 @@ class JyhfMarketCollector:
             "last_cycle_duration_ms": 0,
             "last_quote_success": 0, "last_quote_fail": 0,
             "last_subject_success": 0, "last_index_success": 0,
-            "current_session": "normal",
+            "current_session": "closed",
+            "quote_interval_seconds": 0.0,
+            "index_interval_seconds": 0.0,
+            "subject_interval_seconds": 0.0,
+            "cycle_overrun": False,
             "last_snapshot_at": None,
+            "emitted_tail_snapshots": [],
         }
 
     # ── public ──
@@ -112,10 +121,20 @@ class JyhfMarketCollector:
                 if cycle_count % 30 == 0:
                     await self._refresh_universe()
 
-                # P1-C: 根据时段选择采集频率
+                # P1-C+: 时段感知 + 间隔可见
                 now_ts = _time.time()
+                session = self._current_session_label()
                 quote_int, idx_int, subj_int = self._session_intervals()
-                self.stats["current_session"] = self._current_session_label()
+                self.stats["current_session"] = session
+                self.stats["quote_interval_seconds"] = quote_int
+                self.stats["index_interval_seconds"] = idx_int
+                self.stats["subject_interval_seconds"] = subj_int
+
+                # 非交易时段跳过采集
+                if session == "closed":
+                    cycle_count += 1
+                    await self._sleep(self.config.loop_tick_seconds * 60)
+                    continue
 
                 if now_ts - self._last_index_at >= idx_int:
                     await self._collect_index()
@@ -133,7 +152,9 @@ class JyhfMarketCollector:
                 await self._maybe_tail_snapshot()
 
                 self.stats["collections"] += 1
-                self.stats["last_cycle_duration_ms"] = int((_time.time() - self._last_cycle_start) * 1000)
+                dur_ms = int((_time.time() - self._last_cycle_start) * 1000)
+                self.stats["last_cycle_duration_ms"] = dur_ms
+                self.stats["cycle_overrun"] = dur_ms > (quote_int * 1000)
                 self.stats["last_collect_at"] = datetime.now(TZ_CN).isoformat()
                 self.stats["last_error"] = None
 
@@ -199,6 +220,12 @@ class JyhfMarketCollector:
                         await self.redis.push_quote(quote)
                     self.stats["quotes"] += 1
                     ok += 1
+                    self._last_quote_cache[item["stock_id"]] = {
+                        "pct_chg": quote.pct_chg,
+                        "amount": quote.amount,
+                        "current": quote.current,
+                        "ts": quote.ts,
+                    }
                 else:
                     fail += 1
             except Exception as exc:
@@ -244,7 +271,14 @@ class JyhfMarketCollector:
             logger.warning("Strong_watch fetch failed: %s", exc)
             return []
 
-    # ── P1-C: 时段感知调度 ──
+    # ── P1-C+: 时段感知 + 非交易时间保护 ──
+
+    @staticmethod
+    def _is_weekend(dt: datetime) -> bool:
+        return dt.weekday() >= 5  # 周六=5, 周日=6
+
+    def _is_lunch_break(self, h: int, m: int) -> bool:
+        return h == 11 and m >= 30 or h == 12
 
     def _session_intervals(self) -> tuple[float, float, float]:
         """返回 (quote_interval, index_interval, subject_interval)。"""
@@ -253,13 +287,11 @@ class JyhfMarketCollector:
         h, m = now.hour, now.minute
 
         # 竞价窗口
-        if (h == cfg.auction_start_hour and m >= cfg.auction_start_minute) or \
-           (h == cfg.auction_end_hour and m <= cfg.auction_end_minute):
+        if h == 9 and m >= cfg.auction_start_minute and not self._is_lunch_break(h, m):
             return (cfg.auction_quote_seconds, cfg.interval_index_seconds, cfg.interval_subject_seconds)
 
         # 尾盘窗口
-        if (h == cfg.tail_start_hour and m >= cfg.tail_start_minute) or \
-           (h == cfg.tail_end_hour and m <= cfg.tail_end_minute):
+        if h == cfg.tail_start_hour and m >= cfg.tail_start_minute and not self._is_lunch_break(h, m):
             return (cfg.tail_quote_seconds, cfg.tail_index_seconds, cfg.tail_subject_seconds)
 
         return (cfg.interval_quote_seconds, cfg.interval_index_seconds, cfg.interval_subject_seconds)
@@ -267,21 +299,29 @@ class JyhfMarketCollector:
     def _current_session_label(self) -> str:
         now = datetime.now(TZ_CN)
         h, m = now.hour, now.minute
-        cfg = self.config
-        if (h == cfg.auction_start_hour and m >= cfg.auction_start_minute) or \
-           (h == cfg.auction_end_hour and m <= cfg.auction_end_minute):
+
+        if self._is_weekend(now):
+            return "closed"
+        if self._is_lunch_break(h, m):
+            return "lunch_break"
+        if h < 9 or (h == 9 and m < 15):
+            return "pre_market"
+        if h >= 15 and m >= 5:
+            return "closed"
+        if h == 9 and m >= 15 and m <= 25:
             return "auction"
-        if (h == cfg.tail_start_hour and m >= cfg.tail_start_minute) or \
-           (h == cfg.tail_end_hour and m <= cfg.tail_end_minute):
+        if h == 14 and m >= 30:
             return "tail"
-        return "normal"
+        if 9 <= h <= 14:
+            return "normal"
+        return "closed"
 
     async def _maybe_tail_snapshot(self) -> None:
-        """尾盘快照：14:45, 14:55, 14:59 时间点输出 snapshot 标记。"""
+        """P1-C+: 尾盘快照，去重 + 增强内容 + DB入库。"""
         now = datetime.now(TZ_CN)
-        if not (now.hour == self.config.tail_start_hour and now.minute >= self.config.tail_start_minute):
-            return
-        if now.hour > self.config.tail_end_hour:
+        td = str(now.date())
+
+        if self._current_session_label() != "tail":
             return
 
         current_time = f"{now.hour:02d}{now.minute:02d}"
@@ -289,27 +329,74 @@ class JyhfMarketCollector:
         if current_time not in snapshot_times:
             return
 
-        # 防止同一分钟重复快照
-        last_snap = self.stats.get("last_snapshot_at", "")
-        if last_snap == current_time:
+        # 去重：同一交易日同一时间点只发一次
+        if td not in self._emitted_snapshots:
+            self._emitted_snapshots = {td: set()}
+        if current_time in self._emitted_snapshots.get(td, set()):
             return
+        self._emitted_snapshots.setdefault(td, set()).add(current_time)
         self.stats["last_snapshot_at"] = current_time
+        self.stats["emitted_tail_snapshots"] = sorted(self._emitted_snapshots.get(td, set()))
 
-        # 推送 snapshot 标记到 Redis
+        # 构建增强快照
+        stock_items = self._universe.get_stock_items()
+        cache = self._last_quote_cache
+
+        def _get_pct(sid):
+            q = cache.get(sid, {})
+            return q.get("pct_chg") or 0
+        def _get_amt(sid):
+            q = cache.get(sid, {})
+            return q.get("amount") or 0
+
+        top_pct = sorted(stock_items, key=lambda x: -_get_pct(x["stock_id"]))[:5]
+        top_amt = sorted(stock_items, key=lambda x: -_get_amt(x["stock_id"]))[:5]
+
+        payload = {
+            "item_type": "tail_session_snapshot",
+            "source_channel": "jyhf_market_api",
+            "trade_date": td,
+            "snapshot_time": current_time,
+            "occurred_at": now.isoformat(),
+            "watch_stock_count": len(stock_items),
+            "session": "tail",
+            "top_pct_chg": [
+                {"stock_id": s["stock_id"], "stock_name": s["stock_name"]} for s in top_pct
+            ],
+            "top_amount": [
+                {"stock_id": s["stock_id"], "stock_name": s["stock_name"]} for s in top_amt
+            ],
+            "source_breakdown": self.stats.get("source_breakdown", {}),
+        }
+
+        # Redis
         if self.redis:
             try:
-                await self.redis._push({
-                    "item_type": "tail_session_snapshot",
-                    "source_channel": "jyhf_market_api",
-                    "trade_date": str(now.date()),
-                    "occurred_at": now.isoformat(),
-                    "snapshot_time": current_time,
-                    "watch_stock_count": str(self.stats.get("watch_stock_count", 0)),
-                    "session": "tail",
-                })
-            except Exception:
-                pass
-        logger.info("Tail snapshot: %s (stocks=%d)", current_time, self.stats.get("watch_stock_count", 0))
+                payload["item_id"] = f"jyhf_tail_snapshot:{td}:{current_time}"
+                await self.redis._push(payload)
+            except Exception as exc:
+                logger.warning("Tail snapshot Redis push failed: %s", exc)
+
+        # PostgreSQL
+        if self.db:
+            try:
+                import json as _json
+                await self.db._get_pool()
+                await self.db._pool.fetchval(
+                    """INSERT INTO jyhf_tail_session_snapshot
+                       (trade_date, snapshot_time, captured_at, watch_stock_count, payload)
+                       VALUES ($1::date, $2, $3::timestamptz, $4, $5::jsonb)
+                       ON CONFLICT (trade_date, snapshot_time) DO NOTHING""",
+                    td, current_time, now.isoformat(), len(stock_items),
+                    _json.dumps(payload, ensure_ascii=False),
+                )
+            except Exception as exc:
+                logger.warning("Tail snapshot DB write failed: %s", exc)
+
+        logger.info("Tail snapshot: %s (stocks=%d pct_top=%s amt_top=%s)",
+                     current_time, len(stock_items),
+                     [s["stock_id"] for s in top_pct],
+                     [s["stock_id"] for s in top_amt])
 
     async def _sleep(self, sec: float) -> None:
         try:
