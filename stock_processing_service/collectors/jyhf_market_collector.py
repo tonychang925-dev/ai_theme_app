@@ -1,10 +1,12 @@
-"""P1-A 行情采集器 — 采集循环与调度."""
+"""P1-B 行情采集器 — 多来源候选池 + 采集循环."""
 from __future__ import annotations
 
 import asyncio
 import json
 import logging
 from datetime import datetime, timezone, timedelta
+
+import httpx
 
 from stock_processing_service.integrations.jyhf_market.config import JyhfMarketConfig, load_config
 from stock_processing_service.integrations.jyhf_market.token_provider import JyhfTokenProvider
@@ -16,6 +18,8 @@ from stock_processing_service.universe.jyhf_market_universe import JyhfMarketUni
 
 logger = logging.getLogger("sps.jyhf_market.collector")
 TZ_CN = timezone(timedelta(hours=8))
+
+_SPS_BASE = "http://127.0.0.1:8090"
 
 
 class JyhfMarketCollector:
@@ -46,6 +50,8 @@ class JyhfMarketCollector:
             "collections": 0, "quotes": 0, "indexes": 0, "subject_stocks": 0,
             "db_writes": 0, "redis_pushes": 0, "last_error": None,
             "token_valid": False,
+            "watch_stock_count": 0, "watch_subject_count": 0,
+            "source_breakdown": {},
         }
 
     # ── public ──
@@ -63,7 +69,7 @@ class JyhfMarketCollector:
             self._stop.clear()
             self.stats["running"] = True
             self.stats["started_at"] = datetime.now(TZ_CN).isoformat()
-            self._universe.load()
+            await self._refresh_universe()
             self._task = asyncio.create_task(self._loop(self._run_id))
             logger.info("Market collector started (run_id=%s)", self._run_id)
 
@@ -83,8 +89,12 @@ class JyhfMarketCollector:
     # ── loop ──
 
     async def _loop(self, run_id: int) -> None:
+        cycle_count = 0
         while not self._stop.is_set() and self._run_id == run_id:
             try:
+                # 每 5 分钟刷新候选池
+                if cycle_count % 30 == 0:
+                    await self._refresh_universe()
                 await self._collect_once()
                 self.stats["collections"] += 1
                 self.stats["last_collect_at"] = datetime.now(TZ_CN).isoformat()
@@ -93,6 +103,7 @@ class JyhfMarketCollector:
                 logger.exception("Collection error: %s", exc)
                 self.stats["last_error"] = str(exc)[:200]
 
+            cycle_count += 1
             await self._sleep(self.config.interval_quote_seconds)
 
     async def _collect_once(self) -> None:
@@ -125,13 +136,13 @@ class JyhfMarketCollector:
             except Exception as exc:
                 logger.warning("Subject %s: %s", sid, exc)
 
-        # 3. 个股
-        for sid in self._universe.get_stocks():
+        # 3. 个股 (使用 JYHF API 格式纯数字 stock_id)
+        for api_sid in self._universe.get_api_stock_ids():
             try:
-                raw = await self._api.get_stock_realtime(sid)
+                raw = await self._api.get_stock_realtime(api_sid)
                 if self.db:
-                    await self.db.write_raw_capture("stock/realtime", f"/api/app/stock/realtime/{sid}", raw)
-                quote = normalize_stock_quote(raw, sid)
+                    await self.db.write_raw_capture("stock/realtime", f"/api/app/stock/realtime/{api_sid}", raw)
+                quote = normalize_stock_quote(raw, api_sid)
                 if quote:
                     if self.db:
                         await self.db.write_stock_quote(quote)
@@ -139,12 +150,40 @@ class JyhfMarketCollector:
                         await self.redis.push_quote(quote)
                     self.stats["quotes"] += 1
             except Exception as exc:
-                logger.warning("Stock %s: %s", sid, exc)
+                logger.warning("Stock %s: %s", api_sid, exc)
 
         if self.db:
             self.stats["db_writes"] = self.db.write_count
         if self.redis:
             self.stats["redis_pushes"] = self.redis.pushed_count
+
+    async def _refresh_universe(self) -> None:
+        """P1-B: 合并 manual + strong_watch + w2s 候选池。"""
+        self._universe.load_manual()
+        sw = await self._fetch_strong_watch()
+        universe = self._universe.merge(strong_watch_stocks=sw)
+        self.stats["watch_stock_count"] = len(universe["watch_stocks"])
+        self.stats["watch_subject_count"] = len(universe["watch_subjects"])
+        self.stats["source_breakdown"] = universe["source_breakdown"]
+        logger.info("Universe refreshed: %d stocks (breakdown=%s)",
+                     self.stats["watch_stock_count"], self.stats["source_breakdown"])
+
+    async def _fetch_strong_watch(self) -> list[dict]:
+        """从 SPS /api/v1/strong_watch 获取强势股跟踪池。"""
+        try:
+            async with httpx.AsyncClient(timeout=10.0, trust_env=False) as client:
+                r = await client.get(
+                    f"{_SPS_BASE}/api/v1/strong_watch",
+                    params={"trade_date": str(datetime.now(TZ_CN).date()), "window_days": 7, "limit": 1000},
+                )
+                r.raise_for_status()
+                data = r.json()
+                stocks = data.get("stocks", [])
+                logger.info("Strong_watch fetched: %d stocks", len(stocks))
+                return [{"stock_id": s.get("stock_id", ""), "stock_name": s.get("stock_name", "")} for s in stocks]
+        except Exception as exc:
+            logger.warning("Strong_watch fetch failed: %s", exc)
+            return []
 
     async def _sleep(self, sec: float) -> None:
         try:

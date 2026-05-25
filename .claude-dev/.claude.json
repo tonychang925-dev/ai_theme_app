@@ -3,7 +3,7 @@
   "hasSeenTasksHint": true,
   "tipsHistory": {
     "new-user-warmup": 7,
-    "plan-mode-for-complex-tasks": 16,
+    "plan-mode-for-complex-tasks": 21,
     "color-when-multi-clauding": 12,
     "memory-command": 17,
     "theme-command": 2,
@@ -30,11 +30,11 @@
     "custom-agents": 21,
     "agent-flag": 21,
     "feedback-command": 21,
-    "permissions": 11,
+    "permissions": 21,
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 463,
+  "promptQueueUseCount": 465,
   "cachedGrowthBookFeatures": {
     "tengu_mcp_elicitation": true,
     "tengu_pewter_brook": false,
