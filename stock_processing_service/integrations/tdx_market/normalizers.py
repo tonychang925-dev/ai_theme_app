@@ -1,4 +1,7 @@
-"""TDX 标准化器 — Agent 响应 → 数据模型."""
+"""TDX 标准化器 — Agent 响应 → 数据模型.
+
+关键：stock_id 使用 system_stock_id (002361.SZ)，api_stock_id 使用纯数字 (002361).
+"""
 from __future__ import annotations
 
 import logging
@@ -35,16 +38,25 @@ def _safe_int(value, default=None):
 
 
 def normalize_quote(raw: dict) -> TdxStockQuote | None:
-    """Agent /quote 响应 → TdxStockQuote."""
+    """Agent /quote 响应 → TdxStockQuote.
+
+    Agent 返回：
+      stock_id        = "002361"       (纯数字)
+      system_stock_id = "002361.SZ"    (系统格式)
+
+    Schema：
+      stock_id     = "002361.SZ"   ← 用 system_stock_id
+      api_stock_id = "002361"      ← 用 stock_id (Agent 返回的纯数字)
+    """
     fields = raw.get("fields", {})
     if not fields:
         return None
 
-    quote = TdxStockQuote(
+    return TdxStockQuote(
         trade_date=_today(),
         ts=raw.get("ts", _now()),
-        stock_id=raw.get("stock_id", ""),
-        system_stock_id=raw.get("system_stock_id", ""),
+        stock_id=raw.get("system_stock_id", raw.get("stock_id", "")),
+        api_stock_id=raw.get("stock_id", ""),
         price=_safe_float(fields.get("price")),
         open=_safe_float(fields.get("open")),
         high=_safe_float(fields.get("high")),
@@ -65,7 +77,6 @@ def normalize_quote(raw: dict) -> TdxStockQuote | None:
         bid_vol5=_safe_int(fields.get("bid_vol5")), ask_vol5=_safe_int(fields.get("ask_vol5")),
         raw_json=raw.get("raw", raw),
     )
-    return quote
 
 
 def normalize_minute(raw: dict) -> list[TdxMinuteBar]:
@@ -74,8 +85,8 @@ def normalize_minute(raw: dict) -> list[TdxMinuteBar]:
     if not rows:
         return []
 
-    stock_id = raw.get("stock_id", "")
-    system_stock_id = raw.get("system_stock_id", "")
+    stock_id = raw.get("system_stock_id", raw.get("stock_id", ""))
+    api_stock_id = raw.get("stock_id", "")
     ts = raw.get("ts", _now())
     trade_date = _today()
 
@@ -84,7 +95,7 @@ def normalize_minute(raw: dict) -> list[TdxMinuteBar]:
             trade_date=trade_date,
             ts=ts,
             stock_id=stock_id,
-            system_stock_id=system_stock_id,
+            api_stock_id=api_stock_id,
             minute_index=_safe_int(r.get("minute_index"), 0) or 0,
             price=_safe_float(r.get("price")),
             vol=_safe_float(r.get("vol")),
@@ -101,8 +112,8 @@ def normalize_bars(raw: dict) -> list[TdxDailyBar]:
     if not rows:
         return []
 
-    stock_id = raw.get("stock_id", "")
-    system_stock_id = raw.get("system_stock_id", "")
+    stock_id = raw.get("system_stock_id", raw.get("stock_id", ""))
+    api_stock_id = raw.get("stock_id", "")
     ts = raw.get("ts", _now())
     trade_date = _today()
     frequency = raw.get("frequency", 9)
@@ -112,7 +123,7 @@ def normalize_bars(raw: dict) -> list[TdxDailyBar]:
             trade_date=trade_date,
             ts=ts,
             stock_id=stock_id,
-            system_stock_id=system_stock_id,
+            api_stock_id=api_stock_id,
             bar_time=r.get("bar_time"),
             open=_safe_float(r.get("open")),
             high=_safe_float(r.get("high")),

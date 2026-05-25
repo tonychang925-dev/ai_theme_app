@@ -1,9 +1,8 @@
-"""Redis Stream TDX 行情推送."""
+"""Redis Stream TDX 行情推送 — stock_id=系统格式, source_channel 标识."""
 from __future__ import annotations
 
 import json
 import logging
-from datetime import datetime, timezone, timedelta
 
 import redis.asyncio as redis
 
@@ -12,7 +11,6 @@ from stock_processing_service.integrations.tdx_market.schemas import (
 )
 
 logger = logging.getLogger("sps.tdx_market.redis_pusher")
-TZ_CN = timezone(timedelta(hours=8))
 
 
 class TdxMarketRedisPusher:
@@ -31,10 +29,10 @@ class TdxMarketRedisPusher:
     async def push_quote(self, quote: TdxStockQuote) -> None:
         cl = await self._get_client()
         payload = {
+            "source_channel": "tdx_market_agent",
             "source": "tdx_mootdx",
             "type": "quote",
             "stock_id": quote.stock_id,
-            "system_stock_id": quote.system_stock_id,
             "price": str(quote.price) if quote.price is not None else "",
             "open": str(quote.open) if quote.open is not None else "",
             "high": str(quote.high) if quote.high is not None else "",
@@ -42,6 +40,8 @@ class TdxMarketRedisPusher:
             "last_close": str(quote.last_close) if quote.last_close is not None else "",
             "amount": str(quote.amount) if quote.amount is not None else "",
             "vol": str(quote.vol) if quote.vol is not None else "",
+            "bid1": str(quote.bid1) if quote.bid1 is not None else "",
+            "ask1": str(quote.ask1) if quote.ask1 is not None else "",
             "ts": quote.ts,
         }
         await cl.xadd(self._stream, payload, maxlen=self._maxlen, approximate=True)
@@ -51,13 +51,14 @@ class TdxMarketRedisPusher:
         if not bars:
             return
         cl = await self._get_client()
-        # 推送摘要而非每条 bar，避免刷爆 stream
         payload = {
+            "source_channel": "tdx_market_agent",
             "source": "tdx_mootdx",
             "type": "minute",
             "stock_id": bars[0].stock_id,
-            "system_stock_id": bars[0].system_stock_id,
             "count": str(len(bars)),
+            "first_index": str(bars[0].minute_index),
+            "last_index": str(bars[-1].minute_index),
             "first_price": str(bars[0].price) if bars[0].price is not None else "",
             "last_price": str(bars[-1].price) if bars[-1].price is not None else "",
             "ts": bars[0].ts,
@@ -71,10 +72,10 @@ class TdxMarketRedisPusher:
         cl = await self._get_client()
         latest = bars[-1]
         payload = {
+            "source_channel": "tdx_market_agent",
             "source": "tdx_mootdx",
             "type": "daily_bar",
             "stock_id": latest.stock_id,
-            "system_stock_id": latest.system_stock_id,
             "bar_time": latest.bar_time or "",
             "open": str(latest.open) if latest.open is not None else "",
             "close": str(latest.close) if latest.close is not None else "",

@@ -1,4 +1,8 @@
-"""TDX 标准化数据模型."""
+"""TDX 标准化数据模型.
+
+stock_id   = 002361.SZ (系统格式，DB/Redis/join 用)
+api_stock_id = 002361   (纯数字，Agent API 调用用)
+"""
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -9,8 +13,8 @@ from typing import Any
 class TdxStockQuote:
     trade_date: str
     ts: str
-    stock_id: str
-    system_stock_id: str = ""
+    stock_id: str           # 002361.SZ
+    api_stock_id: str = ""  # 002361
     stock_name: str | None = None
     price: float | None = None
     open: float | None = None
@@ -41,6 +45,7 @@ class TdxStockQuote:
     bid_vol5: int | None = None
     ask_vol5: int | None = None
     source: str = "tdx_mootdx"
+    source_channel: str = "tdx_market_agent"
     raw_json: dict[str, Any] = field(default_factory=dict)
 
 
@@ -48,13 +53,14 @@ class TdxStockQuote:
 class TdxMinuteBar:
     trade_date: str
     ts: str
-    stock_id: str
-    system_stock_id: str = ""
+    stock_id: str           # 002361.SZ
+    api_stock_id: str = ""  # 002361
     minute_index: int = 0
     price: float | None = None
     vol: float | None = None
     volume: float | None = None
     source: str = "tdx_mootdx"
+    source_channel: str = "tdx_market_agent"
     raw_json: dict[str, Any] = field(default_factory=dict)
 
 
@@ -62,8 +68,8 @@ class TdxMinuteBar:
 class TdxDailyBar:
     trade_date: str
     ts: str
-    stock_id: str
-    system_stock_id: str = ""
+    stock_id: str           # 002361.SZ
+    api_stock_id: str = ""  # 002361
     bar_time: str | None = None
     open: float | None = None
     high: float | None = None
@@ -73,4 +79,5 @@ class TdxDailyBar:
     amount: float | None = None
     frequency: int = 9
     source: str = "tdx_mootdx"
+    source_channel: str = "tdx_market_agent"
     raw_json: dict[str, Any] = field(default_factory=dict)
