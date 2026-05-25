@@ -1,8 +1,8 @@
 {
   "running": true,
   "run_id": "realtime_20260525_071533",
-  "produced_count": 0,
+  "produced_count": 6,
   "failed_count": 0,
-  "last_produce_at": "2026-05-25T07:25:06.821863+00:00",
+  "last_produce_at": "2026-05-25T07:53:14.799418+00:00",
   "last_error": null
 }

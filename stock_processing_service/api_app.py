@@ -345,6 +345,14 @@ def _auction_dto_to_cache_dict(dto: StockAuctionDTO) -> Dict[str, Any]:
         "tail_auction_volume": float(dto.tail_auction_volume) if dto.tail_auction_volume is not None else None,
         "tail_auction_amount": float(dto.tail_auction_amount) if dto.tail_auction_amount is not None else None,
         "tail_auction_vwap": float(dto.tail_auction_vwap) if dto.tail_auction_vwap is not None else None,
+        # P2-B-0: rich auction features
+        "last_minute_ratio": float(dto.last_minute_ratio) if dto.last_minute_ratio is not None else None,
+        "carry_ratio": float(dto.carry_ratio) if dto.carry_ratio is not None else None,
+        "price_path_stability_score": float(dto.price_path_stability_score) if dto.price_path_stability_score is not None else None,
+        "has_end_spike": dto.has_end_spike,
+        "has_end_drop": dto.has_end_drop,
+        "shape_features": list(dto.shape_features),
+        "source_snapshot_rule_version": dto.source_snapshot_rule_version,
     }
 
 
@@ -360,6 +368,14 @@ def _auction_dto_from_cache_dict(payload: Dict[str, Any]) -> StockAuctionDTO:
         tail_auction_volume=Decimal(str(payload["tail_auction_volume"])) if payload.get("tail_auction_volume") is not None else None,
         tail_auction_amount=Decimal(str(payload["tail_auction_amount"])) if payload.get("tail_auction_amount") is not None else None,
         tail_auction_vwap=Decimal(str(payload["tail_auction_vwap"])) if payload.get("tail_auction_vwap") is not None else None,
+        # P2-B-0: rich auction features
+        last_minute_ratio=Decimal(str(payload["last_minute_ratio"])) if payload.get("last_minute_ratio") is not None else None,
+        carry_ratio=Decimal(str(payload["carry_ratio"])) if payload.get("carry_ratio") is not None else None,
+        price_path_stability_score=Decimal(str(payload["price_path_stability_score"])) if payload.get("price_path_stability_score") is not None else None,
+        has_end_spike=bool(payload.get("has_end_spike", False)),
+        has_end_drop=bool(payload.get("has_end_drop", False)),
+        shape_features=tuple(payload.get("shape_features") or []),
+        source_snapshot_rule_version=str(payload.get("source_snapshot_rule_version") or ""),
     )
 
 
@@ -525,6 +541,14 @@ async def _build_live_w2s_auction_material(
                 auction_volume=Decimal(str(snapshot.auction_volume)),
                 auction_amount=Decimal(str(snapshot.auction_amount)),
                 tail_auction_vwap=Decimal(str(snapshot.auction_open_price)),
+                # P2-B-0: rich auction features from PreMarketAuctionSnapshot
+                last_minute_ratio=Decimal(str(snapshot.last_minute_ratio)) if snapshot.last_minute_ratio is not None else None,
+                carry_ratio=Decimal(str(snapshot.carry_ratio)) if snapshot.carry_ratio is not None else None,
+                price_path_stability_score=Decimal(str(snapshot.price_path_stability_score)) if snapshot.price_path_stability_score is not None else None,
+                has_end_spike=snapshot.has_end_spike,
+                has_end_drop=snapshot.has_end_drop,
+                shape_features=tuple(snapshot.shape_features),
+                source_snapshot_rule_version=str(snapshot.rule_version or ""),
             )
         )
     return auctions, snapshots
