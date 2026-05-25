@@ -107,6 +107,16 @@ class W2SAuctionScorer:
             evidence.append("risk:stability_lt_40")
 
         final = max(Decimal("0"), auction_score - risk)
+
+        # ── high_open_trap: 降级而非直接 X ──
+        force_max_decision = None
+        if open_pct > Decimal("7") and carry < Decimal("0.5"):
+            force_max_decision = "C"
+            evidence.append("degrade:high_open_trap→max_C(open={open_pct},carry={carry})")
+        if open_pct > Decimal("7") and stability < Decimal("40"):
+            force_max_decision = "C"
+            evidence.append("degrade:high_open_unstable→max_C(open={open_pct},stab={stability})")
+
         if final >= Decimal("75"):
             decision = "A"
         elif final >= Decimal("65"):
@@ -115,6 +125,10 @@ class W2SAuctionScorer:
             decision = "C"
         else:
             decision = "X"
+
+        _decision_order = {"A": 0, "B": 1, "C": 2, "X": 3}
+        if force_max_decision and _decision_order.get(decision, 9) < _decision_order.get(force_max_decision, 9):
+            decision = force_max_decision
 
         return AuctionScore(
             stock_id=auction.stock_id,
@@ -216,8 +230,8 @@ class W2SAuctionScorer:
             reasons.append(f"hard_reject:carry_ratio={carry}")
         if open_pct < Decimal("-1"):
             reasons.append(f"hard_reject:open_pct={open_pct}")
-        # 高开诱多
-        if open_pct > Decimal("7") and carry < Decimal("0.5"):
-            reasons.append(f"hard_reject:high_open_trap(open={open_pct},carry={carry})")
+        # high_open_trap 移到加权段做降级（max C），不在此处 X
+        if open_pct > Decimal("7") and auction.has_end_drop:
+            reasons.append(f"hard_reject:high_open_with_drop(open={open_pct})")
 
         return reasons if reasons else None
