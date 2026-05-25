@@ -1,5 +1,5 @@
 {
-  "numStartups": 20,
+  "numStartups": 21,
   "hasSeenTasksHint": true,
   "tipsHistory": {
     "new-user-warmup": 7,
@@ -27,9 +27,9 @@
     "frontend-design-plugin": 18,
     "shift-enter": 14,
     "subagent-fanout-nudge": 19,
-    "custom-agents": 6,
-    "agent-flag": 6,
-    "feedback-command": 6,
+    "custom-agents": 21,
+    "agent-flag": 21,
+    "feedback-command": 21,
     "permissions": 11,
     "rename-conversation": 11,
     "custom-commands": 11
