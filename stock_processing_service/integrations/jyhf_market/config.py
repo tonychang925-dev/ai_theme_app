@@ -36,6 +36,7 @@ class JyhfMarketConfig:
     interval_quote_seconds: float = float(os.getenv("JYHF_MARKET_QUOTE_INTERVAL", "10.0"))
     interval_subject_seconds: float = float(os.getenv("JYHF_MARKET_SUBJECT_INTERVAL", "30.0"))
     loop_tick_seconds: float = 1.0
+    max_quote_concurrency: int = int(os.getenv("JYHF_MARKET_MAX_CONCURRENCY", "10"))
 
     # ── 尾盘高频 (14:30-15:00) ──
     tail_quote_seconds: float = float(os.getenv("JYHF_MARKET_TAIL_QUOTE_INTERVAL", "5.0"))
