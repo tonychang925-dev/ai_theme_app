@@ -130,8 +130,12 @@ class JyhfMarketCollector:
                 self.stats["index_interval_seconds"] = idx_int
                 self.stats["subject_interval_seconds"] = subj_int
 
-                # 非交易时段跳过采集
-                if session == "closed":
+                # P1-E: 非交易时段跳过采集 (closed / pre_market / lunch_break)
+                if session in {"closed", "pre_market", "lunch_break"}:
+                    self.stats["last_cycle_duration_ms"] = int((_time.time() - self._last_cycle_start) * 1000)
+                    self.stats["cycle_overrun"] = False
+                    self.stats["last_collect_at"] = datetime.now(TZ_CN).isoformat()
+                    self.stats["last_error"] = None
                     cycle_count += 1
                     await self._sleep(self.config.loop_tick_seconds * 60)
                     continue
@@ -296,12 +300,13 @@ class JyhfMarketCollector:
         now = datetime.now(TZ_CN)
         h, m = now.hour, now.minute
 
-        # 竞价窗口
-        if h == 9 and m >= cfg.auction_start_minute and not self._is_lunch_break(h, m):
+        # 竞价窗口: 09:15 <= time <= 09:25
+        if h == cfg.auction_start_hour and cfg.auction_start_minute <= m <= cfg.auction_end_minute:
             return (cfg.auction_quote_seconds, cfg.interval_index_seconds, cfg.interval_subject_seconds)
 
-        # 尾盘窗口
-        if h == cfg.tail_start_hour and m >= cfg.tail_start_minute and not self._is_lunch_break(h, m):
+        # 尾盘窗口: 14:30 <= time < 15:00
+        if ((h > cfg.tail_start_hour or (h == cfg.tail_start_hour and m >= cfg.tail_start_minute))
+                and h < cfg.tail_end_hour):
             return (cfg.tail_quote_seconds, cfg.tail_index_seconds, cfg.tail_subject_seconds)
 
         return (cfg.interval_quote_seconds, cfg.interval_index_seconds, cfg.interval_subject_seconds)
@@ -362,6 +367,21 @@ class JyhfMarketCollector:
         top_pct = sorted(stock_items, key=lambda x: -_get_pct(x["stock_id"]))[:5]
         top_amt = sorted(stock_items, key=lambda x: -_get_amt(x["stock_id"]))[:5]
 
+        def _snap_quote(sid):
+            q = cache.get(sid, {})
+            return {"stock_id": sid, "stock_name": "", "pct_chg": q.get("pct_chg"),
+                    "current": q.get("current"), "amount": q.get("amount"), "ts": q.get("ts")}
+
+        def _enrich(items):
+            result = []
+            for s in items:
+                sid = s["stock_id"]
+                q = cache.get(sid, {})
+                result.append({"stock_id": sid, "stock_name": s["stock_name"],
+                               "pct_chg": q.get("pct_chg"), "current": q.get("current"),
+                               "amount": q.get("amount"), "ts": q.get("ts")})
+            return result
+
         payload = {
             "item_type": "tail_session_snapshot",
             "source_channel": "jyhf_market_api",
@@ -370,12 +390,8 @@ class JyhfMarketCollector:
             "occurred_at": now.isoformat(),
             "watch_stock_count": len(stock_items),
             "session": "tail",
-            "top_pct_chg": [
-                {"stock_id": s["stock_id"], "stock_name": s["stock_name"]} for s in top_pct
-            ],
-            "top_amount": [
-                {"stock_id": s["stock_id"], "stock_name": s["stock_name"]} for s in top_amt
-            ],
+            "top_pct_chg": _enrich(top_pct),
+            "top_amount": _enrich(top_amt),
             "source_breakdown": self.stats.get("source_breakdown", {}),
         }
 
