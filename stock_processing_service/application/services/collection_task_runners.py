@@ -800,13 +800,15 @@ class PostMarketRecapRunner:
         job = context.container.build_post_market_recap
         trade_date_val = date.fromisoformat(context.trade_date)
 
+        force_truth = bool((context.payload or {}).get("options", {}).get("force_rebuild_truth_source", False))
         result = await job.execute(
             trade_date=trade_date_val,
             snapshot_version="collection.post_market_recap.v1",
             batch_id=uuid4().hex[:12],
             trace_id=uuid4().hex[:12],
             lookback_days=7,
-            skip_prereqs=True,
+            skip_prereqs=not force_truth,
+            skip_layer_c=not force_truth,
         )
 
         logs = [
@@ -861,6 +863,7 @@ class ProcessIsolatedRunner:
 
         logger.info("ProcessIsolated: spawning %s", " ".join(cmd[:4]))
 
+        proc = None
         try:
             proc = await asyncio.create_subprocess_exec(
                 *cmd,
@@ -923,11 +926,12 @@ class ProcessIsolatedRunner:
             )
 
         except asyncio.CancelledError:
-            self._kill_process(proc)
-            try:
-                await asyncio.wait_for(proc.wait(), timeout=3)
-            except Exception:
-                self._kill_process(proc, force=True)
+            if proc is not None:
+                self._kill_process(proc)
+                try:
+                    await asyncio.wait_for(proc.wait(), timeout=3)
+                except Exception:
+                    self._kill_process(proc, force=True)
             raise
         except Exception as exc:
             return CollectionTaskResult(
@@ -938,6 +942,8 @@ class ProcessIsolatedRunner:
 
     @staticmethod
     def _kill_process(proc, force: bool = False):
+        if proc is None:
+            return
         try:
             if proc.returncode is None:
                 sig = signal.SIGKILL if force else signal.SIGTERM

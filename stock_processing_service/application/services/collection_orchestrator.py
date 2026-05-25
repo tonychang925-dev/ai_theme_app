@@ -183,58 +183,65 @@ class CollectionCommandPlanner:
             )
 
         if task_key == "recap_snapshot":
-            # 盘后复盘必须先准备 report 依赖真源，再由 recap.snapshot 生成唯一快照。
-            # 禁止 recap.report 二次覆盖 payload.report，否则会在依赖表缺失时写入半空报告。
-            return CollectionTaskPlan(
-                pre_logs=["recap_snapshot: prepare report truth sources, then build one final new-chain snapshot"],
-                steps=[
-                    CollectionTaskStep(
-                        key="stock_kline_judgements",
-                        runner_key="stock.kline_judgements",
-                        label="个股K线位置与形态判断",
-                    ),
-                    CollectionTaskStep(
-                        key="recap_prerequisites",
-                        runner_key="recap.prerequisites.isolated",
-                        label="新链盘后前置构建",
-                    ),
-                    CollectionTaskStep(
-                        key="market_environment_daily",
-                        runner_key="recap.market_environment_daily",
-                        label="新链市场环境检查",
-                    ),
-                    CollectionTaskStep(
-                        key="theme_capital_flow_daily",
-                        runner_key="recap.theme_capital_flow_daily",
-                        label="新链题材资金流检查",
-                    ),
-                    CollectionTaskStep(
-                        key="money_flow_enhanced",
-                        runner_key="script.default",
-                        commands=[
-                            CollectionCommand(
-                                cmd=[
-                                    self._python_bin,
-                                    str(self._project_root / "database_service/scripts/build_money_flow_enhanced.py"),
-                                    "--trade-date",
-                                    trade_date,
-                                ]
-                            )
-                        ],
-                        label="资金行为增强",
-                    ),
-                    CollectionTaskStep(
-                        key="abnormal_signal",
-                        runner_key="abnormal.signal",
-                        label="异动信号检测",
-                    ),
-                    CollectionTaskStep(
-                        key="recap_data",
-                        runner_key="recap.snapshot.isolated",
-                        label="盘后复盘最终快照生成",
-                    ),
-                ],
-            )
+            # P0: Report Layer — 默认只读已有对象生成 DailyReview。
+            # Truth Source 生产步骤 (kline/prereqs/abnormal) 仅 force_rebuild_truth_source=true 时触发。
+            force_truth = bool(options.get("force_rebuild_truth_source", False))
+            steps: list[CollectionTaskStep] = []
+
+            if force_truth:
+                steps.append(CollectionTaskStep(
+                    key="stock_kline_judgements",
+                    runner_key="stock.kline_judgements",
+                    label="个股K线位置与形态判断",
+                ))
+                steps.append(CollectionTaskStep(
+                    key="recap_prerequisites",
+                    runner_key="recap.prerequisites.isolated",
+                    label="新链盘后前置构建",
+                ))
+                pre_logs = ["recap_snapshot: FORCE REBUILD truth source + report"]
+            else:
+                pre_logs = ["recap_snapshot: read existing truth sources, build DailyReview (fast)"]
+
+            steps.extend([
+                CollectionTaskStep(
+                    key="market_environment_daily",
+                    runner_key="recap.market_environment_daily",
+                    label="新链市场环境检查",
+                ),
+                CollectionTaskStep(
+                    key="theme_capital_flow_daily",
+                    runner_key="recap.theme_capital_flow_daily",
+                    label="新链题材资金流检查",
+                ),
+                CollectionTaskStep(
+                    key="money_flow_enhanced",
+                    runner_key="script.default",
+                    commands=[
+                        CollectionCommand(cmd=[
+                            self._python_bin,
+                            str(self._project_root / "database_service/scripts/build_money_flow_enhanced.py"),
+                            "--trade-date", trade_date,
+                        ])
+                    ],
+                    label="资金行为增强",
+                ),
+            ])
+
+            if force_truth:
+                steps.append(CollectionTaskStep(
+                    key="abnormal_signal",
+                    runner_key="abnormal.signal",
+                    label="异动信号检测",
+                ))
+
+            steps.append(CollectionTaskStep(
+                key="recap_data",
+                runner_key="recap.snapshot.isolated",
+                label="盘后复盘最终快照生成",
+            ))
+
+            return CollectionTaskPlan(pre_logs=pre_logs, steps=steps)
 
         return CollectionTaskPlan(terminal_status="skipped", terminal_label="未知任务，已跳过")
 

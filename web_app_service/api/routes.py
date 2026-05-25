@@ -346,6 +346,11 @@ async def daily_review(date: str = Query(..., description="YYYY-MM-DD")) -> dict
     )
 
 
+@router.post("/daily-review/generate")
+async def daily_review_generate(payload: dict | None = None) -> dict:
+    return await _proxy_stock_processing_post_json("/api/v1/daily_review/generate", payload or {})
+
+
 @router.get("/stock_workspace/{stock_id}")
 @router.get("/stock-workspace/{stock_id}")
 async def stock_workspace(stock_id: str, request: Request) -> dict:

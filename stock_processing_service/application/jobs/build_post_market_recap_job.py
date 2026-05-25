@@ -200,6 +200,7 @@ class BuildPostMarketRecapJob:
         trace_id: str,
         lookback_days: int = 8,
         skip_prereqs: bool = False,
+        skip_layer_c: bool = False,
     ) -> BuildResult:
         job_key = f"build_post_market_recap:{trade_date.isoformat()}:{snapshot_version}"
         acquired = await self._idempotency_port.acquire_job_idempotency(job_key=job_key, ttl_seconds=6 * 3600)
@@ -252,12 +253,15 @@ class BuildPostMarketRecapJob:
                 )
 
         # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
-        layer_c_result = await self._strong_stock_tracking_use_case.execute(
-            trade_date=trade_date,
-            window_days=7,
-            lookback_days=lookback_days,
-        )
-        layer_c_metrics = dict(layer_c_result.metrics or {})
+        if skip_layer_c:
+            layer_c_metrics = {"skip_layer_c": True, "stock_ids": []}
+        else:
+            layer_c_result = await self._strong_stock_tracking_use_case.execute(
+                trade_date=trade_date,
+                window_days=7,
+                lookback_days=lookback_days,
+            )
+            layer_c_metrics = dict(layer_c_result.metrics or {})
 
         # ── Layer D1: recap 只读取既有候选结果，不执行选股逻辑 ──
         d1_input_rows = await self._read_port.get_w2s_candidate_inputs(trade_date)
