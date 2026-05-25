@@ -1897,6 +1897,51 @@ async def get_daily_review(trade_date: str = Query(..., description="YYYY-MM-DD"
     }
 
 
+# ── P1: DailyReview fast generate (read_model_only) ──
+
+@app.post("/api/v1/daily_review/generate")
+async def generate_daily_review(payload: dict[str, Any] | None = None) -> dict[str, Any]:
+    """生成 DailyReview 快照 — read_model_only 模式只读已有对象，不触发事实层生产。
+
+    mode=read_model_only (默认): 只读已有对象，10-30 秒。
+    mode=full_truth_rebuild: 重跑 evidence/cycle/identity/mainline/LayerC，5-10 分钟 (危险)。
+    """
+    p = payload or {}
+    trade_date_str = str(p.get("date") or p.get("trade_date") or "")
+    mode = str(p.get("mode") or "read_model_only")
+
+    if not trade_date_str:
+        raise HTTPException(status_code=400, detail="date is required")
+
+    td = date.fromisoformat(trade_date_str)
+    skip_truth = mode == "read_model_only"
+
+    try:
+        from uuid import uuid4
+        batch_id = uuid4().hex[:12]; trace_id = uuid4().hex[:12]
+
+        job = app.state.container.build_post_market_recap
+        result = await job.execute(
+            trade_date=td,
+            snapshot_version=f"daily_review_generate.{mode}.v1",
+            batch_id=batch_id,
+            trace_id=trace_id,
+            lookback_days=7,
+            skip_prereqs=skip_truth,
+            skip_layer_c=skip_truth,
+        )
+
+        return {
+            "status": result.status,
+            "trade_date": trade_date_str,
+            "mode": mode,
+            "affected_rows": result.affected_rows,
+            "metrics": result.metrics,
+        }
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"generate failed: {exc}")
+
+
 @app.get("/api/v1/theme/workspace/{subject_key}")
 async def get_theme_workspace(subject_key: str, trade_date: str = "") -> dict[str, Any]:
     """题材工作台：读取 stock_data_test 中的题材相关数据。"""
