@@ -176,7 +176,7 @@ class StreamServicesManager:
                         "qwen_dedup_warmup": True,
                         "qwen_max_per_round": 20,
                         "qwen_max_candidates_per_news": 5,
-                        "qwen_max_recent_comparisons": 50,
+                        "qwen_max_recent_comparisons": 200,  # Phase 4E fix: 50→200, covers ~67min at ~15 items/cycle. Qwen budget (20/round) remains the throttle.
                     },
                     "dependencies": ["stream_manager", "crawler_service_client"]
                 },
