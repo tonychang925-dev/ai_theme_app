@@ -14,6 +14,8 @@ from typing import Any
 
 import asyncpg
 
+from stock_processing_service.domain.services.intraday_minute_state_builder import calc_vwap
+
 logger = logging.getLogger("sps.w2s_intraday_bt")
 
 TZ_CN = timezone(timedelta(hours=8))
@@ -305,6 +307,13 @@ class W2SIntradayBacktest:
                 current = float(row.get("current") or 0)
                 if current <= 0:
                     continue
+
+                # 重新计算 VWAP (复用单位归一)
+                amt_delta = float(row.get("amount_delta") or 0)
+                vol_delta = float(row.get("vol_delta") or 0)
+                vwap_val, vwap_mode, _, vwap_suspect = calc_vwap(amt_delta, vol_delta, current)
+                row["vwap"] = vwap_val
+                row["above_vwap"] = current > vwap_val
 
                 # 滑动窗口 (仅用 ≤i 的历史)
                 win_5 = self.sliding_window(series, i, 5)
