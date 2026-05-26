@@ -221,6 +221,11 @@ class W2SAlertRedisPusher:
                     "intraday_score": str(a.intraday_score),
                     "alert_level": a.alert_level,
                     "severity": a.severity,
+                    "latest_minute_ts": a.latest_minute_ts,
+                    "data_delay_seconds": str(a.data_delay_seconds),
+                    "vwap_unit_suspect": str(a.vwap_unit_suspect).lower(),
+                    "score_breakdown": json.dumps(a.score_breakdown, ensure_ascii=False),
+                    "index_minute_available": str(a.index_minute_available).lower(),
                     "evidence_rules": json.dumps(a.evidence_rules, ensure_ascii=False),
                     "generated_at": a.generated_at,
                 }

@@ -27,6 +27,10 @@ logger = logging.getLogger("sps.w2s_intraday_alert")
 
 TZ_CN = timezone(timedelta(hours=8))
 
+# 质量门禁
+DATA_MAX_AGE_SECONDS = 90    # 分钟状态距 now 不得超过 90 秒
+VWAP_MAX_DEVIATION = 0.20    # |current - vwap| / current <= 20%
+
 # 评分权重
 W_ABOVE_VWAP = 25
 W_REL_STRENGTH = 25
@@ -59,8 +63,16 @@ class W2SIntradayAlert:
     position_label: str
     pattern_labels: list[str]
     intraday_score: float
-    alert_level: str             # A / B / C
+    alert_level: str
     severity: str
+    # P1-I-4a: 质量诊断字段
+    latest_minute_ts: str
+    data_delay_seconds: int
+    vwap_unit_suspect: bool
+    previous_alert_level: str
+    upgraded_from: str
+    score_breakdown: dict[str, float]
+    index_minute_available: bool
     evidence_rules: list[str]
     generated_at: str
     extra: dict[str, Any] = field(default_factory=dict)
@@ -192,19 +204,23 @@ class W2SIntradayAlertService:
     # ── 评分 ──
 
     def score(self, state: dict, history: list[dict], confirm_level: str,
-              support_level: float, current: float) -> tuple[float, str, list[str]]:
-        """综合评分 → (score, alert_level, evidence)。"""
+              support_level: float, current: float,
+              *, vwap_ok: bool = True) -> tuple[float, str, list[str], dict[str, float]]:
+        """综合评分 → (score, alert_level, evidence, score_breakdown)。"""
         evidence: list[str] = []
         score = 0.0
+        breakdown: dict[str, float] = {}
 
-        # 1. above_vwap (0-25)
+        # 1. above_vwap (0-25) — VWAP 异常时降权
         vwap = float(state.get("vwap") or 0)
         hist_5 = history[:5] if len(history) >= 5 else history
         above_count = sum(1 for h in hist_5 if h.get("above_vwap"))
         above_ratio = above_count / len(hist_5) if hist_5 else 0
-        vwap_score = min(W_ABOVE_VWAP, above_ratio * W_ABOVE_VWAP)
+        vwap_weight = W_ABOVE_VWAP if vwap_ok else W_ABOVE_VWAP * 0.3
+        vwap_score = min(vwap_weight, above_ratio * vwap_weight)
         score += vwap_score
-        evidence.append(f"above_vwap_ratio={above_ratio:.1%} score={vwap_score:.1f}")
+        breakdown["above_vwap"] = round(vwap_score, 1)
+        evidence.append(f"above_vwap_ratio={above_ratio:.1%} score={vwap_score:.1f} vwap_ok={vwap_ok}")
 
         # 2. relative_strength (0-25)
         rel_str = float(state.get("relative_strength_vs_index") or 0)
@@ -218,12 +234,14 @@ class W2SIntradayAlertService:
         elif rel_str > -0.5:
             rel_score = 5
         score += rel_score
+        breakdown["rel_strength"] = round(rel_score, 1)
         evidence.append(f"rel_strength={rel_str:.2f} score={rel_score:.1f}")
 
         # 3. platform_break (0-20)
         break_plat = bool(state.get("break_platform_30m"))
         plat_score = W_PLATFORM_BREAK if break_plat else 0
         score += plat_score
+        breakdown["platform_break"] = round(plat_score, 1)
         evidence.append(f"break_platform={break_plat} score={plat_score:.1f}")
 
         # 4. amount_acceleration (0-15)
@@ -238,6 +256,7 @@ class W2SIntradayAlertService:
             elif amt_delta > 0:
                 amt_score = W_AMOUNT * 0.4
         score += amt_score
+        breakdown["amount_accel"] = round(amt_score, 1)
         evidence.append(f"amount_delta={amt_delta:.0f} accel={amt_accel} score={amt_score:.1f}")
 
         # 5. support_safety (0-15)
@@ -247,12 +266,16 @@ class W2SIntradayAlertService:
         elif support_level > 0 and current > support_level:
             sup_score = W_SUPPORT * 0.6
         score += sup_score
+        breakdown["support_safety"] = round(sup_score, 1)
         evidence.append(f"sup_safety={sup_score:.1f}")
 
-        # 6. auction_bonus (加权至 100 上限)
+        # 6. auction_bonus
         bonus = {"A": 1.1, "B": 1.0, "C": 0.85}.get(confirm_level, 0.85)
+        score_before_bonus = score
         score = min(100, score * bonus)
-        evidence.append(f"auction_bonus={bonus} final={score:.1f}")
+        breakdown["auction_bonus_factor"] = bonus
+        breakdown["total"] = round(score, 1)
+        evidence.append(f"auction_bonus={bonus} raw={score_before_bonus:.1f} final={score:.1f}")
 
         level = "X"
         if score >= 80:
@@ -262,7 +285,42 @@ class W2SIntradayAlertService:
         elif score >= 55:
             level = "C"
 
-        return round(score, 1), level, evidence
+        return round(score, 1), level, evidence, breakdown
+
+    # ── 质量门禁 ──
+
+    @staticmethod
+    def check_data_freshness(state: dict, now: datetime) -> tuple[bool, int, str]:
+        """检查分钟状态数据新鲜度。返回 (ok, delay_seconds, minute_ts)。"""
+        minute_ts_str = str(state.get("minute_ts") or "")
+        if not minute_ts_str:
+            return False, 999, ""
+        try:
+            for fmt in ("%Y-%m-%d %H:%M:%S%z", "%Y-%m-%d %H:%M:%S+00:00"):
+                try:
+                    mt = datetime.strptime(minute_ts_str, fmt)
+                    break
+                except ValueError:
+                    continue
+            else:
+                mt = datetime.fromisoformat(minute_ts_str)
+            # 统一时区
+            if mt.tzinfo is None:
+                mt = mt.replace(tzinfo=TZ_CN)
+            delay = int((now - mt).total_seconds())
+            return delay <= DATA_MAX_AGE_SECONDS, max(0, delay), minute_ts_str
+        except Exception:
+            return False, 999, minute_ts_str
+
+    @staticmethod
+    def check_vwap_sanity(current: float, vwap: float) -> tuple[bool, bool]:
+        """检查 VWAP 合理性。返回 (ok, suspect)。"""
+        if vwap is None or vwap <= 0 or current <= 0:
+            return False, True
+        deviation = abs(current - vwap) / current
+        if deviation > VWAP_MAX_DEVIATION:
+            return False, True  # 不 ok，可疑
+        return True, False
 
     # ── 主流程 ──
 
@@ -276,6 +334,8 @@ class W2SIntradayAlertService:
 
         alerts: list[W2SIntradayAlert] = []
         checked = 0
+        freshness_skipped = 0
+        vwap_skip_strong = 0
         level_counts = {"A": 0, "B": 0, "C": 0}
 
         for r in candidates:
@@ -292,15 +352,38 @@ class W2SIntradayAlertService:
 
             current = float(state.get("current") or 0)
             support_level = float(r.get("support_level") or 0)
+            vwap_val = float(state.get("vwap") or 0)
 
-            # 支撑风险过滤
+            # ── 质量门禁 1: 数据新鲜度 ──
+            fresh_ok, delay_sec, minute_ts_str = self.check_data_freshness(state, t0)
+            if not fresh_ok:
+                freshness_skipped += 1
+
+            # ── 质量门禁 2: VWAP 合理性 ──
+            vwap_ok, vwap_suspect = self.check_vwap_sanity(current, vwap_val)
+
+            # ── 支撑风险过滤 ──
             if support_level > 0 and current < support_level * 0.995:
                 continue
 
-            score, level, evidence = self.score(
+            # ── 评分 ──
+            score_val, level, evidence, breakdown = self.score(
                 state, histories.get(sid, []),
                 confirm_level, support_level, current,
+                vwap_ok=vwap_ok,
             )
+
+            # VWAP 异常 → A/B 降级为 C（仅 observe）
+            if vwap_suspect and level in ("A", "B") and not vwap_ok:
+                level = "C"
+                vwap_skip_strong += 1
+                evidence.append("vwap_unit_suspect: downgraded_to_C")
+
+            # 数据过期 → 降级为 observe
+            if not fresh_ok:
+                level = "C"
+                evidence.append(f"data_stale: delay={delay_sec}s downgraded_to_C")
+
             if level == "X":
                 continue
 
@@ -311,12 +394,14 @@ class W2SIntradayAlertService:
             above_count = sum(1 for h in hist_5 if h.get("above_vwap"))
             above_ratio = above_count / len(hist_5) if hist_5 else 0
 
-            # relative_strength_turn: 检查最近5分钟是否由负转正
             rel_turn_positive = False
             if len(hist_5) >= 2:
                 rel_prev = [float(h.get("relative_strength_vs_index") or 0) for h in hist_5]
                 if any(r < 0 for r in rel_prev[1:]) and rel_prev[0] > 0:
                     rel_turn_positive = True
+
+            # 检查 index minute 可用性
+            index_ok = bool(state.get("relative_strength_vs_index") is not None)
 
             alerts.append(W2SIntradayAlert(
                 trade_date=trade_date,
@@ -340,9 +425,16 @@ class W2SIntradayAlertService:
                 support_state="above_support" if support_level > 0 and current > support_level else "unknown",
                 position_label=pos.get("position_label", ""),
                 pattern_labels=pos.get("pattern_labels", []),
-                intraday_score=score,
+                intraday_score=score_val,
                 alert_level=level,
                 severity="important" if level in ("A", "B") else "observe",
+                latest_minute_ts=minute_ts_str,
+                data_delay_seconds=delay_sec,
+                vwap_unit_suspect=vwap_suspect,
+                previous_alert_level="",
+                upgraded_from="",
+                score_breakdown=breakdown,
+                index_minute_available=index_ok,
                 evidence_rules=evidence,
                 generated_at=now_str,
             ))
