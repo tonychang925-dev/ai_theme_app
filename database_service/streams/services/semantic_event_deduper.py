@@ -97,7 +97,7 @@ def _extract_company_alias(title: str) -> set[str]:
         r'【?([^】\s：:]+)[：:]',
         r'([^\s]+)公告',
         r'([^\s]+)称',
-        r'([^\s]{2,8})(?:发布|宣布|表示|披露|回应|拟将|拟|将)',
+        r'([^\s]{2,8}?)(?:发布|宣布|表示|披露|回应|拟将|拟|将)',
     ):
         for m in _regex.finditer(pat, str(title)):
             name = m.group(1).strip().rstrip('】').rstrip('【')
