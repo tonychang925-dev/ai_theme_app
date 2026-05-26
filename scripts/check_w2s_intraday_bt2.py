@@ -77,6 +77,32 @@ async def main():
         avg_r = sum(s.ret_30m for s in bs if s.ret_30m) / max(len(bs), 1)
         print(f"  {bucket}: {len(bs)} signals avg_ret_30m={avg_r:.2f}%")
 
+    # ── 平台突破诊断 ──
+    plat_break_yes = [s for s in sigs if s.break_platform]
+    print(f"\n--- Platform Break ---")
+    print(f"  break_platform_30m=true: {len(plat_break_yes)}/{len(sigs)} ({len(plat_break_yes)/max(len(sigs),1)*100:.1f}%)")
+    if plat_break_yes:
+        avg_r = sum(s.ret_30m for s in plat_break_yes if s.ret_30m) / max(len(plat_break_yes), 1)
+        print(f"  avg_ret_30m={avg_r:.2f}%")
+
+    # ── false_signal v1 vs v2 ──
+    false_v1 = sum(1 for s in sigs if s.fell_below_vwap)
+    print(f"\n--- False Signal ---")
+    print(f"  false_v2: {false_v1}/{len(sigs)} ({false_v1/max(len(sigs),1)*100:.1f}%)")
+
+    # ── chase_risk 诊断 ──
+    # computed inside backtest but not in BacktestSignal, compute here
+    chase_sigs = []
+    for s in sigs:
+        distance_to_vwap = abs(s.current - s.vwap) / s.current if s.current > 0 else 0
+        chase = distance_to_vwap > 0.03
+        if chase:
+            chase_sigs.append(s)
+    print(f"\n--- Chase Risk ---")
+    print(f"  chase_risk (distance_to_vwap>3%): {len(chase_sigs)}/{len(sigs)} ({len(chase_sigs)/max(len(sigs),1)*100:.1f}%)")
+    ab_chase = [s for s in chase_sigs if s.alert_level in ("A", "B")]
+    print(f"  A/B with chase_risk: {len(ab_chase)}/{len([s for s in sigs if s.alert_level in ('A','B')])}")
+
     # ── 按条件分组 ──
     groups = {
         "break_platform": [s for s in sigs if s.break_platform],
