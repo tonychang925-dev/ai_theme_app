@@ -31,6 +31,15 @@ W_AUCTION = 10
 W_VOLUME = 10
 MAX_CHASE_PENALTY = 30
 
+# v2.1 权重
+W21_REL_TURN = 35
+W21_EARLY_VWAP = 20
+W21_SUPPORT = 15
+W21_AUCTION = 10
+W21_VOLUME = 5
+MAX21_CHASE_PENALTY = 30
+MAX21_FALSE_BREAK_PENALTY = 15
+
 
 @dataclass
 class W2SIntradayAlertV2:
@@ -267,9 +276,176 @@ class W2SIntradayAlertServiceV2:
 
         return round(final_score, 1), level, breakdown, evidence
 
+    # ── v2.1 评分 ──
+
+    @staticmethod
+    def score_v2_1(state: dict, history: list, confirm_level: str,
+                    current: float, support_level: float) -> tuple[float, str, dict, list[str]]:
+        """v2.1 权重校准: 强化 cross_zero, 降权 cross_up/amount, turn_strong 保护门禁。"""
+        evidence: list[str] = []
+        breakdown: dict[str, float] = {}
+
+        vwap_val = float(state.get("vwap") or 0)
+        history_sorted = sorted(history, key=lambda x: str(x.get("minute_ts", "")), reverse=True)
+        hist_5 = history_sorted[:5] if len(history_sorted) >= 5 else history_sorted
+        hist_3 = history_sorted[:3] if len(history_sorted) >= 3 else history_sorted
+
+        # ── 1. relative_turn (0-35): 核心因子 ──
+        rel_now = float(state.get("relative_strength_vs_index") or 0)
+        rel_slope_5m = 0.0
+        rel_cross_zero = False
+        if len(hist_5) >= 2:
+            rel_values = [float(h.get("relative_strength_vs_index") or 0) for h in hist_5]
+            rel_slope_5m = rel_values[0] - rel_values[-1]
+            rel_cross_zero = any(r < 0 for r in rel_values[1:]) and rel_values[0] > 0
+
+        rel_score = 0.0
+        if rel_cross_zero:
+            rel_score = W21_REL_TURN
+            evidence.append(f"rel_cross_zero→{rel_score:.0f}")
+        elif rel_slope_5m > 0.3:
+            rel_score = W21_REL_TURN * 0.7
+            evidence.append(f"rel_improving(slope={rel_slope_5m:.2f})→{rel_score:.0f}")
+        elif rel_now > 0.5:
+            rel_score = W21_REL_TURN * 0.35
+            evidence.append(f"rel_positive→{rel_score:.0f}")
+        elif rel_now > 0:
+            rel_score = W21_REL_TURN * 0.15
+            evidence.append(f"rel_slight_positive→{rel_score:.0f}")
+        breakdown["relative_turn"] = round(rel_score, 1)
+
+        # ── 2. early_vwap (0-20): 刚站上且不远离 ──
+        above_count = sum(1 for h in hist_5 if h.get("above_vwap"))
+        above_ratio = above_count / len(hist_5) if hist_5 else 0
+        dist_vwap = abs(current - vwap_val) / current * 100 if current > 0 else 0
+        cross_up = False
+        if len(hist_5) >= 2:
+            prev_above = sum(1 for h in hist_5[1:3] if h.get("above_vwap")) > 0
+            now_above = hist_5[0].get("above_vwap", False) if hist_5 else False
+            cross_up = not prev_above and now_above
+
+        early_score = 0.0
+        # cross_up 需要确认: rel_cross_zero + dist<=1.5% + mom>0
+        price_mom_3m = 0.0
+        if len(hist_3) >= 2:
+            c0 = float(hist_3[0].get("close") or hist_3[0].get("current") or 0)
+            c2 = float(hist_3[-1].get("close") or hist_3[-1].get("current") or 0)
+            if c2 > 0:
+                price_mom_3m = (c0 - c2) / c2 * 100
+
+        if cross_up and rel_cross_zero and dist_vwap <= 1.5 and price_mom_3m > 0:
+            early_score = W21_EARLY_VWAP
+            evidence.append(f"cross_up_confirmed→{early_score:.0f}")
+        elif cross_up:
+            early_score = W21_EARLY_VWAP * 0.3  # 单独 cross_up 不可信
+            evidence.append(f"cross_up_unconfirmed→{early_score:.0f}")
+
+        if dist_vwap > 3:
+            early_score -= 10
+            evidence.append(f"vwap_far(dist={dist_vwap:.1f}%)→-10")
+        elif dist_vwap > 1.5:
+            early_score -= 3
+            evidence.append(f"vwap_moderate(dist={dist_vwap:.1f}%)→-3")
+
+        early_score = max(0, min(W21_EARLY_VWAP, early_score))
+        breakdown["early_vwap"] = round(early_score, 1)
+
+        # ── 3. support (0-15) ──
+        sup_score = 0.0
+        if support_level > 0 and current > support_level * 1.02:
+            sup_score = W21_SUPPORT
+        elif support_level > 0 and current > support_level:
+            sup_score = W21_SUPPORT * 0.6
+        breakdown["support"] = round(sup_score, 1)
+
+        # ── 4. volume_confirm (0-5): 必须量价配合 ──
+        amt_delta = float(state.get("amount_delta") or 0)
+        amt_accel = False
+        if hist_5:
+            avg_amt = sum(float(h.get("amount_delta") or 0) for h in hist_5) / len(hist_5)
+            if avg_amt > 0 and amt_delta > avg_amt * 1.2:
+                amt_accel = True
+
+        vol_score = 0.0
+        if amt_accel and price_mom_3m > 0 and rel_slope_5m > 0 and dist_vwap <= 1.5:
+            vol_score = W21_VOLUME
+            evidence.append(f"volume_confirmed→{vol_score:.0f}")
+        elif amt_accel and price_mom_3m > 0:
+            vol_score = W21_VOLUME * 0.4
+            evidence.append(f"volume_partial→{vol_score:.0f}")
+        elif amt_accel and price_mom_3m <= 0:
+            vol_score = -3  # 放量滞涨扣分
+            evidence.append(f"volume_stagnant→{vol_score:.0f}")
+        breakdown["volume_confirm"] = round(vol_score, 1)
+
+        # ── 5. auction_bonus ──
+        bonus = {"A": 1.15, "B": 1.05, "C": 0.9}.get(confirm_level, 0.85)
+        score_before = round(rel_score + early_score + sup_score + vol_score, 1)
+        breakdown["auction_bonus_factor"] = bonus
+
+        # ── 6. chase_risk_penalty (-30~0) ──
+        chase_penalty = 0.0
+        price_pos_30m = 0.5
+        plat_hi = float(state.get("platform_high_30m") or 0)
+        plat_lo = float(state.get("platform_low_30m") or 0)
+        if plat_hi > plat_lo:
+            price_pos_30m = (current - plat_lo) / (plat_hi - plat_lo)
+
+        if dist_vwap > 3:
+            chase_penalty -= 15
+            evidence.append(f"chase:vwap_far→-15")
+        if price_pos_30m > 0.85:
+            chase_penalty -= 10
+            evidence.append(f"chase:near_high(pos={price_pos_30m:.2f})→-10")
+        chase_penalty = max(-MAX21_CHASE_PENALTY, chase_penalty)
+        breakdown["chase_risk_penalty"] = round(chase_penalty, 1)
+
+        # ── 7. false_break_penalty (-15~0) ──
+        false_break_penalty = 0.0
+        if bool(state.get("break_platform_30m")):
+            false_break_penalty -= 5
+            evidence.append("platform_break→-5")
+        if cross_up and not rel_cross_zero:
+            false_break_penalty -= 5
+            evidence.append("vwap_cross_no_rel→-5")
+        if amt_accel and price_mom_3m <= 0:
+            false_break_penalty -= 5
+            evidence.append("amount_no_momentum→-5")
+        false_break_penalty = max(-MAX21_FALSE_BREAK_PENALTY, false_break_penalty)
+        breakdown["false_break_penalty"] = round(false_break_penalty, 1)
+
+        # ── 最终评分 ──
+        final_score = max(0, min(100, score_before * bonus + chase_penalty + false_break_penalty))
+        breakdown["total"] = round(final_score, 1)
+
+        # ── turn_strong 保护门禁 ──
+        level = "observe"
+        if final_score >= 45:
+            level = "early_turn"
+        if (final_score >= 70
+                and rel_cross_zero
+                and chase_penalty == 0
+                and dist_vwap <= 1.5
+                and price_pos_30m <= 0.75):
+            level = "turn_strong"
+
+        # 透传诊断字段
+        breakdown["above_vwap_ratio_5m"] = round(above_ratio, 2)
+        breakdown["above_vwap_cross_up"] = cross_up
+        breakdown["relative_strength_slope_5m"] = round(rel_slope_5m, 3)
+        breakdown["relative_strength_cross_zero"] = rel_cross_zero
+        breakdown["amount_acceleration"] = amt_accel
+        breakdown["price_momentum_3m"] = round(price_mom_3m, 3)
+        breakdown["distance_to_vwap_pct"] = round(dist_vwap, 2)
+        breakdown["price_position_30m"] = round(price_pos_30m, 2)
+
+        evidence.append(f"final={final_score:.1f} level={level} v2.1")
+        return round(final_score, 1), level, breakdown, evidence
+
     # ── 主流程 (复用 v1 数据加载) ──
 
-    async def build_alerts(self, trade_date: str) -> V2AlertResult:
+    async def build_alerts(self, trade_date: str,
+                           scoring_version: str = "v2_experimental") -> V2AlertResult:
         from stock_processing_service.domain.services.w2s_intraday_alert_service import W2SIntradayAlertService
         v1_svc = W2SIntradayAlertService(self._dsn)
         candidates = await v1_svc.load_candidates_with_d2(trade_date)
@@ -296,8 +472,10 @@ class W2SIntradayAlertServiceV2:
             if support_level > 0 and current < support_level * 0.995:
                 continue
 
-            score, level, breakdown, evidence = self.score_v2(
-                state, histories.get(sid, []), confirm_level, current, support_level,
+            score, level, breakdown, evidence = (
+                self.score_v2_1(state, histories.get(sid, []), confirm_level, current, support_level)
+                if scoring_version == "v2.1_experimental"
+                else self.score_v2(state, histories.get(sid, []), confirm_level, current, support_level)
             )
 
             level_counts[level] = level_counts.get(level, 0) + 1
@@ -342,7 +520,7 @@ class W2SIntradayAlertServiceV2:
                 volume_confirm_score=breakdown.get("volume_confirm", 0),
                 chase_risk_penalty=breakdown.get("chase_risk_penalty", 0),
                 severity="observe",
-                scoring_version="v2_experimental",
+                scoring_version=scoring_version,
                 evidence_rules=evidence,
                 generated_at=now_str,
             ))
