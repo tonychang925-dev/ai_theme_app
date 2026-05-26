@@ -1895,6 +1895,7 @@ async def get_daily_review(trade_date: str = Query(..., description="YYYY-MM-DD"
         "market_summary": recap_doc.get("market_summary") or {},
         "theme_reviews": recap_doc.get("theme_reviews") or [],
         "capital_reviews": recap_doc.get("capital_reviews") or [],
+        "strong_stock_reviews": recap_doc.get("strong_stock_reviews") or [],
         "trading_principle": recap_doc.get("trading_principle") or {},
         "diagnostics": recap_doc.get("diagnostics") or {},
     }

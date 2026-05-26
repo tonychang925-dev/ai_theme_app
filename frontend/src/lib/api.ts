@@ -247,11 +247,34 @@ export interface CapitalReview {
   ai_comment?: string;
 }
 
+export interface StrongStockReview {
+  stock_code: string;
+  stock_name: string;
+  subject_key: string;
+  theme_name: string;
+  role: string;
+  watch_status: string;
+  strong_grade?: string;
+  watch_score: number;
+  support_type: string;
+  support_score: number;
+  money_flow_tier?: string;
+  role_enhanced?: string;
+  main_net_inflow?: number;
+  pct_chg?: number;
+  turnover_rate?: number;
+  volume_ratio?: number;
+  position_label?: string;
+  pattern_labels?: string[];
+  rationale?: string;
+}
+
 export interface DailyReviewView {
   trade_date: string;
   market_summary: Record<string, unknown>;
   theme_reviews: ThemeReview[];
   capital_reviews: CapitalReview[];
+  strong_stock_reviews?: StrongStockReview[];
   trading_principle: Record<string, unknown>;
   diagnostics?: Record<string, unknown>;
 }
