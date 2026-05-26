@@ -130,13 +130,15 @@ class W2SIntradayBacktest:
         return series[start:idx + 1]
 
     @staticmethod
-    def compute_platform(win: list[dict]) -> tuple[float, float]:
-        """计算窗口内最高/最低价。"""
-        if not win:
-            return 0.0, 0.0
-        hi = max(float(r.get("high") or r.get("current") or 0) for r in win)
-        lo = min(float(r.get("low") or r.get("current") or 999999) for r in win)
-        return hi, lo
+    def compute_platform(past_bars: list[dict]) -> tuple[float, float, int, bool]:
+        """计算过去30分钟平台 (不含当前 bar)。"""
+        if not past_bars:
+            return 0.0, 0.0, 0, True
+        n = len(past_bars)
+        insufficient = n < 15
+        hi = max(float(r.get("high") or r.get("current") or 0) for r in past_bars)
+        lo = min(float(r.get("low") or r.get("current") or 999999) for r in past_bars)
+        return hi, lo, n, insufficient
 
     @staticmethod
     def compute_above_vwap_ratio(win: list[dict]) -> float:
@@ -317,13 +319,18 @@ class W2SIntradayBacktest:
 
                 # 滑动窗口 (仅用 ≤i 的历史)
                 win_5 = self.sliding_window(series, i, 5)
-                win_30 = self.sliding_window(series, i, 30)
+                # 平台窗口: 过去30分钟不含当前
+                past_30 = series[max(0, i - 30):i]  # [i-30, i) 不含 i
 
                 rel_str = self.compute_relative_strength(win_5, index_series, str(row.get("minute_ts") or ""))
-                plat_hi, plat_lo = self.compute_platform(win_30)
-                # 更新 platform (用滑动窗口)
+                plat_hi, plat_lo, plat_n, plat_insufficient = self.compute_platform(past_30)
+                # break_platform: current > plat_hi * 1.002 (0.2% buffer)
+                break_plat = (not plat_insufficient) and plat_hi > 0 and current > plat_hi * 1.002
                 row["platform_high_30m"] = plat_hi
                 row["platform_low_30m"] = plat_lo
+                row["break_platform_30m"] = break_plat
+                row["_plat_n"] = plat_n
+                row["_plat_insufficient"] = plat_insufficient
 
                 score, level, breakdown = self.score_minute(row, win_5, rel_str, confirm_level, current)
 

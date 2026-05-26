@@ -518,8 +518,22 @@ class BuildPostMarketRecapJob:
             if isinstance(obj, Decimal): return float(obj)
             return obj
 
+        # ── P0-2: readiness guard — 核心表为空时拒绝写快照 ──
+        readiness = await self._check_post_market_readiness(trade_date)
+        recap_doc.setdefault("diagnostics", {})["readiness"] = readiness
+        if readiness["status"] == "failed_precondition":
+            return BuildResult(
+                name="build_post_market_recap",
+                trade_date=trade_date.isoformat(),
+                affected_rows=0,
+                status="failed_precondition",
+                batch_id=batch_id,
+                trace_id=trace_id,
+                warnings=[f"POST_MARKET_DERIVED_DATA_NOT_READY: missing {readiness.get('missing_tables', [])}"],
+                metrics={"readiness": readiness},
+            )
+
         # ── P2: 结构化 theme_reviews 生成 ──
-        recap_doc.setdefault("diagnostics", {})
         report_context = recap_doc.get("report_context") or {}
         theme_context_map = await self._build_theme_context_map(trade_date, report_context)
         recap_doc["theme_reviews"] = self._build_theme_reviews(theme_context_map)
@@ -783,6 +797,66 @@ class BuildPostMarketRecapJob:
     # ── P2: theme_reviews 结构化生成 ──
 
     MAX_THEME_REVIEWS = 20
+
+    async def _check_post_market_readiness(self, trade_date: date) -> dict[str, Any]:
+        """P0-2: 检查5张核心表是否有当日数据，不通过则拒绝写快照。"""
+        missing: list[str] = []
+        derived: dict[str, int] = {}
+        base: dict[str, int] = {}
+
+        checks: list[tuple[str, str]] = [
+            ("subject_stock_daily_snapshot", "base"),
+            ("theme_cycle_judgement_v2", "derived"),
+            ("money_flow_enhanced", "derived"),
+            ("strong_stock_watch_history", "derived"),
+            ("dragon_tiger_object", "derived"),
+        ]
+
+        pool = getattr(self._read_port, "_pool", None)
+        if pool is None:
+            # Try to get pool from read_port internals
+            facade = getattr(self._read_port, "_db", None)
+            db_client = getattr(facade, "_db", None) if facade else None
+            pool = getattr(db_client, "pool", None) if db_client else None
+
+        if pool is None:
+            return {"status": "skipped", "reason": "no_db_pool"}
+
+        async with pool.acquire() as conn:
+            for table_name, category in checks:
+                try:
+                    row = await conn.fetchrow(
+                        f"SELECT COUNT(*) AS cnt FROM {table_name} WHERE trade_date = $1::date",
+                        trade_date,
+                    )
+                    cnt = int(row["cnt"]) if row else 0
+                    if category == "base":
+                        base[table_name] = cnt
+                    else:
+                        derived[table_name] = cnt
+                    if cnt == 0 and table_name != "dragon_tiger_object":
+                        missing.append(table_name)
+                    elif cnt == 0 and table_name == "dragon_tiger_object":
+                        # 龙虎榜可以为空（无榜日）
+                        pass
+                except Exception:
+                    missing.append(table_name)
+
+        if missing:
+            return {
+                "status": "failed_precondition",
+                "error_code": "POST_MARKET_DERIVED_DATA_NOT_READY",
+                "missing_tables": missing,
+                "base_tables": base,
+                "derived_tables": derived,
+            }
+
+        return {
+            "status": "ready",
+            "base_tables": base,
+            "derived_tables": derived,
+            "missing_tables": [],
+        }
 
     @staticmethod
     async def _build_theme_context_map(
