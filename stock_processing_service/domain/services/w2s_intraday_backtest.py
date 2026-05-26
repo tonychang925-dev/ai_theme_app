@@ -363,6 +363,15 @@ class W2SIntradayBacktest:
 
                 above_ratio = self.compute_above_vwap_ratio(win_5)
 
+                # false_signal_v2
+                is_false_v2, max_dd = self.check_fell_below_vwap(series, i, float(row.get("vwap") or 0))
+                false_v2 = is_false_v2 or (ret_30 is not None and ret_30 <= -1.0)
+
+                # chase_risk: current 远离 vwap 或靠近局部高点
+                distance_to_vwap = abs(current - vwap_val) / current if current > 0 else 0
+                price_in_30m = (current - plat_lo) / (plat_hi - plat_lo) if plat_hi > plat_lo else 0.5
+                chase_risk = distance_to_vwap > 0.03 or price_in_30m >= 0.85
+
                 signals.append(BacktestSignal(
                     minute_ts=str(row.get("minute_ts") or ""),
                     stock_id=sid,
@@ -373,15 +382,15 @@ class W2SIntradayBacktest:
                     vwap=float(row.get("vwap") or 0),
                     above_vwap_ratio=round(above_ratio, 2),
                     relative_strength=round(rel_str, 4),
-                    break_platform=float(row.get("platform_high_30m") or 0) > 0 and current > float(row.get("platform_high_30m") or 0),
-                    amount_accel=("accel" in str(breakdown.get("amount_accel", ""))),
+                    break_platform=break_plat,
+                    amount_accel=breakdown.get("amount_accel", 0) >= 15,
                     score_breakdown=breakdown,
                     ret_5m=ret_5,
                     ret_10m=ret_10,
                     ret_30m=ret_30,
                     ret_60m=ret_60,
                     hit_limit_up=self.check_limit_up(series, i),
-                    fell_below_vwap=self.check_fell_below_vwap(series, i),
+                    fell_below_vwap=is_false_v2,
                 ))
 
         # 按 level 聚合
