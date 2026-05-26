@@ -521,7 +521,16 @@ class BuildPostMarketRecapJob:
         # ── P0-2: readiness guard — 核心表为空时拒绝写快照 ──
         readiness = await self._check_post_market_readiness(trade_date)
         recap_doc.setdefault("diagnostics", {})["readiness"] = readiness
-        if readiness["status"] == "failed_precondition":
+        if readiness["status"] != "ready":
+            await self._idempotency_port.mark_job_completed(
+                job_key,
+                {
+                    "trade_date": trade_date.isoformat(),
+                    "snapshot_version": snapshot_version,
+                    "status": "failed_precondition",
+                    "readiness": readiness,
+                },
+            )
             return BuildResult(
                 name="build_post_market_recap",
                 trade_date=trade_date.isoformat(),
@@ -529,7 +538,7 @@ class BuildPostMarketRecapJob:
                 status="failed_precondition",
                 batch_id=batch_id,
                 trace_id=trace_id,
-                warnings=[f"POST_MARKET_DERIVED_DATA_NOT_READY: missing {readiness.get('missing_tables', [])}"],
+                warnings=[f"POST_MARKET_DERIVED_DATA_NOT_READY: status={readiness['status']} missing={readiness.get('missing_tables', [])}"],
                 metrics={"readiness": readiness},
             )
 
@@ -820,7 +829,14 @@ class BuildPostMarketRecapJob:
             pool = getattr(db_client, "pool", None) if db_client else None
 
         if pool is None:
-            return {"status": "skipped", "reason": "no_db_pool"}
+            return {
+                "status": "failed_precondition",
+                "error_code": "POST_MARKET_READINESS_CHECK_UNAVAILABLE",
+                "reason": "no_db_pool",
+                "missing_tables": ["readiness_checker_db_pool"],
+                "base_tables": {},
+                "derived_tables": {},
+            }
 
         async with pool.acquire() as conn:
             for table_name, category in checks:

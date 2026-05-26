@@ -228,9 +228,15 @@ class CollectionCommandPlanner:
                     runner_key="abnormal.signal",
                     label="异动信号检测",
                 ))
-                pre_logs = ["recap_snapshot: FORCE REBUILD truth source + report"]
+                pre_logs = [
+                    "recap_snapshot is deprecated, use post_market_recap_generate",
+                    "recap_snapshot: FORCE REBUILD truth source + report",
+                ]
             else:
-                pre_logs = ["recap_snapshot: DailyReview read-model only"]
+                pre_logs = [
+                    "recap_snapshot is deprecated, use post_market_recap_generate",
+                    "recap_snapshot: DailyReview read-model only",
+                ]
 
             steps.append(CollectionTaskStep(
                 key="recap_data",
