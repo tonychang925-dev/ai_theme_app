@@ -1,6 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
-import { fetchRecapSnapshot, fetchDailyReview, publishRecapToNotion, type DailyReviewView } from "../../lib/api";
+import {
+  fetchRecapSnapshot, fetchDailyReview, publishRecapToNotion,
+  type DailyReviewView,
+  fetchPostMarketReadiness, fetchPostMarketJobsStatus,
+  generatePostMarketDerivedData, generatePostMarketRecap,
+  type PostMarketReadinessView, type PostMarketJobsStatusView,
+} from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 import recapIcon from "../../assets/intel-icons/当日复盘.png";
 
@@ -610,6 +616,10 @@ export function RecapPage() {
   const [abnormalSortDir, setAbnormalSortDir] = useState<"desc" | "asc">("desc");
   const [payload, setPayload] = useState<RecapViewModelV2 | null>(null);
   const [dailyReview, setDailyReview] = useState<DailyReviewView | null>(null);
+  const [postMarketReadiness, setPostMarketReadiness] = useState<PostMarketReadinessView | null>(null);
+  const [postMarketJobs, setPostMarketJobs] = useState<PostMarketJobsStatusView | null>(null);
+  const [derivedDataBusy, setDerivedDataBusy] = useState(false);
+  const [recapBusy, setRecapBusy] = useState(false);
   const effectiveReportType = payload?.report_type ?? reportType;
   const highlights = payload?.highlights ?? [];
   const [error, setError] = useState<string | null>(null);
@@ -767,6 +777,10 @@ export function RecapPage() {
 
     // post_market: DailyReview 主数据源驱动 loading/error（设计文档 §7.8.1-bis）
     if (reportType === "post_market") {
+      // P1-6: 并行加载 readiness + jobs 状态
+      fetchPostMarketReadiness(tradeDate).then((d) => { if (active) setPostMarketReadiness(d); }).catch(() => {});
+      fetchPostMarketJobsStatus(tradeDate).then((d) => { if (active) setPostMarketJobs(d); }).catch(() => {});
+
       fetchDailyReview(tradeDate)
         .then((data) => {
           if (!active) return;
@@ -871,6 +885,95 @@ export function RecapPage() {
       {loading && <div className="empty-state">正在加载复盘视图...</div>}
       {error && <div className="empty-state error">{error}</div>}
 
+      {/* P1-6: PostMarket 状态面板 — 仅 post_market 模式显示 */}
+      {reportType === "post_market" && postMarketReadiness && (
+        <div className="workspace-card" style={{ marginBottom: 12 }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+            <span className="metric-label section-title">盘后复盘数据状态</span>
+            <span style={{ display: "flex", gap: 8 }}>
+              <button className="tag" type="button"
+                onClick={async () => {
+                  setDerivedDataBusy(true);
+                  try { await generatePostMarketDerivedData(tradeDate); } catch {}
+                  const r = await fetchPostMarketReadiness(tradeDate).catch(() => null);
+                  if (r) setPostMarketReadiness(r);
+                  const j = await fetchPostMarketJobsStatus(tradeDate).catch(() => null);
+                  if (j) setPostMarketJobs(j);
+                  setDerivedDataBusy(false);
+                }}
+                disabled={derivedDataBusy}>
+                {derivedDataBusy ? "生成中..." : "生成动态复盘数据"}
+              </button>
+              <button className="tag" type="button"
+                onClick={async () => {
+                  if (postMarketReadiness?.status !== "ready") return;
+                  setRecapBusy(true);
+                  try { await generatePostMarketRecap(tradeDate); } catch {}
+                  const j = await fetchPostMarketJobsStatus(tradeDate).catch(() => null);
+                  if (j) setPostMarketJobs(j);
+                  const dr = await fetchDailyReview(tradeDate).catch(() => null);
+                  if (dr) setDailyReview(dr);
+                  setRecapBusy(false);
+                }}
+                disabled={postMarketReadiness?.status !== "ready" || recapBusy}>
+                {recapBusy ? "生成中..." : postMarketReadiness?.status === "ready" ? "重新生成复盘报告" : "复盘报告生成（需数据ready）"}
+              </button>
+            </span>
+          </div>
+          <table className="recap-table" style={{ marginBottom: 6 }}>
+            <thead>
+              <tr>
+                <th>数据项</th><th>表</th><th>状态</th>
+              </tr>
+            </thead>
+            <tbody>
+              {postMarketReadiness.base_tables && Object.entries(postMarketReadiness.base_tables).map(([tbl, cnt]) => (
+                <tr key={tbl}>
+                  <td>基础数据</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>{tbl}</td>
+                  <td><span className="tag" style={cnt > 0 ? {} : { background: "#fff0f0" }}>{cnt > 0 ? `ready (${cnt})` : "缺失"}</span></td>
+                </tr>
+              ))}
+              {postMarketReadiness.derived_tables && Object.entries(postMarketReadiness.derived_tables).map(([tbl, cnt]) => {
+                const isSkipped = postMarketReadiness.skipped_tables?.some((s) => s.table === tbl);
+                return (
+                <tr key={tbl}>
+                  <td>动态复盘</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>{tbl}</td>
+                  <td>
+                    {isSkipped
+                      ? <span className="tag" style={{ background: "#fffbe6" }}>跳过 (no data)</span>
+                      : <span className="tag" style={cnt > 0 ? {} : { background: "#fff0f0" }}>{cnt > 0 ? `ready (${cnt})` : "缺失"}</span>}
+                  </td>
+                </tr>
+                );
+              })}
+              {postMarketJobs?.items?.map((jb) => (
+                <tr key={jb.job_key}>
+                  <td>任务状态</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>{jb.job_key}</td>
+                  <td>
+                    <span className="tag" style={
+                      jb.status === "success" ? {} :
+                      jb.status === "failed_precondition" ? { background: "#fff0f0" } :
+                      jb.status === "failed" ? { background: "#fff0f0" } :
+                      { background: "#f0f0f0" }
+                    }>{jb.status}{jb.error_code ? ` (${jb.error_code})` : ""}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {postMarketReadiness.missing_tables && postMarketReadiness.missing_tables.length > 0 && (
+            <p className="workspace-note" style={{ color: "#c00" }}>
+              缺失表: {postMarketReadiness.missing_tables.join(", ")}。请先执行"生成动态复盘数据"或全量重建。
+            </p>
+          )}
+          {postMarketReadiness.status === "ready" && (
+            <p className="workspace-note" style={{ color: "#080" }}>动态复盘数据已就绪，可以生成复盘报告。</p>
+          )}
+          {postMarketJobs?.summary?.has_failed && (
+            <p className="workspace-note" style={{ color: "#c00" }}>存在失败任务，请检查日志后重试。</p>
+          )}
+        </div>
+      )}
       {!loading && !error && (payload || dailyReview) && (
         <>
           <main className="workspace-layout single">

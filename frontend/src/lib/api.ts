@@ -256,6 +256,82 @@ export interface DailyReviewView {
   diagnostics?: Record<string, unknown>;
 }
 
+// ── P1-6: PostMarket readiness / jobs status ──
+
+export interface PostMarketReadinessView {
+  trade_date: string;
+  status: "ready" | "failed_precondition" | string;
+  error_code?: string;
+  missing_tables?: string[];
+  skipped_tables?: Array<{ table: string; reason?: string }>;
+  base_tables?: Record<string, number>;
+  derived_tables?: Record<string, number>;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface PostMarketJobStatusItem {
+  job_key: string;
+  status: string;
+  started_at?: string | null;
+  finished_at?: string | null;
+  error_code?: string | null;
+  error_message?: string | null;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface PostMarketJobsStatusView {
+  trade_date: string;
+  items: PostMarketJobStatusItem[];
+  summary?: {
+    has_running?: boolean;
+    has_failed?: boolean;
+    all_success?: boolean;
+    latest_status?: string;
+  };
+}
+
+export async function fetchPostMarketReadiness(date: string): Promise<PostMarketReadinessView> {
+  return fetchJsonWithTimeout<PostMarketReadinessView>(
+    `/api/v2/post-market/derived-data/readiness?date=${encodeURIComponent(date)}`,
+    undefined,
+    15000,
+  );
+}
+
+export async function fetchPostMarketJobsStatus(date: string): Promise<PostMarketJobsStatusView> {
+  return fetchJsonWithTimeout<PostMarketJobsStatusView>(
+    `/api/v2/post-market/jobs/status?date=${encodeURIComponent(date)}`,
+    undefined,
+    15000,
+  );
+}
+
+export async function generatePostMarketDerivedData(date: string): Promise<Record<string, unknown>> {
+  return fetchJsonWithTimeout<Record<string, unknown>>(
+    `/api/v2/post-market/derived-data/generate`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ trade_date: date }),
+    },
+    30000,
+  );
+}
+
+export async function generatePostMarketRecap(date: string): Promise<Record<string, unknown>> {
+  return fetchJsonWithTimeout<Record<string, unknown>>(
+    `/api/v2/post-market/recap/generate`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ trade_date: date }),
+    },
+    60000,
+  );
+}
+
+// ── DailyReview ──
+
 export async function fetchDailyReview(date: string): Promise<DailyReviewView> {
   return fetchJsonWithTimeout<DailyReviewView>(
     `/api/v2/daily-review?date=${encodeURIComponent(date)}`,
