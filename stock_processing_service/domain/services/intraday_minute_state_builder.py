@@ -20,6 +20,47 @@ logger = logging.getLogger("sps.intraday_minute_state")
 
 TZ_CN = timezone(timedelta(hours=8))
 
+# ── VWAP 单位归一 ──
+
+
+def calc_vwap(amount_delta: float, vol_delta: float, current: float) -> tuple[float, str, dict, bool]:
+    """计算 VWAP，尝试多种单位模式，选择最接近 current 的。
+
+    A 股 vol 常见是"手" (1手=100股)，amount 是"元"。
+    VWAP = amount / (vol × 100) 是最常见的正确公式。
+
+    Returns: (vwap, unit_mode, candidates_dict, is_suspect)
+    """
+    if vol_delta <= 0 or amount_delta <= 0:
+        return current, "fallback_no_volume", {"raw": 0.0}, True
+
+    candidates = {
+        "vol_hand": amount_delta / (vol_delta * 100),       # vol=手 → 股数=vol×100
+        "raw": amount_delta / vol_delta,                     # vol 直接是股数
+        "vol_hand_amount_wan": amount_delta * 10000 / (vol_delta * 100),  # amount=万元
+        "raw_amount_wan": amount_delta * 10000 / vol_delta,
+    }
+
+    # 选偏离最小的
+    best_mode = "raw"
+    best_vwap = candidates["raw"]
+    best_dev = abs(best_vwap - current) / current if current > 0 else 999
+
+    for mode, vwap in candidates.items():
+        if current > 0 and vwap > 0:
+            dev = abs(vwap - current) / current
+            if dev < best_dev:
+                best_dev = dev
+                best_mode = mode
+                best_vwap = vwap
+
+    is_suspect = best_dev > 0.20  # 偏离 >20% = 可疑
+    if is_suspect:
+        best_vwap = current
+        best_mode = f"fallback_current({best_mode}_dev={best_dev:.1%})"
+
+    return round(best_vwap, 4), best_mode, {k: round(v, 4) for k, v in candidates.items()}, is_suspect
+
 
 @dataclass
 class MinuteBar:
@@ -178,13 +219,21 @@ class IntradayMinuteStateBuilder:
             name = str(r["stock_name_val"] or "")
 
             prev = prev_by_stock.get(sid, {})
-            amt_delta = max(0, amt - prev.get("amount", amt))
-            vol_delta = max(0, vol - prev.get("vol", vol))
+            # delta (首根分钟: fallback to current)
+            is_first_minute = sid not in prev_by_stock
+            if is_first_minute:
+                amt_delta = 0.0
+                vol_delta = 0.0
+                delta_mode = "first_minute_fallback"
+            else:
+                amt_delta = max(0.0, amt - prev.get("amount", amt))
+                vol_delta = max(0.0, vol - prev.get("vol", vol))
+                delta_mode = "cumulative_diff"
 
-            # VWAP (raw — 单位待确认)
-            vwap_val = amt_delta / vol_delta if vol_delta > 0 else current
-
-            # minute_return = 当前分钟涨跌
+            # VWAP (单位归一)
+            vwap_val, vwap_mode, vwap_candidates, vwap_suspect = calc_vwap(
+                amt_delta, vol_delta, current,
+            )
             prev_close = prev.get("close", op)
             min_ret = (cl - prev_close) / prev_close if prev_close > 0 else 0
 
@@ -220,7 +269,11 @@ class IntradayMinuteStateBuilder:
                 raw_json={
                     "raw_amount": amt, "raw_vol": vol,
                     "amount_delta": amt_delta, "vol_delta": vol_delta,
-                    "vwap_unit_checked": False,
+                    "vwap_unit_mode": vwap_mode,
+                    "vwap_unit_checked": True,
+                    "vwap_unit_suspect": vwap_suspect,
+                    "vwap_candidates": vwap_candidates,
+                    "delta_mode": delta_mode,
                 },
             ))
 
