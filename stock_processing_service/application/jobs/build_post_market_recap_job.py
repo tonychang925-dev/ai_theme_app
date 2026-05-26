@@ -213,12 +213,12 @@ class BuildPostMarketRecapJob:
                 status="skipped_idempotent",
                 batch_id=batch_id,
                 trace_id=trace_id,
-
-        # P1-3: mark running
-        await self._mark_job_status(trade_date, "post_market_recap_generate", "running")
                 warnings=["idempotency_key_already_completed"],
                 metrics={"job_key": job_key},
             )
+
+        # P1-3: mark running
+        await self._mark_job_status(trade_date, "post_market_recap_generate", "running")
 
         # ── Layer A/B 前置（新链自闭环）──
         # 当 collection 任务已通过 Step2 (recap.prerequisites) 完成时，跳过重复执行。
@@ -849,9 +849,7 @@ class BuildPostMarketRecapJob:
 
     async def _check_post_market_readiness(self, trade_date: date) -> dict[str, Any]:
         """P1: 委托 PostMarketReadinessService 检查 5 张核心表。"""
-        logger = logging.getLogger(__name__)
-
-from stock_processing_service.application.services.post_market_readiness_service import (
+        from stock_processing_service.application.services.post_market_readiness_service import (
             PostMarketReadinessService,
         )
 
