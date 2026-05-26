@@ -64,6 +64,10 @@ class PostMarketDerivedDataGenerateUseCase:
         self._builders["money_flow_enhanced_build"] = _MoneyFlowEnhancedBuilder(
             pool=self._pool, project_root=project_root)
 
+    def register_strong_stock_watch_build(self) -> None:
+        self._builders["strong_stock_watch_build"] = _StrongStockWatchBuilder(
+            pool=self._pool, db_manager=self._db_manager)
+
     async def execute(
         self, trade_date_val: date, force: bool = False, dry_run: bool = False,
     ) -> DerivedDataResult:
@@ -77,7 +81,7 @@ class PostMarketDerivedDataGenerateUseCase:
         jss = PostMarketJobStatusService(pool=self._pool)
         rs = PostMarketReadinessService(pool=self._pool)
 
-        await jss.mark_finished(trade_date_val, "post_market_derived_data", "running")
+        await jss.mark_running(trade_date_val, "post_market_derived_data")
         before = await rs.check(trade_date_val)
         before_dict = before.to_dict()
 
@@ -94,7 +98,7 @@ class PostMarketDerivedDataGenerateUseCase:
                     "message": f"builder not registered for {job_key}"})
                 continue
 
-            await jss.mark_finished(trade_date_val, job_key, "running")
+            await jss.mark_running(trade_date_val, job_key)
             try:
                 sub_result = await builder.run(trade_date_val)
                 sub_status = sub_result.get("status", "failed")
@@ -362,3 +366,61 @@ class _MoneyFlowEnhancedBuilder:
             return {"job_key": "money_flow_enhanced_build", "status": "success", "affected_rows": row_count}
         return {"job_key": "money_flow_enhanced_build", "status": "failed_no_rows",
                 "affected_rows": 0, "error": f"exit={proc.returncode}"}
+
+
+class _StrongStockWatchBuilder:
+    """P2-5: strong_stock_watch_build — 调用 BuildStrongStockTrackingUseCase。"""
+
+    def __init__(self, pool=None, db_manager=None):
+        self._pool = pool
+        self._db_manager = db_manager
+
+    async def run(self, trade_date: date) -> dict[str, Any]:
+        if self._db_manager is None:
+            return {"job_key": "strong_stock_watch_build", "status": "failed_precondition",
+                    "error": "no_db_manager"}
+
+        # Precondition: money_flow must exist
+        mf_count = 0
+        if self._pool:
+            async with self._pool.acquire() as conn:
+                r = await conn.fetchrow(
+                    "SELECT COUNT(*) AS cnt FROM money_flow_enhanced WHERE trade_date = $1::date", trade_date)
+                mf_count = int(r["cnt"]) if r else 0
+        if mf_count == 0:
+            return {"job_key": "strong_stock_watch_build", "status": "failed_precondition",
+                    "error_code": "STRONG_STOCK_INPUT_MONEY_FLOW_EMPTY",
+                    "affected_rows": 0, "error": "money_flow_enhanced is empty"}
+
+        try:
+            from stock_processing_service.application.use_cases.build_strong_stock_tracking import (
+                BuildStrongStockTrackingUseCase,
+            )
+            uc = BuildStrongStockTrackingUseCase(
+                read_ports=self._db_manager, write_ports=self._db_manager)
+            result = await uc.execute(trade_date=trade_date, window_days=7, lookback_days=8)
+        except Exception as exc:
+            return {"job_key": "strong_stock_watch_build", "status": "failed",
+                    "affected_rows": 0, "error": str(exc)[:200]}
+
+        row_count = 0
+        if self._pool:
+            async with self._pool.acquire() as conn:
+                r = await conn.fetchrow(
+                    "SELECT COUNT(*) AS cnt FROM strong_stock_watch_history WHERE trade_date = $1::date", trade_date)
+                row_count = int(r["cnt"]) if r else 0
+
+        metrics = result.metrics or {}
+        diag = {
+            "candidate_count": metrics.get("candidate_count", 0),
+            "promote_count": metrics.get("promote_count", 0),
+            "prune_count": metrics.get("prune_count", 0),
+            "history_written": metrics.get("history_written", 0),
+            "pool_written": metrics.get("pool_written", 0),
+        }
+
+        if row_count > 0:
+            return {"job_key": "strong_stock_watch_build", "status": "success",
+                    "affected_rows": row_count, "diagnostics": diag}
+        return {"job_key": "strong_stock_watch_build", "status": "failed_no_rows",
+                "affected_rows": 0, "diagnostics": diag, "error": "strong_stock_watch_history rows=0"}
