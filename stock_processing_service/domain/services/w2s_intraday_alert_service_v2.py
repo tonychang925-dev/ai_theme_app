@@ -103,8 +103,10 @@ class W2SIntradayAlertServiceV2:
         breakdown: dict[str, float] = {}
 
         vwap_val = float(state.get("vwap") or 0)
-        hist_5 = history[:5] if len(history) >= 5 else history
-        hist_3 = history[:3] if len(history) >= 3 else history
+        # 强制按 minute_ts 倒序 (最新在前)
+        history_sorted = sorted(history, key=lambda x: str(x.get("minute_ts", "")), reverse=True)
+        hist_5 = history_sorted[:5] if len(history_sorted) >= 5 else history_sorted
+        hist_3 = history_sorted[:3] if len(history_sorted) >= 3 else history_sorted
 
         # ── 1. early_turn (0-35): 刚站上 VWAP ──
         above_count = sum(1 for h in hist_5 if h.get("above_vwap"))
@@ -148,21 +150,22 @@ class W2SIntradayAlertServiceV2:
 
         # ── 2. relative_turn (0-25): 相对大盘转强 ──
         rel_now = float(state.get("relative_strength_vs_index") or 0)
-        rel_slope = 0.0
+        rel_slope_5m = 0.0
         rel_cross_zero = False
         if len(hist_5) >= 2:
-            rel_prev = [float(h.get("relative_strength_vs_index") or 0) for h in hist_5]
-            if len(rel_prev) >= 2:
-                rel_slope = rel_prev[0] - rel_prev[1]
-            rel_cross_zero = any(r < 0 for r in rel_prev[1:]) and rel_prev[0] > 0
+            rel_values = [float(h.get("relative_strength_vs_index") or 0) for h in hist_5]
+            # 5分钟斜率: 最新 - 最旧
+            rel_slope_5m = rel_values[0] - rel_values[-1]
+            # 由负转正: 过去分钟中有负值 且 当前>0
+            rel_cross_zero = any(r < 0 for r in rel_values[1:]) and rel_values[0] > 0
 
         rel_score = 0.0
         if rel_cross_zero:
             rel_score = W_REL_TURN
             evidence.append(f"rel_cross_zero→{rel_score:.0f}")
-        elif rel_slope > 0.3:
+        elif rel_slope_5m > 0.3:
             rel_score = W_REL_TURN * 0.8
-            evidence.append(f"rel_improving(slope={rel_slope:.2f})→{rel_score:.0f}")
+            evidence.append(f"rel_improving(slope_5m={rel_slope_5m:.2f})→{rel_score:.0f}")
         elif rel_now > 0:
             rel_score = W_REL_TURN * 0.4
             evidence.append(f"rel_positive→{rel_score:.0f}")
@@ -251,6 +254,17 @@ class W2SIntradayAlertServiceV2:
             level = "observe"
 
         evidence.append(f"final_score={final_score:.1f} level={level}")
+
+        # 透传所有诊断字段到 breakdown
+        breakdown["above_vwap_ratio_5m"] = round(above_ratio, 2)
+        breakdown["above_vwap_cross_up"] = cross_up
+        breakdown["relative_strength_slope_5m"] = round(rel_slope_5m, 3)
+        breakdown["relative_strength_cross_zero"] = rel_cross_zero
+        breakdown["amount_acceleration"] = amt_accel
+        breakdown["price_momentum_3m"] = round(price_mom_3m, 3)
+        breakdown["distance_to_vwap_pct"] = round(dist_vwap, 2)
+        breakdown["price_position_30m"] = round(price_pos_30m, 2)
+
         return round(final_score, 1), level, breakdown, evidence
 
     # ── 主流程 (复用 v1 数据加载) ──
@@ -288,18 +302,13 @@ class W2SIntradayAlertServiceV2:
 
             level_counts[level] = level_counts.get(level, 0) + 1
 
-            hist_5 = histories.get(sid, [])[:5]
-            above_count = sum(1 for h in hist_5 if h.get("above_vwap"))
-            above_ratio = above_count / len(hist_5) if hist_5 else 0
-
-            cross_up = False
-            if len(hist_5) >= 2:
-                prev_above = sum(1 for h in hist_5[1:3] if h.get("above_vwap"))
-                cross_up = not prev_above and hist_5[0].get("above_vwap", False) if hist_5 else False
+            # observe 不推 Redis (仅 dry-run/日志)
+            if level == "observe":
+                continue
 
             vwap_val = float(state.get("vwap") or 0)
-            dist_vwap = abs(current - vwap_val) / current * 100 if current > 0 else 0
 
+            # 从 breakdown 读取诊断字段
             alerts.append(W2SIntradayAlertV2(
                 trade_date=trade_date,
                 candidate_trade_date=str(r.get("candidate_trade_date") or "")[:10],
@@ -313,15 +322,15 @@ class W2SIntradayAlertServiceV2:
                 confirm_score=float(r.get("confirm_score") or 0),
                 current=current,
                 vwap=vwap_val,
-                above_vwap_ratio_5m=round(above_ratio, 2),
-                above_vwap_cross_up=cross_up,
-                distance_to_vwap_pct=round(dist_vwap, 2),
+                above_vwap_ratio_5m=round(breakdown.get("above_vwap_ratio_5m", 0), 2),
+                above_vwap_cross_up=bool(breakdown.get("above_vwap_cross_up", False)),
+                distance_to_vwap_pct=round(breakdown.get("distance_to_vwap_pct", 0), 2),
                 relative_strength_vs_index=float(state.get("relative_strength_vs_index") or 0),
-                relative_strength_slope_5m=0.0,
-                relative_strength_cross_zero=False,
+                relative_strength_slope_5m=round(breakdown.get("relative_strength_slope_5m", 0), 3),
+                relative_strength_cross_zero=bool(breakdown.get("relative_strength_cross_zero", False)),
                 signal_price_position_30m=round(breakdown.get("price_position_30m", 0.5), 2),
-                amount_acceleration=breakdown.get("volume_confirm", 0) > 5,
-                price_momentum_3m=0.0,
+                amount_acceleration=bool(breakdown.get("amount_acceleration", False)),
+                price_momentum_3m=round(breakdown.get("price_momentum_3m", 0), 3),
                 platform_break_30m=bool(state.get("break_platform_30m")),
                 support_state="above_support",
                 v2_score=score,

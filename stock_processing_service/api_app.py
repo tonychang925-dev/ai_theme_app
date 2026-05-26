@@ -1918,7 +1918,42 @@ async def get_post_market_readiness(date: str = Query(..., description="YYYY-MM-
     pool = getattr(pool, "pool", None) if pool else None
     service = PostMarketReadinessService(pool=pool)
     result = await service.check(d)
+
+    # P1-3: 写入 post_market_derived_readiness 状态
+    try:
+        from stock_processing_service.application.services.post_market_job_status_service import (
+            PostMarketJobStatusService,
+        )
+        jss = PostMarketJobStatusService(pool=pool)
+        await jss.mark_finished(
+            trade_date_val=d,
+            job_key="post_market_derived_readiness",
+            status="success" if result.status == "ready" else "failed_precondition",
+            error_code=result.error_code or None,
+            diagnostics={"readiness": result.to_dict()},
+        )
+    except Exception as exc:
+        logger.warning("failed to write job status: %s", exc)
+
     return result.to_dict()
+
+
+@app.get("/api/v1/post-market/jobs/status")
+async def get_post_market_jobs_status(date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
+    """查询盘后复盘各阶段任务状态。"""
+    from datetime import date as _date
+    from stock_processing_service.application.services.post_market_job_status_service import (
+        PostMarketJobStatusService,
+    )
+    try:
+        d = _date.fromisoformat(date)
+    except ValueError:
+        return {"status": "error", "error_code": "INVALID_DATE", "message": f"invalid date: {date}"}
+
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+    jss = PostMarketJobStatusService(pool=pool)
+    return await jss.summary_by_date(d)
 
 
 # ── P1: DailyReview fast generate (read_model_only) ──

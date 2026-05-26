@@ -351,6 +351,15 @@ async def get_post_market_readiness(date: str = Query(..., description="YYYY-MM-
     )
 
 
+@router.get("/post-market/jobs/status")
+async def get_post_market_jobs_status(date: str = Query(..., description="YYYY-MM-DD")) -> dict:
+    """查询盘后复盘各阶段任务状态。BFF 代理 → SPS。"""
+    return await _proxy_stock_processing_json(
+        "/api/v1/post-market/jobs/status",
+        {"date": date},
+    )
+
+
 @router.get("/daily-review")
 async def daily_review(date: str = Query(..., description="YYYY-MM-DD")) -> dict:
     return await _proxy_stock_processing_json(

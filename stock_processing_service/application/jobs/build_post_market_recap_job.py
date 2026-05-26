@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 import os
 from dataclasses import asdict
 from datetime import date, datetime, timezone
@@ -212,6 +213,9 @@ class BuildPostMarketRecapJob:
                 status="skipped_idempotent",
                 batch_id=batch_id,
                 trace_id=trace_id,
+
+        # P1-3: mark running
+        await self._mark_job_status(trade_date, "post_market_recap_generate", "running")
                 warnings=["idempotency_key_already_completed"],
                 metrics={"job_key": job_key},
             )
@@ -522,6 +526,9 @@ class BuildPostMarketRecapJob:
         readiness = await self._check_post_market_readiness(trade_date)
         recap_doc.setdefault("diagnostics", {})["readiness"] = readiness
         if readiness["status"] != "ready":
+            await self._mark_job_status(trade_date, "post_market_recap_generate", "failed_precondition",
+                error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
+                diagnostics={"readiness": readiness})
             await self._idempotency_port.mark_job_completed(
                 job_key,
                 {
@@ -562,6 +569,8 @@ class BuildPostMarketRecapJob:
         )
 
         affected = await self._write_port.upsert_post_market_recap_snapshot(snapshot)
+        await self._mark_job_status(trade_date, "post_market_recap_generate", "success",
+            diagnostics={"affected_rows": affected, "snapshot_version": snapshot_version})
         # history already written in Step 7e above; strong_watch_history_written tracks the count
 
         if self._cache_port is not None:
@@ -807,9 +816,42 @@ class BuildPostMarketRecapJob:
 
     MAX_THEME_REVIEWS = 20
 
+    async def _mark_job_status(
+        self,
+        trade_date_val: date,
+        job_key: str,
+        status: str,
+        error_code: str | None = None,
+        diagnostics: dict[str, Any] | None = None,
+    ) -> None:
+        """P1-3: 写入 post_market_job_status 状态。不影响主链路。"""
+        try:
+            from stock_processing_service.application.services.post_market_job_status_service import (
+                PostMarketJobStatusService,
+            )
+            pool = getattr(self._read_port, "_pool", None)
+            if pool is None:
+                facade = getattr(self._read_port, "_db", None)
+                db_client = getattr(facade, "_db", None) if facade else None
+                pool = getattr(db_client, "pool", None) if db_client else None
+            if pool is None:
+                return
+            jss = PostMarketJobStatusService(pool=pool)
+            await jss.mark_finished(
+                trade_date_val=trade_date_val,
+                job_key=job_key,
+                status=status,
+                error_code=error_code,
+                diagnostics=diagnostics,
+            )
+        except Exception:
+            pass
+
     async def _check_post_market_readiness(self, trade_date: date) -> dict[str, Any]:
         """P1: 委托 PostMarketReadinessService 检查 5 张核心表。"""
-        from stock_processing_service.application.services.post_market_readiness_service import (
+        logger = logging.getLogger(__name__)
+
+from stock_processing_service.application.services.post_market_readiness_service import (
             PostMarketReadinessService,
         )
 
