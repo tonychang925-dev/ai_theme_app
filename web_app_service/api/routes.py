@@ -1240,7 +1240,7 @@ async def intel_stream(
 
 
 @router.get("/realtime/kline-alerts/stream")
-async def kline_alerts_stream(request: Request, last_id: str = Query(default="0")) -> StreamingResponse:
+async def kline_alerts_stream(request: Request, last_id: str = Query(default="0-0")) -> StreamingResponse:
     """SSE 代理: K线支撑位告警 → stock_processing_service."""
     url = f"{STOCK_PROCESSING_BASE_URL}/api/v1/kline-alerts/stream?last_id={last_id}"
 

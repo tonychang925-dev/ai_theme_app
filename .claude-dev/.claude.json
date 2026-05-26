@@ -34,7 +34,7 @@
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 535,
+  "promptQueueUseCount": 545,
   "cachedGrowthBookFeatures": {
     "tengu_mcp_elicitation": true,
     "tengu_pewter_brook": false,
@@ -584,6 +584,6 @@
   "officialMarketplaceAutoInstalled": true,
   "showSpinnerTree": false,
   "feedbackSurveyState": {
-    "lastShownTime": 1779287133703
+    "lastShownTime": 1779781074722
   }
 }

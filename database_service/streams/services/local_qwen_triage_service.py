@@ -447,6 +447,9 @@ class LocalQwenNewsTriageService:
             "议长", "总统", "总理", "部长", "代表团",
             "致贺信", "出席会议", "全国人大常委会",
             "常委会会议", "海峡论坛", "全国政协",
+            # Phase 4E fix: diplomatic/foreign affairs
+            "外长", "外交部", "外交部发言人", "大使", "大使馆", "双边关系",
+            "国事访问", "正式访问", "联合声明", "联合公报",
         )
         _routine_discipline_terms = (
             "中央纪委", "国家监委", "违规吃喝", "典型问题",

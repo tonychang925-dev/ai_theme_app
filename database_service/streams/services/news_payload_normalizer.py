@@ -79,11 +79,11 @@ def normalize_news_payload(
         publish_date = now.date().isoformat()
 
     publish_time_text = str(publish_time or now.strftime("%H:%M:%S"))
-    external_id = _pick(row, "external_id", "news_id", "id")
-
-    if not external_id:
-        raw = f"{title}|{content}|{publish_date}|{publish_time_text}"
-        external_id = f"{source_channel}:" + hashlib.sha1(raw.encode()).hexdigest()[:24]
+    # Phase 4E fix: always use content-based hash for external_id (cross-source dedup).
+    # Same title+content → same news_id regardless of source_channel,
+    # so DB-level ON CONFLICT (news_id) DO NOTHING catches cross-source duplicates too.
+    raw = f"{title}|{content}"
+    external_id = hashlib.sha1(raw.encode()).hexdigest()[:32]
 
     payload: dict[str, str] = {
         "news_id": str(external_id),
