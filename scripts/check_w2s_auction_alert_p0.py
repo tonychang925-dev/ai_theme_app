@@ -31,27 +31,29 @@ async def main():
     result = await service.build_alerts(args.candidate_date)
 
     print(f"Candidates: {result.total_candidates}")
-    print(f"Level A: {result.level_a_count}  B: {result.level_b_count}  C: {result.level_c_count}")
-    print(f"Alerts (A+B): {len(result.alerts)}")
+    print(f"Level A: {result.level_a_count}  B: {result.level_b_count}  C: {result.level_c_count}  X: {result.level_x_count}")
+    print(f"Alerts (A+B): {len(result.alerts)}  Observes (C): {len(result.observes)}")
 
-    for a in result.alerts[:10]:
-        print(f"\n  {a.stock_id} {a.stock_name} [{a.confirm_level}] score={a.confirm_score}")
+    for a in result.alerts[:5]:
+        print(f"\n  [{a.confirm_level}] {a.stock_id} {a.stock_name} score={a.confirm_score}")
         print(f"  type={a.candidate_type} weak={a.weak_type} theme={a.theme_name}")
-        print(f"  open={a.auction_open_pct}% carry={a.carry_ratio} stability={a.price_path_stability_score} last_min={a.last_minute_ratio}")
-        print(f"  shapes={a.shape_features}")
+        print(f"  open={a.auction_open_pct}% carry={a.carry_ratio} stability={a.price_path_stability_score}")
+        print(f"  evidence={a.evidence_rules[:5]} reject={a.reject_reason_code} source={a.source}")
 
     if args.dry_run:
-        print("\n[dry-run] 未推送 Redis")
-    elif result.alerts:
-        pusher = W2SAlertRedisPusher()
-        pushed = await pusher.push_alerts(result.alerts)
-        print(f"\n✅ Pushed {pushed}/{len(result.alerts)} to stream:w2s:alerts")
-        await pusher.close()
+        print(f"\n[dry-run] 未推送 Redis ({len(result.alerts)} alerts + {len(result.observes)} observes)")
     else:
-        print("\n⚠️  无 A/B 级告警（竞价数据可能缺失）")
+        pusher = W2SAlertRedisPusher()
+        total_pushed = 0
+        if result.alerts:
+            total_pushed += await pusher.push_alerts(result.alerts)
+        if result.observes:
+            total_pushed += await pusher.push_alerts(result.observes)
+        print(f"\n✅ Pushed {total_pushed} to stream:w2s:alerts ({len(result.alerts)} alerts + {len(result.observes)} observes)")
+        await pusher.close()
 
     await service.close()
-    print(f"\n{'✅' if result.alerts else '⚠️ '} P1-I-1 P0 done")
+    print(f"\n{'✅' if result.total_candidates > 0 else '⚠️ '} P1-I-1a P0 done")
 
 
 if __name__ == "__main__":

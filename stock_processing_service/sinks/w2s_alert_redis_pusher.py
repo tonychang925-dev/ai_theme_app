@@ -79,7 +79,7 @@ class W2SAlertRedisPusher:
 
             try:
                 data = {
-                    "item_type": "w2s_auction_alert",
+                    "item_type": "w2s_auction_alert" if alert.severity == "important" else "w2s_auction_observe",
                     "alert_stage": "auction_confirm",
                     "trade_date": alert.trade_date,
                     "candidate_trade_date": alert.candidate_trade_date,
@@ -96,6 +96,10 @@ class W2SAlertRedisPusher:
                     "last_minute_ratio": str(alert.last_minute_ratio),
                     "price_path_stability_score": str(alert.price_path_stability_score),
                     "shape_features": json.dumps(alert.shape_features, ensure_ascii=False),
+                    "evidence_rules": json.dumps(alert.evidence_rules, ensure_ascii=False),
+                    "reject_reason_code": alert.reject_reason_code,
+                    "data_status": alert.data_status,
+                    "source": alert.source,
                     "severity": alert.severity,
                     "generated_at": alert.generated_at,
                 }

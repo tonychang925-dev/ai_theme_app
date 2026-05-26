@@ -2464,3 +2464,9 @@
 {"display":"已重启服务，请核查去重功能是否正常","pastedContents":{},"timestamp":1779781441003,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
 {"display":"继续","pastedContents":{},"timestamp":1779781954214,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
 {"display":"请核查低质量新闻过滤是否运行正常，现在采集到了一些公司公告、如“农村公路”题材","pastedContents":{},"timestamp":1779782357134,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
+{"display":"[Pasted text #1 +172 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"6b7cefeffd85c65c"}},"timestamp":1779782740844,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"关于A/B/C层逻辑，绝不允许自己造逻辑，必须严格遵守设计文档，复用现在的已有成果！！","pastedContents":{},"timestamp":1779782799210,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"请阅读“个人投资助理-项目架构设计-第三阶段.md”","pastedContents":{},"timestamp":1779782881421,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"已重启服务，请核查去重功能是否正常","pastedContents":{},"timestamp":1779782941108,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
+{"display":"请核查在新闻结构化之前，LLM是否有做低质量事件的过滤，比如deepseek的提示词是否有做低质量事件的过滤判别词","pastedContents":{},"timestamp":1779783151849,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
+{"display":"LLM在新闻结构化输出之前，必须先过滤掉低质量事件，只对高质量事件做结构化提取，否则毫无意义！","pastedContents":{},"timestamp":1779783316181,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
