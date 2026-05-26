@@ -557,6 +557,7 @@ class BuildPostMarketRecapJob:
         _coverage = recap_doc["diagnostics"]["coverage"]
 
         recap_doc["capital_reviews"] = self._build_capital_reviews(report_context.get("dragon_tiger") or [])
+        recap_doc["strong_stock_reviews"] = await self._build_strong_stock_reviews(trade_date)
         recap_doc["report"] = self._report_builder.build(recap_doc)
 
         snapshot = PostMarketRecapSnapshot(
@@ -1049,6 +1050,95 @@ class BuildPostMarketRecapJob:
             "missing_cycle_subject_keys": missing_sks,
             "snapshot_status": "partial" if missing_sks else "complete",
         }
+
+    @staticmethod
+    async def _build_strong_stock_reviews(self, trade_date: date) -> list[dict]:
+        """P3-5: 从 strong_stock_watch_history 生成结构化强势股分层。"""
+        pool = None
+        # Resolve pool from read_port
+        pool_direct = getattr(self._read_port, "_pool", None)
+        if pool_direct:
+            pool = pool_direct
+        else:
+            facade = getattr(self._read_port, "_db", None)
+            db_client = getattr(facade, "_db", None) if facade else None
+            pool = getattr(db_client, "pool", None) if db_client else None
+        if pool is None:
+            return []
+
+        sql = """
+        SELECT
+            h.stock_id,
+            h.stock_name,
+            h.subject_key,
+            h.theme_name,
+            h.watch_status,
+            COALESCE(h.watch_score, 0) AS watch_score,
+            h.support_type,
+            COALESCE(h.support_score, 0) AS support_score,
+            h.pool_entry_type,
+            h.cycle_state,
+            COALESCE(m.money_flow_tier, '') AS money_flow_tier,
+            COALESCE(m.role_enhanced, '') AS role_enhanced,
+            COALESCE(m.main_net_inflow, 0) AS main_net_inflow,
+            COALESCE(p.position_label, '') AS position_label,
+            COALESCE(x.pattern_labels, '[]'::jsonb) AS pattern_labels,
+            COALESCE(s.pct_chg, 0) AS pct_chg,
+            COALESCE(s.turnover_rate, 0) AS turnover_rate,
+            COALESCE(s.volume_ratio, 0) AS volume_ratio
+        FROM strong_stock_watch_history h
+        LEFT JOIN money_flow_enhanced m
+          ON m.trade_date = h.trade_date
+         AND m.subject_key = h.subject_key
+         AND split_part(m.stock_id, '.', 1) = split_part(h.stock_id, '.', 1)
+        LEFT JOIN stock_position_judgement p
+          ON p.trade_date = h.trade_date
+         AND split_part(p.stock_id, '.', 1) = split_part(h.stock_id, '.', 1)
+        LEFT JOIN stock_pattern_judgement x
+          ON x.trade_date = h.trade_date
+         AND split_part(x.stock_id, '.', 1) = split_part(h.stock_id, '.', 1)
+        LEFT JOIN subject_stock_daily_snapshot s
+          ON s.trade_date = h.trade_date
+         AND s.subject_key = h.subject_key
+         AND split_part(s.stock_id, '.', 1) = split_part(h.stock_id, '.', 1)
+        WHERE h.trade_date = $1::date
+        ORDER BY h.watch_score DESC NULLS LAST
+        LIMIT 120
+        """
+        async with pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+
+        results: list[dict] = []
+        for r in rows:
+            pl = r["pattern_labels"]
+            if isinstance(pl, str):
+                try:
+                    import json as _json
+                    pl = _json.loads(pl)
+                except Exception:
+                    pl = []
+            results.append({
+                "stock_code": r["stock_id"],
+                "stock_name": r["stock_name"],
+                "subject_key": r["subject_key"],
+                "theme_name": r["theme_name"],
+                "role": r["pool_entry_type"] or r["cycle_state"] or "",
+                "watch_status": r["watch_status"],
+                "watch_score": float(r["watch_score"]) if r["watch_score"] else 0,
+                "strong_grade": "",
+                "support_type": r["support_type"] or "",
+                "support_score": float(r["support_score"]) if r["support_score"] else 0,
+                "money_flow_tier": r["money_flow_tier"],
+                "role_enhanced": r["role_enhanced"],
+                "main_net_inflow": float(r["main_net_inflow"]) if r["main_net_inflow"] else 0,
+                "pct_chg": float(r["pct_chg"]) if r["pct_chg"] else 0,
+                "turnover_rate": float(r["turnover_rate"]) if r["turnover_rate"] else 0,
+                "volume_ratio": float(r["volume_ratio"]) if r["volume_ratio"] else 0,
+                "position_label": r["position_label"],
+                "pattern_labels": pl if isinstance(pl, list) else [],
+                "rationale": "",
+            })
+        return results
 
     @staticmethod
     def _build_capital_reviews(dragon_tiger_rows: list[dict]) -> list[dict]:

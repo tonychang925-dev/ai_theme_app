@@ -1162,7 +1162,8 @@ export function RecapPage() {
                 </div>
               )}
 
-              {(sections.get("强势股分层") ?? sections.get("盘前重点盯盘个股") ?? []).length > 0 && (
+              {((sections.get("强势股分层") ?? sections.get("盘前重点盯盘个股") ?? []).length > 0 ||
+                (dailyReview?.strong_stock_reviews?.length ?? 0) > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">{effectiveReportType === "post_market" ? "强势股分层" : "盘前重点盯盘个股"}</span>
                   {effectiveReportType === "post_market" ? (
