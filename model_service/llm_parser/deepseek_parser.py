@@ -240,54 +240,37 @@ class DeepSeekParser(BaseLLMParser):
         return text[:limit].rstrip()
 
     def build_event_structuring_prompt(self, title: str, content: str) -> str:
-        return f"""你是一个新闻事件结构化抽取器。
-你的任务是把单条新闻文本抽取为结构化 JSON，用于后续 news_event 落库和题材匹配。
+        return f”””你是一个A股投资新闻质量过滤器+事件结构化抽取器。
 
-必须遵守以下要求：
+你的首要任务是判断这条新闻是否值得进入A股题材匹配管道：
+- 如果是低质量/无投资价值的新闻，直接输出 skip JSON，不做结构化。
+- 只有确认是高价值新闻时，才输出完整的结构化 JSON。
+
+【低质量新闻 — 直接 SKIP】满足以下任一条件即输出 skip：
+1. 涉外非A股：纯外国政治/外交/经济声明，与中国A股上市公司无直接关联（如”某国外长宣布***”、”某国联合声明”等）
+2. 地方政务无标的：地方政府的规划/政策发布，没有提及具体A股上市公司或行业
+3. 例行公告无催化：公司公告涉及股东减持/质押/解押/辞职/人事变动/担保/贷款/授信/股东大会决议/更正公告/会计差错，且不含重大订单/中标/并购/重组/技术突破
+4. 纯价格波动：仅描述股价涨跌/板块震荡/指数变化，无任何基本面催化剂
+5. 过短/无实质：内容少于30字，或仅为标题重复无正文
+6. 泛资讯无A股关联：天气灾害、体育赛事、娱乐八卦、纯国际新闻（与中国市场无关）
+
+【高价值新闻 — 完整结构化】确认不属于上述低质量类型后输出完整JSON。
+
+输出格式：
+- 低质量：{{“skip”:true,”reason”:”分类：简短理由（<=20字）”}}
+- 高质量：{{“skip”:false,”event_type”:”...”,”entities”:[...],...}}
+
+高质量事件要求：
 1. 只基于输入文本抽取，不得编造事实。
-2. 输出必须是合法 JSON 对象。
-3. 不要输出任何题材动作建议，不要输出旧架构中的事件分流字段或题材创建动作字段。
-4. event_type 尽量归一为简洁类型，如：政策、制裁、技术突破、会议论坛、行业观点、融资IPO、并购重组、产品发布、订单合作、市场预测、组织设立、产能扩张、事故冲突、其他。
-5. entities 只保留对题材匹配有用的实体，格式：
-   {{"name":"原文实体","type":"国家|公司|组织|产品|技术|人物|地点|行业","normalized":"归一化名称"}}
-6. summary 必须是简洁事件摘要，不超过60字。
-7. causal_claim 必须是短语数组，表达“事件 -> 影响链路 -> 潜在题材方向”，不得写长句。
-8. evidence_set 必须包含：
-   - tech_phrases
-   - normalized_terms
-   - evidence_spans
-   - core_concepts
-9. severity_score 范围 0~1。
-10. confidence 范围 0~1。
-11. source_weight 范围建议 0.5~1.5。
-12. timestamp 若可提取则输出 ISO8601 字符串，否则输出 null。
-13. 不要输出 markdown，不要输出解释。
-
-输出 JSON 格式：
-{{
-  "event_type": "技术突破",
-  "entities": [
-    {{"name":"美国","type":"国家","normalized":"美国"}}
-  ],
-  "summary": "事件摘要",
-  "causal_claim": ["短语1", "短语2"],
-  "evidence_set": {{
-    "tech_phrases": ["短语1"],
-    "normalized_terms": {{"美国": "美国"}},
-    "evidence_spans": [{{"text":"关键证据","start":0,"end":4}}],
-    "core_concepts": ["核心概念"]
-  }},
-  "severity_score": 0.8,
-  "confidence": 0.9,
-  "source_weight": 1.0,
-  "timestamp": "2026-02-28T10:00:05Z",
-  "impact_industries": ["行业1"],
-  "direction": "利好"
-}}
+2. event_type 归一化：政策、制裁、技术突破、会议论坛、行业观点、融资IPO、并购重组、产品发布、订单合作、市场预测、组织设立、产能扩张、事故冲突、其他
+3. entities 格式：{{“name”:”原文实体”,”type”:”国家|公司|组织|产品|技术|人物|地点|行业”,”normalized”:”归一化名称”}}
+4. summary <=60字。causal_claim 短语数组。confidence/severity_score 0~1。
+5. source_weight 0.5~1.5。timestamp 可为 null。
+6. 不输出 markdown/解释/题材动作建议/旧架构字段。
 
 新闻标题：{title}
 新闻内容：{content[:2000]}
-"""
+“””
 
     def _normalize_list(self, value: Any) -> List[str]:
         if value is None:
@@ -384,12 +367,17 @@ class DeepSeekParser(BaseLLMParser):
         return adapted
 
     async def parse_news(self, title: str, content: str) -> Optional[Dict[str, Any]]:
-        """按 P2.phase0 新 schema 解析新闻。"""
+        """按 P2.phase0 新 schema 解析新闻。低质量事件返回包含 skip_reason 的结果。"""
         prompt = self.build_event_structuring_prompt(title, content)
 
         try:
             result = await self.parse_content(prompt)
             if result and isinstance(result, dict):
+                # Phase 4E: check for LLM skip decision before structuring
+                if result.get("skip") is True:
+                    skip_reason = str(result.get("reason", "unknown"))[:80]
+                    self.logger.info("⏭️ LLM判定低质量事件，跳过结构化: %s", skip_reason)
+                    return {"status": "skipped", "skip": True, "reason": skip_reason}
                 adapted = self.adapt_structured_response(result, title, content)
                 self.logger.info(f"✅ 成功解析新闻，事件类型: {adapted.get('event_type')}")
                 return adapted
