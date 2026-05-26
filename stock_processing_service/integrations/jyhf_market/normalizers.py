@@ -5,7 +5,7 @@ import logging
 from datetime import date, datetime, timezone, timedelta
 
 from stock_processing_service.integrations.jyhf_market.schemas import (
-    JyhfIndexQuote, JyhfStockQuote, JyhfSubjectStockQuote,
+    JyhfIndexQuote, JyhfStockDailyBar, JyhfStockQuote, JyhfSubjectStockQuote,
 )
 
 logger = logging.getLogger("sps.jyhf_market.normalizers")
@@ -111,3 +111,113 @@ def normalize_subject_stock_quotes(raw: dict, subject_id: str) -> list[JyhfSubje
         except (IndexError, ValueError, TypeError):
             continue
     return results
+
+
+# ── P1-F: one-stock-daily normalizer ──
+
+
+def _normalize_stock_id(raw: str) -> str:
+    """Convert raw stock code to system format: 002795 → 002795.SZ."""
+    s = raw.strip().upper()
+    if "." in s:
+        return s
+    if len(s) == 6 and s.isdigit():
+        if s.startswith(("6", "9")):
+            return f"{s}.SH"
+        elif s.startswith(("0", "3")):
+            return f"{s}.SZ"
+        elif s.startswith(("4", "8")):
+            return f"{s}.BJ"
+        return f"{s}.SZ"
+    return s
+
+
+def _extract_raw_rows(raw: dict) -> list[dict]:
+    """Extract row list from raw API response, supporting multiple structures.
+
+    Handles:
+      - data.items (list of lists) + data.fields (column names) — JYHF format
+      - data.rows (list of dicts)
+      - data as a list directly
+    """
+    data = raw.get("data")
+    if not isinstance(data, dict):
+        return []
+    # Pattern 1: data.items (list of lists) + data.fields
+    items = data.get("items")
+    fields = data.get("fields")
+    if isinstance(items, list) and isinstance(fields, list):
+        rows = []
+        for item in items:
+            if isinstance(item, list):
+                row = {}
+                for i, fname in enumerate(fields):
+                    if i < len(item):
+                        row[fname] = item[i]
+                rows.append(row)
+        return rows
+    # Pattern 2: data.rows (list of dicts)
+    rows = data.get("rows") or data.get("data") or data.get("list")
+    if isinstance(rows, list):
+        return rows
+    return []
+
+
+def _parse_trade_date(raw_date: str) -> str:
+    """Extract YYYY-MM-DD from various trade_date formats."""
+    s = str(raw_date or "").strip()
+    if not s:
+        return ""
+    # Handle YYYYMMDD
+    if len(s) == 8 and s.isdigit():
+        return f"{s[:4]}-{s[4:6]}-{s[6:8]}"
+    # Handle YYYY-MM-DD or YYYY-MM-DDTHH:MM:SS
+    return s[:10] if len(s) >= 10 else s
+
+
+def normalize_stock_daily_bars(
+    raw: dict, stock_id: str, *, api_stock_id: str = "", days: int = 120,
+) -> list[JyhfStockDailyBar]:
+    """Normalize one-stock-daily response into JyhfStockDailyBar list.
+
+    Args:
+        raw: API response dict
+        stock_id: system format stock ID (e.g. 002795.SZ)
+        api_stock_id: API format stock ID (e.g. 002795)
+        days: take most recent N bars
+
+    Returns:
+        List of JyhfStockDailyBar sorted by trade_date ascending
+    """
+    rows = _extract_raw_rows(raw)
+    if not rows:
+        return []
+
+    bars: list[JyhfStockDailyBar] = []
+    for item in rows:
+        if not isinstance(item, dict):
+            continue
+        td = _parse_trade_date(item.get("trade_date") or item.get("ts_code") or "")
+        if not td:
+            continue
+        name = str(item.get("stock_name") or item.get("name") or "")
+        bars.append(JyhfStockDailyBar(
+            trade_date=td,
+            stock_id=stock_id,
+            api_stock_id=api_stock_id,
+            stock_name=name,
+            open=_safe_float(item.get("open")),
+            high=_safe_float(item.get("high")),
+            low=_safe_float(item.get("low")),
+            close=_safe_float(item.get("close")),
+            pre_close=_safe_float(item.get("pre_close")),
+            change=_safe_float(item.get("change")),
+            pct_chg=_safe_float(item.get("pct_chg")),
+            vol=_safe_float(item.get("vol")),
+            amount=_safe_float(item.get("amount")),
+            raw_json={k: str(v)[:200] for k, v in item.items()},
+        ))
+
+    # Sort by trade_date ascending, take the last `days` entries
+    bars.sort(key=lambda b: b.trade_date)
+    return bars[-days:] if len(bars) > days else bars

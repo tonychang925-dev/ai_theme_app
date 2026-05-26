@@ -2555,7 +2555,7 @@ async def get_strong_watch(
     include_removed: bool = Query(default=False),
     latest_per_stock: bool = Query(default=False),
     stock_id: str | None = Query(default=None),
-    limit: int = Query(default=5000, ge=1, le=5000),
+    limit: int = Query(default=200, ge=1, le=5000),
 ) -> dict[str, Any]:
     try:
         d = date.fromisoformat(trade_date)

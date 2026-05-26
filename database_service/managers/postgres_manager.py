@@ -1459,6 +1459,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         try:
             import json
 
+            news_id = event_data.get("news_id")
+            event_type = event_data.get("event_type")
+            # source_trace_id 用于幂等去重：同一 news_id + event_type 不会重复入库
+            source_trace_id = f"news_event:{news_id}:{event_type}" if news_id and event_type else None
+
             async with self.pool.acquire() as conn:
                 row = await conn.fetchrow(
                     """
@@ -1468,19 +1473,23 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         impact_industries,
                         direction,
                         confidence,
-                        summary
+                        summary,
+                        source_trace_id,
+                        event_time
                     )
                     VALUES (
-                        $1, $2, $3, $4, $5, $6
+                        $1, $2, $3, $4, $5, $6, $7, NOW()
                     )
+                    ON CONFLICT (source_trace_id) WHERE source_trace_id IS NOT NULL DO NOTHING
                     RETURNING id
                     """,
-                    event_data.get("news_id"),
-                    event_data.get("event_type"),
+                    news_id,
+                    event_type,
                     event_data.get("impact_industries") or [],
                     event_data.get("direction"),
                     event_data.get("confidence"),
-                    event_data.get("summary")
+                    event_data.get("summary"),
+                    source_trace_id,
                 )
                 return int(row["id"]) if row else None
         except Exception as e:
@@ -6740,14 +6749,17 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         return dict(row) if row else None
 
     async def get_new_chain_intel_recap(self, trade_date) -> List[Dict[str, Any]]:
-        """新链情报台适配器：盘后复盘快照 → recap 类情报项。"""
+        """新链情报台适配器：盘后复盘快照 → recap 类情报项。
+
+        性能优化：不读整个 32MB payload，只用 JSONB 路径提取 summary 所需字段。
+        """
         sql = """
         SELECT
             trade_date,
-            payload,
-            snapshot_version,
-            batch_id,
-            trace_id,
+            payload->'recap_doc'->>'candidate_count' AS candidate_count,
+            payload->'recap_doc'->>'strong_watch_input_count' AS strong_watch_input_count,
+            payload->'recap_doc'->'report'->'highlights' AS highlights,
+            payload->>'snapshot_version' AS snapshot_version,
             created_at
         FROM post_market_recap_snapshot
         WHERE trade_date = $1::date

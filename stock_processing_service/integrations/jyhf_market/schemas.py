@@ -58,3 +58,22 @@ class JyhfSubjectStockQuote:
     vol: float | None = None
     rank_no: int | None = None
     raw_json: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
+class JyhfStockDailyBar:
+    """P1-F: one-stock-daily 日线 OHLCV bar。"""
+    trade_date: str
+    stock_id: str            # 系统格式: 002795.SZ
+    api_stock_id: str = ""   # API 格式: 002795
+    stock_name: str = ""
+    open: float | None = None
+    high: float | None = None
+    low: float | None = None
+    close: float | None = None
+    pre_close: float | None = None
+    change: float | None = None
+    pct_chg: float | None = None
+    vol: float | None = None
+    amount: float | None = None
+    raw_json: dict[str, Any] = field(default_factory=dict)

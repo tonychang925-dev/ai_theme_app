@@ -2,7 +2,9 @@ import asyncio
 import json
 import logging
 import os
+from datetime import datetime, timezone, timedelta
 from typing import Any, AsyncIterator
+from zoneinfo import ZoneInfo
 
 import httpx
 from fastapi import APIRouter, HTTPException, Query, Request
@@ -587,6 +589,18 @@ async def collection_continue(payload: dict) -> dict:
     return await _proxy_stock_processing_post_json("/api/v1/collection/continue", payload)
 
 
+# ── 通用 SPS 代理（替代前端直连 /api/v1/* → :8090）──
+
+@router.get("/pre_market_brief")
+async def proxy_pre_market_brief(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict:
+    return await _proxy_stock_processing_json("/api/v1/pre_market_brief", {"trade_date": trade_date})
+
+
+@router.post("/pre_market_brief/publish-notion")
+async def proxy_pre_market_brief_publish(payload: dict) -> dict:
+    return await _proxy_stock_processing_post_json("/api/v1/pre_market_brief/publish-notion", payload)
+
+
 @router.get("/realtime/jyhf-cdp/status")
 async def jyhf_cdp_collector_status(request: Request):
     manager = request.app.state.cdp_manager
@@ -1058,8 +1072,11 @@ async def workspace_market_validation(
     subject_key: str | None = Query(default=None),
     stock_id: str | None = Query(default=None),
 ) -> dict:
-    strong_watch_payload = (await client.get_strong_watch(trade_date)).model_dump()
-    w2s_payload = (await client.get_w2s_candidates(trade_date)).model_dump()
+    import asyncio as _asyncio
+    sw_task = _asyncio.create_task(client.get_strong_watch(trade_date))
+    w2s_task = _asyncio.create_task(client.get_w2s_candidates(trade_date))
+    strong_watch_payload = (await sw_task).model_dump()
+    w2s_payload = (await w2s_task).model_dump()
     sw_stocks = list(strong_watch_payload.get("stocks") or [])
     w2s_candidates = list(w2s_payload.get("candidates") or [])
     stock_view = None

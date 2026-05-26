@@ -7,7 +7,11 @@ import {
   fetchNewChainRealtimeStatus,
   startNewChainRealtime,
   stopNewChainRealtime,
+  fetchJyhfAuctionStatus,
+  startJyhfAuctionCollector,
+  stopJyhfAuctionCollector,
   type JyhfCdpCollectorStatus,
+  type JyhfAuctionStatus,
   type NewChainRealtimeStatus,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
@@ -31,6 +35,9 @@ export function RealtimeCollectorPage() {
   const [jyhfStatus, setJyhfStatus] = useState<JyhfCdpCollectorStatus | null>(null);
   const [jyhfError, setJyhfError] = useState<string | null>(null);
   const [jyhfLogs, setJyhfLogs] = useState<string[]>([]);
+  const [auctionEnabled, setAuctionEnabled] = useState(true);
+  const [auctionStatus, setAuctionStatus] = useState<JyhfAuctionStatus | null>(null);
+  const [auctionBusy, setAuctionBusy] = useState(false);
   const [output, setOutput] = useState<string[]>([]);
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const initializedRef = useRef(false);
@@ -105,11 +112,13 @@ export function RealtimeCollectorPage() {
   useEffect(() => {
     refreshJyhfCdpStatus().catch(() => {});
     refreshJyhfCdpLogs().catch(() => {});
+    fetchJyhfAuctionStatus().then(setAuctionStatus).catch(() => {});
     const timer = window.setInterval(() => {
       refreshJyhfCdpStatus().catch((err) => {
         setJyhfError(err instanceof Error ? err.message : "JYHF-CDP 服务未连接");
       });
       refreshJyhfCdpLogs().catch(() => undefined);
+      fetchJyhfAuctionStatus().then(setAuctionStatus).catch(() => {});
     }, 8000);
     return () => window.clearInterval(timer);
   }, []);
@@ -178,6 +187,26 @@ export function RealtimeCollectorPage() {
     setJyhfBusy(true);
     setJyhfStatus(prev => ({ ...(prev ?? {} as JyhfCdpCollectorStatus), collector_running: false }));
     append("启动 JYHF DOM 采集器...");
+
+    // 竞价采集（独立线程，不阻塞 DOM 启动）
+    if (auctionEnabled) {
+      setAuctionBusy(true);
+      append("同时启动竞价采集...");
+      const now = new Date();
+      const td = now.toISOString().slice(0, 10);
+      const yesterday = new Date(now);
+      yesterday.setDate(yesterday.getDate() - 1);
+      const cd = yesterday.toISOString().slice(0, 10);
+      startJyhfAuctionCollector(td, cd).then((r) => {
+        setAuctionStatus(r);
+        setAuctionBusy(false);
+        append(`竞价采集: ok=${r.ok} state=${r.state} trade=${r.trade_date} candidate=${r.candidate_date}`);
+      }).catch((err) => {
+        setAuctionBusy(false);
+        append(`竞价采集启动失败: ${err instanceof Error ? err.message : String(err)}`);
+      });
+    }
+
     try {
       const result = await startJyhfCdpCollector();
       // Merge result into jyhfStatus immediately so UI reflects current state
@@ -257,6 +286,18 @@ export function RealtimeCollectorPage() {
     setJyhfBusy(true);
     setJyhfStatus(prev => ({ ...(prev ?? {} as JyhfCdpCollectorStatus), collector_running: true }));
     append("停止 JYHF DOM 采集器...");
+
+    // 同时停止竞价采集
+    if (auctionStatus?.running) {
+      append("同时停止竞价采集...");
+      stopJyhfAuctionCollector().then((r) => {
+        setAuctionStatus(r);
+        append(`竞价采集已停止: state=${r.state}`);
+      }).catch((err) => {
+        append(`竞价采集停止失败: ${err instanceof Error ? err.message : String(err)}`);
+      });
+    }
+
     try {
       const result = await stopJyhfCdpCollector();
       append(result.message);
@@ -340,8 +381,18 @@ export function RealtimeCollectorPage() {
         parts.push("── JYHF DOM 采集日志 (已停止，以下为历史记录) ──", ...jyhfLogs, "");
       }
     }
+    if (auctionEnabled && auctionStatus) {
+      parts.push(
+        `── JYHF 竞价采集 ──`,
+        `running: ${auctionStatus.running}  state: ${auctionStatus.state}`,
+        `trade_date: ${auctionStatus.trade_date ?? "-"}  candidate_date: ${auctionStatus.candidate_date ?? "-"}`,
+        `rounds: ${auctionStatus.rounds}  points: ${auctionStatus.points}`,
+        auctionStatus.last_error ? `last_error: ${auctionStatus.last_error}` : "",
+        "",
+      );
+    }
     return [...output, ...parts];
-  }, [output, jyhfLogs, stackStatus, jyhfCollectorRunning, jyhfStatus?.service_running]);
+  }, [output, jyhfLogs, stackStatus, jyhfCollectorRunning, jyhfStatus?.service_running, auctionEnabled, auctionStatus]);
 
   return (
     <div className="workspace-page">
@@ -481,6 +532,23 @@ export function RealtimeCollectorPage() {
             </div>
           </div>
           <div className="collection-action-row">
+            <label style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none" }}>
+              <input
+                type="checkbox"
+                checked={auctionEnabled}
+                onChange={(e) => setAuctionEnabled(e.target.checked)}
+                style={{ width: 16, height: 16, cursor: "pointer" }}
+              />
+              <span style={{ fontWeight: 600 }}>竞价采集</span>
+              {auctionEnabled && auctionStatus && (
+                <span style={{ fontSize: 12, color: auctionStatus.running ? "#22c55e" : auctionStatus.state === "error" ? "#ef4444" : "#94a3b8" }}>
+                  {auctionStatus.running ? "运行中" : auctionStatus.state === "finished" ? "已完成" : auctionStatus.state === "idle" ? "待启动" : auctionStatus.state}
+                </span>
+              )}
+              {auctionEnabled && auctionBusy && (
+                <span style={{ fontSize: 12, color: "#f59e0b" }}>⏳ 启动中...</span>
+              )}
+            </label>
             <button
               type="button"
               className={`tag tag-button ${jyhfBusy && !jyhfCollectorRunning ? "tag-active" : ""}`}

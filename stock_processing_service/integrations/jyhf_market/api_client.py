@@ -35,6 +35,19 @@ class JyhfMarketApiClient:
         }
         return await self._get("/api/app/stock/realtime-by-subject/v2", params)
 
+    async def get_stock_daily(self, stock_id: str, days: int = 120) -> dict[str, Any]:
+        """P1 §4.2 — 个股日线 OHLCV 多日历史。
+
+        对应已验证接口: GET /api/app/data/one-stock-daily
+        返回字段: ts_code, trade_date, open, high, low, close, pre_close, change, pct_chg, vol, amount
+        """
+        return await self._get("/api/app/data/one-stock-daily", params={
+            "stockId": stock_id,
+            "platform": "pc",
+            "searchStockType": "one",
+            "days": str(days),
+        })
+
     async def _get(self, path: str, params: dict | None = None) -> dict[str, Any]:
         url = f"{self._base}{path}"
         headers = self._build_headers()

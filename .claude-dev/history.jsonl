@@ -2371,3 +2371,59 @@
 {"display":"[Pasted text #1 +551 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"b5b8cee10553a11c"}},"timestamp":1779716033921,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
 {"display":"[Pasted text #2 +647 lines]","pastedContents":{"2":{"id":2,"type":"text","contentHash":"c6420f60d3ba7fed"}},"timestamp":1779716303780,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
 {"display":"再补充一点：复盘报告前端页面展示样式必须与5/22日一致！不允许自己再编造一套展示页面样式！！","pastedContents":{},"timestamp":1779716468382,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"把今天的修改和合约约束同步到文档“盘后复盘模块-DailyReview重构验收记录.md”","pastedContents":{},"timestamp":1779717192167,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"请核查：如果把实时事件采集功能打开后，首页进入后中栏会经常出现：request timeout after 20000ms，主体雷达：request timeout after 20000ms，市场验证栏：equest timeout after 10000ms，请核查问题根源！是否存在内存泄漏等问题！","pastedContents":{},"timestamp":1779717799384,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"可以","pastedContents":{},"timestamp":1779718244451,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"重启服务之后，还是同样的问题！","pastedContents":{},"timestamp":1779719445781,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"为什么会有这么多DB的查询？","pastedContents":{},"timestamp":1779719528102,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"主题雷达：request timeout after 20000ms 市场验证：request timeout after 10000ms","pastedContents":{},"timestamp":1779719960283,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"当日复盘前端经常报错：request timeout after 10000ms","pastedContents":{},"timestamp":1779720237283,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"当日复盘：request timeout after 30000ms","pastedContents":{},"timestamp":1779720674572,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"为什么复盘报告前端页面还是经常显示不出来？！不是已经优化了过了吗？！","pastedContents":{},"timestamp":1779720753556,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"不是之前就要求这样做了吗，为什么不执行？！","pastedContents":{},"timestamp":1779721093523,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"现在干脆显示不出来了！！！！","pastedContents":{},"timestamp":1779721220022,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"为什么要读这么大的32.8M数据？","pastedContents":{},"timestamp":1779721369626,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"核查设计文档“个人投资助理项目-前端技术设计（第四阶段前置版）.md”，找到问题根源，而不是打补丁！！！","pastedContents":{},"timestamp":1779721808277,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"个人投资助理项目-前端技术设计（第四阶段）.md","pastedContents":{},"timestamp":1779721831758,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"前端页面不允许再来拼接页面内容！！！","pastedContents":{},"timestamp":1779721898816,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"请核查个人投资助理项目-前端技术设计（第四阶段）.md中的5/23日补充条款！禁止前端直连 SPS:8090；禁止前端重新解析中文报告文本生成！","pastedContents":{},"timestamp":1779722089591,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"复盘报告的“市场总览”栏，出现：[Pasted text #1 +11 lines]，请核查原因！","pastedContents":{"1":{"id":1,"type":"text","content":"核心要点\n要点 1\n新链盘后快照已生成：A/B/C/D 依赖未完全命中\n\n要点 2\n强势观察池跟踪 0 条，弱转强候选 0 条\n\n要点 3\n候选覆盖 0 个题材，重点候选：暂无候选\n\n要点 4\n新链依赖未完全命中：theme_cycle_judgement_v2,theme_主线line_identity_registry_or_主线line_state_daily"}},"timestamp":1779751783903,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"skip_layer_c=True 具体起什么作用？","pastedContents":{},"timestamp":1779751990455,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"skip_layer_c=True 具体起什么作用？","pastedContents":{},"timestamp":1779752301533,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"Layer C 构建在前面的采集阶段已经完成过了，在复盘快照生成阶段，不再重复构建，是这个意思吗？","pastedContents":{},"timestamp":1779752419459,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"重新刷新页面显示：[Pasted text #1 +8 lines]","pastedContents":{"1":{"id":1,"type":"text","content":"核心要点\n要点 1\n新链盘后快照已生成：A/B/C/D 依赖完整\n\n要点 2\n强势观察池跟踪 0 条，弱转强候选 0 条\n\n要点 3\n候选覆盖 0 个题材，重点候选：暂无候选"}},"timestamp":1779754026976,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"需要重新生成快照吗？","pastedContents":{},"timestamp":1779754045759,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"题材“新疆自贸区”：”广东省战略性新兴产业投资引导基金启动仪式在广州举行，基金计划总规模1000亿元，首期注册规模500亿元，主要投资战略性新兴产业、未来产业以及升级改造的传统产业等广东省重点扶持的产业领域“重复出现，请核查去重复过滤功能是否正常运行。","pastedContents":{},"timestamp":1779756195247,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"需要","pastedContents":{},"timestamp":1779756475052,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"可以","pastedContents":{},"timestamp":1779756670142,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"qwen去重复为什么也失效呢？","pastedContents":{},"timestamp":1779756725525,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"删除这条重复新闻事件","pastedContents":{},"timestamp":1779756809418,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"题材“半导体”：盈新发展：长兴半导体目前产能处于满产状态，订单需求旺盛...，也重复了2次","pastedContents":{},"timestamp":1779756906712,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"6a3c00af-483b-413c-abf8-691202d29646"}
+{"display":"请核查脚本，为什么多次启动失败：[Pasted text #1 +35 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"35b5497302861b22"}},"timestamp":1779757997066,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"01f14c24-9546-4d37-9d4c-56ffd0e7ec29"}
+{"display":"请找到最近一次的话题讨论，继续话题讨论","pastedContents":{},"timestamp":1779758170724,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"请确认对久赢恒丰app的盘前竞价数据采集是否在正常运行中","pastedContents":{},"timestamp":1779758287263,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"启动","pastedContents":{},"timestamp":1779758488844,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"阅读文档“CDP_DOM行情数据采集P1设计方案.md”，分析为什么盘前竞价启动失败，并总结问题点和改进方案！","pastedContents":{},"timestamp":1779758809877,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"修复时间线快照的 ts 类型 bug","pastedContents":{},"timestamp":1779758924186,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"jyhf_market_service/已经创建在另外的目录下，请核查","pastedContents":{},"timestamp":1779759028387,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"盘前竞价手动启动不是已经接入到“实时采集”页面的“启动JYHF DOM采集”按钮中了吗？请核查","pastedContents":{},"timestamp":1779759892302,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"为什么手动启动服务失败？！","pastedContents":{},"timestamp":1779759922662,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"我们之前还加了自动启动脚本，为什么也没生效？？！！","pastedContents":{},"timestamp":1779759999059,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"手动/自动全部失效！！！","pastedContents":{},"timestamp":1779760243622,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"靠！！！为什么代码质量这么差？？？？？！！！","pastedContents":{},"timestamp":1779760316348,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"请总结此次盘前竞价失败原因","pastedContents":{},"timestamp":1779760359647,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"现在能手动启动服务吗？","pastedContents":{},"timestamp":1779760448497,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"靠！！！！！！！！！！","pastedContents":{},"timestamp":1779760506425,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"给前端实时事件采集页面增加“竞价采集按”勾选框，默认勾选","pastedContents":{},"timestamp":1779760605407,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"我已经点击停止采集了，请确认是否停止竞价采集了？","pastedContents":{},"timestamp":1779761496472,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"竞价采集服务具体会完成那些任务？","pastedContents":{},"timestamp":1779761600857,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"修复时间线快照的 ts 类型 bug","pastedContents":{},"timestamp":1779761795151,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"请查找相关代码，根据“CDP_DOM行情数据采集P1设计方案.md”，验证采集“强势股跟踪”池的实时K线数据","pastedContents":{},"timestamp":1779762169212,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"要求采集所有强势股的实时的K线数据，存到数据库表中","pastedContents":{},"timestamp":1779762236829,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"我现在需要实现的功能主要如下：1、只采集强势股池的股票分钟线，不采集全量市场的股票；2、根据采集的分钟K线可以实时连续计算K线形态特征；3、下跌或者突破关键支撑、压力线，实时给出提示信息给前端实时采集的调试窗口输出打印信息。请评估实施方案","pastedContents":{},"timestamp":1779763212224,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"补充一个功能，需要在前端实时采集页面增加一个k线实时采集的勾选框","pastedContents":{},"timestamp":1779763319184,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"中文输出评估报告","pastedContents":{},"timestamp":1779764715414,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"久赢恒丰实时k线数据采集请核查文档“CDP_DOM行情数据采集P1设计方案.md”，确认后再下结论！！","pastedContents":{},"timestamp":1779764927094,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"需要","pastedContents":{},"timestamp":1779765088988,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"[Pasted text #1 +312 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"53dc099c14ce7712"}},"timestamp":1779765811839,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"首页出现“胖东来”题材事件重复发布，请核查qwen去重功能是否正常运行？","pastedContents":{},"timestamp":1779766857965,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}

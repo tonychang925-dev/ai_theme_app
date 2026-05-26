@@ -828,7 +828,7 @@ export async function fetchRecapSnapshot(params: {
   const snapshot = await fetchJsonWithTimeout<PostMarketSnapshotView>(
     `/api/v2/post_market_snapshot?${query.toString()}`,
     undefined,
-    10000,
+    60000,
   );
   const mapped = asMarketReportViewFromSnapshot(snapshot, reportType);
   if (!mapped) {
@@ -1072,6 +1072,63 @@ export async function stopJyhfCdpCollector(): Promise<JyhfCdpCommandResult> {
     );
   } catch (err) {
     throw normalizeRealtimeCollectorError(err, "JYHF-CDP 停止");
+  }
+}
+
+// ── P2-B-4: JYHF 竞价采集 ──
+
+export interface JyhfAuctionStatus {
+  running: boolean;
+  state: string;         // idle | waiting_auction | collecting | finished | error | stopped
+  started_at: string | null;
+  trade_date: string | null;
+  candidate_date: string | null;
+  rounds: number;
+  points: number;
+  pid: number | null;
+  last_error: string | null;
+}
+
+export async function fetchJyhfAuctionStatus(): Promise<JyhfAuctionStatus> {
+  try {
+    return await fetchJsonWithTimeout<JyhfAuctionStatus>(
+      "/api/v2/realtime/jyhf-auction/status?_t=" + Date.now(),
+      { cache: "no-store" },
+      10000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "JYHF-竞价 状态检查");
+  }
+}
+
+export async function startJyhfAuctionCollector(
+  tradeDate: string,
+  candidateDate: string,
+): Promise<JyhfAuctionStatus> {
+  try {
+    return await fetchJsonWithTimeout<JyhfAuctionStatus>(
+      "/api/v2/realtime/jyhf-auction/start",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ trade_date: tradeDate, candidate_date: candidateDate }),
+      },
+      15000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "JYHF-竞价 启动");
+  }
+}
+
+export async function stopJyhfAuctionCollector(): Promise<JyhfAuctionStatus> {
+  try {
+    return await fetchJsonWithTimeout<JyhfAuctionStatus>(
+      "/api/v2/realtime/jyhf-auction/stop",
+      { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({}) },
+      10000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "JYHF-竞价 停止");
   }
 }
 

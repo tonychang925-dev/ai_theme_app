@@ -1,0 +1,14 @@
+{
+  "running": true,
+  "run_id": "realtime_20260526_011330",
+  "cycles": 15,
+  "collected_total": 0,
+  "ingested_total": 0,
+  "ingested_failed": 0,
+  "extracted_total": 0,
+  "extraction_failed": 0,
+  "last_collect_at": null,
+  "last_ingest_at": null,
+  "last_extract_at": null,
+  "last_error": null
+}

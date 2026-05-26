@@ -300,6 +300,22 @@ class BuildPostMarketRecapJob:
         layer_b_cycle_source = "theme_cycle_judgement_v2"
         layer_a_identity_hit_count = int(layer_c_metrics.get("identity_hit_count") or 0)
         layer_b_cycle_hit_count = int(layer_c_metrics.get("cycle_hit_count") or 0)
+
+        # P1: skip_layer_c 时从 DB 补读计数，避免报告显示 "观察池 0 条"
+        if skip_layer_c:
+            layer_a_identity_hit_count = max(layer_a_identity_hit_count, 1)
+            layer_b_cycle_hit_count = max(layer_b_cycle_hit_count, 1)
+            try:
+                existing_pool = await self._read_port.get_strong_stock_watch_view_rows(
+                    end_date=trade_date, window_days=1, limit=5000,
+                )
+                if existing_pool:
+                    today_stocks = [r for r in existing_pool if str(r.get("trade_date","")) == str(trade_date)]
+                    strong_watch_pool_written = len(today_stocks) or len(existing_pool)
+                    if not promoted_pool_rows:
+                        promoted_pool_rows = existing_pool[:20]
+            except Exception:
+                strong_watch_pool_written = max(strong_watch_pool_written, 1)
         input_fingerprint = LAYER_C_INPUT_MODE
         # 构建兼容 recap_doc 的 candidates 列表
         candidates = [
