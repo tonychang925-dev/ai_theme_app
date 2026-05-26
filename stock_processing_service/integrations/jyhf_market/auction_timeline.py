@@ -7,7 +7,7 @@
 from __future__ import annotations
 
 import logging
-from datetime import date, datetime, timezone, timedelta
+from datetime import date, datetime, time, timezone, timedelta
 from typing import Any
 
 import asyncpg
@@ -24,9 +24,9 @@ logger = logging.getLogger("sps.jyhf_market.auction_timeline")
 TZ_CN = timezone(timedelta(hours=8))
 
 # 9:15:00 ~ 9:25:59
-_AUCTION_START = "09:15:00"
-_AUCTION_END = "09:26:00"
-_LAST_MINUTE_START = "09:24:00"
+_AUCTION_START = time(9, 15, 0)
+_AUCTION_END = time(9, 26, 0)
+_LAST_MINUTE_START = time(9, 24, 0)
 
 
 class JyhfAuctionTimelineExtractor:
@@ -51,7 +51,7 @@ class JyhfAuctionTimelineExtractor:
             """SELECT stock_id, current, amount, ts::text AS ts_text
                FROM jyhf_stock_quote_snapshot
                WHERE trade_date = $1
-                 AND ts::time BETWEEN $2::time AND $3::time
+                 AND ts::time BETWEEN $2 AND $3
                  AND current IS NOT NULL
                ORDER BY stock_id, ts""",
             trade_date, _AUCTION_START, _AUCTION_END,
@@ -88,7 +88,7 @@ class JyhfAuctionTimelineExtractor:
                  amount AS auction_amount, vol AS auction_volume
                FROM jyhf_stock_quote_snapshot
                WHERE trade_date = $1
-                 AND ts::time BETWEEN $2::time AND $3::time
+                 AND ts::time BETWEEN $2 AND $3
                  AND current IS NOT NULL
                ORDER BY stock_id, ts DESC""",
             trade_date, _AUCTION_START, _AUCTION_END,

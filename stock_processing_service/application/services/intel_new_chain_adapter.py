@@ -56,21 +56,16 @@ class NewChainIntelFeedAdapter:
         rows = await self._gw.get_new_chain_intel_recap(feed_date)
         items: List[Dict[str, Any]] = []
         for row in rows:
-            raw = row.get("payload") or {}
-            if isinstance(raw, str):
+            candidate_count = int(row.get("candidate_count") or 0)
+            strong_watch_count = int(row.get("strong_watch_input_count") or 0)
+            highlights_raw = row.get("highlights") or []
+            if isinstance(highlights_raw, str):
                 try:
                     import json as _json
-                    raw = _json.loads(raw)
+                    highlights_raw = _json.loads(highlights_raw)
                 except Exception:
-                    raw = {}
-            payload: dict = raw if isinstance(raw, dict) else {}
-            recap_doc = payload.get("recap_doc", payload)
-            report = payload.get("report", {})
-            # 摘要信息
-            candidate_count = recap_doc.get("candidate_count", recap_doc.get("formal_candidates", 0))
-            strong_watch_count = recap_doc.get("strong_watch_promoted_count",
-                                                recap_doc.get("strong_watch_input_count", 0))
-            top_themes = report.get("highlights", [])[:5] if report else []
+                    highlights_raw = []
+            top_themes = (highlights_raw or [])[:5]
 
             summary_parts = [f"主线题材 {len(top_themes)} 个" if top_themes else "",
                              f"强势股观察 {strong_watch_count} 只" if strong_watch_count else "",
@@ -376,23 +371,24 @@ class NewChainIntelFeedAdapter:
         """聚合情报项：新链信号 + 旧链新闻事件，按优先级排序。"""
         all_items: List[Dict[str, Any]] = []
 
-        async def _safe_load(label: str, coro):
-            try:
-                return await coro
-            except Exception:
-                logger.warning("NewChainIntelFeedAdapter: load %s failed for %s", label, feed_date, exc_info=True)
-                return []
-
-        # 新链信号
-        all_items.extend(await _safe_load("recap", self.load_recap_items(feed_date)))
-        all_items.extend(await _safe_load("weak_to_strong", self.load_weak_to_strong_items(feed_date)))
-        all_items.extend(await _safe_load("theme_cycle", self.load_theme_cycle_items(feed_date)))
-        all_items.extend(await _safe_load("theme_identity", self.load_theme_identity_items(feed_date)))
-        all_items.extend(await _safe_load("strong_stock", self.load_strong_stock_items(feed_date)))
-        # 旧链新闻事件
-        all_items.extend(await _safe_load("news_event", self.load_news_event_items(feed_date)))
-        all_items.extend(await _safe_load("review_event", self.load_review_event_items(feed_date)))
-        all_items.extend(await _safe_load("subject_history", self.load_subject_history_items(feed_date)))
+        # 新链信号 + 旧链新闻事件 — asyncio.gather 并行加载
+        import asyncio as _asyncio
+        loaders = [
+            ("recap", self.load_recap_items(feed_date)),
+            ("weak_to_strong", self.load_weak_to_strong_items(feed_date)),
+            ("theme_cycle", self.load_theme_cycle_items(feed_date)),
+            ("theme_identity", self.load_theme_identity_items(feed_date)),
+            ("strong_stock", self.load_strong_stock_items(feed_date)),
+            ("news_event", self.load_news_event_items(feed_date)),
+            ("review_event", self.load_review_event_items(feed_date)),
+            ("subject_history", self.load_subject_history_items(feed_date)),
+        ]
+        results = await _asyncio.gather(*[coro for _, coro in loaders], return_exceptions=True)
+        for (label, _), result in zip(loaders, results):
+            if isinstance(result, Exception):
+                logger.warning("NewChainIntelFeedAdapter: load %s failed for %s: %s", label, feed_date, result)
+            elif isinstance(result, list):
+                all_items.extend(result)
 
         # session 过滤（仅 event 类 item 有实际时间，新链信号默认 post_market）
         if session not in ("all", ""):

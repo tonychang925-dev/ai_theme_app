@@ -6,7 +6,7 @@ export default defineConfig({
     host: "0.0.0.0", port: 5173,
     proxy: {
       "/api/v1/realtime": {
-        target: "http://127.0.0.1:8090",
+        target: "http://127.0.0.1:8000",
         changeOrigin: true,
         configure: (proxy) => {
           proxy.on("proxyReq", (proxyReq, req) => {
@@ -14,11 +14,6 @@ export default defineConfig({
           });
         },
       },
-      "/api/v1/theme": "http://127.0.0.1:8090",
-      "/api/v1/stock": "http://127.0.0.1:8090",
-      "/api/v1/pre_market_brief": "http://127.0.0.1:8090",
-      "/api/v1/intel": "http://127.0.0.1:8090",
-      "/api/v1/db": "http://127.0.0.1:8090",
       "/api/v2": "http://127.0.0.1:8000",
     },
   },

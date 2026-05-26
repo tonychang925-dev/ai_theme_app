@@ -9,7 +9,7 @@ from datetime import date as date_type
 import asyncpg
 
 from stock_processing_service.integrations.jyhf_market.schemas import (
-    JyhfIndexQuote, JyhfStockQuote, JyhfSubjectStockQuote,
+    JyhfIndexQuote, JyhfStockDailyBar, JyhfStockQuote, JyhfSubjectStockQuote,
 )
 
 logger = logging.getLogger("sps.jyhf_market.db_sink")
@@ -133,6 +133,47 @@ class JyhfMarketDbSink:
             self._writes += 1
             return row["id"]
         return 0
+
+    async def write_stock_daily_bars(self, bars: list[JyhfStockDailyBar]) -> int:
+        """批量写入日K线，ON CONFLICT UPDATE 最新值。"""
+        if not bars:
+            return 0
+        pool = await self._get_pool()
+        written = 0
+        for bar in bars:
+            td = _to_date(bar.trade_date)
+            row = await pool.fetchrow(
+                """INSERT INTO jyhf_stock_daily_bar
+                   (trade_date, stock_id, api_stock_id, stock_name,
+                    open, high, low, close, pre_close, change, pct_chg, vol, amount,
+                    source_endpoint, raw_json)
+                   VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15::jsonb)
+                   ON CONFLICT (trade_date, stock_id) DO UPDATE SET
+                    open=EXCLUDED.open, high=EXCLUDED.high, low=EXCLUDED.low,
+                    close=EXCLUDED.close, pre_close=EXCLUDED.pre_close,
+                    change=EXCLUDED.change, pct_chg=EXCLUDED.pct_chg,
+                    vol=EXCLUDED.vol, amount=EXCLUDED.amount,
+                    stock_name=EXCLUDED.stock_name,
+                    raw_json=EXCLUDED.raw_json,
+                    updated_at=NOW()
+                   RETURNING id""",
+                td, bar.stock_id, bar.api_stock_id, bar.stock_name,
+                str(bar.open) if bar.open is not None else None,
+                str(bar.high) if bar.high is not None else None,
+                str(bar.low) if bar.low is not None else None,
+                str(bar.close) if bar.close is not None else None,
+                str(bar.pre_close) if bar.pre_close is not None else None,
+                str(bar.change) if bar.change is not None else None,
+                str(bar.pct_chg) if bar.pct_chg is not None else None,
+                str(bar.vol) if bar.vol is not None else None,
+                str(bar.amount) if bar.amount is not None else None,
+                "/api/app/data/one-stock-daily",
+                json.dumps(bar.raw_json, ensure_ascii=False),
+            )
+            if row:
+                written += 1
+                self._writes += 1
+        return written
 
     @property
     def write_count(self) -> int:

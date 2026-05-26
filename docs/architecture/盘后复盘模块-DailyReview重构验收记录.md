@@ -131,3 +131,114 @@ cd frontend && npm run build  # TypeScript 零错误
 | 5 | `leader_stocks` 角色化 | 增加龙头/龙二/补涨/套利角色标签 |
 | 6 | Notion 发布改造 | 改用结构化 DailyReview 渲染，替代文本 section 拼接
 - 后端恢复生成不依赖 `_build_theme_reviews()` 即可
+
+---
+
+## 第三阶段：三层边界恢复与合约冻结（2026-05-25）
+
+> 状态：已完成
+> 背景：发现 UI 按钮误触发了全量 Truth Source 生产（660 theme evidence → cycle → identity → mainline → Layer C），导致复盘报告生成耗时 10 分钟 + SPS 阻塞。
+
+### 根因
+
+```
+UI "重新生成复盘报告" 按钮
+  → 误触发 collection/start
+    → kline_judgements (1842 stocks)
+    → prereqs (660 evidence → cycle → identity → mainline)  ← 5m43s
+    → Layer C (strong_stock_tracking)                           ← 3min
+    → DailyReview generation
+```
+
+设计文档第三阶段明确定义：**报告与页面读快照，不直接依赖外部源或生产层**。
+
+### 架构修正：三层隔离
+
+```
+┌─────────────────────────────────────────────┐
+│ Producer Layer (Truth Source)               │
+│   evidence / cycle / identity / mainline     │
+│   kline_judgements / Layer C                │
+│   执行: 后台定时 / force rebuild             │
+│   禁止: UI 按钮默认触发                      │
+└─────────────────────────────────────────────┘
+              ↓ 写入对象表
+┌─────────────────────────────────────────────┐
+│ Report Layer (Serving Read Model)           │
+│   BuildPostMarketRecapJob (read_model_only) │
+│   读取已有对象 → DailyReview → snapshot      │
+│   执行: UI 按钮默认触发                      │
+│   耗时: 10-30 秒                            │
+│   禁止: 触发 Producer Layer 任何 Job         │
+└─────────────────────────────────────────────┘
+              ↓ 写入 post_market_recap_snapshot
+┌─────────────────────────────────────────────┐
+│ Frontend Layer                              │
+│   GET /api/v2/daily-review → DailyReview    │
+│   禁止: 直连 SPS / sections 解析主表         │
+└─────────────────────────────────────────────┘
+```
+
+### 新增 API
+
+| 方法 | 端点 | 用途 |
+|------|------|------|
+| `POST` | `/api/v1/daily_review/generate` | SPS: 生成 DailyReview 快照 |
+| `POST` | `/api/v2/daily-review/generate` | web_app 代理 |
+
+**请求体**:
+
+```json
+{
+  "date": "2026-05-25",
+  "mode": "read_model_only"
+}
+```
+
+- `read_model_only` (默认): 只读已有对象，10-30 秒
+- `full_truth_rebuild`: 重跑 evidence/cycle/identity/mainline/LayerC，5-10 分钟（危险，仅管理端）
+
+### 关键代码修改
+
+| 文件 | 修改 |
+|------|------|
+| `collection_orchestrator.py` | `recap_snapshot` 默认跳过 kline/prereqs/abnormal，仅 `force_rebuild_truth_source=true` 时执行 |
+| `build_post_market_recap_job.py` | 新增 `skip_prereqs` / `skip_layer_c` 参数；新增 `_build_capital_reviews()` |
+| `collection_task_runners.py` | `PostMarketRecapRunner` 读取 `force_rebuild_truth_source` 控制跳过行为 |
+| `api_app.py` | 新增 `POST /api/v1/daily_review/generate` |
+| `routes.py` | web_app 代理 `POST /api/v2/daily-review/generate` |
+| `build_stock_kline_judgements.py` | 新增 `--universe` 参数，默认 `seed_candidates+strong_watch`，5133→1842 |
+
+### 冻结合约（强制）
+
+以下规则从 2026-05-25 起冻结，所有后续代码必须遵守：
+
+**DailyReview generate 禁止调用的 Job**:
+1. `BuildThemeCycleEvidenceDailyJob`
+2. `BuildCycleJudgementJob`
+3. `BuildIdentityJob`
+4. `BuildMainlineStateJob`
+5. `BuildStrongStockTrackingUseCase.execute()`
+6. `build_stock_kline_judgements.py`
+7. `BuildStockAbnormalSignalJob`
+
+**普通按钮禁止触发的行为**:
+- collection 全量管线（kline + prereqs + abnormal + Layer C）
+- 必须通过 `force_rebuild_truth_source=true` 显式触发
+
+**前端禁止**:
+- 主表依赖 sections 文本解析
+- 渲染依赖 payload 而非 dailyReview
+
+### 验收
+
+```bash
+# 快速生成（必须 <= 30s，日志不得出现 evidence/cycle/identity/mainline）
+time curl -s -X POST "http://127.0.0.1:8000/api/v2/daily-review/generate" \
+  -H "Content-Type: application/json" \
+  -d '{"date":"2026-05-25","mode":"read_model_only"}'
+
+# 读取 DailyReview
+curl -s "http://127.0.0.1:8000/api/v2/daily-review?date=2026-05-25" \
+  | jq '.theme_reviews | length, .capital_reviews | length'
+```

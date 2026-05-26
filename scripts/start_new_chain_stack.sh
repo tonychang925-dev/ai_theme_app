@@ -189,6 +189,10 @@ start_stock_processing_service() {
   done
   echo "[fail] stock_processing_service:8090 failed"
   tail -n 120 "$LOG_DIR/stock_processing_service_8090.log" || true
+  # cleanup the process we just started, otherwise next --restart
+  # will find a leftover listener and the failure cycle repeats
+  pkill -f "$SPS_PATTERN" >/dev/null 2>&1 || true
+  sleep 1
   return 1
 }
 

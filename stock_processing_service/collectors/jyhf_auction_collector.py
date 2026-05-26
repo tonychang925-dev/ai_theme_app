@@ -171,7 +171,7 @@ class JyhfAuctionCollector:
                     rows_to_insert.append((
                         trade_date, now,
                         r["stock_id"], r["current"], r["pctChg"],
-                        r["amount"], r["vol"], r["open"], r["time"],
+                        r["amount"], r["vol"], r["open"],
                     ))
                     ok += 1
                 else:
