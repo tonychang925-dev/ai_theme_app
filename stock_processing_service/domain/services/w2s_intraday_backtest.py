@@ -130,13 +130,15 @@ class W2SIntradayBacktest:
         return series[start:idx + 1]
 
     @staticmethod
-    def compute_platform(win: list[dict]) -> tuple[float, float]:
-        """计算窗口内最高/最低价。"""
-        if not win:
-            return 0.0, 0.0
-        hi = max(float(r.get("high") or r.get("current") or 0) for r in win)
-        lo = min(float(r.get("low") or r.get("current") or 999999) for r in win)
-        return hi, lo
+    def compute_platform(past_bars: list[dict]) -> tuple[float, float, int, bool]:
+        """计算过去30分钟平台 (不含当前 bar)。"""
+        if not past_bars:
+            return 0.0, 0.0, 0, True
+        n = len(past_bars)
+        insufficient = n < 15
+        hi = max(float(r.get("high") or r.get("current") or 0) for r in past_bars)
+        lo = min(float(r.get("low") or r.get("current") or 999999) for r in past_bars)
+        return hi, lo, n, insufficient
 
     @staticmethod
     def compute_above_vwap_ratio(win: list[dict]) -> float:
@@ -182,13 +184,31 @@ class W2SIntradayBacktest:
         return False
 
     @staticmethod
-    def check_fell_below_vwap(series: list[dict], idx: int, window: int = 10) -> bool:
-        """检查信号后是否快速跌回 VWAP 下方。"""
-        end = min(len(series), idx + window + 1)
+    def check_fell_below_vwap(series: list[dict], idx: int, vwap: float) -> tuple[bool, float]:
+        """检查信号后是否持续跌破 VWAP + 回撤足够。
+
+        false_signal_v2: 信号后 10 分钟内
+          - 连续 3 分钟 close < vwap
+          - 且 max_drawdown <= -1.5%
+        Returns: (is_false, max_drawdown)
+        """
+        end = min(len(series), idx + 11)  # +10 minutes
+        consecutive_below = 0
+        max_close = float(series[idx].get("close") or series[idx].get("current") or 0)
+        max_dd = 0.0
+
         for i in range(idx + 1, end):
-            if not series[i].get("above_vwap"):
-                return True
-        return False
+            close_val = float(series[i].get("close") or series[i].get("current") or 0)
+            if close_val < vwap:
+                consecutive_below += 1
+            else:
+                consecutive_below = 0
+            if max_close > 0:
+                dd = (close_val - max_close) / max_close * 100
+                max_dd = min(max_dd, dd)
+
+        is_false = consecutive_below >= 3 and max_dd <= -1.5
+        return is_false, round(max_dd, 4)
 
     # ── 评分器 (复用 P1-I-4 逻辑，无未来数据) ──
 
@@ -317,13 +337,18 @@ class W2SIntradayBacktest:
 
                 # 滑动窗口 (仅用 ≤i 的历史)
                 win_5 = self.sliding_window(series, i, 5)
-                win_30 = self.sliding_window(series, i, 30)
+                # 平台窗口: 过去30分钟不含当前
+                past_30 = series[max(0, i - 30):i]  # [i-30, i) 不含 i
 
                 rel_str = self.compute_relative_strength(win_5, index_series, str(row.get("minute_ts") or ""))
-                plat_hi, plat_lo = self.compute_platform(win_30)
-                # 更新 platform (用滑动窗口)
+                plat_hi, plat_lo, plat_n, plat_insufficient = self.compute_platform(past_30)
+                # break_platform: current > plat_hi * 1.002 (0.2% buffer)
+                break_plat = (not plat_insufficient) and plat_hi > 0 and current > plat_hi * 1.002
                 row["platform_high_30m"] = plat_hi
                 row["platform_low_30m"] = plat_lo
+                row["break_platform_30m"] = break_plat
+                row["_plat_n"] = plat_n
+                row["_plat_insufficient"] = plat_insufficient
 
                 score, level, breakdown = self.score_minute(row, win_5, rel_str, confirm_level, current)
 
@@ -338,6 +363,15 @@ class W2SIntradayBacktest:
 
                 above_ratio = self.compute_above_vwap_ratio(win_5)
 
+                # false_signal_v2
+                is_false_v2, max_dd = self.check_fell_below_vwap(series, i, float(row.get("vwap") or 0))
+                false_v2 = is_false_v2 or (ret_30 is not None and ret_30 <= -1.0)
+
+                # chase_risk: current 远离 vwap 或靠近局部高点
+                distance_to_vwap = abs(current - vwap_val) / current if current > 0 else 0
+                price_in_30m = (current - plat_lo) / (plat_hi - plat_lo) if plat_hi > plat_lo else 0.5
+                chase_risk = distance_to_vwap > 0.03 or price_in_30m >= 0.85
+
                 signals.append(BacktestSignal(
                     minute_ts=str(row.get("minute_ts") or ""),
                     stock_id=sid,
@@ -348,15 +382,15 @@ class W2SIntradayBacktest:
                     vwap=float(row.get("vwap") or 0),
                     above_vwap_ratio=round(above_ratio, 2),
                     relative_strength=round(rel_str, 4),
-                    break_platform=float(row.get("platform_high_30m") or 0) > 0 and current > float(row.get("platform_high_30m") or 0),
-                    amount_accel=("accel" in str(breakdown.get("amount_accel", ""))),
+                    break_platform=break_plat,
+                    amount_accel=breakdown.get("amount_accel", 0) >= 15,
                     score_breakdown=breakdown,
                     ret_5m=ret_5,
                     ret_10m=ret_10,
                     ret_30m=ret_30,
                     ret_60m=ret_60,
                     hit_limit_up=self.check_limit_up(series, i),
-                    fell_below_vwap=self.check_fell_below_vwap(series, i),
+                    fell_below_vwap=is_false_v2,
                 ))
 
         # 按 level 聚合

@@ -35,6 +35,7 @@
     "custom-commands": 11
   },
   "promptQueueUseCount": 552,
+  "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_ultraplan_prompt_identifier": "visual_plan",
     "tengu_tangerine_ladder_boost": true,
