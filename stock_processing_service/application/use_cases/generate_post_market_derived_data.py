@@ -64,6 +64,10 @@ class PostMarketDerivedDataGenerateUseCase:
         self._builders["money_flow_enhanced_build"] = _MoneyFlowEnhancedBuilder(
             pool=self._pool, project_root=project_root)
 
+    def register_stock_abnormal_signal_build(self, project_root: str = "") -> None:
+        self._builders["stock_abnormal_signal_build"] = _StockAbnormalSignalBuilder(
+            pool=self._pool, project_root=project_root)
+
     def register_strong_stock_watch_build(self) -> None:
         self._builders["strong_stock_watch_build"] = _StrongStockWatchBuilder(
             pool=self._pool, db_manager=self._db_manager)
@@ -365,6 +369,42 @@ class _MoneyFlowEnhancedBuilder:
         if row_count > 0:
             return {"job_key": "money_flow_enhanced_build", "status": "success", "affected_rows": row_count}
         return {"job_key": "money_flow_enhanced_build", "status": "failed_no_rows",
+                "affected_rows": 0, "error": f"exit={proc.returncode}"}
+
+
+class _StockAbnormalSignalBuilder:
+    """P2-6: stock_abnormal_signal_build — 执行 build_stock_abnormal_signal.py。"""
+
+    def __init__(self, pool=None, project_root: str = ""):
+        self._pool = pool
+        self._project_root = project_root
+
+    async def run(self, trade_date: date) -> dict[str, Any]:
+        import asyncio
+        script = Path(self._project_root) / "database_service/scripts/build_stock_abnormal_signal.py"
+        if not script.exists():
+            return {"job_key": "stock_abnormal_signal_build", "status": "failed_precondition",
+                    "error": f"script not found: {script}"}
+        td_str = trade_date.isoformat()
+        try:
+            proc = await asyncio.create_subprocess_exec(
+                sys.executable, str(script), "--trade-date", td_str,
+                stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+            )
+            stdout, stderr = await proc.communicate()
+        except Exception as exc:
+            return {"job_key": "stock_abnormal_signal_build", "status": "failed",
+                    "affected_rows": 0, "error": str(exc)[:200]}
+
+        row_count = 0
+        if self._pool:
+            async with self._pool.acquire() as conn:
+                r = await conn.fetchrow(
+                    "SELECT COUNT(*) AS cnt FROM stock_abnormal_signal WHERE trade_date = $1::date", trade_date)
+                row_count = int(r["cnt"]) if r else 0
+        if row_count > 0:
+            return {"job_key": "stock_abnormal_signal_build", "status": "success", "affected_rows": row_count}
+        return {"job_key": "stock_abnormal_signal_build", "status": "failed_no_rows",
                 "affected_rows": 0, "error": f"exit={proc.returncode}"}
 
 
