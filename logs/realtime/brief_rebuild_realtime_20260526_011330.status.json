@@ -1,8 +1,8 @@
 {
   "running": true,
-  "last_rebuild_at": null,
-  "trade_date": null,
-  "ok": false,
-  "status": "error",
-  "error": ""
+  "last_rebuild_at": "2026-05-26T11:43:15.537365+08:00",
+  "trade_date": "2026-05-26",
+  "ok": true,
+  "status": "draft",
+  "error": null
 }
