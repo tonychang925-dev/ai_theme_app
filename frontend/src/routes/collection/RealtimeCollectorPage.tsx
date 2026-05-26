@@ -197,7 +197,7 @@ export function RealtimeCollectorPage() {
       setMainBusy(false);
       return;
     }
-    append("[新链] 启动实时采集 (akshare_collector + raw_news + theme_processor + decision_executor + brief_rebuild)...");
+    append("[新链] 启动基础数据采集...");
     try {
       const result = await startNewChainRealtime();
       append(`[新链] 启动完成: ok=${result.ok} status=${result.status}`);
@@ -532,12 +532,20 @@ export function RealtimeCollectorPage() {
               {mainBusy
                 ? "⏳ 正在执行..."
                 : running === "up"
-                  ? "🟢 新链实时采集运行中"
+                  ? "🟢 基础数据采集运行中"
                   : running === "down"
-                    ? "🔴 新链已停止"
+                    ? "🔴 已停止"
                     : "⚪ 状态检查中"}
             </span>
+            <button className="tag" type="button"
+              style={{ marginLeft: 12 }}
+              onClick={() => navigateTo(`/recap?date=${new Date().toISOString().slice(0, 10)}&report_type=post_market`)}>
+              前往当日复盘 →
+            </button>
           </div>
+          <p className="workspace-note" style={{ marginTop: 8 }}>
+            基础数据采集完成后，请到「当日复盘」页面生成动态复盘数据与复盘报告。
+          </p>
         </section>
 
         <section className="workspace-card collection-debug-control">
