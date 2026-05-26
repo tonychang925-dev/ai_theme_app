@@ -1975,7 +1975,9 @@ async def generate_post_market_derived_data(payload: dict[str, Any] | None = Non
     from stock_processing_service.application.use_cases.generate_post_market_derived_data import (
         PostMarketDerivedDataGenerateUseCase,
     )
-    uc = PostMarketDerivedDataGenerateUseCase(pool=pool)
+    db_manager = getattr(getattr(app.state, "gateway", None), "_client", None)
+    uc = PostMarketDerivedDataGenerateUseCase(pool=pool, db_manager=db_manager)
+    uc.register_theme_cycle_truth()
     result = await uc.execute(d)
     return {
         "ok": result.status == "success",
