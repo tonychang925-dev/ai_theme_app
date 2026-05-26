@@ -14,6 +14,7 @@ import redis.asyncio as aioredis
 
 from stock_processing_service.domain.services.w2s_alert_service import W2SAuctionAlert
 from stock_processing_service.domain.services.w2s_intraday_alert_service import W2SIntradayAlert
+from stock_processing_service.domain.services.w2s_intraday_alert_service_v2 import W2SIntradayAlertV2
 from stock_processing_service.domain.services.w2s_support_alert_service import W2SSupportAlert
 
 logger = logging.getLogger("sps.w2s_alert.redis_pusher")
@@ -242,6 +243,56 @@ class W2SAlertRedisPusher:
         self._pushed += pushed
         if pushed:
             logger.warning("W2S_INTRA_ALERTS: %d pushed", pushed)
+        return pushed
+
+    async def push_v2_2_alerts(self, alerts: list[W2SIntradayAlertV2]) -> int:
+        """推送 v2.2 盘中转强观察告警 (默认影子模型)。"""
+        if not alerts:
+            return 0
+        r = await self._get_redis()
+        if r is None:
+            return 0
+        pushed = 0
+        for a in alerts:
+            dedup_key = f"{STATE_KEY_PREFIX}:{a.trade_date}:{a.candidate_id}:intraday_v22"
+            try:
+                prev_raw = await r.get(dedup_key)
+                if prev_raw:
+                    prev = json.loads(prev_raw)
+                    prev_level = prev.get("last_alert_level", "")
+                    level_order = {"observe": 1, "early_turn": 2, "turn_strong": 3}
+                    if level_order.get(a.v2_level, 0) <= level_order.get(prev_level, 0):
+                        continue
+            except Exception:
+                pass
+            try:
+                data = {
+                    "item_type": f"w2s_intraday_{a.v2_level}",
+                    "alert_stage": "intraday_observe",
+                    "trade_date": a.trade_date,
+                    "candidate_id": str(a.candidate_id),
+                    "stock_id": a.stock_id, "stock_name": a.stock_name,
+                    "v2_level": a.v2_level, "v2_score": str(a.v2_score),
+                    "scoring_version": a.scoring_version,
+                    "current": str(round(a.current, 3)),
+                    "vwap": str(round(a.vwap, 4)),
+                    "relative_strength_cross_zero": str(a.relative_strength_cross_zero).lower(),
+                    "distance_to_vwap_pct": str(a.distance_to_vwap_pct),
+                    "chase_risk_penalty": str(a.chase_risk_penalty),
+                    "severity": "observe",
+                    "generated_at": a.generated_at,
+                }
+                await r.xadd(self._stream, data, maxlen=self._maxlen)
+                await r.setex(dedup_key, STATE_TTL, json.dumps({
+                    "last_alert_level": a.v2_level, "last_score": a.v2_score,
+                    "last_alert_at": a.generated_at,
+                }))
+                pushed += 1
+            except Exception as exc:
+                logger.warning("v2.2 push failed for %s: %s", a.stock_id, exc)
+        self._pushed += pushed
+        if pushed:
+            logger.warning("V2.2_ALERTS: %d pushed", pushed)
         return pushed
 
     @property

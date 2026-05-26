@@ -167,7 +167,27 @@ async def main():
     # 漏报
     conclusions.append(f"v2.1 observe 中 {len(missed_strong)} 条 ret_30m>2% (潜在漏报)，{len(missed_moderate)} 条 ret_30m>1%")
 
-    # ── 8. 输出 ──
+    # ── 8. 结论 (v2.2 主视角) ──
+    v22_dist = count_level(data, "v22_level")
+    v22_early_n = v22_dist.get("early_turn", 0)
+    v22_ts_n = v22_dist.get("turn_strong", 0)
+    v22_early_items = [r for r in data if r.get("v22_level") == "early_turn"]
+    v22_early_r, _ = avg_ret(v22_early_items)
+    v22_observe_items = [r for r in data if r.get("v22_level") == "observe"]
+    v22_observe_r, _ = avg_ret(v22_observe_items)
+
+    conclusions = []
+    if v22_early_n > 0:
+        conclusions.append(f"v2.2 early_turn={v22_early_n} 条 ({v22_early_n/n*100:.1f}%), avg_30m={v22_early_r:.2f}% — {'优于' if v22_early_r > v22_observe_r else '弱于'}全量均值")
+    else:
+        conclusions.append("v2.2 early_turn=0 — 今日无早期转强信号")
+    if v22_early_n < n * 0.15:
+        conclusions.append(f"v2.2 early_turn 占比 {v22_early_n/n*100:.1f}% — 门禁正常，不偏严")
+    elif v22_early_n < n * 0.05:
+        conclusions.append(f"v2.2 early_turn 占比 {v22_early_n/n*100:.1f}% — 门禁可能偏严，建议继续观察")
+    conclusions.append("v2.2 为默认影子观察模型，全部信号为观察级，不输出买入建议")
+
+    # ── 9. 输出 ──
     report = {
         "trade_date": args.trade_date,
         "total_signals": n,
@@ -254,7 +274,21 @@ async def main():
         recalled_a_ret, _ = avg_ret(v22_recalled_a)
         conclusions.append(f"v2.2 召回 v1 A 被拦 {len(v22_recalled_a)} 条, avg_30m={recalled_a_ret:.2f}% {'→ 谨慎' if recalled_a_ret < -0.5 else '→ 部分有效'}")
 
-    print(f"\n--- 结论 ---")
+    print(f"\n--- 版本对照 ---")
+    print(f"  {'版本':<8} {'强信号':>6} {'观察':>6} {'弱/其他':>8}  avg_30m(观察)")
+    for ver_name, dist, ret_key in [
+        ("v1", v1_dist, "v1_level"),
+        ("v2", v2_dist, "v2_level"),
+        ("v2.1", v21_dist, "v21_level"),
+        ("v2.2", v22_dist, "v22_level"),
+    ]:
+        strong = dist.get("A", dist.get("turn_strong", 0))
+        obs = dist.get("B", dist.get("early_turn", 0))
+        weak = dist.get("C", dist.get("observe", 0))
+        obs_ret = v22_ret.get("early_turn", (0,0))[0] if ver_name == "v2.2" else 0
+        print(f"  {ver_name:<8} {strong:>6} {obs:>6} {weak:>8}  {'—' if ver_name != 'v2.2' else f'{v22_early_r:.2f}%'}")
+
+    print(f"\n--- 结论 (v2.2 默认影子模型) ---")
     for i, c in enumerate(conclusions, 1):
         print(f"  {i}. {c}")
 

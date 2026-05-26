@@ -9,19 +9,22 @@ P2-2: theme_cycle_truth builder 已接入 A/B layer jobs。
 from __future__ import annotations
 
 import logging
+import sys
 import uuid
 from dataclasses import dataclass, field
 from datetime import date
+from pathlib import Path
 from typing import Any
 
 logger = logging.getLogger(__name__)
 
 SUB_TASK_ORDER = [
-    ("theme_cycle_truth",        "theme_cycle_truth_build"),
-    ("dragon_tiger_object_build", "dragon_tiger_object_build"),
-    ("money_flow_enhanced_build", "money_flow_enhanced_build"),
-    ("stock_abnormal_signal_build", "stock_abnormal_signal_build"),
-    ("strong_stock_watch_build",  "strong_stock_watch_build"),
+    ("theme_cycle_truth",             "theme_cycle_truth_build"),
+    ("dragon_tiger_object_build",      "dragon_tiger_object_build"),
+    ("theme_leader_candidate_build",   "theme_leader_candidate_build"),
+    ("money_flow_enhanced_build",      "money_flow_enhanced_build"),
+    ("stock_abnormal_signal_build",    "stock_abnormal_signal_build"),
+    ("strong_stock_watch_build",       "strong_stock_watch_build"),
 ]
 
 
@@ -48,6 +51,18 @@ class PostMarketDerivedDataGenerateUseCase:
     def register_theme_cycle_truth(self) -> None:
         self._builders["theme_cycle_truth"] = _ThemeCycleTruthBuilder(
             pool=self._pool, db_manager=self._db_manager)
+
+    def register_dragon_tiger_object_build(self) -> None:
+        self._builders["dragon_tiger_object_build"] = _DragonTigerObjectBuilder(
+            pool=self._pool, db_manager=self._db_manager)
+
+    def register_theme_leader_candidate_build(self, project_root: str = "") -> None:
+        self._builders["theme_leader_candidate_build"] = _ThemeLeaderCandidateBuilder(
+            pool=self._pool, project_root=project_root)
+
+    def register_money_flow_enhanced_build(self, project_root: str = "") -> None:
+        self._builders["money_flow_enhanced_build"] = _MoneyFlowEnhancedBuilder(
+            pool=self._pool, project_root=project_root)
 
     async def execute(
         self, trade_date_val: date, force: bool = False, dry_run: bool = False,
@@ -217,3 +232,133 @@ class _ThemeCycleTruthBuilder:
         return {"job_key": "theme_cycle_truth", "status": "failed_no_rows",
                 "affected_rows": 0, "step_results": step_results,
                 "error": "theme_cycle_judgement_v2 rows=0"}
+
+
+class _DragonTigerObjectBuilder:
+    """P2-3: dragon_tiger_object_build — 调用现有的 BuildDragonTigerObjectJob。"""
+
+    def __init__(self, pool=None, db_manager=None):
+        self._pool = pool
+        self._db_manager = db_manager
+
+    async def run(self, trade_date: date) -> dict[str, Any]:
+        if self._db_manager is None:
+            return {"job_key": "dragon_tiger_object_build", "status": "failed_precondition",
+                    "error": "no_db_manager"}
+
+        import os
+        try:
+            from stock_processing_service.application.jobs.build_dragon_tiger_object_job import (
+                BuildDragonTigerObjectJob,
+            )
+            token = os.environ.get("TUSHARE_TOKEN", "")
+            job = BuildDragonTigerObjectJob(write_port=self._db_manager)
+            result = await job.execute(trade_date=trade_date, tushare_token=token)
+
+            # Check object rows
+            row_count = 0
+            if self._pool:
+                async with self._pool.acquire() as conn:
+                    r = await conn.fetchrow(
+                        "SELECT COUNT(*) AS cnt FROM dragon_tiger_object WHERE trade_date = $1::date",
+                        trade_date)
+                    row_count = int(r["cnt"]) if r else 0
+
+            if row_count > 0:
+                return {"job_key": "dragon_tiger_object_build", "status": "success",
+                        "affected_rows": row_count}
+            if result.affected_rows > 0:
+                return {"job_key": "dragon_tiger_object_build", "status": "failed_no_rows",
+                        "affected_rows": 0, "error": "DRAGON_TIGER_OBJECT_NO_ROWS"}
+            return {"job_key": "dragon_tiger_object_build", "status": "skipped_no_data",
+                    "affected_rows": 0, "error": "no_dragon_tiger_day"}
+        except Exception as exc:
+            return {"job_key": "dragon_tiger_object_build", "status": "failed",
+                    "affected_rows": 0, "error": str(exc)[:200]}
+
+
+class _ThemeLeaderCandidateBuilder:
+    """P2-4a: theme_leader_candidate_build — 执行 build_theme_leader_candidate.py。"""
+
+    def __init__(self, pool=None, project_root: str = ""):
+        self._pool = pool
+        self._project_root = project_root
+
+    async def run(self, trade_date: date) -> dict[str, Any]:
+        import asyncio
+        script = Path(self._project_root) / "database_service/scripts/build_theme_leader_candidate.py"
+        if not script.exists():
+            return {"job_key": "theme_leader_candidate_build", "status": "failed_precondition",
+                    "error": f"script not found: {script}"}
+        td_str = trade_date.isoformat()
+        try:
+            proc = await asyncio.create_subprocess_exec(
+                sys.executable, str(script), "--trade-date", td_str,
+                stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+            )
+            stdout, stderr = await proc.communicate()
+        except Exception as exc:
+            return {"job_key": "theme_leader_candidate_build", "status": "failed",
+                    "affected_rows": 0, "error": str(exc)[:200]}
+
+        row_count = 0
+        if self._pool:
+            async with self._pool.acquire() as conn:
+                r = await conn.fetchrow(
+                    "SELECT COUNT(*) AS cnt FROM theme_leader_candidate WHERE trade_date = $1::date", trade_date)
+                row_count = int(r["cnt"]) if r else 0
+        if row_count > 0:
+            return {"job_key": "theme_leader_candidate_build", "status": "success", "affected_rows": row_count}
+        return {"job_key": "theme_leader_candidate_build", "status": "failed_no_rows",
+                "affected_rows": 0, "error": "theme_leader_candidate rows=0"}
+
+
+class _MoneyFlowEnhancedBuilder:
+    """P2-4: money_flow_enhanced_build — 执行 build_money_flow_enhanced.py 脚本。"""
+
+    def __init__(self, pool=None, project_root: str = ""):
+        self._pool = pool
+        self._project_root = project_root
+
+    async def run(self, trade_date: date) -> dict[str, Any]:
+        import asyncio
+
+        # Precondition: theme_leader_candidate must have data
+        lc_count = 0
+        if self._pool:
+            async with self._pool.acquire() as conn:
+                r = await conn.fetchrow(
+                    "SELECT COUNT(*) AS cnt FROM theme_leader_candidate WHERE trade_date = $1::date", trade_date)
+                lc_count = int(r["cnt"]) if r else 0
+        if lc_count == 0:
+            return {"job_key": "money_flow_enhanced_build", "status": "failed_precondition",
+                    "error_code": "MONEY_FLOW_INPUT_LEADER_CANDIDATE_EMPTY",
+                    "affected_rows": 0, "error": "theme_leader_candidate is empty"}
+
+        script = Path(self._project_root) / "database_service/scripts/build_money_flow_enhanced.py"
+        if not script.exists():
+            return {"job_key": "money_flow_enhanced_build", "status": "failed_precondition",
+                    "error": f"script not found: {script}"}
+
+        td_str = trade_date.isoformat()
+        try:
+            proc = await asyncio.create_subprocess_exec(
+                sys.executable, str(script), "--trade-date", td_str,
+                stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+            )
+            stdout, stderr = await proc.communicate()
+        except Exception as exc:
+            return {"job_key": "money_flow_enhanced_build", "status": "failed",
+                    "affected_rows": 0, "error": str(exc)[:200]}
+
+        row_count = 0
+        if self._pool:
+            async with self._pool.acquire() as conn:
+                r = await conn.fetchrow(
+                    "SELECT COUNT(*) AS cnt FROM money_flow_enhanced WHERE trade_date = $1::date", trade_date)
+                row_count = int(r["cnt"]) if r else 0
+
+        if row_count > 0:
+            return {"job_key": "money_flow_enhanced_build", "status": "success", "affected_rows": row_count}
+        return {"job_key": "money_flow_enhanced_build", "status": "failed_no_rows",
+                "affected_rows": 0, "error": f"exit={proc.returncode}"}
