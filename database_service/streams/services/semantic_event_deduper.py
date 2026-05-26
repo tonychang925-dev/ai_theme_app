@@ -197,7 +197,7 @@ class SemanticEventDeduper:
         recent_max_age_hours: int = 6,
         qwen_max_per_round: int = 20,
         qwen_max_candidates_per_news: int = 5,
-        qwen_max_recent_comparisons: int = 50,
+        qwen_max_recent_comparisons: int = 200,
         audit_dir: str | Path | None = None,
         source_priority: dict[str, int] | None = None,
     ):
@@ -206,7 +206,10 @@ class SemanticEventDeduper:
         self._recent_max_age = timedelta(hours=max(1, int(recent_max_age_hours)))
         self._qwen_max_per_round = max(1, int(qwen_max_per_round))
         self._qwen_max_candidates = max(1, int(qwen_max_candidates_per_news))
-        self._qwen_max_recent = max(1, int(qwen_max_recent_comparisons))
+        # recent scan limit: number of recent cache entries to scan per new item.
+        # This is the CHEAP ratio pre-filter — Qwen calls are bounded separately
+        # by qwen_max_per_round (20/round). Default 200 covers ~67 min at ~15 items/cycle.
+        self._recent_scan_limit = max(1, int(qwen_max_recent_comparisons))
         self._source_priority = source_priority or DEFAULT_SOURCE_PRIORITY
 
         # batch 内 Qwen 预算（每轮 reset）
@@ -326,7 +329,7 @@ class SemanticEventDeduper:
             return rows
 
         self._evict_stale_recent()
-        recent_snapshot = self._recent_titles[:self._qwen_max_recent]
+        recent_snapshot = self._recent_titles[:self._recent_scan_limit]
 
         kept: list[dict[str, Any]] = []
         for row in rows:
