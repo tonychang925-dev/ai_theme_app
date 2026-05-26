@@ -24,6 +24,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+import jieba
+
 from database_service.streams.services.news_prefilter_adapter import NewsPreFilterAdapter
 
 logger = logging.getLogger(__name__)
@@ -94,7 +96,7 @@ def _extract_company_alias(title: str) -> set[str]:
     })
     found: set[str] = set()
     for pat in (
-        r'【?([^】\s：:]+)[：:]',
+        r'【?([^】\s：:]+)[】：:]',
         r'([^\s]+)公告',
         r'([^\s]+)称',
         r'([^\s]{2,8}?)(?:发布|宣布|表示|披露|回应|拟将|拟|将)',
@@ -108,6 +110,42 @@ def _extract_company_alias(title: str) -> set[str]:
             ):
                 found.add(name)
     return found
+
+
+# ── jieba entity token extraction (Phase 4E fix) ────────────────────
+
+# Tokens to exclude from entity buckets
+_JIEBA_STOP_TOKENS: frozenset[str] = frozenset({
+    "发布", "宣布", "公告", "表示", "披露", "回应", "最新", "拟将",
+    "市场", "公司", "集团", "股份", "有限", "今日", "昨日", "本周",
+    "近日", "显示", "企查查", "法定", "代表人", "经营范围", "包括",
+    "成立", "销售", "服务", "相关", "数据", "消息", "新闻",
+    "投资", "亿元", "万元", "APP", "简称",
+})
+
+
+def _extract_entity_tokens(title: str) -> set[str]:
+    """使用 jieba 分词从标题中提取潜在实体关键词（2-6字）。
+
+    作为 _extract_company_alias 的兜底，解决实体名嵌入长句时 regex 无法提取的问题。
+    例如："企查查APP显示，近日，许昌市胖东来乐予文化娱乐有限公司成立..."
+     →  jieba 可提取出 {"胖东来", "许昌市", "于龙飞"} 等实体词。
+    """
+    tokens: set[str] = set()
+    try:
+        words = jieba.lcut(str(title))
+    except Exception:
+        return tokens
+    for w in words:
+        w = w.strip()
+        if (
+            2 <= len(w) <= 6
+            and not _regex.search(r'\d', w)
+            and w not in _JIEBA_STOP_TOKENS
+            and not w.startswith(("APP", ">", "<", "http"))
+        ):
+            tokens.add(w)
+    return tokens
 
 
 def _token_overlap(title_a: str, title_b: str) -> int:
@@ -234,6 +272,9 @@ class SemanticEventDeduper:
             # entity buckets: company aliases (Phase 4E fix — broad entity catch)
             for comp in _extract_company_alias(title):
                 buckets.setdefault(f"C:{comp}", []).append(i)
+            # entity buckets: jieba token fallback (Phase 4E fix — embedded entity catch)
+            for token in _extract_entity_tokens(title):
+                buckets.setdefault(f"E:{token}", []).append(i)
 
         # 2. 收集所有候选对 + 判定
         dup_pairs: list[tuple[int, int]] = []  # (keeper_idx, dropped_idx)
