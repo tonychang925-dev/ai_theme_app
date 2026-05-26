@@ -199,41 +199,38 @@ class CollectionCommandPlanner:
                     runner_key="recap.prerequisites.isolated",
                     label="新链盘后前置构建",
                 ))
-                pre_logs = ["recap_snapshot: FORCE REBUILD truth source + report"]
-            else:
-                pre_logs = ["recap_snapshot: read existing truth sources, build DailyReview (fast)"]
-
-            steps.extend([
-                CollectionTaskStep(
-                    key="market_environment_daily",
-                    runner_key="recap.market_environment_daily",
-                    label="新链市场环境检查",
-                ),
-                CollectionTaskStep(
-                    key="theme_capital_flow_daily",
-                    runner_key="recap.theme_capital_flow_daily",
-                    label="新链题材资金流检查",
-                ),
-                CollectionTaskStep(
-                    key="money_flow_enhanced",
-                    runner_key="script.default",
-                    commands=[
-                        CollectionCommand(cmd=[
-                            self._python_bin,
-                            str(self._project_root / "database_service/scripts/build_money_flow_enhanced.py"),
-                            "--trade-date", trade_date,
-                        ])
-                    ],
-                    label="资金行为增强",
-                ),
-            ])
-
-            if force_truth:
+                steps.extend([
+                    CollectionTaskStep(
+                        key="market_environment_daily",
+                        runner_key="recap.market_environment_daily",
+                        label="新链市场环境检查",
+                    ),
+                    CollectionTaskStep(
+                        key="theme_capital_flow_daily",
+                        runner_key="recap.theme_capital_flow_daily",
+                        label="新链题材资金流检查",
+                    ),
+                    CollectionTaskStep(
+                        key="money_flow_enhanced",
+                        runner_key="script.default",
+                        commands=[
+                            CollectionCommand(cmd=[
+                                self._python_bin,
+                                str(self._project_root / "database_service/scripts/build_money_flow_enhanced.py"),
+                                "--trade-date", trade_date,
+                            ])
+                        ],
+                        label="资金行为增强",
+                    ),
+                ])
                 steps.append(CollectionTaskStep(
                     key="abnormal_signal",
                     runner_key="abnormal.signal",
                     label="异动信号检测",
                 ))
+                pre_logs = ["recap_snapshot: FORCE REBUILD truth source + report"]
+            else:
+                pre_logs = ["recap_snapshot: DailyReview read-model only"]
 
             steps.append(CollectionTaskStep(
                 key="recap_data",

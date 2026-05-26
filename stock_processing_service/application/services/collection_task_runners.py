@@ -248,6 +248,18 @@ class PostMarketReportContextRunner:
                     source = (data or {}).get("source_type") if isinstance(data, dict) else ""
                     summary = f"{self._context_key} source={source or '--'}"
 
+            # Phase 4E fix: theme_capital_flow 为空不得阻断 DailyReview 生成
+            if self._context_key == "theme_capital_flow" and not ok:
+                return CollectionTaskResult(
+                    status="success",
+                    current_label=f"{self._label}为空，继续生成",
+                    logs=[
+                        summary,
+                        "theme_capital_flow empty: continue with diagnostics.partial",
+                    ],
+                    error_message="",
+                )
+
             return CollectionTaskResult(
                 status="success" if ok else "failed",
                 current_label=f"{self._label}完成" if ok else f"{self._label}缺失",
