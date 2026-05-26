@@ -1981,6 +1981,7 @@ async def generate_post_market_derived_data(payload: dict[str, Any] | None = Non
     uc.register_dragon_tiger_object_build()
     uc.register_theme_leader_candidate_build(project_root=str(_project_root()))
     uc.register_money_flow_enhanced_build(project_root=str(_project_root()))
+    uc.register_stock_abnormal_signal_build(project_root=str(_project_root()))
     uc.register_strong_stock_watch_build()
     result = await uc.execute(d)
     return {
