@@ -463,10 +463,9 @@ class ReliableDeepSeekParser(DeepSeekParser):
             raise TimeoutError(f"新闻解析超时 ({news_timeout}秒): {title[:50]}...")
     
     def _generate_cache_key(self, content: str) -> str:
-        """生成缓存键"""
-        # 使用内容哈希作为缓存键
+        """生成缓存键（含prompt版本，prompt变更后自动失效旧缓存）。"""
         content_hash = hashlib.md5(content.encode()).hexdigest()
-        return f"ai_response:{self.model_name}:{content_hash}"
+        return f"ai_response:v2:{self.model_name}:{content_hash}"
     
     def _should_cache_result(self, result: Dict) -> bool:
         """判断是否应该缓存结果"""

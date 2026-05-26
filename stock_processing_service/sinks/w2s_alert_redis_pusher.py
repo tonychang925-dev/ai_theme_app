@@ -13,6 +13,7 @@ from datetime import datetime, timezone, timedelta
 import redis.asyncio as aioredis
 
 from stock_processing_service.domain.services.w2s_alert_service import W2SAuctionAlert
+from stock_processing_service.domain.services.w2s_support_alert_service import W2SSupportAlert
 
 logger = logging.getLogger("sps.w2s_alert.redis_pusher")
 TZ_CN = timezone(timedelta(hours=8))
@@ -112,6 +113,55 @@ class W2SAlertRedisPusher:
         self._pushed += pushed
         if pushed:
             logger.warning("W2S_ALERTS: %d pushed to %s", pushed, self._stream)
+        return pushed
+
+    async def push_support_alerts(self, alerts: list[W2SSupportAlert]) -> int:
+        """推送支撑承接观察告警。"""
+        if not alerts:
+            return 0
+        r = await self._get_redis()
+        if r is None:
+            return 0
+        pushed = 0
+        for a in alerts:
+            dedup_key = f"{STATE_KEY_PREFIX}:{a.trade_date}:{a.candidate_id}:support_observe"
+            if await r.exists(dedup_key):
+                continue
+            try:
+                data = {
+                    "item_type": a.alert_type,
+                    "trade_date": a.trade_date,
+                    "candidate_trade_date": a.candidate_trade_date,
+                    "candidate_id": str(a.candidate_id),
+                    "stock_id": a.stock_id,
+                    "stock_name": a.stock_name,
+                    "theme_name": a.theme_name,
+                    "candidate_type": a.candidate_type,
+                    "weak_type": a.weak_type,
+                    "confirm_level": a.confirm_level,
+                    "confirm_score": str(a.confirm_score),
+                    "support_type": a.support_type,
+                    "support_level": str(round(a.support_level, 3)),
+                    "support_strength": str(round(a.support_strength, 2)),
+                    "support_level_age_days": str(a.support_level_age_days),
+                    "current": str(round(a.current, 3)),
+                    "distance_pct": str(a.distance_pct),
+                    "support_state": a.support_state,
+                    "severity": a.severity,
+                    "confidence": str(a.confidence),
+                    "position_label": a.position_label,
+                    "pattern_labels": json.dumps(a.pattern_labels, ensure_ascii=False),
+                    "evidence_rules": json.dumps(a.evidence_rules, ensure_ascii=False),
+                    "generated_at": a.generated_at,
+                }
+                await r.xadd(self._stream, data, maxlen=self._maxlen)
+                await r.setex(dedup_key, STATE_TTL, "1")
+                pushed += 1
+            except Exception as exc:
+                logger.warning("W2S support push failed for %s: %s", a.stock_id, exc)
+        self._pushed += pushed
+        if pushed:
+            logger.warning("W2S_SUPPORT_ALERTS: %d pushed", pushed)
         return pushed
 
     @property
