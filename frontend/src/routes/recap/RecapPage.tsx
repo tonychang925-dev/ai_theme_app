@@ -579,59 +579,25 @@ function sectionMap(payload: RecapViewModelV2 | null) {
   return map;
 }
 
-function DailyReviewTable({ dailyReview }: { dailyReview: DailyReviewView }) {
-  if (!dailyReview?.theme_reviews?.length) return null;
-  const { theme_reviews, diagnostics } = dailyReview;
-  const cov = (diagnostics as any)?.coverage;
-  return (
-    <div className="workspace-card" style={{ marginBottom: 12 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-        <span className="metric-label section-title">主线与支线（结构化）</span>
-        {cov?.snapshot_status === "partial" && (
-          <span className="recap-chip is-watch">
-            快照不完整：{cov.cycle_joined_count}/{cov.theme_count} 题材有周期数据
-          </span>
-        )}
-      </div>
-      <div className="recap-table-wrap">
-        <table className="recap-table" style={{ minWidth: 960 }}>
-          <thead>
-            <tr>
-              <th>题材</th>
-              <th>阶段</th>
-              <th>事件分</th>
-              <th>市场分</th>
-              <th>主线存活</th>
-              <th>龙头股</th>
-            </tr>
-          </thead>
-          <tbody>
-            {theme_reviews.map((tr) => (
-              <tr key={tr.subject_key}>
-                <td>
-                  <button className="recap-theme-link" type="button"
-                    onClick={() => navigateTo(`/themes/${encodeURIComponent(tr.subject_key)}`)}>
-                    {tr.theme_name}
-                  </button>
-                </td>
-                <td>{zh(tr.theme_stage)}</td>
-                <td>{tr.mainline_strength_score > 0 ? tr.mainline_strength_score.toFixed(2) : "--"}</td>
-                <td>{tr.fade_risk_score > 0 ? tr.fade_risk_score.toFixed(2) : "--"}</td>
-                <td>{tr.final_mainline_alive ? "是" : "否"}</td>
-                <td className="recap-cell-wrap">
-                  {tr.leader_stocks?.slice(0, 3).map((ls, i) => (
-                    <span key={i}>
-                      {i > 0 && "、"}{ls.stock_name || ls.stock_id}
-                    </span>
-                  )) || "--"}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
+/** 将 dailyReview.theme_reviews 映射为 5/22 样式 ThemeSummaryRow */
+function buildThemeSummaryRowsFromDailyReview(
+  dailyReview: DailyReviewView,
+  cycleMap: Map<string, string>,
+): ThemeSummaryRow[] {
+  return (dailyReview.theme_reviews ?? []).map((tr) => ({
+    theme: tr.theme_name,
+    subjectKey: tr.subject_key,
+    tier: tr.final_mainline_alive ? "主线" : "强分支",
+    eventScore: (tr.mainline_strength_score ?? 0) > 0 ? tr.mainline_strength_score.toFixed(2) : "--",
+    marketScore: (tr.fade_risk_score ?? 0) > 0 ? tr.fade_risk_score.toFixed(2) : "--",
+    totalInflow: (tr as any).total_inflow != null ? String((tr as any).total_inflow) : "--",
+    leaderInflow: (tr as any).leader_inflow != null ? String((tr as any).leader_inflow) : "--",
+    themeKline: (tr as any).theme_kline ?? "--",
+    cycleStage: cycleMap.get(tr.theme_name) ?? zh(tr.theme_stage),
+    actionAdvice: tr.action_advice || zh(tr.theme_stage),
+    conclusion: tr.conclusion || (tr.final_mainline_alive ? "主线存活" : "观察"),
+  }));
+}
 }
 
 export function RecapPage() {
@@ -696,16 +662,21 @@ export function RecapPage() {
     });
   }, [watchlistSection]);
   const themeSummaryRows = useMemo(
-    () =>
-      themeSection.map((item) => {
+    () => {
+      // dailyReview 优先，sections fallback
+      if (dailyReview?.theme_reviews?.length) {
+        return buildThemeSummaryRowsFromDailyReview(dailyReview, cycleByTheme);
+      }
+      return themeSection.map((item) => {
         const parsed = splitThemeLine(item);
         return parseThemeSummary(
           parsed.theme || "未分类",
           parsed.body,
           cycleByTheme.get(parsed.theme) ?? "",
         );
-      }),
-    [themeSection, cycleByTheme],
+      });
+    },
+    [themeSection, cycleByTheme, dailyReview],
   );
   const themeCapitalFlowRows = useMemo(
     () => themeCapitalFlowSection.map((item) => parseThemeCapitalFlowRow(item)),
@@ -949,10 +920,9 @@ export function RecapPage() {
                 </div>
               )}
 
-              {/* P4: 优先渲染结构化 DailyReview，fallback 到旧 sections 解析 */}
-              {dailyReview?.theme_reviews?.length ? (
-                <DailyReviewTable dailyReview={dailyReview} />
-              ) : (sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? []).length > 0 && (
+              {/* 主线与支线 — dailyReview 优先，sections fallback。统一使用 5/22 样式 */}
+              {(dailyReview?.theme_reviews?.length ||
+                (sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? []).length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">{payload.report_type === "post_market" ? "主线与支线" : "可做主线与支线"}</span>
                   {payload.report_type === "post_market" ? (
