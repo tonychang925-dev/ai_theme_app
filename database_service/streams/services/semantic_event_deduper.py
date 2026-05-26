@@ -85,13 +85,27 @@ def _extract_company_alias(title: str) -> set[str]:
 
     规则：
       XXX： / 【XXX： / 【XXX】 / XXX公告 / XXX称
-      排除过短（<2）和过长（>10），排除纯数字。
+      XXX发布/宣布/表示/披露/回应/拟/将
+      排除过短（<2）和过长（>10），排除纯数字，排除常见停用词。
     """
+    _STOP_ALIAS: frozenset[str] = frozenset({
+        "发布", "宣布", "公告", "表示", "披露", "回应", "最新", "拟将",
+        "市场", "公司", "集团", "股份", "有限", "今日", "昨日", "本周",
+    })
     found: set[str] = set()
-    for pat in (r'【?([^】\s：:]+)[：:]', r'([^\s]+)公告', r'([^\s]+)称'):
+    for pat in (
+        r'【?([^】\s：:]+)[：:]',
+        r'([^\s]+)公告',
+        r'([^\s]+)称',
+        r'([^\s]{2,8})(?:发布|宣布|表示|披露|回应|拟将|拟|将)',
+    ):
         for m in _regex.finditer(pat, str(title)):
             name = m.group(1).strip().rstrip('】').rstrip('【')
-            if 2 <= len(name) <= 10 and not _regex.search(r'\d{4}', name):
+            if (
+                2 <= len(name) <= 10
+                and not _regex.search(r'\d{4}', name)
+                and name not in _STOP_ALIAS
+            ):
                 found.add(name)
     return found
 
@@ -217,6 +231,9 @@ class SemanticEventDeduper:
             # entity buckets: stock codes
             for code in _extract_stock_codes(title):
                 buckets.setdefault(f"S:{code}", []).append(i)
+            # entity buckets: company aliases (Phase 4E fix — broad entity catch)
+            for comp in _extract_company_alias(title):
+                buckets.setdefault(f"C:{comp}", []).append(i)
 
         # 2. 收集所有候选对 + 判定
         dup_pairs: list[tuple[int, int]] = []  # (keeper_idx, dropped_idx)
