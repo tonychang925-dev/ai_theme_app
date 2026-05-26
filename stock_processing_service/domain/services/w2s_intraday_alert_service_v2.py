@@ -442,6 +442,45 @@ class W2SIntradayAlertServiceV2:
         evidence.append(f"final={final_score:.1f} level={level} v2.1")
         return round(final_score, 1), level, breakdown, evidence
 
+    # ── v2.2 评分 (early_turn 双路径校准) ──
+
+    @staticmethod
+    def score_v2_2(state: dict, history: list, confirm_level: str,
+                    current: float, support_level: float) -> tuple[float, str, dict, list[str]]:
+        """v2.2: turn_strong 保持 v2.1 门禁, early_turn 双路径放宽。"""
+        # 复用 v2.1 评分计算
+        score, _, breakdown, evidence = W2SIntradayAlertServiceV2.score_v2_1(
+            state, history, confirm_level, current, support_level)
+
+        rel_cross_zero = breakdown.get("relative_strength_cross_zero", False)
+        rel_slope_5m = breakdown.get("relative_strength_slope_5m", 0)
+        rel_now = float(state.get("relative_strength_vs_index") or 0)
+        dist_vwap = breakdown.get("distance_to_vwap_pct", 0)
+        price_pos = breakdown.get("price_position_30m", 0.5)
+        chase_penalty = breakdown.get("chase_risk_penalty", 0)
+
+        # turn_strong: 保持 v2.1 门禁不变
+        if (score >= 70 and rel_cross_zero and chase_penalty == 0
+                and dist_vwap <= 1.5 and price_pos <= 0.75):
+            level = "turn_strong"
+        # early_turn 路径 A: cross_zero + score ≥ 40
+        elif rel_cross_zero and score >= 40 and dist_vwap <= 2.5 and price_pos <= 0.8:
+            level = "early_turn"
+            evidence.append("v2.2:early_turn_pathA→cross_zero+score≥40")
+        # early_turn 路径 B: slope > 0.5 + dist ≤ 2.0 + pos ≤ 0.75 + score ≥ 42
+        elif (rel_slope_5m > 0.5 and rel_now > -0.2
+              and dist_vwap <= 2.0 and price_pos <= 0.75 and score >= 42):
+            level = "early_turn"
+            evidence.append(f"v2.2:early_turn_pathB→slope={rel_slope_5m:.2f}+rel={rel_now:.2f}")
+        elif score >= 45:
+            level = "early_turn"
+            evidence.append("v2.2:early_turn→score≥45(fallback)")
+        else:
+            level = "observe"
+
+        breakdown["scoring_version"] = "v2.2_experimental"
+        return score, level, breakdown, evidence
+
     # ── 主流程 (复用 v1 数据加载) ──
 
     async def build_alerts(self, trade_date: str,
@@ -472,11 +511,15 @@ class W2SIntradayAlertServiceV2:
             if support_level > 0 and current < support_level * 0.995:
                 continue
 
-            score, level, breakdown, evidence = (
-                self.score_v2_1(state, histories.get(sid, []), confirm_level, current, support_level)
-                if scoring_version == "v2.1_experimental"
-                else self.score_v2(state, histories.get(sid, []), confirm_level, current, support_level)
-            )
+            if scoring_version == "v2.2_experimental":
+                score, level, breakdown, evidence = self.score_v2_2(
+                    state, histories.get(sid, []), confirm_level, current, support_level)
+            elif scoring_version == "v2.1_experimental":
+                score, level, breakdown, evidence = self.score_v2_1(
+                    state, histories.get(sid, []), confirm_level, current, support_level)
+            else:
+                score, level, breakdown, evidence = self.score_v2(
+                    state, histories.get(sid, []), confirm_level, current, support_level)
 
             level_counts[level] = level_counts.get(level, 0) + 1
 
