@@ -29,7 +29,7 @@ async def main():
     p.add_argument("--dry-run", action="store_true", help="只检测不入库/不推送")
     args = p.parse_args()
 
-    detector = KlineBreakDetector(DSN, dedup_seconds=0)  # P0: 关闭冷却以展示全部
+    detector = KlineBreakDetector(DSN, redis_url="redis://localhost:6379/0")
     pusher = KlineAlertRedisPusher() if not args.dry_run else None
 
     # 加载数据
@@ -48,20 +48,32 @@ async def main():
 
     # 检测
     result = await detector.detect()
-    print(f"\nDetection: checked={result.checked} alerts={len(result.alerts)} cached={result.in_state_cache} elapsed={result.elapsed_ms}ms")
+    print(f"\n── 检测统计 ──")
+    print(f"  checked={result.checked} with_quotes={result.with_quotes}")
+    print(f"  alerts={len(result.alerts)}")
+    print(f"  suppressed_by_cooldown={result.suppressed_by_cooldown}")
+    print(f"  suppressed_by_confirm={result.suppressed_by_confirm}")
+    print(f"  elapsed={result.elapsed_ms}ms")
 
     # 按 severity 分组展示
     by_sev = {}
+    by_type = {}
     for a in result.alerts:
         by_sev.setdefault(a.severity, []).append(a)
+        by_type.setdefault(a.alert_type.value, 0)
+        by_type[a.alert_type.value] += 1
+
+    print(f"  by_type: {dict(by_type)}")
 
     for sev in ["critical", "error", "warning", "info"]:
         alerts = by_sev.get(sev, [])
         if alerts:
             print(f"\n── {sev.upper()} ({len(alerts)}) ──")
             for a in alerts[:10]:
+                age_tag = f" age={a.support_level_age_days}d" if a.support_level_age_days > 7 else ""
+                conf_tag = f" conf={a.confidence}"
                 print(f"  {a.stock_id} {a.stock_name}: {a.alert_type.value}")
-                print(f"    support={a.support_type}@{a.support_level} current={a.current} distance={a.distance_pct}%")
+                print(f"    support={a.support_type}@{a.support_level} current={a.current} distance={a.distance_pct}%{age_tag}{conf_tag}")
 
     # 推送
     if pusher and result.alerts:
@@ -73,6 +85,10 @@ async def main():
             print(json.dumps({
                 "stock_id": a.stock_id, "stock_name": a.stock_name,
                 "alert_type": a.alert_type.value, "severity": a.severity,
+                "previous_state": a.previous_state,
+                "confirm_count": a.confirm_count,
+                "confidence": a.confidence,
+                "support_level_age_days": a.support_level_age_days,
                 "current": a.current, "support_level": a.support_level,
                 "distance_pct": a.distance_pct,
             }, ensure_ascii=False, indent=2))
