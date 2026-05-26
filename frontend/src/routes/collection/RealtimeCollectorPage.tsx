@@ -11,9 +11,11 @@ import {
   startJyhfAuctionCollector,
   stopJyhfAuctionCollector,
   openKlineAlertsStream,
+  openW2SAlertsStream,
   type JyhfCdpCollectorStatus,
   type JyhfAuctionStatus,
   type KlineAlertEvent,
+  type W2SAlertEvent,
   type NewChainRealtimeStatus,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
@@ -44,6 +46,10 @@ export function RealtimeCollectorPage() {
   const [klineFilter, setKlineFilter] = useState<"all" | "critical" | "error" | "warning" | "info">("warning");
   const [klineAlertsEnabled, setKlineAlertsEnabled] = useState(true);
   const klineEsRef = useRef<EventSource | null>(null);
+  const [w2sAlerts, setW2sAlerts] = useState<W2SAlertEvent[]>([]);
+  const [w2sFilter, setW2sFilter] = useState<"all" | "important" | "observe">("important");
+  const [w2sAlertsEnabled, setW2sAlertsEnabled] = useState(true);
+  const w2sEsRef = useRef<EventSource | null>(null);
   const [output, setOutput] = useState<string[]>([]);
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const initializedRef = useRef(false);
@@ -152,6 +158,26 @@ export function RealtimeCollectorPage() {
     return () => { es.close(); };
   }, [klineAlertsEnabled]);
 
+  // P1-I-1b: W2S 竞价弱转强告警 SSE
+  useEffect(() => {
+    if (!w2sAlertsEnabled) {
+      if (w2sEsRef.current) { w2sEsRef.current.close(); w2sEsRef.current = null; }
+      return;
+    }
+    const es = openW2SAlertsStream(
+      (alert) => {
+        setW2sAlerts(prev => [...prev, alert].slice(-100));
+        const ts = alert.generated_at?.slice(11, 19) || "";
+        const level = alert.confirm_level;
+        append(`[W2S-${level}] ${alert.stock_name || alert.stock_id} ${alert.candidate_type || ""} | score=${alert.confirm_score} open=${alert.auction_open_pct}% carry=${alert.carry_ratio} ${ts}`);
+      },
+      (err) => { append(`[W2S告警] SSE 断开: ${err.message}`); },
+    );
+    w2sEsRef.current = es;
+    append("[W2S告警] SSE 已连接");
+    return () => { es.close(); };
+  }, [w2sAlertsEnabled]);
+
   useEffect(() => {
     if (running === "up") {
       statusErrorNotifiedRef.current = false;
@@ -217,6 +243,7 @@ export function RealtimeCollectorPage() {
     setJyhfStatus(prev => ({ ...(prev ?? {} as JyhfCdpCollectorStatus), collector_running: false }));
     append("启动 JYHF DOM 采集器...");
     setKlineAlertsEnabled(true);
+    setW2sAlertsEnabled(true);
 
     // 竞价采集（独立线程，不阻塞 DOM 启动）
     if (auctionEnabled) {
@@ -317,6 +344,7 @@ export function RealtimeCollectorPage() {
     setJyhfStatus(prev => ({ ...(prev ?? {} as JyhfCdpCollectorStatus), collector_running: true }));
     append("停止 JYHF DOM 采集器...");
     setKlineAlertsEnabled(false);
+    setW2sAlertsEnabled(false);
 
     // 同时停止竞价采集
     if (auctionStatus?.running) {
@@ -700,6 +728,44 @@ export function RealtimeCollectorPage() {
                     </span>
                     {" "}
                     <span style={{ color: "#64748b", fontSize: 10 }}>conf={a.confidence}</span>
+                  </div>
+                );
+              });
+            })()}
+          </div>
+        </section>
+
+        <section className="workspace-card">
+          <span className="metric-label section-title">弱转强竞价告警</span>
+          <label style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none", marginLeft: 12 }}>
+            <input type="checkbox" checked={w2sAlertsEnabled} onChange={(e) => setW2sAlertsEnabled(e.target.checked)} style={{ width: 16, height: 16, cursor: "pointer" }} />
+            <span style={{ fontWeight: 600, fontSize: 13 }}>启用</span>
+          </label>
+          <div style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 4, marginBottom: 8 }}>
+            {(["all", "important", "observe"] as const).map(level => (
+              <button key={level} type="button" className={`tag tag-button ${w2sFilter === level ? "tag-active" : ""}`}
+                style={{ fontSize: 11, padding: "2px 10px" }} onClick={() => setW2sFilter(level)}>
+                {level === "all" ? "全部" : level === "important" ? "A/B级" : "C级"}
+              </button>
+            ))}
+            <button type="button" className="tag tag-button" style={{ fontSize: 11, padding: "2px 10px", marginLeft: "auto" }}
+              onClick={() => setW2sAlerts([])}>清空</button>
+          </div>
+          <div className="collection-log-panel" style={{ maxHeight: 200, overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
+            {(() => {
+              const filtered = w2sFilter === "all" ? w2sAlerts : w2sAlerts.filter(a => a.severity === w2sFilter);
+              if (filtered.length === 0) return <div className="collection-log-line" style={{ color: "#64748b" }}>等待竞价确认...</div>;
+              return filtered.slice(-50).reverse().map((a, i) => {
+                const ts = a.generated_at?.slice(11, 19) || "--:--:--";
+                const lvlColor: Record<string, string> = { A: "#22c55e", B: "#f59e0b", C: "#94a3b8" };
+                return (
+                  <div key={`w2s-${i}`} className="collection-log-line" style={{ color: "#cbd5e1", whiteSpace: "nowrap" }}>
+                    <span style={{ color: "#64748b" }}>{ts}</span>{" "}
+                    <strong style={{ color: lvlColor[a.confirm_level] || "#94a3b8" }}>[{a.confirm_level}]</strong>{" "}
+                    <strong>{a.stock_name || a.stock_id}</strong>{" "}
+                    <span style={{ color: "#94a3b8" }}>{a.theme_name}</span>{" "}
+                    <span>{a.candidate_type?.replace(/_/g, " ")}</span>{" "}
+                    <span style={{ color: "#64748b" }}>score={a.confirm_score} open={a.auction_open_pct}% carry={a.carry_ratio}</span>
                   </div>
                 );
               });

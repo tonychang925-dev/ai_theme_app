@@ -1236,6 +1236,35 @@ async def intel_stream(
     )
 
 
+# ── P1-I-1b: W2S 竞价弱转强告警 SSE ──
+
+
+@router.get("/realtime/w2s-alerts/stream")
+async def w2s_alerts_stream(request: Request, last_id: str = Query(default="0-0")) -> StreamingResponse:
+    """SSE 代理: W2S 竞价确认告警 → stock_processing_service."""
+    url = f"{STOCK_PROCESSING_BASE_URL}/api/v1/w2s-alerts/stream?last_id={last_id}"
+
+    async def _proxy_stream():
+        import aiohttp
+        timeout = aiohttp.ClientTimeout(total=3600, connect=10)
+        try:
+            async with aiohttp.ClientSession(timeout=timeout) as session:
+                async with session.get(url) as upstream:
+                    if upstream.status != 200:
+                        yield f"event: error\ndata: {json.dumps({'error': f'upstream returned {upstream.status}'})}\n\n"
+                        return
+                    async for line in upstream.content:
+                        decoded = line.decode("utf-8", errors="replace").rstrip("\n")
+                        yield decoded + "\n"
+        except Exception as exc:
+            yield f"event: error\ndata: {json.dumps({'error': str(exc)})}\n\n"
+
+    return StreamingResponse(
+        _proxy_stream(), media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "Connection": "keep-alive", "X-Accel-Buffering": "no"},
+    )
+
+
 # ── P1-H: K线支撑告警 SSE ──
 
 

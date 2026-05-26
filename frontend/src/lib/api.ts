@@ -1165,6 +1165,51 @@ export interface KlineAlertEvent {
   pct_chg: string;
 }
 
+// ── P1-I-1b: W2S 竞价弱转强告警 SSE ──
+
+export interface W2SAlertEvent {
+  trade_date: string;
+  candidate_trade_date: string;
+  candidate_id: string;
+  stock_id: string;
+  stock_name: string;
+  theme_name: string;
+  candidate_type: string;
+  weak_type: string;
+  confirm_level: string;
+  confirm_score: string;
+  auction_open_pct: string;
+  carry_ratio: string;
+  last_minute_ratio: string;
+  price_path_stability_score: string;
+  shape_features: string;
+  evidence_rules: string;
+  reject_reason_code: string;
+  data_status: string;
+  source: string;
+  severity: string;
+  generated_at: string;
+}
+
+export function openW2SAlertsStream(
+  onAlert: (alert: W2SAlertEvent) => void,
+  onError?: (err: Error) => void,
+): EventSource {
+  const es = new EventSource("/api/v2/realtime/w2s-alerts/stream");
+  es.addEventListener("w2s_alert", (e: MessageEvent) => {
+    try {
+      const data = JSON.parse(e.data) as W2SAlertEvent;
+      onAlert(data);
+    } catch { /* skip malformed */ }
+  });
+  es.addEventListener("error", () => {
+    if (es.readyState === EventSource.CLOSED && onError) {
+      onError(new Error("W2S alerts SSE disconnected"));
+    }
+  });
+  return es;
+}
+
 export function openKlineAlertsStream(
   onAlert: (alert: KlineAlertEvent) => void,
   onError?: (err: Error) => void,
