@@ -693,7 +693,19 @@ class NewsStreamProcessor:
                         )
                         business_results["results"]["structuring"] = structuring_meta
                         
-                        if ai_result and ai_result.get("status") == "success":
+                        if ai_result and ai_result.get("status") == "skipped":
+                            # Phase 4E: LLM判定为低质量事件，跳过结构化，不创建 fallback
+                            skip_reason = str(ai_result.get("reason", "low_quality"))[:100]
+                            logger.info("⏭️ LLM低质量过滤: news_id=%s reason=%s", news_id, skip_reason)
+                            business_results["results"]["structuring"] = structuring_meta
+                            business_results["results"]["ai_analysis"] = {
+                                "ai_service": "real",
+                                "ai_service_response": ai_result,
+                                "skipped": True,
+                            }
+                            business_results["processing_steps"].append("ai_analysis_skipped_low_quality")
+                            self.business_stats["ai_analysis_count"] += 1
+                        elif ai_result and ai_result.get("status") == "success":
                             structured_event = self._build_structured_news_event(news_data, ai_result.get("response", {}))
                             persistence = await self._persist_and_publish_structured_event(structured_event)
 
@@ -709,7 +721,7 @@ class NewsStreamProcessor:
                                 business_results["processing_steps"].append("structured_event_publish")
                             self.business_stats["ai_analysis_count"] += 1
                             self.business_stats["ai_real_analysis_count"] += 1
-                            
+
                             logger.info(f"✅ 真实AI分析成功: {news_id}")
                         else:
                             error_msg = ai_result.get("error", "未知错误") if ai_result else "返回空结果"
@@ -740,8 +752,13 @@ class NewsStreamProcessor:
             except Exception as e:
                 logger.warning(f"主题提取失败: {e}")
 
+        # Phase 4E: LLM explicit skip → no fallback
+        ai_analysis = business_results["results"].get("ai_analysis") or {}
+        if ai_analysis.get("skipped") is True:
+            logger.info("⏭️ LLM已判定低质量，跳过fallback结构化: %s", news_id)
+            return business_results
+
         # 如果没有生成结构化事件（AI分析失败或未启用），创建一个基本的事件并发布
-        logger.info(f"🔄 检查是否需要创建基本结构化事件: {news_id}, structured_event 存在? {'structured_event' in business_results['results']}")
         if "structured_event" not in business_results["results"]:
             logger.info(f"🔄 AI分析失败或未启用，为 {news_id} 创建基本结构化事件")
             try:

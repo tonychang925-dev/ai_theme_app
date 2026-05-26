@@ -3737,6 +3737,48 @@ async def kline_alerts_stream(last_id: str = Query(default="0-0", description="�
     )
 
 
+# ── P1-I-1b: W2S 竞价弱转强告警 SSE ──────────────────────────────────────
+
+
+@app.get("/api/v1/w2s-alerts/stream")
+async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
+    """SSE 端点: 从 Redis Stream stream:w2s:alerts 推送 W2S 竞价确认告警。"""
+    import redis.asyncio as aioredis
+    from fastapi.responses import StreamingResponse
+
+    async def _event_generator():
+        r = aioredis.from_url(os.getenv("REDIS_URL", "redis://localhost:6379/0"), decode_responses=True)
+        try:
+            try:
+                await r.xinfo_stream("stream:w2s:alerts")
+            except Exception:
+                yield f"event: heartbeat\ndata: {json.dumps({'msg': 'w2s stream not found'})}\n\n"
+                return
+            read_id = last_id if last_id != "0-0" else "0-0"
+            while True:
+                try:
+                    msgs = await r.xread({"stream:w2s:alerts": read_id}, count=20, block=15000)
+                    if msgs:
+                        for _, entries in msgs:
+                            for entry_id, data in entries:
+                                read_id = entry_id
+                                yield f"id: {entry_id}\nevent: w2s_alert\ndata: {json.dumps(data, ensure_ascii=False)}\n\n"
+                    else:
+                        yield f"event: heartbeat\ndata: {json.dumps({'ts': datetime.now().isoformat()})}\n\n"
+                except asyncio.CancelledError:
+                    break
+                except Exception as exc:
+                    yield f"event: error\ndata: {json.dumps({'error': str(exc)})}\n\n"
+                    await asyncio.sleep(5)
+        finally:
+            await r.aclose()
+
+    return StreamingResponse(
+        _event_generator(), media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "Connection": "keep-alive", "X-Accel-Buffering": "no"},
+    )
+
+
 async def _run_kline_break_detector_loop(app: FastAPI) -> None:
     """P1-G: 支撑位突破检测后台循环 (盘中自动运行, 10s 间隔)。"""
     logger_kline = logging.getLogger("sps.kline_break_detector.loop")

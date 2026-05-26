@@ -240,14 +240,14 @@ class DeepSeekParser(BaseLLMParser):
         return text[:limit].rstrip()
 
     def build_event_structuring_prompt(self, title: str, content: str) -> str:
-        return f”””你是一个A股投资新闻质量过滤器+事件结构化抽取器。
+        return f"""你是一个A股投资新闻质量过滤器+事件结构化抽取器。
 
 你的首要任务是判断这条新闻是否值得进入A股题材匹配管道：
 - 如果是低质量/无投资价值的新闻，直接输出 skip JSON，不做结构化。
 - 只有确认是高价值新闻时，才输出完整的结构化 JSON。
 
 【低质量新闻 — 直接 SKIP】满足以下任一条件即输出 skip：
-1. 涉外非A股：纯外国政治/外交/经济声明，与中国A股上市公司无直接关联（如”某国外长宣布***”、”某国联合声明”等）
+1. 涉外非A股：纯外国政治/外交/经济声明，与中国A股上市公司无直接关联（如"某国外长宣布***"、"某国联合声明"等）
 2. 地方政务无标的：地方政府的规划/政策发布，没有提及具体A股上市公司或行业
 3. 例行公告无催化：公司公告涉及股东减持/质押/解押/辞职/人事变动/担保/贷款/授信/股东大会决议/更正公告/会计差错，且不含重大订单/中标/并购/重组/技术突破
 4. 纯价格波动：仅描述股价涨跌/板块震荡/指数变化，无任何基本面催化剂
@@ -257,20 +257,20 @@ class DeepSeekParser(BaseLLMParser):
 【高价值新闻 — 完整结构化】确认不属于上述低质量类型后输出完整JSON。
 
 输出格式：
-- 低质量：{{“skip”:true,”reason”:”分类：简短理由（<=20字）”}}
-- 高质量：{{“skip”:false,”event_type”:”...”,”entities”:[...],...}}
+- 低质量：{{"skip":true,"reason":"分类：简短理由（<=20字）"}}
+- 高质量：{{"skip":false,"event_type":"...","entities":[...],...}}
 
 高质量事件要求：
 1. 只基于输入文本抽取，不得编造事实。
 2. event_type 归一化：政策、制裁、技术突破、会议论坛、行业观点、融资IPO、并购重组、产品发布、订单合作、市场预测、组织设立、产能扩张、事故冲突、其他
-3. entities 格式：{{“name”:”原文实体”,”type”:”国家|公司|组织|产品|技术|人物|地点|行业”,”normalized”:”归一化名称”}}
+3. entities 格式：{{"name":"原文实体","type":"国家|公司|组织|产品|技术|人物|地点|行业","normalized":"归一化名称"}}
 4. summary <=60字。causal_claim 短语数组。confidence/severity_score 0~1。
 5. source_weight 0.5~1.5。timestamp 可为 null。
 6. 不输出 markdown/解释/题材动作建议/旧架构字段。
 
 新闻标题：{title}
 新闻内容：{content[:2000]}
-“””
+"""
 
     def _normalize_list(self, value: Any) -> List[str]:
         if value is None:
