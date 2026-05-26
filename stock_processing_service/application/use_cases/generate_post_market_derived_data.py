@@ -49,6 +49,10 @@ class PostMarketDerivedDataGenerateUseCase:
         self._builders["theme_cycle_truth"] = _ThemeCycleTruthBuilder(
             pool=self._pool, db_manager=self._db_manager)
 
+    def register_dragon_tiger_object_build(self) -> None:
+        self._builders["dragon_tiger_object_build"] = _DragonTigerObjectBuilder(
+            pool=self._pool, db_manager=self._db_manager)
+
     async def execute(
         self, trade_date_val: date, force: bool = False, dry_run: bool = False,
     ) -> DerivedDataResult:
@@ -217,3 +221,46 @@ class _ThemeCycleTruthBuilder:
         return {"job_key": "theme_cycle_truth", "status": "failed_no_rows",
                 "affected_rows": 0, "step_results": step_results,
                 "error": "theme_cycle_judgement_v2 rows=0"}
+
+
+class _DragonTigerObjectBuilder:
+    """P2-3: dragon_tiger_object_build — 调用现有的 BuildDragonTigerObjectJob。"""
+
+    def __init__(self, pool=None, db_manager=None):
+        self._pool = pool
+        self._db_manager = db_manager
+
+    async def run(self, trade_date: date) -> dict[str, Any]:
+        if self._db_manager is None:
+            return {"job_key": "dragon_tiger_object_build", "status": "failed_precondition",
+                    "error": "no_db_manager"}
+
+        import os
+        try:
+            from stock_processing_service.application.jobs.build_dragon_tiger_object_job import (
+                BuildDragonTigerObjectJob,
+            )
+            token = os.environ.get("TUSHARE_TOKEN", "")
+            job = BuildDragonTigerObjectJob(write_port=self._db_manager)
+            result = await job.execute(trade_date=trade_date, tushare_token=token)
+
+            # Check object rows
+            row_count = 0
+            if self._pool:
+                async with self._pool.acquire() as conn:
+                    r = await conn.fetchrow(
+                        "SELECT COUNT(*) AS cnt FROM dragon_tiger_object WHERE trade_date = $1::date",
+                        trade_date)
+                    row_count = int(r["cnt"]) if r else 0
+
+            if row_count > 0:
+                return {"job_key": "dragon_tiger_object_build", "status": "success",
+                        "affected_rows": row_count}
+            if result.affected_rows > 0:
+                return {"job_key": "dragon_tiger_object_build", "status": "failed_no_rows",
+                        "affected_rows": 0, "error": "DRAGON_TIGER_OBJECT_NO_ROWS"}
+            return {"job_key": "dragon_tiger_object_build", "status": "skipped_no_data",
+                    "affected_rows": 0, "error": "no_dragon_tiger_day"}
+        except Exception as exc:
+            return {"job_key": "dragon_tiger_object_build", "status": "failed",
+                    "affected_rows": 0, "error": str(exc)[:200]}

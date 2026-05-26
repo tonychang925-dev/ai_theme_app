@@ -1978,6 +1978,7 @@ async def generate_post_market_derived_data(payload: dict[str, Any] | None = Non
     db_manager = getattr(getattr(app.state, "gateway", None), "_client", None)
     uc = PostMarketDerivedDataGenerateUseCase(pool=pool, db_manager=db_manager)
     uc.register_theme_cycle_truth()
+    uc.register_dragon_tiger_object_build()
     result = await uc.execute(d)
     return {
         "ok": result.status == "success",
