@@ -1972,43 +1972,20 @@ async def generate_post_market_derived_data(payload: dict[str, Any] | None = Non
     pool = getattr(getattr(app.state, "gateway", None), "_client", None)
     pool = getattr(pool, "pool", None) if pool else None
 
-    from stock_processing_service.application.services.post_market_job_status_service import (
-        PostMarketJobStatusService,
+    from stock_processing_service.application.use_cases.generate_post_market_derived_data import (
+        PostMarketDerivedDataGenerateUseCase,
     )
-    from stock_processing_service.application.services.post_market_readiness_service import (
-        PostMarketReadinessService,
-    )
-    jss = PostMarketJobStatusService(pool=pool)
-    await jss.mark_finished(d, "post_market_derived_data", "running")
-
-    rs = PostMarketReadinessService(pool=pool)
-    before = await rs.check(d)
-    before_dict = before.to_dict()
-
-    if before.status == "ready":
-        await jss.mark_finished(d, "post_market_derived_data", "success",
-            diagnostics={"readiness": before_dict})
-        return {
-            "ok": True,
-            "trade_date": trade_date_str,
-            "job_key": "post_market_derived_data",
-            "status": "success",
-            "already_ready": True,
-            "after_readiness": before_dict,
-        }
-
-    # P1: not ready — P2 builders not wired yet
-    await jss.mark_finished(d, "post_market_derived_data", "failed_precondition",
-        error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
-        diagnostics={"readiness": before_dict})
+    uc = PostMarketDerivedDataGenerateUseCase(pool=pool)
+    result = await uc.execute(d)
     return {
-        "ok": False,
-        "trade_date": trade_date_str,
+        "ok": result.status == "success",
+        "trade_date": result.trade_date,
         "job_key": "post_market_derived_data",
-        "status": "failed_precondition",
-        "message": "derived data generation ready for P2 builders; currently not implemented",
-        "before_readiness": before_dict,
-        "missing_tables": before.missing_tables,
+        "status": result.status,
+        "before_readiness": result.before_readiness,
+        "after_readiness": result.after_readiness,
+        "job_results": result.job_results,
+        "missing_tables": result.missing_tables,
     }
 
 
