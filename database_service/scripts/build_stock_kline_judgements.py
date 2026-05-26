@@ -37,10 +37,9 @@ def get_postgres_config() -> DatabaseConfig:
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="基于本地 Tushare K 线文件构建个股位置/形态判断")
+    parser = argparse.ArgumentParser(description="读取 DB stock_daily_snapshot 构建个股位置/形态判断")
     parser.add_argument("--trade-date", required=True, help="交易日 YYYY-MM-DD")
     parser.add_argument("--limit", type=int, default=0, help="仅处理前 N 只")
-    parser.add_argument("--data-root", default=str(PROJECT_ROOT / "theme_data_complete" / "_stock_kline" / "tushare" / "daily_bar"))
     parser.add_argument("--universe", default="seed_candidates+strong_watch",
                         choices=["all", "seed_candidates+strong_watch", "strong_watch", "candidates"],
                         help="股票范围: all=全市场, seed_candidates+strong_watch=seed候选+强股池(推荐)")
@@ -107,6 +106,43 @@ def _normalize_stock_id(raw: str) -> str:
         elif s.startswith(("0", "3")):
             return f"{s}.SZ"
     return s
+
+
+def _db_row_to_snapshot(row: dict, stock_id: str) -> StockDailySnapshot | None:
+    """将 DB stock_daily_snapshot 行转换为 StockDailySnapshot。
+
+    DB 返回: trade_date (date), open_price (Decimal), ...
+    StockDailySnapshot 期望: trade_date (str), open_price (Optional[float]), ...
+    """
+    try:
+        td = row.get("trade_date")
+        if td is None:
+            return None
+        return StockDailySnapshot(
+            trade_date=str(td)[:10],
+            stock_id=stock_id,
+            stock_name=row.get("stock_name") or "",
+            open_price=_safe_float(row.get("open_price")),
+            high_price=_safe_float(row.get("high_price")),
+            low_price=_safe_float(row.get("low_price")),
+            close_price=_safe_float(row.get("close_price")),
+            pre_close=_safe_float(row.get("pre_close")),
+            pct_chg=_safe_float(row.get("pct_chg")),
+            volume=_safe_float(row.get("volume")),
+            amount=_safe_float(row.get("amount")),
+            source_name=str(row.get("source_name") or "tushare"),
+        )
+    except Exception:
+        return None
+
+
+def _safe_float(value) -> float | None:
+    if value is None:
+        return None
+    try:
+        return float(value)
+    except (ValueError, TypeError):
+        return None
 
 
 def build_jyhf_current_bar_map(trade_date: str) -> dict[str, StockDailySnapshot]:
@@ -187,43 +223,70 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
 async def main_async() -> int:
     args = parse_args()
     service = StockKlineJudgementService()
-    data_root = Path(args.data_root)
+    logger = logging.getLogger("build_stock_kline_judgements")
 
     # P1-D: universe 过滤 — 不扫全市场
     pg_config = get_postgres_config()
     universe_ids = await _load_universe_stock_ids(pg_config, args.universe, args.trade_date)
-    logger = logging.getLogger("build_stock_kline_judgements")
     if universe_ids:
-        logger.warning("universe=%s stock_count=%d (filtered from full market)", args.universe, len(universe_ids))
+        logger.warning("universe=%s stock_count=%d", args.universe, len(universe_ids))
 
-    files = sorted(data_root.glob("*.jsonl"))
+    # P1-F-2: 从 DB stock_daily_snapshot 读取日K（替代 JSONL 文件）
+    manager = PostgresDatabaseManager(pg_config)
+    await manager.connect()
+    try:
+        td = _to_date(args.trade_date)
+        lookback_start = td.replace(year=td.year - 1)  # 往前推 1 年确保覆盖 120 个交易日
+        universe_list = sorted(universe_ids) if universe_ids else None  # None = 全市场
+
+        logger.warning("Loading daily bars from DB (start=%s end=%s stock_ids=%s)...",
+                       lookback_start, td,
+                       len(universe_list) if universe_list else "all")
+        raw_rows = await manager.get_stock_daily_bars_range(
+            lookback_start, td, stock_ids=universe_list,
+        )
+        logger.warning("Loaded %d daily bar rows from DB", len(raw_rows))
+    finally:
+        await manager.disconnect()
+
+    # 按 stock_id 分组
+    bars_by_stock: dict[str, list[StockDailySnapshot]] = {}
+    for row in raw_rows:
+        sid = _normalize_stock_id(str(row["stock_id"]))
+        snapshot = _db_row_to_snapshot(row, sid)
+        if snapshot is None:
+            continue
+        bars_by_stock.setdefault(sid, []).append(snapshot)
+
+    # 按 trade_date 排序
+    for sid in bars_by_stock:
+        bars_by_stock[sid].sort(key=lambda b: b.trade_date)
+
+    logger.warning("Grouped into %d stocks with DB bars", len(bars_by_stock))
+
     jyhf_current_bar_map = build_jyhf_current_bar_map(args.trade_date)
 
     position_rows = []
     pattern_rows = []
-    matched_files = []
-    for path in files:
-        # universe 过滤: 跳过不在候选池的股票
-        stock_id = path.stem.upper()
-        if "." in stock_id:
-            stock_id = _normalize_stock_id(stock_id)
-        if universe_ids and stock_id not in universe_ids:
-            continue
-        rows = service.load_stock_bars(path)
-        rows = [row for row in rows if row.trade_date <= args.trade_date]
+    matched_count = 0
+
+    for stock_id, rows in sorted(bars_by_stock.items()):
         if not rows:
             continue
+
         latest = rows[-1]
         if latest.trade_date != args.trade_date:
-            fallback_row = jyhf_current_bar_map.get(str(latest.stock_id).strip().upper())
+            fallback_row = jyhf_current_bar_map.get(stock_id)
             if fallback_row:
                 rows.append(fallback_row)
                 rows = sorted(rows, key=lambda item: item.trade_date)
         if rows[-1].trade_date != args.trade_date:
             continue
-        matched_files.append(path)
-        if args.limit and len(matched_files) > args.limit:
+
+        matched_count += 1
+        if args.limit and matched_count > args.limit:
             break
+
         position = service.build_position_judgement(rows)
         pattern = service.build_pattern_judgement(rows)
         if position:
@@ -344,9 +407,9 @@ async def main_async() -> int:
         await manager.disconnect()
 
     print(f"[OK] trade_date={args.trade_date}")
-    print(f"[OK] matched_files={len(matched_files)}")
-    print(f"[OK] position_rows={len(position_rows)}")
-    print(f"[OK] pattern_rows={len(pattern_rows)}")
+    print(f"[OK] db_rows={len(raw_rows)} matched_stocks={matched_count}")
+    print(f"[OK] position_judgements={len(position_rows)}")
+    print(f"[OK] pattern_judgements={len(pattern_rows)}")
     return 0
 
 
