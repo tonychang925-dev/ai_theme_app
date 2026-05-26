@@ -1956,6 +1956,103 @@ async def get_post_market_jobs_status(date: str = Query(..., description="YYYY-M
     return await jss.summary_by_date(d)
 
 
+# ── P1-4: PostMarket derived-data generate ──
+
+@app.post("/api/v1/post-market/derived-data/generate")
+async def generate_post_market_derived_data(payload: dict[str, Any] | None = None) -> dict[str, Any]:
+    """生成每日动态复盘派生数据。P1阶段只做任务壳+状态流转，派生算法在P2实现。"""
+    p = payload or {}
+    trade_date_str = str(p.get("trade_date") or p.get("date") or "")
+    from datetime import date as _date
+    try:
+        d = _date.fromisoformat(trade_date_str)
+    except ValueError:
+        return {"ok": False, "status": "error", "error_code": "INVALID_DATE", "message": f"invalid date: {trade_date_str}"}
+
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+
+    from stock_processing_service.application.services.post_market_job_status_service import (
+        PostMarketJobStatusService,
+    )
+    from stock_processing_service.application.services.post_market_readiness_service import (
+        PostMarketReadinessService,
+    )
+    jss = PostMarketJobStatusService(pool=pool)
+    await jss.mark_finished(d, "post_market_derived_data", "running")
+
+    rs = PostMarketReadinessService(pool=pool)
+    before = await rs.check(d)
+    before_dict = before.to_dict()
+
+    if before.status == "ready":
+        await jss.mark_finished(d, "post_market_derived_data", "success",
+            diagnostics={"readiness": before_dict})
+        return {
+            "ok": True,
+            "trade_date": trade_date_str,
+            "job_key": "post_market_derived_data",
+            "status": "success",
+            "already_ready": True,
+            "after_readiness": before_dict,
+        }
+
+    # P1: not ready — P2 builders not wired yet
+    await jss.mark_finished(d, "post_market_derived_data", "failed_precondition",
+        error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
+        diagnostics={"readiness": before_dict})
+    return {
+        "ok": False,
+        "trade_date": trade_date_str,
+        "job_key": "post_market_derived_data",
+        "status": "failed_precondition",
+        "message": "derived data generation ready for P2 builders; currently not implemented",
+        "before_readiness": before_dict,
+        "missing_tables": before.missing_tables,
+    }
+
+
+# ── P1-5: PostMarket recap generate ──
+
+@app.post("/api/v1/post-market/recap/generate")
+async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> dict[str, Any]:
+    """生成盘后复盘报告快照。readiness 门禁 + 调用 DailyReview 生成。"""
+    p = payload or {}
+    trade_date_str = str(p.get("trade_date") or p.get("date") or "")
+    from datetime import date as _date
+    try:
+        d = _date.fromisoformat(trade_date_str)
+    except ValueError:
+        return {"ok": False, "status": "error", "error_code": "INVALID_DATE"}
+
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+
+    from stock_processing_service.application.services.post_market_job_status_service import (
+        PostMarketJobStatusService,
+    )
+    from stock_processing_service.application.services.post_market_readiness_service import (
+        PostMarketReadinessService,
+    )
+    jss = PostMarketJobStatusService(pool=pool)
+    rs = PostMarketReadinessService(pool=pool)
+    readiness = await rs.check(d)
+
+    if readiness.status != "ready":
+        await jss.mark_finished(d, "post_market_recap_generate", "failed_precondition",
+            error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
+            diagnostics={"readiness": readiness.to_dict()})
+        return {
+            "ok": False, "trade_date": trade_date_str,
+            "status": "failed_precondition",
+            "error_code": "POST_MARKET_DERIVED_DATA_NOT_READY",
+            "missing_tables": readiness.missing_tables,
+        }
+
+    # 委托现有的 daily_review/generate 逻辑
+    return await generate_daily_review({"date": trade_date_str, "mode": "read_model_only"})
+
+
 # ── P1: DailyReview fast generate (read_model_only) ──
 
 @app.post("/api/v1/daily_review/generate")
