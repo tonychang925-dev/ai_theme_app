@@ -33,23 +33,29 @@ class W2SSupportAlert:
     stock_id: str
     stock_name: str
     theme_name: str
+    subject_key: str
+    pool_entry_type: str
     candidate_type: str
     weak_type: str
-    confirm_level: str          # A / B / C
+    confirm_level: str
     confirm_score: float
     support_type: str
     support_level: float
     support_strength: float
+    support_source: str
     support_level_age_days: int
     current: float
     distance_pct: float
-    support_state: str          # recover_support / touch_support / near_support
-    alert_type: str             # w2s_support_reclaim_alert / w2s_support_hold_alert / w2s_support_observe
-    severity: str               # important / warning / observe
+    support_state: str
+    previous_support_state: str
+    alert_type: str
+    severity: str
     confidence: float
     position_label: str
     pattern_labels: list[str]
     evidence_rules: list[str]
+    d2_evidence_rules: list[str]
+    d2_source: str
     generated_at: str
     extra: dict[str, Any] = field(default_factory=dict)
 
@@ -81,28 +87,39 @@ class W2SSupportAlertService:
         """加载 D1 候选 + D2 竞价确认 (via W2SConfirmService fallback) + 支撑位数据。"""
         pool = await self._get_pool()
 
-        # 1. 先从 DB 加载 D1 候选 + 支撑位
+        # 1. 先从 DB 加载 D1 候选 + 支撑位 (优先 subject_key 匹配)
         rows = await pool.fetch(
-            """SELECT
+            """SELECT DISTINCT ON (c.id)
                  c.id AS candidate_id,
                  c.stock_id,
                  c.stock_name,
                  COALESCE(c.theme_name, '') AS theme_name,
+                 COALESCE(c.subject_key, '') AS subject_key,
+                 COALESCE(c.pool_entry_type, 'formal') AS pool_entry_type,
                  c.candidate_type,
                  c.weak_type,
                  c.candidate_score,
-                 COALESCE(c.next_trade_date::text, '') AS next_trade_date,
                  sw.support_type,
                  sw.support_level,
                  sw.support_score AS support_strength,
+                 sw.subject_key AS sw_subject_key,
                  sw.last_trade_date AS support_last_trade_date
                FROM weak_to_strong_candidate_pool c
                LEFT JOIN strong_stock_watch_pool sw
                  ON split_part(sw.stock_id, '.', 1) = split_part(c.stock_id, '.', 1)
                  AND COALESCE(sw.watch_status, '') != 'removed'
                WHERE c.trade_date = $1::date
-               ORDER BY c.candidate_score DESC""",
+                 AND c.next_trade_date = $2::date
+                 AND COALESCE(NULLIF(LOWER(c.pool_entry_type), ''), 'formal') = 'formal'
+               ORDER BY c.id,
+                 -- subject_key 精确匹配优先
+                 CASE WHEN sw.subject_key = c.subject_key THEN 0 ELSE 1 END,
+                 -- support_score 高优先
+                 COALESCE(sw.support_score, 0) DESC,
+                 -- 最近交易日优先
+                 COALESCE(sw.last_trade_date, '1970-01-01'::date) DESC""",
             date.fromisoformat(candidate_trade_date),
+            date.fromisoformat(confirm_trade_date),
         )
         candidates_raw = [dict(r) for r in rows]
 
@@ -266,8 +283,9 @@ class W2SSupportAlertService:
 
     # ── 支撑状态判定 ──
 
-    def classify_support(self, current: float, support_level: float) -> str:
-        """判定支撑位状态 (简化版，与 KlineBreakDetector 对齐)。"""
+    @staticmethod
+    def classify_support(current: float, support_level: float) -> str:
+        """判定支撑位状态 (不含 recover — recover 需 Redis 历史确认)。"""
         if support_level <= 0:
             return "unknown"
         if current < support_level * 0.98:
@@ -279,8 +297,23 @@ class W2SSupportAlertService:
         if current <= support_level * 1.03:
             return "near_support"
         if current > support_level * 1.005:
-            return "recover_support"  # 从break恢复到上方
+            return "above_support"  # 修正: 不直接判 recover
         return "above"
+
+    async def load_previous_state(self, stock_id: str, support_type: str) -> str | None:
+        """从 Redis 读取上一次支撑位状态 (KlineBreakDetector 写入)。"""
+        try:
+            import redis.asyncio as aioredis
+            r = aioredis.from_url("redis://localhost:6379/0", decode_responses=True)
+            raw = await r.get(f"kline_alert_state:{stock_id}:{support_type}")
+            await r.aclose()
+            if raw:
+                import json as _json
+                state = _json.loads(raw)
+                return state.get("current_state")
+        except Exception:
+            pass
+        return None
 
     # ── 主流程 ──
 
@@ -299,6 +332,7 @@ class W2SSupportAlertService:
         alerts: list[W2SSupportAlert] = []
         confirmed_count = 0
         with_quotes = 0
+        skip_above = 0
 
         now_date = datetime.now(TZ_CN).date()
 
@@ -315,7 +349,7 @@ class W2SSupportAlertService:
                 continue
             confirmed_count += 1
             if confirm_level == "X":
-                continue  # hard reject → 不观察
+                continue
 
             # 支撑位
             support_level = float(r.get("support_level") or 0)
@@ -332,12 +366,28 @@ class W2SSupportAlertService:
             # 支撑状态
             support_state = self.classify_support(current, support_level)
 
-            # 过滤：仅 near/touch/recover 进入观察
-            if support_state not in ("near_support", "touch_support", "recover_support"):
+            # 读取 Redis 历史状态 (用于 recover 判定)
+            previous_state = await self.load_previous_state(sid, support_type) or ""
+
+            # recover 必须: 之前跌破过 且 current > support * 1.005
+            is_recover = (
+                previous_state in ("break_support", "strong_break_support")
+                and current > support_level * 1.005
+            )
+            if is_recover:
+                support_state = "recover_support"
+
+            # above_support 不推观察 (正常站在支撑上方 ≠ recover)
+            if support_state == "above_support":
+                skip_above += 1
                 continue
 
-            # break/strong_break 不推观察告警（这属于 KlineBreakDetector 范畴）
+            # break/strong_break → 不推 (KlineBreakDetector 范畴)
             if support_state in ("break_support", "strong_break_support"):
+                continue
+
+            # 仅 near/touch/recover 进入观察
+            if support_state not in ("near_support", "touch_support", "recover_support"):
                 continue
 
             distance_pct = round((current - support_level) / support_level * 100, 2)
@@ -352,6 +402,9 @@ class W2SSupportAlertService:
                     age_days = (now_date - last_td).days
                 except Exception:
                     pass
+
+            # 支撑来源标注
+            support_source = "subject_match" if str(r.get("sw_subject_key") or "") == str(r.get("subject_key") or "") else "stock_match"
 
             # 告警类型 + severity
             if support_state == "recover_support":
@@ -382,18 +435,28 @@ class W2SSupportAlertService:
                 confidence -= 0.1
             if confirm_level == "C":
                 confidence = min(confidence, 0.6)
-            confidence = round(max(0.2, confidence), 2)
+            if support_source != "subject_match":
+                confidence -= 0.1
+            confidence = round(max(0.1, confidence), 2)
 
             # 位置/形态
             pos = positions.get(sid, positions.get(code, {}))
             position_label = pos.get("position_label", "")
             pattern_labels = pos.get("pattern_labels", [])
 
+            # D2 evidence 透传
+            d2_evidence = []
+            d2_source = "weak_to_strong_auction_signal"
+            if r.get("_fallback"):
+                d2_source = "w2s_confirm_service_fallback"
+
             # evidence
             evidence_rules = [
                 f"candidate_id={cid}",
                 f"confirm_level={confirm_level}",
                 f"support_state={support_state}",
+                f"previous_state={previous_state or 'none'}",
+                f"support_source={support_source}",
                 f"distance={distance_pct}%",
             ]
 
@@ -404,6 +467,8 @@ class W2SSupportAlertService:
                 stock_id=sid,
                 stock_name=str(r.get("stock_name") or ""),
                 theme_name=str(r.get("theme_name") or ""),
+                subject_key=str(r.get("subject_key") or ""),
+                pool_entry_type=str(r.get("pool_entry_type") or "formal"),
                 candidate_type=str(r.get("candidate_type") or ""),
                 weak_type=str(r.get("weak_type") or ""),
                 confirm_level=confirm_level,
@@ -411,16 +476,20 @@ class W2SSupportAlertService:
                 support_type=support_type,
                 support_level=support_level,
                 support_strength=float(r.get("support_strength") or 0),
+                support_source=support_source,
                 support_level_age_days=age_days,
                 current=current,
                 distance_pct=distance_pct,
                 support_state=support_state,
+                previous_support_state=previous_state,
                 alert_type=alert_type,
                 severity=severity,
                 confidence=confidence,
                 position_label=position_label,
                 pattern_labels=pattern_labels,
                 evidence_rules=evidence_rules,
+                d2_evidence_rules=d2_evidence,
+                d2_source=d2_source,
                 generated_at=now_str,
                 extra={"pct_chg": q.get("pct_chg", 0), "quote_ts": q.get("ts", "")},
             ))
