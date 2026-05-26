@@ -184,13 +184,31 @@ class W2SIntradayBacktest:
         return False
 
     @staticmethod
-    def check_fell_below_vwap(series: list[dict], idx: int, window: int = 10) -> bool:
-        """检查信号后是否快速跌回 VWAP 下方。"""
-        end = min(len(series), idx + window + 1)
+    def check_fell_below_vwap(series: list[dict], idx: int, vwap: float) -> tuple[bool, float]:
+        """检查信号后是否持续跌破 VWAP + 回撤足够。
+
+        false_signal_v2: 信号后 10 分钟内
+          - 连续 3 分钟 close < vwap
+          - 且 max_drawdown <= -1.5%
+        Returns: (is_false, max_drawdown)
+        """
+        end = min(len(series), idx + 11)  # +10 minutes
+        consecutive_below = 0
+        max_close = float(series[idx].get("close") or series[idx].get("current") or 0)
+        max_dd = 0.0
+
         for i in range(idx + 1, end):
-            if not series[i].get("above_vwap"):
-                return True
-        return False
+            close_val = float(series[i].get("close") or series[i].get("current") or 0)
+            if close_val < vwap:
+                consecutive_below += 1
+            else:
+                consecutive_below = 0
+            if max_close > 0:
+                dd = (close_val - max_close) / max_close * 100
+                max_dd = min(max_dd, dd)
+
+        is_false = consecutive_below >= 3 and max_dd <= -1.5
+        return is_false, round(max_dd, 4)
 
     # ── 评分器 (复用 P1-I-4 逻辑，无未来数据) ──
 
