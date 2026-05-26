@@ -1143,3 +1143,45 @@ export async function fetchJyhfCdpCollectorLogs(lines = 300): Promise<JyhfCdpCol
     throw normalizeRealtimeCollectorError(err, "JYHF-CDP 日志拉取");
   }
 }
+
+// ── P1-H: K线支撑告警 SSE ──
+
+export interface KlineAlertEvent {
+  stock_id: string;
+  stock_name: string;
+  support_type: string;
+  support_level: string;
+  support_strength: string;
+  support_level_age_days: string;
+  current: string;
+  distance_pct: string;
+  alert_type: string;
+  severity: string;
+  previous_state: string;
+  confirm_count: string;
+  confidence: string;
+  quote_ts: string;
+  generated_at: string;
+  pct_chg: string;
+}
+
+export function openKlineAlertsStream(
+  onAlert: (alert: KlineAlertEvent) => void,
+  onError?: (err: Error) => void,
+): EventSource {
+  const es = new EventSource("/api/v2/realtime/kline-alerts/stream");
+  es.addEventListener("kline_alert", (e: MessageEvent) => {
+    try {
+      const data = JSON.parse(e.data) as KlineAlertEvent;
+      onAlert(data);
+    } catch {
+      // skip malformed
+    }
+  });
+  es.addEventListener("error", () => {
+    if (es.readyState === EventSource.CLOSED && onError) {
+      onError(new Error("Kline alerts SSE disconnected"));
+    }
+  });
+  return es;
+}

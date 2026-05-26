@@ -10,8 +10,10 @@ import {
   fetchJyhfAuctionStatus,
   startJyhfAuctionCollector,
   stopJyhfAuctionCollector,
+  openKlineAlertsStream,
   type JyhfCdpCollectorStatus,
   type JyhfAuctionStatus,
+  type KlineAlertEvent,
   type NewChainRealtimeStatus,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
@@ -38,6 +40,9 @@ export function RealtimeCollectorPage() {
   const [auctionEnabled, setAuctionEnabled] = useState(true);
   const [auctionStatus, setAuctionStatus] = useState<JyhfAuctionStatus | null>(null);
   const [auctionBusy, setAuctionBusy] = useState(false);
+  const [klineAlerts, setKlineAlerts] = useState<KlineAlertEvent[]>([]);
+  const [klineFilter, setKlineFilter] = useState<"all" | "critical" | "error" | "warning" | "info">("warning");
+  const klineEsRef = useRef<EventSource | null>(null);
   const [output, setOutput] = useState<string[]>([]);
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const initializedRef = useRef(false);
@@ -121,6 +126,21 @@ export function RealtimeCollectorPage() {
       fetchJyhfAuctionStatus().then(setAuctionStatus).catch(() => {});
     }, 8000);
     return () => window.clearInterval(timer);
+  }, []);
+
+  // P1-H: K线支撑告警 SSE
+  useEffect(() => {
+    const es = openKlineAlertsStream(
+      (alert) => {
+        setKlineAlerts(prev => [...prev, alert].slice(-200));
+      },
+      (err) => {
+        append(`[K线告警] SSE 断开: ${err.message}`);
+      },
+    );
+    klineEsRef.current = es;
+    append("[K线告警] SSE 已连接");
+    return () => { es.close(); };
   }, []);
 
   useEffect(() => {
@@ -606,6 +626,64 @@ export function RealtimeCollectorPage() {
                         ? jyhfStage
                         : "就绪，点击启动开始采集 JYHF DOM 数据"}
             </span>
+          </div>
+        </section>
+
+        <section className="workspace-card">
+          <span className="metric-label section-title">K线支撑告警</span>
+          <div style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 4, marginBottom: 8 }}>
+            {(["all", "critical", "error", "warning", "info"] as const).map(level => (
+              <button
+                key={level}
+                type="button"
+                className={`tag tag-button ${klineFilter === level ? "tag-active" : ""}`}
+                style={{ fontSize: 11, padding: "2px 10px" }}
+                onClick={() => setKlineFilter(level)}
+              >
+                {level === "all" ? "全部" : level.toUpperCase()}
+              </button>
+            ))}
+            <button
+              type="button"
+              className="tag tag-button"
+              style={{ fontSize: 11, padding: "2px 10px", marginLeft: "auto" }}
+              onClick={() => setKlineAlerts([])}
+            >
+              清空
+            </button>
+          </div>
+          <div className="collection-log-panel" style={{ maxHeight: 240, overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
+            {(() => {
+              const sevOrder: Record<string, number> = { critical: 0, error: 1, warning: 2, info: 3 };
+              const sevColors: Record<string, string> = { critical: "#ef4444", error: "#f97316", warning: "#eab308", info: "#94a3b8" };
+              const filtered = klineFilter === "all"
+                ? klineAlerts
+                : klineAlerts.filter(a => sevOrder[a.severity] <= (sevOrder[klineFilter] ?? 9));
+              if (filtered.length === 0) {
+                return <div className="collection-log-line" style={{ color: "#64748b" }}>等待告警...</div>;
+              }
+              return filtered.slice(-50).reverse().map((a, i) => {
+                const ts = a.generated_at?.slice(11, 19) || "--:--:--";
+                const distSign = parseFloat(a.distance_pct) >= 0 ? "+" : "";
+                return (
+                  <div key={`ka-${i}`} className="collection-log-line" style={{ color: sevColors[a.severity] || "#94a3b8", whiteSpace: "nowrap" }}>
+                    <span style={{ color: "#64748b" }}>{ts}</span>
+                    {" "}
+                    <strong>{a.stock_name || a.stock_id}</strong>
+                    {" "}
+                    <span style={{ color: sevColors[a.severity] }}>[{a.alert_type.replace(/_/g, " ")}]</span>
+                    {" "}
+                    C={parseFloat(a.current).toFixed(2)} S={parseFloat(a.support_level).toFixed(2)}
+                    {" "}
+                    <span style={{ color: parseFloat(a.distance_pct) < 0 ? "#ef4444" : "#22c55e" }}>
+                      ({distSign}{a.distance_pct}%)
+                    </span>
+                    {" "}
+                    <span style={{ color: "#64748b", fontSize: 10 }}>conf={a.confidence}</span>
+                  </div>
+                );
+              });
+            })()}
           </div>
         </section>
 
