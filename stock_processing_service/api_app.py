@@ -1900,6 +1900,26 @@ async def get_daily_review(trade_date: str = Query(..., description="YYYY-MM-DD"
     }
 
 
+# ── P1: PostMarket Readiness API ──
+
+@app.get("/api/v1/post-market/derived-data/readiness")
+async def get_post_market_readiness(date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
+    """查询盘后复盘派生数据 readiness 状态。"""
+    from datetime import date as _date
+    from stock_processing_service.application.services.post_market_readiness_service import (
+        PostMarketReadinessService,
+    )
+    try:
+        d = _date.fromisoformat(date)
+    except ValueError:
+        return {"status": "error", "error_code": "INVALID_DATE", "message": f"invalid date: {date}"}
+
+    pool = getattr(app.state, "db_pool", None)
+    service = PostMarketReadinessService(pool=pool)
+    result = await service.check(d)
+    return result.to_dict()
+
+
 # ── P1: DailyReview fast generate (read_model_only) ──
 
 @app.post("/api/v1/daily_review/generate")

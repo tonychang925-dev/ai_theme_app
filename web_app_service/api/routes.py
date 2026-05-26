@@ -340,6 +340,17 @@ async def theme_workspace(subject_key: str, request: Request) -> dict:
     return await _proxy_stock_processing_json(f"/api/v1/theme_workspace/{subject_key}", params)
 
 
+# ── P1: PostMarket Readiness API ──
+
+@router.get("/post-market/derived-data/readiness")
+async def get_post_market_readiness(date: str = Query(..., description="YYYY-MM-DD")) -> dict:
+    """查询盘后复盘派生数据 readiness 状态。BFF 代理 → SPS。"""
+    return await _proxy_stock_processing_json(
+        "/api/v1/post-market/derived-data/readiness",
+        {"date": date},
+    )
+
+
 @router.get("/daily-review")
 async def daily_review(date: str = Query(..., description="YYYY-MM-DD")) -> dict:
     return await _proxy_stock_processing_json(

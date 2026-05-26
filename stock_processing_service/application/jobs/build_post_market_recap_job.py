@@ -808,71 +808,21 @@ class BuildPostMarketRecapJob:
     MAX_THEME_REVIEWS = 20
 
     async def _check_post_market_readiness(self, trade_date: date) -> dict[str, Any]:
-        """P0-2: 检查5张核心表是否有当日数据，不通过则拒绝写快照。"""
-        missing: list[str] = []
-        derived: dict[str, int] = {}
-        base: dict[str, int] = {}
+        """P1: 委托 PostMarketReadinessService 检查 5 张核心表。"""
+        from stock_processing_service.application.services.post_market_readiness_service import (
+            PostMarketReadinessService,
+        )
 
-        checks: list[tuple[str, str]] = [
-            ("subject_stock_daily_snapshot", "base"),
-            ("theme_cycle_judgement_v2", "derived"),
-            ("money_flow_enhanced", "derived"),
-            ("strong_stock_watch_history", "derived"),
-            ("dragon_tiger_object", "derived"),
-        ]
-
+        # Try to resolve pool from read_port
         pool = getattr(self._read_port, "_pool", None)
         if pool is None:
-            # Try to get pool from read_port internals
             facade = getattr(self._read_port, "_db", None)
             db_client = getattr(facade, "_db", None) if facade else None
             pool = getattr(db_client, "pool", None) if db_client else None
 
-        if pool is None:
-            return {
-                "status": "failed_precondition",
-                "error_code": "POST_MARKET_READINESS_CHECK_UNAVAILABLE",
-                "reason": "no_db_pool",
-                "missing_tables": ["readiness_checker_db_pool"],
-                "base_tables": {},
-                "derived_tables": {},
-            }
-
-        async with pool.acquire() as conn:
-            for table_name, category in checks:
-                try:
-                    row = await conn.fetchrow(
-                        f"SELECT COUNT(*) AS cnt FROM {table_name} WHERE trade_date = $1::date",
-                        trade_date,
-                    )
-                    cnt = int(row["cnt"]) if row else 0
-                    if category == "base":
-                        base[table_name] = cnt
-                    else:
-                        derived[table_name] = cnt
-                    if cnt == 0 and table_name != "dragon_tiger_object":
-                        missing.append(table_name)
-                    elif cnt == 0 and table_name == "dragon_tiger_object":
-                        # 龙虎榜可以为空（无榜日）
-                        pass
-                except Exception:
-                    missing.append(table_name)
-
-        if missing:
-            return {
-                "status": "failed_precondition",
-                "error_code": "POST_MARKET_DERIVED_DATA_NOT_READY",
-                "missing_tables": missing,
-                "base_tables": base,
-                "derived_tables": derived,
-            }
-
-        return {
-            "status": "ready",
-            "base_tables": base,
-            "derived_tables": derived,
-            "missing_tables": [],
-        }
+        service = PostMarketReadinessService(pool=pool)
+        result = await service.check(trade_date)
+        return result.to_dict()
 
     @staticmethod
     async def _build_theme_context_map(
