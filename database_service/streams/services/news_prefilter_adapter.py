@@ -399,6 +399,9 @@ _EMBEDDED_ROUTINE_GOV_TERMS = (
     "达成共识", "赴", "调研", "会议闭幕", "致辞", "讲话", "慰问",
     "议长", "总统", "总理", "部长", "代表团", "致贺信", "出席会议",
     "全国人大常委会", "常委会会议", "海峡论坛", "全国政协",
+    # Phase 4E fix: diplomatic/foreign affairs — virtually never A-share catalysts
+    "外长", "外交部", "外交部发言人", "大使", "大使馆", "双边关系",
+    "国事访问", "正式访问", "联合声明", "联合公报",
 )
 _EMBEDDED_DISCIPLINE_TERMS = (
     "中央纪委", "国家监委", "违规吃喝", "典型问题",
@@ -423,9 +426,14 @@ def _embedded_rule_evaluate(payload: Dict[str, Any]) -> Dict[str, Any]:
     content = str(payload.get("content", ""))
     text = f"{title}\n{content}"
 
-    # 1. 硬过滤：过短文本
-    if len(text.strip()) < 15:
+    # 1. 硬过滤：过短文本（Phase 4E fix: 15→50）
+    if len(text.strip()) < 50:
         return {"decision": "SKIP", "reason": "rule:too_short", "score": None, "mode": "embedded_rule"}
+
+    # 1b. 内容过短或仅重复标题（无实质信息）
+    content_stripped = content.strip()
+    if len(content_stripped) < 20 or content_stripped == title.strip():
+        return {"decision": "SKIP", "reason": "rule:content_too_short_or_title_only", "score": None, "mode": "embedded_rule"}
 
     # Phase 4C: 政务/纪委硬SKIP（除非含强产业催化词）
     gov_hits = [t for t in _EMBEDDED_ROUTINE_GOV_TERMS if t in text]
@@ -436,7 +444,28 @@ def _embedded_rule_evaluate(payload: Dict[str, Any]) -> Dict[str, Any]:
     if disc_hits:
         return {"decision": "SKIP", "reason": f"rule:discipline:{','.join(disc_hits[:2])}", "score": None, "mode": "embedded_rule"}
 
-    # 2. 硬模板过滤：纯价格波动 + 通用分析语
+    # 2a. 公司公告过滤：例行披露直接 SKIP，除非含强催化剂
+    if "公告" in title:
+        _ROUTINE_ANNOUNCE = (
+            "减持", "质押", "解除质押", "辞职", "辞任", "人事变动",
+            "股东大会", "董事会决议", "监事会决议", "贷款承诺函",
+            "银行授信", "授信额度", "担保", "权益变动",
+            "更正公告", "补充公告", "延期披露", "会计差错",
+            "独立董事", "选举", "换届",
+        )
+        routine_hits = [t for t in _ROUTINE_ANNOUNCE if t in text]
+        if routine_hits:
+            # 除非含强催化剂才放行
+            _STRONG_ANNOUNCE_CATALYST = (
+                "中标", "重大合同", "并购", "重组", "扩产", "投产",
+                "获批上市", "技术突破", "重大订单", "签约",
+                "业绩预增", "净利润", "营收增长",
+            )
+            strong_hits = [t for t in _STRONG_ANNOUNCE_CATALYST if t in text]
+            if not strong_hits:
+                return {"decision": "SKIP", "reason": f"rule:routine_announcement:{routine_hits[0]}", "score": None, "mode": "embedded_rule"}
+
+    # 2b. 硬模板过滤：纯价格波动 + 通用分析语
     for pattern in _EMBEDDED_TRIVIAL_PATTERNS:
         if pattern in text:
             catalyst_count = sum(1 for k in _EMBEDDED_CATALYST_KEYWORDS if k in text)

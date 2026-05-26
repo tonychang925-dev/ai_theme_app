@@ -42,6 +42,7 @@ export function RealtimeCollectorPage() {
   const [auctionBusy, setAuctionBusy] = useState(false);
   const [klineAlerts, setKlineAlerts] = useState<KlineAlertEvent[]>([]);
   const [klineFilter, setKlineFilter] = useState<"all" | "critical" | "error" | "warning" | "info">("warning");
+  const [klineAlertsEnabled, setKlineAlertsEnabled] = useState(true);
   const klineEsRef = useRef<EventSource | null>(null);
   const [output, setOutput] = useState<string[]>([]);
   const terminalRef = useRef<HTMLDivElement | null>(null);
@@ -130,9 +131,17 @@ export function RealtimeCollectorPage() {
 
   // P1-H: K线支撑告警 SSE
   useEffect(() => {
+    if (!klineAlertsEnabled) {
+      if (klineEsRef.current) { klineEsRef.current.close(); klineEsRef.current = null; }
+      append("[K线告警] 已关闭");
+      return;
+    }
     const es = openKlineAlertsStream(
       (alert) => {
         setKlineAlerts(prev => [...prev, alert].slice(-200));
+        const ts = alert.generated_at?.slice(11, 19) || "";
+        const distSign = parseFloat(alert.distance_pct) >= 0 ? "+" : "";
+        append(`[${alert.severity.toUpperCase()}] ${alert.stock_name || alert.stock_id} ${alert.alert_type.replace(/_/g," ")} | C=${parseFloat(alert.current).toFixed(2)} S=${parseFloat(alert.support_level).toFixed(2)} (${distSign}${alert.distance_pct}%) conf=${alert.confidence} ${ts}`);
       },
       (err) => {
         append(`[K线告警] SSE 断开: ${err.message}`);
@@ -141,7 +150,7 @@ export function RealtimeCollectorPage() {
     klineEsRef.current = es;
     append("[K线告警] SSE 已连接");
     return () => { es.close(); };
-  }, []);
+  }, [klineAlertsEnabled]);
 
   useEffect(() => {
     if (running === "up") {
@@ -207,6 +216,7 @@ export function RealtimeCollectorPage() {
     setJyhfBusy(true);
     setJyhfStatus(prev => ({ ...(prev ?? {} as JyhfCdpCollectorStatus), collector_running: false }));
     append("启动 JYHF DOM 采集器...");
+    setKlineAlertsEnabled(true);
 
     // 竞价采集（独立线程，不阻塞 DOM 启动）
     if (auctionEnabled) {
@@ -306,6 +316,7 @@ export function RealtimeCollectorPage() {
     setJyhfBusy(true);
     setJyhfStatus(prev => ({ ...(prev ?? {} as JyhfCdpCollectorStatus), collector_running: true }));
     append("停止 JYHF DOM 采集器...");
+    setKlineAlertsEnabled(false);
 
     // 同时停止竞价采集
     if (auctionStatus?.running) {
@@ -631,6 +642,15 @@ export function RealtimeCollectorPage() {
 
         <section className="workspace-card">
           <span className="metric-label section-title">K线支撑告警</span>
+          <label style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none", marginLeft: 12 }}>
+            <input
+              type="checkbox"
+              checked={klineAlertsEnabled}
+              onChange={(e) => setKlineAlertsEnabled(e.target.checked)}
+              style={{ width: 16, height: 16, cursor: "pointer" }}
+            />
+            <span style={{ fontWeight: 600, fontSize: 13 }}>启用</span>
+          </label>
           <div style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 4, marginBottom: 8 }}>
             {(["all", "critical", "error", "warning", "info"] as const).map(level => (
               <button

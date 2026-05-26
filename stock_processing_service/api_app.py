@@ -163,6 +163,9 @@ async def lifespan(app: FastAPI):
         redis_url=_redis_url(),
         write_db=_db_name(),
     )
+    # P1-G: 支撑位突破检测后台任务（盘中自动运行）
+    _kline_alert_task = asyncio.create_task(_run_kline_break_detector_loop(app))
+
     await app.state.phase1_repo.initialize()
     try:
         yield
@@ -3671,11 +3674,12 @@ async def jyhf_market_index():
 
 
 @app.get("/api/v1/kline-alerts/stream")
-async def kline_alerts_stream(last_id: str = Query(default="0", description="上次收到的消息 ID, 0=从最新开始")):
+async def kline_alerts_stream(last_id: str = Query(default="0-0", description="上次收到的消息 ID, 0-0=从头开始")):
     """SSE 端点: 从 Redis Stream stream:kline:alerts 推送支撑位告警。
 
     使用 text/event-stream, event name=kline_alert, 每 15s 心跳。
     支持断线重连 (Last-Event-Id header → last_id query param)。
+    default=0-0 确保新连接能收到已有告警。
     """
     import redis.asyncio as aioredis
     from fastapi.responses import StreamingResponse
@@ -3685,21 +3689,16 @@ async def kline_alerts_stream(last_id: str = Query(default="0", description="上
         stream_key = "stream:kline:alerts"
         r = aioredis.from_url(redis_url, decode_responses=True)
         try:
-            # 检查 stream 是否存在
             try:
                 await r.xinfo_stream(stream_key)
             except Exception:
-                # Stream 不存在，发送心跳后退出
                 yield f"event: heartbeat\ndata: {json.dumps({'msg': 'stream not found'})}\n\n"
                 return
 
-            if last_id and last_id != "0":
+            if last_id and last_id != "0-0":
                 read_id = last_id
             else:
-                # 从最新开始
-                info = await r.xinfo_stream(stream_key)
-                last_gen = info.get("last-generated-id", "0-0")
-                read_id = last_gen
+                read_id = "0-0"  # 新连接从头读取所有未消费的告警
 
             while True:
                 try:
@@ -3738,9 +3737,54 @@ async def kline_alerts_stream(last_id: str = Query(default="0", description="上
     )
 
 
-def _get_db_gateway():
-    """Get the DatabaseGateway singleton from app state."""
-    return app.state.gateway
+async def _run_kline_break_detector_loop(app: FastAPI) -> None:
+    """P1-G: 支撑位突破检测后台循环 (盘中自动运行, 10s 间隔)。"""
+    logger_kline = logging.getLogger("sps.kline_break_detector.loop")
+    await asyncio.sleep(5)  # 等待服务完全就绪
+
+    from stock_processing_service.domain.services.kline_break_detector import KlineBreakDetector
+    from stock_processing_service.sinks.kline_alert_redis_pusher import KlineAlertRedisPusher
+
+    dsn = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/stock_data_test")
+    redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+    detector = KlineBreakDetector(dsn, redis_url=redis_url)
+    pusher = KlineAlertRedisPusher(redis_url)
+
+    while True:
+        try:
+            now = datetime.now()
+            # 仅交易日盘中运行
+            if now.weekday() >= 5:
+                await asyncio.sleep(60)
+                continue
+            h, m = now.hour, now.minute
+            # 竞价+盘中: 9:15-15:05
+            in_session = (h == 9 and m >= 15) or (10 <= h <= 14) or (h == 15 and m <= 5)
+            if not in_session:
+                await asyncio.sleep(30)
+                continue
+
+            result = await detector.detect()
+            if result.alerts:
+                pushed = await pusher.push_alerts(result.alerts)
+                if pushed:
+                    logger_kline.warning(
+                        "KLINE_ALERTS: %d pushed (checked=%d with_quotes=%d "
+                        "suppressed_cooldown=%d suppressed_confirm=%d elapsed=%dms)",
+                        pushed, result.checked, result.with_quotes,
+                        result.suppressed_by_cooldown, result.suppressed_by_confirm,
+                        result.elapsed_ms,
+                    )
+
+            await asyncio.sleep(10)
+        except asyncio.CancelledError:
+            break
+        except Exception as exc:
+            logger_kline.warning("Kline break detector error: %s", exc)
+            await asyncio.sleep(30)
+
+    await detector.close()
+    await pusher.close()
 
 
 def _row_to_dict(row: Any) -> dict[str, Any]:
