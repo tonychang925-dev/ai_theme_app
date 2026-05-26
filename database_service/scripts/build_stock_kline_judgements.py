@@ -7,7 +7,8 @@ import json
 import logging
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
+from collections import Counter
 from pathlib import Path
 
 CURRENT_DIR = Path(__file__).resolve().parent
@@ -43,6 +44,10 @@ def parse_args():
     parser.add_argument("--universe", default="seed_candidates+strong_watch",
                         choices=["all", "seed_candidates+strong_watch", "strong_watch", "candidates"],
                         help="股票范围: all=全市场, seed_candidates+strong_watch=seed候选+强股池(推荐)")
+    parser.add_argument("--allow-lag-days", type=int, default=0,
+                        help="宽容模式下，允许 latest bar 距 trade_date 不超过 N 天（0=严格）")
+    parser.add_argument("--enable-jyhf-fallback", action="store_true", default=False,
+                        help="启用 JYHF adapter 本地文件兜底（默认关闭，Tushare 为主数据源）")
     return parser.parse_args()
 
 
@@ -225,19 +230,21 @@ async def main_async() -> int:
     service = StockKlineJudgementService()
     logger = logging.getLogger("build_stock_kline_judgements")
 
-    # P1-D: universe 过滤 — 不扫全市场
+    # P1-D: universe 过滤
     pg_config = get_postgres_config()
     universe_ids = await _load_universe_stock_ids(pg_config, args.universe, args.trade_date)
+    universe_count = len(universe_ids) if universe_ids else 0
     if universe_ids:
-        logger.warning("universe=%s stock_count=%d", args.universe, len(universe_ids))
+        logger.warning("universe=%s stock_count=%d", args.universe, universe_count)
 
-    # P1-F-2: 从 DB stock_daily_snapshot 读取日K（替代 JSONL 文件）
+    # P1-F-2: 从 DB stock_daily_snapshot 读取日K
     manager = PostgresDatabaseManager(pg_config)
     await manager.connect()
     try:
         td = _to_date(args.trade_date)
-        lookback_start = td.replace(year=td.year - 1)  # 往前推 1 年确保覆盖 120 个交易日
-        universe_list = sorted(universe_ids) if universe_ids else None  # None = 全市场
+        # 修复: 使用 timedelta 避免 2/29 的 replace(year=...) 错误
+        lookback_start = td - timedelta(days=370)
+        universe_list = sorted(universe_ids) if universe_ids else None
 
         logger.warning("Loading daily bars from DB (start=%s end=%s stock_ids=%s)...",
                        lookback_start, td,
@@ -251,37 +258,109 @@ async def main_async() -> int:
 
     # 按 stock_id 分组
     bars_by_stock: dict[str, list[StockDailySnapshot]] = {}
+    db_stock_ids: set[str] = set()
     for row in raw_rows:
         sid = _normalize_stock_id(str(row["stock_id"]))
+        db_stock_ids.add(sid)
         snapshot = _db_row_to_snapshot(row, sid)
         if snapshot is None:
             continue
         bars_by_stock.setdefault(sid, []).append(snapshot)
 
-    # 按 trade_date 排序
     for sid in bars_by_stock:
         bars_by_stock[sid].sort(key=lambda b: b.trade_date)
 
-    logger.warning("Grouped into %d stocks with DB bars", len(bars_by_stock))
+    db_stock_count = len(bars_by_stock)
+    logger.warning("Grouped into %d stocks with DB bars", db_stock_count)
 
-    jyhf_current_bar_map = build_jyhf_current_bar_map(args.trade_date)
+    # ── P1-F-2a: 覆盖率诊断 ──
+    latest_dist: Counter = Counter()
+    for sid in db_stock_ids:
+        bars = bars_by_stock.get(sid)
+        latest = bars[-1].trade_date if bars else "missing"
+        latest_dist[latest] += 1
+    for sid in (universe_ids or set()):
+        if sid not in db_stock_ids:
+            latest_dist["missing_all"] += 1
 
+    missing_target_count = universe_count - latest_dist.get(args.trade_date, 0)
+    coverage_pct = round((latest_dist.get(args.trade_date, 0) / universe_count * 100), 1) if universe_count else 0.0
+
+    logger.warning("── 覆盖率诊断 ──")
+    logger.warning("universe_count=%d  db_stock_count=%d  db_rows=%d",
+                   universe_count, db_stock_count, len(raw_rows))
+    logger.warning("latest=%s matched=%d (%.1f%%)  missing_target=%d  missing_all=%d",
+                   args.trade_date, latest_dist.get(args.trade_date, 0),
+                   coverage_pct, missing_target_count, latest_dist.get("missing_all", 0))
+    logger.warning("── latest_trade_date 分布 ──")
+    for dt, cnt in sorted(latest_dist.items(), key=lambda x: str(x[0]), reverse=True):
+        logger.warning("  %s: %d stocks", dt, cnt)
+
+    # 抽样缺失详情
+    missing_samples = [sid for sid in (sorted(universe_ids) if universe_ids else [])
+                       if sid not in db_stock_ids or (bars_by_stock.get(sid) or [None])[-1].trade_date != args.trade_date]
+    if missing_samples:
+        logger.warning("── 缺失目标日期样本 (前 20) ──")
+        for sid in missing_samples[:20]:
+            bars = bars_by_stock.get(sid)
+            latest_str = bars[-1].trade_date if bars else "missing_all"
+            logger.warning("  %s: latest=%s", sid, latest_str)
+
+    # ── 质量门禁判定 ──
+    gap_days = args.allow_lag_days
+    status = "OK"
+    if coverage_pct < 30:
+        status = "FAILED"
+        logger.error("COVERAGE_CHECK FAILED: %.1f%% < 30%% threshold", coverage_pct)
+    elif coverage_pct < 80:
+        if gap_days > 0:
+            status = "WARNING"
+            logger.warning("COVERAGE_CHECK WARNING: %.1f%% < 80%% (allow_lag=%d)", coverage_pct, gap_days)
+        else:
+            status = "DEGRADED"
+            logger.warning("COVERAGE_CHECK DEGRADED: %.1f%% < 80%% (strict mode)", coverage_pct)
+
+    # ── JYHF fallback (可选) ──
+    jyhf_current_bar_map: dict[str, StockDailySnapshot] = {}
+    if args.enable_jyhf_fallback:
+        logger.warning("JYHF fallback enabled, loading current bar map...")
+        jyhf_current_bar_map = build_jyhf_current_bar_map(args.trade_date)
+        logger.warning("JYHF fallback: %d stocks available", len(jyhf_current_bar_map))
+
+    # ── 判定截止日 ──
+    from datetime import date as date_cls
+    cutoff_date = td
+    if gap_days > 0:
+        cutoff_date = td - timedelta(days=gap_days)
+        logger.warning("Using cutoff_date=%s (allow_lag=%d)", cutoff_date, gap_days)
+
+    # ── 形态判断循环 ──
     position_rows = []
     pattern_rows = []
     matched_count = 0
+    skipped_no_match = 0
+
+    # Debug: 抽样检查匹配失败原因
+    _skip_samples: list[str] = []
 
     for stock_id, rows in sorted(bars_by_stock.items()):
         if not rows:
+            _skip_samples.append(f"{stock_id}: empty bars")
             continue
 
         latest = rows[-1]
-        if latest.trade_date != args.trade_date:
-            fallback_row = jyhf_current_bar_map.get(stock_id)
-            if fallback_row:
-                rows.append(fallback_row)
-                rows = sorted(rows, key=lambda item: item.trade_date)
-        if rows[-1].trade_date != args.trade_date:
-            continue
+        if latest.trade_date < str(cutoff_date):
+            # JYHF fallback
+            if jyhf_current_bar_map:
+                fallback_row = jyhf_current_bar_map.get(stock_id)
+                if fallback_row:
+                    rows.append(fallback_row)
+                    rows = sorted(rows, key=lambda item: item.trade_date)
+            if rows[-1].trade_date < str(cutoff_date):
+                if skipped_no_match < 10:
+                    _skip_samples.append(f"{stock_id}: latest={rows[-1].trade_date} < cutoff={str(cutoff_date)}")
+                skipped_no_match += 1
+                continue
 
         matched_count += 1
         if args.limit and matched_count > args.limit:
@@ -294,6 +373,14 @@ async def main_async() -> int:
         if pattern:
             pattern_rows.append(pattern)
 
+    logger.warning("Judgement: matched=%d skipped=%d position=%d pattern=%d",
+                   matched_count, skipped_no_match, len(position_rows), len(pattern_rows))
+    if _skip_samples:
+        logger.warning("── 跳过样本 (前 10) ──")
+        for s in _skip_samples[:10]:
+            logger.warning("  %s", s)
+
+    # ── 写入 DB ──
     manager = PostgresDatabaseManager(get_postgres_config())
     await manager.connect()
     try:
@@ -406,10 +493,33 @@ async def main_async() -> int:
     finally:
         await manager.disconnect()
 
-    print(f"[OK] trade_date={args.trade_date}")
-    print(f"[OK] db_rows={len(raw_rows)} matched_stocks={matched_count}")
-    print(f"[OK] position_judgements={len(position_rows)}")
-    print(f"[OK] pattern_judgements={len(pattern_rows)}")
+    print(f"[{status}] trade_date={args.trade_date}")
+    print(f"[{status}] universe={universe_count} db_rows={len(raw_rows)} db_stocks={db_stock_count}")
+    print(f"[{status}] coverage={coverage_pct}% matched_trade_date={matched_count} allow_lag={gap_days}")
+    print(f"[{status}] position={len(position_rows)} pattern={len(pattern_rows)}")
+    print(json.dumps({
+        "status": status,
+        "trade_date": args.trade_date,
+        "universe": args.universe,
+        "universe_count": universe_count,
+        "db_row_count": len(raw_rows),
+        "db_stock_count": db_stock_count,
+        "coverage_pct": coverage_pct,
+        "matched_trade_date_count": matched_count,
+        "allow_lag_days": gap_days,
+        "jyhf_fallback_enabled": args.enable_jyhf_fallback,
+        "position_judgements": len(position_rows),
+        "pattern_judgements": len(pattern_rows),
+        "latest_trade_date_distribution": dict(latest_dist.most_common(20)),
+        "missing_target_count": missing_target_count,
+        "missing_all_count": latest_dist.get("missing_all", 0),
+    }, ensure_ascii=False, indent=2))
+
+    # 质量门禁 → exit code
+    if status == "FAILED":
+        return 2
+    if status == "DEGRADED":
+        return 1
     return 0
 
 
