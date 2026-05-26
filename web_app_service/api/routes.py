@@ -1236,6 +1236,40 @@ async def intel_stream(
     )
 
 
+# ── P1-H: K线支撑告警 SSE ──
+
+
+@router.get("/realtime/kline-alerts/stream")
+async def kline_alerts_stream(request: Request, last_id: str = Query(default="0")) -> StreamingResponse:
+    """SSE 代理: K线支撑位告警 → stock_processing_service."""
+    url = f"{STOCK_PROCESSING_BASE_URL}/api/v1/kline-alerts/stream?last_id={last_id}"
+
+    async def _proxy_stream():
+        import aiohttp
+        timeout = aiohttp.ClientTimeout(total=3600, connect=10)
+        try:
+            async with aiohttp.ClientSession(timeout=timeout) as session:
+                async with session.get(url) as upstream:
+                    if upstream.status != 200:
+                        yield f"event: error\ndata: {json.dumps({'error': f'upstream returned {upstream.status}'})}\n\n"
+                        return
+                    async for line in upstream.content:
+                        decoded = line.decode("utf-8", errors="replace").rstrip("\n")
+                        yield decoded + "\n"
+        except Exception as exc:
+            yield f"event: error\ndata: {json.dumps({'error': str(exc)})}\n\n"
+
+    return StreamingResponse(
+        _proxy_stream(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
 # ── W2S Backtest Proxy Endpoints ──
 
 @router.post("/backtest/w2s/data-quality")

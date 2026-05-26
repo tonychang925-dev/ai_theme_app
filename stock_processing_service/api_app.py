@@ -3667,6 +3667,77 @@ async def jyhf_market_index():
         return JSONResponse(status_code=502, content={"ok": False, "error": str(exc)})
 
 
+# ── P1-H: K线支撑告警 SSE ──────────────────────────────────────────────
+
+
+@app.get("/api/v1/kline-alerts/stream")
+async def kline_alerts_stream(last_id: str = Query(default="0", description="上次收到的消息 ID, 0=从最新开始")):
+    """SSE 端点: 从 Redis Stream stream:kline:alerts 推送支撑位告警。
+
+    使用 text/event-stream, event name=kline_alert, 每 15s 心跳。
+    支持断线重连 (Last-Event-Id header → last_id query param)。
+    """
+    import redis.asyncio as aioredis
+    from fastapi.responses import StreamingResponse
+
+    async def _event_generator():
+        redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+        stream_key = "stream:kline:alerts"
+        r = aioredis.from_url(redis_url, decode_responses=True)
+        try:
+            # 检查 stream 是否存在
+            try:
+                await r.xinfo_stream(stream_key)
+            except Exception:
+                # Stream 不存在，发送心跳后退出
+                yield f"event: heartbeat\ndata: {json.dumps({'msg': 'stream not found'})}\n\n"
+                return
+
+            if last_id and last_id != "0":
+                read_id = last_id
+            else:
+                # 从最新开始
+                info = await r.xinfo_stream(stream_key)
+                last_gen = info.get("last-generated-id", "0-0")
+                read_id = last_gen
+
+            while True:
+                try:
+                    msgs = await r.xread({stream_key: read_id}, count=50, block=15000)
+                    if msgs:
+                        for stream_name, entries in msgs:
+                            for entry_id, data in entries:
+                                read_id = entry_id
+                                # 跳过心跳
+                                if data.get("item_type") != "kline_support_alert":
+                                    continue
+                                payload = json.dumps(data, ensure_ascii=False)
+                                yield f"id: {entry_id}\nevent: kline_alert\ndata: {payload}\n\n"
+                    else:
+                        # 15s 心跳
+                        yield f"event: heartbeat\ndata: {json.dumps({'ts': datetime.now().isoformat()})}\n\n"
+
+                except asyncio.CancelledError:
+                    break
+                except Exception as exc:
+                    logger = logging.getLogger("sps.kline_alerts_sse")
+                    logger.warning("SSE stream error: %s", exc)
+                    yield f"event: error\ndata: {json.dumps({'error': str(exc)})}\n\n"
+                    await asyncio.sleep(5)
+        finally:
+            await r.aclose()
+
+    return StreamingResponse(
+        _event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
 def _get_db_gateway():
     """Get the DatabaseGateway singleton from app state."""
     return app.state.gateway
