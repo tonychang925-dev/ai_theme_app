@@ -598,7 +598,6 @@ function buildThemeSummaryRowsFromDailyReview(
     conclusion: tr.conclusion || (tr.final_mainline_alive ? "主线存活" : "观察"),
   }));
 }
-}
 
 export function RecapPage() {
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
@@ -610,6 +609,9 @@ export function RecapPage() {
   const [abnormalSortKey, setAbnormalSortKey] = useState<"score" | "turnoverRate" | "volumeRatio" | "volumeVsMa50">("score");
   const [abnormalSortDir, setAbnormalSortDir] = useState<"desc" | "asc">("desc");
   const [payload, setPayload] = useState<RecapViewModelV2 | null>(null);
+  const [dailyReview, setDailyReview] = useState<DailyReviewView | null>(null);
+  const effectiveReportType = payload?.report_type ?? reportType;
+  const highlights = payload?.highlights ?? [];
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [publishing, setPublishing] = useState(false);
@@ -757,8 +759,6 @@ export function RecapPage() {
     [dragonTigerDataSection],
   );
 
-  const [dailyReview, setDailyReview] = useState<DailyReviewView | null>(null);
-
   useEffect(() => {
     let active = true;
     setDailyReview(null);
@@ -871,11 +871,11 @@ export function RecapPage() {
       {loading && <div className="empty-state">正在加载复盘视图...</div>}
       {error && <div className="empty-state error">{error}</div>}
 
-      {!loading && !error && payload && (
+      {!loading && !error && (payload || dailyReview) && (
         <>
           <main className="workspace-layout single">
             <section className="workspace-column">
-              {(marketEnvironmentSection.length > 0 || payload.highlights.length > 0) && (
+              {(marketEnvironmentSection.length > 0 || highlights.length > 0) && (
                 <div className="workspace-card market-summary-group">
                   <span className="metric-label section-title">市场总览</span>
                   <div className="market-summary-grid">
@@ -903,9 +903,9 @@ export function RecapPage() {
 
                     <div className="market-summary-card">
                       <span className="metric-label section-title">核心要点</span>
-                      {payload.highlights.length > 0 ? (
+                      {highlights.length > 0 ? (
                         <ul className="workspace-list">
-                          {payload.highlights.map((item, idx) => (
+                          {highlights.map((item, idx) => (
                             <li key={`highlight-${idx}`}>
                               <strong>要点 {idx + 1}</strong>
                               <p className="workspace-note">{zh(item)}</p>
@@ -924,8 +924,8 @@ export function RecapPage() {
               {(dailyReview?.theme_reviews?.length ||
                 (sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? []).length > 0) && (
                 <div className="workspace-card">
-                  <span className="metric-label section-title">{payload.report_type === "post_market" ? "主线与支线" : "可做主线与支线"}</span>
-                  {payload.report_type === "post_market" ? (
+                  <span className="metric-label section-title">{effectiveReportType === "post_market" ? "主线与支线" : "可做主线与支线"}</span>
+                  {effectiveReportType === "post_market" ? (
                     <div className="recap-table-stack">
                       <article className="workspace-card recap-table-card">
                         <div className="recap-table-head">
@@ -1061,8 +1061,8 @@ export function RecapPage() {
 
               {(sections.get("强势股分层") ?? sections.get("盘前重点盯盘个股") ?? []).length > 0 && (
                 <div className="workspace-card">
-                  <span className="metric-label section-title">{payload.report_type === "post_market" ? "强势股分层" : "盘前重点盯盘个股"}</span>
-                  {payload.report_type === "post_market" ? (
+                  <span className="metric-label section-title">{effectiveReportType === "post_market" ? "强势股分层" : "盘前重点盯盘个股"}</span>
+                  {effectiveReportType === "post_market" ? (
                     <div className="recap-table-stack">
                       {strongStockGroups.map(([themeName, rows]) => (
                         <article className="workspace-card recap-table-card" key={`stock-${themeName}`}>
@@ -1287,8 +1287,8 @@ export function RecapPage() {
 
               {auxSection.length > 0 && (
                 <div className="workspace-card">
-                  <span className="metric-label section-title">{payload.report_type === "post_market" ? "龙虎榜" : "失效条件"}</span>
-                  {payload.report_type === "post_market" ? (
+                  <span className="metric-label section-title">{effectiveReportType === "post_market" ? "龙虎榜" : "失效条件"}</span>
+                  {effectiveReportType === "post_market" ? (
                     <>
                       {dragonTigerNote && <p className="workspace-note">{zh(dragonTigerNote)}</p>}
                       {dragonTigerRows.length > 0 && (
