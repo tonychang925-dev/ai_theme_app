@@ -1979,6 +1979,7 @@ async def generate_post_market_derived_data(payload: dict[str, Any] | None = Non
     uc = PostMarketDerivedDataGenerateUseCase(pool=pool, db_manager=db_manager)
     uc.register_theme_cycle_truth()
     uc.register_dragon_tiger_object_build()
+    uc.register_money_flow_enhanced_build(project_root=str(_project_root()))
     result = await uc.execute(d)
     return {
         "ok": result.status == "success",

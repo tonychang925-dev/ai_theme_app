@@ -9,9 +9,11 @@ P2-2: theme_cycle_truth builder 已接入 A/B layer jobs。
 from __future__ import annotations
 
 import logging
+import sys
 import uuid
 from dataclasses import dataclass, field
 from datetime import date
+from pathlib import Path
 from typing import Any
 
 logger = logging.getLogger(__name__)
@@ -52,6 +54,10 @@ class PostMarketDerivedDataGenerateUseCase:
     def register_dragon_tiger_object_build(self) -> None:
         self._builders["dragon_tiger_object_build"] = _DragonTigerObjectBuilder(
             pool=self._pool, db_manager=self._db_manager)
+
+    def register_money_flow_enhanced_build(self, project_root: str = "") -> None:
+        self._builders["money_flow_enhanced_build"] = _MoneyFlowEnhancedBuilder(
+            pool=self._pool, project_root=project_root)
 
     async def execute(
         self, trade_date_val: date, force: bool = False, dry_run: bool = False,
@@ -264,3 +270,46 @@ class _DragonTigerObjectBuilder:
         except Exception as exc:
             return {"job_key": "dragon_tiger_object_build", "status": "failed",
                     "affected_rows": 0, "error": str(exc)[:200]}
+
+
+class _MoneyFlowEnhancedBuilder:
+    """P2-4: money_flow_enhanced_build — 执行 build_money_flow_enhanced.py 脚本。"""
+
+    def __init__(self, pool=None, project_root: str = ""):
+        self._pool = pool
+        self._project_root = project_root
+
+    async def run(self, trade_date: date) -> dict[str, Any]:
+        import asyncio
+        script = Path(self._project_root) / "database_service/scripts/build_money_flow_enhanced.py"
+        if not script.exists():
+            return {"job_key": "money_flow_enhanced_build", "status": "failed_precondition",
+                    "error": f"script not found: {script}"}
+
+        td_str = trade_date.isoformat()
+        try:
+            proc = await asyncio.create_subprocess_exec(
+                sys.executable, str(script), "--trade-date", td_str,
+                stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+            )
+            stdout, stderr = await proc.communicate()
+            ok = proc.returncode == 0
+        except Exception as exc:
+            return {"job_key": "money_flow_enhanced_build", "status": "failed",
+                    "affected_rows": 0, "error": str(exc)[:200]}
+
+        # Verify table
+        row_count = 0
+        if self._pool:
+            async with self._pool.acquire() as conn:
+                r = await conn.fetchrow(
+                    "SELECT COUNT(*) AS cnt FROM money_flow_enhanced WHERE trade_date = $1::date",
+                    trade_date)
+                row_count = int(r["cnt"]) if r else 0
+
+        if row_count > 0:
+            return {"job_key": "money_flow_enhanced_build", "status": "success",
+                    "affected_rows": row_count}
+        stderr_text = stderr.decode("utf-8", errors="replace")[:200] if stderr else ""
+        return {"job_key": "money_flow_enhanced_build", "status": "failed_no_rows",
+                "affected_rows": 0, "error": f"exit={proc.returncode} stderr={stderr_text}"}
