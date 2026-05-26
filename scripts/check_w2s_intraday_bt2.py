@@ -43,13 +43,22 @@ async def main():
     args = p.parse_args()
 
     bt = W2SIntradayBacktest(DSN)
-    limit = args.limit if args.limit > 0 else 50
-    result = await bt.run(args.trade_date, limit_stocks=limit)
 
-    sigs = result.signals
+    # Multi-date: 5/25 (D1 candidates) + 5/26 (strong_watch)
+    trade_dates = ["2026-05-25", "2026-05-26"]
+    all_results = {}
+    all_sigs = []
 
-    # ── 总体统计 ──
-    print(f"=== BT-2: {args.trade_date} | {result.stocks_tested} stocks | {result.total_minutes} min | {len(sigs)} signals ===\n")
+    for td in trade_dates:
+        limit = args.limit if args.limit > 0 else 50
+        result = await bt.run(td, limit_stocks=limit)
+        all_results[td] = result
+        for s in result.signals:
+            s._trade_date = td  # tag with date
+        all_sigs.extend(result.signals)
+        print(f"=== {td}: {result.stocks_tested} stocks | {result.total_minutes} min | {len(result.signals)} signals ===\n")
+
+    sigs = all_sigs
 
     for lvl in ("A", "B", "C"):
         stats = result.by_level.get(lvl)
