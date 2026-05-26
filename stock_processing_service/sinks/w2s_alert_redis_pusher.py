@@ -13,6 +13,7 @@ from datetime import datetime, timezone, timedelta
 import redis.asyncio as aioredis
 
 from stock_processing_service.domain.services.w2s_alert_service import W2SAuctionAlert
+from stock_processing_service.domain.services.w2s_intraday_alert_service import W2SIntradayAlert
 from stock_processing_service.domain.services.w2s_support_alert_service import W2SSupportAlert
 
 logger = logging.getLogger("sps.w2s_alert.redis_pusher")
@@ -168,6 +169,74 @@ class W2SAlertRedisPusher:
         self._pushed += pushed
         if pushed:
             logger.warning("W2S_SUPPORT_ALERTS: %d pushed", pushed)
+        return pushed
+
+    async def push_intraday_alerts(self, alerts: list[W2SIntradayAlert]) -> int:
+        """推送盘中弱转强观察告警。支持 C→B→A 升级再次推送。"""
+        if not alerts:
+            return 0
+        r = await self._get_redis()
+        if r is None:
+            return 0
+        pushed = 0
+        for a in alerts:
+            dedup_key = f"{STATE_KEY_PREFIX}:{a.trade_date}:{a.candidate_id}:intraday_turn_strong"
+            try:
+                prev_raw = await r.get(dedup_key)
+                if prev_raw:
+                    prev = json.loads(prev_raw)
+                    prev_level = prev.get("last_alert_level", "")
+                    # 仅允许升级推送 (C→B, B→A, C→A)
+                    level_order = {"C": 1, "B": 2, "A": 3}
+                    if level_order.get(a.alert_level, 0) <= level_order.get(prev_level, 0):
+                        continue
+            except Exception:
+                pass
+
+            try:
+                data = {
+                    "item_type": "w2s_intraday_turn_strong_alert" if a.severity == "important" else "w2s_intraday_turn_strong_observe",
+                    "alert_stage": "intraday_turn_strong",
+                    "trade_date": a.trade_date,
+                    "candidate_trade_date": a.candidate_trade_date,
+                    "candidate_id": str(a.candidate_id),
+                    "stock_id": a.stock_id,
+                    "stock_name": a.stock_name,
+                    "theme_name": a.theme_name,
+                    "candidate_type": a.candidate_type,
+                    "weak_type": a.weak_type,
+                    "confirm_level": a.confirm_level,
+                    "confirm_score": str(a.confirm_score),
+                    "current": str(round(a.current, 3)),
+                    "vwap": str(round(a.vwap, 4)),
+                    "above_vwap_ratio_5m": str(a.above_vwap_ratio_5m),
+                    "relative_strength_vs_index": str(round(a.relative_strength_vs_index, 4)),
+                    "relative_strength_turn_positive": str(a.relative_strength_turn_positive).lower(),
+                    "break_platform_30m": str(a.break_platform_30m).lower(),
+                    "platform_high_30m": str(round(a.platform_high_30m, 4)),
+                    "amount_acceleration": str(a.amount_acceleration).lower(),
+                    "support_state": a.support_state,
+                    "position_label": a.position_label,
+                    "pattern_labels": json.dumps(a.pattern_labels, ensure_ascii=False),
+                    "intraday_score": str(a.intraday_score),
+                    "alert_level": a.alert_level,
+                    "severity": a.severity,
+                    "evidence_rules": json.dumps(a.evidence_rules, ensure_ascii=False),
+                    "generated_at": a.generated_at,
+                }
+                await r.xadd(self._stream, data, maxlen=self._maxlen)
+                await r.setex(dedup_key, STATE_TTL, json.dumps({
+                    "last_alert_level": a.alert_level,
+                    "last_score": a.intraday_score,
+                    "last_alert_at": a.generated_at,
+                }))
+                pushed += 1
+            except Exception as exc:
+                logger.warning("W2S intraday push failed for %s: %s", a.stock_id, exc)
+
+        self._pushed += pushed
+        if pushed:
+            logger.warning("W2S_INTRA_ALERTS: %d pushed", pushed)
         return pushed
 
     @property

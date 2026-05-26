@@ -143,9 +143,9 @@ class CollectionCommandPlanner:
 
         if task_key == "strong_stock_watch":
             return CollectionTaskPlan(
-                terminal_status="success",
-                terminal_label="由 recap_snapshot 新链任务统一生成",
-                pre_logs=["强势股池独立旧链脚本已禁用，改由 recap_snapshot 新链任务统一生成"],
+                terminal_status="skipped",
+                terminal_label="已废弃：强势股跟踪池由 recap_snapshot(force_rebuild) 统一生成",
+                pre_logs=["strong_stock_watch 已禁用，请使用 recap_snapshot force_rebuild_truth_source=true 生成 Layer C"],
             )
 
         if task_key == "leader_llm":
