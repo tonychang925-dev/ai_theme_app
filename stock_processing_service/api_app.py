@@ -1914,7 +1914,8 @@ async def get_post_market_readiness(date: str = Query(..., description="YYYY-MM-
     except ValueError:
         return {"status": "error", "error_code": "INVALID_DATE", "message": f"invalid date: {date}"}
 
-    pool = getattr(app.state, "db_pool", None)
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
     service = PostMarketReadinessService(pool=pool)
     result = await service.check(d)
     return result.to_dict()
