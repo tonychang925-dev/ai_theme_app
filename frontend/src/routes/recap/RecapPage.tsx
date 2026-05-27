@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
   fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
-  type DailyReviewView, type PostMarketDailyReviewV2,
+  type DailyReviewView, type PostMarketDailyReviewV2, type ThemeCapitalReview, type ThemeReviewV2,
   fetchPostMarketReadiness, fetchPostMarketJobsStatus,
   generatePostMarketDerivedData, generatePostMarketRecap,
   type PostMarketReadinessView, type PostMarketJobsStatusView,
@@ -92,6 +92,55 @@ function renderThemeLink(theme: string, subjectKey?: string, tradeDate?: string)
       {theme}
     </button>
   );
+}
+
+function formatReviewAmount(value: number | null | undefined): string {
+  if (value == null || !Number.isFinite(value)) return "--";
+  const abs = Math.abs(value);
+  if (abs >= 1e8) return `${(value / 1e8).toFixed(2)}亿`;
+  if (abs >= 1e4) return `${(value / 1e4).toFixed(2)}万`;
+  return value.toFixed(0);
+}
+
+function buildThemeSummaryRowsFromV2(rows: ThemeReviewV2[]): ThemeSummaryRow[] {
+  return rows.map((item) => {
+    const tier =
+      item.tier === "mainline" || item.final_mainline_alive
+        ? "主线"
+        : item.tier === "strong_branch"
+          ? "强分支"
+          : zh(item.tier || "unknown");
+    return {
+      theme: item.theme_name || "--",
+      subjectKey: item.subject_key || "--",
+      tier,
+      eventScore: item.event_score != null ? item.event_score.toFixed(2) : "--",
+      marketScore: item.market_score != null ? item.market_score.toFixed(2) : "--",
+      totalInflow: formatReviewAmount(item.total_inflow),
+      leaderInflow: formatReviewAmount(item.leader_inflow),
+      themeKline: zh(item.theme_kline || "--"),
+      cycleStage: zh(item.cycle_stage || item.final_cycle_state || "--"),
+      actionAdvice: zh(item.action_advice || "--"),
+      conclusion: zh(item.conclusion || "--"),
+    };
+  });
+}
+
+function buildThemeCapitalFlowRowsFromV2(rows: ThemeCapitalReview[]): ThemeCapitalFlowRow[] {
+  return [...rows]
+    .sort((a, b) => (a.rank_order ?? 9999) - (b.rank_order ?? 9999))
+    .map((item) => ({
+      theme: item.theme_name || "--",
+      subjectKey: item.subject_key || "--",
+      tier: zh(item.tier || "unknown"),
+      totalInflow: formatReviewAmount(item.total_inflow),
+      top3Inflow: formatReviewAmount(item.top3_inflow),
+      leaderInflow: formatReviewAmount(item.leader_inflow),
+      inflowCount: item.inflow_stock_count != null ? String(item.inflow_stock_count) : "--",
+      themeKline: zh(item.theme_kline || "--"),
+      stage: zh(item.cycle_stage || "--"),
+      action: zh(item.action || "--"),
+    }));
 }
 
 function renderDecisionTags(row: StrongStockRow) {
@@ -660,6 +709,9 @@ export function RecapPage() {
   }, [watchlistSection]);
   const themeSummaryRows = useMemo(
     () => {
+      if (dailyReviewV2PreviewEnabled && dailyReviewV2?.theme_reviews?.length) {
+        return buildThemeSummaryRowsFromV2(dailyReviewV2.theme_reviews);
+      }
       return themeSection.map((item) => {
         const parsed = splitThemeLine(item);
         return parseThemeSummary(
@@ -669,11 +721,16 @@ export function RecapPage() {
         );
       });
     },
-    [themeSection, cycleByTheme],
+    [dailyReviewV2PreviewEnabled, dailyReviewV2, themeSection, cycleByTheme],
   );
   const themeCapitalFlowRows = useMemo(
-    () => themeCapitalFlowSection.map((item) => parseThemeCapitalFlowRow(item)),
-    [themeCapitalFlowSection],
+    () => {
+      if (dailyReviewV2PreviewEnabled && dailyReviewV2?.theme_capital_reviews?.length) {
+        return buildThemeCapitalFlowRowsFromV2(dailyReviewV2.theme_capital_reviews);
+      }
+      return themeCapitalFlowSection.map((item) => parseThemeCapitalFlowRow(item));
+    },
+    [dailyReviewV2PreviewEnabled, dailyReviewV2, themeCapitalFlowSection],
   );
   const stockCapitalFlowRows = useMemo(
     () => stockCapitalFlowSection.map((item) => parseStockCapitalFlowRow(item)),
@@ -910,6 +967,10 @@ export function RecapPage() {
                   if (snapshot) setPayload(snapshot);
                   const dr = await fetchDailyReview(tradeDate).catch(() => null);
                   if (dr) setDailyReview(dr);
+                  if (dailyReviewV2PreviewEnabled) {
+                    const v2 = await fetchDailyReviewV2(tradeDate).catch(() => null);
+                    if (v2) setDailyReviewV2(v2);
+                  }
                   setRecapBusy(false);
                 }}
                 disabled={postMarketReadiness?.status !== "ready" || recapBusy}>
