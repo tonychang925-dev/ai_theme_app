@@ -1380,7 +1380,7 @@ export async function fetchRealtimeCollectorLogs(lines = 200): Promise<RealtimeC
 
 export async function fetchNewChainRealtimeStatus(): Promise<NewChainRealtimeStatus> {
   return fetchJsonWithTimeout<NewChainRealtimeStatus>(
-    "/api/v1/realtime/status",
+    "/api/v2/realtime/new-chain/status",
     { cache: "no-store" },
     10000,
   );
@@ -1388,7 +1388,7 @@ export async function fetchNewChainRealtimeStatus(): Promise<NewChainRealtimeSta
 
 export async function startNewChainRealtime(): Promise<NewChainRealtimeResult> {
   return fetchJsonWithTimeout<NewChainRealtimeResult>(
-    "/api/v1/realtime/start",
+    "/api/v2/realtime/new-chain/start",
     { method: "POST", headers: { "Content-Type": "application/json" } },
     30000,
   );
@@ -1396,7 +1396,7 @@ export async function startNewChainRealtime(): Promise<NewChainRealtimeResult> {
 
 export async function stopNewChainRealtime(): Promise<NewChainRealtimeResult> {
   return fetchJsonWithTimeout<NewChainRealtimeResult>(
-    "/api/v1/realtime/stop",
+    "/api/v2/realtime/new-chain/stop",
     { method: "POST", headers: { "Content-Type": "application/json" } },
     30000,
   );

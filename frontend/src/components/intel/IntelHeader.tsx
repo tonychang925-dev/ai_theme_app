@@ -17,6 +17,13 @@ interface IntelHeaderProps {
   liveStatus: 'connecting' | 'live' | 'fallback';
   sseConnectionState: SSEConnectionState | null;
   liveNewCount: number;
+  realtimeHealth: {
+    serviceOnline: boolean | null;
+    pipelineRunning: boolean | null;
+    jyhfCollectorRunning: boolean | null;
+    jyhfCdpConnected: boolean | null;
+    todayCount: number;
+  };
   date: string;
   setDate: (d: string) => void;
   session: IntelSession;
@@ -28,10 +35,12 @@ interface IntelHeaderProps {
 
 export function IntelHeader({
   sourceSummary, payloadCount, liveStatus, liveNewCount,
-  date, setDate, session, setSession, type, setType, recapDates,
+  realtimeHealth, date, setDate, session, setSession, type, setType, recapDates,
 }: IntelHeaderProps) {
   const liveStatusText = { 'live': '在线', 'connecting': '连接中', 'fallback': '兜底模式' }[liveStatus];
   const { user, logout } = useAuth();
+  const statusText = (value: boolean | null, ok: string, fail: string, unknown = '检查中') =>
+    value === null ? unknown : value ? ok : fail;
 
   return (
     <header className="intel-toolbar">
@@ -96,6 +105,12 @@ export function IntelHeader({
         </select>
         <span style={{ fontSize: 14, color: "#9f9f9f", whiteSpace: "nowrap" }}>连结状态</span>
         <span className={`intel-status-dot ${liveStatus}`} title={liveStatusText} />
+        <div style={{ display: "flex", flexDirection: "column", gap: 2, fontSize: 12, color: "#9f9f9f", whiteSpace: "nowrap" }}>
+          <span>服务：{statusText(realtimeHealth.serviceOnline, '在线', '离线')}</span>
+          <span>管线：{statusText(realtimeHealth.pipelineRunning, '运行中', '未运行')}</span>
+          <span>JYHF：{statusText(realtimeHealth.jyhfCollectorRunning && realtimeHealth.jyhfCdpConnected, '采集有效', '未采集')}</span>
+          <span>今日情报：{realtimeHealth.todayCount}</span>
+        </div>
         {user && (
           <div className="intel-user-bar">
             <button className="intel-user-btn" onClick={logout} title="退出登录">

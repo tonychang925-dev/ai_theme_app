@@ -491,6 +491,17 @@ def main() -> int:
     parser.add_argument("--api", default="http://127.0.0.1:8090", help="API base URL.")
     parser.add_argument("--generate-first", action="store_true", help="POST generate before checking each date.")
     parser.add_argument(
+        "--p5-gate",
+        action="store_true",
+        help="Enforce the final P5 default-switch gate. Requires at least two P5 gate candidates.",
+    )
+    parser.add_argument(
+        "--min-p5-gate-dates",
+        type=int,
+        default=2,
+        help="Minimum p5_gate_candidate dates required when --p5-gate is enabled.",
+    )
+    parser.add_argument(
         "--debug-module",
         choices=["dragon_tiger_reviews", "strong_stock_reviews", "watchlist_reviews"],
         help="Print raw source audit for a module.",
@@ -547,6 +558,31 @@ def main() -> int:
     print(f"p5_failed_dates: {failed_dates}")
     print(f"p5_blocked_dates: {p5_blocked_dates}")
     print(f"observe_dates: {observe_dates}")
+    p5_candidate_dates = [
+        trade_date for trade_date in dates
+        if trade_date not in observed
+    ]
+    p5_gate_errors: list[str] = []
+    if args.p5_gate:
+        if len(p5_candidate_dates) < args.min_p5_gate_dates:
+            p5_gate_errors.append(
+                f"p5_gate_candidate count {len(p5_candidate_dates)} is below required minimum "
+                f"{args.min_p5_gate_dates}"
+            )
+        if failed_dates:
+            p5_gate_errors.append(f"p5_failed_dates must be empty, got {failed_dates}")
+        if p5_blocked_dates:
+            p5_gate_errors.append(f"p5_blocked_dates must be empty, got {p5_blocked_dates}")
+        if not p5_gate_errors:
+            print(
+                "p5_gate_summary: PASS "
+                f"candidates={p5_candidate_dates} observed={observe_dates}"
+            )
+        else:
+            print(
+                "p5_gate_summary: FAIL "
+                f"candidates={p5_candidate_dates} observed={observe_dates} errors={p5_gate_errors}"
+            )
     if failed:
         print("\nFAILED MODULES:")
         for trade_date, errors in failed.items():
@@ -562,6 +598,8 @@ def main() -> int:
         for trade_date, reason in observed.items():
             print(f"- {trade_date}: {reason}")
 
+    if p5_gate_errors:
+        return 1
     if failed or p5_blocked:
         return 1
     print("\nPASSED: DailyReview V2 coverage is ready for required modules across all dates.")

@@ -43,6 +43,13 @@ interface UseIntelFeedReturn {
   liveStatus: 'connecting' | 'live' | 'fallback';
   liveNewCount: number;
   sseConnectionState: SSEConnectionState | null;
+  realtimeHealth: {
+    serviceOnline: boolean | null;
+    pipelineRunning: boolean | null;
+    jyhfCollectorRunning: boolean | null;
+    jyhfCdpConnected: boolean | null;
+    todayCount: number;
+  };
   streamDiagnostics: {
     fallbackActive: boolean;
     fallbackReason: string | null;
@@ -236,16 +243,43 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
 
   // 实时采集栈状态（最高优先级，实时栈停止时强制红色）
   const [realtimeRunning, setRealtimeRunning] = useState(true);
+  const [realtimeHealth, setRealtimeHealth] = useState<UseIntelFeedReturn['realtimeHealth']>({
+    serviceOnline: null,
+    pipelineRunning: null,
+    jyhfCollectorRunning: null,
+    jyhfCdpConnected: null,
+    todayCount: 0,
+  });
   useEffect(() => {
     let active = true;
     const checkRealtime = async () => {
       try {
-        const resp = await fetch('/api/v1/realtime/status');
+        const resp = await fetch('/api/v2/realtime/new-chain/status');
         if (!active) return;
         const data = await resp.json();
         setRealtimeRunning(data?.running !== false);
+        setRealtimeHealth((prev) => ({
+          ...prev,
+          serviceOnline: resp.ok,
+          pipelineRunning: Boolean(data?.running),
+        }));
       } catch {
-        // 接口不可用时不改变状态
+        if (!active) return;
+        setRealtimeHealth((prev) => ({ ...prev, serviceOnline: false, pipelineRunning: false }));
+      }
+
+      try {
+        const resp = await fetch('/api/v2/realtime/jyhf-cdp/status?_t=' + Date.now(), { cache: 'no-store' });
+        if (!active) return;
+        const data = await resp.json();
+        setRealtimeHealth((prev) => ({
+          ...prev,
+          jyhfCollectorRunning: Boolean(data?.collector_running),
+          jyhfCdpConnected: Boolean(data?.cdp_connected),
+        }));
+      } catch {
+        if (!active) return;
+        setRealtimeHealth((prev) => ({ ...prev, jyhfCollectorRunning: false, jyhfCdpConnected: false }));
       }
     };
     checkRealtime();
@@ -255,6 +289,10 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
 
   // 实时栈停止时强制 fallback
   const effectiveLiveStatus = !realtimeRunning ? 'fallback' : liveStatus;
+
+  useEffect(() => {
+    setRealtimeHealth((prev) => ({ ...prev, todayCount: payload?.count ?? 0 }));
+  }, [payload?.count]);
 
   // SSE manager effect
   const normalizeIntelItem = useCallback((raw: IntelFeedEvent["item"]): IntelFeedItem | null => {
@@ -478,6 +516,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
     liveStatus: effectiveLiveStatus,
     liveNewCount,
     sseConnectionState,
+    realtimeHealth,
     streamDiagnostics: {
       fallbackActive,
       fallbackReason,

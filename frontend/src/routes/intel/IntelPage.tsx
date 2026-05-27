@@ -21,6 +21,7 @@ export function IntelPage() {
     payload, loading, error,
     selectedItemId, setSelectedItemId,
     liveStatus, liveNewCount, sseConnectionState,
+    realtimeHealth,
     streamDiagnostics, recapDates,
   } = useIntelFeed({ limit: 50, subjectKey: themeFilterEnabled ? selectedTheme : null });
   const [themeRadar, setThemeRadar] = useState<ThemeRadarItem[]>([]);
@@ -106,6 +107,7 @@ export function IntelPage() {
         liveStatus={liveStatus}
         sseConnectionState={sseConnectionState}
         liveNewCount={liveNewCount}
+        realtimeHealth={realtimeHealth}
         date={date}
         setDate={setDate}
         session={session}
