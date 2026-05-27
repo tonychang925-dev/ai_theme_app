@@ -44,6 +44,8 @@ class PostMarketDailyReviewV2Builder:
     ) -> PostMarketDailyReviewV2:
         doc = deepcopy(recap_doc) if isinstance(recap_doc, dict) else {}
         generated = generated_at or datetime.now(timezone.utc)
+        theme_capital_reviews, theme_capital_missing_fields = self._build_theme_capital_reviews(doc)
+        theme_reviews, theme_missing_fields = self._build_theme_reviews(doc, theme_capital_reviews)
         strong_stock_reviews, strong_stock_missing_fields = self._build_strong_stock_reviews(doc)
         watchlist_reviews, watchlist_missing_fields = self._build_watchlist_reviews(doc)
         stock_capital_reviews, stock_capital_missing_fields = self._build_stock_capital_reviews(doc)
@@ -55,6 +57,8 @@ class PostMarketDailyReviewV2Builder:
             doc,
             legacy_section_counts,
             structured_counts={
+                "theme_reviews": len(theme_reviews),
+                "theme_capital_reviews": len(theme_capital_reviews),
                 "strong_stock_reviews": len(strong_stock_reviews),
                 "watchlist_reviews": len(watchlist_reviews),
                 "stock_capital_reviews": len(stock_capital_reviews),
@@ -63,6 +67,8 @@ class PostMarketDailyReviewV2Builder:
                 "dragon_tiger_reviews": len(dragon_tiger_reviews),
             },
             missing_fields={
+                "theme_reviews": theme_missing_fields,
+                "theme_capital_reviews": theme_capital_missing_fields,
                 "strong_stock_reviews": strong_stock_missing_fields,
                 "watchlist_reviews": watchlist_missing_fields,
                 "stock_capital_reviews": stock_capital_missing_fields,
@@ -89,8 +95,8 @@ class PostMarketDailyReviewV2Builder:
                 "recap_generate_status": recap_status,
             },
             "market_summary": self._market_summary(doc),
-            "theme_reviews": [],
-            "theme_capital_reviews": [],
+            "theme_reviews": theme_reviews,
+            "theme_capital_reviews": theme_capital_reviews,
             "strong_stock_reviews": strong_stock_reviews,
             "watchlist_reviews": watchlist_reviews,
             "stock_capital_reviews": stock_capital_reviews,
@@ -135,6 +141,235 @@ class PostMarketDailyReviewV2Builder:
     def _trading_principle(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
         source = recap_doc.get("trading_principle")
         return deepcopy(source) if isinstance(source, dict) else {}
+
+    def _build_theme_capital_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
+        source_key, source_rows = self._first_list_source(
+            recap_doc,
+            (
+                ("theme_capital_reviews",),
+                ("report_context", "theme_capital_flow"),
+                ("report_context", "capital_flow"),
+            ),
+        )
+        if not isinstance(source_rows, list):
+            return [], []
+
+        rows: list[dict[str, Any]] = []
+        missing_fields: set[str] = set()
+        for idx, source in enumerate(source_rows[:20], start=1):
+            if not isinstance(source, dict):
+                continue
+            subject_key = self._theme_subject_key(source)
+            theme_name = self._theme_name(source)
+            total_inflow = self._float_or_none(
+                self._first_present(source, "total_inflow", "main_net_inflow_sum", "net_inflow_sum", "main_net_inflow")
+            )
+            leader_inflow = self._float_or_none(
+                self._first_present(source, "leader_inflow", "leader_main_net_inflow", "leader_net_inflow")
+            )
+            top3_inflow = self._float_or_none(self._first_present(source, "top3_inflow", "top3_main_net_inflow"))
+            inflow_stock_count = self._int_or_none(
+                self._first_present(source, "inflow_stock_count", "stock_count", "positive_stock_count")
+            )
+            theme_kline = self._nullable_text(
+                self._first_present(source, "theme_kline", "kline_status", "theme_structure", "price_structure")
+            )
+            cycle_stage = self._nullable_text(self._first_present(source, "cycle_stage", "final_cycle_state", "stage"))
+            action = self._nullable_text(self._first_present(source, "action", "action_advice", "trade_action"))
+            rank_order = self._int_or_none(self._first_present(source, "rank_order", "rank", "sort")) or idx
+            tier = self._theme_tier(source)
+
+            required = {
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+            }
+            for field, value in required.items():
+                if not value:
+                    missing_fields.add(field)
+            display_required = {
+                "total_inflow": total_inflow is not None,
+                "rank_order": rank_order is not None,
+                "leader_or_top3_or_count": leader_inflow is not None or top3_inflow is not None or inflow_stock_count is not None,
+                "kline_or_stage_or_action": bool(theme_kline or cycle_stage or action),
+            }
+            for field, ok in display_required.items():
+                if not ok:
+                    missing_fields.add(field)
+
+            rows.append({
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+                "tier": tier,
+                "total_inflow": total_inflow,
+                "top3_inflow": top3_inflow,
+                "leader_inflow": leader_inflow,
+                "inflow_stock_count": inflow_stock_count,
+                "theme_kline": theme_kline,
+                "cycle_stage": cycle_stage,
+                "action": action,
+                "rank_order": rank_order,
+                "diagnostics": {
+                    "capital_row_joined": True,
+                    "stock_count": inflow_stock_count or 0,
+                    "source": source_key,
+                    "fallback_used": [],
+                    "source_tables": [source_key],
+                },
+            })
+
+        return rows, sorted(missing_fields)
+
+    def _build_theme_reviews(
+        self,
+        recap_doc: dict[str, Any],
+        theme_capital_reviews: list[dict[str, Any]],
+    ) -> tuple[list[dict[str, Any]], list[str]]:
+        source_key, source_rows = self._first_list_source(
+            recap_doc,
+            (
+                ("theme_reviews",),
+                ("report_context", "theme_reviews"),
+                ("report_context", "theme_cycle"),
+                ("report_context", "theme_cycle_judgement_v2"),
+                ("report_context", "cycles"),
+            ),
+        )
+        if isinstance(source_rows, list):
+            if theme_capital_reviews:
+                capital_by_key = {str(row.get("subject_key") or ""): row for row in theme_capital_reviews}
+                merged_rows: list[Any] = []
+                for source in source_rows:
+                    if not isinstance(source, dict):
+                        merged_rows.append(source)
+                        continue
+                    capital = capital_by_key.get(self._theme_subject_key(source)) or {}
+                    merged_rows.append({**capital, **source, "action": source.get("action") or capital.get("action")})
+                source_rows = merged_rows
+            rows, missing = self._map_theme_review_rows(source_key, source_rows)
+            if rows:
+                return rows, missing
+        if theme_capital_reviews:
+            return self._synthesize_theme_reviews_from_capital(theme_capital_reviews, recap_doc)
+        return [], []
+
+    def _map_theme_review_rows(self, source_key: str, source_rows: list[Any]) -> tuple[list[dict[str, Any]], list[str]]:
+        rows: list[dict[str, Any]] = []
+        missing_fields: set[str] = set()
+        for source in source_rows[:20]:
+            if not isinstance(source, dict):
+                continue
+            row, missing = self._theme_review_row_from_source(source, source_key)
+            rows.append(row)
+            missing_fields.update(missing)
+        return rows, sorted(missing_fields)
+
+    def _theme_review_row_from_source(self, source: dict[str, Any], source_key: str) -> tuple[dict[str, Any], set[str]]:
+        subject_key = self._theme_subject_key(source)
+        theme_name = self._theme_name(source)
+        total_inflow = self._float_or_none(self._first_present(source, "total_inflow", "main_net_inflow_sum"))
+        leader_inflow = self._float_or_none(self._first_present(source, "leader_inflow", "leader_main_net_inflow"))
+        theme_kline = self._nullable_text(
+            self._first_present(source, "theme_kline", "kline_status", "theme_structure", "final_cycle_state")
+        )
+        event_score = self._float_or_none(self._first_present(source, "event_score", "event_heat_score"))
+        market_score = self._float_or_none(self._first_present(source, "market_score", "market_confirmation_score"))
+        mainline_strength_score = self._float_or_none(
+            self._first_present(source, "mainline_strength_score", "strength_score")
+        )
+        fade_risk_score = self._float_or_none(self._first_present(source, "fade_risk_score", "fade_score"))
+        cycle_stage = self._text(self._first_present(source, "cycle_stage", "final_cycle_state") or "unknown")
+        final_cycle_state = self._text(self._first_present(source, "final_cycle_state", "cycle_state") or cycle_stage)
+        final_mainline_alive = self._bool_or_none(
+            self._first_present(source, "final_mainline_alive", "is_mainline_alive")
+        )
+        tier = self._theme_tier(source, final_mainline_alive=final_mainline_alive, strength_score=mainline_strength_score)
+        action_source = self._nullable_text(self._first_present(source, "action_advice", "action", "trade_action"))
+        conclusion_source = self._nullable_text(self._first_present(source, "conclusion", "summary", "reason"))
+        fallback_used: list[str] = []
+        action_advice = self._text(action_source or self._theme_action_fallback(tier=tier, cycle_stage=cycle_stage))
+        if action_advice and not action_source:
+            fallback_used.append("action_advice")
+        conclusion = self._text(conclusion_source or self._theme_conclusion_fallback(tier=tier, cycle_stage=cycle_stage))
+        if conclusion and not conclusion_source:
+            fallback_used.append("conclusion")
+
+        missing_fields: set[str] = set()
+        required = {
+            "subject_key": subject_key,
+            "theme_name": theme_name,
+        }
+        for field, value in required.items():
+            if not value:
+                missing_fields.add(field)
+        display_required = {
+            "tier": bool(tier),
+            "cycle_stage_or_final_cycle_state": bool(cycle_stage or final_cycle_state),
+            "action_or_conclusion": bool(action_advice or conclusion),
+            "capital_or_kline": total_inflow is not None or leader_inflow is not None or bool(theme_kline),
+            "score": event_score is not None or market_score is not None or mainline_strength_score is not None,
+        }
+        for field, ok in display_required.items():
+            if not ok:
+                missing_fields.add(field)
+
+        row = {
+            "subject_key": subject_key,
+            "theme_name": theme_name,
+            "tier": tier,
+            "total_inflow": total_inflow,
+            "leader_inflow": leader_inflow,
+            "theme_kline": theme_kline,
+            "event_score": event_score,
+            "market_score": market_score,
+            "mainline_strength_score": mainline_strength_score,
+            "fade_risk_score": fade_risk_score,
+            "cycle_stage": cycle_stage,
+            "final_cycle_state": final_cycle_state,
+            "final_mainline_alive": bool(final_mainline_alive) if final_mainline_alive is not None else tier == "mainline",
+            "action_advice": action_advice,
+            "conclusion": conclusion,
+            "leader_stocks": self._list(source.get("leader_stocks")),
+            "event_chain": self._list(source.get("event_chain")),
+            "diagnostics": {
+                "cycle_joined": True,
+                "capital_joined": total_inflow is not None or leader_inflow is not None,
+                "leader_count": len(self._list(source.get("leader_stocks"))),
+                "source": source_key,
+                "source_tables": [source_key],
+                "fallback_used": fallback_used,
+                "missing_fields": sorted(missing_fields),
+            },
+        }
+        return row, missing_fields
+
+    def _synthesize_theme_reviews_from_capital(
+        self,
+        theme_capital_reviews: list[dict[str, Any]],
+        recap_doc: dict[str, Any],
+    ) -> tuple[list[dict[str, Any]], list[str]]:
+        cycles = self._cycle_by_subject_key(recap_doc)
+        rows: list[dict[str, Any]] = []
+        missing_fields: set[str] = set()
+        for source in theme_capital_reviews:
+            cycle = cycles.get(str(source.get("subject_key") or "")) or {}
+            merged = {
+                **cycle,
+                **source,
+                "tier": source.get("tier") or cycle.get("tier"),
+                "action_advice": source.get("action") or cycle.get("action_advice") or cycle.get("action"),
+                "conclusion": cycle.get("conclusion") or cycle.get("summary") or source.get("action"),
+                "mainline_strength_score": cycle.get("mainline_strength_score")
+                or cycle.get("strength_score")
+                or source.get("total_inflow"),
+                "source": "synthesized_from_theme_capital_reviews",
+            }
+            row, missing = self._theme_review_row_from_source(merged, "synthesized_from_theme_capital_reviews")
+            row["diagnostics"]["capital_joined"] = True
+            row["diagnostics"]["cycle_joined"] = bool(cycle)
+            row["diagnostics"]["fallback_used"] = ["theme_reviews.from_theme_capital_reviews"]
+            rows.append(row)
+            missing_fields.update(missing)
+        return rows, sorted(missing_fields)
 
     def _build_strong_stock_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
         source_rows = recap_doc.get("strong_stock_reviews")
@@ -595,13 +830,33 @@ class PostMarketDailyReviewV2Builder:
         return rows, sorted(missing_fields)
 
     def _build_watchlist_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
-        source_key = "watchlist_reviews"
-        source_rows = recap_doc.get(source_key)
-        if not isinstance(source_rows, list):
-            source_key = "observe_candidates"
-            source_rows = recap_doc.get(source_key)
-        if not isinstance(source_rows, list):
-            return [], []
+        source_key, source_rows = self._first_list_source(
+            recap_doc,
+            (
+                ("watchlist_reviews",),
+                ("next_day_watchlist",),
+                ("watchlist",),
+                ("tomorrow_watchlist",),
+                ("post_market_watchlist",),
+                ("observe_candidates",),
+                ("report_context", "watchlist"),
+                ("report_context", "observe_candidates"),
+                ("report_context", "strong_stock_watch"),
+            ),
+        )
+        synthesized = False
+        if not isinstance(source_rows, list) or len(source_rows) == 0:
+            strong_rows = recap_doc.get("strong_stock_reviews")
+            if not isinstance(strong_rows, list):
+                return [], []
+            source_key = "synthesized_from_strong_stock_reviews"
+            source_rows = [
+                row for row in strong_rows
+                if isinstance(row, dict)
+                and self._strong_role(self._text(row.get("role") or row.get("watch_status") or "unknown")) != "reject"
+                and self._candidate_level(row) != "reject"
+            ][:20]
+            synthesized = True
 
         rows: list[dict[str, Any]] = []
         missing_fields: set[str] = set()
@@ -616,6 +871,7 @@ class PostMarketDailyReviewV2Builder:
             role_label = self._text(
                 source.get("role_label")
                 or source.get("role")
+                or source.get("role_enhanced")
                 or source.get("watch_status")
                 or source.get("candidate_level")
                 or "观察"
@@ -656,6 +912,8 @@ class PostMarketDailyReviewV2Builder:
                 or source.get("rationale")
                 or source.get("selected_reason")
                 or source.get("watch_reason")
+                or source.get("strong_grade")
+                or source.get("role_enhanced")
                 or "；".join(flags[:3])
                 or catalyst
             )
@@ -699,9 +957,9 @@ class PostMarketDailyReviewV2Builder:
                 "priority": priority,
                 "reason": reason,
                 "diagnostics": {
-                    "source": f"recap_doc.{source_key}",
-                    "fallback_used": [],
-                    "source_tables": [f"recap_doc.{source_key}"],
+                    "source": source_key if source_key.startswith(("report_context.", "synthesized_")) else f"recap_doc.{source_key}",
+                    "fallback_used": ["watchlist.from_strong_stock_reviews"] if synthesized else [],
+                    "source_tables": [source_key],
                 },
             })
 
@@ -868,6 +1126,94 @@ class PostMarketDailyReviewV2Builder:
                 return value
         return None
 
+    @classmethod
+    def _first_list_source(
+        cls,
+        recap_doc: dict[str, Any],
+        paths: tuple[tuple[str, ...], ...],
+    ) -> tuple[str, list[Any] | None]:
+        for path in paths:
+            current: Any = recap_doc
+            for key in path:
+                if not isinstance(current, dict):
+                    current = None
+                    break
+                current = current.get(key)
+            if isinstance(current, list):
+                return ".".join(path), current
+        return "", None
+
+    @classmethod
+    def _theme_subject_key(cls, source: dict[str, Any]) -> str:
+        return cls._text(
+            cls._first_present(source, "subject_key", "theme_subject_key", "subject_id", "bizKey", "theme_key")
+        )
+
+    @classmethod
+    def _theme_name(cls, source: dict[str, Any]) -> str:
+        return cls._text(cls._first_present(source, "theme_name", "subject_name", "name"))
+
+    @classmethod
+    def _theme_tier(
+        cls,
+        source: dict[str, Any],
+        *,
+        final_mainline_alive: bool | None = None,
+        strength_score: float | None = None,
+    ) -> str:
+        raw = cls._text(cls._first_present(source, "tier", "theme_tier", "mainline_level"))
+        normalized = raw.lower()
+        if normalized in {"mainline", "main", "主线"}:
+            return "mainline"
+        if normalized in {"strong_branch", "branch", "强分支"}:
+            return "strong_branch"
+        if normalized in {"fading", "fade", "退潮"}:
+            return "fading"
+        if final_mainline_alive is None:
+            final_mainline_alive = cls._bool_or_none(cls._first_present(source, "final_mainline_alive", "is_mainline_alive"))
+        if strength_score is None:
+            strength_score = cls._float_or_none(cls._first_present(source, "mainline_strength_score", "strength_score"))
+        if final_mainline_alive is True:
+            return "mainline"
+        if strength_score is not None and strength_score >= 60:
+            return "mainline"
+        if normalized in {"watch", "观察"}:
+            return "watch"
+        return "watch"
+
+    @staticmethod
+    def _bool_or_none(value: Any) -> bool | None:
+        if isinstance(value, bool):
+            return value
+        if value is None or value == "":
+            return None
+        text = str(value).strip().lower()
+        if text in {"true", "1", "yes", "y", "是"}:
+            return True
+        if text in {"false", "0", "no", "n", "否"}:
+            return False
+        return None
+
+    def _cycle_by_subject_key(self, recap_doc: dict[str, Any]) -> dict[str, dict[str, Any]]:
+        context = recap_doc.get("report_context")
+        context = context if isinstance(context, dict) else {}
+        rows = (
+            context.get("theme_cycle_judgement_v2")
+            or context.get("theme_cycle")
+            or context.get("cycles")
+            or []
+        )
+        result: dict[str, dict[str, Any]] = {}
+        if not isinstance(rows, list):
+            return result
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            key = self._theme_subject_key(row)
+            if key:
+                result[key] = row
+        return result
+
     @staticmethod
     def _seat_type(source: dict[str, Any], hot_money_name: str | None, institution_seat_count: int | None) -> str:
         text = str(source.get("seat_type") or "").upper()
@@ -910,6 +1256,24 @@ class PostMarketDailyReviewV2Builder:
             if signal:
                 return signal
         return ""
+
+    @staticmethod
+    def _theme_action_fallback(*, tier: str, cycle_stage: str) -> str:
+        if tier == "mainline":
+            return f"围绕{cycle_stage or '当前'}阶段观察分歧承接"
+        if tier == "strong_branch":
+            return f"按{cycle_stage or '当前'}阶段控制仓位参与"
+        return f"保持观察，等待{cycle_stage or '周期'}确认"
+
+    @staticmethod
+    def _theme_conclusion_fallback(*, tier: str, cycle_stage: str) -> str:
+        tier_text = {
+            "mainline": "主线",
+            "strong_branch": "强分支",
+            "watch": "观察题材",
+            "fading": "退潮题材",
+        }.get(tier, "题材")
+        return f"{tier_text}处于{cycle_stage or '未知'}阶段"
 
     @staticmethod
     def _strong_role(value: str) -> str:
