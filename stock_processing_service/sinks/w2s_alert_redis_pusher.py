@@ -16,6 +16,7 @@ from stock_processing_service.domain.services.w2s_alert_service import W2SAuctio
 from stock_processing_service.domain.services.w2s_intraday_alert_service import W2SIntradayAlert
 from stock_processing_service.domain.services.w2s_intraday_alert_service_v2 import W2SIntradayAlertV2
 from stock_processing_service.domain.services.w2s_support_alert_service import W2SSupportAlert
+from stock_processing_service.domain.services.w2s_unified_alert_service import UnifiedW2SAlert
 
 logger = logging.getLogger("sps.w2s_alert.redis_pusher")
 TZ_CN = timezone(timedelta(hours=8))
@@ -293,6 +294,53 @@ class W2SAlertRedisPusher:
         self._pushed += pushed
         if pushed:
             logger.warning("V2.2_ALERTS: %d pushed", pushed)
+        return pushed
+
+    async def push_unified_alerts(self, alerts: list[UnifiedW2SAlert]) -> int:
+        """推送统一弱转强告警。"""
+        if not alerts:
+            return 0
+        r = await self._get_redis()
+        if r is None:
+            return 0
+        pushed = 0
+        for a in alerts:
+            dedup_key = f"{STATE_KEY_PREFIX}:{a.trade_date}:{a.stock_id}:{a.phase}"
+            try:
+                if await r.exists(dedup_key):
+                    continue
+            except Exception:
+                pass
+            try:
+                await r.xadd(self._stream, {
+                    "item_type": f"w2s_unified_{a.unified_level}",
+                    "phase": a.phase,
+                    "trade_date": a.trade_date,
+                    "stock_id": a.stock_id, "stock_name": a.stock_name,
+                    "theme_name": a.theme_name,
+                    "candidate_type": a.candidate_type, "weak_type": a.weak_type,
+                    "d2_level": a.d2_level, "d2_score": str(a.d2_score),
+                    "auction_open_pct": str(a.auction_open_pct),
+                    "carry_ratio": str(a.carry_ratio),
+                    "capital_flow": a.capital_flow,
+                    "intraday_level": a.intraday_level,
+                    "intraday_score": str(a.intraday_score),
+                    "current": str(round(a.current, 3)),
+                    "vwap": str(round(a.vwap, 4)),
+                    "above_vwap_ratio": str(a.above_vwap_ratio),
+                    "relative_strength": str(round(a.relative_strength, 4)),
+                    "relative_strength_cross_zero": str(a.relative_strength_cross_zero).lower(),
+                    "unified_level": a.unified_level,
+                    "severity": a.severity,
+                    "generated_at": a.generated_at,
+                }, maxlen=self._maxlen)
+                await r.setex(dedup_key, STATE_TTL, "1")
+                pushed += 1
+            except Exception as exc:
+                logger.warning("unified push failed for %s: %s", a.stock_id, exc)
+        self._pushed += pushed
+        if pushed:
+            logger.warning("UNIFIED_W2S: %d pushed (%d auction + intraday)", pushed, len(alerts))
         return pushed
 
     @property
