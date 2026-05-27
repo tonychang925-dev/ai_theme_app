@@ -635,6 +635,7 @@ export function RecapPage() {
   const [publishing, setPublishing] = useState(false);
   const [publishResult, setPublishResult] = useState<NotionPublishResult | null>(null);
   const sections = useMemo(() => sectionMap(payload), [payload]);
+  const isPostMarket = effectiveReportType === "post_market";
   const marketEnvironmentSection = sections.get("大盘环境总结") ?? [];
   const themeEnvironmentSection = sections.get("板块环境总结") ?? [];
   const themeSection = sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? [];
@@ -686,9 +687,6 @@ export function RecapPage() {
   }
 
   const strongStockGroups = useMemo(() => {
-    if (dailyReview?.strong_stock_reviews?.length) {
-      return buildStrongStockGroupsFromDailyReview(dailyReview.strong_stock_reviews);
-    }
     const groups = new Map<string, StrongStockRow[]>();
     for (const item of strongStockSection) {
       const parsed = splitThemeLine(item);
@@ -700,7 +698,7 @@ export function RecapPage() {
       groups.set(key, current);
     }
     return Array.from(groups.entries()).filter(([, rows]) => rows.length > 0);
-  }, [dailyReview?.strong_stock_reviews, strongStockSection]);
+  }, [strongStockSection]);
   const watchlistRows = useMemo(() => {
     const rows = watchlistSection.map((item) => parseWatchlistLine(item));
     rows.sort((a, b) => {
@@ -722,10 +720,6 @@ export function RecapPage() {
   }, [watchlistSection]);
   const themeSummaryRows = useMemo(
     () => {
-      // dailyReview 优先，sections fallback
-      if (dailyReview?.theme_reviews?.length) {
-        return buildThemeSummaryRowsFromDailyReview(dailyReview, cycleByTheme);
-      }
       return themeSection.map((item) => {
         const parsed = splitThemeLine(item);
         return parseThemeSummary(
@@ -735,7 +729,7 @@ export function RecapPage() {
         );
       });
     },
-    [themeSection, cycleByTheme, dailyReview],
+    [themeSection, cycleByTheme],
   );
   const themeCapitalFlowRows = useMemo(
     () => themeCapitalFlowSection.map((item) => parseThemeCapitalFlowRow(item)),
@@ -818,20 +812,21 @@ export function RecapPage() {
 
   useEffect(() => {
     let active = true;
+    setPayload(null);
     setDailyReview(null);
     setLoading(true);
     setError(null);
 
-    // post_market: DailyReview 主数据源驱动 loading/error（设计文档 §7.8.1-bis）
     if (reportType === "post_market") {
       // P1-6: 并行加载 readiness + jobs 状态
       fetchPostMarketReadiness(tradeDate).then((d) => { if (active) setPostMarketReadiness(d); }).catch(() => {});
       fetchPostMarketJobsStatus(tradeDate).then((d) => { if (active) setPostMarketJobs(d); }).catch(() => {});
 
-      fetchDailyReview(tradeDate)
+      // P0 止血：主体展示以 post_market snapshot sections 为准；DailyReview 仅旁路加载 diagnostics。
+      fetchRecapSnapshot({ date: tradeDate, reportType })
         .then((data) => {
           if (!active) return;
-          setDailyReview(data);
+          setPayload(data);
           const query = new URLSearchParams({ date: tradeDate, report_type: reportType });
           window.history.replaceState(null, "", `/recap?${query.toString()}`);
         })
@@ -841,9 +836,11 @@ export function RecapPage() {
         .finally(() => {
           if (active) setLoading(false);
         });
-      // sections 异步补充，不阻塞页面
-      fetchRecapSnapshot({ date: tradeDate, reportType })
-        .then((data) => { if (active) setPayload(data); })
+      fetchDailyReview(tradeDate)
+        .then((data) => {
+          if (!active) return;
+          setDailyReview(data);
+        })
         .catch(() => {});
       return () => { active = false; };
     }
@@ -958,6 +955,8 @@ export function RecapPage() {
                   try { await generatePostMarketRecap(tradeDate); } catch {}
                   const j = await fetchPostMarketJobsStatus(tradeDate).catch(() => null);
                   if (j) setPostMarketJobs(j);
+                  const snapshot = await fetchRecapSnapshot({ date: tradeDate, reportType }).catch(() => null);
+                  if (snapshot) setPayload(snapshot);
                   const dr = await fetchDailyReview(tradeDate).catch(() => null);
                   if (dr) setDailyReview(dr);
                   setRecapBusy(false);
@@ -1006,6 +1005,12 @@ export function RecapPage() {
                   </td>
                 </tr>
               ))}
+              {dailyReview?.diagnostics && (
+                <tr>
+                  <td>DailyReview</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>diagnostics</td>
+                  <td><span className="tag">{String(dailyReview.diagnostics.snapshot_status ?? "loaded")}</span></td>
+                </tr>
+              )}
             </tbody>
           </table>
           {postMarketReadiness.missing_tables && postMarketReadiness.missing_tables.length > 0 && (
@@ -1021,7 +1026,7 @@ export function RecapPage() {
           )}
         </div>
       )}
-      {!loading && !error && (payload || dailyReview) && (
+      {!loading && !error && payload && (
         <>
           <main className="workspace-layout single">
             <section className="workspace-column">
@@ -1070,55 +1075,16 @@ export function RecapPage() {
                 </div>
               )}
 
-              {/* 主线与支线 — dailyReview 优先，sections fallback。统一使用 5/22 样式 */}
-              {(dailyReview?.theme_reviews?.length ||
-                (sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? []).length > 0) && (
+              {/* 主线与支线 — P0 止血：主体展示统一使用 payload.sections。 */}
+              {(isPostMarket || (sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? []).length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">{effectiveReportType === "post_market" ? "主线与支线" : "可做主线与支线"}</span>
                   {effectiveReportType === "post_market" ? (
-                    <div className="recap-table-stack">
-                      <article className="workspace-card recap-table-card">
-                        <div className="recap-table-head">
-                          <strong>主线</strong>
-                        </div>
-                        <div className="recap-table-wrap">
-                          <table className="recap-table">
-                            <thead>
-                              <tr>
-                                <th>题材</th>
-                                <th>总净流入</th>
-                                <th>龙头净流入</th>
-                                <th>题材K线</th>
-                                <th>事件分</th>
-                                <th>市场分</th>
-                                <th>周期阶段</th>
-                                <th>操作建议</th>
-                                <th>结论</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {mainThemeRows.map((row, idx) => (
-                                <tr key={`main-theme-row-${idx}`}>
-                                  <td>{renderThemeLink(row.theme, row.subjectKey, tradeDate)}</td>
-                                  <td>{row.totalInflow}</td>
-                                  <td>{row.leaderInflow}</td>
-                                  <td>{row.themeKline}</td>
-                                  <td>{row.eventScore}</td>
-                                  <td>{row.marketScore}</td>
-                                  <td>{renderThemeStatusTags([row.cycleStage])}</td>
-                                  <td>{renderThemeStatusTags([row.actionAdvice])}</td>
-                                  <td>{row.conclusion}</td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
-                      </article>
-
-                      {branchThemeRows.length > 0 && (
+                    themeSummaryRows.length > 0 ? (
+                      <div className="recap-table-stack">
                         <article className="workspace-card recap-table-card">
                           <div className="recap-table-head">
-                            <strong>强分支</strong>
+                            <strong>主线</strong>
                           </div>
                           <div className="recap-table-wrap">
                             <table className="recap-table">
@@ -1136,8 +1102,8 @@ export function RecapPage() {
                                 </tr>
                               </thead>
                               <tbody>
-                                {branchThemeRows.map((row, idx) => (
-                                  <tr key={`branch-theme-row-${idx}`}>
+                                {mainThemeRows.map((row, idx) => (
+                                  <tr key={`main-theme-row-${idx}`}>
                                     <td>{renderThemeLink(row.theme, row.subjectKey, tradeDate)}</td>
                                     <td>{row.totalInflow}</td>
                                     <td>{row.leaderInflow}</td>
@@ -1153,8 +1119,50 @@ export function RecapPage() {
                             </table>
                           </div>
                         </article>
-                      )}
-                    </div>
+
+                        {branchThemeRows.length > 0 && (
+                          <article className="workspace-card recap-table-card">
+                            <div className="recap-table-head">
+                              <strong>强分支</strong>
+                            </div>
+                            <div className="recap-table-wrap">
+                              <table className="recap-table">
+                                <thead>
+                                  <tr>
+                                    <th>题材</th>
+                                    <th>总净流入</th>
+                                    <th>龙头净流入</th>
+                                    <th>题材K线</th>
+                                    <th>事件分</th>
+                                    <th>市场分</th>
+                                    <th>周期阶段</th>
+                                    <th>操作建议</th>
+                                    <th>结论</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {branchThemeRows.map((row, idx) => (
+                                    <tr key={`branch-theme-row-${idx}`}>
+                                      <td>{renderThemeLink(row.theme, row.subjectKey, tradeDate)}</td>
+                                      <td>{row.totalInflow}</td>
+                                      <td>{row.leaderInflow}</td>
+                                      <td>{row.themeKline}</td>
+                                      <td>{row.eventScore}</td>
+                                      <td>{row.marketScore}</td>
+                                      <td>{renderThemeStatusTags([row.cycleStage])}</td>
+                                      <td>{renderThemeStatusTags([row.actionAdvice])}</td>
+                                      <td>{row.conclusion}</td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          </article>
+                        )}
+                      </div>
+                    ) : (
+                      <p className="workspace-note">暂无数据，请检查 report.sections.主线与支线</p>
+                    )
                   ) : (
                     <ul className="workspace-list">
                       {themeSection.map((item, idx) => {
@@ -1171,52 +1179,56 @@ export function RecapPage() {
                 </div>
               )}
 
-              {themeCapitalFlowRows.length > 0 && (
+              {(isPostMarket || themeCapitalFlowRows.length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">主线资金流入前10</span>
-                  <div className="recap-table-wrap">
-                    <table className="recap-table">
-                      <thead>
-                        <tr>
-                          <th>题材</th>
-                          <th>层级</th>
-                          <th>总净流入</th>
-                          <th>前3净流入</th>
-                          <th>龙头净流入</th>
-                          <th>流入股数</th>
-                          <th>题材K线</th>
-                          <th>阶段</th>
-                          <th>动作</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {themeCapitalFlowRows.map((row, idx) => (
-                          <tr key={`theme-capital-${idx}`}>
-                            <td>{renderThemeLink(row.theme, row.subjectKey, tradeDate)}</td>
-                            <td>{row.tier}</td>
-                            <td>{row.totalInflow}</td>
-                            <td>{row.top3Inflow}</td>
-                            <td>{row.leaderInflow}</td>
-                            <td>{row.inflowCount}</td>
-                            <td>{row.themeKline}</td>
-                            <td>{renderThemeStatusTags([row.stage])}</td>
-                            <td>{renderThemeStatusTags([row.action])}</td>
+                  {themeCapitalFlowRows.length > 0 ? (
+                    <div className="recap-table-wrap">
+                      <table className="recap-table">
+                        <thead>
+                          <tr>
+                            <th>题材</th>
+                            <th>层级</th>
+                            <th>总净流入</th>
+                            <th>前3净流入</th>
+                            <th>龙头净流入</th>
+                            <th>流入股数</th>
+                            <th>题材K线</th>
+                            <th>阶段</th>
+                            <th>动作</th>
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                        </thead>
+                        <tbody>
+                          {themeCapitalFlowRows.map((row, idx) => (
+                            <tr key={`theme-capital-${idx}`}>
+                              <td>{renderThemeLink(row.theme, row.subjectKey, tradeDate)}</td>
+                              <td>{row.tier}</td>
+                              <td>{row.totalInflow}</td>
+                              <td>{row.top3Inflow}</td>
+                              <td>{row.leaderInflow}</td>
+                              <td>{row.inflowCount}</td>
+                              <td>{row.themeKline}</td>
+                              <td>{renderThemeStatusTags([row.stage])}</td>
+                              <td>{renderThemeStatusTags([row.action])}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : (
+                    <p className="workspace-note">暂无数据，请检查 report.sections.主线资金流入前10</p>
+                  )}
                 </div>
               )}
 
-              {((sections.get("强势股分层") ?? sections.get("盘前重点盯盘个股") ?? []).length > 0 ||
-                (dailyReview?.strong_stock_reviews?.length ?? 0) > 0) && (
+              {(isPostMarket || (sections.get("强势股分层") ?? sections.get("盘前重点盯盘个股") ?? []).length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">{effectiveReportType === "post_market" ? "强势股分层" : "盘前重点盯盘个股"}</span>
                   {effectiveReportType === "post_market" ? (
-                    <div className="recap-table-stack">
-                      {strongStockGroups.map(([themeName, rows]) => (
-                        <article className="workspace-card recap-table-card" key={`stock-${themeName}`}>
+                    strongStockGroups.length > 0 ? (
+                      <div className="recap-table-stack">
+                        {strongStockGroups.map(([themeName, rows]) => (
+                          <article className="workspace-card recap-table-card" key={`stock-${themeName}`}>
                           <div className="recap-table-head">
                             <strong>{themeName}</strong>
                           </div>
@@ -1262,9 +1274,12 @@ export function RecapPage() {
                               </tbody>
                             </table>
                           </div>
-                        </article>
-                      ))}
-                    </div>
+                          </article>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="workspace-note">暂无数据，请检查 report.sections.强势股分层</p>
+                    )
                   ) : (
                     <ul className="workspace-list">
                       {strongStockSection.map((item, idx) => {
@@ -1329,76 +1344,124 @@ export function RecapPage() {
                 </div>
               )}
 
-              {stockCapitalFlowRows.length > 0 && (
+              {(isPostMarket || stockCapitalFlowRows.length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">股票资金流入前20</span>
-                  <div className="recap-table-wrap">
-                    <table className="recap-table">
-                      <thead>
-                        <tr>
-                          <th>股票</th>
-                          <th>题材</th>
-                          <th>主力净流入</th>
-                          <th>题材内排名</th>
-                          <th>涨幅</th>
-                          <th>龙头</th>
-                          <th>Flag</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {stockCapitalFlowRows.map((row, idx) => (
-                          <tr key={`stock-capital-${idx}`}>
-                            <td className="recap-stock-highlight">{row.stockName}</td>
-                            <td>{renderThemeLink(row.theme, themeKeyByTheme.get(row.theme), tradeDate)}</td>
-                            <td>{row.mainInflow}</td>
-                            <td>{row.rankOrder}</td>
-                            <td>{row.pctChg}</td>
-                            <td>{row.isLeader}</td>
-                            <td>{row.flag}</td>
+                  {stockCapitalFlowRows.length > 0 ? (
+                    <div className="recap-table-wrap">
+                      <table className="recap-table">
+                        <thead>
+                          <tr>
+                            <th>股票</th>
+                            <th>题材</th>
+                            <th>主力净流入</th>
+                            <th>题材内排名</th>
+                            <th>涨幅</th>
+                            <th>龙头</th>
+                            <th>Flag</th>
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                        </thead>
+                        <tbody>
+                          {stockCapitalFlowRows.map((row, idx) => (
+                            <tr key={`stock-capital-${idx}`}>
+                              <td className="recap-stock-highlight">{row.stockName}</td>
+                              <td>{renderThemeLink(row.theme, themeKeyByTheme.get(row.theme), tradeDate)}</td>
+                              <td>{row.mainInflow}</td>
+                              <td>{row.rankOrder}</td>
+                              <td>{row.pctChg}</td>
+                              <td>{row.isLeader}</td>
+                              <td>{row.flag}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : (
+                    <p className="workspace-note">暂无数据，请检查 report.sections.主线股票资金流入前20</p>
+                  )}
                 </div>
               )}
 
-              {abnormalSection.length > 0 && (
+              {(isPostMarket || abnormalSection.length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">当日异动股与资金行为</span>
                   {abnormalNote && <p className="workspace-note">{zh(abnormalNote)}</p>}
-                  <div className="recap-table-wrap">
-                    <table className="recap-table">
-                      <thead>
-                        <tr>
-                          <th>股票</th>
-                          <th>题材</th>
-                          <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("score")}>异动分</button></th>
-                          <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("turnoverRate")}>换手率</button></th>
-                          <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("volumeRatio")}>量比</button></th>
-                          <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("volumeVsMa50")}>成交量/50日均量</button></th>
-                          <th>资金</th>
-                          <th>异动标签</th>
-                          <th>结论</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {sortedAbnormalRows.map((row, idx) => (
-                          <tr key={`abnormal-row-${idx}`}>
-                            <td className="recap-stock-highlight">{row.stockName}</td>
-                            <td>{row.theme}</td>
-                            <td>{row.score}</td>
-                            <td>{row.turnoverRate}</td>
-                            <td>{row.volumeRatio}</td>
-                            <td>{row.volumeVsMa50}</td>
-                            <td>{renderAbnormalCapital(row.capital)}</td>
-                            <td>{renderAbnormalLabels(row.labels)}</td>
-                            <td>{row.conclusion}</td>
+                  {abnormalDataSection.length > 0 ? (
+                    <div className="recap-table-wrap">
+                      <table className="recap-table">
+                        <thead>
+                          <tr>
+                            <th>股票</th>
+                            <th>题材</th>
+                            <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("score")}>异动分</button></th>
+                            <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("turnoverRate")}>换手率</button></th>
+                            <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("volumeRatio")}>量比</button></th>
+                            <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("volumeVsMa50")}>成交量/50日均量</button></th>
+                            <th>资金</th>
+                            <th>异动标签</th>
+                            <th>结论</th>
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                        </thead>
+                        <tbody>
+                          {sortedAbnormalRows.map((row, idx) => (
+                            <tr key={`abnormal-row-${idx}`}>
+                              <td className="recap-stock-highlight">{row.stockName}</td>
+                              <td>{row.theme}</td>
+                              <td>{row.score}</td>
+                              <td>{row.turnoverRate}</td>
+                              <td>{row.volumeRatio}</td>
+                              <td>{row.volumeVsMa50}</td>
+                              <td>{renderAbnormalCapital(row.capital)}</td>
+                              <td>{renderAbnormalLabels(row.labels)}</td>
+                              <td>{row.conclusion}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : (
+                    <p className="workspace-note">暂无数据，请检查 report.sections.当日异动股与资金行为</p>
+                  )}
+                </div>
+              )}
+
+              {(isPostMarket || moneySection.length > 0) && (
+                <div className="workspace-card">
+                  <span className="metric-label section-title">资金行为增强</span>
+                  {moneyFlowRows.length > 0 ? (
+                    <div className="recap-table-wrap">
+                      <table className="recap-table">
+                        <thead>
+                          <tr>
+                            <th>题材</th>
+                            <th>股票</th>
+                            <th>资金角色</th>
+                            <th>资金分层</th>
+                            <th>得分</th>
+                            <th>K线位置</th>
+                            <th>K线形态</th>
+                            <th>说明</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {moneyFlowRows.map((row, idx) => (
+                            <tr key={`money-flow-${idx}`}>
+                              <td>{renderThemeLink(row.theme, themeKeyByTheme.get(row.theme), tradeDate)}</td>
+                              <td className="recap-stock-highlight">{row.stockName}</td>
+                              <td>{row.roleEnhanced}</td>
+                              <td>{row.moneyTier}</td>
+                              <td>{row.score}</td>
+                              <td>{row.klinePosition}</td>
+                              <td>{row.klinePattern}</td>
+                              <td className="recap-cell-wrap">{row.note}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : (
+                    <p className="workspace-note">暂无数据，请检查 report.sections.资金行为增强</p>
+                  )}
                 </div>
               )}
 
@@ -1436,13 +1499,13 @@ export function RecapPage() {
                 </div>
               )}
 
-              {auxSection.length > 0 && (
+              {(isPostMarket || auxSection.length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">{effectiveReportType === "post_market" ? "龙虎榜" : "失效条件"}</span>
                   {effectiveReportType === "post_market" ? (
                     <>
                       {dragonTigerNote && <p className="workspace-note">{zh(dragonTigerNote)}</p>}
-                      {dragonTigerRows.length > 0 && (
+                      {dragonTigerRows.length > 0 ? (
                         <div className="recap-table-wrap">
                           <table className="recap-table">
                             <thead>
@@ -1467,6 +1530,8 @@ export function RecapPage() {
                             </tbody>
                           </table>
                         </div>
+                      ) : (
+                        <p className="workspace-note">暂无数据，请检查 report.sections.龙虎榜</p>
                       )}
                     </>
                   ) : (
