@@ -20,6 +20,17 @@ REQUIRED_MODULES = (
 
 EMPTY_ALLOWED_MODULES = ("dragon_tiger_reviews",)
 ALL_MODULES = (*REQUIRED_MODULES, *EMPTY_ALLOWED_MODULES)
+MODULE_SECTION_HEADINGS = {
+    "theme_reviews": "主线与支线",
+    "theme_capital_reviews": "主线资金流入前10",
+    "strong_stock_reviews": "强势股分层",
+    "watchlist_reviews": "次日观察清单",
+    "stock_capital_reviews": "主线股票资金流入前20",
+    "abnormal_reviews": "当日异动股与资金行为",
+    "money_flow_reviews": "资金行为增强",
+    "dragon_tiger_reviews": "龙虎榜",
+}
+P5_GATE_SECTION_MODULES = tuple(REQUIRED_MODULES)
 
 ROW_COUNT_EXPECTATIONS = {
     "stock_capital_reviews": 20,
@@ -85,6 +96,86 @@ def _coverage_record(trade_date: str, module: str, coverage: dict[str, Any]) -> 
         "legacy": int(coverage.get("legacy_row_count") or 0),
         "missing": coverage.get("missing_fields") or [],
         "message": coverage.get("message") or "",
+    }
+
+
+def _snapshot_recap_doc(snapshot: dict[str, Any]) -> dict[str, Any]:
+    payload = snapshot.get("payload")
+    payload = payload if isinstance(payload, dict) else {}
+    recap_doc = payload.get("recap_doc") or payload
+    return recap_doc if isinstance(recap_doc, dict) else {}
+
+
+def _section_counts(recap_doc: dict[str, Any]) -> dict[str, int]:
+    counts = {heading: 0 for heading in MODULE_SECTION_HEADINGS.values()}
+    report = recap_doc.get("report")
+    sections = report.get("sections") if isinstance(report, dict) else []
+    if not isinstance(sections, list):
+        return counts
+    for section in sections:
+        if not isinstance(section, dict):
+            continue
+        heading = str(section.get("heading") or section.get("title") or "")
+        items = section.get("items")
+        if heading in counts and isinstance(items, list):
+            counts[heading] = len(items)
+    return counts
+
+
+def _sample_class(snapshot: dict[str, Any], payload: dict[str, Any] | None, fetch_error: str | None = None) -> dict[str, Any]:
+    if fetch_error:
+        return {
+            "sample_class": "failed_precondition",
+            "p5_gate": False,
+            "reason": fetch_error,
+        }
+    recap_doc = _snapshot_recap_doc(snapshot)
+    if not recap_doc:
+        return {
+            "sample_class": "failed_precondition",
+            "p5_gate": False,
+            "reason": "post_market_recap_snapshot_missing",
+        }
+
+    diagnostics = recap_doc.get("diagnostics")
+    readiness = diagnostics.get("readiness") if isinstance(diagnostics, dict) else None
+    readiness = readiness if isinstance(readiness, dict) else {}
+    readiness_status = str(readiness.get("status") or "").lower()
+    if readiness_status in {"failed", "failed_precondition"}:
+        return {
+            "sample_class": "failed_precondition",
+            "p5_gate": False,
+            "reason": f"readiness.status={readiness_status}",
+        }
+
+    counts = _section_counts(recap_doc)
+    missing_sections = [
+        heading for module, heading in MODULE_SECTION_HEADINGS.items()
+        if module in P5_GATE_SECTION_MODULES and counts.get(heading, 0) <= 0
+    ]
+    snapshot_version = str(recap_doc.get("snapshot_version") or snapshot.get("snapshot_version") or "")
+    if missing_sections:
+        return {
+            "sample_class": "legacy_snapshot",
+            "p5_gate": False,
+            "reason": f"missing_core_sections={missing_sections}",
+        }
+    if "replay_" in snapshot_version or readiness_status != "ready":
+        return {
+            "sample_class": "compatibility_observation",
+            "p5_gate": False,
+            "reason": f"snapshot_version={snapshot_version or '<unknown>'}, readiness.status={readiness_status or '<unknown>'}",
+        }
+    if payload is None or payload.get("schema_version") != "daily_review_v2":
+        return {
+            "sample_class": "failed_precondition",
+            "p5_gate": False,
+            "reason": "daily_review_v2_unavailable",
+        }
+    return {
+        "sample_class": "p5_gate_candidate",
+        "p5_gate": True,
+        "reason": "ready snapshot with complete core sections",
     }
 
 
@@ -209,10 +300,7 @@ def validate(payload: dict[str, Any], *, quiet: bool = False) -> tuple[list[dict
 
 
 def debug_dragon_tiger(snapshot: dict[str, Any], v2_payload: dict[str, Any]) -> None:
-    payload = snapshot.get("payload")
-    payload = payload if isinstance(payload, dict) else {}
-    recap_doc = payload.get("recap_doc") or payload
-    recap_doc = recap_doc if isinstance(recap_doc, dict) else {}
+    recap_doc = _snapshot_recap_doc(snapshot)
     report_context = recap_doc.get("report_context")
     report_context = report_context if isinstance(report_context, dict) else {}
     source_rows = None
@@ -258,6 +346,72 @@ def debug_dragon_tiger(snapshot: dict[str, Any], v2_payload: dict[str, Any]) -> 
     print(f"legacy_sections[`龙虎榜`] count: {legacy_count}")
 
 
+def _debug_module_source(snapshot: dict[str, Any], v2_payload: dict[str, Any], module: str) -> None:
+    if module == "dragon_tiger_reviews":
+        debug_dragon_tiger(snapshot, v2_payload)
+        return
+
+    recap_doc = _snapshot_recap_doc(snapshot)
+    report_context = recap_doc.get("report_context")
+    report_context = report_context if isinstance(report_context, dict) else {}
+    source_candidates: dict[str, tuple[tuple[str, Any], ...]] = {
+        "strong_stock_reviews": (
+            ("recap_doc.strong_stock_reviews", recap_doc.get("strong_stock_reviews")),
+            ("recap_doc.report_context.strong_stock_reviews", report_context.get("strong_stock_reviews")),
+            ("recap_doc.report_context.strong_stock_watch_history", report_context.get("strong_stock_watch_history")),
+            ("recap_doc.strong_watch_history", recap_doc.get("strong_watch_history")),
+        ),
+        "watchlist_reviews": (
+            ("recap_doc.watchlist_reviews", recap_doc.get("watchlist_reviews")),
+            ("recap_doc.next_day_watchlist", recap_doc.get("next_day_watchlist")),
+            ("recap_doc.watchlist", recap_doc.get("watchlist")),
+            ("recap_doc.tomorrow_watchlist", recap_doc.get("tomorrow_watchlist")),
+            ("recap_doc.post_market_watchlist", recap_doc.get("post_market_watchlist")),
+            ("recap_doc.observe_candidates", recap_doc.get("observe_candidates")),
+            ("recap_doc.report_context.watchlist", report_context.get("watchlist")),
+            ("recap_doc.report_context.observe_candidates", report_context.get("observe_candidates")),
+            ("recap_doc.report_context.strong_stock_watch", report_context.get("strong_stock_watch")),
+            ("recap_doc.strong_stock_reviews", recap_doc.get("strong_stock_reviews")),
+        ),
+    }
+    source_key = ""
+    source_rows = None
+    for key, value in source_candidates.get(module, ()):
+        if isinstance(value, list):
+            if value:
+                source_key = key
+                source_rows = value
+                break
+            if source_rows is None:
+                source_key = key
+                source_rows = value
+
+    heading = MODULE_SECTION_HEADINGS.get(module, "")
+    legacy_count = _section_counts(recap_doc).get(heading, 0)
+    v2_rows = v2_payload.get(module)
+    normalized_sources = []
+    if isinstance(v2_rows, list):
+        for row in v2_rows[:3]:
+            diagnostics = row.get("diagnostics") if isinstance(row, dict) else None
+            normalized_sources.append(diagnostics.get("source") if isinstance(diagnostics, dict) else None)
+    coverage = {}
+    diagnostics = v2_payload.get("diagnostics")
+    if isinstance(diagnostics, dict):
+        module_coverage = diagnostics.get("module_coverage")
+        if isinstance(module_coverage, dict):
+            coverage = module_coverage.get(module) or {}
+
+    print(f"\nDEBUG {module}:")
+    print(f"recap_doc keys: {sorted(recap_doc.keys())}")
+    print(f"report_context keys: {sorted(report_context.keys())}")
+    print(f"{module} source_key: {source_key or '<none>'}")
+    print(f"source_rows.length: {len(source_rows) if isinstance(source_rows, list) else 0}")
+    print(f"raw source keys preview: {_preview_keys(source_rows)}")
+    print(f"normalized diagnostics.source preview: {normalized_sources}")
+    print(f"coverage.missing_fields: {coverage.get('missing_fields') or []}")
+    print(f"legacy_sections[`{heading}`] count: {legacy_count}")
+
+
 def _parse_dates(args: argparse.Namespace) -> list[str]:
     dates: list[str] = []
     if args.date:
@@ -285,13 +439,15 @@ def _print_records(records: list[dict[str, Any]]) -> None:
     if not records:
         return
     print(
-        f"{'date':<12} {'module':<28} {'status':<9} {'source':<16} "
+        f"{'date':<12} {'class':<27} {'p5':<3} {'module':<28} {'status':<9} {'source':<16} "
         f"{'rows':>5} {'legacy':>6} missing_fields"
     )
     for record in records:
         missing = json.dumps(record["missing"], ensure_ascii=False)
         print(
-            f"{record['date']:<12} {record['module']:<28} {str(record['status']):<9} "
+            f"{record['date']:<12} {str(record.get('sample_class', '')):<27} "
+            f"{'yes' if record.get('p5_gate') else 'no':<3} "
+            f"{record['module']:<28} {str(record['status']):<9} "
             f"{str(record['source']):<16} {record['rows']:>5} {record['legacy']:>6} {missing}"
         )
 
@@ -302,21 +458,29 @@ def _check_one_date(
     base_url: str,
     generate_first: bool,
     debug_module: str | None,
-) -> tuple[list[dict[str, Any]], list[str], list[str]]:
+) -> tuple[list[dict[str, Any]], list[str], list[str], dict[str, Any]]:
+    snapshot_url = f"{base_url}/api/v1/post_market_snapshot?{urlencode({'trade_date': trade_date})}"
+    snapshot = _fetch_json(snapshot_url)
     if generate_first:
         generate_url = f"{base_url}/api/v2/post-market/daily-review-v2/generate"
         _post_json(generate_url, {"trade_date": trade_date, "force": True})
 
     url = f"{base_url}/api/v2/daily-review-v2?{urlencode({'date': trade_date})}"
     payload = _fetch_json(url)
-    if debug_module == "dragon_tiger_reviews":
-        snapshot_url = f"{base_url}/api/v1/post_market_snapshot?{urlencode({'trade_date': trade_date})}"
+    sample = _sample_class(snapshot, payload)
+    if debug_module:
         try:
-            snapshot = _fetch_json(snapshot_url)
-            debug_dragon_tiger(snapshot, payload)
+            _debug_module_source(snapshot, payload, debug_module)
         except Exception as exc:  # noqa: BLE001 - debug mode should not hide coverage validation.
             print(f"failed to fetch debug snapshot for {trade_date}: {exc}", file=sys.stderr)
-    return validate(payload, quiet=True)
+    records, errors, blockers = validate(payload, quiet=True)
+    for record in records:
+        record["sample_class"] = sample["sample_class"]
+        record["p5_gate"] = sample["p5_gate"]
+        record["sample_reason"] = sample["reason"]
+    if not sample["p5_gate"]:
+        return records, [], [], sample
+    return records, errors, blockers, sample
 
 
 def main() -> int:
@@ -326,7 +490,11 @@ def main() -> int:
     parser.add_argument("--dates-file", help="File containing one trade date per line.")
     parser.add_argument("--api", default="http://127.0.0.1:8090", help="API base URL.")
     parser.add_argument("--generate-first", action="store_true", help="POST generate before checking each date.")
-    parser.add_argument("--debug-module", choices=["dragon_tiger_reviews"], help="Print raw source audit for a module.")
+    parser.add_argument(
+        "--debug-module",
+        choices=["dragon_tiger_reviews", "strong_stock_reviews", "watchlist_reviews"],
+        help="Print raw source audit for a module.",
+    )
     args = parser.parse_args()
 
     base_url = args.api.rstrip("/")
@@ -340,9 +508,10 @@ def main() -> int:
     all_records: list[dict[str, Any]] = []
     failed: dict[str, list[str]] = {}
     p5_blocked: dict[str, list[str]] = {}
+    observed: dict[str, str] = {}
     for trade_date in dates:
         try:
-            records, errors, blockers = _check_one_date(
+            records, errors, blockers, sample = _check_one_date(
                 trade_date=trade_date,
                 base_url=base_url,
                 generate_first=args.generate_first,
@@ -350,21 +519,34 @@ def main() -> int:
             )
         except Exception as exc:  # noqa: BLE001 - CLI should continue through multi-date smoke.
             records, errors, blockers = [], [f"fetch_or_generate_failed: {exc}"], []
+            sample = {
+                "sample_class": "failed_precondition",
+                "p5_gate": False,
+                "reason": str(exc),
+            }
         all_records.extend(records)
+        if not sample["p5_gate"]:
+            observed[trade_date] = f"{sample['sample_class']}: {sample['reason']}"
+            continue
         if errors:
             failed[trade_date] = errors
         if blockers:
             p5_blocked[trade_date] = blockers
 
     _print_records(all_records)
-    pass_dates = [trade_date for trade_date in dates if trade_date not in failed and trade_date not in p5_blocked]
+    pass_dates = [
+        trade_date for trade_date in dates
+        if trade_date not in failed and trade_date not in p5_blocked and trade_date not in observed
+    ]
     failed_dates = sorted(failed)
     p5_blocked_dates = sorted(p5_blocked)
+    observe_dates = sorted(observed)
 
     print("\nSUMMARY:")
-    print(f"pass_dates: {pass_dates}")
-    print(f"failed_dates: {failed_dates}")
+    print(f"p5_pass_dates: {pass_dates}")
+    print(f"p5_failed_dates: {failed_dates}")
     print(f"p5_blocked_dates: {p5_blocked_dates}")
+    print(f"observe_dates: {observe_dates}")
     if failed:
         print("\nFAILED MODULES:")
         for trade_date, errors in failed.items():
@@ -375,6 +557,10 @@ def main() -> int:
         for trade_date, blockers in p5_blocked.items():
             for blocker in blockers:
                 print(f"- {trade_date}: {blocker}")
+    if observed:
+        print("\nOBSERVE DATES:")
+        for trade_date, reason in observed.items():
+            print(f"- {trade_date}: {reason}")
 
     if failed or p5_blocked:
         return 1
