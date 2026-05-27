@@ -43,8 +43,11 @@ def test_daily_review_v2_builder_emits_complete_empty_contract() -> None:
     coverage = payload["diagnostics"]["module_coverage"]
     assert set(coverage) == {"market_summary", *MODULE_SECTION_HEADINGS.keys()}
     assert coverage["theme_reviews"]["status"] == "empty"
+    assert coverage["theme_reviews"]["source"] == "legacy_sections"
     assert coverage["theme_reviews"]["legacy_row_count"] == 2
+    assert coverage["theme_capital_reviews"]["source"] == "none"
     assert coverage["dragon_tiger_reviews"]["legacy_row_count"] == 1
+    assert coverage["dragon_tiger_reviews"]["source"] == "legacy_sections"
     assert payload["diagnostics"]["legacy_sections_available"] is True
     assert payload["diagnostics"]["source_tables"]["theme_capital_flow"] == 1
     assert payload["diagnostics"]["source_tables"]["dragon_tiger"] == 1
@@ -61,3 +64,6 @@ def test_daily_review_v2_builder_reports_missing_snapshot() -> None:
     assert payload["source"]["derived_data_status"] == "failed_precondition"
     assert payload["source"]["recap_generate_status"] == "failed"
     assert "post_market_recap_snapshot_missing" in payload["diagnostics"]["errors"]
+    coverage = payload["diagnostics"]["module_coverage"]
+    assert coverage["theme_reviews"]["source"] == "none"
+    assert coverage["dragon_tiger_reviews"]["source"] == "none"

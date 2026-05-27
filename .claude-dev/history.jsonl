@@ -2638,3 +2638,8 @@
 {"display":"将“控制面板 · 实时采集”和“JYHF DOM 采集源”的宽度都缩小一半","pastedContents":{},"timestamp":1779856868779,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
 {"display":"在“终端调试输出”的底部有描述“采集器状态: running=false run=7_034833 raw=- dec=- pending=711 dl=52”，是什么含义？状态提示吗？","pastedContents":{},"timestamp":1779857026845,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
 {"display":"建议把“JYHF DOM 采集源”底部的“采集运行中，捕获 5591 条，数据写入 stream:event:feed”作为状态实时提示显示到状态栏中，不要在“JYHF DOM 采集源”中显示","pastedContents":{},"timestamp":1779857153964,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"服务启动，检查一下“弱转强”盘中实时告警是否工作正常","pastedContents":{},"timestamp":1779857975101,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"为什么前端没有akshare采集的实时新闻展示，但是pending有711条？","pastedContents":{},"timestamp":1779859599939,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"什么原因","pastedContents":{},"timestamp":1779859855105,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"不应该啊！根据设计文档，CDP采集的数据是久赢恒丰app结构化处理之后的数据，不应该再进入stream:news:raw ，请核查代码逻辑！","pastedContents":{},"timestamp":1779860213964,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"为什么积压了这么多事件没有处理？","pastedContents":{},"timestamp":1779860386679,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}

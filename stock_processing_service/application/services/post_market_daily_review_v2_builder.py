@@ -163,7 +163,12 @@ class PostMarketDailyReviewV2Builder:
         message: str,
     ) -> dict[str, Any]:
         status = "ready" if row_count > 0 else "empty"
-        source = "structured" if row_count > 0 else "none"
+        if row_count > 0:
+            source = "structured"
+        elif legacy_count > 0:
+            source = "legacy_sections"
+        else:
+            source = "none"
         return {
             "status": status,
             "row_count": row_count,

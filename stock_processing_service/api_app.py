@@ -1978,6 +1978,8 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
     )
     updated_recap_doc = dict(recap_doc)
     updated_recap_doc["daily_review_v2"] = v2
+    updated_payload = dict(normalized)
+    updated_payload["recap_doc"] = updated_recap_doc
 
     affected = await app.state.gateway.upsert_post_market_recap_snapshot(
         {
@@ -1985,7 +1987,7 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
             "snapshot_version": str(row.get("snapshot_version") or ""),
             "batch_id": str(row.get("batch_id") or ""),
             "trace_id": str(row.get("trace_id") or ""),
-            "payload": {"recap_doc": updated_recap_doc},
+            "payload": updated_payload,
             "source_name": "stock_processing_service",
         }
     )
