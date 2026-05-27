@@ -49,6 +49,7 @@ class PostMarketDailyReviewV2Builder:
         stock_capital_reviews, stock_capital_missing_fields = self._build_stock_capital_reviews(doc)
         abnormal_reviews, abnormal_missing_fields = self._build_abnormal_reviews(doc)
         money_flow_reviews, money_flow_missing_fields = self._build_money_flow_reviews(doc)
+        dragon_tiger_reviews, dragon_tiger_missing_fields = self._build_dragon_tiger_reviews(doc)
         legacy_section_counts = self._legacy_section_counts(doc)
         diagnostics = self._build_diagnostics(
             doc,
@@ -59,6 +60,7 @@ class PostMarketDailyReviewV2Builder:
                 "stock_capital_reviews": len(stock_capital_reviews),
                 "abnormal_reviews": len(abnormal_reviews),
                 "money_flow_reviews": len(money_flow_reviews),
+                "dragon_tiger_reviews": len(dragon_tiger_reviews),
             },
             missing_fields={
                 "strong_stock_reviews": strong_stock_missing_fields,
@@ -66,6 +68,7 @@ class PostMarketDailyReviewV2Builder:
                 "stock_capital_reviews": stock_capital_missing_fields,
                 "abnormal_reviews": abnormal_missing_fields,
                 "money_flow_reviews": money_flow_missing_fields,
+                "dragon_tiger_reviews": dragon_tiger_missing_fields,
             },
         )
         derived_status = self._derived_data_status(doc, diagnostics)
@@ -93,7 +96,7 @@ class PostMarketDailyReviewV2Builder:
             "stock_capital_reviews": stock_capital_reviews,
             "abnormal_reviews": abnormal_reviews,
             "money_flow_reviews": money_flow_reviews,
-            "dragon_tiger_reviews": [],
+            "dragon_tiger_reviews": dragon_tiger_reviews,
             "trading_principle": self._trading_principle(doc),
             "diagnostics": diagnostics,
         }
@@ -489,6 +492,89 @@ class PostMarketDailyReviewV2Builder:
 
         return rows, sorted(missing_fields)
 
+    def _build_dragon_tiger_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
+        source_key = "dragon_tiger_reviews"
+        source_rows = recap_doc.get(source_key)
+        if not isinstance(source_rows, list):
+            context = recap_doc.get("report_context")
+            context = context if isinstance(context, dict) else {}
+            source_key = "report_context.dragon_tiger"
+            source_rows = context.get("dragon_tiger")
+            if not isinstance(source_rows, list):
+                source_key = "report_context.dragon_tiger_object"
+                source_rows = context.get("dragon_tiger_object")
+        if not isinstance(source_rows, list):
+            return [], []
+
+        rows: list[dict[str, Any]] = []
+        missing_fields: set[str] = set()
+        for source in source_rows[:30]:
+            if not isinstance(source, dict):
+                continue
+            stock_code = self._text(source.get("stock_code") or source.get("stock_id"))
+            stock_name = self._text(source.get("stock_name"))
+            subject_key = self._nullable_text(source.get("subject_key"))
+            theme_name = self._nullable_text(source.get("theme_name") or source.get("subject_name") or source.get("resolved_theme_name"))
+            net_buy = self._float_or_none(self._first_present(source, "net_buy", "net_buy_amount", "side_net"))
+            buy_amount = self._float_or_none(source.get("buy_amount"))
+            sell_amount = self._float_or_none(source.get("sell_amount"))
+            hot_money_name = self._nullable_text(source.get("hot_money_name") or source.get("seat_name"))
+            institution_seat_count = self._int_or_none(source.get("institution_seat_count"))
+            seat_type = self._seat_type(source, hot_money_name, institution_seat_count)
+            reason = self._nullable_text(source.get("reason") or source.get("list_reason"))
+            continuous_days = self._int_or_none(source.get("continuous_days") or source.get("dragon_tiger_days"))
+            side_summary = self._text(source.get("side_summary") or self._dragon_tiger_side_summary(net_buy, buy_amount, sell_amount))
+            seat_summary = [
+                str(item).strip()
+                for item in self._list(source.get("seat_summary") or source.get("seat_summaries"))
+                if str(item).strip()
+            ]
+            if not seat_summary and hot_money_name:
+                seat_summary = [hot_money_name]
+
+            required = {
+                "stock_code": stock_code,
+                "stock_name": stock_name,
+            }
+            for field, value in required.items():
+                if not value:
+                    missing_fields.add(field)
+            display_required = {
+                "net_buy_or_buy_sell_amount": net_buy is not None or buy_amount is not None or sell_amount is not None,
+                "seat_type_or_hot_money_or_institution": seat_type != "UNKNOWN" or bool(hot_money_name) or institution_seat_count is not None,
+                "reason_or_side_summary": bool(reason) or bool(side_summary),
+            }
+            for field, ok in display_required.items():
+                if not ok:
+                    missing_fields.add(field)
+
+            rows.append({
+                "stock_id": stock_code,
+                "stock_code": stock_code,
+                "stock_name": stock_name,
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+                "net_buy": net_buy,
+                "buy_amount": buy_amount,
+                "sell_amount": sell_amount,
+                "seat_type": seat_type,
+                "hot_money_name": hot_money_name,
+                "institution_seat_count": institution_seat_count,
+                "reason": reason,
+                "continuous_days": continuous_days,
+                "side_summary": side_summary,
+                "seat_summary": seat_summary,
+                "diagnostics": {
+                    "from_dragon_tiger_object": source_key.endswith("dragon_tiger_object") or source_key == "dragon_tiger_reviews",
+                    "theme_joined": bool(subject_key or theme_name),
+                    "source": f"recap_doc.{source_key}" if not source_key.startswith("report_context.") else source_key,
+                    "fallback_used": [],
+                    "source_tables": [source_key],
+                },
+            })
+
+        return rows, sorted(missing_fields)
+
     def _build_watchlist_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
         source_key = "watchlist_reviews"
         source_rows = recap_doc.get(source_key)
@@ -762,6 +848,32 @@ class PostMarketDailyReviewV2Builder:
             if value not in (None, ""):
                 return value
         return None
+
+    @staticmethod
+    def _seat_type(source: dict[str, Any], hot_money_name: str | None, institution_seat_count: int | None) -> str:
+        text = str(source.get("seat_type") or "").upper()
+        if text in {"INSTITUTION", "HOT_MONEY", "MIXED", "UNKNOWN"}:
+            return text
+        raw = str(source.get("seat_type") or source.get("seat_name") or "")
+        if institution_seat_count and institution_seat_count > 0 and hot_money_name:
+            return "MIXED"
+        if institution_seat_count and institution_seat_count > 0:
+            return "INSTITUTION"
+        if hot_money_name or "游资" in raw:
+            return "HOT_MONEY"
+        if "机构" in raw:
+            return "INSTITUTION"
+        return "UNKNOWN"
+
+    @staticmethod
+    def _dragon_tiger_side_summary(net_buy: float | None, buy_amount: float | None, sell_amount: float | None) -> str:
+        if net_buy is not None:
+            return f"净买 {net_buy:.0f}"
+        if buy_amount is not None or sell_amount is not None:
+            buy_text = f"买 {buy_amount:.0f}" if buy_amount is not None else "买 --"
+            sell_text = f"卖 {sell_amount:.0f}" if sell_amount is not None else "卖 --"
+            return f"{buy_text} / {sell_text}"
+        return ""
 
     @staticmethod
     def _strong_role(value: str) -> str:
