@@ -44,7 +44,7 @@ _auto_start_task: asyncio.Task | None = None
 async def _auto_start_jyhf_collectors(sps_base: str):
     """交易日 9:10:00-9:14:59 自动启动 JYHF 行情采集器和竞价采集器。"""
     import httpx as _httpx
-    from datetime import datetime, timezone as _tz, timedelta as _td
+    from datetime import datetime, timedelta, timezone as _tz, timedelta as _td
 
     CST = _tz(_td(hours=8))
     _auto_logger = logging.getLogger("web_app_service.auto_start")
@@ -72,9 +72,11 @@ async def _auto_start_jyhf_collectors(sps_base: str):
                 if not started_auction:
                     r2 = await client.get(f"{sps_base}/api/v1/jyhf-market/status")
                     if r2.status_code == 200:
+                        # D1 候选的 trade_date 是前一交易日，不是今天
+                        yesterday = (now - timedelta(days=1)).date()
                         await client.post(
                             "http://127.0.0.1:8000/api/v2/realtime/jyhf-auction/start",
-                            json={"trade_date": str(now.date()), "candidate_date": str(now.date())},
+                            json={"trade_date": str(now.date()), "candidate_date": str(yesterday)},
                         )
                         started_auction = True
                         _auto_logger.warning("AUTO_START jyhf-auction collector at %s", now.strftime("%H:%M:%S"))
@@ -119,6 +121,28 @@ async def _startup_cdp_manager() -> None:
         web_port=int(_os.getenv("WEB_PORT", "8000")),
         sps_port=int(_os.getenv("SPS_PORT", "8090")),
     )
+
+    # ── 清理 miniconda 旧 SPS 进程，确保 .venv 版本在 8090 ──
+    _cleanup_old_sps = _os.getenv("AUTO_CLEANUP_OLD_SPS", "1")
+    if _cleanup_old_sps in ("1", "true", "yes", "on"):
+        import subprocess as _sp
+        try:
+            # 查找 8090 端口上的非 .venv 进程
+            result = _sp.run(
+                ["lsof", "-ti", ":8090"], capture_output=True, text=True, timeout=5)
+            if result.stdout.strip():
+                pids = result.stdout.strip().split()
+                for pid in pids:
+                    try:
+                        exe = _sp.run(["ps", "-p", pid, "-o", "command="],
+                                      capture_output=True, text=True, timeout=3).stdout
+                        if ".venv" not in exe and "miniconda" in exe:
+                            _os.kill(int(pid), 9)
+                            _DIAG_LOGGER.warning("Killed old miniconda SPS PID=%s on port 8090", pid)
+                    except Exception:
+                        pass
+        except Exception:
+            pass
 
     # ── 启动 9:10 自动 collector 守护任务 ──
     sps_base = _os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090").rstrip("/")

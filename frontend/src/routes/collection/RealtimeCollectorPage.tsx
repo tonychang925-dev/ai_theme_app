@@ -197,7 +197,7 @@ export function RealtimeCollectorPage() {
       setMainBusy(false);
       return;
     }
-    append("[新链] 启动基础数据采集...");
+    append("[新链] 启动实时采集...");
     try {
       const result = await startNewChainRealtime();
       append(`[新链] 启动完成: ok=${result.ok} status=${result.status}`);
@@ -419,10 +419,10 @@ export function RealtimeCollectorPage() {
 
   const mergedLogs = useMemo(() => {
     const parts: string[] = [];
-    // 基础数据采集日志
+    // 实时采集日志
     if (stackStatus) {
       parts.push(
-        `── 基础数据采集状态 ──`,
+        `── 实时采集状态 ──`,
         `running: ${stackStatus.running}`,
         `run_id: ${stackStatus.run_id || "-"}`,
         `raw_news_pid: ${stackStatus.raw_news_pid ?? "-"}`,
@@ -465,7 +465,7 @@ export function RealtimeCollectorPage() {
 
       <main className="collection-debug-grid">
         <section className="workspace-card collection-debug-control">
-          <span className="metric-label section-title">日采集控制台 · 基础数据采集</span>
+          <span className="metric-label section-title">控制面板 · 实时采集</span>
           <p className="subtle" style={{marginTop:4,marginBottom:12}}>
             raw_news + ThemeProcessor + DecisionExecutor → 盘前必读
           </p>
@@ -532,20 +532,12 @@ export function RealtimeCollectorPage() {
               {mainBusy
                 ? "⏳ 正在执行..."
                 : running === "up"
-                  ? "🟢 基础数据采集运行中"
+                  ? "🟢 实时采集运行中"
                   : running === "down"
                     ? "🔴 已停止"
                     : "⚪ 状态检查中"}
             </span>
-            <button className="tag" type="button"
-              style={{ marginLeft: 12 }}
-              onClick={() => navigateTo(`/recap?date=${new Date().toISOString().slice(0, 10)}&report_type=post_market`)}>
-              前往当日复盘 →
-            </button>
           </div>
-          <p className="workspace-note" style={{ marginTop: 8 }}>
-            基础数据采集完成后，请到「当日复盘」页面生成动态复盘数据与复盘报告。
-          </p>
         </section>
 
         <section className="workspace-card collection-debug-control">
