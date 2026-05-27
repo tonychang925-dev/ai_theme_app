@@ -1036,6 +1036,7 @@ class BuildPostMarketRecapJob:
                 "diagnostics": {
                     "cycle_joined": cycle_joined,
                     "capital_joined": bool(capital),
+                    "capital_keys": sorted(list(capital.keys())) if capital else [],
                     "leader_count": len(leader_stocks),
                 },
             })
@@ -1071,7 +1072,6 @@ class BuildPostMarketRecapJob:
             "snapshot_status": "partial" if missing_sks else "complete",
         }
 
-    @staticmethod
     async def _build_strong_stock_reviews(self, trade_date: date) -> list[dict]:
         """P3-5: 从 strong_stock_watch_history 生成结构化强势股分层。"""
         pool = None

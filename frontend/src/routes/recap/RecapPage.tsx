@@ -649,7 +649,46 @@ export function RecapPage() {
   const auctionValidationSection = sections.get("竞价验证回看") ?? [];
   const auxSection = sections.get("龙虎榜") ?? sections.get("龙虎榜与来源链") ?? sections.get("失效条件") ?? [];
   const cycleByTheme = useMemo(() => buildThemeCycleMap(cycleSection), [cycleSection]);
+  function buildStrongStockGroupsFromDailyReview(
+    rows: DailyReviewView["strong_stock_reviews"],
+  ): Array<[string, StrongStockRow[]]> {
+    const groups = new Map<string, StrongStockRow[]>();
+    for (const item of rows ?? []) {
+      const theme = item.theme_name || "未分类";
+      const row: StrongStockRow = {
+        role: zh(item.role || item.watch_status || "--"),
+        stockName: item.stock_name || "--",
+        compositeScore: item.watch_score != null ? item.watch_score.toFixed(2) : "--",
+        purityScore: "--",
+        leadingScore: "--",
+        capitalScore: item.money_flow_tier || item.role_enhanced
+          ? `${zh(item.money_flow_tier || "--")}｜${zh(item.role_enhanced || "")}`
+          : "--",
+        structureScore: item.position_label || "--",
+        resilienceScore: item.support_score != null
+          ? `${item.support_score.toFixed(2)}｜${zh(item.support_type || "")}`
+          : "--",
+        moneyFlow: _fmtAmount(item.main_net_inflow),
+        klinePosition: zh(item.position_label || "--"),
+        klinePattern: zh((item.pattern_labels ?? []).join("/") || "--"),
+        llmRole: zh(item.role_enhanced || "--"),
+        llmLeaderStatus: zh(item.watch_status || "--"),
+        llmConfirmationBasis: zh(item.strong_grade || "--"),
+        llmReason: zh(item.rationale || "--"),
+        rationale: zh(item.rationale || "--"),
+        raw: `${item.role || ""} ${item.stock_name || ""}`,
+      };
+      const current = groups.get(theme) ?? [];
+      current.push(row);
+      groups.set(theme, current);
+    }
+    return Array.from(groups.entries()).filter(([, rows]) => rows.length > 0);
+  }
+
   const strongStockGroups = useMemo(() => {
+    if (dailyReview?.strong_stock_reviews?.length) {
+      return buildStrongStockGroupsFromDailyReview(dailyReview.strong_stock_reviews);
+    }
     const groups = new Map<string, StrongStockRow[]>();
     for (const item of strongStockSection) {
       const parsed = splitThemeLine(item);
@@ -661,7 +700,7 @@ export function RecapPage() {
       groups.set(key, current);
     }
     return Array.from(groups.entries()).filter(([, rows]) => rows.length > 0);
-  }, [strongStockSection]);
+  }, [dailyReview?.strong_stock_reviews, strongStockSection]);
   const watchlistRows = useMemo(() => {
     const rows = watchlistSection.map((item) => parseWatchlistLine(item));
     rows.sort((a, b) => {
