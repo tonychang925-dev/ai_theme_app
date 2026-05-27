@@ -176,18 +176,25 @@ class PostMarketDailyReviewV2Builder:
             for field, value in required.items():
                 if not value:
                     missing_fields.add(field)
+            fallback_used: list[str] = []
+            kline_position_label = position_label
+            pattern_summary = None
+            if not kline_position_label and not pattern_labels and support_type:
+                kline_position_label = support_type
+                pattern_summary = support_type
+                fallback_used.append("kline.support_type")
+
             display_required = {
                 "composite_score": composite_score is not None,
                 "money_flow": main_net_inflow is not None or bool(money_flow_tier),
                 "support": support_score is not None or bool(support_type),
-                "kline": bool(position_label) or bool(pattern_labels),
+                "kline": bool(kline_position_label) or bool(pattern_labels),
                 "rationale_or_llm_judgement": bool(rationale) or bool(llm_judgement),
             }
             for field, ok in display_required.items():
                 if not ok:
                     missing_fields.add(field)
 
-            fallback_used: list[str] = []
             if rationale and not rationale_source:
                 fallback_used.append("rationale")
             if llm_judgement and not role_enhanced:
@@ -214,9 +221,9 @@ class PostMarketDailyReviewV2Builder:
                     "role_enhanced": role_enhanced,
                 },
                 "kline": {
-                    "position_label": position_label,
+                    "position_label": kline_position_label,
                     "pattern_labels": pattern_labels,
-                    "pattern_summary": None,
+                    "pattern_summary": pattern_summary,
                 },
                 "support": {
                     "support_type": support_type,
@@ -302,7 +309,6 @@ class PostMarketDailyReviewV2Builder:
                 "main_net_inflow": main_net_inflow is not None,
                 "rank": rank_in_theme is not None or rank_overall is not None,
                 "pct_chg_or_turnover_rate": pct_chg is not None or turnover_rate is not None,
-                "flags": bool(flags),
             }
             for field, ok in display_required.items():
                 if not ok:
@@ -449,7 +455,15 @@ class PostMarketDailyReviewV2Builder:
             institution_signal = self._nullable_text(source.get("institution_signal"))
             hot_money_signal = self._nullable_text(source.get("hot_money_signal"))
             dragon_tiger_signal = self._nullable_text(source.get("dragon_tiger_signal"))
-            conclusion = self._text(source.get("conclusion") or source.get("note") or source.get("reason"))
+            conclusion_source = self._nullable_text(source.get("conclusion") or source.get("note") or source.get("reason"))
+            conclusion_fallback = self._money_flow_conclusion_fallback(
+                role_enhanced=role_enhanced,
+                money_flow_tier=money_flow_tier,
+                institution_signal=institution_signal,
+                hot_money_signal=hot_money_signal,
+                dragon_tiger_signal=dragon_tiger_signal,
+            )
+            conclusion = self._text(conclusion_source or conclusion_fallback)
 
             required = {
                 "stock_code": stock_code,
@@ -468,6 +482,10 @@ class PostMarketDailyReviewV2Builder:
                 if not ok:
                     missing_fields.add(field)
 
+            fallback_used: list[str] = []
+            if conclusion and not conclusion_source:
+                fallback_used.append("conclusion")
+
             rows.append({
                 "stock_id": stock_code,
                 "stock_code": stock_code,
@@ -485,7 +503,7 @@ class PostMarketDailyReviewV2Builder:
                     "from_money_flow_enhanced": source_key.endswith("money_flow_enhanced") or source_key == "money_flow_reviews",
                     "dragon_tiger_joined": bool(dragon_tiger_signal),
                     "source": f"recap_doc.{source_key}" if not source_key.startswith("report_context.") else source_key,
-                    "fallback_used": [],
+                    "fallback_used": fallback_used,
                     "source_tables": [source_key],
                 },
             })
@@ -873,6 +891,23 @@ class PostMarketDailyReviewV2Builder:
             buy_text = f"买 {buy_amount:.0f}" if buy_amount is not None else "买 --"
             sell_text = f"卖 {sell_amount:.0f}" if sell_amount is not None else "卖 --"
             return f"{buy_text} / {sell_text}"
+        return ""
+
+    @staticmethod
+    def _money_flow_conclusion_fallback(
+        *,
+        role_enhanced: str | None,
+        money_flow_tier: str | None,
+        institution_signal: str | None,
+        hot_money_signal: str | None,
+        dragon_tiger_signal: str | None,
+    ) -> str:
+        role_parts = [part for part in (role_enhanced, money_flow_tier) if part]
+        if role_parts:
+            return " / ".join(role_parts)
+        for signal in (institution_signal, hot_money_signal, dragon_tiger_signal):
+            if signal:
+                return signal
         return ""
 
     @staticmethod
