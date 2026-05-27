@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth } from '../../routes/auth/AuthProvider';
 import { navigateTo } from '../../lib/navigation';
-import type { SSEConnectionState } from '../../lib/api';
+import type { IntelItemType, IntelSession, SSEConnectionState } from '../../lib/api';
 import logoImg from '../../assets/intel-icons/logo_1.png';
 import logo2Img from '../../assets/intel-icons/logo_2.png';
 import realtimeIcon from '../../assets/intel-icons/实时采集.png';
@@ -19,10 +19,10 @@ interface IntelHeaderProps {
   liveNewCount: number;
   date: string;
   setDate: (d: string) => void;
-  session: string;
-  setSession: (s: string) => void;
-  type: string;
-  setType: (t: string) => void;
+  session: IntelSession;
+  setSession: (s: IntelSession) => void;
+  type: IntelItemType;
+  setType: (t: IntelItemType) => void;
   recapDates: { postMarket: string; preMarket: string };
 }
 
@@ -77,14 +77,14 @@ export function IntelHeader({
 
       {/* Right-aligned: Filters + Status + User */}
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
-        <select value={session} onChange={(e) => setSession(e.target.value)} className="intel-filter-select">
+        <select value={session} onChange={(e) => setSession(e.target.value as IntelSession)} className="intel-filter-select">
           <option value="all">全部时段</option>
           <option value="pre">盘前</option>
           <option value="intra">盘中</option>
           <option value="post">盘后</option>
         </select>
         <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="intel-filter-select" />
-        <select value={type} onChange={(e) => setType(e.target.value)} className="intel-filter-select">
+        <select value={type} onChange={(e) => setType(e.target.value as IntelItemType)} className="intel-filter-select">
           <option value="all">全部类型</option>
           <option value="recap">复盘</option>
           <option value="weak_to_strong">弱转强</option>

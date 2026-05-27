@@ -257,7 +257,7 @@ export function RealtimeCollectorPage() {
       startJyhfAuctionCollector(td, cd).then((r) => {
         setAuctionStatus(r);
         setAuctionBusy(false);
-        append(`竞价采集: ok=${r.ok} state=${r.state} trade=${r.trade_date} candidate=${r.candidate_date}`);
+        append(`竞价采集: state=${r.state} running=${r.running} trade=${r.trade_date} candidate=${r.candidate_date}`);
       }).catch((err) => {
         setAuctionBusy(false);
         append(`竞价采集启动失败: ${err instanceof Error ? err.message : String(err)}`);
