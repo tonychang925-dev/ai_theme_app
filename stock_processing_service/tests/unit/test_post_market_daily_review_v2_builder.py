@@ -318,3 +318,73 @@ def test_daily_review_v2_builder_marks_stock_capital_display_missing_partial() -
     assert "main_net_inflow" in coverage["missing_fields"]
     assert "pct_chg_or_turnover_rate" in coverage["missing_fields"]
     assert "flags" in coverage["missing_fields"]
+
+
+def test_daily_review_v2_builder_maps_ready_abnormal_reviews() -> None:
+    recap_doc = {
+        "abnormal_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "abnormal_score": 91.2,
+                "turnover_rate": 18.2,
+                "volume_ratio": 2.4,
+                "volume_vs_ma50": 3.1,
+                "main_net_inflow": 120000000,
+                "inflow_rank": 1,
+                "money_flow_tier": "strong",
+                "labels": ["倍量", "资金流入"],
+                "conclusion": "资金与异动共振",
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.abnormal",
+    )
+
+    rows = payload["abnormal_reviews"]
+    assert len(rows) == 1
+    assert rows[0]["stock_code"] == "002361.SZ"
+    assert rows[0]["abnormal_score"] == 91.2
+    assert rows[0]["capital"]["main_net_inflow"] == 120000000
+    assert rows[0]["labels"] == ["倍量", "资金流入"]
+    assert rows[0]["diagnostics"]["source"] == "recap_doc.abnormal_reviews"
+
+    coverage = payload["diagnostics"]["module_coverage"]["abnormal_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["row_count"] == 1
+    assert coverage["missing_fields"] == []
+
+
+def test_daily_review_v2_builder_marks_abnormal_display_missing_partial() -> None:
+    recap_doc = {
+        "abnormal_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "abnormal_score": 91.2,
+            }
+        ],
+        "report": {"sections": [{"heading": "当日异动股与资金行为", "items": ["legacy"]}]},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.abnormal.partial",
+    )
+
+    coverage = payload["diagnostics"]["module_coverage"]["abnormal_reviews"]
+    assert coverage["status"] == "partial"
+    assert coverage["source"] == "legacy_sections"
+    assert coverage["row_count"] == 1
+    assert "turnover_rate_or_volume_ratio" in coverage["missing_fields"]
+    assert "labels_or_conclusion" in coverage["missing_fields"]
+    assert "main_net_inflow_or_money_flow_tier" in coverage["missing_fields"]

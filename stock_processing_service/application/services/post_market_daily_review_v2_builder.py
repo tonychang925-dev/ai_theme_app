@@ -47,6 +47,7 @@ class PostMarketDailyReviewV2Builder:
         strong_stock_reviews, strong_stock_missing_fields = self._build_strong_stock_reviews(doc)
         watchlist_reviews, watchlist_missing_fields = self._build_watchlist_reviews(doc)
         stock_capital_reviews, stock_capital_missing_fields = self._build_stock_capital_reviews(doc)
+        abnormal_reviews, abnormal_missing_fields = self._build_abnormal_reviews(doc)
         legacy_section_counts = self._legacy_section_counts(doc)
         diagnostics = self._build_diagnostics(
             doc,
@@ -55,11 +56,13 @@ class PostMarketDailyReviewV2Builder:
                 "strong_stock_reviews": len(strong_stock_reviews),
                 "watchlist_reviews": len(watchlist_reviews),
                 "stock_capital_reviews": len(stock_capital_reviews),
+                "abnormal_reviews": len(abnormal_reviews),
             },
             missing_fields={
                 "strong_stock_reviews": strong_stock_missing_fields,
                 "watchlist_reviews": watchlist_missing_fields,
                 "stock_capital_reviews": stock_capital_missing_fields,
+                "abnormal_reviews": abnormal_missing_fields,
             },
         )
         derived_status = self._derived_data_status(doc, diagnostics)
@@ -85,7 +88,7 @@ class PostMarketDailyReviewV2Builder:
             "strong_stock_reviews": strong_stock_reviews,
             "watchlist_reviews": watchlist_reviews,
             "stock_capital_reviews": stock_capital_reviews,
-            "abnormal_reviews": [],
+            "abnormal_reviews": abnormal_reviews,
             "money_flow_reviews": [],
             "dragon_tiger_reviews": [],
             "trading_principle": self._trading_principle(doc),
@@ -316,6 +319,91 @@ class PostMarketDailyReviewV2Builder:
                 "diagnostics": {
                     "money_flow_joined": main_net_inflow is not None,
                     "snapshot_joined": pct_chg is not None or turnover_rate is not None or volume_ratio is not None,
+                    "source": f"recap_doc.{source_key}" if not source_key.startswith("report_context.") else source_key,
+                    "fallback_used": [],
+                    "source_tables": [source_key],
+                },
+            })
+
+        return rows, sorted(missing_fields)
+
+    def _build_abnormal_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
+        source_key = "abnormal_reviews"
+        source_rows = recap_doc.get(source_key)
+        if not isinstance(source_rows, list):
+            context = recap_doc.get("report_context")
+            context = context if isinstance(context, dict) else {}
+            source_key = "report_context.abnormal_signals"
+            source_rows = context.get("abnormal_signals")
+            if not isinstance(source_rows, list):
+                source_key = "report_context.stock_abnormal_signal"
+                source_rows = context.get("stock_abnormal_signal")
+        if not isinstance(source_rows, list):
+            return [], []
+
+        rows: list[dict[str, Any]] = []
+        missing_fields: set[str] = set()
+        for source in source_rows[:30]:
+            if not isinstance(source, dict):
+                continue
+            stock_code = self._text(source.get("stock_code") or source.get("stock_id"))
+            stock_name = self._text(source.get("stock_name"))
+            subject_key = self._nullable_text(source.get("subject_key"))
+            theme_name = self._nullable_text(source.get("theme_name") or source.get("subject_name") or source.get("resolved_theme_name"))
+            abnormal_score = self._float_or_none(
+                self._first_present(source, "abnormal_score", "abnormal_composite_score", "score", "candidate_score", "watch_score")
+            )
+            turnover_rate = self._float_or_none(source.get("turnover_rate"))
+            volume_ratio = self._float_or_none(source.get("volume_ratio"))
+            volume_vs_ma50 = self._float_or_none(source.get("volume_vs_ma50") or source.get("volume_ratio_to_ma50"))
+            main_net_inflow = self._float_or_none(source.get("main_net_inflow"))
+            inflow_rank = self._int_or_none(source.get("inflow_rank") or source.get("main_net_inflow_rank_in_theme"))
+            money_flow_tier = self._nullable_text(source.get("money_flow_tier"))
+            labels = [
+                str(item).strip()
+                for item in self._list(source.get("labels") or source.get("abnormal_labels") or source.get("trigger_flags"))
+                if str(item).strip()
+            ]
+            conclusion = self._text(source.get("conclusion") or source.get("abnormal_conclusion") or source.get("reason"))
+
+            required = {
+                "stock_code": stock_code,
+                "stock_name": stock_name,
+            }
+            for field, value in required.items():
+                if not value:
+                    missing_fields.add(field)
+            display_required = {
+                "abnormal_score": abnormal_score is not None,
+                "turnover_rate_or_volume_ratio": turnover_rate is not None or volume_ratio is not None,
+                "labels_or_conclusion": bool(labels) or bool(conclusion),
+                "main_net_inflow_or_money_flow_tier": main_net_inflow is not None or bool(money_flow_tier),
+            }
+            for field, ok in display_required.items():
+                if not ok:
+                    missing_fields.add(field)
+
+            rows.append({
+                "stock_id": stock_code,
+                "stock_code": stock_code,
+                "stock_name": stock_name,
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+                "abnormal_score": abnormal_score,
+                "turnover_rate": turnover_rate,
+                "volume_ratio": volume_ratio,
+                "volume_vs_ma50": volume_vs_ma50,
+                "capital": {
+                    "main_net_inflow": main_net_inflow,
+                    "inflow_rank": inflow_rank,
+                    "money_flow_tier": money_flow_tier,
+                },
+                "labels": labels,
+                "conclusion": conclusion,
+                "diagnostics": {
+                    "from_stock_abnormal_signal": source_key.endswith("stock_abnormal_signal") or source_key == "abnormal_reviews",
+                    "money_flow_joined": main_net_inflow is not None or bool(money_flow_tier),
+                    "theme_joined": bool(subject_key or theme_name),
                     "source": f"recap_doc.{source_key}" if not source_key.startswith("report_context.") else source_key,
                     "fallback_used": [],
                     "source_tables": [source_key],
@@ -589,6 +677,14 @@ class PostMarketDailyReviewV2Builder:
             return int(float(value))
         except (TypeError, ValueError):
             return None
+
+    @staticmethod
+    def _first_present(source: dict[str, Any], *keys: str) -> Any:
+        for key in keys:
+            value = source.get(key)
+            if value not in (None, ""):
+                return value
+        return None
 
     @staticmethod
     def _strong_role(value: str) -> str:

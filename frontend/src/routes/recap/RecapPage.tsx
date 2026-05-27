@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
   fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
-  type DailyReviewView, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
+  type AbnormalStockReviewV2, type DailyReviewView, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness, fetchPostMarketJobsStatus,
   generatePostMarketDerivedData, generatePostMarketRecap,
   type PostMarketReadinessView, type PostMarketJobsStatusView,
@@ -226,6 +226,27 @@ function buildStockCapitalFlowRowsFromV2(rows: StockCapitalReviewV2[]): StockCap
       isLeader: item.is_leader ? "是" : "否",
       flag: zh(item.flags?.join("/") || "--"),
     }));
+}
+
+function buildAbnormalRowsFromV2(rows: AbnormalStockReviewV2[]): AbnormalSignalRow[] {
+  return rows.map((item) => {
+    const capitalParts = [
+      item.capital.main_net_inflow != null ? `主力净流入 ${formatReviewAmount(item.capital.main_net_inflow)}` : "",
+      item.capital.inflow_rank != null ? `题材内净流入排名 ${item.capital.inflow_rank}` : "",
+      item.capital.money_flow_tier ? `资金分层 ${zh(item.capital.money_flow_tier)}` : "",
+    ].filter(Boolean);
+    return {
+      theme: item.theme_name || "--",
+      stockName: item.stock_name || item.stock_code || "--",
+      score: item.abnormal_score != null ? item.abnormal_score.toFixed(2) : "--",
+      turnoverRate: item.turnover_rate != null ? `${item.turnover_rate.toFixed(2)}%` : "--",
+      volumeRatio: item.volume_ratio != null ? item.volume_ratio.toFixed(2) : "--",
+      volumeVsMa50: item.volume_vs_ma50 != null ? item.volume_vs_ma50.toFixed(2) : "--",
+      capital: capitalParts.join("；") || "--",
+      labels: zh(item.labels?.join("/") || "--"),
+      conclusion: zh(item.conclusion || "--"),
+    };
+  });
 }
 
 function isV2ModuleReady(
@@ -900,12 +921,17 @@ export function RecapPage() {
     [auxSection],
   );
   const abnormalRows = useMemo(
-    () =>
-      abnormalDataSection.map((item) => {
+    () => {
+      const v2Rows = dailyReviewV2?.abnormal_reviews;
+      if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "abnormal_reviews", v2Rows)) {
+        return buildAbnormalRowsFromV2(v2Rows ?? []);
+      }
+      return abnormalDataSection.map((item) => {
         const parsed = splitThemeLine(item);
         return parseAbnormalSignalRow(parsed.theme || "未分类", parsed.body);
-      }),
-    [abnormalDataSection],
+      });
+    },
+    [dailyReviewV2PreviewEnabled, dailyReviewV2, abnormalDataSection],
   );
   const sortedAbnormalRows = useMemo(() => {
     const rows = [...abnormalRows];
@@ -1546,7 +1572,7 @@ export function RecapPage() {
                 <div className="workspace-card">
                   <span className="metric-label section-title">当日异动股与资金行为</span>
                   {abnormalNote && <p className="workspace-note">{zh(abnormalNote)}</p>}
-                  {abnormalDataSection.length > 0 ? (
+                  {abnormalRows.length > 0 ? (
                     <div className="recap-table-wrap">
                       <table className="recap-table">
                         <thead>
