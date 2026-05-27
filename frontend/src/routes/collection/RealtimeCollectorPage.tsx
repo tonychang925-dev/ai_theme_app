@@ -592,6 +592,16 @@ export function RealtimeCollectorPage() {
           </div>
           <div className="collection-action-row">
             <label style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none" }}>
+              <input type="checkbox" checked={klineAlertsEnabled} onChange={(e) => setKlineAlertsEnabled(e.target.checked)}
+                style={{ width: 16, height: 16, cursor: "pointer" }} />
+              <span style={{ fontWeight: 600, fontSize: 12 }}>支撑告警</span>
+            </label>
+            <label style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none" }}>
+              <input type="checkbox" checked={w2sAlertsEnabled} onChange={(e) => setW2sAlertsEnabled(e.target.checked)}
+                style={{ width: 16, height: 16, cursor: "pointer" }} />
+              <span style={{ fontWeight: 600, fontSize: 12 }}>W2S告警</span>
+            </label>
+            <label style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none" }}>
               <input
                 type="checkbox"
                 checked={auctionEnabled}
@@ -669,106 +679,71 @@ export function RealtimeCollectorPage() {
         </section>
 
         <section className="workspace-card">
-          <span className="metric-label section-title">K线支撑告警</span>
-          <label style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none", marginLeft: 12 }}>
-            <input
-              type="checkbox"
-              checked={klineAlertsEnabled}
-              onChange={(e) => setKlineAlertsEnabled(e.target.checked)}
-              style={{ width: 16, height: 16, cursor: "pointer" }}
-            />
-            <span style={{ fontWeight: 600, fontSize: 13 }}>启用</span>
-          </label>
-          <div style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 4, marginBottom: 8 }}>
-            {(["all", "critical", "error", "warning", "info"] as const).map(level => (
-              <button
-                key={level}
-                type="button"
-                className={`tag tag-button ${klineFilter === level ? "tag-active" : ""}`}
-                style={{ fontSize: 11, padding: "2px 10px" }}
-                onClick={() => setKlineFilter(level)}
-              >
-                {level === "all" ? "全部" : level.toUpperCase()}
-              </button>
-            ))}
-            <button
-              type="button"
-              className="tag tag-button"
-              style={{ fontSize: 11, padding: "2px 10px", marginLeft: "auto" }}
-              onClick={() => setKlineAlerts([])}
-            >
-              清空
-            </button>
-          </div>
-          <div className="collection-log-panel" style={{ maxHeight: 240, overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
-            {(() => {
-              const sevOrder: Record<string, number> = { critical: 0, error: 1, warning: 2, info: 3 };
-              const sevColors: Record<string, string> = { critical: "#ef4444", error: "#f97316", warning: "#eab308", info: "#94a3b8" };
-              const filtered = klineFilter === "all"
-                ? klineAlerts
-                : klineAlerts.filter(a => sevOrder[a.severity] <= (sevOrder[klineFilter] ?? 9));
-              if (filtered.length === 0) {
-                return <div className="collection-log-line" style={{ color: "#64748b" }}>等待告警...</div>;
-              }
-              return filtered.slice(-50).reverse().map((a, i) => {
-                const ts = a.generated_at?.slice(11, 19) || "--:--:--";
-                const distSign = parseFloat(a.distance_pct) >= 0 ? "+" : "";
-                return (
-                  <div key={`ka-${i}`} className="collection-log-line" style={{ color: sevColors[a.severity] || "#94a3b8", whiteSpace: "nowrap" }}>
-                    <span style={{ color: "#64748b" }}>{ts}</span>
-                    {" "}
-                    <strong>{a.stock_name || a.stock_id}</strong>
-                    {" "}
-                    <span style={{ color: sevColors[a.severity] }}>[{a.alert_type.replace(/_/g, " ")}]</span>
-                    {" "}
-                    C={parseFloat(a.current).toFixed(2)} S={parseFloat(a.support_level).toFixed(2)}
-                    {" "}
-                    <span style={{ color: parseFloat(a.distance_pct) < 0 ? "#ef4444" : "#22c55e" }}>
-                      ({distSign}{a.distance_pct}%)
-                    </span>
-                    {" "}
-                    <span style={{ color: "#64748b", fontSize: 10 }}>conf={a.confidence}</span>
-                  </div>
-                );
-              });
-            })()}
-          </div>
-        </section>
-
-        <section className="workspace-card">
-          <span className="metric-label section-title">弱转强竞价告警</span>
-          <label style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none", marginLeft: 12 }}>
-            <input type="checkbox" checked={w2sAlertsEnabled} onChange={(e) => setW2sAlertsEnabled(e.target.checked)} style={{ width: 16, height: 16, cursor: "pointer" }} />
-            <span style={{ fontWeight: 600, fontSize: 13 }}>启用</span>
-          </label>
-          <div style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 4, marginBottom: 8 }}>
-            {(["all", "important", "observe"] as const).map(level => (
-              <button key={level} type="button" className={`tag tag-button ${w2sFilter === level ? "tag-active" : ""}`}
-                style={{ fontSize: 11, padding: "2px 10px" }} onClick={() => setW2sFilter(level)}>
-                {level === "all" ? "全部" : level === "important" ? "A/B级" : "C级"}
+          <span className="metric-label section-title">弱转强观察</span>
+          <div style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 4, marginBottom: 8, flexWrap: "wrap" }}>
+            {(["all", "critical", "error", "warning", "info", "auction", "intraday"] as const).map(tag => (
+              <button key={tag} type="button" className={`tag tag-button ${klineFilter === tag ? "tag-active" : ""}`}
+                style={{ fontSize: 11, padding: "2px 10px" }} onClick={() => setKlineFilter(tag as typeof klineFilter)}>
+                {tag === "all" ? "全部" : tag === "auction" ? "竞价" : tag === "intraday" ? "盘中" : tag.toUpperCase()}
               </button>
             ))}
             <button type="button" className="tag tag-button" style={{ fontSize: 11, padding: "2px 10px", marginLeft: "auto" }}
-              onClick={() => setW2sAlerts([])}>清空</button>
+              onClick={() => { setKlineAlerts([]); setW2sAlerts([]); }}>清空</button>
           </div>
-          <div className="collection-log-panel" style={{ maxHeight: 200, overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
+          <div className="collection-log-panel" style={{ maxHeight: 300, overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
             {(() => {
-              const filtered = w2sFilter === "all" ? w2sAlerts : w2sAlerts.filter(a => a.severity === w2sFilter);
-              if (filtered.length === 0) return <div className="collection-log-line" style={{ color: "#64748b" }}>等待竞价确认...</div>;
-              return filtered.slice(-50).reverse().map((a, i) => {
-                const ts = a.generated_at?.slice(11, 19) || "--:--:--";
-                const lvlColor: Record<string, string> = { A: "#22c55e", B: "#f59e0b", C: "#94a3b8" };
-                return (
-                  <div key={`w2s-${i}`} className="collection-log-line" style={{ color: "#cbd5e1", whiteSpace: "nowrap" }}>
-                    <span style={{ color: "#64748b" }}>{ts}</span>{" "}
+              const sevColors: Record<string, string> = { critical: "#ef4444", error: "#f97316", warning: "#eab308", info: "#94a3b8" };
+              const lvlColor: Record<string, string> = { A: "#22c55e", B: "#f59e0b", C: "#94a3b8" };
+
+              // 合并 kline + w2s 告警到统一列表
+              type MergedAlert = { ts: string; source: string; line: React.ReactNode; severity: string };
+              const merged: MergedAlert[] = [];
+
+              // K线支撑告警
+              for (const a of klineAlerts) {
+                const ts = a.generated_at?.slice(11, 19) || "";
+                const distSign = parseFloat(a.distance_pct) >= 0 ? "+" : "";
+                const sev = a.severity || "info";
+                if (klineFilter !== "all" && klineFilter !== "auction" && klineFilter !== "intraday" && sev !== klineFilter) continue;
+                if (klineFilter === "auction" || klineFilter === "intraday") continue; // kline in "all" mode only
+                merged.push({
+                  ts, source: "支撑", severity: sev,
+                  line: <span>
+                    <span style={{ color: sevColors[sev] }}>[{a.alert_type?.replace(/_/g, " ")}]</span>{" "}
+                    <strong>{a.stock_name || a.stock_id}</strong>{" "}
+                    <span style={{ color: "#94a3b8" }}>C={parseFloat(a.current).toFixed(2)}</span>{" "}
+                    <span style={{ color: parseFloat(a.distance_pct) < 0 ? "#ef4444" : "#22c55e" }}>({distSign}{a.distance_pct}%)</span>
+                  </span>
+                });
+              }
+
+              // W2S竞价告警
+              for (const a of w2sAlerts) {
+                const ts = a.generated_at?.slice(11, 19) || "";
+                const sev = a.severity || "observe";
+                if (klineFilter !== "all" && klineFilter !== "intraday" && klineFilter !== sev && klineFilter !== "auction") continue;
+                merged.push({
+                  ts, source: "竞价", severity: sev,
+                  line: <span>
                     <strong style={{ color: lvlColor[a.confirm_level] || "#94a3b8" }}>[{a.confirm_level}]</strong>{" "}
                     <strong>{a.stock_name || a.stock_id}</strong>{" "}
                     <span style={{ color: "#94a3b8" }}>{a.theme_name}</span>{" "}
-                    <span>{a.candidate_type?.replace(/_/g, " ")}</span>{" "}
                     <span style={{ color: "#64748b" }}>score={a.confirm_score} open={a.auction_open_pct}% carry={a.carry_ratio}</span>
-                  </div>
-                );
-              });
+                  </span>
+                });
+              }
+
+              merged.sort((a, b) => a.ts.localeCompare(b.ts));
+              if (merged.length === 0) {
+                return <div className="collection-log-line" style={{ color: "#64748b" }}>等待弱转强信号...</div>;
+              }
+              return merged.slice(-80).reverse().map((m, i) => (
+                <div key={`w2su-${i}`} className="collection-log-line" style={{ color: "#cbd5e1", whiteSpace: "nowrap" }}>
+                  <span style={{ color: "#64748b" }}>{m.ts}</span>{" "}
+                  <span style={{ color: "#475569", fontSize: 10 }}>[{m.source}]</span>{" "}
+                  {m.line}
+                </div>
+              ));
             })()}
           </div>
         </section>

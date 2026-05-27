@@ -585,34 +585,6 @@ function sectionMap(payload: RecapViewModelV2 | null) {
   return map;
 }
 
-function _fmtAmount(value: number | null | undefined): string {
-  if (value == null || value === 0) return "--";
-  const abs = Math.abs(value);
-  if (abs >= 1e8) return (value / 1e8).toFixed(2) + "亿";
-  if (abs >= 1e4) return (value / 1e4).toFixed(2) + "万";
-  return value.toFixed(0);
-}
-
-/** 将 dailyReview.theme_reviews 映射为 5/22 样式 ThemeSummaryRow */
-function buildThemeSummaryRowsFromDailyReview(
-  dailyReview: DailyReviewView,
-  cycleMap: Map<string, string>,
-): ThemeSummaryRow[] {
-  return (dailyReview.theme_reviews ?? []).map((tr) => ({
-    theme: tr.theme_name,
-    subjectKey: tr.subject_key,
-    tier: tr.final_mainline_alive ? "主线" : "强分支",
-    eventScore: (tr.mainline_strength_score ?? 0) > 0 ? tr.mainline_strength_score.toFixed(2) : "--",
-    marketScore: (tr.fade_risk_score ?? 0) > 0 ? tr.fade_risk_score.toFixed(2) : "--",
-    totalInflow: _fmtAmount(tr.total_inflow),
-    leaderInflow: _fmtAmount(tr.leader_inflow),
-    themeKline: tr.theme_kline ?? "--",
-    cycleStage: cycleMap.get(tr.theme_name) ?? zh(tr.theme_stage),
-    actionAdvice: tr.action_advice || zh(tr.theme_stage),
-    conclusion: tr.conclusion || (tr.final_mainline_alive ? "主线存活" : "观察"),
-  }));
-}
-
 export function RecapPage() {
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
   const initialType = window.location.search.includes("report_type=pre_market") ? "pre_market" : "post_market";
@@ -650,42 +622,6 @@ export function RecapPage() {
   const auctionValidationSection = sections.get("竞价验证回看") ?? [];
   const auxSection = sections.get("龙虎榜") ?? sections.get("龙虎榜与来源链") ?? sections.get("失效条件") ?? [];
   const cycleByTheme = useMemo(() => buildThemeCycleMap(cycleSection), [cycleSection]);
-  function buildStrongStockGroupsFromDailyReview(
-    rows: DailyReviewView["strong_stock_reviews"],
-  ): Array<[string, StrongStockRow[]]> {
-    const groups = new Map<string, StrongStockRow[]>();
-    for (const item of rows ?? []) {
-      const theme = item.theme_name || "未分类";
-      const row: StrongStockRow = {
-        role: zh(item.role || item.watch_status || "--"),
-        stockName: item.stock_name || "--",
-        compositeScore: item.watch_score != null ? item.watch_score.toFixed(2) : "--",
-        purityScore: "--",
-        leadingScore: "--",
-        capitalScore: item.money_flow_tier || item.role_enhanced
-          ? `${zh(item.money_flow_tier || "--")}｜${zh(item.role_enhanced || "")}`
-          : "--",
-        structureScore: item.position_label || "--",
-        resilienceScore: item.support_score != null
-          ? `${item.support_score.toFixed(2)}｜${zh(item.support_type || "")}`
-          : "--",
-        moneyFlow: _fmtAmount(item.main_net_inflow),
-        klinePosition: zh(item.position_label || "--"),
-        klinePattern: zh((item.pattern_labels ?? []).join("/") || "--"),
-        llmRole: zh(item.role_enhanced || "--"),
-        llmLeaderStatus: zh(item.watch_status || "--"),
-        llmConfirmationBasis: zh(item.strong_grade || "--"),
-        llmReason: zh(item.rationale || "--"),
-        rationale: zh(item.rationale || "--"),
-        raw: `${item.role || ""} ${item.stock_name || ""}`,
-      };
-      const current = groups.get(theme) ?? [];
-      current.push(row);
-      groups.set(theme, current);
-    }
-    return Array.from(groups.entries()).filter(([, rows]) => rows.length > 0);
-  }
-
   const strongStockGroups = useMemo(() => {
     const groups = new Map<string, StrongStockRow[]>();
     for (const item of strongStockSection) {
