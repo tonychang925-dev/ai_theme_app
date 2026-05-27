@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import asyncio
+import importlib.metadata
+import importlib.util
 import logging
 import os
 import re
@@ -1221,9 +1223,37 @@ def _normalize_recap_payload(row: dict[str, Any]) -> dict[str, Any]:
     return {}
 
 
+def _optional_import_status(module_name: str) -> dict[str, Any]:
+    if importlib.util.find_spec(module_name) is None:
+        return {"available": False, "version": None, "error": "module_not_found"}
+    try:
+        version = importlib.metadata.version(module_name)
+    except Exception:
+        version = ""
+    return {
+        "available": True,
+        "version": str(version or ""),
+        "error": None,
+    }
+
+
 @app.get("/healthz")
-async def healthz() -> dict[str, str]:
-    return {"status": "ok", "db": _db_name()}
+async def healthz() -> dict[str, Any]:
+    torch_status = _optional_import_status("torch")
+    text2vec_status = _optional_import_status("text2vec")
+    return {
+        "status": "ok",
+        "db": _db_name(),
+        "runtime_profile": os.getenv("SPS_RUNTIME_PROFILE", "sps-unknown"),
+        "python": sys.executable,
+        "cwd": str(Path.cwd()),
+        "torch_available": bool(torch_status["available"]),
+        "torch_version": torch_status["version"],
+        "torch_error": torch_status["error"],
+        "text2vec_available": bool(text2vec_status["available"]),
+        "text2vec_version": text2vec_status["version"],
+        "text2vec_error": text2vec_status["error"],
+    }
 
 
 @app.get("/api/v1/debug/runtime_guard_smoke")

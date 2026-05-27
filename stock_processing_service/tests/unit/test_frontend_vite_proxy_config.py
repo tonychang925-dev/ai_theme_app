@@ -1,11 +1,8 @@
 from pathlib import Path
 
 
-def test_vite_js_config_routes_realtime_to_sps_before_api_fallback() -> None:
+def test_vite_js_config_routes_new_chain_realtime_through_web_app_bff() -> None:
     config = Path("frontend/vite.config.js").read_text(encoding="utf-8")
 
-    realtime_index = config.index('"/api/v1/realtime"')
-    fallback_index = config.index('"/api"')
-
-    assert realtime_index < fallback_index
-    assert 'target: "http://127.0.0.1:8090"' in config[realtime_index:fallback_index]
+    assert '"/api/v1/realtime"' not in config
+    assert '"/api/v2": "http://127.0.0.1:8000"' in config

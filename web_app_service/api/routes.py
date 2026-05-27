@@ -385,6 +385,19 @@ async def daily_review_generate(payload: dict | None = None) -> dict:
     return await _proxy_stock_processing_post_json("/api/v1/daily_review/generate", payload or {})
 
 
+@router.get("/daily-review-v2")
+async def daily_review_v2(date: str = Query(..., description="YYYY-MM-DD")) -> dict:
+    return await _proxy_stock_processing_json(
+        "/api/v2/daily-review-v2",
+        {"date": date},
+    )
+
+
+@router.post("/post-market/daily-review-v2/generate")
+async def daily_review_v2_generate(payload: dict | None = None) -> dict:
+    return await _proxy_stock_processing_post_json("/api/v2/post-market/daily-review-v2/generate", payload or {})
+
+
 @router.get("/stock_workspace/{stock_id}")
 @router.get("/stock-workspace/{stock_id}")
 async def stock_workspace(stock_id: str, request: Request) -> dict:
@@ -804,6 +817,36 @@ async def jyhf_cdp_service_force_stop(request: Request) -> dict:
 
 
 # ── Realtime Collector（新链由 web_app_service 本地管理，不再代理旧 BFF）──
+
+
+@router.get("/realtime/new-chain/status")
+async def realtime_new_chain_status() -> dict:
+    data = await _proxy_stock_processing_request_json(
+        "GET",
+        "/api/v1/realtime/status",
+        timeout=15.0,
+    )
+    return data if isinstance(data, dict) else {"running": False, "last_error": "invalid SPS realtime status response"}
+
+
+@router.post("/realtime/new-chain/start")
+async def realtime_new_chain_start() -> dict:
+    data = await _proxy_stock_processing_request_json(
+        "GET",
+        "/api/v1/realtime/start",
+        timeout=60.0,
+    )
+    return data if isinstance(data, dict) else {"ok": False, "status": "invalid_response"}
+
+
+@router.post("/realtime/new-chain/stop")
+async def realtime_new_chain_stop() -> dict:
+    data = await _proxy_stock_processing_request_json(
+        "GET",
+        "/api/v1/realtime/stop",
+        timeout=30.0,
+    )
+    return data if isinstance(data, dict) else {"ok": False, "status": "invalid_response"}
 
 
 @router.get("/realtime/collector/status")

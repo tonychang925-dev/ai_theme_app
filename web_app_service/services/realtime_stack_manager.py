@@ -123,6 +123,9 @@ class RealtimeStackManager:
             {
                 "PYTHONPATH": str(self._project_root),
                 "HF_HUB_OFFLINE": "1",
+                "PYTHON_CMD": python,
+                "CONDA_PYTHON_CMD": python,
+                "SPS_RUNTIME_PROFILE": env.get("SPS_RUNTIME_PROFILE", "sps-conda-ml"),
                 "REDIS_URL": env.get("REDIS_URL", "redis://localhost:6379/0"),
             }
         )
@@ -263,14 +266,19 @@ class RealtimeStackManager:
             return False
 
     def _resolve_sps_python(self) -> str:
-        candidates = [
-            Path("/opt/miniconda3/envs/theme_matcher_env/bin/python"),
-            self._project_root / ".venv" / "bin" / "python",
-        ]
+        env_python = os.getenv("SPS_PYTHON", "").strip()
+        candidates = [Path(env_python)] if env_python else []
+        candidates.append(Path("/opt/miniconda3/envs/theme_matcher_env/bin/python"))
+        if os.getenv("ALLOW_SPS_VENV_FALLBACK", "").lower() in {"1", "true", "yes", "on"}:
+            candidates.append(self._project_root / ".venv" / "bin" / "python")
         for path in candidates:
-            if path.exists():
+            if path and path.exists():
                 return str(path)
-        return "python"
+        attempted = ", ".join(str(path) for path in candidates if path)
+        raise FileNotFoundError(
+            "SPS python not found. Set SPS_PYTHON to the theme_matcher_env python "
+            f"or ALLOW_SPS_VENV_FALLBACK=1 for local diagnostics. attempted={attempted}"
+        )
 
     def _read_recent_lines(self, file_path: Path, *, lines: int, cutoff_ts: float) -> list[str]:
         if not file_path.exists():

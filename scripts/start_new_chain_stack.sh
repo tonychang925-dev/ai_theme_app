@@ -4,6 +4,9 @@ set -euo pipefail
 
 ROOT_DIR="/Users/admin/Desktop/ai_theme_app"
 LOG_DIR="/tmp/ai_theme_realtime"
+WEB_PYTHON="${WEB_PYTHON:-$ROOT_DIR/.venv/bin/python}"
+SPS_PYTHON="${SPS_PYTHON:-/opt/miniconda3/envs/theme_matcher_env/bin/python}"
+SPS_RUNTIME_PROFILE="${SPS_RUNTIME_PROFILE:-sps-conda-ml}"
 WEB_APP_PATTERN="uvicorn web_app_service.main:app --host 0.0.0.0 --port 8000"
 WEB_APP_HEALTH_URL="http://127.0.0.1:8000/healthz"
 SPS_PATTERN="uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090"
@@ -59,6 +62,19 @@ while [[ $# -gt 0 ]]; do
 done
 
 mkdir -p "$LOG_DIR"
+
+echo "[runtime] web_app python: $WEB_PYTHON"
+echo "[runtime] sps python: $SPS_PYTHON"
+echo "[runtime] sps profile: $SPS_RUNTIME_PROFILE"
+
+if [[ ! -x "$WEB_PYTHON" ]]; then
+  echo "[fail] WEB_PYTHON is not executable: $WEB_PYTHON"
+  exit 1
+fi
+if [[ ! -x "$SPS_PYTHON" ]]; then
+  echo "[fail] SPS_PYTHON is not executable: $SPS_PYTHON"
+  exit 1
+fi
 
 if [[ "$RESTART" == "true" ]]; then
   "$ROOT_DIR/scripts/stop_new_chain_stack.sh" --force $( [[ "$WITH_FRONTEND" == "true" ]] && echo "--with-frontend" )
@@ -131,7 +147,7 @@ start_web_app_service() {
     echo "[start] web_app_service:8000 (attempt $attempt/$max_attempts)"
     (
       cd "$ROOT_DIR"
-      nohup bash -lc "$(build_env_source_cmd) && . .venv/bin/activate && WEB_APP_READ_MODE=http STOCK_PROCESSING_READ_BASE_URL=http://127.0.0.1:8090 uvicorn web_app_service.main:app --host 0.0.0.0 --port 8000" \
+      nohup bash -lc "$(build_env_source_cmd) && WEB_APP_READ_MODE=http STOCK_PROCESSING_READ_BASE_URL=http://127.0.0.1:8090 \"$WEB_PYTHON\" -m uvicorn web_app_service.main:app --host 0.0.0.0 --port 8000" \
         >"$LOG_DIR/web_app_service_8000.log" 2>&1 &
     )
 
@@ -157,6 +173,41 @@ start_web_app_service() {
   return 1
 }
 
+check_sps_runtime_guard() {
+  local payload
+  if ! payload="$(curl -fsS --max-time 3 "$SPS_HEALTH_URL")"; then
+    echo "[fail] stock_processing_service /healthz unavailable"
+    return 1
+  fi
+  SPS_HEALTH_PAYLOAD="$payload" "$WEB_PYTHON" - "$ROOT_DIR" "$SPS_RUNTIME_PROFILE" <<'PY'
+import json
+import os
+import sys
+
+root_dir = sys.argv[1]
+expected_profile = sys.argv[2]
+data = json.loads(os.environ["SPS_HEALTH_PAYLOAD"])
+errors = []
+if data.get("runtime_profile") != expected_profile:
+    errors.append(f"runtime_profile={data.get('runtime_profile')!r}, expected={expected_profile!r}")
+if "theme_matcher_env" not in str(data.get("python") or ""):
+    errors.append(f"python does not contain theme_matcher_env: {data.get('python')!r}")
+if data.get("cwd") != root_dir:
+    errors.append(f"cwd={data.get('cwd')!r}, expected={root_dir!r}")
+if data.get("torch_available") is not True:
+    errors.append(f"torch_available={data.get('torch_available')!r}")
+if errors:
+    print("[fail] SPS runtime guard failed: " + "; ".join(errors))
+    sys.exit(1)
+print(
+    "[ok] SPS runtime guard passed "
+    f"profile={data.get('runtime_profile')} "
+    f"python={data.get('python')} "
+    f"torch={data.get('torch_version') or 'available'}"
+)
+PY
+}
+
 start_stock_processing_service() {
   if command -v lsof >/dev/null 2>&1; then
     local pids
@@ -176,12 +227,17 @@ start_stock_processing_service() {
   echo "[start] stock_processing_service:8090"
   (
     cd "$ROOT_DIR"
-    nohup bash -lc "$(build_env_source_cmd) && PYTHONPATH=$ROOT_DIR HF_HUB_OFFLINE=1 /opt/miniconda3/envs/theme_matcher_env/bin/python -m uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090" \
+    nohup bash -lc "$(build_env_source_cmd) && PYTHONPATH=\"$ROOT_DIR\" HF_HUB_OFFLINE=1 PYTHON_CMD=\"$SPS_PYTHON\" CONDA_PYTHON_CMD=\"$SPS_PYTHON\" SPS_RUNTIME_PROFILE=\"$SPS_RUNTIME_PROFILE\" \"$SPS_PYTHON\" -m uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090" \
       >"$LOG_DIR/stock_processing_service_8090.log" 2>&1 &
   )
 
   for _ in $(seq 1 25); do
     if curl -fsS --max-time 2 "$SPS_HEALTH_URL" >/dev/null 2>&1; then
+      if ! check_sps_runtime_guard; then
+        tail -n 120 "$LOG_DIR/stock_processing_service_8090.log" || true
+        pkill -f "$SPS_PATTERN" >/dev/null 2>&1 || true
+        return 1
+      fi
       echo "[ok] stock_processing_service:8090 ready"
       return 0
     fi

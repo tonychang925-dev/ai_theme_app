@@ -122,12 +122,13 @@ async def _startup_cdp_manager() -> None:
         sps_port=int(_os.getenv("SPS_PORT", "8090")),
     )
 
-    # ── 清理 miniconda 旧 SPS 进程，确保 .venv 版本在 8090 ──
-    _cleanup_old_sps = _os.getenv("AUTO_CLEANUP_OLD_SPS", "1")
+    # BFF 不再清理 8090 上的 SPS。Runtime Profile P0 固定 SPS 由
+    # theme_matcher_env/miniconda 运行；这里杀 miniconda 进程会破坏 ML runtime。
+    _cleanup_old_sps = _os.getenv("AUTO_CLEANUP_OLD_SPS", "0")
     if _cleanup_old_sps in ("1", "true", "yes", "on"):
         import subprocess as _sp
         try:
-            # 查找 8090 端口上的非 .venv 进程
+            # Legacy diagnostic cleanup only. Prefer scripts/start_new_chain_stack.sh.
             result = _sp.run(
                 ["lsof", "-ti", ":8090"], capture_output=True, text=True, timeout=5)
             if result.stdout.strip():
@@ -136,9 +137,9 @@ async def _startup_cdp_manager() -> None:
                     try:
                         exe = _sp.run(["ps", "-p", pid, "-o", "command="],
                                       capture_output=True, text=True, timeout=3).stdout
-                        if ".venv" not in exe and "miniconda" in exe:
+                        if ".venv" in exe and "stock_processing_service.api_app:app" in exe:
                             _os.kill(int(pid), 9)
-                            _DIAG_LOGGER.warning("Killed old miniconda SPS PID=%s on port 8090", pid)
+                            _DIAG_LOGGER.warning("Killed legacy .venv SPS PID=%s on port 8090", pid)
                     except Exception:
                         pass
         except Exception:

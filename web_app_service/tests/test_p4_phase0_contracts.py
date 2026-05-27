@@ -41,6 +41,29 @@ def test_realtime_collector_status_uses_web_app_manager(monkeypatch):
     assert data["command"] == ["web_app_service:realtime_stack", "status"]
 
 
+def test_realtime_new_chain_routes_proxy_sps_v1(monkeypatch):
+    calls = []
+
+    async def _fake_proxy(method, path, **kwargs):
+        calls.append((method, path, kwargs.get("timeout")))
+        return {"ok": True, "running": True, "path": path}
+
+    monkeypatch.setattr(routes, "_proxy_stock_processing_request_json", _fake_proxy)
+
+    status_resp = client.get("/api/v2/realtime/new-chain/status")
+    start_resp = client.post("/api/v2/realtime/new-chain/start")
+    stop_resp = client.post("/api/v2/realtime/new-chain/stop")
+
+    assert status_resp.status_code == 200
+    assert start_resp.status_code == 200
+    assert stop_resp.status_code == 200
+    assert calls == [
+        ("GET", "/api/v1/realtime/status", 15.0),
+        ("GET", "/api/v1/realtime/start", 60.0),
+        ("GET", "/api/v1/realtime/stop", 30.0),
+    ]
+
+
 def test_intel_feed_contract_shape(monkeypatch):
     async def _fake_get_intel_feed(**kwargs):
         return {
