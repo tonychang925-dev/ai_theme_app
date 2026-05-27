@@ -282,6 +282,78 @@ export interface DailyReviewView {
   diagnostics?: Record<string, unknown>;
 }
 
+export interface ModuleCoverage {
+  status: "ready" | "empty" | "partial" | "failed";
+  row_count: number;
+  required: boolean;
+  source: "structured" | "legacy_sections" | "none";
+  missing_fields: string[];
+  upstream_tables: Record<string, number>;
+  message?: string;
+  legacy_row_count?: number;
+}
+
+export interface DailyReviewV2Diagnostics {
+  module_coverage: {
+    market_summary: ModuleCoverage;
+    theme_reviews: ModuleCoverage;
+    theme_capital_reviews: ModuleCoverage;
+    strong_stock_reviews: ModuleCoverage;
+    watchlist_reviews: ModuleCoverage;
+    stock_capital_reviews: ModuleCoverage;
+    abnormal_reviews: ModuleCoverage;
+    money_flow_reviews: ModuleCoverage;
+    dragon_tiger_reviews: ModuleCoverage;
+  };
+  source_tables: Record<string, number>;
+  warnings: string[];
+  errors: string[];
+  legacy_sections_available: boolean;
+  legacy_section_counts: Record<string, number>;
+}
+
+export interface MarketSummaryReview {
+  market_bias: string;
+  action_bias: string;
+  market_health_score?: number | null;
+  breadth_status?: string | null;
+  short_term_sentiment_status?: string | null;
+  relay_sentiment_status?: string | null;
+  intraday_fade_status?: string | null;
+  conclusion: string;
+  highlights: string[];
+  risk_flags: string[];
+  diagnostics?: Record<string, unknown>;
+}
+
+export type PostMarketDailyReviewV2ModuleRow = Record<string, unknown>;
+
+export interface PostMarketDailyReviewV2 {
+  schema_version: "daily_review_v2";
+  trade_date: string;
+  report_type: "post_market";
+  snapshot_version: string;
+  generated_at: string;
+  data_mode: "daily_review_v2_first";
+  source: {
+    snapshot_id?: string | null;
+    recap_snapshot_version?: string | null;
+    derived_data_status: "ready" | "failed_precondition" | "partial";
+    recap_generate_status: "success" | "skipped_idempotent" | "failed";
+  };
+  market_summary: MarketSummaryReview;
+  theme_reviews: PostMarketDailyReviewV2ModuleRow[];
+  theme_capital_reviews: PostMarketDailyReviewV2ModuleRow[];
+  strong_stock_reviews: PostMarketDailyReviewV2ModuleRow[];
+  watchlist_reviews: PostMarketDailyReviewV2ModuleRow[];
+  stock_capital_reviews: PostMarketDailyReviewV2ModuleRow[];
+  abnormal_reviews: PostMarketDailyReviewV2ModuleRow[];
+  money_flow_reviews: PostMarketDailyReviewV2ModuleRow[];
+  dragon_tiger_reviews: PostMarketDailyReviewV2ModuleRow[];
+  trading_principle: Record<string, unknown>;
+  diagnostics: DailyReviewV2Diagnostics;
+}
+
 // ── P1-6: PostMarket readiness / jobs status ──
 
 export interface PostMarketReadinessView {
@@ -363,6 +435,26 @@ export async function fetchDailyReview(date: string): Promise<DailyReviewView> {
     `/api/v2/daily-review?date=${encodeURIComponent(date)}`,
     undefined,
     30000,
+  );
+}
+
+export async function fetchDailyReviewV2(date: string): Promise<PostMarketDailyReviewV2> {
+  return fetchJsonWithTimeout<PostMarketDailyReviewV2>(
+    `/api/v2/daily-review-v2?date=${encodeURIComponent(date)}`,
+    undefined,
+    30000,
+  );
+}
+
+export async function generateDailyReviewV2(date: string, force = false): Promise<Record<string, unknown>> {
+  return fetchJsonWithTimeout<Record<string, unknown>>(
+    `/api/v2/post-market/daily-review-v2/generate`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ trade_date: date, force }),
+    },
+    60000,
   );
 }
 

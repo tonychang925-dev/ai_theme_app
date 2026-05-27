@@ -665,17 +665,12 @@ export function RealtimeCollectorPage() {
               )}
             </button>
             <span className="collection-status-indicator">
-              {jyhfBusy
-                ? "⏳ 等待状态确认中，请勿重复点击..."
-                : jyhfError
-                  ? `⚠ 服务未连接：${jyhfError}`
-                  : jyhfStatus?.last_error
-                    ? `⚠ ${jyhfStatus.last_error}`
-                    : jyhfStatus?.last_capture_at
-                      ? `采集运行中，捕获 ${jyhfStatus.capture_count_total} 条，数据写入 stream:event:feed`
-                      : jyhfStatus?.service_running
-                        ? jyhfStage
-                        : "就绪，点击启动开始采集 JYHF DOM 数据"}
+              {jyhfBusy ? "⏳ 等待中..."
+                : jyhfError ? `⚠ ${jyhfError}`
+                : jyhfStatus?.last_error ? `⚠ ${jyhfStatus.last_error}`
+                : jyhfCollectorRunning ? "🟢 DOM采集运行中"
+                : jyhfStatus?.service_running ? jyhfStage
+                : "就绪"}
             </span>
           </div>
         </section>
@@ -797,6 +792,9 @@ export function RealtimeCollectorPage() {
             </span>
             <span style={{ color: "#94a3b8" }}>
               死信: <span style={{ color: (stackStatus?.dead_letter_count ?? 0) > 10 ? "#ef4444" : "#94a3b8" }}>{stackStatus?.dead_letter_count ?? 0}</span>
+            </span>
+            <span style={{ color: "#475569", marginLeft: "auto" }}>
+              DOM: <span style={{ color: jyhfStatus?.last_capture_at ? "#22c55e" : "#94a3b8" }}>{jyhfStatus?.last_capture_at ? `${jyhfStatus.capture_count_total} 条` : "未采集"}</span>
             </span>
           </div>
         </section>
