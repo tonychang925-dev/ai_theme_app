@@ -288,6 +288,7 @@ export interface ModuleCoverage {
   required: boolean;
   source: "structured" | "legacy_sections" | "none";
   missing_fields: string[];
+  column_missing_fields?: string[];
   upstream_tables: Record<string, number>;
   message?: string;
   legacy_row_count?: number;
@@ -306,6 +307,7 @@ export interface DailyReviewV2Diagnostics {
     dragon_tiger_reviews: ModuleCoverage;
   };
   source_tables: Record<string, number>;
+  column_missing_fields?: Record<string, string[]>;
   warnings: string[];
   errors: string[];
   legacy_sections_available: boolean;
@@ -474,6 +476,11 @@ export interface MoneyFlowReviewV2 {
   hot_money_signal: string | null;
   dragon_tiger_signal: string | null;
   conclusion: string;
+  kline?: {
+    position_label: string | null;
+    pattern_labels: string[];
+    pattern_summary: string | null;
+  };
   diagnostics?: Record<string, unknown>;
 }
 

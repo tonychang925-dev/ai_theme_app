@@ -28,8 +28,8 @@ function assertDefaultModeResolver() {
     "default dataMode must be controlled by VITE_POST_MARKET_DEFAULT_DATA_MODE",
   );
   assert(
-    source.includes('?? "daily_review_v2_first"'),
-    "missing or invalid default dataMode must fall back to daily_review_v2_first after P5.1",
+    source.includes('?? "sections_first"'),
+    "missing or invalid default dataMode must fall back to sections_first until column-level P5 gate passes",
   );
 }
 
@@ -37,6 +37,10 @@ function assertRollbackUrlIsSupported() {
   assert(
     source.includes('value === "sections_first"'),
     "data_mode=sections_first must be supported as a rollback URL override",
+  );
+  assert(
+    source.includes('window.location.search.includes("data_mode=sections_first")'),
+    "data_mode=sections_first must be a hard rollback guard in the browser URL",
   );
   assert(
     source.includes('value === "daily_review_v2"') && source.includes('value === "daily_review_v2_first"'),

@@ -142,6 +142,35 @@ def test_daily_review_v2_builder_synthesizes_theme_reviews_from_capital_and_cycl
     assert coverage["missing_fields"] == []
 
 
+def test_daily_review_v2_builder_blocks_theme_review_without_event_market_columns() -> None:
+    recap_doc = {
+        "theme_reviews": [
+            {
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "tier": "mainline",
+                "total_inflow": 880000000,
+                "cycle_stage": "rebound",
+                "action_advice": "观察分歧承接",
+            }
+        ],
+        "report": {"sections": [{"heading": "主线与支线", "items": ["legacy"]}]},
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.theme.columns.partial",
+    )
+
+    coverage = payload["diagnostics"]["module_coverage"]["theme_reviews"]
+    assert coverage["status"] == "partial"
+    assert coverage["source"] == "legacy_sections"
+    assert "event_score" in coverage["column_missing_fields"]
+    assert "market_score" in coverage["column_missing_fields"]
+
+
 def test_daily_review_v2_builder_reports_missing_snapshot() -> None:
     payload = PostMarketDailyReviewV2Builder().build(
         trade_date=date(2026, 5, 26),
@@ -195,8 +224,13 @@ def test_daily_review_v2_builder_maps_ready_strong_stock_reviews() -> None:
     assert rows[0]["role_label"] == "leader"
     assert rows[0]["money_flow"]["main_net_inflow"] == 120000000
     assert rows[0]["kline"]["pattern_labels"] == ["放量", "承接"]
+    assert rows[0]["purity_score"] == 88.5
+    assert rows[0]["leading_score"] == 85.0
+    assert rows[0]["capital_score"] == 85.0
     assert rows[0]["diagnostics"]["source"] == "recap_doc.strong_stock_reviews"
-    assert rows[0]["diagnostics"]["fallback_used"] == []
+    assert "purity_score.watch_score_or_role" in rows[0]["diagnostics"]["fallback_used"]
+    assert "leading_score.role" in rows[0]["diagnostics"]["fallback_used"]
+    assert "capital_score.money_flow" in rows[0]["diagnostics"]["fallback_used"]
 
     coverage = payload["diagnostics"]["module_coverage"]["strong_stock_reviews"]
     assert coverage["status"] == "ready"
@@ -262,6 +296,7 @@ def test_daily_review_v2_builder_marks_strong_stock_display_missing_partial() ->
     assert "money_flow" in coverage["missing_fields"]
     assert "support" in coverage["missing_fields"]
     assert "kline" in coverage["missing_fields"]
+    assert "capital_score" in coverage["missing_fields"]
     assert "rationale_or_llm_judgement" not in coverage["missing_fields"]
 
 
@@ -512,11 +547,13 @@ def test_daily_review_v2_builder_synthesizes_watchlist_from_strong_stock_reviews
     assert len(rows) == 1
     assert rows[0]["stock_code"] == "002361.SZ"
     assert rows[0]["diagnostics"]["source"] == "synthesized_from_strong_stock_reviews"
-    assert rows[0]["diagnostics"]["fallback_used"] == ["watchlist.from_strong_stock_reviews"]
+    assert "watchlist.from_strong_stock_reviews" in rows[0]["diagnostics"]["fallback_used"]
+    assert "dragon_tiger_days.default_zero" in rows[0]["diagnostics"]["fallback_used"]
     coverage = payload["diagnostics"]["module_coverage"]["watchlist_reviews"]
-    assert coverage["status"] == "ready"
-    assert coverage["source"] == "structured"
-    assert coverage["missing_fields"] == []
+    assert coverage["status"] == "partial"
+    assert coverage["source"] == "none"
+    assert "volume_ratio" in coverage["missing_fields"]
+    assert "flags" in coverage["missing_fields"]
 
 
 def test_daily_review_v2_builder_maps_promoted_pool_preview_to_watchlist_reviews() -> None:
@@ -547,9 +584,10 @@ def test_daily_review_v2_builder_maps_promoted_pool_preview_to_watchlist_reviews
     assert rows[0]["reason"] == "previous_low"
     assert rows[0]["diagnostics"]["source"] == "recap_doc.promoted_pool_preview"
     coverage = payload["diagnostics"]["module_coverage"]["watchlist_reviews"]
-    assert coverage["status"] == "ready"
-    assert coverage["source"] == "structured"
-    assert coverage["missing_fields"] == []
+    assert coverage["status"] == "partial"
+    assert coverage["source"] == "none"
+    assert "volume_ratio" in coverage["missing_fields"]
+    assert "flags" in coverage["missing_fields"]
 
 
 def test_daily_review_v2_builder_maps_ready_stock_capital_reviews() -> None:
@@ -717,8 +755,8 @@ def test_daily_review_v2_builder_marks_abnormal_display_missing_partial() -> Non
     assert coverage["status"] == "partial"
     assert coverage["source"] == "legacy_sections"
     assert coverage["row_count"] == 1
-    assert "turnover_rate_or_volume_ratio" in coverage["missing_fields"]
-    assert "labels_or_conclusion" in coverage["missing_fields"]
+    assert "volume_ratio" in coverage["missing_fields"]
+    assert "labels" in coverage["missing_fields"]
     assert "main_net_inflow_or_money_flow_tier" in coverage["missing_fields"]
 
 
@@ -813,7 +851,11 @@ def test_daily_review_v2_builder_uses_money_flow_conclusion_fallback() -> None:
 
     row = payload["money_flow_reviews"][0]
     assert row["conclusion"] == "leader / strong"
+    assert row["kline"]["position_label"] == "leader"
+    assert row["kline"]["pattern_summary"] == "strong"
     assert "conclusion" in row["diagnostics"]["fallback_used"]
+    assert "kline.role_enhanced" in row["diagnostics"]["fallback_used"]
+    assert "kline.money_flow_tier" in row["diagnostics"]["fallback_used"]
     coverage = payload["diagnostics"]["module_coverage"]["money_flow_reviews"]
     assert coverage["status"] == "ready"
     assert coverage["source"] == "structured"

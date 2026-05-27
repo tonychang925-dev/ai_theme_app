@@ -263,8 +263,8 @@ function buildMoneyFlowRowsFromV2(rows: MoneyFlowReviewV2[]): MoneyFlowRow[] {
       roleEnhanced: zh(item.role_enhanced || item.institution_signal || item.hot_money_signal || "--"),
       moneyTier: zh(item.money_flow_tier || "--"),
       score: item.main_net_inflow != null ? formatReviewAmount(item.main_net_inflow) : "--",
-      klinePosition: "--",
-      klinePattern: "--",
+      klinePosition: zh(item.kline?.position_label || "--"),
+      klinePattern: zh(item.kline?.pattern_labels?.join("/") || item.kline?.pattern_summary || "--"),
       note: zh(noteParts.join("；") || "--"),
     };
   });
@@ -805,11 +805,14 @@ function normalizePostMarketDataMode(value: string | null | undefined): PostMark
 }
 
 function resolvePostMarketDataMode(params: URLSearchParams): PostMarketDataMode {
+  if (window.location.search.includes("data_mode=sections_first")) {
+    return "sections_first";
+  }
   const urlMode = normalizePostMarketDataMode(params.get("data_mode"));
   if (urlMode) {
     return urlMode;
   }
-  return normalizePostMarketDataMode(import.meta.env.VITE_POST_MARKET_DEFAULT_DATA_MODE) ?? "daily_review_v2_first";
+  return normalizePostMarketDataMode(import.meta.env.VITE_POST_MARKET_DEFAULT_DATA_MODE) ?? "sections_first";
 }
 
 export function RecapPage() {

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from copy import deepcopy
 from datetime import date, datetime, timezone
 from typing import Any
@@ -168,13 +169,38 @@ class PostMarketDailyReviewV2Builder:
             leader_inflow = self._float_or_none(
                 self._first_present(source, "leader_inflow", "leader_main_net_inflow", "leader_net_inflow")
             )
-            top3_inflow = self._float_or_none(self._first_present(source, "top3_inflow", "top3_main_net_inflow"))
+            fallback_used: list[str] = []
+            top3_source = self._first_present(
+                source,
+                "top3_inflow",
+                "top3_main_net_inflow",
+                "top3_main_net_inflow_sum",
+                "top3_net_inflow",
+            )
+            top3_inflow = self._float_or_none(top3_source)
+            if top3_inflow is not None and top3_source == source.get("top3_main_net_inflow_sum"):
+                fallback_used.append("top3_inflow.top3_main_net_inflow_sum")
             inflow_stock_count = self._int_or_none(
-                self._first_present(source, "inflow_stock_count", "stock_count", "positive_stock_count")
+                self._first_present(
+                    source,
+                    "inflow_stock_count",
+                    "stock_count",
+                    "positive_stock_count",
+                    "positive_inflow_stock_count",
+                    "member_count",
+                )
             )
-            theme_kline = self._nullable_text(
-                self._first_present(source, "theme_kline", "kline_status", "theme_structure", "price_structure")
+            theme_kline_source = self._first_present(
+                source,
+                "theme_kline",
+                "kline_status",
+                "theme_structure",
+                "price_structure",
+                "capital_focus_score",
             )
+            theme_kline = self._nullable_text(theme_kline_source)
+            if theme_kline and theme_kline_source == source.get("capital_focus_score"):
+                fallback_used.append("theme_kline.capital_focus_score")
             cycle_stage = self._nullable_text(self._first_present(source, "cycle_stage", "final_cycle_state", "stage"))
             action = self._nullable_text(self._first_present(source, "action", "action_advice", "trade_action"))
             rank_order = self._int_or_none(self._first_present(source, "rank_order", "rank", "sort")) or idx
@@ -190,8 +216,9 @@ class PostMarketDailyReviewV2Builder:
             display_required = {
                 "total_inflow": total_inflow is not None,
                 "rank_order": rank_order is not None,
-                "leader_or_top3_or_count": leader_inflow is not None or top3_inflow is not None or inflow_stock_count is not None,
-                "kline_or_stage_or_action": bool(theme_kline or cycle_stage or action),
+                "top3_inflow": top3_inflow is not None,
+                "inflow_stock_count": inflow_stock_count is not None,
+                "theme_kline": bool(theme_kline),
             }
             for field, ok in display_required.items():
                 if not ok:
@@ -213,7 +240,7 @@ class PostMarketDailyReviewV2Builder:
                     "capital_row_joined": True,
                     "stock_count": inflow_stock_count or 0,
                     "source": source_key,
-                    "fallback_used": [],
+                    "fallback_used": fallback_used,
                     "source_tables": [source_key],
                 },
             })
@@ -272,11 +299,45 @@ class PostMarketDailyReviewV2Builder:
         theme_kline = self._nullable_text(
             self._first_present(source, "theme_kline", "kline_status", "theme_structure", "final_cycle_state")
         )
-        event_score = self._float_or_none(self._first_present(source, "event_score", "event_heat_score"))
-        market_score = self._float_or_none(self._first_present(source, "market_score", "market_confirmation_score"))
         mainline_strength_score = self._float_or_none(
-            self._first_present(source, "mainline_strength_score", "strength_score")
+            self._first_present(source, "mainline_strength_score", "strength_score", "state_strength_score")
         )
+        fallback_used: list[str] = []
+        event_source = self._first_present(
+            source,
+            "event_score",
+            "event_heat_score",
+            "event_driver_score",
+            "driver_score",
+            "capital_focus_score",
+            "mainline_strength_score",
+            "strength_score",
+            "state_strength_score",
+        )
+        event_score = self._float_or_none(event_source)
+        if event_score is not None and event_source == source.get("capital_focus_score"):
+            fallback_used.append("event_score.capital_focus_score")
+        elif event_score is not None and event_source in {
+            source.get("mainline_strength_score"),
+            source.get("strength_score"),
+            source.get("state_strength_score"),
+        }:
+            fallback_used.append("event_score.mainline_strength_score")
+        market_source = self._first_present(
+            source,
+            "market_score",
+            "market_confirmation_score",
+            "mainline_strength_score",
+            "strength_score",
+            "state_strength_score",
+        )
+        market_score = self._float_or_none(market_source)
+        if market_score is not None and market_source in {
+            source.get("mainline_strength_score"),
+            source.get("strength_score"),
+            source.get("state_strength_score"),
+        }:
+            fallback_used.append("market_score.mainline_strength_score")
         fade_risk_score = self._float_or_none(self._first_present(source, "fade_risk_score", "fade_score"))
         cycle_stage = self._text(self._first_present(source, "cycle_stage", "final_cycle_state") or "unknown")
         final_cycle_state = self._text(self._first_present(source, "final_cycle_state", "cycle_state") or cycle_stage)
@@ -286,7 +347,6 @@ class PostMarketDailyReviewV2Builder:
         tier = self._theme_tier(source, final_mainline_alive=final_mainline_alive, strength_score=mainline_strength_score)
         action_source = self._nullable_text(self._first_present(source, "action_advice", "action", "trade_action"))
         conclusion_source = self._nullable_text(self._first_present(source, "conclusion", "summary", "reason"))
-        fallback_used: list[str] = []
         action_advice = self._text(action_source or self._theme_action_fallback(tier=tier, cycle_stage=cycle_stage))
         if action_advice and not action_source:
             fallback_used.append("action_advice")
@@ -307,7 +367,8 @@ class PostMarketDailyReviewV2Builder:
             "cycle_stage_or_final_cycle_state": bool(cycle_stage or final_cycle_state),
             "action_or_conclusion": bool(action_advice or conclusion),
             "capital_or_kline": total_inflow is not None or leader_inflow is not None or bool(theme_kline),
-            "score": event_score is not None or market_score is not None or mainline_strength_score is not None,
+            "event_score": event_score is not None,
+            "market_score": market_score is not None,
         }
         for field, ok in display_required.items():
             if not ok:
@@ -423,6 +484,26 @@ class PostMarketDailyReviewV2Builder:
             strong_grade = self._nullable_text(source.get("strong_grade"))
             llm_judgement = role_enhanced or self._nullable_text(source.get("watch_status") or source.get("candidate_level"))
             rationale = self._text(rationale_source or strong_grade or llm_judgement)
+            fallback_used: list[str] = []
+            purity_score = self._float_or_none(
+                self._first_present(joined, "purity_score", "theme_purity_score", "subject_purity_score", "relevance_score")
+            )
+            if purity_score is None:
+                purity_score = self._score_from_watch_or_role(composite_score, role, default=55.0)
+                fallback_used.append("purity_score.watch_score_or_role")
+            leading_score = self._float_or_none(
+                self._first_present(joined, "leading_score", "leader_score", "leader_composite_score", "trend_strength_score")
+            )
+            if leading_score is None:
+                leading_score = self._score_from_role(role)
+                fallback_used.append("leading_score.role")
+            capital_score = self._float_or_none(
+                self._first_present(joined, "capital_score", "leader_capital_score", "money_flow_score", "capital_flow_score")
+            )
+            if capital_score is None:
+                capital_score = self._score_from_money_flow(main_net_inflow, money_flow_tier)
+                if capital_score is not None:
+                    fallback_used.append("capital_score.money_flow")
 
             required = {
                 "stock_code": stock_code,
@@ -434,7 +515,6 @@ class PostMarketDailyReviewV2Builder:
             for field, value in required.items():
                 if not value:
                     missing_fields.add(field)
-            fallback_used: list[str] = []
             if not support_type and position_label:
                 support_type = position_label
                 fallback_used.append("support.position_label")
@@ -451,6 +531,9 @@ class PostMarketDailyReviewV2Builder:
                     "money_flow": main_net_inflow is not None or bool(money_flow_tier),
                     "support": support_score is not None or bool(support_type),
                     "kline": bool(kline_position_label) or bool(pattern_labels),
+                    "purity_score": purity_score is not None,
+                    "leading_score": leading_score is not None,
+                    "capital_score": capital_score is not None,
                     "rationale_or_llm_judgement": bool(rationale) or bool(llm_judgement),
                 }
                 for field, ok in display_required.items():
@@ -472,9 +555,9 @@ class PostMarketDailyReviewV2Builder:
                 "candidate_level": self._candidate_level(source),
                 "candidate_source": self._text(source.get("candidate_source") or f"recap_doc.{source_key}"),
                 "composite_score": composite_score,
-                "purity_score": None,
-                "leading_score": None,
-                "capital_score": None,
+                "purity_score": purity_score,
+                "leading_score": leading_score,
+                "capital_score": capital_score,
                 "structure_score": None,
                 "resilience_score": support_score,
                 "money_flow": {
@@ -615,30 +698,44 @@ class PostMarketDailyReviewV2Builder:
         if not isinstance(source_rows, list):
             return [], []
 
+        money_by_stock = self._row_by_stock_id(self._context_rows(recap_doc, "money_flow"))
+        stock_facts_by_stock = self._row_by_stock_id(self._context_rows(recap_doc, "stock_facts"))
         rows: list[dict[str, Any]] = []
         missing_fields: set[str] = set()
         for source in source_rows[:30]:
             if not isinstance(source, dict):
                 continue
-            stock_code = self._text(source.get("stock_code") or source.get("stock_id"))
-            stock_name = self._text(source.get("stock_name"))
-            subject_key = self._nullable_text(source.get("subject_key"))
-            theme_name = self._nullable_text(source.get("theme_name") or source.get("subject_name") or source.get("resolved_theme_name"))
+            joined = self._join_stock_sources(source, money_by_stock, stock_facts_by_stock)
+            stock_code = self._text(joined.get("stock_code") or joined.get("stock_id"))
+            stock_name = self._text(joined.get("stock_name"))
+            subject_key = self._nullable_text(joined.get("subject_key"))
+            theme_name = self._nullable_text(joined.get("theme_name") or joined.get("subject_name") or joined.get("resolved_theme_name"))
             abnormal_score = self._float_or_none(
-                self._first_present(source, "abnormal_score", "abnormal_composite_score", "score", "candidate_score", "watch_score")
+                self._first_present(joined, "abnormal_score", "abnormal_composite_score", "score", "candidate_score", "watch_score")
             )
-            turnover_rate = self._float_or_none(source.get("turnover_rate"))
-            volume_ratio = self._float_or_none(source.get("volume_ratio"))
-            volume_vs_ma50 = self._float_or_none(source.get("volume_vs_ma50") or source.get("volume_ratio_to_ma50"))
-            main_net_inflow = self._float_or_none(source.get("main_net_inflow"))
-            inflow_rank = self._int_or_none(source.get("inflow_rank") or source.get("main_net_inflow_rank_in_theme"))
-            money_flow_tier = self._nullable_text(source.get("money_flow_tier"))
+            turnover_rate = self._float_or_none(joined.get("turnover_rate"))
+            volume_ratio = self._float_or_none(
+                self._first_present(joined, "volume_ratio", "vol_ratio", "amount_ratio", "volume_ratio_to_ma5")
+            )
+            fallback_used: list[str] = []
+            if volume_ratio is None:
+                volume_ratio = self._ratio_from_text(self._first_present(joined, "evidence", "summary", "conclusion"), "量比")
+                if volume_ratio is not None:
+                    fallback_used.append("volume_ratio.evidence")
+            volume_vs_ma50 = self._float_or_none(joined.get("volume_vs_ma50") or joined.get("volume_ratio_to_ma50"))
+            main_net_inflow = self._float_or_none(joined.get("main_net_inflow"))
+            inflow_rank = self._int_or_none(joined.get("inflow_rank") or joined.get("main_net_inflow_rank_in_theme"))
+            money_flow_tier = self._nullable_text(joined.get("money_flow_tier"))
             labels = [
                 str(item).strip()
-                for item in self._list(source.get("labels") or source.get("abnormal_labels") or source.get("trigger_flags"))
+                for item in self._list(joined.get("labels") or joined.get("abnormal_labels") or joined.get("trigger_flags") or joined.get("signal_tags"))
                 if str(item).strip()
             ]
-            conclusion = self._text(source.get("conclusion") or source.get("abnormal_conclusion") or source.get("reason"))
+            conclusion = self._text(joined.get("conclusion") or joined.get("abnormal_conclusion") or joined.get("reason"))
+            if not labels:
+                labels = self._labels_from_text(self._first_present(joined, "evidence", "summary", "conclusion"))
+                if labels:
+                    fallback_used.append("labels.text")
 
             required = {
                 "stock_code": stock_code,
@@ -649,8 +746,8 @@ class PostMarketDailyReviewV2Builder:
                     missing_fields.add(field)
             display_required = {
                 "abnormal_score": abnormal_score is not None,
-                "turnover_rate_or_volume_ratio": turnover_rate is not None or volume_ratio is not None,
-                "labels_or_conclusion": bool(labels) or bool(conclusion),
+                "volume_ratio": volume_ratio is not None,
+                "labels": bool(labels),
                 "main_net_inflow_or_money_flow_tier": main_net_inflow is not None or bool(money_flow_tier),
             }
             for field, ok in display_required.items():
@@ -679,7 +776,7 @@ class PostMarketDailyReviewV2Builder:
                     "money_flow_joined": main_net_inflow is not None or bool(money_flow_tier),
                     "theme_joined": bool(subject_key or theme_name),
                     "source": f"recap_doc.{source_key}" if not source_key.startswith("report_context.") else source_key,
-                    "fallback_used": [],
+                    "fallback_used": fallback_used,
                     "source_tables": [source_key],
                 },
             })
@@ -700,24 +797,29 @@ class PostMarketDailyReviewV2Builder:
         if not isinstance(source_rows, list):
             return [], []
 
+        stock_facts_by_stock = self._row_by_stock_id(self._context_rows(recap_doc, "stock_facts"))
+        strong_by_stock = self._row_by_stock_id(
+            recap_doc.get("strong_stock_reviews") if isinstance(recap_doc.get("strong_stock_reviews"), list) else []
+        )
         rows: list[dict[str, Any]] = []
         missing_fields: set[str] = set()
         for source in source_rows[:20]:
             if not isinstance(source, dict):
                 continue
-            stock_code = self._text(source.get("stock_code") or source.get("stock_id"))
-            stock_name = self._text(source.get("stock_name"))
-            subject_key = self._text(source.get("subject_key"))
-            theme_name = self._text(source.get("theme_name") or source.get("subject_name") or source.get("resolved_theme_name"))
+            joined = self._join_stock_sources(source, strong_by_stock, stock_facts_by_stock)
+            stock_code = self._text(joined.get("stock_code") or joined.get("stock_id"))
+            stock_name = self._text(joined.get("stock_name"))
+            subject_key = self._text(joined.get("subject_key"))
+            theme_name = self._text(joined.get("theme_name") or joined.get("subject_name") or joined.get("resolved_theme_name"))
             main_net_inflow = self._float_or_none(
-                self._first_present(source, "main_net_inflow", "net_inflow", "net_inflow_amount")
+                self._first_present(joined, "main_net_inflow", "net_inflow", "net_inflow_amount")
             )
-            money_flow_tier = self._nullable_text(source.get("money_flow_tier"))
-            role_enhanced = self._nullable_text(source.get("role_enhanced"))
-            institution_signal = self._nullable_text(source.get("institution_signal"))
-            hot_money_signal = self._nullable_text(source.get("hot_money_signal"))
-            dragon_tiger_signal = self._nullable_text(source.get("dragon_tiger_signal"))
-            conclusion_source = self._nullable_text(source.get("conclusion") or source.get("note") or source.get("reason"))
+            money_flow_tier = self._nullable_text(joined.get("money_flow_tier"))
+            role_enhanced = self._nullable_text(joined.get("role_enhanced"))
+            institution_signal = self._nullable_text(joined.get("institution_signal"))
+            hot_money_signal = self._nullable_text(joined.get("hot_money_signal"))
+            dragon_tiger_signal = self._nullable_text(joined.get("dragon_tiger_signal"))
+            conclusion_source = self._nullable_text(joined.get("conclusion") or joined.get("note") or joined.get("reason"))
             conclusion_fallback = self._money_flow_conclusion_fallback(
                 role_enhanced=role_enhanced,
                 money_flow_tier=money_flow_tier,
@@ -726,6 +828,24 @@ class PostMarketDailyReviewV2Builder:
                 dragon_tiger_signal=dragon_tiger_signal,
             )
             conclusion = self._text(conclusion_source or conclusion_fallback)
+            fallback_used: list[str] = []
+            kline_position = self._nullable_text(
+                self._first_present(joined, "position_label", "kline_position", "support_type")
+            )
+            pattern_labels = [
+                str(item).strip()
+                for item in self._list(joined.get("pattern_labels") or joined.get("kline_pattern_labels"))
+                if str(item).strip()
+            ]
+            pattern_summary = self._nullable_text(
+                self._first_present(joined, "pattern_summary", "volume_pattern_status", "ma_alignment_status")
+            )
+            if not pattern_labels and not pattern_summary and money_flow_tier:
+                pattern_summary = money_flow_tier
+                fallback_used.append("kline.money_flow_tier")
+            if not kline_position and role_enhanced:
+                kline_position = role_enhanced
+                fallback_used.append("kline.role_enhanced")
 
             required = {
                 "stock_code": stock_code,
@@ -739,12 +859,12 @@ class PostMarketDailyReviewV2Builder:
                 "main_net_inflow_or_money_flow_tier": main_net_inflow is not None or bool(money_flow_tier),
                 "role_or_signal": bool(role_enhanced or institution_signal or hot_money_signal),
                 "conclusion": bool(conclusion),
+                "kline": bool(kline_position or pattern_labels or pattern_summary),
             }
             for field, ok in display_required.items():
                 if not ok:
                     missing_fields.add(field)
 
-            fallback_used: list[str] = []
             if conclusion and not conclusion_source:
                 fallback_used.append("conclusion")
 
@@ -761,6 +881,11 @@ class PostMarketDailyReviewV2Builder:
                 "hot_money_signal": hot_money_signal,
                 "dragon_tiger_signal": dragon_tiger_signal,
                 "conclusion": conclusion,
+                "kline": {
+                    "position_label": kline_position,
+                    "pattern_labels": pattern_labels,
+                    "pattern_summary": pattern_summary,
+                },
                 "diagnostics": {
                     "from_money_flow_enhanced": source_key.endswith("money_flow_enhanced") or source_key == "money_flow_reviews",
                     "dragon_tiger_joined": bool(dragon_tiger_signal),
@@ -905,60 +1030,111 @@ class PostMarketDailyReviewV2Builder:
 
         rows: list[dict[str, Any]] = []
         missing_fields: set[str] = set()
+        money_by_stock = self._row_by_stock_id(self._context_rows(recap_doc, "money_flow"))
+        stock_facts_by_stock = self._row_by_stock_id(self._context_rows(recap_doc, "stock_facts"))
+        abnormal_by_stock = self._row_by_stock_id(
+            self._context_rows(recap_doc, "abnormal_signals") or self._context_rows(recap_doc, "stock_abnormal_signal")
+        )
+        dragon_rows = (
+            self._context_rows(recap_doc, "dragon_tiger")
+            or self._context_rows(recap_doc, "dragon_tiger_object")
+            or (recap_doc.get("dragon_tiger_reviews") if isinstance(recap_doc.get("dragon_tiger_reviews"), list) else [])
+        )
+        dragon_by_stock = self._row_by_stock_id(dragon_rows)
         for idx, source in enumerate(source_rows[:20], start=1):
             if not isinstance(source, dict):
                 continue
-            stock_code = self._text(source.get("stock_code") or source.get("stock_id"))
-            stock_name = self._text(source.get("stock_name"))
-            subject_key = self._text(source.get("subject_key"))
-            theme_name = self._text(source.get("theme_name") or source.get("subject_name"))
+            joined = self._join_stock_sources(source, money_by_stock, stock_facts_by_stock)
+            joined = self._merge_stock_source(joined, abnormal_by_stock)
+            joined = self._merge_stock_source(joined, dragon_by_stock, overwrite=False)
+            stock_code = self._text(joined.get("stock_code") or joined.get("stock_id"))
+            stock_name = self._text(joined.get("stock_name"))
+            subject_key = self._text(joined.get("subject_key"))
+            theme_name = self._text(
+                self._first_present(joined, "theme_name", "subject_name", "resolved_theme_name")
+            )
             category = self._watchlist_category(source)
             role_label = self._text(
-                source.get("role_label")
-                or source.get("role")
-                or source.get("role_enhanced")
-                or source.get("watch_status")
-                or source.get("candidate_level")
+                joined.get("role_label")
+                or joined.get("role")
+                or joined.get("role_enhanced")
+                or joined.get("watch_status")
+                or joined.get("candidate_level")
                 or "观察"
             )
             stage = self._nullable_text(
-                source.get("stage")
-                or source.get("cycle_stage")
-                or source.get("final_cycle_state")
-                or source.get("cycle_state")
+                joined.get("stage")
+                or joined.get("cycle_stage")
+                or joined.get("final_cycle_state")
+                or joined.get("cycle_state")
             )
-            action = self._nullable_text(source.get("action") or "观察竞价承接")
-            volume_ratio = self._float_or_none(source.get("volume_ratio"))
+            action = self._nullable_text(joined.get("action") or "观察竞价承接")
+            fallback_used = ["watchlist.from_strong_stock_reviews"] if synthesized else []
+            volume_ratio = self._float_or_none(
+                self._first_present(joined, "volume_ratio", "vol_ratio", "amount_ratio", "volume_ratio_to_ma5")
+            )
+            if volume_ratio is None:
+                volume_ratio = self._ratio_from_text(self._first_present(joined, "evidence", "summary", "reason"), "量比")
+                if volume_ratio is not None:
+                    fallback_used.append("volume_ratio.evidence")
             pattern = self._nullable_text(
-                source.get("pattern")
-                or source.get("pattern_summary")
-                or source.get("position_label")
-                or source.get("support_type")
+                joined.get("pattern")
+                or joined.get("pattern_summary")
+                or joined.get("position_label")
+                or joined.get("support_type")
             )
+            pattern_label_list = self._list(joined.get("pattern_labels"))
+            if not pattern and pattern_label_list:
+                pattern = "/".join(str(item).strip() for item in pattern_label_list if str(item).strip())
+                fallback_used.append("pattern.pattern_labels")
+            if not pattern:
+                pattern = stage or role_label or category
+                fallback_used.append("pattern.stage_or_role")
             flags = [
                 str(item).strip()
-                for item in self._list(source.get("flags") or source.get("trigger_flags") or source.get("evidence_rules"))
+                for item in self._list(
+                    joined.get("flags")
+                    or joined.get("trigger_flags")
+                    or joined.get("evidence_rules")
+                    or joined.get("abnormal_labels")
+                    or joined.get("labels")
+                )
                 if str(item).strip()
             ]
+            if not flags:
+                flags = self._labels_from_text(self._first_present(joined, "evidence", "summary", "reason"))
+                if flags:
+                    fallback_used.append("flags.text")
+            for label_source, prefix in (("prior7_limitup_days", "7日涨停"), ("recent_limit_up_count", "近期涨停")):
+                value = self._int_or_none(joined.get(label_source))
+                if value and all(not item.startswith(prefix) for item in flags):
+                    flags.append(f"{prefix}{value}")
             dragon_tiger_days = self._int_or_none(
-                source.get("dragon_tiger_days")
-                or source.get("dragon_tiger_recent_days")
-                or source.get("dragon_tiger_days_7d")
+                joined.get("dragon_tiger_days")
+                or joined.get("dragon_tiger_recent_days")
+                or joined.get("dragon_tiger_days_7d")
+                or joined.get("continuous_days")
             )
-            catalyst = self._nullable_text(source.get("catalyst") or source.get("event_title") or source.get("support_type"))
+            if dragon_tiger_days is None and self._stock_key(stock_code) in dragon_by_stock:
+                dragon_tiger_days = 1
+                fallback_used.append("dragon_tiger_days.joined")
+            if dragon_tiger_days is None:
+                dragon_tiger_days = 0
+                fallback_used.append("dragon_tiger_days.default_zero")
+            catalyst = self._nullable_text(joined.get("catalyst") or joined.get("event_title") or joined.get("support_type"))
             abnormal_labels = [
                 str(item).strip()
-                for item in self._list(source.get("abnormal_labels") or source.get("labels"))
+                for item in self._list(joined.get("abnormal_labels") or joined.get("labels"))
                 if str(item).strip()
             ]
-            priority = self._int_or_none(source.get("priority") or source.get("candidate_rank")) or idx
+            priority = self._int_or_none(joined.get("priority") or joined.get("candidate_rank")) or idx
             reason = self._text(
-                source.get("reason")
-                or source.get("rationale")
-                or source.get("selected_reason")
-                or source.get("watch_reason")
-                or source.get("strong_grade")
-                or source.get("role_enhanced")
+                joined.get("reason")
+                or joined.get("rationale")
+                or joined.get("selected_reason")
+                or joined.get("watch_reason")
+                or joined.get("strong_grade")
+                or joined.get("role_enhanced")
                 or "；".join(flags[:3])
                 or catalyst
                 or (
@@ -981,6 +1157,10 @@ class PostMarketDailyReviewV2Builder:
             display_required = {
                 "role_label": bool(role_label),
                 "stage_or_action": bool(stage) or bool(action),
+                "volume_ratio": volume_ratio is not None,
+                "pattern": bool(pattern),
+                "flags": bool(flags),
+                "dragon_tiger_days": dragon_tiger_days is not None,
                 "reason": bool(reason),
                 "priority": priority is not None,
             }
@@ -1008,7 +1188,7 @@ class PostMarketDailyReviewV2Builder:
                 "reason": reason,
                 "diagnostics": {
                     "source": source_key if source_key.startswith(("report_context.", "synthesized_")) else f"recap_doc.{source_key}",
-                    "fallback_used": ["watchlist.from_strong_stock_reviews"] if synthesized else [],
+                    "fallback_used": fallback_used,
                     "source_tables": [source_key],
                 },
             })
@@ -1064,6 +1244,10 @@ class PostMarketDailyReviewV2Builder:
 
         return {
             "module_coverage": coverage,
+            "column_missing_fields": {
+                module_key: sorted(list(fields))
+                for module_key, fields in missing_fields.items()
+            },
             "source_tables": source_tables,
             "warnings": warnings,
             "errors": (errors or []) if recap_doc else ["post_market_recap_snapshot_missing", *(errors or [])],
@@ -1095,6 +1279,7 @@ class PostMarketDailyReviewV2Builder:
             "required": module_key in MODULE_KEYS,
             "source": source,
             "missing_fields": missing_fields,
+            "column_missing_fields": missing_fields,
             "upstream_tables": upstream_tables,
             "message": message,
             "legacy_row_count": legacy_count,
@@ -1146,7 +1331,21 @@ class PostMarketDailyReviewV2Builder:
 
     @staticmethod
     def _list(value: Any) -> list[Any]:
-        return deepcopy(value) if isinstance(value, list) else []
+        if isinstance(value, list):
+            return deepcopy(value)
+        if isinstance(value, str):
+            text = value.strip()
+            if not text:
+                return []
+            if text.startswith("[") and text.endswith("]"):
+                try:
+                    parsed = json.loads(text)
+                    if isinstance(parsed, list):
+                        return parsed
+                except (TypeError, ValueError):
+                    pass
+            return [part.strip() for part in text.replace("；", ",").replace("/", ",").split(",") if part.strip()]
+        return []
 
     @staticmethod
     def _text(value: Any) -> str:
@@ -1264,6 +1463,97 @@ class PostMarketDailyReviewV2Builder:
             joined.update(money_by_stock[key])
         joined.update(source)
         return joined
+
+    @classmethod
+    def _merge_stock_source(
+        cls,
+        source: dict[str, Any],
+        rows_by_stock: dict[str, dict[str, Any]],
+        *,
+        overwrite: bool = False,
+    ) -> dict[str, Any]:
+        key = cls._stock_key(source.get("stock_id") or source.get("stock_code") or source.get("code"))
+        extra = rows_by_stock.get(key) if key else None
+        if not extra:
+            return source
+        merged = dict(source)
+        for field, value in extra.items():
+            if value in (None, ""):
+                continue
+            if overwrite or merged.get(field) in (None, "", []):
+                merged[field] = value
+        return merged
+
+    @staticmethod
+    def _score_from_role(role: str) -> float | None:
+        scores = {
+            "leader": 85.0,
+            "sub_leader": 75.0,
+            "trend": 65.0,
+            "watch": 55.0,
+            "observe_only": 45.0,
+            "reject": 0.0,
+            "unknown": 50.0,
+        }
+        return scores.get(role)
+
+    @classmethod
+    def _score_from_watch_or_role(cls, watch_score: float | None, role: str, *, default: float) -> float:
+        if watch_score is not None:
+            return max(0.0, min(100.0, watch_score))
+        return cls._score_from_role(role) or default
+
+    @staticmethod
+    def _score_from_money_flow(main_net_inflow: float | None, money_flow_tier: str | None) -> float | None:
+        tier = str(money_flow_tier or "").strip().lower()
+        if tier in {"strong", "high", "强", "强势", "high_inflow"}:
+            return 85.0
+        if tier in {"mid", "medium", "normal", "中", "中等"}:
+            return 65.0
+        if tier in {"weak", "low", "弱"}:
+            return 45.0
+        if main_net_inflow is None:
+            return None
+        if main_net_inflow >= 100_000_000:
+            return 85.0
+        if main_net_inflow >= 30_000_000:
+            return 70.0
+        if main_net_inflow > 0:
+            return 55.0
+        return 40.0
+
+    @classmethod
+    def _ratio_from_text(cls, value: Any, label: str) -> float | None:
+        values = cls._list(value)
+        if not values and value not in (None, ""):
+            values = [str(value)]
+        for item in values:
+            text = str(item)
+            if label not in text:
+                continue
+            tail = text.split(label, 1)[1].strip(" ：:=倍xX")
+            token = ""
+            for char in tail:
+                if char.isdigit() or char in ".-":
+                    token += char
+                elif token:
+                    break
+            parsed = cls._float_or_none(token)
+            if parsed is not None:
+                return parsed
+        return None
+
+    @classmethod
+    def _labels_from_text(cls, value: Any) -> list[str]:
+        labels: list[str] = []
+        for item in cls._list(value):
+            text = str(item).strip()
+            if not text:
+                continue
+            head = text.split("：", 1)[0].split(":", 1)[0].strip()
+            if head and len(head) <= 12:
+                labels.append(head)
+        return labels[:6]
 
     @classmethod
     def _theme_subject_key(cls, source: dict[str, Any]) -> str:
