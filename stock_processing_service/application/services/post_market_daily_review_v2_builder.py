@@ -134,6 +134,18 @@ class PostMarketDailyReviewV2Builder:
             raw_role = self._text(source.get("role") or source.get("watch_status") or "unknown")
             role = self._strong_role(raw_role)
             role_label = self._role_label(raw_role, role)
+            composite_score = self._float_or_none(source.get("watch_score"))
+            main_net_inflow = self._float_or_none(source.get("main_net_inflow"))
+            money_flow_tier = self._nullable_text(source.get("money_flow_tier"))
+            role_enhanced = self._nullable_text(source.get("role_enhanced"))
+            support_score = self._float_or_none(source.get("support_score"))
+            support_type = self._nullable_text(source.get("support_type"))
+            position_label = self._nullable_text(source.get("position_label"))
+            pattern_labels = self._list(source.get("pattern_labels"))
+            rationale_source = self._nullable_text(source.get("rationale"))
+            strong_grade = self._nullable_text(source.get("strong_grade"))
+            llm_judgement = role_enhanced or self._nullable_text(source.get("watch_status"))
+            rationale = self._text(rationale_source or strong_grade or llm_judgement)
 
             required = {
                 "stock_code": stock_code,
@@ -145,8 +157,22 @@ class PostMarketDailyReviewV2Builder:
             for field, value in required.items():
                 if not value:
                     missing_fields.add(field)
+            display_required = {
+                "composite_score": composite_score is not None,
+                "money_flow": main_net_inflow is not None or bool(money_flow_tier),
+                "support": support_score is not None or bool(support_type),
+                "kline": bool(position_label) or bool(pattern_labels),
+                "rationale_or_llm_judgement": bool(rationale) or bool(llm_judgement),
+            }
+            for field, ok in display_required.items():
+                if not ok:
+                    missing_fields.add(field)
 
-            support_score = self._float_or_none(source.get("support_score"))
+            fallback_used: list[str] = []
+            if rationale and not rationale_source:
+                fallback_used.append("rationale")
+            if llm_judgement and not role_enhanced:
+                fallback_used.append("llm.judgement")
             rows.append({
                 "stock_id": stock_code,
                 "stock_code": stock_code,
@@ -156,42 +182,43 @@ class PostMarketDailyReviewV2Builder:
                 "role": role,
                 "role_label": role_label or "未知",
                 "candidate_level": self._candidate_level(source),
-                "candidate_source": self._text(source.get("candidate_source") or "daily_review_v1"),
-                "composite_score": self._float_or_none(source.get("watch_score")),
+                "candidate_source": self._text(source.get("candidate_source") or "recap_doc.strong_stock_reviews"),
+                "composite_score": composite_score,
                 "purity_score": None,
                 "leading_score": None,
                 "capital_score": None,
                 "structure_score": None,
                 "resilience_score": support_score,
                 "money_flow": {
-                    "main_net_inflow": self._float_or_none(source.get("main_net_inflow")),
-                    "money_flow_tier": self._nullable_text(source.get("money_flow_tier")),
-                    "role_enhanced": self._nullable_text(source.get("role_enhanced")),
+                    "main_net_inflow": main_net_inflow,
+                    "money_flow_tier": money_flow_tier,
+                    "role_enhanced": role_enhanced,
                 },
                 "kline": {
-                    "position_label": self._nullable_text(source.get("position_label")),
-                    "pattern_labels": self._list(source.get("pattern_labels")),
+                    "position_label": position_label,
+                    "pattern_labels": pattern_labels,
                     "pattern_summary": None,
                 },
                 "support": {
-                    "support_type": self._nullable_text(source.get("support_type")),
+                    "support_type": support_type,
                     "support_score": support_score,
                     "support_reason": None,
                 },
                 "llm": {
-                    "judgement": self._nullable_text(source.get("role_enhanced") or source.get("watch_status")),
-                    "reason": self._nullable_text(source.get("rationale")),
-                    "confirmation_basis": self._nullable_text(source.get("strong_grade")),
+                    "judgement": llm_judgement,
+                    "reason": rationale_source,
+                    "confirmation_basis": strong_grade,
                 },
-                "rationale": self._text(source.get("rationale") or source.get("strong_grade") or source.get("watch_status") or "结构化强势股候选"),
+                "rationale": rationale,
                 "rejection_reason": self._nullable_text(source.get("rejection_reason")),
                 "diagnostics": {
                     "from_strong_stock_watch_history": True,
                     "money_flow_joined": source.get("main_net_inflow") is not None or bool(source.get("money_flow_tier")),
                     "position_joined": bool(source.get("position_label")),
                     "pattern_joined": bool(source.get("pattern_labels")),
-                    "fallback_used": ["daily_review_v1"],
-                    "source_tables": ["strong_stock_reviews"],
+                    "source": "recap_doc.strong_stock_reviews",
+                    "fallback_used": fallback_used,
+                    "source_tables": ["recap_doc.strong_stock_reviews"],
                 },
             })
 
@@ -233,7 +260,7 @@ class PostMarketDailyReviewV2Builder:
 
         warnings: list[str] = []
         if any(legacy_section_counts.values()):
-            warnings.append("legacy sections are available but V2 structured rows are not materialized in V2-P1")
+            warnings.append("legacy sections are available; modules without ready structured rows should fallback to legacy sections")
         if not recap_doc:
             warnings.append("post_market_recap_snapshot is missing or empty")
 

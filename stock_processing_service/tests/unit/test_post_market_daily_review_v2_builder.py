@@ -106,6 +106,8 @@ def test_daily_review_v2_builder_maps_ready_strong_stock_reviews() -> None:
     assert rows[0]["role_label"] == "leader"
     assert rows[0]["money_flow"]["main_net_inflow"] == 120000000
     assert rows[0]["kline"]["pattern_labels"] == ["放量", "承接"]
+    assert rows[0]["diagnostics"]["source"] == "recap_doc.strong_stock_reviews"
+    assert rows[0]["diagnostics"]["fallback_used"] == []
 
     coverage = payload["diagnostics"]["module_coverage"]["strong_stock_reviews"]
     assert coverage["status"] == "ready"
@@ -138,3 +140,37 @@ def test_daily_review_v2_builder_marks_strong_stock_missing_fields_partial() -> 
     assert coverage["row_count"] == 1
     assert "subject_key" in coverage["missing_fields"]
     assert "theme_name" in coverage["missing_fields"]
+    assert "money_flow" in coverage["missing_fields"]
+    assert "support" in coverage["missing_fields"]
+    assert "kline" in coverage["missing_fields"]
+
+
+def test_daily_review_v2_builder_marks_strong_stock_display_missing_partial() -> None:
+    recap_doc = {
+        "strong_stock_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "role": "leader",
+                "watch_status": "formal",
+                "watch_score": 88.5,
+            }
+        ],
+        "report": {"sections": [{"heading": "强势股分层", "items": ["legacy"]}]},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.strong.display.partial",
+    )
+
+    coverage = payload["diagnostics"]["module_coverage"]["strong_stock_reviews"]
+    assert coverage["status"] == "partial"
+    assert coverage["source"] == "legacy_sections"
+    assert "money_flow" in coverage["missing_fields"]
+    assert "support" in coverage["missing_fields"]
+    assert "kline" in coverage["missing_fields"]
+    assert "rationale_or_llm_judgement" not in coverage["missing_fields"]
