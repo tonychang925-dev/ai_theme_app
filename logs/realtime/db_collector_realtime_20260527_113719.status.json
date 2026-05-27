@@ -1,7 +1,7 @@
 {
   "active_collector": "RealTimeNewsCollector",
   "collector_version": "phase4e",
-  "running": true,
+  "running": false,
   "started_at": "2026-05-27T11:37:19.658839+00:00",
   "last_collect_at": null,
   "collections": 0,
