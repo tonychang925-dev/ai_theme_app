@@ -1104,8 +1104,16 @@ class BuildPostMarketRecapJob:
             COALESCE(p.position_label, '') AS position_label,
             COALESCE(x.pattern_labels, '[]'::jsonb) AS pattern_labels,
             COALESCE(s.pct_chg, 0) AS pct_chg,
-            COALESCE(s.turnover_rate, 0) AS turnover_rate,
-            COALESCE(s.volume_ratio, 0) AS volume_ratio
+            CASE
+                WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 18
+                THEN NULLIF(s.raw_json->>18, '')::numeric
+                ELSE 0
+            END AS turnover_rate,
+            CASE
+                WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 17
+                THEN NULLIF(s.raw_json->>17, '')::numeric
+                ELSE 0
+            END AS volume_ratio
         FROM strong_stock_watch_history h
         LEFT JOIN money_flow_enhanced m
           ON m.trade_date = h.trade_date
