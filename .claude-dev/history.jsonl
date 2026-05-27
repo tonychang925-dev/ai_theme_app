@@ -2570,3 +2570,23 @@
 {"display":"[Pasted text #4 +33 lines]","pastedContents":{"4":{"id":4,"type":"text","contentHash":"702a87e100ae196f"}},"timestamp":1779841150753,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
 {"display":"“主线与支线”栏目，“总净流入    龙头净流入    题材K线”还是没有数据展示！“强势股分层”栏目，“结构位置    抗跌承接”、“K线位置    K线形态”，没有数据！","pastedContents":{},"timestamp":1779842514159,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
 {"display":"[Pasted text #1 +326 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"fdc7971170ad9d27"}},"timestamp":1779843274880,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
+{"display":"问题仍然存在，请逐条审计代码，找出问题根源！！！！！","pastedContents":{},"timestamp":1779843670785,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
+{"display":"重启无数遍了！！！！","pastedContents":{},"timestamp":1779843743700,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
+{"display":"[Pasted text #1 +396 lines]","pastedContents":{"1":{"id":1,"type":"text","contentHash":"809c270c79212a0e"}},"timestamp":1779843903814,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
+{"display":"到底能不能解决？？？！！！","pastedContents":{},"timestamp":1779843914296,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
+{"display":"已重启服务","pastedContents":{},"timestamp":1779844061759,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"380179c7-c85d-4239-bc89-5dbeb094589f"}
+{"display":"请确认盘前竞价采集是否已经在正常运行中","pastedContents":{},"timestamp":1779844414814,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"为什么老是失败？？？！！！！！竞价采集启动失败: request timeout after 15000ms","pastedContents":{},"timestamp":1779844780496,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"到底要启动多少个服务？才能正常？？？！！！！","pastedContents":{},"timestamp":1779844828908,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"现在链登录都登录不了？？！！！","pastedContents":{},"timestamp":1779845007245,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"到底在搞什么？？？！！！！！","pastedContents":{},"timestamp":1779845051725,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"Failed to execute 'json' on 'Response': Unexpected end of JSON input","pastedContents":{},"timestamp":1779845069291,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"9:15-9:25的数据都采集了吗？","pastedContents":{},"timestamp":1779845250737,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"我看到同有科技不错，这只股我们的结果确认了吗","pastedContents":{},"timestamp":1779845650283,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"可以","pastedContents":{},"timestamp":1779845714011,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"还有一个泰永长征","pastedContents":{},"timestamp":1779846556181,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"同有科技在竞价阶段能识别出资金是流入/流出性质吗？比如流入大于流出？","pastedContents":{},"timestamp":1779846799680,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"但是我从盘前竞价图上看到是流出大于流入，能识别出来吗？","pastedContents":{},"timestamp":1779846956193,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"tushare应该有9:25的冻结时的数据汇总，确认9:25资金是流出还是流入","pastedContents":{},"timestamp":1779847144139,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"补采 JYHF 竞价盘口数据","pastedContents":{},"timestamp":1779847301990,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"所以弱转强策略里面要增加资金性质，只有净流入的才是真正的候选，否则应该丢弃","pastedContents":{},"timestamp":1779848267836,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}

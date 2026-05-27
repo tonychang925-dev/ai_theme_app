@@ -183,7 +183,14 @@ class JyhfAuctionTimelineExtractor:
                     if pre_close:
                         break
 
-            final.pre_close = pre_close
+            final = AuctionRecordParsed(
+                stock_id=final.stock_id,
+                auction_open_price=final.auction_open_price,
+                auction_volume=final.auction_volume,
+                auction_amount=final.auction_amount,
+                pre_close=pre_close,
+                raw_keys=final.raw_keys,
+            )
 
             prev_bar = prev_bars.get(sid, {})
             prev_amount_proxy = round(prev_bar.get("amount_proxy", 0) * proxy_ratio, 2)

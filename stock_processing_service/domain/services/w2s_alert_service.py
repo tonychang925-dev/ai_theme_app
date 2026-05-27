@@ -114,6 +114,42 @@ class W2SAlertService:
             candidates.append(c)
         return candidates
 
+    async def load_auction_order_book(self, trade_date: str, stock_ids: list[str]) -> dict[str, dict]:
+        """加载竞价阶段最后的五档盘口数据，计算资金流向。"""
+        if not stock_ids:
+            return {}
+        pool = await self._get_pool()
+        codes = [sid.replace(".SZ", "").replace(".SH", "").replace(".BJ", "") for sid in stock_ids]
+        rows = await pool.fetch(
+            """SELECT DISTINCT ON (split_part(stock_id, '.', 1))
+                 split_part(stock_id, '.', 1) AS code,
+                 raw_json
+               FROM jyhf_stock_quote_snapshot
+               WHERE trade_date = $1::date
+                 AND source_endpoint = 'jyhf_auction'
+                 AND split_part(stock_id, '.', 1) = ANY($2::text[])
+               ORDER BY split_part(stock_id, '.', 1), ts DESC""",
+            date.fromisoformat(trade_date), codes,
+        )
+        result = {}
+        for r in rows:
+            code = r["code"]
+            raw = r.get("raw_json")
+            if isinstance(raw, str):
+                try:
+                    raw = json.loads(raw)
+                except Exception:
+                    raw = {}
+            ob = raw.get("order_book") if isinstance(raw, dict) else None
+            if ob:
+                result[code] = {
+                    "ask_vol": float(ob.get("ask_vol", 0)),
+                    "bid_vol": float(ob.get("bid_vol", 0)),
+                    "imbalance": float(ob.get("imbalance", 0)),
+                    "direction": ob.get("direction", "neutral"),
+                }
+        return result
+
     async def load_auctions(self, trade_date: str, stock_ids: list[str]) -> list[StockAuctionDTO]:
         """从 pre_market_auction_snapshot 加载竞价数据，转为 StockAuctionDTO。
 
@@ -186,9 +222,10 @@ class W2SAlertService:
         if not candidates:
             return W2SAlertResult([], [], 0, 0, 0, 0, 0)
 
-        # 2. 加载竞价
+        # 2. 加载竞价 + 资金流向
         candidate_ids = [c.stock_id for c in candidates]
         auctions = await self.load_auctions(confirm_trade_date, candidate_ids)
+        order_books = await self.load_auction_order_book(confirm_trade_date, candidate_ids)
 
         # 3. D2 确认
         picks = self._confirmer.confirm(candidates, auctions)
@@ -226,6 +263,19 @@ class W2SAlertService:
             level = pick.confirm_level
             level_counts[level] = level_counts.get(level, 0) + 1
 
+            # ── 资金流向过滤: 流出 → 降级或拒绝 ──
+            code = c.stock_id.replace(".SZ", "").replace(".SH", "").replace(".BJ", "")
+            ob = order_books.get(code)
+            capital_reject = False
+            flow_direction = "unknown"
+            if ob:
+                flow_direction = ob["direction"]
+                if ob["direction"] == "outflow" and level in ("A", "B"):
+                    # A/B 但资金流出 → 降为 C (observe)
+                    level = "C"
+                    capital_reject = True
+                    logger.warning("W2S capital_reject: %s %s → C (outflow %s)", c.stock_id, level_counts, ob)
+
             # 回查候选原始字段
             db = db_by_sid.get(c.stock_id) or db_by_code.get(
                 c.stock_id.replace(".SZ", "").replace(".SH", "").replace(".BJ", "")) or {}
@@ -259,6 +309,9 @@ class W2SAlertService:
                     "approved": pick.approved,
                     "auction_open_price": float(auc.auction_open_price or 0) if auc else 0.0,
                     "auction_amount": float(auc.auction_amount or 0) if auc else 0.0,
+                    "capital_flow": flow_direction,
+                    "capital_reject": capital_reject,
+                    "order_book": ob if ob else {},
                 },
             )
 

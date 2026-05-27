@@ -64,14 +64,52 @@ def normalize_index_quotes(raw: dict) -> list[JyhfIndexQuote]:
     return results
 
 
+def _parse_trade_five(trade_five: list, current: float) -> dict | None:
+    """解析 JYHF tradeFive 五档盘口。
+
+    tradeFive 格式: [ask1_price, ask1_vol, ask2_price, ..., bid1_price, bid1_vol, ...]
+    前 10 项 = 5 档卖盘 (ASK), 后 10 项 = 5 档买盘 (BID)
+    """
+    if not trade_five or len(trade_five) < 20:
+        return None
+    asks = []
+    bids = []
+    ask_vol_total = 0.0
+    bid_vol_total = 0.0
+    for i in range(0, 10, 2):
+        price = float(trade_five[i])
+        vol = float(trade_five[i + 1]) if i + 1 < len(trade_five) else 0
+        asks.append({"price": price, "vol": vol})
+        ask_vol_total += vol
+    for i in range(10, 20, 2):
+        price = float(trade_five[i])
+        vol = float(trade_five[i + 1]) if i + 1 < len(trade_five) else 0
+        bids.append({"price": price, "vol": vol})
+        bid_vol_total += vol
+    imbalance = bid_vol_total - ask_vol_total  # + = 流入, - = 流出
+    return {
+        "asks": asks, "bids": bids,
+        "ask_vol_total": round(ask_vol_total, 2),
+        "bid_vol_total": round(bid_vol_total, 2),
+        "imbalance": round(imbalance, 2),
+        "imbalance_ratio": round(imbalance / ask_vol_total, 4) if ask_vol_total > 0 else 0,
+    }
+
+
 def normalize_stock_quote(raw: dict, stock_id: str, *, api_stock_id: str | None = None) -> JyhfStockQuote | None:
     d = raw.get("data", {})
     if not isinstance(d, dict) or not d:
         return None
+    current = _safe_float(d.get("current")) or 0
+    tf = d.get("tradeFive")
+    order_book = _parse_trade_five(tf, current) if tf else None
+    enriched_raw = dict(raw)
+    if order_book:
+        enriched_raw["_order_book"] = order_book
     return JyhfStockQuote(
         trade_date=_today(), ts=_now(), stock_id=stock_id,
         stock_name=str(d.get("name", "")),
-        current=_safe_float(d.get("current")),
+        current=current,
         open=_safe_float(d.get("open")),
         high=_safe_float(d.get("high")),
         low=_safe_float(d.get("low")),
@@ -84,7 +122,7 @@ def normalize_stock_quote(raw: dict, stock_id: str, *, api_stock_id: str | None 
         limit_up=_safe_float(d.get("limitUp")),
         limit_down=_safe_float(d.get("limitDown")),
         source_endpoint="stock/realtime",
-        raw_json=raw,
+        raw_json=enriched_raw,
     )
 
 

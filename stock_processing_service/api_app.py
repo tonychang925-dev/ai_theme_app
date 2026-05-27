@@ -2034,8 +2034,12 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
             "missing_tables": readiness.missing_tables,
         }
 
-    # 委托现有的 daily_review/generate 逻辑
-    return await generate_daily_review({"date": trade_date_str, "mode": "read_model_only"})
+    # 委托现有的 daily_review/generate 逻辑，传递 force 参数
+    return await generate_daily_review({
+        "date": trade_date_str,
+        "mode": "read_model_only",
+        "force": bool(p.get("force", False)),
+    })
 
 
 # ── P1: DailyReview fast generate (read_model_only) ──
@@ -2050,6 +2054,7 @@ async def generate_daily_review(payload: dict[str, Any] | None = None) -> dict[s
     p = payload or {}
     trade_date_str = str(p.get("date") or p.get("trade_date") or "")
     mode = str(p.get("mode") or "read_model_only")
+    force = bool(p.get("force", False))
 
     if not trade_date_str:
         raise HTTPException(status_code=400, detail="date is required")
@@ -2060,11 +2065,12 @@ async def generate_daily_review(payload: dict[str, Any] | None = None) -> dict[s
     try:
         from uuid import uuid4
         batch_id = uuid4().hex[:12]; trace_id = uuid4().hex[:12]
+        version_tag = uuid4().hex[:8] if force else "v2"
 
         job = app.state.container.build_post_market_recap
         result = await job.execute(
             trade_date=td,
-            snapshot_version=f"daily_review_generate.{mode}.v2",
+            snapshot_version=f"daily_review_generate.{mode}.{version_tag}",
             batch_id=batch_id,
             trace_id=trace_id,
             lookback_days=7,
