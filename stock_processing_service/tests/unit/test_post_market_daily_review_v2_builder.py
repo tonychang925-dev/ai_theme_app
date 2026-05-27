@@ -217,6 +217,48 @@ def test_daily_review_v2_builder_allows_strong_stock_kline_support_type_fallback
     assert coverage["missing_fields"] == []
 
 
+def test_daily_review_v2_builder_does_not_block_strong_stock_ready_on_reject_display_fields() -> None:
+    recap_doc = {
+        "strong_stock_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "role": "leader",
+                "watch_status": "formal",
+                "watch_score": 88.5,
+                "support_type": "ma20",
+                "support_score": 0.72,
+                "money_flow_tier": "strong",
+                "role_enhanced": "leader",
+                "main_net_inflow": 120000000,
+                "rationale": "资金与承接共振",
+            },
+            {
+                "stock_code": "000001.SZ",
+                "stock_name": "淘汰样本",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "role": "reject",
+                "watch_status": "reject",
+            },
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.strong.reject.display",
+    )
+
+    coverage = payload["diagnostics"]["module_coverage"]["strong_stock_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["missing_fields"] == []
+
+
 def test_daily_review_v2_builder_maps_ready_watchlist_reviews() -> None:
     recap_doc = {
         "watchlist_reviews": [

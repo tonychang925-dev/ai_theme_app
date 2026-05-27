@@ -184,16 +184,17 @@ class PostMarketDailyReviewV2Builder:
                 pattern_summary = support_type
                 fallback_used.append("kline.support_type")
 
-            display_required = {
-                "composite_score": composite_score is not None,
-                "money_flow": main_net_inflow is not None or bool(money_flow_tier),
-                "support": support_score is not None or bool(support_type),
-                "kline": bool(kline_position_label) or bool(pattern_labels),
-                "rationale_or_llm_judgement": bool(rationale) or bool(llm_judgement),
-            }
-            for field, ok in display_required.items():
-                if not ok:
-                    missing_fields.add(field)
+            if role != "reject":
+                display_required = {
+                    "composite_score": composite_score is not None,
+                    "money_flow": main_net_inflow is not None or bool(money_flow_tier),
+                    "support": support_score is not None or bool(support_type),
+                    "kline": bool(kline_position_label) or bool(pattern_labels),
+                    "rationale_or_llm_judgement": bool(rationale) or bool(llm_judgement),
+                }
+                for field, ok in display_required.items():
+                    if not ok:
+                        missing_fields.add(field)
 
             if rationale and not rationale_source:
                 fallback_used.append("rationale")

@@ -999,6 +999,20 @@ class NewsStreamHandler:
             except asyncio.CancelledError:
                 pass
         
+        # 清理 Redis consumer，防止僵尸堆积
+        try:
+            consumer_cfg = self.config.get("consumer_config", {})
+            group = consumer_cfg.get("consumer_group", "")
+            name = consumer_cfg.get("consumer_name", "")
+            stream = consumer_cfg.get("stream_name", "stream:news:raw")
+            if group and name:
+                redis_client = self.stream_manager.redis_client if self.stream_manager else None
+                if redis_client:
+                    await redis_client.xgroup_delconsumer(stream, group, name)
+                    logger.info("Cleaned up consumer: %s/%s/%s", stream, group, name)
+        except Exception:
+            pass
+
         # 打印存储统计
         logger.info(f"📊 存储服务统计:")
         logger.info(f"   运行时间: {self.storage_stats['started_at']} - {datetime.now().isoformat()}")
