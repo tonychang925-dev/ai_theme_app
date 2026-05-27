@@ -174,3 +174,76 @@ def test_daily_review_v2_builder_marks_strong_stock_display_missing_partial() ->
     assert "support" in coverage["missing_fields"]
     assert "kline" in coverage["missing_fields"]
     assert "rationale_or_llm_judgement" not in coverage["missing_fields"]
+
+
+def test_daily_review_v2_builder_maps_ready_watchlist_reviews() -> None:
+    recap_doc = {
+        "watchlist_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "category": "弱转强观察",
+                "role_label": "观察",
+                "stage": "rebound",
+                "action": "观察竞价承接",
+                "volume_ratio": 2.3,
+                "pattern": "平台突破",
+                "flags": ["放量"],
+                "dragon_tiger_days": 1,
+                "catalyst": "机器人催化",
+                "abnormal_labels": ["倍量"],
+                "priority": 1,
+                "reason": "放量承接",
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.watchlist",
+    )
+
+    rows = payload["watchlist_reviews"]
+    assert len(rows) == 1
+    assert rows[0]["stock_code"] == "002361.SZ"
+    assert rows[0]["category"] == "弱转强观察"
+    assert rows[0]["role_label"] == "观察"
+    assert rows[0]["priority"] == 1
+    assert rows[0]["diagnostics"]["source"] == "recap_doc.watchlist_reviews"
+
+    coverage = payload["diagnostics"]["module_coverage"]["watchlist_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["row_count"] == 1
+    assert coverage["missing_fields"] == []
+
+
+def test_daily_review_v2_builder_marks_watchlist_display_missing_partial() -> None:
+    recap_doc = {
+        "watchlist_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "category": "重点观察",
+            }
+        ],
+        "report": {"sections": [{"heading": "次日观察清单", "items": ["legacy"]}]},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.watchlist.partial",
+    )
+
+    coverage = payload["diagnostics"]["module_coverage"]["watchlist_reviews"]
+    assert coverage["status"] == "partial"
+    assert coverage["source"] == "legacy_sections"
+    assert coverage["row_count"] == 1
+    assert "reason" in coverage["missing_fields"]

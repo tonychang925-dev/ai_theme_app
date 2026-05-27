@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
   fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
-  type DailyReviewView, type PostMarketDailyReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2,
+  type DailyReviewView, type PostMarketDailyReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness, fetchPostMarketJobsStatus,
   generatePostMarketDerivedData, generatePostMarketRecap,
   type PostMarketReadinessView, type PostMarketJobsStatusView,
@@ -172,6 +172,41 @@ function buildStrongStockGroupsFromV2(rows: StrongStockReviewV2[]): Array<[strin
     groups.set(theme, current);
   }
   return Array.from(groups.entries()).filter(([, groupedRows]) => groupedRows.length > 0);
+}
+
+function buildWatchlistRowsFromV2(rows: WatchlistReviewV2[]): WatchlistDisplayRow[] {
+  const mapped = [...rows]
+    .sort((a, b) => {
+      const themeCompare = (a.theme_name || "").localeCompare(b.theme_name || "", "zh-CN");
+      if (themeCompare !== 0) return themeCompare;
+      const categoryCompare = (a.category || "").localeCompare(b.category || "", "zh-CN");
+      if (categoryCompare !== 0) return categoryCompare;
+      const priorityCompare = (a.priority ?? 9999) - (b.priority ?? 9999);
+      if (priorityCompare !== 0) return priorityCompare;
+      return (a.stock_name || "").localeCompare(b.stock_name || "", "zh-CN");
+    })
+    .map((item): WatchlistRow => ({
+      category: item.category || "--",
+      theme: item.theme_name || "--",
+      subjectKey: item.subject_key || "--",
+      stockName: item.stock_name || item.stock_code || "--",
+      role: zh(item.role_label || "--"),
+      stage: zh(item.stage || "--"),
+      action: zh(item.action || "--"),
+      volumeRatio: item.volume_ratio != null ? item.volume_ratio.toFixed(2) : "--",
+      pattern: zh(item.pattern || "--"),
+      flag: zh(item.flags?.join("/") || "--"),
+      dragonDays: item.dragon_tiger_days != null ? String(item.dragon_tiger_days) : "--",
+      catalyst: zh(item.catalyst || item.reason || "--"),
+      labels: zh(item.abnormal_labels?.join("/") || "--"),
+    }));
+
+  let lastTheme = "";
+  return mapped.map((row): WatchlistDisplayRow => {
+    const showTheme = row.theme !== lastTheme;
+    lastTheme = row.theme;
+    return { ...row, showTheme };
+  });
 }
 
 function isV2ModuleReady(
@@ -740,6 +775,10 @@ export function RecapPage() {
     return Array.from(groups.entries()).filter(([, rows]) => rows.length > 0);
   }, [dailyReviewV2PreviewEnabled, dailyReviewV2, strongStockSection]);
   const watchlistRows = useMemo(() => {
+    const v2Rows = dailyReviewV2?.watchlist_reviews;
+    if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "watchlist_reviews", v2Rows)) {
+      return buildWatchlistRowsFromV2(v2Rows ?? []);
+    }
     const rows = watchlistSection.map((item) => parseWatchlistLine(item));
     rows.sort((a, b) => {
       const themeCompare = a.theme.localeCompare(b.theme, "zh-CN");
@@ -757,7 +796,7 @@ export function RecapPage() {
         showTheme,
       };
     });
-  }, [watchlistSection]);
+  }, [dailyReviewV2PreviewEnabled, dailyReviewV2, watchlistSection]);
   const themeSummaryRows = useMemo(
     () => {
       const v2Rows = dailyReviewV2?.theme_reviews;

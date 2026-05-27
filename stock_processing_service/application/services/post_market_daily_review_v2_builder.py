@@ -45,12 +45,19 @@ class PostMarketDailyReviewV2Builder:
         doc = deepcopy(recap_doc) if isinstance(recap_doc, dict) else {}
         generated = generated_at or datetime.now(timezone.utc)
         strong_stock_reviews, strong_stock_missing_fields = self._build_strong_stock_reviews(doc)
+        watchlist_reviews, watchlist_missing_fields = self._build_watchlist_reviews(doc)
         legacy_section_counts = self._legacy_section_counts(doc)
         diagnostics = self._build_diagnostics(
             doc,
             legacy_section_counts,
-            structured_counts={"strong_stock_reviews": len(strong_stock_reviews)},
-            missing_fields={"strong_stock_reviews": strong_stock_missing_fields},
+            structured_counts={
+                "strong_stock_reviews": len(strong_stock_reviews),
+                "watchlist_reviews": len(watchlist_reviews),
+            },
+            missing_fields={
+                "strong_stock_reviews": strong_stock_missing_fields,
+                "watchlist_reviews": watchlist_missing_fields,
+            },
         )
         derived_status = self._derived_data_status(doc, diagnostics)
         recap_status = "success" if doc else "failed"
@@ -73,7 +80,7 @@ class PostMarketDailyReviewV2Builder:
             "theme_reviews": [],
             "theme_capital_reviews": [],
             "strong_stock_reviews": strong_stock_reviews,
-            "watchlist_reviews": [],
+            "watchlist_reviews": watchlist_reviews,
             "stock_capital_reviews": [],
             "abnormal_reviews": [],
             "money_flow_reviews": [],
@@ -224,6 +231,119 @@ class PostMarketDailyReviewV2Builder:
 
         return rows, sorted(missing_fields)
 
+    def _build_watchlist_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
+        source_key = "watchlist_reviews"
+        source_rows = recap_doc.get(source_key)
+        if not isinstance(source_rows, list):
+            source_key = "observe_candidates"
+            source_rows = recap_doc.get(source_key)
+        if not isinstance(source_rows, list):
+            return [], []
+
+        rows: list[dict[str, Any]] = []
+        missing_fields: set[str] = set()
+        for idx, source in enumerate(source_rows[:20], start=1):
+            if not isinstance(source, dict):
+                continue
+            stock_code = self._text(source.get("stock_code") or source.get("stock_id"))
+            stock_name = self._text(source.get("stock_name"))
+            subject_key = self._text(source.get("subject_key"))
+            theme_name = self._text(source.get("theme_name") or source.get("subject_name"))
+            category = self._watchlist_category(source)
+            role_label = self._text(
+                source.get("role_label")
+                or source.get("role")
+                or source.get("watch_status")
+                or source.get("candidate_level")
+                or "观察"
+            )
+            stage = self._nullable_text(
+                source.get("stage")
+                or source.get("cycle_stage")
+                or source.get("final_cycle_state")
+                or source.get("cycle_state")
+            )
+            action = self._nullable_text(source.get("action") or "观察竞价承接")
+            volume_ratio = self._float_or_none(source.get("volume_ratio"))
+            pattern = self._nullable_text(
+                source.get("pattern")
+                or source.get("pattern_summary")
+                or source.get("position_label")
+                or source.get("support_type")
+            )
+            flags = [
+                str(item).strip()
+                for item in self._list(source.get("flags") or source.get("trigger_flags") or source.get("evidence_rules"))
+                if str(item).strip()
+            ]
+            dragon_tiger_days = self._int_or_none(
+                source.get("dragon_tiger_days")
+                or source.get("dragon_tiger_recent_days")
+                or source.get("dragon_tiger_days_7d")
+            )
+            catalyst = self._nullable_text(source.get("catalyst") or source.get("event_title") or source.get("support_type"))
+            abnormal_labels = [
+                str(item).strip()
+                for item in self._list(source.get("abnormal_labels") or source.get("labels"))
+                if str(item).strip()
+            ]
+            priority = self._int_or_none(source.get("priority") or source.get("candidate_rank")) or idx
+            reason = self._text(
+                source.get("reason")
+                or source.get("rationale")
+                or source.get("selected_reason")
+                or source.get("watch_reason")
+                or "；".join(flags[:3])
+                or catalyst
+            )
+
+            required = {
+                "stock_code": stock_code,
+                "stock_name": stock_name,
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+                "category": category,
+            }
+            for field, value in required.items():
+                if not value:
+                    missing_fields.add(field)
+            display_required = {
+                "role_label": bool(role_label),
+                "stage_or_action": bool(stage) or bool(action),
+                "reason": bool(reason),
+                "priority": priority is not None,
+            }
+            for field, ok in display_required.items():
+                if not ok:
+                    missing_fields.add(field)
+
+            rows.append({
+                "stock_id": stock_code,
+                "stock_code": stock_code,
+                "stock_name": stock_name,
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+                "category": category,
+                "role_label": role_label,
+                "stage": stage,
+                "action": action,
+                "volume_ratio": volume_ratio,
+                "pattern": pattern,
+                "flags": flags,
+                "dragon_tiger_days": dragon_tiger_days,
+                "catalyst": catalyst,
+                "abnormal_labels": abnormal_labels,
+                "priority": priority,
+                "reason": reason,
+                "diagnostics": {
+                    "source": f"recap_doc.{source_key}",
+                    "fallback_used": [],
+                    "source_tables": [f"recap_doc.{source_key}"],
+                },
+            })
+
+        return rows, sorted(missing_fields)
+
     def _build_diagnostics(
         self,
         recap_doc: dict[str, Any],
@@ -369,6 +489,15 @@ class PostMarketDailyReviewV2Builder:
             return None
 
     @staticmethod
+    def _int_or_none(value: Any) -> int | None:
+        if value is None or value == "":
+            return None
+        try:
+            return int(float(value))
+        except (TypeError, ValueError):
+            return None
+
+    @staticmethod
     def _strong_role(value: str) -> str:
         text = value.lower()
         if "leader" in text or "龙头" in value:
@@ -410,3 +539,23 @@ class PostMarketDailyReviewV2Builder:
         if text:
             return "formal"
         return "unknown"
+
+    @staticmethod
+    def _watchlist_category(source: dict[str, Any]) -> str:
+        text = str(
+            source.get("category")
+            or source.get("candidate_level")
+            or source.get("watch_status")
+            or source.get("pool_entry_type")
+            or ""
+        )
+        lower = text.lower()
+        if "risk" in lower or "风险" in text:
+            return "风险观察"
+        if "weak" in lower or "rebound" in lower or "弱转强" in text:
+            return "弱转强观察"
+        if "observe" in lower or "观察" in text:
+            return "重点观察"
+        if text:
+            return "其他"
+        return "其他"
