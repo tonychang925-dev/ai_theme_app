@@ -144,7 +144,7 @@ class PostMarketDailyReviewV2Builder:
         return deepcopy(source) if isinstance(source, dict) else {}
 
     def _build_theme_capital_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
-        source_key, source_rows = self._first_list_source(
+        source_key, source_rows = self._first_non_empty_list_source(
             recap_doc,
             (
                 ("theme_capital_reviews",),
@@ -225,7 +225,7 @@ class PostMarketDailyReviewV2Builder:
         recap_doc: dict[str, Any],
         theme_capital_reviews: list[dict[str, Any]],
     ) -> tuple[list[dict[str, Any]], list[str]]:
-        source_key, source_rows = self._first_list_source(
+        source_key, source_rows = self._first_non_empty_list_source(
             recap_doc,
             (
                 ("theme_reviews",),
@@ -373,33 +373,55 @@ class PostMarketDailyReviewV2Builder:
         return rows, sorted(missing_fields)
 
     def _build_strong_stock_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
-        source_rows = recap_doc.get("strong_stock_reviews")
+        source_key, source_rows = self._first_non_empty_list_source(
+            recap_doc,
+            (
+                ("strong_stock_reviews",),
+                ("strong_watch_history",),
+                ("promoted_pool_preview",),
+                ("top_candidates",),
+                ("formal_top_candidates",),
+            ),
+        )
         if not isinstance(source_rows, list):
             return [], []
+        if source_key in {"promoted_pool_preview", "top_candidates", "formal_top_candidates"}:
+            legacy_count = int(self._legacy_section_counts(recap_doc).get(MODULE_SECTION_HEADINGS["strong_stock_reviews"]) or 0)
+            if legacy_count > 0:
+                source_rows = source_rows[:legacy_count]
+        money_by_stock = self._row_by_stock_id(self._context_rows(recap_doc, "money_flow"))
+        stock_facts_by_stock = self._row_by_stock_id(self._context_rows(recap_doc, "stock_facts"))
 
         rows: list[dict[str, Any]] = []
         missing_fields: set[str] = set()
         for source in source_rows:
             if not isinstance(source, dict):
                 continue
+            joined = self._join_stock_sources(source, money_by_stock, stock_facts_by_stock)
             stock_code = self._text(source.get("stock_code") or source.get("stock_id"))
             stock_name = self._text(source.get("stock_name"))
             subject_key = self._text(source.get("subject_key"))
-            theme_name = self._text(source.get("theme_name"))
-            raw_role = self._text(source.get("role") or source.get("watch_status") or "unknown")
+            theme_name = self._text(
+                self._first_present(joined, "resolved_theme_name", "subject_name", "theme_name")
+            )
+            raw_role = self._text(
+                self._first_present(joined, "role", "role_label", "role_enhanced", "watch_status") or "unknown"
+            )
             role = self._strong_role(raw_role)
             role_label = self._role_label(raw_role, role)
-            composite_score = self._float_or_none(source.get("watch_score"))
-            main_net_inflow = self._float_or_none(source.get("main_net_inflow"))
-            money_flow_tier = self._nullable_text(source.get("money_flow_tier"))
-            role_enhanced = self._nullable_text(source.get("role_enhanced"))
-            support_score = self._float_or_none(source.get("support_score"))
-            support_type = self._nullable_text(source.get("support_type"))
-            position_label = self._nullable_text(source.get("position_label"))
-            pattern_labels = self._list(source.get("pattern_labels"))
+            composite_score = self._float_or_none(
+                self._first_present(joined, "watch_score", "candidate_score", "composite_score", "leader_composite_score")
+            )
+            main_net_inflow = self._float_or_none(joined.get("main_net_inflow"))
+            money_flow_tier = self._nullable_text(joined.get("money_flow_tier"))
+            role_enhanced = self._nullable_text(joined.get("role_enhanced"))
+            support_score = self._float_or_none(joined.get("support_score"))
+            support_type = self._nullable_text(joined.get("support_type"))
+            position_label = self._nullable_text(joined.get("position_label"))
+            pattern_labels = self._list(joined.get("pattern_labels"))
             rationale_source = self._nullable_text(source.get("rationale"))
             strong_grade = self._nullable_text(source.get("strong_grade"))
-            llm_judgement = role_enhanced or self._nullable_text(source.get("watch_status"))
+            llm_judgement = role_enhanced or self._nullable_text(source.get("watch_status") or source.get("candidate_level"))
             rationale = self._text(rationale_source or strong_grade or llm_judgement)
 
             required = {
@@ -413,6 +435,9 @@ class PostMarketDailyReviewV2Builder:
                 if not value:
                     missing_fields.add(field)
             fallback_used: list[str] = []
+            if not support_type and position_label:
+                support_type = position_label
+                fallback_used.append("support.position_label")
             kline_position_label = position_label
             pattern_summary = None
             if not kline_position_label and not pattern_labels and support_type:
@@ -445,7 +470,7 @@ class PostMarketDailyReviewV2Builder:
                 "role": role,
                 "role_label": role_label or "未知",
                 "candidate_level": self._candidate_level(source),
-                "candidate_source": self._text(source.get("candidate_source") or "recap_doc.strong_stock_reviews"),
+                "candidate_source": self._text(source.get("candidate_source") or f"recap_doc.{source_key}"),
                 "composite_score": composite_score,
                 "purity_score": None,
                 "leading_score": None,
@@ -475,13 +500,13 @@ class PostMarketDailyReviewV2Builder:
                 "rationale": rationale,
                 "rejection_reason": self._nullable_text(source.get("rejection_reason")),
                 "diagnostics": {
-                    "from_strong_stock_watch_history": True,
-                    "money_flow_joined": source.get("main_net_inflow") is not None or bool(source.get("money_flow_tier")),
-                    "position_joined": bool(source.get("position_label")),
-                    "pattern_joined": bool(source.get("pattern_labels")),
-                    "source": "recap_doc.strong_stock_reviews",
+                    "from_strong_stock_watch_history": source_key in {"strong_stock_reviews", "strong_watch_history", "promoted_pool_preview"},
+                    "money_flow_joined": joined.get("main_net_inflow") is not None or bool(joined.get("money_flow_tier")),
+                    "position_joined": bool(joined.get("position_label")),
+                    "pattern_joined": bool(joined.get("pattern_labels")),
+                    "source": f"recap_doc.{source_key}",
                     "fallback_used": fallback_used,
-                    "source_tables": ["recap_doc.strong_stock_reviews"],
+                    "source_tables": [f"recap_doc.{source_key}", "report_context.money_flow", "report_context.stock_facts"],
                 },
             })
 
@@ -847,7 +872,7 @@ class PostMarketDailyReviewV2Builder:
         return rows, sorted(missing_fields), sorted(set(errors))
 
     def _build_watchlist_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
-        source_key, source_rows = self._first_list_source(
+        source_key, source_rows = self._first_non_empty_list_source(
             recap_doc,
             (
                 ("watchlist_reviews",),
@@ -859,6 +884,9 @@ class PostMarketDailyReviewV2Builder:
                 ("report_context", "watchlist"),
                 ("report_context", "observe_candidates"),
                 ("report_context", "strong_stock_watch"),
+                ("promoted_pool_preview",),
+                ("top_candidates",),
+                ("formal_top_candidates",),
             ),
         )
         synthesized = False
@@ -933,6 +961,11 @@ class PostMarketDailyReviewV2Builder:
                 or source.get("role_enhanced")
                 or "；".join(flags[:3])
                 or catalyst
+                or (
+                    f"{role_label} / {pattern or stage or action or category}"
+                    if source_key in {"promoted_pool_preview", "top_candidates", "formal_top_candidates"}
+                    else ""
+                )
             )
 
             required = {
@@ -1166,6 +1199,71 @@ class PostMarketDailyReviewV2Builder:
             if isinstance(current, list):
                 return ".".join(path), current
         return "", None
+
+    @classmethod
+    def _first_non_empty_list_source(
+        cls,
+        recap_doc: dict[str, Any],
+        paths: tuple[tuple[str, ...], ...],
+    ) -> tuple[str, list[Any] | None]:
+        fallback_key = ""
+        fallback_rows: list[Any] | None = None
+        for path in paths:
+            current: Any = recap_doc
+            for key in path:
+                if not isinstance(current, dict):
+                    current = None
+                    break
+                current = current.get(key)
+            if isinstance(current, list):
+                if current:
+                    return ".".join(path), current
+                if fallback_rows is None:
+                    fallback_key = ".".join(path)
+                    fallback_rows = current
+        return fallback_key, fallback_rows
+
+    @staticmethod
+    def _stock_key(value: Any) -> str:
+        text = str(value or "").strip().upper()
+        if "." in text:
+            text = text.split(".", 1)[0]
+        return text
+
+    @classmethod
+    def _row_by_stock_id(cls, rows: list[Any]) -> dict[str, dict[str, Any]]:
+        result: dict[str, dict[str, Any]] = {}
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            key = cls._stock_key(row.get("stock_id") or row.get("stock_code") or row.get("code"))
+            if key and key not in result:
+                result[key] = row
+        return result
+
+    @staticmethod
+    def _context_rows(recap_doc: dict[str, Any], key: str) -> list[Any]:
+        context = recap_doc.get("report_context")
+        if not isinstance(context, dict):
+            return []
+        rows = context.get(key)
+        return rows if isinstance(rows, list) else []
+
+    @classmethod
+    def _join_stock_sources(
+        cls,
+        source: dict[str, Any],
+        money_by_stock: dict[str, dict[str, Any]],
+        stock_facts_by_stock: dict[str, dict[str, Any]],
+    ) -> dict[str, Any]:
+        key = cls._stock_key(source.get("stock_id") or source.get("stock_code") or source.get("code"))
+        joined: dict[str, Any] = {}
+        if key and key in stock_facts_by_stock:
+            joined.update(stock_facts_by_stock[key])
+        if key and key in money_by_stock:
+            joined.update(money_by_stock[key])
+        joined.update(source)
+        return joined
 
     @classmethod
     def _theme_subject_key(cls, source: dict[str, Any]) -> str:

@@ -127,6 +127,15 @@ async def main():
     print(f"  漏报 (ret_30m>2%): {len(missed)} 条, avg_30m={avg(missed_rets):.2f}%")
 
     # ── Conclusions ──
+    # ── 市场环境汇总 ──
+    from stock_processing_service.domain.services.w2s_market_context_service import W2SMarketContextService
+    ctx_svc = W2SMarketContextService(DSN)
+    print(f"\n--- 市场环境 ---")
+    for td in sorted(by_date.keys()):
+        ctx = await ctx_svc.build_context(td)
+        print(f"  {td}: market={ctx.market_regime}({ctx.market_score}) idx={ctx.index_pct_chg:.2f}% | subject={ctx.subject_regime} risk={'⚠️' if ctx.context_risk else '✅'}")
+    await ctx_svc.close()
+
     print(f"\n--- 结论 ---")
     et_avg = avg([float(r["ret_30m"]) for r in v22_et_items if r.get("ret_30m") is not None])
     all_avg = avg([float(r["ret_30m"]) for r in all_data if r.get("ret_30m") is not None])

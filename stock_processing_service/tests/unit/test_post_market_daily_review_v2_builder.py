@@ -345,6 +345,61 @@ def test_daily_review_v2_builder_does_not_block_strong_stock_ready_on_reject_dis
     assert coverage["missing_fields"] == []
 
 
+def test_daily_review_v2_builder_maps_promoted_pool_preview_to_strong_stock_reviews() -> None:
+    recap_doc = {
+        "promoted_pool_preview": [
+            {
+                "stock_id": "300302.SZ",
+                "stock_name": "同有科技",
+                "subject_key": "9015778",
+                "subject_name": "存储芯片",
+                "watch_status": "formal",
+                "watch_score": "100.00",
+                "support_type": "previous_low",
+            }
+        ],
+        "report_context": {
+            "money_flow": [
+                {
+                    "stock_id": "300302",
+                    "stock_name": "同有科技",
+                    "subject_key": "9015778",
+                    "resolved_theme_name": "存储芯片",
+                    "main_net_inflow": 88000000,
+                    "money_flow_tier": "HIGH",
+                    "role_enhanced": "龙头/资金共振",
+                }
+            ],
+            "stock_facts": [
+                {
+                    "stock_id": "300302",
+                    "position_label": "平台整理",
+                    "pattern_labels": ["均线多头"],
+                }
+            ],
+        },
+        "report": {"sections": [{"heading": "强势股分层", "items": ["legacy"]}]},
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 25),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.strong.promoted",
+    )
+
+    rows = payload["strong_stock_reviews"]
+    assert len(rows) == 1
+    assert rows[0]["stock_code"] == "300302.SZ"
+    assert rows[0]["theme_name"] == "存储芯片"
+    assert rows[0]["money_flow"]["main_net_inflow"] == 88000000
+    assert rows[0]["diagnostics"]["source"] == "recap_doc.promoted_pool_preview"
+    coverage = payload["diagnostics"]["module_coverage"]["strong_stock_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["missing_fields"] == []
+
+
 def test_daily_review_v2_builder_maps_ready_watchlist_reviews() -> None:
     recap_doc = {
         "watchlist_reviews": [
@@ -458,6 +513,39 @@ def test_daily_review_v2_builder_synthesizes_watchlist_from_strong_stock_reviews
     assert rows[0]["stock_code"] == "002361.SZ"
     assert rows[0]["diagnostics"]["source"] == "synthesized_from_strong_stock_reviews"
     assert rows[0]["diagnostics"]["fallback_used"] == ["watchlist.from_strong_stock_reviews"]
+    coverage = payload["diagnostics"]["module_coverage"]["watchlist_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["missing_fields"] == []
+
+
+def test_daily_review_v2_builder_maps_promoted_pool_preview_to_watchlist_reviews() -> None:
+    recap_doc = {
+        "promoted_pool_preview": [
+            {
+                "stock_id": "300302.SZ",
+                "stock_name": "同有科技",
+                "subject_key": "9015778",
+                "subject_name": "存储芯片",
+                "watch_status": "formal",
+                "watch_score": "100.00",
+                "support_type": "previous_low",
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 25),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.watchlist.promoted",
+    )
+
+    rows = payload["watchlist_reviews"]
+    assert len(rows) == 1
+    assert rows[0]["stock_code"] == "300302.SZ"
+    assert rows[0]["reason"] == "previous_low"
+    assert rows[0]["diagnostics"]["source"] == "recap_doc.promoted_pool_preview"
     coverage = payload["diagnostics"]["module_coverage"]["watchlist_reviews"]
     assert coverage["status"] == "ready"
     assert coverage["source"] == "structured"

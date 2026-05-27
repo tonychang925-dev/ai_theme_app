@@ -176,6 +176,12 @@ async def main():
     v22_observe_items = [r for r in data if r.get("v22_level") == "observe"]
     v22_observe_r, _ = avg_ret(v22_observe_items)
 
+    # ── 市场环境 ──
+    from stock_processing_service.domain.services.w2s_market_context_service import W2SMarketContextService
+    ctx_svc = W2SMarketContextService(DSN)
+    market_ctx = await ctx_svc.build_context(args.trade_date)
+    await ctx_svc.close()
+
     conclusions = []
     if v22_early_n > 0:
         conclusions.append(f"v2.2 early_turn={v22_early_n} 条 ({v22_early_n/n*100:.1f}%), avg_30m={v22_early_r:.2f}% — {'优于' if v22_early_r > v22_observe_r else '弱于'}全量均值")
@@ -185,6 +191,8 @@ async def main():
         conclusions.append(f"v2.2 early_turn 占比 {v22_early_n/n*100:.1f}% — 门禁正常，不偏严")
     elif v22_early_n < n * 0.05:
         conclusions.append(f"v2.2 early_turn 占比 {v22_early_n/n*100:.1f}% — 门禁可能偏严，建议继续观察")
+    if market_ctx.context_risk:
+        conclusions.append(f"⚠️ 市场环境风险: {market_ctx.market_regime}/{market_ctx.subject_regime}，今日信号可信度降低")
     conclusions.append("v2.2 为默认影子观察模型，全部信号为观察级，不输出买入建议")
 
     # ── 9. 输出 ──
@@ -218,6 +226,9 @@ async def main():
     # Console
     print(f"\n=== 弱转强影子信号日终复盘: {args.trade_date} ===\n")
     print(f"总信号: {n}")
+    print(f"市场环境: {market_ctx.market_regime}({market_ctx.market_score}) idx={market_ctx.index_pct_chg:.2f}% | "
+          f"题材: {market_ctx.subject_regime}({market_ctx.subject_strength_score})")
+    print(f"环境置信度: {market_ctx.context_confidence} | 风险: {'⚠️' if market_ctx.context_risk else '✅'}")
     print(f"v1:  A={v1_dist.get('A',0)} B={v1_dist.get('B',0)} C={v1_dist.get('C',0)}")
     print(f"v2:  turn_strong={v2_dist.get('turn_strong',0)} early_turn={v2_dist.get('early_turn',0)} observe={v2_dist.get('observe',0)}")
     print(f"v2.1: turn_strong={v21_dist.get('turn_strong',0)} early_turn={v21_dist.get('early_turn',0)} observe={v21_dist.get('observe',0)}")
