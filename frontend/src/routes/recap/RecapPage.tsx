@@ -1296,51 +1296,55 @@ export function RecapPage() {
                 </div>
               )}
 
-              {watchlistSection.length > 0 && (
+              {(isPostMarket || watchlistSection.length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">次日观察清单</span>
-                  <div className="recap-table-wrap">
-                    <table className="recap-table recap-table-watchlist">
-                      <thead>
-                        <tr>
-                          <th>股票</th>
-                          <th>类别</th>
-                          <th>题材</th>
-                          <th>角色</th>
-                          <th>阶段</th>
-                          <th>动作</th>
-                          <th>量比</th>
-                          <th>形态</th>
-                          <th>Flag</th>
-                          <th>龙虎榜</th>
-                          <th>催化/异动</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {watchlistRows.map((row, idx) => (
-                          <tr key={`watchlist-${idx}`}>
-                            <td className="recap-stock-highlight">{row.stockName}</td>
-                            <td>{row.category}</td>
-                            <td>{row.showTheme ? renderThemeLink(row.theme, row.subjectKey, tradeDate) : ""}</td>
-                            <td>{row.role}</td>
-                            <td>{renderThemeStatusTags([row.stage])}</td>
-                            <td>{row.action !== "--" ? row.action : "--"}</td>
-                            <td>{row.volumeRatio !== "--" ? row.volumeRatio : "--"}</td>
-                            <td className="recap-cell-wrap">{row.pattern !== "--" ? row.pattern : "--"}</td>
-                            <td>{row.flag !== "--" ? row.flag : "--"}</td>
-                            <td>{row.dragonDays !== "--" ? `${row.dragonDays}天` : "--"}</td>
-                            <td className="recap-cell-wrap">
-                              {zh(
-                                [row.catalyst !== "--" ? row.catalyst : "", row.labels !== "--" ? row.labels : ""]
-                                  .filter(Boolean)
-                                  .join("；") || "--",
-                              )}
-                            </td>
+                  {watchlistRows.length > 0 ? (
+                    <div className="recap-table-wrap">
+                      <table className="recap-table recap-table-watchlist">
+                        <thead>
+                          <tr>
+                            <th>股票</th>
+                            <th>类别</th>
+                            <th>题材</th>
+                            <th>角色</th>
+                            <th>阶段</th>
+                            <th>动作</th>
+                            <th>量比</th>
+                            <th>形态</th>
+                            <th>Flag</th>
+                            <th>龙虎榜</th>
+                            <th>催化/异动</th>
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+                        </thead>
+                        <tbody>
+                          {watchlistRows.map((row, idx) => (
+                            <tr key={`watchlist-${idx}`}>
+                              <td className="recap-stock-highlight">{row.stockName}</td>
+                              <td>{row.category}</td>
+                              <td>{row.showTheme ? renderThemeLink(row.theme, row.subjectKey, tradeDate) : ""}</td>
+                              <td>{row.role}</td>
+                              <td>{renderThemeStatusTags([row.stage])}</td>
+                              <td>{row.action !== "--" ? row.action : "--"}</td>
+                              <td>{row.volumeRatio !== "--" ? row.volumeRatio : "--"}</td>
+                              <td className="recap-cell-wrap">{row.pattern !== "--" ? row.pattern : "--"}</td>
+                              <td>{row.flag !== "--" ? row.flag : "--"}</td>
+                              <td>{row.dragonDays !== "--" ? `${row.dragonDays}天` : "--"}</td>
+                              <td className="recap-cell-wrap">
+                                {zh(
+                                  [row.catalyst !== "--" ? row.catalyst : "", row.labels !== "--" ? row.labels : ""]
+                                    .filter(Boolean)
+                                    .join("；") || "--",
+                                )}
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  ) : (
+                    <p className="workspace-note">暂无数据，请检查 report.sections.次日观察清单</p>
+                  )}
                 </div>
               )}
 
