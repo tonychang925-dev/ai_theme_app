@@ -163,6 +163,8 @@ async def lifespan(app: FastAPI):
         redis_url=_redis_url(),
         write_db=_db_name(),
     )
+    # 启动时自动拉起实时管线进程
+    asyncio.create_task(_auto_start_realtime_stack(app))
     # P1-G: 支撑位突破检测后台任务（盘中自动运行）
     _kline_alert_task = asyncio.create_task(_run_kline_break_detector_loop(app))
 
@@ -4022,6 +4024,17 @@ async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
         _event_generator(), media_type="text/event-stream",
         headers={"Cache-Control": "no-cache", "Connection": "keep-alive", "X-Accel-Buffering": "no"},
     )
+
+
+async def _auto_start_realtime_stack(app: FastAPI) -> None:
+    """SPS 启动 5 秒后自动拉起实时管线进程。"""
+    await asyncio.sleep(5)
+    try:
+        mgr: RealtimeStackManager = app.state.realtime_manager
+        await mgr.start()
+        logger.warning("AUTO_START realtime stack: ok")
+    except Exception as exc:
+        logger.warning("AUTO_START realtime stack failed: %s", exc)
 
 
 async def _run_kline_break_detector_loop(app: FastAPI) -> None:

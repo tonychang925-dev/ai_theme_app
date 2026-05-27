@@ -63,11 +63,19 @@ export function RealtimeCollectorPage() {
       const status = await fetchNewChainRealtimeStatus();
       setStackStatus(status);
       setRunning(status.running ? "up" : "down");
+      const streams = status.redis_streams || {};
+      const rawLen = streams["stream:news:raw"]?.length ?? 0;
+      const structLen = streams["stream:events:structured"]?.length ?? 0;
+      const decLen = streams["stream:events:decision"]?.length ?? 0;
+      const qwenOk = status.qwen_dedup_ready ? "Qwen✅" : "Qwen⚠️";
       append(
-        `[新链] running=${status.running} akshare_pid=${status.akshare_pid ?? "-"} ` +
-        `raw_pid=${status.raw_news_pid ?? "-"} dec_pid=${status.decision_pid ?? "-"} ` +
-        `rebuild_pid=${status.rebuild_pid ?? "-"} v2=${status.profile_version}/${status.profile_status} ` +
-        `pending=${status.pending_count} review=${status.review_queue_count ?? "-"} dl=${status.dead_letter_count}`
+        `[采集] run=${status.running ? "🟢" : "🔴"} ${qwenOk} ` +
+        `raw=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
+        `struct=${structLen > 999 ? Math.round(structLen/1000) + "k" : structLen} ` +
+        `dec=${decLen > 999 ? Math.round(decLen/1000) + "k" : decLen} ` +
+        `pending=${status.pending_count} dl=${status.dead_letter_count} ` +
+        `LLM过滤=${status.prefilter_skipped ?? 0} Feed通过=${status.news_published_total ?? 0}` +
+        (rawLen > 5000 ? " ⚠️积压" : "")
       );
     } catch (err) {
       setRunning("down");
@@ -191,20 +199,20 @@ export function RealtimeCollectorPage() {
   }, [jyhfLogs, output]);
 
   async function handleStart() {
-    setMainBusy(true);
-    if (running === "up") {
-      append("新链实时采集已在运行，跳过重复启动");
-      setMainBusy(false);
-      return;
-    }
-    append("[新链] 启动实时采集...");
     try {
+      append("🖱️ 按钮点击已触发");
+      setMainBusy(true);
+      if (running === "up") {
+        append("已在运行，跳过");
+        setMainBusy(false);
+        return;
+      }
+      append("[新链] 发送启动请求...");
       const result = await startNewChainRealtime();
-      append(`[新链] 启动完成: ok=${result.ok} status=${result.status}`);
+      append(`[新链] ok=${result.ok}`);
       await refreshStatus();
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : "启动失败";
-      append(`[新链] 启动失败: ${msg}`);
+    } catch (err: any) {
+      append(`❌ 启动失败: ${err?.message || err}`);
     } finally {
       setMainBusy(false);
     }
@@ -500,7 +508,7 @@ export function RealtimeCollectorPage() {
             </div>
           </div>
           <div className="collection-action-row">
-            <button type="button" className={`tag tag-button ${running === "down" ? "tag-active" : ""}`} onClick={handleStart} disabled={mainBusy}>
+            <button type="button" id="btn-start-realtime" className={`tag tag-button ${running === "down" ? "tag-active" : ""}`} onClick={handleStart} disabled={mainBusy}>
               {mainBusy ? (
                 <span className="screener-run-inline">
                   <span className="screener-spinner" />
@@ -674,6 +682,79 @@ export function RealtimeCollectorPage() {
             </span>
           </div>
         </section>
+
+        <section className="workspace-card">
+          <span className="metric-label section-title">Stream 健康监控</span>
+          <div style={{ fontSize: 11, lineHeight: 1.6, marginTop: 4 }}>
+            {/* Qwen 状态 */}
+            <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
+              <span style={{ color: "#94a3b8" }}>Qwen 去重</span>
+              <span style={{ color: stackStatus?.qwen_dedup_ready ? "#22c55e" : "#f59e0b" }}>
+                {stackStatus?.qwen_dedup_ready ? "✅ 就绪" : "⚠️ 规则模式"}
+                {stackStatus?.qwen_dedup_calls ? ` (${stackStatus.qwen_dedup_calls}次)` : ""}
+              </span>
+            </div>
+            {/* Stream 积压 */}
+            {stackStatus?.redis_streams && Object.entries(stackStatus.redis_streams).map(([name, info]) => {
+              const length = info?.length ?? 0;
+              const color = length > 5000 ? "#ef4444" : length > 1000 ? "#f59e0b" : "#22c55e";
+              const shortName = name.replace("stream:", "");
+              return (
+                <div key={name} style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
+                  <span style={{ color: "#94a3b8" }}>{shortName}</span>
+                  <span style={{ color }}>{length.toLocaleString()}</span>
+                </div>
+              );
+            })}
+            {/* LLM 过滤统计 */}
+            <div style={{ marginTop: 4, paddingTop: 4, borderTop: "1px solid #334155" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
+                <span style={{ color: "#94a3b8" }}>LLM低质量过滤</span>
+                <span style={{ color: "#f59e0b" }}>{stackStatus?.prefilter_skipped ?? 0}</span>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
+                <span style={{ color: "#94a3b8" }}>硬去重拦截</span>
+                <span style={{ color: "#f59e0b" }}>{stackStatus?.news_dedup_skipped ?? 0}</span>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
+                <span style={{ color: "#94a3b8" }}>白名单保护</span>
+                <span style={{ color: "#22c55e" }}>{stackStatus?.hard_protect_count ?? 0}</span>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0", fontWeight: 600 }}>
+                <span style={{ color: "#cbd5e1" }}>✅ Feed通过</span>
+                <span style={{ color: "#22c55e" }}>{stackStatus?.news_published_total ?? 0}</span>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
+                <span style={{ color: "#94a3b8" }}>总拦截 (过滤+去重)</span>
+                <span style={{ color: "#f97316" }}>{(stackStatus?.prefilter_skipped ?? 0) + (stackStatus?.news_dedup_skipped ?? 0)}</span>
+              </div>
+            </div>
+            {/* Pending / DL / Review */}
+            <div style={{ marginTop: 4, paddingTop: 4, borderTop: "1px solid #334155" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
+              <span style={{ color: "#94a3b8" }}>Pending (弱信号)</span>
+              <span style={{ color: "#94a3b8" }}>{(stackStatus?.pending_count ?? 0).toLocaleString()}</span>
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
+              <span style={{ color: "#94a3b8" }}>死信</span>
+              <span style={{ color: (stackStatus?.dead_letter_count ?? 0) > 10 ? "#ef4444" : "#94a3b8" }}>
+                {(stackStatus?.dead_letter_count ?? 0).toLocaleString()}
+              </span>
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
+              <span style={{ color: "#94a3b8" }}>复核队列</span>
+              <span style={{ color: "#94a3b8" }}>{(stackStatus?.review_queue_count ?? 0).toLocaleString()}</span>
+            </div>
+            {/* Processor PIDs */}
+            <div style={{ marginTop: 4, padding: "4px 0", borderTop: "1px solid #334155" }}>
+              <span style={{ color: "#64748b" }}>
+                raw={stackStatus?.raw_news_pid ?? "-"} dec={stackStatus?.decision_pid ?? "-"}
+                {" "}profile={stackStatus?.profile_version}/{stackStatus?.profile_status}
+              </span>
+            </div>
+            </div>
+          </div>
+        </section>
         </div>{/* 左列结束 */}
 
         {/* ── 右列 ── */}
@@ -795,6 +876,10 @@ export function RealtimeCollectorPage() {
             </span>
             <span style={{ color: "#475569", marginLeft: "auto" }}>
               DOM: <span style={{ color: jyhfStatus?.last_capture_at ? "#22c55e" : "#94a3b8" }}>{jyhfStatus?.last_capture_at ? `${jyhfStatus.capture_count_total} 条` : "未采集"}</span>
+            </span>
+            <span style={{ color: "#475569" }}>
+              Qwen: <span style={{ color: stackStatus?.qwen_dedup_ready ? "#22c55e" : "#f59e0b" }}>{stackStatus?.qwen_dedup_ready ? "✅" : "⚠️"}</span>
+              {" "}过滤: <span style={{ color: "#cbd5e1" }}>{stackStatus?.prefilter_skipped ?? "-"}</span>
             </span>
           </div>
         </section>
