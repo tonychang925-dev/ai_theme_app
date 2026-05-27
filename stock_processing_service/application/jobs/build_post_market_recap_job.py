@@ -997,6 +997,23 @@ class BuildPostMarketRecapJob:
 
             cycle_joined = bool(cycle)
 
+            # P3-5: 从 capital 提取资金流字段
+            total_inflow = float(
+                capital.get("main_net_inflow_sum")
+                or capital.get("total_inflow")
+                or 0
+            )
+            leader_inflow = float(
+                capital.get("leader_main_net_inflow")
+                or capital.get("leader_inflow")
+                or 0
+            )
+            theme_kline = (
+                str(capital.get("capital_focus_score") or "")
+                or str(capital.get("final_cycle_state") or "")
+                or str(cycle.get("final_cycle_state") or "")
+            )
+
             reviews.append({
                 "subject_key": sk,
                 "theme_name": theme_name,
@@ -1009,6 +1026,9 @@ class BuildPostMarketRecapJob:
                     cycle.get("final_mainline_alive")
                 ),
                 "capital_validation": "NEUTRAL",
+                "total_inflow": total_inflow,
+                "leader_inflow": leader_inflow,
+                "theme_kline": theme_kline,
                 "leader_stocks": leader_stocks,
                 "event_chain": [],
                 "action_advice": "",

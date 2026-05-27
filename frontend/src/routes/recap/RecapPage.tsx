@@ -585,6 +585,14 @@ function sectionMap(payload: RecapViewModelV2 | null) {
   return map;
 }
 
+function _fmtAmount(value: number | null | undefined): string {
+  if (value == null || value === 0) return "--";
+  const abs = Math.abs(value);
+  if (abs >= 1e8) return (value / 1e8).toFixed(2) + "亿";
+  if (abs >= 1e4) return (value / 1e4).toFixed(2) + "万";
+  return value.toFixed(0);
+}
+
 /** 将 dailyReview.theme_reviews 映射为 5/22 样式 ThemeSummaryRow */
 function buildThemeSummaryRowsFromDailyReview(
   dailyReview: DailyReviewView,
@@ -596,9 +604,9 @@ function buildThemeSummaryRowsFromDailyReview(
     tier: tr.final_mainline_alive ? "主线" : "强分支",
     eventScore: (tr.mainline_strength_score ?? 0) > 0 ? tr.mainline_strength_score.toFixed(2) : "--",
     marketScore: (tr.fade_risk_score ?? 0) > 0 ? tr.fade_risk_score.toFixed(2) : "--",
-    totalInflow: (tr as any).total_inflow != null ? String((tr as any).total_inflow) : "--",
-    leaderInflow: (tr as any).leader_inflow != null ? String((tr as any).leader_inflow) : "--",
-    themeKline: (tr as any).theme_kline ?? "--",
+    totalInflow: _fmtAmount(tr.total_inflow),
+    leaderInflow: _fmtAmount(tr.leader_inflow),
+    themeKline: tr.theme_kline ?? "--",
     cycleStage: cycleMap.get(tr.theme_name) ?? zh(tr.theme_stage),
     actionAdvice: tr.action_advice || zh(tr.theme_stage),
     conclusion: tr.conclusion || (tr.final_mainline_alive ? "主线存活" : "观察"),

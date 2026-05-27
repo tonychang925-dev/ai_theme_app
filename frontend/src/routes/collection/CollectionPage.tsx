@@ -95,9 +95,7 @@ export function CollectionPage() {
     tushareKline: true,
     dragonTiger: true,
     abnormalSignal: true,
-    strongStockWatch: true,
     leaderLlm: true,
-    recapSnapshot: true,
   });
   const [abnormalFilters, setAbnormalFilters] = useState({
     turnoverRate: true,
@@ -211,9 +209,7 @@ export function CollectionPage() {
           tushare_kline: options.tushareKline,
           dragon_tiger: options.dragonTiger,
           abnormal_signal: options.abnormalSignal,
-          strong_stock_watch: options.strongStockWatch,
           leader_llm: options.leaderLlm,
-          recap_snapshot: options.recapSnapshot,
           auto_build_v2_if_missing: false,
         },
         tushare_pause_seconds: 0.1,
@@ -370,26 +366,10 @@ export function CollectionPage() {
             <label className="collection-check">
               <input
                 type="checkbox"
-                checked={options.strongStockWatch}
-                onChange={() => setOptions((s) => ({ ...s, strongStockWatch: !s.strongStockWatch }))}
-              />
-              <span>强势股跟踪池</span>
-            </label>
-            <label className="collection-check">
-              <input
-                type="checkbox"
                 checked={options.leaderLlm}
                 onChange={() => setOptions((s) => ({ ...s, leaderLlm: !s.leaderLlm }))}
               />
               <span>龙头候选LLM裁决</span>
-            </label>
-            <label className="collection-check">
-              <input
-                type="checkbox"
-                checked={options.recapSnapshot}
-                onChange={() => setOptions((s) => ({ ...s, recapSnapshot: !s.recapSnapshot }))}
-              />
-              <span>盘后复盘快照生成</span>
             </label>
           </div>
 
@@ -454,6 +434,9 @@ export function CollectionPage() {
             <button type="button" className="tag tag-button tag-active" onClick={handleStart} disabled={loading || job?.status === "running"}>
               开始采集
             </button>
+            <button type="button" className="tag tag-button" onClick={() => navigateTo(`/recap?date=${tradeDate}&report_type=post_market`)}>
+              前往当日复盘 →
+            </button>
             <button type="button" className="tag tag-button" onClick={handleCancel} disabled={!job?.can_cancel}>
               取消
             </button>
@@ -498,7 +481,11 @@ export function CollectionPage() {
           <section className="workspace-card">
             <span className="metric-label section-title">任务进度</span>
             <div className="collection-task-list">
-              {(job?.tasks ?? []).map((task) => (
+              {(job?.tasks ?? []).filter((task: any) => {
+                const key = String(task.key || task.title || "").toLowerCase();
+                const forbidden = ["recap", "daily_review", "post_market", "strong_stock", "derived", "snapshot_generate"];
+                return !forbidden.some((p) => key.includes(p));
+              }).map((task) => (
                 <article className="collection-task-card" key={task.key} data-status={task.status}>
                   <div className="collection-task-head">
                     <div>

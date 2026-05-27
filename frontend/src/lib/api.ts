@@ -210,6 +210,9 @@ export interface ThemeReview {
   final_cycle_state: string;
   final_mainline_alive: boolean;
   capital_validation?: string;
+  total_inflow?: number;
+  leader_inflow?: number;
+  theme_kline?: string;
   leader_stocks: LeaderStockBrief[];
   event_chain: ThemeEventItem[];
   action_advice: string;
