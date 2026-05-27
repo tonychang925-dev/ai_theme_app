@@ -326,6 +326,42 @@ export interface MarketSummaryReview {
   diagnostics?: Record<string, unknown>;
 }
 
+export interface ThemeReviewV2 {
+  subject_key: string;
+  theme_name: string;
+  tier: "mainline" | "strong_branch" | "watch" | "fading" | "unknown";
+  total_inflow: number | null;
+  leader_inflow: number | null;
+  theme_kline: string | null;
+  event_score: number | null;
+  market_score: number | null;
+  mainline_strength_score: number | null;
+  fade_risk_score: number | null;
+  cycle_stage: string;
+  final_cycle_state: string;
+  final_mainline_alive: boolean;
+  action_advice: string;
+  conclusion: string;
+  leader_stocks?: PostMarketDailyReviewV2ModuleRow[];
+  event_chain?: PostMarketDailyReviewV2ModuleRow[];
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface ThemeCapitalReview {
+  subject_key: string;
+  theme_name: string;
+  tier: "mainline" | "strong_branch" | "watch" | "unknown";
+  total_inflow: number;
+  top3_inflow: number | null;
+  leader_inflow: number | null;
+  inflow_stock_count: number | null;
+  theme_kline: string | null;
+  cycle_stage: string | null;
+  action: string | null;
+  rank_order: number;
+  diagnostics?: Record<string, unknown>;
+}
+
 export type PostMarketDailyReviewV2ModuleRow = Record<string, unknown>;
 
 export interface PostMarketDailyReviewV2 {
@@ -342,8 +378,8 @@ export interface PostMarketDailyReviewV2 {
     recap_generate_status: "success" | "skipped_idempotent" | "failed";
   };
   market_summary: MarketSummaryReview;
-  theme_reviews: PostMarketDailyReviewV2ModuleRow[];
-  theme_capital_reviews: PostMarketDailyReviewV2ModuleRow[];
+  theme_reviews: ThemeReviewV2[];
+  theme_capital_reviews: ThemeCapitalReview[];
   strong_stock_reviews: PostMarketDailyReviewV2ModuleRow[];
   watchlist_reviews: PostMarketDailyReviewV2ModuleRow[];
   stock_capital_reviews: PostMarketDailyReviewV2ModuleRow[];
