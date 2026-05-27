@@ -23,6 +23,13 @@ venv/
 theme_data_complete/
 tmp/
 
+# Runtime artifacts
+logs/realtime/
+logs/*.log
+*.pid
+*.status.json
+*.jsonl.tmp
+
 # Electron build outputs
 dist-electron/
 desktop/dist-electron/
