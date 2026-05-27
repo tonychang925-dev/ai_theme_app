@@ -403,6 +403,27 @@ export interface StrongStockReviewV2 {
   diagnostics: Record<string, unknown>;
 }
 
+export interface WatchlistReviewV2 {
+  stock_id: string;
+  stock_code: string;
+  stock_name: string;
+  subject_key: string;
+  theme_name: string;
+  category: "重点观察" | "弱转强观察" | "风险观察" | "其他";
+  role_label: string;
+  stage: string | null;
+  action: string | null;
+  volume_ratio: number | null;
+  pattern: string | null;
+  flags: string[];
+  dragon_tiger_days: number | null;
+  catalyst: string | null;
+  abnormal_labels: string[];
+  priority: number;
+  reason: string;
+  diagnostics?: Record<string, unknown>;
+}
+
 export type PostMarketDailyReviewV2ModuleRow = Record<string, unknown>;
 
 export interface PostMarketDailyReviewV2 {
@@ -422,7 +443,7 @@ export interface PostMarketDailyReviewV2 {
   theme_reviews: ThemeReviewV2[];
   theme_capital_reviews: ThemeCapitalReview[];
   strong_stock_reviews: StrongStockReviewV2[];
-  watchlist_reviews: PostMarketDailyReviewV2ModuleRow[];
+  watchlist_reviews: WatchlistReviewV2[];
   stock_capital_reviews: PostMarketDailyReviewV2ModuleRow[];
   abnormal_reviews: PostMarketDailyReviewV2ModuleRow[];
   money_flow_reviews: PostMarketDailyReviewV2ModuleRow[];
