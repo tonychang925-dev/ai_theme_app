@@ -362,6 +362,47 @@ export interface ThemeCapitalReview {
   diagnostics?: Record<string, unknown>;
 }
 
+export interface StrongStockReviewV2 {
+  stock_id: string;
+  stock_code: string;
+  stock_name: string;
+  subject_key: string;
+  theme_name: string;
+  role: "leader" | "sub_leader" | "trend" | "watch" | "observe_only" | "reject" | "unknown";
+  role_label: string;
+  candidate_level: "formal" | "observe_only" | "reject" | "unknown";
+  candidate_source: string;
+  composite_score: number | null;
+  purity_score: number | null;
+  leading_score: number | null;
+  capital_score: number | null;
+  structure_score: number | null;
+  resilience_score: number | null;
+  money_flow: {
+    main_net_inflow: number | null;
+    money_flow_tier: string | null;
+    role_enhanced: string | null;
+  };
+  kline: {
+    position_label: string | null;
+    pattern_labels: string[];
+    pattern_summary: string | null;
+  };
+  support: {
+    support_type: string | null;
+    support_score: number | null;
+    support_reason: string | null;
+  };
+  llm: {
+    judgement: string | null;
+    reason: string | null;
+    confirmation_basis: string | null;
+  };
+  rationale: string;
+  rejection_reason?: string | null;
+  diagnostics: Record<string, unknown>;
+}
+
 export type PostMarketDailyReviewV2ModuleRow = Record<string, unknown>;
 
 export interface PostMarketDailyReviewV2 {
@@ -380,7 +421,7 @@ export interface PostMarketDailyReviewV2 {
   market_summary: MarketSummaryReview;
   theme_reviews: ThemeReviewV2[];
   theme_capital_reviews: ThemeCapitalReview[];
-  strong_stock_reviews: PostMarketDailyReviewV2ModuleRow[];
+  strong_stock_reviews: StrongStockReviewV2[];
   watchlist_reviews: PostMarketDailyReviewV2ModuleRow[];
   stock_capital_reviews: PostMarketDailyReviewV2ModuleRow[];
   abnormal_reviews: PostMarketDailyReviewV2ModuleRow[];

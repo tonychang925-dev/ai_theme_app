@@ -67,3 +67,74 @@ def test_daily_review_v2_builder_reports_missing_snapshot() -> None:
     coverage = payload["diagnostics"]["module_coverage"]
     assert coverage["theme_reviews"]["source"] == "none"
     assert coverage["dragon_tiger_reviews"]["source"] == "none"
+
+
+def test_daily_review_v2_builder_maps_ready_strong_stock_reviews() -> None:
+    recap_doc = {
+        "strong_stock_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "role": "leader",
+                "watch_status": "formal",
+                "watch_score": 88.5,
+                "support_type": "ma20",
+                "support_score": 0.72,
+                "money_flow_tier": "strong",
+                "role_enhanced": "leader",
+                "main_net_inflow": 120000000,
+                "position_label": "高位震荡",
+                "pattern_labels": ["放量", "承接"],
+                "rationale": "资金与结构共振",
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.strong",
+    )
+
+    rows = payload["strong_stock_reviews"]
+    assert len(rows) == 1
+    assert rows[0]["stock_code"] == "002361.SZ"
+    assert rows[0]["role"] == "leader"
+    assert rows[0]["role_label"] == "leader"
+    assert rows[0]["money_flow"]["main_net_inflow"] == 120000000
+    assert rows[0]["kline"]["pattern_labels"] == ["放量", "承接"]
+
+    coverage = payload["diagnostics"]["module_coverage"]["strong_stock_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["row_count"] == 1
+    assert coverage["missing_fields"] == []
+
+
+def test_daily_review_v2_builder_marks_strong_stock_missing_fields_partial() -> None:
+    recap_doc = {
+        "strong_stock_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "watch_status": "formal",
+            }
+        ],
+        "report": {"sections": [{"heading": "强势股分层", "items": ["legacy"]}]},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.strong.partial",
+    )
+
+    coverage = payload["diagnostics"]["module_coverage"]["strong_stock_reviews"]
+    assert coverage["status"] == "partial"
+    assert coverage["source"] == "legacy_sections"
+    assert coverage["row_count"] == 1
+    assert "subject_key" in coverage["missing_fields"]
+    assert "theme_name" in coverage["missing_fields"]

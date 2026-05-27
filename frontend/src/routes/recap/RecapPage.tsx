@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
   fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
-  type DailyReviewView, type PostMarketDailyReviewV2, type ThemeCapitalReview, type ThemeReviewV2,
+  type DailyReviewView, type PostMarketDailyReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2,
   fetchPostMarketReadiness, fetchPostMarketJobsStatus,
   generatePostMarketDerivedData, generatePostMarketRecap,
   type PostMarketReadinessView, type PostMarketJobsStatusView,
@@ -141,6 +141,37 @@ function buildThemeCapitalFlowRowsFromV2(rows: ThemeCapitalReview[]): ThemeCapit
       stage: zh(item.cycle_stage || "--"),
       action: zh(item.action || "--"),
     }));
+}
+
+function buildStrongStockGroupsFromV2(rows: StrongStockReviewV2[]): Array<[string, StrongStockRow[]]> {
+  const groups = new Map<string, StrongStockRow[]>();
+  for (const item of rows) {
+    if (item.role === "reject") continue;
+    const theme = item.theme_name || "未分类";
+    const row: StrongStockRow = {
+      role: zh(item.role_label || item.role || "--"),
+      stockName: item.stock_name || item.stock_code || "--",
+      compositeScore: item.composite_score != null ? item.composite_score.toFixed(2) : "--",
+      purityScore: item.purity_score != null ? item.purity_score.toFixed(2) : "--",
+      leadingScore: item.leading_score != null ? item.leading_score.toFixed(2) : "--",
+      capitalScore: item.capital_score != null ? item.capital_score.toFixed(2) : zh(item.money_flow.money_flow_tier || "--"),
+      structureScore: item.structure_score != null ? item.structure_score.toFixed(2) : zh(item.kline.position_label || "--"),
+      resilienceScore: item.resilience_score != null ? item.resilience_score.toFixed(2) : "--",
+      moneyFlow: formatReviewAmount(item.money_flow.main_net_inflow),
+      klinePosition: zh(item.kline.position_label || "--"),
+      klinePattern: zh(item.kline.pattern_labels.join("/") || item.kline.pattern_summary || "--"),
+      llmRole: zh(item.llm.judgement || item.money_flow.role_enhanced || "--"),
+      llmLeaderStatus: zh(item.candidate_level || "--"),
+      llmConfirmationBasis: zh(item.llm.confirmation_basis || "--"),
+      llmReason: zh(item.llm.reason || "--"),
+      rationale: zh(item.rationale || "--"),
+      raw: `${item.role} ${item.stock_name}`,
+    };
+    const current = groups.get(theme) ?? [];
+    current.push(row);
+    groups.set(theme, current);
+  }
+  return Array.from(groups.entries()).filter(([, groupedRows]) => groupedRows.length > 0);
 }
 
 function isV2ModuleReady(
@@ -692,6 +723,10 @@ export function RecapPage() {
   const auxSection = sections.get("龙虎榜") ?? sections.get("龙虎榜与来源链") ?? sections.get("失效条件") ?? [];
   const cycleByTheme = useMemo(() => buildThemeCycleMap(cycleSection), [cycleSection]);
   const strongStockGroups = useMemo(() => {
+    const v2Rows = dailyReviewV2?.strong_stock_reviews;
+    if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "strong_stock_reviews", v2Rows)) {
+      return buildStrongStockGroupsFromV2(v2Rows ?? []);
+    }
     const groups = new Map<string, StrongStockRow[]>();
     for (const item of strongStockSection) {
       const parsed = splitThemeLine(item);
@@ -703,7 +738,7 @@ export function RecapPage() {
       groups.set(key, current);
     }
     return Array.from(groups.entries()).filter(([, rows]) => rows.length > 0);
-  }, [strongStockSection]);
+  }, [dailyReviewV2PreviewEnabled, dailyReviewV2, strongStockSection]);
   const watchlistRows = useMemo(() => {
     const rows = watchlistSection.map((item) => parseWatchlistLine(item));
     rows.sort((a, b) => {
