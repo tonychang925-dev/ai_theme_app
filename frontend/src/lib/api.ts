@@ -809,6 +809,13 @@ export interface NewChainRealtimeStatus {
   brief_rebuild?: Record<string, unknown>;
   redis_streams?: Record<string, { length: number; groups: number }>;
   redis_error?: string;
+  qwen_dedup_ready?: boolean;
+  qwen_dedup_calls?: number;
+  semantic_dedup_count?: number;
+  prefilter_skipped?: number;
+  news_dedup_skipped?: number;
+  news_published_total?: number;
+  hard_protect_count?: number;
 }
 
 export interface NewChainRealtimeResult {

@@ -29,23 +29,19 @@ class RealtimeStackManager:
         self._start_lock = asyncio.Lock()
 
     async def status(self) -> dict[str, Any]:
-        lines: list[str] = ["New-chain Stack Status", "======================", f"Project: {self._project_root}", ""]
-
-        web_running = await self._is_http_healthy(f"http://127.0.0.1:{self._web_port}/healthz")
-        sps_running = await self._is_http_healthy(f"http://127.0.0.1:{self._sps_port}/healthz")
-
-        lines.extend(
-            [
-                "[web_app_service]",
-                f"[{'up' if web_running else 'down'}]   web_app_service:{self._web_port}",
-                f"[{'ok' if web_running else 'fail'}]   web_app_service /healthz",
-                "",
-                "[stock_processing_service]",
-                f"[{'up' if sps_running else 'down'}]   stock_processing_service:{self._sps_port}",
-                f"[{'ok' if sps_running else 'fail'}]   stock_processing_service /healthz",
-            ]
-        )
-        return self._cmd_result(True, "\n".join(lines) + "\n", "", ["web_app_service:realtime_stack", "status"], 0)
+        """代理 SPS 的 /api/v1/realtime/status，返回前端需要的结构化数据。"""
+        try:
+            import httpx as _httpx
+            async with _httpx.AsyncClient(timeout=10.0, trust_env=False) as client:
+                r = await client.get(f"http://127.0.0.1:{self._sps_port}/api/v1/realtime/status")
+                if r.status_code == 200:
+                    return r.json()
+        except Exception:
+            pass
+        # fallback: 返回默认结构
+        return {"running": False, "raw_news_pid": None, "decision_pid": None,
+                "pending_count": 0, "dead_letter_count": 0, "run_id": "",
+                "profile_version": "?", "profile_status": "?", "last_error": "SPS unreachable"}
 
     async def start(self, payload: dict[str, Any] | None = None) -> dict[str, Any]:
         payload = payload or {}
@@ -61,13 +57,16 @@ class RealtimeStackManager:
             stderr: list[str] = []
 
             if await self._is_http_healthy(f"http://127.0.0.1:{self._sps_port}/healthz"):
-                stdout.append(f"[skip] stock_processing_service:{self._sps_port} already running")
+                stdout.append(f"[ok] stock_processing_service:{self._sps_port} already running")
             else:
                 ok, msg = await self._start_sps()
                 stdout.append(msg if ok else "")
                 stderr.append("" if ok else msg)
                 if not ok:
                     return self._cmd_result(False, "\n".join(filter(None, stdout)), "\n".join(filter(None, stderr)), ["web_app_service:realtime_stack", "start"], 1)
+
+            # 异步触发 SPS 启动实时管线（不阻塞按钮响应）
+            asyncio.create_task(self._trigger_sps_start(stdout, stderr))
 
             if bool(payload.get("with_frontend")):
                 ok, msg = await self._start_frontend()
@@ -162,6 +161,20 @@ class RealtimeStackManager:
         self._sps_process = None
         log_fd.close()
         return False, "[fail] stock_processing_service did not become healthy within 30s"
+
+    async def _trigger_sps_start(self, stdout: list, stderr: list) -> None:
+        """异步触发 SPS 启动管线，不阻塞按钮响应。"""
+        await asyncio.sleep(3)  # 等 SPS 完全就绪
+        try:
+            import httpx as _httpx
+            async with _httpx.AsyncClient(timeout=30.0, trust_env=False) as _client:
+                r = await _client.get(f"http://127.0.0.1:{self._sps_port}/api/v1/realtime/start")
+                if r.status_code == 200:
+                    stdout.append("[ok] realtime pipeline started")
+                else:
+                    stderr.append(f"[warn] SPS start returned {r.status_code}")
+        except Exception as exc:
+            stderr.append(f"[warn] SPS start failed: {exc}")
 
     async def _start_frontend(self) -> tuple[bool, str]:
         frontend_dir = self._project_root / "frontend"

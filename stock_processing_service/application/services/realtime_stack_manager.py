@@ -392,6 +392,23 @@ class RealtimeStackManager:
                     }
                 except Exception:
                     stream_info[stream_name] = {"length": -1, "groups": -1}
+            # DB collector / Qwen status from latest status file
+            try:
+                import glob as _glob, json as _json
+                status_files = sorted(_glob.glob(str(self._log_dir / "db_collector_realtime_*.status.json")))
+                if status_files:
+                    with open(status_files[-1]) as f:
+                        dc = _json.load(f)
+                    base["qwen_dedup_ready"] = dc.get("qwen_dedup_ready", False)
+                    base["qwen_dedup_calls"] = dc.get("qwen_dedup_call_count", 0)
+                    base["semantic_dedup_count"] = dc.get("semantic_dedup_batch_count", 0)
+                    base["prefilter_skipped"] = dc.get("news_prefilter_skipped", 0)        # LLM低质量skip
+                    base["news_dedup_skipped"] = dc.get("news_dedup_skipped", 0)           # 硬去重skip
+                    base["news_published_total"] = dc.get("news_published_total", 0)        # 最终feed通过
+                    base["hard_protect_count"] = dc.get("hard_protect_count", 0)            # 白名单保护
+            except Exception:
+                base["qwen_dedup_ready"] = False
+
             # pending / dead letter
             try:
                 pending_info = await r.xinfo_stream("stream:events:pending")
