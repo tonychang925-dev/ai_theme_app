@@ -35,6 +35,7 @@
     "custom-commands": 11
   },
   "promptQueueUseCount": 619,
+  "showExpandedTodos": true,
   "cachedGrowthBookFeatures": {
     "tengu_idle_amber_finch": false,
     "tengu_auto_notice_once": false,
