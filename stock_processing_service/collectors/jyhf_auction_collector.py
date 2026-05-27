@@ -31,6 +31,29 @@ _AUCTION_END = "09:26"
 _DEFAULT_INTERVAL = 3.0  # 秒
 
 
+def _parse_auction_order_book(trade_five: list, current: float) -> dict | None:
+    """解析竞价五档盘口，计算买卖失衡。
+
+    tradeFive 格式: [ask1_price, ask1_vol, ask2_price, ..., bid1_price, bid1_vol, ...]
+    前 10 项 = 5 档卖盘 (ASK), 后 10 项 = 5 档买盘 (BID)
+    """
+    if not trade_five or len(trade_five) < 20:
+        return None
+    ask_vol = 0.0
+    bid_vol = 0.0
+    for i in range(0, 10, 2):
+        ask_vol += float(trade_five[i + 1]) if i + 1 < len(trade_five) else 0
+    for i in range(10, 20, 2):
+        bid_vol += float(trade_five[i + 1]) if i + 1 < len(trade_five) else 0
+    return {
+        "ask_vol": round(ask_vol, 2),
+        "bid_vol": round(bid_vol, 2),
+        "imbalance": round(bid_vol - ask_vol, 2),
+        "imbalance_ratio": round((bid_vol - ask_vol) / ask_vol, 4) if ask_vol > 0 else 0,
+        "direction": "inflow" if bid_vol > ask_vol else "outflow" if ask_vol > bid_vol else "neutral",
+    }
+
+
 class JyhfAuctionCollector:
     """9:15-9:26 竞价窗口专用采集器，高频率采集候选股票。"""
 
@@ -141,6 +164,9 @@ class JyhfAuctionCollector:
                         )
                     data = r.json().get("data", {})
                     if data and data.get("current"):
+                        # 五档盘口
+                        trade_five = data.get("tradeFive", [])
+                        order_book = _parse_auction_order_book(trade_five, float(data["current"])) if trade_five else None
                         return {
                             "stock_id": c["stock_id"],
                             "current": float(data["current"]),
@@ -148,7 +174,7 @@ class JyhfAuctionCollector:
                             "amount": float(data.get("amount", 0)),
                             "vol": float(data.get("vol", 0)),
                             "open": float(data.get("open", 0)),
-                            "time": str(data.get("time", "")),
+                            "order_book": order_book,
                         }
                 except Exception as exc:
                     logger.debug("Fetch %s failed: %s", sid, exc)
@@ -168,10 +194,12 @@ class JyhfAuctionCollector:
             ok = 0
             for r in results:
                 if r:
+                    order_book_json = json.dumps(r["order_book"], ensure_ascii=False) if r.get("order_book") else "{}"
                     rows_to_insert.append((
                         trade_date, now,
                         r["stock_id"], r["current"], r["pctChg"],
                         r["amount"], r["vol"], r["open"],
+                        order_book_json,
                     ))
                     ok += 1
                 else:
@@ -180,9 +208,9 @@ class JyhfAuctionCollector:
             if rows_to_insert:
                 await pool.executemany(
                     """INSERT INTO jyhf_stock_quote_snapshot
-                       (trade_date, ts, stock_id, current, pct_chg, amount, vol, open, source_endpoint)
-                       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, 'jyhf_auction')""",
-                    [(td, ts, sid, curr, pct, amt, vol, op) for td, ts, sid, curr, pct, amt, vol, op in rows_to_insert],
+                       (trade_date, ts, stock_id, current, pct_chg, amount, vol, open, source_endpoint, raw_json)
+                       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, 'jyhf_auction', $9::jsonb)""",
+                    [(td, ts, sid, curr, pct, amt, vol, op, ob) for td, ts, sid, curr, pct, amt, vol, op, ob in rows_to_insert],
                 )
 
             self.stats["points_collected"] += len(rows_to_insert)
