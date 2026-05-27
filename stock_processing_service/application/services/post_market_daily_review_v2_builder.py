@@ -51,7 +51,7 @@ class PostMarketDailyReviewV2Builder:
         stock_capital_reviews, stock_capital_missing_fields = self._build_stock_capital_reviews(doc)
         abnormal_reviews, abnormal_missing_fields = self._build_abnormal_reviews(doc)
         money_flow_reviews, money_flow_missing_fields = self._build_money_flow_reviews(doc)
-        dragon_tiger_reviews, dragon_tiger_missing_fields = self._build_dragon_tiger_reviews(doc)
+        dragon_tiger_reviews, dragon_tiger_missing_fields, dragon_tiger_errors = self._build_dragon_tiger_reviews(doc)
         legacy_section_counts = self._legacy_section_counts(doc)
         diagnostics = self._build_diagnostics(
             doc,
@@ -76,6 +76,7 @@ class PostMarketDailyReviewV2Builder:
                 "money_flow_reviews": money_flow_missing_fields,
                 "dragon_tiger_reviews": dragon_tiger_missing_fields,
             },
+            errors=dragon_tiger_errors,
         )
         derived_status = self._derived_data_status(doc, diagnostics)
         recap_status = "success" if doc else "failed"
@@ -746,41 +747,57 @@ class PostMarketDailyReviewV2Builder:
 
         return rows, sorted(missing_fields)
 
-    def _build_dragon_tiger_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
-        source_key = "dragon_tiger_reviews"
-        source_rows = recap_doc.get(source_key)
+    def _build_dragon_tiger_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str], list[str]]:
+        source_key, source_rows = self._dragon_tiger_source(recap_doc)
         if not isinstance(source_rows, list):
-            context = recap_doc.get("report_context")
-            context = context if isinstance(context, dict) else {}
-            source_key = "report_context.dragon_tiger"
-            source_rows = context.get("dragon_tiger")
-            if not isinstance(source_rows, list):
-                source_key = "report_context.dragon_tiger_object"
-                source_rows = context.get("dragon_tiger_object")
-        if not isinstance(source_rows, list):
-            return [], []
+            return [], [], []
 
         rows: list[dict[str, Any]] = []
         missing_fields: set[str] = set()
-        for source in source_rows[:30]:
+        errors: list[str] = []
+        legacy_count = int(self._legacy_section_counts(recap_doc).get(MODULE_SECTION_HEADINGS["dragon_tiger_reviews"]) or 0)
+        source_limit = legacy_count if legacy_count > 0 else 30
+        for source in source_rows[:source_limit]:
             if not isinstance(source, dict):
                 continue
-            stock_code = self._text(source.get("stock_code") or source.get("stock_id"))
-            stock_name = self._text(source.get("stock_name"))
-            subject_key = self._nullable_text(source.get("subject_key"))
-            theme_name = self._nullable_text(source.get("theme_name") or source.get("subject_name") or source.get("resolved_theme_name"))
-            net_buy = self._float_or_none(self._first_present(source, "net_buy", "net_buy_amount", "side_net"))
-            buy_amount = self._float_or_none(source.get("buy_amount"))
-            sell_amount = self._float_or_none(source.get("sell_amount"))
-            hot_money_name = self._nullable_text(source.get("hot_money_name") or source.get("seat_name"))
-            institution_seat_count = self._int_or_none(source.get("institution_seat_count"))
+            if not self._dragon_tiger_source_valid(source_key, source):
+                errors.append(f"dragon_tiger_reviews source rejected: {source_key}")
+                continue
+            stock_code = self._text(self._first_present(source, "stock_code", "stock_id", "code"))
+            stock_name = self._text(self._first_present(source, "stock_name", "name"))
+            subject_key = self._nullable_text(
+                self._first_present(source, "subject_key", "theme_subject_key", "subject_id", "bizKey", "theme_key")
+            )
+            theme_name = self._nullable_text(
+                self._first_present(source, "theme_name", "subject_name", "resolved_theme_name")
+            )
+            net_buy = self._float_or_none(
+                self._first_present(source, "net_buy", "net_buy_amount", "lhb_net_buy", "net_amount")
+            )
+            buy_amount = self._float_or_none(
+                self._first_present(source, "buy_amount", "total_buy", "lhb_buy_amount", "buy", "billboard_buy_amount")
+            )
+            sell_amount = self._float_or_none(
+                self._first_present(source, "sell_amount", "total_sell", "lhb_sell_amount", "sell", "billboard_sell_amount")
+            )
+            hot_money_name = self._nullable_text(
+                self._first_present(source, "hot_money_name", "famous_seat", "seat_name", "hot_money")
+            )
+            institution_seat_count = self._int_or_none(
+                self._first_present(source, "institution_seat_count", "org_seat_count", "institution_count")
+            )
             seat_type = self._seat_type(source, hot_money_name, institution_seat_count)
-            reason = self._nullable_text(source.get("reason") or source.get("list_reason"))
+            reason = self._nullable_text(self._first_present(source, "reason", "lhb_reason", "list_reason"))
             continuous_days = self._int_or_none(source.get("continuous_days") or source.get("dragon_tiger_days"))
-            side_summary = self._text(source.get("side_summary") or self._dragon_tiger_side_summary(net_buy, buy_amount, sell_amount))
+            side_summary = self._text(
+                self._first_present(source, "side_summary", "summary", "conclusion")
+                or self._dragon_tiger_side_summary(net_buy, buy_amount, sell_amount)
+            )
             seat_summary = [
                 str(item).strip()
-                for item in self._list(source.get("seat_summary") or source.get("seat_summaries"))
+                for item in self._dragon_tiger_seat_summary(
+                    self._first_present(source, "seat_summary", "seats", "seat_details", "seat_summaries")
+                )
                 if str(item).strip()
             ]
             if not seat_summary and hot_money_name:
@@ -827,7 +844,7 @@ class PostMarketDailyReviewV2Builder:
                 },
             })
 
-        return rows, sorted(missing_fields)
+        return rows, sorted(missing_fields), sorted(set(errors))
 
     def _build_watchlist_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
         source_key, source_rows = self._first_list_source(
@@ -971,6 +988,7 @@ class PostMarketDailyReviewV2Builder:
         legacy_section_counts: dict[str, int],
         structured_counts: dict[str, int] | None = None,
         missing_fields: dict[str, list[str]] | None = None,
+        errors: list[str] | None = None,
     ) -> dict[str, Any]:
         source_tables = self._source_table_counts(recap_doc)
         structured_counts = structured_counts or {}
@@ -987,16 +1005,22 @@ class PostMarketDailyReviewV2Builder:
             legacy_count = int(legacy_section_counts.get(heading) or 0)
             row_count = int(structured_counts.get(module_key) or 0)
             module_missing = list(missing_fields.get(module_key) or [])
+            message = (
+                f"DailyReview V2 {module_key} structured rows={row_count}; "
+                f"legacy section `{heading}` count={legacy_count}."
+            )
+            if module_key == "dragon_tiger_reviews":
+                if row_count == 0 and legacy_count == 0:
+                    message = "no_dragon_tiger_day"
+                elif row_count == 0 and legacy_count > 0:
+                    message = "structured dragon_tiger_reviews unavailable; fallback to legacy section"
             coverage[module_key] = self._coverage(
                 module_key=module_key,
                 row_count=row_count,
                 legacy_count=legacy_count,
                 missing_fields=module_missing,
                 upstream_tables=source_tables,
-                message=(
-                    f"DailyReview V2 {module_key} structured rows={row_count}; "
-                    f"legacy section `{heading}` count={legacy_count}."
-                ),
+                message=message,
             )
 
         warnings: list[str] = []
@@ -1009,7 +1033,7 @@ class PostMarketDailyReviewV2Builder:
             "module_coverage": coverage,
             "source_tables": source_tables,
             "warnings": warnings,
-            "errors": [] if recap_doc else ["post_market_recap_snapshot_missing"],
+            "errors": (errors or []) if recap_doc else ["post_market_recap_snapshot_missing", *(errors or [])],
             "legacy_sections_available": any(count > 0 for count in legacy_section_counts.values()),
             "legacy_section_counts": legacy_section_counts,
         }
@@ -1214,12 +1238,79 @@ class PostMarketDailyReviewV2Builder:
                 result[key] = row
         return result
 
+    @classmethod
+    def _dragon_tiger_source(cls, recap_doc: dict[str, Any]) -> tuple[str, list[Any] | None]:
+        source_key, rows = cls._first_list_source(
+            recap_doc,
+            (
+                ("dragon_tiger_reviews",),
+                ("report_context", "dragon_tiger"),
+                ("report_context", "dragon_tiger_object"),
+                ("dragon_tiger_object",),
+            ),
+        )
+        if isinstance(rows, list):
+            return source_key, rows
+
+        capital_rows = recap_doc.get("capital_reviews")
+        if isinstance(capital_rows, list) and any(
+            isinstance(row, dict) and cls._dragon_tiger_row_has_indicator(row)
+            for row in capital_rows
+        ):
+            return "capital_reviews", capital_rows
+        return "", None
+
+    @classmethod
+    def _dragon_tiger_source_valid(cls, source_key: str, row: dict[str, Any]) -> bool:
+        if source_key in {
+            "dragon_tiger_reviews",
+            "report_context.dragon_tiger",
+            "report_context.dragon_tiger_object",
+            "dragon_tiger_object",
+        }:
+            return True
+        if source_key == "capital_reviews":
+            return cls._dragon_tiger_row_has_indicator(row)
+        return False
+
+    @classmethod
+    def _dragon_tiger_row_has_indicator(cls, row: dict[str, Any]) -> bool:
+        key_groups = (
+            ("seat_type", "seat_category", "trader_type", "hot_money_name", "famous_seat", "seat_name", "hot_money", "institution_seat_count", "org_seat_count", "institution_count"),
+            ("net_buy", "net_buy_amount", "lhb_net_buy", "net_amount", "buy_amount", "total_buy", "lhb_buy_amount", "buy", "billboard_buy_amount", "sell_amount", "total_sell", "lhb_sell_amount", "sell", "billboard_sell_amount"),
+        )
+        for keys in key_groups:
+            if any(row.get(key) not in (None, "") for key in keys):
+                return True
+        reason = cls._text(cls._first_present(row, "reason", "lhb_reason", "list_reason"))
+        return any(token in reason for token in ("龙虎榜", "机构席位", "游资席位"))
+
+    @staticmethod
+    def _dragon_tiger_seat_summary(value: Any) -> list[Any]:
+        if isinstance(value, list):
+            return deepcopy(value)
+        if isinstance(value, str):
+            text = value.strip()
+            if not text:
+                return []
+            if text.startswith("[") and text.endswith("]"):
+                try:
+                    import json
+
+                    parsed = json.loads(text)
+                    if isinstance(parsed, list):
+                        return parsed
+                except (TypeError, ValueError):
+                    pass
+            return [text]
+        return []
+
     @staticmethod
     def _seat_type(source: dict[str, Any], hot_money_name: str | None, institution_seat_count: int | None) -> str:
-        text = str(source.get("seat_type") or "").upper()
+        text = str(source.get("seat_type") or source.get("seat_category") or source.get("trader_type") or "").upper()
         if text in {"INSTITUTION", "HOT_MONEY", "MIXED", "UNKNOWN"}:
             return text
-        raw = str(source.get("seat_type") or source.get("seat_name") or "")
+        raw = str(source.get("seat_type") or source.get("seat_category") or source.get("trader_type") or source.get("seat_name") or "")
         if institution_seat_count and institution_seat_count > 0 and hot_money_name:
             return "MIXED"
         if institution_seat_count and institution_seat_count > 0:
