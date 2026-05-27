@@ -1902,6 +1902,50 @@ async def publish_recap_to_notion_proxy(payload: PublishNotionProxyPayload):
         )
 
 
+@app.get("/api/v2/daily-review-v2")
+async def get_daily_review_v2_proxy(date: str = Query(...)):
+    _require_gate_for_flag(POST_MARKET_FLAG)
+    url = f"{_sps_base_url()}/api/v2/daily-review-v2"
+    try:
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            resp = await client.get(url, params={"date": date})
+            resp.raise_for_status()
+            return resp.json()
+    except httpx.HTTPStatusError as exc:
+        raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text)
+    except Exception as exc:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "code": "SPS_DAILY_REVIEW_V2_UNAVAILABLE",
+                "message": str(exc),
+                "upstream": url,
+            },
+        )
+
+
+@app.post("/api/v2/post-market/daily-review-v2/generate")
+async def generate_daily_review_v2_proxy(payload: dict[str, Any] | None = None):
+    _require_gate_for_flag(POST_MARKET_FLAG)
+    url = f"{_sps_base_url()}/api/v2/post-market/daily-review-v2/generate"
+    try:
+        async with httpx.AsyncClient(timeout=60.0) as client:
+            resp = await client.post(url, json=payload or {})
+            resp.raise_for_status()
+            return resp.json()
+    except httpx.HTTPStatusError as exc:
+        raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text)
+    except Exception as exc:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "code": "SPS_DAILY_REVIEW_V2_GENERATE_UNAVAILABLE",
+                "message": str(exc),
+                "upstream": url,
+            },
+        )
+
+
 @app.get("/api/collection/availability")
 @app.get("/api/v2/collection/availability")
 async def get_collection_availability(trade_date: Optional[str] = Query(default=None)):

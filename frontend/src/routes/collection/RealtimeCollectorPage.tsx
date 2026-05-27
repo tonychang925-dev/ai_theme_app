@@ -43,7 +43,7 @@ export function RealtimeCollectorPage() {
   const [auctionStatus, setAuctionStatus] = useState<JyhfAuctionStatus | null>(null);
   const [auctionBusy, setAuctionBusy] = useState(false);
   const [klineAlerts, setKlineAlerts] = useState<KlineAlertEvent[]>([]);
-  const [klineFilter, setKlineFilter] = useState<"all" | "critical" | "error" | "warning" | "info">("warning");
+  const [klineFilter, setKlineFilter] = useState<"all" | "critical" | "error" | "warning" | "info" | "auction" | "intraday">("warning");
   const [klineAlertsEnabled, setKlineAlertsEnabled] = useState(true);
   const klineEsRef = useRef<EventSource | null>(null);
   const [w2sAlerts, setW2sAlerts] = useState<W2SAlertEvent[]>([]);
@@ -463,7 +463,9 @@ export function RealtimeCollectorPage() {
         </button>
       </section>
 
-      <main className="collection-debug-grid">
+      <main className="collection-debug-grid" style={{ display: "grid", gridTemplateColumns: "380px 1fr", gap: 12 }}>
+        {/* ── 左列 ── */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         <section className="workspace-card collection-debug-control">
           <span className="metric-label section-title">控制面板 · 实时采集</span>
           <p className="subtle" style={{marginTop:4,marginBottom:12}}>
@@ -677,7 +679,10 @@ export function RealtimeCollectorPage() {
             </span>
           </div>
         </section>
+        </div>{/* 左列结束 */}
 
+        {/* ── 右列 ── */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         <section className="workspace-card">
           <span className="metric-label section-title">弱转强观察</span>
           <div style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 4, marginBottom: 8, flexWrap: "wrap" }}>
@@ -774,25 +779,28 @@ export function RealtimeCollectorPage() {
               </div>
             ))}
           </div>
+          <div style={{ marginTop: 8, padding: "6px 10px", background: "#1e293b", borderRadius: 4, fontSize: 11, display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
+            <span style={{ color: stackStatus?.running ? "#22c55e" : "#ef4444", fontWeight: 600 }}>
+              {stackStatus?.running ? "🟢 运行中" : "🔴 已停止"}
+            </span>
+            <span style={{ color: "#94a3b8" }}>
+              Run: <span style={{ color: "#cbd5e1" }}>{stackStatus?.run_id?.slice(-8) || "-"}</span>
+            </span>
+            <span style={{ color: "#94a3b8" }}>
+              原始新闻: <span style={{ color: stackStatus?.raw_news_pid ? "#22c55e" : "#ef4444" }}>{stackStatus?.raw_news_pid || "未启动"}</span>
+            </span>
+            <span style={{ color: "#94a3b8" }}>
+              决策引擎: <span style={{ color: stackStatus?.decision_pid ? "#22c55e" : "#ef4444" }}>{stackStatus?.decision_pid || "未启动"}</span>
+            </span>
+            <span style={{ color: "#94a3b8" }}>
+              待处理: <span style={{ color: (stackStatus?.pending_count ?? 0) > 100 ? "#f97316" : "#22c55e", fontWeight: 600 }}>{stackStatus?.pending_count ?? 0}</span>
+            </span>
+            <span style={{ color: "#94a3b8" }}>
+              死信: <span style={{ color: (stackStatus?.dead_letter_count ?? 0) > 10 ? "#ef4444" : "#94a3b8" }}>{stackStatus?.dead_letter_count ?? 0}</span>
+            </span>
+          </div>
         </section>
-
-        <section className="workspace-card">
-          <span className="metric-label section-title">采集器运行状态</span>
-          <pre className="collection-debug-json">
-            {stackStatus
-              ? JSON.stringify({
-                  running: stackStatus.running,
-                  run_id: stackStatus.run_id,
-                  started_at: stackStatus.started_at,
-                  profile: `${stackStatus.profile_version}/${stackStatus.profile_status}`,
-                  raw_news_pid: stackStatus.raw_news_pid,
-                  decision_pid: stackStatus.decision_pid,
-                  pending_count: stackStatus.pending_count,
-                  dead_letter_count: stackStatus.dead_letter_count,
-                }, null, 2)
-              : "暂无状态"}
-          </pre>
-        </section>
+        </div>{/* 右列结束 */}
       </main>
     </div>
   );
