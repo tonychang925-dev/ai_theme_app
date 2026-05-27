@@ -809,7 +809,7 @@ function resolvePostMarketDataMode(params: URLSearchParams): PostMarketDataMode 
   if (urlMode) {
     return urlMode;
   }
-  return normalizePostMarketDataMode(import.meta.env.VITE_POST_MARKET_DEFAULT_DATA_MODE) ?? "sections_first";
+  return normalizePostMarketDataMode(import.meta.env.VITE_POST_MARKET_DEFAULT_DATA_MODE) ?? "daily_review_v2_first";
 }
 
 export function RecapPage() {

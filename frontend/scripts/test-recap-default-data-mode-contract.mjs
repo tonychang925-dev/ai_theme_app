@@ -28,8 +28,8 @@ function assertDefaultModeResolver() {
     "default dataMode must be controlled by VITE_POST_MARKET_DEFAULT_DATA_MODE",
   );
   assert(
-    source.includes('?? "sections_first"'),
-    "missing or invalid default dataMode must fall back to sections_first",
+    source.includes('?? "daily_review_v2_first"'),
+    "missing or invalid default dataMode must fall back to daily_review_v2_first after P5.1",
   );
 }
 
@@ -76,20 +76,16 @@ function assertV2StillUsesReadyGateAndFallback() {
   }
 }
 
-function assertDefaultIsNotSwitchedInCode() {
+function assertDefaultSwitchUsesResolver() {
   assert(
     !source.includes('const dataMode = "daily_review_v2_first"'),
-    "P4.4 must not hard-code daily_review_v2_first as default",
-  );
-  assert(
-    !source.includes('VITE_POST_MARKET_DEFAULT_DATA_MODE || "daily_review_v2_first"'),
-    "P4.4 must not default the environment fallback to daily_review_v2_first",
+    "P5.1 default switch must still go through the resolver, not a hard-coded dataMode constant",
   );
 }
 
 assertDefaultModeResolver();
 assertRollbackUrlIsSupported();
 assertV2StillUsesReadyGateAndFallback();
-assertDefaultIsNotSwitchedInCode();
+assertDefaultSwitchUsesResolver();
 
 console.log("recap default data_mode contract passed");
