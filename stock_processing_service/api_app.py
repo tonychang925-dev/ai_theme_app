@@ -1901,6 +1901,105 @@ async def get_daily_review(trade_date: str = Query(..., description="YYYY-MM-DD"
     }
 
 
+@app.get("/api/v2/daily-review-v2")
+async def get_daily_review_v2(date_param: str = Query(..., alias="date", description="YYYY-MM-DD")) -> dict[str, Any]:
+    """DailyReview V2 skeleton contract.
+
+    V2-P1 exposes a complete page-level ViewModel shape and diagnostics without
+    changing RecapPage's default sections_first rendering path.
+    """
+    try:
+        d = date.fromisoformat(date_param)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid date: {date_param}") from exc
+
+    from stock_processing_service.application.services.post_market_daily_review_v2_builder import (
+        PostMarketDailyReviewV2Builder,
+    )
+
+    builder = PostMarketDailyReviewV2Builder()
+    row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
+    if not row:
+        return builder.build(trade_date=d, recap_doc=None)
+
+    payload = _normalize_recap_payload(row)
+    recap_doc = payload.get("recap_doc") or payload
+    if not isinstance(recap_doc, dict):
+        recap_doc = {}
+
+    existing = recap_doc.get("daily_review_v2")
+    if isinstance(existing, dict) and existing.get("schema_version") == "daily_review_v2":
+        return existing
+
+    return builder.build(
+        trade_date=d,
+        recap_doc=recap_doc,
+        recap_snapshot_version=str(row.get("snapshot_version") or ""),
+    )
+
+
+@app.post("/api/v2/post-market/daily-review-v2/generate")
+async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Generate and store DailyReview V2 under recap_doc.daily_review_v2."""
+    p = payload or {}
+    trade_date_str = str(p.get("trade_date") or p.get("date") or "")
+    try:
+        d = date.fromisoformat(trade_date_str)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid date: {trade_date_str}") from exc
+
+    from stock_processing_service.application.services.post_market_daily_review_v2_builder import (
+        PostMarketDailyReviewV2Builder,
+    )
+
+    row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
+    builder = PostMarketDailyReviewV2Builder()
+    if not row:
+        v2 = builder.build(trade_date=d, recap_doc=None)
+        return {
+            "ok": False,
+            "status": "failed_precondition",
+            "trade_date": trade_date_str,
+            "schema_version": v2["schema_version"],
+            "snapshot_version": v2["snapshot_version"],
+            "module_coverage": v2["diagnostics"]["module_coverage"],
+            "error_code": "POST_MARKET_RECAP_SNAPSHOT_NOT_FOUND",
+        }
+
+    normalized = _normalize_recap_payload(row)
+    recap_doc = normalized.get("recap_doc") or normalized
+    if not isinstance(recap_doc, dict):
+        recap_doc = {}
+
+    v2 = builder.build(
+        trade_date=d,
+        recap_doc=recap_doc,
+        recap_snapshot_version=str(row.get("snapshot_version") or ""),
+    )
+    updated_recap_doc = dict(recap_doc)
+    updated_recap_doc["daily_review_v2"] = v2
+
+    affected = await app.state.gateway.upsert_post_market_recap_snapshot(
+        {
+            "trade_date": d,
+            "snapshot_version": str(row.get("snapshot_version") or ""),
+            "batch_id": str(row.get("batch_id") or ""),
+            "trace_id": str(row.get("trace_id") or ""),
+            "payload": {"recap_doc": updated_recap_doc},
+            "source_name": "stock_processing_service",
+        }
+    )
+    return {
+        "ok": True,
+        "status": "success" if affected else "skipped_idempotent",
+        "trade_date": trade_date_str,
+        "schema_version": v2["schema_version"],
+        "snapshot_version": v2["snapshot_version"],
+        "affected_rows": affected,
+        "module_coverage": v2["diagnostics"]["module_coverage"],
+    }
+
+
 # ── P1: PostMarket Readiness API ──
 
 @app.get("/api/v1/post-market/derived-data/readiness")
