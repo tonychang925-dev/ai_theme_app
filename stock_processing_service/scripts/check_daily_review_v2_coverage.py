@@ -520,8 +520,8 @@ def main() -> int:
         except Exception as exc:  # noqa: BLE001 - CLI should continue through multi-date smoke.
             records, errors, blockers = [], [f"fetch_or_generate_failed: {exc}"], []
             sample = {
-                "sample_class": "failed_precondition",
-                "p5_gate": False,
+                "sample_class": "execution_error",
+                "p5_gate": True,
                 "reason": str(exc),
             }
         all_records.extend(records)
