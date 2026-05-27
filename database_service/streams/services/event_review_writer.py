@@ -436,6 +436,14 @@ class EventReviewWriter:
             except asyncio.CancelledError:
                 pass
             self._run_task = None
+        # 清理 Redis consumer
+        try:
+            stream = self.config.get("stream_name", "stream:events:decision")
+            if self.stream_manager and hasattr(self.stream_manager, 'redis'):
+                await self.stream_manager.redis.xgroup_delconsumer(stream, self.consumer_group, self.consumer_name)
+        except Exception:
+            pass
+
         logger.info("🛑 事件复核队列写入服务已停止")
 
     async def run(self):

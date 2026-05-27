@@ -160,6 +160,16 @@ class EventThemeMatcher:
                 pass
             self._theme_service_client = None
 
+        # 清理 Redis consumer
+        try:
+            stream = self.config.get("stream_name", "stream:events:normal")
+            if self.stream_manager:
+                redis_client = getattr(self.stream_manager, 'redis_client', None)
+                if redis_client:
+                    await redis_client.xgroup_delconsumer(stream, self.consumer_group, self.consumer_name)
+        except Exception:
+            pass
+
         logger.info("事件-题材匹配循环已停止")
 
     async def _ensure_consumer_group(self) -> None:
