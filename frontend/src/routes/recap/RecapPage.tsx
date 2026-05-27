@@ -792,12 +792,32 @@ function sectionMap(payload: RecapViewModelV2 | null) {
   return map;
 }
 
+type PostMarketDataMode = "sections_first" | "daily_review_v2_first";
+
+function normalizePostMarketDataMode(value: string | null | undefined): PostMarketDataMode | null {
+  if (value === "daily_review_v2" || value === "daily_review_v2_first") {
+    return "daily_review_v2_first";
+  }
+  if (value === "sections_first") {
+    return "sections_first";
+  }
+  return null;
+}
+
+function resolvePostMarketDataMode(params: URLSearchParams): PostMarketDataMode {
+  const urlMode = normalizePostMarketDataMode(params.get("data_mode"));
+  if (urlMode) {
+    return urlMode;
+  }
+  return normalizePostMarketDataMode(import.meta.env.VITE_POST_MARKET_DEFAULT_DATA_MODE) ?? "sections_first";
+}
+
 export function RecapPage() {
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
   const initialParams = new URLSearchParams(window.location.search);
   const initialType = window.location.search.includes("report_type=pre_market") ? "pre_market" : "post_market";
   const initialDate = initialParams.get("date") ?? today;
-  const dataMode = initialParams.get("data_mode") === "daily_review_v2" ? "daily_review_v2_first" : "sections_first";
+  const dataMode = resolvePostMarketDataMode(initialParams);
   const dailyReviewV2PreviewEnabled = dataMode === "daily_review_v2_first";
 
   const [tradeDate, setTradeDate] = useState(initialDate);

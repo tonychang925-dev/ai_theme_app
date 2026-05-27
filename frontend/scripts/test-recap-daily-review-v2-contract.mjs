@@ -63,12 +63,12 @@ const modules = [
 
 function assertDefaultModeStaysSectionsFirst() {
   assert(
-    source.includes('initialParams.get("data_mode") === "daily_review_v2"'),
-    "RecapPage must enable V2 only through data_mode=daily_review_v2",
+    source.includes("resolvePostMarketDataMode(initialParams)"),
+    "RecapPage must resolve dataMode through the P4.4 default-mode helper",
   );
   assert(
-    source.includes('? "daily_review_v2_first" : "sections_first"'),
-    "RecapPage default dataMode must remain sections_first",
+    source.includes('?? "sections_first"'),
+    "RecapPage default dataMode must remain sections_first when env is unset or invalid",
   );
   assert(
     !source.includes('const dataMode = "daily_review_v2_first"'),
