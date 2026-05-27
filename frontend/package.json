@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "test:recap-contract": "node scripts/test-recap-sections-first-contract.mjs"
+    "test:recap-contract": "node scripts/test-recap-sections-first-contract.mjs",
+    "test:recap-v2-contract": "node scripts/test-recap-daily-review-v2-contract.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
