@@ -143,6 +143,22 @@ function buildThemeCapitalFlowRowsFromV2(rows: ThemeCapitalReview[]): ThemeCapit
     }));
 }
 
+function isV2ModuleReady(
+  dailyReviewV2: PostMarketDailyReviewV2 | null,
+  moduleKey: keyof PostMarketDailyReviewV2["diagnostics"]["module_coverage"],
+  rows: unknown[] | undefined,
+): boolean {
+  const coverage = dailyReviewV2?.diagnostics?.module_coverage?.[moduleKey];
+  return Boolean(
+    dailyReviewV2 &&
+    rows &&
+    rows.length > 0 &&
+    coverage?.status === "ready" &&
+    coverage?.source === "structured" &&
+    (coverage.missing_fields?.length ?? 0) === 0,
+  );
+}
+
 function renderDecisionTags(row: StrongStockRow) {
   const tags = [
     row.llmRole !== "--" ? { text: row.llmRole, cls: "is-role" } : null,
@@ -709,8 +725,9 @@ export function RecapPage() {
   }, [watchlistSection]);
   const themeSummaryRows = useMemo(
     () => {
-      if (dailyReviewV2PreviewEnabled && dailyReviewV2?.theme_reviews?.length) {
-        return buildThemeSummaryRowsFromV2(dailyReviewV2.theme_reviews);
+      const v2Rows = dailyReviewV2?.theme_reviews;
+      if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "theme_reviews", v2Rows)) {
+        return buildThemeSummaryRowsFromV2(v2Rows ?? []);
       }
       return themeSection.map((item) => {
         const parsed = splitThemeLine(item);
@@ -725,8 +742,12 @@ export function RecapPage() {
   );
   const themeCapitalFlowRows = useMemo(
     () => {
-      if (dailyReviewV2PreviewEnabled && dailyReviewV2?.theme_capital_reviews?.length) {
-        return buildThemeCapitalFlowRowsFromV2(dailyReviewV2.theme_capital_reviews);
+      const v2Rows = dailyReviewV2?.theme_capital_reviews;
+      if (
+        dailyReviewV2PreviewEnabled &&
+        isV2ModuleReady(dailyReviewV2, "theme_capital_reviews", v2Rows)
+      ) {
+        return buildThemeCapitalFlowRowsFromV2(v2Rows ?? []);
       }
       return themeCapitalFlowSection.map((item) => parseThemeCapitalFlowRow(item));
     },

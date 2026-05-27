@@ -2643,3 +2643,4 @@
 {"display":"什么原因","pastedContents":{},"timestamp":1779859855105,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
 {"display":"不应该啊！根据设计文档，CDP采集的数据是久赢恒丰app结构化处理之后的数据，不应该再进入stream:news:raw ，请核查代码逻辑！","pastedContents":{},"timestamp":1779860213964,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
 {"display":"为什么积压了这么多事件没有处理？","pastedContents":{},"timestamp":1779860386679,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}
+{"display":"请核查问题根源：根因：49 个僵尸消费者。每次服务重启都在 news_storage_realtime 组中创建新消费者，旧的不清理。49\n  个消费者争抢同一条 stream 导致 Redis 消费阻塞。","pastedContents":{},"timestamp":1779861183703,"project":"/Users/admin/desktop/ai_theme_app","sessionId":"824f6016-3a2c-43c3-85f4-a34b5155936c"}

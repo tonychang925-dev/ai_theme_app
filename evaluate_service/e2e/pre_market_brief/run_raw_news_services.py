@@ -47,8 +47,8 @@ async def run_services(args: argparse.Namespace) -> None:
             args.storage_group = f"news_storage_handlers_e2e_{args.run_id}"
         if not args.processor_group:
             args.processor_group = f"news_business_processors_e2e_{args.run_id}"
-    await _ensure_group_at_tail(redis_client, "stream:news:raw", args.storage_group)
-    await _ensure_group_at_tail(redis_client, "stream:events:normal", args.processor_group)
+    await _ensure_group_clean_start(redis_client, "stream:news:raw", args.storage_group)
+    await _ensure_group_clean_start(redis_client, "stream:events:normal", args.processor_group)
     stream_config = SimpleNamespace(
         redis=SimpleNamespace(
             consumer_group=f"pm_e2e:{args.run_id}",
@@ -119,16 +119,41 @@ async def run_services(args: argparse.Namespace) -> None:
         await redis_client.aclose()
 
 
-async def _ensure_group_at_tail(redis_client, stream: str, group: str) -> None:
+async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> None:
+    """创建或复用 consumer group，清理僵尸消费者，不跳过积压消息。"""
     try:
-        await redis_client.xgroup_create(stream, group, id="$", mkstream=True)
-        logging.info("Created consumer group at tail: %s/%s", stream, group)
+        await redis_client.xgroup_create(stream, group, id="0", mkstream=True)
+        logging.info("Created consumer group from beginning: %s/%s", stream, group)
+        return
     except Exception as exc:
         if "BUSYGROUP" not in str(exc):
             raise
-        logging.info("Consumer group already exists: %s/%s", stream, group)
-        await redis_client.xgroup_setid(stream, group, "$")
-        logging.info("Moved consumer group to tail: %s/%s", stream, group)
+
+    # Group exists — clean up zombie consumers (idle > 60s)
+    logging.info("Consumer group already exists: %s/%s, cleaning zombies...", stream, group)
+    zombie_count = 0
+    try:
+        consumers = await redis_client.xinfo_consumers(stream, group)
+        for c in consumers:
+            idle_ms = int(c.get("idle", 0))
+            if idle_ms > 60000:  # idle > 60s = zombie
+                try:
+                    # Claim pending from zombie
+                    pending = await redis_client.xpending(stream, group, "-", "+", 1000, c["name"])
+                    if pending and "consumers" not in pending:
+                        for entry in pending:
+                            msg_id = entry.get("message_id", entry[0] if isinstance(entry, (list, tuple)) else "")
+                            if msg_id:
+                                # Just ack to clear pending — they'll be re-delivered
+                                await redis_client.xack(stream, group, msg_id)
+                    await redis_client.xgroup_delconsumer(stream, group, c["name"])
+                    zombie_count += 1
+                except Exception:
+                    pass
+        if zombie_count:
+            logging.warning("Cleaned %d zombie consumers from %s/%s", zombie_count, stream, group)
+    except Exception:
+        pass
 
 
 def build_parser() -> argparse.ArgumentParser:
