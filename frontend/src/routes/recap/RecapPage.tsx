@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
   fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
-  type DailyReviewView, type PostMarketDailyReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
+  type DailyReviewView, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness, fetchPostMarketJobsStatus,
   generatePostMarketDerivedData, generatePostMarketRecap,
   type PostMarketReadinessView, type PostMarketJobsStatusView,
@@ -207,6 +207,25 @@ function buildWatchlistRowsFromV2(rows: WatchlistReviewV2[]): WatchlistDisplayRo
     lastTheme = row.theme;
     return { ...row, showTheme };
   });
+}
+
+function buildStockCapitalFlowRowsFromV2(rows: StockCapitalReviewV2[]): StockCapitalFlowRow[] {
+  return [...rows]
+    .sort((a, b) => {
+      const rankA = a.rank_overall ?? a.rank_in_theme ?? 9999;
+      const rankB = b.rank_overall ?? b.rank_in_theme ?? 9999;
+      if (rankA !== rankB) return rankA - rankB;
+      return (b.main_net_inflow ?? 0) - (a.main_net_inflow ?? 0);
+    })
+    .map((item) => ({
+      stockName: item.stock_name || item.stock_code || "--",
+      theme: item.theme_name || "--",
+      mainInflow: formatReviewAmount(item.main_net_inflow),
+      rankOrder: item.rank_in_theme != null ? String(item.rank_in_theme) : item.rank_overall != null ? String(item.rank_overall) : "--",
+      pctChg: item.pct_chg != null ? `${item.pct_chg.toFixed(2)}%` : item.turnover_rate != null ? `换手${item.turnover_rate.toFixed(2)}%` : "--",
+      isLeader: item.is_leader ? "是" : "否",
+      flag: zh(item.flags?.join("/") || "--"),
+    }));
 }
 
 function isV2ModuleReady(
@@ -828,8 +847,14 @@ export function RecapPage() {
     [dailyReviewV2PreviewEnabled, dailyReviewV2, themeCapitalFlowSection],
   );
   const stockCapitalFlowRows = useMemo(
-    () => stockCapitalFlowSection.map((item) => parseStockCapitalFlowRow(item)),
-    [stockCapitalFlowSection],
+    () => {
+      const v2Rows = dailyReviewV2?.stock_capital_reviews;
+      if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "stock_capital_reviews", v2Rows)) {
+        return buildStockCapitalFlowRowsFromV2(v2Rows ?? []);
+      }
+      return stockCapitalFlowSection.map((item) => parseStockCapitalFlowRow(item));
+    },
+    [dailyReviewV2PreviewEnabled, dailyReviewV2, stockCapitalFlowSection],
   );
   const mainThemeRows = useMemo(() => themeSummaryRows.filter((row) => row.tier === "主线"), [themeSummaryRows]);
   const branchThemeRows = useMemo(() => themeSummaryRows.filter((row) => row.tier === "强分支"), [themeSummaryRows]);

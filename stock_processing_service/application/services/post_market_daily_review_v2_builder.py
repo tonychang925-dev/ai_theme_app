@@ -46,6 +46,7 @@ class PostMarketDailyReviewV2Builder:
         generated = generated_at or datetime.now(timezone.utc)
         strong_stock_reviews, strong_stock_missing_fields = self._build_strong_stock_reviews(doc)
         watchlist_reviews, watchlist_missing_fields = self._build_watchlist_reviews(doc)
+        stock_capital_reviews, stock_capital_missing_fields = self._build_stock_capital_reviews(doc)
         legacy_section_counts = self._legacy_section_counts(doc)
         diagnostics = self._build_diagnostics(
             doc,
@@ -53,10 +54,12 @@ class PostMarketDailyReviewV2Builder:
             structured_counts={
                 "strong_stock_reviews": len(strong_stock_reviews),
                 "watchlist_reviews": len(watchlist_reviews),
+                "stock_capital_reviews": len(stock_capital_reviews),
             },
             missing_fields={
                 "strong_stock_reviews": strong_stock_missing_fields,
                 "watchlist_reviews": watchlist_missing_fields,
+                "stock_capital_reviews": stock_capital_missing_fields,
             },
         )
         derived_status = self._derived_data_status(doc, diagnostics)
@@ -81,7 +84,7 @@ class PostMarketDailyReviewV2Builder:
             "theme_capital_reviews": [],
             "strong_stock_reviews": strong_stock_reviews,
             "watchlist_reviews": watchlist_reviews,
-            "stock_capital_reviews": [],
+            "stock_capital_reviews": stock_capital_reviews,
             "abnormal_reviews": [],
             "money_flow_reviews": [],
             "dragon_tiger_reviews": [],
@@ -226,6 +229,96 @@ class PostMarketDailyReviewV2Builder:
                     "source": "recap_doc.strong_stock_reviews",
                     "fallback_used": fallback_used,
                     "source_tables": ["recap_doc.strong_stock_reviews"],
+                },
+            })
+
+        return rows, sorted(missing_fields)
+
+    def _build_stock_capital_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
+        source_key = "stock_capital_reviews"
+        source_rows = recap_doc.get(source_key)
+        if not isinstance(source_rows, list):
+            context = recap_doc.get("report_context")
+            context = context if isinstance(context, dict) else {}
+            source_key = "report_context.money_flow"
+            source_rows = context.get("money_flow")
+            if not isinstance(source_rows, list):
+                source_key = "report_context.money_flow_enhanced"
+                source_rows = context.get("money_flow_enhanced")
+        if not isinstance(source_rows, list):
+            source_key = "top_candidates"
+            source_rows = recap_doc.get(source_key)
+        if not isinstance(source_rows, list):
+            return [], []
+
+        rows: list[dict[str, Any]] = []
+        missing_fields: set[str] = set()
+        for idx, source in enumerate(source_rows[:20], start=1):
+            if not isinstance(source, dict):
+                continue
+            stock_code = self._text(source.get("stock_code") or source.get("stock_id"))
+            stock_name = self._text(source.get("stock_name"))
+            subject_key = self._text(source.get("subject_key"))
+            theme_name = self._text(source.get("theme_name") or source.get("subject_name") or source.get("resolved_theme_name"))
+            main_net_inflow_source = source.get("main_net_inflow")
+            if main_net_inflow_source in (None, ""):
+                main_net_inflow_source = source.get("net_inflow")
+            if main_net_inflow_source in (None, ""):
+                main_net_inflow_source = source.get("net_inflow_amount")
+            main_net_inflow = self._float_or_none(main_net_inflow_source)
+            rank_in_theme = self._int_or_none(source.get("rank_in_theme") or source.get("main_net_inflow_rank_in_theme"))
+            rank_overall = self._int_or_none(source.get("rank_overall") or source.get("rank_order")) or idx
+            pct_chg = self._float_or_none(source.get("pct_chg") or source.get("change_pct"))
+            turnover_rate = self._float_or_none(source.get("turnover_rate"))
+            volume_ratio = self._float_or_none(source.get("volume_ratio"))
+            is_leader = bool(source.get("is_leader") or source.get("leader_flag"))
+            flags = [
+                str(item).strip()
+                for item in self._list(source.get("flags") or source.get("trigger_flags") or source.get("abnormal_labels"))
+                if str(item).strip()
+            ]
+            if is_leader and "leader" not in {item.lower() for item in flags}:
+                flags.append("leader")
+
+            required = {
+                "stock_code": stock_code,
+                "stock_name": stock_name,
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+            }
+            for field, value in required.items():
+                if not value:
+                    missing_fields.add(field)
+            display_required = {
+                "main_net_inflow": main_net_inflow is not None,
+                "rank": rank_in_theme is not None or rank_overall is not None,
+                "pct_chg_or_turnover_rate": pct_chg is not None or turnover_rate is not None,
+                "flags": bool(flags),
+            }
+            for field, ok in display_required.items():
+                if not ok:
+                    missing_fields.add(field)
+
+            rows.append({
+                "stock_id": stock_code,
+                "stock_code": stock_code,
+                "stock_name": stock_name,
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+                "main_net_inflow": main_net_inflow,
+                "rank_in_theme": rank_in_theme,
+                "rank_overall": rank_overall,
+                "pct_chg": pct_chg,
+                "turnover_rate": turnover_rate,
+                "volume_ratio": volume_ratio,
+                "is_leader": is_leader,
+                "flags": flags,
+                "diagnostics": {
+                    "money_flow_joined": main_net_inflow is not None,
+                    "snapshot_joined": pct_chg is not None or turnover_rate is not None or volume_ratio is not None,
+                    "source": f"recap_doc.{source_key}" if not source_key.startswith("report_context.") else source_key,
+                    "fallback_used": [],
+                    "source_tables": [source_key],
                 },
             })
 
