@@ -38,7 +38,8 @@ def test_daily_review_v2_builder_emits_complete_empty_contract() -> None:
 
     for key in MODULE_SECTION_HEADINGS:
         assert key in payload
-        assert payload[key] == []
+        if key != "dragon_tiger_reviews":
+            assert payload[key] == []
 
     coverage = payload["diagnostics"]["module_coverage"]
     assert set(coverage) == {"market_summary", *MODULE_SECTION_HEADINGS.keys()}
@@ -46,6 +47,8 @@ def test_daily_review_v2_builder_emits_complete_empty_contract() -> None:
     assert coverage["theme_reviews"]["source"] == "legacy_sections"
     assert coverage["theme_reviews"]["legacy_row_count"] == 2
     assert coverage["theme_capital_reviews"]["source"] == "none"
+    assert payload["dragon_tiger_reviews"]
+    assert coverage["dragon_tiger_reviews"]["status"] == "partial"
     assert coverage["dragon_tiger_reviews"]["legacy_row_count"] == 1
     assert coverage["dragon_tiger_reviews"]["source"] == "legacy_sections"
     assert payload["diagnostics"]["legacy_sections_available"] is True
@@ -455,3 +458,91 @@ def test_daily_review_v2_builder_marks_money_flow_display_missing_partial() -> N
     assert "main_net_inflow_or_money_flow_tier" in coverage["missing_fields"]
     assert "role_or_signal" in coverage["missing_fields"]
     assert "conclusion" in coverage["missing_fields"]
+
+
+def test_daily_review_v2_builder_maps_ready_dragon_tiger_reviews() -> None:
+    recap_doc = {
+        "dragon_tiger_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "net_buy": 56000000,
+                "buy_amount": 120000000,
+                "sell_amount": 64000000,
+                "seat_type": "HOT_MONEY",
+                "hot_money_name": "一线游资",
+                "institution_seat_count": 0,
+                "reason": "日换手率达20%",
+                "continuous_days": 1,
+                "side_summary": "净买5600万",
+                "seat_summary": ["一线游资净买"],
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.dragon_tiger",
+    )
+
+    rows = payload["dragon_tiger_reviews"]
+    assert len(rows) == 1
+    assert rows[0]["stock_code"] == "002361.SZ"
+    assert rows[0]["seat_type"] == "HOT_MONEY"
+    assert rows[0]["net_buy"] == 56000000
+    assert rows[0]["diagnostics"]["source"] == "recap_doc.dragon_tiger_reviews"
+
+    coverage = payload["diagnostics"]["module_coverage"]["dragon_tiger_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["row_count"] == 1
+    assert coverage["missing_fields"] == []
+
+
+def test_daily_review_v2_builder_marks_dragon_tiger_display_missing_partial() -> None:
+    recap_doc = {
+        "dragon_tiger_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+            }
+        ],
+        "report": {"sections": [{"heading": "龙虎榜", "items": ["legacy"]}]},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.dragon_tiger.partial",
+    )
+
+    coverage = payload["diagnostics"]["module_coverage"]["dragon_tiger_reviews"]
+    assert coverage["status"] == "partial"
+    assert coverage["source"] == "legacy_sections"
+    assert coverage["row_count"] == 1
+    assert "net_buy_or_buy_sell_amount" in coverage["missing_fields"]
+    assert "seat_type_or_hot_money_or_institution" in coverage["missing_fields"]
+    assert "reason_or_side_summary" in coverage["missing_fields"]
+
+
+def test_daily_review_v2_builder_keeps_no_dragon_tiger_day_empty_not_failed() -> None:
+    recap_doc = {
+        "diagnostics": {"readiness": {"status": "ready", "skipped_reason": "no_dragon_tiger_day"}},
+        "report": {"sections": [{"heading": "龙虎榜", "items": []}]},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.dragon_tiger.empty",
+    )
+
+    coverage = payload["diagnostics"]["module_coverage"]["dragon_tiger_reviews"]
+    assert coverage["status"] == "empty"
+    assert coverage["source"] == "none"
+    assert coverage["row_count"] == 0
+    assert "post_market_recap_snapshot_missing" not in payload["diagnostics"]["errors"]

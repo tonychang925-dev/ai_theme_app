@@ -477,6 +477,25 @@ export interface MoneyFlowReviewV2 {
   diagnostics?: Record<string, unknown>;
 }
 
+export interface DragonTigerReviewV2 {
+  stock_id: string;
+  stock_code: string;
+  stock_name: string;
+  subject_key: string | null;
+  theme_name: string | null;
+  net_buy: number | null;
+  buy_amount: number | null;
+  sell_amount: number | null;
+  seat_type: "INSTITUTION" | "HOT_MONEY" | "MIXED" | "UNKNOWN";
+  hot_money_name: string | null;
+  institution_seat_count: number | null;
+  reason: string | null;
+  continuous_days: number | null;
+  side_summary: string;
+  seat_summary: string[];
+  diagnostics: Record<string, unknown>;
+}
+
 export type PostMarketDailyReviewV2ModuleRow = Record<string, unknown>;
 
 export interface PostMarketDailyReviewV2 {
@@ -500,7 +519,7 @@ export interface PostMarketDailyReviewV2 {
   stock_capital_reviews: StockCapitalReviewV2[];
   abnormal_reviews: AbnormalStockReviewV2[];
   money_flow_reviews: MoneyFlowReviewV2[];
-  dragon_tiger_reviews: PostMarketDailyReviewV2ModuleRow[];
+  dragon_tiger_reviews: DragonTigerReviewV2[];
   trading_principle: Record<string, unknown>;
   diagnostics: DailyReviewV2Diagnostics;
 }

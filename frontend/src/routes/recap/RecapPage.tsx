@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
   fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
-  type AbnormalStockReviewV2, type DailyReviewView, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
+  type AbnormalStockReviewV2, type DailyReviewView, type DragonTigerReviewV2, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness, fetchPostMarketJobsStatus,
   generatePostMarketDerivedData, generatePostMarketRecap,
   type PostMarketReadinessView, type PostMarketJobsStatusView,
@@ -268,6 +268,21 @@ function buildMoneyFlowRowsFromV2(rows: MoneyFlowReviewV2[]): MoneyFlowRow[] {
       note: zh(noteParts.join("；") || "--"),
     };
   });
+}
+
+function buildDragonTigerRowsFromV2(rows: DragonTigerReviewV2[]): DragonTigerRow[] {
+  const groups = new Map<string, DragonTigerRow["items"]>();
+  for (const item of rows) {
+    const hotMoneyName = item.hot_money_name || zh(item.seat_type || "UNKNOWN");
+    const current = groups.get(hotMoneyName) ?? [];
+    current.push({
+      theme: item.theme_name || "--",
+      stockName: item.stock_name || item.stock_code || "--",
+      sideNet: item.side_summary || formatReviewAmount(item.net_buy) || "--",
+    });
+    groups.set(hotMoneyName, current);
+  }
+  return Array.from(groups.entries()).map(([hotMoneyName, items]) => ({ hotMoneyName, items }));
 }
 
 function isV2ModuleReady(
@@ -969,14 +984,19 @@ export function RecapPage() {
     return rows;
   }, [abnormalRows, abnormalSortDir, abnormalSortKey]);
   const dragonTigerRows = useMemo(
-    () =>
-      dragonTigerDataSection.map((item) => {
+    () => {
+      const v2Rows = dailyReviewV2?.dragon_tiger_reviews;
+      if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "dragon_tiger_reviews", v2Rows)) {
+        return buildDragonTigerRowsFromV2(v2Rows ?? []);
+      }
+      return dragonTigerDataSection.map((item) => {
         const parsed = splitThemeLine(item);
         return parsed.body.includes("/")
           ? parseDragonTigerRow(parsed.theme || "--", parsed.body)
           : parseDragonTigerLegacyRow(parsed.theme || "--", parsed.body);
-      }),
-    [dragonTigerDataSection],
+      });
+    },
+    [dailyReviewV2PreviewEnabled, dailyReviewV2, dragonTigerDataSection],
   );
 
   useEffect(() => {
