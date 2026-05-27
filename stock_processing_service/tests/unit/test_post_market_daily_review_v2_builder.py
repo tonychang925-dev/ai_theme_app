@@ -179,6 +179,44 @@ def test_daily_review_v2_builder_marks_strong_stock_display_missing_partial() ->
     assert "rationale_or_llm_judgement" not in coverage["missing_fields"]
 
 
+def test_daily_review_v2_builder_allows_strong_stock_kline_support_type_fallback() -> None:
+    recap_doc = {
+        "strong_stock_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "role": "leader",
+                "watch_status": "formal",
+                "watch_score": 88.5,
+                "support_type": "ma20",
+                "support_score": 0.72,
+                "money_flow_tier": "strong",
+                "role_enhanced": "leader",
+                "main_net_inflow": 120000000,
+                "rationale": "资金与承接共振",
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.strong.kline.fallback",
+    )
+
+    row = payload["strong_stock_reviews"][0]
+    assert row["kline"]["position_label"] == "ma20"
+    assert row["kline"]["pattern_summary"] == "ma20"
+    assert "kline.support_type" in row["diagnostics"]["fallback_used"]
+    coverage = payload["diagnostics"]["module_coverage"]["strong_stock_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["missing_fields"] == []
+
+
 def test_daily_review_v2_builder_maps_ready_watchlist_reviews() -> None:
     recap_doc = {
         "watchlist_reviews": [
@@ -320,7 +358,36 @@ def test_daily_review_v2_builder_marks_stock_capital_display_missing_partial() -
     assert coverage["row_count"] == 1
     assert "main_net_inflow" in coverage["missing_fields"]
     assert "pct_chg_or_turnover_rate" in coverage["missing_fields"]
-    assert "flags" in coverage["missing_fields"]
+    assert "flags" not in coverage["missing_fields"]
+
+
+def test_daily_review_v2_builder_allows_stock_capital_empty_flags_ready() -> None:
+    recap_doc = {
+        "stock_capital_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "main_net_inflow": 120000000,
+                "rank_in_theme": 1,
+                "pct_chg": 6.8,
+                "flags": [],
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.stock.capital.flags.empty",
+    )
+
+    coverage = payload["diagnostics"]["module_coverage"]["stock_capital_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["missing_fields"] == []
 
 
 def test_daily_review_v2_builder_maps_ready_abnormal_reviews() -> None:
@@ -458,6 +525,37 @@ def test_daily_review_v2_builder_marks_money_flow_display_missing_partial() -> N
     assert "main_net_inflow_or_money_flow_tier" in coverage["missing_fields"]
     assert "role_or_signal" in coverage["missing_fields"]
     assert "conclusion" in coverage["missing_fields"]
+
+
+def test_daily_review_v2_builder_uses_money_flow_conclusion_fallback() -> None:
+    recap_doc = {
+        "money_flow_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "main_net_inflow": 120000000,
+                "money_flow_tier": "strong",
+                "role_enhanced": "leader",
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.money_flow.conclusion.fallback",
+    )
+
+    row = payload["money_flow_reviews"][0]
+    assert row["conclusion"] == "leader / strong"
+    assert "conclusion" in row["diagnostics"]["fallback_used"]
+    coverage = payload["diagnostics"]["module_coverage"]["money_flow_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["missing_fields"] == []
 
 
 def test_daily_review_v2_builder_maps_ready_dragon_tiger_reviews() -> None:
