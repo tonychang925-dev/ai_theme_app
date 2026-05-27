@@ -810,7 +810,7 @@ export function RealtimeCollectorPage() {
         </section>
 
         <section className="workspace-card">
-          <span className="metric-label section-title">新链组件状态</span>
+          <span className="metric-label section-title">采集器运行状态</span>
           <pre className="collection-debug-json">
             {stackStatus
               ? JSON.stringify({
