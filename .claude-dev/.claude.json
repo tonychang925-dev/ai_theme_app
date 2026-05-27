@@ -1,5 +1,5 @@
 {
-  "numStartups": 24,
+  "numStartups": 25,
   "hasSeenTasksHint": true,
   "tipsHistory": {
     "new-user-warmup": 7,
@@ -34,7 +34,7 @@
     "rename-conversation": 11,
     "custom-commands": 11
   },
-  "promptQueueUseCount": 618,
+  "promptQueueUseCount": 619,
   "cachedGrowthBookFeatures": {
     "tengu_idle_amber_finch": false,
     "tengu_auto_notice_once": false,
