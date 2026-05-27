@@ -461,6 +461,22 @@ export interface AbnormalStockReviewV2 {
   diagnostics: Record<string, unknown>;
 }
 
+export interface MoneyFlowReviewV2 {
+  stock_id: string;
+  stock_code: string;
+  stock_name: string;
+  subject_key: string;
+  theme_name: string;
+  main_net_inflow: number | null;
+  money_flow_tier: string | null;
+  role_enhanced: string | null;
+  institution_signal: string | null;
+  hot_money_signal: string | null;
+  dragon_tiger_signal: string | null;
+  conclusion: string;
+  diagnostics?: Record<string, unknown>;
+}
+
 export type PostMarketDailyReviewV2ModuleRow = Record<string, unknown>;
 
 export interface PostMarketDailyReviewV2 {
@@ -483,7 +499,7 @@ export interface PostMarketDailyReviewV2 {
   watchlist_reviews: WatchlistReviewV2[];
   stock_capital_reviews: StockCapitalReviewV2[];
   abnormal_reviews: AbnormalStockReviewV2[];
-  money_flow_reviews: PostMarketDailyReviewV2ModuleRow[];
+  money_flow_reviews: MoneyFlowReviewV2[];
   dragon_tiger_reviews: PostMarketDailyReviewV2ModuleRow[];
   trading_principle: Record<string, unknown>;
   diagnostics: DailyReviewV2Diagnostics;

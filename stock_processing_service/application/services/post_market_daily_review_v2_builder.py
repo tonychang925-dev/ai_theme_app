@@ -48,6 +48,7 @@ class PostMarketDailyReviewV2Builder:
         watchlist_reviews, watchlist_missing_fields = self._build_watchlist_reviews(doc)
         stock_capital_reviews, stock_capital_missing_fields = self._build_stock_capital_reviews(doc)
         abnormal_reviews, abnormal_missing_fields = self._build_abnormal_reviews(doc)
+        money_flow_reviews, money_flow_missing_fields = self._build_money_flow_reviews(doc)
         legacy_section_counts = self._legacy_section_counts(doc)
         diagnostics = self._build_diagnostics(
             doc,
@@ -57,12 +58,14 @@ class PostMarketDailyReviewV2Builder:
                 "watchlist_reviews": len(watchlist_reviews),
                 "stock_capital_reviews": len(stock_capital_reviews),
                 "abnormal_reviews": len(abnormal_reviews),
+                "money_flow_reviews": len(money_flow_reviews),
             },
             missing_fields={
                 "strong_stock_reviews": strong_stock_missing_fields,
                 "watchlist_reviews": watchlist_missing_fields,
                 "stock_capital_reviews": stock_capital_missing_fields,
                 "abnormal_reviews": abnormal_missing_fields,
+                "money_flow_reviews": money_flow_missing_fields,
             },
         )
         derived_status = self._derived_data_status(doc, diagnostics)
@@ -89,7 +92,7 @@ class PostMarketDailyReviewV2Builder:
             "watchlist_reviews": watchlist_reviews,
             "stock_capital_reviews": stock_capital_reviews,
             "abnormal_reviews": abnormal_reviews,
-            "money_flow_reviews": [],
+            "money_flow_reviews": money_flow_reviews,
             "dragon_tiger_reviews": [],
             "trading_principle": self._trading_principle(doc),
             "diagnostics": diagnostics,
@@ -404,6 +407,80 @@ class PostMarketDailyReviewV2Builder:
                     "from_stock_abnormal_signal": source_key.endswith("stock_abnormal_signal") or source_key == "abnormal_reviews",
                     "money_flow_joined": main_net_inflow is not None or bool(money_flow_tier),
                     "theme_joined": bool(subject_key or theme_name),
+                    "source": f"recap_doc.{source_key}" if not source_key.startswith("report_context.") else source_key,
+                    "fallback_used": [],
+                    "source_tables": [source_key],
+                },
+            })
+
+        return rows, sorted(missing_fields)
+
+    def _build_money_flow_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
+        source_key = "money_flow_reviews"
+        source_rows = recap_doc.get(source_key)
+        if not isinstance(source_rows, list):
+            context = recap_doc.get("report_context")
+            context = context if isinstance(context, dict) else {}
+            source_key = "report_context.money_flow"
+            source_rows = context.get("money_flow")
+            if not isinstance(source_rows, list):
+                source_key = "report_context.money_flow_enhanced"
+                source_rows = context.get("money_flow_enhanced")
+        if not isinstance(source_rows, list):
+            return [], []
+
+        rows: list[dict[str, Any]] = []
+        missing_fields: set[str] = set()
+        for source in source_rows[:20]:
+            if not isinstance(source, dict):
+                continue
+            stock_code = self._text(source.get("stock_code") or source.get("stock_id"))
+            stock_name = self._text(source.get("stock_name"))
+            subject_key = self._text(source.get("subject_key"))
+            theme_name = self._text(source.get("theme_name") or source.get("subject_name") or source.get("resolved_theme_name"))
+            main_net_inflow = self._float_or_none(
+                self._first_present(source, "main_net_inflow", "net_inflow", "net_inflow_amount")
+            )
+            money_flow_tier = self._nullable_text(source.get("money_flow_tier"))
+            role_enhanced = self._nullable_text(source.get("role_enhanced"))
+            institution_signal = self._nullable_text(source.get("institution_signal"))
+            hot_money_signal = self._nullable_text(source.get("hot_money_signal"))
+            dragon_tiger_signal = self._nullable_text(source.get("dragon_tiger_signal"))
+            conclusion = self._text(source.get("conclusion") or source.get("note") or source.get("reason"))
+
+            required = {
+                "stock_code": stock_code,
+                "stock_name": stock_name,
+                "subject_key_or_theme_name": subject_key or theme_name,
+            }
+            for field, value in required.items():
+                if not value:
+                    missing_fields.add(field)
+            display_required = {
+                "main_net_inflow_or_money_flow_tier": main_net_inflow is not None or bool(money_flow_tier),
+                "role_or_signal": bool(role_enhanced or institution_signal or hot_money_signal),
+                "conclusion": bool(conclusion),
+            }
+            for field, ok in display_required.items():
+                if not ok:
+                    missing_fields.add(field)
+
+            rows.append({
+                "stock_id": stock_code,
+                "stock_code": stock_code,
+                "stock_name": stock_name,
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+                "main_net_inflow": main_net_inflow,
+                "money_flow_tier": money_flow_tier,
+                "role_enhanced": role_enhanced,
+                "institution_signal": institution_signal,
+                "hot_money_signal": hot_money_signal,
+                "dragon_tiger_signal": dragon_tiger_signal,
+                "conclusion": conclusion,
+                "diagnostics": {
+                    "from_money_flow_enhanced": source_key.endswith("money_flow_enhanced") or source_key == "money_flow_reviews",
+                    "dragon_tiger_joined": bool(dragon_tiger_signal),
                     "source": f"recap_doc.{source_key}" if not source_key.startswith("report_context.") else source_key,
                     "fallback_used": [],
                     "source_tables": [source_key],
