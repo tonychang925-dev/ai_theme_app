@@ -388,3 +388,70 @@ def test_daily_review_v2_builder_marks_abnormal_display_missing_partial() -> Non
     assert "turnover_rate_or_volume_ratio" in coverage["missing_fields"]
     assert "labels_or_conclusion" in coverage["missing_fields"]
     assert "main_net_inflow_or_money_flow_tier" in coverage["missing_fields"]
+
+
+def test_daily_review_v2_builder_maps_ready_money_flow_reviews() -> None:
+    recap_doc = {
+        "money_flow_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "main_net_inflow": 120000000,
+                "money_flow_tier": "strong",
+                "role_enhanced": "leader",
+                "institution_signal": "净买",
+                "hot_money_signal": "活跃",
+                "dragon_tiger_signal": "上榜",
+                "conclusion": "资金行为确认主线地位",
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.money_flow",
+    )
+
+    rows = payload["money_flow_reviews"]
+    assert len(rows) == 1
+    assert rows[0]["stock_code"] == "002361.SZ"
+    assert rows[0]["main_net_inflow"] == 120000000
+    assert rows[0]["role_enhanced"] == "leader"
+    assert rows[0]["diagnostics"]["source"] == "recap_doc.money_flow_reviews"
+
+    coverage = payload["diagnostics"]["module_coverage"]["money_flow_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["row_count"] == 1
+    assert coverage["missing_fields"] == []
+
+
+def test_daily_review_v2_builder_marks_money_flow_display_missing_partial() -> None:
+    recap_doc = {
+        "money_flow_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "theme_name": "机器人",
+            }
+        ],
+        "report": {"sections": [{"heading": "资金行为增强", "items": ["legacy"]}]},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.money_flow.partial",
+    )
+
+    coverage = payload["diagnostics"]["module_coverage"]["money_flow_reviews"]
+    assert coverage["status"] == "partial"
+    assert coverage["source"] == "legacy_sections"
+    assert coverage["row_count"] == 1
+    assert "main_net_inflow_or_money_flow_tier" in coverage["missing_fields"]
+    assert "role_or_signal" in coverage["missing_fields"]
+    assert "conclusion" in coverage["missing_fields"]

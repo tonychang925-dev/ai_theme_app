@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
   fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
-  type AbnormalStockReviewV2, type DailyReviewView, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
+  type AbnormalStockReviewV2, type DailyReviewView, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness, fetchPostMarketJobsStatus,
   generatePostMarketDerivedData, generatePostMarketRecap,
   type PostMarketReadinessView, type PostMarketJobsStatusView,
@@ -245,6 +245,27 @@ function buildAbnormalRowsFromV2(rows: AbnormalStockReviewV2[]): AbnormalSignalR
       capital: capitalParts.join("；") || "--",
       labels: zh(item.labels?.join("/") || "--"),
       conclusion: zh(item.conclusion || "--"),
+    };
+  });
+}
+
+function buildMoneyFlowRowsFromV2(rows: MoneyFlowReviewV2[]): MoneyFlowRow[] {
+  return rows.map((item) => {
+    const noteParts = [
+      item.conclusion,
+      item.institution_signal ? `机构 ${zh(item.institution_signal)}` : "",
+      item.hot_money_signal ? `游资 ${zh(item.hot_money_signal)}` : "",
+      item.dragon_tiger_signal ? `龙虎榜 ${zh(item.dragon_tiger_signal)}` : "",
+    ].filter(Boolean);
+    return {
+      theme: item.theme_name || "--",
+      stockName: item.stock_name || item.stock_code || "--",
+      roleEnhanced: zh(item.role_enhanced || item.institution_signal || item.hot_money_signal || "--"),
+      moneyTier: zh(item.money_flow_tier || "--"),
+      score: item.main_net_inflow != null ? formatReviewAmount(item.main_net_inflow) : "--",
+      klinePosition: "--",
+      klinePattern: "--",
+      note: zh(noteParts.join("；") || "--"),
     };
   });
 }
@@ -897,12 +918,17 @@ export function RecapPage() {
     return result;
   }, [themeSummaryRows, themeCapitalFlowRows, watchlistRows]);
   const moneyFlowRows = useMemo(
-    () =>
-      moneySection.map((item) => {
+    () => {
+      const v2Rows = dailyReviewV2?.money_flow_reviews;
+      if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "money_flow_reviews", v2Rows)) {
+        return buildMoneyFlowRowsFromV2(v2Rows ?? []);
+      }
+      return moneySection.map((item) => {
         const parsed = splitThemeLine(item);
         return parseMoneyFlowRow(parsed.theme || "未分类", parsed.body);
-      }),
-    [moneySection],
+      });
+    },
+    [dailyReviewV2PreviewEnabled, dailyReviewV2, moneySection],
   );
   const abnormalNote = useMemo(
     () => abnormalSection.find((item) => item.startsWith("补充说明：")) ?? "",
