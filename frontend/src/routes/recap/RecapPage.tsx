@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
-  fetchRecapSnapshot, fetchDailyReview, publishRecapToNotion,
-  type DailyReviewView,
+  fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
+  type DailyReviewView, type PostMarketDailyReviewV2,
   fetchPostMarketReadiness, fetchPostMarketJobsStatus,
   generatePostMarketDerivedData, generatePostMarketRecap,
   type PostMarketReadinessView, type PostMarketJobsStatusView,
@@ -587,8 +587,11 @@ function sectionMap(payload: RecapViewModelV2 | null) {
 
 export function RecapPage() {
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
+  const initialParams = new URLSearchParams(window.location.search);
   const initialType = window.location.search.includes("report_type=pre_market") ? "pre_market" : "post_market";
-  const initialDate = new URLSearchParams(window.location.search).get("date") ?? today;
+  const initialDate = initialParams.get("date") ?? today;
+  const dataMode = initialParams.get("data_mode") === "daily_review_v2" ? "daily_review_v2_first" : "sections_first";
+  const dailyReviewV2PreviewEnabled = dataMode === "daily_review_v2_first";
 
   const [tradeDate, setTradeDate] = useState(initialDate);
   const [reportType, setReportType] = useState<"pre_market" | "post_market">(initialType);
@@ -596,6 +599,7 @@ export function RecapPage() {
   const [abnormalSortDir, setAbnormalSortDir] = useState<"desc" | "asc">("desc");
   const [payload, setPayload] = useState<RecapViewModelV2 | null>(null);
   const [dailyReview, setDailyReview] = useState<DailyReviewView | null>(null);
+  const [dailyReviewV2, setDailyReviewV2] = useState<PostMarketDailyReviewV2 | null>(null);
   const [postMarketReadiness, setPostMarketReadiness] = useState<PostMarketReadinessView | null>(null);
   const [postMarketJobs, setPostMarketJobs] = useState<PostMarketJobsStatusView | null>(null);
   const [derivedDataBusy, setDerivedDataBusy] = useState(false);
@@ -750,6 +754,7 @@ export function RecapPage() {
     let active = true;
     setPayload(null);
     setDailyReview(null);
+    setDailyReviewV2(null);
     setLoading(true);
     setError(null);
 
@@ -764,6 +769,7 @@ export function RecapPage() {
           if (!active) return;
           setPayload(data);
           const query = new URLSearchParams({ date: tradeDate, report_type: reportType });
+          if (dailyReviewV2PreviewEnabled) query.set("data_mode", "daily_review_v2");
           window.history.replaceState(null, "", `/recap?${query.toString()}`);
         })
         .catch((err: Error) => {
@@ -778,6 +784,14 @@ export function RecapPage() {
           setDailyReview(data);
         })
         .catch(() => {});
+      if (dailyReviewV2PreviewEnabled) {
+        fetchDailyReviewV2(tradeDate)
+          .then((data) => {
+            if (!active) return;
+            setDailyReviewV2(data);
+          })
+          .catch(() => {});
+      }
       return () => { active = false; };
     }
 
@@ -787,6 +801,7 @@ export function RecapPage() {
         if (active) {
           setPayload(data);
           const query = new URLSearchParams({ date: tradeDate, report_type: reportType });
+          if (dailyReviewV2PreviewEnabled) query.set("data_mode", "daily_review_v2");
           window.history.replaceState(null, "", `/recap?${query.toString()}`);
         }
       })
@@ -799,7 +814,7 @@ export function RecapPage() {
     return () => {
       active = false;
     };
-  }, [tradeDate, reportType]);
+  }, [tradeDate, reportType, dailyReviewV2PreviewEnabled]);
 
   function toggleAbnormalSort(key: "score" | "turnoverRate" | "volumeRatio" | "volumeVsMa50") {
     if (abnormalSortKey === key) {
@@ -945,6 +960,30 @@ export function RecapPage() {
                 <tr>
                   <td>DailyReview</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>diagnostics</td>
                   <td><span className="tag">{String(dailyReview.diagnostics.snapshot_status ?? "loaded")}</span></td>
+                </tr>
+              )}
+              {dailyReviewV2PreviewEnabled && (
+                <tr>
+                  <td>DailyReview V2</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>schema</td>
+                  <td>
+                    <span className="tag">
+                      {dailyReviewV2
+                        ? `${dailyReviewV2.schema_version} / ${dailyReviewV2.data_mode}`
+                        : "preview loading"}
+                    </span>
+                  </td>
+                </tr>
+              )}
+              {dailyReviewV2PreviewEnabled && dailyReviewV2?.diagnostics?.module_coverage && (
+                <tr>
+                  <td>DailyReview V2</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>module_coverage</td>
+                  <td>
+                    <span className="tag">
+                      {Object.entries(dailyReviewV2.diagnostics.module_coverage)
+                        .map(([key, coverage]) => `${key}:${coverage.status}/${coverage.source}/${coverage.row_count}`)
+                        .join(" | ")}
+                    </span>
+                  </td>
                 </tr>
               )}
             </tbody>
