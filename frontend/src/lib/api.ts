@@ -424,6 +424,23 @@ export interface WatchlistReviewV2 {
   diagnostics?: Record<string, unknown>;
 }
 
+export interface StockCapitalReviewV2 {
+  stock_id: string;
+  stock_code: string;
+  stock_name: string;
+  subject_key: string;
+  theme_name: string;
+  main_net_inflow: number;
+  rank_in_theme: number | null;
+  rank_overall: number | null;
+  pct_chg: number | null;
+  turnover_rate: number | null;
+  volume_ratio: number | null;
+  is_leader: boolean;
+  flags: string[];
+  diagnostics?: Record<string, unknown>;
+}
+
 export type PostMarketDailyReviewV2ModuleRow = Record<string, unknown>;
 
 export interface PostMarketDailyReviewV2 {
@@ -444,7 +461,7 @@ export interface PostMarketDailyReviewV2 {
   theme_capital_reviews: ThemeCapitalReview[];
   strong_stock_reviews: StrongStockReviewV2[];
   watchlist_reviews: WatchlistReviewV2[];
-  stock_capital_reviews: PostMarketDailyReviewV2ModuleRow[];
+  stock_capital_reviews: StockCapitalReviewV2[];
   abnormal_reviews: PostMarketDailyReviewV2ModuleRow[];
   money_flow_reviews: PostMarketDailyReviewV2ModuleRow[];
   dragon_tiger_reviews: PostMarketDailyReviewV2ModuleRow[];

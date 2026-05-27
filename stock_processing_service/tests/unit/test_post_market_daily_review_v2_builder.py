@@ -247,3 +247,74 @@ def test_daily_review_v2_builder_marks_watchlist_display_missing_partial() -> No
     assert coverage["source"] == "legacy_sections"
     assert coverage["row_count"] == 1
     assert "reason" in coverage["missing_fields"]
+
+
+def test_daily_review_v2_builder_maps_ready_stock_capital_reviews() -> None:
+    recap_doc = {
+        "stock_capital_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "main_net_inflow": 120000000,
+                "rank_in_theme": 1,
+                "rank_overall": 3,
+                "pct_chg": 6.8,
+                "turnover_rate": 18.2,
+                "volume_ratio": 2.4,
+                "is_leader": True,
+                "flags": ["资金流入", "leader"],
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.stock.capital",
+    )
+
+    rows = payload["stock_capital_reviews"]
+    assert len(rows) == 1
+    assert rows[0]["stock_code"] == "002361.SZ"
+    assert rows[0]["main_net_inflow"] == 120000000
+    assert rows[0]["rank_in_theme"] == 1
+    assert rows[0]["is_leader"] is True
+    assert rows[0]["diagnostics"]["source"] == "recap_doc.stock_capital_reviews"
+
+    coverage = payload["diagnostics"]["module_coverage"]["stock_capital_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["row_count"] == 1
+    assert coverage["missing_fields"] == []
+
+
+def test_daily_review_v2_builder_marks_stock_capital_display_missing_partial() -> None:
+    recap_doc = {
+        "stock_capital_reviews": [
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "rank_in_theme": 1,
+            }
+        ],
+        "report": {"sections": [{"heading": "主线股票资金流入前20", "items": ["legacy"]}]},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.stock.capital.partial",
+    )
+
+    coverage = payload["diagnostics"]["module_coverage"]["stock_capital_reviews"]
+    assert coverage["status"] == "partial"
+    assert coverage["source"] == "legacy_sections"
+    assert coverage["row_count"] == 1
+    assert "main_net_inflow" in coverage["missing_fields"]
+    assert "pct_chg_or_turnover_rate" in coverage["missing_fields"]
+    assert "flags" in coverage["missing_fields"]
