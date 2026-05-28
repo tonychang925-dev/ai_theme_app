@@ -861,6 +861,44 @@ async def jyhf_auction_stop(request: Request) -> dict:
     return await mgr.stop()
 
 
+# ── P0-C2: 统一状态聚合接口，替代多个独立轮询 ──
+
+@router.get("/realtime/status-bundle")
+async def realtime_status_bundle(request: Request) -> dict:
+    """单次返回 new-chain + JYHF CDP + auction 状态，减少轮询次数。"""
+    import asyncio as _asyncio
+
+    async def _new_chain():
+        try:
+            async with httpx.AsyncClient(timeout=10.0, trust_env=False) as c:
+                r = await c.get(f"{STOCK_PROCESSING_BASE_URL}/api/v1/realtime/status")
+                r.raise_for_status()
+                return r.json()
+        except Exception as exc:
+            return {"running": False, "error": str(exc)}
+
+    async def _cdp_status():
+        try:
+            return await request.app.state.cdp_manager.get_status()
+        except Exception as exc:
+            return {"error": str(exc)}
+
+    async def _auction_status():
+        return request.app.state.auction_manager.status()
+
+    new_chain, cdp, auction = await _asyncio.gather(
+        _new_chain(), _cdp_status(), _auction_status(),
+        return_exceptions=True,
+    )
+
+    return {
+        "new_chain": new_chain if isinstance(new_chain, dict) else {"error": str(new_chain)},
+        "jyhf_cdp": cdp if isinstance(cdp, dict) else {"error": str(cdp)},
+        "jyhf_auction": auction if isinstance(auction, dict) else {"error": str(auction)},
+        "timestamp": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(),
+    }
+
+
 @router.post("/realtime/jyhf-cdp/service/force-stop")
 async def jyhf_cdp_service_force_stop(request: Request) -> dict:
     """诊断接口：强杀 8095 端口上的进程（不限 owner），用于清理旧残留。"""
