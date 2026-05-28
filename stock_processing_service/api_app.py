@@ -4204,6 +4204,13 @@ async def kline_alerts_stream(last_id: str = Query(default="0-0", description="�
                                 # 跳过心跳
                                 if data.get("item_type") != "kline_support_alert":
                                     continue
+                                # P1-3.1: 试点接入 SignalDecision facade
+                                try:
+                                    from core.contracts.decision import ensure_decision, ALERT
+                                    decision = ensure_decision(data, decision_type="support_alert", level=ALERT)
+                                    data["_decision"] = decision.to_dict()
+                                except Exception:
+                                    pass
                                 payload = json.dumps(data, ensure_ascii=False)
                                 yield f"id: {entry_id}\nevent: kline_alert\ndata: {payload}\n\n"
                     else:
@@ -4256,6 +4263,13 @@ async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
                         for _, entries in msgs:
                             for entry_id, data in entries:
                                 read_id = entry_id
+                                # P1-3.1: 试点接入 SignalDecision facade
+                                try:
+                                    from core.contracts.decision import ensure_decision, ALERT
+                                    decision = ensure_decision(data, decision_type="w2s_alert", level=ALERT)
+                                    data["_decision"] = decision.to_dict()
+                                except Exception:
+                                    pass  # facade 失败不影响原有数据
                                 yield f"id: {entry_id}\nevent: w2s_alert\ndata: {json.dumps(data, ensure_ascii=False)}\n\n"
                     else:
                         yield f"event: heartbeat\ndata: {json.dumps({'ts': datetime.now().isoformat()})}\n\n"
