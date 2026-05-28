@@ -1,9 +1,0 @@
-{
-  "id": "7",
-  "subject": "Create enhanced_mainline_judgement_service.py",
-  "description": "1:1 copy of old chain EnhancedMainlineJudgementService + MainlineJudgementService algorithm, with ThemeMainlineJudgement dataclass inlined",
-  "activeForm": "Creating enhanced_mainline_judgement_service.py",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}

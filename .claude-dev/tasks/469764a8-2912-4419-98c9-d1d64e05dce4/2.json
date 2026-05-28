@@ -1,9 +1,0 @@
-{
-  "id": "2",
-  "subject": "搜索 ThemeMainlineJudgement 字段定义",
-  "description": "在 stock_service 目录下找到 ThemeMainlineJudgement 或相关 dataclass/model 的字段定义",
-  "activeForm": "搜索 stock_service models.py",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}

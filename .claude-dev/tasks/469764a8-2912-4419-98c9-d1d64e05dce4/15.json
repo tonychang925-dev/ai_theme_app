@@ -1,9 +1,0 @@
-{
-  "id": "15",
-  "subject": "Add upsert_theme_mainline_identity_registry_rows to PostgresDatabaseManager",
-  "description": "Add the missing UPSERT method to PostgresDatabaseManager following existing patterns (e.g., upsert_stock_daily_snapshot_rows)",
-  "activeForm": "Adding upsert method to PostgresDatabaseManager",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

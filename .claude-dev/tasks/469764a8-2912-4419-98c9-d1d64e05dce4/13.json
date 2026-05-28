@@ -1,9 +1,0 @@
-{
-  "id": "13",
-  "subject": "Analyze UniverseBuilder coverage gap",
-  "description": "Read current UniverseBuilder/StrongWatchUniverse code, understand formal/observe/blocked classification and how A/B coverage affects C input",
-  "activeForm": "Analyzing UniverseBuilder coverage",
-  "status": "in_progress",
-  "blocks": [],
-  "blockedBy": []
-}

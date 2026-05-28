@@ -1,9 +1,0 @@
-{
-  "id": "4",
-  "subject": "Check application jobs for SQL/评分细节约束 violation",
-  "description": "检查 stock_processing_service/application/jobs 下所有作业实现，确认不包含评分细节、不出现SQL",
-  "activeForm": "Checking application jobs for constraint violations",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

@@ -1,8 +1,0 @@
-{
-  "id": "1",
-  "subject": "分析现有代码架构",
-  "description": "查看 stock_processing_service、frontend_bff、recap_service 等核心模块的实际代码结构",
-  "status": "in_progress",
-  "blocks": [],
-  "blockedBy": []
-}

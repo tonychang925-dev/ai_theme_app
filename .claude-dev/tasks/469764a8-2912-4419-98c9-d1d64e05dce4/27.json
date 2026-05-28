@@ -1,9 +1,0 @@
-{
-  "id": "27",
-  "subject": "Enrich get_subject_context_by_subject_keys SQL with heat and fund flow CTEs",
-  "description": "Add heat_stats CTE (from theme_history_event) and flow_stats CTE (from subject_stock_daily_snapshot.raw_json JSONB) to compute heat_latest, avg_heat_5d, net_inflow_sum_5d, net_inflow_days_5d per subject",
-  "activeForm": "Enriching SQL query with heat and fund flow data",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}
