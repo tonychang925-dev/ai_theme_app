@@ -75,10 +75,20 @@ export function RealtimeCollectorPage() {
 
   // P0-C2: 统一状态获取 — 一次请求替代 new-chain + CDP + auction 三个独立轮询
   async function refreshBundledStatus() {
-    try {
-      const bundle = await fetchStatusBundle();
+    let bundle: StatusBundle | null = null;
 
-      // new-chain status
+    try {
+      bundle = await fetchStatusBundle();
+    } catch (err) {
+      setRunning("down");
+      if (err instanceof Error && err.message.includes("timeout")) {
+        append("新链状态查询超时，SPS 可能未启动");
+      }
+      return;
+    }
+
+    // new-chain status
+    try {
       const nc = bundle.new_chain as Record<string, unknown>;
       if (nc && typeof nc.running !== 'undefined') {
         setStackStatus(nc as unknown as NewChainRealtimeStatus);
@@ -99,10 +109,7 @@ export function RealtimeCollectorPage() {
         );
       }
     } catch (err) {
-      setRunning("down");
-      if (err instanceof Error && err.message.includes("timeout")) {
-        append("新链状态查询超时，SPS 可能未启动");
-      }
+      append(`新链状态解析失败：${err instanceof Error ? err.message : String(err)}`);
     }
 
     // JYHF CDP status
