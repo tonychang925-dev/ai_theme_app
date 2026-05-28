@@ -899,6 +899,14 @@ async def realtime_status_bundle(request: Request) -> dict:
     }
 
 
+# ── P1-3.3: Decision 调试面板 ──
+
+@router.get("/realtime/decision/latest")
+async def decision_latest_proxy(limit: int = Query(default=10, ge=1, le=50)) -> dict:
+    """代理 SPS /api/v1/decision/latest，前端调试用。"""
+    return await _proxy_stock_processing_json("/api/v1/decision/latest", {"limit": str(limit)})
+
+
 @router.post("/realtime/jyhf-cdp/service/force-stop")
 async def jyhf_cdp_service_force_stop(request: Request) -> dict:
     """诊断接口：强杀 8095 端口上的进程（不限 owner），用于清理旧残留。"""

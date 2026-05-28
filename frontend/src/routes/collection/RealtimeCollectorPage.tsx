@@ -24,6 +24,8 @@ import {
   type NewChainRealtimeStatus,
   type ReviewQueueItem,
   type StatusBundle,
+  fetchDecisionLatest,
+  type SignalDecisionItem,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 import realtimeIcon from "../../assets/intel-icons/实时采集.png";
@@ -68,6 +70,9 @@ export function RealtimeCollectorPage() {
   const [detailItem, setDetailItem] = useState<ReviewQueueItem | null>(null);
   const [detailOpen, setDetailOpen] = useState(false);
   const [reviewBusy, setReviewBusy] = useState(false);
+
+  // ── P1-3.3: Decision 调试面板 ──
+  const [decisionItems, setDecisionItems] = useState<SignalDecisionItem[]>([]);
 
   function append(line: string) {
     setOutput((prev) => [...prev, `[${nowText()}] ${line}`].slice(-500));
@@ -293,6 +298,15 @@ export function RealtimeCollectorPage() {
     setSelectedIds(prev => { const next = new Set(prev); if (next.has(id)) next.delete(id); else next.add(id); return next; });
   }
   useEffect(() => { refreshReviewQueue(); const t = setInterval(refreshReviewQueue, 30000); return () => clearInterval(t); }, []);
+
+  // P1-3.3: Decision 调试面板 30s 轮询
+  useEffect(() => {
+    fetchDecisionLatest(10).then(r => setDecisionItems(r.decisions)).catch(() => {});
+    const t = setInterval(() => {
+      fetchDecisionLatest(10).then(r => setDecisionItems(r.decisions)).catch(() => {});
+    }, 30000);
+    return () => clearInterval(t);
+  }, []);
 
   async function handleStartJyhfCdp() {
     setJyhfBusy(true);
@@ -1109,6 +1123,36 @@ export function RealtimeCollectorPage() {
           </div>
         </div>
       )}
+
+      {/* P1-3.3: Decision 调试面板 */}
+      <div className="card" style={{ padding: 12, marginTop: 16, maxHeight: 360, overflow: "auto" }}>
+        <h4 style={{ margin: "0 0 8px 0", fontSize: 14 }}>Decision 调试面板</h4>
+        {decisionItems.length === 0 ? (
+          <span style={{ color: "#666", fontSize: 12 }}>暂无数据</span>
+        ) : (
+          decisionItems.map((d) => (
+            <div key={d.decision_id} style={{
+              borderBottom: "1px solid #2a2a2a", padding: "6px 0", fontSize: 12
+            }}>
+              <strong>{d.decision_type}</strong>{" "}
+              <span style={{ color: d.level === "alert" ? "#f59e0b" : "#3b82f6" }}>[{d.level}]</span>{" "}
+              {d.stock_name || d.stock_code}
+              {d.evidence.length > 0 && (
+                <div style={{ color: "#888", marginTop: 2 }}>
+                  {d.evidence.map((e, i) => (
+                    <span key={i} style={{ marginRight: 8 }}>{e.type}: {e.text.slice(0, 40)}</span>
+                  ))}
+                </div>
+              )}
+              {d.risk_flags.length > 0 && (
+                <div style={{ color: "#ef4444", marginTop: 2 }}>
+                  ⚠ {d.risk_flags.join(" | ")}
+                </div>
+              )}
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }

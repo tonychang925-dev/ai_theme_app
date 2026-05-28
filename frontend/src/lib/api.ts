@@ -1500,6 +1500,31 @@ export async function fetchStatusBundle(): Promise<StatusBundle> {
   );
 }
 
+// ── P1-3.3: Decision 调试面板 ──
+
+export interface SignalDecisionItem {
+  decision_id: string;
+  decision_type: string;
+  level: string;
+  stock_code: string;
+  stock_name: string;
+  title: string;
+  evidence: { type: string; text: string }[];
+  risk_flags: string[];
+  schema_type: string;
+}
+
+export async function fetchDecisionLatest(limit = 10): Promise<{
+  total: number;
+  decisions: SignalDecisionItem[];
+}> {
+  return fetchJsonWithTimeout(
+    `/api/v2/realtime/decision/latest?limit=${limit}`,
+    { cache: "no-store" },
+    10000,
+  );
+}
+
 export async function startNewChainRealtime(): Promise<NewChainRealtimeResult> {
   return fetchJsonWithTimeout<NewChainRealtimeResult>(
     "/api/v2/realtime/new-chain/start",
