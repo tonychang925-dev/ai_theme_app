@@ -33,7 +33,13 @@ class BuildDragonTigerObjectJob:
         self._write_port = write_port
         self._config = config
 
-    async def execute(self, trade_date: date, tushare_token: str = "") -> BuildResult:
+    async def execute(
+        self,
+        trade_date: date,
+        tushare_token: str = "",
+        *,
+        allow_fetch: bool = True,
+    ) -> BuildResult:
         """执行龙虎榜对象构建。"""
         from database_service.scripts.build_dragon_tiger_object import (
             DragonTigerObjectService,
@@ -47,8 +53,20 @@ class BuildDragonTigerObjectJob:
 
         td_str = trade_date.isoformat() if hasattr(trade_date, 'isoformat') else str(trade_date)
         snapshot_service = TushareDragonTigerSnapshotService(stock_config)
-        top_list_result = await asyncio.to_thread(snapshot_service.fetch_or_cache_top_list, td_str)
-        top_inst_result = await asyncio.to_thread(snapshot_service.fetch_or_cache_top_inst, td_str)
+        if allow_fetch:
+            top_list_result = await asyncio.to_thread(snapshot_service.fetch_or_cache_top_list, td_str)
+            top_inst_result = await asyncio.to_thread(snapshot_service.fetch_or_cache_top_inst, td_str)
+        else:
+            top_list_result = snapshot_service.load_cached_top_list(td_str)
+            top_inst_result = snapshot_service.load_cached_top_inst(td_str)
+            if top_list_result is None or top_inst_result is None:
+                return BuildResult(
+                    name="build_dragon_tiger_object",
+                    trade_date=str(trade_date),
+                    affected_rows=0,
+                    status="skipped_no_data",
+                    warnings=["dragon_tiger raw snapshot unavailable; recap derivation does not fetch external data"],
+                )
 
         service = DragonTigerObjectService()
         top_list_rows = service.normalize_top_list(top_list_result.records)

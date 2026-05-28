@@ -27,6 +27,31 @@ SUB_TASK_ORDER = [
     ("strong_stock_watch_build",       "strong_stock_watch_build"),
 ]
 
+REQUIRED_TASKS = {
+    "theme_cycle_truth",
+    "theme_leader_candidate_build",
+    "money_flow_enhanced_build",
+    "strong_stock_watch_build",
+}
+
+DEPENDENT_TASKS_BY_FAILURE = {
+    "theme_cycle_truth": [
+        "theme_leader_candidate_build",
+        "money_flow_enhanced_build",
+        "stock_abnormal_signal_build",
+        "strong_stock_watch_build",
+    ],
+    "theme_leader_candidate_build": [
+        "money_flow_enhanced_build",
+        "stock_abnormal_signal_build",
+        "strong_stock_watch_build",
+    ],
+    "money_flow_enhanced_build": [
+        "stock_abnormal_signal_build",
+        "strong_stock_watch_build",
+    ],
+}
+
 FORCE_REBUILD_TABLES = [
     "strong_stock_watch_history",
     "stock_abnormal_signal",
@@ -106,7 +131,10 @@ class PostMarketDerivedDataGenerateUseCase:
             cleanup = await self._cleanup_force_rebuild_rows(trade_date_val)
             job_results.append(cleanup)
 
+        skipped_jobs: set[str] = set()
         for job_key, _builder_key in SUB_TASK_ORDER:
+            if job_key in skipped_jobs:
+                continue
             builder = self._builders.get(job_key)
             if builder is None:
                 logger.warning("P2 builder not wired: %s", job_key)
@@ -119,6 +147,7 @@ class PostMarketDerivedDataGenerateUseCase:
                 continue
 
             await jss.mark_running(trade_date_val, job_key)
+            sub_result: dict[str, Any]
             try:
                 sub_result = await builder.run(trade_date_val)
                 sub_status = sub_result.get("status", "failed")
@@ -133,7 +162,33 @@ class PostMarketDerivedDataGenerateUseCase:
                 logger.exception("sub task %s failed", job_key)
                 await jss.mark_finished(trade_date_val, job_key, "failed",
                     error_code="EXCEPTION", error_message=str(exc)[:200])
-                job_results.append({"job_key": job_key, "status": "failed", "error": str(exc)[:200]})
+                sub_result = {"job_key": job_key, "status": "failed", "error": str(exc)[:200]}
+                job_results.append(sub_result)
+
+            sub_status = str(sub_result.get("status") or "failed")
+            if job_key in REQUIRED_TASKS and sub_status != "success":
+                dependent_jobs = [
+                    key for key in DEPENDENT_TASKS_BY_FAILURE.get(job_key, [])
+                    if key not in skipped_jobs
+                ]
+                for dependent_job in dependent_jobs:
+                    skipped_jobs.add(dependent_job)
+                    if not dry_run:
+                        await jss.mark_finished(
+                            trade_date_val,
+                            dependent_job,
+                            "failed_precondition",
+                            error_code="UPSTREAM_TASK_FAILED",
+                            error_message=f"upstream {job_key} status={sub_status}",
+                            diagnostics={"upstream_job_key": job_key, "upstream_result": sub_result},
+                        )
+                    job_results.append({
+                        "job_key": dependent_job,
+                        "status": "failed_precondition",
+                        "affected_rows": 0,
+                        "error_code": "UPSTREAM_TASK_FAILED",
+                        "error": f"upstream {job_key} status={sub_status}",
+                    })
 
         after = await rs.check(trade_date_val)
         after_dict = after.to_dict()
@@ -309,7 +364,7 @@ class _DragonTigerObjectBuilder:
             )
             token = os.environ.get("TUSHARE_TOKEN", "")
             job = BuildDragonTigerObjectJob(write_port=self._db_manager)
-            result = await job.execute(trade_date=trade_date, tushare_token=token)
+            result = await job.execute(trade_date=trade_date, tushare_token=token, allow_fetch=False)
 
             # Check object rows
             row_count = 0

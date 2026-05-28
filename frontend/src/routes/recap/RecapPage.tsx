@@ -1340,18 +1340,16 @@ export function RecapPage() {
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
             <span className="metric-label section-title">盘后复盘数据状态</span>
             <span style={{ display: "flex", gap: 8 }}>
+              <button className="tag tag-button is-pass" type="button"
+                onClick={handleStartPostMarketRecap}
+                disabled={derivedDataBusy || recapBusy}>
+                {derivedDataBusy || recapBusy ? (payload ? "重建中..." : "复盘中...") : (payload ? "重新生成" : "开始复盘")}
+              </button>
               <button className="tag" type="button"
                 onClick={handleGenerateDerivedDataOnly}
                 disabled={derivedDataBusy || recapBusy}>
                 {derivedDataBusy && !recapBusy ? "生成中..." : "仅生成动态数据"}
               </button>
-              {payload && (
-                <button className="tag tag-button is-pass" type="button"
-                  onClick={handleStartPostMarketRecap}
-                  disabled={derivedDataBusy || recapBusy}>
-                  {derivedDataBusy || recapBusy ? "重建中..." : "重新生成"}
-                </button>
-              )}
             </span>
           </div>
           <table className="recap-table" style={{ marginBottom: 6 }}>
