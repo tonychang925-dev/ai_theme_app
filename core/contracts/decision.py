@@ -116,6 +116,54 @@ class SignalDecision:
         }
 
 
+def _safe_float(v: any, default: float = 0.0) -> float:
+    try:
+        return float(v)
+    except (ValueError, TypeError):
+        return default
+
+
+def _extract_scores(alert: dict, d: SignalDecision) -> None:
+    """P1-3.5: 从原始告警中提取数值评分。"""
+
+    # support 相关
+    strength = _safe_float(alert.get("support_strength"))
+    distance = _safe_float(alert.get("distance_pct"))
+    confidence = _safe_float(alert.get("confidence"))
+
+    if strength > 0:
+        d.scores["support_strength"] = round(strength, 1)
+    if abs(distance) > 0:
+        d.scores["distance_pct"] = round(distance, 2)
+    if confidence > 0:
+        d.scores["confidence"] = round(confidence, 2)
+
+    # W2S / auction 相关
+    confirm_score = _safe_float(alert.get("confirm_score"))
+    d2_score = _safe_float(alert.get("d2_score"))
+    intraday_score = _safe_float(alert.get("intraday_score"))
+    relative_strength = _safe_float(alert.get("relative_strength"))
+
+    if confirm_score > 0:
+        d.scores["confirm_score"] = round(confirm_score, 1)
+    if d2_score > 0:
+        d.scores["d2_score"] = round(d2_score, 1)
+    if intraday_score > 0:
+        d.scores["intraday_score"] = round(intraday_score, 1)
+    if relative_strength > 0:
+        d.scores["relative_strength"] = round(relative_strength, 1)
+
+    # Intel / event 相关
+    impact_score = _safe_float(alert.get("impact_score"))
+    if impact_score > 0:
+        d.scores["impact_score"] = round(impact_score, 1)
+
+    # 综合 final_score：取已提取分数的加权平均
+    existing = [v for v in d.scores.values() if v > 0]
+    if existing:
+        d.scores["final_score"] = round(sum(existing) / len(existing), 1)
+
+
 def ensure_decision(
     alert: dict,
     decision_type: str = "",
@@ -160,6 +208,9 @@ def ensure_decision(
                 d.risk_flags.append("接近支撑位，若破位信号失效")
         except (ValueError, TypeError):
             pass
+
+    # P1-3.5: 自动提取 scores
+    _extract_scores(alert, d)
 
     for k, v in overrides.items():
         if hasattr(d, k):
