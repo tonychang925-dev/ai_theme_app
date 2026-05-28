@@ -17,6 +17,7 @@ from stock_processing_service.domain.services.w2s_intraday_alert_service import 
 from stock_processing_service.domain.services.w2s_intraday_alert_service_v2 import W2SIntradayAlertV2
 from stock_processing_service.domain.services.w2s_support_alert_service import W2SSupportAlert
 from stock_processing_service.domain.services.w2s_unified_alert_service import UnifiedW2SAlert
+from stock_processing_service.domain.services.w2s_signal_contract import W2SSignal, w2s_signal_from_unified_alert
 
 logger = logging.getLogger("sps.w2s_alert.redis_pusher")
 TZ_CN = timezone(timedelta(hours=8))
@@ -341,6 +342,43 @@ class W2SAlertRedisPusher:
         self._pushed += pushed
         if pushed:
             logger.warning("UNIFIED_W2S: %d pushed (%d auction + intraday)", pushed, len(alerts))
+        return pushed
+
+    # ── v3.0-A: 双格式兼容 ──
+
+    async def push_w2s_signals(self, signals: list) -> int:
+        """推送 W2S 信号，双格式兼容。
+
+        接受旧 UnifiedW2SAlert（通过 w2s_signal_from_unified_alert() 转换）或新 W2SSignal。
+        """
+        if not signals:
+            return 0
+        r = await self._get_redis()
+        if r is None:
+            return 0
+        pushed = 0
+        for s in signals:
+            if isinstance(s, W2SSignal):
+                w2s = s
+            else:
+                w2s = w2s_signal_from_unified_alert(s)
+
+            dedup_key = f"{STATE_KEY_PREFIX}:{w2s.biz_date}:{w2s.stock_code}:{w2s.stage}"
+            try:
+                if await r.exists(dedup_key):
+                    continue
+            except Exception:
+                pass
+            try:
+                await r.xadd(self._stream, w2s.to_dict(), maxlen=self._maxlen)
+                await r.setex(dedup_key, STATE_TTL, "1")
+                pushed += 1
+            except Exception as exc:
+                logger.warning("w2s_signal push failed for %s: %s", w2s.stock_code, exc)
+
+        self._pushed += pushed
+        if pushed:
+            logger.warning("W2S_SIGNALS: %d pushed", pushed)
         return pushed
 
     @property
