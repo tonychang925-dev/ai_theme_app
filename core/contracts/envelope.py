@@ -33,11 +33,25 @@ SOURCE_TYPE_MAP: dict[str, str] = {
 }
 
 
+_PROCESS_RUN_ID: str = ""
+
+
+def _init_run_id() -> str:
+    global _PROCESS_RUN_ID
+    if _PROCESS_RUN_ID:
+        return _PROCESS_RUN_ID
+    from_env = os.environ.get("REALTIME_RUN_ID") or os.environ.get("RUN_ID") or ""
+    if from_env:
+        _PROCESS_RUN_ID = from_env
+    else:
+        _PROCESS_RUN_ID = f"realtime-{datetime.now(CST).strftime('%Y%m%d-%H%M%S')}"
+    return _PROCESS_RUN_ID
+
+
 def _current_run_id() -> str:
-    env_run_id = os.environ.get("REALTIME_RUN_ID") or os.environ.get("RUN_ID") or ""
-    if env_run_id:
-        return env_run_id
-    return f"realtime-{datetime.now(CST).strftime('%Y%m%d-%H%M%S')}"
+    if _PROCESS_RUN_ID:
+        return _PROCESS_RUN_ID
+    return _init_run_id()
 
 
 def _infer_source_type(message: dict) -> str:
