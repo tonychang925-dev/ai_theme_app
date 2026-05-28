@@ -7,7 +7,7 @@ import {
   fetchNewChainRealtimeStatus,
   startNewChainRealtime,
   stopNewChainRealtime,
-  fetchJyhfAuctionStatus,
+  fetchStatusBundle,
   startJyhfAuctionCollector,
   stopJyhfAuctionCollector,
   openKlineAlertsStream,
@@ -23,6 +23,7 @@ import {
   type W2SAlertEvent,
   type NewChainRealtimeStatus,
   type ReviewQueueItem,
+  type StatusBundle,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 import realtimeIcon from "../../assets/intel-icons/实时采集.png";
@@ -72,31 +73,57 @@ export function RealtimeCollectorPage() {
     setOutput((prev) => [...prev, `[${nowText()}] ${line}`].slice(-500));
   }
 
-  async function refreshStatus() {
+  // P0-C2: 统一状态获取 — 一次请求替代 new-chain + CDP + auction 三个独立轮询
+  async function refreshBundledStatus() {
     try {
-      const status = await fetchNewChainRealtimeStatus();
-      setStackStatus(status);
-      setRunning(status.running ? "up" : "down");
-      const streams = status.redis_streams || {};
-      const rawLen = streams["stream:news:raw"]?.length ?? 0;
-      const structLen = streams["stream:events:structured"]?.length ?? 0;
-      const decLen = streams["stream:events:decision"]?.length ?? 0;
-      const qwenOk = status.qwen_dedup_ready ? "Qwen✅" : "Qwen⚠️";
-      append(
-        `[采集] run=${status.running ? "🟢" : "🔴"} ${qwenOk} ` +
-        `raw=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
-        `struct=${structLen > 999 ? Math.round(structLen/1000) + "k" : structLen} ` +
-        `dec=${decLen > 999 ? Math.round(decLen/1000) + "k" : decLen} ` +
-        `pending=${status.pending_count} dl=${status.dead_letter_count} ` +
-        `LLM过滤=${status.prefilter_skipped ?? 0} Feed通过=${status.news_published_total ?? 0}` +
-        (rawLen > 5000 ? " ⚠️积压" : "")
-      );
+      const bundle = await fetchStatusBundle();
+
+      // new-chain status
+      const nc = bundle.new_chain as Record<string, unknown>;
+      if (nc && typeof nc.running !== 'undefined') {
+        setStackStatus(nc as unknown as NewChainRealtimeStatus);
+        setRunning(nc.running ? "up" : "down");
+        const streams = (nc.redis_streams as Record<string, {length: number}> | undefined) || {};
+        const rawLen = streams["stream:news:raw"]?.length ?? 0;
+        const structLen = streams["stream:events:structured"]?.length ?? 0;
+        const decLen = streams["stream:events:decision"]?.length ?? 0;
+        const qwenOk = nc.qwen_dedup_ready ? "Qwen✅" : "Qwen⚠️";
+        append(
+          `[采集] run=${nc.running ? "🟢" : "🔴"} ${qwenOk} ` +
+          `raw=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
+          `struct=${structLen > 999 ? Math.round(structLen/1000) + "k" : structLen} ` +
+          `dec=${decLen > 999 ? Math.round(decLen/1000) + "k" : decLen} ` +
+          `pending=${nc.pending_count} dl=${nc.dead_letter_count} ` +
+          `LLM过滤=${nc.prefilter_skipped ?? 0} Feed通过=${nc.news_published_total ?? 0}` +
+          (rawLen > 5000 ? " ⚠️积压" : "")
+        );
+      }
     } catch (err) {
       setRunning("down");
       if (err instanceof Error && err.message.includes("timeout")) {
         append("新链状态查询超时，SPS 可能未启动");
       }
     }
+
+    // JYHF CDP status
+    try {
+      const cdp = bundle.jyhf_cdp as Record<string, unknown>;
+      if (cdp && typeof cdp === 'object') {
+        setJyhfStatus(cdp as unknown as JyhfCdpCollectorStatus);
+        setJyhfError(null);
+        append(`[诊断] cr=${cdp.collector_running} cdc=${cdp.cdp_connected} app=${cdp.app_running} owner=${cdp.service_owner} sr=${cdp.service_running} tab=${cdp.current_tab || '-'} cap=${cdp.last_capture_at || '-'}`);
+      }
+    } catch (err) {
+      setJyhfError(err instanceof Error ? err.message : "JYHF-CDP 服务未连接");
+    }
+
+    // Auction status
+    try {
+      const auction = bundle.jyhf_auction as Record<string, unknown>;
+      if (auction && typeof auction === 'object') {
+        setAuctionStatus(auction as unknown as JyhfAuctionStatus);
+      }
+    } catch { /* silent */ }
   }
 
   async function refreshJyhfCdpStatus() {
@@ -118,41 +145,15 @@ export function RealtimeCollectorPage() {
     append("实时事件采集控制台已加载");
 	    append(`[页面来源] href=${location.href} origin=${location.origin} port=${location.port}`);
 
-    refreshStatus().catch(() => {
-        setRunning("down");
-      });
-    refreshJyhfCdpStatus().catch((err) => {
-      setJyhfError(err instanceof Error ? err.message : "JYHF-CDP 服务未连接");
-    });
+    refreshBundledStatus().catch(() => {});
     refreshJyhfCdpLogs().catch(() => undefined);
   }, []);
 
-  const statusErrorNotifiedRef = useRef(false);
+  // P0-C2: 统一 8s 轮询替代原来的 3 个独立轮询
   useEffect(() => {
     const timer = window.setInterval(() => {
-      refreshStatus().catch((err) => {
-        setRunning("down");
-        if (!statusErrorNotifiedRef.current) {
-          const msg = err instanceof Error ? err.message : "状态检查失败";
-          append(`状态轮询失败：${msg}`);
-          statusErrorNotifiedRef.current = true;
-        }
-      });
-    }, 8000);
-    return () => window.clearInterval(timer);
-  }, []);
-
-  // JYHF CDP 独立轮询，不依赖主采集器状态
-  useEffect(() => {
-    refreshJyhfCdpStatus().catch(() => {});
-    refreshJyhfCdpLogs().catch(() => {});
-    fetchJyhfAuctionStatus().then(setAuctionStatus).catch(() => {});
-    const timer = window.setInterval(() => {
-      refreshJyhfCdpStatus().catch((err) => {
-        setJyhfError(err instanceof Error ? err.message : "JYHF-CDP 服务未连接");
-      });
+      refreshBundledStatus().catch(() => {});
       refreshJyhfCdpLogs().catch(() => undefined);
-      fetchJyhfAuctionStatus().then(setAuctionStatus).catch(() => {});
     }, 8000);
     return () => window.clearInterval(timer);
   }, []);
@@ -224,7 +225,7 @@ export function RealtimeCollectorPage() {
       append("[新链] 发送启动请求...");
       const result = await startNewChainRealtime();
       append(`[新链] ok=${result.ok}`);
-      await refreshStatus();
+      await refreshBundledStatus();
     } catch (err: any) {
       append(`❌ 启动失败: ${err?.message || err}`);
     } finally {
@@ -238,7 +239,7 @@ export function RealtimeCollectorPage() {
     try {
       const result = await stopNewChainRealtime();
       append(`[新链] 停止完成: ok=${result.ok} status=${result.status}`);
-      await refreshStatus();
+      await refreshBundledStatus();
     } catch (err) {
       const message = err instanceof Error ? err.message : "停止失败";
       append(message.startsWith("停止失败:") ? message : `停止失败: ${message}`);
@@ -250,7 +251,7 @@ export function RealtimeCollectorPage() {
   async function handleRefresh() {
     setMainBusy(true);
     try {
-      await refreshStatus();
+      await refreshBundledStatus();
       append("已刷新新链状态");
     } catch (err) {
       const message = err instanceof Error ? err.message : "刷新失败";
@@ -800,7 +801,7 @@ export function RealtimeCollectorPage() {
                     try {
                       await fetch("/api/v2/review-queue/clear-pending", { method: "POST" });
                       append("✅ pending 已清空");
-                      await refreshStatus();
+                      await refreshBundledStatus();
                     } catch (e: any) { append("❌ 清空 pending 失败: " + (e?.message || e)); }
                   }}>清空</button>
               </span>

@@ -1483,6 +1483,23 @@ export async function fetchNewChainRealtimeStatus(): Promise<NewChainRealtimeSta
   );
 }
 
+// ── P0-C2: 统一状态聚合接口 ──
+
+export interface StatusBundle {
+  new_chain: Record<string, unknown>;
+  jyhf_cdp: Record<string, unknown>;
+  jyhf_auction: Record<string, unknown>;
+  timestamp: string;
+}
+
+export async function fetchStatusBundle(): Promise<StatusBundle> {
+  return fetchJsonWithTimeout<StatusBundle>(
+    "/api/v2/realtime/status-bundle?_t=" + Date.now(),
+    { cache: "no-store" },
+    10000,
+  );
+}
+
 export async function startNewChainRealtime(): Promise<NewChainRealtimeResult> {
   return fetchJsonWithTimeout<NewChainRealtimeResult>(
     "/api/v2/realtime/new-chain/start",
