@@ -1544,6 +1544,11 @@ select {
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
 
+.recap-progress-modal {
+  border-color: #2f4f70;
+  background: #171d24;
+}
+
 .market-summary-card {
   padding: 12px;
   border-radius: 12px;

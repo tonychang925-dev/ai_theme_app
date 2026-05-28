@@ -98,10 +98,22 @@ class PostMarketReadinessService:
                     if required:
                         result.missing_tables.append(table_name)
                     else:
-                        # dragon_tiger_object rows=0 → skipped_no_data
+                        reason = "no_dragon_tiger_day"
+                        if table_name == "dragon_tiger_object":
+                            job_row = await conn.fetchrow(
+                                """
+                                SELECT error_code, error_message, diagnostics
+                                FROM post_market_job_status
+                                WHERE trade_date = $1::date
+                                  AND job_key = 'dragon_tiger_object_build'
+                                """,
+                                trade_date,
+                            )
+                            if job_row and job_row["error_code"]:
+                                reason = str(job_row["error_code"])
                         result.skipped_tables.append({
                             "table": table_name,
-                            "reason": "no_dragon_tiger_day",
+                            "reason": reason,
                         })
 
         if result.missing_tables:

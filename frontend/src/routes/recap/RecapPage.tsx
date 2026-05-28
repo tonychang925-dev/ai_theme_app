@@ -3,9 +3,8 @@ import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
   fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
   type AbnormalStockReviewV2, type DailyReviewView, type DragonTigerReviewV2, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
-  fetchPostMarketReadiness, fetchPostMarketJobsStatus,
+  fetchPostMarketReadiness,
   generateDailyReviewV2, generatePostMarketDerivedData, generatePostMarketRecap,
-  type PostMarketReadinessView, type PostMarketJobsStatusView,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 import recapIcon from "../../assets/intel-icons/当日复盘.png";
@@ -105,22 +104,6 @@ function renderScoredCell(value: string) {
     <div className="recap-score-cell">
       <strong>{score || "--"}</strong>
       {desc && <p className="workspace-note">{desc}</p>}
-    </div>
-  );
-}
-
-function renderProgressCell(progress: number, status: string) {
-  const normalized = Math.max(0, Math.min(100, Math.round(progress)));
-  const color = status === "failed" || status === "缺失" ? "#c62828" : status === "running" ? "#2563eb" : "#17803b";
-  return (
-    <div style={{ minWidth: 160 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", gap: 8, marginBottom: 4 }}>
-        <span className="workspace-note">{zh(status)}</span>
-        <span className="workspace-note">{normalized}%</span>
-      </div>
-      <div style={{ height: 8, borderRadius: 999, background: "#2a2a2a", overflow: "hidden" }}>
-        <span style={{ display: "block", width: `${normalized}%`, height: "100%", background: color }} />
-      </div>
     </div>
   );
 }
@@ -825,6 +808,13 @@ function buildThemeTextMap(lines: string[]) {
   return result;
 }
 
+function splitSummaryLine(value: string) {
+  const text = String(value ?? "").trim();
+  const match = text.match(/^([^：:]{2,16})[：:]\s*(.*)$/);
+  if (!match) return { label: "", body: text };
+  return { label: match[1], body: match[2] || text };
+}
+
 function sectionMap(payload: RecapViewModelV2 | null) {
   const map = new Map<string, string[]>();
   for (const section of payload?.sections ?? []) {
@@ -856,8 +846,21 @@ function resolvePostMarketDataMode(params: URLSearchParams): PostMarketDataMode 
   return normalizePostMarketDataMode(import.meta.env.VITE_POST_MARKET_DEFAULT_DATA_MODE) ?? "daily_review_v2_first";
 }
 
+function todayString() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
+
+function isMissingPostMarketSnapshotError(message: string) {
+  return message.includes("post-market snapshot is unavailable or unmappable");
+}
+
 export function RecapPage() {
-  const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
+  const today = useMemo(() => todayString(), []);
   const initialParams = new URLSearchParams(window.location.search);
   const initialType = window.location.search.includes("report_type=pre_market") ? "pre_market" : "post_market";
   const initialDate = initialParams.get("date") ?? today;
@@ -871,8 +874,6 @@ export function RecapPage() {
   const [payload, setPayload] = useState<RecapViewModelV2 | null>(null);
   const [dailyReview, setDailyReview] = useState<DailyReviewView | null>(null);
   const [dailyReviewV2, setDailyReviewV2] = useState<PostMarketDailyReviewV2 | null>(null);
-  const [postMarketReadiness, setPostMarketReadiness] = useState<PostMarketReadinessView | null>(null);
-  const [postMarketJobs, setPostMarketJobs] = useState<PostMarketJobsStatusView | null>(null);
   const [derivedDataBusy, setDerivedDataBusy] = useState(false);
   const [recapBusy, setRecapBusy] = useState(false);
   const [generationSteps, setGenerationSteps] = useState<RecapGenerationStep[]>([]);
@@ -883,6 +884,19 @@ export function RecapPage() {
   const [publishing, setPublishing] = useState(false);
   const [publishResult, setPublishResult] = useState<NotionPublishResult | null>(null);
   const sections = useMemo(() => sectionMap(payload), [payload]);
+  const isGeneratingRecap = derivedDataBusy || recapBusy;
+  const recapGenerationProgress = useMemo(() => {
+    if (!generationSteps.length) return 0;
+    const total = generationSteps.reduce((sum, step) => sum + Math.max(0, Math.min(100, step.progress)), 0);
+    return Math.round(total / generationSteps.length);
+  }, [generationSteps]);
+  const recapGenerationCurrentStep = useMemo(() => {
+    const failed = generationSteps.find((step) => step.status === "failed");
+    if (failed) return failed;
+    return generationSteps.find((step) => step.status === "running")
+      ?? generationSteps.find((step) => step.status === "pending")
+      ?? generationSteps[generationSteps.length - 1];
+  }, [generationSteps]);
   const isPostMarket = effectiveReportType === "post_market";
   const marketEnvironmentSection = sections.get("大盘环境总结") ?? [];
   const themeEnvironmentSection = sections.get("板块环境总结") ?? [];
@@ -1050,16 +1064,19 @@ export function RecapPage() {
   }, [abnormalRows, abnormalSortDir, abnormalSortKey]);
   const dragonTigerRows = useMemo(
     () => {
+      if (dragonTigerDataSection.length > 0) {
+        return dragonTigerDataSection.map((item) => {
+          const parsed = splitThemeLine(item);
+          return parsed.body.includes("/")
+            ? parseDragonTigerRow(parsed.theme || "--", parsed.body)
+            : parseDragonTigerLegacyRow(parsed.theme || "--", parsed.body);
+        });
+      }
       const v2Rows = dailyReviewV2?.dragon_tiger_reviews;
       if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "dragon_tiger_reviews", v2Rows)) {
         return buildDragonTigerRowsFromV2(v2Rows ?? []);
       }
-      return dragonTigerDataSection.map((item) => {
-        const parsed = splitThemeLine(item);
-        return parsed.body.includes("/")
-          ? parseDragonTigerRow(parsed.theme || "--", parsed.body)
-          : parseDragonTigerLegacyRow(parsed.theme || "--", parsed.body);
-      });
+      return [];
     },
     [dailyReviewV2PreviewEnabled, dailyReviewV2, dragonTigerDataSection],
   );
@@ -1074,10 +1091,6 @@ export function RecapPage() {
     setError(null);
 
     if (reportType === "post_market") {
-      // P1-6: 并行加载 readiness + jobs 状态
-      fetchPostMarketReadiness(tradeDate).then((d) => { if (active) setPostMarketReadiness(d); }).catch(() => {});
-      fetchPostMarketJobsStatus(tradeDate).then((d) => { if (active) setPostMarketJobs(d); }).catch(() => {});
-
       // P0 止血：主体展示以 post_market snapshot sections 为准；DailyReview 仅旁路加载 diagnostics。
       fetchRecapSnapshot({ date: tradeDate, reportType })
         .then((data) => {
@@ -1088,7 +1101,8 @@ export function RecapPage() {
           window.history.replaceState(null, "", `/recap?${query.toString()}`);
         })
         .catch((err: Error) => {
-          if (active) setError(err.message);
+          if (!active) return;
+          setError(isMissingPostMarketSnapshotError(err.message) ? null : err.message);
         })
         .finally(() => {
           if (active) setLoading(false);
@@ -1169,13 +1183,7 @@ export function RecapPage() {
   }
 
   async function refreshPostMarketStatus() {
-    const [readiness, jobs] = await Promise.all([
-      fetchPostMarketReadiness(tradeDate).catch(() => null),
-      fetchPostMarketJobsStatus(tradeDate).catch(() => null),
-    ]);
-    if (readiness) setPostMarketReadiness(readiness);
-    if (jobs) setPostMarketJobs(jobs);
-    return readiness;
+    return fetchPostMarketReadiness(tradeDate).catch(() => null);
   }
 
   async function refreshPostMarketViews() {
@@ -1190,47 +1198,16 @@ export function RecapPage() {
     return snapshot;
   }
 
-  async function handleGenerateDerivedDataOnly() {
-    if (derivedDataBusy || recapBusy) return;
-    setError(null);
-    setDerivedDataBusy(true);
-    setGenerationSteps(initialDerivedGenerationSteps());
-    try {
-      updateGenerationStep("readiness", { status: "running", progress: 20 });
-      await refreshPostMarketStatus();
-      updateGenerationStep("readiness", { status: "success", progress: 100 });
-      updateGenerationStep("derived", { status: "running", progress: 20 });
-      await generatePostMarketDerivedData(tradeDate, true);
-      updateGenerationStep("derived", { status: "success", progress: 100 });
-      updateGenerationStep("readiness", { status: "running", progress: 70 });
-      await refreshPostMarketStatus();
-      updateGenerationStep("readiness", { status: "success", progress: 100 });
-    } catch (err) {
-      setGenerationSteps((prev) => prev.map((item) => (item.status === "running" ? { ...item, status: "failed", progress: 100 } : item)));
-      setError(err instanceof Error ? err.message : "生成动态复盘数据失败");
-    } finally {
-      setDerivedDataBusy(false);
-    }
-  }
-
   function updateGenerationStep(key: string, patch: Partial<RecapGenerationStep>) {
     setGenerationSteps((prev) => prev.map((item) => (item.key === key ? { ...item, ...patch } : item)));
   }
 
-  function generationProgress(key: string, fallback: number) {
-    return generationSteps.find((step) => step.key === key)?.progress ?? fallback;
-  }
-
-  function generationStatus(key: string, fallback: string) {
-    return generationSteps.find((step) => step.key === key)?.status ?? fallback;
-  }
-
-  function progressForJob(jobKey: string, status: string) {
-    const normalized = jobKey.toLowerCase();
-    if (normalized.includes("derived")) return generationProgress("derived", status === "success" ? 100 : 50);
-    if (normalized.includes("daily_review_v2")) return generationProgress("daily_review_v2", status === "success" ? 100 : 50);
-    if (normalized.includes("recap")) return generationProgress("recap", status === "success" ? 100 : 50);
-    return status === "success" || status === "skipped_idempotent" ? 100 : 50;
+  function requirePostMarketCommandOk(result: Record<string, unknown>, fallback: string) {
+    if (result.ok !== false) return;
+    const missingTables = Array.isArray(result.missing_tables) ? result.missing_tables.map(String).filter(Boolean) : [];
+    const errorCode = typeof result.error_code === "string" ? result.error_code : "";
+    const suffix = missingTables.length > 0 ? `缺失表: ${missingTables.join(", ")}` : errorCode;
+    throw new Error(suffix ? `${fallback}: ${suffix}` : fallback);
   }
 
   async function handleStartPostMarketRecap() {
@@ -1245,7 +1222,8 @@ export function RecapPage() {
       await refreshPostMarketStatus();
       updateGenerationStep("readiness", { status: "success", progress: 100 });
       updateGenerationStep("derived", { status: "running", progress: 35 });
-      await generatePostMarketDerivedData(tradeDate, true);
+      const derivedResult = await generatePostMarketDerivedData(tradeDate, true);
+      requirePostMarketCommandOk(derivedResult, "生成动态复盘数据失败");
       updateGenerationStep("derived", { status: "success", progress: 100 });
       updateGenerationStep("readiness", { status: "running", progress: 70 });
       const readiness = await refreshPostMarketStatus();
@@ -1256,7 +1234,8 @@ export function RecapPage() {
       }
       updateGenerationStep("readiness", { status: "success", progress: 100 });
       updateGenerationStep("recap", { status: "running", progress: 35 });
-      await generatePostMarketRecap(tradeDate, true);
+      const recapResult = await generatePostMarketRecap(tradeDate, true);
+      requirePostMarketCommandOk(recapResult, "生成复盘报告失败");
       updateGenerationStep("recap", { status: "success", progress: 100 });
       updateGenerationStep("daily_review_v2", { status: "running", progress: 40 });
       await generateDailyReviewV2(tradeDate, true).catch(() => null);
@@ -1301,10 +1280,23 @@ export function RecapPage() {
             </button>
           </div>
           {reportType === "post_market" && (
-            <button className="tag tag-button is-pass" type="button" style={{ fontSize: 16, padding: "8px 16px" }}
-              disabled={publishing || loading} onClick={handlePublishNotion}>
-              {publishing ? "发布中..." : "发布到 Notion"}
-            </button>
+            <>
+              {payload && (
+                <button
+                  className="tag tag-button is-pass"
+                  type="button"
+                  style={{ fontSize: 16, padding: "8px 16px" }}
+                  disabled={loading || isGeneratingRecap}
+                  onClick={handleStartPostMarketRecap}
+                >
+                  {isGeneratingRecap ? "复盘中..." : "重新复盘"}
+                </button>
+              )}
+              <button className="tag tag-button is-pass" type="button" style={{ fontSize: 16, padding: "8px 16px" }}
+                disabled={publishing || loading || isGeneratingRecap} onClick={handlePublishNotion}>
+                {publishing ? "发布中..." : "发布到 Notion"}
+              </button>
+            </>
           )}
           {publishResult?.page_url && (
             <a href={publishResult.page_url} target="_blank" rel="noreferrer" className="tag">
@@ -1320,9 +1312,7 @@ export function RecapPage() {
       {loading && <div className="empty-state">正在加载复盘视图...</div>}
       {error && <div className="empty-state error">{error}</div>}
       {!loading && reportType === "post_market" && !payload && (
-        <div className="workspace-card" style={{ marginBottom: 12 }}>
-          <span className="metric-label section-title">当日复盘</span>
-          <p className="workspace-note">当前交易日还没有可展示的复盘报告。点击开始复盘后，将依次生成动态复盘数据、复盘报告和 DailyReview V2。</p>
+        <div style={{ marginBottom: 12 }}>
           <button
             className="tag tag-button is-pass"
             type="button"
@@ -1334,118 +1324,21 @@ export function RecapPage() {
         </div>
       )}
 
-      {/* P1-6: PostMarket 状态面板 — 仅 post_market 模式显示 */}
-      {reportType === "post_market" && (postMarketReadiness || derivedDataBusy || recapBusy) && (
-        <div className="workspace-card" style={{ marginBottom: 12 }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-            <span className="metric-label section-title">盘后复盘数据状态</span>
-            <span style={{ display: "flex", gap: 8 }}>
-              <button className="tag tag-button is-pass" type="button"
-                onClick={handleStartPostMarketRecap}
-                disabled={derivedDataBusy || recapBusy}>
-                {derivedDataBusy || recapBusy ? (payload ? "重建中..." : "复盘中...") : (payload ? "重新生成" : "开始复盘")}
-              </button>
-              <button className="tag" type="button"
-                onClick={handleGenerateDerivedDataOnly}
-                disabled={derivedDataBusy || recapBusy}>
-                {derivedDataBusy && !recapBusy ? "生成中..." : "仅生成动态数据"}
-              </button>
-            </span>
+      {isGeneratingRecap && (
+        <div className="collection-modal-backdrop">
+          <div className="collection-modal recap-progress-modal" role="dialog" aria-modal="true" aria-label="复盘生成进度">
+            <span className="metric-label section-title">正在生成当日复盘</span>
+            <p className="workspace-note">复盘生成需要一些时间，请保持页面打开并等待完成。</p>
+            <div className="collection-progress-panel">
+              <div className="collection-progress-head">
+                <span>{recapGenerationCurrentStep?.label ?? "准备复盘"}</span>
+                <strong>{recapGenerationProgress}%</strong>
+              </div>
+              <div className="collection-progress-bar">
+                <span style={{ width: `${recapGenerationProgress}%` }} />
+              </div>
+            </div>
           </div>
-          <table className="recap-table" style={{ marginBottom: 6 }}>
-            <thead>
-              <tr>
-                <th>数据项</th><th>表</th><th>状态</th>
-              </tr>
-            </thead>
-            <tbody>
-              {!postMarketReadiness && (
-                <tr>
-                  <td>任务状态</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>post_market_recap</td>
-                  <td>{renderProgressCell(
-                    derivedDataBusy || recapBusy ? Math.max(generationProgress("readiness", 10), generationProgress("derived", 10)) : 0,
-                    derivedDataBusy || recapBusy ? "running" : "等待开始",
-                  )}</td>
-                </tr>
-              )}
-              {postMarketReadiness?.base_tables && Object.entries(postMarketReadiness.base_tables).map(([tbl, cnt]) => (
-                <tr key={tbl}>
-                  <td>基础数据</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>{tbl}</td>
-                  <td>{renderProgressCell(cnt > 0 ? 100 : 0, cnt > 0 ? `ready (${cnt})` : "缺失")}</td>
-                </tr>
-              ))}
-              {postMarketReadiness?.derived_tables && Object.entries(postMarketReadiness.derived_tables).map(([tbl, cnt]) => {
-                const isSkipped = postMarketReadiness.skipped_tables?.some((s) => s.table === tbl);
-                return (
-                <tr key={tbl}>
-                  <td>动态复盘</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>{tbl}</td>
-                  <td>
-                    {isSkipped
-                      ? renderProgressCell(100, "跳过 (no data)")
-                      : renderProgressCell(
-                        derivedDataBusy ? generationProgress("derived", 20) : cnt > 0 ? 100 : 0,
-                        derivedDataBusy ? generationStatus("derived", "running") : cnt > 0 ? `ready (${cnt})` : "缺失",
-                      )}
-                  </td>
-                </tr>
-                );
-              })}
-              {postMarketJobs?.items?.map((jb) => (
-                <tr key={jb.job_key}>
-                  <td>任务状态</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>{jb.job_key}</td>
-                  <td>{renderProgressCell(
-                    jb.status === "success" || jb.status === "skipped_idempotent" ? 100 : jb.status === "failed" || jb.status === "failed_precondition" ? 100 : progressForJob(jb.job_key, jb.status),
-                    `${jb.status}${jb.error_code ? ` (${jb.error_code})` : ""}`,
-                  )}</td>
-                </tr>
-              ))}
-              {generationSteps.map((step) => (
-                <tr key={step.key}>
-                  <td>内容生成</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>{step.label}</td>
-                  <td>{renderProgressCell(step.progress, step.status)}</td>
-                </tr>
-              ))}
-              {dailyReview?.diagnostics && (
-                <tr>
-                  <td>DailyReview</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>diagnostics</td>
-                  <td>{renderProgressCell(100, String(dailyReview.diagnostics.snapshot_status ?? "loaded"))}</td>
-                </tr>
-              )}
-              {dailyReviewV2PreviewEnabled && (
-                <tr>
-                  <td>DailyReview V2</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>schema</td>
-                  <td>
-                    {renderProgressCell(dailyReviewV2 ? 100 : recapBusy ? 60 : 0, dailyReviewV2
-                      ? `${dailyReviewV2.schema_version} / ${dailyReviewV2.data_mode}`
-                      : "preview loading")}
-                  </td>
-                </tr>
-              )}
-              {dailyReviewV2PreviewEnabled && dailyReviewV2?.diagnostics?.module_coverage && (
-                <tr>
-                  <td>DailyReview V2</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>module_coverage</td>
-                  <td>
-                    <span className="tag">
-                      {Object.entries(dailyReviewV2.diagnostics.module_coverage)
-                        .map(([key, coverage]) => `${key}:${coverage.status}/${coverage.source}/${coverage.row_count}`)
-                        .join(" | ")}
-                    </span>
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-          {postMarketReadiness?.missing_tables && postMarketReadiness.missing_tables.length > 0 && (
-            <p className="workspace-note" style={{ color: "#c00" }}>
-              缺失表: {postMarketReadiness.missing_tables.join(", ")}。请先执行"生成动态复盘数据"或全量重建。
-            </p>
-          )}
-          {postMarketReadiness?.status === "ready" && (
-            <p className="workspace-note" style={{ color: "#080" }}>动态复盘数据已就绪，可以生成复盘报告。</p>
-          )}
-          {postMarketJobs?.summary?.has_failed && (
-            <p className="workspace-note" style={{ color: "#c00" }}>存在失败任务，请检查日志后重试。</p>
-          )}
         </div>
       )}
       {!loading && !error && payload && (
@@ -1467,12 +1360,15 @@ export function RecapPage() {
                         </div>
                         {marketEnvironmentSection.length > 2 && (
                           <ul className="workspace-list market-bias-list">
-                            {marketEnvironmentSection.slice(2).map((item, idx) => (
-                              <li key={`market-env-${idx}`}>
-                                <strong>{`环境要点 ${idx + 1}`}</strong>
-                                <p className="workspace-note">{zh(item)}</p>
-                              </li>
-                            ))}
+                            {marketEnvironmentSection.slice(2).map((item, idx) => {
+                              const parsed = splitSummaryLine(item);
+                              return (
+                                <li key={`market-env-${idx}`}>
+                                  <strong>{parsed.label || `环境观察 ${idx + 1}`}</strong>
+                                  <p className="workspace-note">{zh(parsed.body)}</p>
+                                </li>
+                              );
+                            })}
                           </ul>
                         )}
                       </div>
@@ -1482,12 +1378,15 @@ export function RecapPage() {
                       <span className="metric-label section-title">核心要点</span>
                       {highlights.length > 0 ? (
                         <ul className="workspace-list">
-                          {highlights.map((item, idx) => (
-                            <li key={`highlight-${idx}`}>
-                              <strong>要点 {idx + 1}</strong>
-                              <p className="workspace-note">{zh(item)}</p>
-                            </li>
-                          ))}
+                          {highlights.map((item, idx) => {
+                            const parsed = splitSummaryLine(item);
+                            return (
+                              <li key={`highlight-${idx}`}>
+                                <strong>{parsed.label || `要点 ${idx + 1}`}</strong>
+                                <p className="workspace-note">{zh(parsed.body)}</p>
+                              </li>
+                            );
+                          })}
                         </ul>
                       ) : (
                         <p className="workspace-note">暂无高亮摘要</p>

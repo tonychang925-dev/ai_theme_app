@@ -55,7 +55,7 @@ class PostMarketJobStatusService:
                 ) VALUES ($1, $2, 'running', now(), null, null, null, $3::jsonb, now())
                 ON CONFLICT (trade_date, job_key) DO UPDATE SET
                     status = 'running',
-                    started_at = coalesce(post_market_job_status.started_at, now()),
+                    started_at = now(),
                     finished_at = null,
                     error_code = null,
                     error_message = null,

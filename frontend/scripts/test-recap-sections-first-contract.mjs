@@ -102,8 +102,12 @@ function assertCoreTitlesArePinned() {
 
 function assertPostMarketPrimaryCtaIsAlwaysVisible() {
   assert(
-    source.includes('payload ? "重新生成" : "开始复盘"'),
-    "盘后复盘状态面板必须在无 payload 时显示主 CTA: 开始复盘",
+    source.includes('{derivedDataBusy || recapBusy ? "复盘中..." : "开始复盘"}'),
+    "盘后复盘状态面板必须固定显示单一主 CTA: 开始复盘",
+  );
+  assert(
+    !source.includes("仅生成动态数据"),
+    "盘后复盘状态面板不得再显示单独的仅生成动态数据按钮",
   );
   assert(
     !source.includes("{payload && (\n                <button className=\"tag tag-button is-pass\""),
