@@ -286,6 +286,16 @@ class SSEPushService:
             except asyncio.CancelledError:
                 logger.info("连接清理任务已取消")
 
+        # Phase 6A: self-cleanup — remove our consumer from group on exit
+        if self.consumer_name and self.consumer_group and self.input_stream:
+            try:
+                redis = self.redis_client or getattr(self.stream_manager, "redis", None) or getattr(self.stream_manager, "redis_client", None)
+                if redis:
+                    await redis.xgroup_delconsumer(self.input_stream, self.consumer_group, self.consumer_name)
+                    logger.info("Self-cleanup: removed consumer %s from %s/%s", self.consumer_name, self.input_stream, self.consumer_group)
+            except Exception as e:
+                logger.debug("Self-cleanup skipped: %s", e)
+
         logger.info("SSE推送服务已停止")
 
     async def _ensure_consumer_group(self) -> None:

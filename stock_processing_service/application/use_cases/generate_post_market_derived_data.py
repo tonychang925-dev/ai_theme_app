@@ -27,6 +27,18 @@ SUB_TASK_ORDER = [
     ("strong_stock_watch_build",       "strong_stock_watch_build"),
 ]
 
+FORCE_REBUILD_TABLES = [
+    "strong_stock_watch_history",
+    "stock_abnormal_signal",
+    "money_flow_enhanced",
+    "theme_leader_candidate",
+    "dragon_tiger_object",
+    "mainline_state_transition",
+    "mainline_state_daily",
+    "theme_cycle_judgement_v2",
+    "theme_cycle_evidence_daily",
+]
+
 
 @dataclass
 class DerivedDataResult:
@@ -90,6 +102,10 @@ class PostMarketDerivedDataGenerateUseCase:
         before_dict = before.to_dict()
 
         job_results: list[dict[str, Any]] = []
+        if force and not dry_run:
+            cleanup = await self._cleanup_force_rebuild_rows(trade_date_val)
+            job_results.append(cleanup)
+
         for job_key, _builder_key in SUB_TASK_ORDER:
             builder = self._builders.get(job_key)
             if builder is None:
@@ -138,6 +154,38 @@ class PostMarketDerivedDataGenerateUseCase:
             before_readiness=before_dict, after_readiness=after_dict, job_results=job_results,
             missing_tables=after.missing_tables,
         )
+
+    async def _cleanup_force_rebuild_rows(self, trade_date_val: date) -> dict[str, Any]:
+        if self._pool is None:
+            return {
+                "job_key": "force_rebuild_cleanup",
+                "status": "skipped",
+                "error": "no_db_pool",
+            }
+
+        deleted: dict[str, int | None] = {}
+        errors: dict[str, str] = {}
+        async with self._pool.acquire() as conn:
+            for table_name in FORCE_REBUILD_TABLES:
+                try:
+                    result = await conn.execute(
+                        f"DELETE FROM {table_name} WHERE trade_date = $1::date",
+                        trade_date_val,
+                    )
+                    try:
+                        deleted[table_name] = int(str(result).split()[-1])
+                    except Exception:
+                        deleted[table_name] = None
+                except Exception as exc:
+                    errors[table_name] = str(exc)[:200]
+
+        return {
+            "job_key": "force_rebuild_cleanup",
+            "status": "success" if not errors else "partial",
+            "affected_rows": sum(value or 0 for value in deleted.values()),
+            "deleted": deleted,
+            "errors": errors,
+        }
 
 
 class _NoOpIdempotencyPort:

@@ -331,6 +331,14 @@ class RedisStreamConsumer:
             except asyncio.CancelledError:
                 logger.info("Stream consumer tasks cancelled")
 
+        # Phase 6A: self-cleanup — remove our consumer from groups on exit
+        for _stream in self.stream_configs:
+            try:
+                await self.redis.xgroup_delconsumer(_stream, self.consumer_group, self.consumer_name)
+                logger.info("Self-cleanup: removed consumer %s from %s/%s", self.consumer_name, _stream, self.consumer_group)
+            except Exception:
+                pass
+
         logger.info("RedisStreamConsumer stopped")
 
         # 发送停止告警

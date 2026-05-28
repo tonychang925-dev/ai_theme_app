@@ -28,8 +28,8 @@ function assertDefaultModeResolver() {
     "default dataMode must be controlled by VITE_POST_MARKET_DEFAULT_DATA_MODE",
   );
   assert(
-    source.includes('?? "sections_first"'),
-    "missing or invalid default dataMode must fall back to sections_first until column-level P5 gate passes",
+    source.includes('?? "daily_review_v2_first"'),
+    "missing or invalid default dataMode must fall back to daily_review_v2_first after P5.1",
   );
 }
 

@@ -23,7 +23,7 @@ import httpx
 logger = logging.getLogger(__name__)
 
 _HEALTH_ENDPOINTS = ("/health", "/healthz", "/status")
-_READY_TIMEOUT = 30.0
+_READY_TIMEOUT = 45.0
 _GRACEFUL_STOP = 2.0
 
 
@@ -450,7 +450,7 @@ class JyhfCdpManager:
             return data if isinstance(data, dict) else {}
 
     async def _post(self, path: str, *, payload: dict | None = None, **kw) -> dict:
-        async with httpx.AsyncClient(timeout=30.0, trust_env=False) as c:
+        async with httpx.AsyncClient(timeout=15.0, trust_env=False) as c:
             r = await c.post(f"{self._base_url}{path}", json=payload or {}, **kw)
             r.raise_for_status()
             data = r.json()

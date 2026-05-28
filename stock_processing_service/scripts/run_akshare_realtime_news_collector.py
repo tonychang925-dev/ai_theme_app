@@ -86,7 +86,8 @@ async def _watch_parent(parent_pid: int, interval: float = 5.0) -> None:
             _os.kill(parent_pid, 0)
         except (ProcessLookupError, PermissionError):
             logging.warning("parent pid %d died, exiting", parent_pid)
-            _os._exit(0)
+            import sys as _sys
+            _sys.exit(0)
 
 
 if __name__ == "__main__":

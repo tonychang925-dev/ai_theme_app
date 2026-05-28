@@ -92,14 +92,20 @@ class CollectorStatus:
             pass
 
 
-async def _watch_parent(parent_pid: int, interval: float = 5.0) -> None:
-    while True:
-        await asyncio.sleep(interval)
+async def _watch_parent(parent_pid: int, stop_event: asyncio.Event, interval: float = 5.0) -> None:
+    """Phase 6A: parent 退出时通过 stop_event 触发正常清理。"""
+    while not stop_event.is_set():
+        try:
+            await asyncio.wait_for(stop_event.wait(), timeout=interval)
+            return
+        except asyncio.TimeoutError:
+            pass
         try:
             os.kill(parent_pid, 0)
         except (ProcessLookupError, PermissionError):
-            logger.warning("parent pid %d died, exiting collector", parent_pid)
-            os._exit(0)
+            logger.warning("parent pid %d died, triggering clean shutdown", parent_pid)
+            stop_event.set()
+            return
 
 
 async def async_main() -> None:
@@ -121,8 +127,9 @@ async def async_main() -> None:
         args.run_id, args.redis_url, args.db_name, args.collection_interval,
     )
 
+    stop_event = asyncio.Event()
     if args.parent_pid:
-        asyncio.create_task(_watch_parent(args.parent_pid))
+        asyncio.create_task(_watch_parent(args.parent_pid, stop_event))
 
     # Import and build collector
     from database_service.streams.services.real_time_news_collector import RealTimeNewsCollector
@@ -183,7 +190,6 @@ async def async_main() -> None:
     publisher = SimpleStreamPublisher(args.redis_url)
     collector.stream_manager = publisher
 
-    stop_event = asyncio.Event()
     loop = asyncio.get_running_loop()
     for sig in (signal.SIGINT, signal.SIGTERM):
         try:
@@ -200,9 +206,11 @@ async def async_main() -> None:
             await asyncio.sleep(30)
             try:
                 cs = await collector.get_collection_stats()
+                # Phase 6A fix: collector.stats uses singular keys (news_published, total_collections),
+                # not _total suffixed keys. Match the actual keys from collector.stats.
                 status.stats.update({
-                    "news_collected_total": cs.get("news_collected_total", status.stats["news_collected_total"]),
-                    "news_published_total": cs.get("news_published_total", status.stats["news_published_total"]),
+                    "news_collected_total": cs.get("total_collections", status.stats["news_collected_total"]),
+                    "news_published_total": cs.get("news_published", status.stats["news_published_total"]),
                     "news_prefilter_skipped": cs.get("news_prefilter_skipped", status.stats["news_prefilter_skipped"]),
                     "news_dedup_skipped": cs.get("news_dedup_skipped", status.stats["news_dedup_skipped"]),
                     "semantic_dedup_batch_count": cs.get("semantic_dedup_batch_count", 0),

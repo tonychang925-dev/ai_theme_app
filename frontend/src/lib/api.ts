@@ -581,27 +581,27 @@ export async function fetchPostMarketJobsStatus(date: string): Promise<PostMarke
   );
 }
 
-export async function generatePostMarketDerivedData(date: string): Promise<Record<string, unknown>> {
+export async function generatePostMarketDerivedData(date: string, force = false): Promise<Record<string, unknown>> {
   return fetchJsonWithTimeout<Record<string, unknown>>(
     `/api/v2/post-market/derived-data/generate`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ trade_date: date }),
+      body: JSON.stringify({ trade_date: date, force }),
     },
-    30000,
+    180000,
   );
 }
 
-export async function generatePostMarketRecap(date: string): Promise<Record<string, unknown>> {
+export async function generatePostMarketRecap(date: string, force = false): Promise<Record<string, unknown>> {
   return fetchJsonWithTimeout<Record<string, unknown>>(
     `/api/v2/post-market/recap/generate`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ trade_date: date }),
+      body: JSON.stringify({ trade_date: date, force }),
     },
-    60000,
+    120000,
   );
 }
 
@@ -1260,8 +1260,98 @@ export async function publishPreMarketBriefToNotion(tradeDate: string): Promise<
 export async function fetchPreMarketBrief(tradeDate: string): Promise<PreMarketBriefView> {
   const query = new URLSearchParams({ trade_date: tradeDate });
   return fetchJsonWithTimeout<PreMarketBriefView>(
-    `/api/v1/pre_market_brief?${query.toString()}`,
+    `/api/v2/pre_market_brief?${query.toString()}`,
     undefined,
+    15000,
+  );
+}
+
+// ── Phase 6A: Review Queue ──
+
+export interface ReviewQueueItem {
+  id: number;
+  event_id: number;
+  review_status: string;
+  proposed_theme_name: string | null;
+  proposed_theme_confidence: number | null;
+  reason: string | null;
+  source_channel: string;
+  created_at: string;
+  reviewed_by: string | null;
+  reviewed_at: string | null;
+  review_note: string | null;
+  event_title: string | null;
+  event_summary: string | null;
+  event_type: string | null;
+  raw_title: string | null;
+  raw_content?: string | null;
+  event_source?: string | null;
+  raw_source_channel?: string | null;
+  publish_date?: string | null;
+  publish_time?: string | null;
+}
+
+export interface ReviewQueueListResponse {
+  items: ReviewQueueItem[];
+  total: number;
+  page: number;
+  page_size: number;
+}
+
+export async function fetchReviewQueue(params: {
+  page?: number;
+  page_size?: number;
+  status?: string;
+  source?: string;
+} = {}): Promise<ReviewQueueListResponse> {
+  const query = new URLSearchParams();
+  if (params.page) query.set("page", String(params.page));
+  if (params.page_size) query.set("page_size", String(params.page_size));
+  if (params.status) query.set("status", params.status);
+  if (params.source) query.set("source", params.source);
+  return fetchJsonWithTimeout<ReviewQueueListResponse>(
+    `/api/v2/review-queue/events?${query.toString()}`,
+    { cache: "no-store" },
+    10000,
+  );
+}
+
+export async function fetchReviewQueueDetail(id: number): Promise<ReviewQueueItem> {
+  return fetchJsonWithTimeout<ReviewQueueItem>(
+    `/api/v2/review-queue/events/${id}`,
+    { cache: "no-store" },
+    10000,
+  );
+}
+
+export async function confirmReviewEvent(id: number, reviewedBy?: string, reviewNote?: string): Promise<{ ok: boolean }> {
+  return fetchJsonWithTimeout<{ ok: boolean }>(
+    `/api/v2/review-queue/events/${id}/confirm`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ reviewed_by: reviewedBy || "", review_note: reviewNote || "" }),
+    },
+    10000,
+  );
+}
+
+export async function deleteReviewEvent(id: number): Promise<{ ok: boolean }> {
+  return fetchJsonWithTimeout<{ ok: boolean }>(
+    `/api/v2/review-queue/events/${id}`,
+    { method: "DELETE" },
+    10000,
+  );
+}
+
+export async function batchDeleteReviewEvents(ids: number[]): Promise<{ ok: boolean; deleted_count: number }> {
+  return fetchJsonWithTimeout<{ ok: boolean; deleted_count: number }>(
+    `/api/v2/review-queue/events/batch-delete`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ids }),
+    },
     15000,
   );
 }
@@ -1430,7 +1520,7 @@ export async function startJyhfCdpCollector(): Promise<JyhfCdpCommandResult> {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({}),
       },
-      45000,
+      120000,
     );
   } catch (err) {
     throw normalizeRealtimeCollectorError(err, "JYHF-CDP 启动");

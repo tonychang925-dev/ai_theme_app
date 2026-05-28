@@ -67,8 +67,8 @@ function assertDefaultModeStaysSectionsFirst() {
     "RecapPage must resolve dataMode through the P4.4 default-mode helper",
   );
   assert(
-    source.includes('?? "sections_first"'),
-    "RecapPage default dataMode must remain sections_first until column-level P5 gate passes",
+    source.includes('?? "daily_review_v2_first"'),
+    "RecapPage default dataMode must be daily_review_v2_first after P5.1",
   );
   assert(
     !source.includes('const dataMode = "daily_review_v2_first"'),

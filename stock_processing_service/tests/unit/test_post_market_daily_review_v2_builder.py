@@ -227,6 +227,8 @@ def test_daily_review_v2_builder_maps_ready_strong_stock_reviews() -> None:
     assert rows[0]["purity_score"] == 88.5
     assert rows[0]["leading_score"] == 85.0
     assert rows[0]["capital_score"] == 85.0
+    assert rows[0]["structure_score"] == 0.72
+    assert rows[0]["resilience_score"] == 0.72
     assert rows[0]["diagnostics"]["source"] == "recap_doc.strong_stock_reviews"
     assert "purity_score.watch_score_or_role" in rows[0]["diagnostics"]["fallback_used"]
     assert "leading_score.role" in rows[0]["diagnostics"]["fallback_used"]
@@ -331,7 +333,10 @@ def test_daily_review_v2_builder_allows_strong_stock_kline_support_type_fallback
     row = payload["strong_stock_reviews"][0]
     assert row["kline"]["position_label"] == "ma20"
     assert row["kline"]["pattern_summary"] == "ma20"
+    assert row["structure_score"] == 0.72
+    assert row["resilience_score"] == 0.72
     assert "kline.support_type" in row["diagnostics"]["fallback_used"]
+    assert "structure_score.support_or_composite" in row["diagnostics"]["fallback_used"]
     coverage = payload["diagnostics"]["module_coverage"]["strong_stock_reviews"]
     assert coverage["status"] == "ready"
     assert coverage["source"] == "structured"
@@ -860,6 +865,32 @@ def test_daily_review_v2_builder_uses_money_flow_conclusion_fallback() -> None:
     assert coverage["status"] == "ready"
     assert coverage["source"] == "structured"
     assert coverage["missing_fields"] == []
+
+
+def test_daily_review_v2_builder_formats_numeric_theme_kline_for_display() -> None:
+    recap_doc = {
+        "theme_reviews": [
+            {
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "tier": "mainline",
+                "mainline_strength_score": 72,
+                "capital_focus_score": 85.926,
+                "cycle_stage": "rebound",
+                "action_advice": "观察分歧承接",
+                "total_inflow": 880000000,
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.theme.kline",
+    )
+
+    assert payload["theme_reviews"][0]["theme_kline"] == "强度 85.93"
 
 
 def test_daily_review_v2_builder_maps_ready_dragon_tiger_reviews() -> None:

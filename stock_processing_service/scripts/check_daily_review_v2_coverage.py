@@ -41,7 +41,7 @@ ROW_COUNT_EXPECTATIONS = {
 STRICT_COLUMN_REQUIREMENTS = {
     "theme_reviews": ("event_score", "market_score"),
     "theme_capital_reviews": ("top3_inflow", "inflow_stock_count", "theme_kline"),
-    "strong_stock_reviews": ("purity_score", "leading_score", "capital_score"),
+    "strong_stock_reviews": ("purity_score", "leading_score", "capital_score", "structure_score", "resilience_score"),
     "abnormal_reviews": ("volume_ratio", "labels"),
     "money_flow_reviews": ("kline.position_label", "kline.pattern_labels_or_summary"),
 }

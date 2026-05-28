@@ -198,7 +198,7 @@ class PostMarketDailyReviewV2Builder:
                 "price_structure",
                 "capital_focus_score",
             )
-            theme_kline = self._nullable_text(theme_kline_source)
+            theme_kline = self._theme_kline_text(theme_kline_source)
             if theme_kline and theme_kline_source == source.get("capital_focus_score"):
                 fallback_used.append("theme_kline.capital_focus_score")
             cycle_stage = self._nullable_text(self._first_present(source, "cycle_stage", "final_cycle_state", "stage"))
@@ -296,8 +296,15 @@ class PostMarketDailyReviewV2Builder:
         theme_name = self._theme_name(source)
         total_inflow = self._float_or_none(self._first_present(source, "total_inflow", "main_net_inflow_sum"))
         leader_inflow = self._float_or_none(self._first_present(source, "leader_inflow", "leader_main_net_inflow"))
-        theme_kline = self._nullable_text(
-            self._first_present(source, "theme_kline", "kline_status", "theme_structure", "final_cycle_state")
+        theme_kline = self._theme_kline_text(
+            self._first_present(
+                source,
+                "theme_kline",
+                "kline_status",
+                "theme_structure",
+                "final_cycle_state",
+                "capital_focus_score",
+            )
         )
         mainline_strength_score = self._float_or_none(
             self._first_present(source, "mainline_strength_score", "strength_score", "state_strength_score")
@@ -480,6 +487,9 @@ class PostMarketDailyReviewV2Builder:
             support_type = self._nullable_text(joined.get("support_type"))
             position_label = self._nullable_text(joined.get("position_label"))
             pattern_labels = self._list(joined.get("pattern_labels"))
+            structure_score = self._float_or_none(
+                self._first_present(joined, "structure_score", "position_score", "kline_score")
+            )
             rationale_source = self._nullable_text(source.get("rationale"))
             strong_grade = self._nullable_text(source.get("strong_grade"))
             llm_judgement = role_enhanced or self._nullable_text(source.get("watch_status") or source.get("candidate_level"))
@@ -518,12 +528,21 @@ class PostMarketDailyReviewV2Builder:
             if not support_type and position_label:
                 support_type = position_label
                 fallback_used.append("support.position_label")
+            if structure_score is None:
+                structure_score = support_score if support_score is not None else composite_score
+                if structure_score is not None:
+                    fallback_used.append("structure_score.support_or_composite")
+            resilience_score = support_score if support_score is not None else composite_score
+            if support_score is None and resilience_score is not None:
+                fallback_used.append("resilience_score.composite_score")
             kline_position_label = position_label
             pattern_summary = None
             if not kline_position_label and not pattern_labels and support_type:
                 kline_position_label = support_type
                 pattern_summary = support_type
                 fallback_used.append("kline.support_type")
+            if not pattern_labels and not pattern_summary and kline_position_label:
+                pattern_summary = kline_position_label
 
             if role != "reject":
                 display_required = {
@@ -558,8 +577,8 @@ class PostMarketDailyReviewV2Builder:
                 "purity_score": purity_score,
                 "leading_score": leading_score,
                 "capital_score": capital_score,
-                "structure_score": None,
-                "resilience_score": support_score,
+                "structure_score": structure_score,
+                "resilience_score": resilience_score,
                 "money_flow": {
                     "main_net_inflow": main_net_inflow,
                     "money_flow_tier": money_flow_tier,
@@ -846,6 +865,9 @@ class PostMarketDailyReviewV2Builder:
             if not kline_position and role_enhanced:
                 kline_position = role_enhanced
                 fallback_used.append("kline.role_enhanced")
+            if not pattern_labels and not pattern_summary and kline_position:
+                pattern_summary = kline_position
+                fallback_used.append("kline.position_label")
 
             required = {
                 "stock_code": stock_code,
@@ -1564,6 +1586,13 @@ class PostMarketDailyReviewV2Builder:
     @classmethod
     def _theme_name(cls, source: dict[str, Any]) -> str:
         return cls._text(cls._first_present(source, "theme_name", "subject_name", "name"))
+
+    @classmethod
+    def _theme_kline_text(cls, value: Any) -> str | None:
+        score = cls._float_or_none(value)
+        if score is not None:
+            return f"强度 {score:.2f}"
+        return cls._nullable_text(value)
 
     @classmethod
     def _theme_tier(

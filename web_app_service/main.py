@@ -87,6 +87,43 @@ async def _auto_start_jyhf_collectors(sps_base: str):
             break
 
 
+# ── Phase 6A: SSE Push Service ──
+
+_sse_push_service: object | None = None
+
+
+async def _init_sse_push_service() -> None:
+    global _sse_push_service
+    try:
+        from database_service.streams.services.sse_push_service import (
+            SSEPushService,
+            create_sse_push_service,
+        )
+        _sse_push_service = await create_sse_push_service(
+            redis_url=_os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0"),
+            config={
+                "consumer_group": "sse_pushers",
+                "consumer_name": f"sse_pusher_webapp",
+                "input_stream": "stream:event:feed",
+            },
+        )
+        await _sse_push_service.start()
+        logging.getLogger("web_app_service.sse").info("SSE push service started")
+    except Exception as exc:
+        logging.getLogger("web_app_service.sse").warning(f"SSE push service unavailable: {exc}")
+
+
+async def _shutdown_sse_push_service() -> None:
+    global _sse_push_service
+    svc = _sse_push_service
+    _sse_push_service = None
+    if svc is not None and hasattr(svc, "stop"):
+        try:
+            await svc.stop()
+        except Exception:
+            pass
+
+
 @app.on_event("startup")
 async def _startup_cdp_manager() -> None:
     project_root = Path(__file__).resolve().parents[1]
@@ -149,6 +186,9 @@ async def _startup_cdp_manager() -> None:
     sps_base = _os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090").rstrip("/")
     _auto_start_task = asyncio.create_task(_auto_start_jyhf_collectors(sps_base))
 
+    # ── Phase 6A: 启动 SSE push service ──
+    asyncio.create_task(_init_sse_push_service())
+
 
 @app.on_event("shutdown")
 async def _shutdown_cdp_manager() -> None:
@@ -164,6 +204,9 @@ async def _shutdown_cdp_manager() -> None:
       0 (default) — leave CDP alive; new BFF instance will detect it as external
       1           — restore old behavior: kill managed CDP on BFF shutdown
     """
+    # Phase 6A: shutdown SSE push service
+    await _shutdown_sse_push_service()
+
     stop_on_shutdown = _os.getenv("JYHF_CDP_STOP_ON_BFF_SHUTDOWN", "0").lower() in {"1", "true", "yes", "on"}
     if not stop_on_shutdown:
         return

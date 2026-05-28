@@ -19,10 +19,13 @@ else:
 async def run_services(args: argparse.Namespace) -> None:
     import redis.asyncio as redis
 
-    # P1-C1: parent watchdog
+    # Create stop_event early so parent watchdog triggers clean shutdown
+    stop_event = asyncio.Event()
+
+    # P1-C1: parent watchdog — triggers clean shutdown (finally + self-cleanup)
     parent_pid = int(os.environ.get("REALTIME_PARENT_PID", "0"))
     if parent_pid:
-        asyncio.create_task(_watch_parent(parent_pid))
+        asyncio.create_task(_watch_parent(parent_pid, stop_event))
 
     from database_service.gateway import DatabaseGateway
     from database_service.managers.redis_stream_bus import UnifiedRedisStreamBus
@@ -89,7 +92,6 @@ async def run_services(args: argparse.Namespace) -> None:
     await storage_handler.start_storage_service()
     await processor.start_business_processing()
 
-    stop_event = asyncio.Event()
     loop = asyncio.get_running_loop()
     for signame in ("SIGINT", "SIGTERM"):
         try:
@@ -115,43 +117,100 @@ async def run_services(args: argparse.Namespace) -> None:
             *[task for task in [storage_handler.handler_task, processor.processor_task] if task],
             return_exceptions=True,
         )
+
+        # Phase 6A: self-cleanup — remove our consumers from groups on exit
+        for _stream, _group, _cname in [
+            ("stream:news:raw", args.storage_group,
+             storage_handler.consumer_config.get("consumer_name", "")),
+            ("stream:events:normal", args.processor_group,
+             processor.processor_config.get("processor_name", "")),
+        ]:
+            if _cname:
+                try:
+                    await redis_client.xgroup_delconsumer(_stream, _group, _cname)
+                    logging.info("Self-cleanup: removed consumer %s from %s/%s", _cname, _stream, _group)
+                except Exception:
+                    pass
+
         await gateway.close()
         await redis_client.aclose()
 
 
 async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> None:
-    """创建或复用 consumer group，清理僵尸消费者，不跳过积压消息。"""
+    """Phase 6A: 创建/复用 consumer group，live mode 从最新开始并清理僵尸。
+
+    - live mode 默认从 "$" 创建，不再回放历史积压
+    - lag > 50% 自动重置到 $
+    - 僵尸清理：只 XGROUP DELCONSUMER，不 XACK pending（防止丢消息）
+    """
+    import os as _os
+    start_mode = _os.environ.get("REALTIME_STREAM_START_MODE", "latest").lower()
+    start_id = "$" if start_mode == "latest" else "0"
     try:
-        await redis_client.xgroup_create(stream, group, id="0", mkstream=True)
-        logging.info("Created consumer group from beginning: %s/%s", stream, group)
+        await redis_client.xgroup_create(stream, group, id=start_id, mkstream=True)
+        logging.info("Created consumer group %s/%s start_id=%s mode=%s", stream, group, start_id, start_mode)
         return
     except Exception as exc:
         if "BUSYGROUP" not in str(exc):
             raise
 
-    # Group exists — clean up zombie consumers (idle > 60s)
-    logging.info("Consumer group already exists: %s/%s, cleaning zombies...", stream, group)
+    logging.info("Consumer group already exists: %s/%s (mode=%s), checking health...", stream, group, start_mode)
+
+    # Live mode: auto-reset if hopelessly behind
+    if start_mode == "latest":
+        try:
+            stream_info = await redis_client.xinfo_stream(stream)
+            stream_len = stream_info.get("length", 0)
+            group_info_list = await redis_client.xinfo_groups(stream)
+            for gi in group_info_list:
+                if gi.get("name") == group:
+                    lag = gi.get("lag", 0)
+                    if stream_len > 0 and lag > stream_len * 0.5:
+                        logging.warning(
+                            "Group %s/%s lag=%d > 50%% of stream_len=%d, resetting to $",
+                            stream, group, lag, stream_len,
+                        )
+                        await redis_client.xgroup_setid(stream, group, "$")
+                        # Drop all old consumers since their pending is now orphaned
+                        try:
+                            consumers = await redis_client.xinfo_consumers(stream, group)
+                            for c in consumers:
+                                try:
+                                    await redis_client.xgroup_delconsumer(stream, group, c.get("name", ""))
+                                except Exception:
+                                    pass
+                        except Exception:
+                            pass
+                        logging.info("Group %s/%s reset to $", stream, group)
+                    break
+        except Exception as e:
+            logging.debug("Group lag check skipped: %s", e)
+
+    # Clean up zombie consumers (idle > 60s) — never ACK pending
     zombie_count = 0
+    orphaned_pending = 0
     try:
         consumers = await redis_client.xinfo_consumers(stream, group)
         for c in consumers:
             idle_ms = int(c.get("idle", 0))
-            if idle_ms > 60000:  # idle > 60s = zombie
+            if idle_ms > 60000:
+                orphaned_pending += int(c.get("pending", 0))
                 try:
-                    # Claim pending from zombie
-                    pending = await redis_client.xpending(stream, group, "-", "+", 1000, c["name"])
-                    if pending and "consumers" not in pending:
-                        for entry in pending:
-                            msg_id = entry.get("message_id", entry[0] if isinstance(entry, (list, tuple)) else "")
-                            if msg_id:
-                                # Just ack to clear pending — they'll be re-delivered
-                                await redis_client.xack(stream, group, msg_id)
                     await redis_client.xgroup_delconsumer(stream, group, c["name"])
                     zombie_count += 1
                 except Exception:
                     pass
         if zombie_count:
-            logging.warning("Cleaned %d zombie consumers from %s/%s", zombie_count, stream, group)
+            logging.warning(
+                "Cleaned %d zombie consumers from %s/%s (orphaned pending=%d, NOT acked)",
+                zombie_count, stream, group, orphaned_pending,
+            )
+            if orphaned_pending > 1000:
+                logging.warning(
+                    "Large orphaned pending (%d) in %s/%s. "
+                    "Suggested: scripts/repair_realtime_redis_groups.sh --stream %s --group %s --reset-to-latest",
+                    orphaned_pending, stream, group, stream, group,
+                )
     except Exception:
         pass
 
@@ -174,16 +233,21 @@ def main() -> None:
     asyncio.run(run_services(build_parser().parse_args()))
 
 
-async def _watch_parent(parent_pid: int, interval: float = 5.0) -> None:
-    """P1-C1: parent pid 不存在时主动退出。"""
+async def _watch_parent(parent_pid: int, stop_event: asyncio.Event, interval: float = 5.0) -> None:
+    """Phase 6A: parent 退出时通过 stop_event 触发正常清理，不再 os._exit 跳过 finally。"""
     import os as _os
-    while True:
-        await asyncio.sleep(interval)
+    while not stop_event.is_set():
+        try:
+            await asyncio.wait_for(stop_event.wait(), timeout=interval)
+            return
+        except asyncio.TimeoutError:
+            pass
         try:
             _os.kill(parent_pid, 0)
         except (ProcessLookupError, PermissionError):
-            logging.warning("parent pid %d died, exiting raw_news", parent_pid)
-            _os._exit(0)
+            logging.warning("parent pid %d died, triggering clean shutdown", parent_pid)
+            stop_event.set()
+            return
 
 
 if __name__ == "__main__":

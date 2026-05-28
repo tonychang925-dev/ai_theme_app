@@ -4,7 +4,7 @@ import {
   fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
   type AbnormalStockReviewV2, type DailyReviewView, type DragonTigerReviewV2, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness, fetchPostMarketJobsStatus,
-  generatePostMarketDerivedData, generatePostMarketRecap,
+  generateDailyReviewV2, generatePostMarketDerivedData, generatePostMarketRecap,
   type PostMarketReadinessView, type PostMarketJobsStatusView,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
@@ -73,6 +73,31 @@ type StrongStockRow = {
   raw: string;
 };
 
+type RecapGenerationStep = {
+  key: string;
+  label: string;
+  status: "pending" | "running" | "success" | "failed";
+  progress: number;
+};
+
+const INITIAL_RECAP_GENERATION_STEPS: RecapGenerationStep[] = [
+  { key: "readiness", label: "检查盘后数据状态", status: "pending", progress: 0 },
+  { key: "derived", label: "生成动态复盘数据", status: "pending", progress: 0 },
+  { key: "recap", label: "生成复盘报告", status: "pending", progress: 0 },
+  { key: "daily_review_v2", label: "生成 DailyReview V2", status: "pending", progress: 0 },
+  { key: "snapshot", label: "载入复盘报告", status: "pending", progress: 0 },
+];
+
+function initialRecapGenerationSteps(): RecapGenerationStep[] {
+  return INITIAL_RECAP_GENERATION_STEPS.map((step) => ({ ...step }));
+}
+
+function initialDerivedGenerationSteps(): RecapGenerationStep[] {
+  return INITIAL_RECAP_GENERATION_STEPS
+    .filter((step) => step.key === "readiness" || step.key === "derived")
+    .map((step) => ({ ...step }));
+}
+
 function renderScoredCell(value: string) {
   const raw = zh(value || "--");
   const [score, desc] = raw.split("｜", 2);
@@ -80,6 +105,22 @@ function renderScoredCell(value: string) {
     <div className="recap-score-cell">
       <strong>{score || "--"}</strong>
       {desc && <p className="workspace-note">{desc}</p>}
+    </div>
+  );
+}
+
+function renderProgressCell(progress: number, status: string) {
+  const normalized = Math.max(0, Math.min(100, Math.round(progress)));
+  const color = status === "failed" || status === "缺失" ? "#c62828" : status === "running" ? "#2563eb" : "#17803b";
+  return (
+    <div style={{ minWidth: 160 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", gap: 8, marginBottom: 4 }}>
+        <span className="workspace-note">{zh(status)}</span>
+        <span className="workspace-note">{normalized}%</span>
+      </div>
+      <div style={{ height: 8, borderRadius: 999, background: "#2a2a2a", overflow: "hidden" }}>
+        <span style={{ display: "block", width: `${normalized}%`, height: "100%", background: color }} />
+      </div>
     </div>
   );
 }
@@ -812,7 +853,7 @@ function resolvePostMarketDataMode(params: URLSearchParams): PostMarketDataMode 
   if (urlMode) {
     return urlMode;
   }
-  return normalizePostMarketDataMode(import.meta.env.VITE_POST_MARKET_DEFAULT_DATA_MODE) ?? "sections_first";
+  return normalizePostMarketDataMode(import.meta.env.VITE_POST_MARKET_DEFAULT_DATA_MODE) ?? "daily_review_v2_first";
 }
 
 export function RecapPage() {
@@ -834,6 +875,7 @@ export function RecapPage() {
   const [postMarketJobs, setPostMarketJobs] = useState<PostMarketJobsStatusView | null>(null);
   const [derivedDataBusy, setDerivedDataBusy] = useState(false);
   const [recapBusy, setRecapBusy] = useState(false);
+  const [generationSteps, setGenerationSteps] = useState<RecapGenerationStep[]>([]);
   const effectiveReportType = payload?.report_type ?? reportType;
   const highlights = payload?.highlights ?? [];
   const [error, setError] = useState<string | null>(null);
@@ -1027,6 +1069,7 @@ export function RecapPage() {
     setPayload(null);
     setDailyReview(null);
     setDailyReviewV2(null);
+    setGenerationSteps([]);
     setLoading(true);
     setError(null);
 
@@ -1088,6 +1131,20 @@ export function RecapPage() {
     };
   }, [tradeDate, reportType, dailyReviewV2PreviewEnabled]);
 
+  useEffect(() => {
+    if (!derivedDataBusy && !recapBusy) return;
+    const timer = window.setInterval(() => {
+      setGenerationSteps((prev) =>
+        prev.map((step) => {
+          if (step.status !== "running") return step;
+          const increment = step.progress < 60 ? 7 : 3;
+          return { ...step, progress: Math.min(92, step.progress + increment) };
+        }),
+      );
+    }, 800);
+    return () => window.clearInterval(timer);
+  }, [derivedDataBusy, recapBusy]);
+
   function toggleAbnormalSort(key: "score" | "turnoverRate" | "volumeRatio" | "volumeVsMa50") {
     if (abnormalSortKey === key) {
       setAbnormalSortDir((prev) => (prev === "desc" ? "asc" : "desc"));
@@ -1108,6 +1165,117 @@ export function RecapPage() {
       setPublishResult({ ok: false, action: `error: ${err instanceof Error ? err.message : "unknown"}` });
     } finally {
       setPublishing(false);
+    }
+  }
+
+  async function refreshPostMarketStatus() {
+    const [readiness, jobs] = await Promise.all([
+      fetchPostMarketReadiness(tradeDate).catch(() => null),
+      fetchPostMarketJobsStatus(tradeDate).catch(() => null),
+    ]);
+    if (readiness) setPostMarketReadiness(readiness);
+    if (jobs) setPostMarketJobs(jobs);
+    return readiness;
+  }
+
+  async function refreshPostMarketViews() {
+    const [snapshot, dr, v2] = await Promise.all([
+      fetchRecapSnapshot({ date: tradeDate, reportType: "post_market" }).catch(() => null),
+      fetchDailyReview(tradeDate).catch(() => null),
+      dailyReviewV2PreviewEnabled ? fetchDailyReviewV2(tradeDate).catch(() => null) : Promise.resolve(null),
+    ]);
+    if (snapshot) setPayload(snapshot);
+    if (dr) setDailyReview(dr);
+    if (v2) setDailyReviewV2(v2);
+    return snapshot;
+  }
+
+  async function handleGenerateDerivedDataOnly() {
+    if (derivedDataBusy || recapBusy) return;
+    setError(null);
+    setDerivedDataBusy(true);
+    setGenerationSteps(initialDerivedGenerationSteps());
+    try {
+      updateGenerationStep("readiness", { status: "running", progress: 20 });
+      await refreshPostMarketStatus();
+      updateGenerationStep("readiness", { status: "success", progress: 100 });
+      updateGenerationStep("derived", { status: "running", progress: 20 });
+      await generatePostMarketDerivedData(tradeDate, true);
+      updateGenerationStep("derived", { status: "success", progress: 100 });
+      updateGenerationStep("readiness", { status: "running", progress: 70 });
+      await refreshPostMarketStatus();
+      updateGenerationStep("readiness", { status: "success", progress: 100 });
+    } catch (err) {
+      setGenerationSteps((prev) => prev.map((item) => (item.status === "running" ? { ...item, status: "failed", progress: 100 } : item)));
+      setError(err instanceof Error ? err.message : "生成动态复盘数据失败");
+    } finally {
+      setDerivedDataBusy(false);
+    }
+  }
+
+  function updateGenerationStep(key: string, patch: Partial<RecapGenerationStep>) {
+    setGenerationSteps((prev) => prev.map((item) => (item.key === key ? { ...item, ...patch } : item)));
+  }
+
+  function generationProgress(key: string, fallback: number) {
+    return generationSteps.find((step) => step.key === key)?.progress ?? fallback;
+  }
+
+  function generationStatus(key: string, fallback: string) {
+    return generationSteps.find((step) => step.key === key)?.status ?? fallback;
+  }
+
+  function progressForJob(jobKey: string, status: string) {
+    const normalized = jobKey.toLowerCase();
+    if (normalized.includes("derived")) return generationProgress("derived", status === "success" ? 100 : 50);
+    if (normalized.includes("daily_review_v2")) return generationProgress("daily_review_v2", status === "success" ? 100 : 50);
+    if (normalized.includes("recap")) return generationProgress("recap", status === "success" ? 100 : 50);
+    return status === "success" || status === "skipped_idempotent" ? 100 : 50;
+  }
+
+  async function handleStartPostMarketRecap() {
+    if (derivedDataBusy || recapBusy) return;
+    setError(null);
+    setLoading(false);
+    setDerivedDataBusy(true);
+    setRecapBusy(true);
+    setGenerationSteps(initialRecapGenerationSteps());
+    try {
+      updateGenerationStep("readiness", { status: "running", progress: 30 });
+      await refreshPostMarketStatus();
+      updateGenerationStep("readiness", { status: "success", progress: 100 });
+      updateGenerationStep("derived", { status: "running", progress: 35 });
+      await generatePostMarketDerivedData(tradeDate, true);
+      updateGenerationStep("derived", { status: "success", progress: 100 });
+      updateGenerationStep("readiness", { status: "running", progress: 70 });
+      const readiness = await refreshPostMarketStatus();
+      if (readiness?.status !== "ready") {
+        updateGenerationStep("readiness", { status: "failed", progress: 100 });
+        setError("盘后复盘数据尚未 ready，请查看“盘后复盘数据状态”中的缺失项。");
+        return;
+      }
+      updateGenerationStep("readiness", { status: "success", progress: 100 });
+      updateGenerationStep("recap", { status: "running", progress: 35 });
+      await generatePostMarketRecap(tradeDate, true);
+      updateGenerationStep("recap", { status: "success", progress: 100 });
+      updateGenerationStep("daily_review_v2", { status: "running", progress: 40 });
+      await generateDailyReviewV2(tradeDate, true).catch(() => null);
+      updateGenerationStep("daily_review_v2", { status: "success", progress: 100 });
+      await refreshPostMarketStatus();
+      updateGenerationStep("snapshot", { status: "running", progress: 60 });
+      const snapshot = await refreshPostMarketViews();
+      if (!snapshot) {
+        updateGenerationStep("snapshot", { status: "failed", progress: 100 });
+        setError("复盘报告已触发生成，但当前还没有可读取的 snapshot，请稍后刷新。");
+      } else {
+        updateGenerationStep("snapshot", { status: "success", progress: 100 });
+      }
+    } catch (err) {
+      setGenerationSteps((prev) => prev.map((item) => (item.status === "running" ? { ...item, status: "failed", progress: 100 } : item)));
+      setError(err instanceof Error ? err.message : "开始复盘失败");
+    } finally {
+      setDerivedDataBusy(false);
+      setRecapBusy(false);
     }
   }
 
@@ -1151,46 +1319,39 @@ export function RecapPage() {
 
       {loading && <div className="empty-state">正在加载复盘视图...</div>}
       {error && <div className="empty-state error">{error}</div>}
+      {!loading && reportType === "post_market" && !payload && (
+        <div className="workspace-card" style={{ marginBottom: 12 }}>
+          <span className="metric-label section-title">当日复盘</span>
+          <p className="workspace-note">当前交易日还没有可展示的复盘报告。点击开始复盘后，将依次生成动态复盘数据、复盘报告和 DailyReview V2。</p>
+          <button
+            className="tag tag-button is-pass"
+            type="button"
+            disabled={derivedDataBusy || recapBusy}
+            onClick={handleStartPostMarketRecap}
+          >
+            {derivedDataBusy || recapBusy ? "复盘中..." : "开始复盘"}
+          </button>
+        </div>
+      )}
 
       {/* P1-6: PostMarket 状态面板 — 仅 post_market 模式显示 */}
-      {reportType === "post_market" && postMarketReadiness && (
+      {reportType === "post_market" && (postMarketReadiness || derivedDataBusy || recapBusy) && (
         <div className="workspace-card" style={{ marginBottom: 12 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
             <span className="metric-label section-title">盘后复盘数据状态</span>
             <span style={{ display: "flex", gap: 8 }}>
               <button className="tag" type="button"
-                onClick={async () => {
-                  setDerivedDataBusy(true);
-                  try { await generatePostMarketDerivedData(tradeDate); } catch {}
-                  const r = await fetchPostMarketReadiness(tradeDate).catch(() => null);
-                  if (r) setPostMarketReadiness(r);
-                  const j = await fetchPostMarketJobsStatus(tradeDate).catch(() => null);
-                  if (j) setPostMarketJobs(j);
-                  setDerivedDataBusy(false);
-                }}
-                disabled={derivedDataBusy}>
-                {derivedDataBusy ? "生成中..." : "生成动态复盘数据"}
+                onClick={handleGenerateDerivedDataOnly}
+                disabled={derivedDataBusy || recapBusy}>
+                {derivedDataBusy && !recapBusy ? "生成中..." : "仅生成动态数据"}
               </button>
-              <button className="tag" type="button"
-                onClick={async () => {
-                  if (postMarketReadiness?.status !== "ready") return;
-                  setRecapBusy(true);
-                  try { await generatePostMarketRecap(tradeDate); } catch {}
-                  const j = await fetchPostMarketJobsStatus(tradeDate).catch(() => null);
-                  if (j) setPostMarketJobs(j);
-                  const snapshot = await fetchRecapSnapshot({ date: tradeDate, reportType }).catch(() => null);
-                  if (snapshot) setPayload(snapshot);
-                  const dr = await fetchDailyReview(tradeDate).catch(() => null);
-                  if (dr) setDailyReview(dr);
-                  if (dailyReviewV2PreviewEnabled) {
-                    const v2 = await fetchDailyReviewV2(tradeDate).catch(() => null);
-                    if (v2) setDailyReviewV2(v2);
-                  }
-                  setRecapBusy(false);
-                }}
-                disabled={postMarketReadiness?.status !== "ready" || recapBusy}>
-                {recapBusy ? "生成中..." : postMarketReadiness?.status === "ready" ? "重新生成复盘报告" : "复盘报告生成（需数据ready）"}
-              </button>
+              {payload && (
+                <button className="tag tag-button is-pass" type="button"
+                  onClick={handleStartPostMarketRecap}
+                  disabled={derivedDataBusy || recapBusy}>
+                  {derivedDataBusy || recapBusy ? "重建中..." : "重新生成"}
+                </button>
+              )}
             </span>
           </div>
           <table className="recap-table" style={{ marginBottom: 6 }}>
@@ -1200,21 +1361,33 @@ export function RecapPage() {
               </tr>
             </thead>
             <tbody>
-              {postMarketReadiness.base_tables && Object.entries(postMarketReadiness.base_tables).map(([tbl, cnt]) => (
+              {!postMarketReadiness && (
+                <tr>
+                  <td>任务状态</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>post_market_recap</td>
+                  <td>{renderProgressCell(
+                    derivedDataBusy || recapBusy ? Math.max(generationProgress("readiness", 10), generationProgress("derived", 10)) : 0,
+                    derivedDataBusy || recapBusy ? "running" : "等待开始",
+                  )}</td>
+                </tr>
+              )}
+              {postMarketReadiness?.base_tables && Object.entries(postMarketReadiness.base_tables).map(([tbl, cnt]) => (
                 <tr key={tbl}>
                   <td>基础数据</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>{tbl}</td>
-                  <td><span className="tag" style={cnt > 0 ? {} : { background: "#fff0f0" }}>{cnt > 0 ? `ready (${cnt})` : "缺失"}</span></td>
+                  <td>{renderProgressCell(cnt > 0 ? 100 : 0, cnt > 0 ? `ready (${cnt})` : "缺失")}</td>
                 </tr>
               ))}
-              {postMarketReadiness.derived_tables && Object.entries(postMarketReadiness.derived_tables).map(([tbl, cnt]) => {
+              {postMarketReadiness?.derived_tables && Object.entries(postMarketReadiness.derived_tables).map(([tbl, cnt]) => {
                 const isSkipped = postMarketReadiness.skipped_tables?.some((s) => s.table === tbl);
                 return (
                 <tr key={tbl}>
                   <td>动态复盘</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>{tbl}</td>
                   <td>
                     {isSkipped
-                      ? <span className="tag" style={{ background: "#fffbe6" }}>跳过 (no data)</span>
-                      : <span className="tag" style={cnt > 0 ? {} : { background: "#fff0f0" }}>{cnt > 0 ? `ready (${cnt})` : "缺失"}</span>}
+                      ? renderProgressCell(100, "跳过 (no data)")
+                      : renderProgressCell(
+                        derivedDataBusy ? generationProgress("derived", 20) : cnt > 0 ? 100 : 0,
+                        derivedDataBusy ? generationStatus("derived", "running") : cnt > 0 ? `ready (${cnt})` : "缺失",
+                      )}
                   </td>
                 </tr>
                 );
@@ -1222,31 +1395,31 @@ export function RecapPage() {
               {postMarketJobs?.items?.map((jb) => (
                 <tr key={jb.job_key}>
                   <td>任务状态</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>{jb.job_key}</td>
-                  <td>
-                    <span className="tag" style={
-                      jb.status === "success" ? {} :
-                      jb.status === "failed_precondition" ? { background: "#fff0f0" } :
-                      jb.status === "failed" ? { background: "#fff0f0" } :
-                      { background: "#f0f0f0" }
-                    }>{jb.status}{jb.error_code ? ` (${jb.error_code})` : ""}</span>
-                  </td>
+                  <td>{renderProgressCell(
+                    jb.status === "success" || jb.status === "skipped_idempotent" ? 100 : jb.status === "failed" || jb.status === "failed_precondition" ? 100 : progressForJob(jb.job_key, jb.status),
+                    `${jb.status}${jb.error_code ? ` (${jb.error_code})` : ""}`,
+                  )}</td>
+                </tr>
+              ))}
+              {generationSteps.map((step) => (
+                <tr key={step.key}>
+                  <td>内容生成</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>{step.label}</td>
+                  <td>{renderProgressCell(step.progress, step.status)}</td>
                 </tr>
               ))}
               {dailyReview?.diagnostics && (
                 <tr>
                   <td>DailyReview</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>diagnostics</td>
-                  <td><span className="tag">{String(dailyReview.diagnostics.snapshot_status ?? "loaded")}</span></td>
+                  <td>{renderProgressCell(100, String(dailyReview.diagnostics.snapshot_status ?? "loaded"))}</td>
                 </tr>
               )}
               {dailyReviewV2PreviewEnabled && (
                 <tr>
                   <td>DailyReview V2</td><td style={{ fontFamily: "monospace", fontSize: 12 }}>schema</td>
                   <td>
-                    <span className="tag">
-                      {dailyReviewV2
-                        ? `${dailyReviewV2.schema_version} / ${dailyReviewV2.data_mode}`
-                        : "preview loading"}
-                    </span>
+                    {renderProgressCell(dailyReviewV2 ? 100 : recapBusy ? 60 : 0, dailyReviewV2
+                      ? `${dailyReviewV2.schema_version} / ${dailyReviewV2.data_mode}`
+                      : "preview loading")}
                   </td>
                 </tr>
               )}
@@ -1264,12 +1437,12 @@ export function RecapPage() {
               )}
             </tbody>
           </table>
-          {postMarketReadiness.missing_tables && postMarketReadiness.missing_tables.length > 0 && (
+          {postMarketReadiness?.missing_tables && postMarketReadiness.missing_tables.length > 0 && (
             <p className="workspace-note" style={{ color: "#c00" }}>
               缺失表: {postMarketReadiness.missing_tables.join(", ")}。请先执行"生成动态复盘数据"或全量重建。
             </p>
           )}
-          {postMarketReadiness.status === "ready" && (
+          {postMarketReadiness?.status === "ready" && (
             <p className="workspace-note" style={{ color: "#080" }}>动态复盘数据已就绪，可以生成复盘报告。</p>
           )}
           {postMarketJobs?.summary?.has_failed && (

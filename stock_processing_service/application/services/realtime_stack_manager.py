@@ -393,11 +393,14 @@ class RealtimeStackManager:
                 except Exception:
                     stream_info[stream_name] = {"length": -1, "groups": -1}
             # DB collector / Qwen status from latest status file
+            # Phase 6A: prefer file matching current run_id, avoid stale files with later alphabetical names
             try:
-                import glob as _glob, json as _json
+                import glob as _glob, json as _json, os as _os2
                 status_files = sorted(_glob.glob(str(self._log_dir / "db_collector_realtime_*.status.json")))
-                if status_files:
-                    with open(status_files[-1]) as f:
+                matched = [f for f in status_files if self._state.run_id and self._state.run_id in _os2.path.basename(f)]
+                target_file = matched[-1] if matched else (status_files[-1] if status_files else None)
+                if target_file:
+                    with open(target_file) as f:
                         dc = _json.load(f)
                     base["qwen_dedup_ready"] = dc.get("qwen_dedup_ready", False)
                     base["qwen_dedup_calls"] = dc.get("qwen_dedup_call_count", 0)

@@ -12,11 +12,17 @@ import {
   stopJyhfAuctionCollector,
   openKlineAlertsStream,
   openW2SAlertsStream,
+  fetchReviewQueue,
+  confirmReviewEvent,
+  deleteReviewEvent,
+  batchDeleteReviewEvents,
+  fetchReviewQueueDetail,
   type JyhfCdpCollectorStatus,
   type JyhfAuctionStatus,
   type KlineAlertEvent,
   type W2SAlertEvent,
   type NewChainRealtimeStatus,
+  type ReviewQueueItem,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 import realtimeIcon from "../../assets/intel-icons/实时采集.png";
@@ -53,6 +59,14 @@ export function RealtimeCollectorPage() {
   const [output, setOutput] = useState<string[]>([]);
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const initializedRef = useRef(false);
+
+  // ── Review Queue state ──
+  const [reviewItems, setReviewItems] = useState<ReviewQueueItem[]>([]);
+  const [reviewTotal, setReviewTotal] = useState(0);
+  const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
+  const [detailItem, setDetailItem] = useState<ReviewQueueItem | null>(null);
+  const [detailOpen, setDetailOpen] = useState(false);
+  const [reviewBusy, setReviewBusy] = useState(false);
 
   function append(line: string) {
     setOutput((prev) => [...prev, `[${nowText()}] ${line}`].slice(-500));
@@ -245,6 +259,38 @@ export function RealtimeCollectorPage() {
       setMainBusy(false);
     }
   }
+
+  // ── Review Queue helpers ──
+  async function refreshReviewQueue() {
+    try {
+      const data = await fetchReviewQueue({ page_size: 50, status: "waiting" });
+      setReviewItems(data.items);
+      setReviewTotal(data.total);
+    } catch { /* silent */ }
+  }
+  async function handleConfirmReview(id: number) {
+    setReviewBusy(true);
+    try { await confirmReviewEvent(id); await refreshReviewQueue(); } catch { /* silent */ } finally { setReviewBusy(false); }
+  }
+  async function handleDeleteReview(id: number) {
+    setReviewBusy(true);
+    try { await deleteReviewEvent(id); await refreshReviewQueue(); } catch { /* silent */ } finally { setReviewBusy(false); }
+  }
+  async function handleBatchDelete() {
+    if (selectedIds.size === 0) return;
+    setReviewBusy(true);
+    try { await batchDeleteReviewEvents([...selectedIds]); setSelectedIds(new Set()); await refreshReviewQueue(); } catch { /* silent */ } finally { setReviewBusy(false); }
+  }
+  async function openDetail(id: number) {
+    try {
+      const d = await fetchReviewQueueDetail(id);
+      setDetailItem(d); setDetailOpen(true);
+    } catch { /* silent */ }
+  }
+  function toggleSelect(id: number) {
+    setSelectedIds(prev => { const next = new Set(prev); if (next.has(id)) next.delete(id); else next.add(id); return next; });
+  }
+  useEffect(() => { refreshReviewQueue(); const t = setInterval(refreshReviewQueue, 30000); return () => clearInterval(t); }, []);
 
   async function handleStartJyhfCdp() {
     setJyhfBusy(true);
@@ -733,7 +779,31 @@ export function RealtimeCollectorPage() {
             <div style={{ marginTop: 4, paddingTop: 4, borderTop: "1px solid #334155" }}>
             <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
               <span style={{ color: "#94a3b8" }}>Pending (弱信号)</span>
-              <span style={{ color: "#94a3b8" }}>{(stackStatus?.pending_count ?? 0).toLocaleString()}</span>
+              <span style={{ display: "flex", gap: 6, alignItems: "center" }}>
+                <span style={{ color: "#94a3b8" }}>{(stackStatus?.pending_count ?? 0).toLocaleString()}</span>
+                <button type="button" className="tag tag-button"
+                  style={{ fontSize: 9, padding: "1px 5px", color: "#f59e0b" }}
+                  onClick={async () => {
+                    if (!confirm("将 pending 事件导入复核队列？这可能需要一些时间。")) return;
+                    append("⏳ 正在导入 pending → 复核队列...");
+                    try {
+                      const resp = await fetch("/api/v2/review-queue/import-pending", { method: "POST" });
+                      const data = await resp.json();
+                      append(`✅ 导入完成: ${data.imported || 0} 条, 已清空 ${data.cleared || 0} 条 pending`);
+                      await refreshReviewQueue();
+                    } catch (e: any) { append("❌ 导入失败: " + (e?.message || e)); }
+                  }}>导入复核</button>
+                <button type="button" className="tag tag-button"
+                  style={{ fontSize: 9, padding: "1px 5px", color: "#ef4444" }}
+                  onClick={async () => {
+                    if (!confirm("确认清空所有 pending 弱信号事件？此操作不可撤销。")) return;
+                    try {
+                      await fetch("/api/v2/review-queue/clear-pending", { method: "POST" });
+                      append("✅ pending 已清空");
+                      await refreshStatus();
+                    } catch (e: any) { append("❌ 清空 pending 失败: " + (e?.message || e)); }
+                  }}>清空</button>
+              </span>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
               <span style={{ color: "#94a3b8" }}>死信</span>
@@ -755,6 +825,7 @@ export function RealtimeCollectorPage() {
             </div>
           </div>
         </section>
+
         </div>{/* 左列结束 */}
 
         {/* ── 右列 ── */}
@@ -883,8 +954,159 @@ export function RealtimeCollectorPage() {
             </span>
           </div>
         </section>
+
+        {/* ── 复核队列 (Phase 6A) ── */}
+        <section className="workspace-card">
+          <span className="metric-label section-title">
+            复核队列{" "}
+            <span style={{ color: "#f59e0b", fontWeight: 600 }}>{reviewTotal}</span>
+            {" "}条待处理
+          </span>
+          <div style={{ display: "flex", gap: 6, marginTop: 4, flexWrap: "wrap", alignItems: "center" }}>
+            <button type="button" className="tag tag-button" style={{ fontSize: 11, padding: "2px 8px" }}
+              onClick={() => refreshReviewQueue()} disabled={reviewBusy}>刷新</button>
+            <label style={{ fontSize: 11, color: "#94a3b8", cursor: "pointer", display: "flex", alignItems: "center", gap: 2 }}>
+              <input type="checkbox"
+                checked={reviewItems.length > 0 && selectedIds.size === reviewItems.length}
+                onChange={() => {
+                  if (selectedIds.size === reviewItems.length) {
+                    setSelectedIds(new Set());
+                  } else {
+                    setSelectedIds(new Set(reviewItems.map(it => it.id)));
+                  }
+                }}
+                style={{ margin: 0 }} />全选
+            </label>
+            <button type="button" className="tag tag-button" style={{ fontSize: 11, padding: "2px 8px", color: "#f97316" }}
+              onClick={handleBatchDelete} disabled={reviewBusy || selectedIds.size === 0}>
+              批量删除 ({selectedIds.size})
+            </button>
+            {reviewBusy && <span style={{ fontSize: 11, color: "#f59e0b" }}>⏳</span>}
+          </div>
+          <div className="collection-log-panel" style={{ maxHeight: 520, overflow: "auto", marginTop: 6, fontFamily: "monospace", fontSize: 11, lineHeight: 1.4 }}>
+            {reviewItems.length === 0 ? (
+              <div style={{ color: "#475569", padding: 8 }}>暂无待复核事件</div>
+            ) : (
+              reviewItems.map((item) => (
+                <div key={item.id} style={{
+                  display: "flex", alignItems: "flex-start", gap: 6, padding: "4px 4px",
+                  borderBottom: "1px solid #1e293b", cursor: "pointer",
+                  background: selectedIds.has(item.id) ? "rgba(59,130,246,0.12)" : "transparent",
+                }}>
+                  <input type="checkbox" checked={selectedIds.has(item.id)}
+                    onChange={() => toggleSelect(item.id)}
+                    style={{ marginTop: 2, flexShrink: 0 }} />
+                  <div style={{ flex: 1, minWidth: 0 }}
+                    onClick={() => openDetail(item.id)}>
+                    <div style={{ color: "#e2e8f0", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {item.event_title || item.raw_title || `event #${item.event_id}`}
+                    </div>
+                    <div style={{ display: "flex", gap: 8, marginTop: 1 }}>
+                      <span style={{ color: "#22c55e", fontSize: 10 }}>
+                        {item.proposed_theme_name || "-"}
+                      </span>
+                      <span style={{ color: "#64748b", fontSize: 10 }}>
+                        {(() => { const v = parseFloat(String(item.proposed_theme_confidence ?? "")); return Number.isFinite(v) ? v.toFixed(2) : "-"; })()}
+                      </span>
+                      <span style={{ color: "#475569", fontSize: 10 }}>
+                        {(item.created_at || "").slice(0, 16).replace("T", " ")}
+                      </span>
+                    </div>
+                  </div>
+                  <div style={{ display: "flex", gap: 4, flexShrink: 0 }}>
+                    <button type="button" className="tag tag-button"
+                      style={{ fontSize: 10, padding: "1px 6px", color: "#22c55e" }}
+                      onClick={(e) => { e.stopPropagation(); handleConfirmReview(item.id); }}>确认</button>
+                    <button type="button" className="tag tag-button"
+                      style={{ fontSize: 10, padding: "1px 6px", color: "#ef4444" }}
+                      onClick={(e) => { e.stopPropagation(); handleDeleteReview(item.id); }}>删除</button>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </section>
+
         </div>{/* 右列结束 */}
       </main>
+
+      {/* ── 复核详情 Modal ── */}
+      {detailOpen && detailItem && (
+        <div className="collection-modal-backdrop" onClick={() => { setDetailOpen(false); setDetailItem(null); }}>
+          <div className="screener-detail-modal" style={{ maxWidth: 640, maxHeight: "85vh" }}
+            onClick={(e) => e.stopPropagation()}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+              <strong style={{ color: "#e2e8f0", fontSize: 14 }}>复核详情 #{detailItem.id}</strong>
+              <button type="button" className="tag tag-button" style={{ fontSize: 11 }}
+                onClick={() => { setDetailOpen(false); setDetailItem(null); }}>✕ 关闭</button>
+            </div>
+            <div style={{ maxHeight: "65vh", overflow: "auto" }}>
+              <section className="collection-section">
+                <strong>事件信息</strong>
+                <div className="collection-metric-card" style={{ marginTop: 4 }}>
+                  <div><label className="collection-field">Event ID</label><span>{detailItem.event_id}</span></div>
+                  <div><label className="collection-field">类型</label><span>{detailItem.event_type || "-"}</span></div>
+                  <div><label className="collection-field">来源</label><span>{detailItem.source_channel}</span></div>
+                  <div><label className="collection-field">创建时间</label><span>{detailItem.created_at?.slice(0, 19).replace("T", " ")}</span></div>
+                </div>
+              </section>
+              <section className="collection-section" style={{ marginTop: 8 }}>
+                <strong>标题</strong>
+                <div className="workspace-note" style={{ marginTop: 2, color: "#e2e8f0" }}>
+                  {detailItem.event_title || detailItem.raw_title || "-"}
+                </div>
+              </section>
+              {(detailItem.event_summary || detailItem.raw_content) && (
+                <section className="collection-section" style={{ marginTop: 8 }}>
+                  <strong>摘要/内容</strong>
+                  <div className="workspace-note" style={{ marginTop: 2, maxHeight: 200, overflow: "auto", color: "#94a3b8", whiteSpace: "pre-wrap", fontSize: 12 }}>
+                    {(detailItem.event_summary || detailItem.raw_content || "").slice(0, 2000)}
+                  </div>
+                </section>
+              )}
+              <section className="collection-section" style={{ marginTop: 8 }}>
+                <strong>复核信息</strong>
+                <div className="collection-metric-card" style={{ marginTop: 4 }}>
+                  <div><label className="collection-field">建议主题</label><span style={{ color: "#22c55e" }}>{detailItem.proposed_theme_name || "-"}</span></div>
+                  <div><label className="collection-field">置信度</label><span>{(() => { const v = parseFloat(String(detailItem.proposed_theme_confidence ?? "")); return Number.isFinite(v) ? v.toFixed(4) : "-"; })()}</span></div>
+                  <div><label className="collection-field">原因</label><span>{detailItem.reason || "-"}</span></div>
+                  <div><label className="collection-field">状态</label><span style={{ color: detailItem.review_status === "waiting" ? "#f59e0b" : "#22c55e" }}>{detailItem.review_status}</span></div>
+                  {detailItem.reviewed_by && <div><label className="collection-field">审核人</label><span>{detailItem.reviewed_by}</span></div>}
+                  {detailItem.reviewed_at && <div><label className="collection-field">审核时间</label><span>{String(detailItem.reviewed_at).slice(0, 19).replace("T", " ")}</span></div>}
+                  {detailItem.review_note && <div><label className="collection-field">备注</label><span>{detailItem.review_note}</span></div>}
+                </div>
+              </section>
+            </div>
+            <div className="collection-action-row" style={{ marginTop: 12, display: "flex", gap: 8 }}>
+              <button type="button" className="tag tag-button tag-active"
+                style={{ color: "#22c55e" }}
+                disabled={reviewBusy}
+                onClick={async () => {
+                  const id = detailItem.id;
+                  await handleConfirmReview(id);
+                  setDetailOpen(false); setDetailItem(null);
+                }}>
+                {reviewBusy ? "处理中..." : "确认"}
+              </button>
+              <button type="button" className="tag tag-button"
+                style={{ color: "#ef4444" }}
+                disabled={reviewBusy}
+                onClick={async () => {
+                  const id = detailItem.id;
+                  await handleDeleteReview(id);
+                  setDetailOpen(false); setDetailItem(null);
+                }}>
+                {reviewBusy ? "处理中..." : "删除"}
+              </button>
+              <button type="button" className="tag tag-button"
+                disabled={reviewBusy}
+                onClick={() => { setDetailOpen(false); setDetailItem(null); }}>
+                关闭
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
