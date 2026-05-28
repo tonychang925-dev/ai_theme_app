@@ -805,6 +805,37 @@ def test_daily_review_v2_builder_maps_ready_money_flow_reviews() -> None:
     assert coverage["missing_fields"] == []
 
 
+def test_daily_review_v2_builder_prefers_resolved_theme_name_for_money_flow() -> None:
+    recap_doc = {
+        "report_context": {
+            "money_flow": [
+                {
+                    "stock_id": "002361.SZ",
+                    "stock_name": "神剑股份",
+                    "subject_key": "9028660",
+                    "theme_name": "9028660",
+                    "resolved_theme_name": "机器人",
+                    "main_net_inflow": 120000000,
+                    "money_flow_tier": "strong",
+                    "role_enhanced": "leader",
+                    "conclusion": "资金行为确认主线地位",
+                }
+            ]
+        },
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.money_flow.resolved_theme",
+    )
+
+    rows = payload["money_flow_reviews"]
+    assert rows[0]["subject_key"] == "9028660"
+    assert rows[0]["theme_name"] == "机器人"
+
+
 def test_daily_review_v2_builder_marks_money_flow_display_missing_partial() -> None:
     recap_doc = {
         "money_flow_reviews": [

@@ -13,6 +13,9 @@ from stock_processing_service.application.cache import SnapshotCacheWriter
 from stock_processing_service.application.services.new_chain_post_market_report_builder import (
     NewChainPostMarketReportBuilder,
 )
+from stock_processing_service.application.services.post_market_market_summary_llm import (
+    PostMarketMarketSummaryLlmService,
+)
 from stock_processing_service.application.use_cases.build_strong_stock_tracking import (
     LAYER_C_INPUT_MODE,
     BuildStrongStockTrackingUseCase,
@@ -36,6 +39,9 @@ from stock_processing_service.ports import (
 )
 
 
+logger = logging.getLogger(__name__)
+
+
 class BuildPostMarketRecapJob:
     def __init__(
         self,
@@ -53,6 +59,7 @@ class BuildPostMarketRecapJob:
         cycle_judgement_job: Any | None = None,  # BuildCycleJudgementJob — Layer B 前置
         evidence_job: Any | None = None,  # BuildThemeCycleEvidenceDailyJob — Layer B 证据
         report_builder: NewChainPostMarketReportBuilder | None = None,
+        market_summary_llm_service: Any | None = None,
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -74,6 +81,7 @@ class BuildPostMarketRecapJob:
         self._cycle_judgement_job = cycle_judgement_job
         self._evidence_job = evidence_job
         self._report_builder = report_builder or NewChainPostMarketReportBuilder()
+        self._market_summary_llm_service = market_summary_llm_service or PostMarketMarketSummaryLlmService()
 
     @staticmethod
     def _d(value: Any) -> Decimal:
@@ -551,6 +559,7 @@ class BuildPostMarketRecapJob:
 
         # ── P2: 结构化 theme_reviews 生成 ──
         report_context = recap_doc.get("report_context") or {}
+        recap_doc["market_summary"] = await self._build_market_summary_llm(trade_date, report_context)
         theme_context_map = await self._build_theme_context_map(trade_date, report_context)
         recap_doc["theme_reviews"] = self._build_theme_reviews(theme_context_map)
         recap_doc["diagnostics"]["coverage"] = self._build_theme_review_coverage(theme_context_map)
@@ -816,6 +825,16 @@ class BuildPostMarketRecapJob:
     # ── P2: theme_reviews 结构化生成 ──
 
     MAX_THEME_REVIEWS = 20
+
+    async def _build_market_summary_llm(self, trade_date: date, report_context: dict[str, Any]) -> dict[str, Any] | None:
+        service = self._market_summary_llm_service
+        if service is None:
+            return None
+        try:
+            return await service.build(trade_date=trade_date, report_context=report_context)
+        except Exception as exc:
+            logger.warning("post-market market_summary LLM failed, fallback to deterministic summary: %s", exc)
+            return None
 
     async def _mark_job_status(
         self,

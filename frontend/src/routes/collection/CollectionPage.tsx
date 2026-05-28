@@ -94,18 +94,7 @@ export function CollectionPage() {
     jyhf: true,
     tushareKline: true,
     dragonTiger: true,
-    abnormalSignal: true,
-    leaderLlm: true,
   });
-  const [abnormalFilters, setAbnormalFilters] = useState({
-    turnoverRate: true,
-    mainNetInflow: true,
-    hotMoneyBuy: true,
-    institutionBuy: true,
-    tailRush: true,
-  });
-  const [minTurnoverRate, setMinTurnoverRate] = useState("3.0");
-  const [minCompositeScore, setMinCompositeScore] = useState("40");
 
   const totalSteps = job?.total_steps ?? 0;
   const completedSteps = job?.completed_steps ?? 0;
@@ -208,20 +197,9 @@ export function CollectionPage() {
           jyhf_history: false,
           tushare_kline: options.tushareKline,
           dragon_tiger: options.dragonTiger,
-          abnormal_signal: options.abnormalSignal,
-          leader_llm: options.leaderLlm,
           auto_build_v2_if_missing: false,
         },
         tushare_pause_seconds: 0.1,
-        abnormal_filters: {
-          turnover_rate: abnormalFilters.turnoverRate,
-          main_net_inflow: abnormalFilters.mainNetInflow,
-          hot_money_buy: abnormalFilters.hotMoneyBuy,
-          institution_buy: abnormalFilters.institutionBuy,
-          tail_rush: abnormalFilters.tailRush,
-        },
-        min_turnover_rate: Number(minTurnoverRate),
-        min_composite_score: Number(minCompositeScore),
       });
       setJob(payload);
     } catch (err) {
@@ -354,79 +332,6 @@ export function CollectionPage() {
                 onChange={() => setOptions((s) => ({ ...s, dragonTiger: !s.dragonTiger }))}
               />
               <span>龙虎榜</span>
-            </label>
-            <label className="collection-check">
-              <input
-                type="checkbox"
-                checked={options.abnormalSignal}
-                onChange={() => setOptions((s) => ({ ...s, abnormalSignal: !s.abnormalSignal }))}
-              />
-              <span>异动股票数据</span>
-            </label>
-            <label className="collection-check">
-              <input
-                type="checkbox"
-                checked={options.leaderLlm}
-                onChange={() => setOptions((s) => ({ ...s, leaderLlm: !s.leaderLlm }))}
-              />
-              <span>龙头候选LLM裁决</span>
-            </label>
-          </div>
-
-          <div className="collection-section">
-            <strong>异动过滤</strong>
-            <div className="collection-check-grid">
-              <label className="collection-check">
-                <input
-                  type="checkbox"
-                  checked={abnormalFilters.turnoverRate}
-                  onChange={() => setAbnormalFilters((s) => ({ ...s, turnoverRate: !s.turnoverRate }))}
-                />
-                <span>换手率</span>
-              </label>
-              <label className="collection-check">
-                <input
-                  type="checkbox"
-                  checked={abnormalFilters.mainNetInflow}
-                  onChange={() => setAbnormalFilters((s) => ({ ...s, mainNetInflow: !s.mainNetInflow }))}
-                />
-                <span>资金流入</span>
-              </label>
-              <label className="collection-check">
-                <input
-                  type="checkbox"
-                  checked={abnormalFilters.hotMoneyBuy}
-                  onChange={() => setAbnormalFilters((s) => ({ ...s, hotMoneyBuy: !s.hotMoneyBuy }))}
-                />
-                <span>游资买入</span>
-              </label>
-              <label className="collection-check">
-                <input
-                  type="checkbox"
-                  checked={abnormalFilters.institutionBuy}
-                  onChange={() => setAbnormalFilters((s) => ({ ...s, institutionBuy: !s.institutionBuy }))}
-                />
-                <span>机构买入</span>
-              </label>
-              <label className="collection-check">
-                <input
-                  type="checkbox"
-                  checked={abnormalFilters.tailRush}
-                  onChange={() => setAbnormalFilters((s) => ({ ...s, tailRush: !s.tailRush }))}
-                />
-                <span>尾盘抢筹</span>
-              </label>
-            </div>
-          </div>
-
-          <div className="collection-parameter-grid">
-            <label className="collection-field">
-              <span>最小换手率</span>
-              <input value={minTurnoverRate} onChange={(e) => setMinTurnoverRate(e.target.value)} />
-            </label>
-            <label className="collection-field">
-              <span>最小综合分</span>
-              <input value={minCompositeScore} onChange={(e) => setMinCompositeScore(e.target.value)} />
             </label>
           </div>
 

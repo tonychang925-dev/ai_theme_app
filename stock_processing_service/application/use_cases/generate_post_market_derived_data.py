@@ -153,6 +153,8 @@ class PostMarketDerivedDataGenerateUseCase:
                 sub_status = sub_result.get("status", "failed")
                 sub_rows = sub_result.get("affected_rows", 0)
                 await jss.mark_finished(trade_date_val, job_key, sub_status,
+                    error_code=sub_result.get("error_code"),
+                    error_message=sub_result.get("error") or sub_result.get("message"),
                     diagnostics={"affected_rows": sub_rows, "result": sub_result})
                 job_results.append({
                     "job_key": job_key, "status": sub_status, "affected_rows": sub_rows,
@@ -380,9 +382,28 @@ class _DragonTigerObjectBuilder:
                         "affected_rows": row_count}
             if result.affected_rows > 0:
                 return {"job_key": "dragon_tiger_object_build", "status": "failed_no_rows",
-                        "affected_rows": 0, "error": "DRAGON_TIGER_OBJECT_NO_ROWS"}
+                        "affected_rows": 0, "error_code": "DRAGON_TIGER_OBJECT_NO_ROWS",
+                        "error": "dragon_tiger_object rows=0 after source rows were normalized",
+                        "warnings": result.warnings, "metrics": result.metrics}
+            warnings = list(result.warnings or [])
+            metrics = dict(result.metrics or {})
+            if any("payload is empty" in warning for warning in warnings):
+                return {"job_key": "dragon_tiger_object_build", "status": "skipped_no_data",
+                        "affected_rows": 0,
+                        "error_code": "DRAGON_TIGER_RAW_SNAPSHOT_EMPTY",
+                        "error": "dragon_tiger raw snapshots exist but payload is empty",
+                        "warnings": warnings, "metrics": metrics}
+            if any("snapshot unavailable" in warning for warning in warnings):
+                return {"job_key": "dragon_tiger_object_build", "status": "skipped_no_data",
+                        "affected_rows": 0,
+                        "error_code": "DRAGON_TIGER_RAW_SNAPSHOT_UNAVAILABLE",
+                        "error": "dragon_tiger raw snapshot unavailable",
+                        "warnings": warnings, "metrics": metrics}
             return {"job_key": "dragon_tiger_object_build", "status": "skipped_no_data",
-                    "affected_rows": 0, "error": "no_dragon_tiger_day"}
+                    "affected_rows": 0,
+                    "error_code": "DRAGON_TIGER_OBJECT_EMPTY",
+                    "error": "dragon_tiger object build produced no rows",
+                    "warnings": warnings, "metrics": metrics}
         except Exception as exc:
             return {"job_key": "dragon_tiger_object_build", "status": "failed",
                     "affected_rows": 0, "error": str(exc)[:200]}
@@ -420,8 +441,12 @@ class _ThemeLeaderCandidateBuilder:
                 row_count = int(r["cnt"]) if r else 0
         if row_count > 0:
             return {"job_key": "theme_leader_candidate_build", "status": "success", "affected_rows": row_count}
+        stderr_text = (stderr or b"").decode("utf-8", errors="replace").strip()
+        stdout_text = (stdout or b"").decode("utf-8", errors="replace").strip()
+        error_text = stderr_text or stdout_text or "theme_leader_candidate rows=0"
         return {"job_key": "theme_leader_candidate_build", "status": "failed_no_rows",
-                "affected_rows": 0, "error": "theme_leader_candidate rows=0"}
+                "affected_rows": 0, "error": error_text[:500],
+                "diagnostics": {"exit_code": proc.returncode}}
 
 
 class _MoneyFlowEnhancedBuilder:

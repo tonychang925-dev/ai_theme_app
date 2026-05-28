@@ -829,7 +829,7 @@ class PostMarketDailyReviewV2Builder:
             stock_code = self._text(joined.get("stock_code") or joined.get("stock_id"))
             stock_name = self._text(joined.get("stock_name"))
             subject_key = self._text(joined.get("subject_key"))
-            theme_name = self._text(joined.get("theme_name") or joined.get("subject_name") or joined.get("resolved_theme_name"))
+            theme_name = self._resolved_theme_name(joined)
             main_net_inflow = self._float_or_none(
                 self._first_present(joined, "main_net_inflow", "net_inflow", "net_inflow_amount")
             )
@@ -1586,6 +1586,17 @@ class PostMarketDailyReviewV2Builder:
     @classmethod
     def _theme_name(cls, source: dict[str, Any]) -> str:
         return cls._text(cls._first_present(source, "theme_name", "subject_name", "name"))
+
+    @classmethod
+    def _resolved_theme_name(cls, source: dict[str, Any]) -> str:
+        for key in ("resolved_theme_name", "subject_name", "theme_display_name", "theme_cn_name", "name"):
+            text = cls._text(source.get(key))
+            if text and not text.isdigit():
+                return text
+        theme_name = cls._text(source.get("theme_name"))
+        if theme_name and not theme_name.isdigit():
+            return theme_name
+        return cls._text(source.get("subject_key") or theme_name)
 
     @classmethod
     def _theme_kline_text(cls, value: Any) -> str | None:

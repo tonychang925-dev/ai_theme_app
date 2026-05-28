@@ -2478,27 +2478,39 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 LIMIT $2::int
             ) t
         ),
+        candidate_scope AS (
+            SELECT DISTINCT stock_id, subject_key
+            FROM money_flow_enhanced
+            WHERE trade_date = $1::date
+            UNION
+            SELECT DISTINCT stock_id, subject_key
+            FROM theme_leader_candidate
+            WHERE trade_date = $1::date
+        ),
         recent AS (
             SELECT
-                stock_id,
-                MAX(stock_name) AS stock_name,
-                subject_key,
-                COUNT(DISTINCT trade_date) AS total_trade_days,
-                COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(limit_up, FALSE)) AS recent_limit_up_count,
-                MAX(CASE WHEN COALESCE(is_leader, FALSE) THEN 1 ELSE 0 END) AS is_leader_flag,
-                MIN(COALESCE(rank_order, 999)) AS best_rank,
+                s.stock_id,
+                MAX(s.stock_name) AS stock_name,
+                s.subject_key,
+                COUNT(DISTINCT s.trade_date) AS total_trade_days,
+                COUNT(DISTINCT s.trade_date) FILTER (WHERE COALESCE(s.limit_up, FALSE)) AS recent_limit_up_count,
+                MAX(CASE WHEN COALESCE(s.is_leader, FALSE) THEN 1 ELSE 0 END) AS is_leader_flag,
+                MIN(COALESCE(s.rank_order, 999)) AS best_rank,
                 MAX(
                     CASE
-                        WHEN trade_date = $1::date
-                             AND jsonb_typeof(raw_json) = 'array'
-                             AND jsonb_array_length(raw_json) > 20
-                        THEN COALESCE(NULLIF(raw_json->>20, ''), '0')::int
+                        WHEN s.trade_date = $1::date
+                             AND jsonb_typeof(s.raw_json) = 'array'
+                             AND jsonb_array_length(s.raw_json) > 20
+                        THEN COALESCE(NULLIF(s.raw_json->>20, ''), '0')::int
                         ELSE 0
                     END
                 ) AS current_flag_today
-            FROM subject_stock_daily_snapshot
-            WHERE trade_date IN (SELECT trade_date FROM recent_trade_days)
-            GROUP BY stock_id, subject_key
+            FROM subject_stock_daily_snapshot s
+            JOIN candidate_scope cs
+              ON split_part(cs.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
+             AND cs.subject_key = s.subject_key
+            WHERE s.trade_date IN (SELECT trade_date FROM recent_trade_days)
+            GROUP BY s.stock_id, s.subject_key
         ),
         subject_strength AS (
             SELECT
@@ -2511,6 +2523,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 ) AS subject_strong_count
             FROM subject_stock_daily_snapshot
             WHERE trade_date = $1::date
+              AND subject_key IN (SELECT DISTINCT subject_key FROM candidate_scope)
             GROUP BY subject_key
         ),
         consecutive_boards AS (
@@ -2524,6 +2537,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                        ) AS prev_limit_up
                 FROM subject_stock_daily_snapshot
                 WHERE trade_date IN (SELECT trade_date FROM recent_trade_days)
+                  AND split_part(stock_id, '.', 1) IN (
+                      SELECT DISTINCT split_part(stock_id, '.', 1)
+                      FROM candidate_scope
+                  )
                 GROUP BY stock_id, trade_date
             ) t
             WHERE limit_up = TRUE AND prev_limit_up = TRUE
@@ -3163,10 +3180,75 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             SELECT DISTINCT ON (split_part(stock_id, '.', 1))
                 split_part(stock_id, '.', 1) AS stock_code,
                 COALESCE(pct_chg, 0) AS pct_chg,
-                COALESCE(limit_up, FALSE) AS limit_up
+                COALESCE(limit_up, FALSE) AS limit_up,
+                COALESCE(amount, 0) AS amount
             FROM subject_stock_daily_snapshot
             WHERE trade_date = $1::date
             ORDER BY split_part(stock_id, '.', 1), ABS(COALESCE(pct_chg, 0)) DESC
+        ),
+        prev_trade AS (
+            SELECT MAX(trade_date) AS trade_date
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date < $1::date
+        ),
+        prev_stock_base AS (
+            SELECT DISTINCT ON (split_part(s.stock_id, '.', 1))
+                split_part(s.stock_id, '.', 1) AS stock_code,
+                COALESCE(s.amount, 0) AS amount
+            FROM subject_stock_daily_snapshot s
+            JOIN prev_trade p ON p.trade_date = s.trade_date
+            ORDER BY split_part(s.stock_id, '.', 1), ABS(COALESCE(s.pct_chg, 0)) DESC
+        ),
+        prev_amount_stats AS (
+            SELECT COALESCE(SUM(amount), 0) AS prev_market_total_amount
+            FROM prev_stock_base
+        ),
+        index_ranked AS (
+            SELECT
+                index_code,
+                index_name,
+                pct_chg,
+                amount,
+                vol,
+                ts,
+                ROW_NUMBER() OVER (PARTITION BY index_code ORDER BY ts DESC, id DESC) AS rn
+            FROM jyhf_index_quote_snapshot
+            WHERE trade_date = $1::date
+        ),
+        index_summary AS (
+            SELECT
+                MAX(pct_chg) FILTER (
+                    WHERE index_code IN ('000001', '000001.SH') OR COALESCE(index_name, '') LIKE '%上证%'
+                ) AS shanghai_index_pct_chg,
+                MAX(pct_chg) FILTER (
+                    WHERE index_code IN ('399001', '399001.SZ') OR COALESCE(index_name, '') LIKE '%深成%'
+                ) AS shenzhen_index_pct_chg,
+                MAX(pct_chg) FILTER (
+                    WHERE index_code IN ('399006', '399006.SZ') OR COALESCE(index_name, '') LIKE '%创业板%'
+                ) AS chinext_index_pct_chg,
+                COALESCE(
+                    jsonb_agg(
+                        jsonb_build_object(
+                            'index_code', index_code,
+                            'index_name', index_name,
+                            'pct_chg', pct_chg,
+                            'amount', amount,
+                            'vol', vol,
+                            'ts', ts
+                        )
+                        ORDER BY
+                            CASE
+                                WHEN index_code IN ('000001', '000001.SH') OR COALESCE(index_name, '') LIKE '%上证%' THEN 1
+                                WHEN index_code IN ('399001', '399001.SZ') OR COALESCE(index_name, '') LIKE '%深成%' THEN 2
+                                WHEN index_code IN ('399006', '399006.SZ') OR COALESCE(index_name, '') LIKE '%创业板%' THEN 3
+                                ELSE 9
+                            END,
+                            index_code
+                    ) FILTER (WHERE rn = 1),
+                    '[]'::jsonb
+                ) AS index_quotes
+            FROM index_ranked
+            WHERE rn = 1
         ),
         stock_stats AS (
             SELECT
@@ -3176,7 +3258,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 COUNT(*) FILTER (WHERE limit_up OR pct_chg >= 9.8) AS limit_up_count,
                 COUNT(*) FILTER (WHERE pct_chg <= -9.8) AS limit_down_count,
                 COUNT(*) FILTER (WHERE pct_chg >= 5) AS strong_count,
-                COUNT(*) FILTER (WHERE pct_chg <= -5) AS weak_count
+                COUNT(*) FILTER (WHERE pct_chg <= -5) AS weak_count,
+                COALESCE(SUM(amount), 0) AS market_total_amount
             FROM stock_base
         ),
         mainline_stats AS (
@@ -3214,15 +3297,39 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 COALESCE(m.avg_mainline_strength, 0) AS avg_mainline_strength,
                 p.strong_watch_count,
                 p.w2s_candidate_count,
+                pa.prev_market_total_amount,
+                CASE
+                    WHEN pa.prev_market_total_amount > 0
+                    THEN (s.market_total_amount - pa.prev_market_total_amount) / pa.prev_market_total_amount * 100
+                    ELSE NULL
+                END AS market_amount_change_pct,
+                i.shanghai_index_pct_chg,
+                i.shenzhen_index_pct_chg,
+                i.chinext_index_pct_chg,
+                COALESCE(i.index_quotes, '[]'::jsonb) AS index_quotes,
                 CASE WHEN s.stock_count > 0 THEN s.up_count::numeric / s.stock_count ELSE 0 END AS up_ratio,
                 CASE WHEN s.stock_count > 0 THEN s.limit_up_count::numeric / s.stock_count ELSE 0 END AS limit_up_ratio,
                 CASE WHEN s.stock_count > 0 THEN s.limit_down_count::numeric / s.stock_count ELSE 0 END AS limit_down_ratio
             FROM stock_stats s
             CROSS JOIN mainline_stats m
             CROSS JOIN pool_stats p
+            CROSS JOIN prev_amount_stats pa
+            CROSS JOIN index_summary i
         )
         SELECT
             trade_date,
+            stock_count,
+            up_count,
+            down_count,
+            limit_up_count,
+            limit_down_count,
+            market_total_amount,
+            prev_market_total_amount,
+            ROUND(market_amount_change_pct, 4) AS market_amount_change_pct,
+            shanghai_index_pct_chg,
+            shenzhen_index_pct_chg,
+            chinext_index_pct_chg,
+            index_quotes,
             ROUND(
                 LEAST(
                     100,
@@ -3501,6 +3608,43 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             theme_name ASC
         LIMIT 50
         """
+        sql_theme_gainers = """
+        WITH subject_base AS (
+            SELECT
+                s.subject_key,
+                COALESCE(vtb.theme_name, s.subject_key) AS theme_name,
+                COUNT(DISTINCT split_part(s.stock_id, '.', 1)) AS stock_count,
+                AVG(COALESCE(s.pct_chg, 0)) AS avg_pct_chg,
+                MAX(COALESCE(s.pct_chg, 0)) AS max_pct_chg,
+                COUNT(*) FILTER (WHERE COALESCE(s.limit_up, FALSE) OR COALESCE(s.pct_chg, 0) >= 9.8) AS limit_up_count,
+                jsonb_agg(
+                    jsonb_build_object(
+                        'stock_id', s.stock_id,
+                        'stock_name', s.stock_name,
+                        'pct_chg', s.pct_chg,
+                        'limit_up', s.limit_up
+                    )
+                    ORDER BY COALESCE(s.pct_chg, 0) DESC
+                ) AS top_stocks
+            FROM subject_stock_daily_snapshot s
+            LEFT JOIN vw_subject_theme_binding vtb
+              ON vtb.subject_key = s.subject_key
+            WHERE s.trade_date = $1::date
+            GROUP BY s.subject_key, COALESCE(vtb.theme_name, s.subject_key)
+        )
+        SELECT
+            subject_key,
+            theme_name,
+            stock_count,
+            ROUND(avg_pct_chg, 4) AS avg_pct_chg,
+            ROUND(max_pct_chg, 4) AS max_pct_chg,
+            limit_up_count,
+            top_stocks
+        FROM subject_base
+        WHERE stock_count >= 3
+        ORDER BY avg_pct_chg DESC, limit_up_count DESC, max_pct_chg DESC
+        LIMIT 20
+        """
         sql_abnormal = """
         SELECT a.*, COALESCE(vtb.theme_name, a.theme_name, a.subject_key) AS resolved_theme_name
         FROM stock_abnormal_signal a
@@ -3544,6 +3688,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             stock_facts = await conn.fetch(sql_stock_facts, trade_date, subjects if subjects else None, stocks if stocks else None)
             money = await conn.fetch(sql_money, trade_date, subjects if subjects else None)
             theme_capital = await conn.fetch(sql_theme_capital, trade_date, subjects if subjects else None)
+            theme_gainers = await conn.fetch(sql_theme_gainers, trade_date)
             abnormal = await conn.fetch(sql_abnormal, trade_date)
             dragon = await conn.fetch(sql_dragon, trade_date)
         return {
@@ -3551,6 +3696,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             "market": dict(market) if market else None,
             "cycles": [dict(r) for r in cycles],
             "theme_capital_flow": [dict(r) for r in theme_capital],
+            "theme_gainers": [dict(r) for r in theme_gainers],
             "stock_facts": [dict(r) for r in stock_facts],
             "money_flow": [dict(r) for r in money],
             "abnormal_signals": [dict(r) for r in abnormal],

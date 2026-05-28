@@ -71,6 +71,20 @@ class BuildDragonTigerObjectJob:
         service = DragonTigerObjectService()
         top_list_rows = service.normalize_top_list(top_list_result.records)
         top_inst_rows = service.normalize_top_inst(top_inst_result.records)
+        if not top_list_rows and not top_inst_rows:
+            return BuildResult(
+                name="build_dragon_tiger_object",
+                trade_date=str(trade_date),
+                affected_rows=0,
+                status="skipped_no_data",
+                warnings=["dragon_tiger raw snapshots exist but payload is empty"],
+                metrics={
+                    "top_list_rows": getattr(top_list_result, "row_count", len(top_list_result.records)),
+                    "top_inst_rows": getattr(top_inst_result, "row_count", len(top_inst_result.records)),
+                    "top_list_snapshot_path": getattr(top_list_result, "snapshot_path", None),
+                    "top_inst_snapshot_path": getattr(top_inst_result, "snapshot_path", None),
+                },
+            )
         objects = service.build_objects(top_list_rows, top_inst_rows)
 
         rows = [

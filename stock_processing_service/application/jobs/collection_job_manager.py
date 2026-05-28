@@ -159,13 +159,13 @@ class CollectionJobManager:
             tasks.append(CollectionTaskState(key="tushare_kline", title="Tushare日K线+盘前竞价采集"))
         if options.get("dragon_tiger", True):
             tasks.append(CollectionTaskState(key="dragon_tiger", title="龙虎榜构建"))
-        if options.get("abnormal_signal", True):
+        if options.get("abnormal_signal", False):
             tasks.append(CollectionTaskState(key="abnormal_signal", title="异动股票构建"))
-        if options.get("strong_stock_watch", True):
+        if options.get("strong_stock_watch", False):
             tasks.append(CollectionTaskState(key="strong_stock_watch", title="强势股跟踪池更新"))
-        if options.get("leader_llm", True):
+        if options.get("leader_llm", False):
             tasks.append(CollectionTaskState(key="leader_llm", title="龙头候选LLM裁决"))
-        if options.get("recap_snapshot", True):
+        if options.get("recap_snapshot", False):
             tasks.append(CollectionTaskState(key="recap_snapshot", title="盘后复盘快照生成"))
         return tasks
 
@@ -208,11 +208,11 @@ class CollectionJobManager:
         )
         self._append_log(job, "创建采集任务")
         options = payload.get("options") or {}
-        if not options.get("leader_llm", True):
+        if "leader_llm" in options and not options.get("leader_llm", False):
             self._append_log(job, "未勾选 龙头候选LLM裁决，本次采集将跳过该步骤")
-        if not options.get("recap_snapshot", True):
+        if "recap_snapshot" in options and not options.get("recap_snapshot", False):
             self._append_log(job, "未勾选 盘后复盘快照生成，本次采集将跳过该步骤")
-        if options.get("recap_snapshot", True) and not options.get("auto_build_v2_if_missing", True):
+        if options.get("recap_snapshot", False) and not options.get("auto_build_v2_if_missing", True):
             self._append_log(job, "已关闭 v2周期缺失自动补建：盘后复盘将严格依赖当日v2数据")
         self.jobs[job_id] = job
         job.running_task = asyncio.create_task(self._run_job(job))

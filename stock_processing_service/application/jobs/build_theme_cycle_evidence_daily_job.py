@@ -12,6 +12,9 @@ from stock_processing_service.domain.services.theme_cycle_evidence_daily_builder
 from stock_processing_service.domain.services.theme_kline_evidence_builder import (
     ThemeKlineEvidenceBuilder,
 )
+from stock_processing_service.domain.services.mainline_identity_universe_builder import (
+    MainlineIdentityUniverseBuilder,
+)
 from stock_processing_service.ports import (
     AlgorithmStateWritePort,
     IdempotencyPort,
@@ -76,7 +79,29 @@ class BuildThemeCycleEvidenceDailyJob:
         def _ns(obj):
             return SimpleNamespace(**obj) if isinstance(obj, dict) else obj
 
-        pool_rows_raw = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
+        universe_builder = MainlineIdentityUniverseBuilder(self._read_port)
+        universe_rows = await universe_builder.build(trade_date)
+        tracked_subject_keys = sorted({str(r.subject_key).strip() for r in universe_rows if str(r.subject_key).strip()})
+        if not tracked_subject_keys:
+            return BuildResult(
+                name="build_theme_cycle_evidence_daily",
+                trade_date=trade_date.isoformat(),
+                affected_rows=0,
+                status="ok_no_data",
+                batch_id=batch_id,
+                trace_id=trace_id,
+                metrics={
+                    "tracked_subject_count": 0,
+                    "universe_source_errors": getattr(universe_builder, "source_errors", {}),
+                },
+            )
+
+        tracked_subject_key_set = set(tracked_subject_keys)
+        pool_rows_raw_all = await self._read_port.get_subject_stock_pool_by_trade_date(trade_date)
+        pool_rows_raw = [
+            r for r in pool_rows_raw_all
+            if str(_get(r, "subject_key", "") or "").strip() in tracked_subject_key_set
+        ]
         # DB 列名 → DTO 属性名映射（DBThemeDataGateway 返回原始列名）
         _FIELD_MAP = {
             "rank_order_raw": "rank_order", "limit_up_raw": "limit_up",
@@ -320,25 +345,29 @@ class BuildThemeCycleEvidenceDailyJob:
                     f"subject_keys not readable back. Missing: {sorted(missing_keys)[:20]}"
                 )
 
-        await self._event_port.publish_stock_processing_event(
-            EventEnvelope(
-                event_id=str(uuid4()),
-                event_name="snapshot_built",
-                trade_date=trade_date,
-                batch_id=batch_id,
-                trace_id=trace_id,
-                producer="stock_processing_service",
-                occurred_at=datetime.now(timezone.utc),
-                payload_version="v1",
-                payload=SnapshotBuiltPayload(
-                    domain="theme_cycle_evidence",
-                    snapshot_version=snapshot_version,
-                    object_name="theme_cycle_evidence_daily",
-                    row_count=written,
-                    success=True,
-                ),
+        publish_event = getattr(self._event_port, "publish_stock_processing_event", None)
+        published_events = []
+        if callable(publish_event):
+            await publish_event(
+                EventEnvelope(
+                    event_id=str(uuid4()),
+                    event_name="snapshot_built",
+                    trade_date=trade_date,
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                    producer="stock_processing_service",
+                    occurred_at=datetime.now(timezone.utc),
+                    payload_version="v1",
+                    payload=SnapshotBuiltPayload(
+                        domain="theme_cycle_evidence",
+                        snapshot_version=snapshot_version,
+                        object_name="theme_cycle_evidence_daily",
+                        row_count=written,
+                        success=True,
+                    ),
+                )
             )
-        )
+            published_events = ["snapshot_built"]
 
         await self._idempotency_port.mark_job_completed(
             job_key,
@@ -360,6 +389,10 @@ class BuildThemeCycleEvidenceDailyJob:
             metrics={
                 "evidence_row_count": written,
                 "subject_key_count": len(subject_keys),
+                "tracked_subject_count": len(tracked_subject_keys),
+                "raw_pool_row_count": len(pool_rows_raw_all),
+                "scoped_pool_row_count": len(pool_rows_raw),
+                "universe_source_errors": getattr(universe_builder, "source_errors", {}),
                 "prior_state_hit_count": len(previous_states),
                 "event_stats_hit_count": len(event_stats_by_subject),
                 "prev_trade_date_missing": prev_trade_date_missing,
@@ -378,5 +411,5 @@ class BuildThemeCycleEvidenceDailyJob:
                     if getattr(v, "kline_quality", "") in {"insufficient_history", "minimal"}
                 ),
             },
-            published_events=["snapshot_built"],
+            published_events=published_events,
         )
