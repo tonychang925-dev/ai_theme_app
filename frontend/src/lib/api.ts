@@ -1676,11 +1676,14 @@ export interface W2SAlertEvent {
   generated_at: string;
 }
 
+// P0-D: SSE 前端直连 SPS:8090，去掉 BFF 代理一跳
+const SPS_BASE = import.meta.env.VITE_SPS_BASE_URL || "http://127.0.0.1:8090";
+
 export function openW2SAlertsStream(
   onAlert: (alert: W2SAlertEvent) => void,
   onError?: (err: Error) => void,
 ): EventSource {
-  const es = new EventSource("/api/v2/realtime/w2s-alerts/stream");
+  const es = new EventSource(`${SPS_BASE}/api/v1/w2s-alerts/stream`);
   es.addEventListener("w2s_alert", (e: MessageEvent) => {
     try {
       const data = JSON.parse(e.data) as W2SAlertEvent;
@@ -1699,7 +1702,7 @@ export function openKlineAlertsStream(
   onAlert: (alert: KlineAlertEvent) => void,
   onError?: (err: Error) => void,
 ): EventSource {
-  const es = new EventSource("/api/v2/realtime/kline-alerts/stream");
+  const es = new EventSource(`${SPS_BASE}/api/v1/kline-alerts/stream`);
   es.addEventListener("kline_alert", (e: MessageEvent) => {
     try {
       const data = JSON.parse(e.data) as KlineAlertEvent;

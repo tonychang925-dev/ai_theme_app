@@ -17,6 +17,7 @@ from typing import Any, Dict, List, Optional
 from zoneinfo import ZoneInfo
 
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pydantic import Field
 from datetime import datetime
@@ -183,6 +184,19 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="stock_processing_service_read_api", version="0.1.0", lifespan=lifespan)
+
+# P0-D: CORS for direct SSE connections from frontend dev server
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+    ],
+    allow_methods=["GET", "OPTIONS"],
+    allow_headers=["*"],
+)
 
 
 class CollectionStartRequest(BaseModel):
