@@ -1,0 +1,68 @@
+# AlphaPilot Runtime Profile: realtime
+# P1 Runtime Lite 第一版：只声明服务列表和健康检查端点
+
+profile: realtime
+description: 实时采集 + 行情 + 告警 全链路
+
+services:
+  - name: redis
+    type: infrastructure
+    required: true
+    health:
+      type: tcp
+      host: 127.0.0.1
+      port: 6379
+
+  - name: postgres
+    type: infrastructure
+    required: true
+    health:
+      type: tcp
+      host: 127.0.0.1
+      port: 5432
+
+  - name: web_app_service
+    type: uvicorn
+    port: 8000
+    required: true
+    health:
+      type: http
+      url: http://127.0.0.1:8000/healthz
+
+  - name: sps
+    type: uvicorn
+    port: 8090
+    required: true
+    health:
+      type: http
+      url: http://127.0.0.1:8090/healthz
+
+  - name: jyhf_cdp_service
+    type: uvicorn
+    port: 8095
+    required: false
+    health:
+      type: http
+      url: http://127.0.0.1:8095/health
+
+  - name: raw_news_services
+    type: subprocess
+    required: false
+    health:
+      type: process
+      pattern: run_raw_news_services
+
+  - name: phase0_decision_services
+    type: subprocess
+    required: false
+    health:
+      type: process
+      pattern: run_phase0_decision_services
+
+  - name: frontend_dev
+    type: vite
+    port: 5173
+    required: false
+    health:
+      type: http
+      url: http://127.0.0.1:5173
