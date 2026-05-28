@@ -209,12 +209,6 @@ export function RealtimeCollectorPage() {
   }, [w2sAlertsEnabled]);
 
   useEffect(() => {
-    if (running === "up") {
-      statusErrorNotifiedRef.current = false;
-    }
-  }, [running]);
-
-  useEffect(() => {
     const panel = terminalRef.current;
     if (!panel) return;
     panel.scrollTop = panel.scrollHeight;
