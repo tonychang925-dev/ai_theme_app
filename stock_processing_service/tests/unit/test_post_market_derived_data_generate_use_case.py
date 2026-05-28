@@ -1,0 +1,104 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from datetime import date
+
+import pytest
+
+from stock_processing_service.application.use_cases.generate_post_market_derived_data import (
+    PostMarketDerivedDataGenerateUseCase,
+)
+
+
+@dataclass
+class _FakeReadinessResult:
+    status: str = "failed_precondition"
+    missing_tables: list[str] | None = None
+
+    def to_dict(self) -> dict:
+        return {
+            "status": self.status,
+            "missing_tables": self.missing_tables or ["money_flow_enhanced", "strong_stock_watch_history"],
+        }
+
+
+class _FakeReadinessService:
+    def __init__(self, pool=None) -> None:
+        self.pool = pool
+
+    async def check(self, trade_date: date) -> _FakeReadinessResult:
+        return _FakeReadinessResult()
+
+
+class _FakeJobStatusService:
+    events: list[tuple] = []
+
+    def __init__(self, pool=None) -> None:
+        self.pool = pool
+
+    async def mark_running(self, trade_date: date, job_key: str, diagnostics=None) -> None:
+        self.events.append(("running", job_key))
+
+    async def mark_finished(
+        self,
+        trade_date: date,
+        job_key: str,
+        status: str,
+        error_code: str | None = None,
+        error_message: str | None = None,
+        diagnostics=None,
+    ) -> None:
+        self.events.append(("finished", job_key, status, error_code, error_message))
+
+
+class _Builder:
+    def __init__(self, job_key: str, status: str, calls: list[str]) -> None:
+        self._job_key = job_key
+        self._status = status
+        self._calls = calls
+
+    async def run(self, trade_date: date) -> dict:
+        self._calls.append(self._job_key)
+        return {"job_key": self._job_key, "status": self._status, "affected_rows": 1 if self._status == "success" else 0}
+
+
+@pytest.mark.asyncio
+async def test_derived_data_generation_fast_fails_after_required_upstream_no_rows(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """TC-POSTMARKET-502: do not keep running downstream scripts after a required upstream is empty."""
+
+    import stock_processing_service.application.services.post_market_job_status_service as status_module
+    import stock_processing_service.application.services.post_market_readiness_service as readiness_module
+
+    _FakeJobStatusService.events = []
+    monkeypatch.setattr(status_module, "PostMarketJobStatusService", _FakeJobStatusService)
+    monkeypatch.setattr(readiness_module, "PostMarketReadinessService", _FakeReadinessService)
+
+    calls: list[str] = []
+    uc = PostMarketDerivedDataGenerateUseCase(pool=object(), db_manager=object())
+    uc.register_builder("theme_cycle_truth", _Builder("theme_cycle_truth", "success", calls))
+    uc.register_builder("dragon_tiger_object_build", _Builder("dragon_tiger_object_build", "skipped_no_data", calls))
+    uc.register_builder("theme_leader_candidate_build", _Builder("theme_leader_candidate_build", "failed_no_rows", calls))
+    uc.register_builder("money_flow_enhanced_build", _Builder("money_flow_enhanced_build", "success", calls))
+    uc.register_builder("stock_abnormal_signal_build", _Builder("stock_abnormal_signal_build", "success", calls))
+    uc.register_builder("strong_stock_watch_build", _Builder("strong_stock_watch_build", "success", calls))
+
+    result = await uc.execute(date(2026, 5, 28), force=False)
+
+    assert result.status == "failed_precondition"
+    assert calls == ["theme_cycle_truth", "dragon_tiger_object_build", "theme_leader_candidate_build"]
+    skipped = [item for item in result.job_results if item.get("error_code") == "UPSTREAM_TASK_FAILED"]
+    assert [item["job_key"] for item in skipped] == [
+        "money_flow_enhanced_build",
+        "stock_abnormal_signal_build",
+        "strong_stock_watch_build",
+    ]
+    assert ("running", "money_flow_enhanced_build") not in _FakeJobStatusService.events
+    assert (
+        "finished",
+        "money_flow_enhanced_build",
+        "failed_precondition",
+        "UPSTREAM_TASK_FAILED",
+        "upstream theme_leader_candidate_build status=failed_no_rows",
+    ) in _FakeJobStatusService.events
