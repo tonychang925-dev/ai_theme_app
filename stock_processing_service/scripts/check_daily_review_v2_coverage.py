@@ -38,6 +38,18 @@ ROW_COUNT_EXPECTATIONS = {
     "money_flow_reviews": 20,
 }
 
+STRICT_COLUMN_REQUIREMENTS = {
+    "theme_reviews": ("event_score", "market_score"),
+    "theme_capital_reviews": ("top3_inflow", "inflow_stock_count", "theme_kline"),
+    "strong_stock_reviews": ("purity_score", "leading_score", "capital_score", "structure_score", "resilience_score"),
+    "abnormal_reviews": ("volume_ratio", "labels"),
+    "money_flow_reviews": ("kline.position_label", "kline.pattern_labels_or_summary"),
+}
+
+COLUMN_PRESENCE_REQUIREMENTS = {
+    "watchlist_reviews": ("theme_name", "volume_ratio", "pattern", "flags", "dragon_tiger_days"),
+}
+
 
 def _fetch_json(url: str) -> dict[str, Any]:
     request = Request(url, headers={"Accept": "application/json"})
@@ -95,6 +107,7 @@ def _coverage_record(trade_date: str, module: str, coverage: dict[str, Any]) -> 
         "rows": int(coverage.get("row_count") or 0),
         "legacy": int(coverage.get("legacy_row_count") or 0),
         "missing": coverage.get("missing_fields") or [],
+        "column_missing": coverage.get("column_missing_fields") or [],
         "message": coverage.get("message") or "",
     }
 
@@ -236,7 +249,68 @@ def _row_count_errors(module: str, coverage: dict[str, Any]) -> list[str]:
     return errors
 
 
-def validate(payload: dict[str, Any], *, quiet: bool = False) -> tuple[list[dict[str, Any]], list[str], list[str]]:
+def _value_present(value: Any) -> bool:
+    if value is None or value == "":
+        return False
+    if isinstance(value, list):
+        return any(_value_present(item) for item in value)
+    if isinstance(value, dict):
+        return any(_value_present(item) for item in value.values())
+    return True
+
+
+def _nested_value(row: dict[str, Any], path: str) -> Any:
+    current: Any = row
+    for part in path.split("."):
+        if not isinstance(current, dict):
+            return None
+        current = current.get(part)
+    return current
+
+
+def _column_present(row: dict[str, Any], column: str) -> bool:
+    if column == "kline.pattern_labels_or_summary":
+        kline = row.get("kline")
+        if not isinstance(kline, dict):
+            return False
+        return _value_present(kline.get("pattern_labels")) or _value_present(kline.get("pattern_summary"))
+    return _value_present(_nested_value(row, column))
+
+
+def _column_gate_errors(payload: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    diagnostics = payload.get("diagnostics")
+    column_missing_fields = diagnostics.get("column_missing_fields") if isinstance(diagnostics, dict) else {}
+    if isinstance(column_missing_fields, dict):
+        for module, missing in column_missing_fields.items():
+            if missing:
+                errors.append(f"{module}: column_missing_fields={missing}")
+
+    for module, columns in STRICT_COLUMN_REQUIREMENTS.items():
+        rows = payload.get(module)
+        if not isinstance(rows, list) or not rows:
+            continue
+        for column in columns:
+            missing_count = sum(1 for row in rows if isinstance(row, dict) and not _column_present(row, column))
+            if missing_count:
+                errors.append(f"{module}: column {column} missing in {missing_count}/{len(rows)} rows")
+
+    for module, columns in COLUMN_PRESENCE_REQUIREMENTS.items():
+        rows = payload.get(module)
+        if not isinstance(rows, list) or not rows:
+            continue
+        for column in columns:
+            if all(isinstance(row, dict) and not _column_present(row, column) for row in rows):
+                errors.append(f"{module}: column {column} is empty for all rows")
+    return errors
+
+
+def validate(
+    payload: dict[str, Any],
+    *,
+    quiet: bool = False,
+    strict_columns: bool = False,
+) -> tuple[list[dict[str, Any]], list[str], list[str]]:
     records: list[dict[str, Any]] = []
     errors: list[str] = []
     p5_blockers: list[str] = []
@@ -296,6 +370,8 @@ def validate(payload: dict[str, Any], *, quiet: bool = False) -> tuple[list[dict
                     f"got status={status!r}, source={source!r}, missing_fields={missing!r}"
                 )
 
+    if strict_columns:
+        errors.extend(_column_gate_errors(payload))
     return records, errors, p5_blockers
 
 
@@ -440,15 +516,16 @@ def _print_records(records: list[dict[str, Any]]) -> None:
         return
     print(
         f"{'date':<12} {'class':<27} {'p5':<3} {'module':<28} {'status':<9} {'source':<16} "
-        f"{'rows':>5} {'legacy':>6} missing_fields"
+        f"{'rows':>5} {'legacy':>6} missing_fields column_missing_fields"
     )
     for record in records:
         missing = json.dumps(record["missing"], ensure_ascii=False)
+        column_missing = json.dumps(record.get("column_missing") or [], ensure_ascii=False)
         print(
             f"{record['date']:<12} {str(record.get('sample_class', '')):<27} "
             f"{'yes' if record.get('p5_gate') else 'no':<3} "
             f"{record['module']:<28} {str(record['status']):<9} "
-            f"{str(record['source']):<16} {record['rows']:>5} {record['legacy']:>6} {missing}"
+            f"{str(record['source']):<16} {record['rows']:>5} {record['legacy']:>6} {missing} {column_missing}"
         )
 
 
@@ -458,6 +535,7 @@ def _check_one_date(
     base_url: str,
     generate_first: bool,
     debug_module: str | None,
+    strict_columns: bool,
 ) -> tuple[list[dict[str, Any]], list[str], list[str], dict[str, Any]]:
     snapshot_url = f"{base_url}/api/v1/post_market_snapshot?{urlencode({'trade_date': trade_date})}"
     snapshot = _fetch_json(snapshot_url)
@@ -473,7 +551,7 @@ def _check_one_date(
             _debug_module_source(snapshot, payload, debug_module)
         except Exception as exc:  # noqa: BLE001 - debug mode should not hide coverage validation.
             print(f"failed to fetch debug snapshot for {trade_date}: {exc}", file=sys.stderr)
-    records, errors, blockers = validate(payload, quiet=True)
+    records, errors, blockers = validate(payload, quiet=True, strict_columns=strict_columns)
     for record in records:
         record["sample_class"] = sample["sample_class"]
         record["p5_gate"] = sample["p5_gate"]
@@ -527,6 +605,7 @@ def main() -> int:
                 base_url=base_url,
                 generate_first=args.generate_first,
                 debug_module=args.debug_module,
+                strict_columns=args.p5_gate,
             )
         except Exception as exc:  # noqa: BLE001 - CLI should continue through multi-date smoke.
             records, errors, blockers = [], [f"fetch_or_generate_failed: {exc}"], []

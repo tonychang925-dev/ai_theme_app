@@ -1235,6 +1235,132 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.error(f"写入 event_review_queue 失败 event_id={event_id}: {e}")
             return False
 
+    # ── Phase 6A: Review queue management ──
+
+    async def list_review_events(
+        self,
+        page: int = 1,
+        page_size: int = 20,
+        status: str | None = None,
+        source_channel: str | None = None,
+    ) -> dict[str, Any]:
+        """分页列出复核队列事件，JOIN news_event/news_raw 取标题/摘要。"""
+        try:
+            async with self.pool.acquire() as conn:
+                exists = await conn.fetchval("SELECT to_regclass('public.event_review_queue')::text")
+                if not exists:
+                    return {"items": [], "total": 0, "page": page, "page_size": page_size}
+                where = ["1=1"]
+                params: list[Any] = []
+                idx = 1
+                if status:
+                    where.append(f"rq.review_status = ${idx}")
+                    params.append(status)
+                    idx += 1
+                if source_channel:
+                    where.append(f"rq.source_channel = ${idx}")
+                    params.append(source_channel)
+                    idx += 1
+                where_clause = " AND ".join(where)
+                total = await conn.fetchval(
+                    f"SELECT count(*) FROM event_review_queue rq WHERE {where_clause}", *params
+                )
+                offset = (page - 1) * page_size
+                params.extend([page_size, offset])
+                rows = await conn.fetch(
+                    f"""
+                    SELECT rq.id, rq.event_id, rq.review_status, rq.proposed_theme_name,
+                           rq.proposed_theme_confidence, rq.reason, rq.source_channel,
+                           rq.created_at, rq.reviewed_by, rq.reviewed_at, rq.review_note,
+                           COALESCE(nr.title, ne.summary) AS event_title,
+                           ne.summary AS event_summary,
+                           ne.event_type, nr.title AS raw_title
+                    FROM event_review_queue rq
+                    LEFT JOIN news_event ne ON ne.id = rq.event_id
+                    LEFT JOIN news_raw nr ON nr.id = ne.news_id
+                    WHERE {where_clause}
+                    ORDER BY rq.created_at DESC
+                    LIMIT ${idx} OFFSET ${idx+1}
+                    """, *params
+                )
+                return {
+                    "items": [dict(r) for r in rows],
+                    "total": total or 0,
+                    "page": page,
+                    "page_size": page_size,
+                }
+        except Exception as e:
+            logger.error(f"list_review_events 失败: {e}")
+            return {"items": [], "total": 0, "page": page, "page_size": page_size, "error": str(e)}
+
+    async def get_review_event_detail(self, review_id: int) -> dict[str, Any] | None:
+        """获取单条复核事件详情（含完整 event 数据）。"""
+        try:
+            async with self.pool.acquire() as conn:
+                row = await conn.fetchrow(
+                    """
+                    SELECT rq.*,
+                           COALESCE(nr.title, ne.summary) AS event_title,
+                           ne.summary AS event_summary,
+                           ne.event_type,
+                           nr.title AS raw_title, nr.content AS raw_content,
+                           nr.source AS raw_source_channel, nr.publish_date, nr.publish_time
+                    FROM event_review_queue rq
+                    LEFT JOIN news_event ne ON ne.id = rq.event_id
+                    LEFT JOIN news_raw nr ON nr.id = ne.news_id
+                    WHERE rq.id = $1
+                    """, review_id
+                )
+                return dict(row) if row else None
+        except Exception as e:
+            logger.error(f"get_review_event_detail 失败 id={review_id}: {e}")
+            return None
+
+    async def confirm_review_event(
+        self, review_id: int, reviewed_by: str = "", review_note: str = ""
+    ) -> bool:
+        """确认复核事件（标记为 confirmed）。"""
+        try:
+            async with self.pool.acquire() as conn:
+                result = await conn.execute(
+                    """
+                    UPDATE event_review_queue
+                    SET review_status = 'confirmed',
+                        reviewed_by = NULLIF($2, ''),
+                        reviewed_at = NOW(),
+                        review_note = NULLIF($3, '')
+                    WHERE id = $1 AND review_status = 'waiting'
+                    """, review_id, reviewed_by, review_note
+                )
+                return int(result.split()[-1]) > 0
+        except Exception as e:
+            logger.error(f"confirm_review_event 失败 id={review_id}: {e}")
+            return False
+
+    async def delete_review_event(self, review_id: int) -> bool:
+        """删除单条复核事件。"""
+        try:
+            async with self.pool.acquire() as conn:
+                result = await conn.execute("DELETE FROM event_review_queue WHERE id = $1", review_id)
+                return int(result.split()[-1]) > 0
+        except Exception as e:
+            logger.error(f"delete_review_event 失败 id={review_id}: {e}")
+            return False
+
+    async def batch_delete_review_events(self, ids: list[int]) -> int:
+        """批量删除复核事件。返回删除条数。"""
+        if not ids:
+            return 0
+        try:
+            async with self.pool.acquire() as conn:
+                result = await conn.execute(
+                    "DELETE FROM event_review_queue WHERE id = ANY($1::bigint[])", ids
+                )
+                return int(result.split()[-1])
+        except Exception as e:
+            logger.error(f"batch_delete_review_events 失败: {e}")
+            return 0
+
     async def list_matchable_news_events(
         self,
         limit: int = 0,
@@ -3714,11 +3840,18 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         subject_keys: List[str],
         trade_date,
     ) -> List[Dict[str, Any]]:
-        """读取 Layer A 主线身份真源。"""
+        """读取 Layer A 主线身份真源。
+
+        StrongWatch-P0 热修复 (2026-05-27):
+          只取 identity_status='confirmed' AND is_main_theme IS TRUE 的有效主线身份。
+          review_pending / rejected / revoked 不得覆盖 confirmed。
+          theme_mainline_identity_registry 是 append-only 日志表，
+          不能按 updated_at DESC 简单取最新行当作当前有效状态。
+        """
         if not subject_keys:
             return []
         page_size = 500
-        legacy_anytime_sql = """
+        confirmed_only_sql = """
         SELECT DISTINCT ON (subject_key)
             subject_key,
             COALESCE(identity_status, '') AS identity_status,
@@ -3728,6 +3861,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             COALESCE(rule_version, '') AS rule_version
         FROM theme_mainline_identity_registry
         WHERE subject_key = ANY($1::text[])
+          AND identity_status = 'confirmed'
+          AND is_main_theme IS TRUE
         ORDER BY subject_key, updated_at DESC NULLS LAST
         """
         gate_mode = str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower()
@@ -3736,7 +3871,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 all_rows: list[Dict[str, Any]] = []
                 for i in range(0, len(subject_keys), page_size):
                     chunk = subject_keys[i : i + page_size]
-                    rows = await conn.fetch(legacy_anytime_sql, chunk)
+                    rows = await conn.fetch(confirmed_only_sql, chunk)
                     all_rows.extend(dict(row) for row in rows)
                 return all_rows
         except Exception as e:
@@ -7402,7 +7537,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         FROM event_review_queue q
         LEFT JOIN news_event ne ON ne.id = q.event_id
         LEFT JOIN news_raw nr ON nr.id = ne.news_id
-        WHERE q.review_status = 'waiting'
+        WHERE q.review_status IN ('waiting', 'confirmed')
           AND (
             ($3::timestamptz IS NULL AND $4::timestamptz IS NULL AND (
                 ne.created_at::date = $1::date

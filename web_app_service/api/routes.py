@@ -123,10 +123,13 @@ async def _proxy_stock_processing_request_json(
         detail: object
         try:
             parsed = exc.response.json()
-            detail = parsed.get("detail", parsed) if isinstance(parsed, dict) else parsed
+            if isinstance(parsed, dict):
+                detail = str(parsed.get("detail", json.dumps(parsed, ensure_ascii=False)))
+            else:
+                detail = str(parsed)
         except Exception:
             detail = exc.response.text or str(exc)
-        raise HTTPException(status_code=exc.response.status_code, detail=detail) from exc
+        raise HTTPException(status_code=exc.response.status_code, detail=str(detail)) from exc
     except httpx.ReadTimeout as exc:
         raise HTTPException(
             status_code=504,
@@ -644,6 +647,55 @@ async def proxy_pre_market_brief(trade_date: str = Query(..., description="YYYY-
 @router.post("/pre_market_brief/publish-notion")
 async def proxy_pre_market_brief_publish(payload: dict) -> dict:
     return await _proxy_stock_processing_post_json("/api/v1/pre_market_brief/publish-notion", payload)
+
+
+# ── Phase 6A: Review queue CRUD ──
+
+@router.get("/review-queue/events")
+async def proxy_review_queue_list(
+    page: int = Query(default=1, ge=1),
+    page_size: int = Query(default=20, ge=1, le=100),
+    status: str | None = Query(default=None),
+    source: str | None = Query(default=None),
+) -> dict:
+    params = {"page": str(page), "page_size": str(page_size)}
+    if status:
+        params["status"] = status
+    if source:
+        params["source"] = source
+    return await _proxy_stock_processing_json("/api/v1/review-queue/events", params)
+
+
+@router.get("/review-queue/events/{review_id}")
+async def proxy_review_queue_detail(review_id: int) -> dict:
+    return await _proxy_stock_processing_json(f"/api/v1/review-queue/events/{review_id}", {})
+
+
+@router.post("/review-queue/events/{review_id}/confirm")
+async def proxy_review_queue_confirm(review_id: int, payload: dict | None = None) -> dict:
+    return await _proxy_stock_processing_post_json(f"/api/v1/review-queue/events/{review_id}/confirm", payload or {})
+
+
+@router.delete("/review-queue/events/{review_id}")
+async def proxy_review_queue_delete(review_id: int) -> dict:
+    return await _proxy_stock_processing_request_json(
+        "DELETE", f"/api/v1/review-queue/events/{review_id}",
+    )
+
+
+@router.post("/review-queue/events/batch-delete")
+async def proxy_review_queue_batch_delete(payload: dict) -> dict:
+    return await _proxy_stock_processing_post_json("/api/v1/review-queue/events/batch-delete", payload)
+
+
+@router.post("/review-queue/clear-pending")
+async def proxy_review_queue_clear_pending() -> dict:
+    return await _proxy_stock_processing_post_json("/api/v1/review-queue/clear-pending", {})
+
+
+@router.post("/review-queue/import-pending")
+async def proxy_review_queue_import_pending() -> dict:
+    return await _proxy_stock_processing_post_json("/api/v1/review-queue/import-pending", {})
 
 
 @router.get("/realtime/jyhf-cdp/status")

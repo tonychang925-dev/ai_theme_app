@@ -39,6 +39,10 @@ function assertRollbackUrlIsSupported() {
     "data_mode=sections_first must be supported as a rollback URL override",
   );
   assert(
+    source.includes('window.location.search.includes("data_mode=sections_first")'),
+    "data_mode=sections_first must be a hard rollback guard in the browser URL",
+  );
+  assert(
     source.includes('value === "daily_review_v2"') && source.includes('value === "daily_review_v2_first"'),
     "daily_review_v2 and daily_review_v2_first URL/env aliases must both map to V2 mode",
   );

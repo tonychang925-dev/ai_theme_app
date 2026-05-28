@@ -2207,7 +2207,44 @@ class DatabaseGateway:
             self._record_request(False, start_time)
             logger.error(f"写入人工复核队列失败 event_id={event_id}: {e}")
             return False
-    
+
+    # ── Phase 6A: Review queue CRUD ──
+
+    async def list_review_events(self, page=1, page_size=20, status=None, source_channel=None) -> dict:
+        try:
+            return await self._client.list_review_events(page=page, page_size=page_size, status=status, source_channel=source_channel)
+        except Exception as e:
+            logger.error(f"list_review_events 失败: {e}")
+            return {"items": [], "total": 0, "page": page, "page_size": page_size}
+
+    async def get_review_event_detail(self, review_id: int) -> dict | None:
+        try:
+            return await self._client.get_review_event_detail(review_id)
+        except Exception as e:
+            logger.error(f"get_review_event_detail 失败: {e}")
+            return None
+
+    async def confirm_review_event(self, review_id: int, reviewed_by="", review_note="") -> bool:
+        try:
+            return await self._client.confirm_review_event(review_id, reviewed_by=reviewed_by, review_note=review_note)
+        except Exception as e:
+            logger.error(f"confirm_review_event 失败: {e}")
+            return False
+
+    async def delete_review_event(self, review_id: int) -> bool:
+        try:
+            return await self._client.delete_review_event(review_id)
+        except Exception as e:
+            logger.error(f"delete_review_event 失败: {e}")
+            return False
+
+    async def batch_delete_review_events(self, ids: list[int]) -> int:
+        try:
+            return await self._client.batch_delete_review_events(ids)
+        except Exception as e:
+            logger.error(f"batch_delete_review_events 失败: {e}")
+            return 0
+
     # ========== 统计与监控 ==========
     
     async def get_stats(self) -> Dict[str, Any]:

@@ -2117,7 +2117,7 @@ async def generate_post_market_derived_data(payload: dict[str, Any] | None = Non
     uc.register_money_flow_enhanced_build(project_root=str(_project_root()))
     uc.register_stock_abnormal_signal_build(project_root=str(_project_root()))
     uc.register_strong_stock_watch_build()
-    result = await uc.execute(d)
+    result = await uc.execute(d, force=bool(p.get("force", False)))
     return {
         "ok": result.status == "success",
         "trade_date": result.trade_date,
@@ -2863,6 +2863,209 @@ async def get_strong_watch(
         except Exception:
             pass
     return {"trade_date": trade_date, "stocks": stocks}
+
+
+# ── Phase 6A: Review queue CRUD ──
+
+@app.get("/api/v1/review-queue/events")
+async def list_review_queue_events(
+    page: int = Query(default=1, ge=1),
+    page_size: int = Query(default=20, ge=1, le=100),
+    status: str | None = Query(default=None),
+    source: str | None = Query(default=None),
+) -> dict[str, Any]:
+    """分页列出复核队列事件。"""
+    return await app.state.gateway.list_review_events(
+        page=page, page_size=page_size, status=status, source_channel=source,
+    )
+
+
+@app.get("/api/v1/review-queue/events/{review_id}")
+async def get_review_queue_event_detail(review_id: int) -> dict[str, Any]:
+    """获取单条复核事件详情。"""
+    detail = await app.state.gateway.get_review_event_detail(review_id)
+    if not detail:
+        raise HTTPException(status_code=404, detail=f"review event {review_id} not found")
+    # Convert date/datetime fields to strings for JSON
+    for key in ("created_at", "reviewed_at", "publish_date"):
+        val = detail.get(key)
+        if val:
+            detail[key] = str(val)
+    return detail
+
+
+@app.post("/api/v1/review-queue/events/{review_id}/confirm")
+async def confirm_review_queue_event(
+    review_id: int, payload: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """确认复核事件，并将事件推送到 stream:event:feed 供前端实时展示。"""
+    p = payload or {}
+    ok = await app.state.gateway.confirm_review_event(
+        review_id,
+        reviewed_by=str(p.get("reviewed_by", "")),
+        review_note=str(p.get("review_note", "")),
+    )
+    if not ok:
+        raise HTTPException(status_code=404, detail=f"review event {review_id} not found or already processed")
+
+    # Phase 6A: 确认后推送到 stream:event:feed → SSE → 前端 Intel 页面
+    try:
+        detail = await app.state.gateway.get_review_event_detail(review_id)
+        if detail:
+            r = await _get_async_redis()
+            try:
+                event_id_val = detail.get("event_id")
+                await r.xadd(
+                    "stream:event:feed",
+                    {
+                        "event_id": str(event_id_val) if event_id_val else f"review_{review_id}",
+                        "news_id": str(detail.get("news_id") or ""),
+                        "event_type": "event",
+                        "title": str(detail.get("event_title") or detail.get("raw_title") or ""),
+                        "summary": str(detail.get("event_summary") or ""),
+                        "decision": "review_confirmed",
+                        "subject_key": "",
+                        "theme_name": str(detail.get("proposed_theme_name") or ""),
+                        "confidence": str(detail.get("proposed_theme_confidence") or "0"),
+                        "reason_code": "review_confirmed",
+                        "source": "review_queue",
+                        "dropped": "false",
+                        "created_at": str(detail.get("created_at") or ""),
+                    },
+                    maxlen=2000,
+                )
+                logger.info("review confirmed & pushed to feed: review_id=%s event_id=%s", review_id, event_id_val)
+            finally:
+                await r.aclose()
+    except Exception as e:
+        logger.warning("review confirmed but feed push failed: review_id=%s err=%s", review_id, e)
+
+    return {"ok": True, "review_id": review_id, "status": "confirmed"}
+
+
+@app.delete("/api/v1/review-queue/events/{review_id}")
+async def delete_review_queue_event(review_id: int) -> dict[str, Any]:
+    """删除单条复核事件。"""
+    ok = await app.state.gateway.delete_review_event(review_id)
+    if not ok:
+        raise HTTPException(status_code=404, detail=f"review event {review_id} not found")
+    return {"ok": True, "review_id": review_id, "status": "deleted"}
+
+
+@app.post("/api/v1/review-queue/events/batch-delete")
+async def batch_delete_review_queue_events(payload: dict[str, Any]) -> dict[str, Any]:
+    """批量删除复核事件。body: {"ids": [1, 2, 3]}"""
+    ids = payload.get("ids") or []
+    if not isinstance(ids, list) or not ids:
+        raise HTTPException(status_code=400, detail="ids must be a non-empty array of integers")
+    count = await app.state.gateway.batch_delete_review_events([int(i) for i in ids])
+    return {"ok": True, "deleted_count": count}
+
+
+@app.post("/api/v1/review-queue/clear-pending")
+async def clear_pending_stream() -> dict[str, Any]:
+    """清空 stream:events:pending 中的所有弱信号事件。"""
+    try:
+        import redis.asyncio as aioredis
+        r = aioredis.Redis.from_url(_redis_url(), decode_responses=True)
+        try:
+            before = await r.xlen("stream:events:pending")
+            await r.xtrim("stream:events:pending", maxlen=0, approximate=False)
+            logger.warning("cleared stream:events:pending, trimmed %s entries", before)
+            return {"ok": True, "deleted_count": before}
+        finally:
+            await r.aclose()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"failed to clear pending: {e}")
+
+
+@app.post("/api/v1/review-queue/import-pending")
+async def import_pending_to_review_queue() -> dict[str, Any]:
+    """将 stream:events:pending 中的弱信号事件导入 event_review_queue 复核队列。
+
+    读取 pending 流中所有事件，按 event_id 去重，写入复核队列（跳过已存在的）。
+    """
+    try:
+        import redis.asyncio as aioredis
+        r = aioredis.Redis.from_url(_redis_url(), decode_responses=True)
+        try:
+            # 读取 pending 流中所有消息
+            pending_messages = []
+            last_id = "0-0"
+            while True:
+                batch = await r.xrange("stream:events:pending", min=last_id, count=100)
+                if not batch:
+                    break
+                for msg_id, msg_data in batch:
+                    pending_messages.append((msg_id, msg_data))
+                    last_id = msg_id
+                if len(batch) < 100:
+                    break
+                # advance past last
+                last_id = f"({int(last_id.split('-')[0]) + 1}-0"
+
+            imported = 0
+            skipped = 0
+            errors = 0
+            seen_event_ids: set[int] = set()
+
+            for msg_id, msg_data in pending_messages:
+                try:
+                    event_data_str = msg_data.get("event_data", "{}")
+                    if isinstance(event_data_str, str):
+                        event_data = json.loads(event_data_str)
+                    else:
+                        event_data = event_data_str or {}
+
+                    event_id = event_data.get("event_id")
+                    if not event_id:
+                        skipped += 1
+                        continue
+                    event_id = int(event_id)
+
+                    # 同一批次内去重
+                    if event_id in seen_event_ids:
+                        skipped += 1
+                        continue
+                    seen_event_ids.add(event_id)
+
+                    reason = str(msg_data.get("reason") or "pending_import")
+                    title = str(event_data.get("title") or event_data.get("summary") or "")
+                    summary = str(event_data.get("summary") or "")
+
+                    ok = await app.state.gateway.enqueue_event_review(
+                        event_id=event_id,
+                        reason=reason,
+                        source_channel="pending_import",
+                        proposed_theme_name=None,
+                        proposed_theme_confidence=None,
+                    )
+                    if ok:
+                        imported += 1
+                    else:
+                        skipped += 1  # already exists
+                except Exception:
+                    errors += 1
+
+            # 导入完成后清空 pending 流（保留 stream 本身，DecisionExecutor 需要它存在）
+            cleared = len(pending_messages)
+            await r.xtrim("stream:events:pending", maxlen=0, approximate=False)
+
+            logger.warning(
+                "imported %d pending events to review queue (skipped=%d errors=%d), cleared %d from stream",
+                imported, skipped, errors, cleared,
+            )
+            return {
+                "ok": True,
+                "imported": imported,
+                "skipped": skipped,
+                "errors": errors,
+                "cleared": cleared,
+            }
+        finally:
+            await r.aclose()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"failed to import pending: {e}")
 
 
 @app.get("/api/v1/w2s_candidates")

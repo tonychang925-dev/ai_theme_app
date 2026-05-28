@@ -17,15 +17,43 @@ else:
 
 
 async def _ensure_group_at_tail(client, stream: str, group: str) -> None:
+    """Phase 6A: 创建/重置消费组到 $ 并清理僵尸 consumer（不 ACK pending）。"""
     try:
         await client.xgroup_create(stream, group, id="$", mkstream=True)
         logging.info("Created consumer group at tail: %s/%s", stream, group)
+        return
     except Exception as exc:
         if "BUSYGROUP" not in str(exc):
             raise
-        logging.info("Consumer group already exists: %s/%s", stream, group)
+        logging.info("Consumer group already exists: %s/%s, resetting to tail...", stream, group)
+
+    try:
         await client.xgroup_setid(stream, group, "$")
         logging.info("Moved consumer group to tail: %s/%s", stream, group)
+    except Exception as e:
+        logging.warning("xgroup_setid failed for %s/%s: %s", stream, group, e)
+
+    # Phase 6A: clean zombie consumers (idle > 60s) — never ACK pending
+    zombie_count = 0
+    orphaned_pending = 0
+    try:
+        consumers = await client.xinfo_consumers(stream, group)
+        for c in consumers:
+            idle_ms = int(c.get("idle", 0))
+            if idle_ms > 60000:
+                orphaned_pending += int(c.get("pending", 0))
+                try:
+                    await client.xgroup_delconsumer(stream, group, c["name"])
+                    zombie_count += 1
+                except Exception:
+                    pass
+        if zombie_count:
+            logging.warning(
+                "Cleaned %d zombie consumers from %s/%s (orphaned pending=%d, NOT acked)",
+                zombie_count, stream, group, orphaned_pending,
+            )
+    except Exception as e:
+        logging.debug("Zombie cleanup skipped for %s/%s: %s", stream, group, e)
 
 
 def _redis_host_port(redis_url: str) -> tuple[str, int]:
@@ -36,10 +64,13 @@ def _redis_host_port(redis_url: str) -> tuple[str, int]:
 async def run_services(args: argparse.Namespace) -> None:
     import redis.asyncio as redis
 
-    # P1-C1: parent watchdog
+    # Create stop_event early so parent watchdog triggers clean shutdown
+    stop_event = asyncio.Event()
+
+    # P1-C1: parent watchdog — triggers clean shutdown (finally + self-cleanup)
     parent_pid = int(os.environ.get("REALTIME_PARENT_PID", "0"))
     if parent_pid:
-        asyncio.create_task(_watch_parent(parent_pid))
+        asyncio.create_task(_watch_parent(parent_pid, stop_event))
 
     from database_service.streams.gateway_integration import get_gateway
     from database_service.streams.handlers.DecisionExecutor import DecisionExecutor
@@ -92,7 +123,6 @@ async def run_services(args: argparse.Namespace) -> None:
     executor.consumer_group = decision_group
     executor.dead_letter_stream = args.dead_letter_stream
 
-    stop_event = asyncio.Event()
     loop = asyncio.get_running_loop()
     for signame in ("SIGINT", "SIGTERM"):
         try:
@@ -119,6 +149,24 @@ async def run_services(args: argparse.Namespace) -> None:
         for task in tasks:
             task.cancel()
         await asyncio.gather(*tasks, return_exceptions=True)
+
+        # Phase 6A: self-cleanup — remove our consumers (prefix-matched) on exit
+        for _stream, _group, _prefix in [
+            (args.structured_stream, theme_group, f"theme_processor_e2e_{args.run_id}"),
+            (args.decision_stream, theme_group, f"theme_processor_e2e_{args.run_id}"),
+            (args.decision_stream, decision_group, f"decision_executor_e2e_{args.run_id}"),
+            (args.pending_stream, decision_group, f"decision_executor_e2e_{args.run_id}"),
+        ]:
+            try:
+                consumers = await redis_client.xinfo_consumers(_stream, _group)
+                for c in consumers:
+                    cname = c.get("name", "")
+                    if cname.startswith(_prefix):
+                        await redis_client.xgroup_delconsumer(_stream, _group, cname)
+                        logging.info("Self-cleanup: removed consumer %s from %s/%s", cname, _stream, _group)
+            except Exception:
+                pass
+
         await redis_client.aclose()
 
 
@@ -142,16 +190,21 @@ def main() -> None:
     asyncio.run(run_services(build_parser().parse_args()))
 
 
-async def _watch_parent(parent_pid: int, interval: float = 5.0) -> None:
-    """P1-C1: parent pid 不存在时主动退出。"""
+async def _watch_parent(parent_pid: int, stop_event: asyncio.Event, interval: float = 5.0) -> None:
+    """Phase 6A: parent 退出时通过 stop_event 触发正常清理，不再 os._exit。"""
     import os as _os
-    while True:
-        await asyncio.sleep(interval)
+    while not stop_event.is_set():
+        try:
+            await asyncio.wait_for(stop_event.wait(), timeout=interval)
+            return
+        except asyncio.TimeoutError:
+            pass
         try:
             _os.kill(parent_pid, 0)
         except (ProcessLookupError, PermissionError):
-            logging.warning("parent pid %d died, exiting decision", parent_pid)
-            _os._exit(0)
+            logging.warning("parent pid %d died, triggering clean shutdown", parent_pid)
+            stop_event.set()
+            return
 
 
 if __name__ == "__main__":

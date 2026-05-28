@@ -211,7 +211,11 @@ class NewsStreamProcessor:
                 await asyncio.sleep(5)
     
     async def _listen_for_events(self) -> List[Dict[str, Any]]:
-        """监听事件 - 从 events_normal Stream消费news.stored事件"""
+        """监听事件 - 从 events_normal Stream消费news.stored事件
+
+        Phase 6A: 连续 N 批消息全部因 run_id 不匹配被过滤时，
+                  触发 fast-forward 到 $，避免逐条 ACK 旧消息。
+        """
         try:
             if hasattr(self.event_bus, 'consume_from_stream'):
                 # 从独立业务事件流消费，避免与news_raw原始流形成回路
@@ -227,6 +231,7 @@ class NewsStreamProcessor:
                     logger.info(f"📥 收到 {len(messages)} 条原始消息")
                 events = []
                 message_ids_to_ack = []
+                stale_run_id_count = 0  # Phase 6A
 
                 for msg in messages:
                     msg_id = msg.get('id')
@@ -262,6 +267,7 @@ class NewsStreamProcessor:
                     if event_type in self.processor_config["event_types"]:
                         run_id_filter = self.processor_config.get("run_id_filter")
                         if run_id_filter and not self._event_matches_run_id(event_data, run_id_filter):
+                            stale_run_id_count += 1
                             logger.debug(
                                 "跳过非本轮 E2E 业务事件: message_id=%s expected_run_id=%s",
                                 msg_id,
@@ -279,6 +285,27 @@ class NewsStreamProcessor:
                         logger.debug(f"不是监听的事件类型: {event_type}")
                     # 记录所有消息ID用于确认
                     message_ids_to_ack.append(msg_id)
+
+                # Phase 6A: fast-forward when stuck on stale run_id messages
+                if messages and stale_run_id_count > 0 and stale_run_id_count == len(messages):
+                    self._stale_run_id_streak = getattr(self, '_stale_run_id_streak', 0) + 1
+                    if self._stale_run_id_streak >= 3:
+                        logger.warning(
+                            "连续 %d 批消息 run_id 不匹配，触发 fast-forward 到 $",
+                            self._stale_run_id_streak,
+                        )
+                        try:
+                            await self.event_bus.redis.xgroup_setid(
+                                self.event_bus._stream_definitions["events_normal"]["key"],
+                                self.processor_config["processor_group"],
+                                "$",
+                            )
+                            logger.info("Fast-forward: group %s -> $", self.processor_config["processor_group"])
+                        except Exception as ff_err:
+                            logger.error("Fast-forward failed: %s", ff_err)
+                        self._stale_run_id_streak = 0
+                elif messages and stale_run_id_count == 0:
+                    self._stale_run_id_streak = 0
 
                 # 确认所有消息（包括非事件消息）
                 await self._acknowledge_messages(message_ids_to_ack)
