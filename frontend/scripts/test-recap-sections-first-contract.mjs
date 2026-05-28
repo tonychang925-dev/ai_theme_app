@@ -100,9 +100,21 @@ function assertCoreTitlesArePinned() {
   }
 }
 
+function assertPostMarketPrimaryCtaIsAlwaysVisible() {
+  assert(
+    source.includes('payload ? "重新生成" : "开始复盘"'),
+    "盘后复盘状态面板必须在无 payload 时显示主 CTA: 开始复盘",
+  );
+  assert(
+    !source.includes("{payload && (\n                <button className=\"tag tag-button is-pass\""),
+    "开始复盘/重新生成主 CTA 不得被 payload 条件隐藏",
+  );
+}
+
 assertFullFixtureDisplaysAllModules();
 assertEmptyFixtureKeepsModuleVisible();
 assertDailyReviewDoesNotOverrideSectionsFirst();
 assertCoreTitlesArePinned();
+assertPostMarketPrimaryCtaIsAlwaysVisible();
 
 console.log("recap sections_first contract passed");
