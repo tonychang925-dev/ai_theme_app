@@ -4002,9 +4002,55 @@ async def _query_backtest(sql: str, params: list = None):
     return await gw._client.execute_query(sql, tuple(params) if params else None)
 
 
+async def _execute_raw_backtest(sql: str, params: list = None):
+    """Helper: run a write query using a raw asyncpg connection."""
+    import asyncpg
+    conn = await asyncpg.connect(
+        host="localhost", port=5432, user="postgres", password="postgres",
+        database="stock_data_test",
+    )
+    try:
+        await conn.execute(sql, *(params or []))
+    finally:
+        await conn.close()
+
+
 # ═══════════════════════════════════════════════════════════════════════════
 # v2.8a Strategy Lab API
 # ═══════════════════════════════════════════════════════════════════════════
+
+@app.post("/api/v1/backtest/param-sets")
+async def save_param_set(payload: dict[str, Any]) -> dict[str, Any]:
+    """Save a parameter set for reuse. Returns param_set_id."""
+    try:
+        import uuid as _uuid
+        param_set_id = payload.get("param_set_id") or f"ps_{datetime.now().strftime('%Y%m%d%H%M%S')}_{_uuid.uuid4().hex[:6]}"
+        name = str(payload.get("name", ""))
+        desc = str(payload.get("description", ""))
+        category = str(payload.get("category", "w2s"))
+        config = payload.get("params", payload.get("config_json", {}))
+        signal_source = str(payload.get("signal_source", "w2s_signal_validation_v1_1b"))
+
+        await _execute_raw_backtest(
+            """INSERT INTO strategy_param_set (param_set_id, name, description, category, config_json, signal_source)
+               VALUES ($1,$2,$3,$4,$5::jsonb,$6)
+               ON CONFLICT (param_set_id) DO UPDATE SET
+               config_json=EXCLUDED.config_json, updated_at=NOW()""",
+            [param_set_id, name, desc, category, json.dumps(config, ensure_ascii=False, default=str), signal_source],
+        )
+        return {"param_set_id": param_set_id, "status": "saved"}
+    except Exception as e:
+        import traceback; traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/v1/backtest/param-sets")
+async def list_param_sets() -> dict[str, Any]:
+    """List saved parameter sets."""
+    rows = await _query_backtest(
+        """SELECT param_set_id, name, description, category, config_json, signal_source, created_at
+           FROM strategy_param_set ORDER BY created_at DESC LIMIT 50""")
+    return {"param_sets": [dict(r) for r in rows]}
 
 @app.get("/api/v1/backtest/param-schema")
 async def param_schema() -> dict[str, Any]:
