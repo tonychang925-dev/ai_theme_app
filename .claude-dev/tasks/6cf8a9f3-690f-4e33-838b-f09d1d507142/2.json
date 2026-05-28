@@ -1,8 +1,0 @@
-{
-  "id": "2",
-  "subject": "对比文档设计与代码实现的差距",
-  "description": "根据第三阶段文档的架构设计、协议冻结、迁移矩阵等，比照实际代码落地的差距",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}

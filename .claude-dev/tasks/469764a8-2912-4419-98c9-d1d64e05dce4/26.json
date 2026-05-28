@@ -1,9 +1,0 @@
-{
-  "id": "26",
-  "subject": "Find code that parses stock_daily JSONL 38-element arrays",
-  "description": "Search for import scripts or parsing code that maps the 38-element JSON array indices to field names, especially money flow fields at indices 34-37",
-  "activeForm": "Finding stock_daily array parsing code",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

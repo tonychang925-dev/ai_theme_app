@@ -1,9 +1,0 @@
-{
-  "id": "4",
-  "subject": "找到调用 EnhancedMainlineJudgementService 的脚本",
-  "description": "在 scripts 目录下找到调用 EnhancedMainlineJudgementService 的脚本，列出路径、命令行参数、数据输入/输出路径",
-  "activeForm": "搜索 EnhancedMainlineJudgementService 脚本",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}

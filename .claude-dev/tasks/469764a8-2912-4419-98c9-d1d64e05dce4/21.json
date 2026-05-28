@@ -1,9 +1,0 @@
-{
-  "id": "21",
-  "subject": "Test write path by running BuildIdentityJob for a recent trade date",
-  "description": "Run BuildIdentityJob for a recent trade date (e.g., 2026-04-25) to verify the write path is working end-to-end. Check that identity_registry_rows and review_queue_rows are actually persisted to DB.",
-  "activeForm": "Testing write path with BuildIdentityJob",
-  "status": "in_progress",
-  "blocks": [],
-  "blockedBy": []
-}

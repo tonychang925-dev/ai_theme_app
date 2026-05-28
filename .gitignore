@@ -50,3 +50,8 @@ frontend/node_modules/
 # Local runtime config
 desktop-config.json
 *.log
+
+# Local AI/dev tool state
+.claude-dev/
+.claude/
+.codex/

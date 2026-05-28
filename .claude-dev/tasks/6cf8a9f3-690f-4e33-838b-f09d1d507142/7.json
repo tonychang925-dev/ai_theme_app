@@ -1,9 +1,0 @@
-{
-  "id": "7",
-  "subject": "Check frontend_bff for forbidden old table reads",
-  "description": "检查 frontend_bff 中是否存在直读旧 stock_service 过程表的代码",
-  "activeForm": "Checking frontend_bff for old table reads",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}

@@ -1,9 +1,0 @@
-{
-  "id": "12",
-  "subject": "Fix _layer_a_replay_runner.py dict access and data mapping",
-  "description": "Fix the runner to work with raw dicts from DatabaseGateway (not DTO objects). Key fixes: 1) dict key access instead of attribute access, 2) use pool rows' limit_up/pct_chg for market stats instead of bars, 3) handle minimal subject_context data",
-  "activeForm": "Fixing _layer_a_replay_runner.py",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

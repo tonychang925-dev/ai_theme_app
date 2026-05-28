@@ -1,9 +1,0 @@
-{
-  "id": "23",
-  "subject": "Backfill identity data for recent trade dates (4/20-4/25)",
-  "description": "Run BuildIdentityJob against real DB for trade dates 2026-04-20 through 2026-04-25 to populate theme_mainline_identity_registry and mainline_identity_review_queue with baseline identity data.",
-  "activeForm": "Backfilling identity data",
-  "status": "in_progress",
-  "blocks": [],
-  "blockedBy": []
-}

@@ -1,8 +1,0 @@
-{
-  "id": "30",
-  "subject": "Test BuildIdentityJob with JSONL enrichment",
-  "description": "Run the backfill with enriched data and verify identity_status distribution is no longer 100% observed",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}

@@ -1,8 +1,0 @@
-{
-  "id": "29",
-  "subject": "Add JSONL-based enrichment to BuildIdentityJob",
-  "description": "Read theme_data_complete JSONL files (history for heat, stock_daily for fund flow) and apply old chain calibration (heat*100 if <=1.2) to fix market_ok gate",
-  "status": "completed",
-  "blocks": [],
-  "blockedBy": []
-}

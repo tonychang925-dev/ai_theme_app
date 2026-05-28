@@ -1,9 +1,0 @@
-{
-  "id": "5",
-  "subject": "检查新链 contracts 目录",
-  "description": "检查 /Users/admin/Desktop/ai_theme_app/stock_processing_service/contracts/ 目录下所有文件，了解新链契约定义",
-  "activeForm": "检查 contracts 目录",
-  "status": "pending",
-  "blocks": [],
-  "blockedBy": []
-}
