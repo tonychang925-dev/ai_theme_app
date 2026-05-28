@@ -1367,6 +1367,15 @@ async def intel_stream(
             for item in items:
                 if not isinstance(item, dict):
                     continue
+                # P1-3.4: 接入 SignalDecision facade
+                try:
+                    from core.contracts.decision import ensure_decision, ALERT
+                    dt = item.get("item_type", "event")
+                    level = ALERT if item.get("confidence", 0) > 0.6 else "watch"
+                    dec = ensure_decision(item, decision_type=dt, level=level)
+                    item["_decision"] = dec.to_dict()
+                except Exception:
+                    pass
                 payload = {
                     "event_id": str(item.get("item_id") or item.get("event_id") or ""),
                     "occurred_at": str(item.get("occurred_at") or item.get("event_time") or ""),
