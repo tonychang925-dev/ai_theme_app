@@ -44,8 +44,13 @@ class ParameterizedBacktestRunner:
     def __init__(self, gateway_client):
         self._c = gateway_client
 
-    async def run(self, params: dict[str, Any]) -> str:
-        """Execute a backtest. Returns run_id. Writes to backtest_* tables."""
+    async def run(self, params: dict[str, Any], param_set_id: str | None = None) -> str:
+        """Execute a backtest. Returns run_id. Writes to backtest_* tables.
+
+        Args:
+            params: Trading-layer parameters (hold_days, position_pct, support_types, etc.)
+            param_set_id: Optional reference to strategy_param_set.param_set_id
+        """
         run_id = f"lab_{datetime.now().strftime('%Y%m%d%H%M%S')}_{uuid.uuid4().hex[:6]}"
 
         # ── Extract params ──
@@ -64,6 +69,8 @@ class ParameterizedBacktestRunner:
         commission = float(params.get("commission", 0.0003))
         stamp_tax = float(params.get("stamp_tax", 0.0005))
         initial_capital = float(params.get("initial_capital", 1_000_000))
+        signal_source = str(params.get("signal_source", "w2s_signal_validation_v1_1b"))
+        source_chain = str(params.get("source_chain", "backtest_replay"))
 
         # ── Load signals (READ ONLY — no candidate regeneration) ──
         signals = await self._c.execute_query("""
@@ -229,16 +236,21 @@ class ParameterizedBacktestRunner:
             INSERT INTO backtest_run (run_id, strategy_id, strategy_name, strategy_version,
                 initial_capital, final_equity, total_return, max_drawdown,
                 win_rate, profit_factor, trade_count, avg_return_per_trade,
-                avg_hold_days, max_single_loss, config_json)
-            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15::jsonb)
+                avg_hold_days, max_single_loss, config_json,
+                param_set_id, signal_source, source_chain)
+            VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15::jsonb,$16,$17,$18)
             ON CONFLICT (strategy_id, strategy_version) DO UPDATE SET
                 run_id=EXCLUDED.run_id, total_return=EXCLUDED.total_return,
                 max_drawdown=EXCLUDED.max_drawdown, win_rate=EXCLUDED.win_rate,
                 profit_factor=EXCLUDED.profit_factor, trade_count=EXCLUDED.trade_count,
-                config_json=EXCLUDED.config_json
+                config_json=EXCLUDED.config_json,
+                param_set_id=EXCLUDED.param_set_id,
+                signal_source=EXCLUDED.signal_source,
+                source_chain=EXCLUDED.source_chain
         """, (run_id, run_id, name, "v2.8a", initial_capital, final_eq, total_return,
               max_dd, wr, pf, n, avg_ret, avg_hold, max_single_loss,
-              json.dumps(params, ensure_ascii=False, default=str)))
+              json.dumps(params, ensure_ascii=False, default=str),
+              param_set_id, signal_source, source_chain))
 
         # ── Write: equity curve ──
         peak2 = initial_capital

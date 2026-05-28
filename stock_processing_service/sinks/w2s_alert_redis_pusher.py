@@ -17,6 +17,7 @@ from stock_processing_service.domain.services.w2s_intraday_alert_service import 
 from stock_processing_service.domain.services.w2s_intraday_alert_service_v2 import W2SIntradayAlertV2
 from stock_processing_service.domain.services.w2s_support_alert_service import W2SSupportAlert
 from stock_processing_service.domain.services.w2s_unified_alert_service import UnifiedW2SAlert
+from stock_processing_service.contracts.w2s_signal import W2SSignal
 
 logger = logging.getLogger("sps.w2s_alert.redis_pusher")
 TZ_CN = timezone(timedelta(hours=8))
