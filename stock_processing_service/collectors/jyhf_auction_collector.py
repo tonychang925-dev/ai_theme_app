@@ -316,11 +316,28 @@ async def _main():
     p.add_argument("--candidate-date", required=True, help="D1候选日期 YYYY-MM-DD")
     p.add_argument("--interval", type=float, default=_DEFAULT_INTERVAL, help="采集间隔(秒)")
     p.add_argument("--concurrency", type=int, default=15)
+    p.add_argument("--parent-pid", type=int, default=None, help="父进程 PID，用于 watchdog 自毁")
     p.add_argument("--dsn", default=os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/stock_data_test"))
     p.add_argument("--token-path", default=os.getenv("JYHF_AUTH_TOKEN_PATH", "/tmp/jyhf_auth_token.json"))
     args = p.parse_args()
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s", stream=sys.stderr)
+
+    # P0-A1: parent watchdog — 父进程死则自毁
+    if args.parent_pid:
+        async def _watchdog():
+            import signal as _signal
+            while True:
+                await asyncio.sleep(10)
+                try:
+                    os.kill(args.parent_pid, 0)  # 信号 0 不杀，只检查存活
+                except OSError:
+                    logging.getLogger("auction").warning(
+                        "Parent PID %s is dead, self-terminating", args.parent_pid
+                    )
+                    os.kill(os.getpid(), _signal.SIGTERM)
+                    return
+        asyncio.create_task(_watchdog())
 
     collector = JyhfAuctionCollector(
         dsn=args.dsn, token_path=args.token_path,

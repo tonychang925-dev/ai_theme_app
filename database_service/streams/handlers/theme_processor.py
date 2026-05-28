@@ -1815,8 +1815,10 @@ class ThemeProcessor:
                     for stream, message_list in messages:
                         for message_id, message_data in message_list:
                             await self._process_message(stream_type, stream_name, message_id, message_data)
-                
-                await asyncio.sleep(0.1)
+
+                # P0-B2: batch 间延迟，可配置以控制 CPU 占用
+                batch_delay = float(self.config.get("batch_delay_ms", 100)) / 1000.0
+                await asyncio.sleep(batch_delay)
                 
             except asyncio.CancelledError:
                 logger.info(f"📥 {stream_type}流处理被取消")

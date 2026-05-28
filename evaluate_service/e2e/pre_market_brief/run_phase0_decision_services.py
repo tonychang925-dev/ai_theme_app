@@ -110,6 +110,8 @@ async def run_services(args: argparse.Namespace) -> None:
             "stream_dead_letter": args.dead_letter_stream,
             "run_id_filter": args.run_id,
             "require_news_id": True,
+            # P0-B2: batch 间延迟(ms)，控制 CPU 占用
+            "batch_delay_ms": int(os.environ.get("PHASE0_BATCH_DELAY_MS", "100")),
         },
     )
     await processor.initialize()
