@@ -27,6 +27,10 @@ async def run_services(args: argparse.Namespace) -> None:
     if parent_pid:
         asyncio.create_task(_watch_parent(parent_pid, stop_event))
 
+    # P0-B1: memory watchdog — RSS 超限优雅退出
+    max_memory_mb = int(os.environ.get("RAW_NEWS_MAX_MEMORY_MB", "3072"))
+    asyncio.create_task(_watch_memory(stop_event, max_memory_mb))
+
     from database_service.gateway import DatabaseGateway
     from database_service.managers.redis_stream_bus import UnifiedRedisStreamBus
     from database_service.streams.handlers.news_stream_handler import NewsStreamHandler
@@ -248,6 +252,59 @@ async def _watch_parent(parent_pid: int, stop_event: asyncio.Event, interval: fl
             logging.warning("parent pid %d died, triggering clean shutdown", parent_pid)
             stop_event.set()
             return
+
+
+async def _watch_memory(stop_event: asyncio.Event, max_mb: int, interval: float = 30.0) -> None:
+    """P0-B1: RSS 内存超限时优雅退出，让 supervisor 重启。
+
+    优先使用 ps 命令获取 RSS（macOS/Linux 通用），
+    失败则回退到 resource.getrusage。
+    内存单位 MB，默认上限 3072MB（3GB）。
+    """
+    import resource as _resource
+    import subprocess as _sp
+
+    pid = os.getpid()
+    while not stop_event.is_set():
+        try:
+            await asyncio.wait_for(stop_event.wait(), timeout=interval)
+            return
+        except asyncio.TimeoutError:
+            pass
+
+        rss_mb = 0
+        # 方法 1: ps 命令（macOS/Linux 通用，最准确）
+        try:
+            result = _sp.run(
+                ["ps", "-o", "rss=", "-p", str(pid)],
+                capture_output=True, text=True, timeout=5,
+            )
+            if result.stdout.strip():
+                rss_kb = int(result.stdout.strip())
+                rss_mb = rss_kb // 1024
+        except Exception:
+            pass
+
+        # 方法 2: resource.getrusage（macOS 上 maxrss 单位是字节）
+        if rss_mb == 0:
+            try:
+                usage = _resource.getrusage(_resource.RUSAGE_SELF)
+                rss_mb = usage.ru_maxrss // (1024 * 1024)
+            except Exception:
+                pass
+
+        if rss_mb > max_mb:
+            logging.error(
+                "P0-B1: RSS %sMB exceeds limit %sMB, exiting for supervisor restart",
+                rss_mb, max_mb,
+            )
+            sys.exit(137)  # 137 = 128 + 9 (SIGKILL-like，supervisor 可识别为 OOM)
+
+        if rss_mb > max_mb * 0.8:
+            logging.warning(
+                "P0-B1: RSS %sMB approaching limit %sMB (%.0f%%)",
+                rss_mb, max_mb, 100 * rss_mb / max_mb,
+            )
 
 
 if __name__ == "__main__":

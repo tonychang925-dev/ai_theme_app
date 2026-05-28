@@ -10,11 +10,13 @@ Ownership model:
 from __future__ import annotations
 
 import asyncio
+import json
 import logging
 import os
 import signal
 import subprocess
 import time
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -41,6 +43,9 @@ class JyhfCdpManager:
         self._managed_pgid: int | None = None
         self._status_seq: int = 0
         self._cached_status: dict[str, Any] | None = None
+        # P0-A2: pidfile 持久化，BFF 重启可恢复 CDP 进程追踪
+        self._pidfile = self._project_root / "tmp" / "realtime" / "cdp_manager.pid"
+        self._restore_from_pidfile()
 
     def _clear_state_trace(self, reason: str, clear_managed_pid: bool = False) -> None:
         """Log every state clear with full context before clearing."""
@@ -62,6 +67,58 @@ class JyhfCdpManager:
         if desktop_log:
             return Path(desktop_log) / "jyhf_cdp_service.log"
         return self._project_root / "logs" / "jyhf_cdp_service.log"
+
+    # ── P0-A2: pidfile 持久化 ──
+
+    def _write_pidfile(self) -> None:
+        """写入 pidfile，BFF 重启后可恢复 ownership。"""
+        try:
+            self._pidfile.parent.mkdir(parents=True, exist_ok=True)
+            self._pidfile.write_text(json.dumps({
+                "pid": self._managed_pid,
+                "pgid": self._managed_pgid,
+                "port": self._port,
+                "owner": self._owner,
+                "updated_at": datetime.now().isoformat(),
+            }))
+        except Exception as exc:
+            logger.warning("Failed to write CDP pidfile: %s", exc)
+
+    def _remove_pidfile(self) -> None:
+        """清理 pidfile。"""
+        try:
+            if self._pidfile.exists():
+                self._pidfile.unlink()
+        except Exception:
+            pass
+
+    def _restore_from_pidfile(self) -> None:
+        """BFF 重启时尝试从 pidfile 恢复 CDP 进程追踪。"""
+        try:
+            if not self._pidfile.exists():
+                return
+            data = json.loads(self._pidfile.read_text())
+            pid = data.get("pid")
+            if not pid:
+                return
+            # 检查进程是否仍存活
+            os.kill(pid, 0)
+            self._managed_pid = pid
+            self._managed_pgid = data.get("pgid")
+            self._owner = "managed"
+            # 验证端口是否仍被该进程占用
+            port_pid = self._find_pid_by_port_blocking()
+            if port_pid and port_pid == pid:
+                logger.warning("CDP_RESTORE_FROM_PIDFILE pid=%s port=%s owner=managed", pid, self._port)
+            else:
+                logger.warning("CDP_RESTORE_FROM_PIDFILE pid=%s alive but port %s mismatch (port_pid=%s)",
+                               pid, self._port, port_pid)
+        except (OSError, ProcessLookupError):
+            # 进程已死，清理 pidfile
+            logger.warning("CDP_RESTORE_FROM_PIDFILE pidfile exists but process dead, cleaning up")
+            self._remove_pidfile()
+        except Exception as exc:
+            logger.warning("CDP_RESTORE_FROM_PIDFILE failed: %s", exc)
 
     # ── public ───────────────────────────────────────────────────
 
@@ -367,9 +424,11 @@ class JyhfCdpManager:
                 log_fd.close()
                 self._process = None
                 self._owner = "none"
+                self._remove_pidfile()  # P0-A2
                 self._clear_state_trace("process_exited_or_unreachable")
                 return False, f"CDP process exited with code {rc}"
             if await self._probe():
+                self._write_pidfile()  # P0-A2: 持久化成功启动的进程
                 return True, "CDP service ready"
             await asyncio.sleep(0.8)
 
@@ -414,6 +473,7 @@ class JyhfCdpManager:
         self._clear_state_trace("stop_managed_process_done")
         self._owner = "none"
         self._process = None
+        self._remove_pidfile()  # P0-A2: 清理 pidfile
         return f"CDP service stopped (PID={pid})"
 
     def _find_pid_by_port_blocking(self) -> int | None:

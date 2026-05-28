@@ -38,8 +38,17 @@ class JyhfAuctionManager:
         return dict(self._status)
 
     async def start(self, trade_date: str, candidate_date: str) -> dict:
-        if self._status["running"]:
-            return {"ok": True, "message": "already running", **self._status}
+        # P0-A1: 检查旧进程是否仍存活，防止僵尸
+        if self._process is not None:
+            rc = self._process.poll()
+            if rc is None:
+                return {"ok": True, "message": "already running", **self._status}
+            else:
+                # 旧进程已死，清理状态
+                logger.warning("Auction collector was dead (rc=%s), restarting", rc)
+                self._status["running"] = False
+                self._status["pid"] = None
+                self._process = None
 
         self._status["running"] = True
         self._status["state"] = "starting"
@@ -51,12 +60,17 @@ class JyhfAuctionManager:
 
     async def stop(self) -> dict:
         self._status["state"] = "stopping"
+        # P0-A1: 杀前验证 PID 存活，避免误杀
         if self._process and self._process.poll() is None:
+            pid = self._process.pid
             try:
+                os.kill(pid, 0)  # 信号 0 只检查存活
                 self._process.terminate()
                 await asyncio.sleep(1)
                 if self._process.poll() is None:
                     self._process.kill()
+            except OSError:
+                logger.warning("Auction collector PID %s already dead", pid)
             except Exception as exc:
                 logger.warning("Auction collector kill failed: %s", exc)
         if self._task:
@@ -67,6 +81,7 @@ class JyhfAuctionManager:
                 pass
         self._status["running"] = False
         self._status["state"] = "stopped"
+        self._status["pid"] = None
         return {"ok": True, "message": "auction collector stopped", **self._status}
 
     async def _run_subprocess(self, trade_date: str, candidate_date: str) -> None:
@@ -80,6 +95,7 @@ class JyhfAuctionManager:
                 "--candidate-date", candidate_date,
                 "--interval", "3.0",
                 "--concurrency", "15",
+                "--parent-pid", str(os.getpid()),  # P0-A1: watchdog 守护
             ]
             logger.info("Auction collector: %s", " ".join(cmd))
             self._process = await asyncio.to_thread(
