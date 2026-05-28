@@ -4273,6 +4273,55 @@ async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
     )
 
 
+# ── P1-3.2: Decision 消费侧试点 — 统一读取 _decision 字段 ──
+
+@app.get("/api/v1/decision/latest")
+async def decision_latest(limit: int = Query(default=10, ge=1, le=50)):
+    """消费侧试点：从 Kline + W2S alert streams 读取最新 _decision。
+
+    优先消费 _decision 字段（P1-3.1 producer 产出），
+    legacy 无 _decision 的消息用 ensure_decision() fallback 包装。
+    """
+    import redis.asyncio as aioredis
+
+    r = aioredis.from_url(os.getenv("REDIS_URL", "redis://localhost:6379/0"), decode_responses=True)
+    decisions: list[dict] = []
+
+    try:
+        for stream_key in ("stream:kline:alerts", "stream:w2s:alerts"):
+            try:
+                entries = await r.xrevrange(stream_key, "+", "-", count=limit)
+            except Exception:
+                continue
+
+            for entry_id, data in entries:
+                # 优先读取 _decision
+                dec = data.get("_decision")
+                if dec:
+                    try:
+                        decisions.append(json.loads(dec))
+                    except (json.JSONDecodeError, TypeError):
+                        pass
+                else:
+                    # legacy fallback: 用 ensure_decision 包装
+                    try:
+                        from core.contracts.decision import ensure_decision, ALERT
+                        dt = "support_alert" if "kline" in stream_key else "w2s_alert"
+                        d = ensure_decision(data, decision_type=dt, level=ALERT)
+                        decisions.append(d.to_dict())
+                    except Exception:
+                        pass
+    finally:
+        await r.aclose()
+
+    return {
+        "total": len(decisions),
+        "source": "stream:kline:alerts + stream:w2s:alerts",
+        "prefer": "_decision (P1-3.1 producer), fallback ensure_decision()",
+        "decisions": decisions,
+    }
+
+
 async def _auto_start_realtime_stack(app: FastAPI) -> None:
     """SPS 启动 5 秒后自动拉起实时管线进程。"""
     await asyncio.sleep(5)
