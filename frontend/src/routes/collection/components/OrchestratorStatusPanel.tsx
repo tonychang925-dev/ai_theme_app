@@ -93,17 +93,22 @@ export default function OrchestratorStatusPanel({ status, loading, error, onRefr
   return (
     <div style={{ marginTop: 12 }}>
       {/* Header */}
-      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8, flexWrap: "wrap" }}>
         <span style={{ fontWeight: 700, fontSize: 15, color: "#e2e8f0" }}>自动编排</span>
         <Tag color={status.enabled ? "green" : "default"}>
-          {status.enabled ? "已启用" : "已禁用"}
+          {status.enabled ? "诊断已启用" : "已禁用"}
         </Tag>
+        {status.enabled && (
+          <Tag color={status.actions_enabled ? "orange" : "default"}>
+            {status.actions_enabled ? "动作: 允许执行" : "动作: 只读"}
+          </Tag>
+        )}
         <Tag color="blue">{status.phase_label}</Tag>
         {status.dry_run && <Tag>dry_run</Tag>}
-        {status.dry_run_forced && <Tag color="orange">安全锁: {status.dry_run_forced_reason}</Tag>}
         <span style={{ fontSize: 11, color: "#64748b", marginLeft: "auto" }}>
-          {status.now_cn?.replace("T", " ").slice(0, 19) || "-"}
-          {status.now_override ? ` (sim: ${status.now_override})` : ""}
+          seq={status.tick_seq}
+          {status.tick_duration_ms ? ` ${status.tick_duration_ms}ms` : ""}
+          {status.now_override ? ` sim:${status.now_override}` : ""}
           {!status.is_trade_day && " · 非交易日"}
         </span>
         <button
@@ -118,6 +123,22 @@ export default function OrchestratorStatusPanel({ status, loading, error, onRefr
           {loading ? "刷新中..." : "刷新"}
         </button>
       </div>
+
+      {/* Executed Actions */}
+      {status.executed_actions && status.executed_actions.length > 0 && (
+        <Card size="small" style={{ marginBottom: 8 }} title={
+          <span style={{ color: "#22c55e" }}>已执行动作 ({status.executed_actions.length})</span>
+        }>
+          {status.executed_actions.map((a: any, i: number) => (
+            <div key={i} style={{ fontSize: 11, marginBottom: 2, color: "#e2e8f0" }}>
+              <Tag color={a.result ? "green" : "red"}>{a.result ? "ok" : "fail"}</Tag>
+              <span>{a.service}</span>
+              {a.duration_ms != null && <span style={{ color: "#64748b", marginLeft: 8 }}>{a.duration_ms}ms</span>}
+              {a.skipped && <span style={{ color: "#f59e0b", marginLeft: 8 }}>{a.skipped}</span>}
+            </div>
+          ))}
+        </Card>
+      )}
 
       {/* Service cards */}
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>

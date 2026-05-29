@@ -1049,8 +1049,6 @@ async def orchestrator_tick(request: Request, payload: dict | None = None) -> di
 
 def _orchestrator_status_to_dict(status) -> dict:
     """Serialize OrchestratorStatus to JSON-safe dict."""
-    import dataclasses as _dc
-
     def _svc_to_dict(svc) -> dict:
         return {
             "name": svc.name,
@@ -1068,6 +1066,7 @@ def _orchestrator_status_to_dict(status) -> dict:
 
     return {
         "enabled": status.enabled,
+        "actions_enabled": status.actions_enabled,
         "dry_run": status.dry_run,
         "dry_run_forced": status.dry_run_forced,
         "dry_run_forced_reason": status.dry_run_forced_reason,
@@ -1080,8 +1079,48 @@ def _orchestrator_status_to_dict(status) -> dict:
         "is_trade_day": status.is_trade_day,
         "services": {k: _svc_to_dict(v) for k, v in status.services.items()},
         "planned_actions": status.planned_actions,
+        "executed_actions": status.executed_actions,
         "global_blockers": status.global_blockers,
+        "tick_duration_ms": status.tick_duration_ms,
     }
+
+
+# ── P4-2C: Orchestrator enable/disable/reset/audit ──
+
+
+@router.post("/realtime/orchestrator/enable")
+async def orchestrator_enable(request: Request, payload: dict | None = None) -> dict:
+    """启用自动编排 tick loop。
+
+    Body: {"actions_enabled": false}
+      - actions_enabled=false: 只自动诊断，不执行 start/stop
+      - actions_enabled=true:  诊断 + 执行白名单动作
+    """
+    payload = payload or {}
+    actions_enabled = bool(payload.get("actions_enabled", False))
+    orch = request.app.state.realtime_business_orchestrator
+    return await orch.enable(actions_enabled=actions_enabled)
+
+
+@router.post("/realtime/orchestrator/disable")
+async def orchestrator_disable(request: Request) -> dict:
+    """禁用自动编排 tick loop。"""
+    orch = request.app.state.realtime_business_orchestrator
+    return await orch.disable()
+
+
+@router.post("/realtime/orchestrator/reset-action-history")
+async def orchestrator_reset_actions(request: Request) -> dict:
+    """重置 action history / retry state / circuit breaker（调试用）。"""
+    orch = request.app.state.realtime_business_orchestrator
+    return await orch.reset_action_history()
+
+
+@router.get("/realtime/orchestrator/audit")
+async def orchestrator_audit(request: Request, limit: int = 50) -> list[dict]:
+    """查看近期 audit log。"""
+    orch = request.app.state.realtime_business_orchestrator
+    return await orch.get_audit_log(limit=limit)
 
 
 @router.get("/intel/feed")

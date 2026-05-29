@@ -1,34 +1,33 @@
-"""P4-2A: Realtime Business Orchestrator — read-only status + dry_run tick.
+"""P4-2C: Realtime Business Orchestrator — controlled auto-tick + white-listed actions.
 
-First phase: NEVER starts/stops any service. Only collects status, evaluates
-dependencies, and outputs planned_actions in dry_run mode.
+P4-2C safety boundaries:
+  - Double gate: enabled=True + actions_enabled=True required for real actions
+  - Only 3 action types allowed: ensure_cdp_service, ensure_jyhf_market, ensure_jyhf_auction
+  - NEVER: auto-start W2S, auto-start support alert, probe SSE stream, kill SPS children
+  - Once-per-window idempotency, retry backoff, circuit breaker, audit log
 
 Architecture:
-  Frontend
+  Frontend (enable/disable toggle)
     ↓
-  BFF RealtimeBusinessOrchestrator (THIS FILE)
+  BFF RealtimeBusinessOrchestrator
     ↓
   Owners:
-    - JyhfCdpManager (CDP service / app / token readiness)
-    - SPS jyhf-market collector (market data + token_valid)
-    - JyhfAuctionManager (auction collector)
-    - SPS W2S/Kline readiness endpoints
-
-Dependency chain:
-  cdp_token          ← no business deps (needs CDP service + app + token)
-  jyhf_market        ← depends on cdp_token
-  jyhf_auction       ← depends on cdp_token, jyhf_market
-  w2s_alert          ← depends on cdp_token, jyhf_auction, snapshot_ready, candidates_ready
-  support_alert      ← depends on jyhf_market
+    - JyhfCdpManager → cdp_service
+    - SPS → jyhf-market collector
+    - JyhfAuctionManager → auction collector
 """
 
 from __future__ import annotations
 
 import asyncio
+import json
 import logging
 import os
+import signal
+import time as _time
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 from typing import Any
 
 import httpx
@@ -55,10 +54,12 @@ SERVICE_OWNERS: dict[str, str] = {
     "support_alert": "sps_kline_alert_stream",
 }
 
+# P4-2C: only these services are allowed to be auto-started
+ALLOWED_ACTIONS: set[str] = {"cdp_token", "jyhf_market", "jyhf_auction"}
+
 # ── Trading phase windows (HHMM in Asia/Shanghai) ─────────────────────
 
 TRADING_PHASES: list[tuple[str, int, int, str]] = [
-    # (phase_name, start_hhmm, end_hhmm, label)
     ("preopen_prepare", 900, 909, "盘前准备"),
     ("auction_collect", 910, 924, "竞价采集窗口"),
     ("w2s_confirm", 925, 935, "W2S 确认窗口"),
@@ -68,6 +69,14 @@ TRADING_PHASES: list[tuple[str, int, int, str]] = [
     ("closed", 1500, 2359, "收盘后"),
 ]
 
+# ── Retry backoff (seconds) ──────────────────────────────────────────
+
+RETRY_BACKOFF = [60, 180, 300]
+
+# ── Circuit breaker threshold ─────────────────────────────────────────
+
+CIRCUIT_BREAKER_FAILURES = 3
+
 # ── Data models ────────────────────────────────────────────────────────
 
 
@@ -75,8 +84,8 @@ TRADING_PHASES: list[tuple[str, int, int, str]] = [
 class OrchestratorServiceState:
     name: str
     enabled: bool = True
-    desired_state: str = "not_in_window"   # disabled | wanted | not_in_window | observe
-    observed_state: str = "unknown"        # unknown | ready | running | stopped | blocked | degraded | failed
+    desired_state: str = "not_in_window"
+    observed_state: str = "unknown"
     owner: str = ""
     dependencies: list[str] = field(default_factory=list)
     blockers: list[str] = field(default_factory=list)
@@ -89,7 +98,8 @@ class OrchestratorServiceState:
 @dataclass
 class OrchestratorStatus:
     enabled: bool
-    dry_run: bool
+    actions_enabled: bool = False
+    dry_run: bool = True
     dry_run_forced: bool = False
     dry_run_forced_reason: str = ""
     now_override: str | None = None
@@ -101,53 +111,130 @@ class OrchestratorStatus:
     is_trade_day: bool = False
     services: dict[str, OrchestratorServiceState] = field(default_factory=dict)
     planned_actions: list[dict[str, Any]] = field(default_factory=list)
+    executed_actions: list[dict[str, Any]] = field(default_factory=list)
     global_blockers: list[str] = field(default_factory=list)
+    tick_duration_ms: int = 0
 
 
 # ── Orchestrator ────────────────────────────────────────────────────────
 
 
 class RealtimeBusinessOrchestrator:
-    """Read-only business orchestrator (P4-2A).
+    """Controlled business orchestrator (P4-2C).
 
-    Does NOT start or stop any service. Only collects status, evaluates
-    dependencies, and reports planned_actions in dry_run mode.
+    Double gate: enabled=True enables auto-tick loop.
+                 actions_enabled=True enables real start/stop execution.
+
+    Only 3 action types: ensure_cdp_service, ensure_jyhf_market, ensure_jyhf_auction.
     """
 
     def __init__(self, app) -> None:
         self._app = app
         self.enabled = _env_bool("REALTIME_ORCHESTRATOR_ENABLED", False)
+        self.actions_enabled = _env_bool("REALTIME_ORCHESTRATOR_ACTIONS_ENABLED", False)
+        self._interval_sec = int(os.environ.get("REALTIME_ORCHESTRATOR_INTERVAL_SEC", "30"))
         self._tick_seq = 0
+        self._tick_running = False
+        self._loop_task: asyncio.Task | None = None
         self._sps_base = os.environ.get(
             "STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090"
         ).rstrip("/")
         self._redis_url = os.environ.get("REDIS_URL", "redis://localhost:6379/0").strip()
+
+        # Action history: keyed by "trade_date|phase|service|action"
+        self._action_history: dict[str, dict[str, Any]] = {}
+        # Circuit breaker: service_name → consecutive failure count
+        self._circuit_state: dict[str, int] = {}
+        # Retry state: service_name → (fail_count, next_retry_ts)
+        self._retry_state: dict[str, tuple[int, float]] = {}
+        # Audit log file
+        self._audit_dir = Path(os.environ.get("REALTIME_LOG_DIR", str(Path(__file__).resolve().parents[3] / "logs" / "realtime")))
+        self._audit_dir.mkdir(parents=True, exist_ok=True)
+        self._audit_path = self._audit_dir / "orchestrator_audit.jsonl"
+
         logger.info(
-            "RealtimeBusinessOrchestrator initialized: enabled=%s sps_base=%s",
-            self.enabled,
-            self._sps_base,
+            "RealtimeBusinessOrchestrator initialized: enabled=%s actions_enabled=%s interval=%ss",
+            self.enabled, self.actions_enabled, self._interval_sec,
         )
 
     # ── Public API ─────────────────────────────────────────────────
 
     async def get_status(self, now_override: str | None = None) -> OrchestratorStatus:
-        """Return current orchestrator status (read-only, no side effects)."""
         return await self.tick(dry_run=True, now_override=now_override)
 
+    async def enable(self, actions_enabled: bool = False) -> dict[str, Any]:
+        """Enable auto-tick loop. actions_enabled separately gates real execution."""
+        self.enabled = True
+        self.actions_enabled = actions_enabled
+        self._start_loop()
+        self._write_audit({"event": "orchestrator_enabled", "actions_enabled": actions_enabled})
+        return {"ok": True, "enabled": True, "actions_enabled": self.actions_enabled}
+
+    async def disable(self) -> dict[str, Any]:
+        """Disable auto-tick loop and all actions."""
+        self.enabled = False
+        self.actions_enabled = False
+        if self._loop_task:
+            self._loop_task.cancel()
+            self._loop_task = None
+        self._write_audit({"event": "orchestrator_disabled"})
+        return {"ok": True, "enabled": False, "actions_enabled": False}
+
+    async def reset_action_history(self) -> dict[str, Any]:
+        """Reset action history, retry state, and circuit breakers (for debugging)."""
+        self._action_history.clear()
+        self._retry_state.clear()
+        self._circuit_state.clear()
+        self._write_audit({"event": "action_history_reset"})
+        return {"ok": True, "message": "action history, retry state, and circuits reset"}
+
+    async def get_audit_log(self, limit: int = 50) -> list[dict[str, Any]]:
+        """Read recent audit log entries."""
+        entries: list[dict[str, Any]] = []
+        try:
+            if self._audit_path.exists():
+                lines = self._audit_path.read_text().strip().splitlines()
+                for line in lines[-limit:]:
+                    try:
+                        entries.append(json.loads(line))
+                    except Exception:
+                        pass
+        except Exception:
+            pass
+        return entries
+
     async def tick(self, dry_run: bool = True, now_override: str | None = None) -> OrchestratorStatus:
-        """Collect all service statuses, evaluate dependencies, output planned actions.
+        """Execute one diagnostic tick. Respects actions_enabled double gate."""
+        # In-flight lock
+        if self._tick_running:
+            logger.warning("tick already running, skipping")
+            return OrchestratorStatus(
+                enabled=self.enabled, actions_enabled=self.actions_enabled,
+                dry_run=True, phase="tick_overlap",
+            )
 
-        P4-2A safety lock: dry_run is FORCED to True regardless of input.
-        This phase NEVER starts or stops any service.
+        self._tick_running = True
+        t0 = _time.monotonic()
+        try:
+            return await self._tick_impl(dry_run=dry_run, now_override=now_override)
+        except asyncio.CancelledError:
+            raise
+        except Exception as exc:
+            logger.exception("tick failed: %s", exc)
+            return OrchestratorStatus(
+                enabled=self.enabled, actions_enabled=self.actions_enabled,
+                dry_run=True, phase="tick_error",
+                global_blockers=[f"tick exception: {exc}"],
+            )
+        finally:
+            self._tick_running = False
+            elapsed_ms = int((_time.monotonic() - t0) * 1000)
+            if elapsed_ms > 3000:
+                logger.warning("tick slow: %dms", elapsed_ms)
 
-        Args:
-            dry_run: forced True in P4-2A
-            now_override: ISO datetime string for simulating trading phases
-                          (local/dev only). E.g. "2026-05-29T09:11:00+08:00"
-        """
-        dry_run_was_requested = dry_run
-        dry_run = True  # P4-2A safety lock
+    # ── Internal tick implementation ──────────────────────────────
 
+    async def _tick_impl(self, dry_run: bool, now_override: str | None) -> OrchestratorStatus:
         self._tick_seq += 1
         now = _parse_now_override(now_override) if now_override else datetime.now(TZ_CN)
         trade_date = now.strftime("%Y-%m-%d")
@@ -155,16 +242,15 @@ class RealtimeBusinessOrchestrator:
         is_trade_day = _is_trade_day(now)
         hhmm = now.hour * 100 + now.minute
 
-        # Determine desired states per service based on current phase
-        desired_map = _desired_states(phase, is_trade_day)
+        # Determine if we should execute real actions
+        execute = (not dry_run) and self.actions_enabled and is_trade_day
 
-        # Throttle: skip heavy SPS/Redis probes when nothing is wanted
+        desired_map = _desired_states(phase, is_trade_day)
         _any_wanted = any(v == "wanted" for v in desired_map.values())
 
-        # Collect observed states
         services: dict[str, OrchestratorServiceState] = {}
         planned_actions: list[dict[str, Any]] = []
-        global_blockers: list[str] = []
+        executed_actions: list[dict[str, Any]] = []
 
         # 1. CDP / Token readiness
         cdp_state = await self._check_cdp_token(now, desired_map.get("cdp_token", "not_in_window"), probe_sps=_any_wanted)
@@ -178,29 +264,34 @@ class RealtimeBusinessOrchestrator:
         auction_state = await self._check_jyhf_auction(now, desired_map.get("jyhf_auction", "not_in_window"), services)
         services["jyhf_auction"] = auction_state
 
-        # 4. W2S Alert readiness
+        # 4-5. W2S / Support Alert (read-only, never auto-started)
         w2s_state = await self._check_w2s_alert(now, desired_map.get("w2s_alert", "not_in_window"), services)
         services["w2s_alert"] = w2s_state
-
-        # 5. Support Alert readiness
         support_state = await self._check_support_alert(now, desired_map.get("support_alert", "not_in_window"), services)
         services["support_alert"] = support_state
 
-        # Compute planned_actions (only in dry_run mode)
-        if dry_run and is_trade_day:
+        # Compute planned_actions
+        if is_trade_day:
             planned_actions = _compute_planned_actions(services, phase, hhmm)
 
-        # Compute global blockers
+        # Execute actions if enabled
+        if execute and planned_actions:
+            executed_actions = await self._execute_actions(
+                services, planned_actions, trade_date, phase
+            )
+
         global_blockers = [
             f"{s.name}: {b}" for s in services.values() for b in s.blockers
         ]
 
-        status = OrchestratorStatus(
+        t0 = _time.monotonic()
+        return OrchestratorStatus(
             enabled=self.enabled,
-            dry_run=True,  # P4-2A: always dry_run
+            actions_enabled=self.actions_enabled,
+            dry_run=not execute,
+            dry_run_forced=not execute and not dry_run,
+            dry_run_forced_reason="P4-2C: actions_enabled gate" if not execute and not dry_run else "",
             now_override=now_override,
-            dry_run_forced=not dry_run_was_requested,
-            dry_run_forced_reason="P4-2A is read-only; start/stop disabled",
             trade_date=trade_date,
             phase=phase,
             phase_label=phase_label,
@@ -209,23 +300,143 @@ class RealtimeBusinessOrchestrator:
             is_trade_day=is_trade_day,
             services=services,
             planned_actions=planned_actions,
+            executed_actions=executed_actions,
             global_blockers=global_blockers,
         )
-        return status
 
-    # ── Service check methods (all read-only) ───────────────────────
+    # ── Action execution ───────────────────────────────────────────
+
+    async def _execute_actions(
+        self,
+        services: dict[str, OrchestratorServiceState],
+        planned: list[dict[str, Any]],
+        trade_date: str,
+        phase: str,
+    ) -> list[dict[str, Any]]:
+        """Execute planned actions subject to: white-list, circuit breaker, once-per-window, backoff."""
+        executed: list[dict[str, Any]] = []
+        for action in planned:
+            svc_name = action["service"]
+            action_type = action.get("action", "")
+
+            # White-list check
+            if svc_name not in ALLOWED_ACTIONS:
+                continue
+            if "start" not in action_type:
+                continue
+
+            # Circuit breaker check
+            if self._circuit_state.get(svc_name, 0) >= CIRCUIT_BREAKER_FAILURES:
+                action["skipped"] = "circuit_open"
+                executed.append(action)
+                continue
+
+            # Once-per-window check
+            window_key = f"{trade_date}|{phase}|{svc_name}|start"
+            if window_key in self._action_history:
+                prev = self._action_history[window_key]
+                if prev.get("result") == "ok":
+                    action["skipped"] = "already_executed"
+                    executed.append(action)
+                    continue
+
+            # Retry backoff check
+            if svc_name in self._retry_state:
+                fail_count, next_ts = self._retry_state[svc_name]
+                if _time.time() < next_ts:
+                    action["skipped"] = f"backoff_until_{int(next_ts)}"
+                    executed.append(action)
+                    continue
+
+            # Execute
+            t0 = _time.monotonic()
+            try:
+                if svc_name == "cdp_token":
+                    result = await self._execute_ensure_cdp()
+                elif svc_name == "jyhf_market":
+                    result = await self._execute_ensure_jyhf_market()
+                elif svc_name == "jyhf_auction":
+                    result = await self._execute_ensure_jyhf_auction()
+                else:
+                    continue
+            except Exception as exc:
+                result = {"ok": False, "error": str(exc)}
+
+            duration_ms = int((_time.monotonic() - t0) * 1000)
+            action["executed"] = True
+            action["result"] = result.get("ok", False)
+            action["duration_ms"] = duration_ms
+
+            # Audit
+            self._write_audit({
+                "ts": datetime.now(TZ_CN).isoformat(),
+                "phase": phase,
+                "service": svc_name,
+                "action": "start",
+                "result": "ok" if result.get("ok") else "failed",
+                "error": result.get("error", ""),
+                "duration_ms": duration_ms,
+            })
+
+            # Update state
+            if result.get("ok"):
+                self._action_history[window_key] = {"result": "ok", "ts": datetime.now(TZ_CN).isoformat()}
+                self._retry_state.pop(svc_name, None)
+                self._circuit_state[svc_name] = 0
+            else:
+                # Retry backoff
+                fail_count = self._retry_state.get(svc_name, (0, 0))[0] + 1
+                backoff_idx = min(fail_count - 1, len(RETRY_BACKOFF) - 1)
+                next_ts = _time.time() + RETRY_BACKOFF[backoff_idx]
+                self._retry_state[svc_name] = (fail_count, next_ts)
+                self._circuit_state[svc_name] = self._circuit_state.get(svc_name, 0) + 1
+                action["next_retry_at"] = datetime.fromtimestamp(next_ts, TZ_CN).isoformat()
+
+            executed.append(action)
+
+        return executed
+
+    async def _execute_ensure_cdp(self) -> dict[str, Any]:
+        """Ensure CDP service is running."""
+        try:
+            cdp_mgr = self._app.state.cdp_manager
+            status = await cdp_mgr.get_status()
+            if status.get("service_running"):
+                return {"ok": True, "status": "already_running"}
+            # Start CDP service
+            result = await cdp_mgr.start_collector({})
+            return {"ok": result.get("ok", False), "status": "started"}
+        except Exception as exc:
+            return {"ok": False, "error": str(exc)}
+
+    async def _execute_ensure_jyhf_market(self) -> dict[str, Any]:
+        """Ensure JYHF market collector is running via SPS."""
+        try:
+            async with httpx.AsyncClient(timeout=10.0, trust_env=False) as client:
+                r = await client.post(f"{self._sps_base}/api/v1/jyhf-market/collector/start")
+                data = r.json() if r.status_code == 200 else {"ok": False, "status_code": r.status_code}
+                return data if isinstance(data, dict) else {"ok": False}
+        except Exception as exc:
+            return {"ok": False, "error": str(exc)}
+
+    async def _execute_ensure_jyhf_auction(self) -> dict[str, Any]:
+        """Ensure JYHF auction collector is running via AuctionManager."""
+        try:
+            now = datetime.now(TZ_CN)
+            yesterday = (now - timedelta(days=1)).strftime("%Y-%m-%d")
+            result = await self._app.state.auction_manager.start(
+                trade_date=now.strftime("%Y-%m-%d"),
+                candidate_date=yesterday,
+            )
+            return {"ok": result.get("ok", False), "status": result.get("message", "")}
+        except Exception as exc:
+            return {"ok": False, "error": str(exc)}
+
+    # ── Service check methods ──────────────────────────────────────
 
     async def _check_cdp_token(self, now: datetime, desired: str, probe_sps: bool = True) -> OrchestratorServiceState:
-        """Check CDP service / app / token readiness.
-
-        Evidence gathered from:
-          1. CDP Manager get_status() → service_running, app_running, cdp_connected
-          2. SPS /api/v1/jyhf-market/status → token_valid
-        """
         state = self._new_state("cdp_token", desired)
         evidence: dict[str, Any] = {}
-
-        # Check CDP manager status
         try:
             cdp_mgr = self._app.state.cdp_manager
             cdp_status = await cdp_mgr.get_status()
@@ -238,7 +449,6 @@ class RealtimeBusinessOrchestrator:
             evidence["error"] = str(exc)
             state.blockers.append(f"CDP manager unreachable: {exc}")
 
-        # Check SPS token status (skip when nothing is wanted to avoid spamming SPS)
         token_valid = False
         if probe_sps:
             try:
@@ -251,7 +461,6 @@ class RealtimeBusinessOrchestrator:
                         evidence["jyhf_market_running"] = data.get("running", False)
                     else:
                         evidence["token_valid"] = False
-                        evidence["sps_status_code"] = r.status_code
             except Exception as exc:
                 evidence["token_valid"] = False
                 evidence["token_error"] = str(exc)
@@ -261,8 +470,6 @@ class RealtimeBusinessOrchestrator:
             evidence["token_skipped"] = True
 
         state.evidence = evidence
-
-        # Evaluate readiness
         if not evidence.get("service_running"):
             state.observed_state = "blocked"
             state.blockers.append("CDP service not running")
@@ -274,16 +481,11 @@ class RealtimeBusinessOrchestrator:
             state.blockers.append("JYHF token not ready or expired")
         else:
             state.observed_state = "ready"
-
         return state
 
-    async def _check_jyhf_market(
-        self, now: datetime, desired: str, services: dict[str, OrchestratorServiceState], probe_sps: bool = True
-    ) -> OrchestratorServiceState:
-        """Check JYHF market collector status via SPS."""
+    async def _check_jyhf_market(self, now: datetime, desired: str, services: dict, probe_sps: bool = True) -> OrchestratorServiceState:
         state = self._new_state("jyhf_market", desired)
         evidence: dict[str, Any] = {}
-
         if probe_sps:
             try:
                 async with httpx.AsyncClient(timeout=5.0, trust_env=False) as client:
@@ -292,10 +494,8 @@ class RealtimeBusinessOrchestrator:
                         data = r.json()
                         evidence["running"] = data.get("running", False)
                         evidence["token_valid"] = data.get("token_valid", False)
-                        evidence["watch_stock_count"] = data.get("watch_stock_count", 0)
                     else:
                         evidence["running"] = False
-                        evidence["sps_status_code"] = r.status_code
             except Exception as exc:
                 evidence["running"] = False
                 evidence["error"] = str(exc)
@@ -303,33 +503,22 @@ class RealtimeBusinessOrchestrator:
         else:
             evidence["running"] = False
             evidence["token_skipped"] = True
-
         state.evidence = evidence
-
-        # Evaluate readiness with dependency check
         dep_blocked = _check_deps("jyhf_market", services)
         if dep_blocked:
             state.observed_state = "blocked"
             state.blockers.extend(dep_blocked)
         elif evidence.get("running"):
             state.observed_state = "running"
-        elif desired == "wanted":
-            state.observed_state = "stopped"
         else:
             state.observed_state = "stopped"
-
         return state
 
-    async def _check_jyhf_auction(
-        self, now: datetime, desired: str, services: dict[str, OrchestratorServiceState]
-    ) -> OrchestratorServiceState:
-        """Check JYHF auction collector status via AuctionManager."""
+    async def _check_jyhf_auction(self, now: datetime, desired: str, services: dict) -> OrchestratorServiceState:
         state = self._new_state("jyhf_auction", desired)
         evidence: dict[str, Any] = {}
-
         try:
-            auction_mgr = self._app.state.auction_manager
-            status = auction_mgr.status()
+            status = self._app.state.auction_manager.status()
             evidence["running"] = status.get("running", False)
             evidence["state"] = status.get("state", "idle")
             evidence["trade_date"] = status.get("trade_date")
@@ -340,155 +529,100 @@ class RealtimeBusinessOrchestrator:
             evidence["running"] = False
             evidence["error"] = str(exc)
             state.blockers.append(f"Auction manager unreachable: {exc}")
-
         state.evidence = evidence
-
-        # Evaluate readiness with dependency check
         dep_blocked = _check_deps("jyhf_auction", services)
         if dep_blocked:
             state.observed_state = "blocked"
             state.blockers.extend(dep_blocked)
         elif evidence.get("running"):
             state.observed_state = "running"
-        elif desired == "wanted":
-            state.observed_state = "stopped"
         else:
             state.observed_state = "stopped"
-
         return state
 
-    async def _check_w2s_alert(
-        self, now: datetime, desired: str, services: dict[str, OrchestratorServiceState]
-    ) -> OrchestratorServiceState:
-        """Check W2S alert readiness: candidate pool + auction snapshot + sse availability."""
+    async def _check_w2s_alert(self, now: datetime, desired: str, services: dict) -> OrchestratorServiceState:
         state = self._new_state("w2s_alert", desired)
         evidence: dict[str, Any] = {
-            "candidates_ready": False,
-            "auction_snapshot_ready": False,
-            "sse_available": False,
-            "note": "P4-2A best-effort Redis check; P4-2E will add dedicated SPS readiness endpoint",
+            "sse_available": None,
+            "sse_probe_skipped": True,
+            "readiness_endpoint_missing": True,
+            "note": "SSE stream not probed by orchestrator. P4-2E will add dedicated readiness endpoint.",
         }
-
-        # SSE endpoint: do NOT HTTP GET (SSE long-lived connection causes CLOSE_WAIT).
-        # P4-2E will add a dedicated readiness endpoint. For now, assume available if SPS is reachable.
-        evidence["sse_available"] = True  # best-effort; P4-2E will add readiness check
-
-        # Check Redis for W2S candidate/snapshot data
-        try:
-            import redis.asyncio as aioredis
-
-            r = aioredis.from_url(self._redis_url, socket_connect_timeout=3)
-            try:
-                # Check if candidate pool exists for today
-                trade_date = now.strftime("%Y%m%d")
-                candidate_key = f"w2s:candidates:{trade_date}"
-                candidates_count = await r.zcard(candidate_key) if await r.exists(candidate_key) else 0
-                evidence["candidates_ready"] = candidates_count > 0
-                evidence["candidates_count"] = candidates_count
-
-                # Check if auction snapshots exist
-                snapshot_key = f"w2s:auction_snapshots:{trade_date}"
-                snapshots_count = await r.zcard(snapshot_key) if await r.exists(snapshot_key) else 0
-                evidence["auction_snapshot_ready"] = snapshots_count > 0
-                evidence["snapshots_count"] = snapshots_count
-            finally:
-                await r.aclose()
-        except Exception as exc:
-            evidence["redis_error"] = str(exc)
-
         state.evidence = evidence
-
-        # Evaluate readiness
         dep_blocked = _check_deps("w2s_alert", services)
         if dep_blocked:
             state.observed_state = "blocked"
             state.blockers.extend(dep_blocked)
-        elif evidence.get("candidates_ready") and evidence.get("auction_snapshot_ready"):
-            state.observed_state = "ready"
-        elif evidence.get("sse_available"):
-            state.observed_state = "degraded"
-            if not evidence.get("candidates_ready"):
-                state.blockers.append("W2S candidate pool not ready")
-            if not evidence.get("auction_snapshot_ready"):
-                state.blockers.append("Auction snapshot data not ready")
         else:
             state.observed_state = "degraded"
-            state.blockers.append("W2S SSE endpoint unavailable")
-
+            state.blockers.append("dedicated readiness endpoint not implemented (P4-2E)")
         return state
 
-    async def _check_support_alert(
-        self, now: datetime, desired: str, services: dict[str, OrchestratorServiceState]
-    ) -> OrchestratorServiceState:
-        """Check Kline support alert readiness."""
+    async def _check_support_alert(self, now: datetime, desired: str, services: dict) -> OrchestratorServiceState:
         state = self._new_state("support_alert", desired)
         evidence: dict[str, Any] = {
-            "sse_available": False,
-            "alerts_stream_exists": False,
+            "sse_available": None,
+            "sse_probe_skipped": True,
+            "readiness_endpoint_missing": True,
+            "note": "SSE stream not probed by orchestrator. P4-2E will add dedicated readiness endpoint.",
         }
-
-        # SSE endpoint: do NOT HTTP GET (SSE long-lived connection causes CLOSE_WAIT).
-        # P4-2E will add a dedicated readiness endpoint. For now, assume available if SPS is reachable.
-        evidence["sse_available"] = True  # best-effort; P4-2E will add readiness check
-
-        # Check if alert stream has data
-        try:
-            import redis.asyncio as aioredis
-
-            r = aioredis.from_url(self._redis_url, socket_connect_timeout=3)
-            try:
-                info = await r.xinfo_stream("stream:kline:alerts")
-                evidence["alerts_stream_exists"] = True
-                evidence["alerts_stream_length"] = info.get("length", 0)
-            except Exception:
-                evidence["alerts_stream_exists"] = False
-            finally:
-                await r.aclose()
-        except Exception as exc:
-            evidence["redis_error"] = str(exc)
-
         state.evidence = evidence
-
-        # Evaluate readiness
         dep_blocked = _check_deps("support_alert", services)
         if dep_blocked:
             state.observed_state = "blocked"
             state.blockers.extend(dep_blocked)
-        elif evidence.get("sse_available"):
-            state.observed_state = "ready"
         else:
             state.observed_state = "degraded"
-            state.blockers.append("Kline support alert SSE endpoint unavailable")
-
+            state.blockers.append("dedicated readiness endpoint not implemented (P4-2E)")
         return state
 
     # ── Helpers ────────────────────────────────────────────────────
 
     def _new_state(self, name: str, desired: str) -> OrchestratorServiceState:
         return OrchestratorServiceState(
-            name=name,
-            enabled=True,
-            desired_state=desired,
+            name=name, enabled=True, desired_state=desired,
             observed_state="unknown",
             owner=SERVICE_OWNERS.get(name, "unknown"),
             dependencies=list(SERVICE_DEPENDENCIES.get(name, [])),
         )
 
+    def _start_loop(self) -> None:
+        if self._loop_task and not self._loop_task.done():
+            return
+        self._loop_task = asyncio.create_task(self._run_loop())
+
+    async def _run_loop(self) -> None:
+        logger.info("orchestrator auto-tick loop started")
+        while self.enabled:
+            try:
+                # Respect interval: sleep first, then tick
+                await asyncio.sleep(self._interval_sec)
+                if not self.enabled:
+                    break
+                await self.tick(dry_run=not self.actions_enabled)
+            except asyncio.CancelledError:
+                break
+            except Exception:
+                logger.exception("auto-tick loop error")
+        logger.info("orchestrator auto-tick loop stopped")
+
+    def _write_audit(self, entry: dict[str, Any]) -> None:
+        entry.setdefault("ts", datetime.now(TZ_CN).isoformat())
+        try:
+            with open(self._audit_path, "a") as f:
+                f.write(json.dumps(entry, ensure_ascii=False) + "\n")
+        except Exception as exc:
+            logger.warning("audit write failed: %s", exc)
+
 
 # ── Module-level helpers ──────────────────────────────────────────────
 
 
-def _now_cn() -> datetime:
-    return datetime.now(TZ_CN)
-
-
 def _is_trade_day(now: datetime) -> bool:
-    """Weekday check: Monday=0 .. Friday=4."""
     return now.weekday() < 5
 
 
 def _trading_phase(now: datetime) -> tuple[str, str]:
-    """Determine current trading phase. Returns (phase_key, phase_label)."""
     if not _is_trade_day(now):
         return ("non_trading_day", "非交易日")
     hhmm = now.hour * 100 + now.minute
@@ -499,10 +633,8 @@ def _trading_phase(now: datetime) -> tuple[str, str]:
 
 
 def _desired_states(phase: str, is_trade_day: bool) -> dict[str, str]:
-    """Map trading phase to desired states for each service."""
     if not is_trade_day:
         return {s: "not_in_window" for s in SERVICE_DEPENDENCIES}
-
     phase_wants: dict[str, list[str]] = {
         "preopen_prepare": ["cdp_token"],
         "auction_collect": ["cdp_token", "jyhf_market", "jyhf_auction"],
@@ -514,19 +646,11 @@ def _desired_states(phase: str, is_trade_day: bool) -> dict[str, str]:
         "off_hours": [],
         "non_trading_day": [],
     }
-
     wanted = phase_wants.get(phase, [])
-    return {
-        s: ("wanted" if s in wanted else "not_in_window")
-        for s in SERVICE_DEPENDENCIES
-    }
+    return {s: ("wanted" if s in wanted else "not_in_window") for s in SERVICE_DEPENDENCIES}
 
 
 def _check_deps(name: str, services: dict[str, OrchestratorServiceState]) -> list[str]:
-    """Check if all dependencies of `name` are ready/running.
-
-    Returns list of blocker messages; empty list means deps are satisfied.
-    """
     blockers: list[str] = []
     for dep_name in SERVICE_DEPENDENCIES.get(name, []):
         dep = services.get(dep_name)
@@ -541,32 +665,20 @@ def _check_deps(name: str, services: dict[str, OrchestratorServiceState]) -> lis
 
 
 def _compute_planned_actions(
-    services: dict[str, OrchestratorServiceState],
-    phase: str,
-    hhmm: int,
+    services: dict[str, OrchestratorServiceState], phase: str, hhmm: int,
 ) -> list[dict[str, Any]]:
-    """Compute what the orchestrator WOULD do if auto-start were enabled.
-
-    Only for services whose desired_state is 'wanted' and observed_state is 'stopped'
-    or 'blocked' (but only if blockers are not dependency-related — own deps checked).
-    """
     actions: list[dict[str, Any]] = []
-
-    # Order matters: dependencies first
     for svc_name in _topological_order():
         svc = services.get(svc_name)
         if not svc or not svc.enabled:
             continue
         if svc.desired_state != "wanted":
             continue
-        if svc.observed_state == "running" or svc.observed_state == "ready":
+        if svc.observed_state in ("running", "ready"):
             continue
-
-        # Check if deps are satisfied
         dep_blockers = _check_deps(svc_name, services)
         if dep_blockers:
-            continue  # deps not ready, skip
-
+            continue
         if svc.observed_state in ("stopped", "unknown"):
             actions.append({
                 "service": svc_name,
@@ -575,35 +687,27 @@ def _compute_planned_actions(
                 "owner": svc.owner,
             })
         elif svc.observed_state == "blocked":
-            # Only suggest if blocker is non-dependency
             own_blockers = [b for b in svc.blockers if not b.startswith("dependency")]
             if not own_blockers:
                 actions.append({
                     "service": svc_name,
                     "action": "would_retry_start",
-                    "reason": f"previously blocked but deps now satisfied",
+                    "reason": "previously blocked but deps now satisfied",
                     "owner": svc.owner,
                 })
-
     return actions
 
 
 def _topological_order() -> list[str]:
-    """Return services in dependency order (deps first)."""
-    # Simple fixed order based on dependency graph
     return ["cdp_token", "jyhf_market", "jyhf_auction", "w2s_alert", "support_alert"]
 
 
 def _parse_now_override(value: str) -> datetime:
-    """Parse ISO datetime string for time simulation (dev only)."""
-    # Support formats: "2026-05-29T09:11:00+08:00" or "09:11"
     import re
     if re.match(r"^\d{2}:\d{2}$", value):
-        # Short form: just HH:MM, use today
         today = datetime.now(TZ_CN)
         h, m = map(int, value.split(":"))
         return today.replace(hour=h, minute=m, second=0, microsecond=0)
-    # Full ISO format
     return datetime.fromisoformat(value)
 
 

@@ -1741,6 +1741,7 @@ export interface OrchestratorServiceState {
 
 export interface OrchestratorStatus {
   enabled: boolean;
+  actions_enabled: boolean;
   dry_run: boolean;
   dry_run_forced: boolean;
   dry_run_forced_reason: string;
@@ -1753,7 +1754,9 @@ export interface OrchestratorStatus {
   is_trade_day: boolean;
   services: Record<string, OrchestratorServiceState>;
   planned_actions: Array<{ service: string; action: string; reason: string; owner: string }>;
+  executed_actions: Array<Record<string, unknown>>;
   global_blockers: string[];
+  tick_duration_ms: number;
 }
 
 export async function fetchOrchestratorStatus(nowOverride?: string): Promise<OrchestratorStatus> {
@@ -1779,6 +1782,34 @@ export async function triggerOrchestratorTick(
         ...(nowOverride ? { now_override: nowOverride } : {}),
       }),
     },
-    5000,  // tick 稍长但仍在合理范围
+    5000,
+  );
+}
+
+export async function enableOrchestrator(actionsEnabled: boolean = false): Promise<{ ok: boolean; enabled: boolean; actions_enabled: boolean }> {
+  return fetchJsonWithTimeout(
+    "/api/v2/realtime/orchestrator/enable",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ actions_enabled: actionsEnabled }),
+    },
+    5000,
+  );
+}
+
+export async function disableOrchestrator(): Promise<{ ok: boolean; enabled: boolean; actions_enabled: boolean }> {
+  return fetchJsonWithTimeout(
+    "/api/v2/realtime/orchestrator/disable",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" },
+    5000,
+  );
+}
+
+export async function resetOrchestratorActions(): Promise<{ ok: boolean }> {
+  return fetchJsonWithTimeout(
+    "/api/v2/realtime/orchestrator/reset-action-history",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" },
+    5000,
   );
 }
