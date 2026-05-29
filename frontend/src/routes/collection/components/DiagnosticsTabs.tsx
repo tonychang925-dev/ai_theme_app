@@ -34,7 +34,7 @@ export default function DiagnosticsTabs(props: Props) {
   const tabItems = [
     {
       key: "run-log",
-      label: "运行日志",
+      label: "运行日志 (采集/LLM/匹配)",
       children: (
         <div className="collection-log-panel" style={{ maxHeight: 360, overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
           {mergedLogs.length === 0 ? (
@@ -49,11 +49,11 @@ export default function DiagnosticsTabs(props: Props) {
     },
     {
       key: "dom-log",
-      label: "DOM日志",
+      label: "DOM日志 (JYHF)",
       children: (
         <div className="collection-log-panel" style={{ maxHeight: 360, overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
           {jyhfLogs.length === 0 ? (
-            <div className="collection-log-line" style={{ color: "#64748b" }}>暂无 DOM 日志...</div>
+            <div className="collection-log-line" style={{ color: "#64748b" }}>暂无 JYHF DOM 采集日志...</div>
           ) : (
             jyhfLogs.slice(-200).map((line, i) => (
               <div key={`dl-${i}`} className="collection-log-line">{line}</div>

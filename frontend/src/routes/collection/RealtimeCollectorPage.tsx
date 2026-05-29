@@ -678,6 +678,51 @@ export function RealtimeCollectorPage() {
     return parts;
   }, [output, jyhfLogs, stackStatus, jyhfCollectorRunning, jyhfStatus?.service_running, auctionEnabled, auctionStatus]);
 
+  /** 业务运行日志：实时采集 + LLM结构化 + 题材匹配（不含 JYHF DOM 日志） */
+  const businessLogs = useMemo(() => {
+    const parts: string[] = [];
+    // 操作日志
+    parts.push("── 操作日志 ──", ...output.slice(-80), "");
+    // 生命周期 + Stream 指标
+    if (stackStatus) {
+      const streams = stackStatus.redis_streams;
+      const rawLen = streams?.["stream:news:raw"]?.length ?? 0;
+      const structLen = streams?.["stream:events:structured"]?.length ?? 0;
+      const decLen = streams?.["stream:events:decision"]?.length ?? 0;
+      parts.push(
+        "── 生命周期状态 ──",
+        `realtime: ${stackStatus.running ? (stackStatus.running_verified ? "running" : "degraded") : "stopped"}`,
+        `verified: ${stackStatus.running_verified ?? "?"}  source: ${stackStatus.status_source ?? "?"}`,
+        `run_id: ${stackStatus.run_id || "-"}`,
+        `PID — raw: ${stackStatus.raw_news_pid ?? "-"}  dec: ${stackStatus.decision_pid ?? "-"}  db: ${stackStatus.db_collector_pid ?? "-"}`,
+        `started_at: ${stackStatus.started_at ?? "-"}`,
+        "",
+      );
+      parts.push(
+        "── Redis Stream 指标 ──",
+        `raw_len=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
+        `struct=${structLen > 999 ? Math.round(structLen/1000) + "k" : structLen} ` +
+        `dec=${decLen > 999 ? Math.round(decLen/1000) + "k" : decLen}`,
+        `pending=${stackStatus.pending_count}  dead_letter=${stackStatus.dead_letter_count}` +
+        `  LLM过滤=${stackStatus.prefilter_skipped ?? 0}  Feed通过=${stackStatus.news_published_total ?? 0}` +
+        (rawLen > 5000 ? "  ⚠️积压" : ""),
+        `profile: ${stackStatus.profile_version}/${stackStatus.profile_status}  llm: ${stackStatus.llm_judge_mode || "-"}`,
+        "",
+      );
+    }
+    if (auctionEnabled && auctionStatus) {
+      parts.push(
+        `── JYHF 竞价采集 ──`,
+        `running: ${auctionStatus.running}  state: ${auctionStatus.state}`,
+        `trade_date: ${auctionStatus.trade_date ?? "-"}  candidate_date: ${auctionStatus.candidate_date ?? "-"}`,
+        `rounds: ${auctionStatus.rounds}  points: ${auctionStatus.points}`,
+        auctionStatus.last_error ? `last_error: ${auctionStatus.last_error}` : "",
+        "",
+      );
+    }
+    return parts;
+  }, [output, stackStatus, auctionEnabled, auctionStatus]);
+
   // P4-1A: 统一告警 view model — Kline + W2S 合并为 UnifiedAlertRow[]
   const unifiedAlerts = useMemo((): UnifiedAlertRow[] => {
     const rows: UnifiedAlertRow[] = [];
@@ -953,7 +998,7 @@ export function RealtimeCollectorPage() {
                     label: "数据流",
                     children: (
                       <DiagnosticsTabs
-                        mergedLogs={mergedLogs} jyhfLogs={jyhfLogs} stackStatus={stackStatus}
+                        mergedLogs={businessLogs} jyhfLogs={jyhfLogs} stackStatus={stackStatus}
                         reviewItems={reviewItems} reviewTotal={reviewTotal}
                         reviewBusy={reviewBusy} selectedIds={selectedIds}
                         onToggleSelect={toggleSelect} onSelectAll={selectAll}
