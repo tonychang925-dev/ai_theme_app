@@ -52,7 +52,7 @@ class RealtimeNewsAdapter(SourceAdapter):
         if self._started:
             return
 
-        from database_service.streams.services.realtime_news_collector import (
+        from database_service.streams.services.real_time_news_collector import (
             RealTimeNewsCollector,
         )
 
