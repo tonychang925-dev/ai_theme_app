@@ -399,11 +399,27 @@ export function RealtimeCollectorPage() {
   async function handleImportPending() {
     setReviewBusy(true);
     try {
-      await fetch("/api/v2/review-queue/import-pending", { method: "POST" });
-      append("已导入 Pending 到复核队列");
+      const resp = await fetch("/api/v2/review-queue/import-pending", { method: "POST" });
+      const data = await resp.json().catch(() => ({}));
+      const imported = data.imported ?? 0;
+      const skipped = data.skipped ?? 0;
+      const errors = data.errors ?? 0;
+      const total = data.total ?? (imported + skipped + errors);
+      if (imported > 0) {
+        append(`✅ 已导入 ${imported} 条到复核队列${skipped > 0 ? `，跳过 ${skipped} 条` : ""}${errors > 0 ? `，失败 ${errors} 条` : ""}`);
+      } else if (total === 0) {
+        append("棚顶流为空，无事件可导入");
+      } else {
+        append(`⚠️ 导入失败: 共 ${total} 条，成功 0 条，跳过 ${skipped} 条，错误 ${errors} 条`);
+        if (data.error_details?.length > 0) {
+          for (const d of data.error_details.slice(0, 5)) {
+            append(`  详情: ${d}`);
+          }
+        }
+      }
       await refreshReviewQueue();
     } catch (err: any) {
-      append(`导入失败: ${err?.message || err}`);
+      append(`导入请求失败: ${err?.message || err}`);
     } finally { setReviewBusy(false); }
   }
   async function handleClearPending() {

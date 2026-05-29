@@ -3068,11 +3068,38 @@ async def clear_pending_stream() -> dict[str, Any]:
         raise HTTPException(status_code=500, detail=f"failed to clear pending: {e}")
 
 
+def _extract_event_id_number(raw_event_id) -> int | None:
+    """从各种格式的 event_id 中提取数字 ID，兼容 temp/tmp 等非标准格式。"""
+    try:
+        if isinstance(raw_event_id, (int, float)):
+            return int(raw_event_id)
+        s = str(raw_event_id)
+        # 尝试直接解析整数
+        try:
+            return int(s)
+        except (ValueError, TypeError):
+            pass
+        # 尝试从 "temp_1775795161_news_1775795098848_" 等格式中提取数字部分
+        parts = s.split("_")
+        for part in parts:
+            if part.isdigit() and len(part) > 5:
+                return int(part)
+        # 从末尾扫描提取数字
+        import re
+        digits = re.findall(r"\d{6,}", s)
+        if digits:
+            return int(max(digits, key=len))
+        return None
+    except Exception:
+        return None
+
+
 @app.post("/api/v1/review-queue/import-pending")
 async def import_pending_to_review_queue() -> dict[str, Any]:
     """将 stream:events:pending 中的弱信号事件导入 event_review_queue 复核队列。
 
     读取 pending 流中所有事件，按 event_id 去重，写入复核队列（跳过已存在的）。
+    不清空已成功导入的条目（由 DecisionExecutor 管理 stream 截断）。
     """
     try:
         import redis.asyncio as aioredis
@@ -3096,7 +3123,9 @@ async def import_pending_to_review_queue() -> dict[str, Any]:
             imported = 0
             skipped = 0
             errors = 0
+            error_details: list[str] = []
             seen_event_ids: set[int] = set()
+            succeeded_msgs: list[str] = []
 
             for msg_id, msg_data in pending_messages:
                 try:
@@ -3106,11 +3135,17 @@ async def import_pending_to_review_queue() -> dict[str, Any]:
                     else:
                         event_data = event_data_str or {}
 
-                    event_id = event_data.get("event_id")
-                    if not event_id:
+                    raw_event_id = event_data.get("event_id")
+                    if not raw_event_id:
                         skipped += 1
+                        error_details.append(f"msg {msg_id}: missing event_id")
                         continue
-                    event_id = int(event_id)
+
+                    event_id = _extract_event_id_number(raw_event_id)
+                    if event_id is None or event_id <= 0:
+                        skipped += 1
+                        error_details.append(f"msg {msg_id}: unparseable event_id={raw_event_id}")
+                        continue
 
                     # 同一批次内去重
                     if event_id in seen_event_ids:
@@ -3131,25 +3166,37 @@ async def import_pending_to_review_queue() -> dict[str, Any]:
                     )
                     if ok:
                         imported += 1
+                        succeeded_msgs.append(msg_id)
                     else:
-                        skipped += 1  # already exists
-                except Exception:
+                        skipped += 1
+                        error_details.append(
+                            f"event_id={event_id}: enqueue failed (FK constraint or already exists)"
+                        )
+                except Exception as exc:
                     errors += 1
+                    error_details.append(f"msg {msg_id}: {exc}")
 
-            # 导入完成后清空 pending 流（保留 stream 本身，DecisionExecutor 需要它存在）
-            cleared = len(pending_messages)
-            await r.xtrim("stream:events:pending", maxlen=0, approximate=False)
+            # 仅清除已成功导入的消息（不再全量清空）
+            total = len(pending_messages)
+            if succeeded_msgs:
+                # 删除已导入的消息（逐个删除）
+                for msg_id in succeeded_msgs:
+                    try:
+                        await r.xdel("stream:events:pending", msg_id)
+                    except Exception:
+                        pass
 
             logger.warning(
-                "imported %d pending events to review queue (skipped=%d errors=%d), cleared %d from stream",
-                imported, skipped, errors, cleared,
+                "imported %d/%d pending events to review queue (skipped=%d errors=%d)",
+                imported, total, skipped, errors,
             )
             return {
                 "ok": True,
                 "imported": imported,
                 "skipped": skipped,
                 "errors": errors,
-                "cleared": cleared,
+                "total": total,
+                "error_details": error_details[:20],  # 最多返回前 20 条
             }
         finally:
             await r.aclose()
