@@ -27,7 +27,7 @@ import {
   type OrchestratorStatus,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
-import { ConfigProvider, theme } from "antd";
+import { ConfigProvider, Tabs, theme } from "antd";
 import realtimeIcon from "../../assets/intel-icons/实时采集.png";
 
 // P4-1A: 展示组件
@@ -724,11 +724,11 @@ export function RealtimeCollectorPage() {
         </button>
       </section>
 
-      {/* P4-1A: 三层实时监控面板 */}
+      {/* P4-3A: 标签页重组 */}
       <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
       <div className="realtime-ops-dashboard" style={{ padding: "0 12px" }}>
 
-        {/* Layer 1: 服务状态总览 */}
+        {/* 全局状态栏 — 所有 Tab 可见 */}
         <ServiceStatusBar
           stackStatus={stackStatus}
           jyhfStatus={jyhfStatus}
@@ -739,57 +739,71 @@ export function RealtimeCollectorPage() {
           w2sAlertCount={w2sAlerts.length}
         />
 
-        {/* Layer 2: 采集控制 + Orchestrator | 统一告警 */}
-        <div style={{ display: "grid", gridTemplateColumns: "420px 1fr", gap: 12, marginBottom: 12 }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <CollectionControlPanel
-              status={controlStatus}
-              busy={controlBusy}
-              toggles={controlToggles}
-              actions={{
-                onStartRealtime: handleStart,
-                onStopRealtime: handleStop,
-                onRefreshRealtime: handleRefresh,
-                onStartDom: handleStartJyhfCdp,
-                onStopDom: handleStopJyhfCdp,
-                onRefreshDom: handleRefreshJyhfCdp,
-                onToggleAuction: setAuctionEnabled,
-                onToggleKlineAlerts: setKlineAlertsEnabled,
-                onToggleW2sAlerts: setW2sAlertsEnabled,
-              }}
-            />
-            <OrchestratorStatusPanel
-              status={orchStatus}
-              loading={orchLoading}
-              error={orchError}
-              onRefresh={refreshOrchestrator}
-            />
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            <UnifiedAlertPanel
-              alerts={unifiedAlerts}
-              onClear={() => { setKlineAlerts([]); setW2sAlerts([]); }}
-            />
-            <DiagnosticsTabs
-              mergedLogs={mergedLogs}
-              jyhfLogs={jyhfLogs}
-              stackStatus={stackStatus}
-              reviewItems={reviewItems}
-              reviewTotal={reviewTotal}
-              reviewBusy={reviewBusy}
-              selectedIds={selectedIds}
-              onToggleSelect={toggleSelect}
-          onSelectAll={selectAll}
-          onConfirm={handleConfirmReview}
-          onDelete={handleDeleteReview}
-          onBatchDelete={handleBatchDelete}
-          onImportPending={handleImportPending}
-          onClearPending={handleClearPending}
-          onRefreshReview={refreshReviewQueue}
-          onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
+        <Tabs
+          defaultActiveKey="control"
+          size="small"
+          style={{ marginTop: 8 }}
+          items={[
+            {
+              key: "control",
+              label: "控制台",
+              children: (
+                <div style={{ display: "grid", gridTemplateColumns: "420px 1fr", gap: 12 }}>
+                  <CollectionControlPanel
+                    status={controlStatus}
+                    busy={controlBusy}
+                    toggles={controlToggles}
+                    actions={{
+                      onStartRealtime: handleStart, onStopRealtime: handleStop, onRefreshRealtime: handleRefresh,
+                      onStartDom: handleStartJyhfCdp, onStopDom: handleStopJyhfCdp, onRefreshDom: handleRefreshJyhfCdp,
+                      onToggleAuction: setAuctionEnabled, onToggleKlineAlerts: setKlineAlertsEnabled, onToggleW2sAlerts: setW2sAlertsEnabled,
+                    }}
+                  />
+                  <UnifiedAlertPanel
+                    alerts={unifiedAlerts}
+                    onClear={() => { setKlineAlerts([]); setW2sAlerts([]); }}
+                  />
+                </div>
+              ),
+            },
+            {
+              key: "orchestrator",
+              label: "自动编排",
+              children: (
+                <OrchestratorStatusPanel
+                  status={orchStatus}
+                  loading={orchLoading}
+                  error={orchError}
+                  onRefresh={refreshOrchestrator}
+                />
+              ),
+            },
+            {
+              key: "health",
+              label: "运行健康",
+              children: (
+                <DiagnosticsTabs
+                  mergedLogs={mergedLogs}
+                  jyhfLogs={jyhfLogs}
+                  stackStatus={stackStatus}
+                  reviewItems={reviewItems}
+                  reviewTotal={reviewTotal}
+                  reviewBusy={reviewBusy}
+                  selectedIds={selectedIds}
+                  onToggleSelect={toggleSelect}
+                  onSelectAll={selectAll}
+                  onConfirm={handleConfirmReview}
+                  onDelete={handleDeleteReview}
+                  onBatchDelete={handleBatchDelete}
+                  onImportPending={handleImportPending}
+                  onClearPending={handleClearPending}
+                  onRefreshReview={refreshReviewQueue}
+                  onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
+                />
+              ),
+            },
+          ]}
         />
-          </div>
-        </div>
 
       </div>
       </ConfigProvider>
