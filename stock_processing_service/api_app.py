@@ -166,15 +166,46 @@ async def lifespan(app: FastAPI):
         redis_url=_redis_url(),
         write_db=_db_name(),
     )
-    # 启动时自动拉起实时管线进程
-    asyncio.create_task(_auto_start_realtime_stack(app))
+    app.state.w2s_alert_status = {
+        "enabled": False,
+        "running": False,
+        "phase": "idle",
+        "trade_date": None,
+        "candidate_trade_date": None,
+        "last_run_at": None,
+        "last_success_at": None,
+        "last_error": None,
+        "last_built": 0,
+        "last_pushed": 0,
+        "total_built": 0,
+        "total_pushed": 0,
+    }
+    # 默认不在 SPS 初始化时自动拉起实时管线。
+    # 实时采集应由页面按钮或显式运维命令启动，避免服务重启时产生隐藏副作用。
+    if os.environ.get("SPS_AUTO_START_REALTIME_STACK", "false").lower() in ("1", "true", "yes", "on"):
+        asyncio.create_task(_auto_start_realtime_stack(app))
+    else:
+        logger.info("Realtime stack auto-start disabled (set SPS_AUTO_START_REALTIME_STACK=true to enable)")
     # P1-G: 支撑位突破检测后台任务（盘中自动运行）
     _kline_alert_task = asyncio.create_task(_run_kline_break_detector_loop(app))
+    _w2s_alert_task = None
+    if os.environ.get("SPS_ENABLE_W2S_ALERT_LOOP", "true").lower() in ("1", "true", "yes", "on"):
+        app.state.w2s_alert_status["enabled"] = True
+        _w2s_alert_task = asyncio.create_task(_run_w2s_alert_loop(app))
+    else:
+        logger.info("W2S alert loop disabled (set SPS_ENABLE_W2S_ALERT_LOOP=true to enable)")
 
     await app.state.phase1_repo.initialize()
     try:
         yield
     finally:
+        for task in (_kline_alert_task, _w2s_alert_task):
+            if task:
+                task.cancel()
+                try:
+                    await task
+                except asyncio.CancelledError:
+                    pass
         close = getattr(gw, "close", None)
         if callable(close):
             await close()
@@ -4287,7 +4318,7 @@ async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
     from fastapi.responses import StreamingResponse
 
     async def _event_generator():
-        r = aioredis.from_url(os.getenv("REDIS_URL", "redis://localhost:6379/0"), decode_responses=True)
+        r = aioredis.from_url(_redis_url(), decode_responses=True)
         try:
             try:
                 await r.xinfo_stream("stream:w2s:alerts")
@@ -4317,6 +4348,12 @@ async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
         _event_generator(), media_type="text/event-stream",
         headers={"Cache-Control": "no-cache", "Connection": "keep-alive", "X-Accel-Buffering": "no"},
     )
+
+
+@app.get("/api/v1/w2s-alerts/status")
+async def w2s_alerts_status():
+    """W2S 告警后台计算 loop 状态。"""
+    return dict(getattr(app.state, "w2s_alert_status", {}) or {})
 
 
 # ── P1-3.2: Decision 消费侧试点 — 统一读取 _decision 字段 ──
@@ -4388,7 +4425,7 @@ async def _run_kline_break_detector_loop(app: FastAPI) -> None:
     from stock_processing_service.sinks.kline_alert_redis_pusher import KlineAlertRedisPusher
 
     dsn = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/stock_data_test")
-    redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+    redis_url = _redis_url()
     detector = KlineBreakDetector(dsn, redis_url=redis_url)
     pusher = KlineAlertRedisPusher(redis_url)
 
@@ -4427,6 +4464,115 @@ async def _run_kline_break_detector_loop(app: FastAPI) -> None:
 
     await detector.close()
     await pusher.close()
+
+
+def _w2s_intraday_session(now: datetime) -> bool:
+    h, m = now.hour, now.minute
+    return (h == 9 and m >= 30) or (10 <= h <= 14) or (h == 15 and m <= 5)
+
+
+def _w2s_auction_session(now: datetime) -> bool:
+    h, m = now.hour, now.minute
+    return h == 9 and 25 <= m <= 29
+
+
+async def _resolve_w2s_candidate_date(confirm_trade_date: date) -> date:
+    try:
+        return await _resolve_prev_trade_date(confirm_trade_date)
+    except Exception:
+        from datetime import timedelta
+        return confirm_trade_date - timedelta(days=1)
+
+
+async def _run_w2s_alert_loop(app: FastAPI) -> None:
+    """P1-I: 弱转强统一告警后台循环。
+
+    这个 loop 负责把文档里的 w2s_unified_alert_service 托管起来：
+    9:25-9:29 运行竞价确认，9:30-15:05 运行盘中 v2.2 观察，
+    输出统一进入 stream:w2s:alerts，前端 W2S 勾选框只负责 SSE 订阅。
+    """
+    logger_w2s = logging.getLogger("sps.w2s_alert.loop")
+    await asyncio.sleep(float(os.getenv("SPS_W2S_ALERT_LOOP_BOOT_DELAY", "8") or 8))
+
+    from stock_processing_service.domain.services.w2s_unified_alert_service import W2SUnifiedAlertService
+    from stock_processing_service.sinks.w2s_alert_redis_pusher import W2SAlertRedisPusher
+
+    dsn = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/stock_data_test")
+    redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+    intraday_interval = max(int(os.getenv("SPS_W2S_INTRADAY_INTERVAL_SECONDS", "30") or 30), 5)
+    idle_interval = max(int(os.getenv("SPS_W2S_IDLE_INTERVAL_SECONDS", "30") or 30), 10)
+    auction_retry_interval = max(int(os.getenv("SPS_W2S_AUCTION_RETRY_SECONDS", "20") or 20), 5)
+
+    svc = W2SUnifiedAlertService(dsn, redis_url=redis_url)
+    pusher = W2SAlertRedisPusher(redis_url)
+    status = app.state.w2s_alert_status
+    status["enabled"] = True
+    status["running"] = True
+    auction_done_for: str | None = None
+
+    try:
+        while True:
+            try:
+                now = datetime.now(ZoneInfo("Asia/Shanghai"))
+                trade_date = now.date()
+                status["running"] = True
+                status["last_run_at"] = now.isoformat()
+                status["trade_date"] = trade_date.isoformat()
+
+                if now.weekday() >= 5:
+                    status["phase"] = "weekend_idle"
+                    await asyncio.sleep(60)
+                    continue
+
+                candidate_date = await _resolve_w2s_candidate_date(trade_date)
+                status["candidate_trade_date"] = candidate_date.isoformat()
+
+                if _w2s_auction_session(now):
+                    status["phase"] = "auction"
+                    alerts = await svc.build_auction_alerts(candidate_date.isoformat(), trade_date.isoformat())
+                    pushed = await pusher.push_unified_alerts(alerts)
+                    status["last_built"] = len(alerts)
+                    status["last_pushed"] = pushed
+                    status["total_built"] = int(status.get("total_built") or 0) + len(alerts)
+                    status["total_pushed"] = int(status.get("total_pushed") or 0) + pushed
+                    status["last_success_at"] = datetime.now(ZoneInfo("Asia/Shanghai")).isoformat()
+                    status["last_error"] = None
+                    if pushed or alerts:
+                        auction_done_for = trade_date.isoformat()
+                        logger_w2s.warning(
+                            "W2S auction loop: built=%d pushed=%d candidate=%s confirm=%s",
+                            len(alerts), pushed, candidate_date, trade_date,
+                        )
+                    await asyncio.sleep(auction_retry_interval if auction_done_for != trade_date.isoformat() else 60)
+                    continue
+
+                if _w2s_intraday_session(now):
+                    status["phase"] = "intraday"
+                    alerts = await svc.build_intraday_alerts(trade_date.isoformat())
+                    pushed = await pusher.push_unified_alerts(alerts)
+                    status["last_built"] = len(alerts)
+                    status["last_pushed"] = pushed
+                    status["total_built"] = int(status.get("total_built") or 0) + len(alerts)
+                    status["total_pushed"] = int(status.get("total_pushed") or 0) + pushed
+                    status["last_success_at"] = datetime.now(ZoneInfo("Asia/Shanghai")).isoformat()
+                    status["last_error"] = None
+                    if pushed:
+                        logger_w2s.warning("W2S intraday loop: built=%d pushed=%d trade=%s", len(alerts), pushed, trade_date)
+                    await asyncio.sleep(intraday_interval)
+                    continue
+
+                status["phase"] = "idle"
+                await asyncio.sleep(idle_interval)
+            except asyncio.CancelledError:
+                raise
+            except Exception as exc:
+                status["last_error"] = str(exc)
+                logger_w2s.warning("W2S alert loop error: %s", exc)
+                await asyncio.sleep(30)
+    finally:
+        status["running"] = False
+        await svc.close()
+        await pusher.close()
 
 
 def _row_to_dict(row: Any) -> dict[str, Any]:

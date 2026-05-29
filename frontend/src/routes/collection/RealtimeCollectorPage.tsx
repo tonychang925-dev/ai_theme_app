@@ -301,27 +301,29 @@ export function RealtimeCollectorPage() {
     setKlineAlertsEnabled(true);
     setW2sAlertsEnabled(true);
 
-    // 竞价采集（独立线程，不阻塞 DOM 启动）
-    if (auctionEnabled) {
+    const startAuctionAfterDomReady = async () => {
+      if (!auctionEnabled) return;
       setAuctionBusy(true);
-      append("同时启动竞价采集...");
+      append("DOM 首次采集成功，启动竞价采集...");
       const now = new Date();
       const td = now.toISOString().slice(0, 10);
       const yesterday = new Date(now);
       yesterday.setDate(yesterday.getDate() - 1);
       const cd = yesterday.toISOString().slice(0, 10);
-      startJyhfAuctionCollector(td, cd).then((r) => {
+      try {
+        const r = await startJyhfAuctionCollector(td, cd);
         setAuctionStatus(r);
-        setAuctionBusy(false);
         append(`竞价采集: state=${r.state} running=${r.running} trade=${r.trade_date} candidate=${r.candidate_date}`);
-      }).catch((err) => {
-        setAuctionBusy(false);
+      } catch (err) {
         append(`竞价采集启动失败: ${err instanceof Error ? err.message : String(err)}`);
-      });
-    }
+      } finally {
+        setAuctionBusy(false);
+      }
+    };
 
     try {
       const result = await startJyhfCdpCollector();
+      let domCaptured = Boolean(result.last_capture_at);
       // Merge result into jyhfStatus immediately so UI reflects current state
       setJyhfStatus(prev => ({
         ...(prev ?? {} as JyhfCdpCollectorStatus),
@@ -368,6 +370,7 @@ export function RealtimeCollectorPage() {
 
           // Layered readiness: wait for actual data, not just collector_running
           if (st.last_capture_at) {
+            domCaptured = true;
             append(`采集正常，最近采集=${st.last_capture_at} (count=${st.capture_count_total})`);
             break;
           }
@@ -385,6 +388,11 @@ export function RealtimeCollectorPage() {
           }
           if (i % 5 === 0) append(`等待 CDP 服务启动... (${i + 1}s)`);
         } catch { append(`[轮询 ${i + 1}s] 请求失败，重试中...`); }
+      }
+      if (domCaptured) {
+        await startAuctionAfterDomReady();
+      } else if (auctionEnabled) {
+        append("DOM 未完成首次采集，跳过竞价采集启动");
       }
       await refreshJyhfCdpLogs();
       setJyhfBusy(false);

@@ -63,6 +63,17 @@ async def _auto_start_jyhf_collectors(sps_base: str):
 
         try:
             async with _httpx.AsyncClient(timeout=5.0, trust_env=False) as client:
+                r2 = await client.get(f"{sps_base}/api/v1/jyhf-market/status")
+                token_valid = False
+                if r2.status_code == 200:
+                    try:
+                        token_valid = bool(r2.json().get("token_valid"))
+                    except Exception:
+                        token_valid = False
+                if not token_valid:
+                    _auto_logger.warning("AUTO_START skipped: jyhf token not ready at %s", now.strftime("%H:%M:%S"))
+                    continue
+
                 if not started_quote:
                     r = await client.post(f"{sps_base}/api/v1/jyhf-market/collector/start")
                     if r.status_code == 200:
@@ -70,16 +81,14 @@ async def _auto_start_jyhf_collectors(sps_base: str):
                         _auto_logger.warning("AUTO_START jyhf-market collector at %s", now.strftime("%H:%M:%S"))
 
                 if not started_auction:
-                    r2 = await client.get(f"{sps_base}/api/v1/jyhf-market/status")
-                    if r2.status_code == 200:
-                        # D1 候选的 trade_date 是前一交易日，不是今天
-                        yesterday = (now - timedelta(days=1)).date()
-                        await client.post(
-                            "http://127.0.0.1:8000/api/v2/realtime/jyhf-auction/start",
-                            json={"trade_date": str(now.date()), "candidate_date": str(yesterday)},
-                        )
-                        started_auction = True
-                        _auto_logger.warning("AUTO_START jyhf-auction collector at %s", now.strftime("%H:%M:%S"))
+                    # D1 候选的 trade_date 是前一交易日，不是今天
+                    yesterday = (now - timedelta(days=1)).date()
+                    await client.post(
+                        "http://127.0.0.1:8000/api/v2/realtime/jyhf-auction/start",
+                        json={"trade_date": str(now.date()), "candidate_date": str(yesterday)},
+                    )
+                    started_auction = True
+                    _auto_logger.warning("AUTO_START jyhf-auction collector at %s", now.strftime("%H:%M:%S"))
         except Exception as exc:
             _auto_logger.warning("AUTO_START failed: %s", exc)
 
@@ -305,18 +314,22 @@ async def _get_gw():
 async def auth_login(payload: LoginRequest):
     email = payload.email.strip().lower()
     password = payload.password.strip()
-    gw = await _get_gw()
+    gw = None
     try:
-        user = await gw.get_user_by_email(email)
+        gw = await asyncio.wait_for(_get_gw(), timeout=5.0)
+        user = await asyncio.wait_for(gw.get_user_by_email(email), timeout=5.0)
         if not user or not user.get("is_active"):
             raise HTTPException(status_code=401, detail="邮箱或密码错误")
         if not passlib_hash.bcrypt.verify(password, user["password_hash"]):
             raise HTTPException(status_code=401, detail="邮箱或密码错误")
-        await gw.update_user_last_login(user["id"])
+        await asyncio.wait_for(gw.update_user_last_login(user["id"]), timeout=3.0)
         token = create_token(user["id"], email, user["role"])
         return {"token": token, "user": {"id": user["id"], "email": email, "role": user["role"]}}
+    except asyncio.TimeoutError:
+        raise HTTPException(status_code=503, detail="登录服务超时，请检查数据库连接")
     finally:
-        await gw.close()
+        if gw is not None:
+            await gw.close()
 
 
 @app.get("/api/v2/auth/me")
