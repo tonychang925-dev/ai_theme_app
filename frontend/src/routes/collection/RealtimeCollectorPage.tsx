@@ -739,48 +739,46 @@ export function RealtimeCollectorPage() {
           w2sAlertCount={w2sAlerts.length}
         />
 
-        {/* Layer 2: 采集控制 + 统一告警 */}
+        {/* Layer 2: 采集控制 + Orchestrator | 统一告警 */}
         <div style={{ display: "grid", gridTemplateColumns: "380px 1fr", gap: 12, marginBottom: 12 }}>
-          <CollectionControlPanel
-            status={controlStatus}
-            busy={controlBusy}
-            toggles={controlToggles}
-            actions={{
-              onStartRealtime: handleStart,
-              onStopRealtime: handleStop,
-              onRefreshRealtime: handleRefresh,
-              onStartDom: handleStartJyhfCdp,
-              onStopDom: handleStopJyhfCdp,
-              onRefreshDom: handleRefreshJyhfCdp,
-              onToggleAuction: setAuctionEnabled,
-              onToggleKlineAlerts: setKlineAlertsEnabled,
-              onToggleW2sAlerts: setW2sAlertsEnabled,
-            }}
-          />
-          <UnifiedAlertPanel
-            alerts={unifiedAlerts}
-            onClear={() => { setKlineAlerts([]); setW2sAlerts([]); }}
-          />
-        </div>
-
-        {/* Layer 2.5: P4-2B Orchestrator 只读状态 */}
-        <OrchestratorStatusPanel
-          status={orchStatus}
-          loading={orchLoading}
-          error={orchError}
-          onRefresh={refreshOrchestrator}
-        />
-
-        {/* Layer 3: 诊断详情 */}
-        <DiagnosticsTabs
-          mergedLogs={mergedLogs}
-          jyhfLogs={jyhfLogs}
-          stackStatus={stackStatus}
-          reviewItems={reviewItems}
-          reviewTotal={reviewTotal}
-          reviewBusy={reviewBusy}
-          selectedIds={selectedIds}
-          onToggleSelect={toggleSelect}
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <CollectionControlPanel
+              status={controlStatus}
+              busy={controlBusy}
+              toggles={controlToggles}
+              actions={{
+                onStartRealtime: handleStart,
+                onStopRealtime: handleStop,
+                onRefreshRealtime: handleRefresh,
+                onStartDom: handleStartJyhfCdp,
+                onStopDom: handleStopJyhfCdp,
+                onRefreshDom: handleRefreshJyhfCdp,
+                onToggleAuction: setAuctionEnabled,
+                onToggleKlineAlerts: setKlineAlertsEnabled,
+                onToggleW2sAlerts: setW2sAlertsEnabled,
+              }}
+            />
+            <OrchestratorStatusPanel
+              status={orchStatus}
+              loading={orchLoading}
+              error={orchError}
+              onRefresh={refreshOrchestrator}
+            />
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <UnifiedAlertPanel
+              alerts={unifiedAlerts}
+              onClear={() => { setKlineAlerts([]); setW2sAlerts([]); }}
+            />
+            <DiagnosticsTabs
+              mergedLogs={mergedLogs}
+              jyhfLogs={jyhfLogs}
+              stackStatus={stackStatus}
+              reviewItems={reviewItems}
+              reviewTotal={reviewTotal}
+              reviewBusy={reviewBusy}
+              selectedIds={selectedIds}
+              onToggleSelect={toggleSelect}
           onSelectAll={selectAll}
           onConfirm={handleConfirmReview}
           onDelete={handleDeleteReview}
@@ -790,6 +788,8 @@ export function RealtimeCollectorPage() {
           onRefreshReview={refreshReviewQueue}
           onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
         />
+          </div>
+        </div>
 
       </div>
       </ConfigProvider>
