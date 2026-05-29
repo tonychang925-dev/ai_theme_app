@@ -108,9 +108,8 @@ export default function CollectionControlPanel(props: Props) {
               {busy.mainBusy && status.running === "unknown" ? "处理中..." : "启动实时采集"}
             </button>
             <button
-              style={busy.mainBusy ? btnDisabledStyle : btnDangerStyle}
+              style={btnDangerStyle}
               onClick={actions.onStopRealtime}
-              disabled={busy.mainBusy}
             >
               停止实时采集
             </button>
