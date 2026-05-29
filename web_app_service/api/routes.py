@@ -1371,7 +1371,7 @@ async def _db_health_snapshot() -> dict:
             pass
 
 
-@app.get("/api/v2/runtime/db-health")
+@router.get("/runtime/db-health")
 async def runtime_db_health():
     """数据库运行态健康诊断。
 
