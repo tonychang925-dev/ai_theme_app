@@ -132,7 +132,7 @@ class RealtimeBusinessOrchestrator:
         self._app = app
         self.enabled = _env_bool("REALTIME_ORCHESTRATOR_ENABLED", False)
         self.actions_enabled = _env_bool("REALTIME_ORCHESTRATOR_ACTIONS_ENABLED", False)
-        self._interval_sec = int(os.environ.get("REALTIME_ORCHESTRATOR_INTERVAL_SEC", "30"))
+        self._interval_sec = int(os.environ.get("REALTIME_ORCHESTRATOR_INTERVAL_SEC", "15"))
         self._tick_seq = 0
         self._tick_running = False
         self._loop_task: asyncio.Task | None = None

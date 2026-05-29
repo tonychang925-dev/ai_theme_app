@@ -242,7 +242,7 @@ export function RealtimeCollectorPage() {
   }
   useEffect(() => {
     refreshOrchestrator();
-    const timer = window.setInterval(() => refreshOrchestrator(), 60000);
+    const timer = window.setInterval(() => refreshOrchestrator(), 15000);
     return () => window.clearInterval(timer);
   }, []);
 
