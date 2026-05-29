@@ -4296,6 +4296,38 @@ async def jyhf_market_index():
         return JSONResponse(status_code=502, content={"ok": False, "error": str(exc)})
 
 
+# ── P4-2F: SSE connection tracker ──
+
+_sse_lock = asyncio.Lock()
+_sse_clients: dict[str, int] = {}  # stream_key → active connection count
+
+
+def _sse_connected(stream_key: str) -> None:
+    """Mark an SSE connection as active (non-blocking spawn)."""
+    async def _inc():
+        async with _sse_lock:
+            _sse_clients[stream_key] = _sse_clients.get(stream_key, 0) + 1
+    asyncio.ensure_future(_inc())
+
+
+def _sse_disconnected(stream_key: str) -> None:
+    """Mark an SSE connection as closed (non-blocking spawn)."""
+    async def _dec():
+        async with _sse_lock:
+            v = _sse_clients.get(stream_key, 0) - 1
+            if v <= 0:
+                _sse_clients.pop(stream_key, None)
+            else:
+                _sse_clients[stream_key] = v
+    asyncio.ensure_future(_dec())
+
+
+async def _sse_snapshot() -> dict[str, int]:
+    """Return a snapshot of active SSE clients per stream (safe copy)."""
+    async with _sse_lock:
+        return dict(_sse_clients)
+
+
 # ── P1-H: K线支撑告警 SSE ──────────────────────────────────────────────
 
 
@@ -4313,6 +4345,7 @@ async def kline_alerts_stream(last_id: str = Query(default="0-0", description="�
     async def _event_generator():
         redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
         stream_key = "stream:kline:alerts"
+        _sse_connected(stream_key)
         r = aioredis.from_url(redis_url, decode_responses=True)
         try:
             try:
@@ -4351,6 +4384,7 @@ async def kline_alerts_stream(last_id: str = Query(default="0-0", description="�
                     await asyncio.sleep(5)
         finally:
             await r.aclose()
+            _sse_disconnected(stream_key)
 
     return StreamingResponse(
         _event_generator(),
@@ -4373,17 +4407,19 @@ async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
     from fastapi.responses import StreamingResponse
 
     async def _event_generator():
+        stream_key = "stream:w2s:alerts"
+        _sse_connected(stream_key)
         r = aioredis.from_url(_redis_url(), decode_responses=True)
         try:
             try:
-                await r.xinfo_stream("stream:w2s:alerts")
+                await r.xinfo_stream(stream_key)
             except Exception:
                 yield f"event: heartbeat\ndata: {json.dumps({'msg': 'w2s stream not found'})}\n\n"
                 return
             read_id = last_id if last_id != "0-0" else "0-0"
             while True:
                 try:
-                    msgs = await r.xread({"stream:w2s:alerts": read_id}, count=20, block=15000)
+                    msgs = await r.xread({stream_key: read_id}, count=20, block=15000)
                     if msgs:
                         for _, entries in msgs:
                             for entry_id, data in entries:
@@ -4398,6 +4434,7 @@ async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
                     await asyncio.sleep(5)
         finally:
             await r.aclose()
+            _sse_disconnected(stream_key)
 
     return StreamingResponse(
         _event_generator(), media_type="text/event-stream",
@@ -4458,6 +4495,8 @@ async def _redis_stream_readiness(
             else:
                 blockers.append("stream has no events")
 
+            sse_count = (await _sse_snapshot()).get(stream_key, 0)
+
             return {
                 "ok": True,
                 "ready": ready,
@@ -4467,7 +4506,7 @@ async def _redis_stream_readiness(
                 "stream_length": length,
                 "last_event_id": str(last_event_id) if last_event_id else None,
                 "last_event_at": last_event_at,
-                "active_sse_clients": None,
+                "active_sse_clients": sse_count,
                 "blockers": blockers,
                 "evidence": {
                     "redis_ok": True,
@@ -4487,7 +4526,7 @@ async def _redis_stream_readiness(
             "stream_length": None,
             "last_event_id": None,
             "last_event_at": None,
-            "active_sse_clients": None,
+            "active_sse_clients": 0,
             "blockers": [f"redis readiness check failed: {exc}"],
             "evidence": {
                 "redis_ok": False,
@@ -4598,7 +4637,9 @@ async def _redis_health_snapshot() -> dict:
             "ok": False, "state": "blocked", "latency_ms": None,
             "redis_url_masked": url_masked, "checked_at": checked_at,
             "blockers": [f"redis ping failed: {exc}"],
-            "server": {}, "streams": {},
+            "server": {}, "streams": {}, "consumer_groups": {},
+            "consumer_groups_summary": [], "dead_letter_growth": {},
+            "sse_clients": {},
         }
 
     if latency_ms > 500:
@@ -4815,6 +4856,22 @@ async def _redis_health_snapshot() -> dict:
     elif stream_state == "degraded" or dead_letter_state == "degraded":
         overall = "degraded"
 
+    # SSE client snapshot
+    sse_clients = await _sse_snapshot()
+
+    # Consumer groups flat summary for operational visibility
+    cg_summary: list[dict] = []
+    for sk, cg_list in consumer_groups.items():
+        for cg in cg_list:
+            cg_summary.append({
+                "stream": sk,
+                "group": cg["name"],
+                "consumers": cg["consumers"],
+                "pending": cg["pending"],
+                "lag": cg["lag"],
+                "delivery_lag_s": cg.get("delivery_lag_s"),
+            })
+
     return {
         "ok": True,
         "state": overall,
@@ -4822,7 +4879,9 @@ async def _redis_health_snapshot() -> dict:
         "stream_state": stream_state,
         "dead_letter_state": dead_letter_state,
         "consumer_groups": consumer_groups,
+        "consumer_groups_summary": cg_summary,
         "dead_letter_growth": dead_letter_growth,
+        "sse_clients": sse_clients,
         "latency_ms": latency_ms,
         "redis_url_masked": url_masked,
         "checked_at": checked_at,
@@ -4850,7 +4909,9 @@ async def redis_health():
             "server": {},
             "streams": {},
             "consumer_groups": {},
+            "consumer_groups_summary": [],
             "dead_letter_growth": {},
+            "sse_clients": {},
             "blockers": [f"redis health timeout/error: {exc}"],
         }
 
