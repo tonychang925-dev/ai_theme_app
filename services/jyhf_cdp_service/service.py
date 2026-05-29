@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import os
 from datetime import datetime
 from pathlib import Path
 from threading import Lock
@@ -20,6 +21,10 @@ from services.jyhf_cdp_service.token_extractor import TokenExtractor
 
 
 CN_TZ = ZoneInfo("Asia/Shanghai")
+
+
+class CollectorStartupFailed(RuntimeError):
+    """Raised when JYHF App/CDP/DOM startup exceeded the retry fuse."""
 
 
 class JyhfCdpCollectorService:
@@ -43,6 +48,8 @@ class JyhfCdpCollectorService:
         self._pending_db_events: list[RawJyhfCdpEvent] = []
         self._run_id = 0
         self._started_at: datetime | None = None
+        self._startup_failure_count = 0
+        self._startup_failure_limit = int(os.getenv("JYHF_CDP_STARTUP_FAILURE_LIMIT", "3"))
 
     def status(self) -> CollectorStatus:
         return self._status.get()
@@ -53,6 +60,7 @@ class JyhfCdpCollectorService:
                 return
             self._run_id += 1
             self._started_at = datetime.now(CN_TZ)
+            self._startup_failure_count = 0
             self._stop_event.clear()
             self._task = asyncio.create_task(self._loop(self._run_id))
             self._status.update(
@@ -101,24 +109,54 @@ class JyhfCdpCollectorService:
                 await self._flush_db_events()
             except asyncio.CancelledError:
                 raise
-            except Exception as exc:
+            except CollectorStartupFailed as exc:
                 totals["parse_error_count_total"] = int(totals.get("parse_error_count_total") or 0) + 1
                 self._status.update(
-                    collector_running=True,
-                    collector_state="error",
+                    collector_running=False,
+                    collector_state="failed",
                     app_running=False,
                     cdp_connected=False,
                     parse_error_count_total=totals["parse_error_count_total"],
                     last_capture_at=datetime.now(CN_TZ).isoformat(),
                     last_error=str(exc),
                 )
+                self._stop_event.set()
+                self._logger.error("collector startup fuse tripped: %s", exc)
+                break
+            except Exception as exc:
+                totals["parse_error_count_total"] = int(totals.get("parse_error_count_total") or 0) + 1
+                if self._record_startup_failure(str(exc)):
+                    self._status.update(
+                        collector_running=False,
+                        collector_state="failed",
+                        app_running=False,
+                        cdp_connected=False,
+                        parse_error_count_total=totals["parse_error_count_total"],
+                        last_capture_at=datetime.now(CN_TZ).isoformat(),
+                        last_error=str(exc),
+                    )
+                    self._stop_event.set()
+                    self._logger.exception("capture loop failed; startup fuse tripped")
+                    break
+                else:
+                    self._status.update(
+                        collector_running=True,
+                        collector_state="error",
+                        app_running=False,
+                        cdp_connected=False,
+                        parse_error_count_total=totals["parse_error_count_total"],
+                        last_capture_at=datetime.now(CN_TZ).isoformat(),
+                        last_error=str(exc),
+                    )
                 self._logger.exception("capture loop failed")
             try:
                 await asyncio.wait_for(self._stop_event.wait(), timeout=max(self._config.interval_seconds, 5.0))
             except (asyncio.TimeoutError, TimeoutError):
                 pass
         if run_id == self._run_id:
-            self._status.update(collector_running=False, collector_state="stopped")
+            current = self._status.get()
+            if current.collector_state != "failed":
+                self._status.update(collector_running=False, collector_state="stopped")
 
     def _capture_once(self, totals: dict, run_id: int) -> None:
         if not self._capture_lock.acquire(blocking=False):
@@ -131,7 +169,10 @@ class JyhfCdpCollectorService:
             self._capture_lock.release()
 
     def _capture_once_locked(self, totals: dict, run_id: int) -> None:
-        self._app.ensure_running(should_stop=self._stop_event.is_set)
+        if not self._app.ensure_running(should_stop=self._stop_event.is_set):
+            if self._record_startup_failure("JYHF app launch already in progress"):
+                raise CollectorStartupFailed(self._startup_failure_message("JYHF app launch already in progress"))
+            return
         if self._stop_event.is_set() or run_id != self._run_id:
             return
         cdp = CDPClient(self._config.cdp_port)
@@ -157,7 +198,14 @@ class JyhfCdpCollectorService:
             except Exception:
                 pass
         except PrepareRetryError:
-            self._logger.warning("prepare not ready, will retry next cycle")
+            reason = "JYHF DOM prepare not ready"
+            if self._record_startup_failure(reason):
+                raise CollectorStartupFailed(self._startup_failure_message(reason))
+            self._logger.warning(
+                "prepare not ready, will retry next cycle (%s/%s)",
+                self._startup_failure_count,
+                self._startup_failure_limit,
+            )
             return
         finally:
             cdp.close()
@@ -221,6 +269,26 @@ class JyhfCdpCollectorService:
             last_error=None,
         )
         self._logger.info("capture ok events=%s new=%s token=%s", len(raw_events), new_count, "yes" if self._token_extractor.last_token else "no")
+        self._startup_failure_count = 0
+
+    def _record_startup_failure(self, reason: str) -> bool:
+        if self._status.get().capture_count_total > 0:
+            return False
+        self._startup_failure_count += 1
+        self._logger.warning(
+            "JYHF startup failure %s/%s: %s",
+            self._startup_failure_count,
+            self._startup_failure_limit,
+            reason,
+        )
+        return self._startup_failure_count >= self._startup_failure_limit
+
+    def _startup_failure_message(self, reason: str) -> str:
+        return (
+            f"JYHF startup failed after {self._startup_failure_count}/"
+            f"{self._startup_failure_limit} attempts: {reason}; "
+            "collector stopped to prevent repeated app relaunch"
+        )
 
     async def _flush_db_events(self) -> None:
         if not self._db_sink:
