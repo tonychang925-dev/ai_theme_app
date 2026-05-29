@@ -737,6 +737,8 @@ export function RealtimeCollectorPage() {
           w2sSseState={w2sSseState}
           klineAlertCount={klineAlerts.length}
           w2sAlertCount={w2sAlerts.length}
+          redisHealth={orchStatus?.runtime_dependencies?.redis as Record<string,any> | undefined}
+          dbHealth={orchStatus?.runtime_dependencies?.database as Record<string,any> | undefined}
         />
 
         <Tabs
