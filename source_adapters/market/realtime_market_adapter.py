@@ -39,7 +39,9 @@ class RealtimeMarketAdapter(SourceAdapter):
     ):
         self._config = config or {}
         self._redis_url = redis_url
-        self._target_stream = "stream:intel.raw.market"  # 独立 raw stream，无 alias
+        # stream:intel.raw.market intentionally has no alias;
+        # consumers must opt in explicitly to avoid mixing raw market data into UI feed.
+        self._target_stream = "stream:intel.raw.market"
         self._source_name = source_name
         self._stream_manager = stream_manager
         self._collector_service = collector_service
