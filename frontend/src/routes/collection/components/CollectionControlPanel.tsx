@@ -1,5 +1,5 @@
-/** P4-1A: 采集控制面板 — 纯展示 + 回调。使用原生 details 避免 antd Collapse 重挂载问题。 */
-import { Button, Descriptions, Space, Switch, Tag } from "antd";
+/** P4-1A: 采集控制面板 — 纯展示 + 回调。使用原生 button/checkbox 替代 antd 交互组件，排除按钮点击失效问题。 */
+import { Tag, Descriptions } from "antd";
 import type { JyhfCdpCollectorStatus, JyhfAuctionStatus, NewChainRealtimeStatus } from "../../../lib/api";
 
 interface Props {
@@ -46,6 +46,44 @@ const summaryStyle: React.CSSProperties = {
   fontSize: 14,
   padding: "4px 0",
   userSelect: "none",
+  color: "#e2e8f0",
+};
+
+const btnStyle: React.CSSProperties = {
+  padding: "4px 12px",
+  border: "1px solid rgba(255,255,255,0.15)",
+  borderRadius: 4,
+  background: "rgba(255,255,255,0.08)",
+  color: "#e2e8f0",
+  cursor: "pointer",
+  fontSize: 13,
+  marginRight: 6,
+};
+
+const btnPrimaryStyle: React.CSSProperties = {
+  ...btnStyle,
+  background: "#1677ff",
+  border: "1px solid #1677ff",
+};
+
+const btnDangerStyle: React.CSSProperties = {
+  ...btnStyle,
+  background: "rgba(255,77,79,0.15)",
+  border: "1px solid #ff4d4f",
+  color: "#ff4d4f",
+};
+
+const btnDisabledStyle: React.CSSProperties = {
+  ...btnStyle,
+  opacity: 0.4,
+  cursor: "not-allowed",
+};
+
+const labelStyle: React.CSSProperties = {
+  fontSize: 12,
+  color: "#94a3b8",
+  marginRight: 8,
+  userSelect: "none",
 };
 
 export default function CollectionControlPanel(props: Props) {
@@ -57,23 +95,33 @@ export default function CollectionControlPanel(props: Props) {
       {/* 实时采集控制 */}
       <details open style={sectionStyle}>
         <summary style={summaryStyle}>
-          <Space>
-            <span>实时采集控制</span>
-            {status.running === "up" ? <Tag color="green">运行中</Tag> : status.running === "down" ? <Tag color="red">已停止</Tag> : <Tag>检查中</Tag>}
-          </Space>
+          <span style={{ marginRight: 8 }}>实时采集控制</span>
+          {status.running === "up" ? <Tag color="green">运行中</Tag> : status.running === "down" ? <Tag color="red">已停止</Tag> : <Tag>检查中</Tag>}
         </summary>
         <div style={{ marginTop: 8 }}>
-          <Space style={{ marginBottom: 8 }}>
-            <Button type="primary" size="small" onClick={actions.onStartRealtime} disabled={busy.mainBusy} loading={busy.mainBusy && status.running === "unknown"}>
-              启动实时采集
-            </Button>
-            <Button danger size="small" onClick={actions.onStopRealtime} disabled={busy.mainBusy}>
+          <div style={{ marginBottom: 8 }}>
+            <button
+              style={busy.mainBusy ? btnDisabledStyle : btnPrimaryStyle}
+              onClick={actions.onStartRealtime}
+              disabled={busy.mainBusy}
+            >
+              {busy.mainBusy && status.running === "unknown" ? "处理中..." : "启动实时采集"}
+            </button>
+            <button
+              style={busy.mainBusy ? btnDisabledStyle : btnDangerStyle}
+              onClick={actions.onStopRealtime}
+              disabled={busy.mainBusy}
+            >
               停止实时采集
-            </Button>
-            <Button size="small" onClick={actions.onRefreshRealtime} disabled={busy.mainBusy}>
+            </button>
+            <button
+              style={busy.mainBusy ? btnDisabledStyle : btnStyle}
+              onClick={actions.onRefreshRealtime}
+              disabled={busy.mainBusy}
+            >
               刷新状态
-            </Button>
-          </Space>
+            </button>
+          </div>
           <Descriptions size="small" column={2}>
             <Descriptions.Item label="Run ID">{stackStatus?.run_id ?? "-"}</Descriptions.Item>
             <Descriptions.Item label="Profile">{stackStatus?.profile_version ?? "?"}/{stackStatus?.profile_status ?? "?"}</Descriptions.Item>
@@ -88,23 +136,33 @@ export default function CollectionControlPanel(props: Props) {
       {/* JYHF DOM 采集 */}
       <details open style={sectionStyle}>
         <summary style={summaryStyle}>
-          <Space>
-            <span>JYHF DOM 采集</span>
-            {jyhfStatus?.collector_running ? <Tag color="green">采集中</Tag> : <Tag>已停止</Tag>}
-          </Space>
+          <span style={{ marginRight: 8 }}>JYHF DOM 采集</span>
+          {jyhfStatus?.collector_running ? <Tag color="green">采集中</Tag> : <Tag>已停止</Tag>}
         </summary>
         <div style={{ marginTop: 8 }}>
-          <Space style={{ marginBottom: 8 }}>
-            <Button type="primary" size="small" onClick={actions.onStartDom} disabled={busy.jyhfBusy} loading={busy.jyhfBusy}>
-              启动 DOM 采集
-            </Button>
-            <Button danger size="small" onClick={actions.onStopDom} disabled={busy.jyhfBusy}>
+          <div style={{ marginBottom: 8 }}>
+            <button
+              style={busy.jyhfBusy ? btnDisabledStyle : btnPrimaryStyle}
+              onClick={actions.onStartDom}
+              disabled={busy.jyhfBusy}
+            >
+              {busy.jyhfBusy ? "处理中..." : "启动 DOM 采集"}
+            </button>
+            <button
+              style={busy.jyhfBusy ? btnDisabledStyle : btnDangerStyle}
+              onClick={actions.onStopDom}
+              disabled={busy.jyhfBusy}
+            >
               停止 DOM 采集
-            </Button>
-            <Button size="small" onClick={actions.onRefreshDom} disabled={busy.jyhfBusy}>
+            </button>
+            <button
+              style={busy.jyhfBusy ? btnDisabledStyle : btnStyle}
+              onClick={actions.onRefreshDom}
+              disabled={busy.jyhfBusy}
+            >
               刷新 DOM 状态
-            </Button>
-          </Space>
+            </button>
+          </div>
           <Descriptions size="small" column={2}>
             <Descriptions.Item label="Owner">{jyhfStatus?.service_owner ?? "?"}</Descriptions.Item>
             <Descriptions.Item label="Service">{jyhfStatus?.service_running ? "运行中" : "已停止"}</Descriptions.Item>
@@ -122,25 +180,45 @@ export default function CollectionControlPanel(props: Props) {
       <details style={sectionStyle}>
         <summary style={summaryStyle}>开关设置</summary>
         <div style={{ marginTop: 8 }}>
-          <Space direction="vertical">
-            <div>
-              <span style={{ marginRight: 8 }}>竞价采集</span>
-              <Switch checked={toggles.auctionEnabled} onChange={actions.onToggleAuction} disabled={busy.auctionBusy} size="small" />
-              {auctionStatus && (
-                <Tag style={{ marginLeft: 8 }} color={auctionStatus.running ? "green" : "default"}>
-                  {auctionStatus.state} rds={auctionStatus.rounds}
-                </Tag>
-              )}
-            </div>
-            <div>
-              <span style={{ marginRight: 8 }}>K线告警 SSE</span>
-              <Switch checked={toggles.klineAlertsEnabled} onChange={actions.onToggleKlineAlerts} size="small" />
-            </div>
-            <div>
-              <span style={{ marginRight: 8 }}>W2S告警 SSE</span>
-              <Switch checked={toggles.w2sAlertsEnabled} onChange={actions.onToggleW2sAlerts} size="small" />
-            </div>
-          </Space>
+          <div style={{ marginBottom: 6 }}>
+            <label style={labelStyle}>
+              <input
+                type="checkbox"
+                checked={toggles.auctionEnabled}
+                onChange={(e) => actions.onToggleAuction(e.target.checked)}
+                disabled={busy.auctionBusy}
+                style={{ marginRight: 4 }}
+              />
+              竞价采集
+            </label>
+            {auctionStatus && (
+              <Tag style={{ marginLeft: 4 }} color={auctionStatus.running ? "green" : "default"}>
+                {auctionStatus.state} rds={auctionStatus.rounds}
+              </Tag>
+            )}
+          </div>
+          <div style={{ marginBottom: 6 }}>
+            <label style={labelStyle}>
+              <input
+                type="checkbox"
+                checked={toggles.klineAlertsEnabled}
+                onChange={(e) => actions.onToggleKlineAlerts(e.target.checked)}
+                style={{ marginRight: 4 }}
+              />
+              K线告警 SSE
+            </label>
+          </div>
+          <div>
+            <label style={labelStyle}>
+              <input
+                type="checkbox"
+                checked={toggles.w2sAlertsEnabled}
+                onChange={(e) => actions.onToggleW2sAlerts(e.target.checked)}
+                style={{ marginRight: 4 }}
+              />
+              W2S告警 SSE
+            </label>
+          </div>
         </div>
       </details>
     </div>
