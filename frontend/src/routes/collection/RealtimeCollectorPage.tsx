@@ -28,6 +28,12 @@ import {
 import { navigateTo } from "../../lib/navigation";
 import realtimeIcon from "../../assets/intel-icons/实时采集.png";
 
+// P4-1A: 展示组件
+import ServiceStatusBar, { type SseConnState } from "./components/ServiceStatusBar";
+import CollectionControlPanel from "./components/CollectionControlPanel";
+import UnifiedAlertPanel, { type UnifiedAlertRow } from "./components/UnifiedAlertPanel";
+import DiagnosticsTabs from "./components/DiagnosticsTabs";
+
 function nowText() {
   return new Date().toLocaleString("zh-CN", {
     month: "2-digit",
@@ -60,6 +66,10 @@ export function RealtimeCollectorPage() {
   const [output, setOutput] = useState<string[]>([]);
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const initializedRef = useRef(false);
+
+  // P4-1A: SSE 连接状态（供 ServiceStatusBar 显示）
+  const [klineSseState, setKlineSseState] = useState<SseConnState>("connecting");
+  const [w2sSseState, setW2sSseState] = useState<SseConnState>("connecting");
 
   // ── Review Queue state ──
   const [reviewItems, setReviewItems] = useState<ReviewQueueItem[]>([]);
@@ -169,17 +179,21 @@ export function RealtimeCollectorPage() {
   useEffect(() => {
     if (!klineAlertsEnabled) {
       if (klineEsRef.current) { klineEsRef.current.close(); klineEsRef.current = null; }
+      setKlineSseState("disabled");
       append("[K线告警] 已关闭");
       return;
     }
+    setKlineSseState("connecting");
     const es = openKlineAlertsStream(
       (alert) => {
+        setKlineSseState("connected");
         setKlineAlerts(prev => [...prev, alert].slice(-200));
         const ts = alert.generated_at?.slice(11, 19) || "";
         const distSign = parseFloat(alert.distance_pct) >= 0 ? "+" : "";
         append(`[${alert.severity.toUpperCase()}] ${alert.stock_name || alert.stock_id} ${alert.alert_type.replace(/_/g," ")} | C=${parseFloat(alert.current).toFixed(2)} S=${parseFloat(alert.support_level).toFixed(2)} (${distSign}${alert.distance_pct}%) conf=${alert.confidence} ${ts}`);
       },
       (err) => {
+        setKlineSseState("disconnected");
         append(`[K线告警] SSE 断开: ${err.message}`);
       },
     );
@@ -192,16 +206,22 @@ export function RealtimeCollectorPage() {
   useEffect(() => {
     if (!w2sAlertsEnabled) {
       if (w2sEsRef.current) { w2sEsRef.current.close(); w2sEsRef.current = null; }
+      setW2sSseState("disabled");
       return;
     }
+    setW2sSseState("connecting");
     const es = openW2SAlertsStream(
       (alert) => {
+        setW2sSseState("connected");
         setW2sAlerts(prev => [...prev, alert].slice(-100));
         const ts = alert.generated_at?.slice(11, 19) || "";
         const level = alert.confirm_level;
         append(`[W2S-${level}] ${alert.stock_name || alert.stock_id} ${alert.candidate_type || ""} | score=${alert.confirm_score} open=${alert.auction_open_pct}% carry=${alert.carry_ratio} ${ts}`);
       },
-      (err) => { append(`[W2S告警] SSE 断开: ${err.message}`); },
+      (err) => {
+        setW2sSseState("disconnected");
+        append(`[W2S告警] SSE 断开: ${err.message}`);
+      },
     );
     w2sEsRef.current = es;
     append("[W2S告警] SSE 已连接");
@@ -292,6 +312,34 @@ export function RealtimeCollectorPage() {
   function toggleSelect(id: number) {
     setSelectedIds(prev => { const next = new Set(prev); if (next.has(id)) next.delete(id); else next.add(id); return next; });
   }
+  function selectAll() {
+    if (reviewItems.length > 0 && selectedIds.size === reviewItems.length) {
+      setSelectedIds(new Set());
+    } else {
+      setSelectedIds(new Set(reviewItems.map((r) => r.id)));
+    }
+  }
+  async function handleImportPending() {
+    setReviewBusy(true);
+    try {
+      await fetch("/api/v2/review-queue/import-pending", { method: "POST" });
+      append("已导入 Pending 到复核队列");
+      await refreshReviewQueue();
+    } catch (err: any) {
+      append(`导入失败: ${err?.message || err}`);
+    } finally { setReviewBusy(false); }
+  }
+  async function handleClearPending() {
+    setReviewBusy(true);
+    try {
+      await fetch("/api/v2/review-queue/clear-pending", { method: "POST" });
+      append("已清空 Pending");
+      await refreshBundledStatus();
+    } catch (err: any) {
+      append(`清空失败: ${err?.message || err}`);
+    } finally { setReviewBusy(false); }
+  }
+  function closeDetail() { setDetailOpen(false); setDetailItem(null); }
   useEffect(() => { refreshReviewQueue(); const t = setInterval(refreshReviewQueue, 30000); return () => clearInterval(t); }, []);
 
   async function handleStartJyhfCdp() {
@@ -517,6 +565,44 @@ export function RealtimeCollectorPage() {
     return [...output, ...parts];
   }, [output, jyhfLogs, stackStatus, jyhfCollectorRunning, jyhfStatus?.service_running, auctionEnabled, auctionStatus]);
 
+  // P4-1A: 统一告警 view model — Kline + W2S 合并为 UnifiedAlertRow[]
+  const unifiedAlerts = useMemo((): UnifiedAlertRow[] => {
+    const rows: UnifiedAlertRow[] = [];
+
+    for (const a of klineAlerts) {
+      rows.push({
+        id: `kline-${a.generated_at}-${a.stock_id}`,
+        ts: new Date(a.generated_at || 0).getTime() || Date.now(),
+        time: a.generated_at?.slice(11, 19) || "",
+        kind: "support",
+        level: a.severity || "info",
+        stock: a.stock_name || a.stock_id,
+        title: `[${a.alert_type?.replace(/_/g, " ")}] C=${parseFloat(a.current).toFixed(2)} dist=${a.distance_pct}%`,
+        score: a.confidence,
+        source: "支撑告警",
+        raw: a,
+      });
+    }
+
+    for (const a of w2sAlerts) {
+      rows.push({
+        id: `w2s-${a.generated_at}-${a.stock_id}`,
+        ts: new Date(a.generated_at || 0).getTime() || Date.now(),
+        time: a.generated_at?.slice(11, 19) || "",
+        kind: "w2s",
+        level: a.severity || a.confirm_level || "observe",
+        stock: a.stock_name || a.stock_id,
+        title: `${a.candidate_type || "弱转强"} score=${a.confirm_score} open=${a.auction_open_pct}% carry=${a.carry_ratio}`,
+        score: a.confirm_score,
+        source: a.source || "竞价告警",
+        raw: a,
+      });
+    }
+
+    rows.sort((a, b) => a.ts - b.ts);
+    return rows;
+  }, [klineAlerts, w2sAlerts]);
+
   return (
     <div className="workspace-page">
       <section className="strong-watch-toolbar">
@@ -527,541 +613,77 @@ export function RealtimeCollectorPage() {
         </button>
       </section>
 
-      <main className="collection-debug-grid" style={{ display: "grid", gridTemplateColumns: "380px 1fr", gap: 12 }}>
-        {/* ── 左列 ── */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-        <section className="workspace-card collection-debug-control">
-          <span className="metric-label section-title">控制面板 · 实时采集</span>
-          <p className="subtle" style={{marginTop:4,marginBottom:12}}>
-            raw_news + ThemeProcessor + DecisionExecutor → 盘前必读
-          </p>
-          <div className="collection-debug-status">
-            <div>
-              <span className="metric-label">新链状态</span>
-              <strong>{running === "up" ? "🟢 运行中" : running === "down" ? "🔴 已停止" : "⚪ 检查中"}</strong>
-            </div>
-            {stackStatus?.run_id && (
-              <div>
-                <span className="metric-label">Run ID</span>
-                <strong>{stackStatus.run_id}</strong>
-              </div>
-            )}
-            <div>
-              <span className="metric-label">Profile</span>
-              <strong>{stackStatus?.profile_version ?? "?"}/{stackStatus?.profile_status ?? "?"}</strong>
-            </div>
-            <div>
-              <span className="metric-label">raw_news PID</span>
-              <strong>{stackStatus?.raw_news_pid ?? "-"}</strong>
-            </div>
-            <div>
-              <span className="metric-label">decision PID</span>
-              <strong>{stackStatus?.decision_pid ?? "-"}</strong>
-            </div>
-            <div>
-              <span className="metric-label">Pending / DL</span>
-              <strong>{stackStatus?.pending_count ?? "?"} / {stackStatus?.dead_letter_count ?? "?"}</strong>
-            </div>
-          </div>
-          <div className="collection-action-row">
-            <button type="button" id="btn-start-realtime" className={`tag tag-button ${running === "down" ? "tag-active" : ""}`} onClick={handleStart} disabled={mainBusy}>
-              {mainBusy ? (
-                <span className="screener-run-inline">
-                  <span className="screener-spinner" />
-                  处理中...
-                </span>
-              ) : (
-                "启动实时采集"
-              )}
-            </button>
-            <button type="button" className={`tag tag-button ${running === "up" ? "tag-active" : ""}`} onClick={handleStop} disabled={mainBusy}>
-              {mainBusy ? (
-                <span className="screener-run-inline">
-                  <span className="screener-spinner" />
-                  处理中...
-                </span>
-              ) : (
-                "停止实时采集"
-              )}
-            </button>
-            <button type="button" className="tag tag-button" onClick={handleRefresh} disabled={mainBusy}>
-              {mainBusy ? (
-                <span className="screener-run-inline">
-                  <span className="screener-spinner" />
-                  处理中...
-                </span>
-              ) : (
-                "刷新状态"
-              )}
-            </button>
-            <span className="collection-status-indicator">
-              {mainBusy
-                ? "⏳ 正在执行..."
-                : running === "up"
-                  ? "🟢 实时采集运行中"
-                  : running === "down"
-                    ? "🔴 已停止"
-                    : "⚪ 状态检查中"}
-            </span>
-          </div>
-        </section>
+      {/* P4-1A: 三层实时监控面板 */}
+      <div className="realtime-ops-dashboard" style={{ padding: "0 12px" }}>
 
-        <section className="workspace-card collection-debug-control">
-          <span className="metric-label section-title">JYHF DOM 采集源</span>
-          <div className="collection-debug-status">
-            <div>
-              <span className="metric-label">采集器</span>
-              <strong>{jyhfStage}</strong>
-            </div>
-            <div>
-              <span className="metric-label">JYHF App</span>
-              <strong>{jyhfStatus?.app_running ? "已启动" : "未确认"}</strong>
-            </div>
-            <div>
-              <span className="metric-label">CDP 服务</span>
-              <strong>
-                {jyhfStatus?.service_running
-                  ? `运行中（${jyhfStatus?.service_owner === "managed" ? "web_app管理" : jyhfStatus?.service_owner === "external" ? "外部启动" : jyhfStatus?.service_owner ?? "未知"}）`
-                  : "未启动"}
-              </strong>
-            </div>
-            <div>
-              <span className="metric-label">CDP 连接</span>
-              <strong>{jyhfStatus?.cdp_connected ? `已连接:${jyhfStatus.cdp_port}` : `未连接:${jyhfStatus?.cdp_port ?? 9223}`}</strong>
-            </div>
-            <div>
-              <span className="metric-label">当前页面</span>
-              <strong>{jyhfStatus?.current_tab || jyhfStatus?.current_route || "--"}</strong>
-            </div>
-            <div>
-              <span className="metric-label">最近采集</span>
-              <strong>{jyhfStatus?.last_capture_at || "--"}</strong>
-            </div>
-            <div>
-              <span className="metric-label">最近事件</span>
-              <strong>{jyhfStatus?.last_event_at || "--"}</strong>
-            </div>
-          </div>
-          <div className="collection-debug-status">
-            <div>
-              <span className="metric-label">累计采集</span>
-              <strong>{jyhfStatus?.capture_count_total ?? 0}</strong>
-            </div>
-            <div>
-              <span className="metric-label">新增/重复</span>
-              <strong>{jyhfStatus ? `${jyhfStatus.new_event_count_total}/${jyhfStatus.duplicate_count_total}` : "0/0"}</strong>
-            </div>
-            <div>
-              <span className="metric-label">解析失败</span>
-              <strong>{jyhfStatus?.parse_error_count_total ?? 0}</strong>
-            </div>
-          </div>
-          <div className="collection-action-row">
-            <label style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none" }}>
-              <input type="checkbox" checked={klineAlertsEnabled} onChange={(e) => setKlineAlertsEnabled(e.target.checked)}
-                style={{ width: 16, height: 16, cursor: "pointer" }} />
-              <span style={{ fontWeight: 600, fontSize: 12 }}>支撑告警</span>
-            </label>
-            <label style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none" }}>
-              <input type="checkbox" checked={w2sAlertsEnabled} onChange={(e) => setW2sAlertsEnabled(e.target.checked)}
-                style={{ width: 16, height: 16, cursor: "pointer" }} />
-              <span style={{ fontWeight: 600, fontSize: 12 }}>W2S告警</span>
-            </label>
-            <label style={{ display: "inline-flex", alignItems: "center", gap: 6, cursor: "pointer", userSelect: "none" }}>
-              <input
-                type="checkbox"
-                checked={auctionEnabled}
-                onChange={(e) => setAuctionEnabled(e.target.checked)}
-                style={{ width: 16, height: 16, cursor: "pointer" }}
-              />
-              <span style={{ fontWeight: 600 }}>竞价采集</span>
-              {auctionEnabled && auctionStatus && (
-                <span style={{ fontSize: 12, color: auctionStatus.running ? "#22c55e" : auctionStatus.state === "error" ? "#ef4444" : "#94a3b8" }}>
-                  {auctionStatus.running ? "运行中" : auctionStatus.state === "finished" ? "已完成" : auctionStatus.state === "idle" ? "待启动" : auctionStatus.state}
-                </span>
-              )}
-              {auctionEnabled && auctionBusy && (
-                <span style={{ fontSize: 12, color: "#f59e0b" }}>⏳ 启动中...</span>
-              )}
-            </label>
-            <button
-              type="button"
-              className={`tag tag-button ${jyhfBusy && !jyhfCollectorRunning ? "tag-active" : ""}`}
-              onClick={handleStartJyhfCdp}
-              disabled={jyhfBusy || jyhfCollectorRunning}
-            >
-              {jyhfBusy && !jyhfCollectorRunning ? (
-                <span className="screener-run-inline"><span className="screener-spinner" />启动中，等待 collector 就绪...</span>
-              ) : jyhfCollectorRunning ? (
-                "采集运行中"
-              ) : (
-                "启动 JYHF DOM 采集"
-              )}
-            </button>
-            <button
-              type="button"
-              className={`tag tag-button ${jyhfBusy && jyhfCollectorRunning ? "tag-active" : ""}`}
-              onClick={handleStopJyhfCdp}
-              disabled={jyhfBusy || !jyhfCollectorRunning}
-            >
-              {jyhfBusy ? (
-                <span className="screener-run-inline">
-                  <span className="screener-spinner" />
-                  停止中...
-                </span>
-              ) : (
-                "停止 JYHF DOM 采集"
-              )}
-            </button>
-            <button
-              type="button"
-              className="tag tag-button"
-              onClick={handleRefreshJyhfCdp}
-              disabled={jyhfBusy}
-            >
-              {jyhfBusy ? (
-                <span className="screener-run-inline">
-                  <span className="screener-spinner" />
-                  刷新中...
-                </span>
-              ) : (
-                "刷新 JYHF 状态"
-              )}
-            </button>
-            <span className="collection-status-indicator">
-              {jyhfBusy ? "⏳ 等待中..."
-                : jyhfError ? `⚠ ${jyhfError}`
-                : jyhfStatus?.last_error ? `⚠ ${jyhfStatus.last_error}`
-                : jyhfCollectorRunning ? "🟢 DOM采集运行中"
-                : jyhfStatus?.service_running ? jyhfStage
-                : "就绪"}
-            </span>
-          </div>
-        </section>
+        {/* Layer 1: 服务状态总览 */}
+        <ServiceStatusBar
+          stackStatus={stackStatus}
+          jyhfStatus={jyhfStatus}
+          auctionStatus={auctionStatus}
+          klineSseState={klineSseState}
+          w2sSseState={w2sSseState}
+          klineAlertCount={klineAlerts.length}
+          w2sAlertCount={w2sAlerts.length}
+        />
 
-        <section className="workspace-card">
-          <span className="metric-label section-title">Stream 健康监控</span>
-          <div style={{ fontSize: 11, lineHeight: 1.6, marginTop: 4 }}>
-            {/* Qwen 状态 */}
-            <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
-              <span style={{ color: "#94a3b8" }}>Qwen 去重</span>
-              <span style={{ color: stackStatus?.qwen_dedup_ready ? "#22c55e" : "#f59e0b" }}>
-                {stackStatus?.qwen_dedup_ready ? "✅ 就绪" : "⚠️ 规则模式"}
-                {stackStatus?.qwen_dedup_calls ? ` (${stackStatus.qwen_dedup_calls}次)` : ""}
-              </span>
-            </div>
-            {/* Stream 积压 */}
-            {stackStatus?.redis_streams && Object.entries(stackStatus.redis_streams).map(([name, info]) => {
-              const length = info?.length ?? 0;
-              const color = length > 5000 ? "#ef4444" : length > 1000 ? "#f59e0b" : "#22c55e";
-              const shortName = name.replace("stream:", "");
-              return (
-                <div key={name} style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
-                  <span style={{ color: "#94a3b8" }}>{shortName}</span>
-                  <span style={{ color }}>{length.toLocaleString()}</span>
-                </div>
-              );
-            })}
-            {/* LLM 过滤统计 */}
-            <div style={{ marginTop: 4, paddingTop: 4, borderTop: "1px solid #334155" }}>
-              <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
-                <span style={{ color: "#94a3b8" }}>LLM低质量过滤</span>
-                <span style={{ color: "#f59e0b" }}>{stackStatus?.prefilter_skipped ?? 0}</span>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
-                <span style={{ color: "#94a3b8" }}>硬去重拦截</span>
-                <span style={{ color: "#f59e0b" }}>{stackStatus?.news_dedup_skipped ?? 0}</span>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
-                <span style={{ color: "#94a3b8" }}>白名单保护</span>
-                <span style={{ color: "#22c55e" }}>{stackStatus?.hard_protect_count ?? 0}</span>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0", fontWeight: 600 }}>
-                <span style={{ color: "#cbd5e1" }}>✅ Feed通过</span>
-                <span style={{ color: "#22c55e" }}>{stackStatus?.news_published_total ?? 0}</span>
-              </div>
-              <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
-                <span style={{ color: "#94a3b8" }}>总拦截 (过滤+去重)</span>
-                <span style={{ color: "#f97316" }}>{(stackStatus?.prefilter_skipped ?? 0) + (stackStatus?.news_dedup_skipped ?? 0)}</span>
-              </div>
-            </div>
-            {/* Pending / DL / Review */}
-            <div style={{ marginTop: 4, paddingTop: 4, borderTop: "1px solid #334155" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
-              <span style={{ color: "#94a3b8" }}>Pending (弱信号)</span>
-              <span style={{ display: "flex", gap: 6, alignItems: "center" }}>
-                <span style={{ color: "#94a3b8" }}>{(stackStatus?.pending_count ?? 0).toLocaleString()}</span>
-                <button type="button" className="tag tag-button"
-                  style={{ fontSize: 9, padding: "1px 5px", color: "#f59e0b" }}
-                  onClick={async () => {
-                    if (!confirm("将 pending 事件导入复核队列？这可能需要一些时间。")) return;
-                    append("⏳ 正在导入 pending → 复核队列...");
-                    try {
-                      const resp = await fetch("/api/v2/review-queue/import-pending", { method: "POST" });
-                      const data = await resp.json();
-                      append(`✅ 导入完成: ${data.imported || 0} 条, 已清空 ${data.cleared || 0} 条 pending`);
-                      await refreshReviewQueue();
-                    } catch (e: any) { append("❌ 导入失败: " + (e?.message || e)); }
-                  }}>导入复核</button>
-                <button type="button" className="tag tag-button"
-                  style={{ fontSize: 9, padding: "1px 5px", color: "#ef4444" }}
-                  onClick={async () => {
-                    if (!confirm("确认清空所有 pending 弱信号事件？此操作不可撤销。")) return;
-                    try {
-                      await fetch("/api/v2/review-queue/clear-pending", { method: "POST" });
-                      append("✅ pending 已清空");
-                      await refreshBundledStatus();
-                    } catch (e: any) { append("❌ 清空 pending 失败: " + (e?.message || e)); }
-                  }}>清空</button>
-              </span>
-            </div>
-            <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
-              <span style={{ color: "#94a3b8" }}>死信</span>
-              <span style={{ color: (stackStatus?.dead_letter_count ?? 0) > 10 ? "#ef4444" : "#94a3b8" }}>
-                {(stackStatus?.dead_letter_count ?? 0).toLocaleString()}
-              </span>
-            </div>
-            <div style={{ display: "flex", justifyContent: "space-between", padding: "2px 0" }}>
-              <span style={{ color: "#94a3b8" }}>复核队列</span>
-              <span style={{ color: "#94a3b8" }}>{(stackStatus?.review_queue_count ?? 0).toLocaleString()}</span>
-            </div>
-            {/* Processor PIDs */}
-            <div style={{ marginTop: 4, padding: "4px 0", borderTop: "1px solid #334155" }}>
-              <span style={{ color: "#64748b" }}>
-                raw={stackStatus?.raw_news_pid ?? "-"} dec={stackStatus?.decision_pid ?? "-"}
-                {" "}profile={stackStatus?.profile_version}/{stackStatus?.profile_status}
-              </span>
-            </div>
-            </div>
-          </div>
-        </section>
+        {/* Layer 2: 采集控制 + 统一告警 */}
+        <div style={{ display: "grid", gridTemplateColumns: "380px 1fr", gap: 12, marginBottom: 12 }}>
+          <CollectionControlPanel
+            status={{ running, stackStatus, jyhfStatus, auctionStatus }}
+            busy={{ mainBusy, jyhfBusy, auctionBusy }}
+            toggles={{ auctionEnabled, klineAlertsEnabled, w2sAlertsEnabled }}
+            actions={{
+              onStartRealtime: handleStart,
+              onStopRealtime: handleStop,
+              onRefreshRealtime: handleRefresh,
+              onStartDom: handleStartJyhfCdp,
+              onStopDom: handleStopJyhfCdp,
+              onRefreshDom: handleRefreshJyhfCdp,
+              onToggleAuction: setAuctionEnabled,
+              onToggleKlineAlerts: setKlineAlertsEnabled,
+              onToggleW2sAlerts: setW2sAlertsEnabled,
+            }}
+          />
+          <UnifiedAlertPanel
+            alerts={unifiedAlerts}
+            onClear={() => { setKlineAlerts([]); setW2sAlerts([]); }}
+          />
+        </div>
 
-        </div>{/* 左列结束 */}
+        {/* Layer 3: 诊断详情 */}
+        <DiagnosticsTabs
+          mergedLogs={mergedLogs}
+          jyhfLogs={jyhfLogs}
+          stackStatus={stackStatus}
+          reviewItems={reviewItems}
+          reviewTotal={reviewTotal}
+          reviewBusy={reviewBusy}
+          selectedIds={selectedIds}
+          onToggleSelect={toggleSelect}
+          onSelectAll={selectAll}
+          onConfirm={handleConfirmReview}
+          onDelete={handleDeleteReview}
+          onBatchDelete={handleBatchDelete}
+          onImportPending={handleImportPending}
+          onClearPending={handleClearPending}
+          onRefreshReview={refreshReviewQueue}
+          onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
+        />
 
-        {/* ── 右列 ── */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-        <section className="workspace-card">
-          <span className="metric-label section-title">弱转强观察</span>
-          <div style={{ display: "flex", gap: 8, alignItems: "center", marginTop: 4, marginBottom: 8, flexWrap: "wrap" }}>
-            {(["all", "critical", "error", "warning", "info", "auction", "intraday"] as const).map(tag => (
-              <button key={tag} type="button" className={`tag tag-button ${klineFilter === tag ? "tag-active" : ""}`}
-                style={{ fontSize: 11, padding: "2px 10px" }} onClick={() => setKlineFilter(tag as typeof klineFilter)}>
-                {tag === "all" ? "全部" : tag === "auction" ? "竞价" : tag === "intraday" ? "盘中" : tag.toUpperCase()}
-              </button>
-            ))}
-            <button type="button" className="tag tag-button" style={{ fontSize: 11, padding: "2px 10px", marginLeft: "auto" }}
-              onClick={() => { setKlineAlerts([]); setW2sAlerts([]); }}>清空</button>
-          </div>
-          <div className="collection-log-panel" style={{ maxHeight: 300, overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
-            {(() => {
-              const sevColors: Record<string, string> = { critical: "#ef4444", error: "#f97316", warning: "#eab308", info: "#94a3b8" };
-              const lvlColor: Record<string, string> = { A: "#22c55e", B: "#f59e0b", C: "#94a3b8" };
+      </div>
 
-              // 合并 kline + w2s 告警到统一列表
-              type MergedAlert = { ts: string; source: string; line: React.ReactNode; severity: string };
-              const merged: MergedAlert[] = [];
-
-              // K线支撑告警
-              for (const a of klineAlerts) {
-                const ts = a.generated_at?.slice(11, 19) || "";
-                const distSign = parseFloat(a.distance_pct) >= 0 ? "+" : "";
-                const sev = a.severity || "info";
-                if (klineFilter !== "all" && klineFilter !== "auction" && klineFilter !== "intraday" && sev !== klineFilter) continue;
-                if (klineFilter === "auction" || klineFilter === "intraday") continue; // kline in "all" mode only
-                merged.push({
-                  ts, source: "支撑", severity: sev,
-                  line: <span>
-                    <span style={{ color: sevColors[sev] }}>[{a.alert_type?.replace(/_/g, " ")}]</span>{" "}
-                    <strong>{a.stock_name || a.stock_id}</strong>{" "}
-                    <span style={{ color: "#94a3b8" }}>C={parseFloat(a.current).toFixed(2)}</span>{" "}
-                    <span style={{ color: parseFloat(a.distance_pct) < 0 ? "#ef4444" : "#22c55e" }}>({distSign}{a.distance_pct}%)</span>
-                  </span>
-                });
-              }
-
-              // W2S竞价告警
-              for (const a of w2sAlerts) {
-                const ts = a.generated_at?.slice(11, 19) || "";
-                const sev = a.severity || "observe";
-                if (klineFilter !== "all" && klineFilter !== "intraday" && klineFilter !== sev && klineFilter !== "auction") continue;
-                merged.push({
-                  ts, source: "竞价", severity: sev,
-                  line: <span>
-                    <strong style={{ color: lvlColor[a.confirm_level] || "#94a3b8" }}>[{a.confirm_level}]</strong>{" "}
-                    <strong>{a.stock_name || a.stock_id}</strong>{" "}
-                    <span style={{ color: "#94a3b8" }}>{a.theme_name}</span>{" "}
-                    <span style={{ color: "#64748b" }}>score={a.confirm_score} open={a.auction_open_pct}% carry={a.carry_ratio}</span>
-                  </span>
-                });
-              }
-
-              merged.sort((a, b) => a.ts.localeCompare(b.ts));
-              if (merged.length === 0) {
-                return <div className="collection-log-line" style={{ color: "#64748b" }}>等待弱转强信号...</div>;
-              }
-              return merged.slice(-80).reverse().map((m, i) => (
-                <div key={`w2su-${i}`} className="collection-log-line" style={{ color: "#cbd5e1", whiteSpace: "nowrap" }}>
-                  <span style={{ color: "#64748b" }}>{m.ts}</span>{" "}
-                  <span style={{ color: "#475569", fontSize: 10 }}>[{m.source}]</span>{" "}
-                  {m.line}
-                </div>
-              ));
-            })()}
-          </div>
-        </section>
-
-        <section className="workspace-card">
-          <span className="metric-label section-title">终端调试输出</span>
-          <button type="button" className="tag tag-button" style={{marginLeft:12}} onClick={async () => {
-            const text = mergedLogs.join('\n');
-            try {
-              await navigator.clipboard.writeText(text);
-              append('✓ 终端输出已复制到剪贴板 (' + mergedLogs.length + ' 行)');
-            } catch {
-              // Fallback for non-HTTPS or clipboard permission denied
-              const ta = document.createElement('textarea');
-              ta.value = text;
-              ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
-              document.body.appendChild(ta);
-              ta.select();
-              document.execCommand('copy');
-              document.body.removeChild(ta);
-              append('✓ 终端输出已复制到剪贴板 (' + mergedLogs.length + ' 行)');
-            }
-          }}>📋 复制终端输出</button>
-          <div className="collection-log-panel collection-debug-terminal" ref={terminalRef}>
-            {(mergedLogs.length ? mergedLogs : ["[等待中] 尚未产生调试日志。"]).map((line, idx) => (
-              <div className="collection-log-line" key={`realtime-terminal-${idx}`}>
-                {line}
-              </div>
-            ))}
-          </div>
-          <div style={{ marginTop: 8, padding: "6px 10px", background: "#1e293b", borderRadius: 4, fontSize: 11, display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
-            <span style={{ color: stackStatus?.running ? "#22c55e" : "#ef4444", fontWeight: 600 }}>
-              {stackStatus?.running ? "🟢 运行中" : "🔴 已停止"}
-            </span>
-            <span style={{ color: "#94a3b8" }}>
-              Run: <span style={{ color: "#cbd5e1" }}>{stackStatus?.run_id?.slice(-8) || "-"}</span>
-            </span>
-            <span style={{ color: "#94a3b8" }}>
-              原始新闻: <span style={{ color: stackStatus?.raw_news_pid ? "#22c55e" : "#ef4444" }}>{stackStatus?.raw_news_pid || "未启动"}</span>
-            </span>
-            <span style={{ color: "#94a3b8" }}>
-              决策引擎: <span style={{ color: stackStatus?.decision_pid ? "#22c55e" : "#ef4444" }}>{stackStatus?.decision_pid || "未启动"}</span>
-            </span>
-            <span style={{ color: "#94a3b8" }}>
-              待处理: <span style={{ color: (stackStatus?.pending_count ?? 0) > 100 ? "#f97316" : "#22c55e", fontWeight: 600 }}>{stackStatus?.pending_count ?? 0}</span>
-            </span>
-            <span style={{ color: "#94a3b8" }}>
-              死信: <span style={{ color: (stackStatus?.dead_letter_count ?? 0) > 10 ? "#ef4444" : "#94a3b8" }}>{stackStatus?.dead_letter_count ?? 0}</span>
-            </span>
-            <span style={{ color: "#475569", marginLeft: "auto" }}>
-              DOM: <span style={{ color: jyhfStatus?.last_capture_at ? "#22c55e" : "#94a3b8" }}>{jyhfStatus?.last_capture_at ? `${jyhfStatus.capture_count_total} 条` : "未采集"}</span>
-            </span>
-            <span style={{ color: "#475569" }}>
-              Qwen: <span style={{ color: stackStatus?.qwen_dedup_ready ? "#22c55e" : "#f59e0b" }}>{stackStatus?.qwen_dedup_ready ? "✅" : "⚠️"}</span>
-              {" "}过滤: <span style={{ color: "#cbd5e1" }}>{stackStatus?.prefilter_skipped ?? "-"}</span>
-            </span>
-          </div>
-        </section>
-
-        {/* ── 复核队列 (Phase 6A) ── */}
-        <section className="workspace-card">
-          <span className="metric-label section-title">
-            复核队列{" "}
-            <span style={{ color: "#f59e0b", fontWeight: 600 }}>{reviewTotal}</span>
-            {" "}条待处理
-          </span>
-          <div style={{ display: "flex", gap: 6, marginTop: 4, flexWrap: "wrap", alignItems: "center" }}>
-            <button type="button" className="tag tag-button" style={{ fontSize: 11, padding: "2px 8px" }}
-              onClick={() => refreshReviewQueue()} disabled={reviewBusy}>刷新</button>
-            <label style={{ fontSize: 11, color: "#94a3b8", cursor: "pointer", display: "flex", alignItems: "center", gap: 2 }}>
-              <input type="checkbox"
-                checked={reviewItems.length > 0 && selectedIds.size === reviewItems.length}
-                onChange={() => {
-                  if (selectedIds.size === reviewItems.length) {
-                    setSelectedIds(new Set());
-                  } else {
-                    setSelectedIds(new Set(reviewItems.map(it => it.id)));
-                  }
-                }}
-                style={{ margin: 0 }} />全选
-            </label>
-            <button type="button" className="tag tag-button" style={{ fontSize: 11, padding: "2px 8px", color: "#f97316" }}
-              onClick={handleBatchDelete} disabled={reviewBusy || selectedIds.size === 0}>
-              批量删除 ({selectedIds.size})
-            </button>
-            {reviewBusy && <span style={{ fontSize: 11, color: "#f59e0b" }}>⏳</span>}
-          </div>
-          <div className="collection-log-panel" style={{ maxHeight: 520, overflow: "auto", marginTop: 6, fontFamily: "monospace", fontSize: 11, lineHeight: 1.4 }}>
-            {reviewItems.length === 0 ? (
-              <div style={{ color: "#475569", padding: 8 }}>暂无待复核事件</div>
-            ) : (
-              reviewItems.map((item) => (
-                <div key={item.id} style={{
-                  display: "flex", alignItems: "flex-start", gap: 6, padding: "4px 4px",
-                  borderBottom: "1px solid #1e293b", cursor: "pointer",
-                  background: selectedIds.has(item.id) ? "rgba(59,130,246,0.12)" : "transparent",
-                }}>
-                  <input type="checkbox" checked={selectedIds.has(item.id)}
-                    onChange={() => toggleSelect(item.id)}
-                    style={{ marginTop: 2, flexShrink: 0 }} />
-                  <div style={{ flex: 1, minWidth: 0 }}
-                    onClick={() => openDetail(item.id)}>
-                    <div style={{ color: "#e2e8f0", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                      {item.event_title || item.raw_title || `event #${item.event_id}`}
-                    </div>
-                    <div style={{ display: "flex", gap: 8, marginTop: 1 }}>
-                      <span style={{ color: "#22c55e", fontSize: 10 }}>
-                        {item.proposed_theme_name || "-"}
-                      </span>
-                      <span style={{ color: "#64748b", fontSize: 10 }}>
-                        {(() => { const v = parseFloat(String(item.proposed_theme_confidence ?? "")); return Number.isFinite(v) ? v.toFixed(2) : "-"; })()}
-                      </span>
-                      <span style={{ color: "#475569", fontSize: 10 }}>
-                        {(item.created_at || "").slice(0, 16).replace("T", " ")}
-                      </span>
-                    </div>
-                  </div>
-                  <div style={{ display: "flex", gap: 4, flexShrink: 0 }}>
-                    <button type="button" className="tag tag-button"
-                      style={{ fontSize: 10, padding: "1px 6px", color: "#22c55e" }}
-                      onClick={(e) => { e.stopPropagation(); handleConfirmReview(item.id); }}>确认</button>
-                    <button type="button" className="tag tag-button"
-                      style={{ fontSize: 10, padding: "1px 6px", color: "#ef4444" }}
-                      onClick={(e) => { e.stopPropagation(); handleDeleteReview(item.id); }}>删除</button>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
-        </section>
-
-        </div>{/* 右列结束 */}
-      </main>
-
-      {/* ── 复核详情 Modal ── */}
+      {/* ── 复核详情 Modal (保留原有实现) ── */}
       {detailOpen && detailItem && (
-        <div className="collection-modal-backdrop" onClick={() => { setDetailOpen(false); setDetailItem(null); }}>
-          <div className="screener-detail-modal" style={{ maxWidth: 640, maxHeight: "85vh" }}
-            onClick={(e) => e.stopPropagation()}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-              <strong style={{ color: "#e2e8f0", fontSize: 14 }}>复核详情 #{detailItem.id}</strong>
-              <button type="button" className="tag tag-button" style={{ fontSize: 11 }}
-                onClick={() => { setDetailOpen(false); setDetailItem(null); }}>✕ 关闭</button>
+        <div className="collection-modal-backdrop" onClick={closeDetail}>
+          <div className="collection-modal" style={{ border: "1px solid #334155", padding: 20, borderRadius: 12, maxWidth: 700, maxHeight: "90vh", overflow: "auto" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+              <span className="section-title">复核详情 #{detailItem.id}</span>
+              <span style={{ fontSize: 12, color: "#64748b" }}>{detailItem.review_status}</span>
             </div>
-            <div style={{ maxHeight: "65vh", overflow: "auto" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <section className="collection-section">
                 <strong>事件信息</strong>
-                <div className="collection-metric-card" style={{ marginTop: 4 }}>
-                  <div><label className="collection-field">Event ID</label><span>{detailItem.event_id}</span></div>
-                  <div><label className="collection-field">类型</label><span>{detailItem.event_type || "-"}</span></div>
-                  <div><label className="collection-field">来源</label><span>{detailItem.source_channel}</span></div>
-                  <div><label className="collection-field">创建时间</label><span>{detailItem.created_at?.slice(0, 19).replace("T", " ")}</span></div>
-                </div>
-              </section>
-              <section className="collection-section" style={{ marginTop: 8 }}>
-                <strong>标题</strong>
                 <div className="workspace-note" style={{ marginTop: 2, color: "#e2e8f0" }}>
                   {detailItem.event_title || detailItem.raw_title || "-"}
                 </div>
@@ -1082,13 +704,13 @@ export function RealtimeCollectorPage() {
                   <div><label className="collection-field">原因</label><span>{detailItem.reason || "-"}</span></div>
                   <div><label className="collection-field">状态</label><span style={{ color: detailItem.review_status === "waiting" ? "#f59e0b" : "#22c55e" }}>{detailItem.review_status}</span></div>
                   {detailItem.reviewed_by && <div><label className="collection-field">审核人</label><span>{detailItem.reviewed_by}</span></div>}
-                  {detailItem.reviewed_at && <div><label className="collection-field">审核时间</label><span>{String(detailItem.reviewed_at).slice(0, 19).replace("T", " ")}</span></div>}
+                  {detailItem.reviewed_at && <div><label className="collection-field">审核时间</label><span>{detailItem.reviewed_at}</span></div>}
                   {detailItem.review_note && <div><label className="collection-field">备注</label><span>{detailItem.review_note}</span></div>}
                 </div>
               </section>
             </div>
-            <div className="collection-action-row" style={{ marginTop: 12, display: "flex", gap: 8 }}>
-              <button type="button" className="tag tag-button tag-active"
+            <div className="collection-action-row" style={{ marginTop: 16 }}>
+              <button type="button" className="tag tag-button"
                 style={{ color: "#22c55e" }}
                 disabled={reviewBusy}
                 onClick={async () => {
