@@ -2,6 +2,7 @@ import asyncio
 import json
 import logging
 import os
+import time
 from datetime import datetime, timezone, timedelta
 from typing import Any, AsyncIterator
 from zoneinfo import ZoneInfo
@@ -1154,6 +1155,243 @@ async def orchestrator_audit(request: Request, limit: int = 50) -> list[dict]:
     """查看近期 audit log。"""
     orch = request.app.state.realtime_business_orchestrator
     return await orch.get_audit_log(limit=limit)
+
+
+# ── P4-2G: Database Health & Data Freshness Diagnostics ──
+
+
+_DB_HEALTH_WATCH_TABLES = [
+    ("raw_news", "created_at"),
+    ("structured_events", "created_at"),
+    ("event_review_queue", "created_at"),
+]
+_DB_FRESHNESS_WARN_SEC = int(os.getenv("DB_FRESHNESS_WARN_SEC", "1800"))
+_DB_FRESHNESS_BLOCK_SEC = int(os.getenv("DB_FRESHNESS_BLOCK_SEC", "7200"))
+
+
+async def _db_health_snapshot() -> dict:
+    """只读数据库运行态诊断。不允许 COUNT(*)/写入/长事务。"""
+    import asyncpg
+    from datetime import datetime as _dt, timezone as _tz, timedelta as _td
+
+    TZ_CN = _tz(_td(hours=8))
+    checked_at = _dt.now(TZ_CN).isoformat()
+    blockers: list[str] = []
+    db_state = "unknown"
+
+    write_db = os.getenv("PG_DATABASE") or os.getenv("POSTGRES_DATABASE") or "stock_data_test"
+    pg_host = os.getenv("PG_HOST", "localhost")
+    pg_port = int(os.getenv("PG_PORT", "5432"))
+    pg_user = os.getenv("PG_USERNAME", "postgres")
+    pg_pass = os.getenv("PG_PASSWORD", "")
+    same_db = True
+    read_db = write_db
+
+    # ── 1. Connection check ──
+    try:
+        conn = await asyncio.wait_for(
+            asyncpg.connect(
+                host=pg_host, port=pg_port, database=write_db,
+                user=pg_user, password=pg_pass,
+                timeout=3, command_timeout=2,
+            ),
+            timeout=3.0,
+        )
+        t0 = time.time()
+        await conn.execute("SELECT 1")
+        latency_ms = int((time.time() - t0) * 1000)
+        db_state = "ready" if latency_ms <= 100 else ("degraded" if latency_ms <= 500 else "blocked")
+        if latency_ms > 100:
+            blockers.append(f"db latency elevated: {latency_ms}ms")
+    except Exception as exc:
+        return {
+            "ok": False, "state": "blocked", "db_state": "blocked",
+            "checked_at": checked_at, "latency_ms": None,
+            "write_db": write_db, "read_db": read_db, "same_db": same_db,
+            "blockers": [f"database connect failed: {exc}"],
+            "server": {}, "tables": {},
+        }
+
+    try:
+        # ── 2. Server info ──
+        server_info: dict[str, Any] = {}
+        pool_state = "ready"
+        lock_state = "ready"
+
+        try:
+            row = await conn.fetchrow("SELECT version()")
+            server_info["version"] = row[0] if row else "?"
+        except Exception:
+            server_info["version"] = "?"
+        server_info["current_database"] = write_db
+        server_info["current_user"] = pg_user
+
+        # Connection counts
+        try:
+            row = await conn.fetchrow(
+                "SELECT count(*) AS total, count(*) FILTER (WHERE state='active') AS active, "
+                "count(*) FILTER (WHERE state='idle') AS idle, "
+                "count(*) FILTER (WHERE state='idle in transaction') AS idle_in_tx, "
+                "count(*) FILTER (WHERE wait_event IS NOT NULL) AS waiting "
+                "FROM pg_stat_activity WHERE datname=current_database()"
+            )
+            server_info["active_connections"] = row["active"] if row else 0
+            server_info["idle_connections"] = row["idle"] if row else 0
+            server_info["idle_in_transaction"] = row["idle_in_tx"] if row else 0
+            server_info["waiting_queries"] = row["waiting"] if row else 0
+            if row and row["idle_in_tx"] and row["idle_in_tx"] > 0:
+                pool_state = "degraded"
+                blockers.append(f"idle in transaction: {row['idle_in_tx']}")
+            if row and row["waiting"] and row["waiting"] > 0:
+                lock_state = "degraded"
+                blockers.append(f"waiting queries: {row['waiting']}")
+        except Exception as exc:
+            blockers.append(f"pg_stat_activity failed: {exc}")
+
+        # Max connections
+        try:
+            row = await conn.fetchrow("SHOW max_connections")
+            server_info["max_connections"] = int(row[0]) if row else 0
+        except Exception:
+            server_info["max_connections"] = 0
+
+        # ── 3. Lock waits ──
+        try:
+            row = await conn.fetchrow("SELECT count(*) AS n FROM pg_locks WHERE NOT granted")
+            waiting_locks = row["n"] if row else 0
+            server_info["waiting_locks"] = waiting_locks
+            if waiting_locks >= 10:
+                lock_state = "blocked"
+                blockers.append(f"lock waits critical: {waiting_locks}")
+            elif waiting_locks > 0:
+                lock_state = "degraded"
+                blockers.append(f"lock waits: {waiting_locks}")
+        except Exception as exc:
+            blockers.append(f"pg_locks check failed: {exc}")
+            server_info["waiting_locks"] = -1
+
+        # ── 4. Table checks ──
+        tables: dict[str, dict] = {}
+        schema_state = "ready"
+        freshness_state = "ready"
+
+        for table_name, time_col in _DB_HEALTH_WATCH_TABLES:
+            t_state = "ready"
+            t_blockers: list[str] = []
+            try:
+                exists_row = await conn.fetchrow(
+                    "SELECT to_regclass($1)::text", f"public.{table_name}"
+                )
+                exists = bool(exists_row and exists_row[0])
+                if not exists:
+                    schema_state = "degraded"
+                    t_state = "blocked"
+                    t_blockers.append(f"table {table_name} does not exist")
+                    tables[table_name] = {"exists": False, "state": t_state, "blockers": t_blockers}
+                    continue
+
+                # Row estimate
+                try:
+                    est = await conn.fetchrow(
+                        "SELECT reltuples::bigint FROM pg_class WHERE oid=$1::regclass",
+                        f"public.{table_name}",
+                    )
+                    estimated_rows = est[0] if est else 0
+                except Exception:
+                    estimated_rows = -1
+
+                # Latest row timestamp
+                latest_at = None
+                age_sec = None
+                try:
+                    ts_row = await conn.fetchrow(
+                        f'SELECT "{time_col}" FROM "{table_name}" ORDER BY "{time_col}" DESC LIMIT 1'
+                    )
+                    if ts_row and ts_row[0]:
+                        latest_at = ts_row[0].isoformat() if hasattr(ts_row[0], "isoformat") else str(ts_row[0])
+                        age_sec = int((_dt.now(TZ_CN) - ts_row[0]).total_seconds())
+                except Exception:
+                    pass
+
+                if age_sec is not None:
+                    if age_sec > _DB_FRESHNESS_BLOCK_SEC:
+                        t_state = "blocked"
+                        t_blockers.append(f"data stale: {age_sec}s old (block>{_DB_FRESHNESS_BLOCK_SEC}s)")
+                        if freshness_state != "blocked":
+                            freshness_state = "degraded"
+                    elif age_sec > _DB_FRESHNESS_WARN_SEC:
+                        t_state = "degraded"
+                        t_blockers.append(f"data stale: {age_sec}s old (warn>{_DB_FRESHNESS_WARN_SEC}s)")
+                        if freshness_state == "ready":
+                            freshness_state = "degraded"
+
+                tables[table_name] = {
+                    "exists": True,
+                    "estimated_rows": estimated_rows,
+                    "latest_at": latest_at,
+                    "age_sec": age_sec,
+                    "state": t_state,
+                    "blockers": t_blockers,
+                }
+            except Exception as exc:
+                tables[table_name] = {"exists": False, "state": "blocked", "blockers": [str(exc)]}
+                if schema_state == "ready":
+                    schema_state = "degraded"
+
+        # Aggregate overall
+        overall = db_state
+        for s in [pool_state, schema_state, freshness_state, lock_state]:
+            if s == "blocked":
+                overall = "blocked"
+                break
+            elif s == "degraded" and overall != "blocked":
+                overall = "degraded"
+
+        return {
+            "ok": True,
+            "state": overall,
+            "db_state": db_state,
+            "pool_state": pool_state,
+            "schema_state": schema_state,
+            "freshness_state": freshness_state,
+            "lock_state": lock_state,
+            "checked_at": checked_at,
+            "latency_ms": latency_ms,
+            "write_db": write_db,
+            "read_db": read_db,
+            "same_db": same_db,
+            "server": server_info,
+            "tables": tables,
+            "blockers": blockers,
+        }
+    finally:
+        try:
+            await conn.close()
+        except Exception:
+            pass
+
+
+@app.get("/api/v2/runtime/db-health")
+async def runtime_db_health():
+    """数据库运行态健康诊断。
+
+    只读，短超时，不 COUNT(*)，不写数据。"""
+    try:
+        async with asyncio.timeout(2.0):
+            return await _db_health_snapshot()
+    except Exception as exc:
+        return {
+            "ok": False, "state": "blocked", "db_state": "blocked",
+            "checked_at": "", "latency_ms": None,
+            "write_db": os.getenv("PG_DATABASE", "stock_data_test"),
+            "read_db": os.getenv("PG_DATABASE", "stock_data_test"),
+            "same_db": True,
+            "blockers": [f"db health timeout: {exc}"],
+            "server": {}, "tables": {},
+        }
+
+
+# ── P4-2G end ──
 
 
 @router.get("/intel/feed")
