@@ -15,7 +15,7 @@ import requests
 
 NOTION_API_BASE = "https://api.notion.com/v1"
 NOTION_VERSION = "2022-06-28"
-DEFAULT_TRADING_PLANS_DATABASE_ID = "36f7bab0-ee1d-815f-9af6-da82dae8051c"
+DEFAULT_TRADING_PLANS_DATABASE_ID = ""
 
 
 def normalize_notion_id(value: str) -> str:
@@ -41,6 +41,8 @@ def notion_headers(token: str) -> dict[str, str]:
 
 
 def next_weekday(value: date) -> date:
+    # First version only skips weekends. Pass --plan-date explicitly for A-share
+    # holidays until this script is wired to the system trading calendar.
     candidate = value + timedelta(days=1)
     while candidate.weekday() >= 5:
         candidate += timedelta(days=1)
@@ -195,7 +197,7 @@ def main() -> int:
     parser.add_argument(
         "--plan-date",
         default="",
-        help="Plan date, YYYY-MM-DD. Default: next weekday after trade-date.",
+        help="Plan date, YYYY-MM-DD. Default: next weekday after trade-date; A-share holidays are not skipped yet.",
     )
     parser.add_argument(
         "--title",
