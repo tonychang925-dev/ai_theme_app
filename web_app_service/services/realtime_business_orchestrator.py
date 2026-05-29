@@ -216,7 +216,9 @@ class RealtimeBusinessOrchestrator:
         self._tick_running = True
         t0 = _time.monotonic()
         try:
-            return await self._tick_impl(dry_run=dry_run, now_override=now_override)
+            status = await self._tick_impl(dry_run=dry_run, now_override=now_override)
+            status.tick_duration_ms = int((_time.monotonic() - t0) * 1000)
+            return status
         except asyncio.CancelledError:
             raise
         except Exception as exc:
@@ -242,8 +244,8 @@ class RealtimeBusinessOrchestrator:
         is_trade_day = _is_trade_day(now)
         hhmm = now.hour * 100 + now.minute
 
-        # Determine if we should execute real actions
-        execute = (not dry_run) and self.actions_enabled and is_trade_day
+        # Double gate: both enabled AND actions_enabled required for real execution
+        execute = self.enabled and self.actions_enabled and (not dry_run) and is_trade_day
 
         desired_map = _desired_states(phase, is_trade_day)
         _any_wanted = any(v == "wanted" for v in desired_map.values())
@@ -676,6 +678,20 @@ def _compute_planned_actions(
             continue
         if svc.observed_state in ("running", "ready"):
             continue
+
+        # cdp_token special case: CDP service not running IS a valid reason to start it.
+        # Downstream will still be blocked if token is not ready after CDP starts.
+        if svc_name == "cdp_token":
+            service_running = bool(svc.evidence.get("service_running"))
+            if not service_running:
+                actions.append({
+                    "service": "cdp_token",
+                    "action": "would_start",
+                    "reason": f"{phase} window, CDP service not running",
+                    "owner": svc.owner,
+                })
+                continue
+
         dep_blockers = _check_deps(svc_name, services)
         if dep_blockers:
             continue

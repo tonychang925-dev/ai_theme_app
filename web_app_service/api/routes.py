@@ -1026,8 +1026,12 @@ async def orchestrator_status(request: Request, now: str | None = Query(default=
              e.g. ?now=2026-05-29T09:11:00+08:00 or ?now=09:11
     """
     orch = request.app.state.realtime_business_orchestrator
-    status = await orch.get_status(now_override=now)
-    return _orchestrator_status_to_dict(status)
+    try:
+        async with asyncio.timeout(3.0):
+            status = await orch.get_status(now_override=now)
+            return _orchestrator_status_to_dict(status)
+    except Exception as exc:
+        return _orchestrator_fallback(f"status timeout: {exc}")
 
 
 @router.post("/realtime/orchestrator/tick")
@@ -1043,8 +1047,36 @@ async def orchestrator_tick(request: Request, payload: dict | None = None) -> di
     dry_run = bool(payload.get("dry_run", True))
     now_override = payload.get("now_override")
     orch = request.app.state.realtime_business_orchestrator
-    status = await orch.tick(dry_run=dry_run, now_override=now_override)
-    return _orchestrator_status_to_dict(status)
+    try:
+        async with asyncio.timeout(3.0):
+            status = await orch.tick(dry_run=dry_run, now_override=now_override)
+            return _orchestrator_status_to_dict(status)
+    except Exception as exc:
+        return _orchestrator_fallback(f"tick timeout: {exc}")
+
+
+def _orchestrator_fallback(error: str) -> dict:
+    """Return a safe fallback when orchestrator is unreachable."""
+    return {
+        "enabled": False,
+        "actions_enabled": False,
+        "dry_run": True,
+        "dry_run_forced": False,
+        "dry_run_forced_reason": "",
+        "now_override": None,
+        "trade_date": "",
+        "phase": "orchestrator_unavailable",
+        "phase_label": "编排器不可用",
+        "now_cn": "",
+        "tick_seq": 0,
+        "is_trade_day": False,
+        "services": {},
+        "planned_actions": [],
+        "executed_actions": [],
+        "global_blockers": [error],
+        "tick_duration_ms": 0,
+        "error": error,
+    }
 
 
 def _orchestrator_status_to_dict(status) -> dict:
