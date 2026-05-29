@@ -44,17 +44,22 @@ export default function ServiceStatusBar(props: Props) {
   }
 
   // 实时采集
+  // 实时采集：需 running=true 且有实际 PID 才确认运行中
   let rtBadge: "success" | "warning" | "error" | "default" = "default";
   let rtLabel = "未启动";
-  if (stackStatus?.running) { rtBadge = "success"; rtLabel = "运行中"; }
+  const rtHasPid = !!(stackStatus?.raw_news_pid || stackStatus?.decision_pid);
+  if (stackStatus?.running && rtHasPid) { rtBadge = "success"; rtLabel = "运行中"; }
+  else if (stackStatus?.running && !rtHasPid) { rtBadge = "warning"; rtLabel = "未确认"; }
   if (stackStatus?.last_error) { rtBadge = "error"; rtLabel = "异常"; }
 
-  // DOM
+  // DOM：需 collector_running + cdp_connected + 最近有采集才确认采集中
   let domBadge: "success" | "warning" | "error" | "default" = "default";
   let domLabel = "未启动";
-  const domRunning = jyhfStatus?.collector_running && jyhfStatus?.cdp_connected;
-  if (domRunning) { domBadge = "success"; domLabel = "正常"; }
-  else if (jyhfStatus?.service_running) { domBadge = "warning"; domLabel = "采集中"; }
+  const domActive = jyhfStatus?.collector_running && jyhfStatus?.cdp_connected;
+  const domHasData = !!(jyhfStatus?.last_capture_at || jyhfStatus?.capture_count_total);
+  if (domActive && domHasData) { domBadge = "success"; domLabel = "采集中"; }
+  else if (domActive && !domHasData) { domBadge = "warning"; domLabel = "等待数据"; }
+  else if (jyhfStatus?.service_running) { domBadge = "warning"; domLabel = "服务运行"; }
   if (jyhfStatus?.last_error) { domBadge = "error"; domLabel = "异常"; }
 
   // 竞价
