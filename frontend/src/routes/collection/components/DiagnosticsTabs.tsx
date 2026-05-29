@@ -118,7 +118,7 @@ export default function DiagnosticsTabs(props: Props) {
             rowKey="id"
             size="small"
             pagination={false}
-            scroll={{ y: 600 }}
+            scroll={{ y: "calc(100vh - 400px)" }}
             rowSelection={{
               selectedRowKeys: Array.from(selectedIds),
               onChange: (_keys, rows) => {
