@@ -795,12 +795,52 @@ export function RealtimeCollectorPage() {
                   )}
                 </span>
               ),
-              children: (
+              children: (() => {
+                  const pendingCount = stackStatus?.pending_count ?? 0;
+                  const rqCountFromStack = stackStatus?.review_queue_count ?? 0;
+                  const hasPending = pendingCount > 0;
+                  const hasReview = reviewTotal > 0;
+                  return (
                 <div>
+                  {/* 概览卡片 */}
+                  <div style={{
+                    display: "flex", gap: 12, marginBottom: 10, flexWrap: "wrap",
+                  }}>
+                    <div style={{
+                      flex: 1, minWidth: 140, padding: "10px 14px",
+                      background: hasPending ? "rgba(245,158,11,0.08)" : "rgba(255,255,255,0.03)",
+                      borderRadius: 8, border: hasPending ? "1px solid rgba(245,158,11,0.25)" : "1px solid rgba(255,255,255,0.06)",
+                    }}>
+                      <div style={{ fontSize: 11, color: "#64748b", marginBottom: 2 }}>棚顶待导入 (Redis stream:events:pending)</div>
+                      <div style={{ fontSize: 24, fontWeight: 700, color: hasPending ? "#f59e0b" : "#e2e8f0" }}>
+                        {stackStatus ? pendingCount : "?"}
+                      </div>
+                    </div>
+                    <div style={{
+                      flex: 1, minWidth: 140, padding: "10px 14px",
+                      background: hasReview ? "rgba(59,130,246,0.08)" : "rgba(255,255,255,0.03)",
+                      borderRadius: 8, border: hasReview ? "1px solid rgba(59,130,246,0.25)" : "1px solid rgba(255,255,255,0.06)",
+                    }}>
+                      <div style={{ fontSize: 11, color: "#64748b", marginBottom: 2 }}>待复核 (DB waiting)</div>
+                      <div style={{ fontSize: 24, fontWeight: 700, color: hasReview ? "#3b82f6" : "#e2e8f0" }}>
+                        {reviewTotal}{rqCountFromStack !== reviewTotal ? ` / ${rqCountFromStack}` : ""}
+                      </div>
+                    </div>
+                  </div>
+
                   <Space style={{ marginBottom: 8 }}>
                     <Button size="small" onClick={refreshReviewQueue} loading={reviewBusy}>刷新</Button>
-                    <Button size="small" onClick={handleImportPending} disabled={reviewBusy}>导入 Pending</Button>
-                    <Button size="small" onClick={handleClearPending} disabled={reviewBusy}>清空 Pending</Button>
+                    <Button
+                      size="small"
+                      type={hasPending ? "primary" : "default"}
+                      onClick={handleImportPending}
+                      disabled={reviewBusy}
+                    >
+                      导入 Pending{hasPending ? ` (${pendingCount})` : ""}
+                    </Button>
+                    <Button size="small" onClick={handleClearPending} disabled={reviewBusy || !hasPending}>
+                      清空 Pending
+                    </Button>
                     {selectedIds.size > 0 && (
                       <Button size="small" danger onClick={handleBatchDelete}>删除选中 ({selectedIds.size})</Button>
                     )}
@@ -808,12 +848,33 @@ export function RealtimeCollectorPage() {
                       {selectedIds.size === reviewItems.length && reviewItems.length > 0 ? "取消全选" : "全选"}
                     </Button>
                   </Space>
+
+                  {!hasReview && hasPending && (
+                    <div style={{
+                      padding: "8px 12px", marginBottom: 8, borderRadius: 6,
+                      background: "rgba(245,158,11,0.06)", border: "1px solid rgba(245,158,11,0.2)",
+                      fontSize: 12, color: "#f59e0b",
+                    }}>
+                      棚顶有 <b>{pendingCount}</b> 条事件等待导入。点击「导入 Pending」将事件写入待复核队列。
+                    </div>
+                  )}
+
+                  {!hasPending && !hasReview && (
+                    <div style={{
+                      padding: "8px 12px", marginBottom: 8, borderRadius: 6,
+                      background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)",
+                      fontSize: 12, color: "#64748b",
+                    }}>
+                      暂无待复核事件。DecisionExecutor 产出弱信号事件时，会先写入 Redis pending 流，再导入到此队列。
+                    </div>
+                  )}
+
                   <Table
                     dataSource={reviewItems}
                     rowKey="id"
                     size="small"
                     pagination={false}
-                    scroll={{ y: 400 }}
+                    scroll={{ y: 350 }}
                     rowSelection={{
                       selectedRowKeys: Array.from(selectedIds),
                       onChange: () => {},
@@ -849,7 +910,9 @@ export function RealtimeCollectorPage() {
                     locale={{ emptyText: "暂无待复核事件" }}
                   />
                 </div>
-              ),
+                  );
+                })(),
+              },
             },
             {
               key: "health",

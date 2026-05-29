@@ -4579,6 +4579,7 @@ _REDIS_HEALTH_STREAM_KEYS = [
     os.getenv("RH_STREAM_KEY_EVENTS_STRUCTURED", "stream:events:structured"),
     os.getenv("RH_STREAM_KEY_EVENTS_DECISION", "stream:events:decision"),
     os.getenv("RH_STREAM_KEY_DEAD_LETTER", "stream:dead:letter"),
+    os.getenv("RH_STREAM_KEY_EVENTS_PENDING", "stream:events:pending"),
 ]
 
 # In-memory DLQ length snapshots for growth trend (keyed by stream_key)
