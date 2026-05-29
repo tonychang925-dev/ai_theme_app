@@ -91,57 +91,60 @@ export default function OrchestratorStatusPanel({ status, loading, error, onRefr
     .filter(Boolean) as OrchestratorServiceState[];
 
   return (
-    <div style={{ marginTop: 12 }}>
-      {/* Header */}
-      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8, flexWrap: "wrap" }}>
-        <span style={{ fontWeight: 700, fontSize: 15, color: "#e2e8f0" }}>自动编排</span>
-        <Tag color={status.enabled ? "green" : "default"}>
-          {status.enabled ? "诊断已启用" : "已禁用"}
-        </Tag>
-        {status.enabled && (
-          <Tag color={status.actions_enabled ? "orange" : "default"}>
-            {status.actions_enabled ? "动作: 允许执行" : "动作: 只读"}
+    <Card
+      size="small"
+      title={
+        <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+          <span style={{ fontWeight: 700, fontSize: 14, color: "#e2e8f0" }}>自动编排</span>
+          <Tag color={status.enabled ? "green" : "default"}>
+            {status.enabled ? "诊断已启用" : "已禁用"}
           </Tag>
-        )}
-        <Tag color="blue">{status.phase_label}</Tag>
-        {status.dry_run && <Tag>dry_run</Tag>}
-        <span style={{ fontSize: 11, color: "#64748b", marginLeft: "auto" }}>
-          seq={status.tick_seq}
-          {status.tick_duration_ms ? ` ${status.tick_duration_ms}ms` : ""}
-          {status.now_override ? ` sim:${status.now_override}` : ""}
-          {!status.is_trade_day && " · 非交易日"}
-        </span>
-        <button
-          style={{
-            padding: "2px 10px", border: "1px solid rgba(255,255,255,0.12)",
-            borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#94a3b8",
-            cursor: "pointer", fontSize: 12,
-          }}
-          onClick={onRefresh}
-          disabled={loading}
-        >
-          {loading ? "刷新中..." : "刷新"}
-        </button>
-      </div>
-
+          {status.enabled && (
+            <Tag color={status.actions_enabled ? "orange" : "default"}>
+              {status.actions_enabled ? "动作: 允许" : "动作: 只读"}
+            </Tag>
+          )}
+          <Tag color="blue" style={{ marginLeft: 4 }}>{status.phase_label}</Tag>
+          <span style={{ fontSize: 10, color: "#64748b", marginLeft: "auto" }}>
+            seq={status.tick_seq}{status.tick_duration_ms ? ` ${status.tick_duration_ms}ms` : ""}
+            {status.now_override ? ` sim:${status.now_override}` : ""}
+            {!status.is_trade_day && " · 非交易日"}
+          </span>
+          <button
+            style={{
+              padding: "1px 8px", border: "1px solid rgba(255,255,255,0.12)",
+              borderRadius: 4, background: "rgba(255,255,255,0.06)", color: "#94a3b8",
+              cursor: "pointer", fontSize: 11,
+            }}
+            onClick={onRefresh}
+            disabled={loading}
+          >
+            {loading ? "..." : "刷新"}
+          </button>
+        </div>
+      }
+      style={{
+        background: "rgba(255,255,255,0.03)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        borderRadius: 8,
+      }}
+    >
       {/* Executed Actions */}
       {status.executed_actions && status.executed_actions.length > 0 && (
-        <Card size="small" style={{ marginBottom: 8 }} title={
-          <span style={{ color: "#22c55e" }}>已执行动作 ({status.executed_actions.length})</span>
-        }>
+        <div style={{ marginBottom: 8, padding: "4px 8px", background: "rgba(34,197,94,0.06)", borderRadius: 4 }}>
           {status.executed_actions.map((a: any, i: number) => (
-            <div key={i} style={{ fontSize: 11, marginBottom: 2, color: "#e2e8f0" }}>
-              <Tag color={a.result ? "green" : "red"}>{a.result ? "ok" : "fail"}</Tag>
-              <span>{a.service}</span>
-              {a.duration_ms != null && <span style={{ color: "#64748b", marginLeft: 8 }}>{a.duration_ms}ms</span>}
-              {a.skipped && <span style={{ color: "#f59e0b", marginLeft: 8 }}>{a.skipped}</span>}
-            </div>
+            <span key={i} style={{ fontSize: 11, marginRight: 12, color: "#e2e8f0" }}>
+              <Tag color={a.result ? "green" : "red"} style={{ fontSize: 10 }}>{a.result ? "ok" : "fail"}</Tag>
+              {a.service}
+              {a.duration_ms != null && <span style={{ color: "#64748b", marginLeft: 4 }}>{a.duration_ms}ms</span>}
+              {a.skipped && <span style={{ color: "#f59e0b", marginLeft: 4 }}>{a.skipped}</span>}
+            </span>
           ))}
-        </Card>
+        </div>
       )}
 
       {/* Service cards */}
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
         {svcList.map((svc) => (
           <ServiceCard key={svc.name} svc={svc} />
         ))}
@@ -149,34 +152,38 @@ export default function OrchestratorStatusPanel({ status, loading, error, onRefr
 
       {/* Planned Actions */}
       {status.planned_actions.length > 0 && (
-        <Card size="small" style={{ marginTop: 8 }} title="Planned Actions">
+        <div style={{
+          marginTop: 8, padding: "4px 8px",
+          background: "rgba(22,119,255,0.06)", borderRadius: 4,
+        }}>
           {status.planned_actions.map((a, i) => (
-            <div key={i} style={{ fontSize: 12, marginBottom: 4 }}>
-              <Tag color="blue">{a.action}</Tag>
+            <div key={i} style={{ fontSize: 11, marginBottom: 2 }}>
+              <Tag color="blue" style={{ fontSize: 10 }}>{a.action}</Tag>
               <span style={{ color: "#e2e8f0" }}>{serviceName(a.service)}</span>
-              <span style={{ color: "#64748b", marginLeft: 8 }}>{a.reason}</span>
+              <span style={{ color: "#64748b", marginLeft: 6 }}>{a.reason}</span>
             </div>
           ))}
-        </Card>
+        </div>
       )}
 
       {/* Global Blockers */}
       {status.global_blockers.length > 0 && (
-        <Card size="small" style={{ marginTop: 8 }} title={
-          <span style={{ color: "#f59e0b" }}>Blockers ({status.global_blockers.length})</span>
-        }>
-          {status.global_blockers.slice(0, 10).map((b, i) => (
-            <div key={i} style={{ fontSize: 11, color: "#ef4444", lineHeight: 1.5 }}>
+        <div style={{
+          marginTop: 6, padding: "4px 8px",
+          background: "rgba(245,158,11,0.05)", borderRadius: 4,
+        }}>
+          {status.global_blockers.slice(0, 6).map((b, i) => (
+            <div key={i} style={{ fontSize: 10, color: "#ef4444", lineHeight: 1.5 }}>
               {b}
             </div>
           ))}
-          {status.global_blockers.length > 10 && (
-            <div style={{ fontSize: 11, color: "#64748b" }}>
-              +{status.global_blockers.length - 10} more...
+          {status.global_blockers.length > 6 && (
+            <div style={{ fontSize: 10, color: "#64748b" }}>
+              +{status.global_blockers.length - 6} more...
             </div>
           )}
-        </Card>
+        </div>
       )}
-    </div>
+    </Card>
   );
 }
