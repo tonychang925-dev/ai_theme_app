@@ -1161,9 +1161,9 @@ async def orchestrator_audit(request: Request, limit: int = 50) -> list[dict]:
 
 
 _DB_HEALTH_WATCH_TABLES = [
-    ("raw_news", "created_at"),
-    ("structured_events", "created_at"),
+    ("news_raw", "created_at"),
     ("event_review_queue", "created_at"),
+    ("jyhf_market_raw_capture", "captured_at"),
 ]
 _DB_FRESHNESS_WARN_SEC = int(os.getenv("DB_FRESHNESS_WARN_SEC", "1800"))
 _DB_FRESHNESS_BLOCK_SEC = int(os.getenv("DB_FRESHNESS_BLOCK_SEC", "7200"))
