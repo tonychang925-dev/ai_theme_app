@@ -98,6 +98,105 @@ class RealtimeStackManager:
         ok = ok_sps and not any(stderr)
         return self._cmd_result(ok, "\n".join(filter(None, stdout)) + "\n", "\n".join(filter(None, stderr)), ["web_app_service:realtime_stack", "stop"], 0 if ok else 1)
 
+    async def stop_pipeline(self) -> dict[str, Any]:
+        """直接停止实时采集子进程（读 pidfile，不依赖 SPS）。
+
+        实时子进程已通过 start_new_session=True 从 SPS 剥离，
+        SPS 重启/停止不会带着它们一起退出。此方法直接根据 runtime
+        pidfiles 找到进程并发送 SIGTERM/SIGKILL。
+        """
+        import json as _json
+
+        runtime_dir = self._log_dir / "runtime"
+        stack_json = runtime_dir / "realtime_stack.json"
+        killed: list[str] = []
+        errors: list[str] = []
+
+        # 读取 run_id
+        run_id = ""
+        if stack_json.exists():
+            try:
+                meta = _json.loads(stack_json.read_text(encoding="utf-8"))
+                run_id = str(meta.get("run_id") or "")
+            except Exception:
+                pass
+
+        if not run_id:
+            return {"ok": True, "status": "no_pidfile", "killed": [], "message": "没有找到运行中的实时采集 pidfile"}
+
+        # 所有可能的子进程前缀
+        prefixes = [
+            "raw_news", "decision", "akshare", "rebuild",
+            "intel_producer", "intel_collection", "db_collector",
+        ]
+
+        for prefix in prefixes:
+            pidfile = runtime_dir / f"{prefix}_{run_id}.pid"
+            pid = None
+            try:
+                pid = int(pidfile.read_text().strip())
+            except Exception:
+                continue
+
+            if not _pid_alive(pid):
+                # 清理僵尸 pidfile
+                try:
+                    pidfile.unlink()
+                except OSError:
+                    pass
+                continue
+
+            # SIGTERM
+            try:
+                os.kill(pid, signal.SIGTERM)
+            except (ProcessLookupError, PermissionError) as exc:
+                errors.append(f"{prefix}(pid={pid}): {exc}")
+                continue
+
+            killed.append(f"{prefix}(pid={pid})")
+
+        # 等 1 秒后 SIGKILL 还活着的
+        await asyncio.sleep(1)
+        for prefix in prefixes:
+            pidfile = runtime_dir / f"{prefix}_{run_id}.pid"
+            try:
+                pid = int(pidfile.read_text().strip())
+            except Exception:
+                continue
+
+            if _pid_alive(pid):
+                try:
+                    os.kill(pid, signal.SIGKILL)
+                except (ProcessLookupError, PermissionError):
+                    pass
+
+            # 清理 pidfile
+            try:
+                pidfile.unlink()
+            except OSError:
+                pass
+
+        # 标记 stack 已停止
+        if stack_json.exists():
+            try:
+                meta = _json.loads(stack_json.read_text(encoding="utf-8")) if stack_json.exists() else {}
+            except Exception:
+                meta = {}
+            meta["stopped_at"] = time.strftime("%Y-%m-%dT%H:%M:%S", time.localtime())
+            meta["stopped_by"] = "web_app_service"
+            try:
+                stack_json.write_text(_json.dumps(meta, ensure_ascii=False, indent=2))
+            except OSError:
+                pass
+
+        return {
+            "ok": True,
+            "status": "stopped",
+            "killed": killed,
+            "errors": errors,
+            "run_id": run_id,
+        }
+
     async def logs(self, *, lines: int = 200, max_age_minutes: int = 180) -> dict[str, Any]:
         lines = max(20, min(int(lines), 2000))
         max_age_minutes = max(10, min(int(max_age_minutes), 1440))
@@ -315,3 +414,12 @@ class RealtimeStackManager:
             "stderr": stderr,
             "command": command,
         }
+
+
+def _pid_alive(pid: int) -> bool:
+    """检查进程是否存活。"""
+    try:
+        os.kill(pid, 0)
+        return True
+    except (ProcessLookupError, PermissionError):
+        return False

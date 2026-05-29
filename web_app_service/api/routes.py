@@ -930,13 +930,14 @@ async def realtime_new_chain_start() -> dict:
 
 
 @router.post("/realtime/new-chain/stop")
-async def realtime_new_chain_stop() -> dict:
-    data = await _proxy_stock_processing_request_json(
-        "GET",
-        "/api/v1/realtime/stop",
-        timeout=30.0,
-    )
-    return data if isinstance(data, dict) else {"ok": False, "status": "invalid_response"}
+async def realtime_new_chain_stop(request: Request) -> dict:
+    """直接通过 pidfile 停止实时采集子进程，不依赖 SPS。
+
+    实时子进程已从 SPS 剥离（start_new_session=True），
+    SPS 不可达时仍可通过 pidfile 发送 SIGTERM/SIGKILL。
+    """
+    manager = request.app.state.realtime_stack_manager
+    return await manager.stop_pipeline()
 
 
 @router.get("/realtime/collector/status")
