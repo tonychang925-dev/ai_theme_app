@@ -65,9 +65,37 @@ export function RealtimeCollectorPage() {
   const [w2sFilter, setW2sFilter] = useState<"all" | "important" | "observe">("important");
   const [w2sAlertsEnabled, setW2sAlertsEnabled] = useState(true);
   const w2sEsRef = useRef<EventSource | null>(null);
+  // ── 操作日志 ──
   const [output, setOutput] = useState<string[]>([]);
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const initializedRef = useRef(false);
+
+  // ── 生命周期日志去重：只在 state/pid/source 变化时写入 ──
+  const lastRealtimeSigRef = useRef<string>("");
+  const lastJyhfSigRef = useRef<string>("");
+
+  function buildRealtimeSig(nc: Record<string, unknown> | null | undefined): string {
+    if (!nc) return "unknown";
+    const verified = nc.running_verified ? "running" : "stopped";
+    return [
+      verified,
+      nc.raw_news_pid || "-",
+      nc.decision_pid || "-",
+      nc.db_collector_pid || "-",
+      nc.status_source || "-",
+    ].join("|");
+  }
+
+  function buildJyhfSig(cdp: Record<string, unknown> | null | undefined): string {
+    if (!cdp) return "unknown";
+    return [
+      cdp.collector_running ? "1" : "0",
+      cdp.cdp_connected ? "1" : "0",
+      cdp.app_running ? "1" : "0",
+      cdp.service_running ? "1" : "0",
+      cdp.current_tab || "-",
+    ].join("|");
+  }
 
   // P4-1A: SSE 连接状态（供 ServiceStatusBar 显示）
   const [klineSseState, setKlineSseState] = useState<SseConnState>("connecting");
@@ -103,44 +131,46 @@ export function RealtimeCollectorPage() {
     try {
       const nc = bundle.new_chain as Record<string, unknown>;
       if (nc && typeof nc.running !== 'undefined') {
-        // 只根据 SPS live-PID-verified 状态判断：raw_news_pid || decision_pid
         const runningVerified = Boolean(nc.running_verified);
         const effectiveRunning = Boolean(nc.raw_news_pid || nc.decision_pid);
         const normalizedNc = { ...nc, running: effectiveRunning } as unknown as NewChainRealtimeStatus;
         setStackStatus(normalizedNc);
         setRunning(effectiveRunning ? "up" : "down");
-        const streams = (nc.redis_streams as Record<string, {length: number}> | undefined) || {};
-        const rawLen = streams["stream:news:raw"]?.length ?? 0;
-        const structLen = streams["stream:events:structured"]?.length ?? 0;
-        const decLen = streams["stream:events:decision"]?.length ?? 0;
-        const qwenOk = nc.qwen_dedup_ready ? "Qwen✅" : "Qwen⚠️";
-        const rawPid = nc.raw_news_pid ?? "-";
-        const decPid = nc.decision_pid ?? "-";
-        const dbPid = nc.db_collector_pid ?? "-";
-        const stateLabel = effectiveRunning ? (runningVerified ? "running" : "degraded") : "stopped";
-        const sourceLabel = nc.status_source || "?";
-        append(
-          `[采集] state=${stateLabel} source=${sourceLabel} ` +
-          `raw_pid=${rawPid} dec_pid=${decPid} db_pid=${dbPid} ${qwenOk} ` +
-          `raw_len=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
-          `struct=${structLen > 999 ? Math.round(structLen/1000) + "k" : structLen} ` +
-          `dec=${decLen > 999 ? Math.round(decLen/1000) + "k" : decLen} ` +
-          `pending=${nc.pending_count} dl=${nc.dead_letter_count} ` +
-          `LLM过滤=${nc.prefilter_skipped ?? 0} Feed通过=${nc.news_published_total ?? 0}` +
-          (rawLen > 5000 ? " ⚠️积压" : "")
-        );
+
+        // 生命周期日志：只写一次，不每 8s 刷屏
+        const sig = buildRealtimeSig(nc);
+        if (sig !== lastRealtimeSigRef.current) {
+          const stateLabel = effectiveRunning ? (runningVerified ? "running" : "degraded") : "stopped";
+          const sourceLabel = nc.status_source || "?";
+          const streams = (nc.redis_streams as Record<string, {length: number}> | undefined) || {};
+          const rawLen = streams["stream:news:raw"]?.length ?? 0;
+          const rawPid = nc.raw_news_pid ?? "-";
+          const decPid = nc.decision_pid ?? "-";
+          const dbPid = nc.db_collector_pid ?? "-";
+          append(
+            `[生命周期] realtime=${stateLabel} source=${sourceLabel} ` +
+            `raw_pid=${rawPid} dec_pid=${decPid} db_pid=${dbPid} ` +
+            `redis_raw=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
+            `pending=${nc.pending_count} dl=${nc.dead_letter_count}`
+          );
+          lastRealtimeSigRef.current = sig;
+        }
       }
     } catch (err) {
       append(`新链状态解析失败：${err instanceof Error ? err.message : String(err)}`);
     }
 
-    // JYHF CDP status
+    // JYHF CDP status — 也只写变化时的诊断日志
     try {
       const cdp = bundle.jyhf_cdp as Record<string, unknown>;
       if (cdp && typeof cdp === 'object') {
         setJyhfStatus(cdp as unknown as JyhfCdpCollectorStatus);
         setJyhfError(null);
-        append(`[诊断] cr=${cdp.collector_running} cdc=${cdp.cdp_connected} app=${cdp.app_running} owner=${cdp.service_owner} sr=${cdp.service_running} tab=${cdp.current_tab || '-'} cap=${cdp.last_capture_at || '-'}`);
+        const sig = buildJyhfSig(cdp);
+        if (sig !== lastJyhfSigRef.current) {
+          append(`[诊断] cr=${cdp.collector_running} cdc=${cdp.cdp_connected} app=${cdp.app_running} owner=${cdp.service_owner} sr=${cdp.service_running} tab=${cdp.current_tab || '-'}`);
+          lastJyhfSigRef.current = sig;
+        }
       }
     } catch (err) {
       setJyhfError(err instanceof Error ? err.message : "JYHF-CDP 服务未连接");
@@ -248,11 +278,10 @@ export function RealtimeCollectorPage() {
 
   async function handleStart() {
     try {
-      append("🖱️ 启动实时采集按钮已触发");
       setStartBusy(true);
-      append("[实时采集] 请求 BFF 启动/确认 SPS + realtime pipeline...");
+      append("[操作] 启动实时采集 — 请求 BFF → SPS...");
       const result = await startRealtimeCollector({});
-      append(`[实时采集] ok=${result.ok} rc=${result.return_code}`);
+      append(`[操作] start → ok=${result.ok} rc=${result.return_code}`);
       if (result.stdout?.trim()) append(result.stdout.trim());
       if (result.stderr?.trim()) append(`stderr: ${result.stderr.trim()}`);
       await new Promise((r) => setTimeout(r, 5000));
@@ -266,10 +295,10 @@ export function RealtimeCollectorPage() {
 
   async function handleStop() {
     setStopBusy(true);
-    append("[实时采集] 停止实时 pipeline...");
+    append("[操作] 停止实时 pipeline...");
     try {
       const result = await stopRealtimeCollector({});
-      append(`[实时采集] stop result: ok=${result.ok} rc=${result.return_code}`);
+      append(`[操作] stop → ok=${result.ok} rc=${result.return_code}`);
       if (result.stdout?.trim()) append(result.stdout.trim());
       if (result.stderr?.trim()) append(`stderr: ${result.stderr.trim()}`);
       await new Promise((r) => setTimeout(r, 1500));
@@ -543,22 +572,40 @@ export function RealtimeCollectorPage() {
 
   const mergedLogs = useMemo(() => {
     const parts: string[] = [];
-    // 实时采集日志
+
+    // ── 操作日志 ──
+    parts.push("── 操作日志 ──", ...output.slice(-80), "");
+
+    // ── 生命周期日志 ── (当前快照，不累计)
     if (stackStatus) {
+      const streams = stackStatus.redis_streams;
+      const rawLen = streams?.["stream:news:raw"]?.length ?? 0;
+      const structLen = streams?.["stream:events:structured"]?.length ?? 0;
+      const decLen = streams?.["stream:events:decision"]?.length ?? 0;
       parts.push(
-        `── 实时采集状态 ──`,
-        `running: ${stackStatus.running}  verified: ${stackStatus.running_verified ?? "?"}`,
-        `source: ${stackStatus.status_source ?? "?"}`,
+        "── 生命周期状态 ──",
+        `realtime: ${stackStatus.running ? (stackStatus.running_verified ? "running" : "degraded") : "stopped"}`,
+        `verified: ${stackStatus.running_verified ?? "?"}  source: ${stackStatus.status_source ?? "?"}`,
         `run_id: ${stackStatus.run_id || "-"}`,
-        `raw_news_pid: ${stackStatus.raw_news_pid ?? "-"}`,
-        `decision_pid: ${stackStatus.decision_pid ?? "-"}`,
-        `db_collector_pid: ${stackStatus.db_collector_pid ?? "-"}`,
-        `profile: ${stackStatus.profile_version}/${stackStatus.profile_status}`,
-        `pending: ${stackStatus.pending_count}  dead_letter: ${stackStatus.dead_letter_count}`,
+        `PID — raw: ${stackStatus.raw_news_pid ?? "-"}  dec: ${stackStatus.decision_pid ?? "-"}  db: ${stackStatus.db_collector_pid ?? "-"}`,
         `started_at: ${stackStatus.started_at ?? "-"}`,
         "",
       );
+
+      // ── 诊断/Redis 指标 ──
+      parts.push(
+        "── Redis Stream 指标（历史数据，非运行状态）──",
+        `raw_len=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
+        `struct=${structLen > 999 ? Math.round(structLen/1000) + "k" : structLen} ` +
+        `dec=${decLen > 999 ? Math.round(decLen/1000) + "k" : decLen}`,
+        `pending=${stackStatus.pending_count}  dead_letter=${stackStatus.dead_letter_count}` +
+        `  LLM过滤=${stackStatus.prefilter_skipped ?? 0}  Feed通过=${stackStatus.news_published_total ?? 0}` +
+        (rawLen > 5000 ? "  ⚠️积压" : ""),
+        `profile: ${stackStatus.profile_version}/${stackStatus.profile_status}  llm: ${stackStatus.llm_judge_mode || "-"}`,
+        "",
+      );
     }
+
     if (jyhfLogs.length) {
       if (jyhfCollectorRunning || jyhfStatus?.service_running) {
         parts.push("── JYHF DOM 采集日志 (运行中) ──", ...jyhfLogs, "");
@@ -576,7 +623,7 @@ export function RealtimeCollectorPage() {
         "",
       );
     }
-    return [...parts, "── 操作日志 ──", ...output.slice(-80)];
+    return parts;
   }, [output, jyhfLogs, stackStatus, jyhfCollectorRunning, jyhfStatus?.service_running, auctionEnabled, auctionStatus]);
 
   // P4-1A: 统一告警 view model — Kline + W2S 合并为 UnifiedAlertRow[]
