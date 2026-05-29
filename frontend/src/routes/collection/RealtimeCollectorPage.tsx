@@ -784,24 +784,60 @@ export function RealtimeCollectorPage() {
               key: "health",
               label: "运行健康",
               children: (
-                <DiagnosticsTabs
-                  mergedLogs={mergedLogs}
-                  jyhfLogs={jyhfLogs}
-                  stackStatus={stackStatus}
-                  reviewItems={reviewItems}
-                  reviewTotal={reviewTotal}
-                  reviewBusy={reviewBusy}
-                  selectedIds={selectedIds}
-                  onToggleSelect={toggleSelect}
-                  onSelectAll={selectAll}
-                  onConfirm={handleConfirmReview}
-                  onDelete={handleDeleteReview}
-                  onBatchDelete={handleBatchDelete}
-                  onImportPending={handleImportPending}
-                  onClearPending={handleClearPending}
-                  onRefreshReview={refreshReviewQueue}
-                  onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
-                />
+                <Tabs size="small" defaultActiveKey="infra" items={[
+                  {
+                    key: "infra",
+                    label: "基础设施",
+                    children: (
+                      <OrchestratorStatusPanel
+                        status={orchStatus}
+                        loading={orchLoading}
+                        error={orchError}
+                        onRefresh={refreshOrchestrator}
+                      />
+                    ),
+                  },
+                  {
+                    key: "dataflow",
+                    label: "数据流",
+                    children: (
+                      <DiagnosticsTabs
+                        mergedLogs={[]} jyhfLogs={[]} stackStatus={stackStatus}
+                        reviewItems={[]} reviewTotal={0} reviewBusy={false}
+                        selectedIds={new Set()} onToggleSelect={()=>{}} onSelectAll={()=>{}}
+                        onConfirm={async()=>{}} onDelete={async()=>{}} onBatchDelete={async()=>{}}
+                        onImportPending={async()=>{}} onClearPending={async()=>{}}
+                        onRefreshReview={async()=>{}} onOpenDetail={()=>{}}
+                      />
+                    ),
+                  },
+                  {
+                    key: "logs",
+                    label: "日志",
+                    children: (
+                      <div className="collection-log-panel" style={{ maxHeight: 400, overflow: "auto", fontFamily: "monospace", fontSize: 12, lineHeight: 1.6, color: "#94a3b8" }}>
+                        {mergedLogs.length === 0 ? <div style={{ color: "#64748b" }}>暂无日志</div>
+                          : mergedLogs.slice(-200).map((line, i) => <div key={i}>{line}</div>)}
+                      </div>
+                    ),
+                  },
+                  {
+                    key: "review",
+                    label: "Review Queue",
+                    children: (
+                      <DiagnosticsTabs
+                        mergedLogs={[]} jyhfLogs={[]} stackStatus={null}
+                        reviewItems={reviewItems} reviewTotal={reviewTotal}
+                        reviewBusy={reviewBusy} selectedIds={selectedIds}
+                        onToggleSelect={toggleSelect} onSelectAll={selectAll}
+                        onConfirm={handleConfirmReview} onDelete={handleDeleteReview}
+                        onBatchDelete={handleBatchDelete} onImportPending={handleImportPending}
+                        onClearPending={handleClearPending} onRefreshReview={refreshReviewQueue}
+                        onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
+                      />
+                    ),
+                  },
+                ]} />
               ),
             },
           ]}
