@@ -26,6 +26,7 @@ import {
   type StatusBundle,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
+import { ConfigProvider, theme } from "antd";
 import realtimeIcon from "../../assets/intel-icons/实时采集.png";
 
 // P4-1A: 展示组件
@@ -614,6 +615,7 @@ export function RealtimeCollectorPage() {
       </section>
 
       {/* P4-1A: 三层实时监控面板 */}
+      <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
       <div className="realtime-ops-dashboard" style={{ padding: "0 12px" }}>
 
         {/* Layer 1: 服务状态总览 */}
@@ -672,6 +674,7 @@ export function RealtimeCollectorPage() {
         />
 
       </div>
+      </ConfigProvider>
 
       {/* ── 复核详情 Modal (保留原有实现) ── */}
       {detailOpen && detailItem && (
