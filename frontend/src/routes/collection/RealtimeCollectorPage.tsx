@@ -257,15 +257,16 @@ export function RealtimeCollectorPage() {
   }
 
   async function handleStop() {
-    setStopBusy(true);
-    append("[新链] 停止实时采集...");
     try {
+      window.alert("DEBUG: handleStop called");
+      setStopBusy(true);
+      append("[新链] 停止实时采集...");
       const result = await stopNewChainRealtime();
       append(`[新链] 停止完成: ok=${result.ok} status=${result.status}`);
       await refreshBundledStatus();
-    } catch (err) {
-      const message = err instanceof Error ? err.message : "停止失败";
-      append(message.startsWith("停止失败:") ? message : `停止失败: ${message}`);
+    } catch (err: any) {
+      window.alert("DEBUG: handleStop error: " + (err?.message || String(err)));
+      append(`❌ 停止异常: ${err?.message || err}`);
     } finally {
       setStopBusy(false);
     }
