@@ -1248,6 +1248,31 @@ async def _db_health_snapshot() -> dict:
         except Exception as exc:
             blockers.append(f"pg_stat_activity failed: {exc}")
 
+        # Waiting query samples (top 5)
+        waiting_samples: list[dict] = []
+        try:
+            rows = await conn.fetch(
+                "SELECT pid, usename, application_name, state, wait_event_type, wait_event, "
+                "now()-query_start AS query_age, left(query, 200) AS query "
+                "FROM pg_stat_activity "
+                "WHERE wait_event IS NOT NULL AND datname=current_database() "
+                "ORDER BY query_start NULLS LAST LIMIT 5"
+            )
+            for r in rows:
+                waiting_samples.append({
+                    "pid": r["pid"],
+                    "user": r["usename"],
+                    "app": r["application_name"],
+                    "state": r["state"],
+                    "wait_type": r["wait_event_type"],
+                    "wait_event": r["wait_event"],
+                    "query_age": str(r["query_age"]) if r["query_age"] else None,
+                    "query": r["query"],
+                })
+        except Exception:
+            pass
+            blockers.append(f"pg_stat_activity failed: {exc}")
+
         # Max connections
         try:
             row = await conn.fetchrow("SHOW max_connections")
@@ -1362,6 +1387,7 @@ async def _db_health_snapshot() -> dict:
             "same_db": same_db,
             "server": server_info,
             "tables": tables,
+            "waiting_samples": waiting_samples,
             "blockers": blockers,
         }
     finally:

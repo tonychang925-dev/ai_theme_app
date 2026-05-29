@@ -273,8 +273,9 @@ class RealtimeBusinessOrchestrator:
         support_state = await self._check_support_alert(now, desired_map.get("support_alert", "not_in_window"), services)
         services["support_alert"] = support_state
 
-        # Redis health (lightweight, non-blocking)
+        # Redis health + DB health (lightweight, non-blocking)
         redis_health = await self._check_redis_health()
+        db_health = await self._check_db_health()
 
         # Compute planned_actions
         if is_trade_day:
@@ -295,6 +296,12 @@ class RealtimeBusinessOrchestrator:
         if redis_health.get("dead_letter_state") == "blocked":
             global_blockers.append("redis dead_letter: critical backlog")
 
+        # DB: only flag server down or schema broken (freshness/lock are warnings only)
+        if db_health.get("db_state") == "blocked":
+            global_blockers.append("database: server blocked")
+        if db_health.get("schema_state") == "blocked":
+            global_blockers.append("database: schema blocked")
+
         t0 = _time.monotonic()
         return OrchestratorStatus(
             enabled=self.enabled,
@@ -313,7 +320,7 @@ class RealtimeBusinessOrchestrator:
             planned_actions=planned_actions,
             executed_actions=executed_actions,
             global_blockers=global_blockers,
-            runtime_dependencies={"redis": redis_health},
+            runtime_dependencies={"redis": redis_health, "database": db_health},
         )
 
     # ── Action execution ───────────────────────────────────────────
@@ -648,6 +655,22 @@ class RealtimeBusinessOrchestrator:
         state.blockers.extend(blockers)
         state.observed_state = readiness.get("state") or "degraded"
         return state
+
+    async def _check_db_health(self) -> dict[str, Any]:
+        """只读调用 BFF db-health 端点。短超时。"""
+        _web_port = os.environ.get("WEB_PORT", "8000")
+        try:
+            async with httpx.AsyncClient(timeout=1.2, trust_env=False) as client:
+                r = await client.get(f"http://127.0.0.1:{_web_port}/api/v2/runtime/db-health")
+                if r.status_code != 200:
+                    return {"state": "blocked", "db_state": "unknown",
+                            "blockers": [f"db health HTTP {r.status_code}"]}
+                data = r.json()
+                return data if isinstance(data, dict) else {
+                    "state": "blocked", "blockers": ["db health non-object JSON"]}
+        except Exception as exc:
+            return {"state": "blocked", "db_state": "unknown",
+                    "blockers": [f"db health unreachable: {exc}"]}
 
     async def _check_redis_health(self) -> dict[str, Any]:
         """只读调用 SPS redis-health 端点。短超时，不阻塞 tick。"""
