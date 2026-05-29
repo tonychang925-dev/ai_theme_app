@@ -664,8 +664,11 @@ def _check_deps(name: str, services: dict[str, OrchestratorServiceState]) -> lis
         if not dep:
             blockers.append(f"dependency {dep_name} status unknown")
             continue
-        if dep.observed_state in ("blocked", "degraded", "failed", "unknown"):
+        # blocked/failed/unknown → downstream blocked
+        if dep.observed_state in ("blocked", "failed", "unknown"):
             blockers.append(f"dependency {dep_name} not ready (state={dep.observed_state})")
+        # degraded → acceptable (service runs but has non-critical issues like probe skipped)
+        # stopped when wanted → blocked
         elif dep.observed_state == "stopped" and dep.desired_state == "wanted":
             blockers.append(f"dependency {dep_name} is stopped but wanted")
     return blockers
