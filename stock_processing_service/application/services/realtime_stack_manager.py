@@ -551,9 +551,11 @@ class RealtimeStackManager:
     def status_sync(self) -> dict[str, Any]:
         """Synchronous subset of status (no Redis)."""
         self._refresh_observed_state()
+        # running_verified 必须来自 live PID 验证结果，不能仅 mirror self._state.running
+        _verified = bool(self._state.raw_news_pid or self._state.decision_pid)
         return {
             "running": self._state.running,
-            "running_verified": self._state.running,
+            "running_verified": _verified,
             "status_source": self._state.status_source,
             "run_id": self._state.run_id,
             "started_at": self._state.started_at,
