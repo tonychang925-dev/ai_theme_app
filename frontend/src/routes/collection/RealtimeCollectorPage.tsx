@@ -604,6 +604,35 @@ export function RealtimeCollectorPage() {
     return rows;
   }, [klineAlerts, w2sAlerts]);
 
+  // P4-1A: 固化子组件 props 引用，避免 Collapse 因内联对象频繁重挂载丢失点击事件
+  const controlStatus = useMemo(
+    () => ({ running, stackStatus, jyhfStatus, auctionStatus }),
+    [running, stackStatus, jyhfStatus, auctionStatus],
+  );
+  const controlBusy = useMemo(
+    () => ({ mainBusy, jyhfBusy, auctionBusy }),
+    [mainBusy, jyhfBusy, auctionBusy],
+  );
+  const controlToggles = useMemo(
+    () => ({ auctionEnabled, klineAlertsEnabled, w2sAlertsEnabled }),
+    [auctionEnabled, klineAlertsEnabled, w2sAlertsEnabled],
+  );
+  const controlActions = useMemo(
+    () => ({
+      onStartRealtime: handleStart,
+      onStopRealtime: handleStop,
+      onRefreshRealtime: handleRefresh,
+      onStartDom: handleStartJyhfCdp,
+      onStopDom: handleStopJyhfCdp,
+      onRefreshDom: handleRefreshJyhfCdp,
+      onToggleAuction: setAuctionEnabled,
+      onToggleKlineAlerts: setKlineAlertsEnabled,
+      onToggleW2sAlerts: setW2sAlertsEnabled,
+    }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [],
+  );
+
   return (
     <div className="workspace-page">
       <section className="strong-watch-toolbar">
@@ -632,20 +661,10 @@ export function RealtimeCollectorPage() {
         {/* Layer 2: 采集控制 + 统一告警 */}
         <div style={{ display: "grid", gridTemplateColumns: "380px 1fr", gap: 12, marginBottom: 12 }}>
           <CollectionControlPanel
-            status={{ running, stackStatus, jyhfStatus, auctionStatus }}
-            busy={{ mainBusy, jyhfBusy, auctionBusy }}
-            toggles={{ auctionEnabled, klineAlertsEnabled, w2sAlertsEnabled }}
-            actions={{
-              onStartRealtime: handleStart,
-              onStopRealtime: handleStop,
-              onRefreshRealtime: handleRefresh,
-              onStartDom: handleStartJyhfCdp,
-              onStopDom: handleStopJyhfCdp,
-              onRefreshDom: handleRefreshJyhfCdp,
-              onToggleAuction: setAuctionEnabled,
-              onToggleKlineAlerts: setKlineAlertsEnabled,
-              onToggleW2sAlerts: setW2sAlertsEnabled,
-            }}
+            status={controlStatus}
+            busy={controlBusy}
+            toggles={controlToggles}
+            actions={controlActions}
           />
           <UnifiedAlertPanel
             alerts={unifiedAlerts}
