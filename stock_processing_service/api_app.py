@@ -4542,6 +4542,38 @@ _REDIS_HEALTH_STREAM_KEYS = [
     os.getenv("RH_STREAM_KEY_DEAD_LETTER", "stream:dead:letter"),
 ]
 
+# In-memory DLQ length snapshots for growth trend (keyed by stream_key)
+_dlq_snapshot: dict[str, dict] = {}
+
+
+def _compute_dlq_trend(stream_key: str, current_length: int) -> dict | None:
+    """Compare current DLQ length against previous snapshot. Returns None on first call."""
+    prev = _dlq_snapshot.get(stream_key)
+    # Always update snapshot with current value
+    _dlq_snapshot[stream_key] = {"length": current_length, "ts": time.time()}
+    if prev is None:
+        return None
+    delta = current_length - prev["length"]
+    elapsed = time.time() - prev["ts"]
+    prev_len = prev["length"]
+    if prev_len > 0:
+        delta_pct = round(delta / prev_len * 100, 1)
+    else:
+        delta_pct = 100.0 if delta > 0 else 0.0
+    if delta > 0:
+        trend = "growing"
+    elif delta < 0:
+        trend = "shrinking"
+    else:
+        trend = "stable"
+    return {
+        "trend": trend,
+        "delta": delta,
+        "delta_pct": delta_pct,
+        "prev_length": prev_len,
+        "since_s": round(elapsed, 1),
+    }
+
 
 async def _redis_health_snapshot() -> dict:
     """只读 Redis 运行态诊断。短超时，不扫全库。"""
@@ -4617,8 +4649,10 @@ async def _redis_health_snapshot() -> dict:
     _cg_warn_lag = int(os.getenv("REDIS_CG_LAG_WARN", "1000"))
     stream_state = "ready"
     dead_letter_state = "ready"
+    dead_letter_growth: dict[str, dict] = {}
     _dl_warn = int(os.getenv("REDIS_DEAD_LETTER_WARN", "100"))
     _dl_block = int(os.getenv("REDIS_DEAD_LETTER_BLOCK", "1000"))
+    _dl_growth_warn = int(os.getenv("REDIS_DEAD_LETTER_GROWTH_WARN", "10"))
 
     try:
         for stream_key in _REDIS_HEALTH_STREAM_KEYS:
@@ -4691,6 +4725,19 @@ async def _redis_health_snapshot() -> dict:
                 elif length > _dl_warn:
                     dead_letter_state = "degraded"
                     blockers.append(f"dead letter backlog: {length} (warn>{_dl_warn})")
+
+                # DLQ growth trend — compare against previous snapshot
+                dlq_trend = _compute_dlq_trend(stream_key, length)
+                if dlq_trend is not None:
+                    dead_letter_growth[stream_key] = dlq_trend
+                    if dlq_trend["trend"] == "growing" and dlq_trend["delta"] >= _dl_growth_warn:
+                        if dead_letter_state == "ready":
+                            dead_letter_state = "degraded"
+                        blockers.append(
+                            f"dead letter growing: {stream_key} +{dlq_trend['delta']} "
+                            f"({dlq_trend['delta_pct']}%, was {dlq_trend['prev_length']} "
+                            f"{dlq_trend['since_s']}s ago)"
+                        )
                 # Don't affect redis_state or stream_state from dead letter
 
             # Stream aggregate: if any key stream is unhealthy, mark stream_state
@@ -4717,6 +4764,7 @@ async def _redis_health_snapshot() -> dict:
         "stream_state": stream_state,
         "dead_letter_state": dead_letter_state,
         "consumer_groups": consumer_groups,
+        "dead_letter_growth": dead_letter_growth,
         "latency_ms": latency_ms,
         "redis_url_masked": url_masked,
         "checked_at": checked_at,
@@ -4743,6 +4791,8 @@ async def redis_health():
             "checked_at": "",
             "server": {},
             "streams": {},
+            "consumer_groups": {},
+            "dead_letter_growth": {},
             "blockers": [f"redis health timeout/error: {exc}"],
         }
 
