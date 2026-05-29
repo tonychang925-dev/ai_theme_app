@@ -604,7 +604,7 @@ export function RealtimeCollectorPage() {
     return rows;
   }, [klineAlerts, w2sAlerts]);
 
-  // P4-1A: 固化子组件 props 引用，避免 Collapse 因内联对象频繁重挂载丢失点击事件
+  // P4-1A: 固化 status/busy/toggles 引用，actions 直接内联（原生 details 不需要 memo）
   const controlStatus = useMemo(
     () => ({ running, stackStatus, jyhfStatus, auctionStatus }),
     [running, stackStatus, jyhfStatus, auctionStatus],
@@ -616,21 +616,6 @@ export function RealtimeCollectorPage() {
   const controlToggles = useMemo(
     () => ({ auctionEnabled, klineAlertsEnabled, w2sAlertsEnabled }),
     [auctionEnabled, klineAlertsEnabled, w2sAlertsEnabled],
-  );
-  const controlActions = useMemo(
-    () => ({
-      onStartRealtime: handleStart,
-      onStopRealtime: handleStop,
-      onRefreshRealtime: handleRefresh,
-      onStartDom: handleStartJyhfCdp,
-      onStopDom: handleStopJyhfCdp,
-      onRefreshDom: handleRefreshJyhfCdp,
-      onToggleAuction: setAuctionEnabled,
-      onToggleKlineAlerts: setKlineAlertsEnabled,
-      onToggleW2sAlerts: setW2sAlertsEnabled,
-    }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
   );
 
   return (
@@ -664,7 +649,17 @@ export function RealtimeCollectorPage() {
             status={controlStatus}
             busy={controlBusy}
             toggles={controlToggles}
-            actions={controlActions}
+            actions={{
+              onStartRealtime: handleStart,
+              onStopRealtime: handleStop,
+              onRefreshRealtime: handleRefresh,
+              onStartDom: handleStartJyhfCdp,
+              onStopDom: handleStopJyhfCdp,
+              onRefreshDom: handleRefreshJyhfCdp,
+              onToggleAuction: setAuctionEnabled,
+              onToggleKlineAlerts: setKlineAlertsEnabled,
+              onToggleW2sAlerts: setW2sAlertsEnabled,
+            }}
           />
           <UnifiedAlertPanel
             alerts={unifiedAlerts}
