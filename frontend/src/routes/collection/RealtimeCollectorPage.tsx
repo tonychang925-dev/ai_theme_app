@@ -803,11 +803,13 @@ export function RealtimeCollectorPage() {
                     children: (
                       <DiagnosticsTabs
                         mergedLogs={[]} jyhfLogs={[]} stackStatus={stackStatus}
-                        reviewItems={[]} reviewTotal={0} reviewBusy={false}
-                        selectedIds={new Set()} onToggleSelect={()=>{}} onSelectAll={()=>{}}
-                        onConfirm={async()=>{}} onDelete={async()=>{}} onBatchDelete={async()=>{}}
-                        onImportPending={async()=>{}} onClearPending={async()=>{}}
-                        onRefreshReview={async()=>{}} onOpenDetail={()=>{}}
+                        reviewItems={reviewItems} reviewTotal={reviewTotal}
+                        reviewBusy={reviewBusy} selectedIds={selectedIds}
+                        onToggleSelect={toggleSelect} onSelectAll={selectAll}
+                        onConfirm={handleConfirmReview} onDelete={handleDeleteReview}
+                        onBatchDelete={handleBatchDelete} onImportPending={handleImportPending}
+                        onClearPending={handleClearPending} onRefreshReview={refreshReviewQueue}
+                        onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
                       />
                     ),
                   },
@@ -819,22 +821,6 @@ export function RealtimeCollectorPage() {
                         {mergedLogs.length === 0 ? <div style={{ color: "#64748b" }}>暂无日志</div>
                           : mergedLogs.slice(-200).map((line, i) => <div key={i}>{line}</div>)}
                       </div>
-                    ),
-                  },
-                  {
-                    key: "review",
-                    label: "Review Queue",
-                    children: (
-                      <DiagnosticsTabs
-                        mergedLogs={[]} jyhfLogs={[]} stackStatus={null}
-                        reviewItems={reviewItems} reviewTotal={reviewTotal}
-                        reviewBusy={reviewBusy} selectedIds={selectedIds}
-                        onToggleSelect={toggleSelect} onSelectAll={selectAll}
-                        onConfirm={handleConfirmReview} onDelete={handleDeleteReview}
-                        onBatchDelete={handleBatchDelete} onImportPending={handleImportPending}
-                        onClearPending={handleClearPending} onRefreshReview={refreshReviewQueue}
-                        onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
-                      />
                     ),
                   },
                 ]} />
