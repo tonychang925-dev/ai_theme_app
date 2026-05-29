@@ -475,7 +475,7 @@ class RealtimeBusinessOrchestrator:
 
         if probe_sps:
             try:
-                async with httpx.AsyncClient(timeout=5.0, trust_env=False) as client:
+                async with httpx.AsyncClient(timeout=2.0, trust_env=False) as client:
                     r = await client.get(f"{self._sps_base}/api/v1/jyhf-market/status")
                     if r.status_code == 200:
                         data = r.json()
@@ -533,7 +533,7 @@ class RealtimeBusinessOrchestrator:
         evidence: dict[str, Any] = {}
         if probe_sps:
             try:
-                async with httpx.AsyncClient(timeout=5.0, trust_env=False) as client:
+                async with httpx.AsyncClient(timeout=2.0, trust_env=False) as client:
                     r = await client.get(f"{self._sps_base}/api/v1/jyhf-market/status")
                     if r.status_code == 200:
                         data = r.json()
