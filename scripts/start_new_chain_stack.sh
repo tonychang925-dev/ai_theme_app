@@ -23,6 +23,7 @@ RECAP_SNAPSHOT_URL="http://127.0.0.1:8000/api/v2/post_market_snapshot?trade_date
 
 WITH_FRONTEND=false
 RESTART=false
+START_REALTIME=false
 
 build_env_source_cmd() {
   cat <<'EOF'
@@ -53,9 +54,13 @@ while [[ $# -gt 0 ]]; do
       RESTART=true
       shift
       ;;
+    --start-realtime)
+      START_REALTIME=true
+      shift
+      ;;
     *)
       echo "Unknown arg: $1"
-      echo "Usage: ./scripts/start_new_chain_stack.sh [--with-frontend] [--restart]"
+      echo "Usage: ./scripts/start_new_chain_stack.sh [--with-frontend] [--restart] [--start-realtime]"
       exit 1
       ;;
   esac
@@ -66,6 +71,8 @@ mkdir -p "$LOG_DIR"
 echo "[runtime] web_app python: $WEB_PYTHON"
 echo "[runtime] sps python: $SPS_PYTHON"
 echo "[runtime] sps profile: $SPS_RUNTIME_PROFILE"
+echo "[info] realtime pipeline is NOT auto-started by default"
+echo "[info] use --start-realtime to start realtime pipeline after SPS is ready"
 
 if [[ ! -x "$WEB_PYTHON" ]]; then
   echo "[fail] WEB_PYTHON is not executable: $WEB_PYTHON"
@@ -227,7 +234,7 @@ start_stock_processing_service() {
   echo "[start] stock_processing_service:8090"
   (
     cd "$ROOT_DIR"
-    nohup bash -lc "$(build_env_source_cmd) && PYTHONPATH=\"$ROOT_DIR\" HF_HUB_OFFLINE=1 PYTHON_CMD=\"$SPS_PYTHON\" CONDA_PYTHON_CMD=\"$SPS_PYTHON\" SPS_RUNTIME_PROFILE=\"$SPS_RUNTIME_PROFILE\" \"$SPS_PYTHON\" -m uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090" \
+    nohup bash -lc "$(build_env_source_cmd) && PYTHONPATH=\"$ROOT_DIR\" HF_HUB_OFFLINE=1 PYTHON_CMD=\"$SPS_PYTHON\" CONDA_PYTHON_CMD=\"$SPS_PYTHON\" SPS_RUNTIME_PROFILE=\"$SPS_RUNTIME_PROFILE\" REALTIME_LOG_DIR=\"$ROOT_DIR/logs/realtime\" \"$SPS_PYTHON\" -m uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090" \
       >"$LOG_DIR/stock_processing_service_8090.log" 2>&1 &
   )
 
@@ -262,6 +269,19 @@ start_web_app_service || exit 1
 pkill -f "theme_service.app:app.*8002" >/dev/null 2>&1 || true
 pkill -f "frontend_bff.app:app.*8003" >/dev/null 2>&1 || true
 pkill -f "start_frontend_bff_wrapper.sh" >/dev/null 2>&1 || true
+
+# Realtime pipeline auto-start (explicit opt-in only)
+if [[ "$START_REALTIME" == "true" ]]; then
+  echo "[start] realtime pipeline via SPS"
+  if curl -fsS --max-time 60 "http://127.0.0.1:8090/api/v1/realtime/start" >/dev/null 2>&1; then
+    echo "[ok] realtime pipeline start request sent"
+  else
+    echo "[fail] realtime pipeline start failed"
+    exit 1
+  fi
+else
+  echo "[skip] realtime pipeline auto-start disabled (use --start-realtime to enable)"
+fi
 
 realtime_ok=true
 start_frontend_if_needed || realtime_ok=false

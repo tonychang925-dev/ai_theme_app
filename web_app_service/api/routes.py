@@ -906,9 +906,10 @@ async def jyhf_cdp_service_force_stop(request: Request) -> dict:
     return await manager.force_stop_service()
 
 
-# ── Realtime Collector（新链由 web_app_service 本地管理，不再代理旧 BFF）──
+# ── Realtime Collector ──
 
 
+# legacy compatibility only; frontend must use /collector/*
 @router.get("/realtime/new-chain/status")
 async def realtime_new_chain_status() -> dict:
     data = await _proxy_stock_processing_request_json(
@@ -916,9 +917,13 @@ async def realtime_new_chain_status() -> dict:
         "/api/v1/realtime/status",
         timeout=15.0,
     )
-    return data if isinstance(data, dict) else {"running": False, "last_error": "invalid SPS realtime status response"}
+    result = data if isinstance(data, dict) else {"running": False, "last_error": "invalid SPS realtime status response"}
+    result["deprecated"] = True
+    result["use"] = "/api/v2/realtime/collector/status"
+    return result
 
 
+# legacy compatibility only; frontend must use /collector/*
 @router.post("/realtime/new-chain/start")
 async def realtime_new_chain_start() -> dict:
     data = await _proxy_stock_processing_request_json(
@@ -926,18 +931,31 @@ async def realtime_new_chain_start() -> dict:
         "/api/v1/realtime/start",
         timeout=60.0,
     )
-    return data if isinstance(data, dict) else {"ok": False, "status": "invalid_response"}
+    result = data if isinstance(data, dict) else {"ok": False, "status": "invalid_response"}
+    result["deprecated"] = True
+    result["use"] = "/api/v2/realtime/collector/start"
+    return result
 
 
+# legacy compatibility only; frontend must use /collector/*
 @router.post("/realtime/new-chain/stop")
 async def realtime_new_chain_stop(request: Request) -> dict:
-    """直接通过 pidfile 停止实时采集子进程，不依赖 SPS。
+    """LEGACY: 直接通过 pidfile 停止实时采集子进程，不依赖 SPS。
 
-    实时子进程已从 SPS 剥离（start_new_session=True），
-    SPS 不可达时仍可通过 pidfile 发送 SIGTERM/SIGKILL。
+    实时子进程生命周期已收口到 SPS，BFF 不再自己管理。
+    frontend must use /api/v2/realtime/collector/stop.
     """
     manager = request.app.state.realtime_stack_manager
-    return await manager.stop_pipeline()
+    # 降级为 SPS /realtime/stop 代理，不再自行 stop_pipeline
+    try:
+        async with httpx.AsyncClient(timeout=15.0, trust_env=False) as client:
+            r = await client.get(f"{STOCK_PROCESSING_BASE_URL}/api/v1/realtime/stop")
+            data = r.json()
+    except Exception as exc:
+        data = {"ok": False, "status": "error", "error": str(exc)}
+    data["deprecated"] = True
+    data["use"] = "/api/v2/realtime/collector/stop"
+    return data
 
 
 @router.get("/realtime/collector/status")

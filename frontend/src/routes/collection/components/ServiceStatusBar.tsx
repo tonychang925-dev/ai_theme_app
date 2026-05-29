@@ -43,13 +43,16 @@ export default function ServiceStatusBar(props: Props) {
     redisLabel = rawLen > 5000 ? "积压" : "正常";
   }
 
-  // 实时采集
-  // 实时采集：需 running=true 且有实际 PID 才确认运行中
+  // 实时采集：只根据 SPS live-PID-verified 状态判断
   let rtBadge: "success" | "warning" | "error" | "default" = "default";
-  let rtLabel = "未启动";
-  const rtHasPid = !!(stackStatus?.raw_news_pid || stackStatus?.decision_pid);
-  if (stackStatus?.running && rtHasPid) { rtBadge = "success"; rtLabel = "运行中"; }
-  else if (stackStatus?.running && !rtHasPid) { rtBadge = "warning"; rtLabel = "未确认"; }
+  let rtLabel = "已停止";
+  const hasRawPid = Boolean(stackStatus?.raw_news_pid);
+  const hasDecPid = Boolean(stackStatus?.decision_pid);
+  const rtHasBoth = hasRawPid && hasDecPid;
+  const rtHasOne = hasRawPid || hasDecPid;
+  if (rtHasBoth) { rtBadge = "success"; rtLabel = "运行中"; }
+  else if (rtHasOne) { rtBadge = "warning"; rtLabel = "降级"; }
+  if (stackStatus?.status_source === "bff_sps_unreachable") { rtBadge = "error"; rtLabel = "SPS不可达"; }
   if (stackStatus?.last_error) { rtBadge = "error"; rtLabel = "异常"; }
 
   // DOM：需 collector_running + cdp_connected + 最近有采集才确认采集中
@@ -87,7 +90,7 @@ export default function ServiceStatusBar(props: Props) {
         <Space><Badge status={rtBadge} /><span style={{ fontWeight: 600 }}>实时采集</span></Space>
         <Statistic value={rtLabel} valueStyle={{ fontSize: 14 }} />
         <div style={{ fontSize: 11, color: "#8c8c8c" }}>
-          raw={stackStatus?.raw_news_pid ?? "-"} dec={stackStatus?.decision_pid ?? "-"}
+          raw={stackStatus?.raw_news_pid ?? "-"} dec={stackStatus?.decision_pid ?? "-"} db={stackStatus?.db_collector_pid ?? "-"}
         </div>
       </Card>
 

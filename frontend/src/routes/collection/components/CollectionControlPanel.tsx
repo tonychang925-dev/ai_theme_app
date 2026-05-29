@@ -92,13 +92,24 @@ export default function CollectionControlPanel(props: Props) {
   const { status, busy, toggles, actions } = props;
   const { stackStatus, jyhfStatus, auctionStatus } = status;
 
+  const hasRaw = Boolean(stackStatus?.raw_news_pid);
+  const hasDec = Boolean(stackStatus?.decision_pid);
+  const rtState: { tag: string; color: string } =
+    hasRaw && hasDec ? { tag: "运行中", color: "green" }
+    : hasRaw || hasDec ? { tag: "降级", color: "orange" }
+    : status.running === "unknown" ? { tag: "检查中", color: "default" }
+    : { tag: "已停止", color: "red" };
+
   return (
     <div>
       {/* 实时采集控制 */}
       <details open style={sectionStyle}>
         <summary style={summaryStyle}>
           <span style={{ marginRight: 8 }}>实时采集控制</span>
-          {status.running === "up" ? <Tag color="green">运行中</Tag> : status.running === "down" ? <Tag color="red">已停止</Tag> : <Tag>检查中</Tag>}
+          <Tag color={rtState.color}>{rtState.tag}</Tag>
+          {stackStatus?.status_source && stackStatus.status_source === "bff_sps_unreachable" && (
+            <Tag color="red">SPS不可达</Tag>
+          )}
         </summary>
         <div style={{ marginTop: 8 }}>
           <div style={{ marginBottom: 8 }}>
@@ -129,8 +140,10 @@ export default function CollectionControlPanel(props: Props) {
             <Descriptions.Item label="Profile">{stackStatus?.profile_version ?? "?"}/{stackStatus?.profile_status ?? "?"}</Descriptions.Item>
             <Descriptions.Item label="raw_news PID">{stackStatus?.raw_news_pid ?? "-"}</Descriptions.Item>
             <Descriptions.Item label="decision PID">{stackStatus?.decision_pid ?? "-"}</Descriptions.Item>
+            <Descriptions.Item label="db_collector PID">{stackStatus?.db_collector_pid ?? "-"}</Descriptions.Item>
+            <Descriptions.Item label="Verified">{stackStatus?.running_verified ? "是" : "否"}</Descriptions.Item>
+            <Descriptions.Item label="Source">{stackStatus?.status_source ?? "-"}</Descriptions.Item>
             <Descriptions.Item label="Pending / DL">{stackStatus?.pending_count ?? "?"} / {stackStatus?.dead_letter_count ?? "?"}</Descriptions.Item>
-            <Descriptions.Item label="LLM Mode">{stackStatus?.llm_judge_mode ?? "-"}</Descriptions.Item>
           </Descriptions>
         </div>
       </details>

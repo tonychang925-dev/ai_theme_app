@@ -4,9 +4,6 @@ import {
   fetchJyhfCdpCollectorStatus,
   startJyhfCdpCollector,
   stopJyhfCdpCollector,
-  fetchNewChainRealtimeStatus,
-  startNewChainRealtime,
-  stopNewChainRealtime,
   startRealtimeCollector,
   stopRealtimeCollector,
   fetchStatusBundle,
@@ -106,9 +103,9 @@ export function RealtimeCollectorPage() {
     try {
       const nc = bundle.new_chain as Record<string, unknown>;
       if (nc && typeof nc.running !== 'undefined') {
-        const effectiveRunning = Boolean(
-          nc.raw_news_pid || nc.decision_pid || nc.akshare_pid || nc.rebuild_pid,
-        );
+        // 只根据 SPS live-PID-verified 状态判断：raw_news_pid || decision_pid
+        const runningVerified = Boolean(nc.running_verified);
+        const effectiveRunning = Boolean(nc.raw_news_pid || nc.decision_pid);
         const normalizedNc = { ...nc, running: effectiveRunning } as unknown as NewChainRealtimeStatus;
         setStackStatus(normalizedNc);
         setRunning(effectiveRunning ? "up" : "down");
@@ -120,9 +117,11 @@ export function RealtimeCollectorPage() {
         const rawPid = nc.raw_news_pid ?? "-";
         const decPid = nc.decision_pid ?? "-";
         const dbPid = nc.db_collector_pid ?? "-";
+        const stateLabel = effectiveRunning ? (runningVerified ? "running" : "degraded") : "stopped";
+        const sourceLabel = nc.status_source || "?";
         append(
-          `[采集] run=${effectiveRunning ? "🟢" : "🔴"} ${qwenOk} ` +
-          `raw_pid=${rawPid} dec_pid=${decPid} db_pid=${dbPid} ` +
+          `[采集] state=${stateLabel} source=${sourceLabel} ` +
+          `raw_pid=${rawPid} dec_pid=${decPid} db_pid=${dbPid} ${qwenOk} ` +
           `raw_len=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
           `struct=${structLen > 999 ? Math.round(structLen/1000) + "k" : structLen} ` +
           `dec=${decLen > 999 ? Math.round(decLen/1000) + "k" : decLen} ` +
@@ -548,10 +547,12 @@ export function RealtimeCollectorPage() {
     if (stackStatus) {
       parts.push(
         `── 实时采集状态 ──`,
-        `running: ${stackStatus.running}`,
+        `running: ${stackStatus.running}  verified: ${stackStatus.running_verified ?? "?"}`,
+        `source: ${stackStatus.status_source ?? "?"}`,
         `run_id: ${stackStatus.run_id || "-"}`,
         `raw_news_pid: ${stackStatus.raw_news_pid ?? "-"}`,
         `decision_pid: ${stackStatus.decision_pid ?? "-"}`,
+        `db_collector_pid: ${stackStatus.db_collector_pid ?? "-"}`,
         `profile: ${stackStatus.profile_version}/${stackStatus.profile_status}`,
         `pending: ${stackStatus.pending_count}  dead_letter: ${stackStatus.dead_letter_count}`,
         `started_at: ${stackStatus.started_at ?? "-"}`,

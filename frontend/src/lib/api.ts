@@ -795,12 +795,16 @@ export interface CollectionJobStatus {
 
 export interface NewChainRealtimeStatus {
   running: boolean;
+  running_verified?: boolean;
+  status_source?: string;
   run_id: string;
   started_at: string | null;
   akshare_pid?: number | null;
   raw_news_pid: number | null;
   decision_pid: number | null;
   rebuild_pid?: number | null;
+  db_collector_pid?: number | null;
+  db_collector_enabled?: boolean;
   log_dir: string;
   last_error: string;
   profile_version: string;

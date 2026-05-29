@@ -82,6 +82,23 @@ class RealtimeStackState:
     run_id: str = ""
     last_error: str = ""
     log_dir: str = ""
+    status_source: str = "uninitialized"  # sps_live_pid_check | pidfile_restore | cleared
+
+    def clear(self) -> None:
+        self.running = False
+        self.pid = None
+        self.akshare_pid = None
+        self.raw_news_pid = None
+        self.decision_pid = None
+        self.rebuild_pid = None
+        self.intel_producer_pid = None
+        self.intel_collection_pid = None
+        self.db_collector_pid = None
+        self.db_collector_enabled = False
+        self.run_id = ""
+        self.started_at = None
+        self.last_error = ""
+        self.status_source = "cleared"
 
 
 class RealtimeStackManager:
@@ -121,14 +138,14 @@ class RealtimeStackManager:
         self._intel_collection_process: asyncio.subprocess.Process | None = None
         self._stream_services_process: asyncio.subprocess.Process | None = None  # Phase 4E: RealTimeNewsCollector
         self._lock = asyncio.Lock()
-        self._restore_from_runtime()
+        self._refresh_observed_state()
 
     # ── Public API ─────────────────────────────────────────────────
 
     async def start(self) -> dict[str, Any]:
         """Start the new-chain realtime stack.  Idempotent."""
         async with self._lock:
-            self._restore_from_runtime()
+            self._refresh_observed_state()
             if self._state.running:
                 return {"ok": True, "status": "already_running", "detail": self.status_sync()}
 
@@ -346,6 +363,7 @@ class RealtimeStackManager:
                     _write_pidfile(runtime_dir / f"db_collector_{run_id}.pid", self._db_collector_process.pid)
 
                 self._state.running = True
+                self._state.status_source = "sps_live_pid_check"
                 self._state.started_at = datetime.now(timezone.utc).isoformat()
                 self._state.pid = os.getpid()
                 self._state.akshare_pid = self._akshare_process.pid if self._akshare_process else None
@@ -378,20 +396,92 @@ class RealtimeStackManager:
                 return {"ok": False, "status": "error", "error": str(exc)}
 
     async def stop(self) -> dict[str, Any]:
-        """Gracefully stop the realtime stack."""
+        """停止实时 pipeline：SIGTERM → wait 1.5s → SIGKILL → wait 0.5s → verify → 清理 pidfile → 清空 state。"""
         async with self._lock:
-            self._restore_from_runtime()
-            if not self._state.running:
-                return {"ok": True, "status": "not_running"}
+            self._refresh_observed_state()
 
-            await self._cleanup_processes()
-            self._state.running = False
+            if not self._state.running:
+                self._cleanup_runtime_files()
+                self._state.clear()
+                return {
+                    "ok": True,
+                    "status": "not_running",
+                    "killed": [],
+                    "alive_after": [],
+                    "detail": self.status_sync(),
+                }
+
+            targets = self._runtime_pids()
+            killed: list[int] = []
+            errors: list[dict[str, Any]] = []
+
+            for pid in sorted(targets):
+                try:
+                    os.kill(pid, signal.SIGTERM)
+                    killed.append(pid)
+                except ProcessLookupError:
+                    pass
+                except PermissionError as exc:
+                    errors.append({"pid": pid, "error": str(exc)})
+
+            await asyncio.sleep(1.5)
+
+            for pid in sorted(targets):
+                if _pid_alive(pid):
+                    try:
+                        os.kill(pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                    except PermissionError as exc:
+                        errors.append({"pid": pid, "error": str(exc)})
+
+            await asyncio.sleep(0.5)
+
+            alive_after = [pid for pid in sorted(targets) if _pid_alive(pid)]
+
+            if alive_after:
+                self._state.last_error = f"failed to stop pids: {alive_after}"
+                return {
+                    "ok": False,
+                    "status": "partial_stop",
+                    "killed": killed,
+                    "alive_after": alive_after,
+                    "errors": errors,
+                    "detail": self.status_sync(),
+                }
+
+            self._cleanup_runtime_files()
+            self._state.clear()
             logger.info("realtime stack stopped")
-            return {"ok": True, "status": "stopped"}
+
+            return {
+                "ok": True,
+                "status": "stopped",
+                "killed": killed,
+                "alive_after": [],
+                "errors": errors,
+                "detail": self.status_sync(),
+            }
+
+    def _cleanup_runtime_files(self) -> None:
+        """移除 runtime pidfile 目录下的所有 pid 文件和 stack.json。"""
+        runtime_dir = self._log_dir / "runtime"
+        if not runtime_dir.exists():
+            return
+        for f in runtime_dir.glob("*.pid"):
+            try:
+                f.unlink()
+            except OSError:
+                pass
+        stack_json = runtime_dir / "realtime_stack.json"
+        try:
+            stack_json.unlink()
+        except OSError:
+            pass
 
     async def status(self) -> dict[str, Any]:
         """Return current stack status including Redis stream metrics."""
-        self._restore_from_runtime()
+        self._refresh_observed_state()
         base = self.status_sync()
 
         # Try to enrich with Redis stream info
@@ -460,9 +550,11 @@ class RealtimeStackManager:
 
     def status_sync(self) -> dict[str, Any]:
         """Synchronous subset of status (no Redis)."""
-        self._restore_from_runtime()
+        self._refresh_observed_state()
         return {
             "running": self._state.running,
+            "running_verified": self._state.running,
+            "status_source": self._state.status_source,
             "run_id": self._state.run_id,
             "started_at": self._state.started_at,
             # Phase 4E: AkShare collector status
@@ -493,31 +585,32 @@ class RealtimeStackManager:
 
     # ── Internal ───────────────────────────────────────────────────
 
-    def _restore_from_runtime(self) -> None:
-        """Restore manager state from runtime pidfiles after SPS restart.
+    def _refresh_observed_state(self) -> None:
+        """每次调用都实时验证 pidfile 和 PID 存活状态。
 
-        Realtime children are intentionally long-lived.  A fresh SPS process has no
-        Popen handles, but it can still report and stop the stack by reading the
-        runtime metadata and pidfiles.
+        不缓存 stale state——如果 pidfile 不存在或核心 PID 已死，立即清空状态。
+        SPS 是实时采集 pipeline 的唯一生命周期 Owner，状态必须以 live check 为准。
         """
-        if self._state.running:
-            return
 
         runtime_dir = self._log_dir / "runtime"
         stack_json = runtime_dir / "realtime_stack.json"
+
         if not stack_json.exists():
+            self._state.clear()
             return
 
         try:
             meta = json.loads(stack_json.read_text(encoding="utf-8"))
         except Exception:
+            self._state.clear()
             return
 
         run_id = str(meta.get("run_id") or "")
         if not run_id:
+            self._state.clear()
             return
 
-        def read_pid(prefix: str) -> int | None:
+        def _read_live_pid(prefix: str) -> int | None:
             path = runtime_dir / f"{prefix}_{run_id}.pid"
             try:
                 pid = int(path.read_text().strip())
@@ -525,22 +618,25 @@ class RealtimeStackManager:
                 return None
             return pid if _pid_alive(pid) else None
 
-        raw_pid = read_pid("raw_news")
-        decision_pid = read_pid("decision")
-        # raw + decision 是实时链核心；二者都不在才视为未运行。
+        raw_pid = _read_live_pid("raw_news")
+        decision_pid = _read_live_pid("decision")
+
+        # 核心进程 raw_news + decision：至少一个活着才算 running
         if not raw_pid and not decision_pid:
+            self._state.clear()
             return
 
         self._state.running = True
+        self._state.status_source = "sps_live_pid_check"
         self._state.started_at = str(meta.get("started_at") or "")
         self._state.pid = int(meta.get("manager_pid") or meta.get("parent_pid") or 0) or None
-        self._state.akshare_pid = read_pid("akshare")
+        self._state.akshare_pid = _read_live_pid("akshare")
         self._state.raw_news_pid = raw_pid
         self._state.decision_pid = decision_pid
-        self._state.rebuild_pid = read_pid("rebuild")
-        self._state.intel_producer_pid = read_pid("intel_producer")
-        self._state.intel_collection_pid = read_pid("intel_collection")
-        self._state.db_collector_pid = read_pid("db_collector")
+        self._state.rebuild_pid = _read_live_pid("rebuild")
+        self._state.intel_producer_pid = _read_live_pid("intel_producer")
+        self._state.intel_collection_pid = _read_live_pid("intel_collection")
+        self._state.db_collector_pid = _read_live_pid("db_collector")
         self._state.db_collector_enabled = bool(self._state.db_collector_pid)
         self._state.run_id = run_id
         self._state.log_dir = str(self._log_dir)
@@ -715,15 +811,8 @@ class RealtimeStackManager:
         self._rebuild_process = None
         self._intel_producer_process = None
         self._db_collector_process = None
-        self._db_collector_process = None
         self._intel_collection_process = None
-        self._state.akshare_pid = None
-        self._state.raw_news_pid = None
-        self._state.decision_pid = None
-        self._state.rebuild_pid = None
-        self._state.intel_producer_pid = None
-        self._state.intel_collection_pid = None
-        self._state.db_collector_pid = None  # Phase 4F
+        self._state.clear()
         # P1-C1: clean pidfiles + old status files
         runtime_dir = self._log_dir / "runtime"
         for pattern in ["akshare_*.pid", "db_collector_*.pid", "raw_news_*.pid", "decision_*.pid", "rebuild_*.pid", "intel_producer_*.pid", "intel_collection_*.pid"]:
@@ -820,16 +909,21 @@ class RealtimeStackManager:
     # ── P1-C1: orphan lifecycle ──────────────────────────────────────
 
     def _runtime_pids(self) -> set[int]:
+        """返回当前 run_id 对应的存活 PID，不返回旧 run_id 的残留 pidfile。"""
         runtime_dir = self._log_dir / "runtime"
+        run_id = self._state.run_id
+        if not run_id:
+            return set()
+        prefixes = ["akshare", "db_collector", "raw_news", "decision", "rebuild", "intel_producer", "intel_collection"]
         pids: set[int] = set()
-        for pattern in ["akshare_*.pid", "db_collector_*.pid", "raw_news_*.pid", "decision_*.pid", "rebuild_*.pid", "intel_producer_*.pid", "intel_collection_*.pid"]:
-            for pf in runtime_dir.glob(pattern):
-                try:
-                    pid = int(pf.read_text().strip())
-                except Exception:
-                    continue
-                if _pid_alive(pid):
-                    pids.add(pid)
+        for prefix in prefixes:
+            pf = runtime_dir / f"{prefix}_{run_id}.pid"
+            try:
+                pid = int(pf.read_text().strip())
+            except Exception:
+                continue
+            if _pid_alive(pid):
+                pids.add(pid)
         return pids
 
     async def get_orphans(self) -> dict[str, Any]:
