@@ -4649,6 +4649,7 @@ async def _redis_health_snapshot() -> dict:
     _cg_warn_lag = int(os.getenv("REDIS_CG_LAG_WARN", "1000"))
     _cg_warn_idle_ms = int(os.getenv("REDIS_CG_IDLE_WARN_MS", "60000"))
     _cg_warn_delivery_lag_s = int(os.getenv("REDIS_CG_DELIVERY_LAG_WARN_S", "300"))
+    _stream_mem_warn_mb = int(os.getenv("REDIS_STREAM_MEM_WARN_MB", "128"))
     stream_state = "ready"
     dead_letter_state = "ready"
     dead_letter_growth: dict[str, dict] = {}
@@ -4662,6 +4663,19 @@ async def _redis_health_snapshot() -> dict:
             sv_blockers: list[str] = []
             try:
                 length = await asyncio.wait_for(r.xlen(stream_key), timeout=0.3)
+                # Per-stream memory footprint
+                memory_bytes: int | None = None
+                try:
+                    memory_bytes = await asyncio.wait_for(
+                        r.memory_usage(stream_key), timeout=0.2
+                    )
+                except Exception:
+                    pass
+                if memory_bytes is not None and memory_bytes > _stream_mem_warn_mb * 1024 * 1024:
+                    sv_blockers.append(
+                        f"stream memory high: {memory_bytes / 1024 / 1024:.1f}MB "
+                        f"(warn>{_stream_mem_warn_mb}MB)"
+                    )
                 last_id = None
                 last_event_at = None
                 if length and length > 0:
@@ -4686,6 +4700,7 @@ async def _redis_health_snapshot() -> dict:
             streams[stream_key] = {
                 "exists": length >= 0,
                 "length": length if length >= 0 else None,
+                "memory_bytes": memory_bytes,
                 "last_id": str(last_id) if last_id else None,
                 "last_event_at": last_event_at,
                 "state": sv_state,
