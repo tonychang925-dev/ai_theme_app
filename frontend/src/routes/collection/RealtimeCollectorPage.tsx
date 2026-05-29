@@ -8,6 +8,7 @@ import {
   startNewChainRealtime,
   stopNewChainRealtime,
   startRealtimeCollector,
+  stopRealtimeCollector,
   fetchStatusBundle,
   startJyhfAuctionCollector,
   stopJyhfAuctionCollector,
@@ -105,8 +106,12 @@ export function RealtimeCollectorPage() {
     try {
       const nc = bundle.new_chain as Record<string, unknown>;
       if (nc && typeof nc.running !== 'undefined') {
-        setStackStatus(nc as unknown as NewChainRealtimeStatus);
-        setRunning(nc.running ? "up" : "down");
+        const effectiveRunning = Boolean(
+          nc.raw_news_pid || nc.decision_pid || nc.akshare_pid || nc.rebuild_pid,
+        );
+        const normalizedNc = { ...nc, running: effectiveRunning } as unknown as NewChainRealtimeStatus;
+        setStackStatus(normalizedNc);
+        setRunning(effectiveRunning ? "up" : "down");
         const streams = (nc.redis_streams as Record<string, {length: number}> | undefined) || {};
         const rawLen = streams["stream:news:raw"]?.length ?? 0;
         const structLen = streams["stream:events:structured"]?.length ?? 0;
@@ -258,10 +263,13 @@ export function RealtimeCollectorPage() {
 
   async function handleStop() {
     setStopBusy(true);
-    append("[新链] 停止实时采集...");
+    append("[实时采集] 停止实时 pipeline...");
     try {
-      const result = await stopNewChainRealtime();
-      append(`[新链] 停止完成: ok=${result.ok} status=${result.status}`);
+      const result = await stopRealtimeCollector({});
+      append(`[实时采集] stop result: ok=${result.ok} rc=${result.return_code}`);
+      if (result.stdout?.trim()) append(result.stdout.trim());
+      if (result.stderr?.trim()) append(`stderr: ${result.stderr.trim()}`);
+      await new Promise((r) => setTimeout(r, 1500));
       await refreshBundledStatus();
     } catch (err: any) {
       append(`❌ 停止异常: ${err?.message || err}`);
@@ -563,7 +571,7 @@ export function RealtimeCollectorPage() {
         "",
       );
     }
-    return [...parts, ...output];
+    return [...parts, "── 操作日志 ──", ...output.slice(-80)];
   }, [output, jyhfLogs, stackStatus, jyhfCollectorRunning, jyhfStatus?.service_running, auctionEnabled, auctionStatus]);
 
   // P4-1A: 统一告警 view model — Kline + W2S 合并为 UnifiedAlertRow[]
