@@ -874,7 +874,7 @@ export function RealtimeCollectorPage() {
                     rowKey="id"
                     size="small"
                     pagination={false}
-                    scroll={{ y: 350 }}
+                    scroll={{ y: 600 }}
                     rowSelection={{
                       selectedRowKeys: Array.from(selectedIds),
                       onChange: () => {},
