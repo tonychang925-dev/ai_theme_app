@@ -27,7 +27,7 @@ import {
   type OrchestratorStatus,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
-import { ConfigProvider, Tabs, theme } from "antd";
+import { Button, ConfigProvider, Space, Table, Tabs, theme } from "antd";
 import realtimeIcon from "../../assets/intel-icons/实时采集.png";
 
 // P4-1A: 展示组件
@@ -778,6 +778,77 @@ export function RealtimeCollectorPage() {
                   error={orchError}
                   onRefresh={refreshOrchestrator}
                 />
+              ),
+            },
+            {
+              key: "review",
+              label: (
+                <span>
+                  待复核
+                  {reviewTotal > 0 && (
+                    <span style={{
+                      marginLeft: 6, padding: "0 6px", borderRadius: 10,
+                      background: "#ef4444", color: "#fff", fontSize: 11, fontWeight: 700,
+                    }}>
+                      {reviewTotal}
+                    </span>
+                  )}
+                </span>
+              ),
+              children: (
+                <div>
+                  <Space style={{ marginBottom: 8 }}>
+                    <Button size="small" onClick={refreshReviewQueue} loading={reviewBusy}>刷新</Button>
+                    <Button size="small" onClick={handleImportPending} disabled={reviewBusy}>导入 Pending</Button>
+                    <Button size="small" onClick={handleClearPending} disabled={reviewBusy}>清空 Pending</Button>
+                    {selectedIds.size > 0 && (
+                      <Button size="small" danger onClick={handleBatchDelete}>删除选中 ({selectedIds.size})</Button>
+                    )}
+                    <Button size="small" onClick={selectAll}>
+                      {selectedIds.size === reviewItems.length && reviewItems.length > 0 ? "取消全选" : "全选"}
+                    </Button>
+                  </Space>
+                  <Table
+                    dataSource={reviewItems}
+                    rowKey="id"
+                    size="small"
+                    pagination={false}
+                    scroll={{ y: 400 }}
+                    rowSelection={{
+                      selectedRowKeys: Array.from(selectedIds),
+                      onChange: () => {},
+                      onSelect: (record) => toggleSelect(record.id),
+                    }}
+                    columns={[
+                      { title: "ID", dataIndex: "id", width: 50 },
+                      {
+                        title: "Title", dataIndex: "event_title", ellipsis: true,
+                        render: (v: string | null, r: ReviewQueueItem) => (
+                          <a onClick={() => openDetail(r.id)} style={{ cursor: "pointer" }}>{v || r.raw_title || "(无标题)"}</a>
+                        ),
+                      },
+                      {
+                        title: "Theme", dataIndex: "proposed_theme_name", width: 100,
+                        render: (v: string | null) => v || "-",
+                      },
+                      {
+                        title: "Conf", dataIndex: "proposed_theme_confidence", width: 50,
+                        render: (v: number | null) => v != null ? v.toFixed(2) : "-",
+                      },
+                      { title: "时间", dataIndex: "created_at", width: 80, render: (v: string) => v?.slice(11, 19) ?? "-" },
+                      {
+                        title: "操作", key: "actions", width: 120,
+                        render: (_: any, r: ReviewQueueItem) => (
+                          <Space size="small">
+                            <Button size="small" type="link" onClick={() => handleConfirmReview(r.id)}>确认</Button>
+                            <Button size="small" type="link" danger onClick={() => handleDeleteReview(r.id)}>删除</Button>
+                          </Space>
+                        ),
+                      },
+                    ]}
+                    locale={{ emptyText: "暂无待复核事件" }}
+                  />
+                </div>
               ),
             },
             {
