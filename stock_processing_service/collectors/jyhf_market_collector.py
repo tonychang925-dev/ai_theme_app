@@ -80,9 +80,8 @@ class JyhfMarketCollector:
     # ── public ──
 
     def status(self) -> dict:
-        s = dict(self.stats)
-        s["token_valid"] = self._token.is_token_valid()
-        return s
+        """返回内存快照。不做网络调用——token_valid 由采集循环定期刷新。"""
+        return dict(self.stats)
 
     async def start(self) -> None:
         async with self._lock:
@@ -118,6 +117,13 @@ class JyhfMarketCollector:
         while not self._stop.is_set() and self._run_id == run_id:
             self._last_cycle_start = _time.time()
             try:
+                # 定期刷新 token_valid 到内存快照（不阻塞，失败不影响）
+                if cycle_count % 60 == 0:
+                    try:
+                        self.stats["token_valid"] = self._token.is_token_valid()
+                    except Exception:
+                        pass
+
                 if cycle_count % 30 == 0:
                     await self._refresh_universe()
 

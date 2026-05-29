@@ -4222,10 +4222,21 @@ async def get_backtest_result(run_id: str) -> dict[str, Any]:
 
 @app.get("/api/v1/jyhf-market/status")
 async def jyhf_market_status():
-    """返回行情采集器状态。"""
+    """返回行情采集器内存快照状态（轻量只读，无网络调用）。"""
+    import asyncio as _asyncio
     from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
     c = get_jyhf_market_collector()
-    return {"ok": True, **c.status()}
+    try:
+        async with _asyncio.timeout(1.0):
+            return {"ok": True, **c.status()}
+    except _asyncio.TimeoutError:
+        return {
+            "ok": False,
+            "running": False,
+            "token_valid": None,
+            "state": "status_timeout",
+            "error": "jyhf-market status timeout (1s)",
+        }
 
 
 @app.post("/api/v1/jyhf-market/collector/start")
