@@ -33,6 +33,7 @@ from web_app_service.auth import create_token, verify_token
 from web_app_service.services.jyhf_cdp_manager import JyhfCdpManager
 from web_app_service.services.jyhf_auction_manager import JyhfAuctionManager
 from web_app_service.services.realtime_stack_manager import RealtimeStackManager
+from web_app_service.services.realtime_business_orchestrator import RealtimeBusinessOrchestrator
 
 app = FastAPI(title="web_app_service", version="0.1.0")
 
@@ -126,6 +127,7 @@ async def _startup_cdp_manager() -> None:
         port=int(_os.getenv("JYHF_CDP_SERVICE_PORT", "8095")),
     )
     app.state.auction_manager = JyhfAuctionManager(project_root=str(project_root))
+    app.state.realtime_business_orchestrator = RealtimeBusinessOrchestrator(app)
     app.state.realtime_stack_manager = RealtimeStackManager(
         project_root=str(project_root),
         web_port=int(_os.getenv("WEB_PORT", "8000")),
@@ -156,6 +158,7 @@ async def _startup_cdp_manager() -> None:
             pass
 
     # ── 启动 9:10 自动 collector 守护任务 ──
+    # TODO P4-2C: replace this legacy auto-start with RealtimeBusinessOrchestrator
     sps_base = _os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090").rstrip("/")
     _auto_start_task = asyncio.create_task(_auto_start_jyhf_collectors(sps_base))
 

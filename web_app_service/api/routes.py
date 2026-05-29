@@ -336,6 +336,32 @@ async def recap_publish_notion(payload: dict) -> dict:
     raise HTTPException(status_code=502, detail="invalid notion publish response")
 
 
+@router.post("/trade-plan/review")
+async def trade_plan_review(payload: dict) -> dict:
+    trade_date = str(payload.get("trade_date") or "").strip()
+    plan_date = str(payload.get("plan_date") or "").strip()
+    if not trade_date:
+        raise HTTPException(status_code=400, detail="trade_date is required")
+    if not plan_date:
+        raise HTTPException(status_code=400, detail="plan_date is required")
+
+    body = {
+        "trade_date": trade_date,
+        "plan_date": plan_date,
+        "dry_run": bool(payload.get("dry_run", True)),
+        "force": bool(payload.get("force", False)),
+    }
+    data = await _proxy_stock_processing_request_json(
+        "POST",
+        "/api/v1/trade-plan/review",
+        payload=body,
+        timeout=60.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid trade plan review response")
+
+
 @router.get("/theme_workspace/{subject_key}")
 @router.get("/theme-workspace/{subject_key}")
 async def theme_workspace(subject_key: str, request: Request) -> dict:
@@ -984,6 +1010,68 @@ async def realtime_collector_logs(
 ) -> dict:
     manager = request.app.state.realtime_stack_manager
     return await manager.logs(lines=lines, max_age_minutes=max_age_minutes)
+
+
+# ── P4-2A: Realtime Business Orchestrator（只读状态 + dry_run tick）──
+
+
+@router.get("/realtime/orchestrator/status")
+async def orchestrator_status(request: Request) -> dict:
+    """返回 orchestrator 当前状态：交易阶段、各服务 readiness、blockers。
+
+    只读，不启动/停止任何服务。
+    """
+    orch = request.app.state.realtime_business_orchestrator
+    status = await orch.get_status()
+    return _orchestrator_status_to_dict(status)
+
+
+@router.post("/realtime/orchestrator/tick")
+async def orchestrator_tick(request: Request, payload: dict | None = None) -> dict:
+    """触发一次诊断 tick。
+
+    dry_run=true（默认）：只输出 planned_actions，不执行 start/stop。
+    """
+    dry_run = bool((payload or {}).get("dry_run", True))
+    orch = request.app.state.realtime_business_orchestrator
+    status = await orch.tick(dry_run=dry_run)
+    return _orchestrator_status_to_dict(status)
+
+
+def _orchestrator_status_to_dict(status) -> dict:
+    """Serialize OrchestratorStatus to JSON-safe dict."""
+    import dataclasses as _dc
+
+    def _svc_to_dict(svc) -> dict:
+        return {
+            "name": svc.name,
+            "enabled": svc.enabled,
+            "desired_state": svc.desired_state,
+            "observed_state": svc.observed_state,
+            "owner": svc.owner,
+            "dependencies": svc.dependencies,
+            "blockers": svc.blockers,
+            "evidence": svc.evidence,
+            "last_action": svc.last_action,
+            "last_error": svc.last_error,
+            "next_retry_at": svc.next_retry_at,
+        }
+
+    return {
+        "enabled": status.enabled,
+        "dry_run": status.dry_run,
+        "dry_run_forced": status.dry_run_forced,
+        "dry_run_forced_reason": status.dry_run_forced_reason,
+        "trade_date": status.trade_date,
+        "phase": status.phase,
+        "phase_label": status.phase_label,
+        "now_cn": status.now_cn,
+        "tick_seq": status.tick_seq,
+        "is_trade_day": status.is_trade_day,
+        "services": {k: _svc_to_dict(v) for k, v in status.services.items()},
+        "planned_actions": status.planned_actions,
+        "global_blockers": status.global_blockers,
+    }
 
 
 @router.get("/intel/feed")
