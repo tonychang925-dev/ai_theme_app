@@ -1,4 +1,4 @@
-/** P4-1A: 采集控制面板 — 纯展示 + 回调。使用原生 button/checkbox 替代 antd 交互组件，排除按钮点击失效问题。 */
+/** P4-3C: 采集控制面板 — 按 Owner 分组。 */
 import { Tag, Descriptions } from "antd";
 import type { JyhfCdpCollectorStatus, JyhfAuctionStatus, NewChainRealtimeStatus } from "../../../lib/api";
 
@@ -10,232 +10,104 @@ interface Props {
     auctionStatus: JyhfAuctionStatus | null;
   };
   busy: {
-    startBusy: boolean;
-    stopBusy: boolean;
-    refreshBusy: boolean;
-    jyhfBusy: boolean;
-    auctionBusy: boolean;
+    startBusy: boolean; stopBusy: boolean; refreshBusy: boolean;
+    jyhfBusy: boolean; auctionBusy: boolean;
   };
   toggles: {
-    auctionEnabled: boolean;
-    klineAlertsEnabled: boolean;
-    w2sAlertsEnabled: boolean;
+    auctionEnabled: boolean; klineAlertsEnabled: boolean; w2sAlertsEnabled: boolean;
   };
   actions: {
-    onStartRealtime: () => void;
-    onStopRealtime: () => void;
-    onRefreshRealtime: () => void;
-    onStartDom: () => void;
-    onStopDom: () => void;
-    onRefreshDom: () => void;
-    onToggleAuction: (v: boolean) => void;
-    onToggleKlineAlerts: (v: boolean) => void;
-    onToggleW2sAlerts: (v: boolean) => void;
+    onStartRealtime: () => void; onStopRealtime: () => void; onRefreshRealtime: () => void;
+    onStartDom: () => void; onStopDom: () => void; onRefreshDom: () => void;
+    onToggleAuction: (v: boolean) => void; onToggleKlineAlerts: (v: boolean) => void; onToggleW2sAlerts: (v: boolean) => void;
   };
 }
 
-const sectionStyle: React.CSSProperties = {
-  background: "rgba(255,255,255,0.04)",
-  border: "1px solid rgba(255,255,255,0.08)",
-  borderRadius: 8,
-  padding: "12px 16px",
-  marginBottom: 8,
-};
-
-const summaryStyle: React.CSSProperties = {
-  cursor: "pointer",
-  fontWeight: 600,
-  fontSize: 14,
-  padding: "4px 0",
-  userSelect: "none",
-  color: "#e2e8f0",
-};
-
-const btnStyle: React.CSSProperties = {
-  padding: "4px 12px",
-  border: "1px solid rgba(255,255,255,0.15)",
-  borderRadius: 4,
-  background: "rgba(255,255,255,0.08)",
-  color: "#e2e8f0",
-  cursor: "pointer",
-  fontSize: 13,
-  marginRight: 6,
-};
-
-const btnPrimaryStyle: React.CSSProperties = {
-  ...btnStyle,
-  background: "#1677ff",
-  border: "1px solid #1677ff",
-};
-
-const btnDangerStyle: React.CSSProperties = {
-  ...btnStyle,
-  background: "rgba(255,77,79,0.15)",
-  border: "1px solid #ff4d4f",
-  color: "#ff4d4f",
-};
-
-const btnDisabledStyle: React.CSSProperties = {
-  ...btnStyle,
-  opacity: 0.4,
-  cursor: "not-allowed",
-};
-
-const labelStyle: React.CSSProperties = {
-  fontSize: 12,
-  color: "#94a3b8",
-  marginRight: 8,
-  userSelect: "none",
+const s: Record<string, React.CSSProperties> = {
+  section: { background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: "10px 14px", marginBottom: 6 },
+  owner: { fontSize: 10, color: "#64748b", marginBottom: 4, fontWeight: 500 },
+  btn: { padding: "3px 10px", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 4, background: "rgba(255,255,255,0.08)", color: "#e2e8f0", cursor: "pointer", fontSize: 12, marginRight: 4 },
+  primary: { background: "#1677ff", border: "1px solid #1677ff" },
+  danger: { background: "rgba(255,77,79,0.15)", border: "1px solid #ff4d4f", color: "#ff4d4f" },
+  disabled: { opacity: 0.4, cursor: "not-allowed" },
+  chk: { marginRight: 4 },
 };
 
 export default function CollectionControlPanel(props: Props) {
   const { status, busy, toggles, actions } = props;
   const { stackStatus, jyhfStatus, auctionStatus } = status;
+  const b = (v: boolean) => v ? { ...s.btn, ...s.disabled } : s.btn;
 
   const hasRaw = Boolean(stackStatus?.raw_news_pid);
   const hasDec = Boolean(stackStatus?.decision_pid);
-  const rtState: { tag: string; color: string } =
-    hasRaw && hasDec ? { tag: "运行中", color: "green" }
-    : hasRaw || hasDec ? { tag: "降级", color: "orange" }
-    : status.running === "unknown" ? { tag: "检查中", color: "default" }
-    : { tag: "已停止", color: "red" };
+  const rtTag = hasRaw && hasDec ? { t: "运行中", c: "green" } : hasRaw || hasDec ? { t: "降级", c: "orange" } : { t: "已停止", c: "red" };
 
   return (
     <div>
-      {/* 实时采集控制 */}
-      <details open style={sectionStyle}>
-        <summary style={summaryStyle}>
-          <span style={{ marginRight: 8 }}>实时采集控制</span>
-          <Tag color={rtState.color}>{rtState.tag}</Tag>
-          {stackStatus?.status_source && stackStatus.status_source === "bff_sps_unreachable" && (
-            <Tag color="red">SPS不可达</Tag>
-          )}
-        </summary>
-        <div style={{ marginTop: 8 }}>
-          <div style={{ marginBottom: 8 }}>
-            <button
-              style={busy.startBusy ? btnDisabledStyle : btnPrimaryStyle}
-              onClick={actions.onStartRealtime}
-              disabled={busy.startBusy}
-            >
-              {busy.startBusy ? "启动中..." : "启动实时采集"}
-            </button>
-            <button
-              style={busy.stopBusy ? btnDisabledStyle : btnDangerStyle}
-              onClick={actions.onStopRealtime}
-              disabled={busy.stopBusy}
-            >
-              {busy.stopBusy ? "停止中..." : "停止实时采集"}
-            </button>
-            <button
-              style={busy.refreshBusy ? btnDisabledStyle : btnStyle}
-              onClick={actions.onRefreshRealtime}
-              disabled={busy.refreshBusy}
-            >
-              {busy.refreshBusy ? "刷新中..." : "刷新状态"}
-            </button>
-          </div>
-          <Descriptions size="small" column={2}>
-            <Descriptions.Item label="Run ID">{stackStatus?.run_id ?? "-"}</Descriptions.Item>
-            <Descriptions.Item label="Profile">{stackStatus?.profile_version ?? "?"}/{stackStatus?.profile_status ?? "?"}</Descriptions.Item>
-            <Descriptions.Item label="raw_news PID">{stackStatus?.raw_news_pid ?? "-"}</Descriptions.Item>
-            <Descriptions.Item label="decision PID">{stackStatus?.decision_pid ?? "-"}</Descriptions.Item>
-            <Descriptions.Item label="db_collector PID">{stackStatus?.db_collector_pid ?? "-"}</Descriptions.Item>
-            <Descriptions.Item label="Verified">{stackStatus?.running_verified ? "是" : "否"}</Descriptions.Item>
-            <Descriptions.Item label="Source">{stackStatus?.status_source ?? "-"}</Descriptions.Item>
-            <Descriptions.Item label="Pending / DL">{stackStatus?.pending_count ?? "?"} / {stackStatus?.dead_letter_count ?? "?"}</Descriptions.Item>
-          </Descriptions>
+      {/* Realtime Pipeline — SPS */}
+      <div style={s.section}>
+        <div style={s.owner}>owner: SPS RealtimeStackManager</div>
+        <Tag color={rtTag.c}>{rtTag.t}</Tag>
+        {stackStatus?.status_source === "bff_sps_unreachable" && <Tag color="red">SPS不可达</Tag>}
+        <div style={{ marginTop: 6 }}>
+          <button style={busy.startBusy ? b(true) : { ...s.btn, ...s.primary }} onClick={actions.onStartRealtime} disabled={busy.startBusy}>{busy.startBusy ? "启动中..." : "启动"}</button>
+          <button style={busy.stopBusy ? b(true) : { ...s.btn, ...s.danger }} onClick={actions.onStopRealtime} disabled={busy.stopBusy}>{busy.stopBusy ? "停止中..." : "停止"}</button>
+          <button style={busy.refreshBusy ? b(true) : s.btn} onClick={actions.onRefreshRealtime} disabled={busy.refreshBusy}>{busy.refreshBusy ? "刷新中..." : "刷新"}</button>
         </div>
-      </details>
+        <Descriptions size="small" column={2} style={{ marginTop: 4 }}>
+          <Descriptions.Item label="Run ID">{stackStatus?.run_id ?? "-"}</Descriptions.Item>
+          <Descriptions.Item label="Verified">{stackStatus?.running_verified ? "是" : "否"}</Descriptions.Item>
+          <Descriptions.Item label="raw PID">{stackStatus?.raw_news_pid ?? "-"}</Descriptions.Item>
+          <Descriptions.Item label="dec PID">{stackStatus?.decision_pid ?? "-"}</Descriptions.Item>
+          <Descriptions.Item label="db PID">{stackStatus?.db_collector_pid ?? "-"}</Descriptions.Item>
+          <Descriptions.Item label="Source">{stackStatus?.status_source ?? "-"}</Descriptions.Item>
+        </Descriptions>
+      </div>
 
-      {/* JYHF DOM 采集 */}
-      <details open style={sectionStyle}>
-        <summary style={summaryStyle}>
-          <span style={{ marginRight: 8 }}>JYHF DOM 采集</span>
-          {jyhfStatus?.collector_running ? <Tag color="green">采集中</Tag> : <Tag>已停止</Tag>}
-        </summary>
-        <div style={{ marginTop: 8 }}>
-          <div style={{ marginBottom: 8 }}>
-            <button
-              style={busy.jyhfBusy ? btnDisabledStyle : btnPrimaryStyle}
-              onClick={actions.onStartDom}
-              disabled={busy.jyhfBusy}
-            >
-              {busy.jyhfBusy ? "处理中..." : "启动 DOM 采集"}
-            </button>
-            <button
-              style={busy.jyhfBusy ? btnDisabledStyle : btnDangerStyle}
-              onClick={actions.onStopDom}
-              disabled={busy.jyhfBusy}
-            >
-              停止 DOM 采集
-            </button>
-            <button
-              style={busy.jyhfBusy ? btnDisabledStyle : btnStyle}
-              onClick={actions.onRefreshDom}
-              disabled={busy.jyhfBusy}
-            >
-              刷新 DOM 状态
-            </button>
-          </div>
-          <Descriptions size="small" column={2}>
-            <Descriptions.Item label="Owner">{jyhfStatus?.service_owner ?? "?"}</Descriptions.Item>
-            <Descriptions.Item label="Service">{jyhfStatus?.service_running ? "运行中" : "已停止"}</Descriptions.Item>
-            <Descriptions.Item label="CDP">{jyhfStatus?.cdp_connected ? "已连接" : "未连接"}</Descriptions.Item>
-            <Descriptions.Item label="App">{jyhfStatus?.app_running ? "运行中" : "已停止"}</Descriptions.Item>
-            <Descriptions.Item label="Tab">{jyhfStatus?.current_tab ?? "-"}</Descriptions.Item>
-            <Descriptions.Item label="Last Capture">{jyhfStatus?.last_capture_at?.slice(11, 19) ?? "-"}</Descriptions.Item>
-            <Descriptions.Item label="Captures">{jyhfStatus?.capture_count_total ?? 0}</Descriptions.Item>
-            <Descriptions.Item label="New Events">{jyhfStatus?.new_event_count_total ?? 0}</Descriptions.Item>
-          </Descriptions>
+      {/* DOM/CDP — BFF CDP Manager */}
+      <div style={s.section}>
+        <div style={s.owner}>owner: BFF JyhfCdpManager</div>
+        {jyhfStatus?.collector_running ? <Tag color="green">采集中</Tag> : <Tag>已停止</Tag>}
+        <div style={{ marginTop: 6 }}>
+          <button style={busy.jyhfBusy ? b(true) : { ...s.btn, ...s.primary }} onClick={actions.onStartDom} disabled={busy.jyhfBusy}>{busy.jyhfBusy ? "处理中..." : "启动"}</button>
+          <button style={busy.jyhfBusy ? b(true) : { ...s.btn, ...s.danger }} onClick={actions.onStopDom} disabled={busy.jyhfBusy}>停止</button>
+          <button style={busy.jyhfBusy ? b(true) : s.btn} onClick={actions.onRefreshDom} disabled={busy.jyhfBusy}>刷新</button>
         </div>
-      </details>
+        <Descriptions size="small" column={2} style={{ marginTop: 4 }}>
+          <Descriptions.Item label="Service">{jyhfStatus?.service_running ? "运行中" : "已停止"}</Descriptions.Item>
+          <Descriptions.Item label="CDP">{jyhfStatus?.cdp_connected ? "已连接" : "未连接"}</Descriptions.Item>
+          <Descriptions.Item label="Captures">{jyhfStatus?.capture_count_total ?? 0}</Descriptions.Item>
+          <Descriptions.Item label="Tab">{jyhfStatus?.current_tab ?? "-"}</Descriptions.Item>
+        </Descriptions>
+      </div>
 
-      {/* 开关设置 */}
-      <details style={sectionStyle}>
-        <summary style={summaryStyle}>开关设置</summary>
-        <div style={{ marginTop: 8 }}>
-          <div style={{ marginBottom: 6 }}>
-            <label style={labelStyle}>
-              <input
-                type="checkbox"
-                checked={toggles.auctionEnabled}
-                onChange={(e) => actions.onToggleAuction(e.target.checked)}
-                disabled={busy.auctionBusy}
-                style={{ marginRight: 4 }}
-              />
-              竞价采集
-            </label>
-            {auctionStatus && (
-              <Tag style={{ marginLeft: 4 }} color={auctionStatus.running ? "green" : "default"}>
-                {auctionStatus.state} rds={auctionStatus.rounds}
-              </Tag>
-            )}
-          </div>
-          <div style={{ marginBottom: 6 }}>
-            <label style={labelStyle}>
-              <input
-                type="checkbox"
-                checked={toggles.klineAlertsEnabled}
-                onChange={(e) => actions.onToggleKlineAlerts(e.target.checked)}
-                style={{ marginRight: 4 }}
-              />
-              K线告警 SSE
-            </label>
-          </div>
-          <div>
-            <label style={labelStyle}>
-              <input
-                type="checkbox"
-                checked={toggles.w2sAlertsEnabled}
-                onChange={(e) => actions.onToggleW2sAlerts(e.target.checked)}
-                style={{ marginRight: 4 }}
-              />
-              W2S告警 SSE
-            </label>
-          </div>
+      {/* Auction — BFF AuctionManager */}
+      <div style={s.section}>
+        <div style={s.owner}>owner: BFF JyhfAuctionManager</div>
+        {auctionStatus?.running ? <Tag color="green">运行中 rds={auctionStatus.rounds}</Tag> : <Tag>空闲</Tag>}
+        {auctionStatus?.state === "finished" && <Tag color="default">已结束</Tag>}
+        <div style={{ marginTop: 4 }}>
+          <label style={{ fontSize: 12, color: "#94a3b8", userSelect: "none" }}>
+            <input type="checkbox" checked={toggles.auctionEnabled} onChange={e => actions.onToggleAuction(e.target.checked)} disabled={busy.auctionBusy} style={s.chk} />
+            竞价采集
+          </label>
         </div>
-      </details>
+      </div>
+
+      {/* Alert Streams — SPS SSE / Frontend EventSource */}
+      <div style={s.section}>
+        <div style={s.owner}>owner: SPS Alert Stream / Frontend EventSource</div>
+        <div style={{ display: "flex", gap: 12 }}>
+          <label style={{ fontSize: 12, color: "#94a3b8", userSelect: "none" }}>
+            <input type="checkbox" checked={toggles.klineAlertsEnabled} onChange={e => actions.onToggleKlineAlerts(e.target.checked)} style={s.chk} />
+            K线告警 SSE
+          </label>
+          <label style={{ fontSize: 12, color: "#94a3b8", userSelect: "none" }}>
+            <input type="checkbox" checked={toggles.w2sAlertsEnabled} onChange={e => actions.onToggleW2sAlerts(e.target.checked)} style={s.chk} />
+            W2S告警 SSE
+          </label>
+        </div>
+      </div>
     </div>
   );
 }
