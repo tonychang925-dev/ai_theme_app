@@ -4411,6 +4411,125 @@ async def w2s_alerts_status():
     return dict(getattr(app.state, "w2s_alert_status", {}) or {})
 
 
+# ── P4-2E: Alert readiness endpoints (read-only Redis inspection, no SSE) ──
+
+
+async def _redis_stream_readiness(
+    *,
+    service: str,
+    stream_key: str,
+) -> dict:
+    """只读 Redis stream 检查。不创建 SSE 连接，不启动后台任务。
+
+    返回: {ok, ready, state, service, stream_length, last_event_id,
+           last_event_at, blockers, evidence}
+    """
+    import redis.asyncio as _aioredis
+    from datetime import datetime as _dt, timezone as _tz, timedelta as _td
+
+    TZ_CN = _tz(_td(hours=8))
+    checked_at = _dt.now(TZ_CN).isoformat()
+    redis_url = str(os.getenv("REDIS_URL") or "redis://localhost:6379/0").strip()
+
+    try:
+        r = _aioredis.from_url(redis_url, decode_responses=True, socket_connect_timeout=2)
+        try:
+            length = await asyncio.wait_for(r.xlen(stream_key), timeout=1.0)
+
+            last_event_id = None
+            last_event_at = None
+
+            if length and length > 0:
+                items = await asyncio.wait_for(r.xrevrange(stream_key, count=1), timeout=1.0)
+                if items:
+                    last_event_id = items[0][0]
+                    try:
+                        ts_ms = int(str(last_event_id).split("-")[0])
+                        last_event_at = _dt.fromtimestamp(ts_ms / 1000, TZ_CN).isoformat()
+                    except Exception:
+                        pass
+
+            ready = False
+            state = "degraded"
+            blockers = []
+
+            if length and length > 0:
+                blockers.append("stream has data but no active producer confirmation")
+            else:
+                blockers.append("stream has no events")
+
+            return {
+                "ok": True,
+                "ready": ready,
+                "state": state,
+                "service": service,
+                "stream_key": stream_key,
+                "stream_length": length,
+                "last_event_id": str(last_event_id) if last_event_id else None,
+                "last_event_at": last_event_at,
+                "active_sse_clients": None,
+                "blockers": blockers,
+                "evidence": {
+                    "redis_ok": True,
+                    "checked_at": checked_at,
+                    "note": "readiness endpoint; does not open SSE stream",
+                },
+            }
+        finally:
+            await r.aclose()
+    except Exception as exc:
+        return {
+            "ok": False,
+            "ready": False,
+            "state": "blocked",
+            "service": service,
+            "stream_key": stream_key,
+            "stream_length": None,
+            "last_event_id": None,
+            "last_event_at": None,
+            "active_sse_clients": None,
+            "blockers": [f"redis readiness check failed: {exc}"],
+            "evidence": {
+                "redis_ok": False,
+                "checked_at": checked_at,
+                "error": str(exc),
+                "note": "readiness endpoint; does not open SSE stream",
+            },
+        }
+
+
+@app.get("/api/v1/kline-alerts/readiness")
+async def kline_alerts_readiness():
+    """K线支撑告警 readiness — 只读 Redis stream:kline:alerts 状态。"""
+    try:
+        async with asyncio.timeout(1.5):
+            return await _redis_stream_readiness(
+                service="support_alert",
+                stream_key=os.getenv("KLINE_ALERT_STREAM_KEY", "stream:kline:alerts"),
+            )
+    except Exception as exc:
+        return {
+            "ok": False, "ready": False, "state": "blocked",
+            "service": "support_alert", "blockers": [f"readiness timeout: {exc}"],
+        }
+
+
+@app.get("/api/v1/w2s-alerts/readiness")
+async def w2s_alerts_readiness():
+    """W2S 告警 readiness — 只读 Redis stream:w2s:alerts 状态。"""
+    try:
+        async with asyncio.timeout(1.5):
+            return await _redis_stream_readiness(
+                service="w2s_alert",
+                stream_key=os.getenv("W2S_ALERT_STREAM_KEY", "stream:w2s:alerts"),
+            )
+    except Exception as exc:
+        return {
+            "ok": False, "ready": False, "state": "blocked",
+            "service": "w2s_alert", "blockers": [f"readiness timeout: {exc}"],
+        }
+
+
 # ── P1-3.2: Decision 消费侧试点 — 统一读取 _decision 字段 ──
 
 @app.get("/api/v1/decision/latest")
