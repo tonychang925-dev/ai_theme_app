@@ -123,7 +123,69 @@ export default function DiagnosticsTabs(props: Props) {
             </div>
           </div>
 
-          <Descriptions size="small" column={2}>
+          {/* ── 管道诊断面板 ── */}
+          <div style={{
+            marginTop: 8, padding: "6px 10px", borderRadius: 6,
+            background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)",
+            fontSize: 12,
+          }}>
+            <div style={{ fontWeight: 600, marginBottom: 4, color: "#e2e8f0" }}>🔍 管道状态诊断</div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px 12px" }}>
+              {/* Row 1: Collector */}
+              <span style={{ color: "#94a3b8" }}>采集进程:</span>
+              <span>
+                {stackStatus?.raw_news_pid ? (
+                  <Tag color="green" style={{ fontSize: 10 }}>PID {stackStatus.raw_news_pid}</Tag>
+                ) : (
+                  <Tag color="red" style={{ fontSize: 10 }}>未运行</Tag>
+                )}
+              </span>
+              {/* Row 2: Raw Stream */}
+              <span style={{ color: "#94a3b8" }}>原始新闻流:</span>
+              <span style={{ color: (stackStatus?.redis_streams?.["stream:news:raw"]?.length ?? 0) > 0 ? "#22c55e" : "#ef4444", fontWeight: 600 }}>
+                {(stackStatus?.redis_streams?.["stream:news:raw"]?.length ?? 0) > 0 ? "有数据" : "空"}
+              </span>
+              {/* Row 3: Structured Stream */}
+              <span style={{ color: "#94a3b8" }}>结构化事件:</span>
+              <span style={{ color: (stackStatus?.redis_streams?.["stream:events:structured"]?.length ?? 0) > 0 ? "#22c55e" : "#ef4444", fontWeight: 600 }}>
+                {(stackStatus?.redis_streams?.["stream:events:structured"]?.length ?? 0) > 0 ? "有数据" : "空"}
+              </span>
+              {/* Row 4: Qwen Dedup */}
+              <span style={{ color: "#94a3b8" }}>Qwen 去重:</span>
+              <span>
+                {stackStatus?.qwen_dedup_ready ? (
+                  <Tag color="green" style={{ fontSize: 10 }}>就绪 ({stackStatus.qwen_dedup_calls ?? 0} calls)</Tag>
+                ) : (
+                  <Tag color="orange" style={{ fontSize: 10 }}>预热中 / 未就绪</Tag>
+                )}
+              </span>
+              {/* Row 5: Dedup Rate */}
+              <span style={{ color: "#94a3b8" }}>去重过滤:</span>
+              <span style={{ color: "#e2e8f0" }}>
+                硬保护:{stackStatus?.hard_protect_count ?? 0} · 语义去重:{stackStatus?.semantic_dedup_count ?? 0} · 去重skip:{stackStatus?.news_dedup_skipped ?? 0}
+              </span>
+              {/* Row 6: LLM Filter */}
+              <span style={{ color: "#94a3b8" }}>LLM 预过滤:</span>
+              <span style={{ color: (stackStatus?.prefilter_skipped ?? 0) > 0 ? "#f59e0b" : "#22c55e" }}>
+                跳过:{stackStatus?.prefilter_skipped ?? 0} · 通过:{stackStatus?.news_published_total ?? 0}
+              </span>
+              {/* Row 7: Overall status */}
+              <span style={{ color: "#94a3b8" }}>整体状态:</span>
+              <span>
+                {(() => {
+                  const rawLen = stackStatus?.redis_streams?.["stream:news:raw"]?.length ?? 0;
+                  const structLen = stackStatus?.redis_streams?.["stream:events:structured"]?.length ?? 0;
+                  const collectorRunning = Boolean(stackStatus?.raw_news_pid);
+                  if (!collectorRunning) return <Tag color="red" style={{ fontSize: 10 }}>采集未启动</Tag>;
+                  if (rawLen === 0) return <Tag color="orange" style={{ fontSize: 10 }}>无原始新闻</Tag>;
+                  if (structLen === 0) return <Tag color="orange" style={{ fontSize: 10 }}>过滤中/未产出</Tag>;
+                  return <Tag color="green" style={{ fontSize: 10 }}>正常产出</Tag>;
+                })()}
+              </span>
+            </div>
+          </div>
+
+          <Descriptions size="small" column={2} style={{ marginTop: 8 }}>
             <Descriptions.Item label="Qwen Dedup">
               {stackStatus?.qwen_dedup_ready ? <Tag color="green">就绪</Tag> : <Tag>未就绪</Tag>}
             </Descriptions.Item>
