@@ -48,7 +48,9 @@ function nowText() {
 
 export function RealtimeCollectorPage() {
   const [running, setRunning] = useState<"unknown" | "up" | "down">("unknown");
-  const [mainBusy, setMainBusy] = useState(false);
+  const [startBusy, setStartBusy] = useState(false);
+  const [stopBusy, setStopBusy] = useState(false);
+  const [refreshBusy, setRefreshBusy] = useState(false);
   const [jyhfBusy, setJyhfBusy] = useState(false);
   const [stackStatus, setStackStatus] = useState<NewChainRealtimeStatus | null>(null);
   const [jyhfStatus, setJyhfStatus] = useState<JyhfCdpCollectorStatus | null>(null);
@@ -239,23 +241,23 @@ export function RealtimeCollectorPage() {
   async function handleStart() {
     try {
       append("🖱️ 启动实时采集按钮已触发");
-      setMainBusy(true);
+      setStartBusy(true);
       append("[实时采集] 请求 BFF 启动/确认 SPS + realtime pipeline...");
       const result = await startRealtimeCollector({});
       append(`[实时采集] ok=${result.ok} rc=${result.return_code}`);
-      if (result.stdout) append(result.stdout.trim());
-      if (result.stderr) append(`stderr: ${result.stderr.trim()}`);
-      await new Promise((r) => setTimeout(r, 3000));
+      if (result.stdout?.trim()) append(result.stdout.trim());
+      if (result.stderr?.trim()) append(`stderr: ${result.stderr.trim()}`);
+      await new Promise((r) => setTimeout(r, 5000));
       await refreshBundledStatus();
     } catch (err: any) {
       append(`❌ 启动失败: ${err?.message || err}`);
     } finally {
-      setMainBusy(false);
+      setStartBusy(false);
     }
   }
 
   async function handleStop() {
-    setMainBusy(true);
+    setStopBusy(true);
     append("[新链] 停止实时采集...");
     try {
       const result = await stopNewChainRealtime();
@@ -265,12 +267,12 @@ export function RealtimeCollectorPage() {
       const message = err instanceof Error ? err.message : "停止失败";
       append(message.startsWith("停止失败:") ? message : `停止失败: ${message}`);
     } finally {
-      setMainBusy(false);
+      setStopBusy(false);
     }
   }
 
   async function handleRefresh() {
-    setMainBusy(true);
+    setRefreshBusy(true);
     try {
       await refreshBundledStatus();
       append("已刷新新链状态");
@@ -278,7 +280,7 @@ export function RealtimeCollectorPage() {
       const message = err instanceof Error ? err.message : "刷新失败";
       append(`刷新失败: ${message}`);
     } finally {
-      setMainBusy(false);
+      setRefreshBusy(false);
     }
   }
 
@@ -609,8 +611,8 @@ export function RealtimeCollectorPage() {
     [running, stackStatus, jyhfStatus, auctionStatus],
   );
   const controlBusy = useMemo(
-    () => ({ mainBusy, jyhfBusy, auctionBusy }),
-    [mainBusy, jyhfBusy, auctionBusy],
+    () => ({ startBusy, stopBusy, refreshBusy, jyhfBusy, auctionBusy }),
+    [startBusy, stopBusy, refreshBusy, jyhfBusy, auctionBusy],
   );
   const controlToggles = useMemo(
     () => ({ auctionEnabled, klineAlertsEnabled, w2sAlertsEnabled }),

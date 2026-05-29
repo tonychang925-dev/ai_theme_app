@@ -10,7 +10,9 @@ interface Props {
     auctionStatus: JyhfAuctionStatus | null;
   };
   busy: {
-    mainBusy: boolean;
+    startBusy: boolean;
+    stopBusy: boolean;
+    refreshBusy: boolean;
     jyhfBusy: boolean;
     auctionBusy: boolean;
   };
@@ -101,24 +103,25 @@ export default function CollectionControlPanel(props: Props) {
         <div style={{ marginTop: 8 }}>
           <div style={{ marginBottom: 8 }}>
             <button
-              style={busy.mainBusy ? btnDisabledStyle : btnPrimaryStyle}
+              style={busy.startBusy ? btnDisabledStyle : btnPrimaryStyle}
               onClick={actions.onStartRealtime}
-              disabled={busy.mainBusy}
+              disabled={busy.startBusy}
             >
-              {busy.mainBusy && status.running === "unknown" ? "处理中..." : "启动实时采集"}
+              {busy.startBusy ? "启动中..." : "启动实时采集"}
             </button>
             <button
-              style={btnDangerStyle}
+              style={busy.stopBusy ? btnDisabledStyle : btnDangerStyle}
               onClick={actions.onStopRealtime}
+              disabled={busy.stopBusy}
             >
-              停止实时采集
+              {busy.stopBusy ? "停止中..." : "停止实时采集"}
             </button>
             <button
-              style={busy.mainBusy ? btnDisabledStyle : btnStyle}
+              style={busy.refreshBusy ? btnDisabledStyle : btnStyle}
               onClick={actions.onRefreshRealtime}
-              disabled={busy.mainBusy}
+              disabled={busy.refreshBusy}
             >
-              刷新状态
+              {busy.refreshBusy ? "刷新中..." : "刷新状态"}
             </button>
           </div>
           <Descriptions size="small" column={2}>
