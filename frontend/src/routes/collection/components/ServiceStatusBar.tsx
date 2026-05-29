@@ -65,21 +65,24 @@ export default function ServiceStatusBar(props: Props) {
 
   return (
     <div style={{
-      display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center",
-      padding: "4px 8px", background: "rgba(255,255,255,0.03)", borderRadius: 6,
-      border: "1px solid rgba(255,255,255,0.06)", marginBottom: 8,
+      display: "flex", gap: 18, flexWrap: "wrap", alignItems: "center",
+      padding: "10px 16px", background: "rgba(255,255,255,0.03)", borderRadius: 8,
+      border: "1px solid rgba(255,255,255,0.06)", marginBottom: 10,
     }}>
       {items.map((it) => (
-        <div key={it.label} style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 12 }}>
+        <div key={it.label} style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 15 }}>
           <Badge status={dot(it.s)} />
           <span style={{ color: "#94a3b8", fontWeight: 500 }}>{it.label}</span>
-          {it.v ? <span style={{ color: "#e2e8f0", fontSize: 11 }}>{it.v}</span> : null}
+          {it.v ? <span style={{ color: "#e2e8f0", fontSize: 15, fontWeight: 600 }}>{it.v}</span> : null}
         </div>
       ))}
-      <div style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 12 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 15 }}>
         <Badge status={dlItem.badge} />
         <span style={{ color: "#94a3b8", fontWeight: 500 }}>{dlItem.label}</span>
-        <span style={{ color: dlCount >= 100 ? "#f59e0b" : "#e2e8f0", fontSize: 11, fontWeight: dlCount >= 100 ? 600 : 400 }}>
+        <span style={{
+          color: dlCount >= 1000 ? "#ef4444" : dlCount >= 100 ? "#f59e0b" : "#e2e8f0",
+          fontSize: 15, fontWeight: 700,
+        }}>
           {dlItem.v}
         </span>
       </div>
