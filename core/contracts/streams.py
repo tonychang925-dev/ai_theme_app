@@ -11,6 +11,7 @@ STREAM_ALIASES: dict[str, str] = {
     "stream:intel.event.structured": "stream:events:structured",
     "stream:alert.decision": "stream:events:decision",
     "stream:ui.feed": "stream:event:feed",
+    # temporary alias to legacy Intel feed stream; do not treat as final raw DOM stream
     "stream:intel.raw.dom": "stream:event:feed",
 }
 
