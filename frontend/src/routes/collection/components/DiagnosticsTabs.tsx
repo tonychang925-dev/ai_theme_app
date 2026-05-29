@@ -153,7 +153,7 @@ export default function DiagnosticsTabs(props: Props) {
           </div>
         </div>
           );
-        }}(),
+        })(),
     },
     {
       key: "review-queue",
