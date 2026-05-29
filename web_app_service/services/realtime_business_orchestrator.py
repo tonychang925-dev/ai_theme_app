@@ -587,39 +587,86 @@ class RealtimeBusinessOrchestrator:
 
     async def _check_w2s_alert(self, now: datetime, desired: str, services: dict) -> OrchestratorServiceState:
         state = self._new_state("w2s_alert", desired)
-        evidence: dict[str, Any] = {
-            "sse_available": None,
-            "sse_probe_skipped": True,
-            "readiness_endpoint_missing": True,
-            "note": "SSE stream not probed by orchestrator. P4-2E will add dedicated readiness endpoint.",
-        }
-        state.evidence = evidence
+
+        # Only probe readiness when deps are satisfied and alert is wanted
         dep_blocked = _check_deps("w2s_alert", services)
         if dep_blocked:
             state.observed_state = "blocked"
             state.blockers.extend(dep_blocked)
-        else:
+            state.evidence = {"readiness_probe_skipped": True, "reason": "dependency blocked"}
+            return state
+
+        if desired != "wanted":
             state.observed_state = "degraded"
-            state.blockers.append("dedicated readiness endpoint not implemented (P4-2E)")
+            state.blockers.append("not in active alert window")
+            state.evidence = {"readiness_probe_skipped": True, "reason": "not in active alert window"}
+            return state
+
+        # Probe SPS readiness endpoint (not SSE stream!)
+        readiness = await self._fetch_alert_readiness("/api/v1/w2s-alerts/readiness", "w2s_alert")
+        state.evidence = {
+            "readiness": readiness,
+            "readiness_endpoint": "/api/v1/w2s-alerts/readiness",
+        }
+        blockers = readiness.get("blockers") or []
+        state.blockers.extend(blockers)
+        state.observed_state = readiness.get("state") or "degraded"
         return state
 
     async def _check_support_alert(self, now: datetime, desired: str, services: dict) -> OrchestratorServiceState:
         state = self._new_state("support_alert", desired)
-        evidence: dict[str, Any] = {
-            "sse_available": None,
-            "sse_probe_skipped": True,
-            "readiness_endpoint_missing": True,
-            "note": "SSE stream not probed by orchestrator. P4-2E will add dedicated readiness endpoint.",
-        }
-        state.evidence = evidence
+
         dep_blocked = _check_deps("support_alert", services)
         if dep_blocked:
             state.observed_state = "blocked"
             state.blockers.extend(dep_blocked)
-        else:
+            state.evidence = {"readiness_probe_skipped": True, "reason": "dependency blocked"}
+            return state
+
+        if desired != "wanted":
             state.observed_state = "degraded"
-            state.blockers.append("dedicated readiness endpoint not implemented (P4-2E)")
+            state.blockers.append("not in active alert window")
+            state.evidence = {"readiness_probe_skipped": True, "reason": "not in active alert window"}
+            return state
+
+        readiness = await self._fetch_alert_readiness("/api/v1/kline-alerts/readiness", "support_alert")
+        state.evidence = {
+            "readiness": readiness,
+            "readiness_endpoint": "/api/v1/kline-alerts/readiness",
+        }
+        blockers = readiness.get("blockers") or []
+        state.blockers.extend(blockers)
+        state.observed_state = readiness.get("state") or "degraded"
         return state
+
+    async def _fetch_alert_readiness(self, path: str, service: str) -> dict[str, Any]:
+        """只读调用 SPS readiness endpoint。短超时，不掉 SSE。"""
+        try:
+            async with httpx.AsyncClient(timeout=1.2, trust_env=False) as client:
+                r = await client.get(f"{self._sps_base}{path}")
+                if r.status_code != 200:
+                    return {
+                        "ok": False, "ready": False, "state": "blocked",
+                        "service": service,
+                        "blockers": [f"readiness endpoint HTTP {r.status_code}"],
+                        "evidence": {"http_status": r.status_code, "endpoint": path},
+                    }
+                data = r.json()
+                if isinstance(data, dict):
+                    return data
+                return {
+                    "ok": False, "ready": False, "state": "blocked",
+                    "service": service,
+                    "blockers": ["readiness returned non-object JSON"],
+                    "evidence": {"endpoint": path},
+                }
+        except Exception as exc:
+            return {
+                "ok": False, "ready": False, "state": "blocked",
+                "service": service,
+                "blockers": [f"readiness endpoint unreachable: {exc}"],
+                "evidence": {"endpoint": path, "error": str(exc)},
+            }
 
     # ── Helpers ────────────────────────────────────────────────────
 
