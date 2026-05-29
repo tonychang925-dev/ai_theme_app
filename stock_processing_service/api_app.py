@@ -4647,6 +4647,8 @@ async def _redis_health_snapshot() -> dict:
     consumer_groups: dict[str, list[dict]] = {}
     _cg_warn_pending = int(os.getenv("REDIS_CG_PENDING_WARN", "100"))
     _cg_warn_lag = int(os.getenv("REDIS_CG_LAG_WARN", "1000"))
+    _cg_warn_idle_ms = int(os.getenv("REDIS_CG_IDLE_WARN_MS", "60000"))
+    _cg_warn_delivery_lag_s = int(os.getenv("REDIS_CG_DELIVERY_LAG_WARN_S", "300"))
     stream_state = "ready"
     dead_letter_state = "ready"
     dead_letter_growth: dict[str, dict] = {}
@@ -4700,18 +4702,59 @@ async def _redis_health_snapshot() -> dict:
                     lag = int(g.get("lag", 0))
                     last_delivered = str(g.get("last-delivered-id", ""))
                     consumers = int(g.get("consumers", 0))
+
+                    # Delivery lag: time gap between stream's latest entry and group's last-delivered
+                    delivery_lag_s: float | None = None
+                    if last_id and last_delivered:
+                        try:
+                            ts_last = int(str(last_id).split("-")[0]) / 1000.0
+                            ts_delivered = int(last_delivered.split("-")[0]) / 1000.0
+                            delivery_lag_s = round(ts_last - ts_delivered, 1)
+                        except Exception:
+                            pass
+
+                    # Per-consumer idle times (XINFO CONSUMERS)
+                    consumers_detail: list[dict] = []
+                    try:
+                        cons_raw = await asyncio.wait_for(
+                            r.xinfo_consumers(stream_key, gname), timeout=0.2
+                        )
+                        for c in cons_raw:
+                            cname = str(c.get("name", "?"))
+                            cidle = int(c.get("idle", 0))
+                            cpending = int(c.get("pending", 0))
+                            consumers_detail.append({
+                                "name": cname,
+                                "idle_ms": cidle,
+                                "pending": cpending,
+                            })
+                            if cidle > _cg_warn_idle_ms:
+                                sv_blockers.append(
+                                    f"consumer {gname}/{cname}: idle={cidle}ms "
+                                    f"(warn>{_cg_warn_idle_ms}ms)"
+                                )
+                    except Exception:
+                        pass  # XINFO CONSUMERS may fail or be unsupported
+
                     cg_entry = {
                         "name": gname,
                         "consumers": consumers,
                         "pending": pending,
                         "lag": lag,
                         "last_delivered_id": last_delivered,
+                        "delivery_lag_s": delivery_lag_s,
+                        "consumers_detail": consumers_detail,
                     }
                     cg_list.append(cg_entry)
                     if pending > _cg_warn_pending:
                         sv_blockers.append(f"group {gname}: pending={pending} (warn>{_cg_warn_pending})")
                     if lag > _cg_warn_lag:
                         sv_blockers.append(f"group {gname}: lag={lag} (warn>{_cg_warn_lag})")
+                    if delivery_lag_s is not None and delivery_lag_s > _cg_warn_delivery_lag_s:
+                        sv_blockers.append(
+                            f"group {gname}: delivery lag={delivery_lag_s}s "
+                            f"(warn>{_cg_warn_delivery_lag_s}s)"
+                        )
                 if cg_list:
                     consumer_groups[stream_key] = cg_list
             except Exception:
