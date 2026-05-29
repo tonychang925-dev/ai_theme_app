@@ -91,15 +91,15 @@ class JyhfDomAdapter(SourceAdapter):
     # ---- 三步接口 ----
 
     async def fetch(self) -> List[Dict]:
-        """采集 JYHF DOM 原始事件（委托给 collector service 的单次采集）。"""
-        if self._collector_service:
-            try:
-                result = await self._collector_service._capture_once_locked()
-                events = result.get("new_events", []) if isinstance(result, dict) else []
-                return [e.dict() if hasattr(e, "dict") else dict(e) for e in events]
-            except Exception:
-                logger.exception("JyhfDomAdapter.fetch: capture failed")
-                return []
+        """JYHF DOM 单次 fetch 暂不直接调用 CDP 私有采集方法。
+
+        CDP 采集由现有 JyhfCdpCollectorService 生命周期负责。
+        新调用方如需发布，可通过 normalize_minimal() + publish() 处理外部传入的 DOM items。
+        """
+        logger.warning(
+            "JyhfDomAdapter.fetch: no-op in facade mode; "
+            "use existing CDP service or pass items to publish()"
+        )
         return []
 
     def normalize_minimal(self, raw_items: List[Dict]) -> List[Dict]:
@@ -148,8 +148,8 @@ class JyhfDomAdapter(SourceAdapter):
             logger.warning("JyhfDomAdapter.publish: no stream_manager or redis_url available")
             return 0
 
-        # 解开 envelope wrapper（如果已包装）
-        inner_sm = sm._inner if hasattr(sm, "_inner") and not isinstance(sm, _SimpleRedisPublisher) else sm
+        # 解开可能存在的 envelope wrapper，拿到底层 publisher
+        inner_sm = getattr(sm, "_inner", sm)
 
         published = 0
         for item in items:
