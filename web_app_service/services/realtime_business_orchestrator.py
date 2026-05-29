@@ -437,57 +437,95 @@ class RealtimeBusinessOrchestrator:
     # ── Service check methods ──────────────────────────────────────
 
     async def _check_cdp_token(self, now: datetime, desired: str, probe_sps: bool = True) -> OrchestratorServiceState:
+        """Check CDP/browser readiness AND SPS token visibility.
+
+        Two independent checks:
+          1. CDP Manager → service_running, cdp_connected, app_running
+          2. SPS jyhf-market/status → sps_token_valid
+
+        cdp_token is only 'ready' when BOTH CDP is connected AND SPS can see the token.
+        If CDP is connected but SPS token is unknown (probe skipped or SPS down),
+        it's 'degraded' — sufficient for diagnostics, not sufficient for auto-launch.
+        """
         state = self._new_state("cdp_token", desired)
         evidence: dict[str, Any] = {}
+
+        # ── 1. CDP Manager status ──
+        cdp_service_running = False
+        cdp_connected = False
         try:
             cdp_mgr = self._app.state.cdp_manager
             cdp_status = await cdp_mgr.get_status()
-            evidence["service_running"] = cdp_status.get("service_running", False)
-            evidence["cdp_connected"] = cdp_status.get("cdp_connected", False)
-            evidence["app_running"] = cdp_status.get("app_running", False)
-            evidence["service_owner"] = cdp_status.get("service_owner", "none")
+            cdp_service_running = bool(cdp_status.get("service_running"))
+            cdp_connected = bool(cdp_status.get("cdp_connected"))
+            evidence["cdp_service_running"] = cdp_service_running
+            evidence["cdp_connected"] = cdp_connected
+            evidence["cdp_app_running"] = cdp_status.get("app_running", False)
+            evidence["cdp_service_owner"] = cdp_status.get("service_owner", "none")
         except Exception as exc:
-            evidence["service_running"] = False
-            evidence["error"] = str(exc)
+            evidence["cdp_service_running"] = False
+            evidence["cdp_connected"] = False
+            evidence["cdp_error"] = str(exc)
             state.blockers.append(f"CDP manager unreachable: {exc}")
 
-        token_valid = False
+        # ── 2. SPS token visibility ──
+        sps_token_valid: bool | None = None
+        evidence["sps_token_valid"] = None
+        evidence["token_source"] = "sps_jyhf_market_status"
+
         if probe_sps:
             try:
                 async with httpx.AsyncClient(timeout=5.0, trust_env=False) as client:
                     r = await client.get(f"{self._sps_base}/api/v1/jyhf-market/status")
                     if r.status_code == 200:
                         data = r.json()
-                        token_valid = bool(data.get("token_valid"))
-                        evidence["token_valid"] = token_valid
+                        sps_token_valid = bool(data.get("token_valid"))
+                        evidence["sps_token_valid"] = sps_token_valid
                         evidence["jyhf_market_running"] = data.get("running", False)
                     else:
-                        evidence["token_valid"] = False
+                        evidence["sps_token_valid"] = None
+                        evidence["sps_status_code"] = r.status_code
             except Exception as exc:
-                evidence["token_valid"] = False
-                evidence["token_error"] = str(exc)
-                state.blockers.append(f"SPS jyhf-market status unreachable: {exc}")
+                evidence["sps_token_valid"] = None
+                evidence["sps_token_error"] = str(exc)
         else:
-            evidence["token_valid"] = False
-            evidence["token_skipped"] = True
+            evidence["sps_token_probe_skipped"] = True
 
         state.evidence = evidence
-        if not evidence.get("service_running"):
+
+        # ── Evaluate observed_state ──
+
+        # CDP not running at all
+        if not cdp_service_running:
             state.observed_state = "blocked"
             state.blockers.append("CDP service not running")
-        elif not evidence.get("cdp_connected"):
+            return state
+
+        # CDP running but browser not connected
+        if not cdp_connected:
             state.observed_state = "blocked"
             state.blockers.append("CDP not connected to browser")
-        elif not probe_sps:
-            # Token status not probed (non-trading hours throttle).
-            # CDP is running and connected — mark as degraded rather than blocked.
-            state.observed_state = "degraded"
-            state.blockers.append("token status not probed (non-trading window)")
-        elif not token_valid:
-            state.observed_state = "blocked"
-            state.blockers.append("JYHF token not ready or expired")
-        else:
+            return state
+
+        # CDP is healthy. Now check SPS token.
+        if sps_token_valid is True:
             state.observed_state = "ready"
+            return state
+
+        if sps_token_valid is False:
+            # SPS was probed and explicitly said token is invalid
+            state.observed_state = "blocked"
+            state.blockers.append("JYHF token not valid (SPS jyhf-market reports token_valid=false)")
+            return state
+
+        # sps_token_valid is None: probe was skipped, SPS is down, or SPS returned error
+        if not probe_sps:
+            state.observed_state = "degraded"
+            state.blockers.append("SPS token not probed (non-trading window)")
+        else:
+            state.observed_state = "degraded"
+            state.blockers.append("SPS token status unknown (SPS jyhf-market unreachable)")
+
         return state
 
     async def _check_jyhf_market(self, now: datetime, desired: str, services: dict, probe_sps: bool = True) -> OrchestratorServiceState:
@@ -690,8 +728,8 @@ def _compute_planned_actions(
         # cdp_token special case: CDP service not running IS a valid reason to start it.
         # Downstream will still be blocked if token is not ready after CDP starts.
         if svc_name == "cdp_token":
-            service_running = bool(svc.evidence.get("service_running"))
-            if not service_running:
+            cdp_service_running = bool(svc.evidence.get("cdp_service_running"))
+            if not cdp_service_running:
                 actions.append({
                     "service": "cdp_token",
                     "action": "would_start",
