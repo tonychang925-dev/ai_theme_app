@@ -478,6 +478,11 @@ class RealtimeBusinessOrchestrator:
         elif not evidence.get("cdp_connected"):
             state.observed_state = "blocked"
             state.blockers.append("CDP not connected to browser")
+        elif not probe_sps:
+            # Token status not probed (non-trading hours throttle).
+            # CDP is running and connected — mark as degraded rather than blocked.
+            state.observed_state = "degraded"
+            state.blockers.append("token status not probed (non-trading window)")
         elif not token_valid:
             state.observed_state = "blocked"
             state.blockers.append("JYHF token not ready or expired")
