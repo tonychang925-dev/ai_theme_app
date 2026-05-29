@@ -12,6 +12,7 @@ interface Props {
   selectedIds: Set<number>;
   onToggleSelect: (id: number) => void;
   onSelectAll: () => void;
+  onSetSelectedKeys: (keys: Set<number>) => void;
   onConfirm: (id: number) => Promise<void>;
   onDelete: (id: number) => Promise<void>;
   onBatchDelete: () => Promise<void>;
@@ -24,7 +25,7 @@ interface Props {
 export default function DiagnosticsTabs(props: Props) {
   const {
     mergedLogs, jyhfLogs, stackStatus, reviewItems, reviewTotal, reviewBusy,
-    selectedIds, onToggleSelect, onSelectAll, onConfirm, onDelete,
+    selectedIds, onToggleSelect, onSelectAll, onSetSelectedKeys, onConfirm, onDelete,
     onBatchDelete, onImportPending, onClearPending, onRefreshReview, onOpenDetail,
   } = props;
 
@@ -121,8 +122,8 @@ export default function DiagnosticsTabs(props: Props) {
             scroll={{ y: "calc(100vh - 400px)" }}
             rowSelection={{
               selectedRowKeys: Array.from(selectedIds),
-              onChange: (_keys, rows) => {
-                // sync selectedIds with current page selection
+              onChange: (selectedRowKeys) => {
+                onSetSelectedKeys(new Set(selectedRowKeys as number[]));
               },
               onSelect: (record) => onToggleSelect(record.id),
             }}

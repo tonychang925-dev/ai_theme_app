@@ -877,7 +877,9 @@ export function RealtimeCollectorPage() {
                     scroll={{ y: "calc(100vh - 400px)" }}
                     rowSelection={{
                       selectedRowKeys: Array.from(selectedIds),
-                      onChange: () => {},
+                      onChange: (selectedRowKeys) => {
+                        setSelectedIds(new Set(selectedRowKeys as number[]));
+                      },
                       onSelect: (record) => toggleSelect(record.id),
                     }}
                     columns={[
@@ -939,6 +941,7 @@ export function RealtimeCollectorPage() {
                         reviewItems={reviewItems} reviewTotal={reviewTotal}
                         reviewBusy={reviewBusy} selectedIds={selectedIds}
                         onToggleSelect={toggleSelect} onSelectAll={selectAll}
+                        onSetSelectedKeys={setSelectedIds}
                         onConfirm={handleConfirmReview} onDelete={handleDeleteReview}
                         onBatchDelete={handleBatchDelete} onImportPending={handleImportPending}
                         onClearPending={handleClearPending} onRefreshReview={refreshReviewQueue}
