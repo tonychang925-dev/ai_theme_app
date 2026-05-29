@@ -563,7 +563,7 @@ export function RealtimeCollectorPage() {
         "",
       );
     }
-    return [...output, ...parts];
+    return [...parts, ...output];
   }, [output, jyhfLogs, stackStatus, jyhfCollectorRunning, jyhfStatus?.service_running, auctionEnabled, auctionStatus]);
 
   // P4-1A: 统一告警 view model — Kline + W2S 合并为 UnifiedAlertRow[]
