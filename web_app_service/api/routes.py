@@ -1027,7 +1027,7 @@ async def orchestrator_status(request: Request, now: str | None = Query(default=
     """
     orch = request.app.state.realtime_business_orchestrator
     try:
-        async with asyncio.timeout(3.0):
+        async with asyncio.timeout(8.0):
             status = await orch.get_status(now_override=now)
             return _orchestrator_status_to_dict(status)
     except Exception as exc:
@@ -1048,7 +1048,7 @@ async def orchestrator_tick(request: Request, payload: dict | None = None) -> di
     now_override = payload.get("now_override")
     orch = request.app.state.realtime_business_orchestrator
     try:
-        async with asyncio.timeout(3.0):
+        async with asyncio.timeout(8.0):
             status = await orch.tick(dry_run=dry_run, now_override=now_override)
             return _orchestrator_status_to_dict(status)
     except Exception as exc:
