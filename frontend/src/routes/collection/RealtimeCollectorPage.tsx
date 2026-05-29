@@ -149,9 +149,7 @@ export function RealtimeCollectorPage() {
           const dbPid = nc.db_collector_pid ?? "-";
           append(
             `[生命周期] realtime=${stateLabel} source=${sourceLabel} ` +
-            `raw_pid=${rawPid} dec_pid=${decPid} db_pid=${dbPid} ` +
-            `redis_raw=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
-            `pending=${nc.pending_count} dl=${nc.dead_letter_count}`
+            `raw_pid=${rawPid} dec_pid=${decPid} db_pid=${dbPid}`
           );
           lastRealtimeSigRef.current = sig;
         }
