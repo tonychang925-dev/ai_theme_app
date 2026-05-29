@@ -1722,3 +1722,63 @@ export function openKlineAlertsStream(
   });
   return es;
 }
+
+// ── P4-2A: Realtime Business Orchestrator ──
+
+export interface OrchestratorServiceState {
+  name: string;
+  enabled: boolean;
+  desired_state: string;    // disabled | wanted | not_in_window | observe
+  observed_state: string;   // unknown | ready | running | stopped | blocked | degraded | failed
+  owner: string;
+  dependencies: string[];
+  blockers: string[];
+  evidence: Record<string, unknown>;
+  last_action: string | null;
+  last_error: string | null;
+  next_retry_at: string | null;
+}
+
+export interface OrchestratorStatus {
+  enabled: boolean;
+  dry_run: boolean;
+  dry_run_forced: boolean;
+  dry_run_forced_reason: string;
+  now_override: string | null;
+  trade_date: string;
+  phase: string;
+  phase_label: string;
+  now_cn: string;
+  tick_seq: number;
+  is_trade_day: boolean;
+  services: Record<string, OrchestratorServiceState>;
+  planned_actions: Array<{ service: string; action: string; reason: string; owner: string }>;
+  global_blockers: string[];
+}
+
+export async function fetchOrchestratorStatus(nowOverride?: string): Promise<OrchestratorStatus> {
+  const params = nowOverride ? `?now=${encodeURIComponent(nowOverride)}` : "";
+  return fetchJsonWithTimeout<OrchestratorStatus>(
+    `/api/v2/realtime/orchestrator/status${params}`,
+    { cache: "no-store" },
+    15000,
+  );
+}
+
+export async function triggerOrchestratorTick(
+  dryRun: boolean = true,
+  nowOverride?: string,
+): Promise<OrchestratorStatus> {
+  return fetchJsonWithTimeout<OrchestratorStatus>(
+    "/api/v2/realtime/orchestrator/tick",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        dry_run: dryRun,
+        ...(nowOverride ? { now_override: nowOverride } : {}),
+      }),
+    },
+    15000,
+  );
+}

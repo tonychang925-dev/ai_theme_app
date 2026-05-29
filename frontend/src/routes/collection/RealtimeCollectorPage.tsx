@@ -7,6 +7,7 @@ import {
   startRealtimeCollector,
   stopRealtimeCollector,
   fetchStatusBundle,
+  fetchOrchestratorStatus,
   startJyhfAuctionCollector,
   stopJyhfAuctionCollector,
   openKlineAlertsStream,
@@ -23,6 +24,7 @@ import {
   type NewChainRealtimeStatus,
   type ReviewQueueItem,
   type StatusBundle,
+  type OrchestratorStatus,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 import { ConfigProvider, theme } from "antd";
@@ -33,6 +35,7 @@ import ServiceStatusBar, { type SseConnState } from "./components/ServiceStatusB
 import CollectionControlPanel from "./components/CollectionControlPanel";
 import UnifiedAlertPanel, { type UnifiedAlertRow } from "./components/UnifiedAlertPanel";
 import DiagnosticsTabs from "./components/DiagnosticsTabs";
+import OrchestratorStatusPanel from "./components/OrchestratorStatusPanel";
 
 function nowText() {
   return new Date().toLocaleString("zh-CN", {
@@ -108,6 +111,10 @@ export function RealtimeCollectorPage() {
   const [detailItem, setDetailItem] = useState<ReviewQueueItem | null>(null);
   const [detailOpen, setDetailOpen] = useState(false);
   const [reviewBusy, setReviewBusy] = useState(false);
+
+  // ── P4-2B: Orchestrator read-only status ──
+  const [orchStatus, setOrchStatus] = useState<OrchestratorStatus | null>(null);
+  const [orchLoading, setOrchLoading] = useState(false);
 
   function append(line: string) {
     setOutput((prev) => [...prev, `[${nowText()}] ${line}`].slice(-500));
@@ -212,6 +219,22 @@ export function RealtimeCollectorPage() {
       refreshBundledStatus().catch(() => {});
       refreshJyhfCdpLogs().catch(() => undefined);
     }, 8000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  // P4-2B: Orchestrator 10s 轮询（独立于 status-bundle）
+  async function refreshOrchestrator() {
+    setOrchLoading(true);
+    try {
+      const status = await fetchOrchestratorStatus();
+      setOrchStatus(status);
+    } catch { /* silent */ } finally {
+      setOrchLoading(false);
+    }
+  }
+  useEffect(() => {
+    refreshOrchestrator();
+    const timer = window.setInterval(() => refreshOrchestrator(), 10000);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -724,6 +747,13 @@ export function RealtimeCollectorPage() {
             onClear={() => { setKlineAlerts([]); setW2sAlerts([]); }}
           />
         </div>
+
+        {/* Layer 2.5: P4-2B Orchestrator 只读状态 */}
+        <OrchestratorStatusPanel
+          status={orchStatus}
+          loading={orchLoading}
+          onRefresh={refreshOrchestrator}
+        />
 
         {/* Layer 3: 诊断详情 */}
         <DiagnosticsTabs
