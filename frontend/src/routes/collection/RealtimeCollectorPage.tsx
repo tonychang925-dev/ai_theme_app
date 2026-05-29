@@ -881,7 +881,7 @@ export function RealtimeCollectorPage() {
                       onSelect: (record) => toggleSelect(record.id),
                     }}
                     columns={[
-                      { title: "ID", dataIndex: "id", width: 50 },
+                      { title: "ID", dataIndex: "id", width: 65 },
                       {
                         title: "Title", dataIndex: "event_title", ellipsis: true,
                         render: (v: string | null, r: ReviewQueueItem) => (
