@@ -740,7 +740,7 @@ export function RealtimeCollectorPage() {
         />
 
         {/* Layer 2: 采集控制 + Orchestrator | 统一告警 */}
-        <div style={{ display: "grid", gridTemplateColumns: "380px 1fr", gap: 12, marginBottom: 12 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "420px 1fr", gap: 12, marginBottom: 12 }}>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <CollectionControlPanel
               status={controlStatus}

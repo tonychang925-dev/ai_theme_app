@@ -223,28 +223,22 @@ function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
         </Typography.Text>
       </Space>
     }>
-      <div style={{ display: "flex", gap: 6, marginBottom: 6, fontSize: 10, flexWrap: "wrap" }}>
+      <div style={{ display: "flex", gap: 8, marginBottom: 6, fontSize: 12, flexWrap: "wrap" }}>
         <span>Redis <b style={{ color: stateColor(redis.redis_state) }}>{redis.redis_state || "?"}</b></span>
-        <span>Stream <b style={{ color: stateColor(redis.stream_state) }}>{redis.stream_state || "?"}</b></span>
-        <span>DL <b style={{ color: stateColor(redis.dead_letter_state) }}>{redis.dead_letter_state || "?"}</b></span>
-        {redis.server && (
-          <span style={{ color: "#64748b", fontSize: 9 }}>
-            c={String(redis.server.connected_clients ?? "?")} blk={String(redis.server.blocked_clients ?? "?")} {String(redis.server.used_memory_human ?? "?")}
-          </span>
-        )}
+        <span>· Stream <b style={{ color: stateColor(redis.stream_state) }}>{redis.stream_state || "?"}</b></span>
+        <span>· DL <b style={{ color: stateColor(redis.dead_letter_state) }}>{redis.dead_letter_state || "?"}</b></span>
       </div>
 
-      <Table<{ key: string; length?: number | null; state?: string; last_event_at?: string | null }>
+      <Table<{ key: string; length?: number | null; state?: string }>
         size="small"
         pagination={false}
-        style={{ fontSize: 10 }}
-        dataSource={streamKeys.filter(k => streams[k]).slice(0, 4).map(k => ({ key: k, ...streams[k] }))}
+        dataSource={streamKeys.filter(k => streams[k]).map(k => ({ key: k, ...streams[k] }))}
         columns={[
-          { title: "Stream", dataIndex: "key", key: "key", width: 130, render: (v: string) => <span style={{ fontSize: 9, fontFamily: "monospace", wordBreak: "break-all" }}>{v.replace("stream:","")}</span> },
-          { title: "Len", dataIndex: "length", key: "length", width: 50, render: (v: number | null) => <span style={{ fontSize: 10 }}>{v != null && v > 999 ? Math.round(v/1000)+"k" : (v ?? "-")}</span> },
-          { title: "State", dataIndex: "state", key: "state", width: 60, render: (v: string) => <Badge status={healthBadge(v)} text={<span style={{ fontSize: 9 }}>{v}</span>} /> },
+          { title: "Stream", dataIndex: "key", key: "key", render: (v: string) => <span style={{ fontSize: 11, fontFamily: "monospace" }}>{v.replace("stream:","")}</span> },
+          { title: "Len", dataIndex: "length", key: "length", width: 55, render: (v: number | null) => <span style={{ fontSize: 11 }}>{v != null && v > 999 ? Math.round(v/1000)+"k" : (v ?? "-")}</span> },
+          { title: "State", dataIndex: "state", key: "state", width: 70, render: (v: string) => <Badge status={healthBadge(v)} text={v} /> },
         ]}
-        locale={{ emptyText: "无 Stream 数据" }}
+        locale={{ emptyText: "—" }}
       />
 
       <Typography.Text type="secondary" style={{ fontSize: 10, display: "block", marginTop: 4 }}>
