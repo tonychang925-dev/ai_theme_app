@@ -10,14 +10,7 @@ for i in $(seq 1 10); do
   end=$(python3 -c "import time; print(time.time())")
   ms=$(python3 -c "print(int((${end} - ${start}) * 1000))")
 
-  echo "$body" | python3 -c "
-import sys,json
-d=json.load(sys.stdin)
-state=d.get('state','?')
-lat=d.get('latency_ms','?')
-skeys=list(d.get('streams',{}).keys())
-dead=d.get('streams',{}).get('stream:dead:letter',{})
-print(f'  [{i}] {ms}ms state={state} latency={lat}ms streams={len(skeys)} dead_len={dead.get(\"length\",\"?\")}')" 2>/dev/null || echo "  [$i] ${ms}ms parse_error"
+  echo "$body" | python3 -c "import sys,json; d=json.load(sys.stdin); state=d.get('state','?'); lat=d.get('latency_ms','?'); skeys=list(d.get('streams',{}).keys()); dead=d.get('streams',{}).get('stream:dead:letter',{}); print(f'  [{i}] {ms}ms state={state} latency={lat}ms streams={len(skeys)} dead_len={dead.get(\"length\",\"?\")}')" 2>/dev/null || echo "  [$i] ${ms}ms parse_error"
 
   test -n "$body" || { echo "FAIL: empty body"; exit 1; }
 
