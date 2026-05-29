@@ -145,25 +145,40 @@ class RealtimeStackManager:
         实时子进程已通过 start_new_session=True 从 SPS 剥离，
         SPS 重启/停止不会带着它们一起退出。此方法直接根据 runtime
         pidfiles 找到进程并发送 SIGTERM/SIGKILL。
+
+        会按顺序尝试多个 log 目录：REALTIME_LOG_DIR > BFF默认 > SPS默认。
         """
         import json as _json
 
-        runtime_dir = self._log_dir / "runtime"
-        stack_json = runtime_dir / "realtime_stack.json"
+        # 按优先级尝试多个 runtime 目录（SPS 和 BFF 可能用不同的 log dir）
+        candidate_dirs = [self._log_dir]
+        sps_default = self._project_root / "logs" / "realtime"
+        if sps_default != self._log_dir:
+            candidate_dirs.append(sps_default)
+
+        runtime_dir = None
+        stack_json = None
+        run_id = ""
         killed: list[str] = []
         errors: list[str] = []
 
-        # 读取 run_id
-        run_id = ""
-        if stack_json.exists():
-            try:
-                meta = _json.loads(stack_json.read_text(encoding="utf-8"))
-                run_id = str(meta.get("run_id") or "")
-            except Exception:
-                pass
+        for log_dir in candidate_dirs:
+            rt_dir = log_dir / "runtime"
+            sj = rt_dir / "realtime_stack.json"
+            if sj.exists():
+                runtime_dir = rt_dir
+                stack_json = sj
+                try:
+                    meta = _json.loads(sj.read_text(encoding="utf-8"))
+                    run_id = str(meta.get("run_id") or "")
+                except Exception:
+                    pass
+                if run_id:
+                    break
 
-        if not run_id:
-            return {"ok": True, "status": "no_pidfile", "killed": [], "message": "没有找到运行中的实时采集 pidfile"}
+        if not run_id or not runtime_dir:
+            tried = [str(d / "runtime") for d in candidate_dirs]
+            return {"ok": True, "status": "no_pidfile", "killed": [], "message": f"没有找到运行中的实时采集 pidfile。尝试了: {tried}"}
 
         # 所有可能的子进程前缀
         prefixes = [
