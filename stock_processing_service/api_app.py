@@ -4530,6 +4530,157 @@ async def w2s_alerts_readiness():
         }
 
 
+# ── P4-2F: Redis Health & Stream Diagnostics ──
+
+# Stream keys to monitor (env-overridable)
+_REDIS_HEALTH_STREAM_KEYS = [
+    os.getenv("RH_STREAM_KEY_W2S", "stream:w2s:alerts"),
+    os.getenv("RH_STREAM_KEY_KLINE", "stream:kline:alerts"),
+    os.getenv("RH_STREAM_KEY_NEWS_RAW", "stream:news:raw"),
+    os.getenv("RH_STREAM_KEY_EVENTS_STRUCTURED", "stream:events:structured"),
+    os.getenv("RH_STREAM_KEY_EVENTS_DECISION", "stream:events:decision"),
+    os.getenv("RH_STREAM_KEY_DEAD_LETTER", "stream:dead:letter"),
+]
+
+
+async def _redis_health_snapshot() -> dict:
+    """只读 Redis 运行态诊断。短超时，不扫全库。"""
+    import redis.asyncio as _aioredis
+    from datetime import datetime as _dt, timezone as _tz, timedelta as _td
+
+    TZ_CN = _tz(_td(hours=8))
+    checked_at = _dt.now(TZ_CN).isoformat()
+    redis_url = str(os.getenv("REDIS_URL") or "redis://localhost:6379/0").strip()
+    url_masked = redis_url.replace("://:", "://***@") if "@" in redis_url else redis_url  # no-op for localhost
+    blockers: list[str] = []
+    state = "ready"
+
+    # ── 1. PING ──
+    try:
+        r = _aioredis.from_url(redis_url, decode_responses=True, socket_connect_timeout=1)
+        t0 = time.time()
+        await asyncio.wait_for(r.ping(), timeout=0.5)
+        latency_ms = int((time.time() - t0) * 1000)
+    except Exception as exc:
+        return {
+            "ok": False, "state": "blocked", "latency_ms": None,
+            "redis_url_masked": url_masked, "checked_at": checked_at,
+            "blockers": [f"redis ping failed: {exc}"],
+            "server": {}, "streams": {},
+        }
+
+    if latency_ms > 500:
+        state = "blocked"
+        blockers.append(f"redis ping too slow ({latency_ms}ms)")
+    elif latency_ms > 100:
+        state = "degraded"
+        blockers.append(f"redis ping elevated ({latency_ms}ms)")
+
+    # ── 2. INFO ──
+    server_info: dict[str, Any] = {}
+    try:
+        raw_info = await asyncio.wait_for(r.info(), timeout=0.5)
+        server_info = {
+            "connected_clients": raw_info.get("connected_clients", 0),
+            "blocked_clients": raw_info.get("blocked_clients", 0),
+            "used_memory_human": raw_info.get("used_memory_human", "?"),
+            "maxmemory_human": raw_info.get("maxmemory_human", "0B"),
+            "evicted_keys": raw_info.get("evicted_keys", 0),
+            "rejected_connections": raw_info.get("rejected_connections", 0),
+            "uptime_in_seconds": raw_info.get("uptime_in_seconds", 0),
+            "instantaneous_ops_per_sec": raw_info.get("instantaneous_ops_per_sec", 0),
+        }
+        if raw_info.get("blocked_clients", 0) > 0:
+            blockers.append(f"redis blocked_clients={raw_info['blocked_clients']}")
+            if state == "ready":
+                state = "degraded"
+    except Exception as exc:
+        blockers.append(f"redis INFO failed: {exc}")
+        state = "degraded"
+
+    # ── 3. Stream checks ──
+    streams: dict[str, dict] = {}
+    try:
+        for stream_key in _REDIS_HEALTH_STREAM_KEYS:
+            stream_state = "ready"
+            stream_blockers: list[str] = []
+            try:
+                length = await asyncio.wait_for(r.xlen(stream_key), timeout=0.3)
+                last_id = None
+                last_event_at = None
+                if length and length > 0:
+                    items = await asyncio.wait_for(r.xrevrange(stream_key, count=1), timeout=0.3)
+                    if items:
+                        last_id = items[0][0]
+                        try:
+                            ts_ms = int(str(last_id).split("-")[0])
+                            last_event_at = _dt.fromtimestamp(ts_ms / 1000, TZ_CN).isoformat()
+                        except Exception:
+                            pass
+                    stream_state = "degraded"
+                    stream_blockers.append("stream has data but no active producer confirmation")
+                else:
+                    stream_state = "degraded"
+                    stream_blockers.append("stream is empty")
+            except Exception as exc:
+                # Stream might not exist — that's fine
+                length = -1
+                stream_state = "unknown"
+                stream_blockers.append(f"stream check failed: {exc}")
+
+            streams[stream_key] = {
+                "exists": length >= 0,
+                "length": length if length >= 0 else None,
+                "last_id": str(last_id) if last_id else None,
+                "last_event_at": last_event_at,
+                "state": stream_state,
+                "blockers": stream_blockers,
+            }
+
+            # Dead letter special: large backlog is a warning
+            if "dead" in stream_key and length and length > 100:
+                blockers.append(f"dead letter backlog: {length}")
+                if state == "ready":
+                    state = "degraded"
+    finally:
+        try:
+            await r.aclose()
+        except Exception:
+            pass
+
+    return {
+        "ok": True,
+        "state": state,
+        "latency_ms": latency_ms,
+        "redis_url_masked": url_masked,
+        "checked_at": checked_at,
+        "server": server_info,
+        "streams": streams,
+        "blockers": blockers,
+    }
+
+
+@app.get("/api/v1/runtime/redis-health")
+async def redis_health():
+    """Redis 运行态健康诊断：PING + INFO + 关键 Stream 检查。
+
+    只读，短超时，不扫全库，不创建连接池。"""
+    try:
+        async with asyncio.timeout(1.5):
+            return await _redis_health_snapshot()
+    except Exception as exc:
+        return {
+            "ok": False,
+            "state": "blocked",
+            "latency_ms": None,
+            "redis_url_masked": str(os.getenv("REDIS_URL", "redis://localhost:6379/0")).strip(),
+            "checked_at": "",
+            "server": {},
+            "streams": {},
+            "blockers": [f"redis health timeout/error: {exc}"],
+        }
+
+
 # ── P1-3.2: Decision 消费侧试点 — 统一读取 _decision 字段 ──
 
 @app.get("/api/v1/decision/latest")
