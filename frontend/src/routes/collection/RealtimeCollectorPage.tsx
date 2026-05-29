@@ -117,9 +117,13 @@ export function RealtimeCollectorPage() {
         const structLen = streams["stream:events:structured"]?.length ?? 0;
         const decLen = streams["stream:events:decision"]?.length ?? 0;
         const qwenOk = nc.qwen_dedup_ready ? "Qwen✅" : "Qwen⚠️";
+        const rawPid = nc.raw_news_pid ?? "-";
+        const decPid = nc.decision_pid ?? "-";
+        const dbPid = nc.db_collector_pid ?? "-";
         append(
-          `[采集] run=${nc.running ? "🟢" : "🔴"} ${qwenOk} ` +
-          `raw=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
+          `[采集] run=${effectiveRunning ? "🟢" : "🔴"} ${qwenOk} ` +
+          `raw_pid=${rawPid} dec_pid=${decPid} db_pid=${dbPid} ` +
+          `raw_len=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
           `struct=${structLen > 999 ? Math.round(structLen/1000) + "k" : structLen} ` +
           `dec=${decLen > 999 ? Math.round(decLen/1000) + "k" : decLen} ` +
           `pending=${nc.pending_count} dl=${nc.dead_letter_count} ` +

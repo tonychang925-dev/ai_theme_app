@@ -23,7 +23,7 @@ class RealtimeStackManager:
         self._project_root = Path(project_root).resolve()
         self._web_port = int(web_port)
         self._sps_port = int(sps_port)
-        self._log_dir = Path(os.getenv("REALTIME_LOG_DIR", "/tmp/ai_theme_realtime"))
+        self._log_dir = Path(os.getenv("REALTIME_LOG_DIR", str(self._project_root / "logs" / "realtime")))
         self._sps_process: subprocess.Popen | None = None
         self._frontend_process: subprocess.Popen | None = None
         # 直接管理的实时采集子进程（不依赖 SPS）
@@ -121,10 +121,20 @@ class RealtimeStackManager:
             ok_pipeline = False
             stderr.append(f"[warn] SPS stop failed (SPS may be down): {exc}")
 
-        # 3. 直接杀 pidfile 进程（兜底，SPS 不可达时用）
+        # 3. 直接杀 pidfile 进程（兜底，SPS 不可达或返回错误时用）
+        pf_result = None
         if not ok_pipeline:
             pf_result = await self.stop_pipeline()
-            stdout.append(f"[ok] direct pidfile kill: {pf_result.get('status')} killed={pf_result.get('killed')}")
+            stdout.append(f"direct pidfile kill: status={pf_result.get('status')} killed={pf_result.get('killed')}")
+
+        # 判断 pipeline 是否真正停止
+        pipeline_stopped = ok_pipeline or (
+            pf_result is not None
+            and pf_result.get("status") == "stopped"
+            and bool(pf_result.get("killed"))
+        )
+        if not pipeline_stopped:
+            stderr.append("[fail] realtime pipeline not stopped: SPS stop failed and no pidfile process killed")
 
         # 4. 仅 force/stop_sps 时停止 SPS 进程
         if stop_sps:
@@ -137,7 +147,8 @@ class RealtimeStackManager:
             stdout.append(msg_frontend if ok_frontend else "")
             stderr.append("" if ok_frontend else msg_frontend)
 
-        return self._cmd_result(True, "\n".join(filter(None, stdout)) + "\n", "\n".join(filter(None, stderr)), ["web_app_service:realtime_stack", "stop"], 0)
+        ok = pipeline_stopped and not any(stderr)
+        return self._cmd_result(ok, "\n".join(filter(None, stdout)) + "\n", "\n".join(filter(None, stderr)), ["web_app_service:realtime_stack", "stop"], 0 if ok else 1)
 
     async def stop_pipeline(self) -> dict[str, Any]:
         """直接停止实时采集子进程（读 pidfile，不依赖 SPS）。
