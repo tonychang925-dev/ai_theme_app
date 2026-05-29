@@ -30,6 +30,7 @@ class RealtimeStackManager:
         self._raw_process: subprocess.Popen | None = None
         self._decision_process: subprocess.Popen | None = None
         self._pipeline_run_id: str = ""
+        self._pipeline_start_task: asyncio.Task | None = None
         self._start_lock = asyncio.Lock()
 
     async def status(self) -> dict[str, Any]:
@@ -69,8 +70,13 @@ class RealtimeStackManager:
                 if not ok:
                     return self._cmd_result(False, "\n".join(filter(None, stdout)), "\n".join(filter(None, stderr)), ["web_app_service:realtime_stack", "start"], 1)
 
-            # 异步触发 SPS 启动实时管线（不阻塞按钮响应）
-            asyncio.create_task(self._trigger_sps_start(stdout, stderr))
+            # 异步触发 SPS 启动实时管线（不阻塞按钮响应），保存引用以便 stop 时取消
+            if self._pipeline_start_task and not self._pipeline_start_task.done():
+                stdout.append("[ok] realtime pipeline start already pending")
+            else:
+                self._pipeline_start_task = asyncio.create_task(
+                    self._trigger_sps_start(stdout, stderr)
+                )
 
             if bool(payload.get("with_frontend")):
                 ok, msg = await self._start_frontend()
@@ -80,23 +86,58 @@ class RealtimeStackManager:
             return self._cmd_result(True, "\n".join(filter(None, stdout)) + "\n", "\n".join(filter(None, stderr)), ["web_app_service:realtime_stack", "start"], 0)
 
     async def stop(self, payload: dict[str, Any] | None = None) -> dict[str, Any]:
+        """停止实时 pipeline（默认）或 SPS 进程（force=true）。
+
+        - 默认行为：取消 pending start task + 调用 SPS /api/v1/realtime/stop
+        - force=true 或 stop_sps=true：停止 SPS 进程
+        - 不默认杀 SPS，因为 SPS 还承载其他功能（SSE、decision API 等）
+        """
         payload = payload or {}
         stdout: list[str] = []
         stderr: list[str] = []
         force = bool(payload.get("force"))
+        stop_sps = bool(payload.get("stop_sps") or force)
         with_frontend = bool(payload.get("with_frontend"))
 
-        ok_sps, msg_sps = await self._stop_sps(force=force)
-        stdout.append(msg_sps if ok_sps else "")
-        stderr.append("" if ok_sps else msg_sps)
+        # 1. 取消 pending start task
+        if self._pipeline_start_task and not self._pipeline_start_task.done():
+            self._pipeline_start_task.cancel()
+            stdout.append("[ok] cancelled pending realtime pipeline start task")
+            self._pipeline_start_task = None
+
+        # 2. 先尝试通过 SPS HTTP 停止 pipeline
+        ok_pipeline = True
+        try:
+            import httpx as _httpx
+            async with _httpx.AsyncClient(timeout=15.0, trust_env=False) as _client:
+                r = await _client.get(f"http://127.0.0.1:{self._sps_port}/api/v1/realtime/stop")
+                if r.status_code == 200:
+                    data = r.json()
+                    stdout.append(f"[ok] SPS pipeline stop: {data.get('status', r.status_code)}")
+                else:
+                    ok_pipeline = False
+                    stderr.append(f"[warn] SPS stop returned {r.status_code}")
+        except Exception as exc:
+            ok_pipeline = False
+            stderr.append(f"[warn] SPS stop failed (SPS may be down): {exc}")
+
+        # 3. 直接杀 pidfile 进程（兜底，SPS 不可达时用）
+        if not ok_pipeline:
+            pf_result = await self.stop_pipeline()
+            stdout.append(f"[ok] direct pidfile kill: {pf_result.get('status')} killed={pf_result.get('killed')}")
+
+        # 4. 仅 force/stop_sps 时停止 SPS 进程
+        if stop_sps:
+            ok_sps, msg_sps = await self._stop_sps(force=force)
+            stdout.append(msg_sps if ok_sps else "")
+            stderr.append("" if ok_sps else msg_sps)
 
         if with_frontend:
             ok_frontend, msg_frontend = await self._stop_frontend(force=force)
             stdout.append(msg_frontend if ok_frontend else "")
             stderr.append("" if ok_frontend else msg_frontend)
 
-        ok = ok_sps and not any(stderr)
-        return self._cmd_result(ok, "\n".join(filter(None, stdout)) + "\n", "\n".join(filter(None, stderr)), ["web_app_service:realtime_stack", "stop"], 0 if ok else 1)
+        return self._cmd_result(True, "\n".join(filter(None, stdout)) + "\n", "\n".join(filter(None, stderr)), ["web_app_service:realtime_stack", "stop"], 0)
 
     async def stop_pipeline(self) -> dict[str, Any]:
         """直接停止实时采集子进程（读 pidfile，不依赖 SPS）。
