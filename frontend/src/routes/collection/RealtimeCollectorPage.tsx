@@ -913,7 +913,6 @@ export function RealtimeCollectorPage() {
                   );
                 })(),
               },
-            },
             {
               key: "health",
               label: "运行健康",
