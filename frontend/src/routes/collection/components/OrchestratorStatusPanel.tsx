@@ -47,10 +47,12 @@ function ServiceCard({ svc }: { svc: OrchestratorServiceState }) {
         <Badge status={stateBadge(svc.observed_state)} />
         <span style={{ fontWeight: 600, fontSize: 13 }}>{serviceName(svc.name)}</span>
       </Space>
-      <div style={{ marginTop: 4 }}>
+      <div style={{ marginTop: 4, display: "flex", gap: 4, flexWrap: "wrap" }}>
         <Tag>{stateLabel(svc.observed_state)}</Tag>
-        {svc.desired_state === "wanted" && <Tag color="blue">wanted</Tag>}
-        {svc.desired_state === "not_in_window" && <Tag color="default">非窗口</Tag>}
+        {svc.desired_state === "wanted"
+          ? <Tag color="blue">待启动</Tag>
+          : <Tag color="default">非当前窗口</Tag>
+        }
       </div>
       <div style={{ fontSize: 11, color: "#8c8c8c", marginTop: 2 }}>
         owner: {svc.owner}
