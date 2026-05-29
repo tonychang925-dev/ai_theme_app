@@ -1016,13 +1016,17 @@ async def realtime_collector_logs(
 
 
 @router.get("/realtime/orchestrator/status")
-async def orchestrator_status(request: Request) -> dict:
+async def orchestrator_status(request: Request, now: str | None = Query(default=None)) -> dict:
     """返回 orchestrator 当前状态：交易阶段、各服务 readiness、blockers。
 
     只读，不启动/停止任何服务。
+
+    Query params:
+        now: ISO datetime override for simulating trading phases (dev only).
+             e.g. ?now=2026-05-29T09:11:00+08:00 or ?now=09:11
     """
     orch = request.app.state.realtime_business_orchestrator
-    status = await orch.get_status()
+    status = await orch.get_status(now_override=now)
     return _orchestrator_status_to_dict(status)
 
 
@@ -1031,10 +1035,15 @@ async def orchestrator_tick(request: Request, payload: dict | None = None) -> di
     """触发一次诊断 tick。
 
     dry_run=true（默认）：只输出 planned_actions，不执行 start/stop。
+
+    Body:
+        {"dry_run": true, "now_override": "2026-05-29T09:11:00+08:00"}
     """
-    dry_run = bool((payload or {}).get("dry_run", True))
+    payload = payload or {}
+    dry_run = bool(payload.get("dry_run", True))
+    now_override = payload.get("now_override")
     orch = request.app.state.realtime_business_orchestrator
-    status = await orch.tick(dry_run=dry_run)
+    status = await orch.tick(dry_run=dry_run, now_override=now_override)
     return _orchestrator_status_to_dict(status)
 
 
@@ -1062,6 +1071,7 @@ def _orchestrator_status_to_dict(status) -> dict:
         "dry_run": status.dry_run,
         "dry_run_forced": status.dry_run_forced,
         "dry_run_forced_reason": status.dry_run_forced_reason,
+        "now_override": status.now_override,
         "trade_date": status.trade_date,
         "phase": status.phase,
         "phase_label": status.phase_label,

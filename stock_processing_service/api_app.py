@@ -37,8 +37,10 @@ from stock_processing_service.application.services.event_driven_opportunity_buil
     EventDrivenOpportunityBuilder,
 )
 from stock_processing_service.application.services.pre_market_brief_builder import PreMarketBriefBuilder
+from stock_processing_service.application.services.trade_plan_review_service import TradePlanReviewService
 from stock_processing_service.application.jobs.collection_job_manager import CollectionJobManager
 from stock_processing_service.publishers.notion_post_market_recap_publisher import NotionPostMarketRecapPublisher
+from stock_processing_service.integrations.notion.notion_trade_plan_repository import NotionTradePlanRepository
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidate
 from stock_processing_service.domain.services.w2s_confirm_service import W2SConfirmService
 from stock_processing_service.contracts.dto import StockAuctionDTO
@@ -247,6 +249,13 @@ class NotionPublishPayload(BaseModel):
     trade_date: str
     force: bool = False
     dry_run: bool = False
+
+
+class TradePlanReviewPayload(BaseModel):
+    trade_date: str
+    plan_date: str
+    dry_run: bool = True
+    force: bool = False
 
 
 class PreMarketBriefRebuildPayload(BaseModel):
@@ -1936,6 +1945,41 @@ async def publish_post_market_recap_to_notion(payload: NotionPublishPayload) -> 
         "report_type": result.report_type,
         "trade_date": result.trade_date,
     }
+
+
+@app.post("/api/v1/trade-plan/review")
+async def review_trade_plan(payload: TradePlanReviewPayload) -> dict[str, Any]:
+    try:
+        trade_dt = date.fromisoformat(payload.trade_date)
+        plan_dt = date.fromisoformat(payload.plan_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail="invalid trade_date or plan_date") from exc
+
+    try:
+        repository = NotionTradePlanRepository.from_env()
+        service = TradePlanReviewService(
+            repository=repository,
+            gateway=app.state.gateway,
+        )
+        result = await service.review(
+            trade_date=trade_dt,
+            plan_date=plan_dt,
+            dry_run=payload.dry_run,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    except RuntimeError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+    if not result.get("ok"):
+        code = str(result.get("error_code") or "")
+        if code == "TRADE_PLAN_NOT_FOUND":
+            raise HTTPException(status_code=404, detail=result)
+        if code == "POST_MARKET_RECAP_SNAPSHOT_MISSING":
+            raise HTTPException(status_code=424, detail=result)
+        raise HTTPException(status_code=500, detail=result)
+
+    return result
 
 
 @app.get("/api/v1/daily_review")

@@ -92,6 +92,7 @@ class OrchestratorStatus:
     dry_run: bool
     dry_run_forced: bool = False
     dry_run_forced_reason: str = ""
+    now_override: str | None = None
     trade_date: str = ""
     phase: str = "unknown"
     phase_label: str = ""
@@ -129,21 +130,26 @@ class RealtimeBusinessOrchestrator:
 
     # ── Public API ─────────────────────────────────────────────────
 
-    async def get_status(self) -> OrchestratorStatus:
+    async def get_status(self, now_override: str | None = None) -> OrchestratorStatus:
         """Return current orchestrator status (read-only, no side effects)."""
-        return await self.tick(dry_run=True)
+        return await self.tick(dry_run=True, now_override=now_override)
 
-    async def tick(self, dry_run: bool = True) -> OrchestratorStatus:
+    async def tick(self, dry_run: bool = True, now_override: str | None = None) -> OrchestratorStatus:
         """Collect all service statuses, evaluate dependencies, output planned actions.
 
         P4-2A safety lock: dry_run is FORCED to True regardless of input.
         This phase NEVER starts or stops any service.
+
+        Args:
+            dry_run: forced True in P4-2A
+            now_override: ISO datetime string for simulating trading phases
+                          (local/dev only). E.g. "2026-05-29T09:11:00+08:00"
         """
         dry_run_was_requested = dry_run
         dry_run = True  # P4-2A safety lock
 
         self._tick_seq += 1
-        now = datetime.now(TZ_CN)
+        now = _parse_now_override(now_override) if now_override else datetime.now(TZ_CN)
         trade_date = now.strftime("%Y-%m-%d")
         phase, phase_label = _trading_phase(now)
         is_trade_day = _is_trade_day(now)
@@ -189,6 +195,7 @@ class RealtimeBusinessOrchestrator:
         status = OrchestratorStatus(
             enabled=self.enabled,
             dry_run=True,  # P4-2A: always dry_run
+            now_override=now_override,
             dry_run_forced=not dry_run_was_requested,
             dry_run_forced_reason="P4-2A is read-only; start/stop disabled",
             trade_date=trade_date,
@@ -583,6 +590,19 @@ def _topological_order() -> list[str]:
     """Return services in dependency order (deps first)."""
     # Simple fixed order based on dependency graph
     return ["cdp_token", "jyhf_market", "jyhf_auction", "w2s_alert", "support_alert"]
+
+
+def _parse_now_override(value: str) -> datetime:
+    """Parse ISO datetime string for time simulation (dev only)."""
+    # Support formats: "2026-05-29T09:11:00+08:00" or "09:11"
+    import re
+    if re.match(r"^\d{2}:\d{2}$", value):
+        # Short form: just HH:MM, use today
+        today = datetime.now(TZ_CN)
+        h, m = map(int, value.split(":"))
+        return today.replace(hour=h, minute=m, second=0, microsecond=0)
+    # Full ISO format
+    return datetime.fromisoformat(value)
 
 
 def _env_bool(key: str, default: bool = False) -> bool:
