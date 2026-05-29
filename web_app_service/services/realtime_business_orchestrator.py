@@ -113,6 +113,7 @@ class OrchestratorStatus:
     planned_actions: list[dict[str, Any]] = field(default_factory=list)
     executed_actions: list[dict[str, Any]] = field(default_factory=list)
     global_blockers: list[str] = field(default_factory=list)
+    runtime_dependencies: dict[str, Any] = field(default_factory=dict)
     tick_duration_ms: int = 0
 
 
@@ -272,6 +273,9 @@ class RealtimeBusinessOrchestrator:
         support_state = await self._check_support_alert(now, desired_map.get("support_alert", "not_in_window"), services)
         services["support_alert"] = support_state
 
+        # Redis health (lightweight, non-blocking)
+        redis_health = await self._check_redis_health()
+
         # Compute planned_actions
         if is_trade_day:
             planned_actions = _compute_planned_actions(services, phase, hhmm)
@@ -285,6 +289,11 @@ class RealtimeBusinessOrchestrator:
         global_blockers = [
             f"{s.name}: {b}" for s in services.values() for b in s.blockers
         ]
+        # Redis: only flag severe issues (server down), not dead_letter backlog
+        if redis_health.get("redis_state") == "blocked":
+            global_blockers.append("redis: server blocked")
+        if redis_health.get("dead_letter_state") == "blocked":
+            global_blockers.append("redis dead_letter: critical backlog")
 
         t0 = _time.monotonic()
         return OrchestratorStatus(
@@ -304,6 +313,7 @@ class RealtimeBusinessOrchestrator:
             planned_actions=planned_actions,
             executed_actions=executed_actions,
             global_blockers=global_blockers,
+            runtime_dependencies={"redis": redis_health},
         )
 
     # ── Action execution ───────────────────────────────────────────
@@ -638,6 +648,21 @@ class RealtimeBusinessOrchestrator:
         state.blockers.extend(blockers)
         state.observed_state = readiness.get("state") or "degraded"
         return state
+
+    async def _check_redis_health(self) -> dict[str, Any]:
+        """只读调用 SPS redis-health 端点。短超时，不阻塞 tick。"""
+        try:
+            async with httpx.AsyncClient(timeout=1.2, trust_env=False) as client:
+                r = await client.get(f"{self._sps_base}/api/v1/runtime/redis-health")
+                if r.status_code != 200:
+                    return {"state": "blocked", "redis_state": "unknown",
+                            "blockers": [f"redis health HTTP {r.status_code}"]}
+                data = r.json()
+                return data if isinstance(data, dict) else {
+                    "state": "blocked", "blockers": ["redis health non-object JSON"]}
+        except Exception as exc:
+            return {"state": "blocked", "redis_state": "unknown",
+                    "blockers": [f"redis health unreachable: {exc}"]}
 
     async def _fetch_alert_readiness(self, path: str, service: str) -> dict[str, Any]:
         """只读调用 SPS readiness endpoint。短超时，不掉 SSE。"""

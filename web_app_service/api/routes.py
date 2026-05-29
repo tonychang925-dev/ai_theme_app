@@ -1113,6 +1113,7 @@ def _orchestrator_status_to_dict(status) -> dict:
         "planned_actions": status.planned_actions,
         "executed_actions": status.executed_actions,
         "global_blockers": status.global_blockers,
+        "runtime_dependencies": status.runtime_dependencies,
         "tick_duration_ms": status.tick_duration_ms,
     }
 
