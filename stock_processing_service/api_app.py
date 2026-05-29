@@ -4612,6 +4612,9 @@ async def _redis_health_snapshot() -> dict:
 
     # ── 3. Stream checks ──
     streams: dict[str, dict] = {}
+    consumer_groups: dict[str, list[dict]] = {}
+    _cg_warn_pending = int(os.getenv("REDIS_CG_PENDING_WARN", "100"))
+    _cg_warn_lag = int(os.getenv("REDIS_CG_LAG_WARN", "1000"))
     stream_state = "ready"
     dead_letter_state = "ready"
     _dl_warn = int(os.getenv("REDIS_DEAD_LETTER_WARN", "100"))
@@ -4653,6 +4656,33 @@ async def _redis_health_snapshot() -> dict:
                 "blockers": sv_blockers,
             }
 
+            # Consumer group inspection
+            try:
+                groups_raw = await asyncio.wait_for(r.xinfo_groups(stream_key), timeout=0.3)
+                cg_list: list[dict] = []
+                for g in groups_raw:
+                    gname = g.get("name", "?")
+                    pending = int(g.get("pending", 0))
+                    lag = int(g.get("lag", 0))
+                    last_delivered = str(g.get("last-delivered-id", ""))
+                    consumers = int(g.get("consumers", 0))
+                    cg_entry = {
+                        "name": gname,
+                        "consumers": consumers,
+                        "pending": pending,
+                        "lag": lag,
+                        "last_delivered_id": last_delivered,
+                    }
+                    cg_list.append(cg_entry)
+                    if pending > _cg_warn_pending:
+                        sv_blockers.append(f"group {gname}: pending={pending} (warn>{_cg_warn_pending})")
+                    if lag > _cg_warn_lag:
+                        sv_blockers.append(f"group {gname}: lag={lag} (warn>{_cg_warn_lag})")
+                if cg_list:
+                    consumer_groups[stream_key] = cg_list
+            except Exception:
+                pass  # stream may not have groups
+
             # Dead letter: separate health axis
             if "dead" in stream_key and length is not None and length > 0:
                 if length >= _dl_block:
@@ -4686,6 +4716,7 @@ async def _redis_health_snapshot() -> dict:
         "redis_state": redis_state,
         "stream_state": stream_state,
         "dead_letter_state": dead_letter_state,
+        "consumer_groups": consumer_groups,
         "latency_ms": latency_ms,
         "redis_url_masked": url_masked,
         "checked_at": checked_at,
