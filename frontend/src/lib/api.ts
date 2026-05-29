@@ -1739,6 +1739,29 @@ export interface OrchestratorServiceState {
   next_retry_at: string | null;
 }
 
+export interface RedisStreamHealth {
+  exists?: boolean;
+  length?: number | null;
+  state?: string;
+  last_id?: string | null;
+  last_event_at?: string | null;
+  blockers?: string[];
+}
+
+export interface RedisRuntimeHealth {
+  ok?: boolean;
+  state?: string;
+  redis_state?: string;
+  stream_state?: string;
+  dead_letter_state?: string;
+  latency_ms?: number | null;
+  redis_url_masked?: string;
+  checked_at?: string;
+  blockers?: string[];
+  server?: Record<string, unknown>;
+  streams?: Record<string, RedisStreamHealth>;
+}
+
 export interface OrchestratorStatus {
   enabled: boolean;
   actions_enabled: boolean;
@@ -1756,6 +1779,7 @@ export interface OrchestratorStatus {
   planned_actions: Array<{ service: string; action: string; reason: string; owner: string }>;
   executed_actions: Array<Record<string, unknown>>;
   global_blockers: string[];
+  runtime_dependencies?: Record<string, unknown>;
   tick_duration_ms: number;
 }
 

@@ -1,6 +1,6 @@
 /** P4-2B: Realtime Business Orchestrator 只读状态面板。 */
-import { Badge, Card, Descriptions, Space, Tag } from "antd";
-import type { OrchestratorStatus, OrchestratorServiceState } from "../../../lib/api";
+import { Badge, Card, Descriptions, Space, Tag, Table, Typography } from "antd";
+import type { OrchestratorStatus, OrchestratorServiceState, RedisRuntimeHealth, RedisStreamHealth } from "../../../lib/api";
 
 interface Props {
   status: OrchestratorStatus | null;
@@ -150,6 +150,9 @@ export default function OrchestratorStatusPanel({ status, loading, error, onRefr
         ))}
       </div>
 
+      {/* Redis Health */}
+      <RedisHealthSection redis={status.runtime_dependencies?.redis as RedisRuntimeHealth | undefined} />
+
       {/* Planned Actions */}
       {status.planned_actions.length > 0 && (
         <div style={{
@@ -184,6 +187,69 @@ export default function OrchestratorStatusPanel({ status, loading, error, onRefr
           )}
         </div>
       )}
+    </Card>
+  );
+}
+
+
+function healthBadge(s: string | undefined): "success" | "warning" | "error" | "default" {
+  if (s === "ready") return "success";
+  if (s === "degraded") return "warning";
+  if (s === "blocked") return "error";
+  return "default";
+}
+
+function stateColor(s: string | undefined): string {
+  if (s === "ready") return "#22c55e";
+  if (s === "degraded") return "#f59e0b";
+  if (s === "blocked") return "#ef4444";
+  return "#64748b";
+}
+
+function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
+  if (!redis) return null;
+
+  const streams = redis.streams || {};
+  const streamKeys = ["stream:w2s:alerts", "stream:kline:alerts", "stream:news:raw", "stream:events:structured", "stream:events:decision", "stream:dead:letter"];
+
+  return (
+    <Card size="small" style={{ marginTop: 8, background: "rgba(255,255,255,0.02)" }} title={
+      <Space>
+        <span style={{ fontWeight: 600, fontSize: 13 }}>Redis Health</span>
+        <Badge status={healthBadge(redis.state)} />
+        <span style={{ color: stateColor(redis.state), fontSize: 12 }}>{redis.state || "?"}</span>
+        <Typography.Text type="secondary" style={{ fontSize: 11 }}>
+          {redis.latency_ms != null ? `${redis.latency_ms}ms` : ""}
+        </Typography.Text>
+      </Space>
+    }>
+      <div style={{ display: "flex", gap: 12, marginBottom: 8, fontSize: 11 }}>
+        <span>Redis: <b style={{ color: stateColor(redis.redis_state) }}>{redis.redis_state || "?"}</b></span>
+        <span>Stream: <b style={{ color: stateColor(redis.stream_state) }}>{redis.stream_state || "?"}</b></span>
+        <span>Dead Letter: <b style={{ color: stateColor(redis.dead_letter_state) }}>{redis.dead_letter_state || "?"}</b></span>
+        {redis.server && (
+          <span style={{ color: "#64748b" }}>
+            clients={String(redis.server.connected_clients ?? "?")} blocked={String(redis.server.blocked_clients ?? "?")} mem={String(redis.server.used_memory_human ?? "?")}
+          </span>
+        )}
+      </div>
+
+      <Table<{ key: string; length?: number | null; state?: string; last_event_at?: string | null }>
+        size="small"
+        pagination={false}
+        dataSource={streamKeys.filter(k => streams[k]).map(k => ({ key: k, ...streams[k] }))}
+        columns={[
+          { title: "Stream", dataIndex: "key", key: "key", width: 160, render: (v: string) => <span style={{ fontSize: 11, fontFamily: "monospace" }}>{v}</span> },
+          { title: "Len", dataIndex: "length", key: "length", width: 60, render: (v: number | null) => <span style={{ fontSize: 11 }}>{v ?? "-"}</span> },
+          { title: "State", dataIndex: "state", key: "state", width: 70, render: (v: string) => <Badge status={healthBadge(v)} text={v} /> },
+          { title: "Last", dataIndex: "last_event_at", key: "last_event_at", render: (v: string | null) => <span style={{ fontSize: 10, color: "#8c8c8c" }}>{v ? v.slice(11, 19) : "-"}</span> },
+        ]}
+        locale={{ emptyText: "无 Stream 数据" }}
+      />
+
+      <Typography.Text type="secondary" style={{ fontSize: 10, display: "block", marginTop: 4 }}>
+        Stream length 为历史/积压指标，不代表服务正在运行。Dead Letter 积压不等于 Redis 不可用。
+      </Typography.Text>
     </Card>
   );
 }
