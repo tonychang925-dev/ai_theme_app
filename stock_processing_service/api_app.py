@@ -4576,13 +4576,22 @@ async def _redis_health_snapshot() -> dict:
         state = "degraded"
         blockers.append(f"redis ping elevated ({latency_ms}ms)")
 
+    # Redis server health (independent from stream/dead-letter)
+    redis_state = state  # from PING
+
     # ── 2. INFO ──
     server_info: dict[str, Any] = {}
+    _expected_blocked = int(os.getenv("REDIS_EXPECTED_BLOCKED_CLIENTS", "0"))
+    _blocked_warn = int(os.getenv("REDIS_BLOCKED_CLIENTS_WARN", "8"))
+    _blocked_block = int(os.getenv("REDIS_BLOCKED_CLIENTS_BLOCK", "20"))
+
     try:
         raw_info = await asyncio.wait_for(r.info(), timeout=0.5)
+        blocked = int(raw_info.get("blocked_clients", 0))
         server_info = {
             "connected_clients": raw_info.get("connected_clients", 0),
-            "blocked_clients": raw_info.get("blocked_clients", 0),
+            "blocked_clients": blocked,
+            "blocked_clients_expected": _expected_blocked,
             "used_memory_human": raw_info.get("used_memory_human", "?"),
             "maxmemory_human": raw_info.get("maxmemory_human", "0B"),
             "evicted_keys": raw_info.get("evicted_keys", 0),
@@ -4590,20 +4599,28 @@ async def _redis_health_snapshot() -> dict:
             "uptime_in_seconds": raw_info.get("uptime_in_seconds", 0),
             "instantaneous_ops_per_sec": raw_info.get("instantaneous_ops_per_sec", 0),
         }
-        if raw_info.get("blocked_clients", 0) > 0:
-            blockers.append(f"redis blocked_clients={raw_info['blocked_clients']}")
-            if state == "ready":
-                state = "degraded"
+        if blocked >= _blocked_block:
+            redis_state = "blocked"
+            blockers.append(f"blocked_clients critical: {blocked} (limit={_blocked_block})")
+        elif blocked > max(_expected_blocked, _blocked_warn):
+            redis_state = "degraded"
+            blockers.append(f"blocked_clients above expected: {blocked} (expected<={_expected_blocked})")
     except Exception as exc:
         blockers.append(f"redis INFO failed: {exc}")
-        state = "degraded"
+        if redis_state == "ready":
+            redis_state = "degraded"
 
     # ── 3. Stream checks ──
     streams: dict[str, dict] = {}
+    stream_state = "ready"
+    dead_letter_state = "ready"
+    _dl_warn = int(os.getenv("REDIS_DEAD_LETTER_WARN", "100"))
+    _dl_block = int(os.getenv("REDIS_DEAD_LETTER_BLOCK", "1000"))
+
     try:
         for stream_key in _REDIS_HEALTH_STREAM_KEYS:
-            stream_state = "ready"
-            stream_blockers: list[str] = []
+            sv_state = "ready"
+            sv_blockers: list[str] = []
             try:
                 length = await asyncio.wait_for(r.xlen(stream_key), timeout=0.3)
                 last_id = None
@@ -4617,40 +4634,58 @@ async def _redis_health_snapshot() -> dict:
                             last_event_at = _dt.fromtimestamp(ts_ms / 1000, TZ_CN).isoformat()
                         except Exception:
                             pass
-                    stream_state = "degraded"
-                    stream_blockers.append("stream has data but no active producer confirmation")
+                    sv_state = "degraded"
+                    sv_blockers.append("stream has data but no active producer confirmation")
                 else:
-                    stream_state = "degraded"
-                    stream_blockers.append("stream is empty")
+                    sv_state = "degraded"
+                    sv_blockers.append("stream is empty")
             except Exception as exc:
-                # Stream might not exist — that's fine
                 length = -1
-                stream_state = "unknown"
-                stream_blockers.append(f"stream check failed: {exc}")
+                sv_state = "unknown"
+                sv_blockers.append(f"stream check failed: {exc}")
 
             streams[stream_key] = {
                 "exists": length >= 0,
                 "length": length if length >= 0 else None,
                 "last_id": str(last_id) if last_id else None,
                 "last_event_at": last_event_at,
-                "state": stream_state,
-                "blockers": stream_blockers,
+                "state": sv_state,
+                "blockers": sv_blockers,
             }
 
-            # Dead letter special: large backlog is a warning
-            if "dead" in stream_key and length and length > 100:
-                blockers.append(f"dead letter backlog: {length}")
-                if state == "ready":
-                    state = "degraded"
+            # Dead letter: separate health axis
+            if "dead" in stream_key and length is not None and length > 0:
+                if length >= _dl_block:
+                    dead_letter_state = "blocked"
+                    blockers.append(f"dead letter critical backlog: {length} (limit={_dl_block})")
+                elif length > _dl_warn:
+                    dead_letter_state = "degraded"
+                    blockers.append(f"dead letter backlog: {length} (warn>{_dl_warn})")
+                # Don't affect redis_state or stream_state from dead letter
+
+            # Stream aggregate: if any key stream is unhealthy, mark stream_state
+            if sv_state != "ready" and "dead" not in stream_key:
+                if stream_state == "ready":
+                    stream_state = sv_state
     finally:
         try:
             await r.aclose()
         except Exception:
             pass
 
+    # Aggregate overall state: worst of redis/stream/dead_letter
+    overall = redis_state
+    if stream_state == "blocked" or dead_letter_state == "blocked":
+        overall = "blocked"
+    elif stream_state == "degraded" or dead_letter_state == "degraded":
+        overall = "degraded"
+
     return {
         "ok": True,
-        "state": state,
+        "state": overall,
+        "redis_state": redis_state,
+        "stream_state": stream_state,
+        "dead_letter_state": dead_letter_state,
         "latency_ms": latency_ms,
         "redis_url_masked": url_masked,
         "checked_at": checked_at,
