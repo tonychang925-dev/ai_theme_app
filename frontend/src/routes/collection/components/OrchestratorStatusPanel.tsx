@@ -234,8 +234,8 @@ function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
         pagination={false}
         dataSource={streamKeys.filter(k => streams[k]).map(k => ({ key: k, ...streams[k] }))}
         columns={[
-          { title: "Stream", dataIndex: "key", key: "key", render: (v: string) => <span style={{ fontSize: 11, fontFamily: "monospace" }}>{v.replace("stream:","")}</span> },
-          { title: "Len", dataIndex: "length", key: "length", width: 55, render: (v: number | null) => <span style={{ fontSize: 11 }}>{v != null && v > 999 ? Math.round(v/1000)+"k" : (v ?? "-")}</span> },
+          { title: "Stream", dataIndex: "key", key: "key", render: (v: string) => <span style={{ fontSize: 12 }}>{v.replace("stream:","")}</span> },
+          { title: "Len", dataIndex: "length", key: "length", width: 55, render: (v: number | null) => <span style={{ fontSize: 12 }}>{v != null && v > 999 ? Math.round(v/1000)+"k" : (v ?? "-")}</span> },
           { title: "State", dataIndex: "state", key: "state", width: 70, render: (v: string) => <Badge status={healthBadge(v)} text={v} /> },
         ]}
         locale={{ emptyText: "—" }}
