@@ -1,6 +1,6 @@
 """P3-4: ReplaySourceAdapter — 回放数据源适配器。
 
-从 JSONL / list[dict] / Redis Stream 历史读取已采集的事件，
+从 JSONL / list[dict] 读取已采集的事件，
 以统一 envelope 格式回放到指定目标 stream，用于测试、复盘、回放和策略验证。
 
 不接管真实采集器，不改 Runtime，不改业务 scorer。
@@ -63,6 +63,11 @@ class ReplaySourceAdapter(SourceAdapter):
         redis_url: Optional[str] = None,
         source_name: str = "replay",
     ):
+        if schema_type not in VALID_SCHEMA_TYPES:
+            raise ValueError(
+                f"Unsupported schema_type: {schema_type}. "
+                f"Expected one of: {sorted(VALID_SCHEMA_TYPES)}"
+            )
         self._items = items
         self._source_path = Path(source_path) if source_path else None
         self._schema_type = schema_type
