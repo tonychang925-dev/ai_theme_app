@@ -26,6 +26,10 @@ class RealtimeStackManager:
         self._log_dir = Path(os.getenv("REALTIME_LOG_DIR", "/tmp/ai_theme_realtime"))
         self._sps_process: subprocess.Popen | None = None
         self._frontend_process: subprocess.Popen | None = None
+        # 直接管理的实时采集子进程（不依赖 SPS）
+        self._raw_process: subprocess.Popen | None = None
+        self._decision_process: subprocess.Popen | None = None
+        self._pipeline_run_id: str = ""
         self._start_lock = asyncio.Lock()
 
     async def status(self) -> dict[str, Any]:
