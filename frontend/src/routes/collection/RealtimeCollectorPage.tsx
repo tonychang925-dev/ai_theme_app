@@ -62,11 +62,11 @@ export function RealtimeCollectorPage() {
   const [auctionBusy, setAuctionBusy] = useState(false);
   const [klineAlerts, setKlineAlerts] = useState<KlineAlertEvent[]>([]);
   const [klineFilter, setKlineFilter] = useState<"all" | "critical" | "error" | "warning" | "info" | "auction" | "intraday">("warning");
-  const [klineAlertsEnabled, setKlineAlertsEnabled] = useState(true);
+  const [klineAlertsEnabled, setKlineAlertsEnabled] = useState(false); // 默认关闭，按需开启
   const klineEsRef = useRef<EventSource | null>(null);
   const [w2sAlerts, setW2sAlerts] = useState<W2SAlertEvent[]>([]);
   const [w2sFilter, setW2sFilter] = useState<"all" | "important" | "observe">("important");
-  const [w2sAlertsEnabled, setW2sAlertsEnabled] = useState(true);
+  const [w2sAlertsEnabled, setW2sAlertsEnabled] = useState(false); // 默认关闭，按需开启
   const w2sEsRef = useRef<EventSource | null>(null);
   // ── 操作日志 ──
   const [output, setOutput] = useState<string[]>([]);
@@ -112,9 +112,11 @@ export function RealtimeCollectorPage() {
   const [detailOpen, setDetailOpen] = useState(false);
   const [reviewBusy, setReviewBusy] = useState(false);
 
-  // ── P4-2B: Orchestrator read-only status ──
+  // ── P4-2B: Orchestrator read-only status（非阻塞诊断）──
   const [orchStatus, setOrchStatus] = useState<OrchestratorStatus | null>(null);
   const [orchLoading, setOrchLoading] = useState(false);
+  const [orchError, setOrchError] = useState<string | null>(null);
+  const orchInFlightRef = useRef(false);
 
   function append(line: string) {
     setOutput((prev) => [...prev, `[${nowText()}] ${line}`].slice(-500));
@@ -222,19 +224,25 @@ export function RealtimeCollectorPage() {
     return () => window.clearInterval(timer);
   }, []);
 
-  // P4-2B: Orchestrator 10s 轮询（独立于 status-bundle）
+  // P4-2B: Orchestrator 60s 低频轮询（非阻塞，失败不影响主控）
   async function refreshOrchestrator() {
+    if (orchInFlightRef.current) return;
+    orchInFlightRef.current = true;
     setOrchLoading(true);
     try {
       const status = await fetchOrchestratorStatus();
       setOrchStatus(status);
-    } catch { /* silent */ } finally {
+      setOrchError(null);
+    } catch (err: any) {
+      setOrchError(err?.message || String(err));
+    } finally {
+      orchInFlightRef.current = false;
       setOrchLoading(false);
     }
   }
   useEffect(() => {
     refreshOrchestrator();
-    const timer = window.setInterval(() => refreshOrchestrator(), 10000);
+    const timer = window.setInterval(() => refreshOrchestrator(), 60000);
     return () => window.clearInterval(timer);
   }, []);
 
@@ -243,9 +251,10 @@ export function RealtimeCollectorPage() {
     if (!klineAlertsEnabled) {
       if (klineEsRef.current) { klineEsRef.current.close(); klineEsRef.current = null; }
       setKlineSseState("disabled");
-      append("[K线告警] 已关闭");
       return;
     }
+    // 强制单例：先关旧连接再开新连接
+    if (klineEsRef.current) { klineEsRef.current.close(); klineEsRef.current = null; }
     setKlineSseState("connecting");
     const es = openKlineAlertsStream(
       (alert) => {
@@ -261,8 +270,10 @@ export function RealtimeCollectorPage() {
       },
     );
     klineEsRef.current = es;
-    append("[K线告警] SSE 已连接");
-    return () => { es.close(); };
+    return () => {
+      es.close();
+      if (klineEsRef.current === es) klineEsRef.current = null;
+    };
   }, [klineAlertsEnabled]);
 
   // P1-I-1b: W2S 竞价弱转强告警 SSE
@@ -272,6 +283,8 @@ export function RealtimeCollectorPage() {
       setW2sSseState("disabled");
       return;
     }
+    // 强制单例
+    if (w2sEsRef.current) { w2sEsRef.current.close(); w2sEsRef.current = null; }
     setW2sSseState("connecting");
     const es = openW2SAlertsStream(
       (alert) => {
@@ -287,8 +300,10 @@ export function RealtimeCollectorPage() {
       },
     );
     w2sEsRef.current = es;
-    append("[W2S告警] SSE 已连接");
-    return () => { es.close(); };
+    return () => {
+      es.close();
+      if (w2sEsRef.current === es) w2sEsRef.current = null;
+    };
   }, [w2sAlertsEnabled]);
 
   useEffect(() => {
@@ -752,6 +767,7 @@ export function RealtimeCollectorPage() {
         <OrchestratorStatusPanel
           status={orchStatus}
           loading={orchLoading}
+          error={orchError}
           onRefresh={refreshOrchestrator}
         />
 

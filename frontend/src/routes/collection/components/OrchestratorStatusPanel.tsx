@@ -5,6 +5,7 @@ import type { OrchestratorStatus, OrchestratorServiceState } from "../../../lib/
 interface Props {
   status: OrchestratorStatus | null;
   loading: boolean;
+  error?: string | null;
   onRefresh: () => void;
 }
 
@@ -72,12 +73,12 @@ function ServiceCard({ svc }: { svc: OrchestratorServiceState }) {
   );
 }
 
-export default function OrchestratorStatusPanel({ status, loading, onRefresh }: Props) {
+export default function OrchestratorStatusPanel({ status, loading, error, onRefresh }: Props) {
   if (!status) {
     return (
       <Card size="small" style={{ marginTop: 12 }}>
-        <div style={{ color: "#64748b", textAlign: "center", padding: 20 }}>
-          {loading ? "加载编排器状态中..." : "编排器状态暂不可用"}
+        <div style={{ color: error ? "#ef4444" : "#64748b", textAlign: "center", padding: 20, fontSize: error ? 12 : 14 }}>
+          {error ? `编排器不可用: ${error}` : (loading ? "加载编排器状态中..." : "编排器状态暂不可用")}
         </div>
       </Card>
     );

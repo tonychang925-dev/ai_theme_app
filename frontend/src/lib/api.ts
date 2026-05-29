@@ -1761,7 +1761,7 @@ export async function fetchOrchestratorStatus(nowOverride?: string): Promise<Orc
   return fetchJsonWithTimeout<OrchestratorStatus>(
     `/api/v2/realtime/orchestrator/status${params}`,
     { cache: "no-store" },
-    15000,
+    3000,  // 短超时：非关键诊断，不要阻塞
   );
 }
 
@@ -1779,6 +1779,6 @@ export async function triggerOrchestratorTick(
         ...(nowOverride ? { now_override: nowOverride } : {}),
       }),
     },
-    15000,
+    5000,  // tick 稍长但仍在合理范围
   );
 }
