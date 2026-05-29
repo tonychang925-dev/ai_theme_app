@@ -7,6 +7,7 @@ import {
   fetchNewChainRealtimeStatus,
   startNewChainRealtime,
   stopNewChainRealtime,
+  startRealtimeCollector,
   fetchStatusBundle,
   startJyhfAuctionCollector,
   stopJyhfAuctionCollector,
@@ -237,16 +238,14 @@ export function RealtimeCollectorPage() {
 
   async function handleStart() {
     try {
-      append("🖱️ 按钮点击已触发");
+      append("🖱️ 启动实时采集按钮已触发");
       setMainBusy(true);
-      if (running === "up") {
-        append("已在运行，跳过");
-        setMainBusy(false);
-        return;
-      }
-      append("[新链] 发送启动请求...");
-      const result = await startNewChainRealtime();
-      append(`[新链] ok=${result.ok}`);
+      append("[实时采集] 请求 BFF 启动/确认 SPS + realtime pipeline...");
+      const result = await startRealtimeCollector({});
+      append(`[实时采集] ok=${result.ok} rc=${result.return_code}`);
+      if (result.stdout) append(result.stdout.trim());
+      if (result.stderr) append(`stderr: ${result.stderr.trim()}`);
+      await new Promise((r) => setTimeout(r, 3000));
       await refreshBundledStatus();
     } catch (err: any) {
       append(`❌ 启动失败: ${err?.message || err}`);
