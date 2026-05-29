@@ -65,8 +65,64 @@ export default function DiagnosticsTabs(props: Props) {
     {
       key: "redis-stream",
       label: "Redis Stream",
-      children: (
+      children: (() => {
+          const pendingCount = stackStatus?.pending_count ?? 0;
+          const reviewCount = stackStatus?.review_queue_count ?? 0;
+          const deadCount = stackStatus?.dead_letter_count ?? 0;
+          const decisionCount = stackStatus?.decision_stream_count ?? 0;
+          return (
         <div>
+          {/* ── 关键数据流指标 ── */}
+          <div style={{
+            display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+            gap: 8, marginBottom: 10,
+          }}>
+            <div style={{
+              padding: "8px 10px", borderRadius: 6,
+              background: pendingCount > 0 ? "rgba(245,158,11,0.08)" : "rgba(255,255,255,0.03)",
+              border: pendingCount > 0 ? "1px solid rgba(245,158,11,0.3)" : "1px solid rgba(255,255,255,0.06)",
+            }}>
+              <div style={{ fontSize: 10, color: "#64748b" }}>📥 Pending</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: pendingCount > 0 ? "#f59e0b" : "#e2e8f0" }}>
+                {stackStatus ? pendingCount : "?"}
+              </div>
+              <div style={{ fontSize: 10, color: "#64748b", marginTop: 1 }}>待导入</div>
+            </div>
+            <div style={{
+              padding: "8px 10px", borderRadius: 6,
+              background: reviewCount > 0 ? "rgba(59,130,246,0.08)" : "rgba(255,255,255,0.03)",
+              border: reviewCount > 0 ? "1px solid rgba(59,130,246,0.3)" : "1px solid rgba(255,255,255,0.06)",
+            }}>
+              <div style={{ fontSize: 10, color: "#64748b" }}>📋 待复核</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: reviewCount > 0 ? "#3b82f6" : "#e2e8f0" }}>
+                {stackStatus ? reviewCount : "?"}
+              </div>
+              <div style={{ fontSize: 10, color: "#64748b", marginTop: 1 }}>DB waiting</div>
+            </div>
+            <div style={{
+              padding: "8px 10px", borderRadius: 6,
+              background: deadCount > 0 ? "rgba(239,68,68,0.08)" : "rgba(255,255,255,0.03)",
+              border: deadCount > 0 ? "1px solid rgba(239,68,68,0.3)" : "1px solid rgba(255,255,255,0.06)",
+            }}>
+              <div style={{ fontSize: 10, color: "#64748b" }}>💀 Dead Letter</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: deadCount > 0 ? "#ef4444" : "#e2e8f0" }}>
+                {stackStatus ? deadCount : "?"}
+              </div>
+              <div style={{ fontSize: 10, color: "#64748b", marginTop: 1 }}>死信</div>
+            </div>
+            <div style={{
+              padding: "8px 10px", borderRadius: 6,
+              background: "rgba(255,255,255,0.03)",
+              border: "1px solid rgba(255,255,255,0.06)",
+            }}>
+              <div style={{ fontSize: 10, color: "#64748b" }}>📊 Decision</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: "#e2e8f0" }}>
+                {stackStatus ? (decisionCount >= 0 ? decisionCount : "?") : "?"}
+              </div>
+              <div style={{ fontSize: 10, color: "#64748b", marginTop: 1 }}>流长度</div>
+            </div>
+          </div>
+
           <Descriptions size="small" column={2}>
             <Descriptions.Item label="Qwen Dedup">
               {stackStatus?.qwen_dedup_ready ? <Tag color="green">就绪</Tag> : <Tag>未就绪</Tag>}
@@ -96,7 +152,8 @@ export default function DiagnosticsTabs(props: Props) {
             )}
           </div>
         </div>
-      ),
+          );
+        }}(),
     },
     {
       key: "review-queue",
