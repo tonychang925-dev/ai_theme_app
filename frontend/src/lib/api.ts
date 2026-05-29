@@ -1762,6 +1762,44 @@ export interface RedisRuntimeHealth {
   streams?: Record<string, RedisStreamHealth>;
 }
 
+export interface DbTableHealth {
+  exists?: boolean;
+  estimated_rows?: number | null;
+  latest_at?: string | null;
+  age_sec?: number | null;
+  state?: string;
+  blockers?: string[];
+}
+
+export interface DbWaitingSample {
+  pid?: number;
+  user?: string;
+  app?: string;
+  state?: string;
+  wait_type?: string;
+  wait_event?: string;
+  query_age?: string | null;
+  query?: string;
+}
+
+export interface DatabaseRuntimeHealth {
+  ok?: boolean;
+  state?: string;
+  db_state?: string;
+  pool_state?: string;
+  schema_state?: string;
+  freshness_state?: string;
+  lock_state?: string;
+  latency_ms?: number | null;
+  write_db?: string;
+  read_db?: string;
+  same_db?: boolean;
+  blockers?: string[];
+  server?: Record<string, unknown>;
+  tables?: Record<string, DbTableHealth>;
+  waiting_samples?: DbWaitingSample[];
+}
+
 export interface OrchestratorStatus {
   enabled: boolean;
   actions_enabled: boolean;

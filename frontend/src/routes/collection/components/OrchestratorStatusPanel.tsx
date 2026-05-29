@@ -1,6 +1,6 @@
 /** P4-2B: Realtime Business Orchestrator 只读状态面板。 */
 import { Badge, Card, Descriptions, Space, Tag, Table, Typography } from "antd";
-import type { OrchestratorStatus, OrchestratorServiceState, RedisRuntimeHealth, RedisStreamHealth } from "../../../lib/api";
+import type { OrchestratorStatus, OrchestratorServiceState, RedisRuntimeHealth, RedisStreamHealth, DatabaseRuntimeHealth } from "../../../lib/api";
 
 interface Props {
   status: OrchestratorStatus | null;
@@ -150,8 +150,9 @@ export default function OrchestratorStatusPanel({ status, loading, error, onRefr
         ))}
       </div>
 
-      {/* Redis Health */}
+      {/* Runtime Health */}
       <RedisHealthSection redis={status.runtime_dependencies?.redis as RedisRuntimeHealth | undefined} />
+      <DbHealthSection db={status.runtime_dependencies?.database as DatabaseRuntimeHealth | undefined} />
 
       {/* Planned Actions */}
       {status.planned_actions.length > 0 && (
@@ -243,6 +244,61 @@ function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
 
       <Typography.Text type="secondary" style={{ fontSize: 10, display: "block", marginTop: 4 }}>
         Stream length 为历史/积压指标，不代表服务正在运行。Dead Letter 积压不等于 Redis 不可用。
+      </Typography.Text>
+    </Card>
+  );
+}
+
+
+function DbHealthSection({ db }: { db?: DatabaseRuntimeHealth }) {
+  if (!db || !db.db_state) return null;
+
+  const tables = db.tables || {};
+  const tableKeys = Object.keys(tables);
+  const samples = db.waiting_samples || [];
+
+  return (
+    <Card size="small" style={{ marginTop: 8, background: "rgba(255,255,255,0.02)" }} title={
+      <Space>
+        <span style={{ fontWeight: 600, fontSize: 13 }}>Database Health</span>
+        <Badge status={healthBadge(db.state)} />
+        <span style={{ color: stateColor(db.state), fontSize: 12 }}>{db.state || "?"}</span>
+        <Typography.Text type="secondary" style={{ fontSize: 11 }}>
+          {db.latency_ms != null ? `${db.latency_ms}ms` : ""} {db.write_db}
+        </Typography.Text>
+      </Space>
+    }>
+      <div style={{ display: "flex", gap: 8, marginBottom: 6, fontSize: 12, flexWrap: "wrap" }}>
+        <span>DB <b style={{ color: stateColor(db.db_state) }}>{db.db_state || "?"}</b></span>
+        <span>· Schema <b style={{ color: stateColor(db.schema_state) }}>{db.schema_state || "?"}</b></span>
+        <span>· Fresh <b style={{ color: stateColor(db.freshness_state) }}>{db.freshness_state || "?"}</b></span>
+        <span>· Lock <b style={{ color: stateColor(db.lock_state) }}>{db.lock_state || "?"}</b></span>
+        {samples.length > 0 && <span style={{ color: "#64748b" }}>waiting={samples.length}</span>}
+      </div>
+
+      {tableKeys.length > 0 && (
+        <Table<{ key: string; estimated_rows?: number | null; age_sec?: number | null; state?: string }>
+          size="small"
+          pagination={false}
+          dataSource={tableKeys.map(k => ({ key: k, ...tables[k] }))}
+          columns={[
+            { title: "Table", dataIndex: "key", key: "key", width: 130, render: (v: string) => <span style={{ fontSize: 12 }}>{v}</span> },
+            { title: "Rows", dataIndex: "estimated_rows", key: "rows", width: 55, render: (v: number | null) => <span style={{ fontSize: 12 }}>{v != null && v > 999 ? Math.round(v/1000)+"k" : (v ?? "-")}</span> },
+            { title: "Age", dataIndex: "age_sec", key: "age", width: 60, render: (v: number | null) => <span style={{ fontSize: 12, color: v != null && v > 1800 ? "#f59e0b" : undefined }}>{v != null ? (v > 3600 ? Math.round(v/3600)+"h" : Math.round(v/60)+"m") : "?"}</span> },
+            { title: "State", dataIndex: "state", key: "state", width: 70, render: (v: string) => <Badge status={healthBadge(v)} text={v} /> },
+          ]}
+          locale={{ emptyText: "—" }}
+        />
+      )}
+
+      {samples.length > 0 && samples[0].wait_event === "ClientRead" && (
+        <Typography.Text type="secondary" style={{ fontSize: 10 }}>
+          ClientRead 为连接池空闲等待，非锁冲突。
+        </Typography.Text>
+      )}
+
+      <Typography.Text type="secondary" style={{ fontSize: 10, display: "block", marginTop: 4 }}>
+        数据新鲜度 degraded 不代表数据库不可用。
       </Typography.Text>
     </Card>
   );
