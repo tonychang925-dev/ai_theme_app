@@ -78,7 +78,7 @@ class RedisStreamConfig:
             name="news:raw",
             description="原始新闻流",
             priority=StreamPriority.HIGH,
-            max_length=10000,
+            max_length=50000,
             alert_on_backlog=True,
             backlog_threshold=2000
         ),
