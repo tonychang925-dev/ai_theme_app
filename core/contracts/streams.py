@@ -11,6 +11,7 @@ STREAM_ALIASES: dict[str, str] = {
     "stream:intel.event.structured": "stream:events:structured",
     "stream:alert.decision": "stream:events:decision",
     "stream:ui.feed": "stream:event:feed",
+    "stream:intel.raw.dom": "stream:event:feed",
 }
 
 # 反向映射（方便查询）
