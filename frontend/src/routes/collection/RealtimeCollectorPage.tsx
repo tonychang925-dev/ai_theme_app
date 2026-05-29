@@ -953,7 +953,7 @@ export function RealtimeCollectorPage() {
                     label: "数据流",
                     children: (
                       <DiagnosticsTabs
-                        mergedLogs={[]} jyhfLogs={[]} stackStatus={stackStatus}
+                        mergedLogs={mergedLogs} jyhfLogs={jyhfLogs} stackStatus={stackStatus}
                         reviewItems={reviewItems} reviewTotal={reviewTotal}
                         reviewBusy={reviewBusy} selectedIds={selectedIds}
                         onToggleSelect={toggleSelect} onSelectAll={selectAll}
