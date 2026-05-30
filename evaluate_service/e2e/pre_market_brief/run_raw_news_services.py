@@ -148,7 +148,7 @@ async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> No
     - 僵尸清理：只 XGROUP DELCONSUMER，不 XACK pending（防止丢消息）
     """
     import os as _os
-    start_mode = _os.environ.get("REALTIME_STREAM_START_MODE", "latest").lower()
+    start_mode = _os.environ.get("REALTIME_STREAM_START_MODE", "0").lower()
     start_id = "$" if start_mode == "latest" else "0"
     try:
         await redis_client.xgroup_create(stream, group, id=start_id, mkstream=True)
@@ -169,7 +169,7 @@ async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> No
             for gi in group_info_list:
                 if gi.get("name") == group:
                     lag = gi.get("lag", 0)
-                    if stream_len > 0 and lag > stream_len * 0.5:
+                    if stream_len > 0 and lag > stream_len * 0.95:
                         logging.warning(
                             "Group %s/%s lag=%d > 50%% of stream_len=%d, resetting to $",
                             stream, group, lag, stream_len,
