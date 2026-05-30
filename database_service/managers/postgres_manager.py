@@ -2325,15 +2325,23 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             r["confidence"] = 0.7 if heat_val >= 50 else 0.5
             results.append(r)
 
-        # ── 2. event_theme_map + news_event ──
+        # ── 2. event_theme_map + news_event (legacy) ──
         news_rows = await self._fetch_event_theme_map_rows(
             trade_date, subject_keys, lookback_days
         )
         for r in news_rows:
             r["event_type_source"] = "news_event_attr"
 
-        # ── 3. Sort and dedup ──
+        # ── 3. CDP DOM events: event_subject_map + news_event ──
+        cdp_rows = await self._fetch_cdp_dom_event_rows(
+            trade_date, subject_keys, lookback_days
+        )
+        for r in cdp_rows:
+            r["event_type_source"] = "cdp_dom"
+
+        # ── 4. Sort and dedup ──
         results.extend(news_rows)
+        results.extend(cdp_rows)
         results.sort(key=lambda x: str(x.get("occurred_at") or ""), reverse=True)
         return self._dedup_event_rows(results)
 
@@ -2426,6 +2434,55 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 "heat": 0,
                 "evidence_json": r.get("entities"),
             })
+
+        return results
+
+    async def _fetch_cdp_dom_event_rows(
+        self, trade_date, subject_keys: List[str], lookback_days: int
+    ) -> List[Dict[str, Any]]:
+        """从 CDP DOM 采集管线读取事件：event_subject_map + news_event。
+
+        jyhf_dom + news 源的事件直接通过 subject_key 映射到题材。
+        覆盖 theme_history_event 停止后的 2026-05 空洞。
+        """
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                """SELECT * FROM (
+                    SELECT
+                        'cdp_' || ne.id::text AS event_id,
+                        esm.subject_key,
+                        COALESCE(esm.subject_name, '') AS theme_name,
+                        ne.event_time::text AS occurred_at,
+                        to_char(ne.event_time, 'YYYY-MM-DD') AS event_date,
+                        COALESCE(ne.summary, '') AS title,
+                        COALESCE(ne.summary, '') AS summary,
+                        ne.event_type,
+                        COALESCE(ne.severity_score, ne.confidence, 0.5) AS impact_score,
+                        COALESCE(ne.confidence, 0.5) AS confidence,
+                        COALESCE(esm.source, esm.source_channel, 'jyhf_cdp') AS source_channel,
+                        'event_subject_map+news_event' AS source_table,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY esm.subject_key
+                            ORDER BY ne.event_time DESC
+                        ) AS rn
+                    FROM event_subject_map esm
+                    JOIN news_event ne ON ne.id = esm.news_id
+                    WHERE esm.subject_key = ANY($1::text[])
+                      AND ne.event_time::date BETWEEN $2::date AND $3::date
+                ) sub
+                WHERE sub.rn <= 10""",
+                subject_keys, start_date, trade_date,
+            )
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            r.pop("rn", None)
+            r["heat"] = 0
+            results.append(r)
 
         return results
 

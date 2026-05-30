@@ -31,6 +31,19 @@ def _d(days: int) -> timedelta:
     return timedelta(days=days)
 
 
+def _cpd_impact(title: str, confidence: float | None) -> float:
+    """Estimate impact score from CDP DOM event title keywords."""
+    t = (title or "").lower()
+    for kw in ["政策", "监管", "冲突", "制裁", "突破", "重大"]:
+        if kw in t:
+            return 0.85
+    for kw in ["发布", "订单", "产业", "技术"]:
+        if kw in t:
+            return 0.70
+    conf = float(confidence or 0.5)
+    return max(0.3, min(0.9, conf * 0.8))
+
+
 def _build_read_port(pool, td, lookback: int):
     """Build a read_port similar to integration tests."""
     start = td - _d(max(lookback - 1, 0))
@@ -41,7 +54,10 @@ def _build_read_port(pool, td, lookback: int):
         async def get_subject_event_chain_rows(self, trade_date, subject_keys=None, lookback_days=None):
             if not subject_keys:
                 return []
-            rows = await self._p.fetch(
+            all_rows: list[dict] = []
+
+            # ── 1. theme_history_event (legacy) ──
+            rows1 = await self._p.fetch(
                 """SELECT 'the_' || id AS event_id, subject_key, rank_date::text AS occurred_at,
                           to_char(rank_date,'YYYY-MM-DD') AS event_date,
                           COALESCE(driver_summary,description,'') AS title,
@@ -52,8 +68,7 @@ def _build_read_port(pool, td, lookback: int):
                    ORDER BY rank_date DESC, heat DESC""",
                 subject_keys, start, td,
             )
-            result = []
-            for r in rows:
+            for r in rows1:
                 d = dict(r)
                 h = int(d.get("heat") or 0)
                 t = str(d.get("title") or "").lower()
@@ -63,10 +78,48 @@ def _build_read_port(pool, td, lookback: int):
                     if kw in t: d["event_type"] = et; break
                 else: d["event_type"] = "unknown"
                 d["event_type_source"] = "keyword_fallback"
-                d["impact_score"] = 0.9 if h >= 90 else (0.75 if h >= 70 else (0.6 if h >= 50 else (0.45 if h >= 30 else 0.3)))
-                d["confidence"] = 0.7 if h >= 50 else 0.5
-                result.append(d)
-            return result
+                d["impact_score"] = 0.9 if h>=90 else (0.75 if h>=70 else (0.6 if h>=50 else (0.45 if h>=30 else 0.3)))
+                d["confidence"] = 0.7 if h>=50 else 0.5
+                all_rows.append(d)
+
+            # ── 2. CDP DOM: event_subject_map + news_event (new pipeline) ──
+            rows2 = await self._p.fetch(
+                """SELECT 'cdp_' || ne.id::text AS event_id, esm.subject_key,
+                          esm.subject_name AS theme_name,
+                          ne.event_time::text AS occurred_at,
+                          to_char(ne.event_time,'YYYY-MM-DD') AS event_date,
+                          COALESCE(ne.summary,'') AS title,
+                          COALESCE(ne.summary,'') AS summary,
+                          0 AS heat,
+                          COALESCE(esm.source, 'jyhf_cdp') AS source_channel,
+                          'event_subject_map+news_event' AS source_table
+                   FROM event_subject_map esm
+                   JOIN news_event ne ON ne.id = esm.news_id
+                   WHERE esm.subject_key = ANY($1::text[])
+                     AND ne.event_time::date BETWEEN $2::date AND $3::date
+                   ORDER BY ne.event_time DESC""",
+                subject_keys, start, td,
+            )
+            for r in rows2:
+                d = dict(r)
+                h = int(d.get("heat") or 0)
+                d["event_type"] = d.get("event_type") or "unknown"
+                d["event_type_source"] = "cdp_dom"
+                d["impact_score"] = _cpd_impact(d.get("title",""), d.get("confidence"))
+                d["confidence"] = float(d.get("confidence") or 0.5)
+                all_rows.append(d)
+
+            # dedup by (subject_key, event_date, title[:80])
+            seen: set = set()
+            deduped = []
+            for d in all_rows:
+                key = (str(d.get("subject_key") or ""), str(d.get("event_date") or "")[:10],
+                       str(d.get("title") or "").strip()[:80])
+                if key not in seen:
+                    seen.add(key)
+                    deduped.append(d)
+            all_rows.sort(key=lambda x: str(x.get("occurred_at") or ""), reverse=True)
+            return all_rows
 
         async def get_subject_event_stats(self, trade_date, subject_keys=None, lookback_days=None):
             if not subject_keys: return []
@@ -119,13 +172,24 @@ async def _run_day(pool, td, lookback: int = 7):
         AnalystReviewQueueBuilder,
     )
 
-    # ── candidates ──
-    sks = await pool.fetch(
+    # ── candidates: merge theme_history_event + CDP DOM event_subject_map ──
+    sks1 = await pool.fetch(
         """SELECT DISTINCT subject_key FROM theme_history_event
            WHERE source_type='jyhf_history' AND rank_date>=$1::date-7 AND rank_date<=$1::date""",
         td,
     )
-    subject_keys = [str(r["subject_key"]) for r in sks]
+    sks2 = await pool.fetch(
+        """SELECT DISTINCT esm.subject_key FROM event_subject_map esm
+           JOIN news_event ne ON ne.id = esm.news_id
+           WHERE ne.event_time::date >= $1::date - 7 AND ne.event_time::date <= $1::date""",
+        td,
+    )
+    sks_all: set[str] = set()
+    for r in sks1:
+        sks_all.add(str(r["subject_key"]))
+    for r in sks2:
+        sks_all.add(str(r["subject_key"]))
+    subject_keys = sorted(sks_all)
 
     # ── fact context ──
     fact_builder = MainlineDiscoveryFactContextBuilder(rp)
