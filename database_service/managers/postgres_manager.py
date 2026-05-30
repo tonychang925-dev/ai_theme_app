@@ -2274,36 +2274,40 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     ) -> List[Dict[str, Any]]:
         """返回主题事件明细行——用于构建 event_chain 和 event_series。
 
-        从 theme_history_event 直查，返回每条事件的：
-          event_id, subject_key, theme_name, occurred_at, title, summary,
-          event_type, impact_score, confidence, source_channel
-
-        这是 MainlineLogicChainBuilder 的主要事件输入源。
+        从 theme_history_event 用窗口函数取每 subject Top 10（避免全局
+        LIMIT 500 挤掉长尾 subject）。然后合并 event_theme_map+news_event，
+        最后按 (subject_key, event_date, normalized_title[:80]) 去重。
         """
         if not subject_keys:
             return []
         from datetime import timedelta
         start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
 
+        # ── 1. theme_history_event with per-subject window ──
         sql = """
-        SELECT
-            the.id AS event_id,
-            the.subject_key,
-            MAX(the.theme_name) AS theme_name,
-            the.rank_date::text AS occurred_at,
-            COALESCE(the.driver_summary, the.description, '') AS title,
-            COALESCE(the.description, the.driver_summary, '') AS summary,
-            the.heat,
-            the.source_type AS source_channel,
-            the.evidence_json
-        FROM theme_history_event the
-        WHERE the.source_type = 'jyhf_history'
-          AND the.subject_key = ANY($1::text[])
-          AND the.rank_date BETWEEN $2::date AND $3::date
-        GROUP BY the.id, the.subject_key, the.rank_date, the.driver_summary,
-                 the.description, the.heat, the.source_type, the.evidence_json
-        ORDER BY the.rank_date DESC, the.heat DESC
-        LIMIT 500
+        SELECT * FROM (
+            SELECT
+                'the_' || the.id AS event_id,
+                the.subject_key,
+                MAX(the.theme_name) OVER (PARTITION BY the.subject_key) AS theme_name,
+                the.rank_date::text AS occurred_at,
+                to_char(the.rank_date, 'YYYY-MM-DD') AS event_date,
+                COALESCE(the.driver_summary, the.description, '') AS title,
+                COALESCE(the.description, the.driver_summary, '') AS summary,
+                the.heat,
+                the.source_type AS source_channel,
+                'theme_history_event' AS source_table,
+                ROW_NUMBER() OVER (
+                    PARTITION BY the.subject_key
+                    ORDER BY the.rank_date DESC, the.heat DESC
+                ) AS rn
+            FROM theme_history_event the
+            WHERE the.source_type = 'jyhf_history'
+              AND the.subject_key = ANY($1::text[])
+              AND the.rank_date BETWEEN $2::date AND $3::date
+        ) sub
+        WHERE sub.rn <= 10
+        ORDER BY sub.subject_key, sub.rn
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql, subject_keys, start_date, trade_date)
@@ -2311,21 +2315,42 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         results: list[dict[str, Any]] = []
         for row in rows:
             r = dict(row)
+            r.pop("rn", None)
             heat_val = int(r.get("heat") or 0)
             r["event_type"] = self._classify_event_type_from_keywords(
                 str(r.get("title") or "")
             )
+            r["event_type_source"] = "keyword_fallback"
             r["impact_score"] = self._heat_to_impact(heat_val)
             r["confidence"] = 0.7 if heat_val >= 50 else 0.5
             results.append(r)
 
-        # Also try event_theme_map + news_event
+        # ── 2. event_theme_map + news_event ──
         news_rows = await self._fetch_event_theme_map_rows(
             trade_date, subject_keys, lookback_days
         )
+        for r in news_rows:
+            r["event_type_source"] = "news_event_attr"
+
+        # ── 3. Sort and dedup ──
         results.extend(news_rows)
         results.sort(key=lambda x: str(x.get("occurred_at") or ""), reverse=True)
-        return results
+        return self._dedup_event_rows(results)
+
+    @staticmethod
+    def _dedup_event_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        """Dedup by (subject_key, event_date, normalized_title[:80])."""
+        seen: set[tuple[str, str, str]] = set()
+        deduped: list[dict[str, Any]] = []
+        for r in rows:
+            sk = str(r.get("subject_key") or "")
+            ed = str(r.get("event_date") or str(r.get("occurred_at") or "")[:10])
+            title = str(r.get("title") or "").strip()[:80]
+            key = (sk, ed, title)
+            if key not in seen:
+                seen.add(key)
+                deduped.append(r)
+        return deduped
 
     async def _fetch_event_theme_map_rows(
         self, trade_date, subject_keys: List[str], lookback_days: int
@@ -2352,29 +2377,36 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 return []
 
             rows = await conn.fetch(
-                """SELECT
-                    etm.event_id,
-                    ne.event_type,
-                    ne.confidence,
-                    ne.summary,
-                    ne.event_time::text AS occurred_at,
-                    ne.severity_score,
-                    ne.source_weight,
-                    ne.entities,
-                    etm.theme_id,
-                    etm.confidence AS match_confidence
-                FROM event_theme_map etm
-                JOIN news_event ne ON ne.id = etm.event_id
-                WHERE etm.theme_id = ANY($1::int[])
-                  AND ne.event_time::date BETWEEN $2::date AND $3::date
-                ORDER BY ne.event_time DESC
-                LIMIT 500""",
+                """SELECT * FROM (
+                    SELECT
+                        etm.event_id,
+                        ne.event_type,
+                        ne.confidence,
+                        ne.summary,
+                        ne.event_time::text AS occurred_at,
+                        to_char(ne.event_time, 'YYYY-MM-DD') AS event_date,
+                        ne.severity_score,
+                        ne.source_weight,
+                        ne.entities,
+                        etm.theme_id,
+                        etm.confidence AS match_confidence,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY etm.theme_id
+                            ORDER BY ne.event_time DESC
+                        ) AS rn
+                    FROM event_theme_map etm
+                    JOIN news_event ne ON ne.id = etm.event_id
+                    WHERE etm.theme_id = ANY($1::int[])
+                      AND ne.event_time::date BETWEEN $2::date AND $3::date
+                ) sub
+                WHERE sub.rn <= 10""",
                 list(theme_ids), start_date, trade_date,
             )
 
         results: list[dict[str, Any]] = []
         for row in rows:
             r = dict(row)
+            r.pop("rn", None)
             sk = id_to_sk.get(int(r.get("theme_id") or 0), "")
             if not sk:
                 continue
@@ -2383,12 +2415,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 "subject_key": sk,
                 "theme_name": "",
                 "occurred_at": str(r.get("occurred_at") or ""),
+                "event_date": str(r.get("event_date") or ""),
                 "title": str(r.get("summary") or "")[:200],
                 "summary": str(r.get("summary") or "")[:300],
                 "event_type": str(r.get("event_type") or "unknown"),
                 "impact_score": float(r.get("severity_score") or 0) or float(r.get("confidence") or 0) or 0.5,
                 "confidence": float(r.get("confidence") or 0) or 0.5,
                 "source_channel": "event_theme_map+news_event",
+                "source_table": "event_theme_map+news_event",
                 "heat": 0,
                 "evidence_json": r.get("entities"),
             })

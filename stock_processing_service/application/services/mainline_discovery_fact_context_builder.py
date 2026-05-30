@@ -139,6 +139,25 @@ class MainlineDiscoveryFactContextBuilder:
         diag["cycle_judgement_subject_count"] = len(cycle_judgement)
         diag["capital_subject_count"] = len(capital_by_subject)
 
+        # ── detailed event coverage diagnostics ──
+        total_rows = sum(len(v) for v in event_rows_by_subject.values())
+        source_table_counts: dict[str, int] = {}
+        for rows in event_rows_by_subject.values():
+            for r in rows:
+                src = str(r.get("source_table") or r.get("source_channel") or "unknown")
+                source_table_counts[src] = source_table_counts.get(src, 0) + 1
+        empty_event_count = sum(1 for sk in subject_keys if sk not in event_rows_by_subject)
+
+        diag["event_chain_row_count"] = total_rows
+        diag["event_chain_subject_count"] = len(event_rows_by_subject)
+        diag["source_counts"] = source_table_counts
+        diag["empty_event_subject_count"] = empty_event_count
+        # sample first 3 subjects with their event counts
+        top_subjects = sorted(event_rows_by_subject.items(), key=lambda x: len(x[1]), reverse=True)[:5]
+        diag["sample_event_subjects"] = [
+            {"subject_key": sk, "event_count": len(evs)} for sk, evs in top_subjects
+        ]
+
         return MainlineDiscoveryFactContext(
             trade_date=td_str,
             lookback_days=lookback_days,
