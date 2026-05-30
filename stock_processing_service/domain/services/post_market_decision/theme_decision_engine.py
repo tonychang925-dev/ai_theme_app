@@ -1,18 +1,20 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any
 
 
 @dataclass
 class ThemeDecisionEngine:
-    """Build theme-level trading decisions from cycles, capital, stock_facts.
+    """Build theme-level trading decisions from cycles, capital, stock_facts, events.
 
     For each subject_key in theme_context_map:
     - Computes capital_validation (positive/neutral/divergent/negative/unknown)
     - Assigns tier (mainline/strong_branch/fading/watch)
     - Decides theme_decision (mainline_focus/watch_weak_to_strong/…/reject)
     - Generates action_advice and conclusion as non-empty text
+    - P1: reject_reason + missing_fields for every reject decision
+    - P1: logic_score from event_chain, can upgrade reject→strong_branch_watch
     """
 
     def build(
@@ -20,13 +22,23 @@ class ThemeDecisionEngine:
         *,
         theme_context_map: dict[str, dict[str, Any]],
         market_environment: dict[str, Any],
+        event_context: dict[str, list[dict[str, Any]]] | None = None,
     ) -> list[dict[str, Any]]:
+        """Build theme decision rows.
+
+        Args:
+            theme_context_map: {subject_key: {cycle, capital, stock_facts}}
+            market_environment: from MarketEnvironmentEngine
+            event_context: optional {subject_key: [event_dict, ...]}
+        """
+        event_by_key = event_context or {}
         rows: list[dict[str, Any]] = []
 
         for subject_key, ctx in theme_context_map.items():
             cycle = dict(ctx.get("cycle") or {})
             capital = dict(ctx.get("capital") or {})
             stock_facts = list(ctx.get("stock_facts") or [])
+            events = list(event_by_key.get(subject_key) or [])
 
             theme_name = (
                 str(cycle.get("theme_name") or "").strip()
@@ -60,23 +72,55 @@ class ThemeDecisionEngine:
                 market_mode=str(market_environment.get("market_mode") or "wait"),
             )
 
+            # ── P1-2: logic_score from event chain ──
+            event_chain = self._build_event_chain(events)
+            logic_score, logic_diag = self._compute_logic_score(events, decision)
+            fallback_used: list[str] = []
+
+            # ── P1-2: logic_upgrade (conservative) ──
+            original_decision = decision
+            if logic_score is not None:
+                fallback_used.append(f"logic_score={logic_score:.1f}")
+                decision = self._apply_logic_upgrade(
+                    original_decision, logic_score, tier, capital_validation
+                )
+                if decision != original_decision:
+                    fallback_used.append(f"logic_upgrade:{original_decision}->{decision}")
+            else:
+                fallback_used.append("logic_score.not_available")
+
             decision_score = self._decision_score(
                 mainline_score=mainline_strength,
                 market_environment_score=self._float(market_environment.get("market_score") or 0),
                 leader_core_score=self._leader_score(stock_facts),
                 setup_plan_score=self._setup_score(stock_facts),
+                logic_score=logic_score,
             )
 
             action_advice = self._action_advice(decision)
             conclusion = self._conclusion(decision, theme_name)
+
+            # ── P1-2: reject diagnostics ──
+            reject_reason = self._reject_reason(original_decision, {
+                "tier": tier,
+                "alive": alive,
+                "mainline_strength": mainline_strength,
+                "fade_risk": fade_risk,
+                "capital_validation": capital_validation,
+                "market_mode": market_environment.get("market_mode"),
+                "logic_score": logic_score,
+            })
+            missing_fields = self._check_missing_fields(cycle, capital, stock_facts)
 
             rows.append({
                 "subject_key": subject_key,
                 "theme_name": theme_name,
                 "tier": tier,
                 "decision": decision,
+                "original_decision": original_decision,
                 "decision_score": decision_score,
-                "logic_score": None,
+                "logic_score": logic_score,
+                "logic_diagnostics": logic_diag,
                 "market_recognition_score": market_recognition_score,
                 "cycle_score": cycle_score,
                 "capital_validation": capital_validation,
@@ -89,19 +133,165 @@ class ThemeDecisionEngine:
                 "position_suggestion": self._position_suggestion(decision, market_environment),
                 "next_day_watch_points": self._watch_points(decision),
                 "invalidation_conditions": self._invalid_conditions(decision),
-                "event_chain": [],
+                "event_chain": event_chain,
                 "leader_stocks": self._leader_stocks(stock_facts),
                 "conclusion": conclusion,
+                "reject_reason": reject_reason,
+                "missing_fields": missing_fields,
                 "diagnostics": {
                     "cycle_joined": bool(cycle),
                     "capital_joined": bool(capital),
                     "leader_count": len(stock_facts),
-                    "fallback_used": ["logic_score.not_available"],
+                    "event_count": len(events),
+                    "fallback_used": fallback_used,
+                    "input_snapshot": {
+                        "mainline_strength_score": mainline_strength,
+                        "fade_risk_score": fade_risk,
+                        "final_mainline_alive": alive,
+                        "capital_validation": capital_validation,
+                        "stock_fact_count": len(stock_facts),
+                    },
                 },
             })
 
         rows.sort(key=lambda x: float(x.get("decision_score") or 0), reverse=True)
         return rows[:20]
+
+    # ── P1-2: event_chain + logic_score ──
+
+    @staticmethod
+    def _build_event_chain(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        """Build minimal event_chain from raw events, keeping top 3 by impact."""
+        result: list[dict[str, Any]] = []
+        for ev in events[:5]:
+            result.append({
+                "event_id": str(ev.get("event_id") or ev.get("id") or ""),
+                "occurred_at": str(ev.get("occurred_at") or ev.get("event_date") or ""),
+                "title": str(ev.get("title") or ev.get("name") or ""),
+                "event_type": str(ev.get("event_type") or ev.get("event_level") or "unknown"),
+                "impact_score": ThemeDecisionEngine._float(ev.get("impact_score") or ev.get("confidence") or 0),
+                "confidence": ThemeDecisionEngine._float(ev.get("confidence") or ev.get("impact_score") or 0),
+                "source_channel": str(ev.get("source_channel") or ev.get("source") or "unknown"),
+            })
+        result.sort(key=lambda x: float(x.get("impact_score") or 0), reverse=True)
+        return result[:3]
+
+    @classmethod
+    def _compute_logic_score(
+        cls,
+        events: list[dict[str, Any]],
+        decision: str,
+    ) -> tuple[float | None, dict[str, Any]]:
+        """Compute logic_score from event chain.
+
+        Returns (score | None, diagnostics).
+        Score is None when no events are available.
+        """
+        if not events:
+            return None, {"source": "none", "event_count": 0}
+
+        # event_level weighting
+        level_map = {
+            "policy": 1.0, "industry": 0.85, "technology": 0.85,
+            "major_event": 0.75, "order": 0.7, "media": 0.5, "unknown": 0.4,
+            "政策": 1.0, "产业": 0.85, "技术": 0.85,
+            "重大事件": 0.75, "订单": 0.7, "媒体": 0.5,
+        }
+
+        scores: list[float] = []
+        for ev in events[:5]:
+            ev_type = str(ev.get("event_type") or ev.get("event_level") or "unknown").lower()
+            level_w = level_map.get(ev_type, 0.5)
+            impact = cls._float(ev.get("impact_score") or ev.get("confidence") or 0.5)
+            confidence = cls._float(ev.get("confidence") or ev.get("impact_score") or 0.5)
+            s = level_w * 0.5 + impact * 0.3 + confidence * 0.2
+            scores.append(min(1.0, s))
+
+        if not scores:
+            return None, {"source": "empty_scores", "event_count": len(events)}
+
+        raw_score = max(scores) * 100.0
+        return round(raw_score, 1), {
+            "source": "event_chain",
+            "event_count": len(events),
+            "top_event_type": str(events[0].get("event_type") or "unknown") if events else "unknown",
+            "max_impact": cls._float(events[0].get("impact_score") or 0) if events else 0,
+        }
+
+    @staticmethod
+    def _apply_logic_upgrade(
+        original_decision: str,
+        logic_score: float,
+        tier: str,
+        capital_validation: str,
+    ) -> str:
+        """Conservative logic upgrade.
+
+        Rules:
+        - logic_score >= 70: reject → strong_branch_watch
+        - logic_score >= 50: reject → strong_branch_watch (only if tier != fading)
+        - NEVER upgrade to mainline_focus (requires market confirmation)
+        - NEVER downgrade
+        """
+        # inline map so it works as static method
+        if original_decision == "reject":
+            target = "strong_branch_watch"
+        elif original_decision == "fade_avoid":
+            target = "fade_avoid"
+        elif original_decision == "risk_watch":
+            target = "risk_watch"
+        else:
+            return original_decision
+        if target == original_decision:
+            return original_decision
+        if logic_score >= 70:
+            return target
+        if logic_score >= 50 and tier != "fading":
+            return target
+        return original_decision
+
+    # ── P1-2: reject diagnostics ──
+
+    @staticmethod
+    def _reject_reason(decision: str, inputs: dict[str, Any]) -> str | None:
+        """Return a machine-readable reject reason for rejected decisions."""
+        if decision not in {"reject", "fade_avoid"}:
+            return None
+        reasons: list[str] = []
+        if not inputs.get("alive") and float(inputs.get("mainline_strength", 0) or 0) < 50:
+            reasons.append("mainline_not_alive_and_weak")
+        elif float(inputs.get("fade_risk", 0) or 0) >= 70:
+            reasons.append("fade_risk_high")
+        elif inputs.get("tier") not in {"mainline", "strong_branch"}:
+            reasons.append("tier_below_strong_branch")
+        elif inputs.get("capital_validation") in {"negative", "unknown"}:
+            reasons.append("capital_not_confirmed")
+        else:
+            reasons.append("insufficient_decision_score")
+        return ";".join(reasons)
+
+    @staticmethod
+    def _check_missing_fields(
+        cycle: dict[str, Any],
+        capital: dict[str, Any],
+        stock_facts: list[dict[str, Any]],
+    ) -> list[str]:
+        """Check which key fields are missing from input data sources."""
+        missing: list[str] = []
+        for field in ("mainline_strength_score", "fade_risk_score", "final_mainline_alive"):
+            if cycle.get(field) in (None, "", 0) and field != "fade_risk_score":
+                missing.append(f"cycle.{field}")
+        if not cycle:
+            missing.append("cycle.entire_object")
+        if not capital:
+            missing.append("capital.entire_object")
+        elif capital.get("main_net_inflow_sum") in (None, ""):
+            missing.append("capital.main_net_inflow_sum")
+        if not stock_facts:
+            missing.append("stock_facts.empty")
+        return missing
+
+    # ── existing helpers (unchanged logic) ──
 
     @staticmethod
     def _capital_validation(capital: dict[str, Any]) -> str:
@@ -190,12 +380,15 @@ class ThemeDecisionEngine:
         market_environment_score: float,
         leader_core_score: float,
         setup_plan_score: float,
+        logic_score: float | None = None,
     ) -> float:
+        logic_bonus = (logic_score or 0) * 0.05  # small bonus for event chain
         return round(
             mainline_score * 0.35
             + market_environment_score * 0.30
             + leader_core_score * 0.20
-            + setup_plan_score * 0.15,
+            + setup_plan_score * 0.15
+            + logic_bonus,
             2,
         )
 

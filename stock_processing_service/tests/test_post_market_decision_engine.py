@@ -239,6 +239,101 @@ class TestThemeDecisionEngine:
         )
         assert rows[0]["decision"] == "reject"
 
+    def test_reject_reason_populated(self):
+        """P1-2: rejected themes must have reject_reason."""
+        engine = ThemeDecisionEngine()
+        rows = engine.build(
+            theme_context_map={
+                "weak_theme": {
+                    "cycle": {"theme_name": "弱题材", "mainline_strength_score": 40, "fade_risk_score": 30,
+                              "final_mainline_alive": True, "final_cycle_state": "unknown"},
+                    "capital": {},
+                    "stock_facts": [],
+                }
+            },
+            market_environment={"market_mode": "defense", "market_score": 42, "position_limit": 0.3},
+        )
+        assert rows
+        assert rows[0]["decision"] == "reject"
+        assert rows[0]["reject_reason"] is not None
+        assert "tier_below_strong_branch" in rows[0]["reject_reason"]
+
+    def test_logic_score_from_events(self):
+        """P1-2: logic_score computed from event_context."""
+        engine = ThemeDecisionEngine()
+        rows = engine.build(
+            theme_context_map={
+                "t1": {
+                    "cycle": {"theme_name": "主线A", "mainline_strength_score": 80, "fade_risk_score": 10,
+                              "final_mainline_alive": True, "final_cycle_state": "fermentation"},
+                    "capital": {"main_net_inflow_sum": 5e7, "leader_main_net_inflow": 2e7},
+                    "stock_facts": [],
+                }
+            },
+            market_environment={"market_mode": "normal", "market_score": 65, "position_limit": 0.5},
+            event_context={
+                "t1": [
+                    {"event_id": "e1", "title": "政策利好", "event_type": "policy",
+                     "impact_score": 0.9, "confidence": 0.95, "source_channel": "news"},
+                ]
+            },
+        )
+        assert rows
+        row = rows[0]
+        assert row["logic_score"] is not None
+        assert row["logic_score"] > 0
+        assert row["event_chain"]
+        assert row["event_chain"][0]["event_type"] == "policy"
+
+    def test_logic_upgrade_reject_to_strong_branch(self):
+        """P1-2: high logic_score upgrades reject → strong_branch_watch."""
+        engine = ThemeDecisionEngine()
+        rows = engine.build(
+            theme_context_map={
+                "t1": {
+                    "cycle": {"theme_name": "弱题材", "mainline_strength_score": 40, "fade_risk_score": 30,
+                              "final_mainline_alive": True, "final_cycle_state": "start"},
+                    "capital": {},
+                    "stock_facts": [],
+                }
+            },
+            market_environment={"market_mode": "normal", "market_score": 65, "position_limit": 0.5},
+            event_context={
+                "t1": [
+                    {"event_id": "e1", "title": "重大政策", "event_type": "policy",
+                     "impact_score": 0.95, "confidence": 0.90, "source_channel": "news"},
+                ]
+            },
+        )
+        assert rows
+        row = rows[0]
+        assert row["original_decision"] == "reject"
+        assert row["decision"] == "strong_branch_watch"
+        assert row["action_advice"] != "证据不足，观察"
+
+    def test_logic_never_upgrades_to_mainline(self):
+        """P1-2: logic_score must never upgrade to mainline_focus."""
+        engine = ThemeDecisionEngine()
+        rows = engine.build(
+            theme_context_map={
+                "t1": {
+                    "cycle": {"theme_name": "弱题材", "mainline_strength_score": 40, "fade_risk_score": 30,
+                              "final_mainline_alive": True, "final_cycle_state": "start"},
+                    "capital": {},
+                    "stock_facts": [],
+                }
+            },
+            market_environment={"market_mode": "attack", "market_score": 85, "position_limit": 1.0},
+            event_context={
+                "t1": [
+                    {"event_id": "e1", "title": "超级政策", "event_type": "policy",
+                     "impact_score": 1.0, "confidence": 1.0, "source_channel": "gov"},
+                ]
+            },
+        )
+        assert rows
+        assert rows[0]["decision"] != "mainline_focus"   # never skips market confirmation
+
     def test_all_rows_have_action_advice_and_conclusion(self):
         engine = ThemeDecisionEngine()
         ctx = {
