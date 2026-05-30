@@ -347,3 +347,100 @@ class MainlineDiscoveryDecision:
             "logic_score_method": self.logic_score_method,
             "diagnostics": self.diagnostics,
         }
+
+
+# ---------------------------------------------------------------------------
+# 9. AnalystReviewItem — human review queue entry (PR-6)
+# ---------------------------------------------------------------------------
+
+@dataclass
+class AnalystReviewItem:
+    review_id: str = ""
+    trade_date: str = ""
+
+    subject_key: str = ""
+    theme_name: str = ""
+
+    mainline_id: str = ""
+    mainline_name: str = ""
+
+    machine_state: str = ""
+    final_mainline_state: str = "pending_review"
+
+    mainline_type: str = "unknown"
+    confirmation_path: str = "unknown"
+    trigger_mode: str = ""
+
+    review_reason: str = ""
+    review_priority: float = 0.0
+    review_status: str = "pending"
+
+    suggested_human_decision: str = "watch"
+
+    scores: dict[str, Any] = field(default_factory=dict)
+    evidence: dict[str, Any] = field(default_factory=dict)
+    risk_flags: dict[str, Any] = field(default_factory=dict)
+
+    human_decision: str | None = None
+    human_reviewer: str | None = None
+    human_notes: str | None = None
+    reviewed_at: str | None = None
+
+    created_at: str = ""
+    diagnostics: dict[str, Any] = field(default_factory=dict)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "review_id": self.review_id,
+            "trade_date": self.trade_date,
+            "subject_key": self.subject_key,
+            "theme_name": self.theme_name,
+            "mainline_id": self.mainline_id,
+            "mainline_name": self.mainline_name,
+            "machine_state": self.machine_state,
+            "final_mainline_state": self.final_mainline_state,
+            "mainline_type": self.mainline_type,
+            "confirmation_path": self.confirmation_path,
+            "trigger_mode": self.trigger_mode,
+            "review_reason": self.review_reason,
+            "review_priority": self.review_priority,
+            "review_status": self.review_status,
+            "suggested_human_decision": self.suggested_human_decision,
+            "scores": self.scores,
+            "evidence": self.evidence,
+            "risk_flags": self.risk_flags,
+            "human_decision": self.human_decision,
+            "human_reviewer": self.human_reviewer,
+            "human_notes": self.human_notes,
+            "reviewed_at": self.reviewed_at,
+            "created_at": self.created_at,
+            "diagnostics": self.diagnostics,
+        }
+
+
+@dataclass
+class AnalystReviewQueueDiagnostics:
+    total_candidates: int = 0
+    fast_line_count: int = 0
+    slow_line_count: int = 0
+    high_market_noise_count: int = 0
+    high_logic_only_count: int = 0
+    grey_zone_count: int = 0
+    rejected_count: int = 0
+    queue_total: int = 0
+    max_priority: float = 0.0
+    min_priority: float = 0.0
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "total_candidates": self.total_candidates,
+            "fast_line_count": self.fast_line_count,
+            "slow_line_count": self.slow_line_count,
+            "high_market_noise_count": self.high_market_noise_count,
+            "high_logic_only_count": self.high_logic_only_count,
+            "grey_zone_count": self.grey_zone_count,
+            "rejected_count": self.rejected_count,
+            "queue_total": self.queue_total,
+            "max_priority": self.max_priority,
+            "min_priority": self.min_priority,
+        }
