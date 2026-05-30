@@ -29,6 +29,8 @@ class CollectionTaskContext:
     python_bin: str | None = None
     # 兼容旧脚本：命令列表（ScriptCommandRunner 使用）
     commands: list[list[str]] | None = None
+    # 动态进度回调：Runner 可调用以实时推送进度到前端日志
+    progress_callback: Any | None = None
 
 
 @dataclass

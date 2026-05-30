@@ -335,6 +335,7 @@ class CollectionJobManager:
             project_root=Path(self._project_root) if self._project_root else None,
             python_bin=self._python_bin,
             commands=plan.commands if hasattr(plan, "commands") else None,
+            progress_callback=lambda msg: self._append_log(job, msg),
         )
 
         try:
@@ -449,6 +450,7 @@ class CollectionJobManager:
                                 project_root=Path(self._project_root) if self._project_root else None,
                                 python_bin=self._python_bin,
                                 commands=([c.cmd for c in step.commands] if step.commands else None),
+                                progress_callback=lambda msg: self._append_log(job, msg),
                             )
                             # ── 实时捕获脚本 stdout/stderr 到 job logs ──
                             class _TeeWriter:
