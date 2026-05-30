@@ -109,11 +109,13 @@ class MainlineLogicEvidence:
 @dataclass
 class MainlineMarketAcceptance:
     market_acceptance_score: float | None = None
-    heat_continuity_score: float | None = None
-    leader_strength_score: float | None = None
+    heat_persistence_score: float | None = None
+    relative_strength_score: float | None = None
     board_breadth_score: float | None = None
+    leader_strength_score: float | None = None
     capital_confirmation_score: float | None = None
     lifecycle_health_score: float | None = None
+    resilience_repair_score: float | None = None
     leader_alive: bool = False
     market_evidence: dict[str, Any] = field(default_factory=dict)
     diagnostics: dict[str, Any] = field(default_factory=dict)
@@ -121,11 +123,13 @@ class MainlineMarketAcceptance:
     def to_dict(self) -> dict[str, Any]:
         return {
             "market_acceptance_score": self.market_acceptance_score,
-            "heat_continuity_score": self.heat_continuity_score,
+            "heat_persistence_score": self.heat_persistence_score,
+            "relative_strength_score": self.relative_strength_score,
             "leader_strength_score": self.leader_strength_score,
             "board_breadth_score": self.board_breadth_score,
             "capital_confirmation_score": self.capital_confirmation_score,
             "lifecycle_health_score": self.lifecycle_health_score,
+            "resilience_repair_score": self.resilience_repair_score,
             "leader_alive": self.leader_alive,
             "market_evidence": self.market_evidence,
             "diagnostics": self.diagnostics,
