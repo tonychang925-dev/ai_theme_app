@@ -1,0 +1,171 @@
+{
+  "config": {
+    "start_date": "2026-05-27",
+    "end_date": "2026-05-29",
+    "lookback_days": 7
+  },
+  "daily_results": [
+    {
+      "trade_date": "2026-05-27",
+      "candidate_subject_count": 70,
+      "event_chain_subject_count": 63,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 63,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 2,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 68,
+      "analyst_review_item_count": 9,
+      "top_review_items": [
+        {
+          "subject_key": "电力运营",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 76.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "电子布Low-DK",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 76.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "MLCC电容",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 7
+      }
+    },
+    {
+      "trade_date": "2026-05-28",
+      "candidate_subject_count": 72,
+      "event_chain_subject_count": 65,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 65,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 4,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 68,
+      "analyst_review_item_count": 9,
+      "top_review_items": [
+        {
+          "subject_key": "MLCC电容",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 76.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "电力运营",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 76.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "电子布Low-DK",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 76.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.5,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 7
+      }
+    },
+    {
+      "trade_date": "2026-05-29",
+      "candidate_subject_count": 74,
+      "event_chain_subject_count": 59,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 59,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 2,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 72,
+      "analyst_review_item_count": 7,
+      "top_review_items": [
+        {
+          "subject_key": "酒-白酒",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 76.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "金刚石散热",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 76.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "MLCC电容",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 15
+      }
+    }
+  ],
+  "interval_stats": {
+    "total_days": 3,
+    "candidate_days_count": 3,
+    "avg_review_items_per_day": 8.3,
+    "max_review_items_per_day": 9,
+    "machine_candidate_3d_continuation_rate": 0.444,
+    "market_noise_failure_rate": 1.0,
+    "logic_only_upgrade_rate": 0.0
+  }
+}

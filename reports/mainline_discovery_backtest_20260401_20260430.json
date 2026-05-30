@@ -1,0 +1,1378 @@
+{
+  "config": {
+    "start_date": "2026-04-01",
+    "end_date": "2026-04-30",
+    "lookback_days": 7
+  },
+  "daily_results": [
+    {
+      "trade_date": "2026-04-01",
+      "candidate_subject_count": 15,
+      "event_chain_subject_count": 15,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 15,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 3,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 12,
+      "analyst_review_item_count": 5,
+      "top_review_items": [
+        {
+          "subject_key": "9064103",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 82.2,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 77.2,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9025631",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 65.9,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 65.9,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 65.7,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 65.7,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-02",
+      "candidate_subject_count": 23,
+      "event_chain_subject_count": 23,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 23,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 1,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 22,
+      "analyst_review_item_count": 2,
+      "top_review_items": [
+        {
+          "subject_key": "9064103",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 85.0,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 80.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9018216",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 60.9,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 60.9,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-03",
+      "candidate_subject_count": 26,
+      "event_chain_subject_count": 26,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 26,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 2,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 24,
+      "analyst_review_item_count": 2,
+      "top_review_items": [
+        {
+          "subject_key": "9064103",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 87.9,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 82.9,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9017645",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 61.8,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 61.8,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-04",
+      "candidate_subject_count": 26,
+      "event_chain_subject_count": 26,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 26,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 1,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 25,
+      "analyst_review_item_count": 1,
+      "top_review_items": [
+        {
+          "subject_key": "9064103",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 76.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.5,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-05",
+      "candidate_subject_count": 26,
+      "event_chain_subject_count": 26,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 26,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 1,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 25,
+      "analyst_review_item_count": 1,
+      "top_review_items": [
+        {
+          "subject_key": "9064103",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 76.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.5,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-06",
+      "candidate_subject_count": 26,
+      "event_chain_subject_count": 26,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 26,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 0,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 26,
+      "analyst_review_item_count": 1,
+      "top_review_items": [
+        {
+          "subject_key": "9064103",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-07",
+      "candidate_subject_count": 28,
+      "event_chain_subject_count": 28,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 28,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 1,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 27,
+      "analyst_review_item_count": 1,
+      "top_review_items": [
+        {
+          "subject_key": "9064103",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 65.9,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 65.9,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-08",
+      "candidate_subject_count": 37,
+      "event_chain_subject_count": 31,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 37,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 0,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 37,
+      "analyst_review_item_count": 3,
+      "top_review_items": [
+        {
+          "subject_key": "9064103",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 61.9,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 61.9,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9018144",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 61.5,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 61.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 61.4,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 61.4,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 6
+      }
+    },
+    {
+      "trade_date": "2026-04-09",
+      "candidate_subject_count": 35,
+      "event_chain_subject_count": 32,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 35,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 0,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 35,
+      "analyst_review_item_count": 2,
+      "top_review_items": [
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 62.2,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 62.2,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9064103",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 61.2,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 61.2,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 3
+      }
+    },
+    {
+      "trade_date": "2026-04-10",
+      "candidate_subject_count": 39,
+      "event_chain_subject_count": 36,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 39,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 0,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 39,
+      "analyst_review_item_count": 1,
+      "top_review_items": [
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 62.2,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 62.2,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 3
+      }
+    },
+    {
+      "trade_date": "2026-04-11",
+      "candidate_subject_count": 36,
+      "event_chain_subject_count": 36,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 36,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 0,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 36,
+      "analyst_review_item_count": 3,
+      "top_review_items": [
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9022152",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9049134",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-12",
+      "candidate_subject_count": 36,
+      "event_chain_subject_count": 36,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 36,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 0,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 36,
+      "analyst_review_item_count": 3,
+      "top_review_items": [
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9022152",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9049134",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-13",
+      "candidate_subject_count": 42,
+      "event_chain_subject_count": 42,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 42,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 2,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 40,
+      "analyst_review_item_count": 2,
+      "top_review_items": [
+        {
+          "subject_key": "9024880",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 65.2,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 65.2,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9064082",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 61.9,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 61.9,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-14",
+      "candidate_subject_count": 52,
+      "event_chain_subject_count": 49,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 52,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 3,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 49,
+      "analyst_review_item_count": 9,
+      "top_review_items": [
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 68.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 68.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9011398",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 67.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 67.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9015778",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 66.9,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 66.9,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 3
+      }
+    },
+    {
+      "trade_date": "2026-04-15",
+      "candidate_subject_count": 58,
+      "event_chain_subject_count": 50,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 50,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 1,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 57,
+      "analyst_review_item_count": 3,
+      "top_review_items": [
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 69.3,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 69.3,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9050659",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 64.5,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 64.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9015778",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 62.3,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 62.3,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 8
+      }
+    },
+    {
+      "trade_date": "2026-04-16",
+      "candidate_subject_count": 56,
+      "event_chain_subject_count": 53,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 53,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 0,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 56,
+      "analyst_review_item_count": 4,
+      "top_review_items": [
+        {
+          "subject_key": "9065423",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 62.2,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 62.2,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 61.6,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 61.6,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9065632",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 60.2,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 60.2,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 3
+      }
+    },
+    {
+      "trade_date": "2026-04-17",
+      "candidate_subject_count": 56,
+      "event_chain_subject_count": 51,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 51,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 1,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 55,
+      "analyst_review_item_count": 3,
+      "top_review_items": [
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 69.0,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 69.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9010168",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 61.6,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 61.6,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9015778",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 60.8,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 60.8,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 5
+      }
+    },
+    {
+      "trade_date": "2026-04-18",
+      "candidate_subject_count": 51,
+      "event_chain_subject_count": 51,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 51,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 0,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 51,
+      "analyst_review_item_count": 3,
+      "top_review_items": [
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9025631",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9050659",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-19",
+      "candidate_subject_count": 51,
+      "event_chain_subject_count": 51,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 51,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 0,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 51,
+      "analyst_review_item_count": 3,
+      "top_review_items": [
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9025631",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9050659",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-20",
+      "candidate_subject_count": 59,
+      "event_chain_subject_count": 55,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 55,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 1,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 58,
+      "analyst_review_item_count": 6,
+      "top_review_items": [
+        {
+          "subject_key": "9019807",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 66.2,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 66.2,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 62.2,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 62.2,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9064103",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 61.6,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 61.6,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 4
+      }
+    },
+    {
+      "trade_date": "2026-04-21",
+      "candidate_subject_count": 60,
+      "event_chain_subject_count": 57,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 57,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 2,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 58,
+      "analyst_review_item_count": 3,
+      "top_review_items": [
+        {
+          "subject_key": "9064513",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 69.1,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 69.1,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9013933",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 65.8,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 65.8,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9019807",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 60.2,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 60.2,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 3
+      }
+    },
+    {
+      "trade_date": "2026-04-22",
+      "candidate_subject_count": 65,
+      "event_chain_subject_count": 56,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 57,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 3,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 62,
+      "analyst_review_item_count": 7,
+      "top_review_items": [
+        {
+          "subject_key": "9064513",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 69.0,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 69.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9045377",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 65.3,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 65.3,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9018144",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 64.1,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 64.1,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 9
+      }
+    },
+    {
+      "trade_date": "2026-04-23",
+      "candidate_subject_count": 58,
+      "event_chain_subject_count": 48,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 48,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 1,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 57,
+      "analyst_review_item_count": 2,
+      "top_review_items": [
+        {
+          "subject_key": "9064103",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 66.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 66.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9064513",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 61.1,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 61.1,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 10
+      }
+    },
+    {
+      "trade_date": "2026-04-24",
+      "candidate_subject_count": 50,
+      "event_chain_subject_count": 46,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 47,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 1,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 49,
+      "analyst_review_item_count": 1,
+      "top_review_items": [
+        {
+          "subject_key": "9064513",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 80.3,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 75.3,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 4
+      }
+    },
+    {
+      "trade_date": "2026-04-25",
+      "candidate_subject_count": 46,
+      "event_chain_subject_count": 46,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 46,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 1,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 45,
+      "analyst_review_item_count": 4,
+      "top_review_items": [
+        {
+          "subject_key": "9064513",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 76.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9013416",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9018411",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-26",
+      "candidate_subject_count": 46,
+      "event_chain_subject_count": 46,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 46,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 1,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 45,
+      "analyst_review_item_count": 4,
+      "top_review_items": [
+        {
+          "subject_key": "9064513",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 76.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9013416",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9018411",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 58.0,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.0,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 0
+      }
+    },
+    {
+      "trade_date": "2026-04-27",
+      "candidate_subject_count": 47,
+      "event_chain_subject_count": 38,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 40,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 2,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 45,
+      "analyst_review_item_count": 6,
+      "top_review_items": [
+        {
+          "subject_key": "9064513",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 81.1,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 76.1,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9018144",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 68.6,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 68.6,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9013416",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 63.9,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 63.9,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 9
+      }
+    },
+    {
+      "trade_date": "2026-04-28",
+      "candidate_subject_count": 47,
+      "event_chain_subject_count": 43,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 43,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 2,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 45,
+      "analyst_review_item_count": 3,
+      "top_review_items": [
+        {
+          "subject_key": "9064513",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 84.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 79.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9018144",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 65.8,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 65.8,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9013416",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 61.9,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 61.9,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 4
+      }
+    },
+    {
+      "trade_date": "2026-04-29",
+      "candidate_subject_count": 49,
+      "event_chain_subject_count": 40,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 40,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 4,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 45,
+      "analyst_review_item_count": 6,
+      "top_review_items": [
+        {
+          "subject_key": "9064513",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 69.8,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 69.8,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9064082",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 68.8,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 68.8,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9013416",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 66.4,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 66.4,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 9
+      }
+    },
+    {
+      "trade_date": "2026-04-30",
+      "candidate_subject_count": 42,
+      "event_chain_subject_count": 37,
+      "logic_score_non_null_count": 0,
+      "market_acceptance_non_null_count": 37,
+      "machine_fast_candidate_count": 0,
+      "machine_slow_candidate_count": 0,
+      "logic_only_count": 0,
+      "market_noise_count": 2,
+      "rotation_hotspot_count": 0,
+      "rejected_count": 40,
+      "analyst_review_item_count": 5,
+      "top_review_items": [
+        {
+          "subject_key": "9064513",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 68.5,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 68.5,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9015778",
+          "theme_name": "",
+          "machine_state": "market_noise",
+          "review_priority": 65.4,
+          "review_reason": "market_hot_but_logic_unclear",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 65.4,
+          "major_event_score": null
+        },
+        {
+          "subject_key": "9050659",
+          "theme_name": "",
+          "machine_state": "rejected",
+          "review_priority": 64.5,
+          "review_reason": "insufficient_evidence",
+          "hybrid_logic_score": null,
+          "market_acceptance_score": 64.5,
+          "major_event_score": null
+        }
+      ],
+      "diagnostics": {
+        "data_quality": "unknown",
+        "llm_unavailable_count": 0,
+        "empty_event_subject_count": 5
+      }
+    }
+  ],
+  "interval_stats": {
+    "total_days": 30,
+    "candidate_days_count": 30,
+    "avg_review_items_per_day": 3.3,
+    "max_review_items_per_day": 9,
+    "machine_candidate_3d_continuation_rate": 0.603,
+    "market_noise_failure_rate": 1.0,
+    "logic_only_upgrade_rate": 0.0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "config": {
+    "start_date": "2026-05-25",
+    "end_date": "2026-05-30",
+    "lookback_days": 7
+  },
+  "daily_results": [
+    {
+      "trade_date": "2026-05-25",
+      "error": "No module named 'stock_processing_service'"
+    },
+    {
+      "trade_date": "2026-05-26",
+      "error": "No module named 'stock_processing_service'"
+    },
+    {
+      "trade_date": "2026-05-27",
+      "error": "No module named 'stock_processing_service'"
+    },
+    {
+      "trade_date": "2026-05-28",
+      "error": "No module named 'stock_processing_service'"
+    },
+    {
+      "trade_date": "2026-05-29",
+      "error": "No module named 'stock_processing_service'"
+    },
+    {
+      "trade_date": "2026-05-30",
+      "error": "No module named 'stock_processing_service'"
+    }
+  ],
+  "interval_stats": {
+    "total_days": 6,
+    "candidate_days_count": 0,
+    "avg_review_items_per_day": 0.0,
+    "max_review_items_per_day": 0,
+    "machine_candidate_3d_continuation_rate": 0.0,
+    "market_noise_failure_rate": 0.0,
+    "logic_only_upgrade_rate": 0.0
+  }
+}
