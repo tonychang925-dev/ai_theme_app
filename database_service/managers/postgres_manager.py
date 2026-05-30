@@ -2266,6 +2266,155 @@ class PostgresDatabaseManager(BaseDatabaseManager):
 
         return results
 
+    async def get_subject_event_chain_rows(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+        lookback_days: int = 7,
+    ) -> List[Dict[str, Any]]:
+        """返回主题事件明细行——用于构建 event_chain 和 event_series。
+
+        从 theme_history_event 直查，返回每条事件的：
+          event_id, subject_key, theme_name, occurred_at, title, summary,
+          event_type, impact_score, confidence, source_channel
+
+        这是 MainlineLogicChainBuilder 的主要事件输入源。
+        """
+        if not subject_keys:
+            return []
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        sql = """
+        SELECT
+            the.id AS event_id,
+            the.subject_key,
+            MAX(the.theme_name) AS theme_name,
+            the.rank_date::text AS occurred_at,
+            COALESCE(the.driver_summary, the.description, '') AS title,
+            COALESCE(the.description, the.driver_summary, '') AS summary,
+            the.heat,
+            the.source_type AS source_channel,
+            the.evidence_json
+        FROM theme_history_event the
+        WHERE the.subject_key = ANY($1::text[])
+          AND the.rank_date BETWEEN $2::date AND $3::date
+        GROUP BY the.id, the.subject_key, the.rank_date, the.driver_summary,
+                 the.description, the.heat, the.source_type, the.evidence_json
+        ORDER BY the.rank_date DESC, the.heat DESC
+        LIMIT 500
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, subject_keys, start_date, trade_date)
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            heat_val = int(r.get("heat") or 0)
+            r["event_type"] = self._classify_event_type_from_keywords(
+                str(r.get("title") or "")
+            )
+            r["impact_score"] = self._heat_to_impact(heat_val)
+            r["confidence"] = 0.7 if heat_val >= 50 else 0.5
+            results.append(r)
+
+        # Also try event_theme_map + news_event
+        news_rows = await self._fetch_event_theme_map_rows(
+            trade_date, subject_keys, lookback_days
+        )
+        results.extend(news_rows)
+        results.sort(key=lambda x: str(x.get("occurred_at") or ""), reverse=True)
+        return results
+
+    async def _fetch_event_theme_map_rows(
+        self, trade_date, subject_keys: List[str], lookback_days: int
+    ) -> List[Dict[str, Any]]:
+        """从 event_theme_map + news_event 补充事件明细。"""
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        # Get theme_id → subject_key mapping
+        theme_ids: set[int] = set()
+        id_to_sk: dict[int, str] = {}
+        async with self.pool.acquire() as conn:
+            map_rows = await conn.fetch(
+                """SELECT id, subject_key FROM theme_master
+                   WHERE subject_key = ANY($1::text[])""",
+                subject_keys,
+            )
+            for r in map_rows:
+                tid = int(r["id"])
+                theme_ids.add(tid)
+                id_to_sk[tid] = str(r["subject_key"])
+
+            if not theme_ids:
+                return []
+
+            rows = await conn.fetch(
+                """SELECT
+                    etm.event_id,
+                    ne.event_type,
+                    ne.confidence,
+                    ne.summary,
+                    ne.event_time::text AS occurred_at,
+                    ne.severity_score,
+                    ne.source_weight,
+                    ne.entities,
+                    etm.theme_id,
+                    etm.confidence AS match_confidence
+                FROM event_theme_map etm
+                JOIN news_event ne ON ne.id = etm.event_id
+                WHERE etm.theme_id = ANY($1::int[])
+                  AND ne.event_time::date BETWEEN $2::date AND $3::date
+                ORDER BY ne.event_time DESC
+                LIMIT 500""",
+                list(theme_ids), start_date, trade_date,
+            )
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            sk = id_to_sk.get(int(r.get("theme_id") or 0), "")
+            if not sk:
+                continue
+            results.append({
+                "event_id": f"ne_{r.get('event_id')}",
+                "subject_key": sk,
+                "theme_name": "",
+                "occurred_at": str(r.get("occurred_at") or ""),
+                "title": str(r.get("summary") or "")[:200],
+                "summary": str(r.get("summary") or "")[:300],
+                "event_type": str(r.get("event_type") or "unknown"),
+                "impact_score": float(r.get("severity_score") or 0) or float(r.get("confidence") or 0) or 0.5,
+                "confidence": float(r.get("confidence") or 0) or 0.5,
+                "source_channel": "event_theme_map+news_event",
+                "heat": 0,
+                "evidence_json": r.get("entities"),
+            })
+
+        return results
+
+    @staticmethod
+    def _classify_event_type_from_keywords(title: str) -> str:
+        t = (title or "").lower()
+        pairs = [
+            ("政策", "policy"), ("产业", "industry"), ("技术", "technology"),
+            ("订单", "order"), ("海外", "overseas_mapping"), ("监管", "regulation"),
+            ("发布", "media"), ("公告", "company"),
+        ]
+        for kw, etype in pairs:
+            if kw in t:
+                return etype
+        return "unknown"
+
+    @staticmethod
+    def _heat_to_impact(heat: int) -> float:
+        if heat >= 90: return 0.90
+        if heat >= 70: return 0.75
+        if heat >= 50: return 0.60
+        if heat >= 30: return 0.45
+        return 0.30
+
     async def get_subject_cycle_evidence_daily(
         self,
         trade_date,

@@ -119,6 +119,13 @@ class StockReadPort(Protocol):
         self, trade_date: date
     ) -> list[dict[str, Any]]: ...
 
+    async def get_subject_event_chain_rows(
+        self,
+        trade_date: date,
+        subject_keys: list[str] | None = None,
+        lookback_days: int = 7,
+    ) -> list[dict[str, Any]]: ...
+
     async def get_post_market_report_context(
         self,
         trade_date: date,

@@ -390,6 +390,23 @@ class StockReadGatewayAdapter:
             )
         return results
 
+    async def get_subject_event_chain_rows(
+        self,
+        trade_date: date,
+        subject_keys: list[str] | None = None,
+        lookback_days: int = 7,
+    ) -> list[dict[str, Any]]:
+        """返回 subject 级事件明细（event_id, title, summary, event_type 等）。"""
+        fn = getattr(self._db, "get_subject_event_chain_rows", None)
+        if not callable(fn):
+            return []
+        rows = await fn(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+            lookback_days=lookback_days,
+        )
+        return [_as_dict(row) for row in rows]
+
     async def get_prior_stock_daily_snapshots(
         self, trade_date: date, lookback_days: int, stock_ids: list[str] | None = None
     ) -> list[PriorSnapshotDTO]:
