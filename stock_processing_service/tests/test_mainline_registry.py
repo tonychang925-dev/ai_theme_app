@@ -92,36 +92,41 @@ class TestMainlineRegistryTable:
 
 class TestReviewService:
 
-    def test_reject_invalid_decision(self):
+    @pytest.mark.asyncio
+    async def test_reject_invalid_decision(self):
         from stock_processing_service.application.services.mainline_review_service import MainlineReviewService
         svc = MainlineReviewService(write_port=None)
-        result = asyncio_run(svc.submit_decision(review_id="x", human_decision="invalid"))
+        result = await svc.submit_decision(review_id="x", human_decision="invalid")
         assert result["ok"] is False
 
-    def test_confirm_missing_canonical_key(self):
+    @pytest.mark.asyncio
+    async def test_confirm_missing_canonical_key(self):
         from stock_processing_service.application.services.mainline_review_service import MainlineReviewService
         svc = MainlineReviewService(write_port=None)
-        result = asyncio_run(svc.submit_decision(review_id="x", human_decision="confirm_mainline"))
+        result = await svc.submit_decision(review_id="x", human_decision="confirm_mainline")
         assert result["ok"] is False
         assert "canonical_subject_key" in result["error"]
 
-    def test_watch_returns_ok(self):
+    @pytest.mark.asyncio
+    async def test_watch_returns_ok(self):
         from stock_processing_service.application.services.mainline_review_service import MainlineReviewService
         svc = MainlineReviewService(write_port=None)
-        result = asyncio_run(svc.submit_decision(review_id="x", human_decision="watch"))
+        result = await svc.submit_decision(review_id="x", human_decision="watch")
         assert result["ok"] is True
         assert result["registry_written"] is False
 
-    def test_reject_returns_ok(self):
+    @pytest.mark.asyncio
+    async def test_reject_returns_ok(self):
         from stock_processing_service.application.services.mainline_review_service import MainlineReviewService
         svc = MainlineReviewService(write_port=None)
-        result = asyncio_run(svc.submit_decision(review_id="x", human_decision="reject"))
+        result = await svc.submit_decision(review_id="x", human_decision="reject")
         assert result["ok"] is True
 
-    def test_merge_requires_target_id(self):
+    @pytest.mark.asyncio
+    async def test_merge_requires_target_id(self):
         from stock_processing_service.application.services.mainline_review_service import MainlineReviewService
         svc = MainlineReviewService(write_port=None)
-        result = asyncio_run(svc.submit_decision(review_id="x", human_decision="merge_into_existing_mainline"))
+        result = await svc.submit_decision(review_id="x", human_decision="merge_into_existing_mainline")
         assert result["ok"] is False
         assert "merge_target_mainline_id" in result["error"]
 
@@ -144,7 +149,3 @@ class TestV2BuilderFields:
         assert len(result["pending_mainline_reviews"]) == 1
         assert "confirmed_mainlines" in result
 
-
-def asyncio_run(coro):
-    import asyncio
-    return asyncio.get_event_loop().run_until_complete(coro)

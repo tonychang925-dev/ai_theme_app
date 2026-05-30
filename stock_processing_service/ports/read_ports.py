@@ -131,7 +131,7 @@ class StockReadPort(Protocol):
         trade_date: date,
         subject_keys: list[str] | None = None,
         stock_ids: list[str] | None = None,
-    ) -> dict[str, Any]: 
+    ) -> dict[str, Any]: ...
 
     # ── PR-9: Mainline Registry read operations ──
 
