@@ -329,7 +329,7 @@ class TestNextDayWatchlistEngine:
 
     def test_watchlist_has_conditions(self):
         engine = NextDayWatchlistEngine()
-        rows = engine.build(
+        rows, _diag = engine.build(
             theme_decisions=[
                 {
                     "subject_key": "9019807",
@@ -363,7 +363,7 @@ class TestNextDayWatchlistEngine:
 
     def test_excludes_wait_market_mode(self):
         engine = NextDayWatchlistEngine()
-        rows = engine.build(
+        rows, _diag = engine.build(
             theme_decisions=[
                 {"subject_key": "t1", "theme_name": "测试", "decision": "mainline_focus",
                  "cycle_stage": "fermentation", "action_advice": "测试"},
@@ -380,7 +380,7 @@ class TestNextDayWatchlistEngine:
 
     def test_key_observation_category(self):
         engine = NextDayWatchlistEngine()
-        rows = engine.build(
+        rows, _diag = engine.build(
             theme_decisions=[
                 {"subject_key": "t1", "theme_name": "主线", "decision": "mainline_focus",
                  "cycle_stage": "fermentation", "action_advice": "主线重点"},

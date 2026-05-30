@@ -10,9 +10,12 @@ class NextDayWatchlistEngine:
 
     Categorises stocks from stock_decisions into:
       - 重点观察：mainline_focus themes with core leader roles
-      - 弱转强观察: themes in watch_weak_to_strong with support
+      - 弱转强观察: themes in watch_weak_to_strong / strong_branch_watch with support
       - 风险观察：risk_watch / fade_avoid themes
       - 放弃观察：everything else (excluded from output)
+
+    Returns tuple (watchlist_rows, diagnostics) so callers can
+    inspect why items were accepted or filtered out.
     """
 
     def build(
@@ -21,7 +24,7 @@ class NextDayWatchlistEngine:
         theme_decisions: list[dict[str, Any]],
         stock_decisions: list[dict[str, Any]],
         market_environment: dict[str, Any],
-    ) -> list[dict[str, Any]]:
+    ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
         theme_by_key = {
             str(x.get("subject_key") or ""): x
             for x in theme_decisions
@@ -29,19 +32,63 @@ class NextDayWatchlistEngine:
         market_mode = str(market_environment.get("market_mode") or "wait")
         position_limit = float(market_environment.get("position_limit") or 0)
 
+        # ── diagnostics counters ──
+        diag = {
+            "theme_decision_count": len(theme_decisions),
+            "stock_decision_count": len(stock_decisions),
+            "stock_with_subject_key_count": sum(
+                1 for s in stock_decisions if str(s.get("subject_key") or "")
+            ),
+            "matched_stock_theme_count": 0,
+            "filtered_by_market_mode": 0,
+            "filtered_by_theme_decision": 0,
+            "filtered_by_role": 0,
+            "filtered_by_support_score": 0,
+            "final_watchlist_count": 0,
+            "theme_keys": sorted(theme_by_key.keys()),
+            "unmatched_stock_keys": [] if len(stock_decisions) <= 15 else None,
+        }
+
+        unmatched_keys: set[str] = set()
+
         rows: list[dict[str, Any]] = []
         for stock in stock_decisions:
             subject_key = str(stock.get("subject_key") or "")
+            if not subject_key:
+                continue
+
             theme = theme_by_key.get(subject_key)
             if not theme:
+                if len(rows) < 20:
+                    unmatched_keys.add(subject_key)
+                continue
+
+            diag["matched_stock_theme_count"] += 1
+
+            if market_mode == "wait":
+                diag["filtered_by_market_mode"] += 1
                 continue
 
             theme_decision = str(theme.get("decision") or "")
             role = str(stock.get("role") or "")
             support_score = float(stock.get("support_score") or 0)
 
+            # P1: mild relaxation — strong_branch_watch + watch role → 弱转强观察
+            #      support_score threshold lowered from 60 → 40
+            if theme_decision in {"reject"}:
+                diag["filtered_by_theme_decision"] += 1
+                continue
+
+            if role == "reject":
+                diag["filtered_by_role"] += 1
+                continue
+
             category = self._category(theme_decision, role, support_score, market_mode)
             if category == "放弃观察":
+                if support_score < 40:
+                    diag["filtered_by_support_score"] += 1
+                else:
+                    diag["filtered_by_role"] += 1
                 continue
 
             rows.append({
@@ -65,7 +112,11 @@ class NextDayWatchlistEngine:
             })
 
         rows.sort(key=lambda x: int(x.get("priority") or 999))
-        return rows[:30]
+        rows = rows[:30]
+        diag["final_watchlist_count"] = len(rows)
+        diag["unmatched_stock_keys"] = sorted(unmatched_keys)
+
+        return rows, diag
 
     @staticmethod
     def _category(
@@ -80,14 +131,12 @@ class NextDayWatchlistEngine:
             "leader", "sub_leader", "switch_leader",
         }:
             return "重点观察"
-        if theme_decision == "watch_weak_to_strong" and support_score >= 60:
+        if theme_decision in {"watch_weak_to_strong", "strong_branch_watch"} and support_score >= 40:
             return "弱转强观察"
         if theme_decision in {"risk_watch", "fade_avoid"}:
             return "风险观察"
-        if theme_decision == "strong_branch_watch" and role in {
-            "leader", "sub_leader",
-        }:
-            return "重点观察"
+        if theme_decision == "mainline_focus":
+            return "弱转强观察"
         return "放弃观察"
 
     @staticmethod

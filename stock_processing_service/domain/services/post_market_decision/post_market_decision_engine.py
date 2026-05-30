@@ -59,7 +59,7 @@ class PostMarketDecisionEngine:
             strong_stock_reviews=strong_stock_reviews,
         )
 
-        watchlist_reviews = self.watchlist_engine.build(
+        watchlist_reviews, watchlist_diag = self.watchlist_engine.build(
             theme_decisions=theme_decisions,
             stock_decisions=stock_decisions,
             market_environment=market_environment,
@@ -83,5 +83,6 @@ class PostMarketDecisionEngine:
                 "stock_decision_count": len(stock_decisions),
                 "watchlist_count": len(watchlist_reviews),
                 "market_mode": market_environment.get("market_mode"),
+                "watchlist_join_diagnostics": watchlist_diag,
             },
         }
