@@ -98,8 +98,10 @@ class PostMarketDailyReviewV2Builder:
             },
             "market_environment_review": self._market_environment_review(doc),
             "market_summary": self._market_summary(doc),
+            "theme_decision_reviews": self._pass_through_list(doc, "theme_decision_reviews"),
             "theme_reviews": theme_reviews,
             "theme_capital_reviews": theme_capital_reviews,
+            "strong_stock_decision_reviews": self._pass_through_list(doc, "strong_stock_decision_reviews"),
             "strong_stock_reviews": strong_stock_reviews,
             "watchlist_reviews": watchlist_reviews,
             "stock_capital_reviews": stock_capital_reviews,
@@ -107,8 +109,19 @@ class PostMarketDailyReviewV2Builder:
             "money_flow_reviews": money_flow_reviews,
             "dragon_tiger_reviews": dragon_tiger_reviews,
             "trading_principle": self._trading_principle(doc),
+            "decision_diagnostics": self._pass_through_dict(doc, "decision_diagnostics"),
             "diagnostics": diagnostics,
         }
+
+    @staticmethod
+    def _pass_through_list(recap_doc: dict[str, Any], key: str) -> list[Any]:
+        value = recap_doc.get(key)
+        return deepcopy(value) if isinstance(value, list) else []
+
+    @staticmethod
+    def _pass_through_dict(recap_doc: dict[str, Any], key: str) -> dict[str, Any]:
+        value = recap_doc.get(key)
+        return deepcopy(value) if isinstance(value, dict) else {}
 
     def _market_environment_review(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
         source = recap_doc.get("market_environment_review")
