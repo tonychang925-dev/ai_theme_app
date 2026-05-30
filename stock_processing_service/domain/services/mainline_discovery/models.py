@@ -287,3 +287,63 @@ class NarrativeJudgeResult:
             "method": self.method,
             "diagnostics": self.diagnostics,
         }
+
+
+@dataclass
+class MainlineDiscoveryDecision:
+    """PR-5: Combined decision output from MainlineDiscoveryEngine."""
+    subject_key: str = ""
+    theme_name: str = ""
+
+    machine_state: str = "rejected"
+    final_mainline_state: str = "rejected"
+
+    mainline_type: str = "unknown"
+    confirmation_path: str = "unknown"
+    trigger_mode: str = "unknown"
+
+    human_review_required: bool = False
+    human_review_status: str = "none"
+    review_reason: str = ""
+    suggested_human_decision: str = "watch"
+
+    rule_logic_score: float | None = None
+    llm_narrative_score: float | None = None
+    hybrid_logic_score: float | None = None
+    market_acceptance_score: float | None = None
+    major_event_score: float | None = None
+
+    fast_line_score: float | None = None
+    slow_line_score: float | None = None
+
+    blocking_veto_flags: list[str] = field(default_factory=list)
+    confirmation_veto_flags: list[str] = field(default_factory=list)
+
+    logic_score_method: str = "unknown"
+    diagnostics: dict[str, Any] = field(default_factory=dict)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "subject_key": self.subject_key,
+            "theme_name": self.theme_name,
+            "machine_state": self.machine_state,
+            "final_mainline_state": self.final_mainline_state,
+            "mainline_type": self.mainline_type,
+            "confirmation_path": self.confirmation_path,
+            "trigger_mode": self.trigger_mode,
+            "human_review_required": self.human_review_required,
+            "human_review_status": self.human_review_status,
+            "review_reason": self.review_reason,
+            "suggested_human_decision": self.suggested_human_decision,
+            "rule_logic_score": self.rule_logic_score,
+            "llm_narrative_score": self.llm_narrative_score,
+            "hybrid_logic_score": self.hybrid_logic_score,
+            "market_acceptance_score": self.market_acceptance_score,
+            "major_event_score": self.major_event_score,
+            "fast_line_score": self.fast_line_score,
+            "slow_line_score": self.slow_line_score,
+            "blocking_veto_flags": self.blocking_veto_flags,
+            "confirmation_veto_flags": self.confirmation_veto_flags,
+            "logic_score_method": self.logic_score_method,
+            "diagnostics": self.diagnostics,
+        }
