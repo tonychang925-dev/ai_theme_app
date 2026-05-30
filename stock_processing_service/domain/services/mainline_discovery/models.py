@@ -248,3 +248,42 @@ class MainlineDiscoveryDiagnostics:
             "fallback_used": self.fallback_used,
             "data_quality": self.data_quality,
         }
+
+
+@dataclass
+class NarrativeJudgeResult:
+    """LLM narrative arbitration result — PR-4B."""
+    is_mainline_logic: bool = False
+    narrative_score: float | None = None
+    narrative_level: str = "insufficient"
+    logic_type: str = "unknown"
+    impact_scope: str = "unknown"
+    time_horizon: str = "unknown"
+    narrative_consistency_score: float | None = None
+    novelty_score: float | None = None
+    event_continuity_assessment: str = "insufficient"
+    supporting_event_ids: list[str] = field(default_factory=list)
+    negative_reasons: list[str] = field(default_factory=list)
+    logic_summary: str = ""
+    confidence: float = 0.0
+    method: str = "llm_narrative_judge_v1"
+    diagnostics: dict[str, Any] = field(default_factory=dict)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "is_mainline_logic": self.is_mainline_logic,
+            "narrative_score": self.narrative_score,
+            "narrative_level": self.narrative_level,
+            "logic_type": self.logic_type,
+            "impact_scope": self.impact_scope,
+            "time_horizon": self.time_horizon,
+            "narrative_consistency_score": self.narrative_consistency_score,
+            "novelty_score": self.novelty_score,
+            "event_continuity_assessment": self.event_continuity_assessment,
+            "supporting_event_ids": self.supporting_event_ids,
+            "negative_reasons": self.negative_reasons,
+            "logic_summary": self.logic_summary,
+            "confidence": self.confidence,
+            "method": self.method,
+            "diagnostics": self.diagnostics,
+        }
