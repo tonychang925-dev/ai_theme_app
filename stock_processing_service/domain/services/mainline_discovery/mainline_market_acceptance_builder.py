@@ -92,18 +92,19 @@ class MainlineMarketAcceptanceBuilder:
             else:
                 score = None
 
-            # ── hard veto flags ──
-            veto_flags: list[str] = []
-            if not leader_alive:
-                veto_flags.append("leader_not_alive")
+            # ── scoped veto flags (P1 fix) ──
+            blocking: list[str] = []
+            confirmation: list[str] = []
             fade_risk = _float(cj.get("fade_risk_score") or 0)
             if fade_risk >= 70:
-                veto_flags.append("fade_risk_high")
-            if cap_val == "negative":
-                veto_flags.append("capital_negative")
+                blocking.append("fade_risk_high")
             leader_bd = _bool(ce.get("leader_breakdown") or cj.get("leader_breakdown"))
             if leader_bd:
-                veto_flags.append("leader_breakdown")
+                blocking.append("leader_breakdown")
+            if not leader_alive:
+                confirmation.append("leader_not_alive")
+            if cap_val == "negative":
+                confirmation.append("capital_negative")
 
             missing: list[str] = []
             if not cycle_ev.get(sk):
@@ -145,8 +146,10 @@ class MainlineMarketAcceptanceBuilder:
                     "market_sources": market_sources,
                     "missing_fields": missing,
                     "fallback_used": [],
-                    "hard_veto_flags": veto_flags,
+                    "hard_veto_flags": blocking + confirmation,
                 },
+                blocking_veto_flags=blocking,
+                confirmation_veto_flags=confirmation,
             )
 
         return result

@@ -119,6 +119,9 @@ class MainlineMarketAcceptance:
     leader_alive: bool = False
     market_evidence: dict[str, Any] = field(default_factory=dict)
     diagnostics: dict[str, Any] = field(default_factory=dict)
+    # P1 fix: scoped vetoes — blocking vs confirmation-only
+    blocking_veto_flags: list[str] = field(default_factory=list)
+    confirmation_veto_flags: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -133,6 +136,8 @@ class MainlineMarketAcceptance:
             "leader_alive": self.leader_alive,
             "market_evidence": self.market_evidence,
             "diagnostics": self.diagnostics,
+            "blocking_veto_flags": self.blocking_veto_flags,
+            "confirmation_veto_flags": self.confirmation_veto_flags,
         }
 
 
