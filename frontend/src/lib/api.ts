@@ -332,6 +332,12 @@ export interface ThemeReviewV2 {
   subject_key: string;
   theme_name: string;
   tier: "mainline" | "strong_branch" | "watch" | "fading" | "unknown";
+  decision?: string | null;
+  decision_score?: number | null;
+  capital_validation?: "positive" | "neutral" | "divergent" | "negative" | "unknown" | string | null;
+  position_suggestion?: number | null;
+  next_day_watch_points?: string[];
+  invalidation_conditions?: string[];
   total_inflow: number | null;
   leader_inflow: number | null;
   theme_kline: string | null;
@@ -411,10 +417,14 @@ export interface WatchlistReviewV2 {
   stock_name: string;
   subject_key: string;
   theme_name: string;
-  category: "重点观察" | "弱转强观察" | "风险观察" | "其他";
+  category: "重点观察" | "弱转强观察" | "风险观察" | "其他" | string;
   role_label: string;
   stage: string | null;
   action: string | null;
+  buy_condition?: string[];
+  invalid_condition?: string[];
+  risk_level?: string | null;
+  suggested_position?: number | null;
   volume_ratio: number | null;
   pattern: string | null;
   flags: string[];
@@ -518,6 +528,7 @@ export interface PostMarketDailyReviewV2 {
     derived_data_status: "ready" | "failed_precondition" | "partial";
     recap_generate_status: "success" | "skipped_idempotent" | "failed";
   };
+  market_environment_review?: Record<string, unknown>;
   market_summary: MarketSummaryReview;
   theme_reviews: ThemeReviewV2[];
   theme_capital_reviews: ThemeCapitalReview[];

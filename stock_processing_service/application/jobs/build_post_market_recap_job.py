@@ -20,6 +20,11 @@ from stock_processing_service.application.use_cases.build_strong_stock_tracking 
     LAYER_C_INPUT_MODE,
     BuildStrongStockTrackingUseCase,
 )
+
+from stock_processing_service.domain.services.post_market_decision.post_market_decision_engine import (
+    PostMarketDecisionEngine,
+)
+
 from stock_processing_service.contracts.dto import (
     BuildResult,
     SubjectStockPoolDTO,
@@ -60,6 +65,7 @@ class BuildPostMarketRecapJob:
         evidence_job: Any | None = None,  # BuildThemeCycleEvidenceDailyJob — Layer B 证据
         report_builder: NewChainPostMarketReportBuilder | None = None,
         market_summary_llm_service: Any | None = None,
+        post_market_decision_engine: Any | None = None,
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -82,6 +88,7 @@ class BuildPostMarketRecapJob:
         self._evidence_job = evidence_job
         self._report_builder = report_builder or NewChainPostMarketReportBuilder()
         self._market_summary_llm_service = market_summary_llm_service or PostMarketMarketSummaryLlmService()
+        self._decision_engine = post_market_decision_engine or PostMarketDecisionEngine()
 
     @staticmethod
     def _d(value: Any) -> Decimal:
@@ -567,6 +574,17 @@ class BuildPostMarketRecapJob:
 
         recap_doc["capital_reviews"] = self._build_capital_reviews(report_context.get("dragon_tiger") or [])
         recap_doc["strong_stock_reviews"] = await self._build_strong_stock_reviews(trade_date)
+
+        # ── P0: 交易体系决策输出 ──
+        decision_payload = self._decision_engine.execute(
+            trade_date=trade_date,
+            report_context=report_context,
+            theme_context_map=theme_context_map,
+            market_summary=recap_doc.get("market_summary") or {},
+            strong_stock_reviews=recap_doc.get("strong_stock_reviews") or [],
+        )
+        recap_doc.update(decision_payload)
+
         recap_doc["report"] = self._report_builder.build(recap_doc)
 
         snapshot = PostMarketRecapSnapshot(
