@@ -223,6 +223,10 @@ function buildWatchlistRowsFromV2(rows: WatchlistReviewV2[]): WatchlistDisplayRo
       dragonDays: item.dragon_tiger_days != null ? String(item.dragon_tiger_days) : "--",
       catalyst: zh(item.catalyst || item.reason || "--"),
       labels: zh(item.abnormal_labels?.join("/") || "--"),
+      buyCondition: Array.isArray(item.buy_condition) ? item.buy_condition.join(" / ") : undefined,
+      invalidCondition: Array.isArray(item.invalid_condition) ? item.invalid_condition.join(" / ") : undefined,
+      riskLevel: item.risk_level ?? undefined,
+      suggestedPosition: typeof item.suggested_position === "number" ? `${Math.round(item.suggested_position * 100)}%` : undefined,
     }));
 
   let lastTheme = "";
@@ -501,6 +505,10 @@ type WatchlistRow = {
   dragonDays: string;
   catalyst: string;
   labels: string;
+  buyCondition?: string;
+  invalidCondition?: string;
+  riskLevel?: string;
+  suggestedPosition?: string;
 };
 
 type WatchlistDisplayRow = WatchlistRow & {
@@ -1349,6 +1357,30 @@ export function RecapPage() {
         <>
           <main className="workspace-layout single">
             <section className="workspace-column">
+              {/* P0: 交易原则卡片 */}
+              {dailyReviewV2PreviewEnabled && dailyReviewV2?.trading_principle && typeof dailyReviewV2.trading_principle === "object" && Object.keys(dailyReviewV2.trading_principle as Record<string, unknown>).length > 0 && (() => {
+                const tp = dailyReviewV2.trading_principle as Record<string, unknown>;
+                return (
+                  <div className="workspace-card recap-principle-card">
+                    <span className="metric-label section-title">今日交易原则</span>
+                    <div className="recap-principle-grid">
+                      <div><span className="workspace-note">市场模式</span><strong>{zh(String(tp.market_mode ?? "--"))}</strong></div>
+                      <div><span className="workspace-note">是否允许交易</span><strong>{tp.allow_trade ? "允许" : "不允许"}</strong></div>
+                      <div><span className="workspace-note">仓位上限</span><strong>{typeof tp.position_limit === "number" ? `${Math.round(tp.position_limit as number * 100)}%` : "--"}</strong></div>
+                      <div><span className="workspace-note">主策略</span><strong>{zh(String(tp.main_strategy ?? "--"))}</strong></div>
+                      {Array.isArray(tp.focus_themes) && (tp.focus_themes as string[]).length > 0 && (
+                        <div><span className="workspace-note">重点关注题材</span><strong>{(tp.focus_themes as string[]).join("、")}</strong></div>
+                      )}
+                      {Array.isArray(tp.no_trade_reasons) && (tp.no_trade_reasons as string[]).length > 0 && (
+                        <div className="recap-principle-warning"><span className="workspace-note">不交易原因</span><strong className="text-warning">{(tp.no_trade_reasons as string[]).join("；")}</strong></div>
+                      )}
+                      {Array.isArray(tp.risk_notes) && (tp.risk_notes as string[]).length > 0 && (
+                        <div className="recap-principle-risks"><span className="workspace-note">风险提示</span><ul className="workspace-list">{(tp.risk_notes as string[]).map((n, i) => <li key={`risk-${i}`} className="workspace-note">{zh(n)}</li>)}</ul></div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })()}
               {(marketEnvironmentSection.length > 0 || highlights.length > 0) && (
                 <div className="workspace-card market-summary-group">
                   <span className="metric-label section-title">市场总览</span>
@@ -1640,6 +1672,8 @@ export function RecapPage() {
                             <th>Flag</th>
                             <th>龙虎榜</th>
                             <th>催化/异动</th>
+                            <th>买入条件</th>
+                            <th>失效条件</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -1662,6 +1696,8 @@ export function RecapPage() {
                                     .join("；") || "--",
                                 )}
                               </td>
+                              <td className="recap-cell-wrap">{zh(row.buyCondition || "--")}</td>
+                              <td className="recap-cell-wrap">{zh(row.invalidCondition || "--")}</td>
                             </tr>
                           ))}
                         </tbody>
