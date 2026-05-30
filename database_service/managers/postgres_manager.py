@@ -8695,3 +8695,180 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 row.get("trace_id"),
             )
         return 1
+
+
+    # ── PR-9: Mainline Registry DB operations ──
+
+    async def upsert_mainline_review_queue_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """幂等写入主线审核队列。已人工审核的行不覆盖人工字段。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO mainline_review_queue (
+            review_id, trade_date, subject_key, theme_name,
+            mainline_id, mainline_name, machine_state, final_mainline_state,
+            mainline_type, confirmation_path, trigger_mode,
+            review_reason, review_priority, review_status, suggested_human_decision,
+            scores_json, evidence_json, risk_flags_json, diagnostics_json,
+            updated_at
+        ) VALUES (
+            $1, $2, $3, $4,
+            $5, $6, $7, $8,
+            $9, $10, $11,
+            $12, $13, $14, $15,
+            $16, $17, $18, $19,
+            NOW()
+        )
+        ON CONFLICT (review_id) DO UPDATE SET
+            machine_state = EXCLUDED.machine_state,
+            final_mainline_state = EXCLUDED.final_mainline_state,
+            mainline_type = EXCLUDED.mainline_type,
+            confirmation_path = EXCLUDED.confirmation_path,
+            trigger_mode = EXCLUDED.trigger_mode,
+            review_reason = EXCLUDED.review_reason,
+            review_priority = EXCLUDED.review_priority,
+            scores_json = EXCLUDED.scores_json,
+            evidence_json = EXCLUDED.evidence_json,
+            risk_flags_json = EXCLUDED.risk_flags_json,
+            diagnostics_json = EXCLUDED.diagnostics_json,
+            updated_at = NOW()
+        WHERE mainline_review_queue.review_status != 'reviewed'
+        """
+        count = 0
+        async with self.pool.acquire() as conn:
+            for row in rows:
+                try:
+                    r = await conn.execute(sql,
+                        str(row.get('review_id') or ''),
+                        row.get('trade_date'),
+                        str(row.get('subject_key') or ''),
+                        str(row.get('theme_name') or ''),
+                        str(row.get('mainline_id') or ''),
+                        str(row.get('mainline_name') or ''),
+                        str(row.get('machine_state') or ''),
+                        str(row.get('final_mainline_state') or 'pending_review'),
+                        str(row.get('mainline_type') or ''),
+                        str(row.get('confirmation_path') or ''),
+                        str(row.get('trigger_mode') or ''),
+                        str(row.get('review_reason') or ''),
+                        float(row.get('review_priority') or 0),
+                        str(row.get('review_status') or 'pending'),
+                        str(row.get('suggested_human_decision') or ''),
+                        json.dumps(row.get('scores') or {}) if isinstance(row.get('scores'), dict) else '{}',
+                        json.dumps(row.get('evidence') or {}) if isinstance(row.get('evidence'), dict) else '{}',
+                        json.dumps(row.get('risk_flags') or {}) if isinstance(row.get('risk_flags'), dict) else '{}',
+                        json.dumps(row.get('diagnostics') or {}) if isinstance(row.get('diagnostics'), dict) else '{}',
+                    )
+                    count += int(str(r).split()[-1]) if r else 0
+                except Exception:
+                    pass
+        return count
+
+    async def upsert_mainline_registry_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """写入主线注册表。ON CONFLICT DO UPDATE 支持人工更新。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO mainline_registry (
+            mainline_id, mainline_name, canonical_subject_key,
+            mainline_type, confirmation_path, trigger_mode,
+            identity_status, valid_from, valid_to, source_review_id,
+            core_subject_keys_json, branch_subject_keys_json, related_subject_keys_json,
+            human_reviewer, human_notes, updated_at
+        ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,NOW())
+        ON CONFLICT (mainline_id) DO UPDATE SET
+            mainline_name = EXCLUDED.mainline_name,
+            identity_status = EXCLUDED.identity_status,
+            valid_to = EXCLUDED.valid_to,
+            core_subject_keys_json = EXCLUDED.core_subject_keys_json,
+            branch_subject_keys_json = EXCLUDED.branch_subject_keys_json,
+            related_subject_keys_json = EXCLUDED.related_subject_keys_json,
+            human_reviewer = EXCLUDED.human_reviewer,
+            human_notes = EXCLUDED.human_notes,
+            updated_at = NOW()
+        """
+        count = 0
+        async with self.pool.acquire() as conn:
+            for row in rows:
+                try:
+                    await conn.execute(sql,
+                        str(row.get('mainline_id') or ''),
+                        str(row.get('mainline_name') or ''),
+                        str(row.get('canonical_subject_key') or ''),
+                        str(row.get('mainline_type') or ''),
+                        str(row.get('confirmation_path') or ''),
+                        str(row.get('trigger_mode') or ''),
+                        str(row.get('identity_status') or 'confirmed'),
+                        row.get('valid_from'),
+                        row.get('valid_to'),
+                        str(row.get('source_review_id') or ''),
+                        json.dumps(row.get('core_subject_keys_json') or []) if isinstance(row.get('core_subject_keys_json', row.get('core_subject_keys')), list) else '[]',
+                        json.dumps(row.get('branch_subject_keys_json') or []) if isinstance(row.get('branch_subject_keys_json', row.get('branch_subject_keys')), list) else '[]',
+                        json.dumps(row.get('related_subject_keys_json') or []) if isinstance(row.get('related_subject_keys_json', row.get('related_subject_keys')), list) else '[]',
+                        str(row.get('human_reviewer') or ''),
+                        str(row.get('human_notes') or ''),
+                    )
+                    count += 1
+                except Exception:
+                    pass
+        return count
+
+    async def update_mainline_registry_related_keys(self, mainline_id: str, related_keys: List[str]) -> bool:
+        """向已有主线追加 related_subject_keys，支持 merge_into_existing_mainline。"""
+        async with self.pool.acquire() as conn:
+            existing = await conn.fetchval(
+                'SELECT related_subject_keys_json FROM mainline_registry WHERE mainline_id = $1',
+                mainline_id,
+            )
+            if existing is None:
+                return False
+            current = json.loads(existing) if isinstance(existing, str) else (existing or [])
+            merged = list(set(current + list(related_keys)))
+            await conn.execute(
+                'UPDATE mainline_registry SET related_subject_keys_json = $2, updated_at = NOW() WHERE mainline_id = $1',
+                mainline_id, json.dumps(merged),
+            )
+            return True
+
+    async def get_mainline_review_queue(
+        self, trade_date=None, status=None, subject_keys=None, limit=200,
+    ) -> List[Dict[str, Any]]:
+        """查询审核队列。"""
+        conditions = []
+        params: list = []
+        p_idx = 0
+        if trade_date is not None:
+            p_idx += 1; conditions.append(f'trade_date = ${p_idx}::date'); params.append(trade_date)
+        if status is not None:
+            p_idx += 1; conditions.append(f'review_status = ${p_idx}'); params.append(status)
+        if subject_keys is not None and subject_keys:
+            p_idx += 1; conditions.append(f'subject_key = ANY(${p_idx}::text[])'); params.append(subject_keys)
+        where = ('WHERE ' + ' AND '.join(conditions)) if conditions else ''
+        p_idx += 1; params.append(min(limit, 500))
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                f'SELECT * FROM mainline_review_queue {where} ORDER BY review_priority DESC NULLS LAST LIMIT ${p_idx}',
+                *params,
+            )
+        return [dict(r) for r in rows]
+
+    async def get_confirmed_mainlines(self, trade_date=None, limit=50) -> List[Dict[str, Any]]:
+        """查询已确认的主线。"""
+        params: list = []
+        conditions = ["identity_status = 'confirmed'"]  # single quotes are fine, no unused backslashes needed
+        p_idx = 0
+        if trade_date is not None:
+            p_idx += 1; conditions.append(f'valid_from <= ${p_idx}::date AND (valid_to IS NULL OR valid_to >= ${p_idx}::date)'); params.append(trade_date)
+        p_idx += 1; params.append(min(limit, 100))
+        where = 'WHERE ' + ' AND '.join(conditions)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                f'SELECT * FROM mainline_registry {where} ORDER BY valid_from DESC, mainline_name LIMIT ${p_idx}',
+                *params,
+            )
+        return [dict(r) for r in rows]
+
+    async def get_mainline_registry_by_id(self, mainline_id: str) -> Dict[str, Any] | None:
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow('SELECT * FROM mainline_registry WHERE mainline_id = $1', mainline_id)
+        return dict(row) if row else None
