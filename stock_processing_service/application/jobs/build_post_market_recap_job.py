@@ -25,6 +25,28 @@ from stock_processing_service.domain.services.post_market_decision.post_market_d
     PostMarketDecisionEngine,
 )
 
+from stock_processing_service.application.services.mainline_discovery_fact_context_builder import (
+    MainlineDiscoveryFactContextBuilder,
+)
+from stock_processing_service.domain.services.mainline_discovery.mainline_logic_chain_builder import (
+    MainlineLogicChainBuilder,
+)
+from stock_processing_service.domain.services.mainline_discovery.mainline_market_acceptance_builder import (
+    MainlineMarketAcceptanceBuilder,
+)
+from stock_processing_service.domain.services.mainline_discovery.major_event_classifier import (
+    MajorEventClassifier,
+)
+from stock_processing_service.domain.services.mainline_discovery.mainline_narrative_judge import (
+    MainlineNarrativeJudge,
+)
+from stock_processing_service.domain.services.mainline_discovery.mainline_discovery_engine import (
+    MainlineDiscoveryEngine,
+)
+from stock_processing_service.domain.services.mainline_discovery.analyst_review_queue_builder import (
+    AnalystReviewQueueBuilder,
+)
+
 from stock_processing_service.contracts.dto import (
     BuildResult,
     SubjectStockPoolDTO,
@@ -575,6 +597,9 @@ class BuildPostMarketRecapJob:
         recap_doc["capital_reviews"] = self._build_capital_reviews(report_context.get("dragon_tiger") or [])
         recap_doc["strong_stock_reviews"] = await self._build_strong_stock_reviews(trade_date)
 
+        # ── PR-7: Mainline Discovery parallel output ──
+        await self._run_mainline_discovery(trade_date, report_context, theme_context_map, recap_doc)
+
         # ── P0: 交易体系决策输出 ──
         decision_payload = self._decision_engine.execute(
             trade_date=trade_date,
@@ -884,6 +909,123 @@ class BuildPostMarketRecapJob:
             )
         except Exception:
             pass
+
+    async def _run_mainline_discovery(
+        self,
+        trade_date: date,
+        report_context: dict[str, Any],
+        theme_context_map: dict[str, dict[str, Any]],
+        recap_doc: dict[str, Any],
+    ) -> None:
+        """PR-7: Run mainline discovery pipeline and write results to recap_doc.
+
+        Best-effort. Any exception is caught and recorded in diagnostics.
+        Never blocks the main recap generation.
+        """
+        from stock_processing_service.application.services.mainline_discovery_fact_context_builder import (
+            MainlineDiscoveryFactContext, MainlineDiscoveryFactContextBuilder,
+        )
+        try:
+            # ── build fact context ──
+            fact_builder = MainlineDiscoveryFactContextBuilder(self._read_port)
+            fact_ctx = await fact_builder.build(
+                trade_date=trade_date,
+                theme_context_map=theme_context_map,
+                lookback_days=7,
+            )
+            fc = fact_ctx.to_dict()
+
+            # ── run logic chain ──
+            logic_builder = MainlineLogicChainBuilder()
+            logic_result = await logic_builder.build(
+                trade_date=trade_date,
+                candidate_subjects=[s["subject_key"] for s in fc["candidate_subjects"]],
+                report_context=report_context,
+            )
+            logic_by_sk = {
+                sk: ev.to_dict() for sk, ev in logic_result.items()
+            } if isinstance(logic_result, dict) else {}
+
+            # ── run market acceptance ──
+            market_builder = MainlineMarketAcceptanceBuilder()
+            market_result = market_builder.build(
+                trade_date=trade_date,
+                candidate_subjects=fc["candidate_subjects"],
+                event_rows_by_subject=fc["event_rows_by_subject"],
+                cycle_evidence_by_subject=fc["cycle_evidence_by_subject"],
+                cycle_judgement_by_subject=fc["cycle_judgement_by_subject"],
+                capital_by_subject=fc["capital_by_subject"],
+                stock_facts_by_subject=fc["stock_facts_by_subject"],
+            )
+            market_by_sk = {sk: r.to_dict() for sk, r in market_result.items()}
+
+            # ── run major event classifier ──
+            major_classifier = MajorEventClassifier()
+            major_by_sk: dict[str, dict] = {}
+            for sk, lev in logic_by_sk.items():
+                ec = lev.get("event_chain", [])
+                es = lev.get("event_series", [])
+                if ec:
+                    result = major_classifier.classify(event_chain=ec, event_series=es)
+                    major_by_sk[sk] = result.to_dict()
+
+            # ── run narrative judge (best-effort, LLM may fail) ──
+            narrative_builder = MainlineNarrativeJudge()
+            narrative_by_sk: dict[str, dict] = {}
+            for sk, lev in logic_by_sk.items():
+                nj = await narrative_builder.judge(
+                    subject_key=sk,
+                    theme_name=_theme_name_for_sk(fc["candidate_subjects"], sk),
+                    event_chain=lev.get("event_chain", []),
+                    event_series=lev.get("event_series", []),
+                    event_stats=fc.get("event_stats_by_subject", {}).get(sk),
+                    major_event_classification=major_by_sk.get(sk),
+                )
+                narrative_by_sk[sk] = nj.to_dict()
+
+            # ── run discovery engine ──
+            engine = MainlineDiscoveryEngine()
+            decisions = engine.evaluate_all(
+                candidate_subjects=fc["candidate_subjects"],
+                logic_evidence_by_subject=logic_by_sk,
+                market_acceptance_by_subject=market_by_sk,
+                major_event_by_subject=major_by_sk,
+                narrative_by_subject=narrative_by_sk,
+            )
+
+            # ── run analyst review queue ──
+            queue_builder = AnalystReviewQueueBuilder()
+            review_items, review_diag = queue_builder.build(
+                decisions=decisions,
+                trade_date=trade_date.isoformat(),
+                event_evidence_by_subject=logic_by_sk,
+                narrative_by_subject=narrative_by_sk,
+                market_by_subject=market_by_sk,
+            )
+
+            # ── write to recap_doc ──
+            sd = fc.get("diagnostics", {})
+            recap_doc["mainline_discovery_reviews"] = [d.to_dict() for d in decisions]
+            recap_doc["mainline_discovery_diagnostics"] = {
+                "candidate_subject_count": sd.get("candidate_subject_count", 0),
+                "event_chain_subject_count": sd.get("event_chain_subject_count", 0),
+                "logic_score_non_null_count": _count_non_null_scores(logic_by_sk),
+                "market_acceptance_non_null_count": _count_non_null_market(market_by_sk),
+                "machine_fast_candidate_count": sum(1 for d in decisions if d.machine_state == "machine_fast_candidate"),
+                "machine_slow_candidate_count": sum(1 for d in decisions if d.machine_state == "machine_slow_candidate"),
+                "logic_only_count": sum(1 for d in decisions if d.machine_state == "logic_only"),
+                "market_noise_count": sum(1 for d in decisions if d.machine_state == "market_noise"),
+                "rotation_hotspot_count": sum(1 for d in decisions if d.machine_state == "rotation_hotspot"),
+                "rejected_count": sum(1 for d in decisions if d.machine_state == "rejected"),
+            }
+            recap_doc["analyst_review_items"] = [it.to_dict() for it in review_items]
+            recap_doc["analyst_review_diagnostics"] = review_diag.to_dict()
+
+        except Exception:
+            logger.exception("Mainline discovery pipeline failed, continuing without it")
+            recap_doc["mainline_discovery_reviews"] = []
+            recap_doc["mainline_discovery_reviews_error"] = "pipeline_failed"
+            recap_doc["mainline_discovery_diagnostics"] = {"error": "pipeline_failed"}
 
     async def _check_post_market_readiness(self, trade_date: date) -> dict[str, Any]:
         """P1: 委托 PostMarketReadinessService 检查 5 张核心表。"""
@@ -1222,3 +1364,28 @@ class BuildPostMarketRecapJob:
             except Exception:
                 continue
         return results
+
+
+# ── Mainline Discovery helpers (PR-7) ──
+
+def _theme_name_for_sk(candidates: list, sk: str) -> str:
+    for c in candidates:
+        if isinstance(c, dict) and str(c.get("subject_key", "")) == sk:
+            return str(c.get("theme_name", sk))
+    return sk
+
+
+def _count_non_null_scores(logic_by_sk: dict) -> int:
+    count = 0
+    for ev in logic_by_sk.values():
+        if isinstance(ev, dict) and ev.get("logic_score") is not None:
+            count += 1
+    return count
+
+
+def _count_non_null_market(market_by_sk: dict) -> int:
+    count = 0
+    for ma in market_by_sk.values():
+        if isinstance(ma, dict) and ma.get("market_acceptance_score") is not None:
+            count += 1
+    return count

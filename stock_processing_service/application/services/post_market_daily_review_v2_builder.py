@@ -110,6 +110,10 @@ class PostMarketDailyReviewV2Builder:
             "dragon_tiger_reviews": dragon_tiger_reviews,
             "trading_principle": self._trading_principle(doc),
             "decision_diagnostics": self._pass_through_dict(doc, "decision_diagnostics"),
+            "mainline_reviews": self._pass_through_list(doc, "mainline_discovery_reviews"),
+            "analyst_review_items": self._pass_through_list(doc, "analyst_review_items"),
+            "mainline_discovery_diagnostics": self._pass_through_dict(doc, "mainline_discovery_diagnostics"),
+            "analyst_review_diagnostics": self._pass_through_dict(doc, "analyst_review_diagnostics"),
             "diagnostics": diagnostics,
         }
 
