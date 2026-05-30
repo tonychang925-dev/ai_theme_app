@@ -2266,6 +2266,316 @@ class PostgresDatabaseManager(BaseDatabaseManager):
 
         return results
 
+    async def get_subject_event_chain_rows(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+        lookback_days: int = 7,
+    ) -> List[Dict[str, Any]]:
+        """返回主题事件明细行——用于构建 event_chain 和 event_series。
+
+        从 theme_history_event 用窗口函数取每 subject Top 10（避免全局
+        LIMIT 500 挤掉长尾 subject）。然后合并 event_theme_map+news_event，
+        最后按 (subject_key, event_date, normalized_title[:80]) 去重。
+        """
+        if not subject_keys:
+            return []
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        # ── 1. theme_history_event with per-subject window ──
+        sql = """
+        SELECT * FROM (
+            SELECT
+                'the_' || the.id AS event_id,
+                the.subject_key,
+                MAX(the.theme_name) OVER (PARTITION BY the.subject_key) AS theme_name,
+                the.rank_date::text AS occurred_at,
+                to_char(the.rank_date, 'YYYY-MM-DD') AS event_date,
+                COALESCE(the.driver_summary, the.description, '') AS title,
+                COALESCE(the.description, the.driver_summary, '') AS summary,
+                the.heat,
+                the.source_type AS source_channel,
+                'theme_history_event' AS source_table,
+                ROW_NUMBER() OVER (
+                    PARTITION BY the.subject_key
+                    ORDER BY the.rank_date DESC, the.heat DESC
+                ) AS rn
+            FROM theme_history_event the
+            WHERE the.source_type = 'jyhf_history'
+              AND the.subject_key = ANY($1::text[])
+              AND the.rank_date BETWEEN $2::date AND $3::date
+        ) sub
+        WHERE sub.rn <= 10
+        ORDER BY sub.subject_key, sub.rn
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, subject_keys, start_date, trade_date)
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            r.pop("rn", None)
+            heat_val = int(r.get("heat") or 0)
+            r["event_type"] = self._classify_event_type_from_keywords(
+                str(r.get("title") or "")
+            )
+            r["event_type_source"] = "keyword_fallback"
+            r["impact_score"] = self._heat_to_impact(heat_val)
+            r["confidence"] = 0.7 if heat_val >= 50 else 0.5
+            results.append(r)
+
+        # ── 2. event_theme_map + news_event (legacy) ──
+        news_rows = await self._fetch_event_theme_map_rows(
+            trade_date, subject_keys, lookback_days
+        )
+        for r in news_rows:
+            r["event_type_source"] = "news_event_attr"
+
+        # ── 3. CDP DOM: subject_history_staging (primary CDP source, has subject_key) ──
+        staging_rows = await self._fetch_cdp_staging_rows(
+            trade_date, subject_keys, lookback_days
+        )
+        for r in staging_rows:
+            r["event_type_source"] = "cdp_staging"
+
+        # ── 4. CDP DOM: event_subject_map + news_event (supplementary) ──
+        cdp_rows = await self._fetch_cdp_dom_event_rows(
+            trade_date, subject_keys, lookback_days
+        )
+        for r in cdp_rows:
+            r["event_type_source"] = "cdp_dom_map"
+
+        # ── 5. Sort and dedup ──
+        results.extend(news_rows)
+        results.extend(staging_rows)
+        results.extend(cdp_rows)
+        results.sort(key=lambda x: str(x.get("occurred_at") or ""), reverse=True)
+        return self._dedup_event_rows(results)
+
+    @staticmethod
+    def _dedup_event_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        """Dedup by (subject_key, event_date, normalized_title[:80])."""
+        seen: set[tuple[str, str, str]] = set()
+        deduped: list[dict[str, Any]] = []
+        for r in rows:
+            sk = str(r.get("subject_key") or "")
+            ed = str(r.get("event_date") or str(r.get("occurred_at") or "")[:10])
+            title = str(r.get("title") or "").strip()[:80]
+            key = (sk, ed, title)
+            if key not in seen:
+                seen.add(key)
+                deduped.append(r)
+        return deduped
+
+    async def _fetch_event_theme_map_rows(
+        self, trade_date, subject_keys: List[str], lookback_days: int
+    ) -> List[Dict[str, Any]]:
+        """从 event_theme_map + news_event 补充事件明细。"""
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        # Get theme_id → subject_key mapping
+        theme_ids: set[int] = set()
+        id_to_sk: dict[int, str] = {}
+        async with self.pool.acquire() as conn:
+            map_rows = await conn.fetch(
+                """SELECT id, subject_key FROM theme_master
+                   WHERE subject_key = ANY($1::text[])""",
+                subject_keys,
+            )
+            for r in map_rows:
+                tid = int(r["id"])
+                theme_ids.add(tid)
+                id_to_sk[tid] = str(r["subject_key"])
+
+            if not theme_ids:
+                return []
+
+            rows = await conn.fetch(
+                """SELECT * FROM (
+                    SELECT
+                        etm.event_id,
+                        ne.event_type,
+                        ne.confidence,
+                        ne.summary,
+                        ne.event_time::text AS occurred_at,
+                        to_char(ne.event_time, 'YYYY-MM-DD') AS event_date,
+                        ne.severity_score,
+                        ne.source_weight,
+                        ne.entities,
+                        etm.theme_id,
+                        etm.confidence AS match_confidence,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY etm.theme_id
+                            ORDER BY ne.event_time DESC
+                        ) AS rn
+                    FROM event_theme_map etm
+                    JOIN news_event ne ON ne.id = etm.event_id
+                    WHERE etm.theme_id = ANY($1::int[])
+                      AND ne.event_time::date BETWEEN $2::date AND $3::date
+                ) sub
+                WHERE sub.rn <= 10""",
+                list(theme_ids), start_date, trade_date,
+            )
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            r.pop("rn", None)
+            sk = id_to_sk.get(int(r.get("theme_id") or 0), "")
+            if not sk:
+                continue
+            results.append({
+                "event_id": f"ne_{r.get('event_id')}",
+                "subject_key": sk,
+                "theme_name": "",
+                "occurred_at": str(r.get("occurred_at") or ""),
+                "event_date": str(r.get("event_date") or ""),
+                "title": str(r.get("summary") or "")[:200],
+                "summary": str(r.get("summary") or "")[:300],
+                "event_type": str(r.get("event_type") or "unknown"),
+                "impact_score": float(r.get("severity_score") or 0) or float(r.get("confidence") or 0) or 0.5,
+                "confidence": float(r.get("confidence") or 0) or 0.5,
+                "source_channel": "event_theme_map+news_event",
+                "source_table": "event_theme_map+news_event",
+                "heat": 0,
+                "evidence_json": r.get("entities"),
+            })
+
+        return results
+
+    async def _fetch_cdp_staging_rows(
+        self, trade_date, subject_keys: List[str], lookback_days: int
+    ) -> List[Dict[str, Any]]:
+        """从 CDP DOM 管线读取事件：subject_history_staging（主源）。
+
+        该表由 jyhf_cdp_service/db_sink.py 写入，每条事件都有 subject_key
+        （由 subject_name 推导），覆盖 jyhf_dom 全部采集内容。
+        """
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                """SELECT * FROM (
+                    SELECT
+                        'cdp_' || shs.ingest_batch_id || '_' || shs.subject_rank_id::text AS event_id,
+                        shs.subject_key,
+                        COALESCE(shs.subject_name, '') AS theme_name,
+                        shs.rank_date::text AS occurred_at,
+                        to_char(shs.rank_date, 'YYYY-MM-DD') AS event_date,
+                        COALESCE(
+                            shs.description,
+                            shs.subject_name || ' 驱动事件',
+                            ''
+                        ) AS title,
+                        COALESCE(shs.description, '') AS summary,
+                        'unknown' AS event_type,
+                        COALESCE(
+                            (shs.raw_json->>'impact_score')::numeric,
+                            0.6
+                        ) AS impact_score,
+                        0.6 AS confidence,
+                        shs.source_type AS source_channel,
+                        'subject_history_staging' AS source_table,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY shs.subject_key
+                            ORDER BY shs.rank_date DESC
+                        ) AS rn
+                    FROM subject_history_staging shs
+                    WHERE shs.subject_key = ANY($1::text[])
+                      AND shs.rank_date BETWEEN $2::date AND $3::date
+                ) sub
+                WHERE sub.rn <= 10""",
+                subject_keys, start_date, trade_date,
+            )
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            r.pop("rn", None)
+            r["heat"] = 0
+            title = str(r.get("title") or "")
+            t = title.lower()
+            for kw, et in [("政策","policy"),("产业","industry"),("技术","technology"),
+                           ("订单","order"),("海外","overseas_mapping"),("监管","regulation"),
+                           ("发布","media"),("公告","company"),("涨价","price_shock")]:
+                if kw in t: r["event_type"] = et; break
+            results.append(r)
+
+        return results
+
+    async def _fetch_cdp_dom_event_rows(
+        self, trade_date, subject_keys: List[str], lookback_days: int
+    ) -> List[Dict[str, Any]]:
+        """从 CDP DOM 采集管线读取事件：event_subject_map + news_event。
+
+        jyhf_dom + news 源的事件直接通过 subject_key 映射到题材。
+        覆盖 theme_history_event 停止后的 2026-05 空洞。
+        """
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                """SELECT * FROM (
+                    SELECT
+                        'cdp_' || ne.id::text AS event_id,
+                        esm.subject_key,
+                        COALESCE(esm.subject_name, '') AS theme_name,
+                        ne.event_time::text AS occurred_at,
+                        to_char(ne.event_time, 'YYYY-MM-DD') AS event_date,
+                        COALESCE(ne.summary, '') AS title,
+                        COALESCE(ne.summary, '') AS summary,
+                        ne.event_type,
+                        COALESCE(ne.severity_score, ne.confidence, 0.5) AS impact_score,
+                        COALESCE(ne.confidence, 0.5) AS confidence,
+                        COALESCE(esm.source, esm.source_channel, 'jyhf_cdp') AS source_channel,
+                        'event_subject_map+news_event' AS source_table,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY esm.subject_key
+                            ORDER BY ne.event_time DESC
+                        ) AS rn
+                    FROM event_subject_map esm
+                    JOIN news_event ne ON ne.id = esm.news_id
+                    WHERE esm.subject_key = ANY($1::text[])
+                      AND ne.event_time::date BETWEEN $2::date AND $3::date
+                ) sub
+                WHERE sub.rn <= 10""",
+                subject_keys, start_date, trade_date,
+            )
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            r.pop("rn", None)
+            r["heat"] = 0
+            results.append(r)
+
+        return results
+
+    @staticmethod
+    def _classify_event_type_from_keywords(title: str) -> str:
+        t = (title or "").lower()
+        pairs = [
+            ("政策", "policy"), ("产业", "industry"), ("技术", "technology"),
+            ("订单", "order"), ("海外", "overseas_mapping"), ("监管", "regulation"),
+            ("发布", "media"), ("公告", "company"),
+        ]
+        for kw, etype in pairs:
+            if kw in t:
+                return etype
+        return "unknown"
+
+    @staticmethod
+    def _heat_to_impact(heat: int) -> float:
+        if heat >= 90: return 0.90
+        if heat >= 70: return 0.75
+        if heat >= 50: return 0.60
+        if heat >= 30: return 0.45
+        return 0.30
+
     async def get_subject_cycle_evidence_daily(
         self,
         trade_date,

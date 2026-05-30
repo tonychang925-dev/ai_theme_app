@@ -173,6 +173,22 @@ class DBThemeDataGateway:
         )
         return [self._as_dict(r) for r in rows]
 
+    async def get_subject_event_chain_rows(
+        self, trade_date, subject_keys: list[str] | None = None, lookback_days: int = 7
+    ) -> list[dict[str, Any]]:
+        """查询 subject 级事件明细——用于构建 event_chain 和 logic_score。
+
+        读取来源（优先级）：
+        1. theme_history_event（事件统计真源）
+        2. event_theme_map + news_event（新闻→题材映射）
+        """
+        fn = getattr(self._db, "get_subject_event_chain_rows", None)
+        if callable(fn):
+            return await fn(
+                trade_date=trade_date, subject_keys=subject_keys, lookback_days=lookback_days
+            )
+        return []
+
     async def get_subject_cycle_evidence_daily(
         self,
         trade_date,
