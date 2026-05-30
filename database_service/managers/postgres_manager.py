@@ -2332,15 +2332,23 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         for r in news_rows:
             r["event_type_source"] = "news_event_attr"
 
-        # ── 3. CDP DOM events: event_subject_map + news_event ──
+        # ── 3. CDP DOM: subject_history_staging (primary CDP source, has subject_key) ──
+        staging_rows = await self._fetch_cdp_staging_rows(
+            trade_date, subject_keys, lookback_days
+        )
+        for r in staging_rows:
+            r["event_type_source"] = "cdp_staging"
+
+        # ── 4. CDP DOM: event_subject_map + news_event (supplementary) ──
         cdp_rows = await self._fetch_cdp_dom_event_rows(
             trade_date, subject_keys, lookback_days
         )
         for r in cdp_rows:
-            r["event_type_source"] = "cdp_dom"
+            r["event_type_source"] = "cdp_dom_map"
 
-        # ── 4. Sort and dedup ──
+        # ── 5. Sort and dedup ──
         results.extend(news_rows)
+        results.extend(staging_rows)
         results.extend(cdp_rows)
         results.sort(key=lambda x: str(x.get("occurred_at") or ""), reverse=True)
         return self._dedup_event_rows(results)
@@ -2434,6 +2442,67 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 "heat": 0,
                 "evidence_json": r.get("entities"),
             })
+
+        return results
+
+    async def _fetch_cdp_staging_rows(
+        self, trade_date, subject_keys: List[str], lookback_days: int
+    ) -> List[Dict[str, Any]]:
+        """从 CDP DOM 管线读取事件：subject_history_staging（主源）。
+
+        该表由 jyhf_cdp_service/db_sink.py 写入，每条事件都有 subject_key
+        （由 subject_name 推导），覆盖 jyhf_dom 全部采集内容。
+        """
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                """SELECT * FROM (
+                    SELECT
+                        'cdp_' || shs.ingest_batch_id || '_' || shs.subject_rank_id::text AS event_id,
+                        shs.subject_key,
+                        COALESCE(shs.subject_name, '') AS theme_name,
+                        shs.rank_date::text AS occurred_at,
+                        to_char(shs.rank_date, 'YYYY-MM-DD') AS event_date,
+                        COALESCE(
+                            shs.description,
+                            shs.subject_name || ' 驱动事件',
+                            ''
+                        ) AS title,
+                        COALESCE(shs.description, '') AS summary,
+                        'unknown' AS event_type,
+                        COALESCE(
+                            (shs.raw_json->>'impact_score')::numeric,
+                            0.6
+                        ) AS impact_score,
+                        0.6 AS confidence,
+                        shs.source_type AS source_channel,
+                        'subject_history_staging' AS source_table,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY shs.subject_key
+                            ORDER BY shs.rank_date DESC
+                        ) AS rn
+                    FROM subject_history_staging shs
+                    WHERE shs.subject_key = ANY($1::text[])
+                      AND shs.rank_date BETWEEN $2::date AND $3::date
+                ) sub
+                WHERE sub.rn <= 10""",
+                subject_keys, start_date, trade_date,
+            )
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            r.pop("rn", None)
+            r["heat"] = 0
+            title = str(r.get("title") or "")
+            t = title.lower()
+            for kw, et in [("政策","policy"),("产业","industry"),("技术","technology"),
+                           ("订单","order"),("海外","overseas_mapping"),("监管","regulation"),
+                           ("发布","media"),("公告","company"),("涨价","price_shock")]:
+                if kw in t: r["event_type"] = et; break
+            results.append(r)
 
         return results
 

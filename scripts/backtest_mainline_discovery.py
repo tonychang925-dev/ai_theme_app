@@ -82,7 +82,37 @@ def _build_read_port(pool, td, lookback: int):
                 d["confidence"] = 0.7 if h>=50 else 0.5
                 all_rows.append(d)
 
-            # ── 2. CDP DOM: event_subject_map + news_event (new pipeline) ──
+            # ── 2. CDP DOM: subject_history_staging (primary CDP source) ──
+            rows2a = await self._p.fetch(
+                """SELECT 'cdp_' || ingest_batch_id || '_' || subject_rank_id::text AS event_id,
+                          subject_key, COALESCE(subject_name,'') AS theme_name,
+                          rank_date::text AS occurred_at,
+                          to_char(rank_date,'YYYY-MM-DD') AS event_date,
+                          COALESCE(description, subject_name || ' 驱动事件', '') AS title,
+                          COALESCE(description, '') AS summary,
+                          0 AS heat,
+                          source_type AS source_channel,
+                          'subject_history_staging' AS source_table
+                   FROM subject_history_staging
+                   WHERE subject_key = ANY($1::text[])
+                     AND rank_date BETWEEN $2::date AND $3::date
+                   ORDER BY rank_date DESC""",
+                subject_keys, start, td,
+            )
+            for r in rows2a:
+                d = dict(r)
+                t = str(d.get("title") or "").lower()
+                for kw, et in [("政策","policy"),("产业","industry"),("技术","technology"),
+                               ("订单","order"),("海外","overseas_mapping"),("监管","regulation"),
+                               ("发布","media"),("公告","company"),("涨价","price_shock")]:
+                    if kw in t: d["event_type"] = et; break
+                else: d["event_type"] = "unknown"
+                d["event_type_source"] = "cdp_staging"
+                d["impact_score"] = 0.6
+                d["confidence"] = 0.6
+                all_rows.append(d)
+
+            # ── 3. CDP DOM: event_subject_map + news_event (supplementary) ──
             rows2 = await self._p.fetch(
                 """SELECT 'cdp_' || ne.id::text AS event_id, esm.subject_key,
                           esm.subject_name AS theme_name,
@@ -184,10 +214,17 @@ async def _run_day(pool, td, lookback: int = 7):
            WHERE ne.event_time::date >= $1::date - 7 AND ne.event_time::date <= $1::date""",
         td,
     )
+    sks3 = await pool.fetch(
+        """SELECT DISTINCT subject_key FROM subject_history_staging
+           WHERE rank_date >= $1::date - 7 AND rank_date <= $1::date""",
+        td,
+    )
     sks_all: set[str] = set()
     for r in sks1:
         sks_all.add(str(r["subject_key"]))
     for r in sks2:
+        sks_all.add(str(r["subject_key"]))
+    for r in sks3:
         sks_all.add(str(r["subject_key"]))
     subject_keys = sorted(sks_all)
 
