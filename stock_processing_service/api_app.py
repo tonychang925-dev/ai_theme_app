@@ -4533,13 +4533,11 @@ async def _redis_stream_readiness(
                     except Exception:
                         pass
 
-            ready = False
-            state = "degraded"
+            ready = bool(length and length > 0)
+            state = "ready" if ready else "degraded"
             blockers = []
 
-            if length and length > 0:
-                blockers.append("stream has data but no active producer confirmation")
-            else:
+            if not ready:
                 blockers.append("stream has no events")
 
             sse_count = (await _sse_snapshot()).get(stream_key, 0)
@@ -4738,6 +4736,7 @@ async def _redis_health_snapshot() -> dict:
     consumer_groups: dict[str, list[dict]] = {}
     _cg_warn_pending = int(os.getenv("REDIS_CG_PENDING_WARN", "100"))
     _cg_warn_lag = int(os.getenv("REDIS_CG_LAG_WARN", "1000"))
+    _cg_warn_lag_ratio = float(os.getenv("REDIS_CG_LAG_RATIO_WARN", "0.70"))
     _cg_warn_idle_ms = int(os.getenv("REDIS_CG_IDLE_WARN_MS", "60000"))
     _cg_warn_delivery_lag_s = int(os.getenv("REDIS_CG_DELIVERY_LAG_WARN_S", "300"))
     _stream_mem_warn_mb = int(os.getenv("REDIS_STREAM_MEM_WARN_MB", "128"))
@@ -4778,11 +4777,6 @@ async def _redis_health_snapshot() -> dict:
                             last_event_at = _dt.fromtimestamp(ts_ms / 1000, TZ_CN).isoformat()
                         except Exception:
                             pass
-                    sv_state = "degraded"
-                    sv_blockers.append("stream has data but no active producer confirmation")
-                else:
-                    sv_state = "degraded"
-                    sv_blockers.append("stream is empty")
             except Exception as exc:
                 length = -1
                 sv_state = "unknown"
@@ -4806,6 +4800,7 @@ async def _redis_health_snapshot() -> dict:
                     gname = g.get("name", "?")
                     pending = int(g.get("pending", 0))
                     lag = int(g.get("lag", 0))
+                    lag_ratio = (lag / length) if length and length > 0 else 0.0
                     last_delivered = str(g.get("last-delivered-id", ""))
                     consumers = int(g.get("consumers", 0))
 
@@ -4847,6 +4842,7 @@ async def _redis_health_snapshot() -> dict:
                         "consumers": consumers,
                         "pending": pending,
                         "lag": lag,
+                        "lag_ratio": round(lag_ratio, 4),
                         "last_delivered_id": last_delivered,
                         "delivery_lag_s": delivery_lag_s,
                         "consumers_detail": consumers_detail,
@@ -4856,6 +4852,11 @@ async def _redis_health_snapshot() -> dict:
                         sv_blockers.append(f"group {gname}: pending={pending} (warn>{_cg_warn_pending})")
                     if lag > _cg_warn_lag:
                         sv_blockers.append(f"group {gname}: lag={lag} (warn>{_cg_warn_lag})")
+                    if lag_ratio > _cg_warn_lag_ratio:
+                        sv_blockers.append(
+                            f"group {gname}: lag_ratio={lag_ratio:.2f} "
+                            f"(lag={lag}, xlen={length}, warn>{_cg_warn_lag_ratio:.2f})"
+                        )
                     if delivery_lag_s is not None and delivery_lag_s > _cg_warn_delivery_lag_s:
                         sv_blockers.append(
                             f"group {gname}: delivery lag={delivery_lag_s}s "
@@ -4865,6 +4866,10 @@ async def _redis_health_snapshot() -> dict:
                     consumer_groups[stream_key] = cg_list
             except Exception:
                 pass  # stream may not have groups
+
+            if sv_state == "ready" and sv_blockers:
+                sv_state = "degraded"
+                streams[stream_key]["state"] = sv_state
 
             # Dead letter: separate health axis
             if "dead" in stream_key and length is not None and length > 0:
@@ -4919,6 +4924,7 @@ async def _redis_health_snapshot() -> dict:
                 "consumers": cg["consumers"],
                 "pending": cg["pending"],
                 "lag": cg["lag"],
+                "lag_ratio": cg.get("lag_ratio"),
                 "delivery_lag_s": cg.get("delivery_lag_s"),
             })
 

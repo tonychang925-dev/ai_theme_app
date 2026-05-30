@@ -1049,6 +1049,8 @@ class PostMarketDailyReviewV2Builder:
                 and self._candidate_level(row) != "reject"
             ][:20]
             synthesized = True
+        else:
+            source_rows = self._dedupe_stock_subject_rows(source_rows)
 
         rows: list[dict[str, Any]] = []
         missing_fields: set[str] = set()
@@ -1216,6 +1218,30 @@ class PostMarketDailyReviewV2Builder:
             })
 
         return rows, sorted(missing_fields)
+
+    @classmethod
+    def _dedupe_stock_subject_rows(cls, rows: list[Any]) -> list[Any]:
+        deduped: list[Any] = []
+        seen: set[tuple[str, str]] = set()
+        for row in rows:
+            if not isinstance(row, dict):
+                deduped.append(row)
+                continue
+            stock_key = cls._stock_key(row.get("stock_id") or row.get("stock_code") or row.get("code"))
+            subject_key = str(
+                row.get("subject_key")
+                or row.get("theme_key")
+                or row.get("subject_name")
+                or row.get("theme_name")
+                or ""
+            ).strip()
+            dedupe_key = (stock_key, subject_key)
+            if stock_key and dedupe_key in seen:
+                continue
+            if stock_key:
+                seen.add(dedupe_key)
+            deduped.append(row)
+        return deduped
 
     def _build_diagnostics(
         self,

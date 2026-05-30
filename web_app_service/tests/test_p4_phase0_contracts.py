@@ -439,6 +439,27 @@ def test_recap_defaults_contract_shape(monkeypatch):
     assert "latest_pre_market_date" in data
 
 
+def test_post_market_generate_routes_use_long_proxy_timeouts(monkeypatch):
+    calls = []
+
+    async def _fake_proxy_stock_processing_post_json(path, payload, timeout=120.0):
+        calls.append((path, payload, timeout))
+        return {"ok": True, "path": path}
+
+    monkeypatch.setattr(routes, "_proxy_stock_processing_post_json", _fake_proxy_stock_processing_post_json)
+
+    payload = {"trade_date": "2026-05-29", "force": True}
+    assert client.post("/api/v2/post-market/derived-data/generate", json=payload).status_code == 200
+    assert client.post("/api/v2/post-market/recap/generate", json=payload).status_code == 200
+    assert client.post("/api/v2/post-market/daily-review-v2/generate", json=payload).status_code == 200
+
+    assert calls == [
+        ("/api/v1/post-market/derived-data/generate", payload, 600.0),
+        ("/api/v1/post-market/recap/generate", payload, 300.0),
+        ("/api/v2/post-market/daily-review-v2/generate", payload, 180.0),
+    ]
+
+
 def test_strong_watch_new_alias_contract_shape(monkeypatch):
     async def _fake_strong_watch(trade_date, **_kwargs):
         return type(

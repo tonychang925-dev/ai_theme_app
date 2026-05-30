@@ -103,7 +103,7 @@ class PostMarketDerivedDataGenerateUseCase:
 
     def register_stock_abnormal_signal_build(self, project_root: str = "") -> None:
         self._builders["stock_abnormal_signal_build"] = _StockAbnormalSignalBuilder(
-            pool=self._pool, project_root=project_root)
+            pool=self._pool, db_manager=self._db_manager, project_root=project_root)
 
     def register_strong_stock_watch_build(self) -> None:
         self._builders["strong_stock_watch_build"] = _StrongStockWatchBuilder(
@@ -501,39 +501,33 @@ class _MoneyFlowEnhancedBuilder:
 
 
 class _StockAbnormalSignalBuilder:
-    """P2-6: stock_abnormal_signal_build — 执行 build_stock_abnormal_signal.py。"""
+    """P2-6: stock_abnormal_signal_build — 通过 Gateway Job 读取 DB 真源。"""
 
-    def __init__(self, pool=None, project_root: str = ""):
+    def __init__(self, pool=None, db_manager=None, project_root: str = ""):
         self._pool = pool
+        self._db_manager = db_manager
         self._project_root = project_root
 
     async def run(self, trade_date: date) -> dict[str, Any]:
-        import asyncio
-        script = Path(self._project_root) / "database_service/scripts/build_stock_abnormal_signal.py"
-        if not script.exists():
+        if self._db_manager is None:
             return {"job_key": "stock_abnormal_signal_build", "status": "failed_precondition",
-                    "error": f"script not found: {script}"}
-        td_str = trade_date.isoformat()
+                    "error": "no_db_manager"}
         try:
-            proc = await asyncio.create_subprocess_exec(
-                sys.executable, str(script), "--trade-date", td_str,
-                stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+            from stock_processing_service.application.jobs.build_stock_abnormal_signal_job import (
+                BuildStockAbnormalSignalJob,
             )
-            stdout, stderr = await proc.communicate()
+            job = BuildStockAbnormalSignalJob(db_gateway=self._db_manager)
+            result = await job.execute(trade_date=trade_date)
         except Exception as exc:
             return {"job_key": "stock_abnormal_signal_build", "status": "failed",
                     "affected_rows": 0, "error": str(exc)[:200]}
 
-        row_count = 0
-        if self._pool:
-            async with self._pool.acquire() as conn:
-                r = await conn.fetchrow(
-                    "SELECT COUNT(*) AS cnt FROM stock_abnormal_signal WHERE trade_date = $1::date", trade_date)
-                row_count = int(r["cnt"]) if r else 0
-        if row_count > 0:
+        row_count = int(getattr(result, "affected_rows", 0) or 0)
+        status = str(getattr(result, "status", "") or "")
+        if row_count > 0 or status in {"ok", "ok_no_signals"}:
             return {"job_key": "stock_abnormal_signal_build", "status": "success", "affected_rows": row_count}
         return {"job_key": "stock_abnormal_signal_build", "status": "failed_no_rows",
-                "affected_rows": 0, "error": f"exit={proc.returncode}"}
+                "affected_rows": 0, "error": status or "stock_abnormal_signal rows=0"}
 
 
 class _StrongStockWatchBuilder:

@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from datetime import date
-
 import pytest
 
 from stock_processing_service.application.use_cases.generate_post_market_derived_data import (
     PostMarketDerivedDataGenerateUseCase,
+    _StockAbnormalSignalBuilder,
 )
 
 
@@ -102,3 +102,35 @@ async def test_derived_data_generation_fast_fails_after_required_upstream_no_row
         "UPSTREAM_TASK_FAILED",
         "upstream theme_leader_candidate_build status=failed_no_rows",
     ) in _FakeJobStatusService.events
+
+
+@pytest.mark.asyncio
+async def test_stock_abnormal_signal_builder_uses_db_input_source(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """盘后新链已有 DB 快照，异动股构建必须走 Gateway Job，不得扫本地 JSONL。"""
+
+    import stock_processing_service.application.jobs.build_stock_abnormal_signal_job as job_module
+
+    calls: list[object] = []
+
+    class _FakeResult:
+        affected_rows = 3
+        status = "ok"
+
+    class _FakeJob:
+        def __init__(self, db_gateway=None):
+            calls.append(db_gateway)
+
+        async def execute(self, trade_date):
+            return _FakeResult()
+
+    monkeypatch.setattr(job_module, "BuildStockAbnormalSignalJob", _FakeJob)
+
+    db_gateway = object()
+    builder = _StockAbnormalSignalBuilder(pool=None, db_manager=db_gateway)
+    result = await builder.run(date(2026, 5, 29))
+
+    assert result["job_key"] == "stock_abnormal_signal_build"
+    assert result["affected_rows"] == 3
+    assert calls == [db_gateway]

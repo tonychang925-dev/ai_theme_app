@@ -11,21 +11,19 @@
 
 import argparse
 import asyncio
+import hashlib
 import json
 import os
 import sys
 from datetime import date, datetime
 from pathlib import Path
-from typing import Iterable, List, Optional, Sequence, Tuple
+from typing import Any, Iterable, List, Optional, Sequence, Tuple
 
 CURRENT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = CURRENT_DIR.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from database_service.config import DatabaseConfig, DatabaseType, RedisConfig
-from database_service.managers.postgres_manager import PostgresDatabaseManager
-from database_service.scripts.materialize_phase1_serving import ensure_tables as ensure_serving_tables
-
 HISTORY_DIR = PROJECT_ROOT / "theme_data_complete" / "history"
 
 
@@ -107,7 +105,102 @@ def _to_date(value):
         return None
 
 
-async def ensure_tables(manager: PostgresDatabaseManager) -> None:
+def _first_value(row: dict[str, Any], *keys: str) -> Any:
+    for key in keys:
+        value = row.get(key)
+        if value not in (None, "", "null"):
+            return value
+    return None
+
+
+def _synthetic_subject_rank_id(subject_key: str, rank_date: date, description: Optional[str], source_type: str) -> int:
+    """Build a stable BIGINT id for CDP rows that do not expose JYHF subjectRankId."""
+    raw = f"{subject_key}|{rank_date.isoformat()}|{description or ''}|{source_type}"
+    digest = int(hashlib.sha1(raw.encode("utf-8")).hexdigest()[:10], 16)
+    return int(rank_date.strftime("%Y%m%d")) * 1_000_000_000 + digest % 1_000_000_000
+
+
+def _coerce_history_record(
+    row: dict[str, Any],
+    batch_id: str,
+    fallback_subject_key: Optional[str] = None,
+) -> Optional[Tuple[Tuple, Tuple]]:
+    subject_key = str(
+        _first_value(row, "subjectId", "subject_key", "subjectKey") or fallback_subject_key or ""
+    ).strip()
+    rank_date = _to_date(_first_value(row, "rankDate", "rank_date"))
+    if not subject_key or rank_date is None:
+        return None
+
+    subject_name = _first_value(row, "subjectName", "subject_name")
+    description = _first_value(row, "description", "desc")
+    heat = _to_int(_first_value(row, "heat", "appearance_count", "appearanceCount"))
+    heat_name = _first_value(row, "heatName", "heat_name")
+    pct_chg = _to_float(_first_value(row, "pctChg", "pct_chg"))
+    his_pct_chg = _to_float(_first_value(row, "hisPctChg", "his_pct_chg"))
+    red = bool(_first_value(row, "red") or False)
+    sort = _to_int(_first_value(row, "sort", "rank"))
+    source_type = str(_first_value(row, "source_type", "sourceType") or "jyhf_history")
+    subject_rank_id = _to_int(_first_value(row, "subjectRankId", "subject_rank_id"))
+    if subject_rank_id is None:
+        subject_rank_id = _synthetic_subject_rank_id(subject_key, rank_date, str(description or ""), source_type)
+
+    history_row = (
+        subject_key,
+        subject_rank_id,
+        rank_date,
+        subject_name,
+        description,
+        heat,
+        heat_name,
+        pct_chg,
+        his_pct_chg,
+        red,
+        sort,
+        source_type,
+        json.dumps(row, ensure_ascii=False),
+        batch_id,
+    )
+    rank_row = (
+        subject_key,
+        rank_date,
+        heat,
+        heat_name,
+        pct_chg,
+        his_pct_chg,
+        red,
+        description,
+        str(_first_value(row, "source_system", "sourceSystem") or "jyhf"),
+    )
+    return history_row, rank_row
+
+
+def build_rows_from_records(
+    records: Sequence[dict[str, Any]],
+    batch_id: str,
+    fallback_subject_key: Optional[str] = None,
+) -> Tuple[List[Tuple], List[Tuple]]:
+    history_rows: List[Tuple] = []
+    rank_rows: List[Tuple] = []
+    for obj in records:
+        rows = obj.get("rows") if isinstance(obj, dict) and "rows" in obj else obj
+        if isinstance(rows, dict):
+            rows = [rows]
+        if not isinstance(rows, list):
+            continue
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            coerced = _coerce_history_record(row, batch_id, fallback_subject_key)
+            if coerced is None:
+                continue
+            history_row, rank_row = coerced
+            history_rows.append(history_row)
+            rank_rows.append(rank_row)
+    return history_rows, rank_rows
+
+
+async def ensure_tables(manager: Any) -> None:
     ddl = """
     CREATE TABLE IF NOT EXISTS subject_history_staging (
         id BIGSERIAL PRIMARY KEY,
@@ -154,10 +247,12 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
     """
     async with manager.pool.acquire() as conn:
         await conn.execute(ddl)
+    from database_service.scripts.materialize_phase1_serving import ensure_tables as ensure_serving_tables
+
     await ensure_serving_tables(manager)
 
 
-async def ensure_event_theme_columns(manager: PostgresDatabaseManager) -> None:
+async def ensure_event_theme_columns(manager: Any) -> None:
     ddl = """
     ALTER TABLE news_event
       ADD COLUMN IF NOT EXISTS theme_directive JSONB DEFAULT '{}'::jsonb;
@@ -170,7 +265,7 @@ async def ensure_event_theme_columns(manager: PostgresDatabaseManager) -> None:
         await conn.execute(ddl)
 
 
-async def ensure_jyhf_theme_master_rows(manager: PostgresDatabaseManager, subject_keys: Sequence[str]) -> None:
+async def ensure_jyhf_theme_master_rows(manager: Any, subject_keys: Sequence[str]) -> None:
     sql = """
     WITH candidates AS (
         SELECT DISTINCT
@@ -231,8 +326,7 @@ def iter_history_files(subject_keys: Optional[Sequence[str]]) -> Iterable[Path]:
 
 
 def extract_rows(path: Path, batch_id: str) -> Tuple[List[Tuple], List[Tuple]]:
-    history_rows: List[Tuple] = []
-    rank_rows: List[Tuple] = []
+    records: List[dict[str, Any]] = []
     with path.open("r", encoding="utf-8", errors="ignore") as f:
         for line_no, line in enumerate(f, 1):
             line = line.strip()
@@ -243,71 +337,18 @@ def extract_rows(path: Path, batch_id: str) -> Tuple[List[Tuple], List[Tuple]]:
             except json.JSONDecodeError:
                 print(f"[WARN] skip invalid history line: file={path.name} line={line_no}")
                 continue
-
-            rows = obj.get("rows") if isinstance(obj, dict) and "rows" in obj else obj
-            if isinstance(rows, dict):
-                rows = [rows]
-            if not isinstance(rows, list):
-                continue
-
-            for row in rows:
-                subject_key = str(row.get("subjectId") or path.stem.replace("_history", ""))
-                rank_date = _to_date(row.get("rankDate"))
-                if not subject_key or rank_date is None:
-                    continue
-                subject_rank_id = _to_int(row.get("subjectRankId"))
-                subject_name = row.get("subjectName")
-                description = row.get("description")
-                heat = _to_int(row.get("heat"))
-                heat_name = row.get("heatName")
-                pct_chg = _to_float(row.get("pctChg"))
-                his_pct_chg = _to_float(row.get("hisPctChg"))
-                red = bool(row.get("red"))
-                sort = _to_int(row.get("sort"))
-
-                history_rows.append(
-                    (
-                        subject_key,
-                        subject_rank_id,
-                        rank_date,
-                        subject_name,
-                        description,
-                        heat,
-                        heat_name,
-                        pct_chg,
-                        his_pct_chg,
-                        red,
-                        sort,
-                        "jyhf_history",
-                        json.dumps(row, ensure_ascii=False),
-                        batch_id,
-                    )
-                )
-                rank_rows.append(
-                    (
-                        subject_key,
-                        rank_date,
-                        heat,
-                        heat_name,
-                        pct_chg,
-                        his_pct_chg,
-                        red,
-                        description,
-                        "jyhf",
-                    )
-                )
-    return history_rows, rank_rows
+            records.append(obj)
+    return build_rows_from_records(records, batch_id, path.stem.replace("_history", ""))
 
 
-async def sync_subjects(manager: PostgresDatabaseManager, subject_keys: Sequence[str], batch_id: str, mode: str) -> Tuple[int, int]:
-    history_rows: List[Tuple] = []
-    rank_rows: List[Tuple] = []
-
-    for path in iter_history_files(subject_keys):
-        h_rows, r_rows = extract_rows(path, batch_id)
-        history_rows.extend(h_rows)
-        rank_rows.extend(r_rows)
-
+async def sync_prepared_rows(
+    manager: Any,
+    subject_keys: Sequence[str],
+    history_rows: Sequence[Tuple],
+    rank_rows: Sequence[Tuple],
+    batch_id: str,
+    mode: str,
+) -> Tuple[int, int]:
     history_sql = """
     INSERT INTO subject_history_staging (
         subject_key, subject_rank_id, rank_date, subject_name, description,
@@ -564,14 +605,40 @@ async def sync_subjects(manager: PostgresDatabaseManager, subject_keys: Sequence
                     list(subject_keys),
                 )
             if history_rows:
-                await conn.executemany(history_sql, history_rows)
+                await conn.executemany(history_sql, list(history_rows))
             if rank_rows:
-                await conn.executemany(rank_sql, rank_rows)
+                await conn.executemany(rank_sql, list(rank_rows))
             await conn.execute(refresh_sql, list(subject_keys))
             await conn.execute(history_event_news_sql, list(subject_keys), batch_id)
             await conn.execute(history_event_news_update_sql, list(subject_keys))
             await conn.execute(history_event_map_sql, list(subject_keys))
     return len(history_rows), len(rank_rows)
+
+
+async def sync_subjects(manager: Any, subject_keys: Sequence[str], batch_id: str, mode: str) -> Tuple[int, int]:
+    history_rows: List[Tuple] = []
+    rank_rows: List[Tuple] = []
+
+    for path in iter_history_files(subject_keys):
+        h_rows, r_rows = extract_rows(path, batch_id)
+        history_rows.extend(h_rows)
+        rank_rows.extend(r_rows)
+
+    return await sync_prepared_rows(manager, subject_keys, history_rows, rank_rows, batch_id, mode)
+
+
+async def sync_records(
+    manager: Any,
+    records: Sequence[dict[str, Any]],
+    batch_id: str,
+    mode: str = "append",
+) -> Tuple[int, int, List[str]]:
+    history_rows, rank_rows = build_rows_from_records(records, batch_id)
+    subject_keys = sorted({str(row[0]) for row in history_rows if row and str(row[0]).strip()})
+    if not subject_keys:
+        return 0, 0, []
+    history_count, rank_count = await sync_prepared_rows(manager, subject_keys, history_rows, rank_rows, batch_id, mode)
+    return history_count, rank_count, subject_keys
 
 
 async def main(args=None) -> int:
@@ -585,6 +652,8 @@ async def main(args=None) -> int:
     subject_keys = _load_subject_keys(args.subjects_file)
     if subject_keys is None:
         subject_keys = sorted({path.stem.replace("_history", "") for path in HISTORY_DIR.glob("*_history.jsonl")})
+
+    from database_service.managers.postgres_manager import PostgresDatabaseManager
 
     manager = PostgresDatabaseManager(get_postgres_config())
     await manager.connect()

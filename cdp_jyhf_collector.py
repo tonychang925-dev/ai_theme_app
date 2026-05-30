@@ -3,27 +3,35 @@
 CDP-based JYHF Data Collector
 
 通过 Chrome DevTools Protocol 连接久赢恒丰 Electron 应用，
-自动导航页面提取题材排行/轮动数据，保存为 JSONL 文件，
-对接现有 import_jyhf_history_incremental.py 导入流程。
+自动导航页面提取题材排行/轮动数据，可直接写入数据库；
+JSONL 导出仅作为可选排查/回滚产物。
 
 用法:
   python cdp_jyhf_collector.py --date 2026-05-06
   python cdp_jyhf_collector.py --date 2026-05-06 --import-db
+  python cdp_jyhf_collector.py --date 2026-05-06 --export-jsonl
 """
 
 from __future__ import annotations
 
 import argparse
+import asyncio
 import json
-import os
 import subprocess
-import sys
 import time
-from datetime import date, datetime
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Optional
 
 import websocket
+
+from database_service.scripts.import_jyhf_history_incremental import (
+    ensure_event_theme_columns,
+    ensure_jyhf_theme_master_rows,
+    ensure_tables as ensure_jyhf_history_tables,
+    get_postgres_config,
+    sync_records as sync_jyhf_history_records,
+)
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 HISTORY_DIR = PROJECT_ROOT / "theme_data_complete" / "history"
@@ -635,17 +643,106 @@ def save_manifest(batch_id: str, subject_count: int, file_count: int) -> None:
     print(f"[MANIFEST] {path}")
 
 
+async def import_rows_to_db(rows: list[dict], batch_id: str) -> tuple[int, int, int]:
+    """Persist collected JYHF daily rows without writing JSONL intermediates."""
+    if not rows:
+        return 0, 0, 0
+    from database_service.managers.postgres_manager import PostgresDatabaseManager
+
+    manager = PostgresDatabaseManager(get_postgres_config())
+    await manager.connect()
+    try:
+        await ensure_jyhf_history_tables(manager)
+        await ensure_event_theme_columns(manager)
+        subject_keys = sorted(
+            {
+                str(row.get("subject_key") or row.get("subjectId") or "").strip()
+                for row in rows
+                if str(row.get("subject_key") or row.get("subjectId") or "").strip()
+            }
+        )
+        await ensure_jyhf_theme_master_rows(manager, subject_keys)
+        history_count, rank_count, subject_keys = await sync_jyhf_history_records(
+            manager,
+            rows,
+            batch_id,
+            mode="append",
+        )
+        return history_count, rank_count, len(subject_keys)
+    finally:
+        await manager.disconnect()
+
+
+async def get_existing_db_counts(target_date: str) -> dict[str, int]:
+    """Return existing JYHF daily rows for a trade date, checking DB only."""
+    from database_service.managers.postgres_manager import PostgresDatabaseManager
+
+    trade_date = datetime.strptime(target_date, "%Y-%m-%d").date()
+    manager = PostgresDatabaseManager(get_postgres_config())
+    await manager.connect()
+    try:
+        async with manager.pool.acquire() as conn:
+            rank_exists = await conn.fetchval("SELECT to_regclass('public.subject_rank_daily') IS NOT NULL")
+            history_exists = await conn.fetchval("SELECT to_regclass('public.subject_history_staging') IS NOT NULL")
+            rank_count = 0
+            history_count = 0
+            if rank_exists:
+                rank_count = int(
+                    await conn.fetchval(
+                        """
+                        SELECT COUNT(*)
+                        FROM subject_rank_daily
+                        WHERE rank_date = $1::date
+                          AND source_system = 'jyhf'
+                        """,
+                        trade_date,
+                    )
+                    or 0
+                )
+            if history_exists:
+                history_count = int(
+                    await conn.fetchval(
+                        """
+                        SELECT COUNT(*)
+                        FROM subject_history_staging
+                        WHERE rank_date = $1::date
+                          AND source_type IN ('jyhf_history', 'jyhf_rank_daily')
+                        """,
+                        trade_date,
+                    )
+                    or 0
+                )
+            return {"rank_rows": rank_count, "history_rows": history_count}
+    finally:
+        await manager.disconnect()
+
+
 # ── Main ────────────────────────────────────────────────────
 
 def main():
     parser = argparse.ArgumentParser(description="CDP-based JYHF data collector")
     parser.add_argument("--date", required=True, help="Target trade date (YYYY-MM-DD)")
     parser.add_argument("--import-db", action="store_true", help="Import collected data into DB")
+    parser.add_argument("--export-jsonl", action="store_true", help="Also export collected rows to legacy JSONL files")
+    parser.add_argument("--force", action="store_true", help="Re-collect even when DB already has rows for --date")
     parser.add_argument("--skip-launch", action="store_true", help="Skip app launch (assume already running)")
     args = parser.parse_args()
+    if not args.import_db and not args.export_jsonl:
+        args.import_db = True
 
     target_date = args.date
     batch_id = f"cdp_jyhf_{target_date.replace('-', '')}"
+
+    if args.import_db and not args.force:
+        existing_counts = asyncio.run(get_existing_db_counts(target_date))
+        if existing_counts["rank_rows"] > 0 or existing_counts["history_rows"] > 0:
+            print(
+                f"[SKIP] DB already has JYHF data for {target_date}: "
+                f"rank_rows={existing_counts['rank_rows']} "
+                f"history_rows={existing_counts['history_rows']}. "
+                "Use --force to re-collect."
+            )
+            return
 
     # Step 1: Ensure app is running
     if not args.skip_launch:
@@ -749,16 +846,34 @@ def main():
                 "batch_id": batch_id,
             })
 
-        # Step 8: Save to JSONL files
+        # Put rank rows last so subject_rank_daily keeps the richer pct/driver data
+        # when the same subject/date is also present in history rows.
+        collected_rows = history_rows + rank_rows
+
+        # Step 8: Persist directly to DB when requested; JSONL is optional.
+        imported_history_rows = 0
+        imported_rank_rows = 0
+        imported_subjects = 0
+        if args.import_db and collected_rows:
+            print("\n[IMPORT] Writing collected rows directly to database...")
+            imported_history_rows, imported_rank_rows, imported_subjects = asyncio.run(
+                import_rows_to_db(collected_rows, batch_id)
+            )
+            print(
+                f"[IMPORT] DB write complete: subjects={imported_subjects} "
+                f"history_rows={imported_history_rows} rank_rows={imported_rank_rows}"
+            )
+
+        # Step 9: Optional legacy JSONL export for diagnostics/backfill.
         file_count = 0
-        if rank_rows:
+        if args.export_jsonl and rank_rows:
             today_rank = DAILY_DIR / f"combined_{target_date.replace('-', '')}_daily.jsonl"
             count = save_to_jsonl(rank_rows, today_rank)
             print(f"[SAVE] {count} rank rows -> {today_rank}")
             file_count += 1
 
         # Save per-subject history files
-        if history_rows:
+        if args.export_jsonl and history_rows:
             from collections import defaultdict
             by_subject: dict[str, list] = defaultdict(list)
             for row in history_rows:
@@ -792,32 +907,9 @@ def main():
                     file_count += 1
             print(f"[SAVE] History rows for {len(by_subject)} subjects, {file_count} files updated")
 
-        # Step 9: Save manifest
-        save_manifest(batch_id, len(rank_rows) + len(history_rows), file_count)
-
-        # Step 10: Optionally import into DB
-        if args.import_db and (rank_rows or history_rows):
-            print("\n[IMPORT] Running import_jyhf_history_incremental...")
-            # Create subject keys file
-            subjects_file = PROJECT_ROOT / "tmp" / f"cdp_subjects_{target_date.replace('-', '')}.txt"
-            subjects_file.parent.mkdir(parents=True, exist_ok=True)
-            all_sids = list(set(
-                r["subject_key"] for r in history_rows + rank_rows
-                if r["subject_key"] and r["subject_key"].isdigit()
-            ))
-            subjects_file.write_text("\n".join(all_sids))
-            result = subprocess.run(
-                [sys.executable,
-                 str(PROJECT_ROOT / "database_service" / "scripts" / "import_jyhf_history_incremental.py"),
-                 "--subjects-file", str(subjects_file),
-                 "--batch-id", batch_id,
-                 "--mode", "append"],
-                capture_output=True, text=True,
-                timeout=120,
-            )
-            print(result.stdout[-500:] if result.stdout else "(no output)")
-            if result.stderr:
-                print(f"STDERR: {result.stderr[:200]}")
+        # Step 10: Save manifest only when an artifact was produced.
+        if args.export_jsonl:
+            save_manifest(batch_id, len(collected_rows), file_count)
 
     finally:
         cdp.close()

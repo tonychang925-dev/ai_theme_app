@@ -14,7 +14,7 @@ import os
 import sys
 from datetime import datetime, timedelta
 from pathlib import Path
-from typing import List, Optional, Sequence, Tuple
+from typing import Any, List, Optional, Sequence, Tuple
 
 CURRENT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = CURRENT_DIR.parent.parent
@@ -147,15 +147,73 @@ def iter_stock_files(data_root: Path, trade_date: str, subject_keys: Optional[Se
         yield path
 
 
-def build_rows(data_root: Path, trade_date: str, subject_keys: Optional[Sequence[str]], batch_id: str) -> Tuple[List[Tuple], List[str]]:
+def _build_row_tuple(row: list[Any], subject_key: str, idx: int, trade_date_value, batch_id: str) -> Optional[Tuple]:
+    if not isinstance(row, list) or len(row) < 15:
+        return None
+    row_trade_date_raw = row[0] if len(row) > 0 else None
+    if row_trade_date_raw in (None, ""):
+        return None
+    try:
+        row_trade_date = datetime.fromisoformat(str(row_trade_date_raw)).date()
+    except Exception:
+        return None
+    # 以行内 trade_date 为准，杜绝文件名日期偏移导致漏导/错导。
+    if row_trade_date != trade_date_value:
+        return None
+    pct_chg = _to_float(row[10] if len(row) > 10 else None)
+    return (
+        row_trade_date,
+        subject_key,
+        _to_int(row[1] if len(row) > 1 else None),
+        str(row[2]) if len(row) > 2 and row[2] is not None else None,
+        row[3] if len(row) > 3 else None,
+        idx,
+        _to_float(row[4] if len(row) > 4 else None),
+        _to_float(row[5] if len(row) > 5 else None),
+        _to_float(row[6] if len(row) > 6 else None),
+        _to_float(row[7] if len(row) > 7 else None),
+        _to_float(row[8] if len(row) > 8 else None),
+        pct_chg,
+        _to_float(row[11] if len(row) > 11 else None),
+        _to_float(row[12] if len(row) > 12 else None),
+        _to_float(row[13] if len(row) > 13 else None),
+        _is_limit_up(pct_chg),
+        idx == 1,
+        json.dumps(row, ensure_ascii=False),
+        batch_id,
+    )
+
+
+def build_rows_from_subject_records(
+    subject_records: Sequence[Tuple[str, Sequence[Any]]],
+    trade_date: str,
+    batch_id: str,
+) -> Tuple[List[Tuple], List[str]]:
     rows: List[Tuple] = []
     touched_subjects: set[str] = set()
     trade_date_value = _parse_trade_date(trade_date)
+    for subject_key, records in subject_records:
+        subject_key = str(subject_key)
+        subject_touched = False
+        for idx, record in enumerate(records, start=1):
+            row_tuple = _build_row_tuple(record, subject_key, idx, trade_date_value, batch_id)
+            if row_tuple is None:
+                continue
+            rows.append(row_tuple)
+            subject_touched = True
+        if subject_touched:
+            touched_subjects.add(subject_key)
+    return rows, sorted(touched_subjects)
+
+
+def build_rows(data_root: Path, trade_date: str, subject_keys: Optional[Sequence[str]], batch_id: str) -> Tuple[List[Tuple], List[str]]:
+    subject_records: list[Tuple[str, list[Any]]] = []
+    trade_date_value = _parse_trade_date(trade_date)
     for path in iter_stock_files(data_root, trade_date, subject_keys):
         subject_key = path.name.split("_")[0]
-        touched_subjects.add(subject_key)
+        records: list[Any] = []
         with path.open("r", encoding="utf-8", errors="ignore") as f:
-            for idx, line in enumerate(f, start=1):
+            for line in f:
                 line = line.strip()
                 if not line:
                     continue
@@ -163,43 +221,16 @@ def build_rows(data_root: Path, trade_date: str, subject_keys: Optional[Sequence
                     row = json.loads(line)
                 except json.JSONDecodeError:
                     continue
-                if not isinstance(row, list) or len(row) < 15:
-                    continue
-                row_trade_date_raw = row[0] if len(row) > 0 else None
-                if row_trade_date_raw in (None, ""):
-                    continue
-                try:
-                    row_trade_date = datetime.fromisoformat(str(row_trade_date_raw)).date()
-                except Exception:
-                    continue
-                # 以行内 trade_date 为准，杜绝文件名日期偏移导致漏导/错导。
-                if row_trade_date != trade_date_value:
-                    continue
-                pct_chg = _to_float(row[10] if len(row) > 10 else None)
-                rows.append(
-                    (
-                        row_trade_date,
-                        subject_key,
-                        _to_int(row[1] if len(row) > 1 else None),
-                        str(row[2]) if len(row) > 2 and row[2] is not None else None,
-                        row[3] if len(row) > 3 else None,
-                        idx,
-                        _to_float(row[4] if len(row) > 4 else None),
-                        _to_float(row[5] if len(row) > 5 else None),
-                        _to_float(row[6] if len(row) > 6 else None),
-                        _to_float(row[7] if len(row) > 7 else None),
-                        _to_float(row[8] if len(row) > 8 else None),
-                        pct_chg,
-                        _to_float(row[11] if len(row) > 11 else None),
-                        _to_float(row[12] if len(row) > 12 else None),
-                        _to_float(row[13] if len(row) > 13 else None),
-                        _is_limit_up(pct_chg),
-                        idx == 1,
-                        json.dumps(row, ensure_ascii=False),
-                        batch_id,
-                    )
-                )
-    return rows, sorted(touched_subjects)
+                if isinstance(row, list):
+                    try:
+                        row_trade_date = datetime.fromisoformat(str(row[0])).date()
+                    except Exception:
+                        row_trade_date = None
+                    if row_trade_date == trade_date_value:
+                        records.append(row)
+        if records:
+            subject_records.append((subject_key, records))
+    return build_rows_from_subject_records(subject_records, trade_date, batch_id)
 
 
 async def load_rows(manager: PostgresDatabaseManager, rows: List[Tuple]) -> int:

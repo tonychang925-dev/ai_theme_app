@@ -35,6 +35,7 @@ class NewsStreamHandler:
             "stream_name": self.config.get("stream_name", "stream:news:raw"),
             "batch_size": self.config.get("batch_size", 10),
             "block_time": self.config.get("block_time", 5000),
+            "storage_concurrency": max(1, int(self.config.get("storage_concurrency", os.getenv("REALTIME_RAW_STORAGE_CONCURRENCY", "5")))),
             "enable_auto_ack": self.config.get("enable_auto_ack", True),
             "storage_timeout": self.config.get("storage_timeout", 30),
             "required_fields": ['news_id', 'title', 'content', 'source', 'publish_date']
@@ -114,37 +115,70 @@ class NewsStreamHandler:
     async def _storage_service_loop(self):
         """存储服务主循环"""
         logger.info("进入存储服务循环...")
-        
+        _zombie_check_counter = 0
+
         while self.running:
             try:
                 # 1. 从Stream消费消息
                 messages = await self._consume_messages()
-                
+
                 if messages:
                     logger.info(f"📨 收到 {len(messages)} 条待存储消息")
-                    
+
                     # 2. 批量处理消息
                     storage_results = await self._process_storage_batch(messages)
-                    
+
                     # 3. 确认消息
                     if self.consumer_config["enable_auto_ack"]:
                         await self._acknowledge_messages(messages, storage_results)
-                    
+
                     # 4. 更新统计
                     await self._update_storage_stats(storage_results)
-                    
+
                 else:
-                    # 没有消息时
-                    if self.storage_stats["total_messages"] % 10 == 0:
-                        logger.info(f"⏳ 等待存储消息... (已处理: {self.storage_stats['storage_success']})")
-                    await asyncio.sleep(5)
-                    
+                    # 没有消息时短暂等待
+                    await asyncio.sleep(2)
+
+                # 定期僵尸清理：每 30 轮 ≈ 60s 执行一次
+                _zombie_check_counter += 1
+                if _zombie_check_counter >= 30:
+                    _zombie_check_counter = 0
+                    await self._cleanup_zombie_consumers()
+
             except asyncio.CancelledError:
                 logger.info("存储服务被取消")
                 break
             except Exception as e:
                 logger.error(f"存储服务循环异常: {e}")
                 await asyncio.sleep(5)
+
+    async def _cleanup_zombie_consumers(self) -> None:
+        """清理本 consumer group 中 idle > 60s 的僵尸 consumer，不 ACK pending。"""
+        try:
+            stream_key = self._resolve_stream_key()
+            group = self.consumer_config["consumer_group"]
+            if hasattr(self.stream_bus, "redis"):
+                r = self.stream_bus.redis
+            elif hasattr(self.stream_bus, "_redis"):
+                r = self.stream_bus._redis
+            else:
+                return
+            consumers = await r.xinfo_consumers(stream_key, group)
+            for c in consumers:
+                idle_ms = int(c.get("idle", 0))
+                if idle_ms > 60000:
+                    pending = int(c.get("pending", 0))
+                    cname = c.get("name", "")
+                    try:
+                        await r.xgroup_delconsumer(stream_key, group, cname)
+                        logger.warning(
+                            "Zombie cleanup: removed %s/%s/%s idle=%ds pending=%d",
+                            stream_key, group, cname, idle_ms // 1000, pending,
+                        )
+                    except Exception:
+                        pass
+        except Exception:
+            pass
     
     async def _consume_messages(self) -> List[Dict[str, Any]]:
         """从Stream消费消息"""
@@ -1143,11 +1177,14 @@ class NewsStreamHandler:
     # 在 _process_storage_batch 方法中确保调用统计更新
     async def _process_storage_batch(self, messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """处理存储批次"""
-        results = []
-        
-        for message in messages:
-            result = await self._process_storage_message(message)
-            results.append(result)
+        concurrency = min(self.consumer_config["storage_concurrency"], max(1, len(messages)))
+        semaphore = asyncio.Semaphore(concurrency)
+
+        async def _process_one(message: Dict[str, Any]) -> Dict[str, Any]:
+            async with semaphore:
+                return await self._process_storage_message(message)
+
+        results = await asyncio.gather(*[_process_one(message) for message in messages])
         
         # 更新统计
         await self._update_storage_stats(results)

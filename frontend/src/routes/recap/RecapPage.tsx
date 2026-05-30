@@ -1219,12 +1219,16 @@ export function RecapPage() {
     setGenerationSteps(initialRecapGenerationSteps());
     try {
       updateGenerationStep("readiness", { status: "running", progress: 30 });
-      await refreshPostMarketStatus();
+      const initialReadiness = await refreshPostMarketStatus();
       updateGenerationStep("readiness", { status: "success", progress: 100 });
-      updateGenerationStep("derived", { status: "running", progress: 35 });
-      const derivedResult = await generatePostMarketDerivedData(tradeDate, true);
-      requirePostMarketCommandOk(derivedResult, "生成动态复盘数据失败");
-      updateGenerationStep("derived", { status: "success", progress: 100 });
+      if (initialReadiness?.status === "ready") {
+        updateGenerationStep("derived", { status: "success", progress: 100 });
+      } else {
+        updateGenerationStep("derived", { status: "running", progress: 35 });
+        const derivedResult = await generatePostMarketDerivedData(tradeDate, true);
+        requirePostMarketCommandOk(derivedResult, "生成动态复盘数据失败");
+        updateGenerationStep("derived", { status: "success", progress: 100 });
+      }
       updateGenerationStep("readiness", { status: "running", progress: 70 });
       const readiness = await refreshPostMarketStatus();
       if (readiness?.status !== "ready") {
