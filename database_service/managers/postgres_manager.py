@@ -2297,7 +2297,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             the.source_type AS source_channel,
             the.evidence_json
         FROM theme_history_event the
-        WHERE the.subject_key = ANY($1::text[])
+        WHERE the.source_type = 'jyhf_history'
+          AND the.subject_key = ANY($1::text[])
           AND the.rank_date BETWEEN $2::date AND $3::date
         GROUP BY the.id, the.subject_key, the.rank_date, the.driver_summary,
                  the.description, the.heat, the.source_type, the.evidence_json
