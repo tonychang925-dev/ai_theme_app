@@ -114,6 +114,8 @@ class PostMarketDailyReviewV2Builder:
             "analyst_review_items": self._pass_through_list(doc, "analyst_review_items"),
             "mainline_discovery_diagnostics": self._pass_through_dict(doc, "mainline_discovery_diagnostics"),
             "analyst_review_diagnostics": self._pass_through_dict(doc, "analyst_review_diagnostics"),
+            "pending_mainline_reviews": self._pass_through_list(doc, "analyst_review_items"),
+            "confirmed_mainlines": [],
             "diagnostics": diagnostics,
         }
 

@@ -1021,11 +1021,49 @@ class BuildPostMarketRecapJob:
             recap_doc["analyst_review_items"] = [it.to_dict() for it in review_items]
             recap_doc["analyst_review_diagnostics"] = review_diag.to_dict()
 
+            # PR-9B: persist to mainline_review_queue (best-effort)
+            await self._persist_review_queue(trade_date, review_items)
+
         except Exception:
             logger.exception("Mainline discovery pipeline failed, continuing without it")
             recap_doc["mainline_discovery_reviews"] = []
             recap_doc["mainline_discovery_reviews_error"] = "pipeline_failed"
             recap_doc["mainline_discovery_diagnostics"] = {"error": "pipeline_failed"}
+
+    async def _persist_review_queue(self, trade_date: date, review_items: list) -> None:
+        """PR-9B: Persist analyst_review_items to mainline_review_queue."""
+        try:
+            rows_to_upsert = []
+            for item in review_items:
+                d = item.to_dict()
+                rows_to_upsert.append({
+                    "review_id": d.get("review_id", ""),
+                    "trade_date": trade_date,
+                    "subject_key": d.get("subject_key", ""),
+                    "theme_name": d.get("theme_name", ""),
+                    "mainline_id": d.get("mainline_id", ""),
+                    "mainline_name": d.get("mainline_name", ""),
+                    "machine_state": d.get("machine_state", ""),
+                    "final_mainline_state": d.get("final_mainline_state", "pending_review"),
+                    "mainline_type": d.get("mainline_type", ""),
+                    "confirmation_path": d.get("confirmation_path", ""),
+                    "trigger_mode": d.get("trigger_mode", ""),
+                    "review_reason": d.get("review_reason", ""),
+                    "review_priority": d.get("review_priority", 0),
+                    "review_status": d.get("review_status", "pending"),
+                    "suggested_human_decision": d.get("suggested_human_decision", ""),
+                    "scores": d.get("scores", {}),
+                    "evidence": d.get("evidence", {}),
+                    "risk_flags": d.get("risk_flags", {}),
+                    "diagnostics": d.get("diagnostics", {}),
+                })
+            if rows_to_upsert:
+                fn = getattr(self._write_port, "upsert_mainline_review_queue_rows", None)
+                if callable(fn):
+                    affected = await fn(rows_to_upsert)
+                    logger.info("Persisted %s review items to mainline_review_queue", affected)
+        except Exception:
+            logger.exception("Failed to persist review queue items")
 
     async def _check_post_market_readiness(self, trade_date: date) -> dict[str, Any]:
         """P1: 委托 PostMarketReadinessService 检查 5 张核心表。"""

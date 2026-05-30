@@ -133,6 +133,20 @@ class StockReadPort(Protocol):
         stock_ids: list[str] | None = None,
     ) -> dict[str, Any]: ...
 
+    # ── PR-9: Mainline Registry read operations ──
+
+    async def get_mainline_review_queue(
+        self, trade_date: date | None = None, status: str | None = None,
+        subject_keys: list[str] | None = None, limit: int = 200,
+    ) -> list[dict[str, Any]]: ...
+
+    async def get_confirmed_mainlines(
+        self, trade_date: date | None = None, limit: int = 50,
+    ) -> list[dict[str, Any]]: ...
+
+    async def get_mainline_registry_by_id(self, mainline_id: str) -> dict[str, Any] | None: ...
+...
+
 
 # Backward-compatible alias
 StockReadPorts = StockReadPort
