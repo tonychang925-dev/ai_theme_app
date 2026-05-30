@@ -42,7 +42,7 @@ class TestLayerBAdapter:
             cycle_judgement_by_sk={"sk_a": _jd(state="fermentation", strength=72)},
         )
         adapter = MainlineLifecycleLayerBAdapter()
-        reviews = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
+        reviews, _diag = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
         assert len(reviews) == 1
         r = reviews[0]
         assert r.lifecycle_state == "fermentation"
@@ -57,7 +57,7 @@ class TestLayerBAdapter:
             cycle_judgement_by_sk={},
         )
         adapter = MainlineLifecycleLayerBAdapter()
-        reviews = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
+        reviews, _diag = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
         assert len(reviews) == 1
         r = reviews[0]
         assert r.lifecycle_state == "unknown"
@@ -71,7 +71,7 @@ class TestLayerBAdapter:
             cycle_judgement_by_sk={"sk_a": _jd(state="fade_confirmed", alive=True, fade_confirmed=60)},
         )
         adapter = MainlineLifecycleLayerBAdapter()
-        reviews = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
+        reviews, _diag = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
         r = reviews[0]
         assert r.lifecycle_state == "fade_confirmed"
         assert r.mainline_trade_alive is False
@@ -87,7 +87,7 @@ class TestLayerBAdapter:
             },
         )
         adapter = MainlineLifecycleLayerBAdapter()
-        reviews = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
+        reviews, _diag = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
         r = reviews[0]
         assert len(r.related_subject_states) == 1
         assert r.related_subject_states[0]["subject_key"] == "sk_b"
@@ -95,7 +95,7 @@ class TestLayerBAdapter:
     def test_empty_registry_returns_empty(self):
         fc = MainlineLifecycleFactContext(trade_date="2026-04-29", confirmed_mainlines=[])
         adapter = MainlineLifecycleLayerBAdapter()
-        reviews = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
+        reviews, _diag = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
         assert len(reviews) == 0
 
     def test_playability_divergence(self):
@@ -139,7 +139,7 @@ class TestLayerBAdapter:
             cycle_judgement_by_sk={"sk_a": _jd(state="start")},
         )
         adapter = MainlineLifecycleLayerBAdapter()
-        reviews = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
+        reviews, _diag = adapter.build(trade_date="2026-04-29", fact_ctx=fc)
         r = reviews[0]
         # Verify the review dict does NOT contain trading fields
         d = r.to_dict()

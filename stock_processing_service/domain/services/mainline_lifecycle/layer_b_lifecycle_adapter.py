@@ -74,8 +74,12 @@ class MainlineLifecycleLayerBAdapter:
         *,
         trade_date: str,
         fact_ctx: MainlineLifecycleFactContext,
-    ) -> list[MainlineLifecycleReview]:
+    ) -> tuple[list[MainlineLifecycleReview], dict[str, Any]]:
         reviews: list[MainlineLifecycleReview] = []
+        missing_jd_count = 0
+        fade_confirmed_count = 0
+        trade_alive_count = 0
+        total_related_states = 0
 
         for ml in fact_ctx.confirmed_mainlines:
             ml_id = str(ml.get("mainline_id") or "")
@@ -90,6 +94,7 @@ class MainlineLifecycleLayerBAdapter:
             ev = fact_ctx.cycle_evidence_by_sk.get(csk, {})
 
             if not jd:
+                missing_jd_count += 1
                 # No Layer B data — still output, but mark as unknown
                 reviews.append(MainlineLifecycleReview(
                     trade_date=trade_date, mainline_id=ml_id, mainline_name=ml_name,
@@ -141,6 +146,12 @@ class MainlineLifecycleLayerBAdapter:
                         "mainline_strength_score": _float(rjd.get("mainline_strength_score")),
                     })
 
+            if trade_alive:
+                trade_alive_count += 1
+            if lifecycle_state in {"fade_confirmed", "fade_watch"}:
+                fade_confirmed_count += 1
+            total_related_states += len(related_states)
+
             reviews.append(MainlineLifecycleReview(
                 trade_date=trade_date, mainline_id=ml_id, mainline_name=ml_name,
                 canonical_subject_key=csk, related_subject_keys=related_keys,
@@ -156,4 +167,14 @@ class MainlineLifecycleLayerBAdapter:
                              "missing_layer_b_judgement": False, "aggregation_used": False},
             ))
 
-        return reviews
+        diag = {
+            "confirmed_mainline_count": len(fact_ctx.confirmed_mainlines),
+            "lifecycle_review_count": len(reviews),
+            "missing_layer_b_judgement_count": missing_jd_count,
+            "related_subject_state_count": total_related_states,
+            "fade_confirmed_count": fade_confirmed_count,
+            "trade_alive_count": trade_alive_count,
+            "source": "theme_cycle_judgement_v2",
+            "layer_b_reused": True,
+        }
+        return reviews, diag

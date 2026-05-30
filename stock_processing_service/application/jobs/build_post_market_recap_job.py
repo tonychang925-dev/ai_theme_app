@@ -1047,10 +1047,10 @@ class BuildPostMarketRecapJob:
             fact_ctx = await fc_builder.build(trade_date=trade_date)
 
             adapter = MainlineLifecycleLayerBAdapter()
-            reviews = adapter.build(trade_date=trade_date.isoformat(), fact_ctx=fact_ctx)
+            reviews, lifecycle_diag = adapter.build(trade_date=trade_date.isoformat(), fact_ctx=fact_ctx)
 
             recap_doc["mainline_lifecycle_reviews"] = [r.to_dict() for r in reviews]
-            recap_doc["mainline_lifecycle_diagnostics"] = fact_ctx.diagnostics
+            recap_doc["mainline_lifecycle_diagnostics"] = {**fact_ctx.diagnostics, **lifecycle_diag}
         except Exception:
             logger.exception("Lifecycle pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []
