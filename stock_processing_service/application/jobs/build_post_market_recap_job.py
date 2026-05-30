@@ -1030,6 +1030,32 @@ class BuildPostMarketRecapJob:
             recap_doc["mainline_discovery_reviews_error"] = "pipeline_failed"
             recap_doc["mainline_discovery_diagnostics"] = {"error": "pipeline_failed"}
 
+        # ── PR-10: Mainline Lifecycle pipeline ──
+        await self._run_mainline_lifecycle(trade_date, recap_doc)
+
+    async def _run_mainline_lifecycle(self, trade_date: date, recap_doc: dict[str, Any]) -> None:
+        """PR-10: Run lifecycle pipeline for confirmed mainlines."""
+        try:
+            from stock_processing_service.application.services.mainline_lifecycle.mainline_lifecycle_fact_context_builder import (
+                MainlineLifecycleFactContextBuilder,
+            )
+            from stock_processing_service.domain.services.mainline_lifecycle.layer_b_lifecycle_adapter import (
+                MainlineLifecycleLayerBAdapter,
+            )
+
+            fc_builder = MainlineLifecycleFactContextBuilder(self._read_port)
+            fact_ctx = await fc_builder.build(trade_date=trade_date)
+
+            adapter = MainlineLifecycleLayerBAdapter()
+            reviews, lifecycle_diag = adapter.build(trade_date=trade_date.isoformat(), fact_ctx=fact_ctx)
+
+            recap_doc["mainline_lifecycle_reviews"] = [r.to_dict() for r in reviews]
+            recap_doc["mainline_lifecycle_diagnostics"] = {**fact_ctx.diagnostics, **lifecycle_diag}
+        except Exception:
+            logger.exception("Lifecycle pipeline failed, continuing without it")
+            recap_doc["mainline_lifecycle_reviews"] = []
+            recap_doc["mainline_lifecycle_diagnostics"] = {"error": "pipeline_failed"}
+
     async def _persist_review_queue(self, trade_date: date, review_items: list) -> None:
         """PR-9B: Persist analyst_review_items to mainline_review_queue."""
         try:
