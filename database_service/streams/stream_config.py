@@ -78,7 +78,7 @@ class RedisStreamConfig:
             name="news:raw",
             description="原始新闻流",
             priority=StreamPriority.HIGH,
-            max_length=10000,
+            max_length=50000,
             alert_on_backlog=True,
             backlog_threshold=2000
         ),
@@ -136,8 +136,8 @@ class RedisStreamConfig:
             stream="news:raw",
             strategy=ConsumerStrategy.WORKER_POOL,
             workers=3,
-            batch_size=10,
-            block_time_ms=5000,
+            batch_size=50,
+            block_time_ms=2000,
             max_retries=3
         ),
         "major_workers": ConsumerGroupConfig(

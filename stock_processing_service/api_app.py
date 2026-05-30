@@ -3068,11 +3068,38 @@ async def clear_pending_stream() -> dict[str, Any]:
         raise HTTPException(status_code=500, detail=f"failed to clear pending: {e}")
 
 
+def _extract_event_id_number(raw_event_id) -> int | None:
+    """从各种格式的 event_id 中提取数字 ID，兼容 temp/tmp 等非标准格式。"""
+    try:
+        if isinstance(raw_event_id, (int, float)):
+            return int(raw_event_id)
+        s = str(raw_event_id)
+        # 尝试直接解析整数
+        try:
+            return int(s)
+        except (ValueError, TypeError):
+            pass
+        # 尝试从 "temp_1775795161_news_1775795098848_" 等格式中提取数字部分
+        parts = s.split("_")
+        for part in parts:
+            if part.isdigit() and len(part) > 5:
+                return int(part)
+        # 从末尾扫描提取数字
+        import re
+        digits = re.findall(r"\d{6,}", s)
+        if digits:
+            return int(max(digits, key=len))
+        return None
+    except Exception:
+        return None
+
+
 @app.post("/api/v1/review-queue/import-pending")
 async def import_pending_to_review_queue() -> dict[str, Any]:
     """将 stream:events:pending 中的弱信号事件导入 event_review_queue 复核队列。
 
     读取 pending 流中所有事件，按 event_id 去重，写入复核队列（跳过已存在的）。
+    不清空已成功导入的条目（由 DecisionExecutor 管理 stream 截断）。
     """
     try:
         import redis.asyncio as aioredis
@@ -3096,7 +3123,9 @@ async def import_pending_to_review_queue() -> dict[str, Any]:
             imported = 0
             skipped = 0
             errors = 0
+            error_details: list[str] = []
             seen_event_ids: set[int] = set()
+            succeeded_msgs: list[str] = []
 
             for msg_id, msg_data in pending_messages:
                 try:
@@ -3106,11 +3135,17 @@ async def import_pending_to_review_queue() -> dict[str, Any]:
                     else:
                         event_data = event_data_str or {}
 
-                    event_id = event_data.get("event_id")
-                    if not event_id:
+                    raw_event_id = event_data.get("event_id")
+                    if not raw_event_id:
                         skipped += 1
+                        error_details.append(f"msg {msg_id}: missing event_id")
                         continue
-                    event_id = int(event_id)
+
+                    event_id = _extract_event_id_number(raw_event_id)
+                    if event_id is None or event_id <= 0:
+                        skipped += 1
+                        error_details.append(f"msg {msg_id}: unparseable event_id={raw_event_id}")
+                        continue
 
                     # 同一批次内去重
                     if event_id in seen_event_ids:
@@ -3131,25 +3166,37 @@ async def import_pending_to_review_queue() -> dict[str, Any]:
                     )
                     if ok:
                         imported += 1
+                        succeeded_msgs.append(msg_id)
                     else:
-                        skipped += 1  # already exists
-                except Exception:
+                        skipped += 1
+                        error_details.append(
+                            f"event_id={event_id}: enqueue failed (FK constraint or already exists)"
+                        )
+                except Exception as exc:
                     errors += 1
+                    error_details.append(f"msg {msg_id}: {exc}")
 
-            # 导入完成后清空 pending 流（保留 stream 本身，DecisionExecutor 需要它存在）
-            cleared = len(pending_messages)
-            await r.xtrim("stream:events:pending", maxlen=0, approximate=False)
+            # 仅清除已成功导入的消息（不再全量清空）
+            total = len(pending_messages)
+            if succeeded_msgs:
+                # 删除已导入的消息（逐个删除）
+                for msg_id in succeeded_msgs:
+                    try:
+                        await r.xdel("stream:events:pending", msg_id)
+                    except Exception:
+                        pass
 
             logger.warning(
-                "imported %d pending events to review queue (skipped=%d errors=%d), cleared %d from stream",
-                imported, skipped, errors, cleared,
+                "imported %d/%d pending events to review queue (skipped=%d errors=%d)",
+                imported, total, skipped, errors,
             )
             return {
                 "ok": True,
                 "imported": imported,
                 "skipped": skipped,
                 "errors": errors,
-                "cleared": cleared,
+                "total": total,
+                "error_details": error_details[:20],  # 最多返回前 20 条
             }
         finally:
             await r.aclose()
@@ -4296,6 +4343,38 @@ async def jyhf_market_index():
         return JSONResponse(status_code=502, content={"ok": False, "error": str(exc)})
 
 
+# ── P4-2F: SSE connection tracker ──
+
+_sse_lock = asyncio.Lock()
+_sse_clients: dict[str, int] = {}  # stream_key → active connection count
+
+
+def _sse_connected(stream_key: str) -> None:
+    """Mark an SSE connection as active (non-blocking spawn)."""
+    async def _inc():
+        async with _sse_lock:
+            _sse_clients[stream_key] = _sse_clients.get(stream_key, 0) + 1
+    asyncio.ensure_future(_inc())
+
+
+def _sse_disconnected(stream_key: str) -> None:
+    """Mark an SSE connection as closed (non-blocking spawn)."""
+    async def _dec():
+        async with _sse_lock:
+            v = _sse_clients.get(stream_key, 0) - 1
+            if v <= 0:
+                _sse_clients.pop(stream_key, None)
+            else:
+                _sse_clients[stream_key] = v
+    asyncio.ensure_future(_dec())
+
+
+async def _sse_snapshot() -> dict[str, int]:
+    """Return a snapshot of active SSE clients per stream (safe copy)."""
+    async with _sse_lock:
+        return dict(_sse_clients)
+
+
 # ── P1-H: K线支撑告警 SSE ──────────────────────────────────────────────
 
 
@@ -4313,6 +4392,7 @@ async def kline_alerts_stream(last_id: str = Query(default="0-0", description="�
     async def _event_generator():
         redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
         stream_key = "stream:kline:alerts"
+        _sse_connected(stream_key)
         r = aioredis.from_url(redis_url, decode_responses=True)
         try:
             try:
@@ -4351,6 +4431,7 @@ async def kline_alerts_stream(last_id: str = Query(default="0-0", description="�
                     await asyncio.sleep(5)
         finally:
             await r.aclose()
+            _sse_disconnected(stream_key)
 
     return StreamingResponse(
         _event_generator(),
@@ -4373,17 +4454,19 @@ async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
     from fastapi.responses import StreamingResponse
 
     async def _event_generator():
+        stream_key = "stream:w2s:alerts"
+        _sse_connected(stream_key)
         r = aioredis.from_url(_redis_url(), decode_responses=True)
         try:
             try:
-                await r.xinfo_stream("stream:w2s:alerts")
+                await r.xinfo_stream(stream_key)
             except Exception:
                 yield f"event: heartbeat\ndata: {json.dumps({'msg': 'w2s stream not found'})}\n\n"
                 return
             read_id = last_id if last_id != "0-0" else "0-0"
             while True:
                 try:
-                    msgs = await r.xread({"stream:w2s:alerts": read_id}, count=20, block=15000)
+                    msgs = await r.xread({stream_key: read_id}, count=20, block=15000)
                     if msgs:
                         for _, entries in msgs:
                             for entry_id, data in entries:
@@ -4398,6 +4481,7 @@ async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
                     await asyncio.sleep(5)
         finally:
             await r.aclose()
+            _sse_disconnected(stream_key)
 
     return StreamingResponse(
         _event_generator(), media_type="text/event-stream",
@@ -4449,14 +4533,14 @@ async def _redis_stream_readiness(
                     except Exception:
                         pass
 
-            ready = False
-            state = "degraded"
+            ready = bool(length and length > 0)
+            state = "ready" if ready else "degraded"
             blockers = []
 
-            if length and length > 0:
-                blockers.append("stream has data but no active producer confirmation")
-            else:
+            if not ready:
                 blockers.append("stream has no events")
+
+            sse_count = (await _sse_snapshot()).get(stream_key, 0)
 
             return {
                 "ok": True,
@@ -4467,7 +4551,7 @@ async def _redis_stream_readiness(
                 "stream_length": length,
                 "last_event_id": str(last_event_id) if last_event_id else None,
                 "last_event_at": last_event_at,
-                "active_sse_clients": None,
+                "active_sse_clients": sse_count,
                 "blockers": blockers,
                 "evidence": {
                     "redis_ok": True,
@@ -4487,7 +4571,7 @@ async def _redis_stream_readiness(
             "stream_length": None,
             "last_event_id": None,
             "last_event_at": None,
-            "active_sse_clients": None,
+            "active_sse_clients": 0,
             "blockers": [f"redis readiness check failed: {exc}"],
             "evidence": {
                 "redis_ok": False,
@@ -4540,7 +4624,42 @@ _REDIS_HEALTH_STREAM_KEYS = [
     os.getenv("RH_STREAM_KEY_EVENTS_STRUCTURED", "stream:events:structured"),
     os.getenv("RH_STREAM_KEY_EVENTS_DECISION", "stream:events:decision"),
     os.getenv("RH_STREAM_KEY_DEAD_LETTER", "stream:dead:letter"),
+    os.getenv("RH_STREAM_KEY_EVENTS_PENDING", "stream:events:pending"),
+    os.getenv("RH_STREAM_KEY_EVENTS_NORMAL", "stream:events:normal"),
+    os.getenv("RH_STREAM_KEY_EVENTS_MAJOR", "stream:events:major"),
 ]
+
+# In-memory DLQ length snapshots for growth trend (keyed by stream_key)
+_dlq_snapshot: dict[str, dict] = {}
+
+
+def _compute_dlq_trend(stream_key: str, current_length: int) -> dict | None:
+    """Compare current DLQ length against previous snapshot. Returns None on first call."""
+    prev = _dlq_snapshot.get(stream_key)
+    # Always update snapshot with current value
+    _dlq_snapshot[stream_key] = {"length": current_length, "ts": time.time()}
+    if prev is None:
+        return None
+    delta = current_length - prev["length"]
+    elapsed = time.time() - prev["ts"]
+    prev_len = prev["length"]
+    if prev_len > 0:
+        delta_pct = round(delta / prev_len * 100, 1)
+    else:
+        delta_pct = 100.0 if delta > 0 else 0.0
+    if delta > 0:
+        trend = "growing"
+    elif delta < 0:
+        trend = "shrinking"
+    else:
+        trend = "stable"
+    return {
+        "trend": trend,
+        "delta": delta,
+        "delta_pct": delta_pct,
+        "prev_length": prev_len,
+        "since_s": round(elapsed, 1),
+    }
 
 
 async def _redis_health_snapshot() -> dict:
@@ -4566,7 +4685,9 @@ async def _redis_health_snapshot() -> dict:
             "ok": False, "state": "blocked", "latency_ms": None,
             "redis_url_masked": url_masked, "checked_at": checked_at,
             "blockers": [f"redis ping failed: {exc}"],
-            "server": {}, "streams": {},
+            "server": {}, "streams": {}, "consumer_groups": {},
+            "consumer_groups_summary": [], "dead_letter_growth": {},
+            "sse_clients": {},
         }
 
     if latency_ms > 500:
@@ -4612,10 +4733,19 @@ async def _redis_health_snapshot() -> dict:
 
     # ── 3. Stream checks ──
     streams: dict[str, dict] = {}
+    consumer_groups: dict[str, list[dict]] = {}
+    _cg_warn_pending = int(os.getenv("REDIS_CG_PENDING_WARN", "100"))
+    _cg_warn_lag = int(os.getenv("REDIS_CG_LAG_WARN", "1000"))
+    _cg_warn_lag_ratio = float(os.getenv("REDIS_CG_LAG_RATIO_WARN", "0.70"))
+    _cg_warn_idle_ms = int(os.getenv("REDIS_CG_IDLE_WARN_MS", "60000"))
+    _cg_warn_delivery_lag_s = int(os.getenv("REDIS_CG_DELIVERY_LAG_WARN_S", "300"))
+    _stream_mem_warn_mb = int(os.getenv("REDIS_STREAM_MEM_WARN_MB", "128"))
     stream_state = "ready"
     dead_letter_state = "ready"
+    dead_letter_growth: dict[str, dict] = {}
     _dl_warn = int(os.getenv("REDIS_DEAD_LETTER_WARN", "100"))
     _dl_block = int(os.getenv("REDIS_DEAD_LETTER_BLOCK", "1000"))
+    _dl_growth_warn = int(os.getenv("REDIS_DEAD_LETTER_GROWTH_WARN", "10"))
 
     try:
         for stream_key in _REDIS_HEALTH_STREAM_KEYS:
@@ -4623,6 +4753,19 @@ async def _redis_health_snapshot() -> dict:
             sv_blockers: list[str] = []
             try:
                 length = await asyncio.wait_for(r.xlen(stream_key), timeout=0.3)
+                # Per-stream memory footprint
+                memory_bytes: int | None = None
+                try:
+                    memory_bytes = await asyncio.wait_for(
+                        r.memory_usage(stream_key), timeout=0.2
+                    )
+                except Exception:
+                    pass
+                if memory_bytes is not None and memory_bytes > _stream_mem_warn_mb * 1024 * 1024:
+                    sv_blockers.append(
+                        f"stream memory high: {memory_bytes / 1024 / 1024:.1f}MB "
+                        f"(warn>{_stream_mem_warn_mb}MB)"
+                    )
                 last_id = None
                 last_event_at = None
                 if length and length > 0:
@@ -4634,11 +4777,6 @@ async def _redis_health_snapshot() -> dict:
                             last_event_at = _dt.fromtimestamp(ts_ms / 1000, TZ_CN).isoformat()
                         except Exception:
                             pass
-                    sv_state = "degraded"
-                    sv_blockers.append("stream has data but no active producer confirmation")
-                else:
-                    sv_state = "degraded"
-                    sv_blockers.append("stream is empty")
             except Exception as exc:
                 length = -1
                 sv_state = "unknown"
@@ -4647,11 +4785,91 @@ async def _redis_health_snapshot() -> dict:
             streams[stream_key] = {
                 "exists": length >= 0,
                 "length": length if length >= 0 else None,
+                "memory_bytes": memory_bytes,
                 "last_id": str(last_id) if last_id else None,
                 "last_event_at": last_event_at,
                 "state": sv_state,
                 "blockers": sv_blockers,
             }
+
+            # Consumer group inspection
+            try:
+                groups_raw = await asyncio.wait_for(r.xinfo_groups(stream_key), timeout=0.3)
+                cg_list: list[dict] = []
+                for g in groups_raw:
+                    gname = g.get("name", "?")
+                    pending = int(g.get("pending", 0))
+                    lag = int(g.get("lag", 0))
+                    lag_ratio = (lag / length) if length and length > 0 else 0.0
+                    last_delivered = str(g.get("last-delivered-id", ""))
+                    consumers = int(g.get("consumers", 0))
+
+                    # Delivery lag: time gap between stream's latest entry and group's last-delivered
+                    delivery_lag_s: float | None = None
+                    if last_id and last_delivered:
+                        try:
+                            ts_last = int(str(last_id).split("-")[0]) / 1000.0
+                            ts_delivered = int(last_delivered.split("-")[0]) / 1000.0
+                            delivery_lag_s = round(ts_last - ts_delivered, 1)
+                        except Exception:
+                            pass
+
+                    # Per-consumer idle times (XINFO CONSUMERS)
+                    consumers_detail: list[dict] = []
+                    try:
+                        cons_raw = await asyncio.wait_for(
+                            r.xinfo_consumers(stream_key, gname), timeout=0.2
+                        )
+                        for c in cons_raw:
+                            cname = str(c.get("name", "?"))
+                            cidle = int(c.get("idle", 0))
+                            cpending = int(c.get("pending", 0))
+                            consumers_detail.append({
+                                "name": cname,
+                                "idle_ms": cidle,
+                                "pending": cpending,
+                            })
+                            if cidle > _cg_warn_idle_ms:
+                                sv_blockers.append(
+                                    f"consumer {gname}/{cname}: idle={cidle}ms "
+                                    f"(warn>{_cg_warn_idle_ms}ms)"
+                                )
+                    except Exception:
+                        pass  # XINFO CONSUMERS may fail or be unsupported
+
+                    cg_entry = {
+                        "name": gname,
+                        "consumers": consumers,
+                        "pending": pending,
+                        "lag": lag,
+                        "lag_ratio": round(lag_ratio, 4),
+                        "last_delivered_id": last_delivered,
+                        "delivery_lag_s": delivery_lag_s,
+                        "consumers_detail": consumers_detail,
+                    }
+                    cg_list.append(cg_entry)
+                    if pending > _cg_warn_pending:
+                        sv_blockers.append(f"group {gname}: pending={pending} (warn>{_cg_warn_pending})")
+                    if lag > _cg_warn_lag:
+                        sv_blockers.append(f"group {gname}: lag={lag} (warn>{_cg_warn_lag})")
+                    if lag_ratio > _cg_warn_lag_ratio:
+                        sv_blockers.append(
+                            f"group {gname}: lag_ratio={lag_ratio:.2f} "
+                            f"(lag={lag}, xlen={length}, warn>{_cg_warn_lag_ratio:.2f})"
+                        )
+                    if delivery_lag_s is not None and delivery_lag_s > _cg_warn_delivery_lag_s:
+                        sv_blockers.append(
+                            f"group {gname}: delivery lag={delivery_lag_s}s "
+                            f"(warn>{_cg_warn_delivery_lag_s}s)"
+                        )
+                if cg_list:
+                    consumer_groups[stream_key] = cg_list
+            except Exception:
+                pass  # stream may not have groups
+
+            if sv_state == "ready" and sv_blockers:
+                sv_state = "degraded"
+                streams[stream_key]["state"] = sv_state
 
             # Dead letter: separate health axis
             if "dead" in stream_key and length is not None and length > 0:
@@ -4661,6 +4879,19 @@ async def _redis_health_snapshot() -> dict:
                 elif length > _dl_warn:
                     dead_letter_state = "degraded"
                     blockers.append(f"dead letter backlog: {length} (warn>{_dl_warn})")
+
+                # DLQ growth trend — compare against previous snapshot
+                dlq_trend = _compute_dlq_trend(stream_key, length)
+                if dlq_trend is not None:
+                    dead_letter_growth[stream_key] = dlq_trend
+                    if dlq_trend["trend"] == "growing" and dlq_trend["delta"] >= _dl_growth_warn:
+                        if dead_letter_state == "ready":
+                            dead_letter_state = "degraded"
+                        blockers.append(
+                            f"dead letter growing: {stream_key} +{dlq_trend['delta']} "
+                            f"({dlq_trend['delta_pct']}%, was {dlq_trend['prev_length']} "
+                            f"{dlq_trend['since_s']}s ago)"
+                        )
                 # Don't affect redis_state or stream_state from dead letter
 
             # Stream aggregate: if any key stream is unhealthy, mark stream_state
@@ -4680,12 +4911,33 @@ async def _redis_health_snapshot() -> dict:
     elif stream_state == "degraded" or dead_letter_state == "degraded":
         overall = "degraded"
 
+    # SSE client snapshot
+    sse_clients = await _sse_snapshot()
+
+    # Consumer groups flat summary for operational visibility
+    cg_summary: list[dict] = []
+    for sk, cg_list in consumer_groups.items():
+        for cg in cg_list:
+            cg_summary.append({
+                "stream": sk,
+                "group": cg["name"],
+                "consumers": cg["consumers"],
+                "pending": cg["pending"],
+                "lag": cg["lag"],
+                "lag_ratio": cg.get("lag_ratio"),
+                "delivery_lag_s": cg.get("delivery_lag_s"),
+            })
+
     return {
         "ok": True,
         "state": overall,
         "redis_state": redis_state,
         "stream_state": stream_state,
         "dead_letter_state": dead_letter_state,
+        "consumer_groups": consumer_groups,
+        "consumer_groups_summary": cg_summary,
+        "dead_letter_growth": dead_letter_growth,
+        "sse_clients": sse_clients,
         "latency_ms": latency_ms,
         "redis_url_masked": url_masked,
         "checked_at": checked_at,
@@ -4712,6 +4964,10 @@ async def redis_health():
             "checked_at": "",
             "server": {},
             "streams": {},
+            "consumer_groups": {},
+            "consumer_groups_summary": [],
+            "dead_letter_growth": {},
+            "sse_clients": {},
             "blockers": [f"redis health timeout/error: {exc}"],
         }
 

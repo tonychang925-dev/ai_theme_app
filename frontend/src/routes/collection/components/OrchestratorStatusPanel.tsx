@@ -1,6 +1,6 @@
 /** P4-2B: Realtime Business Orchestrator 只读状态面板。 */
 import { Badge, Card, Descriptions, Space, Tag, Table, Typography } from "antd";
-import type { OrchestratorStatus, OrchestratorServiceState, RedisRuntimeHealth, RedisStreamHealth, DatabaseRuntimeHealth } from "../../../lib/api";
+import type { OrchestratorStatus, OrchestratorServiceState, RedisRuntimeHealth, RedisStreamHealth, DatabaseRuntimeHealth, ConsumerGroupEntry, ConsumerDetail } from "../../../lib/api";
 
 interface Props {
   status: OrchestratorStatus | null;
@@ -207,11 +207,29 @@ function stateColor(s: string | undefined): string {
   return "#64748b";
 }
 
+function fmtMem(bytes: number | null | undefined): string {
+  if (bytes == null) return "-";
+  if (bytes > 1024 * 1024 * 1024) return (bytes / (1024 * 1024 * 1024)).toFixed(1) + "GB";
+  if (bytes > 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(1) + "MB";
+  if (bytes > 1024) return (bytes / 1024).toFixed(1) + "KB";
+  return bytes + "B";
+}
+
+function fmtMs(ms: number): string {
+  if (ms < 1000) return ms + "ms";
+  if (ms < 60000) return (ms / 1000).toFixed(1) + "s";
+  return (ms / 60000).toFixed(1) + "m";
+}
+
 function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
   if (!redis) return null;
 
   const streams = redis.streams || {};
   const streamKeys = ["stream:w2s:alerts", "stream:kline:alerts", "stream:news:raw", "stream:events:structured", "stream:events:decision", "stream:dead:letter"];
+  const consumerGroups = redis.consumer_groups || {};
+  const dlqGrowth = redis.dead_letter_growth || {};
+  const sseClients = redis.sse_clients || {};
+  const hasSse = Object.keys(sseClients).length > 0;
 
   return (
     <Card size="small" style={{ marginTop: 8, background: "rgba(255,255,255,0.02)" }} title={
@@ -222,25 +240,102 @@ function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
         <Typography.Text type="secondary" style={{ fontSize: 11 }}>
           {redis.latency_ms != null ? `${redis.latency_ms}ms` : ""}
         </Typography.Text>
+        {hasSse && <Tag color="purple" style={{ fontSize: 10, marginLeft: 4 }}>SSE:{Object.values(sseClients).reduce((a,b) => a+b, 0)}</Tag>}
       </Space>
     }>
       <div style={{ display: "flex", gap: 8, marginBottom: 6, fontSize: 12, flexWrap: "wrap" }}>
         <span>Redis <b style={{ color: stateColor(redis.redis_state) }}>{redis.redis_state || "?"}</b></span>
         <span>· Stream <b style={{ color: stateColor(redis.stream_state) }}>{redis.stream_state || "?"}</b></span>
         <span>· DL <b style={{ color: stateColor(redis.dead_letter_state) }}>{redis.dead_letter_state || "?"}</b></span>
+        {hasSse && <span>· SSE <b style={{ color: "#c084fc" }}>{Object.values(sseClients).reduce((a,b) => a+b, 0)}</b></span>}
       </div>
 
-      <Table<{ key: string; length?: number | null; state?: string }>
+      {/* SSE clients detail */}
+      {hasSse && (
+        <div style={{ marginBottom: 6, fontSize: 11, color: "#94a3b8", display: "flex", gap: 12, flexWrap: "wrap" }}>
+          {Object.entries(sseClients).map(([k, v]) => (
+            <span key={k}>
+              {k.replace("stream:","").replace(":alerts","")}: <b style={{ color: v > 0 ? "#c084fc" : "#64748b" }}>{v}</b>
+            </span>
+          ))}
+        </div>
+      )}
+
+      <Table<{ key: string; length?: number | null; memory_bytes?: number | null; state?: string }>
         size="small"
         pagination={false}
         dataSource={streamKeys.filter(k => streams[k]).map(k => ({ key: k, ...streams[k] }))}
         columns={[
-          { title: "Stream", dataIndex: "key", key: "key", width: 130, render: (v: string) => <span style={{ fontSize: 12 }}>{v.replace("stream:","").replace("events:","").replace("alerts","").replace("news:","").replace("dead:letter","dead")}</span> },
+          { title: "Stream", dataIndex: "key", key: "key", width: 110, render: (v: string) => <span style={{ fontSize: 12 }}>{v.replace("stream:","").replace("events:","").replace("alerts","").replace("news:","").replace("dead:letter","dead")}</span> },
           { title: "Len", dataIndex: "length", key: "length", width: 50, render: (v: number | null) => <span style={{ fontSize: 12 }}>{v != null && v > 999 ? Math.round(v/1000)+"k" : (v ?? "-")}</span> },
+          { title: "Mem", dataIndex: "memory_bytes", key: "mem", width: 60, render: (v: number | null | undefined) => <span style={{ fontSize: 11, color: v != null && v > 128*1024*1024 ? "#f59e0b" : "#94a3b8" }}>{fmtMem(v)}</span> },
           { title: "State", dataIndex: "state", key: "state", width: 70, render: (v: string) => <Badge status={healthBadge(v)} text={v} /> },
         ]}
         locale={{ emptyText: "—" }}
       />
+
+      {/* Consumer Groups */}
+      {Object.keys(consumerGroups).length > 0 && (
+        <div style={{ marginTop: 8 }}>
+          <Typography.Text strong style={{ fontSize: 12, color: "#e2e8f0" }}>Consumer Groups</Typography.Text>
+          {Object.entries(consumerGroups).map(([sk, cgList]) => (
+            <div key={sk} style={{ marginTop: 4 }}>
+              <div style={{ fontSize: 11, color: "#64748b", marginBottom: 2 }}>{sk.replace("stream:","")}</div>
+              <Table<ConsumerGroupEntry>
+                size="small"
+                pagination={false}
+                dataSource={cgList}
+                columns={[
+                  { title: "Group", dataIndex: "name", key: "name", width: 100, render: (v: string) => <span style={{ fontSize: 11 }}>{v}</span> },
+                  { title: "C", dataIndex: "consumers", key: "consumers", width: 30, render: (v: number) => <span style={{ fontSize: 11, color: v === 0 ? "#ef4444" : "#22c55e" }}>{v}</span> },
+                  { title: "Pend", dataIndex: "pending", key: "pending", width: 45, render: (v: number) => <span style={{ fontSize: 11, color: v > 100 ? "#ef4444" : v > 0 ? "#f59e0b" : "#22c55e" }}>{v}</span> },
+                  { title: "Lag", dataIndex: "lag", key: "lag", width: 45, render: (v: number) => <span style={{ fontSize: 11, color: v > 1000 ? "#ef4444" : v > 0 ? "#f59e0b" : "#22c55e" }}>{v > 999 ? Math.round(v/1000)+"k" : v}</span> },
+                  { title: "Delay", dataIndex: "delivery_lag_s", key: "delivery_lag_s", width: 55, render: (v: number | null | undefined) => <span style={{ fontSize: 11, color: v != null && v > 300 ? "#ef4444" : v != null && v > 60 ? "#f59e0b" : "#22c55e" }}>{v != null ? v + "s" : "-"}</span> },
+                  { title: "Consumers", dataIndex: "consumers_detail", key: "consumers_detail", render: (cd: ConsumerDetail[] | undefined) => {
+                    if (!cd || cd.length === 0) return <span style={{ fontSize: 10, color: "#64748b" }}>—</span>;
+                    return (
+                      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                        {cd.map((c, i) => (
+                          <span key={i} style={{ fontSize: 10 }}>
+                            <span style={{ color: "#e2e8f0" }}>{c.name}</span>
+                            <span style={{ color: c.idle_ms > 60000 ? "#ef4444" : c.idle_ms > 10000 ? "#f59e0b" : "#22c55e", marginLeft: 4 }}>idle {fmtMs(c.idle_ms)}</span>
+                            {c.pending > 0 && <span style={{ color: "#f59e0b", marginLeft: 2 }}>· {c.pending}p</span>}
+                          </span>
+                        ))}
+                      </div>
+                    );
+                  }},
+                ]}
+                locale={{ emptyText: "—" }}
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* DLQ Growth */}
+      {Object.keys(dlqGrowth).length > 0 && (
+        <div style={{ marginTop: 8 }}>
+          <Typography.Text strong style={{ fontSize: 12, color: "#e2e8f0" }}>DLQ 趋势</Typography.Text>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 4 }}>
+            {Object.entries(dlqGrowth).map(([sk, g]) => {
+              const trendColor = g.trend === "growing" ? "#ef4444" : g.trend === "shrinking" ? "#22c55e" : "#f59e0b";
+              return (
+                <div key={sk} style={{ fontSize: 11, background: "rgba(255,255,255,0.03)", padding: "4px 8px", borderRadius: 4 }}>
+                  <span style={{ color: "#94a3b8" }}>{sk.replace("stream:","").replace("dead:","DL:")}</span>
+                  {" "}
+                  <span style={{ color: trendColor, fontWeight: 600 }}>
+                    {g.trend === "growing" ? "↑" : g.trend === "shrinking" ? "↓" : "→"} {g.delta > 0 ? "+" : ""}{g.delta}
+                  </span>
+                  <span style={{ color: "#64748b", marginLeft: 4 }}>
+                    ({g.delta_pct}% · was {g.prev_length} · {g.since_s}s ago)
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       <Typography.Text type="secondary" style={{ fontSize: 10, display: "block", marginTop: 4 }}>
         Stream length 为历史/积压指标，不代表服务正在运行。Dead Letter 积压不等于 Redis 不可用。

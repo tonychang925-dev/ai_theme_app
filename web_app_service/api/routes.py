@@ -92,15 +92,25 @@ async def _proxy_stock_processing_json(path: str, params: dict[str, str]) -> dic
     return data if isinstance(data, dict) else {}
 
 
-async def _proxy_stock_processing_post_json(path: str, payload: dict) -> dict:
+async def _proxy_stock_processing_post_json(path: str, payload: dict, timeout: float = 120.0) -> dict:
     url = f"{STOCK_PROCESSING_BASE_URL}{path}"
     try:
-        async with httpx.AsyncClient(timeout=120.0, trust_env=False) as http:
+        async with httpx.AsyncClient(timeout=timeout, trust_env=False) as http:
             resp = await http.post(url, json=payload)
             resp.raise_for_status()
             data = resp.json()
     except httpx.HTTPStatusError as exc:
         raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text) from exc
+    except httpx.ReadTimeout as exc:
+        raise HTTPException(
+            status_code=504,
+            detail={
+                "code": "WEB_APP_UPSTREAM_TIMEOUT",
+                "message": f"upstream timeout after {timeout:.0f}s",
+                "upstream": url,
+                "method": "POST",
+            },
+        ) from exc
     except httpx.RequestError as exc:
         raise HTTPException(status_code=502, detail=f"upstream unavailable: {exc}") from exc
     return data if isinstance(data, dict) else {}
@@ -393,13 +403,21 @@ async def get_post_market_jobs_status(date: str = Query(..., description="YYYY-M
 @router.post("/post-market/derived-data/generate")
 async def generate_post_market_derived_data(payload: dict | None = None) -> dict:
     """生成每日动态复盘派生数据。BFF 代理 → SPS。"""
-    return await _proxy_stock_processing_post_json("/api/v1/post-market/derived-data/generate", payload or {})
+    return await _proxy_stock_processing_post_json(
+        "/api/v1/post-market/derived-data/generate",
+        payload or {},
+        timeout=600.0,
+    )
 
 
 @router.post("/post-market/recap/generate")
 async def generate_post_market_recap(payload: dict | None = None) -> dict:
     """生成盘后复盘报告快照。BFF 代理 → SPS。"""
-    return await _proxy_stock_processing_post_json("/api/v1/post-market/recap/generate", payload or {})
+    return await _proxy_stock_processing_post_json(
+        "/api/v1/post-market/recap/generate",
+        payload or {},
+        timeout=300.0,
+    )
 
 
 @router.get("/daily-review")
@@ -425,7 +443,11 @@ async def daily_review_v2(date: str = Query(..., description="YYYY-MM-DD")) -> d
 
 @router.post("/post-market/daily-review-v2/generate")
 async def daily_review_v2_generate(payload: dict | None = None) -> dict:
-    return await _proxy_stock_processing_post_json("/api/v2/post-market/daily-review-v2/generate", payload or {})
+    return await _proxy_stock_processing_post_json(
+        "/api/v2/post-market/daily-review-v2/generate",
+        payload or {},
+        timeout=180.0,
+    )
 
 
 @router.get("/stock_workspace/{stock_id}")

@@ -581,6 +581,10 @@ export async function fetchPostMarketJobsStatus(date: string): Promise<PostMarke
   );
 }
 
+const POST_MARKET_DERIVED_DATA_GENERATE_TIMEOUT_MS = 600000;
+const POST_MARKET_RECAP_GENERATE_TIMEOUT_MS = 300000;
+const POST_MARKET_DAILY_REVIEW_V2_GENERATE_TIMEOUT_MS = 180000;
+
 export async function generatePostMarketDerivedData(date: string, force = false): Promise<Record<string, unknown>> {
   return fetchJsonWithTimeout<Record<string, unknown>>(
     `/api/v2/post-market/derived-data/generate`,
@@ -589,7 +593,7 @@ export async function generatePostMarketDerivedData(date: string, force = false)
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ trade_date: date, force }),
     },
-    180000,
+    POST_MARKET_DERIVED_DATA_GENERATE_TIMEOUT_MS,
   );
 }
 
@@ -601,7 +605,7 @@ export async function generatePostMarketRecap(date: string, force = false): Prom
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ trade_date: date, force }),
     },
-    120000,
+    POST_MARKET_RECAP_GENERATE_TIMEOUT_MS,
   );
 }
 
@@ -631,7 +635,7 @@ export async function generateDailyReviewV2(date: string, force = false): Promis
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ trade_date: date, force }),
     },
-    60000,
+    POST_MARKET_DAILY_REVIEW_V2_GENERATE_TIMEOUT_MS,
   );
 }
 
@@ -1742,10 +1746,44 @@ export interface OrchestratorServiceState {
 export interface RedisStreamHealth {
   exists?: boolean;
   length?: number | null;
+  memory_bytes?: number | null;
   state?: string;
   last_id?: string | null;
   last_event_at?: string | null;
   blockers?: string[];
+}
+
+export interface ConsumerGroupEntry {
+  name: string;
+  consumers: number;
+  pending: number;
+  lag: number;
+  last_delivered_id: string;
+  delivery_lag_s?: number | null;
+  consumers_detail?: ConsumerDetail[];
+}
+
+export interface ConsumerDetail {
+  name: string;
+  idle_ms: number;
+  pending: number;
+}
+
+export interface ConsumerGroupSummary {
+  stream: string;
+  group: string;
+  consumers: number;
+  pending: number;
+  lag: number;
+  delivery_lag_s?: number | null;
+}
+
+export interface DlqGrowthEntry {
+  trend: "growing" | "stable" | "shrinking" | "unknown";
+  delta: number;
+  delta_pct: number;
+  prev_length: number;
+  since_s: number;
 }
 
 export interface RedisRuntimeHealth {
@@ -1760,6 +1798,10 @@ export interface RedisRuntimeHealth {
   blockers?: string[];
   server?: Record<string, unknown>;
   streams?: Record<string, RedisStreamHealth>;
+  consumer_groups?: Record<string, ConsumerGroupEntry[]>;
+  consumer_groups_summary?: ConsumerGroupSummary[];
+  dead_letter_growth?: Record<string, DlqGrowthEntry>;
+  sse_clients?: Record<string, number>;
 }
 
 export interface DbTableHealth {

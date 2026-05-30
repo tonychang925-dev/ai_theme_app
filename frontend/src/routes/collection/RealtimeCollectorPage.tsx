@@ -27,7 +27,7 @@ import {
   type OrchestratorStatus,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
-import { ConfigProvider, Tabs, theme } from "antd";
+import { Button, ConfigProvider, Space, Table, Tabs, theme } from "antd";
 import realtimeIcon from "../../assets/intel-icons/实时采集.png";
 
 // P4-1A: 展示组件
@@ -399,11 +399,27 @@ export function RealtimeCollectorPage() {
   async function handleImportPending() {
     setReviewBusy(true);
     try {
-      await fetch("/api/v2/review-queue/import-pending", { method: "POST" });
-      append("已导入 Pending 到复核队列");
+      const resp = await fetch("/api/v2/review-queue/import-pending", { method: "POST" });
+      const data = await resp.json().catch(() => ({}));
+      const imported = data.imported ?? 0;
+      const skipped = data.skipped ?? 0;
+      const errors = data.errors ?? 0;
+      const total = data.total ?? (imported + skipped + errors);
+      if (imported > 0) {
+        append(`✅ 已导入 ${imported} 条到复核队列${skipped > 0 ? `，跳过 ${skipped} 条` : ""}${errors > 0 ? `，失败 ${errors} 条` : ""}`);
+      } else if (total === 0) {
+        append("棚顶流为空，无事件可导入");
+      } else {
+        append(`⚠️ 导入失败: 共 ${total} 条，成功 0 条，跳过 ${skipped} 条，错误 ${errors} 条`);
+        if (data.error_details?.length > 0) {
+          for (const d of data.error_details.slice(0, 5)) {
+            append(`  详情: ${d}`);
+          }
+        }
+      }
       await refreshReviewQueue();
     } catch (err: any) {
-      append(`导入失败: ${err?.message || err}`);
+      append(`导入请求失败: ${err?.message || err}`);
     } finally { setReviewBusy(false); }
   }
   async function handleClearPending() {
@@ -662,6 +678,51 @@ export function RealtimeCollectorPage() {
     return parts;
   }, [output, jyhfLogs, stackStatus, jyhfCollectorRunning, jyhfStatus?.service_running, auctionEnabled, auctionStatus]);
 
+  /** 业务运行日志：实时采集 + LLM结构化 + 题材匹配（不含 JYHF DOM 日志） */
+  const businessLogs = useMemo(() => {
+    const parts: string[] = [];
+    // 操作日志
+    parts.push("── 操作日志 ──", ...output.slice(-80), "");
+    // 生命周期 + Stream 指标
+    if (stackStatus) {
+      const streams = stackStatus.redis_streams;
+      const rawLen = streams?.["stream:news:raw"]?.length ?? 0;
+      const structLen = streams?.["stream:events:structured"]?.length ?? 0;
+      const decLen = streams?.["stream:events:decision"]?.length ?? 0;
+      parts.push(
+        "── 生命周期状态 ──",
+        `realtime: ${stackStatus.running ? (stackStatus.running_verified ? "running" : "degraded") : "stopped"}`,
+        `verified: ${stackStatus.running_verified ?? "?"}  source: ${stackStatus.status_source ?? "?"}`,
+        `run_id: ${stackStatus.run_id || "-"}`,
+        `PID — raw: ${stackStatus.raw_news_pid ?? "-"}  dec: ${stackStatus.decision_pid ?? "-"}  db: ${stackStatus.db_collector_pid ?? "-"}`,
+        `started_at: ${stackStatus.started_at ?? "-"}`,
+        "",
+      );
+      parts.push(
+        "── Redis Stream 指标 ──",
+        `raw_len=${rawLen > 999 ? Math.round(rawLen/1000) + "k" : rawLen} ` +
+        `struct=${structLen > 999 ? Math.round(structLen/1000) + "k" : structLen} ` +
+        `dec=${decLen > 999 ? Math.round(decLen/1000) + "k" : decLen}`,
+        `pending=${stackStatus.pending_count}  dead_letter=${stackStatus.dead_letter_count}` +
+        `  LLM过滤=${stackStatus.prefilter_skipped ?? 0}  Feed通过=${stackStatus.news_published_total ?? 0}` +
+        (rawLen > 5000 ? "  ⚠️积压" : ""),
+        `profile: ${stackStatus.profile_version}/${stackStatus.profile_status}  llm: ${stackStatus.llm_judge_mode || "-"}`,
+        "",
+      );
+    }
+    if (auctionEnabled && auctionStatus) {
+      parts.push(
+        `── JYHF 竞价采集 ──`,
+        `running: ${auctionStatus.running}  state: ${auctionStatus.state}`,
+        `trade_date: ${auctionStatus.trade_date ?? "-"}  candidate_date: ${auctionStatus.candidate_date ?? "-"}`,
+        `rounds: ${auctionStatus.rounds}  points: ${auctionStatus.points}`,
+        auctionStatus.last_error ? `last_error: ${auctionStatus.last_error}` : "",
+        "",
+      );
+    }
+    return parts;
+  }, [output, stackStatus, auctionEnabled, auctionStatus]);
+
   // P4-1A: 统一告警 view model — Kline + W2S 合并为 UnifiedAlertRow[]
   const unifiedAlerts = useMemo((): UnifiedAlertRow[] => {
     const rows: UnifiedAlertRow[] = [];
@@ -781,6 +842,141 @@ export function RealtimeCollectorPage() {
               ),
             },
             {
+              key: "review",
+              label: (
+                <span>
+                  待复核
+                  {reviewTotal > 0 && (
+                    <span style={{
+                      marginLeft: 6, padding: "0 6px", borderRadius: 10,
+                      background: "#ef4444", color: "#fff", fontSize: 11, fontWeight: 700,
+                    }}>
+                      {reviewTotal}
+                    </span>
+                  )}
+                </span>
+              ),
+              children: (() => {
+                  const pendingCount = stackStatus?.pending_count ?? 0;
+                  const rqCountFromStack = stackStatus?.review_queue_count ?? 0;
+                  const hasPending = pendingCount > 0;
+                  const hasReview = reviewTotal > 0;
+                  return (
+                <div>
+                  {/* 概览卡片 */}
+                  <div style={{
+                    display: "flex", gap: 12, marginBottom: 10, flexWrap: "wrap",
+                  }}>
+                    <div style={{
+                      flex: 1, minWidth: 140, padding: "10px 14px",
+                      background: hasPending ? "rgba(245,158,11,0.08)" : "rgba(255,255,255,0.03)",
+                      borderRadius: 8, border: hasPending ? "1px solid rgba(245,158,11,0.25)" : "1px solid rgba(255,255,255,0.06)",
+                    }}>
+                      <div style={{ fontSize: 11, color: "#64748b", marginBottom: 2 }}>棚顶待导入 (Redis stream:events:pending)</div>
+                      <div style={{ fontSize: 24, fontWeight: 700, color: hasPending ? "#f59e0b" : "#e2e8f0" }}>
+                        {stackStatus ? pendingCount : "?"}
+                      </div>
+                    </div>
+                    <div style={{
+                      flex: 1, minWidth: 140, padding: "10px 14px",
+                      background: hasReview ? "rgba(59,130,246,0.08)" : "rgba(255,255,255,0.03)",
+                      borderRadius: 8, border: hasReview ? "1px solid rgba(59,130,246,0.25)" : "1px solid rgba(255,255,255,0.06)",
+                    }}>
+                      <div style={{ fontSize: 11, color: "#64748b", marginBottom: 2 }}>待复核 (DB waiting)</div>
+                      <div style={{ fontSize: 24, fontWeight: 700, color: hasReview ? "#3b82f6" : "#e2e8f0" }}>
+                        {reviewTotal}{rqCountFromStack !== reviewTotal ? ` / ${rqCountFromStack}` : ""}
+                      </div>
+                    </div>
+                  </div>
+
+                  <Space style={{ marginBottom: 8 }}>
+                    <Button size="small" onClick={refreshReviewQueue} loading={reviewBusy}>刷新</Button>
+                    <Button
+                      size="small"
+                      type={hasPending ? "primary" : "default"}
+                      onClick={handleImportPending}
+                      disabled={reviewBusy}
+                    >
+                      导入 Pending{hasPending ? ` (${pendingCount})` : ""}
+                    </Button>
+                    <Button size="small" onClick={handleClearPending} disabled={reviewBusy || !hasPending}>
+                      清空 Pending
+                    </Button>
+                    {selectedIds.size > 0 && (
+                      <Button size="small" danger onClick={handleBatchDelete}>删除选中 ({selectedIds.size})</Button>
+                    )}
+                    <Button size="small" onClick={selectAll}>
+                      {selectedIds.size === reviewItems.length && reviewItems.length > 0 ? "取消全选" : "全选"}
+                    </Button>
+                  </Space>
+
+                  {!hasReview && hasPending && (
+                    <div style={{
+                      padding: "8px 12px", marginBottom: 8, borderRadius: 6,
+                      background: "rgba(245,158,11,0.06)", border: "1px solid rgba(245,158,11,0.2)",
+                      fontSize: 12, color: "#f59e0b",
+                    }}>
+                      棚顶有 <b>{pendingCount}</b> 条事件等待导入。点击「导入 Pending」将事件写入待复核队列。
+                    </div>
+                  )}
+
+                  {!hasPending && !hasReview && (
+                    <div style={{
+                      padding: "8px 12px", marginBottom: 8, borderRadius: 6,
+                      background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)",
+                      fontSize: 12, color: "#64748b",
+                    }}>
+                      暂无待复核事件。DecisionExecutor 产出弱信号事件时，会先写入 Redis pending 流，再导入到此队列。
+                    </div>
+                  )}
+
+                  <Table
+                    dataSource={reviewItems}
+                    rowKey="id"
+                    size="small"
+                    pagination={false}
+                    scroll={{ y: "calc(100vh - 400px)" }}
+                    rowSelection={{
+                      selectedRowKeys: Array.from(selectedIds),
+                      onChange: (selectedRowKeys) => {
+                        setSelectedIds(new Set(selectedRowKeys as number[]));
+                      },
+                      onSelect: (record) => toggleSelect(record.id),
+                    }}
+                    columns={[
+                      { title: "ID", dataIndex: "id", width: 65 },
+                      {
+                        title: "Title", dataIndex: "event_title", ellipsis: true,
+                        render: (v: string | null, r: ReviewQueueItem) => (
+                          <a onClick={() => openDetail(r.id)} style={{ cursor: "pointer" }}>{v || r.raw_title || "(无标题)"}</a>
+                        ),
+                      },
+                      {
+                        title: "Theme", dataIndex: "proposed_theme_name", width: 100,
+                        render: (v: string | null) => v || "-",
+                      },
+                      {
+                        title: "Conf", dataIndex: "proposed_theme_confidence", width: 50,
+                        render: (v: number | null) => v != null ? v.toFixed(2) : "-",
+                      },
+                      { title: "时间", dataIndex: "created_at", width: 80, render: (v: string) => v?.slice(11, 19) ?? "-" },
+                      {
+                        title: "操作", key: "actions", width: 120,
+                        render: (_: any, r: ReviewQueueItem) => (
+                          <Space size="small">
+                            <Button size="small" type="link" onClick={() => handleConfirmReview(r.id)}>确认</Button>
+                            <Button size="small" type="link" danger onClick={() => handleDeleteReview(r.id)}>删除</Button>
+                          </Space>
+                        ),
+                      },
+                    ]}
+                    locale={{ emptyText: "暂无待复核事件" }}
+                  />
+                </div>
+                  );
+                })(),
+              },
+            {
               key: "health",
               label: "运行健康",
               children: (
@@ -802,10 +998,11 @@ export function RealtimeCollectorPage() {
                     label: "数据流",
                     children: (
                       <DiagnosticsTabs
-                        mergedLogs={[]} jyhfLogs={[]} stackStatus={stackStatus}
+                        mergedLogs={businessLogs} jyhfLogs={jyhfLogs} stackStatus={stackStatus}
                         reviewItems={reviewItems} reviewTotal={reviewTotal}
                         reviewBusy={reviewBusy} selectedIds={selectedIds}
                         onToggleSelect={toggleSelect} onSelectAll={selectAll}
+                        onSetSelectedKeys={setSelectedIds}
                         onConfirm={handleConfirmReview} onDelete={handleDeleteReview}
                         onBatchDelete={handleBatchDelete} onImportPending={handleImportPending}
                         onClearPending={handleClearPending} onRefreshReview={refreshReviewQueue}

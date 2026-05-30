@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 # 核心表检查配置: (table_name, category, required)
 CORE_TABLE_CHECKS: list[tuple[str, str, bool]] = [
     ("subject_stock_daily_snapshot", "base", True),
+    ("jyhf_index_quote_snapshot", "base", False),  # 非交易日/采集缺失不阻塞，指数部分使用 fallback
     ("theme_cycle_judgement_v2", "derived", True),
     ("money_flow_enhanced", "derived", True),
     ("strong_stock_watch_history", "derived", True),

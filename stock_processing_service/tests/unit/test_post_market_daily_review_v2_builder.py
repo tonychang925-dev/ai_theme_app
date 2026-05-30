@@ -595,6 +595,51 @@ def test_daily_review_v2_builder_maps_promoted_pool_preview_to_watchlist_reviews
     assert "flags" in coverage["missing_fields"]
 
 
+def test_daily_review_v2_builder_dedupes_watchlist_promoted_pool_preview() -> None:
+    recap_doc = {
+        "promoted_pool_preview": [
+            {
+                "stock_id": "002579.SZ",
+                "stock_name": "中京电子",
+                "subject_key": "9015778",
+                "subject_name": "存储芯片",
+                "watch_status": "weakening",
+                "prior7_limitup_days": 3,
+                "recent_limit_up_count": 3,
+            },
+            {
+                "stock_id": "002579.SZ",
+                "stock_name": "中京电子",
+                "subject_key": "9015778",
+                "subject_name": "存储芯片",
+                "watch_status": "weakening",
+                "prior7_limitup_days": 3,
+                "recent_limit_up_count": 3,
+            },
+            {
+                "stock_id": "002957.SZ",
+                "stock_name": "科瑞技术",
+                "subject_key": "9013933",
+                "subject_name": "共封装光学CPO",
+                "watch_status": "weakening",
+                "prior7_limitup_days": 3,
+                "recent_limit_up_count": 3,
+            },
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 29),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.watchlist.dedupe",
+    )
+
+    rows = payload["watchlist_reviews"]
+    assert [row["stock_code"] for row in rows] == ["002579.SZ", "002957.SZ"]
+    assert [row["priority"] for row in rows] == [1, 2]
+
+
 def test_daily_review_v2_builder_maps_ready_stock_capital_reviews() -> None:
     recap_doc = {
         "stock_capital_reviews": [

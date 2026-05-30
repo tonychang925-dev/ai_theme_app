@@ -22,9 +22,6 @@ from stock_service.services.leader_candidate_service import (
 )
 
 
-DATA_ROOT = PROJECT_ROOT / "theme_data_complete" / "stock_daily"
-
-
 def get_postgres_config() -> DatabaseConfig:
     return DatabaseConfig(
         db_type=DatabaseType.POSTGRESQL,
@@ -138,6 +135,7 @@ async def fetch_subject_rows(manager: PostgresDatabaseManager, trade_date_value:
         COALESCE(close_price, 0) AS close_price,
         is_leader,
         limit_up
+        , raw_json
     FROM subject_stock_daily_snapshot
     WHERE trade_date = $1
       AND subject_key = ANY($2::varchar[])
@@ -180,40 +178,47 @@ async def fetch_kline_fact_map(manager: PostgresDatabaseManager, trade_date_valu
     return result
 
 
-def load_raw_fact_map(trade_date: str, subject_keys: list[str]) -> dict[tuple[str, str], dict]:
+def build_raw_fact_map_from_subject_rows(trade_date: str, subject_rows: list[dict]) -> dict[tuple[str, str], dict]:
     result: dict[tuple[str, str], dict] = {}
     trade_date_value = _parse_trade_date(trade_date)
-    for subject_key in subject_keys:
-        path = DATA_ROOT / f"{subject_key}_{trade_date}_stocks.jsonl"
-        if not path.exists():
-            continue
-        with path.open("r", encoding="utf-8", errors="ignore") as handle:
-            for line in handle:
-                line = line.strip()
-                if not line:
-                    continue
+    for row in subject_rows:
+        raw = row.get("raw_json") or {}
+        if isinstance(raw, str):
+            try:
+                raw = json.loads(raw)
+            except Exception:
+                raw = {}
+        list_date = None
+        if isinstance(raw, list):
+            volume_ratio = _to_float(raw[17] if len(raw) > 17 else None)
+            turnover_rate = _to_float(raw[18] if len(raw) > 18 else None)
+            main_net_inflow = _to_float(raw[35] if len(raw) > 35 else None)
+            if len(raw) > 25 and raw[25]:
                 try:
-                    row = json.loads(line)
+                    list_date = datetime.strptime(str(raw[25]).split(" ")[0], "%Y-%m-%d").date()
                 except Exception:
-                    continue
-                if not isinstance(row, list) or len(row) < 19:
-                    continue
-                stock_id = str(row[2]).strip()
-                if not stock_id:
-                    continue
-                list_date = None
-                if len(row) > 25 and row[25]:
-                    try:
-                        list_date = datetime.strptime(str(row[25]).split(" ")[0], "%Y-%m-%d").date()
-                    except Exception:
-                        list_date = None
-                is_new_stock = bool(list_date and (trade_date_value - list_date).days <= 365)
-                result[(subject_key, stock_id)] = {
-                    "volume_ratio": _to_float(row[17] if len(row) > 17 else None),
-                    "turnover_rate": _to_float(row[18] if len(row) > 18 else None),
-                    "main_net_inflow": _to_float(row[35] if len(row) > 35 else None),
-                    "is_new_stock": is_new_stock,
-                }
+                    list_date = None
+        elif isinstance(raw, dict):
+            volume_ratio = _to_float(raw.get("volume_ratio"))
+            turnover_rate = _to_float(raw.get("turnover_rate"))
+            main_net_inflow = _to_float(raw.get("main_net_inflow"))
+            raw_list_date = raw.get("list_date") or raw.get("listing_date")
+            if raw_list_date:
+                try:
+                    list_date = datetime.strptime(str(raw_list_date).split(" ")[0], "%Y-%m-%d").date()
+                except Exception:
+                    list_date = None
+        else:
+            volume_ratio = 0.0
+            turnover_rate = 0.0
+            main_net_inflow = 0.0
+
+        result[(str(row.get("subject_key") or ""), str(row.get("stock_id") or ""))] = {
+            "volume_ratio": volume_ratio,
+            "turnover_rate": turnover_rate,
+            "main_net_inflow": main_net_inflow,
+            "is_new_stock": bool(list_date and (trade_date_value - list_date).days <= 365),
+        }
     return result
 
 
@@ -302,7 +307,7 @@ async def main_async() -> int:
         main_themes = await fetch_main_themes(manager, trade_date_value)
         subject_keys = [str(row["subject_key"]) for row in main_themes]
         subject_rows = await fetch_subject_rows(manager, trade_date_value, subject_keys) if subject_keys else []
-        raw_fact_map = load_raw_fact_map(args.trade_date, subject_keys)
+        raw_fact_map = build_raw_fact_map_from_subject_rows(args.trade_date, subject_rows)
         kline_fact_map = await fetch_kline_fact_map(manager, trade_date_value)
 
         theme_name_map = {str(row["subject_key"]): row["theme_name"] for row in main_themes}
@@ -344,7 +349,6 @@ async def main_async() -> int:
                         "theme_cycle_judgement_v2",
                         "theme_cycle_evidence_daily",
                         "subject_stock_daily_snapshot",
-                        "theme_data_complete.stock_daily",
                         "stock_position_judgement",
                         "stock_pattern_judgement",
                     ],
