@@ -154,7 +154,7 @@ export const MainlineConfirmationPanel: React.FC = () => {
                     onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "#1a2a44"; }}
                     onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}>
                     <td style={td}>{n(item.review_priority)}</td>
-                    <td style={td}><span style={{ color: "#88ccff" }}>{item.theme_name ?? item.subject_key}</span></td>
+                    <td style={td}><span style={{ color: "#88ccff", maxWidth: 200, display: "inline-block", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={item.theme_name ?? ""}>{item.theme_name ?? item.subject_key}</span></td>
                     <td style={td}><StatusBadge state={item.machine_state} /></td>
                     <td style={td}>{item.mainline_type ?? "--"}</td>
                     <td style={td}>{n((item.scores_json as any)?.hybrid_logic_score)}</td>

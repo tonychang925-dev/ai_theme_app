@@ -40,6 +40,9 @@ from stock_processing_service.domain.services.mainline_discovery.major_event_cla
 from stock_processing_service.domain.services.mainline_discovery.mainline_narrative_judge import (
     MainlineNarrativeJudge,
 )
+from stock_processing_service.domain.services.mainline_discovery.models import (
+    NarrativeJudgeResult,
+)
 from stock_processing_service.domain.services.mainline_discovery.mainline_discovery_engine import (
     MainlineDiscoveryEngine,
 )
@@ -970,9 +973,19 @@ class BuildPostMarketRecapJob:
                     major_by_sk[sk] = result.to_dict()
 
             # ── run narrative judge (best-effort, LLM may fail) ──
-            narrative_builder = MainlineNarrativeJudge()
+            def _llm_factory():
+                from model_service.llm_parser.reliable_deepseek_parser import ReliableDeepSeekParser
+                import os
+                return ReliableDeepSeekParser(
+                    model_name=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"),
+                    config={"max_retries": 1, "timeout": 25, "temperature": 0.1,
+                            "enable_cache": True, "cache_ttl": 3600})
+            narrative_builder = MainlineNarrativeJudge(parser_factory=_llm_factory)
             narrative_by_sk: dict[str, dict] = {}
             for sk, lev in logic_by_sk.items():
+                if not lev.get("event_chain"):
+                    narrative_by_sk[sk] = NarrativeJudgeResult().to_dict()
+                    continue
                 nj = await narrative_builder.judge(
                     subject_key=sk,
                     theme_name=_theme_name_for_sk(fc["candidate_subjects"], sk),
@@ -1002,6 +1015,15 @@ class BuildPostMarketRecapJob:
                 narrative_by_subject=narrative_by_sk,
                 market_by_subject=market_by_sk,
             )
+            # Sanitize theme_name: cap at 40 chars, fallback to subject_key
+            for it in review_items:
+                tn = (it.theme_name or "").strip()
+                if len(tn) > 40 or tn.startswith("【"):
+                    # Try candidate_subjects first
+                    short = _theme_name_for_sk(fc.get("candidate_subjects", []), it.subject_key)
+                    it.theme_name = (short or it.subject_key)[:40] if short and len(short) < 40 else it.subject_key[:40]
+                elif not tn:
+                    it.theme_name = it.subject_key[:40]
 
             # ── write to recap_doc ──
             sd = fc.get("diagnostics", {})

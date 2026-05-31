@@ -172,12 +172,8 @@ class MainlineNarrativeJudge:
             return None
         try:
             parser = self.parser_factory()
-            response = await parser.parse_content(
-                prompt=json.dumps(payload, ensure_ascii=False),
-                system_prompt=SYSTEM_PROMPT,
-                model=self.model_name,
-                timeout=self.timeout_sec,
-            )
+            full_prompt = SYSTEM_PROMPT + "\n\nInput JSON:\n" + json.dumps(payload, ensure_ascii=False)
+            response = await parser.parse_content(full_prompt)
             if isinstance(response, str):
                 # Strip markdown code fences if present
                 text = response.strip()
