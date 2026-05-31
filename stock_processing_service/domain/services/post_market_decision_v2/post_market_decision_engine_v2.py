@@ -158,6 +158,14 @@ class PostMarketDecisionEngineV2:
         # Sort D1 by score desc
         d1_candidates.sort(key=lambda x: x.candidate_score, reverse=True)
 
+        # Top N cap per trade mode
+        if trade_mode == "ultra_short_only":
+            d1_candidates = d1_candidates[:5]
+        elif trade_mode == "mainline_core_only":
+            d1_candidates = d1_candidates[:10]
+        else:
+            d1_candidates = d1_candidates[:20]
+
         # ── 4. Build next_day_focus_stocks ──
         focus_stocks: list[NextDayFocusStock] = []
         for d1 in d1_candidates:
@@ -193,10 +201,13 @@ class PostMarketDecisionEngineV2:
             next_day_focus_stocks=[r.to_dict() for r in focus_stocks],
             trading_principle_v2=tp,
             diagnostics={
+                "confirmed_mainline_source": "registry",
+                "confirmed_count": len(mainlines),
                 "total_pool_rows": len(pool_rows),
                 "mainline_filtered_rows": len(filtered_pool),
                 "strong_pool_count": len(strong_pool),
                 "d1_count": len(d1_candidates),
+                "d1_top_n_capped": trade_mode in {"ultra_short_only", "mainline_core_only"},
                 "focus_count": len(focus_stocks),
             },
         )

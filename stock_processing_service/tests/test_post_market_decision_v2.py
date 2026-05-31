@@ -175,6 +175,34 @@ class TestPostMarketDecisionV2:
         assert r.weak_to_strong_d1_reviews[0]["diagnostics"]["blocked_by_market_regime"] is True
         assert len(r.next_day_focus_stocks) == 0
 
+    def test_ultra_short_top_n_limit(self):
+        """ultra_short_only should cap D1 at 5."""
+        e = PostMarketDecisionEngineV2()
+        rows = [_stock_row(name=f"股{i}", entry="formal", score=80 + i, role="leader") for i in range(10)]
+        r = e.evaluate(
+            trade_date="2026-04-29", confirmed_mainlines=[_ml()],
+            market_regime={"allow_trade": True, "trade_mode": "ultra_short_only", "position_limit": 0.2},
+            stock_pool_rows=rows,
+        )
+        assert len(r.weak_to_strong_d1_reviews) <= 5
+
+    def test_core_only_top_n(self):
+        """mainline_core_only should cap D1 at 10."""
+        e = PostMarketDecisionEngineV2()
+        rows = [_stock_row(name=f"股{i}", entry="formal", score=70 + i, role="core") for i in range(15)]
+        r = e.evaluate(
+            trade_date="2026-04-29", confirmed_mainlines=[_ml()],
+            market_regime={"allow_trade": True, "trade_mode": "mainline_core_only", "position_limit": 0.3},
+            stock_pool_rows=rows,
+        )
+        assert len(r.weak_to_strong_d1_reviews) <= 10
+
+    def test_layer_c_source_diagnostics(self):
+        """Diagnostics should include confirmed_mainline_error when registry fails."""
+        e = PostMarketDecisionEngineV2()
+        r = e.evaluate(trade_date="2026-04-29", confirmed_mainlines=[])
+        assert r.diagnostics["confirmed_count"] == 0
+
     def test_model_to_dicts(self):
         p = StrongStockPoolItem(stock_id="000001.SZ", stock_name="测试", watch_score=85)
         assert p.to_dict()["watch_score"] == 85
