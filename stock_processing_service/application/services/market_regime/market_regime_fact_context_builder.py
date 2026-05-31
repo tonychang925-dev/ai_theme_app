@@ -56,27 +56,59 @@ class MarketRegimeFactContextBuilder:
             "missing_sources": [],
         }
 
-        # ── 1. Index K-line from akshare/TDX ──
+        # ── 1. Index K-line: prefer DB, fallback to akshare ──
         index_kline: list[dict[str, Any]] = []
+        source = "none"
         try:
-            import akshare as ak
-            df = await asyncio.to_thread(ak.stock_zh_index_daily, symbol="sh000001")
-            if df is not None and not df.empty:
-                df = df.tail(lookback_days)
-                for _, row in df.iterrows():
-                    index_kline.append({
-                        "close": float(row["close"]),
-                        "high": float(row["high"]),
-                        "low": float(row["low"]),
-                        "volume": float(row["volume"]) if row.get("volume") else 0,
-                        "amount": float(row.get("amount", 0)) if "amount" in row else float(row["volume"]) * 10,
-                    })
-                diag["index_rows"] = len(index_kline)
-            else:
-                diag["missing_sources"].append("akshare_index")
-        except Exception as exc:
-            logger.warning("Failed to fetch index K-line from akshare: %s", exc)
-            diag["missing_sources"].append("akshare_index")
+            import asyncpg
+            conn = await asyncpg.connect("postgresql://localhost/stock_data_test", timeout=5)
+            try:
+                start = trade_date - __import__("datetime").timedelta(days=lookback_days)
+                rows = await conn.fetch(
+                    """SELECT trade_date, open, high, low, close, volume
+                       FROM index_daily_kline
+                       WHERE index_code='000001' AND market='1'
+                         AND trade_date BETWEEN $1 AND $2
+                       ORDER BY trade_date""",
+                    start, trade_date,
+                )
+                if rows:
+                    for r in rows:
+                        index_kline.append({
+                            "close": float(r["close"] or 0),
+                            "high": float(r["high"] or 0),
+                            "low": float(r["low"] or 0),
+                            "volume": float(r["volume"] or 0),
+                            "amount": 0,
+                        })
+                    source = "db.index_daily_kline"
+                    diag["index_rows"] = len(index_kline)
+            finally:
+                await conn.close()
+        except Exception:
+            pass
+
+        if not index_kline:
+            try:
+                import akshare as ak
+                df = await asyncio.to_thread(ak.stock_zh_index_daily, symbol="sh000001")
+                if df is not None and not df.empty:
+                    df = df.tail(lookback_days)
+                    for _, row in df.iterrows():
+                        index_kline.append({
+                            "close": float(row["close"]), "high": float(row["high"]),
+                            "low": float(row["low"]), "volume": float(row.get("volume", 0)),
+                            "amount": 0,
+                        })
+                    source = "akshare_tdx_live"
+                    diag["index_rows"] = len(index_kline)
+                else:
+                    diag["missing_sources"].append("index_kline")
+            except Exception as exc:
+                logger.warning("Index K-line fetch failed: %s", exc)
+                diag["missing_sources"].append("index_kline")
+
+        diag["index_source"] = source
 
         # ── 2. Market snapshot ──
         market_snapshot: dict[str, Any] = {}
