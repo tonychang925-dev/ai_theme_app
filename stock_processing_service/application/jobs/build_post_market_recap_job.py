@@ -1053,15 +1053,25 @@ class BuildPostMarketRecapJob:
             recap_doc["mainline_lifecycle_diagnostics"] = {**fact_ctx.diagnostics, **lifecycle_diag}
 
             # ── PR-11: Market Regime ──
+            from stock_processing_service.application.services.market_regime.market_regime_fact_context_builder import (
+                MarketRegimeFactContextBuilder,
+            )
             from stock_processing_service.domain.services.market_regime.market_regime_engine import MarketRegimeEngine
+
+            regime_ctx = await MarketRegimeFactContextBuilder().build(
+                trade_date=trade_date,
+                report_context=report_context,
+                lifecycle_reviews=[r.to_dict() for r in reviews],
+            )
             regime_engine = MarketRegimeEngine()
             regime = regime_engine.evaluate(
                 trade_date=trade_date.isoformat(),
-                index_kline=[],
-                market_snapshot={},
-                lifecycle_reviews=[r.to_dict() for r in reviews],
+                index_kline=regime_ctx.index_kline,
+                market_snapshot=regime_ctx.market_snapshot,
+                lifecycle_reviews=regime_ctx.lifecycle_reviews,
             )
             recap_doc["market_regime_review"] = regime.to_dict()
+            recap_doc["market_regime_diagnostics"] = regime_ctx.diagnostics
         except Exception:
             logger.exception("Lifecycle pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []
