@@ -118,6 +118,7 @@ class PostMarketDailyReviewV2Builder:
             "confirmed_mainlines": [],
             "mainline_lifecycle_reviews": self._pass_through_list(doc, "mainline_lifecycle_reviews"),
             "mainline_lifecycle_diagnostics": self._pass_through_dict(doc, "mainline_lifecycle_diagnostics"),
+            "market_regime_review": self._pass_through_dict(doc, "market_regime_review"),
             "diagnostics": diagnostics,
         }
 

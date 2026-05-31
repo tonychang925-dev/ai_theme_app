@@ -1051,6 +1051,17 @@ class BuildPostMarketRecapJob:
 
             recap_doc["mainline_lifecycle_reviews"] = [r.to_dict() for r in reviews]
             recap_doc["mainline_lifecycle_diagnostics"] = {**fact_ctx.diagnostics, **lifecycle_diag}
+
+            # ── PR-11: Market Regime ──
+            from stock_processing_service.domain.services.market_regime.market_regime_engine import MarketRegimeEngine
+            regime_engine = MarketRegimeEngine()
+            regime = regime_engine.evaluate(
+                trade_date=trade_date.isoformat(),
+                index_kline=[],
+                market_snapshot={},
+                lifecycle_reviews=[r.to_dict() for r in reviews],
+            )
+            recap_doc["market_regime_review"] = regime.to_dict()
         except Exception:
             logger.exception("Lifecycle pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []
