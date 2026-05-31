@@ -867,7 +867,9 @@ export interface RealtimeCollectorActionPayload {
 
 export interface RealtimeCollectorLogs {
   log_dir: string;
+  run_id?: string | null;
   lines: number;
+  max_age_minutes?: number;
   files: Record<string, string[]>;
 }
 
@@ -1478,10 +1480,13 @@ export async function stopRealtimeCollector(
   }
 }
 
-export async function fetchRealtimeCollectorLogs(lines = 200): Promise<RealtimeCollectorLogs> {
+export async function fetchRealtimeCollectorLogs(
+  lines = 200,
+  maxAgeMinutes = 180,
+): Promise<RealtimeCollectorLogs> {
   try {
     return await fetchJsonWithTimeout<RealtimeCollectorLogs>(
-      `/api/v2/realtime/collector/logs?lines=${encodeURIComponent(String(lines))}`,
+      `/api/v2/realtime/collector/logs?lines=${encodeURIComponent(String(lines))}&max_age_minutes=${encodeURIComponent(String(maxAgeMinutes))}`,
       {
         cache: "no-store",
       },
@@ -1926,5 +1931,118 @@ export async function resetOrchestratorActions(): Promise<{ ok: boolean }> {
     "/api/v2/realtime/orchestrator/reset-action-history",
     { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" },
     5000,
+  );
+}
+
+// ── PR-12.5: Mainline Confirmation API ──
+
+export interface MainlineReviewItem {
+  review_id: string;
+  trade_date: string;
+  subject_key: string;
+  theme_name?: string | null;
+  mainline_id?: string | null;
+  mainline_name?: string | null;
+  machine_state: string;
+  final_mainline_state?: string | null;
+  mainline_type?: string | null;
+  confirmation_path?: string | null;
+  trigger_mode?: string | null;
+  review_reason?: string | null;
+  review_priority?: number | null;
+  review_status: string;
+  suggested_human_decision?: string | null;
+  scores_json?: Record<string, unknown>;
+  evidence_json?: Record<string, unknown>;
+  risk_flags_json?: Record<string, unknown>;
+  diagnostics_json?: Record<string, unknown>;
+  human_decision?: string | null;
+  human_reviewer?: string | null;
+  human_notes?: string | null;
+  reviewed_at?: string | null;
+  created_at?: string | null;
+}
+
+export interface ConfirmedMainlineItem {
+  mainline_id: string;
+  mainline_name: string;
+  canonical_subject_key: string;
+  identity_status: string;
+  valid_from: string;
+  valid_to?: string | null;
+  mainline_type?: string | null;
+  confirmation_path?: string | null;
+  related_subject_keys_json?: string[];
+  core_subject_keys_json?: string[];
+  branch_subject_keys_json?: string[];
+  source_review_id?: string | null;
+  human_reviewer?: string | null;
+  human_notes?: string | null;
+  created_at?: string | null;
+}
+
+export interface MainlineReviewQueueResponse {
+  items: MainlineReviewItem[];
+  total?: number;
+  pending_count?: number;
+  reviewed_count?: number;
+}
+
+export interface MainlineRegistryResponse {
+  items: ConfirmedMainlineItem[];
+  total?: number;
+}
+
+export interface MainlineDecisionPayload {
+  human_decision: string;
+  canonical_subject_key?: string | null;
+  mainline_name?: string | null;
+  mainline_type?: string | null;
+  related_subject_keys?: string[] | null;
+  merge_target_mainline_id?: string | null;
+  human_reviewer?: string | null;
+  human_notes?: string | null;
+}
+
+export async function fetchMainlineReviewQueue(params: {
+  trade_date?: string; status?: string; limit?: number;
+} = {}): Promise<MainlineReviewQueueResponse> {
+  const q = new URLSearchParams();
+  if (params.trade_date) q.set("trade_date", params.trade_date);
+  if (params.status) q.set("status", params.status);
+  if (params.limit) q.set("limit", String(params.limit));
+  return fetchJsonWithTimeout<MainlineReviewQueueResponse>(
+    `/api/v2/mainline-review/queue?${q.toString()}`,
+    { cache: "no-store" }, 10000,
+  );
+}
+
+export async function fetchConfirmedMainlines(params: {
+  trade_date?: string; limit?: number;
+} = {}): Promise<MainlineRegistryResponse> {
+  const q = new URLSearchParams();
+  if (params.trade_date) q.set("trade_date", params.trade_date);
+  if (params.limit) q.set("limit", String(params.limit));
+  return fetchJsonWithTimeout<MainlineRegistryResponse>(
+    `/api/v2/mainline-review/registry?${q.toString()}`,
+    { cache: "no-store" }, 10000,
+  );
+}
+
+export async function submitMainlineReviewDecision(
+  reviewId: string, payload: MainlineDecisionPayload,
+): Promise<{ ok: boolean; action?: string; mainline_id?: string; error?: string }> {
+  return fetchJsonWithTimeout(
+    `/api/v2/mainline-review/${reviewId}/decision`,
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) },
+    15000,
+  );
+}
+
+export async function importMainlineReviewCandidates(tradeDate: string): Promise<{ ok: boolean; count?: number; error?: string }> {
+  return fetchJsonWithTimeout(
+    `/api/v2/mainline-review/import-candidates`,
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ trade_date: tradeDate }) },
+    30000,
   );
 }
