@@ -61,7 +61,18 @@ class ActiveMainlineUniverseBuilder:
 
         active_sks: set[str] = set()
         active_ids: set[str] = set()
-        for ml in mainlines:
+        seen_canonical: set[str] = set()
+        deduped: list[dict[str, Any]] = []
+
+        # Dedup by canonical_subject_key: keep latest valid_from entry
+        for ml in sorted(mainlines, key=lambda m: str(m.get("valid_from") or ""), reverse=True):
+            csk = str(ml.get("canonical_subject_key") or "")
+            if csk in seen_canonical:
+                continue
+            seen_canonical.add(csk)
+            deduped.append(ml)
+
+        for ml in deduped:
             mid = str(ml.get("mainline_id") or "")
             csk = str(ml.get("canonical_subject_key") or "")
             active_ids.add(mid)
@@ -85,7 +96,9 @@ class ActiveMainlineUniverseBuilder:
 
         diag = {
             "source": "registry",
-            "active_count": len(mainlines),
+            "raw_count": len(mainlines),
+            "deduped_count": len(deduped),
+            "active_count": len(active_sks),
             "active_subject_count": len(active_sks),
             "validity": f"identity_status=confirmed, valid_from<={td_str}, valid_to NULL or >={td_str}",
         }

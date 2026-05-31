@@ -43,23 +43,31 @@ class PostMarketDecisionEngineV2:
         position_limit = float(regime.get("position_limit", 0))
 
         # ── 1. Filter stock pool to confirmed mainlines only ──
+        # Expand canonical + related + branch subject_keys consistently
+        # with ActiveMainlineUniverseBuilder.
         mainline_sks: set[str] = set()
         mainline_ids: dict[str, str] = {}  # sk → mainline_id
+
+        def _safe_json_list(val: Any) -> list:
+            if isinstance(val, str):
+                import json
+                try: return json.loads(val)
+                except: return []
+            return val if isinstance(val, list) else []
+
         for ml in mainlines:
             csk = str(ml.get("canonical_subject_key") or "")
             if csk:
                 mainline_sks.add(csk)
                 mainline_ids[csk] = str(ml.get("mainline_id") or "")
-            # also add related subjects
-            rel = ml.get("related_subject_keys_json")
-            if isinstance(rel, str):
-                import json
-                try: rel = json.loads(rel)
-                except: rel = []
-            if isinstance(rel, list):
-                for rsk in rel:
-                    mainline_sks.add(str(rsk))
-                    mainline_ids[str(rsk)] = str(ml.get("mainline_id") or "")
+            # related
+            for rsk in _safe_json_list(ml.get("related_subject_keys_json")):
+                mainline_sks.add(str(rsk))
+                mainline_ids[str(rsk)] = str(ml.get("mainline_id") or "")
+            # branch — was missing before; now consistent with ActiveMainlineUniverseBuilder
+            for bsk in _safe_json_list(ml.get("branch_subject_keys_json")):
+                mainline_sks.add(str(bsk))
+                mainline_ids[str(bsk)] = str(ml.get("mainline_id") or "")
 
         # Filter pool to mainline subjects only
         filtered_pool = [r for r in pool_rows if str(r.get("subject_key") or r.get("theme_key") or "") in mainline_sks]
@@ -189,6 +197,11 @@ class PostMarketDecisionEngineV2:
             "focus_stock_count": len(focus_stocks),
         }
 
+        # ── Diagnostics: expose active universe vs Layer C coverage gap ──
+        all_pool_sks: set[str] = {str(r.get("subject_key") or r.get("theme_key") or "") for r in pool_rows}
+        filtered_sks: set[str] = {str(r.get("subject_key") or r.get("theme_key") or "") for r in filtered_pool}
+        missing_sks = all_pool_sks - mainline_sks
+
         return PostMarketDecisionV2(
             trade_date=trade_date,
             trading_permission=tp,
@@ -199,11 +212,16 @@ class PostMarketDecisionEngineV2:
             diagnostics={
                 "confirmed_mainline_source": "registry",
                 "confirmed_count": len(mainlines),
+                "active_mainline_count": len(mainlines),
+                "active_subject_key_count": len(mainline_sks),
                 "total_pool_rows": len(pool_rows),
                 "mainline_filtered_rows": len(filtered_pool),
                 "strong_pool_count": len(strong_pool),
                 "d1_count": len(d1_candidates),
                 "d1_top_n_limit": _d1_limit, "d1_top_n_applied": True,
                 "focus_count": len(focus_stocks),
+                "layer_c_subject_keys": sorted(all_pool_sks),
+                "mainline_filtered_subject_keys": sorted(filtered_sks),
+                "missing_registry_subject_keys": sorted(missing_sks),
             },
         )
