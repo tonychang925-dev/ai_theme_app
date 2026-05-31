@@ -936,7 +936,7 @@ export function RealtimeCollectorPage() {
               key: "review",
               label: (
                 <span>
-                  待复核
+                  新闻/题材待复核
                   {reviewTotal > 0 && (
                     <span style={{
                       marginLeft: 6, padding: "0 6px", borderRadius: 10,
@@ -1068,6 +1068,11 @@ export function RealtimeCollectorPage() {
                 })(),
               },
             {
+              key: "mainline",
+              label: "主线确认",
+              children: <MainlineConfirmationPanel />,
+            },
+            {
               key: "health",
               label: "运行健康",
               children: (
@@ -1115,11 +1120,6 @@ export function RealtimeCollectorPage() {
                           onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
                         />
                       ),
-                    },
-                    {
-                      key: "mainline",
-                      label: "主线确认",
-                      children: <MainlineConfirmationPanel />,
                     },
                     {
                       key: "logs",
