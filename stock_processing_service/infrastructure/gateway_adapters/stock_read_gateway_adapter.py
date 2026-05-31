@@ -407,6 +407,15 @@ class StockReadGatewayAdapter:
         )
         return [_as_dict(row) for row in rows]
 
+    async def get_staging_subject_keys(
+        self, trade_date: date, lookback_days: int = 7,
+    ) -> list[str]:
+        """从 CDP DOM 管线获取回溯窗口内的 distinct subject_keys。"""
+        fn = getattr(self._db, "get_staging_subject_keys", None)
+        if not callable(fn):
+            return []
+        return await fn(trade_date=trade_date, lookback_days=lookback_days)
+
     async def get_prior_stock_daily_snapshots(
         self, trade_date: date, lookback_days: int, stock_ids: list[str] | None = None
     ) -> list[PriorSnapshotDTO]:

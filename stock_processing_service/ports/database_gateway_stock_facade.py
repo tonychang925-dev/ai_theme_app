@@ -85,6 +85,14 @@ class DatabaseGatewayStockFacade(Protocol):
         self, trade_date: date, subject_keys: list[str] | None = None
     ) -> list[SubjectEventStatsDTO]: ...
 
+    async def get_subject_event_chain_rows(
+        self, trade_date: date, subject_keys: list[str] | None = None, lookback_days: int = 7,
+    ) -> list[dict[str, Any]]: ...
+
+    async def get_staging_subject_keys(
+        self, trade_date: date, lookback_days: int = 7,
+    ) -> list[str]: ...
+
     async def get_subject_cycle_evidence_daily(
         self, trade_date: date, subject_keys: list[str] | None = None
     ) -> list[dict[str, Any]]: ...

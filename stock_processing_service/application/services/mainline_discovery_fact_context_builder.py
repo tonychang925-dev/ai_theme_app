@@ -100,6 +100,14 @@ class MainlineDiscoveryFactContextBuilder:
             if str(c.get("subject_key", ""))
         ]
 
+        # ── 1b: Supplement with staging subjects (CDP DOM pipeline) ──
+        staging_sks = await self._fetch_staging_subjects(trade_date, lookback_days)
+        for sk in staging_sks:
+            if sk not in {str(c["subject_key"]) for c in candidate_subjects}:
+                candidate_subjects.append({"subject_key": sk, "theme_name": sk, "candidate_source": "staging", "priority_score": 0})
+        subject_keys = [str(c["subject_key"]) for c in candidate_subjects if str(c.get("subject_key", ""))]
+        diag["candidate_subject_count"] = len(candidate_subjects)
+
         # ── 2. event detail rows ──
         event_rows_by_subject = await self._fetch_event_rows(
             trade_date, subject_keys, lookback_days, diag
@@ -229,6 +237,23 @@ class MainlineDiscoveryFactContextBuilder:
             if sk:
                 by_sk.setdefault(sk, []).append(dict(r))
         return by_sk
+
+    async def _fetch_staging_subjects(
+        self,
+        td: date,
+        days: int,
+    ) -> list[str]:
+        """从 CDP DOM 管线（subject_history_staging）获取回溯窗口内的题材键。
+
+        这些是补充候选：MainlineIdentityUniverseBuilder 仅从 cycle_judgement
+        拉取有限 subject，而 staging 覆盖 jyhf_dom 全部采集。
+        """
+        try:
+            return await self._read.get_staging_subject_keys(
+                trade_date=td, lookback_days=days,
+            )
+        except Exception:
+            return []
 
     async def _fetch_event_stats(
         self,

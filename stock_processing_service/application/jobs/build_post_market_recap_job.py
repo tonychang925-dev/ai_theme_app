@@ -944,6 +944,7 @@ class BuildPostMarketRecapJob:
                 trade_date=trade_date,
                 candidate_subjects=[s["subject_key"] for s in fc["candidate_subjects"]],
                 report_context=report_context,
+                event_rows_by_subject=fc.get("event_rows_by_subject"),
             )
             logic_by_sk = {
                 sk: ev.to_dict() for sk, ev in logic_result.items()
@@ -1064,6 +1065,8 @@ class BuildPostMarketRecapJob:
             from stock_processing_service.domain.services.mainline_lifecycle.layer_b_lifecycle_adapter import (
                 MainlineLifecycleLayerBAdapter,
             )
+
+            report_context = recap_doc.get("report_context") or {}
 
             fc_builder = MainlineLifecycleFactContextBuilder(self._read_port)
             fact_ctx = await fc_builder.build(trade_date=trade_date)
