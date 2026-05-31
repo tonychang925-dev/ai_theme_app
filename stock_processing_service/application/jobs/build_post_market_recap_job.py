@@ -1077,14 +1077,35 @@ class BuildPostMarketRecapJob:
             from stock_processing_service.domain.services.post_market_decision_v2.post_market_decision_engine_v2 import (
                 PostMarketDecisionEngineV2,
             )
+            # Read confirmed mainlines from registry
+            confirmed_mainlines: list[dict[str, Any]] = []
+            try:
+                fn = getattr(self._read_port, "get_confirmed_mainlines", None)
+                if callable(fn):
+                    confirmed_mainlines = await fn(trade_date=trade_date, limit=50)
+            except Exception:
+                pass
+            # Read Layer C strong_watch_pool — prefer strong_watch_history over strong_stock_reviews
+            layer_c_rows = (
+                recap_doc.get("strong_watch_input_7d_preview")
+                or recap_doc.get("strong_watch_history")
+                or recap_doc.get("strong_stock_reviews")
+                or []
+            )
+            cml_diag = {"confirmed_count": len(confirmed_mainlines),
+                        "layer_c_rows": len(layer_c_rows),
+                        "layer_c_source": "strong_watch_history" if recap_doc.get("strong_watch_history") else ("strong_watch_input_7d_preview" if recap_doc.get("strong_watch_input_7d_preview") else "strong_stock_reviews")}
+
             pdv2_engine = PostMarketDecisionEngineV2()
             pdv2 = pdv2_engine.evaluate(
                 trade_date=trade_date.isoformat(),
-                confirmed_mainlines=[],
+                confirmed_mainlines=confirmed_mainlines,
                 mainline_lifecycle=[r.to_dict() for r in reviews],
                 market_regime=regime.to_dict(),
-                stock_pool_rows=recap_doc.get("strong_stock_reviews", []),
+                stock_pool_rows=layer_c_rows,
             )
+            pdv2.diagnostics["confirmed_mainline_source"] = "registry"
+            pdv2.diagnostics.update(cml_diag)
             recap_doc["post_market_decision_v2"] = pdv2.to_dict()
         except Exception:
             logger.exception("Lifecycle pipeline failed, continuing without it")

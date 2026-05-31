@@ -96,26 +96,36 @@ class PostMarketDecisionEngineV2:
             ))
 
         # ── 3. Build Layer D1 from Layer C ──
+        ULTRA_SHORT_ROLES = {"dragon", "leader", "sub_dragon", "dragon2", "card_position_candidate", "switch_leader"}
+        CORE_ROLES = ULTRA_SHORT_ROLES | {"core", "trend_core", "assistant"}
+
         d1_candidates: list[WeakToStrongD1Item] = []
         for item in strong_pool:
             if item.pool_entry_type == "reject":
                 continue
             ws = item.watch_score
             ss = item.support_score
+            # Fallback scoring (will be replaced by W2SCandidateService in follow-up)
             score = round(ws * 0.6 + ss * 0.4, 1)
+            d1_source = "fallback_score"
+
+            role = str(item.relay_role or "").lower().replace(" ", "_")
 
             # market_regime constraint
             if not allow_trade:
                 level = "observe_only"
                 buy_cond = ["等待市场环境改善"]
                 invalid = ["大盘持续弱势", "跌停家数未减少"]
+                d1_source = "blocked_by_market_regime"
             elif trade_mode == "ultra_short_only":
-                if item.relay_role not in {"dragon", "dragon2", "leader"}:
-                    continue
+                if role not in ULTRA_SHORT_ROLES:
+                    continue  # skip non-core in ultra_short
                 level = "formal" if score >= 70 else "observe_only"
                 buy_cond = ["竞价确认", "龙头板块不弱", "核心前排才有机会"]
                 invalid = ["低开低走", "跌破支撑", "龙头破位"]
             elif trade_mode == "mainline_core_only":
+                if role not in CORE_ROLES:
+                    continue
                 level = "formal" if score >= 68 else "observe_only"
                 buy_cond = ["主线核心承接", "分歧修复确认"]
                 invalid = ["非主线走弱", "破位下行"]
@@ -141,7 +151,8 @@ class PostMarketDecisionEngineV2:
                 buy_condition=buy_cond, invalid_condition=invalid,
                 d2_required=True, d2_status="pending",
                 evidence=item.evidence,
-                diagnostics={"source": "Layer_C_strong_pool"},
+                diagnostics={"source": "Layer_C_strong_pool", "scoring_method": d1_source,
+                             "blocked_by_market_regime": not allow_trade},
             ))
 
         # Sort D1 by score desc

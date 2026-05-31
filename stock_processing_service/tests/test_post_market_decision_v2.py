@@ -145,6 +145,35 @@ class TestPostMarketDecisionV2:
         )
         for d1 in r.weak_to_strong_d1_reviews:
             assert d1["diagnostics"]["source"] == "Layer_C_strong_pool"
+            assert "scoring_method" in d1["diagnostics"]
+
+    def test_ultra_short_allows_sub_dragon(self):
+        e = PostMarketDecisionEngineV2()
+        r = e.evaluate(
+            trade_date="2026-04-29",
+            confirmed_mainlines=[_ml()],
+            market_regime={"allow_trade": True, "trade_mode": "ultra_short_only", "position_limit": 0.2},
+            stock_pool_rows=[
+                _stock_row(name="龙二", role="sub_dragon", score=82),
+                _stock_row(name="杂毛", role="follower", score=75),
+            ],
+        )
+        names = [d["stock_name"] for d in r.weak_to_strong_d1_reviews]
+        assert "龙二" in names
+        assert "杂毛" not in names
+
+    def test_no_trade_blocks_focus_but_keeps_pool(self):
+        e = PostMarketDecisionEngineV2()
+        r = e.evaluate(
+            trade_date="2026-04-29",
+            confirmed_mainlines=[_ml()],
+            market_regime={"allow_trade": False, "trade_mode": "no_trade", "position_limit": 0},
+            stock_pool_rows=[_stock_row(entry="formal", score=90)],
+        )
+        assert len(r.strong_stock_pool_reviews) == 1
+        assert r.weak_to_strong_d1_reviews[0]["diagnostics"]["scoring_method"] == "blocked_by_market_regime"
+        assert r.weak_to_strong_d1_reviews[0]["diagnostics"]["blocked_by_market_regime"] is True
+        assert len(r.next_day_focus_stocks) == 0
 
     def test_model_to_dicts(self):
         p = StrongStockPoolItem(stock_id="000001.SZ", stock_name="测试", watch_score=85)
