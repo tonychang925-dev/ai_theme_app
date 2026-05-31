@@ -1073,19 +1073,21 @@ class BuildPostMarketRecapJob:
             recap_doc["market_regime_review"] = regime.to_dict()
             recap_doc["market_regime_diagnostics"] = regime_ctx.diagnostics
 
+            # ── PR-12.5: ActiveMainlineUniverse ──
+            from stock_processing_service.application.services.active_mainline_universe_builder import (
+                ActiveMainlineUniverseBuilder,
+            )
+            active_universe = await ActiveMainlineUniverseBuilder(self._read_port).build(trade_date=trade_date)
+            recap_doc["active_mainline_universe"] = active_universe.to_dict()
+            confirmed_mainlines = active_universe.active_mainlines
+            cml_error = None
+            if not confirmed_mainlines:
+                cml_error = "no_active_mainlines_in_registry"
+
             # ── PR-12: PostMarketDecisionV2 ──
             from stock_processing_service.domain.services.post_market_decision_v2.post_market_decision_engine_v2 import (
                 PostMarketDecisionEngineV2,
             )
-            # Read confirmed mainlines from registry
-            cml_error: str | None = None
-            confirmed_mainlines: list[dict[str, Any]] = []
-            try:
-                fn = getattr(self._read_port, "get_confirmed_mainlines", None)
-                if callable(fn):
-                    confirmed_mainlines = await fn(trade_date=trade_date, limit=50)
-            except Exception as exc:
-                cml_error = str(exc)[:200]
 
             # Read Layer C — explicit priority, diagnostics match actual source
             layer_c_source: str = "empty"

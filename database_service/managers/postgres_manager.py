@@ -8853,13 +8853,35 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         return [dict(r) for r in rows]
 
     async def get_confirmed_mainlines(self, trade_date=None, limit=50) -> List[Dict[str, Any]]:
-        """查询已确认的主线。"""
+        """查询已确认的主线（当天或历史确认，只要仍在有效期）。"""
         params: list = []
-        conditions = ["identity_status = 'confirmed'"]  # single quotes are fine, no unused backslashes needed
+        conditions = ["identity_status = 'confirmed'"]
         p_idx = 0
         if trade_date is not None:
             p_idx += 1; conditions.append(f'valid_from <= ${p_idx}::date AND (valid_to IS NULL OR valid_to >= ${p_idx}::date)'); params.append(trade_date)
         p_idx += 1; params.append(min(limit, 100))
+        where = 'WHERE ' + ' AND '.join(conditions)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                f'SELECT * FROM mainline_registry {where} ORDER BY valid_from DESC, mainline_name LIMIT ${p_idx}',
+                *params,
+            )
+        return [dict(r) for r in rows]
+
+    async def get_active_confirmed_mainlines(self, trade_date=None, limit=100) -> List[Dict[str, Any]]:
+        """查询活跃已确认主线（排除 archived/dormant 状态）。
+
+        与 get_confirmed_mainlines 语义相同，但增加 tracking_status 过滤。
+        """
+        params: list = []
+        conditions = [
+            "identity_status = 'confirmed'",
+            "COALESCE(tracking_status, 'active') NOT IN ('archived', 'dormant')",
+        ]
+        p_idx = 0
+        if trade_date is not None:
+            p_idx += 1; conditions.append(f'valid_from <= ${p_idx}::date AND (valid_to IS NULL OR valid_to >= ${p_idx}::date)'); params.append(trade_date)
+        p_idx += 1; params.append(min(limit, 200))
         where = 'WHERE ' + ' AND '.join(conditions)
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(
