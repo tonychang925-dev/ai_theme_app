@@ -1072,6 +1072,20 @@ class BuildPostMarketRecapJob:
             )
             recap_doc["market_regime_review"] = regime.to_dict()
             recap_doc["market_regime_diagnostics"] = regime_ctx.diagnostics
+
+            # ── PR-12: PostMarketDecisionV2 ──
+            from stock_processing_service.domain.services.post_market_decision_v2.post_market_decision_engine_v2 import (
+                PostMarketDecisionEngineV2,
+            )
+            pdv2_engine = PostMarketDecisionEngineV2()
+            pdv2 = pdv2_engine.evaluate(
+                trade_date=trade_date.isoformat(),
+                confirmed_mainlines=[],
+                mainline_lifecycle=[r.to_dict() for r in reviews],
+                market_regime=regime.to_dict(),
+                stock_pool_rows=recap_doc.get("strong_stock_reviews", []),
+            )
+            recap_doc["post_market_decision_v2"] = pdv2.to_dict()
         except Exception:
             logger.exception("Lifecycle pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []
