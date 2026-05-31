@@ -5200,3 +5200,164 @@ def _row_to_dict(row: Any) -> dict[str, Any]:
     if hasattr(row, "__dict__"):
         return {k: v for k, v in row.__dict__.items() if not k.startswith("_")}
     return dict(row)
+
+
+# ── PR-12.5: Mainline Review API ──
+
+@app.get("/api/v2/mainline-review/queue")
+async def get_mainline_review_queue(
+    trade_date: str | None = None,
+    status: str | None = None,
+    limit: int = 200,
+) -> dict[str, Any]:
+    """查询主线审核队列。"""
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+    if pool is None:
+        return {"items": [], "total": 0}
+    td = date.fromisoformat(trade_date) if trade_date else None
+    async with pool.acquire() as conn:
+        where = []; params: list = []; i = 0
+        if td is not None: i += 1; where.append(f"trade_date = ${i}::date"); params.append(td)
+        if status is not None: i += 1; where.append(f"review_status = ${i}"); params.append(status)
+        i += 1; params.append(min(limit, 500))
+        cond = ("WHERE " + " AND ".join(where)) if where else ""
+        rows = await conn.fetch(f"SELECT * FROM mainline_review_queue {cond} ORDER BY review_priority DESC NULLS LAST LIMIT ${i}", *params)
+        items = [_row_to_dict(r) for r in rows]
+        pending = await conn.fetchval("SELECT COUNT(*) FROM mainline_review_queue WHERE review_status = $1", "pending") if not status else None
+        return {"items": items, "total": pending, "pending_count": pending}
+
+
+@app.get("/api/v2/mainline-review/registry")
+async def get_mainline_registry(trade_date: str | None = None, limit: int = 100) -> dict[str, Any]:
+    """查询已确认的主线注册表。"""
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+    if pool is None:
+        return {"items": [], "total": 0}
+    async with pool.acquire() as conn:
+        td = date.fromisoformat(trade_date) if trade_date else None
+        params: list = []; i = 0
+        if td is not None: i += 1; params.append(td); w = f"valid_from <= ${i}::date AND (valid_to IS NULL OR valid_to >= ${i}::date)"
+        else: w = "1=1"
+        i += 1; params.append(min(limit, 100))
+        rows = await conn.fetch(f"SELECT * FROM mainline_registry WHERE identity_status = 'confirmed' AND {w} ORDER BY valid_from DESC LIMIT ${i}", *params)
+    return {"items": [_row_to_dict(r) for r in rows], "total": len(rows)}
+
+
+@app.post("/api/v2/mainline-review/import-candidates")
+async def import_mainline_review_candidates(payload: dict[str, Any]) -> dict[str, Any]:
+    """导入当日主线候选。从 recap snapshot 读取 analyst_review_items。"""
+    td_str = str(payload.get("trade_date") or "")
+    if not td_str:
+        return {"ok": False, "error": "trade_date required"}
+    try:
+        d = date.fromisoformat(td_str)
+    except ValueError:
+        return {"ok": False, "error": "invalid date"}
+    try:
+        row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
+        if not row:
+            return {"ok": False, "error": "no snapshot for date"}
+        payload_data = _normalize_recap_payload(row)
+        rd = payload_data.get("recap_doc") or payload_data
+        items = rd.get("analyst_review_items") if isinstance(rd, dict) else None
+        if not isinstance(items, list) or not items:
+            return {"ok": False, "error": "no analyst_review_items in snapshot", "count": 0}
+        pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+        pool = getattr(pool, "pool", None) if pool else None
+        if pool is None:
+            return {"ok": False, "error": "no db pool"}
+        count = 0
+        from database_service.managers.postgres_manager import _row_to_dict as _rd
+        async with pool.acquire() as conn:
+            for item in items:
+                try:
+                    await conn.execute("""
+                        INSERT INTO mainline_review_queue
+                          (review_id, trade_date, subject_key, theme_name, machine_state, mainline_type,
+                           confirmation_path, trigger_mode, review_reason, review_priority, review_status,
+                           suggested_human_decision, scores_json, evidence_json, risk_flags_json, diagnostics_json)
+                        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)
+                        ON CONFLICT (review_id) DO NOTHING
+                    """, str(item.get("review_id", "")), d, str(item.get("subject_key", "")),
+                        str(item.get("theme_name", "")), str(item.get("machine_state", "")),
+                        str(item.get("mainline_type", "")), str(item.get("confirmation_path", "")),
+                        str(item.get("trigger_mode", "")), str(item.get("review_reason", "")),
+                        float(item.get("review_priority", 0)), str(item.get("review_status", "pending")),
+                        str(item.get("suggested_human_decision", "")),
+                        json.dumps(item.get("scores", {})), json.dumps(item.get("evidence", {})),
+                        json.dumps(item.get("risk_flags", {})), json.dumps(item.get("diagnostics", {})),
+                    )
+                    count += 1
+                except Exception:
+                    pass
+        return {"ok": True, "count": count}
+    except Exception as exc:
+        logger.error("import mainline candidates failed: %s", exc)
+        return {"ok": False, "error": str(exc)[:200]}
+
+
+@app.post("/api/v2/mainline-review/{review_id}/decision")
+async def submit_mainline_review_decision(review_id: str, payload: dict[str, Any]) -> dict[str, Any]:
+    """提交人工审核决策。"""
+    decision = str(payload.get("human_decision", ""))
+    valid = {"confirm_mainline", "watch", "reject", "downgrade_to_theme", "merge_into_existing_mainline"}
+    if decision not in valid:
+        return {"ok": False, "error": f"invalid decision: {decision}", "valid": list(valid)}
+
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+    if pool is None:
+        return {"ok": False, "error": "no db pool"}
+
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc)
+    reviewed_by = str(payload.get("human_reviewer", "system") or "system")
+    notes = str(payload.get("human_notes", "") or "")
+
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow("SELECT * FROM mainline_review_queue WHERE review_id = $1", review_id)
+        if not row:
+            return {"ok": False, "error": "review not found"}
+
+        td = row["trade_date"]
+
+        # Update the review queue entry
+        await conn.execute("""
+            UPDATE mainline_review_queue SET review_status = 'reviewed', human_decision = $2,
+              human_reviewer = $3, human_notes = $4, reviewed_at = $5 WHERE review_id = $1
+        """, review_id, decision, reviewed_by, notes, now)
+
+        if decision == "confirm_mainline":
+            csk = str(payload.get("canonical_subject_key", "") or "")
+            ml_name = str(payload.get("mainline_name", "") or row["theme_name"] or "")
+            if not csk:
+                return {"ok": False, "error": "confirm_mainline requires canonical_subject_key"}
+            mid = f"ml_{csk}_{td.strftime('%Y%m') if td else 'unknown'}"
+            await conn.execute("""
+                INSERT INTO mainline_registry (mainline_id, mainline_name, canonical_subject_key, identity_status, valid_from,
+                  mainline_type, source_review_id, core_subject_keys_json, related_subject_keys_json, human_reviewer, human_notes)
+                VALUES ($1,$2,$3,'confirmed',$4,$5,$6,$7,$8,$9,$10)
+                ON CONFLICT (mainline_id) DO UPDATE SET
+                  mainline_name=$2, identity_status='confirmed', updated_at=NOW()
+            """, mid, ml_name, csk, td,
+                str(row.get("mainline_type") or ""), review_id,
+                json.dumps([csk]), json.dumps(payload.get("related_subject_keys", []) or []),
+                reviewed_by, notes)
+            return {"ok": True, "action": "confirmed", "mainline_id": mid}
+
+        if decision == "merge_into_existing_mainline":
+            target = str(payload.get("merge_target_mainline_id", "") or "")
+            if not target:
+                return {"ok": False, "error": "merge requires merge_target_mainline_id"}
+            related = list(payload.get("related_subject_keys", []) or [])
+            existing = await conn.fetchval("SELECT related_subject_keys_json FROM mainline_registry WHERE mainline_id = $1", target)
+            current = json.loads(existing) if isinstance(existing, str) else (existing or [])
+            merged = list(set(current + related + [str(row["subject_key"] or "")]))
+            await conn.execute("UPDATE mainline_registry SET related_subject_keys_json = $2, updated_at = NOW() WHERE mainline_id = $1", target, json.dumps(merged))
+            return {"ok": True, "action": "merged", "target": target}
+
+        # watch / reject / downgrade_to_theme — queue only, no registry
+        return {"ok": True, "action": decision, "registry_written": False}
+
