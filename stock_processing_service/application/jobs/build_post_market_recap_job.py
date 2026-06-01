@@ -40,6 +40,9 @@ from stock_processing_service.domain.services.mainline_discovery.major_event_cla
 from stock_processing_service.domain.services.mainline_discovery.mainline_narrative_judge import (
     MainlineNarrativeJudge,
 )
+from stock_processing_service.domain.services.mainline_discovery.models import (
+    NarrativeJudgeResult,
+)
 from stock_processing_service.domain.services.mainline_discovery.mainline_discovery_engine import (
     MainlineDiscoveryEngine,
 )
@@ -941,6 +944,7 @@ class BuildPostMarketRecapJob:
                 trade_date=trade_date,
                 candidate_subjects=[s["subject_key"] for s in fc["candidate_subjects"]],
                 report_context=report_context,
+                event_rows_by_subject=fc.get("event_rows_by_subject"),
             )
             logic_by_sk = {
                 sk: ev.to_dict() for sk, ev in logic_result.items()
@@ -970,9 +974,19 @@ class BuildPostMarketRecapJob:
                     major_by_sk[sk] = result.to_dict()
 
             # ── run narrative judge (best-effort, LLM may fail) ──
-            narrative_builder = MainlineNarrativeJudge()
+            def _llm_factory():
+                from model_service.llm_parser.reliable_deepseek_parser import ReliableDeepSeekParser
+                import os
+                return ReliableDeepSeekParser(
+                    model_name=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"),
+                    config={"max_retries": 1, "timeout": 25, "temperature": 0.1,
+                            "enable_cache": True, "cache_ttl": 3600})
+            narrative_builder = MainlineNarrativeJudge(parser_factory=_llm_factory)
             narrative_by_sk: dict[str, dict] = {}
             for sk, lev in logic_by_sk.items():
+                if not lev.get("event_chain"):
+                    narrative_by_sk[sk] = NarrativeJudgeResult().to_dict()
+                    continue
                 nj = await narrative_builder.judge(
                     subject_key=sk,
                     theme_name=_theme_name_for_sk(fc["candidate_subjects"], sk),
@@ -1002,6 +1016,15 @@ class BuildPostMarketRecapJob:
                 narrative_by_subject=narrative_by_sk,
                 market_by_subject=market_by_sk,
             )
+            # Sanitize theme_name: cap at 40 chars, fallback to subject_key
+            for it in review_items:
+                tn = (it.theme_name or "").strip()
+                if len(tn) > 40 or tn.startswith("【"):
+                    # Try candidate_subjects first
+                    short = _theme_name_for_sk(fc.get("candidate_subjects", []), it.subject_key)
+                    it.theme_name = (short or it.subject_key)[:40] if short and len(short) < 40 else it.subject_key[:40]
+                elif not tn:
+                    it.theme_name = it.subject_key[:40]
 
             # ── write to recap_doc ──
             sd = fc.get("diagnostics", {})
@@ -1043,6 +1066,8 @@ class BuildPostMarketRecapJob:
                 MainlineLifecycleLayerBAdapter,
             )
 
+            report_context = recap_doc.get("report_context") or {}
+
             fc_builder = MainlineLifecycleFactContextBuilder(self._read_port)
             fact_ctx = await fc_builder.build(trade_date=trade_date)
 
@@ -1072,6 +1097,50 @@ class BuildPostMarketRecapJob:
             )
             recap_doc["market_regime_review"] = regime.to_dict()
             recap_doc["market_regime_diagnostics"] = regime_ctx.diagnostics
+
+            # ── PR-12.5: ActiveMainlineUniverse ──
+            from stock_processing_service.application.services.active_mainline_universe_builder import (
+                ActiveMainlineUniverseBuilder,
+            )
+            active_universe = await ActiveMainlineUniverseBuilder(self._read_port).build(trade_date=trade_date)
+            recap_doc["active_mainline_universe"] = active_universe.to_dict()
+            confirmed_mainlines = active_universe.active_mainlines
+            cml_error = None
+            if not confirmed_mainlines:
+                cml_error = "no_active_mainlines_in_registry"
+
+            # ── PR-12: PostMarketDecisionV2 ──
+            from stock_processing_service.domain.services.post_market_decision_v2.post_market_decision_engine_v2 import (
+                PostMarketDecisionEngineV2,
+            )
+
+            # Read Layer C — explicit priority, diagnostics match actual source
+            layer_c_source: str = "empty"
+            if isinstance(recap_doc.get("strong_watch_history"), list) and recap_doc["strong_watch_history"]:
+                layer_c_rows = recap_doc["strong_watch_history"]
+                layer_c_source = "strong_watch_history"
+            elif isinstance(recap_doc.get("strong_watch_input_7d_preview"), list) and recap_doc["strong_watch_input_7d_preview"]:
+                layer_c_rows = recap_doc["strong_watch_input_7d_preview"]
+                layer_c_source = "strong_watch_input_7d_preview"
+            elif isinstance(recap_doc.get("strong_stock_reviews"), list) and recap_doc["strong_stock_reviews"]:
+                layer_c_rows = recap_doc["strong_stock_reviews"]
+                layer_c_source = "strong_stock_reviews_fallback"
+            else:
+                layer_c_rows = []
+
+            pdv2_engine = PostMarketDecisionEngineV2()
+            pdv2 = pdv2_engine.evaluate(
+                trade_date=trade_date.isoformat(),
+                confirmed_mainlines=confirmed_mainlines,
+                mainline_lifecycle=[r.to_dict() for r in reviews],
+                market_regime=regime.to_dict(),
+                stock_pool_rows=layer_c_rows,
+            )
+            pdv2.diagnostics["layer_c_rows"] = len(layer_c_rows)
+            pdv2.diagnostics["layer_c_source"] = layer_c_source
+            if cml_error:
+                pdv2.diagnostics["confirmed_mainline_error"] = cml_error
+            recap_doc["post_market_decision_v2"] = pdv2.to_dict()
         except Exception:
             logger.exception("Lifecycle pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []

@@ -2371,27 +2371,15 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     async def _fetch_event_theme_map_rows(
         self, trade_date, subject_keys: List[str], lookback_days: int
     ) -> List[Dict[str, Any]]:
-        """从 event_theme_map + news_event 补充事件明细。"""
+        """从 event_theme_map + news_event 补充事件明细。
+
+        直接使用 event_theme_map.tree_subject_key / branch_subject_key 过滤，
+        不依赖 theme_master（该表无 subject_key 列，已废弃此路径）。
+        """
         from datetime import timedelta
         start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
 
-        # Get theme_id → subject_key mapping
-        theme_ids: set[int] = set()
-        id_to_sk: dict[int, str] = {}
         async with self.pool.acquire() as conn:
-            map_rows = await conn.fetch(
-                """SELECT id, subject_key FROM theme_master
-                   WHERE subject_key = ANY($1::text[])""",
-                subject_keys,
-            )
-            for r in map_rows:
-                tid = int(r["id"])
-                theme_ids.add(tid)
-                id_to_sk[tid] = str(r["subject_key"])
-
-            if not theme_ids:
-                return []
-
             rows = await conn.fetch(
                 """SELECT * FROM (
                     SELECT
@@ -2404,26 +2392,49 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         ne.severity_score,
                         ne.source_weight,
                         ne.entities,
-                        etm.theme_id,
+                        etm.tree_subject_key AS subject_key,
                         etm.confidence AS match_confidence,
                         ROW_NUMBER() OVER (
-                            PARTITION BY etm.theme_id
+                            PARTITION BY etm.tree_subject_key
                             ORDER BY ne.event_time DESC
                         ) AS rn
                     FROM event_theme_map etm
                     JOIN news_event ne ON ne.id = etm.event_id
-                    WHERE etm.theme_id = ANY($1::int[])
+                    WHERE etm.tree_subject_key = ANY($1::text[])
+                      AND ne.event_time::date BETWEEN $2::date AND $3::date
+
+                    UNION ALL
+
+                    SELECT
+                        etm.event_id,
+                        ne.event_type,
+                        ne.confidence,
+                        ne.summary,
+                        ne.event_time::text AS occurred_at,
+                        to_char(ne.event_time, 'YYYY-MM-DD') AS event_date,
+                        ne.severity_score,
+                        ne.source_weight,
+                        ne.entities,
+                        etm.branch_subject_key AS subject_key,
+                        etm.confidence AS match_confidence,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY etm.branch_subject_key
+                            ORDER BY ne.event_time DESC
+                        ) AS rn
+                    FROM event_theme_map etm
+                    JOIN news_event ne ON ne.id = etm.event_id
+                    WHERE etm.branch_subject_key = ANY($1::text[])
                       AND ne.event_time::date BETWEEN $2::date AND $3::date
                 ) sub
                 WHERE sub.rn <= 10""",
-                list(theme_ids), start_date, trade_date,
+                subject_keys, start_date, trade_date,
             )
 
         results: list[dict[str, Any]] = []
         for row in rows:
             r = dict(row)
             r.pop("rn", None)
-            sk = id_to_sk.get(int(r.get("theme_id") or 0), "")
+            sk = str(r.get("subject_key") or "").strip()
             if not sk:
                 continue
             results.append({
@@ -2505,6 +2516,27 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             results.append(r)
 
         return results
+
+    async def get_staging_subject_keys(
+        self, trade_date, lookback_days: int = 7
+    ) -> List[str]:
+        """返回 subject_history_staging 中在回溯窗口内有事件的 distinct subject_keys。
+
+        用于 FactContextBuilder 补充 CDP DOM 管线产生的题材候选。
+        """
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                """SELECT DISTINCT shs.subject_key
+                   FROM subject_history_staging shs
+                   WHERE shs.subject_key IS NOT NULL
+                     AND shs.subject_key != ''
+                     AND shs.rank_date BETWEEN $1::date AND $2::date""",
+                start_date, trade_date,
+            )
+        return [str(r["subject_key"]) for r in rows]
 
     async def _fetch_cdp_dom_event_rows(
         self, trade_date, subject_keys: List[str], lookback_days: int
@@ -8853,13 +8885,35 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         return [dict(r) for r in rows]
 
     async def get_confirmed_mainlines(self, trade_date=None, limit=50) -> List[Dict[str, Any]]:
-        """查询已确认的主线。"""
+        """查询已确认的主线（当天或历史确认，只要仍在有效期）。"""
         params: list = []
-        conditions = ["identity_status = 'confirmed'"]  # single quotes are fine, no unused backslashes needed
+        conditions = ["identity_status = 'confirmed'"]
         p_idx = 0
         if trade_date is not None:
             p_idx += 1; conditions.append(f'valid_from <= ${p_idx}::date AND (valid_to IS NULL OR valid_to >= ${p_idx}::date)'); params.append(trade_date)
         p_idx += 1; params.append(min(limit, 100))
+        where = 'WHERE ' + ' AND '.join(conditions)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                f'SELECT * FROM mainline_registry {where} ORDER BY valid_from DESC, mainline_name LIMIT ${p_idx}',
+                *params,
+            )
+        return [dict(r) for r in rows]
+
+    async def get_active_confirmed_mainlines(self, trade_date=None, limit=100) -> List[Dict[str, Any]]:
+        """查询活跃已确认主线（排除 archived/dormant 状态）。
+
+        与 get_confirmed_mainlines 语义相同，但增加 tracking_status 过滤。
+        """
+        params: list = []
+        conditions = [
+            "identity_status = 'confirmed'",
+            "COALESCE(tracking_status, 'active') NOT IN ('archived', 'dormant')",
+        ]
+        p_idx = 0
+        if trade_date is not None:
+            p_idx += 1; conditions.append(f'valid_from <= ${p_idx}::date AND (valid_to IS NULL OR valid_to >= ${p_idx}::date)'); params.append(trade_date)
+        p_idx += 1; params.append(min(limit, 200))
         where = 'WHERE ' + ' AND '.join(conditions)
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(

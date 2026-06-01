@@ -1161,6 +1161,43 @@ class DatabaseGateway:
             logger.error(f"读取 subject_event_stats 失败 trade_date={trade_date}: {e}")
             raise
 
+    async def get_subject_event_chain_rows(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+        lookback_days: int = 7,
+    ) -> List[Dict[str, Any]]:
+        """读取主题事件明细行 — theme_history_event + event_subject_map + subject_history_staging。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_subject_event_chain_rows(
+                trade_date=trade_date, subject_keys=subject_keys, lookback_days=lookback_days,
+            )
+            self._record_request(True, start_time)
+            logger.info(f"get_subject_event_chain_rows: {len(subject_keys) if subject_keys else 0} keys → {len(result)} rows")
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.warning(f"get_subject_event_chain_rows failed: {e}", exc_info=True)
+            return []
+
+    async def get_staging_subject_keys(
+        self, trade_date, lookback_days: int = 7
+    ) -> List[str]:
+        """读取 subject_history_staging 中回溯窗口内的 distinct subject_keys。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_staging_subject_keys(
+                trade_date=trade_date, lookback_days=lookback_days,
+            )
+            self._record_request(True, start_time)
+            logger.info(f"get_staging_subject_keys: lookback={lookback_days} → {len(result)} keys")
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.warning(f"get_staging_subject_keys failed: {e}", exc_info=True)
+            return []
+
     async def get_subject_cycle_evidence_daily(
         self, trade_date, subject_keys: List[str] | None = None
     ) -> List[Dict[str, Any]]:

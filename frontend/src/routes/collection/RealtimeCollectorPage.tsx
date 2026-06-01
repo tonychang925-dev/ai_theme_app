@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
+  fetchRealtimeCollectorLogs,
   fetchJyhfCdpCollectorLogs,
   fetchJyhfCdpCollectorStatus,
   startJyhfCdpCollector,
@@ -27,15 +28,17 @@ import {
   type OrchestratorStatus,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
-import { Button, ConfigProvider, Space, Table, Tabs, theme } from "antd";
+import { Button, ConfigProvider, Segmented, Space, Table, Tabs, theme } from "antd";
 import realtimeIcon from "../../assets/intel-icons/实时采集.png";
 
 // P4-1A: 展示组件
 import ServiceStatusBar, { type SseConnState } from "./components/ServiceStatusBar";
 import CollectionControlPanel from "./components/CollectionControlPanel";
+import CollectorLogPanels from "./components/CollectorLogPanels";
 import UnifiedAlertPanel, { type UnifiedAlertRow } from "./components/UnifiedAlertPanel";
 import DiagnosticsTabs from "./components/DiagnosticsTabs";
 import OrchestratorStatusPanel from "./components/OrchestratorStatusPanel";
+import { MainlineConfirmationPanel } from "./components/MainlineConfirmationPanel";
 
 function nowText() {
   return new Date().toLocaleString("zh-CN", {
@@ -57,6 +60,8 @@ export function RealtimeCollectorPage() {
   const [jyhfStatus, setJyhfStatus] = useState<JyhfCdpCollectorStatus | null>(null);
   const [jyhfError, setJyhfError] = useState<string | null>(null);
   const [jyhfLogs, setJyhfLogs] = useState<string[]>([]);
+  const [collectorLogs, setCollectorLogs] = useState<string[]>([]);
+  const [collectorLogWindowMinutes, setCollectorLogWindowMinutes] = useState<5 | 30 | 1440>(30);
   const [auctionEnabled, setAuctionEnabled] = useState(true);
   const [auctionStatus, setAuctionStatus] = useState<JyhfAuctionStatus | null>(null);
   const [auctionBusy, setAuctionBusy] = useState(false);
@@ -72,6 +77,7 @@ export function RealtimeCollectorPage() {
   const [output, setOutput] = useState<string[]>([]);
   const terminalRef = useRef<HTMLDivElement | null>(null);
   const initializedRef = useRef(false);
+  const collectorLogWindowInitRef = useRef(false);
 
   // ── 生命周期日志去重：只在 state/pid/source 变化时写入 ──
   const lastRealtimeSigRef = useRef<string>("");
@@ -205,6 +211,35 @@ export function RealtimeCollectorPage() {
     setJyhfLogs((result.lines ?? []).slice(-500));
   }
 
+  async function refreshRealtimeCollectorLogs(maxAgeMinutes = collectorLogWindowMinutes) {
+    const result = await fetchRealtimeCollectorLogs(250, maxAgeMinutes);
+    const next: string[] = [];
+    const allowedOrder = [
+      "raw_news",
+      "decision",
+      "db_collector",
+      "akshare",
+      "brief_rebuild",
+      "intel_producer",
+      "intel_collection",
+    ];
+    const entries = Object.entries(result.files ?? {})
+      .filter(([fileName]) => allowedOrder.some((token) => fileName.includes(token)))
+      .sort(([a], [b]) => {
+        const ai = allowedOrder.findIndex((token) => a.includes(token));
+        const bi = allowedOrder.findIndex((token) => b.includes(token));
+        return ai - bi;
+      });
+
+    for (const [fileName, lines] of entries) {
+      if (!lines || lines.length === 0) continue;
+      for (const line of lines) {
+        next.push(line);
+      }
+    }
+    setCollectorLogs(next.slice(-1000));
+  }
+
   useEffect(() => {
     if (initializedRef.current) return;
     initializedRef.current = true;
@@ -213,16 +248,26 @@ export function RealtimeCollectorPage() {
 
     refreshBundledStatus().catch(() => {});
     refreshJyhfCdpLogs().catch(() => undefined);
+    refreshRealtimeCollectorLogs(collectorLogWindowMinutes).catch(() => undefined);
   }, []);
+
+  useEffect(() => {
+    if (!collectorLogWindowInitRef.current) {
+      collectorLogWindowInitRef.current = true;
+      return;
+    }
+    refreshRealtimeCollectorLogs(collectorLogWindowMinutes).catch(() => undefined);
+  }, [collectorLogWindowMinutes]);
 
   // P0-C2: 统一 8s 轮询替代原来的 3 个独立轮询
   useEffect(() => {
     const timer = window.setInterval(() => {
       refreshBundledStatus().catch(() => {});
       refreshJyhfCdpLogs().catch(() => undefined);
+      refreshRealtimeCollectorLogs(collectorLogWindowMinutes).catch(() => undefined);
     }, 8000);
     return () => window.clearInterval(timer);
-  }, []);
+  }, [collectorLogWindowMinutes]);
 
   // P4-2B: Orchestrator 60s 低频轮询（非阻塞，失败不影响主控）
   async function refreshOrchestrator() {
@@ -310,7 +355,7 @@ export function RealtimeCollectorPage() {
     const panel = terminalRef.current;
     if (!panel) return;
     panel.scrollTop = panel.scrollHeight;
-  }, [jyhfLogs, output]);
+  }, [collectorLogs, jyhfLogs, output]);
 
   async function handleStart() {
     try {
@@ -354,6 +399,41 @@ export function RealtimeCollectorPage() {
     } catch (err) {
       const message = err instanceof Error ? err.message : "刷新失败";
       append(`刷新失败: ${message}`);
+    } finally {
+      setRefreshBusy(false);
+    }
+  }
+
+  async function handleRefreshHealthPanel() {
+    setRefreshBusy(true);
+    try {
+      await Promise.allSettled([
+        refreshBundledStatus(),
+        refreshJyhfCdpStatus(),
+        refreshJyhfCdpLogs(),
+        refreshRealtimeCollectorLogs(collectorLogWindowMinutes),
+        refreshOrchestrator(),
+      ]);
+      append("已刷新运行健康面板");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "刷新失败";
+      append(`运行健康刷新失败: ${message}`);
+    } finally {
+      setRefreshBusy(false);
+    }
+  }
+
+  async function handleRefreshHealthLogs() {
+    setRefreshBusy(true);
+    try {
+      await Promise.allSettled([
+        refreshJyhfCdpLogs(),
+        refreshRealtimeCollectorLogs(collectorLogWindowMinutes),
+      ]);
+      append("已刷新运行日志窗口");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "刷新失败";
+      append(`运行日志刷新失败: ${message}`);
     } finally {
       setRefreshBusy(false);
     }
@@ -621,12 +701,20 @@ export function RealtimeCollectorPage() {
   }
 
   const jyhfStage = getJyhfStage(jyhfStatus);
+  const collectorLogWindowLabel = collectorLogWindowMinutes === 1440
+    ? "近 24 小时"
+    : `最近 ${collectorLogWindowMinutes} 分钟`;
 
   const mergedLogs = useMemo(() => {
     const parts: string[] = [];
 
     // ── 操作日志 ──
     parts.push("── 操作日志 ──", ...output.slice(-80), "");
+
+    // ── 运行日志（采集/LLM/匹配） ──
+    if (collectorLogs.length) {
+      parts.push(`── 运行日志 (采集/LLM/匹配, ${collectorLogWindowLabel}) ──`, ...collectorLogs.slice(-400), "");
+    }
 
     // ── 生命周期日志 ── (当前快照，不累计)
     if (stackStatus) {
@@ -676,13 +764,16 @@ export function RealtimeCollectorPage() {
       );
     }
     return parts;
-  }, [output, jyhfLogs, stackStatus, jyhfCollectorRunning, jyhfStatus?.service_running, auctionEnabled, auctionStatus]);
+  }, [output, collectorLogs, jyhfLogs, stackStatus, jyhfCollectorRunning, jyhfStatus?.service_running, auctionEnabled, auctionStatus]);
 
   /** 业务运行日志：实时采集 + LLM结构化 + 题材匹配（不含 JYHF DOM 日志） */
   const businessLogs = useMemo(() => {
     const parts: string[] = [];
     // 操作日志
     parts.push("── 操作日志 ──", ...output.slice(-80), "");
+    if (collectorLogs.length) {
+      parts.push(`── 运行日志 (采集/LLM/匹配, ${collectorLogWindowLabel}) ──`, ...collectorLogs.slice(-400), "");
+    }
     // 生命周期 + Stream 指标
     if (stackStatus) {
       const streams = stackStatus.redis_streams;
@@ -721,7 +812,7 @@ export function RealtimeCollectorPage() {
       );
     }
     return parts;
-  }, [output, stackStatus, auctionEnabled, auctionStatus]);
+  }, [output, collectorLogs, stackStatus, auctionEnabled, auctionStatus]);
 
   // P4-1A: 统一告警 view model — Kline + W2S 合并为 UnifiedAlertRow[]
   const unifiedAlerts = useMemo((): UnifiedAlertRow[] => {
@@ -776,7 +867,7 @@ export function RealtimeCollectorPage() {
   );
 
   return (
-    <div className="workspace-page">
+    <div className="workspace-page realtime-collector-page">
       <section className="strong-watch-toolbar">
         <img src={realtimeIcon} alt="" style={{ height: 64, width: 64, flexShrink: 0 }} />
         <h1 className="strong-watch-title">实时采集</h1>
@@ -845,7 +936,7 @@ export function RealtimeCollectorPage() {
               key: "review",
               label: (
                 <span>
-                  待复核
+                  新闻/题材待复核
                   {reviewTotal > 0 && (
                     <span style={{
                       marginLeft: 6, padding: "0 6px", borderRadius: 10,
@@ -977,50 +1068,91 @@ export function RealtimeCollectorPage() {
                 })(),
               },
             {
+              key: "mainline",
+              label: "主线确认",
+              children: <MainlineConfirmationPanel />,
+            },
+            {
               key: "health",
               label: "运行健康",
               children: (
-                <Tabs size="small" defaultActiveKey="infra" items={[
-                  {
-                    key: "infra",
-                    label: "基础设施",
-                    children: (
-                      <OrchestratorStatusPanel
-                        status={orchStatus}
-                        loading={orchLoading}
-                        error={orchError}
-                        onRefresh={refreshOrchestrator}
-                      />
-                    ),
-                  },
-                  {
-                    key: "dataflow",
-                    label: "数据流",
-                    children: (
-                      <DiagnosticsTabs
-                        mergedLogs={businessLogs} jyhfLogs={jyhfLogs} stackStatus={stackStatus}
-                        reviewItems={reviewItems} reviewTotal={reviewTotal}
-                        reviewBusy={reviewBusy} selectedIds={selectedIds}
-                        onToggleSelect={toggleSelect} onSelectAll={selectAll}
-                        onSetSelectedKeys={setSelectedIds}
-                        onConfirm={handleConfirmReview} onDelete={handleDeleteReview}
-                        onBatchDelete={handleBatchDelete} onImportPending={handleImportPending}
-                        onClearPending={handleClearPending} onRefreshReview={refreshReviewQueue}
-                        onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
-                      />
-                    ),
-                  },
-                  {
-                    key: "logs",
-                    label: "日志",
-                    children: (
-                      <div className="collection-log-panel" style={{ maxHeight: 400, overflow: "auto", fontFamily: "monospace", fontSize: 12, lineHeight: 1.6, color: "#94a3b8" }}>
-                        {mergedLogs.length === 0 ? <div style={{ color: "#64748b" }}>暂无日志</div>
-                          : mergedLogs.slice(-200).map((line, i) => <div key={i}>{line}</div>)}
-                      </div>
-                    ),
-                  },
-                ]} />
+                <div className="realtime-health-shell">
+                  <Space size={12} style={{ marginBottom: 12, flexWrap: "wrap" }}>
+                    <span style={{ color: "#94a3b8", fontSize: 12 }}>运行日志窗口</span>
+                    <Segmented
+                      size="small"
+                      value={collectorLogWindowMinutes}
+                      options={[
+                        { label: "近 5 分钟", value: 5 },
+                        { label: "近 30 分钟", value: 30 },
+                        { label: "近 24 小时", value: 1440 },
+                      ]}
+                      onChange={(value) => setCollectorLogWindowMinutes(Number(value) as 5 | 30 | 1440)}
+                    />
+                    <span style={{ color: "#64748b", fontSize: 12 }}>当前：{collectorLogWindowLabel}</span>
+                  </Space>
+                  <Tabs className="realtime-health-tabs" size="small" defaultActiveKey="infra" style={{ flex: 1, minHeight: 0 }} items={[
+                    {
+                      key: "infra",
+                      label: "基础设施",
+                      children: (
+                        <OrchestratorStatusPanel
+                          status={orchStatus}
+                          loading={orchLoading}
+                          error={orchError}
+                          onRefresh={refreshOrchestrator}
+                        />
+                      ),
+                    },
+                    {
+                      key: "dataflow",
+                      label: "数据流",
+                      children: (
+                        <DiagnosticsTabs
+                          mergedLogs={businessLogs} jyhfLogs={jyhfLogs} showLogPanels={false} stackStatus={stackStatus}
+                          reviewItems={reviewItems} reviewTotal={reviewTotal}
+                          reviewBusy={reviewBusy} selectedIds={selectedIds}
+                          onToggleSelect={toggleSelect} onSelectAll={selectAll}
+                          onSetSelectedKeys={setSelectedIds}
+                          onConfirm={handleConfirmReview} onDelete={handleDeleteReview}
+                          onBatchDelete={handleBatchDelete} onImportPending={handleImportPending}
+                          onClearPending={handleClearPending} onRefreshReview={refreshReviewQueue}
+                          onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
+                        />
+                      ),
+                    },
+                    {
+                      key: "logs",
+                      label: "日志",
+                      children: (
+                        <CollectorLogPanels
+                          mergedLogs={businessLogs}
+                          jyhfLogs={jyhfLogs}
+                          stackStatus={stackStatus}
+                          auctionStatus={auctionStatus}
+                          collectorLogWindowLabel={collectorLogWindowLabel}
+                        />
+                      ),
+                    },
+                  ]} />
+                  <div className="realtime-health-footer">
+                    <Space size={8} wrap>
+                      <Button size="small" type="primary" onClick={handleRefreshHealthPanel} loading={refreshBusy}>
+                        刷新健康
+                      </Button>
+                      <Button size="small" onClick={handleRefreshHealthLogs} loading={refreshBusy}>
+                        刷新日志
+                      </Button>
+                      <Button size="small" onClick={handleRefreshJyhfCdp} loading={jyhfBusy}>
+                        刷新 JYHF
+                      </Button>
+                      <Button size="small" onClick={handleRefresh} loading={refreshBusy}>
+                        刷新新链
+                      </Button>
+                    </Space>
+                    <span style={{ color: "#64748b", fontSize: 12 }}>日志窗：{collectorLogWindowLabel}</span>
+                  </div>
+                </div>
               ),
             },
           ]}

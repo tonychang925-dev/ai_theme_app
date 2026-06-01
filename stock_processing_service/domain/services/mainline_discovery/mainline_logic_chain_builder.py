@@ -53,22 +53,45 @@ class MainlineLogicChainBuilder:
         trade_date: date,
         candidate_subjects: list[str] | None = None,
         report_context: dict[str, Any] | None = None,
+        event_rows_by_subject: dict[str, list[dict[str, Any]]] | None = None,
     ) -> dict[str, MainlineLogicEvidence]:
         """Build logic evidence for each candidate subject.
 
+        Event source priority:
+        1. event_rows_by_subject (pre-fetched by FactContextBuilder, authoritative)
+        2. DB pool (if available)
+        3. report_context (fallback)
+
         Returns dict[subject_key, MainlineLogicEvidence].
         """
-        # ── 1. gather raw events from DB ──
+        # ── 1. use pre-fetched event rows (primary source) ──
         raw_by_subject: dict[str, list[dict[str, Any]]] = defaultdict(list)
 
+        if event_rows_by_subject:
+            for sk, rows in event_rows_by_subject.items():
+                for ev in rows:
+                    # Normalize fields to what _build_for_subject expects
+                    raw_by_subject[sk].append({
+                        "event_id": str(ev.get("event_id") or ""),
+                        "occurred_at": str(ev.get("occurred_at") or ev.get("event_date") or ""),
+                        "title": str(ev.get("title") or ""),
+                        "summary": str(ev.get("summary", "") or "")[:200],
+                        "event_type": str(ev.get("event_type") or "unknown"),
+                        "impact_score": float(ev.get("impact_score") or 0) or 0.5,
+                        "confidence": float(ev.get("confidence") or 0) or 0.5,
+                        "source_channel": str(ev.get("source_channel") or ev.get("source_table") or "unknown"),
+                        "subject_key": sk,
+                    })
+
+        # ── 2. DB fetch as supplement ──
         if self.pool is not None:
             await self._fetch_from_db(trade_date, raw_by_subject)
 
-        # ── 2. also try report_context as fallback ──
+        # ── 3. report_context as last fallback ──
         if report_context:
             self._extract_from_report_context(report_context, raw_by_subject)
 
-        # ── 3. restrict to candidates if given ──
+        # ── 4. restrict to candidates if given ──
         if candidate_subjects:
             candidate_set = set(candidate_subjects)
             raw_by_subject = {
@@ -76,7 +99,7 @@ class MainlineLogicChainBuilder:
                 if k in candidate_set
             }
 
-        # ── 4. build evidence per subject ──
+        # ── 5. build evidence per subject ──
         result: dict[str, MainlineLogicEvidence] = {}
         for sk, raw_events in raw_by_subject.items():
             result[sk] = self._build_for_subject(sk, raw_events)

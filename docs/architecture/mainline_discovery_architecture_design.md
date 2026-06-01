@@ -1,10 +1,10 @@
 # 盘后复盘交易引擎架构设计方案 v1.1
 
 > 项目：`ai_theme_app` / AI 投资个人助理 / 久赢恒丰 2.0  
-> 版本：v1.1  
-> 日期：2026-05-30  
-> 当前重点：第一阶段 **主线发现 Mainline Discovery**  
-> 本版修正重点：`report_context` 不作为事实真源；新增 `MainlineDiscoveryFactContextBuilder`；主线确认分快线/慢线路径；LLM 只做叙事裁判；机器候选与灰色区域进入人工审核；快线/慢线确认后共用统一生命周期；交易前必须经过市场环境过滤。
+> 版本：v1.2  
+> 日期：2026-05-31  
+> 当前重点：第一阶段 **主线发现 Mainline Discovery**（已上线验证）  
+> v1.2 修正重点：CDP DOM 与旧链数据断层修复；四源事件合并；Legacy 主线注册表 backfill；PDV2 branch 展开与诊断增强；registry 去重与 theme_name 修复。
 
 ---
 
@@ -1117,168 +1117,39 @@ mainline_fading
 
 ---
 
-# 14. 第一阶段工程实施计划 v1.1
+# 14. 第一阶段工程实施状态 v1.2
 
-## PR-0：FactContextBuilder + 事件事实链路
+## 已完成 (2026-05-31)
 
-已完成方向：
+| PR | 模块 | 状态 |
+|---|---|---|
+| PR-0 | FactContextBuilder + 事件事实链路 | ✅ 4-source merge |
+| PR-1 | DTO / models | ✅ |
+| PR-2 | MainlineLogicChainBuilder | ✅ event_rows_by_subject primary |
+| PR-3 | MainlineMarketAcceptanceBuilder | ✅ |
+| PR-4 | MajorEventClassifier + MainlineNarrativeJudge | ✅ |
+| PR-5 | MainlineDiscoveryEngine (快线/慢线) | ✅ 双路径 |
+| PR-6 | AnalystReviewQueue | ✅ |
+| PR-7 | BuildPostMarketRecapJob 集成 | ✅ |
+| PR-8 | 历史回测脚本 | ✅ backtest_mainline_discovery.py |
+| PR-9 | mainline_review_queue 持久化 | ✅ |
+| PR-10 | MainlineLifecycle (Layer B 复用) | ✅ |
+| PR-11 | MarketRegimeEngine | ✅ |
+| PR-12 | PostMarketDecisionV2 (Layer C/D1) | ✅ (branch 展开补全) |
+| PR-12.5 | ActiveMainlineUniverse | ✅ (去重 + backfill) |
+| — | CDP DOM staging 候选补充 | ✅ _fetch_staging_subjects |
+| — | Legacy 主线 backfill | ✅ 6 条导入 |
+| — | Registry 去重 + theme_name 修复 | ✅ |
 
-```text
-MainlineDiscoveryFactContextBuilder
-get_subject_event_chain_rows
-StockReadGatewayAdapter
-DB Gateway / postgres_manager
-theme_history_event + event_theme_map/news_event
-SQL 修复与集成验证
-```
+## 待开发
 
-验收：
-
-```text
-2026-04-28 / 2026-04-29 能取到事件链
-logic_score_non_null_count > 0
-```
-
-## PR-1：DTO models
-
-定义：
-
-```text
-MainlineDiscoveryReview
-MainlineLogicEvidence
-MainlineMarketAcceptance
-MainlineEventSeries
-MainlineSubjectBinding
-MainlineDiscoveryDiagnostics
-AnalystReviewItem
-NarrativeJudgeResult
-MajorEventClassification
-```
-
-## PR-2：MainlineLogicChainBuilder
-
-职责：
-
-```text
-从 fact_context.event_rows_by_subject 构建 event_chain / event_series
-计算 rule_logic_score
-输出 logic_evidence
-```
-
-## PR-2.5：事件链集成验证
-
-已完成方向：
-
-```text
-每 subject TopN
-去重
-日期标准化
-source_table 标记
-event_type_source 标记
-集成测试
-```
-
-## PR-3：MainlineMarketAcceptanceBuilder
-
-职责：
-
-```text
-从 fact_context 中计算 market_acceptance_score
-```
-
-公式：
-
-```text
-market_acceptance_score =
-  heat_persistence_score * 0.15
-+ relative_strength_score * 0.15
-+ board_breadth_score * 0.20
-+ leader_strength_score * 0.25
-+ capital_confirmation_score * 0.15
-+ resilience_repair_score * 0.10
-```
-
-验收：
-
-```text
-市场接受度只用硬数据
-数据缺失不默认高分
-leader_alive=false 不可确认主线
-```
-
-## PR-4：MajorEventClassifier + MainlineNarrativeJudge
-
-职责：
-
-```text
-MajorEventClassifier:
-  识别快线重大事件触发
-
-MainlineNarrativeJudge:
-  LLM 判断事件链是否构成主线级叙事
-```
-
-约束：
-
-```text
-LLM 只能基于输入事件判断
-必须引用 supporting_event_ids
-不能直接确认主线
-```
-
-## PR-5：MainlineDiscoveryEngine
-
-职责：
-
-```text
-执行快线 / 慢线双路径机器候选判断
-生成 machine_fast_candidate / machine_slow_candidate / logic_only / market_noise / rotation_hotspot / rejected
-触发 pending_human_review
-```
-
-## PR-6：AnalystReviewQueue
-
-职责：
-
-```text
-生成人工审核队列
-支持 confirm_mainline / watch / reject / merge_into_existing_mainline 等审核结果
-```
-
-第一版可以先写入 snapshot，后续再建表。
-
-## PR-7：接入 BuildPostMarketRecapJob + DailyReviewV2
-
-并行输出：
-
-```text
-recap_doc.mainline_discovery_reviews
-recap_doc.mainline_discovery_diagnostics
-daily_review_v2.mainline_reviews
-```
-
-不直接改现有 `theme_decision_reviews / watchlist_reviews / trading_principle` 主链。
-
-## PR-8：历史回测脚本
-
-新增：
-
-```text
-scripts/backtest_mainline_discovery.py
-```
-
-指标：
-
-```text
-machine_candidate_count_by_day
-pending_review_count_by_day
-human_confirmed_mainline_count_by_day
-logic_only_to_confirmed_rate
-market_noise_failure_rate
-confirmed_mainline_3d_continuation_rate
-false_mainline_rate
-rotation_chaos_no_trade_correct_rate
-```
+| PR | 模块 | 状态 |
+|---|---|---|
+| PR-followup | Subject Key 规范化 | 待开始 |
+| PR-followup | MarketRegimeEngine no_trade 验证 | 待开始 |
+| PR-followup | 前端存量主线导入入口 | 待开始 |
+| PR-followup | PDV2 D2 竞价/盘中确认 | 未开始 |
+| PR-followup | T+1 回测闭环 | 未开始 |
 
 ---
 
@@ -1383,3 +1254,363 @@ LLM 可建议；
 ```
 
 主线发现的目标不是每天给出机会，而是帮助系统识别真正值得等待、跟踪和交易的市场核心叙事。
+
+---
+
+# 19. 开发实战记录：CDP DOM 与旧链数据断层（2026-05-31）
+
+## 19.1 问题发现
+
+2026-05-29 回测时发现 `event_chain_subject_count = 0`，所有 65 个候选题材均无事件数据。
+
+根因链：
+
+```text
+_fetch_event_theme_map_rows
+  → SELECT id, subject_key FROM theme_master WHERE subject_key = ANY(...)
+  → theme_master 表没有 subject_key 列
+  → PostgreSQL UndefinedColumnError
+  → 异常传播至 gateway.get_subject_event_chain_rows
+  → except Exception: return []
+  → 4 个事件源全部静默丢失
+```
+
+## 19.2 两级根因
+
+### 根因 1：数据断层
+
+`theme_history_event`（jyhf_history 源）数据停在 **2026-04-30**。5 月的数据由 CDP DOM 管线写入 `subject_history_staging`，但 FactContextBuilder 的候选来源 `MainlineIdentityUniverseBuilder` 只从 `theme_cycle_judgement_v2` 拉取 6 个 subject，与 staging 的 65 个 subject **零交集**。
+
+### 根因 2：废弃表引用
+
+`_fetch_event_theme_map_rows` 使用了两跳查询：
+1. `theme_master` → 获取 `theme_id → subject_key` 映射（但 `theme_master` 无 `subject_key` 列）
+2. `event_theme_map JOIN news_event` → 按 `theme_id` 过滤
+
+正确做法：`event_theme_map` 本身已经包含 `tree_subject_key` 和 `branch_subject_key` 列，不需要通过 `theme_master` 做二次映射。
+
+## 19.3 四源事件合并架构
+
+修复后的事件链查询合并四个来源：
+
+```text
+Source 1: theme_history_event (jyhf_history)
+  - 数据停在 2026-04-30
+  - 使用 ROW_NUMBER() OVER(PARTITION BY subject_key) 取每 subject Top 10
+
+Source 2: event_theme_map + news_event (JYHF legacy)
+  - 改用 tree_subject_key / branch_subject_key 直查
+  - 不再依赖 theme_master
+  - 当前无近期数据（tree_subject_key 全为 NULL）
+
+Source 3: subject_history_staging (CDP DOM primary)
+  - jyhf_cdp_service/db_sink.py 写入
+  - 包含 subject_key（中文名，来自 subject_name 推导）
+  - 2026-05-22 ~ 05-29 共 106 条，覆盖 65 个 subject
+
+Source 4: event_subject_map + news_event (CDP DOM supplementary)
+  - 直接使用 event_subject_map.subject_key
+  - 不依赖 theme_master
+```
+
+## 19.4 Staging 候选补充
+
+FactContextBuilder 新增 `_fetch_staging_subjects()` 方法，从 `subject_history_staging` 查询回溯窗口内的 distinct subject_keys，补充到候选列表中：
+
+```text
+MainlineIdentityUniverseBuilder → 6 候选 (cycle_judgement)
+  +
+_fetch_staging_subjects → 65 候选 (CDP DOM staging)
+  =
+65 候选题材（合并去重后）
+```
+
+方法链涉及 5 个文件：
+- `postgres_manager.py` — SQL 查询
+- `gateway.py` — 委托封装
+- `database_gateway_stock_facade.py` — 协议声明
+- `stock_read_gateway_adapter.py` — 适配器
+- `mainline_discovery_fact_context_builder.py` — 调用方
+
+## 19.5 MainlineLogicChainBuilder 事件来源修正
+
+`MainlineLogicChainBuilder.build()` 原本只从 DB pool 或 `report_context` 获取事件，但 FactContextBuilder 已经预获取了全部事件数据。修改为接受 `event_rows_by_subject` 参数作为**首选来源**：
+
+```text
+事件来源优先级:
+1. event_rows_by_subject (FactContextBuilder 预获取, 权威源)
+2. DB pool (如果可用)
+3. report_context (兜底)
+```
+
+## 19.6 修复后验证结果（2026-05-29）
+
+```text
+修复前:
+  event_chain_subject_count: 0
+  logic_score_non_null_count: 0
+  machine_fast_candidate: 0
+
+修复后:
+  candidate_subject_count: 65
+  event_chain_subject_count: 59
+  logic_score_non_null_count: 59
+  machine_fast_candidate: 2 (电力运营 major_event=97, PCB印制电路板 major_event=92)
+  analyst_review_items: 8
+```
+
+---
+
+# 20. 主线注册表继承与 Backfill（2026-05-31）
+
+## 20.1 两套注册表的隔离
+
+项目中存在两个主线注册表：
+
+| 表 | 行数 | 确认数 | 用途 |
+|---|---|---|---|
+| `theme_mainline_identity_registry` | 691 | 173 | 旧架构 — cycle_judgement 产出，每天重复写入 |
+| `mainline_registry` | 6 (清理后) | 6 | 新架构 — 人工确认后写入，完整生命周期字段 |
+
+新架构代码查询 `mainline_registry`，旧注册表的 173 条确认数据**从未被迁移**。
+
+## 20.2 对 Layer C 的影响
+
+PDV2 引擎按 `mainline_sks`（来自 `mainline_registry` 的 canonical + related + branch subject_keys）过滤股票池。如果存量主线不在 registry 中，其关联股票会被**全部过滤掉**：
+
+```python
+filtered_pool = [r for r in pool_rows
+                 if r["subject_key"] in mainline_sks]
+```
+
+这导致：
+- 旧架构已确认的 3 个主线（9065632, 9065423, 9059825）未被继承
+- 其股票被从 Layer C 强股池中排除
+- `active_subject_count = 3`（修复前仅 AI算力/商业航天/低空经济）
+
+## 20.3 LegacyMainlineRegistryBackfill
+
+创建 `scripts/legacy_mainline_registry_backfill.py`，按人工确认清单批量导入 6 条存量主线：
+
+| 主线 | canonical_key | related keys | branch keys |
+|---|---|---|---|
+| 商业航天 | 9019807 | 商业航天8大IPO, 广州商业航天 | — |
+| AI算力 | 9013933 | 算力租赁, AIDC绿电供应, AI一体机 | AI软件, AI智能体, AI十大应用, AI光纤, 英伟达电源方案 |
+| 低空经济 | 9015778 | 低空经济 | — |
+| 机器人 | 9014636 | 国内机器人, 宇树机器人, 深圳机器人 | 华为机器人, 特斯拉机器人, 机器人丝杠, 机器人材料, etc. |
+| PCB印制电路板 | 9018144 | AI六大短缺硬件-PCB钻针, 英伟达PCB核心 | — |
+| 电力运营 | 9013416 | 电力运营-火电, 电力运营 | — |
+
+写入规则：
+- `identity_status = 'confirmed'`
+- `tracking_status = 'active'`
+- `valid_from = 2026-05-01`（保守起点）
+- `valid_to = NULL`（永久有效，除非人工归档）
+- `source_review_id = 'legacy_backfill_20260529'`
+
+## 20.4 Registry 去重
+
+清理了：
+- 4 条测试条目（`ml_ai`, `ml_low` 等，`source_review_id = NULL`）
+- 4 条误确认条目（`source_review_id` 包含 `rejected`/`rotation_hotspot`）
+- 2 对中英文 key 重复（电力运营/PCB — 发现管线用中文名，旧架构用数字 ID）
+
+`ActiveMainlineUniverseBuilder` 新增去重逻辑：按 `canonical_subject_key` 保留 `valid_from` 最新的条目，防止同一主线多次注册导致的集合膨胀。
+
+## 20.5 修复后验证
+
+```text
+修复前:
+  active_mainline_count: 6 (含重复/测试数据)
+  active_subject_key_count: 3
+
+修复后:
+  active_mainline_count: 6 (去重后，全部唯一)
+  active_subject_key_count: 31 (canonical + related + branch 完全展开)
+  missing_registry_subject_keys: [9065423, 9065632] (均为 review_pending，非确认主线，过滤正确)
+```
+
+---
+
+# 21. PDV2 Layer C/D1 主线过滤链路
+
+## 21.1 Branch 展开修复
+
+`PostMarketDecisionV2.evaluate()` 原本只展开 `canonical_subject_key` 和 `related_subject_keys_json`，但遗漏了 `branch_subject_keys_json`。这与 `ActiveMainlineUniverseBuilder` 的展开逻辑不一致。
+
+修复后三路展开：
+
+```python
+# canonical
+mainline_sks.add(csk)
+# related
+for rsk in related_subject_keys_json:
+    mainline_sks.add(str(rsk))
+# branch (was missing!)
+for bsk in branch_subject_keys_json:
+    mainline_sks.add(str(bsk))
+```
+
+## 21.2 诊断增强
+
+`post_market_decision_v2.diagnostics` 新增字段：
+
+```json
+{
+  "active_mainline_count": 6,
+  "active_subject_key_count": 31,
+  "layer_c_subject_keys": ["9015778", "9065423", "9065632"],
+  "mainline_filtered_subject_keys": ["9015778"],
+  "missing_registry_subject_keys": ["9065423", "9065632"]
+}
+```
+
+一眼可见：
+- Layer C 输入池有哪些 subject
+- 主线过滤通过了哪些
+- 哪些因为没有 registry 记录被过滤
+
+## 21.3 当前过滤效果
+
+```text
+Layer C 输入: 100 行, 3 个 subject
+  → 9015778 (低空经济): 52 行 → PASS (已确认主线)
+  → 9065423 (Token经济): filtered out (review_pending, 从未确认)
+  → 9065632 (重组概念): filtered out (review_pending, 从未确认)
+
+Strong Pool: 52 只
+D1 候选: 20 只 (observe_only)
+Focus Stocks: 0 (market_regime 判 no_trade, 正确)
+```
+
+## 21.4 关于 `focus_count = 0`
+
+这不是 bug。`trade_mode = no_trade` 是 `MarketRegimeEngine` 判定的结果。此时 D1 只进入 `observe_only`，不生成正式次日关注股。这是交易风控的正确行为。
+
+后续应单独排查 MarketRegimeEngine 对 2026-05-29 的判市逻辑，确认 no_trade 是否合理。但绝大多数交易日 `focus_count` 应该较低——只有主线明确 + 市场环境配合时才会有正式关注标的。
+
+---
+
+# 22. 已验证的完整链路（2026-05-29）
+
+```text
+┌─────────────────────────────────────────────────────┐
+│ 事件采集层                                            │
+│ theme_history_event (4/30 停止)                       │
+│ + subject_history_staging (CDP DOM, 106 rows)         │
+│ + event_subject_map + news_event (CDP DOM supp)       │
+└──────────────────┬──────────────────────────────────┘
+                   ▼
+┌─────────────────────────────────────────────────────┐
+│ MainlineDiscoveryFactContextBuilder                  │
+│ - _build_candidates: 6 (cycle_judgement)             │
+│ - _fetch_staging_subjects: 65 (CDP DOM)              │
+│ - _fetch_event_rows: 4-source merge → 59 subjects    │
+│ 输出: 65 candidates, 59 with events, full diagnostics│
+└──────────────────┬──────────────────────────────────┘
+                   ▼
+┌─────────────────────────────────────────────────────┐
+│ MainlineDiscoveryEngine                             │
+│ - MainlineLogicChainBuilder (event_rows优先)         │
+│ - MainlineMarketAcceptanceBuilder                   │
+│ - MajorEventClassifier                              │
+│ - MainlineNarrativeJudge (LLM, DeepSeek)            │
+│ 输出: 2 Fast Line, 0 Slow Line, 5 rotation_hotspot  │
+│      1 rejected, 0 logic_only, 0 market_noise       │
+└──────────────────┬──────────────────────────────────┘
+                   ▼
+┌─────────────────────────────────────────────────────┐
+│ AnalystReviewQueue + Frontend Confirmation           │
+│ 8 items pending review                               │
+│ - 电力运营 (major_event=97, Fast Line)               │
+│ - PCB (major_event=92, Fast Line)                    │
+│ - 6 others (rotation_hotspot/rejected)               │
+└──────────────────┬──────────────────────────────────┘
+                   ▼
+┌─────────────────────────────────────────────────────┐
+│ mainline_registry (6 confirmed, 31 subject_keys)     │
+│ ActiveMainlineUniverseBuilder (dedup by canonical)   │
+└──────────────────┬──────────────────────────────────┘
+                   ▼
+┌─────────────────────────────────────────────────────┐
+│ PostMarketDecisionV2 (Layer C/D1)                   │
+│ - 100 pool rows → 52 filtered (9015778 only)         │
+│ - Strong Pool: 52, D1: 20 observe_only               │
+│ - Focus: 0 (market_regime: no_trade)                 │
+└─────────────────────────────────────────────────────┘
+```
+
+## 22.1 关键指标
+
+| 指标 | 值 | 说明 |
+|---|---|---|
+| 候选题材 | 65 | 6 cycle_judgement + 59 staging |
+| 有事件题材 | 59 | 4-source merge |
+| logic_score > 0 | 59 | 事件数据成功注入 LogicChainBuilder |
+| Fast Line 候选 | 2 | 电力运营(97), PCB(92) |
+| 审核队列 | 8 | 待人工确认 |
+| 已确认主线 | 6 | 经过去重清理 |
+| active subject_keys | 31 | canonical + related + branch 展开 |
+| Layer C 输出 | 52 只 | 仅已确认主线过滤 |
+| D1 候选 | 20 只 | observe_only (no_trade) |
+
+## 22.2 已验证的异常场景处理
+
+| 场景 | 处理 | 状态 |
+|---|---|---|
+| jyhf_history 数据断档 (4/30后) | CDP DOM staging 补充 | ✅ |
+| theme_master 无 subject_key 列 | 改用 tree/branch_subject_key 直查 | ✅ |
+| 某事件源查询失败 | 异常静默返回空，不影响其他源 | ✅ |
+| 旧架构主线未注册 | backfill 导入 6 条 | ✅ |
+| registry 重复条目 | ActiveMainlineUniverseBuilder 去重 | ✅ |
+| theme_name 显示为事件原文 | 移除 description fallback | ✅ |
+| PDV2 未展开 branch keys | 补全三路展开 | ✅ |
+| Layer C 过滤不可见 | diagnostics 完整暴露 | ✅ |
+
+---
+
+# 23. 前端主线确认页面
+
+## 23.1 位置
+
+`/realtime-collector` → Segmented Tab「主线确认」，与「新闻/题材待复核」同级。
+
+## 23.2 功能
+
+- **待确认** Tab：展示 `mainline_review_queue` 中 `review_status = 'pending'` 的条目
+- **已确认** Tab：展示 `mainline_registry` 中所有 active confirmed mainlines
+- 操作：确认 / 观察 / 拒绝 / 合并（合并到已有主线）
+- 详情抽屉：展示完整 diagnostic、event chain、market evidence
+
+## 23.3 后端 API
+
+通过 BFF (`web_app_service`) 代理到 SPS：
+
+- `GET /api/v2/mainline/review/items` — 审核队列
+- `GET /api/v2/mainline/confirmed` — 已确认列表
+- `POST /api/v2/mainline/review/decide` — 提交审核决定
+- `POST /api/v2/mainline/confirmed/merge` — 合并主线
+
+---
+
+# 24. 已知待解决问题
+
+## 24.1 Subject Key 规范化
+
+CDP DOM 管线使用中文名作为 `subject_key`（如 "电力运营"），而旧架构使用数字 ID（如 "9013416"）。两者代表同一题材但 key 不同，导致注册表可能出现重复。需要建立 `subject_key_alias` 映射表或规范化层。
+
+## 24.2 MarketRegimeEngine no_trade 验证
+
+2026-05-29 判为 `no_trade`，需要单独排查判市逻辑是否过严。
+
+## 24.3 旧架构 3 个未继承主线
+
+`9065423`（Token经济）、`9065632`（重组概念）、`9059825` 在旧注册表中为 `review_pending` 状态，未被 backfill 导入。是否应按"事实主线"导入需人工判断。
+
+## 24.4 人工确认后注册表重复防护
+
+`_persist_review_queue` 只写入 `mainline_review_queue` 表。人工确认操作通过 BFF API 直接写入 `mainline_registry`。当前缺少「确认前检查 canonical_subject_key 是否已存在」的防护。建议在 BFF 的 confirm 端点增加去重检查。
+
+## 24.5 前端确认页面的存量主线导入入口
+
+建议在「已确认」子标签增加「导入存量主线」按钮，允许分析师手动录入老主线，避免每次依赖 backfill 脚本。

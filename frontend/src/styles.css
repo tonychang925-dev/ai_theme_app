@@ -30,6 +30,55 @@ select {
   padding: 18px;
 }
 
+.realtime-collector-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.realtime-collector-page .realtime-ops-dashboard {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.realtime-collector-page .realtime-health-tabs {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.realtime-collector-page .realtime-health-tabs .ant-tabs-content-holder {
+  flex: 1;
+  min-height: 0;
+}
+
+.realtime-collector-page .realtime-health-tabs .ant-tabs-content,
+.realtime-collector-page .realtime-health-tabs .ant-tabs-tabpane {
+  height: 100%;
+  min-height: 0;
+}
+
+.realtime-collector-page .realtime-health-shell {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 220px);
+  min-height: 0;
+}
+
+.realtime-collector-page .realtime-health-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  flex-shrink: 0;
+}
+
 .workspace-topbar {
   display: flex;
   gap: 14px;

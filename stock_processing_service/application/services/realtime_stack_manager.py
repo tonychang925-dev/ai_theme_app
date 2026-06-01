@@ -45,6 +45,9 @@ BASELINE_ENV = {
     "THEME_PROCESSOR_STRUCTURED_CONCURRENCY": "2",
     "THEME_MATCH_ENABLE_EVENT_PROFILE_LLM": "false",
     "DB_TYPE": "postgresql",
+    # 消除 macOS fork 子进程时的 tokenizers Rayon 线程池警告
+    # 实际 ML 推理走 llama_cpp，不依赖 tokenizers 并行
+    "TOKENIZERS_PARALLELISM": "false",
 }
 
 # ── Redis streams to monitor ───────────────────────────────────────

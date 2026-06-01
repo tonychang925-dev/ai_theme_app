@@ -148,7 +148,7 @@ class MainlineIdentityUniverseBuilder:
                     continue
                 rows[sk] = IdentityUniverseRow(
                     trade_date=trade_date, subject_key=sk,
-                    theme_name=str(r.get("description") or r.get("subject_name") or sk),
+                    theme_name=str(r.get("theme_name") or r.get("subject_name") or sk),
                     universe_source="hot_rank",
                     candidate_type="hot",
                     priority_score=min(heat, 70.0),
