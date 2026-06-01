@@ -516,6 +516,7 @@ export interface DragonTigerReviewV2 {
 // ── PR-14C: Evidence Alignment Types ──
 
 export interface EvidenceAlignment {
+  [key: string]: unknown;
   active_mainline: boolean;
   mainline_id: string;
   mainline_name: string;
@@ -531,7 +532,7 @@ export interface EvidenceAlignment {
 }
 
 export interface EvidenceAlignmentIndex {
-  by_stock: Record<string, EvidenceAlignment>;
+  by_stock: Record<string, Record<string, unknown>>;
   by_subject: Record<string, Record<string, unknown>>;
   indexed_stocks: number;
   indexed_subjects: number;
