@@ -114,6 +114,7 @@ class ActiveMainlineUniverseBuilder:
         )
 
     @staticmethod
+    @staticmethod
     def _safe_json_list(val: Any) -> list:
         import json
         if isinstance(val, str):
