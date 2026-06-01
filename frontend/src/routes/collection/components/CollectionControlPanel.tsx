@@ -1,6 +1,6 @@
 /** P4-3C: 采集控制面板 — 按 Owner 分组。 */
 import { Tag, Descriptions } from "antd";
-import type { JyhfCdpCollectorStatus, JyhfAuctionStatus, NewChainRealtimeStatus, IndexCollectResult } from "../../../lib/api";
+import type { JyhfCdpCollectorStatus, JyhfAuctionStatus, NewChainRealtimeStatus } from "../../../lib/api";
 
 interface Props {
   status: {
@@ -8,8 +8,6 @@ interface Props {
     stackStatus: NewChainRealtimeStatus | null;
     jyhfStatus: JyhfCdpCollectorStatus | null;
     auctionStatus: JyhfAuctionStatus | null;
-    indexStatus: IndexCollectResult | null;
-    indexBusy: boolean;
   };
   busy: {
     startBusy: boolean; stopBusy: boolean; refreshBusy: boolean;
@@ -22,7 +20,6 @@ interface Props {
     onStartRealtime: () => void; onStopRealtime: () => void; onRefreshRealtime: () => void;
     onStartDom: () => void; onStopDom: () => void; onRefreshDom: () => void;
     onToggleAuction: (v: boolean) => void; onToggleKlineAlerts: (v: boolean) => void; onToggleW2sAlerts: (v: boolean) => void;
-    onCollectIndex: () => void;
   };
 }
 
@@ -95,24 +92,6 @@ export default function CollectionControlPanel(props: Props) {
             竞价采集
           </label>
         </div>
-      </div>
-
-      {/* Index Collection — SPS IndexKlineCollectJob */}
-      <div style={s.section}>
-        <div style={s.owner}>owner: SPS IndexKlineCollectJob</div>
-        {status.indexStatus?.success ? <Tag color="green">已采集 {status.indexStatus.collected_count ?? 0}/{status.indexStatus.total_count ?? 6}</Tag> : <Tag color="orange">未采集</Tag>}
-        {status.indexBusy && <Tag color="processing">采集中...</Tag>}
-        <div style={{ marginTop: 6 }}>
-          <button style={status.indexBusy ? b(true) : { ...s.btn, ...s.primary }} onClick={actions.onCollectIndex} disabled={status.indexBusy}>
-            {status.indexBusy ? "采集中..." : "采集指数"}
-          </button>
-        </div>
-        <Descriptions size="small" column={2} style={{ marginTop: 4 }}>
-          <Descriptions.Item label="已采集">{status.indexStatus?.success ? `${status.indexStatus.collected_count}/${status.indexStatus.total_count}` : "-"}</Descriptions.Item>
-          <Descriptions.Item label="交易日">{status.indexStatus?.trade_date ?? "-"}</Descriptions.Item>
-          <Descriptions.Item label="技术分析">{status.indexStatus?.success ? `${status.indexStatus.technical_count}/${status.indexStatus.collected_count}` : "-"}</Descriptions.Item>
-          <Descriptions.Item label="来源">{status.indexStatus?.source ?? "-"}</Descriptions.Item>
-        </Descriptions>
       </div>
 
       {/* Alert Streams — SPS SSE / Frontend EventSource */}

@@ -26,8 +26,6 @@ import {
   type ReviewQueueItem,
   type StatusBundle,
   type OrchestratorStatus,
-  type IndexCollectResult,
-  collectIndexKline,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 import { Button, ConfigProvider, Segmented, Space, Table, Tabs, theme } from "antd";
@@ -67,8 +65,6 @@ export function RealtimeCollectorPage() {
   const [auctionEnabled, setAuctionEnabled] = useState(true);
   const [auctionStatus, setAuctionStatus] = useState<JyhfAuctionStatus | null>(null);
   const [auctionBusy, setAuctionBusy] = useState(false);
-  const [indexStatus, setIndexStatus] = useState<IndexCollectResult | null>(null);
-  const [indexBusy, setIndexBusy] = useState(false);
   const [klineAlerts, setKlineAlerts] = useState<KlineAlertEvent[]>([]);
   const [klineFilter, setKlineFilter] = useState<"all" | "critical" | "error" | "warning" | "info" | "auction" | "intraday">("warning");
   const [klineAlertsEnabled, setKlineAlertsEnabled] = useState(false); // 默认关闭，按需开启
@@ -519,18 +515,6 @@ export function RealtimeCollectorPage() {
   function closeDetail() { setDetailOpen(false); setDetailItem(null); }
   useEffect(() => { refreshReviewQueue(); const t = setInterval(refreshReviewQueue, 30000); return () => clearInterval(t); }, []);
 
-  async function handleCollectIndex() {
-    setIndexBusy(true);
-    try {
-      const result = await collectIndexKline({ force: true });
-      setIndexStatus(result);
-    } catch (e) {
-      setIndexStatus({ success: false, collected_count: 0, technical_count: 0, total_count: 6, missing_indices: [], source: "", trade_date: "" });
-    } finally {
-      setIndexBusy(false);
-    }
-  }
-
   async function handleStartJyhfCdp() {
     setJyhfBusy(true);
     setJyhfStatus(prev => ({ ...(prev ?? {} as JyhfCdpCollectorStatus), collector_running: false }));
@@ -879,8 +863,8 @@ export function RealtimeCollectorPage() {
 
   // P4-1A: 固化 status/busy/toggles 引用，actions 直接内联（原生 details 不需要 memo）
   const controlStatus = useMemo(
-    () => ({ running, stackStatus, jyhfStatus, auctionStatus, indexStatus, indexBusy }),
-    [running, stackStatus, jyhfStatus, auctionStatus, indexStatus, indexBusy],
+    () => ({ running, stackStatus, jyhfStatus, auctionStatus }),
+    [running, stackStatus, jyhfStatus, auctionStatus],
   );
   const controlBusy = useMemo(
     () => ({ startBusy, stopBusy, refreshBusy, jyhfBusy, auctionBusy }),
@@ -936,7 +920,6 @@ export function RealtimeCollectorPage() {
                       onStartRealtime: handleStart, onStopRealtime: handleStop, onRefreshRealtime: handleRefresh,
                       onStartDom: handleStartJyhfCdp, onStopDom: handleStopJyhfCdp, onRefreshDom: handleRefreshJyhfCdp,
                       onToggleAuction: setAuctionEnabled, onToggleKlineAlerts: setKlineAlertsEnabled, onToggleW2sAlerts: setW2sAlertsEnabled,
-                      onCollectIndex: handleCollectIndex,
                     }}
                   />
                   <UnifiedAlertPanel
