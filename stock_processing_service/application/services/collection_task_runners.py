@@ -1150,8 +1150,10 @@ class IndexKlineCollectRunner:
                 from stock_processing_service.application.jobs.index_kline_collect_job import (
                     IndexKlineCollectJob,
                 )
+                from datetime import date as _date
+                td = _date.fromisoformat(context.trade_date) if isinstance(context.trade_date, str) else context.trade_date
                 job = IndexKlineCollectJob(pool=conn)
-                result = await job.collect(trade_date=context.trade_date)
+                result = await job.collect(trade_date=td)
                 d = result.to_dict()
                 if d.get("success"):
                     return CollectionTaskResult(
