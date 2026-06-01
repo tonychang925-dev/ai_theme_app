@@ -167,6 +167,14 @@ async def test_hard_negative_validator_loads_phase5_delta_jsonl():
     hard_negative_file = Path(__file__).resolve().parents[2] / "eval/gate_repair_phase5/e2e_delta_hard_negatives.jsonl"
     cases = [
         {
+            "case_id": "phase5_hn_fusion_not_global_first_130855",
+            "event_text": "核聚变能源企业TAE科技推进核聚变技术商业化，为人工智能产业提供能源支撑。",
+            "positive_subject_keys": ["9017950"],
+            "must_not_subject_keys": ["9054404"],
+            "must_not_theme_names": ["A股全球第一"],
+            "tags": ["phase5", "e2e_delta"],
+        },
+        {
             "case_id": "phase5_hn_biotech_not_xinjiang_ftz_131215",
             "event_text": "合成生物制造产业创新发展行动计划推进，生物制造菌种计算设计和高通量筛选平台落地。",
             "positive_subject_keys": ["9023196"],
@@ -214,6 +222,21 @@ async def test_hard_negative_validator_loads_phase5_delta_jsonl():
             "evidence_refs": [{"source": "unit_test"}],
             "quality_score": 90,
         },
+        {
+            "subject_key": "9054404",
+            "subject_name": "A股全球第一",
+            "aliases": ["A股全球第一"],
+            "entity_anchors": ["A股全球第一"],
+            "domain_anchors": ["全球第一"],
+            "product_anchors": [],
+            "technology_anchors": [],
+            "must_terms": ["全球第一"],
+            "strong_terms": ["全球第一"],
+            "negative_terms": ["非A股全球第一"],
+            "confusion_subject_keys": ["9034859"],
+            "evidence_refs": [{"source": "unit_test"}],
+            "quality_score": 90,
+        },
     ]
 
     metrics, case_rows = await _evaluate_hard_negatives(profiles, cases, gate_only=True)
@@ -222,8 +245,10 @@ async def test_hard_negative_validator_loads_phase5_delta_jsonl():
     assert hard_negative_file.exists()
     assert "phase5_hn_biotech_not_xinjiang_ftz_131215" in case_ids
     assert "phase5_hn_rare_earth_not_deepsea_131216" in case_ids
+    assert "phase5_hn_fusion_not_global_first_130855" in case_ids
     assert metrics["9012396"]["hard_negative_case_count"] >= 1
     assert metrics["9043698"]["hard_negative_case_count"] >= 1
+    assert metrics["9054404"]["hard_negative_case_count"] >= 1
 
 def test_count_generic_only_related_detects_polluted_related_evidence():
     result = SimpleNamespace(
