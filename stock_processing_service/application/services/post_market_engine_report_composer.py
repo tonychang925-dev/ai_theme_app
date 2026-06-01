@@ -1,0 +1,267 @@
+"""PR-14A: PostMarketEngineReportComposer.
+
+Composes engine outputs into DailyReviewV2 report structure.
+Does NOT re-evaluate — only reads existing engine results.
+"""
+
+from __future__ import annotations
+
+import logging
+from typing import Any
+
+logger = logging.getLogger(__name__)
+
+
+class PostMarketEngineReportComposer:
+    """Compose engine outputs into a structured report view model.
+
+    Input: recap_doc (already populated with engine outputs)
+    Output: dict with engine_summary, market_regime_review,
+            index_technical_reviews, mainline_daily_states,
+            post_market_decision_v2
+    """
+
+    def compose(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
+        """Build engine report structure from existing recap_doc fields."""
+
+        regime = recap_doc.get("market_regime_review", {})
+        pdv2 = recap_doc.get("post_market_decision_v2", {})
+        lifecycle = recap_doc.get("mainline_lifecycle_reviews", [])
+        amu = recap_doc.get("active_mainline_universe", {})
+        regime_diag = recap_doc.get("market_regime_diagnostics", {})
+
+        # ── 1. engine_summary ──
+        engine_summary = self._build_engine_summary(regime, pdv2)
+
+        # ── 2. market_regime_review ──
+        market_regime_review = self._build_market_regime_review(
+            regime, regime_diag
+        )
+
+        # ── 3. index_technical_reviews ──
+        index_technical_reviews = self._build_index_technical_reviews(
+            regime, regime_diag
+        )
+
+        # ── 4. mainline_daily_states ──
+        mainline_daily_states = self._build_mainline_daily_states(
+            lifecycle, pdv2, amu
+        )
+
+        # ── 5. post_market_decision_v2 ──
+        post_market_decision_v2 = self._build_pdv2_review(pdv2)
+
+        return {
+            "engine_summary": engine_summary,
+            "market_regime_review": market_regime_review,
+            "index_technical_reviews": index_technical_reviews,
+            "mainline_daily_states": mainline_daily_states,
+            "post_market_decision_v2": post_market_decision_v2,
+        }
+
+    def _build_engine_summary(
+        self, regime: dict, pdv2: dict
+    ) -> dict[str, Any]:
+        tp = pdv2.get("trading_permission", {})
+        ntr = regime.get("no_trade_reasons", [])
+        blocking = regime.get("no_trade_blocking_rule", "")
+
+        return {
+            "allow_trade": bool(tp.get("allow_trade", False)),
+            "trade_mode": str(tp.get("trade_mode", "no_trade")),
+            "position_limit": float(tp.get("position_limit", 0)),
+            "no_trade_blocking_rule": blocking if not tp.get("allow_trade") else None,
+            "no_trade_reasons": list(ntr) if isinstance(ntr, list) else [],
+            "action_bias": self._action_bias(regime, pdv2),
+            "conclusion": self._conclusion(regime, pdv2),
+            "next_day_strategy": self._next_day_strategy(regime),
+            "risk_notes": list(regime.get("risk_notes", [])),
+        }
+
+    def _build_market_regime_review(
+        self, regime: dict, regime_diag: dict
+    ) -> dict[str, Any]:
+        return {
+            "broad_market_regime": str(regime.get("broad_market_regime", "")),
+            "short_term_sentiment": str(regime.get("short_term_sentiment", "")),
+            "mainline_environment": str(regime.get("mainline_environment", "")),
+            "allow_trade": bool(regime.get("allow_trade", False)),
+            "trade_mode": str(regime.get("trade_mode", "no_trade")),
+            "position_limit": float(regime.get("position_limit", 0)),
+            "no_trade_blocking_rule": regime.get("no_trade_blocking_rule", ""),
+            "no_trade_reasons": list(regime.get("no_trade_reasons", [])),
+            "index_data_ready": bool(regime_diag.get("index_data_ready", False)),
+            "index_data_source": str(regime_diag.get("index_data_source", "")),
+            "index_technical_reviews": self._build_index_technical_reviews(regime, regime_diag),
+            "diagnostics": regime.get("diagnostics", {}),
+        }
+
+    def _build_index_technical_reviews(
+        self, regime: dict, regime_diag: dict
+    ) -> list[dict[str, Any]]:
+        reviews = regime.get("index_technical_reviews", [])
+        if not reviews:
+            reviews = regime_diag.get("index_technical_reviews", [])
+        result = []
+        for r in reviews:
+            flags = r.get("risk_flags") or r.get("risk_flags_json") or []
+            if isinstance(flags, str):
+                try:
+                    import json
+                    flags = json.loads(flags)
+                except Exception:
+                    flags = [flags]
+            result.append({
+                "index_code": str(r.get("index_code", "")),
+                "index_name": str(r.get("index_name", "")),
+                "trend_state": str(r.get("trend_state", "")),
+                "trend_score": float(r.get("trend_score", 0) or 0),
+                "above_ma5": bool(r.get("above_ma5")),
+                "above_ma10": bool(r.get("above_ma10")),
+                "above_ma20": bool(r.get("above_ma20")),
+                "above_ma60": bool(r.get("above_ma60")),
+                "ma_structure": str(r.get("ma_structure", "")),
+                "macd_state": str(r.get("macd_state", "")),
+                "support_level": float(r.get("support_level", 0) or 0),
+                "resistance_level": float(r.get("resistance_level", 0) or 0),
+                "volume_pattern": str(r.get("volume_pattern", "")),
+                "risk_flags": flags if isinstance(flags, list) else [],
+                "conclusion": self._index_conclusion(r),
+            })
+        return result
+
+    def _build_mainline_daily_states(
+        self,
+        lifecycle: list[dict],
+        pdv2: dict,
+        amu: dict,
+    ) -> list[dict[str, Any]]:
+        lifecycle_by_id = {r.get("mainline_id", ""): r for r in lifecycle}
+
+        strong_pool = pdv2.get("strong_stock_pool_reviews", [])
+        d1_list = pdv2.get("weak_to_strong_d1_reviews", [])
+        focus_list = pdv2.get("next_day_focus_stocks", [])
+
+        mainlines = amu.get("active_mainlines", [])
+
+        result = []
+        for ml in mainlines:
+            mid = str(ml.get("mainline_id", ""))
+            lr = lifecycle_by_id.get(mid, {})
+
+            strong_count = sum(1 for s in strong_pool if s.get("mainline_id") == mid)
+            d1_count = sum(1 for d in d1_list if d.get("mainline_id") == mid)
+            focus_count = sum(1 for f in focus_list if f.get("mainline_id") == mid)
+
+            result.append({
+                "trade_date": str(amu.get("trade_date", "")),
+                "mainline_id": mid,
+                "mainline_name": str(ml.get("mainline_name", "")),
+                "canonical_subject_key": str(ml.get("canonical_subject_key", "")),
+                "active_subject_keys": amu.get("active_subject_keys", []),
+                "lifecycle_state": str(lr.get("lifecycle_state", "unknown")),
+                "mainline_alive": bool(lr.get("mainline_alive", False)),
+                "mainline_trade_alive": bool(lr.get("mainline_trade_alive", False)),
+                "risk_state": lr.get("risk_state"),
+                "event_count_1d": 0,
+                "event_count_3d": 0,
+                "event_count_7d": 0,
+                "mainline_strength_score": lr.get("mainline_strength_score"),
+                "fade_risk_score": lr.get("fade_risk_score"),
+                "strong_pool_count": strong_count,
+                "d1_count": d1_count,
+                "focus_count": focus_count,
+                "action_advice": self._mainline_action(lr),
+                "conclusion": self._mainline_conclusion(lr),
+                "diagnostics": lr.get("diagnostics", {}),
+            })
+        return result
+
+    def _build_pdv2_review(self, pdv2: dict) -> dict[str, Any]:
+        return {
+            "trading_permission": pdv2.get("trading_permission", {}),
+            "strong_stock_pool_reviews": pdv2.get("strong_stock_pool_reviews", []),
+            "weak_to_strong_d1_reviews": pdv2.get("weak_to_strong_d1_reviews", []),
+            "next_day_focus_stocks": pdv2.get("next_day_focus_stocks", []),
+            "trading_principle_v2": pdv2.get("trading_principle_v2", {}),
+            "diagnostics": pdv2.get("diagnostics", {}),
+        }
+
+    def _action_bias(self, regime: dict, pdv2: dict) -> str:
+        tp = pdv2.get("trading_permission", {})
+        if not tp.get("allow_trade"):
+            return "防守"
+        mode = tp.get("trade_mode", "")
+        if mode == "ultra_short_only":
+            return "超短防守"
+        if mode == "mainline_core_only":
+            return "主线核心"
+        return "正常参与"
+
+    def _conclusion(self, regime: dict, pdv2: dict) -> str:
+        tp = pdv2.get("trading_permission", {})
+        if not tp.get("allow_trade"):
+            reasons = regime.get("no_trade_reasons", [])
+            if reasons:
+                return f"当前不交易：{reasons[0]}"
+            return "当前不交易"
+        mode = tp.get("trade_mode", "")
+        if mode == "ultra_short_only":
+            return "仅允许超短线，需竞价确认"
+        if mode == "mainline_core_only":
+            return "仅主线核心可参与，仓位控制"
+        return "市场环境支持，可按计划参与"
+
+    def _next_day_strategy(self, regime: dict) -> str:
+        mode = regime.get("trade_mode", "no_trade")
+        if mode == "no_trade":
+            return "不做新开仓，只观察主线是否修复"
+        if mode == "ultra_short_only":
+            return "超短试探，控制仓位 ≤0.2，竞价确认"
+        if mode == "mainline_core_only":
+            return "聚焦主线核心前排，非核心不参与"
+        return "按主线计划执行，注意分歧低吸"
+
+    def _index_conclusion(self, r: dict) -> str:
+        trend = str(r.get("trend_state", ""))
+        if trend == "bearish_trend":
+            return "空头趋势，谨慎"
+        if trend == "downtrend_rebound":
+            return "弱反抽，不追"
+        if trend == "bullish_trend":
+            return "多头趋势，支撑有效"
+        if trend == "neutral_box":
+            return "箱体震荡，观望"
+        return "趋势不明"
+
+    def _mainline_action(self, lr: dict) -> str:
+        state = str(lr.get("lifecycle_state", ""))
+        trade_alive = bool(lr.get("mainline_trade_alive", False))
+        if not trade_alive:
+            return "回避"
+        if state in ("fade_watch",):
+            return "仅观察"
+        if state in ("divergence", "repair"):
+            return "分歧低吸/修复确认"
+        if state in ("fermentation", "acceleration"):
+            return "按阶段参与"
+        if state in ("start", "seed"):
+            return "龙头确认"
+        return "观察"
+
+    def _mainline_conclusion(self, lr: dict) -> str:
+        state = str(lr.get("lifecycle_state", ""))
+        trade_alive = bool(lr.get("mainline_trade_alive", False))
+        if not trade_alive:
+            return "不可交易"
+        if state == "fade_watch":
+            return "退潮观察，等待修复信号"
+        if state == "divergence":
+            return "分歧阶段，关注龙头和修复"
+        if state == "repair":
+            return "修复中，可参与核心弱转强"
+        if state in ("fermentation", "acceleration"):
+            return "主线发酵，积极参与核心"
+        if state == "start":
+            return "启动阶段，观察龙头确认"
+        return "未知"

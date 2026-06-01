@@ -2109,6 +2109,18 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
         recap_doc=recap_doc,
         recap_snapshot_version=str(row.get("snapshot_version") or ""),
     )
+
+    # ── PR-14A: compose engine report into DailyReviewV2 ──
+    try:
+        from stock_processing_service.application.services.post_market_engine_report_composer import (
+            PostMarketEngineReportComposer,
+        )
+        composer = PostMarketEngineReportComposer()
+        engine_report = composer.compose(recap_doc)
+        v2 = {**v2, **engine_report}
+    except Exception:
+        pass  # best-effort, don't block
+
     updated_recap_doc = dict(recap_doc)
     updated_recap_doc["daily_review_v2"] = v2
     updated_payload = dict(normalized)
