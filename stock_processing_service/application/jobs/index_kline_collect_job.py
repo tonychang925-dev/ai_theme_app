@@ -79,6 +79,8 @@ class IndexKlineCollectJob:
         force: bool = False,
     ) -> IndexCollectResult:
         indices = indices or DEFAULT_INDICES
+        if isinstance(trade_date, str):
+            trade_date = date.fromisoformat(trade_date)
         td = trade_date or date.today()
 
         if self._pool is None:
