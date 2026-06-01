@@ -82,7 +82,6 @@ class _DuplicateGateway(_Gateway):
     async def resolve_subject_keys_by_names(self, names):
         return {"新疆自贸区政策推进": "9012396"}
 
-
 class _SimilarDuplicateGateway(_Gateway):
     async def get_intel_news_events(self, feed_date):
         return [
@@ -111,7 +110,6 @@ class _SimilarDuplicateGateway(_Gateway):
                 "source_channel": "realtime_news",
             },
         ]
-
 
 @pytest.mark.asyncio
 async def test_review_events_are_exposed_as_event_review_items():
