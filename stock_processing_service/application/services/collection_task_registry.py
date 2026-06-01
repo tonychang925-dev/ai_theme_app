@@ -110,6 +110,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         JyhfSyncDetailsRunner,
         JyhfSyncHistoryRunner,
         JyhfSyncListsRunner,
+        IndexKlineCollectRunner,
         JyhfSyncStockDetailsRunner,
         PostMarketRecapRunner,
         ProcessIsolatedRunner,
@@ -141,6 +142,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     )
     registry.register("abnormal.signal", BuildStockAbnormalSignalRunner())
     registry.register("dragon_tiger.object", BuildDragonTigerObjectRunner())
+    registry.register("index_kline.collect", IndexKlineCollectRunner())
     registry.register("tushare.daily_bar", TushareKlineRunner())
     registry.register("auction.watch_universe", AuctionWatchUniverseRunner())
     registry.register("auction.snapshot_all", AuctionSnapshotRunner(universe_source="auction_watch_universe"))

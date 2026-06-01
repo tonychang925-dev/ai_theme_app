@@ -1134,3 +1134,42 @@ class ProcessIsolatedRunner:
                 os.killpg(os.getpgid(proc.pid), sig)
         except (ProcessLookupError, PermissionError, OSError):
             pass
+
+
+# ── PR-13D: 指数采集 Runner ──
+class IndexKlineCollectRunner:
+    """在采集链路中执行指数K线采集 + 技术分析。"""
+
+    runner_key: str = "index_kline_collect"
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import asyncpg
+            conn = await asyncpg.connect("postgresql://localhost/stock_data_test", timeout=10)
+            try:
+                from stock_processing_service.application.jobs.index_kline_collect_job import (
+                    IndexKlineCollectJob,
+                )
+                job = IndexKlineCollectJob(pool=conn)
+                result = await job.collect(trade_date=context.trade_date)
+                d = result.to_dict()
+                if d.get("success"):
+                    return CollectionTaskResult(
+                        task_key="index_kline_collect", status="success",
+                        current_label=f"指数采集完成 {d.get('collected_count',0)}/{d.get('total_count',0)}",
+                        output=json.dumps(d),
+                    )
+                else:
+                    return CollectionTaskResult(
+                        task_key="index_kline_collect", status="failed",
+                        current_label=f"指数采集缺失: {d.get('missing_indices',[])}",
+                        error_message=str(d.get('missing_indices', [])),
+                    )
+            finally:
+                await conn.close()
+        except Exception as exc:
+            return CollectionTaskResult(
+                task_key="index_kline_collect", status="failed",
+                current_label=f"指数采集异常: {type(exc).__name__}",
+                error_message=str(exc),
+            )
