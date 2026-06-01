@@ -45,6 +45,7 @@ LLM_ACCEPT_BLOCK_REASONS = {
 }
 
 DEBUG_SOURCE_PREFIXES = ("product_runtime_", "e2e_", "test_")
+TARGET_WATCHLIST_SUBJECT_KEYS = {"9054404", "9012396", "9043698"}
 
 
 def _json_default(value: Any) -> Any:
@@ -283,6 +284,32 @@ def _obvious_wrong_candidates(details: list[dict[str, Any]]) -> list[dict[str, A
     return out
 
 
+def _quality_watch_metrics(details: list[dict[str, Any]], candidates: list[dict[str, Any]]) -> dict[str, int]:
+    direct_hits = [row for row in details if row.get("match_reason") == "direct_theme_name_hit"]
+    v1_fallback_direct_hits = [row for row in direct_hits if row.get("runtime_source") == "v1_fallback"]
+    direct_hit_bad = [row for row in candidates if row.get("match_reason") == "direct_theme_name_hit"]
+    v1_fallback_direct_hit_bad = [
+        row for row in direct_hit_bad if row.get("runtime_source") == "v1_fallback"
+    ]
+    direct_hit_event_groups: dict[int, int] = {}
+    for row in direct_hits:
+        event_id = int(row.get("event_id") or 0)
+        if event_id:
+            direct_hit_event_groups[event_id] = direct_hit_event_groups.get(event_id, 0) + 1
+    ambiguous_direct_hit_candidates = sum(count > 1 for count in direct_hit_event_groups.values())
+    target_wrong_theme_residual = sum(
+        row.get("subject_key") in TARGET_WATCHLIST_SUBJECT_KEYS for row in direct_hit_bad
+    )
+    return {
+        "direct_theme_name_hit_count": len(direct_hits),
+        "v1_fallback_direct_hit_count": len(v1_fallback_direct_hits),
+        "direct_theme_name_hit_bad_count": len(direct_hit_bad),
+        "v1_fallback_direct_hit_bad_count": len(v1_fallback_direct_hit_bad),
+        "ambiguous_direct_hit_candidates_count": ambiguous_direct_hit_candidates,
+        "target_wrong_theme_residual_count": target_wrong_theme_residual,
+    }
+
+
 def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.write_text(
         "\n".join(json.dumps(row, ensure_ascii=False, default=_json_default) for row in rows) + ("\n" if rows else ""),
@@ -312,6 +339,11 @@ def _write_quality_report(path: Path, trade_date: date, metrics: dict[str, Any],
         "human_review_count",
         "unknown_count",
         "direct_theme_name_hit_count",
+        "v1_fallback_direct_hit_count",
+        "direct_theme_name_hit_bad_count",
+        "v1_fallback_direct_hit_bad_count",
+        "ambiguous_direct_hit_candidates_count",
+        "target_wrong_theme_residual_count",
         "llm_accept_blocked_count",
         "v1_fallback_match_count",
         "v2_accepted_match_count",
@@ -326,6 +358,8 @@ def _write_quality_report(path: Path, trade_date: date, metrics: dict[str, Any],
             "- This report is observational. Do not enter Phase 3C unless real new data triggers a Phase 3C condition.",
             "- Phase 3B baseline: product review should only contain high-value uncertain events.",
             "- Do not continue gate repair unless a Phase 3C trigger is observed.",
+            "- Watchlist themes: 9054404 / A股全球第一, 9012396 / 新疆自贸区, 9043698 / 深海经济.",
+            "- `target_wrong_theme_residual_count` should remain 0 during the observation window.",
             "",
             "## Obvious Wrong Match Candidates",
             "",
@@ -523,10 +557,10 @@ async def _main() -> None:
     details = [_detail_row(row) for row in mapped_rows]
     snapshot_metrics = _snapshot_counts(snapshot)
     candidates = _obvious_wrong_candidates(details)
+    watch_metrics = _quality_watch_metrics(details, candidates)
     llm_blocked = [row for row in review_rows if row.get("reason") in LLM_ACCEPT_BLOCK_REASONS]
     metrics = {
         **snapshot_metrics,
-        "direct_theme_name_hit_count": sum(row.get("match_reason") == "direct_theme_name_hit" for row in details),
         "llm_accept_match_count": sum(row.get("match_reason") == "llm_accept_match" for row in details),
         "llm_accept_blocked_count": len(llm_blocked),
         "weak_v1_llm_accept_review_count": sum(row.get("reason") == "weak_v1_llm_accept_review" for row in review_rows),
@@ -536,6 +570,7 @@ async def _main() -> None:
         "v2_accepted_match_count": sum(row.get("runtime_source") == "v2_accepted" for row in details),
         "obvious_wrong_match_sample_count": len(candidates),
         "hard_negative_violation_count": _hard_negative_violation_count(args.hard_negative_summary),
+        **watch_metrics,
     }
     metrics.pop("diagnostics", None)
 
