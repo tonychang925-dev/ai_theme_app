@@ -162,7 +162,6 @@ def test_hard_negative_wrong_hits_catches_xinjiang_ftz_and_deepsea_regressions()
     assert hits["subject_keys"] == ["9012396", "9043698"]
     assert hits["theme_names"] == ["新疆自贸区", "深海经济"]
 
-
 @pytest.mark.asyncio
 async def test_hard_negative_validator_loads_phase5_delta_jsonl():
     hard_negative_file = Path(__file__).resolve().parents[2] / "eval/gate_repair_phase5/e2e_delta_hard_negatives.jsonl"
@@ -225,7 +224,6 @@ async def test_hard_negative_validator_loads_phase5_delta_jsonl():
     assert "phase5_hn_rare_earth_not_deepsea_131216" in case_ids
     assert metrics["9012396"]["hard_negative_case_count"] >= 1
     assert metrics["9043698"]["hard_negative_case_count"] >= 1
-
 
 def test_count_generic_only_related_detects_polluted_related_evidence():
     result = SimpleNamespace(
