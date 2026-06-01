@@ -3,8 +3,8 @@ import { Descriptions, Table, Tag } from "antd";
 import type { EngineMarketRegimeReview, IndexTechnicalReview } from "../../../lib/api";
 
 interface Props {
-  marketRegime: EngineMarketRegimeReview;
-  indexReviews: IndexTechnicalReview[];
+  marketRegime?: EngineMarketRegimeReview | null;
+  indexReviews?: IndexTechnicalReview[];
   tradeDate?: string;
 }
 
@@ -14,7 +14,9 @@ const TREND_COLORS: Record<string, string> = {
 };
 
 export default function MarketRegimePanel({ marketRegime, indexReviews }: Props) {
+  if (!marketRegime) return null;
   const allow = marketRegime.allow_trade;
+  const idxReviews = indexReviews ?? marketRegime.index_technical_reviews ?? [];
 
   const columns = [
     { title: "指数", dataIndex: "index_name", key: "name", width: 70 },
@@ -47,9 +49,9 @@ export default function MarketRegimePanel({ marketRegime, indexReviews }: Props)
         <Descriptions.Item label="数据源">{marketRegime.index_data_source ?? "-"}</Descriptions.Item>
       </Descriptions>
 
-      {indexReviews.length > 0 && (
+      {idxReviews.length > 0 && (
         <Table
-          dataSource={indexReviews.map((r, i) => ({ ...r, key: r.index_code || i }))}
+          dataSource={idxReviews.map((r, i) => ({ ...r, key: r.index_code || i }))}
           columns={columns}
           size="small"
           pagination={false}

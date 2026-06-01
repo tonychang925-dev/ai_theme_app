@@ -2062,13 +2062,26 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
 
     existing = recap_doc.get("daily_review_v2")
     if isinstance(existing, dict) and existing.get("schema_version") == "daily_review_v2":
-        return existing
+        v2 = existing
+    else:
+        v2 = builder.build(
+            trade_date=d,
+            recap_doc=recap_doc,
+            recap_snapshot_version=str(row.get("snapshot_version") or ""),
+        )
 
-    return builder.build(
-        trade_date=d,
-        recap_doc=recap_doc,
-        recap_snapshot_version=str(row.get("snapshot_version") or ""),
-    )
+    # ── PR-14A: enrich with engine report on every read ──
+    try:
+        from stock_processing_service.application.services.post_market_engine_report_composer import (
+            PostMarketEngineReportComposer,
+        )
+        composer = PostMarketEngineReportComposer()
+        engine_report = composer.compose(recap_doc)
+        v2 = {**v2, **engine_report}
+    except Exception:
+        pass
+
+    return v2
 
 
 @app.post("/api/v2/post-market/daily-review-v2/generate")

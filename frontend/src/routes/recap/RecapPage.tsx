@@ -1371,33 +1371,29 @@ export function RecapPage() {
                   <RecapDataQualityBar
                     indexReady={(dailyReviewV2?.index_technical_reviews?.length ?? 0) > 0}
                     mainlineReady={(dailyReviewV2?.mainline_daily_states?.length ?? 0) > 0}
-                    pdv2Ready={!!dailyReviewV2?.post_market_decision_v2_review}
+                    pdv2Ready={!!dailyReviewV2?.post_market_decision_v2}
                   />
                   {dailyReviewV2?.engine_summary && (
                     <EngineDecisionHeader
                       engineSummary={dailyReviewV2.engine_summary}
-                      marketRegime={dailyReviewV2.market_regime_review_v2 ?? null}
+                      marketRegime={dailyReviewV2.market_regime_review ?? null}
                     />
                   )}
-                  {dailyReviewV2?.market_regime_review_v2 && (
+                  {dailyReviewV2?.market_regime_review && (
                     <MarketRegimePanel
-                      marketRegime={dailyReviewV2.market_regime_review_v2}
-                      indexReviews={
-                        dailyReviewV2.index_technical_reviews
-                        ?? dailyReviewV2.market_regime_review_v2.index_technical_reviews
-                        ?? []
-                      }
+                      marketRegime={dailyReviewV2.market_regime_review}
+                      indexReviews={dailyReviewV2.index_technical_reviews}
                       tradeDate={tradeDate}
                     />
                   )}
                   {(dailyReviewV2?.mainline_daily_states?.length ?? 0) > 0 && (
                     <MainlineStateBoard rows={dailyReviewV2!.mainline_daily_states!} tradeDate={tradeDate} />
                   )}
-                  {dailyReviewV2?.post_market_decision_v2_review && (
-                    <D1NextDayWatchPanel review={dailyReviewV2.post_market_decision_v2_review} />
+                  {dailyReviewV2?.post_market_decision_v2 && (
+                    <D1NextDayWatchPanel review={dailyReviewV2.post_market_decision_v2} />
                   )}
-                  {dailyReviewV2?.post_market_decision_v2_review && (
-                    <LayerCStrongPoolPanel review={dailyReviewV2.post_market_decision_v2_review} />
+                  {dailyReviewV2?.post_market_decision_v2 && (
+                    <LayerCStrongPoolPanel review={dailyReviewV2.post_market_decision_v2} />
                   )}
                 </>
               )}

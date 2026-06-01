@@ -622,12 +622,12 @@ export interface PostMarketDailyReviewV2 {
   trading_principle: Record<string, unknown>;
   diagnostics: DailyReviewV2Diagnostics;
 
-  // PR-14A: engine report fields
+  // PR-14A: engine report fields (merged into v2 by composer)
   engine_summary?: EngineSummary;
-  market_regime_review_v2?: EngineMarketRegimeReview;
+  market_regime_review?: EngineMarketRegimeReview;
   index_technical_reviews?: IndexTechnicalReview[];
   mainline_daily_states?: MainlineDailyStateReview[];
-  post_market_decision_v2_review?: PostMarketDecisionV2Review;
+  post_market_decision_v2?: PostMarketDecisionV2Review;
 }
 
 // ── P1-6: PostMarket readiness / jobs status ──
