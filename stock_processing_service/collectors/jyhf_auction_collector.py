@@ -104,6 +104,7 @@ class JyhfAuctionCollector:
     # ── 候选加载 ──
 
     async def load_candidates(self, candidate_date: date) -> list[dict[str, Any]]:
+        """加载候选股票 — 指定日期无数据时自动取最近一个交易日。"""
         pool = await self._get_pool()
         rows = await pool.fetch(
             """SELECT stock_id, stock_name, subject_key, theme_name, candidate_type, weak_type
@@ -112,6 +113,19 @@ class JyhfAuctionCollector:
                ORDER BY candidate_score DESC""",
             candidate_date,
         )
+        # 指定日期无候选时，回退到最新可用日期
+        if not rows:
+            rows = await pool.fetch(
+                """SELECT stock_id, stock_name, subject_key, theme_name, candidate_type, weak_type
+                   FROM weak_to_strong_candidate_pool
+                   WHERE trade_date = (SELECT MAX(trade_date) FROM weak_to_strong_candidate_pool)
+                   ORDER BY candidate_score DESC""",
+            )
+            if rows:
+                logger.warning(
+                    "No candidates for %s, fallback to latest available (%d candidates)",
+                    candidate_date, len(rows),
+                )
         candidates = [{
             "stock_id": r["stock_id"],
             "stock_name": r["stock_name"],

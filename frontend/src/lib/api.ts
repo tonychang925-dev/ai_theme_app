@@ -1698,6 +1698,18 @@ export interface W2SAlertEvent {
   source: string;
   severity: string;
   generated_at: string;
+  // 统一告警 (phase=auction/intraday)
+  phase?: string;
+  unified_level?: string;
+  intraday_level?: string;
+  intraday_score?: number;
+  d2_level?: string;
+  d2_score?: number;
+  capital_flow?: string;
+  current?: number;
+  vwap?: number;
+  above_vwap_ratio?: number;
+  relative_strength?: number;
 }
 
 // P0-D: SSE 前端直连 SPS:8090，去掉 BFF 代理一跳

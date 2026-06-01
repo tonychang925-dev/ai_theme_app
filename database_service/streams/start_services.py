@@ -235,7 +235,7 @@ class StreamServicesManager:
                     "param_values": {
                         "consumer_group": "decision_executor_realtime",
                     },
-                    "dependencies": ["stream_manager", "database_gateway"]
+                    "dependencies": ["database_gateway"]
                 }
             }
 

@@ -306,7 +306,7 @@ class W2SAlertRedisPusher:
             return 0
         pushed = 0
         for a in alerts:
-            dedup_key = f"{STATE_KEY_PREFIX}:{a.trade_date}:{a.stock_id}:{a.phase}"
+            dedup_key = f"{STATE_KEY_PREFIX}:{a.trade_date}:{a.stock_id}:{a.phase}:{a.unified_level}"
             try:
                 if await r.exists(dedup_key):
                     continue

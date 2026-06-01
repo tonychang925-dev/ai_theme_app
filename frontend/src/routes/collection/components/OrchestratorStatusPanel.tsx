@@ -49,9 +49,11 @@ function ServiceCard({ svc }: { svc: OrchestratorServiceState }) {
       </Space>
       <div style={{ marginTop: 4, display: "flex", gap: 4, flexWrap: "wrap" }}>
         <Tag>{stateLabel(svc.observed_state)}</Tag>
-        {svc.desired_state === "wanted"
+        {svc.desired_state === "wanted" && svc.observed_state !== "ready" && svc.observed_state !== "running"
           ? <Tag color="blue">待启动</Tag>
-          : <Tag color="default">非当前窗口</Tag>
+          : svc.desired_state !== "wanted"
+            ? <Tag color="default">非当前窗口</Tag>
+            : null
         }
       </div>
       <div style={{ fontSize: 11, color: "#8c8c8c", marginTop: 2 }}>

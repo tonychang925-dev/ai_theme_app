@@ -380,6 +380,36 @@ def test_generic_supplier_gate_terms_do_not_create_anchor_evidence():
     assert evidence["anchor_hits"] == []
 
 
+def test_new_quality_productivity_support_terms_do_not_create_xinjiang_ftz_anchor_evidence():
+    request = ThemeMatchRequest(
+        event_id=14,
+        news_id=14,
+        title="合成生物产业创新发展行动计划推进，新质生产力平台落地。",
+        content="合成生物产业创新发展行动计划推进，高通量筛选平台落地。",
+        summary="合成生物与新质生产力推进。",
+        event_type="产业政策",
+        entities=["合成生物"],
+    )
+    event_profile = _build_event_match_profile(request)
+    xinjiang_ftz = _profile(
+        "9012396",
+        "新疆自贸区",
+        must_terms=["新质生产力"],
+        strong_terms=["新质生产力", "生物制造"],
+        aliases=["新疆自贸区"],
+        core_objects=["新质生产力"],
+        gate_json={"no_anchor_terms": ["新质生产力", "生物制造"]},
+    )
+
+    evidence = _build_gate_evidence(_build_event_query_text(request, event_profile), xinjiang_ftz, event_profile)
+
+    assert evidence["must_hits"] == []
+    assert evidence["strong_hits"] == []
+    assert evidence["object_hits"] == []
+    assert "新质生产力" in evidence["support_hits"]
+    assert evidence["anchor_hits"] == []
+
+
 def test_composite_supplier_terms_are_downgraded_to_support_hits():
     request = _lanjian_request()
     event_profile = _build_event_match_profile(request)

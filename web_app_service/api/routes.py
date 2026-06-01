@@ -932,6 +932,7 @@ async def jyhf_auction_start(request: Request, payload: dict | None = None) -> d
     mgr = request.app.state.auction_manager
     now = datetime.now(ZoneInfo("Asia/Shanghai"))
     trade_date = (payload or {}).get("trade_date", str(now.date()))
+    # candidate_date 默认用今天，采集器内部会自动取 DB 最新候选（处理周末/节假日）
     candidate_date = (payload or {}).get("candidate_date", str(now.date()))
     return await mgr.start(trade_date, candidate_date)
 
