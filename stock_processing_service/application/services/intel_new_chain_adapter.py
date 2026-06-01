@@ -11,6 +11,7 @@
 from __future__ import annotations
 
 import logging
+import re
 from datetime import date, datetime
 from typing import Any, Dict, List, Optional
 
@@ -390,6 +391,8 @@ class NewChainIntelFeedAdapter:
             elif isinstance(result, list):
                 all_items.extend(result)
 
+        all_items = self._dedupe_feed_items(all_items)
+
         # session 过滤（仅 event 类 item 有实际时间，新链信号默认 post_market）
         if session not in ("all", ""):
             filtered: List[Dict[str, Any]] = []
@@ -445,6 +448,65 @@ class NewChainIntelFeedAdapter:
         if source in {"", "realtime_news", "structured_theme_match", "event_theme_matcher"}:
             return "akshare_realtime"
         return source
+
+    @staticmethod
+    def _dedupe_feed_items(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        best_by_key: Dict[tuple[str, tuple[str, ...], tuple[str, ...], tuple[str, ...]], Dict[str, Any]] = {}
+        for item in items:
+            key = NewChainIntelFeedAdapter._feed_item_dedupe_key(item)
+            previous = best_by_key.get(key)
+            if previous is None or NewChainIntelFeedAdapter._feed_item_rank(item) > NewChainIntelFeedAdapter._feed_item_rank(previous):
+                best_by_key[key] = item
+        return list(best_by_key.values())
+
+    @staticmethod
+    def _feed_item_dedupe_key(item: Dict[str, Any]) -> tuple[str, tuple[str, ...], tuple[str, ...], tuple[str, ...]]:
+        title = NewChainIntelFeedAdapter._normalize_feed_text(str(item.get("title") or ""))
+        if not title:
+            title = NewChainIntelFeedAdapter._normalize_feed_text(str(item.get("summary") or ""))
+        theme_names = tuple(
+            sorted(
+                {
+                    NewChainIntelFeedAdapter._normalize_feed_text(str(value))
+                    for value in (item.get("theme_names") or [])
+                    if str(value).strip()
+                }
+            )
+        )
+        theme_keys = tuple(
+            sorted(
+                {
+                    NewChainIntelFeedAdapter._normalize_feed_text(str(value))
+                    for value in (item.get("theme_subject_keys") or [])
+                    if str(value).strip()
+                }
+            )
+        )
+        stock_ids = tuple(
+            sorted(
+                {
+                    NewChainIntelFeedAdapter._normalize_feed_text(str(value))
+                    for value in (item.get("stock_ids") or [])
+                    if str(value).strip()
+                }
+            )
+        )
+        return (title, theme_names, theme_keys, stock_ids)
+
+    @staticmethod
+    def _feed_item_rank(item: Dict[str, Any]) -> tuple[int, int, float]:
+        priority = ITEM_TYPE_PRIORITY.get(str(item.get("item_type") or ""), 0)
+        occurred_at = str(item.get("occurred_at") or "")
+        try:
+            ts = int(datetime.fromisoformat(occurred_at.replace("Z", "+00:00")).timestamp())
+        except Exception:
+            ts = 0
+        score = float(item.get("impact_score") or 0)
+        return (priority, ts, score)
+
+    @staticmethod
+    def _normalize_feed_text(value: str) -> str:
+        return re.sub(r"[\s【】\[\]（）()、,，.。:：;；\-_/]+", "", value).lower()
 
     async def get_latest_date(self) -> Optional[str]:
         """返回新链各源的最大日期，不做 fallback。"""
