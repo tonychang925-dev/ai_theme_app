@@ -268,6 +268,7 @@ class MainlineDiscoveryEngine:
         market_acceptance_by_subject: dict[str, dict[str, Any]] | None = None,
         major_event_by_subject: dict[str, dict[str, Any]] | None = None,
         narrative_by_subject: dict[str, dict[str, Any]] | None = None,
+        active_mainline_universe: Any | None = None,
     ) -> list[MainlineDiscoveryDecision]:
         logic_map = logic_evidence_by_subject or {}
         market_map = market_acceptance_by_subject or {}
@@ -275,15 +276,62 @@ class MainlineDiscoveryEngine:
         narrative_map = narrative_by_subject or {}
 
         results: list[MainlineDiscoveryDecision] = []
+        existing_mainline_updates: list[dict[str, Any]] = []
+
+        # Import here to avoid circular dependency
+        from stock_processing_service.application.services.active_mainline_universe_builder import (
+            ActiveMainlineUniverseBuilder,
+        )
+
         for cand in candidate_subjects:
             sk = str(cand.get("subject_key", ""))
             if not sk:
                 continue
             tn = str(cand.get("theme_name", sk))
 
+            # ── PR-13A: check dedup against active mainlines ──
+            dup_info = None
+            if active_mainline_universe is not None:
+                dup_info = ActiveMainlineUniverseBuilder.is_duplicate_of_active(
+                    sk, active_mainline_universe
+                )
+
+            if dup_info:
+                # Not a new mainline candidate — record as existing mainline event
+                le = logic_map.get(sk, {})
+                ev_chain = le.get("event_chain", []) if isinstance(le, dict) else []
+                existing_mainline_updates.append({
+                    "subject_key": sk,
+                    "theme_name": tn,
+                    "machine_state": dup_info["machine_state"],
+                    "target_mainline_id": dup_info["target_mainline_id"],
+                    "target_mainline_name": dup_info["target_mainline_name"],
+                    "match_type": dup_info["match_type"],
+                    "event_count": len(ev_chain) if isinstance(ev_chain, list) else 0,
+                    "review_required": False,
+                })
+                # Create a decision with existing_mainline state (for diagnostics / daily_state)
+                decision = MainlineDiscoveryDecision(
+                    subject_key=sk,
+                    theme_name=tn,
+                    machine_state=dup_info["machine_state"],
+                    final_mainline_state="existing_mainline_event",
+                    human_review_required=False,
+                    human_review_status="none",
+                    review_reason=dup_info["match_type"] + "_dedup",
+                    suggested_human_decision="none",
+                    diagnostics={
+                        "dedup_match_type": dup_info["match_type"],
+                        "target_mainline_id": dup_info["target_mainline_id"],
+                        "target_mainline_name": dup_info["target_mainline_name"],
+                        "existing_event_count": len(ev_chain) if isinstance(ev_chain, list) else 0,
+                    },
+                )
+                results.append(decision)
+                continue
+
             le = logic_map.get(sk, {})
             ma = market_map.get(sk, {})
-            # market_acceptance is a dataclass — convert to dict
             if hasattr(ma, 'to_dict'):
                 ma = ma.to_dict()
             mc = major_map.get(sk, {})
@@ -301,15 +349,17 @@ class MainlineDiscoveryEngine:
             )
             results.append(decision)
 
-        # Sort: fast/slow candidates first, then by score
+        # Sort: fast/slow candidates first, then existing mainline events, then by score
         def _sort_key(d: MainlineDiscoveryDecision) -> tuple[int, float]:
             order = {
                 "machine_fast_candidate": 0,
                 "machine_slow_candidate": 1,
-                "logic_only": 2,
-                "market_noise": 3,
-                "rotation_hotspot": 4,
-                "rejected": 5,
+                "existing_mainline_strengthening": 2,
+                "existing_mainline_branch_event": 3,
+                "logic_only": 4,
+                "market_noise": 5,
+                "rotation_hotspot": 6,
+                "rejected": 7,
             }
             score = max(d.fast_line_score or 0, d.slow_line_score or 0, d.hybrid_logic_score or 0)
             return (order.get(d.machine_state, 99), -score)
