@@ -83,6 +83,14 @@ class StockWriteGatewayAdapter:
             return await fn(rows)
         raise RuntimeError("DatabaseGatewayStockFacade missing upsert_mainline_identity_review_queue_rows")
 
+    async def upsert_mainline_daily_state_rows(self, rows: list[dict[str, Any]]) -> int:
+        if not rows:
+            return 0
+        fn = getattr(self._db, "upsert_mainline_daily_state_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        return 0
+
     async def upsert_strong_watch_pool_rows(self, rows: list[dict[str, Any]]) -> int:
         if not rows:
             return 0
