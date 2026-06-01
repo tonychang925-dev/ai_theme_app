@@ -4277,6 +4277,113 @@ async def get_backtest_result(run_id: str) -> dict[str, Any]:
     }
 
 
+# ── PR-13D: 大盘指数采集 ─────────────────────────────────────────────────
+
+@app.post("/api/v1/index-kline/collect")
+async def collect_index_kline(payload: dict[str, Any] | None = None) -> dict[str, Any]:
+    """采集大盘指数日K + 技术分析并落库。"""
+    p = payload or {}
+    trade_date_str = str(p.get("trade_date") or p.get("date") or "")
+    force = bool(p.get("force", False))
+
+    from datetime import date as _date
+    if trade_date_str:
+        try:
+            td = _date.fromisoformat(trade_date_str)
+        except ValueError:
+            return {"success": False, "error": "INVALID_DATE"}
+    else:
+        td = _date.today()
+
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+
+    from stock_processing_service.application.jobs.index_kline_collect_job import IndexKlineCollectJob
+    job = IndexKlineCollectJob(pool=pool)
+    result = await job.collect(trade_date=td, lookback_days=120, force=force)
+    return result.to_dict()
+
+
+@app.get("/api/v1/index-kline/status")
+async def get_index_kline_status(trade_date: str = "") -> dict[str, Any]:
+    """查询指数采集状态。"""
+    from datetime import date as _date
+    if trade_date:
+        try:
+            td = _date.fromisoformat(trade_date)
+        except ValueError:
+            return {"ok": False, "error": "INVALID_DATE"}
+    else:
+        td = _date.today()
+
+    try:
+        import asyncpg
+        conn = await asyncpg.connect("postgresql://localhost/stock_data_test", timeout=5)
+        try:
+            tech_count = await conn.fetchval(
+                "SELECT COUNT(*) FROM index_technical_daily WHERE trade_date = $1::date", td
+            )
+            kline_count = await conn.fetchval(
+                "SELECT COUNT(DISTINCT index_code) FROM index_daily_kline WHERE trade_date = $1::date", td
+            )
+            if tech_count > 0:
+                return {
+                    "ok": True, "trade_date": td.isoformat(),
+                    "count": tech_count, "total": 7,
+                    "technical_count": tech_count,
+                }
+            elif kline_count > 0:
+                return {
+                    "ok": True, "trade_date": td.isoformat(),
+                    "count": kline_count, "total": 7,
+                    "technical_count": 0,
+                }
+            else:
+                return {"ok": False, "trade_date": td.isoformat(), "count": 0, "total": 7}
+        finally:
+            await conn.close()
+    except Exception as e:
+        return {"ok": False, "error": str(e)[:100]}
+
+
+@app.get("/api/v1/index-technical/daily")
+async def get_index_technical_daily(trade_date: str = "") -> list[dict[str, Any]]:
+    """读取指数技术分析日快照。"""
+    from datetime import date as _date
+    if trade_date:
+        try:
+            td = _date.fromisoformat(trade_date)
+        except ValueError:
+            return []
+    else:
+        td = _date.today()
+
+    try:
+        import asyncpg, json as _json
+        conn = await asyncpg.connect("postgresql://localhost/stock_data_test", timeout=5)
+        try:
+            rows = await conn.fetch(
+                "SELECT * FROM index_technical_daily WHERE trade_date = $1::date ORDER BY index_code", td
+            )
+            result = []
+            for r in rows:
+                d = dict(r)
+                for k in ("trade_date", "created_at", "updated_at"):
+                    if k in d and hasattr(d[k], "isoformat"):
+                        d[k] = d[k].isoformat()
+                for k in ("risk_flags_json", "diagnostics_json"):
+                    if k in d and isinstance(d[k], str):
+                        d[k.replace("_json", "")] = _json.loads(d[k])
+                    elif k in d:
+                        d[k.replace("_json", "")] = d[k]
+                result.append(d)
+            return result
+        finally:
+            await conn.close()
+    except Exception:
+        return []
+
+
 # ── P1-A: 久赢恒丰行情接口直采 ──────────────────────────────────────────
 
 @app.get("/api/v1/jyhf-market/status")

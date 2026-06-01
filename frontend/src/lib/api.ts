@@ -638,6 +638,31 @@ export async function fetchDailyReviewV2(date: string): Promise<PostMarketDailyR
   );
 }
 
+export interface IndexCollectResult {
+  success: boolean;
+  trade_date: string;
+  collected_count: number;
+  technical_count: number;
+  total_count: number;
+  missing_indices: string[];
+  source: string;
+}
+
+export async function collectIndexKline(payload: { trade_date?: string; force?: boolean }): Promise<IndexCollectResult> {
+  return fetchJsonWithTimeout<IndexCollectResult>(
+    `/api/v1/index-kline/collect`,
+    { method: "POST", body: JSON.stringify(payload || {}), headers: { "Content-Type": "application/json" } },
+    120000,
+  );
+}
+
+export async function fetchIndexKlineStatus(tradeDate: string): Promise<IndexCollectResult> {
+  return fetchJsonWithTimeout<IndexCollectResult>(
+    `/api/v1/index-kline/status?trade_date=${encodeURIComponent(tradeDate)}`,
+    {}, 5000,
+  );
+}
+
 export async function generateDailyReviewV2(date: string, force = false): Promise<Record<string, unknown>> {
   return fetchJsonWithTimeout<Record<string, unknown>>(
     `/api/v2/post-market/daily-review-v2/generate`,
