@@ -513,6 +513,30 @@ export interface DragonTigerReviewV2 {
   diagnostics: Record<string, unknown>;
 }
 
+// ── PR-14C: Evidence Alignment Types ──
+
+export interface EvidenceAlignment {
+  active_mainline: boolean;
+  mainline_id: string;
+  mainline_name: string;
+  lifecycle_state: string;
+  mainline_trade_alive?: boolean;
+  in_layer_c: boolean;
+  layer_c_level: string;
+  is_d1_candidate: boolean;
+  d1_level: string;
+  is_focus_stock: boolean;
+  trade_action: string;
+  evidence_role: string;
+}
+
+export interface EvidenceAlignmentIndex {
+  by_stock: Record<string, EvidenceAlignment>;
+  by_subject: Record<string, Record<string, unknown>>;
+  indexed_stocks: number;
+  indexed_subjects: number;
+}
+
 export type PostMarketDailyReviewV2ModuleRow = Record<string, unknown>;
 
 // ── PR-14A/B: Engine Report Types ──
@@ -628,6 +652,8 @@ export interface PostMarketDailyReviewV2 {
   index_technical_reviews?: IndexTechnicalReview[];
   mainline_daily_states?: MainlineDailyStateReview[];
   post_market_decision_v2?: PostMarketDecisionV2Review;
+  // PR-14C: evidence alignment
+  evidence_alignment_index?: EvidenceAlignmentIndex;
 }
 
 // ── P1-6: PostMarket readiness / jobs status ──

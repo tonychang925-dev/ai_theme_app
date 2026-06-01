@@ -51,12 +51,18 @@ class PostMarketEngineReportComposer:
         # ── 5. post_market_decision_v2 ──
         post_market_decision_v2 = self._build_pdv2_review(pdv2)
 
+        # ── 6. evidence alignment index ──
+        evidence_alignment_index = self._build_evidence_alignment_index(
+            mainline_daily_states, pdv2
+        )
+
         return {
             "engine_summary": engine_summary,
             "market_regime_review": market_regime_review,
             "index_technical_reviews": index_technical_reviews,
             "mainline_daily_states": mainline_daily_states,
             "post_market_decision_v2": post_market_decision_v2,
+            "evidence_alignment_index": evidence_alignment_index,
         }
 
     def _build_engine_summary(
@@ -248,6 +254,107 @@ class PostMarketEngineReportComposer:
         if state in ("start", "seed"):
             return "龙头确认"
         return "观察"
+
+    def _build_evidence_alignment_index(
+        self,
+        mainline_states: list[dict],
+        pdv2: dict,
+    ) -> dict[str, dict]:
+        """PR-14C: Build stock_id/subject_key → engine context index.
+
+        Returns { "by_stock": {...}, "by_subject": {...} }
+        Each entry has: active_mainline, mainline_id, mainline_name,
+        lifecycle_state, trade_alive, in_layer_c, layer_c_level,
+        is_d1_candidate, d1_level, is_focus_stock, trade_action.
+        """
+        by_stock: dict[str, dict] = {}
+        by_subject: dict[str, dict] = {}
+
+        ml_map = {m.get("mainline_id", ""): m for m in mainline_states}
+
+        strong = pdv2.get("strong_stock_pool_reviews", [])
+        d1_list = pdv2.get("weak_to_strong_d1_reviews", [])
+        focus_list = pdv2.get("next_day_focus_stocks", [])
+
+        d1_by_stock = {str(d.get("stock_id", "")): d for d in d1_list}
+        focus_by_stock = {str(f.get("stock_id", "")): f for f in focus_list}
+        d1_subjects = {str(d.get("subject_key", "")) for d in d1_list if d.get("subject_key")}
+
+        for s in strong:
+            sid = str(s.get("stock_id", ""))
+            sk = str(s.get("subject_key", ""))
+            mid = str(s.get("mainline_id", ""))
+            ml = ml_map.get(mid, {})
+
+            entry = s.get("pool_entry_type", "observe_only")
+            is_d1 = sid in d1_by_stock
+            is_focus = sid in focus_by_stock
+            d1_level = str(d1_by_stock[sid].get("candidate_level", "")) if is_d1 else ""
+            trade_alive = bool(ml.get("mainline_trade_alive", False))
+            state = str(ml.get("lifecycle_state", "unknown"))
+            d1_subject = sk in d1_subjects
+
+            action = "observe_only"
+            if is_focus:
+                action = "focus"
+            elif is_d1 and d1_level == "formal":
+                action = "d1_formal"
+            elif is_d1:
+                action = "d1_observe"
+            elif not trade_alive:
+                action = "avoid" if state in ("fade_confirmed", "dead") else "observe_only"
+            elif state == "fade_watch":
+                action = "observe_only"
+            elif entry == "reject":
+                action = "observe_only"
+
+            alignment = {
+                "active_mainline": True,
+                "mainline_id": mid,
+                "mainline_name": str(ml.get("mainline_name", "")),
+                "lifecycle_state": state,
+                "mainline_trade_alive": trade_alive,
+                "in_layer_c": True,
+                "layer_c_level": entry,
+                "is_d1_candidate": is_d1,
+                "d1_level": d1_level,
+                "is_focus_stock": is_focus,
+                "trade_action": action,
+                "evidence_role": (
+                    "focus_stock" if is_focus
+                    else "d1_candidate" if is_d1
+                    else "layer_c_tracking" if entry != "reject"
+                    else "tracking_only"
+                ),
+            }
+            if sid:
+                by_stock[sid] = alignment
+
+        if d1_subjects:
+            for sk in d1_subjects:
+                if sk not in by_subject:
+                    ml_match = None
+                    for m in mainline_states:
+                        aks = m.get("active_subject_keys", [])
+                        if sk in aks:
+                            ml_match = m
+                            break
+                    by_subject[sk] = {
+                        "active_mainline": bool(ml_match),
+                        "mainline_id": str(ml_match.get("mainline_id", "")) if ml_match else "",
+                        "mainline_name": str(ml_match.get("mainline_name", "")) if ml_match else "",
+                        "lifecycle_state": str(ml_match.get("lifecycle_state", "unknown")) if ml_match else "unknown",
+                        "trade_alive": bool(ml_match.get("mainline_trade_alive", False)) if ml_match else False,
+                        "has_d1": True,
+                        "evidence_role": "d1",
+                    }
+
+        return {
+            "by_stock": by_stock,
+            "by_subject": by_subject,
+            "indexed_stocks": len(by_stock),
+            "indexed_subjects": len(by_subject),
+        }
 
     def _mainline_conclusion(self, lr: dict) -> str:
         state = str(lr.get("lifecycle_state", ""))
