@@ -1155,13 +1155,13 @@ class IndexKlineCollectRunner:
                 d = result.to_dict()
                 if d.get("success"):
                     return CollectionTaskResult(
-                        task_key="index_kline_collect", status="success",
+                        status="success",
                         current_label=f"指数采集完成 {d.get('collected_count',0)}/{d.get('total_count',0)}",
-                        output=json.dumps(d),
+                        logs=[f"collected={d.get('collected_count')}/{d.get('total_count')} tech={d.get('technical_count')}"],
                     )
                 else:
                     return CollectionTaskResult(
-                        task_key="index_kline_collect", status="failed",
+                        status="failed",
                         current_label=f"指数采集缺失: {d.get('missing_indices',[])}",
                         error_message=str(d.get('missing_indices', [])),
                     )
@@ -1169,7 +1169,7 @@ class IndexKlineCollectRunner:
                 await conn.close()
         except Exception as exc:
             return CollectionTaskResult(
-                task_key="index_kline_collect", status="failed",
+                status="failed",
                 current_label=f"指数采集异常: {type(exc).__name__}",
                 error_message=str(exc),
             )
