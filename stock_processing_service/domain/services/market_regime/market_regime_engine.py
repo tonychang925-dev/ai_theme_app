@@ -48,12 +48,22 @@ class MarketRegimeEngine:
             ms = "confirmed_mainline_supportive_market"
 
         # Determine blocking rule from the highest-priority no_trade_reason
+        # PR-13B: distinguish no_active_confirmed_mainline (registry empty)
+        # vs no_trade_alive_mainline (registry has mainlines but none trade_alive)
         blocking_rule = ""
         ntr = permission.no_trade_reasons
         if ntr and isinstance(ntr, list) and len(ntr) > 0:
             first = str(ntr[0])
             if "无人工确认主线" in first:
-                blocking_rule = "no_confirmed_mainline"
+                # Check if registry actually has confirmed mainlines but none trade_alive
+                trade_alive_count = sum(1 for lr in life if lr.get("mainline_trade_alive"))
+                mainline_alive_count = sum(1 for lr in life if lr.get("mainline_alive"))
+                if mainline_alive_count > 0 and trade_alive_count == 0:
+                    blocking_rule = "no_trade_alive_mainline"
+                elif mainline_alive_count == 0:
+                    blocking_rule = "no_active_confirmed_mainline"
+                else:
+                    blocking_rule = "no_trade_alive_mainline"
             elif "退潮" in first or "风险关闭" in first:
                 blocking_rule = "mainline_fading"
             elif "大盘环境" in first:
@@ -71,6 +81,7 @@ class MarketRegimeEngine:
             "mainline_env": mainline.mainline_environment,
             "data_quality": "partial" if not kline else "ready",
             "lifecycle_review_count": len(life),
+            "lifecycle_alive_count": sum(1 for lr in life if lr.get("mainline_alive")),
             "lifecycle_trade_alive_count": sum(1 for lr in life if lr.get("mainline_trade_alive")),
         }
 

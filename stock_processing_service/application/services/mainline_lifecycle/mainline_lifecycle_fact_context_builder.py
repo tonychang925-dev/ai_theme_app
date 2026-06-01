@@ -81,7 +81,7 @@ class MainlineLifecycleFactContextBuilder:
         if all_sks:
             try:
                 rows = await self._read.get_mainline_cycle_by_subject_keys(
-                    subject_keys=all_sks, trade_date=td_str if isinstance(td_str, str) else trade_date,
+                    subject_keys=all_sks, trade_date=trade_date,
                 )
                 for r in rows:
                     d = dict(r.__dict__) if hasattr(r, "__dict__") else dict(r)
@@ -98,7 +98,7 @@ class MainlineLifecycleFactContextBuilder:
         if all_sks:
             try:
                 rows = await self._read.get_subject_cycle_evidence_daily(
-                    trade_date=td_str if isinstance(td_str, str) else trade_date,
+                    trade_date=trade_date,
                     subject_keys=all_sks,
                 )
                 for r in rows:

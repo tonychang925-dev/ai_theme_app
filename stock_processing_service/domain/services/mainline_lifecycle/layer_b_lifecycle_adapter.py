@@ -95,14 +95,20 @@ class MainlineLifecycleLayerBAdapter:
 
             if not jd:
                 missing_jd_count += 1
-                # No Layer B data — still output, but mark as unknown
+                # No Layer B data — conservatively assume alive but NOT trade_alive.
+                # This prevents false no_confirmed_mainline while still blocking trading
+                # until cycle_judgement data catches up.
                 reviews.append(MainlineLifecycleReview(
                     trade_date=trade_date, mainline_id=ml_id, mainline_name=ml_name,
                     canonical_subject_key=csk,
-                    lifecycle_state="unknown", mainline_alive=False, mainline_trade_alive=False,
+                    lifecycle_state="unknown", mainline_alive=True, mainline_trade_alive=False,
                     lifecycle_source="theme_cycle_judgement_v2", source_subject_key=csk,
+                    playability={"can_watch": True, "can_trade_if_market_safe": False,
+                                 "preferred_setup": "observe_only",
+                                 "forbidden_setup": ["new_position", "chase"]},
                     diagnostics={"layer_b_reused": False, "mode": "missing_layer_b_judgement",
-                                 "missing_layer_b_judgement": True},
+                                 "missing_layer_b_judgement": True,
+                                 "assume_alive": True},
                 ))
                 continue
 
@@ -110,18 +116,33 @@ class MainlineLifecycleLayerBAdapter:
             raw_state = str(jd.get("final_cycle_state") or jd.get("state") or "unknown")
             lifecycle_state = _STATE_MAP.get(raw_state, raw_state)
             alive = bool(jd.get("final_mainline_alive", False))
-            trade_alive = alive and lifecycle_state not in {"fade_confirmed", "dead", "unknown"}
 
+            # PR-13B: trade_alive is only False for truly dead states or hard vetoes.
+            # divergence/repair are alive states — trading permission is gated by MarketRegime.
             fade_risk = _float(jd.get("fade_risk_score"))
             fade_confirmed = _float(jd.get("fade_confirmed_score"))
             fade_watch = _float(jd.get("fade_watch_score"))
             strength = _float(jd.get("mainline_strength_score"))
             support_break = bool(jd.get("support_break", False))
+            leader_breakdown = bool(jd.get("leader_breakdown", False))
             reason_codes = list(jd.get("fade_reason_codes") or [])
+
+            # Hard vetoes: these override alive=True → trade_alive=False
+            hard_veto = (
+                lifecycle_state in {"fade_confirmed", "dead"}
+                or support_break
+                or leader_breakdown
+                or (fade_risk is not None and fade_risk >= 80)
+            )
+            trade_alive = alive and not hard_veto
 
             # ── risk state ──
             risk = "normal"
-            if trade_alive and (fade_confirmed or 0) >= 50:
+            if not alive:
+                risk = "inactive"
+            elif hard_veto:
+                risk = "inactive"
+            elif trade_alive and (fade_confirmed or 0) >= 50:
                 risk = "high_fade_risk"
             elif trade_alive and (fade_watch or 0) >= 50:
                 risk = "elevated_fade_watch"
