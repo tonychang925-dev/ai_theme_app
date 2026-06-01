@@ -650,7 +650,7 @@ export interface IndexCollectResult {
 
 export async function collectIndexKline(payload: { trade_date?: string; force?: boolean }): Promise<IndexCollectResult> {
   return fetchJsonWithTimeout<IndexCollectResult>(
-    `/api/v1/index-kline/collect`,
+    `/api/v2/index-kline/collect`,
     { method: "POST", body: JSON.stringify(payload || {}), headers: { "Content-Type": "application/json" } },
     120000,
   );
@@ -658,7 +658,7 @@ export async function collectIndexKline(payload: { trade_date?: string; force?: 
 
 export async function fetchIndexKlineStatus(tradeDate: string): Promise<IndexCollectResult> {
   return fetchJsonWithTimeout<IndexCollectResult>(
-    `/api/v1/index-kline/status?trade_date=${encodeURIComponent(tradeDate)}`,
+    `/api/v2/index-kline/status?trade_date=${encodeURIComponent(tradeDate)}`,
     {}, 5000,
   );
 }

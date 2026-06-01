@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   cancelCollection,
+  collectIndexKline,
   continueCollection,
   fetchCollectionAvailability,
   fetchCollectionStatus,
@@ -172,6 +173,16 @@ export function CollectionPage() {
     }, 1500);
     return () => window.clearInterval(timer);
   }, [job?.job_id, job?.status]);
+
+  // PR-13D: trigger index collection when main job completes and indexKline is checked
+  const indexTriggeredRef = useRef(false);
+  useEffect(() => {
+    if (job?.status === "success" && options.indexKline && !indexTriggeredRef.current) {
+      indexTriggeredRef.current = true;
+      collectIndexKline({ trade_date: tradeDate, force: false }).catch(() => {});
+    }
+    if (job?.status === "running") indexTriggeredRef.current = false;
+  }, [job?.status, options.indexKline, tradeDate]);
 
   useEffect(() => {
     const panel = logPanelRef.current;

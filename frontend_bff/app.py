@@ -2350,3 +2350,20 @@ async def get_available_streams():
             }
         }
     }
+
+
+# ── PR-13D: 指数采集 BFF 代理 ──
+
+@app.post("/api/v2/index-kline/collect")
+async def proxy_index_kline_collect(payload: dict[str, Any] | None = None):
+    return await _proxy_sps_collection("POST", f"{_sps_base_url()}/api/v1/index-kline/collect", json_payload=payload or {})
+
+
+@app.get("/api/v2/index-kline/status")
+async def proxy_index_kline_status(trade_date: str = ""):
+    return await _proxy_sps_collection("GET", f"{_sps_base_url()}/api/v1/index-kline/status?trade_date={trade_date}")
+
+
+@app.get("/api/v2/index-technical/daily")
+async def proxy_index_technical_daily(trade_date: str = ""):
+    return await _proxy_sps_collection("GET", f"{_sps_base_url()}/api/v1/index-technical/daily?trade_date={trade_date}")
