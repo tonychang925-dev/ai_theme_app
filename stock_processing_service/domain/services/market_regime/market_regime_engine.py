@@ -47,11 +47,31 @@ class MarketRegimeEngine:
         else:
             ms = "confirmed_mainline_supportive_market"
 
+        # Determine blocking rule from the highest-priority no_trade_reason
+        blocking_rule = ""
+        ntr = permission.no_trade_reasons
+        if ntr and isinstance(ntr, list) and len(ntr) > 0:
+            first = str(ntr[0])
+            if "无人工确认主线" in first:
+                blocking_rule = "no_confirmed_mainline"
+            elif "退潮" in first or "风险关闭" in first:
+                blocking_rule = "mainline_fading"
+            elif "大盘环境" in first:
+                blocking_rule = "broad_market_regime_" + broad.broad_market_regime
+            elif "情绪" in first or "死亡" in first:
+                blocking_rule = "short_term_sentiment_dead"
+            elif "观察级" in first:
+                blocking_rule = "mainline_watch_only"
+            else:
+                blocking_rule = first[:80]
+
         diag = {
             "broad_regime": broad.broad_market_regime,
             "sentiment": sentiment.short_term_sentiment,
             "mainline_env": mainline.mainline_environment,
             "data_quality": "partial" if not kline else "ready",
+            "lifecycle_review_count": len(life),
+            "lifecycle_trade_alive_count": sum(1 for lr in life if lr.get("mainline_trade_alive")),
         }
 
         return MarketRegimeReview(
@@ -66,6 +86,7 @@ class MarketRegimeEngine:
             allowed_actions=permission.allowed_actions,
             forbidden_actions=permission.forbidden_actions,
             no_trade_reasons=permission.no_trade_reasons,
+            no_trade_blocking_rule=blocking_rule,
             risk_notes=permission.risk_notes,
             broad_market=broad.to_dict(),
             sentiment=sentiment.to_dict(),
