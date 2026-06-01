@@ -210,7 +210,6 @@ class AkShareRealtimeNewsCollector:
         import akshare as ak
 
         sources: list[tuple[str, Any, str]] = [
-            ("cls",       ak.stock_info_global_cls, "cls"),
             ("sina",      ak.stock_info_global_sina, "sina"),
             ("ths",       ak.stock_info_global_ths, "ths"),
             ("futu",      ak.stock_info_global_futu, "futu"),
@@ -218,7 +217,7 @@ class AkShareRealtimeNewsCollector:
         ]
 
         # Per-source row limits to balance coverage vs noise
-        _SOURCE_LIMITS = {"cls": 30, "em": 50, "sina": 20, "ths": 20, "futu": 50, "cctv": 12}
+        _SOURCE_LIMITS = {"em": 50, "sina": 20, "ths": 20, "futu": 50, "cctv": 12}
 
         async def _fetch_one(label: str, func, channel: str) -> list[dict[str, Any]]:
             try:

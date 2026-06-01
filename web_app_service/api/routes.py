@@ -747,6 +747,38 @@ async def proxy_review_queue_import_pending() -> dict:
     return await _proxy_stock_processing_post_json("/api/v1/review-queue/import-pending", {})
 
 
+# ── PR-12.5: Mainline Review Proxy Routes ──
+
+@router.get("/mainline-review/queue")
+async def proxy_mainline_review_queue(
+    trade_date: str | None = None, status: str | None = None, limit: int = 200,
+) -> dict:
+    params = {}
+    if trade_date: params["trade_date"] = trade_date
+    if status: params["status"] = status
+    params["limit"] = str(limit)
+    return await _proxy_stock_processing_json("/api/v2/mainline-review/queue", params)
+
+
+@router.get("/mainline-review/registry")
+async def proxy_mainline_review_registry(trade_date: str | None = None, limit: int = 100) -> dict:
+    params = {}
+    if trade_date: params["trade_date"] = trade_date
+    params["limit"] = str(limit)
+    return await _proxy_stock_processing_json("/api/v2/mainline-review/registry", params)
+
+
+@router.post("/mainline-review/import-candidates")
+async def proxy_mainline_import_candidates(payload: dict) -> dict:
+    return await _proxy_stock_processing_post_json("/api/v2/mainline-review/import-candidates", payload, timeout=60.0)
+
+
+@router.post("/mainline-review/{review_id}/decision")
+async def proxy_mainline_review_decision(review_id: str, payload: dict) -> dict:
+    return await _proxy_stock_processing_post_json(
+        f"/api/v2/mainline-review/{review_id}/decision", payload, timeout=15.0)
+
+
 @router.get("/realtime/jyhf-cdp/status")
 async def jyhf_cdp_collector_status(request: Request):
     manager = request.app.state.cdp_manager

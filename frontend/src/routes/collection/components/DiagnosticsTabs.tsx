@@ -1,10 +1,12 @@
 /** P4-1A: 诊断详情 Tab 面板 — 日志/DOM/Stream/Review Queue。 */
 import { Button, Descriptions, Space, Table, Tabs, Tag } from "antd";
+import type { CSSProperties } from "react";
 import type { NewChainRealtimeStatus, ReviewQueueItem } from "../../../lib/api";
 
 interface Props {
   mergedLogs: string[];
   jyhfLogs: string[];
+  showLogPanels?: boolean;
   stackStatus: NewChainRealtimeStatus | null;
   reviewItems: ReviewQueueItem[];
   reviewTotal: number;
@@ -22,27 +24,265 @@ interface Props {
   onOpenDetail: (item: ReviewQueueItem) => void;
 }
 
+type LogSection = {
+  title: string;
+  lines: string[];
+};
+
+type LogFileGroup = {
+  fileName: string;
+  category: "采集" | "LLM" | "匹配" | "其他";
+  lines: string[];
+};
+
+type JyhfLogGroup = {
+  title: string;
+  lines: string[];
+};
+
+function isSectionHeader(line: string): boolean {
+  return /^── .+ ──$/.test(line.trim());
+}
+
+function isFileHeader(line: string): boolean {
+  return /^──\s+.+\s+──$/.test(line.trim()) && !line.includes("运行日志 (");
+}
+
+function classifyCollectorFile(fileName: string): LogFileGroup["category"] {
+  const name = fileName.toLowerCase();
+  if (name.includes("akshare") || name.includes("raw_news") || name.includes("db_collector")) return "采集";
+  if (name.includes("decision") || name.includes("brief_rebuild")) return "LLM";
+  if (name.includes("intel")) return "匹配";
+  return "其他";
+}
+
+function severityStyle(line: string): CSSProperties {
+  const text = line.toLowerCase();
+  if (
+    text.includes("[error]") ||
+    text.includes("error") ||
+    text.includes("exception") ||
+    text.includes("traceback") ||
+    text.includes("failed") ||
+    text.includes("timeout") ||
+    text.includes("404") ||
+    text.includes("blocked")
+  ) {
+    return { color: "#fca5a5", background: "rgba(239,68,68,0.08)" };
+  }
+  if (
+    text.includes("[warn]") ||
+    text.includes(" warning") ||
+    text.includes("warn ") ||
+    text.includes("stale") ||
+    text.includes("retry") ||
+    text.includes("degraded")
+  ) {
+    return { color: "#fcd34d", background: "rgba(245,158,11,0.08)" };
+  }
+  if (
+    text.includes("ok") ||
+    text.includes("success") ||
+    text.includes("running") ||
+    text.includes("正常") ||
+    text.includes("就绪") ||
+    text.includes("通过")
+  ) {
+    return { color: "#86efac" };
+  }
+  return { color: "#cbd5e1" };
+}
+
+function splitSections(lines: string[]): LogSection[] {
+  const sections: LogSection[] = [];
+  let currentTitle = "日志";
+  let currentLines: string[] = [];
+  for (const line of lines) {
+    if (isSectionHeader(line)) {
+      if (currentLines.length || currentTitle !== "日志") {
+        sections.push({ title: currentTitle, lines: currentLines });
+      }
+      currentTitle = line.trim().slice(2, -2).trim();
+      currentLines = [];
+      continue;
+    }
+    if (!line && currentLines.length === 0) continue;
+    currentLines.push(line);
+  }
+  if (currentLines.length || currentTitle !== "日志") {
+    sections.push({ title: currentTitle, lines: currentLines });
+  }
+  return sections;
+}
+
+function splitCollectorFiles(lines: string[]): LogFileGroup[] {
+  const groups: LogFileGroup[] = [];
+  let currentFileName = "";
+  let currentLines: string[] = [];
+  for (const line of lines) {
+    if (isFileHeader(line)) {
+      if (currentFileName) {
+        groups.push({
+          fileName: currentFileName,
+          category: classifyCollectorFile(currentFileName),
+          lines: currentLines,
+        });
+      }
+      currentFileName = line.trim().slice(2, -2).trim();
+      currentLines = [];
+      continue;
+    }
+    if (!currentFileName) continue;
+    if (line !== "") {
+      currentLines.push(line);
+    }
+  }
+  if (currentFileName) {
+    groups.push({
+      fileName: currentFileName,
+      category: classifyCollectorFile(currentFileName),
+      lines: currentLines,
+    });
+  }
+  return groups;
+}
+
+function classifyJyhfLine(line: string): string {
+  const text = line.toLowerCase();
+  if (text.includes("[error]") || text.includes("error") || text.includes("exception") || text.includes("traceback") || text.includes("failed")) {
+    return "异常";
+  }
+  if (text.includes("[warn]") || text.includes("warn") || text.includes("retry") || text.includes("stale") || text.includes("degraded")) {
+    return "告警";
+  }
+  if (text.includes("cdp") || text.includes("9223") || text.includes("browser") || text.includes("连接") || text.includes("service")) {
+    return "连接";
+  }
+  if (text.includes("collector") || text.includes("采集") || text.includes("capture") || text.includes("event")) {
+    return "采集";
+  }
+  if (text.includes("llm") || text.includes("decision") || text.includes("match") || text.includes("theme")) {
+    return "LLM/匹配";
+  }
+  return "其他";
+}
+
+function splitJyhfGroups(lines: string[]): JyhfLogGroup[] {
+  const order = ["异常", "告警", "连接", "采集", "LLM/匹配", "其他"];
+  const buckets = new Map<string, string[]>();
+  for (const line of lines) {
+    const group = classifyJyhfLine(line);
+    const arr = buckets.get(group) ?? [];
+    arr.push(line);
+    buckets.set(group, arr);
+  }
+  return order
+    .filter((title) => (buckets.get(title)?.length ?? 0) > 0)
+    .map((title) => ({ title, lines: buckets.get(title) ?? [] }));
+}
+
+function renderLogLine(line: string, key: string) {
+  const style = severityStyle(line);
+  const isHeader = isSectionHeader(line) || isFileHeader(line);
+  return (
+    <div
+      key={key}
+      className="collection-log-line"
+      style={{
+        ...style,
+        fontWeight: isHeader ? 700 : 400,
+        padding: isHeader ? "2px 0" : undefined,
+        whiteSpace: "pre-wrap",
+        wordBreak: "break-word",
+      }}
+    >
+      {line}
+    </div>
+  );
+}
+
+function renderSection(section: LogSection, sectionIndex: number) {
+  if (section.title.startsWith("运行日志 (采集/LLM/匹配")) {
+    const fileGroups = splitCollectorFiles(section.lines);
+    const categoryOrder: Array<LogFileGroup["category"]> = ["采集", "LLM", "匹配", "其他"];
+    const grouped = categoryOrder
+      .map((category) => ({
+        category,
+        files: fileGroups.filter((group) => group.category === category),
+      }))
+      .filter((group) => group.files.length > 0);
+
+    return (
+      <details key={`section-${sectionIndex}`} open style={{ marginBottom: 8 }}>
+        <summary style={{ cursor: "pointer", color: "#f8fafc", fontWeight: 700, marginBottom: 6 }}>
+          {section.title} <span style={{ color: "#64748b", fontWeight: 400 }}>({fileGroups.length} 个来源)</span>
+        </summary>
+        <div style={{ paddingLeft: 12, borderLeft: "1px solid rgba(148,163,184,0.16)" }}>
+          {grouped.map((group) => (
+            <details key={group.category} open style={{ marginBottom: 8 }}>
+              <summary style={{ cursor: "pointer", color: "#cbd5e1", fontWeight: 600, marginBottom: 4 }}>
+                {group.category} <span style={{ color: "#64748b", fontWeight: 400 }}>({group.files.length})</span>
+              </summary>
+              <div style={{ paddingLeft: 12 }}>
+                {group.files.map((file) => (
+                  <details key={file.fileName} open style={{ marginBottom: 6 }}>
+                    <summary style={{ cursor: "pointer", color: "#94a3b8", fontWeight: 600, marginBottom: 2 }}>
+                      {file.fileName} <span style={{ color: "#64748b", fontWeight: 400 }}>({file.lines.length})</span>
+                    </summary>
+                    <div style={{ paddingLeft: 12 }}>
+                      {file.lines.length === 0 ? (
+                        <div style={{ color: "#64748b" }}>暂无内容</div>
+                      ) : (
+                        file.lines.slice(-120).map((line, i) => renderLogLine(line, `${file.fileName}-${i}`))
+                      )}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </details>
+          ))}
+        </div>
+      </details>
+    );
+  }
+
+  return (
+    <details key={`section-${sectionIndex}`} open={sectionIndex === 0} style={{ marginBottom: 8 }}>
+      <summary style={{ cursor: "pointer", color: "#f8fafc", fontWeight: 700, marginBottom: 6 }}>
+        {section.title} <span style={{ color: "#64748b", fontWeight: 400 }}>({section.lines.length})</span>
+      </summary>
+      <div style={{ paddingLeft: 12, borderLeft: "1px solid rgba(148,163,184,0.16)" }}>
+        {section.lines.length === 0 ? (
+          <div style={{ color: "#64748b" }}>暂无内容</div>
+        ) : (
+          section.lines.slice(-160).map((line, i) => renderLogLine(line, `${section.title}-${i}`))
+        )}
+      </div>
+    </details>
+  );
+}
+
 export default function DiagnosticsTabs(props: Props) {
   const {
-    mergedLogs, jyhfLogs, stackStatus, reviewItems, reviewTotal, reviewBusy,
+    mergedLogs, jyhfLogs, showLogPanels = true, stackStatus, reviewItems, reviewTotal, reviewBusy,
     selectedIds, onToggleSelect, onSelectAll, onSetSelectedKeys, onConfirm, onDelete,
     onBatchDelete, onImportPending, onClearPending, onRefreshReview, onOpenDetail,
   } = props;
 
   const streams = stackStatus?.redis_streams ?? {};
+  const logSections = splitSections(mergedLogs);
+  const jyhfGroups = splitJyhfGroups(jyhfLogs);
 
-  const tabItems = [
+  const logTabs = showLogPanels ? [
     {
       key: "run-log",
       label: "运行日志 (采集/LLM/匹配)",
       children: (
-        <div className="collection-log-panel" style={{ maxHeight: 360, overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
-          {mergedLogs.length === 0 ? (
+        <div className="collection-log-panel" style={{ height: "100%", maxHeight: "none", overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
+          {logSections.length === 0 ? (
             <div className="collection-log-line" style={{ color: "#64748b" }}>暂无运行日志...</div>
           ) : (
-            mergedLogs.slice(-200).map((line, i) => (
-              <div key={`rl-${i}`} className="collection-log-line">{line}</div>
-            ))
+            logSections.map((section, i) => renderSection(section, i))
           )}
         </div>
       ),
@@ -51,17 +291,40 @@ export default function DiagnosticsTabs(props: Props) {
       key: "dom-log",
       label: "DOM日志 (JYHF)",
       children: (
-        <div className="collection-log-panel" style={{ maxHeight: 360, overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
-          {jyhfLogs.length === 0 ? (
+        <div className="collection-log-panel" style={{ height: "100%", maxHeight: "none", overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
+          {jyhfGroups.length === 0 ? (
             <div className="collection-log-line" style={{ color: "#64748b" }}>暂无 JYHF DOM 采集日志...</div>
           ) : (
-            jyhfLogs.slice(-200).map((line, i) => (
-              <div key={`dl-${i}`} className="collection-log-line">{line}</div>
+            jyhfGroups.map((group, groupIndex) => (
+              <details key={`jyhf-${group.title}-${groupIndex}`} open style={{ marginBottom: 8 }}>
+                <summary style={{ cursor: "pointer", color: "#f8fafc", fontWeight: 700, marginBottom: 6 }}>
+                  {group.title} <span style={{ color: "#64748b", fontWeight: 400 }}>({group.lines.length})</span>
+                </summary>
+                <div style={{ paddingLeft: 12, borderLeft: "1px solid rgba(148,163,184,0.16)" }}>
+                  {group.lines.slice(-160).map((line, i) => (
+                    <div
+                      key={`jyhf-${group.title}-${i}`}
+                      className="collection-log-line"
+                      style={{
+                        ...severityStyle(line),
+                        whiteSpace: "pre-wrap",
+                        wordBreak: "break-word",
+                      }}
+                    >
+                      {line}
+                    </div>
+                  ))}
+                </div>
+              </details>
             ))
           )}
         </div>
       ),
     },
+  ] : [];
+
+  const tabItems = [
+    ...logTabs,
     {
       key: "redis-stream",
       label: "Redis Stream",

@@ -29,6 +29,45 @@ class RealtimeStackManager:
         self._frontend_process: subprocess.Popen | None = None
         self._start_lock = asyncio.Lock()
 
+    def _realtime_log_dir(self) -> Path:
+        repo_log_dir = self._project_root / "logs" / "realtime"
+        if repo_log_dir.exists():
+            return repo_log_dir
+        return Path("/tmp/ai_theme_realtime")
+
+    def _current_realtime_run_id(self, log_dir: Path) -> str | None:
+        runtime_file = log_dir / "runtime" / "realtime_stack.json"
+        if not runtime_file.exists():
+            return None
+        try:
+            payload = json.loads(runtime_file.read_text(encoding="utf-8"))
+            run_id = str(payload.get("run_id") or "").strip()
+            return run_id or None
+        except Exception:
+            return None
+
+    def _realtime_log_files(self, log_dir: Path) -> list[Path]:
+        files = [
+            log_dir / "stock_processing_service_8090.log",
+            log_dir / "web_app_service_8000.log",
+            log_dir / "frontend_vite.log",
+            log_dir / "frontend_5173.log",
+        ]
+        run_id = self._current_realtime_run_id(log_dir)
+        if run_id:
+            files.extend(
+                [
+                    log_dir / f"akshare_{run_id}.log",
+                    log_dir / f"raw_news_{run_id}.log",
+                    log_dir / f"decision_{run_id}.log",
+                    log_dir / f"db_collector_{run_id}.log",
+                    log_dir / f"brief_rebuild_{run_id}.log",
+                    log_dir / f"intel_producer_{run_id}.log",
+                    log_dir / f"intel_collection_{run_id}.log",
+                ]
+            )
+        return files
+
     async def status(self) -> dict[str, Any]:
         """代理 SPS 的 /api/v1/realtime/status，返回前端需要的结构化数据。"""
         try:
@@ -166,18 +205,15 @@ class RealtimeStackManager:
     async def logs(self, *, lines: int = 200, max_age_minutes: int = 180) -> dict[str, Any]:
         lines = max(20, min(int(lines), 2000))
         max_age_minutes = max(10, min(int(max_age_minutes), 1440))
-        files = [
-            self._log_dir / "stock_processing_service_8090.log",
-            self._log_dir / "web_app_service_8000.log",
-            self._log_dir / "frontend_vite.log",
-            self._log_dir / "frontend_5173.log",
-        ]
+        log_dir = self._realtime_log_dir()
+        files = self._realtime_log_files(log_dir)
         cutoff_ts = time.time() - (max_age_minutes * 60)
         payload: dict[str, list[str]] = {}
         for file_path in files:
             payload[file_path.name] = self._read_recent_lines(file_path, lines=lines, cutoff_ts=cutoff_ts)
         return {
-            "log_dir": str(self._log_dir),
+            "log_dir": str(log_dir),
+            "run_id": self._current_realtime_run_id(log_dir),
             "lines": lines,
             "max_age_minutes": max_age_minutes,
             "files": payload,

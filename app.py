@@ -1,8 +1,7 @@
 import asyncio
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
-import akshare as ak
-import traceback
+import logging
 from datetime import datetime, date, time
 import pandas as pd
 import os
@@ -12,11 +11,27 @@ from apscheduler.triggers.interval import IntervalTrigger
 import asyncpg
 import re  # 引入正则模块
 
+from news_crawler_service.services.news_crawler_service import get_news_crawler_service
+
 DATABASE_URL = "postgresql://postgres:zxbzj~925@localhost/stock_data"  # 替换为你的数据库连接信息
 
 app = FastAPI()
+logger = logging.getLogger(__name__)
 
 CSV_FILE_PATH = "data/stock_cls_telegram.csv"
+
+
+def normalize_cls_item(news: dict) -> dict:
+    """把标准化新闻结构转换成旧的中文字段结构。"""
+    return {
+        "标题": news.get("title", news.get("标题", "")),
+        "内容": news.get("content", news.get("内容", "")),
+        "来源": news.get("source", news.get("来源", "财联社")),
+        "发布日期": news.get("publish_date", news.get("发布日期", "")),
+        "发布时间": news.get("publish_time", news.get("发布时间", "")),
+        "市场": news.get("market", news.get("市场", "A股")),
+        "URL": news.get("url", news.get("URL", "")),
+    }
 
 # 创建数据库连接池
 async def get_db_connection():
@@ -62,7 +77,7 @@ async def save_news_to_db(news_list):
                 try:
                     publish_date = datetime.strptime(publish_date_str, "%Y-%m-%d").date()  # 确保是日期格式
                 except ValueError:
-                    print(f"Error parsing date: {publish_date_str}")
+                    logger.warning("Error parsing date: %s", publish_date_str)
                     publish_date = None
             else:
                 publish_date = None
@@ -75,16 +90,16 @@ async def save_news_to_db(news_list):
                     try:
                         publish_time = datetime.strptime(publish_time_str, "%H:%M:%S").time()  # 解析时间格式
                     except ValueError as e:
-                        print(f"Error parsing publish time: {e}")
+                        logger.warning("Error parsing publish time: %s", e)
                         publish_time = None  # 如果解析失败，设为 None
                 else:
-                    print(f"Invalid time format: {publish_time_str}")
+                    logger.warning("Invalid time format: %s", publish_time_str)
                     publish_time = None
             else:
                 publish_time = None
 
             if not publish_time:
-                print(f"Invalid publish time: {publish_time_str}")  # 添加日志以便调试
+                logger.debug("Invalid publish time: %s", publish_time_str)
 
             # 插入新闻数据到数据库，避免重复
             await connection.execute("""
@@ -102,9 +117,9 @@ async def save_news_to_db(news_list):
             news_id
             )
         
-        print(f"Saved {len(news_list)} records to database.")
+        logger.info("Saved %s records to database.", len(news_list))
     except Exception as e:
-        print(f"Error saving news to DB: {e}")
+        logger.exception("Error saving news to DB: %s", e)
     finally:
         await connection.close()
 
@@ -115,11 +130,26 @@ def generate_news_id(news):
     return hashlib.md5(f"{title}{date}".encode('utf-8')).hexdigest()
 
 @app.get("/cls_telegraph")
-async def get_cls_telegraph(symbol: str = "全部"):
+async def get_cls_telegraph(symbol: str = "全部", limit: int = 100):
+    """CLS 电报接口。
+
+    symbol:
+    - `重点`: 默认模式，返回更精简的重要电报
+    - `全部`: 返回更完整的页面抓取结果
+
+    limit:
+    - 单次返回上限，默认 100，最大 200
+    """
     try:
-        print("Fetching news for symbol:", symbol)  # Added debug print
-        df = ak.stock_info_global_cls(symbol=symbol)
-        news_list = df.to_dict(orient="records")
+        logger.info("Fetching news for symbol=%s", symbol)
+        limit = max(1, min(int(limit), 200))
+        service = get_news_crawler_service()
+        result = await service.crawl_real_news(symbol=symbol, limit=limit)
+        if result.get("status") != "success":
+            return JSONResponse(status_code=502, content={"error": result.get("error", "CLS fetch failed")})
+        raw_list = (result.get("response") or {}).get("news_list", [])
+        news_list = [normalize_cls_item(item) for item in raw_list]
+        has_more = bool((result.get("response") or {}).get("has_more", False))
         
         # 格式化日期时间
         for news in news_list:
@@ -131,22 +161,38 @@ async def get_cls_telegraph(symbol: str = "全部"):
                 elif isinstance(value, time):
                     news[key] = value.strftime("%H:%M:%S")
         
-        print("News fetched:", len(news_list))  # Debug print
-        return JSONResponse(content={"data": news_list})
+        logger.info(
+            "[cls_telegraph] summary symbol=%s limit=%s count=%s has_more=%s",
+            symbol,
+            limit,
+            len(news_list),
+            has_more,
+        )
+        return JSONResponse(content={
+            "symbol": symbol,
+            "limit": limit,
+            "count": len(news_list),
+            "has_more": has_more,
+            "data": news_list,
+        })
     except Exception as e:
-        error_message = traceback.format_exc()
-        print("Error:", error_message)
+        logger.exception("Error in /cls_telegraph: %s", e)
         return JSONResponse(status_code=500, content={"error": str(e)})
 
-async def fetch_cls_telegraph(symbol: str = "全部"):
+async def fetch_cls_telegraph(symbol: str = "全部", limit: int = 100):
+    """内部抓取入口，参数语义同 `get_cls_telegraph`。"""
     try:
-        print(f"Fetching news for symbol: {symbol}")  # Debug print
-        df = ak.stock_info_global_cls(symbol=symbol)
-        
-        # 输出列名来检查数据结构
-        print("Columns in the fetched DataFrame:", df.columns)
+        logger.info("Fetching news for symbol=%s", symbol)
+        limit = max(1, min(int(limit), 200))
+        service = get_news_crawler_service()
+        result = await service.crawl_real_news(symbol=symbol, limit=limit)
+        if result.get("status") != "success":
+            logger.warning("Error fetching data: %s", result.get("error", "CLS fetch failed"))
+            return []
 
-        news_list = df.to_dict(orient="records")
+        raw_list = (result.get("response") or {}).get("news_list", [])
+        news_list = [normalize_cls_item(item) for item in raw_list]
+        has_more = bool((result.get("response") or {}).get("has_more", False))
         
         # 格式化日期时间
         for news in news_list:
@@ -158,14 +204,32 @@ async def fetch_cls_telegraph(symbol: str = "全部"):
                 elif isinstance(value, time):
                     news[key] = value.strftime("%H:%M:%S")
             # 格式化发布日期字段
-            if '发布日期' in news:
+            if '发布日期' in news and news['发布日期']:
                 news['发布日期'] = pd.to_datetime(news['发布日期']).strftime("%Y-%m-%d")
 
-        print(f"Fetched {len(news_list)} news records.")  # Debug print
-        return news_list
+        logger.info(
+            "[cls_telegraph] summary symbol=%s limit=%s count=%s has_more=%s",
+            symbol,
+            limit,
+            len(news_list),
+            has_more,
+        )
+        return {
+            "symbol": symbol,
+            "limit": limit,
+            "count": len(news_list),
+            "has_more": has_more,
+            "data": news_list,
+        }
     except Exception as e:
-        print("Error fetching data:", e)
-        return []
+        logger.exception("Error fetching data: %s", e)
+        return {
+            "symbol": symbol,
+            "limit": limit,
+            "count": 0,
+            "has_more": False,
+            "data": [],
+        }
 
 async def save_news_to_csv(news_list):
     if not news_list:
@@ -177,12 +241,12 @@ async def save_news_to_csv(news_list):
         
         df = pd.DataFrame(news_list)
         df.to_csv(CSV_FILE_PATH, index=False)
-        print(f"CSV file created and saved {len(news_list)} records.")
+        logger.info("CSV file created and saved %s records.", len(news_list))
     else:
         try:
             df_existing = pd.read_csv(CSV_FILE_PATH, on_bad_lines='skip')
         except pd.errors.ParserError as e:
-            print(f"Error reading CSV file: {e}")
+            logger.exception("Error reading CSV file: %s", e)
             return
 
         if 'news_id' not in df_existing.columns:
@@ -200,16 +264,17 @@ async def save_news_to_csv(news_list):
         if new_news:
             df_new = pd.DataFrame(new_news)
             df_new.to_csv(CSV_FILE_PATH, mode='a', header=False, index=False)
-            print(f"Saved {len(new_news)} new records to CSV.")
+            logger.info("Saved %s new records to CSV.", len(new_news))
 
 async def task_fetch_and_save():
-    print("Starting to fetch and save news...")
-    news_list = await fetch_cls_telegraph(symbol="全部")
+    logger.info("Starting to fetch and save news...")
+    payload = await fetch_cls_telegraph(symbol="全部", limit=100)
+    news_list = payload.get("data", [])
     if news_list:
-        print(f"Fetched {len(news_list)} news, now saving...")
+        logger.info("Fetched %s news, now saving...", len(news_list))
         await save_news_to_db(news_list)
     else:
-        print("No new news to save.")
+        logger.info("No new news to save.")
 
 def schedule_task():
     loop = asyncio.get_event_loop()
@@ -224,14 +289,7 @@ async def on_startup():
     await create_news_table()  # 确保创建表
     # 启动定时任务
     schedule_task()
-    print("Scheduler started. Data collection is running every minute.")
-
-
-
-
-
-
-
+    logger.info("Scheduler started. Data collection is running every minute.")
 
 
 
