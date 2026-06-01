@@ -17,7 +17,7 @@ import pytest
 import json
 import asyncio
 import time
-from datetime import datetime
+from datetime import date, datetime
 from unittest.mock import AsyncMock, patch, MagicMock, call
 
 # 导入配置和模块
@@ -148,6 +148,71 @@ async def test_postgres_manager_simple_methods():
     assert hasattr(manager, 'search_themes')
     assert hasattr(manager, 'get_stats')
     print("✅ 测试简单方法通过")
+
+
+class _FakeAcquireContext:
+    def __init__(self, conn):
+        self._conn = conn
+
+    async def __aenter__(self):
+        return self._conn
+
+    async def __aexit__(self, exc_type, exc, tb):
+        return False
+
+
+class _FakePool:
+    def __init__(self, conn):
+        self._conn = conn
+
+    def acquire(self):
+        return _FakeAcquireContext(self._conn)
+
+
+@pytest.mark.asyncio
+async def test_postgres_manager_excludes_quarantined_intel_feed_rows():
+    """测试盘前情报流会过滤 quarantine 的 event/subject 对。"""
+    config = DatabaseConfig(
+        db_type=DatabaseType.POSTGRESQL,
+        postgres_host="localhost",
+        table_names_config={"theme_master": "test_themes"},
+        redis=RedisConfig(enabled=False),
+    )
+    manager = PostgresDatabaseManager(config)
+
+    conn = MagicMock()
+    conn.fetchval = AsyncMock(side_effect=[
+        "event_subject_map",
+        "event_subject_map_quarantine",
+        "event_subject_map",
+        "theme_profile_v2",
+        "theme_gate_profile",
+        "theme_profile_ext",
+        "event_subject_map_quarantine",
+    ])
+    conn.fetch = AsyncMock(return_value=[])
+    manager.pool = _FakePool(conn)
+
+    await manager.get_intel_news_events(date(2026, 5, 31))
+    intel_sql = conn.fetch.call_args.args[0]
+    assert "event_subject_map_quarantine" in intel_sql
+    assert "q.event_id = ne.id" in intel_sql
+    assert "q.subject_key = esm.subject_key" in intel_sql
+
+    conn.fetch.reset_mock()
+    conn.fetchval = AsyncMock(side_effect=[
+        "event_subject_map",
+        "theme_profile_v2",
+        "theme_gate_profile",
+        "theme_profile_ext",
+        "event_subject_map_quarantine",
+    ])
+
+    await manager.get_event_subject_mappings_by_trade_date(date(2026, 5, 31))
+    mapping_sql = conn.fetch.call_args.args[0]
+    assert "event_subject_map_quarantine" in mapping_sql
+    assert "q.event_id = ne.id" in mapping_sql
+    assert "q.subject_key = esm.subject_key" in mapping_sql
 
 
 @pytest.mark.asyncio
