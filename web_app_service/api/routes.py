@@ -779,6 +779,26 @@ async def proxy_mainline_review_decision(review_id: str, payload: dict) -> dict:
         f"/api/v2/mainline-review/{review_id}/decision", payload, timeout=15.0)
 
 
+# ── PR-13D: 指数采集代理 ──
+
+@router.post("/index-kline/collect")
+async def proxy_index_kline_collect(payload: dict) -> dict:
+    return await _proxy_stock_processing_post_json(
+        "/api/v1/index-kline/collect", payload, timeout=120.0)
+
+
+@router.get("/index-kline/status")
+async def proxy_index_kline_status(trade_date: str = "") -> dict:
+    return await _proxy_stock_processing_json(
+        "/api/v1/index-kline/status", {"trade_date": trade_date})
+
+
+@router.get("/index-technical/daily")
+async def proxy_index_technical_daily(trade_date: str = "") -> list[dict]:
+    return await _proxy_stock_processing_json(
+        "/api/v1/index-technical/daily", {"trade_date": trade_date})
+
+
 @router.get("/realtime/jyhf-cdp/status")
 async def jyhf_cdp_collector_status(request: Request):
     manager = request.app.state.cdp_manager
