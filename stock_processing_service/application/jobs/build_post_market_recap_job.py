@@ -1115,8 +1115,13 @@ class BuildPostMarketRecapJob:
                 market_snapshot=regime_ctx.market_snapshot,
                 lifecycle_reviews=regime_ctx.lifecycle_reviews,
             )
-            recap_doc["market_regime_review"] = regime.to_dict()
-            recap_doc["market_regime_diagnostics"] = regime_ctx.diagnostics
+            regime_dict = regime.to_dict()
+            regime_dict["index_technical_reviews"] = regime_ctx.index_technical_reviews
+            recap_doc["market_regime_review"] = regime_dict
+            recap_doc["market_regime_diagnostics"] = {
+                **regime_ctx.diagnostics,
+                "index_technical_reviews": regime_ctx.index_technical_reviews,
+            }
 
             # ── PR-12.5: ActiveMainlineUniverse ──
             from stock_processing_service.application.services.active_mainline_universe_builder import (
