@@ -42,7 +42,11 @@ SERVICE_DEPENDENCIES: dict[str, list[str]] = {
     "cdp_token": [],
     "jyhf_market": ["cdp_token"],
     "jyhf_auction": ["cdp_token", "jyhf_market"],
-    "w2s_alert": ["cdp_token", "jyhf_auction"],
+    # w2s_alert 有两个子服务:
+    #   - 盘前竞价 w2s_alert_service (需要 jyhf_auction 产出 auction_snapshot)
+    #   - 盘中弱转强 w2s_support_alert_service (不需要 auction, 直接读 DB+JYHF API)
+    # 依赖只保留 cdp_token，jyhf_auction 的阻塞由 _desired_states 按交易时段控制
+    "w2s_alert": ["cdp_token"],
     "support_alert": ["jyhf_market"],
 }
 

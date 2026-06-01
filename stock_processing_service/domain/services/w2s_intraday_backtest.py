@@ -108,7 +108,7 @@ class W2SIntradayBacktest:
         return [dict(r) for r in rows]
 
     async def load_candidates_for_date(self, trade_date: str) -> list[dict]:
-        """加载该交易日对应的 D1 候选 (next_trade_date = trade_date)。"""
+        """加载对应交易日的 D1 候选 — next_trade_date 无匹配时回退到最新。"""
         pool = await self._get_pool()
         td = date.fromisoformat(trade_date)
         rows = await pool.fetch(
@@ -119,6 +119,15 @@ class W2SIntradayBacktest:
                  AND COALESCE(NULLIF(LOWER(pool_entry_type), ''), 'formal') = 'formal'""",
             td,
         )
+        if not rows:
+            rows = await pool.fetch(
+                """SELECT id AS candidate_id, stock_id, stock_name, theme_name,
+                          candidate_type, weak_type, candidate_score
+                   FROM weak_to_strong_candidate_pool
+                   WHERE trade_date = (SELECT MAX(trade_date) FROM weak_to_strong_candidate_pool)
+                     AND COALESCE(NULLIF(LOWER(pool_entry_type), ''), 'formal') = 'formal'
+                   ORDER BY candidate_score DESC""",
+            )
         return [dict(r) for r in rows]
 
     # ── 滑动窗口聚合 (禁止未来数据) ──

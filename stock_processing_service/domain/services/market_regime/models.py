@@ -136,6 +136,7 @@ class MarketRegimeReview:
     allowed_actions: list[str] = field(default_factory=list)
     forbidden_actions: list[str] = field(default_factory=list)
     no_trade_reasons: list[str] = field(default_factory=list)
+    no_trade_blocking_rule: str = ""
     risk_notes: list[str] = field(default_factory=list)
     broad_market: dict[str, Any] = field(default_factory=dict)
     sentiment: dict[str, Any] = field(default_factory=dict)
@@ -155,6 +156,7 @@ class MarketRegimeReview:
             "allowed_actions": self.allowed_actions,
             "forbidden_actions": self.forbidden_actions,
             "no_trade_reasons": self.no_trade_reasons,
+            "no_trade_blocking_rule": self.no_trade_blocking_rule,
             "risk_notes": self.risk_notes,
             "broad_market": self.broad_market,
             "sentiment": self.sentiment,

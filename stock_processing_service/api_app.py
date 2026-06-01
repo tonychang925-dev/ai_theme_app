@@ -197,11 +197,23 @@ async def lifespan(app: FastAPI):
     else:
         logger.info("W2S alert loop disabled (set SPS_ENABLE_W2S_ALERT_LOOP=true to enable)")
 
+    # P2: jyhf_market 行情采集器自动启动（默认开启）
+    async def _auto_start_jyhf_market():
+        await asyncio.sleep(5)  # 等 SPS 完全就绪
+        from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
+        try:
+            c = get_jyhf_market_collector()
+            await c.start()
+            logger.info("jyhf_market collector auto-started")
+        except Exception as exc:
+            logger.warning("jyhf_market auto-start failed: %s", exc)
+    _jyhf_market_task = asyncio.create_task(_auto_start_jyhf_market())
+
     await app.state.phase1_repo.initialize()
     try:
         yield
     finally:
-        for task in (_kline_alert_task, _w2s_alert_task):
+        for task in (_kline_alert_task, _w2s_alert_task, _jyhf_market_task):
             if task:
                 task.cancel()
                 try:
@@ -3365,7 +3377,7 @@ async def get_theme_workspace(
                 LEFT JOIN LATERAL (
                     SELECT sds_inner.pct_chg,
                            CASE WHEN jsonb_typeof(sds_inner.raw_json)='array' AND jsonb_array_length(sds_inner.raw_json)>35
-                                AND (sds_inner.raw_json->>35) ~ '^-?[0-9]+(\.[0-9]+)?$'
+                                AND (sds_inner.raw_json->>35) ~ '^-?[0-9]+(\\.[0-9]+)?$'
                                 THEN (sds_inner.raw_json->>35)::numeric ELSE 0 END AS main_net_inflow,
                            sds_inner.is_leader,
                            sds_inner.rank_order,

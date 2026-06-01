@@ -601,7 +601,7 @@ class BuildPostMarketRecapJob:
         recap_doc["strong_stock_reviews"] = await self._build_strong_stock_reviews(trade_date)
 
         # ── PR-7: Mainline Discovery parallel output ──
-        await self._run_mainline_discovery(trade_date, report_context, theme_context_map, recap_doc)
+        await self._run_mainline_discovery(trade_date, report_context, theme_context_map, recap_doc, batch_id, trace_id)
 
         # ── P0: 交易体系决策输出 ──
         decision_payload = self._decision_engine.execute(
@@ -919,6 +919,8 @@ class BuildPostMarketRecapJob:
         report_context: dict[str, Any],
         theme_context_map: dict[str, dict[str, Any]],
         recap_doc: dict[str, Any],
+        batch_id: str = "",
+        trace_id: str = "",
     ) -> None:
         """PR-7: Run mainline discovery pipeline and write results to recap_doc.
 
@@ -929,6 +931,14 @@ class BuildPostMarketRecapJob:
             MainlineDiscoveryFactContext, MainlineDiscoveryFactContextBuilder,
         )
         try:
+            # ── PR-13A: build active mainline universe early (registry read, no other deps) ──
+            from stock_processing_service.application.services.active_mainline_universe_builder import (
+                ActiveMainlineUniverseBuilder,
+            )
+            active_universe = await ActiveMainlineUniverseBuilder(self._read_port).build(
+                trade_date=trade_date,
+            )
+
             # ── build fact context ──
             fact_builder = MainlineDiscoveryFactContextBuilder(self._read_port)
             fact_ctx = await fact_builder.build(
@@ -1005,7 +1015,13 @@ class BuildPostMarketRecapJob:
                 market_acceptance_by_subject=market_by_sk,
                 major_event_by_subject=major_by_sk,
                 narrative_by_subject=narrative_by_sk,
+                active_mainline_universe=active_universe,
             )
+            # Extract existing_mainline_updates from decisions for diagnostics
+            existing_updates = [
+                d.to_dict() for d in decisions
+                if d.machine_state in ("existing_mainline_strengthening", "existing_mainline_branch_event")
+            ]
 
             # ── run analyst review queue ──
             queue_builder = AnalystReviewQueueBuilder()
@@ -1043,6 +1059,7 @@ class BuildPostMarketRecapJob:
             }
             recap_doc["analyst_review_items"] = [it.to_dict() for it in review_items]
             recap_doc["analyst_review_diagnostics"] = review_diag.to_dict()
+            recap_doc["existing_mainline_updates"] = existing_updates
 
             # PR-9B: persist to mainline_review_queue (best-effort)
             await self._persist_review_queue(trade_date, review_items)
@@ -1054,9 +1071,12 @@ class BuildPostMarketRecapJob:
             recap_doc["mainline_discovery_diagnostics"] = {"error": "pipeline_failed"}
 
         # ── PR-10: Mainline Lifecycle pipeline ──
-        await self._run_mainline_lifecycle(trade_date, recap_doc)
+        await self._run_mainline_lifecycle(trade_date, recap_doc, batch_id, trace_id)
 
-    async def _run_mainline_lifecycle(self, trade_date: date, recap_doc: dict[str, Any]) -> None:
+    async def _run_mainline_lifecycle(
+        self, trade_date: date, recap_doc: dict[str, Any],
+        batch_id: str = "", trace_id: str = "",
+    ) -> None:
         """PR-10: Run lifecycle pipeline for confirmed mainlines."""
         try:
             from stock_processing_service.application.services.mainline_lifecycle.mainline_lifecycle_fact_context_builder import (
@@ -1141,6 +1161,9 @@ class BuildPostMarketRecapJob:
             if cml_error:
                 pdv2.diagnostics["confirmed_mainline_error"] = cml_error
             recap_doc["post_market_decision_v2"] = pdv2.to_dict()
+
+            # ── PR-13A: persist mainline daily state ──
+            await self._persist_mainline_daily_state(trade_date, recap_doc, batch_id or "", trace_id or "")
         except Exception:
             logger.exception("Lifecycle pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []
@@ -1180,6 +1203,99 @@ class BuildPostMarketRecapJob:
                     logger.info("Persisted %s review items to mainline_review_queue", affected)
         except Exception:
             logger.exception("Failed to persist review queue items")
+
+    async def _persist_mainline_daily_state(
+        self, trade_date: date, recap_doc: dict[str, Any], batch_id: str, trace_id: str,
+    ) -> None:
+        """PR-13A: 将每日主线状态快照写入 mainline_daily_state 表。"""
+        try:
+            from stock_processing_service.contracts.dto.mainline_daily_state import (
+                MainlineDailyStateDTO,
+            )
+
+            amu = recap_doc.get("active_mainline_universe", {})
+            regime = recap_doc.get("market_regime_review", {})
+            pdv2 = recap_doc.get("post_market_decision_v2", {})
+            lifecycles = {r.get("mainline_id", ""): r for r in recap_doc.get("mainline_lifecycle_reviews", [])}
+            mainlines = amu.get("active_mainlines", [])
+
+            # Per-mainline counts from PDV2
+            strong_by_ml: dict[str, int] = {}
+            d1_by_ml: dict[str, int] = {}
+            focus_by_ml: dict[str, int] = {}
+            for r in pdv2.get("strong_stock_pool_reviews", []):
+                mid = r.get("mainline_id", "")
+                strong_by_ml[mid] = strong_by_ml.get(mid, 0) + 1
+            for r in pdv2.get("weak_to_strong_d1_reviews", []):
+                mid = r.get("mainline_id", "")
+                d1_by_ml[mid] = d1_by_ml.get(mid, 0) + 1
+            for r in pdv2.get("next_day_focus_stocks", []):
+                mid = r.get("mainline_id", "")
+                focus_by_ml[mid] = focus_by_ml.get(mid, 0) + 1
+
+            # Extract no_trade_blocking_rule from regime
+            no_trade_reasons = regime.get("no_trade_reasons", [])
+            blocking_rule = ""
+            if no_trade_reasons and isinstance(no_trade_reasons, list):
+                blocking_rule = str(no_trade_reasons[0]) if no_trade_reasons else ""
+
+            rows = []
+            for ml in mainlines:
+                mid = str(ml.get("mainline_id") or "")
+                lr = lifecycles.get(mid, {})
+                lr_diag = lr.get("diagnostics", {}) if isinstance(lr.get("diagnostics"), dict) else {}
+
+                dto = MainlineDailyStateDTO(
+                    trade_date=trade_date,
+                    mainline_id=mid,
+                    canonical_subject_key=str(ml.get("canonical_subject_key") or ""),
+                    mainline_name=str(ml.get("mainline_name") or ""),
+                    run_id=f"{batch_id}/{trace_id}",
+                    active_subject_keys_json=amu.get("active_subject_keys", []),
+                    active_subject_count=int(amu.get("active_subject_count", 0)),
+                    event_count_1d=int(lr_diag.get("event_count_1d") or lr_diag.get("event_1d") or 0),
+                    event_count_3d=int(lr_diag.get("event_count_3d") or 0),
+                    event_count_7d=int(lr_diag.get("event_count_7d") or 0),
+                    lifecycle_state=str(lr.get("lifecycle_state") or "unknown"),
+                    mainline_alive=bool(lr.get("mainline_alive", False)),
+                    mainline_trade_alive=bool(lr.get("mainline_trade_alive", False)),
+                    fade_risk_score=float(lr.get("fade_risk_score")) if lr.get("fade_risk_score") is not None else None,
+                    broad_market_regime=str(regime.get("broad_market_regime") or ""),
+                    short_term_sentiment=str(regime.get("short_term_sentiment") or ""),
+                    mainline_environment=str(regime.get("mainline_environment") or ""),
+                    market_structure=str(regime.get("market_structure") or ""),
+                    trade_mode=str(regime.get("trade_mode") or "no_trade"),
+                    allow_trade=bool(regime.get("allow_trade", False)),
+                    position_limit=float(regime.get("position_limit") or 0),
+                    strong_pool_count=strong_by_ml.get(mid, 0),
+                    d1_count=d1_by_ml.get(mid, 0),
+                    focus_count=focus_by_ml.get(mid, 0),
+                    layer_c_subject_keys_json=pdv2.get("diagnostics", {}).get("layer_c_subject_keys", []),
+                    mainline_filtered_subject_keys_json=pdv2.get("diagnostics", {}).get("mainline_filtered_subject_keys", []),
+                    missing_registry_subject_keys_json=pdv2.get("diagnostics", {}).get("missing_registry_subject_keys", []),
+                    no_trade_blocking_rule=blocking_rule,
+                    diagnostics_json={
+                        "event_count_source": "lifecycle_diagnostics",
+                        "event_count_missing": (
+                            lr_diag.get("event_count_1d") is None
+                            and lr_diag.get("event_1d") is None
+                        ),
+                        "global_strong_pool_count": pdv2.get("diagnostics", {}).get("strong_pool_count", 0),
+                        "global_d1_count": pdv2.get("diagnostics", {}).get("d1_count", 0),
+                        "global_focus_count": pdv2.get("diagnostics", {}).get("focus_count", 0),
+                        "no_trade_reasons": no_trade_reasons,
+                        "layer_c_source": pdv2.get("diagnostics", {}).get("layer_c_source", ""),
+                    },
+                )
+                rows.append(dto.to_upsert_dict())
+
+            if rows:
+                fn = getattr(self._write_port, "upsert_mainline_daily_state_rows", None)
+                if callable(fn):
+                    affected = await fn(rows)
+                    logger.info("Persisted %d mainline_daily_state rows for %s", affected, trade_date)
+        except Exception:
+            logger.exception("Failed to persist mainline_daily_state")
 
     async def _check_post_market_readiness(self, trade_date: date) -> dict[str, Any]:
         """P1: 委托 PostMarketReadinessService 检查 5 张核心表。"""

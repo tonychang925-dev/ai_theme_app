@@ -29,7 +29,9 @@ class ActiveMainlineUniverse:
         return {
             "trade_date": self.trade_date,
             "active_mainline_count": len(self.active_mainlines),
+            "active_mainlines": self.active_mainlines,
             "active_subject_keys": sorted(self.active_subject_keys),
+            "active_subject_count": len(self.active_subject_keys),
             "active_mainline_ids": sorted(self.active_mainline_ids),
             "diagnostics": self.diagnostics,
         }
@@ -112,18 +114,67 @@ class ActiveMainlineUniverseBuilder:
         )
 
     @staticmethod
+    @staticmethod
+    def _safe_json_list(val: Any) -> list:
+        import json
+        if isinstance(val, str):
+            try: return json.loads(val)
+            except: return []
+        return val if isinstance(val, list) else []
+
+    @staticmethod
     def is_duplicate_of_active(
         candidate_subject_key: str,
-        active_keys: set[str],
-    ) -> str | None:
+        active_universe: "ActiveMainlineUniverse",
+    ) -> dict | None:
         """Check if a candidate subject_key belongs to an existing active mainline.
 
-        Returns: None if new, or a category string:
-          - 'existing_mainline_branch_event' if matches related/branch
-          - 'existing_mainline_strengthening' if matches canonical
+        Returns None if new, or a dict with:
+          - duplicate: True
+          - match_type: "canonical" | "related" | "branch"
+          - machine_state: "existing_mainline_strengthening" | "existing_mainline_branch_event"
+          - target_mainline_id: str
+          - target_mainline_name: str
         """
         if not candidate_subject_key:
             return None
-        if candidate_subject_key in active_keys:
-            return "existing_mainline_strengthening"
+
+        for ml in active_universe.active_mainlines:
+            csk = str(ml.get("canonical_subject_key") or "")
+            mid = str(ml.get("mainline_id") or "")
+            mn = str(ml.get("mainline_name") or "")
+
+            if candidate_subject_key == csk:
+                return {
+                    "duplicate": True,
+                    "match_type": "canonical",
+                    "machine_state": "existing_mainline_strengthening",
+                    "target_mainline_id": mid,
+                    "target_mainline_name": mn,
+                }
+
+            related = ActiveMainlineUniverseBuilder._safe_json_list(
+                ml.get("related_subject_keys_json")
+            )
+            if candidate_subject_key in related:
+                return {
+                    "duplicate": True,
+                    "match_type": "related",
+                    "machine_state": "existing_mainline_branch_event",
+                    "target_mainline_id": mid,
+                    "target_mainline_name": mn,
+                }
+
+            branch = ActiveMainlineUniverseBuilder._safe_json_list(
+                ml.get("branch_subject_keys_json")
+            )
+            if candidate_subject_key in branch:
+                return {
+                    "duplicate": True,
+                    "match_type": "branch",
+                    "machine_state": "existing_mainline_branch_event",
+                    "target_mainline_id": mid,
+                    "target_mainline_name": mn,
+                }
+
         return None

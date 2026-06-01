@@ -8926,3 +8926,105 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         async with self.pool.acquire() as conn:
             row = await conn.fetchrow('SELECT * FROM mainline_registry WHERE mainline_id = $1', mainline_id)
         return dict(row) if row else None
+
+    async def upsert_mainline_daily_state_rows(self, rows: list[dict[str, Any]]) -> int:
+        """写入每日主线状态快照，ON CONFLICT (trade_date, mainline_id) 幂等更新。"""
+        if not rows:
+            return 0
+        async with self.pool.acquire() as conn:
+            affected = 0
+            for r in rows:
+                result = await conn.execute(
+                    """INSERT INTO mainline_daily_state (
+                           run_id, trade_date, mainline_id, canonical_subject_key,
+                           mainline_name, active_subject_keys_json, active_subject_count,
+                           event_count_1d, event_count_3d, event_count_7d,
+                           lifecycle_state, mainline_alive, mainline_trade_alive,
+                           fade_risk_score,
+                           broad_market_regime, short_term_sentiment,
+                           mainline_environment, market_structure,
+                           trade_mode, allow_trade, position_limit,
+                           strong_pool_count, d1_count, focus_count,
+                           layer_c_subject_keys_json,
+                           mainline_filtered_subject_keys_json,
+                           missing_registry_subject_keys_json,
+                           no_trade_blocking_rule,
+                           diagnostics_json, source_version
+                       ) VALUES (
+                           $1, $2::date, $3, $4,
+                           $5, $6::jsonb, $7,
+                           $8, $9, $10,
+                           $11, $12, $13,
+                           $14,
+                           $15, $16,
+                           $17, $18,
+                           $19, $20, $21,
+                           $22, $23, $24,
+                           $25::jsonb,
+                           $26::jsonb,
+                           $27::jsonb,
+                           $28,
+                           $29::jsonb, $30
+                       )
+                       ON CONFLICT (trade_date, mainline_id) DO UPDATE SET
+                           run_id = EXCLUDED.run_id,
+                           canonical_subject_key = EXCLUDED.canonical_subject_key,
+                           mainline_name = EXCLUDED.mainline_name,
+                           active_subject_keys_json = EXCLUDED.active_subject_keys_json,
+                           active_subject_count = EXCLUDED.active_subject_count,
+                           event_count_1d = EXCLUDED.event_count_1d,
+                           event_count_3d = EXCLUDED.event_count_3d,
+                           event_count_7d = EXCLUDED.event_count_7d,
+                           lifecycle_state = EXCLUDED.lifecycle_state,
+                           mainline_alive = EXCLUDED.mainline_alive,
+                           mainline_trade_alive = EXCLUDED.mainline_trade_alive,
+                           fade_risk_score = EXCLUDED.fade_risk_score,
+                           broad_market_regime = EXCLUDED.broad_market_regime,
+                           short_term_sentiment = EXCLUDED.short_term_sentiment,
+                           mainline_environment = EXCLUDED.mainline_environment,
+                           market_structure = EXCLUDED.market_structure,
+                           trade_mode = EXCLUDED.trade_mode,
+                           allow_trade = EXCLUDED.allow_trade,
+                           position_limit = EXCLUDED.position_limit,
+                           strong_pool_count = EXCLUDED.strong_pool_count,
+                           d1_count = EXCLUDED.d1_count,
+                           focus_count = EXCLUDED.focus_count,
+                           layer_c_subject_keys_json = EXCLUDED.layer_c_subject_keys_json,
+                           mainline_filtered_subject_keys_json = EXCLUDED.mainline_filtered_subject_keys_json,
+                           missing_registry_subject_keys_json = EXCLUDED.missing_registry_subject_keys_json,
+                           no_trade_blocking_rule = EXCLUDED.no_trade_blocking_rule,
+                           diagnostics_json = EXCLUDED.diagnostics_json,
+                           updated_at = NOW()""",
+                    r["run_id"], r["trade_date"], r["mainline_id"], r["canonical_subject_key"],
+                    r["mainline_name"], r["active_subject_keys_json"], r["active_subject_count"],
+                    r["event_count_1d"], r["event_count_3d"], r["event_count_7d"],
+                    r["lifecycle_state"], r["mainline_alive"], r["mainline_trade_alive"],
+                    r["fade_risk_score"],
+                    r["broad_market_regime"], r["short_term_sentiment"],
+                    r["mainline_environment"], r["market_structure"],
+                    r["trade_mode"], r["allow_trade"], r["position_limit"],
+                    r["strong_pool_count"], r["d1_count"], r["focus_count"],
+                    r["layer_c_subject_keys_json"],
+                    r["mainline_filtered_subject_keys_json"],
+                    r["missing_registry_subject_keys_json"],
+                    r["no_trade_blocking_rule"],
+                    r["diagnostics_json"], r["source_version"],
+                )
+                affected += int(result.split()[-1]) if result else 0
+        return affected
+
+    async def get_mainline_daily_state(
+        self, trade_date, mainline_id: str | None = None
+    ) -> List[Dict[str, Any]]:
+        """读取每日主线状态。可按 mainline_id 筛选。"""
+        conditions = ["trade_date = $1::date"]
+        params: list = [trade_date]
+        if mainline_id:
+            conditions.append(f"mainline_id = $2")
+            params.append(mainline_id)
+        where = "WHERE " + " AND ".join(conditions)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                f"SELECT * FROM mainline_daily_state {where} ORDER BY mainline_id", *params
+            )
+        return [dict(r) for r in rows]

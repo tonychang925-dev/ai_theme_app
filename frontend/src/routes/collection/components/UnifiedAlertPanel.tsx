@@ -121,7 +121,7 @@ export default function UnifiedAlertPanel({ alerts, onClear }: Props) {
         </Space>
       </div>
       <Table
-        dataSource={filtered.slice(-200).reverse()}
+        dataSource={filtered.slice(0, 200)}
         columns={columns}
         rowKey="id"
         size="small"

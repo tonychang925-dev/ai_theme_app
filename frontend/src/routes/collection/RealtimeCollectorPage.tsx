@@ -816,9 +816,14 @@ export function RealtimeCollectorPage() {
 
   // P4-1A: 统一告警 view model — Kline + W2S 合并为 UnifiedAlertRow[]
   const unifiedAlerts = useMemo((): UnifiedAlertRow[] => {
+    const today = new Date().toISOString().slice(0, 10);  // "2026-06-01"
     const rows: UnifiedAlertRow[] = [];
 
     for (const a of klineAlerts) {
+      // 只保留当日告警
+      const alertDate = a.generated_at?.slice(0, 10) || "";
+      if (alertDate !== today) continue;
+
       rows.push({
         id: `kline-${a.generated_at}-${a.stock_id}`,
         ts: new Date(a.generated_at || 0).getTime() || Date.now(),
@@ -834,21 +839,25 @@ export function RealtimeCollectorPage() {
     }
 
     for (const a of w2sAlerts) {
+      const alertDate = a.generated_at?.slice(0, 10) || "";
+      if (alertDate !== today) continue;
+
       rows.push({
         id: `w2s-${a.generated_at}-${a.stock_id}`,
         ts: new Date(a.generated_at || 0).getTime() || Date.now(),
         time: a.generated_at?.slice(11, 19) || "",
         kind: "w2s",
-        level: a.severity || a.confirm_level || "observe",
+        level: a.severity || a.confirm_level || a.unified_level || "observe",
         stock: a.stock_name || a.stock_id,
-        title: `${a.candidate_type || "弱转强"} score=${a.confirm_score} open=${a.auction_open_pct}% carry=${a.carry_ratio}`,
-        score: a.confirm_score,
-        source: a.source || "竞价告警",
+        title: `${a.candidate_type || "弱转强"} score=${a.confirm_score ?? a.intraday_score ?? "-"} open=${a.auction_open_pct ?? 0}% carry=${a.carry_ratio ?? 0}`,
+        score: a.confirm_score ?? a.intraday_score,
+        source: a.source || (a.phase === "intraday" ? "盘中弱转强" : "竞价告警"),
         raw: a,
       });
     }
 
-    rows.sort((a, b) => a.ts - b.ts);
+    // 按时间降序 — 最新的在最上面
+    rows.sort((a, b) => b.ts - a.ts);
     return rows;
   }, [klineAlerts, w2sAlerts]);
 

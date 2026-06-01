@@ -142,6 +142,26 @@ def test_hard_negative_wrong_hits_match_related_subject_and_name():
     assert hits["theme_names"] == ["SHEIN/希音IPO"]
 
 
+def test_hard_negative_wrong_hits_catches_xinjiang_ftz_and_deepsea_regressions():
+    result = SimpleNamespace(
+        matched_subject_key="9012396",
+        matched_theme_name="新疆自贸区",
+        related_matches=[
+            {"subject_key": "9043698", "theme_name": "深海经济"},
+        ],
+    )
+    hits = hard_negative_wrong_hits(
+        result,
+        {
+            "must_not_subject_keys": ["9012396", "9043698"],
+            "must_not_theme_names": ["新疆自贸区", "深海经济"],
+        },
+    )
+
+    assert hits["subject_keys"] == ["9012396", "9043698"]
+    assert hits["theme_names"] == ["新疆自贸区", "深海经济"]
+
+
 def test_count_generic_only_related_detects_polluted_related_evidence():
     result = SimpleNamespace(
         related_matches=[
