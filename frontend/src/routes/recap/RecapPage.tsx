@@ -9,6 +9,14 @@ import {
 import { navigateTo } from "../../lib/navigation";
 import recapIcon from "../../assets/intel-icons/当日复盘.png";
 
+// PR-14B: Engine Panels
+import EngineDecisionHeader from "./components/EngineDecisionHeader";
+import MarketRegimePanel from "./components/MarketRegimePanel";
+import MainlineStateBoard from "./components/MainlineStateBoard";
+import D1NextDayWatchPanel from "./components/D1NextDayWatchPanel";
+import LayerCStrongPoolPanel from "./components/LayerCStrongPoolPanel";
+import RecapDataQualityBar from "./components/RecapDataQualityBar";
+
 const DISPLAY_REPLACEMENTS: Array<[string, string]> = [
   ["risk_off", "避险防御"],
   ["risk_on", "进攻偏多"],
@@ -1357,6 +1365,43 @@ export function RecapPage() {
         <>
           <main className="workspace-layout single">
             <section className="workspace-column">
+              {/* ── PR-14B: Engine Panels (new architecture first) ── */}
+              {dailyReviewV2PreviewEnabled && (
+                <>
+                  <RecapDataQualityBar
+                    indexReady={(dailyReviewV2?.index_technical_reviews?.length ?? 0) > 0}
+                    mainlineReady={(dailyReviewV2?.mainline_daily_states?.length ?? 0) > 0}
+                    pdv2Ready={!!dailyReviewV2?.post_market_decision_v2_review}
+                  />
+                  {dailyReviewV2?.engine_summary && (
+                    <EngineDecisionHeader
+                      engineSummary={dailyReviewV2.engine_summary}
+                      marketRegime={dailyReviewV2.market_regime_review_v2 ?? null}
+                    />
+                  )}
+                  {dailyReviewV2?.market_regime_review_v2 && (
+                    <MarketRegimePanel
+                      marketRegime={dailyReviewV2.market_regime_review_v2}
+                      indexReviews={
+                        dailyReviewV2.index_technical_reviews
+                        ?? dailyReviewV2.market_regime_review_v2.index_technical_reviews
+                        ?? []
+                      }
+                      tradeDate={tradeDate}
+                    />
+                  )}
+                  {(dailyReviewV2?.mainline_daily_states?.length ?? 0) > 0 && (
+                    <MainlineStateBoard rows={dailyReviewV2!.mainline_daily_states!} tradeDate={tradeDate} />
+                  )}
+                  {dailyReviewV2?.post_market_decision_v2_review && (
+                    <D1NextDayWatchPanel review={dailyReviewV2.post_market_decision_v2_review} />
+                  )}
+                  {dailyReviewV2?.post_market_decision_v2_review && (
+                    <LayerCStrongPoolPanel review={dailyReviewV2.post_market_decision_v2_review} />
+                  )}
+                </>
+              )}
+
               {/* P0: 交易原则卡片 */}
               {dailyReviewV2PreviewEnabled && dailyReviewV2?.trading_principle && typeof dailyReviewV2.trading_principle === "object" && Object.keys(dailyReviewV2.trading_principle as Record<string, unknown>).length > 0 && (() => {
                 const tp = dailyReviewV2.trading_principle as Record<string, unknown>;

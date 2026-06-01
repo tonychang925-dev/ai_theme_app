@@ -515,6 +515,87 @@ export interface DragonTigerReviewV2 {
 
 export type PostMarketDailyReviewV2ModuleRow = Record<string, unknown>;
 
+// ── PR-14A/B: Engine Report Types ──
+
+export interface EngineSummary {
+  allow_trade: boolean;
+  trade_mode: string;
+  position_limit?: number | null;
+  no_trade_blocking_rule?: string | null;
+  no_trade_reasons?: string[];
+  action_bias?: string;
+  conclusion?: string | null;
+  next_day_strategy?: string | null;
+  risk_notes?: string[];
+}
+
+export interface IndexTechnicalReview {
+  index_code: string;
+  index_name: string;
+  close?: number | null;
+  pct_chg?: number | null;
+  trend_state?: string | null;
+  trend_score?: number | null;
+  above_ma5?: boolean | null;
+  above_ma10?: boolean | null;
+  above_ma20?: boolean | null;
+  above_ma60?: boolean | null;
+  ma_structure?: string | null;
+  macd_state?: string | null;
+  support_level?: number | null;
+  resistance_level?: number | null;
+  volume_pattern?: string | null;
+  risk_flags?: string[];
+  conclusion?: string | null;
+}
+
+export interface EngineMarketRegimeReview {
+  broad_market_regime?: string | null;
+  short_term_sentiment?: string | null;
+  mainline_environment?: string | null;
+  allow_trade?: boolean | null;
+  trade_mode?: string | null;
+  position_limit?: number | null;
+  no_trade_blocking_rule?: string | null;
+  no_trade_reasons?: string[];
+  index_data_ready?: boolean;
+  index_data_source?: string | null;
+  index_technical_reviews?: IndexTechnicalReview[];
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface MainlineDailyStateReview {
+  trade_date: string;
+  mainline_id: string;
+  mainline_name: string;
+  canonical_subject_key: string;
+  active_subject_keys?: string[];
+  lifecycle_state: string;
+  mainline_alive?: boolean;
+  mainline_trade_alive?: boolean;
+  risk_state?: string | null;
+  event_count_1d?: number;
+  event_count_3d?: number;
+  event_count_7d?: number;
+  mainline_strength_score?: number | null;
+  fade_risk_score?: number | null;
+  strong_pool_count?: number;
+  d1_count?: number;
+  focus_count?: number;
+  action_advice?: string | null;
+  conclusion?: string | null;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface PostMarketDecisionV2Review {
+  trading_permission?: Record<string, unknown>;
+  strong_stock_pool_reviews?: Record<string, unknown>[];
+  weak_to_strong_d1_reviews?: Record<string, unknown>[];
+  next_day_focus_stocks?: Record<string, unknown>[];
+  trading_principle_v2?: Record<string, unknown>;
+  diagnostics?: Record<string, unknown>;
+}
+
 export interface PostMarketDailyReviewV2 {
   schema_version: "daily_review_v2";
   trade_date: string;
@@ -540,6 +621,13 @@ export interface PostMarketDailyReviewV2 {
   dragon_tiger_reviews: DragonTigerReviewV2[];
   trading_principle: Record<string, unknown>;
   diagnostics: DailyReviewV2Diagnostics;
+
+  // PR-14A: engine report fields
+  engine_summary?: EngineSummary;
+  market_regime_review_v2?: EngineMarketRegimeReview;
+  index_technical_reviews?: IndexTechnicalReview[];
+  mainline_daily_states?: MainlineDailyStateReview[];
+  post_market_decision_v2_review?: PostMarketDecisionV2Review;
 }
 
 // ── P1-6: PostMarket readiness / jobs status ──
