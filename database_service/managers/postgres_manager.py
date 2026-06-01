@@ -2895,7 +2895,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     NULLIF(vtb.theme_name, ''),
                     r.subject_key
                 ) AS theme_name,
-                COALESCE(mr.is_main_theme, FALSE) AS is_main_theme,
+                COALESCE(mr.is_main_theme, (mr2.mainline_id IS NOT NULL), FALSE) AS is_main_theme,
                 COALESCE(mr.identity_status, 'observed') AS identity_status,
                 (
                     COALESCE(mr.is_main_theme, FALSE)
@@ -2910,6 +2910,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             FROM recent r
             LEFT JOIN theme_mainline_identity_registry mr
               ON mr.subject_key = r.subject_key
+            LEFT JOIN mainline_registry mr2
+              ON mr2.canonical_subject_key = r.subject_key
+             AND mr2.identity_status = 'confirmed'
+             AND COALESCE(mr2.tracking_status, 'active') NOT IN ('archived', 'dormant')
             LEFT JOIN mainline_state_daily msd
               ON msd.trade_date = $1::date
              AND msd.subject_key = r.subject_key
@@ -2923,6 +2927,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             LEFT JOIN consecutive_boards cb
               ON split_part(cb.stock_id, '.', 1) = split_part(r.stock_id, '.', 1)
             WHERE (
+                -- 路径1: 强股决策池 — 旧链已确认 + 周期存续 + 强度门槛
                 (
                     COALESCE(mr.is_main_theme, FALSE) = TRUE
                     AND COALESCE(mr.identity_status, '') = 'confirmed'
@@ -2933,7 +2938,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         OR COALESCE(ss.subject_strong_count, 0) >= 3
                     )
                 )
+                -- 路径2: 连板（原逻辑不变）
                 OR COALESCE(cb.has_two_board, FALSE) = TRUE
+                -- 路径3: PR-13C 已确认主线跟踪池 — 新链 registry 确认 + 周期存续
+                -- 不要求强度门槛，仅纳入观察跟踪（downstream 通过 snapshot_scope 分流）
+                OR (
+                    mr2.mainline_id IS NOT NULL
+                    AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
+                )
             )
         ),
         ranked AS (
@@ -2962,11 +2974,14 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         FROM ranked
         WHERE rn = 1
           AND (
+                -- 原逻辑：需要连板强度
                 COALESCE(recent_limit_up_count, 0) >= 2
                 OR (
                     COALESCE(recent_limit_up_count, 0) >= 1
                     AND (cond_gene + cond_volume + cond_structure) >= 2
                 )
+                -- PR-13C: 已确认主线跟踪池 — 不要求连板，仅观察跟踪
+                OR COALESCE(is_main_theme, FALSE) = TRUE
               )
         ORDER BY mainline_strength_score DESC, recent_limit_up_count DESC, best_rank ASC
         """
@@ -4309,15 +4324,25 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         return [dict(r) for r in rows]
 
     async def get_all_confirmed_mainlines(self) -> List[Dict[str, Any]]:
-        """读取所有当前已确认主线（不限制 subject_keys）。"""
+        """PR-13C: 读取所有当前已确认主线 — 优先读 mainline_registry（新真源）。
+
+        返回格式向后兼容：subject_key, theme_name, is_main_theme, identity_status。
+        """
         sql = """
-        SELECT DISTINCT ON (subject_key)
-            subject_key, theme_name, identity_status, is_main_theme,
-            first_confirmed_date, last_review_date, rule_version,
-            composite_score, source_trade_date
-        FROM theme_mainline_identity_registry
-        WHERE is_main_theme = TRUE AND identity_status = 'confirmed'
-        ORDER BY subject_key, last_review_date DESC NULLS LAST
+        SELECT DISTINCT ON (canonical_subject_key)
+            canonical_subject_key AS subject_key,
+            mainline_name AS theme_name,
+            identity_status,
+            TRUE AS is_main_theme,
+            valid_from AS first_confirmed_date,
+            last_review_date,
+            'mainline_registry_v1' AS rule_version,
+            NULL::numeric AS composite_score,
+            valid_from::text AS source_trade_date
+        FROM mainline_registry
+        WHERE identity_status = 'confirmed'
+          AND COALESCE(tracking_status, 'active') NOT IN ('archived', 'dormant')
+        ORDER BY canonical_subject_key, valid_from DESC NULLS LAST
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql)
@@ -4328,42 +4353,37 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         subject_keys: List[str],
         trade_date,
     ) -> List[Dict[str, Any]]:
-        """读取 Layer A 主线身份真源。
+        """PR-13C: 读取 Layer A 主线身份 — 从 mainline_registry（新真源）。
 
-        StrongWatch-P0 热修复 (2026-05-27):
-          只取 identity_status='confirmed' AND is_main_theme IS TRUE 的有效主线身份。
-          review_pending / rejected / revoked 不得覆盖 confirmed。
-          theme_mainline_identity_registry 是 append-only 日志表，
-          不能按 updated_at DESC 简单取最新行当作当前有效状态。
+        返回格式向后兼容：subject_key, theme_name, is_main_theme, identity_status。
         """
         if not subject_keys:
             return []
         page_size = 500
-        confirmed_only_sql = """
-        SELECT DISTINCT ON (subject_key)
-            subject_key,
-            COALESCE(identity_status, '') AS identity_status,
-            COALESCE(is_main_theme, FALSE) AS is_main_theme,
-            first_confirmed_date,
+        sql = """
+        SELECT DISTINCT ON (canonical_subject_key)
+            canonical_subject_key AS subject_key,
+            'confirmed' AS identity_status,
+            TRUE AS is_main_theme,
+            valid_from::date AS first_confirmed_date,
             last_review_date,
-            COALESCE(rule_version, '') AS rule_version
-        FROM theme_mainline_identity_registry
-        WHERE subject_key = ANY($1::text[])
+            'mainline_registry_v1' AS rule_version
+        FROM mainline_registry
+        WHERE canonical_subject_key = ANY($1::text[])
           AND identity_status = 'confirmed'
-          AND is_main_theme IS TRUE
-        ORDER BY subject_key, updated_at DESC NULLS LAST
+          AND COALESCE(tracking_status, 'active') NOT IN ('archived', 'dormant')
+        ORDER BY canonical_subject_key, valid_from DESC NULLS LAST
         """
-        gate_mode = str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower()
         try:
             async with self.pool.acquire() as conn:
                 all_rows: list[Dict[str, Any]] = []
                 for i in range(0, len(subject_keys), page_size):
                     chunk = subject_keys[i : i + page_size]
-                    rows = await conn.fetch(confirmed_only_sql, chunk)
+                    rows = await conn.fetch(sql, chunk)
                     all_rows.extend(dict(row) for row in rows)
                 return all_rows
         except Exception as e:
-            logger.warning(f"读取 theme_mainline_identity_registry 失败（可能尚未迁移）: {e}")
+            logger.warning(f"读取 mainline_registry identity 失败: {e}")
             return []
 
     async def get_mainline_identity_rule_inputs(
@@ -4617,11 +4637,12 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         return [dict(r) for r in rows]
 
     async def get_all_prior_alive_cycles(self, trade_date) -> List[Dict[str, Any]]:
-        """读取上一交易日已确认主线且仍存续的 subject。
+        """PR-13C: 读取上一交易日已确认主线且仍存续的 subject。
 
+        统一使用 mainline_registry（新真源）而非 theme_mainline_identity_registry。
         必须同时满足：
         - cycle: final_mainline_alive=true AND NOT fade_confirmed
-        - identity: is_main_theme=true AND identity_status='confirmed'
+        - identity: mainline_registry 中 identity_status='confirmed' AND tracking_status active
         """
         sql = """
         WITH last_date AS (
@@ -4633,10 +4654,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             v2.final_mainline_alive, v2.fade_confirmed, v2.mainline_strength_score
         FROM theme_cycle_judgement_v2 v2
         JOIN last_date ld ON v2.trade_date = ld.prior_date
-        JOIN theme_mainline_identity_registry mr
-          ON mr.subject_key = v2.subject_key
-         AND mr.is_main_theme = TRUE
+        JOIN mainline_registry mr
+          ON mr.canonical_subject_key = v2.subject_key
          AND mr.identity_status = 'confirmed'
+         AND COALESCE(mr.tracking_status, 'active') NOT IN ('archived', 'dormant')
         WHERE v2.final_mainline_alive = TRUE AND v2.fade_confirmed = FALSE
         """
         async with self.pool.acquire() as conn:
@@ -7667,6 +7688,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 ne.created_at::date = $1::date
                 OR nr.publish_date::date = $1::date
             )
+            __QUARANTINE_FILTER__
             ORDER BY ne.id, esm.subject_key,
                      esm.confidence DESC NULLS LAST, esm.created_at DESC NULLS LAST
         )
@@ -7699,7 +7721,27 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             exists = await conn.fetchval("SELECT to_regclass('public.event_subject_map')::text")
             if not exists:
                 return []
-            rows = await conn.fetch(sql, feed_date)
+            has_quarantine = bool(
+                await conn.fetchval("SELECT to_regclass('public.event_subject_map_quarantine')::text")
+            )
+            rows = await conn.fetch(
+                sql.replace(
+                    "__QUARANTINE_FILTER__",
+                    (
+                        """
+              AND NOT EXISTS (
+                  SELECT 1
+                  FROM event_subject_map_quarantine q
+                  WHERE q.event_id = ne.id
+                    AND q.subject_key = esm.subject_key
+              )
+                        """
+                        if has_quarantine
+                        else ""
+                    ),
+                ),
+                feed_date,
+            )
         return [dict(r) for r in rows]
 
     async def get_event_subject_mappings_by_trade_date(
@@ -7722,6 +7764,9 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             has_theme_profile_v2 = bool(await conn.fetchval("SELECT to_regclass('public.theme_profile_v2')::text"))
             has_theme_gate_profile = bool(await conn.fetchval("SELECT to_regclass('public.theme_gate_profile')::text"))
             has_theme_profile_ext = bool(await conn.fetchval("SELECT to_regclass('public.theme_profile_ext')::text"))
+            has_quarantine = bool(
+                await conn.fetchval("SELECT to_regclass('public.event_subject_map_quarantine')::text")
+            )
 
             profile_name_selects: List[str] = []
             if has_theme_profile_v2:
@@ -7847,6 +7892,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 AND COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, (nr.publish_date + nr.publish_time)::timestamp) < $5::timestamptz
             )
         )
+          __QUARANTINE_FILTER__
           AND ($2::varchar IS NULL OR esm.source = $2::varchar)
         ORDER BY COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, (nr.publish_date + nr.publish_time)::timestamp) DESC NULLS LAST,
                  esm.event_id DESC,
@@ -7854,7 +7900,28 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                  esm.confidence DESC NULLS LAST
         LIMIT $3
         """
-            rows = await conn.fetch(sql, trade_date, source, int(limit or 500), start_time, end_time)
+            rows = await conn.fetch(
+                sql.replace(
+                    "__QUARANTINE_FILTER__",
+                    (
+                        """
+          AND NOT EXISTS (
+              SELECT 1
+              FROM event_subject_map_quarantine q
+              WHERE q.event_id = ne.id
+                AND q.subject_key = esm.subject_key
+          )
+                        """
+                        if has_quarantine
+                        else ""
+                    ),
+                ),
+                trade_date,
+                source,
+                int(limit or 500),
+                start_time,
+                end_time,
+            )
         return [dict(r) for r in rows]
 
     async def get_event_subject_mappings_by_event_ids(self, event_ids: List[int]) -> List[Dict[str, Any]]:
