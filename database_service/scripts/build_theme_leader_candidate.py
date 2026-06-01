@@ -57,6 +57,79 @@ def _to_float(value):
         return 0.0
 
 
+def validate_price_consistency(close: float, pre_close: float, pct_chg: float) -> dict:
+    """PR-13B: validate close/pre_close/pct_chg consistency.
+
+    JYHF raw_json pct_chg may use a different reference price
+    (e.g. intraday open-based) than the standard pre_close.
+    """
+    if pre_close and pre_close != 0 and close and close != 0:
+        calc_pct = (close - pre_close) / pre_close * 100
+        diff = abs(calc_pct - pct_chg)
+    else:
+        calc_pct = pct_chg
+        diff = 0.0
+
+    # GEM/STAR board: ~20%, Main board: ~10%, ST: ~5%
+    is_gem = close > 0 and pre_close > 0 and (close / pre_close > 1.15 or close / pre_close < 0.85)
+    limit_up_threshold = 19.5 if is_gem else 9.5
+
+    calc_limit_up = calc_pct >= limit_up_threshold
+    price_inconsistent = diff > 3.0
+
+    return {
+        "calc_pct_chg": round(calc_pct, 2),
+        "reported_pct_chg": round(pct_chg, 2),
+        "pct_chg_diff": round(diff, 2),
+        "price_inconsistent": price_inconsistent,
+        "pct_chg_reliable": not price_inconsistent,
+        "calc_limit_up": calc_limit_up,
+        "limit_up_threshold": limit_up_threshold,
+        "limit_up_reliable": not price_inconsistent,
+    }
+
+
+def build_cross_subject_leader_map(subject_rows: list[dict]) -> dict[str, int]:
+    """PR-13B: count how many subjects each stock is marked is_leader (rank1)."""
+    counts: dict[str, int] = {}
+    for row in subject_rows:
+        if bool(row.get("is_leader")):
+            stock_id = str(row.get("stock_id") or "")
+            if stock_id:
+                counts[stock_id] = counts.get(stock_id, 0) + 1
+    return counts
+
+
+def build_leader_quality_flags(
+    price_check: dict,
+    cross_subject_count: int,
+) -> dict:
+    """PR-13B: aggregate quality flags for a leader candidate."""
+    flags = {
+        "leader_source": "jyhf_rank_order",
+        "is_leader_semantics": "rank1_hint_not_verified_leader",
+        "price_inconsistent": price_check.get("price_inconsistent", False),
+        "limit_up_verified": (
+            not price_check.get("price_inconsistent", False)
+            and price_check.get("calc_limit_up", False)
+        ),
+        "pct_chg_reliable": price_check.get("pct_chg_reliable", False),
+        "cross_subject_leader_count": cross_subject_count,
+        "leader_cross_subject_inflated": cross_subject_count >= 3,
+        "leader_uniqueness_score": (
+            100 if cross_subject_count <= 1
+            else 75 if cross_subject_count == 2
+            else 40 if cross_subject_count <= 4
+            else 20
+        ),
+        "verified_leader": (
+            not price_check.get("price_inconsistent", False)
+            and cross_subject_count <= 2
+        ),
+    }
+    return flags
+
+
 async def ensure_tables(manager: PostgresDatabaseManager) -> None:
     ddl = """
     CREATE TABLE IF NOT EXISTS theme_leader_candidate (
@@ -133,6 +206,7 @@ async def fetch_subject_rows(manager: PostgresDatabaseManager, trade_date_value:
         rank_order,
         COALESCE(pct_chg, 0) AS pct_chg,
         COALESCE(close_price, 0) AS close_price,
+        COALESCE(pre_close, 0) AS pre_close,
         is_leader,
         limit_up
         , raw_json
@@ -311,7 +385,13 @@ async def main_async() -> int:
         kline_fact_map = await fetch_kline_fact_map(manager, trade_date_value)
 
         theme_name_map = {str(row["subject_key"]): row["theme_name"] for row in main_themes}
+
+        # ── PR-13B: cross-subject leader detection ──
+        cross_subject_map = build_cross_subject_leader_map(subject_rows)
+
         grouped: dict[str, list[ThemeLeaderInput]] = {}
+        # PR-13B: build per-stock price consistency cache
+        price_check_cache: dict[str, dict] = {}
         for row in subject_rows:
             subject_key = str(row["subject_key"])
             stock_key = (subject_key, str(row["stock_id"]))
@@ -342,7 +422,22 @@ async def main_async() -> int:
         service = LeaderCandidateService()
         candidates = []
         for subject_key, rows in grouped.items():
-            built = service.build_theme_candidates(rows)
+            # ── PR-13B: build quality flags for scoring adjustment ──
+            quality_map: dict[str, dict] = {}
+            for inp in rows:
+                sid = inp.stock_id
+                # Cache price check per stock_id (same stock, same data across subjects)
+                if sid not in price_check_cache:
+                    price_check_cache[sid] = validate_price_consistency(
+                        inp.close_price,
+                        float(next((r["pre_close"] for r in subject_rows if str(r.get("stock_id","")) == sid), 0) or 0),
+                        inp.pct_chg,
+                    )
+                pc = price_check_cache[sid]
+                xc = cross_subject_map.get(sid, 0)
+                quality_map[sid] = build_leader_quality_flags(pc, xc)
+
+            built = service.build_theme_candidates(rows, quality_map=quality_map)
             for item in built:
                 source_trace = {
                     "datasets": [

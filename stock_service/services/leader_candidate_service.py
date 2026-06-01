@@ -36,10 +36,16 @@ class LeaderCandidateService:
     在主线题材内部生成龙头候选评分与角色标签。
     """
 
-    def compute_purity_score(self, row: ThemeLeaderInput) -> float:
+    def compute_purity_score(self, row: ThemeLeaderInput, quality_flags: dict | None = None) -> float:
+        qf = quality_flags or {}
         score = 0.0
-        if row.is_leader:
+        # PR-13B: is_leader is a rank1 hint, not a confirmed leader
+        is_rank1 = bool(row.is_leader)
+        is_verified_leader = qf.get("verified_leader", False)
+        if is_rank1 and is_verified_leader:
             score += 45.0
+        elif is_rank1 and not is_verified_leader:
+            score += 25.0  # capped: rank1 hint but unverified
         elif row.rank_order <= 3:
             score += 35.0
         elif row.rank_order <= 5:
@@ -50,13 +56,21 @@ class LeaderCandidateService:
             score += 5.0
         return _clip(score)
 
-    def compute_leading_score(self, row: ThemeLeaderInput) -> float:
+    def compute_leading_score(self, row: ThemeLeaderInput, quality_flags: dict | None = None) -> float:
+        qf = quality_flags or {}
         score = 0.0
-        if row.is_limit_up:
+        # PR-13B: only give limit_up bonus if verified
+        if row.is_limit_up and qf.get("limit_up_verified", True):
             score += 40.0
+        elif row.is_limit_up and not qf.get("limit_up_verified", True):
+            score += 15.0  # capped: unverified limit_up
         score += min(max(row.pct_chg, 0.0), 20.0) * 2.0
-        if row.is_leader:
+        # PR-13B: rank1 hint bonus depends on verification
+        is_rank1 = bool(row.is_leader)
+        if is_rank1 and qf.get("verified_leader", False):
             score += 15.0
+        elif is_rank1:
+            score += 8.0   # capped: rank1 hint but quality issues
         if row.rank_order <= 3:
             score += 10.0
         return _clip(score)
@@ -92,18 +106,25 @@ class LeaderCandidateService:
             score += 10.0
         return _clip(score)
 
-    def compute_resilience_score(self, row: ThemeLeaderInput) -> float:
+    def compute_resilience_score(self, row: ThemeLeaderInput, quality_flags: dict | None = None) -> float:
+        qf = quality_flags or {}
         score = 0.0
-        if row.is_limit_up:
+        # PR-13B: limit_up bonus only if verified
+        if row.is_limit_up and qf.get("limit_up_verified", True):
             score += 25.0
+        elif row.is_limit_up:
+            score += 10.0  # capped: unverified
         if row.pct_chg >= 8:
             score += 20.0
         elif row.pct_chg >= 5:
             score += 12.0
         elif row.pct_chg >= 0:
             score += 6.0
-        if row.is_leader:
+        # PR-13B: rank1 hint bonus capped
+        if bool(row.is_leader) and qf.get("verified_leader", False):
             score += 10.0
+        elif bool(row.is_leader):
+            score += 5.0   # capped
         score += min(max(row.trend_strength_score, 0.0), 100.0) * 0.15
         return _clip(score)
 
@@ -153,16 +174,37 @@ class LeaderCandidateService:
             evidence.append(f"K线形态 {'/'.join(row.pattern_labels)}")
         return evidence
 
-    def build_theme_candidates(self, rows: list[ThemeLeaderInput]) -> list[ThemeLeaderCandidate]:
+    def build_theme_candidates(
+        self, rows: list[ThemeLeaderInput], quality_map: dict[str, dict] | None = None,
+    ) -> list[ThemeLeaderCandidate]:
         if not rows:
             return []
         scored: list[ThemeLeaderCandidate] = []
         for row in rows:
-            purity = self.compute_purity_score(row)
-            leading = self.compute_leading_score(row)
+            qf = (quality_map or {}).get(row.stock_id, {})
+            purity = self.compute_purity_score(row, quality_flags=qf)
+            leading = self.compute_leading_score(row, quality_flags=qf)
             capital = self.compute_capital_score(row)
             structure = self.compute_structure_score(row)
-            resilience = self.compute_resilience_score(row)
+            resilience = self.compute_resilience_score(row, quality_flags=qf)
+
+            # ── PR-13B: apply scoring caps for data quality issues ──
+            price_inconsistent = qf.get("price_inconsistent", False)
+            cross_inflated = qf.get("leader_cross_subject_inflated", False)
+
+            if price_inconsistent:
+                leading = min(leading, 65.0)
+                purity = min(purity, 60.0)
+                # If limit_up is unverified, remove the limit_up-based bonuses
+                if not qf.get("limit_up_verified", False):
+                    row = ThemeLeaderInput(
+                        **{**row.__dict__, "is_limit_up": False}
+                    )
+
+            if cross_inflated:
+                purity = min(purity, 65.0)
+                resilience = min(resilience, 60.0)
+
             composite = self.compute_composite_score(purity, leading, capital, structure, resilience)
             scored.append(
                 ThemeLeaderCandidate(
@@ -177,7 +219,7 @@ class LeaderCandidateService:
                     structure_score=structure,
                     resilience_score=resilience,
                     composite_score=composite,
-                    is_limit_up=row.is_limit_up,
+                    is_limit_up=bool(row.is_limit_up) and qf.get("limit_up_verified", True),
                     limit_up_type=self.derive_limit_up_type(row),
                     turnover_rate=row.turnover_rate,
                     volume_ratio=row.volume_ratio,
@@ -185,7 +227,7 @@ class LeaderCandidateService:
                     is_new_stock=row.is_new_stock,
                     candidate_rank=0,
                     role_label="",
-                    evidence=[],
+                    evidence=[],  # will be filled below
                 )
             )
 
