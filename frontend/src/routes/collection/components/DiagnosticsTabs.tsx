@@ -1,27 +1,13 @@
-/** P4-1A: 诊断详情 Tab 面板 — 日志/DOM/Stream/Review Queue。 */
-import { Button, Descriptions, Space, Table, Tabs, Tag } from "antd";
+/** P4-1A: 诊断详情 Tab 面板 — 日志/DOM/Stream。Review Queue 已迁移到独立 tab。 */
+import { Descriptions, Space, Table, Tabs, Tag } from "antd";
 import type { CSSProperties } from "react";
-import type { NewChainRealtimeStatus, ReviewQueueItem } from "../../../lib/api";
+import type { NewChainRealtimeStatus } from "../../../lib/api";
 
 interface Props {
   mergedLogs: string[];
   jyhfLogs: string[];
   showLogPanels?: boolean;
   stackStatus: NewChainRealtimeStatus | null;
-  reviewItems: ReviewQueueItem[];
-  reviewTotal: number;
-  reviewBusy: boolean;
-  selectedIds: Set<number>;
-  onToggleSelect: (id: number) => void;
-  onSelectAll: () => void;
-  onSetSelectedKeys: (keys: Set<number>) => void;
-  onConfirm: (id: number) => Promise<void>;
-  onDelete: (id: number) => Promise<void>;
-  onBatchDelete: () => Promise<void>;
-  onImportPending: () => Promise<void>;
-  onClearPending: () => Promise<void>;
-  onRefreshReview: () => Promise<void>;
-  onOpenDetail: (item: ReviewQueueItem) => void;
 }
 
 type LogSection = {
@@ -264,9 +250,7 @@ function renderSection(section: LogSection, sectionIndex: number) {
 
 export default function DiagnosticsTabs(props: Props) {
   const {
-    mergedLogs, jyhfLogs, showLogPanels = true, stackStatus, reviewItems, reviewTotal, reviewBusy,
-    selectedIds, onToggleSelect, onSelectAll, onSetSelectedKeys, onConfirm, onDelete,
-    onBatchDelete, onImportPending, onClearPending, onRefreshReview, onOpenDetail,
+    mergedLogs, jyhfLogs, showLogPanels = true, stackStatus,
   } = props;
 
   const streams = stackStatus?.redis_streams ?? {};
@@ -330,7 +314,6 @@ export default function DiagnosticsTabs(props: Props) {
       label: "Redis Stream",
       children: (() => {
           const pendingCount = stackStatus?.pending_count ?? 0;
-          const reviewCount = stackStatus?.review_queue_count ?? 0;
           const deadCount = stackStatus?.dead_letter_count ?? 0;
           const decisionCount = stackStatus?.decision_stream_count ?? 0;
           return (
@@ -350,17 +333,6 @@ export default function DiagnosticsTabs(props: Props) {
                 {stackStatus ? pendingCount : "?"}
               </div>
               <div style={{ fontSize: 10, color: "#64748b", marginTop: 1 }}>待导入</div>
-            </div>
-            <div style={{
-              padding: "8px 10px", borderRadius: 6,
-              background: reviewCount > 0 ? "rgba(59,130,246,0.08)" : "rgba(255,255,255,0.03)",
-              border: reviewCount > 0 ? "1px solid rgba(59,130,246,0.3)" : "1px solid rgba(255,255,255,0.06)",
-            }}>
-              <div style={{ fontSize: 10, color: "#64748b" }}>📋 待复核</div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: reviewCount > 0 ? "#3b82f6" : "#e2e8f0" }}>
-                {stackStatus ? reviewCount : "?"}
-              </div>
-              <div style={{ fontSize: 10, color: "#64748b", marginTop: 1 }}>DB waiting</div>
             </div>
             <div style={{
               padding: "8px 10px", borderRadius: 6,
@@ -479,67 +451,6 @@ export default function DiagnosticsTabs(props: Props) {
         </div>
           );
         })(),
-    },
-    {
-      key: "review-queue",
-      label: `Review Queue (${reviewTotal})`,
-      children: (
-        <div>
-          <Space style={{ marginBottom: 8 }}>
-            <Button size="small" onClick={onRefreshReview} loading={reviewBusy}>刷新</Button>
-            <Button size="small" onClick={onImportPending} disabled={reviewBusy}>导入 Pending</Button>
-            <Button size="small" onClick={onClearPending} disabled={reviewBusy}>清空 Pending</Button>
-            {selectedIds.size > 0 && (
-              <Button size="small" danger onClick={onBatchDelete}>删除选中 ({selectedIds.size})</Button>
-            )}
-            <Button size="small" onClick={onSelectAll}>
-              {selectedIds.size === reviewItems.length && reviewItems.length > 0 ? "取消全选" : "全选"}
-            </Button>
-          </Space>
-          <Table
-            dataSource={reviewItems}
-            rowKey="id"
-            size="small"
-            pagination={false}
-            scroll={{ y: "calc(100vh - 400px)" }}
-            rowSelection={{
-              selectedRowKeys: Array.from(selectedIds),
-              onChange: (selectedRowKeys) => {
-                onSetSelectedKeys(new Set(selectedRowKeys as number[]));
-              },
-              onSelect: (record) => onToggleSelect(record.id),
-            }}
-            columns={[
-              { title: "ID", dataIndex: "id", width: 65 },
-              {
-                title: "Title", dataIndex: "event_title", ellipsis: true,
-                render: (v: string | null, r: ReviewQueueItem) => (
-                  <a onClick={() => onOpenDetail(r)} style={{ cursor: "pointer" }}>{v || r.raw_title || "(无标题)"}</a>
-                ),
-              },
-              {
-                title: "Theme", dataIndex: "proposed_theme_name", width: 100,
-                render: (v: string | null) => v || "-",
-              },
-              {
-                title: "Conf", dataIndex: "proposed_theme_confidence", width: 50,
-                render: (v: number | null) => v != null ? v.toFixed(2) : "-",
-              },
-              { title: "时间", dataIndex: "created_at", width: 80, render: (v: string) => v?.slice(11, 19) ?? "-" },
-              {
-                title: "操作", key: "actions", width: 120,
-                render: (_: any, r: ReviewQueueItem) => (
-                  <Space size="small">
-                    <Button size="small" type="link" onClick={() => onConfirm(r.id)}>确认</Button>
-                    <Button size="small" type="link" danger onClick={() => onDelete(r.id)}>删除</Button>
-                  </Space>
-                ),
-              },
-            ]}
-            locale={{ emptyText: "暂无待复核事件" }}
-          />
-        </div>
-      ),
     },
   ];
 

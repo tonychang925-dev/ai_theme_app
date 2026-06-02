@@ -1159,14 +1159,6 @@ export function RealtimeCollectorPage() {
                       children: (
                         <DiagnosticsTabs
                           mergedLogs={businessLogs} jyhfLogs={jyhfLogs} showLogPanels={false} stackStatus={stackStatus}
-                          reviewItems={reviewItems} reviewTotal={reviewTotal}
-                          reviewBusy={reviewBusy} selectedIds={selectedIds}
-                          onToggleSelect={toggleSelect} onSelectAll={selectAll}
-                          onSetSelectedKeys={setSelectedIds}
-                          onConfirm={handleConfirmReview} onDelete={handleDeleteReview}
-                          onBatchDelete={handleBatchDelete} onImportPending={handleImportPending}
-                          onClearPending={handleClearPending} onRefreshReview={refreshReviewQueue}
-                          onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
                         />
                       ),
                     },
