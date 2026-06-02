@@ -27,7 +27,7 @@ logger = logging.getLogger("jyhf_auction_collector")
 TZ_CN = timezone(timedelta(hours=8))
 
 _AUCTION_START = "09:15"
-_AUCTION_END = "09:26"
+_AUCTION_END = "09:30"
 _DEFAULT_INTERVAL = 3.0  # 秒
 
 
@@ -167,6 +167,10 @@ class JyhfAuctionCollector:
         pool = await self._get_pool()
         sem = asyncio.Semaphore(self._max_concurrency)
 
+        # 首轮失败详情记录，避免日志 flood
+        _first_round_failures: list[str] = []
+        _first_round_done = False
+
         async def _fetch_one(c: dict) -> dict | None:
             sid = c["stock_id"].replace(".SZ", "").replace(".SH", "")
             async with sem:
@@ -176,22 +180,43 @@ class JyhfAuctionCollector:
                             f"{self._api_base}/api/app/stock/realtime/{sid}",
                             headers=self._headers(),
                         )
+                    if r.status_code != 200:
+                        msg = f"Fetch {sid} HTTP {r.status_code}"
+                        if not _first_round_done:
+                            _first_round_failures.append(msg)
+                        logger.warning(msg)
+                        return None
                     data = r.json().get("data", {})
-                    if data and data.get("current"):
-                        # 五档盘口
-                        trade_five = data.get("tradeFive", [])
-                        order_book = _parse_auction_order_book(trade_five, float(data["current"])) if trade_five else None
-                        return {
-                            "stock_id": c["stock_id"],
-                            "current": float(data["current"]),
-                            "pctChg": float(data.get("pctChg", 0)),
-                            "amount": float(data.get("amount", 0)),
-                            "vol": float(data.get("vol", 0)),
-                            "open": float(data.get("open", 0)),
-                            "order_book": order_book,
-                        }
+                    if not data:
+                        msg = f"Fetch {sid} returned empty data"
+                        if not _first_round_done:
+                            _first_round_failures.append(msg)
+                        logger.warning(msg)
+                        return None
+                    # NOTE: 竞价期间 current 可能为 0/0.0（未匹配），不能用 falsy 检查
+                    if data.get("current") is None:
+                        msg = f"Fetch {sid} missing current price"
+                        if not _first_round_done:
+                            _first_round_failures.append(msg)
+                        logger.warning(msg)
+                        return None
+                    # 五档盘口
+                    trade_five = data.get("tradeFive", [])
+                    order_book = _parse_auction_order_book(trade_five, float(data["current"])) if trade_five else None
+                    return {
+                        "stock_id": c["stock_id"],
+                        "current": float(data["current"]),
+                        "pctChg": float(data.get("pctChg", 0)),
+                        "amount": float(data.get("amount", 0)),
+                        "vol": float(data.get("vol", 0)),
+                        "open": float(data.get("open", 0)),
+                        "order_book": order_book,
+                    }
                 except Exception as exc:
-                    logger.debug("Fetch %s failed: %s", sid, exc)
+                    msg = f"Fetch {sid} exception: {exc}"
+                    if not _first_round_done:
+                        _first_round_failures.append(msg)
+                    logger.warning(msg)
                 return None
 
         logger.info("Starting auction loop (interval=%.1fs, concurrency=%d, candidates=%d)",
@@ -228,13 +253,30 @@ class JyhfAuctionCollector:
                 )
 
             self.stats["points_collected"] += len(rows_to_insert)
-            self.stats["stocks_ok"] += ok - self.stats.get("_total_fail", 0)
+            self.stats["stocks_ok"] += ok
             self.stats["rounds"] += 1
+
+            fail_this_round = len(candidates) - ok
 
             elapsed = _time.time() - round_start
             sleep_for = max(0.1, self._interval - elapsed)
-            logger.debug("Round %d: %d points in %.1fs, sleep %.1fs",
-                         self.stats["rounds"], len(rows_to_insert), elapsed, sleep_for)
+
+            # 首轮结束后，汇总输出所有失败原因（去重），方便排查根因
+            if not _first_round_done:
+                _first_round_done = True
+                if _first_round_failures:
+                    unique_failures = list(dict.fromkeys(_first_round_failures))  # 保序去重
+                    logger.warning("First round failure summary (%d unique patterns): %s",
+                                   len(unique_failures), unique_failures[:10])
+                else:
+                    logger.info("First round: all %d candidates fetched successfully", ok)
+
+            if fail_this_round > 0:
+                logger.warning("Round %d: %d ok, %d fail in %.1fs, sleep %.1fs",
+                               self.stats["rounds"], ok, fail_this_round, elapsed, sleep_for)
+            else:
+                logger.debug("Round %d: %d ok in %.1fs, sleep %.1fs",
+                             self.stats["rounds"], ok, elapsed, sleep_for)
             await asyncio.sleep(sleep_for)
 
         self.stats["finished_at"] = self._now_cst().isoformat()

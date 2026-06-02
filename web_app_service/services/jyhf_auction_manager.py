@@ -98,6 +98,8 @@ class JyhfAuctionManager:
                 "--parent-pid", str(os.getpid()),  # P0-A1: watchdog 守护
             ]
             logger.info("Auction collector: %s", " ".join(cmd))
+            logger.info("Auction collector python: %s (cwd=%s)", python, self._project_root)
+
             self._process = await asyncio.to_thread(
                 subprocess.Popen,
                 cmd,
