@@ -944,7 +944,7 @@ export function RealtimeCollectorPage() {
               key: "control",
               label: "控制台",
               children: (
-                <div style={{ display: "grid", gridTemplateColumns: "420px 1fr", gap: 12 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "420px 1fr", gap: 12, height: "calc(100vh - 210px)" }}>
                   <CollectionControlPanel
                     status={controlStatus}
                     busy={controlBusy}

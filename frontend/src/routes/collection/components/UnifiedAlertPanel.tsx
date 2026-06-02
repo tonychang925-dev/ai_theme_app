@@ -109,8 +109,8 @@ export default function UnifiedAlertPanel({ alerts, onClear }: Props) {
   ];
 
   return (
-    <div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
+    <div style={{ display: "flex", flexDirection: "column", height: "100%", overflow: "hidden" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8, flexShrink: 0 }}>
         <Space>
           <Segmented options={KIND_OPTIONS} value={kindFilter} onChange={(v) => setKindFilter(v as string)} size="small" />
           <Segmented options={LEVEL_OPTIONS} value={levelFilter} onChange={(v) => setLevelFilter(v as string)} size="small" />
@@ -126,7 +126,7 @@ export default function UnifiedAlertPanel({ alerts, onClear }: Props) {
         rowKey="id"
         size="small"
         pagination={false}
-        scroll={{ y: 400 }}
+        scroll={{ y: "calc(100vh - 310px)" }}
         locale={{ emptyText: "等待告警信号..." }}
       />
     </div>
