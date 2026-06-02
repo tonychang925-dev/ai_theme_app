@@ -436,7 +436,7 @@ class BuildPostMarketRecapJob:
                     "removed_reason": (row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None)),
                     "kept_because": None,
                 }
-                for row in strong_watch_history[:100]
+                for row in strong_watch_history  # full 7-day pool — PDV2 D1 input, no truncation
             ],
             # Primary count follows the actual candidate list, with formal/observe split preserved separately.
             "candidate_count": len(candidates),
@@ -656,7 +656,7 @@ class BuildPostMarketRecapJob:
                         "removed_reason": row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None),
                         "kept_because": row.get("kept_because") if isinstance(row, dict) else getattr(row, "kept_because", None),
                     }
-                    for row in strong_watch_history[:100]
+                    for row in strong_watch_history  # full dataset, no truncation
                 ],
                 ttl_seconds=SnapshotCacheWriter.TTL_24H,
             )
