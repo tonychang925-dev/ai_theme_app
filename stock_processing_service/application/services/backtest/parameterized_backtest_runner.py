@@ -45,7 +45,12 @@ class ParameterizedBacktestRunner:
         self._c = gateway_client
 
     async def run(self, params: dict[str, Any], param_set_id: str | None = None) -> str:
-        """Execute a backtest. Returns run_id. Writes to backtest_* tables."""
+        """Execute a backtest. Returns run_id. Writes to backtest_* tables.
+
+        Args:
+            params: Trading-layer parameters (hold_days, position_pct, support_types, etc.)
+            param_set_id: Optional reference to strategy_param_set.param_set_id
+        """
         run_id = f"lab_{datetime.now().strftime('%Y%m%d%H%M%S')}_{uuid.uuid4().hex[:6]}"
 
         # ── Extract params ──

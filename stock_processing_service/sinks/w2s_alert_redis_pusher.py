@@ -351,7 +351,7 @@ class W2SAlertRedisPusher:
     async def push_w2s_signals(self, signals: list) -> int:
         """推送 W2S 信号，双格式兼容。
 
-        接受旧 UnifiedW2SAlert（通过 w2s_signal_from_unified_alert() 转换）或新 W2SSignal。
+        接受旧 UnifiedW2SAlert（通过 w2s_signal_from_unified_alert() 或 to_w2s_signal() 转换）或新 W2SSignal。
         """
         if not signals:
             return 0
@@ -360,20 +360,36 @@ class W2SAlertRedisPusher:
             return 0
         pushed = 0
         for s in signals:
+            # 支持 W2SSignal 直传；UnifiedW2SAlert 则通过 adapter 转换
             if isinstance(s, W2SSignal):
                 w2s = s
+            elif hasattr(s, "to_w2s_signal"):
+                w2s = s.to_w2s_signal()
             else:
                 w2s = w2s_signal_from_unified_alert(s)
 
-            dedup_key = f"{STATE_KEY_PREFIX}:{w2s.biz_date}:{w2s.stock_code}:{w2s.stage}"
+            # dedup key 包含 signal_id 或 scorer_version/source_chain，避免重复推送
+            dedup_key = ":".join([
+                STATE_KEY_PREFIX,
+                w2s.biz_date,
+                w2s.stock_code,
+                w2s.stage,
+                getattr(w2s, "signal_id", "") or f"{getattr(w2s, 'scorer_version', '')}:{getattr(w2s, 'source_chain', '')}",
+            ])
             try:
                 if await r.exists(dedup_key):
                     continue
             except Exception:
                 pass
             try:
-                await r.xadd(self._stream, w2s.to_dict(), maxlen=self._maxlen)
-                await r.setex(dedup_key, STATE_TTL_INTRADAY, "1")
+                # payload 补 legacy alias 兼容旧消费者
+                payload = w2s.to_dict()
+                payload.setdefault("stock_id", w2s.stock_code)
+                payload.setdefault("trade_date", w2s.biz_date)
+                payload.setdefault("alert_phase", w2s.stage)
+                await r.xadd(self._stream, payload, maxlen=self._maxlen)
+                ttl = STATE_TTL_AUCTION if w2s.stage == "auction" else STATE_TTL_INTRADAY
+                await r.setex(dedup_key, ttl, "1")
                 pushed += 1
             except Exception as exc:
                 logger.warning("w2s_signal push failed for %s: %s", w2s.stock_code, exc)

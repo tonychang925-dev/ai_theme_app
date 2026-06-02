@@ -72,6 +72,59 @@ class UnifiedW2SAlert:
     evidence_rules: list[str] = field(default_factory=list)
     extra: dict[str, Any] = field(default_factory=dict)
 
+    # ── v3.0-A adapter ──
+    def to_w2s_signal(self):
+        """兼容适配器：旧 UnifiedW2SAlert → 新 W2SSignal 格式。不删除旧字段，不改变旧逻辑。"""
+        from stock_processing_service.contracts.w2s_signal import W2SSignal, generate_trace_id, current_run_id, now_iso
+
+        stage = self.phase if self.phase in ("auction", "intraday") else "intraday_observe"
+        if self.unified_level == "high_confidence":
+            alert_level = "alert"
+        elif self.unified_level in ("turn_observe", "early_observe"):
+            alert_level = "watch"
+        elif self.unified_level == "risk":
+            alert_level = "observation"
+        else:
+            alert_level = "observation"
+
+        scores = {"final": self.intraday_score if self.intraday_score else self.d2_score,
+                  "auction": self.d2_score, "intraday": self.intraday_score}
+
+        evidence = [{"type": "rule", "text": r} for r in self.evidence_rules]
+        if self.d2_level:
+            evidence.append({"type": "auction", "text": f"竞价确认: {self.d2_level}"})
+        if self.intraday_level:
+            evidence.append({"type": "intraday", "text": f"盘中信号: {self.intraday_level}"})
+
+        risk_flags = []
+        if self.capital_flow == "outflow":
+            risk_flags.append("竞价资金净流出")
+        if self.chase_risk_penalty > 10:
+            risk_flags.append("追高风险")
+
+        return W2SSignal(
+            signal_id=f"{self.trade_date}:{self.stock_id}:{stage}:v2.2:realtime",
+            stage=stage, scorer_version="v2.2",
+            stock_code=self.stock_id, stock_name=self.stock_name, theme_name=self.theme_name,
+            scores=scores, evidence=evidence, risk_flags=risk_flags,
+            alert_level=alert_level,
+            trace_id=generate_trace_id(), run_id=current_run_id(),
+            biz_date=self.trade_date, event_time=self.generated_at or now_iso(),
+            source_chain="realtime",
+            factor_snapshot={
+                "d2_level": self.d2_level, "d2_score": self.d2_score,
+                "auction_open_pct": self.auction_open_pct, "carry_ratio": self.carry_ratio,
+                "capital_flow": self.capital_flow, "capital_imbalance": self.capital_imbalance,
+                "intraday_level": self.intraday_level, "intraday_score": self.intraday_score,
+                "relative_strength_cross_zero": self.relative_strength_cross_zero,
+                "above_vwap": self.above_vwap_ratio > 0,
+                "support_state": self.support_state, "chase_risk_penalty": self.chase_risk_penalty,
+                "break_platform_30m": self.break_platform_30m,
+                "amount_acceleration": self.amount_acceleration,
+                "unified_level": self.unified_level,
+            },
+        )
+
 
 class W2SUnifiedAlertService:
     """弱转强统一告警管线。"""
