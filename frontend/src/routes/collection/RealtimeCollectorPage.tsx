@@ -971,6 +971,7 @@ export function RealtimeCollectorPage() {
                   loading={orchLoading}
                   error={orchError}
                   onRefresh={refreshOrchestrator}
+                  showRuntimeHealth={false}
                 />
               ),
             },
@@ -1143,6 +1144,7 @@ export function RealtimeCollectorPage() {
                           loading={orchLoading}
                           error={orchError}
                           onRefresh={refreshOrchestrator}
+                          showOrchestrator={false}
                         />
                       ),
                     },
