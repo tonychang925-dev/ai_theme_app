@@ -41,7 +41,10 @@ TZ_CN = timezone(timedelta(hours=8))
 SERVICE_DEPENDENCIES: dict[str, list[str]] = {
     "cdp_token": [],
     "jyhf_market": ["cdp_token"],
-    "jyhf_auction": ["cdp_token", "jyhf_market"],
+    # jyhf_auction 只需要 /tmp/jyhf_auth_token.json 有效即可独立工作，
+    # 不依赖 jyhf_market（它直连 app.txcfgl.com API，不走市场采集器）。
+    # 仅需 cdp_token 保证 token 已刷新。
+    "jyhf_auction": ["cdp_token"],
     # w2s_alert 有两个子服务:
     #   - 盘前竞价 w2s_alert_service (需要 jyhf_auction 产出 auction_snapshot)
     #   - 盘中弱转强 w2s_support_alert_service (不需要 auction, 直接读 DB+JYHF API)
@@ -595,11 +598,26 @@ class RealtimeBusinessOrchestrator:
             evidence["running"] = False
             evidence["error"] = str(exc)
             state.blockers.append(f"Auction manager unreachable: {exc}")
+
+        # 检查本地 token 文件：若 token 有效则可绕过 CDP 依赖独立启动
+        token_ok = False
+        try:
+            import json as _json
+            from pathlib import Path as _Path
+            token_data = _json.loads(_Path("/tmp/jyhf_auth_token.json").read_text())
+            token_ok = bool(token_data.get("token"))
+            evidence["local_token_ok"] = token_ok
+        except Exception:
+            evidence["local_token_ok"] = False
+
         state.evidence = evidence
         dep_blocked = _check_deps("jyhf_auction", services)
-        if dep_blocked:
+        if dep_blocked and not token_ok:
             state.observed_state = "blocked"
             state.blockers.extend(dep_blocked)
+        elif dep_blocked and token_ok:
+            # Token 本地有效，绕过 CDP 依赖，标记为可启动
+            state.observed_state = evidence.get("running") and "running" or "stopped"
         elif evidence.get("running"):
             state.observed_state = "running"
         else:
@@ -838,6 +856,10 @@ def _compute_planned_actions(
                 continue
 
         dep_blockers = _check_deps(svc_name, services)
+        # jyhf_auction 可凭本地 token 文件绕过 CDP 依赖
+        if dep_blockers and svc_name == "jyhf_auction":
+            if svc.evidence.get("local_token_ok"):
+                dep_blockers = []  # token 本地有效，忽略依赖阻塞
         if dep_blockers:
             continue
         if svc.observed_state in ("stopped", "unknown"):
