@@ -3010,6 +3010,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           ON sf.stock_code = split_part(p.stock_id, '.', 1)
         WHERE p.watch_status IN ('pending_seed', 'pending_refresh', 'active', 'weakening')
           AND p.last_trade_date <= $1::date
+          AND COALESCE(NULLIF(LOWER(p.source_tag), ''), '') NOT IN ('tracking_only', 'mainline_tracking')
           AND (
               COALESCE(NULLIF(LOWER(p.labels_json->>'has_two_board'), ''), 'false') IN ('true', 't', '1', 'yes')
               OR (

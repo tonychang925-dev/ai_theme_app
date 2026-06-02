@@ -31,6 +31,7 @@ def test_layer_c_refresh_sql_does_not_replay_pool_rows_without_layer_b_or_two_bo
     assert "LEFT JOIN theme_cycle_judgement_v2 v2" in method
     assert "v2.subject_key = p.subject_key" in method
     assert "p.labels_json->>'has_two_board'" in method
+    assert "COALESCE(NULLIF(LOWER(p.source_tag), ''), '') NOT IN ('tracking_only', 'mainline_tracking')" in method
     assert "COALESCE(v2.final_mainline_alive, FALSE) = TRUE" in method
     assert "COALESCE(v2.fade_confirmed, FALSE) = FALSE" in method
 
