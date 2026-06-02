@@ -57,7 +57,7 @@ class NewsCrawlerService:
                 request_interval=settings.REQUEST_INTERVAL_SECONDS,
                 max_retries=settings.MAX_RETRY_TIMES
             )
-            logger.info("✅ 财联社新闻采集器初始化成功")
+            logger.info("✅ 财联社页面采集器初始化成功")
             
         except ImportError as e:
             logger.warning(f"⚠️  无法导入财联社采集器: {e}")
@@ -72,7 +72,7 @@ class NewsCrawlerService:
         抓取真实财联社新闻 - 主接口
         
         Args:
-            symbol: 股票代码或"重点"（只采集A/B级重要电报）
+            symbol: "重点" 返回精简的重要电报；"全部" 返回更完整的页面结果
             limit: 最大返回数量
             
         Returns:
@@ -87,7 +87,7 @@ class NewsCrawlerService:
                 return self._create_error_response(
                     "真实新闻采集器未初始化", 
                     operation,
-                    "请检查akshare_cls模块依赖"
+                    "请检查CLS页面采集模块依赖"
                 )
             
             # 设置采集器参数
@@ -121,7 +121,7 @@ class NewsCrawlerService:
                     "news_count": len(news_data),
                     "news_list": news_data,
                     "has_more": len(news_items) > limit,
-                    "source": "财联社 (akshare)",
+                    "source": "财联社 (cls page)",
                     "crawled_at": datetime.now().isoformat()
                 },
                 "metadata": self.service_metadata
@@ -157,38 +157,21 @@ class NewsCrawlerService:
         
         try:
             logger.info(f"🤖 智能抓取新闻: count={count}, prefer_real={prefer_real} (mock已禁用)")
-            
-            # 检查真实采集器可用性
-            real_available = False
+
             if prefer_real and self.collector:
-                try:
-                    real_available = await asyncio.wait_for(
-                        self.collector.health_check(),
-                        timeout=self.healthcheck_timeout_seconds,
-                    )
-                    logger.info(f"真实采集器健康检查: {real_available}")
-                except asyncio.TimeoutError:
-                    logger.warning(f"真实采集器健康检查超时: {self.healthcheck_timeout_seconds}s")
-                    real_available = False
-                except:
-                    real_available = False
-            
-            # 根据可用性选择模式（仅真实）
-            if real_available:
+                # 直接进入真实抓取，避免“健康检查”把慢请求误判为不可用。
                 result = await self.crawl_real_news("重点", count)
                 result["operation"] = operation
                 result["mode"] = "real"
-            else:
-                return self._create_error_response(
-                    "真实新闻源不可用", 
-                    operation,
-                    "mock回退已禁用，请检查真实采集器状态"
-                )
-            
-            result["prefer_real"] = prefer_real
-            result["real_available"] = real_available
-            
-            return result
+                result["prefer_real"] = prefer_real
+                result["real_available"] = result.get("status") == "success"
+                return result
+
+            return self._create_error_response(
+                "真实新闻源不可用",
+                operation,
+                "mock回退已禁用，请检查真实采集器状态"
+            )
             
         except Exception as e:
             logger.error(f"❌ 智能抓取失败: {e}")

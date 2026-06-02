@@ -390,6 +390,46 @@ class StockReadGatewayAdapter:
             )
         return results
 
+    async def get_subject_event_chain_rows(
+        self,
+        trade_date: date,
+        subject_keys: list[str] | None = None,
+        lookback_days: int = 7,
+    ) -> list[dict[str, Any]]:
+        """返回 subject 级事件明细（event_id, title, summary, event_type 等）。"""
+        fn = getattr(self._db, "get_subject_event_chain_rows", None)
+        if not callable(fn):
+            return []
+        rows = await fn(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+            lookback_days=lookback_days,
+        )
+        return [_as_dict(row) for row in rows]
+
+    async def get_all_confirmed_mainlines(self) -> list[dict[str, Any]]:
+        """PR-13C: 读取所有已确认主线（从 mainline_registry）。"""
+        fn = getattr(self._db, "get_all_confirmed_mainlines", None)
+        if not callable(fn):
+            return []
+        return await fn()
+
+    async def get_all_prior_alive_cycles(self, trade_date) -> list[dict[str, Any]]:
+        """PR-13C: 读取上一交易日仍存续的已确认主线。"""
+        fn = getattr(self._db, "get_all_prior_alive_cycles", None)
+        if not callable(fn):
+            return []
+        return await fn(trade_date=trade_date)
+
+    async def get_staging_subject_keys(
+        self, trade_date: date, lookback_days: int = 7,
+    ) -> list[str]:
+        """从 CDP DOM 管线获取回溯窗口内的 distinct subject_keys。"""
+        fn = getattr(self._db, "get_staging_subject_keys", None)
+        if not callable(fn):
+            return []
+        return await fn(trade_date=trade_date, lookback_days=lookback_days)
+
     async def get_prior_stock_daily_snapshots(
         self, trade_date: date, lookback_days: int, stock_ids: list[str] | None = None
     ) -> list[PriorSnapshotDTO]:

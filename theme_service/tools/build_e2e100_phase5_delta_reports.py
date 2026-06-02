@@ -9,12 +9,14 @@ from typing import Any
 ROOT_CAUSE_HINTS = {
     "9030207": ("bad_gate_boundary", "remove satellite-warning generic missile anchors and add space warning boundary"),
     "9054404": ("generic_direct_hit", "remove generic energy/finance/communication anchors from collection theme"),
+    "9012396": ("generic_direct_hit", "remove new-quality-productivity generic anchors from xinjiang-ftz profile"),
     "9064082": ("bad_gate_boundary", "block photoresist material news from Low-DK electronic cloth"),
     "9062142": ("bad_gate_boundary", "require Blue Arrow IPO action instead of company/rocket entity alone"),
     "9059490": ("bad_gate_boundary", "block recoverable-rocket events from space-computing profile"),
     "9063080": ("generic_direct_hit", "replace commercial-space generic anchors with space-tourism anchors"),
     "9015387": ("generic_direct_hit", "demote OLED-only display-panel hit when glasses-specific evidence exists"),
     "9048607": ("bad_gate_boundary", "block rare-earth policy events from fentanyl cooperation theme"),
+    "9043698": ("generic_direct_hit", "remove marine-policy and equipment-manufacturing generic anchors from deepsea economy profile"),
     "9034859": ("broad_theme_hijack", "demote generic AI-agent profile when Manus-specific profile is present"),
 }
 

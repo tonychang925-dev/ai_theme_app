@@ -50,14 +50,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [token]);
 
   const login = async (email: string, password: string) => {
-    const resp = await fetch('/api/v2/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password }),
-    });
+    const ctrl = new AbortController();
+    const timer = window.setTimeout(() => ctrl.abort(), 10000);
+    let resp: Response;
+    try {
+      resp = await fetch('/api/v2/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+        signal: ctrl.signal,
+      });
+    } catch (err) {
+      if (err instanceof Error && err.name === 'AbortError') {
+        throw new Error('登录请求超时，请检查 web_app_service 与数据库状态');
+      }
+      throw new Error('登录请求失败，请检查 web_app_service 是否可用');
+    } finally {
+      window.clearTimeout(timer);
+    }
     if (!resp.ok) {
-      const err = await resp.json();
-      throw new Error(err.detail || '登录失败');
+      let detail = '登录失败';
+      try {
+        const err = await resp.json();
+        detail = err.detail || detail;
+      } catch {}
+      throw new Error(detail);
     }
     const data = await resp.json();
     localStorage.setItem('auth_token', data.token);

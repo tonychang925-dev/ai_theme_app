@@ -3,6 +3,8 @@ import { resolve } from "node:path";
 
 const recapPagePath = resolve("src/routes/recap/RecapPage.tsx");
 const source = readFileSync(recapPagePath, "utf8");
+const apiPath = resolve("src/lib/api.ts");
+const apiSource = readFileSync(apiPath, "utf8");
 
 function assert(condition, message) {
   if (!condition) {
@@ -100,9 +102,53 @@ function assertCoreTitlesArePinned() {
   }
 }
 
+function assertPostMarketPrimaryCtaIsAlwaysVisible() {
+  assert(
+    source.includes('{derivedDataBusy || recapBusy ? "复盘中..." : "开始复盘"}'),
+    "盘后复盘状态面板必须固定显示单一主 CTA: 开始复盘",
+  );
+  assert(
+    !source.includes("仅生成动态数据"),
+    "盘后复盘状态面板不得再显示单独的仅生成动态数据按钮",
+  );
+  assert(
+    !source.includes("{payload && (\n                <button className=\"tag tag-button is-pass\""),
+    "开始复盘/重新生成主 CTA 不得被 payload 条件隐藏",
+  );
+}
+
+function assertPostMarketGenerateTimeoutBudget() {
+  assert(
+    apiSource.includes("POST_MARKET_DERIVED_DATA_GENERATE_TIMEOUT_MS = 600000"),
+    "盘后派生数据生成请求必须允许 10 分钟，避免长任务被代理超时截断",
+  );
+  assert(
+    apiSource.includes("POST_MARKET_RECAP_GENERATE_TIMEOUT_MS = 300000"),
+    "盘后复盘报告生成请求必须允许 5 分钟",
+  );
+  assert(
+    apiSource.includes("POST_MARKET_DAILY_REVIEW_V2_GENERATE_TIMEOUT_MS = 180000"),
+    "DailyReview V2 生成请求必须允许 3 分钟",
+  );
+}
+
+function assertReadyReadinessSkipsDerivedRebuild() {
+  assert(
+    source.includes('if (initialReadiness?.status === "ready")'),
+    "盘后复盘 readiness 已 ready 时必须跳过派生数据强制重建，避免每次重新生成都扫描全量题材数据",
+  );
+  assert(
+    source.includes("generatePostMarketDerivedData(tradeDate, true)"),
+    "盘后复盘 readiness 未 ready 时仍需保留派生数据生成入口",
+  );
+}
+
 assertFullFixtureDisplaysAllModules();
 assertEmptyFixtureKeepsModuleVisible();
 assertDailyReviewDoesNotOverrideSectionsFirst();
 assertCoreTitlesArePinned();
+assertPostMarketPrimaryCtaIsAlwaysVisible();
+assertPostMarketGenerateTimeoutBudget();
+assertReadyReadinessSkipsDerivedRebuild();
 
 console.log("recap sections_first contract passed");

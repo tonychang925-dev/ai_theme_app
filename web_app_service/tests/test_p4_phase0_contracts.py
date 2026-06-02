@@ -1,9 +1,11 @@
+import asyncio
 from fastapi.testclient import TestClient
 import json
 from pathlib import Path
 
 from web_app_service.main import app
 import web_app_service.api.routes as routes
+from web_app_service.services.realtime_stack_manager import RealtimeStackManager
 
 
 client = TestClient(app)
@@ -39,6 +41,35 @@ def test_realtime_collector_status_uses_web_app_manager(monkeypatch):
     data = resp.json()
     assert data["ok"] is True
     assert data["command"] == ["web_app_service:realtime_stack", "status"]
+
+
+def test_realtime_collector_logs_include_realtime_run_files(tmp_path):
+    log_dir = tmp_path / "logs" / "realtime"
+    runtime_dir = log_dir / "runtime"
+    runtime_dir.mkdir(parents=True)
+    (runtime_dir / "realtime_stack.json").write_text(
+        json.dumps({"run_id": "realtime_20260530_230540"}, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    (log_dir / "raw_news_realtime_20260530_230540.log").write_text(
+        "2026-05-31 08:13:44,865 INFO database_service.streams.handlers.news_stream_processor: 📥 收到 1 条原始消息\n"
+        "2026-05-31 08:13:59,150 INFO database_service.streams.handlers.news_stream_processor: ⏭️ 重要性预筛选停在结构化前: d215375c0da779ac9ed73c2bbf780db8, decision=REVIEW, reason=embedding_importance_review\n",
+        encoding="utf-8",
+    )
+    (log_dir / "db_collector_realtime_20260530_230540.log").write_text(
+        "2026-05-31 08:24:45,838 WARNING database_service.streams.services.real_time_news_collector: CLS fetch failed: 真实新闻源不可用\n"
+        "2026-05-31 08:25:30,843 INFO database_service.streams.services.real_time_news_collector: 多源采集完成: 62 条 (CLS+akshare)\n",
+        encoding="utf-8",
+    )
+
+    manager = RealtimeStackManager(str(tmp_path))
+    data = asyncio.run(manager.logs(lines=20, max_age_minutes=180))
+
+    assert data["run_id"] == "realtime_20260530_230540"
+    assert "raw_news_realtime_20260530_230540.log" in data["files"]
+    assert "db_collector_realtime_20260530_230540.log" in data["files"]
+    assert any("CLS fetch failed" in line for line in data["files"]["db_collector_realtime_20260530_230540.log"])
+    assert any("重要性预筛选" in line for line in data["files"]["raw_news_realtime_20260530_230540.log"])
 
 
 def test_realtime_new_chain_routes_proxy_sps_v1(monkeypatch):
@@ -437,6 +468,27 @@ def test_recap_defaults_contract_shape(monkeypatch):
     data = resp.json()
     assert "latest_post_market_date" in data
     assert "latest_pre_market_date" in data
+
+
+def test_post_market_generate_routes_use_long_proxy_timeouts(monkeypatch):
+    calls = []
+
+    async def _fake_proxy_stock_processing_post_json(path, payload, timeout=120.0):
+        calls.append((path, payload, timeout))
+        return {"ok": True, "path": path}
+
+    monkeypatch.setattr(routes, "_proxy_stock_processing_post_json", _fake_proxy_stock_processing_post_json)
+
+    payload = {"trade_date": "2026-05-29", "force": True}
+    assert client.post("/api/v2/post-market/derived-data/generate", json=payload).status_code == 200
+    assert client.post("/api/v2/post-market/recap/generate", json=payload).status_code == 200
+    assert client.post("/api/v2/post-market/daily-review-v2/generate", json=payload).status_code == 200
+
+    assert calls == [
+        ("/api/v1/post-market/derived-data/generate", payload, 600.0),
+        ("/api/v1/post-market/recap/generate", payload, 300.0),
+        ("/api/v2/post-market/daily-review-v2/generate", payload, 180.0),
+    ]
 
 
 def test_strong_watch_new_alias_contract_shape(monkeypatch):

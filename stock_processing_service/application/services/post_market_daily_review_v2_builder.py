@@ -96,9 +96,13 @@ class PostMarketDailyReviewV2Builder:
                 "derived_data_status": derived_status,
                 "recap_generate_status": recap_status,
             },
+            "market_environment_review": self._market_environment_review(doc),
             "market_summary": self._market_summary(doc),
+            "market_overview_review": self._pass_through_dict(doc, "market_overview_review"),
+            "theme_decision_reviews": self._pass_through_list(doc, "theme_decision_reviews"),
             "theme_reviews": theme_reviews,
             "theme_capital_reviews": theme_capital_reviews,
+            "strong_stock_decision_reviews": self._pass_through_list(doc, "strong_stock_decision_reviews"),
             "strong_stock_reviews": strong_stock_reviews,
             "watchlist_reviews": watchlist_reviews,
             "stock_capital_reviews": stock_capital_reviews,
@@ -106,8 +110,33 @@ class PostMarketDailyReviewV2Builder:
             "money_flow_reviews": money_flow_reviews,
             "dragon_tiger_reviews": dragon_tiger_reviews,
             "trading_principle": self._trading_principle(doc),
+            "decision_diagnostics": self._pass_through_dict(doc, "decision_diagnostics"),
+            "mainline_reviews": self._pass_through_list(doc, "mainline_discovery_reviews"),
+            "analyst_review_items": self._pass_through_list(doc, "analyst_review_items"),
+            "mainline_discovery_diagnostics": self._pass_through_dict(doc, "mainline_discovery_diagnostics"),
+            "analyst_review_diagnostics": self._pass_through_dict(doc, "analyst_review_diagnostics"),
+            "pending_mainline_reviews": self._pass_through_list(doc, "analyst_review_items"),
+            "confirmed_mainlines": [],
+            "mainline_lifecycle_reviews": self._pass_through_list(doc, "mainline_lifecycle_reviews"),
+            "mainline_lifecycle_diagnostics": self._pass_through_dict(doc, "mainline_lifecycle_diagnostics"),
+            "market_regime_review": self._pass_through_dict(doc, "market_regime_review"),
+            "post_market_decision_v2": self._pass_through_dict(doc, "post_market_decision_v2"),
             "diagnostics": diagnostics,
         }
+
+    @staticmethod
+    def _pass_through_list(recap_doc: dict[str, Any], key: str) -> list[Any]:
+        value = recap_doc.get(key)
+        return deepcopy(value) if isinstance(value, list) else []
+
+    @staticmethod
+    def _pass_through_dict(recap_doc: dict[str, Any], key: str) -> dict[str, Any]:
+        value = recap_doc.get(key)
+        return deepcopy(value) if isinstance(value, dict) else {}
+
+    def _market_environment_review(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
+        source = recap_doc.get("market_environment_review")
+        return deepcopy(source) if isinstance(source, dict) else {}
 
     def _market_summary(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
         source = recap_doc.get("market_summary")
@@ -255,6 +284,7 @@ class PostMarketDailyReviewV2Builder:
         source_key, source_rows = self._first_non_empty_list_source(
             recap_doc,
             (
+                ("theme_decision_reviews",),
                 ("theme_reviews",),
                 ("report_context", "theme_reviews"),
                 ("report_context", "theme_cycle"),
@@ -354,11 +384,20 @@ class PostMarketDailyReviewV2Builder:
         tier = self._theme_tier(source, final_mainline_alive=final_mainline_alive, strength_score=mainline_strength_score)
         action_source = self._nullable_text(self._first_present(source, "action_advice", "action", "trade_action"))
         conclusion_source = self._nullable_text(self._first_present(source, "conclusion", "summary", "reason"))
-        action_advice = self._text(action_source or self._theme_action_fallback(tier=tier, cycle_stage=cycle_stage))
-        if action_advice and not action_source:
+        decision = self._text(source.get("decision") or "")
+        action_advice = self._text(
+            action_source
+            or source.get("action_advice")
+            or self._theme_action_fallback(tier=tier, cycle_stage=cycle_stage)
+        )
+        if action_advice and not (action_source or source.get("action_advice")):
             fallback_used.append("action_advice")
-        conclusion = self._text(conclusion_source or self._theme_conclusion_fallback(tier=tier, cycle_stage=cycle_stage))
-        if conclusion and not conclusion_source:
+        conclusion = self._text(
+            conclusion_source
+            or source.get("conclusion")
+            or self._theme_conclusion_fallback(tier=tier, cycle_stage=cycle_stage)
+        )
+        if conclusion and not (conclusion_source or source.get("conclusion")):
             fallback_used.append("conclusion")
 
         missing_fields: set[str] = set()
@@ -397,6 +436,11 @@ class PostMarketDailyReviewV2Builder:
             "final_mainline_alive": bool(final_mainline_alive) if final_mainline_alive is not None else tier == "mainline",
             "action_advice": action_advice,
             "conclusion": conclusion,
+            "decision": decision,
+            "capital_validation": source.get("capital_validation"),
+            "position_suggestion": self._float_or_none(source.get("position_suggestion")),
+            "next_day_watch_points": self._list(source.get("next_day_watch_points")),
+            "invalidation_conditions": self._list(source.get("invalidation_conditions")),
             "leader_stocks": self._list(source.get("leader_stocks")),
             "event_chain": self._list(source.get("event_chain")),
             "diagnostics": {
@@ -444,6 +488,7 @@ class PostMarketDailyReviewV2Builder:
         source_key, source_rows = self._first_non_empty_list_source(
             recap_doc,
             (
+                ("strong_stock_decision_reviews",),
                 ("strong_stock_reviews",),
                 ("strong_watch_history",),
                 ("promoted_pool_preview",),
@@ -478,7 +523,7 @@ class PostMarketDailyReviewV2Builder:
             role = self._strong_role(raw_role)
             role_label = self._role_label(raw_role, role)
             composite_score = self._float_or_none(
-                self._first_present(joined, "watch_score", "candidate_score", "composite_score", "leader_composite_score")
+                self._first_present(joined, "core_score", "watch_score", "candidate_score", "composite_score", "leader_composite_score")
             )
             main_net_inflow = self._float_or_none(joined.get("main_net_inflow"))
             money_flow_tier = self._nullable_text(joined.get("money_flow_tier"))
@@ -829,7 +874,7 @@ class PostMarketDailyReviewV2Builder:
             stock_code = self._text(joined.get("stock_code") or joined.get("stock_id"))
             stock_name = self._text(joined.get("stock_name"))
             subject_key = self._text(joined.get("subject_key"))
-            theme_name = self._text(joined.get("theme_name") or joined.get("subject_name") or joined.get("resolved_theme_name"))
+            theme_name = self._resolved_theme_name(joined)
             main_net_inflow = self._float_or_none(
                 self._first_present(joined, "main_net_inflow", "net_inflow", "net_inflow_amount")
             )
@@ -1023,6 +1068,7 @@ class PostMarketDailyReviewV2Builder:
             recap_doc,
             (
                 ("watchlist_reviews",),
+                ("report_context", "watchlist_reviews"),
                 ("next_day_watchlist",),
                 ("watchlist",),
                 ("tomorrow_watchlist",),
@@ -1049,6 +1095,8 @@ class PostMarketDailyReviewV2Builder:
                 and self._candidate_level(row) != "reject"
             ][:20]
             synthesized = True
+        else:
+            source_rows = self._dedupe_stock_subject_rows(source_rows)
 
         rows: list[dict[str, Any]] = []
         missing_fields: set[str] = set()
@@ -1200,6 +1248,10 @@ class PostMarketDailyReviewV2Builder:
                 "role_label": role_label,
                 "stage": stage,
                 "action": action,
+                "buy_condition": self._list(source.get("buy_condition")),
+                "invalid_condition": self._list(source.get("invalid_condition")),
+                "risk_level": self._nullable_text(source.get("risk_level")),
+                "suggested_position": self._float_or_none(source.get("suggested_position")),
                 "volume_ratio": volume_ratio,
                 "pattern": pattern,
                 "flags": flags,
@@ -1216,6 +1268,30 @@ class PostMarketDailyReviewV2Builder:
             })
 
         return rows, sorted(missing_fields)
+
+    @classmethod
+    def _dedupe_stock_subject_rows(cls, rows: list[Any]) -> list[Any]:
+        deduped: list[Any] = []
+        seen: set[tuple[str, str]] = set()
+        for row in rows:
+            if not isinstance(row, dict):
+                deduped.append(row)
+                continue
+            stock_key = cls._stock_key(row.get("stock_id") or row.get("stock_code") or row.get("code"))
+            subject_key = str(
+                row.get("subject_key")
+                or row.get("theme_key")
+                or row.get("subject_name")
+                or row.get("theme_name")
+                or ""
+            ).strip()
+            dedupe_key = (stock_key, subject_key)
+            if stock_key and dedupe_key in seen:
+                continue
+            if stock_key:
+                seen.add(dedupe_key)
+            deduped.append(row)
+        return deduped
 
     def _build_diagnostics(
         self,
@@ -1586,6 +1662,17 @@ class PostMarketDailyReviewV2Builder:
     @classmethod
     def _theme_name(cls, source: dict[str, Any]) -> str:
         return cls._text(cls._first_present(source, "theme_name", "subject_name", "name"))
+
+    @classmethod
+    def _resolved_theme_name(cls, source: dict[str, Any]) -> str:
+        for key in ("resolved_theme_name", "subject_name", "theme_display_name", "theme_cn_name", "name"):
+            text = cls._text(source.get(key))
+            if text and not text.isdigit():
+                return text
+        theme_name = cls._text(source.get("theme_name"))
+        if theme_name and not theme_name.isdigit():
+            return theme_name
+        return cls._text(source.get("subject_key") or theme_name)
 
     @classmethod
     def _theme_kline_text(cls, value: Any) -> str | None:

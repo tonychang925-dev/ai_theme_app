@@ -45,6 +45,9 @@ BASELINE_ENV = {
     "THEME_PROCESSOR_STRUCTURED_CONCURRENCY": "2",
     "THEME_MATCH_ENABLE_EVENT_PROFILE_LLM": "false",
     "DB_TYPE": "postgresql",
+    # 消除 macOS fork 子进程时的 tokenizers Rayon 线程池警告
+    # 实际 ML 推理走 llama_cpp，不依赖 tokenizers 并行
+    "TOKENIZERS_PARALLELISM": "false",
 }
 
 # ── Redis streams to monitor ───────────────────────────────────────
@@ -82,6 +85,23 @@ class RealtimeStackState:
     run_id: str = ""
     last_error: str = ""
     log_dir: str = ""
+    status_source: str = "uninitialized"  # sps_live_pid_check | pidfile_restore | cleared
+
+    def clear(self) -> None:
+        self.running = False
+        self.pid = None
+        self.akshare_pid = None
+        self.raw_news_pid = None
+        self.decision_pid = None
+        self.rebuild_pid = None
+        self.intel_producer_pid = None
+        self.intel_collection_pid = None
+        self.db_collector_pid = None
+        self.db_collector_enabled = False
+        self.run_id = ""
+        self.started_at = None
+        self.last_error = ""
+        self.status_source = "cleared"
 
 
 class RealtimeStackManager:
@@ -121,12 +141,14 @@ class RealtimeStackManager:
         self._intel_collection_process: asyncio.subprocess.Process | None = None
         self._stream_services_process: asyncio.subprocess.Process | None = None  # Phase 4E: RealTimeNewsCollector
         self._lock = asyncio.Lock()
+        self._refresh_observed_state()
 
     # ── Public API ─────────────────────────────────────────────────
 
     async def start(self) -> dict[str, Any]:
         """Start the new-chain realtime stack.  Idempotent."""
         async with self._lock:
+            self._refresh_observed_state()
             if self._state.running:
                 return {"ok": True, "status": "already_running", "detail": self.status_sync()}
 
@@ -146,13 +168,18 @@ class RealtimeStackManager:
                 # P1-C1: auto-clean orphans from pidfile before start
                 await self.cleanup_orphans()
 
-            # P1-C1: pidfile 目录
-            parent_pid = os.getpid()
+            # P1-C1: pidfile 目录。
+            # 默认不再把实时采集子进程绑定到 SPS PID；SPS 重启不应静默停止实时采集。
+            # 需要旧 watchdog 行为时显式设置 REALTIME_CHILD_WATCH_PARENT=true。
+            watch_parent = os.environ.get("REALTIME_CHILD_WATCH_PARENT", "false").lower() in ("1", "true", "yes", "on")
+            parent_pid = os.getpid() if watch_parent else 0
             runtime_dir = self._log_dir / "runtime"
             runtime_dir.mkdir(parents=True, exist_ok=True)
             pidfile_path = runtime_dir / "realtime_stack.json"
             pidfile_path.write_text(json.dumps({
                 "run_id": run_id, "parent_pid": parent_pid,
+                "manager_pid": os.getpid(),
+                "watch_parent": watch_parent,
                 "started_at": datetime.now(timezone.utc).isoformat(),
                 "db": self._db_name,
             }, ensure_ascii=False, indent=2))
@@ -180,7 +207,11 @@ class RealtimeStackManager:
                     "--db-name", self._db_name,
                     "--run-id", run_id,
                     "--redis-url", self._redis_url,
+                    "--batch-size", os.environ.get("REALTIME_RAW_NEWS_BATCH_SIZE", "50"),
+                    "--block-time", os.environ.get("REALTIME_RAW_NEWS_BLOCK_MS", "2000"),
+                    "--storage-concurrency", os.environ.get("REALTIME_RAW_STORAGE_CONCURRENCY", "5"),
                     "--allow-production",
+                    **_detached_child_kwargs(),
                     stdout=open(raw_log, "w"),
                     stderr=asyncio.subprocess.STDOUT,
                     env=env,
@@ -192,6 +223,7 @@ class RealtimeStackManager:
                     "--run-id", run_id,
                     "--redis-url", self._redis_url,
                     "--allow-production",
+                    **_detached_child_kwargs(),
                     stdout=open(decision_log, "w"),
                     stderr=asyncio.subprocess.STDOUT,
                     env=env,
@@ -227,7 +259,8 @@ class RealtimeStackManager:
                         "--lookback-minutes", os.environ.get("AKSHARE_REALTIME_LOOKBACK_MINUTES", "180"),
                         "--status-path", str(akshare_status),
                         "--prefilter-skip-log", str(akshare_skip_log),
-                        "--parent-pid", str(parent_pid),
+                        *(["--parent-pid", str(parent_pid)] if parent_pid else []),
+                        **_detached_child_kwargs(),
                         stdout=open(akshare_log, "w"),
                         stderr=asyncio.subprocess.STDOUT,
                         env=env,
@@ -257,8 +290,11 @@ class RealtimeStackManager:
                         "--run-id", run_id,
                         "--collection-interval",
                         os.environ.get("DB_COLLECTOR_INTERVAL_SECONDS", "300"),
+                        "--stream-maxlen",
+                        os.environ.get("REALTIME_NEWS_RAW_STREAM_MAXLEN", "50000"),
                         "--status-path", str(db_collector_status),
-                        "--parent-pid", str(parent_pid),
+                        *(["--parent-pid", str(parent_pid)] if parent_pid else []),
+                        **_detached_child_kwargs(),
                         stdout=open(db_collector_log, "w"),
                         stderr=asyncio.subprocess.STDOUT,
                         env=env,
@@ -280,7 +316,8 @@ class RealtimeStackManager:
                     "--source", "db_first",
                     "--limit", os.environ.get("PRE_MARKET_BRIEF_REALTIME_LIMIT", "200"),
                     "--status-path", str(rebuild_status),
-                    "--parent-pid", str(parent_pid),
+                    *(["--parent-pid", str(parent_pid)] if parent_pid else []),
+                    **_detached_child_kwargs(),
                     stdout=open(rebuild_log, "w"),
                     stderr=asyncio.subprocess.STDOUT,
                     env=env,
@@ -295,7 +332,8 @@ class RealtimeStackManager:
                     "--poll-interval-seconds", os.environ.get("INTEL_PRODUCER_POLL_SECONDS", "30"),
                     "--batch-size", os.environ.get("INTEL_PRODUCER_BATCH_SIZE", "50"),
                     "--status-path", str(intel_status),
-                    "--parent-pid", str(parent_pid),
+                    *(["--parent-pid", str(parent_pid)] if parent_pid else []),
+                    **_detached_child_kwargs(),
                     stdout=open(intel_log, "w"),
                     stderr=asyncio.subprocess.STDOUT,
                     env=env,
@@ -311,7 +349,8 @@ class RealtimeStackManager:
                     "--max-pages", os.environ.get("INTEL_COLLECTION_MAX_PAGES", "5"),
                     "--extraction-limit", os.environ.get("INTEL_COLLECTION_EXTRACTION_LIMIT", "20"),
                     "--status-path", str(intel_collection_status),
-                    "--parent-pid", str(parent_pid),
+                    *(["--parent-pid", str(parent_pid)] if parent_pid else []),
+                    **_detached_child_kwargs(),
                     stdout=open(intel_collection_log, "w"),
                     stderr=asyncio.subprocess.STDOUT,
                     env=env,
@@ -332,6 +371,7 @@ class RealtimeStackManager:
                     _write_pidfile(runtime_dir / f"db_collector_{run_id}.pid", self._db_collector_process.pid)
 
                 self._state.running = True
+                self._state.status_source = "sps_live_pid_check"
                 self._state.started_at = datetime.now(timezone.utc).isoformat()
                 self._state.pid = os.getpid()
                 self._state.akshare_pid = self._akshare_process.pid if self._akshare_process else None
@@ -364,18 +404,92 @@ class RealtimeStackManager:
                 return {"ok": False, "status": "error", "error": str(exc)}
 
     async def stop(self) -> dict[str, Any]:
-        """Gracefully stop the realtime stack."""
+        """停止实时 pipeline：SIGTERM → wait 1.5s → SIGKILL → wait 0.5s → verify → 清理 pidfile → 清空 state。"""
         async with self._lock:
-            if not self._state.running:
-                return {"ok": True, "status": "not_running"}
+            self._refresh_observed_state()
 
-            await self._cleanup_processes()
-            self._state.running = False
+            if not self._state.running:
+                self._cleanup_runtime_files()
+                self._state.clear()
+                return {
+                    "ok": True,
+                    "status": "not_running",
+                    "killed": [],
+                    "alive_after": [],
+                    "detail": self.status_sync(),
+                }
+
+            targets = self._runtime_pids()
+            killed: list[int] = []
+            errors: list[dict[str, Any]] = []
+
+            for pid in sorted(targets):
+                try:
+                    os.kill(pid, signal.SIGTERM)
+                    killed.append(pid)
+                except ProcessLookupError:
+                    pass
+                except PermissionError as exc:
+                    errors.append({"pid": pid, "error": str(exc)})
+
+            await asyncio.sleep(1.5)
+
+            for pid in sorted(targets):
+                if _pid_alive(pid):
+                    try:
+                        os.kill(pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                    except PermissionError as exc:
+                        errors.append({"pid": pid, "error": str(exc)})
+
+            await asyncio.sleep(0.5)
+
+            alive_after = [pid for pid in sorted(targets) if _pid_alive(pid)]
+
+            if alive_after:
+                self._state.last_error = f"failed to stop pids: {alive_after}"
+                return {
+                    "ok": False,
+                    "status": "partial_stop",
+                    "killed": killed,
+                    "alive_after": alive_after,
+                    "errors": errors,
+                    "detail": self.status_sync(),
+                }
+
+            self._cleanup_runtime_files()
+            self._state.clear()
             logger.info("realtime stack stopped")
-            return {"ok": True, "status": "stopped"}
+
+            return {
+                "ok": True,
+                "status": "stopped",
+                "killed": killed,
+                "alive_after": [],
+                "errors": errors,
+                "detail": self.status_sync(),
+            }
+
+    def _cleanup_runtime_files(self) -> None:
+        """移除 runtime pidfile 目录下的所有 pid 文件和 stack.json。"""
+        runtime_dir = self._log_dir / "runtime"
+        if not runtime_dir.exists():
+            return
+        for f in runtime_dir.glob("*.pid"):
+            try:
+                f.unlink()
+            except OSError:
+                pass
+        stack_json = runtime_dir / "realtime_stack.json"
+        try:
+            stack_json.unlink()
+        except OSError:
+            pass
 
     async def status(self) -> dict[str, Any]:
         """Return current stack status including Redis stream metrics."""
+        self._refresh_observed_state()
         base = self.status_sync()
 
         # Try to enrich with Redis stream info
@@ -444,8 +558,13 @@ class RealtimeStackManager:
 
     def status_sync(self) -> dict[str, Any]:
         """Synchronous subset of status (no Redis)."""
+        self._refresh_observed_state()
+        # running_verified 必须来自 live PID 验证结果，不能仅 mirror self._state.running
+        _verified = bool(self._state.raw_news_pid or self._state.decision_pid)
         return {
             "running": self._state.running,
+            "running_verified": _verified,
+            "status_source": self._state.status_source,
             "run_id": self._state.run_id,
             "started_at": self._state.started_at,
             # Phase 4E: AkShare collector status
@@ -475,6 +594,63 @@ class RealtimeStackManager:
         }
 
     # ── Internal ───────────────────────────────────────────────────
+
+    def _refresh_observed_state(self) -> None:
+        """每次调用都实时验证 pidfile 和 PID 存活状态。
+
+        不缓存 stale state——如果 pidfile 不存在或核心 PID 已死，立即清空状态。
+        SPS 是实时采集 pipeline 的唯一生命周期 Owner，状态必须以 live check 为准。
+        """
+
+        runtime_dir = self._log_dir / "runtime"
+        stack_json = runtime_dir / "realtime_stack.json"
+
+        if not stack_json.exists():
+            self._state.clear()
+            return
+
+        try:
+            meta = json.loads(stack_json.read_text(encoding="utf-8"))
+        except Exception:
+            self._state.clear()
+            return
+
+        run_id = str(meta.get("run_id") or "")
+        if not run_id:
+            self._state.clear()
+            return
+
+        def _read_live_pid(prefix: str) -> int | None:
+            path = runtime_dir / f"{prefix}_{run_id}.pid"
+            try:
+                pid = int(path.read_text().strip())
+            except Exception:
+                return None
+            return pid if _pid_alive(pid) else None
+
+        raw_pid = _read_live_pid("raw_news")
+        decision_pid = _read_live_pid("decision")
+
+        # 核心进程 raw_news + decision：至少一个活着才算 running
+        if not raw_pid and not decision_pid:
+            self._state.clear()
+            return
+
+        self._state.running = True
+        self._state.status_source = "sps_live_pid_check"
+        self._state.started_at = str(meta.get("started_at") or "")
+        self._state.pid = int(meta.get("manager_pid") or meta.get("parent_pid") or 0) or None
+        self._state.akshare_pid = _read_live_pid("akshare")
+        self._state.raw_news_pid = raw_pid
+        self._state.decision_pid = decision_pid
+        self._state.rebuild_pid = _read_live_pid("rebuild")
+        self._state.intel_producer_pid = _read_live_pid("intel_producer")
+        self._state.intel_collection_pid = _read_live_pid("intel_collection")
+        self._state.db_collector_pid = _read_live_pid("db_collector")
+        self._state.db_collector_enabled = bool(self._state.db_collector_pid)
+        self._state.run_id = run_id
+        self._state.log_dir = str(self._log_dir)
+        self._state.last_error = ""
 
     def _build_env(self, run_id: str, parent_pid: int = 0) -> dict[str, str]:
         env = os.environ.copy()
@@ -510,6 +686,8 @@ class RealtimeStackManager:
                     name = "intel_producer"
                 elif pidfile.name.startswith("intel_collection_"):
                     name = "intel_collection"
+                elif pidfile.name.startswith("db_collector_"):
+                    name = "db_collector"
                 else:
                     name = pidfile.stem
                 alive = _pid_alive(old_pid)
@@ -603,13 +781,22 @@ class RealtimeStackManager:
         return result
 
     async def _cleanup_processes(self) -> None:
+        pid_targets = self._runtime_pids()
         for proc in [self._akshare_process, self._db_collector_process, self._raw_process, self._decision_process, self._rebuild_process, self._intel_producer_process, self._intel_collection_process]:
             if proc is None or proc.returncode is not None:
                 continue
+            pid_targets.add(proc.pid)
             try:
                 proc.send_signal(signal.SIGTERM)
             except ProcessLookupError:
                 pass
+        for pid in sorted(pid_targets):
+            try:
+                os.kill(pid, signal.SIGTERM)
+            except ProcessLookupError:
+                pass
+            except PermissionError:
+                logger.warning("no permission to terminate realtime child pid=%s", pid)
         # Give processes a moment to exit
         await asyncio.sleep(1)
         for proc in [self._akshare_process, self._db_collector_process, self._raw_process, self._decision_process, self._rebuild_process, self._intel_producer_process, self._intel_collection_process]:
@@ -619,21 +806,23 @@ class RealtimeStackManager:
                 proc.kill()
             except ProcessLookupError:
                 pass
+        for pid in sorted(pid_targets):
+            if not _pid_alive(pid):
+                continue
+            try:
+                os.kill(pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            except PermissionError:
+                logger.warning("no permission to kill realtime child pid=%s", pid)
         self._akshare_process = None
         self._raw_process = None
         self._decision_process = None
         self._rebuild_process = None
         self._intel_producer_process = None
         self._db_collector_process = None
-        self._db_collector_process = None
         self._intel_collection_process = None
-        self._state.akshare_pid = None
-        self._state.raw_news_pid = None
-        self._state.decision_pid = None
-        self._state.rebuild_pid = None
-        self._state.intel_producer_pid = None
-        self._state.intel_collection_pid = None
-        self._state.db_collector_pid = None  # Phase 4F
+        self._state.clear()
         # P1-C1: clean pidfiles + old status files
         runtime_dir = self._log_dir / "runtime"
         for pattern in ["akshare_*.pid", "db_collector_*.pid", "raw_news_*.pid", "decision_*.pid", "rebuild_*.pid", "intel_producer_*.pid", "intel_collection_*.pid"]:
@@ -649,7 +838,8 @@ class RealtimeStackManager:
             patterns_to_clean = [
                 "akshare_*.status.json", "akshare_*.prefilter_skipped.jsonl",
                 "brief_rebuild_*.status.json", "intel_producer_*.status.json", "intel_collection_*.status.json",
-                "akshare_*.log", "raw_news_*.log", "decision_*.log",
+                "db_collector_*.status.json",
+                "akshare_*.log", "raw_news_*.log", "decision_*.log", "db_collector_*.log",
                 "brief_rebuild_*.log", "intel_producer_*.log", "intel_collection_*.log",
             ]
             for pattern in patterns_to_clean:
@@ -728,6 +918,24 @@ class RealtimeStackManager:
 
     # ── P1-C1: orphan lifecycle ──────────────────────────────────────
 
+    def _runtime_pids(self) -> set[int]:
+        """返回当前 run_id 对应的存活 PID，不返回旧 run_id 的残留 pidfile。"""
+        runtime_dir = self._log_dir / "runtime"
+        run_id = self._state.run_id
+        if not run_id:
+            return set()
+        prefixes = ["akshare", "db_collector", "raw_news", "decision", "rebuild", "intel_producer", "intel_collection"]
+        pids: set[int] = set()
+        for prefix in prefixes:
+            pf = runtime_dir / f"{prefix}_{run_id}.pid"
+            try:
+                pid = int(pf.read_text().strip())
+            except Exception:
+                continue
+            if _pid_alive(pid):
+                pids.add(pid)
+        return pids
+
     async def get_orphans(self) -> dict[str, Any]:
         orphans = await self._sweep_orphans()
         return {"orphans": orphans, "count": len(orphans)}
@@ -737,7 +945,7 @@ class RealtimeStackManager:
         runtime_dir = self._log_dir / "runtime"
         killed = []
         errors = []
-        for pattern in ["akshare_*.pid", "raw_news_*.pid", "decision_*.pid", "rebuild_*.pid", "intel_producer_*.pid", "intel_collection_*.pid"]:
+        for pattern in ["akshare_*.pid", "db_collector_*.pid", "raw_news_*.pid", "decision_*.pid", "rebuild_*.pid", "intel_producer_*.pid", "intel_collection_*.pid"]:
             for pf in sorted(runtime_dir.glob(pattern)):
                 try:
                     old_pid = int(pf.read_text().strip())
@@ -785,6 +993,11 @@ def _pid_alive(pid: int) -> bool:
 def _write_pidfile(path: Path, pid: int | None) -> None:
     if pid is not None:
         path.write_text(str(pid))
+
+
+def _detached_child_kwargs() -> dict[str, Any]:
+    """Start realtime children outside the SPS/screen session."""
+    return {"start_new_session": True} if os.name == "posix" else {}
 
 
 def _normalize_redis_url(url: str | None) -> str:

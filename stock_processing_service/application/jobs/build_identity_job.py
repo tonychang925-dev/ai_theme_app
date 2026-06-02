@@ -497,26 +497,29 @@ class BuildIdentityJob:
                 trade_date, deactivate_fade_days=2
             )
 
-        await self._event_port.publish_stock_processing_event(
-            EventEnvelope(
-                event_id=str(uuid4()),
-                event_name="snapshot_built",
-                trade_date=trade_date,
-                batch_id=batch_id,
-                trace_id=trace_id,
-                producer="stock_processing_service",
-                occurred_at=datetime.now(timezone.utc),
-                payload_version="v1",
-                payload=SnapshotBuiltPayload(
-                    domain="identity",
-                    snapshot_version=snapshot_version,
-                    object_name="theme_mainline_identity_registry",
-                    row_count=written_registry,
-                    success=True,
-                ),
+        publish_event = getattr(self._event_port, "publish_stock_processing_event", None)
+        published_events = []
+        if callable(publish_event):
+            await publish_event(
+                EventEnvelope(
+                    event_id=str(uuid4()),
+                    event_name="snapshot_built",
+                    trade_date=trade_date,
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                    producer="stock_processing_service",
+                    occurred_at=datetime.now(timezone.utc),
+                    payload_version="v1",
+                    payload=SnapshotBuiltPayload(
+                        domain="identity",
+                        snapshot_version=snapshot_version,
+                        object_name="theme_mainline_identity_registry",
+                        row_count=written_registry,
+                        success=True,
+                    ),
+                )
             )
-        )
-        published_events = ["snapshot_built"]
+            published_events = ["snapshot_built"]
 
         await self._idempotency_port.mark_job_completed(
             job_key,

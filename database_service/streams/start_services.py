@@ -235,7 +235,7 @@ class StreamServicesManager:
                     "param_values": {
                         "consumer_group": "decision_executor_realtime",
                     },
-                    "dependencies": ["stream_manager", "database_gateway"]
+                    "dependencies": ["database_gateway"]
                 }
             }
 
@@ -254,8 +254,8 @@ class StreamServicesManager:
                     "config": {
                         "consumer_group": "news_storage_handlers",
                         "stream_name": "stream:news:raw",
-                        "batch_size": 10,
-                        "block_time": 5000
+                        "batch_size": 50,
+                        "block_time": 2000
                     },
                     "dependencies": ["stream_bus", "database_gateway"]
                 }

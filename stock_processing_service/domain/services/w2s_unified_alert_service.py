@@ -193,21 +193,34 @@ class W2SUnifiedAlertService:
             await bt.close()
             return []
 
-        # 加载 D2 确认结果
+        # 加载 D2 确认结果 + 候选池元数据（股票名、题材名、候选类型等）
+        # 候选池的 next_trade_date 可能滞后，取最新可用日期
         pool = await self._get_pool()
+        latest_td = await pool.fetchval(
+            "SELECT MAX(next_trade_date) FROM weak_to_strong_candidate_pool"
+        )
+        lookup_date = latest_td if latest_td else date.fromisoformat(trade_date)
         d2_rows = await pool.fetch(
-            """SELECT c.stock_id, s.signal_level, s.confirmation_score
+            """SELECT c.stock_id, c.stock_name, c.theme_name,
+                      c.candidate_type, c.weak_type,
+                      s.signal_level, s.confirmation_score
                FROM weak_to_strong_candidate_pool c
                LEFT JOIN weak_to_strong_auction_signal s ON s.candidate_id = c.id
                  AND s.trade_date = c.next_trade_date
                WHERE c.next_trade_date = $1::date""",
-            date.fromisoformat(trade_date),
+            lookup_date,
         )
         d2_by_stock: dict[str, dict] = {}
         for r in d2_rows:
             sid = str(r["stock_id"])
-            d2_by_stock[sid] = {"level": str(r.get("signal_level") or "B"),
-                                "score": float(r.get("confirmation_score") or 60)}
+            d2_by_stock[sid] = {
+                "level": str(r.get("signal_level") or "B"),
+                "score": float(r.get("confirmation_score") or 60),
+                "stock_name": str(r.get("stock_name") or ""),
+                "theme_name": str(r.get("theme_name") or ""),
+                "candidate_type": str(r.get("candidate_type") or ""),
+                "weak_type": str(r.get("weak_type") or ""),
+            }
 
         stock_ids = list({s.stock_id for s in result.signals})
         series_map = await bt.load_minute_series(trade_date, stock_ids)
@@ -289,10 +302,15 @@ class W2SUnifiedAlertService:
                 sev = "observe"
 
             if sig.ret_30m is not None:
+                # 从候选池 D2 元数据回填股票名、题材名（分钟表无这些字段）
+                d2_meta = d2_by_stock.get(sig.stock_id, {})
                 alerts.append(UnifiedW2SAlert(
                     trade_date=trade_date, candidate_trade_date="",
-                    candidate_id=0, stock_id=sig.stock_id, stock_name=sig.stock_name,
-                    theme_name="", candidate_type="", weak_type="",
+                    candidate_id=0, stock_id=sig.stock_id,
+                    stock_name=d2_meta.get("stock_name") or sig.stock_name or sig.stock_id,
+                    theme_name=d2_meta.get("theme_name") or "",
+                    candidate_type=d2_meta.get("candidate_type") or "",
+                    weak_type=d2_meta.get("weak_type") or "",
                     d2_level=d2_level, d2_score=d2_score,
                     auction_open_pct=0, carry_ratio=0,
                     capital_flow=capital_flow, capital_imbalance=capital_imbalance,

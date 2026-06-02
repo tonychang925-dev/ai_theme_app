@@ -1,5 +1,7 @@
 import json
 import logging
+import os
+import signal
 import subprocess
 import time
 from collections.abc import Callable
@@ -12,6 +14,7 @@ class JyhfAppManager:
         self._app_path = app_path
         self._cdp_port = cdp_port
         self._launching: bool = False  # Guard against concurrent launch attempts
+        self._launched_pid: int | None = None
 
     def is_running_with_cdp(self) -> bool:
         try:
@@ -27,7 +30,40 @@ class JyhfAppManager:
             return False
 
     def stop_app(self) -> None:
-        """Kill any running JYHF app process so it can be cleanly restarted."""
+        """Stop the JYHF app instance this service launched.
+
+        The app name may be mojibake in `ps`, so PID/port based cleanup is the
+        primary path. Name-based pkill is only a last-resort fallback.
+        """
+        killed = False
+        for pid in self._candidate_pids():
+            try:
+                os.kill(pid, signal.SIGTERM)
+                killed = True
+                logger.info("JYHF app kill requested pid=%s", pid)
+            except ProcessLookupError:
+                continue
+            except Exception as exc:
+                logger.warning("failed to terminate JYHF app pid=%s: %s", pid, exc)
+
+        if killed:
+            deadline = time.time() + 5
+            while time.time() < deadline:
+                if not self.is_running_with_cdp():
+                    break
+                time.sleep(0.5)
+            for pid in self._candidate_pids():
+                try:
+                    os.kill(pid, 0)
+                    os.kill(pid, signal.SIGKILL)
+                    logger.warning("JYHF app force-killed pid=%s", pid)
+                except ProcessLookupError:
+                    continue
+                except Exception:
+                    pass
+            self._launched_pid = None
+            return
+
         try:
             result = subprocess.run(
                 ["pkill", "-f", "久赢恒丰"],
@@ -43,6 +79,8 @@ class JyhfAppManager:
                     time.sleep(0.5)
         except Exception as exc:
             logger.warning("failed to kill JYHF app: %s", exc)
+        finally:
+            self._launched_pid = None
 
     def ensure_running(self, should_stop: Callable[[], bool] | None = None) -> bool:
         if self.is_running_with_cdp():
@@ -61,11 +99,14 @@ class JyhfAppManager:
 
     def _launch_and_wait(self, should_stop: Callable[[], bool] | None, attempt: int = 1) -> bool:
         logger.info("launching JYHF app with CDP (attempt %s)", attempt)
-        subprocess.Popen(
+        proc = subprocess.Popen(
             [f"{self._app_path}/Contents/MacOS/久赢恒丰", f"--remote-debugging-port={self._cdp_port}"],
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
+            start_new_session=True,
         )
+        self._launched_pid = proc.pid
+        logger.info("JYHF app launch pid=%s cdp_port=%s", proc.pid, self._cdp_port)
         max_wait = 15 if attempt == 1 else 10
         for i in range(max_wait):
             if should_stop and should_stop():
@@ -82,3 +123,35 @@ class JyhfAppManager:
             f"failed to start JYHF app with CDP after {attempt} attempt(s). "
             f"Ensure the app is installed at {self._app_path}"
         )
+
+    def _candidate_pids(self) -> list[int]:
+        pids: list[int] = []
+        if self._launched_pid:
+            pids.append(self._launched_pid)
+        port_pid = self._find_port_pid()
+        if port_pid:
+            pids.append(port_pid)
+        seen: set[int] = set()
+        unique: list[int] = []
+        for pid in pids:
+            if pid <= 0 or pid in seen:
+                continue
+            seen.add(pid)
+            unique.append(pid)
+        return unique
+
+    def _find_port_pid(self) -> int | None:
+        try:
+            out = subprocess.run(
+                ["lsof", "-t", "-nP", f"-iTCP:{self._cdp_port}", "-sTCP:LISTEN"],
+                capture_output=True,
+                text=True,
+                timeout=5,
+            )
+            for row in out.stdout.splitlines():
+                row = row.strip()
+                if row.isdigit():
+                    return int(row)
+        except Exception as exc:
+            logger.debug("failed to find JYHF CDP port pid: %s", exc)
+        return None

@@ -33,6 +33,7 @@ from web_app_service.auth import create_token, verify_token
 from web_app_service.services.jyhf_cdp_manager import JyhfCdpManager
 from web_app_service.services.jyhf_auction_manager import JyhfAuctionManager
 from web_app_service.services.realtime_stack_manager import RealtimeStackManager
+from web_app_service.services.realtime_business_orchestrator import RealtimeBusinessOrchestrator
 
 app = FastAPI(title="web_app_service", version="0.1.0")
 
@@ -63,6 +64,17 @@ async def _auto_start_jyhf_collectors(sps_base: str):
 
         try:
             async with _httpx.AsyncClient(timeout=5.0, trust_env=False) as client:
+                r2 = await client.get(f"{sps_base}/api/v1/jyhf-market/status")
+                token_valid = False
+                if r2.status_code == 200:
+                    try:
+                        token_valid = bool(r2.json().get("token_valid"))
+                    except Exception:
+                        token_valid = False
+                if not token_valid:
+                    _auto_logger.warning("AUTO_START skipped: jyhf token not ready at %s", now.strftime("%H:%M:%S"))
+                    continue
+
                 if not started_quote:
                     r = await client.post(f"{sps_base}/api/v1/jyhf-market/collector/start")
                     if r.status_code == 200:
@@ -70,16 +82,14 @@ async def _auto_start_jyhf_collectors(sps_base: str):
                         _auto_logger.warning("AUTO_START jyhf-market collector at %s", now.strftime("%H:%M:%S"))
 
                 if not started_auction:
-                    r2 = await client.get(f"{sps_base}/api/v1/jyhf-market/status")
-                    if r2.status_code == 200:
-                        # D1 候选的 trade_date 是前一交易日，不是今天
-                        yesterday = (now - timedelta(days=1)).date()
-                        await client.post(
-                            "http://127.0.0.1:8000/api/v2/realtime/jyhf-auction/start",
-                            json={"trade_date": str(now.date()), "candidate_date": str(yesterday)},
-                        )
-                        started_auction = True
-                        _auto_logger.warning("AUTO_START jyhf-auction collector at %s", now.strftime("%H:%M:%S"))
+                    # D1 候选的 trade_date 是前一交易日，不是今天
+                    yesterday = (now - timedelta(days=1)).date()
+                    await client.post(
+                        "http://127.0.0.1:8000/api/v2/realtime/jyhf-auction/start",
+                        json={"trade_date": str(now.date()), "candidate_date": str(yesterday)},
+                    )
+                    started_auction = True
+                    _auto_logger.warning("AUTO_START jyhf-auction collector at %s", now.strftime("%H:%M:%S"))
         except Exception as exc:
             _auto_logger.warning("AUTO_START failed: %s", exc)
 
@@ -117,6 +127,7 @@ async def _startup_cdp_manager() -> None:
         port=int(_os.getenv("JYHF_CDP_SERVICE_PORT", "8095")),
     )
     app.state.auction_manager = JyhfAuctionManager(project_root=str(project_root))
+    app.state.realtime_business_orchestrator = RealtimeBusinessOrchestrator(app)
     app.state.realtime_stack_manager = RealtimeStackManager(
         project_root=str(project_root),
         web_port=int(_os.getenv("WEB_PORT", "8000")),
@@ -146,9 +157,15 @@ async def _startup_cdp_manager() -> None:
         except Exception:
             pass
 
-    # ── 启动 9:10 自动 collector 守护任务 ──
-    sps_base = _os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090").rstrip("/")
-    _auto_start_task = asyncio.create_task(_auto_start_jyhf_collectors(sps_base))
+    # ── Legacy 9:10 自动 collector 守护任务 ──
+    # TODO P4-2D-Final: remove after orchestrator action validation passes
+    _legacy_auto = _os.getenv("LEGACY_JYHF_AUTO_START_ENABLED", "").lower()
+    if _legacy_auto in ("1", "true", "yes", "on"):
+        sps_base = _os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090").rstrip("/")
+        _auto_start_task = asyncio.create_task(_auto_start_jyhf_collectors(sps_base))
+        _DIAG_LOGGER.warning("legacy jyhf auto-start ENABLED")
+    else:
+        _DIAG_LOGGER.warning("legacy jyhf auto-start DISABLED; orchestrator owns scheduling")
 
 
 @app.on_event("shutdown")
@@ -305,18 +322,22 @@ async def _get_gw():
 async def auth_login(payload: LoginRequest):
     email = payload.email.strip().lower()
     password = payload.password.strip()
-    gw = await _get_gw()
+    gw = None
     try:
-        user = await gw.get_user_by_email(email)
+        gw = await asyncio.wait_for(_get_gw(), timeout=5.0)
+        user = await asyncio.wait_for(gw.get_user_by_email(email), timeout=5.0)
         if not user or not user.get("is_active"):
             raise HTTPException(status_code=401, detail="邮箱或密码错误")
         if not passlib_hash.bcrypt.verify(password, user["password_hash"]):
             raise HTTPException(status_code=401, detail="邮箱或密码错误")
-        await gw.update_user_last_login(user["id"])
+        await asyncio.wait_for(gw.update_user_last_login(user["id"]), timeout=3.0)
         token = create_token(user["id"], email, user["role"])
         return {"token": token, "user": {"id": user["id"], "email": email, "role": user["role"]}}
+    except asyncio.TimeoutError:
+        raise HTTPException(status_code=503, detail="登录服务超时，请检查数据库连接")
     finally:
-        await gw.close()
+        if gw is not None:
+            await gw.close()
 
 
 @app.get("/api/v2/auth/me")

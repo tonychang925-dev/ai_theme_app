@@ -332,6 +332,12 @@ export interface ThemeReviewV2 {
   subject_key: string;
   theme_name: string;
   tier: "mainline" | "strong_branch" | "watch" | "fading" | "unknown";
+  decision?: string | null;
+  decision_score?: number | null;
+  capital_validation?: "positive" | "neutral" | "divergent" | "negative" | "unknown" | string | null;
+  position_suggestion?: number | null;
+  next_day_watch_points?: string[];
+  invalidation_conditions?: string[];
   total_inflow: number | null;
   leader_inflow: number | null;
   theme_kline: string | null;
@@ -411,10 +417,14 @@ export interface WatchlistReviewV2 {
   stock_name: string;
   subject_key: string;
   theme_name: string;
-  category: "重点观察" | "弱转强观察" | "风险观察" | "其他";
+  category: "重点观察" | "弱转强观察" | "风险观察" | "其他" | string;
   role_label: string;
   stage: string | null;
   action: string | null;
+  buy_condition?: string[];
+  invalid_condition?: string[];
+  risk_level?: string | null;
+  suggested_position?: number | null;
   volume_ratio: number | null;
   pattern: string | null;
   flags: string[];
@@ -503,7 +513,121 @@ export interface DragonTigerReviewV2 {
   diagnostics: Record<string, unknown>;
 }
 
+// ── PR-14C: Evidence Alignment Types ──
+
+export interface EvidenceAlignment {
+  [key: string]: unknown;
+  active_mainline: boolean;
+  mainline_id: string;
+  mainline_name: string;
+  lifecycle_state: string;
+  mainline_trade_alive?: boolean;
+  in_layer_c: boolean;
+  layer_c_level: string;
+  is_d1_candidate: boolean;
+  d1_level: string;
+  is_focus_stock: boolean;
+  trade_action: string;
+  evidence_role: string;
+}
+
+export interface EvidenceAlignmentIndex {
+  by_stock: Record<string, Record<string, unknown>>;
+  by_subject: Record<string, Record<string, unknown>>;
+  indexed_stocks: number;
+  indexed_subjects: number;
+}
+
 export type PostMarketDailyReviewV2ModuleRow = Record<string, unknown>;
+
+// ── PR-14A/B: Engine Report Types ──
+
+export interface EngineSummary {
+  allow_trade: boolean;
+  trade_mode: string;
+  position_limit?: number | null;
+  no_trade_blocking_rule?: string | null;
+  no_trade_reasons?: string[];
+  action_bias?: string;
+  conclusion?: string | null;
+  next_day_strategy?: string | null;
+  risk_notes?: string[];
+}
+
+export interface IndexTechnicalReview {
+  index_code: string;
+  index_name: string;
+  close?: number | null;
+  pct_chg?: number | null;
+  trend_state?: string | null;
+  trend_score?: number | null;
+  above_ma5?: boolean | null;
+  above_ma10?: boolean | null;
+  above_ma20?: boolean | null;
+  above_ma60?: boolean | null;
+  ma_structure?: string | null;
+  macd_state?: string | null;
+  support_level?: number | null;
+  resistance_level?: number | null;
+  nearest_support_level?: number | null;
+  nearest_resistance_level?: number | null;
+  support_distance_pct?: number | null;
+  resistance_distance_pct?: number | null;
+  support_status?: string | null;
+  resistance_status?: string | null;
+  volume_pattern?: string | null;
+  index_trade_hint?: string | null;
+  warning_level?: string | null;
+  risk_flags?: string[];
+  conclusion?: string | null;
+}
+
+export interface EngineMarketRegimeReview {
+  broad_market_regime?: string | null;
+  short_term_sentiment?: string | null;
+  mainline_environment?: string | null;
+  allow_trade?: boolean | null;
+  trade_mode?: string | null;
+  position_limit?: number | null;
+  no_trade_blocking_rule?: string | null;
+  no_trade_reasons?: string[];
+  index_data_ready?: boolean;
+  index_data_source?: string | null;
+  index_technical_reviews?: IndexTechnicalReview[];
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface MainlineDailyStateReview {
+  trade_date: string;
+  mainline_id: string;
+  mainline_name: string;
+  canonical_subject_key: string;
+  active_subject_keys?: string[];
+  lifecycle_state: string;
+  mainline_alive?: boolean;
+  mainline_trade_alive?: boolean;
+  risk_state?: string | null;
+  event_count_1d?: number;
+  event_count_3d?: number;
+  event_count_7d?: number;
+  mainline_strength_score?: number | null;
+  fade_risk_score?: number | null;
+  strong_pool_count?: number;
+  d1_count?: number;
+  focus_count?: number;
+  action_advice?: string | null;
+  conclusion?: string | null;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface PostMarketDecisionV2Review {
+  trading_permission?: Record<string, unknown>;
+  strong_stock_pool_reviews?: Record<string, unknown>[];
+  weak_to_strong_d1_reviews?: Record<string, unknown>[];
+  next_day_focus_stocks?: Record<string, unknown>[];
+  trading_principle_v2?: Record<string, unknown>;
+  diagnostics?: Record<string, unknown>;
+}
 
 export interface PostMarketDailyReviewV2 {
   schema_version: "daily_review_v2";
@@ -518,7 +642,9 @@ export interface PostMarketDailyReviewV2 {
     derived_data_status: "ready" | "failed_precondition" | "partial";
     recap_generate_status: "success" | "skipped_idempotent" | "failed";
   };
+  market_environment_review?: Record<string, unknown>;
   market_summary: MarketSummaryReview;
+  market_overview_review?: MarketOverviewReview;
   theme_reviews: ThemeReviewV2[];
   theme_capital_reviews: ThemeCapitalReview[];
   strong_stock_reviews: StrongStockReviewV2[];
@@ -529,6 +655,52 @@ export interface PostMarketDailyReviewV2 {
   dragon_tiger_reviews: DragonTigerReviewV2[];
   trading_principle: Record<string, unknown>;
   diagnostics: DailyReviewV2Diagnostics;
+
+  // PR-14A: engine report fields (merged into v2 by composer)
+  engine_summary?: EngineSummary;
+  market_regime_review?: EngineMarketRegimeReview;
+  index_technical_reviews?: IndexTechnicalReview[];
+  mainline_daily_states?: MainlineDailyStateReview[];
+  post_market_decision_v2?: PostMarketDecisionV2Review;
+  // PR-14C: evidence alignment
+  evidence_alignment_index?: EvidenceAlignmentIndex;
+}
+
+export interface ThemeLimitUpStock {
+  stock_id: string;
+  stock_name: string;
+  board_count?: number | null;
+  role_label?: string | null;
+  in_layer_c?: boolean;
+  is_d1_candidate?: boolean;
+  trade_action?: string | null;
+}
+
+export interface ThemeLimitUpColumn {
+  subject_key: string;
+  theme_name: string;
+  limit_up_count: number;
+  active_mainline: boolean;
+  lifecycle_state?: string | null;
+  trade_action?: string | null;
+  focus_stocks: ThemeLimitUpStock[];
+}
+
+export interface ThemeLimitUpMatrix {
+  columns: ThemeLimitUpColumn[];
+  max_rows: number;
+  count_method: "display_by_theme" | string;
+}
+
+export interface MarketOverviewReview {
+  trade_date: string;
+  limit_up_total?: number | null;
+  limit_down_total?: number | null;
+  up_count?: number | null;
+  down_count?: number | null;
+  total_amount?: number | null;
+  theme_limitup_matrix: ThemeLimitUpMatrix;
+  diagnostics?: Record<string, unknown>;
 }
 
 // ── P1-6: PostMarket readiness / jobs status ──
@@ -581,6 +753,10 @@ export async function fetchPostMarketJobsStatus(date: string): Promise<PostMarke
   );
 }
 
+const POST_MARKET_DERIVED_DATA_GENERATE_TIMEOUT_MS = 600000;
+const POST_MARKET_RECAP_GENERATE_TIMEOUT_MS = 300000;
+const POST_MARKET_DAILY_REVIEW_V2_GENERATE_TIMEOUT_MS = 180000;
+
 export async function generatePostMarketDerivedData(date: string, force = false): Promise<Record<string, unknown>> {
   return fetchJsonWithTimeout<Record<string, unknown>>(
     `/api/v2/post-market/derived-data/generate`,
@@ -589,7 +765,7 @@ export async function generatePostMarketDerivedData(date: string, force = false)
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ trade_date: date, force }),
     },
-    180000,
+    POST_MARKET_DERIVED_DATA_GENERATE_TIMEOUT_MS,
   );
 }
 
@@ -601,7 +777,7 @@ export async function generatePostMarketRecap(date: string, force = false): Prom
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ trade_date: date, force }),
     },
-    120000,
+    POST_MARKET_RECAP_GENERATE_TIMEOUT_MS,
   );
 }
 
@@ -623,6 +799,31 @@ export async function fetchDailyReviewV2(date: string): Promise<PostMarketDailyR
   );
 }
 
+export interface IndexCollectResult {
+  success: boolean;
+  trade_date: string;
+  collected_count: number;
+  technical_count: number;
+  total_count: number;
+  missing_indices: string[];
+  source: string;
+}
+
+export async function collectIndexKline(payload: { trade_date?: string; force?: boolean }): Promise<IndexCollectResult> {
+  return fetchJsonWithTimeout<IndexCollectResult>(
+    `/api/v2/index-kline/collect`,
+    { method: "POST", body: JSON.stringify(payload || {}), headers: { "Content-Type": "application/json" } },
+    120000,
+  );
+}
+
+export async function fetchIndexKlineStatus(tradeDate: string): Promise<IndexCollectResult> {
+  return fetchJsonWithTimeout<IndexCollectResult>(
+    `/api/v2/index-kline/status?trade_date=${encodeURIComponent(tradeDate)}`,
+    {}, 5000,
+  );
+}
+
 export async function generateDailyReviewV2(date: string, force = false): Promise<Record<string, unknown>> {
   return fetchJsonWithTimeout<Record<string, unknown>>(
     `/api/v2/post-market/daily-review-v2/generate`,
@@ -631,7 +832,7 @@ export async function generateDailyReviewV2(date: string, force = false): Promis
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ trade_date: date, force }),
     },
-    60000,
+    POST_MARKET_DAILY_REVIEW_V2_GENERATE_TIMEOUT_MS,
   );
 }
 
@@ -795,12 +996,16 @@ export interface CollectionJobStatus {
 
 export interface NewChainRealtimeStatus {
   running: boolean;
+  running_verified?: boolean;
+  status_source?: string;
   run_id: string;
   started_at: string | null;
   akshare_pid?: number | null;
   raw_news_pid: number | null;
   decision_pid: number | null;
   rebuild_pid?: number | null;
+  db_collector_pid?: number | null;
+  db_collector_enabled?: boolean;
   log_dir: string;
   last_error: string;
   profile_version: string;
@@ -848,7 +1053,9 @@ export interface RealtimeCollectorActionPayload {
 
 export interface RealtimeCollectorLogs {
   log_dir: string;
+  run_id?: string | null;
   lines: number;
+  max_age_minutes?: number;
   files: Record<string, string[]>;
 }
 
@@ -1029,19 +1236,18 @@ export async function fetchStrongStockWatch(params: {
 }): Promise<StrongStockWatchView> {
   const query = new URLSearchParams();
   if (params.date) query.set("date", params.date);
-  if (params.windowDays) query.set("window_days", String(params.windowDays));
-  if (params.limit) query.set("limit", String(params.limit));
+  if (params.windowDays !== undefined) query.set("window_days", String(params.windowDays));
+  if (params.limit !== undefined) query.set("limit", String(params.limit));
   if (params.latestPerStock !== undefined) query.set("latest_per_stock", String(params.latestPerStock));
   if (params.includeRemoved !== undefined) query.set("include_removed", String(params.includeRemoved));
   if (params.stockId) query.set("stock_id", params.stockId);
 
-  // 强势股页面统一走 v2 口径，避免旧路由字段漂移。
-
   try {
-    const url = `/api/v2/strong_watch/watch?${query.toString()}`;
-    const getResp = await fetch(url, { method: "GET" });
-    if (!getResp.ok) throw new Error(`request failed: ${getResp.status}`);
-    return (await getResp.json()) as StrongStockWatchView;
+    return await fetchJsonWithTimeout<StrongStockWatchView>(
+      `/api/v2/strong_watch/watch?${query.toString()}`,
+      undefined,
+      10000,
+    );
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown error";
     throw new Error(`strong stock watch request failed: ${message}`);
@@ -1459,10 +1665,13 @@ export async function stopRealtimeCollector(
   }
 }
 
-export async function fetchRealtimeCollectorLogs(lines = 200): Promise<RealtimeCollectorLogs> {
+export async function fetchRealtimeCollectorLogs(
+  lines = 200,
+  maxAgeMinutes = 180,
+): Promise<RealtimeCollectorLogs> {
   try {
     return await fetchJsonWithTimeout<RealtimeCollectorLogs>(
-      `/api/v2/realtime/collector/logs?lines=${encodeURIComponent(String(lines))}`,
+      `/api/v2/realtime/collector/logs?lines=${encodeURIComponent(String(lines))}&max_age_minutes=${encodeURIComponent(String(maxAgeMinutes))}`,
       {
         cache: "no-store",
       },
@@ -1586,6 +1795,22 @@ export async function fetchJyhfAuctionStatus(): Promise<JyhfAuctionStatus> {
   }
 }
 
+export interface JyhfAuctionLogs {
+  lines: string[];
+}
+
+export async function fetchJyhfAuctionLogs(lines = 200): Promise<JyhfAuctionLogs> {
+  try {
+    return await fetchJsonWithTimeout<JyhfAuctionLogs>(
+      `/api/v2/realtime/jyhf-auction/logs?lines=${encodeURIComponent(String(lines))}`,
+      { cache: "no-store" },
+      10000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "JYHF-竞价 日志拉取");
+  }
+}
+
 export async function startJyhfAuctionCollector(
   tradeDate: string,
   candidateDate: string,
@@ -1674,6 +1899,18 @@ export interface W2SAlertEvent {
   source: string;
   severity: string;
   generated_at: string;
+  // 统一告警 (phase=auction/intraday)
+  phase?: string;
+  unified_level?: string;
+  intraday_level?: string;
+  intraday_score?: number;
+  d2_level?: string;
+  d2_score?: number;
+  capital_flow?: string;
+  current?: number;
+  vwap?: number;
+  above_vwap_ratio?: number;
+  relative_strength?: number;
 }
 
 // P0-D: SSE 前端直连 SPS:8090，去掉 BFF 代理一跳
@@ -1717,4 +1954,308 @@ export function openKlineAlertsStream(
     }
   });
   return es;
+}
+
+// ── P4-2A: Realtime Business Orchestrator ──
+
+export interface OrchestratorServiceState {
+  name: string;
+  enabled: boolean;
+  desired_state: string;    // disabled | wanted | not_in_window | observe
+  observed_state: string;   // unknown | ready | running | stopped | blocked | degraded | failed
+  owner: string;
+  dependencies: string[];
+  blockers: string[];
+  evidence: Record<string, unknown>;
+  last_action: string | null;
+  last_error: string | null;
+  next_retry_at: string | null;
+}
+
+export interface RedisStreamHealth {
+  exists?: boolean;
+  length?: number | null;
+  memory_bytes?: number | null;
+  state?: string;
+  last_id?: string | null;
+  last_event_at?: string | null;
+  blockers?: string[];
+}
+
+export interface ConsumerGroupEntry {
+  name: string;
+  consumers: number;
+  pending: number;
+  lag: number;
+  last_delivered_id: string;
+  delivery_lag_s?: number | null;
+  consumers_detail?: ConsumerDetail[];
+}
+
+export interface ConsumerDetail {
+  name: string;
+  idle_ms: number;
+  pending: number;
+}
+
+export interface ConsumerGroupSummary {
+  stream: string;
+  group: string;
+  consumers: number;
+  pending: number;
+  lag: number;
+  delivery_lag_s?: number | null;
+}
+
+export interface DlqGrowthEntry {
+  trend: "growing" | "stable" | "shrinking" | "unknown";
+  delta: number;
+  delta_pct: number;
+  prev_length: number;
+  since_s: number;
+}
+
+export interface RedisRuntimeHealth {
+  ok?: boolean;
+  state?: string;
+  redis_state?: string;
+  stream_state?: string;
+  dead_letter_state?: string;
+  latency_ms?: number | null;
+  redis_url_masked?: string;
+  checked_at?: string;
+  blockers?: string[];
+  server?: Record<string, unknown>;
+  streams?: Record<string, RedisStreamHealth>;
+  consumer_groups?: Record<string, ConsumerGroupEntry[]>;
+  consumer_groups_summary?: ConsumerGroupSummary[];
+  dead_letter_growth?: Record<string, DlqGrowthEntry>;
+  sse_clients?: Record<string, number>;
+}
+
+export interface DbTableHealth {
+  exists?: boolean;
+  estimated_rows?: number | null;
+  latest_at?: string | null;
+  age_sec?: number | null;
+  state?: string;
+  blockers?: string[];
+}
+
+export interface DbWaitingSample {
+  pid?: number;
+  user?: string;
+  app?: string;
+  state?: string;
+  wait_type?: string;
+  wait_event?: string;
+  query_age?: string | null;
+  query?: string;
+}
+
+export interface DatabaseRuntimeHealth {
+  ok?: boolean;
+  state?: string;
+  db_state?: string;
+  pool_state?: string;
+  schema_state?: string;
+  freshness_state?: string;
+  lock_state?: string;
+  latency_ms?: number | null;
+  write_db?: string;
+  read_db?: string;
+  same_db?: boolean;
+  blockers?: string[];
+  server?: Record<string, unknown>;
+  tables?: Record<string, DbTableHealth>;
+  waiting_samples?: DbWaitingSample[];
+}
+
+export interface OrchestratorStatus {
+  enabled: boolean;
+  actions_enabled: boolean;
+  dry_run: boolean;
+  dry_run_forced: boolean;
+  dry_run_forced_reason: string;
+  now_override: string | null;
+  trade_date: string;
+  phase: string;
+  phase_label: string;
+  now_cn: string;
+  tick_seq: number;
+  is_trade_day: boolean;
+  services: Record<string, OrchestratorServiceState>;
+  planned_actions: Array<{ service: string; action: string; reason: string; owner: string }>;
+  executed_actions: Array<Record<string, unknown>>;
+  global_blockers: string[];
+  runtime_dependencies?: Record<string, unknown>;
+  tick_duration_ms: number;
+}
+
+export async function fetchOrchestratorStatus(nowOverride?: string): Promise<OrchestratorStatus> {
+  const params = nowOverride ? `?now=${encodeURIComponent(nowOverride)}` : "";
+  return fetchJsonWithTimeout<OrchestratorStatus>(
+    `/api/v2/realtime/orchestrator/status${params}`,
+    { cache: "no-store" },
+    3000,  // 短超时：非关键诊断，不要阻塞
+  );
+}
+
+export async function triggerOrchestratorTick(
+  dryRun: boolean = true,
+  nowOverride?: string,
+): Promise<OrchestratorStatus> {
+  return fetchJsonWithTimeout<OrchestratorStatus>(
+    "/api/v2/realtime/orchestrator/tick",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        dry_run: dryRun,
+        ...(nowOverride ? { now_override: nowOverride } : {}),
+      }),
+    },
+    5000,
+  );
+}
+
+export async function enableOrchestrator(actionsEnabled: boolean = false): Promise<{ ok: boolean; enabled: boolean; actions_enabled: boolean }> {
+  return fetchJsonWithTimeout(
+    "/api/v2/realtime/orchestrator/enable",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ actions_enabled: actionsEnabled }),
+    },
+    5000,
+  );
+}
+
+export async function disableOrchestrator(): Promise<{ ok: boolean; enabled: boolean; actions_enabled: boolean }> {
+  return fetchJsonWithTimeout(
+    "/api/v2/realtime/orchestrator/disable",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" },
+    5000,
+  );
+}
+
+export async function resetOrchestratorActions(): Promise<{ ok: boolean }> {
+  return fetchJsonWithTimeout(
+    "/api/v2/realtime/orchestrator/reset-action-history",
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" },
+    5000,
+  );
+}
+
+// ── PR-12.5: Mainline Confirmation API ──
+
+export interface MainlineReviewItem {
+  review_id: string;
+  trade_date: string;
+  subject_key: string;
+  theme_name?: string | null;
+  mainline_id?: string | null;
+  mainline_name?: string | null;
+  machine_state: string;
+  final_mainline_state?: string | null;
+  mainline_type?: string | null;
+  confirmation_path?: string | null;
+  trigger_mode?: string | null;
+  review_reason?: string | null;
+  review_priority?: number | null;
+  review_status: string;
+  suggested_human_decision?: string | null;
+  scores_json?: Record<string, unknown>;
+  evidence_json?: Record<string, unknown>;
+  risk_flags_json?: Record<string, unknown>;
+  diagnostics_json?: Record<string, unknown>;
+  human_decision?: string | null;
+  human_reviewer?: string | null;
+  human_notes?: string | null;
+  reviewed_at?: string | null;
+  created_at?: string | null;
+}
+
+export interface ConfirmedMainlineItem {
+  mainline_id: string;
+  mainline_name: string;
+  canonical_subject_key: string;
+  identity_status: string;
+  valid_from: string;
+  valid_to?: string | null;
+  mainline_type?: string | null;
+  confirmation_path?: string | null;
+  related_subject_keys_json?: string[];
+  core_subject_keys_json?: string[];
+  branch_subject_keys_json?: string[];
+  source_review_id?: string | null;
+  human_reviewer?: string | null;
+  human_notes?: string | null;
+  created_at?: string | null;
+}
+
+export interface MainlineReviewQueueResponse {
+  items: MainlineReviewItem[];
+  total?: number;
+  pending_count?: number;
+  reviewed_count?: number;
+}
+
+export interface MainlineRegistryResponse {
+  items: ConfirmedMainlineItem[];
+  total?: number;
+}
+
+export interface MainlineDecisionPayload {
+  human_decision: string;
+  canonical_subject_key?: string | null;
+  mainline_name?: string | null;
+  mainline_type?: string | null;
+  related_subject_keys?: string[] | null;
+  merge_target_mainline_id?: string | null;
+  human_reviewer?: string | null;
+  human_notes?: string | null;
+}
+
+export async function fetchMainlineReviewQueue(params: {
+  trade_date?: string; status?: string; limit?: number;
+} = {}): Promise<MainlineReviewQueueResponse> {
+  const q = new URLSearchParams();
+  if (params.trade_date) q.set("trade_date", params.trade_date);
+  if (params.status) q.set("status", params.status);
+  if (params.limit) q.set("limit", String(params.limit));
+  return fetchJsonWithTimeout<MainlineReviewQueueResponse>(
+    `/api/v2/mainline-review/queue?${q.toString()}`,
+    { cache: "no-store" }, 10000,
+  );
+}
+
+export async function fetchConfirmedMainlines(params: {
+  trade_date?: string; limit?: number;
+} = {}): Promise<MainlineRegistryResponse> {
+  const q = new URLSearchParams();
+  if (params.trade_date) q.set("trade_date", params.trade_date);
+  if (params.limit) q.set("limit", String(params.limit));
+  return fetchJsonWithTimeout<MainlineRegistryResponse>(
+    `/api/v2/mainline-review/registry?${q.toString()}`,
+    { cache: "no-store" }, 10000,
+  );
+}
+
+export async function submitMainlineReviewDecision(
+  reviewId: string, payload: MainlineDecisionPayload,
+): Promise<{ ok: boolean; action?: string; mainline_id?: string; error?: string }> {
+  return fetchJsonWithTimeout(
+    `/api/v2/mainline-review/${reviewId}/decision`,
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) },
+    15000,
+  );
+}
+
+export async function importMainlineReviewCandidates(tradeDate: string): Promise<{ ok: boolean; count?: number; error?: string }> {
+  return fetchJsonWithTimeout(
+    `/api/v2/mainline-review/import-candidates`,
+    { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ trade_date: tradeDate }) },
+    30000,
+  );
 }

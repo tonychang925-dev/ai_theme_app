@@ -11,6 +11,8 @@
 from __future__ import annotations
 
 import logging
+import re
+from difflib import SequenceMatcher
 from datetime import date, datetime
 from typing import Any, Dict, List, Optional
 
@@ -390,6 +392,8 @@ class NewChainIntelFeedAdapter:
             elif isinstance(result, list):
                 all_items.extend(result)
 
+        all_items = self._dedupe_feed_items(all_items)
+
         # session 过滤（仅 event 类 item 有实际时间，新链信号默认 post_market）
         if session not in ("all", ""):
             filtered: List[Dict[str, Any]] = []
@@ -445,6 +449,136 @@ class NewChainIntelFeedAdapter:
         if source in {"", "realtime_news", "structured_theme_match", "event_theme_matcher"}:
             return "akshare_realtime"
         return source
+
+    @staticmethod
+    def _dedupe_feed_items(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        best_by_key: Dict[tuple[str, tuple[str, ...], tuple[str, ...], tuple[str, ...]], Dict[str, Any]] = {}
+        for item in items:
+            key = NewChainIntelFeedAdapter._feed_item_dedupe_key(item)
+            previous = best_by_key.get(key)
+            if previous is None or NewChainIntelFeedAdapter._feed_item_rank(item) > NewChainIntelFeedAdapter._feed_item_rank(previous):
+                best_by_key[key] = item
+        return NewChainIntelFeedAdapter._dedupe_similar_feed_items(list(best_by_key.values()))
+
+    @staticmethod
+    def _dedupe_similar_feed_items(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """对同题材、标题高度相似的事件做二次收敛，避免跨 loader 改写型重复。
+
+        这个步骤只针对 event / new_theme 且至少带有 theme_subject_keys 或 stock_ids 的项，
+        以尽量降低对弱转强、复盘等独立信息的误伤。
+        """
+        kept: List[Dict[str, Any]] = []
+        loose_items: List[Dict[str, Any]] = []
+        bucket_map: Dict[tuple[tuple[str, ...], tuple[str, ...]], List[Dict[str, Any]]] = {}
+
+        for item in items:
+            item_type = str(item.get("item_type") or "")
+            theme_keys = tuple(
+                sorted(
+                    {
+                        NewChainIntelFeedAdapter._normalize_feed_text(str(value))
+                        for value in (item.get("theme_subject_keys") or [])
+                        if str(value).strip()
+                    }
+                )
+            )
+            stock_ids = tuple(
+                sorted(
+                    {
+                        NewChainIntelFeedAdapter._normalize_feed_text(str(value))
+                        for value in (item.get("stock_ids") or [])
+                        if str(value).strip()
+                    }
+                )
+            )
+
+            if item_type not in {"event", "new_theme"} or (not theme_keys and not stock_ids):
+                loose_items.append(item)
+                continue
+
+            bucket_map.setdefault((theme_keys, stock_ids), []).append(item)
+
+        for bucket_items in bucket_map.values():
+            bucket_items.sort(key=NewChainIntelFeedAdapter._feed_item_rank, reverse=True)
+            bucket_kept: List[Dict[str, Any]] = []
+            for candidate in bucket_items:
+                candidate_text = NewChainIntelFeedAdapter._feed_item_similarity_text(candidate)
+                if any(
+                    NewChainIntelFeedAdapter._feed_item_text_similarity(
+                        candidate_text,
+                        NewChainIntelFeedAdapter._feed_item_similarity_text(existing),
+                    ) >= 0.44
+                    for existing in bucket_kept
+                ):
+                    continue
+                bucket_kept.append(candidate)
+            kept.extend(bucket_kept)
+
+        kept.extend(loose_items)
+        return kept
+
+    @staticmethod
+    def _feed_item_dedupe_key(item: Dict[str, Any]) -> tuple[str, tuple[str, ...], tuple[str, ...], tuple[str, ...]]:
+        title = NewChainIntelFeedAdapter._normalize_feed_text(str(item.get("title") or ""))
+        if not title:
+            title = NewChainIntelFeedAdapter._normalize_feed_text(str(item.get("summary") or ""))
+        theme_names = tuple(
+            sorted(
+                {
+                    NewChainIntelFeedAdapter._normalize_feed_text(str(value))
+                    for value in (item.get("theme_names") or [])
+                    if str(value).strip()
+                }
+            )
+        )
+        theme_keys = tuple(
+            sorted(
+                {
+                    NewChainIntelFeedAdapter._normalize_feed_text(str(value))
+                    for value in (item.get("theme_subject_keys") or [])
+                    if str(value).strip()
+                }
+            )
+        )
+        stock_ids = tuple(
+            sorted(
+                {
+                    NewChainIntelFeedAdapter._normalize_feed_text(str(value))
+                    for value in (item.get("stock_ids") or [])
+                    if str(value).strip()
+                }
+            )
+        )
+        return (title, theme_names, theme_keys, stock_ids)
+
+    @staticmethod
+    def _feed_item_rank(item: Dict[str, Any]) -> tuple[int, int, float]:
+        priority = ITEM_TYPE_PRIORITY.get(str(item.get("item_type") or ""), 0)
+        occurred_at = str(item.get("occurred_at") or "")
+        try:
+            ts = int(datetime.fromisoformat(occurred_at.replace("Z", "+00:00")).timestamp())
+        except Exception:
+            ts = 0
+        score = float(item.get("impact_score") or 0)
+        return (priority, ts, score)
+
+    @staticmethod
+    def _normalize_feed_text(value: str) -> str:
+        return re.sub(r"[\s【】\[\]（）()、,，.。:：;；\-_/]+", "", value).lower()
+
+    @staticmethod
+    def _feed_item_similarity_text(item: Dict[str, Any]) -> str:
+        title = NewChainIntelFeedAdapter._normalize_feed_text(str(item.get("title") or ""))
+        summary = NewChainIntelFeedAdapter._normalize_feed_text(str(item.get("summary") or ""))
+        if title and summary:
+            return f"{title}{summary}"
+        return title or summary
+
+    @staticmethod
+    def _feed_item_text_similarity(left: str, right: str) -> float:
+        if not left or not right:
+            return 0.0
+        return SequenceMatcher(None, left, right).ratio()
 
     async def get_latest_date(self) -> Optional[str]:
         """返回新链各源的最大日期，不做 fallback。"""

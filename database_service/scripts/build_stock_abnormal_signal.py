@@ -53,6 +53,12 @@ def parse_args():
     parser.add_argument("--require-tail-rush", action="store_true", help="要求存在尾盘抢筹")
     parser.add_argument("--token", default=os.getenv("TUSHARE_TOKEN", ""), help="可选：Tushare token，用于自动抓取尾盘竞价缓存")
     parser.add_argument("--force-refresh-tail-auction", action="store_true", help="强制刷新 stk_auction_c 原始缓存")
+    parser.add_argument(
+        "--input-source",
+        choices=("auto", "file", "db"),
+        default="auto",
+        help="输入来源：auto 优先本地文件后 DB，db 直接读取 subject_stock_daily_snapshot",
+    )
     parser.add_argument("--details-root", default=str(PROJECT_ROOT / "theme_data_complete" / "stock_details"))
     parser.add_argument("--kline-root", default=str(PROJECT_ROOT / "theme_data_complete" / "_stock_kline" / "tushare" / "daily_bar"))
     return parser.parse_args()
@@ -240,6 +246,18 @@ def dedupe_by_stock(rows: list[StockAbnormalInput]) -> list[StockAbnormalInput]:
         if new_key < current_key:
             best_by_stock[row.stock_id] = row
     return list(best_by_stock.values())
+
+
+def build_kline_file_index(kline_root: Path) -> dict[str, Path]:
+    index: dict[str, Path] = {}
+    for path in kline_root.glob("*.jsonl"):
+        stem = path.name[:-6] if path.name.endswith(".jsonl") else path.stem
+        key = stem.strip().upper()
+        if not key:
+            continue
+        index.setdefault(key, path)
+        index.setdefault(_canonical_stock_id(key), path)
+    return index
 
 
 async def fetch_dragon_tiger_fact_map(manager: PostgresDatabaseManager, trade_date: str) -> dict[str, dict]:
@@ -595,8 +613,17 @@ async def _load_current_inputs_from_db(trade_date: str, min_turnover_rate: float
                 "SELECT trade_date, subject_key, stock_id, stock_name, "
                 "open_price, high_price, low_price, close_price, pre_close, "
                 "pct_chg, volume, amount, raw_json "
-                "FROM subject_stock_daily_snapshot WHERE trade_date = $1::date",
+                "FROM subject_stock_daily_snapshot "
+                "WHERE trade_date = $1::date "
+                "  AND CASE "
+                "        WHEN jsonb_typeof(raw_json) = 'array' AND COALESCE(raw_json->>18, '') ~ '^-?[0-9]+(\\.[0-9]+)?$' "
+                "        THEN COALESCE(NULLIF(raw_json->>18, ''), '0')::numeric "
+                "        WHEN jsonb_typeof(raw_json) <> 'array' AND COALESCE(raw_json->>'turnover_rate', '') ~ '^-?[0-9]+(\\.[0-9]+)?$' "
+                "        THEN COALESCE(NULLIF(raw_json->>'turnover_rate', ''), '0')::numeric "
+                "        ELSE 0 "
+                "      END >= $2::numeric",
                 td,
+                min_turnover_rate,
             )
             rows = [dict(r) for r in rows]
     finally:
@@ -647,14 +674,16 @@ async def main_async(args: argparse.Namespace | None = None, *, db_manager: Any 
     if args is None:
         args = parse_args()
     service = StockAbnormalSignalService()
-    raw_inputs = load_current_inputs(
-        args.trade_date,
-        Path(args.details_root),
-        min_turnover_rate=args.min_turnover_rate,
-        limit=args.limit,
-    )
-    # 新链 Fallback: JYHF 同步已不走本地 JSONL，改为从 DB 读取
-    if not raw_inputs:
+    raw_inputs: list[StockAbnormalInput] = []
+    if args.input_source in {"auto", "file"}:
+        raw_inputs = load_current_inputs(
+            args.trade_date,
+            Path(args.details_root),
+            min_turnover_rate=args.min_turnover_rate,
+            limit=args.limit,
+        )
+    # 新链同步任务已经把快照写入 DB；盘后编排直接走 DB，避免扫描本地全量 JSONL。
+    if not raw_inputs and args.input_source in {"auto", "db"}:
         raw_inputs = await _load_current_inputs_from_db(args.trade_date, args.min_turnover_rate, args.limit)
     ranked_inputs = apply_main_net_inflow_rank(apply_turnover_rank(raw_inputs))
     manager = db_manager if db_manager else PostgresDatabaseManager(get_postgres_config())
@@ -682,12 +711,13 @@ async def main_async(args: argparse.Namespace | None = None, *, db_manager: Any 
         )
         signals = []
         matched_files = 0
+        kline_index = build_kline_file_index(Path(args.kline_root))
         for item in inputs:
-            kline_candidates = sorted(Path(args.kline_root).glob(f"{item.stock_id}.*.jsonl"))
-            if not kline_candidates:
+            kline_path = kline_index.get(str(item.stock_id).strip().upper()) or kline_index.get(_canonical_stock_id(item.stock_id))
+            if not kline_path:
                 continue
             matched_files += 1
-            rows = service.load_stock_bars(kline_candidates[0])
+            rows = service.load_stock_bars(kline_path)
             signal = service.build_signal(item, rows)
             if passes_abnormal_filters(signal, args):
                 signals.append(signal)

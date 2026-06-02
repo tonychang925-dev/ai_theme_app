@@ -595,6 +595,51 @@ def test_daily_review_v2_builder_maps_promoted_pool_preview_to_watchlist_reviews
     assert "flags" in coverage["missing_fields"]
 
 
+def test_daily_review_v2_builder_dedupes_watchlist_promoted_pool_preview() -> None:
+    recap_doc = {
+        "promoted_pool_preview": [
+            {
+                "stock_id": "002579.SZ",
+                "stock_name": "中京电子",
+                "subject_key": "9015778",
+                "subject_name": "存储芯片",
+                "watch_status": "weakening",
+                "prior7_limitup_days": 3,
+                "recent_limit_up_count": 3,
+            },
+            {
+                "stock_id": "002579.SZ",
+                "stock_name": "中京电子",
+                "subject_key": "9015778",
+                "subject_name": "存储芯片",
+                "watch_status": "weakening",
+                "prior7_limitup_days": 3,
+                "recent_limit_up_count": 3,
+            },
+            {
+                "stock_id": "002957.SZ",
+                "stock_name": "科瑞技术",
+                "subject_key": "9013933",
+                "subject_name": "共封装光学CPO",
+                "watch_status": "weakening",
+                "prior7_limitup_days": 3,
+                "recent_limit_up_count": 3,
+            },
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 29),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.watchlist.dedupe",
+    )
+
+    rows = payload["watchlist_reviews"]
+    assert [row["stock_code"] for row in rows] == ["002579.SZ", "002957.SZ"]
+    assert [row["priority"] for row in rows] == [1, 2]
+
+
 def test_daily_review_v2_builder_maps_ready_stock_capital_reviews() -> None:
     recap_doc = {
         "stock_capital_reviews": [
@@ -803,6 +848,37 @@ def test_daily_review_v2_builder_maps_ready_money_flow_reviews() -> None:
     assert coverage["source"] == "structured"
     assert coverage["row_count"] == 1
     assert coverage["missing_fields"] == []
+
+
+def test_daily_review_v2_builder_prefers_resolved_theme_name_for_money_flow() -> None:
+    recap_doc = {
+        "report_context": {
+            "money_flow": [
+                {
+                    "stock_id": "002361.SZ",
+                    "stock_name": "神剑股份",
+                    "subject_key": "9028660",
+                    "theme_name": "9028660",
+                    "resolved_theme_name": "机器人",
+                    "main_net_inflow": 120000000,
+                    "money_flow_tier": "strong",
+                    "role_enhanced": "leader",
+                    "conclusion": "资金行为确认主线地位",
+                }
+            ]
+        },
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.money_flow.resolved_theme",
+    )
+
+    rows = payload["money_flow_reviews"]
+    assert rows[0]["subject_key"] == "9028660"
+    assert rows[0]["theme_name"] == "机器人"
 
 
 def test_daily_review_v2_builder_marks_money_flow_display_missing_partial() -> None:

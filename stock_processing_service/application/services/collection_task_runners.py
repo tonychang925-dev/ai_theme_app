@@ -386,6 +386,18 @@ class BuildDragonTigerObjectRunner:
 
             job = context.container.build_dragon_tiger_object
             result = await job.execute(trade_date=trade_date_val, tushare_token=token)
+            warnings = list(getattr(result, "warnings", []) or [])
+            metrics = dict(getattr(result, "metrics", {}) or {})
+            if result.status == "skipped_no_data" and warnings:
+                return CollectionTaskResult(
+                    status="failed",
+                    current_label=f"龙虎榜未生成 ({warnings[0]})",
+                    logs=[
+                        f"dragon_tiger status={result.status} rows={result.affected_rows}",
+                        f"dragon_tiger metrics={metrics}",
+                    ],
+                    error_message=str(warnings[0]),
+                )
 
             return CollectionTaskResult(
                 status="success" if result.status.startswith("ok") else "failed",
@@ -549,25 +561,185 @@ class JyhfSyncStockDetailsRunner:
 
 
 class JyhfImportStockDailyRunner:
-    """JYHF 股票日快照导入 Runner — in-process 调用 import_jyhf_stock_daily_incremental（semi-service 模式）。"""
+    """JYHF 股票日快照 Runner — API → DB，不经过本地 JSONL。"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        self._ctx = context  # 保存上下文，供 _collect_subject_records 使用 progress_callback
         try:
-            import argparse
-            ns = argparse.Namespace()
-            ns.subjects_file = None
-            ns.batch_id = None
-            ns.trade_date = context.trade_date
-            ns.data_root = str(context.project_root / "theme_data_complete") if context.project_root else "/Users/admin/Desktop/ai_theme_app/theme_data_complete"
-            from database_service.scripts.import_jyhf_stock_daily_incremental import main_async
-            exit_code = await main_async(args=ns)
+            from database_service.managers.postgres_manager import PostgresDatabaseManager
+            from database_service.scripts.import_jyhf_stock_daily_incremental import (
+                build_rows_from_subject_records,
+                ensure_tables,
+                get_postgres_config,
+                load_rows,
+                refresh_current_mapping,
+            )
+            from sync_jyhf_to_local import resolve_token
+            from theme_collector import APIClient
+
+            token = resolve_token(context.env.get("JYHF_AUTH_TOKEN") or context.env.get("AUTHORIZATION") or None)
+            if not token:
+                return CollectionTaskResult(
+                    status="failed",
+                    current_label="JYHF 股票日快照采集失败",
+                    error_message="missing JYHF token",
+                )
+
+            batch_id = f"collection_jyhf_stock_daily_{context.trade_date.replace('-', '')}"
+            force = bool(context.payload.get("force") or (context.payload.get("options") or {}).get("force"))
+            limit = int(context.payload.get("limit") or (context.payload.get("options") or {}).get("limit") or 0)
+
+            manager = PostgresDatabaseManager(get_postgres_config())
+            await manager.connect()
+            try:
+                await ensure_tables(manager)
+                subject_keys = await self._load_subject_keys(manager, limit=limit)
+                if not subject_keys:
+                    return CollectionTaskResult(
+                        status="failed",
+                        current_label="JYHF 股票日快照采集失败",
+                        error_message="no jyhf subjects found in DB subject_node_staging/theme_master",
+                    )
+                collect_subjects = subject_keys if force else await self._filter_missing_subjects(
+                    manager,
+                    subject_keys,
+                    context.trade_date,
+                )
+                if not collect_subjects:
+                    return CollectionTaskResult(
+                        status="skipped",
+                        current_label=f"JYHF 股票日快照已存在 ({context.trade_date})",
+                        logs=[f"db_existing_subjects={len(subject_keys)} trade_date={context.trade_date}"],
+                    )
+
+                client = APIClient(token)
+                subject_records = await self._collect_subject_records(client, collect_subjects, context.trade_date)
+                rows, touched_subjects = build_rows_from_subject_records(subject_records, context.trade_date, batch_id)
+                count = await load_rows(manager, rows)
+                map_count, staging_count, serving_count = await refresh_current_mapping(
+                    manager,
+                    touched_subjects,
+                    context.trade_date,
+                    batch_id,
+                )
+            finally:
+                await manager.disconnect()
+
+            exit_code = 0 if count > 0 else 1
             return CollectionTaskResult(
                 status="success" if exit_code == 0 else "failed",
-                current_label=f"JYHF 股票日快照导入完成 (exit={exit_code})",
-                logs=[f"jyhf_import_stock_daily exit_code={exit_code}"],
+                current_label=f"JYHF 股票日快照采集入库完成 (rows={count})",
+                logs=[
+                    "jyhf_stock_daily_api_to_db",
+                    f"subjects_total={len(subject_keys)}",
+                    f"subjects_collected={len(collect_subjects)}",
+                    f"subjects_touched={len(touched_subjects)}",
+                    f"rows={count}",
+                    f"current_map={map_count} staging={staging_count} serving={serving_count}",
+                    f"api_stats={json.dumps(client.stats, ensure_ascii=False)}",
+                ],
             )
         except Exception as e:
-            return CollectionTaskResult(status="failed", current_label="JYHF 股票日快照导入异常", error_message=str(e))
+            return CollectionTaskResult(status="failed", current_label="JYHF 股票日快照采集入库异常", error_message=str(e))
+
+    async def _load_subject_keys(self, manager: Any, limit: int = 0) -> list[str]:
+        async with manager.pool.acquire() as conn:
+            has_node = await conn.fetchval("SELECT to_regclass('public.subject_node_staging') IS NOT NULL")
+            if has_node:
+                rows = await conn.fetch(
+                    """
+                    SELECT DISTINCT subject_key
+                    FROM subject_node_staging
+                    WHERE subject_key IS NOT NULL
+                    ORDER BY subject_key
+                    """
+                )
+            else:
+                rows = await conn.fetch(
+                    """
+                    SELECT DISTINCT source_id AS subject_key
+                    FROM theme_master
+                    WHERE source_system = 'jyhf'
+                      AND source_id IS NOT NULL
+                    ORDER BY source_id
+                    """
+                )
+        subject_keys = [str(r["subject_key"]) for r in rows if str(r["subject_key"] or "").strip()]
+        return subject_keys[:limit] if limit > 0 else subject_keys
+
+    async def _filter_missing_subjects(self, manager: Any, subject_keys: list[str], trade_date: str) -> list[str]:
+        async with manager.pool.acquire() as conn:
+            existing = await conn.fetch(
+                """
+                SELECT DISTINCT subject_key
+                FROM subject_stock_daily_snapshot
+                WHERE trade_date = $1::date
+                  AND subject_key = ANY($2::varchar[])
+                """,
+                date.fromisoformat(trade_date),
+                subject_keys,
+            )
+        existing_keys = {str(r["subject_key"]) for r in existing}
+        return [key for key in subject_keys if key not in existing_keys]
+
+    async def _collect_subject_records(
+        self,
+        client: Any,
+        subject_keys: list[str],
+        trade_date: str,
+    ) -> list[tuple[str, list[Any]]]:
+        from theme_collector import DataCollector
+
+        out: list[tuple[str, list[Any]]] = []
+        completed = 0
+        failed = 0
+        total = len(subject_keys)
+        sem = asyncio.Semaphore(20)  # 最多 20 个并发 API 请求
+        lock = asyncio.Lock()
+        progress_cb = self._ctx.progress_callback if hasattr(self, '_ctx') else None
+
+        def _fetch(subject_key: str) -> tuple[str, list[Any] | None, str | None]:
+            try:
+                data = client.request(
+                    "stock/realtime-by-subject/v2",
+                    {
+                        "sort": "pctChg",
+                        "sortType": "desc",
+                        "date": trade_date,
+                        "subjectId": subject_key,
+                        "start": 0,
+                        "end": 1200,
+                    },
+                    f"stock_daily_{trade_date}",
+                )
+                rows = DataCollector.extract_items(data)
+                valid = [row for row in rows if isinstance(row, list)]
+                return (subject_key, valid, None)
+            except Exception as e:
+                return (subject_key, None, str(e))
+
+        async def _fetch_with_sem(subject_key: str) -> None:
+            nonlocal completed, failed
+            async with sem:
+                subj, rows, err = await asyncio.to_thread(_fetch, subject_key)
+            async with lock:
+                completed += 1
+                if err:
+                    failed += 1
+                elif rows:
+                    out.append((subj, rows))
+                # 实时进度日志：每 20 个或每 10% 输出一次
+                if completed % 20 == 0 or completed == total:
+                    pct = round(completed / total * 100)
+                    msg = f"股票快照API采集: {completed}/{total} ({pct}%) 成功={completed-failed} 失败={failed}"
+                    if progress_cb:
+                        progress_cb(msg)
+                    logger.info("JYHF stock daily %s", msg)
+
+        tasks = [_fetch_with_sem(k) for k in subject_keys]
+        await asyncio.gather(*tasks)
+
+        return out
 
 
 class JyhfSyncHistoryRunner:
@@ -962,3 +1134,44 @@ class ProcessIsolatedRunner:
                 os.killpg(os.getpgid(proc.pid), sig)
         except (ProcessLookupError, PermissionError, OSError):
             pass
+
+
+# ── PR-13D: 指数采集 Runner ──
+class IndexKlineCollectRunner:
+    """在采集链路中执行指数K线采集 + 技术分析。"""
+
+    runner_key: str = "index_kline_collect"
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import asyncpg
+            conn = await asyncpg.connect("postgresql://localhost/stock_data_test", timeout=10)
+            try:
+                from stock_processing_service.application.jobs.index_kline_collect_job import (
+                    IndexKlineCollectJob,
+                )
+                from datetime import date as _date
+                td = _date.fromisoformat(context.trade_date) if isinstance(context.trade_date, str) else context.trade_date
+                job = IndexKlineCollectJob(pool=conn)
+                result = await job.collect(trade_date=td)
+                d = result.to_dict()
+                if d.get("success"):
+                    return CollectionTaskResult(
+                        status="success",
+                        current_label=f"指数采集完成 {d.get('collected_count',0)}/{d.get('total_count',0)}",
+                        logs=[f"collected={d.get('collected_count')}/{d.get('total_count')} tech={d.get('technical_count')}"],
+                    )
+                else:
+                    return CollectionTaskResult(
+                        status="failed",
+                        current_label=f"指数采集缺失: {d.get('missing_indices',[])}",
+                        error_message=str(d.get('missing_indices', [])),
+                    )
+            finally:
+                await conn.close()
+        except Exception as exc:
+            return CollectionTaskResult(
+                status="failed",
+                current_label=f"指数采集异常: {type(exc).__name__}",
+                error_message=str(exc),
+            )

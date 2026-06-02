@@ -16,22 +16,21 @@ else:
     from .common import require_safe_db
 
 
-async def _ensure_group_at_tail(client, stream: str, group: str) -> None:
-    """Phase 6A: 创建/重置消费组到 $ 并清理僵尸 consumer（不 ACK pending）。"""
+async def _ensure_group_at_tail(client, stream: str, group: str, *, reset_to_latest: bool = False) -> None:
+    """创建或复用 consumer group，默认从上次位置继续（不再丢弃积压）。
+
+    仅在 reset_to_latest=True 或首次创建时从 $ 开始。
+    旧行为每次重启都 reset 到 $ 导致历史积压永久丢失。
+    """
+    start_id = "$" if reset_to_latest else "0"
     try:
-        await client.xgroup_create(stream, group, id="$", mkstream=True)
-        logging.info("Created consumer group at tail: %s/%s", stream, group)
-        return
+        await client.xgroup_create(stream, group, id=start_id, mkstream=True)
+        logging.info("Created consumer group: %s/%s start_id=%s", stream, group, start_id)
     except Exception as exc:
         if "BUSYGROUP" not in str(exc):
             raise
-        logging.info("Consumer group already exists: %s/%s, resetting to tail...", stream, group)
-
-    try:
-        await client.xgroup_setid(stream, group, "$")
-        logging.info("Moved consumer group to tail: %s/%s", stream, group)
-    except Exception as e:
-        logging.warning("xgroup_setid failed for %s/%s: %s", stream, group, e)
+        # Group already exists — DO NOT reset; continue from last position
+        logging.info("Consumer group already exists: %s/%s (keeping position)", stream, group)
 
     # Phase 6A: clean zombie consumers (idle > 60s) — never ACK pending
     zombie_count = 0

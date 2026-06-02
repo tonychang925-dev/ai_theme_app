@@ -2013,7 +2013,44 @@ def _project_root() -> Path:
 
 
 def _realtime_log_dir() -> Path:
+    repo_log_dir = _project_root() / "logs" / "realtime"
+    if repo_log_dir.exists():
+        return repo_log_dir
     return Path("/tmp/ai_theme_realtime")
+
+
+def _current_realtime_run_id(log_dir: Path) -> str | None:
+    runtime_file = log_dir / "runtime" / "realtime_stack.json"
+    if not runtime_file.exists():
+        return None
+    try:
+        payload = json.loads(runtime_file.read_text(encoding="utf-8"))
+        run_id = str(payload.get("run_id") or "").strip()
+        return run_id or None
+    except Exception:
+        return None
+
+
+def _realtime_log_files(log_dir: Path) -> list[Path]:
+    files = [
+        log_dir / "start_services.log",
+        log_dir / "frontend_bff_8003.log",
+        log_dir / "frontend_vite.log",
+    ]
+
+    run_id = _current_realtime_run_id(log_dir)
+    if run_id:
+        files.extend([
+            log_dir / f"akshare_{run_id}.log",
+            log_dir / f"raw_news_{run_id}.log",
+            log_dir / f"decision_{run_id}.log",
+            log_dir / f"db_collector_{run_id}.log",
+            log_dir / f"brief_rebuild_{run_id}.log",
+            log_dir / f"intel_producer_{run_id}.log",
+            log_dir / f"intel_collection_{run_id}.log",
+        ])
+
+    return files
 
 
 def _build_start_cmd(with_frontend: bool, restart: bool) -> list[str]:
@@ -2153,6 +2190,40 @@ def _extract_log_line_timestamp(line: str) -> Optional[float]:
         return None
 
 
+def _prioritize_realtime_log_lines(file_name: str, lines: list[str], max_extra: int = 40) -> list[str]:
+    """补充保留关键新闻采集行，避免被尾部噪音挤掉。"""
+    if not lines:
+        return []
+
+    if not any(tag in file_name for tag in ("db_collector", "decision", "raw_news")):
+        return []
+
+    priority_patterns = (
+        "cls fetch",
+        "多源采集完成",
+        "采集模式 real",
+        "新闻采集完成",
+        "发布新闻",
+        "新闻抓取",
+        "news_stream",
+        "news_event",
+        "news_row",
+        "采集",
+        "发布",
+        "去重",
+    )
+    picked: list[str] = []
+    seen = set(lines)
+    for row in lines:
+        text = row.lower()
+        if any(p in text or p in row for p in priority_patterns):
+            picked.append(row)
+            if len(picked) >= max_extra:
+                break
+    # 去掉与尾部重复的行，避免面板被纯噪音覆盖
+    return [row for row in picked if row not in seen or row in picked]
+
+
 @app.get("/api/realtime/collector/logs")
 @app.get("/api/v2/realtime/collector/logs")
 async def get_realtime_collector_logs(
@@ -2160,11 +2231,7 @@ async def get_realtime_collector_logs(
     max_age_minutes: int = Query(default=180, ge=10, le=1440),
 ):
     log_dir = _realtime_log_dir()
-    files = [
-        log_dir / "start_services.log",
-        log_dir / "frontend_bff_8003.log",
-        log_dir / "frontend_vite.log",
-    ]
+    files = _realtime_log_files(log_dir)
     payload: dict[str, list[str]] = {}
     cutoff_ts = time.time() - (max_age_minutes * 60)
     for file_path in files:
@@ -2183,6 +2250,12 @@ async def get_realtime_collector_logs(
                     continue
                 filtered.append(row)
 
+            prioritized = _prioritize_realtime_log_lines(file_path.name, raw_content)
+            if prioritized:
+                for row in prioritized:
+                    if row not in filtered:
+                        filtered.append(row)
+
             if not filtered and file_stat.st_mtime < cutoff_ts:
                 stale_dt = datetime.fromtimestamp(file_stat.st_mtime).strftime("%Y-%m-%d %H:%M:%S")
                 filtered = [f"[stale] 日志文件最近更新时间: {stale_dt}，当前未检测到最新日志输出"]
@@ -2192,6 +2265,7 @@ async def get_realtime_collector_logs(
             payload[file_path.name] = [f"[error] {exc}"]
     return {
         "log_dir": str(log_dir),
+        "run_id": _current_realtime_run_id(log_dir),
         "lines": lines,
         "max_age_minutes": max_age_minutes,
         "files": payload,
@@ -2276,3 +2350,20 @@ async def get_available_streams():
             }
         }
     }
+
+
+# ── PR-13D: 指数采集 BFF 代理 ──
+
+@app.post("/api/v2/index-kline/collect")
+async def proxy_index_kline_collect(payload: dict[str, Any] | None = None):
+    return await _proxy_sps_collection("POST", f"{_sps_base_url()}/api/v1/index-kline/collect", json_payload=payload or {})
+
+
+@app.get("/api/v2/index-kline/status")
+async def proxy_index_kline_status(trade_date: str = ""):
+    return await _proxy_sps_collection("GET", f"{_sps_base_url()}/api/v1/index-kline/status?trade_date={trade_date}")
+
+
+@app.get("/api/v2/index-technical/daily")
+async def proxy_index_technical_daily(trade_date: str = ""):
+    return await _proxy_sps_collection("GET", f"{_sps_base_url()}/api/v1/index-technical/daily?trade_date={trade_date}")

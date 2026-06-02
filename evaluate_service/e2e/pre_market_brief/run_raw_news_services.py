@@ -59,7 +59,7 @@ async def run_services(args: argparse.Namespace) -> None:
     stream_config = SimpleNamespace(
         redis=SimpleNamespace(
             consumer_group=f"pm_e2e:{args.run_id}",
-            stream_max_length=10000,
+            stream_max_length=int(os.getenv("REALTIME_NEWS_RAW_STREAM_MAXLEN", "50000")),
         )
     )
     stream_bus = UnifiedRedisStreamBus(redis_client, config=stream_config)
@@ -72,7 +72,8 @@ async def run_services(args: argparse.Namespace) -> None:
             "consumer_group": args.storage_group,
             "stream_name": args.raw_stream,
             "batch_size": args.batch_size,
-            "block_time": 3000,
+            "block_time": args.block_time,
+            "storage_concurrency": args.storage_concurrency,
         },
     )
     processor = NewsStreamProcessor(
@@ -143,12 +144,13 @@ async def run_services(args: argparse.Namespace) -> None:
 async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> None:
     """Phase 6A: 创建/复用 consumer group，live mode 从最新开始并清理僵尸。
 
-    - live mode 默认从 "$" 创建，不再回放历史积压
-    - lag > 50% 自动重置到 $
+    - 默认从 "0" 创建，避免跳过积压
+    - 仅显式 REALTIME_STREAM_START_MODE=latest 时允许从 "$" 创建
+    - latest 模式下 lag > 95% 才自动重置到 $
     - 僵尸清理：只 XGROUP DELCONSUMER，不 XACK pending（防止丢消息）
     """
     import os as _os
-    start_mode = _os.environ.get("REALTIME_STREAM_START_MODE", "latest").lower()
+    start_mode = _os.environ.get("REALTIME_STREAM_START_MODE", "0").lower()
     start_id = "$" if start_mode == "latest" else "0"
     try:
         await redis_client.xgroup_create(stream, group, id=start_id, mkstream=True)
@@ -169,9 +171,9 @@ async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> No
             for gi in group_info_list:
                 if gi.get("name") == group:
                     lag = gi.get("lag", 0)
-                    if stream_len > 0 and lag > stream_len * 0.5:
+                    if stream_len > 0 and lag > stream_len * 0.95:
                         logging.warning(
-                            "Group %s/%s lag=%d > 50%% of stream_len=%d, resetting to $",
+                            "Group %s/%s lag=%d > 95%% of stream_len=%d, resetting to $",
                             stream, group, lag, stream_len,
                         )
                         await redis_client.xgroup_setid(stream, group, "$")
@@ -227,7 +229,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--raw-stream", default="stream:news:raw")
     parser.add_argument("--storage-group")
     parser.add_argument("--processor-group")
-    parser.add_argument("--batch-size", type=int, default=5)
+    parser.add_argument("--batch-size", type=int, default=int(os.getenv("REALTIME_RAW_NEWS_BATCH_SIZE", "50")))
+    parser.add_argument("--block-time", type=int, default=int(os.getenv("REALTIME_RAW_NEWS_BLOCK_MS", "2000")))
+    parser.add_argument("--storage-concurrency", type=int, default=int(os.getenv("REALTIME_RAW_STORAGE_CONCURRENCY", "5")))
     parser.add_argument("--allow-production", action="store_true")
     return parser
 

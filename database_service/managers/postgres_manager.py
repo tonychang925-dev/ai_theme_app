@@ -2266,6 +2266,348 @@ class PostgresDatabaseManager(BaseDatabaseManager):
 
         return results
 
+    async def get_subject_event_chain_rows(
+        self,
+        trade_date,
+        subject_keys: List[str] | None = None,
+        lookback_days: int = 7,
+    ) -> List[Dict[str, Any]]:
+        """返回主题事件明细行——用于构建 event_chain 和 event_series。
+
+        从 theme_history_event 用窗口函数取每 subject Top 10（避免全局
+        LIMIT 500 挤掉长尾 subject）。然后合并 event_theme_map+news_event，
+        最后按 (subject_key, event_date, normalized_title[:80]) 去重。
+        """
+        if not subject_keys:
+            return []
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        # ── 1. theme_history_event with per-subject window ──
+        sql = """
+        SELECT * FROM (
+            SELECT
+                'the_' || the.id AS event_id,
+                the.subject_key,
+                MAX(the.theme_name) OVER (PARTITION BY the.subject_key) AS theme_name,
+                the.rank_date::text AS occurred_at,
+                to_char(the.rank_date, 'YYYY-MM-DD') AS event_date,
+                COALESCE(the.driver_summary, the.description, '') AS title,
+                COALESCE(the.description, the.driver_summary, '') AS summary,
+                the.heat,
+                the.source_type AS source_channel,
+                'theme_history_event' AS source_table,
+                ROW_NUMBER() OVER (
+                    PARTITION BY the.subject_key
+                    ORDER BY the.rank_date DESC, the.heat DESC
+                ) AS rn
+            FROM theme_history_event the
+            WHERE the.source_type = 'jyhf_history'
+              AND the.subject_key = ANY($1::text[])
+              AND the.rank_date BETWEEN $2::date AND $3::date
+        ) sub
+        WHERE sub.rn <= 10
+        ORDER BY sub.subject_key, sub.rn
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, subject_keys, start_date, trade_date)
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            r.pop("rn", None)
+            heat_val = int(r.get("heat") or 0)
+            r["event_type"] = self._classify_event_type_from_keywords(
+                str(r.get("title") or "")
+            )
+            r["event_type_source"] = "keyword_fallback"
+            r["impact_score"] = self._heat_to_impact(heat_val)
+            r["confidence"] = 0.7 if heat_val >= 50 else 0.5
+            results.append(r)
+
+        # ── 2. event_theme_map + news_event (legacy) ──
+        news_rows = await self._fetch_event_theme_map_rows(
+            trade_date, subject_keys, lookback_days
+        )
+        for r in news_rows:
+            r["event_type_source"] = "news_event_attr"
+
+        # ── 3. CDP DOM: subject_history_staging (primary CDP source, has subject_key) ──
+        staging_rows = await self._fetch_cdp_staging_rows(
+            trade_date, subject_keys, lookback_days
+        )
+        for r in staging_rows:
+            r["event_type_source"] = "cdp_staging"
+
+        # ── 4. CDP DOM: event_subject_map + news_event (supplementary) ──
+        cdp_rows = await self._fetch_cdp_dom_event_rows(
+            trade_date, subject_keys, lookback_days
+        )
+        for r in cdp_rows:
+            r["event_type_source"] = "cdp_dom_map"
+
+        # ── 5. Sort and dedup ──
+        results.extend(news_rows)
+        results.extend(staging_rows)
+        results.extend(cdp_rows)
+        results.sort(key=lambda x: str(x.get("occurred_at") or ""), reverse=True)
+        return self._dedup_event_rows(results)
+
+    @staticmethod
+    def _dedup_event_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        """Dedup by (subject_key, event_date, normalized_title[:80])."""
+        seen: set[tuple[str, str, str]] = set()
+        deduped: list[dict[str, Any]] = []
+        for r in rows:
+            sk = str(r.get("subject_key") or "")
+            ed = str(r.get("event_date") or str(r.get("occurred_at") or "")[:10])
+            title = str(r.get("title") or "").strip()[:80]
+            key = (sk, ed, title)
+            if key not in seen:
+                seen.add(key)
+                deduped.append(r)
+        return deduped
+
+    async def _fetch_event_theme_map_rows(
+        self, trade_date, subject_keys: List[str], lookback_days: int
+    ) -> List[Dict[str, Any]]:
+        """从 event_theme_map + news_event 补充事件明细。
+
+        直接使用 event_theme_map.tree_subject_key / branch_subject_key 过滤，
+        不依赖 theme_master（该表无 subject_key 列，已废弃此路径）。
+        """
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                """SELECT * FROM (
+                    SELECT
+                        etm.event_id,
+                        ne.event_type,
+                        ne.confidence,
+                        ne.summary,
+                        ne.event_time::text AS occurred_at,
+                        to_char(ne.event_time, 'YYYY-MM-DD') AS event_date,
+                        ne.severity_score,
+                        ne.source_weight,
+                        ne.entities,
+                        etm.tree_subject_key AS subject_key,
+                        etm.confidence AS match_confidence,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY etm.tree_subject_key
+                            ORDER BY ne.event_time DESC
+                        ) AS rn
+                    FROM event_theme_map etm
+                    JOIN news_event ne ON ne.id = etm.event_id
+                    WHERE etm.tree_subject_key = ANY($1::text[])
+                      AND ne.event_time::date BETWEEN $2::date AND $3::date
+
+                    UNION ALL
+
+                    SELECT
+                        etm.event_id,
+                        ne.event_type,
+                        ne.confidence,
+                        ne.summary,
+                        ne.event_time::text AS occurred_at,
+                        to_char(ne.event_time, 'YYYY-MM-DD') AS event_date,
+                        ne.severity_score,
+                        ne.source_weight,
+                        ne.entities,
+                        etm.branch_subject_key AS subject_key,
+                        etm.confidence AS match_confidence,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY etm.branch_subject_key
+                            ORDER BY ne.event_time DESC
+                        ) AS rn
+                    FROM event_theme_map etm
+                    JOIN news_event ne ON ne.id = etm.event_id
+                    WHERE etm.branch_subject_key = ANY($1::text[])
+                      AND ne.event_time::date BETWEEN $2::date AND $3::date
+                ) sub
+                WHERE sub.rn <= 10""",
+                subject_keys, start_date, trade_date,
+            )
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            r.pop("rn", None)
+            sk = str(r.get("subject_key") or "").strip()
+            if not sk:
+                continue
+            results.append({
+                "event_id": f"ne_{r.get('event_id')}",
+                "subject_key": sk,
+                "theme_name": "",
+                "occurred_at": str(r.get("occurred_at") or ""),
+                "event_date": str(r.get("event_date") or ""),
+                "title": str(r.get("summary") or "")[:200],
+                "summary": str(r.get("summary") or "")[:300],
+                "event_type": str(r.get("event_type") or "unknown"),
+                "impact_score": float(r.get("severity_score") or 0) or float(r.get("confidence") or 0) or 0.5,
+                "confidence": float(r.get("confidence") or 0) or 0.5,
+                "source_channel": "event_theme_map+news_event",
+                "source_table": "event_theme_map+news_event",
+                "heat": 0,
+                "evidence_json": r.get("entities"),
+            })
+
+        return results
+
+    async def _fetch_cdp_staging_rows(
+        self, trade_date, subject_keys: List[str], lookback_days: int
+    ) -> List[Dict[str, Any]]:
+        """从 CDP DOM 管线读取事件：subject_history_staging（主源）。
+
+        该表由 jyhf_cdp_service/db_sink.py 写入，每条事件都有 subject_key
+        （由 subject_name 推导），覆盖 jyhf_dom 全部采集内容。
+        """
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                """SELECT * FROM (
+                    SELECT
+                        'cdp_' || shs.ingest_batch_id || '_' || shs.subject_rank_id::text AS event_id,
+                        shs.subject_key,
+                        COALESCE(shs.subject_name, '') AS theme_name,
+                        shs.rank_date::text AS occurred_at,
+                        to_char(shs.rank_date, 'YYYY-MM-DD') AS event_date,
+                        COALESCE(
+                            shs.description,
+                            shs.subject_name || ' 驱动事件',
+                            ''
+                        ) AS title,
+                        COALESCE(shs.description, '') AS summary,
+                        'unknown' AS event_type,
+                        COALESCE(
+                            (shs.raw_json->>'impact_score')::numeric,
+                            0.6
+                        ) AS impact_score,
+                        0.6 AS confidence,
+                        shs.source_type AS source_channel,
+                        'subject_history_staging' AS source_table,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY shs.subject_key
+                            ORDER BY shs.rank_date DESC
+                        ) AS rn
+                    FROM subject_history_staging shs
+                    WHERE shs.subject_key = ANY($1::text[])
+                      AND shs.rank_date BETWEEN $2::date AND $3::date
+                ) sub
+                WHERE sub.rn <= 10""",
+                subject_keys, start_date, trade_date,
+            )
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            r.pop("rn", None)
+            r["heat"] = 0
+            title = str(r.get("title") or "")
+            t = title.lower()
+            for kw, et in [("政策","policy"),("产业","industry"),("技术","technology"),
+                           ("订单","order"),("海外","overseas_mapping"),("监管","regulation"),
+                           ("发布","media"),("公告","company"),("涨价","price_shock")]:
+                if kw in t: r["event_type"] = et; break
+            results.append(r)
+
+        return results
+
+    async def get_staging_subject_keys(
+        self, trade_date, lookback_days: int = 7
+    ) -> List[str]:
+        """返回 subject_history_staging 中在回溯窗口内有事件的 distinct subject_keys。
+
+        用于 FactContextBuilder 补充 CDP DOM 管线产生的题材候选。
+        """
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                """SELECT DISTINCT shs.subject_key
+                   FROM subject_history_staging shs
+                   WHERE shs.subject_key IS NOT NULL
+                     AND shs.subject_key != ''
+                     AND shs.rank_date BETWEEN $1::date AND $2::date""",
+                start_date, trade_date,
+            )
+        return [str(r["subject_key"]) for r in rows]
+
+    async def _fetch_cdp_dom_event_rows(
+        self, trade_date, subject_keys: List[str], lookback_days: int
+    ) -> List[Dict[str, Any]]:
+        """从 CDP DOM 采集管线读取事件：event_subject_map + news_event。
+
+        jyhf_dom + news 源的事件直接通过 subject_key 映射到题材。
+        覆盖 theme_history_event 停止后的 2026-05 空洞。
+        """
+        from datetime import timedelta
+        start_date = trade_date - timedelta(days=max(lookback_days - 1, 0))
+
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                """SELECT * FROM (
+                    SELECT
+                        'cdp_' || ne.id::text AS event_id,
+                        esm.subject_key,
+                        COALESCE(esm.subject_name, '') AS theme_name,
+                        ne.event_time::text AS occurred_at,
+                        to_char(ne.event_time, 'YYYY-MM-DD') AS event_date,
+                        COALESCE(ne.summary, '') AS title,
+                        COALESCE(ne.summary, '') AS summary,
+                        ne.event_type,
+                        COALESCE(ne.severity_score, ne.confidence, 0.5) AS impact_score,
+                        COALESCE(ne.confidence, 0.5) AS confidence,
+                        COALESCE(esm.source, esm.source_channel, 'jyhf_cdp') AS source_channel,
+                        'event_subject_map+news_event' AS source_table,
+                        ROW_NUMBER() OVER (
+                            PARTITION BY esm.subject_key
+                            ORDER BY ne.event_time DESC
+                        ) AS rn
+                    FROM event_subject_map esm
+                    JOIN news_event ne ON ne.id = esm.news_id
+                    WHERE esm.subject_key = ANY($1::text[])
+                      AND ne.event_time::date BETWEEN $2::date AND $3::date
+                ) sub
+                WHERE sub.rn <= 10""",
+                subject_keys, start_date, trade_date,
+            )
+
+        results: list[dict[str, Any]] = []
+        for row in rows:
+            r = dict(row)
+            r.pop("rn", None)
+            r["heat"] = 0
+            results.append(r)
+
+        return results
+
+    @staticmethod
+    def _classify_event_type_from_keywords(title: str) -> str:
+        t = (title or "").lower()
+        pairs = [
+            ("政策", "policy"), ("产业", "industry"), ("技术", "technology"),
+            ("订单", "order"), ("海外", "overseas_mapping"), ("监管", "regulation"),
+            ("发布", "media"), ("公告", "company"),
+        ]
+        for kw, etype in pairs:
+            if kw in t:
+                return etype
+        return "unknown"
+
+    @staticmethod
+    def _heat_to_impact(heat: int) -> float:
+        if heat >= 90: return 0.90
+        if heat >= 70: return 0.75
+        if heat >= 50: return 0.60
+        if heat >= 30: return 0.45
+        return 0.30
+
     async def get_subject_cycle_evidence_daily(
         self,
         trade_date,
@@ -2478,27 +2820,39 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 LIMIT $2::int
             ) t
         ),
+        candidate_scope AS (
+            SELECT DISTINCT stock_id, subject_key
+            FROM money_flow_enhanced
+            WHERE trade_date = $1::date
+            UNION
+            SELECT DISTINCT stock_id, subject_key
+            FROM theme_leader_candidate
+            WHERE trade_date = $1::date
+        ),
         recent AS (
             SELECT
-                stock_id,
-                MAX(stock_name) AS stock_name,
-                subject_key,
-                COUNT(DISTINCT trade_date) AS total_trade_days,
-                COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(limit_up, FALSE)) AS recent_limit_up_count,
-                MAX(CASE WHEN COALESCE(is_leader, FALSE) THEN 1 ELSE 0 END) AS is_leader_flag,
-                MIN(COALESCE(rank_order, 999)) AS best_rank,
+                s.stock_id,
+                MAX(s.stock_name) AS stock_name,
+                s.subject_key,
+                COUNT(DISTINCT s.trade_date) AS total_trade_days,
+                COUNT(DISTINCT s.trade_date) FILTER (WHERE COALESCE(s.limit_up, FALSE)) AS recent_limit_up_count,
+                MAX(CASE WHEN COALESCE(s.is_leader, FALSE) THEN 1 ELSE 0 END) AS is_leader_flag,
+                MIN(COALESCE(s.rank_order, 999)) AS best_rank,
                 MAX(
                     CASE
-                        WHEN trade_date = $1::date
-                             AND jsonb_typeof(raw_json) = 'array'
-                             AND jsonb_array_length(raw_json) > 20
-                        THEN COALESCE(NULLIF(raw_json->>20, ''), '0')::int
+                        WHEN s.trade_date = $1::date
+                             AND jsonb_typeof(s.raw_json) = 'array'
+                             AND jsonb_array_length(s.raw_json) > 20
+                        THEN COALESCE(NULLIF(s.raw_json->>20, ''), '0')::int
                         ELSE 0
                     END
                 ) AS current_flag_today
-            FROM subject_stock_daily_snapshot
-            WHERE trade_date IN (SELECT trade_date FROM recent_trade_days)
-            GROUP BY stock_id, subject_key
+            FROM subject_stock_daily_snapshot s
+            JOIN candidate_scope cs
+              ON split_part(cs.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
+             AND cs.subject_key = s.subject_key
+            WHERE s.trade_date IN (SELECT trade_date FROM recent_trade_days)
+            GROUP BY s.stock_id, s.subject_key
         ),
         subject_strength AS (
             SELECT
@@ -2511,6 +2865,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 ) AS subject_strong_count
             FROM subject_stock_daily_snapshot
             WHERE trade_date = $1::date
+              AND subject_key IN (SELECT DISTINCT subject_key FROM candidate_scope)
             GROUP BY subject_key
         ),
         consecutive_boards AS (
@@ -2524,6 +2879,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                        ) AS prev_limit_up
                 FROM subject_stock_daily_snapshot
                 WHERE trade_date IN (SELECT trade_date FROM recent_trade_days)
+                  AND split_part(stock_id, '.', 1) IN (
+                      SELECT DISTINCT split_part(stock_id, '.', 1)
+                      FROM candidate_scope
+                  )
                 GROUP BY stock_id, trade_date
             ) t
             WHERE limit_up = TRUE AND prev_limit_up = TRUE
@@ -2564,6 +2923,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             LEFT JOIN consecutive_boards cb
               ON split_part(cb.stock_id, '.', 1) = split_part(r.stock_id, '.', 1)
             WHERE (
+                -- 路径1: 强股决策池 — 旧链已确认 + 周期存续 + 强度门槛
                 (
                     COALESCE(mr.is_main_theme, FALSE) = TRUE
                     AND COALESCE(mr.identity_status, '') = 'confirmed'
@@ -2574,6 +2934,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         OR COALESCE(ss.subject_strong_count, 0) >= 3
                     )
                 )
+                -- 路径2: 连板（原逻辑不变）
                 OR COALESCE(cb.has_two_board, FALSE) = TRUE
             )
         ),
@@ -2603,6 +2964,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         FROM ranked
         WHERE rn = 1
           AND (
+                -- 原逻辑：需要连板强度
                 COALESCE(recent_limit_up_count, 0) >= 2
                 OR (
                     COALESCE(recent_limit_up_count, 0) >= 1
@@ -2648,6 +3010,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           ON sf.stock_code = split_part(p.stock_id, '.', 1)
         WHERE p.watch_status IN ('pending_seed', 'pending_refresh', 'active', 'weakening')
           AND p.last_trade_date <= $1::date
+          AND COALESCE(NULLIF(LOWER(p.source_tag), ''), '') NOT IN ('tracking_only', 'mainline_tracking')
           AND (
               COALESCE(NULLIF(LOWER(p.labels_json->>'has_two_board'), ''), 'false') IN ('true', 't', '1', 'yes')
               OR (
@@ -3163,10 +3526,75 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             SELECT DISTINCT ON (split_part(stock_id, '.', 1))
                 split_part(stock_id, '.', 1) AS stock_code,
                 COALESCE(pct_chg, 0) AS pct_chg,
-                COALESCE(limit_up, FALSE) AS limit_up
+                COALESCE(limit_up, FALSE) AS limit_up,
+                COALESCE(amount, 0) AS amount
             FROM subject_stock_daily_snapshot
             WHERE trade_date = $1::date
             ORDER BY split_part(stock_id, '.', 1), ABS(COALESCE(pct_chg, 0)) DESC
+        ),
+        prev_trade AS (
+            SELECT MAX(trade_date) AS trade_date
+            FROM subject_stock_daily_snapshot
+            WHERE trade_date < $1::date
+        ),
+        prev_stock_base AS (
+            SELECT DISTINCT ON (split_part(s.stock_id, '.', 1))
+                split_part(s.stock_id, '.', 1) AS stock_code,
+                COALESCE(s.amount, 0) AS amount
+            FROM subject_stock_daily_snapshot s
+            JOIN prev_trade p ON p.trade_date = s.trade_date
+            ORDER BY split_part(s.stock_id, '.', 1), ABS(COALESCE(s.pct_chg, 0)) DESC
+        ),
+        prev_amount_stats AS (
+            SELECT COALESCE(SUM(amount), 0) AS prev_market_total_amount
+            FROM prev_stock_base
+        ),
+        index_ranked AS (
+            SELECT
+                index_code,
+                index_name,
+                pct_chg,
+                amount,
+                vol,
+                ts,
+                ROW_NUMBER() OVER (PARTITION BY index_code ORDER BY ts DESC, id DESC) AS rn
+            FROM jyhf_index_quote_snapshot
+            WHERE trade_date = $1::date
+        ),
+        index_summary AS (
+            SELECT
+                MAX(pct_chg) FILTER (
+                    WHERE index_code IN ('000001', '000001.SH') OR COALESCE(index_name, '') LIKE '%上证%'
+                ) AS shanghai_index_pct_chg,
+                MAX(pct_chg) FILTER (
+                    WHERE index_code IN ('399001', '399001.SZ') OR COALESCE(index_name, '') LIKE '%深成%'
+                ) AS shenzhen_index_pct_chg,
+                MAX(pct_chg) FILTER (
+                    WHERE index_code IN ('399006', '399006.SZ') OR COALESCE(index_name, '') LIKE '%创业板%'
+                ) AS chinext_index_pct_chg,
+                COALESCE(
+                    jsonb_agg(
+                        jsonb_build_object(
+                            'index_code', index_code,
+                            'index_name', index_name,
+                            'pct_chg', pct_chg,
+                            'amount', amount,
+                            'vol', vol,
+                            'ts', ts
+                        )
+                        ORDER BY
+                            CASE
+                                WHEN index_code IN ('000001', '000001.SH') OR COALESCE(index_name, '') LIKE '%上证%' THEN 1
+                                WHEN index_code IN ('399001', '399001.SZ') OR COALESCE(index_name, '') LIKE '%深成%' THEN 2
+                                WHEN index_code IN ('399006', '399006.SZ') OR COALESCE(index_name, '') LIKE '%创业板%' THEN 3
+                                ELSE 9
+                            END,
+                            index_code
+                    ) FILTER (WHERE rn = 1),
+                    '[]'::jsonb
+                ) AS index_quotes
+            FROM index_ranked
+            WHERE rn = 1
         ),
         stock_stats AS (
             SELECT
@@ -3176,7 +3604,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 COUNT(*) FILTER (WHERE limit_up OR pct_chg >= 9.8) AS limit_up_count,
                 COUNT(*) FILTER (WHERE pct_chg <= -9.8) AS limit_down_count,
                 COUNT(*) FILTER (WHERE pct_chg >= 5) AS strong_count,
-                COUNT(*) FILTER (WHERE pct_chg <= -5) AS weak_count
+                COUNT(*) FILTER (WHERE pct_chg <= -5) AS weak_count,
+                COALESCE(SUM(amount), 0) AS market_total_amount
             FROM stock_base
         ),
         mainline_stats AS (
@@ -3214,15 +3643,39 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 COALESCE(m.avg_mainline_strength, 0) AS avg_mainline_strength,
                 p.strong_watch_count,
                 p.w2s_candidate_count,
+                pa.prev_market_total_amount,
+                CASE
+                    WHEN pa.prev_market_total_amount > 0
+                    THEN (s.market_total_amount - pa.prev_market_total_amount) / pa.prev_market_total_amount * 100
+                    ELSE NULL
+                END AS market_amount_change_pct,
+                i.shanghai_index_pct_chg,
+                i.shenzhen_index_pct_chg,
+                i.chinext_index_pct_chg,
+                COALESCE(i.index_quotes, '[]'::jsonb) AS index_quotes,
                 CASE WHEN s.stock_count > 0 THEN s.up_count::numeric / s.stock_count ELSE 0 END AS up_ratio,
                 CASE WHEN s.stock_count > 0 THEN s.limit_up_count::numeric / s.stock_count ELSE 0 END AS limit_up_ratio,
                 CASE WHEN s.stock_count > 0 THEN s.limit_down_count::numeric / s.stock_count ELSE 0 END AS limit_down_ratio
             FROM stock_stats s
             CROSS JOIN mainline_stats m
             CROSS JOIN pool_stats p
+            CROSS JOIN prev_amount_stats pa
+            CROSS JOIN index_summary i
         )
         SELECT
             trade_date,
+            stock_count,
+            up_count,
+            down_count,
+            limit_up_count,
+            limit_down_count,
+            market_total_amount,
+            prev_market_total_amount,
+            ROUND(market_amount_change_pct, 4) AS market_amount_change_pct,
+            shanghai_index_pct_chg,
+            shenzhen_index_pct_chg,
+            chinext_index_pct_chg,
+            index_quotes,
             ROUND(
                 LEAST(
                     100,
@@ -3501,6 +3954,43 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             theme_name ASC
         LIMIT 50
         """
+        sql_theme_gainers = """
+        WITH subject_base AS (
+            SELECT
+                s.subject_key,
+                COALESCE(vtb.theme_name, s.subject_key) AS theme_name,
+                COUNT(DISTINCT split_part(s.stock_id, '.', 1)) AS stock_count,
+                AVG(COALESCE(s.pct_chg, 0)) AS avg_pct_chg,
+                MAX(COALESCE(s.pct_chg, 0)) AS max_pct_chg,
+                COUNT(*) FILTER (WHERE COALESCE(s.limit_up, FALSE) OR COALESCE(s.pct_chg, 0) >= 9.8) AS limit_up_count,
+                jsonb_agg(
+                    jsonb_build_object(
+                        'stock_id', s.stock_id,
+                        'stock_name', s.stock_name,
+                        'pct_chg', s.pct_chg,
+                        'limit_up', s.limit_up
+                    )
+                    ORDER BY COALESCE(s.pct_chg, 0) DESC
+                ) AS top_stocks
+            FROM subject_stock_daily_snapshot s
+            LEFT JOIN vw_subject_theme_binding vtb
+              ON vtb.subject_key = s.subject_key
+            WHERE s.trade_date = $1::date
+            GROUP BY s.subject_key, COALESCE(vtb.theme_name, s.subject_key)
+        )
+        SELECT
+            subject_key,
+            theme_name,
+            stock_count,
+            ROUND(avg_pct_chg, 4) AS avg_pct_chg,
+            ROUND(max_pct_chg, 4) AS max_pct_chg,
+            limit_up_count,
+            top_stocks
+        FROM subject_base
+        WHERE stock_count >= 3
+        ORDER BY avg_pct_chg DESC, limit_up_count DESC, max_pct_chg DESC
+        LIMIT 20
+        """
         sql_abnormal = """
         SELECT a.*, COALESCE(vtb.theme_name, a.theme_name, a.subject_key) AS resolved_theme_name
         FROM stock_abnormal_signal a
@@ -3544,6 +4034,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             stock_facts = await conn.fetch(sql_stock_facts, trade_date, subjects if subjects else None, stocks if stocks else None)
             money = await conn.fetch(sql_money, trade_date, subjects if subjects else None)
             theme_capital = await conn.fetch(sql_theme_capital, trade_date, subjects if subjects else None)
+            theme_gainers = await conn.fetch(sql_theme_gainers, trade_date)
             abnormal = await conn.fetch(sql_abnormal, trade_date)
             dragon = await conn.fetch(sql_dragon, trade_date)
         return {
@@ -3551,6 +4042,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             "market": dict(market) if market else None,
             "cycles": [dict(r) for r in cycles],
             "theme_capital_flow": [dict(r) for r in theme_capital],
+            "theme_gainers": [dict(r) for r in theme_gainers],
             "stock_facts": [dict(r) for r in stock_facts],
             "money_flow": [dict(r) for r in money],
             "abnormal_signals": [dict(r) for r in abnormal],
@@ -3821,15 +4313,25 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         return [dict(r) for r in rows]
 
     async def get_all_confirmed_mainlines(self) -> List[Dict[str, Any]]:
-        """读取所有当前已确认主线（不限制 subject_keys）。"""
+        """PR-13C: 读取所有当前已确认主线 — 优先读 mainline_registry（新真源）。
+
+        返回格式向后兼容：subject_key, theme_name, is_main_theme, identity_status。
+        """
         sql = """
-        SELECT DISTINCT ON (subject_key)
-            subject_key, theme_name, identity_status, is_main_theme,
-            first_confirmed_date, last_review_date, rule_version,
-            composite_score, source_trade_date
-        FROM theme_mainline_identity_registry
-        WHERE is_main_theme = TRUE AND identity_status = 'confirmed'
-        ORDER BY subject_key, last_review_date DESC NULLS LAST
+        SELECT DISTINCT ON (canonical_subject_key)
+            canonical_subject_key AS subject_key,
+            mainline_name AS theme_name,
+            identity_status,
+            TRUE AS is_main_theme,
+            valid_from AS first_confirmed_date,
+            last_review_date,
+            'mainline_registry_v1' AS rule_version,
+            NULL::numeric AS composite_score,
+            valid_from::text AS source_trade_date
+        FROM mainline_registry
+        WHERE identity_status = 'confirmed'
+          AND COALESCE(tracking_status, 'active') NOT IN ('archived', 'dormant')
+        ORDER BY canonical_subject_key, valid_from DESC NULLS LAST
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(sql)
@@ -3840,42 +4342,37 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         subject_keys: List[str],
         trade_date,
     ) -> List[Dict[str, Any]]:
-        """读取 Layer A 主线身份真源。
+        """PR-13C: 读取 Layer A 主线身份 — 从 mainline_registry（新真源）。
 
-        StrongWatch-P0 热修复 (2026-05-27):
-          只取 identity_status='confirmed' AND is_main_theme IS TRUE 的有效主线身份。
-          review_pending / rejected / revoked 不得覆盖 confirmed。
-          theme_mainline_identity_registry 是 append-only 日志表，
-          不能按 updated_at DESC 简单取最新行当作当前有效状态。
+        返回格式向后兼容：subject_key, theme_name, is_main_theme, identity_status。
         """
         if not subject_keys:
             return []
         page_size = 500
-        confirmed_only_sql = """
-        SELECT DISTINCT ON (subject_key)
-            subject_key,
-            COALESCE(identity_status, '') AS identity_status,
-            COALESCE(is_main_theme, FALSE) AS is_main_theme,
-            first_confirmed_date,
+        sql = """
+        SELECT DISTINCT ON (canonical_subject_key)
+            canonical_subject_key AS subject_key,
+            'confirmed' AS identity_status,
+            TRUE AS is_main_theme,
+            valid_from::date AS first_confirmed_date,
             last_review_date,
-            COALESCE(rule_version, '') AS rule_version
-        FROM theme_mainline_identity_registry
-        WHERE subject_key = ANY($1::text[])
+            'mainline_registry_v1' AS rule_version
+        FROM mainline_registry
+        WHERE canonical_subject_key = ANY($1::text[])
           AND identity_status = 'confirmed'
-          AND is_main_theme IS TRUE
-        ORDER BY subject_key, updated_at DESC NULLS LAST
+          AND COALESCE(tracking_status, 'active') NOT IN ('archived', 'dormant')
+        ORDER BY canonical_subject_key, valid_from DESC NULLS LAST
         """
-        gate_mode = str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower()
         try:
             async with self.pool.acquire() as conn:
                 all_rows: list[Dict[str, Any]] = []
                 for i in range(0, len(subject_keys), page_size):
                     chunk = subject_keys[i : i + page_size]
-                    rows = await conn.fetch(confirmed_only_sql, chunk)
+                    rows = await conn.fetch(sql, chunk)
                     all_rows.extend(dict(row) for row in rows)
                 return all_rows
         except Exception as e:
-            logger.warning(f"读取 theme_mainline_identity_registry 失败（可能尚未迁移）: {e}")
+            logger.warning(f"读取 mainline_registry identity 失败: {e}")
             return []
 
     async def get_mainline_identity_rule_inputs(
@@ -4129,11 +4626,12 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         return [dict(r) for r in rows]
 
     async def get_all_prior_alive_cycles(self, trade_date) -> List[Dict[str, Any]]:
-        """读取上一交易日已确认主线且仍存续的 subject。
+        """PR-13C: 读取上一交易日已确认主线且仍存续的 subject。
 
+        统一使用 mainline_registry（新真源）而非 theme_mainline_identity_registry。
         必须同时满足：
         - cycle: final_mainline_alive=true AND NOT fade_confirmed
-        - identity: is_main_theme=true AND identity_status='confirmed'
+        - identity: mainline_registry 中 identity_status='confirmed' AND tracking_status active
         """
         sql = """
         WITH last_date AS (
@@ -4145,10 +4643,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             v2.final_mainline_alive, v2.fade_confirmed, v2.mainline_strength_score
         FROM theme_cycle_judgement_v2 v2
         JOIN last_date ld ON v2.trade_date = ld.prior_date
-        JOIN theme_mainline_identity_registry mr
-          ON mr.subject_key = v2.subject_key
-         AND mr.is_main_theme = TRUE
+        JOIN mainline_registry mr
+          ON mr.canonical_subject_key = v2.subject_key
          AND mr.identity_status = 'confirmed'
+         AND COALESCE(mr.tracking_status, 'active') NOT IN ('archived', 'dormant')
         WHERE v2.final_mainline_alive = TRUE AND v2.fade_confirmed = FALSE
         """
         async with self.pool.acquire() as conn:
@@ -7179,6 +7677,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 ne.created_at::date = $1::date
                 OR nr.publish_date::date = $1::date
             )
+            __QUARANTINE_FILTER__
             ORDER BY ne.id, esm.subject_key,
                      esm.confidence DESC NULLS LAST, esm.created_at DESC NULLS LAST
         )
@@ -7211,7 +7710,27 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             exists = await conn.fetchval("SELECT to_regclass('public.event_subject_map')::text")
             if not exists:
                 return []
-            rows = await conn.fetch(sql, feed_date)
+            has_quarantine = bool(
+                await conn.fetchval("SELECT to_regclass('public.event_subject_map_quarantine')::text")
+            )
+            rows = await conn.fetch(
+                sql.replace(
+                    "__QUARANTINE_FILTER__",
+                    (
+                        """
+              AND NOT EXISTS (
+                  SELECT 1
+                  FROM event_subject_map_quarantine q
+                  WHERE q.event_id = ne.id
+                    AND q.subject_key = esm.subject_key
+              )
+                        """
+                        if has_quarantine
+                        else ""
+                    ),
+                ),
+                feed_date,
+            )
         return [dict(r) for r in rows]
 
     async def get_event_subject_mappings_by_trade_date(
@@ -7234,6 +7753,9 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             has_theme_profile_v2 = bool(await conn.fetchval("SELECT to_regclass('public.theme_profile_v2')::text"))
             has_theme_gate_profile = bool(await conn.fetchval("SELECT to_regclass('public.theme_gate_profile')::text"))
             has_theme_profile_ext = bool(await conn.fetchval("SELECT to_regclass('public.theme_profile_ext')::text"))
+            has_quarantine = bool(
+                await conn.fetchval("SELECT to_regclass('public.event_subject_map_quarantine')::text")
+            )
 
             profile_name_selects: List[str] = []
             if has_theme_profile_v2:
@@ -7359,6 +7881,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 AND COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, (nr.publish_date + nr.publish_time)::timestamp) < $5::timestamptz
             )
         )
+          __QUARANTINE_FILTER__
           AND ($2::varchar IS NULL OR esm.source = $2::varchar)
         ORDER BY COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at, (nr.publish_date + nr.publish_time)::timestamp) DESC NULLS LAST,
                  esm.event_id DESC,
@@ -7366,7 +7889,28 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                  esm.confidence DESC NULLS LAST
         LIMIT $3
         """
-            rows = await conn.fetch(sql, trade_date, source, int(limit or 500), start_time, end_time)
+            rows = await conn.fetch(
+                sql.replace(
+                    "__QUARANTINE_FILTER__",
+                    (
+                        """
+          AND NOT EXISTS (
+              SELECT 1
+              FROM event_subject_map_quarantine q
+              WHERE q.event_id = ne.id
+                AND q.subject_key = esm.subject_key
+          )
+                        """
+                        if has_quarantine
+                        else ""
+                    ),
+                ),
+                trade_date,
+                source,
+                int(limit or 500),
+                start_time,
+                end_time,
+            )
         return [dict(r) for r in rows]
 
     async def get_event_subject_mappings_by_event_ids(self, event_ids: List[int]) -> List[Dict[str, Any]]:
@@ -8239,3 +8783,304 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 row.get("trace_id"),
             )
         return 1
+
+
+    # ── PR-9: Mainline Registry DB operations ──
+
+    async def upsert_mainline_review_queue_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """幂等写入主线审核队列。已人工审核的行不覆盖人工字段。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO mainline_review_queue (
+            review_id, trade_date, subject_key, theme_name,
+            mainline_id, mainline_name, machine_state, final_mainline_state,
+            mainline_type, confirmation_path, trigger_mode,
+            review_reason, review_priority, review_status, suggested_human_decision,
+            scores_json, evidence_json, risk_flags_json, diagnostics_json,
+            updated_at
+        ) VALUES (
+            $1, $2, $3, $4,
+            $5, $6, $7, $8,
+            $9, $10, $11,
+            $12, $13, $14, $15,
+            $16, $17, $18, $19,
+            NOW()
+        )
+        ON CONFLICT (review_id) DO UPDATE SET
+            machine_state = EXCLUDED.machine_state,
+            final_mainline_state = EXCLUDED.final_mainline_state,
+            mainline_type = EXCLUDED.mainline_type,
+            confirmation_path = EXCLUDED.confirmation_path,
+            trigger_mode = EXCLUDED.trigger_mode,
+            review_reason = EXCLUDED.review_reason,
+            review_priority = EXCLUDED.review_priority,
+            scores_json = EXCLUDED.scores_json,
+            evidence_json = EXCLUDED.evidence_json,
+            risk_flags_json = EXCLUDED.risk_flags_json,
+            diagnostics_json = EXCLUDED.diagnostics_json,
+            updated_at = NOW()
+        WHERE mainline_review_queue.review_status != 'reviewed'
+        """
+        count = 0
+        async with self.pool.acquire() as conn:
+            for row in rows:
+                try:
+                    r = await conn.execute(sql,
+                        str(row.get('review_id') or ''),
+                        row.get('trade_date'),
+                        str(row.get('subject_key') or ''),
+                        str(row.get('theme_name') or ''),
+                        str(row.get('mainline_id') or ''),
+                        str(row.get('mainline_name') or ''),
+                        str(row.get('machine_state') or ''),
+                        str(row.get('final_mainline_state') or 'pending_review'),
+                        str(row.get('mainline_type') or ''),
+                        str(row.get('confirmation_path') or ''),
+                        str(row.get('trigger_mode') or ''),
+                        str(row.get('review_reason') or ''),
+                        float(row.get('review_priority') or 0),
+                        str(row.get('review_status') or 'pending'),
+                        str(row.get('suggested_human_decision') or ''),
+                        json.dumps(row.get('scores') or {}) if isinstance(row.get('scores'), dict) else '{}',
+                        json.dumps(row.get('evidence') or {}) if isinstance(row.get('evidence'), dict) else '{}',
+                        json.dumps(row.get('risk_flags') or {}) if isinstance(row.get('risk_flags'), dict) else '{}',
+                        json.dumps(row.get('diagnostics') or {}) if isinstance(row.get('diagnostics'), dict) else '{}',
+                    )
+                    count += int(str(r).split()[-1]) if r else 0
+                except Exception:
+                    pass
+        return count
+
+    async def upsert_mainline_registry_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """写入主线注册表。ON CONFLICT DO UPDATE 支持人工更新。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO mainline_registry (
+            mainline_id, mainline_name, canonical_subject_key,
+            mainline_type, confirmation_path, trigger_mode,
+            identity_status, valid_from, valid_to, source_review_id,
+            core_subject_keys_json, branch_subject_keys_json, related_subject_keys_json,
+            human_reviewer, human_notes, updated_at
+        ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,NOW())
+        ON CONFLICT (mainline_id) DO UPDATE SET
+            mainline_name = EXCLUDED.mainline_name,
+            identity_status = EXCLUDED.identity_status,
+            valid_to = EXCLUDED.valid_to,
+            core_subject_keys_json = EXCLUDED.core_subject_keys_json,
+            branch_subject_keys_json = EXCLUDED.branch_subject_keys_json,
+            related_subject_keys_json = EXCLUDED.related_subject_keys_json,
+            human_reviewer = EXCLUDED.human_reviewer,
+            human_notes = EXCLUDED.human_notes,
+            updated_at = NOW()
+        """
+        count = 0
+        async with self.pool.acquire() as conn:
+            for row in rows:
+                try:
+                    await conn.execute(sql,
+                        str(row.get('mainline_id') or ''),
+                        str(row.get('mainline_name') or ''),
+                        str(row.get('canonical_subject_key') or ''),
+                        str(row.get('mainline_type') or ''),
+                        str(row.get('confirmation_path') or ''),
+                        str(row.get('trigger_mode') or ''),
+                        str(row.get('identity_status') or 'confirmed'),
+                        row.get('valid_from'),
+                        row.get('valid_to'),
+                        str(row.get('source_review_id') or ''),
+                        json.dumps(row.get('core_subject_keys_json') or []) if isinstance(row.get('core_subject_keys_json', row.get('core_subject_keys')), list) else '[]',
+                        json.dumps(row.get('branch_subject_keys_json') or []) if isinstance(row.get('branch_subject_keys_json', row.get('branch_subject_keys')), list) else '[]',
+                        json.dumps(row.get('related_subject_keys_json') or []) if isinstance(row.get('related_subject_keys_json', row.get('related_subject_keys')), list) else '[]',
+                        str(row.get('human_reviewer') or ''),
+                        str(row.get('human_notes') or ''),
+                    )
+                    count += 1
+                except Exception:
+                    pass
+        return count
+
+    async def update_mainline_registry_related_keys(self, mainline_id: str, related_keys: List[str]) -> bool:
+        """向已有主线追加 related_subject_keys，支持 merge_into_existing_mainline。"""
+        async with self.pool.acquire() as conn:
+            existing = await conn.fetchval(
+                'SELECT related_subject_keys_json FROM mainline_registry WHERE mainline_id = $1',
+                mainline_id,
+            )
+            if existing is None:
+                return False
+            current = json.loads(existing) if isinstance(existing, str) else (existing or [])
+            merged = list(set(current + list(related_keys)))
+            await conn.execute(
+                'UPDATE mainline_registry SET related_subject_keys_json = $2, updated_at = NOW() WHERE mainline_id = $1',
+                mainline_id, json.dumps(merged),
+            )
+            return True
+
+    async def get_mainline_review_queue(
+        self, trade_date=None, status=None, subject_keys=None, limit=200,
+    ) -> List[Dict[str, Any]]:
+        """查询审核队列。"""
+        conditions = []
+        params: list = []
+        p_idx = 0
+        if trade_date is not None:
+            p_idx += 1; conditions.append(f'trade_date = ${p_idx}::date'); params.append(trade_date)
+        if status is not None:
+            p_idx += 1; conditions.append(f'review_status = ${p_idx}'); params.append(status)
+        if subject_keys is not None and subject_keys:
+            p_idx += 1; conditions.append(f'subject_key = ANY(${p_idx}::text[])'); params.append(subject_keys)
+        where = ('WHERE ' + ' AND '.join(conditions)) if conditions else ''
+        p_idx += 1; params.append(min(limit, 500))
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                f'SELECT * FROM mainline_review_queue {where} ORDER BY review_priority DESC NULLS LAST LIMIT ${p_idx}',
+                *params,
+            )
+        return [dict(r) for r in rows]
+
+    async def get_confirmed_mainlines(self, trade_date=None, limit=50) -> List[Dict[str, Any]]:
+        """查询已确认的主线（当天或历史确认，只要仍在有效期）。"""
+        params: list = []
+        conditions = ["identity_status = 'confirmed'"]
+        p_idx = 0
+        if trade_date is not None:
+            p_idx += 1; conditions.append(f'valid_from <= ${p_idx}::date AND (valid_to IS NULL OR valid_to >= ${p_idx}::date)'); params.append(trade_date)
+        p_idx += 1; params.append(min(limit, 100))
+        where = 'WHERE ' + ' AND '.join(conditions)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                f'SELECT * FROM mainline_registry {where} ORDER BY valid_from DESC, mainline_name LIMIT ${p_idx}',
+                *params,
+            )
+        return [dict(r) for r in rows]
+
+    async def get_active_confirmed_mainlines(self, trade_date=None, limit=100) -> List[Dict[str, Any]]:
+        """查询活跃已确认主线（排除 archived/dormant 状态）。
+
+        与 get_confirmed_mainlines 语义相同，但增加 tracking_status 过滤。
+        """
+        params: list = []
+        conditions = [
+            "identity_status = 'confirmed'",
+            "COALESCE(tracking_status, 'active') NOT IN ('archived', 'dormant')",
+        ]
+        p_idx = 0
+        if trade_date is not None:
+            p_idx += 1; conditions.append(f'valid_from <= ${p_idx}::date AND (valid_to IS NULL OR valid_to >= ${p_idx}::date)'); params.append(trade_date)
+        p_idx += 1; params.append(min(limit, 200))
+        where = 'WHERE ' + ' AND '.join(conditions)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                f'SELECT * FROM mainline_registry {where} ORDER BY valid_from DESC, mainline_name LIMIT ${p_idx}',
+                *params,
+            )
+        return [dict(r) for r in rows]
+
+    async def get_mainline_registry_by_id(self, mainline_id: str) -> Dict[str, Any] | None:
+        async with self.pool.acquire() as conn:
+            row = await conn.fetchrow('SELECT * FROM mainline_registry WHERE mainline_id = $1', mainline_id)
+        return dict(row) if row else None
+
+    async def upsert_mainline_daily_state_rows(self, rows: list[dict[str, Any]]) -> int:
+        """写入每日主线状态快照，ON CONFLICT (trade_date, mainline_id) 幂等更新。"""
+        if not rows:
+            return 0
+        async with self.pool.acquire() as conn:
+            affected = 0
+            for r in rows:
+                result = await conn.execute(
+                    """INSERT INTO mainline_daily_state (
+                           run_id, trade_date, mainline_id, canonical_subject_key,
+                           mainline_name, active_subject_keys_json, active_subject_count,
+                           event_count_1d, event_count_3d, event_count_7d,
+                           lifecycle_state, mainline_alive, mainline_trade_alive,
+                           fade_risk_score,
+                           broad_market_regime, short_term_sentiment,
+                           mainline_environment, market_structure,
+                           trade_mode, allow_trade, position_limit,
+                           strong_pool_count, d1_count, focus_count,
+                           layer_c_subject_keys_json,
+                           mainline_filtered_subject_keys_json,
+                           missing_registry_subject_keys_json,
+                           no_trade_blocking_rule,
+                           diagnostics_json, source_version
+                       ) VALUES (
+                           $1, $2::date, $3, $4,
+                           $5, $6::jsonb, $7,
+                           $8, $9, $10,
+                           $11, $12, $13,
+                           $14,
+                           $15, $16,
+                           $17, $18,
+                           $19, $20, $21,
+                           $22, $23, $24,
+                           $25::jsonb,
+                           $26::jsonb,
+                           $27::jsonb,
+                           $28,
+                           $29::jsonb, $30
+                       )
+                       ON CONFLICT (trade_date, mainline_id) DO UPDATE SET
+                           run_id = EXCLUDED.run_id,
+                           canonical_subject_key = EXCLUDED.canonical_subject_key,
+                           mainline_name = EXCLUDED.mainline_name,
+                           active_subject_keys_json = EXCLUDED.active_subject_keys_json,
+                           active_subject_count = EXCLUDED.active_subject_count,
+                           event_count_1d = EXCLUDED.event_count_1d,
+                           event_count_3d = EXCLUDED.event_count_3d,
+                           event_count_7d = EXCLUDED.event_count_7d,
+                           lifecycle_state = EXCLUDED.lifecycle_state,
+                           mainline_alive = EXCLUDED.mainline_alive,
+                           mainline_trade_alive = EXCLUDED.mainline_trade_alive,
+                           fade_risk_score = EXCLUDED.fade_risk_score,
+                           broad_market_regime = EXCLUDED.broad_market_regime,
+                           short_term_sentiment = EXCLUDED.short_term_sentiment,
+                           mainline_environment = EXCLUDED.mainline_environment,
+                           market_structure = EXCLUDED.market_structure,
+                           trade_mode = EXCLUDED.trade_mode,
+                           allow_trade = EXCLUDED.allow_trade,
+                           position_limit = EXCLUDED.position_limit,
+                           strong_pool_count = EXCLUDED.strong_pool_count,
+                           d1_count = EXCLUDED.d1_count,
+                           focus_count = EXCLUDED.focus_count,
+                           layer_c_subject_keys_json = EXCLUDED.layer_c_subject_keys_json,
+                           mainline_filtered_subject_keys_json = EXCLUDED.mainline_filtered_subject_keys_json,
+                           missing_registry_subject_keys_json = EXCLUDED.missing_registry_subject_keys_json,
+                           no_trade_blocking_rule = EXCLUDED.no_trade_blocking_rule,
+                           diagnostics_json = EXCLUDED.diagnostics_json,
+                           updated_at = NOW()""",
+                    r["run_id"], r["trade_date"], r["mainline_id"], r["canonical_subject_key"],
+                    r["mainline_name"], r["active_subject_keys_json"], r["active_subject_count"],
+                    r["event_count_1d"], r["event_count_3d"], r["event_count_7d"],
+                    r["lifecycle_state"], r["mainline_alive"], r["mainline_trade_alive"],
+                    r["fade_risk_score"],
+                    r["broad_market_regime"], r["short_term_sentiment"],
+                    r["mainline_environment"], r["market_structure"],
+                    r["trade_mode"], r["allow_trade"], r["position_limit"],
+                    r["strong_pool_count"], r["d1_count"], r["focus_count"],
+                    r["layer_c_subject_keys_json"],
+                    r["mainline_filtered_subject_keys_json"],
+                    r["missing_registry_subject_keys_json"],
+                    r["no_trade_blocking_rule"],
+                    r["diagnostics_json"], r["source_version"],
+                )
+                affected += int(result.split()[-1]) if result else 0
+        return affected
+
+    async def get_mainline_daily_state(
+        self, trade_date, mainline_id: str | None = None
+    ) -> List[Dict[str, Any]]:
+        """读取每日主线状态。可按 mainline_id 筛选。"""
+        conditions = ["trade_date = $1::date"]
+        params: list = [trade_date]
+        if mainline_id:
+            conditions.append(f"mainline_id = $2")
+            params.append(mainline_id)
+        where = "WHERE " + " AND ".join(conditions)
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                f"SELECT * FROM mainline_daily_state {where} ORDER BY mainline_id", *params
+            )
+        return [dict(r) for r in rows]

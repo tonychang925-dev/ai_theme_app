@@ -27,6 +27,31 @@ SUB_TASK_ORDER = [
     ("strong_stock_watch_build",       "strong_stock_watch_build"),
 ]
 
+REQUIRED_TASKS = {
+    "theme_cycle_truth",
+    "theme_leader_candidate_build",
+    "money_flow_enhanced_build",
+    "strong_stock_watch_build",
+}
+
+DEPENDENT_TASKS_BY_FAILURE = {
+    "theme_cycle_truth": [
+        "theme_leader_candidate_build",
+        "money_flow_enhanced_build",
+        "stock_abnormal_signal_build",
+        "strong_stock_watch_build",
+    ],
+    "theme_leader_candidate_build": [
+        "money_flow_enhanced_build",
+        "stock_abnormal_signal_build",
+        "strong_stock_watch_build",
+    ],
+    "money_flow_enhanced_build": [
+        "stock_abnormal_signal_build",
+        "strong_stock_watch_build",
+    ],
+}
+
 FORCE_REBUILD_TABLES = [
     "strong_stock_watch_history",
     "stock_abnormal_signal",
@@ -78,7 +103,7 @@ class PostMarketDerivedDataGenerateUseCase:
 
     def register_stock_abnormal_signal_build(self, project_root: str = "") -> None:
         self._builders["stock_abnormal_signal_build"] = _StockAbnormalSignalBuilder(
-            pool=self._pool, project_root=project_root)
+            pool=self._pool, db_manager=self._db_manager, project_root=project_root)
 
     def register_strong_stock_watch_build(self) -> None:
         self._builders["strong_stock_watch_build"] = _StrongStockWatchBuilder(
@@ -106,7 +131,10 @@ class PostMarketDerivedDataGenerateUseCase:
             cleanup = await self._cleanup_force_rebuild_rows(trade_date_val)
             job_results.append(cleanup)
 
+        skipped_jobs: set[str] = set()
         for job_key, _builder_key in SUB_TASK_ORDER:
+            if job_key in skipped_jobs:
+                continue
             builder = self._builders.get(job_key)
             if builder is None:
                 logger.warning("P2 builder not wired: %s", job_key)
@@ -119,11 +147,14 @@ class PostMarketDerivedDataGenerateUseCase:
                 continue
 
             await jss.mark_running(trade_date_val, job_key)
+            sub_result: dict[str, Any]
             try:
                 sub_result = await builder.run(trade_date_val)
                 sub_status = sub_result.get("status", "failed")
                 sub_rows = sub_result.get("affected_rows", 0)
                 await jss.mark_finished(trade_date_val, job_key, sub_status,
+                    error_code=sub_result.get("error_code"),
+                    error_message=sub_result.get("error") or sub_result.get("message"),
                     diagnostics={"affected_rows": sub_rows, "result": sub_result})
                 job_results.append({
                     "job_key": job_key, "status": sub_status, "affected_rows": sub_rows,
@@ -133,7 +164,33 @@ class PostMarketDerivedDataGenerateUseCase:
                 logger.exception("sub task %s failed", job_key)
                 await jss.mark_finished(trade_date_val, job_key, "failed",
                     error_code="EXCEPTION", error_message=str(exc)[:200])
-                job_results.append({"job_key": job_key, "status": "failed", "error": str(exc)[:200]})
+                sub_result = {"job_key": job_key, "status": "failed", "error": str(exc)[:200]}
+                job_results.append(sub_result)
+
+            sub_status = str(sub_result.get("status") or "failed")
+            if job_key in REQUIRED_TASKS and sub_status != "success":
+                dependent_jobs = [
+                    key for key in DEPENDENT_TASKS_BY_FAILURE.get(job_key, [])
+                    if key not in skipped_jobs
+                ]
+                for dependent_job in dependent_jobs:
+                    skipped_jobs.add(dependent_job)
+                    if not dry_run:
+                        await jss.mark_finished(
+                            trade_date_val,
+                            dependent_job,
+                            "failed_precondition",
+                            error_code="UPSTREAM_TASK_FAILED",
+                            error_message=f"upstream {job_key} status={sub_status}",
+                            diagnostics={"upstream_job_key": job_key, "upstream_result": sub_result},
+                        )
+                    job_results.append({
+                        "job_key": dependent_job,
+                        "status": "failed_precondition",
+                        "affected_rows": 0,
+                        "error_code": "UPSTREAM_TASK_FAILED",
+                        "error": f"upstream {job_key} status={sub_status}",
+                    })
 
         after = await rs.check(trade_date_val)
         after_dict = after.to_dict()
@@ -309,7 +366,7 @@ class _DragonTigerObjectBuilder:
             )
             token = os.environ.get("TUSHARE_TOKEN", "")
             job = BuildDragonTigerObjectJob(write_port=self._db_manager)
-            result = await job.execute(trade_date=trade_date, tushare_token=token)
+            result = await job.execute(trade_date=trade_date, tushare_token=token, allow_fetch=False)
 
             # Check object rows
             row_count = 0
@@ -325,9 +382,28 @@ class _DragonTigerObjectBuilder:
                         "affected_rows": row_count}
             if result.affected_rows > 0:
                 return {"job_key": "dragon_tiger_object_build", "status": "failed_no_rows",
-                        "affected_rows": 0, "error": "DRAGON_TIGER_OBJECT_NO_ROWS"}
+                        "affected_rows": 0, "error_code": "DRAGON_TIGER_OBJECT_NO_ROWS",
+                        "error": "dragon_tiger_object rows=0 after source rows were normalized",
+                        "warnings": result.warnings, "metrics": result.metrics}
+            warnings = list(result.warnings or [])
+            metrics = dict(result.metrics or {})
+            if any("payload is empty" in warning for warning in warnings):
+                return {"job_key": "dragon_tiger_object_build", "status": "skipped_no_data",
+                        "affected_rows": 0,
+                        "error_code": "DRAGON_TIGER_RAW_SNAPSHOT_EMPTY",
+                        "error": "dragon_tiger raw snapshots exist but payload is empty",
+                        "warnings": warnings, "metrics": metrics}
+            if any("snapshot unavailable" in warning for warning in warnings):
+                return {"job_key": "dragon_tiger_object_build", "status": "skipped_no_data",
+                        "affected_rows": 0,
+                        "error_code": "DRAGON_TIGER_RAW_SNAPSHOT_UNAVAILABLE",
+                        "error": "dragon_tiger raw snapshot unavailable",
+                        "warnings": warnings, "metrics": metrics}
             return {"job_key": "dragon_tiger_object_build", "status": "skipped_no_data",
-                    "affected_rows": 0, "error": "no_dragon_tiger_day"}
+                    "affected_rows": 0,
+                    "error_code": "DRAGON_TIGER_OBJECT_EMPTY",
+                    "error": "dragon_tiger object build produced no rows",
+                    "warnings": warnings, "metrics": metrics}
         except Exception as exc:
             return {"job_key": "dragon_tiger_object_build", "status": "failed",
                     "affected_rows": 0, "error": str(exc)[:200]}
@@ -365,8 +441,12 @@ class _ThemeLeaderCandidateBuilder:
                 row_count = int(r["cnt"]) if r else 0
         if row_count > 0:
             return {"job_key": "theme_leader_candidate_build", "status": "success", "affected_rows": row_count}
+        stderr_text = (stderr or b"").decode("utf-8", errors="replace").strip()
+        stdout_text = (stdout or b"").decode("utf-8", errors="replace").strip()
+        error_text = stderr_text or stdout_text or "theme_leader_candidate rows=0"
         return {"job_key": "theme_leader_candidate_build", "status": "failed_no_rows",
-                "affected_rows": 0, "error": "theme_leader_candidate rows=0"}
+                "affected_rows": 0, "error": error_text[:500],
+                "diagnostics": {"exit_code": proc.returncode}}
 
 
 class _MoneyFlowEnhancedBuilder:
@@ -421,39 +501,33 @@ class _MoneyFlowEnhancedBuilder:
 
 
 class _StockAbnormalSignalBuilder:
-    """P2-6: stock_abnormal_signal_build — 执行 build_stock_abnormal_signal.py。"""
+    """P2-6: stock_abnormal_signal_build — 通过 Gateway Job 读取 DB 真源。"""
 
-    def __init__(self, pool=None, project_root: str = ""):
+    def __init__(self, pool=None, db_manager=None, project_root: str = ""):
         self._pool = pool
+        self._db_manager = db_manager
         self._project_root = project_root
 
     async def run(self, trade_date: date) -> dict[str, Any]:
-        import asyncio
-        script = Path(self._project_root) / "database_service/scripts/build_stock_abnormal_signal.py"
-        if not script.exists():
+        if self._db_manager is None:
             return {"job_key": "stock_abnormal_signal_build", "status": "failed_precondition",
-                    "error": f"script not found: {script}"}
-        td_str = trade_date.isoformat()
+                    "error": "no_db_manager"}
         try:
-            proc = await asyncio.create_subprocess_exec(
-                sys.executable, str(script), "--trade-date", td_str,
-                stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+            from stock_processing_service.application.jobs.build_stock_abnormal_signal_job import (
+                BuildStockAbnormalSignalJob,
             )
-            stdout, stderr = await proc.communicate()
+            job = BuildStockAbnormalSignalJob(db_gateway=self._db_manager)
+            result = await job.execute(trade_date=trade_date)
         except Exception as exc:
             return {"job_key": "stock_abnormal_signal_build", "status": "failed",
                     "affected_rows": 0, "error": str(exc)[:200]}
 
-        row_count = 0
-        if self._pool:
-            async with self._pool.acquire() as conn:
-                r = await conn.fetchrow(
-                    "SELECT COUNT(*) AS cnt FROM stock_abnormal_signal WHERE trade_date = $1::date", trade_date)
-                row_count = int(r["cnt"]) if r else 0
-        if row_count > 0:
+        row_count = int(getattr(result, "affected_rows", 0) or 0)
+        status = str(getattr(result, "status", "") or "")
+        if row_count > 0 or status in {"ok", "ok_no_signals"}:
             return {"job_key": "stock_abnormal_signal_build", "status": "success", "affected_rows": row_count}
         return {"job_key": "stock_abnormal_signal_build", "status": "failed_no_rows",
-                "affected_rows": 0, "error": f"exit={proc.returncode}"}
+                "affected_rows": 0, "error": status or "stock_abnormal_signal rows=0"}
 
 
 class _StrongStockWatchBuilder:

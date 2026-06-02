@@ -22,9 +22,6 @@ from stock_service.services.leader_candidate_service import (
 )
 
 
-DATA_ROOT = PROJECT_ROOT / "theme_data_complete" / "stock_daily"
-
-
 def get_postgres_config() -> DatabaseConfig:
     return DatabaseConfig(
         db_type=DatabaseType.POSTGRESQL,
@@ -58,6 +55,79 @@ def _to_float(value):
         return float(value)
     except Exception:
         return 0.0
+
+
+def validate_price_consistency(close: float, pre_close: float, pct_chg: float) -> dict:
+    """PR-13B: validate close/pre_close/pct_chg consistency.
+
+    JYHF raw_json pct_chg may use a different reference price
+    (e.g. intraday open-based) than the standard pre_close.
+    """
+    if pre_close and pre_close != 0 and close and close != 0:
+        calc_pct = (close - pre_close) / pre_close * 100
+        diff = abs(calc_pct - pct_chg)
+    else:
+        calc_pct = pct_chg
+        diff = 0.0
+
+    # GEM/STAR board: ~20%, Main board: ~10%, ST: ~5%
+    is_gem = close > 0 and pre_close > 0 and (close / pre_close > 1.15 or close / pre_close < 0.85)
+    limit_up_threshold = 19.5 if is_gem else 9.5
+
+    calc_limit_up = calc_pct >= limit_up_threshold
+    price_inconsistent = diff > 3.0
+
+    return {
+        "calc_pct_chg": round(calc_pct, 2),
+        "reported_pct_chg": round(pct_chg, 2),
+        "pct_chg_diff": round(diff, 2),
+        "price_inconsistent": price_inconsistent,
+        "pct_chg_reliable": not price_inconsistent,
+        "calc_limit_up": calc_limit_up,
+        "limit_up_threshold": limit_up_threshold,
+        "limit_up_reliable": not price_inconsistent,
+    }
+
+
+def build_cross_subject_leader_map(subject_rows: list[dict]) -> dict[str, int]:
+    """PR-13B: count how many subjects each stock is marked is_leader (rank1)."""
+    counts: dict[str, int] = {}
+    for row in subject_rows:
+        if bool(row.get("is_leader")):
+            stock_id = str(row.get("stock_id") or "")
+            if stock_id:
+                counts[stock_id] = counts.get(stock_id, 0) + 1
+    return counts
+
+
+def build_leader_quality_flags(
+    price_check: dict,
+    cross_subject_count: int,
+) -> dict:
+    """PR-13B: aggregate quality flags for a leader candidate."""
+    flags = {
+        "leader_source": "jyhf_rank_order",
+        "is_leader_semantics": "rank1_hint_not_verified_leader",
+        "price_inconsistent": price_check.get("price_inconsistent", False),
+        "limit_up_verified": (
+            not price_check.get("price_inconsistent", False)
+            and price_check.get("calc_limit_up", False)
+        ),
+        "pct_chg_reliable": price_check.get("pct_chg_reliable", False),
+        "cross_subject_leader_count": cross_subject_count,
+        "leader_cross_subject_inflated": cross_subject_count >= 3,
+        "leader_uniqueness_score": (
+            100 if cross_subject_count <= 1
+            else 75 if cross_subject_count == 2
+            else 40 if cross_subject_count <= 4
+            else 20
+        ),
+        "verified_leader": (
+            not price_check.get("price_inconsistent", False)
+            and cross_subject_count <= 2
+        ),
+    }
+    return flags
 
 
 async def ensure_tables(manager: PostgresDatabaseManager) -> None:
@@ -136,8 +206,10 @@ async def fetch_subject_rows(manager: PostgresDatabaseManager, trade_date_value:
         rank_order,
         COALESCE(pct_chg, 0) AS pct_chg,
         COALESCE(close_price, 0) AS close_price,
+        COALESCE(pre_close, 0) AS pre_close,
         is_leader,
         limit_up
+        , raw_json
     FROM subject_stock_daily_snapshot
     WHERE trade_date = $1
       AND subject_key = ANY($2::varchar[])
@@ -180,40 +252,47 @@ async def fetch_kline_fact_map(manager: PostgresDatabaseManager, trade_date_valu
     return result
 
 
-def load_raw_fact_map(trade_date: str, subject_keys: list[str]) -> dict[tuple[str, str], dict]:
+def build_raw_fact_map_from_subject_rows(trade_date: str, subject_rows: list[dict]) -> dict[tuple[str, str], dict]:
     result: dict[tuple[str, str], dict] = {}
     trade_date_value = _parse_trade_date(trade_date)
-    for subject_key in subject_keys:
-        path = DATA_ROOT / f"{subject_key}_{trade_date}_stocks.jsonl"
-        if not path.exists():
-            continue
-        with path.open("r", encoding="utf-8", errors="ignore") as handle:
-            for line in handle:
-                line = line.strip()
-                if not line:
-                    continue
+    for row in subject_rows:
+        raw = row.get("raw_json") or {}
+        if isinstance(raw, str):
+            try:
+                raw = json.loads(raw)
+            except Exception:
+                raw = {}
+        list_date = None
+        if isinstance(raw, list):
+            volume_ratio = _to_float(raw[17] if len(raw) > 17 else None)
+            turnover_rate = _to_float(raw[18] if len(raw) > 18 else None)
+            main_net_inflow = _to_float(raw[35] if len(raw) > 35 else None)
+            if len(raw) > 25 and raw[25]:
                 try:
-                    row = json.loads(line)
+                    list_date = datetime.strptime(str(raw[25]).split(" ")[0], "%Y-%m-%d").date()
                 except Exception:
-                    continue
-                if not isinstance(row, list) or len(row) < 19:
-                    continue
-                stock_id = str(row[2]).strip()
-                if not stock_id:
-                    continue
-                list_date = None
-                if len(row) > 25 and row[25]:
-                    try:
-                        list_date = datetime.strptime(str(row[25]).split(" ")[0], "%Y-%m-%d").date()
-                    except Exception:
-                        list_date = None
-                is_new_stock = bool(list_date and (trade_date_value - list_date).days <= 365)
-                result[(subject_key, stock_id)] = {
-                    "volume_ratio": _to_float(row[17] if len(row) > 17 else None),
-                    "turnover_rate": _to_float(row[18] if len(row) > 18 else None),
-                    "main_net_inflow": _to_float(row[35] if len(row) > 35 else None),
-                    "is_new_stock": is_new_stock,
-                }
+                    list_date = None
+        elif isinstance(raw, dict):
+            volume_ratio = _to_float(raw.get("volume_ratio"))
+            turnover_rate = _to_float(raw.get("turnover_rate"))
+            main_net_inflow = _to_float(raw.get("main_net_inflow"))
+            raw_list_date = raw.get("list_date") or raw.get("listing_date")
+            if raw_list_date:
+                try:
+                    list_date = datetime.strptime(str(raw_list_date).split(" ")[0], "%Y-%m-%d").date()
+                except Exception:
+                    list_date = None
+        else:
+            volume_ratio = 0.0
+            turnover_rate = 0.0
+            main_net_inflow = 0.0
+
+        result[(str(row.get("subject_key") or ""), str(row.get("stock_id") or ""))] = {
+            "volume_ratio": volume_ratio,
+            "turnover_rate": turnover_rate,
+            "main_net_inflow": main_net_inflow,
+            "is_new_stock": bool(list_date and (trade_date_value - list_date).days <= 365),
+        }
     return result
 
 
@@ -302,11 +381,17 @@ async def main_async() -> int:
         main_themes = await fetch_main_themes(manager, trade_date_value)
         subject_keys = [str(row["subject_key"]) for row in main_themes]
         subject_rows = await fetch_subject_rows(manager, trade_date_value, subject_keys) if subject_keys else []
-        raw_fact_map = load_raw_fact_map(args.trade_date, subject_keys)
+        raw_fact_map = build_raw_fact_map_from_subject_rows(args.trade_date, subject_rows)
         kline_fact_map = await fetch_kline_fact_map(manager, trade_date_value)
 
         theme_name_map = {str(row["subject_key"]): row["theme_name"] for row in main_themes}
+
+        # ── PR-13B: cross-subject leader detection ──
+        cross_subject_map = build_cross_subject_leader_map(subject_rows)
+
         grouped: dict[str, list[ThemeLeaderInput]] = {}
+        # PR-13B: build per-stock price consistency cache
+        price_check_cache: dict[str, dict] = {}
         for row in subject_rows:
             subject_key = str(row["subject_key"])
             stock_key = (subject_key, str(row["stock_id"]))
@@ -337,14 +422,28 @@ async def main_async() -> int:
         service = LeaderCandidateService()
         candidates = []
         for subject_key, rows in grouped.items():
-            built = service.build_theme_candidates(rows)
+            # ── PR-13B: build quality flags for scoring adjustment ──
+            quality_map: dict[str, dict] = {}
+            for inp in rows:
+                sid = inp.stock_id
+                # Cache price check per stock_id (same stock, same data across subjects)
+                if sid not in price_check_cache:
+                    price_check_cache[sid] = validate_price_consistency(
+                        inp.close_price,
+                        float(next((r["pre_close"] for r in subject_rows if str(r.get("stock_id","")) == sid), 0) or 0),
+                        inp.pct_chg,
+                    )
+                pc = price_check_cache[sid]
+                xc = cross_subject_map.get(sid, 0)
+                quality_map[sid] = build_leader_quality_flags(pc, xc)
+
+            built = service.build_theme_candidates(rows, quality_map=quality_map)
             for item in built:
                 source_trace = {
                     "datasets": [
                         "theme_cycle_judgement_v2",
                         "theme_cycle_evidence_daily",
                         "subject_stock_daily_snapshot",
-                        "theme_data_complete.stock_daily",
                         "stock_position_judgement",
                         "stock_pattern_judgement",
                     ],

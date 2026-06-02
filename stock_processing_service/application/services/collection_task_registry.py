@@ -29,6 +29,8 @@ class CollectionTaskContext:
     python_bin: str | None = None
     # 兼容旧脚本：命令列表（ScriptCommandRunner 使用）
     commands: list[list[str]] | None = None
+    # 动态进度回调：Runner 可调用以实时推送进度到前端日志
+    progress_callback: Any | None = None
 
 
 @dataclass
@@ -108,6 +110,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         JyhfSyncDetailsRunner,
         JyhfSyncHistoryRunner,
         JyhfSyncListsRunner,
+        IndexKlineCollectRunner,
         JyhfSyncStockDetailsRunner,
         PostMarketRecapRunner,
         ProcessIsolatedRunner,
@@ -139,6 +142,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     )
     registry.register("abnormal.signal", BuildStockAbnormalSignalRunner())
     registry.register("dragon_tiger.object", BuildDragonTigerObjectRunner())
+    registry.register("index_kline.collect", IndexKlineCollectRunner())
     registry.register("tushare.daily_bar", TushareKlineRunner())
     registry.register("auction.watch_universe", AuctionWatchUniverseRunner())
     registry.register("auction.snapshot_all", AuctionSnapshotRunner(universe_source="auction_watch_universe"))

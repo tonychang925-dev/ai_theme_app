@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import date, datetime, time
 from typing import Iterable, Optional
+from zoneinfo import ZoneInfo
 
 from stock_service.adapters.tushare_adapter import TushareAdapter
 from stock_service.config import StockServiceConfig
@@ -31,6 +32,15 @@ class TushareDragonTigerSnapshotService:
         self.adapter = adapter or TushareAdapter(config.tushare_token)
         self.ingest_service = ingest_service or SourceIngestService(config)
         self.snapshot_store = RawSnapshotStore(config.raw_snapshot_root)
+
+    @staticmethod
+    def _should_defer_empty_same_day_snapshot(trade_date: str) -> bool:
+        try:
+            trade_date_val = date.fromisoformat(str(trade_date))
+        except ValueError:
+            return False
+        now = datetime.now(ZoneInfo("Asia/Shanghai"))
+        return trade_date_val == now.date() and now.time() < time(21, 30)
 
     def load_cached_top_list(self, trade_date: str) -> TushareDragonTigerSnapshotResult | None:
         return self._load_cached(dataset_name="dragon_tiger_top_list", trade_date=trade_date)
@@ -136,6 +146,16 @@ class TushareDragonTigerSnapshotService:
             raise ValueError(f"unsupported dataset_name: {dataset_name}")
 
         records = TushareAdapter.to_records(frame)
+        if not records and self._should_defer_empty_same_day_snapshot(trade_date):
+            return TushareDragonTigerSnapshotResult(
+                trade_date=trade_date,
+                dataset_name=dataset_name,
+                row_count=0,
+                cache_hit=False,
+                snapshot_path=None,
+                records=[],
+            )
+
         batch_id = datetime.now().strftime(f"{dataset_name}_%Y%m%d%H%M%S")
         ingest = self.ingest_service.capture_snapshot(
             source_name="tushare",

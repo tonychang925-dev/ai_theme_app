@@ -39,6 +39,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--status-path", default=None)
     p.add_argument("--parent-pid", type=int, default=None)
     p.add_argument("--collection-interval", type=int, default=300)
+    p.add_argument("--stream-maxlen", type=int, default=int(os.environ.get("REALTIME_NEWS_RAW_STREAM_MAXLEN", "50000")))
     p.add_argument("--allow-production", action="store_true")
     return p
 
@@ -138,6 +139,13 @@ async def async_main() -> None:
         stream_manager=None,  # collector will use its own redis connection
         config={
             "collection_interval": args.collection_interval,
+            "redis_url": args.redis_url,
+            "raw_stream_key": "stream:news:raw",
+            "raw_consumer_group": os.environ.get("REALTIME_RAW_CONSUMER_GROUP", "news_storage_realtime"),
+            "enable_raw_backpressure": os.environ.get("REALTIME_RAW_BACKPRESSURE_ENABLED", "true").lower() != "false",
+            "raw_backpressure_lag_ratio": float(os.environ.get("REALTIME_RAW_BACKPRESSURE_LAG_RATIO", "0.70")),
+            "raw_backpressure_delivery_lag_s": float(os.environ.get("REALTIME_RAW_BACKPRESSURE_DELIVERY_LAG_S", "300")),
+            "raw_backpressure_pending": int(os.environ.get("REALTIME_RAW_BACKPRESSURE_PENDING", "1000")),
             "default_mode": "auto",
             "enable_collector_prefilter": True,
             "collector_drop_on_skip": True,
@@ -168,8 +176,9 @@ async def async_main() -> None:
     import redis.asyncio as aioredis
 
     class SimpleStreamPublisher:
-        def __init__(self, redis_url: str):
+        def __init__(self, redis_url: str, *, maxlen: int):
             self._url = redis_url
+            self._maxlen = max(1, int(maxlen))
             self._redis: aioredis.Redis | None = None
 
         async def _get(self) -> aioredis.Redis:
@@ -179,7 +188,7 @@ async def async_main() -> None:
 
         async def publish(self, stream: str, data: dict) -> str | None:
             r = await self._get()
-            mid = await r.xadd(stream, data, maxlen=10000)
+            mid = await r.xadd(stream, data, maxlen=self._maxlen, approximate=True)
             return mid if isinstance(mid, str) else mid.decode() if mid else None
 
         async def close(self) -> None:
@@ -187,7 +196,7 @@ async def async_main() -> None:
                 await self._redis.aclose()
                 self._redis = None
 
-    publisher = SimpleStreamPublisher(args.redis_url)
+    publisher = SimpleStreamPublisher(args.redis_url, maxlen=args.stream_maxlen)
     collector.stream_manager = publisher
 
     loop = asyncio.get_running_loop()

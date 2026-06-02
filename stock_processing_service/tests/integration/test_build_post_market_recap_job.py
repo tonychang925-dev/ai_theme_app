@@ -415,6 +415,63 @@ def test_new_chain_report_builder_dragon_tiger_does_not_fallback_to_watch_rows()
     assert dragon_section["items"] == ["暂无龙虎榜新链数据"]
 
 
+def test_new_chain_report_builder_includes_market_amount_and_index_snapshot() -> None:
+    report = NewChainPostMarketReportBuilder().build(
+        {
+            "trade_date": "2026-05-28",
+            "report_context": {
+                "market": {
+                    "market_bias": "进攻",
+                    "action_bias": "主做主线",
+                    "market_health_score": 88.5,
+                    "market_total_amount": 2955722712929.37,
+                    "market_amount_change_pct": -8.2412,
+                    "shanghai_index_pct_chg": 0.42,
+                    "shenzhen_index_pct_chg": -0.18,
+                    "chinext_index_pct_chg": 1.08,
+                    "conclusion": "新链市场环境：上涨 2708，下跌 2296",
+                }
+            },
+        }
+    )
+
+    market_section = next(section for section in report["sections"] if section["heading"] == "大盘环境总结")
+    assert "两市成交额 2.96万亿；较前一交易日 -8.24%" in market_section["items"][0]
+    assert "指数表现：上证 +0.42%；深成指 -0.18%；创业板指 +1.08%" in market_section["items"][0]
+    assert "主流看点：暂无明确主流方向" in market_section["items"]
+    assert "封板效率：--" in market_section["items"]
+
+
+def test_new_chain_report_builder_prefers_llm_market_summary() -> None:
+    report = NewChainPostMarketReportBuilder().build(
+        {
+            "trade_date": "2026-05-28",
+            "market_summary": {
+                "source": "llm",
+                "market_overview": "指数修复，量能收缩，短线情绪偏强",
+                "top_gain_concepts": ["培育钻石 +6.62%", "超级电容 +4.68%", "PET铜箔 +4.52%"],
+                "index_performance": ["深证成指 +0.80%", "创业板指 +1.96%"],
+                "mainstream_focus": ["培育钻石", "MLCC/电容", "光通信"],
+                "activity_context": "培育钻石低开走高，超级电容高开高走，白酒与证券相对低迷。",
+                "board_efficiency": "较好",
+                "risk_notes": ["权重拖累"],
+                "action_bias": "精选弱转强",
+            },
+            "report_context": {
+                "market": {
+                    "market_total_amount": 2955722712929.37,
+                    "market_amount_change_pct": -8.2412,
+                }
+            },
+        }
+    )
+
+    market_section = next(section for section in report["sections"] if section["heading"] == "大盘环境总结")
+    assert market_section["items"][1] == "涨幅前三的概念：培育钻石 +6.62%；超级电容 +4.68%；PET铜箔 +4.52%"
+    assert market_section["items"][4] == "个股活跃程度及脉络：培育钻石低开走高，超级电容高开高走，白酒与证券相对低迷。"
+    assert report["highlights"][0].startswith("市场定性：指数修复")
+
+
 def test_new_chain_report_builder_uses_theme_capital_in_mainline_section() -> None:
     report = NewChainPostMarketReportBuilder().build(
         {

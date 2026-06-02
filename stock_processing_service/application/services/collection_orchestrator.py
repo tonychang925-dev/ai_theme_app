@@ -72,13 +72,11 @@ class CollectionCommandPlanner:
 
         if task_key == "jyhf":
             return CollectionTaskPlan(
-                pre_logs=["jyhf: Step1 列表同步 + Step2 节点入库 + Step3 详情同步 + Step4 股票详情 + Step5 导入（全部 in-process）"],
+                pre_logs=["jyhf: Step1 列表同步 + Step2 节点入库 + Step3 股票日快照采集入库（API→DB）"],
                 steps=[
                     CollectionTaskStep(key="jyhf_lists", runner_key="jyhf.sync_lists", label="JYHF 题材列表同步"),
                     CollectionTaskStep(key="jyhf_staging", runner_key="jyhf.load_staging", label="JYHF 题材节点入库"),
-                    CollectionTaskStep(key="jyhf_details", runner_key="jyhf.sync_details", label="JYHF 题材详情同步"),
-                    CollectionTaskStep(key="jyhf_stock", runner_key="jyhf.sync_stock_details", label="JYHF 股票详情同步"),
-                    CollectionTaskStep(key="jyhf_import", runner_key="jyhf.import_stock_daily", label="JYHF 股票日快照导入"),
+                    CollectionTaskStep(key="jyhf_import", runner_key="jyhf.import_stock_daily", label="JYHF 股票日快照采集入库"),
                 ],
             )
 
@@ -134,6 +132,9 @@ class CollectionCommandPlanner:
 
         if task_key == "dragon_tiger":
             return CollectionTaskPlan(runner_key="dragon_tiger.object")
+
+        if task_key == "index_kline":
+            return CollectionTaskPlan(runner_key="index_kline.collect")
 
         if task_key == "abnormal_signal":
             return CollectionTaskPlan(

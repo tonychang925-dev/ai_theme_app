@@ -28,6 +28,296 @@ select {
 
 .workspace-page {
   padding: 18px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.recap-dark-theme {
+  min-height: 100vh;
+  background: #0c1118;
+  color: #8ddcff;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.recap-dark-theme,
+.recap-dark-theme .workspace-card,
+.recap-dark-theme .workspace-card strong,
+.recap-dark-theme .workspace-note,
+.recap-dark-theme .metric-label,
+.recap-dark-theme .recap-table,
+.recap-dark-theme .recap-table td,
+.recap-dark-theme .recap-table th,
+.recap-dark-theme .ant-descriptions-item-label,
+.recap-dark-theme .ant-descriptions-item-content {
+  color: #8ddcff;
+}
+
+.recap-dark-theme .recap-table {
+  background: #111720;
+}
+
+.recap-dark-theme .recap-table th {
+  background: #0f141c;
+  color: #8ad6ff;
+  border-bottom-color: #243040;
+}
+
+.recap-dark-theme .recap-table td {
+  border-bottom-color: #243040;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .section-title,
+.recap-dark-theme .metric-label.section-title,
+.recap-dark-theme .recap-panel-title .section-title {
+  color: #ffd85e;
+}
+
+.recap-dark-theme .recap-table tbody tr:hover {
+  background: rgba(120, 169, 255, 0.08);
+}
+
+.recap-dark-theme .ant-alert {
+  background: #171d26;
+  border-color: #3a4657;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .ant-alert .ant-alert-message,
+.recap-dark-theme .ant-alert .ant-alert-description {
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .ant-btn {
+  background: #1b2430;
+  border-color: #324154;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .ant-btn:not(:disabled):hover {
+  border-color: #78a9ff;
+  color: #ffffff;
+}
+
+.recap-dark-theme .ant-btn-default:not(:disabled):hover {
+  background: #202b39;
+}
+
+.recap-dark-theme .ant-table {
+  background: transparent;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .ant-table-wrapper .ant-table-container {
+  border: 1px solid #243040;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111720;
+}
+
+.recap-dark-theme .ant-table-wrapper .ant-table-thead > tr > th {
+  background: #0f141c !important;
+  color: #8ad6ff !important;
+  border-bottom-color: #243040 !important;
+}
+
+.recap-dark-theme .ant-table-wrapper .ant-table-tbody > tr > td {
+  background: #111720 !important;
+  border-bottom-color: #243040 !important;
+  color: #9ce4ff !important;
+}
+
+.recap-dark-theme .ant-table-wrapper .ant-table-tbody > tr:hover > td {
+  background: rgba(120, 169, 255, 0.08) !important;
+}
+
+.recap-dark-theme .ant-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid #3b4a5d;
+  background: #16202a;
+  color: #dbe9ff !important;
+  font-weight: 400;
+  line-height: 1;
+  font-size: 12px;
+}
+
+.recap-dark-theme .ant-tag-green,
+.recap-dark-theme .ant-tag-blue,
+.recap-dark-theme .ant-tag-orange,
+.recap-dark-theme .ant-tag-red,
+.recap-dark-theme .ant-tag-gold,
+.recap-dark-theme .ant-tag-cyan,
+.recap-dark-theme .ant-tag-geekblue,
+.recap-dark-theme .ant-tag-volcano,
+.recap-dark-theme .ant-tag-purple,
+.recap-dark-theme .ant-tag-default {
+  color: inherit !important;
+}
+
+.recap-dark-theme .ant-tag-green {
+  border-color: #2f6b53 !important;
+  background: rgba(86, 198, 145, 0.12) !important;
+  color: #8ee0a1 !important;
+}
+
+.recap-dark-theme .ant-tag-blue {
+  border-color: #355d8f !important;
+  background: rgba(120, 169, 255, 0.12) !important;
+  color: #9cc0ff !important;
+}
+
+.recap-dark-theme .ant-tag-orange {
+  border-color: #87661c !important;
+  background: rgba(247, 212, 90, 0.12) !important;
+  color: #f7d45a !important;
+}
+
+.recap-dark-theme .ant-tag-red {
+  border-color: #8a3d3d !important;
+  background: rgba(255, 122, 122, 0.12) !important;
+  color: #ffb0b0 !important;
+}
+
+.recap-dark-theme .ant-tag-gold {
+  border-color: #87661c !important;
+  background: rgba(247, 212, 90, 0.12) !important;
+  color: #f7d45a !important;
+}
+
+.recap-dark-theme .ant-tag-cyan {
+  border-color: #355d8f !important;
+  background: rgba(102, 217, 239, 0.12) !important;
+  color: #9ce4ff !important;
+}
+
+.recap-dark-theme .ant-tag-geekblue {
+  border-color: #6b4aa5 !important;
+  background: rgba(155, 109, 255, 0.14) !important;
+  color: #c7a8ff !important;
+}
+
+.recap-dark-theme .ant-tag-volcano {
+  border-color: #8a3d3d !important;
+  background: rgba(255, 122, 122, 0.12) !important;
+  color: #ffb0b0 !important;
+}
+
+.recap-dark-theme .ant-tag-purple {
+  border-color: #6b4aa5 !important;
+  background: rgba(155, 109, 255, 0.14) !important;
+  color: #c7a8ff !important;
+}
+
+.recap-dark-theme .ant-tag-default {
+  border-color: #3b4a5d !important;
+  background: #16202a !important;
+  color: #dbe9ff !important;
+}
+
+.recap-dark-theme .recap-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 10px;
+}
+
+.recap-market-regime-status,
+.recap-market-regime-hint {
+  display: grid;
+  gap: 2px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #9ce4ff;
+}
+
+.recap-market-regime-label {
+  color: #66d9ef;
+  margin-right: 6px;
+}
+
+.recap-dark-theme .recap-chip {
+  border-color: #2f4358;
+  background: #13202b;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .recap-chip.is-status,
+.recap-dark-theme .recap-chip.is-pass,
+.recap-dark-theme .recap-chip.is-watch,
+.recap-dark-theme .recap-chip.is-pending,
+.recap-dark-theme .recap-chip.is-role,
+.recap-dark-theme .recap-chip.is-basis {
+  border-color: #2f4358;
+  background: #13202b;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .recap-chip.is-theme-start,
+.recap-dark-theme .recap-chip.is-theme-fermentation,
+.recap-dark-theme .recap-chip.is-theme-divergence,
+.recap-dark-theme .recap-chip.is-theme-rebound,
+.recap-dark-theme .recap-chip.is-theme-climax,
+.recap-dark-theme .recap-chip.is-theme-fade {
+  border-color: #2f4358;
+  background: #13202b;
+  color: #9ce4ff;
+}
+
+.realtime-collector-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.realtime-collector-page .realtime-ops-dashboard {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.realtime-collector-page .realtime-health-tabs {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.realtime-collector-page .realtime-health-tabs .ant-tabs-content-holder {
+  flex: 1;
+  min-height: 0;
+}
+
+.realtime-collector-page .realtime-health-tabs .ant-tabs-content,
+.realtime-collector-page .realtime-health-tabs .ant-tabs-tabpane {
+  height: 100%;
+  min-height: 0;
+}
+
+.realtime-collector-page .realtime-health-shell {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 220px);
+  min-height: 0;
+}
+
+.realtime-collector-page .realtime-health-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  flex-shrink: 0;
 }
 
 .workspace-topbar {
@@ -41,6 +331,38 @@ select {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.workspace-layout.single {
+  min-width: 0;
+  width: 100%;
+}
+
+.workspace-column {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.recap-dark-theme .workspace-layout,
+.recap-dark-theme .workspace-column,
+.recap-dark-theme .workspace-card,
+.recap-dark-theme .workspace-card > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.recap-dark-theme .workspace-card,
+.recap-dark-theme .workspace-note,
+.recap-dark-theme .recap-table,
+.recap-dark-theme .ant-table-wrapper,
+.recap-dark-theme .ant-table-container,
+.recap-dark-theme .ant-table-content {
+  max-width: 100%;
 }
 
 .recap-filters {
@@ -214,10 +536,18 @@ select {
   padding: 12px 14px;
   border-bottom: 1px solid #2a2f36;
   background: linear-gradient(180deg, #1d2530, #171d26);
+  color: #8ddcff;
 }
 
 .recap-table-wrap {
   overflow-x: auto;
+}
+
+.recap-table-shell {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .recap-table {
@@ -225,6 +555,15 @@ select {
   min-width: 860px;
   border-collapse: collapse;
   font-size: 13px;
+}
+
+.recap-dark-theme .ant-table-wrapper,
+.recap-dark-theme .ant-table-container,
+.recap-dark-theme .ant-table-content,
+.recap-dark-theme .ant-table,
+.recap-dark-theme .ant-table-container table {
+  max-width: 100%;
+  min-width: 0;
 }
 
 .recap-table th,
@@ -241,7 +580,7 @@ select {
   top: 0;
   z-index: 1;
   background: #131820;
-  color: #9fb3c8;
+  color: #8ad6ff;
   font-size: 12px;
   letter-spacing: 0.04em;
 }
@@ -250,19 +589,19 @@ select {
   appearance: none;
   border: 0;
   background: transparent;
-  color: #f5e36a;
+  color: #8ddcff;
   cursor: pointer;
   padding: 0;
   font: inherit;
   text-align: left;
   text-decoration: underline;
-  text-decoration-color: rgba(245, 227, 106, 0.45);
+  text-decoration-color: rgba(141, 220, 255, 0.45);
   text-underline-offset: 2px;
 }
 
 .recap-theme-link:hover {
-  color: #fff19a;
-  text-decoration-color: rgba(255, 241, 154, 0.8);
+  color: #d7f5ff;
+  text-decoration-color: rgba(215, 245, 255, 0.8);
 }
 
 .theme-trend-strip {
@@ -527,12 +866,12 @@ select {
 }
 
 .recap-stock-highlight {
-  color: #78a9ff;
+  color: #8ddcff;
   font-weight: 700;
 }
 
 .recap-table tbody td:first-child {
-  color: #78a9ff;
+  color: #8ddcff;
   font-weight: 700;
 }
 
@@ -1113,6 +1452,8 @@ select {
   display: grid;
   gap: 10px;
   align-content: start;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .market-bias-card {
@@ -1544,6 +1885,11 @@ select {
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
 
+.recap-progress-modal {
+  border-color: #2f4f70;
+  background: #171d24;
+}
+
 .market-summary-card {
   padding: 12px;
   border-radius: 12px;
@@ -1776,6 +2122,10 @@ select {
   border-radius: 8px;
   padding: 8px 14px;
   margin-bottom: 14px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .strong-watch-toolbar .back-button {
@@ -1784,7 +2134,7 @@ select {
 
 .strong-watch-title {
   margin: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .strong-watch-toolbar label {
@@ -1794,8 +2144,17 @@ select {
   border-radius: 8px;
   background: #1a1a1a;
   border: 1px solid #2a2a2a;
-  min-width: 120px;
-  flex-shrink: 0;
+  min-width: 160px;
+  flex: 0 0 auto;
+}
+
+.strong-watch-toolbar > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  flex: 0 0 auto;
+  min-width: max-content;
 }
 
 .strong-watch-toolbar span {

@@ -150,6 +150,73 @@ class NotionPostMarketRecapPublisher:
         return []
 
     @classmethod
+    @classmethod
+    def _build_engine_sections(cls, adapter, B) -> list[dict[str, Any]]:
+        """PR-14D: Build Notion blocks from engine report."""
+        blocks: list[dict[str, Any]] = []
+
+        # ── 交易结论 ──
+        tc = adapter.notion_trade_conclusion()
+        allow = tc["allow_trade"]
+        blocks.append(B.heading_2("交易结论"))
+        blocks.append(B.callout(
+            f'{"✅ 允许交易" if allow else "🚫 不交易"} | 模式: {tc["trade_mode"]} | '
+            f'仓位上限: {int(tc.get("position_limit", 0) * 100)}% | '
+            f'阻断: {tc.get("blocking_rule") or "无"}',
+            icon="🎯"
+        ))
+        if tc.get("reasons"):
+            blocks.append(B.paragraph("原因：" + "；".join(tc["reasons"])))
+        if tc.get("next_day_strategy"):
+            blocks.append(B.paragraph(f"明日策略：{tc['next_day_strategy']}"))
+        blocks.append(B.divider())
+
+        # ── 大盘环境 ──
+        me = adapter.notion_market_environment()
+        blocks.append(B.heading_2("大盘环境"))
+        blocks.append(B.callout(
+            f'大盘: {me["broad_market_regime"]} | 情绪: {me["short_term_sentiment"]} | '
+            f'主线环境: {me["mainline_environment"]} | '
+            f'指数数据: {"就绪" if me["index_data_ready"] else "缺失"}',
+            icon="📈"
+        ))
+        blocks.append(B.divider())
+
+        # ── 主线状态 ──
+        mainlines = adapter.notion_mainline_states()
+        if mainlines:
+            blocks.append(B.heading_2("主线状态"))
+            headers = ["主线", "生命周期", "可交易", "强股池", "D1", "focus", "操作建议"]
+            rows = []
+            for m in mainlines:
+                rows.append([
+                    m.get("mainline_name", ""),
+                    m.get("lifecycle_state", "unknown"),
+                    "✓" if m.get("mainline_trade_alive") else "✗",
+                    str(m.get("strong_pool_count", 0)),
+                    str(m.get("d1_count", 0)),
+                    str(m.get("focus_count", 0)),
+                    m.get("action_advice", ""),
+                ])
+            blocks.extend(B.table(headers, rows))
+            blocks.append(B.divider())
+
+        # ── D1 / 次日观察 ──
+        d1_info = adapter.notion_d1_watch()
+        blocks.append(B.heading_2("次日观察 (D1)"))
+        blocks.append(B.callout(
+            f'D1 总数: {d1_info["d1_total"]} | '
+            f'formal: {d1_info["d1_formal"]} | '
+            f'observe: {d1_info["d1_observe"]} | '
+            f'focus: {d1_info["focus_count"]}',
+            icon="📋"
+        ))
+        if not allow:
+            blocks.append(B.paragraph("⚠️ 当前不交易，所有 D1 仅观察，不生成正式买点"))
+        blocks.append(B.divider())
+
+        return blocks
+
     def _build_theme_name_map(cls, old_report: dict[str, Any] | None, recap_doc: dict[str, Any]) -> dict[str, str]:
         """构建 subject_key → theme_name 映射。
         来源1：旧链 report 文本（格式「题材名：subject_key 123；...」）
@@ -294,6 +361,17 @@ class NotionPostMarketRecapPublisher:
 
         # ── 标题 ──────────────────────────────────────────────
         blocks.append(B.heading_1(f"{trade_date} 盘后复盘"))
+
+        # ── PR-14D: Engine Report (preferred when available) ───
+        try:
+            from stock_processing_service.application.services.engine_report_adapter import (
+                EngineReportAdapter,
+            )
+            adapter = EngineReportAdapter(recap_doc if isinstance(recap_doc, dict) else {})
+            if adapter.has_engine_data:
+                blocks.extend(cls._build_engine_sections(adapter, B))
+        except Exception:
+            pass
 
         # ── 一、复盘概览 ──────────────────────────────────────
         blocks.append(B.heading_2("一、复盘概览"))

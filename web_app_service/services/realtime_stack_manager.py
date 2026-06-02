@@ -8,6 +8,7 @@ inside the request would sever the management channel.
 from __future__ import annotations
 
 import asyncio
+import json
 import os
 import signal
 import subprocess
@@ -23,28 +24,81 @@ class RealtimeStackManager:
         self._project_root = Path(project_root).resolve()
         self._web_port = int(web_port)
         self._sps_port = int(sps_port)
-        self._log_dir = Path(os.getenv("REALTIME_LOG_DIR", "/tmp/ai_theme_realtime"))
+        self._log_dir = Path(os.getenv("REALTIME_LOG_DIR", str(self._project_root / "logs" / "realtime")))
         self._sps_process: subprocess.Popen | None = None
         self._frontend_process: subprocess.Popen | None = None
         self._start_lock = asyncio.Lock()
 
+    def _realtime_log_dir(self) -> Path:
+        repo_log_dir = self._project_root / "logs" / "realtime"
+        if repo_log_dir.exists():
+            return repo_log_dir
+        return Path("/tmp/ai_theme_realtime")
+
+    def _current_realtime_run_id(self, log_dir: Path) -> str | None:
+        runtime_file = log_dir / "runtime" / "realtime_stack.json"
+        if not runtime_file.exists():
+            return None
+        try:
+            payload = json.loads(runtime_file.read_text(encoding="utf-8"))
+            run_id = str(payload.get("run_id") or "").strip()
+            return run_id or None
+        except Exception:
+            return None
+
+    def _realtime_log_files(self, log_dir: Path) -> list[Path]:
+        files = [
+            log_dir / "stock_processing_service_8090.log",
+            log_dir / "web_app_service_8000.log",
+            log_dir / "frontend_vite.log",
+            log_dir / "frontend_5173.log",
+        ]
+        run_id = self._current_realtime_run_id(log_dir)
+        if run_id:
+            files.extend(
+                [
+                    log_dir / f"akshare_{run_id}.log",
+                    log_dir / f"raw_news_{run_id}.log",
+                    log_dir / f"decision_{run_id}.log",
+                    log_dir / f"db_collector_{run_id}.log",
+                    log_dir / f"brief_rebuild_{run_id}.log",
+                    log_dir / f"intel_producer_{run_id}.log",
+                    log_dir / f"intel_collection_{run_id}.log",
+                ]
+            )
+        return files
+
     async def status(self) -> dict[str, Any]:
         """代理 SPS 的 /api/v1/realtime/status，返回前端需要的结构化数据。"""
         try:
-            import httpx as _httpx
-            async with _httpx.AsyncClient(timeout=10.0, trust_env=False) as client:
+            async with httpx.AsyncClient(timeout=10.0, trust_env=False) as client:
                 r = await client.get(f"http://127.0.0.1:{self._sps_port}/api/v1/realtime/status")
                 if r.status_code == 200:
                     return r.json()
         except Exception:
             pass
-        # fallback: 返回默认结构
-        return {"running": False, "raw_news_pid": None, "decision_pid": None,
-                "pending_count": 0, "dead_letter_count": 0, "run_id": "",
-                "profile_version": "?", "profile_status": "?", "last_error": "SPS unreachable"}
+        # SPS 不可达时的 fallback 结构，明确标记状态来源
+        return {
+            "running": False,
+            "running_verified": False,
+            "status_source": "bff_sps_unreachable",
+            "raw_news_pid": None,
+            "decision_pid": None,
+            "db_collector_pid": None,
+            "pending_count": 0,
+            "dead_letter_count": 0,
+            "run_id": "",
+            "profile_version": "?",
+            "profile_status": "?",
+            "last_error": "SPS unreachable",
+        }
 
     async def start(self, payload: dict[str, Any] | None = None) -> dict[str, Any]:
+        """同步代理 SPS /api/v1/realtime/start。BFF 不自行管理 pipeline 子进程。"""
         payload = payload or {}
+        stdout: list[str] = []
+        stderr: list[str] = []
+
         if bool(payload.get("restart")):
             message = (
                 "web_app_service cannot restart itself from /realtime/collector/start; "
@@ -53,62 +107,113 @@ class RealtimeStackManager:
             return self._cmd_result(False, "", message, ["web_app_service:realtime_stack", "start"], 2)
 
         async with self._start_lock:
-            stdout: list[str] = []
-            stderr: list[str] = []
-
-            if await self._is_http_healthy(f"http://127.0.0.1:{self._sps_port}/healthz"):
-                stdout.append(f"[ok] stock_processing_service:{self._sps_port} already running")
-            else:
+            if not await self._is_http_healthy(f"http://127.0.0.1:{self._sps_port}/healthz"):
                 ok, msg = await self._start_sps()
                 stdout.append(msg if ok else "")
                 stderr.append("" if ok else msg)
                 if not ok:
-                    return self._cmd_result(False, "\n".join(filter(None, stdout)), "\n".join(filter(None, stderr)), ["web_app_service:realtime_stack", "start"], 1)
+                    return self._cmd_result(
+                        False,
+                        "\n".join(filter(None, stdout)),
+                        "\n".join(filter(None, stderr)),
+                        ["bff", "start_sps"],
+                        1,
+                    )
 
-            # 异步触发 SPS 启动实时管线（不阻塞按钮响应）
-            asyncio.create_task(self._trigger_sps_start(stdout, stderr))
+            try:
+                async with httpx.AsyncClient(timeout=90.0, trust_env=False) as client:
+                    r = await client.get(f"http://127.0.0.1:{self._sps_port}/api/v1/realtime/start")
+                    data = r.json()
+            except Exception as exc:
+                return self._cmd_result(
+                    False,
+                    "\n".join(filter(None, stdout)),
+                    f"SPS realtime start failed: {exc}",
+                    ["bff", "sps_start"],
+                    1,
+                )
 
-            if bool(payload.get("with_frontend")):
-                ok, msg = await self._start_frontend()
-                stdout.append(msg if ok else "")
-                stderr.append("" if ok else msg)
-
-            return self._cmd_result(True, "\n".join(filter(None, stdout)) + "\n", "\n".join(filter(None, stderr)), ["web_app_service:realtime_stack", "start"], 0)
+            ok = r.status_code == 200 and data.get("ok") is True
+            return self._cmd_result(
+                ok,
+                "\n".join(filter(None, stdout + [json.dumps(data, ensure_ascii=False, indent=2)])),
+                "" if ok else json.dumps(data, ensure_ascii=False, indent=2),
+                ["bff", "sps", "realtime/start"],
+                0 if ok else 1,
+            )
 
     async def stop(self, payload: dict[str, Any] | None = None) -> dict[str, Any]:
+        """同步代理 SPS /api/v1/realtime/stop。BFF 不自行管理 pipeline 子进程。"""
         payload = payload or {}
+        force = bool(payload.get("force"))
+        stop_sps = bool(payload.get("stop_sps") or force)
+        with_frontend = bool(payload.get("with_frontend"))
         stdout: list[str] = []
         stderr: list[str] = []
-        force = bool(payload.get("force"))
-        with_frontend = bool(payload.get("with_frontend"))
 
-        ok_sps, msg_sps = await self._stop_sps(force=force)
-        stdout.append(msg_sps if ok_sps else "")
-        stderr.append("" if ok_sps else msg_sps)
+        if not await self._is_http_healthy(f"http://127.0.0.1:{self._sps_port}/healthz"):
+            if stop_sps:
+                # SPS unreachable — try force stop by killing port
+                ok_sps, msg_sps = await self._stop_sps(force=force)
+                stdout.append(msg_sps if ok_sps else "")
+                stderr.append("" if ok_sps else msg_sps)
+            if with_frontend:
+                ok_fe, msg_fe = await self._stop_frontend(force=force)
+                stdout.append(msg_fe if ok_fe else "")
+                stderr.append("" if ok_fe else msg_fe)
+            return self._cmd_result(
+                bool(force),  # force stop is best-effort
+                "\n".join(filter(None, stdout)),
+                "\n".join(filter(None, stderr)),
+                ["bff", "sps", "realtime/stop"],
+                0 if force else 1,
+            )
+
+        try:
+            async with httpx.AsyncClient(timeout=60.0, trust_env=False) as client:
+                r = await client.get(f"http://127.0.0.1:{self._sps_port}/api/v1/realtime/stop")
+                data = r.json()
+        except Exception as exc:
+            return self._cmd_result(
+                False,
+                "",
+                f"SPS realtime stop failed: {exc}",
+                ["bff", "sps_stop"],
+                1,
+            )
+
+        ok = r.status_code == 200 and data.get("ok") is True
+
+        if stop_sps:
+            ok_sps, msg_sps = await self._stop_sps(force=force)
+            stdout.append(msg_sps if ok_sps else "")
+            stderr.append("" if ok_sps else msg_sps)
 
         if with_frontend:
-            ok_frontend, msg_frontend = await self._stop_frontend(force=force)
-            stdout.append(msg_frontend if ok_frontend else "")
-            stderr.append("" if ok_frontend else msg_frontend)
+            ok_fe, msg_fe = await self._stop_frontend(force=force)
+            stdout.append(msg_fe if ok_fe else "")
+            stderr.append("" if ok_fe else msg_fe)
 
-        ok = ok_sps and not any(stderr)
-        return self._cmd_result(ok, "\n".join(filter(None, stdout)) + "\n", "\n".join(filter(None, stderr)), ["web_app_service:realtime_stack", "stop"], 0 if ok else 1)
+        return self._cmd_result(
+            ok,
+            "\n".join(filter(None, stdout + [json.dumps(data, ensure_ascii=False, indent=2)])),
+            "" if ok else json.dumps(data, ensure_ascii=False, indent=2),
+            ["bff", "sps", "realtime/stop"],
+            0 if ok else 1,
+        )
 
     async def logs(self, *, lines: int = 200, max_age_minutes: int = 180) -> dict[str, Any]:
         lines = max(20, min(int(lines), 2000))
         max_age_minutes = max(10, min(int(max_age_minutes), 1440))
-        files = [
-            self._log_dir / "stock_processing_service_8090.log",
-            self._log_dir / "web_app_service_8000.log",
-            self._log_dir / "frontend_vite.log",
-            self._log_dir / "frontend_5173.log",
-        ]
+        log_dir = self._realtime_log_dir()
+        files = self._realtime_log_files(log_dir)
         cutoff_ts = time.time() - (max_age_minutes * 60)
         payload: dict[str, list[str]] = {}
         for file_path in files:
             payload[file_path.name] = self._read_recent_lines(file_path, lines=lines, cutoff_ts=cutoff_ts)
         return {
-            "log_dir": str(self._log_dir),
+            "log_dir": str(log_dir),
+            "run_id": self._current_realtime_run_id(log_dir),
             "lines": lines,
             "max_age_minutes": max_age_minutes,
             "files": payload,
@@ -164,20 +269,6 @@ class RealtimeStackManager:
         self._sps_process = None
         log_fd.close()
         return False, "[fail] stock_processing_service did not become healthy within 30s"
-
-    async def _trigger_sps_start(self, stdout: list, stderr: list) -> None:
-        """异步触发 SPS 启动管线，不阻塞按钮响应。"""
-        await asyncio.sleep(3)  # 等 SPS 完全就绪
-        try:
-            import httpx as _httpx
-            async with _httpx.AsyncClient(timeout=30.0, trust_env=False) as _client:
-                r = await _client.get(f"http://127.0.0.1:{self._sps_port}/api/v1/realtime/start")
-                if r.status_code == 200:
-                    stdout.append("[ok] realtime pipeline started")
-                else:
-                    stderr.append(f"[warn] SPS start returned {r.status_code}")
-        except Exception as exc:
-            stderr.append(f"[warn] SPS start failed: {exc}")
 
     async def _start_frontend(self) -> tuple[bool, str]:
         frontend_dir = self._project_root / "frontend"
@@ -311,3 +402,12 @@ class RealtimeStackManager:
             "stderr": stderr,
             "command": command,
         }
+
+
+def _pid_alive(pid: int) -> bool:
+    """检查进程是否存活。"""
+    try:
+        os.kill(pid, 0)
+        return True
+    except (ProcessLookupError, PermissionError):
+        return False

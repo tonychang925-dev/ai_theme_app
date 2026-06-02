@@ -37,8 +37,10 @@ from stock_processing_service.application.services.event_driven_opportunity_buil
     EventDrivenOpportunityBuilder,
 )
 from stock_processing_service.application.services.pre_market_brief_builder import PreMarketBriefBuilder
+from stock_processing_service.application.services.trade_plan_review_service import TradePlanReviewService
 from stock_processing_service.application.jobs.collection_job_manager import CollectionJobManager
 from stock_processing_service.publishers.notion_post_market_recap_publisher import NotionPostMarketRecapPublisher
+from stock_processing_service.integrations.notion.notion_trade_plan_repository import NotionTradePlanRepository
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidate
 from stock_processing_service.domain.services.w2s_confirm_service import W2SConfirmService
 from stock_processing_service.contracts.dto import StockAuctionDTO
@@ -87,15 +89,24 @@ async def _init_stock_match_engine_background(app: FastAPI) -> None:
             logger.warning("StockMatchEngine background init skipped: DEEPSEEK_API_KEY not set")
             return
 
+        # 使用短超时 + TCPConnector 避免 SSL 层卡死阻塞事件循环
+        _connector = aiohttp.TCPConnector(
+            force_close=True,
+            ttl_dns_cache=300,
+            enable_cleanup_closed=True,
+        )
+
         class DeepSeekLLM:
             async def chat_completion(self, messages, temperature=0.1, max_tokens=512):
                 headers = {"Authorization": f"Bearer {deepseek_key}", "Content-Type": "application/json"}
                 payload = {"model": "deepseek-chat", "messages": messages,
                            "temperature": temperature, "max_tokens": max_tokens, "stream": False}
-                async with aiohttp.ClientSession() as s:
+                timeout = aiohttp.ClientTimeout(
+                    total=30, connect=10, sock_connect=10, sock_read=25,
+                )
+                async with aiohttp.ClientSession(connector=_connector, timeout=timeout) as s:
                     async with s.post("https://api.deepseek.com/v1/chat/completions",
-                                      headers=headers, json=payload,
-                                      timeout=aiohttp.ClientTimeout(total=60)) as r:
+                                      headers=headers, json=payload) as r:
                         data = await r.json()
                         return {"content": data["choices"][0]["message"]["content"]}
 
@@ -153,7 +164,12 @@ async def lifespan(app: FastAPI):
     app.state.match_engine_status = {"enabled": False, "ready": False, "loading": False, "error": None}
     if os.environ.get("SPS_ENABLE_STOCK_MATCH_ENGINE", "false").lower() in ("1", "true", "yes", "on"):
         app.state.match_engine_status["enabled"] = True
-        asyncio.create_task(_init_stock_match_engine_background(app))
+        # 在独立线程中运行避免 SSL 阻塞事件循环（同 jyhf_market 问题）
+        def _init_match_engine_sync():
+            import asyncio as _asyncio
+            _asyncio.run(_init_stock_match_engine_background(app))
+        loop = asyncio.get_running_loop()
+        loop.run_in_executor(None, _init_match_engine_sync)
     else:
         logger.info("StockMatchEngine disabled (set SPS_ENABLE_STOCK_MATCH_ENGINE=true to enable)")
     from stock_processing_service.application.services.collection_task_registry import get_default_registry
@@ -166,15 +182,90 @@ async def lifespan(app: FastAPI):
         redis_url=_redis_url(),
         write_db=_db_name(),
     )
-    # 启动时自动拉起实时管线进程
-    asyncio.create_task(_auto_start_realtime_stack(app))
+    app.state.w2s_alert_status = {
+        "enabled": False,
+        "running": False,
+        "phase": "idle",
+        "trade_date": None,
+        "candidate_trade_date": None,
+        "last_run_at": None,
+        "last_success_at": None,
+        "last_error": None,
+        "last_built": 0,
+        "last_pushed": 0,
+        "total_built": 0,
+        "total_pushed": 0,
+    }
+    # P1-C: SPS 启动时清理上一次 run 遗留的僵尸 consumer（进程已死但 Redis 仍记录）
+    async def _cleanup_zombie_consumers_once():
+        await asyncio.sleep(3)  # 等 Redis 连接就绪
+        try:
+            import redis.asyncio as aioredis
+            from database_service.streams.utils.consumer_group_manager import ConsumerGroupManager
+            r = aioredis.from_url(_redis_url(), decode_responses=True)
+            mgr = ConsumerGroupManager(r)
+            result = await mgr.cleanup_stale_consumers(idle_minutes=10, execute=True)
+            await r.aclose()
+            if result["stale_consumers_deleted"]:
+                logger.warning(
+                    "ZOMBIE_CONSUMER_CLEANUP: deleted=%d reclaimed=%d pending",
+                    result["stale_consumers_deleted"], result["pending_reclaimed"],
+                )
+            else:
+                logger.info("Consumer cleanup: no zombies found")
+        except Exception as exc:
+            logger.warning("Consumer cleanup skipped: %s", exc)
+    asyncio.create_task(_cleanup_zombie_consumers_once())
+
+    # 默认不在 SPS 初始化时自动拉起实时管线。
+    # 实时采集应由页面按钮或显式运维命令启动，避免服务重启时产生隐藏副作用。
+    if os.environ.get("SPS_AUTO_START_REALTIME_STACK", "false").lower() in ("1", "true", "yes", "on"):
+        asyncio.create_task(_auto_start_realtime_stack(app))
+    else:
+        logger.info("Realtime stack auto-start disabled (set SPS_AUTO_START_REALTIME_STACK=true to enable)")
     # P1-G: 支撑位突破检测后台任务（盘中自动运行）
     _kline_alert_task = asyncio.create_task(_run_kline_break_detector_loop(app))
+    _w2s_alert_task = None
+    if os.environ.get("SPS_ENABLE_W2S_ALERT_LOOP", "true").lower() in ("1", "true", "yes", "on"):
+        app.state.w2s_alert_status["enabled"] = True
+        _w2s_alert_task = asyncio.create_task(_run_w2s_alert_loop(app))
+    else:
+        logger.info("W2S alert loop disabled (set SPS_ENABLE_W2S_ALERT_LOOP=true to enable)")
+
+    # P2: jyhf_market 行情采集器自动启动（默认关闭—web_app orchestrator 管理生命周期）
+    def _start_jyhf_sync(collector) -> None:
+        """在独立线程中运行 jyhf_market collector.start()，避免 SSL 阻塞主线程事件循环。"""
+        import asyncio as _asyncio
+        _asyncio.run(collector.start())
+
+    if os.environ.get("SPS_ENABLE_JYHF_MARKET_AUTO_START", "false").lower() in ("1", "true", "yes", "on"):
+        async def _auto_start_jyhf_market():
+            await asyncio.sleep(5)
+            from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
+            try:
+                c = get_jyhf_market_collector()
+                # 在 executor 中运行避免 SSL 阻塞事件循环（JYHF API 47.99.190.68 不可达时 PySSL_select→poll 卡死主线程）
+                loop = asyncio.get_running_loop()
+                await loop.run_in_executor(None, _start_jyhf_sync, c)
+                logger.info("jyhf_market collector auto-started")
+            except Exception as exc:
+                logger.warning("jyhf_market auto-start failed: %s", exc)
+        _jyhf_market_task = asyncio.create_task(_auto_start_jyhf_market())
+    else:
+        _jyhf_market_task = None
+        logger.info("JYHF market auto-start DISABLED (web_app orchestrator owns lifecycle)")
 
     await app.state.phase1_repo.initialize()
     try:
         yield
     finally:
+        for task in (_kline_alert_task, _w2s_alert_task, _jyhf_market_task):
+            if task:
+                task.cancel()
+                try:
+                    await task
+                except asyncio.CancelledError:
+                    pass
         close = getattr(gw, "close", None)
         if callable(close):
             await close()
@@ -216,6 +307,13 @@ class NotionPublishPayload(BaseModel):
     trade_date: str
     force: bool = False
     dry_run: bool = False
+
+
+class TradePlanReviewPayload(BaseModel):
+    trade_date: str
+    plan_date: str
+    dry_run: bool = True
+    force: bool = False
 
 
 class PreMarketBriefRebuildPayload(BaseModel):
@@ -1907,6 +2005,41 @@ async def publish_post_market_recap_to_notion(payload: NotionPublishPayload) -> 
     }
 
 
+@app.post("/api/v1/trade-plan/review")
+async def review_trade_plan(payload: TradePlanReviewPayload) -> dict[str, Any]:
+    try:
+        trade_dt = date.fromisoformat(payload.trade_date)
+        plan_dt = date.fromisoformat(payload.plan_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail="invalid trade_date or plan_date") from exc
+
+    try:
+        repository = NotionTradePlanRepository.from_env()
+        service = TradePlanReviewService(
+            repository=repository,
+            gateway=app.state.gateway,
+        )
+        result = await service.review(
+            trade_date=trade_dt,
+            plan_date=plan_dt,
+            dry_run=payload.dry_run,
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+    except RuntimeError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+
+    if not result.get("ok"):
+        code = str(result.get("error_code") or "")
+        if code == "TRADE_PLAN_NOT_FOUND":
+            raise HTTPException(status_code=404, detail=result)
+        if code == "POST_MARKET_RECAP_SNAPSHOT_MISSING":
+            raise HTTPException(status_code=424, detail=result)
+        raise HTTPException(status_code=500, detail=result)
+
+    return result
+
+
 @app.get("/api/v1/daily_review")
 async def get_daily_review(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
     """结构化每日复盘 — 从 post_market_recap_snapshot 派生。
@@ -1975,13 +2108,26 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
 
     existing = recap_doc.get("daily_review_v2")
     if isinstance(existing, dict) and existing.get("schema_version") == "daily_review_v2":
-        return existing
+        v2 = existing
+    else:
+        v2 = builder.build(
+            trade_date=d,
+            recap_doc=recap_doc,
+            recap_snapshot_version=str(row.get("snapshot_version") or ""),
+        )
 
-    return builder.build(
-        trade_date=d,
-        recap_doc=recap_doc,
-        recap_snapshot_version=str(row.get("snapshot_version") or ""),
-    )
+    # ── PR-14A: enrich with engine report on every read ──
+    try:
+        from stock_processing_service.application.services.post_market_engine_report_composer import (
+            PostMarketEngineReportComposer,
+        )
+        composer = PostMarketEngineReportComposer()
+        engine_report = composer.compose(recap_doc)
+        v2 = {**v2, **engine_report}
+    except Exception:
+        pass
+
+    return v2
 
 
 @app.post("/api/v2/post-market/daily-review-v2/generate")
@@ -2022,6 +2168,18 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
         recap_doc=recap_doc,
         recap_snapshot_version=str(row.get("snapshot_version") or ""),
     )
+
+    # ── PR-14A: compose engine report into DailyReviewV2 ──
+    try:
+        from stock_processing_service.application.services.post_market_engine_report_composer import (
+            PostMarketEngineReportComposer,
+        )
+        composer = PostMarketEngineReportComposer()
+        engine_report = composer.compose(recap_doc)
+        v2 = {**v2, **engine_report}
+    except Exception:
+        pass  # best-effort, don't block
+
     updated_recap_doc = dict(recap_doc)
     updated_recap_doc["daily_review_v2"] = v2
     updated_payload = dict(normalized)
@@ -2993,11 +3151,38 @@ async def clear_pending_stream() -> dict[str, Any]:
         raise HTTPException(status_code=500, detail=f"failed to clear pending: {e}")
 
 
+def _extract_event_id_number(raw_event_id) -> int | None:
+    """从各种格式的 event_id 中提取数字 ID，兼容 temp/tmp 等非标准格式。"""
+    try:
+        if isinstance(raw_event_id, (int, float)):
+            return int(raw_event_id)
+        s = str(raw_event_id)
+        # 尝试直接解析整数
+        try:
+            return int(s)
+        except (ValueError, TypeError):
+            pass
+        # 尝试从 "temp_1775795161_news_1775795098848_" 等格式中提取数字部分
+        parts = s.split("_")
+        for part in parts:
+            if part.isdigit() and len(part) > 5:
+                return int(part)
+        # 从末尾扫描提取数字
+        import re
+        digits = re.findall(r"\d{6,}", s)
+        if digits:
+            return int(max(digits, key=len))
+        return None
+    except Exception:
+        return None
+
+
 @app.post("/api/v1/review-queue/import-pending")
 async def import_pending_to_review_queue() -> dict[str, Any]:
     """将 stream:events:pending 中的弱信号事件导入 event_review_queue 复核队列。
 
     读取 pending 流中所有事件，按 event_id 去重，写入复核队列（跳过已存在的）。
+    不清空已成功导入的条目（由 DecisionExecutor 管理 stream 截断）。
     """
     try:
         import redis.asyncio as aioredis
@@ -3021,7 +3206,9 @@ async def import_pending_to_review_queue() -> dict[str, Any]:
             imported = 0
             skipped = 0
             errors = 0
+            error_details: list[str] = []
             seen_event_ids: set[int] = set()
+            succeeded_msgs: list[str] = []
 
             for msg_id, msg_data in pending_messages:
                 try:
@@ -3031,11 +3218,17 @@ async def import_pending_to_review_queue() -> dict[str, Any]:
                     else:
                         event_data = event_data_str or {}
 
-                    event_id = event_data.get("event_id")
-                    if not event_id:
+                    raw_event_id = event_data.get("event_id")
+                    if not raw_event_id:
                         skipped += 1
+                        error_details.append(f"msg {msg_id}: missing event_id")
                         continue
-                    event_id = int(event_id)
+
+                    event_id = _extract_event_id_number(raw_event_id)
+                    if event_id is None or event_id <= 0:
+                        skipped += 1
+                        error_details.append(f"msg {msg_id}: unparseable event_id={raw_event_id}")
+                        continue
 
                     # 同一批次内去重
                     if event_id in seen_event_ids:
@@ -3056,25 +3249,37 @@ async def import_pending_to_review_queue() -> dict[str, Any]:
                     )
                     if ok:
                         imported += 1
+                        succeeded_msgs.append(msg_id)
                     else:
-                        skipped += 1  # already exists
-                except Exception:
+                        skipped += 1
+                        error_details.append(
+                            f"event_id={event_id}: enqueue failed (FK constraint or already exists)"
+                        )
+                except Exception as exc:
                     errors += 1
+                    error_details.append(f"msg {msg_id}: {exc}")
 
-            # 导入完成后清空 pending 流（保留 stream 本身，DecisionExecutor 需要它存在）
-            cleared = len(pending_messages)
-            await r.xtrim("stream:events:pending", maxlen=0, approximate=False)
+            # 仅清除已成功导入的消息（不再全量清空）
+            total = len(pending_messages)
+            if succeeded_msgs:
+                # 删除已导入的消息（逐个删除）
+                for msg_id in succeeded_msgs:
+                    try:
+                        await r.xdel("stream:events:pending", msg_id)
+                    except Exception:
+                        pass
 
             logger.warning(
-                "imported %d pending events to review queue (skipped=%d errors=%d), cleared %d from stream",
-                imported, skipped, errors, cleared,
+                "imported %d/%d pending events to review queue (skipped=%d errors=%d)",
+                imported, total, skipped, errors,
             )
             return {
                 "ok": True,
                 "imported": imported,
                 "skipped": skipped,
                 "errors": errors,
-                "cleared": cleared,
+                "total": total,
+                "error_details": error_details[:20],  # 最多返回前 20 条
             }
         finally:
             await r.aclose()
@@ -3243,7 +3448,7 @@ async def get_theme_workspace(
                 LEFT JOIN LATERAL (
                     SELECT sds_inner.pct_chg,
                            CASE WHEN jsonb_typeof(sds_inner.raw_json)='array' AND jsonb_array_length(sds_inner.raw_json)>35
-                                AND (sds_inner.raw_json->>35) ~ '^-?[0-9]+(\.[0-9]+)?$'
+                                AND (sds_inner.raw_json->>35) ~ '^-?[0-9]+(\\.[0-9]+)?$'
                                 THEN (sds_inner.raw_json->>35)::numeric ELSE 0 END AS main_net_inflow,
                            sds_inner.is_leader,
                            sds_inner.rank_order,
@@ -4002,9 +4207,55 @@ async def _query_backtest(sql: str, params: list = None):
     return await gw._client.execute_query(sql, tuple(params) if params else None)
 
 
+async def _execute_raw_backtest(sql: str, params: list = None):
+    """Helper: run a write query using a raw asyncpg connection."""
+    import asyncpg
+    conn = await asyncpg.connect(
+        host="localhost", port=5432, user="postgres", password="postgres",
+        database="stock_data_test",
+    )
+    try:
+        await conn.execute(sql, *(params or []))
+    finally:
+        await conn.close()
+
+
 # ═══════════════════════════════════════════════════════════════════════════
 # v2.8a Strategy Lab API
 # ═══════════════════════════════════════════════════════════════════════════
+
+@app.post("/api/v1/backtest/param-sets")
+async def save_param_set(payload: dict[str, Any]) -> dict[str, Any]:
+    """Save a parameter set for reuse. Returns param_set_id."""
+    try:
+        import uuid as _uuid
+        param_set_id = payload.get("param_set_id") or f"ps_{datetime.now().strftime('%Y%m%d%H%M%S')}_{_uuid.uuid4().hex[:6]}"
+        name = str(payload.get("name", ""))
+        desc = str(payload.get("description", ""))
+        category = str(payload.get("category", "w2s"))
+        config = payload.get("params", payload.get("config_json", {}))
+        signal_source = str(payload.get("signal_source", "w2s_signal_validation_v1_1b"))
+
+        await _execute_raw_backtest(
+            """INSERT INTO strategy_param_set (param_set_id, name, description, category, config_json, signal_source)
+               VALUES ($1,$2,$3,$4,$5::jsonb,$6)
+               ON CONFLICT (param_set_id) DO UPDATE SET
+               config_json=EXCLUDED.config_json, updated_at=NOW()""",
+            [param_set_id, name, desc, category, json.dumps(config, ensure_ascii=False, default=str), signal_source],
+        )
+        return {"param_set_id": param_set_id, "status": "saved"}
+    except Exception as e:
+        import traceback; traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/v1/backtest/param-sets")
+async def list_param_sets() -> dict[str, Any]:
+    """List saved parameter sets."""
+    rows = await _query_backtest(
+        """SELECT param_set_id, name, description, category, config_json, signal_source, created_at
+           FROM strategy_param_set ORDER BY created_at DESC LIMIT 50""")
+    return {"param_sets": [dict(r) for r in rows]}
 
 @app.get("/api/v1/backtest/param-schema")
 async def param_schema() -> dict[str, Any]:
@@ -4097,14 +4348,132 @@ async def get_backtest_result(run_id: str) -> dict[str, Any]:
     }
 
 
+# ── PR-13D: 大盘指数采集 ─────────────────────────────────────────────────
+
+@app.post("/api/v1/index-kline/collect")
+async def collect_index_kline(payload: dict[str, Any] | None = None) -> dict[str, Any]:
+    """采集大盘指数日K + 技术分析并落库。"""
+    p = payload or {}
+    trade_date_str = str(p.get("trade_date") or p.get("date") or "")
+    force = bool(p.get("force", False))
+
+    from datetime import date as _date
+    if trade_date_str:
+        try:
+            td = _date.fromisoformat(trade_date_str)
+        except ValueError:
+            return {"success": False, "error": "INVALID_DATE"}
+    else:
+        td = _date.today()
+
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+
+    from stock_processing_service.application.jobs.index_kline_collect_job import IndexKlineCollectJob
+    job = IndexKlineCollectJob(pool=pool)
+    result = await job.collect(trade_date=td, lookback_days=120, force=force)
+    return result.to_dict()
+
+
+@app.get("/api/v1/index-kline/status")
+async def get_index_kline_status(trade_date: str = "") -> dict[str, Any]:
+    """查询指数采集状态。"""
+    from datetime import date as _date
+    if trade_date:
+        try:
+            td = _date.fromisoformat(trade_date)
+        except ValueError:
+            return {"ok": False, "error": "INVALID_DATE"}
+    else:
+        td = _date.today()
+
+    try:
+        import asyncpg
+        conn = await asyncpg.connect("postgresql://localhost/stock_data_test", timeout=5)
+        try:
+            tech_count = await conn.fetchval(
+                "SELECT COUNT(*) FROM index_technical_daily WHERE trade_date = $1::date", td
+            )
+            kline_count = await conn.fetchval(
+                "SELECT COUNT(DISTINCT index_code) FROM index_daily_kline WHERE trade_date = $1::date", td
+            )
+            if tech_count > 0:
+                return {
+                    "ok": True, "trade_date": td.isoformat(),
+                    "count": tech_count, "total": 7,
+                    "technical_count": tech_count,
+                }
+            elif kline_count > 0:
+                return {
+                    "ok": True, "trade_date": td.isoformat(),
+                    "count": kline_count, "total": 7,
+                    "technical_count": 0,
+                }
+            else:
+                return {"ok": False, "trade_date": td.isoformat(), "count": 0, "total": 7}
+        finally:
+            await conn.close()
+    except Exception as e:
+        return {"ok": False, "error": str(e)[:100]}
+
+
+@app.get("/api/v1/index-technical/daily")
+async def get_index_technical_daily(trade_date: str = "") -> list[dict[str, Any]]:
+    """读取指数技术分析日快照。"""
+    from datetime import date as _date
+    if trade_date:
+        try:
+            td = _date.fromisoformat(trade_date)
+        except ValueError:
+            return []
+    else:
+        td = _date.today()
+
+    try:
+        import asyncpg, json as _json
+        conn = await asyncpg.connect("postgresql://localhost/stock_data_test", timeout=5)
+        try:
+            rows = await conn.fetch(
+                "SELECT * FROM index_technical_daily WHERE trade_date = $1::date ORDER BY index_code", td
+            )
+            result = []
+            for r in rows:
+                d = dict(r)
+                for k in ("trade_date", "created_at", "updated_at"):
+                    if k in d and hasattr(d[k], "isoformat"):
+                        d[k] = d[k].isoformat()
+                for k in ("risk_flags_json", "diagnostics_json"):
+                    if k in d and isinstance(d[k], str):
+                        d[k.replace("_json", "")] = _json.loads(d[k])
+                    elif k in d:
+                        d[k.replace("_json", "")] = d[k]
+                result.append(d)
+            return result
+        finally:
+            await conn.close()
+    except Exception:
+        return []
+
+
 # ── P1-A: 久赢恒丰行情接口直采 ──────────────────────────────────────────
 
 @app.get("/api/v1/jyhf-market/status")
 async def jyhf_market_status():
-    """返回行情采集器状态。"""
+    """返回行情采集器内存快照状态（轻量只读，无网络调用）。"""
+    import asyncio as _asyncio
     from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
     c = get_jyhf_market_collector()
-    return {"ok": True, **c.status()}
+    try:
+        async with _asyncio.timeout(1.0):
+            return {"ok": True, **c.status()}
+    except _asyncio.TimeoutError:
+        return {
+            "ok": False,
+            "running": False,
+            "token_valid": None,
+            "state": "status_timeout",
+            "error": "jyhf-market status timeout (1s)",
+        }
 
 
 @app.post("/api/v1/jyhf-market/collector/start")
@@ -4164,6 +4533,38 @@ async def jyhf_market_index():
         return JSONResponse(status_code=502, content={"ok": False, "error": str(exc)})
 
 
+# ── P4-2F: SSE connection tracker ──
+
+_sse_lock = asyncio.Lock()
+_sse_clients: dict[str, int] = {}  # stream_key → active connection count
+
+
+def _sse_connected(stream_key: str) -> None:
+    """Mark an SSE connection as active (non-blocking spawn)."""
+    async def _inc():
+        async with _sse_lock:
+            _sse_clients[stream_key] = _sse_clients.get(stream_key, 0) + 1
+    asyncio.ensure_future(_inc())
+
+
+def _sse_disconnected(stream_key: str) -> None:
+    """Mark an SSE connection as closed (non-blocking spawn)."""
+    async def _dec():
+        async with _sse_lock:
+            v = _sse_clients.get(stream_key, 0) - 1
+            if v <= 0:
+                _sse_clients.pop(stream_key, None)
+            else:
+                _sse_clients[stream_key] = v
+    asyncio.ensure_future(_dec())
+
+
+async def _sse_snapshot() -> dict[str, int]:
+    """Return a snapshot of active SSE clients per stream (safe copy)."""
+    async with _sse_lock:
+        return dict(_sse_clients)
+
+
 # ── P1-H: K线支撑告警 SSE ──────────────────────────────────────────────
 
 
@@ -4181,6 +4582,7 @@ async def kline_alerts_stream(last_id: str = Query(default="0-0", description="�
     async def _event_generator():
         redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
         stream_key = "stream:kline:alerts"
+        _sse_connected(stream_key)
         r = aioredis.from_url(redis_url, decode_responses=True)
         try:
             try:
@@ -4219,6 +4621,7 @@ async def kline_alerts_stream(last_id: str = Query(default="0-0", description="�
                     await asyncio.sleep(5)
         finally:
             await r.aclose()
+            _sse_disconnected(stream_key)
 
     return StreamingResponse(
         _event_generator(),
@@ -4241,17 +4644,19 @@ async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
     from fastapi.responses import StreamingResponse
 
     async def _event_generator():
-        r = aioredis.from_url(os.getenv("REDIS_URL", "redis://localhost:6379/0"), decode_responses=True)
+        stream_key = "stream:w2s:alerts"
+        _sse_connected(stream_key)
+        r = aioredis.from_url(_redis_url(), decode_responses=True)
         try:
             try:
-                await r.xinfo_stream("stream:w2s:alerts")
+                await r.xinfo_stream(stream_key)
             except Exception:
                 yield f"event: heartbeat\ndata: {json.dumps({'msg': 'w2s stream not found'})}\n\n"
                 return
             read_id = last_id if last_id != "0-0" else "0-0"
             while True:
                 try:
-                    msgs = await r.xread({"stream:w2s:alerts": read_id}, count=20, block=15000)
+                    msgs = await r.xread({stream_key: read_id}, count=20, block=15000)
                     if msgs:
                         for _, entries in msgs:
                             for entry_id, data in entries:
@@ -4266,11 +4671,495 @@ async def w2s_alerts_stream(last_id: str = Query(default="0-0")):
                     await asyncio.sleep(5)
         finally:
             await r.aclose()
+            _sse_disconnected(stream_key)
 
     return StreamingResponse(
         _event_generator(), media_type="text/event-stream",
         headers={"Cache-Control": "no-cache", "Connection": "keep-alive", "X-Accel-Buffering": "no"},
     )
+
+
+@app.get("/api/v1/w2s-alerts/status")
+async def w2s_alerts_status():
+    """W2S 告警后台计算 loop 状态。"""
+    return dict(getattr(app.state, "w2s_alert_status", {}) or {})
+
+
+# ── P4-2E: Alert readiness endpoints (read-only Redis inspection, no SSE) ──
+
+
+async def _redis_stream_readiness(
+    *,
+    service: str,
+    stream_key: str,
+) -> dict:
+    """只读 Redis stream 检查。不创建 SSE 连接，不启动后台任务。
+
+    返回: {ok, ready, state, service, stream_length, last_event_id,
+           last_event_at, blockers, evidence}
+    """
+    import redis.asyncio as _aioredis
+    from datetime import datetime as _dt, timezone as _tz, timedelta as _td
+
+    TZ_CN = _tz(_td(hours=8))
+    checked_at = _dt.now(TZ_CN).isoformat()
+    redis_url = str(os.getenv("REDIS_URL") or "redis://localhost:6379/0").strip()
+
+    try:
+        r = _aioredis.from_url(redis_url, decode_responses=True, socket_connect_timeout=2)
+        try:
+            length = await asyncio.wait_for(r.xlen(stream_key), timeout=1.0)
+
+            last_event_id = None
+            last_event_at = None
+
+            if length and length > 0:
+                items = await asyncio.wait_for(r.xrevrange(stream_key, count=1), timeout=1.0)
+                if items:
+                    last_event_id = items[0][0]
+                    try:
+                        ts_ms = int(str(last_event_id).split("-")[0])
+                        last_event_at = _dt.fromtimestamp(ts_ms / 1000, TZ_CN).isoformat()
+                    except Exception:
+                        pass
+
+            ready = bool(length and length > 0)
+            state = "ready" if ready else "degraded"
+            blockers = []
+
+            if not ready:
+                blockers.append("stream has no events")
+
+            sse_count = (await _sse_snapshot()).get(stream_key, 0)
+
+            return {
+                "ok": True,
+                "ready": ready,
+                "state": state,
+                "service": service,
+                "stream_key": stream_key,
+                "stream_length": length,
+                "last_event_id": str(last_event_id) if last_event_id else None,
+                "last_event_at": last_event_at,
+                "active_sse_clients": sse_count,
+                "blockers": blockers,
+                "evidence": {
+                    "redis_ok": True,
+                    "checked_at": checked_at,
+                    "note": "readiness endpoint; does not open SSE stream",
+                },
+            }
+        finally:
+            await r.aclose()
+    except Exception as exc:
+        return {
+            "ok": False,
+            "ready": False,
+            "state": "blocked",
+            "service": service,
+            "stream_key": stream_key,
+            "stream_length": None,
+            "last_event_id": None,
+            "last_event_at": None,
+            "active_sse_clients": 0,
+            "blockers": [f"redis readiness check failed: {exc}"],
+            "evidence": {
+                "redis_ok": False,
+                "checked_at": checked_at,
+                "error": str(exc),
+                "note": "readiness endpoint; does not open SSE stream",
+            },
+        }
+
+
+@app.get("/api/v1/kline-alerts/readiness")
+async def kline_alerts_readiness():
+    """K线支撑告警 readiness — 只读 Redis stream:kline:alerts 状态。"""
+    try:
+        async with asyncio.timeout(1.5):
+            return await _redis_stream_readiness(
+                service="support_alert",
+                stream_key=os.getenv("KLINE_ALERT_STREAM_KEY", "stream:kline:alerts"),
+            )
+    except Exception as exc:
+        return {
+            "ok": False, "ready": False, "state": "blocked",
+            "service": "support_alert", "blockers": [f"readiness timeout: {exc}"],
+        }
+
+
+@app.get("/api/v1/w2s-alerts/readiness")
+async def w2s_alerts_readiness():
+    """W2S 告警 readiness — 只读 Redis stream:w2s:alerts 状态。"""
+    try:
+        async with asyncio.timeout(1.5):
+            return await _redis_stream_readiness(
+                service="w2s_alert",
+                stream_key=os.getenv("W2S_ALERT_STREAM_KEY", "stream:w2s:alerts"),
+            )
+    except Exception as exc:
+        return {
+            "ok": False, "ready": False, "state": "blocked",
+            "service": "w2s_alert", "blockers": [f"readiness timeout: {exc}"],
+        }
+
+
+# ── P4-2F: Redis Health & Stream Diagnostics ──
+
+# Stream keys to monitor (env-overridable)
+_REDIS_HEALTH_STREAM_KEYS = [
+    os.getenv("RH_STREAM_KEY_W2S", "stream:w2s:alerts"),
+    os.getenv("RH_STREAM_KEY_KLINE", "stream:kline:alerts"),
+    os.getenv("RH_STREAM_KEY_NEWS_RAW", "stream:news:raw"),
+    os.getenv("RH_STREAM_KEY_EVENTS_STRUCTURED", "stream:events:structured"),
+    os.getenv("RH_STREAM_KEY_EVENTS_DECISION", "stream:events:decision"),
+    os.getenv("RH_STREAM_KEY_DEAD_LETTER", "stream:dead:letter"),
+    os.getenv("RH_STREAM_KEY_EVENTS_PENDING", "stream:events:pending"),
+    os.getenv("RH_STREAM_KEY_EVENTS_NORMAL", "stream:events:normal"),
+    os.getenv("RH_STREAM_KEY_EVENTS_MAJOR", "stream:events:major"),
+]
+
+# In-memory DLQ length snapshots for growth trend (keyed by stream_key)
+_dlq_snapshot: dict[str, dict] = {}
+
+
+def _compute_dlq_trend(stream_key: str, current_length: int) -> dict | None:
+    """Compare current DLQ length against previous snapshot. Returns None on first call."""
+    prev = _dlq_snapshot.get(stream_key)
+    # Always update snapshot with current value
+    _dlq_snapshot[stream_key] = {"length": current_length, "ts": time.time()}
+    if prev is None:
+        return None
+    delta = current_length - prev["length"]
+    elapsed = time.time() - prev["ts"]
+    prev_len = prev["length"]
+    if prev_len > 0:
+        delta_pct = round(delta / prev_len * 100, 1)
+    else:
+        delta_pct = 100.0 if delta > 0 else 0.0
+    if delta > 0:
+        trend = "growing"
+    elif delta < 0:
+        trend = "shrinking"
+    else:
+        trend = "stable"
+    return {
+        "trend": trend,
+        "delta": delta,
+        "delta_pct": delta_pct,
+        "prev_length": prev_len,
+        "since_s": round(elapsed, 1),
+    }
+
+
+async def _redis_health_snapshot() -> dict:
+    """只读 Redis 运行态诊断。短超时，不扫全库。"""
+    import redis.asyncio as _aioredis
+    from datetime import datetime as _dt, timezone as _tz, timedelta as _td
+
+    TZ_CN = _tz(_td(hours=8))
+    checked_at = _dt.now(TZ_CN).isoformat()
+    redis_url = str(os.getenv("REDIS_URL") or "redis://localhost:6379/0").strip()
+    url_masked = redis_url.replace("://:", "://***@") if "@" in redis_url else redis_url  # no-op for localhost
+    blockers: list[str] = []
+    state = "ready"
+
+    # ── 1. PING ──
+    try:
+        r = _aioredis.from_url(redis_url, decode_responses=True, socket_connect_timeout=1)
+        t0 = time.time()
+        await asyncio.wait_for(r.ping(), timeout=0.5)
+        latency_ms = int((time.time() - t0) * 1000)
+    except Exception as exc:
+        return {
+            "ok": False, "state": "blocked", "latency_ms": None,
+            "redis_url_masked": url_masked, "checked_at": checked_at,
+            "blockers": [f"redis ping failed: {exc}"],
+            "server": {}, "streams": {}, "consumer_groups": {},
+            "consumer_groups_summary": [], "dead_letter_growth": {},
+            "sse_clients": {},
+        }
+
+    if latency_ms > 500:
+        state = "blocked"
+        blockers.append(f"redis ping too slow ({latency_ms}ms)")
+    elif latency_ms > 100:
+        state = "degraded"
+        blockers.append(f"redis ping elevated ({latency_ms}ms)")
+
+    # Redis server health (independent from stream/dead-letter)
+    redis_state = state  # from PING
+
+    # ── 2. INFO ──
+    server_info: dict[str, Any] = {}
+    _expected_blocked = int(os.getenv("REDIS_EXPECTED_BLOCKED_CLIENTS", "0"))
+    _blocked_warn = int(os.getenv("REDIS_BLOCKED_CLIENTS_WARN", "8"))
+    _blocked_block = int(os.getenv("REDIS_BLOCKED_CLIENTS_BLOCK", "20"))
+
+    try:
+        raw_info = await asyncio.wait_for(r.info(), timeout=0.5)
+        blocked = int(raw_info.get("blocked_clients", 0))
+        server_info = {
+            "connected_clients": raw_info.get("connected_clients", 0),
+            "blocked_clients": blocked,
+            "blocked_clients_expected": _expected_blocked,
+            "used_memory_human": raw_info.get("used_memory_human", "?"),
+            "maxmemory_human": raw_info.get("maxmemory_human", "0B"),
+            "evicted_keys": raw_info.get("evicted_keys", 0),
+            "rejected_connections": raw_info.get("rejected_connections", 0),
+            "uptime_in_seconds": raw_info.get("uptime_in_seconds", 0),
+            "instantaneous_ops_per_sec": raw_info.get("instantaneous_ops_per_sec", 0),
+        }
+        if blocked >= _blocked_block:
+            redis_state = "blocked"
+            blockers.append(f"blocked_clients critical: {blocked} (limit={_blocked_block})")
+        elif blocked > max(_expected_blocked, _blocked_warn):
+            redis_state = "degraded"
+            blockers.append(f"blocked_clients above expected: {blocked} (expected<={_expected_blocked})")
+    except Exception as exc:
+        blockers.append(f"redis INFO failed: {exc}")
+        if redis_state == "ready":
+            redis_state = "degraded"
+
+    # ── 3. Stream checks ──
+    streams: dict[str, dict] = {}
+    consumer_groups: dict[str, list[dict]] = {}
+    _cg_warn_pending = int(os.getenv("REDIS_CG_PENDING_WARN", "100"))
+    _cg_warn_lag = int(os.getenv("REDIS_CG_LAG_WARN", "1000"))
+    _cg_warn_lag_ratio = float(os.getenv("REDIS_CG_LAG_RATIO_WARN", "0.70"))
+    _cg_warn_idle_ms = int(os.getenv("REDIS_CG_IDLE_WARN_MS", "60000"))
+    _cg_warn_delivery_lag_s = int(os.getenv("REDIS_CG_DELIVERY_LAG_WARN_S", "300"))
+    _stream_mem_warn_mb = int(os.getenv("REDIS_STREAM_MEM_WARN_MB", "128"))
+    stream_state = "ready"
+    dead_letter_state = "ready"
+    dead_letter_growth: dict[str, dict] = {}
+    _dl_warn = int(os.getenv("REDIS_DEAD_LETTER_WARN", "100"))
+    _dl_block = int(os.getenv("REDIS_DEAD_LETTER_BLOCK", "1000"))
+    _dl_growth_warn = int(os.getenv("REDIS_DEAD_LETTER_GROWTH_WARN", "10"))
+
+    try:
+        for stream_key in _REDIS_HEALTH_STREAM_KEYS:
+            sv_state = "ready"
+            sv_blockers: list[str] = []
+            try:
+                length = await asyncio.wait_for(r.xlen(stream_key), timeout=0.3)
+                # Per-stream memory footprint
+                memory_bytes: int | None = None
+                try:
+                    memory_bytes = await asyncio.wait_for(
+                        r.memory_usage(stream_key), timeout=0.2
+                    )
+                except Exception:
+                    pass
+                if memory_bytes is not None and memory_bytes > _stream_mem_warn_mb * 1024 * 1024:
+                    sv_blockers.append(
+                        f"stream memory high: {memory_bytes / 1024 / 1024:.1f}MB "
+                        f"(warn>{_stream_mem_warn_mb}MB)"
+                    )
+                last_id = None
+                last_event_at = None
+                if length and length > 0:
+                    items = await asyncio.wait_for(r.xrevrange(stream_key, count=1), timeout=0.3)
+                    if items:
+                        last_id = items[0][0]
+                        try:
+                            ts_ms = int(str(last_id).split("-")[0])
+                            last_event_at = _dt.fromtimestamp(ts_ms / 1000, TZ_CN).isoformat()
+                        except Exception:
+                            pass
+            except Exception as exc:
+                length = -1
+                sv_state = "unknown"
+                sv_blockers.append(f"stream check failed: {exc}")
+
+            streams[stream_key] = {
+                "exists": length >= 0,
+                "length": length if length >= 0 else None,
+                "memory_bytes": memory_bytes,
+                "last_id": str(last_id) if last_id else None,
+                "last_event_at": last_event_at,
+                "state": sv_state,
+                "blockers": sv_blockers,
+            }
+
+            # Consumer group inspection
+            try:
+                groups_raw = await asyncio.wait_for(r.xinfo_groups(stream_key), timeout=0.3)
+                cg_list: list[dict] = []
+                for g in groups_raw:
+                    gname = g.get("name", "?")
+                    pending = int(g.get("pending", 0))
+                    lag = int(g.get("lag", 0))
+                    lag_ratio = (lag / length) if length and length > 0 else 0.0
+                    last_delivered = str(g.get("last-delivered-id", ""))
+                    consumers = int(g.get("consumers", 0))
+
+                    # Delivery lag: time gap between stream's latest entry and group's last-delivered
+                    delivery_lag_s: float | None = None
+                    if last_id and last_delivered:
+                        try:
+                            ts_last = int(str(last_id).split("-")[0]) / 1000.0
+                            ts_delivered = int(last_delivered.split("-")[0]) / 1000.0
+                            delivery_lag_s = round(ts_last - ts_delivered, 1)
+                        except Exception:
+                            pass
+
+                    # Per-consumer idle times (XINFO CONSUMERS)
+                    consumers_detail: list[dict] = []
+                    try:
+                        cons_raw = await asyncio.wait_for(
+                            r.xinfo_consumers(stream_key, gname), timeout=0.2
+                        )
+                        for c in cons_raw:
+                            cname = str(c.get("name", "?"))
+                            cidle = int(c.get("idle", 0))
+                            cpending = int(c.get("pending", 0))
+                            consumers_detail.append({
+                                "name": cname,
+                                "idle_ms": cidle,
+                                "pending": cpending,
+                            })
+                            if cidle > _cg_warn_idle_ms:
+                                sv_blockers.append(
+                                    f"consumer {gname}/{cname}: idle={cidle}ms "
+                                    f"(warn>{_cg_warn_idle_ms}ms)"
+                                )
+                    except Exception:
+                        pass  # XINFO CONSUMERS may fail or be unsupported
+
+                    cg_entry = {
+                        "name": gname,
+                        "consumers": consumers,
+                        "pending": pending,
+                        "lag": lag,
+                        "lag_ratio": round(lag_ratio, 4),
+                        "last_delivered_id": last_delivered,
+                        "delivery_lag_s": delivery_lag_s,
+                        "consumers_detail": consumers_detail,
+                    }
+                    cg_list.append(cg_entry)
+                    if pending > _cg_warn_pending:
+                        sv_blockers.append(f"group {gname}: pending={pending} (warn>{_cg_warn_pending})")
+                    if lag > _cg_warn_lag:
+                        sv_blockers.append(f"group {gname}: lag={lag} (warn>{_cg_warn_lag})")
+                    if lag_ratio > _cg_warn_lag_ratio:
+                        sv_blockers.append(
+                            f"group {gname}: lag_ratio={lag_ratio:.2f} "
+                            f"(lag={lag}, xlen={length}, warn>{_cg_warn_lag_ratio:.2f})"
+                        )
+                    if delivery_lag_s is not None and delivery_lag_s > _cg_warn_delivery_lag_s:
+                        sv_blockers.append(
+                            f"group {gname}: delivery lag={delivery_lag_s}s "
+                            f"(warn>{_cg_warn_delivery_lag_s}s)"
+                        )
+                if cg_list:
+                    consumer_groups[stream_key] = cg_list
+            except Exception:
+                pass  # stream may not have groups
+
+            if sv_state == "ready" and sv_blockers:
+                sv_state = "degraded"
+                streams[stream_key]["state"] = sv_state
+
+            # Dead letter: separate health axis
+            if "dead" in stream_key and length is not None and length > 0:
+                if length >= _dl_block:
+                    dead_letter_state = "blocked"
+                    blockers.append(f"dead letter critical backlog: {length} (limit={_dl_block})")
+                elif length > _dl_warn:
+                    dead_letter_state = "degraded"
+                    blockers.append(f"dead letter backlog: {length} (warn>{_dl_warn})")
+
+                # DLQ growth trend — compare against previous snapshot
+                dlq_trend = _compute_dlq_trend(stream_key, length)
+                if dlq_trend is not None:
+                    dead_letter_growth[stream_key] = dlq_trend
+                    if dlq_trend["trend"] == "growing" and dlq_trend["delta"] >= _dl_growth_warn:
+                        if dead_letter_state == "ready":
+                            dead_letter_state = "degraded"
+                        blockers.append(
+                            f"dead letter growing: {stream_key} +{dlq_trend['delta']} "
+                            f"({dlq_trend['delta_pct']}%, was {dlq_trend['prev_length']} "
+                            f"{dlq_trend['since_s']}s ago)"
+                        )
+                # Don't affect redis_state or stream_state from dead letter
+
+            # Stream aggregate: if any key stream is unhealthy, mark stream_state
+            if sv_state != "ready" and "dead" not in stream_key:
+                if stream_state == "ready":
+                    stream_state = sv_state
+    finally:
+        try:
+            await r.aclose()
+        except Exception:
+            pass
+
+    # Aggregate overall state: worst of redis/stream/dead_letter
+    overall = redis_state
+    if stream_state == "blocked" or dead_letter_state == "blocked":
+        overall = "blocked"
+    elif stream_state == "degraded" or dead_letter_state == "degraded":
+        overall = "degraded"
+
+    # SSE client snapshot
+    sse_clients = await _sse_snapshot()
+
+    # Consumer groups flat summary for operational visibility
+    cg_summary: list[dict] = []
+    for sk, cg_list in consumer_groups.items():
+        for cg in cg_list:
+            cg_summary.append({
+                "stream": sk,
+                "group": cg["name"],
+                "consumers": cg["consumers"],
+                "pending": cg["pending"],
+                "lag": cg["lag"],
+                "lag_ratio": cg.get("lag_ratio"),
+                "delivery_lag_s": cg.get("delivery_lag_s"),
+            })
+
+    return {
+        "ok": True,
+        "state": overall,
+        "redis_state": redis_state,
+        "stream_state": stream_state,
+        "dead_letter_state": dead_letter_state,
+        "consumer_groups": consumer_groups,
+        "consumer_groups_summary": cg_summary,
+        "dead_letter_growth": dead_letter_growth,
+        "sse_clients": sse_clients,
+        "latency_ms": latency_ms,
+        "redis_url_masked": url_masked,
+        "checked_at": checked_at,
+        "server": server_info,
+        "streams": streams,
+        "blockers": blockers,
+    }
+
+
+@app.get("/api/v1/runtime/redis-health")
+async def redis_health():
+    """Redis 运行态健康诊断：PING + INFO + 关键 Stream 检查。
+
+    只读，短超时，不扫全库，不创建连接池。"""
+    try:
+        async with asyncio.timeout(1.5):
+            return await _redis_health_snapshot()
+    except Exception as exc:
+        return {
+            "ok": False,
+            "state": "blocked",
+            "latency_ms": None,
+            "redis_url_masked": str(os.getenv("REDIS_URL", "redis://localhost:6379/0")).strip(),
+            "checked_at": "",
+            "server": {},
+            "streams": {},
+            "consumer_groups": {},
+            "consumer_groups_summary": [],
+            "dead_letter_growth": {},
+            "sse_clients": {},
+            "blockers": [f"redis health timeout/error: {exc}"],
+        }
 
 
 # ── P1-3.2: Decision 消费侧试点 — 统一读取 _decision 字段 ──
@@ -4342,7 +5231,7 @@ async def _run_kline_break_detector_loop(app: FastAPI) -> None:
     from stock_processing_service.sinks.kline_alert_redis_pusher import KlineAlertRedisPusher
 
     dsn = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/stock_data_test")
-    redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+    redis_url = _redis_url()
     detector = KlineBreakDetector(dsn, redis_url=redis_url)
     pusher = KlineAlertRedisPusher(redis_url)
 
@@ -4383,6 +5272,115 @@ async def _run_kline_break_detector_loop(app: FastAPI) -> None:
     await pusher.close()
 
 
+def _w2s_intraday_session(now: datetime) -> bool:
+    h, m = now.hour, now.minute
+    return (h == 9 and m >= 30) or (10 <= h <= 14) or (h == 15 and m <= 5)
+
+
+def _w2s_auction_session(now: datetime) -> bool:
+    h, m = now.hour, now.minute
+    return h == 9 and 25 <= m <= 29
+
+
+async def _resolve_w2s_candidate_date(confirm_trade_date: date) -> date:
+    try:
+        return await _resolve_prev_trade_date(confirm_trade_date)
+    except Exception:
+        from datetime import timedelta
+        return confirm_trade_date - timedelta(days=1)
+
+
+async def _run_w2s_alert_loop(app: FastAPI) -> None:
+    """P1-I: 弱转强统一告警后台循环。
+
+    这个 loop 负责把文档里的 w2s_unified_alert_service 托管起来：
+    9:25-9:29 运行竞价确认，9:30-15:05 运行盘中 v2.2 观察，
+    输出统一进入 stream:w2s:alerts，前端 W2S 勾选框只负责 SSE 订阅。
+    """
+    logger_w2s = logging.getLogger("sps.w2s_alert.loop")
+    await asyncio.sleep(float(os.getenv("SPS_W2S_ALERT_LOOP_BOOT_DELAY", "8") or 8))
+
+    from stock_processing_service.domain.services.w2s_unified_alert_service import W2SUnifiedAlertService
+    from stock_processing_service.sinks.w2s_alert_redis_pusher import W2SAlertRedisPusher
+
+    dsn = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/stock_data_test")
+    redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+    intraday_interval = max(int(os.getenv("SPS_W2S_INTRADAY_INTERVAL_SECONDS", "30") or 30), 5)
+    idle_interval = max(int(os.getenv("SPS_W2S_IDLE_INTERVAL_SECONDS", "30") or 30), 10)
+    auction_retry_interval = max(int(os.getenv("SPS_W2S_AUCTION_RETRY_SECONDS", "20") or 20), 5)
+
+    svc = W2SUnifiedAlertService(dsn, redis_url=redis_url)
+    pusher = W2SAlertRedisPusher(redis_url)
+    status = app.state.w2s_alert_status
+    status["enabled"] = True
+    status["running"] = True
+    auction_done_for: str | None = None
+
+    try:
+        while True:
+            try:
+                now = datetime.now(ZoneInfo("Asia/Shanghai"))
+                trade_date = now.date()
+                status["running"] = True
+                status["last_run_at"] = now.isoformat()
+                status["trade_date"] = trade_date.isoformat()
+
+                if now.weekday() >= 5:
+                    status["phase"] = "weekend_idle"
+                    await asyncio.sleep(60)
+                    continue
+
+                candidate_date = await _resolve_w2s_candidate_date(trade_date)
+                status["candidate_trade_date"] = candidate_date.isoformat()
+
+                if _w2s_auction_session(now):
+                    status["phase"] = "auction"
+                    alerts = await svc.build_auction_alerts(candidate_date.isoformat(), trade_date.isoformat())
+                    pushed = await pusher.push_unified_alerts(alerts)
+                    status["last_built"] = len(alerts)
+                    status["last_pushed"] = pushed
+                    status["total_built"] = int(status.get("total_built") or 0) + len(alerts)
+                    status["total_pushed"] = int(status.get("total_pushed") or 0) + pushed
+                    status["last_success_at"] = datetime.now(ZoneInfo("Asia/Shanghai")).isoformat()
+                    status["last_error"] = None
+                    if pushed or alerts:
+                        auction_done_for = trade_date.isoformat()
+                        logger_w2s.warning(
+                            "W2S auction loop: built=%d pushed=%d candidate=%s confirm=%s",
+                            len(alerts), pushed, candidate_date, trade_date,
+                        )
+                    await asyncio.sleep(auction_retry_interval if auction_done_for != trade_date.isoformat() else 60)
+                    continue
+
+                if _w2s_intraday_session(now):
+                    status["phase"] = "intraday"
+                    alerts = await svc.build_intraday_alerts(trade_date.isoformat())
+                    pushed = await pusher.push_unified_alerts(alerts)
+                    status["last_built"] = len(alerts)
+                    status["last_pushed"] = pushed
+                    status["total_built"] = int(status.get("total_built") or 0) + len(alerts)
+                    status["total_pushed"] = int(status.get("total_pushed") or 0) + pushed
+                    status["last_success_at"] = datetime.now(ZoneInfo("Asia/Shanghai")).isoformat()
+                    status["last_error"] = None
+                    if pushed:
+                        logger_w2s.warning("W2S intraday loop: built=%d pushed=%d trade=%s", len(alerts), pushed, trade_date)
+                    await asyncio.sleep(intraday_interval)
+                    continue
+
+                status["phase"] = "idle"
+                await asyncio.sleep(idle_interval)
+            except asyncio.CancelledError:
+                raise
+            except Exception as exc:
+                status["last_error"] = str(exc)
+                logger_w2s.warning("W2S alert loop error: %s", exc)
+                await asyncio.sleep(30)
+    finally:
+        status["running"] = False
+        await svc.close()
+        await pusher.close()
+
+
 def _row_to_dict(row: Any) -> dict[str, Any]:
     """Convert a database row to a dict."""
     if isinstance(row, dict):
@@ -4392,3 +5390,164 @@ def _row_to_dict(row: Any) -> dict[str, Any]:
     if hasattr(row, "__dict__"):
         return {k: v for k, v in row.__dict__.items() if not k.startswith("_")}
     return dict(row)
+
+
+# ── PR-12.5: Mainline Review API ──
+
+@app.get("/api/v2/mainline-review/queue")
+async def get_mainline_review_queue(
+    trade_date: str | None = None,
+    status: str | None = None,
+    limit: int = 200,
+) -> dict[str, Any]:
+    """查询主线审核队列。"""
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+    if pool is None:
+        return {"items": [], "total": 0}
+    td = date.fromisoformat(trade_date) if trade_date else None
+    async with pool.acquire() as conn:
+        where = []; params: list = []; i = 0
+        if td is not None: i += 1; where.append(f"trade_date = ${i}::date"); params.append(td)
+        if status is not None: i += 1; where.append(f"review_status = ${i}"); params.append(status)
+        i += 1; params.append(min(limit, 500))
+        cond = ("WHERE " + " AND ".join(where)) if where else ""
+        rows = await conn.fetch(f"SELECT * FROM mainline_review_queue {cond} ORDER BY review_priority DESC NULLS LAST LIMIT ${i}", *params)
+        items = [_row_to_dict(r) for r in rows]
+        pending = await conn.fetchval("SELECT COUNT(*) FROM mainline_review_queue WHERE review_status = $1", "pending") if not status else None
+        return {"items": items, "total": pending, "pending_count": pending}
+
+
+@app.get("/api/v2/mainline-review/registry")
+async def get_mainline_registry(trade_date: str | None = None, limit: int = 100) -> dict[str, Any]:
+    """查询已确认的主线注册表。"""
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+    if pool is None:
+        return {"items": [], "total": 0}
+    async with pool.acquire() as conn:
+        td = date.fromisoformat(trade_date) if trade_date else None
+        params: list = []; i = 0
+        if td is not None: i += 1; params.append(td); w = f"valid_from <= ${i}::date AND (valid_to IS NULL OR valid_to >= ${i}::date)"
+        else: w = "1=1"
+        i += 1; params.append(min(limit, 100))
+        rows = await conn.fetch(f"SELECT * FROM mainline_registry WHERE identity_status = 'confirmed' AND {w} ORDER BY valid_from DESC LIMIT ${i}", *params)
+    return {"items": [_row_to_dict(r) for r in rows], "total": len(rows)}
+
+
+@app.post("/api/v2/mainline-review/import-candidates")
+async def import_mainline_review_candidates(payload: dict[str, Any]) -> dict[str, Any]:
+    """导入当日主线候选。从 recap snapshot 读取 analyst_review_items。"""
+    td_str = str(payload.get("trade_date") or "")
+    if not td_str:
+        return {"ok": False, "error": "trade_date required"}
+    try:
+        d = date.fromisoformat(td_str)
+    except ValueError:
+        return {"ok": False, "error": "invalid date"}
+    try:
+        row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
+        if not row:
+            return {"ok": False, "error": "no snapshot for date"}
+        payload_data = _normalize_recap_payload(row)
+        rd = payload_data.get("recap_doc") or payload_data
+        items = rd.get("analyst_review_items") if isinstance(rd, dict) else None
+        if not isinstance(items, list) or not items:
+            return {"ok": False, "error": "no analyst_review_items in snapshot", "count": 0}
+        pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+        pool = getattr(pool, "pool", None) if pool else None
+        if pool is None:
+            return {"ok": False, "error": "no db pool"}
+        count = 0
+        from database_service.managers.postgres_manager import _row_to_dict as _rd
+        async with pool.acquire() as conn:
+            for item in items:
+                try:
+                    await conn.execute("""
+                        INSERT INTO mainline_review_queue
+                          (review_id, trade_date, subject_key, theme_name, machine_state, mainline_type,
+                           confirmation_path, trigger_mode, review_reason, review_priority, review_status,
+                           suggested_human_decision, scores_json, evidence_json, risk_flags_json, diagnostics_json)
+                        VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16)
+                        ON CONFLICT (review_id) DO NOTHING
+                    """, str(item.get("review_id", "")), d, str(item.get("subject_key", "")),
+                        str(item.get("theme_name", "")), str(item.get("machine_state", "")),
+                        str(item.get("mainline_type", "")), str(item.get("confirmation_path", "")),
+                        str(item.get("trigger_mode", "")), str(item.get("review_reason", "")),
+                        float(item.get("review_priority", 0)), str(item.get("review_status", "pending")),
+                        str(item.get("suggested_human_decision", "")),
+                        json.dumps(item.get("scores", {})), json.dumps(item.get("evidence", {})),
+                        json.dumps(item.get("risk_flags", {})), json.dumps(item.get("diagnostics", {})),
+                    )
+                    count += 1
+                except Exception:
+                    pass
+        return {"ok": True, "count": count}
+    except Exception as exc:
+        logger.error("import mainline candidates failed: %s", exc)
+        return {"ok": False, "error": str(exc)[:200]}
+
+
+@app.post("/api/v2/mainline-review/{review_id}/decision")
+async def submit_mainline_review_decision(review_id: str, payload: dict[str, Any]) -> dict[str, Any]:
+    """提交人工审核决策。"""
+    decision = str(payload.get("human_decision", ""))
+    valid = {"confirm_mainline", "watch", "reject", "downgrade_to_theme", "merge_into_existing_mainline"}
+    if decision not in valid:
+        return {"ok": False, "error": f"invalid decision: {decision}", "valid": list(valid)}
+
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+    if pool is None:
+        return {"ok": False, "error": "no db pool"}
+
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc)
+    reviewed_by = str(payload.get("human_reviewer", "system") or "system")
+    notes = str(payload.get("human_notes", "") or "")
+
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow("SELECT * FROM mainline_review_queue WHERE review_id = $1", review_id)
+        if not row:
+            return {"ok": False, "error": "review not found"}
+
+        td = row["trade_date"]
+
+        # Update the review queue entry
+        await conn.execute("""
+            UPDATE mainline_review_queue SET review_status = 'reviewed', human_decision = $2,
+              human_reviewer = $3, human_notes = $4, reviewed_at = $5 WHERE review_id = $1
+        """, review_id, decision, reviewed_by, notes, now)
+
+        if decision == "confirm_mainline":
+            csk = str(payload.get("canonical_subject_key", "") or "")
+            ml_name = str(payload.get("mainline_name", "") or row["theme_name"] or "")
+            if not csk:
+                return {"ok": False, "error": "confirm_mainline requires canonical_subject_key"}
+            mid = f"ml_{csk}_{td.strftime('%Y%m') if td else 'unknown'}"
+            await conn.execute("""
+                INSERT INTO mainline_registry (mainline_id, mainline_name, canonical_subject_key, identity_status, valid_from,
+                  mainline_type, source_review_id, core_subject_keys_json, related_subject_keys_json, human_reviewer, human_notes)
+                VALUES ($1,$2,$3,'confirmed',$4,$5,$6,$7,$8,$9,$10)
+                ON CONFLICT (mainline_id) DO UPDATE SET
+                  mainline_name=$2, identity_status='confirmed', updated_at=NOW()
+            """, mid, ml_name, csk, td,
+                str(row.get("mainline_type") or ""), review_id,
+                json.dumps([csk]), json.dumps(payload.get("related_subject_keys", []) or []),
+                reviewed_by, notes)
+            return {"ok": True, "action": "confirmed", "mainline_id": mid}
+
+        if decision == "merge_into_existing_mainline":
+            target = str(payload.get("merge_target_mainline_id", "") or "")
+            if not target:
+                return {"ok": False, "error": "merge requires merge_target_mainline_id"}
+            related = list(payload.get("related_subject_keys", []) or [])
+            existing = await conn.fetchval("SELECT related_subject_keys_json FROM mainline_registry WHERE mainline_id = $1", target)
+            current = json.loads(existing) if isinstance(existing, str) else (existing or [])
+            merged = list(set(current + related + [str(row["subject_key"] or "")]))
+            await conn.execute("UPDATE mainline_registry SET related_subject_keys_json = $2, updated_at = NOW() WHERE mainline_id = $1", target, json.dumps(merged))
+            return {"ok": True, "action": "merged", "target": target}
+
+        # watch / reject / downgrade_to_theme — queue only, no registry
+        return {"ok": True, "action": decision, "registry_written": False}
+

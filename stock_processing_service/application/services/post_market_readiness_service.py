@@ -15,6 +15,7 @@ logger = logging.getLogger(__name__)
 # 核心表检查配置: (table_name, category, required)
 CORE_TABLE_CHECKS: list[tuple[str, str, bool]] = [
     ("subject_stock_daily_snapshot", "base", True),
+    ("jyhf_index_quote_snapshot", "base", False),  # 非交易日/采集缺失不阻塞，指数部分使用 fallback
     ("theme_cycle_judgement_v2", "derived", True),
     ("money_flow_enhanced", "derived", True),
     ("strong_stock_watch_history", "derived", True),
@@ -98,10 +99,22 @@ class PostMarketReadinessService:
                     if required:
                         result.missing_tables.append(table_name)
                     else:
-                        # dragon_tiger_object rows=0 → skipped_no_data
+                        reason = "no_dragon_tiger_day"
+                        if table_name == "dragon_tiger_object":
+                            job_row = await conn.fetchrow(
+                                """
+                                SELECT error_code, error_message, diagnostics
+                                FROM post_market_job_status
+                                WHERE trade_date = $1::date
+                                  AND job_key = 'dragon_tiger_object_build'
+                                """,
+                                trade_date,
+                            )
+                            if job_row and job_row["error_code"]:
+                                reason = str(job_row["error_code"])
                         result.skipped_tables.append({
                             "table": table_name,
-                            "reason": "no_dragon_tiger_day",
+                            "reason": reason,
                         })
 
         if result.missing_tables:

@@ -28,6 +28,13 @@ class SnapshotWritePort(Protocol):
     async def upsert_post_market_recap_snapshot(self, doc: PostMarketRecapSnapshot) -> int: ...
 
 
+class MainlineRegistryWritePort(Protocol):
+    """PR-9: Mainline Registry write operations."""
+    async def upsert_mainline_review_queue_rows(self, rows: list[dict[str, Any]]) -> int: ...
+    async def upsert_mainline_registry_rows(self, rows: list[dict[str, Any]]) -> int: ...
+    async def update_mainline_registry_related_keys(self, mainline_id: str, related_keys: list[str]) -> bool: ...
+
+
 class AlgorithmStateWritePort(Protocol):
     async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]]) -> int: ...
 
@@ -54,7 +61,7 @@ class StrongWatchWritePort(Protocol):
     async def prune_strong_watch_pool(self, trade_date: Any, weakening_min_score: float = 62.0) -> int: ...
 
 
-class StockWritePort(SnapshotWritePort, AlgorithmStateWritePort, StrongWatchWritePort, Protocol):
+class StockWritePort(SnapshotWritePort, AlgorithmStateWritePort, MainlineRegistryWritePort, StrongWatchWritePort, Protocol):
     """Backward-compatible composite port."""
 
 

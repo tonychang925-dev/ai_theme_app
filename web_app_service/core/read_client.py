@@ -22,7 +22,7 @@ from web_app_service.core.contracts import (
 class StockProcessingReadClient:
     def __init__(self) -> None:
         self._base_url = str(os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090")).rstrip("/")
-        self._timeout = float(os.getenv("WEB_APP_HTTP_TIMEOUT_SEC", "120"))
+        self._timeout = float(os.getenv("WEB_APP_HTTP_TIMEOUT_SEC", "15"))
 
     async def get_post_market_snapshot(self, trade_date: str) -> PostMarketSnapshotResponse:
         payload = await self._get_json("/api/v1/post_market_snapshot", {"trade_date": trade_date})

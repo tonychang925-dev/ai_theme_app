@@ -153,9 +153,10 @@ class ThemeKlineEvidenceBuilder:
         """Build equal-weighted cumulative index from 1000: [(date, index_value, volume), ...]."""
         result: list[tuple[str, Decimal, Decimal]] = []
         index = Decimal("1000")
+        stock_id_set = set(stock_ids)
         for td in trade_dates:
             day_bars = bars_by_date.get(td, [])
-            stock_bars = {b.stock_id: b for b in day_bars if b.stock_id in set(stock_ids)}
+            stock_bars = {b.stock_id: b for b in day_bars if b.stock_id in stock_id_set}
             if not stock_bars:
                 continue
             pcts = [b.pct_chg for b in stock_bars.values()]

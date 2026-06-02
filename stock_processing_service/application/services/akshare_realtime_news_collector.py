@@ -17,6 +17,7 @@ import asyncio
 import hashlib
 import json
 import logging
+import os
 from dataclasses import asdict, dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -61,6 +62,7 @@ class AkShareRealtimeNewsCollector:
         lookback_minutes: int = 180,
         status_path: str | Path | None = None,
         batch_size: int = 20,
+        stream_maxlen: int | None = None,
         prefilter_enabled: bool = True,
         prefilter_mode: str = "rule",
         prefilter_model_path: str = "",
@@ -73,6 +75,7 @@ class AkShareRealtimeNewsCollector:
         self.poll_interval_seconds = max(5, int(poll_interval_seconds))
         self.lookback_minutes = max(1, int(lookback_minutes))
         self.batch_size = max(1, int(batch_size))
+        self.stream_maxlen = max(1, int(stream_maxlen or os.getenv("REALTIME_NEWS_RAW_STREAM_MAXLEN", "50000")))
         self.status_path = Path(status_path) if status_path else None
         self._prefilter_skip_log = Path(prefilter_skip_log_path) if prefilter_skip_log_path else None
         if self._prefilter_skip_log:
@@ -207,7 +210,6 @@ class AkShareRealtimeNewsCollector:
         import akshare as ak
 
         sources: list[tuple[str, Any, str]] = [
-            ("cls",       ak.stock_info_global_cls, "cls"),
             ("sina",      ak.stock_info_global_sina, "sina"),
             ("ths",       ak.stock_info_global_ths, "ths"),
             ("futu",      ak.stock_info_global_futu, "futu"),
@@ -215,7 +217,7 @@ class AkShareRealtimeNewsCollector:
         ]
 
         # Per-source row limits to balance coverage vs noise
-        _SOURCE_LIMITS = {"cls": 30, "em": 50, "sina": 20, "ths": 20, "futu": 50, "cctv": 12}
+        _SOURCE_LIMITS = {"em": 50, "sina": 20, "ths": 20, "futu": 50, "cctv": 12}
 
         async def _fetch_one(label: str, func, channel: str) -> list[dict[str, Any]]:
             try:
@@ -384,7 +386,7 @@ class AkShareRealtimeNewsCollector:
             import redis.asyncio as redis
 
             self._redis = redis.Redis.from_url(self.redis_url, decode_responses=True)
-        await self._redis.xadd(self.stream, payload, maxlen=10000, approximate=True)
+        await self._redis.xadd(self.stream, payload, maxlen=self.stream_maxlen, approximate=True)
 
     @staticmethod
     def _dedupe_key(payload: dict[str, str]) -> str:

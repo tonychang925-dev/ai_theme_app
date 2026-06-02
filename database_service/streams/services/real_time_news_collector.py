@@ -85,6 +85,16 @@ class RealTimeNewsCollector:
             default_mode_value = "auto"
         self.default_mode = CollectionMode(default_mode_value)
 
+        # Backpressure: avoid publishing more raw news when the storage consumer is
+        # falling behind the bounded Redis Stream retention window.
+        self.redis_url = str(self.config.get("redis_url") or os.getenv("REDIS_URL", "redis://127.0.0.1:6379/0"))
+        self.raw_stream_key = str(self.config.get("raw_stream_key", "stream:news:raw"))
+        self.raw_consumer_group = str(self.config.get("raw_consumer_group", "news_storage_realtime"))
+        self.enable_raw_backpressure = bool(self.config.get("enable_raw_backpressure", True))
+        self.raw_backpressure_lag_ratio = float(self.config.get("raw_backpressure_lag_ratio", 0.70))
+        self.raw_backpressure_delivery_lag_s = float(self.config.get("raw_backpressure_delivery_lag_s", 300))
+        self.raw_backpressure_pending = int(self.config.get("raw_backpressure_pending", 1000))
+
         # prefilter
         self.enable_collector_prefilter = bool(self.config.get("enable_collector_prefilter", True))
         self.collector_drop_on_skip = bool(self.config.get("collector_drop_on_skip", True))
@@ -287,6 +297,22 @@ class RealTimeNewsCollector:
             if self._deduper:
                 self._deduper.new_round()
 
+            backpressure = await self._raw_stream_backpressure()
+            if backpressure.get("active"):
+                result["success"] = True
+                result["backpressure"] = backpressure
+                result["duration"] = time.time() - start_time
+                logger.warning(
+                    "raw stream backpressure active, skip collection: lag=%s xlen=%s ratio=%.3f "
+                    "pending=%s delivery_lag_s=%s",
+                    backpressure.get("lag"),
+                    backpressure.get("xlen"),
+                    float(backpressure.get("lag_ratio") or 0),
+                    backpressure.get("pending"),
+                    backpressure.get("delivery_lag_s"),
+                )
+                return result
+
             # 1. 采集新闻 (crawler only, 不做过滤/去重)
             news_items = await self._collect_news(actual_mode)
             result["news_collected"] = len(news_items)
@@ -393,6 +419,68 @@ class RealTimeNewsCollector:
 
         result["duration"] = time.time() - start_time
         return result
+
+    async def _raw_stream_backpressure(self) -> Dict[str, Any]:
+        """Return active=True when raw consumer lag risks trim loss."""
+        if not self.enable_raw_backpressure:
+            return {"active": False, "disabled": True}
+
+        try:
+            import redis.asyncio as aioredis
+
+            redis_client = aioredis.from_url(self.redis_url, decode_responses=True)
+            try:
+                xlen = int(await redis_client.xlen(self.raw_stream_key))
+                latest_items = await redis_client.xrevrange(self.raw_stream_key, count=1)
+                groups = await redis_client.xinfo_groups(self.raw_stream_key)
+            finally:
+                await redis_client.aclose()
+
+            group_info = None
+            for group in groups:
+                if str(group.get("name")) == self.raw_consumer_group:
+                    group_info = group
+                    break
+            if not group_info:
+                return {"active": False, "reason": "consumer_group_missing", "xlen": xlen}
+
+            lag = int(group_info.get("lag") or 0)
+            pending = int(group_info.get("pending") or 0)
+            last_delivered = str(group_info.get("last-delivered-id") or "")
+            lag_ratio = (lag / xlen) if xlen > 0 else 0.0
+            delivery_lag_s = 0.0
+            latest_id = str(latest_items[0][0]) if latest_items else ""
+            if latest_id and last_delivered and "-" in latest_id and "-" in last_delivered:
+                try:
+                    latest_ts = int(latest_id.split("-")[0]) / 1000.0
+                    delivered_ts = int(last_delivered.split("-")[0]) / 1000.0
+                    delivery_lag_s = max(0.0, latest_ts - delivered_ts)
+                except Exception:
+                    delivery_lag_s = 0.0
+
+            active = (
+                lag_ratio > self.raw_backpressure_lag_ratio
+                or delivery_lag_s > self.raw_backpressure_delivery_lag_s
+                or pending > self.raw_backpressure_pending
+            )
+            return {
+                "active": active,
+                "stream": self.raw_stream_key,
+                "group": self.raw_consumer_group,
+                "xlen": xlen,
+                "latest_id": latest_id,
+                "last_delivered_id": last_delivered,
+                "lag": lag,
+                "lag_ratio": round(lag_ratio, 4),
+                "pending": pending,
+                "delivery_lag_s": round(delivery_lag_s, 1),
+                "threshold_lag_ratio": self.raw_backpressure_lag_ratio,
+                "threshold_delivery_lag_s": self.raw_backpressure_delivery_lag_s,
+                "threshold_pending": self.raw_backpressure_pending,
+            }
+        except Exception as exc:
+            logger.warning("raw stream backpressure check skipped: %s", exc)
+            return {"active": False, "error": str(exc)}
 
     def _normalize_news_batch(self, news_items: List[Dict]) -> List[Dict]:
         """使用 NewsPayloadNormalizer 标准化整批新闻。"""

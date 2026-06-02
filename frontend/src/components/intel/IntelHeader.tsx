@@ -60,7 +60,7 @@ export function IntelHeader({
           <img src={collectionIcon} alt="采集控制台" className="quick-action-icon" />
           <span className="quick-action-tooltip">采集控制台</span>
         </button>
-        <button type="button" className="quick-action-card" onClick={() => navigateTo(`/recap?date=${recapDates.postMarket || ''}&report_type=post_market`)}>
+        <button type="button" className="quick-action-card" onClick={() => navigateTo(`/recap?date=${date}&report_type=post_market`)}>
           <img src={recapIcon} alt="当日复盘" className="quick-action-icon" />
           <span className="quick-action-tooltip">当日复盘</span>
         </button>

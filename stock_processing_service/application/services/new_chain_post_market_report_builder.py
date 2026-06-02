@@ -46,13 +46,20 @@ class NewChainPostMarketReportBuilder:
         ]
         top_stock_text = "、".join([name for name in top_stock_names if name]) or "暂无候选"
 
-        highlights = [
-            f"新链盘后快照已生成：A/B/C/D 依赖{'完整' if not missing_dependencies else '未完全命中'}",
-            f"强势观察池跟踪 {strong_watch_count or pool_written} 条，弱转强候选 {candidate_count} 条",
-            f"候选覆盖 {subject_count} 个题材，重点候选：{top_stock_text}",
-        ]
-        if missing_dependencies:
-            highlights.append(f"新链依赖未完全命中：{','.join(missing_dependencies)}")
+        highlights = self._market_highlights(
+            market_summary=dict(recap_doc.get("market_summary") or {}),
+            context=context,
+            candidate_count=candidate_count,
+            strong_watch_count=strong_watch_count or pool_written,
+            subject_count=subject_count,
+            top_stock_text=top_stock_text,
+        )
+        market_overview_review = self._build_market_overview_review(
+            context=context,
+            theme_name_map=theme_name_map,
+            cycles_by_theme=cycles_by_theme,
+            stock_fact_map=stock_fact_map,
+        )
 
         sections = [
             {
@@ -130,6 +137,7 @@ class NewChainPostMarketReportBuilder:
                 f"强势观察池 {pool_written} 条，弱转强候选 {candidate_count} 条。"
             ),
             "highlights": highlights,
+            "market_overview_review": market_overview_review,
             "sections": sections,
             "metadata": {
                 "source": "stock_processing_service.new_chain",
@@ -214,29 +222,298 @@ class NewChainPostMarketReportBuilder:
         pool_written: int,
     ) -> list[str]:
         market = dict(context.get("market") or {})
-        dependency_text = "；".join(
-            f"{name}={'ok' if ok else 'missing'}" for name, ok in dependency_status.items()
-        )
         if market:
+            market_summary = dict(recap_doc.get("market_summary") or {})
+            if market_summary:
+                return NewChainPostMarketReportBuilder._market_lines_from_summary(market_summary, market)
+            amount_line = (
+                f"两市成交额 {NewChainPostMarketReportBuilder._market_amount(market.get('market_total_amount'))}"
+                f"；较前一交易日 {NewChainPostMarketReportBuilder._signed_pct(market.get('market_amount_change_pct'))}"
+                if market.get("market_total_amount") not in (None, "")
+                else "两市成交额 --"
+            )
+            index_line = NewChainPostMarketReportBuilder._index_line(market)
+            top_gain_text = NewChainPostMarketReportBuilder._top_gain_concepts_text(context)
+            theme_names = NewChainPostMarketReportBuilder._market_theme_names(context, limit=3)
+            active_text = NewChainPostMarketReportBuilder._active_pulse_text(context, theme_names)
+            board_efficiency = NewChainPostMarketReportBuilder._board_efficiency(market)
             return [
                 (
-                    f"市场偏向 {market.get('market_bias') or '--'}；动作 {market.get('action_bias') or '--'}；"
-                    f"环境总分 {market.get('market_health_score') or '--'}"
+                    f"环境概览：{index_line}；{amount_line}；"
+                    f"市场偏向 {market.get('market_bias') or '--'}；动作 {market.get('action_bias') or '--'}"
                 ),
-                str(market.get("conclusion") or "市场结论待补充"),
-                f"广度 {market.get('breadth_status') or '--'}；短线情绪 {market.get('short_term_sentiment_status') or '--'}；接力生态 {market.get('relay_sentiment_status') or '--'}",
-                f"日内分歧 {market.get('intraday_fade_status') or '--'}",
-                f"新链依赖状态：{dependency_text}",
+                f"涨幅前三的概念：{top_gain_text}",
+                f"量能与广度：上涨 {market.get('up_count') or '--'}，下跌 {market.get('down_count') or '--'}；涨停 {market.get('limit_up_count') or '--'}，跌停 {market.get('limit_down_count') or '--'}；{market.get('breadth_status') or '--'}",
+                f"主流看点：{('、'.join(theme_names) if theme_names else '暂无明确主流方向')}",
+                f"个股活跃程度及脉络：{active_text}",
+                f"封板效率：{board_efficiency}",
+                f"市场结论：{market.get('short_term_sentiment_status') or '--'}；{market.get('relay_sentiment_status') or '--'}；{market.get('intraday_fade_status') or '--'}；环境总分 {market.get('market_health_score') or '--'}",
             ]
         return [
-            "新链盘后复盘已生成；报告来源 stock_processing_service A/B/C/D 快照，不再读取旧链 recap 表。",
-            f"依赖状态：{dependency_text}",
-            f"强势观察池写入 {pool_written} 条；历史跟踪 {strong_watch_count} 条；弱转强正式候选 {candidate_count} 条。",
-            (
-                f"输入模式 {recap_doc.get('layer_c_input_mode') or '--'}；"
-                f"snapshot_version {recap_doc.get('snapshot_version') or '--'}。"
-            ),
+            "环境概览：等待大盘环境数据生成",
+            f"量能与广度：强势观察池 {strong_watch_count or pool_written} 条；弱转强候选 {candidate_count} 条",
+            "主流看点：暂无明确主流方向",
+            "个股活跃程度及脉络：暂无足够盘面数据",
+            "封板效率：--",
         ]
+
+    @staticmethod
+    def _market_highlights(
+        *,
+        market_summary: dict[str, Any] | None = None,
+        context: dict[str, Any],
+        candidate_count: int,
+        strong_watch_count: int,
+        subject_count: int,
+        top_stock_text: str,
+    ) -> list[str]:
+        if market_summary:
+            focus = market_summary.get("mainstream_focus") or []
+            risks = market_summary.get("risk_notes") or []
+            return [
+                f"市场定性：{market_summary.get('market_overview') or '--'}",
+                f"主流看点：{('、'.join(str(x) for x in focus if str(x)) if focus else '暂无明确主流方向')}",
+                f"活跃脉络：{market_summary.get('activity_context') or '--'}",
+                f"封板效率：{market_summary.get('board_efficiency') or '--'}；操作倾向 {market_summary.get('action_bias') or '--'}；风险 {('、'.join(str(x) for x in risks if str(x)) if risks else '--')}",
+            ]
+        market = dict(context.get("market") or {})
+        themes = NewChainPostMarketReportBuilder._market_theme_names(context, limit=3)
+        bias = market.get("market_bias") or "--"
+        action = market.get("action_bias") or "--"
+        breadth = market.get("breadth_status") or "--"
+        sentiment = market.get("short_term_sentiment_status") or "--"
+        return [
+            f"市场定性：{bias}；{breadth}；{sentiment}；操作倾向 {action}",
+            f"主流看点：{('、'.join(themes) if themes else '暂无明确主流方向')}；候选覆盖 {subject_count} 个题材",
+            f"活跃脉络：强势观察池 {strong_watch_count} 条；弱转强候选 {candidate_count} 条；重点个股 {top_stock_text}",
+            f"封板效率：{NewChainPostMarketReportBuilder._board_efficiency(market)}",
+        ]
+
+    @staticmethod
+    def _build_market_overview_review(
+        *,
+        context: dict[str, Any],
+        theme_name_map: dict[str, str],
+        cycles_by_theme: dict[str, dict[str, Any]],
+        stock_fact_map: dict[tuple[str, str], dict[str, Any]],
+    ) -> dict[str, Any]:
+        market = dict(context.get("market") or {})
+        stock_rows = [dict(row or {}) for row in context.get("stock_facts") or []]
+        grouped = NewChainPostMarketReportBuilder._group_market_overview_rows(stock_rows, theme_name_map)
+
+        columns: list[dict[str, Any]] = []
+        for subject_key, item in grouped.items():
+            rows = item["rows"]
+            theme_name = item["theme_name"]
+            cycle = NewChainPostMarketReportBuilder._cycle_for(
+                cycles_by_theme,
+                subject_key=subject_key,
+                theme=theme_name,
+            )
+            active_mainline = bool(
+                cycle.get("final_mainline_alive")
+                and not cycle.get("fade_confirmed")
+            )
+            limit_up_count = sum(1 for row in rows if NewChainPostMarketReportBuilder._is_limit_up(row))
+            focus_stocks = NewChainPostMarketReportBuilder._build_focus_stocks(rows, stock_fact_map)
+            columns.append({
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+                "limit_up_count": limit_up_count,
+                "active_mainline": active_mainline,
+                "lifecycle_state": str(cycle.get("final_cycle_state") or item["rows"][0].get("cycle_state") or "unknown"),
+                "trade_action": NewChainPostMarketReportBuilder._theme_trade_action(cycle, limit_up_count),
+                "focus_stocks": focus_stocks,
+            })
+
+        columns.sort(
+            key=lambda col: (
+                -int(col.get("limit_up_count") or 0),
+                0 if col.get("active_mainline") else 1,
+                str(col.get("theme_name") or ""),
+            )
+        )
+        top_columns = columns[:10]
+        return {
+            "trade_date": str(context.get("trade_date") or market.get("trade_date") or ""),
+            "limit_up_total": NewChainPostMarketReportBuilder._int(market.get("limit_up_count")),
+            "limit_down_total": NewChainPostMarketReportBuilder._int(market.get("limit_down_count")),
+            "up_count": NewChainPostMarketReportBuilder._int(market.get("up_count")),
+            "down_count": NewChainPostMarketReportBuilder._int(market.get("down_count")),
+            "total_amount": market.get("market_total_amount"),
+            "theme_limitup_matrix": {
+                "columns": top_columns,
+                "max_rows": max((len(col.get("focus_stocks") or []) for col in top_columns), default=0),
+                "count_method": "display_by_theme",
+            },
+            "diagnostics": {
+                "theme_count": len(columns),
+                "stock_count": len(stock_rows),
+            },
+        }
+
+    @staticmethod
+    def _group_market_overview_rows(
+        rows: list[dict[str, Any]],
+        theme_name_map: dict[str, str],
+    ) -> dict[str, dict[str, Any]]:
+        grouped: dict[str, dict[str, Any]] = {}
+        for row in rows:
+            subject_key = str(row.get("subject_key") or "").strip()
+            theme_name = NewChainPostMarketReportBuilder._theme_name(row, theme_name_map)
+            group_key = subject_key or theme_name
+            bucket = grouped.setdefault(group_key, {"subject_key": subject_key or group_key, "theme_name": theme_name, "rows": []})
+            bucket["rows"].append(row)
+        return grouped
+
+    @staticmethod
+    def _is_limit_up(row: dict[str, Any]) -> bool:
+        if bool(row.get("limit_up")):
+            return True
+        pct = NewChainPostMarketReportBuilder._float(row.get("pct_chg"))
+        return pct >= 9.5
+
+    @staticmethod
+    def _build_focus_stocks(
+        rows: list[dict[str, Any]],
+        stock_fact_map: dict[tuple[str, str], dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        def _priority(row: dict[str, Any]) -> tuple[int, int, float, float]:
+            fact = NewChainPostMarketReportBuilder._fact_for(row, stock_fact_map)
+            in_layer_c = 0 if bool(row.get("in_layer_c") or fact.get("is_leader") or fact.get("leader_composite_score") is not None) else 1
+            is_d1 = 0 if bool(row.get("is_d1_candidate") or row.get("watch_score") is not None or row.get("candidate_score") is not None) else 1
+            board_count = int(
+                row.get("max_consecutive_limit_up_days")
+                or row.get("limit_up_days")
+                or row.get("board_count")
+                or 0
+            )
+            inflow = NewChainPostMarketReportBuilder._float(row.get("main_net_inflow") or fact.get("main_net_inflow"))
+            pct = NewChainPostMarketReportBuilder._float(row.get("pct_chg") or fact.get("pct_chg"))
+            return (in_layer_c, is_d1, -max(board_count, 0), -(inflow + pct))
+
+        top_rows = sorted(rows, key=_priority)[:6]
+        focus: list[dict[str, Any]] = []
+        for row in top_rows:
+            fact = NewChainPostMarketReportBuilder._fact_for(row, stock_fact_map)
+            board_count = int(
+                row.get("max_consecutive_limit_up_days")
+                or row.get("limit_up_days")
+                or row.get("board_count")
+                or fact.get("max_consecutive_limit_up_days")
+                or 0
+            )
+            focus.append({
+                "stock_id": str(row.get("stock_id") or ""),
+                "stock_name": str(row.get("stock_name") or row.get("stock_id") or ""),
+                "board_count": board_count if board_count > 0 else None,
+                "role_label": str(row.get("role_label") or row.get("role") or row.get("candidate_level") or ""),
+                "in_layer_c": bool(row.get("in_layer_c") or fact.get("is_leader") or fact.get("leader_composite_score") is not None),
+                "is_d1_candidate": bool(row.get("is_d1_candidate") or row.get("watch_score") is not None or row.get("candidate_score") is not None),
+                "trade_action": str(row.get("trade_action") or row.get("next_day_action") or "观察"),
+            })
+        return focus
+
+    @staticmethod
+    def _theme_trade_action(cycle: dict[str, Any], limit_up_count: int) -> str:
+        if cycle.get("fade_confirmed"):
+            return "回避"
+        if cycle.get("fade_watch"):
+            return "观察"
+        if bool(cycle.get("final_mainline_alive")) and limit_up_count > 0:
+            state = str(cycle.get("final_cycle_state") or "")
+            if state in {"start", "fermentation", "acceleration"}:
+                return "主线参与"
+            if state in {"divergence", "repair"}:
+                return "主线分歧"
+            if state in {"climax"}:
+                return "谨慎"
+            return "主线观察"
+        if limit_up_count >= 3:
+            return "轮动跟随"
+        if limit_up_count > 0:
+            return "轮动观察"
+        return "观察"
+
+    @staticmethod
+    def _market_lines_from_summary(summary: dict[str, Any], market: dict[str, Any]) -> list[str]:
+        top_concepts = summary.get("top_gain_concepts") if isinstance(summary.get("top_gain_concepts"), list) else []
+        indexes = summary.get("index_performance") if isinstance(summary.get("index_performance"), list) else []
+        focus = summary.get("mainstream_focus") if isinstance(summary.get("mainstream_focus"), list) else []
+        risks = summary.get("risk_notes") if isinstance(summary.get("risk_notes"), list) else []
+        amount_line = (
+            f"两市成交额 {NewChainPostMarketReportBuilder._market_amount(market.get('market_total_amount'))}"
+            f"；较前一交易日 {NewChainPostMarketReportBuilder._signed_pct(market.get('market_amount_change_pct'))}"
+            if market.get("market_total_amount") not in (None, "")
+            else "两市成交额 --"
+        )
+        return [
+            f"环境概览：{summary.get('market_overview') or '--'}；{amount_line}",
+            f"涨幅前三的概念：{('；'.join(str(x) for x in top_concepts if str(x)) if top_concepts else '暂无')}",
+            f"指数涨幅：{('；'.join(str(x) for x in indexes if str(x)) if indexes else NewChainPostMarketReportBuilder._index_line(market))}",
+            f"主流看点：{('、'.join(str(x) for x in focus if str(x)) if focus else '暂无明确主流方向')}",
+            f"个股活跃程度及脉络：{summary.get('activity_context') or '--'}",
+            f"封板效率：{summary.get('board_efficiency') or '--'}",
+            f"风险提示：{('；'.join(str(x) for x in risks if str(x)) if risks else '--')}；操作倾向 {summary.get('action_bias') or '--'}",
+        ]
+
+    @staticmethod
+    def _market_theme_names(context: dict[str, Any], *, limit: int) -> list[str]:
+        rows = list(context.get("theme_capital_flow") or []) or list(context.get("cycles") or []) or list(context.get("money_flow") or [])
+        names: list[str] = []
+        for row in rows:
+            item = dict(row or {})
+            raw = str(item.get("resolved_theme_name") or item.get("theme_name") or item.get("subject_name") or item.get("subject_key") or "").strip()
+            if not raw or raw.isdigit() or raw in names:
+                continue
+            names.append(raw)
+            if len(names) >= limit:
+                break
+        return names
+
+    @staticmethod
+    def _top_gain_concepts_text(context: dict[str, Any]) -> str:
+        rows = [dict(row or {}) for row in context.get("theme_gainers") or []]
+        parts: list[str] = []
+        for row in rows[:3]:
+            name = str(row.get("theme_name") or row.get("subject_key") or "").strip()
+            pct = row.get("avg_pct_chg")
+            if not name:
+                continue
+            pct_text = NewChainPostMarketReportBuilder._signed_pct(pct) if pct not in (None, "") else "--"
+            parts.append(f"{name} {pct_text}")
+        return "；".join(parts) if parts else "暂无"
+
+    @staticmethod
+    def _active_pulse_text(context: dict[str, Any], theme_names: list[str]) -> str:
+        stock_rows = [dict(row or {}) for row in context.get("stock_facts") or []]
+        leader_names = [
+            str(row.get("stock_name") or row.get("stock_id") or "").strip()
+            for row in stock_rows
+            if row.get("is_leader")
+        ][:5]
+        if not leader_names:
+            leader_names = [
+                str(row.get("stock_name") or row.get("stock_id") or "").strip()
+                for row in stock_rows[:5]
+            ]
+        theme_text = "、".join(theme_names) if theme_names else "主流方向"
+        stock_text = "、".join([name for name in leader_names if name]) or "代表股待确认"
+        return f"{theme_text}方向活跃；代表股 {stock_text}"
+
+    @staticmethod
+    def _board_efficiency(market: dict[str, Any]) -> str:
+        limit_up = NewChainPostMarketReportBuilder._int(market.get("limit_up_count"))
+        limit_down = NewChainPostMarketReportBuilder._int(market.get("limit_down_count"))
+        up_count = NewChainPostMarketReportBuilder._int(market.get("up_count"))
+        down_count = NewChainPostMarketReportBuilder._int(market.get("down_count"))
+        if limit_up >= 80 and limit_down <= 15 and up_count >= down_count:
+            return "较好"
+        if limit_up >= 40 and limit_down <= 25:
+            return "一般"
+        if limit_down >= 25 or down_count > up_count:
+            return "偏弱"
+        return "--"
 
     @staticmethod
     def _theme_lines(
@@ -841,6 +1118,43 @@ class NewChainPostMarketReportBuilder:
             return f"{float(value) / 100000000:.2f}亿"
         except Exception:
             return str(value)
+
+    @staticmethod
+    def _market_amount(value: Any) -> str:
+        if value in (None, ""):
+            return "--"
+        try:
+            amount_yi = float(value) / 100000000
+        except Exception:
+            return str(value)
+        if amount_yi >= 10000:
+            return f"{amount_yi / 10000:.2f}万亿"
+        return f"{amount_yi:.2f}亿"
+
+    @staticmethod
+    def _signed_pct(value: Any) -> str:
+        if value in (None, ""):
+            return "--"
+        try:
+            pct = float(value)
+        except Exception:
+            return str(value)
+        sign = "+" if pct > 0 else ""
+        return f"{sign}{pct:.2f}%"
+
+    @staticmethod
+    def _index_line(market: dict[str, Any]) -> str:
+        parts = [
+            ("上证", market.get("shanghai_index_pct_chg")),
+            ("深成指", market.get("shenzhen_index_pct_chg")),
+            ("创业板指", market.get("chinext_index_pct_chg")),
+        ]
+        rendered = [
+            f"{name} {NewChainPostMarketReportBuilder._signed_pct(value)}"
+            for name, value in parts
+            if value not in (None, "")
+        ]
+        return "指数表现：" + ("；".join(rendered) if rendered else "暂无指数快照")
 
     @staticmethod
     def _pattern_text(fact: dict[str, Any]) -> str:

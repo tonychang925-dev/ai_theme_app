@@ -31,6 +31,7 @@ def _profile(
     must_terms: list[str] | None = None,
     strong_terms: list[str] | None = None,
     should_terms: list[str] | None = None,
+    event_action_terms: list[str] | None = None,
     aliases: list[str] | None = None,
     core_objects: list[str] | None = None,
     entity_hints: list[str] | None = None,
@@ -62,6 +63,7 @@ def _profile(
         aliases=aliases or [],
         entity_hints=entity_hints or [],
         core_objects=core_objects or [],
+        event_action_terms=event_action_terms or [],
     )
 
 
@@ -222,6 +224,103 @@ async def test_high_noise_v2_profile_keeps_match(monkeypatch):
 
 
 @pytest.mark.asyncio
+async def test_p0_broad_theme_bare_direct_hit_is_downgraded_to_review(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "9054404",
+                "A股全球第一",
+                aliases=["A股全球第一"],
+                gate_json={"profile_version": "v2"},
+            )
+        ])
+    )
+
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=4,
+            news_id=4,
+            title="A股全球第一",
+            content="A股全球第一",
+            summary="A股全球第一",
+            event_type="产业",
+        )
+    )
+
+    assert result.decision == "HUMAN_REVIEW"
+    assert result.reason_code in {
+        "broad_theme_missing_hard_anchor",
+        "broad_theme_missing_action_terms",
+        "broad_theme_missing_entity_boundary",
+    }
+    assert result.audit["broad_theme_direct_hit_guard"]["reason_code"] == result.reason_code
+
+
+@pytest.mark.asyncio
+async def test_p0_broad_theme_direct_hit_with_anchor_action_and_entity_keeps_match(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "9054404",
+                "A股全球第一",
+                aliases=["A股全球第一"],
+                core_objects=["光伏组件"],
+                entity_hints=["隆基绿能"],
+                event_action_terms=["发布"],
+                must_terms=["光伏组件"],
+                gate_json={"profile_version": "v2"},
+            )
+        ])
+    )
+
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=5,
+            news_id=5,
+            title="隆基绿能发布A股全球第一光伏组件订单",
+            content="隆基绿能发布A股全球第一光伏组件订单，组件交付能力继续提升。",
+            summary="隆基绿能发布A股全球第一光伏组件订单",
+            event_type="产业",
+            entities=["隆基绿能", "光伏组件"],
+        )
+    )
+
+    assert result.decision == "MATCH"
+    assert result.reason_code == "direct_theme_name_hit"
+
+
+@pytest.mark.asyncio
+async def test_p0_broad_theme_v1_fallback_direct_hit_is_reviewed(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "9012538",
+                "VR",
+                aliases=["虚拟现实"],
+            )
+        ])
+    )
+
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=6,
+            news_id=6,
+            title="虚拟现实新品发布",
+            content="虚拟现实新品发布，市场热度上升。",
+            summary="虚拟现实新品发布",
+            event_type="产业",
+        )
+    )
+
+    assert result.decision == "HUMAN_REVIEW"
+    assert result.reason_code == "broad_theme_v1_fallback_review"
+    assert result.audit["broad_theme_direct_hit_guard"]["reason_code"] == "broad_theme_v1_fallback_review"
+
+
+@pytest.mark.asyncio
 async def test_low_value_v1_alias_direct_hit_is_dropped(monkeypatch):
     monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
     engine = _NoDenseThemeMatchEngine(
@@ -377,6 +476,36 @@ def test_generic_supplier_gate_terms_do_not_create_anchor_evidence():
     assert evidence["strong_hits"] == []
     assert evidence["object_hits"] == []
     assert "供应链" in evidence["support_hits"]
+    assert evidence["anchor_hits"] == []
+
+
+def test_new_quality_productivity_support_terms_do_not_create_xinjiang_ftz_anchor_evidence():
+    request = ThemeMatchRequest(
+        event_id=14,
+        news_id=14,
+        title="合成生物产业创新发展行动计划推进，新质生产力平台落地。",
+        content="合成生物产业创新发展行动计划推进，高通量筛选平台落地。",
+        summary="合成生物与新质生产力推进。",
+        event_type="产业政策",
+        entities=["合成生物"],
+    )
+    event_profile = _build_event_match_profile(request)
+    xinjiang_ftz = _profile(
+        "9012396",
+        "新疆自贸区",
+        must_terms=["新质生产力"],
+        strong_terms=["新质生产力", "生物制造"],
+        aliases=["新疆自贸区"],
+        core_objects=["新质生产力"],
+        gate_json={"no_anchor_terms": ["新质生产力", "生物制造"]},
+    )
+
+    evidence = _build_gate_evidence(_build_event_query_text(request, event_profile), xinjiang_ftz, event_profile)
+
+    assert evidence["must_hits"] == []
+    assert evidence["strong_hits"] == []
+    assert evidence["object_hits"] == []
+    assert "新质生产力" in evidence["support_hits"]
     assert evidence["anchor_hits"] == []
 
 

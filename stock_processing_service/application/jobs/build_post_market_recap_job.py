@@ -13,10 +13,43 @@ from stock_processing_service.application.cache import SnapshotCacheWriter
 from stock_processing_service.application.services.new_chain_post_market_report_builder import (
     NewChainPostMarketReportBuilder,
 )
+from stock_processing_service.application.services.post_market_market_summary_llm import (
+    PostMarketMarketSummaryLlmService,
+)
 from stock_processing_service.application.use_cases.build_strong_stock_tracking import (
     LAYER_C_INPUT_MODE,
     BuildStrongStockTrackingUseCase,
 )
+
+from stock_processing_service.domain.services.post_market_decision.post_market_decision_engine import (
+    PostMarketDecisionEngine,
+)
+
+from stock_processing_service.application.services.mainline_discovery_fact_context_builder import (
+    MainlineDiscoveryFactContextBuilder,
+)
+from stock_processing_service.domain.services.mainline_discovery.mainline_logic_chain_builder import (
+    MainlineLogicChainBuilder,
+)
+from stock_processing_service.domain.services.mainline_discovery.mainline_market_acceptance_builder import (
+    MainlineMarketAcceptanceBuilder,
+)
+from stock_processing_service.domain.services.mainline_discovery.major_event_classifier import (
+    MajorEventClassifier,
+)
+from stock_processing_service.domain.services.mainline_discovery.mainline_narrative_judge import (
+    MainlineNarrativeJudge,
+)
+from stock_processing_service.domain.services.mainline_discovery.models import (
+    NarrativeJudgeResult,
+)
+from stock_processing_service.domain.services.mainline_discovery.mainline_discovery_engine import (
+    MainlineDiscoveryEngine,
+)
+from stock_processing_service.domain.services.mainline_discovery.analyst_review_queue_builder import (
+    AnalystReviewQueueBuilder,
+)
+
 from stock_processing_service.contracts.dto import (
     BuildResult,
     SubjectStockPoolDTO,
@@ -36,6 +69,9 @@ from stock_processing_service.ports import (
 )
 
 
+logger = logging.getLogger(__name__)
+
+
 class BuildPostMarketRecapJob:
     def __init__(
         self,
@@ -53,6 +89,8 @@ class BuildPostMarketRecapJob:
         cycle_judgement_job: Any | None = None,  # BuildCycleJudgementJob — Layer B 前置
         evidence_job: Any | None = None,  # BuildThemeCycleEvidenceDailyJob — Layer B 证据
         report_builder: NewChainPostMarketReportBuilder | None = None,
+        market_summary_llm_service: Any | None = None,
+        post_market_decision_engine: Any | None = None,
     ) -> None:
         self._read_port = read_port
         self._write_port = write_port
@@ -74,6 +112,8 @@ class BuildPostMarketRecapJob:
         self._cycle_judgement_job = cycle_judgement_job
         self._evidence_job = evidence_job
         self._report_builder = report_builder or NewChainPostMarketReportBuilder()
+        self._market_summary_llm_service = market_summary_llm_service or PostMarketMarketSummaryLlmService()
+        self._decision_engine = post_market_decision_engine or PostMarketDecisionEngine()
 
     @staticmethod
     def _d(value: Any) -> Decimal:
@@ -551,6 +591,7 @@ class BuildPostMarketRecapJob:
 
         # ── P2: 结构化 theme_reviews 生成 ──
         report_context = recap_doc.get("report_context") or {}
+        recap_doc["market_summary"] = await self._build_market_summary_llm(trade_date, report_context)
         theme_context_map = await self._build_theme_context_map(trade_date, report_context)
         recap_doc["theme_reviews"] = self._build_theme_reviews(theme_context_map)
         recap_doc["diagnostics"]["coverage"] = self._build_theme_review_coverage(theme_context_map)
@@ -558,7 +599,26 @@ class BuildPostMarketRecapJob:
 
         recap_doc["capital_reviews"] = self._build_capital_reviews(report_context.get("dragon_tiger") or [])
         recap_doc["strong_stock_reviews"] = await self._build_strong_stock_reviews(trade_date)
-        recap_doc["report"] = self._report_builder.build(recap_doc)
+
+        # ── PR-7: Mainline Discovery parallel output ──
+        await self._run_mainline_discovery(trade_date, report_context, theme_context_map, recap_doc, batch_id, trace_id)
+
+        # ── P0: 交易体系决策输出 ──
+        decision_payload = self._decision_engine.execute(
+            trade_date=trade_date,
+            report_context=report_context,
+            theme_context_map=theme_context_map,
+            market_summary=recap_doc.get("market_summary") or {},
+            strong_stock_reviews=recap_doc.get("strong_stock_reviews") or [],
+        )
+        recap_doc.update(decision_payload)
+
+        recap_report = self._report_builder.build(recap_doc)
+        recap_doc["report"] = recap_report
+        if isinstance(recap_report, dict):
+            market_overview_review = recap_report.get("market_overview_review")
+            if isinstance(market_overview_review, dict):
+                recap_doc["market_overview_review"] = market_overview_review
 
         snapshot = PostMarketRecapSnapshot(
             trade_date=trade_date,
@@ -817,6 +877,16 @@ class BuildPostMarketRecapJob:
 
     MAX_THEME_REVIEWS = 20
 
+    async def _build_market_summary_llm(self, trade_date: date, report_context: dict[str, Any]) -> dict[str, Any] | None:
+        service = self._market_summary_llm_service
+        if service is None:
+            return None
+        try:
+            return await service.build(trade_date=trade_date, report_context=report_context)
+        except Exception as exc:
+            logger.warning("post-market market_summary LLM failed, fallback to deterministic summary: %s", exc)
+            return None
+
     async def _mark_job_status(
         self,
         trade_date_val: date,
@@ -847,6 +917,395 @@ class BuildPostMarketRecapJob:
             )
         except Exception:
             pass
+
+    async def _run_mainline_discovery(
+        self,
+        trade_date: date,
+        report_context: dict[str, Any],
+        theme_context_map: dict[str, dict[str, Any]],
+        recap_doc: dict[str, Any],
+        batch_id: str = "",
+        trace_id: str = "",
+    ) -> None:
+        """PR-7: Run mainline discovery pipeline and write results to recap_doc.
+
+        Best-effort. Any exception is caught and recorded in diagnostics.
+        Never blocks the main recap generation.
+        """
+        from stock_processing_service.application.services.mainline_discovery_fact_context_builder import (
+            MainlineDiscoveryFactContext, MainlineDiscoveryFactContextBuilder,
+        )
+        try:
+            # ── PR-13A: build active mainline universe early (registry read, no other deps) ──
+            from stock_processing_service.application.services.active_mainline_universe_builder import (
+                ActiveMainlineUniverseBuilder,
+            )
+            active_universe = await ActiveMainlineUniverseBuilder(self._read_port).build(
+                trade_date=trade_date,
+            )
+
+            # ── build fact context ──
+            fact_builder = MainlineDiscoveryFactContextBuilder(self._read_port)
+            fact_ctx = await fact_builder.build(
+                trade_date=trade_date,
+                theme_context_map=theme_context_map,
+                lookback_days=7,
+            )
+            fc = fact_ctx.to_dict()
+
+            # ── run logic chain ──
+            logic_builder = MainlineLogicChainBuilder()
+            logic_result = await logic_builder.build(
+                trade_date=trade_date,
+                candidate_subjects=[s["subject_key"] for s in fc["candidate_subjects"]],
+                report_context=report_context,
+                event_rows_by_subject=fc.get("event_rows_by_subject"),
+            )
+            logic_by_sk = {
+                sk: ev.to_dict() for sk, ev in logic_result.items()
+            } if isinstance(logic_result, dict) else {}
+
+            # ── run market acceptance ──
+            market_builder = MainlineMarketAcceptanceBuilder()
+            market_result = market_builder.build(
+                trade_date=trade_date,
+                candidate_subjects=fc["candidate_subjects"],
+                event_rows_by_subject=fc["event_rows_by_subject"],
+                cycle_evidence_by_subject=fc["cycle_evidence_by_subject"],
+                cycle_judgement_by_subject=fc["cycle_judgement_by_subject"],
+                capital_by_subject=fc["capital_by_subject"],
+                stock_facts_by_subject=fc["stock_facts_by_subject"],
+            )
+            market_by_sk = {sk: r.to_dict() for sk, r in market_result.items()}
+
+            # ── run major event classifier ──
+            major_classifier = MajorEventClassifier()
+            major_by_sk: dict[str, dict] = {}
+            for sk, lev in logic_by_sk.items():
+                ec = lev.get("event_chain", [])
+                es = lev.get("event_series", [])
+                if ec:
+                    result = major_classifier.classify(event_chain=ec, event_series=es)
+                    major_by_sk[sk] = result.to_dict()
+
+            # ── run narrative judge (best-effort, LLM may fail) ──
+            def _llm_factory():
+                from model_service.llm_parser.reliable_deepseek_parser import ReliableDeepSeekParser
+                import os
+                return ReliableDeepSeekParser(
+                    model_name=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"),
+                    config={"max_retries": 1, "timeout": 25, "temperature": 0.1,
+                            "enable_cache": True, "cache_ttl": 3600})
+            narrative_builder = MainlineNarrativeJudge(parser_factory=_llm_factory)
+            narrative_by_sk: dict[str, dict] = {}
+            for sk, lev in logic_by_sk.items():
+                if not lev.get("event_chain"):
+                    narrative_by_sk[sk] = NarrativeJudgeResult().to_dict()
+                    continue
+                nj = await narrative_builder.judge(
+                    subject_key=sk,
+                    theme_name=_theme_name_for_sk(fc["candidate_subjects"], sk),
+                    event_chain=lev.get("event_chain", []),
+                    event_series=lev.get("event_series", []),
+                    event_stats=fc.get("event_stats_by_subject", {}).get(sk),
+                    major_event_classification=major_by_sk.get(sk),
+                )
+                narrative_by_sk[sk] = nj.to_dict()
+
+            # ── run discovery engine ──
+            engine = MainlineDiscoveryEngine()
+            decisions = engine.evaluate_all(
+                candidate_subjects=fc["candidate_subjects"],
+                logic_evidence_by_subject=logic_by_sk,
+                market_acceptance_by_subject=market_by_sk,
+                major_event_by_subject=major_by_sk,
+                narrative_by_subject=narrative_by_sk,
+                active_mainline_universe=active_universe,
+            )
+            # Extract existing_mainline_updates from decisions for diagnostics
+            existing_updates = [
+                d.to_dict() for d in decisions
+                if d.machine_state in ("existing_mainline_strengthening", "existing_mainline_branch_event")
+            ]
+
+            # ── run analyst review queue ──
+            queue_builder = AnalystReviewQueueBuilder()
+            review_items, review_diag = queue_builder.build(
+                decisions=decisions,
+                trade_date=trade_date.isoformat(),
+                event_evidence_by_subject=logic_by_sk,
+                narrative_by_subject=narrative_by_sk,
+                market_by_subject=market_by_sk,
+            )
+            # Sanitize theme_name: cap at 40 chars, fallback to subject_key
+            for it in review_items:
+                tn = (it.theme_name or "").strip()
+                if len(tn) > 40 or tn.startswith("【"):
+                    # Try candidate_subjects first
+                    short = _theme_name_for_sk(fc.get("candidate_subjects", []), it.subject_key)
+                    it.theme_name = (short or it.subject_key)[:40] if short and len(short) < 40 else it.subject_key[:40]
+                elif not tn:
+                    it.theme_name = it.subject_key[:40]
+
+            # ── write to recap_doc ──
+            sd = fc.get("diagnostics", {})
+            recap_doc["mainline_discovery_reviews"] = [d.to_dict() for d in decisions]
+            recap_doc["mainline_discovery_diagnostics"] = {
+                "candidate_subject_count": sd.get("candidate_subject_count", 0),
+                "event_chain_subject_count": sd.get("event_chain_subject_count", 0),
+                "logic_score_non_null_count": _count_non_null_scores(logic_by_sk),
+                "market_acceptance_non_null_count": _count_non_null_market(market_by_sk),
+                "machine_fast_candidate_count": sum(1 for d in decisions if d.machine_state == "machine_fast_candidate"),
+                "machine_slow_candidate_count": sum(1 for d in decisions if d.machine_state == "machine_slow_candidate"),
+                "logic_only_count": sum(1 for d in decisions if d.machine_state == "logic_only"),
+                "market_noise_count": sum(1 for d in decisions if d.machine_state == "market_noise"),
+                "rotation_hotspot_count": sum(1 for d in decisions if d.machine_state == "rotation_hotspot"),
+                "rejected_count": sum(1 for d in decisions if d.machine_state == "rejected"),
+            }
+            recap_doc["analyst_review_items"] = [it.to_dict() for it in review_items]
+            recap_doc["analyst_review_diagnostics"] = review_diag.to_dict()
+            recap_doc["existing_mainline_updates"] = existing_updates
+
+            # PR-9B: persist to mainline_review_queue (best-effort)
+            await self._persist_review_queue(trade_date, review_items)
+
+        except Exception:
+            logger.exception("Mainline discovery pipeline failed, continuing without it")
+            recap_doc["mainline_discovery_reviews"] = []
+            recap_doc["mainline_discovery_reviews_error"] = "pipeline_failed"
+            recap_doc["mainline_discovery_diagnostics"] = {"error": "pipeline_failed"}
+
+        # ── PR-10: Mainline Lifecycle pipeline ──
+        await self._run_mainline_lifecycle(trade_date, recap_doc, batch_id, trace_id)
+
+    async def _run_mainline_lifecycle(
+        self, trade_date: date, recap_doc: dict[str, Any],
+        batch_id: str = "", trace_id: str = "",
+    ) -> None:
+        """PR-10: Run lifecycle pipeline for confirmed mainlines."""
+        try:
+            from stock_processing_service.application.services.mainline_lifecycle.mainline_lifecycle_fact_context_builder import (
+                MainlineLifecycleFactContextBuilder,
+            )
+            from stock_processing_service.domain.services.mainline_lifecycle.layer_b_lifecycle_adapter import (
+                MainlineLifecycleLayerBAdapter,
+            )
+
+            report_context = recap_doc.get("report_context") or {}
+
+            fc_builder = MainlineLifecycleFactContextBuilder(self._read_port)
+            fact_ctx = await fc_builder.build(trade_date=trade_date)
+
+            adapter = MainlineLifecycleLayerBAdapter()
+            reviews, lifecycle_diag = adapter.build(trade_date=trade_date.isoformat(), fact_ctx=fact_ctx)
+
+            recap_doc["mainline_lifecycle_reviews"] = [r.to_dict() for r in reviews]
+            recap_doc["mainline_lifecycle_diagnostics"] = {**fact_ctx.diagnostics, **lifecycle_diag}
+
+            # ── PR-11: Market Regime ──
+            from stock_processing_service.application.services.market_regime.market_regime_fact_context_builder import (
+                MarketRegimeFactContextBuilder,
+            )
+            from stock_processing_service.domain.services.market_regime.market_regime_engine import MarketRegimeEngine
+
+            regime_ctx = await MarketRegimeFactContextBuilder().build(
+                trade_date=trade_date,
+                report_context=report_context,
+                lifecycle_reviews=[r.to_dict() for r in reviews],
+            )
+            regime_engine = MarketRegimeEngine()
+            regime = regime_engine.evaluate(
+                trade_date=trade_date.isoformat(),
+                index_kline=regime_ctx.index_kline,
+                market_snapshot=regime_ctx.market_snapshot,
+                lifecycle_reviews=regime_ctx.lifecycle_reviews,
+            )
+            regime_dict = regime.to_dict()
+            regime_dict["index_technical_reviews"] = regime_ctx.index_technical_reviews
+            recap_doc["market_regime_review"] = regime_dict
+            recap_doc["market_regime_diagnostics"] = {
+                **regime_ctx.diagnostics,
+                "index_technical_reviews": regime_ctx.index_technical_reviews,
+            }
+
+            # ── PR-12.5: ActiveMainlineUniverse ──
+            from stock_processing_service.application.services.active_mainline_universe_builder import (
+                ActiveMainlineUniverseBuilder,
+            )
+            active_universe = await ActiveMainlineUniverseBuilder(self._read_port).build(trade_date=trade_date)
+            recap_doc["active_mainline_universe"] = active_universe.to_dict()
+            confirmed_mainlines = active_universe.active_mainlines
+            cml_error = None
+            if not confirmed_mainlines:
+                cml_error = "no_active_mainlines_in_registry"
+
+            # ── PR-12: PostMarketDecisionV2 ──
+            from stock_processing_service.domain.services.post_market_decision_v2.post_market_decision_engine_v2 import (
+                PostMarketDecisionEngineV2,
+            )
+
+            # Read Layer C — explicit priority, diagnostics match actual source
+            layer_c_source: str = "empty"
+            if isinstance(recap_doc.get("strong_watch_history"), list) and recap_doc["strong_watch_history"]:
+                layer_c_rows = recap_doc["strong_watch_history"]
+                layer_c_source = "strong_watch_history"
+            elif isinstance(recap_doc.get("strong_watch_input_7d_preview"), list) and recap_doc["strong_watch_input_7d_preview"]:
+                layer_c_rows = recap_doc["strong_watch_input_7d_preview"]
+                layer_c_source = "strong_watch_input_7d_preview"
+            elif isinstance(recap_doc.get("strong_stock_reviews"), list) and recap_doc["strong_stock_reviews"]:
+                layer_c_rows = recap_doc["strong_stock_reviews"]
+                layer_c_source = "strong_stock_reviews_fallback"
+            else:
+                layer_c_rows = []
+
+            pdv2_engine = PostMarketDecisionEngineV2()
+            pdv2 = pdv2_engine.evaluate(
+                trade_date=trade_date.isoformat(),
+                confirmed_mainlines=confirmed_mainlines,
+                mainline_lifecycle=[r.to_dict() for r in reviews],
+                market_regime=regime.to_dict(),
+                stock_pool_rows=layer_c_rows,
+            )
+            pdv2.diagnostics["layer_c_rows"] = len(layer_c_rows)
+            pdv2.diagnostics["layer_c_source"] = layer_c_source
+            if cml_error:
+                pdv2.diagnostics["confirmed_mainline_error"] = cml_error
+            recap_doc["post_market_decision_v2"] = pdv2.to_dict()
+
+            # ── PR-13A: persist mainline daily state ──
+            await self._persist_mainline_daily_state(trade_date, recap_doc, batch_id or "", trace_id or "")
+        except Exception:
+            logger.exception("Lifecycle pipeline failed, continuing without it")
+            recap_doc["mainline_lifecycle_reviews"] = []
+            recap_doc["mainline_lifecycle_diagnostics"] = {"error": "pipeline_failed"}
+
+    async def _persist_review_queue(self, trade_date: date, review_items: list) -> None:
+        """PR-9B: Persist analyst_review_items to mainline_review_queue."""
+        try:
+            rows_to_upsert = []
+            for item in review_items:
+                d = item.to_dict()
+                rows_to_upsert.append({
+                    "review_id": d.get("review_id", ""),
+                    "trade_date": trade_date,
+                    "subject_key": d.get("subject_key", ""),
+                    "theme_name": d.get("theme_name", ""),
+                    "mainline_id": d.get("mainline_id", ""),
+                    "mainline_name": d.get("mainline_name", ""),
+                    "machine_state": d.get("machine_state", ""),
+                    "final_mainline_state": d.get("final_mainline_state", "pending_review"),
+                    "mainline_type": d.get("mainline_type", ""),
+                    "confirmation_path": d.get("confirmation_path", ""),
+                    "trigger_mode": d.get("trigger_mode", ""),
+                    "review_reason": d.get("review_reason", ""),
+                    "review_priority": d.get("review_priority", 0),
+                    "review_status": d.get("review_status", "pending"),
+                    "suggested_human_decision": d.get("suggested_human_decision", ""),
+                    "scores": d.get("scores", {}),
+                    "evidence": d.get("evidence", {}),
+                    "risk_flags": d.get("risk_flags", {}),
+                    "diagnostics": d.get("diagnostics", {}),
+                })
+            if rows_to_upsert:
+                fn = getattr(self._write_port, "upsert_mainline_review_queue_rows", None)
+                if callable(fn):
+                    affected = await fn(rows_to_upsert)
+                    logger.info("Persisted %s review items to mainline_review_queue", affected)
+        except Exception:
+            logger.exception("Failed to persist review queue items")
+
+    async def _persist_mainline_daily_state(
+        self, trade_date: date, recap_doc: dict[str, Any], batch_id: str, trace_id: str,
+    ) -> None:
+        """PR-13A: 将每日主线状态快照写入 mainline_daily_state 表。"""
+        try:
+            from stock_processing_service.contracts.dto.mainline_daily_state import (
+                MainlineDailyStateDTO,
+            )
+
+            amu = recap_doc.get("active_mainline_universe", {})
+            regime = recap_doc.get("market_regime_review", {})
+            pdv2 = recap_doc.get("post_market_decision_v2", {})
+            lifecycles = {r.get("mainline_id", ""): r for r in recap_doc.get("mainline_lifecycle_reviews", [])}
+            mainlines = amu.get("active_mainlines", [])
+
+            # Per-mainline counts from PDV2
+            strong_by_ml: dict[str, int] = {}
+            d1_by_ml: dict[str, int] = {}
+            focus_by_ml: dict[str, int] = {}
+            for r in pdv2.get("strong_stock_pool_reviews", []):
+                mid = r.get("mainline_id", "")
+                strong_by_ml[mid] = strong_by_ml.get(mid, 0) + 1
+            for r in pdv2.get("weak_to_strong_d1_reviews", []):
+                mid = r.get("mainline_id", "")
+                d1_by_ml[mid] = d1_by_ml.get(mid, 0) + 1
+            for r in pdv2.get("next_day_focus_stocks", []):
+                mid = r.get("mainline_id", "")
+                focus_by_ml[mid] = focus_by_ml.get(mid, 0) + 1
+
+            # Extract no_trade_blocking_rule from regime
+            no_trade_reasons = regime.get("no_trade_reasons", [])
+            blocking_rule = ""
+            if no_trade_reasons and isinstance(no_trade_reasons, list):
+                blocking_rule = str(no_trade_reasons[0]) if no_trade_reasons else ""
+
+            rows = []
+            for ml in mainlines:
+                mid = str(ml.get("mainline_id") or "")
+                lr = lifecycles.get(mid, {})
+                lr_diag = lr.get("diagnostics", {}) if isinstance(lr.get("diagnostics"), dict) else {}
+
+                dto = MainlineDailyStateDTO(
+                    trade_date=trade_date,
+                    mainline_id=mid,
+                    canonical_subject_key=str(ml.get("canonical_subject_key") or ""),
+                    mainline_name=str(ml.get("mainline_name") or ""),
+                    run_id=f"{batch_id}/{trace_id}",
+                    active_subject_keys_json=amu.get("active_subject_keys", []),
+                    active_subject_count=int(amu.get("active_subject_count", 0)),
+                    event_count_1d=int(lr_diag.get("event_count_1d") or lr_diag.get("event_1d") or 0),
+                    event_count_3d=int(lr_diag.get("event_count_3d") or 0),
+                    event_count_7d=int(lr_diag.get("event_count_7d") or 0),
+                    lifecycle_state=str(lr.get("lifecycle_state") or "unknown"),
+                    mainline_alive=bool(lr.get("mainline_alive", False)),
+                    mainline_trade_alive=bool(lr.get("mainline_trade_alive", False)),
+                    fade_risk_score=float(lr.get("fade_risk_score")) if lr.get("fade_risk_score") is not None else None,
+                    broad_market_regime=str(regime.get("broad_market_regime") or ""),
+                    short_term_sentiment=str(regime.get("short_term_sentiment") or ""),
+                    mainline_environment=str(regime.get("mainline_environment") or ""),
+                    market_structure=str(regime.get("market_structure") or ""),
+                    trade_mode=str(regime.get("trade_mode") or "no_trade"),
+                    allow_trade=bool(regime.get("allow_trade", False)),
+                    position_limit=float(regime.get("position_limit") or 0),
+                    strong_pool_count=strong_by_ml.get(mid, 0),
+                    d1_count=d1_by_ml.get(mid, 0),
+                    focus_count=focus_by_ml.get(mid, 0),
+                    layer_c_subject_keys_json=pdv2.get("diagnostics", {}).get("layer_c_subject_keys", []),
+                    mainline_filtered_subject_keys_json=pdv2.get("diagnostics", {}).get("mainline_filtered_subject_keys", []),
+                    missing_registry_subject_keys_json=pdv2.get("diagnostics", {}).get("missing_registry_subject_keys", []),
+                    no_trade_blocking_rule=blocking_rule,
+                    diagnostics_json={
+                        "event_count_source": "lifecycle_diagnostics",
+                        "event_count_missing": (
+                            lr_diag.get("event_count_1d") is None
+                            and lr_diag.get("event_1d") is None
+                        ),
+                        "global_strong_pool_count": pdv2.get("diagnostics", {}).get("strong_pool_count", 0),
+                        "global_d1_count": pdv2.get("diagnostics", {}).get("d1_count", 0),
+                        "global_focus_count": pdv2.get("diagnostics", {}).get("focus_count", 0),
+                        "no_trade_reasons": no_trade_reasons,
+                        "layer_c_source": pdv2.get("diagnostics", {}).get("layer_c_source", ""),
+                    },
+                )
+                rows.append(dto.to_upsert_dict())
+
+            if rows:
+                fn = getattr(self._write_port, "upsert_mainline_daily_state_rows", None)
+                if callable(fn):
+                    affected = await fn(rows)
+                    logger.info("Persisted %d mainline_daily_state rows for %s", affected, trade_date)
+        except Exception:
+            logger.exception("Failed to persist mainline_daily_state")
 
     async def _check_post_market_readiness(self, trade_date: date) -> dict[str, Any]:
         """P1: 委托 PostMarketReadinessService 检查 5 张核心表。"""
@@ -1185,3 +1644,28 @@ class BuildPostMarketRecapJob:
             except Exception:
                 continue
         return results
+
+
+# ── Mainline Discovery helpers (PR-7) ──
+
+def _theme_name_for_sk(candidates: list, sk: str) -> str:
+    for c in candidates:
+        if isinstance(c, dict) and str(c.get("subject_key", "")) == sk:
+            return str(c.get("theme_name", sk))
+    return sk
+
+
+def _count_non_null_scores(logic_by_sk: dict) -> int:
+    count = 0
+    for ev in logic_by_sk.values():
+        if isinstance(ev, dict) and ev.get("logic_score") is not None:
+            count += 1
+    return count
+
+
+def _count_non_null_market(market_by_sk: dict) -> int:
+    count = 0
+    for ma in market_by_sk.values():
+        if isinstance(ma, dict) and ma.get("market_acceptance_score") is not None:
+            count += 1
+    return count

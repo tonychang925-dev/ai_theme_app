@@ -2,6 +2,7 @@ import asyncio
 import json
 import logging
 import os
+import time
 from datetime import datetime, timezone, timedelta
 from typing import Any, AsyncIterator
 from zoneinfo import ZoneInfo
@@ -91,15 +92,25 @@ async def _proxy_stock_processing_json(path: str, params: dict[str, str]) -> dic
     return data if isinstance(data, dict) else {}
 
 
-async def _proxy_stock_processing_post_json(path: str, payload: dict) -> dict:
+async def _proxy_stock_processing_post_json(path: str, payload: dict, timeout: float = 120.0) -> dict:
     url = f"{STOCK_PROCESSING_BASE_URL}{path}"
     try:
-        async with httpx.AsyncClient(timeout=120.0, trust_env=False) as http:
+        async with httpx.AsyncClient(timeout=timeout, trust_env=False) as http:
             resp = await http.post(url, json=payload)
             resp.raise_for_status()
             data = resp.json()
     except httpx.HTTPStatusError as exc:
         raise HTTPException(status_code=exc.response.status_code, detail=exc.response.text) from exc
+    except httpx.ReadTimeout as exc:
+        raise HTTPException(
+            status_code=504,
+            detail={
+                "code": "WEB_APP_UPSTREAM_TIMEOUT",
+                "message": f"upstream timeout after {timeout:.0f}s",
+                "upstream": url,
+                "method": "POST",
+            },
+        ) from exc
     except httpx.RequestError as exc:
         raise HTTPException(status_code=502, detail=f"upstream unavailable: {exc}") from exc
     return data if isinstance(data, dict) else {}
@@ -336,6 +347,32 @@ async def recap_publish_notion(payload: dict) -> dict:
     raise HTTPException(status_code=502, detail="invalid notion publish response")
 
 
+@router.post("/trade-plan/review")
+async def trade_plan_review(payload: dict) -> dict:
+    trade_date = str(payload.get("trade_date") or "").strip()
+    plan_date = str(payload.get("plan_date") or "").strip()
+    if not trade_date:
+        raise HTTPException(status_code=400, detail="trade_date is required")
+    if not plan_date:
+        raise HTTPException(status_code=400, detail="plan_date is required")
+
+    body = {
+        "trade_date": trade_date,
+        "plan_date": plan_date,
+        "dry_run": bool(payload.get("dry_run", True)),
+        "force": bool(payload.get("force", False)),
+    }
+    data = await _proxy_stock_processing_request_json(
+        "POST",
+        "/api/v1/trade-plan/review",
+        payload=body,
+        timeout=60.0,
+    )
+    if isinstance(data, dict):
+        return data
+    raise HTTPException(status_code=502, detail="invalid trade plan review response")
+
+
 @router.get("/theme_workspace/{subject_key}")
 @router.get("/theme-workspace/{subject_key}")
 async def theme_workspace(subject_key: str, request: Request) -> dict:
@@ -366,13 +403,21 @@ async def get_post_market_jobs_status(date: str = Query(..., description="YYYY-M
 @router.post("/post-market/derived-data/generate")
 async def generate_post_market_derived_data(payload: dict | None = None) -> dict:
     """生成每日动态复盘派生数据。BFF 代理 → SPS。"""
-    return await _proxy_stock_processing_post_json("/api/v1/post-market/derived-data/generate", payload or {})
+    return await _proxy_stock_processing_post_json(
+        "/api/v1/post-market/derived-data/generate",
+        payload or {},
+        timeout=600.0,
+    )
 
 
 @router.post("/post-market/recap/generate")
 async def generate_post_market_recap(payload: dict | None = None) -> dict:
     """生成盘后复盘报告快照。BFF 代理 → SPS。"""
-    return await _proxy_stock_processing_post_json("/api/v1/post-market/recap/generate", payload or {})
+    return await _proxy_stock_processing_post_json(
+        "/api/v1/post-market/recap/generate",
+        payload or {},
+        timeout=300.0,
+    )
 
 
 @router.get("/daily-review")
@@ -398,7 +443,11 @@ async def daily_review_v2(date: str = Query(..., description="YYYY-MM-DD")) -> d
 
 @router.post("/post-market/daily-review-v2/generate")
 async def daily_review_v2_generate(payload: dict | None = None) -> dict:
-    return await _proxy_stock_processing_post_json("/api/v2/post-market/daily-review-v2/generate", payload or {})
+    return await _proxy_stock_processing_post_json(
+        "/api/v2/post-market/daily-review-v2/generate",
+        payload or {},
+        timeout=180.0,
+    )
 
 
 @router.get("/stock_workspace/{stock_id}")
@@ -698,6 +747,58 @@ async def proxy_review_queue_import_pending() -> dict:
     return await _proxy_stock_processing_post_json("/api/v1/review-queue/import-pending", {})
 
 
+# ── PR-12.5: Mainline Review Proxy Routes ──
+
+@router.get("/mainline-review/queue")
+async def proxy_mainline_review_queue(
+    trade_date: str | None = None, status: str | None = None, limit: int = 200,
+) -> dict:
+    params = {}
+    if trade_date: params["trade_date"] = trade_date
+    if status: params["status"] = status
+    params["limit"] = str(limit)
+    return await _proxy_stock_processing_json("/api/v2/mainline-review/queue", params)
+
+
+@router.get("/mainline-review/registry")
+async def proxy_mainline_review_registry(trade_date: str | None = None, limit: int = 100) -> dict:
+    params = {}
+    if trade_date: params["trade_date"] = trade_date
+    params["limit"] = str(limit)
+    return await _proxy_stock_processing_json("/api/v2/mainline-review/registry", params)
+
+
+@router.post("/mainline-review/import-candidates")
+async def proxy_mainline_import_candidates(payload: dict) -> dict:
+    return await _proxy_stock_processing_post_json("/api/v2/mainline-review/import-candidates", payload, timeout=60.0)
+
+
+@router.post("/mainline-review/{review_id}/decision")
+async def proxy_mainline_review_decision(review_id: str, payload: dict) -> dict:
+    return await _proxy_stock_processing_post_json(
+        f"/api/v2/mainline-review/{review_id}/decision", payload, timeout=15.0)
+
+
+# ── PR-13D: 指数采集代理 ──
+
+@router.post("/index-kline/collect")
+async def proxy_index_kline_collect(payload: dict) -> dict:
+    return await _proxy_stock_processing_post_json(
+        "/api/v1/index-kline/collect", payload, timeout=120.0)
+
+
+@router.get("/index-kline/status")
+async def proxy_index_kline_status(trade_date: str = "") -> dict:
+    return await _proxy_stock_processing_json(
+        "/api/v1/index-kline/status", {"trade_date": trade_date})
+
+
+@router.get("/index-technical/daily")
+async def proxy_index_technical_daily(trade_date: str = "") -> list[dict]:
+    return await _proxy_stock_processing_json(
+        "/api/v1/index-technical/daily", {"trade_date": trade_date})
+
+
 @router.get("/realtime/jyhf-cdp/status")
 async def jyhf_cdp_collector_status(request: Request):
     manager = request.app.state.cdp_manager
@@ -846,11 +947,18 @@ async def jyhf_auction_status(request: Request) -> dict:
     return mgr.status()
 
 
+@router.get("/realtime/jyhf-auction/logs")
+async def jyhf_auction_logs(request: Request, lines: int = Query(default=200, ge=20, le=2000)) -> dict:
+    mgr = request.app.state.auction_manager
+    return mgr.get_logs(lines=lines)
+
+
 @router.post("/realtime/jyhf-auction/start")
 async def jyhf_auction_start(request: Request, payload: dict | None = None) -> dict:
     mgr = request.app.state.auction_manager
     now = datetime.now(ZoneInfo("Asia/Shanghai"))
     trade_date = (payload or {}).get("trade_date", str(now.date()))
+    # candidate_date 默认用今天，采集器内部会自动取 DB 最新候选（处理周末/节假日）
     candidate_date = (payload or {}).get("candidate_date", str(now.date()))
     return await mgr.start(trade_date, candidate_date)
 
@@ -863,18 +971,57 @@ async def jyhf_auction_stop(request: Request) -> dict:
 
 # ── P0-C2: 统一状态聚合接口，替代多个独立轮询 ──
 
+# new-chain 状态缓存：SPS 8090 频繁超时导致 status-bundle 被拖死时兜底
+_new_chain_cache: dict = {
+    "data": None,        # 最近一次成功的 SPS 响应
+    "ts": 0.0,           # 成功时间戳
+    "max_age_s": 60,     # 缓存有效期
+    "failures": 0,       # 连续失败次数
+    "circuit_open_until": 0.0,  # 熔断结束时间（跳过 SPS 调用）
+}
+
+
 @router.get("/realtime/status-bundle")
 async def realtime_status_bundle(request: Request) -> dict:
     """单次返回 new-chain + JYHF CDP + auction 状态，减少轮询次数。"""
     import asyncio as _asyncio
+    import time as _time
 
     async def _new_chain():
+        now_ts = _time.time()
+
+        # 熔断：连续失败 2 次后跳过 SPS 调用 30s，避免每次 4s 超时拖死 bundle
+        if _new_chain_cache["failures"] >= 2 and now_ts < _new_chain_cache["circuit_open_until"]:
+            cached = _new_chain_cache["data"]
+            if cached:
+                cached = dict(cached)
+                cached["_cached"] = True
+                cached["_circuit_open"] = True
+                cached["_cache_age_s"] = round(now_ts - _new_chain_cache["ts"], 1)
+                return cached
+            return {"running": False, "error": "circuit open — SPS unreachable", "_circuit_open": True}
+
         try:
-            async with httpx.AsyncClient(timeout=10.0, trust_env=False) as c:
+            async with httpx.AsyncClient(timeout=4.0, trust_env=False) as c:
                 r = await c.get(f"{STOCK_PROCESSING_BASE_URL}/api/v1/realtime/status")
                 r.raise_for_status()
-                return r.json()
+                data = r.json()
+                _new_chain_cache["data"] = data
+                _new_chain_cache["ts"] = now_ts
+                _new_chain_cache["failures"] = 0
+                _new_chain_cache["circuit_open_until"] = 0.0
+                return data
         except Exception as exc:
+            _new_chain_cache["failures"] += 1
+            if _new_chain_cache["failures"] >= 2:
+                _new_chain_cache["circuit_open_until"] = now_ts + 30  # 熔断 30s
+            # 缓存兜底：SPS 不可达时返回最后已知状态
+            cached = _new_chain_cache["data"]
+            if cached and (now_ts - _new_chain_cache["ts"]) < _new_chain_cache["max_age_s"]:
+                cached = dict(cached)
+                cached["_cached"] = True
+                cached["_cache_age_s"] = round(now_ts - _new_chain_cache["ts"], 1)
+                return cached
             return {"running": False, "error": str(exc)}
 
     async def _cdp_status():
@@ -886,10 +1033,18 @@ async def realtime_status_bundle(request: Request) -> dict:
     async def _auction_status():
         return request.app.state.auction_manager.status()
 
-    new_chain, cdp, auction = await _asyncio.gather(
-        _new_chain(), _cdp_status(), _auction_status(),
-        return_exceptions=True,
-    )
+    try:
+        async with _asyncio.timeout(7.0):
+            new_chain, cdp, auction = await _asyncio.gather(
+                _new_chain(), _cdp_status(), _auction_status(),
+                return_exceptions=True,
+            )
+    except TimeoutError:
+        # 整体超时：返回缓存或降级响应
+        cached = _new_chain_cache["data"]
+        new_chain = (dict(cached) if cached else {"running": False, "error": "bundle timeout"}) if cached else {"running": False, "error": "bundle timeout"}
+        cdp = {"error": "bundle timeout"}
+        auction = request.app.state.auction_manager.status()
 
     return {
         "new_chain": new_chain if isinstance(new_chain, dict) else {"error": str(new_chain)},
@@ -906,9 +1061,10 @@ async def jyhf_cdp_service_force_stop(request: Request) -> dict:
     return await manager.force_stop_service()
 
 
-# ── Realtime Collector（新链由 web_app_service 本地管理，不再代理旧 BFF）──
+# ── Realtime Collector ──
 
 
+# legacy compatibility only; frontend must use /collector/*
 @router.get("/realtime/new-chain/status")
 async def realtime_new_chain_status() -> dict:
     data = await _proxy_stock_processing_request_json(
@@ -916,9 +1072,13 @@ async def realtime_new_chain_status() -> dict:
         "/api/v1/realtime/status",
         timeout=15.0,
     )
-    return data if isinstance(data, dict) else {"running": False, "last_error": "invalid SPS realtime status response"}
+    result = data if isinstance(data, dict) else {"running": False, "last_error": "invalid SPS realtime status response"}
+    result["deprecated"] = True
+    result["use"] = "/api/v2/realtime/collector/status"
+    return result
 
 
+# legacy compatibility only; frontend must use /collector/*
 @router.post("/realtime/new-chain/start")
 async def realtime_new_chain_start() -> dict:
     data = await _proxy_stock_processing_request_json(
@@ -926,17 +1086,31 @@ async def realtime_new_chain_start() -> dict:
         "/api/v1/realtime/start",
         timeout=60.0,
     )
-    return data if isinstance(data, dict) else {"ok": False, "status": "invalid_response"}
+    result = data if isinstance(data, dict) else {"ok": False, "status": "invalid_response"}
+    result["deprecated"] = True
+    result["use"] = "/api/v2/realtime/collector/start"
+    return result
 
 
+# legacy compatibility only; frontend must use /collector/*
 @router.post("/realtime/new-chain/stop")
-async def realtime_new_chain_stop() -> dict:
-    data = await _proxy_stock_processing_request_json(
-        "GET",
-        "/api/v1/realtime/stop",
-        timeout=30.0,
-    )
-    return data if isinstance(data, dict) else {"ok": False, "status": "invalid_response"}
+async def realtime_new_chain_stop(request: Request) -> dict:
+    """LEGACY: 直接通过 pidfile 停止实时采集子进程，不依赖 SPS。
+
+    实时子进程生命周期已收口到 SPS，BFF 不再自己管理。
+    frontend must use /api/v2/realtime/collector/stop.
+    """
+    manager = request.app.state.realtime_stack_manager
+    # 降级为 SPS /realtime/stop 代理，不再自行 stop_pipeline
+    try:
+        async with httpx.AsyncClient(timeout=15.0, trust_env=False) as client:
+            r = await client.get(f"{STOCK_PROCESSING_BASE_URL}/api/v1/realtime/stop")
+            data = r.json()
+    except Exception as exc:
+        data = {"ok": False, "status": "error", "error": str(exc)}
+    data["deprecated"] = True
+    data["use"] = "/api/v2/realtime/collector/stop"
+    return data
 
 
 @router.get("/realtime/collector/status")
@@ -965,6 +1139,413 @@ async def realtime_collector_logs(
 ) -> dict:
     manager = request.app.state.realtime_stack_manager
     return await manager.logs(lines=lines, max_age_minutes=max_age_minutes)
+
+
+# ── P4-2A: Realtime Business Orchestrator（只读状态 + dry_run tick）──
+
+
+@router.get("/realtime/orchestrator/status")
+async def orchestrator_status(request: Request, now: str | None = Query(default=None)) -> dict:
+    """返回 orchestrator 当前状态：交易阶段、各服务 readiness、blockers。
+
+    只读，不启动/停止任何服务。
+
+    Query params:
+        now: ISO datetime override for simulating trading phases (dev only).
+             e.g. ?now=2026-05-29T09:11:00+08:00 or ?now=09:11
+    """
+    orch = request.app.state.realtime_business_orchestrator
+    try:
+        async with asyncio.timeout(8.0):
+            status = await orch.get_status(now_override=now)
+            return _orchestrator_status_to_dict(status)
+    except Exception as exc:
+        return _orchestrator_fallback(f"status timeout: {exc}")
+
+
+@router.post("/realtime/orchestrator/tick")
+async def orchestrator_tick(request: Request, payload: dict | None = None) -> dict:
+    """触发一次诊断 tick。
+
+    dry_run=true（默认）：只输出 planned_actions，不执行 start/stop。
+
+    Body:
+        {"dry_run": true, "now_override": "2026-05-29T09:11:00+08:00"}
+    """
+    payload = payload or {}
+    dry_run = bool(payload.get("dry_run", True))
+    now_override = payload.get("now_override")
+    orch = request.app.state.realtime_business_orchestrator
+    try:
+        async with asyncio.timeout(8.0):
+            status = await orch.tick(dry_run=dry_run, now_override=now_override)
+            return _orchestrator_status_to_dict(status)
+    except Exception as exc:
+        return _orchestrator_fallback(f"tick timeout: {exc}")
+
+
+def _orchestrator_fallback(error: str) -> dict:
+    """Return a safe fallback when orchestrator is unreachable."""
+    return {
+        "enabled": False,
+        "actions_enabled": False,
+        "dry_run": True,
+        "dry_run_forced": False,
+        "dry_run_forced_reason": "",
+        "now_override": None,
+        "trade_date": "",
+        "phase": "orchestrator_unavailable",
+        "phase_label": "编排器不可用",
+        "now_cn": "",
+        "tick_seq": 0,
+        "is_trade_day": False,
+        "services": {},
+        "planned_actions": [],
+        "executed_actions": [],
+        "global_blockers": [error],
+        "tick_duration_ms": 0,
+        "error": error,
+    }
+
+
+def _orchestrator_status_to_dict(status) -> dict:
+    """Serialize OrchestratorStatus to JSON-safe dict."""
+    def _svc_to_dict(svc) -> dict:
+        return {
+            "name": svc.name,
+            "enabled": svc.enabled,
+            "desired_state": svc.desired_state,
+            "observed_state": svc.observed_state,
+            "owner": svc.owner,
+            "dependencies": svc.dependencies,
+            "blockers": svc.blockers,
+            "evidence": svc.evidence,
+            "last_action": svc.last_action,
+            "last_error": svc.last_error,
+            "next_retry_at": svc.next_retry_at,
+        }
+
+    return {
+        "enabled": status.enabled,
+        "actions_enabled": status.actions_enabled,
+        "dry_run": status.dry_run,
+        "dry_run_forced": status.dry_run_forced,
+        "dry_run_forced_reason": status.dry_run_forced_reason,
+        "now_override": status.now_override,
+        "trade_date": status.trade_date,
+        "phase": status.phase,
+        "phase_label": status.phase_label,
+        "now_cn": status.now_cn,
+        "tick_seq": status.tick_seq,
+        "is_trade_day": status.is_trade_day,
+        "services": {k: _svc_to_dict(v) for k, v in status.services.items()},
+        "planned_actions": status.planned_actions,
+        "executed_actions": status.executed_actions,
+        "global_blockers": status.global_blockers,
+        "runtime_dependencies": status.runtime_dependencies,
+        "tick_duration_ms": status.tick_duration_ms,
+    }
+
+
+# ── P4-2C: Orchestrator enable/disable/reset/audit ──
+
+
+@router.post("/realtime/orchestrator/enable")
+async def orchestrator_enable(request: Request, payload: dict | None = None) -> dict:
+    """启用自动编排 tick loop。
+
+    Body: {"actions_enabled": false}
+      - actions_enabled=false: 只自动诊断，不执行 start/stop
+      - actions_enabled=true:  诊断 + 执行白名单动作
+    """
+    payload = payload or {}
+    actions_enabled = bool(payload.get("actions_enabled", False))
+    orch = request.app.state.realtime_business_orchestrator
+    return await orch.enable(actions_enabled=actions_enabled)
+
+
+@router.post("/realtime/orchestrator/disable")
+async def orchestrator_disable(request: Request) -> dict:
+    """禁用自动编排 tick loop。"""
+    orch = request.app.state.realtime_business_orchestrator
+    return await orch.disable()
+
+
+@router.post("/realtime/orchestrator/reset-action-history")
+async def orchestrator_reset_actions(request: Request) -> dict:
+    """重置 action history / retry state / circuit breaker（调试用）。"""
+    orch = request.app.state.realtime_business_orchestrator
+    return await orch.reset_action_history()
+
+
+@router.get("/realtime/orchestrator/audit")
+async def orchestrator_audit(request: Request, limit: int = 50) -> list[dict]:
+    """查看近期 audit log。"""
+    orch = request.app.state.realtime_business_orchestrator
+    return await orch.get_audit_log(limit=limit)
+
+
+# ── P4-2G: Database Health & Data Freshness Diagnostics ──
+
+
+_DB_HEALTH_WATCH_TABLES = [
+    ("news_raw", "created_at"),
+    ("event_review_queue", "created_at"),
+    ("jyhf_market_raw_capture", "captured_at"),
+]
+_DB_FRESHNESS_WARN_SEC = int(os.getenv("DB_FRESHNESS_WARN_SEC", "1800"))
+_DB_FRESHNESS_BLOCK_SEC = int(os.getenv("DB_FRESHNESS_BLOCK_SEC", "7200"))
+
+
+async def _db_health_snapshot() -> dict:
+    """只读数据库运行态诊断。不允许 COUNT(*)/写入/长事务。"""
+    import asyncpg
+    from datetime import datetime as _dt, timezone as _tz, timedelta as _td
+
+    TZ_CN = _tz(_td(hours=8))
+    checked_at = _dt.now(TZ_CN).isoformat()
+    blockers: list[str] = []
+    db_state = "unknown"
+
+    write_db = os.getenv("PG_DATABASE") or os.getenv("POSTGRES_DATABASE") or "stock_data_test"
+    pg_host = os.getenv("PG_HOST", "localhost")
+    pg_port = int(os.getenv("PG_PORT", "5432"))
+    pg_user = os.getenv("PG_USERNAME", "postgres")
+    pg_pass = os.getenv("PG_PASSWORD", "")
+    same_db = True
+    read_db = write_db
+
+    # ── 1. Connection check ──
+    try:
+        conn = await asyncio.wait_for(
+            asyncpg.connect(
+                host=pg_host, port=pg_port, database=write_db,
+                user=pg_user, password=pg_pass,
+                timeout=3, command_timeout=2,
+            ),
+            timeout=3.0,
+        )
+        t0 = time.time()
+        await conn.execute("SELECT 1")
+        latency_ms = int((time.time() - t0) * 1000)
+        db_state = "ready" if latency_ms <= 100 else ("degraded" if latency_ms <= 500 else "blocked")
+        if latency_ms > 100:
+            blockers.append(f"db latency elevated: {latency_ms}ms")
+    except Exception as exc:
+        return {
+            "ok": False, "state": "blocked", "db_state": "blocked",
+            "checked_at": checked_at, "latency_ms": None,
+            "write_db": write_db, "read_db": read_db, "same_db": same_db,
+            "blockers": [f"database connect failed: {exc}"],
+            "server": {}, "tables": {},
+        }
+
+    try:
+        # ── 2. Server info ──
+        server_info: dict[str, Any] = {}
+        pool_state = "ready"
+        lock_state = "ready"
+
+        try:
+            row = await conn.fetchrow("SELECT version()")
+            server_info["version"] = row[0] if row else "?"
+        except Exception:
+            server_info["version"] = "?"
+        server_info["current_database"] = write_db
+        server_info["current_user"] = pg_user
+
+        # Connection counts
+        try:
+            row = await conn.fetchrow(
+                "SELECT count(*) AS total, count(*) FILTER (WHERE state='active') AS active, "
+                "count(*) FILTER (WHERE state='idle') AS idle, "
+                "count(*) FILTER (WHERE state='idle in transaction') AS idle_in_tx, "
+                "count(*) FILTER (WHERE wait_event IS NOT NULL) AS waiting "
+                "FROM pg_stat_activity WHERE datname=current_database()"
+            )
+            server_info["active_connections"] = row["active"] if row else 0
+            server_info["idle_connections"] = row["idle"] if row else 0
+            server_info["idle_in_transaction"] = row["idle_in_tx"] if row else 0
+            server_info["waiting_queries"] = row["waiting"] if row else 0
+            if row and row["idle_in_tx"] and row["idle_in_tx"] > 0:
+                pool_state = "degraded"
+                blockers.append(f"idle in transaction: {row['idle_in_tx']}")
+            if row and row["waiting"] and row["waiting"] > 0:
+                lock_state = "degraded"
+                blockers.append(f"waiting queries: {row['waiting']}")
+        except Exception as exc:
+            blockers.append(f"pg_stat_activity failed: {exc}")
+
+        # Waiting query samples (top 5)
+        waiting_samples: list[dict] = []
+        try:
+            rows = await conn.fetch(
+                "SELECT pid, usename, application_name, state, wait_event_type, wait_event, "
+                "now()-query_start AS query_age, left(query, 200) AS query "
+                "FROM pg_stat_activity "
+                "WHERE wait_event IS NOT NULL AND datname=current_database() "
+                "ORDER BY query_start NULLS LAST LIMIT 5"
+            )
+            for r in rows:
+                waiting_samples.append({
+                    "pid": r["pid"],
+                    "user": r["usename"],
+                    "app": r["application_name"],
+                    "state": r["state"],
+                    "wait_type": r["wait_event_type"],
+                    "wait_event": r["wait_event"],
+                    "query_age": str(r["query_age"]) if r["query_age"] else None,
+                    "query": r["query"],
+                })
+        except Exception:
+            pass
+            blockers.append(f"pg_stat_activity failed: {exc}")
+
+        # Max connections
+        try:
+            row = await conn.fetchrow("SHOW max_connections")
+            server_info["max_connections"] = int(row[0]) if row else 0
+        except Exception:
+            server_info["max_connections"] = 0
+
+        # ── 3. Lock waits ──
+        try:
+            row = await conn.fetchrow("SELECT count(*) AS n FROM pg_locks WHERE NOT granted")
+            waiting_locks = row["n"] if row else 0
+            server_info["waiting_locks"] = waiting_locks
+            if waiting_locks >= 10:
+                lock_state = "blocked"
+                blockers.append(f"lock waits critical: {waiting_locks}")
+            elif waiting_locks > 0:
+                lock_state = "degraded"
+                blockers.append(f"lock waits: {waiting_locks}")
+        except Exception as exc:
+            blockers.append(f"pg_locks check failed: {exc}")
+            server_info["waiting_locks"] = -1
+
+        # ── 4. Table checks ──
+        tables: dict[str, dict] = {}
+        schema_state = "ready"
+        freshness_state = "ready"
+
+        for table_name, time_col in _DB_HEALTH_WATCH_TABLES:
+            t_state = "ready"
+            t_blockers: list[str] = []
+            try:
+                exists_row = await conn.fetchrow(
+                    "SELECT to_regclass($1)::text", f"public.{table_name}"
+                )
+                exists = bool(exists_row and exists_row[0])
+                if not exists:
+                    schema_state = "degraded"
+                    t_state = "blocked"
+                    t_blockers.append(f"table {table_name} does not exist")
+                    tables[table_name] = {"exists": False, "state": t_state, "blockers": t_blockers}
+                    continue
+
+                # Row estimate
+                try:
+                    est = await conn.fetchrow(
+                        "SELECT reltuples::bigint FROM pg_class WHERE oid=$1::regclass",
+                        f"public.{table_name}",
+                    )
+                    estimated_rows = est[0] if est else 0
+                except Exception:
+                    estimated_rows = -1
+
+                # Latest row timestamp
+                latest_at = None
+                age_sec = None
+                try:
+                    ts_row = await conn.fetchrow(
+                        f'SELECT "{time_col}" FROM "{table_name}" ORDER BY "{time_col}" DESC LIMIT 1'
+                    )
+                    if ts_row and ts_row[0]:
+                        latest_at = ts_row[0].isoformat() if hasattr(ts_row[0], "isoformat") else str(ts_row[0])
+                        age_sec = int((_dt.now(TZ_CN) - ts_row[0]).total_seconds())
+                except Exception:
+                    pass
+
+                if age_sec is not None:
+                    if age_sec > _DB_FRESHNESS_BLOCK_SEC:
+                        t_state = "blocked"
+                        t_blockers.append(f"data stale: {age_sec}s old (block>{_DB_FRESHNESS_BLOCK_SEC}s)")
+                        if freshness_state != "blocked":
+                            freshness_state = "degraded"
+                    elif age_sec > _DB_FRESHNESS_WARN_SEC:
+                        t_state = "degraded"
+                        t_blockers.append(f"data stale: {age_sec}s old (warn>{_DB_FRESHNESS_WARN_SEC}s)")
+                        if freshness_state == "ready":
+                            freshness_state = "degraded"
+
+                tables[table_name] = {
+                    "exists": True,
+                    "estimated_rows": estimated_rows,
+                    "latest_at": latest_at,
+                    "age_sec": age_sec,
+                    "state": t_state,
+                    "blockers": t_blockers,
+                }
+            except Exception as exc:
+                tables[table_name] = {"exists": False, "state": "blocked", "blockers": [str(exc)]}
+                if schema_state == "ready":
+                    schema_state = "degraded"
+
+        # Aggregate overall
+        overall = db_state
+        for s in [pool_state, schema_state, freshness_state, lock_state]:
+            if s == "blocked":
+                overall = "blocked"
+                break
+            elif s == "degraded" and overall != "blocked":
+                overall = "degraded"
+
+        return {
+            "ok": True,
+            "state": overall,
+            "db_state": db_state,
+            "pool_state": pool_state,
+            "schema_state": schema_state,
+            "freshness_state": freshness_state,
+            "lock_state": lock_state,
+            "checked_at": checked_at,
+            "latency_ms": latency_ms,
+            "write_db": write_db,
+            "read_db": read_db,
+            "same_db": same_db,
+            "server": server_info,
+            "tables": tables,
+            "waiting_samples": waiting_samples,
+            "blockers": blockers,
+        }
+    finally:
+        try:
+            await conn.close()
+        except Exception:
+            pass
+
+
+@router.get("/runtime/db-health")
+async def runtime_db_health():
+    """数据库运行态健康诊断。
+
+    只读，短超时，不 COUNT(*)，不写数据。"""
+    try:
+        async with asyncio.timeout(2.0):
+            return await _db_health_snapshot()
+    except Exception as exc:
+        return {
+            "ok": False, "state": "blocked", "db_state": "blocked",
+            "checked_at": "", "latency_ms": None,
+            "write_db": os.getenv("PG_DATABASE", "stock_data_test"),
+            "read_db": os.getenv("PG_DATABASE", "stock_data_test"),
+            "same_db": True,
+            "blockers": [f"db health timeout: {exc}"],
+            "server": {}, "tables": {},
+        }
+
+
+# ── P4-2G end ──
 
 
 @router.get("/intel/feed")
@@ -1042,6 +1623,25 @@ async def intel_strong_stocks_watch(
         },
     }
 
+# ── workspace 端点缓存：SPS 慢时避免重复阻塞，30s TTL ──
+_workspace_cache: dict[str, dict] = {}  # key -> {"data": ..., "ts": float}
+
+
+def _ws_cache_get(key: str, ttl: float = 30.0) -> dict | None:
+    import time as _time
+    entry = _workspace_cache.get(key)
+    if entry and (_time.time() - entry["ts"]) < ttl:
+        cached = dict(entry["data"])
+        cached["_cached"] = True
+        cached["_cache_age_s"] = round(_time.time() - entry["ts"], 1)
+        return cached
+    return None
+
+
+def _ws_cache_set(key: str, data: dict) -> None:
+    import time as _time
+    _workspace_cache[key] = {"data": data, "ts": _time.time()}
+
 
 @router.get("/workspace/theme-radar")
 async def workspace_theme_radar(
@@ -1049,6 +1649,12 @@ async def workspace_theme_radar(
     session: str = Query(default="all"),
     limit: int = Query(default=30, ge=1, le=200),
 ) -> dict:
+    # 缓存命中直接返回，避免 SPS 慢时重复阻塞
+    _ck = f"theme_radar:{date}:{session}:{limit}"
+    _cached = _ws_cache_get(_ck, ttl=20.0)
+    if _cached is not None:
+        return _cached
+
     # 并发获取 intel feed + daily_review
     feed_task = client.get_intel_feed(date=date, session=session, item_type="all", limit=limit)
     dr_task = client.get_json("/api/v1/daily_review", {"trade_date": date}) if date else None
@@ -1195,12 +1801,14 @@ async def workspace_theme_radar(
                 t["stock_count"] = max(t["stock_count"], len(ls))
 
     themes = sorted(by_theme.values(), key=lambda x: (-int(x["heat"]), x["theme_name"]))[:limit]
-    return {
+    result = {
         "date": date,
         "themes": themes,
         "source": "intel_feed_daily_review_merge",
         "diagnostics": dict(feed.get("diagnostics") or {}),
     }
+    _ws_cache_set(_ck, result)
+    return result
 
 
 @router.get("/workspace/intel-context")
@@ -1211,6 +1819,11 @@ async def workspace_intel_context(
     stock_id: str | None = Query(default=None),
     limit: int = Query(default=100, ge=1, le=500),
 ) -> dict:
+    _ck = f"intel_ctx:{date}:{session}:{subject_key}:{stock_id}:{limit}"
+    _cached = _ws_cache_get(_ck, ttl=20.0)
+    if _cached is not None:
+        return _cached
+
     feed = await client.get_intel_feed(
         date=date,
         session=session,
@@ -1220,7 +1833,7 @@ async def workspace_intel_context(
         limit=limit,
     )
     items = [i for i in (feed.get("items") or []) if i.get("source_channel") != "cninfo_announcement"]
-    return {
+    result = {
         "date": date,
         "subject_key": subject_key,
         "stock_id": stock_id,
@@ -1229,6 +1842,8 @@ async def workspace_intel_context(
         "diagnostics": dict(feed.get("diagnostics") or {}),
         "source": "intel_feed_proxy",
     }
+    _ws_cache_set(_ck, result)
+    return result
 
 
 @router.get("/workspace/market-validation")
@@ -1237,6 +1852,11 @@ async def workspace_market_validation(
     subject_key: str | None = Query(default=None),
     stock_id: str | None = Query(default=None),
 ) -> dict:
+    _ck = f"mkt_val:{trade_date}:{subject_key}:{stock_id}"
+    _cached = _ws_cache_get(_ck, ttl=20.0)
+    if _cached is not None:
+        return _cached
+
     import asyncio as _asyncio
     sw_task = _asyncio.create_task(client.get_strong_watch(trade_date))
     w2s_task = _asyncio.create_task(client.get_w2s_candidates(trade_date))
@@ -1310,7 +1930,7 @@ async def workspace_market_validation(
         except Exception:
             pass
 
-    return {
+    result = {
         "trade_date": trade_date,
         "subject_key": subject_key,
         "stock_id": stock_id,
@@ -1323,6 +1943,8 @@ async def workspace_market_validation(
         "stock_validation": stock_view,
         "theme_validation": theme_validation,
     }
+    _ws_cache_set(_ck, result)
+    return result
 
 
 @router.get("/intel/stream")

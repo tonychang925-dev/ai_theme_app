@@ -3,6 +3,9 @@
 用法:
   PYTHONPATH=/Users/admin/Desktop/ai_theme_app \
   python scripts/build_w2s_intraday_shadow_report.py --trade-date 2026-05-26 [--out-dir tmp/shadow_reports]
+
+v3.0-A: 新增 w2s_field() helper — 优先从 payload JSONB 读取 W2SSignal 兼容字段，
+        缺字段时回退到旧 log 表列。后续 v3.0-A+ w2s_signal_fusion_log 就绪后可直接切换。
 """
 from __future__ import annotations
 
@@ -10,6 +13,7 @@ import asyncio, json, sys
 from collections import defaultdict
 from datetime import date, datetime
 from pathlib import Path
+from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -22,6 +26,34 @@ DSN = "postgresql://postgres:postgres@localhost:5432/stock_data_test"
 
 def pct(val, n=1):
     return f"{val*100:.{n}f}%"
+
+
+def w2s_field(row: dict[str, Any], field: str, default: Any = None) -> Any:
+    """v3.0-A: 优先从 payload JSONB 读取 W2SSignal 兼容字段，缺字段回退旧列。"""
+    payload = row.get("payload")
+    if isinstance(payload, str):
+        try:
+            payload = json.loads(payload)
+        except (json.JSONDecodeError, TypeError):
+            payload = None
+    if isinstance(payload, dict):
+        mapping = {
+            "current": "current", "vwap": "vwap",
+            "relative_strength_vs_index": "relative_strength",
+            "relative_strength_cross_zero": "relative_strength_cross_zero",
+            "above_vwap_cross_up": "above_vwap",
+            "amount_acceleration": "amount_acceleration",
+            "break_platform_30m": "break_platform_30m",
+            "support_state": "support_state",
+            "alert_level": "alert_level",
+        }
+        mapped = mapping.get(field, field)
+        if mapped in payload:
+            return payload[mapped]
+        fs = payload.get("factor_snapshot")
+        if isinstance(fs, dict) and field in fs:
+            return fs[field]
+    return row.get(field, default)
 
 
 async def main():
