@@ -164,16 +164,12 @@ async def lifespan(app: FastAPI):
     app.state.match_engine_status = {"enabled": False, "ready": False, "loading": False, "error": None}
     if os.environ.get("SPS_ENABLE_STOCK_MATCH_ENGINE", "false").lower() in ("1", "true", "yes", "on"):
         app.state.match_engine_status["enabled"] = True
-        # 包装在 wait_for 中防止 SSL 卡死阻塞事件循环
-        async def _init_with_timeout():
-            try:
-                async with asyncio.timeout(45):
-                    await _init_stock_match_engine_background(app)
-            except TimeoutError:
-                app.state.match_engine_status["error"] = "init timed out after 45s"
-                app.state.match_engine_status["loading"] = False
-                logger.warning("StockMatchEngine background init timed out")
-        asyncio.create_task(_init_with_timeout())
+        # 在独立线程中运行避免 SSL 阻塞事件循环（同 jyhf_market 问题）
+        def _init_match_engine_sync():
+            import asyncio as _asyncio
+            _asyncio.run(_init_stock_match_engine_background(app))
+        loop = asyncio.get_running_loop()
+        loop.run_in_executor(None, _init_match_engine_sync)
     else:
         logger.info("StockMatchEngine disabled (set SPS_ENABLE_STOCK_MATCH_ENGINE=true to enable)")
     from stock_processing_service.application.services.collection_task_registry import get_default_registry
@@ -215,17 +211,28 @@ async def lifespan(app: FastAPI):
     else:
         logger.info("W2S alert loop disabled (set SPS_ENABLE_W2S_ALERT_LOOP=true to enable)")
 
-    # P2: jyhf_market 行情采集器自动启动（默认开启）
-    async def _auto_start_jyhf_market():
-        await asyncio.sleep(5)  # 等 SPS 完全就绪
-        from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
-        try:
-            c = get_jyhf_market_collector()
-            await c.start()
-            logger.info("jyhf_market collector auto-started")
-        except Exception as exc:
-            logger.warning("jyhf_market auto-start failed: %s", exc)
-    _jyhf_market_task = asyncio.create_task(_auto_start_jyhf_market())
+    # P2: jyhf_market 行情采集器自动启动（默认关闭—web_app orchestrator 管理生命周期）
+    def _start_jyhf_sync(collector) -> None:
+        """在独立线程中运行 jyhf_market collector.start()，避免 SSL 阻塞主线程事件循环。"""
+        import asyncio as _asyncio
+        _asyncio.run(collector.start())
+
+    if os.environ.get("SPS_ENABLE_JYHF_MARKET_AUTO_START", "false").lower() in ("1", "true", "yes", "on"):
+        async def _auto_start_jyhf_market():
+            await asyncio.sleep(5)
+            from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
+            try:
+                c = get_jyhf_market_collector()
+                # 在 executor 中运行避免 SSL 阻塞事件循环（JYHF API 47.99.190.68 不可达时 PySSL_select→poll 卡死主线程）
+                loop = asyncio.get_running_loop()
+                await loop.run_in_executor(None, _start_jyhf_sync, c)
+                logger.info("jyhf_market collector auto-started")
+            except Exception as exc:
+                logger.warning("jyhf_market auto-start failed: %s", exc)
+        _jyhf_market_task = asyncio.create_task(_auto_start_jyhf_market())
+    else:
+        _jyhf_market_task = None
+        logger.info("JYHF market auto-start DISABLED (web_app orchestrator owns lifecycle)")
 
     await app.state.phase1_repo.initialize()
     try:
