@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
-  fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
+  fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, fetchPostMarketJobsStatus, publishRecapToNotion,
   type AbnormalStockReviewV2, type DailyReviewView, type DragonTigerReviewV2, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness,
   generateDailyReviewV2, generatePostMarketDerivedData, generatePostMarketRecap,
@@ -9,14 +9,10 @@ import {
 import { navigateTo } from "../../lib/navigation";
 import recapIcon from "../../assets/intel-icons/当日复盘.png";
 
-// PR-14B: Engine Panels
-import EngineDecisionHeader from "./components/EngineDecisionHeader";
-import MarketRegimePanel from "./components/MarketRegimePanel";
-import MarketOverviewPanel from "./components/MarketOverviewPanel";
-import MainlineStateBoard from "./components/MainlineStateBoard";
-import D1NextDayWatchPanel from "./components/D1NextDayWatchPanel";
-import LayerCStrongPoolPanel from "./components/LayerCStrongPoolPanel";
-import RecapDataQualityBar from "./components/RecapDataQualityBar";
+// PR-14F: engine-first post_market recap view
+import EngineMissingState from "./components/EngineMissingState";
+import EnginePostMarketView from "./components/EnginePostMarketView";
+import LegacyRecapSections from "./components/LegacyRecapSections";
 
 const DISPLAY_REPLACEMENTS: Array<[string, string]> = [
   ["risk_off", "避险防御"],
@@ -841,6 +837,7 @@ function sectionMap(payload: RecapViewModelV2 | null) {
 }
 
 type PostMarketDataMode = "sections_first" | "daily_review_v2_first";
+type RecapViewMode = "engine" | "legacy";
 
 function normalizePostMarketDataMode(value: string | null | undefined): PostMarketDataMode | null {
   if (value === "daily_review_v2" || value === "daily_review_v2_first") {
@@ -863,6 +860,44 @@ function resolvePostMarketDataMode(params: URLSearchParams): PostMarketDataMode 
   return normalizePostMarketDataMode(import.meta.env.VITE_POST_MARKET_DEFAULT_DATA_MODE) ?? "daily_review_v2_first";
 }
 
+function resolveRecapViewMode(params: URLSearchParams): RecapViewMode {
+  if (params.get("view") === "legacy" || params.get("legacy_sections") === "1") {
+    return "legacy";
+  }
+  return "engine";
+}
+
+function isEngineReportReady(dailyReviewV2: PostMarketDailyReviewV2 | null) {
+  return Boolean(
+    dailyReviewV2?.engine_summary &&
+    dailyReviewV2?.market_regime_review &&
+    Array.isArray(dailyReviewV2?.mainline_daily_states) &&
+    (dailyReviewV2?.mainline_daily_states?.length ?? 0) > 0 &&
+    dailyReviewV2?.post_market_decision_v2,
+  );
+}
+
+function buildRecapSearchParams({
+  tradeDate,
+  reportType,
+  dataMode,
+  viewMode,
+}: {
+  tradeDate: string;
+  reportType: "pre_market" | "post_market";
+  dataMode?: PostMarketDataMode | null;
+  viewMode?: RecapViewMode | null;
+}) {
+  const query = new URLSearchParams({ date: tradeDate, report_type: reportType });
+  if (reportType === "post_market" && dataMode) {
+    query.set("data_mode", dataMode === "daily_review_v2_first" ? "daily_review_v2" : "sections_first");
+  }
+  if (viewMode === "legacy") {
+    query.set("view", "legacy");
+  }
+  return query;
+}
+
 function todayString() {
   return new Intl.DateTimeFormat("en-CA", {
     timeZone: "Asia/Shanghai",
@@ -873,7 +908,12 @@ function todayString() {
 }
 
 function isMissingPostMarketSnapshotError(message: string) {
-  return message.includes("post-market snapshot is unavailable or unmappable");
+  return message.includes("post-market snapshot is unavailable or unmappable")
+    || message.includes("request timeout after");
+}
+
+function hasRunningPostMarketJob(status?: { summary?: { has_running?: boolean }; items?: Array<{ status?: string }> } | null) {
+  return Boolean(status?.summary?.has_running) || Boolean(status?.items?.some((item) => item.status === "running"));
 }
 
 export function RecapPage() {
@@ -882,6 +922,7 @@ export function RecapPage() {
   const initialType = window.location.search.includes("report_type=pre_market") ? "pre_market" : "post_market";
   const initialDate = initialParams.get("date") ?? today;
   const dataMode = resolvePostMarketDataMode(initialParams);
+  const viewMode = resolveRecapViewMode(initialParams);
   const dailyReviewV2PreviewEnabled = dataMode === "daily_review_v2_first";
 
   const [tradeDate, setTradeDate] = useState(initialDate);
@@ -915,6 +956,8 @@ export function RecapPage() {
       ?? generationSteps[generationSteps.length - 1];
   }, [generationSteps]);
   const isPostMarket = effectiveReportType === "post_market";
+  const legacyViewEnabled = isPostMarket && viewMode === "legacy";
+  const engineReportReady = isEngineReportReady(dailyReviewV2);
   const marketEnvironmentSection = sections.get("大盘环境总结") ?? [];
   const themeEnvironmentSection = sections.get("板块环境总结") ?? [];
   const themeSection = sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? [];
@@ -929,7 +972,6 @@ export function RecapPage() {
   const auctionValidationSection = sections.get("竞价验证回看") ?? [];
   const auxSection = sections.get("龙虎榜") ?? sections.get("龙虎榜与来源链") ?? sections.get("失效条件") ?? [];
   const cycleByTheme = useMemo(() => buildThemeCycleMap(cycleSection), [cycleSection]);
-  const legacyPostMarketSectionsDisabled = isPostMarket && dailyReviewV2PreviewEnabled;
   const strongStockGroups = useMemo(() => {
     const v2Rows = dailyReviewV2?.strong_stock_reviews;
     if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "strong_stock_reviews", v2Rows)) {
@@ -1109,22 +1151,51 @@ export function RecapPage() {
     setError(null);
 
     if (reportType === "post_market") {
-      // P0 止血：主体展示以 post_market snapshot sections 为准；DailyReview 仅旁路加载 diagnostics。
-      fetchRecapSnapshot({ date: tradeDate, reportType })
-        .then((data) => {
-          if (!active) return;
-          setPayload(data);
-          const query = new URLSearchParams({ date: tradeDate, report_type: reportType });
-          if (dailyReviewV2PreviewEnabled) query.set("data_mode", "daily_review_v2");
-          window.history.replaceState(null, "", `/recap?${query.toString()}`);
+      let bootstrapFinalized = false;
+      const finalizeBootstrap = (action: () => void) => {
+        if (!active || bootstrapFinalized) return;
+        bootstrapFinalized = true;
+        action();
+      };
+
+      const snapshotPromise = fetchRecapSnapshot({ date: tradeDate, reportType });
+      const readinessPromise = fetchPostMarketReadiness(tradeDate).catch(() => null);
+      const jobsPromise = fetchPostMarketJobsStatus(tradeDate).catch(() => null);
+
+      snapshotPromise
+        .then((snapshot) => {
+          finalizeBootstrap(() => {
+            setPayload(snapshot);
+            const query = buildRecapSearchParams({
+              tradeDate,
+              reportType,
+              dataMode: dailyReviewV2PreviewEnabled ? "daily_review_v2_first" : "sections_first",
+              viewMode,
+            });
+            window.history.replaceState(null, "", `/recap?${query.toString()}`);
+            setLoading(false);
+          });
         })
         .catch((err: Error) => {
-          if (!active) return;
-          setError(isMissingPostMarketSnapshotError(err.message) ? null : err.message);
-        })
-        .finally(() => {
-          if (active) setLoading(false);
+          if (!active || bootstrapFinalized) return;
+          if (isMissingPostMarketSnapshotError(err.message)) {
+            return;
+          }
+          bootstrapFinalized = true;
+          setError(err.message);
+          setLoading(false);
         });
+
+      void (async () => {
+        const [readiness, jobs] = await Promise.all([readinessPromise, jobsPromise]);
+        if (!active || bootstrapFinalized) return;
+        if (readiness?.status === "failed_precondition" && !hasRunningPostMarketJob(jobs)) {
+          bootstrapFinalized = true;
+          setLoading(false);
+          return;
+        }
+      })();
+
       fetchDailyReview(tradeDate)
         .then((data) => {
           if (!active) return;
@@ -1147,8 +1218,11 @@ export function RecapPage() {
       .then((data) => {
         if (active) {
           setPayload(data);
-          const query = new URLSearchParams({ date: tradeDate, report_type: reportType });
-          if (dailyReviewV2PreviewEnabled) query.set("data_mode", "daily_review_v2");
+          const query = buildRecapSearchParams({
+            tradeDate,
+            reportType,
+            dataMode: dailyReviewV2PreviewEnabled ? "daily_review_v2_first" : "sections_first",
+          });
           window.history.replaceState(null, "", `/recap?${query.toString()}`);
         }
       })
@@ -1198,6 +1272,25 @@ export function RecapPage() {
     } finally {
       setPublishing(false);
     }
+  }
+
+  function openPostMarketLegacyView() {
+    const query = buildRecapSearchParams({
+      tradeDate,
+      reportType: "post_market",
+      dataMode: dailyReviewV2PreviewEnabled ? "daily_review_v2_first" : "sections_first",
+      viewMode: "legacy",
+    });
+    navigateTo(`/recap?${query.toString()}`);
+  }
+
+  function openPostMarketEngineView() {
+    const query = buildRecapSearchParams({
+      tradeDate,
+      reportType: "post_market",
+      dataMode: dailyReviewV2PreviewEnabled ? "daily_review_v2_first" : "sections_first",
+    });
+    navigateTo(`/recap?${query.toString()}`);
   }
 
   async function refreshPostMarketStatus() {
@@ -1281,13 +1374,13 @@ export function RecapPage() {
   }
 
   return (
-    <div className="workspace-page">
+    <div className="workspace-page recap-dark-theme">
       <section className="strong-watch-toolbar">
         <img src={recapIcon} alt="" style={{ height: 64, width: 64, flexShrink: 0 }} />
         <h1 className="strong-watch-title">{reportType === "post_market" ? "当日复盘" : "盘前必读"}</h1>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <span style={{ fontSize: 12, color: "#9f9f9f" }}>交易日</span>
+            <span style={{ fontSize: 12, color: "#66d9ef" }}>交易日</span>
             <input type="date" value={tradeDate} onChange={(event) => setTradeDate(event.target.value)}
               style={{ border: "1px solid #2a2a2a", borderRadius: 6, background: "#1a1a1a", color: "#f5f5f5", padding: "4px 8px" }} />
           </label>
@@ -1367,601 +1460,79 @@ export function RecapPage() {
         <>
           <main className="workspace-layout single">
             <section className="workspace-column">
-              {/* ── PR-14B: Engine Panels (new architecture first) ── */}
-              {dailyReviewV2PreviewEnabled && (
-                <>
-                  <RecapDataQualityBar
-                    indexReady={(dailyReviewV2?.index_technical_reviews?.length ?? 0) > 0}
-                    mainlineReady={(dailyReviewV2?.mainline_daily_states?.length ?? 0) > 0}
-                    pdv2Ready={!!dailyReviewV2?.post_market_decision_v2}
+              {isPostMarket ? (
+                legacyViewEnabled ? (
+                  <LegacyRecapSections
+                    reportType="post_market"
+                    tradeDate={tradeDate}
+                    onShowEngine={openPostMarketEngineView}
+                    highlights={highlights}
+                    marketEnvironmentSection={marketEnvironmentSection}
+                    themeEnvironmentSection={themeEnvironmentSection}
+                    themeSection={themeSection}
+                    themeSummaryRows={themeSummaryRows}
+                    themeCapitalFlowRows={themeCapitalFlowRows}
+                    strongStockSection={strongStockSection}
+                    strongStockGroups={strongStockGroups}
+                    watchlistSection={watchlistSection}
+                    watchlistRows={watchlistRows}
+                    stockCapitalFlowSection={stockCapitalFlowSection}
+                    stockCapitalFlowRows={stockCapitalFlowRows}
+                    moneySection={moneySection}
+                    moneyFlowRows={moneyFlowRows}
+                    abnormalSection={abnormalSection}
+                    abnormalNote={abnormalNote}
+                    abnormalRows={abnormalRows}
+                    sortedAbnormalRows={sortedAbnormalRows}
+                    auctionSection={auctionSection}
+                    auctionValidationSection={auctionValidationSection}
+                    auxSection={auxSection}
+                    dragonTigerNote={dragonTigerNote}
+                    dragonTigerRows={dragonTigerRows}
+                    themeKeyByTheme={themeKeyByTheme}
                   />
-                  {dailyReviewV2?.engine_summary && (
-                    <EngineDecisionHeader
-                      engineSummary={dailyReviewV2.engine_summary}
-                      marketRegime={dailyReviewV2.market_regime_review ?? null}
-                    />
-                  )}
-                  {dailyReviewV2?.market_regime_review && (
-                    <MarketRegimePanel
-                      marketRegime={dailyReviewV2.market_regime_review}
-                      indexReviews={dailyReviewV2.index_technical_reviews}
-                      tradeDate={tradeDate}
-                    />
-                  )}
-                  {dailyReviewV2?.market_overview_review && (
-                    <MarketOverviewPanel
-                      marketOverview={dailyReviewV2.market_overview_review}
-                      tradeDate={tradeDate}
-                    />
-                  )}
-                  {(dailyReviewV2?.mainline_daily_states?.length ?? 0) > 0 && (
-                    <MainlineStateBoard rows={dailyReviewV2!.mainline_daily_states!} tradeDate={tradeDate} />
-                  )}
-                  {dailyReviewV2?.post_market_decision_v2 && (
-                    <D1NextDayWatchPanel review={dailyReviewV2.post_market_decision_v2} />
-                  )}
-                  {dailyReviewV2?.post_market_decision_v2 && (
-                    <LayerCStrongPoolPanel review={dailyReviewV2.post_market_decision_v2} />
-                  )}
-                </>
-              )}
-
-              {/* P0: 交易原则卡片 */}
-              {dailyReviewV2PreviewEnabled && dailyReviewV2?.trading_principle && typeof dailyReviewV2.trading_principle === "object" && Object.keys(dailyReviewV2.trading_principle as Record<string, unknown>).length > 0 && (() => {
-                const tp = dailyReviewV2.trading_principle as Record<string, unknown>;
-                return (
-                  <div className="workspace-card recap-principle-card">
-                    <span className="metric-label section-title">今日交易原则</span>
-                    <div className="recap-principle-grid">
-                      <div><span className="workspace-note">市场模式</span><strong>{zh(String(tp.market_mode ?? "--"))}</strong></div>
-                      <div><span className="workspace-note">是否允许交易</span><strong>{tp.allow_trade ? "允许" : "不允许"}</strong></div>
-                      <div><span className="workspace-note">仓位上限</span><strong>{typeof tp.position_limit === "number" ? `${Math.round(tp.position_limit as number * 100)}%` : "--"}</strong></div>
-                      <div><span className="workspace-note">主策略</span><strong>{zh(String(tp.main_strategy ?? "--"))}</strong></div>
-                      {Array.isArray(tp.focus_themes) && (tp.focus_themes as string[]).length > 0 && (
-                        <div><span className="workspace-note">重点关注题材</span><strong>{(tp.focus_themes as string[]).join("、")}</strong></div>
-                      )}
-                      {Array.isArray(tp.no_trade_reasons) && (tp.no_trade_reasons as string[]).length > 0 && (
-                        <div className="recap-principle-warning"><span className="workspace-note">不交易原因</span><strong className="text-warning">{(tp.no_trade_reasons as string[]).join("；")}</strong></div>
-                      )}
-                      {Array.isArray(tp.risk_notes) && (tp.risk_notes as string[]).length > 0 && (
-                        <div className="recap-principle-risks"><span className="workspace-note">风险提示</span><ul className="workspace-list">{(tp.risk_notes as string[]).map((n, i) => <li key={`risk-${i}`} className="workspace-note">{zh(n)}</li>)}</ul></div>
-                      )}
-                    </div>
-                  </div>
-                );
-              })()}
-              {(marketEnvironmentSection.length > 0 || highlights.length > 0) && (
-                <div className="workspace-card market-summary-group">
-                  <span className="metric-label section-title">市场总览</span>
-                  <div className="market-summary-grid">
-                    {marketEnvironmentSection.length > 0 && (
-                      <div className="market-bias-card market-summary-card">
-                        <span className="metric-label section-title">大盘环境总结</span>
-                        <div className="market-bias-hero">
-                          <strong>{zh(marketEnvironmentSection[0])}</strong>
-                          {marketEnvironmentSection[1] && (
-                            <p className="workspace-note">{zh(marketEnvironmentSection[1])}</p>
-                          )}
-                        </div>
-                        {marketEnvironmentSection.length > 2 && (
-                          <ul className="workspace-list market-bias-list">
-                            {marketEnvironmentSection.slice(2).map((item, idx) => {
-                              const parsed = splitSummaryLine(item);
-                              return (
-                                <li key={`market-env-${idx}`}>
-                                  <strong>{parsed.label || `环境观察 ${idx + 1}`}</strong>
-                                  <p className="workspace-note">{zh(parsed.body)}</p>
-                                </li>
-                              );
-                            })}
-                          </ul>
-                        )}
-                      </div>
-                    )}
-
-                    <div className="market-summary-card">
-                      <span className="metric-label section-title">核心要点</span>
-                      {highlights.length > 0 ? (
-                        <ul className="workspace-list">
-                          {highlights.map((item, idx) => {
-                            const parsed = splitSummaryLine(item);
-                            return (
-                              <li key={`highlight-${idx}`}>
-                                <strong>{parsed.label || `要点 ${idx + 1}`}</strong>
-                                <p className="workspace-note">{zh(parsed.body)}</p>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      ) : (
-                        <p className="workspace-note">暂无高亮摘要</p>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* 旧 sections 仅保留给非 preview 的兼容路径，post_market 新架构不再走这里。 */}
-              {!legacyPostMarketSectionsDisabled && (isPostMarket || (sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? []).length > 0) && (
-                <div className="workspace-card">
-                  <span className="metric-label section-title">{effectiveReportType === "post_market" ? "主线与支线" : "可做主线与支线"}</span>
-                  {effectiveReportType === "post_market" ? (
-                    themeSummaryRows.length > 0 ? (
-                      <div className="recap-table-stack">
-                        <article className="workspace-card recap-table-card">
-                          <div className="recap-table-head">
-                            <strong>主线</strong>
-                          </div>
-                          <div className="recap-table-wrap">
-                            <table className="recap-table">
-                              <thead>
-                                <tr>
-                                  <th>题材</th>
-                                  <th>总净流入</th>
-                                  <th>龙头净流入</th>
-                                  <th>题材K线</th>
-                                  <th>事件分</th>
-                                  <th>市场分</th>
-                                  <th>周期阶段</th>
-                                  <th>操作建议</th>
-                                  <th>结论</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {mainThemeRows.map((row, idx) => (
-                                  <tr key={`main-theme-row-${idx}`}>
-                                    <td>{renderThemeLink(row.theme, row.subjectKey, tradeDate)}</td>
-                                    <td>{row.totalInflow}</td>
-                                    <td>{row.leaderInflow}</td>
-                                    <td>{row.themeKline}</td>
-                                    <td>{row.eventScore}</td>
-                                    <td>{row.marketScore}</td>
-                                    <td>{renderThemeStatusTags([row.cycleStage])}</td>
-                                    <td>{renderThemeStatusTags([row.actionAdvice])}</td>
-                                    <td>{row.conclusion}</td>
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          </div>
-                        </article>
-
-                        {branchThemeRows.length > 0 && (
-                          <article className="workspace-card recap-table-card">
-                            <div className="recap-table-head">
-                              <strong>强分支</strong>
-                            </div>
-                            <div className="recap-table-wrap">
-                              <table className="recap-table">
-                                <thead>
-                                  <tr>
-                                    <th>题材</th>
-                                    <th>总净流入</th>
-                                    <th>龙头净流入</th>
-                                    <th>题材K线</th>
-                                    <th>事件分</th>
-                                    <th>市场分</th>
-                                    <th>周期阶段</th>
-                                    <th>操作建议</th>
-                                    <th>结论</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  {branchThemeRows.map((row, idx) => (
-                                    <tr key={`branch-theme-row-${idx}`}>
-                                      <td>{renderThemeLink(row.theme, row.subjectKey, tradeDate)}</td>
-                                      <td>{row.totalInflow}</td>
-                                      <td>{row.leaderInflow}</td>
-                                      <td>{row.themeKline}</td>
-                                      <td>{row.eventScore}</td>
-                                      <td>{row.marketScore}</td>
-                                      <td>{renderThemeStatusTags([row.cycleStage])}</td>
-                                      <td>{renderThemeStatusTags([row.actionAdvice])}</td>
-                                      <td>{row.conclusion}</td>
-                                    </tr>
-                                  ))}
-                                </tbody>
-                              </table>
-                            </div>
-                          </article>
-                        )}
-                      </div>
-                    ) : (
-                      <p className="workspace-note">暂无数据，请检查 report.sections.主线与支线</p>
-                    )
-                  ) : (
-                    <ul className="workspace-list">
-                      {themeSection.map((item, idx) => {
-                        const parsed = splitThemeLine(item);
-                        return (
-                          <li key={`theme-watch-${idx}`}>
-                            <strong>{parsed.theme || `条目 ${idx + 1}`}</strong>
-                            <p className="workspace-note">{zh(parsed.body)}</p>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-                </div>
-              )}
-
-              {!legacyPostMarketSectionsDisabled && (isPostMarket || themeCapitalFlowRows.length > 0) && (
-                <div className="workspace-card">
-                  <span className="metric-label section-title">主线资金流入前10</span>
-                  {themeCapitalFlowRows.length > 0 ? (
-                    <div className="recap-table-wrap">
-                      <table className="recap-table">
-                        <thead>
-                          <tr>
-                            <th>题材</th>
-                            <th>层级</th>
-                            <th>总净流入</th>
-                            <th>前3净流入</th>
-                            <th>龙头净流入</th>
-                            <th>流入股数</th>
-                            <th>题材K线</th>
-                            <th>阶段</th>
-                            <th>动作</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {themeCapitalFlowRows.map((row, idx) => (
-                            <tr key={`theme-capital-${idx}`}>
-                              <td>{renderThemeLink(row.theme, row.subjectKey, tradeDate)}</td>
-                              <td>{row.tier}</td>
-                              <td>{row.totalInflow}</td>
-                              <td>{row.top3Inflow}</td>
-                              <td>{row.leaderInflow}</td>
-                              <td>{row.inflowCount}</td>
-                              <td>{row.themeKline}</td>
-                              <td>{renderThemeStatusTags([row.stage])}</td>
-                              <td>{renderThemeStatusTags([row.action])}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  ) : (
-                    <p className="workspace-note">暂无数据，请检查 report.sections.主线资金流入前10</p>
-                  )}
-                </div>
-              )}
-
-              {!legacyPostMarketSectionsDisabled && (isPostMarket || (sections.get("强势股分层") ?? sections.get("盘前重点盯盘个股") ?? []).length > 0) && (
-                <div className="workspace-card">
-                  <span className="metric-label section-title">{effectiveReportType === "post_market" ? "强势股分层" : "盘前重点盯盘个股"}</span>
-                  {effectiveReportType === "post_market" ? (
-                    strongStockGroups.length > 0 ? (
-                      <div className="recap-table-stack">
-                        {strongStockGroups.map(([themeName, rows]) => (
-                          <article className="workspace-card recap-table-card" key={`stock-${themeName}`}>
-                          <div className="recap-table-head">
-                            <strong>{themeName}</strong>
-                          </div>
-                          <div className="recap-table-wrap">
-                            <table className="recap-table">
-                              <thead>
-                                <tr>
-                                  <th>股票</th>
-                                  <th>角色</th>
-                                  <th>综合分</th>
-                                  <th>正宗性</th>
-                                  <th>领涨性</th>
-                                  <th>资金量能</th>
-                                  <th>结构位置</th>
-                                  <th>抗跌承接</th>
-                                  <th>资金</th>
-                                  <th>K线位置</th>
-                                  <th>K线形态</th>
-                                  <th>LLM判断</th>
-                                  <th>LLM理由</th>
-                                  <th>评分依据</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {rows.map((row, idx) => (
-                                  <tr key={`row-${themeName}-${idx}`} data-role={strongStockBucket(row.raw)}>
-                                  <td>{row.stockName}</td>
-                                  <td>{row.role}</td>
-                                  <td>{row.compositeScore}</td>
-                                  <td>{renderScoredCell(row.purityScore)}</td>
-                                  <td>{renderScoredCell(row.leadingScore)}</td>
-                                  <td>{renderScoredCell(row.capitalScore)}</td>
-                                  <td>{renderScoredCell(row.structureScore)}</td>
-                                  <td>{renderScoredCell(row.resilienceScore)}</td>
-                                  <td>{row.moneyFlow}</td>
-                                  <td>{row.klinePosition}</td>
-                                  <td>{row.klinePattern}</td>
-                                  <td>{renderDecisionTags(row)}</td>
-                                  <td className="recap-cell-wrap recap-cell-llm-reason">{row.llmReason}</td>
-                                  <td>{row.rationale}</td>
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          </div>
-                          </article>
-                        ))}
-                      </div>
-                    ) : (
-                      <p className="workspace-note">暂无数据，请检查 report.sections.强势股分层</p>
-                    )
-                  ) : (
-                    <ul className="workspace-list">
-                      {strongStockSection.map((item, idx) => {
-                        const parsed = splitThemeLine(item);
-                        return (
-                          <li key={`watch-stock-${idx}`}>
-                            <strong>{parsed.theme || `条目 ${idx + 1}`}</strong>
-                            <p className="workspace-note">{zh(parsed.body)}</p>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-                </div>
-              )}
-
-              {!legacyPostMarketSectionsDisabled && (isPostMarket || watchlistSection.length > 0) && (
-                <div className="workspace-card">
-                  <span className="metric-label section-title">次日观察清单</span>
-                  {watchlistRows.length > 0 ? (
-                    <div className="recap-table-wrap">
-                      <table className="recap-table recap-table-watchlist">
-                        <thead>
-                          <tr>
-                            <th>股票</th>
-                            <th>类别</th>
-                            <th>题材</th>
-                            <th>角色</th>
-                            <th>阶段</th>
-                            <th>动作</th>
-                            <th>量比</th>
-                            <th>形态</th>
-                            <th>Flag</th>
-                            <th>龙虎榜</th>
-                            <th>催化/异动</th>
-                            <th>买入条件</th>
-                            <th>失效条件</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {watchlistRows.map((row, idx) => (
-                            <tr key={`watchlist-${idx}`}>
-                              <td className="recap-stock-highlight">{row.stockName}</td>
-                              <td>{row.category}</td>
-                              <td>{row.showTheme ? renderThemeLink(row.theme, row.subjectKey, tradeDate) : ""}</td>
-                              <td>{row.role}</td>
-                              <td>{renderThemeStatusTags([row.stage])}</td>
-                              <td>{row.action !== "--" ? row.action : "--"}</td>
-                              <td>{row.volumeRatio !== "--" ? row.volumeRatio : "--"}</td>
-                              <td className="recap-cell-wrap">{row.pattern !== "--" ? row.pattern : "--"}</td>
-                              <td>{row.flag !== "--" ? row.flag : "--"}</td>
-                              <td>{row.dragonDays !== "--" ? `${row.dragonDays}天` : "--"}</td>
-                              <td className="recap-cell-wrap">
-                                {zh(
-                                  [row.catalyst !== "--" ? row.catalyst : "", row.labels !== "--" ? row.labels : ""]
-                                    .filter(Boolean)
-                                    .join("；") || "--",
-                                )}
-                              </td>
-                              <td className="recap-cell-wrap">{zh(row.buyCondition || "--")}</td>
-                              <td className="recap-cell-wrap">{zh(row.invalidCondition || "--")}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  ) : (
-                    <p className="workspace-note">暂无数据，请检查 report.sections.次日观察清单</p>
-                  )}
-                </div>
-              )}
-
-              {!legacyPostMarketSectionsDisabled && (isPostMarket || stockCapitalFlowRows.length > 0) && (
-                <div className="workspace-card">
-                  <span className="metric-label section-title">股票资金流入前20</span>
-                  {stockCapitalFlowRows.length > 0 ? (
-                    <div className="recap-table-wrap">
-                      <table className="recap-table">
-                        <thead>
-                          <tr>
-                            <th>股票</th>
-                            <th>题材</th>
-                            <th>主力净流入</th>
-                            <th>题材内排名</th>
-                            <th>涨幅</th>
-                            <th>龙头</th>
-                            <th>Flag</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {stockCapitalFlowRows.map((row, idx) => (
-                            <tr key={`stock-capital-${idx}`}>
-                              <td className="recap-stock-highlight">{row.stockName}</td>
-                              <td>{renderThemeLink(row.theme, themeKeyByTheme.get(row.theme), tradeDate)}</td>
-                              <td>{row.mainInflow}</td>
-                              <td>{row.rankOrder}</td>
-                              <td>{row.pctChg}</td>
-                              <td>{row.isLeader}</td>
-                              <td>{row.flag}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  ) : (
-                    <p className="workspace-note">暂无数据，请检查 report.sections.主线股票资金流入前20</p>
-                  )}
-                </div>
-              )}
-
-              {!legacyPostMarketSectionsDisabled && (isPostMarket || abnormalSection.length > 0) && (
-                <div className="workspace-card">
-                  <span className="metric-label section-title">当日异动股与资金行为</span>
-                  {abnormalNote && <p className="workspace-note">{zh(abnormalNote)}</p>}
-                  {abnormalRows.length > 0 ? (
-                    <div className="recap-table-wrap">
-                      <table className="recap-table">
-                        <thead>
-                          <tr>
-                            <th>股票</th>
-                            <th>题材</th>
-                            <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("score")}>异动分</button></th>
-                            <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("turnoverRate")}>换手率</button></th>
-                            <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("volumeRatio")}>量比</button></th>
-                            <th><button type="button" className="link-button" onClick={() => toggleAbnormalSort("volumeVsMa50")}>成交量/50日均量</button></th>
-                            <th>资金</th>
-                            <th>异动标签</th>
-                            <th>结论</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {sortedAbnormalRows.map((row, idx) => (
-                            <tr key={`abnormal-row-${idx}`}>
-                              <td className="recap-stock-highlight">{row.stockName}</td>
-                              <td>{row.theme}</td>
-                              <td>{row.score}</td>
-                              <td>{row.turnoverRate}</td>
-                              <td>{row.volumeRatio}</td>
-                              <td>{row.volumeVsMa50}</td>
-                              <td>{renderAbnormalCapital(row.capital)}</td>
-                              <td>{renderAbnormalLabels(row.labels)}</td>
-                              <td>{row.conclusion}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  ) : (
-                    <p className="workspace-note">暂无数据，请检查 report.sections.当日异动股与资金行为</p>
-                  )}
-                </div>
-              )}
-
-              {!legacyPostMarketSectionsDisabled && (isPostMarket || moneySection.length > 0) && (
-                <div className="workspace-card">
-                  <span className="metric-label section-title">资金行为增强</span>
-                  {moneyFlowRows.length > 0 ? (
-                    <div className="recap-table-wrap">
-                      <table className="recap-table">
-                        <thead>
-                          <tr>
-                            <th>题材</th>
-                            <th>股票</th>
-                            <th>资金角色</th>
-                            <th>资金分层</th>
-                            <th>得分</th>
-                            <th>K线位置</th>
-                            <th>K线形态</th>
-                            <th>说明</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {moneyFlowRows.map((row, idx) => (
-                            <tr key={`money-flow-${idx}`}>
-                              <td>{renderThemeLink(row.theme, themeKeyByTheme.get(row.theme), tradeDate)}</td>
-                              <td className="recap-stock-highlight">{row.stockName}</td>
-                              <td>{row.roleEnhanced}</td>
-                              <td>{row.moneyTier}</td>
-                              <td>{row.score}</td>
-                              <td>{row.klinePosition}</td>
-                              <td>{row.klinePattern}</td>
-                              <td className="recap-cell-wrap">{row.note}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  ) : (
-                    <p className="workspace-note">暂无数据，请检查 report.sections.资金行为增强</p>
-                  )}
-                </div>
-              )}
-
-              {!legacyPostMarketSectionsDisabled && auctionSection.length > 0 && (
-                <div className="workspace-card">
-                  <span className="metric-label section-title">竞价确认</span>
-                  <ul className="workspace-list">
-                    {auctionSection.map((item, idx) => {
-                      const parsed = splitThemeLine(item);
-                      return (
-                        <li key={`auction-${idx}`}>
-                          <strong>{parsed.theme || `竞价 ${idx + 1}`}</strong>
-                          <p className="workspace-note">{zh(parsed.body)}</p>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-
-              {!legacyPostMarketSectionsDisabled && auctionValidationSection.length > 0 && (
-                <div className="workspace-card">
-                  <span className="metric-label section-title">竞价验证回看</span>
-                  <ul className="workspace-list">
-                    {auctionValidationSection.map((item, idx) => {
-                      const parsed = splitThemeLine(item);
-                      return (
-                        <li key={`auction-validation-recap-${idx}`}>
-                          <strong>{parsed.theme || `验证 ${idx + 1}`}</strong>
-                          <p className="workspace-note">{zh(parsed.body)}</p>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              )}
-
-              {!legacyPostMarketSectionsDisabled && (isPostMarket || auxSection.length > 0) && (
-                <div className="workspace-card">
-                  <span className="metric-label section-title">{effectiveReportType === "post_market" ? "龙虎榜" : "失效条件"}</span>
-                  {effectiveReportType === "post_market" ? (
-                    <>
-                      {dragonTigerNote && <p className="workspace-note">{zh(dragonTigerNote)}</p>}
-                      {dragonTigerRows.length > 0 ? (
-                        <div className="recap-table-wrap">
-                          <table className="recap-table">
-                            <thead>
-                              <tr>
-                                <th>游资</th>
-                                <th>题材</th>
-                                <th>股票</th>
-                                <th>买卖</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {dragonTigerRows.flatMap((row, idx) =>
-                                row.items.map((item, subIdx) => (
-                                  <tr key={`dragon-row-${idx}-${subIdx}`}>
-                                    <td>{subIdx === 0 ? row.hotMoneyName : ""}</td>
-                                    <td>{item.theme}</td>
-                                    <td>{item.stockName}</td>
-                                    <td>{item.sideNet}</td>
-                                  </tr>
-                                )),
-                              )}
-                            </tbody>
-                          </table>
-                        </div>
-                      ) : (
-                        <p className="workspace-note">暂无数据，请检查 report.sections.龙虎榜</p>
-                      )}
-                    </>
-                  ) : (
-                    <ul className="workspace-list">
-                      {auxSection.map((item, idx) => {
-                        const parsed = splitThemeLine(item);
-                        return (
-                          <li key={`aux-${idx}`}>
-                            <strong>{parsed.theme || `条目 ${idx + 1}`}</strong>
-                            <p className="workspace-note">{zh(parsed.body)}</p>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-                </div>
+                ) : engineReportReady ? (
+                  <EnginePostMarketView
+                    dailyReviewV2={dailyReviewV2!}
+                    tradeDate={tradeDate}
+                    onShowLegacy={openPostMarketLegacyView}
+                  />
+                ) : (
+                  <EngineMissingState
+                    dailyReviewV2={dailyReviewV2}
+                    onRetry={handleStartPostMarketRecap}
+                    onShowLegacy={openPostMarketLegacyView}
+                  />
+                )
+              ) : (
+                <LegacyRecapSections
+                  reportType="pre_market"
+                  tradeDate={tradeDate}
+                  highlights={highlights}
+                  marketEnvironmentSection={marketEnvironmentSection}
+                  themeEnvironmentSection={themeEnvironmentSection}
+                  themeSection={themeSection}
+                  themeSummaryRows={themeSummaryRows}
+                  themeCapitalFlowRows={themeCapitalFlowRows}
+                  strongStockSection={strongStockSection}
+                  strongStockGroups={strongStockGroups}
+                  watchlistSection={watchlistSection}
+                  watchlistRows={watchlistRows}
+                  stockCapitalFlowSection={stockCapitalFlowSection}
+                  stockCapitalFlowRows={stockCapitalFlowRows}
+                  moneySection={moneySection}
+                  moneyFlowRows={moneyFlowRows}
+                  abnormalSection={abnormalSection}
+                  abnormalNote={abnormalNote}
+                  abnormalRows={abnormalRows}
+                  sortedAbnormalRows={sortedAbnormalRows}
+                  auctionSection={auctionSection}
+                  auctionValidationSection={auctionValidationSection}
+                  auxSection={auxSection}
+                  dragonTigerNote={dragonTigerNote}
+                  dragonTigerRows={dragonTigerRows}
+                  themeKeyByTheme={themeKeyByTheme}
+                />
               )}
             </section>
           </main>

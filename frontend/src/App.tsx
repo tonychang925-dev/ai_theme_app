@@ -70,6 +70,7 @@ function AuthGate({ children }: { children: React.ReactNode }) {
 
 function AppRoutes() {
   const [path, setPath] = useState(window.location.pathname);
+  const [search, setSearch] = useState(window.location.search);
 
   const showPerfPanel =
     process.env.NODE_ENV === 'development' &&
@@ -85,8 +86,12 @@ function AppRoutes() {
     // 监听所有URL变化
     const checkUrl = () => {
       const currentPath = window.location.pathname;
+      const currentSearch = window.location.search;
       if (currentPath !== path) {
         setPath(currentPath);
+      }
+      if (currentSearch !== search) {
+        setSearch(currentSearch);
       }
     };
 
@@ -109,7 +114,7 @@ function AppRoutes() {
       window.removeEventListener("hashchange", hashchangeHandler);
       clearInterval(intervalId);
     };
-  }, [path]);
+  }, [path, search]);
 
   return (
     <AuthGate>

@@ -7,6 +7,8 @@ interface Props {
   loading: boolean;
   error?: string | null;
   onRefresh: () => void;
+  showOrchestrator?: boolean;   // 显示服务编排卡片，默认 true
+  showRuntimeHealth?: boolean;  // 显示 Redis/DB Health，默认 true
 }
 
 function stateBadge(state: string): "success" | "warning" | "error" | "default" {
@@ -59,25 +61,11 @@ function ServiceCard({ svc }: { svc: OrchestratorServiceState }) {
       <div style={{ fontSize: 11, color: "#8c8c8c", marginTop: 2 }}>
         owner: {svc.owner}
       </div>
-      {svc.blockers.length > 0 && (
-        <div style={{ marginTop: 4 }}>
-          {svc.blockers.slice(0, 2).map((b, i) => (
-            <div key={i} style={{ fontSize: 10, color: "#ef4444", lineHeight: 1.4 }}>
-              ⛔ {b}
-            </div>
-          ))}
-          {svc.blockers.length > 2 && (
-            <div style={{ fontSize: 10, color: "#64748b" }}>
-              +{svc.blockers.length - 2} more...
-            </div>
-          )}
-        </div>
-      )}
     </Card>
   );
 }
 
-export default function OrchestratorStatusPanel({ status, loading, error, onRefresh }: Props) {
+export default function OrchestratorStatusPanel({ status, loading, error, onRefresh, showOrchestrator = true, showRuntimeHealth = true }: Props) {
   if (!status) {
     return (
       <Card size="small" style={{ marginTop: 12 }}>
@@ -97,18 +85,22 @@ export default function OrchestratorStatusPanel({ status, loading, error, onRefr
       size="small"
       title={
         <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
-          <span style={{ fontWeight: 700, fontSize: 14, color: "#e2e8f0" }}>自动编排</span>
-          <Tag color={status.enabled ? "green" : "default"}>
-            {status.enabled ? "诊断已启用" : "已禁用"}
-          </Tag>
-          {status.enabled && (
-            <Tag color={status.actions_enabled ? "orange" : "default"}>
-              {status.actions_enabled ? "动作: 允许" : "动作: 只读"}
-            </Tag>
+          <span style={{ fontWeight: 700, fontSize: 14, color: "#e2e8f0" }}>{showOrchestrator ? "自动编排" : "运行健康"}</span>
+          {showOrchestrator && (
+            <>
+              <Tag color={status.enabled ? "green" : "default"}>
+                {status.enabled ? "诊断已启用" : "已禁用"}
+              </Tag>
+              {status.enabled && (
+                <Tag color={status.actions_enabled ? "orange" : "default"}>
+                  {status.actions_enabled ? "动作: 允许" : "动作: 只读"}
+                </Tag>
+              )}
+              <Tag color="blue" style={{ marginLeft: 4 }}>{status.phase_label}</Tag>
+            </>
           )}
-          <Tag color="blue" style={{ marginLeft: 4 }}>{status.phase_label}</Tag>
           <span style={{ fontSize: 10, color: "#64748b", marginLeft: "auto" }}>
-            seq={status.tick_seq}{status.tick_duration_ms ? ` ${status.tick_duration_ms}ms` : ""}
+            {showOrchestrator && <>seq={status.tick_seq}{status.tick_duration_ms ? ` ${status.tick_duration_ms}ms` : ""}</>}
             {status.now_override ? ` sim:${status.now_override}` : ""}
             {!status.is_trade_day && " · 非交易日"}
           </span>
@@ -131,30 +123,38 @@ export default function OrchestratorStatusPanel({ status, loading, error, onRefr
         borderRadius: 8,
       }}
     >
-      {/* Executed Actions */}
-      {status.executed_actions && status.executed_actions.length > 0 && (
-        <div style={{ marginBottom: 8, padding: "4px 8px", background: "rgba(34,197,94,0.06)", borderRadius: 4 }}>
-          {status.executed_actions.map((a: any, i: number) => (
-            <span key={i} style={{ fontSize: 11, marginRight: 12, color: "#e2e8f0" }}>
-              <Tag color={a.result ? "green" : "red"} style={{ fontSize: 10 }}>{a.result ? "ok" : "fail"}</Tag>
-              {a.service}
-              {a.duration_ms != null && <span style={{ color: "#64748b", marginLeft: 4 }}>{a.duration_ms}ms</span>}
-              {a.skipped && <span style={{ color: "#f59e0b", marginLeft: 4 }}>{a.skipped}</span>}
-            </span>
-          ))}
-        </div>
+      {showOrchestrator && (
+        <>
+          {/* Executed Actions */}
+          {status.executed_actions && status.executed_actions.length > 0 && (
+            <div style={{ marginBottom: 8, padding: "4px 8px", background: "rgba(34,197,94,0.06)", borderRadius: 4 }}>
+              {status.executed_actions.map((a: any, i: number) => (
+                <span key={i} style={{ fontSize: 11, marginRight: 12, color: "#e2e8f0" }}>
+                  <Tag color={a.result ? "green" : "red"} style={{ fontSize: 10 }}>{a.result ? "ok" : "fail"}</Tag>
+                  {a.service}
+                  {a.duration_ms != null && <span style={{ color: "#64748b", marginLeft: 4 }}>{a.duration_ms}ms</span>}
+                  {a.skipped && <span style={{ color: "#f59e0b", marginLeft: 4 }}>{a.skipped}</span>}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Service cards */}
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+            {svcList.map((svc) => (
+              <ServiceCard key={svc.name} svc={svc} />
+            ))}
+          </div>
+        </>
       )}
 
-      {/* Service cards */}
-      <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-        {svcList.map((svc) => (
-          <ServiceCard key={svc.name} svc={svc} />
-        ))}
-      </div>
-
       {/* Runtime Health */}
-      <RedisHealthSection redis={status.runtime_dependencies?.redis as RedisRuntimeHealth | undefined} />
-      <DbHealthSection db={status.runtime_dependencies?.database as DatabaseRuntimeHealth | undefined} />
+      {showRuntimeHealth && (
+        <>
+          <RedisHealthSection redis={status.runtime_dependencies?.redis as RedisRuntimeHealth | undefined} />
+          <DbHealthSection db={status.runtime_dependencies?.database as DatabaseRuntimeHealth | undefined} />
+        </>
+      )}
 
       {/* Planned Actions */}
       {status.planned_actions.length > 0 && (
@@ -223,7 +223,7 @@ function fmtMs(ms: number): string {
   return (ms / 60000).toFixed(1) + "m";
 }
 
-function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
+export function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
   if (!redis) return null;
 
   const streams = redis.streams || {};
@@ -347,7 +347,7 @@ function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
 }
 
 
-function DbHealthSection({ db }: { db?: DatabaseRuntimeHealth }) {
+export function DbHealthSection({ db }: { db?: DatabaseRuntimeHealth }) {
   if (!db || !db.db_state) return null;
 
   const tables = db.tables || {};

@@ -30,6 +30,226 @@ select {
   padding: 18px;
 }
 
+.recap-dark-theme {
+  min-height: 100vh;
+  background: #0c1118;
+  color: #8ddcff;
+}
+
+.recap-dark-theme,
+.recap-dark-theme .workspace-card,
+.recap-dark-theme .workspace-card strong,
+.recap-dark-theme .workspace-note,
+.recap-dark-theme .metric-label,
+.recap-dark-theme .recap-table,
+.recap-dark-theme .recap-table td,
+.recap-dark-theme .recap-table th,
+.recap-dark-theme .ant-descriptions-item-label,
+.recap-dark-theme .ant-descriptions-item-content {
+  color: #8ddcff;
+}
+
+.recap-dark-theme .recap-table {
+  background: #111720;
+}
+
+.recap-dark-theme .recap-table th {
+  background: #0f141c;
+  color: #8ad6ff;
+  border-bottom-color: #243040;
+}
+
+.recap-dark-theme .recap-table td {
+  border-bottom-color: #243040;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .section-title,
+.recap-dark-theme .metric-label.section-title,
+.recap-dark-theme .recap-panel-title .section-title {
+  color: #ffd85e;
+}
+
+.recap-dark-theme .recap-table tbody tr:hover {
+  background: rgba(120, 169, 255, 0.08);
+}
+
+.recap-dark-theme .ant-alert {
+  background: #171d26;
+  border-color: #3a4657;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .ant-alert .ant-alert-message,
+.recap-dark-theme .ant-alert .ant-alert-description {
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .ant-btn {
+  background: #1b2430;
+  border-color: #324154;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .ant-btn:not(:disabled):hover {
+  border-color: #78a9ff;
+  color: #ffffff;
+}
+
+.recap-dark-theme .ant-btn-default:not(:disabled):hover {
+  background: #202b39;
+}
+
+.recap-dark-theme .ant-table {
+  background: transparent;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .ant-table-wrapper .ant-table-container {
+  border: 1px solid #243040;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111720;
+}
+
+.recap-dark-theme .ant-table-wrapper .ant-table-thead > tr > th {
+  background: #0f141c !important;
+  color: #8ad6ff !important;
+  border-bottom-color: #243040 !important;
+}
+
+.recap-dark-theme .ant-table-wrapper .ant-table-tbody > tr > td {
+  background: #111720 !important;
+  border-bottom-color: #243040 !important;
+  color: #9ce4ff !important;
+}
+
+.recap-dark-theme .ant-table-wrapper .ant-table-tbody > tr:hover > td {
+  background: rgba(120, 169, 255, 0.08) !important;
+}
+
+.recap-dark-theme .ant-tag {
+  border-radius: 999px;
+  border-color: transparent;
+  color: #111111 !important;
+  font-weight: 600;
+  padding: 2px 8px;
+  line-height: 1.25;
+}
+
+.recap-dark-theme .ant-tag-green,
+.recap-dark-theme .ant-tag-blue,
+.recap-dark-theme .ant-tag-orange,
+.recap-dark-theme .ant-tag-red,
+.recap-dark-theme .ant-tag-gold,
+.recap-dark-theme .ant-tag-cyan,
+.recap-dark-theme .ant-tag-geekblue,
+.recap-dark-theme .ant-tag-volcano,
+.recap-dark-theme .ant-tag-purple,
+.recap-dark-theme .ant-tag-default {
+  color: #111111 !important;
+}
+
+.recap-dark-theme .ant-tag-green {
+  background: rgba(86, 198, 145, 0.86) !important;
+  border-color: rgba(86, 198, 145, 0.86) !important;
+}
+
+.recap-dark-theme .ant-tag-blue {
+  background: rgba(120, 169, 255, 0.86) !important;
+  border-color: rgba(120, 169, 255, 0.86) !important;
+}
+
+.recap-dark-theme .ant-tag-orange {
+  background: rgba(247, 212, 90, 0.88) !important;
+  border-color: rgba(247, 212, 90, 0.88) !important;
+}
+
+.recap-dark-theme .ant-tag-red {
+  background: rgba(255, 122, 122, 0.88) !important;
+  border-color: rgba(255, 122, 122, 0.88) !important;
+}
+
+.recap-dark-theme .ant-tag-gold {
+  background: rgba(247, 212, 90, 0.88) !important;
+  border-color: rgba(247, 212, 90, 0.88) !important;
+}
+
+.recap-dark-theme .ant-tag-cyan {
+  background: rgba(102, 217, 239, 0.86) !important;
+  border-color: rgba(102, 217, 239, 0.86) !important;
+}
+
+.recap-dark-theme .ant-tag-geekblue {
+  background: rgba(155, 109, 255, 0.84) !important;
+  border-color: rgba(155, 109, 255, 0.84) !important;
+}
+
+.recap-dark-theme .ant-tag-volcano {
+  background: rgba(255, 122, 122, 0.84) !important;
+  border-color: rgba(255, 122, 122, 0.84) !important;
+}
+
+.recap-dark-theme .ant-tag-purple {
+  background: rgba(155, 109, 255, 0.84) !important;
+  border-color: rgba(155, 109, 255, 0.84) !important;
+}
+
+.recap-dark-theme .ant-tag-default {
+  background: rgba(217, 217, 217, 0.85) !important;
+  border-color: rgba(217, 217, 217, 0.85) !important;
+}
+
+.recap-dark-theme .recap-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 10px;
+}
+
+.recap-market-regime-status,
+.recap-market-regime-hint {
+  display: grid;
+  gap: 2px;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #9ce4ff;
+}
+
+.recap-market-regime-label {
+  color: #66d9ef;
+  margin-right: 6px;
+}
+
+.recap-dark-theme .recap-chip {
+  border-color: #2f4358;
+  background: #13202b;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .recap-chip.is-status,
+.recap-dark-theme .recap-chip.is-pass,
+.recap-dark-theme .recap-chip.is-watch,
+.recap-dark-theme .recap-chip.is-pending,
+.recap-dark-theme .recap-chip.is-role,
+.recap-dark-theme .recap-chip.is-basis {
+  border-color: #2f4358;
+  background: #13202b;
+  color: #9ce4ff;
+}
+
+.recap-dark-theme .recap-chip.is-theme-start,
+.recap-dark-theme .recap-chip.is-theme-fermentation,
+.recap-dark-theme .recap-chip.is-theme-divergence,
+.recap-dark-theme .recap-chip.is-theme-rebound,
+.recap-dark-theme .recap-chip.is-theme-climax,
+.recap-dark-theme .recap-chip.is-theme-fade {
+  border-color: #2f4358;
+  background: #13202b;
+  color: #9ce4ff;
+}
+
 .realtime-collector-page {
   display: flex;
   flex-direction: column;
@@ -263,6 +483,7 @@ select {
   padding: 12px 14px;
   border-bottom: 1px solid #2a2f36;
   background: linear-gradient(180deg, #1d2530, #171d26);
+  color: #8ddcff;
 }
 
 .recap-table-wrap {
@@ -290,7 +511,7 @@ select {
   top: 0;
   z-index: 1;
   background: #131820;
-  color: #9fb3c8;
+  color: #8ad6ff;
   font-size: 12px;
   letter-spacing: 0.04em;
 }
@@ -299,19 +520,19 @@ select {
   appearance: none;
   border: 0;
   background: transparent;
-  color: #f5e36a;
+  color: #8ddcff;
   cursor: pointer;
   padding: 0;
   font: inherit;
   text-align: left;
   text-decoration: underline;
-  text-decoration-color: rgba(245, 227, 106, 0.45);
+  text-decoration-color: rgba(141, 220, 255, 0.45);
   text-underline-offset: 2px;
 }
 
 .recap-theme-link:hover {
-  color: #fff19a;
-  text-decoration-color: rgba(255, 241, 154, 0.8);
+  color: #d7f5ff;
+  text-decoration-color: rgba(215, 245, 255, 0.8);
 }
 
 .theme-trend-strip {
@@ -576,12 +797,12 @@ select {
 }
 
 .recap-stock-highlight {
-  color: #78a9ff;
+  color: #8ddcff;
   font-weight: 700;
 }
 
 .recap-table tbody td:first-child {
-  color: #78a9ff;
+  color: #8ddcff;
   font-weight: 700;
 }
 

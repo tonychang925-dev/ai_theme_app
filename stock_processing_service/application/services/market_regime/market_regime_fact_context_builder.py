@@ -115,10 +115,28 @@ class MarketRegimeFactContextBuilder:
         # ── 1b. Read index technical analysis from DB ──
         index_technical_reviews: list[dict[str, Any]] = []
         index_data_ready = False
+        index_close_map: dict[str, float] = {}
         try:
             import asyncpg as apg2
             conn2 = await apg2.connect("postgresql://localhost/stock_data_test", timeout=5)
             try:
+                close_rows = await conn2.fetch(
+                    """SELECT index_code, close
+                       FROM index_daily_kline
+                       WHERE trade_date = $1::date
+                       ORDER BY index_code""",
+                    trade_date,
+                )
+                for r in close_rows:
+                    d = dict(r)
+                    code = str(d.get("index_code") or "").strip()
+                    close = d.get("close")
+                    if code and close is not None:
+                        try:
+                            index_close_map[code] = float(close)
+                        except Exception:
+                            continue
+
                 td_rows = await conn2.fetch(
                     """SELECT * FROM index_technical_daily
                        WHERE trade_date = $1::date
@@ -127,23 +145,7 @@ class MarketRegimeFactContextBuilder:
                 )
                 if td_rows:
                     for r in td_rows:
-                        d = dict(r)
-                        d.pop("id", None)
-                        # Convert date/time to string
-                        for k in ("trade_date", "created_at", "updated_at"):
-                            if k in d and hasattr(d[k], "isoformat"):
-                                d[k] = d[k].isoformat()
-                        # Parse JSONB
-                        for k in ("risk_flags_json", "diagnostics_json"):
-                            if k in d and isinstance(d[k], str):
-                                try:
-                                    d[k] = __import__("json").loads(d[k])
-                                except Exception:
-                                    pass
-                            # Rename for API
-                            clean_k = k.replace("_json", "")
-                            d[clean_k] = d.pop(k, d.get(clean_k, []))
-                        index_technical_reviews.append(d)
+                        index_technical_reviews.append(self._enrich_index_technical_review(dict(r), index_close_map))
                     index_data_ready = True
                     diag["index_technical_count"] = len(index_technical_reviews)
             finally:
@@ -185,3 +187,117 @@ class MarketRegimeFactContextBuilder:
             lifecycle_reviews=reviews,
             diagnostics=diag,
         )
+
+    @staticmethod
+    def _float_or_none(value: Any) -> float | None:
+        try:
+            if value is None or value == "":
+                return None
+            return float(value)
+        except Exception:
+            return None
+
+    @classmethod
+    def _enrich_index_technical_review(
+        cls,
+        row: dict[str, Any],
+        index_close_map: dict[str, float],
+    ) -> dict[str, Any]:
+        d = dict(row)
+        d.pop("id", None)
+
+        # Convert date/time to string
+        for k in ("trade_date", "created_at", "updated_at"):
+            if k in d and hasattr(d[k], "isoformat"):
+                d[k] = d[k].isoformat()
+
+        # Parse JSONB
+        for k in ("risk_flags_json", "diagnostics_json"):
+            if k in d and isinstance(d[k], str):
+                try:
+                    d[k] = __import__("json").loads(d[k])
+                except Exception:
+                    pass
+            clean_k = k.replace("_json", "")
+            d[clean_k] = d.pop(k, d.get(clean_k, []))
+
+        index_code = str(d.get("index_code") or "").strip()
+        close = cls._float_or_none(index_close_map.get(index_code))
+        support = cls._float_or_none(d.get("nearest_support_level") or d.get("support_level"))
+        resistance = cls._float_or_none(d.get("nearest_resistance_level") or d.get("resistance_level"))
+
+        support_distance = None
+        resistance_distance = None
+        if close is not None and close > 0 and support is not None:
+            support_distance = round((close - support) / close * 100, 2)
+        if close is not None and close > 0 and resistance is not None:
+            resistance_distance = round((resistance - close) / close * 100, 2)
+
+        support_broken = bool(d.get("break_support")) or bool(
+            close is not None and support is not None and close < support
+        )
+        resistance_broken = bool(
+            close is not None and resistance is not None and close > resistance
+        )
+        near_support = bool(
+            support_distance is not None and 0 <= support_distance <= 1.0
+        )
+        near_resistance = bool(
+            resistance_distance is not None and 0 <= resistance_distance <= 2.0
+        )
+
+        if support_broken:
+            support_status = "support_broken"
+        elif near_support:
+            support_status = "near_support"
+        else:
+            support_status = "support_available" if support is not None else "unknown"
+
+        if resistance_broken:
+            resistance_status = "resistance_broken"
+        elif near_resistance:
+            resistance_status = "near_resistance"
+        else:
+            resistance_status = "resistance_available" if resistance is not None else "unknown"
+
+        trend_state = str(d.get("trend_state") or "")
+        above_ma5 = bool(d.get("above_ma5"))
+        above_ma10 = bool(d.get("above_ma10"))
+        above_ma20 = bool(d.get("above_ma20"))
+        macd_state = str(d.get("macd_state") or "")
+
+        warning_level = str(d.get("warning_level") or "").strip() or "normal"
+        index_trade_hint = str(d.get("index_trade_hint") or "").strip()
+        if not index_trade_hint:
+            if support_broken and macd_state in {"below_zero_bearish", "below_zero_weak_rebound"}:
+                warning_level = "danger"
+                index_trade_hint = "支撑失守且MACD偏弱，禁止主动进攻"
+            elif resistance_broken or (near_resistance and not above_ma20):
+                warning_level = "warning"
+                index_trade_hint = "接近压力位或压力已触及，谨慎追高，等待确认突破"
+            elif near_support and not above_ma20:
+                warning_level = "watch"
+                index_trade_hint = "接近支撑位但趋势未确认，等待止跌信号"
+            elif above_ma5 and above_ma10 and above_ma20 and not near_resistance:
+                warning_level = "green"
+                index_trade_hint = "指数环境相对友好，可跟踪主线修复与前排机会"
+            elif trend_state == "downtrend_rebound":
+                warning_level = "warning"
+                index_trade_hint = "下降通道反抽，优先看核心确认，不追后排"
+            else:
+                index_trade_hint = "指数环境中性，按主线与市场情绪择机应对"
+
+        d.update({
+            "close": close,
+            "support_level": support,
+            "resistance_level": resistance,
+            "nearest_support_level": support,
+            "nearest_resistance_level": resistance,
+            "support_distance_pct": support_distance,
+            "resistance_distance_pct": resistance_distance,
+            "support_status": support_status,
+            "resistance_status": resistance_status,
+            "warning_level": warning_level or "normal",
+            "index_trade_hint": index_trade_hint,
+        })
+        return d

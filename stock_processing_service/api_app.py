@@ -89,15 +89,24 @@ async def _init_stock_match_engine_background(app: FastAPI) -> None:
             logger.warning("StockMatchEngine background init skipped: DEEPSEEK_API_KEY not set")
             return
 
+        # 使用短超时 + TCPConnector 避免 SSL 层卡死阻塞事件循环
+        _connector = aiohttp.TCPConnector(
+            force_close=True,
+            ttl_dns_cache=300,
+            enable_cleanup_closed=True,
+        )
+
         class DeepSeekLLM:
             async def chat_completion(self, messages, temperature=0.1, max_tokens=512):
                 headers = {"Authorization": f"Bearer {deepseek_key}", "Content-Type": "application/json"}
                 payload = {"model": "deepseek-chat", "messages": messages,
                            "temperature": temperature, "max_tokens": max_tokens, "stream": False}
-                async with aiohttp.ClientSession() as s:
+                timeout = aiohttp.ClientTimeout(
+                    total=30, connect=10, sock_connect=10, sock_read=25,
+                )
+                async with aiohttp.ClientSession(connector=_connector, timeout=timeout) as s:
                     async with s.post("https://api.deepseek.com/v1/chat/completions",
-                                      headers=headers, json=payload,
-                                      timeout=aiohttp.ClientTimeout(total=60)) as r:
+                                      headers=headers, json=payload) as r:
                         data = await r.json()
                         return {"content": data["choices"][0]["message"]["content"]}
 
@@ -155,7 +164,12 @@ async def lifespan(app: FastAPI):
     app.state.match_engine_status = {"enabled": False, "ready": False, "loading": False, "error": None}
     if os.environ.get("SPS_ENABLE_STOCK_MATCH_ENGINE", "false").lower() in ("1", "true", "yes", "on"):
         app.state.match_engine_status["enabled"] = True
-        asyncio.create_task(_init_stock_match_engine_background(app))
+        # 在独立线程中运行避免 SSL 阻塞事件循环（同 jyhf_market 问题）
+        def _init_match_engine_sync():
+            import asyncio as _asyncio
+            _asyncio.run(_init_stock_match_engine_background(app))
+        loop = asyncio.get_running_loop()
+        loop.run_in_executor(None, _init_match_engine_sync)
     else:
         logger.info("StockMatchEngine disabled (set SPS_ENABLE_STOCK_MATCH_ENGINE=true to enable)")
     from stock_processing_service.application.services.collection_task_registry import get_default_registry
@@ -182,6 +196,27 @@ async def lifespan(app: FastAPI):
         "total_built": 0,
         "total_pushed": 0,
     }
+    # P1-C: SPS 启动时清理上一次 run 遗留的僵尸 consumer（进程已死但 Redis 仍记录）
+    async def _cleanup_zombie_consumers_once():
+        await asyncio.sleep(3)  # 等 Redis 连接就绪
+        try:
+            import redis.asyncio as aioredis
+            from database_service.streams.utils.consumer_group_manager import ConsumerGroupManager
+            r = aioredis.from_url(_redis_url(), decode_responses=True)
+            mgr = ConsumerGroupManager(r)
+            result = await mgr.cleanup_stale_consumers(idle_minutes=10, execute=True)
+            await r.aclose()
+            if result["stale_consumers_deleted"]:
+                logger.warning(
+                    "ZOMBIE_CONSUMER_CLEANUP: deleted=%d reclaimed=%d pending",
+                    result["stale_consumers_deleted"], result["pending_reclaimed"],
+                )
+            else:
+                logger.info("Consumer cleanup: no zombies found")
+        except Exception as exc:
+            logger.warning("Consumer cleanup skipped: %s", exc)
+    asyncio.create_task(_cleanup_zombie_consumers_once())
+
     # 默认不在 SPS 初始化时自动拉起实时管线。
     # 实时采集应由页面按钮或显式运维命令启动，避免服务重启时产生隐藏副作用。
     if os.environ.get("SPS_AUTO_START_REALTIME_STACK", "false").lower() in ("1", "true", "yes", "on"):
@@ -197,17 +232,28 @@ async def lifespan(app: FastAPI):
     else:
         logger.info("W2S alert loop disabled (set SPS_ENABLE_W2S_ALERT_LOOP=true to enable)")
 
-    # P2: jyhf_market 行情采集器自动启动（默认开启）
-    async def _auto_start_jyhf_market():
-        await asyncio.sleep(5)  # 等 SPS 完全就绪
-        from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
-        try:
-            c = get_jyhf_market_collector()
-            await c.start()
-            logger.info("jyhf_market collector auto-started")
-        except Exception as exc:
-            logger.warning("jyhf_market auto-start failed: %s", exc)
-    _jyhf_market_task = asyncio.create_task(_auto_start_jyhf_market())
+    # P2: jyhf_market 行情采集器自动启动（默认关闭—web_app orchestrator 管理生命周期）
+    def _start_jyhf_sync(collector) -> None:
+        """在独立线程中运行 jyhf_market collector.start()，避免 SSL 阻塞主线程事件循环。"""
+        import asyncio as _asyncio
+        _asyncio.run(collector.start())
+
+    if os.environ.get("SPS_ENABLE_JYHF_MARKET_AUTO_START", "false").lower() in ("1", "true", "yes", "on"):
+        async def _auto_start_jyhf_market():
+            await asyncio.sleep(5)
+            from stock_processing_service.application.services.jyhf_market_runtime import get_jyhf_market_collector
+            try:
+                c = get_jyhf_market_collector()
+                # 在 executor 中运行避免 SSL 阻塞事件循环（JYHF API 47.99.190.68 不可达时 PySSL_select→poll 卡死主线程）
+                loop = asyncio.get_running_loop()
+                await loop.run_in_executor(None, _start_jyhf_sync, c)
+                logger.info("jyhf_market collector auto-started")
+            except Exception as exc:
+                logger.warning("jyhf_market auto-start failed: %s", exc)
+        _jyhf_market_task = asyncio.create_task(_auto_start_jyhf_market())
+    else:
+        _jyhf_market_task = None
+        logger.info("JYHF market auto-start DISABLED (web_app orchestrator owns lifecycle)")
 
     await app.state.phase1_repo.initialize()
     try:

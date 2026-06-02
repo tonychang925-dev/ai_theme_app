@@ -8,6 +8,7 @@ from stock_processing_service.contracts.dto import BuildResult
 from stock_processing_service.contracts.events import EventEnvelope, SnapshotBuiltPayload
 from stock_processing_service.domain.services.theme_cycle_evidence_daily_builder import (
     ThemeCycleEvidenceDailyBuilder,
+    ThemeCycleEvidenceDailyRow,
 )
 from stock_processing_service.domain.services.theme_kline_evidence_builder import (
     ThemeKlineEvidenceBuilder,
@@ -279,6 +280,102 @@ class BuildThemeCycleEvidenceDailyJob:
             kline_evidence_by_subject=kline_evidence_by_subject,
         )
 
+        built_subject_keys = {r.subject_key for r in rows}
+        zero_fill_subject_keys = [
+            sk for sk in tracked_subject_keys
+            if sk not in built_subject_keys
+        ]
+        if zero_fill_subject_keys:
+            zero_fill_rows = []
+            subject_name_by_key = {
+                str(getattr(r, "subject_key", "")).strip(): str(getattr(r, "theme_name", "") or getattr(r, "subject_key", ""))
+                for r in universe_rows
+            }
+            for sk in zero_fill_subject_keys:
+                theme_name = subject_name_by_key.get(sk, sk)
+                zero_fill_rows.append(
+                    ThemeCycleEvidenceDailyRow(
+                        subject_key=sk,
+                        theme_name=theme_name,
+                        trade_date=trade_date,
+                        event_strength_score=Decimal("0"),
+                        event_continuity_score=Decimal("0"),
+                        strong_event_count_7d=0,
+                        event_recency_days=None,
+                        event_count_3d=0,
+                        event_count_7d=0,
+                        leader_alive_score=Decimal("0"),
+                        leader_breakdown_flag=False,
+                        relay_strength_score=Decimal("0"),
+                        front_row_survival_ratio=Decimal("0"),
+                        limit_up_count=0,
+                        limit_down_count=0,
+                        red_ratio=Decimal("0"),
+                        big_drop_ratio=Decimal("0"),
+                        front_row_strength_score=Decimal("0"),
+                        theme_support_score=Decimal("0"),
+                        break_start_pivot=False,
+                        above_ma5=False,
+                        above_ma10=False,
+                        above_ma20=False,
+                        previous_cycle_state=previous_states.get(sk, "unknown"),
+                        evidence_json={
+                            "previous_cycle_state": previous_states.get(sk, "unknown"),
+                            "source": "stock_processing_service.v1",
+                            "trade_date": trade_date.isoformat(),
+                            "meta": {
+                                "evidence_quality": "zero_fill_no_pool_rows",
+                                "snapshot_version": snapshot_version,
+                                "batch_id": batch_id,
+                                "trace_id": trace_id,
+                                "previous_cycle_state": previous_states.get(sk, "unknown"),
+                            },
+                            "event_layer": {
+                                "event_strength_score": "0",
+                                "event_continuity_score": "0",
+                                "strong_event_count_7d": 0,
+                                "event_recency_days": None,
+                                "event_recency_source": "zero_fill_no_pool_rows",
+                            },
+                            "leader_layer": {
+                                "leader_alive_score": "0",
+                                "leader_breakdown_flag": False,
+                                "relay_strength_score": "0",
+                                "front_row_survival_ratio": "0",
+                                "leader_score_source": "zero_fill_no_pool_rows",
+                            },
+                            "board_layer": {
+                                "pool_size": 0,
+                                "limit_up_count": 0,
+                                "limit_down_count": 0,
+                                "red_ratio": "0",
+                                "big_drop_ratio": "0",
+                                "front_row_strength_score": "0",
+                            },
+                            "kline_layer": {
+                                "source": "zero_fill_no_pool_rows",
+                                "kline_quality": "zero_fill_no_pool_rows",
+                                "history_days": 0,
+                                "theme_support_score": "0",
+                                "break_start_pivot": False,
+                                "above_ma10": False,
+                                "above_ma20": False,
+                                "above_ma5": False,
+                                "theme_ret_3d": "0",
+                                "theme_ret_5d": "0",
+                                "theme_ret_10d": "0",
+                                "volume_breakdown_flag": False,
+                                "composite_last": "0",
+                                "ma5": "0",
+                                "ma10": "0",
+                                "ma20": "0",
+                                "avg_volume_ratio": "0",
+                            },
+                        },
+                    )
+                )
+            rows.extend(zero_fill_rows)
+
         write_rows = []
         for r in rows:
             _ev = dict(r.evidence_json) if r.evidence_json else {}
@@ -327,7 +424,7 @@ class BuildThemeCycleEvidenceDailyJob:
         if written > 0:
             verify_rows = await self._read_port.get_subject_cycle_evidence_daily(
                 trade_date=trade_date,
-                subject_keys=subject_keys,
+                subject_keys=sorted({r.subject_key for r in rows}),
             )
             verify_keys = {str(r.get("subject_key") or "") for r in verify_rows}
             write_keys = {str(r.get("subject_key") or "") for r in write_rows}
@@ -388,8 +485,9 @@ class BuildThemeCycleEvidenceDailyJob:
             warnings=[],
             metrics={
                 "evidence_row_count": written,
-                "subject_key_count": len(subject_keys),
+                "subject_key_count": len(rows),
                 "tracked_subject_count": len(tracked_subject_keys),
+                "zero_fill_subject_count": len(zero_fill_subject_keys),
                 "raw_pool_row_count": len(pool_rows_raw_all),
                 "scoped_pool_row_count": len(pool_rows_raw),
                 "universe_source_errors": getattr(universe_builder, "source_errors", {}),

@@ -1236,19 +1236,18 @@ export async function fetchStrongStockWatch(params: {
 }): Promise<StrongStockWatchView> {
   const query = new URLSearchParams();
   if (params.date) query.set("date", params.date);
-  if (params.windowDays) query.set("window_days", String(params.windowDays));
-  if (params.limit) query.set("limit", String(params.limit));
+  if (params.windowDays !== undefined) query.set("window_days", String(params.windowDays));
+  if (params.limit !== undefined) query.set("limit", String(params.limit));
   if (params.latestPerStock !== undefined) query.set("latest_per_stock", String(params.latestPerStock));
   if (params.includeRemoved !== undefined) query.set("include_removed", String(params.includeRemoved));
   if (params.stockId) query.set("stock_id", params.stockId);
 
-  // 强势股页面统一走 v2 口径，避免旧路由字段漂移。
-
   try {
-    const url = `/api/v2/strong_watch/watch?${query.toString()}`;
-    const getResp = await fetch(url, { method: "GET" });
-    if (!getResp.ok) throw new Error(`request failed: ${getResp.status}`);
-    return (await getResp.json()) as StrongStockWatchView;
+    return await fetchJsonWithTimeout<StrongStockWatchView>(
+      `/api/v2/strong_watch/watch?${query.toString()}`,
+      undefined,
+      10000,
+    );
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown error";
     throw new Error(`strong stock watch request failed: ${message}`);

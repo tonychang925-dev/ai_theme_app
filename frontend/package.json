@@ -9,7 +9,11 @@
     "preview": "vite preview",
     "test:recap-contract": "node scripts/test-recap-sections-first-contract.mjs",
     "test:recap-v2-contract": "node scripts/test-recap-daily-review-v2-contract.mjs",
-    "test:recap-default-mode-contract": "node scripts/test-recap-default-data-mode-contract.mjs"
+    "test:recap-default-mode-contract": "node scripts/test-recap-default-data-mode-contract.mjs",
+    "test:recap-engine-view-contract": "node scripts/test-recap-engine-view-contract.mjs",
+    "test:recap-search-navigation-contract": "node scripts/test-recap-search-navigation-contract.mjs",
+    "test:recap-bootstrap-poll-contract": "node scripts/test-recap-bootstrap-poll-contract.mjs",
+    "test:strong-watch-daily-contract": "node scripts/test-strong-watch-daily-contract.mjs"
   },
   "dependencies": {
     "antd": "^6.4.3",

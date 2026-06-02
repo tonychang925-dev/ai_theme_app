@@ -38,7 +38,7 @@ import CollectionControlPanel from "./components/CollectionControlPanel";
 import CollectorLogPanels from "./components/CollectorLogPanels";
 import UnifiedAlertPanel, { type UnifiedAlertRow } from "./components/UnifiedAlertPanel";
 import DiagnosticsTabs from "./components/DiagnosticsTabs";
-import OrchestratorStatusPanel from "./components/OrchestratorStatusPanel";
+import OrchestratorStatusPanel, { RedisHealthSection, DbHealthSection } from "./components/OrchestratorStatusPanel";
 import { MainlineConfirmationPanel } from "./components/MainlineConfirmationPanel";
 
 function nowText() {
@@ -72,7 +72,6 @@ export function RealtimeCollectorPage() {
   const [klineAlertsEnabled, setKlineAlertsEnabled] = useState(false); // 默认关闭，按需开启
   const klineEsRef = useRef<EventSource | null>(null);
   const [w2sAlerts, setW2sAlerts] = useState<W2SAlertEvent[]>([]);
-  const [w2sFilter, setW2sFilter] = useState<"all" | "important" | "observe">("important");
   const [w2sAlertsEnabled, setW2sAlertsEnabled] = useState(false); // 默认关闭，按需开启
   const w2sEsRef = useRef<EventSource | null>(null);
   // ── 操作日志 ──
@@ -945,7 +944,7 @@ export function RealtimeCollectorPage() {
               key: "control",
               label: "控制台",
               children: (
-                <div style={{ display: "grid", gridTemplateColumns: "420px 1fr", gap: 12 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "420px 1fr", gap: 12, height: "calc(100vh - 210px)" }}>
                   <CollectionControlPanel
                     status={controlStatus}
                     busy={controlBusy}
@@ -972,6 +971,7 @@ export function RealtimeCollectorPage() {
                   loading={orchLoading}
                   error={orchError}
                   onRefresh={refreshOrchestrator}
+                  showRuntimeHealth={false}
                 />
               ),
             },
@@ -1139,12 +1139,18 @@ export function RealtimeCollectorPage() {
                       key: "infra",
                       label: "基础设施",
                       children: (
-                        <OrchestratorStatusPanel
-                          status={orchStatus}
-                          loading={orchLoading}
-                          error={orchError}
-                          onRefresh={refreshOrchestrator}
-                        />
+                        <div>
+                          {orchStatus ? (
+                            <>
+                              <RedisHealthSection redis={orchStatus.runtime_dependencies?.redis as any} />
+                              <DbHealthSection db={orchStatus.runtime_dependencies?.database as any} />
+                            </>
+                          ) : (
+                            <div style={{ color: "#64748b", textAlign: "center", padding: 20 }}>
+                              {orchLoading ? "加载中..." : "编排器状态暂不可用"}
+                            </div>
+                          )}
+                        </div>
                       ),
                     },
                     {
@@ -1153,14 +1159,6 @@ export function RealtimeCollectorPage() {
                       children: (
                         <DiagnosticsTabs
                           mergedLogs={businessLogs} jyhfLogs={jyhfLogs} showLogPanels={false} stackStatus={stackStatus}
-                          reviewItems={reviewItems} reviewTotal={reviewTotal}
-                          reviewBusy={reviewBusy} selectedIds={selectedIds}
-                          onToggleSelect={toggleSelect} onSelectAll={selectAll}
-                          onSetSelectedKeys={setSelectedIds}
-                          onConfirm={handleConfirmReview} onDelete={handleDeleteReview}
-                          onBatchDelete={handleBatchDelete} onImportPending={handleImportPending}
-                          onClearPending={handleClearPending} onRefreshReview={refreshReviewQueue}
-                          onOpenDetail={(item: ReviewQueueItem) => openDetail(item.id)}
                         />
                       ),
                     },
