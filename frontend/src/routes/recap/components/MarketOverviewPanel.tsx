@@ -15,6 +15,48 @@ function formatAmount(value?: number | null) {
   return String(Math.round(Number(value)));
 }
 
+function translateTagText(value?: string | null) {
+  const key = String(value || "").trim();
+  const map: Record<string, string> = {
+    "Layer C": "强势股池",
+    "D1": "次日观察",
+    focus: "重点关注",
+    formal: "正式",
+    observe_only: "观察",
+    reject: "剔除",
+    dragon: "龙头",
+    sub_dragon: "次龙头",
+    leader: "龙头",
+    unknown: "未知",
+    active: "活跃",
+    weakening: "转弱",
+    removed: "移除",
+    pending: "待定",
+    no_trade: "不交易",
+    mainline_core_only: "主线核心",
+    mainline_tradable: "主线可交易",
+    ultra_short_only: "仅超短",
+    mainline_participation: "主线参与",
+    rotation_follow: "轮动跟随",
+    rotation_watch: "轮动观察",
+  };
+  return map[key] || key || "--";
+}
+
+function translateCountMethod(value?: string | null) {
+  const key = String(value || "").trim();
+  const map: Record<string, string> = {
+    display_by_theme: "按题材展示",
+    display_by_theme_unique: "按题材去重展示",
+  };
+  return map[key] || key || "--";
+}
+
+function displayThemeName(col: ThemeLimitUpColumn) {
+  const record = col as ThemeLimitUpColumn & Record<string, unknown>;
+  return String(record.mainline_name || col.theme_name || "其他").trim() || "其他";
+}
+
 function renderFocusStock(stock: ThemeLimitUpStock | undefined, tradeDate?: string) {
   if (!stock) return <span style={{ color: "#66d9ef" }}>--</span>;
   const href = stock.stock_id ? `/stocks/${encodeURIComponent(stock.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}` : "";
@@ -25,10 +67,10 @@ function renderFocusStock(stock: ThemeLimitUpStock | undefined, tradeDate?: stri
       </button>
       <div className="recap-tag-stack" style={{ gap: 4, flexWrap: "wrap" }}>
         {typeof stock.board_count === "number" && stock.board_count > 0 && <Tag color="gold">连板 {stock.board_count}</Tag>}
-        {stock.in_layer_c && <Tag color="green">Layer C</Tag>}
-        {stock.is_d1_candidate && <Tag color="blue">D1</Tag>}
-        {stock.role_label && <Tag color="default">{stock.role_label}</Tag>}
-        {stock.trade_action && <Tag color="orange">{stock.trade_action}</Tag>}
+        {stock.in_layer_c && <Tag color="green">强势股池</Tag>}
+        {stock.is_d1_candidate && <Tag color="blue">次日观察</Tag>}
+        {stock.role_label && <Tag color="default">{translateTagText(stock.role_label)}</Tag>}
+        {stock.trade_action && <Tag color="orange">{translateTagText(stock.trade_action)}</Tag>}
       </div>
     </div>
   );
@@ -36,10 +78,11 @@ function renderFocusStock(stock: ThemeLimitUpStock | undefined, tradeDate?: stri
 }
 
 function columnStatusTag(col: ThemeLimitUpColumn) {
-  if (col.trade_action === "回避") return <Tag color="red">回避</Tag>;
-  if (col.trade_action === "主线参与") return <Tag color="green">主线参与</Tag>;
-  if (col.trade_action === "主线分歧") return <Tag color="orange">主线分歧</Tag>;
-  if (col.trade_action === "轮动跟随") return <Tag color="blue">轮动</Tag>;
+  const action = translateTagText(col.trade_action);
+  if (action === "回避") return <Tag color="red">回避</Tag>;
+  if (action === "主线参与") return <Tag color="green">主线参与</Tag>;
+  if (action === "主线分歧") return <Tag color="orange">主线分歧</Tag>;
+  if (action === "轮动跟随") return <Tag color="blue">轮动跟随</Tag>;
   if (col.active_mainline) return <Tag color="green">主线</Tag>;
   return <Tag color="default">轮动</Tag>;
 }
@@ -73,11 +116,11 @@ export default function MarketOverviewPanel({ marketOverview, tradeDate }: Props
                 <th key={col.subject_key} style={{ minWidth: 260, verticalAlign: "top" }}>
                   <div className="recap-tag-stack" style={{ gap: 4 }}>
                     <button type="button" className="recap-theme-link" onClick={() => navigateTo(`/themes/${encodeURIComponent(col.subject_key)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
-                      {col.theme_name || col.subject_key || "--"}
+                      {displayThemeName(col)}
                     </button>
                     <div className="recap-tag-stack" style={{ gap: 4, flexWrap: "wrap" }}>
                       {columnStatusTag(col)}
-                      <Tag color={col.active_mainline ? "green" : "default"}>{col.lifecycle_state || "--"}</Tag>
+                      <Tag color={col.active_mainline ? "green" : "default"}>{translateTagText(col.lifecycle_state)}</Tag>
                     </div>
                   </div>
                 </th>
@@ -102,7 +145,7 @@ export default function MarketOverviewPanel({ marketOverview, tradeDate }: Props
             <tr>
               <td><strong>交易动作</strong></td>
               {columns.map((col) => (
-                <td key={`${col.subject_key}-action`}>{col.trade_action || "--"}</td>
+                <td key={`${col.subject_key}-action`}>{translateTagText(col.trade_action)}</td>
               ))}
             </tr>
             {Array.from({ length: maxRows }).map((_, rowIndex) => (
@@ -119,7 +162,7 @@ export default function MarketOverviewPanel({ marketOverview, tradeDate }: Props
         </table>
       </div>
       <div className="workspace-note" style={{ marginTop: 8 }}>
-        统计口径：{marketOverview?.theme_limitup_matrix?.count_method || "display_by_theme"}；题材数 {columns.length} 个。
+        统计口径：{translateCountMethod(marketOverview?.theme_limitup_matrix?.count_method)}；题材数 {columns.length} 个。
       </div>
       {marketOverview?.diagnostics && (
         <div className="workspace-note" style={{ marginTop: 4 }}>

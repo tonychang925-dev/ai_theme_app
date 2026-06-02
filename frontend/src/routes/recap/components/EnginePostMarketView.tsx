@@ -25,13 +25,17 @@ function toAlignmentRows(review: PostMarketDecisionV2Review) {
   return (review.strong_stock_pool_reviews ?? []).filter((row) => row && typeof row === "object") as Record<string, unknown>[];
 }
 
+function displayThemeName(row: Record<string, unknown>) {
+  return String(row.mainline_name || row.theme_name || "其他").trim() || "其他";
+}
+
 function EngineEvidencePanel({ review, alignmentIndex }: { review: PostMarketDecisionV2Review; alignmentIndex?: EvidenceAlignmentIndex | null }) {
   const rows = toAlignmentRows(review);
   if (rows.length === 0) return null;
 
   const columns = [
     { title: "股票", dataIndex: "stock_name", key: "stock", width: 84 },
-    { title: "题材", dataIndex: "theme_name", key: "theme", width: 100, ellipsis: true },
+    { title: "题材", dataIndex: "theme_name", key: "theme", width: 112, ellipsis: true, render: (_: unknown, row: Record<string, unknown>) => displayThemeName(row) },
     { title: "角色", dataIndex: "relay_role", key: "role", width: 60, ellipsis: true },
     { title: "评分", dataIndex: "watch_score", key: "score", width: 60, render: (v: number | null | undefined) => (v != null ? Number(v).toFixed(0) : "-") },
     {
@@ -54,13 +58,13 @@ function EngineEvidencePanel({ review, alignmentIndex }: { review: PostMarketDec
     },
     {
       key: "layer_c",
-      label: "Layer C",
+      label: "强势股池",
       type: "warning" as const,
       filter: (alignment: Record<string, unknown>) => Boolean(alignment.in_layer_c && !alignment.is_focus_stock),
     },
     {
       key: "d1",
-      label: "D1",
+      label: "次日观察",
       type: "info" as const,
       filter: (alignment: Record<string, unknown>) => Boolean(alignment.is_d1_candidate && !alignment.in_layer_c && !alignment.is_focus_stock),
     },
@@ -74,13 +78,15 @@ function EngineEvidencePanel({ review, alignmentIndex }: { review: PostMarketDec
     groups={groups}
   >
       {(groupRows, groupKey) => (
-        <Table
-          dataSource={groupRows.map((row, index) => ({ ...row, key: String(row.stock_id || index) }))}
-          columns={columns}
-          size="small"
-          pagination={false}
-          rowClassName={() => (groupKey === "non_mainline" ? "recap-row-muted" : "")}
-        />
+        <div className="recap-table-shell">
+          <Table
+            dataSource={groupRows.map((row, index) => ({ ...row, key: String(row.stock_id || index) }))}
+            columns={columns}
+            size="small"
+            pagination={false}
+            rowClassName={() => (groupKey === "non_mainline" ? "recap-row-muted" : "")}
+          />
+        </div>
       )}
     </EvidenceGroupWrapper>
   );
