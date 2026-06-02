@@ -24,6 +24,37 @@ from .models import (
 class PostMarketDecisionEngineV2:
     """Orchestrate Layer C/D1 automation on the new architecture."""
 
+    @staticmethod
+    def _dedupe_key(row: dict[str, Any]) -> str:
+        """Build a stable identity for rows that may lack stock_id in legacy inputs."""
+        mainline_id = str(row.get("mainline_id") or "").strip()
+        subject_key = str(row.get("subject_key") or row.get("theme_key") or "").strip()
+        stock_id = str(row.get("stock_id") or "").strip()
+        if stock_id:
+            return "|".join(["stock_id", mainline_id or "--", subject_key or "--", stock_id])
+        stock_name = str(row.get("stock_name") or "").strip()
+        relay_role = str(row.get("relay_role") or "").strip()
+        return "|".join(
+            [
+                "fallback",
+                mainline_id or "--",
+                subject_key or "--",
+                stock_name or "--",
+                relay_role or "--",
+            ]
+        )
+
+    @classmethod
+    def _dedupe_rows(cls, rows: list[dict[str, Any]], *, score_key: str = "watch_score") -> list[dict[str, Any]]:
+        """Keep the highest-scoring row for each stable identity."""
+        best: dict[str, dict[str, Any]] = {}
+        for row in rows:
+            key = cls._dedupe_key(row)
+            score = float(row.get(score_key) or 0)
+            if key not in best or score > float(best[key].get(score_key) or 0):
+                best[key] = row
+        return list(best.values())
+
     def evaluate(
         self,
         *,
@@ -71,16 +102,7 @@ class PostMarketDecisionEngineV2:
 
         # Filter pool to mainline subjects only
         filtered_pool = [r for r in pool_rows if str(r.get("subject_key") or r.get("theme_key") or "") in mainline_sks]
-
-        # Dedup by stock_id (keep highest watch_score) — 7-day union can have duplicates
-        best: dict[str, dict[str, Any]] = {}
-        for r in filtered_pool:
-            sid = str(r.get("stock_id") or "")
-            if not sid: continue
-            ws = float(r.get("watch_score") or 0)
-            if sid not in best or ws > float(best[sid].get("watch_score") or 0):
-                best[sid] = r
-        filtered_pool = list(best.values())
+        filtered_pool = self._dedupe_rows(filtered_pool)
 
         # ── 2. Build Layer C strong_stock_pool ──
         strong_pool: list[StrongStockPoolItem] = []
@@ -173,6 +195,15 @@ class PostMarketDecisionEngineV2:
                              "blocked_by_market_regime": not allow_trade},
             ))
 
+        # Dedup D1 / focus for legacy rows that may leak repeated identities.
+        if d1_candidates:
+            deduped_d1: dict[str, WeakToStrongD1Item] = {}
+            for item in d1_candidates:
+                key = self._dedupe_key(item.to_dict())
+                if key not in deduped_d1 or item.candidate_score > deduped_d1[key].candidate_score:
+                    deduped_d1[key] = item
+            d1_candidates = list(deduped_d1.values())
+
         # Sort D1 by score desc
         d1_candidates.sort(key=lambda x: x.candidate_score, reverse=True)
 
@@ -196,6 +227,14 @@ class PostMarketDecisionEngineV2:
                 d2_required=True, d2_status="pending",
                 suggested_position=min(position_limit, 0.3) if position_limit > 0 else 0,
             ))
+
+        if focus_stocks:
+            deduped_focus: dict[str, NextDayFocusStock] = {}
+            for item in focus_stocks:
+                key = self._dedupe_key(item.to_dict())
+                if key not in deduped_focus or item.candidate_score > deduped_focus[key].candidate_score:
+                    deduped_focus[key] = item
+            focus_stocks = list(deduped_focus.values())
 
         # ── 5. Trading principle summary ──
         tp = {

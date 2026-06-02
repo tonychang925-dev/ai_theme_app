@@ -121,6 +121,51 @@ class TestPostMarketDecisionV2:
         assert "分支" in names
         assert "无关" not in names
 
+    def test_pool_dedupes_legacy_rows_without_stock_id(self):
+        e = PostMarketDecisionEngineV2()
+        legacy_rows = [
+            {
+                "stock_id": "",
+                "stock_name": "重复股",
+                "subject_key": "sk_core",
+                "theme_name": "主线A",
+                "watch_score": 80,
+                "watch_priority": 81,
+                "watch_status": "active",
+                "pool_entry_type": "formal",
+                "relay_role": "leader",
+                "source_tag": "a",
+                "cycle_state": "fermentation",
+                "mainline_strength_score": 72,
+                "support_score": 78,
+            },
+            {
+                "stock_id": "",
+                "stock_name": "重复股",
+                "subject_key": "sk_core",
+                "theme_name": "主线A",
+                "watch_score": 79,
+                "watch_priority": 80,
+                "watch_status": "active",
+                "pool_entry_type": "formal",
+                "relay_role": "leader",
+                "source_tag": "b",
+                "cycle_state": "fermentation",
+                "mainline_strength_score": 72,
+                "support_score": 78,
+            },
+        ]
+        r = e.evaluate(
+            trade_date="2026-04-29",
+            confirmed_mainlines=[_ml(csk="sk_core")],
+            market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
+            stock_pool_rows=legacy_rows,
+        )
+        assert len(r.strong_stock_pool_reviews) == 1
+        assert r.strong_stock_pool_reviews[0]["stock_name"] == "重复股"
+        assert len(r.weak_to_strong_d1_reviews) == 1
+        assert len(r.next_day_focus_stocks) == 1
+
     def test_focus_stock_has_buy_invalid_conditions(self):
         e = PostMarketDecisionEngineV2()
         r = e.evaluate(

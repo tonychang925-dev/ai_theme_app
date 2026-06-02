@@ -6,8 +6,33 @@ interface Props {
   review: PostMarketDecisionV2Review;
 }
 
+function rowKey(row: Record<string, unknown>): string {
+  const stockId = String(row.stock_id || "").trim();
+  if (stockId) return `stock_id:${stockId}`;
+  return [
+    "fallback",
+    String(row.stock_name || "").trim() || "--",
+    String(row.mainline_id || "").trim() || "--",
+    String(row.theme_name || "").trim() || "--",
+    String(row.relay_role || "").trim() || "--",
+  ].join("|");
+}
+
+function dedupeRows(rows: Record<string, unknown>[]): Record<string, unknown>[] {
+  const best = new Map<string, Record<string, unknown>>();
+  for (const row of rows) {
+    const key = rowKey(row);
+    const score = Number(row.watch_score || 0);
+    const prev = best.get(key);
+    if (!prev || score > Number(prev.watch_score || 0)) {
+      best.set(key, row);
+    }
+  }
+  return Array.from(best.values());
+}
+
 export default function LayerCStrongPoolPanel({ review }: Props) {
-  const pool = (review.strong_stock_pool_reviews ?? []) as Record<string, unknown>[];
+  const pool = dedupeRows((review.strong_stock_pool_reviews ?? []) as Record<string, unknown>[]);
 
   const byMainline: Record<string, Record<string, unknown>[]> = {};
   for (const r of pool) {
