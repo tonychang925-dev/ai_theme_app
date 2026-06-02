@@ -159,6 +159,8 @@ class CollectionJobManager:
             tasks.append(CollectionTaskState(key="tushare_kline", title="Tushare日K线+盘前竞价采集"))
         if options.get("dragon_tiger", True):
             tasks.append(CollectionTaskState(key="dragon_tiger", title="龙虎榜构建"))
+        if options.get("index_kline", True):
+            tasks.append(CollectionTaskState(key="index_kline", title="大盘指数采集+技术分析"))
         if options.get("abnormal_signal", False):
             tasks.append(CollectionTaskState(key="abnormal_signal", title="异动股票构建"))
         if options.get("strong_stock_watch", False):

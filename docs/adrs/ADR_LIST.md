@@ -418,6 +418,50 @@
   - 若数据结构与 API 契约不冻结，前后端开发会频繁返工，影响交付进度。
 - Proposed Decision
   - 立即冻结 `DailyReview`、`MarketSummary`、`ThemeReview`、`CapitalReview`、`TradingPrinciple` 等核心数据结构，字段只增不改语义。
+
+### ADR-031: Broad Theme Risk Control 分层治理
+- Context
+  - `VR`、`AI产业链五大核心`、`农业新质生产力`、`汽车国企`、`A股全球第一` 等泛主题在运行时可能通过 `direct_theme_name_hit` 和 `v1_fallback` 被抬成高置信 `MATCH`。
+  - 5/31 的真实事故已经证明，题材名“看起来合理”并不代表运行时稳定。
+- Proposed Decision
+  - 引入 `Broad Theme Risk Control`，对题材按 `P0/P1/P2` 分层。
+  - `P0` 题材的裸 `direct_theme_name_hit` 仅允许进入复核，不得直接自动 `MATCH`。
+- Alternatives
+  - 继续按题材名主观判断是否“泛词”，或只靠 negative terms 修补。
+- Consequences
+  - 高风险题材的误召回会显著下降；review-first 题材的人工复核量会上升。
+  - 需要新增题材级 watchlist 与风险评分。
+- Trigger
+  - 题材出现高置信错配、`direct_theme_name_hit_bad_count > 0` 或 `v1_fallback_direct_hit_bad_count > 0` 时。
+
+### ADR-032: P0 泛主题题材 review-first 但不禁用
+- Context
+  - `P0` 题材风险高，但仍可能在满足充分证据时形成正确匹配。
+  - 如果把 `P0` 简单做成全禁用，会把正常机会也压到人工复核里。
+- Proposed Decision
+  - `P0 + direct_theme_name_hit + 缺少 hard_anchor/action_terms/entity_boundary` 时进入 `HUMAN_REVIEW`。
+  - `P0 + hard_anchor + action_terms + entity_boundary` 全满足时允许 `MATCH`。
+- Alternatives
+  - 直接屏蔽 `P0` 的所有自动匹配。
+- Consequences
+  - 保留正常命中能力，同时切断裸直命中高置信误配路径。
+  - 需要在运行时记录细分 reason code。
+- Trigger
+  - `P0` 题材出现直接命中但证据结构不完整时。
+
+### ADR-033: P0 题材必须具备 accepted_candidate 画像
+- Context
+  - `P0` 题材如果仍主要依赖 `v1_fallback`，即使修了 gate 文件，runtime 也可能继续走旧路径。
+- Proposed Decision
+  - `P0` 题材必须先补齐 `theme_profile_v2 accepted_candidate`，再允许其参与自动 `MATCH`。
+  - 若 `runtime_source = v1_fallback` 且 `match_reason = direct_theme_name_hit`，则只能进入复核。
+- Alternatives
+  - 继续允许 `v1_fallback` 对 `P0` 裸直出。
+- Consequences
+  - 可显著降低旧路径复发风险。
+  - 需要维护 `generated_by` 和版本化画像。
+- Trigger
+  - `P0` 题材在 runtime 中仍依赖 `v1_fallback` 时。
 - Alternatives
   - 保持契约灵活，允许开发过程中调整。
 - Consequences

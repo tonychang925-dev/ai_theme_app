@@ -9,6 +9,15 @@ import {
 import { navigateTo } from "../../lib/navigation";
 import recapIcon from "../../assets/intel-icons/当日复盘.png";
 
+// PR-14B: Engine Panels
+import EngineDecisionHeader from "./components/EngineDecisionHeader";
+import MarketRegimePanel from "./components/MarketRegimePanel";
+import MarketOverviewPanel from "./components/MarketOverviewPanel";
+import MainlineStateBoard from "./components/MainlineStateBoard";
+import D1NextDayWatchPanel from "./components/D1NextDayWatchPanel";
+import LayerCStrongPoolPanel from "./components/LayerCStrongPoolPanel";
+import RecapDataQualityBar from "./components/RecapDataQualityBar";
+
 const DISPLAY_REPLACEMENTS: Array<[string, string]> = [
   ["risk_off", "避险防御"],
   ["risk_on", "进攻偏多"],
@@ -920,6 +929,7 @@ export function RecapPage() {
   const auctionValidationSection = sections.get("竞价验证回看") ?? [];
   const auxSection = sections.get("龙虎榜") ?? sections.get("龙虎榜与来源链") ?? sections.get("失效条件") ?? [];
   const cycleByTheme = useMemo(() => buildThemeCycleMap(cycleSection), [cycleSection]);
+  const legacyPostMarketSectionsDisabled = isPostMarket && dailyReviewV2PreviewEnabled;
   const strongStockGroups = useMemo(() => {
     const v2Rows = dailyReviewV2?.strong_stock_reviews;
     if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "strong_stock_reviews", v2Rows)) {
@@ -1357,6 +1367,45 @@ export function RecapPage() {
         <>
           <main className="workspace-layout single">
             <section className="workspace-column">
+              {/* ── PR-14B: Engine Panels (new architecture first) ── */}
+              {dailyReviewV2PreviewEnabled && (
+                <>
+                  <RecapDataQualityBar
+                    indexReady={(dailyReviewV2?.index_technical_reviews?.length ?? 0) > 0}
+                    mainlineReady={(dailyReviewV2?.mainline_daily_states?.length ?? 0) > 0}
+                    pdv2Ready={!!dailyReviewV2?.post_market_decision_v2}
+                  />
+                  {dailyReviewV2?.engine_summary && (
+                    <EngineDecisionHeader
+                      engineSummary={dailyReviewV2.engine_summary}
+                      marketRegime={dailyReviewV2.market_regime_review ?? null}
+                    />
+                  )}
+                  {dailyReviewV2?.market_regime_review && (
+                    <MarketRegimePanel
+                      marketRegime={dailyReviewV2.market_regime_review}
+                      indexReviews={dailyReviewV2.index_technical_reviews}
+                      tradeDate={tradeDate}
+                    />
+                  )}
+                  {dailyReviewV2?.market_overview_review && (
+                    <MarketOverviewPanel
+                      marketOverview={dailyReviewV2.market_overview_review}
+                      tradeDate={tradeDate}
+                    />
+                  )}
+                  {(dailyReviewV2?.mainline_daily_states?.length ?? 0) > 0 && (
+                    <MainlineStateBoard rows={dailyReviewV2!.mainline_daily_states!} tradeDate={tradeDate} />
+                  )}
+                  {dailyReviewV2?.post_market_decision_v2 && (
+                    <D1NextDayWatchPanel review={dailyReviewV2.post_market_decision_v2} />
+                  )}
+                  {dailyReviewV2?.post_market_decision_v2 && (
+                    <LayerCStrongPoolPanel review={dailyReviewV2.post_market_decision_v2} />
+                  )}
+                </>
+              )}
+
               {/* P0: 交易原则卡片 */}
               {dailyReviewV2PreviewEnabled && dailyReviewV2?.trading_principle && typeof dailyReviewV2.trading_principle === "object" && Object.keys(dailyReviewV2.trading_principle as Record<string, unknown>).length > 0 && (() => {
                 const tp = dailyReviewV2.trading_principle as Record<string, unknown>;
@@ -1432,8 +1481,8 @@ export function RecapPage() {
                 </div>
               )}
 
-              {/* 主线与支线 — P0 止血：主体展示统一使用 payload.sections。 */}
-              {(isPostMarket || (sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? []).length > 0) && (
+              {/* 旧 sections 仅保留给非 preview 的兼容路径，post_market 新架构不再走这里。 */}
+              {!legacyPostMarketSectionsDisabled && (isPostMarket || (sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? []).length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">{effectiveReportType === "post_market" ? "主线与支线" : "可做主线与支线"}</span>
                   {effectiveReportType === "post_market" ? (
@@ -1536,7 +1585,7 @@ export function RecapPage() {
                 </div>
               )}
 
-              {(isPostMarket || themeCapitalFlowRows.length > 0) && (
+              {!legacyPostMarketSectionsDisabled && (isPostMarket || themeCapitalFlowRows.length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">主线资金流入前10</span>
                   {themeCapitalFlowRows.length > 0 ? (
@@ -1578,7 +1627,7 @@ export function RecapPage() {
                 </div>
               )}
 
-              {(isPostMarket || (sections.get("强势股分层") ?? sections.get("盘前重点盯盘个股") ?? []).length > 0) && (
+              {!legacyPostMarketSectionsDisabled && (isPostMarket || (sections.get("强势股分层") ?? sections.get("盘前重点盯盘个股") ?? []).length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">{effectiveReportType === "post_market" ? "强势股分层" : "盘前重点盯盘个股"}</span>
                   {effectiveReportType === "post_market" ? (
@@ -1653,7 +1702,7 @@ export function RecapPage() {
                 </div>
               )}
 
-              {(isPostMarket || watchlistSection.length > 0) && (
+              {!legacyPostMarketSectionsDisabled && (isPostMarket || watchlistSection.length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">次日观察清单</span>
                   {watchlistRows.length > 0 ? (
@@ -1709,7 +1758,7 @@ export function RecapPage() {
                 </div>
               )}
 
-              {(isPostMarket || stockCapitalFlowRows.length > 0) && (
+              {!legacyPostMarketSectionsDisabled && (isPostMarket || stockCapitalFlowRows.length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">股票资金流入前20</span>
                   {stockCapitalFlowRows.length > 0 ? (
@@ -1747,7 +1796,7 @@ export function RecapPage() {
                 </div>
               )}
 
-              {(isPostMarket || abnormalSection.length > 0) && (
+              {!legacyPostMarketSectionsDisabled && (isPostMarket || abnormalSection.length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">当日异动股与资金行为</span>
                   {abnormalNote && <p className="workspace-note">{zh(abnormalNote)}</p>}
@@ -1790,7 +1839,7 @@ export function RecapPage() {
                 </div>
               )}
 
-              {(isPostMarket || moneySection.length > 0) && (
+              {!legacyPostMarketSectionsDisabled && (isPostMarket || moneySection.length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">资金行为增强</span>
                   {moneyFlowRows.length > 0 ? (
@@ -1830,7 +1879,7 @@ export function RecapPage() {
                 </div>
               )}
 
-              {auctionSection.length > 0 && (
+              {!legacyPostMarketSectionsDisabled && auctionSection.length > 0 && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">竞价确认</span>
                   <ul className="workspace-list">
@@ -1847,7 +1896,7 @@ export function RecapPage() {
                 </div>
               )}
 
-              {auctionValidationSection.length > 0 && (
+              {!legacyPostMarketSectionsDisabled && auctionValidationSection.length > 0 && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">竞价验证回看</span>
                   <ul className="workspace-list">
@@ -1864,7 +1913,7 @@ export function RecapPage() {
                 </div>
               )}
 
-              {(isPostMarket || auxSection.length > 0) && (
+              {!legacyPostMarketSectionsDisabled && (isPostMarket || auxSection.length > 0) && (
                 <div className="workspace-card">
                   <span className="metric-label section-title">{effectiveReportType === "post_market" ? "龙虎榜" : "失效条件"}</span>
                   {effectiveReportType === "post_market" ? (

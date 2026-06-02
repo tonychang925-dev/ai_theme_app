@@ -94,6 +94,7 @@ export function CollectionPage() {
     jyhf: true,
     tushareKline: true,
     dragonTiger: true,
+    indexKline: true,
   });
 
   const totalSteps = job?.total_steps ?? 0;
@@ -197,6 +198,7 @@ export function CollectionPage() {
           jyhf_history: false,
           tushare_kline: options.tushareKline,
           dragon_tiger: options.dragonTiger,
+          index_kline: options.indexKline,
           auto_build_v2_if_missing: false,
         },
         tushare_pause_seconds: 0.1,
@@ -332,6 +334,14 @@ export function CollectionPage() {
                 onChange={() => setOptions((s) => ({ ...s, dragonTiger: !s.dragonTiger }))}
               />
               <span>龙虎榜</span>
+            </label>
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.indexKline}
+                onChange={() => setOptions((s) => ({ ...s, indexKline: !s.indexKline }))}
+              />
+              <span>指数采集</span>
             </label>
           </div>
 

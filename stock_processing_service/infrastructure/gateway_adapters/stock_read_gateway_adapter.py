@@ -407,6 +407,20 @@ class StockReadGatewayAdapter:
         )
         return [_as_dict(row) for row in rows]
 
+    async def get_all_confirmed_mainlines(self) -> list[dict[str, Any]]:
+        """PR-13C: 读取所有已确认主线（从 mainline_registry）。"""
+        fn = getattr(self._db, "get_all_confirmed_mainlines", None)
+        if not callable(fn):
+            return []
+        return await fn()
+
+    async def get_all_prior_alive_cycles(self, trade_date) -> list[dict[str, Any]]:
+        """PR-13C: 读取上一交易日仍存续的已确认主线。"""
+        fn = getattr(self._db, "get_all_prior_alive_cycles", None)
+        if not callable(fn):
+            return []
+        return await fn(trade_date=trade_date)
+
     async def get_staging_subject_keys(
         self, trade_date: date, lookback_days: int = 7,
     ) -> list[str]:

@@ -133,6 +133,9 @@ class CollectionCommandPlanner:
         if task_key == "dragon_tiger":
             return CollectionTaskPlan(runner_key="dragon_tiger.object")
 
+        if task_key == "index_kline":
+            return CollectionTaskPlan(runner_key="index_kline.collect")
+
         if task_key == "abnormal_signal":
             return CollectionTaskPlan(
                 runner_key="abnormal.signal",

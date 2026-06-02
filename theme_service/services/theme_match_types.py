@@ -60,6 +60,7 @@ class ThemeProfile:
     aliases: List[str] = field(default_factory=list)
     entity_hints: List[str] = field(default_factory=list)
     core_objects: List[str] = field(default_factory=list)
+    event_action_terms: List[str] = field(default_factory=list)
 
     def compact_text(self) -> str:
         parts = [

@@ -513,7 +513,121 @@ export interface DragonTigerReviewV2 {
   diagnostics: Record<string, unknown>;
 }
 
+// ── PR-14C: Evidence Alignment Types ──
+
+export interface EvidenceAlignment {
+  [key: string]: unknown;
+  active_mainline: boolean;
+  mainline_id: string;
+  mainline_name: string;
+  lifecycle_state: string;
+  mainline_trade_alive?: boolean;
+  in_layer_c: boolean;
+  layer_c_level: string;
+  is_d1_candidate: boolean;
+  d1_level: string;
+  is_focus_stock: boolean;
+  trade_action: string;
+  evidence_role: string;
+}
+
+export interface EvidenceAlignmentIndex {
+  by_stock: Record<string, Record<string, unknown>>;
+  by_subject: Record<string, Record<string, unknown>>;
+  indexed_stocks: number;
+  indexed_subjects: number;
+}
+
 export type PostMarketDailyReviewV2ModuleRow = Record<string, unknown>;
+
+// ── PR-14A/B: Engine Report Types ──
+
+export interface EngineSummary {
+  allow_trade: boolean;
+  trade_mode: string;
+  position_limit?: number | null;
+  no_trade_blocking_rule?: string | null;
+  no_trade_reasons?: string[];
+  action_bias?: string;
+  conclusion?: string | null;
+  next_day_strategy?: string | null;
+  risk_notes?: string[];
+}
+
+export interface IndexTechnicalReview {
+  index_code: string;
+  index_name: string;
+  close?: number | null;
+  pct_chg?: number | null;
+  trend_state?: string | null;
+  trend_score?: number | null;
+  above_ma5?: boolean | null;
+  above_ma10?: boolean | null;
+  above_ma20?: boolean | null;
+  above_ma60?: boolean | null;
+  ma_structure?: string | null;
+  macd_state?: string | null;
+  support_level?: number | null;
+  resistance_level?: number | null;
+  nearest_support_level?: number | null;
+  nearest_resistance_level?: number | null;
+  support_distance_pct?: number | null;
+  resistance_distance_pct?: number | null;
+  support_status?: string | null;
+  resistance_status?: string | null;
+  volume_pattern?: string | null;
+  index_trade_hint?: string | null;
+  warning_level?: string | null;
+  risk_flags?: string[];
+  conclusion?: string | null;
+}
+
+export interface EngineMarketRegimeReview {
+  broad_market_regime?: string | null;
+  short_term_sentiment?: string | null;
+  mainline_environment?: string | null;
+  allow_trade?: boolean | null;
+  trade_mode?: string | null;
+  position_limit?: number | null;
+  no_trade_blocking_rule?: string | null;
+  no_trade_reasons?: string[];
+  index_data_ready?: boolean;
+  index_data_source?: string | null;
+  index_technical_reviews?: IndexTechnicalReview[];
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface MainlineDailyStateReview {
+  trade_date: string;
+  mainline_id: string;
+  mainline_name: string;
+  canonical_subject_key: string;
+  active_subject_keys?: string[];
+  lifecycle_state: string;
+  mainline_alive?: boolean;
+  mainline_trade_alive?: boolean;
+  risk_state?: string | null;
+  event_count_1d?: number;
+  event_count_3d?: number;
+  event_count_7d?: number;
+  mainline_strength_score?: number | null;
+  fade_risk_score?: number | null;
+  strong_pool_count?: number;
+  d1_count?: number;
+  focus_count?: number;
+  action_advice?: string | null;
+  conclusion?: string | null;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface PostMarketDecisionV2Review {
+  trading_permission?: Record<string, unknown>;
+  strong_stock_pool_reviews?: Record<string, unknown>[];
+  weak_to_strong_d1_reviews?: Record<string, unknown>[];
+  next_day_focus_stocks?: Record<string, unknown>[];
+  trading_principle_v2?: Record<string, unknown>;
+  diagnostics?: Record<string, unknown>;
+}
 
 export interface PostMarketDailyReviewV2 {
   schema_version: "daily_review_v2";
@@ -530,6 +644,7 @@ export interface PostMarketDailyReviewV2 {
   };
   market_environment_review?: Record<string, unknown>;
   market_summary: MarketSummaryReview;
+  market_overview_review?: MarketOverviewReview;
   theme_reviews: ThemeReviewV2[];
   theme_capital_reviews: ThemeCapitalReview[];
   strong_stock_reviews: StrongStockReviewV2[];
@@ -540,6 +655,52 @@ export interface PostMarketDailyReviewV2 {
   dragon_tiger_reviews: DragonTigerReviewV2[];
   trading_principle: Record<string, unknown>;
   diagnostics: DailyReviewV2Diagnostics;
+
+  // PR-14A: engine report fields (merged into v2 by composer)
+  engine_summary?: EngineSummary;
+  market_regime_review?: EngineMarketRegimeReview;
+  index_technical_reviews?: IndexTechnicalReview[];
+  mainline_daily_states?: MainlineDailyStateReview[];
+  post_market_decision_v2?: PostMarketDecisionV2Review;
+  // PR-14C: evidence alignment
+  evidence_alignment_index?: EvidenceAlignmentIndex;
+}
+
+export interface ThemeLimitUpStock {
+  stock_id: string;
+  stock_name: string;
+  board_count?: number | null;
+  role_label?: string | null;
+  in_layer_c?: boolean;
+  is_d1_candidate?: boolean;
+  trade_action?: string | null;
+}
+
+export interface ThemeLimitUpColumn {
+  subject_key: string;
+  theme_name: string;
+  limit_up_count: number;
+  active_mainline: boolean;
+  lifecycle_state?: string | null;
+  trade_action?: string | null;
+  focus_stocks: ThemeLimitUpStock[];
+}
+
+export interface ThemeLimitUpMatrix {
+  columns: ThemeLimitUpColumn[];
+  max_rows: number;
+  count_method: "display_by_theme" | string;
+}
+
+export interface MarketOverviewReview {
+  trade_date: string;
+  limit_up_total?: number | null;
+  limit_down_total?: number | null;
+  up_count?: number | null;
+  down_count?: number | null;
+  total_amount?: number | null;
+  theme_limitup_matrix: ThemeLimitUpMatrix;
+  diagnostics?: Record<string, unknown>;
 }
 
 // ── P1-6: PostMarket readiness / jobs status ──
@@ -635,6 +796,31 @@ export async function fetchDailyReviewV2(date: string): Promise<PostMarketDailyR
     `/api/v2/daily-review-v2?date=${encodeURIComponent(date)}`,
     undefined,
     30000,
+  );
+}
+
+export interface IndexCollectResult {
+  success: boolean;
+  trade_date: string;
+  collected_count: number;
+  technical_count: number;
+  total_count: number;
+  missing_indices: string[];
+  source: string;
+}
+
+export async function collectIndexKline(payload: { trade_date?: string; force?: boolean }): Promise<IndexCollectResult> {
+  return fetchJsonWithTimeout<IndexCollectResult>(
+    `/api/v2/index-kline/collect`,
+    { method: "POST", body: JSON.stringify(payload || {}), headers: { "Content-Type": "application/json" } },
+    120000,
+  );
+}
+
+export async function fetchIndexKlineStatus(tradeDate: string): Promise<IndexCollectResult> {
+  return fetchJsonWithTimeout<IndexCollectResult>(
+    `/api/v2/index-kline/status?trade_date=${encodeURIComponent(tradeDate)}`,
+    {}, 5000,
   );
 }
 
@@ -1607,6 +1793,22 @@ export async function fetchJyhfAuctionStatus(): Promise<JyhfAuctionStatus> {
     );
   } catch (err) {
     throw normalizeRealtimeCollectorError(err, "JYHF-竞价 状态检查");
+  }
+}
+
+export interface JyhfAuctionLogs {
+  lines: string[];
+}
+
+export async function fetchJyhfAuctionLogs(lines = 200): Promise<JyhfAuctionLogs> {
+  try {
+    return await fetchJsonWithTimeout<JyhfAuctionLogs>(
+      `/api/v2/realtime/jyhf-auction/logs?lines=${encodeURIComponent(String(lines))}`,
+      { cache: "no-store" },
+      10000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "JYHF-竞价 日志拉取");
   }
 }
 

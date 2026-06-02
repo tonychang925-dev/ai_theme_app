@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import json
 from types import SimpleNamespace
 from pathlib import Path
 
 import pytest
 
 from theme_service.tools.compare_theme_profile_v1_v2 import _normalize_and_validate_db_args
+from theme_service.tools.compare_theme_profile_v1_v2 import _hard_negative_subject_rows
 from theme_service.tools.profile_eval_common import count_generic_only_related, hard_negative_wrong_hits
 from theme_service.tools.profile_quality_common import is_generic_term, split_generic
 from theme_service.tools.validate_theme_profile_v2 import _evaluate_hard_negatives, validate_profile
@@ -162,9 +164,15 @@ def test_hard_negative_wrong_hits_catches_xinjiang_ftz_and_deepsea_regressions()
     assert hits["subject_keys"] == ["9012396", "9043698"]
     assert hits["theme_names"] == ["新疆自贸区", "深海经济"]
 
+
 @pytest.mark.asyncio
 async def test_hard_negative_validator_loads_phase5_delta_jsonl():
     hard_negative_file = Path(__file__).resolve().parents[2] / "eval/gate_repair_phase5/e2e_delta_hard_negatives.jsonl"
+    loaded_case_ids = {
+        json.loads(line)["case_id"]
+        for line in hard_negative_file.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    }
     cases = [
         {
             "case_id": "phase5_hn_fusion_not_global_first_130855",
@@ -243,6 +251,23 @@ async def test_hard_negative_validator_loads_phase5_delta_jsonl():
     case_ids = {row["case_id"] for row in case_rows}
 
     assert hard_negative_file.exists()
+    assert {
+        "phase5_btrc_vr_ai_glasses_not_vr_001",
+        "phase5_btrc_vr_ar_headset_not_vr_002",
+        "phase5_btrc_vr_content_not_vr_003",
+        "phase5_btrc_ai_chain_not_umbrella_model_004",
+        "phase5_btrc_ai_chain_not_umbrella_chip_005",
+        "phase5_btrc_ai_chain_not_umbrella_policy_006",
+        "phase5_btrc_agri_not_umbrella_breed_007",
+        "phase5_btrc_agri_not_umbrella_machinery_008",
+        "phase5_btrc_agri_not_umbrella_village_009",
+        "phase5_btrc_auto_soe_not_policy_010",
+        "phase5_btrc_auto_soe_not_sales_011",
+        "phase5_btrc_auto_soe_not_reform_012",
+        "phase5_btrc_a_share_not_rank_013",
+        "phase5_btrc_a_share_not_chain_014",
+        "phase5_btrc_a_share_not_promo_015",
+    }.issubset(loaded_case_ids)
     assert "phase5_hn_biotech_not_xinjiang_ftz_131215" in case_ids
     assert "phase5_hn_rare_earth_not_deepsea_131216" in case_ids
     assert "phase5_hn_fusion_not_global_first_130855" in case_ids
@@ -282,3 +307,31 @@ def test_compare_tool_allows_explicit_cross_db():
     _normalize_and_validate_db_args(args)
 
     assert args.write_db_name == "stock_data"
+
+
+def test_hard_negative_subject_rows_exposes_watchlist_subject_reject_rates():
+    subject_metrics = {
+        "9054404": {
+            "hard_negative_case_count": 3,
+            "hard_negative_reject_count": 2,
+            "hard_negative_reject_rate": 0.6667,
+            "failed_hard_negative_cases": ["case_a"],
+        },
+        "9012396": {
+            "hard_negative_case_count": 3,
+            "hard_negative_reject_count": 3,
+            "hard_negative_reject_rate": 1.0,
+            "failed_hard_negative_cases": [],
+        },
+    }
+    subject_names = {"9054404": "A股全球第一", "9012396": "新疆自贸区"}
+
+    rows = _hard_negative_subject_rows(subject_metrics, subject_names, {"9054404", "9012396"})
+    by_key = {row["subject_key"]: row for row in rows}
+
+    assert by_key["9054404"]["subject_name"] == "A股全球第一"
+    assert by_key["9054404"]["hard_negative_case_count"] == 3
+    assert by_key["9054404"]["hard_negative_reject_count"] == 2
+    assert by_key["9054404"]["hard_negative_reject_rate"] == 0.6667
+    assert by_key["9012396"]["subject_name"] == "新疆自贸区"
+    assert by_key["9012396"]["hard_negative_reject_rate"] == 1.0

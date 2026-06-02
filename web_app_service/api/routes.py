@@ -779,6 +779,26 @@ async def proxy_mainline_review_decision(review_id: str, payload: dict) -> dict:
         f"/api/v2/mainline-review/{review_id}/decision", payload, timeout=15.0)
 
 
+# ── PR-13D: 指数采集代理 ──
+
+@router.post("/index-kline/collect")
+async def proxy_index_kline_collect(payload: dict) -> dict:
+    return await _proxy_stock_processing_post_json(
+        "/api/v1/index-kline/collect", payload, timeout=120.0)
+
+
+@router.get("/index-kline/status")
+async def proxy_index_kline_status(trade_date: str = "") -> dict:
+    return await _proxy_stock_processing_json(
+        "/api/v1/index-kline/status", {"trade_date": trade_date})
+
+
+@router.get("/index-technical/daily")
+async def proxy_index_technical_daily(trade_date: str = "") -> list[dict]:
+    return await _proxy_stock_processing_json(
+        "/api/v1/index-technical/daily", {"trade_date": trade_date})
+
+
 @router.get("/realtime/jyhf-cdp/status")
 async def jyhf_cdp_collector_status(request: Request):
     manager = request.app.state.cdp_manager
@@ -927,6 +947,12 @@ async def jyhf_auction_status(request: Request) -> dict:
     return mgr.status()
 
 
+@router.get("/realtime/jyhf-auction/logs")
+async def jyhf_auction_logs(request: Request, lines: int = Query(default=200, ge=20, le=2000)) -> dict:
+    mgr = request.app.state.auction_manager
+    return mgr.get_logs(lines=lines)
+
+
 @router.post("/realtime/jyhf-auction/start")
 async def jyhf_auction_start(request: Request, payload: dict | None = None) -> dict:
     mgr = request.app.state.auction_manager
@@ -945,18 +971,57 @@ async def jyhf_auction_stop(request: Request) -> dict:
 
 # ── P0-C2: 统一状态聚合接口，替代多个独立轮询 ──
 
+# new-chain 状态缓存：SPS 8090 频繁超时导致 status-bundle 被拖死时兜底
+_new_chain_cache: dict = {
+    "data": None,        # 最近一次成功的 SPS 响应
+    "ts": 0.0,           # 成功时间戳
+    "max_age_s": 60,     # 缓存有效期
+    "failures": 0,       # 连续失败次数
+    "circuit_open_until": 0.0,  # 熔断结束时间（跳过 SPS 调用）
+}
+
+
 @router.get("/realtime/status-bundle")
 async def realtime_status_bundle(request: Request) -> dict:
     """单次返回 new-chain + JYHF CDP + auction 状态，减少轮询次数。"""
     import asyncio as _asyncio
+    import time as _time
 
     async def _new_chain():
+        now_ts = _time.time()
+
+        # 熔断：连续失败 2 次后跳过 SPS 调用 30s，避免每次 4s 超时拖死 bundle
+        if _new_chain_cache["failures"] >= 2 and now_ts < _new_chain_cache["circuit_open_until"]:
+            cached = _new_chain_cache["data"]
+            if cached:
+                cached = dict(cached)
+                cached["_cached"] = True
+                cached["_circuit_open"] = True
+                cached["_cache_age_s"] = round(now_ts - _new_chain_cache["ts"], 1)
+                return cached
+            return {"running": False, "error": "circuit open — SPS unreachable", "_circuit_open": True}
+
         try:
-            async with httpx.AsyncClient(timeout=10.0, trust_env=False) as c:
+            async with httpx.AsyncClient(timeout=4.0, trust_env=False) as c:
                 r = await c.get(f"{STOCK_PROCESSING_BASE_URL}/api/v1/realtime/status")
                 r.raise_for_status()
-                return r.json()
+                data = r.json()
+                _new_chain_cache["data"] = data
+                _new_chain_cache["ts"] = now_ts
+                _new_chain_cache["failures"] = 0
+                _new_chain_cache["circuit_open_until"] = 0.0
+                return data
         except Exception as exc:
+            _new_chain_cache["failures"] += 1
+            if _new_chain_cache["failures"] >= 2:
+                _new_chain_cache["circuit_open_until"] = now_ts + 30  # 熔断 30s
+            # 缓存兜底：SPS 不可达时返回最后已知状态
+            cached = _new_chain_cache["data"]
+            if cached and (now_ts - _new_chain_cache["ts"]) < _new_chain_cache["max_age_s"]:
+                cached = dict(cached)
+                cached["_cached"] = True
+                cached["_cache_age_s"] = round(now_ts - _new_chain_cache["ts"], 1)
+                return cached
             return {"running": False, "error": str(exc)}
 
     async def _cdp_status():
@@ -968,10 +1033,18 @@ async def realtime_status_bundle(request: Request) -> dict:
     async def _auction_status():
         return request.app.state.auction_manager.status()
 
-    new_chain, cdp, auction = await _asyncio.gather(
-        _new_chain(), _cdp_status(), _auction_status(),
-        return_exceptions=True,
-    )
+    try:
+        async with _asyncio.timeout(7.0):
+            new_chain, cdp, auction = await _asyncio.gather(
+                _new_chain(), _cdp_status(), _auction_status(),
+                return_exceptions=True,
+            )
+    except TimeoutError:
+        # 整体超时：返回缓存或降级响应
+        cached = _new_chain_cache["data"]
+        new_chain = (dict(cached) if cached else {"running": False, "error": "bundle timeout"}) if cached else {"running": False, "error": "bundle timeout"}
+        cdp = {"error": "bundle timeout"}
+        auction = request.app.state.auction_manager.status()
 
     return {
         "new_chain": new_chain if isinstance(new_chain, dict) else {"error": str(new_chain)},

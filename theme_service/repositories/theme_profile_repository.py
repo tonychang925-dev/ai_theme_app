@@ -121,6 +121,7 @@ def _merge_profiles(profiles: List[ThemeProfile]) -> List[ThemeProfile]:
         base.weak_terms = _unique_keep_order(base.weak_terms + profile.weak_terms)
         base.not_terms = _unique_keep_order(base.not_terms + profile.not_terms)
         base.negative_terms = _unique_keep_order(base.negative_terms + profile.negative_terms)
+        base.event_action_terms = _unique_keep_order(base.event_action_terms + profile.event_action_terms)
         base.search_text = _safe_str(" ".join([base.search_text, profile.search_text]))
         if not _safe_str(base.rerank_text) and _safe_str(profile.rerank_text):
             base.rerank_text = profile.rerank_text
@@ -441,6 +442,7 @@ class ThemeProfileRepository:
                     aliases=aliases,
                     entity_hints=_normalize_list(row.get("entity_anchors")),
                     core_objects=anchors,
+                    event_action_terms=_normalize_list(row.get("event_action_terms")),
                 )
             )
         return profiles

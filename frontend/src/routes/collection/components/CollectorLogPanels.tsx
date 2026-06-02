@@ -18,6 +18,7 @@ interface Props {
   jyhfLogs: string[];
   stackStatus?: NewChainRealtimeStatus | null;
   auctionStatus?: JyhfAuctionStatus | null;
+  auctionLogs?: string[];
   collectorLogWindowLabel?: string;
 }
 
@@ -158,26 +159,40 @@ function renderLifecycleState(stackStatus?: NewChainRealtimeStatus | null) {
   );
 }
 
-function renderAuctionState(auctionStatus?: JyhfAuctionStatus | null) {
-  const lines = auctionStatus
+function renderAuctionState(auctionStatus?: JyhfAuctionStatus | null, auctionLogs?: string[]) {
+  const statusLines = auctionStatus
     ? [
         `running: ${auctionStatus.running}`,
         `state: ${auctionStatus.state}`,
         `trade_date: ${auctionStatus.trade_date ?? "-"}`,
         `candidate_date: ${auctionStatus.candidate_date ?? "-"}`,
         `rounds: ${auctionStatus.rounds}  points: ${auctionStatus.points}`,
-      ]
+        `pid: ${auctionStatus.pid ?? "-"}`,
+        auctionStatus.last_error ? `last_error: ${auctionStatus.last_error}` : null,
+      ].filter(Boolean) as string[]
     : ["暂无竞价采集状态"];
+
+  const logLines = auctionLogs?.length ? auctionLogs : [];
+  const hasActivity = auctionStatus?.running || logLines.length > 0;
 
   return (
     <section className="collection-log-panel" style={{ height: "100%", maxHeight: "none", overflow: "auto", fontFamily: "monospace", fontSize: 11, lineHeight: 1.5 }}>
-      <div style={{ marginBottom: 8, color: "#e2e8f0", fontWeight: 700 }}>JYHF 竞价采集</div>
-      {lines.map((line, idx) => renderLogLine(line, `auction-${idx}`))}
+      <div style={{ marginBottom: 8, color: "#e2e8f0", fontWeight: 700 }}>
+        JYHF 竞价采集{hasActivity ? ` (${logLines.length} 行)` : ""}
+      </div>
+      <div style={{ marginBottom: 4, color: "#64748b" }}>── 状态 ──</div>
+      {statusLines.map((line, idx) => renderLogLine(line, `auction-status-${idx}`))}
+      {logLines.length > 0 && (
+        <>
+          <div style={{ marginTop: 8, marginBottom: 4, color: "#64748b" }}>── 运行日志 ──</div>
+          {logLines.map((line, idx) => renderLogLine(line, `auction-log-${idx}`))}
+        </>
+      )}
     </section>
   );
 }
 
-export default function CollectorLogPanels({ mergedLogs, jyhfLogs, stackStatus, auctionStatus, collectorLogWindowLabel }: Props) {
+export default function CollectorLogPanels({ mergedLogs, jyhfLogs, stackStatus, auctionStatus, auctionLogs, collectorLogWindowLabel }: Props) {
   const logSections = splitSections(mergedLogs).filter((section) =>
     !section.title.startsWith("操作日志") &&
     !section.title.startsWith("Redis Stream 指标") &&
@@ -253,7 +268,7 @@ export default function CollectorLogPanels({ mergedLogs, jyhfLogs, stackStatus, 
         { key: "collector", label: "运行日志 (采集/LLM/匹配)", children: collectorLogContent },
         { key: "jyhf", label: "DOM日志 (JYHF)", children: jyhfLogContent },
         { key: "lifecycle", label: "生命周期状态 (6)", children: renderLifecycleState(stackStatus) },
-        { key: "auction", label: "JYHF 竞价采集 (5)", children: renderAuctionState(auctionStatus) },
+        { key: "auction", label: `JYHF 竞价采集 (${(auctionLogs?.length ?? 0) + 5})`, children: renderAuctionState(auctionStatus, auctionLogs) },
       ]}
     />
   );

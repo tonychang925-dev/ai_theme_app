@@ -21,6 +21,7 @@ logger = logging.getLogger(__name__)
 class MarketRegimeFactContext:
     trade_date: str = ""
     index_kline: list[dict[str, Any]] = field(default_factory=list)
+    index_technical_reviews: list[dict[str, Any]] = field(default_factory=list)
     market_snapshot: dict[str, Any] = field(default_factory=dict)
     lifecycle_reviews: list[dict[str, Any]] = field(default_factory=list)
     diagnostics: dict[str, Any] = field(default_factory=dict)
@@ -29,6 +30,7 @@ class MarketRegimeFactContext:
         return {
             "trade_date": self.trade_date,
             "index_kline_rows": len(self.index_kline),
+            "index_technical_reviews": self.index_technical_reviews,
             "market_snapshot": self.market_snapshot,
             "lifecycle_review_count": len(self.lifecycle_reviews),
             "diagnostics": self.diagnostics,
@@ -110,6 +112,52 @@ class MarketRegimeFactContextBuilder:
 
         diag["index_source"] = source
 
+        # ── 1b. Read index technical analysis from DB ──
+        index_technical_reviews: list[dict[str, Any]] = []
+        index_data_ready = False
+        try:
+            import asyncpg as apg2
+            conn2 = await apg2.connect("postgresql://localhost/stock_data_test", timeout=5)
+            try:
+                td_rows = await conn2.fetch(
+                    """SELECT * FROM index_technical_daily
+                       WHERE trade_date = $1::date
+                       ORDER BY index_code""",
+                    trade_date,
+                )
+                if td_rows:
+                    for r in td_rows:
+                        d = dict(r)
+                        d.pop("id", None)
+                        # Convert date/time to string
+                        for k in ("trade_date", "created_at", "updated_at"):
+                            if k in d and hasattr(d[k], "isoformat"):
+                                d[k] = d[k].isoformat()
+                        # Parse JSONB
+                        for k in ("risk_flags_json", "diagnostics_json"):
+                            if k in d and isinstance(d[k], str):
+                                try:
+                                    d[k] = __import__("json").loads(d[k])
+                                except Exception:
+                                    pass
+                            # Rename for API
+                            clean_k = k.replace("_json", "")
+                            d[clean_k] = d.pop(k, d.get(clean_k, []))
+                        index_technical_reviews.append(d)
+                    index_data_ready = True
+                    diag["index_technical_count"] = len(index_technical_reviews)
+            finally:
+                await conn2.close()
+        except Exception as e:
+            logger.warning("Index technical daily read failed: %s", e)
+            diag["index_technical_error"] = str(e)[:100]
+
+        diag["index_data_ready"] = index_data_ready
+        if index_data_ready:
+            diag["index_data_source"] = "index_technical_daily"
+        elif index_kline:
+            diag["index_data_source"] = "index_daily_kline_only"
+
         # ── 2. Market snapshot ──
         market_snapshot: dict[str, Any] = {}
         if report_context:
@@ -132,6 +180,7 @@ class MarketRegimeFactContextBuilder:
         return MarketRegimeFactContext(
             trade_date=td_str,
             index_kline=index_kline,
+            index_technical_reviews=index_technical_reviews,
             market_snapshot=market_snapshot,
             lifecycle_reviews=reviews,
             diagnostics=diag,

@@ -7,6 +7,7 @@ import logging
 import os
 import subprocess
 import sys
+from collections import deque
 from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
 
@@ -33,9 +34,16 @@ class JyhfAuctionManager:
             "pid": None,
             "last_error": None,
         }
+        self._log_lines: deque[str] = deque(maxlen=2000)  # stdout 行环形缓冲
 
     def status(self) -> dict:
         return dict(self._status)
+
+    def get_logs(self, lines: int = 200) -> dict:
+        """返回最近 N 行 stdout 日志（环形缓冲）。"""
+        n = max(20, min(int(lines), 2000))
+        buf = list(self._log_lines)
+        return {"lines": buf[-n:]}
 
     async def start(self, trade_date: str, candidate_date: str) -> dict:
         # P0-A1: 检查旧进程是否仍存活，防止僵尸
@@ -98,6 +106,10 @@ class JyhfAuctionManager:
                 "--parent-pid", str(os.getpid()),  # P0-A1: watchdog 守护
             ]
             logger.info("Auction collector: %s", " ".join(cmd))
+            logger.info("Auction collector python: %s (cwd=%s)", python, self._project_root)
+            self._log_lines.append(f"[manager] spawning: {' '.join(cmd)}")
+            self._log_lines.append(f"[manager] python={python} cwd={self._project_root}")
+
             self._process = await asyncio.to_thread(
                 subprocess.Popen,
                 cmd,
@@ -109,8 +121,14 @@ class JyhfAuctionManager:
             self._status["pid"] = self._process.pid
             self._status["state"] = "waiting_auction"
 
-            # 读取 stdout 更新状态
-            for line in self._process.stdout:
+            # 读取 stdout 更新状态（每行通过 asyncio.to_thread 读取，避免同步 I/O 阻塞事件循环）
+            while True:
+                try:
+                    line = await asyncio.to_thread(self._process.stdout.readline)
+                except (ValueError, OSError):
+                    break  # stdout pipe closed
+                if not line:
+                    break   # EOF
                 line = line.strip()
                 if not line:
                     continue
@@ -131,12 +149,14 @@ class JyhfAuctionManager:
                     self._status["state"] = "collecting"
 
                 logger.debug("Auction: %s", line[:200])
+                self._log_lines.append(line)
 
             self._process.wait()
             self._status["running"] = False
             if self._status["state"] not in ("finished", "error"):
                 self._status["state"] = "finished"
             logger.info("Auction collector exited (rc=%s)", self._process.returncode)
+            self._log_lines.append(f"[manager] subprocess exited (rc={self._process.returncode})")
 
         except asyncio.CancelledError:
             self._status["state"] = "stopped"

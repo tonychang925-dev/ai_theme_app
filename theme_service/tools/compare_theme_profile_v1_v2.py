@@ -49,6 +49,14 @@ ALIAS_MAP: dict[str, list[str]] = {
     "海洋经济": ["海洋经济", "海工装备", "海洋工程", "深海经济", "航运", "港口", "海洋牧场", "海上风电"],
 }
 
+BTRC_WATCHLIST_SUBJECT_KEYS = {
+    "9012538",
+    "9062454",
+    "9042007",
+    "9025348",
+    "9054404",
+}
+
 
 class _StaticRepo:
     def __init__(self, profiles: list[ThemeProfile]):
@@ -428,8 +436,35 @@ async def _compare_hard_negatives(
         "v2_wrong_related_count": sum(int(row.get("v2_wrong_related_count") or 0) for row in rows),
         "v1_generic_only_related_count": sum(int(row.get("v1_generic_only_related_count") or 0) for row in rows),
         "v2_generic_only_related_count": sum(int(row.get("v2_generic_only_related_count") or 0) for row in rows),
+        "subject_metrics": metrics,
     }
     return rows, summary
+
+
+def _hard_negative_subject_rows(
+    subject_metrics: dict[str, dict[str, Any]],
+    subject_profiles: dict[str, str],
+    subject_keys: set[str] | None = None,
+) -> list[dict[str, Any]]:
+    selected_keys = subject_keys or set(subject_metrics.keys())
+    rows: list[dict[str, Any]] = []
+    for key in sorted(selected_keys):
+        metric = subject_metrics.get(key)
+        if not metric:
+            continue
+        total = int(metric.get("hard_negative_case_count") or 0)
+        reject_count = int(metric.get("hard_negative_reject_count") or 0)
+        rows.append(
+            {
+                "subject_key": key,
+                "subject_name": subject_profiles.get(key, ""),
+                "hard_negative_case_count": total,
+                "hard_negative_reject_count": reject_count,
+                "hard_negative_reject_rate": metric.get("hard_negative_reject_rate"),
+                "failed_hard_negative_cases": metric.get("failed_hard_negative_cases") or [],
+            }
+        )
+    return rows
 
 
 def _normalize_and_validate_db_args(args: argparse.Namespace) -> argparse.Namespace:
@@ -497,6 +532,7 @@ async def main() -> None:
         v2_engine = ThemeMatchEngine(_StaticRepo(v2_profiles))
         disable_llm_for_engine(v1_engine, gate_only=args.gate_only)
         disable_llm_for_engine(v2_engine, gate_only=args.gate_only)
+        subject_profile_names = {safe_str(profile.subject_key): safe_str(profile.subject_name) for profile in v2_profiles}
         rows: list[dict[str, Any]] = []
         for row in events:
             request = _request_from_row(row)
@@ -555,11 +591,17 @@ async def main() -> None:
             )
         hard_rows: list[dict[str, Any]] = []
         hard_summary: dict[str, Any] = {}
+        hard_subject_rows: list[dict[str, Any]] = []
         if args.hard_negative_file:
             hard_rows, hard_summary = await _compare_hard_negatives(
                 read_jsonl(args.hard_negative_file)[: args.limit],
                 v1_engine,
                 v2_engine,
+            )
+            hard_subject_rows = _hard_negative_subject_rows(
+                hard_summary.get("subject_metrics") or {},
+                subject_profile_names,
+                BTRC_WATCHLIST_SUBJECT_KEYS,
             )
         summary = {
             "total": len(rows),
@@ -585,6 +627,7 @@ async def main() -> None:
             ),
             **v2_diagnostics,
             **hard_summary,
+            "hard_negative_subject_rows": hard_subject_rows,
         }
         write_jsonl(out_dir / "theme_profile_v1_v2_compare.jsonl", rows)
         write_csv(out_dir / "theme_profile_v1_v2_compare.csv", rows)
@@ -618,6 +661,7 @@ async def main() -> None:
                     f"- v2_review_subject_keys: {summary.get('v2_review_subject_keys', [])}",
                     f"- v1_fallback_count: {summary.get('v1_fallback_count', 0)}",
                     f"- hard_negative_total: {summary.get('hard_negative_total', 0)}",
+                    f"- hard_negative_subject_count: {len(hard_subject_rows)}",
                     f"- v1_hard_negative_reject_rate: {summary.get('v1_hard_negative_reject_rate')}",
                     f"- v2_hard_negative_reject_rate: {summary.get('v2_hard_negative_reject_rate')}",
                     f"- improved: {summary.get('improved', 0)}",
@@ -628,6 +672,19 @@ async def main() -> None:
                     f"- v2_wrong_related_count: {summary.get('v2_wrong_related_count', 0)}",
                     f"- v1_generic_only_related_count: {summary.get('v1_generic_only_related_count', 0)}",
                     f"- v2_generic_only_related_count: {summary.get('v2_generic_only_related_count', 0)}",
+                    "",
+                    "## Hard Negative Watchlist",
+                    "",
+                    "| subject_key | subject_name | hard_negative_case_count | hard_negative_reject_count | hard_negative_reject_rate | failed_hard_negative_cases |",
+                    "|---|---|---:|---:|---:|---|",
+                ]
+            )
+            + "\n".join(
+                [
+                    f"| {row.get('subject_key')} | {row.get('subject_name')} | {row.get('hard_negative_case_count')} | "
+                    f"{row.get('hard_negative_reject_count')} | {row.get('hard_negative_reject_rate')} | "
+                    f"{'<br>'.join(str(item).replace('|', '/') for item in row.get('failed_hard_negative_cases') or []) or '-'} |"
+                    for row in hard_subject_rows
                 ]
             )
             + "\n",

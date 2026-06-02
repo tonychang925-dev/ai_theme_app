@@ -3,6 +3,7 @@ import {
   fetchRealtimeCollectorLogs,
   fetchJyhfCdpCollectorLogs,
   fetchJyhfCdpCollectorStatus,
+  fetchJyhfAuctionLogs,
   startJyhfCdpCollector,
   stopJyhfCdpCollector,
   startRealtimeCollector,
@@ -64,6 +65,7 @@ export function RealtimeCollectorPage() {
   const [collectorLogWindowMinutes, setCollectorLogWindowMinutes] = useState<5 | 30 | 1440>(30);
   const [auctionEnabled, setAuctionEnabled] = useState(true);
   const [auctionStatus, setAuctionStatus] = useState<JyhfAuctionStatus | null>(null);
+  const [auctionLogs, setAuctionLogs] = useState<string[]>([]);
   const [auctionBusy, setAuctionBusy] = useState(false);
   const [klineAlerts, setKlineAlerts] = useState<KlineAlertEvent[]>([]);
   const [klineFilter, setKlineFilter] = useState<"all" | "critical" | "error" | "warning" | "info" | "auction" | "intraday">("warning");
@@ -129,15 +131,28 @@ export function RealtimeCollectorPage() {
   }
 
   // P0-C2: 统一状态获取 — 一次请求替代 new-chain + CDP + auction 三个独立轮询
+  const _bundleTimeoutCount = useRef(0);
+  const _lastBundleTimeoutLog = useRef(0);
+
   async function refreshBundledStatus() {
     let bundle: StatusBundle | null = null;
 
     try {
       bundle = await fetchStatusBundle();
+      _bundleTimeoutCount.current = 0;  // 成功即重置连续超时计数
     } catch (err) {
-      setRunning("down");
+      _bundleTimeoutCount.current += 1;
+      // 连续 3 次超时才判定为 down，避免偶发网络抖动触发假告警
+      if (_bundleTimeoutCount.current >= 3) {
+        setRunning("down");
+      }
+      const now = Date.now();
       if (err instanceof Error && err.message.includes("timeout")) {
-        append("新链状态查询超时，SPS 可能未启动");
+        // 每 60s 最多写一次超时日志，避免 8s 轮询刷屏
+        if (now - _lastBundleTimeoutLog.current > 60000) {
+          _lastBundleTimeoutLog.current = now;
+          append(`新链状态查询超时 (连续${_bundleTimeoutCount.current}次)，SPS 可能未启动`);
+        }
       }
       return;
     }
@@ -146,24 +161,30 @@ export function RealtimeCollectorPage() {
     try {
       const nc = bundle.new_chain as Record<string, unknown>;
       if (nc && typeof nc.running !== 'undefined') {
+        const isCached = Boolean(nc._cached);
         const runningVerified = Boolean(nc.running_verified);
         const effectiveRunning = Boolean(nc.raw_news_pid || nc.decision_pid);
         const normalizedNc = { ...nc, running: effectiveRunning } as unknown as NewChainRealtimeStatus;
         setStackStatus(normalizedNc);
-        setRunning(effectiveRunning ? "up" : "down");
+
+        // 缓存兜底时维持上一状态，不判定为 down
+        if (!isCached) {
+          setRunning(effectiveRunning ? "up" : "down");
+        }
 
         // 生命周期日志：只写一次，不每 8s 刷屏
         const sig = buildRealtimeSig(nc);
         if (sig !== lastRealtimeSigRef.current) {
           const stateLabel = effectiveRunning ? (runningVerified ? "running" : "degraded") : "stopped";
           const sourceLabel = nc.status_source || "?";
+          const cachedLabel = isCached ? ` cached=${nc._cache_age_s || 0}s` : "";
           const streams = (nc.redis_streams as Record<string, {length: number}> | undefined) || {};
           const rawLen = streams["stream:news:raw"]?.length ?? 0;
           const rawPid = nc.raw_news_pid ?? "-";
           const decPid = nc.decision_pid ?? "-";
           const dbPid = nc.db_collector_pid ?? "-";
           append(
-            `[生命周期] realtime=${stateLabel} source=${sourceLabel} ` +
+            `[生命周期] realtime=${stateLabel} source=${sourceLabel}${cachedLabel} ` +
             `raw_pid=${rawPid} dec_pid=${decPid} db_pid=${dbPid}`
           );
           lastRealtimeSigRef.current = sig;
@@ -211,6 +232,13 @@ export function RealtimeCollectorPage() {
     setJyhfLogs((result.lines ?? []).slice(-500));
   }
 
+  async function refreshJyhfAuctionLogs() {
+    try {
+      const result = await fetchJyhfAuctionLogs(500);
+      setAuctionLogs(result.lines ?? []);
+    } catch { /* silent — auction manager may not be started */ }
+  }
+
   async function refreshRealtimeCollectorLogs(maxAgeMinutes = collectorLogWindowMinutes) {
     const result = await fetchRealtimeCollectorLogs(250, maxAgeMinutes);
     const next: string[] = [];
@@ -248,6 +276,7 @@ export function RealtimeCollectorPage() {
 
     refreshBundledStatus().catch(() => {});
     refreshJyhfCdpLogs().catch(() => undefined);
+    refreshJyhfAuctionLogs().catch(() => undefined);
     refreshRealtimeCollectorLogs(collectorLogWindowMinutes).catch(() => undefined);
   }, []);
 
@@ -264,6 +293,7 @@ export function RealtimeCollectorPage() {
     const timer = window.setInterval(() => {
       refreshBundledStatus().catch(() => {});
       refreshJyhfCdpLogs().catch(() => undefined);
+      refreshJyhfAuctionLogs().catch(() => undefined);
       refreshRealtimeCollectorLogs(collectorLogWindowMinutes).catch(() => undefined);
     }, 8000);
     return () => window.clearInterval(timer);
@@ -411,6 +441,7 @@ export function RealtimeCollectorPage() {
         refreshBundledStatus(),
         refreshJyhfCdpStatus(),
         refreshJyhfCdpLogs(),
+        refreshJyhfAuctionLogs(),
         refreshRealtimeCollectorLogs(collectorLogWindowMinutes),
         refreshOrchestrator(),
       ]);
@@ -428,6 +459,7 @@ export function RealtimeCollectorPage() {
     try {
       await Promise.allSettled([
         refreshJyhfCdpLogs(),
+        refreshJyhfAuctionLogs(),
         refreshRealtimeCollectorLogs(collectorLogWindowMinutes),
       ]);
       append("已刷新运行日志窗口");
@@ -616,6 +648,7 @@ export function RealtimeCollectorPage() {
         append("DOM 未完成首次采集，跳过竞价采集启动");
       }
       await refreshJyhfCdpLogs();
+      refreshJyhfAuctionLogs().catch(() => undefined);  // auction starts after CDP
       setJyhfBusy(false);
     } catch (err) {
       const message = err instanceof Error ? err.message : "启动失败";
@@ -658,6 +691,7 @@ export function RealtimeCollectorPage() {
         } catch { /* retry */ }
       }
       await refreshJyhfCdpLogs();
+      refreshJyhfAuctionLogs().catch(() => undefined);
       setJyhfBusy(false);
     } catch (err) {
       const message = err instanceof Error ? err.message : "停止失败";
@@ -1139,6 +1173,7 @@ export function RealtimeCollectorPage() {
                           jyhfLogs={jyhfLogs}
                           stackStatus={stackStatus}
                           auctionStatus={auctionStatus}
+                          auctionLogs={auctionLogs}
                           collectorLogWindowLabel={collectorLogWindowLabel}
                         />
                       ),

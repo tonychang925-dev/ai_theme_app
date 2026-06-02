@@ -10,21 +10,48 @@ from typing import Any
 class IndexTechnicalReview:
     index_code: str = ""
     index_name: str = ""
+    close: float | None = None
+    pct_chg: float | None = None
     trend_state: str = "unknown"
     trend_score: float | None = None
+    above_ma5: bool | None = None
+    above_ma10: bool | None = None
+    above_ma20: bool | None = None
+    above_ma60: bool | None = None
     ma_structure: dict[str, Any] = field(default_factory=dict)
+    support_level: float | None = None
+    resistance_level: float | None = None
+    nearest_support_level: float | None = None
+    nearest_resistance_level: float | None = None
+    support_distance_pct: float | None = None
+    resistance_distance_pct: float | None = None
+    support_status: str = "unknown"
+    resistance_status: str = "unknown"
     support_resistance: dict[str, Any] = field(default_factory=dict)
     volume_pattern: str = "unknown"
     macd_state: str = "unknown"
+    index_trade_hint: str = ""
+    warning_level: str = "normal"
     risk_flags: list[str] = field(default_factory=list)
     diagnostics: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return {
             "index_code": self.index_code, "index_name": self.index_name,
+            "close": self.close, "pct_chg": self.pct_chg,
             "trend_state": self.trend_state, "trend_score": self.trend_score,
+            "above_ma5": self.above_ma5, "above_ma10": self.above_ma10,
+            "above_ma20": self.above_ma20, "above_ma60": self.above_ma60,
             "ma_structure": self.ma_structure, "support_resistance": self.support_resistance,
+            "support_level": self.support_level, "resistance_level": self.resistance_level,
+            "nearest_support_level": self.nearest_support_level,
+            "nearest_resistance_level": self.nearest_resistance_level,
+            "support_distance_pct": self.support_distance_pct,
+            "resistance_distance_pct": self.resistance_distance_pct,
+            "support_status": self.support_status,
+            "resistance_status": self.resistance_status,
             "volume_pattern": self.volume_pattern, "macd_state": self.macd_state,
+            "index_trade_hint": self.index_trade_hint, "warning_level": self.warning_level,
             "risk_flags": self.risk_flags, "diagnostics": self.diagnostics,
         }
 

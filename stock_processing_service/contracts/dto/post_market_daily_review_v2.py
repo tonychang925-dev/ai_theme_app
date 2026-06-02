@@ -32,6 +32,7 @@ class PostMarketDailyReviewV2(TypedDict):
     data_mode: Literal["daily_review_v2_first"]
     source: dict[str, Any]
     market_summary: dict[str, Any]
+    market_overview_review: dict[str, Any]
     theme_reviews: list[dict[str, Any]]
     theme_capital_reviews: list[dict[str, Any]]
     strong_stock_reviews: list[dict[str, Any]]
