@@ -25,7 +25,8 @@ TZ_CN = timezone(timedelta(hours=8))
 STREAM_NAME = "stream:w2s:alerts"
 STREAM_MAXLEN = 1000
 STATE_KEY_PREFIX = "w2s_alert_state"
-STATE_TTL = 8 * 3600  # 8 hours
+STATE_TTL_AUCTION = 8 * 3600     # 竞价告警：8h（每天只跑一次）
+STATE_TTL_INTRADAY = 10 * 60     # 盘中告警：10min（30s 轮询，条件持续变化）
 
 
 class W2SAlertRedisPusher:
@@ -65,7 +66,7 @@ class W2SAlertRedisPusher:
         if r is None:
             return
         try:
-            await r.setex(self._state_key(trade_date, candidate_id), STATE_TTL, "1")
+            await r.setex(self._state_key(trade_date, candidate_id), STATE_TTL_AUCTION, "1")
         except Exception:
             pass
 
@@ -165,7 +166,7 @@ class W2SAlertRedisPusher:
                     "generated_at": a.generated_at,
                 }
                 await r.xadd(self._stream, data, maxlen=self._maxlen)
-                await r.setex(dedup_key, STATE_TTL, "1")
+                await r.setex(dedup_key, STATE_TTL_AUCTION, "1")
                 pushed += 1
             except Exception as exc:
                 logger.warning("W2S support push failed for %s: %s", a.stock_id, exc)
@@ -233,7 +234,7 @@ class W2SAlertRedisPusher:
                     "generated_at": a.generated_at,
                 }
                 await r.xadd(self._stream, data, maxlen=self._maxlen)
-                await r.setex(dedup_key, STATE_TTL, json.dumps({
+                await r.setex(dedup_key, STATE_TTL_INTRADAY, json.dumps({
                     "last_alert_level": a.alert_level,
                     "last_score": a.intraday_score,
                     "last_alert_at": a.generated_at,
@@ -285,7 +286,7 @@ class W2SAlertRedisPusher:
                     "generated_at": a.generated_at,
                 }
                 await r.xadd(self._stream, data, maxlen=self._maxlen)
-                await r.setex(dedup_key, STATE_TTL, json.dumps({
+                await r.setex(dedup_key, STATE_TTL_INTRADAY, json.dumps({
                     "last_alert_level": a.v2_level, "last_score": a.v2_score,
                     "last_alert_at": a.generated_at,
                 }))
@@ -335,7 +336,8 @@ class W2SAlertRedisPusher:
                     "severity": a.severity,
                     "generated_at": a.generated_at,
                 }, maxlen=self._maxlen)
-                await r.setex(dedup_key, STATE_TTL, "1")
+                ttl = STATE_TTL_AUCTION if a.phase == "auction" else STATE_TTL_INTRADAY
+                await r.setex(dedup_key, ttl, "1")
                 pushed += 1
             except Exception as exc:
                 logger.warning("unified push failed for %s: %s", a.stock_id, exc)
@@ -371,7 +373,7 @@ class W2SAlertRedisPusher:
                 pass
             try:
                 await r.xadd(self._stream, w2s.to_dict(), maxlen=self._maxlen)
-                await r.setex(dedup_key, STATE_TTL, "1")
+                await r.setex(dedup_key, STATE_TTL_INTRADAY, "1")
                 pushed += 1
             except Exception as exc:
                 logger.warning("w2s_signal push failed for %s: %s", w2s.stock_code, exc)
