@@ -56,6 +56,10 @@ DEFAULT_SOURCE_PRIORITY: dict[str, int] = {
     "db_collector": 60,
 }
 
+# 0.85 太激进，会把“同事件改写稿”提前吃掉，导致 qwen 根本没有机会介入。
+# 提高到 0.92 后，像 6/1 的长安汽车这类 0.89+ 近重复会先进入 qwen 复核。
+AUTO_DUP_RATIO_THRESHOLD = float(os.getenv("SEMANTIC_DEDUP_AUTO_DUP_RATIO_THRESHOLD", "0.92"))
+
 
 # ── Helpers ────────────────────────────────────────────────────────
 
@@ -439,8 +443,8 @@ class SemanticEventDeduper:
         if not self._is_candidate(title_a, title_b, row_a, row_b, ratio):
             return result
 
-        # ── ratio > 0.85 → 自动判重 ──
-        if ratio > 0.85:
+        # ── ratio >= threshold → 自动判重 ──
+        if ratio >= AUTO_DUP_RATIO_THRESHOLD:
             result["is_dup"] = True
             result["method"] = "ratio"
             result["keeper_idx"] = self._select_keeper(row_a, row_b, 0, 1)
@@ -463,12 +467,12 @@ class SemanticEventDeduper:
         if self._qwen_this_round >= self._qwen_max_per_round:
             self.stats["qwen_dedup_budget_exhausted"] += 1
             result["method"] = "budget_exhausted"
-            # 超预算后只做 ratio > 0.85 自动去重，其余保留
+            # 超预算后只做 high-sim 自动去重，其余保留
             self._write_audit(title_a, title_b, ratio, "budget_exhausted", "distinct", action, row_a, row_b)
             return result
 
-        # ── 灰区：0.5 < ratio <= 0.85 → Qwen ──
-        if 0.5 < ratio <= 0.85:
+        # ── 灰区：0.5 < ratio < threshold → Qwen ──
+        if 0.5 < ratio < AUTO_DUP_RATIO_THRESHOLD:
             try:
                 qwen_result = await asyncio.to_thread(
                     self._prefilter.check_semantic_duplicate, title_a, title_b

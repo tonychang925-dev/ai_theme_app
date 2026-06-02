@@ -72,6 +72,16 @@ class PostMarketDecisionEngineV2:
         # Filter pool to mainline subjects only
         filtered_pool = [r for r in pool_rows if str(r.get("subject_key") or r.get("theme_key") or "") in mainline_sks]
 
+        # Dedup by stock_id (keep highest watch_score) — 7-day union can have duplicates
+        best: dict[str, dict[str, Any]] = {}
+        for r in filtered_pool:
+            sid = str(r.get("stock_id") or "")
+            if not sid: continue
+            ws = float(r.get("watch_score") or 0)
+            if sid not in best or ws > float(best[sid].get("watch_score") or 0):
+                best[sid] = r
+        filtered_pool = list(best.values())
+
         # ── 2. Build Layer C strong_stock_pool ──
         strong_pool: list[StrongStockPoolItem] = []
         for row in filtered_pool:

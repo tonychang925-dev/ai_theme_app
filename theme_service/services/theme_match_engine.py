@@ -26,6 +26,14 @@ CANONICAL_SUBJECT_KEY_MAP: Dict[str, str] = {
     "9037499": "9030409",
 }
 
+_BROAD_THEME_P0_SUBJECT_KEYS = {
+    "9012538",  # VR
+    "9062454",  # AI产业链五大核心
+    "9042007",  # 农业新质生产力
+    "9025348",  # 汽车国企
+    "9054404",  # A股全球第一
+}
+
 GENERIC_MATCH_STOPWORDS = {
     "AI",
     "AR",
@@ -381,6 +389,10 @@ def _profile_gate_terms(profile: ThemeProfile, key: str) -> List[str]:
     return _normalize_list(gate_json.get(key))
 
 
+def _profile_event_action_terms(profile: ThemeProfile) -> List[str]:
+    return _normalize_list(getattr(profile, "event_action_terms", []))
+
+
 def _profile_eval_metrics(profile: ThemeProfile) -> Dict[str, Any]:
     gate_json = profile.gate_json if isinstance(profile.gate_json, dict) else {}
     metrics = gate_json.get("eval_metrics")
@@ -391,6 +403,44 @@ def _profile_eval_metrics(profile: ThemeProfile) -> Dict[str, Any]:
         except Exception:
             return {}
     return metrics if isinstance(metrics, dict) else {}
+
+
+def _is_broad_theme_p0_profile(profile: ThemeProfile | None) -> bool:
+    if not profile:
+        return False
+    return _safe_str(profile.subject_key) in _BROAD_THEME_P0_SUBJECT_KEYS
+
+
+def _broad_theme_p0_direct_hit_reason(profile: ThemeProfile | None, evidence: Dict[str, Any]) -> str:
+    if not _is_broad_theme_p0_profile(profile):
+        return ""
+    if not (
+        bool(evidence.get("theme_name_direct_hit"))
+        or bool(evidence.get("subject_name_direct_hit"))
+    ):
+        return ""
+    if not _is_v2_profile(profile):
+        return "broad_theme_v1_fallback_review"
+
+    hard_anchor_hits = _unique(
+        _normalize_list(evidence.get("accepted_anchor_hits"))
+        + _normalize_list(evidence.get("object_hits"))
+        + _normalize_list(evidence.get("must_hits"))
+        + _normalize_list(evidence.get("strong_hits"))
+        + _normalize_list(evidence.get("profile_anchor_hits"))
+    )
+    action_hits = _normalize_list(evidence.get("action_hits"))
+    entity_boundary_hits = _normalize_list(evidence.get("entity_hits"))
+
+    if not hard_anchor_hits:
+        return "broad_theme_missing_hard_anchor"
+    if not action_hits:
+        return "broad_theme_missing_action_terms"
+    if not entity_boundary_hits:
+        return "broad_theme_missing_entity_boundary"
+    if bool(evidence.get("role_guard_blocked")) or bool(evidence.get("broad_category_blocked")):
+        return "broad_theme_direct_hit_review"
+    return ""
 
 
 def _env_int(name: str, default: int) -> int:
@@ -1064,6 +1114,8 @@ def _build_gate_evidence(
     should_hits = _filter_generic_terms(
         [t for t in profile.should_terms if t in search_terms or _term_in_text(t, event_text)]
     )
+    action_terms = _unique(_profile_event_action_terms(profile) + _normalize_list(event_profile.event_actions if event_profile else []))
+    action_hits = _unique([t for t in action_terms if t and (t in search_terms or _term_in_text(t, event_text))])
     not_hits = _token_hit_terms(event_text, profile.not_terms)
     negative_hits = _token_hit_terms(event_text, profile.negative_terms)
     object_terms = profile.core_objects + profile.aliases
@@ -1127,6 +1179,7 @@ def _build_gate_evidence(
         "must_hits": must_hits,
         "strong_hits": strong_hits,
         "should_hits": should_hits,
+        "action_hits": action_hits,
         "entity_hits": entity_hits,
         "profile_anchor_hits": profile_anchor_hits,
         "support_hits": support_hits,
@@ -1186,6 +1239,7 @@ def _build_gate_evidence(
         "strong_hits_llm": strong_hits_llm,
         "strong_hits_text": strong_hits_text,
         "should_hits": should_hits,
+        "action_hits": action_hits,
         "entity_hits": entity_hits,
         "profile_anchor_hits": profile_anchor_hits,
         "support_hits": support_hits,
@@ -2021,6 +2075,7 @@ class ThemeMatchEngine:
         timing_ms["total_match_ms"] = round((time.perf_counter() - started_at) * 1000, 3)
         env = self._guard_high_noise_fallback_match(env, profile_map)
         env = self._guard_weak_v1_direct_hit_match(env, profile_map)
+        env = self._guard_broad_theme_p0_direct_hit_match(env, profile_map)
         return self._attach_runtime_audit(env, timing_ms, counters)
 
     def _guard_high_noise_fallback_match(
@@ -2101,6 +2156,60 @@ class ThemeMatchEngine:
         env.decision = "HUMAN_REVIEW"
         env.confidence = min(float(env.confidence or 0.0), _squash01(0.5))
         env.reason_code = "weak_v1_direct_hit_review"
+        env.related_matches = []
+        env.review_required = True
+        env.audit = audit
+        return env
+
+    def _guard_broad_theme_p0_direct_hit_match(
+        self,
+        env: ThemeDecisionEnvelope,
+        profile_map: Dict[str, ThemeProfile],
+    ) -> ThemeDecisionEnvelope:
+        if env.decision != "MATCH" or env.matched_subject_key not in _BROAD_THEME_P0_SUBJECT_KEYS:
+            return env
+        profile = profile_map.get(env.matched_subject_key)
+        if not profile:
+            return env
+
+        audit = env.audit if isinstance(env.audit, dict) else {}
+        evidence = audit.get("best_evidence") if isinstance(audit.get("best_evidence"), dict) else {}
+        if not (
+            bool(evidence.get("theme_name_direct_hit"))
+            or bool(evidence.get("subject_name_direct_hit"))
+        ):
+            return env
+
+        reason_code = _broad_theme_p0_direct_hit_reason(profile, evidence)
+        if not reason_code:
+            return env
+
+        audit["broad_theme_direct_hit_guard"] = {
+            "blocked": True,
+            "subject_key": env.matched_subject_key,
+            "subject_name": env.matched_theme_name,
+            "previous_decision": env.decision,
+            "previous_reason_code": env.reason_code,
+            "runtime_profile_source": "v2_accepted" if _is_v2_profile(profile) else "v1_fallback",
+            "reason_code": reason_code,
+            "accepted_anchor_hits": _normalize_list(evidence.get("accepted_anchor_hits")),
+            "hard_anchor_hits": _unique(
+                _normalize_list(evidence.get("accepted_anchor_hits"))
+                + _normalize_list(evidence.get("object_hits"))
+                + _normalize_list(evidence.get("must_hits"))
+                + _normalize_list(evidence.get("strong_hits"))
+                + _normalize_list(evidence.get("profile_anchor_hits"))
+            ),
+            "action_hits": _normalize_list(evidence.get("action_hits")),
+            "entity_boundary_hits": _normalize_list(evidence.get("entity_hits")),
+            "direct_hit_terms": _unique(
+                _normalize_list(evidence.get("theme_name_hit_terms"))
+                + _normalize_list(evidence.get("subject_name_hit_terms"))
+            ),
+        }
+        env.decision = "HUMAN_REVIEW"
+        env.confidence = min(float(env.confidence or 0.0), _squash01(0.5))
+        env.reason_code = reason_code
         env.related_matches = []
         env.review_required = True
         env.audit = audit

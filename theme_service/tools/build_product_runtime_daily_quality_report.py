@@ -46,6 +46,19 @@ LLM_ACCEPT_BLOCK_REASONS = {
 
 DEBUG_SOURCE_PREFIXES = ("product_runtime_", "e2e_", "test_")
 TARGET_WATCHLIST_SUBJECT_KEYS = {"9054404", "9012396", "9043698"}
+BROAD_THEME_WATCHLIST: dict[str, dict[str, str]] = {
+    "9012538": {"theme_name": "VR", "risk_tier": "P0"},
+    "9062454": {"theme_name": "AI产业链五大核心", "risk_tier": "P0"},
+    "9042007": {"theme_name": "农业新质生产力", "risk_tier": "P0"},
+    "9025348": {"theme_name": "汽车国企", "risk_tier": "P0"},
+    "9054404": {"theme_name": "A股全球第一", "risk_tier": "P0"},
+    "9013055": {"theme_name": "物流", "risk_tier": "P1"},
+    "9034811": {"theme_name": "宁德产业链", "risk_tier": "P1"},
+    "9010818": {"theme_name": "国企改革", "risk_tier": "P1"},
+    "9042824": {"theme_name": "原子级制造", "risk_tier": "P2"},
+    "9044821": {"theme_name": "季戊四醇产业链", "risk_tier": "P2"},
+    "9048607": {"theme_name": "中美芬太尼合作", "risk_tier": "P2"},
+}
 
 
 def _json_default(value: Any) -> Any:
@@ -310,6 +323,63 @@ def _quality_watch_metrics(details: list[dict[str, Any]], candidates: list[dict[
     }
 
 
+def _watchlist_subject_rows(
+    details: list[dict[str, Any]],
+    reviews: list[dict[str, Any]],
+    candidates: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    details_by_subject: dict[str, list[dict[str, Any]]] = {}
+    for row in details:
+        subject_key = str(row.get("subject_key") or "")
+        if not subject_key:
+            continue
+        details_by_subject.setdefault(subject_key, []).append(row)
+
+    review_by_theme: Counter[str] = Counter(
+        str(row.get("proposed_theme_name") or "") for row in reviews if str(row.get("proposed_theme_name") or "")
+    )
+    bad_by_subject: dict[str, list[dict[str, Any]]] = {}
+    for row in candidates:
+        subject_key = str(row.get("subject_key") or "")
+        if not subject_key:
+            continue
+        bad_by_subject.setdefault(subject_key, []).append(row)
+
+    rows: list[dict[str, Any]] = []
+    for subject_key, meta in BROAD_THEME_WATCHLIST.items():
+        subject_rows = details_by_subject.get(subject_key, [])
+        direct_hits = [row for row in subject_rows if row.get("match_reason") == "direct_theme_name_hit"]
+        v1_direct_hits = [row for row in direct_hits if row.get("runtime_source") == "v1_fallback"]
+        bad_rows = bad_by_subject.get(subject_key, [])
+        top_bad_examples = [
+            f"{row.get('event_id')}:{str(row.get('title') or '')[:40]}"
+            for row in bad_rows[:3]
+        ]
+        direct_pressure = len(direct_hits) + len(v1_direct_hits)
+        suggested_action = "observe"
+        if meta["risk_tier"] == "P0" and bad_rows:
+            suggested_action = "delta_repair"
+        elif meta["risk_tier"] == "P0" and direct_pressure > 0:
+            suggested_action = "watch_direct_hit_pressure"
+        elif meta["risk_tier"] == "P1" and direct_pressure > 0:
+            suggested_action = "watch_boundary_width"
+        rows.append(
+            {
+                "subject_key": subject_key,
+                "theme_name": meta["theme_name"],
+                "risk_tier": meta["risk_tier"],
+                "match_count": len(subject_rows),
+                "review_count": review_by_theme.get(meta["theme_name"], 0),
+                "direct_theme_name_hit_count": len(direct_hits),
+                "v1_fallback_direct_hit_count": len(v1_direct_hits),
+                "bad_count": len(bad_rows),
+                "top_bad_examples": top_bad_examples,
+                "suggested_action": suggested_action,
+            }
+        )
+    return rows
+
+
 def _write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.write_text(
         "\n".join(json.dumps(row, ensure_ascii=False, default=_json_default) for row in rows) + ("\n" if rows else ""),
@@ -344,6 +414,9 @@ def _write_quality_report(path: Path, trade_date: date, metrics: dict[str, Any],
         "v1_fallback_direct_hit_bad_count",
         "ambiguous_direct_hit_candidates_count",
         "target_wrong_theme_residual_count",
+        "hard_negative_subject_count",
+        "watchlist_subject_count",
+        "watchlist_subject_bad_count",
         "llm_accept_blocked_count",
         "v1_fallback_match_count",
         "v2_accepted_match_count",
@@ -360,6 +433,38 @@ def _write_quality_report(path: Path, trade_date: date, metrics: dict[str, Any],
             "- Do not continue gate repair unless a Phase 3C trigger is observed.",
             "- Watchlist themes: 9054404 / A股全球第一, 9012396 / 新疆自贸区, 9043698 / 深海经济.",
             "- `target_wrong_theme_residual_count` should remain 0 during the observation window.",
+            "",
+            "## Broad Theme Watchlist",
+            "",
+            "| subject_key | theme_name | risk_tier | match_count | review_count | direct_hit | v1_fallback_direct_hit | bad_count | top_bad_examples | suggested_action |",
+            "|---|---|---|---:|---:|---:|---:|---:|---|---|",
+        ]
+    )
+    for row in _as_list(metrics.get("watchlist_subject_rows")):
+        examples = "<br>".join(str(item).replace("|", "/") for item in row.get("top_bad_examples") or []) or "-"
+        lines.append(
+            f"| {row.get('subject_key')} | {row.get('theme_name')} | {row.get('risk_tier')} | "
+            f"{row.get('match_count')} | {row.get('review_count')} | {row.get('direct_theme_name_hit_count')} | "
+            f"{row.get('v1_fallback_direct_hit_count')} | {row.get('bad_count')} | {examples} | {row.get('suggested_action')} |"
+        )
+    hard_rows = _as_list(metrics.get("hard_negative_subject_rows"))
+    lines.extend(
+        [
+            "",
+            "## Hard Negative Watchlist",
+            "",
+            "| subject_key | subject_name | hard_negative_case_count | hard_negative_reject_count | hard_negative_reject_rate | failed_hard_negative_cases |",
+            "|---|---|---:|---:|---:|---|",
+        ]
+    )
+    for row in hard_rows:
+        failed = "<br>".join(str(item).replace("|", "/") for item in row.get("failed_hard_negative_cases") or []) or "-"
+        lines.append(
+            f"| {row.get('subject_key')} | {row.get('subject_name')} | {row.get('hard_negative_case_count')} | "
+            f"{row.get('hard_negative_reject_count')} | {row.get('hard_negative_reject_rate')} | {failed} |"
+        )
+    lines.extend(
+        [
             "",
             "## Obvious Wrong Match Candidates",
             "",
@@ -395,6 +500,26 @@ def _hard_negative_violation_count(summary_path: Path | None) -> int:
         rate = float(data.get("v2_hard_negative_reject_rate") or 0.0)
         return max(0, round(total * (1.0 - rate)))
     return 0
+
+
+def _hard_negative_subject_rows(summary_path: Path | None) -> list[dict[str, Any]]:
+    candidates = []
+    if summary_path is not None:
+        candidates.append(summary_path)
+    candidates.extend(
+        [
+            Path("tmp/product_runtime_phase3b/full_hard_negative_active_v2/theme_profile_v1_v2_compare_summary.json"),
+            Path("tmp/product_runtime_phase3/full_hard_negative_active_v2/theme_profile_v1_v2_compare_summary.json"),
+        ]
+    )
+    for path in candidates:
+        if not path.exists():
+            continue
+        data = _as_json(path.read_text(encoding="utf-8"))
+        rows = data.get("hard_negative_subject_rows")
+        if isinstance(rows, list):
+            return [row for row in rows if isinstance(row, dict)]
+    return []
 
 
 def _write_direct_hit_audit(path: Path, details: list[dict[str, Any]]) -> None:
@@ -558,6 +683,8 @@ async def _main() -> None:
     snapshot_metrics = _snapshot_counts(snapshot)
     candidates = _obvious_wrong_candidates(details)
     watch_metrics = _quality_watch_metrics(details, candidates)
+    watchlist_subject_rows = _watchlist_subject_rows(details, review_rows, candidates)
+    hard_negative_subject_rows = _hard_negative_subject_rows(args.hard_negative_summary)
     llm_blocked = [row for row in review_rows if row.get("reason") in LLM_ACCEPT_BLOCK_REASONS]
     metrics = {
         **snapshot_metrics,
@@ -570,7 +697,12 @@ async def _main() -> None:
         "v2_accepted_match_count": sum(row.get("runtime_source") == "v2_accepted" for row in details),
         "obvious_wrong_match_sample_count": len(candidates),
         "hard_negative_violation_count": _hard_negative_violation_count(args.hard_negative_summary),
+        "hard_negative_subject_count": len(hard_negative_subject_rows),
+        "hard_negative_subject_rows": hard_negative_subject_rows,
+        "watchlist_subject_count": len(watchlist_subject_rows),
+        "watchlist_subject_bad_count": sum(int(row.get("bad_count") or 0) for row in watchlist_subject_rows),
         **watch_metrics,
+        "watchlist_subject_rows": watchlist_subject_rows,
     }
     metrics.pop("diagnostics", None)
 

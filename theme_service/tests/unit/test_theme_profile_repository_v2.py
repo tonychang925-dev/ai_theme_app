@@ -50,6 +50,7 @@ class _FakeGateway:
                 "domain_anchors": ["领域A"],
                 "product_anchors": ["产品A"],
                 "technology_anchors": [],
+                "event_action_terms": ["发布", "上市"],
                 "must_terms": ["新A"],
                 "strong_terms": ["实体A"],
                 "should_terms": ["领域A"],
@@ -107,6 +108,7 @@ async def test_theme_profile_repository_v2_overlay_keeps_v1_fallback(monkeypatch
 
     assert by_key["1001"].subject_name == "新题材A"
     assert by_key["1001"].quality == "v2"
+    assert by_key["1001"].event_action_terms == ["发布", "上市"]
     assert by_key["1002"].subject_name == "旧题材B"
     assert by_key["1002"].quality == "v1"
 

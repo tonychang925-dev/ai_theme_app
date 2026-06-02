@@ -31,6 +31,7 @@ def _profile(
     must_terms: list[str] | None = None,
     strong_terms: list[str] | None = None,
     should_terms: list[str] | None = None,
+    event_action_terms: list[str] | None = None,
     aliases: list[str] | None = None,
     core_objects: list[str] | None = None,
     entity_hints: list[str] | None = None,
@@ -62,6 +63,7 @@ def _profile(
         aliases=aliases or [],
         entity_hints=entity_hints or [],
         core_objects=core_objects or [],
+        event_action_terms=event_action_terms or [],
     )
 
 
@@ -219,6 +221,103 @@ async def test_high_noise_v2_profile_keeps_match(monkeypatch):
     )
 
     assert result.decision == "MATCH"
+
+
+@pytest.mark.asyncio
+async def test_p0_broad_theme_bare_direct_hit_is_downgraded_to_review(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "9054404",
+                "A股全球第一",
+                aliases=["A股全球第一"],
+                gate_json={"profile_version": "v2"},
+            )
+        ])
+    )
+
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=4,
+            news_id=4,
+            title="A股全球第一",
+            content="A股全球第一",
+            summary="A股全球第一",
+            event_type="产业",
+        )
+    )
+
+    assert result.decision == "HUMAN_REVIEW"
+    assert result.reason_code in {
+        "broad_theme_missing_hard_anchor",
+        "broad_theme_missing_action_terms",
+        "broad_theme_missing_entity_boundary",
+    }
+    assert result.audit["broad_theme_direct_hit_guard"]["reason_code"] == result.reason_code
+
+
+@pytest.mark.asyncio
+async def test_p0_broad_theme_direct_hit_with_anchor_action_and_entity_keeps_match(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "9054404",
+                "A股全球第一",
+                aliases=["A股全球第一"],
+                core_objects=["光伏组件"],
+                entity_hints=["隆基绿能"],
+                event_action_terms=["发布"],
+                must_terms=["光伏组件"],
+                gate_json={"profile_version": "v2"},
+            )
+        ])
+    )
+
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=5,
+            news_id=5,
+            title="隆基绿能发布A股全球第一光伏组件订单",
+            content="隆基绿能发布A股全球第一光伏组件订单，组件交付能力继续提升。",
+            summary="隆基绿能发布A股全球第一光伏组件订单",
+            event_type="产业",
+            entities=["隆基绿能", "光伏组件"],
+        )
+    )
+
+    assert result.decision == "MATCH"
+    assert result.reason_code == "direct_theme_name_hit"
+
+
+@pytest.mark.asyncio
+async def test_p0_broad_theme_v1_fallback_direct_hit_is_reviewed(monkeypatch):
+    monkeypatch.setenv("THEME_MATCH_LLM_JUDGE_MODE", "off")
+    engine = _NoDenseThemeMatchEngine(
+        _Repo([
+            _profile(
+                "9012538",
+                "VR",
+                aliases=["虚拟现实"],
+            )
+        ])
+    )
+
+    result = await engine.match_event(
+        ThemeMatchRequest(
+            event_id=6,
+            news_id=6,
+            title="虚拟现实新品发布",
+            content="虚拟现实新品发布，市场热度上升。",
+            summary="虚拟现实新品发布",
+            event_type="产业",
+        )
+    )
+
+    assert result.decision == "HUMAN_REVIEW"
+    assert result.reason_code == "broad_theme_v1_fallback_review"
+    assert result.audit["broad_theme_direct_hit_guard"]["reason_code"] == "broad_theme_v1_fallback_review"
 
 
 @pytest.mark.asyncio
