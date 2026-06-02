@@ -38,7 +38,7 @@ import CollectionControlPanel from "./components/CollectionControlPanel";
 import CollectorLogPanels from "./components/CollectorLogPanels";
 import UnifiedAlertPanel, { type UnifiedAlertRow } from "./components/UnifiedAlertPanel";
 import DiagnosticsTabs from "./components/DiagnosticsTabs";
-import OrchestratorStatusPanel from "./components/OrchestratorStatusPanel";
+import OrchestratorStatusPanel, { RedisHealthSection, DbHealthSection } from "./components/OrchestratorStatusPanel";
 import { MainlineConfirmationPanel } from "./components/MainlineConfirmationPanel";
 
 function nowText() {
@@ -1139,13 +1139,18 @@ export function RealtimeCollectorPage() {
                       key: "infra",
                       label: "基础设施",
                       children: (
-                        <OrchestratorStatusPanel
-                          status={orchStatus}
-                          loading={orchLoading}
-                          error={orchError}
-                          onRefresh={refreshOrchestrator}
-                          showOrchestrator={false}
-                        />
+                        <div>
+                          {orchStatus ? (
+                            <>
+                              <RedisHealthSection redis={orchStatus.runtime_dependencies?.redis as any} />
+                              <DbHealthSection db={orchStatus.runtime_dependencies?.database as any} />
+                            </>
+                          ) : (
+                            <div style={{ color: "#64748b", textAlign: "center", padding: 20 }}>
+                              {orchLoading ? "加载中..." : "编排器状态暂不可用"}
+                            </div>
+                          )}
+                        </div>
                       ),
                     },
                     {

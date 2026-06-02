@@ -61,20 +61,6 @@ function ServiceCard({ svc }: { svc: OrchestratorServiceState }) {
       <div style={{ fontSize: 11, color: "#8c8c8c", marginTop: 2 }}>
         owner: {svc.owner}
       </div>
-      {svc.blockers.length > 0 && (
-        <div style={{ marginTop: 4 }}>
-          {svc.blockers.slice(0, 2).map((b, i) => (
-            <div key={i} style={{ fontSize: 10, color: "#ef4444", lineHeight: 1.4 }}>
-              ⛔ {b}
-            </div>
-          ))}
-          {svc.blockers.length > 2 && (
-            <div style={{ fontSize: 10, color: "#64748b" }}>
-              +{svc.blockers.length - 2} more...
-            </div>
-          )}
-        </div>
-      )}
     </Card>
   );
 }
@@ -237,7 +223,7 @@ function fmtMs(ms: number): string {
   return (ms / 60000).toFixed(1) + "m";
 }
 
-function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
+export function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
   if (!redis) return null;
 
   const streams = redis.streams || {};
@@ -361,7 +347,7 @@ function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
 }
 
 
-function DbHealthSection({ db }: { db?: DatabaseRuntimeHealth }) {
+export function DbHealthSection({ db }: { db?: DatabaseRuntimeHealth }) {
   if (!db || !db.db_state) return null;
 
   const tables = db.tables || {};
