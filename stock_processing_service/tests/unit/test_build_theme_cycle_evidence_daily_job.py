@@ -111,6 +111,24 @@ class _KlineBuilder:
         return SimpleNamespace(subject_key=subject_key, kline_quality="insufficient_history")
 
 
+class _ReadPortWithZeroFill(_ReadPort):
+    async def get_all_confirmed_mainlines(self):
+        return [
+            {
+                "subject_key": "tracked_c",
+                "theme_name": "Tracked C",
+                "is_main_theme": True,
+                "identity_status": "confirmed",
+            }
+        ]
+
+    async def get_subject_stock_pool_by_trade_date(self, trade_date: date):
+        return [
+            {"subject_key": "tracked_a", "theme_name": "Tracked A", "stock_id": "000001.SZ"},
+            {"subject_key": "tracked_b", "theme_name": "Tracked B", "stock_id": "000002.SZ"},
+        ]
+
+
 class _WritePort:
     def __init__(self) -> None:
         self.rows: list[dict] = []
@@ -161,3 +179,35 @@ async def test_theme_cycle_evidence_scopes_kline_to_tracked_universe_only() -> N
     assert result.metrics["scoped_pool_row_count"] == 2
     assert read_port.bar_subject_key_calls
     assert all(call is None or set(call) <= {"tracked_a", "tracked_b"} for call in read_port.bar_subject_key_calls)
+
+
+@pytest.mark.asyncio
+async def test_theme_cycle_evidence_zero_fills_tracked_universe_without_pool_rows() -> None:
+    """TC-POSTMARKET-ZEROFILL: tracked universe subjects without pool rows must still get evidence."""
+
+    read_port = _ReadPortWithZeroFill()
+    write_port = _WritePort()
+    job = BuildThemeCycleEvidenceDailyJob(
+        read_port=read_port,
+        write_port=write_port,
+        event_port=_EventPort(),
+        idempotency_port=_IdempotencyPort(),
+        builder=_Builder(),
+        kline_builder=_KlineBuilder(),
+    )
+
+    result = await job.execute(
+        trade_date=date(2026, 5, 28),
+        snapshot_version="test",
+        batch_id="batch",
+        trace_id="trace",
+    )
+
+    assert result.status == "ok"
+    assert {row["subject_key"] for row in write_port.rows} == {"tracked_a", "tracked_b", "tracked_c"}
+    tracked_c_row = next(row for row in write_port.rows if row["subject_key"] == "tracked_c")
+    assert tracked_c_row["event_strength_score"] == "0"
+    assert tracked_c_row["leader_alive_score"] == "0"
+    assert tracked_c_row["theme_support_score"] == "0"
+    assert tracked_c_row["evidence_json"]["meta"]["evidence_quality"] == "zero_fill_no_pool_rows"
+    assert result.metrics["zero_fill_subject_count"] == 1
