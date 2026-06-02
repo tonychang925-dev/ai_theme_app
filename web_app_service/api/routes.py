@@ -947,6 +947,12 @@ async def jyhf_auction_status(request: Request) -> dict:
     return mgr.status()
 
 
+@router.get("/realtime/jyhf-auction/logs")
+async def jyhf_auction_logs(request: Request, lines: int = Query(default=200, ge=20, le=2000)) -> dict:
+    mgr = request.app.state.auction_manager
+    return mgr.get_logs(lines=lines)
+
+
 @router.post("/realtime/jyhf-auction/start")
 async def jyhf_auction_start(request: Request, payload: dict | None = None) -> dict:
     mgr = request.app.state.auction_manager

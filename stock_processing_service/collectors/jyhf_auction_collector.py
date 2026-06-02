@@ -213,7 +213,7 @@ class JyhfAuctionCollector:
                         "order_book": order_book,
                     }
                 except Exception as exc:
-                    msg = f"Fetch {sid} exception: {exc}"
+                    msg = f"Fetch {sid} {type(exc).__name__}: {exc}" if str(exc) else f"Fetch {sid} {type(exc).__name__}"
                     if not _first_round_done:
                         _first_round_failures.append(msg)
                     logger.warning(msg)

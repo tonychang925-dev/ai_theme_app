@@ -1750,6 +1750,22 @@ export async function fetchJyhfAuctionStatus(): Promise<JyhfAuctionStatus> {
   }
 }
 
+export interface JyhfAuctionLogs {
+  lines: string[];
+}
+
+export async function fetchJyhfAuctionLogs(lines = 200): Promise<JyhfAuctionLogs> {
+  try {
+    return await fetchJsonWithTimeout<JyhfAuctionLogs>(
+      `/api/v2/realtime/jyhf-auction/logs?lines=${encodeURIComponent(String(lines))}`,
+      { cache: "no-store" },
+      10000,
+    );
+  } catch (err) {
+    throw normalizeRealtimeCollectorError(err, "JYHF-竞价 日志拉取");
+  }
+}
+
 export async function startJyhfAuctionCollector(
   tradeDate: string,
   candidateDate: string,

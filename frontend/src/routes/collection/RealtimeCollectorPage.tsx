@@ -3,6 +3,7 @@ import {
   fetchRealtimeCollectorLogs,
   fetchJyhfCdpCollectorLogs,
   fetchJyhfCdpCollectorStatus,
+  fetchJyhfAuctionLogs,
   startJyhfCdpCollector,
   stopJyhfCdpCollector,
   startRealtimeCollector,
@@ -64,6 +65,7 @@ export function RealtimeCollectorPage() {
   const [collectorLogWindowMinutes, setCollectorLogWindowMinutes] = useState<5 | 30 | 1440>(30);
   const [auctionEnabled, setAuctionEnabled] = useState(true);
   const [auctionStatus, setAuctionStatus] = useState<JyhfAuctionStatus | null>(null);
+  const [auctionLogs, setAuctionLogs] = useState<string[]>([]);
   const [auctionBusy, setAuctionBusy] = useState(false);
   const [klineAlerts, setKlineAlerts] = useState<KlineAlertEvent[]>([]);
   const [klineFilter, setKlineFilter] = useState<"all" | "critical" | "error" | "warning" | "info" | "auction" | "intraday">("warning");
@@ -211,6 +213,13 @@ export function RealtimeCollectorPage() {
     setJyhfLogs((result.lines ?? []).slice(-500));
   }
 
+  async function refreshJyhfAuctionLogs() {
+    try {
+      const result = await fetchJyhfAuctionLogs(500);
+      setAuctionLogs(result.lines ?? []);
+    } catch { /* silent — auction manager may not be started */ }
+  }
+
   async function refreshRealtimeCollectorLogs(maxAgeMinutes = collectorLogWindowMinutes) {
     const result = await fetchRealtimeCollectorLogs(250, maxAgeMinutes);
     const next: string[] = [];
@@ -248,6 +257,7 @@ export function RealtimeCollectorPage() {
 
     refreshBundledStatus().catch(() => {});
     refreshJyhfCdpLogs().catch(() => undefined);
+    refreshJyhfAuctionLogs().catch(() => undefined);
     refreshRealtimeCollectorLogs(collectorLogWindowMinutes).catch(() => undefined);
   }, []);
 
@@ -264,6 +274,7 @@ export function RealtimeCollectorPage() {
     const timer = window.setInterval(() => {
       refreshBundledStatus().catch(() => {});
       refreshJyhfCdpLogs().catch(() => undefined);
+      refreshJyhfAuctionLogs().catch(() => undefined);
       refreshRealtimeCollectorLogs(collectorLogWindowMinutes).catch(() => undefined);
     }, 8000);
     return () => window.clearInterval(timer);
@@ -411,6 +422,7 @@ export function RealtimeCollectorPage() {
         refreshBundledStatus(),
         refreshJyhfCdpStatus(),
         refreshJyhfCdpLogs(),
+        refreshJyhfAuctionLogs(),
         refreshRealtimeCollectorLogs(collectorLogWindowMinutes),
         refreshOrchestrator(),
       ]);
@@ -428,6 +440,7 @@ export function RealtimeCollectorPage() {
     try {
       await Promise.allSettled([
         refreshJyhfCdpLogs(),
+        refreshJyhfAuctionLogs(),
         refreshRealtimeCollectorLogs(collectorLogWindowMinutes),
       ]);
       append("已刷新运行日志窗口");
@@ -616,6 +629,7 @@ export function RealtimeCollectorPage() {
         append("DOM 未完成首次采集，跳过竞价采集启动");
       }
       await refreshJyhfCdpLogs();
+      refreshJyhfAuctionLogs().catch(() => undefined);  // auction starts after CDP
       setJyhfBusy(false);
     } catch (err) {
       const message = err instanceof Error ? err.message : "启动失败";
@@ -658,6 +672,7 @@ export function RealtimeCollectorPage() {
         } catch { /* retry */ }
       }
       await refreshJyhfCdpLogs();
+      refreshJyhfAuctionLogs().catch(() => undefined);
       setJyhfBusy(false);
     } catch (err) {
       const message = err instanceof Error ? err.message : "停止失败";
@@ -1139,6 +1154,7 @@ export function RealtimeCollectorPage() {
                           jyhfLogs={jyhfLogs}
                           stackStatus={stackStatus}
                           auctionStatus={auctionStatus}
+                          auctionLogs={auctionLogs}
                           collectorLogWindowLabel={collectorLogWindowLabel}
                         />
                       ),
