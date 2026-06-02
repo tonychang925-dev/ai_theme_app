@@ -971,18 +971,33 @@ async def jyhf_auction_stop(request: Request) -> dict:
 
 # ── P0-C2: 统一状态聚合接口，替代多个独立轮询 ──
 
+# new-chain 状态缓存：SPS 8090 频繁超时导致 status-bundle 被拖死时兜底
+_new_chain_cache: dict = {"data": None, "ts": 0.0, "max_age_s": 60}
+
+
 @router.get("/realtime/status-bundle")
 async def realtime_status_bundle(request: Request) -> dict:
     """单次返回 new-chain + JYHF CDP + auction 状态，减少轮询次数。"""
     import asyncio as _asyncio
+    import time as _time
 
     async def _new_chain():
         try:
-            async with httpx.AsyncClient(timeout=10.0, trust_env=False) as c:
+            async with httpx.AsyncClient(timeout=4.0, trust_env=False) as c:
                 r = await c.get(f"{STOCK_PROCESSING_BASE_URL}/api/v1/realtime/status")
                 r.raise_for_status()
-                return r.json()
+                data = r.json()
+                _new_chain_cache["data"] = data
+                _new_chain_cache["ts"] = _time.time()
+                return data
         except Exception as exc:
+            # 缓存兜底：SPS 不可达时返回最后已知状态，最多缓存 60s
+            cached = _new_chain_cache["data"]
+            if cached and (_time.time() - _new_chain_cache["ts"]) < _new_chain_cache["max_age_s"]:
+                cached = dict(cached)
+                cached["_cached"] = True
+                cached["_cache_age_s"] = round(_time.time() - _new_chain_cache["ts"], 1)
+                return cached
             return {"running": False, "error": str(exc)}
 
     async def _cdp_status():
@@ -994,10 +1009,18 @@ async def realtime_status_bundle(request: Request) -> dict:
     async def _auction_status():
         return request.app.state.auction_manager.status()
 
-    new_chain, cdp, auction = await _asyncio.gather(
-        _new_chain(), _cdp_status(), _auction_status(),
-        return_exceptions=True,
-    )
+    try:
+        async with _asyncio.timeout(7.0):
+            new_chain, cdp, auction = await _asyncio.gather(
+                _new_chain(), _cdp_status(), _auction_status(),
+                return_exceptions=True,
+            )
+    except TimeoutError:
+        # 整体超时：返回缓存或降级响应
+        cached = _new_chain_cache["data"]
+        new_chain = (dict(cached) if cached else {"running": False, "error": "bundle timeout"}) if cached else {"running": False, "error": "bundle timeout"}
+        cdp = {"error": "bundle timeout"}
+        auction = request.app.state.auction_manager.status()
 
     return {
         "new_chain": new_chain if isinstance(new_chain, dict) else {"error": str(new_chain)},
