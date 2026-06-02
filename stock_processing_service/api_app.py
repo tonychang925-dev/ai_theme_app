@@ -89,15 +89,24 @@ async def _init_stock_match_engine_background(app: FastAPI) -> None:
             logger.warning("StockMatchEngine background init skipped: DEEPSEEK_API_KEY not set")
             return
 
+        # 使用短超时 + TCPConnector 避免 SSL 层卡死阻塞事件循环
+        _connector = aiohttp.TCPConnector(
+            force_close=True,
+            ttl_dns_cache=300,
+            enable_cleanup_closed=True,
+        )
+
         class DeepSeekLLM:
             async def chat_completion(self, messages, temperature=0.1, max_tokens=512):
                 headers = {"Authorization": f"Bearer {deepseek_key}", "Content-Type": "application/json"}
                 payload = {"model": "deepseek-chat", "messages": messages,
                            "temperature": temperature, "max_tokens": max_tokens, "stream": False}
-                async with aiohttp.ClientSession() as s:
+                timeout = aiohttp.ClientTimeout(
+                    total=30, connect=10, sock_connect=10, sock_read=25,
+                )
+                async with aiohttp.ClientSession(connector=_connector, timeout=timeout) as s:
                     async with s.post("https://api.deepseek.com/v1/chat/completions",
-                                      headers=headers, json=payload,
-                                      timeout=aiohttp.ClientTimeout(total=60)) as r:
+                                      headers=headers, json=payload) as r:
                         data = await r.json()
                         return {"content": data["choices"][0]["message"]["content"]}
 
@@ -155,7 +164,16 @@ async def lifespan(app: FastAPI):
     app.state.match_engine_status = {"enabled": False, "ready": False, "loading": False, "error": None}
     if os.environ.get("SPS_ENABLE_STOCK_MATCH_ENGINE", "false").lower() in ("1", "true", "yes", "on"):
         app.state.match_engine_status["enabled"] = True
-        asyncio.create_task(_init_stock_match_engine_background(app))
+        # 包装在 wait_for 中防止 SSL 卡死阻塞事件循环
+        async def _init_with_timeout():
+            try:
+                async with asyncio.timeout(45):
+                    await _init_stock_match_engine_background(app)
+            except TimeoutError:
+                app.state.match_engine_status["error"] = "init timed out after 45s"
+                app.state.match_engine_status["loading"] = False
+                logger.warning("StockMatchEngine background init timed out")
+        asyncio.create_task(_init_with_timeout())
     else:
         logger.info("StockMatchEngine disabled (set SPS_ENABLE_STOCK_MATCH_ENGINE=true to enable)")
     from stock_processing_service.application.services.collection_task_registry import get_default_registry
