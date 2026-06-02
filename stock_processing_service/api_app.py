@@ -196,6 +196,27 @@ async def lifespan(app: FastAPI):
         "total_built": 0,
         "total_pushed": 0,
     }
+    # P1-C: SPS 启动时清理上一次 run 遗留的僵尸 consumer（进程已死但 Redis 仍记录）
+    async def _cleanup_zombie_consumers_once():
+        await asyncio.sleep(3)  # 等 Redis 连接就绪
+        try:
+            import redis.asyncio as aioredis
+            from database_service.streams.utils.consumer_group_manager import ConsumerGroupManager
+            r = aioredis.from_url(_redis_url(), decode_responses=True)
+            mgr = ConsumerGroupManager(r)
+            result = await mgr.cleanup_stale_consumers(idle_minutes=10, execute=True)
+            await r.aclose()
+            if result["stale_consumers_deleted"]:
+                logger.warning(
+                    "ZOMBIE_CONSUMER_CLEANUP: deleted=%d reclaimed=%d pending",
+                    result["stale_consumers_deleted"], result["pending_reclaimed"],
+                )
+            else:
+                logger.info("Consumer cleanup: no zombies found")
+        except Exception as exc:
+            logger.warning("Consumer cleanup skipped: %s", exc)
+    asyncio.create_task(_cleanup_zombie_consumers_once())
+
     # 默认不在 SPS 初始化时自动拉起实时管线。
     # 实时采集应由页面按钮或显式运维命令启动，避免服务重启时产生隐藏副作用。
     if os.environ.get("SPS_AUTO_START_REALTIME_STACK", "false").lower() in ("1", "true", "yes", "on"):

@@ -6,6 +6,7 @@
 
 import asyncio
 import logging
+import os
 import re
 import time
 from typing import Dict, List, Optional, Any, Set, Tuple
@@ -227,6 +228,94 @@ class ConsumerGroupManager:
         except Exception as e:
             logger.error(f"清理消费者组失败: {e}")
             return {"error": str(e), "cleaned": 0}
+
+    async def cleanup_stale_consumers(
+        self, idle_minutes: int = 30, execute: bool = False
+    ) -> Dict[str, Any]:
+        """清理受保护 realtime 组内的僵尸 consumer（进程已死但 Redis 仍记录）。
+
+        Args:
+            idle_minutes: consumer 闲置超过此时间即判定为僵尸
+            execute: 设为 True 才执行 xgroup_delconsumer + xack
+
+        Returns:
+            清理统计
+        """
+        stats: Dict[str, Any] = {
+            "scanned_groups": 0,
+            "stale_consumers_found": 0,
+            "stale_consumers_deleted": 0,
+            "pending_reclaimed": 0,
+            "errors": 0,
+            "details": [],
+        }
+
+        protected = self.config["protected_groups"]
+        streams = await self._get_all_streams()
+
+        for stream in streams:
+            try:
+                groups_info = await self.redis.xinfo_groups(stream)
+            except Exception:
+                continue
+
+            for g in groups_info:
+                gname = g["name"] if isinstance(g["name"], str) else g["name"].decode()
+                if gname not in protected:
+                    continue
+                stats["scanned_groups"] += 1
+
+                try:
+                    consumers = await self.redis.xinfo_consumers(stream, gname)
+                except Exception:
+                    continue
+
+                active_consumer_names = []
+                for c in consumers:
+                    cname = c["name"] if isinstance(c["name"], str) else c["name"].decode()
+                    idle_ms = int(c.get("idle", 0))
+                    pending = int(c.get("pending", 0))
+
+                    if idle_ms > idle_minutes * 60_000:
+                        stats["stale_consumers_found"] += 1
+                        detail = {
+                            "stream": stream, "group": gname, "consumer": cname,
+                            "idle_min": round(idle_ms / 60000, 1), "pending": pending,
+                        }
+
+                        if execute and pending > 0:
+                            try:
+                                pend_entries = self.redis.xpending_range(
+                                    stream, gname, min="-", max="+", count=pending,
+                                    consumername=cname,
+                                )
+                                msg_ids = [p["message_id"] for p in pend_entries]
+                                if msg_ids and active_consumer_names:
+                                    claimed = self.redis.xclaim(
+                                        stream, gname, active_consumer_names[0],
+                                        min_idle_time=0, message_ids=msg_ids,
+                                    )
+                                    if claimed:
+                                        self.redis.xack(stream, gname, *[m[0] for m in claimed])
+                                        detail["reclaimed"] = len(claimed)
+                                        stats["pending_reclaimed"] += len(claimed)
+                            except Exception as exc:
+                                detail["reclaim_error"] = str(exc)
+
+                        if execute:
+                            try:
+                                self.redis.xgroup_delconsumer(stream, gname, cname)
+                                stats["stale_consumers_deleted"] += 1
+                                detail["deleted"] = True
+                            except Exception as exc:
+                                stats["errors"] += 1
+                                detail["delete_error"] = str(exc)
+
+                        stats["details"].append(detail)
+                    else:
+                        active_consumer_names.append(cname)
+
+        return stats
 
     async def get_consumer_group_info(self, stream: Optional[str] = None) -> Dict[str, Any]:
         """
