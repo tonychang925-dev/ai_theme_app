@@ -1198,6 +1198,28 @@ class DatabaseGateway:
             logger.warning(f"get_staging_subject_keys failed: {e}", exc_info=True)
             return []
 
+    async def get_all_confirmed_mainlines(self) -> List[Dict[str, Any]]:
+        """PR-13C: 读取所有已确认主线（从 mainline_registry）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_all_confirmed_mainlines()
+            self._record_request(True, start_time)
+            return result
+        except Exception:
+            self._record_request(False, start_time)
+            return []
+
+    async def get_all_prior_alive_cycles(self, trade_date) -> List[Dict[str, Any]]:
+        """PR-13C: 读取上一交易日仍存续的已确认主线。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_all_prior_alive_cycles(trade_date=trade_date)
+            self._record_request(True, start_time)
+            return result
+        except Exception:
+            self._record_request(False, start_time)
+            return []
+
     async def get_subject_cycle_evidence_daily(
         self, trade_date, subject_keys: List[str] | None = None
     ) -> List[Dict[str, Any]]:
