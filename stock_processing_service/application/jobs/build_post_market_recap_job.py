@@ -1173,6 +1173,8 @@ class BuildPostMarketRecapJob:
                 )
                 w2s_uc = BuildWeakToStrongCandidateUseCase()
                 candidates = w2s_uc.build_candidates(trade_date=trade_date, d1_input_rows=d1_rows)
+                # Dedup by stock_id — same stock can appear under multiple subject_keys
+                candidates = w2s_uc._dedup_and_rank(candidates, limit=20)
                 d1_formal_before = sum(1 for c in candidates if c.get("candidate_level") == "formal")
                 d1_observe_before = sum(1 for c in candidates if c.get("candidate_level") == "observe_only")
 
