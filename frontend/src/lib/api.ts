@@ -1234,34 +1234,20 @@ export async function fetchStrongStockWatch(params: {
   includeRemoved?: boolean;
   stockId?: string;
 }): Promise<StrongStockWatchView> {
-  // 强势股页面统一走 v1 7日历史窗口口径，前端只做字段适配，不改展示逻辑。
+  const query = new URLSearchParams();
+  if (params.date) query.set("date", params.date);
+  if (params.windowDays !== undefined) query.set("window_days", String(params.windowDays));
+  if (params.limit !== undefined) query.set("limit", String(params.limit));
+  if (params.latestPerStock !== undefined) query.set("latest_per_stock", String(params.latestPerStock));
+  if (params.includeRemoved !== undefined) query.set("include_removed", String(params.includeRemoved));
+  if (params.stockId) query.set("stock_id", params.stockId);
 
   try {
-    const v1Query = new URLSearchParams();
-    if (params.date) v1Query.set("trade_date", params.date);
-    if (params.windowDays) v1Query.set("window_days", String(params.windowDays));
-    if (params.limit) v1Query.set("limit", String(params.limit));
-    if (params.latestPerStock !== undefined) v1Query.set("latest_per_stock", String(params.latestPerStock));
-    if (params.includeRemoved !== undefined) v1Query.set("include_removed", String(params.includeRemoved));
-    if (params.stockId) v1Query.set("stock_id", params.stockId);
-    const url = `${SPS_BASE}/api/v1/strong_watch?${v1Query.toString()}`;
-    const getResp = await fetch(url, { method: "GET" });
-    if (!getResp.ok) throw new Error(`request failed: ${getResp.status}`);
-    const payload = (await getResp.json()) as { trade_date?: string; stocks?: StrongStockWatchItem[] };
-    const items = Array.isArray(payload.stocks) ? payload.stocks : [];
-    return {
-      date_from: params.date || payload.trade_date || "",
-      date_to: params.date || payload.trade_date || "",
-      window_days: params.windowDays || 7,
-      latest_per_stock: params.latestPerStock,
-      include_removed: params.includeRemoved,
-      count: items.length,
-      items,
-      diagnostics: {
-        partial: false,
-        source: "api_v1_strong_watch",
-      },
-    } as StrongStockWatchView;
+    return await fetchJsonWithTimeout<StrongStockWatchView>(
+      `/api/v2/strong_watch/watch?${query.toString()}`,
+      undefined,
+      10000,
+    );
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown error";
     throw new Error(`strong stock watch request failed: ${message}`);

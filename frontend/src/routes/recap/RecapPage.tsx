@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
-  fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, publishRecapToNotion,
+  fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, fetchPostMarketJobsStatus, publishRecapToNotion,
   type AbnormalStockReviewV2, type DailyReviewView, type DragonTigerReviewV2, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness,
   generateDailyReviewV2, generatePostMarketDerivedData, generatePostMarketRecap,
@@ -908,7 +908,12 @@ function todayString() {
 }
 
 function isMissingPostMarketSnapshotError(message: string) {
-  return message.includes("post-market snapshot is unavailable or unmappable");
+  return message.includes("post-market snapshot is unavailable or unmappable")
+    || message.includes("request timeout after");
+}
+
+function hasRunningPostMarketJob(status?: { summary?: { has_running?: boolean }; items?: Array<{ status?: string }> } | null) {
+  return Boolean(status?.summary?.has_running) || Boolean(status?.items?.some((item) => item.status === "running"));
 }
 
 export function RecapPage() {
@@ -1146,25 +1151,51 @@ export function RecapPage() {
     setError(null);
 
     if (reportType === "post_market") {
-      fetchRecapSnapshot({ date: tradeDate, reportType })
-        .then((data) => {
-          if (!active) return;
-          setPayload(data);
-          const query = buildRecapSearchParams({
-            tradeDate,
-            reportType,
-            dataMode: dailyReviewV2PreviewEnabled ? "daily_review_v2_first" : "sections_first",
-            viewMode,
+      let bootstrapFinalized = false;
+      const finalizeBootstrap = (action: () => void) => {
+        if (!active || bootstrapFinalized) return;
+        bootstrapFinalized = true;
+        action();
+      };
+
+      const snapshotPromise = fetchRecapSnapshot({ date: tradeDate, reportType });
+      const readinessPromise = fetchPostMarketReadiness(tradeDate).catch(() => null);
+      const jobsPromise = fetchPostMarketJobsStatus(tradeDate).catch(() => null);
+
+      snapshotPromise
+        .then((snapshot) => {
+          finalizeBootstrap(() => {
+            setPayload(snapshot);
+            const query = buildRecapSearchParams({
+              tradeDate,
+              reportType,
+              dataMode: dailyReviewV2PreviewEnabled ? "daily_review_v2_first" : "sections_first",
+              viewMode,
+            });
+            window.history.replaceState(null, "", `/recap?${query.toString()}`);
+            setLoading(false);
           });
-          window.history.replaceState(null, "", `/recap?${query.toString()}`);
         })
         .catch((err: Error) => {
-          if (!active) return;
-          setError(isMissingPostMarketSnapshotError(err.message) ? null : err.message);
-        })
-        .finally(() => {
-          if (active) setLoading(false);
+          if (!active || bootstrapFinalized) return;
+          if (isMissingPostMarketSnapshotError(err.message)) {
+            return;
+          }
+          bootstrapFinalized = true;
+          setError(err.message);
+          setLoading(false);
         });
+
+      void (async () => {
+        const [readiness, jobs] = await Promise.all([readinessPromise, jobsPromise]);
+        if (!active || bootstrapFinalized) return;
+        if (readiness?.status === "failed_precondition" && !hasRunningPostMarketJob(jobs)) {
+          bootstrapFinalized = true;
+          setLoading(false);
+          return;
+        }
+      })();
+
       fetchDailyReview(tradeDate)
         .then((data) => {
           if (!active) return;
@@ -1343,13 +1374,13 @@ export function RecapPage() {
   }
 
   return (
-    <div className="workspace-page">
+    <div className="workspace-page recap-dark-theme">
       <section className="strong-watch-toolbar">
         <img src={recapIcon} alt="" style={{ height: 64, width: 64, flexShrink: 0 }} />
         <h1 className="strong-watch-title">{reportType === "post_market" ? "当日复盘" : "盘前必读"}</h1>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <span style={{ fontSize: 12, color: "#9f9f9f" }}>交易日</span>
+            <span style={{ fontSize: 12, color: "#66d9ef" }}>交易日</span>
             <input type="date" value={tradeDate} onChange={(event) => setTradeDate(event.target.value)}
               style={{ border: "1px solid #2a2a2a", borderRadius: 6, background: "#1a1a1a", color: "#f5f5f5", padding: "4px 8px" }} />
           </label>

@@ -19,7 +19,7 @@ export default function EngineDecisionHeader({ engineSummary, marketRegime }: Pr
         <Tag color={modeColor} style={{ fontSize: 14, padding: "4px 12px" }}>
           {allow ? (mode === "ultra_short_only" ? "超短防守" : mode === "mainline_core_only" ? "主线核心" : "正常交易") : "不交易"}
         </Tag>
-        <span style={{ fontSize: 16, fontWeight: 700, color: allow ? "#86efac" : "#fca5a5" }}>
+        <span style={{ fontSize: 16, fontWeight: 700, color: "#8ddcff" }}>
           {engineSummary.conclusion || (allow ? "允许交易" : "不允许交易")}
         </span>
       </div>
@@ -28,7 +28,7 @@ export default function EngineDecisionHeader({ engineSummary, marketRegime }: Pr
         <Descriptions.Item label="交易模式">{engineSummary.trade_mode}</Descriptions.Item>
         <Descriptions.Item label="仓位上限">{engineSummary.position_limit != null ? `${(engineSummary.position_limit * 100).toFixed(0)}%` : "-"}</Descriptions.Item>
         <Descriptions.Item label="主阻断规则">
-          <span style={{ color: "#fca5a5" }}>{engineSummary.no_trade_blocking_rule || "-"}</span>
+          <span style={{ color: "#66d9ef" }}>{engineSummary.no_trade_blocking_rule || "-"}</span>
         </Descriptions.Item>
         {(engineSummary.no_trade_reasons?.length ?? 0) > 0 && (
           <Descriptions.Item label="不交易原因" span={3}>
@@ -37,7 +37,7 @@ export default function EngineDecisionHeader({ engineSummary, marketRegime }: Pr
         )}
         {engineSummary.next_day_strategy && (
           <Descriptions.Item label="明日策略" span={3}>
-            <span style={{ color: "#93c5fd" }}>{engineSummary.next_day_strategy}</span>
+            <span style={{ color: "#8ddcff" }}>{engineSummary.next_day_strategy}</span>
           </Descriptions.Item>
         )}
         {(engineSummary.risk_notes?.length ?? 0) > 0 && (

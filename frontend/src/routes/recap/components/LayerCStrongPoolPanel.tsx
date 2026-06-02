@@ -42,22 +42,22 @@ export default function LayerCStrongPoolPanel({ review }: Props) {
   }
 
   const cols = [
-    { title: "股票", dataIndex: "stock_name", key: "name", width: 70 },
-    { title: "角色", dataIndex: "relay_role", key: "role", width: 56 },
-    { title: "评分", dataIndex: "watch_score", key: "score", width: 48, render: (v: number) => v?.toFixed(0) },
-    { title: "级别", dataIndex: "pool_entry_type", key: "level", width: 60, render: (v: string) => <Tag color={v === "formal" ? "green" : v === "observe_only" ? "orange" : "red"}>{v}</Tag> },
-    { title: "状态", dataIndex: "watch_status", key: "status", width: 50 },
+    { title: "股票", dataIndex: "stock_name", key: "name", width: 110 },
+    { title: "角色", dataIndex: "relay_role", key: "role", width: 76 },
+    { title: "评分", dataIndex: "watch_score", key: "score", width: 62, render: (v: number) => v?.toFixed(0) },
+    { title: "级别", dataIndex: "pool_entry_type", key: "level", width: 82, render: (v: string) => <Tag color={v === "formal" ? "green" : v === "observe_only" ? "orange" : "red"}>{v}</Tag> },
+    { title: "状态", dataIndex: "watch_status", key: "status", width: 72 },
   ];
 
   return (
     <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
-      <h3 style={{ margin: "0 0 10px", color: "#e2e8f0", fontSize: 15 }}>
+      <h3 className="section-title recap-panel-title">
         Layer C 强势股跟踪池
         <Tag style={{ marginLeft: 8 }}>{pool.length} 只</Tag>
       </h3>
       {Object.entries(byMainline).map(([ml, rows]) => (
         <details key={ml} open style={{ marginBottom: 10 }}>
-          <summary style={{ color: "#cbd5e1", fontWeight: 600, cursor: "pointer", marginBottom: 4 }}>
+          <summary style={{ color: "#8ddcff", fontWeight: 600, cursor: "pointer", marginBottom: 4 }}>
             {ml} ({rows.length})
           </summary>
           <Table
@@ -65,6 +65,7 @@ export default function LayerCStrongPoolPanel({ review }: Props) {
             columns={cols}
             size="small"
             pagination={false}
+            scroll={{ x: 520 }}
           />
         </details>
       ))}

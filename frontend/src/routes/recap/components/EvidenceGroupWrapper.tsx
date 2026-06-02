@@ -82,7 +82,7 @@ export default function EvidenceGroupWrapper({ title, rows, stockIdKey = "stock_
         if (grpRows.length === 0) return null;
         return (
           <details key={grp.key} open style={{ marginBottom: 8 }}>
-            <summary style={{ color: "#cbd5e1", fontWeight: 600, cursor: "pointer", fontSize: 13, padding: "4px 0" }}>
+            <summary style={{ color: "#8ddcff", fontWeight: 600, cursor: "pointer", fontSize: 13, padding: "4px 0" }}>
               {grp.label} ({grpRows.length})
             </summary>
             <div style={{ paddingLeft: 4 }}>
@@ -94,7 +94,7 @@ export default function EvidenceGroupWrapper({ title, rows, stockIdKey = "stock_
 
       {ungrouped.length > 0 && (
         <details style={{ marginBottom: 8, opacity: 0.6 }}>
-          <summary style={{ color: "#64748b", fontWeight: 500, cursor: "pointer", fontSize: 12, padding: "4px 0" }}>
+          <summary style={{ color: "#66d9ef", fontWeight: 500, cursor: "pointer", fontSize: 12, padding: "4px 0" }}>
             非主线 ({ungrouped.length})
           </summary>
           <div style={{ paddingLeft: 4 }}>{children(ungrouped, "non_mainline", {})}</div>

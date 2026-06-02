@@ -16,18 +16,18 @@ export default function D1NextDayWatchPanel({ review }: Props) {
   const observe = d1.filter((r) => r.candidate_level !== "formal");
 
   const cols = [
-    { title: "股票", dataIndex: "stock_name", key: "name", width: 70 },
-    { title: "主线", dataIndex: "theme_name", key: "theme", width: 70, ellipsis: true },
-    { title: "角色", dataIndex: "relay_role", key: "role", width: 56 },
-    { title: "级别", dataIndex: "candidate_level", key: "level", width: 56, render: (v: string) => <Tag color={v === "formal" ? "green" : "orange"}>{v}</Tag> },
-    { title: "评分", dataIndex: "candidate_score", key: "score", width: 48, render: (v: number) => v?.toFixed(0) },
-    { title: "买入条件", dataIndex: "buy_condition", key: "buy", ellipsis: true, render: (v: unknown) => Array.isArray(v) ? (v as string[]).join("；") : String(v ?? "-") },
-    { title: "失效条件", dataIndex: "invalid_condition", key: "invalid", ellipsis: true, render: (v: unknown) => Array.isArray(v) ? (v as string[]).join("；") : String(v ?? "-") },
+    { title: "股票", dataIndex: "stock_name", key: "name", width: 110 },
+    { title: "主线", dataIndex: "theme_name", key: "theme", width: 110, ellipsis: true },
+    { title: "角色", dataIndex: "relay_role", key: "role", width: 70 },
+    { title: "级别", dataIndex: "candidate_level", key: "level", width: 74, render: (v: string) => <Tag color={v === "formal" ? "green" : "orange"}>{v}</Tag> },
+    { title: "评分", dataIndex: "candidate_score", key: "score", width: 62, render: (v: number) => v?.toFixed(0) },
+    { title: "买入条件", dataIndex: "buy_condition", key: "buy", width: 260, render: (v: unknown) => Array.isArray(v) ? (v as string[]).join("；") : String(v ?? "-") },
+    { title: "失效条件", dataIndex: "invalid_condition", key: "invalid", width: 260, render: (v: unknown) => Array.isArray(v) ? (v as string[]).join("；") : String(v ?? "-") },
   ];
 
   return (
     <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
-      <h3 style={{ margin: "0 0 10px", color: "#e2e8f0", fontSize: 15 }}>
+      <h3 className="section-title recap-panel-title">
         次日观察 (D1)
         <Tag style={{ marginLeft: 8 }}>formal {formal.length}</Tag>
         <Tag color="orange">observe {observe.length}</Tag>
@@ -39,9 +39,9 @@ export default function D1NextDayWatchPanel({ review }: Props) {
       )}
 
       {d1.length === 0 ? (
-        <div style={{ color: "#64748b", padding: 8 }}>暂无 D1 候选</div>
+        <div style={{ color: "#8ddcff", padding: 8 }}>暂无 D1 候选</div>
       ) : (
-        <Table dataSource={d1.map((r, i) => ({ ...r, key: (r.stock_id as string) || i }))} columns={cols} size="small" pagination={{ pageSize: 10 }} scroll={{ x: 600 }} />
+        <Table dataSource={d1.map((r, i) => ({ ...r, key: (r.stock_id as string) || i }))} columns={cols} size="small" pagination={{ pageSize: 10 }} scroll={{ x: 1100 }} />
       )}
     </div>
   );

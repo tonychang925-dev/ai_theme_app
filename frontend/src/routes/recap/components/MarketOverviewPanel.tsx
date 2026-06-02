@@ -16,7 +16,7 @@ function formatAmount(value?: number | null) {
 }
 
 function renderFocusStock(stock: ThemeLimitUpStock | undefined, tradeDate?: string) {
-  if (!stock) return <span style={{ color: "rgba(148,163,184,0.7)" }}>--</span>;
+  if (!stock) return <span style={{ color: "#66d9ef" }}>--</span>;
   const href = stock.stock_id ? `/stocks/${encodeURIComponent(stock.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}` : "";
   const body = (
     <div className="recap-tag-stack" style={{ gap: 4 }}>
@@ -55,7 +55,7 @@ export default function MarketOverviewPanel({ marketOverview, tradeDate }: Props
 
   return (
     <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
-      <h3 style={{ margin: "0 0 10px", color: "#e2e8f0", fontSize: 15 }}>
+      <h3 className="section-title recap-panel-title">
         行情概览
         <Tag color="gold" style={{ marginLeft: 8 }}>重点题材涨停矩阵</Tag>
         <Tag color="blue">{marketOverview?.limit_up_total ?? "--"} 涨停</Tag>
@@ -68,9 +68,9 @@ export default function MarketOverviewPanel({ marketOverview, tradeDate }: Props
         <table className="recap-table market-overview-matrix">
           <thead>
             <tr>
-              <th style={{ minWidth: 100 }}>指标</th>
+              <th style={{ minWidth: 130 }}>指标</th>
               {columns.map((col) => (
-                <th key={col.subject_key} style={{ minWidth: 180, verticalAlign: "top" }}>
+                <th key={col.subject_key} style={{ minWidth: 260, verticalAlign: "top" }}>
                   <div className="recap-tag-stack" style={{ gap: 4 }}>
                     <button type="button" className="recap-theme-link" onClick={() => navigateTo(`/themes/${encodeURIComponent(col.subject_key)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
                       {col.theme_name || col.subject_key || "--"}
