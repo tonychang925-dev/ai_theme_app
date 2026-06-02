@@ -1144,30 +1144,162 @@ class BuildPostMarketRecapJob:
                 PostMarketDecisionEngineV2,
             )
 
-            # Read Layer C — explicit priority, diagnostics match actual source
-            layer_c_source: str = "empty"
-            if isinstance(recap_doc.get("strong_watch_history"), list) and recap_doc["strong_watch_history"]:
-                layer_c_rows = recap_doc["strong_watch_history"]
-                layer_c_source = "strong_watch_history"
-            elif isinstance(recap_doc.get("strong_watch_input_7d_preview"), list) and recap_doc["strong_watch_input_7d_preview"]:
-                layer_c_rows = recap_doc["strong_watch_input_7d_preview"]
-                layer_c_source = "strong_watch_input_7d_preview"
-            elif isinstance(recap_doc.get("strong_stock_reviews"), list) and recap_doc["strong_stock_reviews"]:
-                layer_c_rows = recap_doc["strong_stock_reviews"]
-                layer_c_source = "strong_stock_reviews_fallback"
-            else:
-                layer_c_rows = []
+            # D1 input: read FULL 7-day Layer C pool (not truncated preview)
+            # Same pipeline as BuildPreMarketBriefJob / AI选股弱转强策略
+            try:
+                promoted_fn = getattr(self._read_port, "get_prior_strong_watch_pool_rows", None)
+                if callable(promoted_fn):
+                    pool_dtos = await promoted_fn(trade_date=trade_date, lookback_days=7)
+                else:
+                    pool_dtos = []
+                layer_c_d1_raw = len(pool_dtos)
+                pool_dtos = [r for r in pool_dtos if getattr(r, "pool_entry_type", None) != "reject"]
+                layer_c_d1_eligible = len(pool_dtos)
+                stock_ids = list({r.stock_id for r in pool_dtos})
 
+                bars = await self._read_port.get_stock_daily_bars(trade_date, stock_ids=stock_ids)
+                prior = await self._read_port.get_prior_stock_daily_snapshots(
+                    trade_date=trade_date, lookback_days=7, stock_ids=stock_ids,
+                )
+            except Exception:
+                pool_dtos = []
+                bars = []
+                prior = []
+                layer_c_d1_raw = 0
+                layer_c_d1_eligible = 0
+                logger.warning("D1 input read failed, falling back to recap_doc preview")
+
+            layer_c_source: str = "full_7d_layer_c_pool"
+            layer_c_rows: list[dict] = []
+            d1_algorithm: str = "W2SCandidateService"
+            d1_formal_before: int = 0
+            d1_observe_before: int = 0
+            d1_formal_after: int = 0
+            d1_observe_after: int = 0
+            preview_truncated: bool = False
+
+            if pool_dtos:
+                from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidateService
+                w2s = W2SCandidateService()
+                candidates = w2s.build_candidates(bars=bars, pool_rows=pool_dtos, prior_rows=prior)
+                d1_formal_before = sum(1 for c in candidates if c.candidate_level == "formal")
+                d1_observe_before = sum(1 for c in candidates if c.candidate_level == "observe_only")
+
+                # Apply market_regime for trade permission (downgrade only, no re-score)
+                allow_trade = regime.allow_trade
+                d1_focus: list[Any] = []
+                for c in candidates:
+                    effective_level = c.candidate_level
+                    if not allow_trade and effective_level == "formal":
+                        effective_level = "observe_only"
+                    layer_c_rows.append({
+                        "stock_id": c.stock_id, "stock_name": c.stock_name or c.stock_id,
+                        "candidate_level": effective_level,
+                        "watch_score": float(getattr(c, "watch_score", 0) or 0),
+                        "support_score": float(getattr(c, "support_score", 0) or 0),
+                        "w2s_score": float(getattr(c, "w2s_score", 0) or 0),
+                        **getattr(c, "metadata", {}),
+                    })
+                    if effective_level == "formal":
+                        d1_focus.append(c)
+                        d1_formal_after += 1
+                    else:
+                        d1_observe_after += 1
+                focus_len = len(d1_focus[: getattr(regime, "focus_stock_count", 0) or 0])
+                d1_algorithm = "W2SCandidateService"
+            else:
+                # Fallback: use recap_doc data if read_port failed (backward compat)
+                if isinstance(recap_doc.get("strong_watch_history"), list) and recap_doc["strong_watch_history"]:
+                    layer_c_rows = recap_doc["strong_watch_history"]
+                    layer_c_source = "strong_watch_history"
+                elif isinstance(recap_doc.get("strong_watch_input_7d_preview"), list) and recap_doc["strong_watch_input_7d_preview"]:
+                    layer_c_rows = recap_doc["strong_watch_input_7d_preview"]
+                    layer_c_source = "strong_watch_input_7d_preview"
+                    preview_truncated = True
+                elif isinstance(recap_doc.get("strong_stock_reviews"), list) and recap_doc["strong_stock_reviews"]:
+                    layer_c_rows = recap_doc["strong_stock_reviews"]
+                    layer_c_source = "strong_stock_reviews_fallback"
+                d1_algorithm = "fallback_score"
+                focus_len = 0
+
+            # Build strong_pool + trading_permission via PDV2 (Layer C display)
             pdv2_engine = PostMarketDecisionEngineV2()
             pdv2 = pdv2_engine.evaluate(
                 trade_date=trade_date.isoformat(),
                 confirmed_mainlines=confirmed_mainlines,
                 mainline_lifecycle=[r.to_dict() for r in reviews],
                 market_regime=regime.to_dict(),
-                stock_pool_rows=layer_c_rows,
+                stock_pool_rows=layer_c_rows if layer_c_rows else [],
             )
+
+            # Overwrite D1 with W2SCandidateService results (real weak-to-strong algorithm)
+            if pool_dtos:
+                from stock_processing_service.domain.services.post_market_decision_v2.models import (
+                    WeakToStrongD1Item, NextDayFocusStock,
+                )
+                allow_trade = regime.allow_trade
+                trade_mode = regime.trade_mode
+                w2s_d1: list[dict] = []
+                w2s_focus: list[dict] = []
+                for c in candidates:
+                    level = c.candidate_level
+                    if not allow_trade and level == "formal":
+                        level = "observe_only"
+                    item = WeakToStrongD1Item(
+                        trade_date=trade_date.isoformat(),
+                        next_trade_date="T+1",
+                        stock_id=c.stock_id, stock_name=c.stock_name or c.stock_id,
+                        mainline_id="", subject_key="", theme_name="",
+                        candidate_stage="D1", candidate_level=level,
+                        candidate_score=float(getattr(c, "w2s_score", 0) or 0),
+                        support_score=float(getattr(c, "support_score", 0) or 0),
+                        momentum_score=0,
+                        weak_type="pullback",
+                        support_type=getattr(c, "support_type", "unknown") or "unknown",
+                        gap_hit=False,
+                        repair_or_takeover_score=float(getattr(c, "w2s_score", 0) or 0),
+                        weakness_valid_score=0,
+                        buy_condition=(["等待市场环境改善"] if not allow_trade else []),
+                        invalid_condition=[],
+                        d2_required=True, d2_status="pending",
+                        evidence={},
+                        diagnostics={"source": "W2SCandidateService", "scoring_method": "native",
+                                     "blocked_by_market_regime": not allow_trade},
+                    )
+                    w2s_d1.append(item.to_dict())
+                    if level == "formal":
+                        w2s_focus.append(NextDayFocusStock(
+                            trade_date=trade_date.isoformat(), stock_id=c.stock_id,
+                            stock_name=c.stock_name or c.stock_id,
+                            category="重点观察", priority=len(w2s_focus) + 1,
+                            mainline_id="", subject_key="", theme_name="",
+                            pool_entry_type="formal", candidate_level=level,
+                            watch_score=0, candidate_score=item.candidate_score,
+                            buy_condition=item.buy_condition,
+                            invalid_condition=item.invalid_condition,
+                            d2_required=True, d2_status="pending",
+                            suggested_position=0.15,
+                        ).to_dict())
+
+                # Top N cap same as PDV2
+                _d1_limit = 5 if trade_mode == "ultra_short_only" else (10 if trade_mode == "mainline_core_only" else 20)
+                pdv2.weak_to_strong_d1_reviews = w2s_d1[:_d1_limit]
+                pdv2.next_day_focus_stocks = w2s_focus[:_d1_limit]
+                pdv2.trading_permission["d1_candidate_count"] = len(w2s_d1[:_d1_limit])
+                pdv2.trading_permission["focus_stock_count"] = len(w2s_focus[:_d1_limit])
+                d1_formal_after = sum(1 for d in w2s_d1[:_d1_limit] if d.get("candidate_level") == "formal")
+                d1_observe_after = sum(1 for d in w2s_d1[:_d1_limit] if d.get("candidate_level") == "observe_only")
+
             pdv2.diagnostics["layer_c_rows"] = len(layer_c_rows)
             pdv2.diagnostics["layer_c_source"] = layer_c_source
+            pdv2.diagnostics["d1_algorithm"] = d1_algorithm
+            pdv2.diagnostics["layer_c_d1_raw_rows"] = layer_c_d1_raw
+            pdv2.diagnostics["layer_c_d1_eligible_rows"] = layer_c_d1_eligible
+            pdv2.diagnostics["d1_formal_before_market"] = d1_formal_before
+            pdv2.diagnostics["d1_observe_before_market"] = d1_observe_before
+            pdv2.diagnostics["d1_formal_after_market"] = d1_formal_after
+            pdv2.diagnostics["d1_observe_after_market"] = d1_observe_after
+            pdv2.diagnostics["preview_truncated_used"] = preview_truncated
             if cml_error:
                 pdv2.diagnostics["confirmed_mainline_error"] = cml_error
             recap_doc["post_market_decision_v2"] = pdv2.to_dict()
