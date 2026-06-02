@@ -72,7 +72,6 @@ export function RealtimeCollectorPage() {
   const [klineAlertsEnabled, setKlineAlertsEnabled] = useState(false); // 默认关闭，按需开启
   const klineEsRef = useRef<EventSource | null>(null);
   const [w2sAlerts, setW2sAlerts] = useState<W2SAlertEvent[]>([]);
-  const [w2sFilter, setW2sFilter] = useState<"all" | "important" | "observe">("important");
   const [w2sAlertsEnabled, setW2sAlertsEnabled] = useState(false); // 默认关闭，按需开启
   const w2sEsRef = useRef<EventSource | null>(null);
   // ── 操作日志 ──
