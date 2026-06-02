@@ -1623,6 +1623,25 @@ async def intel_strong_stocks_watch(
         },
     }
 
+# ── workspace 端点缓存：SPS 慢时避免重复阻塞，30s TTL ──
+_workspace_cache: dict[str, dict] = {}  # key -> {"data": ..., "ts": float}
+
+
+def _ws_cache_get(key: str, ttl: float = 30.0) -> dict | None:
+    import time as _time
+    entry = _workspace_cache.get(key)
+    if entry and (_time.time() - entry["ts"]) < ttl:
+        cached = dict(entry["data"])
+        cached["_cached"] = True
+        cached["_cache_age_s"] = round(_time.time() - entry["ts"], 1)
+        return cached
+    return None
+
+
+def _ws_cache_set(key: str, data: dict) -> None:
+    import time as _time
+    _workspace_cache[key] = {"data": data, "ts": _time.time()}
+
 
 @router.get("/workspace/theme-radar")
 async def workspace_theme_radar(
@@ -1630,6 +1649,12 @@ async def workspace_theme_radar(
     session: str = Query(default="all"),
     limit: int = Query(default=30, ge=1, le=200),
 ) -> dict:
+    # 缓存命中直接返回，避免 SPS 慢时重复阻塞
+    _ck = f"theme_radar:{date}:{session}:{limit}"
+    _cached = _ws_cache_get(_ck, ttl=20.0)
+    if _cached is not None:
+        return _cached
+
     # 并发获取 intel feed + daily_review
     feed_task = client.get_intel_feed(date=date, session=session, item_type="all", limit=limit)
     dr_task = client.get_json("/api/v1/daily_review", {"trade_date": date}) if date else None
@@ -1776,12 +1801,14 @@ async def workspace_theme_radar(
                 t["stock_count"] = max(t["stock_count"], len(ls))
 
     themes = sorted(by_theme.values(), key=lambda x: (-int(x["heat"]), x["theme_name"]))[:limit]
-    return {
+    result = {
         "date": date,
         "themes": themes,
         "source": "intel_feed_daily_review_merge",
         "diagnostics": dict(feed.get("diagnostics") or {}),
     }
+    _ws_cache_set(_ck, result)
+    return result
 
 
 @router.get("/workspace/intel-context")
@@ -1792,6 +1819,11 @@ async def workspace_intel_context(
     stock_id: str | None = Query(default=None),
     limit: int = Query(default=100, ge=1, le=500),
 ) -> dict:
+    _ck = f"intel_ctx:{date}:{session}:{subject_key}:{stock_id}:{limit}"
+    _cached = _ws_cache_get(_ck, ttl=20.0)
+    if _cached is not None:
+        return _cached
+
     feed = await client.get_intel_feed(
         date=date,
         session=session,
@@ -1801,7 +1833,7 @@ async def workspace_intel_context(
         limit=limit,
     )
     items = [i for i in (feed.get("items") or []) if i.get("source_channel") != "cninfo_announcement"]
-    return {
+    result = {
         "date": date,
         "subject_key": subject_key,
         "stock_id": stock_id,
@@ -1810,6 +1842,8 @@ async def workspace_intel_context(
         "diagnostics": dict(feed.get("diagnostics") or {}),
         "source": "intel_feed_proxy",
     }
+    _ws_cache_set(_ck, result)
+    return result
 
 
 @router.get("/workspace/market-validation")
@@ -1818,6 +1852,11 @@ async def workspace_market_validation(
     subject_key: str | None = Query(default=None),
     stock_id: str | None = Query(default=None),
 ) -> dict:
+    _ck = f"mkt_val:{trade_date}:{subject_key}:{stock_id}"
+    _cached = _ws_cache_get(_ck, ttl=20.0)
+    if _cached is not None:
+        return _cached
+
     import asyncio as _asyncio
     sw_task = _asyncio.create_task(client.get_strong_watch(trade_date))
     w2s_task = _asyncio.create_task(client.get_w2s_candidates(trade_date))
@@ -1891,7 +1930,7 @@ async def workspace_market_validation(
         except Exception:
             pass
 
-    return {
+    result = {
         "trade_date": trade_date,
         "subject_key": subject_key,
         "stock_id": stock_id,
@@ -1904,6 +1943,8 @@ async def workspace_market_validation(
         "stock_validation": stock_view,
         "theme_validation": theme_validation,
     }
+    _ws_cache_set(_ck, result)
+    return result
 
 
 @router.get("/intel/stream")
