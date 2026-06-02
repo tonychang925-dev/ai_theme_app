@@ -972,7 +972,13 @@ async def jyhf_auction_stop(request: Request) -> dict:
 # ── P0-C2: 统一状态聚合接口，替代多个独立轮询 ──
 
 # new-chain 状态缓存：SPS 8090 频繁超时导致 status-bundle 被拖死时兜底
-_new_chain_cache: dict = {"data": None, "ts": 0.0, "max_age_s": 60}
+_new_chain_cache: dict = {
+    "data": None,        # 最近一次成功的 SPS 响应
+    "ts": 0.0,           # 成功时间戳
+    "max_age_s": 60,     # 缓存有效期
+    "failures": 0,       # 连续失败次数
+    "circuit_open_until": 0.0,  # 熔断结束时间（跳过 SPS 调用）
+}
 
 
 @router.get("/realtime/status-bundle")
@@ -982,21 +988,39 @@ async def realtime_status_bundle(request: Request) -> dict:
     import time as _time
 
     async def _new_chain():
+        now_ts = _time.time()
+
+        # 熔断：连续失败 2 次后跳过 SPS 调用 30s，避免每次 4s 超时拖死 bundle
+        if _new_chain_cache["failures"] >= 2 and now_ts < _new_chain_cache["circuit_open_until"]:
+            cached = _new_chain_cache["data"]
+            if cached:
+                cached = dict(cached)
+                cached["_cached"] = True
+                cached["_circuit_open"] = True
+                cached["_cache_age_s"] = round(now_ts - _new_chain_cache["ts"], 1)
+                return cached
+            return {"running": False, "error": "circuit open — SPS unreachable", "_circuit_open": True}
+
         try:
             async with httpx.AsyncClient(timeout=4.0, trust_env=False) as c:
                 r = await c.get(f"{STOCK_PROCESSING_BASE_URL}/api/v1/realtime/status")
                 r.raise_for_status()
                 data = r.json()
                 _new_chain_cache["data"] = data
-                _new_chain_cache["ts"] = _time.time()
+                _new_chain_cache["ts"] = now_ts
+                _new_chain_cache["failures"] = 0
+                _new_chain_cache["circuit_open_until"] = 0.0
                 return data
         except Exception as exc:
-            # 缓存兜底：SPS 不可达时返回最后已知状态，最多缓存 60s
+            _new_chain_cache["failures"] += 1
+            if _new_chain_cache["failures"] >= 2:
+                _new_chain_cache["circuit_open_until"] = now_ts + 30  # 熔断 30s
+            # 缓存兜底：SPS 不可达时返回最后已知状态
             cached = _new_chain_cache["data"]
-            if cached and (_time.time() - _new_chain_cache["ts"]) < _new_chain_cache["max_age_s"]:
+            if cached and (now_ts - _new_chain_cache["ts"]) < _new_chain_cache["max_age_s"]:
                 cached = dict(cached)
                 cached["_cached"] = True
-                cached["_cache_age_s"] = round(_time.time() - _new_chain_cache["ts"], 1)
+                cached["_cache_age_s"] = round(now_ts - _new_chain_cache["ts"], 1)
                 return cached
             return {"running": False, "error": str(exc)}
 
