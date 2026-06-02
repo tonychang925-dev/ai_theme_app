@@ -336,6 +336,69 @@ function DiagnosticsPanel({ payload }: { payload: PreMarketBriefView }) {
   );
 }
 
+function EngineBridgePanel({ bridge }: { bridge?: PreMarketBriefView["engine_bridge"] }) {
+  if (!bridge) return null;
+  const rows = bridge.execution_plan_rows || [];
+  return (
+    <section className="workspace-card pre-market-section">
+      <span className="metric-label section-title">0、引擎桥接</span>
+      <div className="pre-market-summary-grid" style={{ marginTop: 8 }}>
+        <div className="workspace-card">
+          <span className="metric-label">引擎状态</span>
+          <strong>{bridge.ready ? "就绪" : "未就绪"}</strong>
+        </div>
+        <div className="workspace-card">
+          <span className="metric-label">交易模式</span>
+          <strong>{text(bridge.trade_mode, "no_trade")}</strong>
+        </div>
+        <div className="workspace-card">
+          <span className="metric-label">允许交易</span>
+          <strong>{bridge.allow_trade ? "是" : "否"}</strong>
+        </div>
+        <div className="workspace-card is-risk">
+          <span className="metric-label">阻断规则</span>
+          <strong>{text(bridge.no_trade_blocking_rule)}</strong>
+        </div>
+        <div className="workspace-card is-basis">
+          <span className="metric-label">观察清单</span>
+          <strong>{bridge.observation_list?.length || 0}</strong>
+        </div>
+        <div className="workspace-card is-basis">
+          <span className="metric-label">D2 待确认</span>
+          <strong>{bridge.d2_pending_list?.length || 0}</strong>
+        </div>
+      </div>
+      {bridge.next_day_strategy && <p className="workspace-note" style={{ marginTop: 8 }}>{bridge.next_day_strategy}</p>}
+      {rows.length > 0 && (
+        <div className="recap-table-wrap" style={{ marginTop: 12 }}>
+          <table className="recap-table pre-market-opportunity-table">
+            <thead>
+              <tr>
+                <th>题材</th>
+                <th>行动</th>
+                <th>关注股票</th>
+                <th>信号</th>
+                <th>原因</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.slice(0, 10).map((row, idx) => (
+                <tr key={`${String(row.subject_key || row.theme_name || "row")}-${idx}`}>
+                  <td>{text(row.theme_name || row.subject_key)}</td>
+                  <td>{text(row.action_today || row.auction_action_today)}</td>
+                  <td>{text(row.auction_focus_stock_name || row.leader_stock_name)}</td>
+                  <td>{text(row.auction_signal_level || row.auction_signal_type)}</td>
+                  <td className="recap-cell-wrap">{text(row.watch_reason || row.auction_hard_reject_reason)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  );
+}
+
 export function PreMarketBriefPage() {
   const initialDate = useMemo(() => new URLSearchParams(window.location.search).get("trade_date") || new URLSearchParams(window.location.search).get("date") || todayIso(), []);
   const [tradeDate, setTradeDate] = useState(initialDate);
@@ -368,6 +431,7 @@ export function PreMarketBriefPage() {
   }, [tradeDate, refreshNonce]);
 
   const sections = payload?.payload?.sections || {};
+  const engineBridge = payload?.engine_bridge;
   const status = payload?.status || payload?.payload?.status || "missing";
   const majorEvents = sections.major_events || [];
   const matchedThemes = sections.matched_themes || [];
@@ -439,6 +503,7 @@ export function PreMarketBriefPage() {
       {!loading && !error && payload && (
         <main className="workspace-layout single">
           <section className="workspace-column">
+            <EngineBridgePanel bridge={engineBridge} />
             <div className="pre-market-summary-grid">
               <div className="workspace-card">
                 <span className="metric-label">重大事件</span>

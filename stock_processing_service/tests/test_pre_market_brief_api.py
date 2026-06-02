@@ -113,6 +113,37 @@ async def test_get_pre_market_brief_missing_returns_empty_payload(monkeypatch: p
 
 
 @pytest.mark.asyncio
+async def test_get_pre_market_brief_v2_includes_engine_bridge(monkeypatch: pytest.MonkeyPatch) -> None:
+    gateway = _Gateway()
+    gateway.row = {
+        "trade_date": date(2026, 5, 16),
+        "snapshot_version": "pre_market_brief.v1",
+        "status": "draft",
+        "payload": {"sections": {}},
+        "generated_at": "2026-05-16T01:00:00+00:00",
+        "finalized_at": None,
+        "updated_at": "2026-05-16T01:00:00+00:00",
+    }
+    monkeypatch.setattr(api_app.app, "state", SimpleNamespace(gateway=gateway), raising=False)
+    async def _bridge(trade_date: date):
+        return {
+            "ready": True,
+            "trade_date": trade_date.isoformat(),
+            "trade_mode": "no_trade",
+            "allow_trade": False,
+            "execution_plan_rows": [{"theme_name": "机器人"}],
+        }
+
+    monkeypatch.setattr(api_app, "_build_pre_market_engine_bridge", _bridge)
+
+    payload = await api_app.get_pre_market_brief_v2("2026-05-16")
+
+    assert payload["snapshot_version"] == "pre_market_brief.v1"
+    assert payload["engine_bridge"]["ready"] is True
+    assert payload["engine_bridge"]["execution_plan_rows"][0]["theme_name"] == "机器人"
+
+
+@pytest.mark.asyncio
 async def test_get_trade_calendar_exposes_next_trade_date(monkeypatch: pytest.MonkeyPatch) -> None:
     gateway = _Gateway()
     monkeypatch.setattr(api_app.app, "state", SimpleNamespace(gateway=gateway), raising=False)
@@ -233,3 +264,52 @@ async def test_force_rebuild_can_overwrite_final(monkeypatch: pytest.MonkeyPatch
     assert payload["ok"] is True
     assert gateway.upserts[-1]["force"] is True
     assert gateway.row["payload"]["diagnostics"]["matched_event_count"] == 1
+
+
+@pytest.mark.asyncio
+async def test_publish_pre_market_brief_to_notion_injects_engine_bridge(monkeypatch: pytest.MonkeyPatch) -> None:
+    gateway = _Gateway()
+    gateway.row = {
+        "trade_date": date(2026, 5, 16),
+        "snapshot_version": "pre_market_brief.v1",
+        "status": "draft",
+        "payload": {"sections": {"major_events": []}},
+        "generated_at": "2026-05-16T01:00:00+00:00",
+        "finalized_at": None,
+        "updated_at": "2026-05-16T01:00:00+00:00",
+    }
+    monkeypatch.setattr(api_app.app, "state", SimpleNamespace(gateway=gateway), raising=False)
+    async def _bridge(trade_date: date):
+        return {
+            "ready": True,
+            "trade_date": trade_date.isoformat(),
+            "trade_mode": "no_trade",
+            "allow_trade": False,
+        }
+
+    monkeypatch.setattr(api_app, "_build_pre_market_engine_bridge", _bridge)
+
+    captured: dict[str, object] = {}
+
+    class _Publisher:
+        def publish_snapshot(self, *, row, payload, force, dry_run, report_type):
+            captured["payload"] = payload
+            captured["report_type"] = report_type
+            return SimpleNamespace(
+                page_id="page-1",
+                page_url="https://notion.local/page-1",
+                action="created",
+                report_id="pre_market_brief:2026-05-16",
+                trade_date="2026-05-16",
+            )
+
+    monkeypatch.setattr(api_app.NotionPostMarketRecapPublisher, "from_env", classmethod(lambda cls: _Publisher()))
+
+    result = await api_app.publish_pre_market_brief_to_notion(
+        api_app.PreMarketBriefFinalizePayload(trade_date="2026-05-16")
+    )
+
+    assert result["ok"] is True
+    assert result["report_type"] == "pre_market_brief"
+    assert captured["report_type"] == "pre_market_brief"
+    assert captured["payload"]["engine_bridge"]["ready"] is True

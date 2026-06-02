@@ -462,6 +462,22 @@ class DatabaseGateway:
             logger.error(f"读取 pre_market_brief_snapshot 失败 trade_date={trade_date}: {e}")
             raise
 
+    async def fetch_pre_market_execution_plans(self, trade_date, limit: int = 30, include_avoid: bool = False) -> list[Dict[str, Any]]:
+        """股票域显式读取：盘前执行计划。"""
+        try:
+            start_time = time.time()
+            fn = getattr(self._client, "fetch_pre_market_execution_plans", None)
+            if not callable(fn):
+                self._record_request(True, start_time)
+                return []
+            result = await fn(trade_date, limit=limit, include_avoid=include_avoid)
+            self._record_request(True, start_time)
+            return [dict(row) for row in result or []]
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 pre_market_execution_plan 失败 trade_date={trade_date}: {e}")
+            raise
+
     async def get_existing_post_market_recap_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
         """股票域显式读取：盘后复盘快照文档。"""
         try:

@@ -56,6 +56,20 @@ def _safe_json_dumps(value, default_empty=None) -> str:
     return json.dumps(value, ensure_ascii=False, default=_json_default)
 
 
+def _coerce_json_list(value) -> list:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return value
+    if isinstance(value, str):
+        try:
+            parsed = json.loads(value)
+            return parsed if isinstance(parsed, list) else []
+        except Exception:
+            return []
+    return list(value) if hasattr(value, "__iter__") else []
+
+
 try:
     # 尝试相对导入（正常包情况下）
     from .base_manager import BaseDatabaseManager
@@ -3179,6 +3193,53 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         except Exception as e:
             logger.warning(f"读取 pre_market_brief_snapshot 失败（可能尚未迁移）: {e}")
             return None
+
+    async def fetch_pre_market_execution_plans(self, trade_date: str, limit: int = 30, include_avoid: bool = False):
+        """读取 pre_market_execution_plan 的前 N 条记录。"""
+        sql = """
+        SELECT
+            source_trade_date,
+            subject_key,
+            theme_name,
+            theme_status,
+            leader_stock_id,
+            leader_stock_name,
+            leader_status,
+            action_today,
+            action_bias,
+            watch_reason,
+            auction_focus_stock_id,
+            auction_focus_stock_name,
+            auction_signal_level,
+            auction_signal_type,
+            auction_action_today,
+            auction_signal_score,
+            auction_hard_reject_reason,
+            invalid_conditions
+        FROM pre_market_execution_plan
+        WHERE trade_date = $1::date
+          AND ($3::boolean = TRUE OR action_today <> 'avoid')
+        ORDER BY
+            CASE action_today
+                WHEN 'act' THEN 0
+                WHEN 'watch' THEN 1
+                ELSE 2
+            END,
+            theme_name
+        LIMIT $2
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, trade_date, limit, include_avoid)
+        except Exception as e:
+            logger.warning(f"读取 pre_market_execution_plan 失败（可能尚未迁移）: {e}")
+            return []
+        results = []
+        for row in rows:
+            item = dict(row)
+            item["invalid_conditions"] = _coerce_json_list(item.get("invalid_conditions"))
+            results.append(item)
+        return results
 
     async def get_existing_pre_market_brief_snapshot(self, trade_date) -> Optional[Dict[str, Any]]:
         """兼容旧读口：读取 pre_market_brief_snapshot 文档对象。"""

@@ -945,12 +945,34 @@ export interface PreMarketBriefPayload {
   diagnostics?: Record<string, unknown>;
 }
 
+export interface PreMarketEngineBridge {
+  ready?: boolean;
+  trade_date?: string;
+  source_trade_date?: string | null;
+  window_source?: string;
+  allow_trade?: boolean;
+  trade_mode?: string;
+  position_limit?: number | null;
+  no_trade_blocking_rule?: string | null;
+  next_day_strategy?: string | null;
+  engine_summary?: Record<string, unknown>;
+  market_regime_review?: Record<string, unknown>;
+  mainline_daily_states?: Array<Record<string, unknown>>;
+  post_market_decision_v2?: Record<string, unknown>;
+  observation_list?: string[];
+  d2_pending_list?: string[];
+  risk_notes?: string[];
+  execution_plan_rows?: Array<Record<string, unknown>>;
+  diagnostics?: Record<string, unknown>;
+}
+
 export interface PreMarketBriefView {
   ok?: boolean;
   trade_date: string;
   snapshot_version?: string;
   status?: string;
   payload: PreMarketBriefPayload;
+  engine_bridge?: PreMarketEngineBridge;
   diagnostics?: Record<string, unknown>;
   generated_at?: string | null;
   finalized_at?: string | null;

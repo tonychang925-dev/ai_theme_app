@@ -270,11 +270,67 @@ class NotionPostMarketRecapPublisher:
             return name_map[subject_key]
         return f"{subject_key}"
 
+    def _build_pre_market_engine_bridge_blocks(self, payload: dict[str, Any]) -> list[dict[str, Any]]:
+        B = NotionBlockBuilder
+        bridge = payload.get("engine_bridge") or {}
+        if not isinstance(bridge, dict) or not bridge:
+            return []
+
+        blocks: list[dict[str, Any]] = []
+        blocks.append(B.heading_2("0、引擎桥接"))
+        blocks.append(
+            B.callout(
+                f'状态: {"就绪" if bridge.get("ready") else "未就绪"} | '
+                f'交易模式: {bridge.get("trade_mode") or "no_trade"} | '
+                f'允许交易: {"是" if bridge.get("allow_trade") else "否"} | '
+                f'阻断: {bridge.get("no_trade_blocking_rule") or "无"}',
+                icon="🧭",
+            )
+        )
+        if bridge.get("next_day_strategy"):
+            blocks.append(B.paragraph(f"次日策略：{bridge.get('next_day_strategy')}"))
+
+        observations = bridge.get("observation_list") or []
+        if observations:
+            blocks.append(B.paragraph("观察清单："))
+            for item in observations[:5]:
+                blocks.append(B.bullet(str(item)))
+
+        pending = bridge.get("d2_pending_list") or []
+        if pending:
+            blocks.append(B.paragraph("D2 待确认："))
+            for item in pending[:5]:
+                blocks.append(B.bullet(str(item)))
+
+        risk_notes = bridge.get("risk_notes") or []
+        if risk_notes:
+            blocks.append(B.paragraph("风险提示："))
+            for item in risk_notes[:5]:
+                blocks.append(B.bullet(str(item)))
+
+        exec_rows = bridge.get("execution_plan_rows") or []
+        if exec_rows:
+            headers = ["题材", "行动", "股票", "信号", "原因"]
+            rows: list[list[str]] = []
+            for row in exec_rows[:10]:
+                rows.append([
+                    str(row.get("theme_name") or row.get("subject_key") or "--"),
+                    str(row.get("action_today") or "--"),
+                    str(row.get("auction_focus_stock_name") or row.get("leader_stock_name") or "--"),
+                    str(row.get("auction_signal_level") or row.get("auction_signal_type") or "--"),
+                    str(row.get("watch_reason") or row.get("auction_hard_reject_reason") or "--"),
+                ])
+            blocks.extend(B.table(headers, rows))
+        blocks.append(B.divider())
+        return blocks
+
     def _build_pre_market_blocks(self, payload: dict[str, Any], trade_date: str) -> list[dict[str, Any]]:
         B = NotionBlockBuilder
         sections = payload.get("sections") or {}
         diagnostics = payload.get("diagnostics") or {}
         blocks: list[dict[str, Any]] = []
+
+        blocks.extend(self._build_pre_market_engine_bridge_blocks(payload))
 
         blocks.append(B.heading_2("一、今日重大事件"))
         major = sections.get("major_events") or []

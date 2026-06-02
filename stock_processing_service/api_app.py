@@ -37,6 +37,7 @@ from stock_processing_service.application.services.event_driven_opportunity_buil
     EventDrivenOpportunityBuilder,
 )
 from stock_processing_service.application.services.pre_market_brief_builder import PreMarketBriefBuilder
+from stock_processing_service.application.services.pre_market_engine_bridge_service import PreMarketEngineBridgeService
 from stock_processing_service.application.services.trade_plan_review_service import TradePlanReviewService
 from stock_processing_service.application.jobs.collection_job_manager import CollectionJobManager
 from stock_processing_service.publishers.notion_post_market_recap_publisher import NotionPostMarketRecapPublisher
@@ -2549,6 +2550,61 @@ async def get_stock_workspace(stock_id: str) -> dict[str, Any]:
     return result
 
 
+async def _build_pre_market_engine_bridge(trade_date: date) -> dict[str, Any]:
+    bridge_service = PreMarketEngineBridgeService()
+    try:
+        return await bridge_service.build(gateway=app.state.gateway, trade_date=trade_date)
+    except Exception as exc:
+        logger.warning("build pre_market engine bridge failed: %s", exc)
+        return {
+            "ready": False,
+            "trade_date": trade_date.isoformat(),
+            "source_trade_date": None,
+            "window_source": "error",
+            "allow_trade": False,
+            "trade_mode": "no_trade",
+            "position_limit": 0,
+            "no_trade_blocking_rule": None,
+            "next_day_strategy": "",
+            "engine_summary": {},
+            "market_regime_review": {},
+            "mainline_daily_states": [],
+            "post_market_decision_v2": {},
+            "observation_list": [],
+            "d2_pending_list": [],
+            "risk_notes": [],
+            "execution_plan_rows": [],
+            "diagnostics": {
+                "error": str(exc),
+                "bridge_ready": False,
+            },
+        }
+
+
+async def _get_pre_market_brief_payload(trade_date: date) -> dict[str, Any]:
+    row = await app.state.gateway.get_pre_market_brief_snapshot(trade_date)
+    engine_bridge = await _build_pre_market_engine_bridge(trade_date)
+    if not row:
+        return {
+            "trade_date": trade_date.isoformat(),
+            "snapshot_version": "missing",
+            "status": "missing",
+            "payload": {},
+            "engine_bridge": engine_bridge,
+        }
+    payload = dict(row.get("payload") or {})
+    return {
+        "trade_date": str(row.get("trade_date") or trade_date.isoformat()),
+        "snapshot_version": str(row.get("snapshot_version") or "unknown"),
+        "status": str(row.get("status") or payload.get("status") or "draft"),
+        "payload": payload,
+        "engine_bridge": engine_bridge,
+        "generated_at": str(row.get("generated_at") or "") or None,
+        "finalized_at": str(row.get("finalized_at") or "") or None,
+        "updated_at": str(row.get("updated_at") or "") or None,
+    }
+
+
 @app.get("/api/v1/pre_market_brief")
 async def get_pre_market_brief(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
     try:
@@ -2574,6 +2630,15 @@ async def get_pre_market_brief(trade_date: str = Query(..., description="YYYY-MM
     }
 
 
+@app.get("/api/v2/pre_market_brief")
+async def get_pre_market_brief_v2(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
+    try:
+        d = date.fromisoformat(trade_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {trade_date}") from exc
+    return await _get_pre_market_brief_payload(d)
+
+
 @app.post("/api/v1/pre_market_brief/publish-notion")
 async def publish_pre_market_brief_to_notion(payload: PreMarketBriefFinalizePayload) -> dict[str, Any]:
     try:
@@ -2585,10 +2650,14 @@ async def publish_pre_market_brief_to_notion(payload: PreMarketBriefFinalizePayl
     if not row:
         raise HTTPException(status_code=404, detail="pre_market_brief_snapshot not found")
 
+    engine_bridge = await _build_pre_market_engine_bridge(d)
+    payload_doc = dict(row.get("payload") or {})
+    payload_doc["engine_bridge"] = engine_bridge
+
     publisher = NotionPostMarketRecapPublisher.from_env()
     result = publisher.publish_snapshot(
         row=row,
-        payload=row.get("payload") or {},
+        payload=payload_doc,
         force=payload.force,
         dry_run=False,
         report_type="pre_market_brief",
@@ -5522,4 +5591,3 @@ async def submit_mainline_review_decision(review_id: str, payload: dict[str, Any
 
         # watch / reject / downgrade_to_theme — queue only, no registry
         return {"ok": True, "action": decision, "registry_written": False}
-
