@@ -28,12 +28,18 @@ select {
 
 .workspace-page {
   padding: 18px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 .recap-dark-theme {
   min-height: 100vh;
   background: #0c1118;
   color: #8ddcff;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .recap-dark-theme,
@@ -129,12 +135,17 @@ select {
 }
 
 .recap-dark-theme .ant-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 4px 8px;
   border-radius: 999px;
-  border-color: transparent;
-  color: #111111 !important;
-  font-weight: 600;
-  padding: 2px 8px;
-  line-height: 1.25;
+  border: 1px solid #3b4a5d;
+  background: #16202a;
+  color: #dbe9ff !important;
+  font-weight: 400;
+  line-height: 1;
+  font-size: 12px;
 }
 
 .recap-dark-theme .ant-tag-green,
@@ -147,57 +158,67 @@ select {
 .recap-dark-theme .ant-tag-volcano,
 .recap-dark-theme .ant-tag-purple,
 .recap-dark-theme .ant-tag-default {
-  color: #111111 !important;
+  color: inherit !important;
 }
 
 .recap-dark-theme .ant-tag-green {
-  background: rgba(86, 198, 145, 0.86) !important;
-  border-color: rgba(86, 198, 145, 0.86) !important;
+  border-color: #2f6b53 !important;
+  background: rgba(86, 198, 145, 0.12) !important;
+  color: #8ee0a1 !important;
 }
 
 .recap-dark-theme .ant-tag-blue {
-  background: rgba(120, 169, 255, 0.86) !important;
-  border-color: rgba(120, 169, 255, 0.86) !important;
+  border-color: #355d8f !important;
+  background: rgba(120, 169, 255, 0.12) !important;
+  color: #9cc0ff !important;
 }
 
 .recap-dark-theme .ant-tag-orange {
-  background: rgba(247, 212, 90, 0.88) !important;
-  border-color: rgba(247, 212, 90, 0.88) !important;
+  border-color: #87661c !important;
+  background: rgba(247, 212, 90, 0.12) !important;
+  color: #f7d45a !important;
 }
 
 .recap-dark-theme .ant-tag-red {
-  background: rgba(255, 122, 122, 0.88) !important;
-  border-color: rgba(255, 122, 122, 0.88) !important;
+  border-color: #8a3d3d !important;
+  background: rgba(255, 122, 122, 0.12) !important;
+  color: #ffb0b0 !important;
 }
 
 .recap-dark-theme .ant-tag-gold {
-  background: rgba(247, 212, 90, 0.88) !important;
-  border-color: rgba(247, 212, 90, 0.88) !important;
+  border-color: #87661c !important;
+  background: rgba(247, 212, 90, 0.12) !important;
+  color: #f7d45a !important;
 }
 
 .recap-dark-theme .ant-tag-cyan {
-  background: rgba(102, 217, 239, 0.86) !important;
-  border-color: rgba(102, 217, 239, 0.86) !important;
+  border-color: #355d8f !important;
+  background: rgba(102, 217, 239, 0.12) !important;
+  color: #9ce4ff !important;
 }
 
 .recap-dark-theme .ant-tag-geekblue {
-  background: rgba(155, 109, 255, 0.84) !important;
-  border-color: rgba(155, 109, 255, 0.84) !important;
+  border-color: #6b4aa5 !important;
+  background: rgba(155, 109, 255, 0.14) !important;
+  color: #c7a8ff !important;
 }
 
 .recap-dark-theme .ant-tag-volcano {
-  background: rgba(255, 122, 122, 0.84) !important;
-  border-color: rgba(255, 122, 122, 0.84) !important;
+  border-color: #8a3d3d !important;
+  background: rgba(255, 122, 122, 0.12) !important;
+  color: #ffb0b0 !important;
 }
 
 .recap-dark-theme .ant-tag-purple {
-  background: rgba(155, 109, 255, 0.84) !important;
-  border-color: rgba(155, 109, 255, 0.84) !important;
+  border-color: #6b4aa5 !important;
+  background: rgba(155, 109, 255, 0.14) !important;
+  color: #c7a8ff !important;
 }
 
 .recap-dark-theme .ant-tag-default {
-  background: rgba(217, 217, 217, 0.85) !important;
-  border-color: rgba(217, 217, 217, 0.85) !important;
+  border-color: #3b4a5d !important;
+  background: #16202a !important;
+  color: #dbe9ff !important;
 }
 
 .recap-dark-theme .recap-panel-title {
@@ -310,6 +331,38 @@ select {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.workspace-layout.single {
+  min-width: 0;
+  width: 100%;
+}
+
+.workspace-column {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.recap-dark-theme .workspace-layout,
+.recap-dark-theme .workspace-column,
+.recap-dark-theme .workspace-card,
+.recap-dark-theme .workspace-card > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.recap-dark-theme .workspace-card,
+.recap-dark-theme .workspace-note,
+.recap-dark-theme .recap-table,
+.recap-dark-theme .ant-table-wrapper,
+.recap-dark-theme .ant-table-container,
+.recap-dark-theme .ant-table-content {
+  max-width: 100%;
 }
 
 .recap-filters {
@@ -490,11 +543,27 @@ select {
   overflow-x: auto;
 }
 
+.recap-table-shell {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .recap-table {
   width: 100%;
   min-width: 860px;
   border-collapse: collapse;
   font-size: 13px;
+}
+
+.recap-dark-theme .ant-table-wrapper,
+.recap-dark-theme .ant-table-container,
+.recap-dark-theme .ant-table-content,
+.recap-dark-theme .ant-table,
+.recap-dark-theme .ant-table-container table {
+  max-width: 100%;
+  min-width: 0;
 }
 
 .recap-table th,
@@ -1383,6 +1452,8 @@ select {
   display: grid;
   gap: 10px;
   align-content: start;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .market-bias-card {
@@ -2051,6 +2122,10 @@ select {
   border-radius: 8px;
   padding: 8px 14px;
   margin-bottom: 14px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .strong-watch-toolbar .back-button {
@@ -2059,7 +2134,7 @@ select {
 
 .strong-watch-title {
   margin: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .strong-watch-toolbar label {
@@ -2069,8 +2144,17 @@ select {
   border-radius: 8px;
   background: #1a1a1a;
   border: 1px solid #2a2a2a;
-  min-width: 120px;
-  flex-shrink: 0;
+  min-width: 160px;
+  flex: 0 0 auto;
+}
+
+.strong-watch-toolbar > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  flex: 0 0 auto;
+  min-width: max-content;
 }
 
 .strong-watch-toolbar span {
