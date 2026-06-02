@@ -569,7 +569,15 @@ export interface IndexTechnicalReview {
   macd_state?: string | null;
   support_level?: number | null;
   resistance_level?: number | null;
+  nearest_support_level?: number | null;
+  nearest_resistance_level?: number | null;
+  support_distance_pct?: number | null;
+  resistance_distance_pct?: number | null;
+  support_status?: string | null;
+  resistance_status?: string | null;
   volume_pattern?: string | null;
+  index_trade_hint?: string | null;
+  warning_level?: string | null;
   risk_flags?: string[];
   conclusion?: string | null;
 }
@@ -636,6 +644,7 @@ export interface PostMarketDailyReviewV2 {
   };
   market_environment_review?: Record<string, unknown>;
   market_summary: MarketSummaryReview;
+  market_overview_review?: MarketOverviewReview;
   theme_reviews: ThemeReviewV2[];
   theme_capital_reviews: ThemeCapitalReview[];
   strong_stock_reviews: StrongStockReviewV2[];
@@ -655,6 +664,43 @@ export interface PostMarketDailyReviewV2 {
   post_market_decision_v2?: PostMarketDecisionV2Review;
   // PR-14C: evidence alignment
   evidence_alignment_index?: EvidenceAlignmentIndex;
+}
+
+export interface ThemeLimitUpStock {
+  stock_id: string;
+  stock_name: string;
+  board_count?: number | null;
+  role_label?: string | null;
+  in_layer_c?: boolean;
+  is_d1_candidate?: boolean;
+  trade_action?: string | null;
+}
+
+export interface ThemeLimitUpColumn {
+  subject_key: string;
+  theme_name: string;
+  limit_up_count: number;
+  active_mainline: boolean;
+  lifecycle_state?: string | null;
+  trade_action?: string | null;
+  focus_stocks: ThemeLimitUpStock[];
+}
+
+export interface ThemeLimitUpMatrix {
+  columns: ThemeLimitUpColumn[];
+  max_rows: number;
+  count_method: "display_by_theme" | string;
+}
+
+export interface MarketOverviewReview {
+  trade_date: string;
+  limit_up_total?: number | null;
+  limit_down_total?: number | null;
+  up_count?: number | null;
+  down_count?: number | null;
+  total_amount?: number | null;
+  theme_limitup_matrix: ThemeLimitUpMatrix;
+  diagnostics?: Record<string, unknown>;
 }
 
 // ── P1-6: PostMarket readiness / jobs status ──

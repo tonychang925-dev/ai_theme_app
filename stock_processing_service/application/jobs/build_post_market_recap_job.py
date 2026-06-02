@@ -613,7 +613,12 @@ class BuildPostMarketRecapJob:
         )
         recap_doc.update(decision_payload)
 
-        recap_doc["report"] = self._report_builder.build(recap_doc)
+        recap_report = self._report_builder.build(recap_doc)
+        recap_doc["report"] = recap_report
+        if isinstance(recap_report, dict):
+            market_overview_review = recap_report.get("market_overview_review")
+            if isinstance(market_overview_review, dict):
+                recap_doc["market_overview_review"] = market_overview_review
 
         snapshot = PostMarketRecapSnapshot(
             trade_date=trade_date,
@@ -1152,31 +1157,6 @@ class BuildPostMarketRecapJob:
                 layer_c_source = "strong_stock_reviews_fallback"
             else:
                 layer_c_rows = []
-
-            # ── PR-13C: supplement Layer C from DB for active mainline subjects
-            # that the strong_watch seed query may have missed (e.g. backfilled mainlines)
-            if layer_c_source != "strong_watch_history":
-                try:
-                    from database_service.managers.postgres_manager import PostgresDatabaseManager
-                    pool = getattr(getattr(self._read_port, "_db", None), "pool", None)
-                    if pool:
-                        mainline_sks_for_supplement = list(active_universe.active_subject_keys)
-                        async with pool.acquire() as conn:
-                            supplement_rows = await conn.fetch(
-                                """SELECT * FROM strong_stock_watch_history
-                                   WHERE trade_date = $1::date
-                                     AND subject_key = ANY($2::text[])""",
-                                trade_date, mainline_sks_for_supplement,
-                            )
-                        if supplement_rows:
-                            supplement = [dict(r) for r in supplement_rows]
-                            existing_ids = {(str(r.get("stock_id") or ""), str(r.get("subject_key") or "")) for r in layer_c_rows}
-                            new_rows = [r for r in supplement if (str(r.get("stock_id") or ""), str(r.get("subject_key") or "")) not in existing_ids]
-                            if new_rows:
-                                layer_c_rows = list(layer_c_rows) + new_rows
-                                layer_c_source = f"{layer_c_source}+db_supplement"
-                except Exception:
-                    pass  # best-effort fallback
 
             pdv2_engine = PostMarketDecisionEngineV2()
             pdv2 = pdv2_engine.evaluate(

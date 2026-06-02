@@ -18,7 +18,7 @@ class PostMarketEngineReportComposer:
     Input: recap_doc (already populated with engine outputs)
     Output: dict with engine_summary, market_regime_review,
             index_technical_reviews, mainline_daily_states,
-            post_market_decision_v2
+            post_market_decision_v2, market_overview_review
     """
 
     def compose(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
@@ -56,6 +56,9 @@ class PostMarketEngineReportComposer:
             mainline_daily_states, pdv2
         )
 
+        # ── 7. market overview ──
+        market_overview_review = self._pass_through(recap_doc, "market_overview_review")
+
         return {
             "engine_summary": engine_summary,
             "market_regime_review": market_regime_review,
@@ -63,6 +66,7 @@ class PostMarketEngineReportComposer:
             "mainline_daily_states": mainline_daily_states,
             "post_market_decision_v2": post_market_decision_v2,
             "evidence_alignment_index": evidence_alignment_index,
+            "market_overview_review": market_overview_review,
         }
 
     def _build_engine_summary(
@@ -120,6 +124,8 @@ class PostMarketEngineReportComposer:
             result.append({
                 "index_code": str(r.get("index_code", "")),
                 "index_name": str(r.get("index_name", "")),
+                "close": self._float_or_none(r.get("close")),
+                "pct_chg": self._float_or_none(r.get("pct_chg")),
                 "trend_state": str(r.get("trend_state", "")),
                 "trend_score": float(r.get("trend_score", 0) or 0),
                 "above_ma5": bool(r.get("above_ma5")),
@@ -128,9 +134,17 @@ class PostMarketEngineReportComposer:
                 "above_ma60": bool(r.get("above_ma60")),
                 "ma_structure": str(r.get("ma_structure", "")),
                 "macd_state": str(r.get("macd_state", "")),
-                "support_level": float(r.get("support_level", 0) or 0),
-                "resistance_level": float(r.get("resistance_level", 0) or 0),
+                "support_level": self._float_or_none(r.get("support_level")),
+                "resistance_level": self._float_or_none(r.get("resistance_level")),
+                "nearest_support_level": self._float_or_none(r.get("nearest_support_level")),
+                "nearest_resistance_level": self._float_or_none(r.get("nearest_resistance_level")),
+                "support_distance_pct": self._float_or_none(r.get("support_distance_pct")),
+                "resistance_distance_pct": self._float_or_none(r.get("resistance_distance_pct")),
+                "support_status": str(r.get("support_status", "")),
+                "resistance_status": str(r.get("resistance_status", "")),
                 "volume_pattern": str(r.get("volume_pattern", "")),
+                "index_trade_hint": str(r.get("index_trade_hint", "")),
+                "warning_level": str(r.get("warning_level", "normal")),
                 "risk_flags": flags if isinstance(flags, list) else [],
                 "conclusion": self._index_conclusion(r),
             })
@@ -192,6 +206,20 @@ class PostMarketEngineReportComposer:
             "trading_principle_v2": pdv2.get("trading_principle_v2", {}),
             "diagnostics": pdv2.get("diagnostics", {}),
         }
+
+    @staticmethod
+    def _float_or_none(value: Any) -> float | None:
+        try:
+            if value in (None, ""):
+                return None
+            return float(value)
+        except Exception:
+            return None
+
+    @staticmethod
+    def _pass_through(recap_doc: dict[str, Any], key: str) -> dict[str, Any]:
+        value = recap_doc.get(key)
+        return dict(value) if isinstance(value, dict) else {}
 
     def _action_bias(self, regime: dict, pdv2: dict) -> str:
         tp = pdv2.get("trading_permission", {})

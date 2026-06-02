@@ -37,7 +37,7 @@ class KlineTechnicalAnalyzer:
         sr = self._support_resistance(closes, highs, lows)
         vol = self._volume_analysis(volumes, amounts)
         macd = self._macd_analysis(closes)
-        trend = self._trend_analysis(closes, ma, sr, vol)
+        trend = self._trend_analysis(closes, ma, sr, vol, macd)
 
         return {"ma": ma, "support_resistance": sr, "volume": vol, "macd": macd, "trend": trend}
 
@@ -79,21 +79,49 @@ class KlineTechnicalAnalyzer:
     def _support_resistance(closes: list[float], highs: list[float], lows: list[float]) -> dict[str, Any]:
         n = len(closes)
         if n < 20: return _empty_sr()
-        near = closes[-20:]
-        r_high = max(highs[-20:]) if highs else None
-        s_low = min(lows[-20:]) if lows else None
+        recent_highs = highs[-20:] if highs else []
+        recent_lows = lows[-20:] if lows else []
+        r_high = max(recent_highs) if recent_highs else None
+        s_low = min(recent_lows) if recent_lows else None
         latest = closes[-1]
+        prev_close = closes[-2] if n >= 2 else None
 
-        pct_support = abs(latest - s_low) / s_low * 100 if s_low and s_low > 0 else None
-        pct_resist = abs(r_high - latest) / latest * 100 if r_high and latest > 0 else None
+        pct_support = ((latest - s_low) / latest * 100) if s_low and latest > 0 else None
+        pct_resist = ((r_high - latest) / latest * 100) if r_high and latest > 0 else None
 
-        broken = s_low and latest < s_low
-        near_r = r_high and pct_resist is not None and pct_resist < 3
+        support_broken = bool(s_low is not None and latest < s_low)
+        resistance_broken = bool(r_high is not None and latest > r_high)
+        near_support = bool(pct_support is not None and 0 <= pct_support <= 1.0)
+        near_resistance = bool(pct_resist is not None and 0 <= pct_resist <= 2.0)
 
-        return {"nearest_support": s_low, "nearest_resistance": r_high,
-                "distance_to_support_pct": round(pct_support, 2) if pct_support else None,
-                "distance_to_resistance_pct": round(pct_resist, 2) if pct_resist else None,
-                "support_broken": broken, "near_resistance": bool(near_r)}
+        if support_broken:
+            support_status = "support_broken"
+        elif near_support:
+            support_status = "near_support"
+        else:
+            support_status = "support_available" if s_low is not None else "unknown"
+
+        if resistance_broken:
+            resistance_status = "resistance_broken"
+        elif near_resistance:
+            resistance_status = "near_resistance"
+        else:
+            resistance_status = "resistance_available" if r_high is not None else "unknown"
+
+        return {
+            "nearest_support_level": s_low,
+            "nearest_resistance_level": r_high,
+            "support_level": s_low,
+            "resistance_level": r_high,
+            "support_distance_pct": round(pct_support, 2) if pct_support is not None else None,
+            "resistance_distance_pct": round(pct_resist, 2) if pct_resist is not None else None,
+            "support_broken": support_broken,
+            "resistance_broken": resistance_broken,
+            "near_support": near_support,
+            "near_resistance": near_resistance,
+            "previous_close": prev_close,
+            "latest_close": latest,
+        }
 
     @staticmethod
     def _volume_analysis(volumes: list[float], amounts: list[float]) -> dict[str, Any]:
@@ -135,14 +163,15 @@ class KlineTechnicalAnalyzer:
                 "macd_state": state, "macd_cross_state": cross}
 
     @staticmethod
-    def _trend_analysis(closes: list[float], ma: dict, sr: dict, vol: dict) -> dict[str, Any]:
+    def _trend_analysis(closes: list[float], ma: dict, sr: dict, vol: dict, macd: dict) -> dict[str, Any]:
         latest = closes[-1]
         ma20 = ma.get("ma20")
         above_ma20 = ma.get("above_ma20", False)
         ma20_slope = ma.get("ma20_slope", "unknown")
         ratio5 = vol.get("volume_ratio_5d", 1.0)
         near_r = sr.get("near_resistance", False)
-        macd_state = vol.get("macd_state", "unknown") if "macd_state" in vol else "unknown"
+        near_s = sr.get("near_support", False)
+        macd_state = macd.get("macd_state", "unknown")
 
         score = 50
         if above_ma20: score += 10
@@ -168,7 +197,13 @@ class KlineTechnicalAnalyzer:
         if not above_ma20: flags.append("指数在MA20下方")
         if ratio5 < 0.85 and not above_ma20: flags.append("缩量反抽")
         if near_r: flags.append("接近压力位")
+        if near_s: flags.append("接近支撑位")
         for f in ma.get("risk_flags", []): flags.append(f)
+
+        if sr.get("support_broken") and macd_state in {"below_zero_bearish", "below_zero_weak_rebound"}:
+            flags.append("支撑失守且MACD偏弱")
+        if sr.get("resistance_broken"):
+            flags.append("压力位突破")
 
         return {"trend_state": state, "trend_score": score, "risk_flags": flags[:5]}
 
@@ -190,9 +225,20 @@ def _empty_result() -> dict[str, Any]:
 
 
 def _empty_sr() -> dict[str, Any]:
-    return {"nearest_support": None, "nearest_resistance": None,
-            "distance_to_support_pct": None, "distance_to_resistance_pct": None,
-            "support_broken": False, "near_resistance": False}
+    return {
+        "nearest_support_level": None,
+        "nearest_resistance_level": None,
+        "support_level": None,
+        "resistance_level": None,
+        "support_distance_pct": None,
+        "resistance_distance_pct": None,
+        "support_broken": False,
+        "resistance_broken": False,
+        "near_support": False,
+        "near_resistance": False,
+        "previous_close": None,
+        "latest_close": None,
+    }
 
 
 def _empty_vol() -> dict[str, Any]:

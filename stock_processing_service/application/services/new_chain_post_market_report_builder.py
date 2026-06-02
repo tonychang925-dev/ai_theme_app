@@ -54,6 +54,12 @@ class NewChainPostMarketReportBuilder:
             subject_count=subject_count,
             top_stock_text=top_stock_text,
         )
+        market_overview_review = self._build_market_overview_review(
+            context=context,
+            theme_name_map=theme_name_map,
+            cycles_by_theme=cycles_by_theme,
+            stock_fact_map=stock_fact_map,
+        )
 
         sections = [
             {
@@ -131,6 +137,7 @@ class NewChainPostMarketReportBuilder:
                 f"强势观察池 {pool_written} 条，弱转强候选 {candidate_count} 条。"
             ),
             "highlights": highlights,
+            "market_overview_review": market_overview_review,
             "sections": sections,
             "metadata": {
                 "source": "stock_processing_service.new_chain",
@@ -281,6 +288,152 @@ class NewChainPostMarketReportBuilder:
             f"活跃脉络：强势观察池 {strong_watch_count} 条；弱转强候选 {candidate_count} 条；重点个股 {top_stock_text}",
             f"封板效率：{NewChainPostMarketReportBuilder._board_efficiency(market)}",
         ]
+
+    @staticmethod
+    def _build_market_overview_review(
+        *,
+        context: dict[str, Any],
+        theme_name_map: dict[str, str],
+        cycles_by_theme: dict[str, dict[str, Any]],
+        stock_fact_map: dict[tuple[str, str], dict[str, Any]],
+    ) -> dict[str, Any]:
+        market = dict(context.get("market") or {})
+        stock_rows = [dict(row or {}) for row in context.get("stock_facts") or []]
+        grouped = NewChainPostMarketReportBuilder._group_market_overview_rows(stock_rows, theme_name_map)
+
+        columns: list[dict[str, Any]] = []
+        for subject_key, item in grouped.items():
+            rows = item["rows"]
+            theme_name = item["theme_name"]
+            cycle = NewChainPostMarketReportBuilder._cycle_for(
+                cycles_by_theme,
+                subject_key=subject_key,
+                theme=theme_name,
+            )
+            active_mainline = bool(
+                cycle.get("final_mainline_alive")
+                and not cycle.get("fade_confirmed")
+            )
+            limit_up_count = sum(1 for row in rows if NewChainPostMarketReportBuilder._is_limit_up(row))
+            focus_stocks = NewChainPostMarketReportBuilder._build_focus_stocks(rows, stock_fact_map)
+            columns.append({
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+                "limit_up_count": limit_up_count,
+                "active_mainline": active_mainline,
+                "lifecycle_state": str(cycle.get("final_cycle_state") or item["rows"][0].get("cycle_state") or "unknown"),
+                "trade_action": NewChainPostMarketReportBuilder._theme_trade_action(cycle, limit_up_count),
+                "focus_stocks": focus_stocks,
+            })
+
+        columns.sort(
+            key=lambda col: (
+                -int(col.get("limit_up_count") or 0),
+                0 if col.get("active_mainline") else 1,
+                str(col.get("theme_name") or ""),
+            )
+        )
+        top_columns = columns[:10]
+        return {
+            "trade_date": str(context.get("trade_date") or market.get("trade_date") or ""),
+            "limit_up_total": NewChainPostMarketReportBuilder._int(market.get("limit_up_count")),
+            "limit_down_total": NewChainPostMarketReportBuilder._int(market.get("limit_down_count")),
+            "up_count": NewChainPostMarketReportBuilder._int(market.get("up_count")),
+            "down_count": NewChainPostMarketReportBuilder._int(market.get("down_count")),
+            "total_amount": market.get("market_total_amount"),
+            "theme_limitup_matrix": {
+                "columns": top_columns,
+                "max_rows": max((len(col.get("focus_stocks") or []) for col in top_columns), default=0),
+                "count_method": "display_by_theme",
+            },
+            "diagnostics": {
+                "theme_count": len(columns),
+                "stock_count": len(stock_rows),
+            },
+        }
+
+    @staticmethod
+    def _group_market_overview_rows(
+        rows: list[dict[str, Any]],
+        theme_name_map: dict[str, str],
+    ) -> dict[str, dict[str, Any]]:
+        grouped: dict[str, dict[str, Any]] = {}
+        for row in rows:
+            subject_key = str(row.get("subject_key") or "").strip()
+            theme_name = NewChainPostMarketReportBuilder._theme_name(row, theme_name_map)
+            group_key = subject_key or theme_name
+            bucket = grouped.setdefault(group_key, {"subject_key": subject_key or group_key, "theme_name": theme_name, "rows": []})
+            bucket["rows"].append(row)
+        return grouped
+
+    @staticmethod
+    def _is_limit_up(row: dict[str, Any]) -> bool:
+        if bool(row.get("limit_up")):
+            return True
+        pct = NewChainPostMarketReportBuilder._float(row.get("pct_chg"))
+        return pct >= 9.5
+
+    @staticmethod
+    def _build_focus_stocks(
+        rows: list[dict[str, Any]],
+        stock_fact_map: dict[tuple[str, str], dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        def _priority(row: dict[str, Any]) -> tuple[int, int, float, float]:
+            fact = NewChainPostMarketReportBuilder._fact_for(row, stock_fact_map)
+            in_layer_c = 0 if bool(row.get("in_layer_c") or fact.get("is_leader") or fact.get("leader_composite_score") is not None) else 1
+            is_d1 = 0 if bool(row.get("is_d1_candidate") or row.get("watch_score") is not None or row.get("candidate_score") is not None) else 1
+            board_count = int(
+                row.get("max_consecutive_limit_up_days")
+                or row.get("limit_up_days")
+                or row.get("board_count")
+                or 0
+            )
+            inflow = NewChainPostMarketReportBuilder._float(row.get("main_net_inflow") or fact.get("main_net_inflow"))
+            pct = NewChainPostMarketReportBuilder._float(row.get("pct_chg") or fact.get("pct_chg"))
+            return (in_layer_c, is_d1, -max(board_count, 0), -(inflow + pct))
+
+        top_rows = sorted(rows, key=_priority)[:6]
+        focus: list[dict[str, Any]] = []
+        for row in top_rows:
+            fact = NewChainPostMarketReportBuilder._fact_for(row, stock_fact_map)
+            board_count = int(
+                row.get("max_consecutive_limit_up_days")
+                or row.get("limit_up_days")
+                or row.get("board_count")
+                or fact.get("max_consecutive_limit_up_days")
+                or 0
+            )
+            focus.append({
+                "stock_id": str(row.get("stock_id") or ""),
+                "stock_name": str(row.get("stock_name") or row.get("stock_id") or ""),
+                "board_count": board_count if board_count > 0 else None,
+                "role_label": str(row.get("role_label") or row.get("role") or row.get("candidate_level") or ""),
+                "in_layer_c": bool(row.get("in_layer_c") or fact.get("is_leader") or fact.get("leader_composite_score") is not None),
+                "is_d1_candidate": bool(row.get("is_d1_candidate") or row.get("watch_score") is not None or row.get("candidate_score") is not None),
+                "trade_action": str(row.get("trade_action") or row.get("next_day_action") or "观察"),
+            })
+        return focus
+
+    @staticmethod
+    def _theme_trade_action(cycle: dict[str, Any], limit_up_count: int) -> str:
+        if cycle.get("fade_confirmed"):
+            return "回避"
+        if cycle.get("fade_watch"):
+            return "观察"
+        if bool(cycle.get("final_mainline_alive")) and limit_up_count > 0:
+            state = str(cycle.get("final_cycle_state") or "")
+            if state in {"start", "fermentation", "acceleration"}:
+                return "主线参与"
+            if state in {"divergence", "repair"}:
+                return "主线分歧"
+            if state in {"climax"}:
+                return "谨慎"
+            return "主线观察"
+        if limit_up_count >= 3:
+            return "轮动跟随"
+        if limit_up_count > 0:
+            return "轮动观察"
+        return "观察"
 
     @staticmethod
     def _market_lines_from_summary(summary: dict[str, Any], market: dict[str, Any]) -> list[str]:

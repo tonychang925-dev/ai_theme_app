@@ -98,6 +98,7 @@ class PostMarketDailyReviewV2Builder:
             },
             "market_environment_review": self._market_environment_review(doc),
             "market_summary": self._market_summary(doc),
+            "market_overview_review": self._pass_through_dict(doc, "market_overview_review"),
             "theme_decision_reviews": self._pass_through_list(doc, "theme_decision_reviews"),
             "theme_reviews": theme_reviews,
             "theme_capital_reviews": theme_capital_reviews,
