@@ -2895,7 +2895,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     NULLIF(vtb.theme_name, ''),
                     r.subject_key
                 ) AS theme_name,
-                COALESCE(mr.is_main_theme, (mr2.mainline_id IS NOT NULL), FALSE) AS is_main_theme,
+                COALESCE(mr.is_main_theme, FALSE) AS is_main_theme,
                 COALESCE(mr.identity_status, 'observed') AS identity_status,
                 (
                     COALESCE(mr.is_main_theme, FALSE)
@@ -2910,10 +2910,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             FROM recent r
             LEFT JOIN theme_mainline_identity_registry mr
               ON mr.subject_key = r.subject_key
-            LEFT JOIN mainline_registry mr2
-              ON mr2.canonical_subject_key = r.subject_key
-             AND mr2.identity_status = 'confirmed'
-             AND COALESCE(mr2.tracking_status, 'active') NOT IN ('archived', 'dormant')
             LEFT JOIN mainline_state_daily msd
               ON msd.trade_date = $1::date
              AND msd.subject_key = r.subject_key
@@ -2940,12 +2936,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 )
                 -- 路径2: 连板（原逻辑不变）
                 OR COALESCE(cb.has_two_board, FALSE) = TRUE
-                -- 路径3: PR-13C 已确认主线跟踪池 — 新链 registry 确认 + 周期存续
-                -- 不要求强度门槛，仅纳入观察跟踪（downstream 通过 snapshot_scope 分流）
-                OR (
-                    mr2.mainline_id IS NOT NULL
-                    AND COALESCE(v2.final_mainline_alive, FALSE) = TRUE
-                )
             )
         ),
         ranked AS (
@@ -2980,8 +2970,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     COALESCE(recent_limit_up_count, 0) >= 1
                     AND (cond_gene + cond_volume + cond_structure) >= 2
                 )
-                -- PR-13C: 已确认主线跟踪池 — 不要求连板，仅观察跟踪
-                OR COALESCE(is_main_theme, FALSE) = TRUE
               )
         ORDER BY mainline_strength_score DESC, recent_limit_up_count DESC, best_rank ASC
         """
