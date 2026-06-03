@@ -305,6 +305,8 @@ export interface DailyReviewV2Diagnostics {
     abnormal_reviews: ModuleCoverage;
     money_flow_reviews: ModuleCoverage;
     dragon_tiger_reviews: ModuleCoverage;
+    mainline_daily_states: ModuleCoverage;
+    post_market_decision_v2: ModuleCoverage;
   };
   source_tables: Record<string, number>;
   column_missing_fields?: Record<string, string[]>;
@@ -325,6 +327,76 @@ export interface MarketSummaryReview {
   conclusion: string;
   highlights: string[];
   risk_flags: string[];
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface MarketOverviewNarrative {
+  headline: string;
+  core_points: string[];
+  market_state_summary: string;
+  index_summary: string;
+  sentiment_summary: string;
+  hotspot_summary: string;
+  risk_warning: string;
+  next_day_strategy: string;
+  source?: string;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface MarketHotspotTheme {
+  theme_name: string;
+  subject_key?: string;
+  limit_up_count?: number;
+  active_mainline?: boolean;
+  lifecycle_state?: string;
+  trade_action?: string;
+}
+
+export interface MarketHotspotNarrative {
+  headline: string;
+  core_points: string[];
+  strongest_themes: MarketHotspotTheme[];
+  rotation_themes: string[];
+  risk_themes: string[];
+  market_heat_summary: string;
+  next_day_focus: string;
+  source?: string;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface MarketHotspotRepresentativeStock {
+  stock_id: string;
+  stock_name: string;
+  reason?: string | null;
+}
+
+export interface MarketHotspotRow {
+  subject_key: string;
+  theme_name: string;
+  limit_up_count?: number | null;
+  first_board_count?: number | null;
+  consecutive_board_count?: number | null;
+  strong_stock_count?: number | null;
+  representative_stocks: MarketHotspotRepresentativeStock[];
+  total_inflow?: number | null;
+  top3_inflow?: number | null;
+  leader_inflow?: number | null;
+  lifecycle_state?: string | null;
+  is_confirmed_mainline: boolean;
+  mainline_name?: string | null;
+  action_advice?: string | null;
+  heat_score?: number | null;
+  rank_order?: number | null;
+}
+
+export interface MarketHotspotOverview {
+  summary: string;
+  hotspot_rows: MarketHotspotRow[];
+  strongest_themes: string[];
+  mainline_related_themes: string[];
+  rotation_themes: string[];
+  risk_themes: string[];
+  source?: string;
   diagnostics?: Record<string, unknown>;
 }
 
@@ -645,6 +717,9 @@ export interface PostMarketDailyReviewV2 {
   market_environment_review?: Record<string, unknown>;
   market_summary: MarketSummaryReview;
   market_overview_review?: MarketOverviewReview;
+  market_overview_narrative?: MarketOverviewNarrative;
+  market_hotspot_overview?: MarketHotspotOverview;
+  market_hotspot_narrative?: MarketHotspotNarrative;
   theme_reviews: ThemeReviewV2[];
   theme_capital_reviews: ThemeCapitalReview[];
   strong_stock_reviews: StrongStockReviewV2[];

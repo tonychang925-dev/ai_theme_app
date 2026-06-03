@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
   fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, fetchPostMarketJobsStatus, publishRecapToNotion,
-  type AbnormalStockReviewV2, type DailyReviewView, type DragonTigerReviewV2, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
+  type AbnormalStockReviewV2, type DailyReviewView, type DragonTigerReviewV2, type EngineMarketRegimeReview, type EngineSummary, type MainlineDailyStateReview, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness,
   generateDailyReviewV2, generatePostMarketDerivedData, generatePostMarketRecap,
 } from "../../lib/api";
@@ -201,6 +201,130 @@ function buildStrongStockGroupsFromV2(rows: StrongStockReviewV2[]): Array<[strin
     groups.set(theme, current);
   }
   return Array.from(groups.entries()).filter(([, groupedRows]) => groupedRows.length > 0);
+}
+
+function buildThemeSummaryRowsFromMainlineStates(
+  rows: MainlineDailyStateReview[],
+  engineSummary: EngineSummary | null,
+  marketRegime: EngineMarketRegimeReview | null,
+): ThemeSummaryRow[] {
+  const actionAdvice = zh(engineSummary?.action_bias || marketRegime?.trade_mode || "--");
+  const conclusion = zh(engineSummary?.conclusion || marketRegime?.mainline_environment || "--");
+  return rows.map((item) => {
+    const score = item.mainline_strength_score;
+    const fade = item.fade_risk_score;
+    return {
+      theme: item.mainline_name || "--",
+      subjectKey: item.canonical_subject_key || item.mainline_id || "--",
+      tier: "主线",
+      eventScore: score != null ? score.toFixed(2) : "--",
+      marketScore: fade != null ? fade.toFixed(2) : "--",
+      totalInflow: "--",
+      leaderInflow: "--",
+      themeKline: zh(item.lifecycle_state || "--"),
+      cycleStage: zh(item.lifecycle_state || "--"),
+      actionAdvice,
+      conclusion: zh(item.conclusion || conclusion || "--"),
+    };
+  });
+}
+
+function buildStrongStockGroupsFromPool(
+  rows: Record<string, unknown>[],
+): Array<[string, StrongStockRow[]]> {
+  const groups = new Map<string, StrongStockRow[]>();
+  for (const raw of rows) {
+    if (!raw || typeof raw !== "object") continue;
+    const row = raw as Record<string, unknown>;
+    const theme = String(row.mainline_name || row.theme_name || row.subject_key || "其他").trim() || "其他";
+    const score = row.watch_score != null ? Number(row.watch_score) : null;
+    const supportScore = row.support_score != null ? Number(row.support_score) : null;
+    const mainlineScore = row.mainline_strength_score != null ? Number(row.mainline_strength_score) : null;
+    const watchPriority = row.watch_priority != null ? Number(row.watch_priority) : null;
+    const labels = Array.isArray(row.labels) ? row.labels.map((item) => zh(String(item || "").trim())).filter(Boolean) : [];
+    const evidenceText = row.evidence && typeof row.evidence === "object" ? JSON.stringify(row.evidence, null, 0) : "";
+    const diagnostics = row.diagnostics && typeof row.diagnostics === "object" ? (row.diagnostics as Record<string, unknown>) : {};
+    const fallbackReason = [
+      String(row.watch_status || "").trim(),
+      String(row.pool_entry_type || "").trim(),
+      String(row.source_tag || "").trim(),
+      String(diagnostics.source || "").trim(),
+    ].filter(Boolean).join("；") || "--";
+
+    const mapped: StrongStockRow = {
+      role: zh(String(row.relay_role || row.pool_entry_type || row.watch_status || "--")),
+      stockName: String(row.stock_name || row.stock_id || "--"),
+      compositeScore: score != null && Number.isFinite(score) ? score.toFixed(2) : "--",
+      purityScore: supportScore != null && Number.isFinite(supportScore) ? supportScore.toFixed(2) : "--",
+      leadingScore: mainlineScore != null && Number.isFinite(mainlineScore) ? mainlineScore.toFixed(2) : "--",
+      capitalScore: watchPriority != null && Number.isFinite(watchPriority) ? watchPriority.toFixed(2) : "--",
+      structureScore: zh(String(row.support_type || row.cycle_state || "--")),
+      resilienceScore: supportScore != null && Number.isFinite(supportScore) ? supportScore.toFixed(2) : "--",
+      moneyFlow: row.main_net_inflow != null && Number.isFinite(Number(row.main_net_inflow))
+        ? formatReviewAmount(Number(row.main_net_inflow))
+        : "--",
+      klinePosition: zh(String(row.support_type || row.cycle_state || "--")),
+      klinePattern: zh(labels.join("/") || String(row.watch_status || row.pool_entry_type || "--")),
+      llmRole: zh(String(row.relay_role || row.watch_status || "--")),
+      llmLeaderStatus: zh(String(row.pool_entry_type || "--")),
+      llmConfirmationBasis: zh(String(row.source_tag || diagnostics.source || "--")),
+      llmReason: zh(evidenceText || fallbackReason),
+      rationale: zh(fallbackReason),
+      raw: `${String(row.stock_id || "")} ${String(row.stock_name || "")}`.trim(),
+    };
+    const current = groups.get(theme) ?? [];
+    current.push(mapped);
+    groups.set(theme, current);
+  }
+  return Array.from(groups.entries()).filter(([, groupedRows]) => groupedRows.length > 0);
+}
+
+function buildLegacyMarketEnvironmentSectionFromEngine(
+  engineSummary: EngineSummary | null,
+  marketRegime: EngineMarketRegimeReview | null,
+): string[] {
+  if (!engineSummary && !marketRegime) return [];
+  const allowTradeText = engineSummary?.allow_trade ? "可交易" : "不交易";
+  const positionLimit = typeof engineSummary?.position_limit === "number" && Number.isFinite(engineSummary.position_limit)
+    ? `${Math.round((engineSummary.position_limit || 0) * 100)}%`
+    : "--";
+  const riskNotes = [...(engineSummary?.risk_notes ?? []), ...(marketRegime?.no_trade_reasons ?? [])]
+    .map((item) => zh(String(item || "").trim()))
+    .filter((item) => item && item !== "--");
+
+  return [
+    `市场偏向 ${zh(String(marketRegime?.mainline_environment || engineSummary?.action_bias || "--"))}；动作 ${zh(String(engineSummary?.trade_mode || marketRegime?.trade_mode || "--"))}；环境总分 --`,
+    `短线情绪 ${zh(String(marketRegime?.short_term_sentiment || "--"))}；交易权限 ${allowTradeText}；仓位上限 ${positionLimit}`,
+    `风险提示 ${riskNotes.length > 0 ? riskNotes.slice(0, 3).join("；") : zh(String(engineSummary?.no_trade_blocking_rule || "--"))}`,
+  ];
+}
+
+function buildLegacyHighlightsFromEngine(
+  engineSummary: EngineSummary | null,
+  marketRegime: EngineMarketRegimeReview | null,
+): string[] {
+  if (!engineSummary && !marketRegime) return [];
+  const riskNotes = [...(engineSummary?.risk_notes ?? []), ...(marketRegime?.no_trade_reasons ?? [])]
+    .map((item) => zh(String(item || "").trim()))
+    .filter((item) => item && item !== "--");
+  const actionBias = zh(String(engineSummary?.action_bias || marketRegime?.mainline_environment || "--"));
+  const tradeMode = zh(String(engineSummary?.trade_mode || marketRegime?.trade_mode || "--"));
+  const positionLimit = typeof engineSummary?.position_limit === "number" && Number.isFinite(engineSummary.position_limit)
+    ? `${Math.round((engineSummary.position_limit || 0) * 100)}%`
+    : "--";
+  const conclusion = zh(String(engineSummary?.conclusion || marketRegime?.short_term_sentiment || "--"));
+  return [
+    `交易权限：${engineSummary?.allow_trade ? "可交易" : "不交易"}；模式 ${tradeMode}；仓位 ${positionLimit}`,
+    `市场定性：${actionBias}；${zh(String(marketRegime?.short_term_sentiment || "--"))}；${zh(String(marketRegime?.broad_market_regime || "--"))}`,
+    `结论：${conclusion}`,
+    `风险提示：${riskNotes.length > 0 ? riskNotes.slice(0, 3).join("；") : zh(String(engineSummary?.no_trade_blocking_rule || "--"))}`,
+  ];
+}
+
+function isMetadataOnlyHighlights(items: string[]): boolean {
+  const normalized = items.map((item) => String(item || "").trim()).filter(Boolean);
+  if (normalized.length === 0) return true;
+  return normalized.every((item) => item.startsWith("snapshot_version:") || item.startsWith("strong_watch_history_count:"));
 }
 
 function buildWatchlistRowsFromV2(rows: WatchlistReviewV2[]): WatchlistDisplayRow[] {
@@ -936,7 +1060,7 @@ export function RecapPage() {
   const [recapBusy, setRecapBusy] = useState(false);
   const [generationSteps, setGenerationSteps] = useState<RecapGenerationStep[]>([]);
   const effectiveReportType = payload?.report_type ?? reportType;
-  const highlights = payload?.highlights ?? [];
+  const rawHighlights = payload?.highlights ?? [];
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [publishing, setPublishing] = useState(false);
@@ -958,7 +1082,27 @@ export function RecapPage() {
   const isPostMarket = effectiveReportType === "post_market";
   const legacyViewEnabled = isPostMarket && viewMode === "legacy";
   const engineReportReady = isEngineReportReady(dailyReviewV2);
-  const marketEnvironmentSection = sections.get("大盘环境总结") ?? [];
+  const engineSummary = dailyReviewV2?.engine_summary ?? null;
+  const marketRegimeReview = dailyReviewV2?.market_regime_review ?? null;
+  const mainlineDailyStates = dailyReviewV2?.mainline_daily_states ?? [];
+  const postMarketDecisionV2 = dailyReviewV2?.post_market_decision_v2 ?? null;
+  const highlights = useMemo(() => {
+    if (!isMetadataOnlyHighlights(rawHighlights)) return rawHighlights;
+    if (dailyReviewV2PreviewEnabled) {
+      const fallback = buildLegacyHighlightsFromEngine(engineSummary, marketRegimeReview);
+      if (fallback.length > 0) return fallback;
+    }
+    return rawHighlights;
+  }, [dailyReviewV2PreviewEnabled, engineSummary, marketRegimeReview, rawHighlights]);
+  const marketEnvironmentSection = useMemo(() => {
+    const legacySection = sections.get("大盘环境总结") ?? [];
+    if (legacySection.length > 0) return legacySection;
+    if (dailyReviewV2PreviewEnabled) {
+      const fallback = buildLegacyMarketEnvironmentSectionFromEngine(engineSummary, marketRegimeReview);
+      if (fallback.length > 0) return fallback;
+    }
+    return legacySection;
+  }, [dailyReviewV2PreviewEnabled, engineSummary, marketRegimeReview, sections]);
   const themeEnvironmentSection = sections.get("板块环境总结") ?? [];
   const themeSection = sections.get("主线与支线") ?? sections.get("可做主线与支线") ?? [];
   const themeCapitalFlowSection = sections.get("主线资金流入前10") ?? sections.get("题材资金流入前10") ?? [];
@@ -987,8 +1131,18 @@ export function RecapPage() {
       current.push(row);
       groups.set(key, current);
     }
+    if (groups.size > 0) {
+      return Array.from(groups.entries()).filter(([, rows]) => rows.length > 0);
+    }
+    const poolRows = postMarketDecisionV2?.strong_stock_pool_reviews;
+    if (
+      dailyReviewV2PreviewEnabled &&
+      isV2ModuleReady(dailyReviewV2, "post_market_decision_v2", poolRows)
+    ) {
+      return buildStrongStockGroupsFromPool((poolRows ?? []) as Record<string, unknown>[]);
+    }
     return Array.from(groups.entries()).filter(([, rows]) => rows.length > 0);
-  }, [dailyReviewV2PreviewEnabled, dailyReviewV2, strongStockSection]);
+  }, [dailyReviewV2PreviewEnabled, dailyReviewV2, postMarketDecisionV2, strongStockSection]);
   const watchlistRows = useMemo(() => {
     const v2Rows = dailyReviewV2?.watchlist_reviews;
     if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "watchlist_reviews", v2Rows)) {
@@ -1018,7 +1172,7 @@ export function RecapPage() {
       if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "theme_reviews", v2Rows)) {
         return buildThemeSummaryRowsFromV2(v2Rows ?? []);
       }
-      return themeSection.map((item) => {
+      const legacyRows = themeSection.map((item) => {
         const parsed = splitThemeLine(item);
         return parseThemeSummary(
           parsed.theme || "未分类",
@@ -1026,8 +1180,23 @@ export function RecapPage() {
           cycleByTheme.get(parsed.theme) ?? "",
         );
       });
+      if (legacyRows.length > 0) {
+        return legacyRows;
+      }
+      const mainlineRows = dailyReviewV2?.mainline_daily_states;
+      if (
+        dailyReviewV2PreviewEnabled &&
+        isV2ModuleReady(dailyReviewV2, "mainline_daily_states", mainlineRows)
+      ) {
+        return buildThemeSummaryRowsFromMainlineStates(
+          mainlineRows ?? [],
+          engineSummary,
+          marketRegimeReview,
+        );
+      }
+      return legacyRows;
     },
-    [dailyReviewV2PreviewEnabled, dailyReviewV2, themeSection, cycleByTheme],
+    [dailyReviewV2PreviewEnabled, dailyReviewV2, themeSection, cycleByTheme, engineSummary, marketRegimeReview],
   );
   const themeCapitalFlowRows = useMemo(
     () => {

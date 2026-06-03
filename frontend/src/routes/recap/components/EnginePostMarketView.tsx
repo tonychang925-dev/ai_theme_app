@@ -10,6 +10,8 @@ import EvidenceTags from "./EvidenceTags";
 import EngineDecisionHeader from "./EngineDecisionHeader";
 import LayerCStrongPoolPanel from "./LayerCStrongPoolPanel";
 import MainlineStateBoard from "./MainlineStateBoard";
+import MarketOverviewNarrativePanel from "./MarketOverviewNarrativePanel";
+import MarketHotspotOverviewPanel from "./MarketHotspotOverviewPanel";
 import MarketOverviewPanel from "./MarketOverviewPanel";
 import MarketRegimePanel from "./MarketRegimePanel";
 import RecapDataQualityBar from "./RecapDataQualityBar";
@@ -106,6 +108,15 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate, onShowL
       <EngineDecisionHeader
         engineSummary={dailyReviewV2.engine_summary}
         marketRegime={dailyReviewV2.market_regime_review ?? null}
+      />
+      <MarketOverviewNarrativePanel
+        narrative={dailyReviewV2.market_overview_narrative ?? null}
+        engineSummary={dailyReviewV2.engine_summary ?? null}
+        marketRegime={dailyReviewV2.market_regime_review ?? null}
+      />
+      <MarketHotspotOverviewPanel
+        marketHotspotOverview={dailyReviewV2.market_hotspot_overview ?? null}
+        tradeDate={tradeDate}
       />
       <MarketRegimePanel
         marketRegime={dailyReviewV2.market_regime_review}
