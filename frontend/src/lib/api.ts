@@ -423,7 +423,6 @@ export interface D1Narrative {
   source?: string;
   diagnostics?: Record<string, unknown>;
 }
-
 export interface ThemeReviewV2 {
   subject_key: string;
   theme_name: string;

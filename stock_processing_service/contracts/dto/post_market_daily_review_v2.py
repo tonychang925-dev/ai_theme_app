@@ -92,7 +92,6 @@ class MarketHotspotOverview(TypedDict, total=False):
     source: str
     diagnostics: dict[str, Any]
 
-
 class MainlineNarrative(TypedDict, total=False):
     summary: str
     core_points: list[str]
@@ -115,8 +114,6 @@ class D1Narrative(TypedDict, total=False):
     risk_warning: str
     source: str
     diagnostics: dict[str, Any]
-
-
 class PostMarketDailyReviewV2(TypedDict):
     schema_version: Literal["daily_review_v2"]
     trade_date: str

@@ -299,7 +299,6 @@ def test_post_market_narrative_composer_generates_mainline_and_d1() -> None:
     assert d1["confirmation_requirements"]
     assert d1["invalid_conditions"]
 
-
 def test_post_market_engine_report_composer_includes_market_overview_narrative() -> None:
     doc = _sample_engine_report_doc()
     report = PostMarketEngineReportComposer().compose(doc)  # type: ignore[arg-type]
