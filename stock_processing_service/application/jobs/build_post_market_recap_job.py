@@ -601,7 +601,9 @@ class BuildPostMarketRecapJob:
         recap_doc["strong_stock_reviews"] = await self._build_strong_stock_reviews(trade_date)
 
         # ── PR-7: Mainline Discovery parallel output ──
-        await self._run_mainline_discovery(trade_date, report_context, theme_context_map, recap_doc, batch_id, trace_id)
+        await self._run_mainline_discovery(
+            trade_date, snapshot_version, report_context, theme_context_map, recap_doc, batch_id, trace_id
+        )
 
         # ── P0: 交易体系决策输出 ──
         decision_payload = self._decision_engine.execute(
@@ -921,6 +923,7 @@ class BuildPostMarketRecapJob:
     async def _run_mainline_discovery(
         self,
         trade_date: date,
+        snapshot_version: str,
         report_context: dict[str, Any],
         theme_context_map: dict[str, dict[str, Any]],
         recap_doc: dict[str, Any],
@@ -1076,14 +1079,24 @@ class BuildPostMarketRecapJob:
             recap_doc["mainline_discovery_diagnostics"] = {"error": "pipeline_failed"}
 
         # ── PR-10: Mainline Lifecycle pipeline ──
-        await self._run_mainline_lifecycle(trade_date, recap_doc, batch_id, trace_id)
+        await self._run_mainline_lifecycle(trade_date, recap_doc, snapshot_version, batch_id, trace_id)
 
     async def _run_mainline_lifecycle(
-        self, trade_date: date, recap_doc: dict[str, Any],
+        self, trade_date: date, recap_doc: dict[str, Any], snapshot_version: str,
         batch_id: str = "", trace_id: str = "",
     ) -> None:
         """PR-10: Run lifecycle pipeline for confirmed mainlines."""
         try:
+            def _serialize(obj):
+                if isinstance(obj, dict):
+                    return {k: _serialize(v) for k, v in obj.items()}
+                if isinstance(obj, list):
+                    return [_serialize(i) for i in obj]
+                from decimal import Decimal
+                if isinstance(obj, Decimal):
+                    return float(obj)
+                return obj
+
             from stock_processing_service.application.services.mainline_lifecycle.mainline_lifecycle_fact_context_builder import (
                 MainlineLifecycleFactContextBuilder,
             )
