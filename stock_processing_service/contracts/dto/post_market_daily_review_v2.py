@@ -92,7 +92,28 @@ class MarketHotspotOverview(TypedDict, total=False):
     source: str
     diagnostics: dict[str, Any]
 
+class MainlineNarrative(TypedDict, total=False):
+    summary: str
+    core_points: list[str]
+    divergence_mainlines: list[str]
+    fade_mainlines: list[str]
+    watch_only_mainlines: list[str]
+    action_summary: str
+    source: str
+    diagnostics: dict[str, Any]
 
+
+class D1Narrative(TypedDict, total=False):
+    summary: str
+    candidate_count: int
+    focus_count: int
+    formal_count: int
+    observe_count: int
+    confirmation_requirements: list[str]
+    invalid_conditions: list[str]
+    risk_warning: str
+    source: str
+    diagnostics: dict[str, Any]
 class PostMarketDailyReviewV2(TypedDict):
     schema_version: Literal["daily_review_v2"]
     trade_date: str
@@ -105,6 +126,8 @@ class PostMarketDailyReviewV2(TypedDict):
     market_overview_narrative: MarketOverviewNarrative
     market_hotspot_overview: MarketHotspotOverview
     market_hotspot_narrative: MarketHotspotNarrative
+    mainline_narrative: MainlineNarrative
+    d1_narrative: D1Narrative
     market_overview_review: dict[str, Any]
     theme_reviews: list[dict[str, Any]]
     theme_capital_reviews: list[dict[str, Any]]

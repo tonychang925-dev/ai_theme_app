@@ -245,6 +245,184 @@ class PostMarketNarrativeComposer:
             diagnostics=diagnostics,
         ).to_dict()
 
+    def compose_mainline_narrative(
+        self,
+        *,
+        mainline_daily_states: list[dict[str, Any]] | None,
+        market_regime_review: dict[str, Any] | None,
+        engine_summary: dict[str, Any] | None,
+        post_market_decision_v2: dict[str, Any] | None,
+    ) -> dict[str, Any]:
+        mainlines = [row for row in (mainline_daily_states or []) if isinstance(row, dict)]
+        market_regime_review = market_regime_review or {}
+        engine_summary = engine_summary or {}
+        pdv2 = post_market_decision_v2 or {}
+
+        divergence_mainlines: list[str] = []
+        fade_mainlines: list[str] = []
+        watch_only_mainlines: list[str] = []
+        for row in sorted(
+            mainlines,
+            key=lambda row: (
+                -float(row.get("mainline_strength_score") or 0),
+                -float(row.get("strong_pool_count") or 0),
+                str(row.get("mainline_name") or ""),
+            ),
+        ):
+            name = self._clean_text(row.get("mainline_name") or row.get("canonical_subject_key") or "主线")
+            lifecycle = str(row.get("lifecycle_state") or "").strip().lower()
+            action = str(row.get("action_advice") or "").strip()
+            if self._is_mainline_fade(lifecycle, action):
+                fade_mainlines.append(name)
+            elif self._is_mainline_divergence(lifecycle, action):
+                divergence_mainlines.append(name)
+            else:
+                watch_only_mainlines.append(name)
+
+        divergence_mainlines = self._unique_names(divergence_mainlines)
+        fade_mainlines = self._unique_names(fade_mainlines)
+        watch_only_mainlines = self._unique_names(watch_only_mainlines)
+
+        headline_parts: list[str] = []
+        if divergence_mainlines:
+            headline_parts.append(f"{self._join_text(divergence_mainlines[:3], '、')}处于分歧阶段")
+        if fade_mainlines:
+            headline_parts.append(f"{self._join_text(fade_mainlines[:3], '、')}偏退潮")
+        if watch_only_mainlines:
+            headline_parts.append(f"{self._join_text(watch_only_mainlines[:3], '、')}以观察为主")
+
+        allow_trade = bool(engine_summary.get("allow_trade"))
+        trade_mode = self._clean_text(engine_summary.get("trade_mode") or market_regime_review.get("trade_mode"), "no_trade")
+        if headline_parts:
+            summary = "；".join(headline_parts) + "。"
+        elif mainlines:
+            summary = "主线结构已识别，但当前仍需结合资金回流和修复确认。"
+        else:
+            summary = "当前主线信息不足，先按市场总闸门观察。"
+
+        if not allow_trade or trade_mode == "no_trade":
+            action_summary = "市场环境不支持主动进攻，主线只做分歧修复与回流观察。"
+        elif trade_mode in {"mainline_core_only", "mainline_tradable"}:
+            action_summary = "围绕已确认主线核心参与，优先跟随修复和前排节奏。"
+        elif trade_mode == "ultra_short_only":
+            action_summary = "仅做超短试探，主线方向等待竞价和盘中确认。"
+        else:
+            action_summary = "主线与轮动并行观察，优先等待更清晰的资金确认。"
+
+        core_points = [
+            f"已识别主线 {len(mainlines)} 条，其中分歧 {len(divergence_mainlines)} 条、退潮 {len(fade_mainlines)} 条、观察 {len(watch_only_mainlines)} 条。",
+            f"分歧主线关注 {self._join_text(divergence_mainlines[:3], '、') or '暂无'}。",
+            f"退潮主线关注 {self._join_text(fade_mainlines[:3], '、') or '暂无'}。",
+            f"观察主线关注 {self._join_text(watch_only_mainlines[:3], '、') or '暂无'}。",
+        ]
+        diagnostics = {
+            "mainline_count": len(mainlines),
+            "divergence_count": len(divergence_mainlines),
+            "fade_count": len(fade_mainlines),
+            "watch_only_count": len(watch_only_mainlines),
+            "allow_trade": allow_trade,
+            "trade_mode": trade_mode,
+            "d1_count": self._count_rows(pdv2.get("weak_to_strong_d1_reviews")),
+            "focus_count": self._count_rows(pdv2.get("next_day_focus_stocks")),
+        }
+        source = "engine_template" if mainlines else "fallback"
+        return {
+            "summary": summary,
+            "core_points": core_points,
+            "divergence_mainlines": divergence_mainlines,
+            "fade_mainlines": fade_mainlines,
+            "watch_only_mainlines": watch_only_mainlines,
+            "action_summary": action_summary,
+            "source": source,
+            "diagnostics": diagnostics,
+        }
+
+    def compose_d1_narrative(
+        self,
+        *,
+        engine_summary: dict[str, Any] | None,
+        market_regime_review: dict[str, Any] | None,
+        post_market_decision_v2: dict[str, Any] | None,
+    ) -> dict[str, Any]:
+        engine_summary = engine_summary or {}
+        market_regime_review = market_regime_review or {}
+        pdv2 = post_market_decision_v2 or {}
+
+        d1_reviews = self._as_list(pdv2.get("weak_to_strong_d1_reviews"))
+        focus_stocks = self._as_list(pdv2.get("next_day_focus_stocks"))
+        candidate_count = len(d1_reviews)
+        formal_count = len(focus_stocks)
+        observe_count = max(candidate_count - formal_count, 0)
+        allow_trade = bool(engine_summary.get("allow_trade"))
+        trade_mode = self._clean_text(engine_summary.get("trade_mode") or market_regime_review.get("trade_mode"), "no_trade")
+
+        if candidate_count > 0 and formal_count == 0:
+            summary = f"弱转强模型筛出 {candidate_count} 只 D1 候选，但由于市场环境处于 {trade_mode}，全部降级为观察，不生成正式 focus。"
+        elif formal_count > 0:
+            summary = f"弱转强模型筛出 {candidate_count} 只 D1 候选，其中 {formal_count} 只进入次日重点确认。"
+        elif candidate_count > 0:
+            summary = f"弱转强模型筛出 {candidate_count} 只 D1 候选，当前先纳入观察池。"
+        else:
+            summary = "当前未形成可用的 D1 候选，继续等待盘后与次日确认。"
+
+        if not allow_trade or trade_mode == "no_trade":
+            confirmation_requirements = [
+                "指数修复后再看承接强度",
+                "主线资金回流并完成修复确认",
+                "个股竞价承接达标且盘中不再快速转弱",
+            ]
+            invalid_conditions = [
+                "指数继续走弱",
+                "主线修复失败或资金不回流",
+                "个股竞价承接不足或盘中跌破关键支撑",
+            ]
+            risk_warning = "当前市场环境不支持主动交易，D1 仅作为次日观察清单。"
+        elif trade_mode in {"mainline_core_only", "mainline_tradable"}:
+            confirmation_requirements = [
+                "主线核心方向保持强度",
+                "前排个股竞价和开盘承接不弱于预期",
+                "盘中资金不从主线快速外溢",
+            ]
+            invalid_conditions = [
+                "主线核心快速转弱",
+                "前排个股开盘即失去承接",
+                "热点切换过快导致模型失效",
+            ]
+            risk_warning = "当前可参与，但必须围绕主线核心执行，避免追高失真。"
+        else:
+            confirmation_requirements = [
+                "竞价承接强于昨日",
+                "盘中放量但不破关键支撑",
+                "主线方向出现资金回流",
+            ]
+            invalid_conditions = [
+                "竞价显著低于预期",
+                "盘中直接失去承接",
+                "主线资金快速退潮",
+            ]
+            risk_warning = "D1 仅适合在资金确认后跟随，避免把观察候选误作正式机会。"
+
+        diagnostics = {
+            "allow_trade": allow_trade,
+            "trade_mode": trade_mode,
+            "d1_count": candidate_count,
+            "focus_count": formal_count,
+            "observe_count": observe_count,
+        }
+        source = "engine_template" if (engine_summary or market_regime_review or pdv2) else "fallback"
+        return {
+            "summary": summary,
+            "candidate_count": candidate_count,
+            "focus_count": formal_count,
+            "formal_count": formal_count,
+            "observe_count": observe_count,
+            "confirmation_requirements": confirmation_requirements,
+            "invalid_conditions": invalid_conditions,
+            "risk_warning": risk_warning,
+            "source": source,
+            "diagnostics": diagnostics,
+        }
+
     @staticmethod
     def _clean_text(value: Any, default: str = "--") -> str:
         text = str(value or "").strip()
@@ -535,6 +713,18 @@ class PostMarketNarrativeComposer:
         return value if isinstance(value, list) else []
 
     @staticmethod
+    def _unique_names(values: list[str]) -> list[str]:
+        items: list[str] = []
+        seen: set[str] = set()
+        for value in values:
+            text = str(value or "").strip()
+            if not text or text in seen:
+                continue
+            seen.add(text)
+            items.append(text)
+        return items
+
+    @staticmethod
     def _translate_trend(value: Any) -> str:
         key = str(value or "").strip()
         mapping = {
@@ -571,3 +761,11 @@ class PostMarketNarrativeComposer:
             else:
                 watch += 1
         return divergence, fade, watch
+
+    @staticmethod
+    def _is_mainline_divergence(lifecycle: str, action: str) -> bool:
+        return any(key in lifecycle for key in ("divergence", "repair", "start", "fermentation")) or "分歧" in action
+
+    @staticmethod
+    def _is_mainline_fade(lifecycle: str, action: str) -> bool:
+        return any(key in lifecycle for key in ("fade", "cooling", "down")) or "回避" in action or "谨慎" in action
