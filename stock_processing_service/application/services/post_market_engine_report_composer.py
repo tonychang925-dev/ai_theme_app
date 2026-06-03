@@ -9,6 +9,13 @@ from __future__ import annotations
 import logging
 from typing import Any
 
+from stock_processing_service.application.services.post_market_narrative_composer import (
+    PostMarketNarrativeComposer,
+)
+from stock_processing_service.application.services.post_market_hotspot_overview_composer import (
+    PostMarketHotspotOverviewComposer,
+)
+
 logger = logging.getLogger(__name__)
 
 
@@ -18,7 +25,8 @@ class PostMarketEngineReportComposer:
     Input: recap_doc (already populated with engine outputs)
     Output: dict with engine_summary, market_regime_review,
             index_technical_reviews, mainline_daily_states,
-            post_market_decision_v2, market_overview_review
+            post_market_decision_v2, market_overview_review,
+            market_overview_narrative, market_hotspot_overview
     """
 
     def compose(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
@@ -57,7 +65,28 @@ class PostMarketEngineReportComposer:
         )
 
         # ── 7. market overview ──
+        market_summary = self._pass_through(recap_doc, "market_summary")
         market_overview_review = self._pass_through(recap_doc, "market_overview_review")
+        narrative_composer = PostMarketNarrativeComposer()
+        market_overview_narrative = narrative_composer.compose_market_overview(
+            engine_summary=engine_summary,
+            market_regime_review=market_regime_review,
+            index_technical_reviews=index_technical_reviews,
+            mainline_daily_states=mainline_daily_states,
+            post_market_decision_v2=post_market_decision_v2,
+            market_overview_review=market_overview_review,
+            market_summary=market_summary,
+        )
+        market_hotspot_narrative = narrative_composer.compose_market_hotspot(
+            market_overview_review=market_overview_review,
+            market_summary=market_summary,
+            market_regime_review=market_regime_review,
+            mainline_daily_states=mainline_daily_states,
+            engine_summary=engine_summary,
+            post_market_decision_v2=post_market_decision_v2,
+        )
+        hotspot_overview_composer = PostMarketHotspotOverviewComposer()
+        market_hotspot_overview = hotspot_overview_composer.compose(recap_doc)
 
         return {
             "engine_summary": engine_summary,
@@ -66,6 +95,9 @@ class PostMarketEngineReportComposer:
             "mainline_daily_states": mainline_daily_states,
             "post_market_decision_v2": post_market_decision_v2,
             "evidence_alignment_index": evidence_alignment_index,
+            "market_overview_narrative": market_overview_narrative,
+            "market_hotspot_overview": market_hotspot_overview,
+            "market_hotspot_narrative": market_hotspot_narrative,
             "market_overview_review": market_overview_review,
         }
 

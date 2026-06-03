@@ -5320,6 +5320,15 @@ class PostgresDatabaseManager(BaseDatabaseManager):
 
     async def upsert_post_market_recap_snapshot(self, doc: Dict[str, Any]) -> int:
         """UPSERT post_market_recap_snapshot 文档对象。"""
+        raw_payload = doc.get("payload") or {}
+        recap_doc = doc.get("recap_doc")
+        if recap_doc is not None:
+            raw_payload = {"recap_doc": recap_doc}
+        elif "recap_doc" not in raw_payload:
+            if any(k in raw_payload for k in ("post_market_decision_v2", "candidate_count", "strong_watch_input_count", "market_regime_review")):
+                raw_payload = {"recap_doc": raw_payload}
+        raw_payload["version"] = doc.get("snapshot_version")
+
         sql = """
         INSERT INTO post_market_recap_snapshot (
             trade_date, snapshot_version, batch_id, trace_id, payload, source_name
@@ -5328,24 +5337,24 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           snapshot_version = EXCLUDED.snapshot_version,
           batch_id = EXCLUDED.batch_id,
           trace_id = EXCLUDED.trace_id,
-          payload = post_market_recap_snapshot.payload || EXCLUDED.payload,
+          payload = EXCLUDED.payload,
           source_name = EXCLUDED.source_name,
           updated_at = NOW()
         """
-        payload = (
+        params = (
             doc.get("trade_date"),
             doc.get("snapshot_version"),
             doc.get("batch_id"),
             doc.get("trace_id"),
-            json.dumps(doc.get("payload") or {}, ensure_ascii=False, default=str),
+            json.dumps(raw_payload, ensure_ascii=False, default=str),
             str(doc.get("source_name") or "stock_processing_service"),
         )
         try:
             async with self.pool.acquire() as conn:
-                await conn.execute(sql, *payload)
+                await conn.execute(sql, *params)
             return 1
         except Exception as e:
-            logger.warning(f"写入 post_market_recap_snapshot 失败（可能尚未迁移）: {e}")
+            logger.warning(f"写入 post_market_recap_snapshot 失败: {e}")
             return 0
 
     async def upsert_strong_watch_pool_rows(self, rows: list[dict[str, Any]]) -> int:

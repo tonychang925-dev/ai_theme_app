@@ -23,6 +23,76 @@ class DailyReviewDiagnostics(TypedDict):
     legacy_section_counts: dict[str, int]
 
 
+class MarketOverviewNarrative(TypedDict, total=False):
+    headline: str
+    core_points: list[str]
+    market_state_summary: str
+    index_summary: str
+    sentiment_summary: str
+    hotspot_summary: str
+    risk_warning: str
+    next_day_strategy: str
+    source: str
+    diagnostics: dict[str, Any]
+
+
+class MarketHotspotTheme(TypedDict, total=False):
+    theme_name: str
+    subject_key: str
+    limit_up_count: int
+    active_mainline: bool
+    lifecycle_state: str
+    trade_action: str
+
+
+class MarketHotspotNarrative(TypedDict, total=False):
+    headline: str
+    core_points: list[str]
+    strongest_themes: list[MarketHotspotTheme]
+    rotation_themes: list[str]
+    risk_themes: list[str]
+    market_heat_summary: str
+    next_day_focus: str
+    source: str
+    diagnostics: dict[str, Any]
+
+
+class MarketHotspotRepresentativeStock(TypedDict, total=False):
+    stock_id: str
+    stock_name: str
+    reason: str | None
+
+
+class MarketHotspotRow(TypedDict, total=False):
+    subject_key: str
+    theme_name: str
+    limit_up_count: int | None
+    first_board_count: int | None
+    consecutive_board_count: int | None
+    strong_stock_count: int | None
+    representative_stocks: list[MarketHotspotRepresentativeStock]
+    total_inflow: float | None
+    top3_inflow: float | None
+    leader_inflow: float | None
+    lifecycle_state: str | None
+    is_confirmed_mainline: bool
+    mainline_name: str | None
+    action_advice: str | None
+    heat_score: float | None
+    rank_order: int | None
+
+
+class MarketHotspotOverview(TypedDict, total=False):
+    summary: str
+    hotspot_rows: list[MarketHotspotRow]
+    strongest_themes: list[str]
+    mainline_related_themes: list[str]
+    rotation_themes: list[str]
+    risk_themes: list[str]
+    source: str
+    diagnostics: dict[str, Any]
+
+
 class PostMarketDailyReviewV2(TypedDict):
     schema_version: Literal["daily_review_v2"]
     trade_date: str
@@ -32,6 +102,9 @@ class PostMarketDailyReviewV2(TypedDict):
     data_mode: Literal["daily_review_v2_first"]
     source: dict[str, Any]
     market_summary: dict[str, Any]
+    market_overview_narrative: MarketOverviewNarrative
+    market_hotspot_overview: MarketHotspotOverview
+    market_hotspot_narrative: MarketHotspotNarrative
     market_overview_review: dict[str, Any]
     theme_reviews: list[dict[str, Any]]
     theme_capital_reviews: list[dict[str, Any]]
