@@ -1287,6 +1287,14 @@ class BuildPostMarketRecapJob:
 
             # ── PR-13A: persist mainline daily state ──
             await self._persist_mainline_daily_state(trade_date, recap_doc, batch_id or "", trace_id or "")
+
+            # Re-write snapshot with PDV2 D1 data (written before PDV2 section at line 632)
+            updated_snapshot = PostMarketRecapSnapshot(
+                trade_date=trade_date, snapshot_version=snapshot_version,
+                batch_id=batch_id, trace_id=trace_id, source_trace_id=trace_id,
+                recap_doc=_serialize(recap_doc),
+            )
+            await self._write_port.upsert_post_market_recap_snapshot(updated_snapshot)
         except Exception:
             logger.exception("Lifecycle pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []
