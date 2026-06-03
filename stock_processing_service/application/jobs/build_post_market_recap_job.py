@@ -1171,7 +1171,8 @@ class BuildPostMarketRecapJob:
                 from stock_processing_service.application.use_cases.build_weak_to_strong_candidate import (
                     BuildWeakToStrongCandidateUseCase,
                 )
-                w2s_uc = BuildWeakToStrongCandidateUseCase()
+                # Create instance bypassing dataclass constructor — build_candidates is stateless
+                w2s_uc = object.__new__(BuildWeakToStrongCandidateUseCase)
                 candidates = w2s_uc.build_candidates(trade_date=trade_date, d1_input_rows=d1_rows)
                 # Dedup by stock_id — same stock can appear under multiple subject_keys
                 candidates = w2s_uc._dedup_and_rank(candidates, limit=20)
