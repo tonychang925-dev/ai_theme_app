@@ -23,13 +23,19 @@ class PostMarketEvidenceLayerComposer:
         mainline_daily_states = self._list_of_dicts(recap_doc.get("mainline_daily_states"))
         abnormal_reviews = self._list_of_dicts(recap_doc.get("abnormal_reviews"))
         money_flow_reviews = self._list_of_dicts(recap_doc.get("money_flow_reviews"))
-        dragon_tiger_reviews = self._list_of_dicts(recap_doc.get("dragon_tiger_reviews"))
+        dragon_tiger_reviews = self._filter_dragon_tiger_reviews(self._list_of_dicts(recap_doc.get("dragon_tiger_reviews")))
         stock_capital_reviews = self._list_of_dicts(recap_doc.get("stock_capital_reviews"))
         pdv2 = self._dict(recap_doc.get("post_market_decision_v2"))
 
         abnormal_evidence = self._build_items("abnormal", abnormal_reviews, by_stock)
         money_flow_evidence = self._build_items("money_flow", money_flow_reviews, by_stock)
         dragon_tiger_evidence = self._build_items("dragon_tiger", dragon_tiger_reviews, by_stock)
+        if not dragon_tiger_evidence:
+            dragon_tiger_evidence = self._build_items(
+                "dragon_tiger",
+                self._legacy_dragon_tiger_reviews(recap_doc),
+                by_stock,
+            )
         stock_capital_evidence = self._build_items("stock_capital", stock_capital_reviews, by_stock)
 
         all_items = (
@@ -371,6 +377,99 @@ class PostMarketEvidenceLayerComposer:
             if buy is not None or sell is not None:
                 return (buy or 0.0) - (sell or 0.0)
         return self._float_or_none(self._first_present(row, "amount"))
+
+    def _filter_dragon_tiger_reviews(self, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        filtered: list[dict[str, Any]] = []
+        for row in rows:
+            seat_type = self._first_text(
+                row.get("seat_type"),
+                row.get("seat_category"),
+                row.get("trader_type"),
+                row.get("seat_name"),
+            ).upper()
+            hot_money_name = self._first_text(row.get("hot_money_name"), row.get("seat_name"))
+            if seat_type in {"HOT_MONEY", "MIXED"}:
+                filtered.append(row)
+                continue
+            if not seat_type and hot_money_name:
+                filtered.append(row)
+                continue
+        return filtered
+
+    def _legacy_dragon_tiger_reviews(self, recap_doc: dict[str, Any]) -> list[dict[str, Any]]:
+        report = self._dict(recap_doc.get("report"))
+        sections = report.get("sections")
+        if not isinstance(sections, list):
+            return []
+
+        rows: list[dict[str, Any]] = []
+        for section in sections:
+            if not isinstance(section, dict):
+                continue
+            heading = self._first_text(section.get("heading"))
+            if heading not in {"龙虎榜", "龙虎榜与来源链"}:
+                continue
+            for raw_item in section.get("items") or []:
+                if not isinstance(raw_item, str):
+                    continue
+                for piece in [part.strip() for part in raw_item.split("；") if part.strip()]:
+                    parsed = self._parse_legacy_dragon_tiger_piece(piece)
+                    if parsed:
+                        rows.append(parsed)
+        return rows
+
+    def _parse_legacy_dragon_tiger_piece(self, piece: str) -> dict[str, Any] | None:
+        text = str(piece or "").strip()
+        if not text:
+            return None
+        hot_money_name = ""
+        body = text
+        if "：" in text:
+            hot_money_name, body = text.split("：", 1)
+            hot_money_name = hot_money_name.strip()
+            body = body.strip()
+        parts = [part.strip() for part in body.split("/") if part.strip()]
+        if not parts:
+            return None
+        theme_name = parts[0] if parts else ""
+        stock_part = parts[1] if len(parts) > 1 else ""
+        action_part = parts[2] if len(parts) > 2 else ""
+        stock_name = stock_part
+        stock_code = ""
+        if "(" in stock_part and ")" in stock_part:
+            stock_name = stock_part[: stock_part.rfind("(")].strip()
+            stock_code = stock_part[stock_part.rfind("(") + 1 : stock_part.rfind(")")].strip()
+        row: dict[str, Any] = {
+            "stock_name": stock_name or None,
+            "stock_code": stock_code or None,
+            "theme_name": theme_name or None,
+            "hot_money_name": hot_money_name or None,
+            "side_summary": action_part or None,
+            "seat_type": "HOT_MONEY",
+            "reason": text,
+            "title": stock_name or theme_name or "龙虎榜证据",
+        }
+        amount = self._parse_legacy_amount(action_part)
+        if amount is not None:
+            row["net_buy"] = amount
+            row["buy_amount"] = abs(amount) if amount > 0 else 0.0
+            row["sell_amount"] = abs(amount) if amount < 0 else 0.0
+        return row
+
+    def _parse_legacy_amount(self, text: str) -> float | None:
+        raw = str(text or "").strip()
+        if not raw:
+            return None
+        import re
+
+        match = re.search(r"([+-]?\d+(?:\.\d+)?)\s*亿", raw)
+        if match:
+            return float(match.group(1)) * 1e8
+        match = re.search(r"([+-]?\d+(?:\.\d+)?)\s*万", raw)
+        if match:
+            return float(match.group(1)) * 1e4
+        match = re.search(r"([+-]?\d+(?:\.\d+)?)", raw)
+        return float(match.group(1)) if match else None
 
     def _is_risk_item(self, item: dict[str, Any]) -> bool:
         lifecycle = str(item.get("lifecycle_state") or "").strip().lower()

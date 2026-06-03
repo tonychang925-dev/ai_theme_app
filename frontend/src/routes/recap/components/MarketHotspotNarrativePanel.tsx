@@ -36,14 +36,14 @@ export default function MarketHotspotNarrativePanel({ narrative, tradeDate }: Pr
   return (
     <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
       <h3 className="section-title recap-panel-title">
-        行情概览
+        热点总结
         <Tag color="gold" style={{ marginLeft: 8 }}>热点总结</Tag>
         {narrative.source && <Tag color={narrative.source === "engine_template" ? "green" : "blue"}>{narrative.source}</Tag>}
       </h3>
 
       <div style={{ background: "rgba(255,214,102,0.08)", border: "1px solid rgba(255,214,102,0.18)", borderRadius: 8, padding: 14, marginBottom: 12 }}>
         <div className="workspace-note" style={{ marginBottom: 6 }}>今日热点结论</div>
-        <div style={{ fontSize: 16, fontWeight: 700, lineHeight: 1.6 }}>{narrative.headline}</div>
+        <div className="recap-hero-text">{narrative.headline}</div>
       </div>
 
       <div className="workspace-card" style={{ marginBottom: 12 }}>

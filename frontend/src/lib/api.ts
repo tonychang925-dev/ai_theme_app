@@ -1473,7 +1473,11 @@ function asMarketReportViewFromSnapshot(
   reportType: "pre_market" | "post_market",
 ): RecapViewModelV2 | null {
   const payload = snapshot.payload || {};
-  const maybe = payload["report"] || payload["recap"] || payload["market_report"];
+  let maybe = payload["report"] || payload["recap"] || payload["market_report"];
+  if (!maybe && payload["recap_doc"] && typeof payload["recap_doc"] === "object") {
+    const recapDoc = payload["recap_doc"] as Record<string, unknown>;
+    maybe = recapDoc["report"] || recapDoc["recap"] || recapDoc["market_report"];
+  }
   if (maybe && typeof maybe === "object") {
     const obj = maybe as Record<string, unknown>;
     const sections = Array.isArray(obj.sections) ? obj.sections : [];

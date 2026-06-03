@@ -327,6 +327,74 @@ def test_post_market_evidence_layer_composer_groups_and_items() -> None:
     assert review["source"] == "structured"
 
 
+def test_post_market_evidence_layer_composer_filters_institution_dragon_tiger_rows() -> None:
+    doc = _sample_evidence_doc()
+    doc["dragon_tiger_reviews"] = [  # type: ignore[index]
+        {
+            "stock_id": "5",
+            "stock_code": "5",
+            "stock_name": "E",
+            "subject_key": "bank",
+            "theme_name": "银行",
+            "net_buy": 12000000,
+            "buy_amount": 30000000,
+            "sell_amount": 18000000,
+            "seat_type": "INSTITUTION",
+            "institution_seat_count": 10,
+            "reason": "机构席位",
+            "side_summary": "净买入",
+        }
+    ]
+
+    review = PostMarketEvidenceLayerComposer().compose(
+        doc,
+        evidence_alignment_index=doc["evidence_alignment_index"],  # type: ignore[arg-type]
+    )
+
+    assert review["dragon_tiger_evidence"] == []
+    assert review["diagnostics"]["dragon_tiger_count"] == 0
+
+
+def test_post_market_evidence_layer_composer_uses_legacy_dragon_tiger_sections() -> None:
+    doc = _sample_evidence_doc()
+    doc["dragon_tiger_reviews"] = [  # type: ignore[index]
+        {
+            "stock_id": "5",
+            "stock_code": "5",
+            "stock_name": "E",
+            "subject_key": "bank",
+            "theme_name": "银行",
+            "net_buy": 12000000,
+            "buy_amount": 30000000,
+            "sell_amount": 18000000,
+            "seat_type": "INSTITUTION",
+            "institution_seat_count": 10,
+            "reason": "机构席位",
+            "side_summary": "净买入",
+        }
+    ]
+    doc["report"] = {
+        "sections": [
+            {
+                "heading": "龙虎榜",
+                "items": [
+                    "成都系：有色十大第一 / 锡业股份(000960) / 买入0.99亿",
+                    "章盟主系：数据中心电力设备 / 福达合金(603045) / 买入1.15亿",
+                ],
+            }
+        ]
+    }
+
+    review = PostMarketEvidenceLayerComposer().compose(
+        doc,
+        evidence_alignment_index=doc["evidence_alignment_index"],  # type: ignore[arg-type]
+    )
+
+    assert len(review["dragon_tiger_evidence"]) == 2
+    assert review["dragon_tiger_evidence"][0]["stock_name"] in {"锡业股份", "福达合金"}
+    assert review["diagnostics"]["dragon_tiger_count"] == 2
+
+
 def test_post_market_engine_report_composer_includes_evidence_layer_review() -> None:
     doc = _sample_evidence_doc()
     report = PostMarketEngineReportComposer().compose(doc)  # type: ignore[arg-type]

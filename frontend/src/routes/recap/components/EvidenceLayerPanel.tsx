@@ -39,16 +39,25 @@ function evidenceTypeLabel(value: EvidenceItem["evidence_type"]) {
   return map[value] || value || "--";
 }
 
-function tagColor(value?: boolean | null) {
-  return value ? "green" : "default";
-}
-
 function renderTags(tags: string[]) {
   if (!tags || tags.length === 0) return <span className="workspace-note">--</span>;
+  const classForTag = (tag: string) => {
+    if (tag.includes("换手")) return "is-abnormal-turnover";
+    if (tag.includes("倍量") || tag.includes("放量")) return "is-abnormal-volume";
+    if (tag.includes("尾盘")) return "is-abnormal-tail";
+    if (tag.includes("游资")) return "is-role";
+    if (tag.includes("机构")) return "is-status";
+    if (tag.includes("主力")) return "is-basis";
+    if (tag.includes("观察") || tag.includes("试错")) return "is-status";
+    if (tag.includes("异动")) return "is-basis";
+    return "is-basis";
+  };
   return (
     <div className="recap-tag-stack" style={{ gap: 4, flexWrap: "wrap" }}>
-      {tags.slice(0, 6).map((tag) => (
-        <Tag key={tag}>{tag}</Tag>
+      {tags.slice(0, 6).map((tag, idx) => (
+        <span key={`${tag}-${idx}`} className={`recap-chip ${classForTag(tag)}`}>
+          {tag}
+        </span>
       ))}
     </div>
   );
@@ -79,9 +88,7 @@ function sectionColumns(): ColumnsType<EvidenceItem & { key: string }> {
       title: "主线",
       key: "mainline_name",
       width: 120,
-      render: (_: unknown, row: EvidenceItem) => (
-        <Tag color={row.active_mainline ? "green" : "default"}>{row.mainline_name || (row.active_mainline ? "主线" : "--")}</Tag>
-      ),
+      render: (_: unknown, row: EvidenceItem) => <Tag color={row.active_mainline ? "green" : "default"}>{row.mainline_name || (row.active_mainline ? "主线" : "--")}</Tag>,
     },
     {
       title: "生命周期",
@@ -93,19 +100,19 @@ function sectionColumns(): ColumnsType<EvidenceItem & { key: string }> {
       title: "Layer C",
       key: "layer_c",
       width: 84,
-      render: (_: unknown, row: EvidenceItem) => <Tag color={tagColor(row.in_layer_c)}>{row.in_layer_c ? "是" : "否"}</Tag>,
+      render: (_: unknown, row: EvidenceItem) => <Tag color={row.in_layer_c ? "green" : "default"}>{row.in_layer_c ? "是" : "否"}</Tag>,
     },
     {
       title: "D1",
       key: "d1",
       width: 72,
-      render: (_: unknown, row: EvidenceItem) => <Tag color={tagColor(row.is_d1_candidate)}>{row.is_d1_candidate ? "是" : "否"}</Tag>,
+      render: (_: unknown, row: EvidenceItem) => <Tag color={row.is_d1_candidate ? "blue" : "default"}>{row.is_d1_candidate ? "是" : "否"}</Tag>,
     },
     {
       title: "Focus",
       key: "focus",
       width: 72,
-      render: (_: unknown, row: EvidenceItem) => <Tag color={tagColor(row.is_focus_stock)}>{row.is_focus_stock ? "是" : "否"}</Tag>,
+      render: (_: unknown, row: EvidenceItem) => <Tag color={row.is_focus_stock ? "green" : "default"}>{row.is_focus_stock ? "是" : "否"}</Tag>,
     },
     {
       title: "评分",
@@ -183,67 +190,64 @@ export default function EvidenceLayerPanel({ evidenceLayerReview }: Props) {
   if (!evidenceLayerReview) return null;
 
   const groups = [...(evidenceLayerReview.evidence_groups || [])];
+  const nonMainlineEvidence = [
+    ...(evidenceLayerReview.abnormal_evidence || []),
+    ...(evidenceLayerReview.money_flow_evidence || []),
+    ...(evidenceLayerReview.dragon_tiger_evidence || []),
+    ...(evidenceLayerReview.stock_capital_evidence || []),
+  ]
+    .filter((item) => !item.active_mainline)
+    .sort(
+      (left, right) =>
+        (left.rank_order ?? 9999) - (right.rank_order ?? 9999) ||
+        (Number(right.score ?? 0) - Number(left.score ?? 0)) ||
+        (Number(right.amount ?? 0) - Number(left.amount ?? 0)) ||
+        String(left.stock_name || left.stock_id || "").localeCompare(String(right.stock_name || right.stock_id || "")),
+    );
 
   return (
-    <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
+    <div className="recap-evidence-layer" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
       <h3 className="section-title recap-panel-title">
         证据层
         <Tag color="cyan" style={{ marginLeft: 8 }}>
           交易证据
         </Tag>
-        {evidenceLayerReview.source && <Tag color={evidenceLayerReview.source === "structured" ? "green" : "blue"}>{evidenceLayerReview.source}</Tag>}
+        {evidenceLayerReview.source && (
+          <Tag color={evidenceLayerReview.source === "structured" ? "green" : "blue"}>{evidenceLayerReview.source}</Tag>
+        )}
       </h3>
 
       <div className="workspace-card" style={{ marginBottom: 12 }}>
-        <div className="metric-label section-title">证据摘要</div>
-        <p className="workspace-note" style={{ whiteSpace: "pre-wrap" }}>
-          {evidenceLayerReview.summary}
-        </p>
-      </div>
+        <div className="metric-label section-title" style={{ marginBottom: 8 }}>
+          证据摘要 / 非主线证据
+          <Tag color="blue" style={{ marginLeft: 8 }}>
+            {nonMainlineEvidence.length}
+          </Tag>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 12 }}>
+          <div className="recap-form-label">证据摘要</div>
+          <div className="recap-form-label">非主线证据</div>
+          <div className="recap-form-label">Top 股票</div>
+          <div className="recap-form-label">关联主线</div>
 
-      <div className="workspace-card" style={{ marginBottom: 12 }}>
-        <div className="metric-label section-title">证据分组</div>
-        <div className="recap-tag-stack" style={{ gap: 8, flexWrap: "wrap" }}>
-          {groups.length > 0 ? (
-            groups.map((group) => (
-              <Tag key={group.group_key} color={group.group_key === "d1" ? "gold" : group.group_key === "layer_c" ? "blue" : group.group_key === "mainline" ? "green" : group.group_key === "risk" ? "red" : "default"}>
-                {group.group_name} {group.item_count}
-              </Tag>
-            ))
-          ) : (
-            <span className="workspace-note">暂无分组</span>
-          )}
+          <div className="workspace-note" style={{ whiteSpace: "pre-wrap", lineHeight: 1.7 }}>
+            {evidenceLayerReview.summary}
+          </div>
+          <div className="workspace-note" style={{ whiteSpace: "pre-wrap", lineHeight: 1.7 }}>
+            {nonMainlineEvidence.length > 0
+              ? `主要来自 ${nonMainlineEvidence.slice(0, 3).map((item) => item.stock_name || item.stock_id || "--").filter(Boolean).join("、") || "--"}。`
+              : "暂无非主线证据"}
+          </div>
+          <div className="workspace-note" style={{ whiteSpace: "pre-wrap", lineHeight: 1.7 }}>
+            {nonMainlineEvidence.length > 0 ? nonMainlineEvidence.slice(0, 5).map((item) => item.stock_name || item.stock_id || "--").filter(Boolean).join("、") : "--"}
+          </div>
+          <div className="workspace-note" style={{ whiteSpace: "pre-wrap", lineHeight: 1.7 }}>
+            {nonMainlineEvidence.length > 0
+              ? Array.from(new Set(nonMainlineEvidence.flatMap((item) => (item.mainline_name ? [item.mainline_name] : [])))).slice(0, 5).join("、") || "--"
+              : "--"}
+          </div>
         </div>
       </div>
-
-      {groups.length > 0 && (
-        <div style={{ display: "grid", gap: 12, marginBottom: 12 }}>
-          {groups.map((group) => (
-            <div key={group.group_key} className="workspace-card">
-              <div className="metric-label section-title" style={{ marginBottom: 8 }}>
-                {group.group_name}
-                <Tag color="blue" style={{ marginLeft: 8 }}>{group.item_count}</Tag>
-              </div>
-              <div style={{ marginBottom: 8 }}>
-                <div className="workspace-note" style={{ marginBottom: 4 }}>摘要</div>
-                <p className="workspace-note">{group.summary}</p>
-              </div>
-              <div style={{ marginBottom: 8 }}>
-                <div className="workspace-note" style={{ marginBottom: 4 }}>Top 股票</div>
-                <div className="recap-tag-stack" style={{ gap: 4, flexWrap: "wrap" }}>
-                  {group.top_stocks?.length ? group.top_stocks.map((item) => <Tag key={item}>{item}</Tag>) : <span className="workspace-note">--</span>}
-                </div>
-              </div>
-              <div>
-                <div className="workspace-note" style={{ marginBottom: 4 }}>关联主线</div>
-                <div className="recap-tag-stack" style={{ gap: 4, flexWrap: "wrap" }}>
-                  {group.related_mainlines?.length ? group.related_mainlines.map((item) => <Tag key={item} color="green">{item}</Tag>) : <span className="workspace-note">--</span>}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
 
       {renderSection("异动证据", evidenceLayerReview.abnormal_evidence || [])}
       {renderSection("资金证据", evidenceLayerReview.money_flow_evidence || [])}
