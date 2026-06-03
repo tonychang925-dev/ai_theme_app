@@ -436,7 +436,7 @@ class BuildPostMarketRecapJob:
                     "removed_reason": (row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None)),
                     "kept_because": None,
                 }
-                for row in strong_watch_history[:100]
+                for row in strong_watch_history  # full 7-day pool — PDV2 D1 input, no truncation
             ],
             # Primary count follows the actual candidate list, with formal/observe split preserved separately.
             "candidate_count": len(candidates),
@@ -656,7 +656,7 @@ class BuildPostMarketRecapJob:
                         "removed_reason": row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None),
                         "kept_because": row.get("kept_because") if isinstance(row, dict) else getattr(row, "kept_because", None),
                     }
-                    for row in strong_watch_history[:100]
+                    for row in strong_watch_history  # full dataset, no truncation
                 ],
                 ttl_seconds=SnapshotCacheWriter.TTL_24H,
             )
@@ -1144,36 +1144,157 @@ class BuildPostMarketRecapJob:
                 PostMarketDecisionEngineV2,
             )
 
-            # Read Layer C — explicit priority, diagnostics match actual source
-            layer_c_source: str = "empty"
-            if isinstance(recap_doc.get("strong_watch_history"), list) and recap_doc["strong_watch_history"]:
-                layer_c_rows = recap_doc["strong_watch_history"]
-                layer_c_source = "strong_watch_history"
-            elif isinstance(recap_doc.get("strong_watch_input_7d_preview"), list) and recap_doc["strong_watch_input_7d_preview"]:
-                layer_c_rows = recap_doc["strong_watch_input_7d_preview"]
-                layer_c_source = "strong_watch_input_7d_preview"
-            elif isinstance(recap_doc.get("strong_stock_reviews"), list) and recap_doc["strong_stock_reviews"]:
-                layer_c_rows = recap_doc["strong_stock_reviews"]
-                layer_c_source = "strong_stock_reviews_fallback"
-            else:
-                layer_c_rows = []
+            # D1 input: use existing get_w2s_candidate_inputs (same as AI选股弱转强策略)
+            try:
+                d1_rows = await self._read_port.get_w2s_candidate_inputs(trade_date)
+                layer_c_d1_raw = len(d1_rows)
+                # Filter same as old code: exclude reject
+                d1_rows = [r for r in d1_rows if r.get("pool_entry_type") != "reject"
+                          and r.get("watch_status") != "removed"]
+                layer_c_d1_eligible = len(d1_rows)
+            except Exception:
+                d1_rows = []
+                layer_c_d1_raw = 0
+                layer_c_d1_eligible = 0
+                logger.warning("D1 input read failed, falling back to recap_doc preview")
 
+            layer_c_source: str = "get_w2s_candidate_inputs"
+            layer_c_rows: list[dict] = []
+            d1_algorithm: str = "BuildWeakToStrongCandidateUseCase"
+            d1_formal_before: int = 0
+            d1_observe_before: int = 0
+            d1_formal_after: int = 0
+            d1_observe_after: int = 0
+            preview_truncated: bool = False
+
+            if d1_rows:
+                from stock_processing_service.application.use_cases.build_weak_to_strong_candidate import (
+                    BuildWeakToStrongCandidateUseCase,
+                )
+                # Create instance bypassing dataclass constructor — build_candidates is stateless
+                w2s_uc = object.__new__(BuildWeakToStrongCandidateUseCase)
+                candidates = w2s_uc.build_candidates(trade_date=trade_date, d1_input_rows=d1_rows)
+                # Dedup by stock_id — same stock can appear under multiple subject_keys
+                candidates = w2s_uc._dedup_and_rank(candidates, limit=20)
+                d1_formal_before = sum(1 for c in candidates if c.get("candidate_level") == "formal")
+                d1_observe_before = sum(1 for c in candidates if c.get("candidate_level") == "observe_only")
+
+                # Apply market_regime for trade permission (downgrade only, no re-score)
+                allow_trade = regime.allow_trade
+                for c in candidates:
+                    level = c.get("candidate_level", "observe_only")
+                    if not allow_trade and level == "formal":
+                        level = "observe_only"
+                        c = dict(c, candidate_level="observe_only")
+                    layer_c_rows.append(c)
+                    if level == "formal":
+                        d1_formal_after += 1
+                    else:
+                        d1_observe_after += 1
+            else:
+                # Fallback: use recap_doc data if read_port failed (backward compat)
+                if isinstance(recap_doc.get("strong_watch_history"), list) and recap_doc["strong_watch_history"]:
+                    layer_c_rows = recap_doc["strong_watch_history"]
+                    layer_c_source = "strong_watch_history"
+                elif isinstance(recap_doc.get("strong_watch_input_7d_preview"), list) and recap_doc["strong_watch_input_7d_preview"]:
+                    layer_c_rows = recap_doc["strong_watch_input_7d_preview"]
+                    layer_c_source = "strong_watch_input_7d_preview"
+                    preview_truncated = True
+                elif isinstance(recap_doc.get("strong_stock_reviews"), list) and recap_doc["strong_stock_reviews"]:
+                    layer_c_rows = recap_doc["strong_stock_reviews"]
+                    layer_c_source = "strong_stock_reviews_fallback"
+                d1_algorithm = "fallback_score"
+                focus_len = 0
+
+            # Build strong_pool + trading_permission via PDV2 (Layer C display)
             pdv2_engine = PostMarketDecisionEngineV2()
             pdv2 = pdv2_engine.evaluate(
                 trade_date=trade_date.isoformat(),
                 confirmed_mainlines=confirmed_mainlines,
                 mainline_lifecycle=[r.to_dict() for r in reviews],
                 market_regime=regime.to_dict(),
-                stock_pool_rows=layer_c_rows,
+                stock_pool_rows=layer_c_rows if layer_c_rows else [],
             )
+
+            # Overwrite D1 with BuildWeakToStrongCandidateUseCase results (real AI选股弱转强)
+            if d1_rows:
+                from stock_processing_service.domain.services.post_market_decision_v2.models import (
+                    WeakToStrongD1Item, NextDayFocusStock,
+                )
+                allow_trade = regime.allow_trade
+                trade_mode = regime.trade_mode
+                w2s_d1: list[dict] = []
+                w2s_focus: list[dict] = []
+                for c in candidates:
+                    level = c.get("candidate_level", "observe_only")
+                    score = float(c.get("w2s_score") or c.get("candidate_score") or 0)
+                    stock_id = c.get("stock_id", "")
+                    stock_name = c.get("stock_name", "") or stock_id
+                    item = WeakToStrongD1Item(
+                        trade_date=trade_date.isoformat(), next_trade_date="T+1",
+                        stock_id=stock_id, stock_name=stock_name,
+                        mainline_id="", subject_key="", theme_name="",
+                        candidate_stage="D1", candidate_level=level,
+                        candidate_score=score,
+                        support_score=float(c.get("support_score", 0) or 0),
+                        momentum_score=0, weak_type="pullback",
+                        support_type=str(c.get("support_type") or "unknown"),
+                        gap_hit=False,
+                        repair_or_takeover_score=score, weakness_valid_score=0,
+                        buy_condition=(["等待市场环境改善"] if not allow_trade else []),
+                        invalid_condition=[], d2_required=True, d2_status="pending",
+                        evidence={},
+                        diagnostics={"source": "BuildWeakToStrongCandidateUseCase",
+                                     "scoring_method": "native",
+                                     "blocked_by_market_regime": not allow_trade},
+                    )
+                    w2s_d1.append(item.to_dict())
+                    if level == "formal":
+                        w2s_focus.append(NextDayFocusStock(
+                            trade_date=trade_date.isoformat(), stock_id=stock_id,
+                            stock_name=stock_name, category="重点观察",
+                            priority=len(w2s_focus) + 1,
+                            mainline_id="", subject_key="", theme_name="",
+                            pool_entry_type="formal", candidate_level=level,
+                            watch_score=0, candidate_score=score,
+                            buy_condition=item.buy_condition,
+                            invalid_condition=item.invalid_condition,
+                            d2_required=True, d2_status="pending",
+                            suggested_position=0.15,
+                        ).to_dict())
+
+                _d1_limit = 5 if trade_mode == "ultra_short_only" else (10 if trade_mode == "mainline_core_only" else 20)
+                pdv2.weak_to_strong_d1_reviews = w2s_d1[:_d1_limit]
+                pdv2.next_day_focus_stocks = w2s_focus[:_d1_limit]
+                pdv2.trading_permission["d1_candidate_count"] = len(w2s_d1[:_d1_limit])
+                pdv2.trading_permission["focus_stock_count"] = len(w2s_focus[:_d1_limit])
+                d1_formal_after = sum(1 for d in w2s_d1[:_d1_limit] if d.get("candidate_level") == "formal")
+                d1_observe_after = sum(1 for d in w2s_d1[:_d1_limit] if d.get("candidate_level") == "observe_only")
+
             pdv2.diagnostics["layer_c_rows"] = len(layer_c_rows)
             pdv2.diagnostics["layer_c_source"] = layer_c_source
+            pdv2.diagnostics["d1_algorithm"] = d1_algorithm
+            pdv2.diagnostics["layer_c_d1_raw_rows"] = layer_c_d1_raw
+            pdv2.diagnostics["layer_c_d1_eligible_rows"] = layer_c_d1_eligible
+            pdv2.diagnostics["d1_formal_before_market"] = d1_formal_before
+            pdv2.diagnostics["d1_observe_before_market"] = d1_observe_before
+            pdv2.diagnostics["d1_formal_after_market"] = d1_formal_after
+            pdv2.diagnostics["d1_observe_after_market"] = d1_observe_after
+            pdv2.diagnostics["preview_truncated_used"] = preview_truncated
             if cml_error:
                 pdv2.diagnostics["confirmed_mainline_error"] = cml_error
             recap_doc["post_market_decision_v2"] = pdv2.to_dict()
 
             # ── PR-13A: persist mainline daily state ──
             await self._persist_mainline_daily_state(trade_date, recap_doc, batch_id or "", trace_id or "")
+
+            # Re-write snapshot with PDV2 D1 data (written before PDV2 section at line 632)
+            updated_snapshot = PostMarketRecapSnapshot(
+                trade_date=trade_date, snapshot_version=snapshot_version,
+                batch_id=batch_id, trace_id=trace_id, source_trace_id=trace_id,
+                recap_doc=_serialize(recap_doc),
+            )
+            await self._write_port.upsert_post_market_recap_snapshot(updated_snapshot)
         except Exception:
             logger.exception("Lifecycle pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []

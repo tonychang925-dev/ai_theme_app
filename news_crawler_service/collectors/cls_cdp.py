@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import re
 import time
 from datetime import date
@@ -32,7 +33,7 @@ logger = logging.getLogger(__name__)
 # ── 配置 ──
 
 CLS_URL = "https://www.cls.cn/telegraph"
-DEFAULT_CDP_PORT = 9223
+DEFAULT_CDP_PORT = int(os.environ.get("CLS_CDP_PORT", "9224"))
 PAGE_LOAD_TIMEOUT = 30.0   # 页面加载超时
 RENDER_WAIT_TIMEOUT = 15.0  # 等待 Next.js 渲染超时
 MAX_ITEMS = 60             # 单次最多提取条数
@@ -283,7 +284,7 @@ class ClsCdpCollector:
                 "标题": it.get("title", ""),
                 "内容": it.get("content", ""),
                 "发布日期": trade_date,
-                "发布时间": it.get("time", "") + ":00",
+                "发布时间": it.get("time", ""),
                 "市场": "A股",
                 "URL": CLS_URL,
             }

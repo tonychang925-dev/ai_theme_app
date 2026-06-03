@@ -282,5 +282,13 @@ class PostMarketDecisionEngineV2:
                 "layer_c_subject_keys": sorted(all_pool_sks),
                 "mainline_filtered_subject_keys": sorted(filtered_sks),
                 "missing_registry_subject_keys": sorted(missing_sks),
+                # PDV2 input source transparency
+                "layer_c_d1_eligible_rows": len(pool_rows),
+                "layer_c_d1_after_mainline_filter": len(filtered_pool),
+                "layer_c_d1_reject_filtered": sum(
+                    1 for r in filtered_pool
+                    if (r.pool_entry_type if hasattr(r, "pool_entry_type") else r.get("pool_entry_type")) == "reject"
+                ),
+                "layer_c_d1_preview_truncated": len(pool_rows) <= 100,
             },
         )

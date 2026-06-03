@@ -37,9 +37,9 @@ CLS_REQUEST_HEADERS = {
 
 CLS_ITEM_RE = re.compile(
     r"(?P<time>\d{2}:\d{2})"
-    r"【(?P<title>.+?)】"
+    r"(?:【(?P<title>.+?)】)?"  # 部分条目无【】标题
     r"财联社(?P<month>\d{1,2})月(?P<day>\d{1,2})日电[，,]?"
-    r"(?P<content>.*?)(?=(?:\n\d{2}:\d{2}【)|\Z)",
+    r"(?P<content>.*?)(?=(?:\n\d{2}:\d{2})|\Z)",  # 下一条以 HH:MM 开头即结束
     re.S,
 )
 CLS_PAGE_DATE_RE = re.compile(r"(?P<year>\d{4})[-/\.年](?P<month>\d{1,2})[-/\.月](?P<day>\d{1,2})")
@@ -167,6 +167,7 @@ class AkshareClsCollector(BaseCollector):
                     timeout=self.request_interval,
                 )
                 response.raise_for_status()
+                response.encoding = 'utf-8'  # 服务器未声明 charset, requests 默认 ISO-8859-1 会乱码
 
                 df = self._parse_cls_page(response.text, source_url=response.url)
                 page_fingerprints.append(self._fingerprint_text(response.text, response.url))
