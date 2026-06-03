@@ -61,12 +61,70 @@ function buildFallbackNarrative(
   };
 }
 
+function filterTradeTips(points: string[]) {
+  const duplicateMarkers = [
+    "市场状态：",
+    "市场状态",
+    "短线情绪：",
+    "短线情绪",
+    "主线环境：",
+    "主线环境",
+    "交易模式：",
+    "交易模式",
+    "当前允许交易",
+    "市场定性",
+    "操作倾向",
+    "上证指数",
+    "沪深300",
+    "中证1000",
+    "指数环境",
+    "支撑",
+    "压力",
+  ];
+  return points.filter((point) => !duplicateMarkers.some((marker) => point.includes(marker)));
+}
+
+function titleTone(title: string) {
+  const map: Record<string, string> = {
+    "市场状态判断": "green",
+    "指数环境总结": "blue",
+    "短线情绪总结": "orange",
+    "核心要点": "gold",
+    "风险提示": "red",
+    "明日策略": "purple",
+  };
+  return map[title] || "default";
+}
+
+function TitleTag({ children }: { children: string }) {
+  return <Tag color={titleTone(children)} className="recap-title-tag">{children}</Tag>;
+}
+
+function isWarningSentence(text: string) {
+  return text.includes("市场信号尚不充分") || text.includes("先观察主线修复与确认");
+}
+
+function TextBlock({ value }: { value: string }) {
+  const warning = isWarningSentence(value);
+  return <div className={`recap-body-text ${warning ? "recap-warning-text" : ""}`}>{value}</div>;
+}
+
+function HeadlineBlock({ value }: { value: string }) {
+  const warning = isWarningSentence(value);
+  return warning ? (
+    <div className="recap-body-text recap-warning-text">{value}</div>
+  ) : (
+    <div className="recap-hero-text">{value}</div>
+  );
+}
+
 export default function MarketOverviewNarrativePanel({ narrative, engineSummary, marketRegime }: Props) {
   const view = narrative ?? buildFallbackNarrative(engineSummary, marketRegime);
   if (!view) return null;
+  const tradeTips = filterTradeTips(view.core_points || []);
 
   return (
-    <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 10, padding: 16, marginBottom: 14 }}>
+    <div className="market-overview-narrative" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 10, padding: 16, marginBottom: 14 }}>
       <h3 className="section-title recap-panel-title">
         市场总览
         <Tag color="gold" style={{ marginLeft: 8 }}>复盘开篇总结</Tag>
@@ -74,52 +132,45 @@ export default function MarketOverviewNarrativePanel({ narrative, engineSummary,
       </h3>
 
       <div style={{ background: "rgba(141,220,255,0.08)", border: "1px solid rgba(141,220,255,0.18)", borderRadius: 8, padding: 14, marginBottom: 12 }}>
-        <div className="workspace-note" style={{ marginBottom: 6 }}>今日核心结论</div>
-        <div style={{ fontSize: 16, fontWeight: 700, lineHeight: 1.6 }}>
-          {view.headline}
-        </div>
+        <Tag color="green" className="recap-title-tag" style={{ marginBottom: 6 }}>今日核心结论</Tag>
+        <HeadlineBlock value={view.headline} />
       </div>
 
-      <div className="recap-narrative-grid">
-        <section className="workspace-card" style={{ marginBottom: 12 }}>
-          <div className="metric-label section-title">核心要点</div>
-          <ul className="workspace-list">
-            {view.core_points.map((point, idx) => (
-              <li key={`market-overview-point-${idx}`}>
-                <p className="workspace-note">{point}</p>
-              </li>
-            ))}
-          </ul>
+      <div className="market-summary-grid">
+        <section className="workspace-card market-summary-card">
+          <div className="workspace-summary-block">
+            <div className="workspace-note" style={{ marginBottom: 6 }}><TitleTag>市场状态判断</TitleTag></div>
+            <TextBlock value={view.market_state_summary} />
+          </div>
+          <div className="workspace-summary-block">
+            <div className="workspace-note" style={{ marginBottom: 6 }}><TitleTag>指数环境总结</TitleTag></div>
+            <TextBlock value={view.index_summary} />
+          </div>
+          <div className="workspace-summary-block">
+            <div className="workspace-note" style={{ marginBottom: 6 }}><TitleTag>短线情绪总结</TitleTag></div>
+            <TextBlock value={view.sentiment_summary} />
+          </div>
         </section>
 
-        <section className="workspace-card" style={{ marginBottom: 12 }}>
-          <div className="metric-label section-title">市场状态判断</div>
-          <p className="workspace-note">{view.market_state_summary}</p>
-        </section>
-
-        <section className="workspace-card" style={{ marginBottom: 12 }}>
-          <div className="metric-label section-title">指数环境总结</div>
-          <p className="workspace-note">{view.index_summary}</p>
-        </section>
-
-        <section className="workspace-card" style={{ marginBottom: 12 }}>
-          <div className="metric-label section-title">短线情绪总结</div>
-          <p className="workspace-note">{view.sentiment_summary}</p>
-        </section>
-
-        <section className="workspace-card" style={{ marginBottom: 12 }}>
-          <div className="metric-label section-title">热点行情概览</div>
-          <p className="workspace-note">{view.hotspot_summary}</p>
-        </section>
-
-        <section className="workspace-card" style={{ marginBottom: 12 }}>
-          <div className="metric-label section-title">风险提示</div>
-          <p className="workspace-note">{view.risk_warning}</p>
-        </section>
-
-        <section className="workspace-card">
-          <div className="metric-label section-title">明日策略</div>
-          <p className="workspace-note">{view.next_day_strategy}</p>
+        <section className="workspace-card market-summary-card">
+          <div className="workspace-summary-block">
+            <div className="workspace-note" style={{ marginBottom: 6 }}><TitleTag>核心要点</TitleTag></div>
+            <ul className="workspace-list">
+              {tradeTips.length > 0 ? tradeTips.map((point, idx) => (
+                <li key={`market-overview-point-${idx}`}>
+                  <TextBlock value={point} />
+                </li>
+              )) : <li><TextBlock value="--" /></li>}
+            </ul>
+          </div>
+          <div className="workspace-summary-block">
+            <div className="workspace-note" style={{ marginBottom: 6 }}><TitleTag>风险提示</TitleTag></div>
+            <TextBlock value={view.risk_warning} />
+          </div>
+          <div className="workspace-summary-block">
+            <div className="workspace-note" style={{ marginBottom: 6 }}><TitleTag>明日策略</TitleTag></div>
+            <TextBlock value={view.next_day_strategy} />
+          </div>
         </section>
       </div>
     </div>

@@ -2,7 +2,12 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const recapPagePath = resolve("src/routes/recap/RecapPage.tsx");
+const engineViewPath = resolve("src/routes/recap/components/EnginePostMarketView.tsx");
+const engineMissingPath = resolve("src/routes/recap/components/EngineMissingState.tsx");
+
 const source = readFileSync(recapPagePath, "utf8");
+const engineViewSource = readFileSync(engineViewPath, "utf8");
+const engineMissingSource = readFileSync(engineMissingPath, "utf8");
 
 function assert(condition, message) {
   if (!condition) {
@@ -34,6 +39,13 @@ function assertPostMarketBranching() {
   assert(source.includes("legacyViewEnabled ?"), "post_market main path must branch on legacy mode");
   assert(source.includes("onShowLegacy={openPostMarketLegacyView}"), "engine view must expose a legacy toggle");
   assert(source.includes("onRetry={handleStartPostMarketRecap}"), "missing state must allow re-running recap");
+  assert(engineViewSource.includes("MarketOverviewNarrativePanel"), "engine view must render market overview narrative");
+  assert(engineViewSource.includes("MarketHotspotOverviewPanel"), "engine view must render market hotspot overview");
+  assert(engineViewSource.includes("MainlineNarrativePanel"), "engine view must render mainline narrative");
+  assert(engineViewSource.includes("D1NarrativePanel"), "engine view must render D1 narrative");
+  assert(engineViewSource.includes("EvidenceLayerPanel"), "engine view must render evidence layer");
+  assert(engineViewSource.includes("查看旧版 sections"), "engine view must expose the legacy sections entry label");
+  assert(engineMissingSource.includes("查看旧版 sections"), "missing state must expose the legacy sections entry label");
 }
 
 function assertNoDirectEnginePanelsInPage() {

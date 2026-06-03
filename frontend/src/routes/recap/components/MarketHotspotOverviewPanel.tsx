@@ -71,7 +71,6 @@ export default function MarketHotspotOverviewPanel({ marketHotspotOverview, trad
       key: "theme_name",
       dataIndex: "theme_name",
       width: 170,
-      fixed: "left",
       render: (_: unknown, row: MarketHotspotRow) => (
         <div className="recap-tag-stack" style={{ gap: 6 }}>
           {renderThemeName(row, tradeDate)}
@@ -157,49 +156,52 @@ export default function MarketHotspotOverviewPanel({ marketHotspotOverview, trad
   ];
 
   return (
-    <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
+    <div className="workspace-card recap-engine-panel">
       <h3 className="section-title recap-panel-title">
-        行情概览
+        热点摘要
         <Tag color="gold" style={{ marginLeft: 8 }}>今日热点</Tag>
         {marketHotspotOverview.source && <Tag color={marketHotspotOverview.source === "structured" ? "green" : "blue"}>{marketHotspotOverview.source}</Tag>}
       </h3>
 
-      <div style={{ background: "rgba(255,214,102,0.08)", border: "1px solid rgba(255,214,102,0.18)", borderRadius: 8, padding: 14, marginBottom: 12 }}>
-        <div className="workspace-note" style={{ marginBottom: 6 }}>热点摘要</div>
-        <div style={{ fontSize: 16, fontWeight: 700, lineHeight: 1.6 }}>{marketHotspotOverview.summary}</div>
-      </div>
-
       <div className="workspace-card" style={{ marginBottom: 12 }}>
-        <div className="metric-label section-title">强势题材</div>
-        <div className="recap-tag-stack" style={{ flexWrap: "wrap" }}>
-          {marketHotspotOverview.strongest_themes.length > 0 ? marketHotspotOverview.strongest_themes.map((item) => <Tag key={item} color="blue">{item}</Tag>) : <span className="workspace-note">--</span>}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", gap: 12 }}>
+          <div className="recap-form-label">今日热点结论</div>
+          <div className="recap-form-label">强势题材</div>
+          <div className="recap-form-label">主线相关</div>
+          <div className="recap-form-label">轮动观察</div>
+          <div className="recap-form-label">风险主题</div>
+          <div className="recap-form-label">诊断</div>
+
+          <div className="recap-body-text" style={{ lineHeight: 1.7 }}>
+            {marketHotspotOverview.summary}
+          </div>
+
+          <div className="recap-tag-stack" style={{ flexWrap: "wrap" }}>
+            {marketHotspotOverview.strongest_themes.length > 0 ? marketHotspotOverview.strongest_themes.map((item) => <Tag key={item} color="blue">{item}</Tag>) : <span className="workspace-note">--</span>}
+          </div>
+
+          <div className="recap-tag-stack" style={{ flexWrap: "wrap" }}>
+            {marketHotspotOverview.mainline_related_themes.length > 0 ? marketHotspotOverview.mainline_related_themes.map((item) => <Tag key={item} color="green">{item}</Tag>) : <span className="workspace-note">--</span>}
+          </div>
+
+          <div className="recap-tag-stack" style={{ flexWrap: "wrap" }}>
+            {marketHotspotOverview.rotation_themes.length > 0 ? marketHotspotOverview.rotation_themes.map((item) => <Tag key={item}>{item}</Tag>) : <span className="workspace-note">--</span>}
+          </div>
+
+          <div className="recap-tag-stack" style={{ flexWrap: "wrap" }}>
+            {marketHotspotOverview.risk_themes.length > 0 ? marketHotspotOverview.risk_themes.map((item) => <Tag key={item} color="red">{item}</Tag>) : <span className="workspace-note">--</span>}
+          </div>
+
+          <div className="workspace-note" style={{ lineHeight: 1.7 }}>
+            <div><strong>主题：</strong>{String(diagnostics?.row_count ?? "--")}</div>
+            <div><strong>涨停总数：</strong>{String(diagnostics?.limit_up_total ?? "--")}</div>
+          </div>
         </div>
       </div>
 
-      <div className="workspace-card" style={{ marginBottom: 12 }}>
-        <div className="metric-label section-title">主线相关</div>
-        <div className="recap-tag-stack" style={{ flexWrap: "wrap" }}>
-          {marketHotspotOverview.mainline_related_themes.length > 0 ? marketHotspotOverview.mainline_related_themes.map((item) => <Tag key={item} color="green">{item}</Tag>) : <span className="workspace-note">--</span>}
-        </div>
-      </div>
-
-      <div className="workspace-card" style={{ marginBottom: 12 }}>
-        <div className="metric-label section-title">轮动观察</div>
-        <div className="recap-tag-stack" style={{ flexWrap: "wrap" }}>
-          {marketHotspotOverview.rotation_themes.length > 0 ? marketHotspotOverview.rotation_themes.map((item) => <Tag key={item}>{item}</Tag>) : <span className="workspace-note">--</span>}
-        </div>
-      </div>
-
-      <div className="workspace-card" style={{ marginBottom: 12 }}>
-        <div className="metric-label section-title">风险主题</div>
-        <div className="recap-tag-stack" style={{ flexWrap: "wrap" }}>
-          {marketHotspotOverview.risk_themes.length > 0 ? marketHotspotOverview.risk_themes.map((item) => <Tag key={item} color="red">{item}</Tag>) : <span className="workspace-note">--</span>}
-        </div>
-      </div>
-
-      <div style={{ overflowX: "auto" }}>
+      <div className="recap-table-wrap">
         <Table
-          className="recap-table"
+          className="recap-antd-table"
           dataSource={rows.map((row) => ({ ...row, key: `${row.rank_order ?? row.subject_key}-${row.subject_key}` }))}
           columns={columns}
           size="small"

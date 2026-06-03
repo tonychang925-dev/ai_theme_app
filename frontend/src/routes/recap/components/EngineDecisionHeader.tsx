@@ -1,5 +1,5 @@
 /** PR-14B: 复盘引擎交易结论总览 — 替代旧"今日交易原则"卡片。 */
-import { Descriptions, Tag } from "antd";
+import { Tag } from "antd";
 import type { EngineSummary, EngineMarketRegimeReview } from "../../../lib/api";
 
 interface Props {
@@ -39,38 +39,46 @@ export default function EngineDecisionHeader({ engineSummary, marketRegime }: Pr
     allow ? (mode === "ultra_short_only" ? "orange" : mode === "mainline_core_only" ? "blue" : "green") : "red";
 
   return (
-    <div style={{ background: allow ? "rgba(34,197,94,0.08)" : "rgba(239,68,68,0.08)", border: `1px solid ${allow ? "rgba(34,197,94,0.3)" : "rgba(239,68,68,0.3)"}`, borderRadius: 8, padding: 16, marginBottom: 14 }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-        <Tag color={modeColor}>
-          {allow ? translateTradeMode(mode) : "不交易"}
-        </Tag>
-        <span style={{ fontSize: 16, fontWeight: 700, color: "#8ddcff" }}>
+    <div className="workspace-card recap-engine-panel recap-decision-header">
+      <div className="recap-decision-header__top">
+        <Tag color={modeColor}>{allow ? translateTradeMode(mode) : "不交易"}</Tag>
+        <span className="recap-decision-header__headline">
           {engineSummary.conclusion || (allow ? "允许交易" : "不允许交易")}
         </span>
       </div>
 
-      <Descriptions size="small" column={{ xs: 1, sm: 2, md: 3 }}>
-        <Descriptions.Item label="交易模式">{translateTradeMode(engineSummary.trade_mode)}</Descriptions.Item>
-        <Descriptions.Item label="仓位上限">{engineSummary.position_limit != null ? `${(engineSummary.position_limit * 100).toFixed(0)}%` : "-"}</Descriptions.Item>
-        <Descriptions.Item label="主阻断规则">
-          <span style={{ color: "#66d9ef" }}>{translateBlockingRule(engineSummary.no_trade_blocking_rule)}</span>
-        </Descriptions.Item>
+      <div className="recap-decision-header__grid">
+        <div className="recap-decision-header__item">
+          <span className="recap-decision-header__label">交易模式</span>
+          <span className="recap-decision-header__value">{translateTradeMode(engineSummary.trade_mode)}</span>
+        </div>
+        <div className="recap-decision-header__item">
+          <span className="recap-decision-header__label">仓位上限</span>
+          <span className="recap-decision-header__value">{engineSummary.position_limit != null ? `${(engineSummary.position_limit * 100).toFixed(0)}%` : "-"}</span>
+        </div>
+        <div className="recap-decision-header__item">
+          <span className="recap-decision-header__label">主阻断规则</span>
+          <span className="recap-decision-header__value">{translateBlockingRule(engineSummary.no_trade_blocking_rule)}</span>
+        </div>
         {(engineSummary.no_trade_reasons?.length ?? 0) > 0 && (
-          <Descriptions.Item label="不交易原因" span={3}>
-            {engineSummary.no_trade_reasons?.join("；")}
-          </Descriptions.Item>
+          <div className="recap-decision-header__item recap-decision-header__item--full">
+            <span className="recap-decision-header__label">不交易原因</span>
+            <span className="recap-decision-header__value">{engineSummary.no_trade_reasons?.join("；")}</span>
+          </div>
         )}
         {engineSummary.next_day_strategy && (
-          <Descriptions.Item label="明日策略" span={3}>
-            <span style={{ color: "#8ddcff" }}>{engineSummary.next_day_strategy}</span>
-          </Descriptions.Item>
+          <div className="recap-decision-header__item recap-decision-header__item--full">
+            <span className="recap-decision-header__label">明日策略</span>
+            <span className="recap-decision-header__value">{engineSummary.next_day_strategy}</span>
+          </div>
         )}
         {(engineSummary.risk_notes?.length ?? 0) > 0 && (
-          <Descriptions.Item label="风险提示" span={3}>
-            {engineSummary.risk_notes?.join("；")}
-          </Descriptions.Item>
+          <div className="recap-decision-header__item recap-decision-header__item--full">
+            <span className="recap-decision-header__label">风险提示</span>
+            <span className="recap-decision-header__value">{engineSummary.risk_notes?.join("；")}</span>
+          </div>
         )}
-      </Descriptions>
+      </div>
     </div>
   );
 }

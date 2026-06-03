@@ -2122,7 +2122,8 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
             PostMarketEngineReportComposer,
         )
         composer = PostMarketEngineReportComposer()
-        engine_report = composer.compose(recap_doc)
+        composer_input = {**recap_doc, **v2}
+        engine_report = composer.compose(composer_input)
         v2 = {**v2, **engine_report}
     except Exception:
         pass
@@ -2175,7 +2176,8 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
             PostMarketEngineReportComposer,
         )
         composer = PostMarketEngineReportComposer()
-        engine_report = composer.compose(recap_doc)
+        composer_input = {**recap_doc, **v2}
+        engine_report = composer.compose(composer_input)
         v2 = {**v2, **engine_report}
     except Exception:
         pass  # best-effort, don't block
@@ -5550,4 +5552,3 @@ async def submit_mainline_review_decision(review_id: str, payload: dict[str, Any
 
         # watch / reject / downgrade_to_theme — queue only, no registry
         return {"ok": True, "action": decision, "registry_written": False}
-

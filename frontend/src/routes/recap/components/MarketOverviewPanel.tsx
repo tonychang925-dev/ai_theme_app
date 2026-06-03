@@ -97,17 +97,17 @@ export default function MarketOverviewPanel({ marketOverview, tradeDate }: Props
   );
 
   return (
-    <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
+    <div className="workspace-card recap-engine-panel">
       <h3 className="section-title recap-panel-title">
-        行情概览
-        <Tag color="gold" style={{ marginLeft: 8 }}>重点题材涨停矩阵</Tag>
+        题材涨停总表
+        <Tag color="gold" style={{ marginLeft: 8 }}>题材涨停总表</Tag>
         <Tag color="blue">{marketOverview?.limit_up_total ?? "--"} 涨停</Tag>
         {typeof marketOverview?.limit_down_total === "number" && <Tag color="red">跌停 {marketOverview.limit_down_total}</Tag>}
       </h3>
       <div className="workspace-note" style={{ marginBottom: 10 }}>
         展示方式：按题材独立统计涨停数目，聚焦今日赚钱效应集中方向与对应重点个股。
       </div>
-      <div style={{ overflowX: "auto" }}>
+      <div className="recap-table-wrap">
         <table className="recap-table market-overview-matrix">
           <thead>
             <tr>
