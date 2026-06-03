@@ -15,6 +15,9 @@ from stock_processing_service.application.services.post_market_narrative_compose
 from stock_processing_service.application.services.post_market_hotspot_overview_composer import (
     PostMarketHotspotOverviewComposer,
 )
+from stock_processing_service.application.services.post_market_evidence_layer_composer import (
+    PostMarketEvidenceLayerComposer,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -26,17 +29,19 @@ class PostMarketEngineReportComposer:
     Output: dict with engine_summary, market_regime_review,
             index_technical_reviews, mainline_daily_states,
             post_market_decision_v2, market_overview_review,
-            market_overview_narrative, market_hotspot_overview
+            market_overview_narrative, market_hotspot_overview,
+            evidence_layer_review
     """
 
     def compose(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
         """Build engine report structure from existing recap_doc fields."""
 
-        regime = recap_doc.get("market_regime_review", {})
-        pdv2 = recap_doc.get("post_market_decision_v2", {})
-        lifecycle = recap_doc.get("mainline_lifecycle_reviews", [])
-        amu = recap_doc.get("active_mainline_universe", {})
-        regime_diag = recap_doc.get("market_regime_diagnostics", {})
+        source_doc = self._merged_recap_doc(recap_doc)
+        regime = source_doc.get("market_regime_review", {})
+        pdv2 = source_doc.get("post_market_decision_v2", {})
+        lifecycle = source_doc.get("mainline_lifecycle_reviews", [])
+        amu = source_doc.get("active_mainline_universe", {})
+        regime_diag = source_doc.get("market_regime_diagnostics", {})
 
         # ── 1. engine_summary ──
         engine_summary = self._build_engine_summary(regime, pdv2)
@@ -65,8 +70,8 @@ class PostMarketEngineReportComposer:
         )
 
         # ── 7. market overview ──
-        market_summary = self._pass_through(recap_doc, "market_summary")
-        market_overview_review = self._pass_through(recap_doc, "market_overview_review")
+        market_summary = self._pass_through(source_doc, "market_summary")
+        market_overview_review = self._pass_through(source_doc, "market_overview_review")
         narrative_composer = PostMarketNarrativeComposer()
         market_overview_narrative = narrative_composer.compose_market_overview(
             engine_summary=engine_summary,
@@ -97,7 +102,12 @@ class PostMarketEngineReportComposer:
             post_market_decision_v2=post_market_decision_v2,
         )
         hotspot_overview_composer = PostMarketHotspotOverviewComposer()
-        market_hotspot_overview = hotspot_overview_composer.compose(recap_doc)
+        market_hotspot_overview = hotspot_overview_composer.compose(source_doc)
+        evidence_layer_composer = PostMarketEvidenceLayerComposer()
+        evidence_layer_review = evidence_layer_composer.compose(
+            source_doc,
+            evidence_alignment_index=evidence_alignment_index,
+        )
 
         return {
             "engine_summary": engine_summary,
@@ -109,10 +119,23 @@ class PostMarketEngineReportComposer:
             "market_overview_narrative": market_overview_narrative,
             "market_hotspot_overview": market_hotspot_overview,
             "market_hotspot_narrative": market_hotspot_narrative,
+            "evidence_layer_review": evidence_layer_review,
             "mainline_narrative": mainline_narrative,
             "d1_narrative": d1_narrative,
             "market_overview_review": market_overview_review,
         }
+
+    @staticmethod
+    def _merged_recap_doc(recap_doc: dict[str, Any]) -> dict[str, Any]:
+        merged: dict[str, Any] = {}
+        nested = recap_doc.get("daily_review_v2")
+        if isinstance(nested, dict):
+            merged.update(nested)
+        for key, value in recap_doc.items():
+            if key == "daily_review_v2":
+                continue
+            merged[key] = value
+        return merged
 
     def _build_engine_summary(
         self, regime: dict, pdv2: dict

@@ -4,6 +4,9 @@ from .mainline_context_dto import MainlineCycleDTO, MainlineIdentityDTO
 from .output_dto import BuildResult
 from .post_market_daily_review_v2 import (
     DailyReviewDiagnostics,
+    EvidenceGroup,
+    EvidenceItem,
+    EvidenceLayerReview,
     ModuleCoverage,
     D1Narrative,
     MarketHotspotOverview,
@@ -34,6 +37,9 @@ __all__ = [
     "BuildResult",
     "PostMarketDailyReviewV2",
     "DailyReviewDiagnostics",
+    "EvidenceGroup",
+    "EvidenceItem",
+    "EvidenceLayerReview",
     "ModuleCoverage",
     "D1Narrative",
     "MarketHotspotOverview",

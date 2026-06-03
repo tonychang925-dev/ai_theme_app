@@ -16,6 +16,7 @@ import MarketHotspotOverviewPanel from "./MarketHotspotOverviewPanel";
 import MarketOverviewPanel from "./MarketOverviewPanel";
 import MarketRegimePanel from "./MarketRegimePanel";
 import D1NarrativePanel from "./D1NarrativePanel";
+import EvidenceLayerPanel from "./EvidenceLayerPanel";
 import RecapDataQualityBar from "./RecapDataQualityBar";
 import D1NextDayWatchPanel from "./D1NextDayWatchPanel";
 
@@ -138,6 +139,7 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate, onShowL
       <D1NarrativePanel narrative={dailyReviewV2.d1_narrative ?? null} />
       <D1NextDayWatchPanel review={review} />
       <LayerCStrongPoolPanel review={review} />
+      <EvidenceLayerPanel evidenceLayerReview={dailyReviewV2.evidence_layer_review ?? null} />
       <EngineEvidencePanel review={review} alignmentIndex={dailyReviewV2.evidence_alignment_index ?? null} />
       <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 8 }}>
         <Button onClick={onShowLegacy}>查看旧版 sections</Button>

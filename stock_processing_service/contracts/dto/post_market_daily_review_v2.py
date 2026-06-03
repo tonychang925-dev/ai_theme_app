@@ -92,6 +92,49 @@ class MarketHotspotOverview(TypedDict, total=False):
     source: str
     diagnostics: dict[str, Any]
 
+
+class EvidenceGroup(TypedDict, total=False):
+    group_key: Literal["d1", "layer_c", "mainline", "risk", "non_mainline"]
+    group_name: str
+    summary: str
+    item_count: int
+    top_stocks: list[str]
+    related_mainlines: list[str]
+
+
+class EvidenceItem(TypedDict, total=False):
+    evidence_type: Literal["abnormal", "money_flow", "dragon_tiger", "stock_capital"]
+    stock_id: str | None
+    stock_code: str | None
+    stock_name: str | None
+    subject_key: str | None
+    theme_name: str | None
+    title: str
+    description: str
+    score: float | None
+    amount: float | None
+    active_mainline: bool
+    mainline_name: str | None
+    lifecycle_state: str | None
+    in_layer_c: bool
+    is_d1_candidate: bool
+    is_focus_stock: bool
+    trade_action: str | None
+    tags: list[str]
+    rank_order: int | None
+
+
+class EvidenceLayerReview(TypedDict, total=False):
+    summary: str
+    evidence_groups: list[EvidenceGroup]
+    abnormal_evidence: list[EvidenceItem]
+    money_flow_evidence: list[EvidenceItem]
+    dragon_tiger_evidence: list[EvidenceItem]
+    stock_capital_evidence: list[EvidenceItem]
+    source: Literal["structured", "fallback"]
+    diagnostics: dict[str, Any]
+
+
 class MainlineNarrative(TypedDict, total=False):
     summary: str
     core_points: list[str]
@@ -126,6 +169,7 @@ class PostMarketDailyReviewV2(TypedDict):
     market_overview_narrative: MarketOverviewNarrative
     market_hotspot_overview: MarketHotspotOverview
     market_hotspot_narrative: MarketHotspotNarrative
+    evidence_layer_review: EvidenceLayerReview
     mainline_narrative: MainlineNarrative
     d1_narrative: D1Narrative
     market_overview_review: dict[str, Any]

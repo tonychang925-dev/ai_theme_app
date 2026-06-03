@@ -400,6 +400,48 @@ export interface MarketHotspotOverview {
   diagnostics?: Record<string, unknown>;
 }
 
+export interface EvidenceGroup {
+  group_key: "d1" | "layer_c" | "mainline" | "risk" | "non_mainline";
+  group_name: string;
+  summary: string;
+  item_count: number;
+  top_stocks: string[];
+  related_mainlines: string[];
+}
+
+export interface EvidenceItem {
+  evidence_type: "abnormal" | "money_flow" | "dragon_tiger" | "stock_capital";
+  stock_id?: string | null;
+  stock_code?: string | null;
+  stock_name?: string | null;
+  subject_key?: string | null;
+  theme_name?: string | null;
+  title: string;
+  description: string;
+  score?: number | null;
+  amount?: number | null;
+  active_mainline?: boolean;
+  mainline_name?: string | null;
+  lifecycle_state?: string | null;
+  in_layer_c?: boolean;
+  is_d1_candidate?: boolean;
+  is_focus_stock?: boolean;
+  trade_action?: string | null;
+  tags: string[];
+  rank_order?: number | null;
+}
+
+export interface EvidenceLayerReview {
+  summary: string;
+  evidence_groups: EvidenceGroup[];
+  abnormal_evidence: EvidenceItem[];
+  money_flow_evidence: EvidenceItem[];
+  dragon_tiger_evidence: EvidenceItem[];
+  stock_capital_evidence: EvidenceItem[];
+  source?: "structured" | "fallback";
+  diagnostics?: Record<string, unknown>;
+}
+
 export interface MainlineNarrative {
   summary: string;
   core_points: string[];
@@ -743,6 +785,7 @@ export interface PostMarketDailyReviewV2 {
   market_overview_narrative?: MarketOverviewNarrative;
   market_hotspot_overview?: MarketHotspotOverview;
   market_hotspot_narrative?: MarketHotspotNarrative;
+  evidence_layer_review?: EvidenceLayerReview;
   mainline_narrative?: MainlineNarrative;
   d1_narrative?: D1Narrative;
   theme_reviews: ThemeReviewV2[];
