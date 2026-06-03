@@ -92,6 +92,15 @@ class MarketHotspotOverview(TypedDict, total=False):
     source: str
     diagnostics: dict[str, Any]
 
+class MainlineNarrative(TypedDict, total=False):
+    summary: str
+    core_points: list[str]
+    divergence_mainlines: list[str]
+    fade_mainlines: list[str]
+    watch_only_mainlines: list[str]
+    action_summary: str
+    source: str
+    diagnostics: dict[str, Any]
 
 class EvidenceGroup(TypedDict, total=False):
     group_key: Literal["d1", "layer_c", "mainline", "risk", "non_mainline"]
@@ -133,18 +142,6 @@ class EvidenceLayerReview(TypedDict, total=False):
     stock_capital_evidence: list[EvidenceItem]
     source: Literal["structured", "fallback"]
     diagnostics: dict[str, Any]
-
-
-class MainlineNarrative(TypedDict, total=False):
-    summary: str
-    core_points: list[str]
-    divergence_mainlines: list[str]
-    fade_mainlines: list[str]
-    watch_only_mainlines: list[str]
-    action_summary: str
-    source: str
-    diagnostics: dict[str, Any]
-
 
 class D1Narrative(TypedDict, total=False):
     summary: str
