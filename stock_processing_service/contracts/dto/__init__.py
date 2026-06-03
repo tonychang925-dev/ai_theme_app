@@ -5,11 +5,13 @@ from .output_dto import BuildResult
 from .post_market_daily_review_v2 import (
     DailyReviewDiagnostics,
     ModuleCoverage,
+    D1Narrative,
     MarketHotspotOverview,
     MarketHotspotRepresentativeStock,
     MarketHotspotRow,
     MarketHotspotNarrative,
     MarketOverviewNarrative,
+    MainlineNarrative,
     PostMarketDailyReviewV2,
 )
 from .prior_snapshot_dto import PriorSnapshotDTO
@@ -33,11 +35,13 @@ __all__ = [
     "PostMarketDailyReviewV2",
     "DailyReviewDiagnostics",
     "ModuleCoverage",
+    "D1Narrative",
     "MarketHotspotOverview",
     "MarketHotspotRepresentativeStock",
     "MarketHotspotRow",
     "MarketHotspotNarrative",
     "MarketOverviewNarrative",
+    "MainlineNarrative",
     "TradeCalendarDTO",
     "StockBarDTO",
     "StockAuctionDTO",

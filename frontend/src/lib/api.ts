@@ -400,6 +400,30 @@ export interface MarketHotspotOverview {
   diagnostics?: Record<string, unknown>;
 }
 
+export interface MainlineNarrative {
+  summary: string;
+  core_points: string[];
+  divergence_mainlines: string[];
+  fade_mainlines: string[];
+  watch_only_mainlines: string[];
+  action_summary: string;
+  source?: string;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface D1Narrative {
+  summary: string;
+  candidate_count: number;
+  focus_count: number;
+  formal_count: number;
+  observe_count: number;
+  confirmation_requirements: string[];
+  invalid_conditions: string[];
+  risk_warning: string;
+  source?: string;
+  diagnostics?: Record<string, unknown>;
+}
+
 export interface ThemeReviewV2 {
   subject_key: string;
   theme_name: string;
@@ -720,6 +744,8 @@ export interface PostMarketDailyReviewV2 {
   market_overview_narrative?: MarketOverviewNarrative;
   market_hotspot_overview?: MarketHotspotOverview;
   market_hotspot_narrative?: MarketHotspotNarrative;
+  mainline_narrative?: MainlineNarrative;
+  d1_narrative?: D1Narrative;
   theme_reviews: ThemeReviewV2[];
   theme_capital_reviews: ThemeCapitalReview[];
   strong_stock_reviews: StrongStockReviewV2[];

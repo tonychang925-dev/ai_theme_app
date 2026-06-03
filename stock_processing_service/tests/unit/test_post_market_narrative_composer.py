@@ -268,6 +268,38 @@ def test_post_market_hotspot_overview_composer_generates_rows() -> None:
     assert first["is_confirmed_mainline"] is True
 
 
+def test_post_market_narrative_composer_generates_mainline_and_d1() -> None:
+    doc = _sample_engine_report_doc()
+    composer = PostMarketNarrativeComposer()
+
+    mainline = composer.compose_mainline_narrative(
+        mainline_daily_states=doc["mainline_daily_states"],  # type: ignore[arg-type]
+        market_regime_review=doc["market_regime_review"],  # type: ignore[arg-type]
+        engine_summary=doc["engine_summary"],  # type: ignore[arg-type]
+        post_market_decision_v2=doc["post_market_decision_v2"],  # type: ignore[arg-type]
+    )
+    d1 = composer.compose_d1_narrative(
+        engine_summary=doc["engine_summary"],  # type: ignore[arg-type]
+        market_regime_review=doc["market_regime_review"],  # type: ignore[arg-type]
+        post_market_decision_v2=doc["post_market_decision_v2"],  # type: ignore[arg-type]
+    )
+
+    assert mainline["summary"]
+    assert "PCB" in mainline["summary"]
+    assert "PCB" in mainline["divergence_mainlines"]
+    assert "电力运营" in mainline["fade_mainlines"]
+    assert "卫星互联网" in mainline["watch_only_mainlines"]
+    assert mainline["action_summary"]
+
+    assert d1["summary"]
+    assert d1["candidate_count"] == 3
+    assert d1["focus_count"] == 0
+    assert d1["formal_count"] == 0
+    assert d1["observe_count"] == 3
+    assert d1["confirmation_requirements"]
+    assert d1["invalid_conditions"]
+
+
 def test_post_market_engine_report_composer_includes_market_overview_narrative() -> None:
     doc = _sample_engine_report_doc()
     report = PostMarketEngineReportComposer().compose(doc)  # type: ignore[arg-type]
@@ -287,3 +319,7 @@ def test_post_market_engine_report_composer_includes_market_overview_narrative()
     assert overview["summary"]
     assert len(overview["hotspot_rows"]) >= 3
     assert overview["hotspot_rows"][0]["theme_name"] == "PCB"
+    assert "mainline_narrative" in report
+    assert "d1_narrative" in report
+    assert report["mainline_narrative"]["summary"]
+    assert report["d1_narrative"]["summary"]

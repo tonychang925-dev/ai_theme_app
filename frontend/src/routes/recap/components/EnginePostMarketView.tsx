@@ -10,10 +10,12 @@ import EvidenceTags from "./EvidenceTags";
 import EngineDecisionHeader from "./EngineDecisionHeader";
 import LayerCStrongPoolPanel from "./LayerCStrongPoolPanel";
 import MainlineStateBoard from "./MainlineStateBoard";
+import MainlineNarrativePanel from "./MainlineNarrativePanel";
 import MarketOverviewNarrativePanel from "./MarketOverviewNarrativePanel";
 import MarketHotspotOverviewPanel from "./MarketHotspotOverviewPanel";
 import MarketOverviewPanel from "./MarketOverviewPanel";
 import MarketRegimePanel from "./MarketRegimePanel";
+import D1NarrativePanel from "./D1NarrativePanel";
 import RecapDataQualityBar from "./RecapDataQualityBar";
 import D1NextDayWatchPanel from "./D1NextDayWatchPanel";
 
@@ -123,6 +125,7 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate, onShowL
         indexReviews={dailyReviewV2.index_technical_reviews}
         tradeDate={tradeDate}
       />
+      <MainlineNarrativePanel narrative={dailyReviewV2.mainline_narrative ?? null} />
       {dailyReviewV2.market_overview_review && (
         <MarketOverviewPanel
           marketOverview={dailyReviewV2.market_overview_review}
@@ -132,6 +135,7 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate, onShowL
       {(dailyReviewV2.mainline_daily_states?.length ?? 0) > 0 && (
         <MainlineStateBoard rows={dailyReviewV2.mainline_daily_states!} tradeDate={tradeDate} />
       )}
+      <D1NarrativePanel narrative={dailyReviewV2.d1_narrative ?? null} />
       <D1NextDayWatchPanel review={review} />
       <LayerCStrongPoolPanel review={review} />
       <EngineEvidencePanel review={review} alignmentIndex={dailyReviewV2.evidence_alignment_index ?? null} />

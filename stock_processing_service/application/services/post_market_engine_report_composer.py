@@ -85,6 +85,17 @@ class PostMarketEngineReportComposer:
             engine_summary=engine_summary,
             post_market_decision_v2=post_market_decision_v2,
         )
+        mainline_narrative = narrative_composer.compose_mainline_narrative(
+            mainline_daily_states=mainline_daily_states,
+            market_regime_review=market_regime_review,
+            engine_summary=engine_summary,
+            post_market_decision_v2=post_market_decision_v2,
+        )
+        d1_narrative = narrative_composer.compose_d1_narrative(
+            engine_summary=engine_summary,
+            market_regime_review=market_regime_review,
+            post_market_decision_v2=post_market_decision_v2,
+        )
         hotspot_overview_composer = PostMarketHotspotOverviewComposer()
         market_hotspot_overview = hotspot_overview_composer.compose(recap_doc)
 
@@ -98,6 +109,8 @@ class PostMarketEngineReportComposer:
             "market_overview_narrative": market_overview_narrative,
             "market_hotspot_overview": market_hotspot_overview,
             "market_hotspot_narrative": market_hotspot_narrative,
+            "mainline_narrative": mainline_narrative,
+            "d1_narrative": d1_narrative,
             "market_overview_review": market_overview_review,
         }
 
