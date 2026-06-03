@@ -6483,6 +6483,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     try:
                         # 移除日期部分（如果有）
                         time_str = publish_time
+                        if ' ' in time_str:
+                            time_str = time_str.split(' ')[-1]
                         if 'T' in time_str:
                             # 提取时间部分
                             if 'T' in time_str:

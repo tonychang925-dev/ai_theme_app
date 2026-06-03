@@ -664,13 +664,15 @@ class RealTimeNewsCollector:
             logger.warning("All sources empty, trying fallback akshare direct")
             try:
                 import akshare as ak
-                df = await asyncio.to_thread(ak.stock_news_em)
+                df = await asyncio.wait_for(asyncio.to_thread(ak.stock_news_em), timeout=45)
                 if df is not None and not df.empty:
                     for _, row in df.head(20).iterrows():
                         r = row.to_dict()
                         r["source_channel"] = "akshare_em"
                         results.append(r)
                     logger.info("Fallback akshare_em: %d items", len(results))
+            except asyncio.TimeoutError:
+                logger.warning("Fallback akshare_em fetch timeout")
             except Exception as exc:
                 logger.warning("Fallback akshare also failed: %s", exc)
 

@@ -270,8 +270,43 @@ pkill -f "theme_service.app:app.*8002" >/dev/null 2>&1 || true
 pkill -f "frontend_bff.app:app.*8003" >/dev/null 2>&1 || true
 pkill -f "start_frontend_bff_wrapper.sh" >/dev/null 2>&1 || true
 
+CLS_CDP_PORT="${CLS_CDP_PORT:-9224}"
+CLS_CDP_USER_DATA="${CLS_CDP_USER_DATA:-/tmp/chrome-headless-cls-cdp}"
+CHROME_BIN="${CHROME_BIN:-/Applications/Google Chrome.app/Contents/MacOS/Google Chrome}"
+
+start_headless_chrome_cdp() {
+  # 已有则跳过
+  if curl -fsS --max-time 2 "http://127.0.0.1:${CLS_CDP_PORT}/json/version" >/dev/null 2>&1; then
+    echo "[ok] headless Chrome CDP already running on port ${CLS_CDP_PORT}"
+    return 0
+  fi
+
+  echo "[start] headless Chrome CDP on port ${CLS_CDP_PORT} ..."
+  nohup "$CHROME_BIN" \
+    --headless=new \
+    --remote-debugging-port="${CLS_CDP_PORT}" \
+    --remote-allow-origins='*' \
+    --user-data-dir="${CLS_CDP_USER_DATA}" \
+    --no-first-run \
+    --no-default-browser-check \
+    --disable-gpu \
+    >/dev/null 2>&1 &
+  local pid=$!
+
+  for _ in $(seq 1 15); do
+    if curl -fsS --max-time 2 "http://127.0.0.1:${CLS_CDP_PORT}/json/version" >/dev/null 2>&1; then
+      echo "[ok] headless Chrome CDP ready (pid=${pid}, port=${CLS_CDP_PORT})"
+      return 0
+    fi
+    sleep 1
+  done
+  echo "[warn] headless Chrome CDP did not become ready in 15s (pid=${pid})"
+  return 1
+}
+
 # Realtime pipeline auto-start (explicit opt-in only)
 if [[ "$START_REALTIME" == "true" ]]; then
+  start_headless_chrome_cdp || true
   echo "[start] realtime pipeline via SPS"
   if curl -fsS --max-time 60 "http://127.0.0.1:8090/api/v1/realtime/start" >/dev/null 2>&1; then
     echo "[ok] realtime pipeline start request sent"

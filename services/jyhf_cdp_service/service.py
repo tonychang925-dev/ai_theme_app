@@ -176,37 +176,55 @@ class JyhfCdpCollectorService:
         if self._stop_event.is_set() or run_id != self._run_id:
             return
         cdp = CDPClient(self._config.cdp_port)
-        cdp.connect()
-        try:
-            # Phase 1: inject network hooks BEFORE navigation so that
-            # the API calls triggered by prepare()/read() are intercepted.
-            # The JYHF app stores the JWT token in JS memory only
-            # (not localStorage/sessionStorage), so network interception
-            # is the primary extraction method.
+        max_ws_retries = 2  # WebSocket 瞬断重试次数
+        for ws_attempt in range(max_ws_retries + 1):
             try:
-                self._token_extractor.inject_hooks(cdp)
-            except Exception:
-                pass  # Hook injection failure must never block event capture
-
-            self._extractor.prepare(cdp)
-            raw_events, feed_date, body_text = self._extractor.read(cdp)
-
-            # Phase 2: after navigation triggered API calls, read captured tokens
-            token_extracted = False
+                cdp.connect()
+            except Exception as exc:
+                if ws_attempt < max_ws_retries:
+                    self._logger.warning("CDP connect failed (attempt %s/%s): %s", ws_attempt + 1, max_ws_retries + 1, exc)
+                    continue
+                raise
             try:
-                token_extracted = self._token_extractor.read_captured_tokens(cdp) is not None
-            except Exception:
-                pass
-        except PrepareRetryError:
-            reason = "JYHF DOM prepare not ready"
-            if self._record_startup_failure(reason):
-                raise CollectorStartupFailed(self._startup_failure_message(reason))
-            self._logger.warning(
-                "prepare not ready, will retry next cycle (%s/%s)",
-                self._startup_failure_count,
-                self._startup_failure_limit,
-            )
-            return
+                # Phase 1: inject network hooks BEFORE navigation so that
+                # the API calls triggered by prepare()/read() are intercepted.
+                # The JYHF app stores the JWT token in JS memory only
+                # (not localStorage/sessionStorage), so network interception
+                # is the primary extraction method.
+                try:
+                    self._token_extractor.inject_hooks(cdp)
+                except Exception:
+                    pass  # Hook injection failure must never block event capture
+
+                self._extractor.prepare(cdp)
+                raw_events, feed_date, body_text = self._extractor.read(cdp)
+
+                # Phase 2: after navigation triggered API calls, read captured tokens
+                token_extracted = False
+                try:
+                    token_extracted = self._token_extractor.read_captured_tokens(cdp) is not None
+                except Exception:
+                    pass
+                break  # 成功，退出重试循环
+            except (PrepareRetryError, websocket.WebSocketConnectionClosedException) as exc:
+                cdp.close()
+                if ws_attempt < max_ws_retries:
+                    self._logger.warning(
+                        "CDP ws error (attempt %s/%s), reconnecting: %s",
+                        ws_attempt + 1, max_ws_retries + 1, exc,
+                    )
+                    continue  # 重连重试
+                else:
+                    # 所有重试耗尽，走原有熔断逻辑
+                    reason = f"JYHF CDP prepare failed after {max_ws_retries + 1} attempts: {exc}"
+                    if self._record_startup_failure(reason):
+                        raise CollectorStartupFailed(self._startup_failure_message(reason))
+                    self._logger.warning(
+                        "prepare not ready, will retry next cycle (%s/%s)",
+                        self._startup_failure_count,
+                        self._startup_failure_limit,
+                    )
+                    return
         finally:
             cdp.close()
 
@@ -214,7 +232,6 @@ class JyhfCdpCollectorService:
         # feed_date 为空时用采集时间（避免旧事件被标记为未来时间）
         if not feed_date:
             feed_date = capture_time.strftime("%Y-%m-%d")
-            self._logger.warning("feed_date not found in DOM, using capture_time: %s", feed_date)
 
         # Always update token status, even if no events captured
         if token_extracted:

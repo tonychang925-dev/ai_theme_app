@@ -164,6 +164,8 @@ class RealtimeBusinessOrchestrator:
             "RealtimeBusinessOrchestrator initialized: enabled=%s actions_enabled=%s interval=%ss",
             self.enabled, self.actions_enabled, self._interval_sec,
         )
+        if self.enabled:
+            self._start_loop()
 
     # ── Public API ─────────────────────────────────────────────────
 
@@ -531,25 +533,19 @@ class RealtimeBusinessOrchestrator:
             state.blockers.append("CDP not connected to browser")
             return state
 
-        # CDP is healthy. Now check SPS token.
+        # CDP is healthy → cdp_token is ready.
+        # SPS token_valid is informational only; its absence does NOT block,
+        # because validating the token requires jyhf_market_collector to run
+        # (which is a downstream consumer of cdp_token). Blocking here would
+        # create a circular dependency deadlock.
         if sps_token_valid is True:
-            state.observed_state = "ready"
-            return state
-
-        if sps_token_valid is False:
-            # SPS was probed and explicitly said token is invalid
-            state.observed_state = "blocked"
-            state.blockers.append("JYHF token not valid (SPS jyhf-market reports token_valid=false)")
-            return state
-
-        # sps_token_valid is None: probe was skipped, SPS is down, or SPS returned error
-        if not probe_sps:
-            state.observed_state = "degraded"
-            state.blockers.append("SPS token not probed (non-trading window)")
+            state.evidence["sps_token_ok"] = True
+        elif sps_token_valid is False:
+            state.evidence["sps_token_ok"] = False
+            # jyhf_market running but token invalid → note, but don't block
         else:
-            state.observed_state = "degraded"
-            state.blockers.append("SPS token status unknown (SPS jyhf-market unreachable)")
-
+            state.evidence["sps_token_ok"] = None
+        state.observed_state = "ready"
         return state
 
     async def _check_jyhf_market(self, now: datetime, desired: str, services: dict, probe_sps: bool = True) -> OrchestratorServiceState:

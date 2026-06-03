@@ -32,8 +32,16 @@ class CDPClient:
 
     def close(self) -> None:
         if self._ws:
-            self._ws.close()
+            try:
+                self._ws.close()
+            except Exception:
+                pass
             self._ws = None
+
+    def reconnect(self) -> None:
+        """断连后重连 JYHF CDP 页面。"""
+        self.close()
+        self.connect()
 
     def evaluate(self, expression: str, timeout: float = 8.0) -> Any:
         if not self._ws:
