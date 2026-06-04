@@ -72,26 +72,64 @@ class TushareAdapter:
                 time.sleep(self.pause_seconds)
         return merged
 
+    @staticmethod
+    def _truncate_text(value: object, *, limit: int = 240) -> str:
+        text = str(value or "").strip()
+        if len(text) <= limit:
+            return text
+        return f"{text[:limit]}…"
+
     def _query(self, api_name: str, **kwargs):
         payload = {"api_name": api_name, "token": self.token, "params": kwargs, "fields": ""}
         last_exc = None
+        last_status_code = None
+        last_tushare_code = None
+        last_tushare_msg = None
+        last_response_text = None
         for attempt in range(self.retry_count + 1):
+            resp = None
             try:
                 resp = requests.post(TUSHARE_URL, json=payload, timeout=self.timeout)
+                last_status_code = getattr(resp, "status_code", None)
                 result = resp.json()
+                if not isinstance(result, dict):
+                    raise RuntimeError(f"unexpected tushare payload type: {type(result).__name__}")
+                last_tushare_code = result.get("code")
+                last_tushare_msg = result.get("msg")
                 if result.get("code") != 0:
-                    raise RuntimeError(result.get("msg", "unknown error"))
+                    raise RuntimeError(
+                        f"tushare returned error: code={result.get('code')} msg={result.get('msg', 'unknown error')}"
+                    )
                 data = result.get("data", {})
                 if not data or not data.get("items"):
                     return None
                 return pd.DataFrame(data["items"], columns=data["fields"])
             except Exception as exc:
                 last_exc = exc
+                if last_response_text is None:
+                    if resp is not None:
+                        last_response_text = self._truncate_text(getattr(resp, "text", ""))
                 if attempt >= self.retry_count:
                     break
                 if self.pause_seconds > 0:
                     time.sleep(self.pause_seconds * (attempt + 1))
-        raise RuntimeError(f"tushare query failed: api={api_name} kwargs={kwargs}") from last_exc
+        attempts = self.retry_count + 1
+        error_parts = [
+            f"tushare query failed: api={api_name}",
+            f"kwargs={kwargs}",
+            f"attempts={attempts}",
+        ]
+        if last_status_code is not None:
+            error_parts.append(f"http_status={last_status_code}")
+        if last_tushare_code is not None:
+            error_parts.append(f"tushare_code={last_tushare_code}")
+        if last_tushare_msg:
+            error_parts.append(f"tushare_msg={self._truncate_text(last_tushare_msg)}")
+        if last_response_text:
+            error_parts.append(f"response_text={last_response_text}")
+        if last_exc is not None:
+            error_parts.append(f"last_error={type(last_exc).__name__}: {self._truncate_text(last_exc)}")
+        raise RuntimeError(" ".join(error_parts)) from last_exc
 
     @staticmethod
     def to_records(frame) -> list[dict]:
