@@ -631,6 +631,7 @@ class BuildPostMarketRecapJob:
                 int(recap_doc.get("strong_watch_history_count") or 0),
                 strong_stock_reviews_count,
             )
+        strong_watch_display_count = int(recap_doc.get("strong_watch_history_count") or 0)
 
         # ── PR-7: Mainline Discovery parallel output ──
         await self._run_mainline_discovery(
@@ -676,6 +677,26 @@ class BuildPostMarketRecapJob:
         # history already written in Step 7e above; strong_watch_history_written tracks the count
 
         if self._cache_port is not None:
+            legacy_watch_history_rows = list(strong_watch_history)
+            if not legacy_watch_history_rows and strong_stock_reviews_count > 0:
+                # legacy cache only; may be empty when recap uses strong_stock_reviews as source
+                legacy_watch_history_rows = [
+                    {
+                        "stock_id": row.get("stock_code") or row.get("stock_id") or "",
+                        "subject_key": row.get("subject_key") or "",
+                        "watch_status": row.get("watch_status") or "",
+                        "strong_grade": row.get("strong_grade") or "",
+                        "watch_score": str(row.get("watch_score") or 0),
+                        "support_score": str(row.get("support_score") or 0),
+                        "support_type": row.get("support_type") or "",
+                        "prune_mode": row.get("prune_mode"),
+                        "prune_reason_code": row.get("prune_reason_code"),
+                        "removed_reason": row.get("removed_reason"),
+                        "kept_because": row.get("kept_because"),
+                    }
+                    for row in (recap_doc.get("strong_stock_reviews") or [])
+                    if isinstance(row, dict)
+                ]
             await self._cache_writer.write_value_cache(
                 f"sps:post_market_recap:{trade_date}",
                 asdict(snapshot),
@@ -697,7 +718,7 @@ class BuildPostMarketRecapJob:
                         "removed_reason": row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None),
                         "kept_because": row.get("kept_because") if isinstance(row, dict) else getattr(row, "kept_because", None),
                     }
-                    for row in strong_watch_history  # full dataset, no truncation
+                    for row in legacy_watch_history_rows  # legacy cache: use reviews fallback when history rows are absent
                 ],
                 ttl_seconds=SnapshotCacheWriter.TTL_24H,
             )
@@ -747,7 +768,8 @@ class BuildPostMarketRecapJob:
             metrics={
                 "strong_watch_input_count": len(d1_input_rows),
                 "strong_watch_promoted_count": len(promoted_pool_rows),
-                "strong_watch_history_count": len(strong_watch_history),
+                "strong_watch_history_count": strong_watch_display_count,
+                "strong_stock_reviews_count": strong_stock_reviews_count,
                 "strong_watch_history_written": history_written,
                 "strong_watch_shadow_universe_formal_count": int(shadow_summary.get("universe_formal_count") or 0),
                 "strong_watch_shadow_universe_observe_count": int(shadow_summary.get("universe_observe_count") or 0),

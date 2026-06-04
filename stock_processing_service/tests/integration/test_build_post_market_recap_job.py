@@ -383,10 +383,15 @@ def test_build_post_market_recap_job_backfills_strong_watch_count_from_reviews()
         )
 
         assert result.status == "ok"
+        assert result.metrics["strong_watch_history_count"] == 1
+        assert result.metrics["strong_stock_reviews_count"] == 1
         recap_doc = write_port.recap_docs[-1].recap_doc
         assert recap_doc["strong_watch_history_count"] == 1
         assert recap_doc["strong_stock_reviews_count"] == 1
         assert len(recap_doc["strong_stock_reviews"]) == 1
+        cache_rows = cache_port.cache["sps:strong_watch_history:2026-06-04"]["value"]
+        assert len(cache_rows) == 1
+        assert cache_rows[0]["stock_id"] == "002000.SZ"
 
     asyncio.run(_run())
 
