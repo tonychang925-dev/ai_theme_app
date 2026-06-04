@@ -44,10 +44,22 @@ interface PerformanceReport {
 
 class PerformanceMonitor {
   private metrics: PerformanceMetrics;
-  private sseConnections: Set<EventSource> = new Set();
+  // Observer-only: never close or recreate business-owned resources.
+  private trackedEventSources: WeakMap<EventSource, {
+    url: string;
+    createdAt: number;
+    openedAt?: number;
+    lastErrorAt?: number;
+    readyState: number;
+    finalized: boolean;
+  }> = new WeakMap();
+  private trackedEventSourceCount = 0;
   private longTaskObserver: PerformanceObserver | null = null;
   private resourceObserver: PerformanceObserver | null = null;
   private layoutShiftObserver: PerformanceObserver | null = null;
+  private memoryMonitorTimer: number | null = null;
+  private originalEventSource: typeof EventSource | null = null;
+  private eventSourcePatched = false;
   private isMonitoring: boolean = false;
 
   constructor() {
@@ -116,8 +128,15 @@ class PerformanceMonitor {
     this.resourceObserver?.disconnect();
     this.layoutShiftObserver?.disconnect();
 
-    // 清理SSE连接
-    this.cleanupSSEConnections();
+    if (this.memoryMonitorTimer !== null) {
+      window.clearInterval(this.memoryMonitorTimer);
+      this.memoryMonitorTimer = null;
+    }
+
+    this.restoreEventSource();
+    this.trackedEventSources = new WeakMap();
+    this.trackedEventSourceCount = 0;
+    this.metrics.sseConnections = 0;
   }
 
   /**
@@ -164,26 +183,52 @@ class PerformanceMonitor {
    * 获取当前SSE连接数
    */
   getSSEConnectionCount(): number {
-    return this.sseConnections.size;
+    return this.trackedEventSourceCount;
   }
 
   /**
    * 手动添加SSE连接监控
    */
   monitorSSEConnection(eventSource: EventSource): void {
-    this.sseConnections.add(eventSource);
-    this.metrics.sseConnections = this.sseConnections.size;
+    if (this.trackedEventSources.has(eventSource)) {
+      return;
+    }
 
-    // 监听连接关闭
+    this.trackedEventSources.set(eventSource, {
+      url: '',
+      createdAt: Date.now(),
+      readyState: eventSource.readyState,
+      finalized: false
+    });
+    this.trackedEventSourceCount += 1;
+    this.metrics.sseConnections = this.trackedEventSourceCount;
+
+    const finalize = () => {
+      this.finalizeTrackedEventSource(eventSource);
+    };
+
+    eventSource.addEventListener('open', () => {
+      const info = this.trackedEventSources.get(eventSource);
+      if (!info || info.finalized) {
+        return;
+      }
+      info.openedAt = Date.now();
+      info.readyState = eventSource.readyState;
+    });
+
     eventSource.addEventListener('error', () => {
-      this.sseConnections.delete(eventSource);
-      this.metrics.sseConnections = this.sseConnections.size;
+      const info = this.trackedEventSources.get(eventSource);
+      if (!info || info.finalized) {
+        return;
+      }
+      info.lastErrorAt = Date.now();
+      info.readyState = eventSource.readyState;
+      if (eventSource.readyState === EventSource.CLOSED) {
+        finalize();
+      }
     });
 
-    eventSource.addEventListener('close', () => {
-      this.sseConnections.delete(eventSource);
-      this.metrics.sseConnections = this.sseConnections.size;
-    });
+    eventSource.addEventListener('close', finalize);
   }
 
   private setupLongTaskObserver(): void {
@@ -259,18 +304,33 @@ class PerformanceMonitor {
   }
 
   private setupSSEMonitoring(): void {
-    // 拦截EventSource构造函数
+    if (this.eventSourcePatched) {
+      return;
+    }
+
+    // 仅拦截 EventSource 构造函数做观察，不接管业务资源生命周期。
     const originalEventSource = window.EventSource;
+    this.originalEventSource = originalEventSource;
     const self = this;
 
-    window.EventSource = function(url: string, eventSourceInitDict?: EventSourceInit) {
+    const MonitoredEventSource = function(url: string, eventSourceInitDict?: EventSourceInit) {
       const eventSource = new originalEventSource(url, eventSourceInitDict);
       self.monitorSSEConnection(eventSource);
       return eventSource;
     } as any;
 
-    // 保持原型链
-    window.EventSource.prototype = originalEventSource.prototype;
+    MonitoredEventSource.prototype = originalEventSource.prototype;
+    window.EventSource = MonitoredEventSource;
+    this.eventSourcePatched = true;
+  }
+
+  private restoreEventSource(): void {
+    if (this.eventSourcePatched && this.originalEventSource) {
+      window.EventSource = this.originalEventSource;
+    }
+
+    this.originalEventSource = null;
+    this.eventSourcePatched = false;
   }
 
   private collectInitialMetrics(): void {
@@ -313,7 +373,7 @@ class PerformanceMonitor {
       };
 
       // 定期检查内存使用
-      setInterval(() => {
+      this.memoryMonitorTimer = window.setInterval(() => {
         if (this.isMonitoring) {
           this.metrics.memoryUsage = {
             usedJSHeapSize: memory.usedJSHeapSize,
@@ -445,12 +505,15 @@ class PerformanceMonitor {
     return recommendations;
   }
 
-  private cleanupSSEConnections(): void {
-    this.sseConnections.forEach(connection => {
-      connection.close();
-    });
-    this.sseConnections.clear();
-    this.metrics.sseConnections = 0;
+  private finalizeTrackedEventSource(eventSource: EventSource): void {
+    const info = this.trackedEventSources.get(eventSource);
+    if (!info || info.finalized) {
+      return;
+    }
+
+    info.finalized = true;
+    this.trackedEventSourceCount = Math.max(0, this.trackedEventSourceCount - 1);
+    this.metrics.sseConnections = this.trackedEventSourceCount;
   }
 }
 

@@ -87,8 +87,9 @@ describe('PerformanceMonitor', () => {
   });
 
   test('应该能够监控SSE连接', () => {
+    const addEventListener = (jest as any).fn();
     const mockEventSource = {
-      addEventListener: (jest as any).fn(),
+      addEventListener,
       close: (jest as any).fn()
     } as any;
 
@@ -96,8 +97,34 @@ describe('PerformanceMonitor', () => {
     monitor.monitorSSEConnection(mockEventSource);
 
     expect(monitor.getSSEConnectionCount()).toBe(1);
-    expect(mockEventSource.addEventListener).toHaveBeenCalledWith('error', expect.any(Function));
-    expect(mockEventSource.addEventListener).toHaveBeenCalledWith('close', expect.any(Function));
+    expect(addEventListener).toHaveBeenCalledWith('open', expect.any(Function));
+    expect(addEventListener).toHaveBeenCalledWith('error', expect.any(Function));
+    expect(addEventListener).toHaveBeenCalledWith('close', expect.any(Function));
+  });
+
+  test('停止监控时不应该关闭业务EventSource', () => {
+    const mockEventSource = {
+      readyState: 1,
+      addEventListener: (jest as any).fn(),
+      close: (jest as any).fn()
+    } as any;
+
+    monitor.startMonitoring();
+    monitor.monitorSSEConnection(mockEventSource);
+    monitor.stopMonitoring();
+
+    expect(mockEventSource.close).not.toHaveBeenCalled();
+    expect(monitor.getSSEConnectionCount()).toBe(0);
+  });
+
+  test('EventSource补丁应该可恢复', () => {
+    const originalEventSource = window.EventSource;
+
+    monitor.startMonitoring();
+    expect(window.EventSource).not.toBe(originalEventSource);
+
+    monitor.stopMonitoring();
+    expect(window.EventSource).toBe(originalEventSource);
   });
 
   test('应该分析性能问题', () => {
@@ -205,6 +232,7 @@ beforeAll(() => {
 
   // 模拟EventSource
   (window as any).EventSource = class MockEventSource {
+    readyState = 0;
     addEventListener = (jest as any).fn();
     close = (jest as any).fn();
   };

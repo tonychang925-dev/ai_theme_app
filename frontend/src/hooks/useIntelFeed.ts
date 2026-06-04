@@ -493,8 +493,12 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
     if (selectedItemId) {
       params.set('item', selectedItemId);
     }
-    const next = `${window.location.pathname}?${params.toString()}`;
-    window.history.replaceState({}, '', next);
+    const nextSearch = `?${params.toString()}`;
+    const nextUrl = `${window.location.pathname}${nextSearch}${window.location.hash}`;
+    const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    if (currentUrl !== nextUrl) {
+      window.history.replaceState({}, '', nextUrl);
+    }
   }, [date, type, session, selectedItemId]);
 
   return {
