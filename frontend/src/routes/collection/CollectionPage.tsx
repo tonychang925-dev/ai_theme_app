@@ -47,7 +47,7 @@ function statusLabel(status: CollectionTaskItem["status"] | CollectionJobStatus[
     case "success":
       return "成功";
     case "skipped":
-      return "已跳过";
+      return "数据为空";
     case "failed":
       return "失败";
     case "cancelled":

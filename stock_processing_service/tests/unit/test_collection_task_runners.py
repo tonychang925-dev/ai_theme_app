@@ -43,6 +43,7 @@ async def test_dragon_tiger_runner_treats_no_data_as_skipped() -> None:
     result = await runner.run(context)
 
     assert result.status == "skipped"
-    assert result.current_label == "龙虎榜未生成 (dragon_tiger raw snapshots exist but payload is empty)"
+    assert result.current_label == "数据为空，skip到下一个流程"
     assert result.error_message == ""
-    assert "dragon_tiger status=skipped_no_data rows=0" in result.logs
+    assert "龙虎榜数据为空，skip到下一个流程: rows=0" in result.logs
+    assert "龙虎榜详情: dragon_tiger raw snapshots exist but payload is empty" in result.logs

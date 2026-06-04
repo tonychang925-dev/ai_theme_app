@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import json
 import logging
+import asyncio
 from dataclasses import dataclass, field
 from typing import Any, Callable
 
@@ -173,7 +174,7 @@ class MainlineNarrativeJudge:
         try:
             parser = self.parser_factory()
             full_prompt = SYSTEM_PROMPT + "\n\nInput JSON:\n" + json.dumps(payload, ensure_ascii=False)
-            response = await parser.parse_content(full_prompt)
+            response = await asyncio.wait_for(parser.parse_content(full_prompt), timeout=self.timeout_sec)
             if isinstance(response, str):
                 # Strip markdown code fences if present
                 text = response.strip()
@@ -184,6 +185,9 @@ class MainlineNarrativeJudge:
                 return json.loads(text)
             if isinstance(response, dict):
                 return response
+            return None
+        except asyncio.TimeoutError:
+            logger.warning("LLM narrative judge timeout after %ss", self.timeout_sec)
             return None
         except json.JSONDecodeError:
             logger.warning("LLM narrative judge returned invalid JSON")

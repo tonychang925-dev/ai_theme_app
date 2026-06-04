@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import json
 import logging
 import os
@@ -77,8 +78,11 @@ class PostMarketMarketSummaryLlmService:
         parser = None
         try:
             parser = self.parser_factory() if self.parser_factory else self._default_parser()
-            response = await parser.parse_content(prompt)
+            response = await asyncio.wait_for(parser.parse_content(prompt), timeout=self.timeout_sec)
             return self.normalize_response(response)
+        except asyncio.TimeoutError:
+            logger.warning("market summary LLM timeout after %ss", self.timeout_sec)
+            return None
         except Exception as exc:
             logger.warning("market summary LLM skipped: %s", exc)
             return None

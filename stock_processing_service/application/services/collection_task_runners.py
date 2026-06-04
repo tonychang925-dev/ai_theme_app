@@ -388,13 +388,15 @@ class BuildDragonTigerObjectRunner:
             result = await job.execute(trade_date=trade_date_val, tushare_token=token)
             warnings = list(getattr(result, "warnings", []) or [])
             metrics = dict(getattr(result, "metrics", {}) or {})
-            if result.status == "skipped_no_data" and warnings:
+            if result.status == "skipped_no_data":
+                detail = warnings[0] if warnings else "dragon_tiger raw snapshots exist but payload is empty"
                 return CollectionTaskResult(
                     status="skipped",
-                    current_label=f"龙虎榜未生成 ({warnings[0]})",
+                    current_label="数据为空，skip到下一个流程",
                     logs=[
-                        f"dragon_tiger status={result.status} rows={result.affected_rows}",
-                        f"dragon_tiger metrics={metrics}",
+                        f"龙虎榜数据为空，skip到下一个流程: rows={result.affected_rows}",
+                        f"龙虎榜详情: {detail}",
+                        f"龙虎榜指标: {metrics}",
                     ],
                 )
 
