@@ -225,8 +225,8 @@ class JyhfCdpCollectorService:
                         self._startup_failure_limit,
                     )
                     return
-        finally:
-            cdp.close()
+            finally:
+                cdp.close()
 
         capture_time = datetime.now(CN_TZ)
         # feed_date 为空时用采集时间（避免旧事件被标记为未来时间）
