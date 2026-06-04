@@ -326,6 +326,71 @@ def test_build_post_market_recap_job_strong_watch_pool_flow() -> None:
     asyncio.run(_run())
 
 
+def test_build_post_market_recap_job_backfills_strong_watch_count_from_reviews() -> None:
+    """When Layer C legacy rows are empty, recap count should follow strong_stock_reviews."""
+
+    async def _run() -> None:
+        read_port = _FakeReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=cache_port,
+        )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+        job._build_strong_stock_reviews = AsyncMock(  # type: ignore[method-assign]
+            return_value=[
+                {
+                    "stock_code": "002000.SZ",
+                    "stock_name": "SampleA",
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "role": "formal",
+                    "watch_status": "active",
+                    "watch_score": 88.0,
+                    "strong_grade": "A",
+                    "support_type": "ma_support",
+                    "support_score": 66.0,
+                    "composite_score": 88.0,
+                    "purity_score": 55.0,
+                    "leading_score": 77.0,
+                    "capital_score": 68.0,
+                    "structure_score": 66.0,
+                    "resilience_score": 60.0,
+                    "money_flow": {"main_net_inflow": 88000000, "money_flow_tier": "强", "role_enhanced": ""},
+                    "kline": {"position_label": "突破前高", "pattern_labels": ["高量不破"], "pattern_summary": "高量不破"},
+                    "rationale": "test",
+                    "diagnostics": {"source": "test"},
+                }
+            ]
+        )
+
+        result = await job.execute(
+            trade_date=date(2026, 6, 4),
+            snapshot_version="pm-v2",
+            batch_id="bpm-reviews",
+            trace_id="tpm-reviews",
+            skip_prereqs=True,
+            skip_layer_c=True,
+        )
+
+        assert result.status == "ok"
+        recap_doc = write_port.recap_docs[-1].recap_doc
+        assert recap_doc["strong_watch_history_count"] == 1
+        assert recap_doc["strong_stock_reviews_count"] == 1
+        assert len(recap_doc["strong_stock_reviews"]) == 1
+
+    asyncio.run(_run())
+
+
 def test_build_post_market_recap_job_persists_d1_into_recap_doc_tc_d1_001() -> None:
     """TC-D1-001: D1 should land in recap_doc without producing C-layer pool writes."""
 

@@ -195,6 +195,7 @@ export interface RecapViewModelV2 extends MarketReportView {
   source: "recap_v2_snapshot" | "recap_v2_report";
   diagnostics?: {
     snapshot_version?: string;
+    strong_stock_reviews_count?: number;
   };
 }
 
@@ -1511,7 +1512,16 @@ function asMarketReportViewFromSnapshot(
   const candidateCount = Number(recapDocRaw["candidate_count"] || 0);
   const strongWatchInputCount = Number(recapDocRaw["strong_watch_input_count"] || recapDocRaw["strong_watch_input_7d_count"] || 0);
   const strongWatchPromotedCount = Number(recapDocRaw["strong_watch_promoted_count"] || 0);
-  const strongWatchHistoryCount = Number(recapDocRaw["strong_watch_history_count"] || 0);
+  const strongStockReviews = Array.isArray(recapDocRaw["strong_stock_reviews"])
+    ? (recapDocRaw["strong_stock_reviews"] as Array<Record<string, unknown>>)
+    : [];
+  const strongWatchHistoryRows = Array.isArray(recapDocRaw["strong_watch_history"])
+    ? (recapDocRaw["strong_watch_history"] as Array<Record<string, unknown>>)
+    : [];
+  const strongStockReviewsCount = strongStockReviews.length;
+  const strongWatchHistoryCount = strongStockReviewsCount
+    || strongWatchHistoryRows.length
+    || Number(recapDocRaw["strong_watch_history_count"] || 0);
   const topCandidates = Array.isArray(recapDocRaw["top_candidates"]) ? (recapDocRaw["top_candidates"] as Array<Record<string, unknown>>) : [];
 
   const candidateItems = topCandidates.slice(0, 20).map((item, idx) => {
@@ -1546,7 +1556,10 @@ function asMarketReportViewFromSnapshot(
       },
     ],
     source: "recap_v2_snapshot",
-    diagnostics: { snapshot_version: snapshot.snapshot_version },
+    diagnostics: {
+      snapshot_version: snapshot.snapshot_version,
+      strong_stock_reviews_count: strongStockReviewsCount,
+    },
   };
 }
 

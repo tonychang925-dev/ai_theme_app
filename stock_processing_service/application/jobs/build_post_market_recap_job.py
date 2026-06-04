@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import asyncio
 import logging
 import os
+import time
 from dataclasses import asdict
 from datetime import date, datetime, timezone
 from decimal import Decimal
@@ -114,6 +116,15 @@ class BuildPostMarketRecapJob:
         self._report_builder = report_builder or NewChainPostMarketReportBuilder()
         self._market_summary_llm_service = market_summary_llm_service or PostMarketMarketSummaryLlmService()
         self._decision_engine = post_market_decision_engine or PostMarketDecisionEngine()
+        self._llm_budget_sec = max(int(os.getenv("POST_MARKET_RECAP_LLM_BUDGET_SEC", "90") or 90), 30)
+        self._market_summary_llm_timeout_sec = max(
+            int(os.getenv("POST_MARKET_RECAP_MARKET_SUMMARY_LLM_TIMEOUT_SEC", "25") or 25),
+            10,
+        )
+        self._narrative_llm_timeout_sec = max(
+            int(os.getenv("POST_MARKET_RECAP_NARRATIVE_LLM_TIMEOUT_SEC", "25") or 25),
+            10,
+        )
 
     @staticmethod
     def _d(value: Any) -> Decimal:
@@ -591,7 +602,21 @@ class BuildPostMarketRecapJob:
 
         # ── P2: 结构化 theme_reviews 生成 ──
         report_context = recap_doc.get("report_context") or {}
-        recap_doc["market_summary"] = await self._build_market_summary_llm(trade_date, report_context)
+        llm_deadline = time.monotonic() + self._llm_budget_sec
+        diag = recap_doc.setdefault("diagnostics", {})
+        llm_diag = diag.setdefault("llm", {})
+        llm_diag.update(
+            {
+                "budget_sec": self._llm_budget_sec,
+                "market_summary_timeout_sec": self._market_summary_llm_timeout_sec,
+                "narrative_timeout_sec": self._narrative_llm_timeout_sec,
+            }
+        )
+        recap_doc["market_summary"] = await self._build_market_summary_llm(
+            trade_date,
+            report_context,
+            llm_deadline=llm_deadline,
+        )
         theme_context_map = await self._build_theme_context_map(trade_date, report_context)
         recap_doc["theme_reviews"] = self._build_theme_reviews(theme_context_map)
         recap_doc["diagnostics"]["coverage"] = self._build_theme_review_coverage(theme_context_map)
@@ -599,10 +624,24 @@ class BuildPostMarketRecapJob:
 
         recap_doc["capital_reviews"] = self._build_capital_reviews(report_context.get("dragon_tiger") or [])
         recap_doc["strong_stock_reviews"] = await self._build_strong_stock_reviews(trade_date)
+        strong_stock_reviews_count = len(recap_doc["strong_stock_reviews"] or [])
+        recap_doc["strong_stock_reviews_count"] = strong_stock_reviews_count
+        if strong_stock_reviews_count > 0:
+            recap_doc["strong_watch_history_count"] = max(
+                int(recap_doc.get("strong_watch_history_count") or 0),
+                strong_stock_reviews_count,
+            )
 
         # ── PR-7: Mainline Discovery parallel output ──
         await self._run_mainline_discovery(
-            trade_date, snapshot_version, report_context, theme_context_map, recap_doc, batch_id, trace_id
+            trade_date,
+            snapshot_version,
+            report_context,
+            theme_context_map,
+            recap_doc,
+            batch_id,
+            trace_id,
+            llm_deadline=llm_deadline,
         )
 
         # ── P0: 交易体系决策输出 ──
@@ -879,12 +918,31 @@ class BuildPostMarketRecapJob:
 
     MAX_THEME_REVIEWS = 20
 
-    async def _build_market_summary_llm(self, trade_date: date, report_context: dict[str, Any]) -> dict[str, Any] | None:
+    async def _build_market_summary_llm(
+        self,
+        trade_date: date,
+        report_context: dict[str, Any],
+        *,
+        llm_deadline: float | None = None,
+    ) -> dict[str, Any] | None:
         service = self._market_summary_llm_service
         if service is None:
             return None
         try:
-            return await service.build(trade_date=trade_date, report_context=report_context)
+            timeout_sec = self._market_summary_llm_timeout_sec
+            if llm_deadline is not None:
+                remaining = llm_deadline - time.monotonic()
+                if remaining <= 0:
+                    logger.warning("post-market market_summary LLM skipped: llm budget exhausted")
+                    return None
+                timeout_sec = min(timeout_sec, remaining)
+            return await asyncio.wait_for(
+                service.build(trade_date=trade_date, report_context=report_context),
+                timeout=timeout_sec,
+            )
+        except asyncio.TimeoutError:
+            logger.warning("post-market market_summary LLM timeout after %.1fs, fallback to deterministic summary", timeout_sec)
+            return None
         except Exception as exc:
             logger.warning("post-market market_summary LLM failed, fallback to deterministic summary: %s", exc)
             return None
@@ -929,6 +987,7 @@ class BuildPostMarketRecapJob:
         recap_doc: dict[str, Any],
         batch_id: str = "",
         trace_id: str = "",
+        llm_deadline: float | None = None,
     ) -> None:
         """PR-7: Run mainline discovery pipeline and write results to recap_doc.
 
@@ -999,20 +1058,77 @@ class BuildPostMarketRecapJob:
                     model_name=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"),
                     config={"max_retries": 1, "timeout": 25, "temperature": 0.1,
                             "enable_cache": True, "cache_ttl": 3600})
-            narrative_builder = MainlineNarrativeJudge(parser_factory=_llm_factory)
+            narrative_builder = MainlineNarrativeJudge(
+                parser_factory=_llm_factory,
+                timeout_sec=self._narrative_llm_timeout_sec,
+            )
             narrative_by_sk: dict[str, dict] = {}
+            llm_diag = recap_doc.setdefault("diagnostics", {}).setdefault("llm", {})
+            llm_diag.setdefault("narrative_timeouts", 0)
+            llm_diag.setdefault("narrative_errors", 0)
+            llm_diag.setdefault("narrative_budget_exhausted", False)
+            llm_diag.setdefault("narrative_skipped_subjects", [])
             for sk, lev in logic_by_sk.items():
                 if not lev.get("event_chain"):
                     narrative_by_sk[sk] = NarrativeJudgeResult().to_dict()
                     continue
-                nj = await narrative_builder.judge(
-                    subject_key=sk,
-                    theme_name=_theme_name_for_sk(fc["candidate_subjects"], sk),
-                    event_chain=lev.get("event_chain", []),
-                    event_series=lev.get("event_series", []),
-                    event_stats=fc.get("event_stats_by_subject", {}).get(sk),
-                    major_event_classification=major_by_sk.get(sk),
-                )
+                if llm_deadline is not None:
+                    remaining = llm_deadline - time.monotonic()
+                    if remaining <= 0:
+                        llm_diag["narrative_budget_exhausted"] = True
+                        llm_diag["narrative_skipped_subjects"].extend(
+                            [subject_key for subject_key in logic_by_sk.keys() if subject_key not in narrative_by_sk]
+                        )
+                        break
+                timeout_sec = self._narrative_llm_timeout_sec
+                if llm_deadline is not None:
+                    timeout_sec = min(timeout_sec, max(0.0, llm_deadline - time.monotonic()))
+                if timeout_sec <= 0:
+                    llm_diag["narrative_budget_exhausted"] = True
+                    narrative_by_sk[sk] = NarrativeJudgeResult(
+                        is_mainline_logic=False,
+                        narrative_score=None,
+                        narrative_level="unavailable",
+                        supporting_event_ids=[],
+                        negative_reasons=["LLM 总预算已耗尽，跳过叙事裁判"],
+                        confidence=0.0,
+                        diagnostics={"skip_reason": "llm_budget_exhausted"},
+                    ).to_dict()
+                    continue
+                try:
+                    nj = await asyncio.wait_for(narrative_builder.judge(
+                        subject_key=sk,
+                        theme_name=_theme_name_for_sk(fc["candidate_subjects"], sk),
+                        event_chain=lev.get("event_chain", []),
+                        event_series=lev.get("event_series", []),
+                        event_stats=fc.get("event_stats_by_subject", {}).get(sk),
+                        major_event_classification=major_by_sk.get(sk),
+                    ), timeout=timeout_sec)
+                except asyncio.TimeoutError:
+                    llm_diag["narrative_timeouts"] += 1
+                    llm_diag["narrative_skipped_subjects"].append(sk)
+                    nj = NarrativeJudgeResult(
+                        is_mainline_logic=False,
+                        narrative_score=None,
+                        narrative_level="unavailable",
+                        supporting_event_ids=[],
+                        negative_reasons=["LLM 调用超时，无法生成叙事判断"],
+                        confidence=0.0,
+                        diagnostics={"skip_reason": "llm_timeout", "timeout_sec": timeout_sec},
+                    )
+                except Exception as exc:
+                    llm_diag["narrative_errors"] += 1
+                    llm_diag["narrative_skipped_subjects"].append(sk)
+                    logger.warning("post-market narrative judge failed for %s, fallback to unavailable: %s", sk, exc)
+                    nj = NarrativeJudgeResult(
+                        is_mainline_logic=False,
+                        narrative_score=None,
+                        narrative_level="unavailable",
+                        supporting_event_ids=[],
+                        negative_reasons=["LLM 调用失败，无法生成叙事判断"],
+                        confidence=0.0,
+                        diagnostics={"skip_reason": "llm_error", "error": str(exc)},
+                    )
                 narrative_by_sk[sk] = nj.to_dict()
 
             # ── run discovery engine ──
