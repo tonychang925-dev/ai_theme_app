@@ -139,10 +139,11 @@ export class SSEManager {
     try {
       this.eventSource = new EventSource(url);
       this.setupEventListeners();
+      const activeConnection = this.eventSource;
 
       // 设置连接超时
       this.connectionTimer = window.setTimeout(() => {
-        if (this.state.status === 'connecting') {
+        if (this.eventSource === activeConnection && this.state.status === 'connecting') {
           this.handleError(new Error('SSE连接超时'));
         }
       }, this.options.connectTimeout);

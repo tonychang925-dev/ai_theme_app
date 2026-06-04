@@ -77,44 +77,36 @@ function AppRoutes() {
     new URLSearchParams(window.location.search).get('debug_perf') === '1';
 
   useEffect(() => {
-    // 启动性能监控
+    // 性能监控只在应用生命周期启动/停止一次，不绑定路由状态。
     performanceMonitor.startMonitoring();
 
     // 初始化资源加载优化
     resourceOptimizer.initialize();
 
-    // 监听所有URL变化
-    const checkUrl = () => {
-      const currentPath = window.location.pathname;
-      const currentSearch = window.location.search;
-      if (currentPath !== path) {
-        setPath(currentPath);
-      }
-      if (currentSearch !== search) {
-        setSearch(currentSearch);
-      }
+    return () => {
+      performanceMonitor.stopMonitoring();
+    };
+  }, []);
+
+  useEffect(() => {
+    const syncLocationState = () => {
+      setPath(window.location.pathname);
+      setSearch(window.location.search);
     };
 
-    // 监听popstate（用户点击后退/前进）
-    const popstateHandler = () => checkUrl();
+    const popstateHandler = () => syncLocationState();
+    const hashchangeHandler = () => syncLocationState();
     window.addEventListener("popstate", popstateHandler);
-
-    // 监听hashchange
-    const hashchangeHandler = () => checkUrl();
     window.addEventListener("hashchange", hashchangeHandler);
 
-    // 定期检查URL变化（用于history.replaceState）
-    const intervalId = setInterval(checkUrl, 100);
+    const intervalId = window.setInterval(syncLocationState, 100);
 
     return () => {
-      // 停止性能监控
-      performanceMonitor.stopMonitoring();
-
       window.removeEventListener("popstate", popstateHandler);
       window.removeEventListener("hashchange", hashchangeHandler);
-      clearInterval(intervalId);
+      window.clearInterval(intervalId);
     };
-  }, [path, search]);
+  }, []);
 
   return (
     <AuthGate>
