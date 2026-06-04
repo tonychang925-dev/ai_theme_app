@@ -390,13 +390,12 @@ class BuildDragonTigerObjectRunner:
             metrics = dict(getattr(result, "metrics", {}) or {})
             if result.status == "skipped_no_data" and warnings:
                 return CollectionTaskResult(
-                    status="failed",
+                    status="skipped",
                     current_label=f"龙虎榜未生成 ({warnings[0]})",
                     logs=[
                         f"dragon_tiger status={result.status} rows={result.affected_rows}",
                         f"dragon_tiger metrics={metrics}",
                     ],
-                    error_message=str(warnings[0]),
                 )
 
             return CollectionTaskResult(
