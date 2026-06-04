@@ -266,6 +266,7 @@ export function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
       <Table<{ key: string; length?: number | null; memory_bytes?: number | null; state?: string }>
         size="small"
         pagination={false}
+        rowKey="key"
         dataSource={streamKeys.filter(k => streams[k]).map(k => ({ key: k, ...streams[k] }))}
         columns={[
           { title: "Stream", dataIndex: "key", key: "key", width: 110, render: (v: string) => <span style={{ fontSize: 12 }}>{v.replace("stream:","").replace("events:","").replace("alerts","").replace("news:","").replace("dead:letter","dead")}</span> },
@@ -286,6 +287,7 @@ export function RedisHealthSection({ redis }: { redis?: RedisRuntimeHealth }) {
               <Table<ConsumerGroupEntry>
                 size="small"
                 pagination={false}
+                rowKey="name"
                 dataSource={cgList}
                 columns={[
                   { title: "Group", dataIndex: "name", key: "name", width: 100, render: (v: string) => <span style={{ fontSize: 11 }}>{v}</span> },
@@ -377,6 +379,7 @@ export function DbHealthSection({ db }: { db?: DatabaseRuntimeHealth }) {
         <Table<{ key: string; estimated_rows?: number | null; age_sec?: number | null; state?: string }>
           size="small"
           pagination={false}
+          rowKey="key"
           dataSource={tableKeys.map(k => ({ key: k, ...tables[k] }))}
           columns={[
             { title: "Table", dataIndex: "key", key: "key", width: 130, render: (v: string) => <span style={{ fontSize: 12 }}>{v}</span> },
