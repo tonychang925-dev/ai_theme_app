@@ -77,6 +77,16 @@ class DatabaseGatewayStockFacade(Protocol):
         self, trade_date: date, lookback_days: int
     ) -> list[SubjectStockPoolDTO]: ...
 
+    async def get_strong_stock_watch_view_rows(
+        self,
+        end_date: date,
+        window_days: int = 7,
+        include_removed: bool = False,
+        latest_per_stock: bool = True,
+        stock_id: str | None = None,
+        limit: int = 200,
+    ) -> list[dict[str, Any]]: ...
+
     async def get_legacy_strong_watch_candidate_inputs(
         self, trade_date: date, lookback_days: int = 7
     ) -> list[dict[str, Any]]: ...

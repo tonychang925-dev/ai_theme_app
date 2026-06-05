@@ -147,6 +147,17 @@ class _FakeReadPort:
     async def get_prior_strong_watch_pool_rows(self, trade_date: date, lookback_days: int):
         return []
 
+    async def get_strong_stock_watch_view_rows(
+        self,
+        end_date: date,
+        window_days: int = 7,
+        include_removed: bool = False,
+        latest_per_stock: bool = True,
+        stock_id: str | None = None,
+        limit: int = 200,
+    ) -> list[dict[str, Any]]:
+        return []
+
     async def get_subject_event_stats(self, trade_date: date, subject_keys=None):
         return []
 
@@ -322,6 +333,81 @@ def test_build_post_market_recap_job_strong_watch_pool_flow() -> None:
             trace_id="tpm2",
         )
         assert skipped.status == "skipped_idempotent"
+
+    asyncio.run(_run())
+
+
+def test_build_post_market_recap_job_reads_layer_c_rows_from_view_model_tc_layer_c_002() -> None:
+    """TC-LC-002: recap should read Layer C rows from view model, not recap_doc."""
+
+    class _LayerCViewReadPort(_FakeReadPort):
+        async def get_strong_stock_watch_view_rows(
+            self,
+            end_date: date,
+            window_days: int = 7,
+            include_removed: bool = False,
+            latest_per_stock: bool = True,
+            stock_id: str | None = None,
+            limit: int = 200,
+        ) -> list[dict[str, Any]]:
+            return [
+                {
+                    "trade_date": end_date,
+                    "stock_id": "002000.SZ",
+                    "stock_name": "ViewSource",
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "watch_score": 86.0,
+                    "watch_priority": 91.0,
+                    "watch_status": "active",
+                    "pool_entry_type": "formal",
+                    "strong_grade": "A",
+                    "relay_role": "leader",
+                    "source_tag": "view_model",
+                    "cycle_state": "repair",
+                    "mainline_strength_score": 72.0,
+                    "support_type": "ma_support",
+                    "support_level": 12.0,
+                    "support_score": 78.0,
+                }
+            ]
+
+    async def _run() -> None:
+        read_port = _LayerCViewReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=cache_port,
+        )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+        job._build_market_summary_llm = AsyncMock(  # type: ignore[method-assign]
+            return_value={"source": "test", "market_overview": "ok"}
+        )
+
+        result = await job.execute(
+            trade_date=date(2026, 4, 23),
+            snapshot_version="pm-v2",
+            batch_id="bpm-layer-c-view",
+            trace_id="tpm-layer-c-view",
+            skip_prereqs=True,
+            skip_layer_c=True,
+        )
+
+        assert result.status == "ok"
+        recap_doc = write_port.recap_docs[-1].recap_doc
+        pdv2 = recap_doc["post_market_decision_v2"]
+        assert pdv2["diagnostics"]["layer_c_source"] == "strong_stock_watch_view_rows"
+        assert pdv2["diagnostics"]["layer_c_rows"] == 1
+        assert "layer_c_d1_preview_truncated" not in pdv2["diagnostics"]
 
     asyncio.run(_run())
 

@@ -17,7 +17,7 @@ from .models import StrongStockPoolItem, PostMarketDecisionV2
 
 @dataclass
 class PostMarketDecisionEngineV2:
-    """Orchestrate Layer C/D1 automation on the new architecture."""
+    """Assemble Layer C post-market display facts."""
 
     @staticmethod
     def _dedupe_key(row: dict[str, Any]) -> str:
@@ -31,7 +31,7 @@ class PostMarketDecisionEngineV2:
         relay_role = str(row.get("relay_role") or "").strip()
         return "|".join(
             [
-                "fallback",
+                "missing_stock_id_key",
                 mainline_id or "--",
                 subject_key or "--",
                 stock_name or "--",
@@ -183,6 +183,5 @@ class PostMarketDecisionEngineV2:
                     1 for r in filtered_pool
                     if (r.pool_entry_type if hasattr(r, "pool_entry_type") else r.get("pool_entry_type")) == "reject"
                 ),
-                "layer_c_d1_preview_truncated": len(pool_rows) <= 100,
             },
         )

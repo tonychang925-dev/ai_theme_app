@@ -118,6 +118,28 @@ class DBThemeDataGateway:
         rows = await fn(trade_date=trade_date, lookback_days=lookback_days)
         return [self._as_dict(row) for row in rows]
 
+    async def get_strong_stock_watch_view_rows(
+        self,
+        end_date: date,
+        window_days: int = 7,
+        include_removed: bool = False,
+        latest_per_stock: bool = True,
+        stock_id: str | None = None,
+        limit: int = 200,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_strong_stock_watch_view_rows", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_strong_stock_watch_view_rows")
+        rows = await fn(
+            end_date=end_date,
+            window_days=window_days,
+            include_removed=include_removed,
+            latest_per_stock=latest_per_stock,
+            stock_id=stock_id,
+            limit=limit,
+        )
+        return [self._as_dict(row) for row in rows]
+
     async def get_theme_events(self, trade_date: date) -> list[dict[str, Any]]:
         snapshot = await self._db.get_existing_post_market_recap_snapshot(trade_date)
         if not snapshot:

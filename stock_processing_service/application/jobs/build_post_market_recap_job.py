@@ -1263,8 +1263,21 @@ class BuildPostMarketRecapJob:
             from stock_processing_service.domain.services.post_market_decision_v2.post_market_decision_engine_v2 import (
                 PostMarketDecisionEngineV2,
             )
-            layer_c_source: str = "strong_watch_history"
-            layer_c_rows: list[dict[str, Any]] = list(recap_doc.get("strong_watch_history") or [])
+            layer_c_source: str = "strong_stock_watch_view_rows"
+            layer_c_rows: list[dict[str, Any]] = []
+            read_layer_c_view_rows = getattr(self._read_port, "get_strong_stock_watch_view_rows", None)
+            if callable(read_layer_c_view_rows):
+                layer_c_rows = [
+                    dict(row or {})
+                    for row in await read_layer_c_view_rows(
+                        end_date=trade_date,
+                        window_days=7,
+                        include_removed=False,
+                        latest_per_stock=False,
+                        stock_id=None,
+                        limit=5000,
+                    )
+                ]
 
             # Build strong_pool + trading_permission via PDV2 (Layer C display only in recap)
             pdv2_engine = PostMarketDecisionEngineV2()

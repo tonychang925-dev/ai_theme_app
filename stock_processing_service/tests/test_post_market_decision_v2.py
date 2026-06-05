@@ -35,6 +35,7 @@ class TestPostMarketDecisionV2:
         assert len(r.strong_stock_pool_reviews) == 0
         assert len(r.weak_to_strong_d1_reviews) == 0
         assert len(r.next_day_focus_stocks) == 0
+        assert "layer_c_d1_preview_truncated" not in r.diagnostics
 
     def test_stocks_filtered_to_mainline_subjects(self):
         e = PostMarketDecisionEngineV2()

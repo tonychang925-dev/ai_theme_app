@@ -622,6 +622,28 @@ class StockReadGatewayAdapter:
             )
         return result
 
+    async def get_strong_stock_watch_view_rows(
+        self,
+        end_date: date,
+        window_days: int = 7,
+        include_removed: bool = False,
+        latest_per_stock: bool = True,
+        stock_id: str | None = None,
+        limit: int = 200,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_strong_stock_watch_view_rows", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_strong_stock_watch_view_rows")
+        rows = await fn(
+            end_date=end_date,
+            window_days=window_days,
+            include_removed=include_removed,
+            latest_per_stock=latest_per_stock,
+            stock_id=stock_id,
+            limit=limit,
+        )
+        return [_as_dict(row) for row in rows]
+
     async def get_mainline_state_daily(
         self,
         trade_date: date,
