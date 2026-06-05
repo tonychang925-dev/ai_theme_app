@@ -76,6 +76,16 @@ function translateStatus(value?: string | null): string {
   return map[key] || key || "未知";
 }
 
+function isIncludedRow(row: Record<string, unknown>): boolean {
+  const role = String(row.role || row.role_label || row.relay_role || "").trim().toLowerCase();
+  const candidateLevel = String(row.candidate_level || row.pool_entry_type || "").trim().toLowerCase();
+  const watchStatus = String(row.watch_status || "").trim().toLowerCase();
+  if (role === "reject") return false;
+  if (candidateLevel === "reject") return false;
+  if (watchStatus === "removed") return false;
+  return watchStatus === "active" || watchStatus === "weakening" || candidateLevel === "formal" || candidateLevel === "observe_only";
+}
+
 function dedupeRows(rows: Record<string, unknown>[]): Record<string, unknown>[] {
   const best = new Map<string, Record<string, unknown>>();
   for (const row of rows) {
@@ -89,9 +99,9 @@ function dedupeRows(rows: Record<string, unknown>[]): Record<string, unknown>[] 
   return Array.from(best.values());
 }
 
-export default function LayerCStrongPoolPanel({ review, rows, title = "强势股跟踪池" }: Props) {
+export default function LayerCStrongPoolPanel({ review, rows, title = "当天入围强势股" }: Props) {
   const sourceRows = rows ?? ((review?.strong_stock_pool_reviews ?? []) as Record<string, unknown>[]);
-  const pool = dedupeRows(sourceRows);
+  const pool = dedupeRows(sourceRows).filter(isIncludedRow);
 
   const byMainline: Record<string, Record<string, unknown>[]> = {};
   for (const r of pool) {
@@ -101,7 +111,7 @@ export default function LayerCStrongPoolPanel({ review, rows, title = "强势股
   }
 
   const cols = [
-    { title: "股票", dataIndex: "stock_name", key: "name", width: 110 },
+    { title: "股票", dataIndex: "stock_name", key: "name", width: 110, render: (_: unknown, row: Record<string, unknown>) => <span>{String(row.stock_name || "--")}</span> },
     { title: "角色", dataIndex: "role_label", key: "role", width: 90, render: (v: string, row: Record<string, unknown>) => translateRole(v || String(row.relay_role || row.role || "")) },
     { title: "评分", dataIndex: "watch_score", key: "score", width: 62, render: (_: unknown, row: Record<string, unknown>) => Number(row.watch_score ?? row.composite_score ?? 0)?.toFixed(0) },
     { title: "级别", dataIndex: "candidate_level", key: "level", width: 96, render: (_: unknown, row: Record<string, unknown>) => {
