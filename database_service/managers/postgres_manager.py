@@ -4312,9 +4312,15 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     THEN COALESCE(NULLIF(BTRIM(s.stock_name), ''), p.stock_name)
                     ELSE COALESCE(NULLIF(BTRIM(p.stock_name), ''), NULLIF(BTRIM(s.stock_name), ''), p.stock_id)
                 END AS stock_name,
-                p.watch_start_date::text AS watch_start_date,
-                p.last_trade_date::text AS last_trade_date,
-                p.watch_window_days,
+                MIN(p.trade_date) OVER (
+                    PARTITION BY split_part(p.stock_id, '.', 1)
+                )::text AS watch_start_date,
+                MAX(p.trade_date) OVER (
+                    PARTITION BY split_part(p.stock_id, '.', 1)
+                )::text AS last_trade_date,
+                COUNT(*) OVER (
+                    PARTITION BY split_part(p.stock_id, '.', 1)
+                )::int AS watch_window_days,
                 p.subject_key,
                 COALESCE(NULLIF(BTRIM(p.theme_name), ''), p.subject_key) AS theme_name,
                 p.watch_status,
@@ -4339,10 +4345,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     ORDER BY p.trade_date DESC, p.watch_score DESC, p.watch_priority DESC
                 ) AS rn
             FROM strong_stock_watch_history p
-            LEFT JOIN subject_stock_daily_snapshot s
-              ON s.trade_date = p.trade_date
-             AND split_part(s.stock_id, '.', 1) = split_part(p.stock_id, '.', 1)
-             AND s.subject_key = p.subject_key
+            LEFT JOIN LATERAL (
+                SELECT
+                    ss.stock_name,
+                    ss.pct_chg,
+                    ss.raw_json
+                FROM subject_stock_daily_snapshot ss
+                WHERE ss.trade_date = p.trade_date
+                  AND split_part(ss.stock_id, '.', 1) = split_part(p.stock_id, '.', 1)
+                ORDER BY
+                    CASE WHEN ss.subject_key = p.subject_key THEN 0 ELSE 1 END,
+                    COALESCE(ss.is_leader, FALSE) DESC,
+                    COALESCE(ss.rank_order, 9999) ASC,
+                    ss.subject_key ASC
+                LIMIT 1
+            ) s ON TRUE
             WHERE p.trade_date IN (SELECT trade_date FROM selected_trade_dates)
               AND ($3::boolean OR p.watch_status IN ('active', 'weakening'))
               AND ($4::text IS NULL OR split_part(p.stock_id, '.', 1) = split_part($4::text, '.', 1))
