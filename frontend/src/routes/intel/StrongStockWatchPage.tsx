@@ -292,6 +292,7 @@ export function StrongStockWatchPage() {
                 ) : (
                   group.items.map((item) => {
                     const lv = parseBoardLevel(dedupStats.latestByCode.get(normalizeStockCode(item.stock_id)) ?? item);
+                    const displayName = item.stock_name || item.stock_id || "--";
                     return (
                       <div className="strong-watch-level-row" key={`${group.key}-${item.stock_id}`}>
                         <div className="strong-watch-level-tag">{boardLabel(lv)}</div>
@@ -307,7 +308,7 @@ export function StrongStockWatchPage() {
                               )
                             }
                           >
-                            <strong>{item.stock_name}</strong>
+                            <strong>{displayName}</strong>
                             <span className="strong-watch-pct">{formatPct(parsePctChg(item))}</span>
                             <em>{item.theme_name || item.subject_key || "--"}</em>
                           </button>

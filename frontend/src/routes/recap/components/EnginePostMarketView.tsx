@@ -17,8 +17,7 @@ interface Props {
 }
 
 export default function EnginePostMarketView({ dailyReviewV2, tradeDate }: Props) {
-  const review = dailyReviewV2.post_market_decision_v2;
-  if (!review || !dailyReviewV2.engine_summary || !dailyReviewV2.market_regime_review) return null;
+  if (!dailyReviewV2.post_market_decision_v2 || !dailyReviewV2.engine_summary || !dailyReviewV2.market_regime_review) return null;
 
   return (
     <>
@@ -75,7 +74,10 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate }: Props
         <section className="workspace-card recap-engine-group">
           <h3 className="section-title recap-panel-title">强股与证据</h3>
           <div className="recap-engine-group-stack">
-            <LayerCStrongPoolPanel review={review} />
+            <LayerCStrongPoolPanel
+              title="当天入围强势股"
+              rows={(dailyReviewV2.strong_stock_reviews ?? []) as unknown as Record<string, unknown>[]}
+            />
             <EvidenceLayerPanel evidenceLayerReview={dailyReviewV2.evidence_layer_review ?? null} />
           </div>
         </section>
