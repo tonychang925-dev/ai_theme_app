@@ -2825,23 +2825,23 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             FROM theme_leader_candidate
             WHERE trade_date = $1::date
         ),
-        two_board_stocks AS (
-            -- 独立龙头检测：最近窗口内存在连续两个交易日涨停
-            SELECT DISTINCT stock_code
+        recent_two_trade_days AS (
+            SELECT trade_date
             FROM (
-                SELECT
-                    split_part(stock_id, '.', 1) AS stock_code,
-                    trade_date,
-                    COALESCE(MAX(limit_up::int)::bool, FALSE) AS limit_up,
-                    LAG(COALESCE(MAX(limit_up::int)::bool, FALSE)) OVER (
-                        PARTITION BY split_part(stock_id, '.', 1)
-                        ORDER BY trade_date
-                    ) AS prev_limit_up
+                SELECT DISTINCT trade_date
                 FROM stock_daily_snapshot
-                WHERE trade_date IN (SELECT trade_date FROM recent_trade_days)
-                GROUP BY split_part(stock_id, '.', 1), trade_date
-            ) t
-            WHERE limit_up = TRUE AND prev_limit_up = TRUE
+                WHERE trade_date <= $1::date
+                ORDER BY trade_date DESC
+                LIMIT 2
+            ) x
+        ),
+        two_board_stocks AS (
+            -- 独立龙头检测：截至当日最近两个交易日都涨停
+            SELECT DISTINCT stock_code
+            FROM stock_daily_snapshot
+            WHERE trade_date IN (SELECT trade_date FROM recent_two_trade_days)
+            GROUP BY split_part(stock_id, '.', 1)
+            HAVING COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(limit_up, FALSE)) = 2
         ),
         recent AS (
             SELECT

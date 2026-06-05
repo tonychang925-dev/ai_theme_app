@@ -20,6 +20,7 @@ def test_layer_c_seed_sql_requires_layer_b_alive_for_mainline_path() -> None:
     assert "COALESCE(v2.final_mainline_alive, FALSE) = TRUE" in method
     assert "COALESCE(v2.fade_confirmed, FALSE) = FALSE" in method
     assert "OR COALESCE(tb.stock_code IS NOT NULL, FALSE) = TRUE" in method
+    assert "recent_two_trade_days" in method
     assert "two_board_stocks" in method
     assert "two_board_recent" in method
     assert "stock_daily_snapshot" in method
