@@ -4,7 +4,6 @@ import type { PostMarketDailyReviewV2 } from "../../../lib/api";
 interface Props {
   dailyReviewV2?: PostMarketDailyReviewV2 | null;
   onRetry: () => void;
-  onShowLegacy: () => void;
 }
 
 function getMissingParts(dailyReviewV2?: PostMarketDailyReviewV2 | null) {
@@ -20,7 +19,7 @@ function getMissingParts(dailyReviewV2?: PostMarketDailyReviewV2 | null) {
   return missing.length > 0 ? missing : ["引擎报告字段不完整"];
 }
 
-export default function EngineMissingState({ dailyReviewV2, onRetry, onShowLegacy }: Props) {
+export default function EngineMissingState({ dailyReviewV2, onRetry }: Props) {
   const missing = getMissingParts(dailyReviewV2);
 
   return (
@@ -34,7 +33,6 @@ export default function EngineMissingState({ dailyReviewV2, onRetry, onShowLegac
       />
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
         <Button type="primary" onClick={onRetry}>重新复盘</Button>
-        <Button onClick={onShowLegacy}>查看旧版 sections</Button>
       </div>
     </div>
   );

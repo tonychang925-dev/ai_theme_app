@@ -1,4 +1,3 @@
-import { Button } from "antd";
 import type { PostMarketDailyReviewV2 } from "../../../lib/api";
 import LayerCStrongPoolPanel from "./LayerCStrongPoolPanel";
 import MainlineStateBoard from "./MainlineStateBoard";
@@ -15,10 +14,9 @@ import D1NextDayWatchPanel from "./D1NextDayWatchPanel";
 interface Props {
   dailyReviewV2: PostMarketDailyReviewV2;
   tradeDate?: string;
-  onShowLegacy: () => void;
 }
 
-export default function EnginePostMarketView({ dailyReviewV2, tradeDate, onShowLegacy }: Props) {
+export default function EnginePostMarketView({ dailyReviewV2, tradeDate }: Props) {
   const review = dailyReviewV2.post_market_decision_v2;
   if (!review || !dailyReviewV2.engine_summary || !dailyReviewV2.market_regime_review) return null;
 
@@ -81,9 +79,6 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate, onShowL
             <EvidenceLayerPanel evidenceLayerReview={dailyReviewV2.evidence_layer_review ?? null} />
           </div>
         </section>
-      </div>
-      <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 8 }}>
-        <Button onClick={onShowLegacy}>查看旧版 sections</Button>
       </div>
     </>
   );

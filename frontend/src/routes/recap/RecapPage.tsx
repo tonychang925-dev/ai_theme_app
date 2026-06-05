@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import type { NotionPublishResult, RecapViewModelV2 } from "../../lib/api";
 import {
-  fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, fetchPostMarketJobsStatus, publishRecapToNotion,
-  type AbnormalStockReviewV2, type DailyReviewView, type DragonTigerReviewV2, type EngineMarketRegimeReview, type EngineSummary, type MainlineDailyStateReview, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
+  fetchRecapSnapshot, fetchDailyReviewV2, fetchPostMarketJobsStatus, publishRecapToNotion,
+  type AbnormalStockReviewV2, type DragonTigerReviewV2, type EngineMarketRegimeReview, type EngineSummary, type MainlineDailyStateReview, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness,
   generateDailyReviewV2, generatePostMarketDerivedData, generatePostMarketRecap,
 } from "../../lib/api";
@@ -89,7 +89,7 @@ const INITIAL_RECAP_GENERATION_STEPS: RecapGenerationStep[] = [
   { key: "derived", label: "生成动态复盘数据", status: "pending", progress: 0 },
   { key: "recap", label: "生成复盘报告", status: "pending", progress: 0 },
   { key: "daily_review_v2", label: "生成 DailyReview V2", status: "pending", progress: 0 },
-  { key: "snapshot", label: "载入复盘报告", status: "pending", progress: 0 },
+  { key: "snapshot", label: "载入 DailyReview V2", status: "pending", progress: 0 },
 ];
 
 function initialRecapGenerationSteps(): RecapGenerationStep[] {
@@ -945,37 +945,6 @@ function sectionMap(payload: RecapViewModelV2 | null) {
   return map;
 }
 
-type PostMarketDataMode = "sections_first" | "daily_review_v2_first";
-type RecapViewMode = "engine" | "legacy";
-
-function normalizePostMarketDataMode(value: string | null | undefined): PostMarketDataMode | null {
-  if (value === "daily_review_v2" || value === "daily_review_v2_first") {
-    return "daily_review_v2_first";
-  }
-  if (value === "sections_first") {
-    return "sections_first";
-  }
-  return null;
-}
-
-function resolvePostMarketDataMode(params: URLSearchParams): PostMarketDataMode {
-  if (window.location.search.includes("data_mode=sections_first")) {
-    return "sections_first";
-  }
-  const urlMode = normalizePostMarketDataMode(params.get("data_mode"));
-  if (urlMode) {
-    return urlMode;
-  }
-  return normalizePostMarketDataMode(import.meta.env.VITE_POST_MARKET_DEFAULT_DATA_MODE) ?? "daily_review_v2_first";
-}
-
-function resolveRecapViewMode(params: URLSearchParams): RecapViewMode {
-  if (params.get("view") === "legacy" || params.get("legacy_sections") === "1") {
-    return "legacy";
-  }
-  return "engine";
-}
-
 function isEngineReportReady(dailyReviewV2: PostMarketDailyReviewV2 | null) {
   return Boolean(
     dailyReviewV2?.engine_summary &&
@@ -989,22 +958,11 @@ function isEngineReportReady(dailyReviewV2: PostMarketDailyReviewV2 | null) {
 function buildRecapSearchParams({
   tradeDate,
   reportType,
-  dataMode,
-  viewMode,
 }: {
   tradeDate: string;
   reportType: "pre_market" | "post_market";
-  dataMode?: PostMarketDataMode | null;
-  viewMode?: RecapViewMode | null;
 }) {
-  const query = new URLSearchParams({ date: tradeDate, report_type: reportType });
-  if (reportType === "post_market" && dataMode) {
-    query.set("data_mode", dataMode === "daily_review_v2_first" ? "daily_review_v2" : "sections_first");
-  }
-  if (viewMode === "legacy") {
-    query.set("view", "legacy");
-  }
-  return query;
+  return new URLSearchParams({ date: tradeDate, report_type: reportType });
 }
 
 function todayString() {
@@ -1016,11 +974,6 @@ function todayString() {
   }).format(new Date());
 }
 
-function isMissingPostMarketSnapshotError(message: string) {
-  return message.includes("post-market snapshot is unavailable or unmappable")
-    || message.includes("request timeout after");
-}
-
 function hasRunningPostMarketJob(status?: { summary?: { has_running?: boolean }; items?: Array<{ status?: string }> } | null) {
   return Boolean(status?.summary?.has_running) || Boolean(status?.items?.some((item) => item.status === "running"));
 }
@@ -1030,22 +983,17 @@ export function RecapPage() {
   const initialParams = new URLSearchParams(window.location.search);
   const initialType = window.location.search.includes("report_type=pre_market") ? "pre_market" : "post_market";
   const initialDate = initialParams.get("date") ?? today;
-  const dataMode = resolvePostMarketDataMode(initialParams);
-  const viewMode = resolveRecapViewMode(initialParams);
-  const effectiveDataMode = viewMode === "legacy" ? "sections_first" : dataMode;
-  const dailyReviewV2PreviewEnabled = effectiveDataMode === "daily_review_v2_first";
 
   const [tradeDate, setTradeDate] = useState(initialDate);
   const [reportType, setReportType] = useState<"pre_market" | "post_market">(initialType);
   const [abnormalSortKey, setAbnormalSortKey] = useState<"score" | "turnoverRate" | "volumeRatio" | "volumeVsMa50">("score");
   const [abnormalSortDir, setAbnormalSortDir] = useState<"desc" | "asc">("desc");
   const [payload, setPayload] = useState<RecapViewModelV2 | null>(null);
-  const [dailyReview, setDailyReview] = useState<DailyReviewView | null>(null);
   const [dailyReviewV2, setDailyReviewV2] = useState<PostMarketDailyReviewV2 | null>(null);
   const [derivedDataBusy, setDerivedDataBusy] = useState(false);
   const [recapBusy, setRecapBusy] = useState(false);
   const [generationSteps, setGenerationSteps] = useState<RecapGenerationStep[]>([]);
-  const effectiveReportType = payload?.report_type ?? reportType;
+  const dailyReviewV2PreviewEnabled = reportType === "post_market";
   const rawHighlights = payload?.highlights ?? [];
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -1065,8 +1013,7 @@ export function RecapPage() {
       ?? generationSteps.find((step) => step.status === "pending")
       ?? generationSteps[generationSteps.length - 1];
   }, [generationSteps]);
-  const isPostMarket = effectiveReportType === "post_market";
-  const legacyViewEnabled = isPostMarket && viewMode === "legacy";
+  const isPostMarket = reportType === "post_market";
   const engineReportReady = isEngineReportReady(dailyReviewV2);
   const engineSummary = dailyReviewV2?.engine_summary ?? null;
   const marketRegimeReview = dailyReviewV2?.market_regime_review ?? null;
@@ -1295,7 +1242,6 @@ export function RecapPage() {
   useEffect(() => {
     let active = true;
     setPayload(null);
-    setDailyReview(null);
     setDailyReviewV2(null);
     setGenerationSteps([]);
     setLoading(true);
@@ -1309,29 +1255,21 @@ export function RecapPage() {
         action();
       };
 
-      const snapshotPromise = fetchRecapSnapshot({ date: tradeDate, reportType });
       const readinessPromise = fetchPostMarketReadiness(tradeDate).catch(() => null);
       const jobsPromise = fetchPostMarketJobsStatus(tradeDate).catch(() => null);
+      const dailyReviewV2Promise = fetchDailyReviewV2(tradeDate);
 
-      snapshotPromise
+      dailyReviewV2Promise
         .then((snapshot) => {
           finalizeBootstrap(() => {
-            setPayload(snapshot);
-            const query = buildRecapSearchParams({
-              tradeDate,
-              reportType,
-              dataMode: dailyReviewV2PreviewEnabled ? "daily_review_v2_first" : "sections_first",
-              viewMode,
-            });
+            setDailyReviewV2(snapshot);
+            const query = buildRecapSearchParams({ tradeDate, reportType });
             window.history.replaceState(null, "", `/recap?${query.toString()}`);
             setLoading(false);
           });
         })
         .catch((err: Error) => {
           if (!active || bootstrapFinalized) return;
-          if (isMissingPostMarketSnapshotError(err.message)) {
-            return;
-          }
           bootstrapFinalized = true;
           setError(err.message);
           setLoading(false);
@@ -1347,20 +1285,6 @@ export function RecapPage() {
         }
       })();
 
-      fetchDailyReview(tradeDate)
-        .then((data) => {
-          if (!active) return;
-          setDailyReview(data);
-        })
-        .catch(() => {});
-      if (dailyReviewV2PreviewEnabled) {
-        fetchDailyReviewV2(tradeDate)
-          .then((data) => {
-            if (!active) return;
-            setDailyReviewV2(data);
-          })
-          .catch(() => {});
-      }
       return () => { active = false; };
     }
 
@@ -1369,11 +1293,7 @@ export function RecapPage() {
       .then((data) => {
         if (active) {
           setPayload(data);
-          const query = buildRecapSearchParams({
-            tradeDate,
-            reportType,
-            dataMode: dailyReviewV2PreviewEnabled ? "daily_review_v2_first" : "sections_first",
-          });
+          const query = buildRecapSearchParams({ tradeDate, reportType });
           window.history.replaceState(null, "", `/recap?${query.toString()}`);
         }
       })
@@ -1425,39 +1345,16 @@ export function RecapPage() {
     }
   }
 
-  function openPostMarketLegacyView() {
-    const query = buildRecapSearchParams({
-      tradeDate,
-      reportType: "post_market",
-      dataMode: "sections_first",
-      viewMode: "legacy",
-    });
-    navigateTo(`/recap?${query.toString()}`);
-  }
-
-  function openPostMarketEngineView() {
-    const query = buildRecapSearchParams({
-      tradeDate,
-      reportType: "post_market",
-      dataMode: "daily_review_v2_first",
-    });
-    navigateTo(`/recap?${query.toString()}`);
-  }
-
   async function refreshPostMarketStatus() {
     return fetchPostMarketReadiness(tradeDate).catch(() => null);
   }
 
   async function refreshPostMarketViews() {
-    const [snapshot, dr, v2] = await Promise.all([
-      fetchRecapSnapshot({ date: tradeDate, reportType: "post_market" }).catch(() => null),
-      fetchDailyReview(tradeDate).catch(() => null),
-      dailyReviewV2PreviewEnabled ? fetchDailyReviewV2(tradeDate).catch(() => null) : Promise.resolve(null),
+    const [v2] = await Promise.all([
+      fetchDailyReviewV2(tradeDate).catch(() => null),
     ]);
-    if (snapshot) setPayload(snapshot);
-    if (dr) setDailyReview(dr);
     if (v2) setDailyReviewV2(v2);
-    return snapshot;
+    return v2;
   }
 
   function updateGenerationStep(key: string, patch: Partial<RecapGenerationStep>) {
@@ -1505,10 +1402,10 @@ export function RecapPage() {
       updateGenerationStep("daily_review_v2", { status: "success", progress: 100 });
       await refreshPostMarketStatus();
       updateGenerationStep("snapshot", { status: "running", progress: 60 });
-      const snapshot = await refreshPostMarketViews();
-      if (!snapshot) {
+      const refreshedV2 = await refreshPostMarketViews();
+      if (!refreshedV2) {
         updateGenerationStep("snapshot", { status: "failed", progress: 100 });
-        setError("复盘报告已触发生成，但当前还没有可读取的 snapshot，请稍后刷新。");
+        setError("复盘报告已触发生成，但当前还没有可读取的 DailyReview V2，请稍后刷新。");
       } else {
         updateGenerationStep("snapshot", { status: "success", progress: 100 });
       }
@@ -1555,7 +1452,7 @@ export function RecapPage() {
                   {isGeneratingRecap ? "复盘中..." : "重新复盘"}
                 </button>
               )}
-              <button className="tag tag-button is-pass" type="button" style={{ fontSize: 16, padding: "8px 16px" }}
+      <button className="tag tag-button is-pass" type="button" style={{ fontSize: 16, padding: "8px 16px" }}
                 disabled={publishing || loading || isGeneratingRecap} onClick={handlePublishNotion}>
                 {publishing ? "发布中..." : "发布到 Notion"}
               </button>
@@ -1574,7 +1471,7 @@ export function RecapPage() {
 
       {loading && <div className="empty-state">正在加载复盘视图...</div>}
       {error && <div className="empty-state error">{error}</div>}
-      {!loading && reportType === "post_market" && !payload && (
+      {!loading && reportType === "post_market" && (
         <div style={{ marginBottom: 12 }}>
           <button
             className="tag tag-button is-pass"
@@ -1604,52 +1501,20 @@ export function RecapPage() {
           </div>
         </div>
       )}
-      {!loading && !error && payload && (
+      {!loading && !error && ((reportType === "post_market" && dailyReviewV2) || (reportType === "pre_market" && payload)) && (
         <>
           <main className="workspace-layout single">
             <section className="workspace-column">
               {isPostMarket ? (
-                legacyViewEnabled ? (
-                  <LegacyRecapSections
-                    reportType="post_market"
-                    tradeDate={tradeDate}
-                    onShowEngine={openPostMarketEngineView}
-                    highlights={highlights}
-                    marketEnvironmentSection={marketEnvironmentSection}
-                    themeEnvironmentSection={themeEnvironmentSection}
-                    themeSection={themeSection}
-                    themeSummaryRows={themeSummaryRows}
-                    themeCapitalFlowRows={themeCapitalFlowRows}
-                    strongStockSection={strongStockSection}
-                    strongStockGroups={strongStockGroups}
-                    watchlistSection={watchlistSection}
-                    watchlistRows={watchlistRows}
-                    stockCapitalFlowSection={stockCapitalFlowSection}
-                    stockCapitalFlowRows={stockCapitalFlowRows}
-                    moneySection={moneySection}
-                    moneyFlowRows={moneyFlowRows}
-                    abnormalSection={abnormalSection}
-                    abnormalNote={abnormalNote}
-                    abnormalRows={abnormalRows}
-                    sortedAbnormalRows={sortedAbnormalRows}
-                    auctionSection={auctionSection}
-                    auctionValidationSection={auctionValidationSection}
-                    auxSection={auxSection}
-                    dragonTigerNote={dragonTigerNote}
-                    dragonTigerRows={dragonTigerRows}
-                    themeKeyByTheme={themeKeyByTheme}
-                  />
-                ) : engineReportReady ? (
+                engineReportReady ? (
                   <EnginePostMarketView
                     dailyReviewV2={dailyReviewV2!}
                     tradeDate={tradeDate}
-                    onShowLegacy={openPostMarketLegacyView}
                   />
                 ) : (
                   <EngineMissingState
                     dailyReviewV2={dailyReviewV2}
                     onRetry={handleStartPostMarketRecap}
-                    onShowLegacy={openPostMarketLegacyView}
                   />
                 )
               ) : (
