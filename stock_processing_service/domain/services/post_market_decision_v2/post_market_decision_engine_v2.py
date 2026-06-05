@@ -120,6 +120,8 @@ class PostMarketDecisionEngineV2:
                 entry = "observe_only"
             strong_pool.append(StrongStockPoolItem(
                 trade_date=trade_date,
+                watch_start_date=str(row.get("watch_start_date") or ""),
+                last_trade_date=str(row.get("last_trade_date") or ""),
                 mainline_id=mainline_ids.get(sk, ""),
                 subject_key=sk,
                 theme_name=str(row.get("theme_name") or row.get("subject_name") or ""),

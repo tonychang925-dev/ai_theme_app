@@ -62,6 +62,8 @@ def test_strong_watch_window_view_reads_layer_c_history_by_trade_date() -> None:
     assert "CASE" in method
     assert "p.stock_name ~ '^[0-9]{6}(\\\\.[A-Z]{2})?$'" in method
     assert "COALESCE(NULLIF(BTRIM(s.stock_name), ''), p.stock_name)" in method
+    assert "p.watch_start_date::text AS watch_start_date" in method
+    assert "p.last_trade_date::text AS last_trade_date" in method
     assert "WHERE p.trade_date IN (SELECT trade_date FROM selected_trade_dates)" in method
     assert "FROM strong_stock_watch_pool p" not in method
     assert "p.watch_start_date::text AS trade_date" not in method

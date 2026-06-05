@@ -76,7 +76,8 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate }: Props
           <div className="recap-engine-group-stack">
             <LayerCStrongPoolPanel
               title="当天入围强势股"
-              rows={(dailyReviewV2.strong_stock_reviews ?? []) as unknown as Record<string, unknown>[]}
+              tradeDate={tradeDate}
+              rows={(dailyReviewV2.post_market_decision_v2?.strong_stock_pool_reviews ?? []) as unknown as Record<string, unknown>[]}
             />
             <EvidenceLayerPanel evidenceLayerReview={dailyReviewV2.evidence_layer_review ?? null} />
           </div>

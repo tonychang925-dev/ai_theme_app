@@ -6,6 +6,7 @@ interface Props {
   review?: PostMarketDecisionV2Review;
   rows?: Record<string, unknown>[];
   title?: string;
+  tradeDate?: string;
 }
 
 function rowKey(row: Record<string, unknown>): string {
@@ -21,7 +22,9 @@ function rowKey(row: Record<string, unknown>): string {
 }
 
 function displayGroupName(row: Record<string, unknown>): string {
-  return String(row.mainline_name || row.theme_name || row.subject_key || "其他").trim() || "其他";
+  const subjectKey = String(row.subject_key || "").trim();
+  if (subjectKey === "__independent__") return "独立龙头";
+  return String(row.mainline_name || row.theme_name || subjectKey || "其他").trim() || "其他";
 }
 
 function translatePoolEntryType(value?: string | null): string {
@@ -71,6 +74,12 @@ function isIncludedRow(row: Record<string, unknown>): boolean {
   return watchStatus === "active" || watchStatus === "weakening" || candidateLevel === "formal" || candidateLevel === "observe_only";
 }
 
+function isSameDayEntrant(row: Record<string, unknown>, tradeDate?: string): boolean {
+  if (!tradeDate) return true;
+  const watchStart = String(row.watch_start_date || "").trim().slice(0, 10);
+  return watchStart === tradeDate;
+}
+
 function dedupeRows(rows: Record<string, unknown>[]): Record<string, unknown>[] {
   const best = new Map<string, Record<string, unknown>>();
   for (const row of rows) {
@@ -84,9 +93,9 @@ function dedupeRows(rows: Record<string, unknown>[]): Record<string, unknown>[] 
   return Array.from(best.values());
 }
 
-export default function LayerCStrongPoolPanel({ review, rows, title = "当天入围强势股" }: Props) {
+export default function LayerCStrongPoolPanel({ review, rows, title = "当天入围强势股", tradeDate }: Props) {
   const sourceRows = rows ?? ((review?.strong_stock_pool_reviews ?? []) as Record<string, unknown>[]);
-  const pool = dedupeRows(sourceRows).filter(isIncludedRow);
+  const pool = dedupeRows(sourceRows).filter((row) => isIncludedRow(row) && isSameDayEntrant(row, tradeDate));
 
   const byMainline: Record<string, Record<string, unknown>[]> = {};
   for (const r of pool) {
@@ -96,7 +105,7 @@ export default function LayerCStrongPoolPanel({ review, rows, title = "当天入
   }
 
   const cols = [
-    { title: "股票", dataIndex: "stock_name", key: "name", width: 110, render: (_: unknown, row: Record<string, unknown>) => <span>{String(row.stock_name || "--")}</span> },
+    { title: "股票", dataIndex: "stock_name", key: "name", width: 110, render: (_: unknown, row: Record<string, unknown>) => <span>{String(row.stock_name || row.stock_code || row.stock_id || "--")}</span> },
     { title: "入围等级", dataIndex: "candidate_level", key: "role", width: 90, render: (v: string, row: Record<string, unknown>) => translateCandidateLevel(v || String(row.candidate_level || row.pool_entry_type || "")) },
     { title: "评分", dataIndex: "watch_score", key: "score", width: 62, render: (_: unknown, row: Record<string, unknown>) => Number(row.watch_score ?? row.composite_score ?? 0)?.toFixed(0) },
     { title: "级别", dataIndex: "candidate_level", key: "level", width: 96, render: (_: unknown, row: Record<string, unknown>) => {

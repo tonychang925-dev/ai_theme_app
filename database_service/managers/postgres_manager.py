@@ -4312,6 +4312,9 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     THEN COALESCE(NULLIF(BTRIM(s.stock_name), ''), p.stock_name)
                     ELSE COALESCE(NULLIF(BTRIM(p.stock_name), ''), NULLIF(BTRIM(s.stock_name), ''), p.stock_id)
                 END AS stock_name,
+                p.watch_start_date::text AS watch_start_date,
+                p.last_trade_date::text AS last_trade_date,
+                p.watch_window_days,
                 p.subject_key,
                 COALESCE(NULLIF(BTRIM(p.theme_name), ''), p.subject_key) AS theme_name,
                 p.watch_status,
