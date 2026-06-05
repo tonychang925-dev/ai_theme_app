@@ -412,6 +412,50 @@ def test_build_post_market_recap_job_reads_layer_c_rows_from_view_model_tc_layer
     asyncio.run(_run())
 
 
+def test_build_post_market_recap_job_requires_layer_c_view_model_tc_layer_c_003() -> None:
+    """TC-LC-003: missing Layer C view-model must fail loud."""
+
+    class _MissingLayerCViewReadPort(_FakeReadPort):
+        get_strong_stock_watch_view_rows = None
+
+    async def _run() -> None:
+        read_port = _MissingLayerCViewReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=cache_port,
+        )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+        job._build_market_summary_llm = AsyncMock(  # type: ignore[method-assign]
+            return_value={"source": "test", "market_overview": "ok"}
+        )
+
+        try:
+            await job.execute(
+                trade_date=date(2026, 4, 23),
+                snapshot_version="pm-v2",
+                batch_id="bpm-layer-c-missing",
+                trace_id="tpm-layer-c-missing",
+                skip_prereqs=True,
+                skip_layer_c=True,
+            )
+        except RuntimeError as exc:
+            assert "get_strong_stock_watch_view_rows" in str(exc)
+        else:
+            raise AssertionError("expected missing Layer C view-model to raise RuntimeError")
+
+    asyncio.run(_run())
+
+
 def test_build_post_market_recap_job_backfills_strong_watch_count_from_reviews() -> None:
     """When Layer C legacy rows are empty, recap count should follow strong_stock_reviews."""
 

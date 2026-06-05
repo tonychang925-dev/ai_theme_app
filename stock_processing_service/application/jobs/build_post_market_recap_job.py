@@ -1193,26 +1193,28 @@ class BuildPostMarketRecapJob:
         batch_id: str = "", trace_id: str = "",
     ) -> None:
         """PR-10: Run lifecycle pipeline for confirmed mainlines."""
+        def _serialize(obj):
+            if isinstance(obj, dict):
+                return {k: _serialize(v) for k, v in obj.items()}
+            if isinstance(obj, list):
+                return [_serialize(i) for i in obj]
+            from decimal import Decimal
+            if isinstance(obj, Decimal):
+                return float(obj)
+            return obj
+
+        from stock_processing_service.application.services.mainline_lifecycle.mainline_lifecycle_fact_context_builder import (
+            MainlineLifecycleFactContextBuilder,
+        )
+        from stock_processing_service.domain.services.mainline_lifecycle.layer_b_lifecycle_adapter import (
+            MainlineLifecycleLayerBAdapter,
+        )
+
+        report_context = recap_doc.get("report_context") or {}
+        reviews: list[Any] = []
+        regime: dict[str, Any] = {}
+
         try:
-            def _serialize(obj):
-                if isinstance(obj, dict):
-                    return {k: _serialize(v) for k, v in obj.items()}
-                if isinstance(obj, list):
-                    return [_serialize(i) for i in obj]
-                from decimal import Decimal
-                if isinstance(obj, Decimal):
-                    return float(obj)
-                return obj
-
-            from stock_processing_service.application.services.mainline_lifecycle.mainline_lifecycle_fact_context_builder import (
-                MainlineLifecycleFactContextBuilder,
-            )
-            from stock_processing_service.domain.services.mainline_lifecycle.layer_b_lifecycle_adapter import (
-                MainlineLifecycleLayerBAdapter,
-            )
-
-            report_context = recap_doc.get("report_context") or {}
-
             fc_builder = MainlineLifecycleFactContextBuilder(self._read_port)
             fact_ctx = await fc_builder.build(trade_date=trade_date)
 
@@ -1247,67 +1249,72 @@ class BuildPostMarketRecapJob:
                 **regime_ctx.diagnostics,
                 "index_technical_reviews": regime_ctx.index_technical_reviews,
             }
-
-            # ── PR-12.5: ActiveMainlineUniverse ──
-            from stock_processing_service.application.services.active_mainline_universe_builder import (
-                ActiveMainlineUniverseBuilder,
-            )
-            active_universe = await ActiveMainlineUniverseBuilder(self._read_port).build(trade_date=trade_date)
-            recap_doc["active_mainline_universe"] = active_universe.to_dict()
-            confirmed_mainlines = active_universe.active_mainlines
-            cml_error = None
-            if not confirmed_mainlines:
-                cml_error = "no_active_mainlines_in_registry"
-
-            # ── PR-12: PostMarketDecisionV2 ──
-            from stock_processing_service.domain.services.post_market_decision_v2.post_market_decision_engine_v2 import (
-                PostMarketDecisionEngineV2,
-            )
-            layer_c_source: str = "strong_stock_watch_view_rows"
-            layer_c_rows: list[dict[str, Any]] = []
-            read_layer_c_view_rows = getattr(self._read_port, "get_strong_stock_watch_view_rows", None)
-            if callable(read_layer_c_view_rows):
-                layer_c_rows = [
-                    dict(row or {})
-                    for row in await read_layer_c_view_rows(
-                        end_date=trade_date,
-                        window_days=7,
-                        include_removed=False,
-                        latest_per_stock=False,
-                        stock_id=None,
-                        limit=5000,
-                    )
-                ]
-
-            # Build strong_pool + trading_permission via PDV2 (Layer C display only in recap)
-            pdv2_engine = PostMarketDecisionEngineV2()
-            pdv2 = pdv2_engine.evaluate(
-                trade_date=trade_date.isoformat(),
-                confirmed_mainlines=confirmed_mainlines,
-                mainline_lifecycle=[r.to_dict() for r in reviews],
-                market_regime=regime.to_dict(),
-                stock_pool_rows=layer_c_rows if layer_c_rows else [],
-            )
-            pdv2.diagnostics["layer_c_rows"] = len(layer_c_rows)
-            pdv2.diagnostics["layer_c_source"] = layer_c_source
-            if cml_error:
-                pdv2.diagnostics["confirmed_mainline_error"] = cml_error
-            recap_doc["post_market_decision_v2"] = pdv2.to_dict()
-
-            # ── PR-13A: persist mainline daily state ──
-            await self._persist_mainline_daily_state(trade_date, recap_doc, batch_id or "", trace_id or "")
-
-            # Re-write snapshot with PDV2 D1 data (written before PDV2 section at line 632)
-            updated_snapshot = PostMarketRecapSnapshot(
-                trade_date=trade_date, snapshot_version=snapshot_version,
-                batch_id=batch_id, trace_id=trace_id, source_trace_id=trace_id,
-                recap_doc=_serialize(recap_doc),
-            )
-            await self._write_port.upsert_post_market_recap_snapshot(updated_snapshot)
         except Exception:
-            logger.exception("Lifecycle pipeline failed, continuing without it")
+            logger.exception("Mainline discovery pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []
             recap_doc["mainline_lifecycle_diagnostics"] = {"error": "pipeline_failed"}
+            recap_doc["market_regime_review"] = {}
+            recap_doc["market_regime_diagnostics"] = {"error": "pipeline_failed"}
+
+        # ── PR-12.5: ActiveMainlineUniverse ──
+        from stock_processing_service.application.services.active_mainline_universe_builder import (
+            ActiveMainlineUniverseBuilder,
+        )
+        active_universe = await ActiveMainlineUniverseBuilder(self._read_port).build(trade_date=trade_date)
+        recap_doc["active_mainline_universe"] = active_universe.to_dict()
+        confirmed_mainlines = active_universe.active_mainlines
+        cml_error = None
+        if not confirmed_mainlines:
+            cml_error = "no_active_mainlines_in_registry"
+
+        # ── PR-12: PostMarketDecisionV2 ──
+        from stock_processing_service.domain.services.post_market_decision_v2.post_market_decision_engine_v2 import (
+            PostMarketDecisionEngineV2,
+        )
+        layer_c_source: str = "strong_stock_watch_view_rows"
+        read_layer_c_view_rows = getattr(self._read_port, "get_strong_stock_watch_view_rows", None)
+        if not callable(read_layer_c_view_rows):
+            raise RuntimeError(
+                "BuildPostMarketRecapJob requires get_strong_stock_watch_view_rows; "
+                "Layer C read-model is unavailable"
+            )
+        layer_c_rows: list[dict[str, Any]] = [
+            dict(row or {})
+            for row in await read_layer_c_view_rows(
+                end_date=trade_date,
+                window_days=7,
+                include_removed=False,
+                latest_per_stock=False,
+                stock_id=None,
+                limit=5000,
+            )
+        ]
+
+        # Build strong_pool + trading_permission via PDV2 (Layer C display only in recap)
+        pdv2_engine = PostMarketDecisionEngineV2()
+        pdv2 = pdv2_engine.evaluate(
+            trade_date=trade_date.isoformat(),
+            confirmed_mainlines=confirmed_mainlines,
+            mainline_lifecycle=[r.to_dict() for r in reviews],
+            market_regime=regime.to_dict() if hasattr(regime, "to_dict") else dict(regime or {}),
+            stock_pool_rows=layer_c_rows,
+        )
+        pdv2.diagnostics["layer_c_rows"] = len(layer_c_rows)
+        pdv2.diagnostics["layer_c_source"] = layer_c_source
+        if cml_error:
+            pdv2.diagnostics["confirmed_mainline_error"] = cml_error
+        recap_doc["post_market_decision_v2"] = pdv2.to_dict()
+
+        # ── PR-13A: persist mainline daily state ──
+        await self._persist_mainline_daily_state(trade_date, recap_doc, batch_id or "", trace_id or "")
+
+        # Re-write snapshot with PDV2 D1 data (written before PDV2 section at line 632)
+        updated_snapshot = PostMarketRecapSnapshot(
+            trade_date=trade_date, snapshot_version=snapshot_version,
+            batch_id=batch_id, trace_id=trace_id, source_trace_id=trace_id,
+            recap_doc=_serialize(recap_doc),
+        )
+        await self._write_port.upsert_post_market_recap_snapshot(updated_snapshot)
 
     async def _persist_review_queue(self, trade_date: date, review_items: list) -> None:
         """PR-9B: Persist analyst_review_items to mainline_review_queue."""
