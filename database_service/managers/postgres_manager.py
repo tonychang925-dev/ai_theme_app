@@ -2841,7 +2841,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             FROM stock_daily_snapshot
             WHERE trade_date IN (SELECT trade_date FROM recent_two_trade_days)
             GROUP BY split_part(stock_id, '.', 1)
-            HAVING COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(limit_up, FALSE)) = 2
+            HAVING COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(pct_chg, 0) >= 9.8) = 2
         ),
         recent AS (
             SELECT
