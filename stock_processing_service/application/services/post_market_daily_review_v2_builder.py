@@ -540,6 +540,8 @@ class PostMarketDailyReviewV2Builder:
             llm_judgement = role_enhanced or self._nullable_text(source.get("watch_status") or source.get("candidate_level"))
             rationale = self._text(rationale_source or strong_grade or llm_judgement)
             fallback_used: list[str] = []
+            support_block = source.get("support") if isinstance(source.get("support"), dict) else {}
+            kline_block = source.get("kline") if isinstance(source.get("kline"), dict) else {}
             purity_score = self._float_or_none(
                 self._first_present(joined, "purity_score", "theme_purity_score", "subject_purity_score", "relevance_score")
             )
@@ -570,6 +572,8 @@ class PostMarketDailyReviewV2Builder:
             for field, value in required.items():
                 if not value:
                     missing_fields.add(field)
+            support_type = support_type or self._nullable_text(support_block.get("support_type"))
+            support_score = support_score if support_score is not None else self._float_or_none(support_block.get("support_score"))
             if not support_type and position_label:
                 support_type = position_label
                 fallback_used.append("support.position_label")
@@ -580,8 +584,13 @@ class PostMarketDailyReviewV2Builder:
             resilience_score = support_score if support_score is not None else composite_score
             if support_score is None and resilience_score is not None:
                 fallback_used.append("resilience_score.composite_score")
-            kline_position_label = position_label
-            pattern_summary = None
+            kline_position_label = position_label or self._nullable_text(kline_block.get("position_label"))
+            pattern_labels = pattern_labels or [
+                str(item).strip()
+                for item in self._list(kline_block.get("pattern_labels"))
+                if str(item).strip()
+            ]
+            pattern_summary = self._nullable_text(kline_block.get("pattern_summary"))
             if not kline_position_label and not pattern_labels and support_type:
                 kline_position_label = support_type
                 pattern_summary = support_type
