@@ -863,11 +863,14 @@ class TushareKlineRunner:
 
             job = context.container.build_tushare_daily_bar
             result = await job.execute(trade_date=trade_date_val, token=token, pause_seconds=pause)
+            ok = result.status == "ok"
+            error_message = "" if ok else f"tushare daily bar returned {result.status} rows={result.affected_rows}"
 
             return CollectionTaskResult(
-                status="success" if result.status.startswith("ok") else "failed",
+                status="success" if ok else "failed",
                 current_label=f"Tushare日线采集完成 ({result.status})",
                 logs=[f"tushare_kline status={result.status} rows={result.affected_rows}"] + list(result.warnings or []),
+                error_message=error_message,
             )
         except Exception as e:
             return CollectionTaskResult(
