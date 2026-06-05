@@ -307,7 +307,7 @@ def test_workspace_market_validation_contract_shape(monkeypatch):
 
     resp = client.get(
         "/api/v2/workspace/market-validation",
-        params={"trade_date": "2026-04-29", "stock_id": "600152.SH"},
+        params={"trade_date": "2026-04-30", "stock_id": "600152.SH"},
     )
     assert resp.status_code == 200
     data = resp.json()
@@ -387,13 +387,51 @@ def test_workspace_market_validation_observe_when_only_strong_watch(monkeypatch)
     monkeypatch.setattr(routes.client, "get_w2s_candidates", _fake_w2s)
     resp = client.get(
         "/api/v2/workspace/market-validation",
-        params={"trade_date": "2026-04-29"},
+        params={"trade_date": "2026-04-28"},
     )
     assert resp.status_code == 200
     data = resp.json()
     assert data["candidate_level"] == "observe"
     assert data["support_type"] == "ma_support"
     assert data["support_score"] == 66.0
+
+
+def test_workspace_market_validation_falls_back_to_recap_strong_reviews(monkeypatch):
+    async def _fake_strong_watch(trade_date):
+        return type("R", (), {"model_dump": lambda self: {"stocks": []}})()
+
+    async def _fake_w2s(trade_date):
+        return type("R", (), {"model_dump": lambda self: {"candidates": []}})()
+
+    async def _fake_snapshot(trade_date):
+        return type(
+            "R",
+            (),
+            {
+                "model_dump": lambda self: {
+                    "trade_date": trade_date,
+                    "payload": {
+                        "recap_doc": {
+                            "strong_stock_reviews": [{"stock_id": "002000.SZ"}],
+                            "strong_stock_reviews_count": 1,
+                            "strong_watch_history_count": 0,
+                        }
+                    },
+                }
+            },
+        )()
+
+    monkeypatch.setattr(routes.client, "get_strong_watch", _fake_strong_watch)
+    monkeypatch.setattr(routes.client, "get_w2s_candidates", _fake_w2s)
+    monkeypatch.setattr(routes.client, "get_post_market_snapshot", _fake_snapshot)
+
+    resp = client.get(
+        "/api/v2/workspace/market-validation",
+        params={"trade_date": "2026-04-27"},
+    )
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["strong_watch_count"] == 1
 
 
 def test_workspace_intel_context_contract_shape(monkeypatch):
