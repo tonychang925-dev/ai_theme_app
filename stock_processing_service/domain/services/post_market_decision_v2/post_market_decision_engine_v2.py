@@ -68,7 +68,7 @@ class PostMarketDecisionEngineV2:
         trade_mode = str(regime.get("trade_mode", "no_trade"))
         position_limit = float(regime.get("position_limit", 0))
 
-        # ── 1. Filter stock pool to confirmed mainlines only ──
+        # ── 1. Build confirmed mainline key set for annotations only ──
         # Expand canonical + related + branch subject_keys consistently
         # with ActiveMainlineUniverseBuilder.
         mainline_sks: set[str] = set()
@@ -95,9 +95,9 @@ class PostMarketDecisionEngineV2:
                 mainline_sks.add(str(bsk))
                 mainline_ids[str(bsk)] = str(ml.get("mainline_id") or "")
 
-        # Filter pool to mainline subjects only
-        filtered_pool = [r for r in pool_rows if str(r.get("subject_key") or r.get("theme_key") or "") in mainline_sks]
-        filtered_pool = self._dedupe_rows(filtered_pool)
+        # Keep the full Layer C pool. mainline_sks is used only for
+        # diagnostics / annotation so independent leaders are not lost.
+        filtered_pool = self._dedupe_rows(pool_rows)
 
         # Dedup by stock_id (keep highest watch_score) — 7-day union can have duplicates
         best: dict[str, dict[str, Any]] = {}
@@ -137,7 +137,10 @@ class PostMarketDecisionEngineV2:
                 support_score=float(row.get("support_score") or 0),
                 evidence=dict(row.get("evidence") or {}),
                 labels=dict(row.get("labels") or {}),
-                diagnostics={"source": "existing_strong_watch_pool"},
+                diagnostics={
+                    "source": "existing_strong_watch_pool",
+                    "mainline_binding_status": "confirmed" if sk in mainline_sks else "not_confirmed",
+                },
             ))
 
         # ── 5. Trading principle summary ──

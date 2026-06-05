@@ -37,7 +37,7 @@ class TestPostMarketDecisionV2:
         assert len(r.next_day_focus_stocks) == 0
         assert "layer_c_d1_preview_truncated" not in r.diagnostics
 
-    def test_stocks_filtered_to_mainline_subjects(self):
+    def test_stocks_keep_independent_leaders_without_mainline_filter(self):
         e = PostMarketDecisionEngineV2()
         r = e.evaluate(
             trade_date="2026-04-29",
@@ -48,9 +48,24 @@ class TestPostMarketDecisionV2:
                 _stock_row(stock_id="000001.SZ", sk="sk_main", name="主线股"),
             ],
         )
-        # Only sk_main stock should be in pool
+        assert len(r.strong_stock_pool_reviews) == 2
+        names = {row["stock_name"] for row in r.strong_stock_pool_reviews}
+        assert "主线股" in names
+        assert "测试股" in names
+
+    def test_independent_leader_is_kept_even_without_mainline_binding(self):
+        e = PostMarketDecisionEngineV2()
+        r = e.evaluate(
+            trade_date="2026-04-29",
+            confirmed_mainlines=[_ml(csk="sk_main")],
+            market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
+            stock_pool_rows=[
+                _stock_row(stock_id="000003.SZ", sk="sk_other", name="独立龙头", role="leader"),
+            ],
+        )
         assert len(r.strong_stock_pool_reviews) == 1
-        assert r.strong_stock_pool_reviews[0]["stock_name"] == "主线股"
+        assert r.strong_stock_pool_reviews[0]["stock_name"] == "独立龙头"
+        assert r.strong_stock_pool_reviews[0]["diagnostics"]["mainline_binding_status"] == "not_confirmed"
 
     def test_ultra_short_only_restricts_d1(self):
         e = PostMarketDecisionEngineV2()
@@ -100,7 +115,7 @@ class TestPostMarketDecisionV2:
         assert len(r.weak_to_strong_d1_reviews) == 0
         assert len(r.next_day_focus_stocks) == 0
 
-    def test_pool_filter_respects_related_subjects(self):
+    def test_pool_keeps_related_subjects_without_mainline_filter(self):
         e = PostMarketDecisionEngineV2()
         r = e.evaluate(
             trade_date="2026-04-29",
@@ -112,11 +127,11 @@ class TestPostMarketDecisionV2:
                 _stock_row(stock_id="000003.SZ", sk="sk_other", name="无关"),
             ],
         )
-        assert len(r.strong_stock_pool_reviews) == 2  # core + branch
+        assert len(r.strong_stock_pool_reviews) == 3  # core + branch + unrelated rows remain visible
         names = [r["stock_name"] for r in r.strong_stock_pool_reviews]
         assert "核心" in names
         assert "分支" in names
-        assert "无关" not in names
+        assert "无关" in names
 
     def test_pool_ignores_legacy_rows_without_stock_id(self):
         e = PostMarketDecisionEngineV2()
