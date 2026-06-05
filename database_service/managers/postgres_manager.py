@@ -2875,18 +2875,10 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 '__independent__'::text AS subject_key,
                 MAX(s.stock_name) AS theme_name,
                 COUNT(DISTINCT s.trade_date) AS total_trade_days,
-                COUNT(DISTINCT s.trade_date) FILTER (WHERE COALESCE(s.limit_up, FALSE)) AS recent_limit_up_count,
+                COUNT(DISTINCT s.trade_date) FILTER (WHERE COALESCE(s.pct_chg, 0) >= 9.8) AS recent_limit_up_count,
                 0 AS is_leader_flag,
                 999 AS best_rank,
-                MAX(
-                    CASE
-                        WHEN s.trade_date = $1::date
-                             AND jsonb_typeof(s.raw_json) = 'array'
-                             AND jsonb_array_length(s.raw_json) > 20
-                        THEN COALESCE(NULLIF(s.raw_json->>20, ''), '0')::int
-                        ELSE 0
-                    END
-                ) AS current_flag_today,
+                0 AS current_flag_today,
                 0 AS subject_limit_up_count,
                 0 AS subject_strong_count,
                 1 AS cond_gene,
