@@ -1515,13 +1515,7 @@ function asMarketReportViewFromSnapshot(
   const strongStockReviews = Array.isArray(recapDocRaw["strong_stock_reviews"])
     ? (recapDocRaw["strong_stock_reviews"] as Array<Record<string, unknown>>)
     : [];
-  const strongWatchHistoryRows = Array.isArray(recapDocRaw["strong_watch_history"])
-    ? (recapDocRaw["strong_watch_history"] as Array<Record<string, unknown>>)
-    : [];
   const strongStockReviewsCount = strongStockReviews.length;
-  const strongWatchHistoryCount = strongStockReviewsCount
-    || strongWatchHistoryRows.length
-    || Number(recapDocRaw["strong_watch_history_count"] || 0);
   const topCandidates = Array.isArray(recapDocRaw["top_candidates"]) ? (recapDocRaw["top_candidates"] as Array<Record<string, unknown>>) : [];
 
   const candidateItems = topCandidates.slice(0, 20).map((item, idx) => {
@@ -1538,7 +1532,7 @@ function asMarketReportViewFromSnapshot(
     summary: `候选 ${candidateCount} | 强势池输入 ${strongWatchInputCount} | 晋级 ${strongWatchPromotedCount}`,
     highlights: [
       `snapshot_version: ${snapshot.snapshot_version}`,
-      `strong_watch_history_count: ${strongWatchHistoryCount}`,
+      `strong_stock_reviews_count: ${strongStockReviewsCount}`,
     ],
     sections: [
       {
@@ -1547,7 +1541,7 @@ function asMarketReportViewFromSnapshot(
           `candidate_count: ${candidateCount}`,
           `strong_watch_input_count: ${strongWatchInputCount}`,
           `strong_watch_promoted_count: ${strongWatchPromotedCount}`,
-          `strong_watch_history_count: ${strongWatchHistoryCount}`,
+          `strong_stock_reviews_count: ${strongStockReviewsCount}`,
         ],
       },
       {

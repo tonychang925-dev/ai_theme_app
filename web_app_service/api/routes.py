@@ -1938,30 +1938,10 @@ async def workspace_market_validation(
     import asyncio as _asyncio
     sw_task = _asyncio.create_task(client.get_strong_watch(trade_date))
     w2s_task = _asyncio.create_task(client.get_w2s_candidates(trade_date))
-    snapshot_task = _asyncio.create_task(client.get_post_market_snapshot(trade_date))
     strong_watch_payload = (await sw_task).model_dump()
     w2s_payload = (await w2s_task).model_dump()
-    try:
-        snapshot_payload = (await snapshot_task).model_dump()
-    except Exception:
-        snapshot_payload = {}
     sw_stocks = list(strong_watch_payload.get("stocks") or [])
     w2s_candidates = list(w2s_payload.get("candidates") or [])
-    snapshot_payload_raw = snapshot_payload.get("payload") if isinstance(snapshot_payload, dict) else {}
-    snapshot_recap_doc = (
-        snapshot_payload_raw.get("recap_doc")
-        if isinstance(snapshot_payload_raw, dict)
-        else {}
-    )
-    strong_stock_reviews_fallback_count = 0
-    if isinstance(snapshot_recap_doc, dict):
-        strong_stock_reviews = snapshot_recap_doc.get("strong_stock_reviews")
-        if isinstance(strong_stock_reviews, list):
-            strong_stock_reviews_fallback_count = len(strong_stock_reviews)
-        if not strong_stock_reviews_fallback_count:
-            strong_stock_reviews_fallback_count = int(snapshot_recap_doc.get("strong_stock_reviews_count") or 0)
-        if not strong_stock_reviews_fallback_count:
-            strong_stock_reviews_fallback_count = int(snapshot_recap_doc.get("strong_watch_history_count") or 0)
     stock_view = None
     if stock_id:
         stock_view = next(
@@ -2036,11 +2016,19 @@ async def workspace_market_validation(
         "support_type": support_type,
         "support_score": support_score,
         "reject_reasons": reject_reasons,
-        "strong_watch_count": len(sw_stocks) or strong_stock_reviews_fallback_count,
+        "strong_watch_count": len(sw_stocks),
+        "strong_watch_source": "strong_watch_api",
         "w2s_candidate_count": len(w2s_candidates),
         "stock_validation": stock_view,
         "theme_validation": theme_validation,
     }
+    if not sw_stocks:
+        result["diagnostics"] = {
+            "strong_watch_empty": True,
+            "strong_watch_source": "strong_watch_api",
+            "error_code": "STRONG_WATCH_API_EMPTY",
+            "message": "No fallback applied. Check strong_watch API / DB read model.",
+        }
     _ws_cache_set(_ck, result)
     return result
 
