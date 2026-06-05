@@ -4307,7 +4307,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             SELECT
                 p.trade_date::text AS trade_date,
                 p.stock_id,
-                p.stock_name,
+                CASE
+                    WHEN p.stock_name ~ '^[0-9]{6}(\\.[A-Z]{2})?$'
+                    THEN COALESCE(NULLIF(BTRIM(s.stock_name), ''), p.stock_name)
+                    ELSE COALESCE(NULLIF(BTRIM(p.stock_name), ''), NULLIF(BTRIM(s.stock_name), ''), p.stock_id)
+                END AS stock_name,
                 p.subject_key,
                 COALESCE(NULLIF(BTRIM(p.theme_name), ''), p.subject_key) AS theme_name,
                 p.watch_status,
