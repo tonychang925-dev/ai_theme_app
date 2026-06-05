@@ -1097,6 +1097,9 @@ def test_layer_c_contract_two_board_enters_pool_without_layer_a_b_state() -> Non
         )
         assert result.status == "ok"
         assert len(write_port.strong_watch_history_rows) == 1
+        assert len(write_port.strong_watch_pool_rows) == 1
+        assert write_port.strong_watch_history_rows[0]["watch_status"] in {"active", "weakening"}
+        assert write_port.strong_watch_history_rows[0]["pool_entry_type"] == "observe_only"
         labels = write_port.strong_watch_history_rows[0]["labels_json"]
         assert labels["entry_path"] == "independent_leader"
         assert labels["identity_scope"] == "independent_stock_signal"

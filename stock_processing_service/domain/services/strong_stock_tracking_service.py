@@ -378,14 +378,14 @@ class StrongStockTrackingService:
         # 硬门禁判定：
         #   - 常规路径：4选3（pass_count >= 3）
         #   - 主线承接豁免：(rule_b_theme AND recent_limit_up_count >= 2)
-        #   - 独立龙头豁免：has_two_board=True 且基因+量价/结构至少 2 条件，
-        #     不依赖主线身份确认，入池后受监控约束（支撑破位、7日到期剔除）
+        #   - 独立龙头豁免：has_two_board=True 直接放行入池，
+        #     入池后再由支撑破位、7日到期等机制做生命周期剔除
         passed = bool(
             rule_a_gene
             and (
                 pass_count >= 3
                 or (rule_b_theme and recent_limit_up_count >= 2)
-                or (has_two_board and pass_count >= 2)
+                or has_two_board
             )
         )
         return {
@@ -642,6 +642,13 @@ class StrongStockTrackingService:
         # ── watch_status 判定 ──
         if fade_confirmed or cycle_state == CYCLE_STATE_FADE_CONFIRMED:
             watch_status = "removed"
+        elif has_two_board:
+            if support_broken:
+                watch_status = "removed"
+            elif watch_score >= self.ACTIVE_MIN_SCORE:
+                watch_status = "active"
+            else:
+                watch_status = "weakening"
         elif broken_board:
             # 独立龙头不因主线死亡被剔除，只受支撑破位/7日到期约束
             if not final_mainline_alive and not has_two_board:
@@ -670,6 +677,8 @@ class StrongStockTrackingService:
         # ── pool_entry_type ──
         if fade_confirmed or cycle_state == CYCLE_STATE_FADE_CONFIRMED:
             pool_entry_type = "reject"
+        elif has_two_board and not support_broken:
+            pool_entry_type = "observe_only"
         elif broken_board and (final_mainline_alive or has_two_board) and not support_broken:
             pool_entry_type = "observe_only"
         elif (

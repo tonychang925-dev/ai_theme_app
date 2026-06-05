@@ -701,7 +701,7 @@ class StockReadGatewayAdapter:
     ) -> list[dict[str, Any]]:
         fn = getattr(self._db, "get_strong_watch_seed_rows", None)
         if not callable(fn):
-            return []
+            raise RuntimeError("DatabaseGateway missing get_strong_watch_seed_rows")
         rows = await fn(trade_date=trade_date, lookback_days=lookback_days)
         return [_as_dict(row) for row in rows]
 
@@ -711,6 +711,6 @@ class StockReadGatewayAdapter:
     ) -> list[dict[str, Any]]:
         fn = getattr(self._db, "get_strong_watch_refresh_rows", None)
         if not callable(fn):
-            return []
+            raise RuntimeError("DatabaseGateway missing get_strong_watch_refresh_rows")
         rows = await fn(trade_date=trade_date)
         return [_as_dict(row) for row in rows]

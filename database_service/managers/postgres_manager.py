@@ -2799,15 +2799,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     async def get_strong_watch_seed_rows(
         self, trade_date, lookback_days: int = 7
     ) -> List[Dict[str, Any]]:
-        """强势股观察池种子候选查询 — 复刻旧链 StrongStockTrackingService._fetch_seed_rows SQL。
+        """强势股观察池种子候选查询。
 
-        完整复刻旧链 4-CTE 查询:
-          1. recent_trade_days — 最近 N 个交易日
-          2. recent — 7日窗口 stock+subject 聚合
-          3. subject_strength — 当日板块强度
-          4. eligible — 双路径过滤 + identity/cycle/state JOIN
-          5. ranked — cond_gene/cond_volume/cond_structure + ROW_NUMBER 去重
-          最终: rn=1 AND (recent_limit_up>=2 OR (>=1 AND 3条件>=2))
+        两条来源：
+          1. 普通强势股路径：沿用主线/周期/强度门槛
+          2. 2 连板独立龙头：只要满足最近窗口内连续两日涨停，直接入池
         """
         sql = """
         WITH recent_trade_days AS (
@@ -2828,6 +2824,24 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             SELECT DISTINCT stock_id, subject_key
             FROM theme_leader_candidate
             WHERE trade_date = $1::date
+        ),
+        two_board_stocks AS (
+            -- 独立龙头检测：最近窗口内存在连续两个交易日涨停
+            SELECT DISTINCT stock_code
+            FROM (
+                SELECT
+                    split_part(stock_id, '.', 1) AS stock_code,
+                    trade_date,
+                    COALESCE(MAX(limit_up::int)::bool, FALSE) AS limit_up,
+                    LAG(COALESCE(MAX(limit_up::int)::bool, FALSE)) OVER (
+                        PARTITION BY split_part(stock_id, '.', 1)
+                        ORDER BY trade_date
+                    ) AS prev_limit_up
+                FROM stock_daily_snapshot
+                WHERE trade_date IN (SELECT trade_date FROM recent_trade_days)
+                GROUP BY split_part(stock_id, '.', 1), trade_date
+            ) t
+            WHERE limit_up = TRUE AND prev_limit_up = TRUE
         ),
         recent AS (
             SELECT
@@ -2854,6 +2868,37 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             WHERE s.trade_date IN (SELECT trade_date FROM recent_trade_days)
             GROUP BY s.stock_id, s.subject_key
         ),
+        two_board_recent AS (
+            SELECT
+                s.stock_id,
+                MAX(s.stock_name) AS stock_name,
+                '__independent__'::text AS subject_key,
+                MAX(s.stock_name) AS theme_name,
+                COUNT(DISTINCT s.trade_date) AS total_trade_days,
+                COUNT(DISTINCT s.trade_date) FILTER (WHERE COALESCE(s.limit_up, FALSE)) AS recent_limit_up_count,
+                0 AS is_leader_flag,
+                999 AS best_rank,
+                MAX(
+                    CASE
+                        WHEN s.trade_date = $1::date
+                             AND jsonb_typeof(s.raw_json) = 'array'
+                             AND jsonb_array_length(s.raw_json) > 20
+                        THEN COALESCE(NULLIF(s.raw_json->>20, ''), '0')::int
+                        ELSE 0
+                    END
+                ) AS current_flag_today,
+                0 AS subject_limit_up_count,
+                0 AS subject_strong_count,
+                1 AS cond_gene,
+                1 AS cond_volume,
+                1 AS cond_structure,
+                0 AS source_priority
+            FROM stock_daily_snapshot s
+            JOIN two_board_stocks tb
+              ON tb.stock_code = split_part(s.stock_id, '.', 1)
+            WHERE s.trade_date IN (SELECT trade_date FROM recent_trade_days)
+            GROUP BY s.stock_id
+        ),
         subject_strength AS (
             SELECT
                 subject_key,
@@ -2867,25 +2912,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             WHERE trade_date = $1::date
               AND subject_key IN (SELECT DISTINCT subject_key FROM candidate_scope)
             GROUP BY subject_key
-        ),
-        consecutive_boards AS (
-            -- 独立龙头检测：7日窗口内存在连续两个交易日涨停（先按日去重）
-            SELECT DISTINCT stock_id, TRUE AS has_two_board
-            FROM (
-                SELECT stock_id, trade_date,
-                       COALESCE(MAX(limit_up::int)::bool, FALSE) AS limit_up,
-                       LAG(COALESCE(MAX(limit_up::int)::bool, FALSE)) OVER (
-                           PARTITION BY stock_id ORDER BY trade_date
-                       ) AS prev_limit_up
-                FROM subject_stock_daily_snapshot
-                WHERE trade_date IN (SELECT trade_date FROM recent_trade_days)
-                  AND split_part(stock_id, '.', 1) IN (
-                      SELECT DISTINCT split_part(stock_id, '.', 1)
-                      FROM candidate_scope
-                  )
-                GROUP BY stock_id, trade_date
-            ) t
-            WHERE limit_up = TRUE AND prev_limit_up = TRUE
         ),
         eligible AS (
             SELECT
@@ -2906,7 +2932,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score,
                 COALESCE(ss.subject_limit_up_count, 0) AS subject_limit_up_count,
                 COALESCE(ss.subject_strong_count, 0) AS subject_strong_count,
-                COALESCE(cb.has_two_board, FALSE) AS has_two_board
+                COALESCE(tb.stock_code IS NOT NULL, FALSE) AS has_two_board,
+                1 AS source_priority
             FROM recent r
             LEFT JOIN theme_mainline_identity_registry mr
               ON mr.subject_key = r.subject_key
@@ -2920,8 +2947,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
               ON vtb.subject_key = r.subject_key
             LEFT JOIN subject_strength ss
               ON ss.subject_key = r.subject_key
-            LEFT JOIN consecutive_boards cb
-              ON split_part(cb.stock_id, '.', 1) = split_part(r.stock_id, '.', 1)
+            LEFT JOIN two_board_stocks tb
+              ON tb.stock_code = split_part(r.stock_id, '.', 1)
             WHERE (
                 -- 路径1: 强股决策池 — 旧链已确认 + 周期存续 + 强度门槛
                 (
@@ -2935,8 +2962,34 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     )
                 )
                 -- 路径2: 连板（原逻辑不变）
-                OR COALESCE(cb.has_two_board, FALSE) = TRUE
+                OR COALESCE(tb.stock_code IS NOT NULL, FALSE) = TRUE
             )
+        ),
+        independent_eligible AS (
+            SELECT
+                i.stock_id,
+                i.stock_name,
+                i.subject_key,
+                i.total_trade_days,
+                i.recent_limit_up_count,
+                i.is_leader_flag,
+                i.best_rank,
+                i.current_flag_today,
+                i.theme_name,
+                FALSE AS is_main_theme,
+                'observed' AS identity_status,
+                FALSE AS final_mainline_alive,
+                0 AS mainline_strength_score,
+                0 AS subject_limit_up_count,
+                0 AS subject_strong_count,
+                TRUE AS has_two_board,
+                0 AS source_priority
+            FROM two_board_recent i
+        ),
+        eligible_all AS (
+            SELECT * FROM eligible
+            UNION ALL
+            SELECT * FROM independent_eligible
         ),
         ranked AS (
             SELECT
@@ -2951,6 +3004,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 ROW_NUMBER() OVER (
                     PARTITION BY e.stock_id
                     ORDER BY
+                        e.source_priority ASC,
                         e.mainline_strength_score DESC,
                         e.subject_limit_up_count DESC,
                         e.subject_strong_count DESC,
@@ -2958,7 +3012,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         e.is_leader_flag DESC,
                         e.best_rank ASC
                 ) AS rn
-            FROM eligible e
+            FROM eligible_all e
         )
         SELECT *
         FROM ranked

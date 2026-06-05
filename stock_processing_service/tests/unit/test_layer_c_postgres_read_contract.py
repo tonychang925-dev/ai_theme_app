@@ -19,7 +19,10 @@ def test_layer_c_seed_sql_requires_layer_b_alive_for_mainline_path() -> None:
     assert "LEFT JOIN theme_cycle_judgement_v2 v2" in method
     assert "COALESCE(v2.final_mainline_alive, FALSE) = TRUE" in method
     assert "COALESCE(v2.fade_confirmed, FALSE) = FALSE" in method
-    assert "OR COALESCE(cb.has_two_board, FALSE) = TRUE" in method
+    assert "OR COALESCE(tb.stock_code IS NOT NULL, FALSE) = TRUE" in method
+    assert "two_board_stocks" in method
+    assert "two_board_recent" in method
+    assert "stock_daily_snapshot" in method
     assert "mainline_registry mr2" not in method
     assert "OR COALESCE(is_main_theme, FALSE) = TRUE" not in method
     assert "确认主线跟踪池" not in method
