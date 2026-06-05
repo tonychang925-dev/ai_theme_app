@@ -580,7 +580,10 @@ def main() -> None:
                 print(f"🔁 幂等复用：通过既有任务反推里程碑 {first_key} -> {inferred_mid}")
         for w in infer_warnings:
             print(f"⚠️ {w}")
-        if infer_conflict:
+        if infer_conflict and not (
+            payload.get("milestones")
+            and payload["milestones"][0].get("key") in existing.get("milestone_by_key", {})
+        ):
             raise ValueError(
                 "检测到既有任务反推里程碑多值冲突，请人工确认目标里程碑后再重试同步"
             )

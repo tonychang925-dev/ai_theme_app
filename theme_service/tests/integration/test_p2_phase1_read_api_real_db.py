@@ -122,3 +122,27 @@ def test_phase4_phasea_intel_feed_api_real_db():
     assert isinstance(first["stock_ids"], list)
     assert isinstance(first["stock_names"], list)
     assert first["source_type"] in {"subject_node_staging", "jyhf_full_theme_list"}
+
+
+def test_phase4_phasea_intel_feed_event_api_real_db():
+    with TestClient(app) as client:
+        response = client.get(
+            "/intel/feed",
+            params={
+                "date": "2026-06-04",
+                "type": "event",
+                "session": "all",
+                "limit": 10,
+            },
+        )
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["date"] == "2026-06-04"
+    assert payload["type"] == "event"
+    assert payload["count"] >= 1
+    assert len(payload["items"]) >= 1
+    first = payload["items"][0]
+    assert first["item_id"]
+    assert first["item_type"] == "event"
+    assert first["occurred_at"]
+    assert first["title"]

@@ -657,8 +657,8 @@ class Phase1ReadRepository:
             ('event:jyhf_cdp:' || id::text) AS item_id,
             'event'::text AS item_type,
             CASE
-                WHEN (raw_json->>'event_time')::text IS NOT NULL AND (raw_json->>'event_time')::text <> ''
-                THEN (rank_date::text || 'T' || (raw_json->>'event_time')::text || ':00')::timestamp
+                WHEN (raw_json::jsonb->>'event_time')::text IS NOT NULL AND (raw_json::jsonb->>'event_time')::text <> ''
+                THEN (rank_date::text || 'T' || (raw_json::jsonb->>'event_time')::text || ':00')::timestamp
                 ELSE COALESCE(rank_date::timestamp, created_at)
             END AS occurred_at,
             COALESCE(NULLIF(subject_name, ''), subject_key) AS title,
@@ -677,8 +677,8 @@ class Phase1ReadRepository:
           AND ($2::text IS NULL OR subject_key = $2)
         ORDER BY
             CASE
-                WHEN (raw_json->>'event_time')::text IS NOT NULL AND (raw_json->>'event_time')::text <> ''
-                THEN (rank_date::text || 'T' || (raw_json->>'event_time')::text || ':00')::timestamp
+                WHEN (raw_json::jsonb->>'event_time')::text IS NOT NULL AND (raw_json::jsonb->>'event_time')::text <> ''
+                THEN (rank_date::text || 'T' || (raw_json::jsonb->>'event_time')::text || ':00')::timestamp
                 ELSE COALESCE(rank_date::timestamp, created_at)
             END DESC NULLS LAST, id DESC
         LIMIT $3
