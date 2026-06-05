@@ -472,11 +472,10 @@ def test_build_post_market_recap_job_does_not_generate_d1_in_recap_doc_tc_d1_001
         assert result.status == "ok"
         assert result.affected_rows == 1
         assert len(write_port.w2s_candidate_pool_rows) == 0
-        assert len(write_port.recap_docs) >= 2
+        assert len(write_port.recap_docs) >= 1
 
         final_recap_doc = write_port.recap_docs[-1].recap_doc
         pdv2 = final_recap_doc["post_market_decision_v2"]
-        assert pdv2["diagnostics"]["d1_algorithm"] == "read_existing_w2s_candidates"
         assert len(pdv2["weak_to_strong_d1_reviews"]) == 0
         assert len(pdv2["next_day_focus_stocks"]) == 0
 

@@ -1263,16 +1263,8 @@ class BuildPostMarketRecapJob:
             from stock_processing_service.domain.services.post_market_decision_v2.post_market_decision_engine_v2 import (
                 PostMarketDecisionEngineV2,
             )
-
-            existing_w2s_rows = list(recap_doc.get("top_candidates") or [])
             layer_c_source: str = "strong_watch_history"
             layer_c_rows: list[dict[str, Any]] = list(recap_doc.get("strong_watch_history") or [])
-            d1_algorithm: str = "read_existing_w2s_candidates"
-            d1_formal_before: int = sum(1 for c in existing_w2s_rows if c.get("candidate_level") in {"formal", "s", "a", "b"})
-            d1_observe_before: int = sum(1 for c in existing_w2s_rows if str(c.get("candidate_level") or "").lower() == "observe_only")
-            d1_formal_after: int = d1_formal_before
-            d1_observe_after: int = d1_observe_before
-            preview_truncated: bool = False
 
             # Build strong_pool + trading_permission via PDV2 (Layer C display only in recap)
             pdv2_engine = PostMarketDecisionEngineV2()
@@ -1282,81 +1274,9 @@ class BuildPostMarketRecapJob:
                 mainline_lifecycle=[r.to_dict() for r in reviews],
                 market_regime=regime.to_dict(),
                 stock_pool_rows=layer_c_rows if layer_c_rows else [],
-                build_d1=False,
             )
-
-            # Reuse already persisted D1 candidates if available; recap must not generate them.
-            if existing_w2s_rows:
-                from stock_processing_service.domain.services.post_market_decision_v2.models import (
-                    WeakToStrongD1Item, NextDayFocusStock,
-                )
-                allow_trade = regime.allow_trade
-                trade_mode = regime.trade_mode
-                w2s_d1: list[dict] = []
-                w2s_focus: list[dict] = []
-                for c in existing_w2s_rows:
-                    level = str(c.get("candidate_level") or c.get("pool_entry_type") or "observe_only")
-                    score = float(c.get("candidate_score") or 0)
-                    stock_id = str(c.get("stock_id") or "")
-                    stock_name = str(c.get("stock_name") or "") or stock_id
-                    item = WeakToStrongD1Item(
-                        trade_date=trade_date.isoformat(), next_trade_date="T+1",
-                        stock_id=stock_id, stock_name=stock_name,
-                        mainline_id=str(c.get("mainline_id") or ""),
-                        subject_key=str(c.get("subject_key") or ""),
-                        theme_name=str(c.get("theme_name") or ""),
-                        candidate_stage="D1", candidate_level=level,
-                        candidate_score=score,
-                        support_score=float(c.get("support_score") or c.get("support_strength") or 0),
-                        momentum_score=0, weak_type="pullback",
-                        support_type=str(c.get("support_type") or "unknown"),
-                        gap_hit=False,
-                        repair_or_takeover_score=score, weakness_valid_score=0,
-                        buy_condition=(["等待市场环境改善"] if not allow_trade else []),
-                        invalid_condition=[], d2_required=True, d2_status="pending",
-                        evidence={},
-                        diagnostics={"source": "weak_to_strong_candidate_pool",
-                                     "read_only": True,
-                                     "blocked_by_market_regime": not allow_trade},
-                    )
-                    w2s_d1.append(item.to_dict())
-                    if level == "formal":
-                        w2s_focus.append(NextDayFocusStock(
-                            trade_date=trade_date.isoformat(), stock_id=stock_id,
-                            stock_name=stock_name, category="重点观察",
-                            priority=len(w2s_focus) + 1,
-                            mainline_id="", subject_key="", theme_name="",
-                            pool_entry_type="formal", candidate_level=level,
-                            watch_score=0, candidate_score=score,
-                            buy_condition=item.buy_condition,
-                            invalid_condition=item.invalid_condition,
-                            d2_required=True, d2_status="pending",
-                            suggested_position=0.15,
-                        ).to_dict())
-
-                _d1_limit = 5 if trade_mode == "ultra_short_only" else (10 if trade_mode == "mainline_core_only" else 20)
-                pdv2.weak_to_strong_d1_reviews = w2s_d1[:_d1_limit]
-                pdv2.next_day_focus_stocks = w2s_focus[:_d1_limit]
-                pdv2.trading_permission["d1_candidate_count"] = len(w2s_d1[:_d1_limit])
-                pdv2.trading_permission["focus_stock_count"] = len(w2s_focus[:_d1_limit])
-                d1_formal_after = sum(1 for d in w2s_d1[:_d1_limit] if d.get("candidate_level") == "formal")
-                d1_observe_after = sum(1 for d in w2s_d1[:_d1_limit] if d.get("candidate_level") == "observe_only")
-            else:
-                pdv2.weak_to_strong_d1_reviews = []
-                pdv2.next_day_focus_stocks = []
-                pdv2.trading_permission["d1_candidate_count"] = 0
-                pdv2.trading_permission["focus_stock_count"] = 0
-
             pdv2.diagnostics["layer_c_rows"] = len(layer_c_rows)
             pdv2.diagnostics["layer_c_source"] = layer_c_source
-            pdv2.diagnostics["d1_algorithm"] = d1_algorithm
-            pdv2.diagnostics["existing_d1_candidate_rows"] = len(existing_w2s_rows)
-            pdv2.diagnostics["existing_d1_candidate_rows_eligible"] = len(existing_w2s_rows)
-            pdv2.diagnostics["d1_formal_before_market"] = d1_formal_before
-            pdv2.diagnostics["d1_observe_before_market"] = d1_observe_before
-            pdv2.diagnostics["d1_formal_after_market"] = d1_formal_after
-            pdv2.diagnostics["d1_observe_after_market"] = d1_observe_after
-            pdv2.diagnostics["preview_truncated_used"] = preview_truncated
             if cml_error:
                 pdv2.diagnostics["confirmed_mainline_error"] = cml_error
             recap_doc["post_market_decision_v2"] = pdv2.to_dict()
