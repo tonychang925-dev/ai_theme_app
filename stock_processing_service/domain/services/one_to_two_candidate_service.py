@@ -53,7 +53,12 @@ class OneToTwoCandidateService:
             if not self._is_limit_up(bar):
                 continue
 
-            current_subject_row = self._choose_subject_row(subject_rows_by_stock.get(stock_id, []), current_trade_date)
+            current_subject_row = self._choose_subject_row(
+                subject_rows_by_stock.get(stock_id, []),
+                current_trade_date,
+                active_subject_keys=ctx.active_subject_keys,
+                strong_hotspot_keys=strong_hotspot_keys,
+            )
             if not current_subject_row:
                 continue
 
@@ -194,13 +199,34 @@ class OneToTwoCandidateService:
             missing.append("lifecycle")
         return missing
 
-    def _choose_subject_row(self, rows: list[dict[str, Any]], trade_date: str) -> dict[str, Any] | None:
+    def _choose_subject_row(
+        self,
+        rows: list[dict[str, Any]],
+        trade_date: str,
+        *,
+        active_subject_keys: set[str],
+        strong_hotspot_keys: set[str],
+    ) -> dict[str, Any] | None:
         if not rows:
             return None
         matched = [r for r in rows if self._date_str(r.get("trade_date")) == trade_date]
-        if matched:
-            return matched[0]
-        return rows[0]
+        candidates = matched or rows
+
+        def _priority(row: dict[str, Any]) -> tuple[int, int, int, str]:
+            subject_key = str(row.get("subject_key") or "").strip()
+            if subject_key in active_subject_keys:
+                band = 0
+            elif subject_key in strong_hotspot_keys:
+                band = 1
+            elif bool(row.get("is_leader")):
+                band = 2
+            else:
+                band = 3
+            subject_limit_up_count = self._int_or_none(row.get("subject_limit_up_count") or row.get("limit_up_count")) or 0
+            pool_rank = self._int_or_none(row.get("pool_rank") or row.get("rank_order")) or 9999
+            return (band, -subject_limit_up_count, pool_rank, subject_key)
+
+        return sorted(candidates, key=_priority)[0]
 
     def _is_first_limit_up(self, rows: list[dict[str, Any]], current_trade_date: str) -> bool:
         current = [r for r in rows if self._date_str(r.get("trade_date")) == current_trade_date]

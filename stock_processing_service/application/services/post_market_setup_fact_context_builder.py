@@ -17,7 +17,7 @@ class PostMarketSetupFactContextBuilder:
     def __init__(self, read_port: Any) -> None:
         self._read = read_port
 
-    async def build(self, trade_date: date) -> PostMarketSetupFactContext:
+    async def build(self, trade_date: date, source_doc: dict[str, Any] | None = None) -> PostMarketSetupFactContext:
         calendar = await self._call_required(
             "trade_calendar",
             self._read.get_trade_calendar(trade_date),
@@ -27,17 +27,13 @@ class PostMarketSetupFactContextBuilder:
             raise SetupFactContextBuildError("trade_calendar missing next_trade_date")
         watch_date = calendar.next_trade_date
 
-        report_context = await self._call_required(
-            "post_market_report_context",
-            self._read.get_post_market_report_context(trade_date=trade_date, subject_keys=None, stock_ids=None),
-            allow_empty=False,
-        )
-        market_regime = self._extract_required_dict(report_context, ("market_regime_review", "market_regime"))
-        trading_principle = self._extract_required_dict(report_context, ("trading_principle", "trading_principle_review"))
+        source_doc = dict(source_doc or {})
+        market_regime = self._extract_required_dict(source_doc, ("market_regime_review", "market_regime"))
+        trading_principle = self._extract_required_dict(source_doc, ("trading_principle", "trading_principle_review"))
         if not market_regime:
-            raise SetupFactContextBuildError("post_market_report_context missing market_regime")
+            raise SetupFactContextBuildError("setup_source missing market_regime")
         if not trading_principle:
-            raise SetupFactContextBuildError("post_market_report_context missing trading_principle")
+            raise SetupFactContextBuildError("setup_source missing trading_principle")
 
         active_mainlines = self._normalize_rows(
             await self._call_optional(
@@ -90,9 +86,9 @@ class PostMarketSetupFactContextBuilder:
             if str(r.get("subject_key") or "").strip()
         }
 
-        strong_hotspot_subjects = self._extract_hotspot_subjects(report_context)
-        pressure_by_stock = self._extract_map(report_context, "pressure_by_stock")
-        ma_pattern_by_stock = self._extract_map(report_context, "ma_pattern_by_stock")
+        strong_hotspot_subjects = self._extract_hotspot_subjects(source_doc)
+        pressure_by_stock = self._extract_map(source_doc, "pressure_by_stock")
+        ma_pattern_by_stock = self._extract_map(source_doc, "ma_pattern_by_stock")
 
         limit_up_rows = [
             row for row in stock_daily_bars
@@ -119,13 +115,14 @@ class PostMarketSetupFactContextBuilder:
             diagnostics=SourceStatus(
                 source_status={
                     "trade_calendar": "ready",
-                    "post_market_report_context": "ready",
-                    "active_mainlines": "ready" if active_mainlines is not None else "missing",
-                    "subject_board_stats": "ready" if subject_board_stats is not None else "missing",
-                    "stock_daily_bars_range": "ready" if stock_daily_bars is not None else "missing",
-                    "subject_stock_daily_bars_range": "ready" if subject_stock_rows is not None else "missing",
-                    "mainline_state_daily": "ready" if mainline_state_rows is not None else "missing",
-                    "strong_hotspot_subjects": "derived",
+                    "market_regime": "ready_non_empty" if market_regime else "missing",
+                    "trading_principle": "ready_non_empty" if trading_principle else "missing",
+                    "active_mainlines": "ready_non_empty" if active_mainlines else "ready_empty",
+                    "subject_board_stats": "ready_non_empty" if subject_board_stats else "ready_empty",
+                    "stock_daily_bars_range": "ready_non_empty" if stock_daily_bars else "ready_empty",
+                    "subject_stock_daily_bars_range": "ready_non_empty" if subject_stock_rows else "ready_empty",
+                    "mainline_state_daily": "ready_non_empty" if mainline_state_rows else "ready_empty",
+                    "strong_hotspot_subjects": "derived_non_empty" if strong_hotspot_subjects else "derived_empty",
                 },
                 blocking_errors=[],
                 non_blocking_warnings=[],

@@ -12,19 +12,25 @@ class _GatewayFake:
     async def get_trade_calendar(self, trade_date: date):
         return {"trade_date": trade_date, "calendar_is_open": True, "next_trade_date": date(2026, 6, 5)}
 
-    async def get_post_market_report_context(self, trade_date: date, subject_keys=None, stock_ids=None):
+    async def get_existing_post_market_recap_snapshot(self, trade_date: date):
         return {
-            "market_regime_review": {
-                "allow_trade": False,
-                "trade_mode": "no_trade",
-                "position_limit": 0,
-                "no_trade_blocking_rule": "unit-test",
-                "no_trade_reasons": ["market_closed"],
+            "trade_date": trade_date,
+            "snapshot_version": "snapshot-v1",
+            "batch_id": "batch",
+            "trace_id": "trace",
+            "recap_doc": {
+                "post_market_setup_plan": {
+                    "summary": {
+                        "focus_count": 0,
+                        "observe_only_count": 2,
+                        "pending_review_only_count": 1,
+                        "reject_count": 18,
+                        "empty_is_valid": True,
+                    },
+                    "items": [],
+                    "diagnostics": {"empty_is_valid": True},
+                }
             },
-            "trading_principle": {"summary": "unit-test"},
-            "strong_hotspot_subjects": [],
-            "pressure_by_stock": {},
-            "ma_pattern_by_stock": {},
         }
 
     async def get_active_confirmed_mainlines(self, trade_date=None, limit: int = 100):

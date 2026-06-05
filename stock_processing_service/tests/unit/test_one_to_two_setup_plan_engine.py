@@ -43,10 +43,7 @@ class _ReadPortFake:
         subject_keys: list[str] | None = None,
         stock_ids: list[str] | None = None,
     ) -> dict[str, object]:
-        return {
-            "market_regime_review": {"trade_mode": "no_trade", "allow_trade": False},
-            "trading_principle": {"position_limit": 0.0},
-        }
+        raise AssertionError("post_market_report_context should not be called")
 
     async def get_active_confirmed_mainlines(
         self, trade_date: date | None = None, limit: int = 100
@@ -122,7 +119,17 @@ async def test_one_to_two_does_not_read_layer_c_pool() -> None:
     engine = OneToTwoSetupPlanEngine()
     fake = _ReadPortFake()
 
-    result = await engine.build(date(2026, 6, 4), fake)
+    result = await engine.build(
+        date(2026, 6, 4),
+        fake,
+        source_doc={
+            "market_regime_review": {"trade_mode": "no_trade", "allow_trade": False},
+            "trading_principle": {"position_limit": 0.0},
+            "strong_hotspot_subjects": [],
+            "pressure_by_stock": {},
+            "ma_pattern_by_stock": {},
+        },
+    )
 
     assert result.summary["focus_count"] == 0
     assert result.items == []

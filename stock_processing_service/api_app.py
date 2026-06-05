@@ -2041,48 +2041,52 @@ async def review_trade_plan(payload: TradePlanReviewPayload) -> dict[str, Any]:
 
 
 async def _build_one_to_two_watchlists(trade_date: date) -> dict[str, Any]:
-    """Build DailyReviewV2.watchlists.one_to_two from the current read model.
+    """Read DailyReviewV2.watchlists.one_to_two from persisted recap snapshot.
 
-    The helper is best-effort for read APIs, but it fails loud inside the
-    returned diagnostics instead of fabricating candidates.
+    This helper never recomputes the setup plan. Missing persisted plan is a
+    precondition failure, not an empty result.
     """
-    from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
-        OneToTwoSetupPlanEngine,
-    )
-
-    empty_block = {
-        "summary": {
-            "focus_count": 0,
-            "observe_only_count": 0,
-            "pending_review_only_count": 0,
-            "reject_count": 0,
-            "empty_is_valid": True,
-        },
-        "items": [],
-        "diagnostics": {
-            "empty_is_valid": True,
-            "errors": [],
-            "warnings": [],
-            "source_status": {},
-        },
-    }
-
-    read_port = getattr(app.state, "gateway", None)
+    read_port = getattr(app.state, "read_port", None) or getattr(app.state, "gateway", None)
     if read_port is None:
-        empty_block["diagnostics"]["errors"] = ["read_port_unavailable"]
-        empty_block["diagnostics"]["source_status"] = {"read_port": "missing"}
-        return {"one_to_two": empty_block}
+        raise HTTPException(
+            status_code=500,
+            detail={
+                "error_code": "READ_PORT_MISSING",
+                "message": "OneToTwo watchlists require read_port",
+                "trade_date": trade_date.isoformat(),
+            },
+        )
+    row = await read_port.get_existing_post_market_recap_snapshot(trade_date)
+    if not row:
+        raise HTTPException(
+            status_code=424,
+            detail={
+                "error_code": "POST_MARKET_RECAP_SNAPSHOT_MISSING",
+                "message": "OneToTwo watchlists require persisted recap snapshot",
+                "trade_date": trade_date.isoformat(),
+            },
+        )
 
-    try:
-        engine = OneToTwoSetupPlanEngine()
-        plan = await engine.build(trade_date=trade_date, read_port=read_port)
-        payload = plan.to_dict()["watchlists"]["one_to_two"]
-        return {"one_to_two": payload}
-    except Exception as exc:  # best-effort on read, but expose diagnostics
-        logger.exception("failed to build one_to_two watchlist for %s", trade_date)
-        empty_block["diagnostics"]["errors"] = [f"one_to_two_build_failed: {exc}"]
-        empty_block["diagnostics"]["source_status"] = {"one_to_two": "failed"}
-        return {"one_to_two": empty_block}
+    payload = _normalize_recap_payload(row)
+    recap_doc = payload.get("recap_doc") or payload
+    if not isinstance(recap_doc, dict):
+        recap_doc = {}
+
+    plan = recap_doc.get("post_market_setup_plan")
+    if not isinstance(plan, dict) or not plan:
+        legacy_watchlists = recap_doc.get("watchlists")
+        if isinstance(legacy_watchlists, dict):
+            plan = legacy_watchlists.get("one_to_two")
+    if not isinstance(plan, dict) or not plan:
+        raise HTTPException(
+            status_code=424,
+            detail={
+                "error_code": "ONE_TO_TWO_SETUP_PLAN_MISSING",
+                "message": "Persisted one_to_two setup plan missing from recap snapshot",
+                "trade_date": trade_date.isoformat(),
+            },
+        )
+    return {"one_to_two": plan}
 
 
 @app.get("/api/v1/daily_review")
@@ -2196,10 +2200,7 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
     except Exception:
         pass
 
-    try:
-        v2["watchlists"] = await _build_one_to_two_watchlists(d)
-    except Exception:
-        pass
+    v2["watchlists"] = await _build_one_to_two_watchlists(d)
 
     return v2
 
@@ -2255,10 +2256,7 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
     except Exception:
         pass  # best-effort, don't block
 
-    try:
-        v2["watchlists"] = await _build_one_to_two_watchlists(d)
-    except Exception:
-        pass
+    v2["watchlists"] = await _build_one_to_two_watchlists(d)
 
     updated_recap_doc = dict(recap_doc)
     updated_recap_doc["daily_review_v2"] = v2

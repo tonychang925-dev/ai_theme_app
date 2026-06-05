@@ -105,6 +105,7 @@ class PostMarketDailyReviewV2Builder:
             "strong_stock_decision_reviews": self._pass_through_list(doc, "strong_stock_decision_reviews"),
             "strong_stock_reviews": strong_stock_reviews,
             "watchlist_reviews": watchlist_reviews,
+            "post_market_setup_plan": self._pass_through_dict(doc, "post_market_setup_plan"),
             "watchlists": self._pass_through_dict(doc, "watchlists"),
             "stock_capital_reviews": stock_capital_reviews,
             "abnormal_reviews": abnormal_reviews,

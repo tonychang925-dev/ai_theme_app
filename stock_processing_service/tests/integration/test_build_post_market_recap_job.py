@@ -26,6 +26,7 @@ from stock_processing_service.contracts.dto import (
     PriorSnapshotDTO,
     StockBarDTO,
     SubjectStockPoolDTO,
+    TradeCalendarDTO,
 )
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidate
 
@@ -34,7 +35,12 @@ from stock_processing_service.domain.services.w2s_candidate_service import W2SCa
 
 class _FakeReadPort:
     async def get_trade_calendar(self, trade_date: date):
-        return None
+        return TradeCalendarDTO(
+            trade_date=trade_date,
+            calendar_is_open=True,
+            prev_trade_date=trade_date,
+            next_trade_date=trade_date,
+        )
 
     async def get_stock_daily_bars(self, trade_date: date, stock_ids: list[str] | None = None) -> list[StockBarDTO]:
         return [
@@ -50,6 +56,26 @@ class _FakeReadPort:
     async def get_stock_daily_bars_range(self, start_date: date, end_date: date, stock_ids=None):
         bars = await self.get_stock_daily_bars(end_date, stock_ids=stock_ids)
         return [bar for bar in bars if start_date <= bar.trade_date <= end_date]
+
+    async def get_subject_stock_daily_bars_range(
+        self,
+        start_date: date,
+        end_date: date,
+        stock_ids=None,
+        subject_keys=None,
+    ):
+        return [
+            {
+                "trade_date": end_date,
+                "stock_id": "002000.SZ",
+                "stock_name": "SampleA",
+                "subject_key": "ai_chip",
+                "subject_name": "AI Chip",
+                "is_leader": True,
+                "pool_rank": 1,
+                "rank_order": 1,
+            }
+        ]
 
     async def get_stock_auction_snapshot(self, trade_date: date, stock_ids=None):
         return []
@@ -115,6 +141,25 @@ class _FakeReadPort:
 
     async def get_subject_context_by_subject_keys(self, subject_keys: list[str], trade_date: date):
         return []
+
+    async def get_active_confirmed_mainlines(self, trade_date: date, limit: int = 100):
+        return [
+            {
+                "mainline_id": "ml-ai-chip",
+                "canonical_subject_key": "ai_chip",
+                "related_subject_keys_json": ["ai_chip"],
+                "branch_subject_keys_json": [],
+            }
+        ]
+
+    async def get_mainline_state_daily(self, trade_date: date, subject_keys: list[str]):
+        return [
+            {
+                "subject_key": "ai_chip",
+                "final_cycle_state": "repair",
+                "final_mainline_alive": True,
+            }
+        ]
 
     async def get_prior_stock_daily_snapshots(self, trade_date: date, lookback_days: int, stock_ids=None):
         return [

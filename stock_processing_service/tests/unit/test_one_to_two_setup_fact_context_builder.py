@@ -14,9 +14,6 @@ class _MissingMarketContextReadPort:
     async def get_trade_calendar(self, trade_date: date) -> TradeCalendarDTO:
         return TradeCalendarDTO(trade_date=trade_date, calendar_is_open=True, next_trade_date=trade_date)
 
-    async def get_post_market_report_context(self, trade_date: date, subject_keys=None, stock_ids=None):
-        return {}
-
     async def get_active_confirmed_mainlines(self, trade_date=None, limit: int = 100):
         return []
 
@@ -46,20 +43,25 @@ async def test_post_market_setup_fact_context_builder_fails_loud_when_market_con
     builder = PostMarketSetupFactContextBuilder(_MissingMarketContextReadPort())
 
     with pytest.raises(Exception, match="missing market_regime"):
-        await builder.build(date(2026, 6, 4))
+        await builder.build(date(2026, 6, 4), source_doc={})
 
 
 @pytest.mark.asyncio
 async def test_post_market_setup_fact_context_builder_does_not_touch_layer_c_or_d1() -> None:
     class _HappyReadPort(_GuardedReadPort):
-        async def get_post_market_report_context(self, trade_date: date, subject_keys=None, stock_ids=None):
-            return {
-                "market_regime_review": {"trade_mode": "no_trade", "allow_trade": False},
-                "trading_principle": {"position_limit": 0.0},
-            }
+        pass
 
     builder = PostMarketSetupFactContextBuilder(_HappyReadPort())
-    ctx = await builder.build(date(2026, 6, 4))
+    ctx = await builder.build(
+        date(2026, 6, 4),
+        source_doc={
+            "market_regime_review": {"trade_mode": "no_trade", "allow_trade": False},
+            "trading_principle": {"position_limit": 0.0},
+            "strong_hotspot_subjects": [],
+            "pressure_by_stock": {},
+            "ma_pattern_by_stock": {},
+        },
+    )
 
     assert ctx.trade_date == "2026-06-04"
     assert ctx.watch_date == "2026-06-04"

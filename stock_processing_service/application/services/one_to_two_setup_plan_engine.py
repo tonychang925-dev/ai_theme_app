@@ -21,7 +21,12 @@ from stock_processing_service.domain.services.one_to_two_scorer import OneToTwoS
 
 
 class OneToTwoSetupPlanEngine:
-    """Assemble Layer C post-market display facts for 1进2 setup planning."""
+    """Build OneToTwo post-market setup observation plan.
+
+    Does not read Layer C or D1.
+    Does not mutate A/B/C/D.
+    Does not emit buy signals.
+    """
 
     def __init__(
         self,
@@ -37,9 +42,15 @@ class OneToTwoSetupPlanEngine:
         self.scorer = scorer or OneToTwoScorer()
         self.risk_plan_builder = risk_plan_builder or OneToTwoRiskPlanBuilder()
 
-    async def build(self, trade_date, read_port: Any) -> OneToTwoSetupPlanDTO:
+    async def build(
+        self,
+        trade_date,
+        read_port: Any,
+        *,
+        source_doc: dict[str, Any] | None = None,
+    ) -> OneToTwoSetupPlanDTO:
         builder = self.fact_context_builder or PostMarketSetupFactContextBuilder(read_port)
-        ctx = await builder.build(trade_date)
+        ctx = await builder.build(trade_date, source_doc=source_doc)
         return self.build_from_context(ctx)
 
     def build_from_context(self, ctx: PostMarketSetupFactContext) -> OneToTwoSetupPlanDTO:
