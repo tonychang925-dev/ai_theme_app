@@ -170,6 +170,24 @@ class StockReadGatewayAdapter:
             )
         return result
 
+    async def get_subject_stock_daily_bars_range(
+        self,
+        start_date: date,
+        end_date: date,
+        stock_ids: list[str] | None = None,
+        subject_keys: list[str] | None = None,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_subject_stock_daily_bars_range", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_subject_stock_daily_bars_range")
+        rows = await fn(
+            start_date=start_date,
+            end_date=end_date,
+            stock_ids=stock_ids,
+            subject_keys=subject_keys,
+        )
+        return [_as_dict(row) for row in rows]
+
     async def get_stock_auction_snapshot(
         self, trade_date: date, stock_ids: list[str] | None = None
     ) -> list[StockAuctionDTO]:

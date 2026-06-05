@@ -1285,3 +1285,29 @@ def test_daily_review_v2_builder_keeps_no_dragon_tiger_day_empty_not_failed() ->
     assert coverage["source"] == "none"
     assert coverage["row_count"] == 0
     assert "post_market_recap_snapshot_missing" not in payload["diagnostics"]["errors"]
+
+
+def test_daily_review_v2_builder_passes_through_watchlists() -> None:
+    recap_doc = {
+        "watchlists": {
+            "one_to_two": {
+                "summary": {
+                    "focus_count": 0,
+                    "observe_only_count": 1,
+                    "pending_review_only_count": 0,
+                    "reject_count": 0,
+                    "empty_is_valid": True,
+                },
+                "items": [],
+                "diagnostics": {"empty_is_valid": True},
+            }
+        },
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.watchlists.pass_through",
+    )
+
+    assert payload["watchlists"]["one_to_two"]["summary"]["observe_only_count"] == 1

@@ -2040,6 +2040,51 @@ async def review_trade_plan(payload: TradePlanReviewPayload) -> dict[str, Any]:
     return result
 
 
+async def _build_one_to_two_watchlists(trade_date: date) -> dict[str, Any]:
+    """Build DailyReviewV2.watchlists.one_to_two from the current read model.
+
+    The helper is best-effort for read APIs, but it fails loud inside the
+    returned diagnostics instead of fabricating candidates.
+    """
+    from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
+        OneToTwoSetupPlanEngine,
+    )
+
+    empty_block = {
+        "summary": {
+            "focus_count": 0,
+            "observe_only_count": 0,
+            "pending_review_only_count": 0,
+            "reject_count": 0,
+            "empty_is_valid": True,
+        },
+        "items": [],
+        "diagnostics": {
+            "empty_is_valid": True,
+            "errors": [],
+            "warnings": [],
+            "source_status": {},
+        },
+    }
+
+    read_port = getattr(app.state, "gateway", None)
+    if read_port is None:
+        empty_block["diagnostics"]["errors"] = ["read_port_unavailable"]
+        empty_block["diagnostics"]["source_status"] = {"read_port": "missing"}
+        return {"one_to_two": empty_block}
+
+    try:
+        engine = OneToTwoSetupPlanEngine()
+        plan = await engine.build(trade_date=trade_date, read_port=read_port)
+        payload = plan.to_dict()["watchlists"]["one_to_two"]
+        return {"one_to_two": payload}
+    except Exception as exc:  # best-effort on read, but expose diagnostics
+        logger.exception("failed to build one_to_two watchlist for %s", trade_date)
+        empty_block["diagnostics"]["errors"] = [f"one_to_two_build_failed: {exc}"]
+        empty_block["diagnostics"]["source_status"] = {"one_to_two": "failed"}
+        return {"one_to_two": empty_block}
+
+
 @app.get("/api/v1/daily_review")
 async def get_daily_review(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
     """结构化每日复盘 — 从 post_market_recap_snapshot 派生。
@@ -2077,6 +2122,29 @@ async def get_daily_review(trade_date: str = Query(..., description="YYYY-MM-DD"
         "strong_stock_reviews": recap_doc.get("strong_stock_reviews") or [],
         "trading_principle": recap_doc.get("trading_principle") or {},
         "diagnostics": recap_doc.get("diagnostics") or {},
+    }
+
+
+@app.get("/api/v2/daily-review/{trade_date}/watchlists")
+async def get_daily_review_watchlists(
+    trade_date: str,
+    setup_type: str = Query("one_to_two", description="setup type, currently only one_to_two"),
+) -> dict[str, Any]:
+    """Return setup-plan watchlists from DailyReview V2."""
+    try:
+        d = date.fromisoformat(trade_date)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {trade_date}") from exc
+
+    if setup_type != "one_to_two":
+        raise HTTPException(status_code=400, detail="unsupported setup_type")
+
+    watchlists = await _build_one_to_two_watchlists(d)
+    block = watchlists.get("one_to_two") or {}
+    return {
+        "trade_date": trade_date,
+        "setup_type": "one_to_two",
+        **block,
     }
 
 
@@ -2125,6 +2193,11 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
         composer_input = {**recap_doc, **v2}
         engine_report = composer.compose(composer_input)
         v2 = {**v2, **engine_report}
+    except Exception:
+        pass
+
+    try:
+        v2["watchlists"] = await _build_one_to_two_watchlists(d)
     except Exception:
         pass
 
@@ -2181,6 +2254,11 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
         v2 = {**v2, **engine_report}
     except Exception:
         pass  # best-effort, don't block
+
+    try:
+        v2["watchlists"] = await _build_one_to_two_watchlists(d)
+    except Exception:
+        pass
 
     updated_recap_doc = dict(recap_doc)
     updated_recap_doc["daily_review_v2"] = v2

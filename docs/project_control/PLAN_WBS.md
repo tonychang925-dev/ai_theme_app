@@ -839,3 +839,72 @@
   - `stock_processing_service` 已承载 `/api/v1/collection/availability|start|status|cancel|continue`。
   - `web_app_service /api/v2/collection/*` 已改为仅转发 `stock_processing_service:8090`。
   - 约束口径：允许复用旧链数据表与代码；禁止运行态依赖旧链服务进程（含 `frontend_bff:8003`）。
+
+## 11. 1进2买入法实施计划（P5，2026-06-06 增量）
+
+> 目标：把 `one_to_two_daily_review_architecture.md` 落成“计划层”能力，严格遵守“只生成观察计划，不生成买点动作；允许空结果；不读取 Layer C / D1；不影响 A/B/C/D 生产链”的边界。
+
+### 11.1 计划定位
+- 1进2 是 **Setup Plan / 次日观察清单**，不是全市场选股器。
+- 复盘阶段只生成 `post_market_setup_plan` 与 `DailyReviewV2.watchlists.one_to_two`。
+- 盘前 / 盘中阶段才做竞价与触发确认。
+- 空候选是正常业务结果，不允许 fallback/mock/default 补数。
+
+### 11.1.1 严格非目标
+- 不参与 `MainlineDiscoveryEngine`。
+- 不参与 Layer A/B/C/D 任何生产链。
+- 不读取 `strong_stock_watch_pool` / `strong_stock_watch_history`。
+- 不读取 `weak_to_strong_candidate_pool` 作为候选源。
+- 不从 `DailyReviewV2` / `post_market_snapshot` 反向抽数据。
+- 不输出 `buy` / `must_buy` / `recommend_buy`。
+- 不为了每日产出而降低门槛。
+- 不允许 LLM 覆盖硬规则。
+- 不允许 fallback/mock/default 补候选。
+
+### 11.2 里程碑总览
+| Milestone | 目标 | 验收摘要 | 估算 | 依赖 |
+| --- | --- | --- | --- | --- |
+| P5.phase0 | 合同冻结与事实层打底 | DTO / 表 / API 契约冻结；架构守卫测试通过；空结果测试通过；禁止读取 Layer C / D1 | 2人天 | P4.phase3、`DailyReviewV2` 已稳定输出 |
+| P5.phase1 | 候选层与硬门禁 MVP | 只从主线首板事实池构建候选；一票否决生效；空清单正常 | 3人天 | P5.phase0 |
+| P5.phase2 | 计划生成与 DailyReviewV2 接入 | `post_market_setup_plan` 落库；`watchlists.one_to_two` 渲染；计划/确认状态分离；无买点输出 | 3人天 | P5.phase1 |
+| P5.phase3 | 盘前确认与反馈闭环 | 盘前 brief、盘中确认、T+1/T+n 反馈与审计链打通（可拆为 phase3a/3b） | 4人天 | P5.phase2 |
+
+### 11.3 WBS — P5.phase0（合同冻结与事实层打底）
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P5.phase0-T01 | P5.phase0-T01 冻结 1进2 的计划层边界：明确只产出观察计划，不产出买点建议，不改动 A/B/C/D 生产链 |  | 0.5人天 | 高 | 文档评审 + ADR 完成 | Contract Frozen; No Buy Output; No A/B/C/D Mutation |
+| P5.phase0-T02 | P5.phase0-T02 定义 `PostMarketSetupFactContext` / `OneToTwoFeatureDTO` / `SetupPlanDTO` 的字段契约与错误语义 | P5.phase0-T01 | 0.5人天 | 高 | DTO schema review 通过 | Schema Frozen; No Fallback Fields; Empty Allowed |
+| P5.phase0-T03 | P5.phase0-T03 定义 `post_market_setup_plan`、`one_to_two_candidate_feature`、`setup_plan_realtime_confirmation` 三表合同与主键策略 | P5.phase0-T02 | 0.5人天 | 中 | 表契约评审 + schema fixture 通过 | Table Contract Frozen; Key Strategy Clear |
+| P5.phase0-T04 | P5.phase0-T04 补齐架构守卫与硬规则测试：OneToTwo 不读取 Layer C / D1、不调用 `BuildWeakToStrongCandidateUseCase`、不修改 A/B/C/D 表、不输出 buy / trigger_confirmed；空结果合法；no_trade 下 focus_count=0 | P5.phase0-T03 | 0.5人天 | 高 | 单测/集成测试通过 | Guard Tests Passed; Empty Is Valid |
+
+### 11.4 WBS — P5.phase1（候选层与硬门禁 MVP）
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P5.phase1-T01 | P5.phase1-T01 从主线首板事实池抽取 1进2 候选输入，定义为：今日首板事实 ∩ 主线/强热点题材事实 ∩ 板块合力事实 ∩ 首板质量事实 ∩ 市场环境事实；明确禁止读取 Layer C / D1 / 历史快照 | P5.phase0-T04 | 1人天 | 高 | 候选输入样本对账通过 | Source Is Facts Only; No Layer C/D1 Read |
+| P5.phase1-T02 | P5.phase1-T02 实现硬门禁一票否决清单：非首板、非主线/非强热点、无板块合力、一字/秒板/低换手、尾盘偷封、首板过高、下降趋势、压力位过近、流通市值过大、no_trade / mainline_risk_off、关键数据缺失等直接 reject / observe_only / fail-loud | P5.phase1-T01 | 1人天 | 高 | 规则单测通过 | Hard Veto Enforced; Empty Result Allowed |
+| P5.phase1-T03 | P5.phase1-T03 实现候选诊断输出：每个 reject 必须带明示原因；候选为空时也要返回结构化诊断 | P5.phase1-T02 | 0.5人天 | 中 | diagnostics contract tests 通过 | Fail-Loud; Structured Diagnostics |
+| P5.phase1-T04 | P5.phase1-T04 完成候选排序的最小实现：仅对硬门禁后少量候选做轻量排序，不改变硬门禁结果 | P5.phase1-T03 | 0.5人天 | 中 | 排序稳定性测试通过 | Ranking Only After Gates; No Candidate Inflation |
+
+### 11.5 WBS — P5.phase2（计划生成与 DailyReviewV2 接入）
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P5.phase2-T01 | P5.phase2-T01 生成 `post_market_setup_plan`：把候选、诊断、观察级别写入计划真源，并补齐 `plan_status`（planned / expired / cancelled） | P5.phase1-T04 | 1人天 | 高 | 指定交易日计划查询非空/空都符合契约 | Plan Persists; No Buy Recommendation |
+| P5.phase2-T02 | P5.phase2-T02 接入 `DailyReviewV2.watchlists.one_to_two`：仅展示观察计划，不从其它层回读 | P5.phase2-T01 | 1人天 | 高 | DailyReviewV2 contract test 通过 | Display Only; No Layer C/D1 Backfill |
+| P5.phase2-T03 | P5.phase2-T03 补齐前端/接口契约：观察清单、空结果、拒绝原因、计划状态统一展示 | P5.phase2-T02 | 0.5人天 | 中 | UI / API 对账通过 | Contract Stable; Clear Empty State |
+| P5.phase2-T04 | P5.phase2-T04 增加计划层审计与回放 manifest，确保可追踪但不反写 A/B/C/D | P5.phase2-T03 | 0.5人天 | 中 | 审计回放样本通过 | Traceable; No Upstream Mutation |
+
+### 11.6 WBS — P5.phase3（盘前确认与反馈闭环）
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P5.phase3-T01 | P5.phase3-T01 接入 `PreMarketBrief`：把 setup plan 转成盘前观察口径，不生成买点；确认状态只追加 `confirmation_stage=auction` | P5.phase2-T04 | 1人天 | 高 | 盘前 brief contract 通过 | Observation Only; No Buy Signal |
+| P5.phase3-T02 | P5.phase3-T02 接入 `RealtimeBuyPointConfirmation`：盘中只做确认，不反向修改复盘事实层；确认记录 append-only | P5.phase3-T01 | 1人天 | 高 | 盘中确认状态流转测试通过 | Confirm Only; Append-Only |
+| P5.phase3-T03 | P5.phase3-T03 建立 T+1/T+n 反馈闭环：记录命中/失效/弃用原因，支持回放与复盘，按回测闭环独立推进（可拆 phase3a/3b） | P5.phase3-T02 | 1人天 | 中 | 回测反馈与审计对账通过 | Feedback Loop Closed; Replayable |
+| P5.phase3-T04 | P5.phase3-T04 增加可观测性与门禁脚本：空结果、失败原因、状态流转均可追踪；confirmation 与 review 不互相覆盖 | P5.phase3-T03 | 0.5人天 | 中 | 门禁脚本与日志检查通过 | Observable; Fail-Loud; No Silent Degrade |
+
+### 11.7 一致性约束（P5）
+- `OneToTwoSetupPlan` 只消费事实层，不读取 Layer C / D1。
+- `DailyReviewV2.watchlists.one_to_two` 只承载观察计划，不承载买点结果。
+- `post_market_setup_plan` 是计划真源，`setup_plan_realtime_confirmation` 是确认真源，二者不互相覆盖。
+- `post_market_setup_plan.plan_status` 必须区分 `planned / expired / cancelled`；`setup_plan_realtime_confirmation` 必须是 append-only。
+- 空候选、空计划、空确认都必须是可接受结果，禁止 fallback/mock/default 补数。
+- 1进2 不修改 A/B/C/D 任何生产链，不反向影响 `confirmed_mainline`。

@@ -1305,6 +1305,36 @@ class BuildPostMarketRecapJob:
             pdv2.diagnostics["confirmed_mainline_error"] = cml_error
         recap_doc["post_market_decision_v2"] = pdv2.to_dict()
 
+        try:
+            from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
+                OneToTwoSetupPlanEngine,
+            )
+            one_to_two_plan = await OneToTwoSetupPlanEngine().build(
+                trade_date=trade_date,
+                read_port=self._read_port,
+            )
+            recap_doc["watchlists"] = one_to_two_plan.to_dict().get("watchlists", {})
+        except Exception as exc:
+            logger.warning("OneToTwo setup plan skipped in recap snapshot: %s", exc)
+            recap_doc["watchlists"] = {
+                "one_to_two": {
+                    "summary": {
+                        "focus_count": 0,
+                        "observe_only_count": 0,
+                        "pending_review_only_count": 0,
+                        "reject_count": 0,
+                        "empty_is_valid": True,
+                    },
+                    "items": [],
+                    "diagnostics": {
+                        "empty_is_valid": True,
+                        "errors": [f"one_to_two_plan_skipped: {exc}"],
+                        "warnings": [],
+                        "source_status": {"one_to_two": "skipped"},
+                    },
+                }
+            }
+
         # ── PR-13A: persist mainline daily state ──
         await self._persist_mainline_daily_state(trade_date, recap_doc, batch_id or "", trace_id or "")
 
