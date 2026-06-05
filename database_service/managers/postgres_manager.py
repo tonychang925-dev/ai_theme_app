@@ -2837,7 +2837,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         ),
         two_board_stocks AS (
             -- 独立龙头检测：截至当日最近两个交易日都涨停
-            SELECT DISTINCT stock_code
+            SELECT DISTINCT split_part(stock_id, '.', 1) AS stock_code
             FROM stock_daily_snapshot
             WHERE trade_date IN (SELECT trade_date FROM recent_two_trade_days)
             GROUP BY split_part(stock_id, '.', 1)
