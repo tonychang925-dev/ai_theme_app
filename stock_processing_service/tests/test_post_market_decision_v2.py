@@ -16,8 +16,8 @@ def _ml(ml_id="ml_test", csk="sk_a", name="测试主线", related=None):
     return r
 
 
-def _stock_row(stock_id="000001.SZ", name="测试股", sk="sk_a", score=82, entry="formal", role="dragon"):
-    return {
+def _stock_row(stock_id="000001.SZ", name="测试股", sk="sk_a", score=82, entry="formal", role="dragon", labels=None):
+    row = {
         "stock_id": stock_id, "stock_name": name, "subject_key": sk,
         "theme_name": "测试主线", "watch_score": score, "watch_priority": score + 5,
         "watch_status": "active", "pool_entry_type": entry, "strong_grade": "S",
@@ -25,6 +25,9 @@ def _stock_row(stock_id="000001.SZ", name="测试股", sk="sk_a", score=82, entr
         "mainline_strength_score": 72, "support_type": "gap_support",
         "support_level": 12.0, "support_score": 78,
     }
+    if labels is not None:
+        row["labels"] = labels
+    return row
 
 
 class TestPostMarketDecisionV2:
@@ -37,7 +40,7 @@ class TestPostMarketDecisionV2:
         assert len(r.next_day_focus_stocks) == 0
         assert "layer_c_d1_preview_truncated" not in r.diagnostics
 
-    def test_stocks_keep_independent_leaders_without_mainline_filter(self):
+    def test_stocks_keep_rows_without_mainline_filter(self):
         e = PostMarketDecisionEngineV2()
         r = e.evaluate(
             trade_date="2026-04-29",
@@ -60,12 +63,26 @@ class TestPostMarketDecisionV2:
             confirmed_mainlines=[_ml(csk="sk_main")],
             market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
             stock_pool_rows=[
-                _stock_row(stock_id="000003.SZ", sk="sk_other", name="独立龙头", role="leader"),
+                _stock_row(
+                    stock_id="000003.SZ",
+                    sk="sk_other",
+                    name="独立龙头",
+                    role="leader",
+                    labels={
+                        "entry_path": "independent_leader",
+                        "identity_scope": "independent_stock_signal",
+                        "strong_gene_seed": True,
+                        "has_two_board": True,
+                    },
+                ),
             ],
         )
         assert len(r.strong_stock_pool_reviews) == 1
         assert r.strong_stock_pool_reviews[0]["stock_name"] == "独立龙头"
         assert r.strong_stock_pool_reviews[0]["diagnostics"]["mainline_binding_status"] == "not_confirmed"
+        assert r.strong_stock_pool_reviews[0]["labels"]["entry_path"] == "independent_leader"
+        assert r.strong_stock_pool_reviews[0]["labels"]["identity_scope"] == "independent_stock_signal"
+        assert r.strong_stock_pool_reviews[0]["labels"]["strong_gene_seed"] is True
 
     def test_ultra_short_only_restricts_d1(self):
         e = PostMarketDecisionEngineV2()

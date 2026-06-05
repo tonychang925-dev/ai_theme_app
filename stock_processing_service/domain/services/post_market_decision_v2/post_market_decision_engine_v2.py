@@ -1,10 +1,11 @@
 """PR-12: PostMarketDecisionEngineV2.
 
-Layer C (strong stock pool) assembler on top of confirmed mainlines +
-lifecycle + market_regime.
+Layer C post-market view assembler.
 
-This engine only assembles Layer C display facts and leaves Layer D1 to the
-explicit weak-to-strong pipeline.
+Layer C rows are provided by the canonical strong stock watch read-model.
+Confirmed mainlines are used only as annotations/diagnostics.
+This module does not generate Layer C, does not filter Layer C by mainline,
+and does not generate Layer D1.
 """
 
 from __future__ import annotations
@@ -97,21 +98,21 @@ class PostMarketDecisionEngineV2:
 
         # Keep the full Layer C pool. mainline_sks is used only for
         # diagnostics / annotation so independent leaders are not lost.
-        filtered_pool = self._dedupe_rows(pool_rows)
+        layer_c_dedup_rows = self._dedupe_rows(pool_rows)
 
         # Dedup by stock_id (keep highest watch_score) — 7-day union can have duplicates
         best: dict[str, dict[str, Any]] = {}
-        for r in filtered_pool:
+        for r in layer_c_dedup_rows:
             sid = str(r.get("stock_id") or "")
             if not sid: continue
             ws = float(r.get("watch_score") or 0)
             if sid not in best or ws > float(best[sid].get("watch_score") or 0):
                 best[sid] = r
-        filtered_pool = list(best.values())
+        layer_c_dedup_rows = list(best.values())
 
         # ── 2. Build Layer C strong_stock_pool ──
         strong_pool: list[StrongStockPoolItem] = []
-        for row in filtered_pool:
+        for row in layer_c_dedup_rows:
             sk = str(row.get("subject_key") or row.get("theme_key") or "")
             ws = float(row.get("watch_score") or 0)
             entry = str(row.get("pool_entry_type") or "")
@@ -155,7 +156,7 @@ class PostMarketDecisionEngineV2:
 
         # ── Diagnostics: expose active universe vs Layer C coverage gap ──
         all_pool_sks: set[str] = {str(r.get("subject_key") or r.get("theme_key") or "") for r in pool_rows}
-        filtered_sks: set[str] = {str(r.get("subject_key") or r.get("theme_key") or "") for r in filtered_pool}
+        layer_c_dedup_sks: set[str] = {str(r.get("subject_key") or r.get("theme_key") or "") for r in layer_c_dedup_rows}
         missing_sks = all_pool_sks - mainline_sks
 
         return PostMarketDecisionV2(
@@ -171,19 +172,20 @@ class PostMarketDecisionEngineV2:
                 "active_mainline_count": len(mainlines),
                 "active_subject_key_count": len(mainline_sks),
                 "layer_c_input_rows": len(pool_rows),
-                "layer_c_filtered_rows": len(filtered_pool),
+                "mainline_filter_applied": False,
+                "layer_c_dedup_rows": len(layer_c_dedup_rows),
                 "strong_pool_count": len(strong_pool),
                 "d1_count": 0,
                 "d1_top_n_limit": 0,
                 "d1_top_n_applied": False,
                 "focus_count": 0,
                 "layer_c_input_subject_keys": sorted(all_pool_sks),
-                "layer_c_filtered_subject_keys": sorted(filtered_sks),
-                "layer_c_missing_registry_subject_keys": sorted(missing_sks),
+                "layer_c_dedup_subject_keys": sorted(layer_c_dedup_sks),
+                "layer_c_not_bound_to_confirmed_mainline_subject_keys": sorted(missing_sks),
+                "mainline_binding_is_annotation_only": True,
                 "layer_c_input_rows_pre_filter": len(pool_rows),
-                "layer_c_rows_after_mainline_filter": len(filtered_pool),
-                "layer_c_reject_filtered_rows": sum(
-                    1 for r in filtered_pool
+                "layer_c_reject_rows": sum(
+                    1 for r in layer_c_dedup_rows
                     if (r.pool_entry_type if hasattr(r, "pool_entry_type") else r.get("pool_entry_type")) == "reject"
                 ),
             },
