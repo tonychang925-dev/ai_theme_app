@@ -318,16 +318,16 @@ class BuildPostMarketRecapJob:
             )
             layer_c_metrics = dict(layer_c_result.metrics or {})
 
-        # ── Layer D1: recap 只读取既有候选结果，不执行选股逻辑 ──
-        d1_input_rows = await self._read_port.get_w2s_candidate_inputs(trade_date)
+        # ── Layer D1: recap 只读取既有候选池，不执行选股逻辑 ──
         read_existing_w2s = getattr(self._read_port, "get_w2s_candidates_by_trade_date", None)
-        d1_candidates_for_pool = (
-            list(await read_existing_w2s(trade_date, limit=10))
-            if callable(read_existing_w2s)
-            else []
-        )
-        _d1_total_in = len(d1_input_rows)
-        _d1_pass = len(d1_candidates_for_pool)
+        existing_w2s_rows: list[Any] = []
+        if callable(read_existing_w2s):
+            try:
+                existing_w2s_rows = list(await read_existing_w2s(trade_date, limit=20))
+            except Exception:
+                logger.warning("D1 candidate read failed, continuing without D1 rows")
+        _d1_total_in = len(existing_w2s_rows)
+        _d1_pass = len(existing_w2s_rows)
         _d1_fail_pct = 0
         _d1_fail_history = 0
         _d1_fail_gene = 0
@@ -342,7 +342,7 @@ class BuildPostMarketRecapJob:
         strong_watch_rows: list[Any] = []
         history_written = int(layer_c_metrics.get("history_written") or 0)
         strong_watch_history: list[Any] = list(layer_c_metrics.get("history_rows") or [])
-        promoted_pool_rows: list[Any] = d1_input_rows
+        existing_d1_candidate_rows: list[Any] = existing_w2s_rows
         shadow_summary: dict[str, Any] = {}
         legacy_watch_input_count = 0
         strong_watch_pool_written = int(layer_c_metrics.get("pool_written") or 0)
@@ -356,41 +356,35 @@ class BuildPostMarketRecapJob:
         layer_a_identity_hit_count = int(layer_c_metrics.get("identity_hit_count") or 0)
         layer_b_cycle_hit_count = int(layer_c_metrics.get("cycle_hit_count") or 0)
 
-        # P1: skip_layer_c 时从 DB 补读计数，避免报告显示 "观察池 0 条"
+        # P1: skip_layer_c 仅标记跳过，不补读任何历史数据。
         if skip_layer_c:
             layer_a_identity_hit_count = max(layer_a_identity_hit_count, 1)
             layer_b_cycle_hit_count = max(layer_b_cycle_hit_count, 1)
-            try:
-                existing_pool = await self._read_port.get_strong_stock_watch_view_rows(
-                    end_date=trade_date, window_days=1, limit=5000,
-                )
-                if existing_pool:
-                    today_stocks = [r for r in existing_pool if str(r.get("trade_date","")) == str(trade_date)]
-                    strong_watch_pool_written = len(today_stocks) or len(existing_pool)
-                    if not promoted_pool_rows:
-                        promoted_pool_rows = existing_pool[:20]
-            except Exception:
-                strong_watch_pool_written = max(strong_watch_pool_written, 1)
         input_fingerprint = LAYER_C_INPUT_MODE
-        # 构建兼容 recap_doc 的 candidates 列表
+        # 构建兼容 recap_doc 的 D1 只读候选列表（来自既有 weak_to_strong_candidate_pool，不在 recap 内生成）
         candidates = [
             {
-                "stock_id": c["stock_id"],
-                "stock_name": c["stock_name"],
-                "subject_key": c["subject_key"],
-                "subject_name": c["theme_name"],
-                "candidate_score": c["candidate_score"],
-                "candidate_level": c["pool_entry_type"],
-                "candidate_type": c["candidate_type"],
-                "transition_type": c["weak_type"],
+                "stock_id": str(c.get("stock_id", "")),
+                "stock_name": str(c.get("stock_name", "")),
+                "subject_key": str(c.get("subject_key", "")),
+                "subject_name": str(c.get("theme_name", "")),
+                "candidate_score": float(c.get("candidate_score") or 0),
+                "candidate_level": str(c.get("pool_entry_type") or "observe_only"),
+                "candidate_type": str(c.get("candidate_type") or ""),
+                "transition_type": str(c.get("weak_type") or ""),
                 "transition_confidence": "50",
                 "trigger_flags": [],
                 "evidence_rules": [],
-                "support_type": c["support_type"],
+                "support_type": str(c.get("support_type") or ""),
+                "support_score": float(c.get("support_strength") or 0),
+                "gap_hit": False,
+                "gap_hit_mode": "miss",
             }
-            for c in d1_candidates_for_pool
+            for c in existing_w2s_rows
         ]
-        formal_candidates = [c for c in candidates if str(c.get("candidate_level", "")).lower() in {"formal", "s", "a", "b"}]
+        formal_candidates = [
+            c for c in candidates if str(c.get("candidate_level", "")).lower() in {"formal", "s", "a", "b"}
+        ]
         observe_candidates = [c for c in candidates if str(c.get("candidate_level", "")).lower() == "observe_only"]
         candidate_service_observe_candidates = observe_candidates
 
@@ -402,8 +396,8 @@ class BuildPostMarketRecapJob:
             "layer_c_input_mode": layer_c_input_mode,
             "layer_c_shadow_enabled": layer_c_shadow_enabled,
             "legacy_watch_input_count": legacy_watch_input_count,
-            "strong_watch_input_count": len(d1_input_rows),
-            "strong_watch_input_7d_count": len(d1_input_rows),
+            "strong_watch_input_count": len(strong_watch_history),
+            "strong_watch_input_7d_count": len(strong_watch_history),
             "d1_total_in": _d1_total_in,
             "d1_pass": _d1_pass,
             "d1_fail_pct_gate": _d1_fail_pct,
@@ -411,7 +405,7 @@ class BuildPostMarketRecapJob:
             "d1_fail_gene": _d1_fail_gene,
             "d1_fail_strong": _d1_fail_strong,
             "d1_fail_support": _d1_fail_support,
-            "strong_watch_promoted_count": len(promoted_pool_rows),
+            "strong_watch_promoted_count": len(existing_d1_candidate_rows),
             "strong_watch_history_count": len(strong_watch_history),
             "strong_watch_pool_written": strong_watch_pool_written,
             "strong_watch_promote_count": strong_watch_promote_count,
@@ -447,7 +441,7 @@ class BuildPostMarketRecapJob:
                     "removed_reason": (row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None)),
                     "kept_because": None,
                 }
-                for row in strong_watch_history  # full 7-day pool — PDV2 D1 input, no truncation
+                for row in strong_watch_history  # full Layer C 7-day pool — no truncation
             ],
             # Primary count follows the actual candidate list, with formal/observe split preserved separately.
             "candidate_count": len(candidates),
@@ -512,10 +506,10 @@ class BuildPostMarketRecapJob:
                     "pool_entry_type": str(r.get("watch_pool_entry_type", "")),
                     "support_type": "",
                 }
-                for r in d1_input_rows[:100]
+                for r in strong_watch_history[:100]
             ],
             "strong_watch_input_7d_stock_ids": sorted(
-                {str(r.get("stock_id", "")) for r in d1_input_rows if str(r.get("stock_id", "") or "")}
+                {str(r.get("stock_id", "")) for r in strong_watch_history if str(r.get("stock_id", "") or "")}
             ),
             "strong_watch_input_7d_source": (
                 "legacy_strong_watch_pool_or_history"
@@ -523,7 +517,7 @@ class BuildPostMarketRecapJob:
                 else "strong_watch_pool_history_single_source"
             ),
             "promoted_pool_stock_ids": sorted(
-                {str(r.get("stock_id", "")) for r in promoted_pool_rows if str(r.get("stock_id", "") or "")}
+                {str(r.get("stock_id", "")) for r in existing_d1_candidate_rows if str(r.get("stock_id", "") or "")}
             ),
             "promoted_pool_preview": [
                 {
@@ -539,7 +533,7 @@ class BuildPostMarketRecapJob:
                     "recent_limit_up_count": int(r.get("recent_limit_up_count") or 0),
                     "final_cycle_state": str(r.get("final_cycle_state") or ""),
                 }
-                for r in promoted_pool_rows[:200]
+                for r in existing_d1_candidate_rows[:200]
             ],
             "top_candidates": [
                 {
@@ -741,8 +735,8 @@ class BuildPostMarketRecapJob:
             batch_id=batch_id,
             trace_id=trace_id,
             metrics={
-                "strong_watch_input_count": len(d1_input_rows),
-                "strong_watch_promoted_count": len(promoted_pool_rows),
+                "strong_watch_input_count": len(strong_watch_history),
+                "strong_watch_promoted_count": len(existing_d1_candidate_rows),
                 "strong_watch_history_count": strong_watch_history_count,
                 "strong_stock_reviews_count": strong_stock_reviews_count,
                 "strong_watch_history_written": history_written,
@@ -778,7 +772,7 @@ class BuildPostMarketRecapJob:
         *,
         trade_date: date,
         strong_watch_rows: list[Any],
-        promoted_pool_rows: list[Any],
+        existing_d1_candidate_rows: list[Any],
         prior_watch_rows: list[Any],
     ) -> list[Any]:
         by_stock: dict[str, SubjectStockPoolDTO] = {}
@@ -859,7 +853,7 @@ class BuildPostMarketRecapJob:
                     "kept_because": getattr(row, "kept_because", ""),
                 },
             )
-        for row in promoted_pool_rows:
+        for row in existing_d1_candidate_rows:
             stock_id = str(getattr(row, "stock_id", "") or "")
             subject_key = str(getattr(row, "subject_key", "") or "")
             if not stock_id or not subject_key or stock_id in by_stock:
@@ -1270,69 +1264,17 @@ class BuildPostMarketRecapJob:
                 PostMarketDecisionEngineV2,
             )
 
-            # D1 input: use existing get_w2s_candidate_inputs (same as AI选股弱转强策略)
-            try:
-                d1_rows = await self._read_port.get_w2s_candidate_inputs(trade_date)
-                layer_c_d1_raw = len(d1_rows)
-                # Filter same as old code: exclude reject
-                d1_rows = [r for r in d1_rows if r.get("pool_entry_type") != "reject"
-                          and r.get("watch_status") != "removed"]
-                layer_c_d1_eligible = len(d1_rows)
-            except Exception:
-                d1_rows = []
-                layer_c_d1_raw = 0
-                layer_c_d1_eligible = 0
-                logger.warning("D1 input read failed, falling back to recap_doc preview")
-
-            layer_c_source: str = "get_w2s_candidate_inputs"
-            layer_c_rows: list[dict] = []
-            d1_algorithm: str = "BuildWeakToStrongCandidateUseCase"
-            d1_formal_before: int = 0
-            d1_observe_before: int = 0
-            d1_formal_after: int = 0
-            d1_observe_after: int = 0
+            existing_w2s_rows = list(recap_doc.get("top_candidates") or [])
+            layer_c_source: str = "strong_watch_history"
+            layer_c_rows: list[dict[str, Any]] = list(recap_doc.get("strong_watch_history") or [])
+            d1_algorithm: str = "read_existing_w2s_candidates"
+            d1_formal_before: int = sum(1 for c in existing_w2s_rows if c.get("candidate_level") in {"formal", "s", "a", "b"})
+            d1_observe_before: int = sum(1 for c in existing_w2s_rows if str(c.get("candidate_level") or "").lower() == "observe_only")
+            d1_formal_after: int = d1_formal_before
+            d1_observe_after: int = d1_observe_before
             preview_truncated: bool = False
 
-            if d1_rows:
-                from stock_processing_service.application.use_cases.build_weak_to_strong_candidate import (
-                    BuildWeakToStrongCandidateUseCase,
-                )
-                # Create instance bypassing dataclass constructor — build_candidates is stateless
-                w2s_uc = object.__new__(BuildWeakToStrongCandidateUseCase)
-                candidates = w2s_uc.build_candidates(trade_date=trade_date, d1_input_rows=d1_rows)
-                # Dedup by stock_id — same stock can appear under multiple subject_keys
-                candidates = w2s_uc._dedup_and_rank(candidates, limit=20)
-                d1_formal_before = sum(1 for c in candidates if c.get("candidate_level") == "formal")
-                d1_observe_before = sum(1 for c in candidates if c.get("candidate_level") == "observe_only")
-
-                # Apply market_regime for trade permission (downgrade only, no re-score)
-                allow_trade = regime.allow_trade
-                for c in candidates:
-                    level = c.get("candidate_level", "observe_only")
-                    if not allow_trade and level == "formal":
-                        level = "observe_only"
-                        c = dict(c, candidate_level="observe_only")
-                    layer_c_rows.append(c)
-                    if level == "formal":
-                        d1_formal_after += 1
-                    else:
-                        d1_observe_after += 1
-            else:
-                # Fallback: use recap_doc data if read_port failed (backward compat)
-                if isinstance(recap_doc.get("strong_watch_history"), list) and recap_doc["strong_watch_history"]:
-                    layer_c_rows = recap_doc["strong_watch_history"]
-                    layer_c_source = "strong_watch_history"
-                elif isinstance(recap_doc.get("strong_watch_input_7d_preview"), list) and recap_doc["strong_watch_input_7d_preview"]:
-                    layer_c_rows = recap_doc["strong_watch_input_7d_preview"]
-                    layer_c_source = "strong_watch_input_7d_preview"
-                    preview_truncated = True
-                elif isinstance(recap_doc.get("strong_stock_reviews"), list) and recap_doc["strong_stock_reviews"]:
-                    layer_c_rows = recap_doc["strong_stock_reviews"]
-                    layer_c_source = "strong_stock_reviews_fallback"
-                d1_algorithm = "fallback_score"
-                focus_len = 0
-
-            # Build strong_pool + trading_permission via PDV2 (Layer C display)
+            # Build strong_pool + trading_permission via PDV2 (Layer C display only in recap)
             pdv2_engine = PostMarketDecisionEngineV2()
             pdv2 = pdv2_engine.evaluate(
                 trade_date=trade_date.isoformat(),
@@ -1340,10 +1282,11 @@ class BuildPostMarketRecapJob:
                 mainline_lifecycle=[r.to_dict() for r in reviews],
                 market_regime=regime.to_dict(),
                 stock_pool_rows=layer_c_rows if layer_c_rows else [],
+                build_d1=False,
             )
 
-            # Overwrite D1 with BuildWeakToStrongCandidateUseCase results (real AI选股弱转强)
-            if d1_rows:
+            # Reuse already persisted D1 candidates if available; recap must not generate them.
+            if existing_w2s_rows:
                 from stock_processing_service.domain.services.post_market_decision_v2.models import (
                     WeakToStrongD1Item, NextDayFocusStock,
                 )
@@ -1351,18 +1294,20 @@ class BuildPostMarketRecapJob:
                 trade_mode = regime.trade_mode
                 w2s_d1: list[dict] = []
                 w2s_focus: list[dict] = []
-                for c in candidates:
-                    level = c.get("candidate_level", "observe_only")
-                    score = float(c.get("w2s_score") or c.get("candidate_score") or 0)
-                    stock_id = c.get("stock_id", "")
-                    stock_name = c.get("stock_name", "") or stock_id
+                for c in existing_w2s_rows:
+                    level = str(c.get("candidate_level") or c.get("pool_entry_type") or "observe_only")
+                    score = float(c.get("candidate_score") or 0)
+                    stock_id = str(c.get("stock_id") or "")
+                    stock_name = str(c.get("stock_name") or "") or stock_id
                     item = WeakToStrongD1Item(
                         trade_date=trade_date.isoformat(), next_trade_date="T+1",
                         stock_id=stock_id, stock_name=stock_name,
-                        mainline_id="", subject_key="", theme_name="",
+                        mainline_id=str(c.get("mainline_id") or ""),
+                        subject_key=str(c.get("subject_key") or ""),
+                        theme_name=str(c.get("theme_name") or ""),
                         candidate_stage="D1", candidate_level=level,
                         candidate_score=score,
-                        support_score=float(c.get("support_score", 0) or 0),
+                        support_score=float(c.get("support_score") or c.get("support_strength") or 0),
                         momentum_score=0, weak_type="pullback",
                         support_type=str(c.get("support_type") or "unknown"),
                         gap_hit=False,
@@ -1370,8 +1315,8 @@ class BuildPostMarketRecapJob:
                         buy_condition=(["等待市场环境改善"] if not allow_trade else []),
                         invalid_condition=[], d2_required=True, d2_status="pending",
                         evidence={},
-                        diagnostics={"source": "BuildWeakToStrongCandidateUseCase",
-                                     "scoring_method": "native",
+                        diagnostics={"source": "weak_to_strong_candidate_pool",
+                                     "read_only": True,
                                      "blocked_by_market_regime": not allow_trade},
                     )
                     w2s_d1.append(item.to_dict())
@@ -1396,12 +1341,17 @@ class BuildPostMarketRecapJob:
                 pdv2.trading_permission["focus_stock_count"] = len(w2s_focus[:_d1_limit])
                 d1_formal_after = sum(1 for d in w2s_d1[:_d1_limit] if d.get("candidate_level") == "formal")
                 d1_observe_after = sum(1 for d in w2s_d1[:_d1_limit] if d.get("candidate_level") == "observe_only")
+            else:
+                pdv2.weak_to_strong_d1_reviews = []
+                pdv2.next_day_focus_stocks = []
+                pdv2.trading_permission["d1_candidate_count"] = 0
+                pdv2.trading_permission["focus_stock_count"] = 0
 
             pdv2.diagnostics["layer_c_rows"] = len(layer_c_rows)
             pdv2.diagnostics["layer_c_source"] = layer_c_source
             pdv2.diagnostics["d1_algorithm"] = d1_algorithm
-            pdv2.diagnostics["layer_c_d1_raw_rows"] = layer_c_d1_raw
-            pdv2.diagnostics["layer_c_d1_eligible_rows"] = layer_c_d1_eligible
+            pdv2.diagnostics["existing_d1_candidate_rows"] = len(existing_w2s_rows)
+            pdv2.diagnostics["existing_d1_candidate_rows_eligible"] = len(existing_w2s_rows)
             pdv2.diagnostics["d1_formal_before_market"] = d1_formal_before
             pdv2.diagnostics["d1_observe_before_market"] = d1_observe_before
             pdv2.diagnostics["d1_formal_after_market"] = d1_formal_after

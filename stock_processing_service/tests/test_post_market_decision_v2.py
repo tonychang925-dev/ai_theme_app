@@ -42,7 +42,10 @@ class TestPostMarketDecisionV2:
             trade_date="2026-04-29",
             confirmed_mainlines=[_ml(csk="sk_main")],
             market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
-            stock_pool_rows=[_stock_row(sk="sk_other"), _stock_row(sk="sk_main", name="主线股")],
+            stock_pool_rows=[
+                _stock_row(stock_id="000002.SZ", sk="sk_other"),
+                _stock_row(stock_id="000001.SZ", sk="sk_main", name="主线股"),
+            ],
         )
         # Only sk_main stock should be in pool
         assert len(r.strong_stock_pool_reviews) == 1
@@ -111,8 +114,9 @@ class TestPostMarketDecisionV2:
             confirmed_mainlines=[_ml(csk="sk_core", related=["sk_branch"])],
             market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
             stock_pool_rows=[
-                _stock_row(sk="sk_core", name="核心"), _stock_row(sk="sk_branch", name="分支"),
-                _stock_row(sk="sk_other", name="无关"),
+                _stock_row(stock_id="000001.SZ", sk="sk_core", name="核心"),
+                _stock_row(stock_id="000002.SZ", sk="sk_branch", name="分支"),
+                _stock_row(stock_id="000003.SZ", sk="sk_other", name="无关"),
             ],
         )
         assert len(r.strong_stock_pool_reviews) == 2  # core + branch
@@ -121,7 +125,7 @@ class TestPostMarketDecisionV2:
         assert "分支" in names
         assert "无关" not in names
 
-    def test_pool_dedupes_legacy_rows_without_stock_id(self):
+    def test_pool_ignores_legacy_rows_without_stock_id(self):
         e = PostMarketDecisionEngineV2()
         legacy_rows = [
             {
@@ -161,10 +165,9 @@ class TestPostMarketDecisionV2:
             market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
             stock_pool_rows=legacy_rows,
         )
-        assert len(r.strong_stock_pool_reviews) == 1
-        assert r.strong_stock_pool_reviews[0]["stock_name"] == "重复股"
-        assert len(r.weak_to_strong_d1_reviews) == 1
-        assert len(r.next_day_focus_stocks) == 1
+        assert len(r.strong_stock_pool_reviews) == 0
+        assert len(r.weak_to_strong_d1_reviews) == 0
+        assert len(r.next_day_focus_stocks) == 0
 
     def test_focus_stock_has_buy_invalid_conditions(self):
         e = PostMarketDecisionEngineV2()
@@ -219,6 +222,21 @@ class TestPostMarketDecisionV2:
         assert r.weak_to_strong_d1_reviews[0]["diagnostics"]["scoring_method"] == "blocked_by_market_regime"
         assert r.weak_to_strong_d1_reviews[0]["diagnostics"]["blocked_by_market_regime"] is True
         assert len(r.next_day_focus_stocks) == 0
+
+    def test_can_build_layer_c_without_d1_for_recap(self):
+        e = PostMarketDecisionEngineV2()
+        r = e.evaluate(
+            trade_date="2026-04-29",
+            confirmed_mainlines=[_ml()],
+            market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
+            stock_pool_rows=[_stock_row(score=85, entry="formal")],
+            build_d1=False,
+        )
+        assert len(r.strong_stock_pool_reviews) == 1
+        assert len(r.weak_to_strong_d1_reviews) == 0
+        assert len(r.next_day_focus_stocks) == 0
+        assert r.trading_principle_v2["strong_pool_count"] == 1
+        assert r.trading_principle_v2["d1_candidate_count"] == 0
 
     def test_ultra_short_top_n_limit(self):
         """ultra_short_only should cap D1 at 5."""

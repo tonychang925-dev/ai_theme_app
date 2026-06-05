@@ -395,8 +395,8 @@ def test_build_post_market_recap_job_backfills_strong_watch_count_from_reviews()
     asyncio.run(_run())
 
 
-def test_build_post_market_recap_job_persists_d1_into_recap_doc_tc_d1_001() -> None:
-    """TC-D1-001: D1 should land in recap_doc without producing C-layer pool writes."""
+def test_build_post_market_recap_job_does_not_generate_d1_in_recap_doc_tc_d1_001() -> None:
+    """TC-D1-001: recap must not synthesize D1 from candidate inputs."""
 
     class _D1OnlyReadPort(_FakeReadPort):
         async def get_strong_watch_seed_rows(self, trade_date: date, lookback_days: int = 7) -> list[dict[str, Any]]:
@@ -467,19 +467,18 @@ def test_build_post_market_recap_job_persists_d1_into_recap_doc_tc_d1_001() -> N
             batch_id="bpm-d1",
             trace_id="tpm-d1",
             skip_prereqs=True,
-            skip_layer_c=True,
         )
 
         assert result.status == "ok"
         assert result.affected_rows == 1
-        assert write_port.strong_watch_pool_rows == []
-        assert write_port.strong_watch_history_rows == []
+        assert len(write_port.w2s_candidate_pool_rows) == 0
         assert len(write_port.recap_docs) >= 2
 
         final_recap_doc = write_port.recap_docs[-1].recap_doc
         pdv2 = final_recap_doc["post_market_decision_v2"]
-        assert pdv2["diagnostics"]["d1_algorithm"] == "BuildWeakToStrongCandidateUseCase"
-        assert len(pdv2["weak_to_strong_d1_reviews"]) == 3
+        assert pdv2["diagnostics"]["d1_algorithm"] == "read_existing_w2s_candidates"
+        assert len(pdv2["weak_to_strong_d1_reviews"]) == 0
+        assert len(pdv2["next_day_focus_stocks"]) == 0
 
     asyncio.run(_run())
 
@@ -838,6 +837,9 @@ def test_build_post_market_recap_job_idempotency() -> None:
             idempotency_port=idempotency_port,
             cache_port=cache_port,
         )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
 
         r1 = await job.execute(trade_date=date(2026, 4, 23), snapshot_version="pm-v3",
                                 batch_id="bpm3", trace_id="tpm3")
@@ -953,6 +955,9 @@ def test_layer_c_contract_two_board_enters_pool_without_layer_a_b_state() -> Non
             event_port=_FakeEventPort(),
             idempotency_port=_FakeIdempotencyPort(),
             cache_port=_FakeCachePort(),
+        )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
         )
 
         result = await job.execute(
