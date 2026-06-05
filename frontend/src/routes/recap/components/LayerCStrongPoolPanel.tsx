@@ -40,26 +40,13 @@ function translatePoolEntryType(value?: string | null): string {
   return map[key] || key || "未知";
 }
 
-function translateRole(value?: string | null): string {
+function translateCandidateLevel(value?: string | null): string {
   const key = String(value || "").trim();
   const map: Record<string, string> = {
-    dragon: "龙头",
-    sub_dragon: "次龙头",
-    leader: "龙头",
-    sub_leader: "次龙头",
-    switch_leader: "卡位",
-    focus: "重点关注",
-    watch: "观察",
-    observe_only: "仅观察",
+    formal: "正式",
+    observe_only: "观察",
     reject: "淘汰",
     unknown: "未知",
-    龙头: "龙头",
-    次龙头: "次龙头",
-    卡位: "卡位",
-    观察: "观察",
-    仅观察: "仅观察",
-    淘汰: "淘汰",
-    重点关注: "重点关注",
   };
   return map[key] || key || "未知";
 }
@@ -77,10 +64,8 @@ function translateStatus(value?: string | null): string {
 }
 
 function isIncludedRow(row: Record<string, unknown>): boolean {
-  const role = String(row.role || row.role_label || row.relay_role || "").trim().toLowerCase();
   const candidateLevel = String(row.candidate_level || row.pool_entry_type || "").trim().toLowerCase();
   const watchStatus = String(row.watch_status || "").trim().toLowerCase();
-  if (role === "reject") return false;
   if (candidateLevel === "reject") return false;
   if (watchStatus === "removed") return false;
   return watchStatus === "active" || watchStatus === "weakening" || candidateLevel === "formal" || candidateLevel === "observe_only";
@@ -112,7 +97,7 @@ export default function LayerCStrongPoolPanel({ review, rows, title = "当天入
 
   const cols = [
     { title: "股票", dataIndex: "stock_name", key: "name", width: 110, render: (_: unknown, row: Record<string, unknown>) => <span>{String(row.stock_name || "--")}</span> },
-    { title: "角色", dataIndex: "role_label", key: "role", width: 90, render: (v: string, row: Record<string, unknown>) => translateRole(v || String(row.relay_role || row.role || "")) },
+    { title: "入围等级", dataIndex: "candidate_level", key: "role", width: 90, render: (v: string, row: Record<string, unknown>) => translateCandidateLevel(v || String(row.candidate_level || row.pool_entry_type || "")) },
     { title: "评分", dataIndex: "watch_score", key: "score", width: 62, render: (_: unknown, row: Record<string, unknown>) => Number(row.watch_score ?? row.composite_score ?? 0)?.toFixed(0) },
     { title: "级别", dataIndex: "candidate_level", key: "level", width: 96, render: (_: unknown, row: Record<string, unknown>) => {
       const value = String(row.pool_entry_type || row.candidate_level || "");
