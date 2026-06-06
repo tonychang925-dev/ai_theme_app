@@ -4,6 +4,7 @@ from datetime import date
 from typing import Any
 
 import pytest
+from fastapi import HTTPException
 
 from stock_processing_service import api_app
 
@@ -51,6 +52,31 @@ class _GatewayFake:
 
     async def get_w2s_candidate_inputs(self, *args, **kwargs):
         raise AssertionError("OneToTwo must not read D1 candidate inputs")
+
+
+@pytest.mark.asyncio
+async def test_daily_review_v2_watchlists_one_to_two_rejects_missing_summary_row(monkeypatch: pytest.MonkeyPatch) -> None:
+    class _MissingSummaryGateway(_GatewayFake):
+        async def get_post_market_setup_plan_rows(self, trade_date: date, setup_type: str = "one_to_two"):
+            return [
+                {
+                    "trade_date": trade_date,
+                    "watch_date": date(2026, 6, 5),
+                    "setup_type": "one_to_two",
+                    "stock_id": "000001.SZ",
+                    "subject_key": "sk_001",
+                    "decision": "observe_only",
+                }
+            ]
+
+    fake = _MissingSummaryGateway()
+    monkeypatch.setattr(api_app.app.state, "read_port", fake, raising=False)
+
+    with pytest.raises(HTTPException) as exc_info:
+        await api_app._build_one_to_two_watchlists(date(2026, 6, 4))
+
+    assert exc_info.value.status_code == 424
+    assert exc_info.value.detail["error_code"] == "SETUP_PLAN_SUMMARY_MISSING"
 
 
 @pytest.mark.asyncio

@@ -2091,24 +2091,36 @@ async def _build_one_to_two_watchlists(trade_date: date) -> dict[str, Any]:
         )
 
     summary_row = next((dict(r) for r in rows if str((r or {}).get("stock_id") or "") == "__SUMMARY__"), None)
+    if summary_row is None:
+        raise HTTPException(
+            status_code=424,
+            detail={
+                "error_code": "SETUP_PLAN_SUMMARY_MISSING",
+                "message": "Persisted one_to_two setup plan summary row missing",
+                "trade_date": trade_date.isoformat(),
+            },
+        )
     items = [dict(r) for r in rows if str((r or {}).get("stock_id") or "") != "__SUMMARY__"]
-    summary = {}
-    diagnostics = {}
-    if summary_row:
-        summary = _json_or_dict(summary_row.get("summary")) if "summary" in summary_row else {}
-        diagnostics = _json_or_dict(summary_row.get("diagnostics")) if "diagnostics" in summary_row else {}
-    if not summary:
-        summary = {
-            "trade_date": trade_date.isoformat(),
-            "watch_date": str((items[0].get("watch_date") if items else trade_date.isoformat()) or trade_date.isoformat()),
-            "focus_count": sum(1 for item in items if str(item.get("decision") or "") == "focus"),
-            "observe_only_count": sum(1 for item in items if str(item.get("decision") or "") == "observe_only"),
-            "pending_review_only_count": sum(1 for item in items if str(item.get("decision") or "") == "pending_review_only"),
-            "reject_count": sum(1 for item in items if str(item.get("decision") or "") == "reject"),
-            "empty_is_valid": True,
-        }
-    if not diagnostics:
-        diagnostics = {"empty_is_valid": True}
+    summary = _json_or_dict(summary_row.get("summary")) if "summary" in summary_row else {}
+    diagnostics = _json_or_dict(summary_row.get("diagnostics")) if "diagnostics" in summary_row else {}
+    if not isinstance(summary, dict) or not summary:
+        raise HTTPException(
+            status_code=424,
+            detail={
+                "error_code": "SETUP_PLAN_PAYLOAD_INVALID",
+                "message": "Persisted one_to_two setup plan summary payload invalid",
+                "trade_date": trade_date.isoformat(),
+            },
+        )
+    if not isinstance(diagnostics, dict):
+        raise HTTPException(
+            status_code=424,
+            detail={
+                "error_code": "SETUP_PLAN_PAYLOAD_INVALID",
+                "message": "Persisted one_to_two setup plan diagnostics payload invalid",
+                "trade_date": trade_date.isoformat(),
+            },
+        )
     return {"one_to_two": {"summary": summary, "items": items, "diagnostics": diagnostics}}
 
 
