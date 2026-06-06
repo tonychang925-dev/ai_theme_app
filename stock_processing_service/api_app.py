@@ -1335,6 +1335,19 @@ def _normalize_recap_payload(row: dict[str, Any]) -> dict[str, Any]:
     return {}
 
 
+def _json_or_dict(value: Any) -> dict[str, Any]:
+    if isinstance(value, dict):
+        return dict(value)
+    if isinstance(value, str) and value.strip():
+        try:
+            parsed = json.loads(value)
+            if isinstance(parsed, dict):
+                return parsed
+        except Exception:
+            return {}
+    return {}
+
+
 def _optional_import_status(module_name: str) -> dict[str, Any]:
     if importlib.util.find_spec(module_name) is None:
         return {"available": False, "version": None, "error": "module_not_found"}
@@ -2041,12 +2054,12 @@ async def review_trade_plan(payload: TradePlanReviewPayload) -> dict[str, Any]:
 
 
 async def _build_one_to_two_watchlists(trade_date: date) -> dict[str, Any]:
-    """Read DailyReviewV2.watchlists.one_to_two from persisted recap snapshot.
+    """Read DailyReviewV2.watchlists.one_to_two from persisted setup plan rows.
 
     This helper never recomputes the setup plan. Missing persisted plan is a
     precondition failure, not an empty result.
     """
-    read_port = getattr(app.state, "read_port", None) or getattr(app.state, "gateway", None)
+    read_port = getattr(app.state, "read_port", None)
     if read_port is None:
         raise HTTPException(
             status_code=500,
@@ -2056,37 +2069,47 @@ async def _build_one_to_two_watchlists(trade_date: date) -> dict[str, Any]:
                 "trade_date": trade_date.isoformat(),
             },
         )
-    row = await read_port.get_existing_post_market_recap_snapshot(trade_date)
-    if not row:
+    fn = getattr(read_port, "get_post_market_setup_plan_rows", None)
+    if not callable(fn):
         raise HTTPException(
-            status_code=424,
+            status_code=500,
             detail={
-                "error_code": "POST_MARKET_RECAP_SNAPSHOT_MISSING",
-                "message": "OneToTwo watchlists require persisted recap snapshot",
+                "error_code": "SETUP_PLAN_READ_METHOD_MISSING",
+                "message": "OneToTwo watchlists require get_post_market_setup_plan_rows",
                 "trade_date": trade_date.isoformat(),
             },
         )
-
-    payload = _normalize_recap_payload(row)
-    recap_doc = payload.get("recap_doc") or payload
-    if not isinstance(recap_doc, dict):
-        recap_doc = {}
-
-    plan = recap_doc.get("post_market_setup_plan")
-    if not isinstance(plan, dict) or not plan:
-        legacy_watchlists = recap_doc.get("watchlists")
-        if isinstance(legacy_watchlists, dict):
-            plan = legacy_watchlists.get("one_to_two")
-    if not isinstance(plan, dict) or not plan:
+    rows = await fn(trade_date, "one_to_two")
+    if not rows:
         raise HTTPException(
             status_code=424,
             detail={
                 "error_code": "ONE_TO_TWO_SETUP_PLAN_MISSING",
-                "message": "Persisted one_to_two setup plan missing from recap snapshot",
+                "message": "Persisted one_to_two setup plan missing",
                 "trade_date": trade_date.isoformat(),
             },
         )
-    return {"one_to_two": plan}
+
+    summary_row = next((dict(r) for r in rows if str((r or {}).get("stock_id") or "") == "__SUMMARY__"), None)
+    items = [dict(r) for r in rows if str((r or {}).get("stock_id") or "") != "__SUMMARY__"]
+    summary = {}
+    diagnostics = {}
+    if summary_row:
+        summary = _json_or_dict(summary_row.get("summary")) if "summary" in summary_row else {}
+        diagnostics = _json_or_dict(summary_row.get("diagnostics")) if "diagnostics" in summary_row else {}
+    if not summary:
+        summary = {
+            "trade_date": trade_date.isoformat(),
+            "watch_date": str((items[0].get("watch_date") if items else trade_date.isoformat()) or trade_date.isoformat()),
+            "focus_count": sum(1 for item in items if str(item.get("decision") or "") == "focus"),
+            "observe_only_count": sum(1 for item in items if str(item.get("decision") or "") == "observe_only"),
+            "pending_review_only_count": sum(1 for item in items if str(item.get("decision") or "") == "pending_review_only"),
+            "reject_count": sum(1 for item in items if str(item.get("decision") or "") == "reject"),
+            "empty_is_valid": True,
+        }
+    if not diagnostics:
+        diagnostics = {"empty_is_valid": True}
+    return {"one_to_two": {"summary": summary, "items": items, "diagnostics": diagnostics}}
 
 
 @app.get("/api/v1/daily_review")
@@ -2144,7 +2167,16 @@ async def get_daily_review_watchlists(
         raise HTTPException(status_code=400, detail="unsupported setup_type")
 
     watchlists = await _build_one_to_two_watchlists(d)
-    block = watchlists.get("one_to_two") or {}
+    block = watchlists.get("one_to_two")
+    if not isinstance(block, dict):
+        raise HTTPException(
+            status_code=424,
+            detail={
+                "error_code": "ONE_TO_TWO_SETUP_PLAN_MISSING",
+                "message": "Persisted one_to_two setup plan missing from watchlists",
+                "trade_date": trade_date,
+            },
+        )
     return {
         "trade_date": trade_date,
         "setup_type": "one_to_two",

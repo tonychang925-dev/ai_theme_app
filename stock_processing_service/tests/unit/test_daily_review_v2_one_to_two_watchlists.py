@@ -12,26 +12,24 @@ class _GatewayFake:
     async def get_trade_calendar(self, trade_date: date):
         return {"trade_date": trade_date, "calendar_is_open": True, "next_trade_date": date(2026, 6, 5)}
 
-    async def get_existing_post_market_recap_snapshot(self, trade_date: date):
-        return {
-            "trade_date": trade_date,
-            "snapshot_version": "snapshot-v1",
-            "batch_id": "batch",
-            "trace_id": "trace",
-            "recap_doc": {
-                "post_market_setup_plan": {
-                    "summary": {
-                        "focus_count": 0,
-                        "observe_only_count": 2,
-                        "pending_review_only_count": 1,
-                        "reject_count": 18,
-                        "empty_is_valid": True,
-                    },
-                    "items": [],
-                    "diagnostics": {"empty_is_valid": True},
-                }
-            },
-        }
+    async def get_post_market_setup_plan_rows(self, trade_date: date, setup_type: str = "one_to_two"):
+        return [
+            {
+                "trade_date": trade_date,
+                "watch_date": date(2026, 6, 5),
+                "setup_type": "one_to_two",
+                "stock_id": "__SUMMARY__",
+                "subject_key": "__SUMMARY__",
+                "summary": {
+                    "focus_count": 0,
+                    "observe_only_count": 2,
+                    "pending_review_only_count": 1,
+                    "reject_count": 18,
+                    "empty_is_valid": True,
+                },
+                "diagnostics": {"empty_is_valid": True},
+            }
+        ]
 
     async def get_active_confirmed_mainlines(self, trade_date=None, limit: int = 100):
         return []
@@ -58,7 +56,7 @@ class _GatewayFake:
 @pytest.mark.asyncio
 async def test_daily_review_v2_watchlists_one_to_two_empty_state_is_valid(monkeypatch: pytest.MonkeyPatch) -> None:
     fake = _GatewayFake()
-    monkeypatch.setattr(api_app.app.state, "gateway", fake, raising=False)
+    monkeypatch.setattr(api_app.app.state, "read_port", fake, raising=False)
 
     watchlists = await api_app._build_one_to_two_watchlists(date(2026, 6, 4))
     block = watchlists["one_to_two"]

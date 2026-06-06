@@ -34,6 +34,20 @@ async def test_daily_review_watchlists_api_returns_one_to_two_block(monkeypatch:
 
 
 @pytest.mark.asyncio
+async def test_daily_review_watchlists_api_rejects_missing_one_to_two_block(monkeypatch: pytest.MonkeyPatch) -> None:
+    async def _fake_watchlists(trade_date):
+        return {}
+
+    monkeypatch.setattr(api_app, "_build_one_to_two_watchlists", _fake_watchlists)
+
+    with pytest.raises(HTTPException) as exc_info:
+        await api_app.get_daily_review_watchlists("2026-06-04", setup_type="one_to_two")
+
+    assert exc_info.value.status_code == 424
+    assert exc_info.value.detail["error_code"] == "ONE_TO_TWO_SETUP_PLAN_MISSING"
+
+
+@pytest.mark.asyncio
 async def test_daily_review_watchlists_api_rejects_unsupported_setup_type() -> None:
     with pytest.raises(HTTPException):
         await api_app.get_daily_review_watchlists("2026-06-04", setup_type="weak_to_strong")
