@@ -93,6 +93,60 @@ async def test_daily_review_v2_watchlists_one_to_two_rejects_missing_summary_row
 
 
 @pytest.mark.asyncio
+async def test_daily_review_v2_watchlists_one_to_two_rejects_empty_summary_payload(monkeypatch: pytest.MonkeyPatch) -> None:
+    class _EmptySummaryGateway(_GatewayFake):
+        async def get_post_market_setup_plan_rows(self, trade_date: date, setup_type: str = "one_to_two"):
+            rows = await super().get_post_market_setup_plan_rows(trade_date, setup_type)
+            rows[0]["summary"] = {}
+            return rows
+
+    fake = _EmptySummaryGateway()
+    monkeypatch.setattr(api_app.app.state, "read_port", fake, raising=False)
+
+    with pytest.raises(HTTPException) as exc_info:
+        await api_app._build_one_to_two_watchlists(date(2026, 6, 4))
+
+    assert exc_info.value.status_code == 424
+    assert exc_info.value.detail["error_code"] == "SETUP_PLAN_PAYLOAD_INVALID"
+
+
+@pytest.mark.asyncio
+async def test_daily_review_v2_watchlists_one_to_two_rejects_invalid_diagnostics_payload(monkeypatch: pytest.MonkeyPatch) -> None:
+    class _InvalidDiagnosticsGateway(_GatewayFake):
+        async def get_post_market_setup_plan_rows(self, trade_date: date, setup_type: str = "one_to_two"):
+            rows = await super().get_post_market_setup_plan_rows(trade_date, setup_type)
+            rows[0]["diagnostics"] = ["bad", "diagnostics"]
+            return rows
+
+    fake = _InvalidDiagnosticsGateway()
+    monkeypatch.setattr(api_app.app.state, "read_port", fake, raising=False)
+
+    with pytest.raises(HTTPException) as exc_info:
+        await api_app._build_one_to_two_watchlists(date(2026, 6, 4))
+
+    assert exc_info.value.status_code == 424
+    assert exc_info.value.detail["error_code"] == "SETUP_PLAN_PAYLOAD_INVALID"
+
+
+@pytest.mark.asyncio
+async def test_daily_review_v2_watchlists_one_to_two_rejects_invalid_summary_payload(monkeypatch: pytest.MonkeyPatch) -> None:
+    class _InvalidSummaryGateway(_GatewayFake):
+        async def get_post_market_setup_plan_rows(self, trade_date: date, setup_type: str = "one_to_two"):
+            rows = await super().get_post_market_setup_plan_rows(trade_date, setup_type)
+            rows[0]["summary"] = ["bad", "summary"]
+            return rows
+
+    fake = _InvalidSummaryGateway()
+    monkeypatch.setattr(api_app.app.state, "read_port", fake, raising=False)
+
+    with pytest.raises(HTTPException) as exc_info:
+        await api_app._build_one_to_two_watchlists(date(2026, 6, 4))
+
+    assert exc_info.value.status_code == 424
+    assert exc_info.value.detail["error_code"] == "SETUP_PLAN_PAYLOAD_INVALID"
+
+
+@pytest.mark.asyncio
 async def test_daily_review_v2_watchlists_one_to_two_empty_state_is_valid(monkeypatch: pytest.MonkeyPatch) -> None:
     fake = _GatewayFake()
     monkeypatch.setattr(api_app.app.state, "read_port", fake, raising=False)

@@ -2101,8 +2101,8 @@ async def _build_one_to_two_watchlists(trade_date: date) -> dict[str, Any]:
             },
         )
     items = [dict(r) for r in rows if str((r or {}).get("stock_id") or "") != "__SUMMARY__"]
-    summary = _json_or_dict(summary_row.get("summary")) if "summary" in summary_row else {}
-    diagnostics = _json_or_dict(summary_row.get("diagnostics")) if "diagnostics" in summary_row else {}
+    summary = summary_row.get("summary") if "summary" in summary_row else {}
+    diagnostics = summary_row.get("diagnostics") if "diagnostics" in summary_row else {}
     if not isinstance(summary, dict) or not summary:
         raise HTTPException(
             status_code=424,
