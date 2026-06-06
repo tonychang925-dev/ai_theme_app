@@ -76,7 +76,7 @@ class OneToTwoBacktestFeatureSnapshotService:
                 current += timedelta(days=1)
                 continue
 
-            source_doc = await self._safe_get_report_context(current)
+            source_doc = await self._get_report_context(current)
             plan = await self._engine.build(current, self._read, source_doc=source_doc)
             candidate_features = list(plan.candidate_features or [])
             if not candidate_features:
@@ -426,11 +426,13 @@ class OneToTwoBacktestFeatureSnapshotService:
         except Exception:
             return None
 
-    async def _safe_get_report_context(self, trade_date: date) -> dict[str, Any]:
+    async def _get_report_context(self, trade_date: date) -> dict[str, Any]:
         try:
             return dict(await self._read.get_post_market_report_context(trade_date) or {})
-        except Exception:
-            return {}
+        except Exception as exc:
+            raise RuntimeError(
+                f"failed to load post_market_report_context for one_to_two snapshot: {trade_date.isoformat()}"
+            ) from exc
 
     def _parse_date(self, value: Any) -> date | None:
         if value is None or value == "":

@@ -56,6 +56,11 @@ class _ReadPort:
         }
 
 
+class _BrokenReadPort(_ReadPort):
+    async def get_post_market_report_context(self, trade_date: date) -> dict[str, object]:
+        raise RuntimeError("report context boom")
+
+
 class _Engine:
     async def build(self, trade_date: date, read_port, source_doc=None):
         return OneToTwoSetupPlanDTO(
@@ -182,4 +187,23 @@ async def test_one_to_two_backtest_snapshot_force_rebuild_delete_failure_raises(
             start_date=date(2026, 6, 4),
             end_date=date(2026, 6, 4),
             force_rebuild=True,
+        )
+
+
+@pytest.mark.asyncio
+async def test_one_to_two_backtest_snapshot_report_context_failure_raises() -> None:
+    gw = _Gateway()
+    service = OneToTwoBacktestFeatureSnapshotService(
+        _BrokenReadPort(),
+        gw,
+        engine=_Engine(),
+        data_quality_service=_DQPass(),
+    )
+
+    with pytest.raises(RuntimeError, match="failed to load post_market_report_context for one_to_two snapshot"):
+        await service.build(
+            run_id="run-001",
+            start_date=date(2026, 6, 4),
+            end_date=date(2026, 6, 4),
+            force_rebuild=False,
         )
