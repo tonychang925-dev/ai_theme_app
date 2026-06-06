@@ -34,7 +34,7 @@ class OneToTwoBacktestFeatureSnapshotService:
         self._read = read_port
         self._gw = gateway
         self._engine = engine or OneToTwoSetupPlanEngine()
-        self._data_quality = data_quality_service or OneToTwoBacktestDataQualityService(read_port, engine=self._engine)
+        self._data_quality = data_quality_service or OneToTwoBacktestDataQualityService(read_port)
 
     async def build(
         self,
@@ -95,7 +95,23 @@ class OneToTwoBacktestFeatureSnapshotService:
                 )
                 for index, row in enumerate(candidate_features, start=1)
             ]
-            written += await self._write_snapshots(rows)
+            seen_keys: set[tuple[str, str]] = set()
+            for row in rows:
+                stock_id = str(row.get("stock_id") or "").strip()
+                subject_key = str(row.get("subject_key") or "").strip()
+                if not stock_id:
+                    raise RuntimeError("one_to_two snapshot candidate missing stock_id")
+                key = (stock_id, subject_key)
+                if key in seen_keys:
+                    raise RuntimeError(
+                        f"duplicate one_to_two snapshot key for trade_date={current.isoformat()} "
+                        f"stock_id={stock_id} subject_key={subject_key or '<empty>'}"
+                    )
+                seen_keys.add(key)
+            written_batch = await self._write_snapshots(rows)
+            if written_batch != len(rows):
+                raise RuntimeError("failed to write one_to_two backtest feature snapshot")
+            written += written_batch
             snapshot_count += len(rows)
             non_empty_days += 1
             for row in candidate_features:
@@ -133,7 +149,10 @@ class OneToTwoBacktestFeatureSnapshotService:
             return 0
         fn = getattr(self._gw, "upsert_w2s_backtest_feature_snapshots", None)
         if callable(fn):
-            return await fn(snapshots)
+            written = await fn(snapshots)
+            if written != len(snapshots):
+                raise RuntimeError("failed to write one_to_two backtest feature snapshot")
+            return written
         return await self._write_via_raw_sql(snapshots)
 
     async def _write_via_raw_sql(self, snapshots: list[dict[str, Any]]) -> int:
@@ -257,7 +276,10 @@ class OneToTwoBacktestFeatureSnapshotService:
                 )
                 written += 1
             except Exception as exc:
-                logger.error("Failed to write OneToTwo snapshot for %s: %s", row.get("stock_id"), exc)
+                logger.exception("Failed to write OneToTwo snapshot for %s", row.get("stock_id"))
+                raise RuntimeError("failed to write one_to_two backtest feature snapshot") from exc
+        if written != len(snapshots):
+            raise RuntimeError("failed to write one_to_two backtest feature snapshot")
         return written
 
     def _to_snapshot_row(
@@ -328,6 +350,7 @@ class OneToTwoBacktestFeatureSnapshotService:
             "source_chain": "stock_processing_service.one_to_two_setup_plan",
             "source_table": "w2s_backtest_feature_snapshot",
             "source_snapshot_version": strategy_version,
+            "run_type": "backtest",
         }
         source_trace = {
             "source_chain": "stock_processing_service.one_to_two_setup_plan",
@@ -336,6 +359,8 @@ class OneToTwoBacktestFeatureSnapshotService:
             "source_strategy_id": strategy_id,
             "source_run_id": run_id,
             "source_trade_date": trade_date.isoformat(),
+            "run_type": "backtest",
+            "missing_subject_key": not bool(str(candidate.get("subject_key") or "").strip()),
             "candidate_index": candidate_index,
         }
 
@@ -392,7 +417,8 @@ class OneToTwoBacktestFeatureSnapshotService:
                 [run_id],
             )
         except Exception as exc:
-            logger.warning("Failed to delete OneToTwo snapshots for run_id=%s: %s", run_id, exc)
+            logger.exception("Failed to delete OneToTwo snapshots for run_id=%s", run_id)
+            raise RuntimeError("failed to delete existing one_to_two snapshots") from exc
 
     async def _safe_get_trade_calendar(self, trade_date: date) -> Any | None:
         try:

@@ -8,7 +8,6 @@ import pytest
 from stock_processing_service.application.services.backtest.one_to_two_backtest_data_quality_service import (
     OneToTwoBacktestDataQualityService,
 )
-from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoSetupPlanDTO
 from stock_processing_service.contracts.dto.trade_calendar_dto import TradeCalendarDTO
 
 
@@ -99,42 +98,20 @@ class _ReadPortBase:
         ]
 
 
-class _Engine:
-    def build_from_context(self, ctx):
-        return OneToTwoSetupPlanDTO(
-            summary={"focus_count": 1, "observe_only_count": 0, "pending_review_only_count": 0, "reject_count": 0},
-            items=[],
-            diagnostics={},
-            candidate_features=[
-                {
-                    "trade_date": ctx.trade_date,
-                    "watch_date": ctx.watch_date,
-                    "stock_id": "600367.SH",
-                    "stock_name": "红星发展",
-                    "subject_key": "mainline_ai",
-                    "subject_name": "主线AI",
-                    "decision": "focus",
-                    "veto_reasons": [],
-                    "risk_flags": ["mainline"],
-                    "first_board_quality_score": Decimal("91.5"),
-                    "mainline_context_score": Decimal("88.0"),
-                    "technical_structure_score": Decimal("89.0"),
-                    "risk_control_score": Decimal("95.0"),
-                    "final_score": Decimal("93.2"),
-                    "watch_level": "focus",
-                    "summary": "focus candidate",
-                    "evidence_rules": ["rule-a"],
-                    "data_quality_json": {"source": "unit"},
-                    "source_trace_json": {"source_chain": "unit"},
-                    "missing_features": [],
-                }
-            ],
-        )
+@pytest.mark.asyncio
+async def test_data_quality_does_not_call_setup_plan_engine() -> None:
+    service = OneToTwoBacktestDataQualityService(_ReadPortBase())
+
+    report = await service.check(date(2026, 6, 4), date(2026, 6, 4))
+
+    assert report["blocked"] is False
+    assert report["generation_quality"]["blocking"] is False
+    assert report["validation_quality"]["blocking"] is False
 
 
 @pytest.mark.asyncio
 async def test_one_to_two_backtest_data_quality_passes_on_complete_sources() -> None:
-    service = OneToTwoBacktestDataQualityService(_ReadPortBase(), engine=_Engine())
+    service = OneToTwoBacktestDataQualityService(_ReadPortBase())
 
     report = await service.check(date(2026, 6, 4), date(2026, 6, 4))
 
@@ -150,7 +127,6 @@ async def test_one_to_two_backtest_data_quality_passes_on_complete_sources() -> 
 async def test_one_to_two_backtest_data_quality_blocks_on_missing_market_regime() -> None:
     service = OneToTwoBacktestDataQualityService(
         _ReadPortBase(missing_market_regime=True),
-        engine=_Engine(),
     )
 
     report = await service.check(date(2026, 6, 4), date(2026, 6, 4))
@@ -158,3 +134,17 @@ async def test_one_to_two_backtest_data_quality_blocks_on_missing_market_regime(
     assert report["blocked"] is True
     assert report["generation_quality"]["blocking"] is True
     assert report["blocking_errors"]
+
+
+@pytest.mark.asyncio
+async def test_one_to_two_backtest_data_quality_blocks_on_generation_source_exception() -> None:
+    class _BrokenReadPort(_ReadPortBase):
+        async def get_post_market_report_context(self, trade_date: date) -> dict[str, object]:
+            raise RuntimeError("boom")
+
+    service = OneToTwoBacktestDataQualityService(_BrokenReadPort())
+
+    report = await service.check(date(2026, 6, 4), date(2026, 6, 4))
+
+    assert report["blocked"] is True
+    assert any("get_post_market_report_context" in err for err in report["blocking_errors"])

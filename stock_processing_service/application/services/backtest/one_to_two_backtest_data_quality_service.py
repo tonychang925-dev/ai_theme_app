@@ -4,9 +4,6 @@ from dataclasses import dataclass, field
 from datetime import date, timedelta
 from typing import Any
 
-from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
-    OneToTwoSetupPlanEngine,
-)
 from stock_processing_service.application.services.post_market_setup_fact_context_builder import (
     PostMarketSetupFactContextBuilder,
 )
@@ -24,7 +21,6 @@ class OneToTwoBacktestDataQualityReport:
     end_date: date
     open_days_total: int = 0
     generation_ready_days: int = 0
-    candidate_days_total: int = 0
     validation_ready_days: int = 0
     missing_outcome_days: int = 0
     daily_bar_coverage_ratio: float = 0.0
@@ -44,7 +40,6 @@ class OneToTwoBacktestDataQualityReport:
             "end_date": self.end_date.isoformat(),
             "open_days_total": self.open_days_total,
             "generation_ready_days": self.generation_ready_days,
-            "candidate_days_total": self.candidate_days_total,
             "validation_ready_days": self.validation_ready_days,
             "missing_outcome_days": self.missing_outcome_days,
             "daily_bar_coverage_ratio": self.daily_bar_coverage_ratio,
@@ -66,11 +61,9 @@ class OneToTwoBacktestDataQualityService:
     def __init__(
         self,
         read_port: Any,
-        engine: OneToTwoSetupPlanEngine | None = None,
         context_builder: PostMarketSetupFactContextBuilder | None = None,
     ) -> None:
         self._read = read_port
-        self._engine = engine or OneToTwoSetupPlanEngine()
         self._context_builder = context_builder or PostMarketSetupFactContextBuilder(read_port)
 
     async def check(self, start_date: date, end_date: date) -> dict[str, Any]:
@@ -90,9 +83,14 @@ class OneToTwoBacktestDataQualityService:
 
             report.open_days_total += 1
             try:
-                source_doc = await self._safe_get_report_context(current)
+                source_doc = await self._read.get_post_market_report_context(current)
+            except Exception as exc:
+                report.blocking_errors.append(f"{current.isoformat()}: get_post_market_report_context: {exc}")
+                current += timedelta(days=1)
+                continue
+
+            try:
                 ctx = await self._context_builder.build(current, source_doc=source_doc)
-                plan = self._engine.build_from_context(ctx)
 
                 source_status = dict(ctx.diagnostics.source_status or {})
                 if self._generation_ready(source_status):
@@ -109,30 +107,17 @@ class OneToTwoBacktestDataQualityService:
                 if bool(ctx.limit_up_rows):
                     limit_up_pass += 1
 
-                if plan.candidate_features:
-                    report.candidate_days_total += 1
-                    watch_date = self._parse_date(getattr(ctx, "watch_date", None))
-                    if watch_date is None:
-                        report.blocking_errors.append(
-                            f"{current.isoformat()}: missing watch_date in setup context"
-                        )
-                    else:
-                        candidate_stock_ids = sorted(
-                            {
-                                str(row.get("stock_id") or "")
-                                for row in plan.candidate_features
-                                if str(row.get("stock_id") or "").strip()
-                            }
-                        )
-                        watch_bars = await self._safe_get_stock_bars(watch_date, candidate_stock_ids)
-                        if watch_bars:
-                            validation_pass += 1
-                        else:
-                            report.missing_outcome_days += 1
+                watch_date = self._parse_date(getattr(ctx, "watch_date", None))
+                if watch_date is None:
+                    report.blocking_errors.append(f"{current.isoformat()}: missing watch_date in setup context")
                 else:
-                    report.diagnostics.setdefault("empty_days", []).append(current.isoformat())
+                    watch_bars = await self._safe_get_stock_bars(watch_date, None)
+                    if watch_bars:
+                        validation_pass += 1
+                    else:
+                        report.missing_outcome_days += 1
             except SetupFactContextBuildError as exc:
-                report.blocking_errors.append(f"{current.isoformat()}: {exc}")
+                report.blocking_errors.append(f"{current.isoformat()}: context_build_failed: {exc}")
             except Exception as exc:
                 report.blocking_errors.append(f"{current.isoformat()}: {exc}")
             current += timedelta(days=1)
@@ -143,9 +128,7 @@ class OneToTwoBacktestDataQualityService:
         report.mainline_context_coverage_ratio = mainline_pass / report.open_days_total if report.open_days_total else 0.0
         report.limit_up_fact_coverage_ratio = limit_up_pass / report.open_days_total if report.open_days_total else 0.0
         report.validation_ready_days = validation_pass
-        report.next_day_bar_coverage_ratio = (
-            validation_pass / report.candidate_days_total if report.candidate_days_total else 0.0
-        )
+        report.next_day_bar_coverage_ratio = validation_pass / report.open_days_total if report.open_days_total else 0.0
 
         report.blocked = bool(report.blocking_errors) or report.daily_bar_coverage_ratio < BLOCK_GENERATION_THRESHOLD
         if report.blocked and not report.block_reason:
@@ -157,9 +140,9 @@ class OneToTwoBacktestDataQualityService:
             else:
                 report.block_reason = "generation blocking errors present"
 
-        if report.candidate_days_total < 30:
+        if report.open_days_total < 30:
             report.warnings.append(
-                f"候选日仅 {report.candidate_days_total} 天，统计区分度可能不足。"
+                f"观测日仅 {report.open_days_total} 天，统计区分度可能不足。"
             )
         if report.missing_outcome_days > 0:
             report.warnings.append(
@@ -179,7 +162,7 @@ class OneToTwoBacktestDataQualityService:
                 "blocking": False,
                 "next_day_bar_coverage_ratio": report.next_day_bar_coverage_ratio,
                 "missing_outcome_days": report.missing_outcome_days,
-                "candidate_days_total": report.candidate_days_total,
+                "open_days_total": report.open_days_total,
             },
             "open_days_total": report.open_days_total,
             "generation_ready_days": report.generation_ready_days,
@@ -195,13 +178,6 @@ class OneToTwoBacktestDataQualityService:
             return await self._read.get_trade_calendar(trade_date)
         except Exception:
             return None
-
-    async def _safe_get_report_context(self, trade_date: date) -> dict[str, Any]:
-        try:
-            ctx = await self._read.get_post_market_report_context(trade_date)
-        except Exception:
-            return {}
-        return dict(ctx or {})
 
     async def _safe_get_stock_bars(self, trade_date: date, stock_ids: list[str]) -> list[Any]:
         try:
