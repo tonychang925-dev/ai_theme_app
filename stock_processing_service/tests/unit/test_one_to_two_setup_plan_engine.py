@@ -10,6 +10,7 @@ import pytest
 from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
     OneToTwoSetupPlanEngine,
 )
+from stock_processing_service.application.jobs.build_post_market_recap_job import BuildPostMarketRecapJob
 from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoFeatures
 from stock_processing_service.contracts.dto.post_market_setup_context_dto import (
     PostMarketSetupFactContext,
@@ -340,3 +341,131 @@ def test_one_to_two_candidate_features_include_rejects_for_audit() -> None:
     assert len(result.items) == 1
     assert result.summary["reject_count"] == 1
     assert any(feature["decision"] == "reject" for feature in result.candidate_features)
+
+
+@pytest.mark.asyncio
+async def test_one_to_two_plan_and_candidate_feature_round_trip_by_setup_type() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    engine.candidate_service.build_fact_pool = lambda ctx: [  # type: ignore[assignment]
+        OneToTwoFeatures(
+            trade_date="2026-06-04",
+            watch_date="2026-06-05",
+            stock_id="600367.SH",
+            stock_name="红星发展",
+            subject_key="mainline_ai",
+            subject_name="AI",
+            is_confirmed_mainline=True,
+            is_strong_hotspot=True,
+            mainline_or_hotspot_state="confirmed_mainline",
+            lifecycle_state="start",
+            market_trade_mode="mainline_ultra_short_only",
+            allow_trade=True,
+            is_first_limit_up=True,
+            is_one_word_board=False,
+            is_late_seal=False,
+            first_limit_time="10:18:00",
+            open_board_count=1,
+            turnover_rate=Decimal("0.18"),
+            amount=Decimal("1000000000"),
+            close_seal_amount=Decimal("50000000"),
+            seal_ratio=Decimal("0.8"),
+            float_mcap=Decimal("12000000000"),
+            position_120=Decimal("0.3"),
+            is_downtrend=False,
+            near_pressure=False,
+            same_subject_limit_count=3,
+            same_subject_strong_count=2,
+            data_quality={"missing_required": []},
+            source_trace={"source": "unit"},
+        ),
+        OneToTwoFeatures(
+            trade_date="2026-06-04",
+            watch_date="2026-06-05",
+            stock_id="600403.SH",
+            stock_name="大有能源",
+            subject_key="coal",
+            subject_name="煤炭",
+            is_confirmed_mainline=True,
+            is_strong_hotspot=False,
+            mainline_or_hotspot_state="confirmed_mainline",
+            lifecycle_state="start",
+            market_trade_mode="mainline_ultra_short_only",
+            allow_trade=True,
+            is_first_limit_up=True,
+            is_one_word_board=True,
+            is_late_seal=False,
+            first_limit_time="09:25:00",
+            open_board_count=0,
+            turnover_rate=Decimal("0.10"),
+            amount=Decimal("1000000000"),
+            close_seal_amount=Decimal("50000000"),
+            seal_ratio=Decimal("0.8"),
+            float_mcap=Decimal("12000000000"),
+            position_120=Decimal("0.3"),
+            is_downtrend=False,
+            near_pressure=False,
+            same_subject_limit_count=3,
+            same_subject_strong_count=2,
+            data_quality={"missing_required": []},
+            source_trace={"source": "unit"},
+        ),
+    ]
+
+    plan = engine.build_from_context(_setup_context())
+    setup_plan_rows, candidate_feature_rows = BuildPostMarketRecapJob._build_one_to_two_persist_rows(plan)
+
+    class _Store:
+        def __init__(self):
+            self.plan_rows: list[dict[str, Any]] = []
+            self.feature_rows: list[dict[str, Any]] = []
+
+        async def upsert_post_market_setup_plan_rows(self, rows):
+            self.plan_rows.extend(rows)
+            return len(rows)
+
+        async def upsert_one_to_two_candidate_feature_rows(self, rows):
+            self.feature_rows.extend(rows)
+            return len(rows)
+
+        async def get_post_market_setup_plan_rows(self, trade_date, setup_type="one_to_two"):
+            return [
+                row for row in self.plan_rows
+                if str(row.get("trade_date")) == str(trade_date)
+                and str(row.get("setup_type") or "") == setup_type
+            ]
+
+        async def get_one_to_two_candidate_feature_rows(self, trade_date, setup_type="one_to_two"):
+            return [
+                row for row in self.feature_rows
+                if str(row.get("trade_date")) == str(trade_date)
+                and str(row.get("setup_type") or "") == setup_type
+            ]
+
+    store = _Store()
+    await store.upsert_post_market_setup_plan_rows(setup_plan_rows)
+    await store.upsert_one_to_two_candidate_feature_rows(candidate_feature_rows)
+    store.feature_rows.append(
+        {
+            "trade_date": "2026-06-04",
+            "watch_date": "2026-06-05",
+            "setup_type": "other_setup",
+            "stock_id": "999999.SH",
+            "subject_key": "other",
+            "decision": "reject",
+            "veto_reasons": ["other"],
+        }
+    )
+
+    plan_rows = await store.get_post_market_setup_plan_rows("2026-06-04", "one_to_two")
+    feature_rows = await store.get_one_to_two_candidate_feature_rows("2026-06-04", "one_to_two")
+    other_rows = await store.get_one_to_two_candidate_feature_rows("2026-06-04", "other_setup")
+
+    assert len([row for row in plan_rows if row["stock_id"] == "__SUMMARY__"]) == 1
+    assert len([row for row in plan_rows if row["stock_id"] != "__SUMMARY__"]) == len(plan.items)
+    assert len(feature_rows) == len(plan.candidate_features)
+    assert all(row["stock_id"] != "__SUMMARY__" for row in feature_rows)
+    assert len(other_rows) == 1
+    assert other_rows[0]["setup_type"] == "other_setup"
+    assert any(row["decision"] == "reject" for row in feature_rows)
+    assert all(isinstance(row.get("veto_reasons"), list) or row.get("veto_reasons") is None for row in feature_rows)
+    assert all(row.get("setup_type") == "one_to_two" for row in feature_rows)

@@ -57,12 +57,14 @@ class OneToTwoSetupPlanEngine:
         fact_pool = self.candidate_service.build_fact_pool(ctx)
 
         items: list[dict[str, Any]] = []
+        candidate_features: list[dict[str, Any]] = []
         reject_reasons: Counter[str] = Counter()
         reject_count = 0
 
         for features in fact_pool:
             rule = self.rule_engine.apply(features)
             score = self.scorer.score(features, rule)
+            candidate_features.append(self._to_candidate_feature_item(features, rule, score))
             if rule.decision == "reject":
                 reject_count += 1
                 reject_reasons.update(rule.veto_reasons)
@@ -80,6 +82,8 @@ class OneToTwoSetupPlanEngine:
             ),
         )
         summary = {
+            "trade_date": ctx.trade_date,
+            "watch_date": ctx.watch_date,
             "focus_count": sum(1 for item in items if item["decision"] == "focus"),
             "observe_only_count": sum(1 for item in items if item["decision"] == "observe_only"),
             "pending_review_only_count": sum(1 for item in items if item["decision"] == "pending_review_only"),
@@ -93,7 +97,12 @@ class OneToTwoSetupPlanEngine:
             "blocking_errors": list(ctx.diagnostics.blocking_errors),
             "non_blocking_warnings": list(ctx.diagnostics.non_blocking_warnings),
         }
-        return OneToTwoSetupPlanDTO(summary=summary, items=items, diagnostics=diagnostics)
+        return OneToTwoSetupPlanDTO(
+            summary=summary,
+            items=items,
+            diagnostics=diagnostics,
+            candidate_features=candidate_features,
+        )
 
     def _to_plan_item(
         self,
@@ -146,3 +155,59 @@ class OneToTwoSetupPlanEngine:
             evidence.append(f"watch_level={score.watch_level}")
         evidence.extend(rule.risk_flags)
         return evidence
+
+    def _to_candidate_feature_item(
+        self,
+        f: OneToTwoFeatures,
+        rule: RuleResult,
+        score: ScoreResult,
+    ) -> dict[str, Any]:
+        return {
+            "setup_type": "one_to_two",
+            "trade_date": f.trade_date,
+            "watch_date": f.watch_date,
+            "stock_id": f.stock_id,
+            "stock_name": f.stock_name,
+            "subject_key": f.subject_key,
+            "subject_name": f.subject_name,
+            "is_confirmed_mainline": f.is_confirmed_mainline,
+            "is_strong_hotspot": f.is_strong_hotspot,
+            "mainline_or_hotspot_state": f.mainline_or_hotspot_state,
+            "lifecycle_state": f.lifecycle_state,
+            "market_trade_mode": f.market_trade_mode,
+            "allow_trade": f.allow_trade,
+            "is_first_limit_up": f.is_first_limit_up,
+            "is_one_word_board": f.is_one_word_board,
+            "is_late_seal": f.is_late_seal,
+            "first_limit_time": f.first_limit_time,
+            "open_board_count": f.open_board_count,
+            "turnover_rate": f.turnover_rate,
+            "amount": f.amount,
+            "close_seal_amount": f.close_seal_amount,
+            "seal_ratio": f.seal_ratio,
+            "float_mcap": f.float_mcap,
+            "position_120": f.position_120,
+            "is_downtrend": f.is_downtrend,
+            "near_pressure": f.near_pressure,
+            "same_subject_limit_count": f.same_subject_limit_count,
+            "same_subject_strong_count": f.same_subject_strong_count,
+            "decision": rule.decision,
+            "veto_reasons": list(rule.veto_reasons),
+            "risk_flags": list(rule.risk_flags),
+            "first_board_quality_score": score.score_detail.get("first_board_quality"),
+            "mainline_context_score": score.score_detail.get("board_breadth"),
+            "technical_structure_score": score.score_detail.get("lifecycle"),
+            "risk_control_score": score.score_detail.get("risk_control"),
+            "final_score": float(score.final_score) if score.final_score is not None else None,
+            "watch_level": score.watch_level,
+            "feature_json": {
+                "trade_date": f.trade_date,
+                "watch_date": f.watch_date,
+                "stock_id": f.stock_id,
+                "stock_name": f.stock_name,
+                "subject_key": f.subject_key,
+                "subject_name": f.subject_name,
+            },
+            "data_quality_json": dict(f.data_quality),
+            "source_trace_json": dict(f.source_trace),
+        }

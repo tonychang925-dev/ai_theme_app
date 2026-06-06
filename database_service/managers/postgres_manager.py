@@ -5574,7 +5574,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         await self._ensure_one_to_two_setup_tables()
         sql = """
         INSERT INTO one_to_two_candidate_feature (
-            trade_date, watch_date, stock_id, stock_name,
+            trade_date, watch_date, setup_type, stock_id, stock_name,
             subject_key, subject_name, mainline_id,
             is_confirmed_mainline, is_strong_hotspot, mainline_or_hotspot_state,
             lifecycle_state, market_trade_mode,
@@ -5587,20 +5587,20 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             risk_control_score, final_score, decision, veto_reasons,
             feature_json, data_quality_json, source_trace_json
         ) VALUES (
-            $1::date, $2::date, $3, $4,
-            $5, $6, $7,
-            $8::boolean, $9::boolean, $10,
-            $11, $12,
-            $13::boolean, $14::boolean, $15::boolean,
-            $16, $17,
-            $18::numeric, $19::numeric, $20::numeric, $21::numeric,
-            $22::numeric, $23::numeric, $24::numeric, $25::numeric,
-            $26::boolean, $27::boolean, $28, $29,
-            $30::numeric, $31::numeric, $32::numeric,
-            $33::numeric, $34::numeric, $35, $36::jsonb,
-            $37::jsonb, $38::jsonb, $39::jsonb
+            $1::date, $2::date, $3, $4, $5,
+            $6, $7, $8,
+            $9::boolean, $10::boolean, $11,
+            $12, $13,
+            $14::boolean, $15::boolean, $16::boolean,
+            $17, $18,
+            $19::numeric, $20::numeric, $21::numeric, $22::numeric,
+            $23::numeric, $24::numeric, $25::numeric, $26::numeric,
+            $27::boolean, $28::boolean, $29, $30,
+            $31::numeric, $32::numeric, $33::numeric,
+            $34::numeric, $35::numeric, $36, $37::jsonb,
+            $38::jsonb, $39::jsonb, $40::jsonb
         )
-        ON CONFLICT (trade_date, stock_id, subject_key) DO UPDATE SET
+        ON CONFLICT (trade_date, setup_type, stock_id, subject_key) DO UPDATE SET
           stock_name = EXCLUDED.stock_name,
           subject_name = EXCLUDED.subject_name,
           mainline_id = EXCLUDED.mainline_id,
@@ -5651,6 +5651,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             payload.append((
                 trade_date,
                 watch_date,
+                str(row.get("setup_type") or "one_to_two"),
                 str(row.get("stock_id") or ""),
                 str(row.get("stock_name") or ""),
                 str(row.get("subject_key") or ""),
@@ -5725,15 +5726,15 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         SELECT *
         FROM one_to_two_candidate_feature
         WHERE trade_date = $1::date
+          AND setup_type = $2
         ORDER BY
-          CASE WHEN stock_id = '__SUMMARY__' THEN 0 ELSE 1 END,
           COALESCE(final_score, -1) DESC,
           stock_id ASC,
           subject_key ASC
         """
         try:
             async with self.pool.acquire() as conn:
-                rows = await conn.fetch(sql, trade_date)
+                rows = await conn.fetch(sql, trade_date, setup_type)
             return [dict(r) for r in rows]
         except Exception as e:
             logger.warning(f"读取 one_to_two_candidate_feature 失败: {e}")
@@ -5798,6 +5799,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             trade_date DATE NOT NULL,
             watch_date DATE NOT NULL,
 
+            setup_type TEXT NOT NULL DEFAULT 'one_to_two',
+
             stock_id TEXT NOT NULL,
             stock_name TEXT,
 
@@ -5850,12 +5853,42 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             CONSTRAINT chk_one_to_two_feature_decision
                 CHECK (decision IS NULL OR decision IN ('focus', 'observe_only', 'pending_review_only', 'reject')),
 
-            UNIQUE (trade_date, stock_id, subject_key)
+            UNIQUE (trade_date, setup_type, stock_id, subject_key)
         );
         """
         try:
             async with self.pool.acquire() as conn:
                 await conn.execute(sql)
+                await conn.execute(
+                    """
+                    ALTER TABLE one_to_two_candidate_feature
+                    ADD COLUMN IF NOT EXISTS setup_type TEXT NOT NULL DEFAULT 'one_to_two'
+                    """
+                )
+                await conn.execute(
+                    """
+                    CREATE UNIQUE INDEX IF NOT EXISTS idx_one_to_two_candidate_feature_uq
+                    ON one_to_two_candidate_feature (trade_date, setup_type, stock_id, subject_key)
+                    """
+                )
+                await conn.execute(
+                    """
+                    DO $$
+                    DECLARE conname text;
+                    BEGIN
+                      SELECT c.conname
+                      INTO conname
+                      FROM pg_constraint c
+                      JOIN pg_class t ON c.conrelid = t.oid
+                      WHERE t.relname = 'one_to_two_candidate_feature'
+                        AND c.contype = 'u'
+                        AND pg_get_constraintdef(c.oid) = 'UNIQUE (trade_date, stock_id, subject_key)';
+                      IF conname IS NOT NULL THEN
+                        EXECUTE format('ALTER TABLE one_to_two_candidate_feature DROP CONSTRAINT %I', conname);
+                      END IF;
+                    END $$;
+                    """
+                )
         except Exception as e:
             logger.warning(f"创建 one_to_two setup tables 失败（可能尚未迁移）: {e}")
 
