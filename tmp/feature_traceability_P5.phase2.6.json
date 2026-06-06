@@ -1,0 +1,127 @@
+{
+  "phase": "P5.phase2.6",
+  "gate_ready": true,
+  "tasks": [
+    {
+      "task_id": "P5.phase2.6-T01",
+      "requirement_ids": [
+        "REQ-P5P26-CONTRACT",
+        "REQ-P5P26-NO-FUTURE-LEAK",
+        "REQ-P5P26-NO-LAYER-C-D1"
+      ],
+      "acceptance_ids": [
+        "ACPT-P5P26-001",
+        "ACPT-P5P26-004",
+        "ACPT-P5P26-007"
+      ],
+      "test_case_ids": [
+        "TC-P5P26-T01-CONTRACT",
+        "TC-P5P26-T01-FUTURE-LEAK",
+        "TC-P5P26-T01-LAYER-ISOLATION"
+      ],
+      "test_commands": [
+        ".venv/bin/python -m pytest stock_processing_service/tests/unit/test_one_to_two_backtest_contract.py -q"
+      ]
+    },
+    {
+      "task_id": "P5.phase2.6-T02",
+      "requirement_ids": [
+        "REQ-P5P26-DATA-QUALITY",
+        "REQ-P5P26-EMPTY-VALIDITY"
+      ],
+      "acceptance_ids": [
+        "ACPT-P5P26-001",
+        "ACPT-P5P26-002",
+        "ACPT-P5P26-007"
+      ],
+      "test_case_ids": [
+        "TC-P5P26-T02-COVERAGE",
+        "TC-P5P26-T02-SCHEMA",
+        "TC-P5P26-T02-EMPTY-VALIDITY"
+      ],
+      "test_commands": [
+        ".venv/bin/python -m pytest stock_processing_service/tests/unit/test_one_to_two_backtest_data_quality.py -q"
+      ]
+    },
+    {
+      "task_id": "P5.phase2.6-T03",
+      "requirement_ids": [
+        "REQ-P5P26-SNAPSHOT",
+        "REQ-P5P26-REJECT-AUDIT"
+      ],
+      "acceptance_ids": [
+        "ACPT-P5P26-002",
+        "ACPT-P5P26-003",
+        "ACPT-P5P26-007"
+      ],
+      "test_case_ids": [
+        "TC-P5P26-T03-SNAPSHOT",
+        "TC-P5P26-T03-REJECT-AUDIT",
+        "TC-P5P26-T03-IDEMPOTENT"
+      ],
+      "test_commands": [
+        ".venv/bin/python -m pytest stock_processing_service/tests/unit/test_one_to_two_backtest_snapshot.py -q"
+      ]
+    },
+    {
+      "task_id": "P5.phase2.6-T04",
+      "requirement_ids": [
+        "REQ-P5P26-SIGNAL",
+        "REQ-P5P26-NO-BUY"
+      ],
+      "acceptance_ids": [
+        "ACPT-P5P26-004",
+        "ACPT-P5P26-007"
+      ],
+      "test_case_ids": [
+        "TC-P5P26-T04-SIGNAL",
+        "TC-P5P26-T04-AVAILABILITY",
+        "TC-P5P26-T04-NO-BUY"
+      ],
+      "test_commands": [
+        ".venv/bin/python -m pytest stock_processing_service/tests/unit/test_one_to_two_backtest_signal_builder.py -q"
+      ]
+    },
+    {
+      "task_id": "P5.phase2.6-T05",
+      "requirement_ids": [
+        "REQ-P5P26-VALIDATION",
+        "REQ-P5P26-NO-FUTURE-LEAK"
+      ],
+      "acceptance_ids": [
+        "ACPT-P5P26-005",
+        "ACPT-P5P26-006"
+      ],
+      "test_case_ids": [
+        "TC-P5P26-T05-OUTCOME",
+        "TC-P5P26-T05-D-NO-DATA",
+        "TC-P5P26-T05-NO-FUTURE-LEAK"
+      ],
+      "test_commands": [
+        ".venv/bin/python -m pytest stock_processing_service/tests/unit/test_one_to_two_backtest_validation.py -q"
+      ]
+    },
+    {
+      "task_id": "P5.phase2.6-T06",
+      "requirement_ids": [
+        "REQ-P5P26-SUMMARY",
+        "REQ-P5P26-AUDIT",
+        "REQ-P5P26-NO-BUY"
+      ],
+      "acceptance_ids": [
+        "ACPT-P5P26-006",
+        "ACPT-P5P26-007"
+      ],
+      "test_case_ids": [
+        "TC-P5P26-T06-SUMMARY",
+        "TC-P5P26-T06-AUDIT",
+        "TC-P5P26-T06-NO-BUY"
+      ],
+      "test_commands": [
+        "./scripts/check_one_to_two_setup_plan_audit.sh --trade-date 2026-06-04",
+        ".venv/bin/python -m pytest stock_processing_service/tests/unit/test_one_to_two_setup_plan_audit.py -q"
+      ]
+    }
+  ],
+  "gaps": []
+}
