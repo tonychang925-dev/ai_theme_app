@@ -49,6 +49,7 @@ DDL_STATEMENTS = [
     CREATE TABLE IF NOT EXISTS w2s_backtest_feature_snapshot (
         snapshot_id TEXT PRIMARY KEY,
         run_id TEXT NOT NULL REFERENCES w2s_backtest_run(run_id),
+        strategy_id TEXT NOT NULL DEFAULT 'weak_to_strong',
         strategy_version TEXT NOT NULL,
 
         candidate_trade_date DATE NOT NULL,
@@ -166,6 +167,15 @@ DDL_STATEMENTS = [
         buy_ref_date DATE,
         buy_ref_price NUMERIC(18,4),
 
+        next_day_touch_limit_up BOOLEAN,
+        next_day_sealed_limit_up BOOLEAN,
+        next_day_open_pct NUMERIC(12,6),
+        next_day_high_pct NUMERIC(12,6),
+        next_day_close_pct NUMERIC(12,6),
+        next_day_open_board_count INTEGER,
+        next_day_max_drawdown NUMERIC(12,6),
+        outcome_label TEXT,
+
         next_1d_return NUMERIC(12,6),
         next_2d_return NUMERIC(12,6),
         next_3d_return NUMERIC(12,6),
@@ -229,6 +239,10 @@ DDL_STATEMENTS = [
     """,
     """
     CREATE INDEX IF NOT EXISTS idx_w2s_bfs_date ON w2s_backtest_feature_snapshot(candidate_trade_date);
+    """,
+    """
+    ALTER TABLE w2s_backtest_feature_snapshot
+    ADD COLUMN IF NOT EXISTS strategy_id TEXT NOT NULL DEFAULT 'weak_to_strong';
     """,
     """
     CREATE INDEX IF NOT EXISTS idx_ssd_run ON strategy_signal_daily(run_id);

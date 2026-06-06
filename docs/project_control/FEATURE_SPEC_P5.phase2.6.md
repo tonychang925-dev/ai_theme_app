@@ -88,6 +88,20 @@
   - `data_quality_json`
   - `status`
 - 不引入新的生产策略表。
+- 快照表名短期固定为 `w2s_backtest_feature_snapshot`，复用现有统一回测表；写入时必须携带 `strategy_id=one_to_two`、`strategy_version`、`run_id`。中期如需新增通用表 `strategy_feature_snapshot`，必须作为独立迁移任务，不得在本阶段临时分叉实现。
+- 必须输出 OneToTwo 专属 `compliance_json`，至少包含：
+  - `one_to_two_setup_plan_engine_called`
+  - `post_market_fact_context_builder_called`
+  - `candidate_service_called`
+  - `rule_engine_called`
+  - `scorer_called`
+  - `risk_plan_builder_called`
+  - `no_layer_c_read`
+  - `no_d1_read`
+  - `no_handwritten_one_to_two_rules`
+  - `no_buy_signal`
+  - `future_leak_count`
+  - `all_writes_through_backtest_write_port`
 
 ### 4) 实现步骤（最小可执行序列）
 1. 定义回测合同校验函数。
@@ -99,6 +113,8 @@
 - `TC-P5P26-T01-CONTRACT`
 - `TC-P5P26-T01-FUTURE-LEAK`
 - `TC-P5P26-T01-LAYER-ISOLATION`
+- `TC-P5P26-T01-CALLTRACE`
+- `TC-P5P26-T01-STATIC-SCAN`
 - 命令：
   - `.venv/bin/python -m pytest stock_processing_service/tests/unit/test_one_to_two_backtest_contract.py -q`
 
@@ -162,6 +178,18 @@
   - `blocking_errors`
   - `warnings`
 - 回测仅在质量门禁通过后进入 snapshot 冻结。
+- 数据质量必须区分两类：
+  - `generation_quality`：决定是否允许生成 OneToTwo 盘后观察清单。
+  - `validation_quality`：决定是否允许标注 T+1/T+n outcome。
+- 生成侧缺失必须阻断，例如：
+  - `stock_daily_snapshot` 缺失
+  - `subject_stock_daily_snapshot` 缺失
+  - `mainline context` 缺失
+  - `market_regime` 缺失
+  - 首板事实无法判断
+- 验证侧缺失不得阻断整条回测链路，应标记：
+  - `outcome_label = D_NO_DATA`
+  - `validation_status = missing_bar`
 
 ### 4) 实现步骤（最小可执行序列）
 1. 定义质量指标集合。
@@ -228,11 +256,15 @@
   - 冻结的特征快照
 - 约束：
   - 生成与读取必须只依赖当日及以前事实。
+  - 回测阶段不得直接写入生产 `post_market_setup_plan` / `one_to_two_candidate_feature` 作为真源。
+  - 若暂时复用生产表结构，必须通过 `run_id` 隔离并显式标记 `run_type=backtest`，否则视为混表违规。
 
 ### 3) 数据模型与状态变更
 - 回测快照应能表达：
   - `strategy_id=one_to_two`
   - `strategy_version`
+  - `run_id`
+  - `run_type=backtest`
   - `trade_date`
   - `watch_date`
   - `stock_id`
@@ -248,7 +280,7 @@
 1. 逐日构造上下文。
 2. 调用正式 `OneToTwoSetupPlanEngine`。
 3. 冻结 `candidate_features`。
-4. 写入回测快照。
+4. 写入 `w2s_backtest_feature_snapshot`，不得污染生产计划真源；中期表迁移 `strategy_feature_snapshot` 另立任务处理。
 
 ### 5) 测试设计与命令
 - `TC-P5P26-T03-SNAPSHOT`
@@ -400,10 +432,23 @@
   - `next_day_open_board_count`
   - `next_day_max_drawdown`
   - `outcome_label`
+  - `outcome_source`
+- `outcome_label` 建议值：
+  - `A_SEALED_SECOND_BOARD_REAL`
+  - `A_SEALED_SECOND_BOARD_PROXY`
+  - `B_TOUCHED_BUT_BROKEN`
+  - `C_FAILED_NO_TOUCH`
+  - `D_NO_DATA`
+- `outcome_source` 建议值：
+  - `real_intraday`
+  - `limit_detail`
+  - `daily_close_proxy`
+  - `daily_high_proxy`
+  - `missing`
 
 ### 4) 实现步骤（最小可执行序列）
 1. 按信号快照取 T+1/T+n 行情。
-2. 生成 outcome label。
+2. 按 `outcome_source` 优先级 `real_intraday > limit_detail > daily_close_proxy > daily_high_proxy > missing` 生成 outcome label。
 3. 写入验证表。
 4. 统计封板/炸板/失败分层。
 
@@ -431,7 +476,8 @@
 
 ### 1) 目标与边界
 - 目标：
-  - 对 `post_market_setup_plan`、`one_to_two_candidate_feature`、`strategy_signal_daily`、`strategy_signal_validation` 做分层汇总。
+  - 对统一回测链路中的 `w2s_backtest_feature_snapshot`、`strategy_signal_daily`、`strategy_signal_validation` 做分层汇总。
+  - 如需与生产计划真源对照，仅允许只读对账，不得将 `post_market_setup_plan` / `one_to_two_candidate_feature` 作为回测写入目标或真源。
   - 输出可审计、可追踪的回测统计，不允许 buy 语义进入报告。
 - 非目标：
   - 不改规则。
@@ -439,14 +485,14 @@
 
 ### 1.1 子功能分解
 - `F-P5.phase2.6-T06-01` 分层统计器
-  - 输入: plan / snapshot / signal / validation
+  - 输入: 回测快照 / 信号 / 验证 / 可选只读计划对照
   - 处理: 按 decision、market_regime、reject_reason、score_bucket 汇总
   - 输出: `summary_json`
   - 失败处理: 数据不一致直接失败
   - 可观测证据: `one_to_two_total_days`, `focus_rate`
 - `F-P5.phase2.6-T06-02` 审计对账器
-  - 输入: 计划表与候选审计表
-  - 处理: 校验 `__SUMMARY__` 唯一、计划项与候选项一致、reject 审计完整
+  - 输入: 回测快照与可选只读计划对照
+  - 处理: 校验 `__SUMMARY__` 唯一、快照项与对照项一致、reject 审计完整
   - 输出: `audit_report`
   - 失败处理: 任一合同缺失直接失败
   - 可观测证据: `reject_audit_complete_rate`
@@ -460,9 +506,9 @@
 ### 2) 接口与契约
 - 输入：
   - 回测运行 id
-  - 计划真源
-  - 候选特征快照
+  - 回测快照
   - 信号验证
+  - 可选的生产计划只读对照视图
 - 输出：
   - 分层汇总
   - 审计报告
@@ -476,6 +522,13 @@
   - `one_to_two_reject_audit_complete_rate`
   - `one_to_two_next_day_sealed_rate`
   - `reject_reason_distribution`
+  - `focus_second_board_rate`
+  - `observe_second_board_rate`
+  - `pending_second_board_rate`
+  - `reject_false_negative_rate`
+  - `empty_day_ratio`
+  - `avg_focus_count_per_day`
+  - `reject_reason_false_negative_distribution`
 - 审计结果必须标记：
   - `summary_unique`
   - `item_count_matches_summary`
@@ -483,7 +536,7 @@
   - `no_buy_signal`
 
 ### 4) 实现步骤（最小可执行序列）
-1. 汇总计划/信号/验证四层数据。
+1. 汇总回测快照/信号/验证与可选只读计划对照。
 2. 执行审计对账。
 3. 输出失败条件和通过条件。
 4. 生成可复跑脚本输出。
@@ -493,8 +546,8 @@
 - `TC-P5P26-T06-AUDIT`
 - `TC-P5P26-T06-NO-BUY`
 - 命令：
-  - `./scripts/check_one_to_two_setup_plan_audit.sh --trade-date 2026-06-04`
-  - `.venv/bin/python -m pytest stock_processing_service/tests/unit/test_one_to_two_setup_plan_audit.py -q`
+  - `./scripts/check_one_to_two_backtest_audit.sh --run-id <run_id>`
+  - `.venv/bin/python -m pytest stock_processing_service/tests/unit/test_one_to_two_backtest_audit.py -q`
 
 ### 6) 风险与回滚
 - 风险：
@@ -518,8 +571,10 @@
 6. `T06`：做汇总与审计对账。
 
 ## 3. 验收总则
-- `post_market_setup_plan`、`one_to_two_candidate_feature`、`strategy_signal_daily`、`strategy_signal_validation` 四层必须能串成一个闭环。
+- `OneToTwoSetupPlanEngine`、`w2s_backtest_feature_snapshot`、`strategy_signal_daily`、`strategy_signal_validation`、`validation_summary` 必须能串成统一回测闭环。
+- `post_market_setup_plan`、`one_to_two_candidate_feature` 仅可作为生产复盘真源或只读对照对象，不得作为历史回测写入真源。
 - `__SUMMARY__` 行唯一，缺失或重复都必须 fail-loud。
 - reject 必须保留 `veto_reasons`。
 - 回测中不得出现 buy / must_buy / recommend_buy。
 - 不得读取 Layer C / D1，不得引入未来函数。
+- T01 的合同守卫必须是代码级测试，不允许只靠文档检查：至少要覆盖 `FakeReadPortGuard`、`CallTrace`、`StaticScan` 三类守卫能力。

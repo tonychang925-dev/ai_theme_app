@@ -53,6 +53,29 @@ def _row_has_buy_token(row: dict[str, Any]) -> bool:
     return any(token in text for token in BUY_TOKENS)
 
 
+def _safe_schema_name(value: str) -> str:
+    if not re.fullmatch(r"[A-Za-z_][A-Za-z0-9_]*", value or ""):
+        raise ValueError(f"Unsafe schema name: {value!r}")
+    return value
+
+
+async def _resolve_table_name(conn: Any, table_name: str) -> str:
+    rows = await conn.fetch(
+        """
+        SELECT table_schema
+        FROM information_schema.tables
+        WHERE table_name = $1
+        ORDER BY CASE WHEN table_schema = 'public' THEN 0 ELSE 1 END, table_schema ASC
+        LIMIT 1
+        """,
+        table_name,
+    )
+    if not rows:
+        raise RuntimeError(f"relation '{table_name}' does not exist")
+    schema = _safe_schema_name(str(rows[0]["table_schema"]))
+    return f"{schema}.{table_name}"
+
+
 def build_audit_report(
     plan_rows: list[dict[str, Any]],
     feature_rows: list[dict[str, Any]],
@@ -184,11 +207,13 @@ async def run_audit(trade_date: date, dsn: str, setup_type: str = "one_to_two") 
 
     conn = await asyncpg.connect(dsn=dsn)
     try:
+        plan_table = await _resolve_table_name(conn, "post_market_setup_plan")
+        feature_table = await _resolve_table_name(conn, "one_to_two_candidate_feature")
         plan_rows = await _fetch_rows(
             conn,
-            """
+            f"""
             SELECT *
-            FROM post_market_setup_plan
+            FROM {plan_table}
             WHERE trade_date = $1::date
               AND setup_type = $2::text
             ORDER BY CASE WHEN stock_id = '__SUMMARY__' THEN 0 ELSE 1 END,
@@ -201,9 +226,9 @@ async def run_audit(trade_date: date, dsn: str, setup_type: str = "one_to_two") 
         )
         feature_rows = await _fetch_rows(
             conn,
-            """
+            f"""
             SELECT *
-            FROM one_to_two_candidate_feature
+            FROM {feature_table}
             WHERE trade_date = $1::date
               AND setup_type = $2::text
             ORDER BY COALESCE(final_score, -1) DESC,
