@@ -50,6 +50,10 @@ class AlgorithmStateWritePort(Protocol):
 
     async def upsert_mainline_state_transition_rows(self, rows: list[dict[str, Any]]) -> int: ...
 
+    async def upsert_post_market_setup_plan_rows(self, rows: list[dict[str, Any]]) -> int: ...
+
+    async def upsert_one_to_two_candidate_feature_rows(self, rows: list[dict[str, Any]]) -> int: ...
+
 
 class StrongWatchWritePort(Protocol):
     """Layer C 强势池写入端口。"""

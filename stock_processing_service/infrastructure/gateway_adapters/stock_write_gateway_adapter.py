@@ -62,6 +62,18 @@ class StockWriteGatewayAdapter:
             payload["source_name"] = payload.pop("source")
         return await self._db.upsert_post_market_recap_snapshot(payload)
 
+    async def upsert_post_market_setup_plan_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_post_market_setup_plan_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_post_market_setup_plan_rows")
+
+    async def upsert_one_to_two_candidate_feature_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_one_to_two_candidate_feature_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_one_to_two_candidate_feature_rows")
+
     async def upsert_theme_mainline_identity_registry_rows(
         self, rows: list[dict[str, Any]],
         *,

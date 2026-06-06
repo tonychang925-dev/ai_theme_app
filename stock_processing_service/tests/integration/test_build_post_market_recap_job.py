@@ -47,7 +47,7 @@ class _FakeReadPort:
             StockBarDTO(
                 trade_date=trade_date, stock_id="002000.SZ", stock_name="SampleA",
                 open_price=Decimal("12"), high_price=Decimal("13"), low_price=Decimal("11.8"),
-                close_price=Decimal("12.9"), pre_close=Decimal("12"), pct_chg=Decimal("7.5"),
+                close_price=Decimal("13.2"), pre_close=Decimal("12"), pct_chg=Decimal("10.0"),
                 volume=Decimal("30000"), amount=Decimal("350000"),
                 limit_up_price=Decimal("13.2"), limit_down_price=Decimal("10.8"),
             )
@@ -223,6 +223,8 @@ class _FakeWritePort:
         self.strong_watch_pool_rows: list[dict[str, Any]] = []
         self.strong_watch_history_rows: list[dict[str, Any]] = []
         self.w2s_candidate_pool_rows: list[dict[str, Any]] = []
+        self.setup_plan_rows: list[dict[str, Any]] = []
+        self.one_to_two_feature_rows: list[dict[str, Any]] = []
 
     async def upsert_stock_daily_snapshot_rows(self, rows): return len(rows)
     async def upsert_subject_stock_daily_snapshot_rows(self, rows): return len(rows)
@@ -256,6 +258,12 @@ class _FakeWritePort:
     async def upsert_theme_cycle_evidence_daily_rows(self, rows): return len(rows)
     async def upsert_weak_to_strong_candidate_pool_rows(self, rows):
         self.w2s_candidate_pool_rows.extend(rows)
+        return len(rows)
+    async def upsert_post_market_setup_plan_rows(self, rows):
+        self.setup_plan_rows.extend(rows)
+        return len(rows)
+    async def upsert_one_to_two_candidate_feature_rows(self, rows):
+        self.one_to_two_feature_rows.extend(rows)
         return len(rows)
 
 
@@ -335,6 +343,8 @@ def test_build_post_market_recap_job_strong_watch_pool_flow() -> None:
         assert result.status == "ok"
         assert result.affected_rows == 1
         assert len(write_port.recap_docs) >= 1
+        assert len(write_port.setup_plan_rows) >= 1
+        assert len(write_port.one_to_two_feature_rows) >= 1
         recap_doc = write_port.recap_docs[-1].recap_doc
         assert recap_doc["candidate_source"] == "strong_watch_pool"
         assert recap_doc["layer_c_input_mode"] == LAYER_C_INPUT_MODE

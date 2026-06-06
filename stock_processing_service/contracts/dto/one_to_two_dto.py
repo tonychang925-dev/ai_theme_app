@@ -76,6 +76,7 @@ class OneToTwoSetupPlanDTO:
     summary: dict[str, Any]
     items: list[dict[str, Any]]
     diagnostics: dict[str, Any]
+    candidate_features: list[dict[str, Any]] = field(default_factory=list)
     setup_type: str = "one_to_two"
 
     def to_dict(self) -> dict[str, Any]:

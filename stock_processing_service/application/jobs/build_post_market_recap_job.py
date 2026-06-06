@@ -244,6 +244,89 @@ class BuildPostMarketRecapJob:
             )
         return records
 
+    @staticmethod
+    def _build_one_to_two_persist_rows(
+        plan: Any,
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        watchlists = plan.to_dict().get("watchlists", {}).get("one_to_two", {}) if hasattr(plan, "to_dict") else {}
+        summary = dict(watchlists.get("summary") or {})
+        diagnostics = dict(watchlists.get("diagnostics") or {})
+        items = [dict(item) for item in watchlists.get("items") or []]
+        candidate_features = [dict(item) for item in getattr(plan, "candidate_features", []) or []]
+
+        watch_date = str(summary.get("watch_date") or (items[0].get("watch_date") if items else "") or "")
+        trade_date = str(summary.get("trade_date") or (items[0].get("trade_date") if items else "") or "")
+
+        setup_plan_rows: list[dict[str, Any]] = [
+            {
+                "trade_date": trade_date,
+                "watch_date": watch_date,
+                "setup_type": "one_to_two",
+                "setup_version": "v1",
+                "mainline_id": "__SUMMARY__",
+                "mainline_name": "OneToTwo Setup Plan",
+                "subject_key": "__SUMMARY__",
+                "subject_name": "OneToTwo Setup Plan",
+                "stock_id": "__SUMMARY__",
+                "stock_name": "OneToTwo Setup Plan",
+                "lifecycle_state": "summary",
+                "market_trade_mode": str(summary.get("market_trade_mode") or ""),
+                "allow_trade": False,
+                "position_limit": None,
+                "decision": "pending_review_only",
+                "plan_status": "planned",
+                "watch_level": "",
+                "final_score": None,
+                "summary": json.dumps(summary, ensure_ascii=False, default=str),
+                "evidence_rules": [],
+                "feature_json": {
+                    "summary": summary,
+                    "items_count": len(items),
+                },
+                "risk_flags": [],
+                "trigger_plan": {},
+                "invalidation_plan": {},
+                "exit_plan": {},
+                "diagnostics": diagnostics,
+                "source_trace_json": {"row_type": "summary"},
+            }
+        ]
+
+        for item in items:
+            setup_plan_rows.append(
+                {
+                    "trade_date": str(item.get("trade_date") or trade_date),
+                    "watch_date": str(item.get("watch_date") or watch_date),
+                    "setup_type": str(item.get("setup_type") or "one_to_two"),
+                    "setup_version": "v1",
+                    "mainline_id": item.get("mainline_id"),
+                    "mainline_name": item.get("mainline_name"),
+                    "subject_key": str(item.get("subject_key") or ""),
+                    "subject_name": str(item.get("subject_name") or ""),
+                    "stock_id": str(item.get("stock_id") or ""),
+                    "stock_name": str(item.get("stock_name") or ""),
+                    "lifecycle_state": str(item.get("lifecycle_state") or ""),
+                    "market_trade_mode": str(item.get("market_trade_mode") or ""),
+                    "allow_trade": bool(item.get("allow_trade") or False),
+                    "position_limit": item.get("position_limit"),
+                    "decision": str(item.get("decision") or "reject"),
+                    "plan_status": str(item.get("plan_status") or "planned"),
+                    "watch_level": str(item.get("watch_level") or ""),
+                    "final_score": item.get("final_score"),
+                    "summary": str(item.get("summary") or ""),
+                    "evidence_rules": item.get("evidence_rules") or [],
+                    "feature_json": item.get("feature_json") or {},
+                    "risk_flags": item.get("risk_flags") or [],
+                    "trigger_plan": item.get("trigger_plan") or {},
+                    "invalidation_plan": item.get("invalidation_plan") or [],
+                    "exit_plan": item.get("exit_plan") or [],
+                    "diagnostics": diagnostics,
+                    "source_trace_json": item.get("source_trace_json") or {},
+                }
+            )
+
+        return setup_plan_rows, candidate_features
+
     async def execute(
         self,
         trade_date: date,
@@ -653,6 +736,14 @@ class BuildPostMarketRecapJob:
             source_doc=recap_doc,
         )
         one_to_two_payload = one_to_two_plan.to_dict().get("watchlists", {}).get("one_to_two", {})
+        setup_plan_rows, candidate_feature_rows = self._build_one_to_two_persist_rows(one_to_two_plan)
+        setup_plan_written = await self._write_port.upsert_post_market_setup_plan_rows(setup_plan_rows)
+        if setup_plan_written <= 0:
+            raise RuntimeError("failed to persist post_market_setup_plan rows")
+        if candidate_feature_rows:
+            feature_written = await self._write_port.upsert_one_to_two_candidate_feature_rows(candidate_feature_rows)
+            if feature_written <= 0:
+                raise RuntimeError("failed to persist one_to_two_candidate_feature rows")
         recap_doc["post_market_setup_plan"] = one_to_two_payload
         recap_doc["watchlists"] = {"one_to_two": one_to_two_payload}
 
