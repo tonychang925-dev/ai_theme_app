@@ -1,0 +1,56 @@
+{
+  "phase": "P5.phase2.6",
+  "generated_at": "2026-06-06T00:00:00+08:00",
+  "traceability": [
+    {
+      "acceptance_id": "ACPT-P5P26-001",
+      "case_ids": ["ACC-P5P26-01", "ACC-P5P26-02"],
+      "commands": [
+        "./scripts/check_one_to_two_setup_plan_audit.sh --trade-date 2026-06-04"
+      ],
+      "expected": "pass"
+    },
+    {
+      "acceptance_id": "ACPT-P5P26-002",
+      "case_ids": ["ACC-P5P26-01"],
+      "commands": [
+        "./scripts/check_one_to_two_setup_plan_audit.sh --trade-date 2026-06-04"
+      ],
+      "expected": "summary_unique=true and empty_is_valid=true"
+    },
+    {
+      "acceptance_id": "ACPT-P5P26-003",
+      "case_ids": ["ACC-P5P26-01"],
+      "commands": [
+        ".venv/bin/python -m pytest stock_processing_service/tests/unit/test_one_to_two_setup_plan_persistence_contract.py -q"
+      ],
+      "expected": "reject rows persist with veto_reasons"
+    },
+    {
+      "acceptance_id": "ACPT-P5P26-004",
+      "case_ids": ["ACC-P5P26-03"],
+      "commands": [
+        ".venv/bin/python -m pytest stock_processing_service/tests/unit/test_daily_review_watchlists_api.py stock_processing_service/tests/unit/test_daily_review_v2_one_to_two_watchlists.py -q"
+      ],
+      "expected": "watchlists reads persisted setup plan only"
+    },
+    {
+      "acceptance_id": "ACPT-P5P26-005",
+      "case_ids": ["ACC-P5P26-04", "ACC-P5P26-05"],
+      "commands": [
+        ".venv/bin/python -m pytest stock_processing_service/tests/unit/test_one_to_two_setup_plan_engine.py -q"
+      ],
+      "expected": "signal and validation contracts remain buy-free and audit-complete"
+    },
+    {
+      "acceptance_id": "ACPT-P5P26-006",
+      "case_ids": ["ACC-P5P26-06"],
+      "commands": [
+        ".venv/bin/python scripts/check_one_to_two_setup_plan_audit.py --trade-date 2026-06-04"
+      ],
+      "expected": "no buy tokens; summary and candidate counts reconcile"
+    }
+  ],
+  "gaps": [],
+  "gate_ready": true
+}

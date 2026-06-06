@@ -867,6 +867,7 @@
 | P5.phase0 | 合同冻结与事实层打底 | DTO / 表 / API 契约冻结；架构守卫测试通过；空结果测试通过；禁止读取 Layer C / D1 | 2人天 | P4.phase3、`DailyReviewV2` 已稳定输出 |
 | P5.phase1 | 候选层与硬门禁 MVP | 只从主线首板事实池构建候选；一票否决生效；空清单正常 | 3人天 | P5.phase0 |
 | P5.phase2 | 计划生成与 DailyReviewV2 接入 | `post_market_setup_plan` 落库；`watchlists.one_to_two` 渲染；计划/确认状态分离；无买点输出 | 3人天 | P5.phase1 |
+| P5.phase2.6 | 盘后观察清单回测与算法校准 | 历史重放 OneToTwo 计划层；冻结特征快照；生成验证结果与分层汇总；严禁未来函数 | 4人天 | P5.phase2 |
 | P5.phase3 | 盘前确认与反馈闭环 | 盘前 brief、盘中确认、T+1/T+n 反馈与审计链打通（可拆为 phase3a/3b） | 4人天 | P5.phase2 |
 
 ### 11.3 WBS — P5.phase0（合同冻结与事实层打底）
@@ -892,6 +893,16 @@
 | P5.phase2-T02 | P5.phase2-T02 接入 `DailyReviewV2.watchlists.one_to_two`：仅展示观察计划，不从其它层回读 | P5.phase2-T01 | 1人天 | 高 | DailyReviewV2 contract test 通过 | Display Only; No Layer C/D1 Backfill |
 | P5.phase2-T03 | P5.phase2-T03 补齐前端/接口契约：观察清单、空结果、拒绝原因、计划状态统一展示 | P5.phase2-T02 | 0.5人天 | 中 | UI / API 对账通过 | Contract Stable; Clear Empty State |
 | P5.phase2-T04 | P5.phase2-T04 增加计划层审计与回放 manifest，确保可追踪但不反写 A/B/C/D | P5.phase2-T03 | 0.5人天 | 中 | 审计回放样本通过 | Traceable; No Upstream Mutation |
+
+### 11.5.1 WBS — P5.phase2.6（盘后观察清单回测与算法校准）
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+| --- | --- | --- | --- | --- | --- | --- |
+| P5.phase2.6-T01 | P5.phase2.6-T01 冻结回测合同：`strategy_id=one_to_two`、`strategy_version=one_to_two_v1.0_post_market_plan`、`signal_session=post_market`、禁止未来函数、禁止读取 Layer C/D1、禁止手写规则 | P5.phase2-T04 | 0.5人天 | 高 | 合同评审 + guard test 通过 | Contract Frozen; No Future Leak; No Layer C/D1 |
+| P5.phase2.6-T02 | P5.phase2.6-T02 实现回测数据质量检查：历史区间基础事实覆盖率、缺表/缺字段、空样本告警与阻断 | P5.phase2.6-T01 | 0.5人天 | 高 | 数据质量脚本/测试通过 | Quality Gate; Fail Loud |
+| P5.phase2.6-T03 | P5.phase2.6-T03 冻结 one_to_two 特征快照：逐日重放 `OneToTwoSetupPlanEngine`，持久化 `candidate_features`（含 reject） | P5.phase2.6-T02 | 1人天 | 高 | snapshot 对账测试通过 | Snapshot Frozen; Reject Audited |
+| P5.phase2.6-T04 | P5.phase2.6-T04 生成统一策略信号：仅由 focus / observe_only / pending_review_only 生成 `strategy_signal_daily`，禁止 buy 语义 | P5.phase2.6-T03 | 1人天 | 高 | signal contract test 通过 | Signal Only; No Buy Tokens |
+| P5.phase2.6-T05 | P5.phase2.6-T05 回测验证 T+1/T+n 结果并生成 outcome label：A/B/C/D 分层、收益、回撤、二板封板率 | P5.phase2.6-T04 | 1人天 | 中 | validation contract test 通过 | Validation Closed; No Future Leak |
+| P5.phase2.6-T06 | P5.phase2.6-T06 生成分层汇总与审计对账脚本：按 decision / market_regime / reject_reason 输出统计，支持空结果样本 | P5.phase2.6-T05 | 0.5人天 | 中 | audit script + summary test 通过 | Summary Reconciled; Empty Valid |
 
 ### 11.6 WBS — P5.phase3（盘前确认与反馈闭环）
 | Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |

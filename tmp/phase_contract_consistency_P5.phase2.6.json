@@ -1,0 +1,10 @@
+{
+  "phase": "P5.phase2.6",
+  "acceptance_source": "docs/project_control/ACCEPTANCE.md::Phase P5.phase2.6 — OneToTwo 盘后观察清单回测与算法校准",
+  "contract": "docs/project_control/PHASE_CONTRACT_P5.phase2.6.md",
+  "acceptance_target_count": 6,
+  "contract_target_count": 6,
+  "missing_in_contract": [],
+  "extra_in_contract": [],
+  "is_consistent": true
+}
