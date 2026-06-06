@@ -138,6 +138,11 @@ def _validate_exact_strategy_ids(rows: list[dict[str, Any]], strategy_id: str) -
     return set(counter) == {strategy_id}, dict(counter)
 
 
+def _validate_exact_strategy_versions(rows: list[dict[str, Any]], strategy_version: str) -> tuple[bool, dict[str, int]]:
+    counter = Counter(str(row.get("strategy_version") or "") for row in rows)
+    return set(counter) == {strategy_version}, dict(counter)
+
+
 def build_backtest_audit_report(
     *,
     run_row: dict[str, Any] | None,
@@ -153,8 +158,11 @@ def build_backtest_audit_report(
     expected_version = str(strategy_version or run_strategy_version or "")
 
     snapshot_strategy_ok, snapshot_strategy_ids = _validate_exact_strategy_ids(snapshot_rows, strategy_id)
+    snapshot_version_ok, snapshot_strategy_versions = _validate_exact_strategy_versions(snapshot_rows, expected_version)
     signal_strategy_ok, signal_strategy_ids = _validate_exact_strategy_ids(signal_rows, strategy_id)
+    signal_version_ok, signal_strategy_versions = _validate_exact_strategy_versions(signal_rows, expected_version)
     validation_strategy_ok, validation_strategy_ids = _validate_exact_strategy_ids(validation_rows, strategy_id)
+    validation_version_ok, validation_strategy_versions = _validate_exact_strategy_versions(validation_rows, expected_version)
 
     snapshot_source_tables = Counter(str(row.get("source_table") or "") for row in signal_rows)
     snapshot_buy_hits = [row for row in snapshot_rows if _row_has_buy_token(row)]
@@ -214,6 +222,8 @@ def build_backtest_audit_report(
         errors.append("missing_run_row")
     if run_strategy_id != strategy_id:
         errors.append(f"run_strategy_id_mismatch={run_strategy_id or '<empty>'}")
+    if not expected_version:
+        errors.append("missing_strategy_version")
     if expected_version and run_strategy_version and run_strategy_version != expected_version:
         errors.append(f"run_strategy_version_mismatch={run_strategy_version}")
     if not snapshot_rows:
@@ -226,10 +236,16 @@ def build_backtest_audit_report(
         errors.append("missing_summary_rows")
     if not snapshot_strategy_ok:
         errors.append(f"snapshot_strategy_ids={dict(snapshot_strategy_ids)}")
+    if not snapshot_version_ok:
+        errors.append(f"snapshot_strategy_versions={dict(snapshot_strategy_versions)}")
     if not signal_strategy_ok:
         errors.append(f"signal_strategy_ids={dict(signal_strategy_ids)}")
+    if not signal_version_ok:
+        errors.append(f"signal_strategy_versions={dict(signal_strategy_versions)}")
     if not validation_strategy_ok:
         errors.append(f"validation_strategy_ids={dict(validation_strategy_ids)}")
+    if not validation_version_ok:
+        errors.append(f"validation_strategy_versions={dict(validation_strategy_versions)}")
     if snapshot_source_tables and set(snapshot_source_tables) != {EXPECTED_SOURCE_TABLE}:
         errors.append(f"unexpected_signal_source_table={dict(snapshot_source_tables)}")
     if snapshot_buy_hits or signal_buy_hits or validation_buy_hits or summary_buy_hits:
@@ -266,10 +282,13 @@ def build_backtest_audit_report(
     contract = {
         "run_present": run_row is not None,
         "run_strategy_match": run_strategy_id == strategy_id,
-        "run_version_match": not expected_version or run_strategy_version == expected_version,
+        "run_version_match": bool(expected_version) and run_strategy_version == expected_version,
         "snapshot_strategy_match": snapshot_strategy_ok,
+        "snapshot_version_match": snapshot_version_ok,
         "signal_strategy_match": signal_strategy_ok,
+        "signal_version_match": signal_version_ok,
         "validation_strategy_match": validation_strategy_ok,
+        "validation_version_match": validation_version_ok,
         "summary_present": bool(summary_rows),
         "no_buy_signal": not (snapshot_buy_hits or signal_buy_hits or validation_buy_hits or summary_buy_hits),
         "signal_session_post_market": not signal_session_mismatches,
@@ -287,10 +306,12 @@ def build_backtest_audit_report(
         "snapshot": {
             "total_rows": len(snapshot_rows),
             "strategy_id_counts": dict(snapshot_strategy_ids),
+            "strategy_version_counts": dict(snapshot_strategy_versions),
         },
         "signal": {
             "total_rows": len(signal_rows),
             "strategy_id_counts": dict(signal_strategy_ids),
+            "strategy_version_counts": dict(signal_strategy_versions),
             "source_table_counts": dict(snapshot_source_tables),
             "signal_session_mismatches": len(signal_session_mismatches),
             "direction_mismatches": len(direction_mismatches),
@@ -301,6 +322,7 @@ def build_backtest_audit_report(
         "validation": {
             "total_rows": len(validation_rows),
             "strategy_id_counts": dict(validation_strategy_ids),
+            "strategy_version_counts": dict(validation_strategy_versions),
             "missing_validation_for_signal": len(missing_validation_for_signal),
             "orphan_validation_rows": len(orphan_validation_rows),
             "outcome_label_missing": len(outcome_label_missing),
@@ -326,6 +348,11 @@ async def run_audit(run_id: str, dsn: str, strategy_id: str = "one_to_two") -> d
 
     conn = await asyncpg.connect(dsn=dsn)
     summary_report: dict[str, Any] = {}
+    run_rows: list[dict[str, Any]] = []
+    snapshot_rows: list[dict[str, Any]] = []
+    signal_rows: list[dict[str, Any]] = []
+    validation_rows: list[dict[str, Any]] = []
+    summary_rows: list[dict[str, Any]] = []
     try:
         run_table = await _resolve_table_name(conn, "w2s_backtest_run")
         snapshot_table = await _resolve_table_name(conn, "w2s_backtest_feature_snapshot")
@@ -338,31 +365,39 @@ async def run_audit(run_id: str, dsn: str, strategy_id: str = "one_to_two") -> d
             f"SELECT * FROM {run_table} WHERE run_id = $1::text LIMIT 1",
             run_id,
         )
+        expected_version = str((run_rows[0].get("strategy_version") if run_rows else "") or "")
         snapshot_rows = await _fetch_rows(
             conn,
-            f"SELECT * FROM {snapshot_table} WHERE run_id = $1::text AND strategy_id = $2::text",
+            f"SELECT * FROM {snapshot_table} WHERE run_id = $1::text AND strategy_id = $2::text AND strategy_version = $3::text",
             run_id,
             strategy_id,
+            expected_version,
         )
         signal_rows = await _fetch_rows(
             conn,
-            f"SELECT * FROM {signal_table} WHERE run_id = $1::text AND strategy_id = $2::text",
+            f"SELECT * FROM {signal_table} WHERE run_id = $1::text AND strategy_id = $2::text AND strategy_version = $3::text",
             run_id,
             strategy_id,
+            expected_version,
         )
         validation_rows = await _fetch_rows(
             conn,
-            f"SELECT * FROM {validation_table} WHERE run_id = $1::text AND strategy_id = $2::text",
+            f"SELECT * FROM {validation_table} WHERE run_id = $1::text AND strategy_id = $2::text AND strategy_version = $3::text",
             run_id,
             strategy_id,
+            expected_version,
         )
-        summary_service = OneToTwoBacktestValidationSummaryService(gateway=_AuditGateway(conn))
-        summary_report = await summary_service.build(
-            run_id,
-            strategy_id=strategy_id,
-            strategy_version=(run_rows[0].get("strategy_version") if run_rows else None) or "one_to_two_v1.0_post_market_plan",
-        )
-        summary_rows = list(summary_report.get("summary_rows") or [])
+        if expected_version:
+            summary_service = OneToTwoBacktestValidationSummaryService(gateway=_AuditGateway(conn))
+            summary_report = await summary_service.build(
+                run_id,
+                strategy_id=strategy_id,
+                strategy_version=expected_version,
+            )
+            summary_rows = list(summary_report.get("summary_rows") or [])
+        else:
+            summary_report = {"warning": "missing_strategy_version"}
+            summary_rows = []
     finally:
         await conn.close()
 
