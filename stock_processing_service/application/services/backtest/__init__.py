@@ -7,3 +7,6 @@ from stock_processing_service.application.services.backtest.one_to_two_backtest_
 from stock_processing_service.application.services.backtest.one_to_two_backtest_feature_snapshot_service import (
     OneToTwoBacktestFeatureSnapshotService,
 )
+from stock_processing_service.application.services.backtest.one_to_two_backtest_signal_builder_service import (
+    OneToTwoBacktestSignalBuilderService,
+)
