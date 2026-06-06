@@ -113,8 +113,9 @@ async def test_one_to_two_backtest_signal_builder_emits_watch_only_signals() -> 
     assert report["written"] == 3
     assert len(gw._client.calls) == 4
     delete_sql, delete_params = gw._client.calls[0]
-    assert delete_sql.startswith("DELETE FROM strategy_signal_daily")
-    assert delete_params == ["run-001"]
+    assert "DELETE FROM strategy_signal_daily" in delete_sql
+    assert "strategy_id" in delete_sql
+    assert delete_params == ["run-001", "one_to_two"]
 
     insert_sql, insert_params = gw._client.calls[1]
     assert "INSERT INTO strategy_signal_daily" in insert_sql
@@ -135,6 +136,11 @@ async def test_one_to_two_backtest_signal_builder_emits_watch_only_signals() -> 
 
     signal_levels = [call[1][14] for call in gw._client.calls[1:]]
     assert signal_levels == ["focus", "observe_only", "pending_review_only"]
+    first_signal_id = gw._client.calls[1][1][0]
+
+    await service.build("run-001")
+    second_signal_id = gw._client.calls[5][1][0]
+    assert first_signal_id == second_signal_id
 
 
 @pytest.mark.asyncio
@@ -150,4 +156,30 @@ async def test_one_to_two_backtest_signal_builder_delete_failure_raises() -> Non
     service = OneToTwoBacktestSignalBuilderService(gw)
 
     with pytest.raises(RuntimeError, match="failed to delete existing one_to_two signals"):
+        await service.build("run-001")
+
+
+@pytest.mark.asyncio
+async def test_one_to_two_backtest_signal_builder_rejects_missing_snapshot_strategy_id() -> None:
+    gw = _Gateway(
+        [
+            _snapshot(strategy_id=""),
+        ]
+    )
+    service = OneToTwoBacktestSignalBuilderService(gw)
+
+    with pytest.raises(RuntimeError, match="snapshot strategy_id missing"):
+        await service.build("run-001")
+
+
+@pytest.mark.asyncio
+async def test_one_to_two_backtest_signal_builder_rejects_missing_confirm_trade_date() -> None:
+    gw = _Gateway(
+        [
+            _snapshot(confirm_trade_date=None),
+        ]
+    )
+    service = OneToTwoBacktestSignalBuilderService(gw)
+
+    with pytest.raises(RuntimeError, match="missing confirm_trade_date"):
         await service.build("run-001")

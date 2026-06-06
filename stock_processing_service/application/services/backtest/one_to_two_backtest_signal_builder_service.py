@@ -1,9 +1,9 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
-import uuid
-from datetime import date, datetime, time, timedelta
+from datetime import date, datetime, time
 from typing import Any
 
 logger = logging.getLogger(__name__)
@@ -32,7 +32,7 @@ class OneToTwoBacktestSignalBuilderService:
         if strategy_version != DEFAULT_STRATEGY_VERSION:
             raise ValueError("strategy_version must be one_to_two_v1.0_post_market_plan")
 
-        await self._delete_run_signals(run_id)
+        await self._delete_run_signals(run_id, strategy_id)
         snapshots = await self._load_snapshots(run_id, strategy_id=strategy_id)
         if not snapshots:
             return {"run_id": run_id, "signal_count": 0, "written": 0, "warning": "No snapshots found"}
@@ -70,7 +70,9 @@ class OneToTwoBacktestSignalBuilderService:
         candidate_date = _parse_date(snap.get("candidate_trade_date"))
         if candidate_date is None:
             raise RuntimeError(f"missing candidate_trade_date for snapshot {snap.get('snapshot_id')}")
-        watch_date = _parse_date(snap.get("confirm_trade_date")) or (candidate_date + timedelta(days=1))
+        watch_date = _parse_date(snap.get("confirm_trade_date"))
+        if watch_date is None or watch_date == date(1900, 1, 1):
+            raise RuntimeError(f"missing confirm_trade_date for snapshot {snap.get('snapshot_id')}")
         if not str(snap.get("stock_id") or "").strip():
             raise RuntimeError(f"missing stock_id for snapshot {snap.get('snapshot_id')}")
 
@@ -97,8 +99,16 @@ class OneToTwoBacktestSignalBuilderService:
         }
 
         signal_level = decision
+        signal_id = _stable_signal_id(
+            run_id=run_id,
+            strategy_id=strategy_id,
+            strategy_version=strategy_version,
+            trade_date=candidate_date,
+            stock_id=str(snap.get("stock_id") or ""),
+            subject_key=str(snap.get("subject_key") or ""),
+        )
         return {
-            "signal_id": str(uuid.uuid4()),
+            "signal_id": signal_id,
             "run_id": run_id,
             "strategy_id": strategy_id,
             "strategy_version": strategy_version,
@@ -133,7 +143,15 @@ class OneToTwoBacktestSignalBuilderService:
         fn = getattr(self._gw, "get_w2s_backtest_feature_snapshots_by_run", None)
         if callable(fn):
             rows = await fn(run_id)
-            return [dict(row) for row in rows if str(row.get("strategy_id") or strategy_id) == strategy_id]
+            filtered: list[dict[str, Any]] = []
+            for row in rows:
+                row_dict = dict(row)
+                row_strategy_id = str(row_dict.get("strategy_id") or "").strip()
+                if not row_strategy_id:
+                    raise RuntimeError("snapshot strategy_id missing")
+                if row_strategy_id == strategy_id:
+                    filtered.append(row_dict)
+            return filtered
 
         try:
             rows = await self._gw._client.execute_query(
@@ -216,11 +234,11 @@ class OneToTwoBacktestSignalBuilderService:
             raise RuntimeError("failed to write one_to_two strategy signals")
         return written
 
-    async def _delete_run_signals(self, run_id: str) -> None:
+    async def _delete_run_signals(self, run_id: str, strategy_id: str) -> None:
         try:
             await self._gw._client.execute_query(
-                "DELETE FROM strategy_signal_daily WHERE run_id = $1",
-                [run_id],
+                "DELETE FROM strategy_signal_daily WHERE run_id = $1 AND strategy_id = $2",
+                [run_id, strategy_id],
             )
         except Exception as exc:
             logger.exception("Failed to delete OneToTwo signals for run_id=%s", run_id)
@@ -259,6 +277,29 @@ def _safe_float(value: Any) -> float | None:
         return float(value)
     except Exception:
         return None
+
+
+def _stable_signal_id(
+    *,
+    run_id: str,
+    strategy_id: str,
+    strategy_version: str,
+    trade_date: date,
+    stock_id: str,
+    subject_key: str,
+) -> str:
+    payload = "|".join(
+        [
+            run_id,
+            strategy_id,
+            strategy_version,
+            trade_date.isoformat(),
+            str(stock_id or ""),
+            str(subject_key or ""),
+        ]
+    )
+    digest = hashlib.sha1(payload.encode("utf-8")).hexdigest()
+    return f"one_to_two:{digest}"
 
 
 def _row_to_dict(row: Any) -> dict[str, Any]:
