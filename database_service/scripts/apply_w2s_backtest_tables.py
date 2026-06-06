@@ -104,7 +104,7 @@ DDL_STATEMENTS = [
         source_trace JSONB NOT NULL DEFAULT '{}'::jsonb,
         created_at TIMESTAMP DEFAULT now(),
 
-        UNIQUE(run_id, strategy_version, candidate_trade_date, confirm_trade_date, stock_id)
+        UNIQUE(run_id, strategy_id, strategy_version, candidate_trade_date, confirm_trade_date, stock_id, subject_key)
     );
     """,
 
@@ -175,6 +175,7 @@ DDL_STATEMENTS = [
         next_day_open_board_count INTEGER,
         next_day_max_drawdown NUMERIC(12,6),
         outcome_label TEXT,
+        outcome_source TEXT,
 
         next_1d_return NUMERIC(12,6),
         next_2d_return NUMERIC(12,6),
@@ -245,6 +246,34 @@ DDL_STATEMENTS = [
     ADD COLUMN IF NOT EXISTS strategy_id TEXT NOT NULL DEFAULT 'weak_to_strong';
     """,
     """
+    DO $$
+    DECLARE conname text;
+    BEGIN
+      SELECT c.conname
+      INTO conname
+      FROM pg_constraint c
+      JOIN pg_class t ON c.conrelid = t.oid
+      WHERE t.relname = 'w2s_backtest_feature_snapshot'
+        AND c.contype = 'u'
+        AND pg_get_constraintdef(c.oid) = 'UNIQUE (run_id, strategy_version, candidate_trade_date, confirm_trade_date, stock_id)';
+      IF conname IS NOT NULL THEN
+        EXECUTE format('ALTER TABLE w2s_backtest_feature_snapshot DROP CONSTRAINT %I', conname);
+      END IF;
+    END $$;
+    """,
+    """
+    CREATE UNIQUE INDEX IF NOT EXISTS uniq_backtest_snapshot_strategy_stock_subject
+    ON w2s_backtest_feature_snapshot (
+        run_id,
+        strategy_id,
+        strategy_version,
+        candidate_trade_date,
+        COALESCE(confirm_trade_date, DATE '1900-01-01'),
+        stock_id,
+        COALESCE(subject_key, '')
+    );
+    """,
+    """
     CREATE INDEX IF NOT EXISTS idx_ssd_run ON strategy_signal_daily(run_id);
     """,
     """
@@ -252,6 +281,10 @@ DDL_STATEMENTS = [
     """,
     """
     CREATE INDEX IF NOT EXISTS idx_ssv_run ON strategy_signal_validation(run_id);
+    """,
+    """
+    ALTER TABLE strategy_signal_validation
+    ADD COLUMN IF NOT EXISTS outcome_source TEXT;
     """,
     """
     CREATE INDEX IF NOT EXISTS idx_w2s_vs_run ON w2s_validation_summary(run_id);
