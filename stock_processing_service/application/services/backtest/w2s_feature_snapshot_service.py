@@ -474,6 +474,8 @@ class W2SFeatureSnapshotService:
         written = 0
         for s in snapshots:
             try:
+                confirm_trade_date = s.get("confirm_trade_date") or date(1900, 1, 1)
+                subject_key = str(s.get("subject_key") or "")
                 await self._gw._client.execute_query(
                     """
                     INSERT INTO w2s_backtest_feature_snapshot (
@@ -541,8 +543,8 @@ class W2SFeatureSnapshotService:
                     """,
                     [
                         s["snapshot_id"], s["run_id"], s["strategy_id"], s["strategy_version"],
-                        s["candidate_trade_date"], s["confirm_trade_date"],
-                        s["stock_id"], s["stock_name"], s["subject_key"], s["theme_name"],
+                        s["candidate_trade_date"], confirm_trade_date,
+                        s["stock_id"], s["stock_name"], subject_key, s["theme_name"],
                         s["candidate_id"], s["pool_entry_type"], s["candidate_score"], s["candidate_type"], s["weak_type"],
                         s["support_type"], s["support_strength"],
                         s["is_leader"], s["rank_order"], s["recent_limit_up_count"], s["prior7_limitup_days"], s["prior7_strong_days"],

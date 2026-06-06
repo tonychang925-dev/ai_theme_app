@@ -53,12 +53,12 @@ DDL_STATEMENTS = [
         strategy_version TEXT NOT NULL,
 
         candidate_trade_date DATE NOT NULL,
-        confirm_trade_date DATE,
+        confirm_trade_date DATE NOT NULL DEFAULT DATE '1900-01-01',
 
         stock_id VARCHAR(32) NOT NULL,
         stock_name VARCHAR(64),
 
-        subject_key VARCHAR(64),
+        subject_key VARCHAR(64) NOT NULL DEFAULT '',
         theme_name VARCHAR(128),
 
         candidate_id BIGINT,
@@ -102,9 +102,7 @@ DDL_STATEMENTS = [
         derived_feature_json JSONB NOT NULL DEFAULT '{}'::jsonb,
 
         source_trace JSONB NOT NULL DEFAULT '{}'::jsonb,
-        created_at TIMESTAMP DEFAULT now(),
-
-        UNIQUE(run_id, strategy_id, strategy_version, candidate_trade_date, confirm_trade_date, stock_id, subject_key)
+        created_at TIMESTAMP DEFAULT now()
     );
     """,
 
@@ -246,6 +244,32 @@ DDL_STATEMENTS = [
     ADD COLUMN IF NOT EXISTS strategy_id TEXT NOT NULL DEFAULT 'weak_to_strong';
     """,
     """
+    UPDATE w2s_backtest_feature_snapshot
+    SET subject_key = ''
+    WHERE subject_key IS NULL;
+    """,
+    """
+    ALTER TABLE w2s_backtest_feature_snapshot
+    ALTER COLUMN subject_key SET DEFAULT '';
+    """,
+    """
+    ALTER TABLE w2s_backtest_feature_snapshot
+    ALTER COLUMN subject_key SET NOT NULL;
+    """,
+    """
+    UPDATE w2s_backtest_feature_snapshot
+    SET confirm_trade_date = DATE '1900-01-01'
+    WHERE confirm_trade_date IS NULL;
+    """,
+    """
+    ALTER TABLE w2s_backtest_feature_snapshot
+    ALTER COLUMN confirm_trade_date SET DEFAULT DATE '1900-01-01';
+    """,
+    """
+    ALTER TABLE w2s_backtest_feature_snapshot
+    ALTER COLUMN confirm_trade_date SET NOT NULL;
+    """,
+    """
     DO $$
     DECLARE conname text;
     BEGIN
@@ -262,15 +286,18 @@ DDL_STATEMENTS = [
     END $$;
     """,
     """
+    DROP INDEX IF EXISTS uniq_backtest_snapshot_strategy_stock_subject;
+    """,
+    """
     CREATE UNIQUE INDEX IF NOT EXISTS uniq_backtest_snapshot_strategy_stock_subject
     ON w2s_backtest_feature_snapshot (
         run_id,
         strategy_id,
         strategy_version,
         candidate_trade_date,
-        COALESCE(confirm_trade_date, DATE '1900-01-01'),
+        confirm_trade_date,
         stock_id,
-        COALESCE(subject_key, '')
+        subject_key
     );
     """,
     """
