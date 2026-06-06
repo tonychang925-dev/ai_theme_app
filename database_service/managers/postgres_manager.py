@@ -5477,14 +5477,17 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """
         payload = []
         for row in rows:
-            trade_date = row.get("trade_date")
-            watch_date = row.get("watch_date")
-            if isinstance(trade_date, str):
-                trade_date = date.fromisoformat(trade_date)
-            if isinstance(watch_date, str):
-                watch_date = date.fromisoformat(watch_date)
-            if not trade_date or not watch_date:
-                continue
+            try:
+                trade_date = row.get("trade_date")
+                watch_date = row.get("watch_date")
+                if isinstance(trade_date, str):
+                    trade_date = date.fromisoformat(trade_date)
+                if isinstance(watch_date, str):
+                    watch_date = date.fromisoformat(watch_date)
+                if not trade_date or not watch_date:
+                    raise ValueError
+            except Exception as e:
+                raise ValueError(f"invalid post_market_setup_plan row: {row}") from e
             payload.append((
                 trade_date,
                 watch_date,
@@ -5564,8 +5567,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 await conn.executemany(sql_meta, payload)
             return len(payload)
         except Exception as e:
-            logger.warning(f"写入 post_market_setup_plan 失败: {e}")
-            return 0
+            logger.exception("写入 post_market_setup_plan 失败")
+            raise RuntimeError("failed to upsert post_market_setup_plan rows") from e
 
     async def upsert_one_to_two_candidate_feature_rows(self, rows: list[dict[str, Any]]) -> int:
         """UPSERT one_to_two_candidate_feature rows."""
@@ -5640,14 +5643,17 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """
         payload = []
         for row in rows:
-            trade_date = row.get("trade_date")
-            watch_date = row.get("watch_date")
-            if isinstance(trade_date, str):
-                trade_date = date.fromisoformat(trade_date)
-            if isinstance(watch_date, str):
-                watch_date = date.fromisoformat(watch_date)
-            if not trade_date or not watch_date or not row.get("stock_id") or not row.get("subject_key"):
-                continue
+            try:
+                trade_date = row.get("trade_date")
+                watch_date = row.get("watch_date")
+                if isinstance(trade_date, str):
+                    trade_date = date.fromisoformat(trade_date)
+                if isinstance(watch_date, str):
+                    watch_date = date.fromisoformat(watch_date)
+                if not trade_date or not watch_date or not row.get("stock_id") or not row.get("subject_key"):
+                    raise ValueError
+            except Exception as e:
+                raise ValueError(f"invalid one_to_two_candidate_feature row: {row}") from e
             payload.append((
                 trade_date,
                 watch_date,
@@ -5697,8 +5703,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 await conn.executemany(sql, payload)
             return len(payload)
         except Exception as e:
-            logger.warning(f"写入 one_to_two_candidate_feature 失败: {e}")
-            return 0
+            logger.exception("写入 one_to_two_candidate_feature 失败")
+            raise RuntimeError("failed to upsert one_to_two_candidate_feature rows") from e
 
     async def get_post_market_setup_plan_rows(self, trade_date: date, setup_type: str = "one_to_two") -> list[dict[str, Any]]:
         """读取 post_market_setup_plan rows."""

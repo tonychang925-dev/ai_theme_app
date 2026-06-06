@@ -466,6 +466,8 @@ async def test_one_to_two_plan_and_candidate_feature_round_trip_by_setup_type() 
     assert all(row["stock_id"] != "__SUMMARY__" for row in feature_rows)
     assert len(other_rows) == 1
     assert other_rows[0]["setup_type"] == "other_setup"
-    assert any(row["decision"] == "reject" for row in feature_rows)
+    reject_rows = [row for row in feature_rows if row["decision"] == "reject"]
+    assert reject_rows
+    assert all(row.get("veto_reasons") for row in reject_rows)
     assert all(isinstance(row.get("veto_reasons"), list) or row.get("veto_reasons") is None for row in feature_rows)
     assert all(row.get("setup_type") == "one_to_two" for row in feature_rows)
