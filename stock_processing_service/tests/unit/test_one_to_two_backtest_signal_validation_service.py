@@ -19,11 +19,13 @@ class _Client:
         self.calls.append((sql, list(params)))
         normalized = str(sql).strip().lower()
         if normalized.startswith("select * from strategy_signal_daily"):
-            run_id, strategy_id = params
+            run_id, strategy_id, strategy_version = params
             return [
                 dict(row)
                 for row in self.signals
-                if row.get("run_id") == run_id and row.get("strategy_id") == strategy_id
+                if row.get("run_id") == run_id
+                and row.get("strategy_id") == strategy_id
+                and row.get("strategy_version") == strategy_version
             ]
         return []
 
@@ -91,6 +93,16 @@ def _signal(stock_id: str, trade_date: str = "2026-06-04") -> dict[str, object]:
     }
 
 
+def _signal_with_version(
+    stock_id: str,
+    strategy_version: str,
+    trade_date: str = "2026-06-04",
+) -> dict[str, object]:
+    signal = _signal(stock_id, trade_date=trade_date)
+    signal["strategy_version"] = strategy_version
+    return signal
+
+
 @pytest.mark.asyncio
 async def test_one_to_two_backtest_signal_validation_labels_outcomes() -> None:
     gw = _Gateway([
@@ -107,7 +119,13 @@ async def test_one_to_two_backtest_signal_validation_labels_outcomes() -> None:
     delete_sql, delete_params = gw._client.calls[0]
     assert "DELETE FROM strategy_signal_validation" in delete_sql
     assert "strategy_id" in delete_sql
-    assert delete_params == ["run-001", "one_to_two"]
+    assert "strategy_version" in delete_sql
+    assert delete_params == ["run-001", "one_to_two", "one_to_two_v1.0_post_market_plan"]
+
+    select_sql, select_params = gw._client.calls[1]
+    assert "SELECT * FROM strategy_signal_daily" in select_sql
+    assert "strategy_version" in select_sql
+    assert select_params == ["run-001", "one_to_two", "one_to_two_v1.0_post_market_plan"]
 
     write_calls = gw._client.calls[2:]
     assert len(write_calls) == 3
@@ -146,4 +164,27 @@ async def test_one_to_two_backtest_signal_validation_delete_scoped_by_strategy_i
     delete_sql, delete_params = gw._client.calls[0]
     assert "DELETE FROM strategy_signal_validation" in delete_sql
     assert "strategy_id" in delete_sql
-    assert delete_params == ["run-001", "one_to_two"]
+    assert "strategy_version" in delete_sql
+    assert delete_params == ["run-001", "one_to_two", "one_to_two_v1.0_post_market_plan"]
+
+
+@pytest.mark.asyncio
+async def test_validation_loads_signals_scoped_by_strategy_version() -> None:
+    gw = _Gateway([
+        _signal_with_version("600367.SH", "one_to_two_v1.0_post_market_plan"),
+        _signal_with_version("600368.SH", "one_to_two_v1.0_pre_market_plan"),
+    ])
+    service = OneToTwoBacktestSignalValidationService(_ReadPort(), gw)
+
+    report = await service.validate("run-001")
+
+    assert report["validated_count"] == 1
+    delete_sql, delete_params = gw._client.calls[0]
+    assert "strategy_version" in delete_sql
+    assert delete_params == ["run-001", "one_to_two", "one_to_two_v1.0_post_market_plan"]
+    select_sql, select_params = gw._client.calls[1]
+    assert "strategy_version" in select_sql
+    assert select_params == ["run-001", "one_to_two", "one_to_two_v1.0_post_market_plan"]
+    write_calls = gw._client.calls[2:]
+    assert len(write_calls) == 1
+    assert write_calls[0][1][0] == "sig-600367.SH"

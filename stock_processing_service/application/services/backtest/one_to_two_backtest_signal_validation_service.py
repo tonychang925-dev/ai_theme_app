@@ -34,8 +34,8 @@ class OneToTwoBacktestSignalValidationService:
         if strategy_version != DEFAULT_STRATEGY_VERSION:
             raise ValueError("strategy_version must be one_to_two_v1.0_post_market_plan")
 
-        await self._delete_run_validations(run_id, strategy_id)
-        signals = await self._load_signals(run_id, strategy_id)
+        await self._delete_run_validations(run_id, strategy_id, strategy_version)
+        signals = await self._load_signals(run_id, strategy_id, strategy_version)
         if not signals:
             return {"run_id": run_id, "validated_count": 0, "written": 0, "warning": "No signals found"}
 
@@ -195,11 +195,11 @@ class OneToTwoBacktestSignalValidationService:
             "validation_error": reason,
         }
 
-    async def _load_signals(self, run_id: str, strategy_id: str) -> list[dict[str, Any]]:
+    async def _load_signals(self, run_id: str, strategy_id: str, strategy_version: str) -> list[dict[str, Any]]:
         try:
             rows = await self._gw._client.execute_query(
-                "SELECT * FROM strategy_signal_daily WHERE run_id = $1 AND strategy_id = $2 ORDER BY trade_date ASC, stock_id ASC, source_id ASC",
-                [run_id, strategy_id],
+                "SELECT * FROM strategy_signal_daily WHERE run_id = $1 AND strategy_id = $2 AND strategy_version = $3 ORDER BY trade_date ASC, stock_id ASC, source_id ASC",
+                [run_id, strategy_id, strategy_version],
             )
             return [_row_to_dict(r) for r in rows]
         except Exception as exc:
@@ -306,11 +306,11 @@ class OneToTwoBacktestSignalValidationService:
             raise RuntimeError("failed to write one_to_two signal validations")
         return written
 
-    async def _delete_run_validations(self, run_id: str, strategy_id: str) -> None:
+    async def _delete_run_validations(self, run_id: str, strategy_id: str, strategy_version: str) -> None:
         try:
             await self._gw._client.execute_query(
-                "DELETE FROM strategy_signal_validation WHERE run_id = $1 AND strategy_id = $2",
-                [run_id, strategy_id],
+                "DELETE FROM strategy_signal_validation WHERE run_id = $1 AND strategy_id = $2 AND strategy_version = $3",
+                [run_id, strategy_id, strategy_version],
             )
         except Exception as exc:
             logger.exception("Failed to delete OneToTwo validations for run_id=%s", run_id)
