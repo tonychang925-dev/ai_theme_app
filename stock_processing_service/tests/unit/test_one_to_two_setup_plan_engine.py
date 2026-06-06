@@ -265,3 +265,78 @@ def test_one_to_two_rejects_one_word_board() -> None:
 
     assert rule.decision == "reject"
     assert "一字板" in "；".join(rule.veto_reasons)
+
+
+def test_one_to_two_candidate_features_include_rejects_for_audit() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    engine.candidate_service.build_fact_pool = lambda ctx: [  # type: ignore[assignment]
+        OneToTwoFeatures(
+            trade_date="2026-06-04",
+            watch_date="2026-06-05",
+            stock_id="600367.SH",
+            stock_name="红星发展",
+            subject_key="mainline_ai",
+            subject_name="AI",
+            is_confirmed_mainline=True,
+            is_strong_hotspot=True,
+            mainline_or_hotspot_state="confirmed_mainline",
+            lifecycle_state="start",
+            market_trade_mode="mainline_ultra_short_only",
+            allow_trade=True,
+            is_first_limit_up=True,
+            is_one_word_board=False,
+            is_late_seal=False,
+            first_limit_time="10:18:00",
+            open_board_count=1,
+            turnover_rate=Decimal("0.18"),
+            amount=Decimal("1000000000"),
+            close_seal_amount=Decimal("50000000"),
+            seal_ratio=Decimal("0.8"),
+            float_mcap=Decimal("12000000000"),
+            position_120=Decimal("0.3"),
+            is_downtrend=False,
+            near_pressure=False,
+            same_subject_limit_count=3,
+            same_subject_strong_count=2,
+            data_quality={"missing_required": []},
+            source_trace={"source": "unit"},
+        ),
+        OneToTwoFeatures(
+            trade_date="2026-06-04",
+            watch_date="2026-06-05",
+            stock_id="600403.SH",
+            stock_name="大有能源",
+            subject_key="coal",
+            subject_name="煤炭",
+            is_confirmed_mainline=True,
+            is_strong_hotspot=False,
+            mainline_or_hotspot_state="confirmed_mainline",
+            lifecycle_state="start",
+            market_trade_mode="mainline_ultra_short_only",
+            allow_trade=True,
+            is_first_limit_up=True,
+            is_one_word_board=True,
+            is_late_seal=False,
+            first_limit_time="09:25:00",
+            open_board_count=0,
+            turnover_rate=Decimal("0.10"),
+            amount=Decimal("1000000000"),
+            close_seal_amount=Decimal("50000000"),
+            seal_ratio=Decimal("0.8"),
+            float_mcap=Decimal("12000000000"),
+            position_120=Decimal("0.3"),
+            is_downtrend=False,
+            near_pressure=False,
+            same_subject_limit_count=3,
+            same_subject_strong_count=2,
+            data_quality={"missing_required": []},
+            source_trace={"source": "unit"},
+        ),
+    ]
+
+    result = engine.build_from_context(_setup_context())
+
+    assert len(result.candidate_features) == 2
+    assert len(result.items) == 1
+    assert result.summary["reject_count"] == 1
+    assert any(feature["decision"] == "reject" for feature in result.candidate_features)

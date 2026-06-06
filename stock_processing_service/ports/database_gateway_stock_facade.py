@@ -69,6 +69,18 @@ class DatabaseGatewayStockFacade(Protocol):
         self, trade_date: date
     ) -> RecapSnapshotDTO | None: ...
 
+    async def get_post_market_setup_plan_rows(
+        self,
+        trade_date: date,
+        setup_type: str = "one_to_two",
+    ) -> list[dict[str, Any]]: ...
+
+    async def get_one_to_two_candidate_feature_rows(
+        self,
+        trade_date: date,
+        setup_type: str = "one_to_two",
+    ) -> list[dict[str, Any]]: ...
+
     async def get_mainline_identity_by_subject_keys(
         self, subject_keys: list[str], trade_date: date
     ) -> list[MainlineIdentityDTO]: ...
@@ -162,6 +174,10 @@ class DatabaseGatewayStockFacade(Protocol):
     async def upsert_pre_market_brief_snapshot(self, doc: PreMarketBriefSnapshot, force: bool = False) -> int: ...
 
     async def upsert_post_market_recap_snapshot(self, doc: PostMarketRecapSnapshot) -> int: ...
+
+    async def upsert_post_market_setup_plan_rows(self, rows: list[dict[str, Any]]) -> int: ...
+
+    async def upsert_one_to_two_candidate_feature_rows(self, rows: list[dict[str, Any]]) -> int: ...
 
     async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]]) -> int: ...
 

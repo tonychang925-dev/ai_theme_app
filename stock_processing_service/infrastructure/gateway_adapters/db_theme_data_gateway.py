@@ -73,6 +73,28 @@ class DBThemeDataGateway:
         row = await self._db.get_existing_post_market_recap_snapshot(trade_date)
         return dict(row) if row else None
 
+    async def get_post_market_setup_plan_rows(
+        self,
+        trade_date: date,
+        setup_type: str = "one_to_two",
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_post_market_setup_plan_rows", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_post_market_setup_plan_rows")
+        rows = await fn(trade_date=trade_date, setup_type=setup_type)
+        return [dict(row) for row in rows]
+
+    async def get_one_to_two_candidate_feature_rows(
+        self,
+        trade_date: date,
+        setup_type: str = "one_to_two",
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_one_to_two_candidate_feature_rows", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_one_to_two_candidate_feature_rows")
+        rows = await fn(trade_date=trade_date, setup_type=setup_type)
+        return [dict(row) for row in rows]
+
     async def get_mainline_identity_by_subject_keys(
         self,
         subject_keys: list[str],

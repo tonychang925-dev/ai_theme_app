@@ -5719,6 +5719,26 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"读取 post_market_setup_plan 失败（可能尚未迁移）: {e}")
             raise RuntimeError("failed to read post_market_setup_plan rows") from e
 
+    async def get_one_to_two_candidate_feature_rows(self, trade_date: date, setup_type: str = "one_to_two") -> list[dict[str, Any]]:
+        """读取 one_to_two_candidate_feature rows."""
+        sql = """
+        SELECT *
+        FROM one_to_two_candidate_feature
+        WHERE trade_date = $1::date
+        ORDER BY
+          CASE WHEN stock_id = '__SUMMARY__' THEN 0 ELSE 1 END,
+          COALESCE(final_score, -1) DESC,
+          stock_id ASC,
+          subject_key ASC
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, trade_date)
+            return [dict(r) for r in rows]
+        except Exception as e:
+            logger.warning(f"读取 one_to_two_candidate_feature 失败: {e}")
+            raise RuntimeError("failed to read one_to_two_candidate_feature rows") from e
+
     async def _ensure_one_to_two_setup_tables(self) -> None:
         sql = """
         CREATE TABLE IF NOT EXISTS post_market_setup_plan (
