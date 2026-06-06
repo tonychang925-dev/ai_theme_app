@@ -11,6 +11,10 @@ from datetime import date, datetime, time, timedelta
 from pathlib import Path
 from typing import Any
 
+from stock_processing_service.application.services.backtest.one_to_two_backtest_validation_summary_service import (
+    OneToTwoBacktestValidationSummaryService,
+)
+
 try:
     import asyncpg
 except Exception:  # pragma: no cover
@@ -98,6 +102,20 @@ async def _fetch_rows(conn: Any, sql: str, *params: Any) -> list[dict[str, Any]]
 def _row_has_buy_token(row: dict[str, Any]) -> bool:
     text = json.dumps(row, ensure_ascii=False, default=str).lower()
     return any(token in text for token in BUY_TOKENS)
+
+
+class _AuditConnClient:
+    def __init__(self, conn: Any) -> None:
+        self._conn = conn
+
+    async def execute_query(self, sql: str, params: list[Any]) -> list[dict[str, Any]]:
+        rows = await self._conn.fetch(sql, *params)
+        return [dict(row) for row in rows]
+
+
+class _AuditGateway:
+    def __init__(self, conn: Any) -> None:
+        self._client = _AuditConnClient(conn)
 
 
 def _to_datetime(value: Any) -> datetime | None:
@@ -307,12 +325,12 @@ async def run_audit(run_id: str, dsn: str, strategy_id: str = "one_to_two") -> d
         raise RuntimeError("Missing DSN. Please set --dsn or POSTGRES_DSN/DATABASE_URL.")
 
     conn = await asyncpg.connect(dsn=dsn)
+    summary_report: dict[str, Any] = {}
     try:
         run_table = await _resolve_table_name(conn, "w2s_backtest_run")
         snapshot_table = await _resolve_table_name(conn, "w2s_backtest_feature_snapshot")
         signal_table = await _resolve_table_name(conn, "strategy_signal_daily")
         validation_table = await _resolve_table_name(conn, "strategy_signal_validation")
-        summary_table = await _resolve_table_name(conn, "w2s_validation_summary")
         await _require_backtest_schema_contract(conn)
 
         run_rows = await _fetch_rows(
@@ -338,15 +356,17 @@ async def run_audit(run_id: str, dsn: str, strategy_id: str = "one_to_two") -> d
             run_id,
             strategy_id,
         )
-        summary_rows = await _fetch_rows(
-            conn,
-            f"SELECT * FROM {summary_table} WHERE run_id = $1::text",
+        summary_service = OneToTwoBacktestValidationSummaryService(gateway=_AuditGateway(conn))
+        summary_report = await summary_service.build(
             run_id,
+            strategy_id=strategy_id,
+            strategy_version=(run_rows[0].get("strategy_version") if run_rows else None) or "one_to_two_v1.0_post_market_plan",
         )
+        summary_rows = list(summary_report.get("summary_rows") or [])
     finally:
         await conn.close()
 
-    return build_backtest_audit_report(
+    report = build_backtest_audit_report(
         run_row=run_rows[0] if run_rows else None,
         snapshot_rows=snapshot_rows,
         signal_rows=signal_rows,
@@ -355,6 +375,8 @@ async def run_audit(run_id: str, dsn: str, strategy_id: str = "one_to_two") -> d
         strategy_id=strategy_id,
         strategy_version=(run_rows[0].get("strategy_version") if run_rows else None),
     )
+    report["summary_report"] = summary_report
+    return report
 
 
 def parse_args() -> argparse.Namespace:

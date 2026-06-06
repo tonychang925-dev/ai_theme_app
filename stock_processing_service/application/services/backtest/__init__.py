@@ -13,3 +13,6 @@ from stock_processing_service.application.services.backtest.one_to_two_backtest_
 from stock_processing_service.application.services.backtest.one_to_two_backtest_signal_validation_service import (
     OneToTwoBacktestSignalValidationService,
 )
+from stock_processing_service.application.services.backtest.one_to_two_backtest_validation_summary_service import (
+    OneToTwoBacktestValidationSummaryService,
+)
