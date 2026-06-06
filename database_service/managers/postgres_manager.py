@@ -5427,6 +5427,418 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.warning(f"写入 post_market_recap_snapshot 失败: {e}")
             return 0
 
+    async def upsert_post_market_setup_plan_rows(self, rows: list[dict[str, Any]]) -> int:
+        """UPSERT post_market_setup_plan rows."""
+        if not rows:
+            return 0
+        await self._ensure_one_to_two_setup_tables()
+        sql = """
+        INSERT INTO post_market_setup_plan (
+            trade_date, watch_date, setup_type, setup_version,
+            mainline_id, mainline_name, subject_key, subject_name,
+            stock_id, stock_name, lifecycle_state, market_trade_mode,
+            allow_trade, position_limit, decision, plan_status,
+            watch_level, final_score, summary, evidence_rules,
+            feature_json, risk_flags, trigger_plan, invalidation_plan,
+            exit_plan, diagnostics, source_trace_json
+        ) VALUES (
+            $1::date, $2::date, $3, $4,
+            $5, $6, $7, $8,
+            $9, $10, $11, $12,
+            $13::boolean, $14::numeric, $15, $16,
+            $17, $18::numeric, $19, $20::jsonb,
+            $21::jsonb, $22::jsonb, $23::jsonb, $24::jsonb,
+            $25::jsonb, $26::jsonb, $27::jsonb
+        )
+        ON CONFLICT (trade_date, watch_date, setup_type, stock_id, subject_key) DO UPDATE SET
+          setup_version = EXCLUDED.setup_version,
+          mainline_id = EXCLUDED.mainline_id,
+          mainline_name = EXCLUDED.mainline_name,
+          subject_name = EXCLUDED.subject_name,
+          stock_name = EXCLUDED.stock_name,
+          lifecycle_state = EXCLUDED.lifecycle_state,
+          market_trade_mode = EXCLUDED.market_trade_mode,
+          allow_trade = EXCLUDED.allow_trade,
+          position_limit = EXCLUDED.position_limit,
+          decision = EXCLUDED.decision,
+          plan_status = EXCLUDED.plan_status,
+          watch_level = EXCLUDED.watch_level,
+          final_score = EXCLUDED.final_score,
+          summary = EXCLUDED.summary,
+          evidence_rules = EXCLUDED.evidence_rules,
+          feature_json = EXCLUDED.feature_json,
+          risk_flags = EXCLUDED.risk_flags,
+          trigger_plan = EXCLUDED.trigger_plan,
+          invalidation_plan = EXCLUDED.invalidation_plan,
+          exit_plan = EXCLUDED.exit_plan,
+          diagnostics = EXCLUDED.diagnostics,
+          source_trace_json = EXCLUDED.source_trace_json,
+          updated_at = NOW()
+        """
+        payload = []
+        for row in rows:
+            trade_date = row.get("trade_date")
+            watch_date = row.get("watch_date")
+            if isinstance(trade_date, str):
+                trade_date = date.fromisoformat(trade_date)
+            if isinstance(watch_date, str):
+                watch_date = date.fromisoformat(watch_date)
+            if not trade_date or not watch_date:
+                continue
+            payload.append((
+                trade_date,
+                watch_date,
+                str(row.get("setup_type") or "one_to_two"),
+                str(row.get("setup_version") or "v1"),
+                row.get("mainline_id"),
+                row.get("mainline_name"),
+                str(row.get("subject_key") or ""),
+                str(row.get("subject_name") or ""),
+                str(row.get("stock_id") or ""),
+                str(row.get("stock_name") or ""),
+                str(row.get("lifecycle_state") or ""),
+                str(row.get("market_trade_mode") or ""),
+                bool(row.get("allow_trade") or False),
+                row.get("position_limit"),
+                str(row.get("decision") or "reject"),
+                str(row.get("plan_status") or "planned"),
+                str(row.get("watch_level") or ""),
+                row.get("final_score"),
+                str(row.get("summary") or ""),
+                _safe_json_dumps(row.get("evidence_rules"), []),
+                _safe_json_dumps(row.get("feature_json"), {}),
+                _safe_json_dumps(row.get("risk_flags"), []),
+                _safe_json_dumps(row.get("trigger_plan"), {}),
+                _safe_json_dumps(row.get("invalidation_plan"), []),
+                _safe_json_dumps(row.get("exit_plan"), []),
+                _safe_json_dumps(row.get("diagnostics"), {}),
+                _safe_json_dumps(row.get("source_trace_json"), {}),
+            ))
+        if not payload:
+            return 0
+        sql_meta = """
+        INSERT INTO post_market_setup_plan (
+            trade_date, watch_date, setup_type, setup_version,
+            mainline_id, mainline_name, subject_key, subject_name,
+            stock_id, stock_name, lifecycle_state, market_trade_mode,
+            allow_trade, position_limit, decision, plan_status,
+            watch_level, final_score, summary, evidence_rules,
+            feature_json, risk_flags, trigger_plan, invalidation_plan,
+            exit_plan, diagnostics, source_trace_json
+        ) VALUES (
+            $1::date, $2::date, $3, $4,
+            $5, $6, $7, $8,
+            $9, $10, $11, $12,
+            $13::boolean, $14::numeric, $15, $16,
+            $17, $18::numeric, $19, $20::jsonb,
+            $21::jsonb, $22::jsonb, $23::jsonb, $24::jsonb,
+            $25::jsonb, $26::jsonb, $27::jsonb
+        )
+        ON CONFLICT (trade_date, watch_date, setup_type, stock_id, subject_key) DO UPDATE SET
+          setup_version = EXCLUDED.setup_version,
+          mainline_id = EXCLUDED.mainline_id,
+          mainline_name = EXCLUDED.mainline_name,
+          subject_name = EXCLUDED.subject_name,
+          stock_name = EXCLUDED.stock_name,
+          lifecycle_state = EXCLUDED.lifecycle_state,
+          market_trade_mode = EXCLUDED.market_trade_mode,
+          allow_trade = EXCLUDED.allow_trade,
+          position_limit = EXCLUDED.position_limit,
+          decision = EXCLUDED.decision,
+          plan_status = EXCLUDED.plan_status,
+          watch_level = EXCLUDED.watch_level,
+          final_score = EXCLUDED.final_score,
+          summary = EXCLUDED.summary,
+          evidence_rules = EXCLUDED.evidence_rules,
+          feature_json = EXCLUDED.feature_json,
+          risk_flags = EXCLUDED.risk_flags,
+          trigger_plan = EXCLUDED.trigger_plan,
+          invalidation_plan = EXCLUDED.invalidation_plan,
+          exit_plan = EXCLUDED.exit_plan,
+          diagnostics = EXCLUDED.diagnostics,
+          source_trace_json = EXCLUDED.source_trace_json,
+          updated_at = NOW()
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql_meta, payload)
+            return len(payload)
+        except Exception as e:
+            logger.warning(f"写入 post_market_setup_plan 失败: {e}")
+            return 0
+
+    async def upsert_one_to_two_candidate_feature_rows(self, rows: list[dict[str, Any]]) -> int:
+        """UPSERT one_to_two_candidate_feature rows."""
+        if not rows:
+            return 0
+        await self._ensure_one_to_two_setup_tables()
+        sql = """
+        INSERT INTO one_to_two_candidate_feature (
+            trade_date, watch_date, stock_id, stock_name,
+            subject_key, subject_name, mainline_id,
+            is_confirmed_mainline, is_strong_hotspot, mainline_or_hotspot_state,
+            lifecycle_state, market_trade_mode,
+            is_first_limit_up, is_one_word_board, is_late_seal,
+            first_limit_time, open_board_count,
+            turnover_rate, amount, close_seal_amount, seal_ratio,
+            close_price, limit_up_price, float_mcap, position_120,
+            is_downtrend, near_pressure, same_subject_limit_count, same_subject_strong_count,
+            first_board_quality_score, mainline_context_score, technical_structure_score,
+            risk_control_score, final_score, decision, veto_reasons,
+            feature_json, data_quality_json, source_trace_json
+        ) VALUES (
+            $1::date, $2::date, $3, $4,
+            $5, $6, $7,
+            $8::boolean, $9::boolean, $10,
+            $11, $12,
+            $13::boolean, $14::boolean, $15::boolean,
+            $16, $17,
+            $18::numeric, $19::numeric, $20::numeric, $21::numeric,
+            $22::numeric, $23::numeric, $24::numeric, $25::numeric,
+            $26::boolean, $27::boolean, $28, $29,
+            $30::numeric, $31::numeric, $32::numeric,
+            $33::numeric, $34::numeric, $35, $36::jsonb,
+            $37::jsonb, $38::jsonb, $39::jsonb
+        )
+        ON CONFLICT (trade_date, stock_id, subject_key) DO UPDATE SET
+          stock_name = EXCLUDED.stock_name,
+          subject_name = EXCLUDED.subject_name,
+          mainline_id = EXCLUDED.mainline_id,
+          is_confirmed_mainline = EXCLUDED.is_confirmed_mainline,
+          is_strong_hotspot = EXCLUDED.is_strong_hotspot,
+          mainline_or_hotspot_state = EXCLUDED.mainline_or_hotspot_state,
+          lifecycle_state = EXCLUDED.lifecycle_state,
+          market_trade_mode = EXCLUDED.market_trade_mode,
+          is_first_limit_up = EXCLUDED.is_first_limit_up,
+          is_one_word_board = EXCLUDED.is_one_word_board,
+          is_late_seal = EXCLUDED.is_late_seal,
+          first_limit_time = EXCLUDED.first_limit_time,
+          open_board_count = EXCLUDED.open_board_count,
+          turnover_rate = EXCLUDED.turnover_rate,
+          amount = EXCLUDED.amount,
+          close_seal_amount = EXCLUDED.close_seal_amount,
+          seal_ratio = EXCLUDED.seal_ratio,
+          close_price = EXCLUDED.close_price,
+          limit_up_price = EXCLUDED.limit_up_price,
+          float_mcap = EXCLUDED.float_mcap,
+          position_120 = EXCLUDED.position_120,
+          is_downtrend = EXCLUDED.is_downtrend,
+          near_pressure = EXCLUDED.near_pressure,
+          same_subject_limit_count = EXCLUDED.same_subject_limit_count,
+          same_subject_strong_count = EXCLUDED.same_subject_strong_count,
+          first_board_quality_score = EXCLUDED.first_board_quality_score,
+          mainline_context_score = EXCLUDED.mainline_context_score,
+          technical_structure_score = EXCLUDED.technical_structure_score,
+          risk_control_score = EXCLUDED.risk_control_score,
+          final_score = EXCLUDED.final_score,
+          decision = EXCLUDED.decision,
+          veto_reasons = EXCLUDED.veto_reasons,
+          feature_json = EXCLUDED.feature_json,
+          data_quality_json = EXCLUDED.data_quality_json,
+          source_trace_json = EXCLUDED.source_trace_json,
+          updated_at = NOW()
+        """
+        payload = []
+        for row in rows:
+            trade_date = row.get("trade_date")
+            watch_date = row.get("watch_date")
+            if isinstance(trade_date, str):
+                trade_date = date.fromisoformat(trade_date)
+            if isinstance(watch_date, str):
+                watch_date = date.fromisoformat(watch_date)
+            if not trade_date or not watch_date or not row.get("stock_id") or not row.get("subject_key"):
+                continue
+            payload.append((
+                trade_date,
+                watch_date,
+                str(row.get("stock_id") or ""),
+                str(row.get("stock_name") or ""),
+                str(row.get("subject_key") or ""),
+                str(row.get("subject_name") or ""),
+                row.get("mainline_id"),
+                row.get("is_confirmed_mainline"),
+                row.get("is_strong_hotspot"),
+                str(row.get("mainline_or_hotspot_state") or ""),
+                str(row.get("lifecycle_state") or ""),
+                str(row.get("market_trade_mode") or ""),
+                row.get("is_first_limit_up"),
+                row.get("is_one_word_board"),
+                row.get("is_late_seal"),
+                row.get("first_limit_time"),
+                row.get("open_board_count"),
+                row.get("turnover_rate"),
+                row.get("amount"),
+                row.get("close_seal_amount"),
+                row.get("seal_ratio"),
+                row.get("close_price"),
+                row.get("limit_up_price"),
+                row.get("float_mcap"),
+                row.get("position_120"),
+                row.get("is_downtrend"),
+                row.get("near_pressure"),
+                row.get("same_subject_limit_count"),
+                row.get("same_subject_strong_count"),
+                row.get("first_board_quality_score"),
+                row.get("mainline_context_score"),
+                row.get("technical_structure_score"),
+                row.get("risk_control_score"),
+                row.get("final_score"),
+                row.get("decision"),
+                _safe_json_dumps(row.get("veto_reasons"), []),
+                _safe_json_dumps(row.get("feature_json"), {}),
+                _safe_json_dumps(row.get("data_quality_json"), {}),
+                _safe_json_dumps(row.get("source_trace_json"), {}),
+            ))
+        if not payload:
+            return 0
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql, payload)
+            return len(payload)
+        except Exception as e:
+            logger.warning(f"写入 one_to_two_candidate_feature 失败: {e}")
+            return 0
+
+    async def get_post_market_setup_plan_rows(self, trade_date: date, setup_type: str = "one_to_two") -> list[dict[str, Any]]:
+        """读取 post_market_setup_plan rows."""
+        sql = """
+        SELECT *
+        FROM post_market_setup_plan
+        WHERE trade_date = $1::date
+          AND setup_type = $2
+        ORDER BY CASE WHEN stock_id = '__SUMMARY__' THEN 0 ELSE 1 END,
+                 COALESCE(final_score, -1) DESC,
+                 stock_id ASC,
+                 subject_key ASC
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, trade_date, setup_type)
+            return [dict(r) for r in rows]
+        except Exception as e:
+            logger.warning(f"读取 post_market_setup_plan 失败（可能尚未迁移）: {e}")
+            raise RuntimeError("failed to read post_market_setup_plan rows") from e
+
+    async def _ensure_one_to_two_setup_tables(self) -> None:
+        sql = """
+        CREATE TABLE IF NOT EXISTS post_market_setup_plan (
+            id BIGSERIAL PRIMARY KEY,
+
+            trade_date DATE NOT NULL,
+            watch_date DATE NOT NULL,
+
+            setup_type TEXT NOT NULL,
+            setup_version TEXT DEFAULT 'v1',
+
+            mainline_id TEXT,
+            mainline_name TEXT,
+            subject_key TEXT,
+            subject_name TEXT,
+
+            stock_id TEXT NOT NULL,
+            stock_name TEXT,
+
+            lifecycle_state TEXT,
+            market_trade_mode TEXT,
+            allow_trade BOOLEAN DEFAULT false,
+            position_limit NUMERIC(8,4),
+
+            decision TEXT NOT NULL,
+            plan_status TEXT NOT NULL DEFAULT 'planned',
+            watch_level TEXT,
+            final_score NUMERIC(8,2),
+
+            summary TEXT,
+            evidence_rules JSONB,
+            feature_json JSONB,
+            risk_flags JSONB,
+
+            trigger_plan JSONB,
+            invalidation_plan JSONB,
+            exit_plan JSONB,
+
+            diagnostics JSONB,
+            source_trace_json JSONB,
+
+            created_at TIMESTAMP DEFAULT now(),
+            updated_at TIMESTAMP DEFAULT now(),
+
+            CONSTRAINT chk_post_market_setup_plan_decision
+                CHECK (decision IN ('focus', 'observe_only', 'pending_review_only', 'reject')),
+
+            CONSTRAINT chk_post_market_setup_plan_status
+                CHECK (plan_status IN ('planned', 'confirmed_by_auction', 'triggered_intraday', 'invalidated', 'expired')),
+
+            UNIQUE (trade_date, watch_date, setup_type, stock_id, subject_key)
+        );
+
+        CREATE TABLE IF NOT EXISTS one_to_two_candidate_feature (
+            id BIGSERIAL PRIMARY KEY,
+
+            trade_date DATE NOT NULL,
+            watch_date DATE NOT NULL,
+
+            stock_id TEXT NOT NULL,
+            stock_name TEXT,
+
+            subject_key TEXT,
+            subject_name TEXT,
+            mainline_id TEXT,
+
+            is_confirmed_mainline BOOLEAN,
+            is_strong_hotspot BOOLEAN DEFAULT false,
+            mainline_or_hotspot_state TEXT,
+            lifecycle_state TEXT,
+            market_trade_mode TEXT,
+
+            is_first_limit_up BOOLEAN,
+            is_one_word_board BOOLEAN,
+            is_late_seal BOOLEAN,
+            first_limit_time TIME,
+            open_board_count INTEGER,
+
+            turnover_rate NUMERIC(10,4),
+            amount NUMERIC(20,2),
+            close_seal_amount NUMERIC(20,2),
+            seal_ratio NUMERIC(10,4),
+
+            close_price NUMERIC(12,4),
+            limit_up_price NUMERIC(12,4),
+            float_mcap NUMERIC(20,2),
+            position_120 NUMERIC(10,4),
+            is_downtrend BOOLEAN,
+            near_pressure BOOLEAN,
+
+            same_subject_limit_count INTEGER,
+            same_subject_strong_count INTEGER,
+
+            first_board_quality_score NUMERIC(8,2),
+            mainline_context_score NUMERIC(8,2),
+            technical_structure_score NUMERIC(8,2),
+            risk_control_score NUMERIC(8,2),
+            final_score NUMERIC(8,2),
+
+            decision TEXT,
+            veto_reasons JSONB,
+            feature_json JSONB,
+
+            data_quality_json JSONB,
+            source_trace_json JSONB,
+
+            created_at TIMESTAMP DEFAULT now(),
+
+            CONSTRAINT chk_one_to_two_feature_decision
+                CHECK (decision IS NULL OR decision IN ('focus', 'observe_only', 'pending_review_only', 'reject')),
+
+            UNIQUE (trade_date, stock_id, subject_key)
+        );
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.execute(sql)
+        except Exception as e:
+            logger.warning(f"创建 one_to_two setup tables 失败（可能尚未迁移）: {e}")
+
     async def upsert_strong_watch_pool_rows(self, rows: list[dict[str, Any]]) -> int:
         """UPSERT strong_stock_watch_pool — 等价于旧链 _upsert_watch_pool_seed + _update_watch_pool_row。
 

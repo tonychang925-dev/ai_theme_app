@@ -55,6 +55,19 @@ class _GatewayFake:
 
 
 @pytest.mark.asyncio
+async def test_daily_review_v2_watchlists_one_to_two_propagates_read_error(monkeypatch: pytest.MonkeyPatch) -> None:
+    class _BrokenGateway(_GatewayFake):
+        async def get_post_market_setup_plan_rows(self, trade_date: date, setup_type: str = "one_to_two"):
+            raise RuntimeError("db offline")
+
+    fake = _BrokenGateway()
+    monkeypatch.setattr(api_app.app.state, "read_port", fake, raising=False)
+
+    with pytest.raises(RuntimeError, match="db offline"):
+        await api_app._build_one_to_two_watchlists(date(2026, 6, 4))
+
+
+@pytest.mark.asyncio
 async def test_daily_review_v2_watchlists_one_to_two_rejects_missing_summary_row(monkeypatch: pytest.MonkeyPatch) -> None:
     class _MissingSummaryGateway(_GatewayFake):
         async def get_post_market_setup_plan_rows(self, trade_date: date, setup_type: str = "one_to_two"):
