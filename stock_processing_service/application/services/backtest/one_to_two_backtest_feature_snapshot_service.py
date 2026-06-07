@@ -332,6 +332,8 @@ class OneToTwoBacktestFeatureSnapshotService:
             "same_subject_strong_count": candidate.get("same_subject_strong_count"),
             "subject_authenticity": candidate.get("subject_authenticity") or {},
             "stock_subject_authenticity": candidate.get("stock_subject_authenticity") or candidate.get("subject_authenticity") or {},
+            "stock_subject_authenticity_scope": candidate.get("stock_subject_authenticity_scope")
+            or str((candidate.get("stock_subject_authenticity") or candidate.get("subject_authenticity") or {}).get("authenticity_scope") or "subject_fallback"),
             "kline_pattern_quality": candidate.get("kline_pattern_quality") or {},
             "decision": decision,
             "veto_reasons": list(candidate.get("veto_reasons") or []),
@@ -360,6 +362,8 @@ class OneToTwoBacktestFeatureSnapshotService:
             "data_quality": candidate.get("data_quality_json") or {},
             "subject_authenticity": candidate.get("subject_authenticity") or {},
             "stock_subject_authenticity": candidate.get("stock_subject_authenticity") or candidate.get("subject_authenticity") or {},
+            "stock_subject_authenticity_scope": candidate.get("stock_subject_authenticity_scope")
+            or str((candidate.get("stock_subject_authenticity") or candidate.get("subject_authenticity") or {}).get("authenticity_scope") or "subject_fallback"),
             "kline_pattern_quality": candidate.get("kline_pattern_quality") or {},
             "signal_level": decision,
             "source_chain": "stock_processing_service.one_to_two_setup_plan",

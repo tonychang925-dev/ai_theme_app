@@ -212,6 +212,7 @@ async def test_one_to_two_backtest_snapshot_freezes_reject_candidates() -> None:
     assert source_trace["run_type"] == "backtest"
     assert derived["run_type"] == "backtest"
     assert raw["stock_subject_authenticity"] == raw["subject_authenticity"]
+    assert raw["stock_subject_authenticity_scope"] in {"stock_subject", "subject_fallback"}
 
 
 @pytest.mark.asyncio
