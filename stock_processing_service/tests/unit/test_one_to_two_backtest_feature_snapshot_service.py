@@ -115,16 +115,16 @@ class _Engine:
                     "evidence_rules": ["rule-a"],
                     "data_quality_json": {"source": "unit"},
                     "source_trace_json": {"source_chain": "unit"},
-                    "first_board_type": "relaunch_first_board",
+                    "first_board_type": "chain_first_board",
+                    "first_board_quality_tags": ["relaunch_first_board"],
                     "first_board_trace": {
                         "current_limit_up": True,
-                        "last_limit_up_date": "2026-04-17",
-                        "cooldown_trade_days": 10,
-                        "had_consecutive_limit_up": False,
-                        "pullback_after_last_limit_up": True,
-                        "reclaimed_ma_cluster": True,
+                        "previous_trade_date": "2026-06-03",
+                        "previous_trade_date_limit_up": False,
+                        "limit_streak_count": 1,
                         "position_label": "low",
-                        "first_board_type_reason": "relaunch_after_cooldown",
+                        "first_board_type_reason": "previous_trade_day_not_limit_up",
+                        "first_board_quality_tags": ["relaunch_first_board"],
                     },
                     "missing_features": [],
                 },
@@ -151,7 +151,9 @@ class _Engine:
                     "first_board_type": "not_first_board",
                     "first_board_trace": {
                         "current_limit_up": True,
-                        "first_board_type_reason": "consecutive_board_excluded",
+                        "previous_trade_date_limit_up": True,
+                        "limit_streak_count": 2,
+                        "first_board_type_reason": "previous_trade_day_limit_up",
                     },
                     "missing_features": ["mainline_context"],
                 },
@@ -227,8 +229,9 @@ async def test_one_to_two_backtest_snapshot_freezes_reject_candidates() -> None:
     raw = json.loads(params[-3])
     assert source_trace["run_type"] == "backtest"
     assert derived["run_type"] == "backtest"
-    assert raw["first_board_type"] == "relaunch_first_board"
-    assert raw["first_board_trace"]["first_board_type_reason"] == "relaunch_after_cooldown"
+    assert raw["first_board_type"] == "chain_first_board"
+    assert raw["first_board_quality_tags"] == ["relaunch_first_board"]
+    assert raw["first_board_trace"]["first_board_type_reason"] == "previous_trade_day_not_limit_up"
     assert raw["stock_subject_authenticity"] == raw["subject_authenticity"]
     assert raw["stock_subject_authenticity_scope"] in {"stock_subject", "subject_fallback"}
 

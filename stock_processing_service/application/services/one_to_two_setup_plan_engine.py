@@ -158,6 +158,8 @@ class OneToTwoSetupPlanEngine:
             evidence.append(f"same_subject_limit_count={f.same_subject_limit_count}")
         if f.first_board_type:
             evidence.append(f"first_board_type={f.first_board_type}")
+        if f.first_board_quality_tags:
+            evidence.append(f"first_board_quality_tags={','.join(f.first_board_quality_tags)}")
         if f.subject_authenticity:
             evidence.append(f"subject_authenticity_scope={f.subject_authenticity.get('authenticity_scope', '')}")
             evidence.append(f"subject_authenticity_level={f.subject_authenticity.get('level', '')}")
@@ -192,11 +194,15 @@ class OneToTwoSetupPlanEngine:
             "allow_trade": f.allow_trade,
             "is_first_limit_up": f.is_first_limit_up,
             "first_board_type": f.first_board_type,
+            "first_board_quality_tags": list(f.first_board_quality_tags or []),
             "first_board_trace": dict(f.first_board_trace or {}),
             "is_one_word_board": f.is_one_word_board,
             "is_late_seal": f.is_late_seal,
             "first_limit_time": f.first_limit_time,
             "open_board_count": f.open_board_count,
+            "previous_trade_date": f.previous_trade_date,
+            "previous_trade_date_limit_up": f.previous_trade_date_limit_up,
+            "limit_streak_count": f.limit_streak_count,
             "turnover_rate": f.turnover_rate,
             "amount": f.amount,
             "close_seal_amount": f.close_seal_amount,
@@ -232,12 +238,16 @@ class OneToTwoSetupPlanEngine:
                 "stock_subject_authenticity": dict(f.subject_authenticity),
                 "stock_subject_authenticity_scope": str(f.subject_authenticity.get("authenticity_scope") or "subject_fallback"),
                 "kline_pattern_quality": dict(f.kline_pattern_quality),
+                "first_board_type": f.first_board_type,
+                "first_board_quality_tags": list(f.first_board_quality_tags or []),
+                "first_board_trace": dict(f.first_board_trace or {}),
             },
             "data_quality_json": dict(f.data_quality),
             "source_trace_json": {
                 **dict(f.source_trace),
                 "rule_version": self.rule_engine.rule_version,
                 "first_board_type": f.first_board_type,
+                "first_board_quality_tags": list(f.first_board_quality_tags or []),
                 "first_board_trace": dict(f.first_board_trace or {}),
             },
         }

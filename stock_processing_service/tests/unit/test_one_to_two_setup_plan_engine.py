@@ -808,8 +808,9 @@ def _versioned_feature(
     same_subject_strong_count: int,
     subject_key: str = "9064103",
     is_confirmed_mainline: bool = True,
-    first_board_type: str = "strict_first_board",
+    first_board_type: str = "chain_first_board",
     first_board_trace: dict[str, object] | None = None,
+    first_board_quality_tags: list[str] | None = None,
 ) -> OneToTwoFeatures:
     return OneToTwoFeatures(
         trade_date="2026-05-07",
@@ -843,6 +844,7 @@ def _versioned_feature(
         source_trace={"source": "unit"},
         first_board_type=first_board_type,
         first_board_trace=first_board_trace or {"first_board_type_reason": first_board_type},
+        first_board_quality_tags=first_board_quality_tags or ["strict_first_board"],
     )
 
 
@@ -903,13 +905,13 @@ def test_one_to_two_rule_v1_3_combines_soft_breadth_and_low_turnover() -> None:
     assert "低换手，先观察不 focus" in rule.risk_flags
 
 
-def test_one_to_two_rule_v1_0_accepts_only_strict_first_board() -> None:
+def test_one_to_two_rule_v1_0_accepts_only_chain_first_board() -> None:
     strict_rule = OneToTwoRuleEngine().apply(
         _versioned_feature(
             turnover_rate=Decimal("0.18"),
             same_subject_limit_count=3,
             same_subject_strong_count=7,
-            first_board_type="strict_first_board",
+            first_board_type="chain_first_board",
         )
     )
     relaunch_rule = OneToTwoRuleEngine().apply(
@@ -917,32 +919,37 @@ def test_one_to_two_rule_v1_0_accepts_only_strict_first_board() -> None:
             turnover_rate=Decimal("0.18"),
             same_subject_limit_count=3,
             same_subject_strong_count=7,
-            first_board_type="relaunch_first_board",
+            first_board_type="not_first_board",
         )
     )
 
     assert strict_rule.decision in {"focus", "observe_only"}
     assert relaunch_rule.decision == "reject"
-    assert "不符合首板类型: relaunch_first_board" in "；".join(relaunch_rule.veto_reasons)
+    assert "不符合首板类型: not_first_board" in "；".join(relaunch_rule.veto_reasons)
 
 
 @pytest.mark.parametrize(
-    "first_board_type",
-    ["relaunch_first_board", "trend_first_board", "oversold_first_board"],
+    "first_board_quality_tags",
+    [["relaunch_first_board"], ["trend_first_board"], ["oversold_first_board"]],
 )
-def test_one_to_two_rule_v1_4_accepts_extended_first_board_types(first_board_type: str) -> None:
+def test_one_to_two_rule_v1_4_accepts_extended_first_board_quality_tags(first_board_quality_tags: list[str]) -> None:
     rule = OneToTwoRuleEngine(OneToTwoRuleConfig.from_version(RULE_VERSION_V1_4)).apply(
         _versioned_feature(
             turnover_rate=Decimal("0.18"),
             same_subject_limit_count=3,
             same_subject_strong_count=7,
-            first_board_type=first_board_type,
-            first_board_trace={"first_board_type_reason": first_board_type},
+            first_board_type="chain_first_board",
+            first_board_trace={
+                "first_board_type_reason": "previous_trade_day_not_limit_up",
+                "first_board_quality_tags": first_board_quality_tags,
+            },
+            first_board_quality_tags=first_board_quality_tags,
         )
     )
 
     assert rule.decision in {"focus", "observe_only", "pending_review_only"}
     assert rule.veto_reasons == []
+    assert rule.risk_flags == []
 
 
 def test_one_to_two_first_board_trace_persisted_to_snapshot_payload() -> None:
@@ -952,23 +959,24 @@ def test_one_to_two_first_board_trace_persisted_to_snapshot_payload() -> None:
             turnover_rate=Decimal("0.18"),
             same_subject_limit_count=3,
             same_subject_strong_count=7,
-            first_board_type="relaunch_first_board",
+            first_board_type="chain_first_board",
             first_board_trace={
                 "current_limit_up": True,
-                "last_limit_up_date": "2026-04-17",
-                "cooldown_trade_days": 10,
-                "had_consecutive_limit_up": False,
-                "pullback_after_last_limit_up": True,
-                "reclaimed_ma_cluster": True,
+                "previous_trade_date": "2026-05-06",
+                "previous_trade_date_limit_up": False,
+                "limit_streak_count": 1,
                 "position_label": "low",
-                "first_board_type_reason": "relaunch_after_cooldown",
+                "first_board_type_reason": "previous_trade_day_not_limit_up",
             },
+            first_board_quality_tags=["relaunch_first_board"],
         )
     ]
 
     result = engine.build_from_context(_setup_context())
 
-    assert result.candidate_features[0]["first_board_type"] == "relaunch_first_board"
-    assert result.candidate_features[0]["first_board_trace"]["first_board_type_reason"] == "relaunch_after_cooldown"
-    assert result.candidate_features[0]["source_trace_json"]["first_board_type"] == "relaunch_first_board"
-    assert result.candidate_features[0]["source_trace_json"]["first_board_trace"]["last_limit_up_date"] == "2026-04-17"
+    assert result.candidate_features[0]["first_board_type"] == "chain_first_board"
+    assert result.candidate_features[0]["first_board_quality_tags"] == ["relaunch_first_board"]
+    assert result.candidate_features[0]["first_board_trace"]["first_board_type_reason"] == "previous_trade_day_not_limit_up"
+    assert result.candidate_features[0]["source_trace_json"]["first_board_type"] == "chain_first_board"
+    assert result.candidate_features[0]["source_trace_json"]["first_board_quality_tags"] == ["relaunch_first_board"]
+    assert result.candidate_features[0]["source_trace_json"]["first_board_trace"]["previous_trade_date"] == "2026-05-06"

@@ -3,11 +3,11 @@ from __future__ import annotations
 from decimal import Decimal
 
 from stock_processing_service.domain.services.first_board_classifier import (
+    FIRST_BOARD_CHAIN,
     FIRST_BOARD_NOT,
     FIRST_BOARD_OVERSOLD,
     FIRST_BOARD_RELAUNCH,
-    FIRST_BOARD_STRICT,
-    FIRST_BOARD_TREND,
+    FIRST_BOARD_QUALITY_STRICT,
     FirstBoardClassifier,
 )
 
@@ -34,7 +34,7 @@ def _row(
     return row
 
 
-def test_strict_first_board_when_no_prior_limit_up() -> None:
+def test_chain_first_board_when_no_prior_limit_up() -> None:
     classifier = FirstBoardClassifier()
     result = classifier.classify(
         rows=[
@@ -45,12 +45,14 @@ def test_strict_first_board_when_no_prior_limit_up() -> None:
         subject_row={"is_downtrend": False, "near_pressure": False, "one_word_board": False},
     )
 
-    assert result.first_board_type == FIRST_BOARD_STRICT
+    assert result.first_board_type == FIRST_BOARD_CHAIN
     assert result.is_first_limit_up is True
-    assert result.first_board_trace["first_board_type_reason"] == "strict_first_board"
+    assert result.first_board_trace["previous_trade_date_limit_up"] is False
+    assert result.first_board_trace["limit_streak_count"] == 1
+    assert result.first_board_quality_tags == [FIRST_BOARD_QUALITY_STRICT]
 
 
-def test_relaunch_first_board_after_cooldown_and_pullback() -> None:
+def test_chain_first_board_relaunch_quality_tag_after_cooldown_and_pullback() -> None:
     classifier = FirstBoardClassifier()
     rows = [
         _row("2026-04-17", pct_chg="10.00", close_price="10.00", pre_close="9.09", limit_up_price="10.00", limit_up=True),
@@ -68,14 +70,15 @@ def test_relaunch_first_board_after_cooldown_and_pullback() -> None:
         subject_row={"position_120": Decimal("0.28"), "is_downtrend": False, "near_pressure": False, "one_word_board": False},
     )
 
-    assert result.first_board_type == FIRST_BOARD_RELAUNCH
+    assert result.first_board_type == FIRST_BOARD_CHAIN
     assert result.is_first_limit_up is True
-    assert result.first_board_trace["cooldown_trade_days"] >= 5
-    assert result.first_board_trace["pullback_after_last_limit_up"] is True
-    assert result.first_board_trace["first_board_type_reason"] == "relaunch_after_cooldown"
+    assert result.first_board_trace["previous_trade_date_limit_up"] is False
+    assert result.first_board_trace["limit_streak_count"] == 1
+    assert FIRST_BOARD_RELAUNCH in result.first_board_quality_tags
+    assert result.first_board_trace["first_board_quality_tags"] == result.first_board_quality_tags
 
 
-def test_relaunch_first_board_rejects_recent_second_board() -> None:
+def test_not_first_board_when_previous_trade_day_limit_up() -> None:
     classifier = FirstBoardClassifier()
     rows = [
         _row("2026-05-05", pct_chg="10.00", close_price="10.00", pre_close="9.09", limit_up_price="10.00", limit_up=True),
@@ -90,11 +93,11 @@ def test_relaunch_first_board_rejects_recent_second_board() -> None:
 
     assert result.first_board_type == FIRST_BOARD_NOT
     assert result.is_first_limit_up is False
-    assert result.first_board_trace["had_consecutive_limit_up"] is True
-    assert result.first_board_trace["first_board_type_reason"] == "consecutive_board_excluded"
+    assert result.first_board_trace["previous_trade_date_limit_up"] is True
+    assert result.first_board_trace["limit_streak_count"] == 2
 
 
-def test_trend_first_board_excludes_high_position() -> None:
+def test_chain_first_board_high_position_gets_strict_quality_tag() -> None:
     classifier = FirstBoardClassifier()
     result = classifier.classify(
         rows=[
@@ -105,11 +108,12 @@ def test_trend_first_board_excludes_high_position() -> None:
         subject_row={"position_120": Decimal("0.82"), "is_downtrend": False, "near_pressure": False, "one_word_board": False},
     )
 
-    assert result.first_board_type == FIRST_BOARD_NOT
+    assert result.first_board_type == FIRST_BOARD_CHAIN
     assert result.first_board_trace["position_label"] == "high"
+    assert result.first_board_quality_tags == [FIRST_BOARD_QUALITY_STRICT]
 
 
-def test_oversold_first_board_requires_low_position() -> None:
+def test_chain_first_board_oversold_quality_tag_when_low_position() -> None:
     classifier = FirstBoardClassifier()
     result = classifier.classify(
         rows=[
@@ -120,6 +124,7 @@ def test_oversold_first_board_requires_low_position() -> None:
         subject_row={"position_120": Decimal("0.20"), "is_downtrend": False, "near_pressure": False, "one_word_board": False},
     )
 
-    assert result.first_board_type == FIRST_BOARD_OVERSOLD
+    assert result.first_board_type == FIRST_BOARD_CHAIN
     assert result.is_first_limit_up is True
     assert result.first_board_trace["position_label"] == "low"
+    assert FIRST_BOARD_OVERSOLD in result.first_board_quality_tags

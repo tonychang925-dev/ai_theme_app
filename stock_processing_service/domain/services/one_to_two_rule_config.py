@@ -34,21 +34,26 @@ class OneToTwoRuleConfig:
     def from_version(cls, rule_version: str | None) -> OneToTwoRuleConfig:
         version = (rule_version or RULE_VERSION_V1_0).strip()
         if version == RULE_VERSION_V1_0:
-            return cls()
+            return cls(
+                allowed_first_board_types=("chain_first_board",),
+            )
         if version == RULE_VERSION_V1_1:
             return cls(
                 rule_version=RULE_VERSION_V1_1,
+                allowed_first_board_types=("chain_first_board",),
                 allow_strong_count_breadth=True,
             )
         if version == RULE_VERSION_V1_2:
             return cls(
                 rule_version=RULE_VERSION_V1_2,
+                allowed_first_board_types=("chain_first_board",),
                 min_focus_turnover=Decimal("0.08"),
                 min_reject_turnover=Decimal("0.03"),
             )
         if version == RULE_VERSION_V1_3:
             return cls(
                 rule_version=RULE_VERSION_V1_3,
+                allowed_first_board_types=("chain_first_board",),
                 min_focus_turnover=Decimal("0.08"),
                 min_reject_turnover=Decimal("0.03"),
                 allow_strong_count_breadth=True,
@@ -56,11 +61,6 @@ class OneToTwoRuleConfig:
         if version == RULE_VERSION_V1_4:
             return cls(
                 rule_version=RULE_VERSION_V1_4,
-                allowed_first_board_types=(
-                    "strict_first_board",
-                    "relaunch_first_board",
-                    "trend_first_board",
-                    "oversold_first_board",
-                ),
+                allowed_first_board_types=("chain_first_board",),
             )
         raise ValueError(f"unsupported OneToTwo rule version: {version}")

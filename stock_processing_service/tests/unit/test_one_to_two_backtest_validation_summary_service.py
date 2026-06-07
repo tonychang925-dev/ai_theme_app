@@ -51,7 +51,7 @@ def _snapshot(
     veto_reason: str = "no_mainline",
     authenticity_level: str | None = None,
     has_golden_spider: bool | None = None,
-    first_board_type: str = "strict_first_board",
+    first_board_type: str = "chain_first_board",
 ) -> dict[str, object]:
     raw_feature_json: dict[str, object] = {"decision": decision, "veto_reasons": [veto_reason]}
     derived_feature_json: dict[str, object] = {"decision": decision, "veto_reasons": [veto_reason]}
@@ -62,9 +62,11 @@ def _snapshot(
         raw_feature_json["kline_pattern_quality"] = {"has_golden_spider": has_golden_spider, "score": 68.0 if has_golden_spider else 32.0}
         derived_feature_json["kline_pattern_quality"] = {"has_golden_spider": has_golden_spider, "score": 68.0 if has_golden_spider else 32.0}
     raw_feature_json["first_board_type"] = first_board_type
-    raw_feature_json["first_board_trace"] = {"first_board_type_reason": first_board_type}
+    raw_feature_json["first_board_quality_tags"] = [first_board_type]
+    raw_feature_json["first_board_trace"] = {"first_board_type_reason": first_board_type, "first_board_quality_tags": [first_board_type]}
     derived_feature_json["first_board_type"] = first_board_type
-    derived_feature_json["first_board_trace"] = {"first_board_type_reason": first_board_type}
+    derived_feature_json["first_board_quality_tags"] = [first_board_type]
+    derived_feature_json["first_board_trace"] = {"first_board_type_reason": first_board_type, "first_board_quality_tags": [first_board_type]}
     return {
         "snapshot_id": snapshot_id,
         "run_id": "run-001",
@@ -184,14 +186,14 @@ async def test_one_to_two_backtest_validation_summary_reports_core_metrics() -> 
     assert report["authenticity_level_counts"]["related"] == 1
     assert report["authenticity_level_counts"]["unknown"] == 3
     assert report["golden_spider_counts"]["false"] == 4
-    assert report["first_board_type_counts"]["strict_first_board"] == 4
-    assert report["first_board_type_breakdown"]["strict_first_board"]["sample_count"] == 4
-    assert report["first_board_type_breakdown"]["strict_first_board"]["success_count"] == 2
+    assert report["first_board_type_counts"]["chain_first_board"] == 4
+    assert report["first_board_type_breakdown"]["chain_first_board"]["sample_count"] == 4
+    assert report["first_board_type_breakdown"]["chain_first_board"]["success_count"] == 2
     assert report["reject_reason_false_negative_distribution"]["mainline_missing"] == 1
     assert report["decision_breakdown"]["focus"]["success_rate"] == 1.0
     assert report["decision_breakdown"]["observe_only"]["success_rate"] == 0.0
     assert report["decision_breakdown"]["pending_review_only"]["success_rate"] == 0.0
     assert report["decision_breakdown"]["observe_only"]["authenticity_level_counts"]["related"] == 1
     assert report["decision_breakdown"]["observe_only"]["golden_spider_counts"]["false"] == 1
-    assert report["decision_breakdown"]["focus"]["first_board_type_counts"]["strict_first_board"] == 1
+    assert report["decision_breakdown"]["focus"]["first_board_type_counts"]["chain_first_board"] == 1
     assert report["summary_rows"][0]["experiment_id"] == "one_to_two_overall"

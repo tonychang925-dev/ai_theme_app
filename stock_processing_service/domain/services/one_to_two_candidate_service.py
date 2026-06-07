@@ -94,6 +94,7 @@ class OneToTwoCandidateService:
                 subject_row=current_subject_row,
             )
             first_board_type = first_board.first_board_type
+            first_board_quality_tags = list(first_board.first_board_quality_tags or [])
             first_board_trace = dict(first_board.first_board_trace)
             is_first_limit_up = first_board.is_first_limit_up
 
@@ -205,8 +206,12 @@ class OneToTwoCandidateService:
                     board_row.get("subject_strong_count")
                     or board_row.get("strong_count")
                 ),
+                previous_trade_date=first_board_trace.get("previous_trade_date"),
+                previous_trade_date_limit_up=self._bool_or_none(first_board_trace.get("previous_trade_date_limit_up")),
+                limit_streak_count=self._int_or_none(first_board_trace.get("limit_streak_count")) or 0,
                 subject_authenticity=subject_authenticity,
                 kline_pattern_quality=kline_pattern_quality,
+                first_board_quality_tags=first_board_quality_tags,
                 first_board_type=first_board_type,
                 first_board_trace=first_board_trace,
                 data_quality={
@@ -228,9 +233,10 @@ class OneToTwoCandidateService:
                     "subject_key": subject_key,
                     "trade_date": current_trade_date,
                     "bar_trade_date": self._date_str(bar.get("trade_date")),
-                    "first_board_type": first_board_type,
-                    "first_board_trace": first_board_trace,
-                    "subject_selection": {
+                        "first_board_type": first_board_type,
+                        "first_board_quality_tags": first_board_quality_tags,
+                        "first_board_trace": first_board_trace,
+                        "subject_selection": {
                         "selected_subject_key": subject_key,
                         "selected_subject_name": self._text(
                             current_subject_row.get("subject_name")
@@ -249,6 +255,7 @@ class OneToTwoCandidateService:
                             "stock_subject_key": subject_authenticity.get("stock_subject_key"),
                         },
                         "first_board_type": first_board_type,
+                        "first_board_quality_tags": first_board_quality_tags,
                         "first_board_trace": first_board_trace,
                         "kline_pattern_quality": {
                             "has_golden_spider": kline_pattern_quality.get("has_golden_spider"),
