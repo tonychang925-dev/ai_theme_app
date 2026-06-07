@@ -103,6 +103,24 @@ class StockWriteGatewayAdapter:
             return await fn(rows)
         return 0
 
+    async def upsert_mainline_state_daily_rows(self, rows: list[dict[str, Any]]) -> int:
+        """Compatibility alias for BuildMainlineStateJob."""
+        if not rows:
+            return 0
+        fn = getattr(self._db, "upsert_mainline_state_daily_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        return 0
+
+    async def upsert_mainline_state_transition_rows(self, rows: list[dict[str, Any]]) -> int:
+        """Compatibility alias for BuildMainlineStateJob."""
+        if not rows:
+            return 0
+        fn = getattr(self._db, "upsert_mainline_state_transition_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        return 0
+
     async def upsert_strong_watch_pool_rows(self, rows: list[dict[str, Any]]) -> int:
         if not rows:
             return 0

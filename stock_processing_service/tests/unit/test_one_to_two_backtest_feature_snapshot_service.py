@@ -55,6 +55,29 @@ class _ReadPort:
             "ma_pattern_by_stock": {},
         }
 
+    async def get_stock_daily_bars_range(
+        self,
+        start_date: date,
+        end_date: date,
+        stock_ids: list[str] | None = None,
+    ) -> list[dict[str, object]]:
+        rows: list[dict[str, object]] = []
+        current = start_date
+        while current <= end_date:
+            if current.weekday() < 5:
+                rows.append(
+                    {
+                        "trade_date": current.isoformat(),
+                        "stock_id": "600367.SH",
+                        "limit_up": True,
+                        "close_price": Decimal("10.00"),
+                        "limit_up_price": Decimal("10.00"),
+                        "pct_chg": Decimal("9.90"),
+                    }
+                )
+            current += timedelta(days=1)
+        return rows
+
 
 class _BrokenReadPort(_ReadPort):
     async def get_post_market_report_context(self, trade_date: date) -> dict[str, object]:
@@ -62,7 +85,11 @@ class _BrokenReadPort(_ReadPort):
 
 
 class _Engine:
+    def __init__(self) -> None:
+        self.calls: list[date] = []
+
     async def build(self, trade_date: date, read_port, source_doc=None):
+        self.calls.append(trade_date)
         return OneToTwoSetupPlanDTO(
             summary={"focus_count": 1, "observe_only_count": 0, "pending_review_only_count": 0, "reject_count": 1},
             items=[],
@@ -207,3 +234,25 @@ async def test_one_to_two_backtest_snapshot_report_context_failure_raises() -> N
             end_date=date(2026, 6, 4),
             force_rebuild=False,
         )
+
+
+@pytest.mark.asyncio
+async def test_one_to_two_backtest_snapshot_skips_weekends() -> None:
+    gw = _Gateway()
+    engine = _Engine()
+    service = OneToTwoBacktestFeatureSnapshotService(
+        _ReadPort(),
+        gw,
+        engine=engine,
+        data_quality_service=_DQPass(),
+    )
+
+    report = await service.build(
+        run_id="run-weekend",
+        start_date=date(2026, 5, 8),
+        end_date=date(2026, 5, 11),
+        force_rebuild=False,
+    )
+
+    assert engine.calls == [date(2026, 5, 8), date(2026, 5, 11)]
+    assert report["non_empty_days"] == 2

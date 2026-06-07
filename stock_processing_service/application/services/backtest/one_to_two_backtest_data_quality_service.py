@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import date, timedelta
+from datetime import date
 from typing import Any
 
 from stock_processing_service.application.services.post_market_setup_fact_context_builder import (
@@ -74,19 +74,13 @@ class OneToTwoBacktestDataQualityService:
         limit_up_pass = 0
         validation_pass = 0
 
-        current = start_date
-        while current <= end_date:
-            calendar = await self._safe_get_trade_calendar(current)
-            if calendar is not None and not bool(getattr(calendar, "calendar_is_open", True)):
-                current += timedelta(days=1)
-                continue
-
-            report.open_days_total += 1
+        trade_dates = await self._load_trade_dates(start_date, end_date)
+        report.open_days_total = len(trade_dates)
+        for current in trade_dates:
             try:
                 source_doc = await self._read.get_post_market_report_context(current)
             except Exception as exc:
                 report.blocking_errors.append(f"{current.isoformat()}: get_post_market_report_context: {exc}")
-                current += timedelta(days=1)
                 continue
 
             try:
@@ -120,7 +114,6 @@ class OneToTwoBacktestDataQualityService:
                 report.blocking_errors.append(f"{current.isoformat()}: context_build_failed: {exc}")
             except Exception as exc:
                 report.blocking_errors.append(f"{current.isoformat()}: {exc}")
-            current += timedelta(days=1)
 
         report.generation_ready_days = generation_pass
         report.daily_bar_coverage_ratio = generation_pass / report.open_days_total if report.open_days_total else 0.0
@@ -179,6 +172,18 @@ class OneToTwoBacktestDataQualityService:
         except Exception:
             return None
 
+    async def _load_trade_dates(self, start_date: date, end_date: date) -> list[date]:
+        try:
+            rows = await self._read.get_stock_daily_bars_range(start_date, end_date, stock_ids=None)
+        except Exception:
+            rows = []
+        dates = {
+            self._parse_date(self._row_value(row, "trade_date"))
+            for row in rows
+            if self._parse_date(self._row_value(row, "trade_date")) is not None
+        }
+        return sorted(d for d in dates if d is not None)
+
     async def _safe_get_stock_bars(self, trade_date: date, stock_ids: list[str]) -> list[Any]:
         try:
             return await self._read.get_stock_daily_bars(trade_date, stock_ids=stock_ids or None)
@@ -208,3 +213,8 @@ class OneToTwoBacktestDataQualityService:
             if isinstance(maybe, date):
                 return maybe
         return None
+
+    def _row_value(self, row: Any, key: str) -> Any:
+        if isinstance(row, dict):
+            return row.get(key)
+        return getattr(row, key, None)

@@ -16,6 +16,7 @@ from stock_processing_service.contracts.dto.one_to_two_dto import (
 from stock_processing_service.contracts.dto.post_market_setup_context_dto import PostMarketSetupFactContext
 from stock_processing_service.domain.services.one_to_two_candidate_service import OneToTwoCandidateService
 from stock_processing_service.domain.services.one_to_two_risk_plan_builder import OneToTwoRiskPlanBuilder
+from stock_processing_service.domain.services.one_to_two_rule_config import OneToTwoRuleConfig
 from stock_processing_service.domain.services.one_to_two_rule_engine import OneToTwoRuleEngine
 from stock_processing_service.domain.services.one_to_two_scorer import OneToTwoScorer
 
@@ -33,12 +34,13 @@ class OneToTwoSetupPlanEngine:
         fact_context_builder: PostMarketSetupFactContextBuilder | None = None,
         candidate_service: OneToTwoCandidateService | None = None,
         rule_engine: OneToTwoRuleEngine | None = None,
+        rule_config: OneToTwoRuleConfig | None = None,
         scorer: OneToTwoScorer | None = None,
         risk_plan_builder: OneToTwoRiskPlanBuilder | None = None,
     ) -> None:
         self.fact_context_builder = fact_context_builder
         self.candidate_service = candidate_service or OneToTwoCandidateService()
-        self.rule_engine = rule_engine or OneToTwoRuleEngine()
+        self.rule_engine = rule_engine or OneToTwoRuleEngine(rule_config)
         self.scorer = scorer or OneToTwoScorer()
         self.risk_plan_builder = risk_plan_builder or OneToTwoRiskPlanBuilder()
 
@@ -84,12 +86,14 @@ class OneToTwoSetupPlanEngine:
         summary = {
             "trade_date": ctx.trade_date,
             "watch_date": ctx.watch_date,
+            "rule_version": self.rule_engine.rule_version,
             "focus_count": sum(1 for item in items if item["decision"] == "focus"),
             "observe_only_count": sum(1 for item in items if item["decision"] == "observe_only"),
             "pending_review_only_count": sum(1 for item in items if item["decision"] == "pending_review_only"),
             "reject_count": reject_count,
         }
         diagnostics = {
+            "rule_version": self.rule_engine.rule_version,
             "empty_is_valid": True,
             "fact_pool_count": len(fact_pool),
             "top_reject_reasons": [reason for reason, _ in reject_reasons.most_common(10)],
@@ -122,6 +126,7 @@ class OneToTwoSetupPlanEngine:
             "decision": rule.decision,
             "plan_status": "planned",
             "watch_level": score.watch_level,
+            "rule_version": self.rule_engine.rule_version,
             "final_score": float(score.final_score) if score.final_score is not None else None,
             "summary": self._summary(f, rule),
             "evidence_rules": self._evidence(f, rule, score),
@@ -151,6 +156,12 @@ class OneToTwoSetupPlanEngine:
             evidence.append(f"turnover_rate={f.turnover_rate}")
         if f.same_subject_limit_count is not None:
             evidence.append(f"same_subject_limit_count={f.same_subject_limit_count}")
+        if f.subject_authenticity:
+            evidence.append(f"subject_authenticity_level={f.subject_authenticity.get('level', '')}")
+            evidence.append(f"subject_authenticity_score={f.subject_authenticity.get('score', '')}")
+        if f.kline_pattern_quality:
+            evidence.append(f"has_golden_spider={f.kline_pattern_quality.get('has_golden_spider', False)}")
+            evidence.append(f"kline_pattern_score={f.kline_pattern_quality.get('score', '')}")
         if score.watch_level:
             evidence.append(f"watch_level={score.watch_level}")
         evidence.extend(rule.risk_flags)
@@ -191,6 +202,8 @@ class OneToTwoSetupPlanEngine:
             "near_pressure": f.near_pressure,
             "same_subject_limit_count": f.same_subject_limit_count,
             "same_subject_strong_count": f.same_subject_strong_count,
+            "subject_authenticity": dict(f.subject_authenticity),
+            "kline_pattern_quality": dict(f.kline_pattern_quality),
             "decision": rule.decision,
             "veto_reasons": list(rule.veto_reasons),
             "risk_flags": list(rule.risk_flags),
@@ -200,6 +213,7 @@ class OneToTwoSetupPlanEngine:
             "risk_control_score": score.score_detail.get("risk_control"),
             "final_score": float(score.final_score) if score.final_score is not None else None,
             "watch_level": score.watch_level,
+            "rule_version": self.rule_engine.rule_version,
             "feature_json": {
                 "trade_date": f.trade_date,
                 "watch_date": f.watch_date,
@@ -207,7 +221,12 @@ class OneToTwoSetupPlanEngine:
                 "stock_name": f.stock_name,
                 "subject_key": f.subject_key,
                 "subject_name": f.subject_name,
+                "subject_authenticity": dict(f.subject_authenticity),
+                "kline_pattern_quality": dict(f.kline_pattern_quality),
             },
             "data_quality_json": dict(f.data_quality),
-            "source_trace_json": dict(f.source_trace),
+            "source_trace_json": {
+                **dict(f.source_trace),
+                "rule_version": self.rule_engine.rule_version,
+            },
         }

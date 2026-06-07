@@ -49,7 +49,17 @@ def _snapshot(
     subject_key: str = "mainline_ai",
     is_20cm: bool = False,
     veto_reason: str = "no_mainline",
+    authenticity_level: str | None = None,
+    has_golden_spider: bool | None = None,
 ) -> dict[str, object]:
+    raw_feature_json: dict[str, object] = {"decision": decision, "veto_reasons": [veto_reason]}
+    derived_feature_json: dict[str, object] = {"decision": decision, "veto_reasons": [veto_reason]}
+    if authenticity_level is not None:
+        raw_feature_json["subject_authenticity"] = {"level": authenticity_level, "score": 81.0}
+        derived_feature_json["subject_authenticity"] = {"level": authenticity_level, "score": 81.0}
+    if has_golden_spider is not None:
+        raw_feature_json["kline_pattern_quality"] = {"has_golden_spider": has_golden_spider, "score": 68.0 if has_golden_spider else 32.0}
+        derived_feature_json["kline_pattern_quality"] = {"has_golden_spider": has_golden_spider, "score": 68.0 if has_golden_spider else 32.0}
     return {
         "snapshot_id": snapshot_id,
         "run_id": "run-001",
@@ -60,7 +70,8 @@ def _snapshot(
         "stock_id": stock_id,
         "subject_key": subject_key,
         "is_20cm": is_20cm,
-        "derived_feature_json": {"decision": decision, "veto_reasons": [veto_reason]},
+        "derived_feature_json": derived_feature_json,
+        "raw_feature_json": raw_feature_json,
         "source_trace": {"source_table": "w2s_backtest_feature_snapshot"},
     }
 
@@ -111,7 +122,7 @@ async def test_one_to_two_backtest_validation_summary_reports_core_metrics() -> 
         ],
         "snapshots": [
             _snapshot(snapshot_id="snap-focus", trade_date="2026-06-04", stock_id="600367.SH", decision="focus"),
-            _snapshot(snapshot_id="snap-observe", trade_date="2026-06-04", stock_id="600368.SH", decision="observe_only", veto_reason="weak_theme"),
+            _snapshot(snapshot_id="snap-observe", trade_date="2026-06-04", stock_id="600368.SH", decision="observe_only", veto_reason="weak_theme", authenticity_level="related", has_golden_spider=False),
             _snapshot(snapshot_id="snap-pending", trade_date="2026-06-05", stock_id="600369.SH", decision="pending_review_only", veto_reason="missing_confirmation"),
             _snapshot(snapshot_id="snap-reject", trade_date="2026-06-04", stock_id="600370.SH", decision="reject", veto_reason="mainline_missing"),
         ],
@@ -165,8 +176,13 @@ async def test_one_to_two_backtest_validation_summary_reports_core_metrics() -> 
     assert report["outcome_label_counts"]["C_FAILED_NO_TOUCH"] == 1
     assert report["outcome_source_counts"]["daily_close_proxy"] == 3
     assert report["outcome_source_counts"]["daily_high_proxy"] == 1
+    assert report["authenticity_level_counts"]["related"] == 1
+    assert report["authenticity_level_counts"]["unknown"] == 3
+    assert report["golden_spider_counts"]["false"] == 4
     assert report["reject_reason_false_negative_distribution"]["mainline_missing"] == 1
     assert report["decision_breakdown"]["focus"]["success_rate"] == 1.0
     assert report["decision_breakdown"]["observe_only"]["success_rate"] == 0.0
     assert report["decision_breakdown"]["pending_review_only"]["success_rate"] == 0.0
+    assert report["decision_breakdown"]["observe_only"]["authenticity_level_counts"]["related"] == 1
+    assert report["decision_breakdown"]["observe_only"]["golden_spider_counts"]["false"] == 1
     assert report["summary_rows"][0]["experiment_id"] == "one_to_two_overall"

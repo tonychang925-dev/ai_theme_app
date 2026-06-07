@@ -63,6 +63,7 @@ class OneToTwoBacktestSignalValidationService:
         strategy_version: str,
     ) -> dict[str, Any]:
         signal_id = str(signal.get("signal_id") or "")
+        rule_version = str(signal.get("rule_version") or strategy_version)
         trade_date = _parse_date(signal.get("trade_date"))
         stock_id = str(signal.get("stock_id") or "").strip()
         if not signal_id:
@@ -74,22 +75,49 @@ class OneToTwoBacktestSignalValidationService:
 
         buy_ref_date = await self._get_next_trade_date(trade_date)
         if buy_ref_date is None:
-            return self._missing_validation(signal, strategy_id=strategy_id, strategy_version=strategy_version, reason="no_next_trade_date")
+            return self._missing_validation(
+                signal,
+                strategy_id=strategy_id,
+                strategy_version=strategy_version,
+                rule_version=rule_version,
+                reason="no_next_trade_date",
+            )
 
         bars = await self._load_t1_bars(buy_ref_date, stock_id)
         if not bars:
-            return self._missing_validation(signal, strategy_id=strategy_id, strategy_version=strategy_version, reason="no_t1_bars", buy_ref_date=buy_ref_date)
+            return self._missing_validation(
+                signal,
+                strategy_id=strategy_id,
+                strategy_version=strategy_version,
+                rule_version=rule_version,
+                reason="no_t1_bars",
+                buy_ref_date=buy_ref_date,
+            )
 
         bar = self._select_bar_for_stock(bars, stock_id)
         if bar is None:
-            return self._missing_validation(signal, strategy_id=strategy_id, strategy_version=strategy_version, reason="no_matching_t1_bar", buy_ref_date=buy_ref_date)
+            return self._missing_validation(
+                signal,
+                strategy_id=strategy_id,
+                strategy_version=strategy_version,
+                rule_version=rule_version,
+                reason="no_matching_t1_bar",
+                buy_ref_date=buy_ref_date,
+            )
 
         limit_up_price = _to_decimal(getattr(bar, "limit_up_price", None) or getattr(bar, "limit_up", None))
         high_price = _to_decimal(getattr(bar, "high_price", None))
         close_price = _to_decimal(getattr(bar, "close_price", None))
         open_price = _to_decimal(getattr(bar, "open_price", None))
         if limit_up_price is None or high_price is None or close_price is None:
-            return self._missing_validation(signal, strategy_id=strategy_id, strategy_version=strategy_version, reason="missing_t1_prices", buy_ref_date=buy_ref_date)
+            return self._missing_validation(
+                signal,
+                strategy_id=strategy_id,
+                strategy_version=strategy_version,
+                rule_version=rule_version,
+                reason="missing_t1_prices",
+                buy_ref_date=buy_ref_date,
+            )
 
         touched = high_price >= limit_up_price
         sealed = close_price >= limit_up_price
@@ -114,6 +142,7 @@ class OneToTwoBacktestSignalValidationService:
             "run_id": signal.get("run_id"),
             "strategy_id": strategy_id,
             "strategy_version": strategy_version,
+            "rule_version": rule_version,
             "trade_date": trade_date,
             "stock_id": stock_id,
             "signal_level": str(signal.get("signal_level") or ""),
@@ -153,6 +182,7 @@ class OneToTwoBacktestSignalValidationService:
         *,
         strategy_id: str,
         strategy_version: str,
+        rule_version: str,
         reason: str,
         buy_ref_date: date | None = None,
     ) -> dict[str, Any]:
@@ -162,6 +192,7 @@ class OneToTwoBacktestSignalValidationService:
             "run_id": signal.get("run_id"),
             "strategy_id": strategy_id,
             "strategy_version": strategy_version,
+            "rule_version": rule_version,
             "trade_date": trade_date,
             "stock_id": str(signal.get("stock_id") or ""),
             "signal_level": str(signal.get("signal_level") or ""),

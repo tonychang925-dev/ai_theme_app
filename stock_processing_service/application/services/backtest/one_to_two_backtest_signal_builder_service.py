@@ -80,12 +80,18 @@ class OneToTwoBacktestSignalBuilderService:
         tradable_at = datetime.combine(watch_date, time(9, 30))
         snapshot_version = str(snap.get("strategy_version") or strategy_version)
         source_trace = _json_obj(snap.get("source_trace"))
+        rule_version = str(
+            _json_obj(snap.get("derived_feature_json")).get("rule_version")
+            or _json_obj(snap.get("raw_feature_json")).get("rule_version")
+            or strategy_version
+        )
         source_trace.update(
             {
                 "run_type": "backtest",
                 "signal_run_id": run_id,
                 "signal_strategy_id": strategy_id,
                 "signal_strategy_version": strategy_version,
+                "rule_version": rule_version,
             }
         )
         derived = _json_obj(snap.get("derived_feature_json"))
@@ -96,6 +102,7 @@ class OneToTwoBacktestSignalBuilderService:
             "risk_flags": list(derived.get("risk_flags") or raw.get("risk_flags") or []),
             "source_snapshot_version": snapshot_version,
             "source_trace": source_trace,
+            "rule_version": rule_version,
         }
 
         signal_level = decision
@@ -130,13 +137,13 @@ class OneToTwoBacktestSignalBuilderService:
             "reject_reason_code": None,
             "entry_plan": json.dumps({"decision": decision, "watch_level": snap.get("watch_level")}, ensure_ascii=False),
             "exit_plan": json.dumps({"hold_days": 1, "reason": "watch_only"}, ensure_ascii=False),
-            "risk_plan": json.dumps({"run_type": "backtest", "decision": decision}, ensure_ascii=False),
+            "risk_plan": json.dumps({"run_type": "backtest", "decision": decision, "rule_version": rule_version}, ensure_ascii=False),
             "evidence_json": json.dumps(evidence, ensure_ascii=False, default=str),
             "source_chain": "stock_processing_service.one_to_two_setup_plan",
             "source_table": "w2s_backtest_feature_snapshot",
             "source_id": str(snap.get("snapshot_id") or ""),
             "source_snapshot_version": snapshot_version,
-            "rule_version": strategy_version,
+            "rule_version": rule_version,
         }
 
     async def _load_snapshots(self, run_id: str, *, strategy_id: str) -> list[dict[str, Any]]:

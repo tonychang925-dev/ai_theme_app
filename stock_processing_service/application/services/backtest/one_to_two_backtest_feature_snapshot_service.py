@@ -4,7 +4,7 @@ import json
 import logging
 import uuid
 from dataclasses import asdict, is_dataclass
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
 from decimal import Decimal
 from typing import Any
 
@@ -13,6 +13,9 @@ from stock_processing_service.application.services.backtest.one_to_two_backtest_
 )
 from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
     OneToTwoSetupPlanEngine,
+)
+from stock_processing_service.domain.services.one_to_two_rule_config import (
+    OneToTwoRuleConfig,
 )
 
 logger = logging.getLogger(__name__)
@@ -29,11 +32,12 @@ class OneToTwoBacktestFeatureSnapshotService:
         read_port: Any,
         gateway: Any,
         engine: OneToTwoSetupPlanEngine | None = None,
+        rule_config: OneToTwoRuleConfig | None = None,
         data_quality_service: OneToTwoBacktestDataQualityService | None = None,
     ) -> None:
         self._read = read_port
         self._gw = gateway
-        self._engine = engine or OneToTwoSetupPlanEngine()
+        self._engine = engine or OneToTwoSetupPlanEngine(rule_config=rule_config)
         self._data_quality = data_quality_service or OneToTwoBacktestDataQualityService(read_port)
 
     async def build(
@@ -44,6 +48,7 @@ class OneToTwoBacktestFeatureSnapshotService:
         strategy_version: str = DEFAULT_STRATEGY_VERSION,
         start_date: date,
         end_date: date,
+        rule_version: str | None = None,
         force_rebuild: bool = False,
     ) -> dict[str, Any]:
         if strategy_id != DEFAULT_STRATEGY_ID:
@@ -60,6 +65,10 @@ class OneToTwoBacktestFeatureSnapshotService:
         if force_rebuild:
             await self._delete_run_snapshots(run_id)
 
+        engine = self._engine
+        if rule_version is not None:
+            engine = OneToTwoSetupPlanEngine(rule_config=OneToTwoRuleConfig.from_version(rule_version))
+
         written = 0
         snapshot_count = 0
         empty_days = 0
@@ -68,20 +77,13 @@ class OneToTwoBacktestFeatureSnapshotService:
         observe_count = 0
         pending_count = 0
         reject_count = 0
-        current = start_date
-
-        while current <= end_date:
-            calendar = await self._safe_get_trade_calendar(current)
-            if calendar is not None and not bool(getattr(calendar, "calendar_is_open", True)):
-                current += timedelta(days=1)
-                continue
-
+        trade_dates = await self._load_trade_dates(start_date, end_date)
+        for current in trade_dates:
             source_doc = await self._get_report_context(current)
-            plan = await self._engine.build(current, self._read, source_doc=source_doc)
+            plan = await engine.build(current, self._read, source_doc=source_doc)
             candidate_features = list(plan.candidate_features or [])
             if not candidate_features:
                 empty_days += 1
-                current += timedelta(days=1)
                 continue
 
             rows = [
@@ -125,12 +127,11 @@ class OneToTwoBacktestFeatureSnapshotService:
                 elif decision == "reject":
                     reject_count += 1
 
-            current += timedelta(days=1)
-
         return {
             "run_id": run_id,
             "strategy_id": strategy_id,
             "strategy_version": strategy_version,
+            "rule_version": rule_version or getattr(self._engine, "rule_version", strategy_version),
             "start_date": start_date.isoformat(),
             "end_date": end_date.isoformat(),
             "snapshot_count": snapshot_count,
@@ -292,10 +293,12 @@ class OneToTwoBacktestFeatureSnapshotService:
         candidate: dict[str, Any],
         trade_date: date,
     ) -> dict[str, Any]:
+        rule_version = str(candidate.get("rule_version") or strategy_version)
         confirm_trade_date = self._parse_date(candidate.get("watch_date")) or (trade_date + timedelta(days=1))
         final_score = candidate.get("final_score")
         decision = str(candidate.get("decision") or "")
         raw_feature_json = {
+            "rule_version": rule_version,
             "trade_date": candidate.get("trade_date"),
             "watch_date": candidate.get("watch_date"),
             "stock_id": candidate.get("stock_id"),
@@ -323,6 +326,8 @@ class OneToTwoBacktestFeatureSnapshotService:
             "near_pressure": candidate.get("near_pressure"),
             "same_subject_limit_count": candidate.get("same_subject_limit_count"),
             "same_subject_strong_count": candidate.get("same_subject_strong_count"),
+            "subject_authenticity": candidate.get("subject_authenticity") or {},
+            "kline_pattern_quality": candidate.get("kline_pattern_quality") or {},
             "decision": decision,
             "veto_reasons": list(candidate.get("veto_reasons") or []),
             "risk_flags": list(candidate.get("risk_flags") or []),
@@ -336,8 +341,10 @@ class OneToTwoBacktestFeatureSnapshotService:
             "evidence_rules": list(candidate.get("evidence_rules") or []),
             "data_quality_json": candidate.get("data_quality_json") or {},
             "source_trace_json": candidate.get("source_trace_json") or {},
+            "rule_version": rule_version,
         }
         derived_feature_json = {
+            "rule_version": rule_version,
             "decision": decision,
             "final_score": str(final_score) if final_score is not None else None,
             "watch_level": candidate.get("watch_level"),
@@ -346,6 +353,8 @@ class OneToTwoBacktestFeatureSnapshotService:
             "summary": candidate.get("summary"),
             "source_trace": candidate.get("source_trace_json") or {},
             "data_quality": candidate.get("data_quality_json") or {},
+            "subject_authenticity": candidate.get("subject_authenticity") or {},
+            "kline_pattern_quality": candidate.get("kline_pattern_quality") or {},
             "signal_level": decision,
             "source_chain": "stock_processing_service.one_to_two_setup_plan",
             "source_table": "w2s_backtest_feature_snapshot",
@@ -360,6 +369,7 @@ class OneToTwoBacktestFeatureSnapshotService:
             "source_run_id": run_id,
             "source_trade_date": trade_date.isoformat(),
             "run_type": "backtest",
+            "rule_version": rule_version,
             "missing_subject_key": not bool(str(candidate.get("subject_key") or "").strip()),
             "candidate_index": candidate_index,
         }
@@ -369,6 +379,7 @@ class OneToTwoBacktestFeatureSnapshotService:
             "run_id": run_id,
             "strategy_id": strategy_id,
             "strategy_version": strategy_version,
+            "rule_version": rule_version,
             "candidate_trade_date": self._parse_date(candidate.get("trade_date")) or trade_date,
             "confirm_trade_date": confirm_trade_date,
             "stock_id": str(candidate.get("stock_id") or ""),
@@ -426,6 +437,18 @@ class OneToTwoBacktestFeatureSnapshotService:
         except Exception:
             return None
 
+    async def _load_trade_dates(self, start_date: date, end_date: date) -> list[date]:
+        try:
+            rows = await self._read.get_stock_daily_bars_range(start_date, end_date, stock_ids=None)
+        except Exception:
+            rows = []
+        dates = {
+            self._parse_date(self._row_value(row, "trade_date"))
+            for row in rows
+            if self._parse_date(self._row_value(row, "trade_date")) is not None
+        }
+        return sorted(d for d in dates if d is not None)
+
     async def _get_report_context(self, trade_date: date) -> dict[str, Any]:
         try:
             return dict(await self._read.get_post_market_report_context(trade_date) or {})
@@ -456,3 +479,8 @@ class OneToTwoBacktestFeatureSnapshotService:
             return Decimal(str(value))
         except Exception:
             return None
+
+    def _row_value(self, row: Any, key: str) -> Any:
+        if isinstance(row, dict):
+            return row.get(key)
+        return getattr(row, key, None)

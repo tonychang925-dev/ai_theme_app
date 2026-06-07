@@ -1999,8 +1999,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     ) -> List[Dict[str, Any]]:
         """读取 subject_stock_daily_snapshot 区间K线证据（设计文档 §13.2 冻结对象）。"""
         sql = """
-        SELECT DISTINCT ON (trade_date, stock_id)
-            trade_date, stock_id, stock_name,
+        SELECT DISTINCT ON (trade_date, stock_id, subject_key)
+            trade_date, stock_id, stock_name, subject_key,
             open_price, high_price, low_price, close_price, pre_close, pct_chg,
             volume, amount,
             COALESCE(limit_up, FALSE) AS limit_up,
@@ -2011,7 +2011,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           AND trade_date <= $2::date
           AND ($3::text[] IS NULL OR stock_id = ANY($3::text[]))
           AND ($4::text[] IS NULL OR subject_key = ANY($4::text[]))
-        ORDER BY trade_date ASC, stock_id, created_at DESC NULLS LAST
+        ORDER BY trade_date ASC, stock_id, subject_key, created_at DESC NULLS LAST
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(
@@ -5638,8 +5638,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           veto_reasons = EXCLUDED.veto_reasons,
           feature_json = EXCLUDED.feature_json,
           data_quality_json = EXCLUDED.data_quality_json,
-          source_trace_json = EXCLUDED.source_trace_json,
-          updated_at = NOW()
+          source_trace_json = EXCLUDED.source_trace_json
         """
         payload = []
         for row in rows:
@@ -5654,6 +5653,16 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     raise ValueError
             except Exception as e:
                 raise ValueError(f"invalid one_to_two_candidate_feature row: {row}") from e
+            first_limit_time = row.get("first_limit_time")
+            if isinstance(first_limit_time, str):
+                first_limit_time = first_limit_time.strip()
+                if first_limit_time:
+                    try:
+                        first_limit_time = time.fromisoformat(first_limit_time)
+                    except ValueError:
+                        first_limit_time = None
+                else:
+                    first_limit_time = None
             payload.append((
                 trade_date,
                 watch_date,
@@ -5671,7 +5680,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 row.get("is_first_limit_up"),
                 row.get("is_one_word_board"),
                 row.get("is_late_seal"),
-                row.get("first_limit_time"),
+                first_limit_time,
                 row.get("open_board_count"),
                 row.get("turnover_rate"),
                 row.get("amount"),

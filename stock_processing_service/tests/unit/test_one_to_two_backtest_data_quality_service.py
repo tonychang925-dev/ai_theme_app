@@ -50,16 +50,22 @@ class _ReadPortBase:
         end_date: date,
         stock_ids: list[str] | None = None,
     ) -> list[dict[str, object]]:
-        return [
-            {
-                "trade_date": end_date.isoformat(),
-                "stock_id": "600367.SH",
-                "limit_up": True,
-                "close_price": Decimal("10.00"),
-                "limit_up_price": Decimal("10.00"),
-                "pct_chg": Decimal("9.90"),
-            }
-        ]
+        rows: list[dict[str, object]] = []
+        current = start_date
+        while current <= end_date:
+            if current.weekday() < 5:
+                rows.append(
+                    {
+                        "trade_date": current.isoformat(),
+                        "stock_id": "600367.SH",
+                        "limit_up": True,
+                        "close_price": Decimal("10.00"),
+                        "limit_up_price": Decimal("10.00"),
+                        "pct_chg": Decimal("9.90"),
+                    }
+                )
+            current += timedelta(days=1)
+        return rows
 
     async def get_subject_stock_daily_bars_range(
         self,
@@ -148,3 +154,14 @@ async def test_one_to_two_backtest_data_quality_blocks_on_generation_source_exce
 
     assert report["blocked"] is True
     assert any("get_post_market_report_context" in err for err in report["blocking_errors"])
+
+
+@pytest.mark.asyncio
+async def test_one_to_two_backtest_data_quality_skips_weekends() -> None:
+    service = OneToTwoBacktestDataQualityService(_ReadPortBase())
+
+    report = await service.check(date(2026, 5, 8), date(2026, 5, 11))
+
+    assert report["open_days_total"] == 2
+    assert report["generation_ready_days"] == 2
+    assert report["blocked"] is False

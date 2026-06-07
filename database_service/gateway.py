@@ -370,6 +370,29 @@ class DatabaseGateway:
             logger.error(f"读取区间日线失败 start={start_date}, end={end_date}: {e}")
             raise
 
+    async def get_subject_stock_daily_bars_range(
+        self,
+        start_date,
+        end_date,
+        stock_ids: Optional[List[str]] = None,
+        subject_keys: Optional[List[str]] = None,
+    ) -> List[Dict[str, Any]]:
+        """股票域显式读取：主题股票区间日线。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_subject_stock_daily_bars_range(
+                start_date,
+                end_date,
+                stock_ids=stock_ids,
+                subject_keys=subject_keys,
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取主题区间日线失败 start={start_date}, end={end_date}: {e}")
+            raise
+
     async def get_stock_auction_snapshot(self, trade_date, stock_ids: Optional[List[str]] = None) -> List[Dict[str, Any]]:
         """股票域显式读取：竞价快照（当前可降级为日频代理）。"""
         try:
@@ -1209,6 +1232,17 @@ class DatabaseGateway:
             self._record_request(False, start_time)
             return []
 
+    async def get_active_confirmed_mainlines(self, trade_date=None, limit=100) -> List[Dict[str, Any]]:
+        """PR-13C: 读取活跃已确认主线（从 mainline_registry）。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_active_confirmed_mainlines(trade_date=trade_date, limit=limit)
+            self._record_request(True, start_time)
+            return result
+        except Exception:
+            self._record_request(False, start_time)
+            return []
+
     async def get_all_prior_alive_cycles(self, trade_date) -> List[Dict[str, Any]]:
         """PR-13C: 读取上一交易日仍存续的已确认主线。"""
         try:
@@ -1460,6 +1494,30 @@ class DatabaseGateway:
         except Exception as e:
             self._record_request(False, start_time)
             logger.error(f"写入 post_market_recap_snapshot 失败: {e}")
+            raise
+
+    async def upsert_post_market_setup_plan_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：post_market_setup_plan。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_post_market_setup_plan_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 post_market_setup_plan 失败: {e}")
+            raise
+
+    async def upsert_one_to_two_candidate_feature_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：one_to_two_candidate_feature。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_one_to_two_candidate_feature_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 one_to_two_candidate_feature 失败: {e}")
             raise
 
     async def upsert_theme_cycle_evidence_daily_rows(self, rows: List[Dict[str, Any]]) -> int:

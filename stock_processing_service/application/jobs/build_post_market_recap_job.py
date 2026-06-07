@@ -703,6 +703,11 @@ class BuildPostMarketRecapJob:
         recap_doc["strong_stock_reviews"] = await self._build_strong_stock_reviews(trade_date)
         strong_stock_reviews_count = len(recap_doc["strong_stock_reviews"] or [])
         recap_doc["strong_stock_reviews_count"] = strong_stock_reviews_count
+        strong_hotspot_subjects = self._build_strong_hotspot_subjects(recap_doc["strong_stock_reviews"] or [])
+        recap_doc["strong_hotspot_subjects"] = strong_hotspot_subjects
+        recap_doc["hotspot_subjects"] = strong_hotspot_subjects
+        recap_doc["mainline_hotspots"] = strong_hotspot_subjects
+        recap_doc.setdefault("diagnostics", {})["strong_hotspot_subjects_count"] = len(strong_hotspot_subjects)
         strong_watch_history_count = len(strong_watch_history)
 
         # ── PR-7: Mainline Discovery parallel output ──
@@ -726,6 +731,16 @@ class BuildPostMarketRecapJob:
             strong_stock_reviews=recap_doc.get("strong_stock_reviews") or [],
         )
         recap_doc.update(decision_payload)
+
+        confirmed_mainline_hotspots = self._build_confirmed_mainline_hotspots(recap_doc.get("active_mainline_universe") or {})
+        if confirmed_mainline_hotspots:
+            merged_hotspots = self._merge_hotspot_subjects(
+                recap_doc.get("strong_hotspot_subjects") or [],
+                confirmed_mainline_hotspots,
+            )
+            recap_doc["strong_hotspot_subjects"] = merged_hotspots
+            recap_doc["hotspot_subjects"] = merged_hotspots
+            recap_doc["mainline_hotspots"] = merged_hotspots
 
         from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
             OneToTwoSetupPlanEngine,
@@ -1557,8 +1572,15 @@ class BuildPostMarketRecapJob:
         pool = getattr(self._read_port, "_pool", None)
         if pool is None:
             facade = getattr(self._read_port, "_db", None)
-            db_client = getattr(facade, "_db", None) if facade else None
-            pool = getattr(db_client, "pool", None) if db_client else None
+            if facade is not None:
+                pool = getattr(facade, "pool", None)
+                if pool is None:
+                    db_client = getattr(facade, "_db", None)
+                    if db_client is not None:
+                        pool = getattr(db_client, "pool", None)
+                if pool is None:
+                    gateway_client = getattr(facade, "_client", None)
+                    pool = getattr(gateway_client, "pool", None) if gateway_client is not None else None
 
         service = PostMarketReadinessService(pool=pool)
         result = await service.check(trade_date)
@@ -1773,6 +1795,7 @@ class BuildPostMarketRecapJob:
 
     async def _build_strong_stock_reviews(self, trade_date: date) -> list[dict]:
         """P3-5: 从 strong_stock_watch_history 生成结构化强势股分层。"""
+        rows: list[Any] = []
         pool = None
         # Resolve pool from read_port
         pool_direct = getattr(self._read_port, "_pool", None)
@@ -1783,7 +1806,22 @@ class BuildPostMarketRecapJob:
             db_client = getattr(facade, "_db", None) if facade else None
             pool = getattr(db_client, "pool", None) if db_client else None
         if pool is None:
-            return []
+            rows = []
+        if not rows:
+            view_rows_fn = getattr(self._read_port, "get_strong_stock_watch_view_rows", None)
+            if not callable(view_rows_fn):
+                return []
+            try:
+                rows = await view_rows_fn(
+                    end_date=trade_date,
+                    window_days=0,
+                    include_removed=True,
+                    latest_per_stock=False,
+                    limit=120,
+                )
+            except TypeError:
+                rows = await view_rows_fn(trade_date)
+            return self._normalize_strong_stock_reviews(rows)
 
         sql = """
         SELECT
@@ -1834,38 +1872,107 @@ class BuildPostMarketRecapJob:
         """
         async with pool.acquire() as conn:
             rows = await conn.fetch(sql, trade_date)
+        return self._normalize_strong_stock_reviews(rows)
 
+    @staticmethod
+    def _normalize_strong_stock_reviews(rows: list[Any]) -> list[dict]:
         results: list[dict] = []
-        for r in rows:
-            pl = r["pattern_labels"]
+        for raw in rows or []:
+            r = dict(raw or {})
+            pl = r.get("pattern_labels")
             if isinstance(pl, str):
                 try:
                     import json as _json
                     pl = _json.loads(pl)
                 except Exception:
                     pl = []
+            if isinstance(pl, dict):
+                pl = list(pl.values())
             results.append({
-                "stock_code": r["stock_id"],
-                "stock_name": r["stock_name"],
-                "subject_key": r["subject_key"],
-                "theme_name": r["theme_name"],
-                "role": r["pool_entry_type"] or r["cycle_state"] or "",
-                "watch_status": r["watch_status"],
-                "watch_score": float(r["watch_score"]) if r["watch_score"] else 0,
-                "strong_grade": "",
-                "support_type": r["support_type"] or "",
-                "support_score": float(r["support_score"]) if r["support_score"] else 0,
-                "money_flow_tier": r["money_flow_tier"],
-                "role_enhanced": r["role_enhanced"],
-                "main_net_inflow": float(r["main_net_inflow"]) if r["main_net_inflow"] else 0,
-                "pct_chg": float(r["pct_chg"]) if r["pct_chg"] else 0,
-                "turnover_rate": float(r["turnover_rate"]) if r["turnover_rate"] else 0,
-                "volume_ratio": float(r["volume_ratio"]) if r["volume_ratio"] else 0,
-                "position_label": r["position_label"],
+                "stock_code": r.get("stock_id") or r.get("stock_code") or "",
+                "stock_name": r.get("stock_name") or "",
+                "subject_key": r.get("subject_key") or "",
+                "theme_name": r.get("theme_name") or r.get("subject_name") or r.get("subject_key") or "",
+                "role": r.get("pool_entry_type") or r.get("cycle_state") or r.get("role") or "",
+                "watch_status": r.get("watch_status") or "",
+                "watch_score": float(r.get("watch_score") or 0),
+                "strong_grade": r.get("strong_grade") or "",
+                "support_type": r.get("support_type") or "",
+                "support_score": float(r.get("support_score") or 0),
+                "money_flow_tier": r.get("money_flow_tier") or "",
+                "role_enhanced": r.get("role_enhanced") or "",
+                "main_net_inflow": float(r.get("main_net_inflow") or 0),
+                "pct_chg": float(r.get("pct_chg") or 0),
+                "turnover_rate": float(r.get("turnover_rate") or 0),
+                "volume_ratio": float(r.get("volume_ratio") or 0),
+                "position_label": r.get("position_label") or "",
                 "pattern_labels": pl if isinstance(pl, list) else [],
-                "rationale": "",
+                "rationale": r.get("rationale") or "",
             })
         return results
+
+    @staticmethod
+    def _build_strong_hotspot_subjects(strong_stock_reviews: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        hotspots: list[dict[str, Any]] = []
+        seen: set[str] = set()
+        for row in strong_stock_reviews or []:
+            subject_key = str(row.get("subject_key") or "").strip()
+            if not subject_key or subject_key in seen:
+                continue
+            seen.add(subject_key)
+            hotspots.append({
+                "subject_key": subject_key,
+                "theme_name": str(row.get("theme_name") or subject_key),
+                "stock_id": str(row.get("stock_code") or row.get("stock_id") or ""),
+                "stock_name": str(row.get("stock_name") or ""),
+                "watch_score": row.get("watch_score"),
+                "support_score": row.get("support_score"),
+                "watch_status": row.get("watch_status"),
+                "pool_entry_type": row.get("role") or "",
+                "cycle_state": row.get("cycle_state") or "",
+                "source": "strong_stock_reviews",
+            })
+        return hotspots
+
+    @staticmethod
+    def _build_confirmed_mainline_hotspots(active_mainline_universe: dict[str, Any]) -> list[dict[str, Any]]:
+        hotspots: list[dict[str, Any]] = []
+        for row in active_mainline_universe.get("active_mainlines") or []:
+            if not isinstance(row, dict):
+                continue
+            subject_key = str(row.get("canonical_subject_key") or row.get("subject_key") or "").strip()
+            if not subject_key:
+                continue
+            hotspots.append({
+                "subject_key": subject_key,
+                "theme_name": str(row.get("mainline_name") or row.get("theme_name") or subject_key),
+                "stock_id": str(row.get("stock_id") or ""),
+                "stock_name": str(row.get("stock_name") or ""),
+                "watch_score": row.get("mainline_strength_score"),
+                "support_score": row.get("mainline_strength_score"),
+                "watch_status": "confirmed_mainline",
+                "pool_entry_type": "formal",
+                "cycle_state": str(row.get("state") or row.get("final_cycle_state") or "confirmed"),
+                "source": "confirmed_mainline",
+            })
+        return hotspots
+
+    @staticmethod
+    def _merge_hotspot_subjects(
+        existing_hotspots: list[dict[str, Any]],
+        confirmed_hotspots: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        merged: list[dict[str, Any]] = []
+        seen: set[str] = set()
+        for row in list(confirmed_hotspots) + list(existing_hotspots):
+            if not isinstance(row, dict):
+                continue
+            subject_key = str(row.get("subject_key") or "").strip()
+            if not subject_key or subject_key in seen:
+                continue
+            seen.add(subject_key)
+            merged.append(dict(row))
+        return merged
 
     @staticmethod
     def _build_capital_reviews(dragon_tiger_rows: list[dict]) -> list[dict]:

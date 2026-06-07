@@ -439,6 +439,25 @@ class StockReadGatewayAdapter:
             return []
         return await fn(trade_date=trade_date)
 
+    async def get_active_confirmed_mainlines(
+        self,
+        trade_date: date,
+        limit: int = 100,
+    ) -> list[dict[str, Any]]:
+        """读取当日可用于复盘/回测的已确认主线。"""
+        fn = getattr(self._db, "get_active_confirmed_mainlines", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date, limit=limit)
+        return [_as_dict(row) for row in rows]
+
+    async def get_all_cycle_judgements(self, trade_date) -> list[dict[str, Any]]:
+        """读取当日所有 Layer B 周期判定记录。"""
+        fn = getattr(self._db, "get_all_cycle_judgements", None)
+        if not callable(fn):
+            return []
+        return await fn(trade_date)
+
     async def get_staging_subject_keys(
         self, trade_date: date, lookback_days: int = 7,
     ) -> list[str]:

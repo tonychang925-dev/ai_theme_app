@@ -42,6 +42,8 @@ class OneToTwoFeatures:
 
     same_subject_limit_count: int | None
     same_subject_strong_count: int | None
+    subject_authenticity: dict[str, Any] = field(default_factory=dict)
+    kline_pattern_quality: dict[str, Any] = field(default_factory=dict)
 
     data_quality: dict[str, Any] = field(default_factory=dict)
     source_trace: dict[str, Any] = field(default_factory=dict)

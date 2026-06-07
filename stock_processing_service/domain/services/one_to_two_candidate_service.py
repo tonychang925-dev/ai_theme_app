@@ -44,6 +44,14 @@ class OneToTwoCandidateService:
             for r in ctx.strong_hotspot_subjects
             if str(r.get("subject_key") or "").strip()
         }
+        confirmed_hotspot_keys = {
+            str(subject_key).strip()
+            for subject_key in ctx.confirmed_hotspot_keys
+            if str(subject_key or "").strip()
+        }
+        subject_priority_rank = dict(ctx.subject_priority_rank or {})
+        subject_authenticity_by_subject = dict(ctx.subject_authenticity_by_subject or {})
+        kline_pattern_quality_by_stock = dict(ctx.kline_pattern_quality_by_stock or {})
 
         candidates: list[OneToTwoFeatures] = []
         for bar in current_bars:
@@ -58,6 +66,10 @@ class OneToTwoCandidateService:
                 current_trade_date,
                 active_subject_keys=ctx.active_subject_keys,
                 strong_hotspot_keys=strong_hotspot_keys,
+                confirmed_hotspot_keys=confirmed_hotspot_keys,
+                subject_priority_rank=subject_priority_rank,
+                subject_authenticity_by_subject=subject_authenticity_by_subject,
+                stock_pattern_quality=kline_pattern_quality_by_stock.get(stock_id, {}),
             )
             if not current_subject_row:
                 continue
@@ -75,6 +87,8 @@ class OneToTwoCandidateService:
             board_row = ctx.subject_market_breadth.get(subject_key, {})
             pressure_row = ctx.pressure_by_stock.get(stock_id, {})
             ma_row = ctx.ma_pattern_by_stock.get(stock_id, {})
+            subject_authenticity = dict(subject_authenticity_by_subject.get(subject_key, {}) or {})
+            kline_pattern_quality = dict(kline_pattern_quality_by_stock.get(stock_id, {}) or {})
 
             first_limit_time = self._text(
                 bar.get("first_limit_time")
@@ -84,6 +98,22 @@ class OneToTwoCandidateService:
             open_board_count = self._int_or_none(
                 bar.get("open_board_count")
                 or current_subject_row.get("open_board_count")
+            )
+            candidate_rows = [
+                r for r in subject_rows_by_stock.get(stock_id, [])
+                if self._date_str(r.get("trade_date")) == current_trade_date
+            ] or list(subject_rows_by_stock.get(stock_id, []))
+            candidate_subject_keys = [
+                str(r.get("subject_key") or "").strip()
+                for r in candidate_rows
+                if str(r.get("subject_key") or "").strip()
+            ]
+            selected_reason = self._selection_reason(
+                subject_key=subject_key,
+                active_subject_keys=ctx.active_subject_keys,
+                strong_hotspot_keys=strong_hotspot_keys,
+                subject_priority_rank=subject_priority_rank,
+                row=current_subject_row,
             )
 
             features = OneToTwoFeatures(
@@ -157,6 +187,8 @@ class OneToTwoCandidateService:
                     board_row.get("subject_strong_count")
                     or board_row.get("strong_count")
                 ),
+                subject_authenticity=subject_authenticity,
+                kline_pattern_quality=kline_pattern_quality,
                 data_quality={
                     "missing_required": self._missing_required(
                         bar=bar,
@@ -176,6 +208,44 @@ class OneToTwoCandidateService:
                     "subject_key": subject_key,
                     "trade_date": current_trade_date,
                     "bar_trade_date": self._date_str(bar.get("trade_date")),
+                    "subject_selection": {
+                        "selected_subject_key": subject_key,
+                        "selected_subject_name": self._text(
+                            current_subject_row.get("subject_name")
+                            or current_subject_row.get("theme_name")
+                            or subject_key
+                        ),
+                        "candidate_subject_keys": candidate_subject_keys,
+                        "active_subject_keys_hit": sorted(set(candidate_subject_keys) & set(ctx.active_subject_keys)),
+                        "strong_hotspot_keys_hit": sorted(set(candidate_subject_keys) & strong_hotspot_keys),
+                        "subject_authenticity": {
+                            "score": subject_authenticity.get("score"),
+                            "level": subject_authenticity.get("level"),
+                            "purity_score": subject_authenticity.get("purity_score"),
+                            "theme_tier": subject_authenticity.get("theme_tier"),
+                        },
+                        "kline_pattern_quality": {
+                            "has_golden_spider": kline_pattern_quality.get("has_golden_spider"),
+                            "score": kline_pattern_quality.get("score"),
+                            "level": kline_pattern_quality.get("level"),
+                            "pattern_reasons": list(kline_pattern_quality.get("pattern_reasons") or []),
+                        },
+                        "subject_priority_rank": {
+                            key: subject_priority_rank[key]
+                            for key in candidate_subject_keys
+                            if key in subject_priority_rank
+                        },
+                        "subject_authenticity": subject_authenticity,
+                        "kline_pattern_quality": kline_pattern_quality,
+                        "selection_rank_components": {
+                            "band": 0 if subject_key in confirmed_hotspot_keys else 1 if subject_key in strong_hotspot_keys else 2 if subject_key in ctx.active_subject_keys else 3 if bool(current_subject_row.get("is_leader")) else 4,
+                            "authenticity_score": subject_authenticity.get("score"),
+                            "business_rank": subject_priority_rank.get(subject_key),
+                            "subject_limit_up_count": board_row.get("subject_limit_up_count") or board_row.get("limit_up_count"),
+                            "pool_rank": current_subject_row.get("pool_rank") or current_subject_row.get("rank_order"),
+                        },
+                        "selection_reason": selected_reason,
+                    },
                 },
             )
             candidates.append(features)
@@ -206,27 +276,62 @@ class OneToTwoCandidateService:
         *,
         active_subject_keys: set[str],
         strong_hotspot_keys: set[str],
+        confirmed_hotspot_keys: set[str] | None = None,
+        subject_priority_rank: dict[str, int] | None = None,
+        subject_authenticity_by_subject: dict[str, dict[str, Any]] | None = None,
+        stock_pattern_quality: dict[str, Any] | None = None,
     ) -> dict[str, Any] | None:
         if not rows:
             return None
         matched = [r for r in rows if self._date_str(r.get("trade_date")) == trade_date]
         candidates = matched or rows
+        confirmed_hotspot_keys = confirmed_hotspot_keys or set()
+        subject_priority_rank = subject_priority_rank or {}
+        subject_authenticity_by_subject = subject_authenticity_by_subject or {}
+        stock_pattern_quality = stock_pattern_quality or {}
 
-        def _priority(row: dict[str, Any]) -> tuple[int, int, int, str]:
+        def _priority(row: dict[str, Any]) -> tuple[int, float, float, int, int, int, str]:
             subject_key = str(row.get("subject_key") or "").strip()
-            if subject_key in active_subject_keys:
+            authenticity = subject_authenticity_by_subject.get(subject_key) or {}
+            authenticity_score = self._float_or_none(authenticity.get("score")) or 0.0
+            pattern_score = self._float_or_none(stock_pattern_quality.get("score")) or 0.0
+            if subject_key in confirmed_hotspot_keys:
                 band = 0
             elif subject_key in strong_hotspot_keys:
                 band = 1
-            elif bool(row.get("is_leader")):
+            elif subject_key in active_subject_keys:
                 band = 2
-            else:
+            elif bool(row.get("is_leader")):
                 band = 3
+            else:
+                band = 4
+            business_rank = subject_priority_rank.get(subject_key, 999999)
             subject_limit_up_count = self._int_or_none(row.get("subject_limit_up_count") or row.get("limit_up_count")) or 0
             pool_rank = self._int_or_none(row.get("pool_rank") or row.get("rank_order")) or 9999
-            return (band, -subject_limit_up_count, pool_rank, subject_key)
+            return (band, -authenticity_score, -pattern_score, business_rank, -subject_limit_up_count, pool_rank, subject_key)
 
         return sorted(candidates, key=_priority)[0]
+
+    def _selection_reason(
+        self,
+        *,
+        subject_key: str,
+        active_subject_keys: set[str],
+        strong_hotspot_keys: set[str],
+        subject_priority_rank: dict[str, int],
+        row: dict[str, Any],
+    ) -> str:
+        if subject_key in subject_priority_rank and subject_key in active_subject_keys:
+            return "confirmed_hotspot_rank"
+        if subject_key in subject_priority_rank and subject_key in strong_hotspot_keys:
+            return "strong_hotspot_rank"
+        if subject_key in active_subject_keys:
+            return "active_mainline"
+        if subject_key in strong_hotspot_keys:
+            return "strong_hotspot"
+        if bool(row.get("is_leader")):
+            return "leader"
+        return "fallback"
 
     def _is_first_limit_up(self, rows: list[dict[str, Any]], current_trade_date: str) -> bool:
         current = [r for r in rows if self._date_str(r.get("trade_date")) == current_trade_date]
@@ -241,7 +346,12 @@ class OneToTwoCandidateService:
         limit_up_price = self._decimal_or_none(row.get("limit_up_price"))
         if pct is not None and pct >= Decimal("9.8"):
             return True
-        if close_price is not None and limit_up_price is not None and close_price >= limit_up_price:
+        if (
+            close_price is not None
+            and limit_up_price is not None
+            and limit_up_price > Decimal("0")
+            and close_price >= limit_up_price
+        ):
             return True
         return bool(row.get("limit_up"))
 
@@ -259,7 +369,20 @@ class OneToTwoCandidateService:
         )
 
     def _stock_id(self, row: dict[str, Any]) -> str:
-        return self._text(row.get("stock_id") or row.get("stock_code") or row.get("code") or "")
+        raw = self._text(row.get("stock_id") or row.get("stock_code") or row.get("code") or "")
+        if not raw:
+            return ""
+        stock_id = raw.upper()
+        if "." in stock_id:
+            return stock_id
+        if len(stock_id) == 6 and stock_id.isdigit():
+            if stock_id.startswith(("6", "9")):
+                return f"{stock_id}.SH"
+            if stock_id.startswith(("0", "2", "3")):
+                return f"{stock_id}.SZ"
+            if stock_id.startswith(("4", "8")):
+                return f"{stock_id}.BJ"
+        return stock_id
 
     def _date_str(self, value: Any) -> str:
         if value is None:
@@ -283,6 +406,14 @@ class OneToTwoCandidateService:
         if value is None or value == "":
             return None
         return bool(value)
+
+    def _float_or_none(self, value: Any) -> float | None:
+        try:
+            if value is None or value == "":
+                return None
+            return float(value)
+        except Exception:
+            return None
 
     def _decimal_or_none(self, value: Any) -> Decimal | None:
         try:

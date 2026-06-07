@@ -42,11 +42,17 @@ class PostMarketSetupFactContext:
     subject_stock_rows: list[dict[str, Any]]
     stock_daily_bars: list[dict[str, Any]]
     limit_up_rows: list[dict[str, Any]]
+    confirmed_hotspot_keys: set[str] = field(default_factory=set)
+    confirmed_hotspot_rank: dict[str, int] = field(default_factory=dict)
+    strong_hotspot_rank: dict[str, int] = field(default_factory=dict)
+    subject_priority_rank: dict[str, int] = field(default_factory=dict)
 
     subject_market_breadth: dict[str, dict[str, Any]] = field(default_factory=dict)
     prior_daily_bars: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
     pressure_by_stock: dict[str, dict[str, Any]] = field(default_factory=dict)
     ma_pattern_by_stock: dict[str, dict[str, Any]] = field(default_factory=dict)
+    subject_authenticity_by_subject: dict[str, dict[str, Any]] = field(default_factory=dict)
+    kline_pattern_quality_by_stock: dict[str, dict[str, Any]] = field(default_factory=dict)
 
     diagnostics: SourceStatus = field(default_factory=SourceStatus)
 
@@ -63,9 +69,15 @@ class PostMarketSetupFactContext:
             "subject_stock_rows": self.subject_stock_rows,
             "stock_daily_bars": self.stock_daily_bars,
             "limit_up_rows": self.limit_up_rows,
+            "confirmed_hotspot_keys": sorted(self.confirmed_hotspot_keys),
+            "confirmed_hotspot_rank": dict(self.confirmed_hotspot_rank),
+            "strong_hotspot_rank": dict(self.strong_hotspot_rank),
+            "subject_priority_rank": dict(self.subject_priority_rank),
             "subject_market_breadth": self.subject_market_breadth,
             "prior_daily_bars": self.prior_daily_bars,
             "pressure_by_stock": self.pressure_by_stock,
             "ma_pattern_by_stock": self.ma_pattern_by_stock,
+            "subject_authenticity_by_subject": self.subject_authenticity_by_subject,
+            "kline_pattern_quality_by_stock": self.kline_pattern_quality_by_stock,
             "diagnostics": self.diagnostics.to_dict(),
         }

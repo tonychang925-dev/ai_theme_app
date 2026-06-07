@@ -33,6 +33,10 @@ class OneToTwoScorer:
                 "board_breadth": str(breadth),
                 "lifecycle": str(lifecycle),
                 "risk_control": str(risk),
+                "subject_authenticity_score": str((f.subject_authenticity or {}).get("score")) if f.subject_authenticity else None,
+                "subject_authenticity_level": (f.subject_authenticity or {}).get("level") if f.subject_authenticity else None,
+                "golden_spider_score": str((f.kline_pattern_quality or {}).get("score")) if f.kline_pattern_quality else None,
+                "has_golden_spider": bool((f.kline_pattern_quality or {}).get("has_golden_spider")) if f.kline_pattern_quality else False,
             },
         )
 

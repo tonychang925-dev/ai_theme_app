@@ -18,6 +18,12 @@ from stock_processing_service.contracts.dto.post_market_setup_context_dto import
     SourceStatus,
 )
 from stock_processing_service.contracts.dto.trade_calendar_dto import TradeCalendarDTO
+from stock_processing_service.domain.services.one_to_two_rule_config import (
+    OneToTwoRuleConfig,
+    RULE_VERSION_V1_1,
+    RULE_VERSION_V1_2,
+    RULE_VERSION_V1_3,
+)
 from stock_processing_service.domain.services.one_to_two_rule_engine import OneToTwoRuleEngine
 
 
@@ -188,6 +194,207 @@ def test_one_to_two_outputs_only_plan_not_buy_signal() -> None:
     assert "buy" not in str(payload).lower()
     assert "must_buy" not in str(payload).lower()
     assert "recommend_buy" not in str(payload).lower()
+
+
+def test_one_to_two_fact_pool_normalizes_stock_id_suffixes() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    ctx = PostMarketSetupFactContext(
+        trade_date="2026-05-06",
+        watch_date="2026-05-07",
+        active_mainlines=[{"mainline_id": "ml_AI光纤_202606", "canonical_subject_key": "9064103"}],
+        strong_hotspot_subjects=[{"subject_key": "9064103", "theme_name": "AI光纤"}],
+        active_subject_keys={"9064103"},
+        lifecycle_by_subject={"9064103": {"lifecycle_state": "divergence"}},
+        market_regime={"trade_mode": "normal", "allow_trade": True},
+        trading_principle={"position_limit": 0.3},
+        subject_stock_rows=[
+            {
+                "trade_date": "2026-05-06",
+                "stock_id": "603618",
+                "stock_name": "杭电股份",
+                "subject_key": "9064103",
+                "subject_name": "AI光纤",
+                "open_price": Decimal("29.00"),
+                "high_price": Decimal("31.09"),
+                "low_price": Decimal("29.00"),
+                "close_price": Decimal("31.09"),
+                "pct_chg": Decimal("10.01"),
+                "limit_up": True,
+                "is_leader": True,
+                "open_board_count": 0,
+                "first_limit_time": "09:56:00",
+            }
+        ],
+        stock_daily_bars=[
+            {
+                "trade_date": "2026-05-06",
+                "stock_id": "603618.SH",
+                "stock_name": "杭电股份",
+                "open_price": Decimal("29.00"),
+                "high_price": Decimal("31.09"),
+                "low_price": Decimal("29.00"),
+                "close_price": Decimal("31.09"),
+                "pre_close": Decimal("28.26"),
+                "pct_chg": Decimal("10.01"),
+                "limit_up_price": Decimal("31.09"),
+                "amount": Decimal("810396087"),
+                "turnover_rate": Decimal("3.83"),
+            }
+        ],
+        limit_up_rows=[],
+        diagnostics=SourceStatus(source_status={"market_regime": "ready_non_empty"}),
+    )
+
+    result = engine.build_from_context(ctx)
+
+    assert result.diagnostics["fact_pool_count"] == 1
+    assert len(result.candidate_features) == 1
+    assert result.candidate_features[0]["stock_id"] == "603618.SH"
+
+
+def test_one_to_two_subject_choice_prefers_strong_hotspot_over_other_active_mainline() -> None:
+    from stock_processing_service.domain.services.one_to_two_candidate_service import OneToTwoCandidateService
+
+    svc = OneToTwoCandidateService()
+    rows = [
+        {"trade_date": "2026-05-06", "stock_id": "603618.SH", "subject_key": "9014636", "rank_order": 2, "is_leader": True},
+        {"trade_date": "2026-05-06", "stock_id": "603618.SH", "subject_key": "9064103", "rank_order": 1, "is_leader": True},
+    ]
+    chosen = svc._choose_subject_row(
+        rows,
+        "2026-05-06",
+        active_subject_keys={"9014636", "9064103"},
+        strong_hotspot_keys={"9064103"},
+        subject_priority_rank={"9064103": 0, "9014636": 1},
+    )
+
+    assert chosen is not None
+    assert chosen["subject_key"] == "9064103"
+
+
+def test_one_to_two_subject_choice_prefers_confirmed_hotspot_over_other_strong_hotspot() -> None:
+    from stock_processing_service.domain.services.one_to_two_candidate_service import OneToTwoCandidateService
+
+    svc = OneToTwoCandidateService()
+    rows = [
+        {"trade_date": "2026-05-06", "stock_id": "603618.SH", "subject_key": "9014636", "rank_order": 1, "is_leader": True},
+        {"trade_date": "2026-05-06", "stock_id": "603618.SH", "subject_key": "9064103", "rank_order": 9, "is_leader": False},
+    ]
+    chosen = svc._choose_subject_row(
+        rows,
+        "2026-05-06",
+        active_subject_keys={"9014636", "9064103"},
+        strong_hotspot_keys={"9014636", "9064103"},
+        confirmed_hotspot_keys={"9064103"},
+        subject_priority_rank={"9064103": 0, "9014636": 1},
+    )
+
+    assert chosen is not None
+    assert chosen["subject_key"] == "9064103"
+
+
+def test_one_to_two_subject_choice_prefers_ranked_confirmed_hotspot_order() -> None:
+    from stock_processing_service.domain.services.one_to_two_candidate_service import OneToTwoCandidateService
+
+    svc = OneToTwoCandidateService()
+    rows = [
+        {"trade_date": "2026-05-06", "stock_id": "603618.SH", "subject_key": "9014636", "rank_order": 1, "is_leader": True},
+        {"trade_date": "2026-05-06", "stock_id": "603618.SH", "subject_key": "9064103", "rank_order": 9, "is_leader": False},
+    ]
+    chosen = svc._choose_subject_row(
+        rows,
+        "2026-05-06",
+        active_subject_keys={"9014636", "9064103"},
+        strong_hotspot_keys={"9014636", "9064103"},
+        confirmed_hotspot_keys={"9014636", "9064103"},
+        subject_priority_rank={"9064103": 0, "9014636": 1},
+    )
+
+    assert chosen is not None
+    assert chosen["subject_key"] == "9064103"
+
+
+def test_one_to_two_subject_selection_trace_records_priority_reason() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    ctx = PostMarketSetupFactContext(
+        trade_date="2026-05-06",
+        watch_date="2026-05-07",
+        active_mainlines=[{"mainline_id": "ml_AI光纤_202606", "canonical_subject_key": "9064103"}],
+        strong_hotspot_subjects=[
+            {"subject_key": "9064103", "theme_name": "AI光纤", "source": "confirmed_mainline"},
+            {"subject_key": "9014636", "theme_name": "机器人", "source": "confirmed_mainline"},
+        ],
+        active_subject_keys={"9064103", "9014636"},
+        lifecycle_by_subject={"9064103": {"lifecycle_state": "divergence"}, "9014636": {"lifecycle_state": "divergence"}},
+        market_regime={"trade_mode": "normal", "allow_trade": True},
+        trading_principle={"position_limit": 0.3},
+        subject_stock_rows=[
+            {
+                "trade_date": "2026-05-06",
+                "stock_id": "603618",
+                "stock_name": "杭电股份",
+                "subject_key": "9014636",
+                "subject_name": "机器人",
+                "open_price": Decimal("29.00"),
+                "high_price": Decimal("31.09"),
+                "low_price": Decimal("29.00"),
+                "close_price": Decimal("31.09"),
+                "pct_chg": Decimal("10.01"),
+                "limit_up": True,
+                "is_leader": True,
+                "open_board_count": 0,
+                "first_limit_time": "09:56:00",
+            },
+            {
+                "trade_date": "2026-05-06",
+                "stock_id": "603618",
+                "stock_name": "杭电股份",
+                "subject_key": "9064103",
+                "subject_name": "AI光纤",
+                "open_price": Decimal("29.00"),
+                "high_price": Decimal("31.09"),
+                "low_price": Decimal("29.00"),
+                "close_price": Decimal("31.09"),
+                "pct_chg": Decimal("10.01"),
+                "limit_up": True,
+                "is_leader": False,
+                "open_board_count": 0,
+                "first_limit_time": "09:56:00",
+            },
+        ],
+        stock_daily_bars=[
+            {
+                "trade_date": "2026-05-06",
+                "stock_id": "603618.SH",
+                "stock_name": "杭电股份",
+                "open_price": Decimal("29.00"),
+                "high_price": Decimal("31.09"),
+                "low_price": Decimal("29.00"),
+                "close_price": Decimal("31.09"),
+                "pre_close": Decimal("28.26"),
+                "pct_chg": Decimal("10.01"),
+                "limit_up_price": Decimal("31.09"),
+                "amount": Decimal("810396087"),
+                "turnover_rate": Decimal("3.83"),
+            }
+        ],
+        limit_up_rows=[],
+        confirmed_hotspot_rank={"9064103": 0, "9014636": 1},
+        strong_hotspot_rank={"9064103": 0, "9014636": 1},
+        subject_priority_rank={"9064103": 0, "9014636": 1},
+        diagnostics=SourceStatus(source_status={"market_regime": "ready_non_empty"}),
+    )
+
+    result = engine.build_from_context(ctx)
+
+    assert result.diagnostics["fact_pool_count"] == 1
+    assert result.summary["rule_version"] == "one_to_two_v1.0_post_market_plan"
+    trace = result.candidate_features[0]["source_trace_json"]["subject_selection"]
+    assert result.candidate_features[0]["rule_version"] == "one_to_two_v1.0_post_market_plan"
+    assert result.candidate_features[0]["source_trace_json"]["rule_version"] == "one_to_two_v1.0_post_market_plan"
+    assert trace["selected_subject_key"] == "9064103"
+    assert trace["candidate_subject_keys"] == ["9014636", "9064103"]
+    assert trace["selection_reason"] == "confirmed_hotspot_rank"
 
 
 def test_one_to_two_rejects_non_mainline_first_board() -> None:
@@ -471,3 +678,101 @@ async def test_one_to_two_plan_and_candidate_feature_round_trip_by_setup_type() 
     assert all(row.get("veto_reasons") for row in reject_rows)
     assert all(isinstance(row.get("veto_reasons"), list) or row.get("veto_reasons") is None for row in feature_rows)
     assert all(row.get("setup_type") == "one_to_two" for row in feature_rows)
+
+
+def _versioned_feature(
+    *,
+    turnover_rate: Decimal,
+    same_subject_limit_count: int,
+    same_subject_strong_count: int,
+    subject_key: str = "9064103",
+    is_confirmed_mainline: bool = True,
+) -> OneToTwoFeatures:
+    return OneToTwoFeatures(
+        trade_date="2026-05-07",
+        watch_date="2026-05-08",
+        stock_id="603618.SH",
+        stock_name="杭电股份",
+        subject_key=subject_key,
+        subject_name="AI光纤",
+        is_confirmed_mainline=is_confirmed_mainline,
+        is_strong_hotspot=True,
+        mainline_or_hotspot_state="confirmed_mainline" if is_confirmed_mainline else "strong_hotspot",
+        lifecycle_state="start",
+        market_trade_mode="normal",
+        allow_trade=True,
+        is_first_limit_up=True,
+        is_one_word_board=False,
+        is_late_seal=False,
+        first_limit_time="09:56:00",
+        open_board_count=1,
+        turnover_rate=turnover_rate,
+        amount=Decimal("810396087"),
+        close_seal_amount=Decimal("50000000"),
+        seal_ratio=Decimal("0.80"),
+        float_mcap=Decimal("12000000000"),
+        position_120=Decimal("0.30"),
+        is_downtrend=False,
+        near_pressure=False,
+        same_subject_limit_count=same_subject_limit_count,
+        same_subject_strong_count=same_subject_strong_count,
+        data_quality={"missing_required": []},
+        source_trace={"source": "unit"},
+    )
+
+
+def test_one_to_two_rule_v1_0_keeps_current_hard_vetoes() -> None:
+    rule = OneToTwoRuleEngine().apply(
+        _versioned_feature(
+            turnover_rate=Decimal("0.05"),
+            same_subject_limit_count=1,
+            same_subject_strong_count=7,
+        )
+    )
+
+    assert rule.decision == "reject"
+    assert "低换手" in "；".join(rule.veto_reasons)
+    assert "无板块合力" in "；".join(rule.veto_reasons)
+
+
+def test_one_to_two_rule_v1_1_allows_strong_breadth_but_caps_focus() -> None:
+    rule = OneToTwoRuleEngine(OneToTwoRuleConfig.from_version(RULE_VERSION_V1_1)).apply(
+        _versioned_feature(
+            turnover_rate=Decimal("0.18"),
+            same_subject_limit_count=1,
+            same_subject_strong_count=7,
+        )
+    )
+
+    assert rule.decision == "observe_only"
+    assert rule.veto_reasons == []
+    assert "涨停合力不足但强势扩散存在" in rule.risk_flags
+
+
+def test_one_to_two_rule_v1_2_tiered_turnover_caps_focus() -> None:
+    rule = OneToTwoRuleEngine(OneToTwoRuleConfig.from_version(RULE_VERSION_V1_2)).apply(
+        _versioned_feature(
+            turnover_rate=Decimal("0.05"),
+            same_subject_limit_count=3,
+            same_subject_strong_count=7,
+        )
+    )
+
+    assert rule.decision == "observe_only"
+    assert rule.veto_reasons == []
+    assert "低换手，先观察不 focus" in rule.risk_flags
+
+
+def test_one_to_two_rule_v1_3_combines_soft_breadth_and_low_turnover() -> None:
+    rule = OneToTwoRuleEngine(OneToTwoRuleConfig.from_version(RULE_VERSION_V1_3)).apply(
+        _versioned_feature(
+            turnover_rate=Decimal("0.05"),
+            same_subject_limit_count=1,
+            same_subject_strong_count=7,
+        )
+    )
+
+    assert rule.decision == "observe_only"
+    assert rule.veto_reasons == []
+    assert "涨停合力不足但强势扩散存在" in rule.risk_flags
+    assert "低换手，先观察不 focus" in rule.risk_flags

@@ -129,6 +129,29 @@ class _ReadPortWithZeroFill(_ReadPort):
         ]
 
 
+class _ReadPortWithNullBars(_ReadPort):
+    async def get_subject_stock_daily_bars_range(self, **kwargs):
+        self.bar_subject_key_calls.append(kwargs.get("subject_keys"))
+        return [
+            {
+                "trade_date": date(2026, 5, 28),
+                "stock_id": "000001.SZ",
+                "stock_name": "Null Bar",
+                "open_price": None,
+                "high_price": None,
+                "low_price": None,
+                "close_price": None,
+                "pre_close": None,
+                "pct_chg": None,
+                "volume": None,
+                "amount": None,
+                "limit_up": False,
+                "limit_up_price": None,
+                "limit_down_price": None,
+            }
+        ]
+
+
 class _WritePort:
     def __init__(self) -> None:
         self.rows: list[dict] = []
@@ -211,3 +234,29 @@ async def test_theme_cycle_evidence_zero_fills_tracked_universe_without_pool_row
     assert tracked_c_row["theme_support_score"] == "0"
     assert tracked_c_row["evidence_json"]["meta"]["evidence_quality"] == "zero_fill_no_pool_rows"
     assert result.metrics["zero_fill_subject_count"] == 1
+
+
+@pytest.mark.asyncio
+async def test_theme_cycle_evidence_handles_null_bar_values() -> None:
+    """TC-POSTMARKET-NULLBAR: null daily-bar numeric fields must not break evidence backfill."""
+
+    read_port = _ReadPortWithNullBars()
+    write_port = _WritePort()
+    job = BuildThemeCycleEvidenceDailyJob(
+        read_port=read_port,
+        write_port=write_port,
+        event_port=_EventPort(),
+        idempotency_port=_IdempotencyPort(),
+        builder=_Builder(),
+        kline_builder=_KlineBuilder(),
+    )
+
+    result = await job.execute(
+        trade_date=date(2026, 5, 28),
+        snapshot_version="test",
+        batch_id="batch",
+        trace_id="trace",
+    )
+
+    assert result.status == "ok"
+    assert read_port.bar_subject_key_calls

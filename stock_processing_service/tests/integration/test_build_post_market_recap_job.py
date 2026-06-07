@@ -573,9 +573,152 @@ def test_build_post_market_recap_job_backfills_strong_watch_count_from_reviews()
         recap_doc = write_port.recap_docs[-1].recap_doc
         assert recap_doc["strong_watch_history_count"] == 0
         assert recap_doc["strong_stock_reviews_count"] == 1
+        assert recap_doc["diagnostics"]["strong_hotspot_subjects_count"] == 1
+        assert recap_doc["strong_hotspot_subjects"][0]["subject_key"] == "ai_chip"
         assert len(recap_doc["strong_stock_reviews"]) == 1
         cache_rows = cache_port.cache["sps:strong_watch_history:2026-06-04"]["value"]
         assert len(cache_rows) == 0
+
+    asyncio.run(_run())
+
+
+def test_build_post_market_recap_job_derives_hotspots_from_strong_watch_view_rows_tc_one_to_two_003() -> None:
+    """TC-ONE-TO-TWO-003: recap must derive strong_hotspot_subjects from strong watch rows for OneToTwo."""
+
+    class _StrongWatchViewReadPort(_FakeReadPort):
+        async def get_stock_daily_bars(self, trade_date: date, stock_ids: list[str] | None = None) -> list[StockBarDTO]:
+            return [
+                StockBarDTO(
+                    trade_date=trade_date,
+                    stock_id="603278.SH",
+                    stock_name="大业股份",
+                    open_price=Decimal("11.29"),
+                    high_price=Decimal("12.32"),
+                    low_price=Decimal("11.20"),
+                    close_price=Decimal("12.32"),
+                    pre_close=Decimal("11.22"),
+                    pct_chg=Decimal("10.0"),
+                    volume=Decimal("30000"),
+                    amount=Decimal("350000"),
+                    limit_up_price=Decimal("12.32"),
+                    limit_down_price=Decimal("10.10"),
+                )
+            ]
+
+        async def get_strong_stock_watch_view_rows(
+            self,
+            end_date: date,
+            window_days: int = 7,
+            include_removed: bool = False,
+            latest_per_stock: bool = True,
+            stock_id: str | None = None,
+            limit: int = 200,
+        ) -> list[dict[str, Any]]:
+            return [
+                {
+                    "trade_date": end_date,
+                    "stock_id": "603278.SH",
+                    "stock_name": "大业股份",
+                    "subject_key": "9019807",
+                    "theme_name": "卫星互联网",
+                    "watch_status": "active",
+                    "watch_score": 88.0,
+                    "support_type": "ma_support",
+                    "support_score": 66.0,
+                    "pool_entry_type": "formal",
+                    "cycle_state": "repair",
+                    "pct_chg": 10.0,
+                    "turnover_rate": 12.3,
+                    "volume_ratio": 2.1,
+                    "position_label": "突破前高",
+                    "pattern_labels": ["高量不破"],
+                    "main_net_inflow": 88000000,
+                    "role_enhanced": "",
+                    "money_flow_tier": "强",
+                    "mainline_strength_score": 72.0,
+                }
+            ]
+
+        async def get_subject_stock_daily_bars_range(
+            self,
+            start_date: date,
+            end_date: date,
+            stock_ids=None,
+            subject_keys=None,
+        ):
+            return [
+                {
+                    "trade_date": end_date,
+                    "stock_id": "603278.SH",
+                    "stock_name": "大业股份",
+                    "subject_key": "9019807",
+                    "subject_name": "卫星互联网",
+                    "is_leader": True,
+                    "pool_rank": 1,
+                    "rank_order": 1,
+                }
+            ]
+
+        async def get_subject_board_stats(self, trade_date: date) -> list[dict[str, Any]]:
+            return [
+                {"subject_key": "9019807", "subject_limit_up_count": 2, "subject_strong_count": 3},
+            ]
+
+        async def get_active_confirmed_mainlines(self, trade_date: date, limit: int = 100):
+            return [
+                {
+                    "mainline_id": "ml-sat",
+                    "canonical_subject_key": "9019807",
+                    "related_subject_keys_json": ["9019807"],
+                    "branch_subject_keys_json": [],
+                }
+            ]
+
+        async def get_mainline_state_daily(self, trade_date: date, subject_keys: list[str]):
+            return [
+                {
+                    "subject_key": "9019807",
+                    "final_cycle_state": "repair",
+                    "final_mainline_alive": True,
+                }
+            ]
+
+    async def _run() -> None:
+        read_port = _StrongWatchViewReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=cache_port,
+        )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+        job._build_market_summary_llm = AsyncMock(  # type: ignore[method-assign]
+            return_value={"source": "test", "market_overview": "ok"}
+        )
+
+        result = await job.execute(
+            trade_date=date(2026, 5, 6),
+            snapshot_version="pm-v2",
+            batch_id="bpm-hotspots",
+            trace_id="tpm-hotspots",
+            skip_prereqs=True,
+            skip_layer_c=True,
+        )
+
+        assert result.status == "ok"
+        assert result.metrics["strong_stock_reviews_count"] == 1
+        recap_doc = write_port.recap_docs[-1].recap_doc
+        assert recap_doc["strong_stock_reviews_count"] == 1
+        assert recap_doc["diagnostics"]["strong_hotspot_subjects_count"] == 1
+        assert recap_doc["strong_hotspot_subjects"][0]["subject_key"] == "9019807"
 
     asyncio.run(_run())
 

@@ -48,6 +48,9 @@ class OneToTwoBacktestValidationSummaryService:
         snapshot_by_id = {str(row.get("snapshot_id") or ""): row for row in snapshots if str(row.get("snapshot_id") or "")}
         signal_by_source_id = {str(row.get("source_id") or ""): row for row in signals if str(row.get("source_id") or "")}
         validation_by_signal_id = {str(row.get("signal_id") or ""): row for row in validations if str(row.get("signal_id") or "")}
+        rule_version_counts = Counter(
+            str(row.get("rule_version") or "") for row in signals if str(row.get("rule_version") or "").strip()
+        )
 
         trade_dates = sorted({self._parse_date(row.get("candidate_trade_date")) for row in snapshots if self._parse_date(row.get("candidate_trade_date"))})
         range_start = self._parse_date((run_row or {}).get("start_date")) if run_row else None
@@ -64,6 +67,8 @@ class OneToTwoBacktestValidationSummaryService:
         decision_rows: dict[str, list[dict[str, Any]]] = defaultdict(list)
         outcome_label_counts: Counter[str] = Counter()
         outcome_source_counts: Counter[str] = Counter()
+        authenticity_level_counts: Counter[str] = Counter()
+        golden_spider_counts: Counter[str] = Counter()
         decision_success_counts: Counter[str] = Counter()
         decision_total_counts: Counter[str] = Counter()
         reject_reason_false_negative_counts: Counter[str] = Counter()
@@ -85,15 +90,23 @@ class OneToTwoBacktestValidationSummaryService:
                     "outcome_source": "missing",
                     "validation_status": "missing_bar",
                 }
+            subject_authenticity = self._extract_subject_authenticity(snap)
+            kline_pattern_quality = self._extract_kline_pattern_quality(snap)
+            authenticity_level = str(subject_authenticity.get("level") or "unknown")
+            has_golden_spider = bool(kline_pattern_quality.get("has_golden_spider"))
             outcome_label = str(resolved.get("outcome_label") or "D_NO_DATA")
             outcome_source = str(resolved.get("outcome_source") or "missing")
             outcome_label_counts[outcome_label] += 1
             outcome_source_counts[outcome_source] += 1
+            authenticity_level_counts[authenticity_level] += 1
+            golden_spider_counts["true" if has_golden_spider else "false"] += 1
             decision_rows[decision].append(
                 {
                     "snapshot": snap,
                     "outcome_label": outcome_label,
                     "outcome_source": outcome_source,
+                    "authenticity_level": authenticity_level,
+                    "has_golden_spider": has_golden_spider,
                     "resolved": resolved,
                 }
             )
@@ -135,8 +148,11 @@ class OneToTwoBacktestValidationSummaryService:
             "avg_pending_count_per_day": self._rate(pending_count, non_empty_days),
             "outcome_label_counts": dict(outcome_label_counts),
             "outcome_source_counts": dict(outcome_source_counts),
+            "authenticity_level_counts": dict(authenticity_level_counts),
+            "golden_spider_counts": dict(golden_spider_counts),
             "decision_success_counts": dict(decision_success_counts),
             "decision_total_counts": dict(decision_total_counts),
+            "rule_version_counts": dict(rule_version_counts),
             "decision_breakdown": {
                 decision: {
                     "sample_count": len(rows),
@@ -144,6 +160,8 @@ class OneToTwoBacktestValidationSummaryService:
                     "success_rate": self._rate(decision_success_counts.get(decision, 0), len(rows)),
                     "outcome_label_counts": dict(Counter(row["outcome_label"] for row in rows)),
                     "outcome_source_counts": dict(Counter(row["outcome_source"] for row in rows)),
+                    "authenticity_level_counts": dict(Counter(row["authenticity_level"] for row in rows)),
+                    "golden_spider_counts": dict(Counter("true" if row["has_golden_spider"] else "false" for row in rows)),
                 }
                 for decision, rows in decision_rows.items()
             },
@@ -369,7 +387,25 @@ class OneToTwoBacktestValidationSummaryService:
                 text = str(candidate).strip()
                 if text:
                     reasons.append(text)
-        return reasons or ["unknown"]
+        deduped: list[str] = []
+        for reason in reasons:
+            if reason not in deduped:
+                deduped.append(reason)
+        return deduped or ["unknown"]
+
+    def _extract_subject_authenticity(self, snapshot: dict[str, Any]) -> dict[str, Any]:
+        for source in (_json_obj(snapshot.get("derived_feature_json")), _json_obj(snapshot.get("raw_feature_json")), _json_obj(snapshot.get("source_trace"))):
+            value = source.get("subject_authenticity")
+            if isinstance(value, dict):
+                return dict(value)
+        return {}
+
+    def _extract_kline_pattern_quality(self, snapshot: dict[str, Any]) -> dict[str, Any]:
+        for source in (_json_obj(snapshot.get("derived_feature_json")), _json_obj(snapshot.get("raw_feature_json")), _json_obj(snapshot.get("source_trace"))):
+            value = source.get("kline_pattern_quality")
+            if isinstance(value, dict):
+                return dict(value)
+        return {}
 
     def _warnings(self, total_days: int, non_empty_days: int) -> list[str]:
         warnings: list[str] = []

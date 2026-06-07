@@ -3,12 +3,23 @@ from __future__ import annotations
 from decimal import Decimal
 
 from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoFeatures, RuleResult
+from stock_processing_service.domain.services.one_to_two_rule_config import (
+    OneToTwoRuleConfig,
+)
 
 
 class OneToTwoRuleEngine:
     """1进2 的硬门禁与计划层决策。"""
 
+    def __init__(self, config: OneToTwoRuleConfig | None = None) -> None:
+        self.config = config or OneToTwoRuleConfig.from_version(None)
+
+    @property
+    def rule_version(self) -> str:
+        return self.config.rule_version
+
     def apply(self, f: OneToTwoFeatures) -> RuleResult:
+        cfg = self.config
         veto: list[str] = []
         risk: list[str] = []
 
@@ -32,11 +43,28 @@ class OneToTwoRuleEngine:
         if f.is_late_seal:
             veto.append("尾盘偷封，辨识度不足")
 
-        if f.turnover_rate is None or f.turnover_rate < Decimal("0.08"):
-            veto.append("低换手，筹码交换不足")
+        turnover_rate = f.turnover_rate
+        low_turnover_tier = False
+        if turnover_rate is None or turnover_rate < cfg.min_reject_turnover:
+            veto.append(cfg.strict_turnover_veto_reason)
+        elif turnover_rate < cfg.min_focus_turnover:
+            low_turnover_tier = True
+            risk.append(cfg.low_turnover_risk_flag)
 
-        if f.same_subject_limit_count is None or f.same_subject_limit_count < 2:
-            veto.append("无板块合力")
+        same_subject_limit_count = f.same_subject_limit_count or 0
+        same_subject_strong_count = f.same_subject_strong_count or 0
+        has_strict_breadth = same_subject_limit_count >= cfg.min_subject_limit_count
+        has_strong_breadth = (
+            cfg.allow_strong_count_breadth
+            and same_subject_limit_count >= 1
+            and same_subject_strong_count >= cfg.min_subject_strong_count_for_breadth
+            and (not cfg.strong_count_breadth_requires_confirmed_mainline or f.is_confirmed_mainline)
+        )
+        soft_breadth = has_strong_breadth and not has_strict_breadth
+        if not has_strict_breadth and not has_strong_breadth:
+            veto.append(cfg.strict_breadth_veto_reason)
+        elif soft_breadth:
+            risk.append(cfg.soft_breadth_risk_flag)
 
         if f.position_120 is not None and f.position_120 > Decimal("0.65"):
             veto.append("首板位置过高")
@@ -56,6 +84,7 @@ class OneToTwoRuleEngine:
         if veto:
             return RuleResult(decision="reject", veto_reasons=veto, risk_flags=risk)
 
+        decision: str
         if f.market_trade_mode == "no_trade" or not f.allow_trade:
             return RuleResult(
                 decision="observe_only",
@@ -64,17 +93,17 @@ class OneToTwoRuleEngine:
             )
 
         if not f.is_confirmed_mainline:
-            return RuleResult(
-                decision="pending_review_only",
-                veto_reasons=[],
-                risk_flags=["非 confirmed_mainline，仅保留观察，不得 focus"],
-            )
+            decision = "pending_review_only"
+            risk.append("非 confirmed_mainline，仅保留观察，不得 focus")
+        elif f.lifecycle_state in {"climax", "fade_watch"}:
+            decision = "observe_only"
+            risk.append(f"主线阶段 {f.lifecycle_state}，只观察不 focus")
+        else:
+            decision = "focus"
 
-        if f.lifecycle_state in {"climax", "fade_watch"}:
-            return RuleResult(
-                decision="observe_only",
-                veto_reasons=[],
-                risk_flags=[f"主线阶段 {f.lifecycle_state}，只观察不 focus"],
-            )
+        if soft_breadth and decision == "focus":
+            decision = cfg.soft_breadth_cap_decision
+        if low_turnover_tier and decision == "focus":
+            decision = cfg.low_turnover_cap_decision
 
-        return RuleResult(decision="focus", veto_reasons=[], risk_flags=risk)
+        return RuleResult(decision=decision, veto_reasons=[], risk_flags=risk)
