@@ -23,6 +23,7 @@ from stock_processing_service.domain.services.one_to_two_rule_config import (
     RULE_VERSION_V1_1,
     RULE_VERSION_V1_2,
     RULE_VERSION_V1_3,
+    RULE_VERSION_V1_4,
 )
 from stock_processing_service.domain.services.one_to_two_rule_engine import OneToTwoRuleEngine
 
@@ -140,6 +141,103 @@ async def test_one_to_two_does_not_read_layer_c_pool() -> None:
 
     assert result.summary["focus_count"] == 0
     assert result.items == []
+
+
+def test_one_to_two_candidate_generation_uses_first_board_facts_without_strong_pool() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    ctx = PostMarketSetupFactContext(
+        trade_date="2026-05-26",
+        watch_date="2026-05-27",
+        active_mainlines=[{"mainline_id": "ml_HBM存储_202606", "canonical_subject_key": "9021399"}],
+        strong_hotspot_subjects=[
+            {"subject_key": "9021399", "theme_name": "HBM存储", "source": "confirmed_mainline"},
+        ],
+        active_subject_keys={"9021399"},
+        lifecycle_by_subject={"9021399": {"lifecycle_state": "divergence"}},
+        market_regime={"trade_mode": "normal", "allow_trade": True},
+        trading_principle={"position_limit": 0.3},
+        subject_stock_rows=[
+            {
+                "trade_date": "2026-05-26",
+                "stock_id": "002579.SZ",
+                "stock_name": "中京电子",
+                "subject_key": "9021399",
+                "subject_name": "HBM存储",
+                "open_price": Decimal("13.67"),
+                "high_price": Decimal("15.04"),
+                "low_price": Decimal("13.67"),
+                "close_price": Decimal("15.04"),
+                "pct_chg": Decimal("10.02"),
+                "limit_up": True,
+                "is_leader": True,
+                "open_board_count": 0,
+                "first_limit_time": "09:41:00",
+            }
+        ],
+        stock_daily_bars=[
+            {
+                "trade_date": "2026-05-24",
+                "stock_id": "002579.SZ",
+                "stock_name": "中京电子",
+                "open_price": Decimal("12.90"),
+                "high_price": Decimal("13.20"),
+                "low_price": Decimal("12.60"),
+                "close_price": Decimal("12.85"),
+                "pre_close": Decimal("12.90"),
+                "pct_chg": Decimal("-0.39"),
+                "limit_up_price": Decimal("14.13"),
+                "amount": Decimal("120000000"),
+            },
+            {
+                "trade_date": "2026-05-25",
+                "stock_id": "002579.SZ",
+                "stock_name": "中京电子",
+                "open_price": Decimal("12.88"),
+                "high_price": Decimal("13.05"),
+                "low_price": Decimal("12.70"),
+                "close_price": Decimal("12.96"),
+                "pre_close": Decimal("12.85"),
+                "pct_chg": Decimal("0.86"),
+                "limit_up_price": Decimal("14.26"),
+                "amount": Decimal("132000000"),
+            },
+            {
+                "trade_date": "2026-05-26",
+                "stock_id": "002579.SZ",
+                "stock_name": "中京电子",
+                "open_price": Decimal("13.67"),
+                "high_price": Decimal("15.04"),
+                "low_price": Decimal("13.67"),
+                "close_price": Decimal("15.04"),
+                "pre_close": Decimal("13.67"),
+                "pct_chg": Decimal("10.02"),
+                "limit_up_price": Decimal("15.04"),
+                "amount": Decimal("1557307115.83"),
+            },
+        ],
+        limit_up_rows=[],
+        subject_market_breadth={
+            "9021399": {
+                "subject_key": "9021399",
+                "subject_limit_up_count": 2,
+                "subject_strong_count": 4,
+                "leader_pct_chg": 10.02,
+                "member_count": 6,
+                "leader_limit_up": True,
+            }
+        },
+        confirmed_hotspot_rank={"9021399": 0},
+        strong_hotspot_rank={"9021399": 0},
+        subject_priority_rank={"9021399": 0},
+        diagnostics=SourceStatus(source_status={"market_regime": "ready_non_empty"}),
+    )
+
+    result = engine.build_from_context(ctx)
+
+    assert result.diagnostics["fact_pool_count"] == 1
+    assert result.candidate_features[0]["stock_id"] == "002579.SZ"
+    assert result.candidate_features[0]["subject_key"] == "9021399"
+    assert result.candidate_features[0]["source_trace_json"]["subject_selection"]["selected_subject_key"] == "9021399"
 
 
 def test_one_to_two_no_trade_focus_count_zero() -> None:
@@ -710,6 +808,8 @@ def _versioned_feature(
     same_subject_strong_count: int,
     subject_key: str = "9064103",
     is_confirmed_mainline: bool = True,
+    first_board_type: str = "strict_first_board",
+    first_board_trace: dict[str, object] | None = None,
 ) -> OneToTwoFeatures:
     return OneToTwoFeatures(
         trade_date="2026-05-07",
@@ -741,6 +841,8 @@ def _versioned_feature(
         same_subject_strong_count=same_subject_strong_count,
         data_quality={"missing_required": []},
         source_trace={"source": "unit"},
+        first_board_type=first_board_type,
+        first_board_trace=first_board_trace or {"first_board_type_reason": first_board_type},
     )
 
 
@@ -799,3 +901,74 @@ def test_one_to_two_rule_v1_3_combines_soft_breadth_and_low_turnover() -> None:
     assert rule.veto_reasons == []
     assert "涨停合力不足但强势扩散存在" in rule.risk_flags
     assert "低换手，先观察不 focus" in rule.risk_flags
+
+
+def test_one_to_two_rule_v1_0_accepts_only_strict_first_board() -> None:
+    strict_rule = OneToTwoRuleEngine().apply(
+        _versioned_feature(
+            turnover_rate=Decimal("0.18"),
+            same_subject_limit_count=3,
+            same_subject_strong_count=7,
+            first_board_type="strict_first_board",
+        )
+    )
+    relaunch_rule = OneToTwoRuleEngine().apply(
+        _versioned_feature(
+            turnover_rate=Decimal("0.18"),
+            same_subject_limit_count=3,
+            same_subject_strong_count=7,
+            first_board_type="relaunch_first_board",
+        )
+    )
+
+    assert strict_rule.decision in {"focus", "observe_only"}
+    assert relaunch_rule.decision == "reject"
+    assert "不符合首板类型: relaunch_first_board" in "；".join(relaunch_rule.veto_reasons)
+
+
+@pytest.mark.parametrize(
+    "first_board_type",
+    ["relaunch_first_board", "trend_first_board", "oversold_first_board"],
+)
+def test_one_to_two_rule_v1_4_accepts_extended_first_board_types(first_board_type: str) -> None:
+    rule = OneToTwoRuleEngine(OneToTwoRuleConfig.from_version(RULE_VERSION_V1_4)).apply(
+        _versioned_feature(
+            turnover_rate=Decimal("0.18"),
+            same_subject_limit_count=3,
+            same_subject_strong_count=7,
+            first_board_type=first_board_type,
+            first_board_trace={"first_board_type_reason": first_board_type},
+        )
+    )
+
+    assert rule.decision in {"focus", "observe_only", "pending_review_only"}
+    assert rule.veto_reasons == []
+
+
+def test_one_to_two_first_board_trace_persisted_to_snapshot_payload() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    engine.candidate_service.build_fact_pool = lambda ctx: [  # type: ignore[assignment]
+        _versioned_feature(
+            turnover_rate=Decimal("0.18"),
+            same_subject_limit_count=3,
+            same_subject_strong_count=7,
+            first_board_type="relaunch_first_board",
+            first_board_trace={
+                "current_limit_up": True,
+                "last_limit_up_date": "2026-04-17",
+                "cooldown_trade_days": 10,
+                "had_consecutive_limit_up": False,
+                "pullback_after_last_limit_up": True,
+                "reclaimed_ma_cluster": True,
+                "position_label": "low",
+                "first_board_type_reason": "relaunch_after_cooldown",
+            },
+        )
+    ]
+
+    result = engine.build_from_context(_setup_context())
+
+    assert result.candidate_features[0]["first_board_type"] == "relaunch_first_board"
+    assert result.candidate_features[0]["first_board_trace"]["first_board_type_reason"] == "relaunch_after_cooldown"
+    assert result.candidate_features[0]["source_trace_json"]["first_board_type"] == "relaunch_first_board"
+    assert result.candidate_features[0]["source_trace_json"]["first_board_trace"]["last_limit_up_date"] == "2026-04-17"

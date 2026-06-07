@@ -51,6 +51,7 @@ class PostMarketSetupFactContext:
     prior_daily_bars: dict[str, list[dict[str, Any]]] = field(default_factory=dict)
     pressure_by_stock: dict[str, dict[str, Any]] = field(default_factory=dict)
     ma_pattern_by_stock: dict[str, dict[str, Any]] = field(default_factory=dict)
+    turnover_rate_by_stock: dict[str, Any] = field(default_factory=dict)
     subject_authenticity_by_subject: dict[str, dict[str, Any]] = field(default_factory=dict)
     stock_subject_authenticity_by_pair: dict[str, dict[str, Any]] = field(default_factory=dict)
     kline_pattern_quality_by_stock: dict[str, dict[str, Any]] = field(default_factory=dict)
@@ -78,6 +79,7 @@ class PostMarketSetupFactContext:
             "prior_daily_bars": self.prior_daily_bars,
             "pressure_by_stock": self.pressure_by_stock,
             "ma_pattern_by_stock": self.ma_pattern_by_stock,
+            "turnover_rate_by_stock": self.turnover_rate_by_stock,
             "subject_authenticity_by_subject": self.subject_authenticity_by_subject,
             "stock_subject_authenticity_by_pair": self.stock_subject_authenticity_by_pair,
             "kline_pattern_quality_by_stock": self.kline_pattern_quality_by_stock,

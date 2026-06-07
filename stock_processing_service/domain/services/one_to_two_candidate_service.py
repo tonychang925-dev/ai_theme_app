@@ -2,12 +2,13 @@ from __future__ import annotations
 
 from collections import defaultdict
 from dataclasses import asdict, is_dataclass
-from datetime import datetime, date
+from datetime import date
 from decimal import Decimal
 from typing import Any
 
 from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoFeatures
 from stock_processing_service.contracts.dto.post_market_setup_context_dto import PostMarketSetupFactContext
+from stock_processing_service.domain.services.first_board_classifier import FirstBoardClassifier
 
 
 class OneToTwoCandidateService:
@@ -53,12 +54,15 @@ class OneToTwoCandidateService:
         subject_authenticity_by_subject = dict(ctx.subject_authenticity_by_subject or {})
         stock_subject_authenticity_by_pair = dict(ctx.stock_subject_authenticity_by_pair or {})
         kline_pattern_quality_by_stock = dict(ctx.kline_pattern_quality_by_stock or {})
+        turnover_rate_by_stock = dict(getattr(ctx, "turnover_rate_by_stock", {}) or {})
+        first_board_classifier = FirstBoardClassifier()
 
         candidates: list[OneToTwoFeatures] = []
         for bar in current_bars:
             stock_id = self._stock_id(bar)
             if not stock_id:
                 continue
+            stock_key = stock_id.split(".", 1)[0]
             if not self._is_limit_up(bar):
                 continue
 
@@ -72,6 +76,7 @@ class OneToTwoCandidateService:
                 subject_authenticity_by_subject=subject_authenticity_by_subject,
                 stock_subject_authenticity_by_pair=stock_subject_authenticity_by_pair,
                 stock_pattern_quality=kline_pattern_quality_by_stock.get(stock_id, {}),
+                turnover_rate_by_stock=turnover_rate_by_stock,
             )
             if not current_subject_row:
                 continue
@@ -82,7 +87,15 @@ class OneToTwoCandidateService:
             pair_key = self._stock_subject_key(stock_id, subject_key)
 
             history_rows = bars_by_stock.get(stock_id, [])
-            is_first_limit_up = self._is_first_limit_up(history_rows, current_trade_date)
+            first_board = first_board_classifier.classify(
+                rows=history_rows,
+                current_trade_date=current_trade_date,
+                current_row=bar,
+                subject_row=current_subject_row,
+            )
+            first_board_type = first_board.first_board_type
+            first_board_trace = dict(first_board.first_board_trace)
+            is_first_limit_up = first_board.is_first_limit_up
 
             is_confirmed = subject_key in ctx.active_subject_keys
             is_strong_hotspot = subject_key in strong_hotspot_keys
@@ -154,9 +167,10 @@ class OneToTwoCandidateService:
                 first_limit_time=first_limit_time,
                 open_board_count=open_board_count,
                 turnover_rate=self._decimal_or_none(
-                    bar.get("turnover_rate")
-                    or current_subject_row.get("turnover_rate")
-                    or current_subject_row.get("turnover")
+                bar.get("turnover_rate")
+                or current_subject_row.get("turnover_rate")
+                or current_subject_row.get("turnover")
+                    or turnover_rate_by_stock.get(stock_key)
                 ),
                 amount=self._decimal_or_none(bar.get("amount") or current_subject_row.get("amount")),
                 close_seal_amount=self._decimal_or_none(
@@ -193,6 +207,8 @@ class OneToTwoCandidateService:
                 ),
                 subject_authenticity=subject_authenticity,
                 kline_pattern_quality=kline_pattern_quality,
+                first_board_type=first_board_type,
+                first_board_trace=first_board_trace,
                 data_quality={
                     "missing_required": self._missing_required(
                         bar=bar,
@@ -212,6 +228,8 @@ class OneToTwoCandidateService:
                     "subject_key": subject_key,
                     "trade_date": current_trade_date,
                     "bar_trade_date": self._date_str(bar.get("trade_date")),
+                    "first_board_type": first_board_type,
+                    "first_board_trace": first_board_trace,
                     "subject_selection": {
                         "selected_subject_key": subject_key,
                         "selected_subject_name": self._text(
@@ -230,6 +248,8 @@ class OneToTwoCandidateService:
                             "authenticity_scope": subject_authenticity.get("authenticity_scope"),
                             "stock_subject_key": subject_authenticity.get("stock_subject_key"),
                         },
+                        "first_board_type": first_board_type,
+                        "first_board_trace": first_board_trace,
                         "kline_pattern_quality": {
                             "has_golden_spider": kline_pattern_quality.get("has_golden_spider"),
                             "score": kline_pattern_quality.get("score"),
@@ -250,6 +270,7 @@ class OneToTwoCandidateService:
                             "business_rank": subject_priority_rank.get(subject_key),
                             "subject_limit_up_count": board_row.get("subject_limit_up_count") or board_row.get("limit_up_count"),
                             "pool_rank": current_subject_row.get("pool_rank") or current_subject_row.get("rank_order"),
+                            "first_board_type": first_board_type,
                         },
                         "selection_reason": selected_reason,
                     },
@@ -288,6 +309,7 @@ class OneToTwoCandidateService:
         subject_authenticity_by_subject: dict[str, dict[str, Any]] | None = None,
         stock_subject_authenticity_by_pair: dict[str, dict[str, Any]] | None = None,
         stock_pattern_quality: dict[str, Any] | None = None,
+        turnover_rate_by_stock: dict[str, Any] | None = None,
     ) -> dict[str, Any] | None:
         if not rows:
             return None
@@ -298,6 +320,7 @@ class OneToTwoCandidateService:
         subject_authenticity_by_subject = subject_authenticity_by_subject or {}
         stock_subject_authenticity_by_pair = stock_subject_authenticity_by_pair or {}
         stock_pattern_quality = stock_pattern_quality or {}
+        turnover_rate_by_stock = turnover_rate_by_stock or {}
         stock_id = self._stock_id(candidates[0]) if candidates else ""
 
         def _priority(row: dict[str, Any]) -> tuple[int, float, float, int, int, int, str]:
@@ -306,6 +329,10 @@ class OneToTwoCandidateService:
             authenticity = stock_subject_authenticity_by_pair.get(pair_key) or subject_authenticity_by_subject.get(subject_key) or {}
             authenticity_score = self._float_or_none(authenticity.get("score")) or 0.0
             pattern_score = self._float_or_none(stock_pattern_quality.get("score")) or 0.0
+            turnover_rate = self._decimal_or_none(
+                row.get("turnover_rate")
+                or turnover_rate_by_stock.get(stock_id.split(".", 1)[0] if stock_id else "")
+            )
             if subject_key in confirmed_hotspot_keys:
                 band = 0
             elif subject_key in strong_hotspot_keys:
@@ -319,7 +346,8 @@ class OneToTwoCandidateService:
             business_rank = subject_priority_rank.get(subject_key, 999999)
             subject_limit_up_count = self._int_or_none(row.get("subject_limit_up_count") or row.get("limit_up_count")) or 0
             pool_rank = self._int_or_none(row.get("pool_rank") or row.get("rank_order")) or 9999
-            return (band, -authenticity_score, -pattern_score, business_rank, -subject_limit_up_count, pool_rank, subject_key)
+            turnover_rank = float(turnover_rate) if turnover_rate is not None else 999.0
+            return (band, -authenticity_score, -pattern_score, business_rank, -subject_limit_up_count, turnover_rank, pool_rank, subject_key)
 
         return sorted(candidates, key=_priority)[0]
 
@@ -351,13 +379,6 @@ class OneToTwoCandidateService:
         if not stock_key or not subject_key:
             return ""
         return f"{stock_key}|{subject_key}"
-
-    def _is_first_limit_up(self, rows: list[dict[str, Any]], current_trade_date: str) -> bool:
-        current = [r for r in rows if self._date_str(r.get("trade_date")) == current_trade_date]
-        if not current:
-            return False
-        prior = [r for r in rows if self._date_str(r.get("trade_date")) != current_trade_date]
-        return self._is_limit_up(current[0]) and not any(self._is_limit_up(r) for r in prior)
 
     def _is_limit_up(self, row: dict[str, Any]) -> bool:
         pct = self._decimal_or_none(row.get("pct_chg"))

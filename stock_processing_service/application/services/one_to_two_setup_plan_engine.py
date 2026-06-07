@@ -156,6 +156,8 @@ class OneToTwoSetupPlanEngine:
             evidence.append(f"turnover_rate={f.turnover_rate}")
         if f.same_subject_limit_count is not None:
             evidence.append(f"same_subject_limit_count={f.same_subject_limit_count}")
+        if f.first_board_type:
+            evidence.append(f"first_board_type={f.first_board_type}")
         if f.subject_authenticity:
             evidence.append(f"subject_authenticity_scope={f.subject_authenticity.get('authenticity_scope', '')}")
             evidence.append(f"subject_authenticity_level={f.subject_authenticity.get('level', '')}")
@@ -189,6 +191,8 @@ class OneToTwoSetupPlanEngine:
             "market_trade_mode": f.market_trade_mode,
             "allow_trade": f.allow_trade,
             "is_first_limit_up": f.is_first_limit_up,
+            "first_board_type": f.first_board_type,
+            "first_board_trace": dict(f.first_board_trace or {}),
             "is_one_word_board": f.is_one_word_board,
             "is_late_seal": f.is_late_seal,
             "first_limit_time": f.first_limit_time,
@@ -233,5 +237,7 @@ class OneToTwoSetupPlanEngine:
             "source_trace_json": {
                 **dict(f.source_trace),
                 "rule_version": self.rule_engine.rule_version,
+                "first_board_type": f.first_board_type,
+                "first_board_trace": dict(f.first_board_trace or {}),
             },
         }

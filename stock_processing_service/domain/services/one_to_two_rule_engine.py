@@ -34,8 +34,11 @@ class OneToTwoRuleEngine:
         if not f.is_confirmed_mainline and not f.is_strong_hotspot:
             veto.append("非市场主线 / 非强热点")
 
-        if not f.is_first_limit_up:
-            veto.append("不是首板")
+        first_board_type = str(getattr(f, "first_board_type", "") or "")
+        if not first_board_type:
+            veto.append("首板类型缺失")
+        elif first_board_type not in cfg.allowed_first_board_types:
+            veto.append(f"不符合首板类型: {first_board_type}")
 
         if f.is_one_word_board:
             veto.append("一字板，不做1进2观察")

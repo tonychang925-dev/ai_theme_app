@@ -115,6 +115,17 @@ class _Engine:
                     "evidence_rules": ["rule-a"],
                     "data_quality_json": {"source": "unit"},
                     "source_trace_json": {"source_chain": "unit"},
+                    "first_board_type": "relaunch_first_board",
+                    "first_board_trace": {
+                        "current_limit_up": True,
+                        "last_limit_up_date": "2026-04-17",
+                        "cooldown_trade_days": 10,
+                        "had_consecutive_limit_up": False,
+                        "pullback_after_last_limit_up": True,
+                        "reclaimed_ma_cluster": True,
+                        "position_label": "low",
+                        "first_board_type_reason": "relaunch_after_cooldown",
+                    },
                     "missing_features": [],
                 },
                 {
@@ -137,6 +148,11 @@ class _Engine:
                     "evidence_rules": ["rule-b"],
                     "data_quality_json": {"source": "unit"},
                     "source_trace_json": {"source_chain": "unit"},
+                    "first_board_type": "not_first_board",
+                    "first_board_trace": {
+                        "current_limit_up": True,
+                        "first_board_type_reason": "consecutive_board_excluded",
+                    },
                     "missing_features": ["mainline_context"],
                 },
             ],
@@ -211,6 +227,8 @@ async def test_one_to_two_backtest_snapshot_freezes_reject_candidates() -> None:
     raw = json.loads(params[-3])
     assert source_trace["run_type"] == "backtest"
     assert derived["run_type"] == "backtest"
+    assert raw["first_board_type"] == "relaunch_first_board"
+    assert raw["first_board_trace"]["first_board_type_reason"] == "relaunch_after_cooldown"
     assert raw["stock_subject_authenticity"] == raw["subject_authenticity"]
     assert raw["stock_subject_authenticity_scope"] in {"stock_subject", "subject_fallback"}
 

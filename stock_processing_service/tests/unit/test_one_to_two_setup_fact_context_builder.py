@@ -35,6 +35,12 @@ class _GuardedReadPort(_MissingMarketContextReadPort):
     async def get_strong_stock_watch_view_rows(self, *args, **kwargs):
         raise AssertionError("Layer C read-model should not be called")
 
+    async def get_strong_stock_watch_history(self, *args, **kwargs):
+        raise AssertionError("Layer C read-model should not be called")
+
+    async def get_strong_stock_watch_pool(self, *args, **kwargs):
+        raise AssertionError("Layer C read-model should not be called")
+
     async def get_w2s_candidate_inputs(self, *args, **kwargs):
         raise AssertionError("D1 read-model should not be called")
 
@@ -160,6 +166,30 @@ async def test_post_market_setup_fact_context_builder_does_not_touch_layer_c_or_
 
 
 @pytest.mark.asyncio
+async def test_post_market_setup_fact_context_builder_does_not_touch_strong_stock_watch_sources() -> None:
+    class _StrongWatchGuardReadPort(_GuardedReadPort):
+        pass
+
+    builder = PostMarketSetupFactContextBuilder(_StrongWatchGuardReadPort())
+    ctx = await builder.build(
+        date(2026, 5, 26),
+        source_doc={
+            "market_regime_review": {"trade_mode": "normal", "allow_trade": True},
+            "trading_principle": {"position_limit": Decimal("0.3")},
+            "strong_hotspot_subjects": [
+                {"subject_key": "9060250", "theme_name": "日本九大核心企业", "source": "topic_hotspot"},
+            ],
+            "pressure_by_stock": {},
+            "ma_pattern_by_stock": {},
+        },
+    )
+
+    assert ctx.trade_date == "2026-05-26"
+    assert ctx.watch_date == "2026-05-26"
+    assert ctx.subject_priority_rank["9060250"] >= 0
+
+
+@pytest.mark.asyncio
 async def test_post_market_setup_fact_context_builder_includes_authenticity_and_pattern_features() -> None:
     builder = PostMarketSetupFactContextBuilder(_FeatureReadPort())
     ctx = await builder.build(
@@ -169,6 +199,15 @@ async def test_post_market_setup_fact_context_builder_includes_authenticity_and_
             "trading_principle": {"position_limit": Decimal("0.3")},
             "strong_hotspot_subjects": [
                 {"subject_key": "9064103", "theme_name": "AI光纤", "source": "confirmed_mainline"},
+            ],
+            "stock_facts": [
+                {
+                    "trade_date": "2026-05-06",
+                    "stock_id": "603618.SH",
+                    "stock_name": "杭电股份",
+                    "subject_key": "9064103",
+                    "turnover_rate": Decimal("10.75"),
+                }
             ],
             "pressure_by_stock": {},
             "ma_pattern_by_stock": {},
@@ -181,6 +220,7 @@ async def test_post_market_setup_fact_context_builder_includes_authenticity_and_
     assert "603618|9064103" in ctx.stock_subject_authenticity_by_pair
     assert ctx.stock_subject_authenticity_by_pair["603618|9064103"]["authenticity_scope"] == "stock_subject"
     assert ctx.stock_subject_authenticity_by_pair["603618|9064103"]["score"] > 0
+    assert ctx.turnover_rate_by_stock["603618"] == Decimal("10.75")
     assert "603618" in ctx.kline_pattern_quality_by_stock or "603618.SH" in ctx.kline_pattern_quality_by_stock
     key = "603618" if "603618" in ctx.kline_pattern_quality_by_stock else "603618.SH"
     assert "has_golden_spider" in ctx.kline_pattern_quality_by_stock[key]

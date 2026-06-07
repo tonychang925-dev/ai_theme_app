@@ -69,6 +69,8 @@ class OneToTwoBacktestValidationSummaryService:
         outcome_source_counts: Counter[str] = Counter()
         authenticity_level_counts: Counter[str] = Counter()
         golden_spider_counts: Counter[str] = Counter()
+        first_board_type_counts: Counter[str] = Counter()
+        first_board_type_success_counts: Counter[str] = Counter()
         decision_success_counts: Counter[str] = Counter()
         decision_total_counts: Counter[str] = Counter()
         reject_reason_false_negative_counts: Counter[str] = Counter()
@@ -92,8 +94,10 @@ class OneToTwoBacktestValidationSummaryService:
                 }
             subject_authenticity = self._extract_subject_authenticity(snap)
             kline_pattern_quality = self._extract_kline_pattern_quality(snap)
+            first_board_type = self._extract_first_board_type(snap)
             authenticity_level = str(subject_authenticity.get("level") or "unknown")
             has_golden_spider = bool(kline_pattern_quality.get("has_golden_spider"))
+            first_board_type_counts[first_board_type] += 1
             outcome_label = str(resolved.get("outcome_label") or "D_NO_DATA")
             outcome_source = str(resolved.get("outcome_source") or "missing")
             outcome_label_counts[outcome_label] += 1
@@ -107,11 +111,13 @@ class OneToTwoBacktestValidationSummaryService:
                     "outcome_source": outcome_source,
                     "authenticity_level": authenticity_level,
                     "has_golden_spider": has_golden_spider,
+                    "first_board_type": first_board_type,
                     "resolved": resolved,
                 }
             )
             if outcome_label.startswith(SUCCESS_OUTCOME_PREFIX):
                 decision_success_counts[decision] += 1
+                first_board_type_success_counts[first_board_type] += 1
                 if decision == "reject":
                     reject_positive_count += 1
                     for reason in self._extract_reject_reasons(snap):
@@ -150,6 +156,7 @@ class OneToTwoBacktestValidationSummaryService:
             "outcome_source_counts": dict(outcome_source_counts),
             "authenticity_level_counts": dict(authenticity_level_counts),
             "golden_spider_counts": dict(golden_spider_counts),
+            "first_board_type_counts": dict(first_board_type_counts),
             "decision_success_counts": dict(decision_success_counts),
             "decision_total_counts": dict(decision_total_counts),
             "rule_version_counts": dict(rule_version_counts),
@@ -162,8 +169,17 @@ class OneToTwoBacktestValidationSummaryService:
                     "outcome_source_counts": dict(Counter(row["outcome_source"] for row in rows)),
                     "authenticity_level_counts": dict(Counter(row["authenticity_level"] for row in rows)),
                     "golden_spider_counts": dict(Counter("true" if row["has_golden_spider"] else "false" for row in rows)),
+                    "first_board_type_counts": dict(Counter(row["first_board_type"] for row in rows)),
                 }
                 for decision, rows in decision_rows.items()
+            },
+            "first_board_type_breakdown": {
+                board_type: {
+                    "sample_count": count,
+                    "success_count": first_board_type_success_counts.get(board_type, 0),
+                    "success_rate": self._rate(first_board_type_success_counts.get(board_type, 0), count),
+                }
+                for board_type, count in first_board_type_counts.items()
             },
             "reject_reason_false_negative_distribution": dict(reject_reason_false_negative_counts),
             "summary_rows": [
@@ -406,6 +422,13 @@ class OneToTwoBacktestValidationSummaryService:
             if isinstance(value, dict):
                 return dict(value)
         return {}
+
+    def _extract_first_board_type(self, snapshot: dict[str, Any]) -> str:
+        for source in (_json_obj(snapshot.get("derived_feature_json")), _json_obj(snapshot.get("raw_feature_json")), _json_obj(snapshot.get("source_trace"))):
+            value = source.get("first_board_type")
+            if isinstance(value, str) and value.strip():
+                return value.strip()
+        return "unknown"
 
     def _warnings(self, total_days: int, non_empty_days: int) -> list[str]:
         warnings: list[str] = []

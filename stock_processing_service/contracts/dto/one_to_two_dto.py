@@ -6,6 +6,12 @@ from typing import Any, Literal
 
 
 Decision = Literal["focus", "observe_only", "pending_review_only", "reject"]
+FIRST_BOARD_ALLOWED_TYPES = {
+    "strict_first_board",
+    "relaunch_first_board",
+    "trend_first_board",
+    "oversold_first_board",
+}
 
 
 @dataclass(frozen=True)
@@ -47,6 +53,11 @@ class OneToTwoFeatures:
 
     data_quality: dict[str, Any] = field(default_factory=dict)
     source_trace: dict[str, Any] = field(default_factory=dict)
+    first_board_type: str = "strict_first_board"
+    first_board_trace: dict[str, Any] = field(default_factory=dict)
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "is_first_limit_up", str(self.first_board_type or "") in FIRST_BOARD_ALLOWED_TYPES)
 
 
 @dataclass(frozen=True)

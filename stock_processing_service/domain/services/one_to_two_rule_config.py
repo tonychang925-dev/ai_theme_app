@@ -8,6 +8,7 @@ RULE_VERSION_V1_0 = "one_to_two_v1.0_post_market_plan"
 RULE_VERSION_V1_1 = "one_to_two_v1.1_breadth_strong_count"
 RULE_VERSION_V1_2 = "one_to_two_v1.2_turnover_tiered"
 RULE_VERSION_V1_3 = "one_to_two_v1.3_breadth_turnover_combined"
+RULE_VERSION_V1_4 = "one_to_two_v1.4_relaunch_first_board"
 
 
 @dataclass(frozen=True, slots=True)
@@ -21,6 +22,7 @@ class OneToTwoRuleConfig:
     min_subject_strong_count_for_breadth: int = 5
     allow_strong_count_breadth: bool = False
     strong_count_breadth_requires_confirmed_mainline: bool = True
+    allowed_first_board_types: tuple[str, ...] = ("strict_first_board",)
     low_turnover_cap_decision: str = "observe_only"
     soft_breadth_cap_decision: str = "observe_only"
     low_turnover_risk_flag: str = "低换手，先观察不 focus"
@@ -50,5 +52,15 @@ class OneToTwoRuleConfig:
                 min_focus_turnover=Decimal("0.08"),
                 min_reject_turnover=Decimal("0.03"),
                 allow_strong_count_breadth=True,
+            )
+        if version == RULE_VERSION_V1_4:
+            return cls(
+                rule_version=RULE_VERSION_V1_4,
+                allowed_first_board_types=(
+                    "strict_first_board",
+                    "relaunch_first_board",
+                    "trend_first_board",
+                    "oversold_first_board",
+                ),
             )
         raise ValueError(f"unsupported OneToTwo rule version: {version}")

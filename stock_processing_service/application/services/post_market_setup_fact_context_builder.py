@@ -100,6 +100,7 @@ class PostMarketSetupFactContextBuilder:
         subject_priority_rank = self._build_subject_priority_rank(strong_hotspot_subjects, confirmed_hotspot_keys)
         pressure_by_stock = self._extract_map(source_doc, "pressure_by_stock")
         ma_pattern_by_stock = self._extract_map(source_doc, "ma_pattern_by_stock")
+        turnover_rate_by_stock = self._extract_stock_metric_map(source_doc, "stock_facts", "turnover_rate")
 
         subject_authenticity_by_subject = await self._build_subject_authenticity(
             trade_date=trade_date,
@@ -145,6 +146,7 @@ class PostMarketSetupFactContextBuilder:
             prior_daily_bars={},
             pressure_by_stock=pressure_by_stock,
             ma_pattern_by_stock=ma_pattern_by_stock,
+            turnover_rate_by_stock=turnover_rate_by_stock,
             subject_authenticity_by_subject=subject_authenticity_by_subject,
             stock_subject_authenticity_by_pair=stock_subject_authenticity_by_pair,
             kline_pattern_quality_by_stock=kline_pattern_quality_by_stock,
@@ -166,6 +168,7 @@ class PostMarketSetupFactContextBuilder:
                     "subject_authenticity_by_subject": "derived_non_empty" if subject_authenticity_by_subject else "derived_empty",
                     "stock_subject_authenticity_by_pair": "derived_non_empty" if stock_subject_authenticity_by_pair else "derived_empty",
                     "kline_pattern_quality_by_stock": "derived_non_empty" if kline_pattern_quality_by_stock else "derived_empty",
+                    "turnover_rate_by_stock": "derived_non_empty" if turnover_rate_by_stock else "derived_empty",
                 },
                 blocking_errors=[],
                 non_blocking_warnings=[],
@@ -214,6 +217,23 @@ class PostMarketSetupFactContextBuilder:
         if isinstance(value, dict):
             return {str(k): dict(v) for k, v in value.items() if isinstance(v, dict)}
         return {}
+
+    def _extract_stock_metric_map(self, source: dict[str, Any], key: str, metric_key: str) -> dict[str, Any]:
+        value = source.get(key)
+        if not isinstance(value, list):
+            return {}
+        result: dict[str, Any] = {}
+        for row in value:
+            if not isinstance(row, dict):
+                continue
+            stock_id = self._stock_key(row.get("stock_id"))
+            if not stock_id or stock_id in result:
+                continue
+            metric = row.get(metric_key)
+            if metric is None or metric == "":
+                continue
+            result[stock_id] = metric
+        return result
 
     def _extract_hotspot_subjects(self, report_context: dict[str, Any]) -> list[dict[str, Any]]:
         for key in ("strong_hotspot_subjects", "hotspot_subjects", "mainline_hotspots"):

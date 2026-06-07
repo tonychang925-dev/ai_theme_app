@@ -316,6 +316,8 @@ class OneToTwoBacktestFeatureSnapshotService:
             "market_trade_mode": candidate.get("market_trade_mode"),
             "allow_trade": candidate.get("allow_trade"),
             "is_first_limit_up": candidate.get("is_first_limit_up"),
+            "first_board_type": candidate.get("first_board_type"),
+            "first_board_trace": candidate.get("first_board_trace") or {},
             "is_one_word_board": candidate.get("is_one_word_board"),
             "is_late_seal": candidate.get("is_late_seal"),
             "first_limit_time": candidate.get("first_limit_time"),
@@ -335,6 +337,8 @@ class OneToTwoBacktestFeatureSnapshotService:
             "stock_subject_authenticity_scope": candidate.get("stock_subject_authenticity_scope")
             or str((candidate.get("stock_subject_authenticity") or candidate.get("subject_authenticity") or {}).get("authenticity_scope") or "subject_fallback"),
             "kline_pattern_quality": candidate.get("kline_pattern_quality") or {},
+            "first_board_type": candidate.get("first_board_type"),
+            "first_board_trace": candidate.get("first_board_trace") or {},
             "decision": decision,
             "veto_reasons": list(candidate.get("veto_reasons") or []),
             "risk_flags": list(candidate.get("risk_flags") or []),
@@ -365,6 +369,8 @@ class OneToTwoBacktestFeatureSnapshotService:
             "stock_subject_authenticity_scope": candidate.get("stock_subject_authenticity_scope")
             or str((candidate.get("stock_subject_authenticity") or candidate.get("subject_authenticity") or {}).get("authenticity_scope") or "subject_fallback"),
             "kline_pattern_quality": candidate.get("kline_pattern_quality") or {},
+            "first_board_type": candidate.get("first_board_type"),
+            "first_board_trace": candidate.get("first_board_trace") or {},
             "signal_level": decision,
             "source_chain": "stock_processing_service.one_to_two_setup_plan",
             "source_table": "w2s_backtest_feature_snapshot",
@@ -382,6 +388,8 @@ class OneToTwoBacktestFeatureSnapshotService:
             "rule_version": rule_version,
             "missing_subject_key": not bool(str(candidate.get("subject_key") or "").strip()),
             "candidate_index": candidate_index,
+            "first_board_type": candidate.get("first_board_type"),
+            "first_board_trace": candidate.get("first_board_trace") or {},
         }
 
         return {
