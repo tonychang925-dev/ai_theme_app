@@ -928,6 +928,12 @@ def test_one_to_two_rule_v1_0_accepts_only_chain_first_board() -> None:
     assert "不符合首板类型: not_first_board" in "；".join(relaunch_rule.veto_reasons)
 
 
+def test_one_to_two_rule_config_default_uses_chain_first_board() -> None:
+    config = OneToTwoRuleConfig()
+
+    assert config.allowed_first_board_types == ("chain_first_board",)
+
+
 @pytest.mark.parametrize(
     "first_board_quality_tags",
     [["relaunch_first_board"], ["trend_first_board"], ["oversold_first_board"]],

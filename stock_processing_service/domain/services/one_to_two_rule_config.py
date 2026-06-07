@@ -22,7 +22,7 @@ class OneToTwoRuleConfig:
     min_subject_strong_count_for_breadth: int = 5
     allow_strong_count_breadth: bool = False
     strong_count_breadth_requires_confirmed_mainline: bool = True
-    allowed_first_board_types: tuple[str, ...] = ("strict_first_board",)
+    allowed_first_board_types: tuple[str, ...] = ("chain_first_board",)
     low_turnover_cap_decision: str = "observe_only"
     soft_breadth_cap_decision: str = "observe_only"
     low_turnover_risk_flag: str = "低换手，先观察不 focus"
