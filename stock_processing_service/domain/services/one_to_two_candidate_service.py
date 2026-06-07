@@ -51,6 +51,7 @@ class OneToTwoCandidateService:
         }
         subject_priority_rank = dict(ctx.subject_priority_rank or {})
         subject_authenticity_by_subject = dict(ctx.subject_authenticity_by_subject or {})
+        stock_subject_authenticity_by_pair = dict(ctx.stock_subject_authenticity_by_pair or {})
         kline_pattern_quality_by_stock = dict(ctx.kline_pattern_quality_by_stock or {})
 
         candidates: list[OneToTwoFeatures] = []
@@ -69,6 +70,7 @@ class OneToTwoCandidateService:
                 confirmed_hotspot_keys=confirmed_hotspot_keys,
                 subject_priority_rank=subject_priority_rank,
                 subject_authenticity_by_subject=subject_authenticity_by_subject,
+                stock_subject_authenticity_by_pair=stock_subject_authenticity_by_pair,
                 stock_pattern_quality=kline_pattern_quality_by_stock.get(stock_id, {}),
             )
             if not current_subject_row:
@@ -77,6 +79,7 @@ class OneToTwoCandidateService:
             subject_key = str(current_subject_row.get("subject_key") or "").strip()
             if not subject_key:
                 continue
+            pair_key = self._stock_subject_key(stock_id, subject_key)
 
             history_rows = bars_by_stock.get(stock_id, [])
             is_first_limit_up = self._is_first_limit_up(history_rows, current_trade_date)
@@ -87,7 +90,8 @@ class OneToTwoCandidateService:
             board_row = ctx.subject_market_breadth.get(subject_key, {})
             pressure_row = ctx.pressure_by_stock.get(stock_id, {})
             ma_row = ctx.ma_pattern_by_stock.get(stock_id, {})
-            subject_authenticity = dict(subject_authenticity_by_subject.get(subject_key, {}) or {})
+            stock_subject_authenticity = dict(stock_subject_authenticity_by_pair.get(pair_key, {}) or {})
+            subject_authenticity = stock_subject_authenticity or dict(subject_authenticity_by_subject.get(subject_key, {}) or {})
             kline_pattern_quality = dict(kline_pattern_quality_by_stock.get(stock_id, {}) or {})
 
             first_limit_time = self._text(
@@ -223,6 +227,8 @@ class OneToTwoCandidateService:
                             "level": subject_authenticity.get("level"),
                             "purity_score": subject_authenticity.get("purity_score"),
                             "theme_tier": subject_authenticity.get("theme_tier"),
+                            "authenticity_scope": subject_authenticity.get("authenticity_scope"),
+                            "stock_subject_key": subject_authenticity.get("stock_subject_key"),
                         },
                         "kline_pattern_quality": {
                             "has_golden_spider": kline_pattern_quality.get("has_golden_spider"),
@@ -236,6 +242,7 @@ class OneToTwoCandidateService:
                             if key in subject_priority_rank
                         },
                         "subject_authenticity": subject_authenticity,
+                        "stock_subject_authenticity": stock_subject_authenticity,
                         "kline_pattern_quality": kline_pattern_quality,
                         "selection_rank_components": {
                             "band": 0 if subject_key in confirmed_hotspot_keys else 1 if subject_key in strong_hotspot_keys else 2 if subject_key in ctx.active_subject_keys else 3 if bool(current_subject_row.get("is_leader")) else 4,
@@ -279,6 +286,7 @@ class OneToTwoCandidateService:
         confirmed_hotspot_keys: set[str] | None = None,
         subject_priority_rank: dict[str, int] | None = None,
         subject_authenticity_by_subject: dict[str, dict[str, Any]] | None = None,
+        stock_subject_authenticity_by_pair: dict[str, dict[str, Any]] | None = None,
         stock_pattern_quality: dict[str, Any] | None = None,
     ) -> dict[str, Any] | None:
         if not rows:
@@ -288,11 +296,14 @@ class OneToTwoCandidateService:
         confirmed_hotspot_keys = confirmed_hotspot_keys or set()
         subject_priority_rank = subject_priority_rank or {}
         subject_authenticity_by_subject = subject_authenticity_by_subject or {}
+        stock_subject_authenticity_by_pair = stock_subject_authenticity_by_pair or {}
         stock_pattern_quality = stock_pattern_quality or {}
+        stock_id = self._stock_id(candidates[0]) if candidates else ""
 
         def _priority(row: dict[str, Any]) -> tuple[int, float, float, int, int, int, str]:
             subject_key = str(row.get("subject_key") or "").strip()
-            authenticity = subject_authenticity_by_subject.get(subject_key) or {}
+            pair_key = self._stock_subject_key(stock_id, subject_key)
+            authenticity = stock_subject_authenticity_by_pair.get(pair_key) or subject_authenticity_by_subject.get(subject_key) or {}
             authenticity_score = self._float_or_none(authenticity.get("score")) or 0.0
             pattern_score = self._float_or_none(stock_pattern_quality.get("score")) or 0.0
             if subject_key in confirmed_hotspot_keys:
@@ -332,6 +343,14 @@ class OneToTwoCandidateService:
         if bool(row.get("is_leader")):
             return "leader"
         return "fallback"
+
+    @staticmethod
+    def _stock_subject_key(stock_id: str, subject_key: str) -> str:
+        stock_key = str(stock_id or "").strip().split(".")[0]
+        subject_key = str(subject_key or "").strip()
+        if not stock_key or not subject_key:
+            return ""
+        return f"{stock_key}|{subject_key}"
 
     def _is_first_limit_up(self, rows: list[dict[str, Any]], current_trade_date: str) -> bool:
         current = [r for r in rows if self._date_str(r.get("trade_date")) == current_trade_date]

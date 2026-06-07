@@ -99,6 +99,55 @@ async def test_event_theme_authenticity_prefers_core_event_driven_subject() -> N
 
 
 @pytest.mark.asyncio
+async def test_event_theme_authenticity_builds_stock_subject_scope() -> None:
+    service = EventThemeStockAuthenticityService(_AuthenticityReadPort())
+    result = await service.build_stock_subject_authenticity(
+        trade_date=date(2026, 5, 6),
+        subject_keys=["9064103"],
+        subject_stock_rows=[
+            {
+                "trade_date": "2026-05-06",
+                "subject_key": "9064103",
+                "stock_id": "603618.SH",
+                "stock_name": "杭电股份",
+                "rank_order": 1,
+                "is_leader": True,
+                "pct_chg": 10.01,
+                "limit_up": True,
+            },
+            {
+                "trade_date": "2026-05-06",
+                "subject_key": "9064103",
+                "stock_id": "002XXX.SZ",
+                "stock_name": "测试股份",
+                "rank_order": 5,
+                "is_leader": False,
+                "pct_chg": 6.88,
+                "limit_up": False,
+            },
+        ],
+        subject_market_breadth={
+            "9064103": {
+                "subject_key": "9064103",
+                "subject_limit_up_count": 3,
+                "subject_strong_count": 7,
+                "leader_pct_chg": 10.01,
+                "member_count": 8,
+                "leader_limit_up": True,
+            }
+        },
+        active_subject_keys={"9064103"},
+    )
+
+    scoped = result["603618|9064103"]
+    assert scoped["authenticity_scope"] == "stock_subject"
+    assert scoped["stock_id"] == "603618"
+    assert scoped["stock_subject_key"] == "603618|9064103"
+    assert scoped["level"] in {"core", "direct", "related"}
+    assert scoped["score"] > 0
+
+
+@pytest.mark.asyncio
 async def test_golden_spider_detector_uses_ma_cluster_and_volume_context() -> None:
     service = GoldenSpiderPatternService(_GoldenSpiderReadPort())
     bars = []

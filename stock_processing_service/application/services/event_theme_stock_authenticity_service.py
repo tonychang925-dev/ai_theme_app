@@ -34,6 +34,49 @@ class EventThemeStockAuthenticityService:
         subject_market_breadth: dict[str, dict[str, Any]] | None = None,
         active_subject_keys: set[str] | None = None,
     ) -> dict[str, dict[str, Any]]:
+        return await self._build_authenticity_map(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+            subject_stock_rows=subject_stock_rows,
+            subject_market_breadth=subject_market_breadth,
+            active_subject_keys=active_subject_keys,
+            pair_level=False,
+        )
+
+    async def build_stock_subject_authenticity(
+        self,
+        *,
+        trade_date: date,
+        subject_keys: list[str],
+        subject_stock_rows: list[dict[str, Any]] | None = None,
+        subject_market_breadth: dict[str, dict[str, Any]] | None = None,
+        active_subject_keys: set[str] | None = None,
+    ) -> dict[str, dict[str, Any]]:
+        current_trade_date = trade_date.isoformat()
+        subject_stock_rows = [
+            dict(row or {})
+            for row in (subject_stock_rows or [])
+            if self._date_str(row.get("trade_date")) == current_trade_date
+        ]
+        return await self._build_authenticity_map(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+            subject_stock_rows=subject_stock_rows,
+            subject_market_breadth=subject_market_breadth,
+            active_subject_keys=active_subject_keys,
+            pair_level=True,
+        )
+
+    async def _build_authenticity_map(
+        self,
+        *,
+        trade_date: date,
+        subject_keys: list[str],
+        subject_stock_rows: list[dict[str, Any]] | None,
+        subject_market_breadth: dict[str, dict[str, Any]] | None,
+        active_subject_keys: set[str] | None,
+        pair_level: bool,
+    ) -> dict[str, dict[str, Any]]:
         subject_keys = [str(sk).strip() for sk in dict.fromkeys(subject_keys or []) if str(sk).strip()]
         if not subject_keys:
             return {}
@@ -60,93 +103,136 @@ class EventThemeStockAuthenticityService:
             stock_rows = stock_rows_by_subject.get(subject_key, [])
             breadth_row = dict(subject_market_breadth.get(subject_key, {}) or {})
 
-            event_stats = self._to_event_stats(subject_key, theme_name, event_row)
-            market_stats = self._to_market_stats(subject_key, theme_name, stock_rows, breadth_row)
-            event_chain_score = self._judger.compute_event_chain_score(event_stats)
-            continuity_score = self._judger.compute_event_chain_continuity_score(event_stats)
-            market_score = self._judger.compute_market_recognition_score(market_stats)
-            stability_score = self._judger.compute_mainline_stability_score(event_stats, market_stats)
-            is_main_theme, theme_tier, conclusion = self._judger.classify_theme_tier(
-                event_chain_score=event_chain_score,
-                event_chain_continuity_score=continuity_score,
-                market_recognition_score=market_score,
-                mainline_stability_score=stability_score,
-            )
-
-            event_theme_score = min(100.0, event_chain_score * 0.5 + continuity_score * 0.3 + market_score * 0.2)
-            event_stock_score = min(100.0, market_score * 0.65 + self._stock_depth_score(stock_rows) * 0.35)
-            stock_theme_score = self._stock_theme_score(stock_rows, breadth_row, active_subject_keys, subject_key)
-            freshness_score = self._freshness_score(event_stats)
-            purity_score = min(
-                100.0,
-                event_theme_score * 0.35
-                + event_stock_score * 0.25
-                + stock_theme_score * 0.25
-                + freshness_score * 0.15,
-            )
-            score = purity_score
-            if is_main_theme:
-                score += 5.0
-            if market_stats.leader_limit_up:
-                score += 5.0
-            if subject_key in active_subject_keys:
-                score += 3.0
-            score = min(100.0, score)
-
-            level = self._level(
-                score=score,
-                is_main_theme=is_main_theme,
-                market_recognition_score=market_score,
-                leader_limit_up=market_stats.leader_limit_up,
-                has_stock_rows=bool(stock_rows),
-                has_events=event_stats.recent_event_count > 0 or event_stats.today_event_count > 0,
-            )
-
-            evidence_events = [s for s in event_stats.sample_summaries[:3] if s]
-            evidence_stock_facts = self._stock_evidence(stock_rows)
-            matched_theme_anchors = [
-                {
-                    "subject_key": subject_key,
-                    "theme_name": theme_name,
-                    "source": "subject_event_stats",
-                    "is_main_theme": is_main_theme,
-                    "theme_tier": theme_tier,
-                }
-            ]
-            matched_stock_terms = self._matched_stock_terms(stock_rows)
-            negative_reasons = self._negative_reasons(
-                event_stats=event_stats,
-                market_stats=market_stats,
-                stock_rows=stock_rows,
-                is_main_theme=is_main_theme,
-                score=score,
-            )
-
-            result[subject_key] = {
-                "subject_key": subject_key,
-                "theme_name": theme_name,
-                "level": level,
-                "score": round(score, 2),
-                "purity_score": round(purity_score, 2),
-                "event_theme_score": round(event_theme_score, 2),
-                "event_stock_score": round(event_stock_score, 2),
-                "stock_theme_score": round(stock_theme_score, 2),
-                "freshness_score": round(freshness_score, 2),
-                "event_chain_score": round(event_chain_score, 2),
-                "event_chain_continuity_score": round(continuity_score, 2),
-                "market_recognition_score": round(market_score, 2),
-                "mainline_stability_score": round(stability_score, 2),
-                "is_main_theme": is_main_theme,
-                "theme_tier": theme_tier,
-                "conclusion": conclusion,
-                "evidence_events": evidence_events,
-                "evidence_stock_facts": evidence_stock_facts,
-                "matched_theme_anchors": matched_theme_anchors,
-                "matched_stock_terms": matched_stock_terms,
-                "negative_reasons": negative_reasons,
-            }
+            if pair_level and stock_rows:
+                for stock_row in stock_rows:
+                    pair_key = self._pair_key(stock_row.get("stock_id"), subject_key)
+                    if not pair_key:
+                        continue
+                    result[pair_key] = self._build_topic_authenticity(
+                        subject_key=subject_key,
+                        theme_name=theme_name,
+                        event_row=event_row,
+                        stock_rows=[dict(stock_row)],
+                        breadth_row=breadth_row,
+                        active_subject_keys=active_subject_keys,
+                        pair_level=True,
+                    )
+            else:
+                result[subject_key] = self._build_topic_authenticity(
+                    subject_key=subject_key,
+                    theme_name=theme_name,
+                    event_row=event_row,
+                    stock_rows=stock_rows,
+                    breadth_row=breadth_row,
+                    active_subject_keys=active_subject_keys,
+                    pair_level=False,
+                )
 
         return result
+
+    def _build_topic_authenticity(
+        self,
+        *,
+        subject_key: str,
+        theme_name: str,
+        event_row: dict[str, Any],
+        stock_rows: list[dict[str, Any]],
+        breadth_row: dict[str, Any],
+        active_subject_keys: set[str],
+        pair_level: bool,
+    ) -> dict[str, Any]:
+        event_stats = self._to_event_stats(subject_key, theme_name, event_row)
+        market_stats = self._to_market_stats(subject_key, theme_name, stock_rows, breadth_row)
+        event_chain_score = self._judger.compute_event_chain_score(event_stats)
+        continuity_score = self._judger.compute_event_chain_continuity_score(event_stats)
+        market_score = self._judger.compute_market_recognition_score(market_stats)
+        stability_score = self._judger.compute_mainline_stability_score(event_stats, market_stats)
+        is_main_theme, theme_tier, conclusion = self._judger.classify_theme_tier(
+            event_chain_score=event_chain_score,
+            event_chain_continuity_score=continuity_score,
+            market_recognition_score=market_score,
+            mainline_stability_score=stability_score,
+        )
+
+        event_theme_score = min(100.0, event_chain_score * 0.5 + continuity_score * 0.3 + market_score * 0.2)
+        event_stock_score = min(100.0, market_score * 0.65 + self._stock_depth_score(stock_rows) * 0.35)
+        stock_theme_score = self._stock_theme_score(stock_rows, breadth_row, active_subject_keys, subject_key)
+        freshness_score = self._freshness_score(event_stats)
+        purity_score = min(
+            100.0,
+            event_theme_score * 0.35
+            + event_stock_score * 0.25
+            + stock_theme_score * 0.25
+            + freshness_score * 0.15,
+        )
+        score = purity_score
+        if is_main_theme:
+            score += 5.0
+        if market_stats.leader_limit_up:
+            score += 5.0
+        if subject_key in active_subject_keys:
+            score += 3.0
+        score = min(100.0, score)
+
+        level = self._level(
+            score=score,
+            is_main_theme=is_main_theme,
+            market_recognition_score=market_score,
+            leader_limit_up=market_stats.leader_limit_up,
+            has_stock_rows=bool(stock_rows),
+            has_events=event_stats.recent_event_count > 0 or event_stats.today_event_count > 0,
+        )
+
+        evidence_events = [s for s in event_stats.sample_summaries[:3] if s]
+        evidence_stock_facts = self._stock_evidence(stock_rows)
+        matched_theme_anchors = [
+            {
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+                "source": "subject_event_stats",
+                "is_main_theme": is_main_theme,
+                "theme_tier": theme_tier,
+            }
+        ]
+        matched_stock_terms = self._matched_stock_terms(stock_rows)
+        negative_reasons = self._negative_reasons(
+            event_stats=event_stats,
+            market_stats=market_stats,
+            stock_rows=stock_rows,
+            is_main_theme=is_main_theme,
+            score=score,
+        )
+
+        payload = {
+            "subject_key": subject_key,
+            "theme_name": theme_name,
+            "level": level,
+            "score": round(score, 2),
+            "purity_score": round(purity_score, 2),
+            "event_theme_score": round(event_theme_score, 2),
+            "event_stock_score": round(event_stock_score, 2),
+            "stock_theme_score": round(stock_theme_score, 2),
+            "freshness_score": round(freshness_score, 2),
+            "event_chain_score": round(event_chain_score, 2),
+            "event_chain_continuity_score": round(continuity_score, 2),
+            "market_recognition_score": round(market_score, 2),
+            "mainline_stability_score": round(stability_score, 2),
+            "is_main_theme": is_main_theme,
+            "theme_tier": theme_tier,
+            "conclusion": conclusion,
+            "evidence_events": evidence_events,
+            "evidence_stock_facts": evidence_stock_facts,
+            "matched_theme_anchors": matched_theme_anchors,
+            "matched_stock_terms": matched_stock_terms,
+            "negative_reasons": negative_reasons,
+            "authenticity_scope": "stock_subject" if pair_level else "subject",
+        }
+        if pair_level and stock_rows:
+            stock_row = stock_rows[0]
+            payload["stock_id"] = self._stock_key(stock_row.get("stock_id") or stock_row.get("stock_code"))
+            payload["stock_name"] = str(stock_row.get("stock_name") or "")
+            payload["stock_subject_key"] = self._pair_key(stock_row.get("stock_id"), subject_key)
+        return payload
 
     async def _safe_get_subject_event_stats(self, trade_date: date, subject_keys: list[str]) -> dict[str, dict[str, Any]]:
         try:
@@ -349,6 +435,29 @@ class EventThemeStockAuthenticityService:
         if score < 45:
             reasons.append("topic_authenticity_low")
         return reasons
+
+    @staticmethod
+    def _pair_key(stock_id: Any, subject_key: str) -> str:
+        stock_key = EventThemeStockAuthenticityService._stock_key(stock_id)
+        subject_key = str(subject_key or "").strip()
+        if not stock_key or not subject_key:
+            return ""
+        return f"{stock_key}|{subject_key}"
+
+    @staticmethod
+    def _stock_key(value: Any) -> str:
+        text = str(value or "").strip()
+        if not text:
+            return ""
+        return text.split(".")[0]
+
+    @staticmethod
+    def _date_str(value: Any) -> str:
+        if value is None:
+            return ""
+        if hasattr(value, "isoformat"):
+            return str(value.isoformat())
+        return str(value)
 
     @staticmethod
     def _leader_row(stock_rows: list[dict[str, Any]]) -> dict[str, Any]:

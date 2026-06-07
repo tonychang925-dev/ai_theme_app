@@ -294,7 +294,11 @@ class OneToTwoBacktestFeatureSnapshotService:
         trade_date: date,
     ) -> dict[str, Any]:
         rule_version = str(candidate.get("rule_version") or strategy_version)
-        confirm_trade_date = self._parse_date(candidate.get("watch_date")) or (trade_date + timedelta(days=1))
+        confirm_trade_date = self._parse_date(candidate.get("watch_date"))
+        if confirm_trade_date is None:
+            raise RuntimeError(
+                f"missing watch_date for one_to_two snapshot row: {candidate.get('stock_id')} {candidate.get('subject_key')}"
+            )
         final_score = candidate.get("final_score")
         decision = str(candidate.get("decision") or "")
         raw_feature_json = {
@@ -327,6 +331,7 @@ class OneToTwoBacktestFeatureSnapshotService:
             "same_subject_limit_count": candidate.get("same_subject_limit_count"),
             "same_subject_strong_count": candidate.get("same_subject_strong_count"),
             "subject_authenticity": candidate.get("subject_authenticity") or {},
+            "stock_subject_authenticity": candidate.get("stock_subject_authenticity") or candidate.get("subject_authenticity") or {},
             "kline_pattern_quality": candidate.get("kline_pattern_quality") or {},
             "decision": decision,
             "veto_reasons": list(candidate.get("veto_reasons") or []),
@@ -354,6 +359,7 @@ class OneToTwoBacktestFeatureSnapshotService:
             "source_trace": candidate.get("source_trace_json") or {},
             "data_quality": candidate.get("data_quality_json") or {},
             "subject_authenticity": candidate.get("subject_authenticity") or {},
+            "stock_subject_authenticity": candidate.get("stock_subject_authenticity") or candidate.get("subject_authenticity") or {},
             "kline_pattern_quality": candidate.get("kline_pattern_quality") or {},
             "signal_level": decision,
             "source_chain": "stock_processing_service.one_to_two_setup_plan",

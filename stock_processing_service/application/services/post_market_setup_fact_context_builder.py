@@ -109,6 +109,14 @@ class PostMarketSetupFactContextBuilder:
             active_subject_keys=active_subject_keys,
             strong_hotspot_subjects=strong_hotspot_subjects,
         )
+        stock_subject_authenticity_by_pair = await self._build_stock_subject_authenticity(
+            trade_date=trade_date,
+            source_doc=source_doc,
+            subject_stock_rows=subject_stock_rows,
+            subject_market_breadth=subject_market_breadth,
+            active_subject_keys=active_subject_keys,
+            strong_hotspot_subjects=strong_hotspot_subjects,
+        )
         kline_pattern_quality_by_stock = await self._build_kline_pattern_quality(
             trade_date=trade_date,
             stock_daily_bars=stock_daily_bars,
@@ -138,6 +146,7 @@ class PostMarketSetupFactContextBuilder:
             pressure_by_stock=pressure_by_stock,
             ma_pattern_by_stock=ma_pattern_by_stock,
             subject_authenticity_by_subject=subject_authenticity_by_subject,
+            stock_subject_authenticity_by_pair=stock_subject_authenticity_by_pair,
             kline_pattern_quality_by_stock=kline_pattern_quality_by_stock,
             confirmed_hotspot_rank=confirmed_hotspot_rank,
             strong_hotspot_rank=strong_hotspot_rank,
@@ -155,6 +164,7 @@ class PostMarketSetupFactContextBuilder:
                     "strong_hotspot_subjects": "derived_non_empty" if strong_hotspot_subjects else "derived_empty",
                     "confirmed_hotspot_keys": "derived_non_empty" if confirmed_hotspot_keys else "derived_empty",
                     "subject_authenticity_by_subject": "derived_non_empty" if subject_authenticity_by_subject else "derived_empty",
+                    "stock_subject_authenticity_by_pair": "derived_non_empty" if stock_subject_authenticity_by_pair else "derived_empty",
                     "kline_pattern_quality_by_stock": "derived_non_empty" if kline_pattern_quality_by_stock else "derived_empty",
                 },
                 blocking_errors=[],
@@ -328,6 +338,33 @@ class PostMarketSetupFactContextBuilder:
             trade_date=trade_date,
             stock_ids=stock_ids,
             stock_bars_by_stock=bars_by_stock,
+        )
+
+    async def _build_stock_subject_authenticity(
+        self,
+        *,
+        trade_date: date,
+        source_doc: dict[str, Any],
+        subject_stock_rows: list[dict[str, Any]],
+        subject_market_breadth: dict[str, dict[str, Any]],
+        active_subject_keys: set[str],
+        strong_hotspot_subjects: list[dict[str, Any]],
+    ) -> dict[str, dict[str, Any]]:
+        subject_keys = self._collect_subject_keys(
+            subject_stock_rows=subject_stock_rows,
+            subject_market_breadth=subject_market_breadth,
+            active_subject_keys=active_subject_keys,
+            strong_hotspot_subjects=strong_hotspot_subjects,
+        )
+        if not subject_keys:
+            return {}
+        service = EventThemeStockAuthenticityService(self._read)
+        return await service.build_stock_subject_authenticity(
+            trade_date=trade_date,
+            subject_keys=subject_keys,
+            subject_stock_rows=subject_stock_rows,
+            subject_market_breadth=subject_market_breadth,
+            active_subject_keys=active_subject_keys,
         )
 
     def _collect_subject_keys(

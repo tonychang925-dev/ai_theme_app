@@ -314,6 +314,29 @@ def test_one_to_two_subject_choice_prefers_ranked_confirmed_hotspot_order() -> N
     assert chosen["subject_key"] == "9064103"
 
 
+def test_one_to_two_subject_choice_prefers_stock_subject_authenticity_over_subject_level() -> None:
+    from stock_processing_service.domain.services.one_to_two_candidate_service import OneToTwoCandidateService
+
+    svc = OneToTwoCandidateService()
+    rows = [
+        {"trade_date": "2026-05-06", "stock_id": "603618.SH", "subject_key": "9014636", "rank_order": 1, "is_leader": False},
+        {"trade_date": "2026-05-06", "stock_id": "603618.SH", "subject_key": "9064103", "rank_order": 9, "is_leader": False},
+    ]
+    chosen = svc._choose_subject_row(
+        rows,
+        "2026-05-06",
+        active_subject_keys={"9014636", "9064103"},
+        strong_hotspot_keys={"9014636", "9064103"},
+        confirmed_hotspot_keys={"9014636", "9064103"},
+        subject_priority_rank={"9014636": 0, "9064103": 1},
+        subject_authenticity_by_subject={"9014636": {"score": 30.0}, "9064103": {"score": 30.0}},
+        stock_subject_authenticity_by_pair={"603618|9014636": {"score": 40.0}, "603618|9064103": {"score": 95.0}},
+    )
+
+    assert chosen is not None
+    assert chosen["subject_key"] == "9064103"
+
+
 def test_one_to_two_subject_selection_trace_records_priority_reason() -> None:
     engine = OneToTwoSetupPlanEngine()
     ctx = PostMarketSetupFactContext(

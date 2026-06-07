@@ -157,6 +157,7 @@ class OneToTwoSetupPlanEngine:
         if f.same_subject_limit_count is not None:
             evidence.append(f"same_subject_limit_count={f.same_subject_limit_count}")
         if f.subject_authenticity:
+            evidence.append(f"subject_authenticity_scope={f.subject_authenticity.get('authenticity_scope', '')}")
             evidence.append(f"subject_authenticity_level={f.subject_authenticity.get('level', '')}")
             evidence.append(f"subject_authenticity_score={f.subject_authenticity.get('score', '')}")
         if f.kline_pattern_quality:
@@ -203,6 +204,7 @@ class OneToTwoSetupPlanEngine:
             "same_subject_limit_count": f.same_subject_limit_count,
             "same_subject_strong_count": f.same_subject_strong_count,
             "subject_authenticity": dict(f.subject_authenticity),
+            "stock_subject_authenticity": dict(f.subject_authenticity),
             "kline_pattern_quality": dict(f.kline_pattern_quality),
             "decision": rule.decision,
             "veto_reasons": list(rule.veto_reasons),
@@ -222,6 +224,7 @@ class OneToTwoSetupPlanEngine:
                 "subject_key": f.subject_key,
                 "subject_name": f.subject_name,
                 "subject_authenticity": dict(f.subject_authenticity),
+                "stock_subject_authenticity": dict(f.subject_authenticity),
                 "kline_pattern_quality": dict(f.kline_pattern_quality),
             },
             "data_quality_json": dict(f.data_quality),

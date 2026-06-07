@@ -178,6 +178,9 @@ async def test_post_market_setup_fact_context_builder_includes_authenticity_and_
     assert "9064103" in ctx.subject_authenticity_by_subject
     assert ctx.subject_authenticity_by_subject["9064103"]["level"] in {"core", "direct", "related"}
     assert ctx.subject_authenticity_by_subject["9064103"]["score"] > 0
+    assert "603618|9064103" in ctx.stock_subject_authenticity_by_pair
+    assert ctx.stock_subject_authenticity_by_pair["603618|9064103"]["authenticity_scope"] == "stock_subject"
+    assert ctx.stock_subject_authenticity_by_pair["603618|9064103"]["score"] > 0
     assert "603618" in ctx.kline_pattern_quality_by_stock or "603618.SH" in ctx.kline_pattern_quality_by_stock
     key = "603618" if "603618" in ctx.kline_pattern_quality_by_stock else "603618.SH"
     assert "has_golden_spider" in ctx.kline_pattern_quality_by_stock[key]
