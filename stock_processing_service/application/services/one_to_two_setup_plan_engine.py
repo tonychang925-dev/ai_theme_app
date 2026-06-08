@@ -86,11 +86,18 @@ class OneToTwoSetupPlanEngine:
         items = sorted(
             items,
             key=lambda x: (
-                x.get("decision") != "focus",
+                {"focus": 0, "observe_only": 1, "pending_review_only": 2}.get(x.get("decision"), 9),
                 -(float(x.get("final_score") or 0.0)),
+                -(float(x.get("technical_structure_score") or 0.0)),
+                -(float(x.get("theme_authenticity_score") or 0.0)),
+                -(float(x.get("board_breadth_score") or 0.0)),
+                -(float(x.get("turnover_rate") or 0.0)),
                 str(x.get("stock_id") or ""),
             ),
         )
+        for idx, item in enumerate(items, start=1):
+            item["rank_no"] = idx
+            item["rank_reason"] = self._rank_reason(item)
         summary = {
             "trade_date": ctx.trade_date,
             "watch_date": ctx.watch_date,
@@ -136,6 +143,10 @@ class OneToTwoSetupPlanEngine:
             "watch_level": score.watch_level,
             "rule_version": self.rule_engine.rule_version,
             "final_score": float(score.final_score) if score.final_score is not None else None,
+            "technical_structure_score": self._score_float(score.score_detail.get("technical_structure")),
+            "theme_authenticity_score": self._score_float(score.score_detail.get("theme_authenticity")),
+            "board_breadth_score": self._score_float(score.score_detail.get("board_breadth")),
+            "turnover_rate": float(f.turnover_rate) if f.turnover_rate is not None else None,
             "summary": self._summary(f, rule),
             "evidence_rules": self._evidence(f, rule, score),
             "risk_flags": list(rule.risk_flags),
@@ -145,6 +156,41 @@ class OneToTwoSetupPlanEngine:
             "data_quality_json": dict(f.data_quality),
             "source_trace_json": dict(f.source_trace),
         }
+
+    @staticmethod
+    def _score_float(value: Any) -> float | None:
+        if value is None or value == "":
+            return None
+        try:
+            return float(value)
+        except (ValueError, TypeError):
+            return None
+
+    @staticmethod
+    def _rank_reason(item: dict[str, Any]) -> str:
+        parts: list[str] = []
+        fs = item.get("final_score")
+        if fs is not None:
+            parts.append(f"综合评分 {float(fs):.1f}")
+        dec = str(item.get("decision") or "")
+        if dec == "focus":
+            parts.append("技术形态支持 focus")
+        elif dec == "observe_only":
+            ts = item.get("technical_structure_score")
+            if ts is not None and ts < 55:
+                parts.append("技术形态评分不足")
+            else:
+                parts.append("暂不符合 focus 条件")
+        ta = item.get("theme_authenticity_score")
+        if ta is not None and ta >= 80:
+            parts.append("题材正宗度较高")
+        bb = item.get("board_breadth_score")
+        if bb is not None and bb >= 70:
+            parts.append("板块合力较强")
+        tr = item.get("turnover_rate")
+        if tr is not None and tr >= 0.08:
+            parts.append("换手充分")
+        return "；".join(parts) if parts else "综合排序"
 
     def _summary(self, f: OneToTwoFeatures, rule: RuleResult) -> str:
         if rule.decision == "reject":
