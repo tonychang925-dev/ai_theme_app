@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import type { PostMarketDailyReviewV2 } from "../../../lib/api";
 import LayerCStrongPoolPanel from "./LayerCStrongPoolPanel";
 import MainlineStateBoard from "./MainlineStateBoard";
@@ -14,10 +15,12 @@ import D1NextDayWatchPanel from "./D1NextDayWatchPanel";
 interface Props {
   dailyReviewV2: PostMarketDailyReviewV2;
   tradeDate?: string;
+  onShowLegacy: () => void;
 }
 
-export default function EnginePostMarketView({ dailyReviewV2, tradeDate }: Props) {
-  if (!dailyReviewV2.post_market_decision_v2 || !dailyReviewV2.engine_summary || !dailyReviewV2.market_regime_review) return null;
+export default function EnginePostMarketView({ dailyReviewV2, tradeDate, onShowLegacy }: Props) {
+  const review = dailyReviewV2.post_market_decision_v2;
+  if (!review || !dailyReviewV2.engine_summary || !dailyReviewV2.market_regime_review) return null;
 
   return (
     <>
@@ -74,14 +77,13 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate }: Props
         <section className="workspace-card recap-engine-group">
           <h3 className="section-title recap-panel-title">强股与证据</h3>
           <div className="recap-engine-group-stack">
-            <LayerCStrongPoolPanel
-              title="当天入围强势股"
-              tradeDate={tradeDate}
-              rows={(dailyReviewV2.post_market_decision_v2?.strong_stock_pool_reviews ?? []) as unknown as Record<string, unknown>[]}
-            />
+            <LayerCStrongPoolPanel review={review} />
             <EvidenceLayerPanel evidenceLayerReview={dailyReviewV2.evidence_layer_review ?? null} />
           </div>
         </section>
+      </div>
+      <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 8 }}>
+        <Button onClick={onShowLegacy}>查看旧版 sections</Button>
       </div>
     </>
   );
