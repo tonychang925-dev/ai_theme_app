@@ -397,10 +397,21 @@ class OneToTwoCandidateService:
             return ""
         return f"{stock_key}|{subject_key}"
 
+    @staticmethod
+    def _limit_up_threshold(stock_id: str, stock_name: str = "") -> Decimal:
+        bare = str(stock_id or "").strip().upper().split(".")[0]
+        if bare.startswith(("300", "301", "688")):
+            return Decimal("19.8")
+        if bare.startswith(("4", "8")):
+            return Decimal("29.8")
+        if "ST" in str(stock_name or "").upper():
+            return Decimal("4.95")
+        return Decimal("9.8")
+
     def _is_limit_up(self, row: dict[str, Any]) -> bool:
+        # 1. Primary: close >= limit_up_price (board-agnostic)
         close_price = self._decimal_or_none(row.get("close_price"))
         limit_up_price = self._decimal_or_none(row.get("limit_up_price"))
-        # Primary: limit_up_price comparison (board-agnostic; handles 10%/20%/30% correctly)
         if (
             close_price is not None
             and limit_up_price is not None
@@ -408,8 +419,22 @@ class OneToTwoCandidateService:
             and close_price >= limit_up_price
         ):
             return True
-        # Fallback: row flag
-        return bool(row.get("limit_up"))
+
+        # 2. Explicit limit_up flag — if False, do NOT override with pct
+        if "limit_up" in row:
+            return bool(row.get("limit_up"))
+
+        # 3. Board-aware pct threshold (last resort)
+        pct = self._decimal_or_none(row.get("pct_chg"))
+        if pct is not None:
+            threshold = self._limit_up_threshold(
+                str(row.get("stock_id") or ""),
+                str(row.get("stock_name") or ""),
+            )
+            if pct >= threshold:
+                return True
+
+        return False
 
     def _is_one_word_board(self, row: dict[str, Any]) -> bool:
         open_price = self._decimal_or_none(row.get("open_price"))
