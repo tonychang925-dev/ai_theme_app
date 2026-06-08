@@ -11,6 +11,7 @@ from stock_processing_service.application.services.backtest.one_to_two_backtest_
 )
 from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoSetupPlanDTO
 from stock_processing_service.contracts.dto.trade_calendar_dto import TradeCalendarDTO
+from stock_processing_service.domain.services.one_to_two_rule_config import DEFAULT_RULE_VERSION
 
 
 class _Client:
@@ -223,7 +224,7 @@ async def test_one_to_two_backtest_snapshot_freezes_reject_candidates() -> None:
     sql, params = gw._client.calls[0]
     assert "INSERT INTO w2s_backtest_feature_snapshot" in sql
     assert params[2] == "one_to_two"
-    assert params[3] == "one_to_two_v1.0_post_market_plan"
+    assert params[3] == DEFAULT_RULE_VERSION
     source_trace = json.loads(params[-1])
     derived = json.loads(params[-2])
     raw = json.loads(params[-3])

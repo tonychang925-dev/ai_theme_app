@@ -9,13 +9,14 @@ RULE_VERSION_V1_1 = "one_to_two_v1.1_breadth_strong_count"
 RULE_VERSION_V1_2 = "one_to_two_v1.2_turnover_tiered"
 RULE_VERSION_V1_3 = "one_to_two_v1.3_breadth_turnover_combined"
 RULE_VERSION_V1_4 = "one_to_two_v1.4_relaunch_first_board"
+DEFAULT_RULE_VERSION = RULE_VERSION_V1_2
 
 
 @dataclass(frozen=True, slots=True)
 class OneToTwoRuleConfig:
     """Rule thresholds and gates for OneToTwo experiments."""
 
-    rule_version: str = RULE_VERSION_V1_0
+    rule_version: str = DEFAULT_RULE_VERSION
     min_focus_turnover: Decimal = Decimal("0.08")
     min_reject_turnover: Decimal = Decimal("0.08")
     min_subject_limit_count: int = 2
@@ -32,11 +33,9 @@ class OneToTwoRuleConfig:
 
     @classmethod
     def from_version(cls, rule_version: str | None) -> OneToTwoRuleConfig:
-        version = (rule_version or RULE_VERSION_V1_0).strip()
+        version = (rule_version or DEFAULT_RULE_VERSION).strip()
         if version == RULE_VERSION_V1_0:
-            return cls(
-                allowed_first_board_types=("chain_first_board",),
-            )
+            raise ValueError("one_to_two_v1.0_post_market_plan is blocked for backtests; use one_to_two_v1.2_turnover_tiered or later")
         if version == RULE_VERSION_V1_1:
             return cls(
                 rule_version=RULE_VERSION_V1_1,

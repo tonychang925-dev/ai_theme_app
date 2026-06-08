@@ -15,13 +15,14 @@ from stock_processing_service.application.services.one_to_two_setup_plan_engine 
     OneToTwoSetupPlanEngine,
 )
 from stock_processing_service.domain.services.one_to_two_rule_config import (
+    DEFAULT_RULE_VERSION,
     OneToTwoRuleConfig,
 )
 
 logger = logging.getLogger(__name__)
 
 DEFAULT_STRATEGY_ID = "one_to_two"
-DEFAULT_STRATEGY_VERSION = "one_to_two_v1.0_post_market_plan"
+DEFAULT_STRATEGY_VERSION = DEFAULT_RULE_VERSION
 
 
 class OneToTwoBacktestFeatureSnapshotService:
@@ -54,7 +55,7 @@ class OneToTwoBacktestFeatureSnapshotService:
         if strategy_id != DEFAULT_STRATEGY_ID:
             raise ValueError("strategy_id must be one_to_two")
         if strategy_version != DEFAULT_STRATEGY_VERSION:
-            raise ValueError("strategy_version must be one_to_two_v1.0_post_market_plan")
+            raise ValueError(f"strategy_version must be {DEFAULT_STRATEGY_VERSION}")
         if start_date > end_date:
             raise ValueError("invalid date range")
 

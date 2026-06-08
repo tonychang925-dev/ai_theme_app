@@ -6,13 +6,14 @@ import pytest
 
 import scripts.check_one_to_two_backtest_audit as audit_mod
 from scripts.check_one_to_two_backtest_audit import build_backtest_audit_report
+from stock_processing_service.domain.services.one_to_two_rule_config import DEFAULT_RULE_VERSION
 
 
 def _base_run_row() -> dict[str, object]:
     return {
         "run_id": "run-001",
         "strategy_id": "one_to_two",
-        "strategy_version": "one_to_two_v1.0_post_market_plan",
+        "strategy_version": DEFAULT_RULE_VERSION,
     }
 
 
@@ -20,7 +21,7 @@ def _base_snapshot_row(**overrides: object) -> dict[str, object]:
     row = {
         "run_id": "run-001",
         "strategy_id": "one_to_two",
-        "strategy_version": "one_to_two_v1.0_post_market_plan",
+        "strategy_version": DEFAULT_RULE_VERSION,
         "stock_id": "600367.SH",
         "subject_key": "mainline_ai",
         "source_trace": {"source_table": "w2s_backtest_feature_snapshot"},
@@ -40,7 +41,7 @@ def _base_signal_row(**overrides: object) -> dict[str, object]:
         "signal_id": "sig-001",
         "run_id": "run-001",
         "strategy_id": "one_to_two",
-        "strategy_version": "one_to_two_v1.0_post_market_plan",
+        "strategy_version": DEFAULT_RULE_VERSION,
         "trade_date": "2026-06-04",
         "signal_session": "post_market",
         "available_at": "2026-06-04T15:30:00",
@@ -65,7 +66,7 @@ def _base_validation_row(**overrides: object) -> dict[str, object]:
         "signal_id": "sig-001",
         "run_id": "run-001",
         "strategy_id": "one_to_two",
-        "strategy_version": "one_to_two_v1.0_post_market_plan",
+        "strategy_version": DEFAULT_RULE_VERSION,
         "trade_date": "2026-06-04",
         "stock_id": "600367.SH",
         "outcome_label": "A_SEALED_SECOND_BOARD_REAL",
@@ -99,7 +100,7 @@ def test_one_to_two_backtest_audit_passes_on_unified_tables() -> None:
         validation_rows=[_base_validation_row()],
         summary_rows=[_base_summary_row()],
         strategy_id="one_to_two",
-        strategy_version="one_to_two_v1.0_post_market_plan",
+        strategy_version=DEFAULT_RULE_VERSION,
     )
 
     assert report["ok"] is True
@@ -122,7 +123,7 @@ def test_one_to_two_backtest_audit_rejects_empty_snapshot_strategy_id() -> None:
         validation_rows=[_base_validation_row()],
         summary_rows=[_base_summary_row()],
         strategy_id="one_to_two",
-        strategy_version="one_to_two_v1.0_post_market_plan",
+        strategy_version=DEFAULT_RULE_VERSION,
     )
 
     assert report["ok"] is False
@@ -137,7 +138,7 @@ def test_one_to_two_backtest_audit_rejects_wrong_signal_session() -> None:
         validation_rows=[_base_validation_row()],
         summary_rows=[_base_summary_row()],
         strategy_id="one_to_two",
-        strategy_version="one_to_two_v1.0_post_market_plan",
+        strategy_version=DEFAULT_RULE_VERSION,
     )
 
     assert report["ok"] is False
@@ -152,7 +153,7 @@ def test_one_to_two_backtest_audit_rejects_tradable_true() -> None:
         validation_rows=[_base_validation_row()],
         summary_rows=[_base_summary_row()],
         strategy_id="one_to_two",
-        strategy_version="one_to_two_v1.0_post_market_plan",
+        strategy_version=DEFAULT_RULE_VERSION,
     )
 
     assert report["ok"] is False
@@ -172,7 +173,7 @@ def test_one_to_two_backtest_audit_rejects_invalid_post_market_timestamps() -> N
         validation_rows=[_base_validation_row()],
         summary_rows=[_base_summary_row()],
         strategy_id="one_to_two",
-        strategy_version="one_to_two_v1.0_post_market_plan",
+        strategy_version=DEFAULT_RULE_VERSION,
     )
 
     assert report["ok"] is False
@@ -188,7 +189,7 @@ def test_one_to_two_backtest_audit_rejects_missing_outcome_source() -> None:
         validation_rows=[_base_validation_row(outcome_source="")],
         summary_rows=[_base_summary_row()],
         strategy_id="one_to_two",
-        strategy_version="one_to_two_v1.0_post_market_plan",
+        strategy_version=DEFAULT_RULE_VERSION,
     )
 
     assert report["ok"] is False
@@ -203,7 +204,7 @@ def test_one_to_two_backtest_audit_rejects_orphan_validation() -> None:
         validation_rows=[_base_validation_row(signal_id="sig-002")],
         summary_rows=[_base_summary_row()],
         strategy_id="one_to_two",
-        strategy_version="one_to_two_v1.0_post_market_plan",
+        strategy_version=DEFAULT_RULE_VERSION,
     )
 
     assert report["ok"] is False
@@ -218,7 +219,7 @@ def test_one_to_two_backtest_audit_rejects_missing_validation_for_signal() -> No
         validation_rows=[_base_validation_row()],
         summary_rows=[_base_summary_row()],
         strategy_id="one_to_two",
-        strategy_version="one_to_two_v1.0_post_market_plan",
+        strategy_version=DEFAULT_RULE_VERSION,
     )
 
     assert report["ok"] is False
@@ -233,7 +234,7 @@ def test_one_to_two_backtest_audit_rejects_mixed_snapshot_strategy_version() -> 
         validation_rows=[_base_validation_row()],
         summary_rows=[_base_summary_row()],
         strategy_id="one_to_two",
-        strategy_version="one_to_two_v1.0_post_market_plan",
+        strategy_version=DEFAULT_RULE_VERSION,
     )
 
     assert report["ok"] is False
@@ -248,7 +249,7 @@ def test_one_to_two_backtest_audit_rejects_mixed_signal_strategy_version() -> No
         validation_rows=[_base_validation_row(), _mixed_version_validation_row(signal_id="sig-002")],
         summary_rows=[_base_summary_row()],
         strategy_id="one_to_two",
-        strategy_version="one_to_two_v1.0_post_market_plan",
+        strategy_version=DEFAULT_RULE_VERSION,
     )
 
     assert report["ok"] is False
@@ -263,7 +264,7 @@ def test_one_to_two_backtest_audit_rejects_mixed_validation_strategy_version() -
         validation_rows=[_base_validation_row(), _mixed_version_validation_row(signal_id="sig-002")],
         summary_rows=[_base_summary_row()],
         strategy_id="one_to_two",
-        strategy_version="one_to_two_v1.0_post_market_plan",
+        strategy_version=DEFAULT_RULE_VERSION,
     )
 
     assert report["ok"] is False
@@ -292,7 +293,7 @@ async def test_one_to_two_backtest_audit_rejects_missing_strategy_id_column(monk
 
 @pytest.mark.asyncio
 async def test_run_audit_queries_by_strategy_version(monkeypatch: pytest.MonkeyPatch) -> None:
-    expected_version = "one_to_two_v1.0_post_market_plan"
+    expected_version = DEFAULT_RULE_VERSION
 
     class _Conn:
         def __init__(self) -> None:

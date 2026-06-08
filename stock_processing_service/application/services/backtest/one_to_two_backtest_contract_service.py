@@ -3,9 +3,11 @@ from __future__ import annotations
 from datetime import date, datetime
 from typing import Any
 
+from stock_processing_service.domain.services.one_to_two_rule_config import DEFAULT_RULE_VERSION
+
 
 DEFAULT_STRATEGY_ID = "one_to_two"
-DEFAULT_STRATEGY_VERSION = "one_to_two_v1.0_post_market_plan"
+DEFAULT_STRATEGY_VERSION = DEFAULT_RULE_VERSION
 DEFAULT_SIGNAL_SESSION = "post_market"
 
 
@@ -40,7 +42,7 @@ class OneToTwoBacktestContractService:
         if strategy_id != DEFAULT_STRATEGY_ID:
             raise ValueError("strategy_id must be one_to_two")
         if strategy_version != DEFAULT_STRATEGY_VERSION:
-            raise ValueError("strategy_version must be one_to_two_v1.0_post_market_plan")
+            raise ValueError(f"strategy_version must be {DEFAULT_STRATEGY_VERSION}")
         if signal_session != DEFAULT_SIGNAL_SESSION:
             raise ValueError("signal_session must be post_market")
 

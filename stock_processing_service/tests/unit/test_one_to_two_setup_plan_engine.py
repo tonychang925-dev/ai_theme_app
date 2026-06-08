@@ -19,6 +19,7 @@ from stock_processing_service.contracts.dto.post_market_setup_context_dto import
 )
 from stock_processing_service.contracts.dto.trade_calendar_dto import TradeCalendarDTO
 from stock_processing_service.domain.services.one_to_two_rule_config import (
+    DEFAULT_RULE_VERSION,
     OneToTwoRuleConfig,
     RULE_VERSION_V1_1,
     RULE_VERSION_V1_2,
@@ -509,10 +510,10 @@ def test_one_to_two_subject_selection_trace_records_priority_reason() -> None:
     result = engine.build_from_context(ctx)
 
     assert result.diagnostics["fact_pool_count"] == 1
-    assert result.summary["rule_version"] == "one_to_two_v1.0_post_market_plan"
+    assert result.summary["rule_version"] == DEFAULT_RULE_VERSION
     trace = result.candidate_features[0]["source_trace_json"]["subject_selection"]
-    assert result.candidate_features[0]["rule_version"] == "one_to_two_v1.0_post_market_plan"
-    assert result.candidate_features[0]["source_trace_json"]["rule_version"] == "one_to_two_v1.0_post_market_plan"
+    assert result.candidate_features[0]["rule_version"] == DEFAULT_RULE_VERSION
+    assert result.candidate_features[0]["source_trace_json"]["rule_version"] == DEFAULT_RULE_VERSION
     assert trace["selected_subject_key"] == "9064103"
     assert trace["candidate_subject_keys"] == ["9014636", "9064103"]
     assert trace["selection_reason"] == "confirmed_hotspot_rank"
@@ -848,18 +849,18 @@ def _versioned_feature(
     )
 
 
-def test_one_to_two_rule_v1_0_keeps_current_hard_vetoes() -> None:
+def test_one_to_two_rule_default_version_keeps_extreme_low_turnover_vetoes() -> None:
     rule = OneToTwoRuleEngine().apply(
         _versioned_feature(
-            turnover_rate=Decimal("0.05"),
-            same_subject_limit_count=1,
+            turnover_rate=Decimal("0.01"),
+            same_subject_limit_count=3,
             same_subject_strong_count=7,
         )
     )
 
     assert rule.decision == "reject"
     assert "低换手" in "；".join(rule.veto_reasons)
-    assert "无板块合力" in "；".join(rule.veto_reasons)
+    assert "无板块合力" not in "；".join(rule.veto_reasons)
 
 
 def test_one_to_two_rule_v1_1_allows_strong_breadth_but_caps_focus() -> None:
@@ -905,7 +906,7 @@ def test_one_to_two_rule_v1_3_combines_soft_breadth_and_low_turnover() -> None:
     assert "低换手，先观察不 focus" in rule.risk_flags
 
 
-def test_one_to_two_rule_v1_0_accepts_only_chain_first_board() -> None:
+def test_one_to_two_rule_default_version_accepts_only_chain_first_board() -> None:
     strict_rule = OneToTwoRuleEngine().apply(
         _versioned_feature(
             turnover_rate=Decimal("0.18"),

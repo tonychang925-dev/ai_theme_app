@@ -7,10 +7,12 @@ from datetime import date, timedelta
 from decimal import Decimal
 from typing import Any
 
+from stock_processing_service.domain.services.one_to_two_rule_config import DEFAULT_RULE_VERSION
+
 logger = logging.getLogger(__name__)
 
 DEFAULT_STRATEGY_ID = "one_to_two"
-DEFAULT_STRATEGY_VERSION = "one_to_two_v1.0_post_market_plan"
+DEFAULT_STRATEGY_VERSION = DEFAULT_RULE_VERSION
 DEFAULT_SIGNAL_SESSION = "post_market"
 SUCCESS_OUTCOME_PREFIX = "A_SEALED_SECOND_BOARD"
 EXPECTED_OUTCOMES = {
@@ -38,7 +40,7 @@ class OneToTwoBacktestValidationSummaryService:
         if strategy_id != DEFAULT_STRATEGY_ID:
             raise ValueError("strategy_id must be one_to_two")
         if strategy_version != DEFAULT_STRATEGY_VERSION:
-            raise ValueError("strategy_version must be one_to_two_v1.0_post_market_plan")
+            raise ValueError(f"strategy_version must be {DEFAULT_STRATEGY_VERSION}")
 
         run_row = await self._load_run_row(run_id)
         snapshots = await self._load_snapshots(run_id, strategy_id, strategy_version)

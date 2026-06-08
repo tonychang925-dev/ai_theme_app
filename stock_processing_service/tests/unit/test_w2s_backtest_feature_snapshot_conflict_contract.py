@@ -7,6 +7,7 @@ from database_service.scripts.apply_w2s_backtest_tables import DDL_STATEMENTS
 from stock_processing_service.application.services.backtest.w2s_feature_snapshot_service import (
     W2SFeatureSnapshotService,
 )
+from stock_processing_service.domain.services.one_to_two_rule_config import DEFAULT_RULE_VERSION
 
 
 def test_w2s_backtest_feature_snapshot_ddl_uses_plain_unique_index() -> None:
@@ -39,7 +40,7 @@ def _snapshot_row(**overrides):
         "snapshot_id": "snap-001",
         "run_id": "run-001",
         "strategy_id": "one_to_two",
-        "strategy_version": "one_to_two_v1.0_post_market_plan",
+        "strategy_version": DEFAULT_RULE_VERSION,
         "candidate_trade_date": date(2026, 6, 4),
         "confirm_trade_date": None,
         "stock_id": "600367.SH",

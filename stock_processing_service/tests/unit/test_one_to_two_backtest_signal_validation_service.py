@@ -8,6 +8,7 @@ import pytest
 from stock_processing_service.application.services.backtest.one_to_two_backtest_signal_validation_service import (
     OneToTwoBacktestSignalValidationService,
 )
+from stock_processing_service.domain.services.one_to_two_rule_config import DEFAULT_RULE_VERSION
 
 
 class _Client:
@@ -85,7 +86,7 @@ def _signal(stock_id: str, trade_date: str = "2026-06-04") -> dict[str, object]:
         "signal_id": f"sig-{stock_id}",
         "run_id": "run-001",
         "strategy_id": "one_to_two",
-        "strategy_version": "one_to_two_v1.0_post_market_plan",
+        "strategy_version": DEFAULT_RULE_VERSION,
         "trade_date": trade_date,
         "stock_id": stock_id,
         "signal_level": "focus",
@@ -120,12 +121,12 @@ async def test_one_to_two_backtest_signal_validation_labels_outcomes() -> None:
     assert "DELETE FROM strategy_signal_validation" in delete_sql
     assert "strategy_id" in delete_sql
     assert "strategy_version" in delete_sql
-    assert delete_params == ["run-001", "one_to_two", "one_to_two_v1.0_post_market_plan"]
+    assert delete_params == ["run-001", "one_to_two", DEFAULT_RULE_VERSION]
 
     select_sql, select_params = gw._client.calls[1]
     assert "SELECT * FROM strategy_signal_daily" in select_sql
     assert "strategy_version" in select_sql
-    assert select_params == ["run-001", "one_to_two", "one_to_two_v1.0_post_market_plan"]
+    assert select_params == ["run-001", "one_to_two", DEFAULT_RULE_VERSION]
 
     write_calls = gw._client.calls[2:]
     assert len(write_calls) == 3
@@ -165,13 +166,13 @@ async def test_one_to_two_backtest_signal_validation_delete_scoped_by_strategy_i
     assert "DELETE FROM strategy_signal_validation" in delete_sql
     assert "strategy_id" in delete_sql
     assert "strategy_version" in delete_sql
-    assert delete_params == ["run-001", "one_to_two", "one_to_two_v1.0_post_market_plan"]
+    assert delete_params == ["run-001", "one_to_two", DEFAULT_RULE_VERSION]
 
 
 @pytest.mark.asyncio
 async def test_validation_loads_signals_scoped_by_strategy_version() -> None:
     gw = _Gateway([
-        _signal_with_version("600367.SH", "one_to_two_v1.0_post_market_plan"),
+        _signal_with_version("600367.SH", DEFAULT_RULE_VERSION),
         _signal_with_version("600368.SH", "one_to_two_v1.0_pre_market_plan"),
     ])
     service = OneToTwoBacktestSignalValidationService(_ReadPort(), gw)
@@ -181,10 +182,10 @@ async def test_validation_loads_signals_scoped_by_strategy_version() -> None:
     assert report["validated_count"] == 1
     delete_sql, delete_params = gw._client.calls[0]
     assert "strategy_version" in delete_sql
-    assert delete_params == ["run-001", "one_to_two", "one_to_two_v1.0_post_market_plan"]
+    assert delete_params == ["run-001", "one_to_two", DEFAULT_RULE_VERSION]
     select_sql, select_params = gw._client.calls[1]
     assert "strategy_version" in select_sql
-    assert select_params == ["run-001", "one_to_two", "one_to_two_v1.0_post_market_plan"]
+    assert select_params == ["run-001", "one_to_two", DEFAULT_RULE_VERSION]
     write_calls = gw._client.calls[2:]
     assert len(write_calls) == 1
     assert write_calls[0][1][0] == "sig-600367.SH"

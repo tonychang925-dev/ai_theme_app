@@ -7,6 +7,7 @@ import pytest
 from stock_processing_service.application.services.backtest.one_to_two_backtest_validation_summary_service import (
     OneToTwoBacktestValidationSummaryService,
 )
+from stock_processing_service.domain.services.one_to_two_rule_config import DEFAULT_RULE_VERSION
 
 
 class _Client:
@@ -71,7 +72,7 @@ def _snapshot(
         "snapshot_id": snapshot_id,
         "run_id": "run-001",
         "strategy_id": "one_to_two",
-        "strategy_version": "one_to_two_v1.0_post_market_plan",
+        "strategy_version": DEFAULT_RULE_VERSION,
         "candidate_trade_date": trade_date,
         "confirm_trade_date": "2026-06-05",
         "stock_id": stock_id,
@@ -88,7 +89,7 @@ def _signal(snapshot_id: str, stock_id: str, trade_date: str) -> dict[str, objec
         "signal_id": f"sig-{snapshot_id}",
         "run_id": "run-001",
         "strategy_id": "one_to_two",
-        "strategy_version": "one_to_two_v1.0_post_market_plan",
+        "strategy_version": DEFAULT_RULE_VERSION,
         "trade_date": trade_date,
         "signal_session": "post_market",
         "available_at": "2026-06-04T15:30:00",
@@ -107,7 +108,7 @@ def _validation(signal_id: str, stock_id: str, trade_date: str, outcome_label: s
         "signal_id": signal_id,
         "run_id": "run-001",
         "strategy_id": "one_to_two",
-        "strategy_version": "one_to_two_v1.0_post_market_plan",
+        "strategy_version": DEFAULT_RULE_VERSION,
         "trade_date": trade_date,
         "stock_id": stock_id,
         "outcome_label": outcome_label,
@@ -122,7 +123,7 @@ async def test_one_to_two_backtest_validation_summary_reports_core_metrics() -> 
             {
                 "run_id": "run-001",
                 "strategy_id": "one_to_two",
-                "strategy_version": "one_to_two_v1.0_post_market_plan",
+                "strategy_version": DEFAULT_RULE_VERSION,
                 "start_date": date(2026, 6, 4),
                 "end_date": date(2026, 6, 5),
             }

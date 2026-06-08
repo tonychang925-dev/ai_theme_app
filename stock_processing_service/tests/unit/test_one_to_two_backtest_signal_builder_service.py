@@ -8,6 +8,7 @@ import pytest
 from stock_processing_service.application.services.backtest.one_to_two_backtest_signal_builder_service import (
     OneToTwoBacktestSignalBuilderService,
 )
+from stock_processing_service.domain.services.one_to_two_rule_config import DEFAULT_RULE_VERSION
 
 
 class _Client:
@@ -33,7 +34,7 @@ def _snapshot(**overrides: object) -> dict[str, object]:
         "snapshot_id": "snap-001",
         "run_id": "run-001",
         "strategy_id": "one_to_two",
-        "strategy_version": "one_to_two_v1.0_post_market_plan",
+        "strategy_version": DEFAULT_RULE_VERSION,
         "candidate_trade_date": date(2026, 6, 4),
         "confirm_trade_date": date(2026, 6, 5),
         "stock_id": "600367.SH",
@@ -126,7 +127,7 @@ async def test_one_to_two_backtest_signal_builder_emits_watch_only_signals() -> 
     assert insert_params[14] == "focus"
     assert insert_params[18] == "one_to_two_backtest"
     assert insert_params[25] == "w2s_backtest_feature_snapshot"
-    assert insert_params[27] == "one_to_two_v1.0_post_market_plan"
+    assert insert_params[27] == DEFAULT_RULE_VERSION
     available_at = insert_params[6]
     tradable_at = insert_params[7]
     assert isinstance(available_at, datetime)
