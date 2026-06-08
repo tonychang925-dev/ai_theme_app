@@ -291,6 +291,7 @@ class OneToTwoCandidateService:
                         },
                         "selection_reason": selected_reason,
                     },
+                    "technical_trace": self._technical_trace(kline_pattern_quality),
                 },
             )
             candidates.append(features)
@@ -418,6 +419,29 @@ class OneToTwoCandidateService:
     @staticmethod
     def _subject_key(value: Any) -> str:
         return str(value or "").strip()
+
+    @staticmethod
+    def _technical_trace(kline: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "decision_effect": "shadow_only",
+            "kline_data_ready": kline.get("kline_data_ready"),
+            "history_bar_count": kline.get("history_bar_count"),
+            "has_golden_spider": kline.get("has_golden_spider"),
+            "kline_score": kline.get("score"),
+            "level": kline.get("level"),
+            "technical_reason": kline.get("technical_reason"),
+            "above_ma5": kline.get("above_ma5"),
+            "above_ma10": kline.get("above_ma10"),
+            "above_ma20": kline.get("above_ma20"),
+            "kline_trend_state": kline.get("kline_trend_state"),
+            "kline_is_downtrend": kline.get("is_downtrend"),
+            "kline_near_resistance": kline.get("kline_near_resistance"),
+            "kline_near_support": kline.get("kline_near_support"),
+            "support_broken": kline.get("support_broken"),
+            "shadow_near_pressure": bool(kline.get("kline_near_resistance")),
+            "shadow_is_downtrend": bool(kline.get("is_downtrend")),
+            "pattern_reasons": list(kline.get("pattern_reasons") or []),
+        }
 
     def _stock_id(self, row: dict[str, Any]) -> str:
         raw = self._text(row.get("stock_id") or row.get("stock_code") or row.get("code") or "")
