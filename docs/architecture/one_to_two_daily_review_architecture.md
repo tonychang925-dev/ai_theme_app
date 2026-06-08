@@ -12,14 +12,24 @@
 
 v3.0 相比 v2.0 的核心修订：
 
-1. 将候选源从“confirmed_mainline 中筛选标的”修正为“从主线首板事实池中构建 1进2观察候选”。
+1. 将候选源从”confirmed_mainline 中筛选标的”修正为”从主线首板事实池中构建 1进2观察候选”。
 2. 明确 `confirmed_mainline` 不是唯一候选入口，而是 `focus` 权限门槛。
-3. 新增“空结果原则”：1进2观察清单可以为空，空结果是正常业务结果。
+3. 新增”空结果原则”：1进2观察清单可以为空，空结果是正常业务结果。
 4. 明确 OneToTwo 不从 Layer C 强势股池反推，不复用 D1 弱转强候选池，不修改 A/B/C/D 任何生产链。
 5. 强化事实层、候选层、硬门禁层、评分层、计划层、执行确认层的分层边界。
 6. 新增硬规则合同测试清单，尤其是空结果测试与不读取 Layer C / D1 的边界测试。
 7. 将 Phase 1 设计为硬过滤 MVP，复杂评分延后到 Phase 2。
 8. 明确不允许为了每日产出而降低硬门槛，不允许 LLM 覆盖硬规则，不允许 fallback/mock/default 生成候选。
+
+v3.1 相比 v3.0 的核心修订：
+
+1. 新增「技术形态闸门层」— 介于硬门禁层与评分层之间，由 OneToTwoTechnicalGate 负责。
+2. GoldenSpiderPatternService 定位修正为「OneToTwo 技术形态适配层」，不复写 K 线分析逻辑，只融合已有模块输出（KlineTechnicalAnalyzer + stock_position_judgement + stock_pattern_judgement，可选接入 KlineSupportScorer）。
+3. K 线形态（金蜘蛛/MA 均线簇/下降趋势/压力位/支撑位）正式进入 RuleEngine 决策链 — 下降趋势/压力位硬拒，无技术支撑不得 focus。
+4. 评分权重修正为五维：首板质量 25% / 题材正宗度 20% / 板块合力 20% / 技术形态 20% / 风险控制 15%。
+5. 新增 score_policy 门禁 — final_score < 80 或 technical_structure_score < 55 不得 focus。
+6. 修正 subject_key / stock_key 归一化残留 — subject_key 不得使用 _stock_key()（split(“.”)[0] 是股票代码逻辑）。
+7. 抽出统一 LimitUpDetector — 分板涨停判定不再散落在三个类中重复实现。
 
 ---
 
@@ -187,7 +197,8 @@ OneToTwoSetupPlan = 消费事实后的买点观察计划
 flowchart TD
     F1[事实层<br/>只读取事实] --> F2[候选层<br/>主线首板事实池]
     F2 --> F3[硬门禁层<br/>fail-fast 一票否决]
-    F3 --> F4[评分层<br/>只对少数候选排序]
+    F3 --> F3a[技术形态闸门层<br/>K线形态 focus cap]
+    F3a --> F4[评分层<br/>五维评分+score_policy]
     F4 --> F5[计划层<br/>focus/observe/pending/reject]
     F5 --> F6[执行确认层<br/>盘前/盘中确认]
 ```
@@ -254,22 +265,67 @@ limit_up_detail_rows / stock_daily_snapshot / subject_stock_daily_snapshot
 市场环境 no_trade → observe_only，不得 focus
 ```
 
-### 4.4 评分层
+### 4.4 技术形态闸门层（v3.1 新增）
 
-只对通过硬门禁的极少数候选打分。
+在硬门禁通过后、评分前，由 `OneToTwoTechnicalGate` 对 K 线技术形态做二次判定。
 
-Phase 1 不做复杂评分；Phase 2 再引入保守评分：
+该层不重写 K 线分析逻辑。它通过 `GoldenSpiderPatternService`（OneToTwo 技术形态适配层）融合已有模块输出：
+
+- `KlineTechnicalAnalyzer` — MA5/10/20/60、支撑/压力、量比、MACD、趋势状态
+- `stock_position_judgement` — 位置标签（突破前高/接近前高/低位启动/高位分歧/平台整理）、均线排列、趋势强度
+- `stock_pattern_judgement` — 形态标签（放量突破/均线多头/缩量回踩/高量不破/高位分歧）
+- `KlineSupportScorer`（可选接入）— 缺口支撑共振、布林下轨、斐波那契回撤、枢轴点、多支撑共振
+
+规则（v3.1 第一版）：
 
 ```text
-首板质量 40%
-板块合力 25%
-主线阶段 20%
-风险控制 15%
+is_downtrend = true                   → reject（下降趋势）
+support_broken = true                 → reject（支撑破坏）
+kline_data_ready = false              → observe_only（不得 focus）
+near_pressure / kline_near_resistance → observe_only 或 pending_review_only（不得 focus）
+has_golden_spider = false 且 score<55 → observe_only（focus 降 observe_only）
+has_golden_spider = true 或 score>=68 → pass（允许 focus）
 ```
 
-评分只用于排序，不允许覆盖硬否决。
+注意：第一版 near_pressure 先 cap_focus 不硬 reject，避免轻量 support_resistance.near_resistance 误伤。等 KlineSupportScorer 成熟接入后再升级为硬 reject。
 
-### 4.5 计划层
+核心原则：
+
+```text
+金蜘蛛不是硬门禁 — "最好是金蜘蛛"不代表"没有金蜘蛛直接剔除"。
+硬拒的是：下降趋势、压力位、高位、支撑破坏。
+金蜘蛛用于 focus 资格增强：有金蜘蛛/强形态 → 允许 focus；无金蜘蛛且技术分低 → 最多 observe_only。
+```
+
+### 4.5 评分层
+
+只对通过硬门禁 + 技术形态闸门的极少数候选打分。
+
+v3.1 权重（五维评分）：
+
+```text
+首板质量          25%
+题材正宗度        20%
+板块合力          20%
+技术形态          20%
+风险控制          15%
+```
+
+其中技术形态维度由 `OneToTwoScorer._technical_structure_score()` 从 `f.kline_pattern_quality` 取值：
+
+```text
+has_golden_spider = true  → 90~100
+level = near_golden       → 65~80
+kline_score 55~68         → 60~70
+kline_score < 40          → 30~45
+kline_data_ready = false  → 25
+near_pressure = true      → 0~30
+is_downtrend = true       → 0
+```
+
+评分用于排序和 focus 资格判定，但评分本身不覆盖硬否决。
+
+### 4.6 计划层
 
 输出计划状态：
 
@@ -288,7 +344,7 @@ must_buy
 recommend_buy
 ```
 
-### 4.6 执行确认层
+### 4.7 执行确认层
 
 盘前、盘中再判断：
 
@@ -368,9 +424,13 @@ flowchart LR
     E[theme_cycle_judgement_v2<br/>生命周期事实] --> G
     F[market_regime / trading_principle<br/>市场环境/交易原则] --> G
     H[subject breadth facts<br/>板块涨停数/助攻股] --> G
+    K1[stock_position_judgement<br/>位置/均线判断] --> G
+    K2[stock_pattern_judgement<br/>形态/量能判断] --> G
+    K3[stock_daily_bars 历史K线<br/>GoldenSpiderPatternService] --> G
     G --> I[主线首板事实池]
     I --> J[OneToTwoRuleEngine<br/>硬过滤]
-    J --> K[OneToTwoScorer<br/>排序]
+    J --> J2[OneToTwoTechnicalGate<br/>K线形态闸门]
+    J2 --> K[OneToTwoScorer<br/>五维评分+score_policy]
     K --> L[OneToTwoRiskPlanBuilder<br/>触发/放弃/退出计划]
     L --> M[post_market_setup_plan]
     M --> N[DailyReviewV2.watchlists.one_to_two]
@@ -1896,18 +1956,74 @@ Phase 1 后立刻做最小回测，不等 Phase 5。
 统计次日是否二板、是否封住、炸板率、平均收益
 ```
 
-### Phase 2：保守评分
+### Phase 2：保守评分 + 技术形态闸门（v3.1 当前）
 
-评分只用于排序，不覆盖硬否决。
+分两阶段实施，不允许一次性大改。
 
-权重：
+#### Stage 1：K 线事实链验证（先验数据，不改决策）
+
+任务：
+1. `#11` 修 subject_key / stock_key 归一化残留
+2. `#12` 抽出统一 `LimitUpDetector`
+3. `#5` `GoldenSpiderPatternService` 补诊断字段（只增强输出）
+4. `#6` `CandidateService` 回灌 K 线字段到 `OneToTwoFeatures`
+
+边界：Stage 1 不接 RuleEngine，不改 Scorer，不改 focus 决策。
+
+验收：跑 5/6 smoke，确认 24 个候选的 kline_data_ready / history_bar_count / technical_reason / is_downtrend / near_pressure 来源可信。
+
+#### Stage 2：技术形态进入决策链
+
+任务：
+5. `#8` 新增 `OneToTwoTechnicalGate`
+6. `#7` `RuleEngine` 接入技术 cap_focus
+7. `#9` `Scorer` 五维新权重
+8. `#10` `SetupPlanEngine` 增加 `_apply_score_policy`
+9. `#13` 综合排序 + `rank_no` / `rank_reason`
+10. `#14` 补单测；`#15` 跑 5/6、5/26 smoke
+
+五维权重（Stage 2）：
 
 ```text
-首板质量 40%
-板块合力 25%
-主线阶段 20%
-风险控制 15%
+首板质量          25%
+题材正宗度        20%
+板块合力          20%
+技术形态          20%
+风险控制          15%
 ```
+
+`OneToTwoTechnicalGate` 第一版规则（不依赖 KlineSupportScorer）：
+
+```text
+is_downtrend = true                   → reject
+support_broken = true                 → reject
+kline_data_ready = false              → observe_only（不得 focus）
+near_pressure = true                  → observe_only / pending_review_only（不得 focus）
+has_golden_spider = false 且 score<55 → observe_only（focus 降 observe_only）
+has_golden_spider = true 或 score>=68 → pass（允许 focus）
+```
+
+`_apply_score_policy`：
+- final_score < 80 → 不得 focus
+- technical_structure_score < 55 → 不得 focus
+
+关键实现细节：
+- `score_policy` 必须在 score 之后重新写 candidate_feature，确保 plan item 和 candidate_feature 的 decision 一致
+- `near_pressure` 第一版先 cap_focus 不硬 reject，等 `KlineSupportScorer` 成熟接入后再升级为 reject
+
+综合排序：
+```text
+decision priority → final_score desc → technical_structure desc
+→ theme_authenticity desc → board_breadth desc
+→ turnover_rate desc → stock_id
+```
+
+复用的已有 K 线模块：
+- `KlineTechnicalAnalyzer` — MA/支撑/压力/量能/MACD/趋势
+- `stock_position_judgement`（生产日落库）— 位置标签/均线排列/趋势强度
+- `stock_pattern_judgement`（生产日落库）— 形态标签/量能/突破/回踩/风险
+- `GoldenSpiderPatternService`（OneToTwo 适配层）— 融合上述模块输出，不做重复计算
+- `KlineSupportScorer`（Stage 2 延后接入，不阻塞主链）
 
 ### Phase 3：盘前竞价确认
 
@@ -1999,17 +2115,172 @@ OneToTwoSetupPlanEngine 是次日二板晋级观察计划。
 
 ---
 
-## 19. 最终结论
+## 20. K 线技术形态集成规范（v3.1 新增）
+
+### 20.1 模块复用原则
+
+GoldenSpiderPatternService 是「OneToTwo 技术形态适配层」，不重写任何 K 线分析逻辑。
+
+已复用的模块：
+
+| 模块 | 位置 | 复用方式 |
+|------|------|----------|
+| `KlineTechnicalAnalyzer` | `domain/services/market_regime/` | `self._analyzer.analyze(bars)` — 算 MA/支撑/压力/量能/MACD/趋势 |
+| `stock_position_judgement` | 生产日落库表 | `read_port.get_stock_position_judgement()` |
+| `stock_pattern_judgement` | 生产日落库表 | `read_port.get_stock_pattern_judgement()` |
+
+可选接入的模块：
+
+| 模块 | 位置 | 接入方式 |
+|------|------|----------|
+| `KlineSupportScorer` | `domain/services/kline_support_scorer.py` | Adapter 输出统一 support_analysis 字段 |
+| `KlineBreakDetector` | `domain/services/kline_break_detector.py` | 实时支撑突破检测（盘中使用，复盘不用） |
+
+### 20.2 技术形态数据流
+
+```
+stock_daily_bars (30日)
+    → KlineTechnicalAnalyzer.analyze()
+        → ma / support_resistance / volume / trend
+    + stock_position_judgement (落库)
+    + stock_pattern_judgement (落库)
+    → GoldenSpiderPatternService._detect()
+        → has_golden_spider / level / score / kline_trend_state / ...
+        → kline_pattern_quality_by_stock
+            → OneToTwoFeatures.kline_pattern_quality
+                → OneToTwoTechnicalGate.evaluate()
+                    → TechnicalGateResult
+                        → RuleEngine 决策
+                        → Scorer 评分
+```
+
+### 20.3 GoldenSpiderPatternService 诊断输出字段
+
+```python
+{
+    "stock_id": str,
+    "has_golden_spider": bool,
+    "level": "golden" | "near_golden" | "unknown",
+    "score": float,             # 0-100
+
+    # 🔧 v3.1 新增诊断字段
+    "history_bar_count": int,
+    "kline_data_ready": bool,   # len(bars) >= 20 and ma20 is not None
+
+    "ma5": float | None,
+    "ma10": float | None,
+    "ma20": float | None,
+    "latest_close": float | None,
+    "above_ma5": bool,
+    "above_ma10": bool,
+    "above_ma20": bool,
+    "ma_spread_ratio": float | None,
+
+    "position_label": str,           # from stock_position_judgement
+    "ma_alignment_status": str,      # 均线多头 / 短线转强 / 均线走弱
+    "trend_strength_score": float,
+
+    "kline_trend_state": str,        # from KlineTechnicalAnalyzer trend
+    "is_downtrend": bool,            # trend_state in {bearish_trend, downtrend, ...}
+
+    "kline_near_resistance": bool,   # from support_resistance
+    "kline_near_support": bool,
+    "support_hold": bool,
+    "support_broken": bool,
+
+    "pattern_labels": list[str],     # from stock_pattern_judgement
+    "pattern_reasons": list[str],    # scoring reasons
+    "technical_reason": str,         # 解释 why not golden spider
+    # technical_reason 取值：
+    #   insufficient_history | not_above_ma_cluster | ma_not_bullish_alignment
+    #   | ma_cluster_not_converged | volume_not_expanding | near_resistance
+    #   | support_broken | score_below_threshold
+
+    "analysis": {
+        "ma": {...},
+        "support_resistance": {...},
+        "volume": {...},
+        "trend": {...},
+    },
+}
+```
+
+### 20.4 CandidateService K 线字段回灌规则
+
+`OneToTwoCandidateService.build_fact_pool()` 在构造 `OneToTwoFeatures` 时，按以下优先级回灌：
+
+**near_pressure 取值链：**
+```text
+1. current_subject_row.near_pressure
+2. pressure_row.near_pressure
+3. kline.kline_near_resistance / kline.analysis.support_resistance.near_resistance
+```
+
+**is_downtrend 取值链：**
+```text
+1. current_subject_row.is_downtrend
+2. pressure_row.is_downtrend
+3. kline.is_downtrend / kline.kline_trend_state in {bearish_trend, downtrend, downtrend_rebound}
+```
+
+**source_trace 增加 technical_trace：**
+```json
+{
+  "technical_trace": {
+    "kline_data_ready": true,
+    "has_golden_spider": false,
+    "kline_score": 58.5,
+    "technical_reason": "not_above_ma_cluster",
+    "near_pressure_source": "kline",
+    "is_downtrend_source": "subject_row"
+  }
+}
+```
+
+### 20.5 合同测试清单（v3.1 新增）
+
+```text
+test_golden_spider_outputs_diagnostics_fields
+test_kline_data_not_ready_caps_focus
+test_no_golden_spider_low_kline_score_caps_focus
+test_near_pressure_rejects
+test_downtrend_rejects
+test_golden_spider_allows_focus_when_score_passes
+test_scorer_uses_technical_structure_in_final_score
+test_score_policy_final_score_below_80_caps_focus
+test_ranking_orders_by_score_and_technical_scores
+test_subject_key_not_normalized_by_stock_key
+test_limit_up_detector_board_thresholds
+```
+
+---
+
+## 21. 最终结论
 
 该方案可实施，但必须收紧名称、边界和候选源定义：
 
 ```text
 模块名：OneToTwoSetupPlanEngine
 定位：次日二板晋级观察计划
-输入：主线首板事实池 + 市场环境 + 板块合力 + 首板质量
+输入：主线首板事实池 + 市场环境 + 板块合力 + 首板质量 + K线技术形态
 输出：post_market_setup_plan / DailyReviewV2.watchlists.one_to_two
 特性：低频、高约束、允许为空
 禁止：读取强势股池、生成买入、参与主线发现、参与弱转强
+```
+
+v3.1 执行边界：
+
+```text
+Stage 1（先验 K 线事实链）：
+  不改 RuleEngine / Scorer / focus 决策
+  → 只补诊断字段 + 回灌 K 线字段
+  → 跑 smoke 确认 K 线数据真实可用
+
+Stage 2（技术形态进入决策）：
+  接 TechnicalGate + Scorer 新权重 + score_policy + 综合排序
+  不改 schema / runner / Layer A/B/C/D
+  不重写 K 线分析
+  KlineSupportScorer 延后接入，不阻塞主链
 ```
 
 最重要的工程原则：
@@ -2018,6 +2289,7 @@ OneToTwoSetupPlanEngine 是次日二板晋级观察计划。
 候选来自事实池，不来自展示层；
 focus 来自权限门槛，不来自主观推荐；
 空白是正常结果，不是系统失败；
-硬规则优先，评分只排序；
+硬规则优先，评分决定排序和 focus 资格；
+金蜘蛛用于资格增强，不作为硬门禁；
 复盘只生成计划，盘前/盘中才做确认。
 ```

@@ -226,13 +226,17 @@ class PostMarketSetupFactContextBuilder:
         for row in value:
             if not isinstance(row, dict):
                 continue
-            stock_id = self._stock_key(row.get("stock_id"))
-            if not stock_id or stock_id in result:
+            raw_id = str(row.get("stock_id") or "").strip()
+            if not raw_id:
                 continue
             metric = row.get(metric_key)
             if metric is None or metric == "":
                 continue
-            result[stock_id] = metric
+            # full/bare dual key — ensure both "002579.SZ" and "002579" hit
+            bare = self._stock_key(raw_id)
+            for key_candidate in {raw_id, bare}:
+                if key_candidate and key_candidate not in result:
+                    result[key_candidate] = metric
         return result
 
     def _extract_hotspot_subjects(self, report_context: dict[str, Any]) -> list[dict[str, Any]]:
@@ -403,11 +407,11 @@ class PostMarketSetupFactContextBuilder:
             if sk and sk not in keys:
                 keys.append(str(sk))
         for row in subject_stock_rows:
-            sk = self._stock_key(row.get("subject_key"))
+            sk = self._subject_key(row.get("subject_key"))
             if sk and sk not in keys:
                 keys.append(sk)
         for row in strong_hotspot_subjects:
-            sk = self._stock_key(row.get("subject_key"))
+            sk = self._subject_key(row.get("subject_key"))
             if sk and sk not in keys:
                 keys.append(sk)
         return keys
@@ -427,6 +431,10 @@ class PostMarketSetupFactContextBuilder:
             return ""
         return text.split(".")[0]
 
+    @staticmethod
+    def _subject_key(value: Any) -> str:
+        return str(value or "").strip()
+
     def _expand_active_subject_keys(self, active_mainlines: list[dict[str, Any]]) -> set[str]:
         result: set[str] = set()
         for row in active_mainlines:
@@ -440,44 +448,9 @@ class PostMarketSetupFactContextBuilder:
         return result
 
     @staticmethod
-    def _limit_up_threshold(stock_id: str, stock_name: str = "") -> float:
-        bare = str(stock_id or "").strip().upper().split(".")[0]
-        if bare.startswith(("300", "301", "688")):
-            return 19.8
-        if bare.startswith(("4", "8")):
-            return 29.8
-        if "ST" in str(stock_name or "").upper():
-            return 4.95
-        return 9.8
-
-    def _is_limit_up(self, row: dict[str, Any]) -> bool:
-        # 1. Primary: close >= limit_up_price (board-agnostic)
-        close_price = row.get("close_price")
-        limit_up_price = row.get("limit_up_price")
-        try:
-            if close_price is not None and limit_up_price is not None and float(close_price) >= float(limit_up_price) > 0:
-                return True
-        except Exception:
-            pass
-
-        # 2. Explicit limit_up flag — if False, do NOT override with pct
-        if "limit_up" in row:
-            return bool(row.get("limit_up"))
-
-        # 3. Board-aware pct threshold (last resort)
-        pct = row.get("pct_chg")
-        try:
-            if pct is not None:
-                threshold = self._limit_up_threshold(
-                    str(row.get("stock_id") or ""),
-                    str(row.get("stock_name") or ""),
-                )
-                if float(pct) >= threshold:
-                    return True
-        except Exception:
-            pass
-
-        return False
+    def _is_limit_up(row: dict[str, Any]) -> bool:
+        from stock_processing_service.domain.services.limit_up_detector import LimitUpDetector
+        return LimitUpDetector.is_limit_up(row)
 
     def _date_str(self, value: Any) -> str:
         if value is None:
