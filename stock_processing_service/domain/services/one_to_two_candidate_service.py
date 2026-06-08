@@ -46,16 +46,16 @@ class OneToTwoCandidateService:
                 if bare != stock_id:
                     subject_rows_by_stock[bare].append(row)
 
-        strong_hotspot_keys = {
-            str(r.get("subject_key"))
-            for r in ctx.strong_hotspot_subjects
-            if str(r.get("subject_key") or "").strip()
-        }
-        confirmed_hotspot_keys = {
-            str(subject_key).strip()
-            for subject_key in ctx.confirmed_hotspot_keys
-            if str(subject_key or "").strip()
-        }
+        strong_hotspot_keys: set[str] = set()
+        for r in ctx.strong_hotspot_subjects:
+            sk = self._subject_key(r.get("subject_key"))
+            if sk:
+                strong_hotspot_keys.add(sk)
+        confirmed_hotspot_keys: set[str] = set()
+        for sk in ctx.confirmed_hotspot_keys:
+            stripped = self._subject_key(sk)
+            if stripped:
+                confirmed_hotspot_keys.add(stripped)
         subject_priority_rank = dict(ctx.subject_priority_rank or {})
         subject_authenticity_by_subject = dict(ctx.subject_authenticity_by_subject or {})
         stock_subject_authenticity_by_pair = dict(ctx.stock_subject_authenticity_by_pair or {})
@@ -414,6 +414,10 @@ class OneToTwoCandidateService:
             open_price == high_price == low_price == close_price
             and (limit_up_price is None or close_price >= limit_up_price)
         )
+
+    @staticmethod
+    def _subject_key(value: Any) -> str:
+        return str(value or "").strip()
 
     def _stock_id(self, row: dict[str, Any]) -> str:
         raw = self._text(row.get("stock_id") or row.get("stock_code") or row.get("code") or "")

@@ -56,11 +56,11 @@ class PostMarketSetupFactContextBuilder:
                 self._read.get_subject_board_stats(trade_date=trade_date),
             )
         )
-        subject_market_breadth = {
-            str(r.get("subject_key") or ""): dict(r)
-            for r in subject_board_stats
-            if str(r.get("subject_key") or "").strip()
-        }
+        subject_market_breadth: dict[str, dict[str, Any]] = {}
+        for r in subject_board_stats:
+            sk = self._subject_key(r.get("subject_key"))
+            if sk:
+                subject_market_breadth[sk] = dict(r)
 
         lookback_start = trade_date - timedelta(days=30)
         stock_daily_bars = self._normalize_rows(
@@ -87,11 +87,11 @@ class PostMarketSetupFactContextBuilder:
                 self._read.get_mainline_state_daily(trade_date, list(active_subject_keys) or []),
             )
         )
-        lifecycle_by_subject = {
-            str(r.get("subject_key") or ""): dict(r)
-            for r in mainline_state_rows
-            if str(r.get("subject_key") or "").strip()
-        }
+        lifecycle_by_subject: dict[str, dict[str, Any]] = {}
+        for r in mainline_state_rows:
+            sk = self._subject_key(r.get("subject_key"))
+            if sk:
+                lifecycle_by_subject[sk] = dict(r)
 
         strong_hotspot_subjects = self._extract_hotspot_subjects(source_doc)
         confirmed_hotspot_keys = self._extract_confirmed_hotspot_keys(source_doc)
@@ -263,31 +263,31 @@ class PostMarketSetupFactContextBuilder:
                 source = str(item.get("source") or item.get("watch_status") or "").strip()
                 if source != "confirmed_mainline":
                     continue
-                subject_key = str(item.get("subject_key") or "").strip()
-                if subject_key:
-                    result.add(subject_key)
+                sk = self._subject_key(item.get("subject_key"))
+                if sk:
+                    result.add(sk)
         return result
 
     def _build_subject_rank(self, rows: list[dict[str, Any]]) -> dict[str, int]:
         rank: dict[str, int] = {}
         for idx, row in enumerate(rows):
-            subject_key = str(row.get("subject_key") or "").strip()
-            if subject_key and subject_key not in rank:
-                rank[subject_key] = idx
+            sk = self._subject_key(row.get("subject_key"))
+            if sk and sk not in rank:
+                rank[sk] = idx
         return rank
 
     def _build_confirmed_hotspot_rank(self, rows: list[dict[str, Any]]) -> dict[str, int]:
         rank: dict[str, int] = {}
         idx = 0
         for row in rows:
-            subject_key = str(row.get("subject_key") or "").strip()
-            if not subject_key:
+            sk = self._subject_key(row.get("subject_key"))
+            if not sk:
                 continue
             source = str(row.get("source") or row.get("watch_status") or "").strip()
             if source != "confirmed_mainline":
                 continue
-            if subject_key not in rank:
-                rank[subject_key] = idx
+            if sk not in rank:
+                rank[sk] = idx
                 idx += 1
         return rank
 
@@ -297,21 +297,21 @@ class PostMarketSetupFactContextBuilder:
         confirmed_idx = 0
         fallback_idx = 0
         for row in rows:
-            subject_key = str(row.get("subject_key") or "").strip()
-            if not subject_key:
+            sk = self._subject_key(row.get("subject_key"))
+            if not sk:
                 continue
-            if subject_key in confirmed_hotspot_keys:
-                if subject_key not in confirmed_rank:
-                    confirmed_rank[subject_key] = confirmed_idx
+            if sk in confirmed_hotspot_keys:
+                if sk not in confirmed_rank:
+                    confirmed_rank[sk] = confirmed_idx
                     confirmed_idx += 1
                 continue
-            if subject_key not in fallback_rank:
-                fallback_rank[subject_key] = fallback_idx
+            if sk not in fallback_rank:
+                fallback_rank[sk] = fallback_idx
                 fallback_idx += 1
         base = len(confirmed_rank) + 1000
         result = dict(confirmed_rank)
-        for subject_key, idx in fallback_rank.items():
-            result[subject_key] = base + idx
+        for sk, idx in fallback_rank.items():
+            result[sk] = base + idx
         return result
 
     async def _build_subject_authenticity(
