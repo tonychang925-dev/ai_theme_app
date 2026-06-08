@@ -33,12 +33,18 @@ class OneToTwoCandidateService:
             stock_id = self._stock_id(row)
             if stock_id:
                 bars_by_stock[stock_id].append(row)
+                bare = stock_id.split(".", 1)[0]
+                if bare != stock_id:
+                    bars_by_stock[bare].append(row)
 
         subject_rows_by_stock: dict[str, list[dict[str, Any]]] = defaultdict(list)
         for row in ctx.subject_stock_rows:
             stock_id = self._stock_id(row)
             if stock_id:
                 subject_rows_by_stock[stock_id].append(row)
+                bare = stock_id.split(".", 1)[0]
+                if bare != stock_id:
+                    subject_rows_by_stock[bare].append(row)
 
         strong_hotspot_keys = {
             str(r.get("subject_key"))
@@ -100,6 +106,10 @@ class OneToTwoCandidateService:
 
             is_confirmed = subject_key in ctx.active_subject_keys
             is_strong_hotspot = subject_key in strong_hotspot_keys
+            # Design doc §4.2: candidate source is mainline first-board fact pool;
+            # exclude non-mainline, non-hotspot subjects.
+            if not is_confirmed and not is_strong_hotspot:
+                continue
             lifecycle_row = ctx.lifecycle_by_subject.get(subject_key, {})
             board_row = ctx.subject_market_breadth.get(subject_key, {})
             pressure_row = ctx.pressure_by_stock.get(stock_id, {})
@@ -154,7 +164,7 @@ class OneToTwoCandidateService:
                     if is_strong_hotspot
                     else "pending_review"
                 ),
-                lifecycle_state=self._text(lifecycle_row.get("lifecycle_state") or lifecycle_row.get("final_cycle_state") or "unknown"),
+                lifecycle_state=self._text(lifecycle_row.get("state") or lifecycle_row.get("lifecycle_state") or lifecycle_row.get("final_cycle_state") or "unknown"),
                 market_trade_mode=self._text(ctx.market_regime.get("trade_mode") or "no_trade"),
                 allow_trade=bool(ctx.market_regime.get("allow_trade", False)),
                 is_first_limit_up=is_first_limit_up,

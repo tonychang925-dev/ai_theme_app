@@ -476,6 +476,7 @@ class OneToTwoBacktestFeatureSnapshotService:
         return sorted(d for d in dates if d is not None)
 
     async def _get_report_context(self, trade_date: date) -> dict[str, Any]:
+        result: dict[str, Any] = {}
         try:
             snapshot_loader = getattr(self._read, "get_existing_post_market_recap_snapshot", None)
             if callable(snapshot_loader):
@@ -485,20 +486,50 @@ class OneToTwoBacktestFeatureSnapshotService:
                     if isinstance(recap_doc, dict) and recap_doc:
                         inner = recap_doc.get("recap_doc")
                         if isinstance(inner, dict) and inner:
-                            return dict(inner)
-                        return dict(recap_doc)
-                    payload = snapshot.get("payload") or {}
-                    if isinstance(payload, dict):
-                        recap_doc = payload.get("recap_doc")
-                        if isinstance(recap_doc, dict) and recap_doc:
-                            return dict(recap_doc)
-                        raise RuntimeError("missing recap_doc in latest post_market_recap_snapshot")
-                raise RuntimeError("missing latest post_market_recap_snapshot")
-            raise RuntimeError("read_port missing get_existing_post_market_recap_snapshot")
+                            result = dict(inner)
+                        else:
+                            result = dict(recap_doc)
+                    else:
+                        payload = snapshot.get("payload") or {}
+                        if isinstance(payload, dict):
+                            recap_doc = payload.get("recap_doc")
+                            if isinstance(recap_doc, dict) and recap_doc:
+                                result = dict(recap_doc)
+                            else:
+                                raise RuntimeError("missing recap_doc in latest post_market_recap_snapshot")
+                        else:
+                            raise RuntimeError("missing latest post_market_recap_snapshot")
+                else:
+                    raise RuntimeError("missing latest post_market_recap_snapshot")
+            else:
+                raise RuntimeError("read_port missing get_existing_post_market_recap_snapshot")
         except Exception as exc:
             raise RuntimeError(
                 f"failed to load post_market_report_context for one_to_two snapshot: {trade_date.isoformat()}"
             ) from exc
+
+        # Inject turnover_rate from stock_abnormal_signal for RuleEngine v1.2 tiered filtering
+        if not result.get("stock_facts"):
+            try:
+                client = getattr(self._gw, "_client", None)
+                if client is not None:
+                    rows = await client.execute_query(
+                        "SELECT stock_id, turnover_rate FROM stock_abnormal_signal WHERE trade_date = $1",
+                        [trade_date],
+                    )
+                    if rows:
+                        stock_facts: list[dict[str, Any]] = []
+                        for r in rows:
+                            sid = str(r.get("stock_id") or "").strip()
+                            tr = r.get("turnover_rate")
+                            if sid and tr is not None:
+                                stock_facts.append({"stock_id": sid, "turnover_rate": tr})
+                        if stock_facts:
+                            result["stock_facts"] = stock_facts
+            except Exception:
+                pass
+
+        return result
 
     def _parse_date(self, value: Any) -> date | None:
         if value is None or value == "":
