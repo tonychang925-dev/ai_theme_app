@@ -31,11 +31,15 @@ class OneToTwoRuleConfig:
     strict_breadth_veto_reason: str = "无板块合力"
     strict_turnover_veto_reason: str = "低换手，筹码交换不足"
 
+    def __post_init__(self) -> None:
+        if self.rule_version == RULE_VERSION_V1_0:
+            raise ValueError(
+                "one_to_two_v1.0_post_market_plan is blocked for backtests; use one_to_two_v1.2_turnover_tiered or later"
+            )
+
     @classmethod
     def from_version(cls, rule_version: str | None) -> OneToTwoRuleConfig:
         version = (rule_version or DEFAULT_RULE_VERSION).strip()
-        if version == RULE_VERSION_V1_0:
-            raise ValueError("one_to_two_v1.0_post_market_plan is blocked for backtests; use one_to_two_v1.2_turnover_tiered or later")
         if version == RULE_VERSION_V1_1:
             return cls(
                 rule_version=RULE_VERSION_V1_1,
