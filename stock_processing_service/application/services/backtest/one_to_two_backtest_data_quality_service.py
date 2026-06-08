@@ -78,9 +78,9 @@ class OneToTwoBacktestDataQualityService:
         report.open_days_total = len(trade_dates)
         for current in trade_dates:
             try:
-                source_doc = await self._read.get_post_market_report_context(current)
+                source_doc = await self._load_latest_report_context(current)
             except Exception as exc:
-                report.blocking_errors.append(f"{current.isoformat()}: get_post_market_report_context: {exc}")
+                report.blocking_errors.append(f"{current.isoformat()}: get_existing_post_market_recap_snapshot: {exc}")
                 continue
 
             try:
@@ -165,6 +165,26 @@ class OneToTwoBacktestDataQualityService:
             "block_reason": report.block_reason,
             "diagnostics": dict(report.diagnostics),
         }
+
+    async def _load_latest_report_context(self, trade_date: date) -> dict[str, Any]:
+        snapshot_loader = getattr(self._read, "get_existing_post_market_recap_snapshot", None)
+        if callable(snapshot_loader):
+            snapshot = await snapshot_loader(trade_date)
+            if snapshot:
+                recap_doc = getattr(snapshot, "recap_doc", None)
+                if isinstance(recap_doc, dict) and recap_doc:
+                    inner = recap_doc.get("recap_doc")
+                    if isinstance(inner, dict) and inner:
+                        return dict(inner)
+                    return dict(recap_doc)
+                payload = snapshot.get("payload") or {}
+                if isinstance(payload, dict):
+                    recap_doc = payload.get("recap_doc")
+                    if isinstance(recap_doc, dict) and recap_doc:
+                        return dict(recap_doc)
+                    raise RuntimeError("missing recap_doc in latest post_market_recap_snapshot")
+            raise RuntimeError("missing latest post_market_recap_snapshot")
+        raise RuntimeError("read_port missing get_existing_post_market_recap_snapshot")
 
     async def _safe_get_trade_calendar(self, trade_date: date) -> Any | None:
         try:

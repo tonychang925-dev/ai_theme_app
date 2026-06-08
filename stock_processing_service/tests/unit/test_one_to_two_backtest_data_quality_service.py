@@ -38,6 +38,28 @@ class _ReadPortBase:
             "ma_pattern_by_stock": {},
         }
 
+    async def get_existing_post_market_recap_snapshot(self, trade_date: date) -> dict[str, object] | None:
+        if self.missing_market_regime:
+            return {
+                "payload": {
+                    "recap_doc": {
+                        "trading_principle": {"position_limit": 0.1},
+                        "pressure_by_stock": {},
+                        "ma_pattern_by_stock": {},
+                    }
+                }
+            }
+        return {
+            "payload": {
+                "recap_doc": {
+                    "market_regime_review": {"trade_mode": "normal", "allow_trade": True},
+                    "trading_principle": {"position_limit": 0.1},
+                    "pressure_by_stock": {},
+                    "ma_pattern_by_stock": {},
+                }
+            }
+        }
+
     async def get_active_confirmed_mainlines(self, trade_date: date, limit: int = 100) -> list[dict[str, object]]:
         return [{"subject_key": "mainline_ai", "canonical_subject_key": "mainline_ai"}]
 
@@ -130,6 +152,20 @@ async def test_one_to_two_backtest_data_quality_passes_on_complete_sources() -> 
 
 
 @pytest.mark.asyncio
+async def test_one_to_two_backtest_data_quality_prefers_latest_recap_snapshot() -> None:
+    class _LatestRecapOnly(_ReadPortBase):
+        async def get_post_market_report_context(self, trade_date: date) -> dict[str, object]:
+            raise RuntimeError("legacy report_context should not be used")
+
+    service = OneToTwoBacktestDataQualityService(_LatestRecapOnly())
+
+    report = await service.check(date(2026, 6, 4), date(2026, 6, 4))
+
+    assert report["blocked"] is False
+    assert report["generation_quality"]["blocking"] is False
+
+
+@pytest.mark.asyncio
 async def test_one_to_two_backtest_data_quality_blocks_on_missing_market_regime() -> None:
     service = OneToTwoBacktestDataQualityService(
         _ReadPortBase(missing_market_regime=True),
@@ -145,7 +181,7 @@ async def test_one_to_two_backtest_data_quality_blocks_on_missing_market_regime(
 @pytest.mark.asyncio
 async def test_one_to_two_backtest_data_quality_blocks_on_generation_source_exception() -> None:
     class _BrokenReadPort(_ReadPortBase):
-        async def get_post_market_report_context(self, trade_date: date) -> dict[str, object]:
+        async def get_existing_post_market_recap_snapshot(self, trade_date: date) -> dict[str, object] | None:
             raise RuntimeError("boom")
 
     service = OneToTwoBacktestDataQualityService(_BrokenReadPort())
@@ -153,7 +189,7 @@ async def test_one_to_two_backtest_data_quality_blocks_on_generation_source_exce
     report = await service.check(date(2026, 6, 4), date(2026, 6, 4))
 
     assert report["blocked"] is True
-    assert any("get_post_market_report_context" in err for err in report["blocking_errors"])
+    assert any("get_existing_post_market_recap_snapshot" in err for err in report["blocking_errors"])
 
 
 @pytest.mark.asyncio

@@ -56,6 +56,18 @@ class _ReadPort:
             "ma_pattern_by_stock": {},
         }
 
+    async def get_existing_post_market_recap_snapshot(self, trade_date: date) -> dict[str, object] | None:
+        return {
+            "payload": {
+                "recap_doc": {
+                    "market_regime_review": {"trade_mode": "normal", "allow_trade": True},
+                    "trading_principle": {"position_limit": 0.1},
+                    "pressure_by_stock": {},
+                    "ma_pattern_by_stock": {},
+                }
+            }
+        }
+
     async def get_stock_daily_bars_range(
         self,
         start_date: date,
@@ -81,8 +93,13 @@ class _ReadPort:
 
 
 class _BrokenReadPort(_ReadPort):
+    async def get_existing_post_market_recap_snapshot(self, trade_date: date) -> dict[str, object] | None:
+        raise RuntimeError("recap snapshot boom")
+
+
+class _RecapOnlyReadPort(_ReadPort):
     async def get_post_market_report_context(self, trade_date: date) -> dict[str, object]:
-        raise RuntimeError("report context boom")
+        raise RuntimeError("legacy report context should not be used")
 
 
 class _Engine:
@@ -295,7 +312,7 @@ async def test_one_to_two_backtest_snapshot_missing_watch_date_raises() -> None:
 
 
 @pytest.mark.asyncio
-async def test_one_to_two_backtest_snapshot_report_context_failure_raises() -> None:
+async def test_one_to_two_backtest_snapshot_recap_snapshot_failure_raises() -> None:
     gw = _Gateway()
     service = OneToTwoBacktestFeatureSnapshotService(
         _BrokenReadPort(),
@@ -311,6 +328,26 @@ async def test_one_to_two_backtest_snapshot_report_context_failure_raises() -> N
             end_date=date(2026, 6, 4),
             force_rebuild=False,
         )
+
+
+@pytest.mark.asyncio
+async def test_one_to_two_backtest_snapshot_prefers_latest_recap_snapshot() -> None:
+    gw = _Gateway()
+    service = OneToTwoBacktestFeatureSnapshotService(
+        _RecapOnlyReadPort(),
+        gw,
+        engine=_Engine(),
+        data_quality_service=_DQPass(),
+    )
+
+    report = await service.build(
+        run_id="run-001",
+        start_date=date(2026, 6, 4),
+        end_date=date(2026, 6, 4),
+        force_rebuild=False,
+    )
+
+    assert report["written"] == 2
 
 
 @pytest.mark.asyncio

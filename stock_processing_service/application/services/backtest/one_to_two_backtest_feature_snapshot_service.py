@@ -477,7 +477,24 @@ class OneToTwoBacktestFeatureSnapshotService:
 
     async def _get_report_context(self, trade_date: date) -> dict[str, Any]:
         try:
-            return dict(await self._read.get_post_market_report_context(trade_date) or {})
+            snapshot_loader = getattr(self._read, "get_existing_post_market_recap_snapshot", None)
+            if callable(snapshot_loader):
+                snapshot = await snapshot_loader(trade_date)
+                if snapshot:
+                    recap_doc = getattr(snapshot, "recap_doc", None)
+                    if isinstance(recap_doc, dict) and recap_doc:
+                        inner = recap_doc.get("recap_doc")
+                        if isinstance(inner, dict) and inner:
+                            return dict(inner)
+                        return dict(recap_doc)
+                    payload = snapshot.get("payload") or {}
+                    if isinstance(payload, dict):
+                        recap_doc = payload.get("recap_doc")
+                        if isinstance(recap_doc, dict) and recap_doc:
+                            return dict(recap_doc)
+                        raise RuntimeError("missing recap_doc in latest post_market_recap_snapshot")
+                raise RuntimeError("missing latest post_market_recap_snapshot")
+            raise RuntimeError("read_port missing get_existing_post_market_recap_snapshot")
         except Exception as exc:
             raise RuntimeError(
                 f"failed to load post_market_report_context for one_to_two snapshot: {trade_date.isoformat()}"
