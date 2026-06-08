@@ -339,11 +339,11 @@ class GoldenSpiderPatternService:
             return False
         return latest > ma5 > ma10 > ma20
 
-    _DOWNTREAD_STATES = {"bearish_trend", "downtrend", "downtrend_rebound", "weak_downtrend"}
+    _DOWNTREND_STATES = {"bearish_trend", "downtrend", "downtrend_rebound", "weak_downtrend", "weakening_trend"}
 
     @classmethod
     def _is_downtrend_trend_state(cls, trend_state: str) -> bool:
-        return str(trend_state or "").strip().lower() in cls._DOWNTREAD_STATES
+        return str(trend_state or "").strip().lower() in cls._DOWNTREND_STATES
 
     @classmethod
     def _technical_reason(

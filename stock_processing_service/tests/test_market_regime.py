@@ -61,7 +61,7 @@ class TestKlineTechnicalAnalyzer:
             bars.append({"close": c, "high": c+20, "low": c-20, "volume": v, "amount": v*1000})
         r = KlineTechnicalAnalyzer().analyze(bars)
         # After sharp decline + weak bounce, trend should be conservative
-        assert r["trend"]["trend_state"] in {"downtrend_rebound", "bearish_trend", "neutral_box"}
+        assert r["trend"]["trend_state"] in {"downtrend_rebound", "bearish_trend", "neutral_box", "weakening_trend"}
 
     def test_bearish_trend(self):
         r = KlineTechnicalAnalyzer().analyze(_make_kline(60, 3300, "down"))
