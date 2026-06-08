@@ -11,7 +11,7 @@ from stock_processing_service.application.services.one_to_two_setup_plan_engine 
     OneToTwoSetupPlanEngine,
 )
 from stock_processing_service.application.jobs.build_post_market_recap_job import BuildPostMarketRecapJob
-from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoFeatures
+from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoFeatures, RuleResult, ScoreResult
 from stock_processing_service.contracts.dto.post_market_setup_context_dto import (
     PostMarketSetupFactContext,
     SetupFactContextBuildError,
@@ -1001,3 +1001,73 @@ def test_one_to_two_first_board_trace_persisted_to_snapshot_payload() -> None:
     assert result.candidate_features[0]["source_trace_json"]["first_board_type"] == "chain_first_board"
     assert result.candidate_features[0]["source_trace_json"]["first_board_quality_tags"] == ["relaunch_first_board"]
     assert result.candidate_features[0]["source_trace_json"]["first_board_trace"]["previous_trade_date"] == "2026-05-06"
+
+
+# ── Stage 2: score_policy + ranking tests ──
+
+def test_score_policy_final_score_below_80_caps_focus() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    f = _versioned_feature(turnover_rate=Decimal("0.18"), same_subject_limit_count=3, same_subject_strong_count=7)
+    rule = RuleResult(decision="focus", veto_reasons=[], risk_flags=[])
+    score = ScoreResult(final_score=Decimal("72.00"), watch_level="B", score_detail={
+        "technical_structure": "70", "theme_authenticity": "65",
+        "board_breadth": "75", "first_board_quality": "80", "risk_control": "70",
+    })
+    result = engine._apply_score_policy(f, rule, score)
+    assert result.decision == "observe_only"
+    assert any("综合评分" in rf for rf in result.risk_flags)
+
+
+def test_score_policy_technical_structure_below_55_caps_focus() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    f = _versioned_feature(turnover_rate=Decimal("0.18"), same_subject_limit_count=3, same_subject_strong_count=7)
+    rule = RuleResult(decision="focus", veto_reasons=[], risk_flags=[])
+    score = ScoreResult(final_score=Decimal("85.00"), watch_level="A", score_detail={
+        "technical_structure": "48", "theme_authenticity": "90",
+        "board_breadth": "90", "first_board_quality": "90", "risk_control": "90",
+    })
+    result = engine._apply_score_policy(f, rule, score)
+    assert result.decision == "observe_only"
+    assert any("技术形态评分" in rf for rf in result.risk_flags)
+
+
+def test_score_policy_passes_when_both_scores_ok() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    f = _versioned_feature(turnover_rate=Decimal("0.18"), same_subject_limit_count=3, same_subject_strong_count=7)
+    rule = RuleResult(decision="focus", veto_reasons=[], risk_flags=[])
+    score = ScoreResult(final_score=Decimal("86.00"), watch_level="A", score_detail={
+        "technical_structure": "68", "theme_authenticity": "90",
+        "board_breadth": "90", "first_board_quality": "90", "risk_control": "90",
+    })
+    result = engine._apply_score_policy(f, rule, score)
+    assert result.decision == "focus"
+
+
+def test_score_policy_does_not_downgrade_observe_only() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    f = _versioned_feature(turnover_rate=Decimal("0.18"), same_subject_limit_count=3, same_subject_strong_count=7)
+    rule = RuleResult(decision="observe_only", veto_reasons=[], risk_flags=["no_trade"])
+    score = ScoreResult(final_score=Decimal("92.00"), watch_level="A", score_detail={
+        "technical_structure": "80", "theme_authenticity": "90",
+        "board_breadth": "90", "first_board_quality": "90", "risk_control": "90",
+    })
+    result = engine._apply_score_policy(f, rule, score)
+    assert result.decision == "observe_only"
+
+
+def test_ranking_orders_by_score_and_technical() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    engine.candidate_service.build_fact_pool = lambda ctx: [
+        _versioned_feature(turnover_rate=Decimal("0.12"), same_subject_limit_count=5, same_subject_strong_count=8, subject_key="s1"),
+        _versioned_feature(turnover_rate=Decimal("0.09"), same_subject_limit_count=3, same_subject_strong_count=4, subject_key="s2"),
+        _versioned_feature(turnover_rate=Decimal("0.15"), same_subject_limit_count=6, same_subject_strong_count=10, subject_key="s3"),
+    ]
+    result = engine.build_from_context(_setup_context())
+    items = result.items or []
+    assert len(items) >= 1
+    for item in items:
+        assert "rank_no" in item
+        assert "rank_reason" in item
+        assert isinstance(item["rank_no"], int)
+    # All items should be observe_only (score < 80)
+    assert all(item["decision"] == "observe_only" for item in items)
