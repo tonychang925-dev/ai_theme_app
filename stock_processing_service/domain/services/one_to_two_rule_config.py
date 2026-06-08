@@ -4,12 +4,17 @@ from dataclasses import dataclass
 from decimal import Decimal
 
 
-RULE_VERSION_V1_0 = "one_to_two_v1.0_post_market_plan"
 RULE_VERSION_V1_1 = "one_to_two_v1.1_breadth_strong_count"
 RULE_VERSION_V1_2 = "one_to_two_v1.2_turnover_tiered"
 RULE_VERSION_V1_3 = "one_to_two_v1.3_breadth_turnover_combined"
 RULE_VERSION_V1_4 = "one_to_two_v1.4_relaunch_first_board"
 DEFAULT_RULE_VERSION = RULE_VERSION_V1_2
+SUPPORTED_RULE_VERSIONS = (
+    RULE_VERSION_V1_1,
+    RULE_VERSION_V1_2,
+    RULE_VERSION_V1_3,
+    RULE_VERSION_V1_4,
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -32,9 +37,9 @@ class OneToTwoRuleConfig:
     strict_turnover_veto_reason: str = "低换手，筹码交换不足"
 
     def __post_init__(self) -> None:
-        if self.rule_version == RULE_VERSION_V1_0:
+        if self.rule_version not in SUPPORTED_RULE_VERSIONS:
             raise ValueError(
-                "one_to_two_v1.0_post_market_plan is blocked for backtests; use one_to_two_v1.2_turnover_tiered or later"
+                f"unsupported OneToTwo rule version: {self.rule_version}"
             )
 
     @classmethod

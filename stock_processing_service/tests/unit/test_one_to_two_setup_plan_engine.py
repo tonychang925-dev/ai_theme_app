@@ -21,7 +21,6 @@ from stock_processing_service.contracts.dto.trade_calendar_dto import TradeCalen
 from stock_processing_service.domain.services.one_to_two_rule_config import (
     DEFAULT_RULE_VERSION,
     OneToTwoRuleConfig,
-    RULE_VERSION_V1_0,
     RULE_VERSION_V1_1,
     RULE_VERSION_V1_2,
     RULE_VERSION_V1_3,
@@ -937,8 +936,8 @@ def test_one_to_two_rule_config_default_uses_chain_first_board() -> None:
 
 
 def test_one_to_two_rule_config_blocks_v1_0_direct_instantiation() -> None:
-    with pytest.raises(ValueError, match="blocked for backtests"):
-        OneToTwoRuleConfig(rule_version=RULE_VERSION_V1_0)
+    with pytest.raises(ValueError, match="unsupported OneToTwo rule version"):
+        OneToTwoRuleConfig(rule_version="legacy_blocked_rule_version")
 
 
 @pytest.mark.parametrize(
