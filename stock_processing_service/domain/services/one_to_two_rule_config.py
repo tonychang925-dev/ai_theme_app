@@ -56,7 +56,7 @@ class OneToTwoRuleConfig:
                 rule_version=RULE_VERSION_V1_2,
                 allowed_first_board_types=("chain_first_board",),
                 min_focus_turnover=Decimal("0.08"),
-                min_reject_turnover=Decimal("0.03"),
+                min_reject_turnover=Decimal("0.05"),
             )
         if version == RULE_VERSION_V1_3:
             return cls(

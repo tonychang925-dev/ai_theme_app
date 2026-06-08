@@ -523,7 +523,9 @@ class OneToTwoBacktestFeatureSnapshotService:
                             sid = str(r.get("stock_id") or "").strip()
                             tr = r.get("turnover_rate")
                             if sid and tr is not None:
-                                stock_facts.append({"stock_id": sid, "turnover_rate": tr})
+                                # stock_abnormal_signal stores percentage (e.g. 9.2 = 9.2%);
+                                # OneToTwo rule config uses fraction (0.092 = 9.2%)
+                                stock_facts.append({"stock_id": sid, "turnover_rate": float(tr) / 100})
                         if stock_facts:
                             result["stock_facts"] = stock_facts
             except Exception:
