@@ -64,8 +64,7 @@ export function StrongStockWatchDetailPage() {
             <div className="strong-watch-detail-grid">
               <article className="collection-metric-card">
                 <span>股票</span>
-                <strong>{latest.stock_name}</strong>
-                <p className="workspace-note">{latest.stock_id}</p>
+                <strong>{latest.stock_name || latest.stock_id || "--"}</strong>
               </article>
               <article className="collection-metric-card">
                 <span>题材</span>

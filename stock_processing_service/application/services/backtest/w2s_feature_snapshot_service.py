@@ -52,6 +52,7 @@ class W2SFeatureSnapshotService:
         self,
         *,
         run_id: str,
+        strategy_id: str = "weak_to_strong",
         strategy_version: str,
         start_date: date,
         end_date: date,
@@ -131,6 +132,7 @@ class W2SFeatureSnapshotService:
                     mainline_states=mainline_states,
                     bars=bars,
                     run_id=run_id,
+                    strategy_id=strategy_id,
                     strategy_version=strategy_version,
                 )
                 snapshots.append(snapshot)
@@ -160,6 +162,7 @@ class W2SFeatureSnapshotService:
         mainline_states: dict[str, dict[str, Any]],
         bars: dict[str, Any],
         run_id: str,
+        strategy_id: str,
         strategy_version: str,
     ) -> dict[str, Any]:
         stock_id = str(candidate.get("stock_id") or "")
@@ -349,6 +352,7 @@ class W2SFeatureSnapshotService:
         return {
             "snapshot_id": str(uuid.uuid4()),
             "run_id": run_id,
+            "strategy_id": strategy_id,
             "strategy_version": strategy_version,
             "candidate_trade_date": candidate_trade_date,
             "confirm_trade_date": confirm_trade_date,
@@ -470,10 +474,12 @@ class W2SFeatureSnapshotService:
         written = 0
         for s in snapshots:
             try:
+                confirm_trade_date = s.get("confirm_trade_date") or date(1900, 1, 1)
+                subject_key = str(s.get("subject_key") or "")
                 await self._gw._client.execute_query(
                     """
                     INSERT INTO w2s_backtest_feature_snapshot (
-                        snapshot_id, run_id, strategy_version,
+                        snapshot_id, run_id, strategy_id, strategy_version,
                         candidate_trade_date, confirm_trade_date,
                         stock_id, stock_name, subject_key, theme_name,
                         candidate_id, pool_entry_type, candidate_score, candidate_type, weak_type,
@@ -489,15 +495,16 @@ class W2SFeatureSnapshotService:
                         raw_feature_json, derived_feature_json, source_trace,
                         confirm_source, confirm_level_detail, weak_type_quality
                     ) VALUES (
-                        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
-                        $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
-                        $21, $22, $23, $24, $25, $26, $27, $28, $29, $30,
-                        $31, $32, $33, $34, $35, $36, $37, $38, $39,
-                        $40, $41, $42, $43, $44, $45
+                        $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11,
+                        $12, $13, $14, $15, $16, $17, $18, $19, $20, $21,
+                        $22, $23, $24, $25, $26, $27, $28, $29, $30, $31,
+                        $32, $33, $34, $35, $36, $37, $38, $39, $40, $41,
+                        $42, $43, $44, $45, $46
                     )
-                    ON CONFLICT (run_id, strategy_version, candidate_trade_date, confirm_trade_date, stock_id)
+                    ON CONFLICT (run_id, strategy_id, strategy_version, candidate_trade_date, confirm_trade_date, stock_id, subject_key)
                     DO UPDATE SET
                         snapshot_id = EXCLUDED.snapshot_id,
+                        strategy_id = EXCLUDED.strategy_id,
                         pool_entry_type = EXCLUDED.pool_entry_type,
                         candidate_score = EXCLUDED.candidate_score,
                         candidate_type = EXCLUDED.candidate_type,
@@ -535,9 +542,9 @@ class W2SFeatureSnapshotService:
                         source_trace = EXCLUDED.source_trace
                     """,
                     [
-                        s["snapshot_id"], s["run_id"], s["strategy_version"],
-                        s["candidate_trade_date"], s["confirm_trade_date"],
-                        s["stock_id"], s["stock_name"], s["subject_key"], s["theme_name"],
+                        s["snapshot_id"], s["run_id"], s["strategy_id"], s["strategy_version"],
+                        s["candidate_trade_date"], confirm_trade_date,
+                        s["stock_id"], s["stock_name"], subject_key, s["theme_name"],
                         s["candidate_id"], s["pool_entry_type"], s["candidate_score"], s["candidate_type"], s["weak_type"],
                         s["support_type"], s["support_strength"],
                         s["is_leader"], s["rank_order"], s["recent_limit_up_count"], s["prior7_limitup_days"], s["prior7_strong_days"],

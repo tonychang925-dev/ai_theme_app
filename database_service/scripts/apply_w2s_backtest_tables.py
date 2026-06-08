@@ -49,15 +49,16 @@ DDL_STATEMENTS = [
     CREATE TABLE IF NOT EXISTS w2s_backtest_feature_snapshot (
         snapshot_id TEXT PRIMARY KEY,
         run_id TEXT NOT NULL REFERENCES w2s_backtest_run(run_id),
+        strategy_id TEXT NOT NULL DEFAULT 'weak_to_strong',
         strategy_version TEXT NOT NULL,
 
         candidate_trade_date DATE NOT NULL,
-        confirm_trade_date DATE,
+        confirm_trade_date DATE NOT NULL DEFAULT DATE '1900-01-01',
 
         stock_id VARCHAR(32) NOT NULL,
         stock_name VARCHAR(64),
 
-        subject_key VARCHAR(64),
+        subject_key VARCHAR(64) NOT NULL DEFAULT '',
         theme_name VARCHAR(128),
 
         candidate_id BIGINT,
@@ -101,9 +102,7 @@ DDL_STATEMENTS = [
         derived_feature_json JSONB NOT NULL DEFAULT '{}'::jsonb,
 
         source_trace JSONB NOT NULL DEFAULT '{}'::jsonb,
-        created_at TIMESTAMP DEFAULT now(),
-
-        UNIQUE(run_id, strategy_version, candidate_trade_date, confirm_trade_date, stock_id)
+        created_at TIMESTAMP DEFAULT now()
     );
     """,
 
@@ -165,6 +164,16 @@ DDL_STATEMENTS = [
 
         buy_ref_date DATE,
         buy_ref_price NUMERIC(18,4),
+
+        next_day_touch_limit_up BOOLEAN,
+        next_day_sealed_limit_up BOOLEAN,
+        next_day_open_pct NUMERIC(12,6),
+        next_day_high_pct NUMERIC(12,6),
+        next_day_close_pct NUMERIC(12,6),
+        next_day_open_board_count INTEGER,
+        next_day_max_drawdown NUMERIC(12,6),
+        outcome_label TEXT,
+        outcome_source TEXT,
 
         next_1d_return NUMERIC(12,6),
         next_2d_return NUMERIC(12,6),
@@ -231,6 +240,67 @@ DDL_STATEMENTS = [
     CREATE INDEX IF NOT EXISTS idx_w2s_bfs_date ON w2s_backtest_feature_snapshot(candidate_trade_date);
     """,
     """
+    ALTER TABLE w2s_backtest_feature_snapshot
+    ADD COLUMN IF NOT EXISTS strategy_id TEXT NOT NULL DEFAULT 'weak_to_strong';
+    """,
+    """
+    UPDATE w2s_backtest_feature_snapshot
+    SET subject_key = ''
+    WHERE subject_key IS NULL;
+    """,
+    """
+    ALTER TABLE w2s_backtest_feature_snapshot
+    ALTER COLUMN subject_key SET DEFAULT '';
+    """,
+    """
+    ALTER TABLE w2s_backtest_feature_snapshot
+    ALTER COLUMN subject_key SET NOT NULL;
+    """,
+    """
+    UPDATE w2s_backtest_feature_snapshot
+    SET confirm_trade_date = DATE '1900-01-01'
+    WHERE confirm_trade_date IS NULL;
+    """,
+    """
+    ALTER TABLE w2s_backtest_feature_snapshot
+    ALTER COLUMN confirm_trade_date SET DEFAULT DATE '1900-01-01';
+    """,
+    """
+    ALTER TABLE w2s_backtest_feature_snapshot
+    ALTER COLUMN confirm_trade_date SET NOT NULL;
+    """,
+    """
+    DO $$
+    DECLARE conname text;
+    BEGIN
+      SELECT c.conname
+      INTO conname
+      FROM pg_constraint c
+      JOIN pg_class t ON c.conrelid = t.oid
+      WHERE t.relname = 'w2s_backtest_feature_snapshot'
+        AND c.contype = 'u'
+        AND pg_get_constraintdef(c.oid) = 'UNIQUE (run_id, strategy_version, candidate_trade_date, confirm_trade_date, stock_id)';
+      IF conname IS NOT NULL THEN
+        EXECUTE format('ALTER TABLE w2s_backtest_feature_snapshot DROP CONSTRAINT %I', conname);
+      END IF;
+    END $$;
+    """,
+    """
+    DROP INDEX IF EXISTS uniq_backtest_snapshot_strategy_stock_subject;
+    """,
+    """
+    CREATE UNIQUE INDEX IF NOT EXISTS uniq_backtest_snapshot_strategy_stock_subject
+    ON w2s_backtest_feature_snapshot (
+        run_id,
+        strategy_id,
+        strategy_version,
+        candidate_trade_date,
+        confirm_trade_date,
+        stock_id,
+        subject_key
+    );
+    """,
+    """
     CREATE INDEX IF NOT EXISTS idx_ssd_run ON strategy_signal_daily(run_id);
     """,
     """
@@ -238,6 +308,10 @@ DDL_STATEMENTS = [
     """,
     """
     CREATE INDEX IF NOT EXISTS idx_ssv_run ON strategy_signal_validation(run_id);
+    """,
+    """
+    ALTER TABLE strategy_signal_validation
+    ADD COLUMN IF NOT EXISTS outcome_source TEXT;
     """,
     """
     CREATE INDEX IF NOT EXISTS idx_w2s_vs_run ON w2s_validation_summary(run_id);

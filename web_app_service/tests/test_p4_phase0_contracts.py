@@ -307,7 +307,7 @@ def test_workspace_market_validation_contract_shape(monkeypatch):
 
     resp = client.get(
         "/api/v2/workspace/market-validation",
-        params={"trade_date": "2026-04-29", "stock_id": "600152.SH"},
+        params={"trade_date": "2026-04-30", "stock_id": "600152.SH"},
     )
     assert resp.status_code == 200
     data = resp.json()
@@ -387,13 +387,34 @@ def test_workspace_market_validation_observe_when_only_strong_watch(monkeypatch)
     monkeypatch.setattr(routes.client, "get_w2s_candidates", _fake_w2s)
     resp = client.get(
         "/api/v2/workspace/market-validation",
-        params={"trade_date": "2026-04-29"},
+        params={"trade_date": "2026-04-28"},
     )
     assert resp.status_code == 200
     data = resp.json()
     assert data["candidate_level"] == "observe"
     assert data["support_type"] == "ma_support"
     assert data["support_score"] == 66.0
+
+
+def test_workspace_market_validation_reports_empty_strong_watch(monkeypatch):
+    async def _fake_strong_watch(trade_date):
+        return type("R", (), {"model_dump": lambda self: {"stocks": []}})()
+
+    async def _fake_w2s(trade_date):
+        return type("R", (), {"model_dump": lambda self: {"candidates": []}})()
+
+    monkeypatch.setattr(routes.client, "get_strong_watch", _fake_strong_watch)
+    monkeypatch.setattr(routes.client, "get_w2s_candidates", _fake_w2s)
+
+    resp = client.get(
+        "/api/v2/workspace/market-validation",
+        params={"trade_date": "2026-04-27"},
+    )
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["strong_watch_count"] == 0
+    assert data["strong_watch_source"] == "strong_watch_api"
+    assert data["diagnostics"]["error_code"] == "STRONG_WATCH_API_EMPTY"
 
 
 def test_workspace_intel_context_contract_shape(monkeypatch):

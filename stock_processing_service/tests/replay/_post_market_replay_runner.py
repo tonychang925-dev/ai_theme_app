@@ -279,8 +279,13 @@ async def run_post_market_replay(
     )
 
     recap_doc = {}
-    if write_port.recap_docs:
-        recap_doc = write_port.recap_docs[0].recap_doc
+    recap_docs = getattr(write_port, "recap_docs", None)
+    if recap_docs:
+        recap_doc = recap_docs[0].recap_doc
+    else:
+        snapshot_row = await gw._client.get_existing_post_market_recap_snapshot(trade_date)
+        if snapshot_row is not None:
+            recap_doc = getattr(snapshot_row, "recap_doc", {}) or {}
 
     target_stock_id = _TARGET_MAP.get(sample_name, "")
     target_diagnostics = {}

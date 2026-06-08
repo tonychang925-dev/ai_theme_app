@@ -1999,8 +1999,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     ) -> List[Dict[str, Any]]:
         """读取 subject_stock_daily_snapshot 区间K线证据（设计文档 §13.2 冻结对象）。"""
         sql = """
-        SELECT DISTINCT ON (trade_date, stock_id)
-            trade_date, stock_id, stock_name,
+        SELECT DISTINCT ON (trade_date, stock_id, subject_key)
+            trade_date, stock_id, stock_name, subject_key,
             open_price, high_price, low_price, close_price, pre_close, pct_chg,
             volume, amount,
             COALESCE(limit_up, FALSE) AS limit_up,
@@ -2011,7 +2011,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           AND trade_date <= $2::date
           AND ($3::text[] IS NULL OR stock_id = ANY($3::text[]))
           AND ($4::text[] IS NULL OR subject_key = ANY($4::text[]))
-        ORDER BY trade_date ASC, stock_id, created_at DESC NULLS LAST
+        ORDER BY trade_date ASC, stock_id, subject_key, created_at DESC NULLS LAST
         """
         async with self.pool.acquire() as conn:
             rows = await conn.fetch(
@@ -2799,15 +2799,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
     async def get_strong_watch_seed_rows(
         self, trade_date, lookback_days: int = 7
     ) -> List[Dict[str, Any]]:
-        """强势股观察池种子候选查询 — 复刻旧链 StrongStockTrackingService._fetch_seed_rows SQL。
+        """强势股观察池种子候选查询。
 
-        完整复刻旧链 4-CTE 查询:
-          1. recent_trade_days — 最近 N 个交易日
-          2. recent — 7日窗口 stock+subject 聚合
-          3. subject_strength — 当日板块强度
-          4. eligible — 双路径过滤 + identity/cycle/state JOIN
-          5. ranked — cond_gene/cond_volume/cond_structure + ROW_NUMBER 去重
-          最终: rn=1 AND (recent_limit_up>=2 OR (>=1 AND 3条件>=2))
+        两条来源：
+          1. 普通强势股路径：沿用主线/周期/强度门槛
+          2. 2 连板独立龙头：只要满足最近窗口内连续两日涨停，直接入池
         """
         sql = """
         WITH recent_trade_days AS (
@@ -2828,6 +2824,24 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             SELECT DISTINCT stock_id, subject_key
             FROM theme_leader_candidate
             WHERE trade_date = $1::date
+        ),
+        recent_two_trade_days AS (
+            SELECT trade_date
+            FROM (
+                SELECT DISTINCT trade_date
+                FROM stock_daily_snapshot
+                WHERE trade_date <= $1::date
+                ORDER BY trade_date DESC
+                LIMIT 2
+            ) x
+        ),
+        two_board_stocks AS (
+            -- 独立龙头检测：截至当日最近两个交易日都涨停
+            SELECT DISTINCT split_part(stock_id, '.', 1) AS stock_code
+            FROM stock_daily_snapshot
+            WHERE trade_date IN (SELECT trade_date FROM recent_two_trade_days)
+            GROUP BY split_part(stock_id, '.', 1)
+            HAVING COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(pct_chg, 0) >= 9.8) = 2
         ),
         recent AS (
             SELECT
@@ -2854,6 +2868,29 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             WHERE s.trade_date IN (SELECT trade_date FROM recent_trade_days)
             GROUP BY s.stock_id, s.subject_key
         ),
+        two_board_recent AS (
+            SELECT
+                s.stock_id,
+                MAX(s.stock_name) AS stock_name,
+                '__independent__'::text AS subject_key,
+                MAX(s.stock_name) AS theme_name,
+                COUNT(DISTINCT s.trade_date) AS total_trade_days,
+                COUNT(DISTINCT s.trade_date) FILTER (WHERE COALESCE(s.pct_chg, 0) >= 9.8) AS recent_limit_up_count,
+                0 AS is_leader_flag,
+                999 AS best_rank,
+                0 AS current_flag_today,
+                0 AS subject_limit_up_count,
+                0 AS subject_strong_count,
+                1 AS cond_gene,
+                1 AS cond_volume,
+                1 AS cond_structure,
+                0 AS source_priority
+            FROM stock_daily_snapshot s
+            JOIN two_board_stocks tb
+              ON tb.stock_code = split_part(s.stock_id, '.', 1)
+            WHERE s.trade_date IN (SELECT trade_date FROM recent_trade_days)
+            GROUP BY s.stock_id
+        ),
         subject_strength AS (
             SELECT
                 subject_key,
@@ -2867,25 +2904,6 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             WHERE trade_date = $1::date
               AND subject_key IN (SELECT DISTINCT subject_key FROM candidate_scope)
             GROUP BY subject_key
-        ),
-        consecutive_boards AS (
-            -- 独立龙头检测：7日窗口内存在连续两个交易日涨停（先按日去重）
-            SELECT DISTINCT stock_id, TRUE AS has_two_board
-            FROM (
-                SELECT stock_id, trade_date,
-                       COALESCE(MAX(limit_up::int)::bool, FALSE) AS limit_up,
-                       LAG(COALESCE(MAX(limit_up::int)::bool, FALSE)) OVER (
-                           PARTITION BY stock_id ORDER BY trade_date
-                       ) AS prev_limit_up
-                FROM subject_stock_daily_snapshot
-                WHERE trade_date IN (SELECT trade_date FROM recent_trade_days)
-                  AND split_part(stock_id, '.', 1) IN (
-                      SELECT DISTINCT split_part(stock_id, '.', 1)
-                      FROM candidate_scope
-                  )
-                GROUP BY stock_id, trade_date
-            ) t
-            WHERE limit_up = TRUE AND prev_limit_up = TRUE
         ),
         eligible AS (
             SELECT
@@ -2906,7 +2924,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) AS mainline_strength_score,
                 COALESCE(ss.subject_limit_up_count, 0) AS subject_limit_up_count,
                 COALESCE(ss.subject_strong_count, 0) AS subject_strong_count,
-                COALESCE(cb.has_two_board, FALSE) AS has_two_board
+                COALESCE(tb.stock_code IS NOT NULL, FALSE) AS has_two_board,
+                1 AS source_priority
             FROM recent r
             LEFT JOIN theme_mainline_identity_registry mr
               ON mr.subject_key = r.subject_key
@@ -2920,8 +2939,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
               ON vtb.subject_key = r.subject_key
             LEFT JOIN subject_strength ss
               ON ss.subject_key = r.subject_key
-            LEFT JOIN consecutive_boards cb
-              ON split_part(cb.stock_id, '.', 1) = split_part(r.stock_id, '.', 1)
+            LEFT JOIN two_board_stocks tb
+              ON tb.stock_code = split_part(r.stock_id, '.', 1)
             WHERE (
                 -- 路径1: 强股决策池 — 旧链已确认 + 周期存续 + 强度门槛
                 (
@@ -2935,8 +2954,34 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     )
                 )
                 -- 路径2: 连板（原逻辑不变）
-                OR COALESCE(cb.has_two_board, FALSE) = TRUE
+                OR COALESCE(tb.stock_code IS NOT NULL, FALSE) = TRUE
             )
+        ),
+        independent_eligible AS (
+            SELECT
+                i.stock_id,
+                i.stock_name,
+                i.subject_key,
+                i.total_trade_days,
+                i.recent_limit_up_count,
+                i.is_leader_flag,
+                i.best_rank,
+                i.current_flag_today,
+                i.theme_name,
+                FALSE AS is_main_theme,
+                'observed' AS identity_status,
+                FALSE AS final_mainline_alive,
+                0 AS mainline_strength_score,
+                0 AS subject_limit_up_count,
+                0 AS subject_strong_count,
+                TRUE AS has_two_board,
+                0 AS source_priority
+            FROM two_board_recent i
+        ),
+        eligible_all AS (
+            SELECT * FROM eligible
+            UNION ALL
+            SELECT * FROM independent_eligible
         ),
         ranked AS (
             SELECT
@@ -2951,6 +2996,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 ROW_NUMBER() OVER (
                     PARTITION BY e.stock_id
                     ORDER BY
+                        e.source_priority ASC,
                         e.mainline_strength_score DESC,
                         e.subject_limit_up_count DESC,
                         e.subject_strong_count DESC,
@@ -2958,7 +3004,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                         e.is_leader_flag DESC,
                         e.best_rank ASC
                 ) AS rn
-            FROM eligible e
+            FROM eligible_all e
         )
         SELECT *
         FROM ranked
@@ -4261,7 +4307,20 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             SELECT
                 p.trade_date::text AS trade_date,
                 p.stock_id,
-                p.stock_name,
+                CASE
+                    WHEN p.stock_name ~ '^[0-9]{6}(\\.[A-Z]{2})?$'
+                    THEN COALESCE(NULLIF(BTRIM(s.stock_name), ''), p.stock_name)
+                    ELSE COALESCE(NULLIF(BTRIM(p.stock_name), ''), NULLIF(BTRIM(s.stock_name), ''), p.stock_id)
+                END AS stock_name,
+                MIN(p.trade_date) OVER (
+                    PARTITION BY split_part(p.stock_id, '.', 1)
+                )::text AS watch_start_date,
+                MAX(p.trade_date) OVER (
+                    PARTITION BY split_part(p.stock_id, '.', 1)
+                )::text AS last_trade_date,
+                COUNT(*) OVER (
+                    PARTITION BY split_part(p.stock_id, '.', 1)
+                )::int AS watch_window_days,
                 p.subject_key,
                 COALESCE(NULLIF(BTRIM(p.theme_name), ''), p.subject_key) AS theme_name,
                 p.watch_status,
@@ -4286,10 +4345,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     ORDER BY p.trade_date DESC, p.watch_score DESC, p.watch_priority DESC
                 ) AS rn
             FROM strong_stock_watch_history p
-            LEFT JOIN subject_stock_daily_snapshot s
-              ON s.trade_date = p.trade_date
-             AND split_part(s.stock_id, '.', 1) = split_part(p.stock_id, '.', 1)
-             AND s.subject_key = p.subject_key
+            LEFT JOIN LATERAL (
+                SELECT
+                    ss.stock_name,
+                    ss.pct_chg,
+                    ss.raw_json
+                FROM subject_stock_daily_snapshot ss
+                WHERE ss.trade_date = p.trade_date
+                  AND split_part(ss.stock_id, '.', 1) = split_part(p.stock_id, '.', 1)
+                ORDER BY
+                    CASE WHEN ss.subject_key = p.subject_key THEN 0 ELSE 1 END,
+                    COALESCE(ss.is_leader, FALSE) DESC,
+                    COALESCE(ss.rank_order, 9999) ASC,
+                    ss.subject_key ASC
+                LIMIT 1
+            ) s ON TRUE
             WHERE p.trade_date IN (SELECT trade_date FROM selected_trade_dates)
               AND ($3::boolean OR p.watch_status IN ('active', 'weakening'))
               AND ($4::text IS NULL OR split_part(p.stock_id, '.', 1) = split_part($4::text, '.', 1))
@@ -5356,6 +5426,486 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         except Exception as e:
             logger.warning(f"写入 post_market_recap_snapshot 失败: {e}")
             return 0
+
+    async def upsert_post_market_setup_plan_rows(self, rows: list[dict[str, Any]]) -> int:
+        """UPSERT post_market_setup_plan rows."""
+        if not rows:
+            return 0
+        await self._ensure_one_to_two_setup_tables()
+        sql = """
+        INSERT INTO post_market_setup_plan (
+            trade_date, watch_date, setup_type, setup_version,
+            mainline_id, mainline_name, subject_key, subject_name,
+            stock_id, stock_name, lifecycle_state, market_trade_mode,
+            allow_trade, position_limit, decision, plan_status,
+            watch_level, final_score, summary, evidence_rules,
+            feature_json, risk_flags, trigger_plan, invalidation_plan,
+            exit_plan, diagnostics, source_trace_json
+        ) VALUES (
+            $1::date, $2::date, $3, $4,
+            $5, $6, $7, $8,
+            $9, $10, $11, $12,
+            $13::boolean, $14::numeric, $15, $16,
+            $17, $18::numeric, $19, $20::jsonb,
+            $21::jsonb, $22::jsonb, $23::jsonb, $24::jsonb,
+            $25::jsonb, $26::jsonb, $27::jsonb
+        )
+        ON CONFLICT (trade_date, watch_date, setup_type, stock_id, subject_key) DO UPDATE SET
+          setup_version = EXCLUDED.setup_version,
+          mainline_id = EXCLUDED.mainline_id,
+          mainline_name = EXCLUDED.mainline_name,
+          subject_name = EXCLUDED.subject_name,
+          stock_name = EXCLUDED.stock_name,
+          lifecycle_state = EXCLUDED.lifecycle_state,
+          market_trade_mode = EXCLUDED.market_trade_mode,
+          allow_trade = EXCLUDED.allow_trade,
+          position_limit = EXCLUDED.position_limit,
+          decision = EXCLUDED.decision,
+          plan_status = EXCLUDED.plan_status,
+          watch_level = EXCLUDED.watch_level,
+          final_score = EXCLUDED.final_score,
+          summary = EXCLUDED.summary,
+          evidence_rules = EXCLUDED.evidence_rules,
+          feature_json = EXCLUDED.feature_json,
+          risk_flags = EXCLUDED.risk_flags,
+          trigger_plan = EXCLUDED.trigger_plan,
+          invalidation_plan = EXCLUDED.invalidation_plan,
+          exit_plan = EXCLUDED.exit_plan,
+          diagnostics = EXCLUDED.diagnostics,
+          source_trace_json = EXCLUDED.source_trace_json,
+          updated_at = NOW()
+        """
+        payload = []
+        for row in rows:
+            try:
+                trade_date = row.get("trade_date")
+                watch_date = row.get("watch_date")
+                if isinstance(trade_date, str):
+                    trade_date = date.fromisoformat(trade_date)
+                if isinstance(watch_date, str):
+                    watch_date = date.fromisoformat(watch_date)
+                if not trade_date or not watch_date:
+                    raise ValueError
+            except Exception as e:
+                raise ValueError(f"invalid post_market_setup_plan row: {row}") from e
+            payload.append((
+                trade_date,
+                watch_date,
+                str(row.get("setup_type") or "one_to_two"),
+                str(row.get("setup_version") or "v1"),
+                row.get("mainline_id"),
+                row.get("mainline_name"),
+                str(row.get("subject_key") or ""),
+                str(row.get("subject_name") or ""),
+                str(row.get("stock_id") or ""),
+                str(row.get("stock_name") or ""),
+                str(row.get("lifecycle_state") or ""),
+                str(row.get("market_trade_mode") or ""),
+                bool(row.get("allow_trade") or False),
+                row.get("position_limit"),
+                str(row.get("decision") or "reject"),
+                str(row.get("plan_status") or "planned"),
+                str(row.get("watch_level") or ""),
+                row.get("final_score"),
+                str(row.get("summary") or ""),
+                _safe_json_dumps(row.get("evidence_rules"), []),
+                _safe_json_dumps(row.get("feature_json"), {}),
+                _safe_json_dumps(row.get("risk_flags"), []),
+                _safe_json_dumps(row.get("trigger_plan"), {}),
+                _safe_json_dumps(row.get("invalidation_plan"), []),
+                _safe_json_dumps(row.get("exit_plan"), []),
+                _safe_json_dumps(row.get("diagnostics"), {}),
+                _safe_json_dumps(row.get("source_trace_json"), {}),
+            ))
+        if not payload:
+            return 0
+        sql_meta = """
+        INSERT INTO post_market_setup_plan (
+            trade_date, watch_date, setup_type, setup_version,
+            mainline_id, mainline_name, subject_key, subject_name,
+            stock_id, stock_name, lifecycle_state, market_trade_mode,
+            allow_trade, position_limit, decision, plan_status,
+            watch_level, final_score, summary, evidence_rules,
+            feature_json, risk_flags, trigger_plan, invalidation_plan,
+            exit_plan, diagnostics, source_trace_json
+        ) VALUES (
+            $1::date, $2::date, $3, $4,
+            $5, $6, $7, $8,
+            $9, $10, $11, $12,
+            $13::boolean, $14::numeric, $15, $16,
+            $17, $18::numeric, $19, $20::jsonb,
+            $21::jsonb, $22::jsonb, $23::jsonb, $24::jsonb,
+            $25::jsonb, $26::jsonb, $27::jsonb
+        )
+        ON CONFLICT (trade_date, watch_date, setup_type, stock_id, subject_key) DO UPDATE SET
+          setup_version = EXCLUDED.setup_version,
+          mainline_id = EXCLUDED.mainline_id,
+          mainline_name = EXCLUDED.mainline_name,
+          subject_name = EXCLUDED.subject_name,
+          stock_name = EXCLUDED.stock_name,
+          lifecycle_state = EXCLUDED.lifecycle_state,
+          market_trade_mode = EXCLUDED.market_trade_mode,
+          allow_trade = EXCLUDED.allow_trade,
+          position_limit = EXCLUDED.position_limit,
+          decision = EXCLUDED.decision,
+          plan_status = EXCLUDED.plan_status,
+          watch_level = EXCLUDED.watch_level,
+          final_score = EXCLUDED.final_score,
+          summary = EXCLUDED.summary,
+          evidence_rules = EXCLUDED.evidence_rules,
+          feature_json = EXCLUDED.feature_json,
+          risk_flags = EXCLUDED.risk_flags,
+          trigger_plan = EXCLUDED.trigger_plan,
+          invalidation_plan = EXCLUDED.invalidation_plan,
+          exit_plan = EXCLUDED.exit_plan,
+          diagnostics = EXCLUDED.diagnostics,
+          source_trace_json = EXCLUDED.source_trace_json,
+          updated_at = NOW()
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql_meta, payload)
+            return len(payload)
+        except Exception as e:
+            logger.exception("写入 post_market_setup_plan 失败")
+            raise RuntimeError("failed to upsert post_market_setup_plan rows") from e
+
+    async def upsert_one_to_two_candidate_feature_rows(self, rows: list[dict[str, Any]]) -> int:
+        """UPSERT one_to_two_candidate_feature rows."""
+        if not rows:
+            return 0
+        await self._ensure_one_to_two_setup_tables()
+        sql = """
+        INSERT INTO one_to_two_candidate_feature (
+            trade_date, watch_date, setup_type, stock_id, stock_name,
+            subject_key, subject_name, mainline_id,
+            is_confirmed_mainline, is_strong_hotspot, mainline_or_hotspot_state,
+            lifecycle_state, market_trade_mode,
+            is_first_limit_up, is_one_word_board, is_late_seal,
+            first_limit_time, open_board_count,
+            turnover_rate, amount, close_seal_amount, seal_ratio,
+            close_price, limit_up_price, float_mcap, position_120,
+            is_downtrend, near_pressure, same_subject_limit_count, same_subject_strong_count,
+            first_board_quality_score, mainline_context_score, technical_structure_score,
+            risk_control_score, final_score, decision, veto_reasons,
+            feature_json, data_quality_json, source_trace_json
+        ) VALUES (
+            $1::date, $2::date, $3, $4, $5,
+            $6, $7, $8,
+            $9::boolean, $10::boolean, $11,
+            $12, $13,
+            $14::boolean, $15::boolean, $16::boolean,
+            $17, $18,
+            $19::numeric, $20::numeric, $21::numeric, $22::numeric,
+            $23::numeric, $24::numeric, $25::numeric, $26::numeric,
+            $27::boolean, $28::boolean, $29, $30,
+            $31::numeric, $32::numeric, $33::numeric,
+            $34::numeric, $35::numeric, $36, $37::jsonb,
+            $38::jsonb, $39::jsonb, $40::jsonb
+        )
+        ON CONFLICT (trade_date, setup_type, stock_id, subject_key) DO UPDATE SET
+          stock_name = EXCLUDED.stock_name,
+          subject_name = EXCLUDED.subject_name,
+          mainline_id = EXCLUDED.mainline_id,
+          is_confirmed_mainline = EXCLUDED.is_confirmed_mainline,
+          is_strong_hotspot = EXCLUDED.is_strong_hotspot,
+          mainline_or_hotspot_state = EXCLUDED.mainline_or_hotspot_state,
+          lifecycle_state = EXCLUDED.lifecycle_state,
+          market_trade_mode = EXCLUDED.market_trade_mode,
+          is_first_limit_up = EXCLUDED.is_first_limit_up,
+          is_one_word_board = EXCLUDED.is_one_word_board,
+          is_late_seal = EXCLUDED.is_late_seal,
+          first_limit_time = EXCLUDED.first_limit_time,
+          open_board_count = EXCLUDED.open_board_count,
+          turnover_rate = EXCLUDED.turnover_rate,
+          amount = EXCLUDED.amount,
+          close_seal_amount = EXCLUDED.close_seal_amount,
+          seal_ratio = EXCLUDED.seal_ratio,
+          close_price = EXCLUDED.close_price,
+          limit_up_price = EXCLUDED.limit_up_price,
+          float_mcap = EXCLUDED.float_mcap,
+          position_120 = EXCLUDED.position_120,
+          is_downtrend = EXCLUDED.is_downtrend,
+          near_pressure = EXCLUDED.near_pressure,
+          same_subject_limit_count = EXCLUDED.same_subject_limit_count,
+          same_subject_strong_count = EXCLUDED.same_subject_strong_count,
+          first_board_quality_score = EXCLUDED.first_board_quality_score,
+          mainline_context_score = EXCLUDED.mainline_context_score,
+          technical_structure_score = EXCLUDED.technical_structure_score,
+          risk_control_score = EXCLUDED.risk_control_score,
+          final_score = EXCLUDED.final_score,
+          decision = EXCLUDED.decision,
+          veto_reasons = EXCLUDED.veto_reasons,
+          feature_json = EXCLUDED.feature_json,
+          data_quality_json = EXCLUDED.data_quality_json,
+          source_trace_json = EXCLUDED.source_trace_json
+        """
+        payload = []
+        for row in rows:
+            try:
+                trade_date = row.get("trade_date")
+                watch_date = row.get("watch_date")
+                if isinstance(trade_date, str):
+                    trade_date = date.fromisoformat(trade_date)
+                if isinstance(watch_date, str):
+                    watch_date = date.fromisoformat(watch_date)
+                if not trade_date or not watch_date or not row.get("stock_id") or not row.get("subject_key"):
+                    raise ValueError
+            except Exception as e:
+                raise ValueError(f"invalid one_to_two_candidate_feature row: {row}") from e
+            first_limit_time = row.get("first_limit_time")
+            if isinstance(first_limit_time, str):
+                first_limit_time = first_limit_time.strip()
+                if first_limit_time:
+                    try:
+                        first_limit_time = time.fromisoformat(first_limit_time)
+                    except ValueError:
+                        first_limit_time = None
+                else:
+                    first_limit_time = None
+            payload.append((
+                trade_date,
+                watch_date,
+                str(row.get("setup_type") or "one_to_two"),
+                str(row.get("stock_id") or ""),
+                str(row.get("stock_name") or ""),
+                str(row.get("subject_key") or ""),
+                str(row.get("subject_name") or ""),
+                row.get("mainline_id"),
+                row.get("is_confirmed_mainline"),
+                row.get("is_strong_hotspot"),
+                str(row.get("mainline_or_hotspot_state") or ""),
+                str(row.get("lifecycle_state") or ""),
+                str(row.get("market_trade_mode") or ""),
+                row.get("is_first_limit_up"),
+                row.get("is_one_word_board"),
+                row.get("is_late_seal"),
+                first_limit_time,
+                row.get("open_board_count"),
+                row.get("turnover_rate"),
+                row.get("amount"),
+                row.get("close_seal_amount"),
+                row.get("seal_ratio"),
+                row.get("close_price"),
+                row.get("limit_up_price"),
+                row.get("float_mcap"),
+                row.get("position_120"),
+                row.get("is_downtrend"),
+                row.get("near_pressure"),
+                row.get("same_subject_limit_count"),
+                row.get("same_subject_strong_count"),
+                row.get("first_board_quality_score"),
+                row.get("mainline_context_score"),
+                row.get("technical_structure_score"),
+                row.get("risk_control_score"),
+                row.get("final_score"),
+                row.get("decision"),
+                _safe_json_dumps(row.get("veto_reasons"), []),
+                _safe_json_dumps(row.get("feature_json"), {}),
+                _safe_json_dumps(row.get("data_quality_json"), {}),
+                _safe_json_dumps(row.get("source_trace_json"), {}),
+            ))
+        if not payload:
+            return 0
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql, payload)
+            return len(payload)
+        except Exception as e:
+            logger.exception("写入 one_to_two_candidate_feature 失败")
+            raise RuntimeError("failed to upsert one_to_two_candidate_feature rows") from e
+
+    async def get_post_market_setup_plan_rows(self, trade_date: date, setup_type: str = "one_to_two") -> list[dict[str, Any]]:
+        """读取 post_market_setup_plan rows."""
+        sql = """
+        SELECT *
+        FROM post_market_setup_plan
+        WHERE trade_date = $1::date
+          AND setup_type = $2
+        ORDER BY CASE WHEN stock_id = '__SUMMARY__' THEN 0 ELSE 1 END,
+                 COALESCE(final_score, -1) DESC,
+                 stock_id ASC,
+                 subject_key ASC
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, trade_date, setup_type)
+            return [dict(r) for r in rows]
+        except Exception as e:
+            logger.warning(f"读取 post_market_setup_plan 失败（可能尚未迁移）: {e}")
+            raise RuntimeError("failed to read post_market_setup_plan rows") from e
+
+    async def get_one_to_two_candidate_feature_rows(self, trade_date: date, setup_type: str = "one_to_two") -> list[dict[str, Any]]:
+        """读取 one_to_two_candidate_feature rows."""
+        sql = """
+        SELECT *
+        FROM one_to_two_candidate_feature
+        WHERE trade_date = $1::date
+          AND setup_type = $2
+        ORDER BY
+          COALESCE(final_score, -1) DESC,
+          stock_id ASC,
+          subject_key ASC
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, trade_date, setup_type)
+            return [dict(r) for r in rows]
+        except Exception as e:
+            logger.warning(f"读取 one_to_two_candidate_feature 失败: {e}")
+            raise RuntimeError("failed to read one_to_two_candidate_feature rows") from e
+
+    async def _ensure_one_to_two_setup_tables(self) -> None:
+        sql = """
+        CREATE TABLE IF NOT EXISTS post_market_setup_plan (
+            id BIGSERIAL PRIMARY KEY,
+
+            trade_date DATE NOT NULL,
+            watch_date DATE NOT NULL,
+
+            setup_type TEXT NOT NULL,
+            setup_version TEXT DEFAULT 'v1',
+
+            mainline_id TEXT,
+            mainline_name TEXT,
+            subject_key TEXT,
+            subject_name TEXT,
+
+            stock_id TEXT NOT NULL,
+            stock_name TEXT,
+
+            lifecycle_state TEXT,
+            market_trade_mode TEXT,
+            allow_trade BOOLEAN DEFAULT false,
+            position_limit NUMERIC(8,4),
+
+            decision TEXT NOT NULL,
+            plan_status TEXT NOT NULL DEFAULT 'planned',
+            watch_level TEXT,
+            final_score NUMERIC(8,2),
+
+            summary TEXT,
+            evidence_rules JSONB,
+            feature_json JSONB,
+            risk_flags JSONB,
+
+            trigger_plan JSONB,
+            invalidation_plan JSONB,
+            exit_plan JSONB,
+
+            diagnostics JSONB,
+            source_trace_json JSONB,
+
+            created_at TIMESTAMP DEFAULT now(),
+            updated_at TIMESTAMP DEFAULT now(),
+
+            CONSTRAINT chk_post_market_setup_plan_decision
+                CHECK (decision IN ('focus', 'observe_only', 'pending_review_only', 'reject')),
+
+            CONSTRAINT chk_post_market_setup_plan_status
+                CHECK (plan_status IN ('planned', 'confirmed_by_auction', 'triggered_intraday', 'invalidated', 'expired')),
+
+            UNIQUE (trade_date, watch_date, setup_type, stock_id, subject_key)
+        );
+
+        CREATE TABLE IF NOT EXISTS one_to_two_candidate_feature (
+            id BIGSERIAL PRIMARY KEY,
+
+            trade_date DATE NOT NULL,
+            watch_date DATE NOT NULL,
+
+            setup_type TEXT NOT NULL DEFAULT 'one_to_two',
+
+            stock_id TEXT NOT NULL,
+            stock_name TEXT,
+
+            subject_key TEXT,
+            subject_name TEXT,
+            mainline_id TEXT,
+
+            is_confirmed_mainline BOOLEAN,
+            is_strong_hotspot BOOLEAN DEFAULT false,
+            mainline_or_hotspot_state TEXT,
+            lifecycle_state TEXT,
+            market_trade_mode TEXT,
+
+            is_first_limit_up BOOLEAN,
+            is_one_word_board BOOLEAN,
+            is_late_seal BOOLEAN,
+            first_limit_time TIME,
+            open_board_count INTEGER,
+
+            turnover_rate NUMERIC(10,4),
+            amount NUMERIC(20,2),
+            close_seal_amount NUMERIC(20,2),
+            seal_ratio NUMERIC(10,4),
+
+            close_price NUMERIC(12,4),
+            limit_up_price NUMERIC(12,4),
+            float_mcap NUMERIC(20,2),
+            position_120 NUMERIC(10,4),
+            is_downtrend BOOLEAN,
+            near_pressure BOOLEAN,
+
+            same_subject_limit_count INTEGER,
+            same_subject_strong_count INTEGER,
+
+            first_board_quality_score NUMERIC(8,2),
+            mainline_context_score NUMERIC(8,2),
+            technical_structure_score NUMERIC(8,2),
+            risk_control_score NUMERIC(8,2),
+            final_score NUMERIC(8,2),
+
+            decision TEXT,
+            veto_reasons JSONB,
+            feature_json JSONB,
+
+            data_quality_json JSONB,
+            source_trace_json JSONB,
+
+            created_at TIMESTAMP DEFAULT now(),
+
+            CONSTRAINT chk_one_to_two_feature_decision
+                CHECK (decision IS NULL OR decision IN ('focus', 'observe_only', 'pending_review_only', 'reject')),
+
+            UNIQUE (trade_date, setup_type, stock_id, subject_key)
+        );
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.execute(sql)
+                await conn.execute(
+                    """
+                    ALTER TABLE one_to_two_candidate_feature
+                    ADD COLUMN IF NOT EXISTS setup_type TEXT NOT NULL DEFAULT 'one_to_two'
+                    """
+                )
+                await conn.execute(
+                    """
+                    CREATE UNIQUE INDEX IF NOT EXISTS idx_one_to_two_candidate_feature_uq
+                    ON one_to_two_candidate_feature (trade_date, setup_type, stock_id, subject_key)
+                    """
+                )
+                await conn.execute(
+                    """
+                    DO $$
+                    DECLARE conname text;
+                    BEGIN
+                      SELECT c.conname
+                      INTO conname
+                      FROM pg_constraint c
+                      JOIN pg_class t ON c.conrelid = t.oid
+                      WHERE t.relname = 'one_to_two_candidate_feature'
+                        AND c.contype = 'u'
+                        AND pg_get_constraintdef(c.oid) = 'UNIQUE (trade_date, stock_id, subject_key)';
+                      IF conname IS NOT NULL THEN
+                        EXECUTE format('ALTER TABLE one_to_two_candidate_feature DROP CONSTRAINT %I', conname);
+                      END IF;
+                    END $$;
+                    """
+                )
+        except Exception as e:
+            logger.warning(f"创建 one_to_two setup tables 失败（可能尚未迁移）: {e}")
 
     async def upsert_strong_watch_pool_rows(self, rows: list[dict[str, Any]]) -> int:
         """UPSERT strong_stock_watch_pool — 等价于旧链 _upsert_watch_pool_seed + _update_watch_pool_row。

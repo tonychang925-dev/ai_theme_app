@@ -1,7 +1,9 @@
 from __future__ import annotations
 
+import asyncio
 import logging
 import os
+import time
 from dataclasses import asdict
 from datetime import date, datetime, timezone
 from decimal import Decimal
@@ -114,6 +116,15 @@ class BuildPostMarketRecapJob:
         self._report_builder = report_builder or NewChainPostMarketReportBuilder()
         self._market_summary_llm_service = market_summary_llm_service or PostMarketMarketSummaryLlmService()
         self._decision_engine = post_market_decision_engine or PostMarketDecisionEngine()
+        self._llm_budget_sec = max(int(os.getenv("POST_MARKET_RECAP_LLM_BUDGET_SEC", "90") or 90), 30)
+        self._market_summary_llm_timeout_sec = max(
+            int(os.getenv("POST_MARKET_RECAP_MARKET_SUMMARY_LLM_TIMEOUT_SEC", "25") or 25),
+            10,
+        )
+        self._narrative_llm_timeout_sec = max(
+            int(os.getenv("POST_MARKET_RECAP_NARRATIVE_LLM_TIMEOUT_SEC", "25") or 25),
+            10,
+        )
 
     @staticmethod
     def _d(value: Any) -> Decimal:
@@ -233,6 +244,89 @@ class BuildPostMarketRecapJob:
             )
         return records
 
+    @staticmethod
+    def _build_one_to_two_persist_rows(
+        plan: Any,
+    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+        watchlists = plan.to_dict().get("watchlists", {}).get("one_to_two", {}) if hasattr(plan, "to_dict") else {}
+        summary = dict(watchlists.get("summary") or {})
+        diagnostics = dict(watchlists.get("diagnostics") or {})
+        items = [dict(item) for item in watchlists.get("items") or []]
+        candidate_features = [dict(item) for item in getattr(plan, "candidate_features", []) or []]
+
+        watch_date = str(summary.get("watch_date") or (items[0].get("watch_date") if items else "") or "")
+        trade_date = str(summary.get("trade_date") or (items[0].get("trade_date") if items else "") or "")
+
+        setup_plan_rows: list[dict[str, Any]] = [
+            {
+                "trade_date": trade_date,
+                "watch_date": watch_date,
+                "setup_type": "one_to_two",
+                "setup_version": "v1",
+                "mainline_id": "__SUMMARY__",
+                "mainline_name": "OneToTwo Setup Plan",
+                "subject_key": "__SUMMARY__",
+                "subject_name": "OneToTwo Setup Plan",
+                "stock_id": "__SUMMARY__",
+                "stock_name": "OneToTwo Setup Plan",
+                "lifecycle_state": "summary",
+                "market_trade_mode": str(summary.get("market_trade_mode") or ""),
+                "allow_trade": False,
+                "position_limit": None,
+                "decision": "pending_review_only",
+                "plan_status": "planned",
+                "watch_level": "",
+                "final_score": None,
+                "summary": json.dumps(summary, ensure_ascii=False, default=str),
+                "evidence_rules": [],
+                "feature_json": {
+                    "summary": summary,
+                    "items_count": len(items),
+                },
+                "risk_flags": [],
+                "trigger_plan": {},
+                "invalidation_plan": {},
+                "exit_plan": {},
+                "diagnostics": diagnostics,
+                "source_trace_json": {"row_type": "summary"},
+            }
+        ]
+
+        for item in items:
+            setup_plan_rows.append(
+                {
+                    "trade_date": str(item.get("trade_date") or trade_date),
+                    "watch_date": str(item.get("watch_date") or watch_date),
+                    "setup_type": str(item.get("setup_type") or "one_to_two"),
+                    "setup_version": "v1",
+                    "mainline_id": item.get("mainline_id"),
+                    "mainline_name": item.get("mainline_name"),
+                    "subject_key": str(item.get("subject_key") or ""),
+                    "subject_name": str(item.get("subject_name") or ""),
+                    "stock_id": str(item.get("stock_id") or ""),
+                    "stock_name": str(item.get("stock_name") or ""),
+                    "lifecycle_state": str(item.get("lifecycle_state") or ""),
+                    "market_trade_mode": str(item.get("market_trade_mode") or ""),
+                    "allow_trade": bool(item.get("allow_trade") or False),
+                    "position_limit": item.get("position_limit"),
+                    "decision": str(item.get("decision") or "reject"),
+                    "plan_status": str(item.get("plan_status") or "planned"),
+                    "watch_level": str(item.get("watch_level") or ""),
+                    "final_score": item.get("final_score"),
+                    "summary": str(item.get("summary") or ""),
+                    "evidence_rules": item.get("evidence_rules") or [],
+                    "feature_json": item.get("feature_json") or {},
+                    "risk_flags": item.get("risk_flags") or [],
+                    "trigger_plan": item.get("trigger_plan") or {},
+                    "invalidation_plan": item.get("invalidation_plan") or [],
+                    "exit_plan": item.get("exit_plan") or [],
+                    "diagnostics": diagnostics,
+                    "source_trace_json": item.get("source_trace_json") or {},
+                }
+            )
+
+        return setup_plan_rows, candidate_features
+
     async def execute(
         self,
         trade_date: date,
@@ -307,16 +401,16 @@ class BuildPostMarketRecapJob:
             )
             layer_c_metrics = dict(layer_c_result.metrics or {})
 
-        # ── Layer D1: recap 只读取既有候选结果，不执行选股逻辑 ──
-        d1_input_rows = await self._read_port.get_w2s_candidate_inputs(trade_date)
+        # ── Layer D1: recap 只读取既有候选池，不执行选股逻辑 ──
         read_existing_w2s = getattr(self._read_port, "get_w2s_candidates_by_trade_date", None)
-        d1_candidates_for_pool = (
-            list(await read_existing_w2s(trade_date, limit=10))
-            if callable(read_existing_w2s)
-            else []
-        )
-        _d1_total_in = len(d1_input_rows)
-        _d1_pass = len(d1_candidates_for_pool)
+        existing_w2s_rows: list[Any] = []
+        if callable(read_existing_w2s):
+            try:
+                existing_w2s_rows = list(await read_existing_w2s(trade_date, limit=20))
+            except Exception:
+                logger.warning("D1 candidate read failed, continuing without D1 rows")
+        _d1_total_in = len(existing_w2s_rows)
+        _d1_pass = len(existing_w2s_rows)
         _d1_fail_pct = 0
         _d1_fail_history = 0
         _d1_fail_gene = 0
@@ -331,7 +425,7 @@ class BuildPostMarketRecapJob:
         strong_watch_rows: list[Any] = []
         history_written = int(layer_c_metrics.get("history_written") or 0)
         strong_watch_history: list[Any] = list(layer_c_metrics.get("history_rows") or [])
-        promoted_pool_rows: list[Any] = d1_input_rows
+        existing_d1_candidate_rows: list[Any] = existing_w2s_rows
         shadow_summary: dict[str, Any] = {}
         legacy_watch_input_count = 0
         strong_watch_pool_written = int(layer_c_metrics.get("pool_written") or 0)
@@ -345,41 +439,35 @@ class BuildPostMarketRecapJob:
         layer_a_identity_hit_count = int(layer_c_metrics.get("identity_hit_count") or 0)
         layer_b_cycle_hit_count = int(layer_c_metrics.get("cycle_hit_count") or 0)
 
-        # P1: skip_layer_c 时从 DB 补读计数，避免报告显示 "观察池 0 条"
+        # P1: skip_layer_c 仅标记跳过，不补读任何历史数据。
         if skip_layer_c:
             layer_a_identity_hit_count = max(layer_a_identity_hit_count, 1)
             layer_b_cycle_hit_count = max(layer_b_cycle_hit_count, 1)
-            try:
-                existing_pool = await self._read_port.get_strong_stock_watch_view_rows(
-                    end_date=trade_date, window_days=1, limit=5000,
-                )
-                if existing_pool:
-                    today_stocks = [r for r in existing_pool if str(r.get("trade_date","")) == str(trade_date)]
-                    strong_watch_pool_written = len(today_stocks) or len(existing_pool)
-                    if not promoted_pool_rows:
-                        promoted_pool_rows = existing_pool[:20]
-            except Exception:
-                strong_watch_pool_written = max(strong_watch_pool_written, 1)
         input_fingerprint = LAYER_C_INPUT_MODE
-        # 构建兼容 recap_doc 的 candidates 列表
+        # 构建兼容 recap_doc 的 D1 只读候选列表（来自既有 weak_to_strong_candidate_pool，不在 recap 内生成）
         candidates = [
             {
-                "stock_id": c["stock_id"],
-                "stock_name": c["stock_name"],
-                "subject_key": c["subject_key"],
-                "subject_name": c["theme_name"],
-                "candidate_score": c["candidate_score"],
-                "candidate_level": c["pool_entry_type"],
-                "candidate_type": c["candidate_type"],
-                "transition_type": c["weak_type"],
+                "stock_id": str(c.get("stock_id", "")),
+                "stock_name": str(c.get("stock_name", "")),
+                "subject_key": str(c.get("subject_key", "")),
+                "subject_name": str(c.get("theme_name", "")),
+                "candidate_score": float(c.get("candidate_score") or 0),
+                "candidate_level": str(c.get("pool_entry_type") or "observe_only"),
+                "candidate_type": str(c.get("candidate_type") or ""),
+                "transition_type": str(c.get("weak_type") or ""),
                 "transition_confidence": "50",
                 "trigger_flags": [],
                 "evidence_rules": [],
-                "support_type": c["support_type"],
+                "support_type": str(c.get("support_type") or ""),
+                "support_score": float(c.get("support_strength") or 0),
+                "gap_hit": False,
+                "gap_hit_mode": "miss",
             }
-            for c in d1_candidates_for_pool
+            for c in existing_w2s_rows
         ]
-        formal_candidates = [c for c in candidates if str(c.get("candidate_level", "")).lower() in {"formal", "s", "a", "b"}]
+        formal_candidates = [
+            c for c in candidates if str(c.get("candidate_level", "")).lower() in {"formal", "s", "a", "b"}
+        ]
         observe_candidates = [c for c in candidates if str(c.get("candidate_level", "")).lower() == "observe_only"]
         candidate_service_observe_candidates = observe_candidates
 
@@ -391,8 +479,8 @@ class BuildPostMarketRecapJob:
             "layer_c_input_mode": layer_c_input_mode,
             "layer_c_shadow_enabled": layer_c_shadow_enabled,
             "legacy_watch_input_count": legacy_watch_input_count,
-            "strong_watch_input_count": len(d1_input_rows),
-            "strong_watch_input_7d_count": len(d1_input_rows),
+            "strong_watch_input_count": len(strong_watch_history),
+            "strong_watch_input_7d_count": len(strong_watch_history),
             "d1_total_in": _d1_total_in,
             "d1_pass": _d1_pass,
             "d1_fail_pct_gate": _d1_fail_pct,
@@ -400,7 +488,7 @@ class BuildPostMarketRecapJob:
             "d1_fail_gene": _d1_fail_gene,
             "d1_fail_strong": _d1_fail_strong,
             "d1_fail_support": _d1_fail_support,
-            "strong_watch_promoted_count": len(promoted_pool_rows),
+            "strong_watch_promoted_count": len(existing_d1_candidate_rows),
             "strong_watch_history_count": len(strong_watch_history),
             "strong_watch_pool_written": strong_watch_pool_written,
             "strong_watch_promote_count": strong_watch_promote_count,
@@ -436,7 +524,7 @@ class BuildPostMarketRecapJob:
                     "removed_reason": (row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None)),
                     "kept_because": None,
                 }
-                for row in strong_watch_history  # full 7-day pool — PDV2 D1 input, no truncation
+                for row in strong_watch_history  # full Layer C 7-day pool — no truncation
             ],
             # Primary count follows the actual candidate list, with formal/observe split preserved separately.
             "candidate_count": len(candidates),
@@ -501,10 +589,10 @@ class BuildPostMarketRecapJob:
                     "pool_entry_type": str(r.get("watch_pool_entry_type", "")),
                     "support_type": "",
                 }
-                for r in d1_input_rows[:100]
+                for r in strong_watch_history[:100]
             ],
             "strong_watch_input_7d_stock_ids": sorted(
-                {str(r.get("stock_id", "")) for r in d1_input_rows if str(r.get("stock_id", "") or "")}
+                {str(r.get("stock_id", "")) for r in strong_watch_history if str(r.get("stock_id", "") or "")}
             ),
             "strong_watch_input_7d_source": (
                 "legacy_strong_watch_pool_or_history"
@@ -512,7 +600,7 @@ class BuildPostMarketRecapJob:
                 else "strong_watch_pool_history_single_source"
             ),
             "promoted_pool_stock_ids": sorted(
-                {str(r.get("stock_id", "")) for r in promoted_pool_rows if str(r.get("stock_id", "") or "")}
+                {str(r.get("stock_id", "")) for r in existing_d1_candidate_rows if str(r.get("stock_id", "") or "")}
             ),
             "promoted_pool_preview": [
                 {
@@ -528,7 +616,7 @@ class BuildPostMarketRecapJob:
                     "recent_limit_up_count": int(r.get("recent_limit_up_count") or 0),
                     "final_cycle_state": str(r.get("final_cycle_state") or ""),
                 }
-                for r in promoted_pool_rows[:200]
+                for r in existing_d1_candidate_rows[:200]
             ],
             "top_candidates": [
                 {
@@ -591,7 +679,21 @@ class BuildPostMarketRecapJob:
 
         # ── P2: 结构化 theme_reviews 生成 ──
         report_context = recap_doc.get("report_context") or {}
-        recap_doc["market_summary"] = await self._build_market_summary_llm(trade_date, report_context)
+        llm_deadline = time.monotonic() + self._llm_budget_sec
+        diag = recap_doc.setdefault("diagnostics", {})
+        llm_diag = diag.setdefault("llm", {})
+        llm_diag.update(
+            {
+                "budget_sec": self._llm_budget_sec,
+                "market_summary_timeout_sec": self._market_summary_llm_timeout_sec,
+                "narrative_timeout_sec": self._narrative_llm_timeout_sec,
+            }
+        )
+        recap_doc["market_summary"] = await self._build_market_summary_llm(
+            trade_date,
+            report_context,
+            llm_deadline=llm_deadline,
+        )
         theme_context_map = await self._build_theme_context_map(trade_date, report_context)
         recap_doc["theme_reviews"] = self._build_theme_reviews(theme_context_map)
         recap_doc["diagnostics"]["coverage"] = self._build_theme_review_coverage(theme_context_map)
@@ -599,10 +701,25 @@ class BuildPostMarketRecapJob:
 
         recap_doc["capital_reviews"] = self._build_capital_reviews(report_context.get("dragon_tiger") or [])
         recap_doc["strong_stock_reviews"] = await self._build_strong_stock_reviews(trade_date)
+        strong_stock_reviews_count = len(recap_doc["strong_stock_reviews"] or [])
+        recap_doc["strong_stock_reviews_count"] = strong_stock_reviews_count
+        strong_hotspot_subjects = self._build_strong_hotspot_subjects(recap_doc["strong_stock_reviews"] or [])
+        recap_doc["strong_hotspot_subjects"] = strong_hotspot_subjects
+        recap_doc["hotspot_subjects"] = strong_hotspot_subjects
+        recap_doc["mainline_hotspots"] = strong_hotspot_subjects
+        recap_doc.setdefault("diagnostics", {})["strong_hotspot_subjects_count"] = len(strong_hotspot_subjects)
+        strong_watch_history_count = len(strong_watch_history)
 
         # ── PR-7: Mainline Discovery parallel output ──
         await self._run_mainline_discovery(
-            trade_date, snapshot_version, report_context, theme_context_map, recap_doc, batch_id, trace_id
+            trade_date,
+            snapshot_version,
+            report_context,
+            theme_context_map,
+            recap_doc,
+            batch_id,
+            trace_id,
+            llm_deadline=llm_deadline,
         )
 
         # ── P0: 交易体系决策输出 ──
@@ -614,6 +731,36 @@ class BuildPostMarketRecapJob:
             strong_stock_reviews=recap_doc.get("strong_stock_reviews") or [],
         )
         recap_doc.update(decision_payload)
+
+        confirmed_mainline_hotspots = self._build_confirmed_mainline_hotspots(recap_doc.get("active_mainline_universe") or {})
+        if confirmed_mainline_hotspots:
+            merged_hotspots = self._merge_hotspot_subjects(
+                recap_doc.get("strong_hotspot_subjects") or [],
+                confirmed_mainline_hotspots,
+            )
+            recap_doc["strong_hotspot_subjects"] = merged_hotspots
+            recap_doc["hotspot_subjects"] = merged_hotspots
+            recap_doc["mainline_hotspots"] = merged_hotspots
+
+        from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
+            OneToTwoSetupPlanEngine,
+        )
+        one_to_two_plan = await OneToTwoSetupPlanEngine().build(
+            trade_date=trade_date,
+            read_port=self._read_port,
+            source_doc=recap_doc,
+        )
+        one_to_two_payload = one_to_two_plan.to_dict().get("watchlists", {}).get("one_to_two", {})
+        setup_plan_rows, candidate_feature_rows = self._build_one_to_two_persist_rows(one_to_two_plan)
+        setup_plan_written = await self._write_port.upsert_post_market_setup_plan_rows(setup_plan_rows)
+        if setup_plan_written <= 0:
+            raise RuntimeError("failed to persist post_market_setup_plan rows")
+        if candidate_feature_rows:
+            feature_written = await self._write_port.upsert_one_to_two_candidate_feature_rows(candidate_feature_rows)
+            if feature_written <= 0:
+                raise RuntimeError("failed to persist one_to_two_candidate_feature rows")
+        recap_doc["post_market_setup_plan"] = one_to_two_payload
+        recap_doc["watchlists"] = {"one_to_two": one_to_two_payload}
 
         recap_report = self._report_builder.build(recap_doc)
         recap_doc["report"] = recap_report
@@ -658,7 +805,7 @@ class BuildPostMarketRecapJob:
                         "removed_reason": row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None),
                         "kept_because": row.get("kept_because") if isinstance(row, dict) else getattr(row, "kept_because", None),
                     }
-                    for row in strong_watch_history  # full dataset, no truncation
+                    for row in strong_watch_history
                 ],
                 ttl_seconds=SnapshotCacheWriter.TTL_24H,
             )
@@ -706,9 +853,10 @@ class BuildPostMarketRecapJob:
             batch_id=batch_id,
             trace_id=trace_id,
             metrics={
-                "strong_watch_input_count": len(d1_input_rows),
-                "strong_watch_promoted_count": len(promoted_pool_rows),
-                "strong_watch_history_count": len(strong_watch_history),
+                "strong_watch_input_count": len(strong_watch_history),
+                "strong_watch_promoted_count": len(existing_d1_candidate_rows),
+                "strong_watch_history_count": strong_watch_history_count,
+                "strong_stock_reviews_count": strong_stock_reviews_count,
                 "strong_watch_history_written": history_written,
                 "strong_watch_shadow_universe_formal_count": int(shadow_summary.get("universe_formal_count") or 0),
                 "strong_watch_shadow_universe_observe_count": int(shadow_summary.get("universe_observe_count") or 0),
@@ -742,7 +890,7 @@ class BuildPostMarketRecapJob:
         *,
         trade_date: date,
         strong_watch_rows: list[Any],
-        promoted_pool_rows: list[Any],
+        existing_d1_candidate_rows: list[Any],
         prior_watch_rows: list[Any],
     ) -> list[Any]:
         by_stock: dict[str, SubjectStockPoolDTO] = {}
@@ -823,7 +971,7 @@ class BuildPostMarketRecapJob:
                     "kept_because": getattr(row, "kept_because", ""),
                 },
             )
-        for row in promoted_pool_rows:
+        for row in existing_d1_candidate_rows:
             stock_id = str(getattr(row, "stock_id", "") or "")
             subject_key = str(getattr(row, "subject_key", "") or "")
             if not stock_id or not subject_key or stock_id in by_stock:
@@ -879,12 +1027,31 @@ class BuildPostMarketRecapJob:
 
     MAX_THEME_REVIEWS = 20
 
-    async def _build_market_summary_llm(self, trade_date: date, report_context: dict[str, Any]) -> dict[str, Any] | None:
+    async def _build_market_summary_llm(
+        self,
+        trade_date: date,
+        report_context: dict[str, Any],
+        *,
+        llm_deadline: float | None = None,
+    ) -> dict[str, Any] | None:
         service = self._market_summary_llm_service
         if service is None:
             return None
         try:
-            return await service.build(trade_date=trade_date, report_context=report_context)
+            timeout_sec = self._market_summary_llm_timeout_sec
+            if llm_deadline is not None:
+                remaining = llm_deadline - time.monotonic()
+                if remaining <= 0:
+                    logger.warning("post-market market_summary LLM skipped: llm budget exhausted")
+                    return None
+                timeout_sec = min(timeout_sec, remaining)
+            return await asyncio.wait_for(
+                service.build(trade_date=trade_date, report_context=report_context),
+                timeout=timeout_sec,
+            )
+        except asyncio.TimeoutError:
+            logger.warning("post-market market_summary LLM timeout after %.1fs, fallback to deterministic summary", timeout_sec)
+            return None
         except Exception as exc:
             logger.warning("post-market market_summary LLM failed, fallback to deterministic summary: %s", exc)
             return None
@@ -929,6 +1096,7 @@ class BuildPostMarketRecapJob:
         recap_doc: dict[str, Any],
         batch_id: str = "",
         trace_id: str = "",
+        llm_deadline: float | None = None,
     ) -> None:
         """PR-7: Run mainline discovery pipeline and write results to recap_doc.
 
@@ -999,20 +1167,77 @@ class BuildPostMarketRecapJob:
                     model_name=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"),
                     config={"max_retries": 1, "timeout": 25, "temperature": 0.1,
                             "enable_cache": True, "cache_ttl": 3600})
-            narrative_builder = MainlineNarrativeJudge(parser_factory=_llm_factory)
+            narrative_builder = MainlineNarrativeJudge(
+                parser_factory=_llm_factory,
+                timeout_sec=self._narrative_llm_timeout_sec,
+            )
             narrative_by_sk: dict[str, dict] = {}
+            llm_diag = recap_doc.setdefault("diagnostics", {}).setdefault("llm", {})
+            llm_diag.setdefault("narrative_timeouts", 0)
+            llm_diag.setdefault("narrative_errors", 0)
+            llm_diag.setdefault("narrative_budget_exhausted", False)
+            llm_diag.setdefault("narrative_skipped_subjects", [])
             for sk, lev in logic_by_sk.items():
                 if not lev.get("event_chain"):
                     narrative_by_sk[sk] = NarrativeJudgeResult().to_dict()
                     continue
-                nj = await narrative_builder.judge(
-                    subject_key=sk,
-                    theme_name=_theme_name_for_sk(fc["candidate_subjects"], sk),
-                    event_chain=lev.get("event_chain", []),
-                    event_series=lev.get("event_series", []),
-                    event_stats=fc.get("event_stats_by_subject", {}).get(sk),
-                    major_event_classification=major_by_sk.get(sk),
-                )
+                if llm_deadline is not None:
+                    remaining = llm_deadline - time.monotonic()
+                    if remaining <= 0:
+                        llm_diag["narrative_budget_exhausted"] = True
+                        llm_diag["narrative_skipped_subjects"].extend(
+                            [subject_key for subject_key in logic_by_sk.keys() if subject_key not in narrative_by_sk]
+                        )
+                        break
+                timeout_sec = self._narrative_llm_timeout_sec
+                if llm_deadline is not None:
+                    timeout_sec = min(timeout_sec, max(0.0, llm_deadline - time.monotonic()))
+                if timeout_sec <= 0:
+                    llm_diag["narrative_budget_exhausted"] = True
+                    narrative_by_sk[sk] = NarrativeJudgeResult(
+                        is_mainline_logic=False,
+                        narrative_score=None,
+                        narrative_level="unavailable",
+                        supporting_event_ids=[],
+                        negative_reasons=["LLM 总预算已耗尽，跳过叙事裁判"],
+                        confidence=0.0,
+                        diagnostics={"skip_reason": "llm_budget_exhausted"},
+                    ).to_dict()
+                    continue
+                try:
+                    nj = await asyncio.wait_for(narrative_builder.judge(
+                        subject_key=sk,
+                        theme_name=_theme_name_for_sk(fc["candidate_subjects"], sk),
+                        event_chain=lev.get("event_chain", []),
+                        event_series=lev.get("event_series", []),
+                        event_stats=fc.get("event_stats_by_subject", {}).get(sk),
+                        major_event_classification=major_by_sk.get(sk),
+                    ), timeout=timeout_sec)
+                except asyncio.TimeoutError:
+                    llm_diag["narrative_timeouts"] += 1
+                    llm_diag["narrative_skipped_subjects"].append(sk)
+                    nj = NarrativeJudgeResult(
+                        is_mainline_logic=False,
+                        narrative_score=None,
+                        narrative_level="unavailable",
+                        supporting_event_ids=[],
+                        negative_reasons=["LLM 调用超时，无法生成叙事判断"],
+                        confidence=0.0,
+                        diagnostics={"skip_reason": "llm_timeout", "timeout_sec": timeout_sec},
+                    )
+                except Exception as exc:
+                    llm_diag["narrative_errors"] += 1
+                    llm_diag["narrative_skipped_subjects"].append(sk)
+                    logger.warning("post-market narrative judge failed for %s, fallback to unavailable: %s", sk, exc)
+                    nj = NarrativeJudgeResult(
+                        is_mainline_logic=False,
+                        narrative_score=None,
+                        narrative_level="unavailable",
+                        supporting_event_ids=[],
+                        negative_reasons=["LLM 调用失败，无法生成叙事判断"],
+                        confidence=0.0,
+                        diagnostics={"skip_reason": "llm_error", "error": str(exc)},
+                    )
                 narrative_by_sk[sk] = nj.to_dict()
 
             # ── run discovery engine ──
@@ -1086,26 +1311,28 @@ class BuildPostMarketRecapJob:
         batch_id: str = "", trace_id: str = "",
     ) -> None:
         """PR-10: Run lifecycle pipeline for confirmed mainlines."""
+        def _serialize(obj):
+            if isinstance(obj, dict):
+                return {k: _serialize(v) for k, v in obj.items()}
+            if isinstance(obj, list):
+                return [_serialize(i) for i in obj]
+            from decimal import Decimal
+            if isinstance(obj, Decimal):
+                return float(obj)
+            return obj
+
+        from stock_processing_service.application.services.mainline_lifecycle.mainline_lifecycle_fact_context_builder import (
+            MainlineLifecycleFactContextBuilder,
+        )
+        from stock_processing_service.domain.services.mainline_lifecycle.layer_b_lifecycle_adapter import (
+            MainlineLifecycleLayerBAdapter,
+        )
+
+        report_context = recap_doc.get("report_context") or {}
+        reviews: list[Any] = []
+        regime: dict[str, Any] = {}
+
         try:
-            def _serialize(obj):
-                if isinstance(obj, dict):
-                    return {k: _serialize(v) for k, v in obj.items()}
-                if isinstance(obj, list):
-                    return [_serialize(i) for i in obj]
-                from decimal import Decimal
-                if isinstance(obj, Decimal):
-                    return float(obj)
-                return obj
-
-            from stock_processing_service.application.services.mainline_lifecycle.mainline_lifecycle_fact_context_builder import (
-                MainlineLifecycleFactContextBuilder,
-            )
-            from stock_processing_service.domain.services.mainline_lifecycle.layer_b_lifecycle_adapter import (
-                MainlineLifecycleLayerBAdapter,
-            )
-
-            report_context = recap_doc.get("report_context") or {}
-
             fc_builder = MainlineLifecycleFactContextBuilder(self._read_port)
             fact_ctx = await fc_builder.build(trade_date=trade_date)
 
@@ -1140,178 +1367,72 @@ class BuildPostMarketRecapJob:
                 **regime_ctx.diagnostics,
                 "index_technical_reviews": regime_ctx.index_technical_reviews,
             }
-
-            # ── PR-12.5: ActiveMainlineUniverse ──
-            from stock_processing_service.application.services.active_mainline_universe_builder import (
-                ActiveMainlineUniverseBuilder,
-            )
-            active_universe = await ActiveMainlineUniverseBuilder(self._read_port).build(trade_date=trade_date)
-            recap_doc["active_mainline_universe"] = active_universe.to_dict()
-            confirmed_mainlines = active_universe.active_mainlines
-            cml_error = None
-            if not confirmed_mainlines:
-                cml_error = "no_active_mainlines_in_registry"
-
-            # ── PR-12: PostMarketDecisionV2 ──
-            from stock_processing_service.domain.services.post_market_decision_v2.post_market_decision_engine_v2 import (
-                PostMarketDecisionEngineV2,
-            )
-
-            # D1 input: use existing get_w2s_candidate_inputs (same as AI选股弱转强策略)
-            try:
-                d1_rows = await self._read_port.get_w2s_candidate_inputs(trade_date)
-                layer_c_d1_raw = len(d1_rows)
-                # Filter same as old code: exclude reject
-                d1_rows = [r for r in d1_rows if r.get("pool_entry_type") != "reject"
-                          and r.get("watch_status") != "removed"]
-                layer_c_d1_eligible = len(d1_rows)
-            except Exception:
-                d1_rows = []
-                layer_c_d1_raw = 0
-                layer_c_d1_eligible = 0
-                logger.warning("D1 input read failed, falling back to recap_doc preview")
-
-            layer_c_source: str = "get_w2s_candidate_inputs"
-            layer_c_rows: list[dict] = []
-            d1_algorithm: str = "BuildWeakToStrongCandidateUseCase"
-            d1_formal_before: int = 0
-            d1_observe_before: int = 0
-            d1_formal_after: int = 0
-            d1_observe_after: int = 0
-            preview_truncated: bool = False
-
-            if d1_rows:
-                from stock_processing_service.application.use_cases.build_weak_to_strong_candidate import (
-                    BuildWeakToStrongCandidateUseCase,
-                )
-                # Create instance bypassing dataclass constructor — build_candidates is stateless
-                w2s_uc = object.__new__(BuildWeakToStrongCandidateUseCase)
-                candidates = w2s_uc.build_candidates(trade_date=trade_date, d1_input_rows=d1_rows)
-                # Dedup by stock_id — same stock can appear under multiple subject_keys
-                candidates = w2s_uc._dedup_and_rank(candidates, limit=20)
-                d1_formal_before = sum(1 for c in candidates if c.get("candidate_level") == "formal")
-                d1_observe_before = sum(1 for c in candidates if c.get("candidate_level") == "observe_only")
-
-                # Apply market_regime for trade permission (downgrade only, no re-score)
-                allow_trade = regime.allow_trade
-                for c in candidates:
-                    level = c.get("candidate_level", "observe_only")
-                    if not allow_trade and level == "formal":
-                        level = "observe_only"
-                        c = dict(c, candidate_level="observe_only")
-                    layer_c_rows.append(c)
-                    if level == "formal":
-                        d1_formal_after += 1
-                    else:
-                        d1_observe_after += 1
-            else:
-                # Fallback: use recap_doc data if read_port failed (backward compat)
-                if isinstance(recap_doc.get("strong_watch_history"), list) and recap_doc["strong_watch_history"]:
-                    layer_c_rows = recap_doc["strong_watch_history"]
-                    layer_c_source = "strong_watch_history"
-                elif isinstance(recap_doc.get("strong_watch_input_7d_preview"), list) and recap_doc["strong_watch_input_7d_preview"]:
-                    layer_c_rows = recap_doc["strong_watch_input_7d_preview"]
-                    layer_c_source = "strong_watch_input_7d_preview"
-                    preview_truncated = True
-                elif isinstance(recap_doc.get("strong_stock_reviews"), list) and recap_doc["strong_stock_reviews"]:
-                    layer_c_rows = recap_doc["strong_stock_reviews"]
-                    layer_c_source = "strong_stock_reviews_fallback"
-                d1_algorithm = "fallback_score"
-                focus_len = 0
-
-            # Build strong_pool + trading_permission via PDV2 (Layer C display)
-            pdv2_engine = PostMarketDecisionEngineV2()
-            pdv2 = pdv2_engine.evaluate(
-                trade_date=trade_date.isoformat(),
-                confirmed_mainlines=confirmed_mainlines,
-                mainline_lifecycle=[r.to_dict() for r in reviews],
-                market_regime=regime.to_dict(),
-                stock_pool_rows=layer_c_rows if layer_c_rows else [],
-            )
-
-            # Overwrite D1 with BuildWeakToStrongCandidateUseCase results (real AI选股弱转强)
-            if d1_rows:
-                from stock_processing_service.domain.services.post_market_decision_v2.models import (
-                    WeakToStrongD1Item, NextDayFocusStock,
-                )
-                allow_trade = regime.allow_trade
-                trade_mode = regime.trade_mode
-                w2s_d1: list[dict] = []
-                w2s_focus: list[dict] = []
-                for c in candidates:
-                    level = c.get("candidate_level", "observe_only")
-                    score = float(c.get("w2s_score") or c.get("candidate_score") or 0)
-                    stock_id = c.get("stock_id", "")
-                    stock_name = c.get("stock_name", "") or stock_id
-                    item = WeakToStrongD1Item(
-                        trade_date=trade_date.isoformat(), next_trade_date="T+1",
-                        stock_id=stock_id, stock_name=stock_name,
-                        mainline_id="", subject_key="", theme_name="",
-                        candidate_stage="D1", candidate_level=level,
-                        candidate_score=score,
-                        support_score=float(c.get("support_score", 0) or 0),
-                        momentum_score=0, weak_type="pullback",
-                        support_type=str(c.get("support_type") or "unknown"),
-                        gap_hit=False,
-                        repair_or_takeover_score=score, weakness_valid_score=0,
-                        buy_condition=(["等待市场环境改善"] if not allow_trade else []),
-                        invalid_condition=[], d2_required=True, d2_status="pending",
-                        evidence={},
-                        diagnostics={"source": "BuildWeakToStrongCandidateUseCase",
-                                     "scoring_method": "native",
-                                     "blocked_by_market_regime": not allow_trade},
-                    )
-                    w2s_d1.append(item.to_dict())
-                    if level == "formal":
-                        w2s_focus.append(NextDayFocusStock(
-                            trade_date=trade_date.isoformat(), stock_id=stock_id,
-                            stock_name=stock_name, category="重点观察",
-                            priority=len(w2s_focus) + 1,
-                            mainline_id="", subject_key="", theme_name="",
-                            pool_entry_type="formal", candidate_level=level,
-                            watch_score=0, candidate_score=score,
-                            buy_condition=item.buy_condition,
-                            invalid_condition=item.invalid_condition,
-                            d2_required=True, d2_status="pending",
-                            suggested_position=0.15,
-                        ).to_dict())
-
-                _d1_limit = 5 if trade_mode == "ultra_short_only" else (10 if trade_mode == "mainline_core_only" else 20)
-                pdv2.weak_to_strong_d1_reviews = w2s_d1[:_d1_limit]
-                pdv2.next_day_focus_stocks = w2s_focus[:_d1_limit]
-                pdv2.trading_permission["d1_candidate_count"] = len(w2s_d1[:_d1_limit])
-                pdv2.trading_permission["focus_stock_count"] = len(w2s_focus[:_d1_limit])
-                d1_formal_after = sum(1 for d in w2s_d1[:_d1_limit] if d.get("candidate_level") == "formal")
-                d1_observe_after = sum(1 for d in w2s_d1[:_d1_limit] if d.get("candidate_level") == "observe_only")
-
-            pdv2.diagnostics["layer_c_rows"] = len(layer_c_rows)
-            pdv2.diagnostics["layer_c_source"] = layer_c_source
-            pdv2.diagnostics["d1_algorithm"] = d1_algorithm
-            pdv2.diagnostics["layer_c_d1_raw_rows"] = layer_c_d1_raw
-            pdv2.diagnostics["layer_c_d1_eligible_rows"] = layer_c_d1_eligible
-            pdv2.diagnostics["d1_formal_before_market"] = d1_formal_before
-            pdv2.diagnostics["d1_observe_before_market"] = d1_observe_before
-            pdv2.diagnostics["d1_formal_after_market"] = d1_formal_after
-            pdv2.diagnostics["d1_observe_after_market"] = d1_observe_after
-            pdv2.diagnostics["preview_truncated_used"] = preview_truncated
-            if cml_error:
-                pdv2.diagnostics["confirmed_mainline_error"] = cml_error
-            recap_doc["post_market_decision_v2"] = pdv2.to_dict()
-
-            # ── PR-13A: persist mainline daily state ──
-            await self._persist_mainline_daily_state(trade_date, recap_doc, batch_id or "", trace_id or "")
-
-            # Re-write snapshot with PDV2 D1 data (written before PDV2 section at line 632)
-            updated_snapshot = PostMarketRecapSnapshot(
-                trade_date=trade_date, snapshot_version=snapshot_version,
-                batch_id=batch_id, trace_id=trace_id, source_trace_id=trace_id,
-                recap_doc=_serialize(recap_doc),
-            )
-            await self._write_port.upsert_post_market_recap_snapshot(updated_snapshot)
         except Exception:
-            logger.exception("Lifecycle pipeline failed, continuing without it")
+            logger.exception("Mainline discovery pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []
             recap_doc["mainline_lifecycle_diagnostics"] = {"error": "pipeline_failed"}
+            recap_doc["market_regime_review"] = {}
+            recap_doc["market_regime_diagnostics"] = {"error": "pipeline_failed"}
+
+        # ── PR-12.5: ActiveMainlineUniverse ──
+        from stock_processing_service.application.services.active_mainline_universe_builder import (
+            ActiveMainlineUniverseBuilder,
+        )
+        active_universe = await ActiveMainlineUniverseBuilder(self._read_port).build(trade_date=trade_date)
+        recap_doc["active_mainline_universe"] = active_universe.to_dict()
+        confirmed_mainlines = active_universe.active_mainlines
+        cml_error = None
+        if not confirmed_mainlines:
+            cml_error = "no_active_mainlines_in_registry"
+
+        # ── PR-12: PostMarketDecisionV2 ──
+        from stock_processing_service.domain.services.post_market_decision_v2.post_market_decision_engine_v2 import (
+            PostMarketDecisionEngineV2,
+        )
+        layer_c_source: str = "strong_stock_watch_view_rows"
+        read_layer_c_view_rows = getattr(self._read_port, "get_strong_stock_watch_view_rows", None)
+        if not callable(read_layer_c_view_rows):
+            raise RuntimeError(
+                "BuildPostMarketRecapJob requires get_strong_stock_watch_view_rows; "
+                "Layer C read-model is unavailable"
+            )
+        layer_c_rows: list[dict[str, Any]] = [
+            dict(row or {})
+            for row in await read_layer_c_view_rows(
+                end_date=trade_date,
+                window_days=7,
+                include_removed=False,
+                latest_per_stock=False,
+                stock_id=None,
+                limit=5000,
+            )
+        ]
+
+        # Build strong_pool + trading_permission via PDV2 (Layer C display only in recap)
+        pdv2_engine = PostMarketDecisionEngineV2()
+        pdv2 = pdv2_engine.evaluate(
+            trade_date=trade_date.isoformat(),
+            confirmed_mainlines=confirmed_mainlines,
+            mainline_lifecycle=[r.to_dict() for r in reviews],
+            market_regime=regime.to_dict() if hasattr(regime, "to_dict") else dict(regime or {}),
+            stock_pool_rows=layer_c_rows,
+        )
+        pdv2.diagnostics["layer_c_rows"] = len(layer_c_rows)
+        pdv2.diagnostics["layer_c_source"] = layer_c_source
+        if cml_error:
+            pdv2.diagnostics["confirmed_mainline_error"] = cml_error
+        recap_doc["post_market_decision_v2"] = pdv2.to_dict()
+
+        # ── PR-13A: persist mainline daily state ──
+        await self._persist_mainline_daily_state(trade_date, recap_doc, batch_id or "", trace_id or "")
+
+        # Re-write snapshot with PDV2 D1 data (written before PDV2 section at line 632)
+        updated_snapshot = PostMarketRecapSnapshot(
+            trade_date=trade_date, snapshot_version=snapshot_version,
+            batch_id=batch_id, trace_id=trace_id, source_trace_id=trace_id,
+            recap_doc=_serialize(recap_doc),
+        )
+        await self._write_port.upsert_post_market_recap_snapshot(updated_snapshot)
 
     async def _persist_review_queue(self, trade_date: date, review_items: list) -> None:
         """PR-9B: Persist analyst_review_items to mainline_review_queue."""
@@ -1451,8 +1572,15 @@ class BuildPostMarketRecapJob:
         pool = getattr(self._read_port, "_pool", None)
         if pool is None:
             facade = getattr(self._read_port, "_db", None)
-            db_client = getattr(facade, "_db", None) if facade else None
-            pool = getattr(db_client, "pool", None) if db_client else None
+            if facade is not None:
+                pool = getattr(facade, "pool", None)
+                if pool is None:
+                    db_client = getattr(facade, "_db", None)
+                    if db_client is not None:
+                        pool = getattr(db_client, "pool", None)
+                if pool is None:
+                    gateway_client = getattr(facade, "_client", None)
+                    pool = getattr(gateway_client, "pool", None) if gateway_client is not None else None
 
         service = PostMarketReadinessService(pool=pool)
         result = await service.check(trade_date)
@@ -1667,6 +1795,7 @@ class BuildPostMarketRecapJob:
 
     async def _build_strong_stock_reviews(self, trade_date: date) -> list[dict]:
         """P3-5: 从 strong_stock_watch_history 生成结构化强势股分层。"""
+        rows: list[Any] = []
         pool = None
         # Resolve pool from read_port
         pool_direct = getattr(self._read_port, "_pool", None)
@@ -1677,7 +1806,22 @@ class BuildPostMarketRecapJob:
             db_client = getattr(facade, "_db", None) if facade else None
             pool = getattr(db_client, "pool", None) if db_client else None
         if pool is None:
-            return []
+            rows = []
+        if not rows:
+            view_rows_fn = getattr(self._read_port, "get_strong_stock_watch_view_rows", None)
+            if not callable(view_rows_fn):
+                return []
+            try:
+                rows = await view_rows_fn(
+                    end_date=trade_date,
+                    window_days=0,
+                    include_removed=True,
+                    latest_per_stock=False,
+                    limit=120,
+                )
+            except TypeError:
+                rows = await view_rows_fn(trade_date)
+            return self._normalize_strong_stock_reviews(rows)
 
         sql = """
         SELECT
@@ -1728,38 +1872,107 @@ class BuildPostMarketRecapJob:
         """
         async with pool.acquire() as conn:
             rows = await conn.fetch(sql, trade_date)
+        return self._normalize_strong_stock_reviews(rows)
 
+    @staticmethod
+    def _normalize_strong_stock_reviews(rows: list[Any]) -> list[dict]:
         results: list[dict] = []
-        for r in rows:
-            pl = r["pattern_labels"]
+        for raw in rows or []:
+            r = dict(raw or {})
+            pl = r.get("pattern_labels")
             if isinstance(pl, str):
                 try:
                     import json as _json
                     pl = _json.loads(pl)
                 except Exception:
                     pl = []
+            if isinstance(pl, dict):
+                pl = list(pl.values())
             results.append({
-                "stock_code": r["stock_id"],
-                "stock_name": r["stock_name"],
-                "subject_key": r["subject_key"],
-                "theme_name": r["theme_name"],
-                "role": r["pool_entry_type"] or r["cycle_state"] or "",
-                "watch_status": r["watch_status"],
-                "watch_score": float(r["watch_score"]) if r["watch_score"] else 0,
-                "strong_grade": "",
-                "support_type": r["support_type"] or "",
-                "support_score": float(r["support_score"]) if r["support_score"] else 0,
-                "money_flow_tier": r["money_flow_tier"],
-                "role_enhanced": r["role_enhanced"],
-                "main_net_inflow": float(r["main_net_inflow"]) if r["main_net_inflow"] else 0,
-                "pct_chg": float(r["pct_chg"]) if r["pct_chg"] else 0,
-                "turnover_rate": float(r["turnover_rate"]) if r["turnover_rate"] else 0,
-                "volume_ratio": float(r["volume_ratio"]) if r["volume_ratio"] else 0,
-                "position_label": r["position_label"],
+                "stock_code": r.get("stock_id") or r.get("stock_code") or "",
+                "stock_name": r.get("stock_name") or "",
+                "subject_key": r.get("subject_key") or "",
+                "theme_name": r.get("theme_name") or r.get("subject_name") or r.get("subject_key") or "",
+                "role": r.get("pool_entry_type") or r.get("cycle_state") or r.get("role") or "",
+                "watch_status": r.get("watch_status") or "",
+                "watch_score": float(r.get("watch_score") or 0),
+                "strong_grade": r.get("strong_grade") or "",
+                "support_type": r.get("support_type") or "",
+                "support_score": float(r.get("support_score") or 0),
+                "money_flow_tier": r.get("money_flow_tier") or "",
+                "role_enhanced": r.get("role_enhanced") or "",
+                "main_net_inflow": float(r.get("main_net_inflow") or 0),
+                "pct_chg": float(r.get("pct_chg") or 0),
+                "turnover_rate": float(r.get("turnover_rate") or 0),
+                "volume_ratio": float(r.get("volume_ratio") or 0),
+                "position_label": r.get("position_label") or "",
                 "pattern_labels": pl if isinstance(pl, list) else [],
-                "rationale": "",
+                "rationale": r.get("rationale") or "",
             })
         return results
+
+    @staticmethod
+    def _build_strong_hotspot_subjects(strong_stock_reviews: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        hotspots: list[dict[str, Any]] = []
+        seen: set[str] = set()
+        for row in strong_stock_reviews or []:
+            subject_key = str(row.get("subject_key") or "").strip()
+            if not subject_key or subject_key in seen:
+                continue
+            seen.add(subject_key)
+            hotspots.append({
+                "subject_key": subject_key,
+                "theme_name": str(row.get("theme_name") or subject_key),
+                "stock_id": str(row.get("stock_code") or row.get("stock_id") or ""),
+                "stock_name": str(row.get("stock_name") or ""),
+                "watch_score": row.get("watch_score"),
+                "support_score": row.get("support_score"),
+                "watch_status": row.get("watch_status"),
+                "pool_entry_type": row.get("role") or "",
+                "cycle_state": row.get("cycle_state") or "",
+                "source": "strong_stock_reviews",
+            })
+        return hotspots
+
+    @staticmethod
+    def _build_confirmed_mainline_hotspots(active_mainline_universe: dict[str, Any]) -> list[dict[str, Any]]:
+        hotspots: list[dict[str, Any]] = []
+        for row in active_mainline_universe.get("active_mainlines") or []:
+            if not isinstance(row, dict):
+                continue
+            subject_key = str(row.get("canonical_subject_key") or row.get("subject_key") or "").strip()
+            if not subject_key:
+                continue
+            hotspots.append({
+                "subject_key": subject_key,
+                "theme_name": str(row.get("mainline_name") or row.get("theme_name") or subject_key),
+                "stock_id": str(row.get("stock_id") or ""),
+                "stock_name": str(row.get("stock_name") or ""),
+                "watch_score": row.get("mainline_strength_score"),
+                "support_score": row.get("mainline_strength_score"),
+                "watch_status": "confirmed_mainline",
+                "pool_entry_type": "formal",
+                "cycle_state": str(row.get("state") or row.get("final_cycle_state") or "confirmed"),
+                "source": "confirmed_mainline",
+            })
+        return hotspots
+
+    @staticmethod
+    def _merge_hotspot_subjects(
+        existing_hotspots: list[dict[str, Any]],
+        confirmed_hotspots: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        merged: list[dict[str, Any]] = []
+        seen: set[str] = set()
+        for row in list(confirmed_hotspots) + list(existing_hotspots):
+            if not isinstance(row, dict):
+                continue
+            subject_key = str(row.get("subject_key") or "").strip()
+            if not subject_key or subject_key in seen:
+                continue
+            seen.add(subject_key)
+            merged.append(dict(row))
+        return merged
 
     @staticmethod
     def _build_capital_reviews(dragon_tiger_rows: list[dict]) -> list[dict]:

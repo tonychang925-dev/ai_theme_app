@@ -26,6 +26,7 @@ from stock_processing_service.contracts.dto import (
     PriorSnapshotDTO,
     StockBarDTO,
     SubjectStockPoolDTO,
+    TradeCalendarDTO,
 )
 from stock_processing_service.domain.services.w2s_candidate_service import W2SCandidate
 
@@ -34,14 +35,19 @@ from stock_processing_service.domain.services.w2s_candidate_service import W2SCa
 
 class _FakeReadPort:
     async def get_trade_calendar(self, trade_date: date):
-        return None
+        return TradeCalendarDTO(
+            trade_date=trade_date,
+            calendar_is_open=True,
+            prev_trade_date=trade_date,
+            next_trade_date=trade_date,
+        )
 
     async def get_stock_daily_bars(self, trade_date: date, stock_ids: list[str] | None = None) -> list[StockBarDTO]:
         return [
             StockBarDTO(
                 trade_date=trade_date, stock_id="002000.SZ", stock_name="SampleA",
                 open_price=Decimal("12"), high_price=Decimal("13"), low_price=Decimal("11.8"),
-                close_price=Decimal("12.9"), pre_close=Decimal("12"), pct_chg=Decimal("7.5"),
+                close_price=Decimal("13.2"), pre_close=Decimal("12"), pct_chg=Decimal("10.0"),
                 volume=Decimal("30000"), amount=Decimal("350000"),
                 limit_up_price=Decimal("13.2"), limit_down_price=Decimal("10.8"),
             )
@@ -50,6 +56,26 @@ class _FakeReadPort:
     async def get_stock_daily_bars_range(self, start_date: date, end_date: date, stock_ids=None):
         bars = await self.get_stock_daily_bars(end_date, stock_ids=stock_ids)
         return [bar for bar in bars if start_date <= bar.trade_date <= end_date]
+
+    async def get_subject_stock_daily_bars_range(
+        self,
+        start_date: date,
+        end_date: date,
+        stock_ids=None,
+        subject_keys=None,
+    ):
+        return [
+            {
+                "trade_date": end_date,
+                "stock_id": "002000.SZ",
+                "stock_name": "SampleA",
+                "subject_key": "ai_chip",
+                "subject_name": "AI Chip",
+                "is_leader": True,
+                "pool_rank": 1,
+                "rank_order": 1,
+            }
+        ]
 
     async def get_stock_auction_snapshot(self, trade_date: date, stock_ids=None):
         return []
@@ -116,6 +142,25 @@ class _FakeReadPort:
     async def get_subject_context_by_subject_keys(self, subject_keys: list[str], trade_date: date):
         return []
 
+    async def get_active_confirmed_mainlines(self, trade_date: date, limit: int = 100):
+        return [
+            {
+                "mainline_id": "ml-ai-chip",
+                "canonical_subject_key": "ai_chip",
+                "related_subject_keys_json": ["ai_chip"],
+                "branch_subject_keys_json": [],
+            }
+        ]
+
+    async def get_mainline_state_daily(self, trade_date: date, subject_keys: list[str]):
+        return [
+            {
+                "subject_key": "ai_chip",
+                "final_cycle_state": "repair",
+                "final_mainline_alive": True,
+            }
+        ]
+
     async def get_prior_stock_daily_snapshots(self, trade_date: date, lookback_days: int, stock_ids=None):
         return [
             PriorSnapshotDTO(trade_date=trade_date, stock_id="002000.SZ",
@@ -147,6 +192,17 @@ class _FakeReadPort:
     async def get_prior_strong_watch_pool_rows(self, trade_date: date, lookback_days: int):
         return []
 
+    async def get_strong_stock_watch_view_rows(
+        self,
+        end_date: date,
+        window_days: int = 7,
+        include_removed: bool = False,
+        latest_per_stock: bool = True,
+        stock_id: str | None = None,
+        limit: int = 200,
+    ) -> list[dict[str, Any]]:
+        return []
+
     async def get_subject_event_stats(self, trade_date: date, subject_keys=None):
         return []
 
@@ -167,6 +223,8 @@ class _FakeWritePort:
         self.strong_watch_pool_rows: list[dict[str, Any]] = []
         self.strong_watch_history_rows: list[dict[str, Any]] = []
         self.w2s_candidate_pool_rows: list[dict[str, Any]] = []
+        self.setup_plan_rows: list[dict[str, Any]] = []
+        self.one_to_two_feature_rows: list[dict[str, Any]] = []
 
     async def upsert_stock_daily_snapshot_rows(self, rows): return len(rows)
     async def upsert_subject_stock_daily_snapshot_rows(self, rows): return len(rows)
@@ -200,6 +258,12 @@ class _FakeWritePort:
     async def upsert_theme_cycle_evidence_daily_rows(self, rows): return len(rows)
     async def upsert_weak_to_strong_candidate_pool_rows(self, rows):
         self.w2s_candidate_pool_rows.extend(rows)
+        return len(rows)
+    async def upsert_post_market_setup_plan_rows(self, rows):
+        self.setup_plan_rows.extend(rows)
+        return len(rows)
+    async def upsert_one_to_two_candidate_feature_rows(self, rows):
+        self.one_to_two_feature_rows.extend(rows)
         return len(rows)
 
 
@@ -279,6 +343,8 @@ def test_build_post_market_recap_job_strong_watch_pool_flow() -> None:
         assert result.status == "ok"
         assert result.affected_rows == 1
         assert len(write_port.recap_docs) >= 1
+        assert len(write_port.setup_plan_rows) >= 1
+        assert len(write_port.one_to_two_feature_rows) >= 1
         recap_doc = write_port.recap_docs[-1].recap_doc
         assert recap_doc["candidate_source"] == "strong_watch_pool"
         assert recap_doc["layer_c_input_mode"] == LAYER_C_INPUT_MODE
@@ -326,8 +392,339 @@ def test_build_post_market_recap_job_strong_watch_pool_flow() -> None:
     asyncio.run(_run())
 
 
-def test_build_post_market_recap_job_persists_d1_into_recap_doc_tc_d1_001() -> None:
-    """TC-D1-001: D1 should land in recap_doc without producing C-layer pool writes."""
+def test_build_post_market_recap_job_reads_layer_c_rows_from_view_model_tc_layer_c_002() -> None:
+    """TC-LC-002: recap should read Layer C rows from view model, not recap_doc."""
+
+    class _LayerCViewReadPort(_FakeReadPort):
+        async def get_strong_stock_watch_view_rows(
+            self,
+            end_date: date,
+            window_days: int = 7,
+            include_removed: bool = False,
+            latest_per_stock: bool = True,
+            stock_id: str | None = None,
+            limit: int = 200,
+        ) -> list[dict[str, Any]]:
+            return [
+                {
+                    "trade_date": end_date,
+                    "stock_id": "002000.SZ",
+                    "stock_name": "ViewSource",
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "watch_score": 86.0,
+                    "watch_priority": 91.0,
+                    "watch_status": "active",
+                    "pool_entry_type": "formal",
+                    "strong_grade": "A",
+                    "relay_role": "leader",
+                    "source_tag": "view_model",
+                    "cycle_state": "repair",
+                    "mainline_strength_score": 72.0,
+                    "support_type": "ma_support",
+                    "support_level": 12.0,
+                    "support_score": 78.0,
+                }
+            ]
+
+    async def _run() -> None:
+        read_port = _LayerCViewReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=cache_port,
+        )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+        job._build_market_summary_llm = AsyncMock(  # type: ignore[method-assign]
+            return_value={"source": "test", "market_overview": "ok"}
+        )
+
+        result = await job.execute(
+            trade_date=date(2026, 4, 23),
+            snapshot_version="pm-v2",
+            batch_id="bpm-layer-c-view",
+            trace_id="tpm-layer-c-view",
+            skip_prereqs=True,
+            skip_layer_c=True,
+        )
+
+        assert result.status == "ok"
+        recap_doc = write_port.recap_docs[-1].recap_doc
+        pdv2 = recap_doc["post_market_decision_v2"]
+        assert pdv2["diagnostics"]["layer_c_source"] == "strong_stock_watch_view_rows"
+        assert pdv2["diagnostics"]["layer_c_rows"] == 1
+        assert "layer_c_d1_preview_truncated" not in pdv2["diagnostics"]
+
+    asyncio.run(_run())
+
+
+def test_build_post_market_recap_job_requires_layer_c_view_model_tc_layer_c_003() -> None:
+    """TC-LC-003: missing Layer C view-model must fail loud."""
+
+    class _MissingLayerCViewReadPort(_FakeReadPort):
+        get_strong_stock_watch_view_rows = None
+
+    async def _run() -> None:
+        read_port = _MissingLayerCViewReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=cache_port,
+        )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+        job._build_market_summary_llm = AsyncMock(  # type: ignore[method-assign]
+            return_value={"source": "test", "market_overview": "ok"}
+        )
+
+        try:
+            await job.execute(
+                trade_date=date(2026, 4, 23),
+                snapshot_version="pm-v2",
+                batch_id="bpm-layer-c-missing",
+                trace_id="tpm-layer-c-missing",
+                skip_prereqs=True,
+                skip_layer_c=True,
+            )
+        except RuntimeError as exc:
+            assert "get_strong_stock_watch_view_rows" in str(exc)
+        else:
+            raise AssertionError("expected missing Layer C view-model to raise RuntimeError")
+
+    asyncio.run(_run())
+
+
+def test_build_post_market_recap_job_backfills_strong_watch_count_from_reviews() -> None:
+    """When Layer C legacy rows are empty, recap count should follow strong_stock_reviews."""
+
+    async def _run() -> None:
+        read_port = _FakeReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=cache_port,
+        )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+        job._build_strong_stock_reviews = AsyncMock(  # type: ignore[method-assign]
+            return_value=[
+                {
+                    "stock_code": "002000.SZ",
+                    "stock_name": "SampleA",
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "role": "formal",
+                    "watch_status": "active",
+                    "watch_score": 88.0,
+                    "strong_grade": "A",
+                    "support_type": "ma_support",
+                    "support_score": 66.0,
+                    "composite_score": 88.0,
+                    "purity_score": 55.0,
+                    "leading_score": 77.0,
+                    "capital_score": 68.0,
+                    "structure_score": 66.0,
+                    "resilience_score": 60.0,
+                    "money_flow": {"main_net_inflow": 88000000, "money_flow_tier": "强", "role_enhanced": ""},
+                    "kline": {"position_label": "突破前高", "pattern_labels": ["高量不破"], "pattern_summary": "高量不破"},
+                    "rationale": "test",
+                    "diagnostics": {"source": "test"},
+                }
+            ]
+        )
+
+        result = await job.execute(
+            trade_date=date(2026, 6, 4),
+            snapshot_version="pm-v2",
+            batch_id="bpm-reviews",
+            trace_id="tpm-reviews",
+            skip_prereqs=True,
+            skip_layer_c=True,
+        )
+
+        assert result.status == "ok"
+        assert result.metrics["strong_watch_history_count"] == 0
+        assert result.metrics["strong_stock_reviews_count"] == 1
+        recap_doc = write_port.recap_docs[-1].recap_doc
+        assert recap_doc["strong_watch_history_count"] == 0
+        assert recap_doc["strong_stock_reviews_count"] == 1
+        assert recap_doc["diagnostics"]["strong_hotspot_subjects_count"] == 1
+        assert recap_doc["strong_hotspot_subjects"][0]["subject_key"] == "ai_chip"
+        assert len(recap_doc["strong_stock_reviews"]) == 1
+        cache_rows = cache_port.cache["sps:strong_watch_history:2026-06-04"]["value"]
+        assert len(cache_rows) == 0
+
+    asyncio.run(_run())
+
+
+def test_build_post_market_recap_job_derives_hotspots_from_strong_watch_view_rows_tc_one_to_two_003() -> None:
+    """TC-ONE-TO-TWO-003: recap must derive strong_hotspot_subjects from strong watch rows for OneToTwo."""
+
+    class _StrongWatchViewReadPort(_FakeReadPort):
+        async def get_stock_daily_bars(self, trade_date: date, stock_ids: list[str] | None = None) -> list[StockBarDTO]:
+            return [
+                StockBarDTO(
+                    trade_date=trade_date,
+                    stock_id="603278.SH",
+                    stock_name="大业股份",
+                    open_price=Decimal("11.29"),
+                    high_price=Decimal("12.32"),
+                    low_price=Decimal("11.20"),
+                    close_price=Decimal("12.32"),
+                    pre_close=Decimal("11.22"),
+                    pct_chg=Decimal("10.0"),
+                    volume=Decimal("30000"),
+                    amount=Decimal("350000"),
+                    limit_up_price=Decimal("12.32"),
+                    limit_down_price=Decimal("10.10"),
+                )
+            ]
+
+        async def get_strong_stock_watch_view_rows(
+            self,
+            end_date: date,
+            window_days: int = 7,
+            include_removed: bool = False,
+            latest_per_stock: bool = True,
+            stock_id: str | None = None,
+            limit: int = 200,
+        ) -> list[dict[str, Any]]:
+            return [
+                {
+                    "trade_date": end_date,
+                    "stock_id": "603278.SH",
+                    "stock_name": "大业股份",
+                    "subject_key": "9019807",
+                    "theme_name": "卫星互联网",
+                    "watch_status": "active",
+                    "watch_score": 88.0,
+                    "support_type": "ma_support",
+                    "support_score": 66.0,
+                    "pool_entry_type": "formal",
+                    "cycle_state": "repair",
+                    "pct_chg": 10.0,
+                    "turnover_rate": 12.3,
+                    "volume_ratio": 2.1,
+                    "position_label": "突破前高",
+                    "pattern_labels": ["高量不破"],
+                    "main_net_inflow": 88000000,
+                    "role_enhanced": "",
+                    "money_flow_tier": "强",
+                    "mainline_strength_score": 72.0,
+                }
+            ]
+
+        async def get_subject_stock_daily_bars_range(
+            self,
+            start_date: date,
+            end_date: date,
+            stock_ids=None,
+            subject_keys=None,
+        ):
+            return [
+                {
+                    "trade_date": end_date,
+                    "stock_id": "603278.SH",
+                    "stock_name": "大业股份",
+                    "subject_key": "9019807",
+                    "subject_name": "卫星互联网",
+                    "is_leader": True,
+                    "pool_rank": 1,
+                    "rank_order": 1,
+                }
+            ]
+
+        async def get_subject_board_stats(self, trade_date: date) -> list[dict[str, Any]]:
+            return [
+                {"subject_key": "9019807", "subject_limit_up_count": 2, "subject_strong_count": 3},
+            ]
+
+        async def get_active_confirmed_mainlines(self, trade_date: date, limit: int = 100):
+            return [
+                {
+                    "mainline_id": "ml-sat",
+                    "canonical_subject_key": "9019807",
+                    "related_subject_keys_json": ["9019807"],
+                    "branch_subject_keys_json": [],
+                }
+            ]
+
+        async def get_mainline_state_daily(self, trade_date: date, subject_keys: list[str]):
+            return [
+                {
+                    "subject_key": "9019807",
+                    "final_cycle_state": "repair",
+                    "final_mainline_alive": True,
+                }
+            ]
+
+    async def _run() -> None:
+        read_port = _StrongWatchViewReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=cache_port,
+        )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+        job._build_market_summary_llm = AsyncMock(  # type: ignore[method-assign]
+            return_value={"source": "test", "market_overview": "ok"}
+        )
+
+        result = await job.execute(
+            trade_date=date(2026, 5, 6),
+            snapshot_version="pm-v2",
+            batch_id="bpm-hotspots",
+            trace_id="tpm-hotspots",
+            skip_prereqs=True,
+            skip_layer_c=True,
+        )
+
+        assert result.status == "ok"
+        assert result.metrics["strong_stock_reviews_count"] == 1
+        recap_doc = write_port.recap_docs[-1].recap_doc
+        assert recap_doc["strong_stock_reviews_count"] == 1
+        assert recap_doc["diagnostics"]["strong_hotspot_subjects_count"] == 1
+        assert recap_doc["strong_hotspot_subjects"][0]["subject_key"] == "9019807"
+
+    asyncio.run(_run())
+
+
+def test_build_post_market_recap_job_does_not_generate_d1_in_recap_doc_tc_d1_001() -> None:
+    """TC-D1-001: recap must not synthesize D1 from candidate inputs."""
 
     class _D1OnlyReadPort(_FakeReadPort):
         async def get_strong_watch_seed_rows(self, trade_date: date, lookback_days: int = 7) -> list[dict[str, Any]]:
@@ -398,19 +795,17 @@ def test_build_post_market_recap_job_persists_d1_into_recap_doc_tc_d1_001() -> N
             batch_id="bpm-d1",
             trace_id="tpm-d1",
             skip_prereqs=True,
-            skip_layer_c=True,
         )
 
         assert result.status == "ok"
         assert result.affected_rows == 1
-        assert write_port.strong_watch_pool_rows == []
-        assert write_port.strong_watch_history_rows == []
-        assert len(write_port.recap_docs) >= 2
+        assert len(write_port.w2s_candidate_pool_rows) == 0
+        assert len(write_port.recap_docs) >= 1
 
         final_recap_doc = write_port.recap_docs[-1].recap_doc
         pdv2 = final_recap_doc["post_market_decision_v2"]
-        assert pdv2["diagnostics"]["d1_algorithm"] == "BuildWeakToStrongCandidateUseCase"
-        assert len(pdv2["weak_to_strong_d1_reviews"]) == 3
+        assert len(pdv2["weak_to_strong_d1_reviews"]) == 0
+        assert len(pdv2["next_day_focus_stocks"]) == 0
 
     asyncio.run(_run())
 
@@ -769,6 +1164,9 @@ def test_build_post_market_recap_job_idempotency() -> None:
             idempotency_port=idempotency_port,
             cache_port=cache_port,
         )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
 
         r1 = await job.execute(trade_date=date(2026, 4, 23), snapshot_version="pm-v3",
                                 batch_id="bpm3", trace_id="tpm3")
@@ -885,6 +1283,9 @@ def test_layer_c_contract_two_board_enters_pool_without_layer_a_b_state() -> Non
             idempotency_port=_FakeIdempotencyPort(),
             cache_port=_FakeCachePort(),
         )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
 
         result = await job.execute(
             trade_date=date(2026, 4, 23),
@@ -894,6 +1295,9 @@ def test_layer_c_contract_two_board_enters_pool_without_layer_a_b_state() -> Non
         )
         assert result.status == "ok"
         assert len(write_port.strong_watch_history_rows) == 1
+        assert len(write_port.strong_watch_pool_rows) == 1
+        assert write_port.strong_watch_history_rows[0]["watch_status"] in {"active", "weakening"}
+        assert write_port.strong_watch_history_rows[0]["pool_entry_type"] == "observe_only"
         labels = write_port.strong_watch_history_rows[0]["labels_json"]
         assert labels["entry_path"] == "independent_leader"
         assert labels["identity_scope"] == "independent_stock_signal"

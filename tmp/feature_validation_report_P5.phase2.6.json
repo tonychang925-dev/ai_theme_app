@@ -1,0 +1,26 @@
+{
+  "phase": "P5.phase2.6",
+  "validated": true,
+  "gate_ready": true,
+  "checks": {
+    "feature_spec_present": true,
+    "traceability_present": true,
+    "phase_contract_present": true,
+    "acceptance_present": true,
+    "wbs_present": true,
+    "core_component_before_tests": true,
+    "rollback_defined": true,
+    "test_commands_defined": true,
+    "no_future_leak_guard_defined": true,
+    "no_layer_c_d1_dependency_defined": true,
+    "no_buy_semantics_defined": true,
+    "reject_audit_defined": true,
+    "summary_unique_contract_defined": true
+  },
+  "gaps": [],
+  "notes": [
+    "P5.phase2.6 is defined as a replay/calibration phase only.",
+    "No premarket/intraday execution is part of this feature spec.",
+    "Setup plan truth remains separate from validation outputs."
+  ]
+}

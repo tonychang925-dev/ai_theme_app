@@ -1,13 +1,11 @@
 """PR-12: PostMarketDecisionEngineV2.
 
-Automates Layer C (strong stock pool) and Layer D1 (weak-to-strong) on top of
-confirmed mainlines + lifecycle + market_regime.
+Layer C post-market view assembler.
 
-Does NOT re-implement stock picking — reuses:
-  - StrongStockTrackingService (Layer C)
-  - W2SCandidateService (Layer D1)
-
-Key constraint: D1 candidates must come from Layer C, not full market scan.
+Layer C rows are provided by the canonical strong stock watch read-model.
+Confirmed mainlines are used only as annotations/diagnostics.
+This module does not generate Layer C, does not filter Layer C by mainline,
+and does not generate Layer D1.
 """
 
 from __future__ import annotations
@@ -15,14 +13,12 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
-from .models import (
-    StrongStockPoolItem, WeakToStrongD1Item, NextDayFocusStock, PostMarketDecisionV2,
-)
+from .models import StrongStockPoolItem, PostMarketDecisionV2
 
 
 @dataclass
 class PostMarketDecisionEngineV2:
-    """Orchestrate Layer C/D1 automation on the new architecture."""
+    """Assemble Layer C post-market display facts."""
 
     @staticmethod
     def _dedupe_key(row: dict[str, Any]) -> str:
@@ -36,7 +32,7 @@ class PostMarketDecisionEngineV2:
         relay_role = str(row.get("relay_role") or "").strip()
         return "|".join(
             [
-                "fallback",
+                "missing_stock_id_key",
                 mainline_id or "--",
                 subject_key or "--",
                 stock_name or "--",
@@ -73,7 +69,7 @@ class PostMarketDecisionEngineV2:
         trade_mode = str(regime.get("trade_mode", "no_trade"))
         position_limit = float(regime.get("position_limit", 0))
 
-        # ── 1. Filter stock pool to confirmed mainlines only ──
+        # ── 1. Build confirmed mainline key set for annotations only ──
         # Expand canonical + related + branch subject_keys consistently
         # with ActiveMainlineUniverseBuilder.
         mainline_sks: set[str] = set()
@@ -100,23 +96,23 @@ class PostMarketDecisionEngineV2:
                 mainline_sks.add(str(bsk))
                 mainline_ids[str(bsk)] = str(ml.get("mainline_id") or "")
 
-        # Filter pool to mainline subjects only
-        filtered_pool = [r for r in pool_rows if str(r.get("subject_key") or r.get("theme_key") or "") in mainline_sks]
-        filtered_pool = self._dedupe_rows(filtered_pool)
+        # Keep the full Layer C pool. mainline_sks is used only for
+        # diagnostics / annotation so independent leaders are not lost.
+        layer_c_dedup_rows = self._dedupe_rows(pool_rows)
 
         # Dedup by stock_id (keep highest watch_score) — 7-day union can have duplicates
         best: dict[str, dict[str, Any]] = {}
-        for r in filtered_pool:
+        for r in layer_c_dedup_rows:
             sid = str(r.get("stock_id") or "")
             if not sid: continue
             ws = float(r.get("watch_score") or 0)
             if sid not in best or ws > float(best[sid].get("watch_score") or 0):
                 best[sid] = r
-        filtered_pool = list(best.values())
+        layer_c_dedup_rows = list(best.values())
 
         # ── 2. Build Layer C strong_stock_pool ──
         strong_pool: list[StrongStockPoolItem] = []
-        for row in filtered_pool:
+        for row in layer_c_dedup_rows:
             sk = str(row.get("subject_key") or row.get("theme_key") or "")
             ws = float(row.get("watch_score") or 0)
             entry = str(row.get("pool_entry_type") or "")
@@ -124,6 +120,8 @@ class PostMarketDecisionEngineV2:
                 entry = "observe_only"
             strong_pool.append(StrongStockPoolItem(
                 trade_date=trade_date,
+                watch_start_date=str(row.get("watch_start_date") or ""),
+                last_trade_date=str(row.get("last_trade_date") or ""),
                 mainline_id=mainline_ids.get(sk, ""),
                 subject_key=sk,
                 theme_name=str(row.get("theme_name") or row.get("subject_name") or ""),
@@ -142,109 +140,11 @@ class PostMarketDecisionEngineV2:
                 support_score=float(row.get("support_score") or 0),
                 evidence=dict(row.get("evidence") or {}),
                 labels=dict(row.get("labels") or {}),
-                diagnostics={"source": "existing_strong_watch_pool"},
+                diagnostics={
+                    "source": "existing_strong_watch_pool",
+                    "mainline_binding_status": "confirmed" if sk in mainline_sks else "not_confirmed",
+                },
             ))
-
-        # ── 3. Build Layer D1 from Layer C ──
-        ULTRA_SHORT_ROLES = {"dragon", "leader", "sub_dragon", "dragon2", "card_position_candidate", "switch_leader"}
-        CORE_ROLES = ULTRA_SHORT_ROLES | {"core", "trend_core", "assistant"}
-
-        d1_candidates: list[WeakToStrongD1Item] = []
-        for item in strong_pool:
-            if item.pool_entry_type == "reject":
-                continue
-            ws = item.watch_score
-            ss = item.support_score
-            # Fallback scoring (will be replaced by W2SCandidateService in follow-up)
-            score = round(ws * 0.6 + ss * 0.4, 1)
-            d1_source = "fallback_score"
-
-            role = str(item.relay_role or "").lower().replace(" ", "_")
-
-            # market_regime constraint
-            if not allow_trade:
-                level = "observe_only"
-                buy_cond = ["等待市场环境改善"]
-                invalid = ["大盘持续弱势", "跌停家数未减少"]
-                d1_source = "blocked_by_market_regime"
-            elif trade_mode == "ultra_short_only":
-                if role not in ULTRA_SHORT_ROLES:
-                    continue  # skip non-core in ultra_short
-                level = "formal" if score >= 70 else "observe_only"
-                buy_cond = ["竞价确认", "龙头板块不弱", "核心前排才有机会"]
-                invalid = ["低开低走", "跌破支撑", "龙头破位"]
-            elif trade_mode == "mainline_core_only":
-                if role not in CORE_ROLES:
-                    continue
-                level = "formal" if score >= 68 else "observe_only"
-                buy_cond = ["主线核心承接", "分歧修复确认"]
-                invalid = ["非主线走弱", "破位下行"]
-            else:
-                level = "formal" if score >= 65 else "observe_only"
-                buy_cond = ["满足承接条件", "板块前排不弱"]
-                invalid = ["破位", "量能不济"]
-
-            d1_candidates.append(WeakToStrongD1Item(
-                trade_date=trade_date,
-                next_trade_date="T+1",
-                stock_id=item.stock_id, stock_name=item.stock_name,
-                mainline_id=item.mainline_id, subject_key=item.subject_key,
-                theme_name=item.theme_name,
-                candidate_stage="D1", candidate_level=level,
-                candidate_score=score,
-                support_score=ss, momentum_score=ws * 0.5,
-                weak_type="pullback" if ss > 70 else "unknown",
-                support_type=item.support_type or "unknown",
-                gap_hit=ss > 75,
-                repair_or_takeover_score=score,
-                weakness_valid_score=ws * 0.7,
-                buy_condition=buy_cond, invalid_condition=invalid,
-                d2_required=True, d2_status="pending",
-                evidence=item.evidence,
-                diagnostics={"source": "Layer_C_strong_pool", "scoring_method": d1_source,
-                             "blocked_by_market_regime": not allow_trade},
-            ))
-
-        # Dedup D1 / focus for legacy rows that may leak repeated identities.
-        if d1_candidates:
-            deduped_d1: dict[str, WeakToStrongD1Item] = {}
-            for item in d1_candidates:
-                key = self._dedupe_key(item.to_dict())
-                if key not in deduped_d1 or item.candidate_score > deduped_d1[key].candidate_score:
-                    deduped_d1[key] = item
-            d1_candidates = list(deduped_d1.values())
-
-        # Sort D1 by score desc
-        d1_candidates.sort(key=lambda x: x.candidate_score, reverse=True)
-
-        # Top N cap per trade mode
-        _d1_limit = 5 if trade_mode == "ultra_short_only" else (10 if trade_mode == "mainline_core_only" else 20)
-        d1_candidates = d1_candidates[:_d1_limit]
-
-        # ── 4. Build next_day_focus_stocks ──
-        focus_stocks: list[NextDayFocusStock] = []
-        for d1 in d1_candidates:
-            if d1.candidate_level != "formal":
-                continue
-            focus_stocks.append(NextDayFocusStock(
-                trade_date=trade_date, stock_id=d1.stock_id, stock_name=d1.stock_name,
-                category="重点观察", priority=len(focus_stocks) + 1,
-                mainline_id=d1.mainline_id, subject_key=d1.subject_key,
-                theme_name=d1.theme_name,
-                pool_entry_type="formal", candidate_level=d1.candidate_level,
-                watch_score=0, candidate_score=d1.candidate_score,
-                buy_condition=d1.buy_condition, invalid_condition=d1.invalid_condition,
-                d2_required=True, d2_status="pending",
-                suggested_position=min(position_limit, 0.3) if position_limit > 0 else 0,
-            ))
-
-        if focus_stocks:
-            deduped_focus: dict[str, NextDayFocusStock] = {}
-            for item in focus_stocks:
-                key = self._dedupe_key(item.to_dict())
-                if key not in deduped_focus or item.candidate_score > deduped_focus[key].candidate_score:
-                    deduped_focus[key] = item
-            focus_stocks = list(deduped_focus.values())
 
         # ── 5. Trading principle summary ──
         tp = {
@@ -252,43 +152,43 @@ class PostMarketDecisionEngineV2:
             "position_limit": position_limit,
             "confirmed_mainline_count": len(mainlines),
             "strong_pool_count": len(strong_pool),
-            "d1_candidate_count": len(d1_candidates),
-            "focus_stock_count": len(focus_stocks),
+            "d1_candidate_count": 0,
+            "focus_stock_count": 0,
         }
 
         # ── Diagnostics: expose active universe vs Layer C coverage gap ──
         all_pool_sks: set[str] = {str(r.get("subject_key") or r.get("theme_key") or "") for r in pool_rows}
-        filtered_sks: set[str] = {str(r.get("subject_key") or r.get("theme_key") or "") for r in filtered_pool}
+        layer_c_dedup_sks: set[str] = {str(r.get("subject_key") or r.get("theme_key") or "") for r in layer_c_dedup_rows}
         missing_sks = all_pool_sks - mainline_sks
 
         return PostMarketDecisionV2(
             trade_date=trade_date,
             trading_permission=tp,
             strong_stock_pool_reviews=[r.to_dict() for r in strong_pool],
-            weak_to_strong_d1_reviews=[r.to_dict() for r in d1_candidates],
-            next_day_focus_stocks=[r.to_dict() for r in focus_stocks],
+            weak_to_strong_d1_reviews=[],
+            next_day_focus_stocks=[],
             trading_principle_v2=tp,
             diagnostics={
                 "confirmed_mainline_source": "registry",
                 "confirmed_count": len(mainlines),
                 "active_mainline_count": len(mainlines),
                 "active_subject_key_count": len(mainline_sks),
-                "total_pool_rows": len(pool_rows),
-                "mainline_filtered_rows": len(filtered_pool),
+                "layer_c_input_rows": len(pool_rows),
+                "mainline_filter_applied": False,
+                "layer_c_dedup_rows": len(layer_c_dedup_rows),
                 "strong_pool_count": len(strong_pool),
-                "d1_count": len(d1_candidates),
-                "d1_top_n_limit": _d1_limit, "d1_top_n_applied": True,
-                "focus_count": len(focus_stocks),
-                "layer_c_subject_keys": sorted(all_pool_sks),
-                "mainline_filtered_subject_keys": sorted(filtered_sks),
-                "missing_registry_subject_keys": sorted(missing_sks),
-                # PDV2 input source transparency
-                "layer_c_d1_eligible_rows": len(pool_rows),
-                "layer_c_d1_after_mainline_filter": len(filtered_pool),
-                "layer_c_d1_reject_filtered": sum(
-                    1 for r in filtered_pool
+                "d1_count": 0,
+                "d1_top_n_limit": 0,
+                "d1_top_n_applied": False,
+                "focus_count": 0,
+                "layer_c_input_subject_keys": sorted(all_pool_sks),
+                "layer_c_dedup_subject_keys": sorted(layer_c_dedup_sks),
+                "layer_c_not_bound_to_confirmed_mainline_subject_keys": sorted(missing_sks),
+                "mainline_binding_is_annotation_only": True,
+                "layer_c_input_rows_pre_filter": len(pool_rows),
+                "layer_c_reject_rows": sum(
+                    1 for r in layer_c_dedup_rows
                     if (r.pool_entry_type if hasattr(r, "pool_entry_type") else r.get("pool_entry_type")) == "reject"
                 ),
-                "layer_c_d1_preview_truncated": len(pool_rows) <= 100,
             },
         )

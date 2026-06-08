@@ -31,6 +31,18 @@ def _get(row, key, default=None):
     return getattr(row, key, default)
 
 
+def _decimal_or_zero(value) -> Decimal:
+    """将空值/非法值归一为 0，避免证据回放被脏数据中断。"""
+    if value is None or value == "":
+        return Decimal("0")
+    if isinstance(value, Decimal):
+        return value
+    try:
+        return Decimal(str(value))
+    except Exception:
+        return Decimal("0")
+
+
 class BuildThemeCycleEvidenceDailyJob:
     """Generate theme_cycle_evidence_daily from pool + bar data.
 
@@ -133,17 +145,17 @@ class BuildThemeCycleEvidenceDailyJob:
                 trade_date=str(b.get("trade_date", "")),
                 stock_id=str(b.get("stock_id", "")),
                 stock_name=str(b.get("stock_name", "")),
-                open_price=_D(str(b.get("open_price", 0))),
-                high_price=_D(str(b.get("high_price", 0))),
-                low_price=_D(str(b.get("low_price", 0))),
-                close_price=_D(str(b.get("close_price", 0))),
-                pre_close=_D(str(b.get("pre_close", 0))),
-                pct_chg=_D(str(b.get("pct_chg", 0))),
-                volume=_D(str(b.get("volume", 0))),
-                amount=_D(str(b.get("amount", 0))),
+                open_price=_D(str(b.get("open_price") or 0)),
+                high_price=_D(str(b.get("high_price") or 0)),
+                low_price=_D(str(b.get("low_price") or 0)),
+                close_price=_D(str(b.get("close_price") or 0)),
+                pre_close=_D(str(b.get("pre_close") or 0)),
+                pct_chg=_D(str(b.get("pct_chg") or 0)),
+                volume=_D(str(b.get("volume") or 0)),
+                amount=_D(str(b.get("amount") or 0)),
                 limit_up=bool(b.get("limit_up", False)),
-                limit_up_price=_D(str(b.get("limit_up_price", 0))),
-                limit_down_price=_D(str(b.get("limit_down_price", 0))),
+                limit_up_price=_D(str(b.get("limit_up_price") or 0)),
+                limit_down_price=_D(str(b.get("limit_down_price") or 0)),
             ) for b in bars_raw
         ]
 
@@ -229,23 +241,23 @@ class BuildThemeCycleEvidenceDailyJob:
             from collections import namedtuple
             _Bar = namedtuple("_Bar", ["trade_date", "stock_id", "stock_name", "open_price", "high_price", "low_price", "close_price", "pre_close", "pct_chg", "volume", "amount", "limit_up", "limit_up_price", "limit_down_price"])
             history_bars = [
-                _Bar(
-                    trade_date=str(b.get("trade_date", "")),
-                    stock_id=str(b.get("stock_id", "")),
-                    stock_name=str(b.get("stock_name", "")),
-                    open_price=Decimal(str(b.get("open_price", 0))),
-                    high_price=Decimal(str(b.get("high_price", 0))),
-                    low_price=Decimal(str(b.get("low_price", 0))),
-                    close_price=Decimal(str(b.get("close_price", 0))),
-                    pre_close=Decimal(str(b.get("pre_close", 0))),
-                    pct_chg=Decimal(str(b.get("pct_chg", 0))),
-                    volume=Decimal(str(b.get("volume", 0))),
-                    amount=Decimal(str(b.get("amount", 0))),
-                    limit_up=bool(b.get("limit_up", False)),
-                    limit_up_price=Decimal(str(b.get("limit_up_price", 0))),
-                    limit_down_price=Decimal(str(b.get("limit_down_price", 0))),
-                ) for b in history_bars
-            ]
+            _Bar(
+                trade_date=str(b.get("trade_date", "")),
+                stock_id=str(b.get("stock_id", "")),
+                stock_name=str(b.get("stock_name", "")),
+                open_price=_decimal_or_zero(b.get("open_price")),
+                high_price=_decimal_or_zero(b.get("high_price")),
+                low_price=_decimal_or_zero(b.get("low_price")),
+                close_price=_decimal_or_zero(b.get("close_price")),
+                pre_close=_decimal_or_zero(b.get("pre_close")),
+                pct_chg=_decimal_or_zero(b.get("pct_chg")),
+                volume=_decimal_or_zero(b.get("volume")),
+                amount=_decimal_or_zero(b.get("amount")),
+                limit_up=bool(b.get("limit_up", False)),
+                limit_up_price=_decimal_or_zero(b.get("limit_up_price")),
+                limit_down_price=_decimal_or_zero(b.get("limit_down_price")),
+            ) for b in history_bars
+        ]
             # Group by date
             bars_by_date: dict[str, list[object]] = {}
             trade_dates_set: set[str] = set()

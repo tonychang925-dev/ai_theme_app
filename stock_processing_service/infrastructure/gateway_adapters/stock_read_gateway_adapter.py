@@ -170,6 +170,24 @@ class StockReadGatewayAdapter:
             )
         return result
 
+    async def get_subject_stock_daily_bars_range(
+        self,
+        start_date: date,
+        end_date: date,
+        stock_ids: list[str] | None = None,
+        subject_keys: list[str] | None = None,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_subject_stock_daily_bars_range", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_subject_stock_daily_bars_range")
+        rows = await fn(
+            start_date=start_date,
+            end_date=end_date,
+            stock_ids=stock_ids,
+            subject_keys=subject_keys,
+        )
+        return [_as_dict(row) for row in rows]
+
     async def get_stock_auction_snapshot(
         self, trade_date: date, stock_ids: list[str] | None = None
     ) -> list[StockAuctionDTO]:
@@ -421,6 +439,25 @@ class StockReadGatewayAdapter:
             return []
         return await fn(trade_date=trade_date)
 
+    async def get_active_confirmed_mainlines(
+        self,
+        trade_date: date,
+        limit: int = 100,
+    ) -> list[dict[str, Any]]:
+        """读取当日可用于复盘/回测的已确认主线。"""
+        fn = getattr(self._db, "get_active_confirmed_mainlines", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date, limit=limit)
+        return [_as_dict(row) for row in rows]
+
+    async def get_all_cycle_judgements(self, trade_date) -> list[dict[str, Any]]:
+        """读取当日所有 Layer B 周期判定记录。"""
+        fn = getattr(self._db, "get_all_cycle_judgements", None)
+        if not callable(fn):
+            return []
+        return await fn(trade_date)
+
     async def get_staging_subject_keys(
         self, trade_date: date, lookback_days: int = 7,
     ) -> list[str]:
@@ -489,6 +526,28 @@ class StockReadGatewayAdapter:
             batch_id=str(p.get("batch_id", "")),
             trace_id=str(p.get("trace_id", "")),
         )
+
+    async def get_post_market_setup_plan_rows(
+        self,
+        trade_date: date,
+        setup_type: str = "one_to_two",
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_post_market_setup_plan_rows", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_post_market_setup_plan_rows")
+        rows = await fn(trade_date=trade_date, setup_type=setup_type)
+        return [_as_dict(row) for row in rows]
+
+    async def get_one_to_two_candidate_feature_rows(
+        self,
+        trade_date: date,
+        setup_type: str = "one_to_two",
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_one_to_two_candidate_feature_rows", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_one_to_two_candidate_feature_rows")
+        rows = await fn(trade_date=trade_date, setup_type=setup_type)
+        return [_as_dict(row) for row in rows]
 
     async def get_mainline_identity_by_subject_keys(
         self,
@@ -622,6 +681,28 @@ class StockReadGatewayAdapter:
             )
         return result
 
+    async def get_strong_stock_watch_view_rows(
+        self,
+        end_date: date,
+        window_days: int = 7,
+        include_removed: bool = False,
+        latest_per_stock: bool = True,
+        stock_id: str | None = None,
+        limit: int = 200,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_strong_stock_watch_view_rows", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_strong_stock_watch_view_rows")
+        rows = await fn(
+            end_date=end_date,
+            window_days=window_days,
+            include_removed=include_removed,
+            latest_per_stock=latest_per_stock,
+            stock_id=stock_id,
+            limit=limit,
+        )
+        return [_as_dict(row) for row in rows]
+
     async def get_mainline_state_daily(
         self,
         trade_date: date,
@@ -679,7 +760,7 @@ class StockReadGatewayAdapter:
     ) -> list[dict[str, Any]]:
         fn = getattr(self._db, "get_strong_watch_seed_rows", None)
         if not callable(fn):
-            return []
+            raise RuntimeError("DatabaseGateway missing get_strong_watch_seed_rows")
         rows = await fn(trade_date=trade_date, lookback_days=lookback_days)
         return [_as_dict(row) for row in rows]
 
@@ -689,6 +770,6 @@ class StockReadGatewayAdapter:
     ) -> list[dict[str, Any]]:
         fn = getattr(self._db, "get_strong_watch_refresh_rows", None)
         if not callable(fn):
-            return []
+            raise RuntimeError("DatabaseGateway missing get_strong_watch_refresh_rows")
         rows = await fn(trade_date=trade_date)
         return [_as_dict(row) for row in rows]

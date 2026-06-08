@@ -73,6 +73,28 @@ class DBThemeDataGateway:
         row = await self._db.get_existing_post_market_recap_snapshot(trade_date)
         return dict(row) if row else None
 
+    async def get_post_market_setup_plan_rows(
+        self,
+        trade_date: date,
+        setup_type: str = "one_to_two",
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_post_market_setup_plan_rows", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_post_market_setup_plan_rows")
+        rows = await fn(trade_date=trade_date, setup_type=setup_type)
+        return [dict(row) for row in rows]
+
+    async def get_one_to_two_candidate_feature_rows(
+        self,
+        trade_date: date,
+        setup_type: str = "one_to_two",
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_one_to_two_candidate_feature_rows", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_one_to_two_candidate_feature_rows")
+        rows = await fn(trade_date=trade_date, setup_type=setup_type)
+        return [dict(row) for row in rows]
+
     async def get_mainline_identity_by_subject_keys(
         self,
         subject_keys: list[str],
@@ -116,6 +138,28 @@ class DBThemeDataGateway:
         if not callable(fn):
             raise RuntimeError("DatabaseGateway missing get_prior_strong_watch_pool_rows")
         rows = await fn(trade_date=trade_date, lookback_days=lookback_days)
+        return [self._as_dict(row) for row in rows]
+
+    async def get_strong_stock_watch_view_rows(
+        self,
+        end_date: date,
+        window_days: int = 7,
+        include_removed: bool = False,
+        latest_per_stock: bool = True,
+        stock_id: str | None = None,
+        limit: int = 200,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_strong_stock_watch_view_rows", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_strong_stock_watch_view_rows")
+        rows = await fn(
+            end_date=end_date,
+            window_days=window_days,
+            include_removed=include_removed,
+            latest_per_stock=latest_per_stock,
+            stock_id=stock_id,
+            limit=limit,
+        )
         return [self._as_dict(row) for row in rows]
 
     async def get_theme_events(self, trade_date: date) -> list[dict[str, Any]]:

@@ -16,8 +16,8 @@ def _ml(ml_id="ml_test", csk="sk_a", name="测试主线", related=None):
     return r
 
 
-def _stock_row(stock_id="000001.SZ", name="测试股", sk="sk_a", score=82, entry="formal", role="dragon"):
-    return {
+def _stock_row(stock_id="000001.SZ", name="测试股", sk="sk_a", score=82, entry="formal", role="dragon", labels=None):
+    row = {
         "stock_id": stock_id, "stock_name": name, "subject_key": sk,
         "theme_name": "测试主线", "watch_score": score, "watch_priority": score + 5,
         "watch_status": "active", "pool_entry_type": entry, "strong_grade": "S",
@@ -25,6 +25,9 @@ def _stock_row(stock_id="000001.SZ", name="测试股", sk="sk_a", score=82, entr
         "mainline_strength_score": 72, "support_type": "gap_support",
         "support_level": 12.0, "support_score": 78,
     }
+    if labels is not None:
+        row["labels"] = labels
+    return row
 
 
 class TestPostMarketDecisionV2:
@@ -35,18 +38,51 @@ class TestPostMarketDecisionV2:
         assert len(r.strong_stock_pool_reviews) == 0
         assert len(r.weak_to_strong_d1_reviews) == 0
         assert len(r.next_day_focus_stocks) == 0
+        assert "layer_c_d1_preview_truncated" not in r.diagnostics
 
-    def test_stocks_filtered_to_mainline_subjects(self):
+    def test_stocks_keep_rows_without_mainline_filter(self):
         e = PostMarketDecisionEngineV2()
         r = e.evaluate(
             trade_date="2026-04-29",
             confirmed_mainlines=[_ml(csk="sk_main")],
             market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
-            stock_pool_rows=[_stock_row(sk="sk_other"), _stock_row(sk="sk_main", name="主线股")],
+            stock_pool_rows=[
+                _stock_row(stock_id="000002.SZ", sk="sk_other"),
+                _stock_row(stock_id="000001.SZ", sk="sk_main", name="主线股"),
+            ],
         )
-        # Only sk_main stock should be in pool
+        assert len(r.strong_stock_pool_reviews) == 2
+        names = {row["stock_name"] for row in r.strong_stock_pool_reviews}
+        assert "主线股" in names
+        assert "测试股" in names
+
+    def test_independent_leader_is_kept_even_without_mainline_binding(self):
+        e = PostMarketDecisionEngineV2()
+        r = e.evaluate(
+            trade_date="2026-04-29",
+            confirmed_mainlines=[_ml(csk="sk_main")],
+            market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
+            stock_pool_rows=[
+                _stock_row(
+                    stock_id="000003.SZ",
+                    sk="sk_other",
+                    name="独立龙头",
+                    role="leader",
+                    labels={
+                        "entry_path": "independent_leader",
+                        "identity_scope": "independent_stock_signal",
+                        "strong_gene_seed": True,
+                        "has_two_board": True,
+                    },
+                ),
+            ],
+        )
         assert len(r.strong_stock_pool_reviews) == 1
-        assert r.strong_stock_pool_reviews[0]["stock_name"] == "主线股"
+        assert r.strong_stock_pool_reviews[0]["stock_name"] == "独立龙头"
+        assert r.strong_stock_pool_reviews[0]["diagnostics"]["mainline_binding_status"] == "not_confirmed"
+        assert r.strong_stock_pool_reviews[0]["labels"]["entry_path"] == "independent_leader"
+        assert r.strong_stock_pool_reviews[0]["labels"]["identity_scope"] == "independent_stock_signal"
+        assert r.strong_stock_pool_reviews[0]["labels"]["strong_gene_seed"] is True
 
     def test_ultra_short_only_restricts_d1(self):
         e = PostMarketDecisionEngineV2()
@@ -59,10 +95,8 @@ class TestPostMarketDecisionV2:
                 _stock_row(name="杂毛", role="follower", score=70),
             ],
         )
-        # Only leader/dragon roles pass ultra_short_only filter
-        d1_names = [d["stock_name"] for d in r.weak_to_strong_d1_reviews]
-        assert "龙头" in d1_names
-        assert "杂毛" not in d1_names
+        assert len(r.weak_to_strong_d1_reviews) == 0
+        assert len(r.next_day_focus_stocks) == 0
 
     def test_mainline_core_only_restricts(self):
         e = PostMarketDecisionEngineV2()
@@ -72,8 +106,8 @@ class TestPostMarketDecisionV2:
             market_regime={"allow_trade": True, "trade_mode": "mainline_core_only", "position_limit": 0.3},
             stock_pool_rows=[_stock_row(name="核心股", score=78)],
         )
-        assert len(r.weak_to_strong_d1_reviews) == 1
-        assert r.trading_principle_v2["d1_candidate_count"] == 1
+        assert len(r.weak_to_strong_d1_reviews) == 0
+        assert r.trading_principle_v2["d1_candidate_count"] == 0
 
     def test_allow_trade_false_no_formal_d1(self):
         e = PostMarketDecisionEngineV2()
@@ -84,7 +118,7 @@ class TestPostMarketDecisionV2:
             stock_pool_rows=[_stock_row(score=90)],
         )
         assert len(r.strong_stock_pool_reviews) == 1  # pool still maintained
-        assert r.weak_to_strong_d1_reviews[0]["candidate_level"] == "observe_only"
+        assert len(r.weak_to_strong_d1_reviews) == 0
         assert len(r.next_day_focus_stocks) == 0  # no formal → no focus
 
     def test_active_mode_generates_focus_stocks(self):
@@ -95,33 +129,28 @@ class TestPostMarketDecisionV2:
             market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
             stock_pool_rows=[_stock_row(score=85, entry="formal")],
         )
-        assert len(r.weak_to_strong_d1_reviews) == 1
-        assert r.weak_to_strong_d1_reviews[0]["candidate_level"] == "formal"
-        assert len(r.next_day_focus_stocks) == 1
-        fs = r.next_day_focus_stocks[0]
-        assert fs["d2_required"] is True
-        assert fs["d2_status"] == "pending"
-        assert len(fs["buy_condition"]) > 0
-        assert len(fs["invalid_condition"]) > 0
+        assert len(r.weak_to_strong_d1_reviews) == 0
+        assert len(r.next_day_focus_stocks) == 0
 
-    def test_pool_filter_respects_related_subjects(self):
+    def test_pool_keeps_related_subjects_without_mainline_filter(self):
         e = PostMarketDecisionEngineV2()
         r = e.evaluate(
             trade_date="2026-04-29",
             confirmed_mainlines=[_ml(csk="sk_core", related=["sk_branch"])],
             market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
             stock_pool_rows=[
-                _stock_row(sk="sk_core", name="核心"), _stock_row(sk="sk_branch", name="分支"),
-                _stock_row(sk="sk_other", name="无关"),
+                _stock_row(stock_id="000001.SZ", sk="sk_core", name="核心"),
+                _stock_row(stock_id="000002.SZ", sk="sk_branch", name="分支"),
+                _stock_row(stock_id="000003.SZ", sk="sk_other", name="无关"),
             ],
         )
-        assert len(r.strong_stock_pool_reviews) == 2  # core + branch
+        assert len(r.strong_stock_pool_reviews) == 3  # core + branch + unrelated rows remain visible
         names = [r["stock_name"] for r in r.strong_stock_pool_reviews]
         assert "核心" in names
         assert "分支" in names
-        assert "无关" not in names
+        assert "无关" in names
 
-    def test_pool_dedupes_legacy_rows_without_stock_id(self):
+    def test_pool_ignores_legacy_rows_without_stock_id(self):
         e = PostMarketDecisionEngineV2()
         legacy_rows = [
             {
@@ -161,10 +190,9 @@ class TestPostMarketDecisionV2:
             market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
             stock_pool_rows=legacy_rows,
         )
-        assert len(r.strong_stock_pool_reviews) == 1
-        assert r.strong_stock_pool_reviews[0]["stock_name"] == "重复股"
-        assert len(r.weak_to_strong_d1_reviews) == 1
-        assert len(r.next_day_focus_stocks) == 1
+        assert len(r.strong_stock_pool_reviews) == 0
+        assert len(r.weak_to_strong_d1_reviews) == 0
+        assert len(r.next_day_focus_stocks) == 0
 
     def test_focus_stock_has_buy_invalid_conditions(self):
         e = PostMarketDecisionEngineV2()
@@ -174,23 +202,7 @@ class TestPostMarketDecisionV2:
             market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
             stock_pool_rows=[_stock_row(score=90, entry="formal")],
         )
-        fs = r.next_day_focus_stocks[0]
-        assert len(fs["buy_condition"]) > 0
-        assert len(fs["invalid_condition"]) > 0
-        assert fs["suggested_position"] > 0
-
-    def test_d1_source_is_layer_c(self):
-        """D1 must come from Layer C, not full market scan."""
-        e = PostMarketDecisionEngineV2()
-        r = e.evaluate(
-            trade_date="2026-04-29",
-            confirmed_mainlines=[_ml()],
-            market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
-            stock_pool_rows=[_stock_row(entry="formal")],
-        )
-        for d1 in r.weak_to_strong_d1_reviews:
-            assert d1["diagnostics"]["source"] == "Layer_C_strong_pool"
-            assert "scoring_method" in d1["diagnostics"]
+        assert len(r.next_day_focus_stocks) == 0
 
     def test_ultra_short_allows_sub_dragon(self):
         e = PostMarketDecisionEngineV2()
@@ -203,9 +215,8 @@ class TestPostMarketDecisionV2:
                 _stock_row(name="杂毛", role="follower", score=75),
             ],
         )
-        names = [d["stock_name"] for d in r.weak_to_strong_d1_reviews]
-        assert "龙二" in names
-        assert "杂毛" not in names
+        assert len(r.weak_to_strong_d1_reviews) == 0
+        assert len(r.next_day_focus_stocks) == 0
 
     def test_no_trade_blocks_focus_but_keeps_pool(self):
         e = PostMarketDecisionEngineV2()
@@ -216,9 +227,22 @@ class TestPostMarketDecisionV2:
             stock_pool_rows=[_stock_row(entry="formal", score=90)],
         )
         assert len(r.strong_stock_pool_reviews) == 1
-        assert r.weak_to_strong_d1_reviews[0]["diagnostics"]["scoring_method"] == "blocked_by_market_regime"
-        assert r.weak_to_strong_d1_reviews[0]["diagnostics"]["blocked_by_market_regime"] is True
+        assert len(r.weak_to_strong_d1_reviews) == 0
         assert len(r.next_day_focus_stocks) == 0
+
+    def test_can_build_layer_c_for_recap(self):
+        e = PostMarketDecisionEngineV2()
+        r = e.evaluate(
+            trade_date="2026-04-29",
+            confirmed_mainlines=[_ml()],
+            market_regime={"allow_trade": True, "trade_mode": "mainline_active", "position_limit": 0.5},
+            stock_pool_rows=[_stock_row(score=85, entry="formal")],
+        )
+        assert len(r.strong_stock_pool_reviews) == 1
+        assert len(r.weak_to_strong_d1_reviews) == 0
+        assert len(r.next_day_focus_stocks) == 0
+        assert r.trading_principle_v2["strong_pool_count"] == 1
+        assert r.trading_principle_v2["d1_candidate_count"] == 0
 
     def test_ultra_short_top_n_limit(self):
         """ultra_short_only should cap D1 at 5."""
@@ -229,7 +253,7 @@ class TestPostMarketDecisionV2:
             market_regime={"allow_trade": True, "trade_mode": "ultra_short_only", "position_limit": 0.2},
             stock_pool_rows=rows,
         )
-        assert len(r.weak_to_strong_d1_reviews) <= 5
+        assert len(r.weak_to_strong_d1_reviews) == 0
 
     def test_core_only_top_n(self):
         """mainline_core_only should cap D1 at 10."""
@@ -240,7 +264,7 @@ class TestPostMarketDecisionV2:
             market_regime={"allow_trade": True, "trade_mode": "mainline_core_only", "position_limit": 0.3},
             stock_pool_rows=rows,
         )
-        assert len(r.weak_to_strong_d1_reviews) <= 10
+        assert len(r.weak_to_strong_d1_reviews) == 0
 
     def test_layer_c_source_diagnostics(self):
         """Diagnostics should include confirmed_mainline_error when registry fails."""

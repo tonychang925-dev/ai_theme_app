@@ -241,6 +241,74 @@ def test_daily_review_v2_builder_maps_ready_strong_stock_reviews() -> None:
     assert coverage["missing_fields"] == []
 
 
+def test_daily_review_v2_builder_maps_nested_support_and_kline_from_decision_reviews() -> None:
+    recap_doc = {
+        "strong_stock_decision_reviews": [
+            {
+                "stock_code": "605162.SH",
+                "stock_name": "新中港",
+                "subject_key": "9013416",
+                "theme_name": "电力运营",
+                "role": "watch",
+                "role_label": "观察",
+                "watch_status": "formal",
+                "watch_score": 58.0,
+                "support": {
+                    "support_type": "previous_close",
+                    "support_score": 9.0,
+                    "support_reason": "已有支撑信号",
+                },
+                "kline": {
+                    "position_label": "previous_close",
+                    "pattern_labels": [],
+                },
+                "money_flow": {
+                    "main_net_inflow": 442846311.0,
+                    "money_flow_tier": "MEDIUM",
+                    "role_enhanced": "watch",
+                },
+                "rationale": "观察承接",
+            }
+        ],
+        "report_context": {
+            "money_flow": [
+                {
+                    "stock_id": "605162",
+                    "main_net_inflow": 442846311.0,
+                    "money_flow_tier": "MEDIUM",
+                    "role_enhanced": "watch",
+                }
+            ],
+            "stock_facts": [
+                {
+                    "stock_id": "605162",
+                    "position_label": "previous_close",
+                    "pattern_labels": [],
+                }
+            ],
+        },
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 6, 4),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.strong.nested.kline",
+    )
+
+    rows = payload["strong_stock_reviews"]
+    assert len(rows) == 1
+    assert rows[0]["stock_code"] == "605162.SH"
+    assert rows[0]["support"]["support_type"] == "previous_close"
+    assert rows[0]["kline"]["position_label"] == "previous_close"
+    assert rows[0]["kline"]["pattern_summary"] == "previous_close"
+    assert rows[0]["diagnostics"]["source"] == "recap_doc.strong_stock_decision_reviews"
+    coverage = payload["diagnostics"]["module_coverage"]["strong_stock_reviews"]
+    assert coverage["status"] == "ready"
+    assert coverage["source"] == "structured"
+    assert coverage["missing_fields"] == []
+
+
 def test_daily_review_v2_builder_marks_strong_stock_missing_fields_partial() -> None:
     recap_doc = {
         "strong_stock_reviews": [
@@ -1217,3 +1285,29 @@ def test_daily_review_v2_builder_keeps_no_dragon_tiger_day_empty_not_failed() ->
     assert coverage["source"] == "none"
     assert coverage["row_count"] == 0
     assert "post_market_recap_snapshot_missing" not in payload["diagnostics"]["errors"]
+
+
+def test_daily_review_v2_builder_passes_through_watchlists() -> None:
+    recap_doc = {
+        "watchlists": {
+            "one_to_two": {
+                "summary": {
+                    "focus_count": 0,
+                    "observe_only_count": 1,
+                    "pending_review_only_count": 0,
+                    "reject_count": 0,
+                    "empty_is_valid": True,
+                },
+                "items": [],
+                "diagnostics": {"empty_is_valid": True},
+            }
+        },
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 5, 26),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.watchlists.pass_through",
+    )
+
+    assert payload["watchlists"]["one_to_two"]["summary"]["observe_only_count"] == 1

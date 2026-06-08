@@ -179,4 +179,5 @@ class PostMarketDailyReviewV2(TypedDict):
     money_flow_reviews: list[dict[str, Any]]
     dragon_tiger_reviews: list[dict[str, Any]]
     trading_principle: dict[str, Any]
+    watchlists: dict[str, Any]
     diagnostics: DailyReviewDiagnostics

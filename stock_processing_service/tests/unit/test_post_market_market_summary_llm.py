@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 from datetime import date
 
 from stock_processing_service.application.services.post_market_market_summary_llm import (
@@ -55,3 +56,23 @@ def test_market_summary_llm_normalizes_structured_response(monkeypatch) -> None:
 
 def test_market_summary_llm_rejects_incomplete_response() -> None:
     assert PostMarketMarketSummaryLlmService.normalize_response({"market_overview": "ok"}) is None
+
+
+def test_market_summary_llm_times_out_and_degrades(monkeypatch) -> None:
+    monkeypatch.setenv("DEEPSEEK_API_KEY", "sk-real-for-unit-test")
+
+    class _SlowParser:
+        async def parse_content(self, content: str):
+            await asyncio.sleep(0.05)
+            return {"market_overview": "slow"}
+
+    service = PostMarketMarketSummaryLlmService(parser_factory=lambda: _SlowParser(), timeout_sec=0.01)
+
+    result = asyncio.run(
+        service.build(
+            trade_date=date(2026, 5, 28),
+            report_context={"market": {"market_bias": "修复"}},
+        )
+    )
+
+    assert result is None

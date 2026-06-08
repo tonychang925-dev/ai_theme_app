@@ -9,6 +9,8 @@ from typing import Any
 @dataclass
 class StrongStockPoolItem:
     trade_date: str = ""
+    watch_start_date: str = ""
+    last_trade_date: str = ""
     mainline_id: str = ""
     subject_key: str = ""
     theme_name: str = ""
@@ -32,7 +34,8 @@ class StrongStockPoolItem:
 
     def to_dict(self) -> dict[str, Any]:
         return {
-            "trade_date": self.trade_date, "mainline_id": self.mainline_id,
+            "trade_date": self.trade_date, "watch_start_date": self.watch_start_date,
+            "last_trade_date": self.last_trade_date, "mainline_id": self.mainline_id,
             "subject_key": self.subject_key, "theme_name": self.theme_name,
             "stock_id": self.stock_id, "stock_name": self.stock_name,
             "watch_score": self.watch_score, "watch_priority": self.watch_priority,

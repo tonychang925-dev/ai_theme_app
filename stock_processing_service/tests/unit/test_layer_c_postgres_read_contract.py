@@ -19,7 +19,11 @@ def test_layer_c_seed_sql_requires_layer_b_alive_for_mainline_path() -> None:
     assert "LEFT JOIN theme_cycle_judgement_v2 v2" in method
     assert "COALESCE(v2.final_mainline_alive, FALSE) = TRUE" in method
     assert "COALESCE(v2.fade_confirmed, FALSE) = FALSE" in method
-    assert "OR COALESCE(cb.has_two_board, FALSE) = TRUE" in method
+    assert "OR COALESCE(tb.stock_code IS NOT NULL, FALSE) = TRUE" in method
+    assert "recent_two_trade_days" in method
+    assert "two_board_stocks" in method
+    assert "two_board_recent" in method
+    assert "stock_daily_snapshot" in method
     assert "mainline_registry mr2" not in method
     assert "OR COALESCE(is_main_theme, FALSE) = TRUE" not in method
     assert "确认主线跟踪池" not in method
@@ -55,6 +59,13 @@ def test_strong_watch_window_view_reads_layer_c_history_by_trade_date() -> None:
 
     assert "FROM strong_stock_watch_history p" in method
     assert "p.trade_date::text AS trade_date" in method
+    assert "CASE" in method
+    assert "p.stock_name ~ '^[0-9]{6}(\\\\.[A-Z]{2})?$'" in method
+    assert "LEFT JOIN LATERAL" in method
+    assert "COALESCE(NULLIF(BTRIM(s.stock_name), ''), p.stock_name)" in method
+    assert "MIN(p.trade_date) OVER (" in method
+    assert "MAX(p.trade_date) OVER (" in method
+    assert "COUNT(*) OVER (" in method
     assert "WHERE p.trade_date IN (SELECT trade_date FROM selected_trade_dates)" in method
     assert "FROM strong_stock_watch_pool p" not in method
     assert "p.watch_start_date::text AS trade_date" not in method

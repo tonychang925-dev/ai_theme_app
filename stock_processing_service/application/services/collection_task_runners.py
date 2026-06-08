@@ -388,15 +388,16 @@ class BuildDragonTigerObjectRunner:
             result = await job.execute(trade_date=trade_date_val, tushare_token=token)
             warnings = list(getattr(result, "warnings", []) or [])
             metrics = dict(getattr(result, "metrics", {}) or {})
-            if result.status == "skipped_no_data" and warnings:
+            if result.status == "skipped_no_data":
+                detail = warnings[0] if warnings else "dragon_tiger raw snapshots exist but payload is empty"
                 return CollectionTaskResult(
-                    status="failed",
-                    current_label=f"龙虎榜未生成 ({warnings[0]})",
+                    status="skipped",
+                    current_label="数据为空，skip到下一个流程",
                     logs=[
-                        f"dragon_tiger status={result.status} rows={result.affected_rows}",
-                        f"dragon_tiger metrics={metrics}",
+                        f"龙虎榜数据为空，skip到下一个流程: rows={result.affected_rows}",
+                        f"龙虎榜详情: {detail}",
+                        f"龙虎榜指标: {metrics}",
                     ],
-                    error_message=str(warnings[0]),
                 )
 
             return CollectionTaskResult(
@@ -862,11 +863,14 @@ class TushareKlineRunner:
 
             job = context.container.build_tushare_daily_bar
             result = await job.execute(trade_date=trade_date_val, token=token, pause_seconds=pause)
+            ok = result.status == "ok"
+            error_message = "" if ok else f"tushare daily bar returned {result.status} rows={result.affected_rows}"
 
             return CollectionTaskResult(
-                status="success" if result.status.startswith("ok") else "failed",
+                status="success" if ok else "failed",
                 current_label=f"Tushare日线采集完成 ({result.status})",
                 logs=[f"tushare_kline status={result.status} rows={result.affected_rows}"] + list(result.warnings or []),
+                error_message=error_message,
             )
         except Exception as e:
             return CollectionTaskResult(

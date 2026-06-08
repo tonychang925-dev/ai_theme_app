@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import pandas as pd
+import pytest
 
 from stock_service.adapters.tushare_adapter import TushareAdapter
 
@@ -62,6 +63,48 @@ def test_query_with_retry_retries_once_then_succeeds(monkeypatch):
 
     assert calls["count"] == 2
     assert result.to_dict(orient="records") == [{"trade_date": "20260401"}]
+
+
+def test_query_includes_http_and_tushare_error_context(monkeypatch):
+    adapter = TushareAdapter("token", timeout=10, retry_count=1, pause_seconds=0)
+
+    class _Response:
+        def __init__(self, payload, *, status_code=200, text=""):
+            self.payload = payload
+            self.status_code = status_code
+            self.text = text
+
+        def json(self):
+            return self.payload
+
+    calls = {"count": 0}
+
+    def _post(*args, **kwargs):
+        calls["count"] += 1
+        return _Response(
+            {
+                "code": 1,
+                "msg": "invalid token",
+                "data": {"fields": [], "items": []},
+            },
+            status_code=403,
+            text='{"code":1,"msg":"invalid token"}',
+        )
+
+    monkeypatch.setattr("stock_service.adapters.tushare_adapter.requests.post", _post)
+
+    with pytest.raises(RuntimeError) as exc_info:
+        adapter.fetch_top_list("2026-04-01")
+
+    message = str(exc_info.value)
+    assert calls["count"] == 2
+    assert "api=top_list" in message
+    assert "attempts=2" in message
+    assert "http_status=403" in message
+    assert "tushare_code=1" in message
+    assert "tushare_msg=invalid token" in message
+    assert 'response_text={"code":1,"msg":"invalid token"}' in message
+    assert "last_error=RuntimeError: tushare returned error: code=1 msg=invalid token" in message
 
 
 def test_fetch_top_list_batches_ts_codes(monkeypatch):

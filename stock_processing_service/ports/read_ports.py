@@ -59,6 +59,18 @@ class StockReadPort(Protocol):
         self, trade_date: date
     ) -> RecapSnapshotDTO | None: ...
 
+    async def get_post_market_setup_plan_rows(
+        self,
+        trade_date: date,
+        setup_type: str = "one_to_two",
+    ) -> list[dict[str, Any]]: ...
+
+    async def get_one_to_two_candidate_feature_rows(
+        self,
+        trade_date: date,
+        setup_type: str = "one_to_two",
+    ) -> list[dict[str, Any]]: ...
+
     async def get_mainline_identity_by_subject_keys(
         self, subject_keys: list[str], trade_date: date
     ) -> list[MainlineIdentityDTO]: ...
@@ -74,6 +86,16 @@ class StockReadPort(Protocol):
     async def get_prior_strong_watch_pool_rows(
         self, trade_date: date, lookback_days: int
     ) -> list[SubjectStockPoolDTO]: ...
+
+    async def get_strong_stock_watch_view_rows(
+        self,
+        end_date: date,
+        window_days: int = 7,
+        include_removed: bool = False,
+        latest_per_stock: bool = True,
+        stock_id: str | None = None,
+        limit: int = 200,
+    ) -> list[dict[str, Any]]: ...
 
     async def get_legacy_strong_watch_candidate_inputs(
         self, trade_date: date, lookback_days: int = 7

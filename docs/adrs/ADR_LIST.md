@@ -857,3 +857,77 @@
   - 复盘在没有执行弱转强 Stage1 时仍能完整展示日复盘；需要补 section source contract 与 2026-05-21 回归样本。
 - Trigger
   - 构建 `post_market_recap_snapshot` 或调整 recap report builder 时。
+
+## 增量附录（2026-06-06，1进2 计划层）
+
+### ADR-P5-001: 1进2 仅作为 Setup Plan 层，不是新的选股引擎
+- Context
+  - `one_to_two_daily_review_architecture.md` 明确将 1进2 定位为“次日观察计划”，复盘阶段只生成计划，不生成买点建议，且不得修改 A/B/C/D 任何生产链。
+- Decision
+  - `OneToTwoSetupPlanEngine` 只负责生成 `post_market_setup_plan` / `DailyReviewV2.watchlists.one_to_two` 的观察计划，不输出 `buy` / `must_buy` / `recommend_buy`，也不接管任何选股引擎职责。
+- Alternatives
+  - 将 1进2 扩展成新的全市场选股器或买点推荐器。
+- Consequences
+  - 保持计划层、确认层、执行层分离；避免重新引入“计划即推荐”的边界污染。
+- Trigger
+  - 设计 1进2 的复盘/计划/确认链路，或扩展 DailyReviewV2 的 watchlist 能力时。
+
+### ADR-P5-002: 1进2 候选允许为空，空结果是正常业务结果
+- Context
+  - 文档明确要求 1进2 是低频、高约束、允许为空的策略，不能为了产出而降低硬门槛，也不能用 fallback/mock/default 凑候选。
+- Decision
+  - 1进2 候选层与计划层必须支持空集合并显式输出结构化诊断；空结果不视为系统错误，也不得自动回退到其它池子补齐。
+- Alternatives
+  - 在候选为空时自动回退到强势股池、D1 候选池或历史快照补数。
+- Consequences
+  - 页面和 API 必须可展示“无候选”；测试需要覆盖空结果、拒绝原因与诊断字段。
+- Trigger
+  - 1进2 观察清单生成、盘后计划落库、盘前 brief 渲染时。
+
+### ADR-P5-003: 1进2 不读取 Layer C / D1，不反向影响 A/B/C/D 生产链
+- Context
+  - `one_to_two_daily_review_architecture.md` 明确禁止从 Layer C 强势股池反推、禁止复用 D1 弱转强候选池、禁止修改 A/B/C/D 任何生产链。
+- Decision
+  - 1进2 只读取主线/生命周期/市场环境/交易原则/龙头核心等事实层；不得依赖 Layer C 或 D1 作为输入，也不得向上游写回任何候选结果。
+- Alternatives
+  - 允许从 Layer C 或 D1 读取“相似标的”作为候选来源。
+- Consequences
+  - 彻底避免把 1进2 做成“强势股池二次筛选”或“弱转强候选再利用”；需要为候选来源与计划来源建立独立契约。
+- Trigger
+  - 设计候选抽取、计划生成、盘前确认或回测反馈时。
+
+### ADR-P5-004: 1进2 的硬门禁必须 fail-loud，禁止 fallback/mock/default
+- Context
+  - 文档对 1进2 明确要求：一票否决前提必须硬化，失败要显式可见，空结果正常，但不允许 silent success。
+- Decision
+  - 候选抽取、硬门禁、计划落库、盘前确认都必须返回结构化状态与诊断；任何缺失的 read-model / adapter / schema mismatch 必须 fail-loud，不允许 fallback/mock/default 伪成功。
+- Alternatives
+  - 缺失数据时静默返回空集或用兼容字段补齐。
+- Consequences
+  - 需要补充空结果与失败原因测试；任何中间层缺失都必须在验收门禁中暴露。
+- Trigger
+  - 构建 1进2 观察计划、执行盘前确认或做 T+1/T+n 回放时。
+
+### ADR-P5-005: 1进2 计划状态与确认状态必须分离且 append-only
+- Context
+  - 1进2 的计划阶段与盘前/盘中确认阶段时间语义不同，盘前确认只能追加事实，不能覆盖盘后观察计划，否则会造成“计划被确认态反写”的状态污染。
+- Decision
+  - `post_market_setup_plan` 使用独立计划状态（`planned / expired / cancelled`）；`setup_plan_realtime_confirmation` 使用独立确认阶段（`auction / intraday / close_review`）和确认结果（`auction_pass / auction_watch / auction_fail / trigger_confirmed / skip / invalidated`），并坚持 append-only。
+- Alternatives
+  - 让盘前/盘中确认直接更新或覆盖观察计划状态。
+- Consequences
+  - 可保留计划真源与确认真源的审计可追踪性；实现侧需要保证确认记录只能追加，不能回写计划表。
+- Trigger
+  - 设计计划表、确认表或实时状态机时。
+
+### ADR-P5-006: 1进2 必须补齐架构守卫测试，验证不读取 Layer C / D1
+- Context
+  - 1进2 的计划层若未在 phase0 就建立代码级守卫，后续容易重新滑向“从强势股池/弱转强候选反推”的错误实现。
+- Decision
+  - phase0 必须包含架构守卫测试：不读取 Layer C、不读取 D1、不调用 `BuildWeakToStrongCandidateUseCase`、不修改 A/B/C/D 表、不输出 buy / trigger_confirmed、空结果合法、no_trade 下 focus_count=0。
+- Alternatives
+  - 只做文档评审与 ADR，不做代码级守卫测试。
+- Consequences
+  - 文档边界与实现边界同步冻结；CI 里可直接阻断越界实现。
+- Trigger
+  - 1进2 计划层进入开发前或做任何实现改动前。

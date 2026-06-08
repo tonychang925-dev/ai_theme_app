@@ -1,6 +1,6 @@
 """PR-10: MainlineLifecycleFactContextBuilder.
 
-Reads confirmed mainlines from mainline_registry and Layer B data
+Reads active confirmed mainlines from mainline_registry and Layer B data
 (theme_cycle_judgement_v2, theme_cycle_evidence_daily) by canonical_subject_key.
 """
 
@@ -41,9 +41,16 @@ class MainlineLifecycleFactContextBuilder:
         # ── 1. Get confirmed mainlines from registry ──
         if confirmed_mainlines is None:
             try:
-                fn = getattr(self._read, "get_confirmed_mainlines", None)
+                fn = getattr(self._read, "get_active_confirmed_mainlines", None)
+                if not callable(fn):
+                    fn = getattr(self._read, "get_confirmed_mainlines", None)
+                if not callable(fn):
+                    fn = getattr(self._read, "get_all_confirmed_mainlines", None)
                 if callable(fn):
-                    confirmed_mainlines = await fn(trade_date=trade_date)
+                    try:
+                        confirmed_mainlines = await fn(trade_date=trade_date)
+                    except TypeError:
+                        confirmed_mainlines = await fn()
                 else:
                     confirmed_mainlines = []
             except Exception:

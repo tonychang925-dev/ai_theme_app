@@ -62,6 +62,18 @@ class StockWriteGatewayAdapter:
             payload["source_name"] = payload.pop("source")
         return await self._db.upsert_post_market_recap_snapshot(payload)
 
+    async def upsert_post_market_setup_plan_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_post_market_setup_plan_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_post_market_setup_plan_rows")
+
+    async def upsert_one_to_two_candidate_feature_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_one_to_two_candidate_feature_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_one_to_two_candidate_feature_rows")
+
     async def upsert_theme_mainline_identity_registry_rows(
         self, rows: list[dict[str, Any]],
         *,
@@ -87,6 +99,24 @@ class StockWriteGatewayAdapter:
         if not rows:
             return 0
         fn = getattr(self._db, "upsert_mainline_daily_state_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        return 0
+
+    async def upsert_mainline_state_daily_rows(self, rows: list[dict[str, Any]]) -> int:
+        """Compatibility alias for BuildMainlineStateJob."""
+        if not rows:
+            return 0
+        fn = getattr(self._db, "upsert_mainline_state_daily_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        return 0
+
+    async def upsert_mainline_state_transition_rows(self, rows: list[dict[str, Any]]) -> int:
+        """Compatibility alias for BuildMainlineStateJob."""
+        if not rows:
+            return 0
+        fn = getattr(self._db, "upsert_mainline_state_transition_rows", None)
         if callable(fn):
             return await fn(rows)
         return 0

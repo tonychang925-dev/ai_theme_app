@@ -1,9 +1,12 @@
-/** PR-14B: Layer C 强势股跟踪池 — 按主线分组，按 formal/observe/reject 分层。 */
+/** PR-14B: Layer C / 当天入围强股展示 — 按题材分组，按 role/candidate 分层。 */
 import { Table, Tag } from "antd";
 import type { PostMarketDecisionV2Review } from "../../../lib/api";
 
 interface Props {
-  review: PostMarketDecisionV2Review;
+  review?: PostMarketDecisionV2Review;
+  rows?: Record<string, unknown>[];
+  title?: string;
+  tradeDate?: string;
 }
 
 function rowKey(row: Record<string, unknown>): string {
@@ -12,14 +15,16 @@ function rowKey(row: Record<string, unknown>): string {
   return [
     "fallback",
     String(row.stock_name || "").trim() || "--",
-    String(row.mainline_name || "").trim() || "--",
+    String(row.mainline_name || row.theme_name || "").trim() || "--",
     String(row.theme_name || "").trim() || "--",
-    String(row.relay_role || "").trim() || "--",
+    String(row.relay_role || row.role_label || row.role || "").trim() || "--",
   ].join("|");
 }
 
-function displayMainlineName(row: Record<string, unknown>): string {
-  return String(row.mainline_name || row.theme_name || "其他").trim() || "其他";
+function displayGroupName(row: Record<string, unknown>): string {
+  const subjectKey = String(row.subject_key || "").trim();
+  if (subjectKey === "__independent__") return "独立龙头";
+  return String(row.mainline_name || row.theme_name || subjectKey || "其他").trim() || "其他";
 }
 
 function translatePoolEntryType(value?: string | null): string {
@@ -38,7 +43,18 @@ function translatePoolEntryType(value?: string | null): string {
   return map[key] || key || "未知";
 }
 
-function translateWatchStatus(value?: string | null): string {
+function translateCandidateLevel(value?: string | null): string {
+  const key = String(value || "").trim();
+  const map: Record<string, string> = {
+    formal: "正式",
+    observe_only: "观察",
+    reject: "淘汰",
+    unknown: "未知",
+  };
+  return map[key] || key || "未知";
+}
+
+function translateStatus(value?: string | null): string {
   const key = String(value || "").trim();
   const map: Record<string, string> = {
     active: "活跃",
@@ -50,54 +66,63 @@ function translateWatchStatus(value?: string | null): string {
   return map[key] || key || "未知";
 }
 
-function translateRelayRole(value?: string | null): string {
-  const key = String(value || "").trim();
-  const map: Record<string, string> = {
-    dragon: "龙头",
-    sub_dragon: "次龙头",
-    leader: "龙头",
-    focus: "重点关注",
-    observe_only: "仅观察",
-    unknown: "未知",
-  };
-  return map[key] || key || "未知";
+function isIncludedRow(row: Record<string, unknown>): boolean {
+  const candidateLevel = String(row.candidate_level || row.pool_entry_type || "").trim().toLowerCase();
+  const watchStatus = String(row.watch_status || "").trim().toLowerCase();
+  if (candidateLevel === "reject") return false;
+  if (watchStatus === "removed") return false;
+  return watchStatus === "active" || watchStatus === "weakening" || candidateLevel === "formal" || candidateLevel === "observe_only";
+}
+
+function isSameDayEntrant(row: Record<string, unknown>, tradeDate?: string): boolean {
+  if (!tradeDate) return true;
+  const watchStart = String(row.watch_start_date || "").trim().slice(0, 10);
+  return watchStart === tradeDate;
 }
 
 function dedupeRows(rows: Record<string, unknown>[]): Record<string, unknown>[] {
   const best = new Map<string, Record<string, unknown>>();
   for (const row of rows) {
     const key = rowKey(row);
-    const score = Number(row.watch_score || 0);
+    const score = Number(row.watch_score ?? row.composite_score ?? 0);
     const prev = best.get(key);
-    if (!prev || score > Number(prev.watch_score || 0)) {
+    if (!prev || score > Number(prev.watch_score ?? prev.composite_score ?? 0)) {
       best.set(key, row);
     }
   }
   return Array.from(best.values());
 }
 
-export default function LayerCStrongPoolPanel({ review }: Props) {
-  const pool = dedupeRows((review.strong_stock_pool_reviews ?? []) as Record<string, unknown>[]);
+export default function LayerCStrongPoolPanel({ review, rows, title = "当天入围强势股", tradeDate }: Props) {
+  const sourceRows = rows ?? ((review?.strong_stock_pool_reviews ?? []) as Record<string, unknown>[]);
+  const pool = dedupeRows(sourceRows).filter((row) => isIncludedRow(row) && isSameDayEntrant(row, tradeDate));
 
   const byMainline: Record<string, Record<string, unknown>[]> = {};
   for (const r of pool) {
-    const ml = displayMainlineName(r);
+    const ml = displayGroupName(r);
     if (!byMainline[ml]) byMainline[ml] = [];
     byMainline[ml].push(r);
   }
 
   const cols = [
-    { title: "股票", dataIndex: "stock_name", key: "name", width: 110 },
-    { title: "角色", dataIndex: "relay_role", key: "role", width: 76, render: (v: string) => translateRelayRole(v) },
-    { title: "评分", dataIndex: "watch_score", key: "score", width: 62, render: (v: number) => v?.toFixed(0) },
-    { title: "级别", dataIndex: "pool_entry_type", key: "level", width: 96, render: (v: string) => <Tag color={v === "formal" ? "green" : v === "observe_only" ? "orange" : v === "tracking_only" ? "blue" : "red"}>{translatePoolEntryType(v)}</Tag> },
-    { title: "状态", dataIndex: "watch_status", key: "status", width: 72, render: (v: string) => translateWatchStatus(v) },
+    { title: "股票", dataIndex: "stock_name", key: "name", width: 110, render: (_: unknown, row: Record<string, unknown>) => <span>{String(row.stock_name || row.stock_code || row.stock_id || "--")}</span> },
+    { title: "入围等级", dataIndex: "candidate_level", key: "role", width: 90, render: (v: string, row: Record<string, unknown>) => translateCandidateLevel(v || String(row.candidate_level || row.pool_entry_type || "")) },
+    { title: "评分", dataIndex: "watch_score", key: "score", width: 62, render: (_: unknown, row: Record<string, unknown>) => Number(row.watch_score ?? row.composite_score ?? 0)?.toFixed(0) },
+    { title: "级别", dataIndex: "candidate_level", key: "level", width: 96, render: (_: unknown, row: Record<string, unknown>) => {
+      const value = String(row.pool_entry_type || row.candidate_level || "");
+      return (
+        <Tag color={value === "formal" ? "green" : value === "observe_only" ? "orange" : value === "tracking_only" ? "blue" : "red"}>
+          {translatePoolEntryType(value)}
+        </Tag>
+      );
+    } },
+    { title: "状态", dataIndex: "watch_status", key: "status", width: 72, render: (v: string) => translateStatus(v) },
   ];
 
   return (
     <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
       <h3 className="section-title recap-panel-title">
-        强势股跟踪池
+        {title}
         <Tag style={{ marginLeft: 8 }}>{pool.length} 只</Tag>
       </h3>
       {Object.entries(byMainline).map(([ml, rows]) => (

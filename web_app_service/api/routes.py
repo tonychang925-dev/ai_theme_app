@@ -2017,10 +2017,18 @@ async def workspace_market_validation(
         "support_score": support_score,
         "reject_reasons": reject_reasons,
         "strong_watch_count": len(sw_stocks),
+        "strong_watch_source": "strong_watch_api",
         "w2s_candidate_count": len(w2s_candidates),
         "stock_validation": stock_view,
         "theme_validation": theme_validation,
     }
+    if not sw_stocks:
+        result["diagnostics"] = {
+            "strong_watch_empty": True,
+            "strong_watch_source": "strong_watch_api",
+            "error_code": "STRONG_WATCH_API_EMPTY",
+            "message": "No fallback applied. Check strong_watch API / DB read model.",
+        }
     _ws_cache_set(_ck, result)
     return result
 

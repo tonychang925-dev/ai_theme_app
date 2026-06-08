@@ -1876,4 +1876,98 @@ Then:
   - 仍有 `4` 条失配，集中于：
     - `海洋经济 9043698`
     - `液冷数据中心 9024880`
-  - 启动阶段仍存在旧 `ThemeDiscoveryEngine` 初始化日志噪音
+- 启动阶段仍存在旧 `ThemeDiscoveryEngine` 初始化日志噪音
+
+---
+
+## Phase P5.phase2.6 — OneToTwo 盘后观察清单回测与算法校准
+
+### 1) 目标（Objective）
+- 基于历史交易日对 `OneToTwoSetupPlanEngine` 做可回放、可对账、可分层统计的回测校准。
+- 只验证盘后观察清单的有效性与分层区分度，不进入盘前/盘中确认，不接入 A/B/C/D 生产链，不产生任何买点动作。
+- 建立 `post_market_setup_plan`、`one_to_two_candidate_feature`、`strategy_signal_daily`、`strategy_signal_validation` 之间的统一回测闭环，且严格禁止未来函数。
+
+### 2) 验收目标（Acceptance Targets）
+- [ACPT-P5P26-001] 任一回测交易日只能使用 T 日及以前的事实数据生成 OneToTwo 计划，T+1/T+n 数据只允许用于验证，不得参与候选生成。
+- [ACPT-P5P26-002] 每个交易日的 `post_market_setup_plan` 必须可回放，且空结果为合法样本，必须保留 `__SUMMARY__` 行与结构化 summary。
+- [ACPT-P5P26-003] `one_to_two_candidate_feature` 必须保留全部候选审计记录，包含 reject，且 reject 行必须携带非空 `veto_reasons`。
+- [ACPT-P5P26-004] 仅 `focus / observe_only / pending_review_only` 可生成 `strategy_signal_daily`，不得输出 buy / must_buy / recommend_buy。
+- [ACPT-P5P26-005] `strategy_signal_validation` 必须输出 T+1 二板触达/封板/炸板/失败等结果标签，并在缺行情时标记 `D_NO_DATA`。
+- [ACPT-P5P26-006] 回测汇总必须按 `decision / market_regime / reject_reason / score_bucket` 维度输出，并可证明 `focus` 分层优于 `observe_only` 或至少不弱于随机基线。
+- [ACPT-P5P26-007] 审计对账脚本必须通过：summary 唯一、计划项与候选审计一致、reject 审计完整、setup_type 一致、无 buy 语义。
+
+### 3) 验收用例（Given/When/Then）
+- [ACC-P5P26-01]
+  - Given: 历史区间 `2026-06-04 ~ 2026-06-05`
+  - When: 执行 `./scripts/check_one_to_two_setup_plan_audit.sh --trade-date 2026-06-04`
+  - Then: 返回 0；`__SUMMARY__` 唯一；`items` 与 `candidate_features` 对账通过；reject 审计完整。
+
+- [ACC-P5P26-02]
+  - Given: 已冻结的 `OneToTwoSetupPlanEngine`
+  - When: 以仅包含 T 日及以前事实的上下文执行计划构建并生成 feature snapshot
+  - Then: 不得读取 T+1 事实；遇到未来函数或缺事实应 fail-loud，不得补空。
+
+- [ACC-P5P26-03]
+  - Given: 生成后的 `post_market_setup_plan`
+  - When: 读取 `DailyReviewV2.watchlists.one_to_two`
+  - Then: 只展示持久化计划；不触发实时重算；不回退旧 watchlists。
+
+- [ACC-P5P26-04]
+  - Given: `strategy_signal_daily`
+  - When: 查询 OneToTwo 信号记录
+  - Then: 只存在 `focus / observe_only / pending_review_only` 信号；不存在 buy/must_buy/recommend_buy。
+
+- [ACC-P5P26-05]
+  - Given: `strategy_signal_validation`
+  - When: 读取 T+1 结果标签
+  - Then: 能区分 `A/B/C/D` 类型结果；缺行情样本标记为 `D_NO_DATA`。
+
+### 4) 边界与非目标（Boundary/Non-Goals）
+- 不进入盘前竞价确认。
+- 不进入盘中触发确认。
+- 不接入自动交易或 VirtualBroker。
+- 不读取 Layer C / D1 作为候选输入。
+- 不在回测脚本中重写 OneToTwo 规则。
+
+### 5) 数据样例（如适用）
+```json
+{
+  "strategy_id": "one_to_two",
+  "strategy_version": "one_to_two_v1.0_post_market_plan",
+  "signal_session": "post_market",
+  "available_at": "2026-06-04T15:30:00+08:00",
+  "tradable_at": "2026-06-05T09:30:00+08:00",
+  "outcome_label": "B_TOUCHED_BUT_BROKEN"
+}
+```
+
+### 6) 失败判定（Fail Fast Criteria）
+- 任一候选在生成时读取到 T+1/T+n 事实，立即失败。
+- `__SUMMARY__` 缺失或重复，立即失败。
+- `reject` 行缺 `veto_reasons`，立即失败。
+- `strategy_signal_daily` 出现 buy 语义，立即失败。
+- `strategy_signal_validation` 无法输出 outcome label，立即失败。
+- 审计对账脚本返回非 0，视为阶段失败。
+
+### 7) 可观察性要求（Observability）
+- 必需日志字段：`strategy_id, strategy_version, trade_date, watch_date, decision, veto_reason, snapshot_version, available_at, tradable_at`.
+- 必需指标：
+  - `one_to_two_total_days`
+  - `one_to_two_empty_days`
+  - `one_to_two_focus_rate`
+  - `one_to_two_reject_audit_complete_rate`
+  - `one_to_two_next_day_sealed_rate`
+- 审计条目：每条 reject 必须有可读 veto reasons；每条信号必须有源快照版本。
+
+### 8) 变更兼容性说明（Compatibility）
+- 保持 `post_market_setup_plan` 为计划真源，不回退到旧 `watchlists.one_to_two`。
+- 允许新增 backtest 表与验证字段，但不得改变生产计划层语义。
+- 回测新增字段必须只增不改旧语义；若需要破坏性扩展，必须先走 ADR。
+
+### 9) 通过判定（Exit Criteria）
+- 以下条件必须全部满足（AND）：
+  1. P5.phase2.6 的回测合同、数据快照、信号验证与汇总脚本全部可执行。
+  2. 审计对账脚本通过，且 reject 审计完整。
+  3. 不存在未来函数。
+  4. 不产生买点语义。
+  5. 空结果样本可被统计且不视为失败。

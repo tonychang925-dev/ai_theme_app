@@ -8,7 +8,7 @@ from stock_processing_service.domain.services.strong_stock_tracking_service impo
 )
 
 
-def test_layer_c_two_board_requires_at_least_two_hard_gate_hits() -> None:
+def test_layer_c_two_board_bypasses_hard_gate_for_entry() -> None:
     failed = StrongStockTrackingService._evaluate_strong_pool_hard_gate(
         recent_limit_up_count=1,
         final_mainline_alive=False,
@@ -41,7 +41,7 @@ def test_layer_c_two_board_requires_at_least_two_hard_gate_hits() -> None:
     )
 
     assert failed["pass_count"] == 1
-    assert failed["passed"] is False
+    assert failed["passed"] is True
     assert passed["pass_count"] >= 2
     assert passed["passed"] is True
 

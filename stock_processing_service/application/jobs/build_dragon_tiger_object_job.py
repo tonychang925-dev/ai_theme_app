@@ -7,6 +7,7 @@ from __future__ import annotations
 import asyncio
 from dataclasses import dataclass
 from datetime import date
+from functools import partial
 from typing import Any
 
 from stock_processing_service.contracts.dto import BuildResult
@@ -54,8 +55,24 @@ class BuildDragonTigerObjectJob:
         td_str = trade_date.isoformat() if hasattr(trade_date, 'isoformat') else str(trade_date)
         snapshot_service = TushareDragonTigerSnapshotService(stock_config)
         if allow_fetch:
-            top_list_result = await asyncio.to_thread(snapshot_service.fetch_or_cache_top_list, td_str)
-            top_inst_result = await asyncio.to_thread(snapshot_service.fetch_or_cache_top_inst, td_str)
+            cached_top_list = snapshot_service.load_cached_top_list(td_str)
+            cached_top_inst = snapshot_service.load_cached_top_inst(td_str)
+            has_complete_local = (
+                cached_top_list is not None
+                and cached_top_inst is not None
+                and cached_top_list.row_count > 0
+                and cached_top_inst.row_count > 0
+            )
+            if has_complete_local:
+                top_list_result = cached_top_list
+                top_inst_result = cached_top_inst
+            else:
+                top_list_result = await asyncio.to_thread(
+                    partial(snapshot_service.fetch_or_cache_top_list, td_str, force_refresh=True)
+                )
+                top_inst_result = await asyncio.to_thread(
+                    partial(snapshot_service.fetch_or_cache_top_inst, td_str, force_refresh=True)
+                )
         else:
             top_list_result = snapshot_service.load_cached_top_list(td_str)
             top_inst_result = snapshot_service.load_cached_top_inst(td_str)
