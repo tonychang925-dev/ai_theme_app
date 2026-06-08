@@ -5,6 +5,7 @@ import {
   type AbnormalStockReviewV2, type DailyReviewView, type DragonTigerReviewV2, type EngineMarketRegimeReview, type EngineSummary, type MainlineDailyStateReview, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness,
   generateDailyReviewV2, generatePostMarketDerivedData, generatePostMarketRecap,
+  fetchPostMarketRecapGenerateStatus,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 import recapIcon from "../../assets/intel-icons/当日复盘.png";
@@ -1501,8 +1502,49 @@ export function RecapPage() {
       updateGenerationStep("readiness", { status: "success", progress: 100 });
       updateGenerationStep("recap", { status: "running", progress: 35 });
       const recapResult = await generatePostMarketRecap(tradeDate, true);
-      requirePostMarketCommandOk(recapResult, "生成复盘报告失败");
-      updateGenerationStep("recap", { status: "success", progress: 100 });
+
+      // R3: async mode — poll until success/failed
+      if (recapResult.status === "accepted") {
+        const snapshotVersion = recapResult.snapshot_version as string;
+        updateGenerationStep("recap", { status: "running", progress: 50, label: "后台生成中..." });
+
+        let pollCount = 0;
+        const MAX_POLLS = 120; // 6 min at 3s intervals
+        const POLL_INTERVAL_MS = 3000;
+
+        while (pollCount < MAX_POLLS) {
+          await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
+          pollCount += 1;
+          const pollResult = await fetchPostMarketRecapGenerateStatus(tradeDate, snapshotVersion).catch(() => null);
+          if (!pollResult || !pollResult.ok) continue;
+
+          if (pollResult.status === "success") {
+            updateGenerationStep("recap", { status: "success", progress: 100 });
+            break;
+          }
+          if (pollResult.status === "failed" || pollResult.status === "failed_precondition") {
+            const diag = pollResult.diagnostics || {};
+            const errMsg = (diag.error_message as string) || pollResult.error_code || "未知错误";
+            updateGenerationStep("recap", { status: "failed", progress: 100 });
+            setError(`重新复盘失败：${errMsg}\n旧复盘结果仍可查看。`);
+            return;
+          }
+          // running or queued — continue polling, update progress
+          const progress = Math.min(50 + pollCount * 3, 95);
+          updateGenerationStep("recap", { status: "running", progress, label: `后台生成中... (${pollCount * 3}s)` });
+        }
+
+        if (pollCount >= MAX_POLLS) {
+          updateGenerationStep("recap", { status: "failed", progress: 100 });
+          setError("重新复盘超时，请稍后手动刷新页面查看结果。");
+          return;
+        }
+      } else {
+        // Sync mode fallback (non-force or legacy)
+        requirePostMarketCommandOk(recapResult, "生成复盘报告失败");
+        updateGenerationStep("recap", { status: "success", progress: 100 });
+      }
+
       updateGenerationStep("daily_review_v2", { status: "running", progress: 40 });
       await generateDailyReviewV2(tradeDate, true).catch(() => null);
       updateGenerationStep("daily_review_v2", { status: "success", progress: 100 });

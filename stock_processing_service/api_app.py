@@ -2101,8 +2101,11 @@ async def _build_one_to_two_watchlists(trade_date: date) -> dict[str, Any]:
             },
         )
     items = [dict(r) for r in rows if str((r or {}).get("stock_id") or "") != "__SUMMARY__"]
-    summary = summary_row.get("summary") if "summary" in summary_row else {}
-    diagnostics = summary_row.get("diagnostics") if "diagnostics" in summary_row else {}
+    import json as _json
+    summary_raw = summary_row.get("summary") if "summary" in summary_row else {}
+    diagnostics_raw = summary_row.get("diagnostics") if "diagnostics" in summary_row else {}
+    summary = _json.loads(summary_raw) if isinstance(summary_raw, str) else summary_raw
+    diagnostics = _json.loads(diagnostics_raw) if isinstance(diagnostics_raw, str) else diagnostics_raw
     if not isinstance(summary, dict) or not summary:
         raise HTTPException(
             status_code=424,
@@ -2428,7 +2431,10 @@ async def generate_post_market_derived_data(payload: dict[str, Any] | None = Non
 
 @app.post("/api/v1/post-market/recap/generate")
 async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> dict[str, Any]:
-    """生成盘后复盘报告快照。readiness 门禁 + 调用 DailyReview 生成。"""
+    """生成盘后复盘报告快照。readiness 门禁 + 调用 DailyReview 生成。
+
+    支持 async_mode=true：立即返回 202 accepted，后台执行完整 job.execute()。
+    """
     p = payload or {}
     trade_date_str = str(p.get("trade_date") or p.get("date") or "")
     from datetime import date as _date
@@ -2461,12 +2467,140 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
             "missing_tables": readiness.missing_tables,
         }
 
-    # 委托现有的 daily_review/generate 逻辑，传递 force 参数
+    force = bool(p.get("force", False))
+    async_mode = bool(p.get("async_mode", False))
+
+    if async_mode and force:
+        from uuid import uuid4
+        version_tag = uuid4().hex[:8]
+        snapshot_version = f"daily_review_generate.read_model_only.{version_tag}"
+        batch_id = uuid4().hex[:12]
+        trace_id = uuid4().hex[:12]
+
+        # Check for existing running job
+        existing_status = await _read_job_status(pool, d, "post_market_recap_generate")
+        if existing_status and existing_status.get("status") == "running":
+            return {
+                "ok": True, "trade_date": trade_date_str,
+                "status": "running",
+                "message": "已有重新复盘任务正在执行",
+                "snapshot_version": existing_status.get("snapshot_version", snapshot_version),
+                "job_name": "post_market_recap_generate",
+            }
+
+        # Mark queued before launching background task
+        await jss.mark_finished(d, "post_market_recap_generate", "pending",
+            diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id})
+
+        job = app.state.container.build_post_market_recap
+
+        async def _run_background():
+            try:
+                await job.execute(
+                    trade_date=d,
+                    snapshot_version=snapshot_version,
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                    lookback_days=7,
+                    skip_prereqs=True,
+                    skip_layer_c=True,
+                )
+            except Exception:
+                pass  # R1 already handles mark_job_status failed
+
+        import asyncio as _asyncio
+        _asyncio.create_task(_run_background())
+
+        return {
+            "ok": True, "trade_date": trade_date_str,
+            "status": "accepted",
+            "snapshot_version": snapshot_version,
+            "job_name": "post_market_recap_generate",
+            "poll_interval_sec": 3,
+        }
+
+    # Synchronous mode (original behavior)
     return await generate_daily_review({
         "date": trade_date_str,
         "mode": "read_model_only",
-        "force": bool(p.get("force", False)),
+        "force": force,
     })
+
+
+async def _read_job_status(pool, trade_date, job_key: str) -> dict[str, Any] | None:
+    """Read the latest job status row for a given trade_date + job_key."""
+    if pool is None:
+        return None
+    import json as _json
+    async with pool.acquire() as conn:
+        row = await conn.fetchrow("""
+            SELECT status, error_code, diagnostics, updated_at
+            FROM post_market_job_status
+            WHERE trade_date = $1::date AND job_key = $2
+            ORDER BY updated_at DESC LIMIT 1
+        """, trade_date, job_key)
+        if not row:
+            return None
+        diag = row.get("diagnostics")
+        if isinstance(diag, str):
+            diag = _json.loads(diag)
+        return {
+            "status": row["status"],
+            "error_code": row.get("error_code"),
+            "diagnostics": diag or {},
+            "updated_at": str(row["updated_at"]),
+        }
+
+
+@app.get("/api/v1/post-market/recap/generate/status")
+async def get_post_market_recap_generate_status(
+    trade_date: str = Query(..., description="YYYY-MM-DD"),
+    snapshot_version: str = Query("", description="optional snapshot_version filter"),
+) -> dict[str, Any]:
+    """查询重新复盘任务状态。"""
+    from datetime import date as _date
+    try:
+        d = _date.fromisoformat(trade_date)
+    except ValueError:
+        return {"ok": False, "status": "error", "error_code": "INVALID_DATE"}
+
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+
+    status_row = await _read_job_status(pool, d, "post_market_recap_generate")
+
+    if not status_row:
+        return {
+            "ok": True, "trade_date": trade_date,
+            "status": "unknown",
+            "message": "no job status record found",
+            "snapshot_version": snapshot_version or "",
+        }
+
+    # Check if snapshot exists for this date
+    snapshot_ready = False
+    if status_row["status"] == "success" and pool is not None:
+        try:
+            async with pool.acquire() as conn:
+                exists = await conn.fetchval(
+                    "SELECT 1 FROM post_market_recap_snapshot WHERE trade_date = $1::date LIMIT 1",
+                    d,
+                )
+                snapshot_ready = bool(exists)
+        except Exception:
+            pass
+
+    return {
+        "ok": True,
+        "trade_date": trade_date,
+        "snapshot_version": snapshot_version or status_row.get("diagnostics", {}).get("snapshot_version", ""),
+        "job_name": "post_market_recap_generate",
+        "status": status_row["status"],
+        "error_code": status_row.get("error_code"),
+        "diagnostics": status_row.get("diagnostics", {}),
+        "updated_at": status_row.get("updated_at"),
+        "snapshot_ready": snapshot_ready,
+    }
 
 
 # ── P1: DailyReview fast generate (read_model_only) ──

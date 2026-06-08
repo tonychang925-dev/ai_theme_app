@@ -30,9 +30,13 @@ class PostMarketSetupFactContextBuilder:
             self._read.get_trade_calendar(trade_date),
             allow_empty=False,
         )
-        if not calendar or not getattr(calendar, "next_trade_date", None):
+        # Resolve next_trade_date: calendar may be a TradeCalendarDTO or a plain dict
+        nt_raw = getattr(calendar, "next_trade_date", None) if calendar else None
+        if nt_raw is None and isinstance(calendar, dict):
+            nt_raw = calendar.get("next_trade_date")
+        if not calendar or nt_raw is None:
             raise SetupFactContextBuildError("trade_calendar missing next_trade_date")
-        watch_date = calendar.next_trade_date
+        watch_date = nt_raw
 
         source_doc = dict(source_doc or {})
         market_regime = self._extract_required_dict(source_doc, ("market_regime_review", "market_regime"))

@@ -925,6 +925,30 @@ export async function generatePostMarketRecap(date: string, force = false): Prom
   );
 }
 
+export interface RecapGenerateStatus {
+  ok: boolean;
+  trade_date: string;
+  snapshot_version: string;
+  job_name: string;
+  status: "running" | "pending" | "success" | "failed" | "unknown" | "failed_precondition";
+  error_code?: string;
+  diagnostics?: Record<string, unknown>;
+  updated_at?: string;
+  snapshot_ready?: boolean;
+}
+
+export async function fetchPostMarketRecapGenerateStatus(
+  date: string,
+  snapshotVersion: string,
+): Promise<RecapGenerateStatus> {
+  const params = new URLSearchParams({ trade_date: date, snapshot_version: snapshotVersion });
+  return fetchJsonWithTimeout<RecapGenerateStatus>(
+    `/api/v2/post-market/recap/generate/status?${params}`,
+    undefined,
+    10000,
+  );
+}
+
 // ── DailyReview ──
 
 export async function fetchDailyReview(date: string): Promise<DailyReviewView> {

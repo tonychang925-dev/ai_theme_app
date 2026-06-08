@@ -1934,13 +1934,26 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             async with self.pool.acquire() as conn:
                 prev_row = await conn.fetchrow(sql_prev, trade_date)
                 next_row = await conn.fetchrow(sql_next, trade_date)
+                next_trade_date = next_row.get("next_trade_date") if next_row else None
+                source = "subject_stock_daily_snapshot"
+                if next_trade_date is None:
+                    # Fallback: when target is the latest trading day in the table,
+                    # infer next_trade_date via simple calendar rule (skip weekends).
+                    from datetime import timedelta
+                    candidate = trade_date + timedelta(days=1)
+                    if candidate.weekday() == 5:  # Saturday → Monday
+                        candidate = candidate + timedelta(days=2)
+                    elif candidate.weekday() == 6:  # Sunday → Monday
+                        candidate = candidate + timedelta(days=1)
+                    next_trade_date = candidate
+                    source = "calendar_fallback"
                 return {
                     "trade_date": trade_date,
                     "is_open": True,
                     "calendar_is_open": True,
                     "prev_trade_date": prev_row.get("prev_trade_date") if prev_row else None,
-                    "next_trade_date": next_row.get("next_trade_date") if next_row else None,
-                    "source": "subject_stock_daily_snapshot",
+                    "next_trade_date": next_trade_date,
+                    "source": source,
                 }
         except Exception as e:
             logger.warning(f"交易日历读取失败: {e}")
