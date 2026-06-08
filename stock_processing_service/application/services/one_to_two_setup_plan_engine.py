@@ -13,6 +13,9 @@ from stock_processing_service.contracts.dto.one_to_two_dto import (
     RuleResult,
     ScoreResult,
 )
+from stock_processing_service.domain.services.one_to_two_technical_gate import (
+    TECHNICAL_FOCUS_SCORE_THRESHOLD,
+)
 from stock_processing_service.contracts.dto.post_market_setup_context_dto import PostMarketSetupFactContext
 from stock_processing_service.domain.services.one_to_two_candidate_service import OneToTwoCandidateService
 from stock_processing_service.domain.services.one_to_two_risk_plan_builder import OneToTwoRiskPlanBuilder
@@ -55,6 +58,9 @@ class OneToTwoSetupPlanEngine:
         ctx = await builder.build(trade_date, source_doc=source_doc)
         return self.build_from_context(ctx)
 
+    FOCUS_SCORE_THRESHOLD = Decimal("80")
+    FOCUS_TECHNICAL_SCORE_THRESHOLD = TECHNICAL_FOCUS_SCORE_THRESHOLD  # 55
+
     def build_from_context(self, ctx: PostMarketSetupFactContext) -> OneToTwoSetupPlanDTO:
         fact_pool = self.candidate_service.build_fact_pool(ctx)
 
@@ -66,14 +72,16 @@ class OneToTwoSetupPlanEngine:
         for features in fact_pool:
             rule = self.rule_engine.apply(features)
             score = self.scorer.score(features, rule)
-            candidate_features.append(self._to_candidate_feature_item(features, rule, score))
-            if rule.decision == "reject":
+            final_rule = self._apply_score_policy(features, rule, score)
+            # Use final_rule for BOTH candidate_feature and plan item (consistency)
+            candidate_features.append(self._to_candidate_feature_item(features, final_rule, score))
+            if final_rule.decision == "reject":
                 reject_count += 1
-                reject_reasons.update(rule.veto_reasons)
+                reject_reasons.update(final_rule.veto_reasons)
                 continue
 
-            plan = self.risk_plan_builder.build(features, rule, score)
-            items.append(self._to_plan_item(features, rule, score, plan))
+            plan = self.risk_plan_builder.build(features, final_rule, score)
+            items.append(self._to_plan_item(features, final_rule, score, plan))
 
         items = sorted(
             items,
@@ -171,6 +179,39 @@ class OneToTwoSetupPlanEngine:
             evidence.append(f"watch_level={score.watch_level}")
         evidence.extend(rule.risk_flags)
         return evidence
+
+    @classmethod
+    def _apply_score_policy(
+        cls,
+        f: OneToTwoFeatures,
+        rule: RuleResult,
+        score: ScoreResult,
+    ) -> RuleResult:
+        """Downgrade focus → observe_only if scores don't meet thresholds."""
+        if rule.decision != "focus":
+            return rule
+
+        risk = list(rule.risk_flags)
+
+        if score.final_score is None:
+            risk.append("评分缺失，不得 focus")
+            return RuleResult(decision="observe_only", veto_reasons=[], risk_flags=risk)
+
+        technical_str = score.score_detail.get("technical_structure", "0")
+        try:
+            technical_score = Decimal(str(technical_str))
+        except Exception:
+            technical_score = Decimal("0")
+
+        if technical_score < cls.FOCUS_TECHNICAL_SCORE_THRESHOLD:
+            risk.append(f"技术形态评分{technical_score}<55，暂不 focus")
+            return RuleResult(decision="observe_only", veto_reasons=[], risk_flags=risk)
+
+        if score.final_score < cls.FOCUS_SCORE_THRESHOLD:
+            risk.append(f"综合评分{score.final_score}<80，暂不 focus")
+            return RuleResult(decision="observe_only", veto_reasons=[], risk_flags=risk)
+
+        return rule
 
     def _to_candidate_feature_item(
         self,
