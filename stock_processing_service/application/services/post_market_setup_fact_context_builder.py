@@ -440,19 +440,15 @@ class PostMarketSetupFactContextBuilder:
         return result
 
     def _is_limit_up(self, row: dict[str, Any]) -> bool:
-        pct = row.get("pct_chg")
-        try:
-            if pct is not None and float(pct) >= 9.8:
-                return True
-        except Exception:
-            pass
         close_price = row.get("close_price")
         limit_up_price = row.get("limit_up_price")
+        # Primary: limit_up_price comparison (board-agnostic; handles 10%/20%/30% correctly)
         try:
-            if close_price is not None and limit_up_price is not None and float(close_price) >= float(limit_up_price):
+            if close_price is not None and limit_up_price is not None and float(close_price) >= float(limit_up_price) > 0:
                 return True
         except Exception:
             pass
+        # Fallback: row flag
         return bool(row.get("limit_up"))
 
     def _date_str(self, value: Any) -> str:

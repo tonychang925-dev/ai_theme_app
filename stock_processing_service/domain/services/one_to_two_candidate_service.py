@@ -398,11 +398,9 @@ class OneToTwoCandidateService:
         return f"{stock_key}|{subject_key}"
 
     def _is_limit_up(self, row: dict[str, Any]) -> bool:
-        pct = self._decimal_or_none(row.get("pct_chg"))
         close_price = self._decimal_or_none(row.get("close_price"))
         limit_up_price = self._decimal_or_none(row.get("limit_up_price"))
-        if pct is not None and pct >= Decimal("9.8"):
-            return True
+        # Primary: limit_up_price comparison (board-agnostic; handles 10%/20%/30% correctly)
         if (
             close_price is not None
             and limit_up_price is not None
@@ -410,6 +408,7 @@ class OneToTwoCandidateService:
             and close_price >= limit_up_price
         ):
             return True
+        # Fallback: row flag
         return bool(row.get("limit_up"))
 
     def _is_one_word_board(self, row: dict[str, Any]) -> bool:
