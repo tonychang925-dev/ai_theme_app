@@ -129,7 +129,7 @@ class GoldenSpiderPatternService:
         has_golden_spider = False
 
         if len(bars) < 20 or ma20 is None:
-            return self._unknown(stock_id, "insufficient_history", position, pattern, analysis=analysis)
+            return self._unknown(stock_id, "insufficient_history", position, pattern, analysis=analysis, bars=bars)
 
         if pattern_labels and self._has_direct_label(pattern_labels):
             has_golden_spider = True
@@ -193,11 +193,49 @@ class GoldenSpiderPatternService:
         if not has_golden_spider and score < 40:
             level = "unknown"
 
+        kline_trend_state = str(trend.get("trend_state") or "")
+        is_downtrend = self._is_downtrend_trend_state(kline_trend_state)
+        kline_near_resistance = bool(support.get("near_resistance"))
+        kline_near_support = bool(support.get("near_support"))
+        support_broken = bool(support.get("support_broken"))
+        history_bar_count = len(bars)
+        kline_data_ready = history_bar_count >= 20 and ma20 is not None
+        above_ma5 = bool(ma.get("above_ma5"))
+        above_ma10 = bool(ma.get("above_ma10"))
+        above_ma20 = bool(ma.get("above_ma20"))
+        technical_reason = self._technical_reason(
+            kline_data_ready=kline_data_ready,
+            has_golden_spider=has_golden_spider,
+            above_ma5=above_ma5,
+            above_ma10=above_ma10,
+            above_ma20=above_ma20,
+            bullish_alignment=self._is_bullish_alignment(ma),
+            spread_ratio=spread_ratio,
+            volume_ratio=volume_ratio,
+            support_hold=support_hold,
+            kline_near_resistance=kline_near_resistance,
+            support_broken=support_broken,
+            score=score,
+        )
+
         return {
             "stock_id": stock_id,
             "has_golden_spider": has_golden_spider,
             "level": level,
             "score": round(score, 2),
+            # -- v3.1 diagnostics --
+            "history_bar_count": history_bar_count,
+            "kline_data_ready": kline_data_ready,
+            "above_ma5": above_ma5,
+            "above_ma10": above_ma10,
+            "above_ma20": above_ma20,
+            "kline_trend_state": kline_trend_state,
+            "is_downtrend": is_downtrend,
+            "kline_near_resistance": kline_near_resistance,
+            "kline_near_support": kline_near_support,
+            "support_broken": support_broken,
+            "technical_reason": technical_reason,
+            # -- existing fields --
             "ma5": ma5,
             "ma10": ma10,
             "ma20": ma20,
@@ -229,16 +267,32 @@ class GoldenSpiderPatternService:
         pattern: dict[str, Any],
         *,
         analysis: dict[str, Any] | None = None,
+        bars: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
         ma = dict((analysis or {}).get("ma") or {})
         support = dict((analysis or {}).get("support_resistance") or {})
         volume = dict((analysis or {}).get("volume") or {})
         trend = dict((analysis or {}).get("trend") or {})
+        history_bar_count = len(bars) if bars is not None else 0
+        kline_trend_state = str(trend.get("trend_state") or "")
         return {
             "stock_id": stock_id,
             "has_golden_spider": False,
             "level": "unknown",
             "score": 0.0,
+            # -- v3.1 diagnostics --
+            "history_bar_count": history_bar_count,
+            "kline_data_ready": False,
+            "above_ma5": bool(ma.get("above_ma5")),
+            "above_ma10": bool(ma.get("above_ma10")),
+            "above_ma20": bool(ma.get("above_ma20")),
+            "kline_trend_state": kline_trend_state,
+            "is_downtrend": self._is_downtrend_trend_state(kline_trend_state),
+            "kline_near_resistance": bool(support.get("near_resistance")),
+            "kline_near_support": bool(support.get("near_support")),
+            "support_broken": bool(support.get("support_broken")),
+            "technical_reason": reason,
+            # -- existing fields --
             "ma5": self._float(ma.get("ma5")),
             "ma10": self._float(ma.get("ma10")),
             "ma20": self._float(ma.get("ma20")),
@@ -284,6 +338,51 @@ class GoldenSpiderPatternService:
         if None in {ma5, ma10, ma20, latest}:
             return False
         return latest > ma5 > ma10 > ma20
+
+    _DOWNTREAD_STATES = {"bearish_trend", "downtrend", "downtrend_rebound", "weak_downtrend"}
+
+    @classmethod
+    def _is_downtrend_trend_state(cls, trend_state: str) -> bool:
+        return str(trend_state or "").strip().lower() in cls._DOWNTREAD_STATES
+
+    @classmethod
+    def _technical_reason(
+        cls,
+        *,
+        kline_data_ready: bool,
+        has_golden_spider: bool,
+        above_ma5: bool,
+        above_ma10: bool,
+        above_ma20: bool,
+        bullish_alignment: bool,
+        spread_ratio: float | None,
+        volume_ratio: float | None,
+        support_hold: bool,
+        kline_near_resistance: bool,
+        support_broken: bool,
+        score: float,
+    ) -> str:
+        if not kline_data_ready:
+            return "insufficient_history"
+        if has_golden_spider or score >= 68:
+            return "golden_spider_confirmed"
+        if score >= 55:
+            return "near_golden"
+        if support_broken:
+            return "support_broken"
+        if kline_near_resistance:
+            return "near_resistance"
+        if not above_ma5 or not above_ma10 or not above_ma20:
+            return "not_above_ma_cluster"
+        if not bullish_alignment:
+            return "ma_not_bullish_alignment"
+        if spread_ratio is not None and spread_ratio > 0.12:
+            return "ma_cluster_not_converged"
+        if volume_ratio is not None and volume_ratio < 1.05:
+            return "volume_not_expanding"
+        if not support_hold:
+            return "support_broken"
+        return "score_below_threshold"
 
     @staticmethod
     def _cluster_spread_ratio(ma5: float | None, ma10: float | None, ma20: float | None, latest: float | None) -> float | None:
