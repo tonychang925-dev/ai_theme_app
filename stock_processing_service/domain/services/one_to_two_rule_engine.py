@@ -6,6 +6,9 @@ from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoFeatur
 from stock_processing_service.domain.services.one_to_two_rule_config import (
     OneToTwoRuleConfig,
 )
+from stock_processing_service.domain.services.one_to_two_technical_gate import (
+    OneToTwoTechnicalGate,
+)
 
 
 class OneToTwoRuleEngine:
@@ -13,6 +16,7 @@ class OneToTwoRuleEngine:
 
     def __init__(self, config: OneToTwoRuleConfig | None = None) -> None:
         self.config = config or OneToTwoRuleConfig.from_version(None)
+        self.technical_gate = OneToTwoTechnicalGate()
 
     @property
     def rule_version(self) -> str:
@@ -84,15 +88,24 @@ class OneToTwoRuleEngine:
         if f.lifecycle_state in {"fade_confirmed", "dead"}:
             veto.append(f"主线状态不可交易: {f.lifecycle_state}")
 
+        # -- Stage 2: Technical Gate evaluation (after existing vetoes, before decision) --
+        technical = self.technical_gate.evaluate(f)
+        if technical.status == "reject":
+            veto.extend(technical.veto_reasons)
+            risk.extend(technical.risk_flags)
+
         if veto:
             return RuleResult(decision="reject", veto_reasons=veto, risk_flags=risk)
 
         decision: str
         if f.market_trade_mode == "no_trade" or not f.allow_trade:
+            # Technical gate does NOT override market environment
+            if technical.risk_flags:
+                risk.extend(technical.risk_flags)
             return RuleResult(
                 decision="observe_only",
                 veto_reasons=[],
-                risk_flags=["市场环境 no_trade，不得 focus"],
+                risk_flags=risk,
             )
 
         if not f.is_confirmed_mainline:
@@ -108,5 +121,14 @@ class OneToTwoRuleEngine:
             decision = cfg.soft_breadth_cap_decision
         if low_turnover_tier and decision == "focus":
             decision = cfg.low_turnover_cap_decision
+
+        # -- Stage 2: Technical cap_focus (downgrade focus → observe_only) --
+        if decision == "focus" and technical.status == "cap_focus":
+            decision = "observe_only"
+            risk.extend(technical.risk_flags)
+            if technical.focus_cap_reason:
+                risk.append(technical.focus_cap_reason)
+        elif technical.risk_flags:
+            risk.extend(technical.risk_flags)
 
         return RuleResult(decision=decision, veto_reasons=[], risk_flags=risk)
