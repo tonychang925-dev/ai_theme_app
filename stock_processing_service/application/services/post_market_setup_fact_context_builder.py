@@ -62,7 +62,7 @@ class PostMarketSetupFactContextBuilder:
             if sk:
                 subject_market_breadth[sk] = dict(r)
 
-        lookback_start = trade_date - timedelta(days=30)
+        lookback_start = trade_date - timedelta(days=90)
         stock_daily_bars = self._normalize_rows(
             await self._call_optional(
                 "stock_daily_bars_range",

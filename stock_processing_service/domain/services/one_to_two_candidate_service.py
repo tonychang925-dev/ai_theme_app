@@ -116,7 +116,11 @@ class OneToTwoCandidateService:
             ma_row = ctx.ma_pattern_by_stock.get(stock_id, {})
             stock_subject_authenticity = dict(stock_subject_authenticity_by_pair.get(pair_key, {}) or {})
             subject_authenticity = stock_subject_authenticity or dict(subject_authenticity_by_subject.get(subject_key, {}) or {})
-            kline_pattern_quality = dict(kline_pattern_quality_by_stock.get(stock_id, {}) or {})
+            kline_pattern_quality = dict(
+                kline_pattern_quality_by_stock.get(stock_id)
+                or kline_pattern_quality_by_stock.get(stock_key)
+                or {}
+            )
 
             first_limit_time = self._text(
                 bar.get("first_limit_time")
