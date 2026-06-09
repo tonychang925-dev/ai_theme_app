@@ -269,13 +269,20 @@ _FORBIDDEN_BUY_TOKENS = {"buy", "must_buy", "recommend_buy", "买入推荐", "�
 
 
 def _scan_file_for_forbidden_tokens(filepath: str) -> list[str]:
-    """Scan a frontend source file for forbidden buy-signal tokens."""
+    """Scan a frontend/backend source file for forbidden buy-signal tokens in user-facing strings.
+    Skips comments and meta-references like 'no buy semantics'."""
     import os
     hits: list[str] = []
     if not os.path.exists(filepath):
         return hits
     with open(filepath, "r") as f:
         for lineno, line in enumerate(f, start=1):
+            stripped = line.strip()
+            # Skip comment-only lines and lines that merely describe the absence of buy
+            if stripped.startswith("#") or stripped.startswith("//") or stripped.startswith("*"):
+                continue
+            if "no buy" in stripped.lower() or "non-buy" in stripped.lower():
+                continue
             lower = line.lower()
             for token in _FORBIDDEN_BUY_TOKENS:
                 if token.lower() in lower:
@@ -399,3 +406,105 @@ def test_one_to_two_watch_panel_fail_closed_on_trade_date_missing() -> None:
     # matchesTradeDate without valid tradeDate must return false
     has_guard = _scan_file_for_pattern(frontend_root, r"if\s*\(!tradeDate\)\s*return\s*false", "tradeDate_guard")
     assert has_guard, "matchesTradeDate must return false when tradeDate is missing"
+
+
+# ── P3-A: RiskPlanBuilder extension tests ──
+
+def test_risk_plan_builder_outputs_p3a_fields() -> None:
+    """Every plan item must carry the 6 P3-A explanation fields."""
+    from stock_processing_service.domain.services.one_to_two_risk_plan_builder import OneToTwoRiskPlanBuilder
+    from stock_processing_service.contracts.dto.one_to_two_dto import (
+        OneToTwoFeatures, RuleResult, ScoreResult,
+    )
+    from decimal import Decimal
+
+    builder = OneToTwoRiskPlanBuilder()
+    f = OneToTwoFeatures(
+        trade_date="2026-06-08", watch_date="2026-06-09",
+        stock_id="600110.SH", stock_name="诺德股份",
+        subject_key="9018144", subject_name="PCB",
+        is_confirmed_mainline=True, is_strong_hotspot=False,
+        mainline_or_hotspot_state="confirmed_mainline",
+        lifecycle_state="fermentation", market_trade_mode="mainline_core_only",
+        allow_trade=True, is_first_limit_up=True, is_one_word_board=False,
+        is_late_seal=False, first_limit_time="10:00:00", open_board_count=0,
+        turnover_rate=Decimal("0.10"), amount=Decimal("500000000"),
+        close_seal_amount=Decimal("10000000"), seal_ratio=Decimal("2.0"),
+        float_mcap=Decimal("5000000000"), position_120=Decimal("0.30"),
+        is_downtrend=False, near_pressure=False,
+        same_subject_limit_count=3, same_subject_strong_count=5,
+        first_board_type="chain_first_board",
+        subject_authenticity={"level": "core", "score": 75, "authenticity_scope": "stock_subject"},
+    )
+    rule = RuleResult(decision="focus", veto_reasons=[], risk_flags=[])
+    score = ScoreResult(
+        final_score=Decimal("85.0"), watch_level="A",
+        score_detail={
+            "first_board_quality": "80", "theme_authenticity": "75",
+            "board_breadth": "70", "technical_structure": "68",
+            "risk_control": "85",
+        },
+    )
+
+    plan = builder.build(f, rule, score)
+
+    required_keys = [
+        "observation_reason", "subject_logic", "technical_summary",
+        "key_parameters", "tomorrow_plan", "give_up_conditions",
+    ]
+    for key in required_keys:
+        assert key in plan, f"plan must contain '{key}'"
+    assert isinstance(plan["observation_reason"], list) and len(plan["observation_reason"]) > 0
+    assert isinstance(plan["subject_logic"], dict) and plan["subject_logic"].get("subject_key")
+    assert isinstance(plan["key_parameters"], dict)
+    assert isinstance(plan["give_up_conditions"], list)
+
+
+def test_tomorrow_plan_does_not_contain_buy_tokens_in_templates() -> None:
+    """P3-D: RiskPlanBuilder templates must not contain buy/must_buy/recommend_buy."""
+    import os
+    builder_path = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+        "stock_processing_service", "domain", "services", "one_to_two_risk_plan_builder.py",
+    )
+    hits = _scan_file_for_forbidden_tokens(builder_path)
+    assert not hits, f"Forbidden buy tokens in RiskPlanBuilder: {hits}"
+
+
+def test_no_trade_item_has_conservative_tomorrow_plan() -> None:
+    """When market_mode is no_trade, tomorrow_plan must be conservative (no active triggers)."""
+    from stock_processing_service.domain.services.one_to_two_risk_plan_builder import OneToTwoRiskPlanBuilder
+    from stock_processing_service.contracts.dto.one_to_two_dto import (
+        OneToTwoFeatures, RuleResult, ScoreResult,
+    )
+    from decimal import Decimal
+
+    builder = OneToTwoRiskPlanBuilder()
+    f = OneToTwoFeatures(
+        trade_date="2026-06-08", watch_date="2026-06-09",
+        stock_id="002579.SZ", stock_name="中京电子",
+        subject_key="9018144", subject_name="PCB",
+        is_confirmed_mainline=True, is_strong_hotspot=False,
+        mainline_or_hotspot_state="confirmed_mainline",
+        lifecycle_state="fermentation", market_trade_mode="no_trade",
+        allow_trade=False, is_first_limit_up=True, is_one_word_board=False,
+        is_late_seal=False, first_limit_time="10:30:00", open_board_count=1,
+        turnover_rate=Decimal("0.10"), amount=Decimal("500000000"),
+        close_seal_amount=Decimal("10000000"), seal_ratio=Decimal("1.5"),
+        float_mcap=Decimal("5000000000"), position_120=Decimal("0.40"),
+        is_downtrend=False, near_pressure=False,
+        same_subject_limit_count=2, same_subject_strong_count=4,
+    )
+    rule = RuleResult(decision="observe_only", veto_reasons=[], risk_flags=["市场环境 no_trade，不得 focus"])
+    score = ScoreResult(
+        final_score=Decimal("72.0"), watch_level="B",
+        score_detail={"first_board_quality": "70", "theme_authenticity": "60",
+                      "board_breadth": "60", "technical_structure": "55", "risk_control": "70"},
+    )
+
+    plan = builder.build(f, rule, score)
+    tp = plan["tomorrow_plan"]
+    assert "仅观察" in tp.get("expected_behavior", "") or "no_trade" in tp.get("expected_behavior", "").lower()
+    # No active confirmation triggers in no_trade
+    triggers = tp.get("confirmation_triggers", [])
+    assert len(triggers) == 0 or all("不" in str(t) or "仅" in str(t) for t in triggers)

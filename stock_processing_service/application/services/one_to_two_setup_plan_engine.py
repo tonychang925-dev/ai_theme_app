@@ -153,6 +153,13 @@ class OneToTwoSetupPlanEngine:
             "trigger_plan": plan["trigger_plan"],
             "invalidation_plan": plan["invalidation_plan"],
             "exit_plan": plan["exit_plan"],
+            # Phase 3 explanation fields
+            "observation_reason": plan.get("observation_reason", []),
+            "subject_logic": plan.get("subject_logic", {}),
+            "technical_summary": plan.get("technical_summary", {}),
+            "key_parameters": plan.get("key_parameters", {}),
+            "tomorrow_plan": plan.get("tomorrow_plan", {}),
+            "give_up_conditions": plan.get("give_up_conditions", []),
             "data_quality_json": dict(f.data_quality),
             "source_trace_json": dict(f.source_trace),
         }
