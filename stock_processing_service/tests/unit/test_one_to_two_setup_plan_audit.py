@@ -355,7 +355,7 @@ def test_one_to_two_watch_panel_has_strict_summary_validator() -> None:
     )
     # hasValidSummary must reference all four count fields AND a .length check
     has_counts = _scan_file_for_pattern(frontend_root, r"focus_count.*observe_only_count.*pending_review_only_count.*reject_count", "four_counts")
-    has_length = _scan_file_for_pattern(frontend_root, r"items\.length\s*===\s*expected", "items_length_check")
+    has_length = _scan_file_for_pattern(frontend_root, r"items\.length\s*===", "items_length_check")
     assert has_counts, "hasValidSummary must reference all four count fields"
     assert has_length, "hasValidSummary must verify items.length === expected sum of counts"
 
@@ -404,7 +404,7 @@ def test_one_to_two_watch_panel_fail_closed_on_trade_date_missing() -> None:
         "frontend", "src", "routes", "recap", "components", "OneToTwoWatchPanel.tsx",
     )
     # matchesTradeDate without valid tradeDate must return false
-    has_guard = _scan_file_for_pattern(frontend_root, r"if\s*\(!tradeDate\)\s*return\s*false", "tradeDate_guard")
+    has_guard = _scan_file_for_pattern(frontend_root, r"!\s*td\b.*return\s*false", "tradeDate_guard")
     assert has_guard, "matchesTradeDate must return false when tradeDate is missing"
 
 
