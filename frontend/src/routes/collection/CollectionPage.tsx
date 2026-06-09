@@ -334,6 +334,16 @@ export function CollectionPage() {
           <div className="collection-section">
             <strong>数据源</strong>
 
+            {/* ── Tushare 日K线（基础数据层，必须最先执行）── */}
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.tushareKline}
+                onChange={() => setOptions((s) => ({ ...s, tushareKline: !s.tushareKline }))}
+              />
+              <span>Tushare 日K线（含盘前竞价采集）</span>
+            </label>
+
             {/* ── 股票快照（可插拔数据源）── */}
             <label className="collection-check">
               <input
@@ -554,14 +564,6 @@ export function CollectionPage() {
               </div>
             )}
 
-            <label className="collection-check">
-              <input
-                type="checkbox"
-                checked={options.tushareKline}
-                onChange={() => setOptions((s) => ({ ...s, tushareKline: !s.tushareKline }))}
-              />
-              <span>Tushare 日K线（含盘前竞价采集）</span>
-            </label>
             <label className="collection-check">
               <input
                 type="checkbox"
