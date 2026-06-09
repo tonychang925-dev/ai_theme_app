@@ -96,6 +96,11 @@ export function CollectionPage() {
       provider: "jyhf" as "jyhf" | "tushare_join",
       onExisting: "skip" as "skip" | "upsert" | "replace",
     },
+    subjectRank: {
+      enabled: false,
+      provider: "jyhf" as "jyhf" | "snapshot_agg",
+      onExisting: "skip" as "skip" | "upsert" | "replace",
+    },
     tushareKline: true,
     dragonTiger: true,
     indexKline: true,
@@ -202,6 +207,13 @@ export function CollectionPage() {
             ? {
                 provider: options.stockSnapshot.provider,
                 on_existing: options.stockSnapshot.onExisting,
+                force: false,
+              }
+            : false,
+          subject_rank: options.subjectRank.enabled
+            ? {
+                provider: options.subjectRank.provider,
+                on_existing: options.subjectRank.onExisting,
                 force: false,
               }
             : false,
@@ -424,6 +436,115 @@ export function CollectionPage() {
                         setOptions((s) => ({
                           ...s,
                           stockSnapshot: { ...s.stockSnapshot, onExisting: "replace" },
+                        }))
+                      }
+                    />
+                    <span>删除后重建</span>
+                  </label>
+                </div>
+              </div>
+            )}
+
+            {/* ── 题材热度排名（可插拔数据源）── */}
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.subjectRank.enabled}
+                onChange={() =>
+                  setOptions((s) => ({
+                    ...s,
+                    subjectRank: { ...s.subjectRank, enabled: !s.subjectRank.enabled },
+                  }))
+                }
+              />
+              <span>题材热度排名</span>
+            </label>
+
+            {options.subjectRank.enabled && (
+              <div className="collection-sub-group">
+                <div className="collection-radio-group">
+                  <span className="collection-sub-label">热度排名数据源</span>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="rank-provider"
+                      value="jyhf"
+                      checked={options.subjectRank.provider === "jyhf"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          subjectRank: { ...s.subjectRank, provider: "jyhf" },
+                        }))
+                      }
+                    />
+                    <span>久赢恒丰 API（默认）</span>
+                  </label>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="rank-provider"
+                      value="snapshot_agg"
+                      checked={options.subjectRank.provider === "snapshot_agg"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          subjectRank: { ...s.subjectRank, provider: "snapshot_agg" },
+                        }))
+                      }
+                    />
+                    <span>快照聚合（从 subject_stock_daily_snapshot）</span>
+                  </label>
+                </div>
+
+                {options.subjectRank.provider === "snapshot_agg" && (
+                  <p className="collection-hint">
+                    快照聚合模式要求当日 subject_stock_daily_snapshot 已存在。
+                    请确保股票快照任务已先执行。
+                  </p>
+                )}
+
+                <div className="collection-radio-group">
+                  <span className="collection-sub-label">重建策略</span>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="rank-on-existing"
+                      value="skip"
+                      checked={options.subjectRank.onExisting === "skip"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          subjectRank: { ...s.subjectRank, onExisting: "skip" },
+                        }))
+                      }
+                    />
+                    <span>跳过已有数据（默认）</span>
+                  </label>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="rank-on-existing"
+                      value="upsert"
+                      checked={options.subjectRank.onExisting === "upsert"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          subjectRank: { ...s.subjectRank, onExisting: "upsert" },
+                        }))
+                      }
+                    />
+                    <span>覆盖已有行</span>
+                  </label>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="rank-on-existing"
+                      value="replace"
+                      checked={options.subjectRank.onExisting === "replace"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          subjectRank: { ...s.subjectRank, onExisting: "replace" },
                         }))
                       }
                     />

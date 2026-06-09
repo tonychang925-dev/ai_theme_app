@@ -155,6 +155,8 @@ class CollectionJobManager:
             tasks.append(CollectionTaskState(key="stock_snapshot", title="股票快照日采集"))
         elif options.get("jyhf", True):
             tasks.append(CollectionTaskState(key="jyhf", title="股票快照日采集"))
+        if options.get("subject_rank"):
+            tasks.append(CollectionTaskState(key="subject_rank", title="题材热度排名"))
         if options.get("jyhf_history", False):
             tasks.append(CollectionTaskState(key="jyhf_history", title="题材事件集中采集"))
         if options.get("tushare_kline", True):

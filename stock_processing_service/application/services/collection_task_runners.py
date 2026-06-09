@@ -1130,6 +1130,114 @@ def _format_snapshot_result(result) -> list[str]:
     return lines
 
 
+# ── P1: 题材热度排名可插拔数据源 Runner ──
+
+class SubjectRankBuildRunner:
+    """题材热度排名统一入口 Runner — 通过 Orchestrator 自动选择 Producer.
+
+    provider=jyhf          → JyhfSubjectRankProducer (JSONL→DB)
+    provider=snapshot_agg  → SnapshotAggSubjectRankProducer (SQL 聚合)
+    """
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        from datetime import date as _date
+        from database_service.managers.postgres_manager import PostgresDatabaseManager
+        from database_service.scripts.import_jyhf_history_incremental import get_postgres_config
+        from stock_processing_service.application.jobs.subject_rank.jyhf_producer import (
+            JyhfSubjectRankProducer,
+        )
+        from stock_processing_service.application.jobs.subject_rank.snapshot_agg_producer import (
+            SnapshotAggSubjectRankProducer,
+        )
+        from stock_processing_service.application.jobs.subject_rank.factory import (
+            SubjectRankProducerFactory,
+        )
+        from stock_processing_service.application.jobs.subject_rank.orchestrator import (
+            SubjectRankOrchestrator,
+        )
+
+        options = context.payload.get("options") or {}
+        rank_opts = options.get("subject_rank") or {}
+        provider = str(rank_opts.get("provider", "jyhf")).strip().lower()
+        on_existing = str(rank_opts.get("on_existing", "skip")).strip().lower()
+        force = bool(rank_opts.get("force", False))
+
+        if provider not in ("jyhf", "snapshot_agg"):
+            return CollectionTaskResult(
+                status="failed",
+                current_label=f"不支持的 provider: {provider}",
+                error_message=f"unsupported subject_rank provider: {provider}",
+            )
+        if on_existing not in ("skip", "upsert", "replace"):
+            return CollectionTaskResult(
+                status="failed",
+                current_label=f"不支持的 on_existing: {on_existing}",
+                error_message=f"unsupported on_existing: {on_existing}",
+            )
+
+        manager = PostgresDatabaseManager(get_postgres_config())
+        await manager.connect()
+        try:
+            jyhf_producer = JyhfSubjectRankProducer(db_pool=manager.pool)
+            snapshot_agg_producer = SnapshotAggSubjectRankProducer(db_pool=manager.pool)
+            factory = SubjectRankProducerFactory(
+                jyhf_producer=jyhf_producer,
+                snapshot_agg_producer=snapshot_agg_producer,
+            )
+            orchestrator = SubjectRankOrchestrator(
+                factory=factory,
+                db_pool=manager.pool,
+            )
+
+            trade_date_val = _date.fromisoformat(context.trade_date)
+            result = await orchestrator.execute(
+                trade_date=trade_date_val,
+                provider=provider,
+                force=force,
+                on_existing=on_existing,
+            )
+        finally:
+            await manager.disconnect()
+
+        logs = _format_rank_result(result)
+        ok = result.status in ("ok", "ok_existing", "ok_no_data")
+        return CollectionTaskResult(
+            status="success" if ok else "failed",
+            current_label=f"题材热度排名完成 ({result.provider}, {result.affected_rows} rows)",
+            logs=logs,
+            error_message="" if ok else "; ".join(result.warnings),
+        )
+
+
+def _format_rank_result(result) -> list[str]:
+    """将 SubjectRankBuildResult 格式化为前端可读日志."""
+    metrics = result.metrics or {}
+    lines: list[str] = [
+        f"数据源: {result.provider}",
+        f"写入行数: {result.affected_rows}",
+        f"状态: {result.status}",
+        f"batch_id: {metrics.get('batch_id', '--')}",
+    ]
+    if result.provider == "snapshot_agg":
+        lines += [
+            f"快照题材数: {metrics.get('snapshot_subject_count', '--')}",
+            f"上榜题材数: {metrics.get('ranked_subject_count', '--')}",
+            f"Top100: {metrics.get('top100_count', '--')}",
+            f"缺失名称: {metrics.get('missing_name_count', '--')}",
+            f"平均heat: {metrics.get('avg_heat', '--')}",
+            f"heat范围: {metrics.get('min_heat', '--')} ~ {metrics.get('max_heat', '--')}",
+        ]
+    elif result.provider == "jyhf":
+        lines += [
+            f"history文件数: {metrics.get('history_files', '--')}",
+            f"日期rank行数: {metrics.get('date_rank_rows', '--')}",
+            f"题材数: {metrics.get('subject_count', '--')}",
+        ]
+    if result.warnings:
+        lines.append(f"警告: {'; '.join(result.warnings)}")
+    return lines
+
+
 # ── P2: 子进程隔离 Runner ──
 
 class ProcessIsolatedRunner:

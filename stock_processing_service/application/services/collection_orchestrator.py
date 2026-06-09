@@ -89,6 +89,25 @@ class CollectionCommandPlanner:
                 ],
             )
 
+        if task_key == "subject_rank":
+            rank_opts = options.get("subject_rank") or {}
+            provider = rank_opts.get("provider", "jyhf")
+            on_existing = rank_opts.get("on_existing", "skip")
+            force = rank_opts.get("force", False)
+            return CollectionTaskPlan(
+                pre_logs=[
+                    f"subject_rank: provider={provider} on_existing={on_existing} force={force}",
+                    "subject_rank: 从 subject_stock_daily_snapshot 聚合 / JYHF history JSONL 提取",
+                ],
+                steps=[
+                    CollectionTaskStep(
+                        key="subject_rank_build",
+                        runner_key="subject_rank.build",
+                        label=f"题材热度排名 ({provider})",
+                    ),
+                ],
+            )
+
         if task_key == "jyhf":
             return CollectionTaskPlan(
                 pre_logs=["jyhf: Step1 列表同步 + Step2 节点入库 + Step3 股票日快照采集入库（API→DB）"],
