@@ -508,3 +508,88 @@ def test_no_trade_item_has_conservative_tomorrow_plan() -> None:
     # No active confirmation triggers in no_trade
     triggers = tp.get("confirmation_triggers", [])
     assert len(triggers) == 0 or all("不" in str(t) or "仅" in str(t) for t in triggers)
+
+
+# ── P3-B: OneToTwoTechnicalSummaryFormatter tests ──
+
+def test_technical_summary_formatter_golden_spider() -> None:
+    """Formatter must produce golden-spider label and highlights."""
+    from stock_processing_service.domain.services.one_to_two_technical_summary_formatter import (
+        OneToTwoTechnicalSummaryFormatter,
+    )
+    fmt = OneToTwoTechnicalSummaryFormatter()
+    kpq = {
+        "kline_data_ready": True, "has_golden_spider": True, "level": "golden",
+        "score": 90, "technical_reason": "",
+        "above_ma5": True, "above_ma10": True, "above_ma20": True,
+        "ma_alignment_status": "均线多头", "support_broken": False,
+        "kline_near_resistance": False, "is_downtrend": False,
+    }
+    result = fmt.format(kpq, technical_structure_score=90.0)
+    assert "金蜘蛛" in result["label"]
+    assert result["has_golden_spider"] is True
+    assert any("MA5" in h for h in result["highlights"])
+
+
+def test_technical_summary_formatter_ma_not_bullish() -> None:
+    """Formatter must explain ma_not_bullish_alignment clearly."""
+    from stock_processing_service.domain.services.one_to_two_technical_summary_formatter import (
+        OneToTwoTechnicalSummaryFormatter,
+    )
+    fmt = OneToTwoTechnicalSummaryFormatter()
+    kpq = {
+        "kline_data_ready": True, "has_golden_spider": False, "level": "unknown",
+        "score": 48, "technical_reason": "ma_not_bullish_alignment",
+        "above_ma5": True, "above_ma10": False, "above_ma20": False,
+        "ma_alignment_status": "", "support_broken": False,
+        "kline_near_resistance": False, "is_downtrend": False,
+    }
+    result = fmt.format(kpq, technical_structure_score=48.0)
+    assert result["reason"] == "ma_not_bullish_alignment"
+    assert result["reason_label"] is not None
+    assert any("偏低" in r for r in result["risks"])
+
+
+def test_technical_summary_formatter_support_broken() -> None:
+    """Formatter must flag support_broken as a risk."""
+    from stock_processing_service.domain.services.one_to_two_technical_summary_formatter import (
+        OneToTwoTechnicalSummaryFormatter,
+    )
+    fmt = OneToTwoTechnicalSummaryFormatter()
+    kpq = {
+        "kline_data_ready": True, "has_golden_spider": False, "level": "unknown",
+        "score": 30, "technical_reason": "support_broken",
+        "above_ma5": False, "above_ma10": False, "above_ma20": False,
+        "support_broken": True, "is_downtrend": False,
+    }
+    result = fmt.format(
+        kpq, technical_structure_score=20.0, veto_reasons=["支撑破坏"],
+    )
+    assert any("支撑" in r for r in result["risks"])
+
+
+def test_technical_summary_formatter_near_pressure() -> None:
+    """Formatter must flag near_pressure as a risk."""
+    from stock_processing_service.domain.services.one_to_two_technical_summary_formatter import (
+        OneToTwoTechnicalSummaryFormatter,
+    )
+    fmt = OneToTwoTechnicalSummaryFormatter()
+    kpq = {
+        "kline_data_ready": True, "has_golden_spider": True, "level": "near_golden",
+        "score": 65, "technical_reason": "near_resistance",
+        "above_ma5": True, "above_ma10": True, "above_ma20": False,
+        "support_broken": False, "kline_near_resistance": True,
+    }
+    result = fmt.format(kpq, technical_structure_score=55.0, risk_flags=["重要压力位附近，暂不 focus"])
+    assert any("压力" in r for r in result["risks"])
+
+
+def test_technical_summary_formatter_no_kline_data() -> None:
+    """Formatter must clearly flag missing K-line data."""
+    from stock_processing_service.domain.services.one_to_two_technical_summary_formatter import (
+        OneToTwoTechnicalSummaryFormatter,
+    )
+    fmt = OneToTwoTechnicalSummaryFormatter()
+    result = fmt.format({})
+    assert "数据不足" in result["label"]
+    assert result["kline_data_ready"] is False

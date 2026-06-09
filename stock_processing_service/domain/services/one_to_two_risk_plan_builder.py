@@ -5,11 +5,19 @@ from decimal import Decimal
 from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoFeatures, RuleResult, ScoreResult
 
 
+from stock_processing_service.domain.services.one_to_two_technical_summary_formatter import (
+    OneToTwoTechnicalSummaryFormatter,
+)
+
+
 class OneToTwoRiskPlanBuilder:
     """构建 1进2 的观察解释、触发计划、放弃条件。
 
     Phase 3: 不改变 decision / score / rank，只补解释字段。
     """
+
+    def __init__(self) -> None:
+        self._tech_formatter = OneToTwoTechnicalSummaryFormatter()
 
     # ── public entry ──
 
@@ -23,7 +31,7 @@ class OneToTwoRiskPlanBuilder:
             # Phase 3 explanation fields
             "observation_reason": self._build_observation_reason(f, rule, score),
             "subject_logic": self._build_subject_logic(f),
-            "technical_summary": self._build_technical_summary_placeholder(f, rule, score),
+            "technical_summary": self._build_technical_summary(f, rule, score),
             "key_parameters": self._build_key_parameters(f, rule, score),
             "tomorrow_plan": self._build_tomorrow_plan(f, decision),
             "give_up_conditions": self._build_give_up_conditions(f, decision),
@@ -100,51 +108,21 @@ class OneToTwoRiskPlanBuilder:
             "selection_reason": str(auth.get("authenticity_scope") or "subject_fallback"),
         }
 
-    # ── P3-B placeholder — will be replaced by OneToTwoTechnicalSummaryFormatter ──
+    # ── P3-B: technical summary via OneToTwoTechnicalSummaryFormatter ──
 
-    @staticmethod
-    def _build_technical_summary_placeholder(f: OneToTwoFeatures, rule: RuleResult, score: ScoreResult) -> dict:
-        kpq = dict(f.kline_pattern_quality or {})
-        has_gs = bool(kpq.get("has_golden_spider"))
-        kline_score = kpq.get("score")
-        tech_reason = str(kpq.get("technical_reason") or "")
-        technical_score = score.score_detail.get("technical_structure", "0")
+    def _build_technical_summary(self, f: OneToTwoFeatures, rule: RuleResult, score: ScoreResult) -> dict:
+        tech_score_str = score.score_detail.get("technical_structure", "0")
+        try:
+            tech_score = float(Decimal(str(tech_score_str)))
+        except Exception:
+            tech_score = None
 
-        label = "技术形态支持"
-        if not has_gs:
-            label = "技术形态未完全确认"
-        if rule.decision == "reject":
-            label = "技术形态不支持"
-
-        highlights: list[str] = []
-        if kpq.get("above_ma5"):
-            highlights.append("收盘价站上 MA5")
-        if kpq.get("above_ma10"):
-            highlights.append("收盘价站上 MA10")
-        if kpq.get("above_ma20"):
-            highlights.append("收盘价站上 MA20")
-        if has_gs:
-            highlights.append("金蜘蛛/近金蜘蛛形态成立")
-        if not kpq.get("support_broken") and kpq.get("kline_data_ready"):
-            highlights.append("未发现支撑破位")
-
-        risks: list[str] = []
-        if rule.decision == "observe_only" and not has_gs:
-            risks.append("均线结构未完全确认，暂不作为强 focus")
-        if kpq.get("kline_near_resistance") or f.near_pressure:
-            risks.append("接近压力位，存在阻力风险")
-        if f.is_downtrend:
-            risks.append("处于下降趋势")
-
-        return {
-            "label": label,
-            "score": float(Decimal(str(technical_score))) if technical_score else None,
-            "reason": tech_reason or None,
-            "highlights": highlights,
-            "risks": risks,
-            "has_golden_spider": has_gs,
-            "kline_score": float(Decimal(str(kline_score))) if kline_score else None,
-        }
+        return self._tech_formatter.format(
+            f.kline_pattern_quality,
+            technical_structure_score=tech_score,
+            risk_flags=list(rule.risk_flags),
+            veto_reasons=list(rule.veto_reasons),
+        )
 
     # ── P3-A: key_parameters ──
 
