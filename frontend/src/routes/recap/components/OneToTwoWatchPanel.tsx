@@ -48,14 +48,18 @@ type PayloadSource = "recap_doc" | "watchlists_fallback" | null;
 function extractOneToTwoPayload(dailyReviewV2?: PostMarketDailyReviewV2 | null) {
   if (!dailyReviewV2) return null;
   const raw = dailyReviewV2 as Record<string, unknown>;
-  const recapDoc = raw.recap_doc as Record<string, unknown> | undefined;
-  const fromRecap = recapDoc?.post_market_setup_plan as Record<string, unknown> | undefined;
-  if (fromRecap && typeof fromRecap.summary === "object" && Array.isArray(fromRecap.items))
-    return { payload: fromRecap as unknown as { summary: OneToTwoSummary; items: OneToTwoItem[] }, source: "recap_doc" as PayloadSource };
+
+  // Path 1: dailyReviewV2.post_market_setup_plan (composer puts it at top level)
+  const plan = raw.post_market_setup_plan as Record<string, unknown> | undefined;
+  if (plan && typeof plan.summary === "object" && Array.isArray(plan.items))
+    return { payload: plan as unknown as { summary: OneToTwoSummary; items: OneToTwoItem[] }, source: "recap_doc" as PayloadSource };
+
+  // Path 2: watchlists.one_to_two
   const watchlists = raw.watchlists as Record<string, unknown> | undefined;
   const fromWl = watchlists?.one_to_two as Record<string, unknown> | undefined;
   if (fromWl && typeof fromWl.summary === "object" && Array.isArray(fromWl.items))
     return { payload: fromWl as unknown as { summary: OneToTwoSummary; items: OneToTwoItem[] }, source: "watchlists_fallback" as PayloadSource };
+
   return null;
 }
 
