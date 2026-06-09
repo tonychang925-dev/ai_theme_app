@@ -67,7 +67,8 @@ function hasValidSummary(p: { summary: OneToTwoSummary; items: OneToTwoItem[] })
   const s = p.summary;
   const counts = [s.focus_count, s.observe_only_count, s.pending_review_only_count, s.reject_count];
   if (!counts.every((v) => Number.isFinite(v) && v >= 0)) return false;
-  return p.items.length === s.focus_count + s.observe_only_count + s.pending_review_only_count + s.reject_count;
+  // items only contains non-reject (rejects are continue'd in the engine)
+  return p.items.length === s.focus_count + s.observe_only_count + s.pending_review_only_count;
 }
 
 function matchesTradeDate(p: { summary: OneToTwoSummary; items: OneToTwoItem[] }, td?: string): boolean {
