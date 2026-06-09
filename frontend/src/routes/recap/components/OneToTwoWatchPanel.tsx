@@ -1,4 +1,4 @@
-/** F1: OneToTwo 明日观察清单 — 只读 recap_doc.post_market_setup_plan，fail-closed. */
+/** F1+F5: OneToTwo 明日观察清单 — 只读持久化数据，fail-closed payload contract. */
 import { Tag } from "antd";
 import type { PostMarketDailyReviewV2 } from "../../../lib/api";
 
@@ -39,10 +39,10 @@ interface OneToTwoSummary {
 
 function decisionLabel(d: string): string {
   const map: Record<string, string> = {
-    focus: "重点观察",
-    observe_only: "谨慎观察",
-    pending_review_only: "待人工复核",
-    reject: "剔除",
+    focus: "\u91CD\u70B9\u89C2\u5BDF",
+    observe_only: "\u8C28\u614E\u89C2\u5BDF",
+    pending_review_only: "\u5F85\u4EBA\u5DE5\u590D\u6838",
+    reject: "\u5254\u9664",
   };
   return map[d] || d;
 }
@@ -57,45 +57,94 @@ function decisionColor(d: string): string {
   return map[d] || "default";
 }
 
-/** Extract OneToTwo payload from the dailyReviewV2 object.
- *  Fallback order: recap_doc.post_market_setup_plan → watchlists.one_to_two → fail-closed. */
+// ── Payload extraction with source tracking ──
+
+type PayloadSource = "recap_doc" | "watchlists_fallback" | null;
+
 function extractOneToTwoPayload(
   dailyReviewV2?: PostMarketDailyReviewV2 | null,
-): { summary: OneToTwoSummary; items: OneToTwoItem[] } | null {
+): { payload: { summary: OneToTwoSummary; items: OneToTwoItem[] }; source: PayloadSource } | null {
   if (!dailyReviewV2) return null;
 
+  const raw = dailyReviewV2 as Record<string, unknown>;
+
   // Path 1: recap_doc.post_market_setup_plan
-  const recapDoc = (dailyReviewV2 as Record<string, unknown>).recap_doc as Record<string, unknown> | undefined;
+  const recapDoc = raw.recap_doc as Record<string, unknown> | undefined;
   const fromRecap = recapDoc?.post_market_setup_plan as Record<string, unknown> | undefined;
   if (fromRecap && typeof fromRecap.summary === "object" && Array.isArray(fromRecap.items)) {
-    return fromRecap as unknown as { summary: OneToTwoSummary; items: OneToTwoItem[] };
+    return { payload: fromRecap as unknown as { summary: OneToTwoSummary; items: OneToTwoItem[] }, source: "recap_doc" };
   }
 
   // Path 2: watchlists.one_to_two
-  const watchlists = (dailyReviewV2 as Record<string, unknown>).watchlists as Record<string, unknown> | undefined;
+  const watchlists = raw.watchlists as Record<string, unknown> | undefined;
   const fromWatchlists = watchlists?.one_to_two as Record<string, unknown> | undefined;
   if (fromWatchlists && typeof fromWatchlists.summary === "object" && Array.isArray(fromWatchlists.items)) {
-    return fromWatchlists as unknown as { summary: OneToTwoSummary; items: OneToTwoItem[] };
+    return { payload: fromWatchlists as unknown as { summary: OneToTwoSummary; items: OneToTwoItem[] }, source: "watchlists_fallback" };
   }
 
-  // Path 3: fail-closed — no data
   return null;
 }
 
-function hasValidSummary(payload: { summary: OneToTwoSummary }): boolean {
+// ── Contract validators ──
+
+function hasValidSummary(payload: { summary: OneToTwoSummary; items: OneToTwoItem[] }): boolean {
   const s = payload.summary;
-  return (
-    typeof s.focus_count === "number" ||
-    typeof s.observe_only_count === "number" ||
-    typeof s.pending_review_only_count === "number"
-  );
+  const counts = [s.focus_count, s.observe_only_count, s.pending_review_only_count, s.reject_count];
+
+  // All four counts must be non-negative finite numbers
+  if (!counts.every((v) => Number.isFinite(v) && v >= 0)) return false;
+
+  const expected = s.focus_count + s.observe_only_count + s.pending_review_only_count + s.reject_count;
+  return payload.items.length === expected;
 }
 
-export default function OneToTwoWatchPanel({ dailyReviewV2, tradeDate }: Props) {
-  const payload = extractOneToTwoPayload(dailyReviewV2);
+function matchesTradeDate(
+  payload: { summary: OneToTwoSummary; items: OneToTwoItem[] },
+  tradeDate?: string,
+): boolean {
+  if (!tradeDate) return false; // fail-closed: no tradeDate → cannot verify
 
-  // fail-closed: no payload or missing SUMMARY
-  if (!payload || !hasValidSummary(payload)) {
+  const td = String(tradeDate).slice(0, 10);
+  const summaryDate = String(payload.summary.trade_date || "").slice(0, 10);
+  if (summaryDate && summaryDate !== td) return false;
+
+  return payload.items.every((it) => {
+    const itemDate = String(it.trade_date || "").slice(0, 10);
+    return !itemDate || itemDate === td;
+  });
+}
+
+// ── Frontend guard: filter __independent__ ──
+
+function filterIndependent(items: OneToTwoItem[]): { safe: OneToTwoItem[]; filtered: number } {
+  const safe: OneToTwoItem[] = [];
+  let filtered = 0;
+  for (const it of items) {
+    if (String(it.subject_key || "").trim() === "__independent__") {
+      filtered++;
+      continue;
+    }
+    safe.push(it);
+  }
+  if (filtered > 0) {
+    console.warn("OneToTwoWatchPanel: filtered %d __independent__ items by frontend guard", filtered);
+  }
+  return { safe, filtered };
+}
+
+function sourceLabel(source: PayloadSource): string {
+  if (source === "recap_doc") return "\u6570\u636E\u6E90\uFF1Arecap snapshot";
+  if (source === "watchlists_fallback") return "\u6570\u636E\u6E90\uFF1Awatchlists fallback";
+  return "";
+}
+
+// ── Component ──
+
+export default function OneToTwoWatchPanel({ dailyReviewV2, tradeDate }: Props) {
+  const extracted = extractOneToTwoPayload(dailyReviewV2);
+
+  // fail-closed: no payload
+  if (!extracted) {
     return (
       <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
         <h3 className="section-title recap-panel-title">
@@ -109,7 +158,43 @@ export default function OneToTwoWatchPanel({ dailyReviewV2, tradeDate }: Props) 
     );
   }
 
-  const { summary, items } = payload;
+  const { payload, source } = extracted;
+
+  // fail-closed: invalid summary contract
+  if (!hasValidSummary(payload)) {
+    return (
+      <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
+        <h3 className="section-title recap-panel-title">
+          明日观察：1进2观察清单
+          <Tag style={{ marginLeft: 8 }} color="default">未生成</Tag>
+        </h3>
+        <p style={{ color: "rgba(255,255,255,0.45)", margin: "8px 0 0" }}>
+          观察清单未生成 — summary 合同不完整或计数不一致。
+        </p>
+      </div>
+    );
+  }
+
+  // fail-closed: tradeDate mismatch
+  if (!matchesTradeDate(payload, tradeDate)) {
+    return (
+      <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
+        <h3 className="section-title recap-panel-title">
+          明日观察：1进2观察清单
+          <Tag style={{ marginLeft: 8 }} color="default">未生成</Tag>
+        </h3>
+        <p style={{ color: "rgba(255,255,255,0.45)", margin: "8px 0 0" }}>
+          观察清单未生成 — 日期不匹配。
+        </p>
+      </div>
+    );
+  }
+
+  const { summary } = payload;
+
+  // Frontend guard: filter __independent__
+  const { safe: rawItems, filtered: indepFiltered } = filterIndependent(payload.items);
+  const items = rawItems;
 
   const visibleItems = items.filter((it) => it.decision !== "reject");
   const rejectItems = items.filter((it) => it.decision === "reject");
@@ -122,7 +207,7 @@ export default function OneToTwoWatchPanel({ dailyReviewV2, tradeDate }: Props) 
 
   return (
     <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: 14, marginBottom: 14 }}>
-      {/* ── Header + summary ── */}
+      {/* ── Header + summary + source ── */}
       <h3 className="section-title recap-panel-title">
         明日观察：1进2观察清单
         <Tag style={{ marginLeft: 8 }}>{visibleItems.length} 只</Tag>
@@ -130,6 +215,14 @@ export default function OneToTwoWatchPanel({ dailyReviewV2, tradeDate }: Props) 
           <span style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", marginLeft: 8 }}>
             观察日 {summary.watch_date}
           </span>
+        )}
+        <span style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", marginLeft: 8 }}>
+          {sourceLabel(source)}
+        </span>
+        {indepFiltered > 0 && (
+          <Tag style={{ marginLeft: 8 }} color="warning">
+            前端已拦截 {indepFiltered} 条 __independent__
+          </Tag>
         )}
       </h3>
 
@@ -217,7 +310,7 @@ export default function OneToTwoWatchPanel({ dailyReviewV2, tradeDate }: Props) 
                 {rejectItems.map((it) => (
                   <tr key={`reject-${it.stock_id}|${it.subject_key}`}>
                     <td style={{ padding: "2px 6px", color: "rgba(255,255,255,0.35)" }}>{it.stock_name || it.stock_id}</td>
-                    <td style={{ padding: "2px 6px", color: "rgba(255,255,255,0.35)" }}>{(it.veto_reasons ?? []).join("；") || "-"}</td>
+                    <td style={{ padding: "2px 6px", color: "rgba(255,255,255,0.35)" }}>{(it.veto_reasons ?? []).join("\uFF1B") || "-"}</td>
                   </tr>
                 ))}
               </tbody>

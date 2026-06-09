@@ -322,3 +322,80 @@ def test_one_to_two_watch_panel_source_does_not_import_engine() -> None:
                 if token in line:
                     hits.append(f"{frontend_root}:{lineno}: {token}")
     assert not hits, f"OneToTwoWatchPanel must not reference engine classes: {hits}"
+
+
+# ── F5: payload contract hardening tests ──
+
+def _scan_file_for_pattern(filepath: str, pattern: str, label: str) -> list[str]:
+    """Scan a file for a regex pattern, returning matching line descriptions."""
+    import os, re
+    hits: list[str] = []
+    if not os.path.exists(filepath):
+        return [f"{filepath}: MISSING"]
+    with open(filepath, "r") as f:
+        for lineno, line in enumerate(f, start=1):
+            if re.search(pattern, line):
+                hits.append(f"{filepath}:{lineno}: {label}")
+    return hits
+
+
+def test_one_to_two_watch_panel_has_strict_summary_validator() -> None:
+    """OneToTwoWatchPanel must validate all 4 counts are non-negative numbers."""
+    import os
+    frontend_root = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+        "frontend", "src", "routes", "recap", "components", "OneToTwoWatchPanel.tsx",
+    )
+    # hasValidSummary must reference all four count fields AND a .length check
+    has_counts = _scan_file_for_pattern(frontend_root, r"focus_count.*observe_only_count.*pending_review_only_count.*reject_count", "four_counts")
+    has_length = _scan_file_for_pattern(frontend_root, r"items\.length\s*===\s*expected", "items_length_check")
+    assert has_counts, "hasValidSummary must reference all four count fields"
+    assert has_length, "hasValidSummary must verify items.length === expected sum of counts"
+
+
+def test_one_to_two_watch_panel_has_trade_date_validator() -> None:
+    """OneToTwoWatchPanel must check tradeDate consistency."""
+    import os
+    frontend_root = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+        "frontend", "src", "routes", "recap", "components", "OneToTwoWatchPanel.tsx",
+    )
+    has_fn = _scan_file_for_pattern(frontend_root, r"function matchesTradeDate", "matchesTradeDate_fn")
+    assert has_fn, "matchesTradeDate function must exist"
+
+
+def test_one_to_two_watch_panel_has_independent_filter() -> None:
+    """OneToTwoWatchPanel must have a frontend guard filtering __independent__."""
+    import os
+    frontend_root = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+        "frontend", "src", "routes", "recap", "components", "OneToTwoWatchPanel.tsx",
+    )
+    has_filter = _scan_file_for_pattern(frontend_root, r"__independent__", "independent_token")
+    has_fn = _scan_file_for_pattern(frontend_root, r"function filterIndependent", "filterIndependent_fn")
+    # Must have both: reference to __independent__ AND a filter function
+    assert has_filter, "must reference __independent__ for filtering"
+    assert has_fn, "filterIndependent function must exist"
+
+
+def test_one_to_two_watch_panel_has_source_label() -> None:
+    """OneToTwoWatchPanel must display data source (recap vs watchlists fallback)."""
+    import os
+    frontend_root = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+        "frontend", "src", "routes", "recap", "components", "OneToTwoWatchPanel.tsx",
+    )
+    has_source = _scan_file_for_pattern(frontend_root, r"recap snapshot|watchlists fallback", "source_label")
+    assert has_source, "must display data source label (recap snapshot or watchlists fallback)"
+
+
+def test_one_to_two_watch_panel_fail_closed_on_trade_date_missing() -> None:
+    """When tradeDate is falsy, matchesTradeDate must return false → fail-closed."""
+    import os
+    frontend_root = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+        "frontend", "src", "routes", "recap", "components", "OneToTwoWatchPanel.tsx",
+    )
+    # matchesTradeDate without valid tradeDate must return false
+    has_guard = _scan_file_for_pattern(frontend_root, r"if\s*\(!tradeDate\)\s*return\s*false", "tradeDate_guard")
+    assert has_guard, "matchesTradeDate must return false when tradeDate is missing"
