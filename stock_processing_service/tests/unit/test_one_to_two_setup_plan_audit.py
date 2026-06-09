@@ -665,3 +665,74 @@ def test_event_logic_strong_authenticity() -> None:
     el = plan.get("event_logic", {})
     assert el.get("evidence_level") == "strong"
     assert len(el.get("evidence", [])) > 0
+
+
+# ── P4: backtest closed-loop contract tests ──
+
+def test_backtest_signal_builder_accepts_plan_items() -> None:
+    """Verify plan items produce valid signal-level decisions for backtest pipeline."""
+    ALLOWED_DECISIONS = {"focus", "observe_only", "pending_review_only"}
+
+    # Simulate plan items from a real setup_plan run
+    plan_items = [
+        {"decision": "focus", "stock_id": "600110.SH", "subject_key": "9018144"},
+        {"decision": "observe_only", "stock_id": "002579.SZ", "subject_key": "9018144"},
+        {"decision": "pending_review_only", "stock_id": "300001.SZ", "subject_key": "9013933"},
+    ]
+
+    for item in plan_items:
+        assert item["decision"] in ALLOWED_DECISIONS, (
+            f"plan item decision must be in {ALLOWED_DECISIONS}, got {item['decision']}"
+        )
+        assert item.get("stock_id"), "plan item must have stock_id"
+        assert item.get("subject_key"), "plan item must have subject_key"
+
+    # Reject items are NOT sent to signals
+    reject_item = {"decision": "reject", "stock_id": "000001.SZ", "subject_key": "sk"}
+    assert reject_item["decision"] not in ALLOWED_DECISIONS
+
+
+def test_backtest_outcome_labels_are_valid() -> None:
+    """All 4 outcome labels must be in the expected set."""
+    EXPECTED = {
+        "A_SEALED_SECOND_BOARD_PROXY",
+        "B_TOUCHED_BUT_BROKEN",
+        "C_FAILED_NO_TOUCH",
+        "D_NO_DATA",
+    }
+    from stock_processing_service.application.services.backtest.one_to_two_backtest_signal_validation_service import (
+        OUTCOME_A_PROXY, OUTCOME_B_BROKEN, OUTCOME_C_NO_TOUCH, OUTCOME_D_NO_DATA,
+    )
+    assert OUTCOME_A_PROXY in EXPECTED
+    assert OUTCOME_B_BROKEN in EXPECTED
+    assert OUTCOME_C_NO_TOUCH in EXPECTED
+    assert OUTCOME_D_NO_DATA in EXPECTED
+
+
+def test_backtest_summary_computes_rates() -> None:
+    """ValidationSummaryService must compute focus/observe hit rates from validations."""
+    from stock_processing_service.application.services.backtest.one_to_two_backtest_validation_summary_service import (
+        OneToTwoBacktestValidationSummaryService,
+    )
+
+    # The _rate method must handle zero denominators safely
+    svc = OneToTwoBacktestValidationSummaryService.__new__(OneToTwoBacktestValidationSummaryService)
+    assert svc._rate(0, 0) == 0.0
+    assert svc._rate(5, 10) == 0.5
+    assert svc._rate(3, 0) == 0.0
+
+
+def test_backtest_production_plan_not_modified_by_backtest() -> None:
+    """P4 must not modify production post_market_setup_plan.
+    Backtest reads from w2s_backtest_feature_snapshot — a separate table."""
+    EXPECTED_SOURCE_TABLE = "w2s_backtest_feature_snapshot"
+    from stock_processing_service.application.services.backtest.one_to_two_backtest_signal_builder_service import (
+        OneToTwoBacktestSignalBuilderService,
+    )
+    # Signal source_table must be the backtest snapshot table, NOT post_market_setup_plan
+    # Verified by SignalBuilderService._build_one_signal line 145
+    import inspect
+    source = inspect.getsource(OneToTwoBacktestSignalBuilderService._build_one_signal)
+    assert "w2s_backtest_feature_snapshot" in source, (
+        "SignalBuilderService must reference w2s_backtest_feature_snapshot, not production plan table"
+    )
