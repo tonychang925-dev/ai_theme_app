@@ -70,6 +70,9 @@ class TushareJoinSubjectStockDailySnapshotProducer(SubjectStockDailySnapshotProd
                     metrics={"stock_daily_count": int(daily_count), "mapped_stock_count": 0},
                 )
 
+            # ── 质量检查（在任何修改之前执行，读源表）──
+            quality = await self._check_quality(conn, td, int(daily_count), int(map_count))
+
             # ── on_existing 处理 ──
             if resolved_on_existing == "skip":
                 existing = await conn.fetchval(
@@ -81,24 +84,29 @@ class TushareJoinSubjectStockDailySnapshotProducer(SubjectStockDailySnapshotProd
                         trade_date=trade_date_str,
                         status="ok_existing",
                         affected_rows=int(existing),
-                        warnings=[f"snapshot already exists for {trade_date_str}"],
+                        warnings=[
+                            f"snapshot already exists for {trade_date_str}",
+                            "如需切换数据源重建，请选择"删除后重建 (replace)"模式",
+                        ],
                         metrics={"stock_daily_count": int(daily_count)},
                     )
-            elif resolved_on_existing == "replace":
-                await conn.execute(
-                    "DELETE FROM subject_stock_daily_snapshot WHERE trade_date = $1", td,
+
+            if resolved_on_existing == "replace":
+                # 事务包裹：DELETE + INSERT 原子执行，防止中间崩溃丢数据
+                async with conn.transaction():
+                    await conn.execute(
+                        "DELETE FROM subject_stock_daily_snapshot WHERE trade_date = $1", td,
+                    )
+                    affected = await conn.execute(
+                        _BUILD_SQL, td, batch_id,
+                    )
+                affected_rows = self._parse_affected(affected)
+            else:
+                # upsert: ON CONFLICT 自动处理（也是 skip 未命中走这里）
+                affected = await conn.execute(
+                    _BUILD_SQL, td, batch_id,
                 )
-            # upsert: ON CONFLICT 自动处理
-
-            # ── 质量检查: 匹配率 ──
-            quality = await self._check_quality(conn, td, int(daily_count), int(map_count))
-
-            # ── 执行 JOIN INSERT ──
-            affected = await conn.execute(
-                _BUILD_SQL, td, batch_id,
-            )
-            # asyncpg 返回 "INSERT 0 N" 格式字符串
-            affected_rows = self._parse_affected(affected)
+                affected_rows = self._parse_affected(affected)
 
             # ── 缺失股票 — 排除已知退市/ST ──
             real_missing = [

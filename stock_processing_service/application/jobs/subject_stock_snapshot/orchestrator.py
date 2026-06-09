@@ -74,10 +74,20 @@ class SubjectStockDailySnapshotOrchestrator:
         )
 
         started_at = datetime.now()
-        result = await producer.build(request)
+        try:
+            result = await producer.build(request)
+        except Exception as exc:
+            # 异常也记录 build_run，方便排查
+            result = SubjectStockSnapshotBuildResult(
+                provider=selected_provider,
+                trade_date=trade_date_str,
+                status="failed",
+                affected_rows=0,
+                warnings=[f"unhandled exception: {type(exc).__name__}: {exc}"],
+            )
         finished_at = datetime.now()
 
-        # ── 写审计记录 ──
+        # ── 写审计记录（成功和失败都写）──
         await self._record_run(request, result, started_at, finished_at)
 
         return result
