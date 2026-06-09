@@ -250,6 +250,13 @@ class PostMarketSetupFactContextBuilder:
                 rows = []
                 for item in value:
                     if isinstance(item, dict):
+                        # Exclude __independent__ — independent leader is a Layer C
+                        # observation path, not a theme hotspot for OneToTwo.
+                        sk = str(item.get("subject_key") or "").strip()
+                        tn = str(item.get("theme_name") or "").strip()
+                        sn = str(item.get("subject_name") or "").strip()
+                        if sk == "__independent__" or tn == "__independent__" or sn == "__independent__":
+                            continue
                         rows.append(dict(item))
                 if rows:
                     return rows

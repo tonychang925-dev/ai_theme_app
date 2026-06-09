@@ -225,3 +225,46 @@ async def test_post_market_setup_fact_context_builder_includes_authenticity_and_
     key = "603618" if "603618" in ctx.kline_pattern_quality_by_stock else "603618.SH"
     assert "has_golden_spider" in ctx.kline_pattern_quality_by_stock[key]
     assert ctx.kline_pattern_quality_by_stock[key]["level"] in {"golden", "near_golden", "unknown"}
+
+
+# ── P1-B: __independent__ exclusion ──
+
+def test_independent_subject_not_in_strong_hotspot_subjects() -> None:
+    """__independent__ must not appear in strong_hotspot_subjects after extraction."""
+    builder = PostMarketSetupFactContextBuilder.__new__(PostMarketSetupFactContextBuilder)
+    source_doc = {
+        "strong_hotspot_subjects": [
+            {"subject_key": "9013933", "theme_name": "AI算力"},
+            {"subject_key": "__independent__", "theme_name": "独立龙头"},
+            {"subject_key": "9015778", "theme_name": "低空经济"},
+        ]
+    }
+    result = builder._extract_hotspot_subjects(source_doc)
+    subject_keys = {str(r.get("subject_key", "")) for r in result}
+    assert "__independent__" not in subject_keys
+    assert "9013933" in subject_keys
+    assert "9015778" in subject_keys
+
+
+def test_independent_subject_not_in_strong_hotspot_subjects_by_theme_name() -> None:
+    """__independent__ must also be excluded when carried as theme_name."""
+    builder = PostMarketSetupFactContextBuilder.__new__(PostMarketSetupFactContextBuilder)
+    source_doc = {
+        "mainline_hotspots": [
+            {"subject_key": "some_key", "theme_name": "__independent__"},
+        ]
+    }
+    result = builder._extract_hotspot_subjects(source_doc)
+    assert len(result) == 0
+
+
+def test_independent_subject_not_in_strong_hotspot_subjects_by_subject_name() -> None:
+    """__independent__ must also be excluded when carried as subject_name."""
+    builder = PostMarketSetupFactContextBuilder.__new__(PostMarketSetupFactContextBuilder)
+    source_doc = {
+        "hotspot_subjects": [
+            {"subject_key": "legit", "subject_name": "__independent__"},
+        ]
+    }
+    result = builder._extract_hotspot_subjects(source_doc)
+    assert len(result) == 0

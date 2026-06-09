@@ -110,6 +110,10 @@ class OneToTwoCandidateService:
             # exclude non-mainline, non-hotspot subjects.
             if not is_confirmed and not is_strong_hotspot:
                 continue
+            # Design doc §22.2: __independent__ is a Layer C independent 2-board
+            # observation path, not a theme hotspot. It must not enter OneToTwo.
+            if subject_key == "__independent__":
+                continue
             lifecycle_row = ctx.lifecycle_by_subject.get(subject_key, {})
             board_row = ctx.subject_market_breadth.get(subject_key, {})
             pressure_row = ctx.pressure_by_stock.get(stock_id, {})

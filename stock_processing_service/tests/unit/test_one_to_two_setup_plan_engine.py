@@ -1071,3 +1071,98 @@ def test_ranking_orders_by_score_and_technical() -> None:
         assert isinstance(item["rank_no"], int)
     # All items should be observe_only (score < 80)
     assert all(item["decision"] == "observe_only" for item in items)
+
+
+# ── P1-B: __independent__ exclusion ──
+
+def test_independent_subject_not_in_one_to_two_candidates() -> None:
+    """CandidateService must skip subject_key='__independent__'."""
+    from stock_processing_service.domain.services.one_to_two_candidate_service import OneToTwoCandidateService
+
+    ctx = PostMarketSetupFactContext(
+        trade_date="2026-06-08",
+        watch_date="2026-06-09",
+        active_mainlines=[],
+        strong_hotspot_subjects=[{"subject_key": "__independent__", "theme_name": "独立龙头"}, {"subject_key": "9018144", "theme_name": "PCB"}],
+        active_subject_keys={"9018144"},
+        lifecycle_by_subject={},
+        market_regime={"trade_mode": "no_trade", "allow_trade": False},
+        trading_principle={"position_limit": 0.0},
+        subject_stock_rows=[
+            {"trade_date": "2026-06-08", "stock_id": "301486.SZ", "stock_name": "致尚科技",
+             "subject_key": "__independent__", "pct_chg": -5.95, "limit_up": False},
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "subject_key": "9018144", "pct_chg": 10.0, "limit_up": True},
+        ],
+        stock_daily_bars=[
+            {"trade_date": "2026-06-08", "stock_id": "301486.SZ", "stock_name": "致尚科技",
+             "close_price": 100, "limit_up_price": 120, "pct_chg": -5.95, "limit_up": False},
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "close_price": 100, "limit_up_price": 90, "pct_chg": 10.0, "limit_up": True},
+        ],
+        limit_up_rows=[
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "is_first_limit_up": True, "pct_chg": 10.0},
+        ],
+        diagnostics=SourceStatus(source_status={"market_regime": "ready"}),
+    )
+
+    service = OneToTwoCandidateService()
+    pool = service.build_fact_pool(ctx)
+
+    subject_keys_in_pool = {f.subject_key for f in pool}
+    assert "__independent__" not in subject_keys_in_pool, (
+        f"__independent__ must not enter OneToTwo candidate pool, got: {subject_keys_in_pool}"
+    )
+    # 诺德股份 should still be in pool (it's in a real subject)
+    assert "9018144" in subject_keys_in_pool
+
+
+def test_independent_subject_not_written_to_plan_items() -> None:
+    """Plan items must not include __independent__ subjects."""
+    from stock_processing_service.domain.services.one_to_two_candidate_service import OneToTwoCandidateService
+    from stock_processing_service.domain.services.one_to_two_rule_engine import OneToTwoRuleEngine
+    from stock_processing_service.domain.services.one_to_two_scorer import OneToTwoScorer
+    from stock_processing_service.domain.services.one_to_two_risk_plan_builder import OneToTwoRiskPlanBuilder
+    from stock_processing_service.domain.services.one_to_two_rule_config import OneToTwoRuleConfig
+
+    engine = OneToTwoSetupPlanEngine()
+    engine.candidate_service = OneToTwoCandidateService()
+    engine.rule_engine = OneToTwoRuleEngine(OneToTwoRuleConfig())
+    engine.scorer = OneToTwoScorer()
+    engine.risk_plan_builder = OneToTwoRiskPlanBuilder()
+
+    ctx = PostMarketSetupFactContext(
+        trade_date="2026-06-08",
+        watch_date="2026-06-09",
+        active_mainlines=[{"canonical_subject_key": "9018144", "mainline_name": "PCB"}],
+        strong_hotspot_subjects=[{"subject_key": "__independent__", "theme_name": "独立龙头"}],
+        active_subject_keys={"9018144"},
+        lifecycle_by_subject={"9018144": {"lifecycle_state": "fermentation"}},
+        market_regime={"trade_mode": "mainline_core_only", "allow_trade": True},
+        trading_principle={"position_limit": 0.2, "allow_trade": True},
+        subject_stock_rows=[
+            {"trade_date": "2026-06-08", "stock_id": "301486.SZ", "stock_name": "致尚科技",
+             "subject_key": "__independent__", "pct_chg": -5.95, "limit_up": False},
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "subject_key": "9018144", "pct_chg": 10.0, "limit_up": True},
+        ],
+        stock_daily_bars=[
+            {"trade_date": "2026-06-08", "stock_id": "301486.SZ", "stock_name": "致尚科技",
+             "close_price": 100, "limit_up_price": 120, "pct_chg": -5.95, "limit_up": False, "turnover_rate": 0.05, "amount": 50000000},
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "close_price": 100, "limit_up_price": 90, "pct_chg": 10.0, "limit_up": True, "turnover_rate": 0.10, "amount": 500000000},
+        ],
+        limit_up_rows=[
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "is_first_limit_up": True, "pct_chg": 10.0, "first_limit_time": "10:00:00"},
+        ],
+        diagnostics=SourceStatus(source_status={"market_regime": "ready"}),
+    )
+
+    result = engine.build_from_context(ctx)
+
+    subject_keys_in_items = {str(item.get("subject_key", "")) for item in result.items}
+    assert "__independent__" not in subject_keys_in_items, (
+        f"__independent__ must not appear in plan items, got: {subject_keys_in_items}"
+    )
