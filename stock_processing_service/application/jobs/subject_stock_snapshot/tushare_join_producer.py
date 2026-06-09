@@ -86,7 +86,7 @@ class TushareJoinSubjectStockDailySnapshotProducer(SubjectStockDailySnapshotProd
                         affected_rows=int(existing),
                         warnings=[
                             f"snapshot already exists for {trade_date_str}",
-                            "如需切换数据源重建，请选择"删除后重建 (replace)"模式",
+                            "如需切换数据源重建，请选择'删除后重建 (replace)'模式",
                         ],
                         metrics={"stock_daily_count": int(daily_count)},
                     )

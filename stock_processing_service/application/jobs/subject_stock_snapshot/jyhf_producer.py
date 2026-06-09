@@ -87,7 +87,7 @@ class JyhfSubjectStockDailySnapshotProducer(SubjectStockDailySnapshotProducer):
                         affected_rows=existing_count,
                         warnings=[
                             f"snapshot already exists for {trade_date_str}",
-                            "如需切换数据源重建，请选择"删除后重建 (replace)"模式",
+                            "如需切换数据源重建，请选择'删除后重建 (replace)'模式",
                         ],
                         metrics={"subjects_total": len(subject_keys)},
                     )
