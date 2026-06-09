@@ -2364,7 +2364,7 @@ focus 来自权限门槛，不来自主观推荐；
 | P1.6 | 补 __independent__ 排除测试 | `test_one_to_two_setup_fact_context_builder.py`, `test_one_to_two_setup_plan_engine.py` | 测试项 |
 | P1.7 | 前端新增 `OneToTwoWatchPanel` 壳（四层计数，reject 折叠） | `frontend/.../OneToTwoWatchPanel.tsx` | 开发项 |
 | P1.8 | `EnginePostMarketView` 接入 OneToTwo 卡片 | `EnginePostMarketView.tsx` | 开发项 |
-| P1.9 | 前端只读顺序：recap_doc → watchlists → fail-closed | `OneToTwoWatchPanel.tsx` | 开发项 |
+| P1.9 | 前端只读顺序（fail-loud，非静默 fallback）：① recap_doc.post_market_setup_plan 存在 → 使用 recap_doc；② recap_doc 缺失但 /watchlists 有完整 __SUMMARY__ → 使用 watchlists；③ 两者都缺或 SUMMARY 缺失 → 显示"观察清单未生成"，不得重算，不得展示空清单为正常结果 | `OneToTwoWatchPanel.tsx` | 开发项 |
 | P1.10 | LayerC 标题区分 + 独立2连板单独分组 | `LayerCStrongPoolPanel.tsx`, `EnginePostMarketView.tsx` | 开发项 |
 
 **验收**：
@@ -2386,15 +2386,19 @@ focus 来自权限门槛，不来自主观推荐；
 | P2.2 | B2: candidate_feature 字段映射修正 | `one_to_two_setup_plan_engine.py:312` | `score_detail.get("lifecycle")` → `score_detail.get("technical_structure")` |
 | P2.3 | B3: RuleEngine near_pressure 语义修正 | `one_to_two_rule_engine.py:82-83` | 移除 hard reject，交 TechnicalGate cap_focus |
 | P2.4 | B4: TechnicalGate 读取 kline_near_resistance | `one_to_two_technical_gate.py:104` | 补充 `kline_pattern_quality.kline_near_resistance` 来源 |
-| P2.5 | 重跑 5/6 + 5/26 smoke 确认无漂移 | `scripts/` 或 replay runner | 5/26 仍 observe_only(no_trade)，5/6 按技术分决策 |
+| P2.5 | B1-B4 集成验证：重跑 5/6 + 5/26 smoke | replay runner | 5/26 仍 observe_only(no_trade) |
 
-**验收**：
-- [ ] candidate_feature.technical_structure_score 非空
-- [ ] candidate_feature.decision == plan_item.decision
-- [ ] near_pressure 只 cap_focus，不 hard reject
-- [ ] decision_effect 不再写 "shadow_only"
-- [ ] 5/26 no_trade → focus_count = 0
-- [ ] 5/6 结果与修复前一致（仅审计字段修正）
+> B5（`__independent__` 排除）已在 Phase 1 P1.4/P1.5 处理，Phase 2 只处理 B1-B4。
+
+**P2.5 验收（不允许"与修复前一致"，near_pressure 语义已变更）：**
+
+```text
+5/6 smoke 无非预期漂移：
+- near_pressure 相关样本允许从 reject → observe_only 或 focus → observe_only；
+- 非 near_pressure 样本 decision 不得漂移；
+- candidate_feature.decision == plan_item.decision；
+- 5/26 no_trade 仍 focus_count = 0。
+```
 
 ---
 
