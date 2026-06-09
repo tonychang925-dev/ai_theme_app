@@ -77,7 +77,7 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate, onShowL
         <section className="workspace-card recap-engine-group">
           <h3 className="section-title recap-panel-title">强股与证据</h3>
           <div className="recap-engine-group-stack">
-            <LayerCStrongPoolPanel review={review} />
+            <LayerCStrongPoolPanel review={review} tradeDate={tradeDate} />
             <EvidenceLayerPanel evidenceLayerReview={dailyReviewV2.evidence_layer_review ?? null} />
           </div>
         </section>

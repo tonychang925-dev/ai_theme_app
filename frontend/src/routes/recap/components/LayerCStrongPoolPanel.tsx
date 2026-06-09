@@ -75,7 +75,7 @@ function isIncludedRow(row: Record<string, unknown>): boolean {
 }
 
 function isSameDayEntrant(row: Record<string, unknown>, tradeDate?: string): boolean {
-  if (!tradeDate) return true;
+  if (!tradeDate) return false;  // fail-closed: missing tradeDate must not show any "当天入围" stock
   const watchStart = String(row.watch_start_date || "").trim().slice(0, 10);
   return watchStart === tradeDate;
 }
