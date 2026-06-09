@@ -261,3 +261,64 @@ def test_one_to_two_audit_report_fails_when_reject_missing_veto_reasons() -> Non
     assert report["ok"] is False
     assert report["contract"]["reject_audit_complete"] is False
     assert report["errors"]
+
+
+# ── F4: frontend component guard tests ──
+
+_FORBIDDEN_BUY_TOKENS = {"buy", "must_buy", "recommend_buy", "买入推荐", "必买", "推荐买入", "买入清单", "推荐清单"}
+
+
+def _scan_file_for_forbidden_tokens(filepath: str) -> list[str]:
+    """Scan a frontend source file for forbidden buy-signal tokens."""
+    import os
+    hits: list[str] = []
+    if not os.path.exists(filepath):
+        return hits
+    with open(filepath, "r") as f:
+        for lineno, line in enumerate(f, start=1):
+            lower = line.lower()
+            for token in _FORBIDDEN_BUY_TOKENS:
+                if token.lower() in lower:
+                    hits.append(f"{filepath}:{lineno}: {token}")
+    return hits
+
+
+def test_one_to_two_watch_panel_no_buy_signal_in_source() -> None:
+    """OneToTwoWatchPanel must not contain buy/must_buy/recommend_buy tokens."""
+    import os
+    frontend_root = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+        "frontend", "src", "routes", "recap", "components", "OneToTwoWatchPanel.tsx",
+    )
+    hits = _scan_file_for_forbidden_tokens(frontend_root)
+    assert not hits, f"Forbidden buy tokens found in OneToTwoWatchPanel: {hits}"
+
+
+def test_layer_c_panel_no_buy_signal_in_source() -> None:
+    """LayerCStrongPoolPanel must not contain buy tokens."""
+    import os
+    frontend_root = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+        "frontend", "src", "routes", "recap", "components", "LayerCStrongPoolPanel.tsx",
+    )
+    hits = _scan_file_for_forbidden_tokens(frontend_root)
+    assert not hits, f"Forbidden buy tokens found in LayerCStrongPoolPanel: {hits}"
+
+
+def test_one_to_two_watch_panel_source_does_not_import_engine() -> None:
+    """OneToTwoWatchPanel must not import OneToTwoSetupPlanEngine or trigger POST."""
+    import os
+    frontend_root = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+        "frontend", "src", "routes", "recap", "components", "OneToTwoWatchPanel.tsx",
+    )
+    hits: list[str] = []
+    engine_tokens = {"SetupPlanEngine", "RuleEngine", "OneToTwoScorer"}
+    if not os.path.exists(frontend_root):
+        return
+    with open(frontend_root, "r") as f:
+        for lineno, line in enumerate(f, start=1):
+            for token in engine_tokens:
+                if token in line:
+                    hits.append(f"{frontend_root}:{lineno}: {token}")
+    assert not hits, f"OneToTwoWatchPanel must not reference engine classes: {hits}"
