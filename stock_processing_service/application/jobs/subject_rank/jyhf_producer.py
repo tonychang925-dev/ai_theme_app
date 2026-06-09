@@ -196,7 +196,7 @@ class JyhfSubjectRankProducer(SubjectRankProducer):
             # ── on_existing 处理 ──
             if resolved_on_existing == "skip":
                 existing = await conn.fetchval(
-                    "SELECT COUNT(*) FROM subject_rank_daily WHERE rank_date = $1 AND source_system = 'jyhf'",
+                    "SELECT COUNT(*) FROM subject_rank_daily WHERE rank_date = $1",
                     request.trade_date,
                 )
                 if existing:
@@ -213,7 +213,7 @@ class JyhfSubjectRankProducer(SubjectRankProducer):
                     )
             elif resolved_on_existing == "replace":
                 await conn.execute(
-                    "DELETE FROM subject_rank_daily WHERE rank_date = $1 AND source_system = 'jyhf'",
+                    "DELETE FROM subject_rank_daily WHERE rank_date = $1",
                     request.trade_date,
                 )
 

@@ -179,7 +179,7 @@ class SnapshotAggSubjectRankProducer(SubjectRankProducer):
             # ── on_existing 处理 ──
             if resolved_on_existing == "skip":
                 existing = await conn.fetchval(
-                    "SELECT COUNT(*) FROM subject_rank_daily WHERE rank_date = $1 AND source_system = 'snapshot_agg'",
+                    "SELECT COUNT(*) FROM subject_rank_daily WHERE rank_date = $1",
                     td,
                 )
                 if existing:
@@ -195,18 +195,25 @@ class SnapshotAggSubjectRankProducer(SubjectRankProducer):
                         metrics={"snapshot_rows": int(snapshot_count), "existing_rows": int(existing)},
                     )
 
+            affected_rows = 0
             if resolved_on_existing == "replace":
                 # 事务包裹：DELETE + INSERT 原子执行
                 async with conn.transaction():
                     await conn.execute(
-                        "DELETE FROM subject_rank_daily WHERE rank_date = $1 AND source_system = 'snapshot_agg'",
+                        "DELETE FROM subject_rank_daily WHERE rank_date = $1",
                         td,
                     )
                     affected = await conn.execute(_BUILD_SQL, td, batch_id)
+                affected_rows = self._parse_affected(affected)
             else:
                 affected = await conn.execute(_BUILD_SQL, td, batch_id)
+                affected_rows = self._parse_affected(affected)
 
-        affected_rows = self._parse_affected(affected) if 'affected' in dir() else 0
+            # ── 写入后质量检查：从 subject_rank_daily 读取真实值 ──
+            if affected_rows > 0:
+                written = await self._check_written_quality(conn, td)
+            else:
+                written = {}
 
         return SubjectRankBuildResult(
             provider="snapshot_agg",
@@ -223,12 +230,12 @@ class SnapshotAggSubjectRankProducer(SubjectRankProducer):
                 "heat_formula": "v1",
                 "snapshot_rows": int(snapshot_count),
                 "snapshot_subject_count": quality["snapshot_subject_count"],
-                "ranked_subject_count": quality["ranked_subject_count"],
-                "top100_count": quality["top100_count"],
-                "missing_name_count": quality["missing_name_count"],
-                "avg_heat": quality["avg_heat"],
-                "max_heat": quality["max_heat"],
-                "min_heat": quality["min_heat"],
+                "ranked_subject_count": written.get("ranked_subject_count", quality["ranked_subject_count"]),
+                "top100_count": written.get("top100_count", 0),
+                "missing_name_count": quality.get("missing_name_count", 0),
+                "avg_heat": written.get("avg_heat", quality["avg_heat"]),
+                "max_heat": written.get("max_heat", 0),
+                "min_heat": written.get("min_heat", 0),
                 "on_existing": resolved_on_existing,
                 "force": request.force,
             },
@@ -271,6 +278,38 @@ class SnapshotAggSubjectRankProducer(SubjectRankProducer):
             "avg_heat": float((row or {}).get("avg_heat") or 0),
             "max_heat": 0,
             "min_heat": 0,
+        }
+
+    async def _check_written_quality(self, conn, td: date) -> dict:
+        """写入后质量检查：从 subject_rank_daily 读取真实值."""
+        row = await conn.fetchrow(
+            """
+            WITH ranked AS (
+                SELECT
+                    subject_key,
+                    heat,
+                    ROW_NUMBER() OVER (ORDER BY heat DESC) AS hot_rank
+                FROM subject_rank_daily
+                WHERE rank_date = $1
+            )
+            SELECT
+                COUNT(*) AS ranked_subject_count,
+                COUNT(*) FILTER (WHERE hot_rank <= 100) AS top100_count,
+                ROUND(AVG(heat)::numeric, 2) AS avg_heat,
+                MAX(heat) AS max_heat,
+                MIN(heat) AS min_heat
+            FROM ranked
+            """,
+            td,
+        )
+        if row is None:
+            return {}
+        return {
+            "ranked_subject_count": int(row["ranked_subject_count"] or 0),
+            "top100_count": int(row["top100_count"] or 0),
+            "avg_heat": float(row["avg_heat"] or 0),
+            "max_heat": int(row["max_heat"] or 0),
+            "min_heat": int(row["min_heat"] or 0),
         }
 
     @staticmethod
