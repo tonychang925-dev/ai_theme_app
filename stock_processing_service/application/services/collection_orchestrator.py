@@ -70,6 +70,25 @@ class CollectionCommandPlanner:
         min_turnover = str(payload.get("min_turnover_rate", 3.0))
         min_score = str(payload.get("min_composite_score", 40.0))
 
+        if task_key == "stock_snapshot":
+            snapshot_opts = options.get("stock_snapshot") or {}
+            provider = snapshot_opts.get("provider", "jyhf")
+            on_existing = snapshot_opts.get("on_existing", "skip")
+            force = snapshot_opts.get("force", False)
+            return CollectionTaskPlan(
+                pre_logs=[
+                    f"stock_snapshot: provider={provider} on_existing={on_existing} force={force}",
+                    "stock_snapshot: 统一入口 → Orchestrator 自动选择 Producer",
+                ],
+                steps=[
+                    CollectionTaskStep(
+                        key="stock_snapshot_build",
+                        runner_key="stock_snapshot.build",
+                        label=f"股票快照采集 ({provider})",
+                    ),
+                ],
+            )
+
         if task_key == "jyhf":
             return CollectionTaskPlan(
                 pre_logs=["jyhf: Step1 列表同步 + Step2 节点入库 + Step3 股票日快照采集入库（API→DB）"],

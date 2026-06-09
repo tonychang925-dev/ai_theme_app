@@ -151,7 +151,9 @@ class CollectionJobManager:
     def _build_tasks(self, payload: dict[str, Any]) -> list[CollectionTaskState]:
         options = payload.get("options") or {}
         tasks: list[CollectionTaskState] = []
-        if options.get("jyhf", True):
+        if options.get("stock_snapshot"):
+            tasks.append(CollectionTaskState(key="stock_snapshot", title="股票快照日采集"))
+        elif options.get("jyhf", True):
             tasks.append(CollectionTaskState(key="jyhf", title="股票快照日采集"))
         if options.get("jyhf_history", False):
             tasks.append(CollectionTaskState(key="jyhf_history", title="题材事件集中采集"))

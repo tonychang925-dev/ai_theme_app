@@ -115,9 +115,11 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         PostMarketRecapRunner,
         ProcessIsolatedRunner,
         ScriptCommandRunner,
+        StockSnapshotBuildRunner,
         TushareKlineRunner,
     )
     registry.register("script.default", ScriptCommandRunner())
+    registry.register("stock_snapshot.build", StockSnapshotBuildRunner())
     registry.register("stock.kline_judgements", BuildStockKlineJudgementsRunner())
     registry.register("leader_llm.queue", BuildLeaderLLMQueueRunner())
     registry.register("leader_llm.judgement", BuildLeaderLLMJudgementRunner())

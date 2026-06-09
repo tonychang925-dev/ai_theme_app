@@ -1013,6 +1013,123 @@ class PostMarketRecapRunner:
         )
 
 
+# ── P1: 股票快照可插拔数据源 Runner ──
+
+class StockSnapshotBuildRunner:
+    """股票快照统一入口 Runner — 通过 Orchestrator 自动选择 Producer.
+
+    provider=jyhf          → JyhfSubjectStockDailySnapshotProducer (API→DB)
+    provider=tushare_join  → TushareJoinSubjectStockDailySnapshotProducer (SQL JOIN)
+    """
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        from datetime import date as _date
+        from database_service.managers.postgres_manager import PostgresDatabaseManager
+        from database_service.scripts.import_jyhf_stock_daily_incremental import get_postgres_config
+        from stock_processing_service.application.jobs.subject_stock_snapshot.jyhf_producer import (
+            JyhfSubjectStockDailySnapshotProducer,
+        )
+        from stock_processing_service.application.jobs.subject_stock_snapshot.tushare_join_producer import (
+            TushareJoinSubjectStockDailySnapshotProducer,
+        )
+        from stock_processing_service.application.jobs.subject_stock_snapshot.factory import (
+            SubjectStockSnapshotProducerFactory,
+        )
+        from stock_processing_service.application.jobs.subject_stock_snapshot.orchestrator import (
+            SubjectStockDailySnapshotOrchestrator,
+        )
+
+        options = context.payload.get("options") or {}
+        snapshot_opts = options.get("stock_snapshot") or {}
+        provider = str(snapshot_opts.get("provider", "jyhf")).strip().lower()
+        on_existing = str(snapshot_opts.get("on_existing", "skip")).strip().lower()
+        force = bool(snapshot_opts.get("force", False))
+
+        if provider not in ("jyhf", "tushare_join"):
+            return CollectionTaskResult(
+                status="failed",
+                current_label=f"不支持的 provider: {provider}",
+                error_message=f"unsupported stock_snapshot provider: {provider}",
+            )
+        if on_existing not in ("skip", "upsert", "replace"):
+            return CollectionTaskResult(
+                status="failed",
+                current_label=f"不支持的 on_existing: {on_existing}",
+                error_message=f"unsupported on_existing: {on_existing}",
+            )
+
+        jyhf_token = (
+            context.env.get("JYHF_AUTH_TOKEN")
+            or context.env.get("AUTHORIZATION")
+            or ""
+        ).strip()
+
+        manager = PostgresDatabaseManager(get_postgres_config())
+        await manager.connect()
+        try:
+            jyhf_producer = JyhfSubjectStockDailySnapshotProducer(
+                db_pool=manager.pool, jyhf_token=jyhf_token,
+            )
+            tushare_join_producer = TushareJoinSubjectStockDailySnapshotProducer(
+                db_pool=manager.pool,
+            )
+            factory = SubjectStockSnapshotProducerFactory(
+                jyhf_producer=jyhf_producer,
+                tushare_join_producer=tushare_join_producer,
+            )
+            orchestrator = SubjectStockDailySnapshotOrchestrator(
+                factory=factory,
+                db_pool=manager.pool,
+            )
+
+            trade_date_val = _date.fromisoformat(context.trade_date)
+            result = await orchestrator.execute(
+                trade_date=trade_date_val,
+                provider=provider,
+                force=force,
+                on_existing=on_existing,
+            )
+        finally:
+            await manager.disconnect()
+
+        logs = _format_snapshot_result(result)
+        ok = result.status in ("ok", "ok_existing", "ok_no_data")
+        return CollectionTaskResult(
+            status="success" if ok else "failed",
+            current_label=f"股票快照完成 ({result.provider}, {result.affected_rows} rows)",
+            logs=logs,
+            error_message="" if ok else "; ".join(result.warnings),
+        )
+
+
+def _format_snapshot_result(result) -> list[str]:
+    """将 SubjectStockSnapshotBuildResult 格式化为前端可读日志."""
+    metrics = result.metrics or {}
+    lines: list[str] = [
+        f"数据源: {result.provider}",
+        f"写入行数: {result.affected_rows}",
+        f"状态: {result.status}",
+        f"batch_id: {metrics.get('batch_id', '--')}",
+    ]
+    if result.provider == "tushare_join":
+        lines += [
+            f"Tushare 当日股票数: {metrics.get('stock_daily_count', '--')}",
+            f"映射股票数: {metrics.get('mapped_distinct_stocks', metrics.get('mapped_stock_count', '--'))}",
+            f"成功匹配: {metrics.get('matched_stock_count', '--')}",
+            f"缺失股票: {metrics.get('real_missing_count', metrics.get('missing_stock_count', '--'))}",
+            f"匹配率: {metrics.get('match_rate', '--')}",
+        ]
+    elif result.provider == "jyhf":
+        lines += [
+            f"题材总数: {metrics.get('subjects_total', '--')}",
+            f"已采集题材: {metrics.get('subjects_collected', '--')}",
+            f"触及题材: {metrics.get('subjects_touched', '--')}",
+        ]
+    if result.warnings:
+        lines.append(f"警告: {'; '.join(result.warnings)}")
+    return lines
+
+
 # ── P2: 子进程隔离 Runner ──
 
 class ProcessIsolatedRunner:
