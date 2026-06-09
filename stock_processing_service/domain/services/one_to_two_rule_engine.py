@@ -79,8 +79,8 @@ class OneToTwoRuleEngine:
         if f.is_downtrend is True:
             veto.append("下降趋势")
 
-        if f.near_pressure is True:
-            veto.append("重要压力位附近")
+        # near_pressure is NOT a hard reject anymore; TechnicalGate handles it as cap_focus.
+        # This ensures near_pressure can only downgrade focus → observe_only, not reject outright.
 
         if f.float_mcap is not None and f.float_mcap > Decimal("20000000000"):
             veto.append("流通市值过大")

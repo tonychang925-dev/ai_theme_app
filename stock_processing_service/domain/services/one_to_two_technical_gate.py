@@ -59,14 +59,19 @@ class OneToTwoTechnicalGate:
         has_golden_spider = bool(kline.get("has_golden_spider"))
         support_broken = bool(kline.get("support_broken"))
         kline_is_downtrend = bool(kline.get("is_downtrend"))
+        kline_near_resistance = bool(kline.get("kline_near_resistance"))
+        # near_pressure: union of f.near_pressure (subject_row / pressure_row)
+        # and kline_near_resistance (K-line technical analysis)
+        near_pressure = bool(f.near_pressure) or kline_near_resistance
 
         # --- compute technical score ---
+        is_downtrend = bool(f.is_downtrend or kline_is_downtrend)
         technical_score = self._compute_technical_score(
             kline_data_ready=kline_data_ready,
             has_golden_spider=has_golden_spider,
             kline_score=kline_score,
-            is_downtrend=bool(f.is_downtrend or kline_is_downtrend),
-            near_pressure=bool(f.near_pressure),
+            is_downtrend=is_downtrend,
+            near_pressure=near_pressure,
             support_broken=support_broken,
         )
 
@@ -76,7 +81,7 @@ class OneToTwoTechnicalGate:
         cap_reason: str | None = None
 
         # Hard reject
-        if bool(f.is_downtrend or kline_is_downtrend):
+        if is_downtrend:
             veto.append("下降趋势")
         if support_broken:
             veto.append("支撑破坏")
@@ -92,8 +97,9 @@ class OneToTwoTechnicalGate:
                     "has_golden_spider": has_golden_spider,
                     "kline_score": float(kline_score) if kline_score is not None else None,
                     "support_broken": support_broken,
-                    "is_downtrend": bool(f.is_downtrend or kline_is_downtrend),
-                    "near_pressure": bool(f.near_pressure),
+                    "is_downtrend": is_downtrend,
+                    "near_pressure": near_pressure,
+                    "kline_near_resistance": kline_near_resistance,
                 },
             )
 
@@ -101,7 +107,7 @@ class OneToTwoTechnicalGate:
         if not kline_data_ready:
             cap_reason = "K线数据不足，暂不 focus"
             risk.append(cap_reason)
-        elif bool(f.near_pressure):
+        elif near_pressure:
             cap_reason = "重要压力位附近，暂不 focus"
             risk.append(cap_reason)
         elif not has_golden_spider and (kline_score is None or kline_score < TECHNICAL_FOCUS_SCORE_THRESHOLD):
@@ -120,8 +126,9 @@ class OneToTwoTechnicalGate:
                     "has_golden_spider": has_golden_spider,
                     "kline_score": float(kline_score) if kline_score is not None else None,
                     "support_broken": support_broken,
-                    "is_downtrend": bool(f.is_downtrend or kline_is_downtrend),
-                    "near_pressure": bool(f.near_pressure),
+                    "is_downtrend": is_downtrend,
+                    "near_pressure": near_pressure,
+                    "kline_near_resistance": kline_near_resistance,
                     "cap_reason": cap_reason,
                 },
             )
@@ -137,8 +144,9 @@ class OneToTwoTechnicalGate:
                 "has_golden_spider": has_golden_spider,
                 "kline_score": float(kline_score) if kline_score is not None else None,
                 "support_broken": support_broken,
-                "is_downtrend": bool(f.is_downtrend or kline_is_downtrend),
-                "near_pressure": bool(f.near_pressure),
+                "is_downtrend": is_downtrend,
+                "near_pressure": near_pressure,
+                "kline_near_resistance": kline_near_resistance,
             },
         )
 

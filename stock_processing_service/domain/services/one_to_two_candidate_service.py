@@ -431,7 +431,7 @@ class OneToTwoCandidateService:
     @staticmethod
     def _technical_trace(kline: dict[str, Any]) -> dict[str, Any]:
         return {
-            "decision_effect": "shadow_only",
+            "decision_effect": "used_by_technical_gate",
             "kline_data_ready": kline.get("kline_data_ready"),
             "history_bar_count": kline.get("history_bar_count"),
             "has_golden_spider": kline.get("has_golden_spider"),
