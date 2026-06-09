@@ -32,6 +32,7 @@ class OneToTwoRiskPlanBuilder:
             "observation_reason": self._build_observation_reason(f, rule, score),
             "subject_logic": self._build_subject_logic(f),
             "technical_summary": self._build_technical_summary(f, rule, score),
+            "event_logic": self._build_event_logic(f),
             "key_parameters": self._build_key_parameters(f, rule, score),
             "tomorrow_plan": self._build_tomorrow_plan(f, decision),
             "give_up_conditions": self._build_give_up_conditions(f, decision),
@@ -106,6 +107,70 @@ class OneToTwoRiskPlanBuilder:
                 "score": float(Decimal(str(auth.get("score", 0))) or 0),
             },
             "selection_reason": str(auth.get("authenticity_scope") or "subject_fallback"),
+        }
+
+    # ── P3-E: event_logic — event-driven evidence read-only, no DB query ──
+
+    @staticmethod
+    def _build_event_logic(f: OneToTwoFeatures) -> dict:
+        """Build event_logic from pre-computed subject_authenticity data.
+        Does NOT query event_theme_map or news_event — frontend must never do so either.
+        """
+        auth = dict(f.subject_authenticity or {})
+        source_trace = dict(f.source_trace or {})
+        subject_selection = dict(source_trace.get("subject_selection") or {})
+
+        level = str(auth.get("level") or "unknown")
+        score_val = auth.get("score")
+
+        # Determine evidence level
+        if level in ("core", "direct") and score_val is not None and float(score_val) >= 70:
+            evidence_level = "strong"
+            summary = "个股与题材存在明确的产业链/主营/公告证据，题材正宗度较高。"
+        elif level in ("core", "direct", "related") and score_val is not None and float(score_val) >= 40:
+            evidence_level = "medium"
+            summary = "个股与题材存在一定关联证据，但正宗度一般。"
+        elif level == "weak" or (score_val is not None and float(score_val) < 40):
+            evidence_level = "weak"
+            summary = "暂无直接事件证据，题材正宗度偏弱，需人工复核。"
+        else:
+            evidence_level = "weak"
+            summary = "暂无直接事件证据，题材正宗度偏弱，需人工复核。"
+
+        # Collect evidence fragments from source_trace
+        evidence: list[dict] = []
+        sel_auth = subject_selection.get("subject_authenticity", {})
+        if isinstance(sel_auth, dict):
+            if sel_auth.get("purity_score") is not None:
+                evidence.append({
+                    "source": "stock_subject_authenticity",
+                    "type": "purity",
+                    "score": sel_auth.get("purity_score"),
+                    "scope": str(sel_auth.get("authenticity_scope") or ""),
+                })
+            if sel_auth.get("theme_tier"):
+                evidence.append({
+                    "source": "stock_subject_authenticity",
+                    "type": "theme_tier",
+                    "value": sel_auth.get("theme_tier"),
+                })
+
+        first_board_trace = dict(source_trace.get("first_board_trace") or {})
+        if first_board_trace.get("chain_violation_reason"):
+            evidence.append({
+                "source": "first_board_classifier",
+                "type": "chain_violation",
+                "reason": first_board_trace.get("chain_violation_reason"),
+            })
+
+        return {
+            "summary": summary,
+            "evidence_level": evidence_level,
+            "subject_authenticity_level": level,
+            "subject_authenticity_score": (
+                float(score_val) if score_val is not None else None
+            ),
+            "evidence": evidence,
         }
 
     # ── P3-B: technical summary via OneToTwoTechnicalSummaryFormatter ──

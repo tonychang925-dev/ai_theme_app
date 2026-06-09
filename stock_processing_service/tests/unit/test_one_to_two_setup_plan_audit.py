@@ -593,3 +593,75 @@ def test_technical_summary_formatter_no_kline_data() -> None:
     result = fmt.format({})
     assert "数据不足" in result["label"]
     assert result["kline_data_ready"] is False
+
+
+# ── P3-E: event_logic tests ──
+
+def test_event_logic_missing_evidence_is_explicit() -> None:
+    """When subject_authenticity is empty/weak, event_logic must say so explicitly."""
+    from stock_processing_service.domain.services.one_to_two_risk_plan_builder import OneToTwoRiskPlanBuilder
+    from stock_processing_service.contracts.dto.one_to_two_dto import (
+        OneToTwoFeatures, RuleResult, ScoreResult,
+    )
+    from decimal import Decimal
+
+    builder = OneToTwoRiskPlanBuilder()
+    f = OneToTwoFeatures(
+        trade_date="2026-06-08", watch_date="2026-06-09",
+        stock_id="000001.SZ", stock_name="测试",
+        subject_key="9018144", subject_name="PCB",
+        is_confirmed_mainline=True, is_strong_hotspot=False,
+        mainline_or_hotspot_state="confirmed_mainline",
+        lifecycle_state="fermentation", market_trade_mode="mainline_core_only",
+        allow_trade=True, is_first_limit_up=True, is_one_word_board=False,
+        is_late_seal=False, first_limit_time="10:00:00", open_board_count=0,
+        turnover_rate=Decimal("0.10"), amount=Decimal("500000000"),
+        close_seal_amount=None, seal_ratio=None,
+        float_mcap=None, position_120=None,
+        is_downtrend=False, near_pressure=False,
+        same_subject_limit_count=3, same_subject_strong_count=5,
+        subject_authenticity={"level": "weak", "score": 30, "authenticity_scope": "subject_fallback"},
+    )
+    rule = RuleResult(decision="observe_only", veto_reasons=[], risk_flags=[])
+    score = ScoreResult(final_score=Decimal("72.0"), watch_level="B", score_detail={})
+
+    plan = builder.build(f, rule, score)
+    el = plan.get("event_logic", {})
+    assert "暂无直接事件证据" in el.get("summary", "")
+    assert el.get("evidence_level") == "weak"
+
+
+def test_event_logic_strong_authenticity() -> None:
+    """When authenticity is core/direct with high score, event_logic must reflect that."""
+    from stock_processing_service.domain.services.one_to_two_risk_plan_builder import OneToTwoRiskPlanBuilder
+    from stock_processing_service.contracts.dto.one_to_two_dto import (
+        OneToTwoFeatures, RuleResult, ScoreResult,
+    )
+    from decimal import Decimal
+
+    builder = OneToTwoRiskPlanBuilder()
+    f = OneToTwoFeatures(
+        trade_date="2026-06-08", watch_date="2026-06-09",
+        stock_id="600110.SH", stock_name="诺德股份",
+        subject_key="9018144", subject_name="PCB",
+        is_confirmed_mainline=True, is_strong_hotspot=False,
+        mainline_or_hotspot_state="confirmed_mainline",
+        lifecycle_state="fermentation", market_trade_mode="mainline_core_only",
+        allow_trade=True, is_first_limit_up=True, is_one_word_board=False,
+        is_late_seal=False, first_limit_time="10:00:00", open_board_count=0,
+        turnover_rate=Decimal("0.10"), amount=Decimal("500000000"),
+        close_seal_amount=None, seal_ratio=None,
+        float_mcap=None, position_120=None,
+        is_downtrend=False, near_pressure=False,
+        same_subject_limit_count=3, same_subject_strong_count=5,
+        subject_authenticity={"level": "core", "score": 85, "authenticity_scope": "stock_subject",
+                             "purity_score": 80, "theme_tier": "core"},
+        source_trace={"subject_selection": {"subject_authenticity": {"purity_score": 80, "theme_tier": "core"}}},
+    )
+    rule = RuleResult(decision="focus", veto_reasons=[], risk_flags=[])
+    score = ScoreResult(final_score=Decimal("85.0"), watch_level="A", score_detail={})
+
+    plan = builder.build(f, rule, score)
+    el = plan.get("event_logic", {})
+    assert el.get("evidence_level") == "strong"
+    assert len(el.get("evidence", [])) > 0
