@@ -2849,12 +2849,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             ) x
         ),
         two_board_stocks AS (
-            -- 独立龙头检测：截至当日最近两个交易日都涨停
+            -- 独立龙头检测：截至当日最近两个交易日都真实涨停（板块感知阈值）
+            -- 与 LimitUpDetector.is_limit_up() tier-3 阈值对齐：
+            --   主板(00/60): 9.8% | 创业板(300/301): 19.8%
+            -- 688 科创板、北交所(4/8/92) 排除：涨跌幅规则不同，不作为2连板独立龙头候选
             SELECT DISTINCT split_part(stock_id, '.', 1) AS stock_code
             FROM stock_daily_snapshot
             WHERE trade_date IN (SELECT trade_date FROM recent_two_trade_days)
+              AND split_part(stock_id, '.', 1) !~ '^(688|[48]|92)'
             GROUP BY split_part(stock_id, '.', 1)
-            HAVING COUNT(DISTINCT trade_date) FILTER (WHERE COALESCE(pct_chg, 0) >= 9.8) = 2
+            HAVING COUNT(DISTINCT trade_date) FILTER (
+                WHERE CASE
+                    WHEN split_part(stock_id, '.', 1) ~ '^(300|301)' THEN COALESCE(pct_chg, 0) >= 19.8
+                    ELSE COALESCE(pct_chg, 0) >= 9.8
+                END
+            ) = 2
         ),
         recent AS (
             SELECT
@@ -2888,7 +2897,12 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 '__independent__'::text AS subject_key,
                 MAX(s.stock_name) AS theme_name,
                 COUNT(DISTINCT s.trade_date) AS total_trade_days,
-                COUNT(DISTINCT s.trade_date) FILTER (WHERE COALESCE(s.pct_chg, 0) >= 9.8) AS recent_limit_up_count,
+                COUNT(DISTINCT s.trade_date) FILTER (
+                    WHERE CASE
+                        WHEN split_part(s.stock_id, '.', 1) ~ '^(300|301)' THEN COALESCE(pct_chg, 0) >= 19.8
+                        ELSE COALESCE(pct_chg, 0) >= 9.8
+                    END
+                ) AS recent_limit_up_count,
                 0 AS is_leader_flag,
                 999 AS best_rank,
                 0 AS current_flag_today,
