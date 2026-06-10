@@ -2454,25 +2454,28 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
     )
     jss = PostMarketJobStatusService(pool=pool)
     rs = PostMarketReadinessService(pool=pool)
-    readiness = await rs.check(d)
-
-    if readiness.status != "ready":
-        await jss.mark_finished(d, "post_market_recap_generate", "failed_precondition",
-            error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
-            diagnostics={"readiness": readiness.to_dict()})
-        return {
-            "ok": False, "trade_date": trade_date_str,
-            "status": "failed_precondition",
-            "error_code": "POST_MARKET_DERIVED_DATA_NOT_READY",
-            "missing_tables": readiness.missing_tables,
-        }
 
     force = bool(p.get("force", False))
     async_mode = bool(p.get("async_mode", False))
     mode = str(p.get("mode") or "").strip()
     if not mode:
-        # force=true defaults to full rebuild; read_model_only is a fast snapshot refresh
         mode = "full_truth_rebuild" if force else "read_model_only"
+
+    # Readiness gate: for force rebuilds, readiness is advisory only —
+    # the user explicitly triggered a rebuild to generate missing data.
+    # For non-force (scheduled/programmatic) calls, it remains a hard gate.
+    if not force:
+        readiness = await rs.check(d)
+        if readiness.status != "ready":
+            await jss.mark_finished(d, "post_market_recap_generate", "failed_precondition",
+                error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
+                diagnostics={"readiness": readiness.to_dict()})
+            return {
+                "ok": False, "trade_date": trade_date_str,
+                "status": "failed_precondition",
+                "error_code": "POST_MARKET_DERIVED_DATA_NOT_READY",
+                "missing_tables": readiness.missing_tables,
+            }
 
     if async_mode and force:
         from datetime import timedelta as _td
