@@ -105,10 +105,11 @@ class PostMarketSetupFactContextBuilder:
         pressure_by_stock = self._extract_map(source_doc, "pressure_by_stock")
         ma_pattern_by_stock = self._extract_map(source_doc, "ma_pattern_by_stock")
         turnover_rate_by_stock = self._extract_stock_metric_map(source_doc, "stock_facts", "turnover_rate")
-        # Fallback: if source_doc doesn't have stock_facts, read directly from stock_abnormal_signal.
-        # Tushare 'daily' API lacks turnover_rate; this table is the canonical source.
+        # Fallback: read turnover_rate from stock_daily_basic_snapshot (collected via control panel).
+        # stock_abnormal_signal must NOT be the source — it's an abnormal evidence module,
+        # not a 1进2 fact source. Missing abnormal data must not break OneToTwo.
         if not turnover_rate_by_stock:
-            turnover_rate_by_stock = await self._read_turnover_rate_from_abnormal_signal(trade_date)
+            turnover_rate_by_stock = await self._read_turnover_rate_from_daily_basic(trade_date)
 
         subject_authenticity_by_subject = await self._build_subject_authenticity(
             trade_date=trade_date,
@@ -467,31 +468,40 @@ class PostMarketSetupFactContextBuilder:
         from stock_processing_service.domain.services.limit_up_detector import LimitUpDetector
         return LimitUpDetector.is_limit_up(row)
 
-    async def _read_turnover_rate_from_abnormal_signal(
+    async def _read_turnover_rate_from_daily_basic(
         self, trade_date: date
     ) -> dict[str, Any]:
-        """Read turnover_rate from stock_abnormal_signal as a fallback source.
+        """Read turnover_rate from stock_daily_basic_snapshot (collected via control panel).
 
-        stock_abnormal_signal stores turnover_rate as percentage (e.g. 9.2 = 9.2%).
-        We convert to fraction (0.092) to match the OneToTwo rule config.
+        stock_daily_basic_snapshot stores turnover_rate as percentage.
+        We convert to fraction to match OneToTwo rule config.
+        stock_abnormal_signal is NOT used — it's an abnormal evidence module,
+        not a 1进2 fact source.
         """
         try:
-            fn = getattr(self._read, "get_stock_abnormal_signals", None)
-            if callable(fn):
-                rows = await fn(trade_date)
-                result: dict[str, Any] = {}
-                for r in rows:
-                    sid = str(r.get("stock_id") or "").strip()
-                    tr = r.get("turnover_rate")
-                    if not sid or tr is None:
-                        continue
-                    bare = self._stock_key(sid)
-                    tr_val = float(tr) / 100.0  # percentage → fraction
-                    if sid not in result:
-                        result[sid] = tr_val
-                    if bare and bare != sid and bare not in result:
-                        result[bare] = tr_val
-                return result
+            fn = getattr(self._read, "get_stock_daily_basic_snapshot", None)
+            if not callable(fn):
+                return {}
+            rows = await fn(trade_date)
+            result: dict[str, Any] = {}
+            for r in rows:
+                sid = str(r.get("stock_id") or "").strip()
+                tr = r.get("turnover_rate")
+                if not sid or tr is None:
+                    continue
+                try:
+                    tr_val = float(tr)
+                except (ValueError, TypeError):
+                    continue
+                if tr_val <= 0:
+                    continue
+                bare = self._stock_key(sid)
+                tr_val_frac = tr_val / 100.0
+                if sid not in result:
+                    result[sid] = tr_val_frac
+                if bare and bare != sid and bare not in result:
+                    result[bare] = tr_val_frac
+            return result
         except Exception:
             pass
         return {}

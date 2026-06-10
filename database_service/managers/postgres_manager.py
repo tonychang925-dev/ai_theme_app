@@ -2803,6 +2803,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 written += 1
         return written
 
+    async def get_stock_daily_basic_snapshot(
+        self, trade_date
+    ) -> List[Dict[str, Any]]:
+        """Read stock_daily_basic_snapshot rows for OneToTwo turnover_rate."""
+        sql = """
+        SELECT stock_id, turnover_rate
+        FROM stock_daily_basic_snapshot
+        WHERE trade_date = $1::date
+          AND turnover_rate IS NOT NULL
+          AND turnover_rate > 0
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
     async def get_stock_abnormal_signals(
         self, trade_date
     ) -> List[Dict[str, Any]]:
