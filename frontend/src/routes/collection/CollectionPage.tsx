@@ -102,6 +102,7 @@ export function CollectionPage() {
       onExisting: "skip" as "skip" | "upsert" | "replace",
     },
     tushareKline: true,
+    auction: false,
     dragonTiger: true,
     indexKline: true,
   });
@@ -219,6 +220,7 @@ export function CollectionPage() {
             : false,
           jyhf_history: false,
           tushare_kline: options.tushareKline,
+          auction: options.auction,
           dragon_tiger: options.dragonTiger,
           index_kline: options.indexKline,
           auto_build_v2_if_missing: false,
@@ -341,7 +343,17 @@ export function CollectionPage() {
                 checked={options.tushareKline}
                 onChange={() => setOptions((s) => ({ ...s, tushareKline: !s.tushareKline }))}
               />
-              <span>Tushare 日K线（含盘前竞价采集）</span>
+              <span>Tushare 日K线</span>
+            </label>
+
+            {/* ── 盘前竞价采集（可选增强链路）── */}
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.auction}
+                onChange={() => setOptions((s) => ({ ...s, auction: !s.auction }))}
+              />
+              <span>盘前竞价采集</span>
             </label>
 
             {/* ── 股票快照（可插拔数据源）── */}

@@ -138,17 +138,22 @@ class CollectionCommandPlanner:
             return CollectionTaskPlan(
                 pre_logs=["Tushare K线已切换到 BuildTushareDailyBarJob (API→Gateway→DB)，不再经过本地JSONL中转"],
                 steps=[
-                    # Step 1: K线采集 — 完全服务化（Tushare API → Gateway → DB）
                     CollectionTaskStep(
                         key="kline",
                         runner_key="tushare.daily_bar",
                         label="Tushare日线采集 (API→DB)",
                     ),
-                    # Step 2: 竞价观察池 — 已服务化
+                ],
+            )
+
+        if task_key == "auction":
+            return CollectionTaskPlan(
+                pre_logs=["盘前竞价采集（可选增强链路）"],
+                steps=[
                     CollectionTaskStep(
                         key="auction_watch",
                         runner_key="auction.watch_universe",
-                        label="竞价观察池构建 (服务化)",
+                        label="竞价观察池构建",
                     ),
                     CollectionTaskStep(
                         key="auction_snapshot_all",

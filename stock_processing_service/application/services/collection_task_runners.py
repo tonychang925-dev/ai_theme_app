@@ -434,6 +434,15 @@ class AuctionSnapshotRunner:
                 universe_source=self._universe_source,
                 max_stocks=self._max_stocks,
             )
+            if result.status == "ok_no_data":
+                return CollectionTaskResult(
+                    status="skipped",
+                    current_label="竞价原始数据为空，已跳过",
+                    logs=[
+                        f"auction_snapshot status={result.status}",
+                        "auction_snapshot skipped: no raw auction data available",
+                    ],
+                )
             return CollectionTaskResult(
                 status="success" if result.status == "ok" else "failed",
                 current_label=f"竞价快照完成 ({result.status})",
