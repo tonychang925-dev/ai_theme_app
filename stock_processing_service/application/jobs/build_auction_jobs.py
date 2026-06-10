@@ -100,9 +100,16 @@ class BuildAuctionSignalJob:
         from database_service.scripts.build_pre_market_auction_signal import main_async
         exit_code = await main_async(args=ns, db_manager=db_manager)
 
+        ec = exit_code or 0
+        if ec == 0:
+            status = "ok"
+        elif ec == 2:
+            status = "ok_no_data"
+        else:
+            status = "failed"
         return BuildResult(
             name="build_auction_signal",
             trade_date=str(trade_date),
-            affected_rows=int((exit_code or 0) == 0),
-            status="ok" if (exit_code or 0) == 0 else "failed",
+            affected_rows=int(status == "ok"),
+            status=status,
         )

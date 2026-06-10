@@ -820,6 +820,12 @@ class AuctionSignalRunner:
             trade_date_val = _date.fromisoformat(context.trade_date)
             job = context.container.build_auction_signal
             result = await job.execute(trade_date=trade_date_val)
+            if result.status in ("ok_no_data", "skipped_no_data", "no_data"):
+                return CollectionTaskResult(
+                    status="skipped",
+                    current_label="竞价信号无数据，已跳过",
+                    logs=[f"auction_signal status={result.status}"],
+                )
             return CollectionTaskResult(
                 status="success" if result.status == "ok" else "failed",
                 current_label=f"竞价信号生成完成 ({result.status})",
