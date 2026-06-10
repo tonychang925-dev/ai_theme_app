@@ -400,9 +400,27 @@ class BuildPostMarketRecapJob:
 
             # ── Build stock_abnormal_signal (required for turnover_rate in OneToTwo) ──
             if not skip_prereqs and self._abnormal_signal_job is not None:
-                await self._abnormal_signal_job.execute(trade_date=trade_date)
+                abnormal_result = await self._abnormal_signal_job.execute(trade_date=trade_date)
+                abnormal_status = str(getattr(abnormal_result, "status", "") or "")
+                abnormal_rows = int(getattr(abnormal_result, "affected_rows", 0) or 0)
+                if not abnormal_status.startswith("ok"):
+                    await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                        diagnostics={
+                            "snapshot_version": snapshot_version, "batch_id": batch_id,
+                            "trace_id": trace_id, "stage": "abnormal_signal_failed",
+                            "abnormal_status": abnormal_status,
+                            "abnormal_rows": abnormal_rows,
+                        })
+                    raise RuntimeError(
+                        f"build_stock_abnormal_signal failed: {abnormal_status}"
+                    )
                 await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
-                    diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "abnormal_signal_done"})
+                    diagnostics={
+                        "snapshot_version": snapshot_version, "batch_id": batch_id,
+                        "trace_id": trace_id, "stage": "abnormal_signal_done",
+                        "abnormal_status": abnormal_status,
+                        "abnormal_rows": abnormal_rows,
+                    })
 
             # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
             if skip_layer_c:

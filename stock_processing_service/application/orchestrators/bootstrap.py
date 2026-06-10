@@ -130,6 +130,7 @@ def build_container(
                 idempotency_port=idempotency_gateway,
             )
         ),
+        # Shared instance — recap prerequisite and standalone API use the same job.
         build_post_market_recap=BuildPostMarketRecapJob(
             read_port=theme_data_gateway,
             write_port=stock_object_gateway,
@@ -140,9 +141,11 @@ def build_container(
             mainline_state_job=_mainline_state_job,
             cycle_judgement_job=_cycle_job,
             evidence_job=_evidence_job,
-            abnormal_signal_job=BuildStockAbnormalSignalJob(
-                write_port=stock_object_gateway,
-                db_gateway=db_gateway,
+            abnormal_signal_job=(
+                _abnormal_signal_job := BuildStockAbnormalSignalJob(
+                    write_port=stock_object_gateway,
+                    db_gateway=db_gateway,
+                )
             ),
             strong_stock_tracking_use_case=build_strong_stock_tracking,
         ),
@@ -161,10 +164,7 @@ def build_container(
         build_tushare_daily_bar=BuildTushareDailyBarJob(
             write_port=stock_object_gateway,
         ),
-        build_stock_abnormal_signal=BuildStockAbnormalSignalJob(
-            write_port=stock_object_gateway,
-            db_gateway=db_gateway,
-        ),
+        build_stock_abnormal_signal=_abnormal_signal_job,
         build_auction_snapshot=BuildAuctionSnapshotJob(
             write_port=stock_object_gateway,
             db_gateway=db_gateway,
