@@ -20,7 +20,11 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pydantic import Field
-from datetime import datetime
+from datetime import datetime, timezone as _tz
+
+# Startup watermark — any "running" job status with updated_at before this
+# timestamp belongs to a previous process and is automatically stale.
+_STARTUP_TS = datetime.now(_tz.utc)
 import uuid
 
 from database_service.config import DatabaseConfig, DatabaseType
@@ -2489,10 +2493,16 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
         existing_status = await _read_job_status(pool, d, "post_market_recap_generate")
         if existing_status and existing_status.get("status") == "running":
             try:
+                existing_diag = existing_status.get("diagnostics") or {}
+                existing_snapshot_version = existing_diag.get("snapshot_version") or ""
                 updated_at = existing_status.get("updated_at")
-                stale_sec = 30 * 60  # 30 minutes
+                stale_timeout_sec = 10 * 60  # 10 minutes
                 is_stale = False
-                if updated_at:
+
+                if not updated_at:
+                    # No timestamp — can't verify freshness, treat as stale.
+                    is_stale = True
+                else:
                     import datetime as _dt
                     parsed = None
                     for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S"):
@@ -2501,28 +2511,33 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
                             break
                         except ValueError:
                             continue
-                    if parsed:
-                        age = (_dt.datetime.now(_dt.timezone.utc) - parsed.replace(tzinfo=_dt.timezone.utc)).total_seconds()
-                        is_stale = age > stale_sec
+                    if parsed is None:
+                        is_stale = True
+                    else:
+                        parsed_utc = parsed.replace(tzinfo=_dt.timezone.utc)
+                        # Running job from BEFORE this process started → always stale.
+                        if parsed_utc < _STARTUP_TS:
+                            is_stale = True
+                        else:
+                            age = (_dt.datetime.now(_dt.timezone.utc) - parsed_utc).total_seconds()
+                            is_stale = age > stale_timeout_sec
 
-                    existing_diag = existing_status.get("diagnostics") or {}
-                    existing_snapshot_version = existing_diag.get("snapshot_version") or ""
-                    if not is_stale:
-                        return {
-                            "ok": True, "trade_date": trade_date_str,
-                            "status": "running",
-                            "message": "已有重新复盘任务正在执行",
-                            "snapshot_version": existing_snapshot_version,
-                            "job_name": "post_market_recap_generate",
-                        }
-                    # stale: mark the old job as failed and continue
-                    await jss.mark_finished(d, "post_market_recap_generate", "failed",
-                        error_code="STALE_RUNNING_JOB_REPLACED",
-                        diagnostics={
-                            "replaced_snapshot_version": existing_snapshot_version,
-                            "new_snapshot_version": snapshot_version,
-                            "reason": f"stale running >{stale_sec}s, replaced by new force rebuild",
-                        })
+                if not is_stale:
+                    return {
+                        "ok": True, "trade_date": trade_date_str,
+                        "status": "running",
+                        "message": "已有重新复盘任务正在执行",
+                        "snapshot_version": existing_snapshot_version,
+                        "job_name": "post_market_recap_generate",
+                    }
+                # stale: mark the old job as failed and continue
+                await jss.mark_finished(d, "post_market_recap_generate", "failed",
+                    error_code="STALE_RUNNING_JOB_REPLACED",
+                    diagnostics={
+                        "replaced_snapshot_version": existing_snapshot_version,
+                        "new_snapshot_version": snapshot_version,
+                        "reason": f"stale running replaced by new force rebuild (timeout={stale_timeout_sec}s, startup_ts={_STARTUP_TS.isoformat()})",
+                    })
             except Exception:
                 pass  # if stale detection fails, proceed with new rebuild
 
@@ -2667,16 +2682,32 @@ async def get_post_market_recap_generate_status(
         except Exception:
             pass
 
+    diag = status_row.get("diagnostics") or {}
+    updated_at = status_row.get("updated_at")
+    elapsed_sec: float | None = None
+    if updated_at:
+        import datetime as _dt
+        for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S"):
+            try:
+                parsed = _dt.datetime.strptime(str(updated_at)[:19], fmt)
+                elapsed_sec = (_dt.datetime.now(_dt.timezone.utc) - parsed.replace(tzinfo=_dt.timezone.utc)).total_seconds()
+                break
+            except ValueError:
+                continue
+
     return {
         "ok": True,
         "trade_date": trade_date,
-        "snapshot_version": snapshot_version or status_row.get("diagnostics", {}).get("snapshot_version", ""),
+        "snapshot_version": snapshot_version or diag.get("snapshot_version", ""),
         "job_name": "post_market_recap_generate",
         "status": status_row["status"],
         "error_code": status_row.get("error_code"),
-        "diagnostics": status_row.get("diagnostics", {}),
-        "updated_at": status_row.get("updated_at"),
+        "diagnostics": diag,
+        "updated_at": updated_at,
         "snapshot_ready": snapshot_ready,
+        "mode": diag.get("mode", ""),
+        "elapsed_sec": round(elapsed_sec, 1) if elapsed_sec is not None else None,
+        "stage": diag.get("stage", ""),
     }
 
 

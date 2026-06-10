@@ -392,6 +392,10 @@ class BuildPostMarketRecapJob:
                         trace_id=trace_id,
                     )
 
+            # heartbeat: prerequisites complete
+            await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "prerequisites_done"})
+
             # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
             if skip_layer_c:
                 layer_c_metrics = {"skip_layer_c": True, "stock_ids": []}
@@ -744,6 +748,10 @@ class BuildPostMarketRecapJob:
                 recap_doc["hotspot_subjects"] = merged_hotspots
                 recap_doc["mainline_hotspots"] = merged_hotspots
 
+            # heartbeat: building one_to_two
+            await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "building_one_to_two"})
+
             from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
                 OneToTwoSetupPlanEngine,
             )
@@ -779,6 +787,10 @@ class BuildPostMarketRecapJob:
                 source_trace_id=trace_id,
                 recap_doc=_serialize(recap_doc),
             )
+
+            # heartbeat: writing snapshot
+            await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "writing_snapshot"})
 
             affected = await self._write_port.upsert_post_market_recap_snapshot(snapshot)
             await self._mark_job_status(trade_date, "post_market_recap_generate", "success",

@@ -1507,38 +1507,43 @@ export function RecapPage() {
       // "accepted" = new job launched; "running" = existing job already in progress.
       if (recapResult.status === "accepted" || recapResult.status === "running") {
         const snapshotVersion = (recapResult.snapshot_version as string) || "";
+        const recapMode = (recapResult.mode as string) || "";
         const isRunning = recapResult.status === "running";
+        const isFullRebuild = recapMode === "full_truth_rebuild";
         const hasVersion = snapshotVersion.length > 0;
+
+        // full_truth_rebuild: 20 min; read_model_only: 6 min
+        const MAX_POLLS = isFullRebuild ? 400 : 120;
+        const POLL_INTERVAL_MS = 3000;
+
         updateGenerationStep("recap", {
           status: "running",
           progress: 50,
-          label: isRunning ? "已有重建任务执行中，跟随状态..." : "后台生成中...",
+          label: isRunning ? "已有重建任务执行中，跟随状态..."
+            : isFullRebuild ? "完整复盘生成中（预计5-10分钟）..."
+            : "后台生成中...",
         });
 
         let pollCount = 0;
-        // full_truth_rebuild runs evidence/cycle/identity/LayerC/recap and can take 10+ min.
-        const MAX_POLLS = 300; // 15 min at 3s intervals
-        const POLL_INTERVAL_MS = 3000;
 
         while (pollCount < MAX_POLLS) {
           await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
           pollCount += 1;
           const pollResult = await fetchPostMarketRecapGenerateStatus(tradeDate, snapshotVersion).catch(() => null);
           if (!pollResult || !pollResult.ok) {
-            // Network error — still update progress so UI doesn't look stuck
-            updateGenerationStep("recap", { status: "running", progress: Math.min(50 + pollCount, 95), label: `等待服务响应... (${pollCount * 3}s)` });
+            updateGenerationStep("recap", { status: "running", progress: Math.min(50 + Math.floor(pollCount * 0.3), 95), label: `等待服务响应... (${pollCount * 3}s)` });
             continue;
           }
 
-          // Progress update helper — called in every branch so UI never freezes
+          const elapsedSec = (pollResult.elapsed_sec as number) || pollCount * 3;
+          const elapsedLabel = elapsedSec > 60 ? `${Math.floor(elapsedSec / 60)}分${Math.floor(elapsedSec % 60)}秒` : `${Math.floor(elapsedSec)}秒`;
+          const stageLabel = (pollResult.stage as string) || (pollResult.status === "running" ? "执行中" : "");
+
           const _updateProgress = (label: string) => {
-            updateGenerationStep("recap", { status: "running", progress: Math.min(50 + Math.floor(pollCount * 0.5), 95), label });
+            updateGenerationStep("recap", { status: "running", progress: Math.min(50 + Math.floor(pollCount * 0.3), 95), label });
           };
 
           if (pollResult.status === "success") {
-            // Triple verification: status=success + version matches + snapshot exists.
-            // When snapshotVersion is empty (old running job), we can't version-match
-            // but we still require snapshot_ready.
             const versionOk = !hasVersion || pollResult.snapshot_version === snapshotVersion;
             const ready = pollResult.snapshot_ready === true;
             if (versionOk && ready) {
@@ -1546,13 +1551,11 @@ export function RecapPage() {
               break;
             }
             if (ready && !versionOk) {
-              // Snapshot exists but belongs to a different version — the
-              // job we are tracking hasn't finished yet. Keep polling.
-              _updateProgress(`快照已存在(其他版本)，等待当前任务完成... (${pollCount * 3}s)`);
+              _updateProgress(`[${elapsedLabel}] 快照已存在(其他版本)，等待当前任务完成...`);
             } else if (versionOk && !ready) {
-              _updateProgress(`任务已完成，等待 snapshot 落库... (${pollCount * 3}s)`);
+              _updateProgress(`[${elapsedLabel}] 任务完成，等待 snapshot 落库...`);
             } else {
-              _updateProgress(`等待任务完成... (${pollCount * 3}s)`);
+              _updateProgress(`[${elapsedLabel}] 等待任务完成...`);
             }
             continue;
           }
@@ -1563,14 +1566,16 @@ export function RecapPage() {
             setError(`重新复盘失败：${errMsg}\n旧复盘结果仍可查看。`);
             return;
           }
-          // running / pending / queued / unknown — keep polling
-          _updateProgress(`${isRunning ? "跟随已有任务" : "后台生成"}中... (${pollCount * 3}s)`);
+          // running / pending / queued / unknown — keep polling with stage info
+          const stageText = stageLabel ? ` [${stageLabel}]` : "";
+          _updateProgress(`[${elapsedLabel}]${stageText} ${isRunning ? "跟随已有任务" : isFullRebuild ? "完整复盘" : "生成"}中...`);
         }
 
+        // Poll exhausted — NOT a failure. The job may still be running.
         if (pollCount >= MAX_POLLS) {
-          updateGenerationStep("recap", { status: "failed", progress: 100 });
-          setError("重新复盘超时（15分钟），请稍后手动刷新页面查看结果。");
-          return;
+          updateGenerationStep("recap", { status: "running", progress: 95, label: "后端仍在执行，请稍后刷新页面或继续等待" });
+          setError("重新复盘仍在后台执行（已等待超20分钟），请稍后手动刷新页面查看最新结果。");
+          // Don't return — allow continuing to daily_review_v2 and snapshot refresh
         }
       } else {
         // Sync mode fallback (non-force or legacy — recapResult.status is "ok")
