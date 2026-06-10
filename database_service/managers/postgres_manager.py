@@ -2736,6 +2736,69 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """读取与已确认主线同簇的相关题材（空实现，后续补 cluster 逻辑）。"""
         return []
 
+    async def ensure_stock_daily_basic_snapshot_table(self) -> None:
+        """Create stock_daily_basic_snapshot if it doesn't exist."""
+        ddl = """
+        CREATE TABLE IF NOT EXISTS stock_daily_basic_snapshot (
+            trade_date DATE NOT NULL,
+            stock_id TEXT NOT NULL,
+            turnover_rate NUMERIC(12,4),
+            turnover_rate_f NUMERIC(12,4),
+            volume_ratio NUMERIC(12,4),
+            float_share NUMERIC(20,4),
+            circ_mv NUMERIC(20,2),
+            total_mv NUMERIC(20,2),
+            raw_json JSONB DEFAULT '{}'::jsonb,
+            source_name TEXT NOT NULL DEFAULT 'tushare.daily_basic',
+            created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+            updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+            PRIMARY KEY (trade_date, stock_id)
+        );
+        """
+        async with self.pool.acquire() as conn:
+            await conn.execute(ddl)
+
+    async def upsert_stock_daily_basic_snapshot_rows(
+        self, rows: List[Dict[str, Any]]
+    ) -> int:
+        """Upsert rows into stock_daily_basic_snapshot."""
+        await self.ensure_stock_daily_basic_snapshot_table()
+        sql = """
+        INSERT INTO stock_daily_basic_snapshot (
+            trade_date, stock_id, turnover_rate, turnover_rate_f,
+            volume_ratio, float_share, circ_mv, total_mv,
+            raw_json, source_name
+        ) VALUES (
+            $1::date, $2, $3, $4, $5, $6, $7, $8, $9::jsonb, $10
+        )
+        ON CONFLICT (trade_date, stock_id)
+        DO UPDATE SET
+            turnover_rate = EXCLUDED.turnover_rate,
+            turnover_rate_f = EXCLUDED.turnover_rate_f,
+            volume_ratio = EXCLUDED.volume_ratio,
+            float_share = EXCLUDED.float_share,
+            circ_mv = EXCLUDED.circ_mv,
+            total_mv = EXCLUDED.total_mv,
+            raw_json = EXCLUDED.raw_json,
+            updated_at = NOW()
+        """
+        written = 0
+        async with self.pool.acquire() as conn:
+            for row in rows:
+                await conn.execute(sql,
+                    row["trade_date"], row["stock_id"],
+                    row.get("turnover_rate"),
+                    row.get("turnover_rate_f"),
+                    row.get("volume_ratio"),
+                    row.get("float_share"),
+                    row.get("circ_mv"),
+                    row.get("total_mv"),
+                    row.get("raw_json", "{}"),
+                    row.get("source_name", "tushare.daily_basic"),
+                )
+                written += 1
+        return written
+
     async def get_stock_abnormal_signals(
         self, trade_date
     ) -> List[Dict[str, Any]]:
