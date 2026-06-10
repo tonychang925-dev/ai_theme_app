@@ -1306,3 +1306,25 @@ def test_subject_board_stats_missing_diagnostics() -> None:
         assert item["decision"] != "focus", (
             f"focus forbidden when breadth is missing: {item['decision']}"
         )
+
+
+def test_lifecycle_missing_not_in_missing_required() -> None:
+    """lifecycle data missing should NOT trigger early 'required fields missing' reject."""
+    f = _features(
+        data_quality={
+            "missing_required": [],  # lifecycle absent from missing_required
+            "has_breadth": True,
+            "breadth_missing": False,
+            "has_lifecycle": False,
+        },
+        lifecycle_state="unknown",
+    )
+    result = OneToTwoRuleEngine().apply(f)
+    # Must not contain the fake "必需字段缺失: ['lifecycle']" error
+    assert not any("lifecycle" in r for r in result.veto_reasons), (
+        f"lifecycle should not appear in veto reasons: {result.veto_reasons}"
+    )
+    # Missing lifecycle should not hard-reject — "unknown" state passes lifecycle checks
+    assert result.decision != "reject", (
+        f"missing lifecycle must not hard-reject: veto={result.veto_reasons}"
+    )

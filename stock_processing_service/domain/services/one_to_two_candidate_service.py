@@ -323,8 +323,9 @@ class OneToTwoCandidateService:
         # missing it should NOT trigger the early "required fields missing"
         # rejection. The RuleEngine will naturally apply "无板块合力"
         # veto when same_subject_limit_count is None/0.
-        if not lifecycle_row:
-            missing.append("lifecycle")
+        # lifecycle is also non-fatal: missing → lifecycle_state defaults to
+        # "unknown" which won't trigger lifecycle-based vetoes. The
+        # RuleEngine still evaluates all other criteria.
         return missing
 
     def _choose_subject_row(
