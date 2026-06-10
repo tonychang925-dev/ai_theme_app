@@ -782,39 +782,58 @@ class BuildPostMarketRecapJob:
                 diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "building_one_to_two"})
 
             # Inject turnover_rate into source_doc.
-            # Tushare 'daily' API does NOT include turnover_rate (it's in 'daily_basic'
-            # which is a separate API). subject_stock_daily_snapshot also lacks this
-            # column. Without this injection, all candidates get turnover_rate=None →
-            # "低换手，筹码交换不足" reject in RuleEngine v1.2 tiered filtering.
-            #
-            # The backtest path does the same injection from stock_abnormal_signal
-            # in OneToTwoBacktestFeatureSnapshotService._get_report_context.
+            # Tushare 'daily' API does NOT include turnover_rate (daily_basic does).
+            # Call daily_basic API directly to get real turnover_rate data.
             if not recap_doc.get("stock_facts"):
+                stock_facts: list[dict[str, Any]] = []
                 try:
-                    pool = getattr(self._read_port, "_pool", None)
-                    if pool is None:
-                        facade = getattr(self._read_port, "_db", None)
-                        db_client = getattr(facade, "_db", None) if facade else None
-                        pool = getattr(db_client, "pool", None) if db_client else None
-                    if pool is not None:
-                        async with pool.acquire() as conn:
-                            rows = await conn.fetch(
-                                "SELECT stock_id, turnover_rate FROM stock_abnormal_signal "
-                                "WHERE trade_date = $1::date",
-                                trade_date,
-                            )
-                            stock_facts: list[dict[str, Any]] = []
-                            for r in rows:
-                                sid = str(r.get("stock_id") or "").strip()
-                                tr = r.get("turnover_rate")
-                                if sid and tr is not None:
-                                    # stock_abnormal_signal stores percentage (e.g. 9.2 = 9.2%);
-                                    # OneToTwo rule config uses fraction (0.092 = 9.2%)
-                                    stock_facts.append({"stock_id": sid, "turnover_rate": float(tr) / 100})
-                            if stock_facts:
-                                recap_doc["stock_facts"] = stock_facts
+                    import os as _os
+                    tushare_token = _os.getenv("TUSHARE_TOKEN", "").strip().strip("\"'")
+                    if tushare_token:
+                        from stock_service.adapters.tushare_adapter import TushareAdapter
+                        adapter = TushareAdapter(tushare_token)
+                        frame = adapter.fetch_daily_basic(trade_date.isoformat())
+                        if frame is not None and hasattr(frame, "iterrows"):
+                            for _, row in frame.iterrows():
+                                sid = str(row.get("ts_code") or "").strip().upper()
+                                tr = row.get("turnover_rate") or row.get("turnover_rate_f")
+                                if not sid or tr is None:
+                                    continue
+                                try:
+                                    tr_val = float(tr)
+                                except (ValueError, TypeError):
+                                    continue
+                                if tr_val <= 0:
+                                    continue
+                                # daily_basic turnover_rate is already percentage
+                                # (e.g. 9.2 = 9.2%); OneToTwo uses fraction (0.092)
+                                stock_facts.append({"stock_id": sid, "turnover_rate": tr_val / 100.0})
                 except Exception:
                     pass
+                # Fallback: stock_abnormal_signal (may have 0 turnover for TushareJoin)
+                if not stock_facts:
+                    try:
+                        pool = getattr(self._read_port, "_pool", None)
+                        if pool is None:
+                            facade = getattr(self._read_port, "_db", None)
+                            db_client = getattr(facade, "_db", None) if facade else None
+                            pool = getattr(db_client, "pool", None) if db_client else None
+                        if pool is not None:
+                            async with pool.acquire() as conn:
+                                rows = await conn.fetch(
+                                    "SELECT stock_id, turnover_rate FROM stock_abnormal_signal "
+                                    "WHERE trade_date = $1::date AND turnover_rate > 0",
+                                    trade_date,
+                                )
+                                for r in rows:
+                                    sid = str(r.get("stock_id") or "").strip()
+                                    tr = r.get("turnover_rate")
+                                    if sid and tr is not None and float(tr) > 0:
+                                        stock_facts.append({"stock_id": sid, "turnover_rate": float(tr) / 100.0})
+                    except Exception:
+                        pass
+                if stock_facts:
+                    recap_doc["stock_facts"] = stock_facts
 
             from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
                 OneToTwoSetupPlanEngine,
