@@ -90,6 +90,7 @@ class BuildPostMarketRecapJob:
         mainline_state_job: Any | None = None,  # BuildMainlineStateJob — Layer B 前置
         cycle_judgement_job: Any | None = None,  # BuildCycleJudgementJob — Layer B 前置
         evidence_job: Any | None = None,  # BuildThemeCycleEvidenceDailyJob — Layer B 证据
+        abnormal_signal_job: Any | None = None,  # BuildStockAbnormalSignalJob — turnover_rate 真源
         report_builder: NewChainPostMarketReportBuilder | None = None,
         market_summary_llm_service: Any | None = None,
         post_market_decision_engine: Any | None = None,
@@ -113,6 +114,7 @@ class BuildPostMarketRecapJob:
         self._mainline_state_job = mainline_state_job
         self._cycle_judgement_job = cycle_judgement_job
         self._evidence_job = evidence_job
+        self._abnormal_signal_job = abnormal_signal_job
         self._report_builder = report_builder or NewChainPostMarketReportBuilder()
         self._market_summary_llm_service = market_summary_llm_service or PostMarketMarketSummaryLlmService()
         self._decision_engine = post_market_decision_engine or PostMarketDecisionEngine()
@@ -395,6 +397,12 @@ class BuildPostMarketRecapJob:
             # heartbeat: prerequisites complete
             await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
                 diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "prerequisites_done"})
+
+            # ── Build stock_abnormal_signal (required for turnover_rate in OneToTwo) ──
+            if not skip_prereqs and self._abnormal_signal_job is not None:
+                await self._abnormal_signal_job.execute(trade_date=trade_date)
+                await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                    diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "abnormal_signal_done"})
 
             # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
             if skip_layer_c:

@@ -140,6 +140,9 @@ def build_container(
             mainline_state_job=_mainline_state_job,
             cycle_judgement_job=_cycle_job,
             evidence_job=_evidence_job,
+            abnormal_signal_job=BuildStockAbnormalSignalJob(
+                write_port=stock_object_gateway,
+            ),
             strong_stock_tracking_use_case=build_strong_stock_tracking,
         ),
         build_pre_market_brief=BuildPreMarketBriefJob(
