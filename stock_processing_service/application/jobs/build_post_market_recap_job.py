@@ -398,31 +398,6 @@ class BuildPostMarketRecapJob:
             await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
                 diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "prerequisites_done"})
 
-            # ── Inject abnormal_reviews for DailyReviewV2 display ──
-            # Read existing stock_abnormal_signal rows (built by collection step).
-            if not recap_doc.get("abnormal_reviews"):
-                try:
-                    pool = getattr(self._read_port, "_pool", None)
-                    if pool is None:
-                        facade = getattr(self._read_port, "_db", None)
-                        db_client = getattr(facade, "_db", None) if facade else None
-                        pool = getattr(db_client, "pool", None) if db_client else None
-                    if pool is not None:
-                        async with pool.acquire() as conn:
-                            ar_rows = await conn.fetch(
-                                "SELECT stock_id, stock_name, subject_key, turnover_rate, "
-                                "abnormal_composite_score, abnormal_labels, conclusion, "
-                                "volume_ratio_to_ma50, main_net_inflow "
-                                "FROM stock_abnormal_signal "
-                                "WHERE trade_date = $1::date "
-                                "ORDER BY abnormal_composite_score DESC",
-                                trade_date,
-                            )
-                            if ar_rows:
-                                recap_doc["abnormal_reviews"] = [dict(r) for r in ar_rows]
-                except Exception:
-                    pass
-
             # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
             if skip_layer_c:
                 layer_c_metrics = {"skip_layer_c": True, "stock_ids": []}
@@ -778,6 +753,30 @@ class BuildPostMarketRecapJob:
             # heartbeat: building one_to_two
             await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
                 diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "building_one_to_two"})
+
+            # Inject abnormal_reviews for DailyReviewV2 display.
+            if not recap_doc.get("abnormal_reviews"):
+                try:
+                    pool = getattr(self._read_port, "_pool", None)
+                    if pool is None:
+                        facade = getattr(self._read_port, "_db", None)
+                        db_client = getattr(facade, "_db", None) if facade else None
+                        pool = getattr(db_client, "pool", None) if db_client else None
+                    if pool is not None:
+                        async with pool.acquire() as conn:
+                            ar_rows = await conn.fetch(
+                                "SELECT stock_id, stock_name, subject_key, turnover_rate, "
+                                "abnormal_composite_score, abnormal_labels, conclusion, "
+                                "volume_ratio_to_ma50, main_net_inflow "
+                                "FROM stock_abnormal_signal "
+                                "WHERE trade_date = $1::date "
+                                "ORDER BY abnormal_composite_score DESC",
+                                trade_date,
+                            )
+                            if ar_rows:
+                                recap_doc["abnormal_reviews"] = [dict(r) for r in ar_rows]
+                except Exception:
+                    pass
 
             # Inject turnover_rate for OneToTwo — read from stock_daily_basic_snapshot (collected via control panel).
             if not recap_doc.get("stock_facts"):

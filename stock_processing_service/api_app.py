@@ -2289,6 +2289,31 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
     if not isinstance(recap_doc, dict):
         recap_doc = {}
 
+    # ── Self-healing: inject abnormal_reviews from DB if recap_doc has none ──
+    if not recap_doc.get("abnormal_reviews"):
+        context = recap_doc.get("report_context") or {}
+        if not isinstance(context, dict):
+            context = {}
+        if not context.get("stock_abnormal_signal") and not context.get("abnormal_signals"):
+            try:
+                pool = getattr(app.state.gateway, "_client", None)
+                pool = getattr(pool, "pool", None) if pool else None
+                if pool is not None:
+                    async with pool.acquire() as conn:
+                        ar_rows = await conn.fetch(
+                            "SELECT stock_id, stock_name, subject_key, turnover_rate,"
+                            " abnormal_composite_score, abnormal_labels, conclusion,"
+                            " volume_ratio_to_ma50, main_net_inflow"
+                            " FROM stock_abnormal_signal"
+                            " WHERE trade_date = $1::date"
+                            " ORDER BY abnormal_composite_score DESC",
+                            d,
+                        )
+                        if ar_rows:
+                            recap_doc["abnormal_reviews"] = [dict(r) for r in ar_rows]
+            except Exception:
+                pass
+
     v2 = builder.build(
         trade_date=d,
         recap_doc=recap_doc,
