@@ -1503,10 +1503,16 @@ export function RecapPage() {
       updateGenerationStep("recap", { status: "running", progress: 35 });
       const recapResult = await generatePostMarketRecap(tradeDate, true);
 
-      // R3: async mode — poll until success/failed
-      if (recapResult.status === "accepted") {
-        const snapshotVersion = recapResult.snapshot_version as string;
-        updateGenerationStep("recap", { status: "running", progress: 50, label: "后台生成中..." });
+      // R3: async mode — poll until success/failed.
+      // "accepted" = new job launched; "running" = existing job already in progress.
+      if (recapResult.status === "accepted" || recapResult.status === "running") {
+        const snapshotVersion = (recapResult.snapshot_version as string) || "";
+        const isRunning = recapResult.status === "running";
+        updateGenerationStep("recap", {
+          status: "running",
+          progress: 50,
+          label: isRunning ? "已有重建任务执行中，跟随状态..." : "后台生成中...",
+        });
 
         let pollCount = 0;
         const MAX_POLLS = 120; // 6 min at 3s intervals
@@ -1515,12 +1521,23 @@ export function RecapPage() {
         while (pollCount < MAX_POLLS) {
           await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
           pollCount += 1;
+          // Poll with snapshot_version if we have one; otherwise poll latest.
           const pollResult = await fetchPostMarketRecapGenerateStatus(tradeDate, snapshotVersion).catch(() => null);
           if (!pollResult || !pollResult.ok) continue;
 
           if (pollResult.status === "success") {
-            updateGenerationStep("recap", { status: "success", progress: 100 });
-            break;
+            // Triple-check: status=success + snapshot_version matches + snapshot exists
+            const versionOk = !snapshotVersion || pollResult.snapshot_version === snapshotVersion;
+            const ready = pollResult.snapshot_ready === true;
+            if (versionOk && ready) {
+              updateGenerationStep("recap", { status: "success", progress: 100 });
+              break;
+            }
+            // If snapshot not ready yet, keep polling (may still be writing)
+            if (pollCount >= 20) {
+              updateGenerationStep("recap", { status: "running", progress: Math.min(50 + pollCount, 95), label: `等待 snapshot 落库... (${pollCount * 3}s)` });
+            }
+            continue;
           }
           if (pollResult.status === "failed" || pollResult.status === "failed_precondition") {
             const diag = pollResult.diagnostics || {};
@@ -1529,9 +1546,9 @@ export function RecapPage() {
             setError(`重新复盘失败：${errMsg}\n旧复盘结果仍可查看。`);
             return;
           }
-          // running or queued — continue polling, update progress
+          // running / pending / queued / unknown — continue polling
           const progress = Math.min(50 + pollCount * 3, 95);
-          updateGenerationStep("recap", { status: "running", progress, label: `后台生成中... (${pollCount * 3}s)` });
+          updateGenerationStep("recap", { status: "running", progress, label: `${isRunning ? "跟随已有任务" : "后台生成"}中... (${pollCount * 3}s)` });
         }
 
         if (pollCount >= MAX_POLLS) {
@@ -1540,7 +1557,7 @@ export function RecapPage() {
           return;
         }
       } else {
-        // Sync mode fallback (non-force or legacy)
+        // Sync mode fallback (non-force or legacy — recapResult.status is "ok")
         requirePostMarketCommandOk(recapResult, "生成复盘报告失败");
         updateGenerationStep("recap", { status: "success", progress: 100 });
       }

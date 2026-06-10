@@ -2505,19 +2505,21 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
                         age = (_dt.datetime.now(_dt.timezone.utc) - parsed.replace(tzinfo=_dt.timezone.utc)).total_seconds()
                         is_stale = age > stale_sec
 
+                    existing_diag = existing_status.get("diagnostics") or {}
+                    existing_snapshot_version = existing_diag.get("snapshot_version") or ""
                     if not is_stale:
                         return {
                             "ok": True, "trade_date": trade_date_str,
                             "status": "running",
                             "message": "已有重新复盘任务正在执行",
-                            "snapshot_version": existing_status.get("snapshot_version", snapshot_version),
+                            "snapshot_version": existing_snapshot_version,
                             "job_name": "post_market_recap_generate",
                         }
                     # stale: mark the old job as failed and continue
                     await jss.mark_finished(d, "post_market_recap_generate", "failed",
                         error_code="STALE_RUNNING_JOB_REPLACED",
                         diagnostics={
-                            "replaced_snapshot_version": existing_status.get("snapshot_version", ""),
+                            "replaced_snapshot_version": existing_snapshot_version,
                             "new_snapshot_version": snapshot_version,
                             "reason": f"stale running >{stale_sec}s, replaced by new force rebuild",
                         })
@@ -2581,10 +2583,10 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
 async def _read_job_status(
     pool, trade_date, job_key: str, *, snapshot_version: str = ""
 ) -> dict[str, Any] | None:
-    """Read the latest job status row for a given trade_date + job_key.
+    """Read job status for trade_date + job_key.
 
-    When snapshot_version is provided, prefer matching that version;
-    otherwise fall back to the most recent row.
+    When snapshot_version is provided, ONLY match that version — no fallback.
+    Fallback to latest row ONLY when snapshot_version is empty.
     """
     if pool is None:
         return None
@@ -2600,13 +2602,7 @@ async def _read_job_status(
                 ORDER BY updated_at DESC LIMIT 1
             """, trade_date, job_key, snapshot_version)
             if not row:
-                # fallback to latest if no match by snapshot_version
-                row = await conn.fetchrow("""
-                    SELECT status, error_code, diagnostics, updated_at
-                    FROM post_market_job_status
-                    WHERE trade_date = $1::date AND job_key = $2
-                    ORDER BY updated_at DESC LIMIT 1
-                """, trade_date, job_key)
+                return None  # version-specific query: no fallback
         else:
             row = await conn.fetchrow("""
                 SELECT status, error_code, diagnostics, updated_at
