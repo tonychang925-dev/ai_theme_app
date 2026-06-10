@@ -752,6 +752,41 @@ class BuildPostMarketRecapJob:
             await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
                 diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "building_one_to_two"})
 
+            # Inject turnover_rate into source_doc.
+            # Tushare 'daily' API does NOT include turnover_rate (it's in 'daily_basic'
+            # which is a separate API). subject_stock_daily_snapshot also lacks this
+            # column. Without this injection, all candidates get turnover_rate=None →
+            # "低换手，筹码交换不足" reject in RuleEngine v1.2 tiered filtering.
+            #
+            # The backtest path does the same injection from stock_abnormal_signal
+            # in OneToTwoBacktestFeatureSnapshotService._get_report_context.
+            if not recap_doc.get("stock_facts"):
+                try:
+                    pool = getattr(self._read_port, "_pool", None)
+                    if pool is None:
+                        facade = getattr(self._read_port, "_db", None)
+                        db_client = getattr(facade, "_db", None) if facade else None
+                        pool = getattr(db_client, "pool", None) if db_client else None
+                    if pool is not None:
+                        async with pool.acquire() as conn:
+                            rows = await conn.fetch(
+                                "SELECT stock_id, turnover_rate FROM stock_abnormal_signal "
+                                "WHERE trade_date = $1::date",
+                                trade_date,
+                            )
+                            stock_facts: list[dict[str, Any]] = []
+                            for r in rows:
+                                sid = str(r.get("stock_id") or "").strip()
+                                tr = r.get("turnover_rate")
+                                if sid and tr is not None:
+                                    # stock_abnormal_signal stores percentage (e.g. 9.2 = 9.2%);
+                                    # OneToTwo rule config uses fraction (0.092 = 9.2%)
+                                    stock_facts.append({"stock_id": sid, "turnover_rate": float(tr) / 100})
+                            if stock_facts:
+                                recap_doc["stock_facts"] = stock_facts
+                except Exception:
+                    pass
+
             from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
                 OneToTwoSetupPlanEngine,
             )
