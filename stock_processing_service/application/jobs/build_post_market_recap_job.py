@@ -398,55 +398,30 @@ class BuildPostMarketRecapJob:
             await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
                 diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "prerequisites_done"})
 
-            # ── Build stock_abnormal_signal (required for abnormal_reviews display) ──
-            if not skip_prereqs and self._abnormal_signal_job is not None:
-                abnormal_result = await self._abnormal_signal_job.execute(
-                    trade_date=trade_date,
-                    min_turnover_rate=0.0,
-                )
-                abnormal_status = str(getattr(abnormal_result, "status", "") or "")
-                abnormal_rows = int(getattr(abnormal_result, "affected_rows", 0) or 0)
-                if not abnormal_status.startswith("ok"):
-                    await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
-                        diagnostics={
-                            "snapshot_version": snapshot_version, "batch_id": batch_id,
-                            "trace_id": trace_id, "stage": "abnormal_signal_failed",
-                            "abnormal_status": abnormal_status,
-                            "abnormal_rows": abnormal_rows,
-                        })
-                    raise RuntimeError(
-                        f"build_stock_abnormal_signal failed: {abnormal_status}"
-                    )
-                await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
-                    diagnostics={
-                        "snapshot_version": snapshot_version, "batch_id": batch_id,
-                        "trace_id": trace_id, "stage": "abnormal_signal_done",
-                        "abnormal_status": abnormal_status,
-                        "abnormal_rows": abnormal_rows,
-                    })
-                # Inject abnormal_reviews for DailyReviewV2 display
-                if abnormal_rows > 0 and not recap_doc.get("abnormal_reviews"):
-                    try:
-                        pool = getattr(self._read_port, "_pool", None)
-                        if pool is None:
-                            facade = getattr(self._read_port, "_db", None)
-                            db_client = getattr(facade, "_db", None) if facade else None
-                            pool = getattr(db_client, "pool", None) if db_client else None
-                        if pool is not None:
-                            async with pool.acquire() as conn:
-                                ar_rows = await conn.fetch(
-                                    "SELECT stock_id, stock_name, subject_key, turnover_rate, "
-                                    "abnormal_composite_score, abnormal_labels, conclusion, "
-                                    "volume_ratio_to_ma50, main_net_inflow "
-                                    "FROM stock_abnormal_signal "
-                                    "WHERE trade_date = $1::date "
-                                    "ORDER BY abnormal_composite_score DESC",
-                                    trade_date,
-                                )
-                                if ar_rows:
-                                    recap_doc["abnormal_reviews"] = [dict(r) for r in ar_rows]
-                    except Exception:
-                        pass
+            # ── Inject abnormal_reviews for DailyReviewV2 display ──
+            # Read existing stock_abnormal_signal rows (built by collection step).
+            if not recap_doc.get("abnormal_reviews"):
+                try:
+                    pool = getattr(self._read_port, "_pool", None)
+                    if pool is None:
+                        facade = getattr(self._read_port, "_db", None)
+                        db_client = getattr(facade, "_db", None) if facade else None
+                        pool = getattr(db_client, "pool", None) if db_client else None
+                    if pool is not None:
+                        async with pool.acquire() as conn:
+                            ar_rows = await conn.fetch(
+                                "SELECT stock_id, stock_name, subject_key, turnover_rate, "
+                                "abnormal_composite_score, abnormal_labels, conclusion, "
+                                "volume_ratio_to_ma50, main_net_inflow "
+                                "FROM stock_abnormal_signal "
+                                "WHERE trade_date = $1::date "
+                                "ORDER BY abnormal_composite_score DESC",
+                                trade_date,
+                            )
+                            if ar_rows:
+                                recap_doc["abnormal_reviews"] = [dict(r) for r in ar_rows]
+                except Exception:
+                    pass
 
             # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
             if skip_layer_c:
