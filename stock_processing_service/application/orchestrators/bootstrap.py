@@ -142,6 +142,7 @@ def build_container(
             evidence_job=_evidence_job,
             abnormal_signal_job=BuildStockAbnormalSignalJob(
                 write_port=stock_object_gateway,
+                db_gateway=db_gateway,
             ),
             strong_stock_tracking_use_case=build_strong_stock_tracking,
         ),
