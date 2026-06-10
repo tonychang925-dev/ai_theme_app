@@ -2782,11 +2782,15 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             raw_json = EXCLUDED.raw_json,
             updated_at = NOW()
         """
+        from datetime import date as _date
         written = 0
         async with self.pool.acquire() as conn:
             for row in rows:
+                td = row["trade_date"]
+                if isinstance(td, str):
+                    td = _date.fromisoformat(td)
                 await conn.execute(sql,
-                    row["trade_date"], row["stock_id"],
+                    td, row["stock_id"],
                     row.get("turnover_rate"),
                     row.get("turnover_rate_f"),
                     row.get("volume_ratio"),
