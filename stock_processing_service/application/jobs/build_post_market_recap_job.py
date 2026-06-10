@@ -400,7 +400,10 @@ class BuildPostMarketRecapJob:
 
             # ── Build stock_abnormal_signal (required for turnover_rate in OneToTwo) ──
             if not skip_prereqs and self._abnormal_signal_job is not None:
-                abnormal_result = await self._abnormal_signal_job.execute(trade_date=trade_date)
+                abnormal_result = await self._abnormal_signal_job.execute(
+                    trade_date=trade_date,
+                    min_turnover_rate=0.0,  # TushareJoin raw_json lacks turnover_rate; don't filter
+                )
                 abnormal_status = str(getattr(abnormal_result, "status", "") or "")
                 abnormal_rows = int(getattr(abnormal_result, "affected_rows", 0) or 0)
                 if not abnormal_status.startswith("ok"):

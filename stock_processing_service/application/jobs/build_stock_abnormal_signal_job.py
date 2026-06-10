@@ -93,6 +93,8 @@ class BuildStockAbnormalSignalJob:
                 turnover_rate = _to_float(raw[18] if len(raw) > 18 else None)
                 main_net_inflow = _to_float(raw[35] if len(raw) > 35 else None)
             elif isinstance(raw, dict):
+                # TushareJoin raw_json is a dict WITHOUT turnover_rate;
+                # JYHF raw_json is a list WITH it at index 18.
                 turnover_rate = _to_float(raw.get("turnover_rate"))
                 main_net_inflow = _to_float(raw.get("main_net_inflow"))
             else:
