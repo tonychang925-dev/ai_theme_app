@@ -45,10 +45,12 @@ class BuildStockAbnormalSignalJob:
         tushare_token: str = "",
         min_turnover_rate: float | None = None,
         min_composite_score: float | None = None,
+        turnover_rate_map: dict[str, float] | None = None,
     ) -> BuildResult:
         import json as _json
 
         cfg = self._config
+        _turnover_overrides = turnover_rate_map or {}
         td_str = trade_date.isoformat() if hasattr(trade_date, "isoformat") else str(trade_date)
         min_turn = min_turnover_rate if min_turnover_rate is not None else cfg.min_turnover_rate
         min_score = min_composite_score if min_composite_score is not None else cfg.min_composite_score
@@ -96,6 +98,16 @@ class BuildStockAbnormalSignalJob:
                 # TushareJoin raw_json is a dict WITHOUT turnover_rate;
                 # JYHF raw_json is a list WITH it at index 18.
                 turnover_rate = _to_float(raw.get("turnover_rate"))
+                # Fallback: when raw_json has no turnover_rate (TushareJoin),
+                # use daily_basic override map for real turnover_rate.
+                if turnover_rate <= 0 and _turnover_overrides:
+                    stock_id = str(r.get("stock_id", "")).strip().upper()
+                    override = _turnover_overrides.get(stock_id)
+                    if override is None:
+                        bare = stock_id.split(".")[0]
+                        override = _turnover_overrides.get(bare, 0.0)
+                    if override > 0:
+                        turnover_rate = override
                 main_net_inflow = _to_float(raw.get("main_net_inflow"))
             else:
                 continue
