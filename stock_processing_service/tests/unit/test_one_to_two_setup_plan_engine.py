@@ -1166,3 +1166,143 @@ def test_independent_subject_not_written_to_plan_items() -> None:
     assert "__independent__" not in subject_keys_in_items, (
         f"__independent__ must not appear in plan items, got: {subject_keys_in_items}"
     )
+
+
+# ── breadth_missing vs breadth truly zero ──
+
+def _features(**overrides) -> OneToTwoFeatures:
+    """Minimal valid focus candidate, breadth=3."""
+    defaults = dict(
+        trade_date="2026-06-04",
+        watch_date="2026-06-05",
+        stock_id="600001.SH",
+        stock_name="测试股",
+        subject_key="robot",
+        subject_name="机器人",
+        is_confirmed_mainline=True,
+        is_strong_hotspot=False,
+        mainline_or_hotspot_state="confirmed_mainline",
+        lifecycle_state="fermentation",
+        market_trade_mode="mainline_ultra_short_only",
+        allow_trade=True,
+        is_first_limit_up=True,
+        is_one_word_board=False,
+        is_late_seal=False,
+        first_limit_time="10:00:00",
+        open_board_count=1,
+        turnover_rate=Decimal("0.15"),
+        amount=Decimal("800000000"),
+        close_seal_amount=Decimal("50000000"),
+        seal_ratio=Decimal("0.7"),
+        float_mcap=Decimal("5000000000"),
+        position_120=Decimal("0.3"),
+        is_downtrend=False,
+        near_pressure=False,
+        same_subject_limit_count=3,
+        same_subject_strong_count=2,
+        first_board_type="chain_first_board",
+        data_quality={"missing_required": [], "has_breadth": True, "breadth_missing": False},
+        source_trace={"source": "unit"},
+    )
+    defaults.update(overrides)
+    return OneToTwoFeatures(**defaults)
+
+
+def test_breadth_missing_downgrades_focus_to_pending_review_only() -> None:
+    """When subject_board_stats is unavailable, breadth_unknown → focus → pending_review_only."""
+    f = _features(
+        data_quality={"missing_required": [], "has_breadth": False, "breadth_missing": True},
+        same_subject_limit_count=None,
+        same_subject_strong_count=None,
+    )
+    result = OneToTwoRuleEngine().apply(f)
+    # Must NOT be reject — breadth_missing is not a hard veto
+    assert result.decision != "reject", f"expected non-reject, got {result.decision}: {result.veto_reasons}"
+    # Must NOT be focus — unknown breadth cannot focus
+    assert result.decision != "focus", f"expected non-focus, got {result.decision}"
+    # Should be pending_review_only
+    assert result.decision == "pending_review_only", f"expected pending_review_only, got {result.decision}"
+    # Risk flags must mention breadth missing
+    assert any("板块合力数据缺失" in flag for flag in result.risk_flags), f"missing breadth flag in: {result.risk_flags}"
+
+
+def test_breadth_missing_not_in_missing_required() -> None:
+    """board_breadth missing should NOT appear in missing_required (it is an optional source)."""
+    f = _features(
+        data_quality={
+            "missing_required": [],  # board_breadth absent from missing_required
+            "has_breadth": False,
+            "breadth_missing": True,
+        },
+        same_subject_limit_count=None,
+        same_subject_strong_count=None,
+    )
+    result = OneToTwoRuleEngine().apply(f)
+    # Must not contain the fake "必需字段缺失: ['board_breadth']" error
+    assert not any("board_breadth" in r for r in result.veto_reasons), (
+        f"board_breadth should not appear in veto reasons: {result.veto_reasons}"
+    )
+    assert result.decision != "reject", f"missing optional breadth must not hard-reject: {result.veto_reasons}"
+
+
+def test_breadth_truly_zero_still_hard_rejects() -> None:
+    """When board_row exists and count is truly 0, '无板块合力' veto still applies."""
+    f = _features(
+        data_quality={"missing_required": [], "has_breadth": True, "breadth_missing": False},
+        same_subject_limit_count=0,
+        same_subject_strong_count=0,
+    )
+    result = OneToTwoRuleEngine().apply(f)
+    assert result.decision == "reject", f"expected reject for true zero breadth, got {result.decision}"
+    assert any("无板块合力" in r for r in result.veto_reasons), f"missing 无板块合力 in {result.veto_reasons}"
+
+
+def test_subject_board_stats_missing_diagnostics() -> None:
+    """When limit_up_rows non-empty but subject_market_breadth empty, diagnostics flag set."""
+    from stock_processing_service.application.jobs.build_post_market_recap_job import BuildPostMarketRecapJob
+
+    ctx = PostMarketSetupFactContext(
+        trade_date="2026-06-04",
+        watch_date="2026-06-05",
+        active_mainlines=[{"canonical_subject_key": "robot", "subject_key": "robot", "mainline_name": "机器人"}],
+        strong_hotspot_subjects=[],
+        confirmed_hotspot_keys=set(),
+        active_subject_keys={"robot"},
+        lifecycle_by_subject={"robot": {"state": "fermentation", "lifecycle_state": "fermentation"}},
+        market_regime={"trade_mode": "mainline_ultra_short_only", "allow_trade": True},
+        trading_principle={"allow_trade": True, "trade_mode": "mainline_ultra_short_only"},
+        subject_stock_rows=[
+            {"trade_date": "2026-06-04", "stock_id": "600001.SH", "stock_name": "测试股",
+             "subject_key": "robot", "pct_chg": 10.0, "limit_up": True},
+        ],
+        stock_daily_bars=[
+            {"trade_date": "2026-06-04", "stock_id": "600001.SH", "stock_name": "测试股",
+             "close_price": 100, "limit_up_price": 90, "pct_chg": 10.0, "limit_up": True,
+             "amount": 800000000, "turnover_rate": 15.0},
+        ],
+        limit_up_rows=[
+            {"trade_date": "2026-06-04", "stock_id": "600001.SH", "stock_name": "测试股",
+             "close_price": 100, "limit_up_price": 90, "pct_chg": 10.0, "limit_up": True,
+             "amount": 800000000, "turnover_rate": 15.0},
+        ],
+        subject_market_breadth={},  # EMPTY — triggers diagnostic
+        diagnostics=SourceStatus(source_status={"market_regime": "ready"}),
+    )
+
+    engine = OneToTwoSetupPlanEngine()
+    result = engine.build_from_context(ctx)
+
+    assert result.diagnostics["subject_board_stats_missing"] is True
+    assert result.diagnostics["breadth_stats"]["subject_board_stats"] == "ready_empty"
+    assert any(
+        "SUBJECT_BOARD_STATS_MISSING" in w
+        for w in result.diagnostics["non_blocking_warnings"]
+    ), f"missing SUBJECT_BOARD_STATS_MISSING in warnings: {result.diagnostics['non_blocking_warnings']}"
+
+    # With breadth missing, candidates should be pending_review_only, not reject
+    non_reject = [i for i in result.items if i["decision"] != "reject"]
+    assert len(non_reject) > 0, f"expected non-reject items when breadth missing, got all rejected"
+    for item in non_reject:
+        assert item["decision"] != "focus", (
+            f"focus forbidden when breadth is missing: {item['decision']}"
+        )

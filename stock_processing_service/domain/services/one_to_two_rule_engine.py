@@ -58,20 +58,34 @@ class OneToTwoRuleEngine:
             low_turnover_tier = True
             risk.append(cfg.low_turnover_risk_flag)
 
-        same_subject_limit_count = f.same_subject_limit_count or 0
-        same_subject_strong_count = f.same_subject_strong_count or 0
-        has_strict_breadth = same_subject_limit_count >= cfg.min_subject_limit_count
-        has_strong_breadth = (
-            cfg.allow_strong_count_breadth
-            and same_subject_limit_count >= 1
-            and same_subject_strong_count >= cfg.min_subject_strong_count_for_breadth
-            and (not cfg.strong_count_breadth_requires_confirmed_mainline or f.is_confirmed_mainline)
+        # ── Board breadth evaluation ──
+        # Distinguish "breadth data source missing" from "breadth truly zero".
+        # When subject_board_stats is unavailable, breadth is unknown — do NOT
+        # hard-reject as "无板块合力". Instead, downgrade focus → pending_review_only.
+        breadth_missing = (
+            f.data_quality.get("breadth_missing") is True
+            or f.data_quality.get("has_breadth") is False
         )
-        soft_breadth = has_strong_breadth and not has_strict_breadth
-        if not has_strict_breadth and not has_strong_breadth:
-            veto.append(cfg.strict_breadth_veto_reason)
-        elif soft_breadth:
-            risk.append(cfg.soft_breadth_risk_flag)
+        breadth_unknown = False
+        soft_breadth = False
+        if breadth_missing:
+            risk.append("板块合力数据缺失，待复核")
+            breadth_unknown = True
+        else:
+            same_subject_limit_count = f.same_subject_limit_count or 0
+            same_subject_strong_count = f.same_subject_strong_count or 0
+            has_strict_breadth = same_subject_limit_count >= cfg.min_subject_limit_count
+            has_strong_breadth = (
+                cfg.allow_strong_count_breadth
+                and same_subject_limit_count >= 1
+                and same_subject_strong_count >= cfg.min_subject_strong_count_for_breadth
+                and (not cfg.strong_count_breadth_requires_confirmed_mainline or f.is_confirmed_mainline)
+            )
+            soft_breadth = has_strong_breadth and not has_strict_breadth
+            if not has_strict_breadth and not has_strong_breadth:
+                veto.append(cfg.strict_breadth_veto_reason)
+            elif soft_breadth:
+                risk.append(cfg.soft_breadth_risk_flag)
 
         if f.position_120 is not None and f.position_120 > Decimal("0.65"):
             veto.append("首板位置过高")
@@ -116,6 +130,10 @@ class OneToTwoRuleEngine:
             risk.append(f"主线阶段 {f.lifecycle_state}，只观察不 focus")
         else:
             decision = "focus"
+
+        if breadth_unknown and decision == "focus":
+            decision = "pending_review_only"
+            risk.append("板块合力数据缺失，待复核后确认")
 
         if soft_breadth and decision == "focus":
             decision = cfg.soft_breadth_cap_decision

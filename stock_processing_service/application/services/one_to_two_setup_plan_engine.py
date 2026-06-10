@@ -107,6 +107,25 @@ class OneToTwoSetupPlanEngine:
             "pending_review_only_count": sum(1 for item in items if item["decision"] == "pending_review_only"),
             "reject_count": reject_count,
         }
+        # ── Global data-quality diagnostics ──
+        non_blocking_warnings = list(ctx.diagnostics.non_blocking_warnings)
+        subject_board_stats_missing = (
+            len(ctx.limit_up_rows) > 0
+            and not ctx.subject_market_breadth
+        )
+        breadth_stats: dict[str, Any] = {}
+        if subject_board_stats_missing:
+            breadth_stats = {
+                "subject_board_stats": "ready_empty",
+                "breadth_missing_candidate_count": len(fact_pool),
+                "breadth_missing_rate": round(len(fact_pool) / max(len(fact_pool), 1), 2),
+            }
+            non_blocking_warnings.append(
+                "SUBJECT_BOARD_STATS_MISSING: subject_market_breadth is empty but "
+                f"{len(ctx.limit_up_rows)} limit-up rows exist; board breadth "
+                "evaluation degraded — focus candidates downgraded to pending_review_only"
+            )
+
         diagnostics = {
             "rule_version": self.rule_engine.rule_version,
             "empty_is_valid": True,
@@ -114,7 +133,9 @@ class OneToTwoSetupPlanEngine:
             "top_reject_reasons": [reason for reason, _ in reject_reasons.most_common(10)],
             "source_status": ctx.diagnostics.to_dict().get("source_status", {}),
             "blocking_errors": list(ctx.diagnostics.blocking_errors),
-            "non_blocking_warnings": list(ctx.diagnostics.non_blocking_warnings),
+            "non_blocking_warnings": non_blocking_warnings,
+            "subject_board_stats_missing": subject_board_stats_missing,
+            "breadth_stats": breadth_stats,
         }
         return OneToTwoSetupPlanDTO(
             summary=summary,

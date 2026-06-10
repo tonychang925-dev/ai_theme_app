@@ -242,6 +242,8 @@ class OneToTwoCandidateService:
                     "has_current_bar": True,
                     "has_subject_mapping": True,
                     "has_breadth": bool(board_row),
+                    "breadth_missing": not bool(board_row),
+                    "breadth_source": "subject_board_stats",
                     "has_lifecycle": bool(lifecycle_row),
                     "has_market_regime": bool(ctx.market_regime),
                 },
@@ -317,8 +319,10 @@ class OneToTwoCandidateService:
         missing: list[str] = []
         if self._decimal_or_none(bar.get("amount")) is None and self._decimal_or_none(current_subject_row.get("amount")) is None:
             missing.append("amount")
-        if not board_row:
-            missing.append("board_breadth")
+        # board_breadth is an optional source per architecture §8.2;
+        # missing it should NOT trigger the early "required fields missing"
+        # rejection. The RuleEngine will naturally apply "无板块合力"
+        # veto when same_subject_limit_count is None/0.
         if not lifecycle_row:
             missing.append("lifecycle")
         return missing
