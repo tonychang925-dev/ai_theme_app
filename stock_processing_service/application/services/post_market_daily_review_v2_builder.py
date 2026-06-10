@@ -790,7 +790,7 @@ class PostMarketDailyReviewV2Builder:
             )
             turnover_rate = self._float_or_none(joined.get("turnover_rate"))
             volume_ratio = self._float_or_none(
-                self._first_present(joined, "volume_ratio", "vol_ratio", "amount_ratio", "volume_ratio_to_ma5")
+                self._first_present(joined, "volume_ratio", "vol_ratio", "amount_ratio", "volume_ratio_to_ma5", "volume_ratio_to_ma50")
             )
             fallback_used: list[str] = []
             if volume_ratio is None:
@@ -821,9 +821,8 @@ class PostMarketDailyReviewV2Builder:
                     missing_fields.add(field)
             display_required = {
                 "abnormal_score": abnormal_score is not None,
-                "volume_ratio": volume_ratio is not None,
-                "labels": bool(labels),
-                "main_net_inflow_or_money_flow_tier": main_net_inflow is not None or bool(money_flow_tier),
+                "volume_or_turnover": volume_ratio is not None or volume_vs_ma50 is not None or turnover_rate is not None,
+                "labels_or_conclusion": bool(labels) or bool(conclusion),
             }
             for field, ok in display_required.items():
                 if not ok:

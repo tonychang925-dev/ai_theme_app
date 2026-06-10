@@ -873,9 +873,8 @@ def test_daily_review_v2_builder_marks_abnormal_display_missing_partial() -> Non
     assert coverage["status"] == "partial"
     assert coverage["source"] == "legacy_sections"
     assert coverage["row_count"] == 1
-    assert "volume_ratio" in coverage["missing_fields"]
-    assert "labels" in coverage["missing_fields"]
-    assert "main_net_inflow_or_money_flow_tier" in coverage["missing_fields"]
+    assert "volume_or_turnover" in coverage["missing_fields"]
+    assert "labels_or_conclusion" in coverage["missing_fields"]
 
 
 def test_daily_review_v2_builder_maps_ready_money_flow_reviews() -> None:
