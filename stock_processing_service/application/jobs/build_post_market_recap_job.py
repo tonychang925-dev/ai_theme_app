@@ -804,56 +804,29 @@ class BuildPostMarketRecapJob:
             await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
                 diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "building_one_to_two"})
 
-            # Inject turnover_rate for OneToTwo — primary from Tushare daily_basic, fallback from stock_abnormal_signal.
+            # Inject turnover_rate for OneToTwo — read from stock_daily_basic_snapshot (collected via control panel).
             if not recap_doc.get("stock_facts"):
                 stock_facts_ot: list[dict[str, Any]] = []
-                # Try daily_basic
                 try:
-                    import os as _os
-                    token = _os.getenv("TUSHARE_TOKEN", "").strip().strip("\"'")
-                    if token:
-                        from stock_service.adapters.tushare_adapter import TushareAdapter
-                        adapter = TushareAdapter(token, timeout=30, retry_count=0)
-                        frame = adapter.fetch_daily_basic(trade_date.isoformat())
-                        if frame is not None and hasattr(frame, "iterrows"):
-                            for _, row in frame.iterrows():
-                                sid = str(row.get("ts_code") or "").strip().upper()
-                                if not sid:
-                                    continue
-                                tr = row.get("turnover_rate") or row.get("turnover_rate_f")
-                                if tr is None:
-                                    continue
-                                try:
-                                    tr_val = float(tr)
-                                except (ValueError, TypeError):
-                                    continue
-                                if tr_val <= 0:
-                                    continue
-                                stock_facts_ot.append({"stock_id": sid, "turnover_rate": tr_val / 100.0})
+                    pool = getattr(self._read_port, "_pool", None)
+                    if pool is None:
+                        facade = getattr(self._read_port, "_db", None)
+                        db_client = getattr(facade, "_db", None) if facade else None
+                        pool = getattr(db_client, "pool", None) if db_client else None
+                    if pool is not None:
+                        async with pool.acquire() as conn:
+                            rows = await conn.fetch(
+                                "SELECT stock_id, turnover_rate FROM stock_daily_basic_snapshot "
+                                "WHERE trade_date = $1::date AND turnover_rate IS NOT NULL AND turnover_rate > 0",
+                                trade_date,
+                            )
+                            for r in rows:
+                                sid = str(r.get("stock_id") or "").strip()
+                                tr = r.get("turnover_rate")
+                                if sid and tr is not None and float(tr) > 0:
+                                    stock_facts_ot.append({"stock_id": sid, "turnover_rate": float(tr) / 100.0})
                 except Exception:
                     pass
-                # Fallback: stock_abnormal_signal
-                if not stock_facts_ot:
-                    try:
-                        pool = getattr(self._read_port, "_pool", None)
-                        if pool is None:
-                            facade = getattr(self._read_port, "_db", None)
-                            db_client = getattr(facade, "_db", None) if facade else None
-                            pool = getattr(db_client, "pool", None) if db_client else None
-                        if pool is not None:
-                            async with pool.acquire() as conn:
-                                rows = await conn.fetch(
-                                    "SELECT stock_id, turnover_rate FROM stock_abnormal_signal "
-                                    "WHERE trade_date = $1::date AND turnover_rate > 0",
-                                    trade_date,
-                                )
-                                for r in rows:
-                                    sid = str(r.get("stock_id") or "").strip()
-                                    tr = r.get("turnover_rate")
-                                    if sid and tr is not None and float(tr) > 0:
-                                        stock_facts_ot.append({"stock_id": sid, "turnover_rate": float(tr) / 100.0})
-                    except Exception:
-                        pass
                 if stock_facts_ot:
                     recap_doc["stock_facts"] = stock_facts_ot
 
