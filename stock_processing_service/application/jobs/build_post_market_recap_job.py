@@ -352,7 +352,8 @@ class BuildPostMarketRecapJob:
             )
 
         # P1-3: mark running
-        await self._mark_job_status(trade_date, "post_market_recap_generate", "running")
+        await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+            diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id})
         try:
 
             # ── Layer A/B 前置（新链自闭环）──
@@ -657,7 +658,7 @@ class BuildPostMarketRecapJob:
             if readiness["status"] != "ready":
                 await self._mark_job_status(trade_date, "post_market_recap_generate", "failed_precondition",
                     error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
-                    diagnostics={"readiness": readiness})
+                    diagnostics={"readiness": readiness, "snapshot_version": snapshot_version})
                 await self._idempotency_port.mark_job_completed(
                     job_key,
                     {

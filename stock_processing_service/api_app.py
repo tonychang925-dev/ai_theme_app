@@ -2469,30 +2469,68 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
 
     force = bool(p.get("force", False))
     async_mode = bool(p.get("async_mode", False))
+    mode = str(p.get("mode") or "").strip()
+    if not mode:
+        # force=true defaults to full rebuild; read_model_only is a fast snapshot refresh
+        mode = "full_truth_rebuild" if force else "read_model_only"
 
     if async_mode and force:
+        from datetime import timedelta as _td
         from uuid import uuid4
         version_tag = uuid4().hex[:8]
-        snapshot_version = f"daily_review_generate.read_model_only.{version_tag}"
+        snapshot_version = f"daily_review_generate.{mode}.{version_tag}"
         batch_id = uuid4().hex[:12]
         trace_id = uuid4().hex[:12]
 
-        # Check for existing running job
+        # Check for existing running job — but allow stale running to be replaced.
         existing_status = await _read_job_status(pool, d, "post_market_recap_generate")
         if existing_status and existing_status.get("status") == "running":
-            return {
-                "ok": True, "trade_date": trade_date_str,
-                "status": "running",
-                "message": "已有重新复盘任务正在执行",
-                "snapshot_version": existing_status.get("snapshot_version", snapshot_version),
-                "job_name": "post_market_recap_generate",
-            }
+            try:
+                updated_at = existing_status.get("updated_at")
+                stale_sec = 30 * 60  # 30 minutes
+                is_stale = False
+                if updated_at:
+                    import datetime as _dt
+                    parsed = None
+                    for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S"):
+                        try:
+                            parsed = _dt.datetime.strptime(str(updated_at)[:19], fmt)
+                            break
+                        except ValueError:
+                            continue
+                    if parsed:
+                        age = (_dt.datetime.now(_dt.timezone.utc) - parsed.replace(tzinfo=_dt.timezone.utc)).total_seconds()
+                        is_stale = age > stale_sec
+
+                    if not is_stale:
+                        return {
+                            "ok": True, "trade_date": trade_date_str,
+                            "status": "running",
+                            "message": "已有重新复盘任务正在执行",
+                            "snapshot_version": existing_status.get("snapshot_version", snapshot_version),
+                            "job_name": "post_market_recap_generate",
+                        }
+                    # stale: mark the old job as failed and continue
+                    await jss.mark_finished(d, "post_market_recap_generate", "failed",
+                        error_code="STALE_RUNNING_JOB_REPLACED",
+                        diagnostics={
+                            "replaced_snapshot_version": existing_status.get("snapshot_version", ""),
+                            "new_snapshot_version": snapshot_version,
+                            "reason": f"stale running >{stale_sec}s, replaced by new force rebuild",
+                        })
+            except Exception:
+                pass  # if stale detection fails, proceed with new rebuild
 
         # Mark queued before launching background task
         await jss.mark_finished(d, "post_market_recap_generate", "pending",
-            diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id})
+            diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "mode": mode})
 
         job = app.state.container.build_post_market_recap
+
+        skip_truth = mode == "read_model_only"
+
+        import logging as _logging
+        _recap_logger = _logging.getLogger("stock_processing_service.api.recap_rebuild")
 
         async def _run_background():
             try:
@@ -2502,11 +2540,20 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
                     batch_id=batch_id,
                     trace_id=trace_id,
                     lookback_days=7,
-                    skip_prereqs=True,
-                    skip_layer_c=True,
+                    skip_prereqs=skip_truth,
+                    skip_layer_c=skip_truth,
                 )
             except Exception:
-                pass  # R1 already handles mark_job_status failed
+                _recap_logger.exception(
+                    "post_market_recap async rebuild failed: trade_date=%s snapshot_version=%s",
+                    trade_date_str, snapshot_version,
+                )
+                try:
+                    await jss.mark_finished(d, "post_market_recap_generate", "failed",
+                        error_code="RECAP_BUILD_EXCEPTION",
+                        diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "mode": mode})
+                except Exception:
+                    _recap_logger.exception("failed to mark job as failed after exception")
 
         import asyncio as _asyncio
         _asyncio.create_task(_run_background())
@@ -2517,38 +2564,66 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
             "snapshot_version": snapshot_version,
             "job_name": "post_market_recap_generate",
             "poll_interval_sec": 3,
+            "mode": mode,
         }
 
     # Synchronous mode (original behavior)
     return await generate_daily_review({
         "date": trade_date_str,
-        "mode": "read_model_only",
+        "mode": mode,
         "force": force,
     })
 
 
-async def _read_job_status(pool, trade_date, job_key: str) -> dict[str, Any] | None:
-    """Read the latest job status row for a given trade_date + job_key."""
+async def _read_job_status(
+    pool, trade_date, job_key: str, *, snapshot_version: str = ""
+) -> dict[str, Any] | None:
+    """Read the latest job status row for a given trade_date + job_key.
+
+    When snapshot_version is provided, prefer matching that version;
+    otherwise fall back to the most recent row.
+    """
     if pool is None:
         return None
     import json as _json
     async with pool.acquire() as conn:
-        row = await conn.fetchrow("""
-            SELECT status, error_code, diagnostics, updated_at
-            FROM post_market_job_status
-            WHERE trade_date = $1::date AND job_key = $2
-            ORDER BY updated_at DESC LIMIT 1
-        """, trade_date, job_key)
+        if snapshot_version:
+            row = await conn.fetchrow("""
+                SELECT status, error_code, diagnostics, updated_at
+                FROM post_market_job_status
+                WHERE trade_date = $1::date
+                  AND job_key = $2
+                  AND diagnostics->>'snapshot_version' = $3
+                ORDER BY updated_at DESC LIMIT 1
+            """, trade_date, job_key, snapshot_version)
+            if not row:
+                # fallback to latest if no match by snapshot_version
+                row = await conn.fetchrow("""
+                    SELECT status, error_code, diagnostics, updated_at
+                    FROM post_market_job_status
+                    WHERE trade_date = $1::date AND job_key = $2
+                    ORDER BY updated_at DESC LIMIT 1
+                """, trade_date, job_key)
+        else:
+            row = await conn.fetchrow("""
+                SELECT status, error_code, diagnostics, updated_at
+                FROM post_market_job_status
+                WHERE trade_date = $1::date AND job_key = $2
+                ORDER BY updated_at DESC LIMIT 1
+            """, trade_date, job_key)
         if not row:
             return None
         diag = row.get("diagnostics")
         if isinstance(diag, str):
             diag = _json.loads(diag)
+        updated_at = row.get("updated_at")
+        if hasattr(updated_at, "isoformat"):
+            updated_at = updated_at.isoformat()
         return {
             "status": row["status"],
             "error_code": row.get("error_code"),
             "diagnostics": diag or {},
-            "updated_at": str(row["updated_at"]),
+            "updated_at": str(updated_at) if updated_at else "",
         }
 
 
@@ -2567,7 +2642,10 @@ async def get_post_market_recap_generate_status(
     pool = getattr(getattr(app.state, "gateway", None), "_client", None)
     pool = getattr(pool, "pool", None) if pool else None
 
-    status_row = await _read_job_status(pool, d, "post_market_recap_generate")
+    status_row = await _read_job_status(
+        pool, d, "post_market_recap_generate",
+        snapshot_version=snapshot_version or "",
+    )
 
     if not status_row:
         return {
