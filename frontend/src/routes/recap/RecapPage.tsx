@@ -1508,6 +1508,7 @@ export function RecapPage() {
       if (recapResult.status === "accepted" || recapResult.status === "running") {
         const snapshotVersion = (recapResult.snapshot_version as string) || "";
         const isRunning = recapResult.status === "running";
+        const hasVersion = snapshotVersion.length > 0;
         updateGenerationStep("recap", {
           status: "running",
           progress: 50,
@@ -1515,27 +1516,43 @@ export function RecapPage() {
         });
 
         let pollCount = 0;
-        const MAX_POLLS = 120; // 6 min at 3s intervals
+        // full_truth_rebuild runs evidence/cycle/identity/LayerC/recap and can take 10+ min.
+        const MAX_POLLS = 300; // 15 min at 3s intervals
         const POLL_INTERVAL_MS = 3000;
 
         while (pollCount < MAX_POLLS) {
           await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
           pollCount += 1;
-          // Poll with snapshot_version if we have one; otherwise poll latest.
           const pollResult = await fetchPostMarketRecapGenerateStatus(tradeDate, snapshotVersion).catch(() => null);
-          if (!pollResult || !pollResult.ok) continue;
+          if (!pollResult || !pollResult.ok) {
+            // Network error — still update progress so UI doesn't look stuck
+            updateGenerationStep("recap", { status: "running", progress: Math.min(50 + pollCount, 95), label: `等待服务响应... (${pollCount * 3}s)` });
+            continue;
+          }
+
+          // Progress update helper — called in every branch so UI never freezes
+          const _updateProgress = (label: string) => {
+            updateGenerationStep("recap", { status: "running", progress: Math.min(50 + Math.floor(pollCount * 0.5), 95), label });
+          };
 
           if (pollResult.status === "success") {
-            // Triple-check: status=success + snapshot_version matches + snapshot exists
-            const versionOk = !snapshotVersion || pollResult.snapshot_version === snapshotVersion;
+            // Triple verification: status=success + version matches + snapshot exists.
+            // When snapshotVersion is empty (old running job), we can't version-match
+            // but we still require snapshot_ready.
+            const versionOk = !hasVersion || pollResult.snapshot_version === snapshotVersion;
             const ready = pollResult.snapshot_ready === true;
             if (versionOk && ready) {
               updateGenerationStep("recap", { status: "success", progress: 100 });
               break;
             }
-            // If snapshot not ready yet, keep polling (may still be writing)
-            if (pollCount >= 20) {
-              updateGenerationStep("recap", { status: "running", progress: Math.min(50 + pollCount, 95), label: `等待 snapshot 落库... (${pollCount * 3}s)` });
+            if (ready && !versionOk) {
+              // Snapshot exists but belongs to a different version — the
+              // job we are tracking hasn't finished yet. Keep polling.
+              _updateProgress(`快照已存在(其他版本)，等待当前任务完成... (${pollCount * 3}s)`);
+            } else if (versionOk && !ready) {
+              _updateProgress(`任务已完成，等待 snapshot 落库... (${pollCount * 3}s)`);
+            } else {
+              _updateProgress(`等待任务完成... (${pollCount * 3}s)`);
             }
             continue;
           }
@@ -1546,14 +1563,13 @@ export function RecapPage() {
             setError(`重新复盘失败：${errMsg}\n旧复盘结果仍可查看。`);
             return;
           }
-          // running / pending / queued / unknown — continue polling
-          const progress = Math.min(50 + pollCount * 3, 95);
-          updateGenerationStep("recap", { status: "running", progress, label: `${isRunning ? "跟随已有任务" : "后台生成"}中... (${pollCount * 3}s)` });
+          // running / pending / queued / unknown — keep polling
+          _updateProgress(`${isRunning ? "跟随已有任务" : "后台生成"}中... (${pollCount * 3}s)`);
         }
 
         if (pollCount >= MAX_POLLS) {
           updateGenerationStep("recap", { status: "failed", progress: 100 });
-          setError("重新复盘超时，请稍后手动刷新页面查看结果。");
+          setError("重新复盘超时（15分钟），请稍后手动刷新页面查看结果。");
           return;
         }
       } else {
