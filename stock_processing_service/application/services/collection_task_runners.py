@@ -855,6 +855,33 @@ class AuctionWatchUniverseRunner:
             return CollectionTaskResult(status="failed", current_label="竞价观察池构建异常", error_message=str(e))
 
 
+class TushareDailyBasicRunner:
+    """Tushare daily_basic 换手率采集 Runner."""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        if context.container is None:
+            return CollectionTaskResult(status="failed", current_label="容器未注入", error_message="container is None")
+        try:
+            from datetime import date as _date
+            trade_date_val = _date.fromisoformat(context.trade_date)
+            job = context.container.build_tushare_daily_basic
+            result = await job.execute(trade_date=trade_date_val)
+            ok = result.status == "ok"
+            metrics = getattr(result, "metrics", {}) or {}
+            return CollectionTaskResult(
+                status="success" if ok else "failed",
+                current_label=f"daily_basic采集完成 ({result.status})",
+                logs=[
+                    f"tushare_daily_basic status={result.status}",
+                    f"rows={metrics.get('rows_upserted', result.affected_rows)}",
+                    f"turnover_non_null={metrics.get('turnover_rate_non_null', 'N/A')}",
+                    f"volume_ratio_non_null={metrics.get('volume_ratio_non_null', 'N/A')}",
+                ],
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="daily_basic采集异常", error_message=str(e))
+
+
 class TushareKlineRunner:
     """Tushare K线采集 Runner — 直接拉取 API → Gateway 写入，不经过本地 JSONL。"""
 

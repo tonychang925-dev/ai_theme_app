@@ -101,6 +101,7 @@ export function CollectionPage() {
       provider: "jyhf" as "jyhf" | "snapshot_agg",
       onExisting: "skip" as "skip" | "upsert" | "replace",
     },
+    tushareDailyBasic: false,
     tushareKline: true,
     auction: false,
     dragonTiger: true,
@@ -219,6 +220,7 @@ export function CollectionPage() {
               }
             : false,
           jyhf_history: false,
+          tushare_daily_basic: options.tushareDailyBasic,
           tushare_kline: options.tushareKline,
           auction: options.auction,
           dragon_tiger: options.dragonTiger,
@@ -335,6 +337,16 @@ export function CollectionPage() {
 
           <div className="collection-section">
             <strong>数据源</strong>
+
+            {/* ── Tushare daily_basic 换手率采集 ── */}
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.tushareDailyBasic}
+                onChange={() => setOptions((s) => ({ ...s, tushareDailyBasic: !s.tushareDailyBasic }))}
+              />
+              <span>Tushare daily_basic 换手率采集</span>
+            </label>
 
             {/* ── Tushare 日K线（基础数据层，必须最先执行）── */}
             <label className="collection-check">

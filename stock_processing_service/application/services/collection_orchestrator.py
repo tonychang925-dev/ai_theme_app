@@ -173,6 +173,18 @@ class CollectionCommandPlanner:
                 ],
             )
 
+        if task_key == "tushare_daily_basic":
+            return CollectionTaskPlan(
+                pre_logs=["Tushare daily_basic 换手率/量比采集 (API→DB)"],
+                steps=[
+                    CollectionTaskStep(
+                        key="daily_basic_collect",
+                        runner_key="tushare.daily_basic",
+                        label="Tushare daily_basic 换手率采集",
+                    ),
+                ],
+            )
+
         if task_key == "dragon_tiger":
             return CollectionTaskPlan(runner_key="dragon_tiger.object")
 

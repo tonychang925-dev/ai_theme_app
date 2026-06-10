@@ -155,6 +155,8 @@ class CollectionJobManager:
         # ── 基础数据层（必须最先执行）──
         # Tushare 日K是 stock_daily_snapshot 的唯一来源，
         # stock_snapshot(tushare_join) 和 subject_rank(snapshot_agg) 都依赖它。
+        if options.get("tushare_daily_basic", False):
+            tasks.append(CollectionTaskState(key="tushare_daily_basic", title="Tushare daily_basic 换手率"))
         if options.get("tushare_kline", True):
             tasks.append(CollectionTaskState(key="tushare_kline", title="Tushare日K线"))
         if options.get("auction", False):
