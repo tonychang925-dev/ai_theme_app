@@ -65,6 +65,7 @@ class StockProcessingContainer:
     run_quality_gate: RunQualityGateJob
     run_reconciliation: RunReconciliationJob
     build_dragon_tiger_object: BuildDragonTigerObjectJob
+    build_tushare_daily_basic: BuildTushareDailyBasicJob
     build_tushare_daily_bar: BuildTushareDailyBarJob
     build_stock_abnormal_signal: BuildStockAbnormalSignalJob
     build_auction_snapshot: BuildAuctionSnapshotJob
