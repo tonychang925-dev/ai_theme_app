@@ -2736,6 +2736,24 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         """读取与已确认主线同簇的相关题材（空实现，后续补 cluster 逻辑）。"""
         return []
 
+    async def get_stock_abnormal_signals(
+        self, trade_date
+    ) -> List[Dict[str, Any]]:
+        """Read stock_abnormal_signal rows for a trade date.
+
+        Returns stock_id and turnover_rate (percentage, e.g. 9.2 = 9.2%).
+        Used by OneToTwo FactContextBuilder to populate turnover_rate_by_stock.
+        """
+        sql = """
+        SELECT stock_id, turnover_rate
+        FROM stock_abnormal_signal
+        WHERE trade_date = $1::date
+          AND turnover_rate IS NOT NULL
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, trade_date)
+        return [dict(r) for r in rows]
+
     async def get_subject_board_stats(
         self, trade_date
     ) -> List[Dict[str, Any]]:

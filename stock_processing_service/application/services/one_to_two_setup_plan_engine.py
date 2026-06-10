@@ -126,6 +126,18 @@ class OneToTwoSetupPlanEngine:
                 "evaluation degraded — focus candidates downgraded to pending_review_only"
             )
 
+        turnover_rate_missing = (
+            len(fact_pool) > 0
+            and not ctx.turnover_rate_by_stock
+        )
+        if turnover_rate_missing:
+            non_blocking_warnings.append(
+                "TURNOVER_RATE_SOURCE_MISSING: turnover_rate_by_stock is empty but "
+                f"{len(fact_pool)} candidates in fact pool; stock_abnormal_signal "
+                "may not have been built for this trade date. Candidates with "
+                "turnover_rate=None will be rejected as '低换手'."
+            )
+
         diagnostics = {
             "rule_version": self.rule_engine.rule_version,
             "empty_is_valid": True,

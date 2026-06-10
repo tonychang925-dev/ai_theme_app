@@ -714,6 +714,16 @@ class StockReadGatewayAdapter:
         rows = await fn(trade_date=trade_date, subject_keys=subject_keys)
         return [_as_dict(row) for row in rows]
 
+    async def get_stock_abnormal_signals(
+        self,
+        trade_date: date,
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_stock_abnormal_signals", None)
+        if not callable(fn):
+            return []
+        rows = await fn(trade_date=trade_date)
+        return [_as_dict(row) for row in rows]
+
     async def get_subject_board_stats(
         self,
         trade_date: date,
