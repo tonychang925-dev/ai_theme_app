@@ -790,13 +790,22 @@ class PostMarketDailyReviewV2Builder:
             )
             turnover_rate = self._float_or_none(joined.get("turnover_rate"))
             volume_ratio = self._float_or_none(
-                self._first_present(joined, "volume_ratio", "vol_ratio", "amount_ratio", "volume_ratio_to_ma5", "volume_ratio_to_ma50")
+                self._first_present(joined, "volume_ratio", "vol_ratio", "amount_ratio",
+                                    "volume_ratio_to_ma5", "volume_ratio_to_ma50", "volume_vs_ma50")
             )
             fallback_used: list[str] = []
             if volume_ratio is None:
                 volume_ratio = self._ratio_from_text(self._first_present(joined, "evidence", "summary", "conclusion"), "量比")
                 if volume_ratio is not None:
                     fallback_used.append("volume_ratio.evidence")
+            elif joined.get("volume_ratio") is None and joined.get("vol_ratio") is None and joined.get("amount_ratio") is None:
+                # volume_ratio came from a non-primary field
+                if joined.get("volume_ratio_to_ma50") is not None:
+                    fallback_used.append("volume_ratio.volume_ratio_to_ma50")
+                elif joined.get("volume_ratio_to_ma5") is not None:
+                    fallback_used.append("volume_ratio.volume_ratio_to_ma5")
+                elif joined.get("volume_vs_ma50") is not None:
+                    fallback_used.append("volume_ratio.volume_vs_ma50")
             volume_vs_ma50 = self._float_or_none(joined.get("volume_vs_ma50") or joined.get("volume_ratio_to_ma50"))
             main_net_inflow = self._float_or_none(joined.get("main_net_inflow"))
             inflow_rank = self._int_or_none(joined.get("inflow_rank") or joined.get("main_net_inflow_rank_in_theme"))
