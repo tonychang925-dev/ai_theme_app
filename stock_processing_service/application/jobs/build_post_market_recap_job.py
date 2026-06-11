@@ -400,6 +400,7 @@ class BuildPostMarketRecapJob:
 
             # ── Build stock_abnormal_signal (prerequisite for abnormal_reviews) ──
             if not skip_prereqs and self._abnormal_signal_job is not None:
+                _abnormal_logger = __import__("logging").getLogger(__name__)
                 try:
                     # Use direct DB manager to avoid facade delegation issues
                     import os as _os_direct
@@ -436,8 +437,7 @@ class BuildPostMarketRecapJob:
                         diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "abnormal_signal_done",
                                      "abnormal_rows": abnormal_rows})
                 except Exception:
-                    logger = __import__("logging").getLogger(__name__)
-                    logger.exception("abnormal_signal_job failed (non-fatal for recap)")
+                    _abnormal_logger.exception("abnormal_signal_job failed (non-fatal for recap)")
 
             # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
             if skip_layer_c:
