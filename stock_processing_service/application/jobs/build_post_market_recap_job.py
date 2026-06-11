@@ -672,7 +672,13 @@ class BuildPostMarketRecapJob:
                 try:
                     recap_doc["report_context"] = await report_context_fn(trade_date=trade_date)
                 except TypeError:
-                    recap_doc["report_context"] = await report_context_fn(trade_date, None, None)
+                    try:
+                        recap_doc["report_context"] = await report_context_fn(trade_date, None, None)
+                    except Exception:
+                        pass
+                except Exception:
+                    # TimeoutError or similar on large queries — non-fatal
+                    pass
 
             # Convert Decimal values to float for JSON serialization
             def _serialize(obj):

@@ -4047,6 +4047,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
           AND ($2::text[] IS NULL OR s.subject_key = ANY($2::text[]))
           AND ($3::text[] IS NULL OR s.stock_id = ANY($3::text[]) OR split_part(s.stock_id, '.', 1) = ANY($3::text[]))
         ORDER BY s.subject_key, COALESCE(s.rank_order, 999), COALESCE(s.pct_chg, 0) DESC
+        LIMIT 5000
         """
         sql_money = """
         SELECT m.*, COALESCE(vtb.theme_name, m.theme_name, m.subject_key) AS resolved_theme_name

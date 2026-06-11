@@ -2588,15 +2588,38 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
                     skip_prereqs=skip_truth,
                     skip_layer_c=skip_truth,
                 )
-            except Exception:
+            except Exception as exc:
+                import traceback as _traceback
                 _recap_logger.exception(
                     "post_market_recap async rebuild failed: trade_date=%s snapshot_version=%s",
                     trade_date_str, snapshot_version,
                 )
                 try:
+                    # Check if job.execute already wrote detailed diagnostics
+                    existing = await _read_job_status(pool, d, "post_market_recap_generate",
+                                                       snapshot_version=snapshot_version)
+                    existing_diag = (existing or {}).get("diagnostics") or {}
+                    if (existing and existing.get("status") == "failed"
+                            and (existing_diag.get("error_message")
+                                 or existing_diag.get("error_type")
+                                 or existing_diag.get("stage"))):
+                        # Job already recorded the real error — don't overwrite
+                        _recap_logger.info(
+                            "preserved job diagnostics: trade_date=%s snapshot_version=%s error_type=%s",
+                            trade_date_str, snapshot_version,
+                            existing_diag.get("error_type", "unknown"),
+                        )
+                        return
                     await jss.mark_finished(d, "post_market_recap_generate", "failed",
-                        error_code="RECAP_BUILD_EXCEPTION",
-                        diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "mode": mode})
+                        error_code=type(exc).__name__ or "RECAP_BUILD_EXCEPTION",
+                        diagnostics={
+                            "snapshot_version": snapshot_version, "batch_id": batch_id,
+                            "trace_id": trace_id, "mode": mode,
+                            "stage": "api_background_exception",
+                            "error_type": type(exc).__name__,
+                            "error_message": str(exc) or repr(exc),
+                            "traceback": _traceback.format_exc()[-4000:],
+                        })
                 except Exception:
                     _recap_logger.exception("failed to mark job as failed after exception")
 
@@ -2780,7 +2803,15 @@ async def generate_daily_review(payload: dict[str, Any] | None = None) -> dict[s
             "metrics": result.metrics,
         }
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=f"generate failed: {exc}")
+        import traceback as _traceback
+        raise HTTPException(
+            status_code=500,
+            detail={
+                "error_code": type(exc).__name__,
+                "message": str(exc) or repr(exc),
+                "traceback": _traceback.format_exc()[-4000:],
+            },
+        ) from exc
 
 
 @app.get("/api/v1/theme/workspace/{subject_key}")
