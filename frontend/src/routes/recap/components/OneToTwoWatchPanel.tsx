@@ -121,6 +121,13 @@ function StockDetailCard({ it }: { it: OneToTwoItem }) {
       <div style={sectionLabel}>重大事件</div>
       <div style={sectionText}>
         {el.summary ? <div>{String(el.summary)}</div> : <span style={{ color: "rgba(255,255,255,0.35)" }}>暂无直接事件证据</span>}
+        {(el.events as string[])?.length > 0 && (
+          <ul style={{ margin: "4px 0 0 16px", padding: 0, fontSize: 12, color: "rgba(255,255,255,0.7)", lineHeight: 1.5 }}>
+            {(el.events as string[]).map((ev: string, i: number) => (
+              <li key={i} style={{ marginBottom: 2 }}>{ev}</li>
+            ))}
+          </ul>
+        )}
         {(el.evidence as unknown[])?.length > 0 && <Tag style={{ marginTop: 2 }} color={el.evidence_level === "strong" ? "green" : "default"}>证据等级: {String(el.evidence_level)}</Tag>}
       </div>
 
