@@ -123,6 +123,10 @@ class OneToTwoRiskPlanBuilder:
         level = str(auth.get("level") or "unknown")
         score_val = auth.get("score")
 
+        # Check for actual event data
+        evidence_events = auth.get("evidence_events") or []
+        has_events = bool(evidence_events)
+
         # Determine evidence level
         if level in ("core", "direct") and score_val is not None and float(score_val) >= 70:
             evidence_level = "strong"
@@ -130,9 +134,9 @@ class OneToTwoRiskPlanBuilder:
         elif level in ("core", "direct", "related") and score_val is not None and float(score_val) >= 40:
             evidence_level = "medium"
             summary = "个股与题材存在一定关联证据，但正宗度一般。"
-        elif level == "weak" or (score_val is not None and float(score_val) < 40):
+        elif has_events:
             evidence_level = "weak"
-            summary = "暂无直接事件证据，题材正宗度偏弱，需人工复核。"
+            summary = f"题材存在 {len(evidence_events)} 条近期驱动事件，但个股与题材的产业链/公告关联度不足，需人工复核。"
         else:
             evidence_level = "weak"
             summary = "暂无直接事件证据，题材正宗度偏弱，需人工复核。"
