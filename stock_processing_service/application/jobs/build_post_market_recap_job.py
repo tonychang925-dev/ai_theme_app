@@ -401,18 +401,40 @@ class BuildPostMarketRecapJob:
             # ── Build stock_abnormal_signal (prerequisite for abnormal_reviews) ──
             if not skip_prereqs and self._abnormal_signal_job is not None:
                 try:
-                    abnormal_result = await self._abnormal_signal_job.execute(
-                        trade_date=trade_date,
-                        min_turnover_rate=0.0,
+                    # Use direct DB manager to avoid facade delegation issues
+                    import os as _os_direct
+                    from database_service.managers.postgres_manager import PostgresDatabaseManager
+                    from database_service.config import DatabaseConfig, DatabaseType, RedisConfig
+                    _cfg = DatabaseConfig(
+                        db_type=DatabaseType.POSTGRESQL,
+                        postgres_host=_os_direct.getenv("POSTGRES_HOST", "localhost"),
+                        postgres_port=int(_os_direct.getenv("POSTGRES_PORT", "5432")),
+                        postgres_database=_os_direct.getenv("POSTGRES_DATABASE", "stock_data_test"),
+                        postgres_username=_os_direct.getenv("POSTGRES_USER", "postgres"),
+                        postgres_password=_os_direct.getenv("POSTGRES_PASSWORD", ""),
+                        postgres_schema="public",
+                        table_names_config={"theme_master": "theme_master"},
+                        redis=RedisConfig(enabled=False),
+                        postgres_pool_size=2,
                     )
-                    abnormal_status = str(getattr(abnormal_result, "status", "") or "")
-                    if not abnormal_status.startswith("ok"):
-                        logger = __import__("logging").getLogger(__name__)
-                        logger.warning("abnormal_signal_job returned non-ok status: %s", abnormal_status)
-                    else:
-                        await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
-                            diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "abnormal_signal_done",
-                                         "abnormal_rows": int(getattr(abnormal_result, "affected_rows", 0) or 0)})
+                    _direct_mgr = PostgresDatabaseManager(_cfg)
+                    await _direct_mgr.connect()
+                    try:
+                        from stock_processing_service.application.jobs.build_stock_abnormal_signal_job import BuildStockAbnormalSignalJob
+                        _direct_job = BuildStockAbnormalSignalJob(db_gateway=_direct_mgr)
+                        abnormal_result = await _direct_job.execute(
+                            trade_date=trade_date,
+                            min_turnover_rate=0.0,
+                        )
+                        abnormal_status = str(getattr(abnormal_result, "status", "") or "")
+                        abnormal_rows = int(getattr(abnormal_result, "affected_rows", 0) or 0)
+                        if not abnormal_status.startswith("ok"):
+                            raise RuntimeError(f"abnormal_signal_job: {abnormal_status}")
+                    finally:
+                        await _direct_mgr.disconnect()
+                    await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                        diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "abnormal_signal_done",
+                                     "abnormal_rows": abnormal_rows})
                 except Exception:
                     logger = __import__("logging").getLogger(__name__)
                     logger.exception("abnormal_signal_job failed (non-fatal for recap)")
