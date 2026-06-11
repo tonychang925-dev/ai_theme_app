@@ -411,7 +411,7 @@ class BuildPostMarketRecapJob:
                         postgres_port=int(_os_direct.getenv("POSTGRES_PORT", "5432")),
                         postgres_database=_os_direct.getenv("POSTGRES_DATABASE", "stock_data_test"),
                         postgres_username=_os_direct.getenv("POSTGRES_USER", "postgres"),
-                        postgres_password=_os_direct.getenv("POSTGRES_PASSWORD", ""),
+                        postgres_password=_os_direct.getenv("PG_PASSWORD", _os_direct.getenv("POSTGRES_PASSWORD", "")),
                         postgres_schema="public",
                         table_names_config={"theme_master": "theme_master"},
                         redis=RedisConfig(enabled=False),
