@@ -4464,8 +4464,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     THEN COALESCE(NULLIF(BTRIM(s.stock_name), ''), p.stock_name)
                     ELSE COALESCE(NULLIF(BTRIM(p.stock_name), ''), NULLIF(BTRIM(s.stock_name), ''), p.stock_id)
                 END AS stock_name,
-                MIN(p.trade_date) OVER (
-                    PARTITION BY split_part(p.stock_id, '.', 1)
+                COALESCE(
+                    pool.watch_start_date,
+                    MIN(p.trade_date) OVER (
+                        PARTITION BY split_part(p.stock_id, '.', 1)
+                    )
                 )::text AS watch_start_date,
                 MAX(p.trade_date) OVER (
                     PARTITION BY split_part(p.stock_id, '.', 1)
@@ -4512,6 +4515,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                     ss.subject_key ASC
                 LIMIT 1
             ) s ON TRUE
+            LEFT JOIN strong_stock_watch_pool pool
+              ON split_part(pool.stock_id, '.', 1) = split_part(p.stock_id, '.', 1)
             WHERE p.trade_date IN (SELECT trade_date FROM selected_trade_dates)
               AND ($3::boolean OR p.watch_status IN ('active', 'weakening'))
               AND ($4::text IS NULL OR split_part(p.stock_id, '.', 1) = split_part($4::text, '.', 1))
