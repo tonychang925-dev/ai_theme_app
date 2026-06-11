@@ -778,17 +778,24 @@ class BuildPostMarketRecapJob:
                 except Exception:
                     pass
 
-            # Inject turnover_rate for OneToTwo — read from stock_daily_basic_snapshot (collected via control panel).
-            if not recap_doc.get("stock_facts"):
-                stock_facts_ot: list[dict[str, Any]] = []
-                try:
-                    pool = getattr(self._read_port, "_pool", None)
-                    if pool is None:
-                        facade = getattr(self._read_port, "_db", None)
-                        db_client = getattr(facade, "_db", None) if facade else None
-                        pool = getattr(db_client, "pool", None) if db_client else None
-                    if pool is not None:
-                        async with pool.acquire() as conn:
+            # Inject turnover_rate for OneToTwo — read from stock_daily_basic_snapshot.
+            stock_facts_ot: list[dict[str, Any]] = []
+            turnover_source_available = False
+            try:
+                pool = getattr(self._read_port, "_pool", None)
+                if pool is None:
+                    facade = getattr(self._read_port, "_db", None)
+                    db_client = getattr(facade, "_db", None) if facade else None
+                    pool = getattr(db_client, "pool", None) if db_client else None
+                if pool is not None:
+                    async with pool.acquire() as conn:
+                        daily_basic_cnt = await conn.fetchval(
+                            "SELECT COUNT(*) FROM stock_daily_basic_snapshot "
+                            "WHERE trade_date = $1::date AND turnover_rate IS NOT NULL AND turnover_rate > 0",
+                            trade_date,
+                        )
+                        turnover_source_available = bool(daily_basic_cnt and daily_basic_cnt > 0)
+                        if turnover_source_available:
                             rows = await conn.fetch(
                                 "SELECT stock_id, turnover_rate FROM stock_daily_basic_snapshot "
                                 "WHERE trade_date = $1::date AND turnover_rate IS NOT NULL AND turnover_rate > 0",
@@ -799,10 +806,17 @@ class BuildPostMarketRecapJob:
                                 tr = r.get("turnover_rate")
                                 if sid and tr is not None and float(tr) > 0:
                                     stock_facts_ot.append({"stock_id": sid, "turnover_rate": float(tr) / 100.0})
-                except Exception:
-                    pass
-                if stock_facts_ot:
-                    recap_doc["stock_facts"] = stock_facts_ot
+            except Exception:
+                pass
+
+            if not turnover_source_available:
+                raise RuntimeError(
+                    f"Tushare daily_basic 换手率数据未采集 (trade_date={trade_date.isoformat()})。"
+                    "请在采集控制台先执行 'Tushare daily_basic 换手率采集'，再运行重新复盘。"
+                )
+
+            if stock_facts_ot:
+                recap_doc["stock_facts"] = stock_facts_ot
 
             from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
                 OneToTwoSetupPlanEngine,
