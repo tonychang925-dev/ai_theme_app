@@ -159,7 +159,8 @@ class OneToTwoCandidateService:
                 stock_name=self._text(bar.get("stock_name") or current_subject_row.get("stock_name") or stock_id),
                 subject_key=subject_key,
                 subject_name=self._text(
-                    current_subject_row.get("subject_name")
+                    ctx.subject_name_map.get(subject_key, "")
+                    or current_subject_row.get("subject_name")
                     or current_subject_row.get("theme_name")
                     or subject_key
                 ),

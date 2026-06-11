@@ -55,6 +55,7 @@ class PostMarketSetupFactContext:
     subject_authenticity_by_subject: dict[str, dict[str, Any]] = field(default_factory=dict)
     stock_subject_authenticity_by_pair: dict[str, dict[str, Any]] = field(default_factory=dict)
     kline_pattern_quality_by_stock: dict[str, dict[str, Any]] = field(default_factory=dict)
+    subject_name_map: dict[str, str] = field(default_factory=dict)
 
     diagnostics: SourceStatus = field(default_factory=SourceStatus)
 

@@ -111,6 +111,15 @@ class PostMarketSetupFactContextBuilder:
         if not turnover_rate_by_stock:
             turnover_rate_by_stock = await self._read_turnover_rate_from_daily_basic(trade_date)
 
+        # Resolve Chinese subject names from theme_gate_profile
+        subject_name_map: dict[str, str] = {}
+        try:
+            fn = getattr(self._read, "get_theme_gate_profile_names", None)
+            if callable(fn):
+                subject_name_map = await fn(list(active_subject_keys))
+        except Exception:
+            pass
+
         subject_authenticity_by_subject = await self._build_subject_authenticity(
             trade_date=trade_date,
             source_doc=source_doc,
@@ -155,6 +164,7 @@ class PostMarketSetupFactContextBuilder:
             prior_daily_bars={},
             pressure_by_stock=pressure_by_stock,
             ma_pattern_by_stock=ma_pattern_by_stock,
+            subject_name_map=subject_name_map,
             turnover_rate_by_stock=turnover_rate_by_stock,
             subject_authenticity_by_subject=subject_authenticity_by_subject,
             stock_subject_authenticity_by_pair=stock_subject_authenticity_by_pair,

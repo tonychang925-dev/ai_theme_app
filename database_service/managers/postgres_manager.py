@@ -2803,6 +2803,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 written += 1
         return written
 
+    async def get_theme_gate_profile_names(
+        self, subject_keys: list[str]
+    ) -> dict[str, str]:
+        """Read Chinese theme names from theme_gate_profile for given subject_keys."""
+        if not subject_keys:
+            return {}
+        sql = """
+        SELECT subject_key, concept
+        FROM theme_gate_profile
+        WHERE subject_key = ANY($1::varchar[])
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, subject_keys)
+        return {str(r["subject_key"]): str(r["concept"] or "") for r in rows if r["concept"]}
+
     async def get_stock_daily_basic_snapshot(
         self, trade_date
     ) -> List[Dict[str, Any]]:
