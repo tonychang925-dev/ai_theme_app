@@ -8427,9 +8427,11 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             CASE
                 WHEN COALESCE(NULLIF(raw_source, ''), '') IN ('akshare_realtime', 'akshare', 'akshare_cls', 'akshare_replay')
                 THEN 'akshare_realtime'
+                WHEN esm_source IN ('structured_theme_match', 'llm_accept_match', 'direct_theme_name_hit')
+                THEN 'akshare_realtime'
                 WHEN esm_source = 'jyhf_dom_confirmed'
                 THEN 'jyhf_cdp'
-                WHEN COALESCE(NULLIF(raw_source, ''), '') = '' AND esm_source NOT IN ('jyhf_dom_confirmed')
+                WHEN COALESCE(NULLIF(raw_source, ''), '') = '' AND esm_source NOT IN ('jyhf_dom_confirmed', 'structured_theme_match', 'llm_accept_match', 'direct_theme_name_hit')
                 THEN 'cninfo_announcement'
                 ELSE 'realtime_news'
             END::text AS source_channel

@@ -296,12 +296,23 @@ class DataCollector:
         }
         
         data = self.client.request(f"subject/child-tree/v2/{theme_id}", params, "children")
-        
-        if data and 'data' in data and data['data']:
-            file_path = Config.CHILDREN_DIR / f"{theme_id}_children.jsonl"
+        if data is None:
+            return None
+
+        file_path = Config.CHILDREN_DIR / f"{theme_id}_children.jsonl"
+
+        # 兼容两种返回：
+        # 1) 标准 JSON 对象，包含 data/rows
+        # 2) 直接返回字符串 payload（当前 child-tree 接口就是这种）
+        if isinstance(data, str):
+            self.save_jsonl({"data": [{"raw": data, "subject_id": theme_id}]}, file_path, "子主题")
+            print(f"  child-tree 返回字符串 payload，已原样落盘")
+            return {"data": data}
+
+        if isinstance(data, dict) and data.get('data'):
             self.save_jsonl(data, file_path, "子主题")
             print(f"  共 {len(data['data'])} 个子主题")
-        
+
         return data
     
     # ========== 6. 批量采集一个题材 ==========
