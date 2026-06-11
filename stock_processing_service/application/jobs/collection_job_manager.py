@@ -165,7 +165,7 @@ class CollectionJobManager:
         # ── 快照层 ──
         if options.get("stock_snapshot"):
             tasks.append(CollectionTaskState(key="stock_snapshot", title="股票快照日采集"))
-        elif options.get("jyhf", True):
+        elif options.get("jyhf", False):
             tasks.append(CollectionTaskState(key="jyhf", title="股票快照日采集"))
 
         # ── 派生数据层 ──
