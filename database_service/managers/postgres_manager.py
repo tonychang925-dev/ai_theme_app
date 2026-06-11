@@ -2257,8 +2257,8 @@ class PostgresDatabaseManager(BaseDatabaseManager):
               AND rank_date BETWEEN $3::date AND $1::date
             UNION ALL
             -- Match subject_history_staging by theme name (text key like 'AI光纤')
-            -- when the numeric key maps via theme_gate_profile.concept
-            SELECT shs.subject_key,
+            -- Return the NUMERIC key so callers can look up by numeric subject_key
+            SELECT tgp.subject_key,
                    COALESCE(tgp.concept, shs.subject_key) AS theme_name,
                    shs.rank_date,
                    COALESCE(shs.description, '') AS driver_summary
