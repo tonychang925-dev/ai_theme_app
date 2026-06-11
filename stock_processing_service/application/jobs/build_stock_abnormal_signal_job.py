@@ -71,6 +71,26 @@ class BuildStockAbnormalSignalJob:
             return BuildResult(name="build_stock_abnormal_signal", trade_date=td_str,
                                affected_rows=0, status="ok_no_inputs")
 
+        # ── Step 1.5: 从 stock_daily_basic_snapshot 读取真实 turnover_rate ──
+        if not _turnover_overrides:
+            try:
+                basic_rows = await gw.get_stock_daily_basic_snapshot(trade_date)
+                for br in basic_rows:
+                    sid = str(br.get("stock_id") or "").strip().upper()
+                    tr = br.get("turnover_rate")
+                    if sid and tr is not None:
+                        try:
+                            tr_val = float(tr)
+                            if tr_val > 0:
+                                _turnover_overrides[sid] = tr_val
+                                bare = sid.split(".")[0]
+                                if bare != sid:
+                                    _turnover_overrides[bare] = tr_val
+                        except (ValueError, TypeError):
+                            pass
+            except Exception:
+                pass
+
         # ── Step 2: 构建 StockAbnormalInput ──
         from database_service.scripts.build_stock_abnormal_signal import (
             _is_st_stock, _to_float, StockAbnormalInput,
