@@ -67,12 +67,8 @@ class PostMarketSetupFactContextBuilder:
                 subject_market_breadth[sk] = dict(r)
 
         lookback_start = trade_date - timedelta(days=90)
-        stock_daily_bars = self._normalize_rows(
-            await self._call_optional(
-                "stock_daily_bars_range",
-                self._read.get_stock_daily_bars_range(start_date=lookback_start, end_date=trade_date, stock_ids=None),
-            )
-        )
+
+        # Step 1: read today's subject-stock rows for active subjects only
         subject_stock_rows = self._normalize_rows(
             await self._call_optional(
                 "subject_stock_daily_bars_range",
@@ -81,6 +77,29 @@ class PostMarketSetupFactContextBuilder:
                     end_date=trade_date,
                     stock_ids=None,
                     subject_keys=list(active_subject_keys) if active_subject_keys else None,
+                ),
+            )
+        )
+
+        # Step 2: extract candidate stock IDs from subject rows
+        candidate_stock_ids: list[str] | None = None
+        if subject_stock_rows:
+            ids: set[str] = set()
+            for r in subject_stock_rows:
+                sid = self._stock_key(r.get("stock_id"))
+                if sid:
+                    ids.add(sid)
+            if ids:
+                candidate_stock_ids = sorted(ids)
+
+        # Step 3: read 90-day K-line history ONLY for candidate stocks
+        stock_daily_bars = self._normalize_rows(
+            await self._call_optional(
+                "stock_daily_bars_range",
+                self._read.get_stock_daily_bars_range(
+                    start_date=lookback_start,
+                    end_date=trade_date,
+                    stock_ids=candidate_stock_ids,
                 ),
             )
         )

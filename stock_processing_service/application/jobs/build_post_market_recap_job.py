@@ -799,6 +799,8 @@ class BuildPostMarketRecapJob:
                             )
                             if ar_rows:
                                 recap_doc["abnormal_reviews"] = [dict(r) for r in ar_rows]
+                            else:
+                                raise RuntimeError("ABNORMAL_REVIEWS_EMPTY_AFTER_SIGNAL_BUILD")
                 except Exception as exc:
                     raise RuntimeError(f"ABNORMAL_REVIEWS_INJECTION_FAILED: {exc}") from exc
 
