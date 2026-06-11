@@ -1994,7 +1994,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         WHERE trade_date >= $1::date
           AND trade_date <= $2::date
           AND source_name LIKE 'tushare%'
-          AND ($3::text[] IS NULL OR stock_id = ANY($3::text[]))
+          AND ($3::text[] IS NULL OR stock_id = ANY($3::text[]) OR split_part(stock_id, '.', 1) = ANY($3::text[]))
         ORDER BY trade_date ASC, stock_id,
                  CASE WHEN source_name = 'tushare' THEN 0 ELSE 1 END,
                  updated_at DESC NULLS LAST

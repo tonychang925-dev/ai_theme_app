@@ -93,16 +93,19 @@ class PostMarketSetupFactContextBuilder:
                 candidate_stock_ids = sorted(ids)
 
         # Step 3: read 90-day K-line history ONLY for candidate stocks
-        stock_daily_bars = self._normalize_rows(
-            await self._call_optional(
-                "stock_daily_bars_range",
-                self._read.get_stock_daily_bars_range(
-                    start_date=lookback_start,
-                    end_date=trade_date,
-                    stock_ids=candidate_stock_ids,
-                ),
+        if candidate_stock_ids:
+            stock_daily_bars = self._normalize_rows(
+                await self._call_optional(
+                    "stock_daily_bars_range",
+                    self._read.get_stock_daily_bars_range(
+                        start_date=lookback_start,
+                        end_date=trade_date,
+                        stock_ids=candidate_stock_ids,
+                    ),
+                )
             )
-        )
+        else:
+            stock_daily_bars = []
 
         mainline_state_rows = self._normalize_rows(
             await self._call_optional(

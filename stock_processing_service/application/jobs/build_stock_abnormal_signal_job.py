@@ -73,11 +73,15 @@ class BuildStockAbnormalSignalJob:
 
         # ── Step 1.5: 从 stock_daily_basic_snapshot 读取真实 turnover_rate ──
         if not _turnover_overrides:
+            basic_rows = []
             try:
                 basic_rows = await gw.get_stock_daily_basic_snapshot(trade_date)
             except Exception as e:
                 return BuildResult(name="build_stock_abnormal_signal", trade_date=td_str,
                                    affected_rows=0, status=f"STOCK_DAILY_BASIC_SNAPSHOT_NOT_READY: {e}")
+            if not basic_rows:
+                return BuildResult(name="build_stock_abnormal_signal", trade_date=td_str,
+                                   affected_rows=0, status="STOCK_DAILY_BASIC_SNAPSHOT_NOT_READY: empty rows")
             for br in basic_rows:
                 sid = str(br.get("stock_id") or "").strip().upper()
                 tr = br.get("turnover_rate")
@@ -156,7 +160,19 @@ class BuildStockAbnormalSignalJob:
         ranked = apply_main_net_inflow_rank(apply_turnover_rank(inputs))
 
         # ── Step 3: 读取 Tushare K 线 (stock_daily_snapshot) ──
-        kline_stock_ids = sorted({r.stock_id.split(".")[0] for r in ranked})
+        # Pass both full (000001.SZ) and bare (000001) codes for matching
+        kline_stock_ids: list[str] = []
+        _seen_kline: set[str] = set()
+        for r in ranked:
+            full = str(r.stock_id or "").strip().upper()
+            if not full or full in _seen_kline:
+                continue
+            _seen_kline.add(full)
+            kline_stock_ids.append(full)
+            bare = full.split(".")[0]
+            if bare != full and bare not in _seen_kline:
+                _seen_kline.add(bare)
+                kline_stock_ids.append(bare)
         bars_by_stock: dict[str, list[StockDailySnapshot]] = {}
         try:
             from datetime import timedelta as _td_ab
