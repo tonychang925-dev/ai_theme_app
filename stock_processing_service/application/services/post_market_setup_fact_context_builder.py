@@ -77,10 +77,10 @@ class PostMarketSetupFactContextBuilder:
             await self._call_optional(
                 "subject_stock_daily_bars_range",
                 self._read.get_subject_stock_daily_bars_range(
-                    start_date=lookback_start,
+                    start_date=trade_date,
                     end_date=trade_date,
                     stock_ids=None,
-                    subject_keys=None,
+                    subject_keys=list(active_subject_keys) if active_subject_keys else None,
                 ),
             )
         )
