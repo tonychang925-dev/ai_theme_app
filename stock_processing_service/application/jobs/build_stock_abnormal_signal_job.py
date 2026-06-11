@@ -120,20 +120,20 @@ class BuildStockAbnormalSignalJob:
                 turnover_rate = _to_float(raw[18] if len(raw) > 18 else None)
                 main_net_inflow = _to_float(raw[35] if len(raw) > 35 else None)
             elif isinstance(raw, dict):
-                # TushareJoin raw_json is a dict WITHOUT turnover_rate;
-                # JYHF raw_json is a list WITH it at index 18.
                 turnover_rate = _to_float(raw.get("turnover_rate"))
-                # Fallback: when raw_json has no turnover_rate (TushareJoin),
-                # use daily_basic override map for real turnover_rate.
-                if turnover_rate <= 0 and _turnover_overrides:
-                    stock_id = str(r.get("stock_id", "")).strip().upper()
-                    override = _turnover_overrides.get(stock_id)
-                    if override is None:
-                        bare = stock_id.split(".")[0]
-                        override = _turnover_overrides.get(bare, 0.0)
-                    if override > 0:
-                        turnover_rate = override
                 main_net_inflow = _to_float(raw.get("main_net_inflow"))
+            else:
+                continue
+
+            # daily_basic override takes priority regardless of raw_json format
+            if _turnover_overrides:
+                stock_id = str(r.get("stock_id", "")).strip().upper()
+                override = _turnover_overrides.get(stock_id)
+                if override is None:
+                    bare = stock_id.split(".")[0]
+                    override = _turnover_overrides.get(bare, 0.0)
+                if override > 0:
+                    turnover_rate = override
             else:
                 continue
             if turnover_rate < min_turn:
