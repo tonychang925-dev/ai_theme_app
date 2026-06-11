@@ -398,6 +398,25 @@ class BuildPostMarketRecapJob:
             await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
                 diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "prerequisites_done"})
 
+            # ── Build stock_abnormal_signal (prerequisite for abnormal_reviews) ──
+            if not skip_prereqs and self._abnormal_signal_job is not None:
+                try:
+                    abnormal_result = await self._abnormal_signal_job.execute(
+                        trade_date=trade_date,
+                        min_turnover_rate=0.0,
+                    )
+                    abnormal_status = str(getattr(abnormal_result, "status", "") or "")
+                    if not abnormal_status.startswith("ok"):
+                        logger = __import__("logging").getLogger(__name__)
+                        logger.warning("abnormal_signal_job returned non-ok status: %s", abnormal_status)
+                    else:
+                        await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                            diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "abnormal_signal_done",
+                                         "abnormal_rows": int(getattr(abnormal_result, "affected_rows", 0) or 0)})
+                except Exception:
+                    logger = __import__("logging").getLogger(__name__)
+                    logger.exception("abnormal_signal_job failed (non-fatal for recap)")
+
             # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
             if skip_layer_c:
                 layer_c_metrics = {"skip_layer_c": True, "stock_ids": []}
