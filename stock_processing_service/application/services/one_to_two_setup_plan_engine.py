@@ -193,6 +193,8 @@ class OneToTwoSetupPlanEngine:
             "key_parameters": plan.get("key_parameters", {}),
             "tomorrow_plan": plan.get("tomorrow_plan", {}),
             "give_up_conditions": plan.get("give_up_conditions", []),
+            "event_logic": plan.get("event_logic", {}),
+            "subject_authenticity": dict(f.subject_authenticity),
             "data_quality_json": dict(f.data_quality),
             "source_trace_json": dict(f.source_trace),
         }

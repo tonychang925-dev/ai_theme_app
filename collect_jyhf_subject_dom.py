@@ -493,6 +493,11 @@ def main() -> int:
         time.sleep(0.8)
         graph_snapshot = _capture_snapshot(cdp, subject_id, "graph", subject_dir)
         graph_nodes = extract_tree_nodes(cdp)
+        graph_snapshot_path = subject_dir / f"{subject_id}_graph_snapshot.json"
+        graph_snapshot_path.write_text(
+            json.dumps(graph_snapshot, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
         graph_payload = {
             "subject_id": subject_id,
             "subject_name": detail_record.get("name"),
@@ -520,8 +525,8 @@ def main() -> int:
                         "history": f"{subject_id}_history.jsonl",
                         "ranking": f"{subject_id}_ranking.jsonl",
                         "graph": f"{subject_id}_graph.json",
+                        "graph_snapshot": f"{subject_id}_graph_snapshot.json",
                         "initial_snapshot": f"{subject_id}_initial.json",
-                        "graph_snapshot": f"{subject_id}_graph.json",
                     },
                     "counts": {
                         "detail_rows": 1,
