@@ -2255,6 +2255,18 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             FROM subject_history_staging
             WHERE subject_key = ANY($2::text[])
               AND rank_date BETWEEN $3::date AND $1::date
+            UNION ALL
+            -- Match subject_history_staging by theme name (text key like 'AI光纤')
+            -- when the numeric key maps via theme_gate_profile.concept
+            SELECT shs.subject_key,
+                   COALESCE(tgp.concept, shs.subject_key) AS theme_name,
+                   shs.rank_date,
+                   COALESCE(shs.description, '') AS driver_summary
+            FROM subject_history_staging shs
+            JOIN theme_gate_profile tgp
+              ON tgp.concept = shs.subject_key
+             AND tgp.subject_key = ANY($2::text[])
+            WHERE shs.rank_date BETWEEN $3::date AND $1::date
         ) src
         GROUP BY src.subject_key
         ORDER BY src.subject_key
