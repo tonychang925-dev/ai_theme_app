@@ -25,7 +25,7 @@ def parse_args() -> argparse.Namespace:
         default=str(DEFAULT_SUBJECTS_FILE),
         help="jsonl/json/txt file containing subject ids",
     )
-    parser.add_argument("--limit", type=int, default=5, help="Maximum number of subjects to collect")
+    parser.add_argument("--limit", type=int, default=None, help="Maximum number of subjects to collect")
     parser.add_argument("--offset", type=int, default=0, help="Skip the first N subject ids")
     parser.add_argument(
         "--output-root",
@@ -116,7 +116,7 @@ def main() -> int:
     subject_ids = _load_subject_ids(subjects_file)
     if args.offset:
         subject_ids = subject_ids[args.offset :]
-    if args.limit >= 0:
+    if args.limit is not None and args.limit >= 0:
         subject_ids = subject_ids[: args.limit]
 
     batch_id = datetime.now().strftime("jyhf_dom_batch_%Y%m%d_%H%M%S")

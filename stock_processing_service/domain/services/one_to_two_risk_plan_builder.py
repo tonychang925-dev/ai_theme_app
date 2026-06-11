@@ -176,6 +176,8 @@ class OneToTwoRiskPlanBuilder:
                 float(score_val) if score_val is not None else None
             ),
             "evidence": evidence,
+            "events": evidence_events,
+            "event_count": len(evidence_events),
         }
 
     # ── P3-B: technical summary via OneToTwoTechnicalSummaryFormatter ──
