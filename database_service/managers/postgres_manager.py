@@ -2237,18 +2237,27 @@ class PostgresDatabaseManager(BaseDatabaseManager):
 
         sql = """
         SELECT
-            the.subject_key,
-            MAX(the.theme_name) AS theme_name,
-            COUNT(*) FILTER (WHERE the.rank_date = $1::date) AS today_event_count,
+            src.subject_key,
+            MAX(src.theme_name) AS theme_name,
+            COUNT(*) FILTER (WHERE src.rank_date = $1::date) AS today_event_count,
             COUNT(*) AS recent_event_count,
-            COUNT(DISTINCT the.rank_date) AS distinct_event_days,
-            ARRAY_AGG(COALESCE(the.driver_summary, '') ORDER BY the.rank_date DESC) AS summaries
-        FROM theme_history_event the
-        WHERE the.source_type = 'jyhf_history'
-          AND the.subject_key = ANY($2::text[])
-          AND the.rank_date BETWEEN $3::date AND $1::date
-        GROUP BY the.subject_key
-        ORDER BY the.subject_key
+            COUNT(DISTINCT src.rank_date) AS distinct_event_days,
+            ARRAY_AGG(COALESCE(src.driver_summary, '') ORDER BY src.rank_date DESC) AS summaries
+        FROM (
+            SELECT subject_key, theme_name, rank_date, driver_summary
+            FROM theme_history_event
+            WHERE source_type = 'jyhf_history'
+              AND subject_key = ANY($2::text[])
+              AND rank_date BETWEEN $3::date AND $1::date
+            UNION ALL
+            SELECT subject_key, subject_name AS theme_name, rank_date,
+                   COALESCE(description, '') AS driver_summary
+            FROM subject_history_staging
+            WHERE subject_key = ANY($2::text[])
+              AND rank_date BETWEEN $3::date AND $1::date
+        ) src
+        GROUP BY src.subject_key
+        ORDER BY src.subject_key
         """
         KEY_EVENT_KEYWORDS = (
             "政策", "行动计划", "印发", "试验", "商用", "首飞",
