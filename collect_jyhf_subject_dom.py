@@ -164,6 +164,92 @@ def _find_section(text: str, start_markers: list[str], end_markers: list[str]) -
     return text[start_idx:end_idx]
 
 
+def _is_pct_line(text: str) -> bool:
+    return bool(re.fullmatch(r"[+-]?\d+(?:\.\d+)?%", str(text or "").strip()))
+
+
+def _parse_relation_items(
+    snapshot: dict[str, Any],
+    subject_id: str,
+    source_type: str,
+) -> list[dict[str, Any]]:
+    text = str(snapshot.get("body_text") or "")
+    lines = _clean_lines(text)
+    rows: list[dict[str, Any]] = []
+    current_section = ""
+    current_rank = 0
+    skip_lines = {
+        "题材掘金",
+        "题材轮动",
+        "题材排名",
+        "题材图谱",
+        "题材介绍",
+        "按涨幅",
+        "上一天",
+        "下一天",
+        "一键展开",
+        "软件局限性说明",
+        "日线",
+        "周线",
+        "月线",
+        "搜索",
+        "返回",
+        "全部A股",
+        "市场走势",
+        "自选股",
+        "全部题材",
+        "全部",
+    }
+    start_index = 0
+    for marker in ("题材排名", "题材图谱", "题材介绍", "按涨幅", "一键展开"):
+        for idx, line in enumerate(lines):
+            if line == marker:
+                start_index = max(start_index, idx)
+                break
+    lines = lines[start_index:]
+    for i, line in enumerate(lines):
+        if line in {"情绪", "行业"}:
+            current_section = line
+            continue
+        if line in skip_lines:
+            continue
+        if not re.search(r"[\u4e00-\u9fff]", line):
+            continue
+        if _is_pct_line(line):
+            continue
+        if i + 1 >= len(lines) or not _is_pct_line(lines[i + 1]):
+            continue
+        name = line
+        pct_text = lines[i + 1]
+        reason = ""
+        if i + 2 < len(lines):
+            next_line = lines[i + 2]
+            if (
+                next_line
+                and next_line not in skip_lines
+                and next_line not in {"情绪", "行业"}
+                and not _is_pct_line(next_line)
+            ):
+                reason = next_line
+        current_rank += 1
+        rows.append(
+            {
+                "subjectId": int(subject_id) if str(subject_id).isdigit() else subject_id,
+                "subject_key": str(subject_id),
+                "rank": current_rank,
+                "subjectName": name,
+                "category": current_section,
+                "reason": reason,
+                "pctChg": float(pct_text.replace("%", "").replace("+", "").strip() or 0),
+                "pct_chg": float(pct_text.replace("%", "").replace("+", "").strip() or 0),
+                "source_type": source_type,
+                "source_system": "jyhf",
+                "captured_at": snapshot.get("captured_at"),
+            }
+        )
+    return rows
+
+
 def parse_detail_record(snapshot: dict[str, Any], subject_id: str) -> dict[str, Any]:
     title = str(snapshot.get("title") or "")
     body_text = str(snapshot.get("body_text") or "")
@@ -213,84 +299,27 @@ def parse_detail_record(snapshot: dict[str, Any], subject_id: str) -> dict[str, 
 
 
 def parse_ranking_rows(snapshot: dict[str, Any], subject_id: str) -> list[dict[str, Any]]:
-    text = str(snapshot.get("body_text") or "")
-    section = _find_section(
-        text,
-        start_markers=["排名", "题材名称", "入选次数(十日)", "当日涨幅"],
-        end_markers=["情报", "全部题材动态", "日线周线月线", "软件局限性说明"],
-    )
-    lines = _clean_lines(section)
-    rows: list[dict[str, Any]] = []
-
-    for idx, line in enumerate(lines):
-        if not re.fullmatch(r"\d+", line):
-            continue
-        if idx + 3 >= len(lines):
-            continue
-        name = lines[idx + 1]
-        count_text = lines[idx + 2]
-        pct_text = lines[idx + 3]
-        if not name or not re.search(r"[\u4e00-\u9fff]", name):
-            continue
-        if not re.search(r"[+-]?\d", pct_text):
-            continue
-        rows.append(
-            {
-                "subjectId": int(subject_id) if str(subject_id).isdigit() else subject_id,
-                "subject_key": str(subject_id),
-                "rank": int(line),
-                "subjectName": name,
-                "appearanceCount": int(re.sub(r"\D", "", count_text) or 0),
-                "appearance_count_10d": int(re.sub(r"\D", "", count_text) or 0),
-                "pctChg": float(pct_text.replace("%", "").replace("+", "").strip() or 0),
-                "pct_chg": float(pct_text.replace("%", "").replace("+", "").strip() or 0),
-                "source_type": "jyhf_dom_rank",
-                "source_system": "jyhf",
-                "captured_at": snapshot.get("captured_at"),
-            }
-        )
-    return rows
+    return _parse_relation_items(snapshot, subject_id, "jyhf_dom_rank")
 
 
 def parse_history_rows(snapshot: dict[str, Any], subject_id: str) -> list[dict[str, Any]]:
-    text = str(snapshot.get("body_text") or "")
-    section = _find_section(
-        text,
-        start_markers=["全部题材动态", "情报"],
-        end_markers=["题材排名", "题材图谱", "软件局限性说明"],
-    )
-    lines = _clean_lines(section)
-
-    feed_date = _today_from_text(section)
-    # Use a state machine to extract current-day event cards.
+    relation_rows = _parse_relation_items(snapshot, subject_id, "jyhf_dom_history")
+    feed_date = _today_from_text(str(snapshot.get("body_text") or ""))
+    rank_date = f"{feed_date} 00:00:00" if re.fullmatch(r"\d{4}-\d{2}-\d{2}", feed_date) else feed_date
     rows: list[dict[str, Any]] = []
-    current: dict[str, Any] | None = None
-
-    def commit() -> None:
-        nonlocal current
-        if not current:
-            return
-        subject_name = str(current.get("subject_name") or "").strip()
-        driver_title = str(current.get("driver_title") or "").strip()
-        if not subject_name or not driver_title:
-            current = None
-            return
-        driver_desc = "\n".join([s for s in current.get("driver_desc_lines", []) if s]).strip()
-        news_source = str(current.get("news_source") or "").strip()
-        event_type = str(current.get("event_type") or "驱动事件").strip()
-        description = f"【{event_type}:{driver_title}】"
-        if driver_desc:
-            description += f"\n\n{driver_desc}"
-        if news_source:
-            if "新闻来源" not in description:
-                description += f"（新闻来源：{news_source}）"
-        pct_text = str(current.get("pct_chg_text") or "")
-        pct_val = float(pct_text.replace("%", "").replace("+", "").strip() or 0)
-        rank_date = f"{feed_date} 00:00:00" if re.fullmatch(r"\d{4}-\d{2}-\d{2}", feed_date) else feed_date
-        subject_rank_id = _synthetic_rank_id(subject_id, feed_date if re.fullmatch(r"\d{4}-\d{2}-\d{2}", feed_date) else datetime.now().strftime("%Y-%m-%d"), str(current.get("event_time") or ""), subject_name, driver_title)
+    for idx, item in enumerate(relation_rows, start=1):
+        subject_name = str(item.get("subjectName") or "").strip()
+        if not subject_name:
+            continue
+        pct_val = float(item.get("pctChg") or 0)
+        description = str(item.get("reason") or "").strip()
+        if description:
+            description = f"【驱动事件：{subject_name}】\n\n{description}"
+        else:
+            description = f"【驱动事件：{subject_name}】"
         rows.append(
             {
-                "ancestors": current.get("ancestors") or "0",
+                "ancestors": "0",
                 "bizKey": None,
                 "createBy": None,
                 "createTime": snapshot.get("captured_at"),
@@ -298,7 +327,7 @@ def parse_history_rows(snapshot: dict[str, Any], subject_id: str) -> list[dict[s
                 "firstSubjectId": None,
                 "firstSubjectName": None,
                 "heat": 1,
-                "heatName": "热",
+                "heatName": item.get("category") or "热",
                 "hisPctChg": pct_val,
                 "imgUrl": "",
                 "pctChg": pct_val,
@@ -306,152 +335,46 @@ def parse_history_rows(snapshot: dict[str, Any], subject_id: str) -> list[dict[s
                 "red": 0,
                 "secondSubjectId": None,
                 "secondSubjectName": None,
-                "sort": int(current.get("sort") or len(rows) + 1),
+                "sort": idx,
                 "subjectId": int(subject_id) if str(subject_id).isdigit() else subject_id,
                 "subjectName": subject_name,
-                "subjectRankId": subject_rank_id,
+                "subjectRankId": _synthetic_rank_id(
+                    subject_id,
+                    feed_date if re.fullmatch(r"\d{4}-\d{2}-\d{2}", feed_date) else datetime.now().strftime("%Y-%m-%d"),
+                    str(item.get("category") or ""),
+                    subject_name,
+                    str(item.get("reason") or ""),
+                ),
                 "type": 3,
                 "updateBy": None,
                 "updateTime": snapshot.get("captured_at"),
-                "source_type": "jyhf_history",
+                "source_type": "jyhf_dom_history",
                 "source_system": "jyhf",
-                "event_time": current.get("event_time"),
+                "event_time": None,
                 "subject_key": str(subject_id),
             }
         )
-        current = None
-
-    skip_lines = {
-        "全部题材动态",
-        "情报",
-        "盘前必读",
-        "涨停复盘",
-        "龙虎榜",
-        "精选",
-        "新题材",
-        "新事件",
-        "全部",
-        "搜索",
-        "软件局限性说明",
-    }
-
-    for line in lines:
-        if line in skip_lines:
-            continue
-        if re.fullmatch(r"\d{2}:\d{2}", line):
-            commit()
-            current = {"event_time": line, "driver_desc_lines": []}
-            continue
-        if current is None:
-            continue
-        if not current.get("subject_name"):
-            if (
-                line
-                and line not in {"新事件", "热门题材复盘", "连板复盘"}
-                and "驱动事件" not in line
-                and "新闻来源" not in line
-                and not re.search(r"[+-]?\d+\.?\d*%", line)
-                and not line.startswith("【")
-                and not re.fullmatch(r"\d{4}-\d{2}-\d{2}.*", line)
-            ):
-                current["subject_name"] = line
-                continue
-        if not current.get("pct_chg_text") and re.fullmatch(r"[+-]?\d+\.?\d*%", line):
-            current["pct_chg_text"] = line
-            continue
-        if line == "新事件":
-            current["event_type"] = "驱动事件"
-            continue
-        if line.startswith("【驱动事件："):
-            current["event_type"] = "驱动事件"
-            current["driver_title"] = line.replace("【驱动事件：", "").replace("】", "").strip()
-            continue
-        if line.startswith("【新题材更新："):
-            current["event_type"] = "新题材更新"
-            current["driver_title"] = line.replace("【新题材更新：", "").replace("】", "").strip()
-            continue
-        if line.startswith("（新闻来源：") or line.startswith("(新闻来源："):
-            current["news_source"] = line.replace("（新闻来源：", "").replace("(", "").replace("）", "").replace(")", "").replace("新闻来源：", "").strip()
-            continue
-        if current.get("driver_title"):
-            current.setdefault("driver_desc_lines", []).append(line)
-
-    commit()
     return rows
 
 
-def extract_tree_nodes(cdp: CDPClient) -> list[dict[str, Any]]:
-    for _ in range(5):
-        try:
-            cdp.evaluate(
-                """
-                (function() {
-                    var btns = document.querySelectorAll('.btn-open');
-                    for (var i = 0; i < btns.length; i++) btns[i].click();
-                    return btns.length;
-                })()
-                """,
-                timeout=6.0,
-            )
-        except Exception:
-            pass
-        time.sleep(0.25)
-
-    raw = cdp.evaluate(
-        """
-        (function() {
-            var results = [];
-            var seen = {};
-            var rootTree = document.querySelector('.c-tree');
-            if (!rootTree) return JSON.stringify([]);
-            var allItems = rootTree.querySelectorAll('[class*="p-tree--level"]');
-            for (var i = 0; i < allItems.length; i++) {
-                var el = allItems[i];
-                var cls = el.className || '';
-                var m = cls.match(/p-tree--level(\\d+)/);
-                var level = m ? parseInt(m[1]) : 99;
-                var label = el.querySelector('.tree-label__text');
-                var name = label ? label.textContent.trim() : '';
-                if (!name || name.length > 30) continue;
-                var badge = el.querySelector('.badge');
-                var reason = badge ? badge.textContent.trim() : '';
-                var pctEl = el.querySelector('.text-green, .text-red');
-                var pct = pctEl ? pctEl.textContent.trim() : '';
-                var hasBtnOpen = el.querySelector('.btn-open') !== null;
-                var isStock = !hasBtnOpen && level >= 3;
-                var key = name + '|' + level;
-                if (seen[key]) continue;
-                seen[key] = true;
-                results.push({
-                    name: name,
-                    level: level,
-                    reason: reason,
-                    pct_chg: pct,
-                    has_children: hasBtnOpen,
-                    is_stock: isStock
-                });
+def extract_tree_nodes(snapshot: dict[str, Any], subject_id: str) -> list[dict[str, Any]]:
+    rows = _parse_relation_items(snapshot, subject_id, "jyhf_dom_tree")
+    nodes: list[dict[str, Any]] = []
+    for idx, item in enumerate(rows, start=1):
+        nodes.append(
+            {
+                "name": item.get("subjectName"),
+                "level": 1 if idx == 1 else 2,
+                "reason": item.get("reason") or "",
+                "pct_chg": f"{item.get('pctChg'):+.2f}%",
+                "has_children": idx == 1,
+                "is_stock": idx > 1,
+                "category": item.get("category") or "",
+                "parent_name": rows[0]["subjectName"] if rows and idx > 1 else "",
+                "parent_chain": [rows[0]["subjectName"]] if rows and idx > 1 else [],
             }
-            var path = [];
-            for (var j = 0; j < results.length; j++) {
-                var item = results[j];
-                while (path.length > 0 && path[path.length - 1].level >= item.level) {
-                    path.pop();
-                }
-                item.parent_chain = path.map(function(p) { return p.name; });
-                item.parent_name = path.length > 0 ? path[path.length - 1].name : '';
-                if (item.has_children) {
-                    path.push(item);
-                }
-            }
-            return JSON.stringify(results);
-        })()
-        """,
-        timeout=20.0,
-    )
-    try:
-        return json.loads(raw) if isinstance(raw, str) else (raw or [])
-    except Exception:
-        return []
+        )
+    return nodes
 
 
 def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
@@ -483,16 +406,24 @@ def main() -> int:
         initial = _capture_snapshot(cdp, subject_id, "initial", subject_dir)
         print(f"[INFO] hash={initial.get('hash')!r} title={initial.get('title')!r}")
 
-        detail_record = parse_detail_record(initial, subject_id)
-        ranking_rows = parse_ranking_rows(initial, subject_id)
-        history_rows = parse_history_rows(initial, subject_id)
+        detail_click = _click_and_wait(cdp, "题材介绍", wait_s=1.2)
+        print(f"[TAB] 题材介绍 -> {detail_click}")
+        time.sleep(0.8)
+        detail_snapshot = _capture_snapshot(cdp, subject_id, "detail", subject_dir)
 
-        # Graph is usually visible after clicking the tab; keep a dedicated snapshot.
+        ranking_click = _click_and_wait(cdp, "题材排名", wait_s=1.2)
+        print(f"[TAB] 题材排名 -> {ranking_click}")
+        time.sleep(0.8)
+        ranking_snapshot = _capture_snapshot(cdp, subject_id, "ranking", subject_dir)
+
         graph_click = _click_and_wait(cdp, "题材图谱", wait_s=1.2)
         print(f"[TAB] 题材图谱 -> {graph_click}")
         time.sleep(0.8)
         graph_snapshot = _capture_snapshot(cdp, subject_id, "graph", subject_dir)
-        graph_nodes = extract_tree_nodes(cdp)
+        detail_record = parse_detail_record(detail_snapshot if detail_snapshot else initial, subject_id)
+        ranking_rows = parse_ranking_rows(ranking_snapshot if ranking_snapshot else initial, subject_id)
+        history_rows = parse_history_rows(ranking_snapshot if ranking_snapshot else initial, subject_id)
+        graph_nodes = extract_tree_nodes(graph_snapshot if graph_snapshot else initial, subject_id)
         graph_snapshot_path = subject_dir / f"{subject_id}_graph_snapshot.json"
         graph_snapshot_path.write_text(
             json.dumps(graph_snapshot, ensure_ascii=False, indent=2),

@@ -131,9 +131,10 @@ class OneToTwoRiskPlanBuilder:
         if level in ("core", "direct") and score_val is not None and float(score_val) >= 70:
             evidence_level = "strong"
             summary = "个股与题材存在明确的产业链/主营/公告证据，题材正宗度较高。"
-        elif level in ("core", "direct", "related") and score_val is not None and float(score_val) >= 40:
+        elif level in ("core", "direct", "related"):
+            # Events exist — the subject has related event drivers
             evidence_level = "medium"
-            summary = "个股与题材存在一定关联证据，但正宗度一般。"
+            summary = f"题材存在 {len(evidence_events)} 条近期驱动事件，个股与题材存在一定关联。"
         elif has_events:
             evidence_level = "weak"
             summary = f"题材存在 {len(evidence_events)} 条近期驱动事件，但个股与题材的产业链/公告关联度不足，需人工复核。"
