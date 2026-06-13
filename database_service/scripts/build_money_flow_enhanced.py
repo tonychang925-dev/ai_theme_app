@@ -84,6 +84,8 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
     CREATE INDEX IF NOT EXISTS idx_mfe_trade_date ON money_flow_enhanced(trade_date DESC);
     CREATE INDEX IF NOT EXISTS idx_mfe_subject_date ON money_flow_enhanced(subject_key, trade_date DESC);
     CREATE INDEX IF NOT EXISTS idx_mfe_tier_date ON money_flow_enhanced(money_flow_tier, trade_date DESC);
+    CREATE INDEX IF NOT EXISTS idx_mfe_trade_subject_stockcode
+        ON money_flow_enhanced (trade_date, subject_key, (split_part(stock_id, '.', 1)));
     """
     async with manager.pool.acquire() as conn:
         await conn.execute(ddl)

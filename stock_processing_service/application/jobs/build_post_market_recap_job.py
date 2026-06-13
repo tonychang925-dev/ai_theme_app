@@ -667,18 +667,7 @@ class BuildPostMarketRecapJob:
                 ],
             }
 
-            report_context_fn = getattr(self._read_port, "get_post_market_report_context", None)
-            if callable(report_context_fn):
-                try:
-                    recap_doc["report_context"] = await report_context_fn(trade_date=trade_date)
-                except TypeError:
-                    try:
-                        recap_doc["report_context"] = await report_context_fn(trade_date, None, None)
-                    except Exception:
-                        pass
-                except Exception:
-                    # TimeoutError or similar on large queries — non-fatal
-                    pass
+            recap_doc["report_context"] = await self._load_post_market_report_context(trade_date)
 
             # Convert Decimal values to float for JSON serialization
             def _serialize(obj):
@@ -1734,6 +1723,45 @@ class BuildPostMarketRecapJob:
         service = PostMarketReadinessService(pool=pool)
         result = await service.check(trade_date)
         return result.to_dict()
+
+    async def _load_post_market_report_context(self, trade_date: date) -> dict[str, Any]:
+        """Load the authoritative post-market report context or fail loudly.
+
+        The recap pipeline depends on report_context as the contract boundary.
+        Silent fallback here would produce a success-marked snapshot with empty
+        market / evidence sections, which is exactly the regression we are
+        guarding against.
+        """
+        report_context_fn = getattr(self._read_port, "get_post_market_report_context", None)
+        if not callable(report_context_fn):
+            raise RuntimeError("REPORT_CONTEXT_READER_MISSING")
+
+        try:
+            report_context = await report_context_fn(trade_date=trade_date)
+        except TypeError:
+            try:
+                report_context = await report_context_fn(trade_date, None, None)
+            except Exception as exc:
+                detail = str(exc) or exc.__class__.__name__
+                raise RuntimeError(f"REPORT_CONTEXT_BUILD_FAILED: {detail}") from exc
+        except Exception as exc:
+            detail = str(exc) or exc.__class__.__name__
+            raise RuntimeError(f"REPORT_CONTEXT_BUILD_FAILED: {detail}") from exc
+
+        if not isinstance(report_context, dict) or not report_context:
+            raise RuntimeError("REPORT_CONTEXT_EMPTY")
+
+        market = report_context.get("market")
+        if not isinstance(market, dict) or not market:
+            raise RuntimeError("REPORT_CONTEXT_MARKET_MISSING")
+        if market.get("limit_up_count") in (None, ""):
+            raise RuntimeError("REPORT_CONTEXT_MARKET_LIMIT_UP_COUNT_MISSING")
+
+        stock_facts = report_context.get("stock_facts")
+        if not isinstance(stock_facts, list) or not stock_facts:
+            raise RuntimeError("REPORT_CONTEXT_STOCK_FACTS_MISSING")
+
+        return report_context
 
     @staticmethod
     async def _build_theme_context_map(

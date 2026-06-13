@@ -3973,29 +3973,171 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         ORDER BY COALESCE(msd.mainline_strength_score, v2.mainline_strength_score, 0) DESC
         """
         sql_stock_facts = """
+        WITH ss AS MATERIALIZED (
+            SELECT DISTINCT ON (s.subject_key, split_part(s.stock_id, '.', 1))
+                s.subject_key,
+                COALESCE(vtb.theme_name, s.subject_key) AS theme_name,
+                split_part(s.stock_id, '.', 1) AS stock_code,
+                s.stock_id,
+                s.stock_name,
+                s.rank_order,
+                s.pct_chg,
+                s.close_price,
+                s.limit_up,
+                s.is_leader,
+                s.raw_json
+            FROM subject_stock_daily_snapshot s
+            LEFT JOIN vw_subject_theme_binding vtb
+              ON vtb.subject_key = s.subject_key
+            WHERE s.trade_date = $1::date
+              AND ($2::text[] IS NULL OR s.subject_key = ANY($2::text[]))
+              AND ($3::text[] IS NULL OR s.stock_id = ANY($3::text[]) OR split_part(s.stock_id, '.', 1) = ANY($3::text[]))
+            ORDER BY
+                s.subject_key,
+                split_part(s.stock_id, '.', 1),
+                COALESCE(s.is_leader, FALSE) DESC,
+                COALESCE(s.rank_order, 9999) ASC,
+                COALESCE(s.pct_chg, 0) DESC
+            LIMIT 5000
+        ),
+        p AS MATERIALIZED (
+            SELECT DISTINCT ON (split_part(p.stock_id, '.', 1))
+                p.trade_date,
+                split_part(p.stock_id, '.', 1) AS stock_code,
+                p.position_label,
+                p.ma_alignment_status,
+                p.trend_strength_score
+            FROM stock_position_judgement p
+            WHERE p.trade_date = $1::date
+            ORDER BY split_part(p.stock_id, '.', 1), COALESCE(p.trend_strength_score, 0) DESC
+        ),
+        x AS MATERIALIZED (
+            SELECT DISTINCT ON (split_part(x.stock_id, '.', 1))
+                x.trade_date,
+                split_part(x.stock_id, '.', 1) AS stock_code,
+                x.pattern_labels,
+                x.volume_pattern_status,
+                x.breakout_status,
+                x.pullback_status,
+                x.risk_pattern_status
+            FROM stock_pattern_judgement x
+            WHERE x.trade_date = $1::date
+            ORDER BY split_part(x.stock_id, '.', 1), COALESCE(x.breakout_status, '') DESC
+        ),
+        m AS MATERIALIZED (
+            SELECT DISTINCT ON (m.subject_key, split_part(m.stock_id, '.', 1))
+                m.trade_date,
+                m.subject_key,
+                COALESCE(vtb.theme_name, m.theme_name, m.subject_key) AS resolved_theme_name,
+                split_part(m.stock_id, '.', 1) AS stock_code,
+                m.role_label,
+                m.role_enhanced,
+                m.composite_score AS money_composite_score,
+                m.money_flow_score,
+                m.money_flow_tier,
+                m.main_net_inflow,
+                m.dragon_tiger_net_amount,
+                m.institution_seat_count,
+                m.explanation AS money_explanation
+            FROM money_flow_enhanced m
+            LEFT JOIN vw_subject_theme_binding vtb
+              ON vtb.subject_key = m.subject_key
+            WHERE m.trade_date = $1::date
+              AND ($2::text[] IS NULL OR m.subject_key = ANY($2::text[]))
+            ORDER BY
+                m.subject_key,
+                split_part(m.stock_id, '.', 1),
+                COALESCE(m.money_flow_score, 0) DESC,
+                COALESCE(m.main_net_inflow, 0) DESC
+        ),
+        l AS MATERIALIZED (
+            SELECT DISTINCT ON (l.subject_key, split_part(l.stock_id, '.', 1))
+                l.trade_date,
+                l.subject_key,
+                COALESCE(vtb.theme_name, l.theme_name, l.subject_key) AS resolved_theme_name,
+                split_part(l.stock_id, '.', 1) AS stock_code,
+                l.candidate_rank,
+                l.role_label AS leader_role_label,
+                l.composite_score AS leader_composite_score,
+                l.capital_score AS leader_capital_score
+            FROM theme_leader_candidate l
+            LEFT JOIN vw_subject_theme_binding vtb
+              ON vtb.subject_key = l.subject_key
+            WHERE l.trade_date = $1::date
+              AND ($2::text[] IS NULL OR l.subject_key = ANY($2::text[]))
+            ORDER BY
+                l.subject_key,
+                split_part(l.stock_id, '.', 1),
+                COALESCE(l.composite_score, 0) DESC,
+                COALESCE(l.capital_score, 0) DESC
+        ),
+        a AS MATERIALIZED (
+            SELECT DISTINCT ON (a.subject_key, split_part(a.stock_id, '.', 1))
+                a.trade_date,
+                a.subject_key,
+                COALESCE(vtb.theme_name, a.theme_name, a.subject_key) AS resolved_theme_name,
+                split_part(a.stock_id, '.', 1) AS stock_code,
+                a.turnover_rate,
+                a.abnormal_composite_score,
+                a.abnormal_labels,
+                a.conclusion AS abnormal_conclusion,
+                a.volume_ratio_to_ma50,
+                a.main_net_inflow AS abnormal_main_net_inflow,
+                a.main_net_inflow_rank_in_theme,
+                a.hot_money_buy_names,
+                a.institution_net_buy
+            FROM stock_abnormal_signal a
+            LEFT JOIN vw_subject_theme_binding vtb
+              ON vtb.subject_key = a.subject_key
+            WHERE a.trade_date = $1::date
+              AND ($2::text[] IS NULL OR a.subject_key = ANY($2::text[]))
+            ORDER BY
+                a.subject_key,
+                split_part(a.stock_id, '.', 1),
+                COALESCE(a.abnormal_composite_score, 0) DESC
+        ),
+        cyc AS MATERIALIZED (
+            SELECT DISTINCT ON (cyc.subject_key)
+                cyc.subject_key,
+                COALESCE(
+                    NULLIF(CASE WHEN cyc.theme_name !~ '^[0-9]+$' THEN cyc.theme_name ELSE '' END, ''),
+                    vtb.theme_name,
+                    cyc.subject_key
+                ) AS theme_name,
+                cyc.mainline_strength_score,
+                cyc.fade_risk_score,
+                cyc.final_cycle_state,
+                cyc.final_mainline_alive
+            FROM theme_cycle_judgement_v2 cyc
+            LEFT JOIN vw_subject_theme_binding vtb
+              ON vtb.subject_key = cyc.subject_key
+            WHERE cyc.trade_date = $1::date
+              AND ($2::text[] IS NULL OR cyc.subject_key = ANY($2::text[]))
+            ORDER BY cyc.subject_key, COALESCE(cyc.mainline_strength_score, 0) DESC
+        )
         SELECT
-            s.subject_key,
-            COALESCE(vtb.theme_name, s.subject_key) AS theme_name,
-            s.stock_id,
-            s.stock_name,
-            s.rank_order,
-            s.pct_chg,
-            s.close_price,
-            s.limit_up,
-            s.is_leader,
+            ss.subject_key,
+            ss.theme_name,
+            ss.stock_id,
+            ss.stock_name,
+            ss.rank_order,
+            ss.pct_chg,
+            ss.close_price,
+            ss.limit_up,
+            ss.is_leader,
             CASE
-                WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 17
-                THEN NULLIF(s.raw_json->>17, '')::numeric
+                WHEN jsonb_typeof(ss.raw_json) = 'array' AND jsonb_array_length(ss.raw_json) > 17
+                THEN NULLIF(ss.raw_json->>17, '')::numeric
                 ELSE NULL
             END AS volume_ratio,
             CASE
-                WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 18
-                THEN NULLIF(s.raw_json->>18, '')::numeric
+                WHEN jsonb_typeof(ss.raw_json) = 'array' AND jsonb_array_length(ss.raw_json) > 18
+                THEN NULLIF(ss.raw_json->>18, '')::numeric
                 ELSE NULL
             END AS turnover_rate,
             CASE
-                WHEN jsonb_typeof(s.raw_json) = 'array' AND jsonb_array_length(s.raw_json) > 20
-                THEN NULLIF(s.raw_json->>20, '')::integer
+                WHEN jsonb_typeof(ss.raw_json) = 'array' AND jsonb_array_length(ss.raw_json) > 20
+                THEN NULLIF(ss.raw_json->>20, '')::integer
                 ELSE NULL
             END AS current_flag,
             p.position_label,
@@ -4008,31 +4150,31 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             x.risk_pattern_status,
             m.role_label,
             m.role_enhanced,
-            m.composite_score AS money_composite_score,
+            m.money_composite_score,
             m.money_flow_score,
             m.money_flow_tier,
             l.candidate_rank AS leader_candidate_rank,
-            l.role_label AS leader_role_label,
-            l.composite_score AS leader_composite_score,
-            l.capital_score AS leader_capital_score,
+            l.leader_role_label,
+            l.leader_composite_score,
+            l.leader_capital_score,
             COALESCE(
                 m.main_net_inflow,
                 CASE
-                    WHEN jsonb_typeof(s.raw_json) = 'array'
-                     AND jsonb_array_length(s.raw_json) > 35
-                     AND NULLIF(s.raw_json->>35, '') ~ '^-?[0-9]+(\\.[0-9]+)?$'
-                    THEN (s.raw_json->>35)::numeric
+                    WHEN jsonb_typeof(ss.raw_json) = 'array'
+                     AND jsonb_array_length(ss.raw_json) > 35
+                     AND NULLIF(ss.raw_json->>35, '') ~ '^-?[0-9]+(\\.[0-9]+)?$'
+                    THEN (ss.raw_json->>35)::numeric
                     ELSE NULL
                 END
             ) AS main_net_inflow,
             m.dragon_tiger_net_amount,
             m.institution_seat_count,
-            m.explanation AS money_explanation,
+            m.money_explanation,
             a.abnormal_composite_score,
             a.abnormal_labels,
-            a.conclusion AS abnormal_conclusion,
+            a.abnormal_conclusion,
             a.volume_ratio_to_ma50,
-            a.main_net_inflow AS abnormal_main_net_inflow,
+            a.abnormal_main_net_inflow,
             a.main_net_inflow_rank_in_theme,
             a.hot_money_buy_names,
             a.institution_net_buy,
@@ -4040,26 +4182,39 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             cyc.fade_risk_score,
             cyc.final_cycle_state AS cycle_final_cycle_state,
             cyc.final_mainline_alive AS cycle_final_mainline_alive
-        FROM subject_stock_daily_snapshot s
-        LEFT JOIN vw_subject_theme_binding vtb
-          ON vtb.subject_key = s.subject_key
-        LEFT JOIN stock_position_judgement p
-          ON p.trade_date = s.trade_date AND split_part(p.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
-        LEFT JOIN stock_pattern_judgement x
-          ON x.trade_date = s.trade_date AND split_part(x.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
-        LEFT JOIN money_flow_enhanced m
-          ON m.trade_date = s.trade_date AND m.subject_key = s.subject_key AND split_part(m.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
-        LEFT JOIN theme_leader_candidate l
-          ON l.trade_date = s.trade_date AND l.subject_key = s.subject_key AND split_part(l.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
-        LEFT JOIN stock_abnormal_signal a
-          ON a.trade_date = s.trade_date AND a.subject_key = s.subject_key AND split_part(a.stock_id, '.', 1) = split_part(s.stock_id, '.', 1)
-        LEFT JOIN theme_cycle_judgement_v2 cyc
-          ON cyc.trade_date = s.trade_date AND cyc.subject_key = s.subject_key
-        WHERE s.trade_date = $1::date
-          AND ($2::text[] IS NULL OR s.subject_key = ANY($2::text[]))
-          AND ($3::text[] IS NULL OR s.stock_id = ANY($3::text[]) OR split_part(s.stock_id, '.', 1) = ANY($3::text[]))
-        ORDER BY s.subject_key, COALESCE(s.rank_order, 999), COALESCE(s.pct_chg, 0) DESC
-        LIMIT 5000
+        FROM ss
+        LEFT JOIN p
+          ON p.trade_date = $1::date
+         AND p.stock_code = ss.stock_code
+        LEFT JOIN x
+          ON x.trade_date = $1::date
+         AND x.stock_code = ss.stock_code
+        LEFT JOIN m
+          ON m.trade_date = $1::date
+         AND m.subject_key = ss.subject_key
+         AND m.stock_code = ss.stock_code
+        LEFT JOIN l
+          ON l.trade_date = $1::date
+         AND l.subject_key = ss.subject_key
+         AND l.stock_code = ss.stock_code
+        LEFT JOIN a
+          ON a.trade_date = $1::date
+         AND a.subject_key = ss.subject_key
+         AND a.stock_code = ss.stock_code
+        LEFT JOIN cyc
+          ON cyc.subject_key = ss.subject_key
+        WHERE (
+            COALESCE(ss.limit_up, FALSE)
+            OR COALESCE(ss.is_leader, FALSE)
+            OR COALESCE(ss.rank_order, 999) <= 3
+            OR COALESCE(ss.pct_chg, 0) >= 7
+            OR COALESCE(ss.pct_chg, 0) <= -7
+            OR COALESCE(m.main_net_inflow, 0) <> 0
+            OR COALESCE(a.abnormal_composite_score, 0) <> 0
+            OR COALESCE(l.candidate_rank, 0) > 0
+        )
+        ORDER BY ss.subject_key, COALESCE(ss.rank_order, 999), COALESCE(ss.pct_chg, 0) DESC
+        LIMIT 1800
         """
         sql_money = """
         SELECT m.*, COALESCE(vtb.theme_name, m.theme_name, m.subject_key) AS resolved_theme_name
@@ -4238,15 +4393,27 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             COALESCE(rank_order, 9999)
         LIMIT 120
         """
+        query_timeout_sec = float(os.getenv("POST_MARKET_REPORT_CONTEXT_QUERY_TIMEOUT_SEC", "120"))
         async with self.pool.acquire() as conn:
-            market = await conn.fetchrow(sql_market, trade_date)
-            cycles = await conn.fetch(sql_cycles, trade_date, subjects if subjects else None)
-            stock_facts = await conn.fetch(sql_stock_facts, trade_date, subjects if subjects else None, stocks if stocks else None)
-            money = await conn.fetch(sql_money, trade_date, subjects if subjects else None)
-            theme_capital = await conn.fetch(sql_theme_capital, trade_date, subjects if subjects else None)
-            theme_gainers = await conn.fetch(sql_theme_gainers, trade_date)
-            abnormal = await conn.fetch(sql_abnormal, trade_date)
-            dragon = await conn.fetch(sql_dragon, trade_date)
+            market = await conn.fetchrow(sql_market, trade_date, timeout=query_timeout_sec)
+            cycles = await conn.fetch(sql_cycles, trade_date, subjects if subjects else None, timeout=query_timeout_sec)
+            stock_facts = await conn.fetch(
+                sql_stock_facts,
+                trade_date,
+                subjects if subjects else None,
+                stocks if stocks else None,
+                timeout=query_timeout_sec,
+            )
+            money = await conn.fetch(sql_money, trade_date, subjects if subjects else None, timeout=query_timeout_sec)
+            theme_capital = await conn.fetch(
+                sql_theme_capital,
+                trade_date,
+                subjects if subjects else None,
+                timeout=query_timeout_sec,
+            )
+            theme_gainers = await conn.fetch(sql_theme_gainers, trade_date, timeout=query_timeout_sec)
+            abnormal = await conn.fetch(sql_abnormal, trade_date, timeout=query_timeout_sec)
+            dragon = await conn.fetch(sql_dragon, trade_date, timeout=query_timeout_sec)
         return {
             "theme_name_map": theme_name_map,
             "market": dict(market) if market else None,
