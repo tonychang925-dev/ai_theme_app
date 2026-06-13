@@ -134,3 +134,51 @@ async def test_stock_abnormal_signal_builder_uses_db_input_source(
     assert result["job_key"] == "stock_abnormal_signal_build"
     assert result["affected_rows"] == 3
     assert calls == [db_gateway]
+
+
+@pytest.mark.asyncio
+async def test_build_stock_abnormal_signal_job_rejects_missing_db_gateway() -> None:
+    """Guard: BuildStockAbnormalSignalJob with db_gateway=None must return failure.
+
+    This test would have caught the bootstrap wiring gap where
+    abnormal_signal_job was constructed without db_gateway.
+    """
+    from stock_processing_service.application.jobs.build_stock_abnormal_signal_job import (
+        BuildStockAbnormalSignalJob,
+    )
+
+    job = BuildStockAbnormalSignalJob(
+        write_port=object(),
+        db_gateway=None,  # ← the gap: bootstrap forgot this
+    )
+    result = await job.execute(trade_date=date(2026, 6, 10))
+
+    assert result.status.startswith("failed"), (
+        f"expected failure when db_gateway=None, got status={result.status!r}"
+    )
+    assert "no db_gateway" in result.status, (
+        f"expected 'no db_gateway' in status, got {result.status!r}"
+    )
+    assert result.affected_rows == 0
+
+
+@pytest.mark.asyncio
+async def test_build_stock_abnormal_signal_job_accepts_valid_wiring() -> None:
+    """Guard: BuildStockAbnormalSignalJob with proper wiring does not crash early."""
+    from stock_processing_service.application.jobs.build_stock_abnormal_signal_job import (
+        BuildStockAbnormalSignalJob,
+    )
+
+    class _FakeGateway:
+        async def get_subject_stock_daily_snapshot_by_trade_date(self, trade_date):
+            return []  # empty → returns ok_no_inputs, not a crash
+
+    job = BuildStockAbnormalSignalJob(
+        write_port=object(),
+        db_gateway=_FakeGateway(),
+    )
+    result = await job.execute(trade_date=date(2026, 6, 10))
+
+    assert "failed" not in result.status, (
+        f"valid wiring should not fail, got status={result.status!r}"
+    )

@@ -1741,6 +1741,51 @@ select {
   font-size: 12px;
 }
 
+/* ── P1: 股票快照可插拔数据源控件 ── */
+.collection-sub-group {
+  margin-left: 24px;
+  padding: 10px 12px;
+  border-left: 2px solid #283342;
+  display: grid;
+  gap: 10px;
+}
+
+.collection-radio-group {
+  display: grid;
+  gap: 6px;
+}
+
+.collection-sub-label {
+  font-size: 12px;
+  color: #9fb3c8;
+  font-weight: 600;
+  text-transform: none;
+}
+
+.collection-radio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #bccde0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.collection-radio input {
+  accent-color: #4da3ff;
+}
+
+.collection-hint {
+  margin: 0;
+  padding: 8px 10px;
+  background: #1a2332;
+  border-radius: 6px;
+  color: #e67e22;
+  font-size: 12px;
+  line-height: 1.5;
+  border: 1px solid #2c3e50;
+}
+
 .collection-parameter-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

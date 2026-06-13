@@ -30,9 +30,13 @@ class PostMarketSetupFactContextBuilder:
             self._read.get_trade_calendar(trade_date),
             allow_empty=False,
         )
-        if not calendar or not getattr(calendar, "next_trade_date", None):
+        # Resolve next_trade_date: calendar may be a TradeCalendarDTO or a plain dict
+        nt_raw = getattr(calendar, "next_trade_date", None) if calendar else None
+        if nt_raw is None and isinstance(calendar, dict):
+            nt_raw = calendar.get("next_trade_date")
+        if not calendar or nt_raw is None:
             raise SetupFactContextBuildError("trade_calendar missing next_trade_date")
-        watch_date = calendar.next_trade_date
+        watch_date = nt_raw
 
         source_doc = dict(source_doc or {})
         market_regime = self._extract_required_dict(source_doc, ("market_regime_review", "market_regime"))
@@ -62,24 +66,46 @@ class PostMarketSetupFactContextBuilder:
             if sk:
                 subject_market_breadth[sk] = dict(r)
 
-        lookback_start = trade_date - timedelta(days=30)
-        stock_daily_bars = self._normalize_rows(
-            await self._call_optional(
-                "stock_daily_bars_range",
-                self._read.get_stock_daily_bars_range(start_date=lookback_start, end_date=trade_date, stock_ids=None),
-            )
-        )
+        lookback_start = trade_date - timedelta(days=90)
+
+        # Step 1: read today's subject-stock rows for active subjects only
         subject_stock_rows = self._normalize_rows(
             await self._call_optional(
                 "subject_stock_daily_bars_range",
                 self._read.get_subject_stock_daily_bars_range(
-                    start_date=lookback_start,
+                    start_date=trade_date,
                     end_date=trade_date,
                     stock_ids=None,
-                    subject_keys=None,
+                    subject_keys=list(active_subject_keys) if active_subject_keys else None,
                 ),
             )
         )
+
+        # Step 2: extract candidate stock IDs from subject rows
+        candidate_stock_ids: list[str] | None = None
+        if subject_stock_rows:
+            ids: set[str] = set()
+            for r in subject_stock_rows:
+                sid = self._stock_key(r.get("stock_id"))
+                if sid:
+                    ids.add(sid)
+            if ids:
+                candidate_stock_ids = sorted(ids)
+
+        # Step 3: read 90-day K-line history ONLY for candidate stocks
+        if candidate_stock_ids:
+            stock_daily_bars = self._normalize_rows(
+                await self._call_optional(
+                    "stock_daily_bars_range",
+                    self._read.get_stock_daily_bars_range(
+                        start_date=lookback_start,
+                        end_date=trade_date,
+                        stock_ids=candidate_stock_ids,
+                    ),
+                )
+            )
+        else:
+            stock_daily_bars = []
 
         mainline_state_rows = self._normalize_rows(
             await self._call_optional(
@@ -101,6 +127,20 @@ class PostMarketSetupFactContextBuilder:
         pressure_by_stock = self._extract_map(source_doc, "pressure_by_stock")
         ma_pattern_by_stock = self._extract_map(source_doc, "ma_pattern_by_stock")
         turnover_rate_by_stock = self._extract_stock_metric_map(source_doc, "stock_facts", "turnover_rate")
+        # Fallback: read turnover_rate from stock_daily_basic_snapshot (collected via control panel).
+        # stock_abnormal_signal must NOT be the source — it's an abnormal evidence module,
+        # not a 1进2 fact source. Missing abnormal data must not break OneToTwo.
+        if not turnover_rate_by_stock:
+            turnover_rate_by_stock = await self._read_turnover_rate_from_daily_basic(trade_date)
+
+        # Resolve Chinese subject names from theme_gate_profile
+        subject_name_map: dict[str, str] = {}
+        try:
+            fn = getattr(self._read, "get_theme_gate_profile_names", None)
+            if callable(fn):
+                subject_name_map = await fn(list(active_subject_keys))
+        except Exception:
+            pass
 
         subject_authenticity_by_subject = await self._build_subject_authenticity(
             trade_date=trade_date,
@@ -146,6 +186,7 @@ class PostMarketSetupFactContextBuilder:
             prior_daily_bars={},
             pressure_by_stock=pressure_by_stock,
             ma_pattern_by_stock=ma_pattern_by_stock,
+            subject_name_map=subject_name_map,
             turnover_rate_by_stock=turnover_rate_by_stock,
             subject_authenticity_by_subject=subject_authenticity_by_subject,
             stock_subject_authenticity_by_pair=stock_subject_authenticity_by_pair,
@@ -246,6 +287,13 @@ class PostMarketSetupFactContextBuilder:
                 rows = []
                 for item in value:
                     if isinstance(item, dict):
+                        # Exclude __independent__ — independent leader is a Layer C
+                        # observation path, not a theme hotspot for OneToTwo.
+                        sk = str(item.get("subject_key") or "").strip()
+                        tn = str(item.get("theme_name") or "").strip()
+                        sn = str(item.get("subject_name") or "").strip()
+                        if sk == "__independent__" or tn == "__independent__" or sn == "__independent__":
+                            continue
                         rows.append(dict(item))
                 if rows:
                     return rows
@@ -451,6 +499,44 @@ class PostMarketSetupFactContextBuilder:
     def _is_limit_up(row: dict[str, Any]) -> bool:
         from stock_processing_service.domain.services.limit_up_detector import LimitUpDetector
         return LimitUpDetector.is_limit_up(row)
+
+    async def _read_turnover_rate_from_daily_basic(
+        self, trade_date: date
+    ) -> dict[str, Any]:
+        """Read turnover_rate from stock_daily_basic_snapshot (collected via control panel).
+
+        stock_daily_basic_snapshot stores turnover_rate as percentage.
+        We convert to fraction to match OneToTwo rule config.
+        stock_abnormal_signal is NOT used — it's an abnormal evidence module,
+        not a 1进2 fact source.
+        """
+        try:
+            fn = getattr(self._read, "get_stock_daily_basic_snapshot", None)
+            if not callable(fn):
+                return {}
+            rows = await fn(trade_date)
+            result: dict[str, Any] = {}
+            for r in rows:
+                sid = str(r.get("stock_id") or "").strip()
+                tr = r.get("turnover_rate")
+                if not sid or tr is None:
+                    continue
+                try:
+                    tr_val = float(tr)
+                except (ValueError, TypeError):
+                    continue
+                if tr_val <= 0:
+                    continue
+                bare = self._stock_key(sid)
+                tr_val_frac = tr_val / 100.0
+                if sid not in result:
+                    result[sid] = tr_val_frac
+                if bare and bare != sid and bare not in result:
+                    result[bare] = tr_val_frac
+            return result
+        except Exception:
+            pass
+        return {}
 
     def _date_str(self, value: Any) -> str:
         if value is None:

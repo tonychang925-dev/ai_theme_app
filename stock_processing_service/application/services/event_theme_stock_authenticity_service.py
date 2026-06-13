@@ -378,7 +378,7 @@ class EventThemeStockAuthenticityService:
             return "core"
         if score >= 65 and (is_main_theme or market_recognition_score >= 60.0):
             return "direct"
-        if score >= 45 and (has_stock_rows or has_events):
+        if has_events or (score >= 45 and has_stock_rows):
             return "related"
         if score >= 25:
             return "weak"

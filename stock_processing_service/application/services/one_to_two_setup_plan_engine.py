@@ -13,6 +13,9 @@ from stock_processing_service.contracts.dto.one_to_two_dto import (
     RuleResult,
     ScoreResult,
 )
+from stock_processing_service.domain.services.one_to_two_technical_gate import (
+    TECHNICAL_FOCUS_SCORE_THRESHOLD,
+)
 from stock_processing_service.contracts.dto.post_market_setup_context_dto import PostMarketSetupFactContext
 from stock_processing_service.domain.services.one_to_two_candidate_service import OneToTwoCandidateService
 from stock_processing_service.domain.services.one_to_two_risk_plan_builder import OneToTwoRiskPlanBuilder
@@ -55,6 +58,9 @@ class OneToTwoSetupPlanEngine:
         ctx = await builder.build(trade_date, source_doc=source_doc)
         return self.build_from_context(ctx)
 
+    FOCUS_SCORE_THRESHOLD = Decimal("80")
+    FOCUS_TECHNICAL_SCORE_THRESHOLD = TECHNICAL_FOCUS_SCORE_THRESHOLD  # 55
+
     def build_from_context(self, ctx: PostMarketSetupFactContext) -> OneToTwoSetupPlanDTO:
         fact_pool = self.candidate_service.build_fact_pool(ctx)
 
@@ -66,23 +72,32 @@ class OneToTwoSetupPlanEngine:
         for features in fact_pool:
             rule = self.rule_engine.apply(features)
             score = self.scorer.score(features, rule)
-            candidate_features.append(self._to_candidate_feature_item(features, rule, score))
-            if rule.decision == "reject":
+            final_rule = self._apply_score_policy(features, rule, score)
+            # Use final_rule for BOTH candidate_feature and plan item (consistency)
+            candidate_features.append(self._to_candidate_feature_item(features, final_rule, score))
+            if final_rule.decision == "reject":
                 reject_count += 1
-                reject_reasons.update(rule.veto_reasons)
+                reject_reasons.update(final_rule.veto_reasons)
                 continue
 
-            plan = self.risk_plan_builder.build(features, rule, score)
-            items.append(self._to_plan_item(features, rule, score, plan))
+            plan = self.risk_plan_builder.build(features, final_rule, score)
+            items.append(self._to_plan_item(features, final_rule, score, plan))
 
         items = sorted(
             items,
             key=lambda x: (
-                x.get("decision") != "focus",
+                {"focus": 0, "observe_only": 1, "pending_review_only": 2}.get(x.get("decision"), 9),
                 -(float(x.get("final_score") or 0.0)),
+                -(float(x.get("technical_structure_score") or 0.0)),
+                -(float(x.get("theme_authenticity_score") or 0.0)),
+                -(float(x.get("board_breadth_score") or 0.0)),
+                -(float(x.get("turnover_rate") or 0.0)),
                 str(x.get("stock_id") or ""),
             ),
         )
+        for idx, item in enumerate(items, start=1):
+            item["rank_no"] = idx
+            item["rank_reason"] = self._rank_reason(item)
         summary = {
             "trade_date": ctx.trade_date,
             "watch_date": ctx.watch_date,
@@ -92,6 +107,37 @@ class OneToTwoSetupPlanEngine:
             "pending_review_only_count": sum(1 for item in items if item["decision"] == "pending_review_only"),
             "reject_count": reject_count,
         }
+        # ── Global data-quality diagnostics ──
+        non_blocking_warnings = list(ctx.diagnostics.non_blocking_warnings)
+        subject_board_stats_missing = (
+            len(ctx.limit_up_rows) > 0
+            and not ctx.subject_market_breadth
+        )
+        breadth_stats: dict[str, Any] = {}
+        if subject_board_stats_missing:
+            breadth_stats = {
+                "subject_board_stats": "ready_empty",
+                "breadth_missing_candidate_count": len(fact_pool),
+                "breadth_missing_rate": round(len(fact_pool) / max(len(fact_pool), 1), 2),
+            }
+            non_blocking_warnings.append(
+                "SUBJECT_BOARD_STATS_MISSING: subject_market_breadth is empty but "
+                f"{len(ctx.limit_up_rows)} limit-up rows exist; board breadth "
+                "evaluation degraded — focus candidates downgraded to pending_review_only"
+            )
+
+        turnover_rate_missing = (
+            len(fact_pool) > 0
+            and not ctx.turnover_rate_by_stock
+        )
+        if turnover_rate_missing:
+            non_blocking_warnings.append(
+                "TURNOVER_RATE_SOURCE_MISSING: turnover_rate_by_stock is empty but "
+                f"{len(fact_pool)} candidates in fact pool; stock_abnormal_signal "
+                "may not have been built for this trade date. Candidates with "
+                "turnover_rate=None will be rejected as '低换手'."
+            )
+
         diagnostics = {
             "rule_version": self.rule_engine.rule_version,
             "empty_is_valid": True,
@@ -99,7 +145,9 @@ class OneToTwoSetupPlanEngine:
             "top_reject_reasons": [reason for reason, _ in reject_reasons.most_common(10)],
             "source_status": ctx.diagnostics.to_dict().get("source_status", {}),
             "blocking_errors": list(ctx.diagnostics.blocking_errors),
-            "non_blocking_warnings": list(ctx.diagnostics.non_blocking_warnings),
+            "non_blocking_warnings": non_blocking_warnings,
+            "subject_board_stats_missing": subject_board_stats_missing,
+            "breadth_stats": breadth_stats,
         }
         return OneToTwoSetupPlanDTO(
             summary=summary,
@@ -128,15 +176,63 @@ class OneToTwoSetupPlanEngine:
             "watch_level": score.watch_level,
             "rule_version": self.rule_engine.rule_version,
             "final_score": float(score.final_score) if score.final_score is not None else None,
+            "technical_structure_score": self._score_float(score.score_detail.get("technical_structure")),
+            "theme_authenticity_score": self._score_float(score.score_detail.get("theme_authenticity")),
+            "board_breadth_score": self._score_float(score.score_detail.get("board_breadth")),
+            "turnover_rate": float(f.turnover_rate) if f.turnover_rate is not None else None,
             "summary": self._summary(f, rule),
             "evidence_rules": self._evidence(f, rule, score),
             "risk_flags": list(rule.risk_flags),
             "trigger_plan": plan["trigger_plan"],
             "invalidation_plan": plan["invalidation_plan"],
             "exit_plan": plan["exit_plan"],
+            # Phase 3 explanation fields
+            "observation_reason": plan.get("observation_reason", []),
+            "subject_logic": plan.get("subject_logic", {}),
+            "technical_summary": plan.get("technical_summary", {}),
+            "key_parameters": plan.get("key_parameters", {}),
+            "tomorrow_plan": plan.get("tomorrow_plan", {}),
+            "give_up_conditions": plan.get("give_up_conditions", []),
+            "event_logic": plan.get("event_logic", {}),
+            "subject_authenticity": dict(f.subject_authenticity),
             "data_quality_json": dict(f.data_quality),
             "source_trace_json": dict(f.source_trace),
         }
+
+    @staticmethod
+    def _score_float(value: Any) -> float | None:
+        if value is None or value == "":
+            return None
+        try:
+            return float(value)
+        except (ValueError, TypeError):
+            return None
+
+    @staticmethod
+    def _rank_reason(item: dict[str, Any]) -> str:
+        parts: list[str] = []
+        fs = item.get("final_score")
+        if fs is not None:
+            parts.append(f"综合评分 {float(fs):.1f}")
+        dec = str(item.get("decision") or "")
+        if dec == "focus":
+            parts.append("技术形态支持 focus")
+        elif dec == "observe_only":
+            ts = item.get("technical_structure_score")
+            if ts is not None and ts < 55:
+                parts.append("技术形态评分不足")
+            else:
+                parts.append("暂不符合 focus 条件")
+        ta = item.get("theme_authenticity_score")
+        if ta is not None and ta >= 80:
+            parts.append("题材正宗度较高")
+        bb = item.get("board_breadth_score")
+        if bb is not None and bb >= 70:
+            parts.append("板块合力较强")
+        tr = item.get("turnover_rate")
+        if tr is not None and tr >= 0.08:
+            parts.append("换手充分")
+        return "；".join(parts) if parts else "综合排序"
 
     def _summary(self, f: OneToTwoFeatures, rule: RuleResult) -> str:
         if rule.decision == "reject":
@@ -171,6 +267,39 @@ class OneToTwoSetupPlanEngine:
             evidence.append(f"watch_level={score.watch_level}")
         evidence.extend(rule.risk_flags)
         return evidence
+
+    @classmethod
+    def _apply_score_policy(
+        cls,
+        f: OneToTwoFeatures,
+        rule: RuleResult,
+        score: ScoreResult,
+    ) -> RuleResult:
+        """Downgrade focus → observe_only if scores don't meet thresholds."""
+        if rule.decision != "focus":
+            return rule
+
+        risk = list(rule.risk_flags)
+
+        if score.final_score is None:
+            risk.append("评分缺失，不得 focus")
+            return RuleResult(decision="observe_only", veto_reasons=[], risk_flags=risk)
+
+        technical_str = score.score_detail.get("technical_structure", "0")
+        try:
+            technical_score = Decimal(str(technical_str))
+        except Exception:
+            technical_score = Decimal("0")
+
+        if technical_score < cls.FOCUS_TECHNICAL_SCORE_THRESHOLD:
+            risk.append(f"技术形态评分{technical_score}<55，暂不 focus")
+            return RuleResult(decision="observe_only", veto_reasons=[], risk_flags=risk)
+
+        if score.final_score < cls.FOCUS_SCORE_THRESHOLD:
+            risk.append(f"综合评分{score.final_score}<80，暂不 focus")
+            return RuleResult(decision="observe_only", veto_reasons=[], risk_flags=risk)
+
+        return rule
 
     def _to_candidate_feature_item(
         self,
@@ -221,8 +350,9 @@ class OneToTwoSetupPlanEngine:
             "veto_reasons": list(rule.veto_reasons),
             "risk_flags": list(rule.risk_flags),
             "first_board_quality_score": score.score_detail.get("first_board_quality"),
-            "mainline_context_score": score.score_detail.get("board_breadth"),
-            "technical_structure_score": score.score_detail.get("lifecycle"),
+            "board_breadth_score": score.score_detail.get("board_breadth"),
+            "theme_authenticity_score": score.score_detail.get("theme_authenticity"),
+            "technical_structure_score": score.score_detail.get("technical_structure"),
             "risk_control_score": score.score_detail.get("risk_control"),
             "final_score": float(score.final_score) if score.final_score is not None else None,
             "watch_level": score.watch_level,

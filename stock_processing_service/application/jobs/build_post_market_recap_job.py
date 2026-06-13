@@ -90,6 +90,7 @@ class BuildPostMarketRecapJob:
         mainline_state_job: Any | None = None,  # BuildMainlineStateJob — Layer B 前置
         cycle_judgement_job: Any | None = None,  # BuildCycleJudgementJob — Layer B 前置
         evidence_job: Any | None = None,  # BuildThemeCycleEvidenceDailyJob — Layer B 证据
+        abnormal_signal_job: Any | None = None,  # BuildStockAbnormalSignalJob — turnover_rate 真源
         report_builder: NewChainPostMarketReportBuilder | None = None,
         market_summary_llm_service: Any | None = None,
         post_market_decision_engine: Any | None = None,
@@ -113,6 +114,7 @@ class BuildPostMarketRecapJob:
         self._mainline_state_job = mainline_state_job
         self._cycle_judgement_job = cycle_judgement_job
         self._evidence_job = evidence_job
+        self._abnormal_signal_job = abnormal_signal_job
         self._report_builder = report_builder or NewChainPostMarketReportBuilder()
         self._market_summary_llm_service = market_summary_llm_service or PostMarketMarketSummaryLlmService()
         self._decision_engine = post_market_decision_engine or PostMarketDecisionEngine()
@@ -352,538 +354,674 @@ class BuildPostMarketRecapJob:
             )
 
         # P1-3: mark running
-        await self._mark_job_status(trade_date, "post_market_recap_generate", "running")
+        await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+            diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id})
+        try:
 
-        # ── Layer A/B 前置（新链自闭环）──
-        # 当 collection 任务已通过 Step2 (recap.prerequisites) 完成时，跳过重复执行。
-        if not skip_prereqs:
-            if self._evidence_job is not None:
-                await self._evidence_job.execute(
+            # ── Layer A/B 前置（新链自闭环）──
+            # 当 collection 任务已通过 Step2 (recap.prerequisites) 完成时，跳过重复执行。
+            if not skip_prereqs:
+                if self._evidence_job is not None:
+                    await self._evidence_job.execute(
+                        trade_date=trade_date,
+                        snapshot_version=f"recap_evidence.{snapshot_version}",
+                        batch_id=batch_id,
+                        trace_id=trace_id,
+                    )
+                if self._cycle_judgement_job is not None:
+                    await self._cycle_judgement_job.execute(
+                        trade_date=trade_date,
+                        batch_id=batch_id,
+                        trace_id=trace_id,
+                    )
+                if self._identity_job is not None:
+                    await self._identity_job.execute(
+                        trade_date=trade_date,
+                        snapshot_version="recap_identity.v1",
+                        batch_id=batch_id,
+                        trace_id=trace_id,
+                    )
+                if self._cycle_judgement_job is not None:
+                    await self._cycle_judgement_job.execute(
+                        trade_date=trade_date,
+                        batch_id=batch_id,
+                        trace_id=trace_id,
+                    )
+                if self._mainline_state_job is not None:
+                    await self._mainline_state_job.execute(
+                        trade_date=trade_date,
+                        batch_id=batch_id,
+                        trace_id=trace_id,
+                    )
+
+            # heartbeat: prerequisites complete
+            await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "prerequisites_done"})
+
+            # ── Build stock_abnormal_signal (required prerequisite for abnormal_reviews) ──
+            if not skip_prereqs and self._abnormal_signal_job is not None:
+                abnormal_result = await self._abnormal_signal_job.execute(
                     trade_date=trade_date,
-                    snapshot_version=f"recap_evidence.{snapshot_version}",
-                    batch_id=batch_id,
-                    trace_id=trace_id,
+                    min_turnover_rate=0.0,
                 )
-            if self._cycle_judgement_job is not None:
-                await self._cycle_judgement_job.execute(
+                abnormal_status = str(getattr(abnormal_result, "status", "") or "")
+                abnormal_rows = int(getattr(abnormal_result, "affected_rows", 0) or 0)
+                if not abnormal_status.startswith("ok") or abnormal_rows <= 0:
+                    await self._mark_job_status(trade_date, "post_market_recap_generate", "failed",
+                        error_code="STOCK_ABNORMAL_SIGNAL_BUILD_FAILED",
+                        diagnostics={
+                            "snapshot_version": snapshot_version, "batch_id": batch_id,
+                            "trace_id": trace_id, "stage": "abnormal_signal_failed",
+                            "abnormal_status": abnormal_status,
+                            "abnormal_rows": abnormal_rows,
+                        })
+                    raise RuntimeError(
+                        f"STOCK_ABNORMAL_SIGNAL_BUILD_FAILED: status={abnormal_status} rows={abnormal_rows}"
+                    )
+                await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                    diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "abnormal_signal_done",
+                                 "abnormal_rows": abnormal_rows})
+
+            # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
+            if skip_layer_c:
+                layer_c_metrics = {"skip_layer_c": True, "stock_ids": []}
+            else:
+                layer_c_result = await self._strong_stock_tracking_use_case.execute(
                     trade_date=trade_date,
-                    batch_id=batch_id,
-                    trace_id=trace_id,
+                    window_days=7,
+                    lookback_days=lookback_days,
                 )
-            if self._identity_job is not None:
-                await self._identity_job.execute(
-                    trade_date=trade_date,
-                    snapshot_version="recap_identity.v1",
-                    batch_id=batch_id,
-                    trace_id=trace_id,
-                )
-            if self._cycle_judgement_job is not None:
-                await self._cycle_judgement_job.execute(
-                    trade_date=trade_date,
-                    batch_id=batch_id,
-                    trace_id=trace_id,
-                )
-            if self._mainline_state_job is not None:
-                await self._mainline_state_job.execute(
-                    trade_date=trade_date,
-                    batch_id=batch_id,
-                    trace_id=trace_id,
-                )
+                layer_c_metrics = dict(layer_c_result.metrics or {})
 
-        # ── Layer C: 强势股观察池由独立 use case 负责，recap 只消费其对象输出 ──
-        if skip_layer_c:
-            layer_c_metrics = {"skip_layer_c": True, "stock_ids": []}
-        else:
-            layer_c_result = await self._strong_stock_tracking_use_case.execute(
-                trade_date=trade_date,
-                window_days=7,
-                lookback_days=lookback_days,
-            )
-            layer_c_metrics = dict(layer_c_result.metrics or {})
+            # ── Layer D1: recap 只读取既有候选池，不执行选股逻辑 ──
+            read_existing_w2s = getattr(self._read_port, "get_w2s_candidates_by_trade_date", None)
+            existing_w2s_rows: list[Any] = []
+            if callable(read_existing_w2s):
+                try:
+                    existing_w2s_rows = list(await read_existing_w2s(trade_date, limit=20))
+                except Exception:
+                    logger.warning("D1 candidate read failed, continuing without D1 rows")
+            _d1_total_in = len(existing_w2s_rows)
+            _d1_pass = len(existing_w2s_rows)
+            _d1_fail_pct = 0
+            _d1_fail_history = 0
+            _d1_fail_gene = 0
+            _d1_fail_strong = 0
+            _d1_fail_support = 0
+            d1_written = 0
 
-        # ── Layer D1: recap 只读取既有候选池，不执行选股逻辑 ──
-        read_existing_w2s = getattr(self._read_port, "get_w2s_candidates_by_trade_date", None)
-        existing_w2s_rows: list[Any] = []
-        if callable(read_existing_w2s):
-            try:
-                existing_w2s_rows = list(await read_existing_w2s(trade_date, limit=20))
-            except Exception:
-                logger.warning("D1 candidate read failed, continuing without D1 rows")
-        _d1_total_in = len(existing_w2s_rows)
-        _d1_pass = len(existing_w2s_rows)
-        _d1_fail_pct = 0
-        _d1_fail_history = 0
-        _d1_fail_gene = 0
-        _d1_fail_strong = 0
-        _d1_fail_support = 0
-        d1_written = 0
+            # 构建 recap_doc 所需元数据
+            pool_rows: list[Any] = []  # 保留兼容性
+            stock_ids = list(layer_c_metrics.get("stock_ids") or [])
+            subject_keys = list(layer_c_metrics.get("subject_keys") or [])
+            strong_watch_rows: list[Any] = []
+            history_written = int(layer_c_metrics.get("history_written") or 0)
+            strong_watch_history: list[Any] = list(layer_c_metrics.get("history_rows") or [])
+            existing_d1_candidate_rows: list[Any] = existing_w2s_rows
+            shadow_summary: dict[str, Any] = {}
+            legacy_watch_input_count = 0
+            strong_watch_pool_written = int(layer_c_metrics.get("pool_written") or 0)
+            strong_watch_promote_count = int(layer_c_metrics.get("promote_count") or 0)
+            strong_watch_prune_count = int(layer_c_metrics.get("prune_count") or 0)
+            strong_watch_history_written = history_written
+            layer_c_input_mode = LAYER_C_INPUT_MODE
+            layer_c_shadow_enabled = False
+            layer_a_identity_source = "theme_mainline_identity_registry"
+            layer_b_cycle_source = "theme_cycle_judgement_v2"
+            layer_a_identity_hit_count = int(layer_c_metrics.get("identity_hit_count") or 0)
+            layer_b_cycle_hit_count = int(layer_c_metrics.get("cycle_hit_count") or 0)
 
-        # 构建 recap_doc 所需元数据
-        pool_rows: list[Any] = []  # 保留兼容性
-        stock_ids = list(layer_c_metrics.get("stock_ids") or [])
-        subject_keys = list(layer_c_metrics.get("subject_keys") or [])
-        strong_watch_rows: list[Any] = []
-        history_written = int(layer_c_metrics.get("history_written") or 0)
-        strong_watch_history: list[Any] = list(layer_c_metrics.get("history_rows") or [])
-        existing_d1_candidate_rows: list[Any] = existing_w2s_rows
-        shadow_summary: dict[str, Any] = {}
-        legacy_watch_input_count = 0
-        strong_watch_pool_written = int(layer_c_metrics.get("pool_written") or 0)
-        strong_watch_promote_count = int(layer_c_metrics.get("promote_count") or 0)
-        strong_watch_prune_count = int(layer_c_metrics.get("prune_count") or 0)
-        strong_watch_history_written = history_written
-        layer_c_input_mode = LAYER_C_INPUT_MODE
-        layer_c_shadow_enabled = False
-        layer_a_identity_source = "theme_mainline_identity_registry"
-        layer_b_cycle_source = "theme_cycle_judgement_v2"
-        layer_a_identity_hit_count = int(layer_c_metrics.get("identity_hit_count") or 0)
-        layer_b_cycle_hit_count = int(layer_c_metrics.get("cycle_hit_count") or 0)
-
-        # P1: skip_layer_c 仅标记跳过，不补读任何历史数据。
-        if skip_layer_c:
-            layer_a_identity_hit_count = max(layer_a_identity_hit_count, 1)
-            layer_b_cycle_hit_count = max(layer_b_cycle_hit_count, 1)
-        input_fingerprint = LAYER_C_INPUT_MODE
-        # 构建兼容 recap_doc 的 D1 只读候选列表（来自既有 weak_to_strong_candidate_pool，不在 recap 内生成）
-        candidates = [
-            {
-                "stock_id": str(c.get("stock_id", "")),
-                "stock_name": str(c.get("stock_name", "")),
-                "subject_key": str(c.get("subject_key", "")),
-                "subject_name": str(c.get("theme_name", "")),
-                "candidate_score": float(c.get("candidate_score") or 0),
-                "candidate_level": str(c.get("pool_entry_type") or "observe_only"),
-                "candidate_type": str(c.get("candidate_type") or ""),
-                "transition_type": str(c.get("weak_type") or ""),
-                "transition_confidence": "50",
-                "trigger_flags": [],
-                "evidence_rules": [],
-                "support_type": str(c.get("support_type") or ""),
-                "support_score": float(c.get("support_strength") or 0),
-                "gap_hit": False,
-                "gap_hit_mode": "miss",
-            }
-            for c in existing_w2s_rows
-        ]
-        formal_candidates = [
-            c for c in candidates if str(c.get("candidate_level", "")).lower() in {"formal", "s", "a", "b"}
-        ]
-        observe_candidates = [c for c in candidates if str(c.get("candidate_level", "")).lower() == "observe_only"]
-        candidate_service_observe_candidates = observe_candidates
-
-        recap_doc = {
-            "trade_date": trade_date.isoformat(),
-            "snapshot_version": snapshot_version,
-            "identity_gate_mode": str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower(),
-            "candidate_source": "strong_watch_pool",
-            "layer_c_input_mode": layer_c_input_mode,
-            "layer_c_shadow_enabled": layer_c_shadow_enabled,
-            "legacy_watch_input_count": legacy_watch_input_count,
-            "strong_watch_input_count": len(strong_watch_history),
-            "strong_watch_input_7d_count": len(strong_watch_history),
-            "d1_total_in": _d1_total_in,
-            "d1_pass": _d1_pass,
-            "d1_fail_pct_gate": _d1_fail_pct,
-            "d1_fail_history": _d1_fail_history,
-            "d1_fail_gene": _d1_fail_gene,
-            "d1_fail_strong": _d1_fail_strong,
-            "d1_fail_support": _d1_fail_support,
-            "strong_watch_promoted_count": len(existing_d1_candidate_rows),
-            "strong_watch_history_count": len(strong_watch_history),
-            "strong_watch_pool_written": strong_watch_pool_written,
-            "strong_watch_promote_count": strong_watch_promote_count,
-            "strong_watch_prune_count": strong_watch_prune_count,
-            "strong_watch_history_written": strong_watch_history_written,
-            "strong_watch_shadow_summary": shadow_summary,
-            "shadow_layer_c_formal_count": int(shadow_summary.get("admission_formal_count") or 0),
-            "shadow_layer_c_observe_count": int(shadow_summary.get("admission_observe_count") or 0),
-            "shadow_layer_c_reject_count": int(shadow_summary.get("admission_reject_count") or 0),
-            "shadow_layer_c_pass_4of3_fail_count": int(shadow_summary.get("admission_pass_4of3_fail_count") or 0),
-            "shadow_layer_c_hard_reject_count": int(shadow_summary.get("admission_hard_reject_count") or 0),
-            "layer_a_identity_source": layer_a_identity_source,
-            "layer_b_cycle_source": layer_b_cycle_source,
-            "layer_a_identity_hit_count": layer_a_identity_hit_count,
-            "layer_b_cycle_hit_count": layer_b_cycle_hit_count,
-            "layer_ab_subject_key_count": len(subject_keys),
-            "input_fingerprint": input_fingerprint,
-            "strong_watch_history": [
+            # P1: skip_layer_c 仅标记跳过，不补读任何历史数据。
+            if skip_layer_c:
+                layer_a_identity_hit_count = max(layer_a_identity_hit_count, 1)
+                layer_b_cycle_hit_count = max(layer_b_cycle_hit_count, 1)
+            input_fingerprint = LAYER_C_INPUT_MODE
+            # 构建兼容 recap_doc 的 D1 只读候选列表（来自既有 weak_to_strong_candidate_pool，不在 recap 内生成）
+            candidates = [
                 {
-                    "stock_id": (row.get("stock_id") if isinstance(row, dict) else getattr(row, "stock_id", "")),
-                    "subject_key": (row.get("subject_key") if isinstance(row, dict) else getattr(row, "subject_key", "")),
-                    "watch_status": (row.get("watch_status") if isinstance(row, dict) else getattr(row, "watch_status", "")),
-                    "strong_grade": str(row.get("strong_grade", "") if isinstance(row, dict) else getattr(row, "strong_grade", "")),
-                    "watch_score": str(row.get("watch_score", 0) if isinstance(row, dict) else getattr(row, "watch_score", 0)),
-                    "support_score": str(row.get("support_score", "0") if isinstance(row, dict) else getattr(row, "support_score", "0")),
-                    "support_type": (row.get("support_type") if isinstance(row, dict) else getattr(row, "support_type", "")),
-                    "final_cycle_state": "",
-                    "transition_type": "",
-                    "transition_confidence": "0",
+                    "stock_id": str(c.get("stock_id", "")),
+                    "stock_name": str(c.get("stock_name", "")),
+                    "subject_key": str(c.get("subject_key", "")),
+                    "subject_name": str(c.get("theme_name", "")),
+                    "candidate_score": float(c.get("candidate_score") or 0),
+                    "candidate_level": str(c.get("pool_entry_type") or "observe_only"),
+                    "candidate_type": str(c.get("candidate_type") or ""),
+                    "transition_type": str(c.get("weak_type") or ""),
+                    "transition_confidence": "50",
                     "trigger_flags": [],
-                    "prune_mode": None,
-                    "prune_reason_code": None,
-                    "removed_reason": (row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None)),
-                    "kept_because": None,
+                    "evidence_rules": [],
+                    "support_type": str(c.get("support_type") or ""),
+                    "support_score": float(c.get("support_strength") or 0),
+                    "gap_hit": False,
+                    "gap_hit_mode": "miss",
                 }
-                for row in strong_watch_history  # full Layer C 7-day pool — no truncation
-            ],
-            # Primary count follows the actual candidate list, with formal/observe split preserved separately.
-            "candidate_count": len(candidates),
-            "candidate_count_total": len(candidates),
-            "candidate_count_all": len(candidates),
-            "candidate_count_formal": len(formal_candidates),
-            "candidate_count_observe": len(observe_candidates),
-            "observe_candidates_count": len(candidate_service_observe_candidates),
-            "top_candidates_scope": "formal_plus_observe_ranked",
-            "formal_top_candidates": [
-                {
-                    "stock_id": c["stock_id"],
-                    "stock_name": c["stock_name"],
-                    "subject_key": c["subject_key"],
-                    "candidate_score": str(c["candidate_score"]),
-                    "support_type": c.get("support_type", ""),
-                }
-                for c in formal_candidates[:15]
-            ],
-            "observe_candidates": [
-                {
-                    "stock_id": c["stock_id"],
-                    "stock_name": c["stock_name"],
-                    "subject_key": c["subject_key"],
-                    "subject_name": c["subject_name"],
-                    "candidate_score": str(c["candidate_score"]),
-                    "candidate_level": c["candidate_level"],
-                    "support_type": c.get("support_type", ""),
-                    "support_score": str(c.get("support_score", "0")),
-                    "gap_hit": c.get("gap_hit", False),
-                    "gap_hit_mode": c.get("gap_hit_mode", "miss"),
-                    "evidence_rules": c.get("evidence_rules", [])[:30],
-                }
-                for c in candidate_service_observe_candidates[:20]
-            ],
-            "candidate_diagnostics": [
-                {
-                    "stock_id": c["stock_id"],
-                    "stock_name": c["stock_name"],
-                    "subject_key": c["subject_key"],
-                    "subject_name": c["subject_name"],
-                    "candidate_score": str(c["candidate_score"]),
-                    "candidate_level": c["candidate_level"],
-                    "support_type": c.get("support_type", ""),
-                    "support_score": str(c.get("support_score", "0")),
-                    "weakness_valid_score": str(c.get("weakness_valid_score", "0")),
-                    "repair_or_takeover_score": str(c.get("repair_or_takeover_score", "0")),
-                    "gap_hit": c.get("gap_hit", False),
-                    "gap_hit_mode": c.get("gap_hit_mode", "miss"),
-                    "candidate_rank": idx,
-                }
-                for idx, c in enumerate(candidates, start=1)
-            ],
-            "strong_watch_input_7d_preview": [
-                {
-                    "stock_id": str(r.get("stock_id", "")),
-                    "stock_name": str(r.get("stock_name", "")),
-                    "subject_key": str(r.get("subject_key", "")),
-                    "subject_name": str(r.get("theme_name", "")),
-                    "watch_score": str(r.get("watch_score", "")),
-                    "watch_status": str(r.get("watch_status", "")),
-                    "pool_entry_type": str(r.get("watch_pool_entry_type", "")),
-                    "support_type": "",
-                }
-                for r in strong_watch_history[:100]
-            ],
-            "strong_watch_input_7d_stock_ids": sorted(
-                {str(r.get("stock_id", "")) for r in strong_watch_history if str(r.get("stock_id", "") or "")}
-            ),
-            "strong_watch_input_7d_source": (
-                "legacy_strong_watch_pool_or_history"
-                if layer_c_input_mode == "legacy_watch_pool"
-                else "strong_watch_pool_history_single_source"
-            ),
-            "promoted_pool_stock_ids": sorted(
-                {str(r.get("stock_id", "")) for r in existing_d1_candidate_rows if str(r.get("stock_id", "") or "")}
-            ),
-            "promoted_pool_preview": [
-                {
-                    "stock_id": str(r.get("stock_id", "")),
-                    "stock_name": str(r.get("stock_name", "")),
-                    "subject_key": str(r.get("subject_key", "")),
-                    "subject_name": str(r.get("theme_name", "")),
-                    "pool_rank": None,
-                    "watch_status": str(r.get("watch_status", "")),
-                    "watch_score": str(r.get("watch_score", "")),
-                    "support_type": "",
-                    "prior7_limitup_days": int(r.get("prior7_limitup_days") or 0),
-                    "recent_limit_up_count": int(r.get("recent_limit_up_count") or 0),
-                    "final_cycle_state": str(r.get("final_cycle_state") or ""),
-                }
-                for r in existing_d1_candidate_rows[:200]
-            ],
-            "top_candidates": [
-                {
-                    "stock_id": c["stock_id"],
-                    "stock_name": c["stock_name"],
-                    "subject_key": c["subject_key"],
-                    "subject_name": c["subject_name"],
-                    "candidate_score": str(c["candidate_score"]),
-                    "candidate_level": c["candidate_level"],
-                    "transition_type": str(getattr(c, "transition_type", "") or ""),
-                    "transition_confidence": str(getattr(c, "transition_confidence", "0")),
-                    "trigger_flags": list(getattr(c, "trigger_flags", []) or []),
-                    "evidence_rules": c.get("evidence_rules", []),
-                }
-                for c in candidates[:30]
-            ],
-        }
+                for c in existing_w2s_rows
+            ]
+            formal_candidates = [
+                c for c in candidates if str(c.get("candidate_level", "")).lower() in {"formal", "s", "a", "b"}
+            ]
+            observe_candidates = [c for c in candidates if str(c.get("candidate_level", "")).lower() == "observe_only"]
+            candidate_service_observe_candidates = observe_candidates
 
-        report_context_fn = getattr(self._read_port, "get_post_market_report_context", None)
-        if callable(report_context_fn):
+            recap_doc = {
+                "trade_date": trade_date.isoformat(),
+                "snapshot_version": snapshot_version,
+                "identity_gate_mode": str(os.getenv("SPS_IDENTITY_GATE_MODE", "asof")).strip().lower(),
+                "candidate_source": "strong_watch_pool",
+                "layer_c_input_mode": layer_c_input_mode,
+                "layer_c_shadow_enabled": layer_c_shadow_enabled,
+                "legacy_watch_input_count": legacy_watch_input_count,
+                "strong_watch_input_count": len(strong_watch_history),
+                "strong_watch_input_7d_count": len(strong_watch_history),
+                "d1_total_in": _d1_total_in,
+                "d1_pass": _d1_pass,
+                "d1_fail_pct_gate": _d1_fail_pct,
+                "d1_fail_history": _d1_fail_history,
+                "d1_fail_gene": _d1_fail_gene,
+                "d1_fail_strong": _d1_fail_strong,
+                "d1_fail_support": _d1_fail_support,
+                "strong_watch_promoted_count": len(existing_d1_candidate_rows),
+                "strong_watch_history_count": len(strong_watch_history),
+                "strong_watch_pool_written": strong_watch_pool_written,
+                "strong_watch_promote_count": strong_watch_promote_count,
+                "strong_watch_prune_count": strong_watch_prune_count,
+                "strong_watch_history_written": strong_watch_history_written,
+                "strong_watch_shadow_summary": shadow_summary,
+                "shadow_layer_c_formal_count": int(shadow_summary.get("admission_formal_count") or 0),
+                "shadow_layer_c_observe_count": int(shadow_summary.get("admission_observe_count") or 0),
+                "shadow_layer_c_reject_count": int(shadow_summary.get("admission_reject_count") or 0),
+                "shadow_layer_c_pass_4of3_fail_count": int(shadow_summary.get("admission_pass_4of3_fail_count") or 0),
+                "shadow_layer_c_hard_reject_count": int(shadow_summary.get("admission_hard_reject_count") or 0),
+                "layer_a_identity_source": layer_a_identity_source,
+                "layer_b_cycle_source": layer_b_cycle_source,
+                "layer_a_identity_hit_count": layer_a_identity_hit_count,
+                "layer_b_cycle_hit_count": layer_b_cycle_hit_count,
+                "layer_ab_subject_key_count": len(subject_keys),
+                "input_fingerprint": input_fingerprint,
+                "strong_watch_history": [
+                    {
+                        "stock_id": (row.get("stock_id") if isinstance(row, dict) else getattr(row, "stock_id", "")),
+                        "subject_key": (row.get("subject_key") if isinstance(row, dict) else getattr(row, "subject_key", "")),
+                        "watch_status": (row.get("watch_status") if isinstance(row, dict) else getattr(row, "watch_status", "")),
+                        "strong_grade": str(row.get("strong_grade", "") if isinstance(row, dict) else getattr(row, "strong_grade", "")),
+                        "watch_score": str(row.get("watch_score", 0) if isinstance(row, dict) else getattr(row, "watch_score", 0)),
+                        "support_score": str(row.get("support_score", "0") if isinstance(row, dict) else getattr(row, "support_score", "0")),
+                        "support_type": (row.get("support_type") if isinstance(row, dict) else getattr(row, "support_type", "")),
+                        "final_cycle_state": "",
+                        "transition_type": "",
+                        "transition_confidence": "0",
+                        "trigger_flags": [],
+                        "prune_mode": None,
+                        "prune_reason_code": None,
+                        "removed_reason": (row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None)),
+                        "kept_because": None,
+                    }
+                    for row in strong_watch_history  # full Layer C 7-day pool — no truncation
+                ],
+                # Primary count follows the actual candidate list, with formal/observe split preserved separately.
+                "candidate_count": len(candidates),
+                "candidate_count_total": len(candidates),
+                "candidate_count_all": len(candidates),
+                "candidate_count_formal": len(formal_candidates),
+                "candidate_count_observe": len(observe_candidates),
+                "observe_candidates_count": len(candidate_service_observe_candidates),
+                "top_candidates_scope": "formal_plus_observe_ranked",
+                "formal_top_candidates": [
+                    {
+                        "stock_id": c["stock_id"],
+                        "stock_name": c["stock_name"],
+                        "subject_key": c["subject_key"],
+                        "candidate_score": str(c["candidate_score"]),
+                        "support_type": c.get("support_type", ""),
+                    }
+                    for c in formal_candidates[:15]
+                ],
+                "observe_candidates": [
+                    {
+                        "stock_id": c["stock_id"],
+                        "stock_name": c["stock_name"],
+                        "subject_key": c["subject_key"],
+                        "subject_name": c["subject_name"],
+                        "candidate_score": str(c["candidate_score"]),
+                        "candidate_level": c["candidate_level"],
+                        "support_type": c.get("support_type", ""),
+                        "support_score": str(c.get("support_score", "0")),
+                        "gap_hit": c.get("gap_hit", False),
+                        "gap_hit_mode": c.get("gap_hit_mode", "miss"),
+                        "evidence_rules": c.get("evidence_rules", [])[:30],
+                    }
+                    for c in candidate_service_observe_candidates[:20]
+                ],
+                "candidate_diagnostics": [
+                    {
+                        "stock_id": c["stock_id"],
+                        "stock_name": c["stock_name"],
+                        "subject_key": c["subject_key"],
+                        "subject_name": c["subject_name"],
+                        "candidate_score": str(c["candidate_score"]),
+                        "candidate_level": c["candidate_level"],
+                        "support_type": c.get("support_type", ""),
+                        "support_score": str(c.get("support_score", "0")),
+                        "weakness_valid_score": str(c.get("weakness_valid_score", "0")),
+                        "repair_or_takeover_score": str(c.get("repair_or_takeover_score", "0")),
+                        "gap_hit": c.get("gap_hit", False),
+                        "gap_hit_mode": c.get("gap_hit_mode", "miss"),
+                        "candidate_rank": idx,
+                    }
+                    for idx, c in enumerate(candidates, start=1)
+                ],
+                "strong_watch_input_7d_preview": [
+                    {
+                        "stock_id": str(r.get("stock_id", "")),
+                        "stock_name": str(r.get("stock_name", "")),
+                        "subject_key": str(r.get("subject_key", "")),
+                        "subject_name": str(r.get("theme_name", "")),
+                        "watch_score": str(r.get("watch_score", "")),
+                        "watch_status": str(r.get("watch_status", "")),
+                        "pool_entry_type": str(r.get("watch_pool_entry_type", "")),
+                        "support_type": "",
+                    }
+                    for r in strong_watch_history[:100]
+                ],
+                "strong_watch_input_7d_stock_ids": sorted(
+                    {str(r.get("stock_id", "")) for r in strong_watch_history if str(r.get("stock_id", "") or "")}
+                ),
+                "strong_watch_input_7d_source": (
+                    "legacy_strong_watch_pool_or_history"
+                    if layer_c_input_mode == "legacy_watch_pool"
+                    else "strong_watch_pool_history_single_source"
+                ),
+                "promoted_pool_stock_ids": sorted(
+                    {str(r.get("stock_id", "")) for r in existing_d1_candidate_rows if str(r.get("stock_id", "") or "")}
+                ),
+                "promoted_pool_preview": [
+                    {
+                        "stock_id": str(r.get("stock_id", "")),
+                        "stock_name": str(r.get("stock_name", "")),
+                        "subject_key": str(r.get("subject_key", "")),
+                        "subject_name": str(r.get("theme_name", "")),
+                        "pool_rank": None,
+                        "watch_status": str(r.get("watch_status", "")),
+                        "watch_score": str(r.get("watch_score", "")),
+                        "support_type": "",
+                        "prior7_limitup_days": int(r.get("prior7_limitup_days") or 0),
+                        "recent_limit_up_count": int(r.get("recent_limit_up_count") or 0),
+                        "final_cycle_state": str(r.get("final_cycle_state") or ""),
+                    }
+                    for r in existing_d1_candidate_rows[:200]
+                ],
+                "top_candidates": [
+                    {
+                        "stock_id": c["stock_id"],
+                        "stock_name": c["stock_name"],
+                        "subject_key": c["subject_key"],
+                        "subject_name": c["subject_name"],
+                        "candidate_score": str(c["candidate_score"]),
+                        "candidate_level": c["candidate_level"],
+                        "transition_type": str(getattr(c, "transition_type", "") or ""),
+                        "transition_confidence": str(getattr(c, "transition_confidence", "0")),
+                        "trigger_flags": list(getattr(c, "trigger_flags", []) or []),
+                        "evidence_rules": c.get("evidence_rules", []),
+                    }
+                    for c in candidates[:30]
+                ],
+            }
+
+            recap_doc["report_context"] = await self._load_post_market_report_context(trade_date)
+
+            # Convert Decimal values to float for JSON serialization
+            def _serialize(obj):
+                if isinstance(obj, dict): return {k: _serialize(v) for k, v in obj.items()}
+                if isinstance(obj, list): return [_serialize(i) for i in obj]
+                from decimal import Decimal
+                if isinstance(obj, Decimal): return float(obj)
+                return obj
+
+            # ── P0-2: readiness guard — 核心表为空时拒绝写快照 ──
+            readiness = await self._check_post_market_readiness(trade_date)
+            recap_doc.setdefault("diagnostics", {})["readiness"] = readiness
+            if readiness["status"] != "ready":
+                await self._mark_job_status(trade_date, "post_market_recap_generate", "failed_precondition",
+                    error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
+                    diagnostics={"readiness": readiness, "snapshot_version": snapshot_version})
+                await self._idempotency_port.mark_job_completed(
+                    job_key,
+                    {
+                        "trade_date": trade_date.isoformat(),
+                        "snapshot_version": snapshot_version,
+                        "status": "failed_precondition",
+                        "readiness": readiness,
+                    },
+                )
+                return BuildResult(
+                    name="build_post_market_recap",
+                    trade_date=trade_date.isoformat(),
+                    affected_rows=0,
+                    status="failed_precondition",
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                    warnings=[f"POST_MARKET_DERIVED_DATA_NOT_READY: status={readiness['status']} missing={readiness.get('missing_tables', [])}"],
+                    metrics={"readiness": readiness},
+                )
+
+            # ── P2: 结构化 theme_reviews 生成 ──
+            report_context = recap_doc.get("report_context") or {}
+            llm_deadline = time.monotonic() + self._llm_budget_sec
+            diag = recap_doc.setdefault("diagnostics", {})
+            llm_diag = diag.setdefault("llm", {})
+            llm_diag.update(
+                {
+                    "budget_sec": self._llm_budget_sec,
+                    "market_summary_timeout_sec": self._market_summary_llm_timeout_sec,
+                    "narrative_timeout_sec": self._narrative_llm_timeout_sec,
+                }
+            )
+            recap_doc["market_summary"] = await self._build_market_summary_llm(
+                trade_date,
+                report_context,
+                llm_deadline=llm_deadline,
+            )
+            theme_context_map = await self._build_theme_context_map(trade_date, report_context)
+            recap_doc["theme_reviews"] = self._build_theme_reviews(theme_context_map)
+            recap_doc["diagnostics"]["coverage"] = self._build_theme_review_coverage(theme_context_map)
+            _coverage = recap_doc["diagnostics"]["coverage"]
+
+            recap_doc["capital_reviews"] = self._build_capital_reviews(report_context.get("dragon_tiger") or [])
+            recap_doc["strong_stock_reviews"] = await self._build_strong_stock_reviews(trade_date)
+            strong_stock_reviews_count = len(recap_doc["strong_stock_reviews"] or [])
+            recap_doc["strong_stock_reviews_count"] = strong_stock_reviews_count
+            strong_hotspot_subjects = self._build_strong_hotspot_subjects(recap_doc["strong_stock_reviews"] or [])
+            recap_doc["strong_hotspot_subjects"] = strong_hotspot_subjects
+            recap_doc["hotspot_subjects"] = strong_hotspot_subjects
+            recap_doc["mainline_hotspots"] = strong_hotspot_subjects
+            recap_doc.setdefault("diagnostics", {})["strong_hotspot_subjects_count"] = len(strong_hotspot_subjects)
+            strong_watch_history_count = len(strong_watch_history)
+
+            # ── PR-7: Mainline Discovery parallel output ──
+            await self._run_mainline_discovery(
+                trade_date,
+                snapshot_version,
+                report_context,
+                theme_context_map,
+                recap_doc,
+                batch_id,
+                trace_id,
+                llm_deadline=llm_deadline,
+            )
+
+            # ── P0: 交易体系决策输出 ──
+            decision_payload = self._decision_engine.execute(
+                trade_date=trade_date,
+                report_context=report_context,
+                theme_context_map=theme_context_map,
+                market_summary=recap_doc.get("market_summary") or {},
+                strong_stock_reviews=recap_doc.get("strong_stock_reviews") or [],
+            )
+            recap_doc.update(decision_payload)
+
+            confirmed_mainline_hotspots = self._build_confirmed_mainline_hotspots(recap_doc.get("active_mainline_universe") or {})
+            if confirmed_mainline_hotspots:
+                merged_hotspots = self._merge_hotspot_subjects(
+                    recap_doc.get("strong_hotspot_subjects") or [],
+                    confirmed_mainline_hotspots,
+                )
+                recap_doc["strong_hotspot_subjects"] = merged_hotspots
+                recap_doc["hotspot_subjects"] = merged_hotspots
+                recap_doc["mainline_hotspots"] = merged_hotspots
+
+            # heartbeat: building one_to_two
+            await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "building_one_to_two"})
+
+            # Inject abnormal_reviews for DailyReviewV2 display.
+            if not recap_doc.get("abnormal_reviews"):
+                try:
+                    pool = getattr(self._read_port, "_pool", None)
+                    if pool is None:
+                        facade = getattr(self._read_port, "_db", None)
+                        db_client = getattr(facade, "_db", None) if facade else None
+                        pool = getattr(db_client, "pool", None) if db_client else None
+                    if pool is not None:
+                        async with pool.acquire() as conn:
+                            ar_rows = await conn.fetch(
+                                "SELECT stock_id, stock_name, subject_key, turnover_rate, "
+                                "abnormal_composite_score, abnormal_labels, conclusion, "
+                                "volume_ratio_to_ma50, main_net_inflow "
+                                "FROM stock_abnormal_signal "
+                                "WHERE trade_date = $1::date "
+                                "ORDER BY abnormal_composite_score DESC",
+                                trade_date,
+                            )
+                            if ar_rows:
+                                recap_doc["abnormal_reviews"] = [dict(r) for r in ar_rows]
+                            else:
+                                raise RuntimeError("ABNORMAL_REVIEWS_EMPTY_AFTER_SIGNAL_BUILD")
+                except Exception as exc:
+                    raise RuntimeError(f"ABNORMAL_REVIEWS_INJECTION_FAILED: {exc}") from exc
+
+            # Inject turnover_rate for OneToTwo — read from stock_daily_basic_snapshot.
+            stock_facts_ot: list[dict[str, Any]] = []
+            turnover_source_available = False
             try:
-                recap_doc["report_context"] = await report_context_fn(trade_date=trade_date)
-            except TypeError:
-                recap_doc["report_context"] = await report_context_fn(trade_date, None, None)
+                pool = getattr(self._read_port, "_pool", None)
+                if pool is None:
+                    facade = getattr(self._read_port, "_db", None)
+                    db_client = getattr(facade, "_db", None) if facade else None
+                    pool = getattr(db_client, "pool", None) if db_client else None
+                if pool is not None:
+                    async with pool.acquire() as conn:
+                        daily_basic_cnt = await conn.fetchval(
+                            "SELECT COUNT(*) FROM stock_daily_basic_snapshot "
+                            "WHERE trade_date = $1::date AND turnover_rate IS NOT NULL AND turnover_rate > 0",
+                            trade_date,
+                        )
+                        turnover_source_available = bool(daily_basic_cnt and daily_basic_cnt > 0)
+                        if turnover_source_available:
+                            rows = await conn.fetch(
+                                "SELECT stock_id, turnover_rate FROM stock_daily_basic_snapshot "
+                                "WHERE trade_date = $1::date AND turnover_rate IS NOT NULL AND turnover_rate > 0",
+                                trade_date,
+                            )
+                            for r in rows:
+                                sid = str(r.get("stock_id") or "").strip()
+                                tr = r.get("turnover_rate")
+                                if sid and tr is not None and float(tr) > 0:
+                                    stock_facts_ot.append({"stock_id": sid, "turnover_rate": float(tr) / 100.0})
+            except Exception:
+                pass
 
-        # Convert Decimal values to float for JSON serialization
-        def _serialize(obj):
-            if isinstance(obj, dict): return {k: _serialize(v) for k, v in obj.items()}
-            if isinstance(obj, list): return [_serialize(i) for i in obj]
-            from decimal import Decimal
-            if isinstance(obj, Decimal): return float(obj)
-            return obj
+            if not turnover_source_available:
+                raise RuntimeError(
+                    f"Tushare daily_basic 换手率数据未采集 (trade_date={trade_date.isoformat()})。"
+                    "请在采集控制台先执行 'Tushare daily_basic 换手率采集'，再运行重新复盘。"
+                )
 
-        # ── P0-2: readiness guard — 核心表为空时拒绝写快照 ──
-        readiness = await self._check_post_market_readiness(trade_date)
-        recap_doc.setdefault("diagnostics", {})["readiness"] = readiness
-        if readiness["status"] != "ready":
-            await self._mark_job_status(trade_date, "post_market_recap_generate", "failed_precondition",
-                error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
-                diagnostics={"readiness": readiness})
+            if stock_facts_ot:
+                recap_doc["stock_facts"] = stock_facts_ot
+
+            from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
+                OneToTwoSetupPlanEngine,
+            )
+            one_to_two_plan = await OneToTwoSetupPlanEngine().build(
+                trade_date=trade_date,
+                read_port=self._read_port,
+                source_doc=recap_doc,
+            )
+            one_to_two_payload = one_to_two_plan.to_dict().get("watchlists", {}).get("one_to_two", {})
+            setup_plan_rows, candidate_feature_rows = self._build_one_to_two_persist_rows(one_to_two_plan)
+            setup_plan_written = await self._write_port.upsert_post_market_setup_plan_rows(setup_plan_rows)
+            if setup_plan_written <= 0:
+                raise RuntimeError("failed to persist post_market_setup_plan rows")
+            if candidate_feature_rows:
+                feature_written = await self._write_port.upsert_one_to_two_candidate_feature_rows(candidate_feature_rows)
+                if feature_written <= 0:
+                    raise RuntimeError("failed to persist one_to_two_candidate_feature rows")
+            recap_doc["post_market_setup_plan"] = one_to_two_payload
+            recap_doc["watchlists"] = {"one_to_two": one_to_two_payload}
+
+            recap_report = self._report_builder.build(recap_doc)
+            recap_doc["report"] = recap_report
+            if isinstance(recap_report, dict):
+                market_overview_review = recap_report.get("market_overview_review")
+                if isinstance(market_overview_review, dict):
+                    recap_doc["market_overview_review"] = market_overview_review
+
+            snapshot = PostMarketRecapSnapshot(
+                trade_date=trade_date,
+                snapshot_version=snapshot_version,
+                batch_id=batch_id,
+                trace_id=trace_id,
+                source_trace_id=trace_id,
+                recap_doc=_serialize(recap_doc),
+            )
+
+            # heartbeat: writing snapshot
+            await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "writing_snapshot"})
+
+            affected = await self._write_port.upsert_post_market_recap_snapshot(snapshot)
+            await self._mark_job_status(trade_date, "post_market_recap_generate", "success",
+                diagnostics={"affected_rows": affected, "snapshot_version": snapshot_version})
+            # history already written in Step 7e above; strong_watch_history_written tracks the count
+
+            if self._cache_port is not None:
+                await self._cache_writer.write_value_cache(
+                    f"sps:post_market_recap:{trade_date}",
+                    asdict(snapshot),
+                    ttl_seconds=SnapshotCacheWriter.TTL_24H,
+                )
+                await self._cache_writer.write_grouped_cache(
+                    f"sps:strong_watch_history:{trade_date}",
+                    [
+                        {
+                            "stock_id": row["stock_id"] if isinstance(row, dict) else row.stock_id,
+                            "subject_key": row["subject_key"] if isinstance(row, dict) else row.subject_key,
+                            "watch_status": row["watch_status"] if isinstance(row, dict) else row.watch_status,
+                            "strong_grade": str(row["strong_grade"]) if isinstance(row, dict) else row.strong_grade,
+                            "watch_score": str(row["watch_score"]) if isinstance(row, dict) else str(row.watch_score),
+                            "support_score": str(row["support_score"]) if isinstance(row, dict) else str(row.support_score),
+                            "support_type": row["support_type"] if isinstance(row, dict) else row.support_type,
+                            "prune_mode": row.get("prune_mode") if isinstance(row, dict) else getattr(row, "prune_mode", None),
+                            "prune_reason_code": row.get("prune_reason_code") if isinstance(row, dict) else getattr(row, "prune_reason_code", None),
+                            "removed_reason": row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None),
+                            "kept_because": row.get("kept_because") if isinstance(row, dict) else getattr(row, "kept_because", None),
+                        }
+                        for row in strong_watch_history
+                    ],
+                    ttl_seconds=SnapshotCacheWriter.TTL_24H,
+                )
+                await self._cache_writer.write_current_version(
+                    "sps:post_market_recap",
+                    trade_date,
+                    snapshot_version,
+                )
+
+            await self._event_port.publish_stock_processing_event(
+                EventEnvelope(
+                    event_id=str(uuid4()),
+                    event_name="snapshot_built",
+                    trade_date=trade_date,
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                    producer="stock_processing_service",
+                    occurred_at=datetime.now(timezone.utc),
+                    payload_version="v1",
+                    payload=SnapshotBuiltPayload(
+                        domain="post_market",
+                        snapshot_version=snapshot_version,
+                        object_name="post_market_recap_snapshot",
+                        row_count=1,
+                        success=True,
+                    ),
+                )
+            )
+
             await self._idempotency_port.mark_job_completed(
                 job_key,
                 {
                     "trade_date": trade_date.isoformat(),
                     "snapshot_version": snapshot_version,
-                    "status": "failed_precondition",
-                    "readiness": readiness,
+                    "candidate_count": len(candidates),
+                    "strong_watch_history_rows": history_written,
                 },
             )
+
             return BuildResult(
                 name="build_post_market_recap",
                 trade_date=trade_date.isoformat(),
-                affected_rows=0,
-                status="failed_precondition",
+                affected_rows=affected,
+                status="ok",
                 batch_id=batch_id,
                 trace_id=trace_id,
-                warnings=[f"POST_MARKET_DERIVED_DATA_NOT_READY: status={readiness['status']} missing={readiness.get('missing_tables', [])}"],
-                metrics={"readiness": readiness},
+                metrics={
+                    "strong_watch_input_count": len(strong_watch_history),
+                    "strong_watch_promoted_count": len(existing_d1_candidate_rows),
+                    "strong_watch_history_count": strong_watch_history_count,
+                    "strong_stock_reviews_count": strong_stock_reviews_count,
+                    "strong_watch_history_written": history_written,
+                    "strong_watch_shadow_universe_formal_count": int(shadow_summary.get("universe_formal_count") or 0),
+                    "strong_watch_shadow_universe_observe_count": int(shadow_summary.get("universe_observe_count") or 0),
+                    "strong_watch_shadow_universe_blocked_count": int(shadow_summary.get("universe_blocked_count") or 0),
+                    "strong_watch_shadow_admission_formal_count": int(shadow_summary.get("admission_formal_count") or 0),
+                    "strong_watch_shadow_admission_observe_count": int(shadow_summary.get("admission_observe_count") or 0),
+                    "strong_watch_shadow_admission_reject_count": int(shadow_summary.get("admission_reject_count") or 0),
+                    "strong_watch_shadow_admission_pass_4of3_fail_count": int(
+                        shadow_summary.get("admission_pass_4of3_fail_count") or 0
+                    ),
+                    "strong_watch_shadow_admission_hard_reject_count": int(
+                        shadow_summary.get("admission_hard_reject_count") or 0
+                    ),
+                    "theme_review_count": len(recap_doc.get("theme_reviews") or []),
+                    "theme_review_snapshot_status": _coverage.get("snapshot_status"),
+                    "theme_review_cycle_joined_count": _coverage.get("cycle_joined_count"),
+                    "layer_c_input_mode": layer_c_input_mode,
+                    "legacy_watch_input_count": legacy_watch_input_count,
+                    "candidate_count": len(candidates),
+                    "candidate_count_formal": len(formal_candidates),
+                    "candidate_count_observe": len(observe_candidates),
+                    "observe_candidates_count": len(candidate_service_observe_candidates),
+                    "skip_prereqs": bool(skip_prereqs),
+                },
+                published_events=["snapshot_built"],
+                cache_writes=3 if self._cache_port is not None else 0,
             )
-
-        # ── P2: 结构化 theme_reviews 生成 ──
-        report_context = recap_doc.get("report_context") or {}
-        llm_deadline = time.monotonic() + self._llm_budget_sec
-        diag = recap_doc.setdefault("diagnostics", {})
-        llm_diag = diag.setdefault("llm", {})
-        llm_diag.update(
-            {
-                "budget_sec": self._llm_budget_sec,
-                "market_summary_timeout_sec": self._market_summary_llm_timeout_sec,
-                "narrative_timeout_sec": self._narrative_llm_timeout_sec,
-            }
-        )
-        recap_doc["market_summary"] = await self._build_market_summary_llm(
-            trade_date,
-            report_context,
-            llm_deadline=llm_deadline,
-        )
-        theme_context_map = await self._build_theme_context_map(trade_date, report_context)
-        recap_doc["theme_reviews"] = self._build_theme_reviews(theme_context_map)
-        recap_doc["diagnostics"]["coverage"] = self._build_theme_review_coverage(theme_context_map)
-        _coverage = recap_doc["diagnostics"]["coverage"]
-
-        recap_doc["capital_reviews"] = self._build_capital_reviews(report_context.get("dragon_tiger") or [])
-        recap_doc["strong_stock_reviews"] = await self._build_strong_stock_reviews(trade_date)
-        strong_stock_reviews_count = len(recap_doc["strong_stock_reviews"] or [])
-        recap_doc["strong_stock_reviews_count"] = strong_stock_reviews_count
-        strong_hotspot_subjects = self._build_strong_hotspot_subjects(recap_doc["strong_stock_reviews"] or [])
-        recap_doc["strong_hotspot_subjects"] = strong_hotspot_subjects
-        recap_doc["hotspot_subjects"] = strong_hotspot_subjects
-        recap_doc["mainline_hotspots"] = strong_hotspot_subjects
-        recap_doc.setdefault("diagnostics", {})["strong_hotspot_subjects_count"] = len(strong_hotspot_subjects)
-        strong_watch_history_count = len(strong_watch_history)
-
-        # ── PR-7: Mainline Discovery parallel output ──
-        await self._run_mainline_discovery(
-            trade_date,
-            snapshot_version,
-            report_context,
-            theme_context_map,
-            recap_doc,
-            batch_id,
-            trace_id,
-            llm_deadline=llm_deadline,
-        )
-
-        # ── P0: 交易体系决策输出 ──
-        decision_payload = self._decision_engine.execute(
-            trade_date=trade_date,
-            report_context=report_context,
-            theme_context_map=theme_context_map,
-            market_summary=recap_doc.get("market_summary") or {},
-            strong_stock_reviews=recap_doc.get("strong_stock_reviews") or [],
-        )
-        recap_doc.update(decision_payload)
-
-        confirmed_mainline_hotspots = self._build_confirmed_mainline_hotspots(recap_doc.get("active_mainline_universe") or {})
-        if confirmed_mainline_hotspots:
-            merged_hotspots = self._merge_hotspot_subjects(
-                recap_doc.get("strong_hotspot_subjects") or [],
-                confirmed_mainline_hotspots,
-            )
-            recap_doc["strong_hotspot_subjects"] = merged_hotspots
-            recap_doc["hotspot_subjects"] = merged_hotspots
-            recap_doc["mainline_hotspots"] = merged_hotspots
-
-        from stock_processing_service.application.services.one_to_two_setup_plan_engine import (
-            OneToTwoSetupPlanEngine,
-        )
-        one_to_two_plan = await OneToTwoSetupPlanEngine().build(
-            trade_date=trade_date,
-            read_port=self._read_port,
-            source_doc=recap_doc,
-        )
-        one_to_two_payload = one_to_two_plan.to_dict().get("watchlists", {}).get("one_to_two", {})
-        setup_plan_rows, candidate_feature_rows = self._build_one_to_two_persist_rows(one_to_two_plan)
-        setup_plan_written = await self._write_port.upsert_post_market_setup_plan_rows(setup_plan_rows)
-        if setup_plan_written <= 0:
-            raise RuntimeError("failed to persist post_market_setup_plan rows")
-        if candidate_feature_rows:
-            feature_written = await self._write_port.upsert_one_to_two_candidate_feature_rows(candidate_feature_rows)
-            if feature_written <= 0:
-                raise RuntimeError("failed to persist one_to_two_candidate_feature rows")
-        recap_doc["post_market_setup_plan"] = one_to_two_payload
-        recap_doc["watchlists"] = {"one_to_two": one_to_two_payload}
-
-        recap_report = self._report_builder.build(recap_doc)
-        recap_doc["report"] = recap_report
-        if isinstance(recap_report, dict):
-            market_overview_review = recap_report.get("market_overview_review")
-            if isinstance(market_overview_review, dict):
-                recap_doc["market_overview_review"] = market_overview_review
-
-        snapshot = PostMarketRecapSnapshot(
-            trade_date=trade_date,
-            snapshot_version=snapshot_version,
-            batch_id=batch_id,
-            trace_id=trace_id,
-            source_trace_id=trace_id,
-            recap_doc=_serialize(recap_doc),
-        )
-
-        affected = await self._write_port.upsert_post_market_recap_snapshot(snapshot)
-        await self._mark_job_status(trade_date, "post_market_recap_generate", "success",
-            diagnostics={"affected_rows": affected, "snapshot_version": snapshot_version})
-        # history already written in Step 7e above; strong_watch_history_written tracks the count
-
-        if self._cache_port is not None:
-            await self._cache_writer.write_value_cache(
-                f"sps:post_market_recap:{trade_date}",
-                asdict(snapshot),
-                ttl_seconds=SnapshotCacheWriter.TTL_24H,
-            )
-            await self._cache_writer.write_grouped_cache(
-                f"sps:strong_watch_history:{trade_date}",
-                [
-                    {
-                        "stock_id": row["stock_id"] if isinstance(row, dict) else row.stock_id,
-                        "subject_key": row["subject_key"] if isinstance(row, dict) else row.subject_key,
-                        "watch_status": row["watch_status"] if isinstance(row, dict) else row.watch_status,
-                        "strong_grade": str(row["strong_grade"]) if isinstance(row, dict) else row.strong_grade,
-                        "watch_score": str(row["watch_score"]) if isinstance(row, dict) else str(row.watch_score),
-                        "support_score": str(row["support_score"]) if isinstance(row, dict) else str(row.support_score),
-                        "support_type": row["support_type"] if isinstance(row, dict) else row.support_type,
-                        "prune_mode": row.get("prune_mode") if isinstance(row, dict) else getattr(row, "prune_mode", None),
-                        "prune_reason_code": row.get("prune_reason_code") if isinstance(row, dict) else getattr(row, "prune_reason_code", None),
-                        "removed_reason": row.get("removed_reason") if isinstance(row, dict) else getattr(row, "removed_reason", None),
-                        "kept_because": row.get("kept_because") if isinstance(row, dict) else getattr(row, "kept_because", None),
-                    }
-                    for row in strong_watch_history
-                ],
-                ttl_seconds=SnapshotCacheWriter.TTL_24H,
-            )
-            await self._cache_writer.write_current_version(
-                "sps:post_market_recap",
-                trade_date,
-                snapshot_version,
-            )
-
-        await self._event_port.publish_stock_processing_event(
-            EventEnvelope(
-                event_id=str(uuid4()),
-                event_name="snapshot_built",
-                trade_date=trade_date,
-                batch_id=batch_id,
-                trace_id=trace_id,
-                producer="stock_processing_service",
-                occurred_at=datetime.now(timezone.utc),
-                payload_version="v1",
-                payload=SnapshotBuiltPayload(
-                    domain="post_market",
-                    snapshot_version=snapshot_version,
-                    object_name="post_market_recap_snapshot",
-                    row_count=1,
-                    success=True,
-                ),
-            )
-        )
-
-        await self._idempotency_port.mark_job_completed(
-            job_key,
-            {
-                "trade_date": trade_date.isoformat(),
+        except Exception as exc:
+            diagnostics = {
                 "snapshot_version": snapshot_version,
-                "candidate_count": len(candidates),
-                "strong_watch_history_rows": history_written,
-            },
-        )
-
-        return BuildResult(
-            name="build_post_market_recap",
-            trade_date=trade_date.isoformat(),
-            affected_rows=affected,
-            status="ok",
-            batch_id=batch_id,
-            trace_id=trace_id,
-            metrics={
-                "strong_watch_input_count": len(strong_watch_history),
-                "strong_watch_promoted_count": len(existing_d1_candidate_rows),
-                "strong_watch_history_count": strong_watch_history_count,
-                "strong_stock_reviews_count": strong_stock_reviews_count,
-                "strong_watch_history_written": history_written,
-                "strong_watch_shadow_universe_formal_count": int(shadow_summary.get("universe_formal_count") or 0),
-                "strong_watch_shadow_universe_observe_count": int(shadow_summary.get("universe_observe_count") or 0),
-                "strong_watch_shadow_universe_blocked_count": int(shadow_summary.get("universe_blocked_count") or 0),
-                "strong_watch_shadow_admission_formal_count": int(shadow_summary.get("admission_formal_count") or 0),
-                "strong_watch_shadow_admission_observe_count": int(shadow_summary.get("admission_observe_count") or 0),
-                "strong_watch_shadow_admission_reject_count": int(shadow_summary.get("admission_reject_count") or 0),
-                "strong_watch_shadow_admission_pass_4of3_fail_count": int(
-                    shadow_summary.get("admission_pass_4of3_fail_count") or 0
-                ),
-                "strong_watch_shadow_admission_hard_reject_count": int(
-                    shadow_summary.get("admission_hard_reject_count") or 0
-                ),
-                "theme_review_count": len(recap_doc.get("theme_reviews") or []),
-                "theme_review_snapshot_status": _coverage.get("snapshot_status"),
-                "theme_review_cycle_joined_count": _coverage.get("cycle_joined_count"),
-                "layer_c_input_mode": layer_c_input_mode,
-                "legacy_watch_input_count": legacy_watch_input_count,
-                "candidate_count": len(candidates),
-                "candidate_count_formal": len(formal_candidates),
-                "candidate_count_observe": len(observe_candidates),
-                "observe_candidates_count": len(candidate_service_observe_candidates),
-                "skip_prereqs": bool(skip_prereqs),
-            },
-            published_events=["snapshot_built"],
-            cache_writes=3 if self._cache_port is not None else 0,
-        )
+                "batch_id": batch_id,
+                "trace_id": trace_id,
+                "error_type": type(exc).__name__,
+                "error_message": str(exc),
+            }
+            await self._mark_job_status(
+                trade_date,
+                "post_market_recap_generate",
+                "failed",
+                error_code=type(exc).__name__,
+                diagnostics=diagnostics,
+            )
+            mark_failed = getattr(self._idempotency_port, "mark_job_failed", None)
+            if callable(mark_failed):
+                try:
+                    await mark_failed(job_key, diagnostics)
+                except Exception:
+                    pass
+            release = getattr(self._idempotency_port, "release_job_idempotency", None)
+            if callable(release):
+                try:
+                    await release(job_key)
+                except Exception:
+                    pass
+            logger.exception(
+                "build_post_market_recap failed",
+                extra={
+                    "trade_date": trade_date.isoformat(),
+                    "snapshot_version": snapshot_version,
+                    "batch_id": batch_id,
+                    "trace_id": trace_id,
+                },
+            )
+            raise
 
     @staticmethod
     def _build_d1_input_rows(
@@ -1585,6 +1723,45 @@ class BuildPostMarketRecapJob:
         service = PostMarketReadinessService(pool=pool)
         result = await service.check(trade_date)
         return result.to_dict()
+
+    async def _load_post_market_report_context(self, trade_date: date) -> dict[str, Any]:
+        """Load the authoritative post-market report context or fail loudly.
+
+        The recap pipeline depends on report_context as the contract boundary.
+        Silent fallback here would produce a success-marked snapshot with empty
+        market / evidence sections, which is exactly the regression we are
+        guarding against.
+        """
+        report_context_fn = getattr(self._read_port, "get_post_market_report_context", None)
+        if not callable(report_context_fn):
+            raise RuntimeError("REPORT_CONTEXT_READER_MISSING")
+
+        try:
+            report_context = await report_context_fn(trade_date=trade_date)
+        except TypeError:
+            try:
+                report_context = await report_context_fn(trade_date, None, None)
+            except Exception as exc:
+                detail = str(exc) or exc.__class__.__name__
+                raise RuntimeError(f"REPORT_CONTEXT_BUILD_FAILED: {detail}") from exc
+        except Exception as exc:
+            detail = str(exc) or exc.__class__.__name__
+            raise RuntimeError(f"REPORT_CONTEXT_BUILD_FAILED: {detail}") from exc
+
+        if not isinstance(report_context, dict) or not report_context:
+            raise RuntimeError("REPORT_CONTEXT_EMPTY")
+
+        market = report_context.get("market")
+        if not isinstance(market, dict) or not market:
+            raise RuntimeError("REPORT_CONTEXT_MARKET_MISSING")
+        if market.get("limit_up_count") in (None, ""):
+            raise RuntimeError("REPORT_CONTEXT_MARKET_LIMIT_UP_COUNT_MISSING")
+
+        stock_facts = report_context.get("stock_facts")
+        if not isinstance(stock_facts, list) or not stock_facts:
+            raise RuntimeError("REPORT_CONTEXT_STOCK_FACTS_MISSING")
+
+        return report_context
 
     @staticmethod
     async def _build_theme_context_map(

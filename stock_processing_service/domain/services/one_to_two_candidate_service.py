@@ -110,13 +110,21 @@ class OneToTwoCandidateService:
             # exclude non-mainline, non-hotspot subjects.
             if not is_confirmed and not is_strong_hotspot:
                 continue
+            # Design doc §22.2: __independent__ is a Layer C independent 2-board
+            # observation path, not a theme hotspot. It must not enter OneToTwo.
+            if subject_key == "__independent__":
+                continue
             lifecycle_row = ctx.lifecycle_by_subject.get(subject_key, {})
             board_row = ctx.subject_market_breadth.get(subject_key, {})
             pressure_row = ctx.pressure_by_stock.get(stock_id, {})
             ma_row = ctx.ma_pattern_by_stock.get(stock_id, {})
             stock_subject_authenticity = dict(stock_subject_authenticity_by_pair.get(pair_key, {}) or {})
             subject_authenticity = stock_subject_authenticity or dict(subject_authenticity_by_subject.get(subject_key, {}) or {})
-            kline_pattern_quality = dict(kline_pattern_quality_by_stock.get(stock_id, {}) or {})
+            kline_pattern_quality = dict(
+                kline_pattern_quality_by_stock.get(stock_id)
+                or kline_pattern_quality_by_stock.get(stock_key)
+                or {}
+            )
 
             first_limit_time = self._text(
                 bar.get("first_limit_time")
@@ -151,7 +159,8 @@ class OneToTwoCandidateService:
                 stock_name=self._text(bar.get("stock_name") or current_subject_row.get("stock_name") or stock_id),
                 subject_key=subject_key,
                 subject_name=self._text(
-                    current_subject_row.get("subject_name")
+                    ctx.subject_name_map.get(subject_key, "")
+                    or current_subject_row.get("subject_name")
                     or current_subject_row.get("theme_name")
                     or subject_key
                 ),
@@ -234,6 +243,8 @@ class OneToTwoCandidateService:
                     "has_current_bar": True,
                     "has_subject_mapping": True,
                     "has_breadth": bool(board_row),
+                    "breadth_missing": not bool(board_row),
+                    "breadth_source": "subject_board_stats",
                     "has_lifecycle": bool(lifecycle_row),
                     "has_market_regime": bool(ctx.market_regime),
                 },
@@ -291,6 +302,7 @@ class OneToTwoCandidateService:
                         },
                         "selection_reason": selected_reason,
                     },
+                    "technical_trace": self._technical_trace(kline_pattern_quality),
                 },
             )
             candidates.append(features)
@@ -308,10 +320,13 @@ class OneToTwoCandidateService:
         missing: list[str] = []
         if self._decimal_or_none(bar.get("amount")) is None and self._decimal_or_none(current_subject_row.get("amount")) is None:
             missing.append("amount")
-        if not board_row:
-            missing.append("board_breadth")
-        if not lifecycle_row:
-            missing.append("lifecycle")
+        # board_breadth is an optional source per architecture §8.2;
+        # missing it should NOT trigger the early "required fields missing"
+        # rejection. The RuleEngine will naturally apply "无板块合力"
+        # veto when same_subject_limit_count is None/0.
+        # lifecycle is also non-fatal: missing → lifecycle_state defaults to
+        # "unknown" which won't trigger lifecycle-based vetoes. The
+        # RuleEngine still evaluates all other criteria.
         return missing
 
     def _choose_subject_row(
@@ -418,6 +433,29 @@ class OneToTwoCandidateService:
     @staticmethod
     def _subject_key(value: Any) -> str:
         return str(value or "").strip()
+
+    @staticmethod
+    def _technical_trace(kline: dict[str, Any]) -> dict[str, Any]:
+        return {
+            "decision_effect": "used_by_technical_gate",
+            "kline_data_ready": kline.get("kline_data_ready"),
+            "history_bar_count": kline.get("history_bar_count"),
+            "has_golden_spider": kline.get("has_golden_spider"),
+            "kline_score": kline.get("score"),
+            "level": kline.get("level"),
+            "technical_reason": kline.get("technical_reason"),
+            "above_ma5": kline.get("above_ma5"),
+            "above_ma10": kline.get("above_ma10"),
+            "above_ma20": kline.get("above_ma20"),
+            "kline_trend_state": kline.get("kline_trend_state"),
+            "kline_is_downtrend": kline.get("is_downtrend"),
+            "kline_near_resistance": kline.get("kline_near_resistance"),
+            "kline_near_support": kline.get("kline_near_support"),
+            "support_broken": kline.get("support_broken"),
+            "shadow_near_pressure": bool(kline.get("kline_near_resistance")),
+            "shadow_is_downtrend": bool(kline.get("is_downtrend")),
+            "pattern_reasons": list(kline.get("pattern_reasons") or []),
+        }
 
     def _stock_id(self, row: dict[str, Any]) -> str:
         raw = self._text(row.get("stock_id") or row.get("stock_code") or row.get("code") or "")

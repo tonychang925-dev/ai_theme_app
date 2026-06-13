@@ -91,8 +91,19 @@ export function CollectionPage() {
   const logPanelRef = useRef<HTMLDivElement | null>(null);
 
   const [options, setOptions] = useState({
-    jyhf: true,
+    stockSnapshot: {
+      enabled: true,
+      provider: "jyhf" as "jyhf" | "tushare_join",
+      onExisting: "skip" as "skip" | "upsert" | "replace",
+    },
+    subjectRank: {
+      enabled: false,
+      provider: "jyhf" as "jyhf" | "snapshot_agg",
+      onExisting: "skip" as "skip" | "upsert" | "replace",
+    },
+    tushareDailyBasic: false,
     tushareKline: true,
+    auction: false,
     dragonTiger: true,
     indexKline: true,
   });
@@ -194,9 +205,24 @@ export function CollectionPage() {
       const payload = await startCollection({
         trade_date: tradeDate,
         options: {
-          jyhf: options.jyhf,
+          stock_snapshot: options.stockSnapshot.enabled
+            ? {
+                provider: options.stockSnapshot.provider,
+                on_existing: options.stockSnapshot.onExisting,
+                force: false,
+              }
+            : false,
+          subject_rank: options.subjectRank.enabled
+            ? {
+                provider: options.subjectRank.provider,
+                on_existing: options.subjectRank.onExisting,
+                force: false,
+              }
+            : false,
           jyhf_history: false,
+          tushare_daily_basic: options.tushareDailyBasic,
           tushare_kline: options.tushareKline,
+          auction: options.auction,
           dragon_tiger: options.dragonTiger,
           index_kline: options.indexKline,
           auto_build_v2_if_missing: false,
@@ -311,22 +337,257 @@ export function CollectionPage() {
 
           <div className="collection-section">
             <strong>数据源</strong>
+
+            {/* ── Tushare daily_basic 换手率采集 ── */}
             <label className="collection-check">
               <input
                 type="checkbox"
-                checked={options.jyhf}
-                onChange={() => setOptions((s) => ({ ...s, jyhf: !s.jyhf }))}
+                checked={options.tushareDailyBasic}
+                onChange={() => setOptions((s) => ({ ...s, tushareDailyBasic: !s.tushareDailyBasic }))}
               />
-              <span>股票快照</span>
+              <span>Tushare daily_basic 换手率采集</span>
             </label>
+
+            {/* ── Tushare 日K线（基础数据层，必须最先执行）── */}
             <label className="collection-check">
               <input
                 type="checkbox"
                 checked={options.tushareKline}
                 onChange={() => setOptions((s) => ({ ...s, tushareKline: !s.tushareKline }))}
               />
-              <span>Tushare 日K线（含盘前竞价采集）</span>
+              <span>Tushare 日K线</span>
             </label>
+
+            {/* ── 盘前竞价采集（可选增强链路）── */}
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.auction}
+                onChange={() => setOptions((s) => ({ ...s, auction: !s.auction }))}
+              />
+              <span>盘前竞价采集</span>
+            </label>
+
+            {/* ── 股票快照（可插拔数据源）── */}
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.stockSnapshot.enabled}
+                onChange={() =>
+                  setOptions((s) => ({
+                    ...s,
+                    stockSnapshot: { ...s.stockSnapshot, enabled: !s.stockSnapshot.enabled },
+                  }))
+                }
+              />
+              <span>股票快照</span>
+            </label>
+
+            {options.stockSnapshot.enabled && (
+              <div className="collection-sub-group">
+                {/* 第一层：数据源选择 */}
+                <div className="collection-radio-group">
+                  <span className="collection-sub-label">股票快照数据源</span>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="snapshot-provider"
+                      value="jyhf"
+                      checked={options.stockSnapshot.provider === "jyhf"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          stockSnapshot: { ...s.stockSnapshot, provider: "jyhf" },
+                        }))
+                      }
+                    />
+                    <span>久赢恒丰 API（默认）</span>
+                  </label>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="snapshot-provider"
+                      value="tushare_join"
+                      checked={options.stockSnapshot.provider === "tushare_join"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          stockSnapshot: { ...s.stockSnapshot, provider: "tushare_join" },
+                        }))
+                      }
+                    />
+                    <span>Tushare 日K拼接</span>
+                  </label>
+                </div>
+
+                {options.stockSnapshot.provider === "tushare_join" && (
+                  <p className="collection-hint">
+                    Tushare 拼接模式要求当日 stock_daily_snapshot 已存在。
+                    如果不存在，请先执行 Tushare 日K线采集，或在后端启用 auto_run_daily_bar。
+                  </p>
+                )}
+
+                {/* 第二层：已有数据处理策略 */}
+                <div className="collection-radio-group">
+                  <span className="collection-sub-label">重建策略</span>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="snapshot-on-existing"
+                      value="skip"
+                      checked={options.stockSnapshot.onExisting === "skip"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          stockSnapshot: { ...s.stockSnapshot, onExisting: "skip" },
+                        }))
+                      }
+                    />
+                    <span>跳过已有数据（默认）</span>
+                  </label>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="snapshot-on-existing"
+                      value="upsert"
+                      checked={options.stockSnapshot.onExisting === "upsert"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          stockSnapshot: { ...s.stockSnapshot, onExisting: "upsert" },
+                        }))
+                      }
+                    />
+                    <span>覆盖已有行</span>
+                  </label>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="snapshot-on-existing"
+                      value="replace"
+                      checked={options.stockSnapshot.onExisting === "replace"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          stockSnapshot: { ...s.stockSnapshot, onExisting: "replace" },
+                        }))
+                      }
+                    />
+                    <span>删除后重建</span>
+                  </label>
+                </div>
+              </div>
+            )}
+
+            {/* ── 题材热度排名（可插拔数据源）── */}
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.subjectRank.enabled}
+                onChange={() =>
+                  setOptions((s) => ({
+                    ...s,
+                    subjectRank: { ...s.subjectRank, enabled: !s.subjectRank.enabled },
+                  }))
+                }
+              />
+              <span>题材热度排名</span>
+            </label>
+
+            {options.subjectRank.enabled && (
+              <div className="collection-sub-group">
+                <div className="collection-radio-group">
+                  <span className="collection-sub-label">热度排名数据源</span>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="rank-provider"
+                      value="jyhf"
+                      checked={options.subjectRank.provider === "jyhf"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          subjectRank: { ...s.subjectRank, provider: "jyhf" },
+                        }))
+                      }
+                    />
+                    <span>久赢恒丰 API（默认）</span>
+                  </label>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="rank-provider"
+                      value="snapshot_agg"
+                      checked={options.subjectRank.provider === "snapshot_agg"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          subjectRank: { ...s.subjectRank, provider: "snapshot_agg" },
+                        }))
+                      }
+                    />
+                    <span>快照聚合（从 subject_stock_daily_snapshot）</span>
+                  </label>
+                </div>
+
+                {options.subjectRank.provider === "snapshot_agg" && (
+                  <p className="collection-hint">
+                    快照聚合模式要求当日 subject_stock_daily_snapshot 已存在。
+                    请确保股票快照任务已先执行。
+                  </p>
+                )}
+
+                <div className="collection-radio-group">
+                  <span className="collection-sub-label">重建策略</span>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="rank-on-existing"
+                      value="skip"
+                      checked={options.subjectRank.onExisting === "skip"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          subjectRank: { ...s.subjectRank, onExisting: "skip" },
+                        }))
+                      }
+                    />
+                    <span>跳过已有数据（默认）</span>
+                  </label>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="rank-on-existing"
+                      value="upsert"
+                      checked={options.subjectRank.onExisting === "upsert"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          subjectRank: { ...s.subjectRank, onExisting: "upsert" },
+                        }))
+                      }
+                    />
+                    <span>覆盖已有行</span>
+                  </label>
+                  <label className="collection-radio">
+                    <input
+                      type="radio"
+                      name="rank-on-existing"
+                      value="replace"
+                      checked={options.subjectRank.onExisting === "replace"}
+                      onChange={() =>
+                        setOptions((s) => ({
+                          ...s,
+                          subjectRank: { ...s.subjectRank, onExisting: "replace" },
+                        }))
+                      }
+                    />
+                    <span>删除后重建</span>
+                  </label>
+                </div>
+              </div>
+            )}
+
             <label className="collection-check">
               <input
                 type="checkbox"

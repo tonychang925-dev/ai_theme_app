@@ -638,15 +638,22 @@ class RealTimeNewsCollector:
         try:
             from news_crawler_service.services.news_crawler_service import get_news_crawler_service
             crawler_service = get_news_crawler_service()
-            raw = await crawler_service.crawl_news_auto(count=10, prefer_real=True)
+            raw = await asyncio.wait_for(
+                crawler_service.crawl_news_auto(count=10, prefer_real=True),
+                timeout=45,
+            )
             if raw.get("status") == "success":
                 cls_items = raw.get("response", {}).get("news_list", [])
                 for item in cls_items:
                     item["source_channel"] = "cls"
                 results.extend(cls_items)
                 logger.debug("CLS fetch: %d items", len(cls_items))
-            else:
+            elif raw.get("error"):
                 logger.warning("CLS fetch failed: %s", raw.get("error", "unknown"))
+            else:
+                logger.warning("CLS fetch failed: unknown response")
+        except asyncio.TimeoutError:
+            logger.warning("CLS fetch timeout after 45s")
         except ImportError:
             logger.debug("news_crawler_service not available, skipping CLS")
         except Exception as exc:

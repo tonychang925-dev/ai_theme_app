@@ -11,6 +11,7 @@ import D1NarrativePanel from "./D1NarrativePanel";
 import EvidenceLayerPanel from "./EvidenceLayerPanel";
 import RecapDataQualityBar from "./RecapDataQualityBar";
 import D1NextDayWatchPanel from "./D1NextDayWatchPanel";
+import OneToTwoWatchPanel from "./OneToTwoWatchPanel";
 
 interface Props {
   dailyReviewV2: PostMarketDailyReviewV2;
@@ -77,9 +78,13 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate, onShowL
         <section className="workspace-card recap-engine-group">
           <h3 className="section-title recap-panel-title">强股与证据</h3>
           <div className="recap-engine-group-stack">
-            <LayerCStrongPoolPanel review={review} />
+            <LayerCStrongPoolPanel review={review} tradeDate={tradeDate} />
             <EvidenceLayerPanel evidenceLayerReview={dailyReviewV2.evidence_layer_review ?? null} />
           </div>
+        </section>
+
+        <section className="workspace-card recap-engine-group">
+          <OneToTwoWatchPanel dailyReviewV2={dailyReviewV2} tradeDate={tradeDate} />
         </section>
       </div>
       <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 8 }}>

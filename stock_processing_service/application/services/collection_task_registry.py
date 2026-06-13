@@ -115,9 +115,14 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         PostMarketRecapRunner,
         ProcessIsolatedRunner,
         ScriptCommandRunner,
+        StockSnapshotBuildRunner,
+        SubjectRankBuildRunner,
         TushareKlineRunner,
+        TushareDailyBasicRunner,
     )
     registry.register("script.default", ScriptCommandRunner())
+    registry.register("stock_snapshot.build", StockSnapshotBuildRunner())
+    registry.register("subject_rank.build", SubjectRankBuildRunner())
     registry.register("stock.kline_judgements", BuildStockKlineJudgementsRunner())
     registry.register("leader_llm.queue", BuildLeaderLLMQueueRunner())
     registry.register("leader_llm.judgement", BuildLeaderLLMJudgementRunner())
@@ -143,6 +148,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     registry.register("abnormal.signal", BuildStockAbnormalSignalRunner())
     registry.register("dragon_tiger.object", BuildDragonTigerObjectRunner())
     registry.register("index_kline.collect", IndexKlineCollectRunner())
+    registry.register("tushare.daily_basic", TushareDailyBasicRunner())
     registry.register("tushare.daily_bar", TushareKlineRunner())
     registry.register("auction.watch_universe", AuctionWatchUniverseRunner())
     registry.register("auction.snapshot_all", AuctionSnapshotRunner(universe_source="auction_watch_universe"))

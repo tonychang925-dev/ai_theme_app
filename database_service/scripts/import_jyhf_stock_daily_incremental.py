@@ -121,6 +121,8 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
     CREATE INDEX IF NOT EXISTS idx_ssds_trade_date ON subject_stock_daily_snapshot(trade_date DESC);
     CREATE INDEX IF NOT EXISTS idx_ssds_subject_date ON subject_stock_daily_snapshot(subject_key, trade_date DESC);
     CREATE INDEX IF NOT EXISTS idx_ssds_stock_date ON subject_stock_daily_snapshot(stock_id, trade_date DESC);
+    CREATE INDEX IF NOT EXISTS idx_ssds_trade_subject_stockcode
+        ON subject_stock_daily_snapshot (trade_date, subject_key, (split_part(stock_id, '.', 1)));
     """
     async with manager.pool.acquire() as conn:
         await conn.execute(ddl)

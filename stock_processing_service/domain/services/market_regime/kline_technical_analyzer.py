@@ -190,11 +190,16 @@ class KlineTechnicalAnalyzer:
         elif not above_ma20 and ma20_slope == "down":
             state = "bearish_trend"
             score = min(score, 35)
+        elif above_ma20 and ma20_slope == "down":
+            # MA20 declining while price still above — weakening / potential breakdown
+            state = "weakening_trend"
+            score = min(score, 42)
         else:
             state = "neutral_box"
 
         flags = []
         if not above_ma20: flags.append("指数在MA20下方")
+        if ma20_slope == "down": flags.append("MA20下行")
         if ratio5 < 0.85 and not above_ma20: flags.append("缩量反抽")
         if near_r: flags.append("接近压力位")
         if near_s: flags.append("接近支撑位")

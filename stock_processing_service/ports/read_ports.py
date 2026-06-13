@@ -117,6 +117,10 @@ class StockReadPort(Protocol):
         self, trade_date: date
     ) -> list[dict[str, Any]]: ...
 
+    async def get_stock_abnormal_signals(
+        self, trade_date: date
+    ) -> list[dict[str, Any]]: ...
+
     async def get_subject_board_stats(
         self, trade_date: date
     ) -> list[dict[str, Any]]: ...

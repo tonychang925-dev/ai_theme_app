@@ -41,6 +41,10 @@ class TushareAdapter:
     def fetch_daily_quotes(self, trade_date: str, ts_codes: Optional[Iterable[str]] = None):
         return self._fetch_batched("daily", trade_date.replace("-", ""), ts_codes)
 
+    def fetch_daily_basic(self, trade_date: str, ts_codes: Optional[Iterable[str]] = None):
+        """Fetch daily_basic (turnover_rate, float_share, etc.) from Tushare."""
+        return self._fetch_batched("daily_basic", trade_date.replace("-", ""), ts_codes)
+
     def fetch_limit_list(self, trade_date: str, ts_codes: Optional[Iterable[str]] = None):
         return self._query("limit_list_d", trade_date=trade_date.replace("-", ""))
 

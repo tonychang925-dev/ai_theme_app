@@ -34,6 +34,51 @@ from stock_processing_service.domain.services.w2s_candidate_service import W2SCa
 # ── Fake Read Port (with new Layer C gateway methods) ──
 
 class _FakeReadPort:
+    class _FakeConn:
+        async def fetchval(self, sql: str, trade_date: date):
+            if "FROM stock_daily_basic_snapshot" in sql:
+                return 1
+            return 0
+
+        async def fetch(self, sql: str, trade_date: date):
+            if "FROM stock_abnormal_signal" in sql:
+                return [
+                    {
+                        "stock_id": "002000.SZ",
+                        "stock_name": "SampleA",
+                        "subject_key": "ai_chip",
+                        "turnover_rate": 12.3,
+                        "abnormal_composite_score": 88.0,
+                        "abnormal_labels": ["涨停"],
+                        "conclusion": "放量涨停",
+                        "volume_ratio_to_ma50": 3.2,
+                        "main_net_inflow": 12000000.0,
+                    }
+                ]
+            if "FROM stock_daily_basic_snapshot" in sql:
+                return [{"stock_id": "002000.SZ", "turnover_rate": 12.3}]
+            return []
+
+    class _FakeAcquireCtx:
+        def __init__(self, conn: "_FakeReadPort._FakeConn") -> None:
+            self._conn = conn
+
+        async def __aenter__(self) -> "_FakeReadPort._FakeConn":
+            return self._conn
+
+        async def __aexit__(self, exc_type, exc, tb) -> None:
+            return None
+
+    class _FakePool:
+        def __init__(self) -> None:
+            self._conn = _FakeReadPort._FakeConn()
+
+        def acquire(self) -> "_FakeReadPort._FakeAcquireCtx":
+            return _FakeReadPort._FakeAcquireCtx(self._conn)
+
+    def __init__(self) -> None:
+        self._pool = self._FakePool()
+
     async def get_trade_calendar(self, trade_date: date):
         return TradeCalendarDTO(
             trade_date=trade_date,
@@ -172,6 +217,114 @@ class _FakeReadPort:
 
     async def get_existing_post_market_recap_snapshot(self, trade_date: date):
         return None
+
+    async def get_post_market_report_context(
+        self,
+        trade_date: date,
+        subject_keys: list[str] | None = None,
+        stock_ids: list[str] | None = None,
+    ) -> dict[str, Any]:
+        return {
+            "trade_date": trade_date.isoformat(),
+            "theme_name_map": {"ai_chip": "AI Chip"},
+            "market": {
+                "trade_date": trade_date.isoformat(),
+                "stock_count": 1,
+                "up_count": 1,
+                "down_count": 0,
+                "limit_up_count": 1,
+                "limit_down_count": 0,
+                "market_total_amount": 123456789.0,
+                "market_health_score": 76.5,
+                "market_bias": "进攻",
+                "action_bias": "主做主线",
+                "breadth_status": "上涨家数占优",
+                "short_term_sentiment_status": "短线情绪强",
+                "relay_sentiment_status": "接力生态活跃",
+                "intraday_fade_status": "未见明显退潮",
+            },
+            "cycles": [
+                {
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "final_cycle_state": "repair",
+                    "final_mainline_alive": True,
+                    "mainline_strength_score": 72.0,
+                    "fade_risk_score": 18.0,
+                }
+            ],
+            "stock_facts": [
+                {
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "stock_id": "002000.SZ",
+                    "stock_name": "SampleA",
+                    "rank_order": 1,
+                    "pct_chg": 10.0,
+                    "amount": 350000.0,
+                    "limit_up": True,
+                    "is_leader": True,
+                    "main_net_inflow": 12000000.0,
+                    "leader_composite_score": 85.0,
+                    "leader_capital_score": 60.0,
+                    "position_label": "突破前高",
+                    "pattern_labels": ["高量不破"],
+                    "money_flow_tier": "强势",
+                }
+            ],
+            "theme_capital_flow": [
+                {
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "mainline_strength_score": 72.0,
+                    "fade_risk_score": 18.0,
+                    "main_net_inflow_sum": 12000000.0,
+                    "leader_main_net_inflow": 5200000.0,
+                    "positive_inflow_stock_count": 1,
+                    "final_cycle_state": "repair",
+                    "capital_focus_score": 82.0,
+                }
+            ],
+            "money_flow": [
+                {
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "stock_id": "002000.SZ",
+                    "stock_name": "SampleA",
+                    "main_net_inflow": 12000000.0,
+                    "money_flow_tier": "强势",
+                    "role_enhanced": "主线核心",
+                    "conclusion": "资金延续流入",
+                    "position_label": "突破前高",
+                    "pattern_labels": ["高量不破"],
+                }
+            ],
+            "abnormal_signals": [
+                {
+                    "stock_id": "002000.SZ",
+                    "stock_name": "SampleA",
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "abnormal_composite_score": 88.0,
+                    "abnormal_labels": ["涨停"],
+                    "conclusion": "放量涨停",
+                    "turnover_rate": 12.3,
+                    "volume_ratio_to_ma50": 3.2,
+                    "main_net_inflow": 12000000.0,
+                }
+            ],
+            "dragon_tiger": [
+                {
+                    "stock_id": "002000.SZ",
+                    "stock_name": "SampleA",
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "net_amount": 12000000.0,
+                    "hot_money_name": "测试席位",
+                    "reason": "龙虎榜确认",
+                }
+            ],
+        }
 
     async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date):
         return [
@@ -388,6 +541,53 @@ def test_build_post_market_recap_job_strong_watch_pool_flow() -> None:
             trace_id="tpm2",
         )
         assert skipped.status == "skipped_idempotent"
+
+    asyncio.run(_run())
+
+
+def test_build_post_market_recap_job_fails_loud_when_report_context_empty_tc_pm_001() -> None:
+    """TC-PM-001: empty report_context must fail loud instead of writing zeroed recap."""
+
+    class _EmptyReportContextReadPort(_FakeReadPort):
+        async def get_post_market_report_context(
+            self,
+            trade_date: date,
+            subject_keys: list[str] | None = None,
+            stock_ids: list[str] | None = None,
+        ) -> dict[str, Any]:
+            return {}
+
+    async def _run() -> None:
+        read_port = _EmptyReportContextReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=event_port,
+            idempotency_port=idempotency_port,
+            cache_port=cache_port,
+        )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+
+        try:
+            await job.execute(
+                trade_date=date(2026, 4, 23),
+                snapshot_version="pm-empty-report-context",
+                batch_id="bpm-empty-report-context",
+                trace_id="tpm-empty-report-context",
+            )
+        except RuntimeError as exc:
+            assert "REPORT_CONTEXT_EMPTY" in str(exc)
+        else:
+            raise AssertionError("expected empty report_context to raise RuntimeError")
+
+        assert write_port.recap_docs == []
 
     asyncio.run(_run())
 
@@ -1516,3 +1716,301 @@ def test_theme_lines_missing_cycle_falls_back_to_other_sources():
     assert d0["cycle_found"] is False
     assert d0["event_score_source"] == "capital"
     assert d0["market_score_source"] == "capital"
+
+
+# ── R1: Top-level exception protection ──
+
+
+def test_r1_exception_marks_job_failed() -> None:
+    """execute mid-flight exception → _mark_job_status called with 'failed'."""
+
+    call_args: list[dict[str, Any]] = []
+
+    class _FailingWritePort(_FakeWritePort):
+        async def upsert_post_market_setup_plan_rows(self, rows):
+            raise RuntimeError("simulated setup_plan write failure")
+
+    async def _run() -> None:
+        read_port = _FakeReadPort()
+        write_port = _FailingWritePort()
+        idempotency_port = _FakeIdempotencyPort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=_FakeEventPort(),
+            idempotency_port=idempotency_port,
+            cache_port=_FakeCachePort(),
+            market_summary_llm_service=None,
+        )
+        # Disable LLM-dependent steps to isolate the persistence failure test
+        job._market_summary_llm_service = None  # type: ignore[assignment]
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+
+        async def _capture_mark_job_status(trade_date_val, job_name, status, error_code=None, diagnostics=None):
+            call_args.append({
+                "trade_date": trade_date_val,
+                "job_name": job_name,
+                "status": status,
+                "error_code": error_code,
+                "diagnostics": diagnostics,
+            })
+
+        job._mark_job_status = _capture_mark_job_status  # type: ignore[method-assign,assignment]
+
+        try:
+            await job.execute(
+                trade_date=date(2026, 4, 23),
+                snapshot_version="pm-r1-test",
+                batch_id="bpm-r1",
+                trace_id="tpm-r1",
+            )
+        except RuntimeError as exc:
+            assert "simulated setup_plan write failure" in str(exc)
+        else:
+            raise AssertionError("expected RuntimeError to propagate")
+
+        # Verify _mark_job_status was called with failed
+        failed_calls = [c for c in call_args if c["status"] == "failed"]
+        assert len(failed_calls) >= 1, f"expected at least one 'failed' call, got: {call_args}"
+        assert failed_calls[0]["job_name"] == "post_market_recap_generate"
+        assert failed_calls[0]["error_code"] == "RuntimeError"
+
+        # Verify no snapshot was written AFTER the failure point
+        # (Note: _run_mainline_lifecycle may have written a partial snapshot before OneToTwo;
+        #  the important thing is the job status reflects the failure)
+        assert failed_calls[0]["job_name"] == "post_market_recap_generate"
+        assert failed_calls[0]["error_code"] == "RuntimeError"
+
+        # Diagnostics must contain trace identifiers
+        diag = failed_calls[0]["diagnostics"]
+        assert diag["snapshot_version"] == "pm-r1-test"
+        assert diag["trace_id"] == "tpm-r1"
+        assert diag["batch_id"] == "bpm-r1"
+        assert diag["error_type"] == "RuntimeError"
+        assert "simulated setup_plan write failure" in diag["error_message"]
+
+    asyncio.run(_run())
+
+
+def test_r1_exception_diagnostics_contain_trace_ids() -> None:
+    """Exception diagnostics include snapshot_version, trace_id, error_type."""
+
+    call_args: list[dict[str, Any]] = []
+
+    class _FailingWritePort(_FakeWritePort):
+        async def upsert_one_to_two_candidate_feature_rows(self, rows):
+            raise ValueError("simulated feature write failure")
+
+    async def _run() -> None:
+        read_port = _FakeReadPort()
+        write_port = _FailingWritePort()
+        idempotency_port = _FakeIdempotencyPort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=_FakeEventPort(),
+            idempotency_port=idempotency_port,
+            cache_port=_FakeCachePort(),
+            market_summary_llm_service=None,
+        )
+        job._market_summary_llm_service = None  # type: ignore[assignment]
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+
+        async def _capture(trade_date_val, job_name, status, error_code=None, diagnostics=None):
+            call_args.append({
+                "trade_date": trade_date_val,
+                "job_name": job_name,
+                "status": status,
+                "error_code": error_code,
+                "diagnostics": diagnostics,
+            })
+
+        job._mark_job_status = _capture  # type: ignore[method-assign,assignment]
+
+        try:
+            await job.execute(
+                trade_date=date(2026, 5, 15),
+                snapshot_version="pm-r1-diag",
+                batch_id="b-r1-diag",
+                trace_id="t-r1-diag",
+            )
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("expected ValueError")
+
+        failed = [c for c in call_args if c["status"] == "failed"]
+        assert len(failed) == 1, f"expected exactly one failed call, got: {call_args}"
+        d = failed[0]["diagnostics"]
+        assert d["snapshot_version"] == "pm-r1-diag"
+        assert d["batch_id"] == "b-r1-diag"
+        assert d["trace_id"] == "t-r1-diag"
+        assert d["error_type"] == "ValueError"
+        assert "simulated feature write failure" in d["error_message"]
+
+    asyncio.run(_run())
+
+
+def test_r1_readiness_failed_precondition_unchanged() -> None:
+    """readiness failed_precondition path still returns BuildResult, not exception."""
+
+    async def _run() -> None:
+        read_port = _FakeReadPort()
+        write_port = _FakeWritePort()
+        idempotency_port = _FakeIdempotencyPort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=_FakeEventPort(),
+            idempotency_port=idempotency_port,
+            cache_port=_FakeCachePort(),
+        )
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "not_ready", "missing_tables": ["subject_stock_daily_snapshot"]}
+        )
+
+        result = await job.execute(
+            trade_date=date(2026, 4, 23),
+            snapshot_version="pm-r1-readiness",
+            batch_id="bpm-readiness",
+            trace_id="tpm-readiness",
+        )
+
+        assert result.status == "failed_precondition"
+        assert result.affected_rows == 0
+        assert "POST_MARKET_DERIVED_DATA_NOT_READY" in str(result.warnings)
+        assert write_port.recap_docs == []
+
+    asyncio.run(_run())
+
+
+def test_r1_success_path_still_marks_completed() -> None:
+    """Success path marks job completed and writes snapshot."""
+
+    call_args: list[dict[str, Any]] = []
+
+    async def _run() -> None:
+        read_port = _FakeReadPort()
+        write_port = _FakeWritePort()
+        idempotency_port = _FakeIdempotencyPort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=_FakeEventPort(),
+            idempotency_port=idempotency_port,
+            cache_port=_FakeCachePort(),
+            market_summary_llm_service=None,
+        )
+        job._market_summary_llm_service = None  # type: ignore[assignment]
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+
+        async def _capture(trade_date_val, job_name, status, error_code=None, diagnostics=None):
+            call_args.append({
+                "trade_date": trade_date_val,
+                "job_name": job_name,
+                "status": status,
+                "error_code": error_code,
+                "diagnostics": diagnostics,
+            })
+
+        job._mark_job_status = _capture  # type: ignore[method-assign,assignment]
+
+        result = await job.execute(
+            trade_date=date(2026, 4, 23),
+            snapshot_version="pm-r1-success",
+            batch_id="bpm-success",
+            trace_id="tpm-success",
+        )
+
+        assert result.status == "ok"
+        assert result.affected_rows == 1
+
+        # Verify mark_job_status was called with "success"
+        success_calls = [c for c in call_args if c["status"] == "success"]
+        assert len(success_calls) == 1, f"expected one 'success' call, got: {call_args}"
+        assert success_calls[0]["job_name"] == "post_market_recap_generate"
+
+        # Verify snapshot was written (at least the final one; lifecycle may also write)
+        assert len(write_port.recap_docs) >= 1
+
+        # Verify no "failed" calls
+        failed_calls = [c for c in call_args if c["status"] == "failed"]
+        assert len(failed_calls) == 0, f"unexpected 'failed' calls: {call_args}"
+
+    asyncio.run(_run())
+
+
+def test_r1_oneto_two_persistence_failure_marks_failed_not_running() -> None:
+    """OneToTwo setup plan persist failure → job status is 'failed', not 'running'."""
+
+    call_args: list[dict[str, Any]] = []
+
+    class _FailingSetupPlanWritePort(_FakeWritePort):
+        async def upsert_post_market_setup_plan_rows(self, rows):
+            raise RuntimeError("setup_plan persist failed")
+
+    async def _run() -> None:
+        read_port = _FakeReadPort()
+        write_port = _FailingSetupPlanWritePort()
+        idempotency_port = _FakeIdempotencyPort()
+
+        job = BuildPostMarketRecapJob(
+            read_port=read_port,
+            write_port=write_port,
+            event_port=_FakeEventPort(),
+            idempotency_port=idempotency_port,
+            cache_port=_FakeCachePort(),
+            market_summary_llm_service=None,
+        )
+        job._market_summary_llm_service = None  # type: ignore[assignment]
+        job._check_post_market_readiness = AsyncMock(  # type: ignore[method-assign]
+            return_value={"status": "ready", "missing_tables": []}
+        )
+
+        async def _capture(trade_date_val, job_name, status, error_code=None, diagnostics=None):
+            call_args.append({
+                "trade_date": trade_date_val,
+                "job_name": job_name,
+                "status": status,
+                "error_code": error_code,
+                "diagnostics": diagnostics,
+            })
+
+        job._mark_job_status = _capture  # type: ignore[method-assign,assignment]
+
+        try:
+            await job.execute(
+                trade_date=date(2026, 6, 5),
+                snapshot_version="pm-r1-ot2-fail",
+                batch_id="bpm-ot2-fail",
+                trace_id="tpm-ot2-fail",
+            )
+        except RuntimeError:
+            pass
+        else:
+            raise AssertionError("expected RuntimeError")
+
+        # Order matters: first "running", then "failed"
+        status_sequence = [c["status"] for c in call_args]
+        assert status_sequence[0] == "running", f"first call should be 'running', got: {status_sequence}"
+        assert "failed" in status_sequence, f"expected 'failed' in status sequence: {status_sequence}"
+
+        # After failure, the final status must be "failed" (not "running" stuck)
+        last_status = call_args[-1]["status"]
+        assert last_status == "failed", f"last status should be 'failed', got: {last_status}"
+
+        # Verify exception was logged (the except block executed)
+        failed_call = call_args[-1]
+        assert failed_call["error_code"] == "RuntimeError"
+
+    asyncio.run(_run())

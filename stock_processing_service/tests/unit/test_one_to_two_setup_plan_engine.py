@@ -11,7 +11,7 @@ from stock_processing_service.application.services.one_to_two_setup_plan_engine 
     OneToTwoSetupPlanEngine,
 )
 from stock_processing_service.application.jobs.build_post_market_recap_job import BuildPostMarketRecapJob
-from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoFeatures
+from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoFeatures, RuleResult, ScoreResult
 from stock_processing_service.contracts.dto.post_market_setup_context_dto import (
     PostMarketSetupFactContext,
     SetupFactContextBuildError,
@@ -843,6 +843,15 @@ def _versioned_feature(
         same_subject_strong_count=same_subject_strong_count,
         data_quality={"missing_required": []},
         source_trace={"source": "unit"},
+        kline_pattern_quality={
+            "kline_data_ready": True,
+            "has_golden_spider": True,
+            "score": 75.0,
+            "level": "golden",
+            "support_broken": False,
+            "is_downtrend": False,
+            "kline_near_resistance": False,
+        },
         first_board_type=first_board_type,
         first_board_trace=first_board_trace or {"first_board_type_reason": first_board_type},
         first_board_quality_tags=first_board_quality_tags or ["strict_first_board"],
@@ -992,3 +1001,330 @@ def test_one_to_two_first_board_trace_persisted_to_snapshot_payload() -> None:
     assert result.candidate_features[0]["source_trace_json"]["first_board_type"] == "chain_first_board"
     assert result.candidate_features[0]["source_trace_json"]["first_board_quality_tags"] == ["relaunch_first_board"]
     assert result.candidate_features[0]["source_trace_json"]["first_board_trace"]["previous_trade_date"] == "2026-05-06"
+
+
+# ── Stage 2: score_policy + ranking tests ──
+
+def test_score_policy_final_score_below_80_caps_focus() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    f = _versioned_feature(turnover_rate=Decimal("0.18"), same_subject_limit_count=3, same_subject_strong_count=7)
+    rule = RuleResult(decision="focus", veto_reasons=[], risk_flags=[])
+    score = ScoreResult(final_score=Decimal("72.00"), watch_level="B", score_detail={
+        "technical_structure": "70", "theme_authenticity": "65",
+        "board_breadth": "75", "first_board_quality": "80", "risk_control": "70",
+    })
+    result = engine._apply_score_policy(f, rule, score)
+    assert result.decision == "observe_only"
+    assert any("综合评分" in rf for rf in result.risk_flags)
+
+
+def test_score_policy_technical_structure_below_55_caps_focus() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    f = _versioned_feature(turnover_rate=Decimal("0.18"), same_subject_limit_count=3, same_subject_strong_count=7)
+    rule = RuleResult(decision="focus", veto_reasons=[], risk_flags=[])
+    score = ScoreResult(final_score=Decimal("85.00"), watch_level="A", score_detail={
+        "technical_structure": "48", "theme_authenticity": "90",
+        "board_breadth": "90", "first_board_quality": "90", "risk_control": "90",
+    })
+    result = engine._apply_score_policy(f, rule, score)
+    assert result.decision == "observe_only"
+    assert any("技术形态评分" in rf for rf in result.risk_flags)
+
+
+def test_score_policy_passes_when_both_scores_ok() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    f = _versioned_feature(turnover_rate=Decimal("0.18"), same_subject_limit_count=3, same_subject_strong_count=7)
+    rule = RuleResult(decision="focus", veto_reasons=[], risk_flags=[])
+    score = ScoreResult(final_score=Decimal("86.00"), watch_level="A", score_detail={
+        "technical_structure": "68", "theme_authenticity": "90",
+        "board_breadth": "90", "first_board_quality": "90", "risk_control": "90",
+    })
+    result = engine._apply_score_policy(f, rule, score)
+    assert result.decision == "focus"
+
+
+def test_score_policy_does_not_downgrade_observe_only() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    f = _versioned_feature(turnover_rate=Decimal("0.18"), same_subject_limit_count=3, same_subject_strong_count=7)
+    rule = RuleResult(decision="observe_only", veto_reasons=[], risk_flags=["no_trade"])
+    score = ScoreResult(final_score=Decimal("92.00"), watch_level="A", score_detail={
+        "technical_structure": "80", "theme_authenticity": "90",
+        "board_breadth": "90", "first_board_quality": "90", "risk_control": "90",
+    })
+    result = engine._apply_score_policy(f, rule, score)
+    assert result.decision == "observe_only"
+
+
+def test_ranking_orders_by_score_and_technical() -> None:
+    engine = OneToTwoSetupPlanEngine()
+    engine.candidate_service.build_fact_pool = lambda ctx: [
+        _versioned_feature(turnover_rate=Decimal("0.12"), same_subject_limit_count=5, same_subject_strong_count=8, subject_key="s1"),
+        _versioned_feature(turnover_rate=Decimal("0.09"), same_subject_limit_count=3, same_subject_strong_count=4, subject_key="s2"),
+        _versioned_feature(turnover_rate=Decimal("0.15"), same_subject_limit_count=6, same_subject_strong_count=10, subject_key="s3"),
+    ]
+    result = engine.build_from_context(_setup_context())
+    items = result.items or []
+    assert len(items) >= 1
+    for item in items:
+        assert "rank_no" in item
+        assert "rank_reason" in item
+        assert isinstance(item["rank_no"], int)
+    # All items should be observe_only (score < 80)
+    assert all(item["decision"] == "observe_only" for item in items)
+
+
+# ── P1-B: __independent__ exclusion ──
+
+def test_independent_subject_not_in_one_to_two_candidates() -> None:
+    """CandidateService must skip subject_key='__independent__'."""
+    from stock_processing_service.domain.services.one_to_two_candidate_service import OneToTwoCandidateService
+
+    ctx = PostMarketSetupFactContext(
+        trade_date="2026-06-08",
+        watch_date="2026-06-09",
+        active_mainlines=[],
+        strong_hotspot_subjects=[{"subject_key": "__independent__", "theme_name": "独立龙头"}, {"subject_key": "9018144", "theme_name": "PCB"}],
+        active_subject_keys={"9018144"},
+        lifecycle_by_subject={},
+        market_regime={"trade_mode": "no_trade", "allow_trade": False},
+        trading_principle={"position_limit": 0.0},
+        subject_stock_rows=[
+            {"trade_date": "2026-06-08", "stock_id": "301486.SZ", "stock_name": "致尚科技",
+             "subject_key": "__independent__", "pct_chg": -5.95, "limit_up": False},
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "subject_key": "9018144", "pct_chg": 10.0, "limit_up": True},
+        ],
+        stock_daily_bars=[
+            {"trade_date": "2026-06-08", "stock_id": "301486.SZ", "stock_name": "致尚科技",
+             "close_price": 100, "limit_up_price": 120, "pct_chg": -5.95, "limit_up": False},
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "close_price": 100, "limit_up_price": 90, "pct_chg": 10.0, "limit_up": True},
+        ],
+        limit_up_rows=[
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "is_first_limit_up": True, "pct_chg": 10.0},
+        ],
+        diagnostics=SourceStatus(source_status={"market_regime": "ready"}),
+    )
+
+    service = OneToTwoCandidateService()
+    pool = service.build_fact_pool(ctx)
+
+    subject_keys_in_pool = {f.subject_key for f in pool}
+    assert "__independent__" not in subject_keys_in_pool, (
+        f"__independent__ must not enter OneToTwo candidate pool, got: {subject_keys_in_pool}"
+    )
+    # 诺德股份 should still be in pool (it's in a real subject)
+    assert "9018144" in subject_keys_in_pool
+
+
+def test_independent_subject_not_written_to_plan_items() -> None:
+    """Plan items must not include __independent__ subjects."""
+    from stock_processing_service.domain.services.one_to_two_candidate_service import OneToTwoCandidateService
+    from stock_processing_service.domain.services.one_to_two_rule_engine import OneToTwoRuleEngine
+    from stock_processing_service.domain.services.one_to_two_scorer import OneToTwoScorer
+    from stock_processing_service.domain.services.one_to_two_risk_plan_builder import OneToTwoRiskPlanBuilder
+    from stock_processing_service.domain.services.one_to_two_rule_config import OneToTwoRuleConfig
+
+    engine = OneToTwoSetupPlanEngine()
+    engine.candidate_service = OneToTwoCandidateService()
+    engine.rule_engine = OneToTwoRuleEngine(OneToTwoRuleConfig())
+    engine.scorer = OneToTwoScorer()
+    engine.risk_plan_builder = OneToTwoRiskPlanBuilder()
+
+    ctx = PostMarketSetupFactContext(
+        trade_date="2026-06-08",
+        watch_date="2026-06-09",
+        active_mainlines=[{"canonical_subject_key": "9018144", "mainline_name": "PCB"}],
+        strong_hotspot_subjects=[{"subject_key": "__independent__", "theme_name": "独立龙头"}],
+        active_subject_keys={"9018144"},
+        lifecycle_by_subject={"9018144": {"lifecycle_state": "fermentation"}},
+        market_regime={"trade_mode": "mainline_core_only", "allow_trade": True},
+        trading_principle={"position_limit": 0.2, "allow_trade": True},
+        subject_stock_rows=[
+            {"trade_date": "2026-06-08", "stock_id": "301486.SZ", "stock_name": "致尚科技",
+             "subject_key": "__independent__", "pct_chg": -5.95, "limit_up": False},
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "subject_key": "9018144", "pct_chg": 10.0, "limit_up": True},
+        ],
+        stock_daily_bars=[
+            {"trade_date": "2026-06-08", "stock_id": "301486.SZ", "stock_name": "致尚科技",
+             "close_price": 100, "limit_up_price": 120, "pct_chg": -5.95, "limit_up": False, "turnover_rate": 0.05, "amount": 50000000},
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "close_price": 100, "limit_up_price": 90, "pct_chg": 10.0, "limit_up": True, "turnover_rate": 0.10, "amount": 500000000},
+        ],
+        limit_up_rows=[
+            {"trade_date": "2026-06-08", "stock_id": "600110.SH", "stock_name": "诺德股份",
+             "is_first_limit_up": True, "pct_chg": 10.0, "first_limit_time": "10:00:00"},
+        ],
+        diagnostics=SourceStatus(source_status={"market_regime": "ready"}),
+    )
+
+    result = engine.build_from_context(ctx)
+
+    subject_keys_in_items = {str(item.get("subject_key", "")) for item in result.items}
+    assert "__independent__" not in subject_keys_in_items, (
+        f"__independent__ must not appear in plan items, got: {subject_keys_in_items}"
+    )
+
+
+# ── breadth_missing vs breadth truly zero ──
+
+def _features(**overrides) -> OneToTwoFeatures:
+    """Minimal valid focus candidate, breadth=3."""
+    defaults = dict(
+        trade_date="2026-06-04",
+        watch_date="2026-06-05",
+        stock_id="600001.SH",
+        stock_name="测试股",
+        subject_key="robot",
+        subject_name="机器人",
+        is_confirmed_mainline=True,
+        is_strong_hotspot=False,
+        mainline_or_hotspot_state="confirmed_mainline",
+        lifecycle_state="fermentation",
+        market_trade_mode="mainline_ultra_short_only",
+        allow_trade=True,
+        is_first_limit_up=True,
+        is_one_word_board=False,
+        is_late_seal=False,
+        first_limit_time="10:00:00",
+        open_board_count=1,
+        turnover_rate=Decimal("0.15"),
+        amount=Decimal("800000000"),
+        close_seal_amount=Decimal("50000000"),
+        seal_ratio=Decimal("0.7"),
+        float_mcap=Decimal("5000000000"),
+        position_120=Decimal("0.3"),
+        is_downtrend=False,
+        near_pressure=False,
+        same_subject_limit_count=3,
+        same_subject_strong_count=2,
+        first_board_type="chain_first_board",
+        data_quality={"missing_required": [], "has_breadth": True, "breadth_missing": False},
+        source_trace={"source": "unit"},
+    )
+    defaults.update(overrides)
+    return OneToTwoFeatures(**defaults)
+
+
+def test_breadth_missing_downgrades_focus_to_pending_review_only() -> None:
+    """When subject_board_stats is unavailable, breadth_unknown → focus → pending_review_only."""
+    f = _features(
+        data_quality={"missing_required": [], "has_breadth": False, "breadth_missing": True},
+        same_subject_limit_count=None,
+        same_subject_strong_count=None,
+    )
+    result = OneToTwoRuleEngine().apply(f)
+    # Must NOT be reject — breadth_missing is not a hard veto
+    assert result.decision != "reject", f"expected non-reject, got {result.decision}: {result.veto_reasons}"
+    # Must NOT be focus — unknown breadth cannot focus
+    assert result.decision != "focus", f"expected non-focus, got {result.decision}"
+    # Should be pending_review_only
+    assert result.decision == "pending_review_only", f"expected pending_review_only, got {result.decision}"
+    # Risk flags must mention breadth missing
+    assert any("板块合力数据缺失" in flag for flag in result.risk_flags), f"missing breadth flag in: {result.risk_flags}"
+
+
+def test_breadth_missing_not_in_missing_required() -> None:
+    """board_breadth missing should NOT appear in missing_required (it is an optional source)."""
+    f = _features(
+        data_quality={
+            "missing_required": [],  # board_breadth absent from missing_required
+            "has_breadth": False,
+            "breadth_missing": True,
+        },
+        same_subject_limit_count=None,
+        same_subject_strong_count=None,
+    )
+    result = OneToTwoRuleEngine().apply(f)
+    # Must not contain the fake "必需字段缺失: ['board_breadth']" error
+    assert not any("board_breadth" in r for r in result.veto_reasons), (
+        f"board_breadth should not appear in veto reasons: {result.veto_reasons}"
+    )
+    assert result.decision != "reject", f"missing optional breadth must not hard-reject: {result.veto_reasons}"
+
+
+def test_breadth_truly_zero_still_hard_rejects() -> None:
+    """When board_row exists and count is truly 0, '无板块合力' veto still applies."""
+    f = _features(
+        data_quality={"missing_required": [], "has_breadth": True, "breadth_missing": False},
+        same_subject_limit_count=0,
+        same_subject_strong_count=0,
+    )
+    result = OneToTwoRuleEngine().apply(f)
+    assert result.decision == "reject", f"expected reject for true zero breadth, got {result.decision}"
+    assert any("无板块合力" in r for r in result.veto_reasons), f"missing 无板块合力 in {result.veto_reasons}"
+
+
+def test_subject_board_stats_missing_diagnostics() -> None:
+    """When limit_up_rows non-empty but subject_market_breadth empty, diagnostics flag set."""
+    from stock_processing_service.application.jobs.build_post_market_recap_job import BuildPostMarketRecapJob
+
+    ctx = PostMarketSetupFactContext(
+        trade_date="2026-06-04",
+        watch_date="2026-06-05",
+        active_mainlines=[{"canonical_subject_key": "robot", "subject_key": "robot", "mainline_name": "机器人"}],
+        strong_hotspot_subjects=[],
+        confirmed_hotspot_keys=set(),
+        active_subject_keys={"robot"},
+        lifecycle_by_subject={"robot": {"state": "fermentation", "lifecycle_state": "fermentation"}},
+        market_regime={"trade_mode": "mainline_ultra_short_only", "allow_trade": True},
+        trading_principle={"allow_trade": True, "trade_mode": "mainline_ultra_short_only"},
+        subject_stock_rows=[
+            {"trade_date": "2026-06-04", "stock_id": "600001.SH", "stock_name": "测试股",
+             "subject_key": "robot", "pct_chg": 10.0, "limit_up": True},
+        ],
+        stock_daily_bars=[
+            {"trade_date": "2026-06-04", "stock_id": "600001.SH", "stock_name": "测试股",
+             "close_price": 100, "limit_up_price": 90, "pct_chg": 10.0, "limit_up": True,
+             "amount": 800000000, "turnover_rate": 15.0},
+        ],
+        limit_up_rows=[
+            {"trade_date": "2026-06-04", "stock_id": "600001.SH", "stock_name": "测试股",
+             "close_price": 100, "limit_up_price": 90, "pct_chg": 10.0, "limit_up": True,
+             "amount": 800000000, "turnover_rate": 15.0},
+        ],
+        subject_market_breadth={},  # EMPTY — triggers diagnostic
+        diagnostics=SourceStatus(source_status={"market_regime": "ready"}),
+    )
+
+    engine = OneToTwoSetupPlanEngine()
+    result = engine.build_from_context(ctx)
+
+    assert result.diagnostics["subject_board_stats_missing"] is True
+    assert result.diagnostics["breadth_stats"]["subject_board_stats"] == "ready_empty"
+    assert any(
+        "SUBJECT_BOARD_STATS_MISSING" in w
+        for w in result.diagnostics["non_blocking_warnings"]
+    ), f"missing SUBJECT_BOARD_STATS_MISSING in warnings: {result.diagnostics['non_blocking_warnings']}"
+
+    # With breadth missing, candidates should be pending_review_only, not reject
+    non_reject = [i for i in result.items if i["decision"] != "reject"]
+    assert len(non_reject) > 0, f"expected non-reject items when breadth missing, got all rejected"
+    for item in non_reject:
+        assert item["decision"] != "focus", (
+            f"focus forbidden when breadth is missing: {item['decision']}"
+        )
+
+
+def test_lifecycle_missing_not_in_missing_required() -> None:
+    """lifecycle data missing should NOT trigger early 'required fields missing' reject."""
+    f = _features(
+        data_quality={
+            "missing_required": [],  # lifecycle absent from missing_required
+            "has_breadth": True,
+            "breadth_missing": False,
+            "has_lifecycle": False,
+        },
+        lifecycle_state="unknown",
+    )
+    result = OneToTwoRuleEngine().apply(f)
+    # Must not contain the fake "必需字段缺失: ['lifecycle']" error
+    assert not any("lifecycle" in r for r in result.veto_reasons), (
+        f"lifecycle should not appear in veto reasons: {result.veto_reasons}"
+    )
+    # Missing lifecycle should not hard-reject — "unknown" state passes lifecycle checks
+    assert result.decision != "reject", (
+        f"missing lifecycle must not hard-reject: veto={result.veto_reasons}"
+    )

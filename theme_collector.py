@@ -83,6 +83,8 @@ class APIClient:
             '-s',  # 静默模式
             '-L',  # 跟随重定向
             '--compressed',
+            '--connect-timeout', '8',
+            '--max-time', '20',
             '-H', f'User-Agent: {Config.HEADERS["User-Agent"]}',
             '-H', f'Accept: {Config.HEADERS["Accept"]}',
             '-H', f'Accept-Language: {Config.HEADERS["Accept-Language"]}',

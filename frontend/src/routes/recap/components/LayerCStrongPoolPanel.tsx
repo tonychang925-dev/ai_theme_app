@@ -23,7 +23,7 @@ function rowKey(row: Record<string, unknown>): string {
 
 function displayGroupName(row: Record<string, unknown>): string {
   const subjectKey = String(row.subject_key || "").trim();
-  if (subjectKey === "__independent__") return "独立龙头";
+  if (subjectKey === "__independent__") return "独立2连板观察";
   return String(row.mainline_name || row.theme_name || subjectKey || "其他").trim() || "其他";
 }
 
@@ -75,7 +75,7 @@ function isIncludedRow(row: Record<string, unknown>): boolean {
 }
 
 function isSameDayEntrant(row: Record<string, unknown>, tradeDate?: string): boolean {
-  if (!tradeDate) return true;
+  if (!tradeDate) return false;  // fail-closed: missing tradeDate must not show any "当天入围" stock
   const watchStart = String(row.watch_start_date || "").trim().slice(0, 10);
   return watchStart === tradeDate;
 }

@@ -6,6 +6,9 @@ from stock_processing_service.contracts.dto.one_to_two_dto import OneToTwoFeatur
 from stock_processing_service.domain.services.one_to_two_rule_config import (
     OneToTwoRuleConfig,
 )
+from stock_processing_service.domain.services.one_to_two_technical_gate import (
+    OneToTwoTechnicalGate,
+)
 
 
 class OneToTwoRuleEngine:
@@ -13,6 +16,7 @@ class OneToTwoRuleEngine:
 
     def __init__(self, config: OneToTwoRuleConfig | None = None) -> None:
         self.config = config or OneToTwoRuleConfig.from_version(None)
+        self.technical_gate = OneToTwoTechnicalGate()
 
     @property
     def rule_version(self) -> str:
@@ -54,20 +58,34 @@ class OneToTwoRuleEngine:
             low_turnover_tier = True
             risk.append(cfg.low_turnover_risk_flag)
 
-        same_subject_limit_count = f.same_subject_limit_count or 0
-        same_subject_strong_count = f.same_subject_strong_count or 0
-        has_strict_breadth = same_subject_limit_count >= cfg.min_subject_limit_count
-        has_strong_breadth = (
-            cfg.allow_strong_count_breadth
-            and same_subject_limit_count >= 1
-            and same_subject_strong_count >= cfg.min_subject_strong_count_for_breadth
-            and (not cfg.strong_count_breadth_requires_confirmed_mainline or f.is_confirmed_mainline)
+        # ── Board breadth evaluation ──
+        # Distinguish "breadth data source missing" from "breadth truly zero".
+        # When subject_board_stats is unavailable, breadth is unknown — do NOT
+        # hard-reject as "无板块合力". Instead, downgrade focus → pending_review_only.
+        breadth_missing = (
+            f.data_quality.get("breadth_missing") is True
+            or f.data_quality.get("has_breadth") is False
         )
-        soft_breadth = has_strong_breadth and not has_strict_breadth
-        if not has_strict_breadth and not has_strong_breadth:
-            veto.append(cfg.strict_breadth_veto_reason)
-        elif soft_breadth:
-            risk.append(cfg.soft_breadth_risk_flag)
+        breadth_unknown = False
+        soft_breadth = False
+        if breadth_missing:
+            risk.append("板块合力数据缺失，待复核")
+            breadth_unknown = True
+        else:
+            same_subject_limit_count = f.same_subject_limit_count or 0
+            same_subject_strong_count = f.same_subject_strong_count or 0
+            has_strict_breadth = same_subject_limit_count >= cfg.min_subject_limit_count
+            has_strong_breadth = (
+                cfg.allow_strong_count_breadth
+                and same_subject_limit_count >= 1
+                and same_subject_strong_count >= cfg.min_subject_strong_count_for_breadth
+                and (not cfg.strong_count_breadth_requires_confirmed_mainline or f.is_confirmed_mainline)
+            )
+            soft_breadth = has_strong_breadth and not has_strict_breadth
+            if not has_strict_breadth and not has_strong_breadth:
+                veto.append(cfg.strict_breadth_veto_reason)
+            elif soft_breadth:
+                risk.append(cfg.soft_breadth_risk_flag)
 
         if f.position_120 is not None and f.position_120 > Decimal("0.65"):
             veto.append("首板位置过高")
@@ -75,8 +93,8 @@ class OneToTwoRuleEngine:
         if f.is_downtrend is True:
             veto.append("下降趋势")
 
-        if f.near_pressure is True:
-            veto.append("重要压力位附近")
+        # near_pressure is NOT a hard reject anymore; TechnicalGate handles it as cap_focus.
+        # This ensures near_pressure can only downgrade focus → observe_only, not reject outright.
 
         if f.float_mcap is not None and f.float_mcap > Decimal("20000000000"):
             veto.append("流通市值过大")
@@ -84,15 +102,24 @@ class OneToTwoRuleEngine:
         if f.lifecycle_state in {"fade_confirmed", "dead"}:
             veto.append(f"主线状态不可交易: {f.lifecycle_state}")
 
+        # -- Stage 2: Technical Gate evaluation (after existing vetoes, before decision) --
+        technical = self.technical_gate.evaluate(f)
+        if technical.status == "reject":
+            veto.extend(technical.veto_reasons)
+            risk.extend(technical.risk_flags)
+
         if veto:
             return RuleResult(decision="reject", veto_reasons=veto, risk_flags=risk)
 
         decision: str
         if f.market_trade_mode == "no_trade" or not f.allow_trade:
+            # Technical gate does NOT override market environment
+            if technical.risk_flags:
+                risk.extend(technical.risk_flags)
             return RuleResult(
                 decision="observe_only",
                 veto_reasons=[],
-                risk_flags=["市场环境 no_trade，不得 focus"],
+                risk_flags=risk,
             )
 
         if not f.is_confirmed_mainline:
@@ -104,9 +131,22 @@ class OneToTwoRuleEngine:
         else:
             decision = "focus"
 
+        if breadth_unknown and decision == "focus":
+            decision = "pending_review_only"
+            risk.append("板块合力数据缺失，待复核后确认")
+
         if soft_breadth and decision == "focus":
             decision = cfg.soft_breadth_cap_decision
         if low_turnover_tier and decision == "focus":
             decision = cfg.low_turnover_cap_decision
+
+        # -- Stage 2: Technical cap_focus (downgrade focus → observe_only) --
+        if decision == "focus" and technical.status == "cap_focus":
+            decision = "observe_only"
+            risk.extend(technical.risk_flags)
+            if technical.focus_cap_reason:
+                risk.append(technical.focus_cap_reason)
+        elif technical.risk_flags:
+            risk.extend(technical.risk_flags)
 
         return RuleResult(decision=decision, veto_reasons=[], risk_flags=risk)

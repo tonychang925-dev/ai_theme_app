@@ -20,7 +20,11 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pydantic import Field
-from datetime import datetime
+from datetime import datetime, timezone as _tz
+
+# Startup watermark — any "running" job status with updated_at before this
+# timestamp belongs to a previous process and is automatically stale.
+_STARTUP_TS = datetime.now(_tz.utc)
 import uuid
 
 from database_service.config import DatabaseConfig, DatabaseType
@@ -2101,8 +2105,11 @@ async def _build_one_to_two_watchlists(trade_date: date) -> dict[str, Any]:
             },
         )
     items = [dict(r) for r in rows if str((r or {}).get("stock_id") or "") != "__SUMMARY__"]
-    summary = summary_row.get("summary") if "summary" in summary_row else {}
-    diagnostics = summary_row.get("diagnostics") if "diagnostics" in summary_row else {}
+    import json as _json
+    summary_raw = summary_row.get("summary") if "summary" in summary_row else {}
+    diagnostics_raw = summary_row.get("diagnostics") if "diagnostics" in summary_row else {}
+    summary = _json.loads(summary_raw) if isinstance(summary_raw, str) else summary_raw
+    diagnostics = _json.loads(diagnostics_raw) if isinstance(diagnostics_raw, str) else diagnostics_raw
     if not isinstance(summary, dict) or not summary:
         raise HTTPException(
             status_code=424,
@@ -2282,6 +2289,31 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
     if not isinstance(recap_doc, dict):
         recap_doc = {}
 
+    # ── Self-healing: inject abnormal_reviews from DB if recap_doc has none ──
+    if not recap_doc.get("abnormal_reviews"):
+        context = recap_doc.get("report_context") or {}
+        if not isinstance(context, dict):
+            context = {}
+        if not context.get("stock_abnormal_signal") and not context.get("abnormal_signals"):
+            try:
+                pool = getattr(app.state.gateway, "_client", None)
+                pool = getattr(pool, "pool", None) if pool else None
+                if pool is not None:
+                    async with pool.acquire() as conn:
+                        ar_rows = await conn.fetch(
+                            "SELECT stock_id, stock_name, subject_key, turnover_rate,"
+                            " abnormal_composite_score, abnormal_labels, conclusion,"
+                            " volume_ratio_to_ma50, main_net_inflow"
+                            " FROM stock_abnormal_signal"
+                            " WHERE trade_date = $1::date"
+                            " ORDER BY abnormal_composite_score DESC",
+                            d,
+                        )
+                        if ar_rows:
+                            recap_doc["abnormal_reviews"] = [dict(r) for r in ar_rows]
+            except Exception:
+                pass
+
     v2 = builder.build(
         trade_date=d,
         recap_doc=recap_doc,
@@ -2428,7 +2460,10 @@ async def generate_post_market_derived_data(payload: dict[str, Any] | None = Non
 
 @app.post("/api/v1/post-market/recap/generate")
 async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> dict[str, Any]:
-    """生成盘后复盘报告快照。readiness 门禁 + 调用 DailyReview 生成。"""
+    """生成盘后复盘报告快照。readiness 门禁 + 调用 DailyReview 生成。
+
+    支持 async_mode=true：立即返回 202 accepted，后台执行完整 job.execute()。
+    """
     p = payload or {}
     trade_date_str = str(p.get("trade_date") or p.get("date") or "")
     from datetime import date as _date
@@ -2448,25 +2483,280 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
     )
     jss = PostMarketJobStatusService(pool=pool)
     rs = PostMarketReadinessService(pool=pool)
-    readiness = await rs.check(d)
 
-    if readiness.status != "ready":
-        await jss.mark_finished(d, "post_market_recap_generate", "failed_precondition",
-            error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
-            diagnostics={"readiness": readiness.to_dict()})
+    force = bool(p.get("force", False))
+    async_mode = bool(p.get("async_mode", False))
+    mode = str(p.get("mode") or "").strip()
+    if not mode:
+        mode = "full_truth_rebuild" if force else "read_model_only"
+
+    # Readiness gate: for force rebuilds, readiness is advisory only —
+    # the user explicitly triggered a rebuild to generate missing data.
+    # For non-force (scheduled/programmatic) calls, it remains a hard gate.
+    if not force:
+        readiness = await rs.check(d)
+        if readiness.status != "ready":
+            await jss.mark_finished(d, "post_market_recap_generate", "failed_precondition",
+                error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
+                diagnostics={"readiness": readiness.to_dict()})
+            return {
+                "ok": False, "trade_date": trade_date_str,
+                "status": "failed_precondition",
+                "error_code": "POST_MARKET_DERIVED_DATA_NOT_READY",
+                "missing_tables": readiness.missing_tables,
+            }
+
+    if async_mode and force:
+        from datetime import timedelta as _td
+        from uuid import uuid4
+        version_tag = uuid4().hex[:8]
+        snapshot_version = f"daily_review_generate.{mode}.{version_tag}"
+        batch_id = uuid4().hex[:12]
+        trace_id = uuid4().hex[:12]
+
+        # Check for existing running job — but allow stale running to be replaced.
+        existing_status = await _read_job_status(pool, d, "post_market_recap_generate")
+        if existing_status and existing_status.get("status") == "running":
+            try:
+                existing_diag = existing_status.get("diagnostics") or {}
+                existing_snapshot_version = existing_diag.get("snapshot_version") or ""
+                updated_at = existing_status.get("updated_at")
+                stale_timeout_sec = 10 * 60  # 10 minutes
+                is_stale = False
+
+                if not updated_at:
+                    # No timestamp — can't verify freshness, treat as stale.
+                    is_stale = True
+                else:
+                    import datetime as _dt
+                    parsed = None
+                    for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S"):
+                        try:
+                            parsed = _dt.datetime.strptime(str(updated_at)[:19], fmt)
+                            break
+                        except ValueError:
+                            continue
+                    if parsed is None:
+                        is_stale = True
+                    else:
+                        parsed_utc = parsed.replace(tzinfo=_dt.timezone.utc)
+                        # Running job from BEFORE this process started → always stale.
+                        if parsed_utc < _STARTUP_TS:
+                            is_stale = True
+                        else:
+                            age = (_dt.datetime.now(_dt.timezone.utc) - parsed_utc).total_seconds()
+                            is_stale = age > stale_timeout_sec
+
+                if not is_stale:
+                    return {
+                        "ok": True, "trade_date": trade_date_str,
+                        "status": "running",
+                        "message": "已有重新复盘任务正在执行",
+                        "snapshot_version": existing_snapshot_version,
+                        "job_name": "post_market_recap_generate",
+                    }
+                # stale: mark the old job as failed and continue
+                await jss.mark_finished(d, "post_market_recap_generate", "failed",
+                    error_code="STALE_RUNNING_JOB_REPLACED",
+                    diagnostics={
+                        "replaced_snapshot_version": existing_snapshot_version,
+                        "new_snapshot_version": snapshot_version,
+                        "reason": f"stale running replaced by new force rebuild (timeout={stale_timeout_sec}s, startup_ts={_STARTUP_TS.isoformat()})",
+                    })
+            except Exception:
+                pass  # if stale detection fails, proceed with new rebuild
+
+        # Mark queued before launching background task
+        await jss.mark_finished(d, "post_market_recap_generate", "pending",
+            diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "mode": mode})
+
+        job = app.state.container.build_post_market_recap
+
+        skip_truth = mode == "read_model_only"
+
+        import logging as _logging
+        _recap_logger = _logging.getLogger("stock_processing_service.api.recap_rebuild")
+
+        async def _run_background():
+            try:
+                await job.execute(
+                    trade_date=d,
+                    snapshot_version=snapshot_version,
+                    batch_id=batch_id,
+                    trace_id=trace_id,
+                    lookback_days=7,
+                    skip_prereqs=skip_truth,
+                    skip_layer_c=skip_truth,
+                )
+            except Exception as exc:
+                import traceback as _traceback
+                _recap_logger.exception(
+                    "post_market_recap async rebuild failed: trade_date=%s snapshot_version=%s",
+                    trade_date_str, snapshot_version,
+                )
+                try:
+                    # Check if job.execute already wrote detailed diagnostics
+                    existing = await _read_job_status(pool, d, "post_market_recap_generate",
+                                                       snapshot_version=snapshot_version)
+                    existing_diag = (existing or {}).get("diagnostics") or {}
+                    if (existing and existing.get("status") == "failed"
+                            and (existing_diag.get("error_message")
+                                 or existing_diag.get("error_type")
+                                 or existing_diag.get("stage"))):
+                        # Job already recorded the real error — don't overwrite
+                        _recap_logger.info(
+                            "preserved job diagnostics: trade_date=%s snapshot_version=%s error_type=%s",
+                            trade_date_str, snapshot_version,
+                            existing_diag.get("error_type", "unknown"),
+                        )
+                        return
+                    await jss.mark_finished(d, "post_market_recap_generate", "failed",
+                        error_code=type(exc).__name__ or "RECAP_BUILD_EXCEPTION",
+                        diagnostics={
+                            "snapshot_version": snapshot_version, "batch_id": batch_id,
+                            "trace_id": trace_id, "mode": mode,
+                            "stage": "api_background_exception",
+                            "error_type": type(exc).__name__,
+                            "error_message": str(exc) or repr(exc),
+                            "traceback": _traceback.format_exc()[-4000:],
+                        })
+                except Exception:
+                    _recap_logger.exception("failed to mark job as failed after exception")
+
+        import asyncio as _asyncio
+        _asyncio.create_task(_run_background())
+
         return {
-            "ok": False, "trade_date": trade_date_str,
-            "status": "failed_precondition",
-            "error_code": "POST_MARKET_DERIVED_DATA_NOT_READY",
-            "missing_tables": readiness.missing_tables,
+            "ok": True, "trade_date": trade_date_str,
+            "status": "accepted",
+            "snapshot_version": snapshot_version,
+            "job_name": "post_market_recap_generate",
+            "poll_interval_sec": 3,
+            "mode": mode,
         }
 
-    # 委托现有的 daily_review/generate 逻辑，传递 force 参数
+    # Synchronous mode (original behavior)
     return await generate_daily_review({
         "date": trade_date_str,
-        "mode": "read_model_only",
-        "force": bool(p.get("force", False)),
+        "mode": mode,
+        "force": force,
     })
+
+
+async def _read_job_status(
+    pool, trade_date, job_key: str, *, snapshot_version: str = ""
+) -> dict[str, Any] | None:
+    """Read job status for trade_date + job_key.
+
+    When snapshot_version is provided, ONLY match that version — no fallback.
+    Fallback to latest row ONLY when snapshot_version is empty.
+    """
+    if pool is None:
+        return None
+    import json as _json
+    async with pool.acquire() as conn:
+        if snapshot_version:
+            row = await conn.fetchrow("""
+                SELECT status, error_code, diagnostics, updated_at
+                FROM post_market_job_status
+                WHERE trade_date = $1::date
+                  AND job_key = $2
+                  AND diagnostics->>'snapshot_version' = $3
+                ORDER BY updated_at DESC LIMIT 1
+            """, trade_date, job_key, snapshot_version)
+            if not row:
+                return None  # version-specific query: no fallback
+        else:
+            row = await conn.fetchrow("""
+                SELECT status, error_code, diagnostics, updated_at
+                FROM post_market_job_status
+                WHERE trade_date = $1::date AND job_key = $2
+                ORDER BY updated_at DESC LIMIT 1
+            """, trade_date, job_key)
+        if not row:
+            return None
+        diag = row.get("diagnostics")
+        if isinstance(diag, str):
+            diag = _json.loads(diag)
+        updated_at = row.get("updated_at")
+        if hasattr(updated_at, "isoformat"):
+            updated_at = updated_at.isoformat()
+        return {
+            "status": row["status"],
+            "error_code": row.get("error_code"),
+            "diagnostics": diag or {},
+            "updated_at": str(updated_at) if updated_at else "",
+        }
+
+
+@app.get("/api/v1/post-market/recap/generate/status")
+async def get_post_market_recap_generate_status(
+    trade_date: str = Query(..., description="YYYY-MM-DD"),
+    snapshot_version: str = Query("", description="optional snapshot_version filter"),
+) -> dict[str, Any]:
+    """查询重新复盘任务状态。"""
+    from datetime import date as _date
+    try:
+        d = _date.fromisoformat(trade_date)
+    except ValueError:
+        return {"ok": False, "status": "error", "error_code": "INVALID_DATE"}
+
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+
+    status_row = await _read_job_status(
+        pool, d, "post_market_recap_generate",
+        snapshot_version=snapshot_version or "",
+    )
+
+    if not status_row:
+        return {
+            "ok": True, "trade_date": trade_date,
+            "status": "unknown",
+            "message": "no job status record found",
+            "snapshot_version": snapshot_version or "",
+        }
+
+    # Check if snapshot exists for this date
+    snapshot_ready = False
+    if status_row["status"] == "success" and pool is not None:
+        try:
+            async with pool.acquire() as conn:
+                exists = await conn.fetchval(
+                    "SELECT 1 FROM post_market_recap_snapshot WHERE trade_date = $1::date LIMIT 1",
+                    d,
+                )
+                snapshot_ready = bool(exists)
+        except Exception:
+            pass
+
+    diag = status_row.get("diagnostics") or {}
+    updated_at = status_row.get("updated_at")
+    elapsed_sec: float | None = None
+    if updated_at:
+        import datetime as _dt
+        for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%dT%H:%M:%S"):
+            try:
+                parsed = _dt.datetime.strptime(str(updated_at)[:19], fmt)
+                elapsed_sec = (_dt.datetime.now(_dt.timezone.utc) - parsed.replace(tzinfo=_dt.timezone.utc)).total_seconds()
+                break
+            except ValueError:
+                continue
+
+    return {
+        "ok": True,
+        "trade_date": trade_date,
+        "snapshot_version": snapshot_version or diag.get("snapshot_version", ""),
+        "job_name": "post_market_recap_generate",
+        "status": status_row["status"],
+        "error_code": status_row.get("error_code"),
+        "diagnostics": diag,
+        "updated_at": updated_at,
+        "snapshot_ready": snapshot_ready,
+        "mode": diag.get("mode", ""),
+        "elapsed_sec": round(elapsed_sec, 1) if elapsed_sec is not None else None,
+        "stage": diag.get("stage", ""),
+    }
 
 
 # ── P1: DailyReview fast generate (read_model_only) ──
@@ -2513,7 +2803,15 @@ async def generate_daily_review(payload: dict[str, Any] | None = None) -> dict[s
             "metrics": result.metrics,
         }
     except Exception as exc:
-        raise HTTPException(status_code=500, detail=f"generate failed: {exc}")
+        import traceback as _traceback
+        raise HTTPException(
+            status_code=500,
+            detail={
+                "error_code": type(exc).__name__,
+                "message": str(exc) or repr(exc),
+                "traceback": _traceback.format_exc()[-4000:],
+            },
+        ) from exc
 
 
 @app.get("/api/v1/theme/workspace/{subject_key}")

@@ -492,6 +492,12 @@ async def ensure_tables(manager: PostgresDatabaseManager) -> None:
         await conn.execute(
             "CREATE UNIQUE INDEX IF NOT EXISTS uq_stock_abnormal_signal_trade_stock ON stock_abnormal_signal (trade_date, stock_id);"
         )
+        await conn.execute(
+            """
+            CREATE INDEX IF NOT EXISTS idx_sas_trade_subject_stockcode
+            ON stock_abnormal_signal (trade_date, subject_key, (split_part(stock_id, '.', 1)))
+            """
+        )
 
 
 async def upsert_rows(manager: PostgresDatabaseManager, rows):

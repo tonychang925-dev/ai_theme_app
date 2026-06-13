@@ -490,11 +490,35 @@ async def generate_post_market_derived_data(payload: dict | None = None) -> dict
 
 @router.post("/post-market/recap/generate")
 async def generate_post_market_recap(payload: dict | None = None) -> dict:
-    """生成盘后复盘报告快照。BFF 代理 → SPS。"""
+    """生成盘后复盘报告快照。BFF 代理 → SPS。
+
+    force=true 时使用 async_mode=true 异步提交，立即返回 202 accepted。
+    """
+    p = dict(payload or {})
+    force = bool(p.get("force", False))
+    if force:
+        p["async_mode"] = True
+        return await _proxy_stock_processing_post_json(
+            "/api/v1/post-market/recap/generate",
+            p,
+            timeout=15.0,
+        )
     return await _proxy_stock_processing_post_json(
         "/api/v1/post-market/recap/generate",
-        payload or {},
+        p,
         timeout=300.0,
+    )
+
+
+@router.get("/post-market/recap/generate/status")
+async def get_post_market_recap_generate_status(
+    trade_date: str = Query(..., description="YYYY-MM-DD"),
+    snapshot_version: str = Query(""),
+) -> dict:
+    """查询重新复盘任务状态。BFF 代理 → SPS。"""
+    return await _proxy_stock_processing_json(
+        "/api/v1/post-market/recap/generate/status",
+        {"trade_date": trade_date, "snapshot_version": snapshot_version},
     )
 
 

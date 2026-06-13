@@ -1,10 +1,10 @@
-# OneToTwoSetupPlanEngine 架构设计文档 v3.0
+# OneToTwoSetupPlanEngine 架构设计文档 v3.2
 
 > 项目：`ai_theme_app` / AI 投资个人助理 / 久赢恒丰 2.0  
 > 模块：每日复盘中的「1进2明日观察清单」  
-> 版本：v3.0  
-> 日期：2026-06-05  
-> 设计定位：低频、高约束、允许为空的次日二板晋级观察计划  
+> 版本：v3.2  
+> 日期：2026-06-09  
+> 状态：核心引擎已存在（v3.1），v3.2 聚焦**报告接入 + 对账修复**，不重做引擎  
 
 ---
 
@@ -2292,4 +2292,227 @@ focus 来自权限门槛，不来自主观推荐；
 硬规则优先，评分决定排序和 focus 资格；
 金蜘蛛用于资格增强，不作为硬门禁；
 复盘只生成计划，盘前/盘中才做确认。
+```
+
+---
+
+## 22. v3.2 修订说明：复盘报告接入 1进2 观察清单（对账修复版）
+
+> 日期：2026-06-09
+> 背景：v3.1 已完整实现 OneToTwo 引擎并在 5/6、5/26 通过 smoke 验证。v3.2 不再重新实现引擎，仅做**报告接入 + __independent__ 隔离 + 残留 bug 修复 + 解释字段 + 回测**。
+
+### 22.1 2026-06-09 代码审计结论
+
+**已存在的核心机制（不重做）：**
+
+| 模块 | 文件 | 状态 |
+|------|------|------|
+| CandidateService（主线首板事实池） | `one_to_two_candidate_service.py` | ✅ 已存在 |
+| RuleEngine + TechnicalGate 接入 | `one_to_two_rule_engine.py:91-132` | ✅ 已存在 |
+| OneToTwoTechnicalGate | `one_to_two_technical_gate.py` | ✅ 已存在 |
+| Scorer 五维评分 (25/20/20/20/15) | `one_to_two_scorer.py` | ✅ 已存在 |
+| SetupPlanEngine + score_policy | `one_to_two_setup_plan_engine.py:64-124` | ✅ 已存在 |
+| score_policy (final<80, tech<55 → observe) | `one_to_two_setup_plan_engine.py:229-260` | ✅ 已存在 |
+| 综合排序 + rank_no/rank_reason | `one_to_two_setup_plan_engine.py:86-100` | ✅ 已存在 |
+| candidate_feature 与 plan_item 使用 final_rule | `one_to_two_setup_plan_engine.py:75-84` | ✅ 已存在 |
+| post_market_setup_plan 持久化 + fail-loud | `build_post_market_recap_job.py:746-762` | ✅ 已存在 |
+| LimitUpDetector（板块感知涨停） | `limit_up_detector.py` | ✅ 已存在 |
+| KlineTechnicalAnalyzer / position / pattern | 多文件 | ✅ 已存在 |
+
+**必须修复的 5 个残留 bug：**
+
+| # | 位置 | 问题 | 修复 |
+|---|------|------|------|
+| B1 | `one_to_two_candidate_service.py:434` | `_technical_trace` 仍写 `decision_effect: "shadow_only"` | 改为 `"used_by_technical_gate"` |
+| B2 | `one_to_two_setup_plan_engine.py:312` | candidate_feature 的 `technical_structure_score` 取值 `score_detail.get("lifecycle")`（不存在） | 改为 `score_detail.get("technical_structure")` |
+| B3 | `one_to_two_rule_engine.py:82-83` | `near_pressure` 仍是 hard reject | 移到 TechnicalGate cap_focus，RulesEngine 仅 hard reject downtrend + support_broken |
+| B4 | `one_to_two_technical_gate.py:104` | near_pressure 只看 `f.near_pressure`，不看 kline 里的 `kline_near_resistance` | TechnicalGate 同时读取 `kline_pattern_quality.kline_near_resistance` |
+| B5 | `one_to_two_candidate_service.py` + `post_market_setup_fact_context_builder.py` | 未排除 `__independent__` | 双层排除：FactContextBuilder strong_hotspot + CandidateService build_fact_pool |
+
+### 22.2 核心原则
+
+```text
+不重新实现 OneToTwo 引擎；
+只在现有引擎基础上做：报告接入 + __independent__ 隔离 + 残留修复 + 解释字段 + 回测闭环。
+```
+
+### 22.3 边界约束
+
+| 约束 | 说明 | 状态 |
+|------|------|------|
+| 不污染 Layer C | OneToTwo 不写 strong_stock_watch_history | ✅ 已验证 |
+| 不包含 __independent__ | 独立2连板是 Layer C 路径，不参与 1进2 | ⚠️ 待加双层 guard |
+| 不实时重算 | GET 接口只读 post_market_setup_plan | ⚠️ 待补守卫 |
+| 不展示买入推荐 | 禁止 buy/must_buy/recommend_buy | ✅ 审计已有 no_buy_signal |
+| 不混淆卡片 | 当天入围强势股 / 独立2连板 / 1进2 三个独立卡片 | ⚠️ 待前端 |
+
+---
+
+## 23. 实施任务分解（四阶段，对账修复版）
+
+### Phase 1：报告只读接入 + __independent__ 隔离 + 前端独立卡片
+
+**定位**：核验 + 补测试 + 双层排除 + 前端壳。不重写引擎。
+
+| # | 任务 | 涉及文件 | 类型 |
+|---|------|---------|------|
+| P1.1 | 核验 setup_plan 写入链路完整（SUMMARY 唯一 + item 数对 + fail-loud） | `build_post_market_recap_job.py` | 核验项 |
+| P1.2 | 核验 OneToTwo fail-loud：写入失败 raise | `build_post_market_recap_job.py:756-762` | 核验项 |
+| P1.3 | 补 audit 测试（SUMMARY 存在/唯一、item count、fail-loud、空 recap 不写） | `test_one_to_two_setup_plan_audit.py` | 测试项 |
+| P1.4 | 双层排除 `__independent__`：FactContextBuilder._extract_hotspot_subjects 过滤 | `post_market_setup_fact_context_builder.py` | 开发项 |
+| P1.5 | 双层排除 `__independent__`：CandidateService.build_fact_pool 直接 continue | `one_to_two_candidate_service.py` | 开发项 |
+| P1.6 | 补 __independent__ 排除测试 | `test_one_to_two_setup_fact_context_builder.py`, `test_one_to_two_setup_plan_engine.py` | 测试项 |
+| P1.7 | 前端新增 `OneToTwoWatchPanel` 壳（四层计数，reject 折叠） | `frontend/.../OneToTwoWatchPanel.tsx` | 开发项 |
+| P1.8 | `EnginePostMarketView` 接入 OneToTwo 卡片 | `EnginePostMarketView.tsx` | 开发项 |
+| P1.9 | 前端只读顺序（fail-loud，非静默 fallback）：① recap_doc.post_market_setup_plan 存在 → 使用 recap_doc；② recap_doc 缺失但 /watchlists 有完整 __SUMMARY__ → 使用 watchlists；③ 两者都缺或 SUMMARY 缺失 → 显示"观察清单未生成"，不得重算，不得展示空清单为正常结果 | `OneToTwoWatchPanel.tsx` | 开发项 |
+| P1.10 | LayerC 标题区分 + 独立2连板单独分组 | `LayerCStrongPoolPanel.tsx`, `EnginePostMarketView.tsx` | 开发项 |
+
+**验收**：
+- [ ] `__independent__` 不进入 OneToTwo strong_hotspot_subjects
+- [ ] `__independent__` 不进入 OneToTwo candidate_feature 和 plan items
+- [ ] GET 接口不触发 OneToTwoSetupPlanEngine
+- [ ] OneToTwoWatchPanel 缺 post_market_setup_plan 时 fail-closed
+- [ ] 三个卡片不混淆：当天入围强势股 / 独立2连板 / 1进2
+
+---
+
+### Phase 2：对账修复（5 个残留 bug，不重做引擎）
+
+**定位**：修复代码与 v3.2 文档不一致的残留，不新增功能模块。
+
+| # | 任务 | 位置 | 修复内容 |
+|---|------|------|---------|
+| P2.1 | B1: technical_trace decision_effect 语义修正 | `one_to_two_candidate_service.py:434` | `"shadow_only"` → `"used_by_technical_gate"` |
+| P2.2 | B2: candidate_feature 字段映射修正 | `one_to_two_setup_plan_engine.py:312` | `score_detail.get("lifecycle")` → `score_detail.get("technical_structure")` |
+| P2.3 | B3: RuleEngine near_pressure 语义修正 | `one_to_two_rule_engine.py:82-83` | 移除 hard reject，交 TechnicalGate cap_focus |
+| P2.4 | B4: TechnicalGate 读取 kline_near_resistance | `one_to_two_technical_gate.py:104` | 补充 `kline_pattern_quality.kline_near_resistance` 来源 |
+| P2.5 | B1-B4 集成验证：重跑 5/6 + 5/26 smoke | replay runner | 5/26 仍 observe_only(no_trade) |
+
+> B5（`__independent__` 排除）已在 Phase 1 P1.4/P1.5 处理，Phase 2 只处理 B1-B4。
+
+**P2.5 验收（不允许"与修复前一致"，near_pressure 语义已变更）：**
+
+```text
+5/6 smoke 无非预期漂移：
+- near_pressure 相关样本允许从 reject → observe_only 或 focus → observe_only；
+- 非 near_pressure 样本 decision 不得漂移；
+- candidate_feature.decision == plan_item.decision；
+- 5/26 no_trade 仍 focus_count = 0。
+```
+
+---
+
+### Phase 3：解释字段 — 为什么观察 / 事件 / 题材 / 技术 / 计划 / 放弃
+
+**定位**：在已有决策基础上，为每只票补自然语言解释。不修改决策逻辑。
+
+| # | 任务 | 涉及文件 |
+|---|------|---------|
+| P3.1 | `observation_reason` 生成器（自然语言，引用 rule/score/final_rule） | `one_to_two_risk_plan_builder.py` |
+| P3.2 | `event_logic` 预计算：EventThemeStockAuthenticityService → source_trace → RiskPlanBuilder 格式化 | `event_theme_stock_authenticity_service.py` / `risk_plan_builder` |
+| P3.3 | `OneToTwoTechnicalSummaryFormatter`（自然语言总结 K 线形态，不污染 GoldenSpiderPatternService） | 新 `one_to_two_technical_summary_formatter.py` |
+| P3.4 | `tomorrow_plan` 模板（禁用 buy 语义） | `one_to_two_risk_plan_builder.py` |
+| P3.5 | 前端单票卡片展示 7 类信息 | `OneToTwoWatchPanel.tsx` |
+
+**验收**：
+- [ ] 前端 event_logic 不查 DB
+- [ ] 报告不含 buy/must_buy/recommend_buy 语义
+- [ ] 每只票展示：入选原因、重大事件、题材逻辑、技术形态、关键参数、明日计划、放弃条件
+
+---
+
+### Phase 4：复用统一回测闭环
+
+**定位**：复用已有 one_to_two backtest 服务，不修改生产 plan。
+
+| # | 任务 | 涉及文件 |
+|---|------|---------|
+| P4.1 | 复用 BacktestSignalBuilder 生成 strategy_signal_daily | `one_to_two_backtest_signal_builder_service.py` |
+| P4.2 | 复用 SignalValidationService 写 T+1 outcome | `one_to_two_backtest_signal_validation_service.py` |
+| P4.3 | 二板验证复用 LimitUpDetector | `limit_up_detector.py` |
+| P4.4 | summary 写 validation_summary | `one_to_two_backtest_validation_summary_service.py` |
+| P4.5 | 前端展示历史命中率 | `OneToTwoWatchPanel.tsx` |
+| P4.6 | 审计脚本 | `check_one_to_two_backtest_audit.py` |
+
+**验收**：
+- [ ] P4 不修改生产 post_market_setup_plan
+- [ ] 复用已有 backtest signal/validation/summary 服务
+- [ ] focus / observe 命中率可统计
+
+---
+
+## 24. 验收检查清单（Checklist）
+
+### 引擎不重做
+- [x] OneToTwoTechnicalGate 已存在
+- [x] RuleEngine 已接入 TechnicalGate
+- [x] Scorer 已是五维评分 (25/20/20/20/15)
+- [x] SetupPlanEngine 已有 score_policy
+- [x] 排序 + rank_no/rank_reason 已存在
+- [x] candidate_feature 与 plan_item 使用 final_rule
+
+### 残留修复
+- [ ] B1: decision_effect 不再写 shadow_only
+- [ ] B2: technical_structure_score 取 correct 字段
+- [ ] B3: near_pressure 只 cap_focus（非 hard reject）
+- [ ] B4: TechnicalGate 读取 kline_near_resistance
+- [ ] 5/6 + 5/26 smoke 无漂移
+
+### 数据隔离
+- [ ] `__independent__` 不进入 OneToTwo strong_hotspot_subjects
+- [ ] `__independent__` 不进入 OneToTwo candidate_feature
+- [ ] `__independent__` 不进入 OneToTwo plan items
+- [ ] Layer C 强势股数量变化不影响 OneToTwo 正式候选
+- [ ] 独立2连板在 Layer C 面板单独分组展示
+
+### 展示正确
+- [ ] 报告里有"明日观察：1进2观察清单"独立卡片
+- [ ] 不混入"当天入围强势股"
+- [ ] focus / observe_only / pending_review_only 分层清楚
+- [ ] reject 默认折叠
+- [ ] OneToTwoWatchPanel 缺 post_market_setup_plan 时 fail-closed
+- [ ] SUMMARY 行唯一
+
+### 只读链路
+- [ ] GET /watchlists?setup_type=one_to_two 不重跑引擎
+- [ ] 前端页面渲染不触发 OneToTwoSetupPlanEngine
+- [ ] 前端不查询 event_theme_map/news_event
+
+### 策略正确
+- [ ] 必须是真实首板
+- [ ] 必须是主线/强热点题材
+- [ ] 排除 `__independent__`
+- [ ] 展示题材正宗度 + K 线技术形态
+- [ ] 技术形态差不能 focus（cap_focus 机制）
+- [ ] no_trade 时 focus_count = 0
+
+### 决策一致性
+- [ ] candidate_feature.decision == plan_item.decision
+- [ ] score_policy 降级日志可追溯
+- [ ] setup_plan 写入失败则 recap 失败
+
+### 语义安全
+- [ ] 报告不含 buy/must_buy/recommend_buy
+- [ ] 触发条件叫"观察触发 / 二板确认 / 放弃条件"
+
+### 回测闭环
+- [ ] P4 不修改生产 post_market_setup_plan
+- [ ] 复用已有 backtest 服务
+- [ ] T+1 outcome 可回写
+
+---
+
+## 25. 最终结论（v3.2 收口）
+
+```text
+v3.1 已完整实现 OneToTwo 核心引擎（CandidateService / RuleEngine+TechnicalGate /
+Scorer五维 / score_policy / 排序+rank / fail-loud持久化），并在 5/6、5/26 通过 smoke 验证。
+
+v3.2 不再重新实现引擎。
+
+v3.2 只做四件事：
+1. 报告只读接入 + __independent__ 双层隔离 + 前端独立卡片
+2. 修复 5 个残留 bug（decision_effect / 字段映射 / near_pressure 语义 / kline_near_resistance / __independent__ 排除）
+3. 补解释字段（observation_reason / event_logic / technical_summary / tomorrow_plan）
+4. 复用统一回测闭环（不修改生产 plan）
 ```

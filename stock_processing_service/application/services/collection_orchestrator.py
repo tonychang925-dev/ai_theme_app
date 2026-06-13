@@ -70,6 +70,44 @@ class CollectionCommandPlanner:
         min_turnover = str(payload.get("min_turnover_rate", 3.0))
         min_score = str(payload.get("min_composite_score", 40.0))
 
+        if task_key == "stock_snapshot":
+            snapshot_opts = options.get("stock_snapshot") or {}
+            provider = snapshot_opts.get("provider", "jyhf")
+            on_existing = snapshot_opts.get("on_existing", "skip")
+            force = snapshot_opts.get("force", False)
+            return CollectionTaskPlan(
+                pre_logs=[
+                    f"stock_snapshot: provider={provider} on_existing={on_existing} force={force}",
+                    "stock_snapshot: 统一入口 → Orchestrator 自动选择 Producer",
+                ],
+                steps=[
+                    CollectionTaskStep(
+                        key="stock_snapshot_build",
+                        runner_key="stock_snapshot.build",
+                        label=f"股票快照采集 ({provider})",
+                    ),
+                ],
+            )
+
+        if task_key == "subject_rank":
+            rank_opts = options.get("subject_rank") or {}
+            provider = rank_opts.get("provider", "jyhf")
+            on_existing = rank_opts.get("on_existing", "skip")
+            force = rank_opts.get("force", False)
+            return CollectionTaskPlan(
+                pre_logs=[
+                    f"subject_rank: provider={provider} on_existing={on_existing} force={force}",
+                    "subject_rank: 从 subject_stock_daily_snapshot 聚合 / JYHF history JSONL 提取",
+                ],
+                steps=[
+                    CollectionTaskStep(
+                        key="subject_rank_build",
+                        runner_key="subject_rank.build",
+                        label=f"题材热度排名 ({provider})",
+                    ),
+                ],
+            )
+
         if task_key == "jyhf":
             return CollectionTaskPlan(
                 pre_logs=["jyhf: Step1 列表同步 + Step2 节点入库 + Step3 股票日快照采集入库（API→DB）"],
@@ -100,17 +138,22 @@ class CollectionCommandPlanner:
             return CollectionTaskPlan(
                 pre_logs=["Tushare K线已切换到 BuildTushareDailyBarJob (API→Gateway→DB)，不再经过本地JSONL中转"],
                 steps=[
-                    # Step 1: K线采集 — 完全服务化（Tushare API → Gateway → DB）
                     CollectionTaskStep(
                         key="kline",
                         runner_key="tushare.daily_bar",
                         label="Tushare日线采集 (API→DB)",
                     ),
-                    # Step 2: 竞价观察池 — 已服务化
+                ],
+            )
+
+        if task_key == "auction":
+            return CollectionTaskPlan(
+                pre_logs=["盘前竞价采集（可选增强链路）"],
+                steps=[
                     CollectionTaskStep(
                         key="auction_watch",
                         runner_key="auction.watch_universe",
-                        label="竞价观察池构建 (服务化)",
+                        label="竞价观察池构建",
                     ),
                     CollectionTaskStep(
                         key="auction_snapshot_all",
@@ -126,6 +169,18 @@ class CollectionCommandPlanner:
                         key="auction_signal",
                         runner_key="auction.signal",
                         label="竞价信号生成",
+                    ),
+                ],
+            )
+
+        if task_key == "tushare_daily_basic":
+            return CollectionTaskPlan(
+                pre_logs=["Tushare daily_basic 换手率/量比采集 (API→DB)"],
+                steps=[
+                    CollectionTaskStep(
+                        key="daily_basic_collect",
+                        runner_key="tushare.daily_basic",
+                        label="Tushare daily_basic 换手率采集",
                     ),
                 ],
             )
