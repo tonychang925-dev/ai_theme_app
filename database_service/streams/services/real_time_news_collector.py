@@ -99,6 +99,10 @@ class RealTimeNewsCollector:
         self.enable_collector_prefilter = bool(self.config.get("enable_collector_prefilter", True))
         self.collector_drop_on_skip = bool(self.config.get("collector_drop_on_skip", True))
 
+        # CLS 采集: 时间窗口 + 安全上限，替代固定条数截断
+        self.cls_max_age_minutes = int(self.config.get("cls_max_age_minutes", 10))
+        self.cls_max_items = int(self.config.get("cls_max_items", 60))
+
         # news_id 短窗口去重（保留作为快速第一层）
         self.dedup_window_seconds = int(self.config.get("collector_dedup_window_seconds", 1800))
         self._recent_news_ids: Dict[str, float] = {}
@@ -610,7 +614,7 @@ class RealTimeNewsCollector:
             if self._is_real_mode_available():
                 return CollectionMode.REAL
             else:
-                logger.warning("auto模式下真实采集不可用，本轮将不产出新闻（已禁用mock降级）")
+                logger.warning("auto模式下CLS和akshare采集均不可用，本轮可能无法产出新闻")
                 return CollectionMode.REAL
         else:
             try:
@@ -620,9 +624,21 @@ class RealTimeNewsCollector:
                 return self.default_mode
 
     def _is_real_mode_available(self) -> bool:
-        if not self.crawler_client:
-            return False
-        return True
+        """检查真实采集路径是否可用（与 _collect_real_news 实际路径一致）。"""
+        # CLS: 通过 news_crawler_service 单例（直接 import，不依赖 crawler_client）
+        try:
+            from news_crawler_service.services.news_crawler_service import get_news_crawler_service
+            if get_news_crawler_service().collector is not None:
+                return True
+        except Exception:
+            pass
+        # Fallback: akshare 多源也足够
+        try:
+            import akshare  # noqa: F401
+            return True
+        except ImportError:
+            pass
+        return False
 
     async def _collect_news(self, mode: CollectionMode) -> List[Dict]:
         if mode == CollectionMode.REAL:
@@ -639,7 +655,10 @@ class RealTimeNewsCollector:
             from news_crawler_service.services.news_crawler_service import get_news_crawler_service
             crawler_service = get_news_crawler_service()
             raw = await asyncio.wait_for(
-                crawler_service.crawl_news_auto(count=10, prefer_real=True),
+                crawler_service.crawl_news_auto(
+                    count=self.cls_max_items, prefer_real=True,
+                    max_age_minutes=self.cls_max_age_minutes,
+                ),
                 timeout=45,
             )
             if raw.get("status") == "success":

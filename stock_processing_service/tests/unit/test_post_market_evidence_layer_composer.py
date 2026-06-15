@@ -448,6 +448,69 @@ def test_post_market_evidence_layer_composer_dedupes_stock_capital_by_stock_id()
     assert {row["stock_id"] for row in review["stock_capital_evidence"]} == {"300581", "688010"}
 
 
+def test_post_market_evidence_layer_composer_dedupes_money_flow_and_uses_f10_amount() -> None:
+    doc = _sample_evidence_doc()
+    doc["money_flow_reviews"] = [  # type: ignore[index]
+        {
+            "stock_id": "300581",
+            "stock_code": "300581",
+            "stock_name": "晨曦航空",
+            "subject_key": "air",
+            "theme_name": "军工",
+            "main_net_inflow": 0,
+            "money_flow_tier": "强",
+            "role_enhanced": "主线加速",
+            "conclusion": "资金持续流入",
+            "kline": {"position_label": "强势", "pattern_labels": ["量价齐升"]},
+            "rank_order": 1,
+            "f10_capital": {
+                "trade_date": "2026-06-12",
+                "capital_flow": {
+                    "latest_date": "2026-06-12",
+                    "main_net_inflow": 298000000,
+                    "summary": "主力净流入2.98亿",
+                },
+            },
+        },
+        {
+            "stock_id": "300581.SZ",
+            "stock_code": "300581.SZ",
+            "stock_name": "晨曦航空",
+            "subject_key": "air2",
+            "theme_name": "导弹",
+            "main_net_inflow": 1000000,
+            "money_flow_tier": "强",
+            "role_enhanced": "主线加速",
+            "conclusion": "资金持续流入",
+            "kline": {"position_label": "强势", "pattern_labels": ["量价齐升"]},
+            "rank_order": 2,
+        },
+        {
+            "stock_id": "688010",
+            "stock_code": "688010",
+            "stock_name": "福光股份",
+            "subject_key": "optic",
+            "theme_name": "光学",
+            "main_net_inflow": 5600000,
+            "money_flow_tier": "强",
+            "role_enhanced": "主线加速",
+            "conclusion": "资金持续流入",
+            "kline": {"position_label": "强势", "pattern_labels": ["量价齐升"]},
+            "rank_order": 3,
+        },
+    ]
+
+    review = PostMarketEvidenceLayerComposer().compose(
+        doc,
+        evidence_alignment_index=doc["evidence_alignment_index"],  # type: ignore[arg-type]
+    )
+
+    assert len(review["money_flow_evidence"]) == 2
+    assert {row["stock_id"] for row in review["money_flow_evidence"]} == {"300581", "688010"}
+    money_flow_row = next(row for row in review["money_flow_evidence"] if row["stock_id"] == "300581")
+    assert money_flow_row["amount"] == 298000000
+
+
 def test_post_market_engine_report_composer_includes_evidence_layer_review() -> None:
     doc = _sample_evidence_doc()
     report = PostMarketEngineReportComposer().compose(doc)  # type: ignore[arg-type]

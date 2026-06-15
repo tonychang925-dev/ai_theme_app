@@ -192,7 +192,6 @@ export default function EvidenceLayerPanel({ evidenceLayerReview }: Props) {
   const groups = [...(evidenceLayerReview.evidence_groups || [])];
   const nonMainlineEvidence = [
     ...(evidenceLayerReview.abnormal_evidence || []),
-    ...(evidenceLayerReview.money_flow_evidence || []),
     ...(evidenceLayerReview.dragon_tiger_evidence || []),
     ...(evidenceLayerReview.stock_capital_evidence || []),
   ]
@@ -250,13 +249,12 @@ export default function EvidenceLayerPanel({ evidenceLayerReview }: Props) {
       </div>
 
       {renderSection("异动证据", evidenceLayerReview.abnormal_evidence || [])}
-      {renderSection("资金证据", evidenceLayerReview.money_flow_evidence || [])}
       {renderSection("龙虎榜证据", evidenceLayerReview.dragon_tiger_evidence || [])}
       {renderSection("个股资金证据", evidenceLayerReview.stock_capital_evidence || [])}
 
       {evidenceLayerReview.diagnostics && (
         <div className="workspace-note">
-          诊断：异动 {String(evidenceLayerReview.diagnostics.abnormal_count ?? "--")}，资金 {String(evidenceLayerReview.diagnostics.money_flow_count ?? "--")}，龙虎榜 {String(evidenceLayerReview.diagnostics.dragon_tiger_count ?? "--")}，个股资金 {String(evidenceLayerReview.diagnostics.stock_capital_count ?? "--")}
+          诊断：异动 {String(evidenceLayerReview.diagnostics.abnormal_count ?? "--")}，龙虎榜 {String(evidenceLayerReview.diagnostics.dragon_tiger_count ?? "--")}，个股资金 {String(evidenceLayerReview.diagnostics.stock_capital_count ?? "--")}
         </div>
       )}
     </div>

@@ -5,11 +5,14 @@ Redis Stream 实时推送服务（WebSocket/SSE）
 支持WebSocket和SSE两种协议，支持主题过滤。
 """
 import asyncio
+import atexit
 import json
 import logging
+import os
+import socket
+import time
 from typing import Dict, Set, Optional, List, Any
 from datetime import datetime
-import uuid
 
 from fastapi import WebSocket, WebSocketDisconnect
 from redis.asyncio import Redis
@@ -18,6 +21,9 @@ from .stream_manager import RetryEnhancedRedisStreamManager
 from .utils.alert_service import AlertService, Alert, AlertType, AlertSeverity
 
 logger = logging.getLogger(__name__)
+
+# 僵尸消费者判定: 空闲超过此阈值且无 pending 消息，视为已死
+_STALE_CONSUMER_MAX_IDLE_MS = 300_000  # 5 分钟
 
 
 class ConnectionManager:
@@ -151,9 +157,48 @@ class RedisStreamConsumer:
         self.stream_configs = stream_configs or {}
         self.alert_service = alert_service
         self.consumer_group = "realtime_push_service"
-        self.consumer_name = f"consumer-{uuid.uuid4().hex[:8]}"
+        self.consumer_name = (
+            f"push-{socket.gethostname()[:16]}-{os.getpid()}-{int(time.time())}"
+        )
         self.is_running = False
         self.task: Optional[asyncio.Task] = None
+
+    async def _cleanup_stale_consumers(self, stream_names: List[str]) -> int:
+        """启动时清理僵尸消费者: 空闲超过阈值且无 pending 消息的视为已死。
+
+        解决: 进程崩溃/被 kill 后 xgroup_delconsumer 未执行的残留问题。
+        """
+        removed_total = 0
+        for stream_name in stream_names:
+            try:
+                consumers = await self.redis.xinfo_consumers(
+                    stream_name, self.consumer_group,
+                )
+            except Exception:
+                continue  # 消费组可能尚不存在
+            for c in consumers:
+                c_name = c.get("name", "")
+                c_idle = int(c.get("idle", 0))
+                c_pending = int(c.get("pending", 0))
+                if c_idle > _STALE_CONSUMER_MAX_IDLE_MS and c_pending == 0:
+                    try:
+                        await self.redis.xgroup_delconsumer(
+                            stream_name, self.consumer_group, c_name,
+                        )
+                        removed_total += 1
+                        logger.warning(
+                            "Zombie cleanup: removed consumer %s from %s/%s "
+                            "(idle=%dms, pending=%d)",
+                            c_name, stream_name, self.consumer_group,
+                            c_idle, c_pending,
+                        )
+                    except Exception as exc:
+                        logger.debug(
+                            "Zombie cleanup failed for %s: %s", c_name, exc,
+                        )
+        if removed_total:
+            logger.info("Zombie cleanup complete: removed %d stale consumers", removed_total)
+        return removed_total
 
     async def ensure_consumer_group(self, stream_name: str):
         """确保消费者组存在"""
@@ -275,6 +320,9 @@ class RedisStreamConsumer:
         """启动Stream消费者"""
         self.is_running = True
 
+        # ── 启动前清理僵尸消费者 ──
+        await self._cleanup_stale_consumers(streams)
+
         # 为每个Stream创建消费者组
         for stream_name in streams:
             try:
@@ -304,6 +352,24 @@ class RedisStreamConsumer:
             logger.info(f"Started consumer for stream: {stream_name}")
 
         self.task = asyncio.gather(*tasks, return_exceptions=True)
+
+        # atexit 兜底: 正常退出时尽力清理（SIGKILL 无法拦截，但 SIGTERM/SIGINT 可）
+        _atexit_streams = list(streams)
+        _atexit_redis = self.redis
+        _atexit_group = self.consumer_group
+        _atexit_name = self.consumer_name
+
+        def _atexit_cleanup():
+            for s in _atexit_streams:
+                try:
+                    loop = asyncio.new_event_loop()
+                    loop.run_until_complete(
+                        _atexit_redis.xgroup_delconsumer(s, _atexit_group, _atexit_name)
+                    )
+                    loop.close()
+                except Exception:
+                    pass
+        atexit.register(_atexit_cleanup)
 
         # 发送启动告警
         if self.alert_service:

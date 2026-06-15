@@ -54,6 +54,7 @@ class AkshareClsCollector(BaseCollector):
         self._cache_at = 0.0
         self._cache_df = pd.DataFrame()
         self._cache_fingerprint = ""
+        self._cdp_collector = None  # 复用 ClsCdpCollector 实例以利用其内部缓存
         
     @property
     def source_name(self) -> str:
@@ -134,9 +135,10 @@ class AkshareClsCollector(BaseCollector):
         try:
             from news_crawler_service.collectors.cls_cdp import ClsCdpCollector
 
-            cdp = ClsCdpCollector()
+            if self._cdp_collector is None:
+                self._cdp_collector = ClsCdpCollector()
             limit = 30 if self._normalize_symbol() == "重点" else 60
-            df = cdp.fetch_df(limit=limit)
+            df = self._cdp_collector.fetch_df(limit=limit)
             if df is not None and not df.empty:
                 logger.info(
                     "[%s] CDP fetch success rows=%s columns=%s",
@@ -221,7 +223,7 @@ class AkshareClsCollector(BaseCollector):
             return df.head(CLS_MAX_ITEMS)
 
         # 重点模式保守截断，避免过多普通电报挤占下游处理能力
-        return df.head(min(30, CLS_MAX_ITEMS))
+        return df.head(CLS_MAX_ITEMS)
 
     def _parse_cls_page(self, html_text: str, source_url: str = "") -> pd.DataFrame:
         """将 CLS 页面 HTML 解析为结构化 DataFrame。"""

@@ -338,9 +338,6 @@ class ClsCdpCollector:
                     )
                     items = list(self._cache_items)
                 else:
-                    cdp.close_page(target_id)
-                    target_id = None
-                    cdp.disconnect()
                     items = self._fresh_fetch(cdp, fingerprint, limit=None)
             else:
                 # TTL 过期或首次采集

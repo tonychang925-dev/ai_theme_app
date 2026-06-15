@@ -137,6 +137,24 @@ async def run_services(args: argparse.Namespace) -> None:
                 except Exception:
                     pass
 
+        # Phase 6A: destroy pm_e2e:{run_id} consumer groups on auxiliary streams
+        # These are created by UnifiedRedisStreamBus/RedisEventBus and never
+        # cleaned up otherwise, leaving zombie groups on every E2E run.
+        e2e_group_prefix = f"pm_e2e:{args.run_id}"
+        for _stream in [
+            "stream:theme_events",
+            "stream:relation_events",
+            "stream:cache_events",
+            "stream:stats_events",
+        ]:
+            try:
+                await redis_client.xgroup_destroy(_stream, e2e_group_prefix)
+                logging.info(
+                    "Self-cleanup: destroyed group %s on %s", e2e_group_prefix, _stream,
+                )
+            except Exception:
+                pass
+
         await gateway.close()
         await redis_client.aclose()
 
