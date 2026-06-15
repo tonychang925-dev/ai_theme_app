@@ -2315,15 +2315,11 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
             except Exception:
                 pass
 
-    existing = recap_doc.get("daily_review_v2")
-    if not force and isinstance(existing, dict) and existing.get("schema_version") == "daily_review_v2":
-        v2 = existing
-    else:
-        v2 = builder.build(
-            trade_date=d,
-            recap_doc=recap_doc,
-            recap_snapshot_version=str(row.get("snapshot_version") or ""),
-        )
+    v2 = builder.build(
+        trade_date=d,
+        recap_doc=recap_doc,
+        recap_snapshot_version=str(row.get("snapshot_version") or ""),
+    )
 
     # ── PR-14A: compose engine report into DailyReviewV2 ──
     try:
