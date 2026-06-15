@@ -2261,6 +2261,7 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
     """Generate and store DailyReview V2 under recap_doc.daily_review_v2."""
     p = payload or {}
     trade_date_str = str(p.get("trade_date") or p.get("date") or "")
+    force = bool(p.get("force", False))
     try:
         d = date.fromisoformat(trade_date_str)
     except ValueError as exc:
@@ -4083,7 +4084,8 @@ async def start_collection(payload: CollectionStartRequest) -> dict[str, Any]:
     availability = app.state.collection_job_manager.availability(payload.trade_date)
     if not availability.get("allowed"):
         raise HTTPException(status_code=400, detail=availability.get("message") or "collection not allowed")
-    job = app.state.collection_job_manager.create_job(payload.trade_date, payload.model_dump())
+    prepared_payload = await app.state.collection_job_manager.prepare_payload(payload.trade_date, payload.model_dump())
+    job = app.state.collection_job_manager.create_job(payload.trade_date, prepared_payload)
     return job.to_dict()
 
 

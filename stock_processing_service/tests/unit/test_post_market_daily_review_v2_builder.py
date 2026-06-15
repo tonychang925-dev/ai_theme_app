@@ -95,6 +95,97 @@ def test_daily_review_v2_builder_maps_theme_capital_from_report_context() -> Non
     assert coverage["missing_fields"] == []
 
 
+def test_daily_review_v2_builder_dedupes_stock_capital_reviews_by_stock_id() -> None:
+    recap_doc = {
+        "report_context": {
+            "money_flow": [
+                {
+                    "stock_id": "300581",
+                    "stock_name": "晨曦航空",
+                    "subject_key": "air",
+                    "theme_name": "军工",
+                    "main_net_inflow": 12000000,
+                    "pct_chg": 6.1,
+                    "turnover_rate": 12.4,
+                },
+                {
+                    "stock_id": "300581.SZ",
+                    "stock_name": "晨曦航空",
+                    "subject_key": "air2",
+                    "theme_name": "导弹",
+                    "main_net_inflow": 9000000,
+                    "pct_chg": 6.1,
+                    "turnover_rate": 12.4,
+                },
+                {
+                    "stock_id": "688010",
+                    "stock_name": "福光股份",
+                    "subject_key": "optic",
+                    "theme_name": "光学",
+                    "main_net_inflow": 8000000,
+                    "pct_chg": 3.2,
+                    "turnover_rate": 9.1,
+                },
+            ]
+        },
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 6, 12),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.stock.capital.dedupe",
+    )
+
+    rows = payload["stock_capital_reviews"]
+    assert len(rows) == 2
+    assert {row["stock_id"] for row in rows} == {"300581", "688010"}
+
+
+def test_daily_review_v2_builder_prefers_report_context_money_flow_enhanced_for_stock_capital() -> None:
+    recap_doc = {
+        "stock_capital_reviews": [
+            {
+                "stock_id": "300581",
+                "stock_name": "晨曦航空",
+                "subject_key": "legacy_air",
+                "theme_name": "陆军",
+                "main_net_inflow": 0,
+                "rank_overall": 1,
+                "pct_chg": 0.0,
+                "turnover_rate": 0.0,
+            }
+        ],
+        "report_context": {
+            "money_flow_enhanced": [
+                {
+                    "stock_id": "300581",
+                    "stock_name": "晨曦航空",
+                    "subject_key": "air",
+                    "theme_name": "军工",
+                    "main_net_inflow": 12000000,
+                    "rank_overall": 1,
+                    "pct_chg": 6.1,
+                    "turnover_rate": 12.4,
+                }
+            ]
+        },
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 6, 12),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.stock.capital.prefers_context",
+    )
+
+    rows = payload["stock_capital_reviews"]
+    assert len(rows) == 1
+    assert rows[0]["stock_id"] == "300581"
+    assert rows[0]["subject_key"] == "air"
+    assert rows[0]["main_net_inflow"] == 12000000
+
+
 def test_daily_review_v2_builder_synthesizes_theme_reviews_from_capital_and_cycles() -> None:
     recap_doc = {
         "report_context": {

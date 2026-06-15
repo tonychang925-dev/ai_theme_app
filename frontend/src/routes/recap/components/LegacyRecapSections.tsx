@@ -167,6 +167,21 @@ function renderAbnormalLabels(value: string) {
   );
 }
 
+function renderF10CapitalSummary(value: unknown) {
+  const f10 = value as Record<string, unknown> | undefined;
+  if (!f10 || typeof f10 !== "object") return <span className="workspace-note">--</span>;
+  const capitalFlow = (f10.capital_flow as Record<string, unknown> | undefined) || {};
+  const dragonTiger = (f10.dragon_tiger as Record<string, unknown> | undefined) || {};
+  const marginTrading = (f10.margin_trading as Record<string, unknown> | undefined) || {};
+  const parts = [
+    String(capitalFlow.summary || f10.summary || "").trim(),
+    dragonTiger.summary ? `龙虎榜：${String(dragonTiger.summary)}` : "",
+    marginTrading.summary ? `融资融券：${String(marginTrading.summary)}` : "",
+  ].filter((item) => item && item !== "--");
+  if (parts.length === 0) return <span className="workspace-note">--</span>;
+  return <div style={{ lineHeight: 1.5 }}>{parts.join("；")}</div>;
+}
+
 export default function LegacyRecapSections({
   reportType,
   tradeDate,
@@ -635,6 +650,7 @@ export default function LegacyRecapSections({
                   <th>得分</th>
                   <th>K线位置</th>
                   <th>K线形态</th>
+                  <th>F10资金动向</th>
                   <th>说明</th>
                 </tr>
               </thead>
@@ -648,6 +664,7 @@ export default function LegacyRecapSections({
                     <td>{row.score}</td>
                     <td>{row.klinePosition}</td>
                     <td>{row.klinePattern}</td>
+                    <td className="recap-cell-wrap">{renderF10CapitalSummary(row.f10_capital)}</td>
                     <td className="recap-cell-wrap">{row.note}</td>
                   </tr>
                 ))}

@@ -131,6 +131,7 @@ class EvidenceItem(TypedDict, total=False):
     trade_action: str | None
     tags: list[str]
     rank_order: int | None
+    f10_capital: dict[str, Any]
 
 
 class EvidenceLayerReview(TypedDict, total=False):

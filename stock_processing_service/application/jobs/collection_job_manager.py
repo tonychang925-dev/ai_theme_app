@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import asyncio
 import os
 import sys
@@ -177,6 +178,8 @@ class CollectionJobManager:
         # ── 其余采集/构建任务 ──
         if options.get("dragon_tiger", True):
             tasks.append(CollectionTaskState(key="dragon_tiger", title="龙虎榜构建"))
+        if options.get("f10_capital", False):
+            tasks.append(CollectionTaskState(key="f10_capital", title="F10资金动向快照"))
         if options.get("index_kline", True):
             tasks.append(CollectionTaskState(key="index_kline", title="大盘指数采集+技术分析"))
         if options.get("abnormal_signal", False):
@@ -286,6 +289,63 @@ class CollectionJobManager:
 
     def _format_abnormal_filter_summary(self, payload: dict[str, Any]) -> str:
         return CollectionCommandPlanner.format_abnormal_filter_summary(payload)
+
+    @staticmethod
+    def _normalize_stock_ids(rows: list[dict[str, Any]]) -> list[str]:
+        collected: list[str] = []
+        seen: set[str] = set()
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            raw_stock_id = str(row.get("stock_id") or row.get("stock_code") or row.get("symbol") or "").strip()
+            if not raw_stock_id:
+                continue
+            normalized = raw_stock_id
+            if "." in normalized:
+                head, tail = normalized.rsplit(".", 1)
+                if tail.upper() in {"SZ", "SH", "BJ"}:
+                    normalized = head
+            digits = "".join(ch for ch in normalized if ch.isdigit())
+            normalized = digits if len(digits) == 6 else normalized
+            if normalized and normalized not in seen:
+                seen.add(normalized)
+                collected.append(normalized)
+        return collected
+
+    async def _resolve_f10_capital_stock_ids(self, trade_date: str) -> list[str]:
+        if self._container is None:
+            raise RuntimeError("container is None")
+        recap_job = getattr(self._container, "build_post_market_recap", None)
+        read_port = getattr(recap_job, "_read_port", None)
+        if read_port is None:
+            raise RuntimeError("container missing build_post_market_recap._read_port")
+        fetch_fn = getattr(read_port, "get_subject_stock_pool_by_trade_date", None)
+        if not callable(fetch_fn):
+            raise RuntimeError("read_port missing get_subject_stock_pool_by_trade_date")
+
+        trade_date_val = date.fromisoformat(trade_date)
+        rows = await fetch_fn(trade_date_val)
+        stock_ids = self._normalize_stock_ids([dict(row) for row in rows])
+        if not stock_ids:
+            raise RuntimeError("f10_capital subject pool is empty")
+        return stock_ids
+
+    async def prepare_payload(self, trade_date: str, payload: dict[str, Any]) -> dict[str, Any]:
+        options = payload.get("options") or {}
+        if not options.get("f10_capital", False):
+            return payload
+        stock_ids = payload.get("stock_ids") or options.get("stock_ids") or []
+        if isinstance(stock_ids, str):
+            stock_ids = [item.strip() for item in stock_ids.split(",") if item.strip()]
+        if not isinstance(stock_ids, list):
+            stock_ids = []
+        normalized = [str(item).strip() for item in stock_ids if str(item).strip()]
+        if not normalized:
+            normalized = await self._resolve_f10_capital_stock_ids(trade_date)
+        prepared = copy.deepcopy(payload)
+        prepared["stock_ids"] = normalized
+        prepared.setdefault("options", {})["stock_ids"] = normalized
+        return prepared
 
     def _latest_jyhf_subject_keys(self) -> list[str]:
         candidate_files = [
@@ -413,6 +473,13 @@ class CollectionJobManager:
             env["DEEPSEEK_API_KEY"] = deepseek_api_key
         if deepseek_model:
             env["DEEPSEEK_MODEL"] = deepseek_model
+        tdx_agent_python = _normalize_secret(
+            payload.get("tdx_agent_python")
+            or os.getenv("TDX_AGENT_PYTHON", "")
+            or env_file_values.get("TDX_AGENT_PYTHON", "")
+        )
+        if tdx_agent_python:
+            env["TDX_AGENT_PYTHON"] = tdx_agent_python
         env["PYTHONUNBUFFERED"] = "1"
         return env
 

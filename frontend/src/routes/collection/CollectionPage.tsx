@@ -104,6 +104,7 @@ export function CollectionPage() {
     tushareDailyBasic: false,
     tushareKline: true,
     auction: false,
+    f10Capital: false,
     dragonTiger: true,
     indexKline: true,
   });
@@ -223,6 +224,7 @@ export function CollectionPage() {
           tushare_daily_basic: options.tushareDailyBasic,
           tushare_kline: options.tushareKline,
           auction: options.auction,
+          f10_capital: options.f10Capital,
           dragon_tiger: options.dragonTiger,
           index_kline: options.indexKline,
           auto_build_v2_if_missing: false,
@@ -367,6 +369,18 @@ export function CollectionPage() {
               />
               <span>盘前竞价采集</span>
             </label>
+
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.f10Capital}
+                onChange={() => setOptions((s) => ({ ...s, f10Capital: !s.f10Capital }))}
+              />
+              <span>F10资金动向采集</span>
+            </label>
+            <div className="workspace-note">
+              自动从当日复盘候选池提取股票，专项采集资金动向快照，不参与评分。
+            </div>
 
             {/* ── 股票快照（可插拔数据源）── */}
             <label className="collection-check">

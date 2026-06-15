@@ -80,6 +80,21 @@ def test_collection_planner_builds_auction_commands():
     assert plan.steps[3].runner_key == "auction.signal"
 
 
+def test_collection_planner_builds_f10_capital_runner():
+    planner = CollectionCommandPlanner()
+
+    plan = planner.build_task_plan(
+        task_key="f10_capital",
+        trade_date="2026-05-06",
+        payload={"options": {"stock_ids": ["000001", "600000"]}},
+        env={"TDX_AGENT_HOST": "127.0.0.1", "TDX_AGENT_PORT": "8766"},
+    )
+
+    assert plan.runner_key == "f10.capital.collect"
+    assert len(plan.steps) == 0
+    assert any("资金动向快照采集" in msg for msg in plan.pre_logs)
+
+
 def test_collection_planner_keeps_strong_watch_as_service_owned_step():
     planner = CollectionCommandPlanner()
 
@@ -144,6 +159,7 @@ def test_collection_registry_does_not_register_recap_report_overlay_runner():
     assert registry.get("recap.market_environment_daily") is not None
     assert registry.get("recap.theme_capital_flow_daily") is not None
     assert registry.get("recap.report") is None
+    assert registry.get("f10.capital.collect") is not None
 
 
 def test_collection_planner_jyhf_commands_preserve_script_order():

@@ -105,6 +105,40 @@ def bars_response(
     }
 
 
+def f10_catalog_response(stock_id: str, system_stock_id: str, catalog: list[dict]) -> dict[str, Any]:
+    return {
+        "source": "tdx_mootdx",
+        "stock_id": stock_id,
+        "system_stock_id": system_stock_id,
+        "ts": _now(),
+        "data_type": "f10_catalog",
+        "row_count": len(catalog),
+        "rows": catalog,
+    }
+
+
+def f10_response(
+    stock_id: str,
+    system_stock_id: str,
+    content: Any,
+    section: str = "",
+    catalog: list[dict] | None = None,
+) -> dict[str, Any]:
+    content_type = type(content).__name__
+    return {
+        "source": "tdx_mootdx",
+        "stock_id": stock_id,
+        "system_stock_id": system_stock_id,
+        "ts": _now(),
+        "data_type": "f10",
+        "section": section,
+        "content_type": content_type,
+        "catalog_row_count": len(catalog or []),
+        "catalog": catalog or [],
+        "content": content,
+    }
+
+
 def _build_bar_time(row: dict) -> str:
     """从 year/month/day/hour/minute 字段生成 ISO 时间字符串."""
     try:

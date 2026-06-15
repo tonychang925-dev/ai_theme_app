@@ -11,6 +11,8 @@
   curl http://127.0.0.1:8766/quote/002361
   curl http://127.0.0.1:8766/minute/002361
   curl http://127.0.0.1:8766/bars/002361
+  curl http://127.0.0.1:8766/f10c/000001
+  curl http://127.0.0.1:8766/f10/000001?section=资金动向
 """
 from __future__ import annotations
 
@@ -20,7 +22,14 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Query
 
 from config import load_config
-from schemas import health_response, quote_response, minute_response, bars_response
+from schemas import (
+    health_response,
+    quote_response,
+    minute_response,
+    bars_response,
+    f10_catalog_response,
+    f10_response,
+)
 from tdx_client import TdxClient, parse_stock_id
 
 # ── logging ──
@@ -111,6 +120,29 @@ def bars(
         return bars_response(numeric_id, system_id, rows, frequency, offset)
     except Exception as exc:
         logger.exception("bars(%s) error", stock_id)
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.get("/f10c/{stock_id}")
+def f10_catalog(stock_id: str):
+    numeric_id, system_id = parse_stock_id(stock_id)
+    try:
+        catalog = get_client().get_f10_catalog(numeric_id)
+        return f10_catalog_response(numeric_id, system_id, catalog)
+    except Exception as exc:
+        logger.exception("f10c(%s) error", stock_id)
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.get("/f10/{stock_id}")
+def f10(stock_id: str, section: str = Query(default="", description="可选：F10 目录项名称，如 资金动向")):
+    numeric_id, system_id = parse_stock_id(stock_id)
+    try:
+        catalog = get_client().get_f10_catalog(numeric_id)
+        content = get_client().get_f10_content(numeric_id, name=section)
+        return f10_response(numeric_id, system_id, content, section=section, catalog=catalog)
+    except Exception as exc:
+        logger.exception("f10(%s) error", stock_id)
         raise HTTPException(status_code=500, detail=str(exc))
 
 

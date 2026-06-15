@@ -1520,6 +1520,41 @@ class DatabaseGateway:
             logger.error(f"写入 one_to_two_candidate_feature 失败: {e}")
             raise
 
+    async def upsert_stock_f10_capital_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：stock_f10_capital_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_stock_f10_capital_snapshot_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 stock_f10_capital_snapshot 失败: {e}")
+            raise
+
+    async def get_stock_f10_capital_snapshots(
+        self,
+        trade_date,
+        stock_ids: List[str] | None = None,
+        source: str = "tdx_f10",
+        section: str = "资金动向",
+    ) -> list[Dict[str, Any]]:
+        """股票域显式读取：stock_f10_capital_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_f10_capital_snapshots(
+                trade_date=trade_date,
+                stock_ids=stock_ids,
+                source=source,
+                section=section,
+            )
+            self._record_request(True, start_time)
+            return [dict(row) for row in result]
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 stock_f10_capital_snapshot 失败: {e}")
+            raise
+
     async def upsert_theme_cycle_evidence_daily_rows(self, rows: List[Dict[str, Any]]) -> int:
         """股票域显式写入：theme_cycle_evidence_daily（Layer B 四层证据真源）。"""
         try:

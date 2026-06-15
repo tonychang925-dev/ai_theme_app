@@ -424,6 +424,12 @@ function buildMoneyFlowRowsFromV2(rows: MoneyFlowReviewV2[]): MoneyFlowRow[] {
       klinePosition: zh(item.kline?.position_label || "--"),
       klinePattern: zh(item.kline?.pattern_labels?.join("/") || item.kline?.pattern_summary || "--"),
       note: zh(noteParts.join("；") || "--"),
+      f10_capital: item.f10_capital ? {
+        summary: item.f10_capital.summary,
+        dragon_tiger: item.f10_capital.dragon_tiger ? { summary: item.f10_capital.dragon_tiger.summary } : undefined,
+        margin_trading: item.f10_capital.margin_trading ? { summary: item.f10_capital.margin_trading.summary } : undefined,
+        capital_flow: item.f10_capital.capital_flow ? { summary: item.f10_capital.capital_flow.summary } : undefined,
+      } : undefined,
     };
   });
 }
@@ -560,6 +566,12 @@ type MoneyFlowRow = {
   klinePosition: string;
   klinePattern: string;
   note: string;
+  f10_capital?: {
+    summary?: string;
+    dragon_tiger?: { summary?: string };
+    margin_trading?: { summary?: string };
+    capital_flow?: { summary?: string };
+  };
 };
 
 type DragonTigerRow = {
@@ -851,6 +863,7 @@ function parseMoneyFlowRow(theme: string, body: string): MoneyFlowRow {
     klinePosition: zh((segments.find((item) => item.startsWith("K线位置 ")) ?? "").replace("K线位置 ", "").trim() || "--"),
     klinePattern: zh((segments.find((item) => item.startsWith("K线形态 ")) ?? "").replace("K线形态 ", "").trim() || "--"),
     note: zh(segments.filter((item) => !item.startsWith("K线位置 ") && !item.startsWith("K线形态 ")).slice(4).join("；") || "--"),
+    f10_capital: undefined,
   };
 }
 
@@ -946,35 +959,21 @@ function sectionMap(payload: RecapViewModelV2 | null) {
   return map;
 }
 
-type PostMarketDataMode = "sections_first" | "daily_review_v2_first";
-type RecapViewMode = "engine" | "legacy";
+type PostMarketDataMode = "daily_review_v2_first";
 
 function normalizePostMarketDataMode(value: string | null | undefined): PostMarketDataMode | null {
   if (value === "daily_review_v2" || value === "daily_review_v2_first") {
     return "daily_review_v2_first";
   }
-  if (value === "sections_first") {
-    return "sections_first";
-  }
   return null;
 }
 
 function resolvePostMarketDataMode(params: URLSearchParams): PostMarketDataMode {
-  if (window.location.search.includes("data_mode=sections_first")) {
-    return "sections_first";
-  }
   const urlMode = normalizePostMarketDataMode(params.get("data_mode"));
   if (urlMode) {
     return urlMode;
   }
   return normalizePostMarketDataMode(import.meta.env.VITE_POST_MARKET_DEFAULT_DATA_MODE) ?? "daily_review_v2_first";
-}
-
-function resolveRecapViewMode(params: URLSearchParams): RecapViewMode {
-  if (params.get("view") === "legacy" || params.get("legacy_sections") === "1") {
-    return "legacy";
-  }
-  return "engine";
 }
 
 function isEngineReportReady(dailyReviewV2: PostMarketDailyReviewV2 | null) {
@@ -991,19 +990,14 @@ function buildRecapSearchParams({
   tradeDate,
   reportType,
   dataMode,
-  viewMode,
 }: {
   tradeDate: string;
   reportType: "pre_market" | "post_market";
   dataMode?: PostMarketDataMode | null;
-  viewMode?: RecapViewMode | null;
 }) {
   const query = new URLSearchParams({ date: tradeDate, report_type: reportType });
   if (reportType === "post_market" && dataMode) {
-    query.set("data_mode", dataMode === "daily_review_v2_first" ? "daily_review_v2" : "sections_first");
-  }
-  if (viewMode === "legacy") {
-    query.set("view", "legacy");
+    query.set("data_mode", "daily_review_v2");
   }
   return query;
 }
@@ -1032,9 +1026,7 @@ export function RecapPage() {
   const initialType = window.location.search.includes("report_type=pre_market") ? "pre_market" : "post_market";
   const initialDate = initialParams.get("date") ?? today;
   const dataMode = resolvePostMarketDataMode(initialParams);
-  const viewMode = resolveRecapViewMode(initialParams);
-  const effectiveDataMode = viewMode === "legacy" ? "sections_first" : dataMode;
-  const dailyReviewV2PreviewEnabled = effectiveDataMode === "daily_review_v2_first";
+  const dailyReviewV2PreviewEnabled = dataMode === "daily_review_v2_first";
 
   const [tradeDate, setTradeDate] = useState(initialDate);
   const [reportType, setReportType] = useState<"pre_market" | "post_market">(initialType);
@@ -1067,7 +1059,6 @@ export function RecapPage() {
       ?? generationSteps[generationSteps.length - 1];
   }, [generationSteps]);
   const isPostMarket = effectiveReportType === "post_market";
-  const legacyViewEnabled = isPostMarket && viewMode === "legacy";
   const engineReportReady = isEngineReportReady(dailyReviewV2);
   const engineSummary = dailyReviewV2?.engine_summary ?? null;
   const marketRegimeReview = dailyReviewV2?.market_regime_review ?? null;
@@ -1201,12 +1192,12 @@ export function RecapPage() {
   const stockCapitalFlowRows = useMemo(
     () => {
       const v2Rows = dailyReviewV2?.stock_capital_reviews;
-      if (dailyReviewV2PreviewEnabled && isV2ModuleReady(dailyReviewV2, "stock_capital_reviews", v2Rows)) {
+      if (isV2ModuleReady(dailyReviewV2, "stock_capital_reviews", v2Rows)) {
         return buildStockCapitalFlowRowsFromV2(v2Rows ?? []);
       }
       return stockCapitalFlowSection.map((item) => parseStockCapitalFlowRow(item));
     },
-    [dailyReviewV2PreviewEnabled, dailyReviewV2, stockCapitalFlowSection],
+    [dailyReviewV2, stockCapitalFlowSection],
   );
   const mainThemeRows = useMemo(() => themeSummaryRows.filter((row) => row.tier === "主线"), [themeSummaryRows]);
   const branchThemeRows = useMemo(() => themeSummaryRows.filter((row) => row.tier === "强分支"), [themeSummaryRows]);
@@ -1317,15 +1308,14 @@ export function RecapPage() {
       snapshotPromise
         .then((snapshot) => {
           finalizeBootstrap(() => {
-            setPayload(snapshot);
-            const query = buildRecapSearchParams({
-              tradeDate,
-              reportType,
-              dataMode: dailyReviewV2PreviewEnabled ? "daily_review_v2_first" : "sections_first",
-              viewMode,
-            });
-            window.history.replaceState(null, "", `/recap?${query.toString()}`);
-            setLoading(false);
+              setPayload(snapshot);
+              const query = buildRecapSearchParams({
+                tradeDate,
+                reportType,
+                dataMode: "daily_review_v2_first",
+              });
+              window.history.replaceState(null, "", `/recap?${query.toString()}`);
+              setLoading(false);
           });
         })
         .catch((err: Error) => {
@@ -1354,14 +1344,12 @@ export function RecapPage() {
           setDailyReview(data);
         })
         .catch(() => {});
-      if (dailyReviewV2PreviewEnabled) {
-        fetchDailyReviewV2(tradeDate)
-          .then((data) => {
-            if (!active) return;
-            setDailyReviewV2(data);
-          })
-          .catch(() => {});
-      }
+      fetchDailyReviewV2(tradeDate)
+        .then((data) => {
+          if (!active) return;
+          setDailyReviewV2(data);
+        })
+        .catch(() => {});
       return () => { active = false; };
     }
 
@@ -1373,7 +1361,7 @@ export function RecapPage() {
           const query = buildRecapSearchParams({
             tradeDate,
             reportType,
-            dataMode: dailyReviewV2PreviewEnabled ? "daily_review_v2_first" : "sections_first",
+            dataMode: "daily_review_v2_first",
           });
           window.history.replaceState(null, "", `/recap?${query.toString()}`);
         }
@@ -1430,16 +1418,6 @@ export function RecapPage() {
     const query = buildRecapSearchParams({
       tradeDate,
       reportType: "post_market",
-      dataMode: "sections_first",
-      viewMode: "legacy",
-    });
-    navigateTo(`/recap?${query.toString()}`);
-  }
-
-  function openPostMarketEngineView() {
-    const query = buildRecapSearchParams({
-      tradeDate,
-      reportType: "post_market",
       dataMode: "daily_review_v2_first",
     });
     navigateTo(`/recap?${query.toString()}`);
@@ -1453,7 +1431,7 @@ export function RecapPage() {
     const [snapshot, dr, v2] = await Promise.all([
       fetchRecapSnapshot({ date: tradeDate, reportType: "post_market" }).catch(() => null),
       fetchDailyReview(tradeDate).catch(() => null),
-      dailyReviewV2PreviewEnabled ? fetchDailyReviewV2(tradeDate).catch(() => null) : Promise.resolve(null),
+      fetchDailyReviewV2(tradeDate).catch(() => null),
     ]);
     if (snapshot) setPayload(snapshot);
     if (dr) setDailyReview(dr);
@@ -1692,47 +1670,15 @@ export function RecapPage() {
           <main className="workspace-layout single">
             <section className="workspace-column">
               {isPostMarket ? (
-                legacyViewEnabled ? (
-                  <LegacyRecapSections
-                    reportType="post_market"
-                    tradeDate={tradeDate}
-                    onShowEngine={openPostMarketEngineView}
-                    highlights={highlights}
-                    marketEnvironmentSection={marketEnvironmentSection}
-                    themeEnvironmentSection={themeEnvironmentSection}
-                    themeSection={themeSection}
-                    themeSummaryRows={themeSummaryRows}
-                    themeCapitalFlowRows={themeCapitalFlowRows}
-                    strongStockSection={strongStockSection}
-                    strongStockGroups={strongStockGroups}
-                    watchlistSection={watchlistSection}
-                    watchlistRows={watchlistRows}
-                    stockCapitalFlowSection={stockCapitalFlowSection}
-                    stockCapitalFlowRows={stockCapitalFlowRows}
-                    moneySection={moneySection}
-                    moneyFlowRows={moneyFlowRows}
-                    abnormalSection={abnormalSection}
-                    abnormalNote={abnormalNote}
-                    abnormalRows={abnormalRows}
-                    sortedAbnormalRows={sortedAbnormalRows}
-                    auctionSection={auctionSection}
-                    auctionValidationSection={auctionValidationSection}
-                    auxSection={auxSection}
-                    dragonTigerNote={dragonTigerNote}
-                    dragonTigerRows={dragonTigerRows}
-                    themeKeyByTheme={themeKeyByTheme}
-                  />
-                ) : engineReportReady ? (
+                engineReportReady ? (
                   <EnginePostMarketView
                     dailyReviewV2={dailyReviewV2!}
                     tradeDate={tradeDate}
-                    onShowLegacy={openPostMarketLegacyView}
                   />
                 ) : (
                   <EngineMissingState
                     dailyReviewV2={dailyReviewV2}
                     onRetry={handleStartPostMarketRecap}
-                    onShowLegacy={openPostMarketLegacyView}
                   />
                 )
               ) : (

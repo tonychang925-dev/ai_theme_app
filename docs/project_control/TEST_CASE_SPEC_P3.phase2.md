@@ -1,7 +1,7 @@
 # TEST CASE SPEC — P3.phase2
 
 ## 0. 范围与原则
-- 目标：对齐 [FEATURE_SPEC_P3.phase2.md](/Users/admin/Desktop/ai_theme_app/docs/project_control/FEATURE_SPEC_P3.phase2.md) 与 [PHASE_CONTRACT_P3.phase2.md](/Users/admin/Desktop/ai_theme_app/docs/project_control/PHASE_CONTRACT_P3.phase2.md)，为 `龙虎榜结构化对象 -> 资金行为增强 -> 个股工作台 -> /recap -> 来源链 -> 跨交易日一致性` 建立正式测试规范。
+- 目标：对齐 [FEATURE_SPEC_P3.phase2.md](/Users/admin/Desktop/ai_theme_app/docs/project_control/FEATURE_SPEC_P3.phase2.md) 与 [PHASE_CONTRACT_P3.phase2.md](/Users/admin/Desktop/ai_theme_app/docs/project_control/PHASE_CONTRACT_P3.phase2.md)，为 `龙虎榜结构化对象 -> 资金行为增强 -> F10 资金快照增强 -> 个股工作台 -> /recap -> 来源链 -> 跨交易日一致性` 建立正式测试规范。
 - 执行模式：`execution_mode=real`，`allow_mock=false`。
 - 关键依赖：`postgres,tushare,jyhf,frontend_bff,theme_service`。
 - 默认测试库：`stock_data_test`。
@@ -56,13 +56,16 @@
 - `TC-P3.phase2-UT-005` 龙虎榜对象与来源链单元测试
 - `TC-P3.phase2-UT-006` 盘前承接计划单元测试
 - `TC-P3.phase2-UT-007` `recap_service` 快照聚合单元测试
+- `TC-P3.phase2-UT-008` `F10` 资金动向 parser 单元测试
 - `TC-P3.phase2-IT-001` `dragon_tiger_object` 真数据 smoke
 - `TC-P3.phase2-IT-002` `theme_mainline_judgement / theme_cycle_judgement / theme_leader_candidate / money_flow_enhanced` 真库构建
 - `TC-P3.phase2-IT-003` 个股工作台增强 DTO 集成验证
 - `TC-P3.phase2-IT-004` `/recap` 只读产品出口集成验证
+- `TC-P3.phase2-IT-005` `F10` 快照读写与挂载集成验证
 - `TC-P3.phase2-ST-001` `2026-04-01` 真实盘后复盘快照生成
 - `TC-P3.phase2-ST-002` `2026-04-03` 真实盘前必读快照生成
 - `TC-P3.phase2-RT-001` `2026-04-01 / 2026-04-02` 跨交易日一致性检查
+- `TC-P3.phase2-RT-002` `F10` 增强不影响评分结果回归
 
 ## 2. 功能分解对齐矩阵
 
@@ -80,6 +83,11 @@
 | `F-P3.phase2-T04-01` 来源链标准化 | RT-001 | `TC-P3.phase2-F-T04-01` | P0 | In Scope |
 | `F-P3.phase2-T04-02` 聚合层唯一化 | UT-007 / IT-004 | `TC-P3.phase2-F-T04-02` | P0 | In Scope |
 | `F-P3.phase2-T04-03` 模板兼容 | ST-001 / ST-002 | `TC-P3.phase2-F-T04-03` | P1 | In Scope |
+| `F-P3.phase2-T05-01` `F10` 资金动向快照落库 | UT-008 / IT-005 | `TC-P3.phase2-F-T05-01` | P0 | In Scope |
+| `F-P3.phase2-T05-02` 资金动向正文解析 | UT-008 / IT-005 | `TC-P3.phase2-F-T05-02` | P0 | In Scope |
+| `F-P3.phase2-T05-03` 复盘 review 挂载 | IT-005 / RT-002 | `TC-P3.phase2-F-T05-03` | P0 | In Scope |
+| `F-P3.phase2-T05-04` `1进2` 观察计划挂载 | IT-005 / RT-002 | `TC-P3.phase2-F-T05-04` | P0 | In Scope |
+| `F-P3.phase2-T05-05` 前端展示增强 | IT-005 | `TC-P3.phase2-F-T05-05` | P1 | In Scope |
 
 ## 3. 子用例详细分解
 
@@ -158,6 +166,52 @@
   - 盘后仅读取真源表与增强对象
   - 盘前仅读取 `pre_market_execution_plan`
   - `/recap` 页面端不得重算核心结论
+
+### TC-P3.phase2-F-T05-01
+- 级别：UT/IT，优先级：P0
+- 目标：`F10` 资金动向正文必须能稳定解析为快照结构
+- 前置：
+  - 已有一条 `000001` 资金动向样本文本
+- 核心断言：
+  - 能切出 5 个子段
+  - 能识别 `交易龙虎榜` 为空/暂无语义
+  - 能解析 `融资融券` 的最新日期
+  - 能提取 `资金流向` 的主力净额
+
+### TC-P3.phase2-F-T05-02
+- 级别：UT/IT，优先级：P0
+- 目标：`F10` 快照服务必须把正文映射成统一增强结构
+- 核心断言：
+  - `source=tdx_f10` 且 `section=资金动向`
+  - `dragon_tiger / block_trade / margin_trading / capital_flow / strategic_lending` 均存在
+  - `source_flags` 可反映命中段落
+  - `L2` 涨停分析不进入标准快照结构
+
+### TC-P3.phase2-F-T05-03
+- 级别：IT，优先级：P0
+- 目标：`F10` 快照挂载到复盘 review 后，不改变主事实语义
+- 核心断言：
+  - `money_flow_reviews[*].f10_capital` 存在
+  - `stock_capital_reviews[*].f10_capital` 存在
+  - `dragon_tiger_reviews[*].f10_capital` 存在
+  - 缺快照时复盘仍成功
+
+### TC-P3.phase2-F-T05-04
+- 级别：IT，优先级：P0
+- 目标：`1进2` 观察计划仅挂载展示字段，不影响评分结果
+- 核心断言：
+  - `post_market_setup_plan.items[*].f10_capital` 存在
+  - `decision` 不变
+  - `final_score` 不变
+  - `watch_level` 不变
+
+### TC-P3.phase2-F-T05-05
+- 级别：RT，优先级：P1
+- 目标：`F10` 增强不影响评分回归
+- 核心断言：
+  - 同一只候选有无 `f10_capital`，评分结果保持一致
+  - `observe_only` / `focus` 分层不因 `F10` 变动
+  - `missing_count` 只影响展示诊断，不阻断阶段通过
 
 ## 4. 必跑命令
 

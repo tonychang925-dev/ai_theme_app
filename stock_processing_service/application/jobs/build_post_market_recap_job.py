@@ -30,6 +30,9 @@ from stock_processing_service.domain.services.post_market_decision.post_market_d
 from stock_processing_service.application.services.mainline_discovery_fact_context_builder import (
     MainlineDiscoveryFactContextBuilder,
 )
+from stock_processing_service.application.services.f10_capital_evidence_service import (
+    F10CapitalEvidenceService,
+)
 from stock_processing_service.domain.services.mainline_discovery.mainline_logic_chain_builder import (
     MainlineLogicChainBuilder,
 )
@@ -91,6 +94,7 @@ class BuildPostMarketRecapJob:
         cycle_judgement_job: Any | None = None,  # BuildCycleJudgementJob — Layer B 前置
         evidence_job: Any | None = None,  # BuildThemeCycleEvidenceDailyJob — Layer B 证据
         abnormal_signal_job: Any | None = None,  # BuildStockAbnormalSignalJob — turnover_rate 真源
+        f10_capital_evidence_service: Any | None = None,  # F10 资金动向快照增强
         report_builder: NewChainPostMarketReportBuilder | None = None,
         market_summary_llm_service: Any | None = None,
         post_market_decision_engine: Any | None = None,
@@ -115,6 +119,7 @@ class BuildPostMarketRecapJob:
         self._cycle_judgement_job = cycle_judgement_job
         self._evidence_job = evidence_job
         self._abnormal_signal_job = abnormal_signal_job
+        self._f10_capital_evidence_service = f10_capital_evidence_service or F10CapitalEvidenceService()
         self._report_builder = report_builder or NewChainPostMarketReportBuilder()
         self._market_summary_llm_service = market_summary_llm_service or PostMarketMarketSummaryLlmService()
         self._decision_engine = post_market_decision_engine or PostMarketDecisionEngine()
@@ -858,6 +863,41 @@ class BuildPostMarketRecapJob:
                     raise RuntimeError("failed to persist one_to_two_candidate_feature rows")
             recap_doc["post_market_setup_plan"] = one_to_two_payload
             recap_doc["watchlists"] = {"one_to_two": one_to_two_payload}
+
+            f10_diag = {
+                "enabled": True,
+                "requested_stock_count": 0,
+                "hit_count": 0,
+                "missing_count": 0,
+                "attached": {},
+                "blocking": False,
+                "source": "stock_f10_capital_snapshot",
+            }
+            try:
+                stock_ids = self._f10_capital_evidence_service.collect_stock_ids(recap_doc, one_to_two_payload)
+                f10_diag["requested_stock_count"] = len(stock_ids)
+                if stock_ids:
+                    snapshot_rows = await self._read_port.get_stock_f10_capital_snapshots(trade_date, stock_ids)
+                    snapshots_by_stock = {
+                        str(row.get("stock_id") or "").strip(): row
+                        for row in snapshot_rows
+                        if isinstance(row, dict) and str(row.get("stock_id") or "").strip()
+                    }
+                    f10_diag["hit_count"] = len(snapshots_by_stock)
+                    f10_diag["missing_count"] = max(0, len(stock_ids) - len(snapshots_by_stock))
+                    f10_diag["attached"] = self._f10_capital_evidence_service.attach_to_recap_doc(
+                        recap_doc,
+                        snapshots_by_stock,
+                        one_to_two_payload,
+                    )
+            except Exception as exc:
+                f10_diag["error"] = str(exc)
+                f10_diag["blocking"] = False
+            diagnostics = recap_doc.get("diagnostics")
+            if not isinstance(diagnostics, dict):
+                diagnostics = {}
+                recap_doc["diagnostics"] = diagnostics
+            diagnostics["f10_capital"] = f10_diag
 
             recap_report = self._report_builder.build(recap_doc)
             recap_doc["report"] = recap_report

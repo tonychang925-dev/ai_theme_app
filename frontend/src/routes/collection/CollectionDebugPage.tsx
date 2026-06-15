@@ -67,6 +67,7 @@ export function CollectionDebugPage() {
   const [logs, setLogs] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [autoBuildV2IfMissing, setAutoBuildV2IfMissing] = useState(true);
+  const [f10Capital, setF10Capital] = useState(false);
   const logRef = useRef<HTMLDivElement | null>(null);
 
   function appendLog(line: string) {
@@ -143,6 +144,7 @@ export function CollectionDebugPage() {
           jyhf_history: false,
           tushare_kline: true,
           dragon_tiger: true,
+          f10_capital: f10Capital,
           abnormal_signal: true,
           leader_llm: true,
           recap_snapshot: true,
@@ -234,6 +236,17 @@ export function CollectionDebugPage() {
             />
             <span>v2周期缺失时自动补建</span>
           </label>
+          <label className="collection-check">
+            <input
+              type="checkbox"
+              checked={f10Capital}
+              onChange={() => setF10Capital((s) => !s)}
+            />
+            <span>F10资金动向采集</span>
+          </label>
+          <div className="workspace-note">
+            自动从当日复盘候选池提取股票，专项采集资金动向快照，不参与评分。
+          </div>
           <div className="collection-action-row">
             <button type="button" className="tag tag-button tag-active" onClick={handleStart} disabled={loading}>
               启动采集

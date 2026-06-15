@@ -6,6 +6,7 @@
 - 范围:
   - 龙虎榜结构化对象
   - 资金行为增强字段
+  - `F10` 资金动向快照增强
   - `theme_stock_leaderboard` 角色增强
   - 个股工作台增强
   - `/recap` 只读产品出口
@@ -13,9 +14,11 @@
   - 不引入 `SSE`
   - 不引入分钟级异动
   - 不建设完整主力资金行为体系
+  - 不在复盘主流程中现场抓取 `F10`
 - 冲突裁决说明:
   - `recap_service` 是唯一报告聚合层。
   - 新增字段只增不改，兼容 `P3.phase1` DTO。
+  - `F10` 资金动向仅作为可插拔展示增强，不替代现有真源语义。
 
 ## 0.1 P3.phase2 核心收口
 
@@ -504,3 +507,105 @@
 ### 7) 验收映射
 - `ACPT-P3C-006`
 - `ACPT-P3C-007`
+
+---
+
+## Task `P3.phase2-T05` — `F10` 资金动向快照增强（横切追加）
+
+### 1) 目标与边界
+- 目标:
+  - 将通达信 `F10`「资金动向」结构化为可缓存、可追溯的增强证据。
+  - 在不改变现有真源语义的前提下，把快照挂载到复盘与 `1进2` 展示对象。
+- 非目标:
+  - 不进入 `OneToTwoScorer`。
+  - 不替代 `money_flow_reviews` / `stock_capital_reviews` / `dragon_tiger_reviews` 的主事实。
+  - 不在复盘主流程中现场抓取 `F10`。
+  - 不把 `L2`「涨停分析」混入标准 `F10` 资金动向。
+
+### 1.1 子功能分解
+- `F-P3.phase2-T05-01` `F10` 资金动向快照落库
+  - 输入: `trade_date + stock_id + section=资金动向`
+  - 处理: 采集层写入 `stock_f10_capital_snapshot`
+  - 输出: 标准化快照记录
+  - 失败处理: 单股失败只记录 `parse_status / diagnostics`，批次失败才阻断采集任务
+  - 可观测证据: `snapshot_count / parse_status / source_updated_date`
+- `F-P3.phase2-T05-02` 资金动向正文解析
+  - 输入: 快照原文
+  - 处理: 切分 `交易龙虎榜 / 大宗交易 / 融资融券 / 资金流向 / 战略配售可出借`
+  - 输出: `f10_capital` 结构体
+  - 失败处理: 局部段落缺失按空值处理，不伪造结果
+  - 可观测证据: `section_hit_count / parse_status`
+- `F-P3.phase2-T05-03` 复盘 review 挂载
+  - 输入: `money_flow_reviews / stock_capital_reviews / dragon_tiger_reviews`
+  - 处理: 只读挂载 `f10_capital`
+  - 输出: 增强后的 review 视图
+  - 失败处理: 无快照则回退到原 review，不阻断复盘
+  - 可观测证据: `f10_hit_count / f10_missing_count`
+- `F-P3.phase2-T05-04` `1进2` 观察计划挂载
+  - 输入: `post_market_setup_plan.items`
+  - 处理: 追加 `f10_capital` 展示字段
+  - 输出: 观察清单增强对象
+  - 失败处理: 不影响 `decision / final_score / watch_level`
+  - 可观测证据: `one_to_two_f10_hit_count`
+- `F-P3.phase2-T05-05` 前端展示增强
+  - 输入: 带 `f10_capital` 的 recap / workspace / watch panel
+  - 处理: 复盘页展示完整摘要，`1进2` 只展示短摘要，个股工作台展示全量明细
+  - 输出: 前端可读卡片
+  - 失败处理: 字段缺失时回退原 UI
+  - 可观测证据: 页面渲染成功率
+
+### 2) 接口与契约
+- 输入:
+  - `trade_date`
+  - `stock_ids`
+- 输出:
+  - `f10_capital_by_stock`
+  - `f10_limitup_analysis`（可选，独立字段，不与标准 `F10` 混用）
+- 约束:
+  - 复盘只读 `stock_f10_capital_snapshot`
+  - 采集与解析分离，不允许复盘时现抓 `F10`
+
+### 3) 数据模型与状态变更
+- 新增对象:
+  - `stock_f10_capital_snapshot`
+- 更新对象:
+  - `post_market_recap_snapshot`
+  - `money_flow_reviews`
+  - `stock_capital_reviews`
+  - `dragon_tiger_reviews`
+  - `post_market_setup_plan.items`
+  - `watchlists.one_to_two.items`
+- 新增字段:
+  - `f10_capital`
+  - `f10_limitup_analysis`
+  - `source_updated_date`
+  - `parse_status`
+  - `diagnostics`
+
+### 4) 实现步骤（最小可执行序列）
+- Step-1: 定义 `stock_f10_capital_snapshot` 表与读写接口。
+- Step-2: 抽取 `F10` 资金动向 parser 与 evidence service。
+- Step-3: 新增独立采集任务，先落快照再进入复盘。
+- Step-4: 在 `BuildPostMarketRecapJob` 中挂载 review 与 `1进2` 展示字段。
+- Step-5: 在前端复盘页、观察清单与个股工作台中展示增强内容。
+
+### 5) 测试设计与命令
+- 对应测试用例:
+  - `TC-P3C-009-f10-capital-parser`
+  - `TC-P3C-010-f10-capital-snapshot-gateway`
+  - `TC-P3C-011-f10-capital-recap-attach`
+  - `TC-P3C-012-f10-capital-one-to-two-attach`
+  - `TC-P3C-013-f10-capital-score-isolation`
+- 必跑命令:
+  - `.venv/bin/python -m pytest -q`
+  - `rg -n "stock_f10_capital_snapshot|f10_capital|f10_limitup_analysis" /Users/admin/Desktop/ai_theme_app`
+
+### 6) 风险与回滚
+- 风险:
+  - 复盘主流程被外部 `F10` 网络波动拖慢
+  - `L2` 增强内容误混入标准 `F10` 事实
+- 回滚:
+  - 停用采集任务与挂载逻辑，仅保留原有 `money_flow_reviews / dragon_tiger_reviews / stock_capital_reviews`
+
+### 7) 验收映射
+- `ACPT-P3C-008`

@@ -188,6 +188,21 @@ class CollectionCommandPlanner:
         if task_key == "dragon_tiger":
             return CollectionTaskPlan(runner_key="dragon_tiger.object")
 
+        if task_key == "f10_capital":
+            stock_ids = options.get("stock_ids") or payload.get("stock_ids") or []
+            stock_count = len(stock_ids) if isinstance(stock_ids, list) else 0
+            return CollectionTaskPlan(
+                runner_key="f10.capital.collect",
+                pre_logs=[
+                    (
+                        f"f10_capital: stock_count={stock_count}"
+                        if stock_count
+                        else "f10_capital: stock_count=auto (候选池自动解析)"
+                    ),
+                    "f10_capital: 通达信 F10 资金动向本地脚本采集 → stock_f10_capital_snapshot",
+                ],
+            )
+
         if task_key == "index_kline":
             return CollectionTaskPlan(runner_key="index_kline.collect")
 

@@ -27,6 +27,8 @@ class SnapshotWritePort(Protocol):
 
     async def upsert_post_market_recap_snapshot(self, doc: PostMarketRecapSnapshot) -> int: ...
 
+    async def upsert_stock_f10_capital_snapshot_rows(self, rows: list[dict[str, Any]]) -> int: ...
+
 
 class MainlineRegistryWritePort(Protocol):
     """PR-9: Mainline Registry write operations."""

@@ -81,6 +81,14 @@ class DatabaseGatewayStockFacade(Protocol):
         setup_type: str = "one_to_two",
     ) -> list[dict[str, Any]]: ...
 
+    async def get_stock_f10_capital_snapshots(
+        self,
+        trade_date: date,
+        stock_ids: list[str] | None = None,
+        source: str = "tdx_f10",
+        section: str = "资金动向",
+    ) -> list[dict[str, Any]]: ...
+
     async def get_mainline_identity_by_subject_keys(
         self, subject_keys: list[str], trade_date: date
     ) -> list[MainlineIdentityDTO]: ...
@@ -178,6 +186,8 @@ class DatabaseGatewayStockFacade(Protocol):
     async def upsert_post_market_setup_plan_rows(self, rows: list[dict[str, Any]]) -> int: ...
 
     async def upsert_one_to_two_candidate_feature_rows(self, rows: list[dict[str, Any]]) -> int: ...
+
+    async def upsert_stock_f10_capital_snapshot_rows(self, rows: list[dict[str, Any]]) -> int: ...
 
     async def upsert_theme_mainline_identity_registry_rows(self, rows: list[dict[str, Any]]) -> int: ...
 

@@ -10,7 +10,6 @@ import asyncio
 import json
 import logging
 import os
-import signal
 import sys
 from datetime import date
 from pathlib import Path
@@ -28,6 +27,8 @@ from stock_processing_service.application.services.collection_task_registry impo
     CollectionTaskRunner,
     get_default_registry,
 )
+from stock_processing_service.application.services.f10_capital_evidence_service import F10CapitalEvidenceService
+from stock_processing_service.application.services.f10_capital_parser import F10CapitalParser
 
 # ── 注册表中已有的 Runner key ──
 # "script.default"    → ScriptCommandRunner (兼容旧脚本)
@@ -880,6 +881,248 @@ class TushareDailyBasicRunner:
             )
         except Exception as e:
             return CollectionTaskResult(status="failed", current_label="daily_basic采集异常", error_message=str(e))
+
+
+class F10CapitalCollectRunner:
+    """F10 资金动向快照采集 Runner — 通过本地脚本采集并落库。"""
+
+    MAX_CONCURRENT_REQUESTS = 5
+    MAX_SUCCESS_LOG_SAMPLES = 20
+
+    def __init__(
+        self,
+        parser: F10CapitalParser | None = None,
+        evidence_service: F10CapitalEvidenceService | None = None,
+    ) -> None:
+        self._parser = parser or F10CapitalParser()
+        self._evidence_service = evidence_service or F10CapitalEvidenceService(self._parser)
+
+    @staticmethod
+    def _normalize_stock_ids(payload: dict[str, Any]) -> list[str]:
+        stock_ids = payload.get("stock_ids") or payload.get("options", {}).get("stock_ids") or []
+        if isinstance(stock_ids, str):
+            stock_ids = [item.strip() for item in stock_ids.split(",") if item.strip()]
+        if not isinstance(stock_ids, list):
+            return []
+        normalized: list[str] = []
+        for item in stock_ids:
+            text = str(item or "").strip()
+            if text:
+                normalized.append(text)
+        return normalized
+
+    @staticmethod
+    def _collector_python(context: CollectionTaskContext) -> str:
+        candidates = [
+            str(context.env.get("TDX_AGENT_PYTHON") or "").strip(),
+            str(os.getenv("TDX_AGENT_PYTHON") or "").strip(),
+            str(PROJECT_ROOT / "tools" / "tdx_market_agent" / ".venv" / "bin" / "python"),
+        ]
+        for candidate in candidates:
+            if candidate and Path(candidate).exists():
+                return candidate
+        return ""
+
+    async def _resolve_stock_ids(self, context: CollectionTaskContext) -> tuple[list[str], list[str]]:
+        logs: list[str] = []
+        stock_ids = self._normalize_stock_ids(context.payload)
+        if stock_ids:
+            logs.append(f"stock_ids=payload:{len(stock_ids)}")
+            return stock_ids, logs
+
+        return [], logs
+
+    async def _run_collect_script(
+        self,
+        *,
+        python_bin: str,
+        trade_date: str,
+        stock_ids: list[str],
+        progress_callback: Any | None = None,
+    ) -> dict[str, Any]:
+        script_path = PROJECT_ROOT / "tools" / "tdx_market_agent" / "f10_capital_collect.py"
+        if not script_path.exists():
+            raise RuntimeError(f"collector script missing: {script_path}")
+        cmd = [
+            python_bin,
+            "-u",
+            str(script_path),
+            "--trade-date",
+            trade_date,
+            "--symbols",
+            ",".join(stock_ids),
+            "--section",
+            "资金动向",
+        ]
+        proc = await asyncio.create_subprocess_exec(
+            *cmd,
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+            env={**os.environ, **self._collection_env_vars(), "PYTHONUNBUFFERED": "1"},
+        )
+        stderr_lines: list[str] = []
+
+        async def _drain_stderr() -> None:
+            assert proc.stderr is not None
+            while True:
+                raw = await proc.stderr.readline()
+                if not raw:
+                    break
+                line = raw.decode("utf-8", errors="replace").rstrip()
+                if not line:
+                    continue
+                stderr_lines.append(line)
+                if progress_callback is not None:
+                    try:
+                        progress_callback(line[:300])
+                    except Exception:
+                        pass
+
+        stderr_task = asyncio.create_task(_drain_stderr())
+        stdout_bytes = await proc.stdout.read() if proc.stdout is not None else b""
+        await proc.wait()
+        await stderr_task
+
+        stdout_text = stdout_bytes.decode("utf-8", errors="replace").strip()
+        stderr_text = "\n".join(stderr_lines).strip()
+        if proc.returncode != 0:
+            raise RuntimeError(stderr_text or stdout_text or f"collector exit={proc.returncode}")
+        if not stdout_text:
+            raise RuntimeError("collector returned empty stdout")
+        try:
+            payload = json.loads(stdout_text)
+        except json.JSONDecodeError as exc:
+            raise RuntimeError(f"collector produced invalid json: {exc}") from exc
+        if not isinstance(payload, dict):
+            raise RuntimeError("collector output must be a JSON object")
+        return payload
+
+    @staticmethod
+    def _collection_env_vars() -> dict[str, str]:
+        env: dict[str, str] = {}
+        value = str(os.getenv("TDX_AGENT_PYTHON") or "").strip()
+        if value:
+            env["TDX_AGENT_PYTHON"] = value
+        return env
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        if context.container is None:
+            return CollectionTaskResult(status="failed", current_label="容器未注入", error_message="container is None")
+
+        stock_ids, resolve_logs = await self._resolve_stock_ids(context)
+        if not stock_ids:
+            return CollectionTaskResult(
+                status="failed",
+                current_label="F10资金动向快照采集失败",
+                logs=resolve_logs,
+                error_message="missing explicit stock_ids in payload",
+            )
+
+        try:
+            write_port = getattr(getattr(context.container, "build_post_market_recap", None), "_write_port", None)
+            if write_port is None:
+                return CollectionTaskResult(
+                    status="failed",
+                    current_label="F10资金动向快照采集失败",
+                    error_message="container missing build_post_market_recap._write_port",
+                )
+
+            python_bin = self._collector_python(context)
+            if not python_bin:
+                return CollectionTaskResult(
+                    status="failed",
+                    current_label="F10资金动向快照采集失败",
+                    logs=resolve_logs,
+                    error_message="collector python not found; install tools/tdx_market_agent/.venv and mootdx[all]",
+                )
+
+            collector_payload = await self._run_collect_script(
+                python_bin=python_bin,
+                trade_date=context.trade_date,
+                stock_ids=stock_ids,
+                progress_callback=context.progress_callback,
+            )
+            records = collector_payload.get("records") or []
+            if not isinstance(records, list):
+                return CollectionTaskResult(
+                    status="failed",
+                    current_label="F10资金动向快照采集失败",
+                    logs=resolve_logs,
+                    error_message="collector output missing records",
+                )
+
+            rows: list[dict[str, Any]] = []
+            success_samples: list[str] = []
+            error_samples: list[str] = []
+            logs: list[str] = resolve_logs + [f"collector={Path(python_bin).name}", f"stock_count={len(stock_ids)}"]
+
+            record_map: dict[str, dict[str, Any]] = {}
+            for item in records:
+                if not isinstance(item, dict):
+                    continue
+                key = str(item.get("stock_id") or item.get("system_stock_id") or "").strip()
+                if not key:
+                    continue
+                normalized = key.replace(".SZ", "").replace(".SH", "").replace(".BJ", "")
+                record_map[key] = item
+                record_map[normalized] = item
+
+            success_count = 0
+            fail_count = 0
+            trade_date_val = date.fromisoformat(context.trade_date)
+            for stock_id in stock_ids:
+                record = record_map.get(stock_id) or record_map.get(stock_id.split(".", 1)[0])
+                if not record:
+                    fail_count += 1
+                    if len(error_samples) < self.MAX_SUCCESS_LOG_SAMPLES:
+                        error_samples.append(f"{stock_id}: missing collector record")
+                    continue
+                raw_text = str(record.get("raw_text") or "").strip()
+                if not raw_text:
+                    fail_count += 1
+                    if len(error_samples) < self.MAX_SUCCESS_LOG_SAMPLES:
+                        error_samples.append(f"{stock_id}: empty raw_text")
+                    continue
+                snapshot = self._evidence_service.build_snapshot_row(
+                    trade_date=trade_date_val,
+                    stock_id=str(record.get("system_stock_id") or record.get("stock_id") or stock_id),
+                    stock_name=record.get("stock_name"),
+                    source_updated_date=record.get("source_updated_date"),
+                    raw_text=raw_text,
+                )
+                rows.append(snapshot)
+                success_count += 1
+                if len(success_samples) < self.MAX_SUCCESS_LOG_SAMPLES:
+                    success_samples.append(f"{stock_id}: parse_status={snapshot.get('parse_status')}")
+
+            logs.extend(
+                [
+                    f"success_count={success_count}",
+                    f"fail_count={fail_count}",
+                ]
+            )
+            logs.extend(success_samples)
+            logs.extend(error_samples)
+
+            if not rows:
+                return CollectionTaskResult(
+                    status="failed",
+                    current_label="F10资金动向快照采集失败",
+                    logs=logs,
+                    error_message="no F10 snapshots collected",
+                )
+
+            written = await write_port.upsert_stock_f10_capital_snapshot_rows(rows)
+            status = "success" if written > 0 else "failed"
+            return CollectionTaskResult(
+                status=status,
+                current_label=f"F10资金动向快照采集完成 ({written} rows)",
+                progress_percent=100,
+                logs=logs + [f"written={written}"],
+                error_message="" if written > 0 else "failed to write stock_f10_capital_snapshot rows",
+            )
+        except Exception as e:
+            return CollectionTaskResult(status="failed", current_label="F10资金动向快照采集异常", error_message=str(e))
 
 
 class TushareKlineRunner:

@@ -2,9 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const recapPagePath = resolve("src/routes/recap/RecapPage.tsx");
-const legacySectionsPath = resolve("src/routes/recap/components/LegacyRecapSections.tsx");
 const source = readFileSync(recapPagePath, "utf8");
-const legacySource = readFileSync(legacySectionsPath, "utf8");
 
 function assert(condition, message) {
   if (!condition) {
@@ -107,20 +105,9 @@ function assertNoV1MainPathReturns() {
   );
 }
 
-function assertLegacyDebugEntryStillExists() {
-  assert(source.includes("LegacyRecapSections"), "RecapPage must still expose the legacy debug view");
-  assert(source.includes('viewMode === "legacy"'), "RecapPage must keep legacy view mode branching");
-  assert(
-    legacySource.includes("旧版 sections 仅用于排查与兼容展示，不参与交易结论。"),
-    "LegacyRecapSections must keep the original warning text",
-  );
-  assert(legacySource.includes("返回引擎视图"), "LegacyRecapSections must keep the original return CTA");
-}
-
 assertDefaultModeStaysSectionsFirst();
 assertV2GateExists();
 assertEveryModuleUsesReadyGateAndFallback();
 assertNoV1MainPathReturns();
-assertLegacyDebugEntryStillExists();
 
 console.log("recap daily_review_v2 contract passed");

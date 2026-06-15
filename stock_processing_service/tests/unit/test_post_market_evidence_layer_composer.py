@@ -258,6 +258,15 @@ def _sample_evidence_doc() -> dict[str, object]:
                 "theme_name": "CPO",
                 "main_net_inflow": 120000000,
                 "rank_order": 1,
+                "f10_capital": {
+                    "source": "tdx_f10",
+                    "section": "资金动向",
+                    "summary": "主力净流入1.07亿，超大单净流入1.26亿",
+                    "capital_flow": {"summary": "主力净流入1.07亿", "main_net_inflow": 107000000, "latest_date": "2026-06-12"},
+                    "trade_date": "2026-06-12",
+                    "dragon_tiger": {"latest_date": "2025-12-25", "summary": "●交易日期:2025-12-25 信息类型:跌幅偏离值达7%的证券"},
+                    "margin_trading": {"summary": "融资偿还额2346.53万元"},
+                },
             }
         ],
         "evidence_alignment_index": {
@@ -318,6 +327,9 @@ def test_post_market_evidence_layer_composer_groups_and_items() -> None:
     assert len(review["money_flow_evidence"]) == 1
     assert len(review["dragon_tiger_evidence"]) == 1
     assert len(review["stock_capital_evidence"]) == 1
+    assert review["stock_capital_evidence"][0]["amount"] == 107000000
+    assert "主力净流入1.07亿" in review["stock_capital_evidence"][0]["description"]
+    assert "龙虎榜" not in review["stock_capital_evidence"][0]["description"]
     groups = {group["group_key"]: group for group in review["evidence_groups"]}
     assert groups["d1"]["item_count"] == 1
     assert groups["layer_c"]["item_count"] == 1
@@ -393,6 +405,47 @@ def test_post_market_evidence_layer_composer_uses_legacy_dragon_tiger_sections()
     assert len(review["dragon_tiger_evidence"]) == 2
     assert review["dragon_tiger_evidence"][0]["stock_name"] in {"锡业股份", "福达合金"}
     assert review["diagnostics"]["dragon_tiger_count"] == 2
+
+
+def test_post_market_evidence_layer_composer_dedupes_stock_capital_by_stock_id() -> None:
+    doc = _sample_evidence_doc()
+    doc["stock_capital_reviews"] = [  # type: ignore[index]
+        {
+            "stock_id": "300581",
+            "stock_code": "300581",
+            "stock_name": "晨曦航空",
+            "subject_key": "air",
+            "theme_name": "军工",
+            "main_net_inflow": 12000000,
+            "rank_order": 1,
+        },
+        {
+            "stock_id": "300581.SZ",
+            "stock_code": "300581.SZ",
+            "stock_name": "晨曦航空",
+            "subject_key": "air2",
+            "theme_name": "导弹",
+            "main_net_inflow": 9000000,
+            "rank_order": 2,
+        },
+        {
+            "stock_id": "688010",
+            "stock_code": "688010",
+            "stock_name": "福光股份",
+            "subject_key": "optic",
+            "theme_name": "光学",
+            "main_net_inflow": 8000000,
+            "rank_order": 3,
+        },
+    ]
+
+    review = PostMarketEvidenceLayerComposer().compose(
+        doc,
+        evidence_alignment_index=doc["evidence_alignment_index"],  # type: ignore[arg-type]
+    )
+
+    assert len(review["stock_capital_evidence"]) == 2
+    assert {row["stock_id"] for row in review["stock_capital_evidence"]} == {"300581", "688010"}
 
 
 def test_post_market_engine_report_composer_includes_evidence_layer_review() -> None:
