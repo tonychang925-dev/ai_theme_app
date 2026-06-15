@@ -160,6 +160,21 @@ class TdxClient:
         rows = df.to_dict(orient="records")
         return [_clean_dict(r) for r in rows]
 
+    def get_f10_catalog(self, numeric_id: str) -> list[dict]:
+        """获取 F10 公司信息目录."""
+        self._ensure_connected()
+        result = self._client.F10C(symbol=numeric_id)
+        return _normalize_payload(result)
+
+    def get_f10_content(self, numeric_id: str, name: str = "") -> dict | list | str:
+        """获取 F10 公司信息详情，name 为空则返回全部目录项."""
+        self._ensure_connected()
+        if name.strip():
+            result = self._client.F10(symbol=numeric_id, name=name.strip())
+        else:
+            result = self._client.F10(symbol=numeric_id)
+        return _normalize_payload(result)
+
     def _ensure_connected(self) -> None:
         if self._client is None:
             self.connect()
@@ -194,3 +209,30 @@ def _clean_dict(d: dict) -> dict:
             except (TypeError, ValueError):
                 result[k] = str(v)
     return result
+
+
+def _normalize_payload(value):
+    """将 F10 / 目录返回值递归规整成 JSON 兼容结构."""
+    if value is None:
+        return None
+
+    if hasattr(value, "to_dict") and hasattr(value, "columns"):
+        try:
+            return [_clean_dict(r) for r in value.to_dict(orient="records")]
+        except Exception:
+            return str(value)
+
+    if isinstance(value, dict):
+        return {str(k): _normalize_payload(v) for k, v in value.items()}
+
+    if isinstance(value, list):
+        return [_normalize_payload(v) for v in value]
+
+    if isinstance(value, tuple):
+        return [_normalize_payload(v) for v in value]
+
+    try:
+        json.dumps(value)
+        return value
+    except (TypeError, ValueError):
+        return str(value)

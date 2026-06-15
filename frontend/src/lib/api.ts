@@ -572,6 +572,7 @@ export interface WatchlistReviewV2 {
   priority: number;
   reason: string;
   diagnostics?: Record<string, unknown>;
+  f10_capital?: F10CapitalEvidence;
 }
 
 export interface StockCapitalReviewV2 {
@@ -589,6 +590,7 @@ export interface StockCapitalReviewV2 {
   is_leader: boolean;
   flags: string[];
   diagnostics?: Record<string, unknown>;
+  f10_capital?: F10CapitalEvidence;
 }
 
 export interface AbnormalStockReviewV2 {
@@ -630,6 +632,7 @@ export interface MoneyFlowReviewV2 {
     pattern_summary: string | null;
   };
   diagnostics?: Record<string, unknown>;
+  f10_capital?: F10CapitalEvidence;
 }
 
 export interface DragonTigerReviewV2 {
@@ -649,6 +652,47 @@ export interface DragonTigerReviewV2 {
   side_summary: string;
   seat_summary: string[];
   diagnostics: Record<string, unknown>;
+  f10_capital?: F10CapitalEvidence;
+}
+
+export interface F10CapitalEvidence {
+  source: string;
+  section: string;
+  available: boolean;
+  source_updated_date?: string | null;
+  trade_date?: string | null;
+  stock_id?: string | null;
+  stock_name?: string | null;
+  summary: string;
+  source_flags: string[];
+  dragon_tiger?: {
+    has_lhb?: boolean;
+    summary?: string;
+    details?: string[];
+  };
+  block_trade?: {
+    summary?: string;
+    details?: string[];
+  };
+  margin_trading?: {
+    latest_date?: string | null;
+    summary?: string;
+    details?: string[];
+  };
+  capital_flow?: {
+    latest_date?: string | null;
+    main_net_inflow?: number | null;
+    super_large_net_inflow?: number | null;
+    large_net_inflow?: number | null;
+    main_buy_net?: number | null;
+    summary?: string;
+    details?: string[];
+  };
+  strategic_lending?: {
+    summary?: string;
+    details?: string[];
+  };
+  diagnostics?: Record<string, unknown>;
 }
 
 // ── PR-14C: Evidence Alignment Types ──
@@ -935,6 +979,8 @@ export interface RecapGenerateStatus {
   diagnostics?: Record<string, unknown>;
   updated_at?: string;
   snapshot_ready?: boolean;
+  elapsed_sec?: number;
+  stage?: string;
 }
 
 export async function fetchPostMarketRecapGenerateStatus(

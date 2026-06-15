@@ -68,6 +68,12 @@ class StockWriteGatewayAdapter:
             return await fn(rows)
         raise RuntimeError("DatabaseGatewayStockFacade missing upsert_post_market_setup_plan_rows")
 
+    async def upsert_stock_f10_capital_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_stock_f10_capital_snapshot_rows", None)
+        if callable(fn):
+            return await fn(rows)
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_stock_f10_capital_snapshot_rows")
+
     async def upsert_one_to_two_candidate_feature_rows(self, rows: list[dict[str, Any]]) -> int:
         fn = getattr(self._db, "upsert_one_to_two_candidate_feature_rows", None)
         if callable(fn):

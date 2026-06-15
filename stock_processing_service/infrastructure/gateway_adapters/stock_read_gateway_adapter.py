@@ -549,6 +549,19 @@ class StockReadGatewayAdapter:
         rows = await fn(trade_date=trade_date, setup_type=setup_type)
         return [_as_dict(row) for row in rows]
 
+    async def get_stock_f10_capital_snapshots(
+        self,
+        trade_date: date,
+        stock_ids: list[str] | None = None,
+        source: str = "tdx_f10",
+        section: str = "资金动向",
+    ) -> list[dict[str, Any]]:
+        fn = getattr(self._db, "get_stock_f10_capital_snapshots", None)
+        if not callable(fn):
+            raise RuntimeError("DatabaseGateway missing get_stock_f10_capital_snapshots")
+        rows = await fn(trade_date=trade_date, stock_ids=stock_ids, source=source, section=section)
+        return [_as_dict(row) for row in rows]
+
     async def get_mainline_identity_by_subject_keys(
         self,
         subject_keys: list[str],

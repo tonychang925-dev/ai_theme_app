@@ -6243,6 +6243,157 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         except Exception as e:
             logger.warning(f"创建 one_to_two setup tables 失败（可能尚未迁移）: {e}")
 
+    async def _ensure_stock_f10_capital_snapshot_table(self) -> None:
+        sql = """
+        CREATE TABLE IF NOT EXISTS stock_f10_capital_snapshot (
+            trade_date DATE NOT NULL,
+            stock_id TEXT NOT NULL,
+            stock_name TEXT,
+            source TEXT NOT NULL DEFAULT 'tdx_f10',
+            section TEXT NOT NULL DEFAULT '资金动向',
+            source_updated_date DATE,
+            dragon_tiger_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+            block_trade_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+            margin_trading_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+            capital_flow_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+            strategic_lending_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+            raw_text TEXT,
+            parse_status TEXT NOT NULL DEFAULT 'ok',
+            diagnostics JSONB NOT NULL DEFAULT '{}'::jsonb,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+            updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+            PRIMARY KEY (trade_date, stock_id, source, section)
+        )
+        """
+        index_sql = """
+        CREATE INDEX IF NOT EXISTS idx_stock_f10_capital_stock_date
+        ON stock_f10_capital_snapshot (stock_id, trade_date DESC)
+        """
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.execute(sql)
+                await conn.execute(index_sql)
+        except Exception as e:
+            logger.warning(f"创建 stock_f10_capital_snapshot 表失败: {e}")
+            raise
+
+    async def upsert_stock_f10_capital_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
+        """UPSERT stock_f10_capital_snapshot rows."""
+        if not rows:
+            return 0
+        await self._ensure_stock_f10_capital_snapshot_table()
+        sql = """
+        INSERT INTO stock_f10_capital_snapshot (
+            trade_date, stock_id, stock_name, source, section, source_updated_date,
+            dragon_tiger_json, block_trade_json, margin_trading_json, capital_flow_json,
+            strategic_lending_json, raw_text, parse_status, diagnostics
+        ) VALUES (
+            $1::date, $2, $3, $4, $5, $6::date,
+            $7::jsonb, $8::jsonb, $9::jsonb, $10::jsonb,
+            $11::jsonb, $12, $13, $14::jsonb
+        )
+        ON CONFLICT (trade_date, stock_id, source, section) DO UPDATE SET
+          stock_name = EXCLUDED.stock_name,
+          source_updated_date = EXCLUDED.source_updated_date,
+          dragon_tiger_json = EXCLUDED.dragon_tiger_json,
+          block_trade_json = EXCLUDED.block_trade_json,
+          margin_trading_json = EXCLUDED.margin_trading_json,
+          capital_flow_json = EXCLUDED.capital_flow_json,
+          strategic_lending_json = EXCLUDED.strategic_lending_json,
+          raw_text = EXCLUDED.raw_text,
+          parse_status = EXCLUDED.parse_status,
+          diagnostics = EXCLUDED.diagnostics,
+          updated_at = NOW()
+        """
+        payload = []
+        for row in rows:
+            try:
+                trade_date = row.get("trade_date")
+                if isinstance(trade_date, str):
+                    trade_date = date.fromisoformat(trade_date[:10])
+                if not trade_date:
+                    raise ValueError("trade_date required")
+                source_updated_date = row.get("source_updated_date")
+                if isinstance(source_updated_date, str) and source_updated_date.strip():
+                    source_updated_date = date.fromisoformat(source_updated_date.strip()[:10])
+                normalized_stock_id = str(row.get("stock_id") or "").strip()
+                if "." in normalized_stock_id:
+                    head, tail = normalized_stock_id.rsplit(".", 1)
+                    if tail.upper() in {"SZ", "SH", "BJ"}:
+                        normalized_stock_id = head
+                digits = "".join(ch for ch in normalized_stock_id if ch.isdigit())
+                if len(digits) == 6:
+                    normalized_stock_id = digits
+                if not normalized_stock_id:
+                    raise ValueError("stock_id required")
+            except Exception as e:
+                raise ValueError(f"invalid stock_f10_capital_snapshot row: {row}") from e
+            payload.append((
+                trade_date,
+                normalized_stock_id,
+                str(row.get("stock_name") or ""),
+                str(row.get("source") or "tdx_f10"),
+                str(row.get("section") or "资金动向"),
+                source_updated_date,
+                _safe_json_dumps(row.get("dragon_tiger_json"), {}),
+                _safe_json_dumps(row.get("block_trade_json"), {}),
+                _safe_json_dumps(row.get("margin_trading_json"), {}),
+                _safe_json_dumps(row.get("capital_flow_json"), {}),
+                _safe_json_dumps(row.get("strategic_lending_json"), {}),
+                str(row.get("raw_text") or ""),
+                str(row.get("parse_status") or "ok"),
+                _safe_json_dumps(row.get("diagnostics"), {}),
+            ))
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql, payload)
+            return len(payload)
+        except Exception as e:
+            logger.exception("写入 stock_f10_capital_snapshot 失败")
+            raise RuntimeError("failed to upsert stock_f10_capital_snapshot rows") from e
+
+    async def get_stock_f10_capital_snapshots(
+        self,
+        trade_date: date,
+        stock_ids: list[str] | None = None,
+        source: str = "tdx_f10",
+        section: str = "资金动向",
+    ) -> list[dict[str, Any]]:
+        """读取 stock_f10_capital_snapshot rows."""
+        await self._ensure_stock_f10_capital_snapshot_table()
+        normalized_stock_ids: list[str] = []
+        if stock_ids:
+            for stock_id in stock_ids:
+                text = str(stock_id or "").strip()
+                if not text:
+                    continue
+                if "." in text:
+                    head, tail = text.rsplit(".", 1)
+                    if tail.upper() in {"SZ", "SH", "BJ"}:
+                        text = head
+                digits = "".join(ch for ch in text if ch.isdigit())
+                normalized_stock_ids.append(digits if len(digits) == 6 else text)
+
+        sql = """
+        SELECT *
+        FROM stock_f10_capital_snapshot
+        WHERE trade_date = $1::date
+          AND source = $2
+          AND section = $3
+        """
+        params: list[Any] = [trade_date, source, section]
+        if normalized_stock_ids:
+            sql += " AND stock_id = ANY($4::text[])"
+            params.append(normalized_stock_ids)
+        sql += " ORDER BY stock_id ASC"
+        try:
+            async with self.pool.acquire() as conn:
+                rows = await conn.fetch(sql, *params)
+            return [dict(row) for row in rows]
+        except Exception as e:
+            logger.warning(f"读取 stock_f10_capital_snapshot 失败: {e}")
+            raise RuntimeError("failed to read stock_f10_capital_snapshot rows") from e
+
     async def upsert_strong_watch_pool_rows(self, rows: list[dict[str, Any]]) -> int:
         """UPSERT strong_stock_watch_pool — 等价于旧链 _upsert_watch_pool_seed + _update_watch_pool_row。
 

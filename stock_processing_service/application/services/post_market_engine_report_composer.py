@@ -134,7 +134,8 @@ class PostMarketEngineReportComposer:
         for key, value in recap_doc.items():
             if key == "daily_review_v2":
                 continue
-            merged[key] = value
+            if key not in merged:
+                merged[key] = value
         return merged
 
     def _build_engine_summary(

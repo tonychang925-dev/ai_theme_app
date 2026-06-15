@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import date
 from typing import Any
 
 
@@ -83,6 +84,9 @@ class PostMarketEvidenceLayerComposer:
             if item:
                 items.append(item)
 
+        if evidence_type == "stock_capital":
+            items = self._dedupe_items_by_stock_key(items)
+
         items.sort(
             key=lambda item: (
                 int(item.get("rank_order") or 9999),
@@ -123,7 +127,11 @@ class PostMarketEvidenceLayerComposer:
         score = self._float_or_none(self._first_present(row, "score", "abnormal_score", "watch_score", "mainline_strength_score"))
         if score is None:
             score = self._fallback_score(evidence_type, row, alignment)
-        amount = self._float_or_none(self._first_present(row, "amount", "main_net_inflow", "net_buy", "total_inflow", "leader_inflow"))
+        amount = None
+        if evidence_type == "stock_capital":
+            amount = self._stock_capital_f10_amount(row)
+        if amount is None:
+            amount = self._float_or_none(self._first_present(row, "amount", "main_net_inflow", "net_buy", "total_inflow", "leader_inflow"))
         if amount is None:
             amount = self._fallback_amount(evidence_type, row)
         rank_order = self._int_or_none(self._first_present(row, "rank_order", "rank_overall", "rank_in_theme"))
@@ -256,7 +264,7 @@ class PostMarketEvidenceLayerComposer:
             return self._join_non_empty(pieces, "；")
         if evidence_type == "stock_capital":
             pieces = [
-                self._first_text(row.get("description"), row.get("conclusion"), row.get("reason")),
+                self._first_text(self._stock_capital_f10_summary(row), row.get("description"), row.get("conclusion"), row.get("reason")),
                 self._join_non_empty([
                     self._first_text(row.get("theme_name")),
                     self._format_amount(row.get("main_net_inflow")),
@@ -264,6 +272,64 @@ class PostMarketEvidenceLayerComposer:
             ]
             return self._join_non_empty(pieces, "；")
         return self._first_text(row.get("description"), row.get("conclusion"), row.get("reason"))
+
+    @staticmethod
+    def _stock_capital_f10_summary(row: dict[str, Any]) -> str:
+        f10 = row.get("f10_capital")
+        if not isinstance(f10, dict):
+            return ""
+        capital_flow = f10.get("capital_flow") if isinstance(f10.get("capital_flow"), dict) else {}
+        dragon_tiger = f10.get("dragon_tiger") if isinstance(f10.get("dragon_tiger"), dict) else {}
+        margin_trading = f10.get("margin_trading") if isinstance(f10.get("margin_trading"), dict) else {}
+        trade_date_obj = PostMarketEvidenceLayerComposer._to_date(f10.get("trade_date"))
+        parts = [
+            str(capital_flow.get("summary") or "").strip(),
+            PostMarketEvidenceLayerComposer._same_day_dragon_tiger_summary(dragon_tiger, trade_date_obj),
+            f"融资融券：{margin_trading.get('summary')}" if margin_trading.get("summary") else "",
+        ]
+        return "；".join(part for part in parts if part)
+
+    @staticmethod
+    def _stock_capital_f10_amount(row: dict[str, Any]) -> float | None:
+        f10 = row.get("f10_capital")
+        if not isinstance(f10, dict):
+            return None
+        capital_flow = f10.get("capital_flow")
+        if not isinstance(capital_flow, dict):
+            return None
+        trade_date_obj = PostMarketEvidenceLayerComposer._to_date(f10.get("trade_date"))
+        latest_date_obj = PostMarketEvidenceLayerComposer._to_date(capital_flow.get("latest_date"))
+        if trade_date_obj and latest_date_obj and latest_date_obj != trade_date_obj:
+            return None
+        amount = PostMarketEvidenceLayerComposer._float_or_none(capital_flow.get("main_net_inflow"))
+        if amount is not None:
+            return amount
+        summary = capital_flow.get("summary")
+        if isinstance(summary, str) and summary.strip():
+            return PostMarketEvidenceLayerComposer._parse_legacy_amount(summary)
+        return None
+
+    @staticmethod
+    def _to_date(value: Any) -> date | None:
+        if isinstance(value, date):
+            return value
+        if isinstance(value, str) and value.strip():
+            try:
+                return date.fromisoformat(value.strip()[:10])
+            except ValueError:
+                return None
+        return None
+
+    @staticmethod
+    def _same_day_dragon_tiger_summary(dragon_tiger: dict[str, Any], trade_date_obj: date | None) -> str:
+        if not isinstance(dragon_tiger, dict) or not trade_date_obj:
+            return ""
+        latest_date = dragon_tiger.get("latest_date")
+        latest_date_obj = PostMarketEvidenceLayerComposer._to_date(latest_date)
+        if latest_date_obj != trade_date_obj:
+            return ""
+        summary = str(dragon_tiger.get("summary") or "").strip()
+        return f"龙虎榜：{summary}" if summary else ""
 
     def _build_tags(
         self,
@@ -456,7 +522,8 @@ class PostMarketEvidenceLayerComposer:
             row["sell_amount"] = abs(amount) if amount < 0 else 0.0
         return row
 
-    def _parse_legacy_amount(self, text: str) -> float | None:
+    @staticmethod
+    def _parse_legacy_amount(text: str) -> float | None:
         raw = str(text or "").strip()
         if not raw:
             return None
@@ -597,6 +664,37 @@ class PostMarketEvidenceLayerComposer:
             return float(value)
         except Exception:
             return None
+
+    @staticmethod
+    def _stock_key(value: Any) -> str:
+        text = str(value or "").strip().upper()
+        if "." in text:
+            text = text.split(".", 1)[0]
+        return text
+
+    @classmethod
+    def _dedupe_items_by_stock_key(cls, items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        best_by_key: dict[str, dict[str, Any]] = {}
+
+        def priority_key(item: dict[str, Any]) -> tuple[int, float, float, int]:
+            has_f10 = 1 if isinstance(item.get("f10_capital"), dict) and item.get("f10_capital") else 0
+            amount = abs(float(item.get("amount") or 0))
+            score = float(item.get("score") or 0)
+            return (
+                has_f10,
+                amount,
+                score,
+                -int(item.get("rank_order") or 9999),
+            )
+
+        for item in items:
+            key = cls._stock_key(item.get("stock_id") or item.get("stock_code"))
+            if not key:
+                continue
+            existing = best_by_key.get(key)
+            if existing is None or priority_key(item) > priority_key(existing):
+                best_by_key[key] = item
+        return list(best_by_key.values())
 
     @staticmethod
     def _int_or_none(value: Any) -> int | None:

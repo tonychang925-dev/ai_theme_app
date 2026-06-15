@@ -671,28 +671,34 @@ class PostMarketDailyReviewV2Builder:
         return rows, sorted(missing_fields)
 
     def _build_stock_capital_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
-        source_key = "stock_capital_reviews"
-        source_rows = recap_doc.get(source_key)
-        if not isinstance(source_rows, list):
-            context = recap_doc.get("report_context")
-            context = context if isinstance(context, dict) else {}
+        source_key = "report_context.money_flow_enhanced"
+        source_rows = []
+        context = recap_doc.get("report_context")
+        context = context if isinstance(context, dict) else {}
+        if isinstance(context.get("money_flow_enhanced"), list):
+            source_rows = context.get("money_flow_enhanced") or []
+        if not isinstance(source_rows, list) or not source_rows:
             source_key = "report_context.money_flow"
             source_rows = context.get("money_flow")
-            if not isinstance(source_rows, list):
-                source_key = "report_context.money_flow_enhanced"
-                source_rows = context.get("money_flow_enhanced")
-        if not isinstance(source_rows, list):
+        if not isinstance(source_rows, list) or not source_rows:
+            source_key = "stock_capital_reviews"
+            source_rows = recap_doc.get(source_key)
+        if not isinstance(source_rows, list) or not source_rows:
             source_key = "top_candidates"
             source_rows = recap_doc.get(source_key)
         if not isinstance(source_rows, list):
             return [], []
 
         rows: list[dict[str, Any]] = []
+        seen_stock_keys: set[str] = set()
         missing_fields: set[str] = set()
         for idx, source in enumerate(source_rows[:20], start=1):
             if not isinstance(source, dict):
                 continue
             stock_code = self._text(source.get("stock_code") or source.get("stock_id"))
+            stock_key = self._stock_key(stock_code)
+            if stock_key and stock_key in seen_stock_keys:
+                continue
             stock_name = self._text(source.get("stock_name"))
             subject_key = self._text(source.get("subject_key"))
             theme_name = self._text(source.get("theme_name") or source.get("subject_name") or source.get("resolved_theme_name"))
@@ -748,6 +754,7 @@ class PostMarketDailyReviewV2Builder:
                 "volume_ratio": volume_ratio,
                 "is_leader": is_leader,
                 "flags": flags,
+                "f10_capital": deepcopy(source.get("f10_capital")) if isinstance(source.get("f10_capital"), dict) else None,
                 "diagnostics": {
                     "money_flow_joined": main_net_inflow is not None,
                     "snapshot_joined": pct_chg is not None or turnover_rate is not None or volume_ratio is not None,
@@ -756,6 +763,8 @@ class PostMarketDailyReviewV2Builder:
                     "source_tables": [source_key],
                 },
             })
+            if stock_key:
+                seen_stock_keys.add(stock_key)
 
         return rows, sorted(missing_fields)
 
@@ -972,6 +981,7 @@ class PostMarketDailyReviewV2Builder:
                     "pattern_labels": pattern_labels,
                     "pattern_summary": pattern_summary,
                 },
+                "f10_capital": deepcopy(joined.get("f10_capital")) if isinstance(joined.get("f10_capital"), dict) else None,
                 "diagnostics": {
                     "from_money_flow_enhanced": source_key.endswith("money_flow_enhanced") or source_key == "money_flow_reviews",
                     "dragon_tiger_joined": bool(dragon_tiger_signal),

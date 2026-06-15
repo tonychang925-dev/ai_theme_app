@@ -37,6 +37,8 @@ python app.py
 | GET | `/quote/{stock_id}` | 实时行情（5档盘口） |
 | GET | `/minute/{stock_id}` | 分时数据 |
 | GET | `/bars/{stock_id}?frequency=9&offset=100` | K线数据 |
+| GET | `/f10c/{stock_id}` | F10 公司信息目录 |
+| GET | `/f10/{stock_id}?section=资金动向` | F10 公司信息详情 |
 
 stock_id 支持格式：`002361` / `002361.SZ` / `600000.SH`
 
@@ -48,6 +50,8 @@ curl http://127.0.0.1:8766/quote/002361
 curl http://127.0.0.1:8766/minute/002361
 curl http://127.0.0.1:8766/bars/002361
 curl http://127.0.0.1:8766/quote/600000.SH
+curl http://127.0.0.1:8766/f10c/000001
+curl http://127.0.0.1:8766/f10/000001?section=资金动向
 ```
 
 ## 环境变量

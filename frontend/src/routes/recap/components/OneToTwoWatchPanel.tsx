@@ -26,6 +26,14 @@ interface OneToTwoItem {
   key_parameters?: Record<string, unknown>;
   tomorrow_plan?: Record<string, unknown>;
   give_up_conditions?: string[];
+  f10_capital?: {
+    summary?: string;
+    dragon_tiger?: { summary?: string };
+    margin_trading?: { summary?: string };
+    capital_flow?: { summary?: string };
+    block_trade?: { summary?: string };
+    strategic_lending?: { summary?: string };
+  };
 }
 
 interface OneToTwoSummary {
@@ -47,7 +55,7 @@ type PayloadSource = "recap_doc" | "watchlists_fallback" | null;
 
 function extractOneToTwoPayload(dailyReviewV2?: PostMarketDailyReviewV2 | null) {
   if (!dailyReviewV2) return null;
-  const raw = dailyReviewV2 as Record<string, unknown>;
+  const raw = dailyReviewV2 as unknown as Record<string, unknown>;
 
   // Path 1: dailyReviewV2.post_market_setup_plan (composer puts it at top level)
   const plan = raw.post_market_setup_plan as Record<string, unknown> | undefined;
@@ -89,6 +97,15 @@ function filterIndependent(items: OneToTwoItem[]) {
 function sourceLabel(s: PayloadSource) { return s === "recap_doc" ? "数据源：recap snapshot" : s === "watchlists_fallback" ? "数据源：watchlists fallback" : ""; }
 
 function fNum(v: unknown, d = 1): string { if (v == null) return "-"; const n = Number(v); return Number.isFinite(n) ? n.toFixed(d) : "-"; }
+function renderF10Summary(f10?: OneToTwoItem["f10_capital"]): string {
+  if (!f10) return "";
+  const parts = [
+    f10.capital_flow?.summary || f10.summary || "",
+    f10.dragon_tiger?.summary ? `龙虎榜：${f10.dragon_tiger.summary}` : "",
+    f10.margin_trading?.summary ? `融资融券：${f10.margin_trading.summary}` : "",
+  ].filter(Boolean);
+  return parts.join("；");
+}
 
 const cardStyle: React.CSSProperties = {
   border: "1px solid rgba(255,255,255,0.06)", borderRadius: 6, padding: "6px 10px", marginBottom: 6,
@@ -106,6 +123,7 @@ function StockDetailCard({ it }: { it: OneToTwoItem }) {
   const el = (it.event_logic ?? {}) as Record<string, unknown>;
   const kp = (it.key_parameters ?? {}) as Record<string, unknown>;
   const auth = (sl.stock_subject_authenticity ?? {}) as Record<string, unknown>;
+  const f10Summary = renderF10Summary(it.f10_capital);
 
   return (
     <div style={{ padding: "4px 0" }}>
@@ -135,8 +153,14 @@ function StockDetailCard({ it }: { it: OneToTwoItem }) {
       <div style={sectionLabel}>题材逻辑</div>
       <div style={sectionText}>
         <div>题材: {String(sl.subject_name || it.subject_name)} · 阶段: {String(sl.lifecycle_state || "-")}</div>
-        <div>涨停 {kp.same_subject_limit_count ?? "-"} 只 · 强势 {kp.same_subject_strong_count ?? "-"} 只</div>
+        <div>涨停 {String(kp.same_subject_limit_count ?? "-")} 只 · 强势 {String(kp.same_subject_strong_count ?? "-")} 只</div>
         <div>个股正宗度: {String(auth.level || "-")} ({(auth.score != null ? fNum(auth.score, 1) : "-")})</div>
+      </div>
+
+      {/* 3.5 F10资金动向 */}
+      <div style={sectionLabel}>F10资金动向</div>
+      <div style={sectionText}>
+        {f10Summary ? <div>{f10Summary}</div> : <span style={{ color: "rgba(255,255,255,0.35)" }}>暂无F10快照</span>}
       </div>
 
       {/* 4. 技术形态 */}
@@ -155,8 +179,8 @@ function StockDetailCard({ it }: { it: OneToTwoItem }) {
         <span>一字板: {kp.is_one_word_board ? "是" : "否"}</span>
         <span>尾盘: {kp.is_late_seal ? "是" : "否"}</span>
         <span>封板时间: {String(kp.first_limit_time || "-")}</span>
-        <span>涨停: {kp.same_subject_limit_count ?? "-"}只</span>
-        <span>强势: {kp.same_subject_strong_count ?? "-"}只</span>
+        <span>涨停: {String(kp.same_subject_limit_count ?? "-")}只</span>
+        <span>强势: {String(kp.same_subject_strong_count ?? "-")}只</span>
       </div>
 
       {/* 6. 明日观察计划 */}

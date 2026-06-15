@@ -16,10 +16,9 @@ import OneToTwoWatchPanel from "./OneToTwoWatchPanel";
 interface Props {
   dailyReviewV2: PostMarketDailyReviewV2;
   tradeDate?: string;
-  onShowLegacy: () => void;
 }
 
-export default function EnginePostMarketView({ dailyReviewV2, tradeDate, onShowLegacy }: Props) {
+export default function EnginePostMarketView({ dailyReviewV2, tradeDate }: Props) {
   const review = dailyReviewV2.post_market_decision_v2;
   if (!review || !dailyReviewV2.engine_summary || !dailyReviewV2.market_regime_review) return null;
 
@@ -86,9 +85,6 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate, onShowL
         <section className="workspace-card recap-engine-group">
           <OneToTwoWatchPanel dailyReviewV2={dailyReviewV2} tradeDate={tradeDate} />
         </section>
-      </div>
-      <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 8 }}>
-        <Button onClick={onShowLegacy}>查看旧版 sections</Button>
       </div>
     </>
   );

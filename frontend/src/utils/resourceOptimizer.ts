@@ -3,6 +3,8 @@
  * 优化图片、字体、第三方库的加载策略
  */
 
+import { purgeAllApiCacheEntries, purgeApiCacheForUrl, safeSetApiCache, shouldBypassApiCache } from "./apiCache";
+
 interface ResourceOptimizationConfig {
   // 图片优化配置
   imageOptimization: {
@@ -161,6 +163,13 @@ class ResourceOptimizer {
     if (process.env.NODE_ENV === 'development') return;
     if (this.fetchPatched) return;
 
+    // 强制清理旧的 API 响应缓存，避免旧复盘快照/超大响应污染当前页面。
+    try {
+      purgeAllApiCacheEntries(localStorage);
+    } catch {
+      // ignore
+    }
+
     // 设置API响应缓存
     const originalFetch = window.fetch.bind(window) as typeof window.fetch;
     const optimizer = this;
@@ -173,19 +182,30 @@ class ResourceOptimizer {
         String(url);
       const cacheKey = `api_cache_${urlText}_${JSON.stringify(options || {})}`;
 
+      if (shouldBypassApiCache(urlText)) {
+        purgeApiCacheForUrl(localStorage, urlText);
+        return originalFetch(...args);
+      }
+
       // 检查是否有缓存
       if (optimizer.config.caching.apiResponses > 0) {
-        const cached = localStorage.getItem(cacheKey);
-        if (cached) {
-          const { data, timestamp } = JSON.parse(cached);
-          const age = (Date.now() - timestamp) / (1000 * 60); // 分钟
-
-          if (age < optimizer.config.caching.apiResponses) {
-            return new Response(JSON.stringify(data), {
-              status: 200,
-              headers: { 'Content-Type': 'application/json' }
-            });
+        try {
+          const cached = localStorage.getItem(cacheKey);
+          if (cached) {
+            const parsed = JSON.parse(cached);
+            const timestamp = Number(parsed?.timestamp);
+            if (Number.isFinite(timestamp)) {
+              const age = (Date.now() - timestamp) / (1000 * 60); // 分钟
+              if (age < optimizer.config.caching.apiResponses) {
+                return new Response(JSON.stringify(parsed.data), {
+                  status: 200,
+                  headers: { 'Content-Type': 'application/json' }
+                });
+              }
+            }
           }
+        } catch {
+          // ignore malformed cache entries and fall through to network
         }
       }
 
@@ -196,10 +216,10 @@ class ResourceOptimizer {
       // 缓存响应
       if (response.ok && optimizer.config.caching.apiResponses > 0) {
         clonedResponse.json().then(data => {
-          localStorage.setItem(cacheKey, JSON.stringify({
+          safeSetApiCache(localStorage, cacheKey, {
             data,
             timestamp: Date.now()
-          }));
+          });
         });
       }
 
