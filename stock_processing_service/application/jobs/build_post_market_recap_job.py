@@ -1443,15 +1443,60 @@ class BuildPostMarketRecapJob:
                 narrative_by_subject=narrative_by_sk,
                 market_by_subject=market_by_sk,
             )
-            # Sanitize theme_name: cap at 40 chars, fallback to subject_key
+            # Sanitize theme_name: cap at 40 chars, resolve numeric IDs to Chinese names
+            _subject_names: dict[str, str] = {}
+            _numeric_sks: list[str] = []
             for it in review_items:
                 tn = (it.theme_name or "").strip()
+                sk = str(it.subject_key or "")
+                # Collect subject_keys that need name resolution
+                if (not tn or tn == sk or (tn.isdigit() and len(tn) >= 5)):
+                    if sk not in _subject_names:
+                        _numeric_sks.append(sk)
+                        _subject_names[sk] = ""  # placeholder
+            # Batch-resolve from DB
+            if _numeric_sks:
+                try:
+                    pool = getattr(self._read_port, "_pool", None)
+                    if pool is None:
+                        facade = getattr(self._read_port, "_db", None)
+                        pool = getattr(facade, "pool", None) if facade else None
+                    if pool is not None:
+                        async with pool.acquire() as _conn:
+                            _rows = await _conn.fetch(
+                                "SELECT subject_key, subject_name FROM subject_node_staging"
+                                " WHERE subject_key = ANY($1::text[])",
+                                _numeric_sks,
+                            )
+                            for _r in _rows:
+                                _name = str(_r.get("subject_name") or "").strip()
+                                if _name:
+                                    _subject_names[str(_r["subject_key"])] = _name
+                            # Fallback: event_subject_map for keys not found above
+                            _still_missing = [sk for sk in _numeric_sks if not _subject_names.get(sk)]
+                            if _still_missing:
+                                _rows2 = await _conn.fetch(
+                                    "SELECT subject_key, subject_name FROM event_subject_map"
+                                    " WHERE subject_key = ANY($1::text[])",
+                                    _still_missing,
+                                )
+                                for _r2 in _rows2:
+                                    _name2 = str(_r2.get("subject_name") or "").strip()
+                                    if _name2:
+                                        _subject_names[str(_r2["subject_key"])] = _name2
+                except Exception:
+                    pass
+            for it in review_items:
+                tn = (it.theme_name or "").strip()
+                sk = str(it.subject_key or "")
+                resolved = _subject_names.get(sk, "")
                 if len(tn) > 40 or tn.startswith("【"):
-                    # Try candidate_subjects first
-                    short = _theme_name_for_sk(fc.get("candidate_subjects", []), it.subject_key)
-                    it.theme_name = (short or it.subject_key)[:40] if short and len(short) < 40 else it.subject_key[:40]
+                    short = _theme_name_for_sk(fc.get("candidate_subjects", []), sk) or resolved
+                    it.theme_name = (short or sk)[:40] if short and len(short) < 40 else sk[:40]
                 elif not tn:
-                    it.theme_name = it.subject_key[:40]
+                    it.theme_name = (resolved or sk)[:40]
+                elif tn.isdigit() and len(tn) >= 5 and resolved:
+                    it.theme_name = resolved[:40]
 
             # ── write to recap_doc ──
             sd = fc.get("diagnostics", {})

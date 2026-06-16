@@ -5834,9 +5834,69 @@ async def get_mainline_review_queue(
         if status is not None: i += 1; where.append(f"review_status = ${i}"); params.append(status)
         i += 1; params.append(min(limit, 500))
         cond = ("WHERE " + " AND ".join(where)) if where else ""
-        rows = await conn.fetch(f"SELECT * FROM mainline_review_queue {cond} ORDER BY review_priority DESC NULLS LAST LIMIT ${i}", *params)
+        rows = await conn.fetch(
+            f"SELECT * FROM mainline_review_queue {cond} ORDER BY review_priority DESC NULLS LAST LIMIT ${i}",
+            *params,
+        )
         items = [_row_to_dict(r) for r in rows]
-        pending = await conn.fetchval("SELECT COUNT(*) FROM mainline_review_queue WHERE review_status = $1", "pending") if not status else None
+
+        # ── 解析数字型 theme_name → 中文名 ──
+        numeric_sks: list[str] = []
+        for item in items:
+            tn = str(item.get("theme_name") or "")
+            sk = str(item.get("subject_key") or "")
+            if (not tn or tn == sk or (tn.isdigit() and len(tn) >= 5)):
+                if sk not in numeric_sks:
+                    numeric_sks.append(sk)
+        if numeric_sks:
+            import re as _re
+            name_map: dict[str, str] = {}
+            try:
+                name_rows = await conn.fetch(
+                    "SELECT subject_key, subject_name FROM event_subject_map"
+                    " WHERE subject_key = ANY($1::text[])",
+                    numeric_sks,
+                )
+                for nr in name_rows:
+                    name = str(nr.get("subject_name") or "").strip()
+                    if name:
+                        name_map[str(nr["subject_key"])] = name
+            except Exception:
+                pass
+            try:
+                stage_rows = await conn.fetch(
+                    "SELECT subject_key, subject_name FROM subject_node_staging"
+                    " WHERE subject_key = ANY($1::text[])",
+                    [sk for sk in numeric_sks if sk not in name_map],
+                )
+                for sr in stage_rows:
+                    name = str(sr.get("subject_name") or "").strip()
+                    if name:
+                        name_map[str(sr["subject_key"])] = name
+            except Exception:
+                pass
+            try:
+                hist_rows = await conn.fetch(
+                    "SELECT DISTINCT ON (subject_key) subject_key, subject_name"
+                    " FROM subject_history_staging"
+                    " WHERE subject_key = ANY($1::text[]) AND subject_name IS NOT NULL AND subject_name != ''",
+                    [sk for sk in numeric_sks if sk not in name_map],
+                )
+                for hr in hist_rows:
+                    name = str(hr.get("subject_name") or "").strip()
+                    if name:
+                        name_map[str(hr["subject_key"])] = name
+            except Exception:
+                pass
+            for item in items:
+                sk = str(item.get("subject_key") or "")
+                resolved = name_map.get(sk, "")
+                if resolved:
+                    item["theme_name"] = resolved
+
+        pending = await conn.fetchval(
+            "SELECT COUNT(*) FROM mainline_review_queue WHERE review_status = $1", "pending",
+        ) if not status else None
         return {"items": items, "total": pending, "pending_count": pending}
 
 

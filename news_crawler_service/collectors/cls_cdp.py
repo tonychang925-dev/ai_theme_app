@@ -33,10 +33,11 @@ logger = logging.getLogger(__name__)
 # ── 配置 ──
 
 CLS_URL = "https://www.cls.cn/telegraph"
+KUXUN_URL = "https://kuaixun.eastmoney.com/"
 DEFAULT_CDP_PORT = int(os.environ.get("CLS_CDP_PORT", "9224"))
-PAGE_LOAD_TIMEOUT = 30.0   # 页面加载超时
-RENDER_WAIT_TIMEOUT = 15.0  # 等待 Next.js 渲染超时
-MAX_ITEMS = 60             # 单次最多提取条数
+PAGE_LOAD_TIMEOUT = 30.0
+RENDER_WAIT_TIMEOUT = 15.0
+MAX_ITEMS = 60
 
 REQUEST_HEADERS = {
     "User-Agent": (
@@ -48,41 +49,31 @@ REQUEST_HEADERS = {
 
 # ── JS 提取脚本 ──────────────────────────────────────────────────────────
 
-EXTRACTION_JS = """
+CLS_EXTRACTION_JS = """
 (function() {
     var items = [];
     var body = document.body.innerText;
     if (!body || body.length < 20) return JSON.stringify({items: [], source: 'empty'});
 
-    // 提取日期 (YYYY.MM.DD)
     var dateMatch = body.match(/(\\d{4})\\.(\\d{1,2})\\.(\\d{1,2})/);
     var tradeDate = dateMatch ? dateMatch[1] + '-' + dateMatch[2].padStart(2,'0') + '-' + dateMatch[3].padStart(2,'0') : '';
 
-    // 从日期头截取
     var startIdx = dateMatch ? dateMatch.index : 0;
     var section = body.substring(startIdx);
 
-    // 匹配: HH:MM:SS【title】财联社M月D日电[，,]content...
     var pattern = /(\\d{2}:\\d{2}:\\d{2})【(.+?)】财联社(\\d{1,2})月(\\d{1,2})日电[，,]?([\\s\\S]*?)(?=\\n\\d{2}:\\d{2}:\\d{2}【|$)/g;
 
     var match;
     while ((match = pattern.exec(section)) !== null) {
         var content = (match[5] || '').trim();
-
-        // 清理尾部: 阅/评论/分享/查看原文
         content = content.replace(/[\\n\\r]+阅\\s*[\\d.]+[W万]?\\s*$/gm, '');
         content = content.replace(/[\\n\\r]+评论\\s*\\(\\d+\\)\\s*$/gm, '');
         content = content.replace(/[\\n\\r]+分享\\s*\\(\\d+\\)\\s*$/gm, '');
         content = content.replace(/[\\n\\r]+查看原文\\s*$/g, '');
-        // 清理末尾标签行（单行短文本）
         content = content.replace(/\\n[^\\n]{1,20}$/g, '');
-        // 展开标记
         content = content.replace(/\\.\\.\\.展开\\s*$/g, '');
-        // 合并空白
         content = content.replace(/\\n{2,}/g, '\\n').replace(/\\n/g, ' ').trim();
-
         if (content.length < 3) continue;
-
         items.push({
             time: match[1],
             title: match[2].trim(),
@@ -92,8 +83,38 @@ EXTRACTION_JS = """
         });
         if (items.length >= 200) break;
     }
-
     return JSON.stringify({items: items, count: items.length, source: 'cls_cdp', trade_date: tradeDate});
+})()
+"""
+
+KUXUN_EXTRACTION_JS = """
+(function() {
+    var items = [];
+    var body = document.body.innerText;
+    if (!body || body.length < 20) return JSON.stringify({items: [], source: 'empty'});
+
+    var dateMatch = body.match(/(\\d{4})\\.(\\d{1,2})\\.(\\d{1,2})/);
+    var tradeDate = dateMatch ? dateMatch[1] + '-' + dateMatch[2].padStart(2,'0') + '-' + dateMatch[3].padStart(2,'0') : '';
+
+    var startIdx = dateMatch ? dateMatch.index : 0;
+    var section = body.substring(startIdx);
+
+    var pattern = /【(.+?)】([\\s\\S]*?)(?=\\n【|\\n\\d{2}:\\d{2}|$)/g;
+    var match;
+    while ((match = pattern.exec(section)) !== null) {
+        var title = match[1].trim();
+        var content = (match[2] || '').trim();
+        content = content.replace(/^[\\d.]+%\\s*$/gm, '');
+        content = content.replace(/\\n{2,}/g, '\\n').trim();
+        if (title.length < 2) continue;
+        items.push({ title: title, content: content || title });
+        if (items.length >= 200) break;
+    }
+
+    var timeMatch = section.match(/(\\d{2}:\\d{2}:\\d{2})/);
+    var latestTime = timeMatch ? timeMatch[1] : '';
+
+    return JSON.stringify({items: items, count: items.length, source: 'eastmoney_kuaixun', trade_date: tradeDate, latest_time: latestTime});
 })()
 """
 
@@ -252,19 +273,27 @@ class ClsCdpCollector:
         df = collector.fetch_df(limit=30)
     """
 
-    def __init__(self, cdp_port: int = DEFAULT_CDP_PORT):
+    def __init__(self, cdp_port: int = DEFAULT_CDP_PORT, *,
+                 url: str = CLS_URL,
+                 extraction_js: str = CLS_EXTRACTION_JS,
+                 source_name: str = "cls_cdp",
+                 cache_max_age: float = CACHE_MAX_AGE_SECONDS,
+                 content_min_length: int = 500):
         self._cdp_port = cdp_port
-        # 缓存 — fingerprint + TTL
+        self._url = url
+        self._extraction_js = extraction_js
+        self._source_name = source_name
+        self._cache_max_age = cache_max_age
+        self._content_min_length = content_min_length
         self._cache_at: float = 0.0
         self._cache_fingerprint: str = ""
         self._cache_items: list[dict] = []
-        # 去重 — (time, normalized_title) → None
         self._seen_hashes: OrderedDict[str, None] = OrderedDict()
         self._stats = {"cache_hits": 0, "fresh_fetches": 0, "duplicates_skipped": 0}
 
     @property
     def source_name(self) -> str:
-        return "cls_cdp"
+        return self._source_name
 
     def stats(self) -> dict:
         """返回采集统计信息。"""
@@ -286,7 +315,7 @@ class ClsCdpCollector:
                 "发布日期": trade_date,
                 "发布时间": it.get("time", ""),
                 "市场": "A股",
-                "URL": CLS_URL,
+                "URL": self._url,
             }
             for it in items
         ]
@@ -313,22 +342,22 @@ class ClsCdpCollector:
             cache_age_s = time.time() - self._cache_at
             if (
                 self._cache_fingerprint
-                and cache_age_s < CACHE_MAX_AGE_SECONDS
+                and cache_age_s < self._cache_max_age
             ):
-                # 轻量检查: 页面 URL 是否还在 CLS
                 target_id, ws_url = cdp.create_page()
                 cdp.connect_ws(ws_url)
-                cdp.navigate(CLS_URL)
-                if not cdp.wait_for_content(min_length=500):
-                    logger.warning("CLS page render timeout (cache check)")
+                cdp.navigate(self._url)
+                if not cdp.wait_for_content(min_length=self._content_min_length):
+                    logger.warning("%s page render timeout (cache check)", self._source_name)
                     return []
 
                 fingerprint = self._compute_fingerprint(cdp)
                 if fingerprint == self._cache_fingerprint:
                     self._stats["cache_hits"] += 1
                     logger.info(
-                        "CLS CDP → cache hit  fingerprint=%s  age=%.0fs  items=%d  "
+                        "%s → cache hit  fingerprint=%s  age=%.0fs  items=%d  "
                         "hits=%d fetches=%d skipped=%d",
+                        self._source_name,
                         fingerprint[:8],
                         cache_age_s,
                         len(self._cache_items),
@@ -343,9 +372,9 @@ class ClsCdpCollector:
                 # TTL 过期或首次采集
                 target_id, ws_url = cdp.create_page()
                 cdp.connect_ws(ws_url)
-                cdp.navigate(CLS_URL)
-                if not cdp.wait_for_content(min_length=500):
-                    logger.warning("CLS page render timeout")
+                cdp.navigate(self._url)
+                if not cdp.wait_for_content(min_length=self._content_min_length):
+                    logger.warning("%s page render timeout", self._source_name)
                     return []
                 fingerprint = self._compute_fingerprint(cdp)
                 items = self._fresh_fetch(cdp, fingerprint, limit=None)
@@ -383,14 +412,18 @@ class ClsCdpCollector:
     ) -> list[dict]:
         """执行完整 JS 提取并更新缓存。"""
         self._stats["fresh_fetches"] += 1
-        result = cdp.extract()
+        raw = cdp.evaluate(self._extraction_js, timeout=10.0)
+        if not raw:
+            return []
+        result = json.loads(raw) if isinstance(raw, str) else (raw or {})
         items = result.get("items", [])
         self._cache_at = time.time()
         self._cache_fingerprint = fingerprint or ""
         self._cache_items = list(items)
         logger.info(
-            "CLS CDP → fresh    fingerprint=%s  items=%d  trade_date=%s  "
+            "%s → fresh    fingerprint=%s  items=%d  trade_date=%s  "
             "hits=%d fetches=%d skipped=%d",
+            self._source_name,
             fingerprint[:8] if fingerprint else "none",
             len(items),
             result.get("trade_date", ""),

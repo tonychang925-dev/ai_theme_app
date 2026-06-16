@@ -58,7 +58,12 @@ async def run_services(args: argparse.Namespace) -> None:
     await _ensure_group_clean_start(redis_client, "stream:events:normal", args.processor_group)
     stream_config = SimpleNamespace(
         redis=SimpleNamespace(
-            consumer_group=f"pm_e2e:{args.run_id}",
+            # realtime 生产跑使用稳定 group 名，避免每次重启产生 pm_e2e 僵尸组
+            consumer_group=(
+                "realtime_production"
+                if (args.run_id and args.run_id.startswith("realtime_"))
+                else f"pm_e2e:{args.run_id}"
+            ),
             stream_max_length=int(os.getenv("REALTIME_NEWS_RAW_STREAM_MAXLEN", "50000")),
         )
     )
