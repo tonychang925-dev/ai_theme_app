@@ -67,42 +67,64 @@ class NewsCrawlerService:
             logger.error(f"❌ 财联社采集器初始化失败: {e}")
             self.collector = None
     
-    async def crawl_real_news(self, symbol: str = "重点", limit: int = 10) -> Dict[str, Any]:
+    async def crawl_real_news(self, symbol: str = "重点", limit: int = 10, max_age_minutes: int = 0) -> Dict[str, Any]:
         """
         抓取真实财联社新闻 - 主接口
-        
+
         Args:
             symbol: "重点" 返回精简的重要电报；"全部" 返回更完整的页面结果
-            limit: 最大返回数量
-            
+            limit: 最大返回数量（安全上限，0 表示不限制）
+            max_age_minutes: 时间窗口（分钟），仅保留该时间内的新闻；0 表示不过滤时间
+
         Returns:
             新闻数据
         """
         operation = "crawl_real_news"
-        
+
         try:
-            logger.info(f"📡 开始抓取真实财联社新闻: symbol={symbol}, limit={limit}")
-            
+            logger.info(f"📡 开始抓取真实财联社新闻: symbol={symbol}, limit={limit}, max_age_minutes={max_age_minutes}")
+
             if not self.collector:
                 return self._create_error_response(
-                    "真实新闻采集器未初始化", 
+                    "真实新闻采集器未初始化",
                     operation,
                     "请检查CLS页面采集模块依赖"
                 )
-            
+
             # 设置采集器参数
             self.collector.symbol = symbol
-            
+
             # 执行抓取
             news_items = await asyncio.wait_for(
                 self.collector.fetch(),
                 timeout=self.fetch_timeout_seconds,
             )
-            
-            # 限制返回数量
+
+            # ── 时间窗口过滤 ──
+            if max_age_minutes > 0 and news_items:
+                from datetime import datetime as dt, timedelta, time as dt_time
+                cutoff = dt.now() - timedelta(minutes=max_age_minutes)
+                filtered = []
+                dropped = 0
+                for item in news_items:
+                    item_dt = dt.combine(
+                        item.publish_date,
+                        item.publish_time or dt_time(0, 0),
+                    )
+                    if item_dt >= cutoff:
+                        filtered.append(item)
+                    else:
+                        dropped += 1
+                if dropped:
+                    logger.info("时间窗口过滤: 保留 %d 条，丢弃 %d 条（窗口=%dmin）",
+                                len(filtered), dropped, max_age_minutes)
+                news_items = filtered
+
+            # ── 安全上限 ──
             if limit > 0 and len(news_items) > limit:
+                logger.info("安全上限截断: %d → %d 条", len(news_items), limit)
                 news_items = news_items[:limit]
-            
+
             # 转换为字典格式
             news_data = []
             for item in news_items:
@@ -142,14 +164,15 @@ class NewsCrawlerService:
             traceback.print_exc()
             return self._create_error_response(str(e), operation)
     
-    async def crawl_news_auto(self, count: int = 5, prefer_real: bool = True) -> Dict[str, Any]:
+    async def crawl_news_auto(self, count: int = 5, prefer_real: bool = True, max_age_minutes: int = 0) -> Dict[str, Any]:
         """
         智能抓取新闻 - 自动模式仅允许真实数据
-        
+
         Args:
-            count: 抓取数量
+            count: 抓取数量（安全上限）
             prefer_real: 是否优先使用真实数据
-            
+            max_age_minutes: 时间窗口（分钟），仅保留该时间内的新闻；0 表示不过滤
+
         Returns:
             新闻数据
         """
@@ -160,7 +183,7 @@ class NewsCrawlerService:
 
             if prefer_real and self.collector:
                 # 直接进入真实抓取，避免“健康检查”把慢请求误判为不可用。
-                result = await self.crawl_real_news("重点", count)
+                result = await self.crawl_real_news("重点", count, max_age_minutes=max_age_minutes)
                 result["operation"] = operation
                 result["mode"] = "real"
                 result["prefer_real"] = prefer_real

@@ -664,7 +664,7 @@ class NewsStreamProcessor:
                     "impact_industries": [],
                     "direction": "neutral",
                     "confidence": 0.2,
-                    "summary": news_data.get('title', '预筛选跳过'),
+                    "summary": self._extract_content_summary(news_data),
                     "theme_directive": {
                         "structuring_version": "1.0",
                         "llm_request_id": None,
@@ -805,7 +805,7 @@ class NewsStreamProcessor:
                     "impact_industries": [],
                     "direction": "neutral",
                     "confidence": 0.5,
-                    "summary": news_data.get('title', '无标题新闻'),
+                    "summary": self._extract_content_summary(news_data) or '无标题新闻',
                     "title": news_data.get("title", ""),
                     "content": news_data.get("content", ""),
                     "theme_directive": {
@@ -934,6 +934,54 @@ class NewsStreamProcessor:
             "read_timeout_s": self.processor_config["structuring_read_timeout_s"],
             "total_timeout_s": self.processor_config["structuring_total_timeout_s"],
         }
+
+    @staticmethod
+    @staticmethod
+    def _extract_content_summary(news_data: Dict[str, Any]) -> str:
+        """从新闻内容中提取更实质性的摘要，优于直接使用标题。
+
+        针对标题为ETF行情播报但内容包含实质性产业数据的场景：
+        - 检测\"消息面上\"等引导词，提取后续句子
+        - 检测产业关键词，提取包含关键数据的句子
+        - 回退到标题
+        """
+        import re as _re
+        title = str(news_data.get('title', '')).strip()
+        content = str(news_data.get('content', '')).strip()
+
+        if not content or len(content) < 10:
+            return title or '预筛选跳过'
+
+        # 1. 如果标题是ETF/行情播报风格，尝试从内容提取
+        title_looks_etf = bool(_re.search(
+            r'ETF.*(?:涨|跌)|(?:领涨|领跌|收涨|收跌).*ETF|开盘.*ETF',
+            title
+        ))
+
+        # 2. 内容中查找\"消息面上\" / \"消息面\" / \"据悉\" / \"数据显示\" 等引导词
+        guide_match = _re.search(
+            r'(?:消息面上?[，,：:]?\s*|据悉[，,：:]?\s*|数据显示[，,：:]?\s*|报告显示[，,：:]?\s*)'
+            r'(.+?)(?:\。|；|$)',
+            content
+        )
+        if guide_match:
+            guided = guide_match.group(1).strip()
+            if len(guided) >= 10:
+                return guided[:200]
+
+        # 3. 如果标题是ETF风格，提取内容中第一个实质性句子
+        if title_looks_etf:
+            # 找第一个包含产业/数据关键词的句子
+            key_sentences = _re.findall(
+                r'[^。；\n]+(?:半导体|芯片|AI|算力|营收|净利润|订单|合同|扩产|产能|技术突破|'
+                r'亿美元|同比增长|环比|创纪录|新高|政策|发布)[^。；\n]*[。；]?',
+                content
+            )
+            if key_sentences:
+                return key_sentences[0].strip()[:200]
+
+        # 4. 返回标题（兜底）
+        return title or '预筛选跳过'
 
     @staticmethod
     def _is_stress_test_news(news_data: Dict[str, Any]) -> bool:

@@ -58,7 +58,12 @@ async def run_services(args: argparse.Namespace) -> None:
     await _ensure_group_clean_start(redis_client, "stream:events:normal", args.processor_group)
     stream_config = SimpleNamespace(
         redis=SimpleNamespace(
-            consumer_group=f"pm_e2e:{args.run_id}",
+            # realtime 生产跑使用稳定 group 名，避免每次重启产生 pm_e2e 僵尸组
+            consumer_group=(
+                "realtime_production"
+                if (args.run_id and args.run_id.startswith("realtime_"))
+                else f"pm_e2e:{args.run_id}"
+            ),
             stream_max_length=int(os.getenv("REALTIME_NEWS_RAW_STREAM_MAXLEN", "50000")),
         )
     )
@@ -136,6 +141,24 @@ async def run_services(args: argparse.Namespace) -> None:
                     logging.info("Self-cleanup: removed consumer %s from %s/%s", _cname, _stream, _group)
                 except Exception:
                     pass
+
+        # Phase 6A: destroy pm_e2e:{run_id} consumer groups on auxiliary streams
+        # These are created by UnifiedRedisStreamBus/RedisEventBus and never
+        # cleaned up otherwise, leaving zombie groups on every E2E run.
+        e2e_group_prefix = f"pm_e2e:{args.run_id}"
+        for _stream in [
+            "stream:theme_events",
+            "stream:relation_events",
+            "stream:cache_events",
+            "stream:stats_events",
+        ]:
+            try:
+                await redis_client.xgroup_destroy(_stream, e2e_group_prefix)
+                logging.info(
+                    "Self-cleanup: destroyed group %s on %s", e2e_group_prefix, _stream,
+                )
+            except Exception:
+                pass
 
         await gateway.close()
         await redis_client.aclose()

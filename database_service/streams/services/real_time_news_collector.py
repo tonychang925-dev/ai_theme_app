@@ -99,6 +99,10 @@ class RealTimeNewsCollector:
         self.enable_collector_prefilter = bool(self.config.get("enable_collector_prefilter", True))
         self.collector_drop_on_skip = bool(self.config.get("collector_drop_on_skip", True))
 
+        # CLS 采集: 时间窗口 + 安全上限，替代固定条数截断
+        self.cls_max_age_minutes = int(self.config.get("cls_max_age_minutes", 10))
+        self.cls_max_items = int(self.config.get("cls_max_items", 60))
+
         # news_id 短窗口去重（保留作为快速第一层）
         self.dedup_window_seconds = int(self.config.get("collector_dedup_window_seconds", 1800))
         self._recent_news_ids: Dict[str, float] = {}
@@ -230,9 +234,14 @@ class RealTimeNewsCollector:
         logger.info("新闻采集循环已停止")
 
     async def _collection_loop(self):
+        # 采集周期硬超时: collection_interval + 额外缓冲，防止单次采集永久阻塞
+        _cycle_timeout = max(self.collection_interval + 60, 180)
         while self.is_running:
             try:
-                result = await self.collect_and_publish()
+                result = await asyncio.wait_for(
+                    self.collect_and_publish(),
+                    timeout=_cycle_timeout,
+                )
 
                 self.stats["total_collections"] += 1
                 if result.get("success"):
@@ -256,6 +265,12 @@ class RealTimeNewsCollector:
 
             except asyncio.CancelledError:
                 break
+            except asyncio.TimeoutError:
+                logger.error("采集循环超时 (%.0fs)，本轮跳过，下轮重试", _cycle_timeout)
+                self.stats["errors"].append({
+                    "time": datetime.now().isoformat(),
+                    "error": f"collection_cycle_timeout_{_cycle_timeout}s",
+                })
             except Exception as e:
                 logger.error("采集循环发生错误: %s", e)
                 self.stats["errors"].append({
@@ -610,7 +625,7 @@ class RealTimeNewsCollector:
             if self._is_real_mode_available():
                 return CollectionMode.REAL
             else:
-                logger.warning("auto模式下真实采集不可用，本轮将不产出新闻（已禁用mock降级）")
+                logger.warning("auto模式下CLS和akshare采集均不可用，本轮可能无法产出新闻")
                 return CollectionMode.REAL
         else:
             try:
@@ -620,9 +635,21 @@ class RealTimeNewsCollector:
                 return self.default_mode
 
     def _is_real_mode_available(self) -> bool:
-        if not self.crawler_client:
-            return False
-        return True
+        """检查真实采集路径是否可用（与 _collect_real_news 实际路径一致）。"""
+        # CLS: 通过 news_crawler_service 单例（直接 import，不依赖 crawler_client）
+        try:
+            from news_crawler_service.services.news_crawler_service import get_news_crawler_service
+            if get_news_crawler_service().collector is not None:
+                return True
+        except Exception:
+            pass
+        # Fallback: akshare 多源也足够
+        try:
+            import akshare  # noqa: F401
+            return True
+        except ImportError:
+            pass
+        return False
 
     async def _collect_news(self, mode: CollectionMode) -> List[Dict]:
         if mode == CollectionMode.REAL:
@@ -631,35 +658,87 @@ class RealTimeNewsCollector:
             raise ValueError(f"不支持的采集模式: {mode}")
 
     async def _collect_real_news(self) -> List[Dict]:
-        """多源并行采集：CLS + 东方财富/新浪/同花顺/富途/CCTV。"""
+        """多源并行采集：CLS + 东方财富快讯 (CDP 并行) + akshare。"""
         results: List[Dict] = []
 
-        # Source 1: CLS 财联社 (primary, via news_crawler_service)
-        try:
-            from news_crawler_service.services.news_crawler_service import get_news_crawler_service
-            crawler_service = get_news_crawler_service()
-            raw = await asyncio.wait_for(
-                crawler_service.crawl_news_auto(count=10, prefer_real=True),
-                timeout=45,
-            )
-            if raw.get("status") == "success":
-                cls_items = raw.get("response", {}).get("news_list", [])
-                for item in cls_items:
-                    item["source_channel"] = "cls"
-                results.extend(cls_items)
-                logger.debug("CLS fetch: %d items", len(cls_items))
-            elif raw.get("error"):
-                logger.warning("CLS fetch failed: %s", raw.get("error", "unknown"))
-            else:
-                logger.warning("CLS fetch failed: unknown response")
-        except asyncio.TimeoutError:
-            logger.warning("CLS fetch timeout after 45s")
-        except ImportError:
-            logger.debug("news_crawler_service not available, skipping CLS")
-        except Exception as exc:
-            logger.warning("CLS fetch exception: %s", exc)
+        # ── CDP 双源并行采集 (共用 Chrome :9224，各自独立标签页) ──
+        async def _fetch_cls_cdp() -> List[Dict]:
+            items: List[Dict] = []
+            try:
+                from news_crawler_service.services.news_crawler_service import get_news_crawler_service
+                crawler_service = get_news_crawler_service()
+                raw = await asyncio.wait_for(
+                    crawler_service.crawl_news_auto(
+                        count=self.cls_max_items, prefer_real=True,
+                        max_age_minutes=self.cls_max_age_minutes,
+                    ),
+                    timeout=45,
+                )
+                if raw.get("status") == "success":
+                    for item in raw.get("response", {}).get("news_list", []):
+                        item["source_channel"] = "cls"
+                        items.append(item)
+                    logger.debug("CLS fetch: %d items", len(items))
+                elif raw.get("error"):
+                    logger.warning("CLS fetch failed: %s", raw.get("error", "unknown"))
+            except asyncio.TimeoutError:
+                logger.warning("CLS fetch timeout after 45s")
+            except ImportError:
+                logger.debug("news_crawler_service not available, skipping CLS")
+            except Exception as exc:
+                logger.warning("CLS fetch exception: %s", exc)
+            return items
 
-        # Sources 2-5: akshare native sources in parallel
+        async def _fetch_eastmoney_cdp() -> List[Dict]:
+            items: List[Dict] = []
+            try:
+                from news_crawler_service.collectors.cls_cdp import (
+                    ClsCdpCollector, KUXUN_URL, KUXUN_EXTRACTION_JS,
+                )
+                em_collector = ClsCdpCollector(
+                    cdp_port=9224,
+                    url=KUXUN_URL,
+                    extraction_js=KUXUN_EXTRACTION_JS,
+                    source_name="eastmoney_kuaixun",
+                    cache_max_age=60,
+                    content_min_length=200,
+                )
+                em_df = await asyncio.wait_for(
+                    asyncio.to_thread(em_collector.fetch_df, limit=30),
+                    timeout=35,
+                )
+                if em_df is not None and not em_df.empty:
+                    for _, row in em_df.iterrows():
+                        items.append({
+                            "title": str(row.get("标题", "")),
+                            "content": str(row.get("内容", "")),
+                            "source": "eastmoney_kuaixun",
+                            "source_channel": "eastmoney_kuaixun",
+                            "publish_date": str(row.get("发布日期", "")),
+                            "publish_time": str(row.get("发布时间", "")),
+                            "url": str(row.get("URL", "")),
+                            "keywords": [],
+                        })
+                    logger.debug("Eastmoney kuaixun fetch: %d items", len(em_df))
+            except asyncio.TimeoutError:
+                logger.warning("Eastmoney kuaixun CDP fetch timeout after 35s")
+            except ImportError:
+                logger.debug("Eastmoney kuaixun module not available")
+            except Exception as exc:
+                logger.warning("Eastmoney kuaixun fetch exception: %s", exc)
+            return items
+
+        # CLS 和东方财富快讯 CDP 并行
+        cdp_tasks = [
+            asyncio.create_task(_fetch_cls_cdp()),
+            asyncio.create_task(_fetch_eastmoney_cdp()),
+        ]
+        cdp_results = await asyncio.gather(*cdp_tasks, return_exceptions=True)
+        for r in cdp_results:
+            if isinstance(r, list):
+                results.extend(r)
+
+        # ── Sources 3-6: akshare native sources ──
         try:
             akshare_rows = await self._fetch_akshare_multi_source()
             results.extend(akshare_rows)

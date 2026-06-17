@@ -481,12 +481,16 @@ class FrontendBffRepository:
                     PARTITION BY
                         h.subject_key,
                         h.rank_date,
-                        COALESCE(NULLIF(BTRIM(h.description), ''), '__empty__')
+                        CASE
+                            WHEN h.event_id IS NOT NULL THEN h.event_id::text
+                            ELSE COALESCE(NULLIF(BTRIM(h.description), ''), h.source_ref)
+                        END
                     ORDER BY
                         CASE h.source_type
                             WHEN 'jyhf_history' THEN 0
                             WHEN 'jyhf_rank_daily' THEN 1
                             WHEN 'event_theme_map' THEN 2
+                            WHEN 'event_subject_map' THEN 3
                             ELSE 9
                         END,
                         h.source_ref DESC
@@ -494,7 +498,7 @@ class FrontendBffRepository:
             FROM vw_theme_history_candidate h
             WHERE h.subject_key = $1
               AND h.rank_date <= $2::date
-        ) dedup
+        ) ranked
         WHERE rn = 1
         ORDER BY rank_date DESC, source_ref DESC
         LIMIT 5

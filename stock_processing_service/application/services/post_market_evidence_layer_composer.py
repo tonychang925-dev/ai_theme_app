@@ -84,7 +84,7 @@ class PostMarketEvidenceLayerComposer:
             if item:
                 items.append(item)
 
-        if evidence_type == "stock_capital":
+        if evidence_type in {"money_flow", "stock_capital"}:
             items = self._dedupe_items_by_stock_key(items)
 
         items.sort(
@@ -128,7 +128,7 @@ class PostMarketEvidenceLayerComposer:
         if score is None:
             score = self._fallback_score(evidence_type, row, alignment)
         amount = None
-        if evidence_type == "stock_capital":
+        if evidence_type in {"money_flow", "stock_capital"}:
             amount = self._stock_capital_f10_amount(row)
         if amount is None:
             amount = self._float_or_none(self._first_present(row, "amount", "main_net_inflow", "net_buy", "total_inflow", "leader_inflow"))

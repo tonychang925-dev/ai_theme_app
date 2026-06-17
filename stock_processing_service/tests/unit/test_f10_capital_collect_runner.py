@@ -113,16 +113,42 @@ def test_collection_job_manager_prepares_f10_payload_from_subject_pool():
 
     payload = asyncio.run(manager.prepare_payload("2026-06-14", {"options": {"f10_capital": True}}))
 
+    assert payload["options"]["f10_capital"] is True
     assert payload["stock_ids"] == ["000001", "600000"]
     assert payload["options"]["stock_ids"] == ["000001", "600000"]
 
 
-def test_f10_capital_collect_runner_requires_explicit_stock_ids(monkeypatch):
+def test_f10_capital_collect_runner_auto_resolves_stock_ids_from_subject_pool(monkeypatch):
     write_port = _WritePort()
     container = SimpleNamespace(
-        build_post_market_recap=SimpleNamespace(_write_port=write_port),
+        build_post_market_recap=SimpleNamespace(
+            _write_port=write_port,
+            _read_port=_SubjectPoolReadPort(),
+        ),
     )
     runner = F10CapitalCollectRunner()
+    monkeypatch.setattr(runner, "_collector_python", lambda context: "/tmp/fake-python")
+
+    seen_stock_ids: list[str] = []
+
+    async def fake_run_collect_script(*, python_bin: str, trade_date: str, stock_ids: list[str], progress_callback=None) -> dict:
+        seen_stock_ids.extend(stock_ids)
+        if progress_callback and stock_ids:
+            progress_callback(f"progress 1/{len(stock_ids)} {stock_ids[0]}")
+        return {
+            "records": [
+                {
+                    "stock_id": stock_id,
+                    "system_stock_id": stock_id,
+                    "stock_name": f"S{stock_id}",
+                    "source_updated_date": "2026-06-14",
+                    "raw_text": SAMPLE_F10_TEXT.replace("000001", stock_id),
+                }
+                for stock_id in stock_ids
+            ]
+        }
+
+    monkeypatch.setattr(runner, "_run_collect_script", fake_run_collect_script)
     ctx = CollectionTaskContext(
         trade_date="2026-06-14",
         payload={"options": {}},
@@ -131,9 +157,9 @@ def test_f10_capital_collect_runner_requires_explicit_stock_ids(monkeypatch):
     )
 
     result = asyncio.run(runner.run(ctx))
-    assert result.status == "failed"
-    assert "explicit stock_ids" in result.error_message
-    assert len(write_port.rows) == 0
+    assert result.status == "success"
+    assert seen_stock_ids == ["000001", "600000"]
+    assert len(write_port.rows) == 2
 
 
 def test_f10_capital_collect_runner_fails_fast_when_collector_python_missing(monkeypatch):

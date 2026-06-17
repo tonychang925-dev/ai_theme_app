@@ -621,7 +621,12 @@ export function CollectionPage() {
           </div>
 
           <div className="collection-action-row">
-            <button type="button" className="tag tag-button tag-active" onClick={handleStart} disabled={loading || job?.status === "running"}>
+            <button
+              type="button"
+              className="tag tag-button tag-active"
+              onClick={handleStart}
+              disabled={loading || job?.status === "running"}
+            >
               开始采集
             </button>
             <button type="button" className="tag tag-button" onClick={() => navigateTo(`/recap?date=${tradeDate}&report_type=post_market`)}>

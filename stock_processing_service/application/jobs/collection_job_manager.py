@@ -332,7 +332,11 @@ class CollectionJobManager:
 
     async def prepare_payload(self, trade_date: str, payload: dict[str, Any]) -> dict[str, Any]:
         options = payload.get("options") or {}
-        if not options.get("f10_capital", False):
+        # 防御前端类型漂移: "false" / 0 / None 统一归一化为 bool
+        f10_raw = options.get("f10_capital", False)
+        if isinstance(f10_raw, str):
+            f10_raw = f10_raw.strip().lower() in ("true", "1", "yes")
+        if not f10_raw:
             return payload
         stock_ids = payload.get("stock_ids") or options.get("stock_ids") or []
         if isinstance(stock_ids, str):

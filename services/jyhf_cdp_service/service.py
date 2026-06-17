@@ -7,6 +7,8 @@ from pathlib import Path
 from threading import Lock
 from zoneinfo import ZoneInfo
 
+import websocket
+
 from services.jyhf_cdp_service.app_manager import JyhfAppManager
 from services.jyhf_cdp_service.cdp_client import CDPClient
 from services.jyhf_cdp_service.config import JyhfCdpServiceConfig
