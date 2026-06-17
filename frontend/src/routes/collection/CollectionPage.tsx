@@ -379,7 +379,7 @@ export function CollectionPage() {
               <span>F10资金动向采集</span>
             </label>
             <div className="workspace-note">
-              F10资金动向会按任务顺序在运行时读取前序步骤生成的股票池；如果前序没有产出候选池，后端会给出明确失败原因。
+              自动从当日复盘候选池提取股票，专项采集资金动向快照，不参与评分。
             </div>
 
             {/* ── 股票快照（可插拔数据源）── */}

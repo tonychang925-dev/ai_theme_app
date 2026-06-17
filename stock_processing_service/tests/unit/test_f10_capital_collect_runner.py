@@ -104,7 +104,7 @@ def test_f10_capital_collect_runner_writes_snapshot_rows(monkeypatch):
     assert "主力净流入" in write_port.rows[0]["capital_flow_json"]["summary"]
 
 
-def test_collection_job_manager_keeps_f10_payload_without_explicit_stock_ids():
+def test_collection_job_manager_prepares_f10_payload_from_subject_pool():
     container = SimpleNamespace(
         build_post_market_recap=SimpleNamespace(_read_port=_SubjectPoolReadPort()),
     )
@@ -114,8 +114,8 @@ def test_collection_job_manager_keeps_f10_payload_without_explicit_stock_ids():
     payload = asyncio.run(manager.prepare_payload("2026-06-14", {"options": {"f10_capital": True}}))
 
     assert payload["options"]["f10_capital"] is True
-    assert "stock_ids" not in payload
-    assert "stock_ids" not in payload["options"]
+    assert payload["stock_ids"] == ["000001", "600000"]
+    assert payload["options"]["stock_ids"] == ["000001", "600000"]
 
 
 def test_f10_capital_collect_runner_auto_resolves_stock_ids_from_subject_pool(monkeypatch):
@@ -149,7 +149,6 @@ def test_f10_capital_collect_runner_auto_resolves_stock_ids_from_subject_pool(mo
         }
 
     monkeypatch.setattr(runner, "_run_collect_script", fake_run_collect_script)
-
     ctx = CollectionTaskContext(
         trade_date="2026-06-14",
         payload={"options": {}},
