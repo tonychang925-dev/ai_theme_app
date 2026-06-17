@@ -929,8 +929,36 @@ class F10CapitalCollectRunner:
         if stock_ids:
             logs.append(f"stock_ids=payload:{len(stock_ids)}")
             return stock_ids, logs
+        if context.container is None:
+            return [], logs
+        recap_job = getattr(context.container, "build_post_market_recap", None)
+        read_port = getattr(recap_job, "_read_port", None)
+        fetch_fn = getattr(read_port, "get_subject_stock_pool_by_trade_date", None) if read_port is not None else None
+        if not callable(fetch_fn):
+            return [], logs
 
-        return [], logs
+        from datetime import date as _date
+
+        rows = await fetch_fn(_date.fromisoformat(context.trade_date))
+        resolved = []
+        seen: set[str] = set()
+        for row in rows:
+            raw_stock_id = str((row or {}).get("stock_id") or (row or {}).get("stock_code") or (row or {}).get("symbol") or "").strip()
+            if not raw_stock_id:
+                continue
+            normalized = raw_stock_id
+            if "." in normalized:
+                head, tail = normalized.rsplit(".", 1)
+                if tail.upper() in {"SZ", "SH", "BJ"}:
+                    normalized = head
+            digits = "".join(ch for ch in normalized if ch.isdigit())
+            normalized = digits if len(digits) == 6 else normalized
+            if normalized and normalized not in seen:
+                seen.add(normalized)
+                resolved.append(normalized)
+        if resolved:
+            logs.append(f"stock_ids=subject_pool:{len(resolved)}")
+        return resolved, logs
 
     async def _run_collect_script(
         self,
@@ -1015,7 +1043,7 @@ class F10CapitalCollectRunner:
                 status="failed",
                 current_label="F10资金动向快照采集失败",
                 logs=resolve_logs,
-                error_message="missing explicit stock_ids in payload",
+                error_message="subject pool is empty; please run stock_snapshot/jyhf first",
             )
 
         try:

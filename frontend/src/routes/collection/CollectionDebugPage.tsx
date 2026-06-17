@@ -245,10 +245,15 @@ export function CollectionDebugPage() {
             <span>F10资金动向采集</span>
           </label>
           <div className="workspace-note">
-            自动从当日复盘候选池提取股票，专项采集资金动向快照，不参与评分。
+            F10资金动向会按任务顺序执行，并在运行时自动读取前序任务生成的股票池。
           </div>
           <div className="collection-action-row">
-            <button type="button" className="tag tag-button tag-active" onClick={handleStart} disabled={loading}>
+            <button
+              type="button"
+              className="tag tag-button tag-active"
+              onClick={handleStart}
+              disabled={loading}
+            >
               启动采集
             </button>
             <button type="button" className="tag tag-button" onClick={handleStop}>

@@ -344,11 +344,10 @@ class CollectionJobManager:
         if not isinstance(stock_ids, list):
             stock_ids = []
         normalized = [str(item).strip() for item in stock_ids if str(item).strip()]
-        if not normalized:
-            normalized = await self._resolve_f10_capital_stock_ids(trade_date)
         prepared = copy.deepcopy(payload)
-        prepared["stock_ids"] = normalized
-        prepared.setdefault("options", {})["stock_ids"] = normalized
+        if normalized:
+            prepared["stock_ids"] = normalized
+            prepared.setdefault("options", {})["stock_ids"] = normalized
         return prepared
 
     def _latest_jyhf_subject_keys(self) -> list[str]:

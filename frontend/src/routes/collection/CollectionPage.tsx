@@ -379,7 +379,7 @@ export function CollectionPage() {
               <span>F10资金动向采集</span>
             </label>
             <div className="workspace-note">
-              自动从当日复盘候选池提取股票，专项采集资金动向快照，不参与评分。
+              F10资金动向会按任务顺序在运行时读取前序步骤生成的股票池；如果前序没有产出候选池，后端会给出明确失败原因。
             </div>
 
             {/* ── 股票快照（可插拔数据源）── */}
@@ -621,7 +621,12 @@ export function CollectionPage() {
           </div>
 
           <div className="collection-action-row">
-            <button type="button" className="tag tag-button tag-active" onClick={handleStart} disabled={loading || job?.status === "running"}>
+            <button
+              type="button"
+              className="tag tag-button tag-active"
+              onClick={handleStart}
+              disabled={loading || job?.status === "running"}
+            >
               开始采集
             </button>
             <button type="button" className="tag tag-button" onClick={() => navigateTo(`/recap?date=${tradeDate}&report_type=post_market`)}>

@@ -1308,8 +1308,8 @@ class DecisionExecutor:
         try:
             event_data = decision.get("event_data") if isinstance(decision.get("event_data"), dict) else {}
             feed_item = {
-                "event_id": event_data.get("event_id") or decision.get("event_id"),
-                "news_id": event_data.get("news_id") or decision.get("news_id"),
+                "event_id": str(event_data.get("event_id") or decision.get("event_id") or ""),
+                "news_id": str(event_data.get("news_id") or decision.get("news_id") or ""),
                 "event_type": "event",
                 "title": str(event_data.get("title") or decision.get("title") or ""),
                 "summary": str(event_data.get("summary") or decision.get("summary") or ""),

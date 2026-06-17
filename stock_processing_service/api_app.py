@@ -4084,7 +4084,12 @@ async def start_collection(payload: CollectionStartRequest) -> dict[str, Any]:
     availability = app.state.collection_job_manager.availability(payload.trade_date)
     if not availability.get("allowed"):
         raise HTTPException(status_code=400, detail=availability.get("message") or "collection not allowed")
-    prepared_payload = await app.state.collection_job_manager.prepare_payload(payload.trade_date, payload.model_dump())
+    try:
+        prepared_payload = await app.state.collection_job_manager.prepare_payload(payload.trade_date, payload.model_dump())
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except RuntimeError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
     job = app.state.collection_job_manager.create_job(payload.trade_date, prepared_payload)
     return job.to_dict()
 

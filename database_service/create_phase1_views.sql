@@ -235,6 +235,7 @@ SELECT
 FROM subject_rank_daily srd
 LEFT JOIN vw_subject_theme_binding b
   ON b.subject_key = srd.subject_key
+WHERE srd.source_system IS DISTINCT FROM 'snapshot_agg'
 
 UNION ALL
 
@@ -278,6 +279,32 @@ JOIN news_event ne
 JOIN theme_master tm
   ON tm.id = etm.theme_id
 WHERE tm.source_system = 'jyhf'
-  AND tm.source_id IS NOT NULL;
+  AND tm.source_id IS NOT NULL
+
+UNION ALL
+
+SELECT
+    esm.subject_key,
+    COALESCE(b.theme_id, tm.id) AS theme_id,
+    COALESCE(b.theme_name, tm.name) AS theme_name,
+    NULL::BIGINT AS subject_rank_id,
+    COALESCE(ne.event_time::date, ne.created_at::date, esm.created_at::date) AS rank_date,
+    COALESCE(NULLIF(ne.summary, ''), '') AS description,
+    NULL::INTEGER AS heat,
+    NULL::VARCHAR(50) AS heat_name,
+    NULL::NUMERIC(8,4) AS pct_chg,
+    NULL::NUMERIC(8,4) AS his_pct_chg,
+    ne.id AS event_id,
+    'event_subject_map' AS source_type,
+    ne.id::TEXT AS source_ref
+FROM event_subject_map esm
+JOIN news_event ne
+  ON ne.id = esm.event_id
+LEFT JOIN vw_subject_theme_binding b
+  ON b.subject_key = esm.subject_key
+LEFT JOIN theme_master tm
+  ON tm.source_system = 'jyhf'
+ AND tm.source_id = esm.subject_key
+WHERE NULLIF(ne.summary, '') IS NOT NULL;
 
 COMMIT;

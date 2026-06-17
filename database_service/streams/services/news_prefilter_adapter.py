@@ -326,9 +326,11 @@ def _to_result(raw: Dict[str, Any]) -> NewsTriageResult:
 # ── Qwen prompt ──────────────────────────────────────────────────────────
 
 _QPWEN_PROMPT = (
-    "判断A股新闻重要性。只输出JSON，勿解释。\n"
-    "重要(影响板块/个股预期)→{{\"p\":1}}\n"
-    "不重要(纯波动/情绪/无内容)→{{\"p\":0}}\n"
+    "判断A股财经新闻是否包含实质性信息。只输出JSON，勿解释。\n"
+    "重要(含产业数据/公司财报/政策/重大订单/技术突破/供需变化等)→{{\"p\":1}}\n"
+    "不重要(纯行情播报/ETF涨跌/股评/无实质内容)→{{\"p\":0}}\n"
+    "重要规则：如果文本标题是ETF或行情播报形式，但正文包含实质性经济数据、产业报告、"
+    "公司公告等驱动事件，必须判断为重要{{\"p\":1}}。\n"
     "新闻：{text}\n"
     "输出："
 )
@@ -375,6 +377,11 @@ _EMBEDDED_CATALYST_KEYWORDS = {
     "公告", "净利润", "营收", "增持", "分红", "问询函", "产能",
     "投产", "处罚", "获批", "补贴", "财政",
     "算力", "合同", "签约", "投资", "研发",
+    # Phase 4F: 价格/供需/里程碑驱动事件 — 绝不允许滤过
+    "涨价", "提价", "调价", "涨价函", "供不应求", "供应紧张", "缺口",
+    "缺货", "产能紧张", "供过于求",
+    "首次", "技术突破", "发布", "量产", "验证通过",
+    "创新高", "创纪录", "历史新高", "里程碑",
 }
 
 _EMBEDDED_TRIVIAL_PATTERNS = {
@@ -431,9 +438,21 @@ def _embedded_rule_evaluate(payload: Dict[str, Any]) -> Dict[str, Any]:
         return {"decision": "SKIP", "reason": "rule:too_short", "score": None, "mode": "embedded_rule"}
 
     # 1b. 内容过短或仅重复标题（无实质信息）
+    # Phase 4F: content==title 的短公告（如涨价通知、快讯）不应被误杀，
+    # 只要标题/正文包含催化剂即放行
     content_stripped = content.strip()
-    if len(content_stripped) < 20 or content_stripped == title.strip():
-        return {"decision": "SKIP", "reason": "rule:content_too_short_or_title_only", "score": None, "mode": "embedded_rule"}
+    if len(content_stripped) < 20:
+        return {"decision": "SKIP", "reason": "rule:content_too_short", "score": None, "mode": "embedded_rule"}
+    if content_stripped == title.strip():
+        # 正文=标题的短公告：检查标题是否有实质催化剂
+        title_catalyst = sum(1 for k in _EMBEDDED_CATALYST_KEYWORDS if k in title)
+        title_industry = sum(1 for t in _EMBEDDED_STRONG_INDUSTRY_TERMS if t in title)
+        if title_catalyst >= 1 or title_industry >= 2:
+            return {"decision": "PASS", "reason": "rule:short_form_substantive_title", "score": None, "mode": "embedded_rule"}
+        if len(title) < 40:
+            return {"decision": "SKIP", "reason": "rule:content_title_only_short", "score": None, "mode": "embedded_rule"}
+        # 标题>=40字：内容=标题的短公告，灰区交给Qwen
+        return {"decision": "PASS", "reason": "rule:gray_short_form_title_equals_content", "score": None, "mode": "embedded_rule"}
 
     # Phase 4C: 政务/纪委硬SKIP（除非含强产业催化词）
     gov_hits = [t for t in _EMBEDDED_ROUTINE_GOV_TERMS if t in text]
@@ -491,6 +510,26 @@ def _embedded_rule_evaluate(payload: Dict[str, Any]) -> Dict[str, Any]:
     # 6. 题材信号 >= 3 → PASS
     if signal_hits >= 3:
         return {"decision": "PASS", "reason": f"rule:signal_hits={signal_hits}", "score": None, "mode": "embedded_rule"}
+
+    # 6b. Phase 4F: ETF/行情标题 + 实质性产业内容 → 直接PASS（不依赖Qwen）
+    # 防止Qwen被ETF标题误导而错杀含SEMI/台积电/涨价函等产业新闻
+    _ETF_BODY_INDUSTRY = (
+        "半导体", "SEMI", "台积电", "英特尔", "三星", "英伟达",
+        "玻璃基板", "先进封装", "覆铜板", "CCL", "PCB",
+        "涨价", "提价", "扩产", "并购", "收购", "重组",
+        "亿美元", "亿人民币",
+    )
+    title_looks_market = bool(re.search(
+        r'(?:ETF|收[涨跌]|开盘|盘中).*(?:涨|跌)(?:超|了)?\d+%'   # ETF/行情 + 涨跌X%
+        r'|(?:涨|跌)(?:超|了)?\d+%.*ETF',                          # 涨跌X% + ETF
+        title
+    ))
+    if title_looks_market:
+        body_industry = sum(1 for t in _ETF_BODY_INDUSTRY if t in content)
+        if body_industry >= 1:
+            return {"decision": "PASS",
+                    "reason": f"rule:etf_title_industry_content:{body_industry}",
+                    "score": None, "mode": "embedded_rule"}
 
     # 7. 灰区 → 保守放行到 triage
     return {"decision": "PASS", "reason": "rule:gray_pass_to_triage", "score": None, "mode": "embedded_rule"}

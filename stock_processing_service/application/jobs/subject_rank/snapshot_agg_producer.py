@@ -91,7 +91,8 @@ final_rank AS (
             WHEN heat >= 40 THEN '温和'
             ELSE '冷'
         END AS heat_name,
-        ROW_NUMBER() OVER (ORDER BY heat DESC) AS hot_rank
+        ROW_NUMBER() OVER (ORDER BY heat DESC) AS hot_rank,
+        COUNT(*) OVER () AS total_subjects
     FROM heat_scored
 )
 INSERT INTO subject_rank_daily (
@@ -106,20 +107,18 @@ SELECT
     ROUND(fr.avg_pct_chg::numeric, 4),
     NULL::numeric,
     COALESCE(fr.avg_pct_chg, 0) > 0,
-    jsonb_build_object(
-        'provider', 'snapshot_agg',
-        'heat_formula', 'v1',
-        'hot_rank', fr.hot_rank,
-        'stock_count', fr.stock_count,
-        'amount_weighted_pct_chg', ROUND(fr.amount_weighted_pct_chg::numeric, 4),
-        'limit_up_count', fr.limit_up_count,
-        'up_ratio', ROUND(fr.up_ratio::numeric, 4),
-        'top3_avg_pct_chg', ROUND(fr.top3_avg_pct_chg::numeric, 4),
-        'leader_avg_pct_chg', ROUND(fr.leader_avg_pct_chg::numeric, 4),
-        'avg_pct_chg', ROUND(fr.avg_pct_chg::numeric, 4),
-        'amount_sum', ROUND(fr.amount_sum::numeric, 2),
-        'batch_id', $2::text
-    )::text,
+    CONCAT(
+        '板块热度', fr.heat, '（', fr.heat_name, '），排名', fr.hot_rank, '/', fr.total_subjects,
+        '，成分股', fr.stock_count, '只，上涨', COALESCE(fr.up_count, 0), '只（',
+        ROUND(COALESCE(fr.up_ratio, 0) * 100, 1), '%），涨停', COALESCE(fr.limit_up_count, 0), '家',
+        '，均价涨幅', ROUND(fr.avg_pct_chg::numeric, 2), '%',
+        '，成交额',
+        CASE
+            WHEN fr.amount_sum >= 100000000 THEN CONCAT(ROUND(fr.amount_sum / 100000000, 2), '亿')
+            WHEN fr.amount_sum >= 10000 THEN CONCAT(ROUND(fr.amount_sum / 10000, 2), '万')
+            ELSE ROUND(fr.amount_sum::numeric, 2)::text
+        END
+    ),
     'snapshot_agg',
     NOW(),
     NOW()
@@ -203,10 +202,10 @@ class SnapshotAggSubjectRankProducer(SubjectRankProducer):
                         "DELETE FROM subject_rank_daily WHERE rank_date = $1",
                         td,
                     )
-                    affected = await conn.execute(_BUILD_SQL, td, batch_id)
+                    affected = await conn.execute(_BUILD_SQL, td)
                 affected_rows = self._parse_affected(affected)
             else:
-                affected = await conn.execute(_BUILD_SQL, td, batch_id)
+                affected = await conn.execute(_BUILD_SQL, td)
                 affected_rows = self._parse_affected(affected)
 
             # ── 写入后质量检查：从 subject_rank_daily 读取真实值 ──
