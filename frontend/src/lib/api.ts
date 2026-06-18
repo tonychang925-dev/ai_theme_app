@@ -137,6 +137,7 @@ export interface ThemeWorkspaceView {
   history?: Record<string, unknown>[] | null;
   children?: Record<string, unknown>[] | null;
   stocks?: Record<string, unknown>[] | null;
+  graph?: Record<string, unknown> | null;
   analytics?: {
     trade_date?: string | null;
     summary?: Record<string, unknown> | null;

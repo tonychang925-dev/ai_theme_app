@@ -2858,6 +2858,65 @@ async def get_theme_workspace(subject_key: str, trade_date: str = "") -> dict[st
         result["stocks"] = [dict(r) for r in stocks]
         detail["stock_count"] = len(result["stocks"])
 
+        # Graph: hierarchical children + stocks for 题材图谱 tab
+        graph: dict[str, Any] = {
+            "root": {
+                "name": theme_name,
+                "subject_key": subject_key,
+                "pct_chg": None,
+            },
+            "children": [],
+            "uncategorized_stocks": [],
+        }
+        # Root pct_chg from recent rank
+        root_rank = await conn.fetchrow(
+            "SELECT pct_chg FROM subject_history_staging WHERE subject_key=$1 ORDER BY rank_date DESC LIMIT 1",
+            subject_key,
+        )
+        if root_rank and root_rank["pct_chg"] is not None:
+            graph["root"]["pct_chg"] = float(root_rank["pct_chg"])
+
+        # Children with per-child stocks
+        graph_children = await conn.fetch(
+            "SELECT * FROM subject_children_staging WHERE parent_subject_key=$1 ORDER BY sort LIMIT 20",
+            subject_key,
+        )
+        for ch in graph_children:
+            child_node: dict[str, Any] = {
+                "name": ch["child_name"] or ch["child_subject_key"],
+                "child_subject_key": ch["child_subject_key"],
+                "pct_chg": float(ch["pct_chg"]) if ch["pct_chg"] is not None else None,
+                "stocks": [],
+            }
+            # Stocks under this child
+            child_stocks = await conn.fetch(
+                "SELECT stock_id, stock_name, reason FROM subject_child_stock_reason "
+                "WHERE subject_key=$1 AND child_name=$2 ORDER BY sort_order LIMIT 20",
+                subject_key, ch["child_name"],
+            )
+            for cs in child_stocks:
+                child_node["stocks"].append({
+                    "stock_id": cs["stock_id"],
+                    "stock_name": cs["stock_name"],
+                    "reason": cs["reason"] or "",
+                })
+            graph["children"].append(child_node)
+
+        # Uncategorized stocks (cdp_extracted or no child_name)
+        uncat = await conn.fetch(
+            "SELECT stock_id, stock_name, reason FROM subject_child_stock_reason "
+            "WHERE subject_key=$1 AND (child_name='cdp_extracted' OR child_name IS NULL OR child_name='') "
+            "ORDER BY sort_order LIMIT 50",
+            subject_key,
+        )
+        for us in uncat:
+            graph["uncategorized_stocks"].append({
+                "stock_id": us["stock_id"],
+                "stock_name": us["stock_name"],
+                "reason": us["reason"] or "",
+            })
+        result["graph"] = graph
+
         result["detail"] = detail
 
         # Analytics: summary from theme_cycle_judgement_v2
@@ -4059,13 +4118,129 @@ async def get_theme_workspace(
             partial = True
             missing_sections.append("stocks")
 
+    # ── 题材图谱 (graph) ──
+    graph = None
+    try:
+        from asyncpg import connect as _pg_connect
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        gconn = await _pg_connect(
+            host="localhost", port=5432, database=db,
+            user=os.environ.get("PG_USERNAME", "postgres"),
+            password=os.environ.get("PG_PASSWORD", ""),
+        )
+        try:
+            theme_name = str(detail.get("theme_name") or detail.get("subject_key", subject_key))
+            graph = {"root": {"name": theme_name, "subject_key": subject_key, "pct_chg": None}, "children": [], "uncategorized_stocks": []}
+            root_rank = await gconn.fetchrow("SELECT pct_chg FROM subject_history_staging WHERE subject_key=$1 ORDER BY rank_date DESC LIMIT 1", subject_key)
+            if root_rank and root_rank["pct_chg"] is not None:
+                graph["root"]["pct_chg"] = float(root_rank["pct_chg"])
+            # Helper: fetch stocks for a subject, checking both its own key and parent key
+            async def _fetch_stocks(sk: str, sn: str) -> list[dict]:
+                """Fetch all stocks for a subject, combining own key + parent key lookups.
+                All stocks are tagged with the taxonomy name *sn* regardless of their
+                individual child_name in the DB."""
+                stocks = []
+                seen = set()
+                # Own key: ALL stocks regardless of child_name
+                for row in await gconn.fetch(
+                    "SELECT scr.stock_id, scr.stock_name, scr.reason, COALESCE(ssm.pct_chg,0) AS sp "
+                    "FROM subject_child_stock_reason scr LEFT JOIN subject_stock_map ssm ON ssm.subject_key=$2 AND ssm.stock_id=scr.stock_id "
+                    "WHERE scr.subject_key=$1 ORDER BY scr.sort_order LIMIT 100", sk, subject_key):
+                    sid = row["stock_id"]
+                    if sid not in seen:
+                        seen.add(sid)
+                        stocks.append({"stock_id": sid, "stock_name": row["stock_name"], "child_name": sn, "reason": row["reason"] or "", "pct_chg": float(row["sp"] or 0)})
+                # Parent key with child_name matching sn
+                parent_row = await gconn.fetchrow("SELECT parent_subject_key FROM jyhf_subject_taxonomy_relation WHERE child_subject_key=$1 LIMIT 1", sk)
+                if parent_row:
+                    pk = parent_row["parent_subject_key"]
+                    for row in await gconn.fetch(
+                        "SELECT scr.stock_id, scr.stock_name, scr.reason, COALESCE(ssm.pct_chg,0) AS sp "
+                        "FROM subject_child_stock_reason scr LEFT JOIN subject_stock_map ssm ON ssm.subject_key=$3 AND ssm.stock_id=scr.stock_id "
+                        "WHERE scr.subject_key=$1 AND scr.child_name=$2 ORDER BY scr.sort_order LIMIT 50", pk, sn, subject_key):
+                        sid = row["stock_id"]
+                        if sid not in seen:
+                            seen.add(sid)
+                            stocks.append({"stock_id": sid, "stock_name": row["stock_name"], "child_name": sn, "reason": row["reason"] or "", "pct_chg": float(row["sp"] or 0)})
+                return stocks
+
+            # Build full hierarchy from jyhf_subject_taxonomy_relation
+            root_children = await gconn.fetch(
+                "SELECT child_subject_key, child_subject_name FROM jyhf_subject_taxonomy_relation "
+                "WHERE parent_subject_key=$1 ORDER BY child_subject_key", subject_key
+            )
+            for rc in root_children:
+                child_key = rc["child_subject_key"]
+                child_name = rc["child_subject_name"] or child_key
+                child_node = {"name": child_name, "child_subject_key": child_key, "pct_chg": None, "children": []}
+                # Level 2: grandchildren
+                grands = await gconn.fetch(
+                    "SELECT child_subject_key, child_subject_name FROM jyhf_subject_taxonomy_relation "
+                    "WHERE parent_subject_key=$1 ORDER BY child_subject_key", child_key
+                )
+                seen_ids = set()
+                for gr in grands:
+                    gk = gr["child_subject_key"]
+                    gn = gr["child_subject_name"] or gk
+                    gc_node = {"name": gn, "child_subject_key": gk, "stocks": await _fetch_stocks(gk, gn)}
+                    for s in gc_node["stocks"]:
+                        seen_ids.add(s["stock_id"])
+                    child_node["children"].append(gc_node)
+                graph["children"].append(child_node)
+            # Leaf node with no children: still may have stocks via parent key
+            if not root_children:
+                leaf_name = await gconn.fetchval("SELECT child_subject_name FROM jyhf_subject_taxonomy_relation WHERE child_subject_key=$1 LIMIT 1", subject_key)
+                if not leaf_name:
+                    leaf_name = theme_name
+                leaf_stocks = await _fetch_stocks(subject_key, leaf_name)
+                if leaf_stocks:
+                    graph["children"].append({"name": leaf_name, "child_subject_key": subject_key, "children": [{"name": leaf_name, "stocks": leaf_stocks}]})
+            # Remaining: stocks under root key not assigned to any child/grandchild
+            # Show them as direct stocks of the root rather than "其他"
+            all_assigned_ids = set()
+            for c in graph["children"]:
+                for gc in c.get("children", []):
+                    for s in gc.get("stocks", []):
+                        all_assigned_ids.add(s["stock_id"])
+            # Also collect stocks from root key in child_stock_reason
+            direct_stocks = []
+            for row in await gconn.fetch(
+                "SELECT ssm.stock_id, ssm.name AS stock_name, scr.reason, ssm.pct_chg "
+                "FROM subject_stock_map ssm "
+                "LEFT JOIN subject_child_stock_reason scr ON scr.subject_key=ssm.subject_key AND scr.stock_id=ssm.stock_id "
+                "WHERE ssm.subject_key=$1 ORDER BY ssm.sort LIMIT 200",
+                subject_key,
+            ):
+                sid = row["stock_id"]
+                if sid not in all_assigned_ids:
+                    all_assigned_ids.add(sid)
+                    direct_stocks.append({
+                        "stock_id": sid,
+                        "stock_name": row["stock_name"],
+                        "child_name": theme_name,
+                        "reason": row["reason"] or "",
+                        "pct_chg": float(row["pct_chg"] or 0) if row["pct_chg"] is not None else None,
+                    })
+            if direct_stocks:
+                graph["children"].append({
+                    "name": theme_name,
+                    "child_subject_key": subject_key,
+                    "children": [{"name": "成分股", "child_subject_key": subject_key, "stocks": direct_stocks}]
+                })
+        finally:
+            await gconn.close()
+    except Exception:
+        if graph is None:
+            graph = {"root": {"name": detail.get("theme_name", subject_key), "subject_key": subject_key}, "children": [], "uncategorized_stocks": []}
+
     return {
         "subject_key": detail.get("subject_key", subject_key),
         "trade_date": trade_date,
         "detail": detail,
-        "history": history,
-        "children": children,
-        "stocks": stocks,
+        "history": [dict(r) for r in history] if history else None,
+        "children": [dict(r) for r in children] if children else None,
+        "stocks": [dict(r) for r in stocks] if stocks else None,
+        "graph": graph,
         "analytics": analytics,
         "diagnostics": {
             "partial": partial,

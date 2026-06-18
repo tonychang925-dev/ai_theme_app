@@ -294,18 +294,19 @@ class NewsStreamHandler:
                 logger.debug(f"✅ 新闻存储成功: {news_id}")
 
                 # 5. 发布新闻存储完成事件，供后续业务处理
+                # Phase 4F: events:normal 管线已由 NewsStreamProcessor→structured 替代，
+                # 禁用冗余发布节省 Redis 内存。设 LEGACY_EVENTS_NORMAL_PUBLISH=true 恢复。
                 try:
-                    if hasattr(self.stream_bus, 'publish_to_stream'):
-                        event_data = {
-                            "event_type": "news.stored",
-                            "news_data": enhanced_data,
-                            "stored_news_id": stored_news_id,
-                            "storage_time": datetime.now().isoformat(),
-                            "source": "news_stream_handler"
-                        }
-                        # 发布到独立业务事件流，避免写回 news_raw 形成自吞回路
-                        await self.stream_bus.publish_to_stream("events_normal", event_data)
-                        logger.info(f"📤 发布新闻存储事件: {news_id}")
+                    if str(os.getenv("LEGACY_EVENTS_NORMAL_PUBLISH", "false")).strip().lower() in ("1", "true", "yes", "on"):
+                        if hasattr(self.stream_bus, 'publish_to_stream'):
+                            event_data = {
+                                "event_type": "news.stored",
+                                "news_data": enhanced_data,
+                                "stored_news_id": stored_news_id,
+                                "storage_time": datetime.now().isoformat(),
+                                "source": "news_stream_handler"
+                            }
+                            await self.stream_bus.publish_to_stream("events_normal", event_data)
                 except Exception as e:
                     logger.warning(f"发布新闻存储事件失败: {e}")
             else:

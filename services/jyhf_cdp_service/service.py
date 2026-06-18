@@ -13,7 +13,12 @@ from services.jyhf_cdp_service.app_manager import JyhfAppManager
 from services.jyhf_cdp_service.cdp_client import CDPClient
 from services.jyhf_cdp_service.config import JyhfCdpServiceConfig
 from services.jyhf_cdp_service.db_sink import DatabaseSink
-from services.jyhf_cdp_service.extractors import NewEventExtractor, PrepareRetryError
+from services.jyhf_cdp_service.extractors import (
+    NewEventExtractor,
+    NotificationPopupExtractor,
+    PersistentHookInjector,
+    PrepareRetryError,
+)
 from services.jyhf_cdp_service.intel_pusher import IntelPusher
 from services.jyhf_cdp_service.normalizer import JyhfEventNormalizer
 from services.jyhf_cdp_service.schemas import CollectorStatus, RawJyhfCdpEvent
@@ -37,6 +42,8 @@ class JyhfCdpCollectorService:
         self._dedup = DedupStore(config.dedup_path)
         self._app = JyhfAppManager(config.app_path, config.cdp_port)
         self._extractor = NewEventExtractor()
+        self._popup_extractor = NotificationPopupExtractor()
+        self._hook_injector = PersistentHookInjector()
         self._normalizer = JyhfEventNormalizer()
         self._sink = RawEventJsonlSink(config.raw_event_dir)
         self._intel_pusher = IntelPusher(config, logger) if config.allow_push_intel else None
@@ -48,6 +55,10 @@ class JyhfCdpCollectorService:
         self._capture_lock = Lock()
         self._db_events_lock = Lock()
         self._pending_db_events: list[RawJyhfCdpEvent] = []
+        # Popup/hook events to write directly to subject_history_staging
+        # (the table SPS polls for intel feed display).
+        self._pending_popup_rows: list[dict] = []
+        self._popup_rows_lock = Lock()
         self._run_id = 0
         self._started_at: datetime | None = None
         self._startup_failure_count = 0
@@ -188,18 +199,80 @@ class JyhfCdpCollectorService:
                     continue
                 raise
             try:
-                # Phase 1: inject network hooks BEFORE navigation so that
-                # the API calls triggered by prepare()/read() are intercepted.
-                # The JYHF app stores the JWT token in JS memory only
-                # (not localStorage/sessionStorage), so network interception
-                # is the primary extraction method.
+                # ── Phase 0: Persistent hooks (idempotent) ──
+                try:
+                    self._hook_injector.ensure_injected(cdp)
+                except Exception:
+                    pass
+
+                # ── Phase 1: Token hooks ──
                 try:
                     self._token_extractor.inject_hooks(cdp)
                 except Exception:
-                    pass  # Hook injection failure must never block event capture
+                    pass
 
-                self._extractor.prepare(cdp)
-                raw_events, feed_date, body_text = self._extractor.read(cdp)
+                # ── Phase 2: Drain hook notifications + capture popup ──
+                # These are INDEPENDENT of feed extraction.  They produce
+                # unmasked events (subject_id + full driver text) even when
+                # the feed is paywalled.  Write them directly to
+                # subject_history_staging so SPS/frontend see them immediately.
+                raw_events: list[dict] = []
+
+                # 2a: Hook notifications (router beforeEach + hashchange)
+                try:
+                    raw_notifs = self._hook_injector.drain_notifications(cdp)
+                    for n in raw_notifs:
+                        ev = self._raw_notification_to_event(n)
+                        if ev:
+                            raw_events.append(ev)
+                    if raw_notifs:
+                        self._logger.info(
+                            "drained %s hook notifications subjects=%s",
+                            len(raw_notifs),
+                            [e.get("subject_name", "") for e in raw_events[-len(raw_notifs):]],
+                        )
+                except Exception:
+                    pass
+
+                # 2b: Current popup (if displayed)
+                try:
+                    if self._popup_extractor.detect(cdp):
+                        popup_evs = self._popup_extractor.read(cdp)
+                        raw_events.extend(popup_evs)
+                        if popup_evs:
+                            self._logger.info(
+                                "popup captured subject=%s subject_key=%s",
+                                popup_evs[0].get("subject_name"),
+                                popup_evs[0].get("subject_key"),
+                            )
+                except Exception:
+                    pass
+
+                # Queue popup/hook events for direct write to
+                # subject_history_staging (the table SPS polls).
+                # These have unmasked subject_id + full driver text.
+                if raw_events:
+                    with self._popup_rows_lock:
+                        self._pending_popup_rows.extend(raw_events)
+
+                # ── Phase 3: Feed extraction (best-effort — may fail on
+                # paywalled or stale pages without blocking popup events) ──
+                feed_date = ""
+                body_text = ""
+                try:
+                    self._extractor.prepare(cdp)
+                    feed_events, feed_date, body_text = self._extractor.read(cdp)
+                    # Filter: skip masked feed events (account expired).
+                    # Popup events provide the unmasked data for followed subjects.
+                    masked_count = sum(1 for e in feed_events if e.get("subject_name") == "********")
+                    feed_events = [e for e in feed_events if e.get("subject_name") != "********"]
+                    if masked_count:
+                        self._logger.debug("filtered %s masked feed events", masked_count)
+                    raw_events.extend(feed_events)
+                except PrepareRetryError as e:
+                    self._logger.warning("feed extraction skipped: %s", e)
+                except Exception as e:
+                    self._logger.warning("feed extraction failed: %s", e)
 
                 # Phase 2: after navigation triggered API calls, read captured tokens
                 token_extracted = False
@@ -242,23 +315,26 @@ class JyhfCdpCollectorService:
                 token_last_at=capture_time.isoformat(),
             )
 
-        if not raw_events:
-            return
+        # Always update status to reflect CDP connectivity, even with 0 events.
+        # This prevents the frontend from showing "CDP 未连接" when the
+        # capture cycle ran but found nothing new.
         if self._stop_event.is_set() or run_id != self._run_id:
             return
+
         new_count = 0
         last_event_at = None
-        for raw in raw_events:
-            if self._stop_event.is_set() or run_id != self._run_id:
-                return
-            event = self._normalizer.normalize(raw, feed_date=feed_date, capture_time=capture_time)
-            last_event_at = capture_time.replace(tzinfo=CN_TZ).isoformat()
-            new_count += 1
-            if self._intel_pusher:
-                self._intel_pusher.push(event)
-            if self._db_sink:
-                with self._db_events_lock:
-                    self._pending_db_events.append(event)
+        if raw_events:
+            for raw in raw_events:
+                if self._stop_event.is_set() or run_id != self._run_id:
+                    return
+                event = self._normalizer.normalize(raw, feed_date=feed_date, capture_time=capture_time)
+                last_event_at = capture_time.replace(tzinfo=CN_TZ).isoformat()
+                new_count += 1
+                if self._intel_pusher:
+                    self._intel_pusher.push(event)
+                if self._db_sink:
+                    with self._db_events_lock:
+                        self._pending_db_events.append(event)
 
         totals["capture_count_total"] = int(totals.get("capture_count_total") or 0) + len(raw_events)
         totals["new_event_count_total"] = int(totals.get("new_event_count_total") or 0) + new_count
@@ -310,6 +386,22 @@ class JyhfCdpCollectorService:
         )
 
     async def _flush_db_events(self) -> None:
+        # 1) Write popup/hook events to subject_history_staging
+        #    (the table SPS polls for frontend intel feed).
+        with self._popup_rows_lock:
+            if self._pending_popup_rows:
+                popup_rows = self._pending_popup_rows
+                self._pending_popup_rows = []
+            else:
+                popup_rows = None
+
+        if popup_rows:
+            try:
+                await self._write_popup_rows_to_staging(popup_rows)
+            except Exception:
+                self._logger.exception("popup staging write failed")
+
+        # 2) Write normalized events via db_sink (event_subject_map).
         if not self._db_sink:
             return
         with self._db_events_lock:
@@ -325,6 +417,120 @@ class JyhfCdpCollectorService:
             ))
         except Exception:
             self._logger.exception("db_sink flush failed batch_id=%s count=%s", batch_id, len(events))
+
+    async def _write_popup_rows_to_staging(self, rows: list[dict]) -> int:
+        """Write popup/hook event dicts directly to subject_history_staging.
+
+        This is the table that SPS polls for the intel feed frontend display.
+        Uses ``source_type='jyhf_cdp'`` to match the SPS query filter.
+        """
+        import asyncpg
+
+        conn = await asyncpg.connect(
+            host=self._config.pg_host,
+            port=self._config.pg_port,
+            database=self._config.pg_database,
+            user=self._config.pg_username,
+            password=self._config.pg_password,
+            timeout=10,
+        )
+        try:
+            td = datetime.now(CN_TZ).date()
+            batch_id = f"popup_{datetime.now(CN_TZ).strftime('%Y%m%d_%H%M%S')}"
+            written = 0
+
+            for ev in rows:
+                sn = str(ev.get("subject_name") or "").strip()
+                sid = str(ev.get("subject_key") or "").strip()
+                dt = str(ev.get("driver_title") or "").strip()
+                desc_text = str(ev.get("driver_desc") or "").strip()
+                ns = str(ev.get("news_source") or "").strip()
+
+                if not sn:
+                    continue
+
+                desc = f"【驱动事件：{dt}】"
+                if desc_text:
+                    desc += f"\n{desc_text}"
+                if ns:
+                    desc += f"\n（新闻来源：{ns}）"
+
+                await conn.execute(
+                    "INSERT INTO subject_history_staging "
+                    "(subject_key,subject_name,rank_date,description,heat,heat_name,"
+                    " pct_chg,his_pct_chg,source_type,ingest_batch_id) "
+                    "VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)",
+                    sid or sn, sn, td, desc, 3, "热", 0.0, 0.0,
+                    "jyhf_cdp", batch_id,
+                )
+                written += 1
+
+            if written:
+                self._logger.info(
+                    "popup_staging: wrote %s rows to subject_history_staging",
+                    written,
+                )
+            return written
+        finally:
+            await conn.close()
+
+    # ── Notification conversion ──────────────────────────────────
+
+    @staticmethod
+    def _raw_notification_to_event(raw: dict) -> dict | None:
+        """Convert a raw hook notification dict to the event format expected
+        by the normalizer (same shape as ``NewEventExtractor.read()`` output).
+        """
+        import re
+
+        subject_name = str(raw.get("subject_name") or "").strip()
+        subject_id = str(raw.get("subject_id") or "").strip()
+        content = str(raw.get("content") or "").strip()
+
+        if not subject_name or not content:
+            return None
+
+        # Parse structured fields from content (same logic as popup extractor)
+        driver_title = ""
+        driver_desc = ""
+        news_source = ""
+
+        dm = re.search(r"【驱动事件[：:](.*?)】", content)
+        if dm:
+            driver_title = dm.group(1).strip()
+
+        sm = re.search(r"（新闻来源[：:](.*?)）", content)
+        if sm:
+            news_source = sm.group(1).strip()
+
+        desc_start = content.find("】") + 1
+        desc_end = content.find("（新闻来源：")
+        if desc_end < 0:
+            desc_end = len(content)
+        if 0 < desc_start < desc_end:
+            driver_desc = content[desc_start:desc_end].strip()
+        elif desc_start > 0:
+            driver_desc = content[desc_start:].strip()
+
+        capture_time = raw.get("captured_at", "")
+        event_time = ""
+        if capture_time:
+            # Extract HH:MM from ISO timestamp
+            tm = re.search(r"T(\d{2}:\d{2})", capture_time)
+            if tm:
+                event_time = tm.group(1)
+
+        return {
+            "event_time": event_time,
+            "subject_name": subject_name,
+            "subject_key": subject_id,
+            "pct_chg_text": "",
+            "driver_title": driver_title,
+            "driver_desc": driver_desc,
+            "news_source": news_source,
+            "event_type": "驱动事件",
+            "raw_text": content,
+        }
 
     def _uptime_seconds(self, now: datetime | None = None) -> float:
         if not self._started_at:

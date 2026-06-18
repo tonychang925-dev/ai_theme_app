@@ -1,13 +1,280 @@
 from __future__ import annotations
 
 import json
+import re
 import time
+from urllib.parse import unquote
 
 from services.jyhf_cdp_service.cdp_client import CDPClient
 
 
 class PrepareRetryError(RuntimeError):
     """DOM element not ready — caller should retry on next capture cycle."""
+
+
+class NotificationPopupExtractor:
+    """Extract structured event data from JYHF push notification popups.
+
+    The JYHF app receives push notifications for followed subjects via a
+    ``#/notification?...`` route.  All event fields are carried as URL query
+    parameters — no DOM parsing needed.  The popup does **not** auto-dismiss;
+    it persists until the user clicks "查看详情" or navigates away.
+
+    URL format::
+
+        /notification?
+          route=TopicView
+          &extraId=9055879
+          &extraName=<subject_name>
+          &title=<notification_title>
+          &content=<driver_event_body>
+    """
+
+    _ROUTE_MARKER = "/notification?"
+
+    # Regex to pull structured fields out of the ``content`` param.
+    _DRIVER_RE = re.compile(r"【驱动事件[：:](.*?)】")
+    _SOURCE_RE = re.compile(r"（新闻来源[：:](.*?)）")
+
+    def detect(self, cdp: CDPClient) -> bool:
+        """Return True if the app is currently showing a notification popup."""
+        loc = cdp.evaluate("window.location.hash", timeout=3.0)
+        return isinstance(loc, str) and self._ROUTE_MARKER in loc
+
+    def read(self, cdp: CDPClient) -> list[dict]:
+        """Parse the notification URL query string into one or more event dicts.
+
+        Return format is compatible with ``NewEventExtractor.read()``:
+
+        * subject_name  — from ``extraName``
+        * subject_key   — from ``extraId`` (BONUS: popup carries the ID directly)
+        * driver_title  — parsed from ``【驱动事件：…】`` in ``content``
+        * driver_desc   — body text after the driver marker, before news source
+        * news_source   — from ``（新闻来源：…）``
+        * event_type    — ``"驱动事件"`` (default for push notifications)
+        * event_time    — ``""`` (not available in popup)
+        * pct_chg_text  — ``""`` (not available in popup)
+        """
+        raw = cdp.evaluate(
+            """
+            (function() {
+                var hash = window.location.hash || '';
+                var idx = hash.indexOf('?');
+                if (idx < 0) return JSON.stringify({error: 'no query string'});
+                var qs = hash.substring(idx + 1);
+                var params = {};
+                var pairs = qs.split('&');
+                for (var i = 0; i < pairs.length; i++) {
+                    var eq = pairs[i].indexOf('=');
+                    if (eq < 0) continue;
+                    var key = pairs[i].substring(0, eq);
+                    var val = pairs[i].substring(eq + 1);
+                    try { params[key] = decodeURIComponent(val); } catch(e) { params[key] = val; }
+                }
+                return JSON.stringify({params: params});
+            })()
+            """,
+            timeout=5.0,
+        )
+        try:
+            payload = json.loads(raw) if isinstance(raw, str) else (raw or {})
+        except json.JSONDecodeError:
+            return []
+
+        params = payload.get("params") if isinstance(payload, dict) else {}
+        if not params:
+            return []
+
+        subject_name = unquote(str(params.get("extraName", "")).strip())
+        subject_id = str(params.get("extraId", "")).strip()
+        content = unquote(str(params.get("content", "")).strip())
+
+        if not subject_name or not content:
+            return []
+
+        # Parse structured fields from content
+        driver_title = ""
+        driver_desc = ""
+        news_source = ""
+
+        dm = self._DRIVER_RE.search(content)
+        if dm:
+            driver_title = dm.group(1).strip()
+
+        sm = self._SOURCE_RE.search(content)
+        if sm:
+            news_source = sm.group(1).strip()
+
+        # Driver description: text between "】" and "（新闻来源："
+        desc_start = content.find("】") + 1
+        desc_end = content.find("（新闻来源：")
+        if desc_end < 0:
+            desc_end = len(content)
+        if 0 < desc_start < desc_end:
+            driver_desc = content[desc_start:desc_end].strip()
+        elif desc_start > 0:
+            driver_desc = content[desc_start:].strip()
+
+        event = {
+            "event_time": "",
+            "subject_name": subject_name,
+            "subject_key": subject_id,
+            "pct_chg_text": "",
+            "driver_title": driver_title,
+            "driver_desc": driver_desc,
+            "news_source": news_source,
+            "event_type": "驱动事件",
+            "raw_text": content,
+        }
+        return [event]
+
+
+class PersistentHookInjector:
+    """Inject persistent JS hooks into the JYHF renderer to capture notifications.
+
+    Hooks are injected once and survive CDP disconnects because they live in
+    the renderer's JS memory (``window.__cdp_*__``).  Subsequent connections
+    only need to *read* the accumulated data.
+
+    Three layers of capture (defense in depth):
+
+    1. **Vue Router beforeEach** — intercepts ``$router.push('/notification?...')``
+       before the component renders.  This is the primary capture path.
+    2. **hashchange listener** — backup for direct ``window.location.hash`` changes.
+    3. **fetch response interceptor** — captures API response bodies for
+       diagnostic / future use (e.g. if encryption is removed).
+    """
+
+    _INJECTED_FLAG = "__cdp_persistent_hooks_injected__"
+    _NOTIF_STORE = "__cdp_notifications__"
+
+    def ensure_injected(self, cdp: CDPClient) -> bool:
+        """Inject hooks if not already active. Returns True on first injection."""
+        flag = cdp.evaluate(f"window.{self._INJECTED_FLAG}", timeout=2.0)
+        if flag is True:
+            return False  # Already injected
+
+        result = cdp.evaluate(
+            """
+            (function() {
+                if (window.__cdp_persistent_hooks_injected__) return 'already';
+                window.__cdp_persistent_hooks_injected__ = true;
+                window.__cdp_notifications__ = [];
+                var injected = [];
+
+                // ── Layer 1: Vue Router beforeEach ──
+                try {
+                    var app = document.querySelector('#app');
+                    if (app && app.__vue_app__) {
+                        var router = app.__vue_app__.config.globalProperties.$router;
+                        if (router) {
+                            router.beforeEach(function(to, from, next) {
+                                var fp = to.fullPath || to.path || '';
+                                if (fp.indexOf('/notification') >= 0) {
+                                    var q = to.query || {};
+                                    window.__cdp_notifications__.push({
+                                        source: 'router',
+                                        route: q.route || '',
+                                        subject_id: q.extraId || '',
+                                        subject_name: decodeURIComponent(q.extraName || ''),
+                                        title: decodeURIComponent(q.title || ''),
+                                        content: decodeURIComponent(q.content || ''),
+                                        captured_at: new Date().toISOString()
+                                    });
+                                }
+                                next();
+                            });
+                            injected.push('router_hook');
+                        }
+                    }
+                } catch(e) { injected.push('router_err:' + e.message); }
+
+                // ── Layer 2: hashchange listener ──
+                try {
+                    window.addEventListener('hashchange', function() {
+                        var hash = window.location.hash || '';
+                        var marker = '/notification?';
+                        var idx = hash.indexOf(marker);
+                        if (idx < 0) return;
+                        var qs = hash.substring(idx + marker.length);
+                        var params = {};
+                        var pairs = qs.split('&');
+                        for (var i = 0; i < pairs.length; i++) {
+                            var eq = pairs[i].indexOf('=');
+                            if (eq < 0) continue;
+                            try { params[pairs[i].substring(0, eq)] = decodeURIComponent(pairs[i].substring(eq + 1)); }
+                            catch(e2) {}
+                        }
+                        if (params.extraId || params.extraName) {
+                            window.__cdp_notifications__.push({
+                                source: 'hashchange',
+                                route: params.route || '',
+                                subject_id: params.extraId || '',
+                                subject_name: params.extraName || '',
+                                title: params.title || '',
+                                content: params.content || '',
+                                captured_at: new Date().toISOString()
+                            });
+                        }
+                    });
+                    injected.push('hashchange_listener');
+                } catch(e) { injected.push('hashchange_err:' + e.message); }
+
+                // ── Layer 3: fetch response interceptor (best-effort) ──
+                try {
+                    if (!window.__cdp_feed_hook_active__) {
+                        window.__cdp_feed_hook_active__ = true;
+                        window.__cdp_feed_responses__ = [];
+                        var origFetch = window.fetch;
+                        window.fetch = function(url, options) {
+                            var urlStr = typeof url === 'string' ? url : (url && url.url ? url.url : '');
+                            return origFetch.apply(this, arguments).then(function(response) {
+                                if (urlStr.indexOf('txcfgl.com') >= 0) {
+                                    var cloned = response.clone();
+                                    cloned.text().then(function(body) {
+                                        window.__cdp_feed_responses__.push({
+                                            url: urlStr.substring(0, 250),
+                                            status: response.status,
+                                            body: body.substring(0, 8000)
+                                        });
+                                    }).catch(function() {});
+                                }
+                                return response;
+                            });
+                        };
+                        injected.push('fetch_interceptor');
+                    }
+                } catch(e) { injected.push('fetch_err:' + e.message); }
+
+                return JSON.stringify(injected);
+            })()
+            """,
+            timeout=8.0,
+        )
+        return True  # Freshly injected
+
+    def drain_notifications(self, cdp: CDPClient) -> list[dict]:
+        """Read and clear accumulated notifications from JS memory.
+
+        Returns list of raw notification dicts with keys:
+        source, route, subject_id, subject_name, title, content, captured_at.
+        """
+        raw = cdp.evaluate(
+            f"""
+            (function() {{
+                var arr = window.{self._NOTIF_STORE} || [];
+                window.{self._NOTIF_STORE} = [];
+                return JSON.stringify(arr);
+            }})()
+            """,
+            timeout=3.0,
+        )
+        if not raw:
+            return []
+        try:
+            return json.loads(raw) if isinstance(raw, str) else (raw or [])
+        except json.JSONDecodeError:
+            return []
 
 
 class NewEventExtractor:
@@ -73,13 +340,19 @@ class NewEventExtractor:
         if not str(result).startswith("clicked"):
             raise PrepareRetryError(f"new event tab not found: route={route_result} click={result}")
 
-        # Poll for page render instead of blind sleep
-        for _ in range(10):
+        # Poll for page render — check full text because the event feed
+        # may appear far below the ranking table (offset 750+).
+        for _ in range(15):
             time.sleep(0.3)
             try:
-                txt = cdp.evaluate("document.body.innerText.substring(0,200)", timeout=2.0)
-                if isinstance(txt, str) and len(txt) > 20 and ('驱动事件' in txt or '新题材' in txt or '搜索' in txt):
-                    break
+                txt = cdp.evaluate(
+                    "document.body.innerText", timeout=2.0,
+                )
+                if isinstance(txt, str) and len(txt) > 50:
+                    # "今天" is the date header specific to the event feed.
+                    # Also accept "驱动事件" / "新题材" / "搜索" as fallback.
+                    if any(kw in txt for kw in ("今天", "驱动事件", "新题材")):
+                        break
             except Exception:
                 pass
 

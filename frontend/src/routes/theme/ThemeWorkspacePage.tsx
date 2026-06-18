@@ -9,6 +9,7 @@ import { LeaderTechCard } from '../../components/theme/LeaderTechCard';
 import { HistoryCard } from '../../components/theme/HistoryCard';
 import { ChildThemesCard } from '../../components/theme/ChildThemesCard';
 import { StockPoolCard } from '../../components/theme/StockPoolCard';
+import { SubjectGraphCard } from '../../components/theme/SubjectGraphCard';
 
 interface Props {
   subjectKey: string;
@@ -20,10 +21,11 @@ function q(name: string) {
 
 export function ThemeWorkspacePage({ subjectKey }: Props) {
   const tradeDate = q("date");
-  const [activeTab, setActiveTab] = useState<"dynamics" | "detail">("dynamics");
+  const [activeTab, setActiveTab] = useState<"dynamics" | "detail" | "graph">("dynamics");
   const {
     payload, loading, error,
     historyItems, childItems, stockItems,
+    graph,
     analytics, summaryRow, recentRankRows,
     leaderStocks, rankedLeaderStocks, diagnostics,
     themeName, summary, detailHtml, reasonShort,
@@ -55,6 +57,12 @@ export function ThemeWorkspacePage({ subjectKey }: Props) {
             >
               题材详情
             </button>
+            <button
+              className={`theme-tab ${activeTab === "graph" ? "active" : ""}`}
+              onClick={() => setActiveTab("graph")}
+            >
+              题材图谱
+            </button>
           </nav>
 
           {/* Tab: 题材动态 */}
@@ -84,6 +92,13 @@ export function ThemeWorkspacePage({ subjectKey }: Props) {
               childrenCount={childrenCount}
               stockCount={stockCount}
               bindingStatus={bindingStatus}
+            />
+          </section>
+
+          {/* Tab: 题材图谱 */}
+          <section className="workspace-column" style={{ display: activeTab === "graph" ? "block" : "none" }}>
+            <SubjectGraphCard
+              graph={graph as Record<string, unknown> | null}
             />
           </section>
         </main>

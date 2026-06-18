@@ -36,7 +36,7 @@ class JyhfEventNormalizer:
             trade_date=trade_date,
             event_time=str(event.get("event_time") or ""),
             subject_name=subject_name,
-            subject_key=None,
+            subject_key=str(event.get("subject_key") or "") or None,
             pct_chg=pct_chg,
             driver_title=driver_title,
             driver_desc=driver_desc,

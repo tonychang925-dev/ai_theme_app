@@ -347,3 +347,159 @@ P1 完成后再做：
 1. **尾盘异动信号**: 14:30后涨幅 + 成交额占比 + 均线承接 + 题材内排名
 2. **竞价强度信号**: 竞价涨幅 + 成交额 + 昨日成交额占比 + 题材热度
 3. **题材内前排确认**: 题材内涨幅排名 + 成交额排名 + 与题材指数同步性
+
+---
+
+## 十二、P1.5: 弹窗消息采集（2026-06-18 实施）
+
+### 12.1 背景与动机
+
+账户过期后，JYHF App 的 Feed（"新事件"/"新题材"标签页）数据被客户端遮盖：
+
+| 字段 | Feed（过期账户） | 弹窗（推送通知） |
+|------|-----------------|-----------------|
+| 题材名称 | `********` | ✅ 明文 |
+| subject_id | 无 | ✅ `extraId` URL参数 |
+| 驱动事件标题 | 截断（`...`） | ✅ 完整 |
+| 驱动事件描述 | 隐藏 | ✅ 完整 |
+| 新闻来源 | 隐藏 | ✅ 完整 |
+| 事件时间 | ✅ 明文 | ❌ |
+| 涨跌幅 | ✅ 明文 | ❌ |
+
+Feed API 响应体为加密 hex blob，解密后数据已在服务端遮盖。弹框通过 WebSocket 推送到达，路由到 `#/notification?...` 携带 URL 参数，数据**完全不遮盖**，是过期账户下获取完整事件数据的唯一渠道。
+
+### 12.2 弹框数据结构
+
+```
+#/notification?
+  route=TopicView
+  &extraId=9055879          ← subject_id（完整）
+  &extraName=国产AI芯片大全   ← 题材名称（明文，不遮盖）
+  &title=您关注的（国产AI芯片大全）有更新
+  &content=【驱动事件：...】（新闻来源：财联社）
+```
+
+弹框**不会自动消失**，用户点击"查看详情"或导航离开后消失。
+
+### 12.3 架构：三层采集防御
+
+```
+Layer 1: Vue Router beforeEach hook  ← 推送到达时即捕获，存 window.__cdp_notifications__
+Layer 2: Popup polling (URL解析)     ← 弹框仍在显示时通过 URL 参数解析
+Layer 3: Feed polling (innerText)    ← 全量事件（但被遮盖，已过滤）
+```
+
+**Layer 1 实现** — `PersistentHookInjector`（`extractors.py`）：
+
+```python
+class PersistentHookInjector:
+    _INJECTED_FLAG = "__cdp_persistent_hooks_injected__"
+    _NOTIF_STORE = "__cdp_notifications__"
+
+    def ensure_injected(self, cdp: CDPClient) -> bool:
+        """注入 Vue Router beforeEach + hashchange listener。
+        只执行一次（idempotent），后续 CDP 连接只读取。"""
+        # router.beforeEach 拦截 #/notification?...
+        # window.addEventListener('hashchange') 兜底
+```
+
+**Layer 2 实现** — `NotificationPopupExtractor`（`extractors.py`）：
+
+```python
+class NotificationPopupExtractor:
+    def detect(self, cdp) -> bool:
+        """检查 window.location.hash 是否包含 /notification?"""
+    
+    def read(self, cdp) -> list[dict]:
+        """解析 URL query string → event dict（兼容 Feed 格式）"""
+```
+
+### 12.4 采集流程集成
+
+弹框采集已集成到 `JyhfCdpCollectorService._capture_once_locked`：
+
+```
+CDP connect
+  ├─ Phase 0: ensure_injected() — 注入 Router hook（首次）
+  ├─ Phase 1: inject token hooks
+  ├─ Phase 2a: drain_notifications() — 排空 hook 累积的弹框
+  ├─ Phase 2b: detect + read popup — 当前显示的弹框
+  ├─ Phase 3: Feed extraction（best-effort，失败不阻塞弹框）
+  │            └─ 过滤: subject_name='********' 的事件丢弃
+  └─ Merge: hook_events + popup_events + feed_events
+       └─ 弹框事件直接写入 subject_history_staging
+```
+
+**关键修改** — `service.py`：
+
+```python
+# 弹框和 Feed 解耦：Feed prepare/read 失败不阻塞弹框处理
+try:
+    self._extractor.prepare(cdp)
+    feed_events, feed_date, body_text = self._extractor.read(cdp)
+    feed_events = [e for e in feed_events if e.get("subject_name") != "********"]
+    raw_events.extend(feed_events)
+except PrepareRetryError as e:
+    self._logger.warning("feed extraction skipped: %s", e)
+```
+
+弹框事件通过 `_write_popup_rows_to_staging()` 直接写入 `subject_history_staging` 表（`source_type='jyhf_cdp'`），SPS 的 `load_subject_history_items` 读取后推送到前端 Intel Feed。
+
+### 12.5 数据流
+
+```
+弹框到达 → Router beforeEach 拦截
+  → window.__cdp_notifications__ 暂存
+  → 20s轮询排空 → _raw_notification_to_event()
+  → _write_popup_rows_to_staging() → subject_history_staging
+  → SPS load_subject_history_items → /api/v1/intel_feed
+  → web_app HTTP轮询(5s) → /api/v2/intel/stream (SSE)
+  → 前端 IntelListItem（标签: "JYHF实时"）
+```
+
+### 12.6 新题材处理
+
+弹框 `extraId` 用于存在性判断：
+
+```sql
+SELECT 1 FROM subject_detail WHERE subject_key = '{extraId}'
+```
+
+**已有题材** → 事件写入 `subject_history_staging`。
+
+**新题材** → 完整入库流程：
+1. `subject_detail` INSERT — 题材详情
+2. `theme_gate_profile` INSERT — 题材注册
+3. `subject_history_staging` INSERT — 事件数据
+4. API `stock/realtime-by-subject/v2` → `subject_stock_staging` — 成分股
+5. CDP DOM `/subject/detail/{id}` → `subject_children_staging` — 子题材
+
+### 12.7 题材图谱
+
+基于 `jyhf_subject_taxonomy_relation`（题材继承关系表，7173行）构建完整层级：
+
+```
+API: /api/v1/theme_workspace/{subject_key} → graph 字段
+  ├─ jyhf_subject_taxonomy_relation → 继承树（父→子→孙）
+  ├─ subject_child_stock_reason → 股票→子题材映射
+  └─ subject_stock_map → 主股票表（补充 pct_chg）
+
+SPS → Web App proxy → Frontend ThemeWorkspacePage
+  └─ SubjectGraphCard 组件（左→右横向图谱布局）
+```
+
+图谱数据修复：全库 `child_name='cdp_extracted'` 的股票通过继承关系关键词匹配重新分配（2026-06-18 处理 13641 条）。
+
+### 12.8 改动文件清单
+
+| 文件 | 改动 |
+|------|------|
+| `services/jyhf_cdp_service/extractors.py` | 新增 `NotificationPopupExtractor` + `PersistentHookInjector` |
+| `services/jyhf_cdp_service/service.py` | 弹框/Feed解耦 + 遮挡过滤 + 弹框DB直写 |
+| `services/jyhf_cdp_service/normalizer.py` | `subject_key` 穿透保留 |
+| `stock_processing_service/api_app.py` | graph 字段（三级继承+股票） |
+| `frontend/src/components/theme/SubjectGraphCard.tsx` | 新增题材图谱组件 |
+| `frontend/src/routes/theme/ThemeWorkspacePage.tsx` | 新增"题材图谱"标签页 |
+| `frontend/src/hooks/useThemeWorkspace.ts` | graph 数据提取 |
+| `frontend/src/lib/api.ts` | ThemeWorkspaceView.graph 字段 |
+| `scripts/run_jyhf_popup_collector.py` | 独立弹框采集器（备用） |
