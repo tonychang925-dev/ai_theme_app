@@ -344,11 +344,13 @@ class CollectionJobManager:
         if not isinstance(stock_ids, list):
             stock_ids = []
         normalized = [str(item).strip() for item in stock_ids if str(item).strip()]
-        if not normalized:
-            normalized = await self._resolve_f10_capital_stock_ids(trade_date)
         prepared = copy.deepcopy(payload)
-        prepared["stock_ids"] = normalized
-        prepared.setdefault("options", {})["stock_ids"] = normalized
+        # 不在启动前强行解析 subject pool:
+        # f10_capital 作为编排中的一个后置 step，应该在运行时读取前置步骤写入的池子。
+        # 若前置步骤没有提供 stock_ids，则保留为空，交给 runner 在执行阶段兜底。
+        if normalized:
+            prepared["stock_ids"] = normalized
+            prepared.setdefault("options", {})["stock_ids"] = normalized
         return prepared
 
     def _latest_jyhf_subject_keys(self) -> list[str]:

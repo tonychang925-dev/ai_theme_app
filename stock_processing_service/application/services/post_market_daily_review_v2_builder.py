@@ -12,6 +12,7 @@ from stock_processing_service.contracts.dto import PostMarketDailyReviewV2
 MODULE_SECTION_HEADINGS: dict[str, str] = {
     "theme_reviews": "主线与支线",
     "theme_capital_reviews": "主线资金流入前10",
+    "theme_driver_events": "题材驱动事件溯源",
     "strong_stock_reviews": "强势股分层",
     "watchlist_reviews": "次日观察清单",
     "stock_capital_reviews": "主线股票资金流入前20",
@@ -42,6 +43,7 @@ class PostMarketDailyReviewV2Builder:
         snapshot_id: str | None = None,
         generated_at: datetime | None = None,
         snapshot_version: str | None = None,
+        theme_driver_events: list[dict[str, Any]] | None = None,
     ) -> PostMarketDailyReviewV2:
         doc = deepcopy(recap_doc) if isinstance(recap_doc, dict) else {}
         generated = generated_at or datetime.now(timezone.utc)
@@ -53,6 +55,10 @@ class PostMarketDailyReviewV2Builder:
         abnormal_reviews, abnormal_missing_fields = self._build_abnormal_reviews(doc)
         money_flow_reviews, money_flow_missing_fields = self._build_money_flow_reviews(doc)
         dragon_tiger_reviews, dragon_tiger_missing_fields, dragon_tiger_errors = self._build_dragon_tiger_reviews(doc)
+        limit_up_ladder = self._build_limit_up_ladder(doc)
+        limit_up_theme_events = self._build_limit_up_theme_events(doc, theme_driver_events)
+        new_high_summary = self._build_new_high_summary(doc)
+        seat_money_summary = self._build_seat_money_summary(doc)
         legacy_section_counts = self._legacy_section_counts(doc)
         diagnostics = self._build_diagnostics(
             doc,
@@ -102,6 +108,9 @@ class PostMarketDailyReviewV2Builder:
             "theme_decision_reviews": self._pass_through_list(doc, "theme_decision_reviews"),
             "theme_reviews": theme_reviews,
             "theme_capital_reviews": theme_capital_reviews,
+            "theme_driver_events": self._enrich_with_driver_events(
+                theme_capital_reviews, theme_driver_events,
+            ),
             "strong_stock_decision_reviews": self._pass_through_list(doc, "strong_stock_decision_reviews"),
             "strong_stock_reviews": strong_stock_reviews,
             "watchlist_reviews": watchlist_reviews,
@@ -111,6 +120,10 @@ class PostMarketDailyReviewV2Builder:
             "abnormal_reviews": abnormal_reviews,
             "money_flow_reviews": money_flow_reviews,
             "dragon_tiger_reviews": dragon_tiger_reviews,
+            "limit_up_ladder": limit_up_ladder,
+            "limit_up_theme_events": limit_up_theme_events,
+            "new_high_summary": new_high_summary,
+            "seat_money_summary": seat_money_summary,
             "trading_principle": self._trading_principle(doc),
             "decision_diagnostics": self._pass_through_dict(doc, "decision_diagnostics"),
             "mainline_reviews": self._pass_through_list(doc, "mainline_discovery_reviews"),
@@ -125,6 +138,49 @@ class PostMarketDailyReviewV2Builder:
             "post_market_decision_v2": self._pass_through_dict(doc, "post_market_decision_v2"),
             "diagnostics": diagnostics,
         }
+
+    @staticmethod
+    def _enrich_with_driver_events(
+        theme_capital_reviews: list[dict[str, Any]],
+        driver_events: list[dict[str, Any]] | None,
+    ) -> list[dict[str, Any]]:
+        """将 EventDriverTracer 输出合并到主题资金流数据中。
+
+        生成每个领涨题材的：题材名称、资金数据、驱动事件摘要、龙头代表。
+        """
+        if not driver_events:
+            return []
+
+        enriched: list[dict[str, Any]] = []
+        events_by_key: dict[str, list[dict[str, Any]]] = {}
+        for item in driver_events:
+            sk = str(item.get("subject_key") or "")
+            if sk:
+                events_by_key[sk] = item.get("driver_events") or []
+
+        for row in theme_capital_reviews[:10]:
+            sk = str(row.get("subject_key") or "")
+            events = events_by_key.get(sk, [])
+            enriched.append({
+                "subject_key": sk,
+                "theme_name": row.get("theme_name", sk),
+                "total_inflow": row.get("total_inflow"),
+                "leader_inflow": row.get("leader_inflow"),
+                "limit_up_count": row.get("limit_up_count"),
+                "cycle_stage": row.get("cycle_stage"),
+                "driver_events": [
+                    {
+                        "event_id": e.get("event_id"),
+                        "summary": e.get("summary"),
+                        "event_time": e.get("event_time"),
+                        "confidence": e.get("confidence"),
+                        "match_reason": e.get("match_reason"),
+                    }
+                    for e in events
+                ],
+            })
+
+        return enriched
 
     @staticmethod
     def _pass_through_list(recap_doc: dict[str, Any], key: str) -> list[Any]:
@@ -1092,6 +1148,344 @@ class PostMarketDailyReviewV2Builder:
 
         return rows, sorted(missing_fields), sorted(set(errors))
 
+    def _build_limit_up_ladder(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
+        market_overview = self._pass_through_dict(recap_doc, "market_overview_review")
+        matrix = market_overview.get("theme_limitup_matrix") if isinstance(market_overview.get("theme_limitup_matrix"), dict) else {}
+        columns = self._list(matrix.get("columns")) if isinstance(matrix.get("columns"), list) else []
+        ladder_buckets: dict[int, list[dict[str, Any]]] = {4: [], 3: [], 2: [], 1: []}
+        theme_rows: list[dict[str, Any]] = []
+
+        for row in columns:
+            if not isinstance(row, dict):
+                continue
+            focus_stocks = self._list(row.get("focus_stocks"))
+            board_rows: list[dict[str, Any]] = []
+            for stock in focus_stocks:
+                if not isinstance(stock, dict):
+                    continue
+                board_count = self._int_or_none(
+                    self._first_present(stock, "board_count", "limit_up_days", "max_consecutive_limit_up_days")
+                )
+                if board_count is None or board_count <= 0:
+                    continue
+                board_count = 4 if board_count >= 4 else board_count
+                board_rows.append({
+                    "stock_id": self._text(stock.get("stock_id")),
+                    "stock_name": self._text(stock.get("stock_name")),
+                    "subject_key": self._text(row.get("subject_key")),
+                    "theme_name": self._text(row.get("theme_name")),
+                    "board_count": board_count,
+                    "role_label": self._text(stock.get("role_label") or stock.get("role"), ""),
+                    "trade_action": self._text(stock.get("trade_action"), ""),
+                    "reason": self._text(stock.get("reason"), ""),
+                })
+                ladder_buckets.setdefault(board_count, []).append(board_rows[-1])
+
+            if row.get("limit_up_count") not in (None, "") or board_rows:
+                theme_rows.append({
+                    "subject_key": self._text(row.get("subject_key")),
+                    "theme_name": self._text(row.get("theme_name") or row.get("subject_key")),
+                    "limit_up_count": self._int_or_none(row.get("limit_up_count")),
+                    "active_mainline": bool(row.get("active_mainline")),
+                    "lifecycle_state": self._text(row.get("lifecycle_state"), ""),
+                    "trade_action": self._text(row.get("trade_action"), ""),
+                    "representative_stocks": board_rows[:3],
+                })
+
+        for bucket in ladder_buckets.values():
+            bucket.sort(
+                key=lambda item: (
+                    -int(item.get("board_count") or 0),
+                    str(item.get("stock_name") or item.get("stock_id") or ""),
+                )
+            )
+
+        board_rows = []
+        for board_count in (4, 3, 2, 1):
+            items = ladder_buckets.get(board_count, [])
+            board_rows.append({
+                "board_count": board_count,
+                "board_label": "首板" if board_count == 1 else f"{board_count}板",
+                "stock_count": len(items),
+                "stocks": items[:8],
+            })
+
+        theme_rows.sort(
+            key=lambda item: (
+                -int(item.get("limit_up_count") or 0),
+                0 if bool(item.get("active_mainline")) else 1,
+                str(item.get("theme_name") or ""),
+            )
+        )
+        summary = self._limit_up_ladder_summary(board_rows, theme_rows)
+        source = "structured" if any(bucket["stock_count"] for bucket in board_rows) else "none"
+        return {
+            "summary": summary,
+            "board_rows": board_rows,
+            "theme_rows": theme_rows[:10],
+            "diagnostics": {
+                "source": source,
+                "theme_count": len(theme_rows),
+                "board_stock_count": sum(len(bucket["stocks"]) for bucket in board_rows),
+            },
+        }
+
+    def _build_limit_up_theme_events(
+        self,
+        recap_doc: dict[str, Any],
+        theme_driver_events: list[dict[str, Any]] | None,
+    ) -> dict[str, Any]:
+        market_overview = self._pass_through_dict(recap_doc, "market_overview_review")
+        matrix = market_overview.get("theme_limitup_matrix") if isinstance(market_overview.get("theme_limitup_matrix"), dict) else {}
+        columns = self._list(matrix.get("columns")) if isinstance(matrix.get("columns"), list) else []
+        driver_by_key: dict[str, list[dict[str, Any]]] = {}
+        for item in theme_driver_events or []:
+            if not isinstance(item, dict):
+                continue
+            sk = self._text(item.get("subject_key"))
+            tn = self._text(item.get("theme_name"))
+            events = self._list(item.get("driver_events"))
+            if sk:
+                driver_by_key[sk] = events
+            if tn and tn not in driver_by_key:
+                driver_by_key[tn] = events
+
+        rows: list[dict[str, Any]] = []
+        for row in columns:
+            if not isinstance(row, dict):
+                continue
+            subject_key = self._text(row.get("subject_key"))
+            theme_name = self._text(row.get("theme_name") or subject_key)
+            focus_stocks = self._list(row.get("focus_stocks"))
+            representative_stocks: list[dict[str, Any]] = []
+            for stock in focus_stocks[:3]:
+                if not isinstance(stock, dict):
+                    continue
+                representative_stocks.append({
+                    "stock_id": self._text(stock.get("stock_id")),
+                    "stock_name": self._text(stock.get("stock_name")),
+                    "board_count": self._int_or_none(
+                        self._first_present(stock, "board_count", "limit_up_days", "max_consecutive_limit_up_days")
+                    ),
+                    "role_label": self._text(stock.get("role_label") or stock.get("role"), ""),
+                    "trade_action": self._text(stock.get("trade_action"), ""),
+                })
+            catalyst_events = []
+            for event in driver_by_key.get(subject_key, [])[:3]:
+                if not isinstance(event, dict):
+                    continue
+                catalyst_events.append({
+                    "event_id": event.get("event_id"),
+                    "summary": self._text(event.get("summary"), ""),
+                    "event_time": self._text(event.get("event_time"), ""),
+                    "confidence": self._float_or_none(event.get("confidence")),
+                    "match_reason": self._text(event.get("match_reason"), ""),
+                })
+            rows.append({
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+                "limit_up_count": self._int_or_none(row.get("limit_up_count")),
+                "active_mainline": bool(row.get("active_mainline")),
+                "lifecycle_state": self._text(row.get("lifecycle_state"), ""),
+                "trade_action": self._text(row.get("trade_action"), ""),
+                "representative_stocks": representative_stocks,
+                "catalyst_events": catalyst_events,
+            })
+
+        rows.sort(
+            key=lambda item: (
+                -int(item.get("limit_up_count") or 0),
+                0 if bool(item.get("active_mainline")) else 1,
+                str(item.get("theme_name") or ""),
+            )
+        )
+        summary = self._limit_up_theme_events_summary(rows)
+        source = "structured" if rows else "none"
+        return {
+            "summary": summary,
+            "rows": rows[:10],
+            "diagnostics": {
+                "source": source,
+                "theme_count": len(rows),
+                "catalyst_count": sum(len(item.get("catalyst_events") or []) for item in rows),
+            },
+        }
+
+    def _build_new_high_summary(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
+        market_summary = self._pass_through_dict(recap_doc, "market_summary")
+        market_overview = self._pass_through_dict(recap_doc, "market_overview_review")
+        context = recap_doc.get("report_context") if isinstance(recap_doc.get("report_context"), dict) else {}
+        explicit = self._normalize_new_high_summary(
+            self._first_present(
+                market_summary,
+                "new_high_summary",
+                "new_high",
+                "high_new_summary",
+                "new_high_review",
+            )
+        )
+        if explicit:
+            return explicit
+        explicit = self._normalize_new_high_summary(
+            self._first_present(
+                market_overview,
+                "new_high_summary",
+                "new_high",
+                "high_new_summary",
+            )
+        )
+        if explicit:
+            return explicit
+
+        rows = self._list(context.get("new_high_reviews")) if isinstance(context.get("new_high_reviews"), list) else []
+        if not rows:
+            rows = self._list(context.get("new_high_stocks")) if isinstance(context.get("new_high_stocks"), list) else []
+        if not rows:
+            rows = self._list(context.get("stock_facts")) if isinstance(context.get("stock_facts"), list) else []
+
+        today_rows: list[dict[str, Any]] = []
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            if not self._is_new_high_row(row):
+                continue
+            today_rows.append({
+                "stock_id": self._text(row.get("stock_id") or row.get("stock_code")),
+                "stock_name": self._text(row.get("stock_name")),
+                "industry_name": self._text(
+                    self._first_present(row, "industry_name", "industry", "sector_name", "theme_name", "subject_name")
+                ),
+                "pct_chg": self._float_or_none(row.get("pct_chg")),
+                "high_price": self._float_or_none(row.get("high_price")),
+                "close_price": self._float_or_none(row.get("close_price")),
+                "trade_date": self._text(row.get("trade_date"), ""),
+            })
+
+        industry_rows: dict[str, list[dict[str, Any]]] = {}
+        for row in today_rows:
+            key = row["industry_name"] or "未分类"
+            industry_rows.setdefault(key, []).append(row)
+        industry_summary = [
+            {
+                "industry_name": name,
+                "count": len(items),
+                "representative_stocks": items[:3],
+            }
+            for name, items in sorted(industry_rows.items(), key=lambda item: (-len(item[1]), item[0]))[:5]
+        ]
+        today_count = len(today_rows)
+        yesterday_count = self._int_or_none(self._first_present(market_summary, "new_high_yesterday", "new_high_count_yesterday"))
+        day_before_count = self._int_or_none(self._first_present(market_summary, "new_high_prev", "new_high_count_prev"))
+        if today_count == 0:
+            summary = "暂无结构化创新高数据"
+            source = "none"
+        else:
+            industries = "、".join([item["industry_name"] for item in industry_summary[:3] if item.get("industry_name")]) or "暂无明确行业聚焦"
+            reps = "、".join([item["stock_name"] for item in today_rows[:4] if item.get("stock_name")]) or "暂无代表股"
+            summary = f"今日创新高 {today_count} 家，集中在 {industries}，代表股 {reps}。"
+            source = "structured"
+        return {
+            "summary": summary,
+            "today_count": today_count or self._int_or_none(self._first_present(market_summary, "new_high_count", "today_new_high_count")),
+            "yesterday_count": yesterday_count,
+            "day_before_count": day_before_count,
+            "industry_summary": industry_summary,
+            "representative_stocks": today_rows[:10],
+            "diagnostics": {
+                "source": source,
+                "row_count": today_count,
+            },
+        }
+
+    def _build_seat_money_summary(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
+        money_flow_rows = self._list(recap_doc.get("money_flow_reviews")) if isinstance(recap_doc.get("money_flow_reviews"), list) else []
+        dragon_rows = self._list(recap_doc.get("dragon_tiger_reviews")) if isinstance(recap_doc.get("dragon_tiger_reviews"), list) else []
+        if not dragon_rows:
+            context = recap_doc.get("report_context") if isinstance(recap_doc.get("report_context"), dict) else {}
+            dragon_rows = self._list(context.get("dragon_tiger")) if isinstance(context.get("dragon_tiger"), list) else []
+        institution_rows: list[dict[str, Any]] = []
+        hot_money_rows: list[dict[str, Any]] = []
+        for row in dragon_rows:
+            if not isinstance(row, dict):
+                continue
+            seat_type = self._seat_type(
+                row,
+                self._nullable_text(self._first_present(row, "hot_money_name", "famous_seat", "seat_name", "hot_money")),
+                self._int_or_none(self._first_present(row, "institution_seat_count", "org_seat_count", "institution_count")),
+            )
+            net_buy = self._float_or_none(self._first_present(row, "net_buy", "net_buy_amount", "lhb_net_buy", "net_amount"))
+            buy_amount = self._float_or_none(self._first_present(row, "buy_amount", "total_buy", "lhb_buy_amount", "buy", "billboard_buy_amount"))
+            sell_amount = self._float_or_none(self._first_present(row, "sell_amount", "total_sell", "lhb_sell_amount", "sell", "billboard_sell_amount"))
+            total_side = net_buy
+            if total_side is None and buy_amount is not None and sell_amount is not None:
+                total_side = buy_amount - sell_amount
+            seat_item = {
+                "stock_id": self._text(row.get("stock_id") or row.get("stock_code")),
+                "stock_name": self._text(row.get("stock_name")),
+                "theme_name": self._text(self._first_present(row, "theme_name", "subject_name", "resolved_theme_name"), ""),
+                "seat_type": seat_type,
+                "hot_money_name": self._nullable_text(self._first_present(row, "hot_money_name", "famous_seat", "seat_name", "hot_money")),
+                "institution_seat_count": self._int_or_none(self._first_present(row, "institution_seat_count", "org_seat_count", "institution_count")),
+                "net_buy": total_side,
+                "side_summary": self._text(self._first_present(row, "side_summary", "summary", "conclusion"), ""),
+                "reason": self._nullable_text(self._first_present(row, "reason", "lhb_reason", "list_reason")),
+                "seat_summary": self._list(row.get("seat_summary")) if isinstance(row.get("seat_summary"), list) else [],
+            }
+            if seat_type in {"INSTITUTION", "MIXED"} or seat_item["institution_seat_count"]:
+                institution_rows.append(seat_item)
+            if seat_type in {"HOT_MONEY", "MIXED"} or seat_item["hot_money_name"]:
+                hot_money_rows.append(seat_item)
+
+        institution_rows.sort(key=lambda item: (-float(item.get("net_buy") or 0), str(item.get("stock_name") or "")))
+        hot_money_rows.sort(key=lambda item: (-float(item.get("net_buy") or 0), str(item.get("stock_name") or "")))
+
+        institution_top_buys = [row for row in institution_rows if (row.get("net_buy") or 0) >= 0][:3]
+        institution_top_sells = [row for row in sorted(institution_rows, key=lambda item: (float(item.get("net_buy") or 0), str(item.get("stock_name") or ""))) if (row.get("net_buy") or 0) <= 0][:3]
+        hot_money_top_buys = [row for row in hot_money_rows if (row.get("net_buy") or 0) >= 0][:3]
+        hot_money_top_sells = [row for row in sorted(hot_money_rows, key=lambda item: (float(item.get("net_buy") or 0), str(item.get("stock_name") or ""))) if (row.get("net_buy") or 0) <= 0][:3]
+
+        theme_rows = [
+            {
+                "theme_name": self._text(row.get("theme_name") or row.get("subject_name") or row.get("resolved_theme_name")),
+                "stock_name": self._text(row.get("stock_name")),
+                "main_net_inflow": self._float_or_none(self._first_present(row, "main_net_inflow", "net_inflow", "net_inflow_amount")),
+                "money_flow_tier": self._nullable_text(row.get("money_flow_tier")),
+                "role_enhanced": self._nullable_text(row.get("role_enhanced")),
+            }
+            for row in money_flow_rows[:10]
+            if isinstance(row, dict)
+        ]
+        theme_rows.sort(key=lambda item: (-float(item.get("main_net_inflow") or 0), str(item.get("theme_name") or "")))
+
+        institution_sum = sum(float(row.get("net_buy") or 0) for row in institution_rows)
+        hot_money_sum = sum(float(row.get("net_buy") or 0) for row in hot_money_rows)
+        cohesion = "同向" if institution_rows and hot_money_rows and (institution_sum >= 0) == (hot_money_sum >= 0) else "分歧"
+        if not institution_rows and not hot_money_rows:
+            summary = "暂无结构化机构席位/游资数据"
+            source = "none"
+        else:
+            institution_text = "、".join([row["stock_name"] for row in institution_top_buys[:3] if row.get("stock_name")]) or "暂无机构重点"
+            hot_money_text = "、".join([row["stock_name"] for row in hot_money_top_buys[:3] if row.get("stock_name")]) or "暂无游资重点"
+            theme_text = "、".join([row["theme_name"] for row in theme_rows[:3] if row.get("theme_name")]) or "暂无主题聚焦"
+            summary = f"机构关注 {institution_text}，游资关注 {hot_money_text}，资金整体{cohesion}，主题聚焦 {theme_text}。"
+            source = "structured"
+        return {
+            "summary": summary,
+            "cohesion": cohesion,
+            "institution_net_buy": institution_sum,
+            "hot_money_net_buy": hot_money_sum,
+            "institution_top_buys": institution_top_buys,
+            "institution_top_sells": institution_top_sells,
+            "hot_money_top_buys": hot_money_top_buys,
+            "hot_money_top_sells": hot_money_top_sells,
+            "theme_rows": theme_rows[:10],
+            "diagnostics": {
+                "source": source,
+                "dragon_tiger_row_count": len(dragon_rows),
+                "money_flow_row_count": len(money_flow_rows),
+            },
+        }
+
     def _build_watchlist_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
         source_key, source_rows = self._first_non_empty_list_source(
             recap_doc,
@@ -1475,8 +1869,8 @@ class PostMarketDailyReviewV2Builder:
         return []
 
     @staticmethod
-    def _text(value: Any) -> str:
-        return str(value or "").strip()
+    def _text(value: Any, default: str = "") -> str:
+        return str(value).strip() if value not in (None, "") else default
 
     @classmethod
     def _nullable_text(cls, value: Any) -> str | None:
@@ -1930,6 +2324,79 @@ class PostMarketDailyReviewV2Builder:
             "unknown": "未知",
         }
         return labels.get(role, "未知")
+
+    @staticmethod
+    def _limit_up_ladder_summary(board_rows: list[dict[str, Any]], theme_rows: list[dict[str, Any]]) -> str:
+        ladder_parts = [
+            f"{row['board_label']} {row['stock_count']} 只"
+            for row in board_rows
+            if int(row.get("stock_count") or 0) > 0
+        ]
+        theme_parts = [
+            str(row.get("theme_name") or "").strip()
+            for row in theme_rows[:3]
+            if str(row.get("theme_name") or "").strip()
+        ]
+        if not ladder_parts and not theme_parts:
+            return "暂无结构化连板梯队数据"
+        ladder_text = "，".join(ladder_parts) if ladder_parts else "梯队暂无显著分布"
+        theme_text = "、".join(theme_parts) if theme_parts else "暂无明确热点题材"
+        return f"连板梯队分布：{ladder_text}；热点题材：{theme_text}。"
+
+    @staticmethod
+    def _limit_up_theme_events_summary(rows: list[dict[str, Any]]) -> str:
+        themes = [
+            str(row.get("theme_name") or "").strip()
+            for row in rows[:3]
+            if str(row.get("theme_name") or "").strip()
+        ]
+        if not themes:
+            return "暂无结构化涨停题材事件"
+        return f"涨停事件聚焦 { '、'.join(themes) }，优先观察板位股与催化事件是否继续扩散。"
+
+    @staticmethod
+    def _normalize_new_high_summary(value: Any) -> dict[str, Any]:
+        if not isinstance(value, dict) or not value:
+            return {}
+        summary = str(value.get("summary") or value.get("conclusion") or value.get("text") or "").strip()
+        today_count = value.get("today_count") or value.get("new_high_count") or value.get("count")
+        try:
+            today_count = int(today_count) if today_count not in (None, "") else None
+        except Exception:
+            today_count = None
+        return {
+            "summary": summary or "暂无结构化创新高摘要",
+            "today_count": today_count,
+            "yesterday_count": value.get("yesterday_count"),
+            "day_before_count": value.get("day_before_count"),
+            "industry_summary": value.get("industry_summary") if isinstance(value.get("industry_summary"), list) else [],
+            "representative_stocks": value.get("representative_stocks") if isinstance(value.get("representative_stocks"), list) else [],
+            "diagnostics": value.get("diagnostics") if isinstance(value.get("diagnostics"), dict) else {},
+        }
+
+    @staticmethod
+    def _is_new_high_row(row: dict[str, Any]) -> bool:
+        flags = (
+            row.get("is_new_high"),
+            row.get("new_high"),
+            row.get("hit_new_high"),
+            row.get("high_52w"),
+            row.get("new_high_52w"),
+            row.get("new_high_20d"),
+            row.get("new_high_60d"),
+            row.get("new_high_250d"),
+        )
+        if any(bool(flag) for flag in flags):
+            return True
+        high_price = row.get("high_price")
+        close_price = row.get("close_price")
+        pre_close = row.get("pre_close")
+        if high_price not in (None, "") and close_price not in (None, "") and pre_close not in (None, ""):
+            try:
+                return float(high_price) >= float(close_price) >= float(pre_close)
+            except Exception:
+                return False
+        return False
 
     @staticmethod
     def _candidate_level(source: dict[str, Any]) -> str:

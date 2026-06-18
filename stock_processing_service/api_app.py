@@ -2321,6 +2321,31 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
         recap_snapshot_version=str(row.get("snapshot_version") or ""),
     )
 
+    # ── P0: 事件→题材因果链 ──
+    theme_driver_events = None
+    try:
+        from stock_processing_service.application.services.event_driver_tracer import (
+            EventDriverTracer,
+        )
+        pool = getattr(app.state.gateway, "_client", None)
+        pool = getattr(pool, "pool", None) if pool else None
+        if pool is not None:
+            tracer = EventDriverTracer(pool)
+            capital_reviews = v2.get("theme_capital_reviews") or []
+            if capital_reviews:
+                theme_driver_events = await tracer.trace_top_themes(
+                    capital_reviews, d, top_n=8, per_theme_limit=2,
+                )
+            # 重新 build 并注入 driver_events
+            v2 = builder.build(
+                trade_date=d,
+                recap_doc=recap_doc,
+                recap_snapshot_version=str(row.get("snapshot_version") or ""),
+                theme_driver_events=theme_driver_events,
+            )
+    except Exception as exc:
+        logger.warning("EventDriverTracer enrichment skipped: %s", exc)
+
     # ── PR-14A: compose engine report into DailyReviewV2 ──
     try:
         from stock_processing_service.application.services.post_market_engine_report_composer import (
@@ -4169,22 +4194,31 @@ async def get_theme_workspace(
                 "SELECT child_subject_key, child_subject_name FROM jyhf_subject_taxonomy_relation "
                 "WHERE parent_subject_key=$1 ORDER BY child_subject_key", subject_key
             )
+            assigned_ids: set[str] = set()
             for rc in root_children:
                 child_key = rc["child_subject_key"]
                 child_name = rc["child_subject_name"] or child_key
-                child_node = {"name": child_name, "child_subject_key": child_key, "pct_chg": None, "children": []}
+                child_node = {
+                    "name": child_name,
+                    "child_subject_key": child_key,
+                    "pct_chg": None,
+                    "children": [],
+                    "stocks": await _fetch_stocks(child_key, child_name),
+                }
+                for s in child_node["stocks"]:
+                    # 记录一级子题材自身股票，避免后续被算作 root 兜底“成分股”
+                    assigned_ids.add(s["stock_id"])
                 # Level 2: grandchildren
                 grands = await gconn.fetch(
                     "SELECT child_subject_key, child_subject_name FROM jyhf_subject_taxonomy_relation "
                     "WHERE parent_subject_key=$1 ORDER BY child_subject_key", child_key
                 )
-                seen_ids = set()
                 for gr in grands:
                     gk = gr["child_subject_key"]
                     gn = gr["child_subject_name"] or gk
                     gc_node = {"name": gn, "child_subject_key": gk, "stocks": await _fetch_stocks(gk, gn)}
                     for s in gc_node["stocks"]:
-                        seen_ids.add(s["stock_id"])
+                        assigned_ids.add(s["stock_id"])
                     child_node["children"].append(gc_node)
                 graph["children"].append(child_node)
             # Leaf node with no children: still may have stocks via parent key
@@ -4197,8 +4231,10 @@ async def get_theme_workspace(
                     graph["children"].append({"name": leaf_name, "child_subject_key": subject_key, "children": [{"name": leaf_name, "stocks": leaf_stocks}]})
             # Remaining: stocks under root key not assigned to any child/grandchild
             # Show them as direct stocks of the root rather than "其他"
-            all_assigned_ids = set()
+            all_assigned_ids = set(assigned_ids)
             for c in graph["children"]:
+                for s in c.get("stocks", []):
+                    all_assigned_ids.add(s["stock_id"])
                 for gc in c.get("children", []):
                     for s in gc.get("stocks", []):
                         all_assigned_ids.add(s["stock_id"])

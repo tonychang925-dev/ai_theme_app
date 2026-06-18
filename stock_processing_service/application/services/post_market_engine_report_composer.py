@@ -72,6 +72,10 @@ class PostMarketEngineReportComposer:
         # ── 7. market overview ──
         market_summary = self._pass_through(source_doc, "market_summary")
         market_overview_review = self._pass_through(source_doc, "market_overview_review")
+        limit_up_ladder = self._pass_through(source_doc, "limit_up_ladder")
+        limit_up_theme_events = self._pass_through(source_doc, "limit_up_theme_events")
+        new_high_summary = self._pass_through(source_doc, "new_high_summary")
+        seat_money_summary = self._pass_through(source_doc, "seat_money_summary")
         narrative_composer = PostMarketNarrativeComposer()
         market_overview_narrative = narrative_composer.compose_market_overview(
             engine_summary=engine_summary,
@@ -89,6 +93,16 @@ class PostMarketEngineReportComposer:
             mainline_daily_states=mainline_daily_states,
             engine_summary=engine_summary,
             post_market_decision_v2=post_market_decision_v2,
+        )
+        daily_recap_essentials = narrative_composer.compose_daily_recap_essentials(
+            engine_summary=engine_summary,
+            market_summary=market_summary,
+            market_overview_narrative=market_overview_narrative,
+            market_hotspot_narrative=market_hotspot_narrative,
+            limit_up_ladder=limit_up_ladder,
+            limit_up_theme_events=limit_up_theme_events,
+            new_high_summary=new_high_summary,
+            seat_money_summary=seat_money_summary,
         )
         mainline_narrative = narrative_composer.compose_mainline_narrative(
             mainline_daily_states=mainline_daily_states,
@@ -109,6 +123,23 @@ class PostMarketEngineReportComposer:
             evidence_alignment_index=evidence_alignment_index,
         )
 
+        # ── P0: 事件→题材因果叙事 ──
+        theme_driver_events = source_doc.get("theme_driver_events")
+        driver_event_narrative = ""
+        driver_event_brief_points: list[str] = []
+        if theme_driver_events:
+            driver_event_narrative = narrative_composer.compose_driver_narrative(
+                theme_driver_events,
+            )
+            driver_event_brief_points = narrative_composer.compose_event_chain_brief(
+                theme_driver_events, limit=3,
+            )
+        # 注入到 market_overview_narrative 的 core_points
+        if driver_event_brief_points and isinstance(market_overview_narrative, dict):
+            existing_points = market_overview_narrative.get("core_points") or []
+            market_overview_narrative["core_points"] = list(existing_points) + driver_event_brief_points
+            market_overview_narrative["driver_event_narrative"] = driver_event_narrative
+
         return {
             "engine_summary": engine_summary,
             "market_regime_review": market_regime_review,
@@ -123,6 +154,13 @@ class PostMarketEngineReportComposer:
             "mainline_narrative": mainline_narrative,
             "d1_narrative": d1_narrative,
             "market_overview_review": market_overview_review,
+            "theme_driver_events": theme_driver_events,
+            "driver_event_narrative": driver_event_narrative,
+            "limit_up_ladder": limit_up_ladder,
+            "limit_up_theme_events": limit_up_theme_events,
+            "new_high_summary": new_high_summary,
+            "seat_money_summary": seat_money_summary,
+            "daily_recap_essentials": daily_recap_essentials,
         }
 
     @staticmethod

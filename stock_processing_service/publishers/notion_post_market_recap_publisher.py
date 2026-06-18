@@ -217,6 +217,7 @@ class NotionPostMarketRecapPublisher:
 
         return blocks
 
+    @classmethod
     def _build_theme_name_map(cls, old_report: dict[str, Any] | None, recap_doc: dict[str, Any]) -> dict[str, str]:
         """构建 subject_key → theme_name 映射。
         来源1：旧链 report 文本（格式「题材名：subject_key 123；...」）
@@ -362,12 +363,24 @@ class NotionPostMarketRecapPublisher:
         # ── 标题 ──────────────────────────────────────────────
         blocks.append(B.heading_1(f"{trade_date} 盘后复盘"))
 
-        # ── PR-14D: Engine Report (preferred when available) ───
+        adapter = None
         try:
             from stock_processing_service.application.services.engine_report_adapter import (
                 EngineReportAdapter,
             )
             adapter = EngineReportAdapter(recap_doc if isinstance(recap_doc, dict) else {})
+        except Exception:
+            adapter = None
+
+        # ── 固定复盘模板首屏 ───────────────────────────────────
+        if adapter is not None:
+            try:
+                blocks.extend(cls._build_daily_recap_story_sections(adapter, B))
+            except Exception:
+                pass
+
+        # ── PR-14D: Engine Report (preferred when available) ───
+        try:
             if adapter.has_engine_data:
                 blocks.extend(cls._build_engine_sections(adapter, B))
         except Exception:
@@ -530,6 +543,172 @@ class NotionPostMarketRecapPublisher:
         else:
             blocks.append(B.heading_2("七、旧链文本报告（兼容）"))
             blocks.append(B.empty_paragraph("旧链报告未嵌入（后续解耦后此区域将移除）"))
+
+        return blocks
+
+    @classmethod
+    def _build_daily_recap_story_sections(cls, adapter, B) -> list[dict[str, Any]]:
+        blocks: list[dict[str, Any]] = []
+
+        essentials = adapter.notion_daily_recap_essentials()
+        ladder = adapter.notion_limit_up_ladder()
+        theme_events = adapter.notion_limit_up_theme_events()
+        new_high = adapter.notion_new_high_summary()
+        seat_money = adapter.notion_seat_money_summary()
+        trade_conclusion = adapter.notion_trade_conclusion()
+
+        # 1. 今日复盘要点
+        blocks.append(B.heading_2("今日复盘要点"))
+        headline = cls._safe_str(essentials.get("headline"), "今日复盘要点")
+        blocks.append(B.callout(headline, icon="🧭"))
+        for point in (essentials.get("summary_points") or [])[:5]:
+            blocks.append(B.bullet(str(point)))
+        next_day_strategy = cls._safe_str(essentials.get("next_day_strategy"), "")
+        if next_day_strategy and next_day_strategy != "--":
+            blocks.append(B.paragraph(f"次日观察：{next_day_strategy}"))
+        blocks.append(B.divider())
+
+        # 2. 连板梯队和涨停分布
+        blocks.append(B.heading_2("连板梯队和涨停分布"))
+        ladder_summary = cls._safe_str(ladder.get("summary"), "暂无结构化连板梯队数据")
+        blocks.append(B.callout(ladder_summary, icon="📈"))
+        board_rows = ladder.get("board_rows") if isinstance(ladder.get("board_rows"), list) else []
+        if board_rows:
+            headers = ["梯队", "数量", "代表股", "题材"]
+            rows: list[list[str]] = []
+            for row in board_rows:
+                stocks = row.get("stocks") if isinstance(row.get("stocks"), list) else []
+                stock_text = " / ".join(
+                    [
+                        f"{cls._safe_str(stock.get('stock_name') or stock.get('stock_id'), '--')}({cls._safe_str(stock.get('board_count'), '--')})"
+                        for stock in stocks[:4]
+                        if isinstance(stock, dict)
+                    ]
+                ) or "--"
+                theme_text = " / ".join(
+                    [
+                        cls._safe_str(stock.get("theme_name"), "")
+                        for stock in stocks[:2]
+                        if isinstance(stock, dict) and cls._safe_str(stock.get("theme_name"), "")
+                    ]
+                ) or "--"
+                rows.append([
+                    cls._safe_str(row.get("board_label"), "--"),
+                    cls._safe_str(row.get("stock_count"), "--"),
+                    stock_text,
+                    theme_text,
+                ])
+            blocks.extend(B.table(headers, rows))
+        blocks.append(B.divider())
+
+        # 3. 涨停事件与题材催化
+        blocks.append(B.heading_2("涨停事件与题材催化"))
+        event_summary = cls._safe_str(theme_events.get("summary"), "暂无结构化涨停题材事件")
+        blocks.append(B.callout(event_summary, icon="🔥"))
+        event_rows = theme_events.get("rows") if isinstance(theme_events.get("rows"), list) else []
+        if event_rows:
+            headers = ["题材", "涨停数", "代表板位股", "催化事件"]
+            rows: list[list[str]] = []
+            for row in event_rows[:8]:
+                rep_stocks = row.get("representative_stocks") if isinstance(row.get("representative_stocks"), list) else []
+                rep_text = " / ".join(
+                    [
+                        f"{cls._safe_str(stock.get('stock_name') or stock.get('stock_id'), '--')}({cls._safe_str(stock.get('board_count'), '--')})"
+                        for stock in rep_stocks[:3]
+                        if isinstance(stock, dict)
+                    ]
+                ) or "--"
+                catalysts = row.get("catalyst_events") if isinstance(row.get("catalyst_events"), list) else []
+                catalyst_text = "；".join(
+                    [
+                        cls._safe_str(event.get("summary"), "")
+                        for event in catalysts[:2]
+                        if isinstance(event, dict) and cls._safe_str(event.get("summary"), "")
+                    ]
+                ) or "--"
+                rows.append([
+                    cls._safe_str(row.get("theme_name"), "--"),
+                    cls._safe_str(row.get("limit_up_count"), "--"),
+                    rep_text,
+                    catalyst_text,
+                ])
+            blocks.extend(B.table(headers, rows))
+        blocks.append(B.divider())
+
+        # 4. 股价新高与行业趋势
+        blocks.append(B.heading_2("股价新高与行业趋势"))
+        new_high_summary_text = cls._safe_str(new_high.get("summary"), "暂无结构化创新高数据")
+        blocks.append(B.callout(new_high_summary_text, icon="📊"))
+        industry_rows = new_high.get("industry_summary") if isinstance(new_high.get("industry_summary"), list) else []
+        if industry_rows:
+            headers = ["行业", "数量", "代表股"]
+            rows = []
+            for row in industry_rows[:6]:
+                rep_stocks = row.get("representative_stocks") if isinstance(row.get("representative_stocks"), list) else []
+                rep_text = " / ".join(
+                    [
+                        cls._safe_str(stock.get("stock_name") or stock.get("stock_id"), "--")
+                        for stock in rep_stocks[:3]
+                        if isinstance(stock, dict)
+                    ]
+                ) or "--"
+                rows.append([
+                    cls._safe_str(row.get("industry_name"), "--"),
+                    cls._safe_str(row.get("count"), "--"),
+                    rep_text,
+                ])
+            blocks.extend(B.table(headers, rows))
+        blocks.append(B.divider())
+
+        # 5. 机构席位和游资动向
+        blocks.append(B.heading_2("机构席位和游资动向"))
+        seat_summary_text = cls._safe_str(seat_money.get("summary"), "暂无结构化机构席位/游资数据")
+        blocks.append(B.callout(seat_summary_text, icon="💰"))
+        institution_buys = seat_money.get("institution_top_buys") if isinstance(seat_money.get("institution_top_buys"), list) else []
+        hot_money_buys = seat_money.get("hot_money_top_buys") if isinstance(seat_money.get("hot_money_top_buys"), list) else []
+        if institution_buys or hot_money_buys:
+            headers = ["席位", "买入/卖出", "代表股", "题材"]
+            rows = []
+            for row in institution_buys[:3]:
+                rows.append([
+                    "机构净买入",
+                    cls._safe_str(row.get("net_buy"), "--"),
+                    cls._safe_str(row.get("stock_name"), "--"),
+                    cls._safe_str(row.get("theme_name"), "--"),
+                ])
+            for row in seat_money.get("institution_top_sells", [])[:3] if isinstance(seat_money.get("institution_top_sells"), list) else []:
+                rows.append([
+                    "机构净卖出",
+                    cls._safe_str(row.get("net_buy"), "--"),
+                    cls._safe_str(row.get("stock_name"), "--"),
+                    cls._safe_str(row.get("theme_name"), "--"),
+                ])
+            for row in hot_money_buys[:3]:
+                rows.append([
+                    "游资净买入",
+                    cls._safe_str(row.get("net_buy"), "--"),
+                    cls._safe_str(row.get("stock_name"), "--"),
+                    cls._safe_str(row.get("theme_name"), "--"),
+                ])
+            for row in seat_money.get("hot_money_top_sells", [])[:3] if isinstance(seat_money.get("hot_money_top_sells"), list) else []:
+                rows.append([
+                    "游资净卖出",
+                    cls._safe_str(row.get("net_buy"), "--"),
+                    cls._safe_str(row.get("stock_name"), "--"),
+                    cls._safe_str(row.get("theme_name"), "--"),
+                ])
+            blocks.extend(B.table(headers, rows[:12]))
+        blocks.append(B.divider())
+
+        # 6. 次日观察与交易建议
+        blocks.append(B.heading_2("次日观察与交易建议"))
+        next_day = cls._safe_str(essentials.get("next_day_strategy") or trade_conclusion.get("next_day_strategy"), "--")
+        blocks.append(B.callout(next_day, icon="🧭"))
+        if trade_conclusion.get("reasons"):
+            blocks.append(B.paragraph("交易结论：" + "；".join(str(item) for item in trade_conclusion["reasons"][:3])))
+        if trade_conclusion.get("conclusion"):
+            blocks.append(B.paragraph(f"结论：{trade_conclusion['conclusion']}"))
+        blocks.append(B.divider())
 
         return blocks
 

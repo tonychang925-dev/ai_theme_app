@@ -1,17 +1,17 @@
-interface GraphStock {
+export interface GraphStock {
   stock_id: string;
   stock_name: string;
   child_name?: string;
   reason?: string;
 }
 
-interface GraphGrandChild {
+export interface GraphGrandChild {
   name: string;
   child_subject_key?: string;
   stocks: GraphStock[];
 }
 
-interface GraphChild {
+export interface GraphChild {
   name: string;
   child_subject_key?: string;
   pct_chg?: number;
@@ -19,7 +19,7 @@ interface GraphChild {
   stocks?: GraphStock[];
 }
 
-interface SubjectGraph {
+export interface SubjectGraph {
   root: {
     name: string;
     subject_key: string;
@@ -97,10 +97,7 @@ export function SubjectGraphCard({ graph }: Props) {
         {(children || []).map((child, ci) => {
           const colors = CHILD_COLORS[ci % CHILD_COLORS.length];
           const grands = child.children || [];
-          // backward compat: if child has direct stocks array
-          if (!grands.length && child.stocks?.length) {
-            grands.push({ name: child.name, stocks: child.stocks });
-          }
+          const directStocks = child.stocks || [];
           return (
             <div key={ci} className="sg-child-block">
               {/* Child header */}
@@ -112,6 +109,25 @@ export function SubjectGraphCard({ graph }: Props) {
               </div>
               {/* Grandchildren rows */}
               <div className="sg-grands-area">
+                {directStocks.length > 0 && (
+                  <div className="sg-grand-row">
+                    <div className="sg-grand-label">成分股</div>
+                    <div className="sg-stocks-col">
+                      <div className="sg-stocks-grid">
+                        {directStocks.map((stock, si) => (
+                          <div key={si} className="sg-stock" style={{ borderLeftColor: colors.accent }}
+                            title={stock.reason || ''}>
+                            <div className="sg-stock-top">
+                              <span className="sg-stock-name">{stock.stock_name}</span>
+                              <span className="sg-stock-code">{stock.stock_id}</span>
+                            </div>
+                            {stock.reason && <span className="sg-stock-reason">{stock.reason}</span>}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
                 {grands.map((gc, gi) => (
                   <div key={gi} className="sg-grand-row">
                     <div className="sg-grand-label">{gc.name}</div>

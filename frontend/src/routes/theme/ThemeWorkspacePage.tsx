@@ -97,9 +97,7 @@ export function ThemeWorkspacePage({ subjectKey }: Props) {
 
           {/* Tab: 题材图谱 */}
           <section className="workspace-column" style={{ display: activeTab === "graph" ? "block" : "none" }}>
-            <SubjectGraphCard
-              graph={graph as Record<string, unknown> | null}
-            />
+            <SubjectGraphCard graph={graph} />
           </section>
         </main>
       )}

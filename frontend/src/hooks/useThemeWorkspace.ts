@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { fetchThemeWorkspace } from '../lib/api';
 import { useApi } from '../lib/hooks/useApi';
+import type { SubjectGraph } from '../components/theme/SubjectGraphCard';
 
 interface UseThemeWorkspaceOptions {
   tradeDate?: string;
@@ -28,7 +29,7 @@ export function useThemeWorkspace(subjectKey: string, options: UseThemeWorkspace
   const historyItems = useMemo(() => Array.isArray(payload?.history) ? payload.history : [], [payload]);
   const childItems = useMemo(() => Array.isArray(payload?.children) ? payload.children : [], [payload]);
   const stockItems = useMemo(() => Array.isArray(payload?.stocks) ? payload.stocks : [], [payload]);
-  const graph = (payload?.graph ?? null) as Record<string, unknown> | null;
+  const graph = (payload?.graph ?? null) as SubjectGraph | null;
   const analytics = payload?.analytics ?? null;
   const summaryRow = analytics?.summary ?? null;
   const recentRankRows = useMemo(() => Array.isArray(analytics?.recent_rank) ? analytics.recent_rank : [], [analytics]);

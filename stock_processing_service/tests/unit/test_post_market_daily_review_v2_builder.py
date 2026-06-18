@@ -1401,3 +1401,111 @@ def test_daily_review_v2_builder_passes_through_watchlists() -> None:
     )
 
     assert payload["watchlists"]["one_to_two"]["summary"]["observe_only_count"] == 1
+
+
+def test_daily_review_v2_builder_emits_fixed_recap_modules() -> None:
+    recap_doc = {
+        "market_overview_review": {
+            "theme_limitup_matrix": {
+                "columns": [
+                    {
+                        "subject_key": "pcb",
+                        "theme_name": "PCB",
+                        "limit_up_count": 8,
+                        "active_mainline": True,
+                        "lifecycle_state": "divergence",
+                        "trade_action": "主线分歧",
+                        "focus_stocks": [
+                            {
+                                "stock_id": "301366",
+                                "stock_name": "一博科技",
+                                "board_count": 3,
+                                "role_label": "leader",
+                                "trade_action": "主线参与",
+                                "reason": "PCB",
+                            },
+                            {
+                                "stock_id": "300903",
+                                "stock_name": "科翔股份",
+                                "board_count": 2,
+                                "role_label": "runner",
+                                "trade_action": "主线分歧",
+                                "reason": "PCB",
+                            },
+                        ],
+                    }
+                ]
+            }
+        },
+        "theme_driver_events": [
+            {
+                "subject_key": "pcb",
+                "theme_name": "PCB",
+                "driver_events": [
+                    {
+                        "event_id": "evt-1",
+                        "summary": "摩根士丹利拆解Rubin机架BOM，PCB价值增幅显著",
+                        "confidence": 0.92,
+                        "event_time": "2026-06-17",
+                        "match_reason": "PCB",
+                    }
+                ],
+            }
+        ],
+        "report_context": {
+            "new_high_reviews": [
+                {
+                    "stock_id": "301366",
+                    "stock_name": "一博科技",
+                    "industry_name": "电子元件",
+                    "is_new_high": True,
+                    "pct_chg": 20.0,
+                }
+            ],
+        },
+        "dragon_tiger_reviews": [
+            {
+                "stock_code": "301366",
+                "stock_name": "一博科技",
+                "theme_name": "PCB",
+                "seat_type": "INSTITUTION",
+                "institution_seat_count": 3,
+                "net_buy": 12000000,
+            },
+            {
+                "stock_code": "300903",
+                "stock_name": "科翔股份",
+                "theme_name": "PCB",
+                "seat_type": "HOT_MONEY",
+                "hot_money_name": "章盟主",
+                "net_buy": 18000000,
+            },
+        ],
+        "money_flow_reviews": [
+            {
+                "stock_id": "301366",
+                "stock_name": "一博科技",
+                "theme_name": "PCB",
+                "main_net_inflow": 12000000,
+                "money_flow_tier": "强",
+                "role_enhanced": "主线加速",
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 6, 17),
+        recap_doc=recap_doc,
+        theme_driver_events=recap_doc["theme_driver_events"],
+        snapshot_version="daily_review_v2.fixed.modules",
+    )
+
+    assert payload["limit_up_ladder"]["board_rows"][0]["board_label"] == "4板"
+    assert payload["limit_up_ladder"]["theme_rows"][0]["theme_name"] == "PCB"
+    assert payload["limit_up_theme_events"]["rows"][0]["theme_name"] == "PCB"
+    assert payload["limit_up_theme_events"]["rows"][0]["catalyst_events"][0]["summary"].startswith("摩根士丹利")
+    assert payload["new_high_summary"]["today_count"] == 1
+    assert payload["new_high_summary"]["industry_summary"][0]["industry_name"] == "电子元件"
+    assert payload["seat_money_summary"]["cohesion"] in {"同向", "分歧"}
+    assert payload["seat_money_summary"]["institution_top_buys"]

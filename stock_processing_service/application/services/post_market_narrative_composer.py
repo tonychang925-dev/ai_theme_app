@@ -423,6 +423,107 @@ class PostMarketNarrativeComposer:
             "diagnostics": diagnostics,
         }
 
+    def compose_daily_recap_essentials(
+        self,
+        *,
+        engine_summary: dict[str, Any] | None,
+        market_summary: dict[str, Any] | None,
+        market_overview_narrative: dict[str, Any] | None,
+        market_hotspot_narrative: dict[str, Any] | None,
+        limit_up_ladder: dict[str, Any] | None,
+        limit_up_theme_events: dict[str, Any] | None,
+        new_high_summary: dict[str, Any] | None,
+        seat_money_summary: dict[str, Any] | None,
+    ) -> dict[str, Any]:
+        engine_summary = engine_summary or {}
+        market_summary = market_summary or {}
+        market_overview_narrative = market_overview_narrative or {}
+        market_hotspot_narrative = market_hotspot_narrative or {}
+        limit_up_ladder = limit_up_ladder or {}
+        limit_up_theme_events = limit_up_theme_events or {}
+        new_high_summary = new_high_summary or {}
+        seat_money_summary = seat_money_summary or {}
+
+        headline = (
+            self._clean_text(market_overview_narrative.get("headline"), "")
+            or self._clean_text(market_hotspot_narrative.get("headline"), "")
+            or "今日复盘要点"
+        )
+        if headline == "--":
+            headline = "今日复盘要点"
+
+        summary_points: list[str] = []
+        market_hint = self._clean_text(market_summary.get("conclusion") or engine_summary.get("conclusion"), "")
+        if market_hint and market_hint != "--":
+            summary_points.append(market_hint)
+        market_state_summary = self._clean_text(market_overview_narrative.get("market_state_summary"), "")
+        if market_state_summary and market_state_summary != "--":
+            summary_points.append(market_state_summary)
+        hotspot_summary = self._clean_text(market_hotspot_narrative.get("market_heat_summary"), "")
+        if hotspot_summary and hotspot_summary != "--":
+            summary_points.append(hotspot_summary)
+
+        ladder_summary = self._clean_text(limit_up_ladder.get("summary"), "")
+        if ladder_summary and ladder_summary != "--":
+            summary_points.append(ladder_summary)
+        event_summary = self._clean_text(limit_up_theme_events.get("summary"), "")
+        if event_summary and event_summary != "--":
+            summary_points.append(event_summary)
+        new_high_text = self._clean_text(new_high_summary.get("summary"), "")
+        if new_high_text and new_high_text != "--":
+            summary_points.append(new_high_text)
+        seat_text = self._clean_text(seat_money_summary.get("summary"), "")
+        if seat_text and seat_text != "--":
+            summary_points.append(seat_text)
+
+        next_day_strategy = self._clean_text(
+            engine_summary.get("next_day_strategy") or market_overview_narrative.get("next_day_strategy") or "",
+            "",
+        )
+        if not next_day_strategy or next_day_strategy == "--":
+            observations: list[str] = []
+            if ladder_summary and ladder_summary != "--":
+                observations.append("连板梯队是否继续扩散")
+            if event_summary and event_summary != "--":
+                observations.append("题材催化是否延续")
+            if seat_text and seat_text != "--":
+                observations.append("资金席位是否同向")
+            if new_high_text and new_high_text != "--":
+                observations.append("新高强势是否保持")
+            next_day_strategy = "；".join(observations) or "关注主线分歧后的承接与轮动"
+        summary_points.append(f"次日观察：{next_day_strategy}")
+
+        summary_points = self._unique_text(summary_points)
+        if len(summary_points) > 6:
+            if summary_points[-1].startswith("次日观察："):
+                summary_points = summary_points[:5] + [summary_points[-1]]
+            else:
+                summary_points = summary_points[:6]
+        section_order = [
+            "今日复盘要点",
+            "连板梯队和涨停分布",
+            "涨停事件与题材催化",
+            "股价新高与行业趋势",
+            "机构席位和游资动向",
+            "次日观察与交易建议",
+        ]
+        diagnostics = {
+            "summary_point_count": len(summary_points),
+            "has_ladder": bool(limit_up_ladder.get("board_rows")),
+            "has_theme_events": bool(limit_up_theme_events.get("rows")),
+            "has_new_high": bool(new_high_summary.get("representative_stocks")),
+            "has_seat_money": bool(seat_money_summary.get("institution_top_buys") or seat_money_summary.get("hot_money_top_buys")),
+        }
+        source = "engine_template" if summary_points else "fallback"
+        return {
+            "headline": headline,
+            "summary_points": summary_points[:6],
+            "next_day_strategy": next_day_strategy,
+            "section_order": section_order,
+            "source": source,
+            "diagnostics": diagnostics,
+        }
+
     @staticmethod
     def _clean_text(value: Any, default: str = "--") -> str:
         text = str(value or "").strip()
@@ -609,6 +710,92 @@ class PostMarketNarrativeComposer:
 
         return "今日热点方向暂未形成清晰聚焦，仍以主线修复和资金确认作为观察重点。"
 
+    # ── Phase P0: 事件驱动叙事 ──────────────────────────────────────────
+
+    def compose_driver_narrative(
+        self,
+        theme_driver_events: list[dict[str, Any]] | None,
+    ) -> str:
+        """根据 EventDriverTracer 输出，生成事件→题材因果叙事。
+
+        格式：XX题材受XX事件驱动走强（龙头XX涨停），XX题材因XX事件异动...
+        """
+        if not theme_driver_events:
+            return ""
+
+        parts: list[str] = []
+        for item in theme_driver_events:
+            theme_name = self._clean_text(item.get("theme_name"), "题材")
+            events = item.get("driver_events") if isinstance(item.get("driver_events"), list) else []
+            if not events:
+                continue
+
+            # 取第一条（最高置信度）事件作为主驱动
+            primary = events[0]
+            summary = self._clean_text(primary.get("summary"), "")
+            if not summary:
+                continue
+
+            # 截取前 80 字
+            short_summary = summary[:80] + "…" if len(summary) > 80 else summary
+
+            # 构建单条因果叙事
+            total_inflow = item.get("total_inflow")
+            limit_up = item.get("limit_up_count")
+            extras: list[str] = []
+            if total_inflow is not None:
+                inflow_str = f"{total_inflow:.1f}亿" if abs(total_inflow) >= 1 else f"{total_inflow:.2f}亿"
+                extras.append(f"主力净流入{inflow_str}")
+            if limit_up:
+                extras.append(f"{limit_up}只涨停")
+
+            extra_text = f"（{', '.join(extras)}）" if extras else ""
+            parts.append(f"【{theme_name}】受「{short_summary}」驱动走强{extra_text}")
+
+        if not parts:
+            return ""
+
+        return "。\n".join(parts) + "。"
+
+    def compose_event_chain_brief(
+        self,
+        theme_driver_events: list[dict[str, Any]] | None,
+        limit: int = 3,
+    ) -> list[str]:
+        """生成简洁的事件驱动摘要，用于 market_overview_narrative 的 core_points。
+
+        每条格式：{theme_name}因{事件摘要}走强，{资金/涨停描述}
+        """
+        if not theme_driver_events:
+            return []
+
+        points: list[str] = []
+        for item in theme_driver_events[:limit]:
+            theme_name = self._clean_text(item.get("theme_name"), "题材")
+            events = item.get("driver_events") if isinstance(item.get("driver_events"), list) else []
+            if not events:
+                continue
+            primary = events[0]
+            summary = self._clean_text(primary.get("summary"), "")
+            if not summary:
+                continue
+            # 压缩事件描述到 50 字
+            short = summary[:50] + "…" if len(summary) > 50 else summary
+            # 方向词
+            total_inflow = item.get("total_inflow")
+            if total_inflow and total_inflow > 0:
+                direction = "获资金关注"
+            else:
+                direction = "异动"
+            limit_up = item.get("limit_up_count") or 0
+            stock_hint = f"{limit_up}只涨停" if limit_up else ""
+            point = f"{theme_name}因「{short}」{direction}"
+            if stock_hint:
+                point += f"，{stock_hint}"
+            points.append(point)
+
+        return points
+
     def _hotspot_headline(
         self,
         *,
@@ -714,6 +901,18 @@ class PostMarketNarrativeComposer:
 
     @staticmethod
     def _unique_names(values: list[str]) -> list[str]:
+        items: list[str] = []
+        seen: set[str] = set()
+        for value in values:
+            text = str(value or "").strip()
+            if not text or text in seen:
+                continue
+            seen.add(text)
+            items.append(text)
+        return items
+
+    @staticmethod
+    def _unique_text(values: list[str]) -> list[str]:
         items: list[str] = []
         seen: set[str] = set()
         for value in values:
