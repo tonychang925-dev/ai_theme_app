@@ -1275,6 +1275,7 @@ class PostMarketDailyReviewV2Builder:
         mainline_order = self._mainline_theme_order_map(recap_doc, theme_name_map)
         driver_index = self._limit_up_driver_event_index(theme_driver_events, theme_name_map)
         columns_map: dict[str, dict[str, Any]] = {}
+        assigned_stock_keys: set[str] = set()
         board_totals = {"4": 0, "3": 0, "2": 0, "1": 0}
         unclassified_board_rows: list[dict[str, Any]] = []
 
@@ -1284,6 +1285,9 @@ class PostMarketDailyReviewV2Builder:
                 continue
             board_count = 4 if board_count >= 4 else board_count
             board_totals[str(board_count)] = board_totals.get(str(board_count), 0) + 1
+            stock_identity = self._stock_identity_key(row)
+            if stock_identity and stock_identity in assigned_stock_keys:
+                continue
             resolved = self._resolve_limit_up_theme_for_stock(row, mainline_index, theme_name_map)
             if not resolved.get("is_classified"):
                 unclassified_board_rows.append({
@@ -1314,9 +1318,9 @@ class PostMarketDailyReviewV2Builder:
                     "focus_stocks": [],
                     "_board_groups_map": {1: [], 2: [], 3: [], 4: []},
                     "_board_stock_total": 0,
+                    "_stock_keys": set(),
                 },
             )
-            bucket["limit_up_count"] = max(int(bucket["limit_up_count"] or 0), int(row.get("limit_up_count") or 0))
             bucket["active_mainline"] = bool(bucket["active_mainline"] or resolved.get("active_mainline") or row.get("active_mainline"))
             bucket["lifecycle_state"] = bucket["lifecycle_state"] or self._text(resolved.get("lifecycle_state") or row.get("lifecycle_state"), "")
             bucket["trade_action"] = bucket["trade_action"] or self._text(resolved.get("trade_action") or row.get("trade_action"), "")
@@ -1332,6 +1336,12 @@ class PostMarketDailyReviewV2Builder:
                 "trade_action": self._text(row.get("trade_action"), ""),
                 "reason": self._text(row.get("reason"), ""),
             }
+            bucket_stock_keys = bucket["_stock_keys"]
+            if stock_identity and stock_identity in bucket_stock_keys:
+                continue
+            if stock_identity:
+                bucket_stock_keys.add(stock_identity)
+                assigned_stock_keys.add(stock_identity)
             bucket["_board_groups_map"][board_count].append(stock_row)
             bucket["_board_stock_total"] += 1
             if len(bucket["focus_stocks"]) < 20:
@@ -1355,6 +1365,7 @@ class PostMarketDailyReviewV2Builder:
                     "stocks": stocks,
                 })
             bucket["board_groups"] = board_groups
+            bucket["limit_up_count"] = sum(int(group.get("stock_count") or 0) for group in board_groups)
             bucket["catalyst_events"] = self._limit_up_theme_matrix_catalyst_events(
                 driver_index,
                 bucket["subject_key"],
@@ -1377,11 +1388,11 @@ class PostMarketDailyReviewV2Builder:
             "summary": summary,
             "columns": columns,
             "board_totals": board_totals,
-            "diagnostics": {
-                "source": "daily_review_v2.limit_up_theme_matrix",
-                "count_method": "single_contract",
-                "theme_count": len(columns),
-                "candidate_count": len(candidates),
+                    "diagnostics": {
+                        "source": "daily_review_v2.limit_up_theme_matrix",
+                        "count_method": "single_contract",
+                        "theme_count": len(columns),
+                        "candidate_count": len(candidates),
                 "board_totals": board_totals,
                 "unclassified_board_rows": unclassified_board_rows,
                 "unclassified_board_count": len(unclassified_board_rows),
@@ -1749,15 +1760,6 @@ class PostMarketDailyReviewV2Builder:
             theme_name_map=theme_name_map,
             priority=55.0,
         )
-        market_overview = self._pass_through_dict(recap_doc, "market_overview_review")
-        matrix = market_overview.get("theme_limitup_matrix") if isinstance(market_overview.get("theme_limitup_matrix"), dict) else {}
-        self._index_stock_rows(
-            index=index,
-            rows=self._list(matrix.get("columns")),
-            theme_name_map=theme_name_map,
-            priority=50.0,
-            nested_stock_fields=("focus_stocks",),
-        )
         ladder = self._pass_through_dict(recap_doc, "limit_up_ladder")
         self._index_stock_rows(
             index=index,
@@ -1856,8 +1858,6 @@ class PostMarketDailyReviewV2Builder:
             self._text(row.get("stock_id")),
             self._text(row.get("stock_code")),
             self._text(row.get("stock_name")),
-            self._text(row.get("subject_key")),
-            self._text(row.get("theme_name")),
         ]
         for key in stock_keys:
             info = mainline_index.get(key)
@@ -1901,6 +1901,14 @@ class PostMarketDailyReviewV2Builder:
             "match_key": self._text(row.get("subject_key") or row.get("stock_id") or row.get("stock_name")),
             "priority": 0.0,
         }
+
+    @staticmethod
+    def _stock_identity_key(row: dict[str, Any]) -> str:
+        for key in ("stock_id", "stock_code", "stock_name"):
+            text = str(row.get(key) or "").strip()
+            if text:
+                return text
+        return ""
 
     def _build_new_high_summary(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
         market_summary = self._pass_through_dict(recap_doc, "market_summary")
