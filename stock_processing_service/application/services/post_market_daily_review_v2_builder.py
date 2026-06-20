@@ -1278,6 +1278,7 @@ class PostMarketDailyReviewV2Builder:
         assigned_stock_keys: set[str] = set()
         board_totals = {"4": 0, "3": 0, "2": 0, "1": 0}
         unclassified_board_rows: list[dict[str, Any]] = []
+        duplicate_stock_rows: list[dict[str, Any]] = []
 
         for row in candidates:
             board_count = self._int_or_none(row.get("board_count"))
@@ -1287,6 +1288,15 @@ class PostMarketDailyReviewV2Builder:
             board_totals[str(board_count)] = board_totals.get(str(board_count), 0) + 1
             stock_identity = self._stock_identity_key(row)
             if stock_identity and stock_identity in assigned_stock_keys:
+                duplicate_stock_rows.append({
+                    "stock_id": self._text(row.get("stock_id")),
+                    "stock_name": self._text(row.get("stock_name")),
+                    "subject_key": self._text(row.get("subject_key")),
+                    "theme_name": self._text(row.get("theme_name")),
+                    "board_count": board_count,
+                    "reason": "duplicate_global_assignment",
+                    "source_kind": self._text(row.get("source_kind")),
+                })
                 continue
             resolved = self._resolve_limit_up_theme_for_stock(row, mainline_index, theme_name_map)
             if not resolved.get("is_classified"):
@@ -1338,6 +1348,15 @@ class PostMarketDailyReviewV2Builder:
             }
             bucket_stock_keys = bucket["_stock_keys"]
             if stock_identity and stock_identity in bucket_stock_keys:
+                duplicate_stock_rows.append({
+                    "stock_id": self._text(row.get("stock_id")),
+                    "stock_name": self._text(row.get("stock_name")),
+                    "subject_key": subject_key,
+                    "theme_name": display_theme_name,
+                    "board_count": board_count,
+                    "reason": "duplicate_bucket_assignment",
+                    "source_kind": self._text(row.get("source_kind")),
+                })
                 continue
             if stock_identity:
                 bucket_stock_keys.add(stock_identity)
@@ -1396,6 +1415,8 @@ class PostMarketDailyReviewV2Builder:
                 "board_totals": board_totals,
                 "unclassified_board_rows": unclassified_board_rows,
                 "unclassified_board_count": len(unclassified_board_rows),
+                "duplicate_stock_rows": duplicate_stock_rows,
+                "duplicate_stock_count": len(duplicate_stock_rows),
             },
         }
 
@@ -1594,8 +1615,6 @@ class PostMarketDailyReviewV2Builder:
         *,
         theme_name_map: dict[str, str] | None = None,
     ) -> list[dict[str, Any]]:
-        market_overview = self._pass_through_dict(recap_doc, "market_overview_review")
-        matrix = market_overview.get("theme_limitup_matrix") if isinstance(market_overview.get("theme_limitup_matrix"), dict) else {}
         candidates: list[dict[str, Any]] = []
         seen: set[tuple[str, str]] = set()
 
@@ -1625,25 +1644,6 @@ class PostMarketDailyReviewV2Builder:
                 "reason": self._text(self._first_present(stock, "reason", "rationale", "summary"), ""),
                 "source_kind": source_kind,
             })
-
-        columns = self._list(matrix.get("columns")) if isinstance(matrix.get("columns"), list) else []
-        for row in columns:
-            if not isinstance(row, dict):
-                continue
-            subject_key = self._text(row.get("subject_key"))
-            theme_name = self._text(row.get("theme_name") or subject_key)
-            for stock in self._list(row.get("focus_stocks")):
-                if isinstance(stock, dict):
-                    add_candidate(
-                        stock,
-                        subject_key,
-                        theme_name,
-                        "market_overview_review.theme_limitup_matrix",
-                        limit_up_count=self._int_or_none(row.get("limit_up_count")),
-                        active_mainline=bool(row.get("active_mainline")),
-                        lifecycle_state=self._text(row.get("lifecycle_state"), ""),
-                        trade_action=self._text(row.get("trade_action"), ""),
-                    )
 
         for stock in self._list(recap_doc.get("strong_stock_reviews")):
             if isinstance(stock, dict):
@@ -3289,7 +3289,14 @@ class PostMarketDailyReviewV2Builder:
         theme_name: str,
         mainline_name: str | None = None,
     ) -> list[dict[str, Any]]:
-        keys = [subject_key, theme_name, mainline_name]
+        keys = [
+            subject_key,
+            theme_name,
+            mainline_name,
+            PostMarketDailyReviewV2Builder._theme_key(subject_key, theme_name),
+            PostMarketDailyReviewV2Builder._theme_key(subject_key, mainline_name),
+            PostMarketDailyReviewV2Builder._theme_key(theme_name, mainline_name),
+        ]
         events: list[dict[str, Any]] = []
         seen: set[tuple[str, str]] = set()
         for key in keys:
@@ -3331,12 +3338,15 @@ class PostMarketDailyReviewV2Builder:
             events = item.get("driver_events")
             if not isinstance(events, list):
                 continue
+            alias_theme_name = str(theme_name_map.get(subject_key) if theme_name_map else "").strip()
             for key in {
                 subject_key,
                 theme_name,
                 resolved_theme_name,
                 PostMarketDailyReviewV2Builder._theme_key(subject_key, theme_name),
                 PostMarketDailyReviewV2Builder._theme_key(subject_key, resolved_theme_name),
+                PostMarketDailyReviewV2Builder._theme_key(theme_name, resolved_theme_name),
+                PostMarketDailyReviewV2Builder._theme_key(subject_key, alias_theme_name),
             }:
                 text = str(key or "").strip()
                 if not text:
