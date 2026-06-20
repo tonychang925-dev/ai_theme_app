@@ -162,7 +162,6 @@ function buildThemeEventRowsFromMatrix(matrix?: LimitUpThemeMatrix | null): Limi
 export default function DailyRecapStoryPanel({
   essentials,
   ladder,
-  themeEvents,
   limitUpThemeMatrix,
   newHigh,
   seatMoney,
@@ -170,7 +169,7 @@ export default function DailyRecapStoryPanel({
   tradeDate,
 }: Props) {
   const themeRows = buildThemeEventRowsFromMatrix(limitUpThemeMatrix);
-  const themeEventRows = themeRows.length > 0 ? themeRows : (themeEvents?.rows || []);
+  const themeEventRows = themeRows;
   const newHighRows = newHigh?.industry_summary || [];
   const resolveThemeName = (value?: string | null) => {
     const text = String(value || "").trim();
@@ -244,7 +243,7 @@ export default function DailyRecapStoryPanel({
           <div className="recap-body-text">{limitUpThemeMatrix?.summary || ladder?.summary || "暂无结构化连板梯队数据"}</div>
         </div>
         <div className="workspace-card" style={{ marginBottom: 12 }}>
-          <div className="recap-body-text">{limitUpThemeMatrix?.summary || themeEvents?.summary || "暂无结构化涨停题材事件"}</div>
+          <div className="recap-body-text">{limitUpThemeMatrix?.summary || "暂无结构化涨停题材事件"}</div>
         </div>
         <Table
           className="recap-antd-table"
