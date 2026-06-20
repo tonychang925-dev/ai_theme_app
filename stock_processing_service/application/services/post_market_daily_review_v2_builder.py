@@ -1271,25 +1271,34 @@ class PostMarketDailyReviewV2Builder:
         theme_name_map: dict[str, str] | None = None,
     ) -> dict[str, Any]:
         candidates = self._limit_up_source_candidates(recap_doc, theme_name_map=theme_name_map)
+        mainline_index = self._build_mainline_stock_index(recap_doc)
         mainline_order = self._mainline_theme_order_map(recap_doc, theme_name_map)
         driver_index = self._limit_up_driver_event_index(theme_driver_events, theme_name_map)
         columns_map: dict[str, dict[str, Any]] = {}
         board_totals = {"4": 0, "3": 0, "2": 0, "1": 0}
+        unclassified_board_rows: list[dict[str, Any]] = []
 
         for row in candidates:
             board_count = self._int_or_none(row.get("board_count"))
             if board_count is None or board_count <= 0:
                 continue
             board_count = 4 if board_count >= 4 else board_count
-            display_theme_name = self._display_theme_name(
-                row.get("theme_name") or row.get("subject_key"),
-                row.get("subject_key"),
-                theme_name_map,
-            )
-            if self._is_placeholder_theme_name(display_theme_name):
+            board_totals[str(board_count)] = board_totals.get(str(board_count), 0) + 1
+            resolved = self._resolve_limit_up_theme_for_stock(row, mainline_index, theme_name_map)
+            if not resolved.get("is_classified"):
+                unclassified_board_rows.append({
+                    "stock_id": self._text(row.get("stock_id")),
+                    "stock_name": self._text(row.get("stock_name")),
+                    "subject_key": self._text(row.get("subject_key")),
+                    "theme_name": self._text(row.get("theme_name")),
+                    "board_count": board_count,
+                    "reason": self._text(resolved.get("reason") or row.get("reason") or "no_mainline_mapping"),
+                    "source_kind": self._text(row.get("source_kind")),
+                })
                 continue
-            subject_key = self._text(row.get("subject_key"))
-            theme_key = self._theme_key(subject_key, display_theme_name, row.get("theme_name"))
+            subject_key = self._text(resolved.get("subject_key") or row.get("subject_key"))
+            display_theme_name = self._text(resolved.get("theme_name") or row.get("theme_name"))
+            theme_key = self._theme_key(subject_key, display_theme_name, resolved.get("mainline_name") or row.get("theme_name"))
             if not theme_key:
                 continue
             bucket = columns_map.setdefault(
@@ -1298,20 +1307,20 @@ class PostMarketDailyReviewV2Builder:
                     "subject_key": subject_key,
                     "theme_name": display_theme_name,
                     "limit_up_count": self._int_or_none(row.get("limit_up_count")) or 0,
-                    "active_mainline": bool(row.get("active_mainline")),
-                    "lifecycle_state": self._text(row.get("lifecycle_state"), ""),
-                    "trade_action": self._text(row.get("trade_action"), ""),
-                    "mainline_name": self._text(row.get("mainline_name"), ""),
+                    "active_mainline": bool(resolved.get("active_mainline") or row.get("active_mainline")),
+                    "lifecycle_state": self._text(resolved.get("lifecycle_state") or row.get("lifecycle_state"), ""),
+                    "trade_action": self._text(resolved.get("trade_action") or row.get("trade_action"), ""),
+                    "mainline_name": self._text(resolved.get("mainline_name") or row.get("mainline_name"), ""),
                     "focus_stocks": [],
                     "_board_groups_map": {1: [], 2: [], 3: [], 4: []},
                     "_board_stock_total": 0,
                 },
             )
             bucket["limit_up_count"] = max(int(bucket["limit_up_count"] or 0), int(row.get("limit_up_count") or 0))
-            bucket["active_mainline"] = bool(bucket["active_mainline"] or row.get("active_mainline"))
-            bucket["lifecycle_state"] = bucket["lifecycle_state"] or self._text(row.get("lifecycle_state"), "")
-            bucket["trade_action"] = bucket["trade_action"] or self._text(row.get("trade_action"), "")
-            bucket["mainline_name"] = bucket["mainline_name"] or self._text(row.get("mainline_name"), "")
+            bucket["active_mainline"] = bool(bucket["active_mainline"] or resolved.get("active_mainline") or row.get("active_mainline"))
+            bucket["lifecycle_state"] = bucket["lifecycle_state"] or self._text(resolved.get("lifecycle_state") or row.get("lifecycle_state"), "")
+            bucket["trade_action"] = bucket["trade_action"] or self._text(resolved.get("trade_action") or row.get("trade_action"), "")
+            bucket["mainline_name"] = bucket["mainline_name"] or self._text(resolved.get("mainline_name") or row.get("mainline_name"), "")
 
             stock_row = {
                 "stock_id": self._text(row.get("stock_id")),
@@ -1325,7 +1334,6 @@ class PostMarketDailyReviewV2Builder:
             }
             bucket["_board_groups_map"][board_count].append(stock_row)
             bucket["_board_stock_total"] += 1
-            board_totals[str(board_count)] = board_totals.get(str(board_count), 0) + 1
             if len(bucket["focus_stocks"]) < 20:
                 bucket["focus_stocks"].append(stock_row)
 
@@ -1375,6 +1383,8 @@ class PostMarketDailyReviewV2Builder:
                 "theme_count": len(columns),
                 "candidate_count": len(candidates),
                 "board_totals": board_totals,
+                "unclassified_board_rows": unclassified_board_rows,
+                "unclassified_board_count": len(unclassified_board_rows),
             },
         }
 
@@ -1643,7 +1653,242 @@ class PostMarketDailyReviewV2Builder:
                     "post_market_decision_v2.strong_stock_pool_reviews",
                 )
 
+        ladder = self._pass_through_dict(recap_doc, "limit_up_ladder")
+        for row in self._list(ladder.get("board_rows")):
+            if not isinstance(row, dict):
+                continue
+            board_count = self._int_or_none(row.get("board_count"))
+            if board_count is None or board_count <= 0:
+                continue
+            for stock in self._list(row.get("stocks")):
+                if not isinstance(stock, dict):
+                    continue
+                add_candidate(
+                    stock,
+                    self._text(self._first_present(stock, "subject_key", "theme_key") or row.get("subject_key")),
+                    self._text(self._first_present(stock, "theme_name") or row.get("theme_name") or row.get("subject_key")),
+                    "limit_up_ladder.board_rows",
+                    limit_up_count=self._int_or_none(row.get("stock_count")),
+                    active_mainline=bool(row.get("active_mainline")),
+                    lifecycle_state=self._text(row.get("lifecycle_state"), ""),
+                    trade_action=self._text(self._first_present(stock, "trade_action") or row.get("trade_action"), ""),
+                )
+
         return candidates
+
+    def _build_mainline_stock_index(self, recap_doc: dict[str, Any]) -> dict[str, dict[str, Any]]:
+        index: dict[str, dict[str, Any]] = {}
+        theme_name_map = self._build_theme_name_map(recap_doc)
+        rows = self._list(recap_doc.get("mainline_daily_states"))
+        for order, row in enumerate(rows):
+            if not isinstance(row, dict):
+                continue
+            mainline_name = self._text(row.get("mainline_name"))
+            canonical_subject_key = self._text(row.get("canonical_subject_key") or row.get("mainline_id"))
+            mainline_id = self._text(row.get("mainline_id"))
+            lifecycle_state = self._text(row.get("lifecycle_state"), "")
+            trade_action = self._text(row.get("action_advice") or row.get("trade_action"), "")
+            priority = self._float_or_none(row.get("mainline_strength_score")) or 0.0
+            base_info = {
+                "mainline_id": mainline_id,
+                "mainline_name": mainline_name,
+                "subject_key": canonical_subject_key,
+                "lifecycle_state": lifecycle_state,
+                "trade_action": trade_action,
+                "active_mainline": bool(row.get("mainline_alive") or row.get("mainline_trade_alive") or row.get("active_mainline")),
+                "priority": priority,
+                "order": order,
+            }
+            self._register_mainline_index_value(index, canonical_subject_key, base_info, priority=priority + 100.0)
+            self._register_mainline_index_value(index, mainline_id, base_info, priority=priority + 90.0)
+            self._register_mainline_index_value(index, mainline_name, base_info, priority=priority + 80.0)
+            for subject_key in self._list(row.get("active_subject_keys")):
+                self._register_mainline_index_value(index, self._text(subject_key), base_info, priority=priority + 70.0)
+            self._index_stock_rows(
+                index=index,
+                rows=self._list(row.get("focus_stocks")),
+                theme_name_map=None,
+                base_info=base_info,
+                priority=priority + 60.0,
+            )
+            self._index_stock_rows(
+                index=index,
+                rows=self._list(row.get("leader_stocks")),
+                theme_name_map=None,
+                base_info=base_info,
+                priority=priority + 60.0,
+            )
+            self._index_stock_rows(
+                index=index,
+                rows=self._list(row.get("representative_stocks")),
+                theme_name_map=None,
+                base_info=base_info,
+                priority=priority + 60.0,
+            )
+            self._index_stock_rows(
+                index=index,
+                rows=self._list(row.get("stocks")),
+                theme_name_map=None,
+                base_info=base_info,
+                priority=priority + 60.0,
+            )
+
+        self._index_stock_rows(
+            index=index,
+            rows=self._list(recap_doc.get("strong_stock_reviews")),
+            theme_name_map=theme_name_map,
+            priority=55.0,
+        )
+        decision = self._pass_through_dict(recap_doc, "post_market_decision_v2")
+        self._index_stock_rows(
+            index=index,
+            rows=self._list(decision.get("strong_stock_pool_reviews")),
+            theme_name_map=theme_name_map,
+            priority=55.0,
+        )
+        market_overview = self._pass_through_dict(recap_doc, "market_overview_review")
+        matrix = market_overview.get("theme_limitup_matrix") if isinstance(market_overview.get("theme_limitup_matrix"), dict) else {}
+        self._index_stock_rows(
+            index=index,
+            rows=self._list(matrix.get("columns")),
+            theme_name_map=theme_name_map,
+            priority=50.0,
+            nested_stock_fields=("focus_stocks",),
+        )
+        ladder = self._pass_through_dict(recap_doc, "limit_up_ladder")
+        self._index_stock_rows(
+            index=index,
+            rows=self._list(ladder.get("theme_rows")),
+            theme_name_map=theme_name_map,
+            priority=45.0,
+            nested_stock_fields=("representative_stocks",),
+        )
+        return index
+
+    def _index_stock_rows(
+        self,
+        *,
+        index: dict[str, dict[str, Any]],
+        rows: list[Any],
+        theme_name_map: dict[str, str] | None,
+        priority: float,
+        base_info: dict[str, Any] | None = None,
+        nested_stock_fields: tuple[str, ...] = (),
+    ) -> None:
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            theme_name = self._display_theme_name(
+                row.get("theme_name") or row.get("mainline_name") or row.get("subject_key"),
+                row.get("subject_key"),
+                theme_name_map,
+            )
+            if self._is_placeholder_theme_name(theme_name):
+                continue
+            subject_key = self._text(row.get("subject_key"))
+            mainline_name = self._text(row.get("mainline_name") or theme_name)
+            info = {
+                "mainline_id": self._text(row.get("mainline_id") or row.get("mainline_key")),
+                "mainline_name": mainline_name,
+                "subject_key": subject_key,
+                "lifecycle_state": self._text(row.get("lifecycle_state"), ""),
+                "trade_action": self._text(row.get("trade_action") or row.get("action_advice"), ""),
+                "active_mainline": bool(row.get("active_mainline") or row.get("mainline_alive") or row.get("mainline_trade_alive")),
+                "priority": priority,
+            }
+            if base_info:
+                for key in ("mainline_id", "mainline_name", "subject_key", "lifecycle_state", "trade_action", "active_mainline"):
+                    if key not in info or not info.get(key):
+                        info[key] = base_info.get(key)
+                info["priority"] = max(float(info.get("priority") or 0.0), float(base_info.get("priority") or 0.0))
+            self._register_mainline_index_value(index, subject_key, info, priority=priority + 100.0)
+            self._register_mainline_index_value(index, mainline_name, info, priority=priority + 90.0)
+            self._register_mainline_index_value(index, self._text(row.get("mainline_id")), info, priority=priority + 85.0)
+            self._register_mainline_index_value(index, self._text(row.get("stock_id")), info, priority=priority + 80.0)
+            self._register_mainline_index_value(index, self._text(row.get("stock_code")), info, priority=priority + 80.0)
+            self._register_mainline_index_value(index, self._text(row.get("stock_name")), info, priority=priority + 80.0)
+            self._register_mainline_index_value(index, self._text(row.get("theme_name")), info, priority=priority + 70.0)
+            for field in nested_stock_fields:
+                for stock in self._list(row.get(field)):
+                    if not isinstance(stock, dict):
+                        continue
+                    self._register_mainline_index_value(index, self._text(stock.get("stock_id")), info, priority=priority + 60.0)
+                    self._register_mainline_index_value(index, self._text(stock.get("stock_code")), info, priority=priority + 60.0)
+                    self._register_mainline_index_value(index, self._text(stock.get("stock_name")), info, priority=priority + 60.0)
+                    self._register_mainline_index_value(index, self._text(stock.get("subject_key")), info, priority=priority + 60.0)
+                    self._register_mainline_index_value(index, self._text(stock.get("theme_name")), info, priority=priority + 60.0)
+                    self._register_mainline_index_value(index, self._text(stock.get("mainline_name")), info, priority=priority + 60.0)
+
+    @staticmethod
+    def _register_mainline_index_value(
+        index: dict[str, dict[str, Any]],
+        key: Any,
+        value: dict[str, Any],
+        *,
+        priority: float,
+    ) -> None:
+        text = str(key or "").strip()
+        if not text:
+            return
+        current = index.get(text)
+        if current is None or float(current.get("priority") or 0.0) <= priority:
+            index[text] = {**value, "priority": priority}
+
+    def _resolve_limit_up_theme_for_stock(
+        self,
+        row: dict[str, Any],
+        mainline_index: dict[str, dict[str, Any]],
+        theme_name_map: dict[str, str] | None = None,
+    ) -> dict[str, Any]:
+        stock_keys = [
+            self._text(row.get("stock_id")),
+            self._text(row.get("stock_code")),
+            self._text(row.get("stock_name")),
+            self._text(row.get("subject_key")),
+            self._text(row.get("theme_name")),
+        ]
+        for key in stock_keys:
+            info = mainline_index.get(key)
+            if not info:
+                continue
+            resolved_theme_name = self._display_theme_name(info.get("mainline_name") or key, info.get("subject_key") or row.get("subject_key"), theme_name_map)
+            if self._is_placeholder_theme_name(resolved_theme_name):
+                continue
+            return {
+                "is_classified": True,
+                "subject_key": self._text(info.get("subject_key") or row.get("subject_key")),
+                "theme_name": resolved_theme_name,
+                "mainline_name": self._text(info.get("mainline_name") or resolved_theme_name),
+                "mainline_id": self._text(info.get("mainline_id")),
+                "active_mainline": bool(info.get("active_mainline") or row.get("active_mainline")),
+                "lifecycle_state": self._text(info.get("lifecycle_state") or row.get("lifecycle_state"), ""),
+                "trade_action": self._text(info.get("trade_action") or row.get("trade_action"), ""),
+                "reason": self._text(row.get("reason"), ""),
+                "match_key": key,
+                "priority": float(info.get("priority") or 0.0),
+            }
+
+        direct_theme_name = self._display_theme_name(row.get("theme_name") or row.get("subject_key"), row.get("subject_key"), theme_name_map)
+        if self._is_placeholder_theme_name(direct_theme_name):
+            return {
+                "is_classified": False,
+                "reason": "no_mainline_mapping",
+                "theme_name": direct_theme_name,
+                "subject_key": self._text(row.get("subject_key")),
+            }
+        return {
+            "is_classified": True,
+            "subject_key": self._text(row.get("subject_key")),
+            "theme_name": direct_theme_name,
+            "mainline_name": self._text(row.get("mainline_name") or direct_theme_name),
+            "mainline_id": self._text(row.get("mainline_id")),
+            "active_mainline": bool(row.get("active_mainline")),
+            "lifecycle_state": self._text(row.get("lifecycle_state"), ""),
+            "trade_action": self._text(row.get("trade_action"), ""),
+            "reason": self._text(row.get("reason"), ""),
+            "match_key": self._text(row.get("subject_key") or row.get("stock_id") or row.get("stock_name")),
+            "priority": 0.0,
+        }
 
     def _build_new_high_summary(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
         market_summary = self._pass_through_dict(recap_doc, "market_summary")
@@ -3107,7 +3352,7 @@ class PostMarketDailyReviewV2Builder:
         if not text:
             return True
         lowered = text.lower()
-        return lowered in {"__independent__", "independent", "unknown", "未分类", "未归类"} or text.startswith("__")
+        return lowered in {"__independent__", "independent", "unknown", "未分类", "未归类"} or text.startswith("__") or text.isdigit()
 
     @staticmethod
     def _normalize_new_high_summary(value: Any) -> dict[str, Any]:
