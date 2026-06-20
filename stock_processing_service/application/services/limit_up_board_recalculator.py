@@ -51,6 +51,17 @@ class LimitUpBoardRecalculator:
                 "pct_chg": self._float(row.get("pct_chg")),
             })
 
+        authoritative_theme_map = await self._resolve_authoritative_theme_map(
+            conn=conn,
+            stock_keys=stock_ids,
+            stock_names=sorted({self._text(target["stock"].get("stock_name")) for target in targets if isinstance(target.get("stock"), dict)}),
+            active_subject_keys=self._collect_active_subject_keys(enriched),
+        )
+        theme_mapping_updates = self._apply_authoritative_theme_map(
+            targets=targets,
+            authoritative_theme_map=authoritative_theme_map,
+        )
+
         board_map: dict[str, int] = {}
         for stock_id, series in by_stock.items():
             series.sort(key=lambda item: item.get("trade_date"), reverse=True)
@@ -91,6 +102,7 @@ class LimitUpBoardRecalculator:
             "board_count_stock_count": len(board_map),
             "updated_focus_stock_count": sum(update_counters.values()),
             "updated_by_source": update_counters,
+            "theme_mapping_enriched_count": theme_mapping_updates,
         }
         return enriched
 
@@ -182,14 +194,100 @@ class LimitUpBoardRecalculator:
 
         return targets
 
-    def _rebuild_market_overview_board_groups(self, source: dict[str, Any]) -> None:
-        report_context = source.get("report_context")
-        if not isinstance(report_context, dict):
-            return
-        stock_facts = report_context.get("stock_facts")
-        if not isinstance(stock_facts, list) or not stock_facts:
-            return
+    @staticmethod
+    def _is_placeholder_theme_name(value: Any) -> bool:
+        text = str(value or "").strip()
+        return not text or text in {"__independent__", "未归类", "independent", "未分类"} or text.isdigit()
 
+    def _collect_active_subject_keys(self, source: dict[str, Any]) -> list[str]:
+        keys: list[str] = []
+        mainlines = source.get("mainline_daily_states")
+        if isinstance(mainlines, list):
+            for row in mainlines:
+                if not isinstance(row, dict):
+                    continue
+                for key in ("canonical_subject_key", "mainline_id", "subject_key"):
+                    text = self._text(row.get(key))
+                    if text and text not in keys:
+                        keys.append(text)
+        return keys
+
+    async def _resolve_authoritative_theme_map(
+        self,
+        *,
+        conn,
+        stock_keys: list[str],
+        stock_names: list[str],
+        active_subject_keys: list[str],
+    ) -> dict[str, dict[str, str]]:
+        if not stock_keys and not stock_names:
+            return {}
+        rows = await conn.fetch(
+            """
+            SELECT DISTINCT ON (tsm.stock_id)
+                split_part(tsm.stock_id, '.', 1) AS stock_key,
+                tsm.subject_key,
+                COALESCE(
+                    NULLIF(tgp.concept, ''),
+                    NULLIF(tsm.theme_name, ''),
+                    tsm.subject_key
+                ) AS theme_name
+            FROM theme_stock_map tsm
+            LEFT JOIN theme_gate_profile tgp
+                ON tgp.subject_key = tsm.subject_key
+            WHERE split_part(tsm.stock_id, '.', 1) = ANY($1::text[])
+               OR tsm.stock_name = ANY($2::text[])
+            ORDER BY
+                split_part(tsm.stock_id, '.', 1),
+                CASE WHEN tsm.subject_key = ANY($3::text[]) THEN 0 ELSE 1 END,
+                CASE WHEN COALESCE(NULLIF(tgp.concept, ''), NULLIF(tsm.theme_name, ''), tsm.subject_key) ~ '^[0-9]+$' THEN 1 ELSE 0 END,
+                tsm.subject_key
+            """,
+            stock_keys,
+            stock_names,
+            active_subject_keys,
+        )
+        mapping: dict[str, dict[str, str]] = {}
+        for row in rows:
+            stock_key = self._normalize_stock_key(self._text(row.get("stock_key")))
+            subject_key = self._text(row.get("subject_key"))
+            theme_name = self._text(row.get("theme_name"))
+            if not stock_key or not subject_key or self._is_placeholder_theme_name(theme_name):
+                continue
+            mapping[stock_key] = {
+                "stock_key": stock_key,
+                "subject_key": subject_key,
+                "theme_name": theme_name,
+            }
+        return mapping
+
+    def _apply_authoritative_theme_map(
+        self,
+        *,
+        targets: list[dict[str, Any]],
+        authoritative_theme_map: dict[str, dict[str, str]],
+    ) -> int:
+        updated = 0
+        for target in targets:
+            stock = target.get("stock")
+            if not isinstance(stock, dict):
+                continue
+            stock_key = self._normalize_stock_key(target.get("stock_key"))
+            mapping = authoritative_theme_map.get(stock_key)
+            if not mapping:
+                continue
+            if not self._is_placeholder_theme_name(stock.get("subject_key")) and not self._is_placeholder_theme_name(stock.get("theme_name")):
+                continue
+            if self._is_placeholder_theme_name(stock.get("subject_key")):
+                stock["subject_key"] = mapping["subject_key"]
+            if self._is_placeholder_theme_name(stock.get("theme_name")):
+                stock["theme_name"] = mapping["theme_name"]
+            if self._is_placeholder_theme_name(stock.get("mainline_name")):
+                stock["mainline_name"] = mapping["theme_name"]
+            updated += 1
+        return updated
+
+    def _rebuild_market_overview_board_groups(self, source: dict[str, Any]) -> None:
         market_overview = source.get("market_overview_review")
         if not isinstance(market_overview, dict):
             return
@@ -199,18 +297,6 @@ class LimitUpBoardRecalculator:
         columns = matrix.get("columns")
         if not isinstance(columns, list) or not columns:
             return
-
-        facts_by_subject: dict[str, list[dict[str, Any]]] = {}
-        facts_by_theme: dict[str, list[dict[str, Any]]] = {}
-        for item in stock_facts:
-            if not isinstance(item, dict):
-                continue
-            subject_key = self._text(item.get("subject_key"))
-            theme_name = self._text(item.get("theme_name"))
-            if subject_key:
-                facts_by_subject.setdefault(subject_key, []).append(item)
-            if theme_name:
-                facts_by_theme.setdefault(theme_name, []).append(item)
 
         def _board_count(row: dict[str, Any]) -> int:
             raw = (
@@ -227,9 +313,9 @@ class LimitUpBoardRecalculator:
         for col in columns:
             if not isinstance(col, dict):
                 continue
-            subject_key = self._text(col.get("subject_key"))
-            theme_name = self._text(col.get("theme_name") or subject_key)
-            rows = facts_by_subject.get(subject_key) or facts_by_theme.get(theme_name) or []
+            rows = col.get("focus_stocks")
+            if not isinstance(rows, list):
+                rows = []
             buckets: dict[int, list[dict[str, Any]]] = {4: [], 3: [], 2: [], 1: []}
             seen: set[tuple[str, int]] = set()
             for row in rows:

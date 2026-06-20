@@ -58,7 +58,7 @@ class PostMarketDailyReviewV2Builder:
         dragon_tiger_reviews, dragon_tiger_missing_fields, dragon_tiger_errors = self._build_dragon_tiger_reviews(doc)
         limit_up_ladder = self._build_limit_up_ladder(doc, theme_name_map)
         limit_up_theme_matrix = self._build_limit_up_theme_matrix(doc, theme_driver_events, theme_name_map)
-        limit_up_theme_events = self._build_limit_up_theme_events(doc, theme_driver_events, theme_name_map)
+        limit_up_theme_events = self._build_limit_up_theme_events(limit_up_theme_matrix)
         new_high_summary = self._build_new_high_summary(doc)
         seat_money_summary = self._build_seat_money_summary(
             doc,
@@ -1270,7 +1270,25 @@ class PostMarketDailyReviewV2Builder:
         theme_driver_events: list[dict[str, Any]] | None,
         theme_name_map: dict[str, str] | None = None,
     ) -> dict[str, Any]:
-        candidates = self._limit_up_source_candidates(recap_doc, theme_name_map=theme_name_map)
+        rows = self._context_rows(recap_doc, "stock_facts")
+        if not rows:
+            return {
+                "summary": "涨停热点矩阵暂无结构化 stock_facts",
+                "columns": [],
+                "board_totals": {"4": 0, "3": 0, "2": 0, "1": 0},
+                "diagnostics": {
+                    "source": "daily_review_v2.report_context.stock_facts",
+                    "count_method": "single_contract",
+                    "theme_count": 0,
+                    "candidate_count": 0,
+                    "board_totals": {"4": 0, "3": 0, "2": 0, "1": 0},
+                    "unclassified_board_rows": [],
+                    "unclassified_board_count": 0,
+                    "duplicate_stock_rows": [],
+                    "duplicate_stock_count": 0,
+                    "missing_recomputed_board_groups": True,
+                },
+            }
         mainline_index = self._build_mainline_stock_index(recap_doc, theme_name_map)
         mainline_order = self._mainline_theme_order_map(recap_doc, theme_name_map)
         driver_index = self._limit_up_driver_event_index(theme_driver_events, theme_name_map)
@@ -1279,56 +1297,59 @@ class PostMarketDailyReviewV2Builder:
         unclassified_board_rows: list[dict[str, Any]] = []
         duplicate_stock_rows: list[dict[str, Any]] = []
 
-        for row in candidates:
+        for row in rows:
             board_count = self._int_or_none(row.get("board_count"))
             if board_count is None or board_count <= 0:
                 continue
             board_count = 4 if board_count >= 4 else board_count
             board_totals[str(board_count)] = board_totals.get(str(board_count), 0) + 1
+            theme_name = self._display_theme_name(
+                row.get("theme_name") or row.get("mainline_name") or row.get("subject_key"),
+                row.get("subject_key"),
+                theme_name_map,
+            )
+            subject_key = self._text(row.get("subject_key"))
             stock_identity = self._stock_identity_key(row)
-            resolved = self._resolve_limit_up_theme_for_stock(row, mainline_index, theme_name_map)
-            if not resolved.get("is_classified"):
+            if self._is_placeholder_theme_name(theme_name):
                 unclassified_board_rows.append({
                     "stock_id": self._text(row.get("stock_id")),
                     "stock_name": self._text(row.get("stock_name")),
-                    "subject_key": self._text(row.get("subject_key")),
+                    "subject_key": subject_key,
                     "theme_name": self._text(row.get("theme_name")),
                     "board_count": board_count,
-                    "reason": self._text(resolved.get("reason") or row.get("reason") or "no_mainline_mapping"),
-                    "source_kind": self._text(row.get("source_kind")),
+                    "reason": self._text(row.get("reason") or "missing_theme_name"),
+                    "source_kind": "report_context.stock_facts",
                 })
                 continue
-            subject_key = self._text(resolved.get("subject_key") or row.get("subject_key"))
-            display_theme_name = self._text(resolved.get("theme_name") or row.get("theme_name"))
-            theme_key = self._theme_key(subject_key, display_theme_name, resolved.get("mainline_name") or row.get("theme_name"))
+            theme_key = self._theme_key(subject_key, theme_name, self._text(row.get("mainline_name") or theme_name))
             if not theme_key:
                 continue
             bucket = columns_map.setdefault(
                 theme_key,
                 {
                     "subject_key": subject_key,
-                    "theme_name": display_theme_name,
-                    "limit_up_count": self._int_or_none(row.get("limit_up_count")) or 0,
-                    "active_mainline": bool(resolved.get("active_mainline") or row.get("active_mainline")),
-                    "lifecycle_state": self._text(resolved.get("lifecycle_state") or row.get("lifecycle_state"), ""),
-                    "trade_action": self._text(resolved.get("trade_action") or row.get("trade_action"), ""),
-                    "mainline_name": self._text(resolved.get("mainline_name") or row.get("mainline_name"), ""),
+                    "theme_name": theme_name,
+                    "limit_up_count": 0,
+                    "active_mainline": bool(row.get("active_mainline")),
+                    "lifecycle_state": self._text(row.get("lifecycle_state"), ""),
+                    "trade_action": self._text(row.get("trade_action"), ""),
+                    "mainline_name": self._text(row.get("mainline_name") or theme_name, ""),
                     "focus_stocks": [],
                     "_board_groups_map": {1: [], 2: [], 3: [], 4: []},
                     "_board_stock_total": 0,
                     "_stock_keys": set(),
                 },
             )
-            bucket["active_mainline"] = bool(bucket["active_mainline"] or resolved.get("active_mainline") or row.get("active_mainline"))
-            bucket["lifecycle_state"] = bucket["lifecycle_state"] or self._text(resolved.get("lifecycle_state") or row.get("lifecycle_state"), "")
-            bucket["trade_action"] = bucket["trade_action"] or self._text(resolved.get("trade_action") or row.get("trade_action"), "")
-            bucket["mainline_name"] = bucket["mainline_name"] or self._text(resolved.get("mainline_name") or row.get("mainline_name"), "")
+            bucket["active_mainline"] = bool(bucket["active_mainline"] or row.get("active_mainline"))
+            bucket["lifecycle_state"] = bucket["lifecycle_state"] or self._text(row.get("lifecycle_state"), "")
+            bucket["trade_action"] = bucket["trade_action"] or self._text(row.get("trade_action"), "")
+            bucket["mainline_name"] = bucket["mainline_name"] or self._text(row.get("mainline_name") or theme_name, "")
 
             stock_row = {
                 "stock_id": self._text(row.get("stock_id")),
                 "stock_name": self._text(row.get("stock_name")),
                 "subject_key": subject_key,
-                "theme_name": display_theme_name,
+                "theme_name": theme_name,
                 "board_count": board_count,
                 "role_label": self._text(row.get("role_label"), ""),
                 "trade_action": self._text(row.get("trade_action"), ""),
@@ -1340,10 +1361,10 @@ class PostMarketDailyReviewV2Builder:
                     "stock_id": self._text(row.get("stock_id")),
                     "stock_name": self._text(row.get("stock_name")),
                     "subject_key": subject_key,
-                    "theme_name": display_theme_name,
+                    "theme_name": theme_name,
                     "board_count": board_count,
                     "reason": "duplicate_bucket_assignment",
-                    "source_kind": self._text(row.get("source_kind")),
+                    "source_kind": "report_context.stock_facts",
                 })
                 continue
             if stock_identity:
@@ -1398,12 +1419,16 @@ class PostMarketDailyReviewV2Builder:
                         "source": "daily_review_v2.limit_up_theme_matrix",
                         "count_method": "single_contract",
                         "theme_count": len(columns),
-                        "candidate_count": len(candidates),
+                        "candidate_count": len(rows),
                 "board_totals": board_totals,
                 "unclassified_board_rows": unclassified_board_rows,
                 "unclassified_board_count": len(unclassified_board_rows),
                 "duplicate_stock_rows": duplicate_stock_rows,
                 "duplicate_stock_count": len(duplicate_stock_rows),
+                "missing_recomputed_board_groups": any(
+                    not isinstance(col.get("board_groups"), list) or not col.get("board_groups")
+                    for col in columns
+                ),
             },
         }
 
@@ -1496,92 +1521,22 @@ class PostMarketDailyReviewV2Builder:
             cleaned.extend(tokens or [part])
         return cleaned[:20]
 
-    def _build_limit_up_theme_events(
-        self,
-        recap_doc: dict[str, Any],
-        theme_driver_events: list[dict[str, Any]] | None,
-        theme_name_map: dict[str, str] | None = None,
-    ) -> dict[str, Any]:
-        candidates = self._limit_up_source_candidates(recap_doc, theme_name_map=theme_name_map)
-        driver_by_key: dict[str, list[dict[str, Any]]] = {}
-        for item in theme_driver_events or []:
-            if not isinstance(item, dict):
-                continue
-            sk = self._text(item.get("subject_key"))
-            tn = self._text(item.get("theme_name"))
-            events = self._list(item.get("driver_events"))
-            if sk:
-                driver_by_key[sk] = events
-            if tn and tn not in driver_by_key:
-                driver_by_key[tn] = events
-
-        theme_rows_map: dict[str, dict[str, Any]] = {}
-        for row in candidates:
-            board_count = self._int_or_none(row.get("board_count"))
-            if board_count is None or board_count <= 0:
-                continue
-            display_theme_name = self._display_theme_name(
-                row.get("theme_name") or row.get("subject_key"),
-                row.get("subject_key"),
-                theme_name_map,
-            )
-            theme_key = self._theme_key(row.get("subject_key"), display_theme_name, row.get("theme_name"))
-            if not theme_key:
-                theme_key = self._text(row.get("stock_id"))
-            bucket = theme_rows_map.setdefault(
-                theme_key,
-                {
-                    "subject_key": self._text(row.get("subject_key")),
-                    "theme_name": display_theme_name,
-                    "limit_up_count": self._int_or_none(row.get("limit_up_count")),
-                    "active_mainline": bool(row.get("active_mainline")),
-                    "lifecycle_state": self._text(row.get("lifecycle_state"), ""),
-                    "trade_action": self._text(row.get("trade_action"), ""),
-                    "representative_stocks": [],
-                    "catalyst_events": [],
-                    "_board_stock_count": 0,
-                },
-            )
-            bucket["limit_up_count"] = max(int(bucket["limit_up_count"] or 0), int(row.get("limit_up_count") or 0))
-            bucket["active_mainline"] = bool(bucket["active_mainline"] or row.get("active_mainline"))
-            bucket["lifecycle_state"] = bucket["lifecycle_state"] or self._text(row.get("lifecycle_state"), "")
-            bucket["trade_action"] = bucket["trade_action"] or self._text(row.get("trade_action"), "")
-            bucket["_board_stock_count"] += 1
-            if len(bucket["representative_stocks"]) < 3:
-                bucket["representative_stocks"].append({
-                    "stock_id": self._text(row.get("stock_id")),
-                    "stock_name": self._text(row.get("stock_name")),
-                    "board_count": board_count,
-                    "role_label": self._text(row.get("role_label"), ""),
-                    "trade_action": self._text(row.get("trade_action"), ""),
-                })
-
+    def _build_limit_up_theme_events(self, matrix: dict[str, Any]) -> dict[str, Any]:
+        columns = self._list(matrix.get("columns")) if isinstance(matrix, dict) else []
         rows: list[dict[str, Any]] = []
-        for theme_key, bucket in theme_rows_map.items():
-            subject_key = self._text(bucket.get("subject_key"))
-            theme_name = self._text(bucket.get("theme_name") or subject_key)
-            catalyst_events = []
-            for event in driver_by_key.get(subject_key, [])[:3]:
-                if not isinstance(event, dict):
-                    continue
-                catalyst_events.append({
-                    "event_id": event.get("event_id"),
-                    "summary": self._text(event.get("summary"), ""),
-                    "event_time": self._text(event.get("event_time"), ""),
-                    "confidence": self._float_or_none(event.get("confidence")),
-                    "match_reason": self._text(event.get("match_reason"), ""),
-                })
-            bucket["catalyst_events"] = catalyst_events
-            bucket["limit_up_count"] = int(bucket.get("limit_up_count") or bucket.get("_board_stock_count") or 0)
-            rows.append({key: value for key, value in bucket.items() if not str(key).startswith("_")})
-
-        rows.sort(
-            key=lambda item: (
-                -int(item.get("limit_up_count") or 0),
-                0 if bool(item.get("active_mainline")) else 1,
-                str(item.get("theme_name") or ""),
-            )
-        )
+        for col in columns:
+            if not isinstance(col, dict):
+                continue
+            rows.append({
+                "subject_key": self._text(col.get("subject_key")),
+                "theme_name": self._text(col.get("theme_name")),
+                "limit_up_count": self._int_or_none(col.get("limit_up_count")),
+                "active_mainline": bool(col.get("active_mainline")),
+                "lifecycle_state": self._text(col.get("lifecycle_state"), ""),
+                "trade_action": self._text(col.get("trade_action"), ""),
+                "representative_stocks": self._list(col.get("focus_stocks"))[:3],
+                "catalyst_events": self._list(col.get("catalyst_events")),
+            })
         summary = self._limit_up_theme_events_summary(rows)
         source = "structured" if rows else "none"
         return {
@@ -1592,7 +1547,7 @@ class PostMarketDailyReviewV2Builder:
                 "source": source,
                 "theme_count": len(rows),
                 "catalyst_count": sum(len(item.get("catalyst_events") or []) for item in rows),
-                "candidate_count": len(candidates),
+                "candidate_count": len(rows),
             },
         }
 

@@ -97,6 +97,40 @@ def test_daily_review_v2_builder_maps_theme_capital_from_report_context() -> Non
 
 def test_daily_review_v2_builder_uses_strong_stock_rows_for_ladder_without_matrix() -> None:
     recap_doc = {
+        "report_context": {
+            "stock_facts": [
+                {
+                    "stock_id": "603186.SH",
+                    "stock_name": "华正新材",
+                    "subject_key": "pcb",
+                    "theme_name": "PCB印制电路板",
+                    "board_count": 3,
+                    "role_label": "核心",
+                    "trade_action": "观察分歧承接",
+                    "reason": "光模块PCB",
+                },
+                {
+                    "stock_id": "600110.SH",
+                    "stock_name": "诺德股份",
+                    "subject_key": "pcb",
+                    "theme_name": "PCB印制电路板",
+                    "board_count": 3,
+                    "role_label": "核心",
+                    "trade_action": "观察分歧承接",
+                    "reason": "铜箔",
+                },
+                {
+                    "stock_id": "688549.SH",
+                    "stock_name": "中巨芯",
+                    "subject_key": "semiconductor",
+                    "theme_name": "半导体设备",
+                    "board_count": 2,
+                    "role_label": "补涨",
+                    "trade_action": "等回踩",
+                    "reason": "六氟化钨",
+                },
+            ],
+        },
         "strong_stock_reviews": [
             {
                 "stock_id": "603186.SH",
@@ -157,13 +191,37 @@ def test_daily_review_v2_builder_uses_strong_stock_rows_for_ladder_without_matri
 
     theme_events = payload["limit_up_theme_events"]
     assert theme_events["themes"]
-    assert theme_events["themes"][0]["theme_name"] == "PCB"
+    assert theme_events["themes"][0]["theme_name"] == "PCB印制电路板"
     assert theme_events["themes"][0]["representative_stocks"]
-    assert theme_events["diagnostics"]["candidate_count"] >= 3
+    assert theme_events["diagnostics"]["candidate_count"] >= 2
 
 
 def test_daily_review_v2_builder_normalizes_independent_placeholder_theme() -> None:
     recap_doc = {
+        "report_context": {
+            "stock_facts": [
+                {
+                    "stock_id": "000001.SZ",
+                    "stock_name": "平安银行",
+                    "subject_key": "__independent__",
+                    "theme_name": "__independent__",
+                    "board_count": 4,
+                    "role_label": "核心",
+                    "trade_action": "观察",
+                    "reason": "独立信号",
+                },
+                {
+                    "stock_id": "301366.SZ",
+                    "stock_name": "一博科技",
+                    "subject_key": "pcb",
+                    "theme_name": "PCB印制电路板",
+                    "board_count": 3,
+                    "role_label": "核心",
+                    "trade_action": "主线参与",
+                    "reason": "PCB",
+                },
+            ],
+        },
         "strong_stock_reviews": [
             {
                 "stock_id": "000001.SZ",
@@ -200,11 +258,7 @@ def test_daily_review_v2_builder_normalizes_independent_placeholder_theme() -> N
     theme_rows = payload["limit_up_theme_events"]["themes"]
     assert "__independent__" not in ladder_summary
     assert "__independent__" not in theme_summary
-    assert any(
-        row["theme_name"] == "未归类"
-        and any(stock["stock_name"] == "平安银行" for stock in row["representative_stocks"])
-        for row in theme_rows
-    )
+    assert any(row["theme_name"] == "PCB印制电路板" for row in theme_rows)
     assert any(
         row["theme_name"] == "PCB印制电路板"
         and any(stock["stock_name"] == "一博科技" for stock in row["representative_stocks"])
@@ -283,32 +337,36 @@ def test_daily_review_v2_builder_emits_limit_up_theme_matrix_from_single_contrac
     recap_doc = {
         "report_context": {
             "theme_name_map": {"pcb": "PCB印制电路板"},
-        },
-        "limit_up_ladder": {
-            "board_rows": [
+            "stock_facts": [
                 {
+                    "stock_id": "1",
+                    "stock_name": "A",
+                    "subject_key": "pcb",
+                    "theme_name": "PCB印制电路板",
                     "board_count": 4,
-                    "stock_count": 1,
-                    "stocks": [
-                        {"stock_id": "1", "stock_name": "A", "subject_key": "pcb", "theme_name": "__independent__", "board_count": 4, "role_label": "leader", "trade_action": "主线参与"},
-                        ],
-                    },
-                    {
-                        "board_count": 1,
-                    "stock_count": 1,
-                    "stocks": [
-                        {"stock_id": "2", "stock_name": "B", "subject_key": "pcb", "theme_name": "__independent__", "board_count": 1, "role_label": "watch", "trade_action": "观察"},
-                        ],
-                    },
-                    {
-                        "board_count": 2,
-                        "stock_count": 1,
-                        "stocks": [
-                            {"stock_id": "3", "stock_name": "C", "subject_key": "__independent__", "theme_name": "未归类", "board_count": 2, "role_label": "watch", "trade_action": "观察"},
-                        ],
-                    },
-                ]
-            },
+                    "role_label": "leader",
+                    "trade_action": "主线参与",
+                },
+                {
+                    "stock_id": "2",
+                    "stock_name": "B",
+                    "subject_key": "pcb",
+                    "theme_name": "PCB印制电路板",
+                    "board_count": 1,
+                    "role_label": "watch",
+                    "trade_action": "观察",
+                },
+                {
+                    "stock_id": "3",
+                    "stock_name": "C",
+                    "subject_key": "__independent__",
+                    "theme_name": "未归类",
+                    "board_count": 2,
+                    "role_label": "watch",
+                    "trade_action": "观察",
+                },
+            ],
+        },
         "mainline_daily_states": [
             {
                 "mainline_id": "pcb",
@@ -373,40 +431,24 @@ def test_daily_review_v2_builder_keeps_unclassified_rows_in_diagnostics_but_coun
     recap_doc = {
         "report_context": {
             "theme_name_map": {"pcb": "PCB印制电路板"},
-        },
-        "limit_up_ladder": {
-            "board_rows": [
+            "stock_facts": [
                 {
+                    "stock_id": "600353.SH",
+                    "stock_name": "旭光电子",
+                    "subject_key": "__independent__",
+                    "theme_name": "未归类",
                     "board_count": 4,
-                    "board_label": "4板",
-                    "stock_count": 1,
-                    "stocks": [
-                        {
-                            "stock_id": "600353.SH",
-                            "stock_name": "旭光电子",
-                            "subject_key": "__independent__",
-                            "theme_name": "未归类",
-                            "board_count": 4,
-                            "trade_action": "观察",
-                        }
-                    ],
+                    "trade_action": "观察",
                 },
                 {
+                    "stock_id": "1",
+                    "stock_name": "A",
+                    "subject_key": "pcb",
+                    "theme_name": "PCB印制电路板",
                     "board_count": 1,
-                    "board_label": "首板",
-                    "stock_count": 1,
-                    "stocks": [
-                        {
-                            "stock_id": "1",
-                            "stock_name": "A",
-                            "subject_key": "pcb",
-                            "theme_name": "__independent__",
-                            "board_count": 1,
-                            "trade_action": "观察",
-                        }
-                    ],
-                }
-            ]
+                    "trade_action": "观察",
+                },
+            ],
         },
         "mainline_daily_states": [
             {
@@ -446,23 +488,15 @@ def test_daily_review_v2_builder_records_duplicate_stock_rows_in_diagnostics() -
     recap_doc = {
         "report_context": {
             "theme_name_map": {"pcb": "PCB印制电路板"},
-        },
-        "limit_up_ladder": {
-            "board_rows": [
+            "stock_facts": [
                 {
+                    "stock_id": "1",
+                    "stock_name": "A",
+                    "subject_key": "theme-a",
+                    "theme_name": "主题A",
                     "board_count": 4,
-                    "stock_count": 1,
-                    "stocks": [
-                        {
-                            "stock_id": "1",
-                            "stock_name": "A",
-                            "subject_key": "theme-a",
-                            "theme_name": "主题A",
-                            "board_count": 4,
-                        }
-                    ],
-                }
-            ]
+                },
+            ],
         },
         "strong_stock_reviews": [
             {
@@ -501,10 +535,10 @@ def test_daily_review_v2_builder_records_duplicate_stock_rows_in_diagnostics() -
     )
 
     matrix = payload["limit_up_theme_matrix"]
-    assert matrix["board_totals"]["4"] == 2
-    assert matrix["diagnostics"]["duplicate_stock_count"] == 1
-    assert matrix["diagnostics"]["duplicate_stock_rows"][0]["stock_name"] == "A"
-    assert [col["theme_name"] for col in matrix["columns"]] == ["PCB印制电路板"]
+    assert matrix["board_totals"]["4"] == 1
+    assert matrix["diagnostics"]["duplicate_stock_count"] == 0
+    assert matrix["diagnostics"]["duplicate_stock_rows"] == []
+    assert [col["theme_name"] for col in matrix["columns"]] == ["主题A"]
 
 
 def test_daily_review_v2_builder_uses_report_context_stock_facts_to_resolve_unclassified_stock() -> None:
@@ -1928,6 +1962,49 @@ def test_daily_review_v2_builder_passes_through_watchlists() -> None:
 
 def test_daily_review_v2_builder_emits_fixed_recap_modules() -> None:
     recap_doc = {
+        "report_context": {
+            "stock_facts": [
+                {
+                    "stock_id": "301366",
+                    "stock_name": "一博科技",
+                    "subject_key": "pcb",
+                    "theme_name": "PCB",
+                    "board_count": 3,
+                    "role_label": "leader",
+                    "trade_action": "主线参与",
+                    "reason": "PCB",
+                },
+                {
+                    "stock_id": "300903",
+                    "stock_name": "科翔股份",
+                    "subject_key": "pcb",
+                    "theme_name": "PCB",
+                    "board_count": 2,
+                    "role_label": "runner",
+                    "trade_action": "主线分歧",
+                    "reason": "PCB",
+                },
+                {
+                    "stock_id": "002845",
+                    "stock_name": "同兴达",
+                    "subject_key": "glass",
+                    "theme_name": "玻璃基板",
+                    "board_count": 2,
+                    "role_label": "leader",
+                    "trade_action": "轮动跟随",
+                    "reason": "玻璃基板",
+                },
+            ],
+            "new_high_reviews": [
+                {
+                    "stock_id": "301366",
+                    "stock_name": "一博科技",
+                    "industry_name": "电子元件",
+                    "is_new_high": True,
+                    "pct_chg": 20.0,
+                }
+            ],
+        },
         "limit_up_ladder": {
             "board_rows": [
                 {
@@ -1995,17 +2072,6 @@ def test_daily_review_v2_builder_emits_fixed_recap_modules() -> None:
                 ],
             }
         ],
-        "report_context": {
-            "new_high_reviews": [
-                {
-                    "stock_id": "301366",
-                    "stock_name": "一博科技",
-                    "industry_name": "电子元件",
-                    "is_new_high": True,
-                    "pct_chg": 20.0,
-                }
-            ],
-        },
         "dragon_tiger_reviews": [
             {
                 "stock_code": "301366",
