@@ -92,6 +92,33 @@ class MarketHotspotOverview(TypedDict, total=False):
     source: str
     diagnostics: dict[str, Any]
 
+
+class LimitUpThemeMatrixBoardGroup(TypedDict, total=False):
+    board_count: int
+    board_label: str
+    stock_count: int
+    stocks: list[dict[str, Any]]
+
+
+class LimitUpThemeMatrixColumn(TypedDict, total=False):
+    subject_key: str
+    theme_name: str
+    limit_up_count: int
+    active_mainline: bool
+    lifecycle_state: str
+    trade_action: str
+    mainline_name: str
+    focus_stocks: list[dict[str, Any]]
+    board_groups: list[LimitUpThemeMatrixBoardGroup]
+    catalyst_events: list[dict[str, Any]]
+
+
+class LimitUpThemeMatrix(TypedDict, total=False):
+    summary: str
+    columns: list[LimitUpThemeMatrixColumn]
+    board_totals: dict[str, int]
+    diagnostics: dict[str, Any]
+
 class MainlineNarrative(TypedDict, total=False):
     summary: str
     core_points: list[str]
@@ -211,6 +238,7 @@ class PostMarketDailyReviewV2(TypedDict):
     mainline_narrative: MainlineNarrative
     d1_narrative: D1Narrative
     market_overview_review: dict[str, Any]
+    limit_up_theme_matrix: LimitUpThemeMatrix
     daily_recap_essentials: dict[str, Any]
     theme_reviews: list[dict[str, Any]]
     theme_capital_reviews: list[dict[str, Any]]

@@ -3,9 +3,7 @@ import type {
   DailyRecapEssentials,
   LimitUpLadderSummary,
   LimitUpThemeEventsSummary,
-  MarketOverviewReview,
-  ThemeLimitUpBoardGroup,
-  ThemeLimitUpColumn,
+  LimitUpThemeMatrix,
   HotMoneySeatActivityEntry,
   HotMoneySeatActivityRow,
   NewHighSummary,
@@ -19,9 +17,9 @@ interface Props {
   essentials?: DailyRecapEssentials | null;
   ladder?: LimitUpLadderSummary | null;
   themeEvents?: LimitUpThemeEventsSummary | null;
+  limitUpThemeMatrix?: LimitUpThemeMatrix | null;
   newHigh?: NewHighSummary | null;
   seatMoney?: SeatMoneySummary | null;
-  marketOverview?: MarketOverviewReview | null;
   subjectKeyToThemeName?: Map<string, string>;
   tradeDate?: string;
 }
@@ -136,70 +134,43 @@ function renderInstitutionRows(rows: SeatMoneyInstitutionRow[] = [], kind: "buy"
   );
 }
 
-function buildHotspotMatrixFromThemeEvents(
-  themeEvents?: LimitUpThemeEventsSummary | null,
-  subjectKeyToThemeName?: Map<string, string>,
-): MarketOverviewReview | null {
-  const rows = (themeEvents?.rows || []).filter((row) => {
-    const themeName = resolveThemeLabel(row.subject_key, row.theme_name, subjectKeyToThemeName);
-    return themeName && themeName !== "未归类";
-  });
-  if (!rows.length) return null;
-  const columns: ThemeLimitUpColumn[] = rows.map((row) => ({
-    subject_key: row.subject_key,
-    theme_name: resolveThemeLabel(row.subject_key, row.theme_name, subjectKeyToThemeName) || row.theme_name,
-    limit_up_count: Number(row.limit_up_count || 0),
-    active_mainline: Boolean(row.active_mainline),
-    lifecycle_state: row.lifecycle_state || undefined,
-    trade_action: row.trade_action || undefined,
-    focus_stocks: (row.representative_stocks || []).map((stock) => ({
+function buildThemeEventRowsFromMatrix(matrix?: LimitUpThemeMatrix | null): LimitUpThemeEventsSummary["rows"] {
+  return (matrix?.columns || []).map((col) => ({
+    subject_key: col.subject_key,
+    theme_name: col.theme_name,
+    limit_up_count: Number(col.limit_up_count || 0),
+    active_mainline: Boolean(col.active_mainline),
+    lifecycle_state: col.lifecycle_state || undefined,
+    trade_action: col.trade_action || undefined,
+    representative_stocks: (col.focus_stocks || []).slice(0, 3).map((stock) => ({
       stock_id: stock.stock_id || "",
       stock_name: stock.stock_name || "",
       board_count: stock.board_count ?? null,
       role_label: stock.role_label || undefined,
       trade_action: stock.trade_action || undefined,
     })),
-    board_groups: undefined,
+    catalyst_events: (col.catalyst_events || []).slice(0, 3).map((event) => ({
+      event_id: event.event_id || null,
+      summary: event.summary || null,
+      event_time: event.event_time || null,
+      confidence: event.confidence ?? null,
+      match_reason: event.match_reason || null,
+    })),
   }));
-  const limitUpTotal = columns.reduce((sum, col) => sum + Number(col.limit_up_count || 0), 0);
-  return {
-    trade_date: "",
-    limit_up_total: limitUpTotal,
-    limit_down_total: undefined,
-    up_count: undefined,
-    down_count: undefined,
-    total_amount: undefined,
-    theme_limitup_matrix: {
-      columns,
-      max_rows: Math.max(
-        0,
-        ...columns.map((col) => (col.focus_stocks || []).reduce((acc, stock) => Math.max(acc, Number(stock.board_count || 0)), 0)),
-      ),
-      count_method: "display_by_theme",
-    },
-  };
-}
-
-function resolveThemeLabel(subjectKey: string | undefined, themeName: string | undefined, subjectKeyToThemeName?: Map<string, string>) {
-  const key = String(subjectKey || "").trim();
-  const mapped = subjectKeyToThemeName?.get(key)?.trim() || "";
-  const raw = String(mapped || themeName || "").trim();
-  if (!raw) return "";
-  if (raw === "__independent__" || raw.toLowerCase() === "independent" || raw.startsWith("__")) return "未归类";
-  return raw;
 }
 
 export default function DailyRecapStoryPanel({
   essentials,
   ladder,
   themeEvents,
+  limitUpThemeMatrix,
   newHigh,
   seatMoney,
-  marketOverview,
   subjectKeyToThemeName,
   tradeDate,
 }: Props) {
-  const themeRows = themeEvents?.rows || [];
+  const themeRows = buildThemeEventRowsFromMatrix(limitUpThemeMatrix);
+  const themeEventRows = themeRows.length > 0 ? themeRows : (themeEvents?.rows || []);
   const newHighRows = newHigh?.industry_summary || [];
   const resolveThemeName = (value?: string | null) => {
     const text = String(value || "").trim();
@@ -210,7 +181,6 @@ export default function DailyRecapStoryPanel({
     }
     return mapped;
   };
-  const unifiedMarketOverview = buildHotspotMatrixFromThemeEvents(themeEvents, subjectKeyToThemeName);
   const seatMoneySummaryText = seatMoney?.summary || (() => {
     const institutionNames = [
       ...(seatMoney?.institution_buy_rows || []).map((row) => row.stock_name),
@@ -237,7 +207,7 @@ export default function DailyRecapStoryPanel({
   const isPlaceholderTheme = (value?: string | null) => {
     const text = String(value || "").trim();
     if (!text) return true;
-    return text === "__independent__" || text.toLowerCase() === "independent" || text.startsWith("__");
+    return text === "__independent__" || text.toLowerCase() === "independent" || text === "未归类" || text.startsWith("__");
   };
 
   return (
@@ -261,26 +231,26 @@ export default function DailyRecapStoryPanel({
 
       <section className="workspace-card recap-engine-group">
         <h3 className="section-title recap-panel-title">涨停热点总览</h3>
-        {unifiedMarketOverview && (
+        {limitUpThemeMatrix && (
           <div className="workspace-card" style={{ marginBottom: 12 }}>
             <MarketOverviewPanel
-              marketOverview={unifiedMarketOverview}
+              limitUpThemeMatrix={limitUpThemeMatrix}
               tradeDate={tradeDate}
               subjectKeyToThemeName={subjectKeyToThemeName}
             />
           </div>
         )}
         <div className="workspace-card" style={{ marginBottom: 12 }}>
-          <div className="recap-body-text">{ladder?.summary || "暂无结构化连板梯队数据"}</div>
+          <div className="recap-body-text">{limitUpThemeMatrix?.summary || ladder?.summary || "暂无结构化连板梯队数据"}</div>
         </div>
         <div className="workspace-card" style={{ marginBottom: 12 }}>
-          <div className="recap-body-text">{themeEvents?.summary || "暂无结构化涨停题材事件"}</div>
+          <div className="recap-body-text">{limitUpThemeMatrix?.summary || themeEvents?.summary || "暂无结构化涨停题材事件"}</div>
         </div>
         <Table
           className="recap-antd-table"
           size="small"
           pagination={false}
-          dataSource={themeRows.map((row) => ({ ...row, key: row.subject_key }))}
+          dataSource={themeEventRows.map((row) => ({ ...row, key: row.subject_key }))}
           columns={[
             {
               title: "题材",

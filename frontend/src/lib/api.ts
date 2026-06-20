@@ -873,6 +873,20 @@ export interface LimitUpThemeEventRow {
   catalyst_events: LimitUpThemeEventItem[];
 }
 
+export interface LimitUpThemeMatrixColumn extends ThemeLimitUpColumn {
+  mainline_name?: string | null;
+  catalyst_events: LimitUpThemeEventItem[];
+  focus_stocks: ThemeLimitUpStock[];
+  board_groups: ThemeLimitUpBoardGroup[];
+}
+
+export interface LimitUpThemeMatrix {
+  summary: string;
+  columns: LimitUpThemeMatrixColumn[];
+  board_totals: Record<string, number>;
+  diagnostics?: Record<string, unknown>;
+}
+
 export interface LimitUpLadderSummary {
   summary: string;
   board_rows: LimitUpLadderRow[];
@@ -1017,6 +1031,7 @@ export interface PostMarketDailyReviewV2 {
   market_environment_review?: Record<string, unknown>;
   market_summary: MarketSummaryReview;
   market_overview_review?: MarketOverviewReview;
+  limit_up_theme_matrix?: LimitUpThemeMatrix;
   market_overview_narrative?: MarketOverviewNarrative;
   market_hotspot_overview?: MarketHotspotOverview;
   market_hotspot_narrative?: MarketHotspotNarrative;

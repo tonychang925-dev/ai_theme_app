@@ -33,9 +33,9 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate, subject
           essentials={dailyReviewV2.daily_recap_essentials ?? null}
           ladder={dailyReviewV2.limit_up_ladder ?? null}
           themeEvents={dailyReviewV2.limit_up_theme_events ?? null}
+          limitUpThemeMatrix={dailyReviewV2.limit_up_theme_matrix ?? null}
           newHigh={dailyReviewV2.new_high_summary ?? null}
           seatMoney={dailyReviewV2.seat_money_summary ?? null}
-          marketOverview={dailyReviewV2.market_overview_review ?? null}
           subjectKeyToThemeName={subjectKeyToThemeName}
           tradeDate={tradeDate}
         />

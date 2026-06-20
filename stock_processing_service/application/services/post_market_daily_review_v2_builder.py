@@ -57,6 +57,7 @@ class PostMarketDailyReviewV2Builder:
         money_flow_reviews, money_flow_missing_fields = self._build_money_flow_reviews(doc)
         dragon_tiger_reviews, dragon_tiger_missing_fields, dragon_tiger_errors = self._build_dragon_tiger_reviews(doc)
         limit_up_ladder = self._build_limit_up_ladder(doc, theme_name_map)
+        limit_up_theme_matrix = self._build_limit_up_theme_matrix(doc, theme_driver_events, theme_name_map)
         limit_up_theme_events = self._build_limit_up_theme_events(doc, theme_driver_events, theme_name_map)
         new_high_summary = self._build_new_high_summary(doc)
         seat_money_summary = self._build_seat_money_summary(
@@ -127,6 +128,7 @@ class PostMarketDailyReviewV2Builder:
             "money_flow_reviews": money_flow_reviews,
             "dragon_tiger_reviews": dragon_tiger_reviews,
             "limit_up_ladder": limit_up_ladder,
+            "limit_up_theme_matrix": limit_up_theme_matrix,
             "limit_up_theme_events": limit_up_theme_events,
             "new_high_summary": new_high_summary,
             "seat_money_summary": seat_money_summary,
@@ -165,7 +167,7 @@ class PostMarketDailyReviewV2Builder:
             if sk:
                 events_by_key[sk] = item.get("driver_events") or []
 
-        for row in theme_capital_reviews[:10]:
+        for row in theme_capital_reviews:
             sk = str(row.get("subject_key") or "")
             events = events_by_key.get(sk, [])
             enriched.append({
@@ -1259,6 +1261,120 @@ class PostMarketDailyReviewV2Builder:
                 "theme_count": len(theme_rows),
                 "board_stock_count": sum(len(bucket["stocks"]) for bucket in board_rows),
                 "candidate_count": len(candidates),
+            },
+        }
+
+    def _build_limit_up_theme_matrix(
+        self,
+        recap_doc: dict[str, Any],
+        theme_driver_events: list[dict[str, Any]] | None,
+        theme_name_map: dict[str, str] | None = None,
+    ) -> dict[str, Any]:
+        candidates = self._limit_up_source_candidates(recap_doc, theme_name_map=theme_name_map)
+        mainline_order = self._mainline_theme_order_map(recap_doc, theme_name_map)
+        driver_index = self._limit_up_driver_event_index(theme_driver_events, theme_name_map)
+        columns_map: dict[str, dict[str, Any]] = {}
+        board_totals = {"4": 0, "3": 0, "2": 0, "1": 0}
+
+        for row in candidates:
+            board_count = self._int_or_none(row.get("board_count"))
+            if board_count is None or board_count <= 0:
+                continue
+            board_count = 4 if board_count >= 4 else board_count
+            display_theme_name = self._display_theme_name(
+                row.get("theme_name") or row.get("subject_key"),
+                row.get("subject_key"),
+                theme_name_map,
+            )
+            if self._is_placeholder_theme_name(display_theme_name):
+                continue
+            subject_key = self._text(row.get("subject_key"))
+            theme_key = self._theme_key(subject_key, display_theme_name, row.get("theme_name"))
+            if not theme_key:
+                continue
+            bucket = columns_map.setdefault(
+                theme_key,
+                {
+                    "subject_key": subject_key,
+                    "theme_name": display_theme_name,
+                    "limit_up_count": self._int_or_none(row.get("limit_up_count")) or 0,
+                    "active_mainline": bool(row.get("active_mainline")),
+                    "lifecycle_state": self._text(row.get("lifecycle_state"), ""),
+                    "trade_action": self._text(row.get("trade_action"), ""),
+                    "mainline_name": self._text(row.get("mainline_name"), ""),
+                    "focus_stocks": [],
+                    "_board_groups_map": {1: [], 2: [], 3: [], 4: []},
+                    "_board_stock_total": 0,
+                },
+            )
+            bucket["limit_up_count"] = max(int(bucket["limit_up_count"] or 0), int(row.get("limit_up_count") or 0))
+            bucket["active_mainline"] = bool(bucket["active_mainline"] or row.get("active_mainline"))
+            bucket["lifecycle_state"] = bucket["lifecycle_state"] or self._text(row.get("lifecycle_state"), "")
+            bucket["trade_action"] = bucket["trade_action"] or self._text(row.get("trade_action"), "")
+            bucket["mainline_name"] = bucket["mainline_name"] or self._text(row.get("mainline_name"), "")
+
+            stock_row = {
+                "stock_id": self._text(row.get("stock_id")),
+                "stock_name": self._text(row.get("stock_name")),
+                "subject_key": subject_key,
+                "theme_name": display_theme_name,
+                "board_count": board_count,
+                "role_label": self._text(row.get("role_label"), ""),
+                "trade_action": self._text(row.get("trade_action"), ""),
+                "reason": self._text(row.get("reason"), ""),
+            }
+            bucket["_board_groups_map"][board_count].append(stock_row)
+            bucket["_board_stock_total"] += 1
+            board_totals[str(board_count)] = board_totals.get(str(board_count), 0) + 1
+            if len(bucket["focus_stocks"]) < 20:
+                bucket["focus_stocks"].append(stock_row)
+
+        columns: list[dict[str, Any]] = []
+        for bucket in columns_map.values():
+            board_groups: list[dict[str, Any]] = []
+            for board_count in (4, 3, 2, 1):
+                stocks = bucket["_board_groups_map"].get(board_count, [])
+                stocks.sort(
+                    key=lambda item: (
+                        -int(item.get("board_count") or 0),
+                        str(item.get("stock_name") or item.get("stock_id") or ""),
+                    )
+                )
+                board_groups.append({
+                    "board_count": board_count,
+                    "board_label": "首板" if board_count == 1 else f"{board_count}板",
+                    "stock_count": len(stocks),
+                    "stocks": stocks,
+                })
+            bucket["board_groups"] = board_groups
+            bucket["catalyst_events"] = self._limit_up_theme_matrix_catalyst_events(
+                driver_index,
+                bucket["subject_key"],
+                bucket["theme_name"],
+                bucket.get("mainline_name"),
+            )
+            bucket["focus_stocks"] = [stock for group in board_groups for stock in group["stocks"]]
+            columns.append({key: value for key, value in bucket.items() if not str(key).startswith("_")})
+
+        columns.sort(
+            key=lambda item: (
+                0 if bool(item.get("active_mainline")) else 1,
+                mainline_order.get(self._text(item.get("theme_name")), 9999),
+                -int(item.get("limit_up_count") or 0),
+                str(item.get("theme_name") or ""),
+            )
+        )
+        summary = self._limit_up_theme_matrix_summary(columns, board_totals)
+        return {
+            "summary": summary,
+            "columns": columns,
+            "board_totals": board_totals,
+            "diagnostics": {
+                "source": "daily_review_v2.limit_up_theme_matrix",
+                "count_method": "single_contract",
+                "theme_count": len(columns),
+                "candidate_count": len(candidates),
+                "board_totals": board_totals,
             },
         }
 
@@ -2830,6 +2946,24 @@ class PostMarketDailyReviewV2Builder:
         return f"涨停事件聚焦 { '、'.join(themes) }，优先观察板位股与催化事件是否继续扩散。"
 
     @staticmethod
+    def _limit_up_theme_matrix_summary(columns: list[dict[str, Any]], board_totals: dict[str, int]) -> str:
+        themes: list[str] = []
+        for row in columns:
+            theme_name = str(row.get("theme_name") or "").strip()
+            if not theme_name or PostMarketDailyReviewV2Builder._is_placeholder_theme_name(theme_name):
+                continue
+            themes.append(theme_name)
+            if len(themes) >= 3:
+                break
+        if not themes:
+            return "暂无结构化涨停热点矩阵"
+        board_text = "，".join(
+            f"{label} {int(board_totals.get(label, 0) or 0)} 只"
+            for label in ("4", "3", "2", "1")
+        )
+        return f"涨停热点矩阵：{board_text}；热点题材：{'、'.join(themes)}。"
+
+    @staticmethod
     def _display_theme_name(value: Any, subject_key: Any = "", theme_name_map: dict[str, str] | None = None) -> str:
         text = str(value or "").strip()
         sk = str(subject_key or "").strip()
@@ -2877,10 +3011,94 @@ class PostMarketDailyReviewV2Builder:
                     canonical_key = str(ml.get("canonical_subject_key") or "").strip()
                     mainline_name = str(ml.get("mainline_name") or "").strip()
                     mainline_id = str(ml.get("mainline_id") or "").strip()
-                    if canonical_key and mainline_name:
-                        result.setdefault(canonical_key, mainline_name)
-                    if mainline_id and mainline_name:
-                        result.setdefault(mainline_id, mainline_name)
+                if canonical_key and mainline_name:
+                    result.setdefault(canonical_key, mainline_name)
+                if mainline_id and mainline_name:
+                    result.setdefault(mainline_id, mainline_name)
+        return result
+
+    @staticmethod
+    def _limit_up_theme_matrix_catalyst_events(
+        driver_index: dict[str, list[dict[str, Any]]],
+        subject_key: str,
+        theme_name: str,
+        mainline_name: str | None = None,
+    ) -> list[dict[str, Any]]:
+        keys = [subject_key, theme_name, mainline_name]
+        events: list[dict[str, Any]] = []
+        seen: set[tuple[str, str]] = set()
+        for key in keys:
+            text = str(key or "").strip()
+            if not text:
+                continue
+            for event in driver_index.get(text, []):
+                event_id = str(event.get("event_id") or "")
+                summary = str(event.get("summary") or "").strip()
+                dedupe_key = (event_id, summary)
+                if dedupe_key in seen:
+                    continue
+                seen.add(dedupe_key)
+                events.append({
+                    "event_id": event.get("event_id"),
+                    "summary": summary,
+                    "event_time": event.get("event_time"),
+                    "confidence": event.get("confidence"),
+                    "match_reason": event.get("match_reason"),
+                })
+                if len(events) >= 5:
+                    return events
+        return events
+
+    @staticmethod
+    def _limit_up_driver_event_index(
+        theme_driver_events: list[dict[str, Any]] | None,
+        theme_name_map: dict[str, str] | None = None,
+    ) -> dict[str, list[dict[str, Any]]]:
+        index: dict[str, list[dict[str, Any]]] = {}
+        for item in theme_driver_events or []:
+            if not isinstance(item, dict):
+                continue
+            subject_key = str(item.get("subject_key") or "").strip()
+            theme_name = str(item.get("theme_name") or "").strip()
+            resolved_theme_name = str(item.get("resolved_theme_name") or "").strip()
+            if theme_name_map:
+                theme_name = str(theme_name_map.get(subject_key) or theme_name or "").strip()
+            events = item.get("driver_events")
+            if not isinstance(events, list):
+                continue
+            for key in {
+                subject_key,
+                theme_name,
+                resolved_theme_name,
+                PostMarketDailyReviewV2Builder._theme_key(subject_key, theme_name),
+                PostMarketDailyReviewV2Builder._theme_key(subject_key, resolved_theme_name),
+            }:
+                text = str(key or "").strip()
+                if not text:
+                    continue
+                bucket = index.setdefault(text, [])
+                for event in events:
+                    if isinstance(event, dict):
+                        bucket.append(event)
+        return index
+
+    @staticmethod
+    def _mainline_theme_order_map(recap_doc: dict[str, Any], theme_name_map: dict[str, str] | None = None) -> dict[str, int]:
+        result: dict[str, int] = {}
+        rows = recap_doc.get("mainline_daily_states")
+        if not isinstance(rows, list):
+            return result
+        for idx, row in enumerate(rows):
+            if not isinstance(row, dict):
+                continue
+            mainline_name = str(row.get("mainline_name") or "").strip()
+            canonical_key = str(row.get("canonical_subject_key") or row.get("mainline_id") or "").strip()
+            if mainline_name:
+                result.setdefault(mainline_name, idx)
+            if canonical_key and theme_name_map:
+                mapped = str(theme_name_map.get(canonical_key) or "").strip()
+                if mapped:
+                    result.setdefault(mapped, idx)
         return result
 
     @staticmethod
@@ -2889,7 +3107,7 @@ class PostMarketDailyReviewV2Builder:
         if not text:
             return True
         lowered = text.lower()
-        return lowered in {"__independent__", "independent", "unknown", "未分类"} or text.startswith("__")
+        return lowered in {"__independent__", "independent", "unknown", "未分类", "未归类"} or text.startswith("__")
 
     @staticmethod
     def _normalize_new_high_summary(value: Any) -> dict[str, Any]:

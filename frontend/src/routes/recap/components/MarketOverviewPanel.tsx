@@ -1,19 +1,11 @@
 import { Tag } from "antd";
-import type { MarketOverviewReview, ThemeLimitUpBoardGroup, ThemeLimitUpColumn, ThemeLimitUpStock } from "../../../lib/api";
+import type { LimitUpThemeMatrix, LimitUpThemeMatrixColumn, ThemeLimitUpBoardGroup, ThemeLimitUpStock } from "../../../lib/api";
 import { navigateTo } from "../../../lib/navigation";
 
 interface Props {
-  marketOverview?: MarketOverviewReview | null;
+  limitUpThemeMatrix?: LimitUpThemeMatrix | null;
   tradeDate?: string;
   subjectKeyToThemeName?: Map<string, string>;
-}
-
-function formatAmount(value?: number | null) {
-  if (value == null || Number.isNaN(Number(value))) return "--";
-  const abs = Math.abs(Number(value));
-  if (abs >= 1e8) return `${(Number(value) / 1e8).toFixed(2)}亿`;
-  if (abs >= 1e4) return `${(Number(value) / 1e4).toFixed(2)}万`;
-  return String(Math.round(Number(value)));
 }
 
 function translateTagText(value?: string | null) {
@@ -44,50 +36,21 @@ function translateTagText(value?: string | null) {
   return map[key] || key || "--";
 }
 
-function translateCountMethod(value?: string | null) {
-  const key = String(value || "").trim();
-  const map: Record<string, string> = {
-    display_by_theme: "按题材展示",
-    display_by_theme_unique: "按题材去重展示",
-  };
-  return map[key] || key || "--";
-}
-
 function stockLink(stockId?: string, tradeDate?: string) {
   if (!stockId) return "";
   return `/stocks/${encodeURIComponent(stockId)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`;
 }
 
-function displayThemeName(col: ThemeLimitUpColumn, subjectKeyToThemeName?: Map<string, string>) {
-  const record = col as ThemeLimitUpColumn & Record<string, unknown>;
+function displayThemeName(col: LimitUpThemeMatrixColumn, subjectKeyToThemeName?: Map<string, string>) {
   const mapped = subjectKeyToThemeName?.get(String(col.subject_key || "").trim())?.trim() || "";
-  const raw = String(mapped || record.mainline_name || col.theme_name || "其他").trim() || "其他";
-  if (raw === "__independent__" || raw.toLowerCase() === "independent" || raw.startsWith("__")) {
+  const raw = String(mapped || col.mainline_name || col.theme_name || "其他").trim() || "其他";
+  if (raw === "__independent__" || raw.toLowerCase() === "independent" || raw === "未归类" || raw.startsWith("__")) {
     return "未归类";
   }
   return raw;
 }
 
-function buildBoardGroups(col: ThemeLimitUpColumn): ThemeLimitUpBoardGroup[] {
-  if (Array.isArray(col.board_groups) && col.board_groups.length > 0) {
-    return col.board_groups;
-  }
-  const source = Array.isArray(col.focus_stocks) ? col.focus_stocks : [];
-  const buckets: Record<number, ThemeLimitUpStock[]> = { 4: [], 3: [], 2: [], 1: [] };
-  for (const stock of source) {
-    const boardCount = Math.min(Math.max(Number(stock.board_count || 0), 0), 4);
-    if (boardCount <= 0) continue;
-    buckets[boardCount].push(stock);
-  }
-  return [4, 3, 2, 1].map((boardCount) => ({
-    board_count: boardCount,
-    board_label: boardCount === 1 ? "首板" : `${boardCount}板`,
-    stock_count: buckets[boardCount].length,
-    stocks: buckets[boardCount],
-  }));
-}
-
-function columnStatusTag(col: ThemeLimitUpColumn) {
+function columnStatusTag(col: LimitUpThemeMatrixColumn) {
   const action = translateTagText(col.trade_action);
   if (action === "回避") return <Tag color="red">回避</Tag>;
   if (action === "主线参与") return <Tag color="green">主线参与</Tag>;
@@ -97,7 +60,7 @@ function columnStatusTag(col: ThemeLimitUpColumn) {
   return <Tag color="default">轮动</Tag>;
 }
 
-function renderThemeHead(col: ThemeLimitUpColumn, tradeDate?: string, subjectKeyToThemeName?: Map<string, string>) {
+function renderThemeHead(col: LimitUpThemeMatrixColumn, tradeDate?: string, subjectKeyToThemeName?: Map<string, string>) {
   const themeName = displayThemeName(col, subjectKeyToThemeName);
   const canNavigate = Boolean(col.subject_key && themeName !== "未归类" && col.subject_key !== "__independent__");
   return (
@@ -144,8 +107,8 @@ function renderBoardStocks(stocks: ThemeLimitUpStock[] | undefined, tradeDate?: 
   );
 }
 
-export default function MarketOverviewPanel({ marketOverview, tradeDate, subjectKeyToThemeName }: Props) {
-  const columns = marketOverview?.theme_limitup_matrix?.columns ?? [];
+export default function MarketOverviewPanel({ limitUpThemeMatrix, tradeDate, subjectKeyToThemeName }: Props) {
+  const columns = limitUpThemeMatrix?.columns ?? [];
   if (!columns.length) return null;
   const boardRows = [
     { board_count: 4, board_label: "4板" },
@@ -153,9 +116,9 @@ export default function MarketOverviewPanel({ marketOverview, tradeDate, subject
     { board_count: 2, board_label: "2板" },
     { board_count: 1, board_label: "首板" },
   ];
-  const matrixColumns: Array<ThemeLimitUpColumn & { board_groups: ThemeLimitUpBoardGroup[] }> = columns.map((col) => ({
+  const matrixColumns: Array<LimitUpThemeMatrixColumn & { board_groups: ThemeLimitUpBoardGroup[] }> = columns.map((col) => ({
     ...col,
-    board_groups: buildBoardGroups(col),
+    board_groups: col.board_groups || [],
   }));
 
   return (
@@ -163,8 +126,7 @@ export default function MarketOverviewPanel({ marketOverview, tradeDate, subject
       <h3 className="section-title recap-panel-title">
         涨停热点分布图
         <Tag color="gold" style={{ marginLeft: 8 }}>题材矩阵</Tag>
-        <Tag color="blue">{marketOverview?.limit_up_total ?? "--"} 涨停</Tag>
-        {typeof marketOverview?.limit_down_total === "number" && <Tag color="red">跌停 {marketOverview.limit_down_total}</Tag>}
+        <Tag color="blue">{matrixColumns.reduce((sum, col) => sum + Number(col.limit_up_count || 0), 0)} 涨停</Tag>
       </h3>
       <div className="workspace-note" style={{ marginBottom: 10 }}>
         展示方式：按题材列展示各板位涨停股，便于查看主线、分歧与首板扩散结构。
@@ -211,16 +173,11 @@ export default function MarketOverviewPanel({ marketOverview, tradeDate, subject
         </table>
       </div>
       <div className="workspace-note" style={{ marginTop: 8 }}>
-        统计口径：{translateCountMethod(marketOverview?.theme_limitup_matrix?.count_method)}；题材数 {columns.length} 个。
+        统计口径：按题材展示；题材数 {columns.length} 个。
       </div>
-      {marketOverview?.diagnostics && (
+      {limitUpThemeMatrix?.diagnostics && (
         <div className="workspace-note" style={{ marginTop: 4 }}>
-          诊断：主题 {String(marketOverview.diagnostics.theme_count ?? "--")}，股票 {String(marketOverview.diagnostics.stock_count ?? "--")}
-        </div>
-      )}
-      {marketOverview?.total_amount != null && (
-        <div className="workspace-note" style={{ marginTop: 4 }}>
-          成交额：{formatAmount(marketOverview.total_amount)}
+          诊断：主题 {String(limitUpThemeMatrix.diagnostics.theme_count ?? "--")}，股票 {String(limitUpThemeMatrix.diagnostics.candidate_count ?? "--")}
         </div>
       )}
     </div>
