@@ -356,7 +356,10 @@ def test_daily_review_v2_builder_emits_limit_up_theme_matrix_from_single_contrac
     assert matrix["diagnostics"]["source"] == "daily_review_v2.limit_up_theme_matrix"
     assert matrix["board_totals"]["4"] == 1
     assert matrix["board_totals"]["1"] == 1
-    assert [col["theme_name"] for col in matrix["columns"]] == ["PCB印制电路板"]
+    themes = [col["theme_name"] for col in matrix["columns"]]
+    assert themes == ["PCB印制电路板"]
+    assert "未归类" not in themes
+    assert "9017093" not in themes
     col = matrix["columns"][0]
     assert col["board_groups"][0]["board_count"] == 4
     assert col["board_groups"][0]["stock_count"] == 1

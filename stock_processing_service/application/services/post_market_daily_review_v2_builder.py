@@ -1271,7 +1271,7 @@ class PostMarketDailyReviewV2Builder:
         theme_name_map: dict[str, str] | None = None,
     ) -> dict[str, Any]:
         candidates = self._limit_up_source_candidates(recap_doc, theme_name_map=theme_name_map)
-        mainline_index = self._build_mainline_stock_index(recap_doc)
+        mainline_index = self._build_mainline_stock_index(recap_doc, theme_name_map)
         mainline_order = self._mainline_theme_order_map(recap_doc, theme_name_map)
         driver_index = self._limit_up_driver_event_index(theme_driver_events, theme_name_map)
         columns_map: dict[str, dict[str, Any]] = {}
@@ -1676,9 +1676,12 @@ class PostMarketDailyReviewV2Builder:
 
         return candidates
 
-    def _build_mainline_stock_index(self, recap_doc: dict[str, Any]) -> dict[str, dict[str, Any]]:
+    def _build_mainline_stock_index(
+        self,
+        recap_doc: dict[str, Any],
+        theme_name_map: dict[str, str] | None = None,
+    ) -> dict[str, dict[str, Any]]:
         index: dict[str, dict[str, Any]] = {}
-        theme_name_map = self._build_theme_name_map(recap_doc)
         rows = self._list(recap_doc.get("mainline_daily_states"))
         for order, row in enumerate(rows):
             if not isinstance(row, dict):
@@ -1801,13 +1804,18 @@ class PostMarketDailyReviewV2Builder:
                     if key not in info or not info.get(key):
                         info[key] = base_info.get(key)
                 info["priority"] = max(float(info.get("priority") or 0.0), float(base_info.get("priority") or 0.0))
-            self._register_mainline_index_value(index, subject_key, info, priority=priority + 100.0)
+            if not self._is_placeholder_theme_name(subject_key):
+                self._register_mainline_index_value(index, subject_key, info, priority=priority + 100.0)
             self._register_mainline_index_value(index, mainline_name, info, priority=priority + 90.0)
-            self._register_mainline_index_value(index, self._text(row.get("mainline_id")), info, priority=priority + 85.0)
+            mainline_id = self._text(row.get("mainline_id"))
+            if not self._is_placeholder_theme_name(mainline_id):
+                self._register_mainline_index_value(index, mainline_id, info, priority=priority + 85.0)
             self._register_mainline_index_value(index, self._text(row.get("stock_id")), info, priority=priority + 80.0)
             self._register_mainline_index_value(index, self._text(row.get("stock_code")), info, priority=priority + 80.0)
             self._register_mainline_index_value(index, self._text(row.get("stock_name")), info, priority=priority + 80.0)
-            self._register_mainline_index_value(index, self._text(row.get("theme_name")), info, priority=priority + 70.0)
+            raw_theme_name = self._text(row.get("theme_name"))
+            if not self._is_placeholder_theme_name(raw_theme_name):
+                self._register_mainline_index_value(index, raw_theme_name, info, priority=priority + 70.0)
             for field in nested_stock_fields:
                 for stock in self._list(row.get(field)):
                     if not isinstance(stock, dict):
@@ -1815,8 +1823,12 @@ class PostMarketDailyReviewV2Builder:
                     self._register_mainline_index_value(index, self._text(stock.get("stock_id")), info, priority=priority + 60.0)
                     self._register_mainline_index_value(index, self._text(stock.get("stock_code")), info, priority=priority + 60.0)
                     self._register_mainline_index_value(index, self._text(stock.get("stock_name")), info, priority=priority + 60.0)
-                    self._register_mainline_index_value(index, self._text(stock.get("subject_key")), info, priority=priority + 60.0)
-                    self._register_mainline_index_value(index, self._text(stock.get("theme_name")), info, priority=priority + 60.0)
+                    nested_subject_key = self._text(stock.get("subject_key"))
+                    if not self._is_placeholder_theme_name(nested_subject_key):
+                        self._register_mainline_index_value(index, nested_subject_key, info, priority=priority + 60.0)
+                    nested_theme_name = self._text(stock.get("theme_name"))
+                    if not self._is_placeholder_theme_name(nested_theme_name):
+                        self._register_mainline_index_value(index, nested_theme_name, info, priority=priority + 60.0)
                     self._register_mainline_index_value(index, self._text(stock.get("mainline_name")), info, priority=priority + 60.0)
 
     @staticmethod
