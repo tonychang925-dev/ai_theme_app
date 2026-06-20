@@ -1275,7 +1275,6 @@ class PostMarketDailyReviewV2Builder:
         mainline_order = self._mainline_theme_order_map(recap_doc, theme_name_map)
         driver_index = self._limit_up_driver_event_index(theme_driver_events, theme_name_map)
         columns_map: dict[str, dict[str, Any]] = {}
-        assigned_stock_keys: set[str] = set()
         board_totals = {"4": 0, "3": 0, "2": 0, "1": 0}
         unclassified_board_rows: list[dict[str, Any]] = []
         duplicate_stock_rows: list[dict[str, Any]] = []
@@ -1287,17 +1286,6 @@ class PostMarketDailyReviewV2Builder:
             board_count = 4 if board_count >= 4 else board_count
             board_totals[str(board_count)] = board_totals.get(str(board_count), 0) + 1
             stock_identity = self._stock_identity_key(row)
-            if stock_identity and stock_identity in assigned_stock_keys:
-                duplicate_stock_rows.append({
-                    "stock_id": self._text(row.get("stock_id")),
-                    "stock_name": self._text(row.get("stock_name")),
-                    "subject_key": self._text(row.get("subject_key")),
-                    "theme_name": self._text(row.get("theme_name")),
-                    "board_count": board_count,
-                    "reason": "duplicate_global_assignment",
-                    "source_kind": self._text(row.get("source_kind")),
-                })
-                continue
             resolved = self._resolve_limit_up_theme_for_stock(row, mainline_index, theme_name_map)
             if not resolved.get("is_classified"):
                 unclassified_board_rows.append({
@@ -1360,7 +1348,6 @@ class PostMarketDailyReviewV2Builder:
                 continue
             if stock_identity:
                 bucket_stock_keys.add(stock_identity)
-                assigned_stock_keys.add(stock_identity)
             bucket["_board_groups_map"][board_count].append(stock_row)
             bucket["_board_stock_total"] += 1
             if len(bucket["focus_stocks"]) < 20:
@@ -1616,7 +1603,7 @@ class PostMarketDailyReviewV2Builder:
         theme_name_map: dict[str, str] | None = None,
     ) -> list[dict[str, Any]]:
         candidates: list[dict[str, Any]] = []
-        seen: set[tuple[str, str]] = set()
+        seen: set[tuple[str, str, str, int]] = set()
 
         def add_candidate(stock: dict[str, Any], subject_key: str, theme_name: str, source_kind: str, limit_up_count: int | None = None, active_mainline: bool = False, lifecycle_state: str = "", trade_action: str = "") -> None:
             stock_id = self._text(self._first_present(stock, "stock_id", "stock_code", "stock_key"))
@@ -1625,8 +1612,12 @@ class PostMarketDailyReviewV2Builder:
             if board_count is None or board_count <= 0:
                 return
             display_theme_name = self._display_theme_name(theme_name or subject_key, subject_key, theme_name_map)
-            theme_key = self._theme_key(subject_key, display_theme_name, theme_name)
-            dedupe_key = (theme_key or theme_name or stock_id, stock_id or stock_name)
+            dedupe_key = (
+                source_kind,
+                stock_id or stock_name,
+                display_theme_name or theme_name or subject_key,
+                int(board_count),
+            )
             if dedupe_key in seen:
                 return
             seen.add(dedupe_key)
@@ -1759,6 +1750,12 @@ class PostMarketDailyReviewV2Builder:
             rows=self._list(decision.get("strong_stock_pool_reviews")),
             theme_name_map=theme_name_map,
             priority=55.0,
+        )
+        self._index_stock_rows(
+            index=index,
+            rows=self._context_rows(recap_doc, "stock_facts"),
+            theme_name_map=theme_name_map,
+            priority=50.0,
         )
         ladder = self._pass_through_dict(recap_doc, "limit_up_ladder")
         self._index_stock_rows(

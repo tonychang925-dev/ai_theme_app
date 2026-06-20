@@ -507,6 +507,72 @@ def test_daily_review_v2_builder_records_duplicate_stock_rows_in_diagnostics() -
     assert [col["theme_name"] for col in matrix["columns"]] == ["PCB印制电路板"]
 
 
+def test_daily_review_v2_builder_uses_report_context_stock_facts_to_resolve_unclassified_stock() -> None:
+    recap_doc = {
+        "report_context": {
+            "theme_name_map": {"pcb": "PCB印制电路板"},
+            "stock_facts": [
+                {
+                    "stock_id": "600353.SH",
+                    "stock_name": "旭光电子",
+                    "subject_key": "pcb",
+                    "theme_name": "PCB印制电路板",
+                    "board_count": 4,
+                }
+            ],
+        },
+        "limit_up_ladder": {
+            "board_rows": [
+                {
+                    "board_count": 4,
+                    "stock_count": 1,
+                    "stocks": [
+                        {
+                            "stock_id": "600353.SH",
+                            "stock_name": "旭光电子",
+                            "subject_key": "__independent__",
+                            "theme_name": "未归类",
+                            "board_count": 4,
+                        }
+                    ],
+                }
+            ]
+        },
+        "mainline_daily_states": [
+            {
+                "mainline_id": "pcb",
+                "canonical_subject_key": "pcb",
+                "mainline_name": "PCB印制电路板",
+                "lifecycle_state": "divergence",
+                "mainline_strength_score": 86.2,
+                "fade_risk_score": 27.5,
+                "strong_pool_count": 8,
+                "d1_count": 3,
+                "focus_count": 0,
+                "focus_stocks": [
+                    {"stock_id": "1", "stock_name": "A", "subject_key": "pcb", "theme_name": "PCB印制电路板"},
+                ],
+                "action_advice": "观察分歧修复",
+                "conclusion": "主线仍有资金，但处于分歧阶段",
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 6, 18),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.stock_facts.resolve",
+    )
+
+    matrix = payload["limit_up_theme_matrix"]
+    assert matrix["board_totals"]["4"] == 1
+    assert matrix["diagnostics"]["unclassified_board_count"] == 0
+    assert [col["theme_name"] for col in matrix["columns"]] == ["PCB印制电路板"]
+    assert matrix["columns"][0]["board_groups"][0]["stock_count"] == 1
+    assert matrix["columns"][0]["board_groups"][0]["stocks"][0]["stock_name"] == "旭光电子"
+
+
 def test_daily_review_v2_builder_uses_capital_reviews_for_seat_money_fallback() -> None:
     recap_doc = {
         "capital_reviews": [
