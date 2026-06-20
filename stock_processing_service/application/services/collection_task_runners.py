@@ -414,6 +414,49 @@ class BuildDragonTigerObjectRunner:
             )
 
 
+class BuildHotMoneyTradingActivityRunner:
+    """游资动向活动表构建 Runner — 复用落表脚本的标准入口。"""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import sys as _sys
+
+            token = context.env.get("TUSHARE_TOKEN", "")
+            payload = context.payload or {}
+            options = payload.get("hot_money_activity") or {}
+            force_refresh = bool(options.get("force_refresh", False))
+            argv = ["build_hot_money_trading_activity.py", "--trade-date", context.trade_date]
+            if token:
+                argv.extend(["--token", token])
+            if force_refresh:
+                argv.append("--force-refresh")
+
+            _orig = _sys.argv[:]
+            _sys.argv = argv
+            try:
+                from database_service.scripts.build_hot_money_trading_activity import main_async
+                exit_code = await main_async()
+            finally:
+                _sys.argv = _orig
+
+            logs = [f"hot_money_activity_build status={'success' if (exit_code or 0) == 0 else 'failed'}"]
+            logs.append(f"hot_money_trading_activity exit_code={exit_code}")
+
+            return CollectionTaskResult(
+                status="success" if (exit_code or 0) == 0 else "failed",
+                current_label=f"游资动向活动表构建完成 (exit={exit_code})",
+                logs=logs,
+                error_message="" if (exit_code or 0) == 0 else f"hot_money_trading_activity exit_code={exit_code}",
+            )
+        except Exception as e:
+            return CollectionTaskResult(
+                status="failed",
+                current_label="游资动向活动表构建异常",
+                logs=["hot_money_activity_build status=failed"],
+                error_message=f"{type(e).__name__}: {e!r}",
+            )
+
+
 class AuctionSnapshotRunner:
     """竞价快照 Runner — 委托到 BuildAuctionSnapshotJob（新链 Job 架构）。"""
 

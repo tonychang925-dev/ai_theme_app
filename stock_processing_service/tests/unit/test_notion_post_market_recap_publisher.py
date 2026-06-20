@@ -31,8 +31,7 @@ def test_notion_post_market_recap_publisher_places_daily_recap_story_first() -> 
     headings = [text for block in blocks if (text := _heading_text(block))]
     expected = [
         "今日复盘要点",
-        "连板梯队和涨停分布",
-        "涨停事件与题材催化",
+        "涨停热点总览",
         "股价新高与行业趋势",
         "机构席位和游资动向",
         "次日观察与交易建议",

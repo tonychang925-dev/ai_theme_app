@@ -178,6 +178,8 @@ class CollectionJobManager:
         # ── 其余采集/构建任务 ──
         if options.get("dragon_tiger", True):
             tasks.append(CollectionTaskState(key="dragon_tiger", title="龙虎榜构建"))
+        if options.get("hot_money_activity", True):
+            tasks.append(CollectionTaskState(key="hot_money_activity", title="游资动向活动表构建"))
         if options.get("f10_capital", False):
             tasks.append(CollectionTaskState(key="f10_capital", title="F10资金动向快照"))
         if options.get("index_kline", True):

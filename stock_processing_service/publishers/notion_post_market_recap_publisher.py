@@ -568,8 +568,8 @@ class NotionPostMarketRecapPublisher:
             blocks.append(B.paragraph(f"次日观察：{next_day_strategy}"))
         blocks.append(B.divider())
 
-        # 2. 连板梯队和涨停分布
-        blocks.append(B.heading_2("连板梯队和涨停分布"))
+        # 2. 涨停热点总览
+        blocks.append(B.heading_2("涨停热点总览"))
         ladder_summary = cls._safe_str(ladder.get("summary"), "暂无结构化连板梯队数据")
         blocks.append(B.callout(ladder_summary, icon="📈"))
         board_rows = ladder.get("board_rows") if isinstance(ladder.get("board_rows"), list) else []
@@ -601,8 +601,6 @@ class NotionPostMarketRecapPublisher:
             blocks.extend(B.table(headers, rows))
         blocks.append(B.divider())
 
-        # 3. 涨停事件与题材催化
-        blocks.append(B.heading_2("涨停事件与题材催化"))
         event_summary = cls._safe_str(theme_events.get("summary"), "暂无结构化涨停题材事件")
         blocks.append(B.callout(event_summary, icon="🔥"))
         event_rows = theme_events.get("rows") if isinstance(theme_events.get("rows"), list) else []
@@ -635,7 +633,7 @@ class NotionPostMarketRecapPublisher:
             blocks.extend(B.table(headers, rows))
         blocks.append(B.divider())
 
-        # 4. 股价新高与行业趋势
+        # 3. 股价新高与行业趋势
         blocks.append(B.heading_2("股价新高与行业趋势"))
         new_high_summary_text = cls._safe_str(new_high.get("summary"), "暂无结构化创新高数据")
         blocks.append(B.callout(new_high_summary_text, icon="📊"))
@@ -660,9 +658,13 @@ class NotionPostMarketRecapPublisher:
             blocks.extend(B.table(headers, rows))
         blocks.append(B.divider())
 
-        # 5. 机构席位和游资动向
+        # 4. 机构席位和游资动向
         blocks.append(B.heading_2("机构席位和游资动向"))
-        seat_summary_text = cls._safe_str(seat_money.get("summary"), "暂无结构化机构席位/游资数据")
+        seat_summary_text = cls._safe_str(seat_money.get("summary"), "")
+        if not seat_summary_text or seat_summary_text == "--":
+            seat_summary_text = cls._build_seat_money_fallback_summary(seat_money)
+        if not seat_summary_text:
+            seat_summary_text = "暂无结构化机构席位/游资数据"
         blocks.append(B.callout(seat_summary_text, icon="💰"))
         institution_buys = seat_money.get("institution_top_buys") if isinstance(seat_money.get("institution_top_buys"), list) else []
         hot_money_buys = seat_money.get("hot_money_top_buys") if isinstance(seat_money.get("hot_money_top_buys"), list) else []
@@ -711,6 +713,39 @@ class NotionPostMarketRecapPublisher:
         blocks.append(B.divider())
 
         return blocks
+
+    @classmethod
+    def _build_seat_money_fallback_summary(cls, seat_money: dict[str, Any]) -> str:
+        if not isinstance(seat_money, dict):
+            return ""
+        institution_names = [
+            cls._safe_str(row.get("stock_name"), "")
+            for row in (seat_money.get("institution_top_buys") or [])[:3]
+            if isinstance(row, dict) and cls._safe_str(row.get("stock_name"), "")
+        ]
+        hot_money_names = [
+            cls._safe_str(row.get("stock_name"), "")
+            for row in (seat_money.get("hot_money_top_buys") or [])[:3]
+            if isinstance(row, dict) and cls._safe_str(row.get("stock_name"), "")
+        ]
+        theme_names = [
+            cls._safe_str(row.get("theme_name"), "")
+            for row in (seat_money.get("theme_rows") or [])[:3]
+            if isinstance(row, dict) and cls._safe_str(row.get("theme_name"), "")
+        ]
+        if not institution_names and not hot_money_names and not theme_names:
+            return ""
+        parts: list[str] = []
+        if institution_names:
+            parts.append(f"机构关注 {'、'.join(institution_names)}")
+        if hot_money_names:
+            parts.append(f"游资关注 {'、'.join(hot_money_names)}")
+        cohesion = cls._safe_str(seat_money.get("cohesion"), "")
+        if cohesion and cohesion != "--":
+            parts.append(f"资金{cohesion}")
+        if theme_names:
+            parts.append(f"主题聚焦 {'、'.join(theme_names)}")
+        return "，".join(parts)
 
     # ── 主发布入口 ─────────────────────────────────────────────
 

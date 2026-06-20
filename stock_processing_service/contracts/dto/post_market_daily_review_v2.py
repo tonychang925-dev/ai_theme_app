@@ -155,6 +155,46 @@ class D1Narrative(TypedDict, total=False):
     risk_warning: str
     source: str
     diagnostics: dict[str, Any]
+
+
+class SeatMoneyActivityEntry(TypedDict, total=False):
+    stock_id: str
+    stock_name: str
+    theme_name: str
+    subject_key: str
+    buy_amount: float | None
+    sell_amount: float | None
+    net_amount: float | None
+    reason: str | None
+    rank_order: int | None
+    is_theme_leader: bool
+    style_tags: list[str]
+
+
+class HotMoneySeatRow(TypedDict, total=False):
+    hot_money_name: str
+    buy_entries: list[SeatMoneyActivityEntry]
+    sell_entries: list[SeatMoneyActivityEntry]
+    buy_net: float | None
+    sell_net: float | None
+    net_buy: float | None
+
+
+class SeatMoneyInstitutionRow(TypedDict, total=False):
+    stock_id: str
+    stock_name: str
+    close_price: float | None
+    pct_change: float | None
+    buy_seat_count: int | None
+    sell_seat_count: int | None
+    institution_buy_amount: float | None
+    institution_sell_amount: float | None
+    net_buy: float | None
+    theme_name: str
+    reason: str | None
+    seat_summary: list[dict[str, Any]]
+
+
 class PostMarketDailyReviewV2(TypedDict):
     schema_version: Literal["daily_review_v2"]
     trade_date: str
@@ -171,6 +211,7 @@ class PostMarketDailyReviewV2(TypedDict):
     mainline_narrative: MainlineNarrative
     d1_narrative: D1Narrative
     market_overview_review: dict[str, Any]
+    daily_recap_essentials: dict[str, Any]
     theme_reviews: list[dict[str, Any]]
     theme_capital_reviews: list[dict[str, Any]]
     strong_stock_reviews: list[dict[str, Any]]
@@ -179,6 +220,10 @@ class PostMarketDailyReviewV2(TypedDict):
     abnormal_reviews: list[dict[str, Any]]
     money_flow_reviews: list[dict[str, Any]]
     dragon_tiger_reviews: list[dict[str, Any]]
+    limit_up_ladder: dict[str, Any]
+    limit_up_theme_events: dict[str, Any]
+    new_high_summary: dict[str, Any]
+    seat_money_summary: dict[str, Any]
     trading_principle: dict[str, Any]
     watchlists: dict[str, Any]
     diagnostics: DailyReviewDiagnostics

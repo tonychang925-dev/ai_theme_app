@@ -372,7 +372,7 @@ def test_post_market_narrative_composer_generates_daily_recap_essentials() -> No
 
     assert essentials["headline"]
     assert essentials["summary_points"]
-    assert "连板梯队和涨停分布" in essentials["section_order"]
+    assert "涨停热点总览" in essentials["section_order"]
     assert "次日观察" in essentials["summary_points"][-1]
     assert essentials["diagnostics"]["has_ladder"] is True
     assert essentials["diagnostics"]["has_theme_events"] is True

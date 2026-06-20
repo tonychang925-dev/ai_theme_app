@@ -188,6 +188,12 @@ class CollectionCommandPlanner:
         if task_key == "dragon_tiger":
             return CollectionTaskPlan(runner_key="dragon_tiger.object")
 
+        if task_key == "hot_money_activity":
+            return CollectionTaskPlan(
+                runner_key="hot_money_activity.build",
+                pre_logs=["hot_money_activity: 构建游资席位活动表 hot_money_trading_activity"],
+            )
+
         if task_key == "f10_capital":
             stock_ids = options.get("stock_ids") or payload.get("stock_ids") or []
             stock_count = len(stock_ids) if isinstance(stock_ids, list) else 0

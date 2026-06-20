@@ -763,6 +763,15 @@ class BuildPostMarketRecapJob:
                 strong_stock_reviews=recap_doc.get("strong_stock_reviews") or [],
             )
             recap_doc.update(decision_payload)
+            recap_doc["report_context"] = self._materialize_report_context_stock_facts(
+                recap_doc=recap_doc,
+                base_report_context=report_context,
+                stock_facts_by_subject=(
+                    recap_doc.get("report_context").get("stock_facts_by_subject")
+                    if isinstance(recap_doc.get("report_context"), dict)
+                    else {}
+                ),
+            )
 
             confirmed_mainline_hotspots = self._build_confirmed_mainline_hotspots(recap_doc.get("active_mainline_universe") or {})
             if confirmed_mainline_hotspots:
@@ -898,6 +907,12 @@ class BuildPostMarketRecapJob:
                 diagnostics = {}
                 recap_doc["diagnostics"] = diagnostics
             diagnostics["f10_capital"] = f10_diag
+
+            report_context = dict(recap_doc.get("report_context") or {})
+            theme_name_map = self._build_canonical_theme_name_map(recap_doc)
+            if theme_name_map:
+                report_context["theme_name_map"] = theme_name_map
+                recap_doc["report_context"] = report_context
 
             recap_report = self._report_builder.build(recap_doc)
             recap_doc["report"] = recap_report
@@ -1301,6 +1316,14 @@ class BuildPostMarketRecapJob:
                 lookback_days=7,
             )
             fc = fact_ctx.to_dict()
+            persisted_report_context = dict(recap_doc.get("report_context") or report_context or {})
+            persisted_stock_facts = self._materialize_stock_facts_by_subject(
+                fc.get("stock_facts_by_subject") or {}
+            )
+            persisted_report_context["stock_facts_by_subject"] = fc.get("stock_facts_by_subject") or {}
+            if persisted_stock_facts:
+                persisted_report_context["stock_facts"] = persisted_stock_facts
+            recap_doc["report_context"] = persisted_report_context
 
             # ── run logic chain ──
             logic_builder = MainlineLogicChainBuilder()
@@ -1926,6 +1949,132 @@ class BuildPostMarketRecapJob:
                 "stock_facts": sf_list,
             }
 
+        return result
+
+    @staticmethod
+    def _materialize_stock_facts_by_subject(
+        stock_facts_by_subject: dict[str, list[dict[str, Any]]] | None,
+    ) -> list[dict[str, Any]]:
+        """Flatten structured stock facts into the recap snapshot contract.
+
+        This preserves the authoritative per-subject fact layer so downstream
+        report builders can consume `report_context.stock_facts` directly.
+        """
+        rows: list[dict[str, Any]] = []
+        for subject_key, facts in (stock_facts_by_subject or {}).items():
+            if not isinstance(facts, list):
+                continue
+            for fact in facts:
+                if not isinstance(fact, dict):
+                    continue
+                row = dict(fact)
+                if not str(row.get("subject_key") or "").strip():
+                    row["subject_key"] = str(subject_key)
+                rows.append(row)
+
+        rows.sort(
+            key=lambda item: (
+                str(item.get("subject_key") or ""),
+                -float(item.get("leader_composite_score") or 0),
+                -float(item.get("leader_capital_score") or 0),
+                -float(item.get("pct_chg") or 0),
+                str(item.get("stock_id") or ""),
+            ),
+        )
+        return rows
+
+    @staticmethod
+    def _materialize_report_context_stock_facts(
+        *,
+        recap_doc: dict[str, Any],
+        base_report_context: dict[str, Any],
+        stock_facts_by_subject: dict[str, list[dict[str, Any]]] | None,
+    ) -> dict[str, Any]:
+        """Persist the structured stock fact layer into report_context.
+
+        This keeps the recap snapshot contract compatible with downstream
+        board-count consumers without falling back to section parsing.
+        """
+        merged_report_context = dict(base_report_context or {})
+        rows = BuildPostMarketRecapJob._materialize_stock_facts_by_subject(stock_facts_by_subject)
+
+        def append_rows(source_rows: Any, *, default_subject_key: str = "") -> None:
+            if not isinstance(source_rows, list):
+                return
+            for row in source_rows:
+                if not isinstance(row, dict):
+                    continue
+                stock_id = str(row.get("stock_id") or row.get("stock_code") or "").strip()
+                stock_name = str(row.get("stock_name") or "").strip()
+                if not stock_id and not stock_name:
+                    continue
+                item = dict(row)
+                if default_subject_key and not str(item.get("subject_key") or "").strip():
+                    item["subject_key"] = default_subject_key
+                rows.append(item)
+
+        append_rows(recap_doc.get("strong_stock_reviews") or [])
+        decision = recap_doc.get("post_market_decision_v2")
+        if isinstance(decision, dict):
+            append_rows(decision.get("strong_stock_pool_reviews") or [])
+
+        # Retain only structured rows that can participate in board grouping.
+        normalized: list[dict[str, Any]] = []
+        seen: set[tuple[str, str]] = set()
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            stock_id = str(row.get("stock_id") or row.get("stock_code") or "").strip()
+            stock_name = str(row.get("stock_name") or "").strip()
+            board_count = row.get("board_count") or row.get("limit_up_days") or row.get("max_consecutive_limit_up_days")
+            try:
+                board_count_int = int(float(board_count))
+            except Exception:
+                board_count_int = 0
+            if board_count_int <= 0:
+                continue
+            dedupe_key = (stock_id or stock_name, str(board_count_int))
+            if dedupe_key in seen:
+                continue
+            seen.add(dedupe_key)
+            item = dict(row)
+            item["board_count"] = 4 if board_count_int >= 4 else board_count_int
+            if not str(item.get("subject_key") or "").strip():
+                item["subject_key"] = str(row.get("subject_key") or "").strip()
+            normalized.append(item)
+
+        normalized.sort(
+            key=lambda item: (
+                str(item.get("subject_key") or ""),
+                -float(item.get("leader_composite_score") or 0),
+                -float(item.get("leader_capital_score") or 0),
+                -float(item.get("pct_chg") or 0),
+                str(item.get("stock_id") or item.get("stock_code") or ""),
+            ),
+        )
+        if normalized:
+            merged_report_context["stock_facts"] = normalized
+        merged_report_context["stock_facts_by_subject"] = stock_facts_by_subject or {}
+        return merged_report_context
+
+    @staticmethod
+    def _build_canonical_theme_name_map(recap_doc: dict[str, Any]) -> dict[str, str]:
+        """Build the canonical subject_key -> mainline_name map."""
+        result: dict[str, str] = {}
+        active_universe = recap_doc.get("active_mainline_universe")
+        active_mainlines = []
+        if isinstance(active_universe, dict):
+            active_mainlines = list(active_universe.get("active_mainlines") or [])
+        for ml in active_mainlines:
+            if not isinstance(ml, dict):
+                continue
+            canonical_key = str(ml.get("canonical_subject_key") or "").strip()
+            mainline_name = str(ml.get("mainline_name") or "").strip()
+            mainline_id = str(ml.get("mainline_id") or "").strip()
+            if canonical_key and mainline_name:
+                result.setdefault(canonical_key, mainline_name)
+            if mainline_id and mainline_name:
+                result.setdefault(mainline_id, mainline_name)
         return result
 
     @staticmethod

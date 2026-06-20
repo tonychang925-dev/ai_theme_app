@@ -34,7 +34,7 @@ class PostMarketHotspotOverviewComposer:
             bucket = self._bucket(buckets, key)
             source_tables.add("theme_capital_reviews")
             bucket["subject_key"] = bucket["subject_key"] or self._clean_text(row.get("subject_key"), "")
-            bucket["theme_name"] = bucket["theme_name"] or self._clean_text(row.get("theme_name"), bucket["subject_key"] or "题材")
+            bucket["theme_name"] = bucket["theme_name"] or self._display_theme_name(row.get("theme_name"), bucket["subject_key"] or "题材")
             bucket["total_inflow"] = self._prefer_number(bucket["total_inflow"], self._float_or_none(row.get("total_inflow")))
             bucket["top3_inflow"] = self._prefer_number(bucket["top3_inflow"], self._float_or_none(row.get("top3_inflow")))
             bucket["leader_inflow"] = self._prefer_number(bucket["leader_inflow"], self._float_or_none(row.get("leader_inflow")))
@@ -52,7 +52,7 @@ class PostMarketHotspotOverviewComposer:
             bucket = self._bucket(buckets, key)
             source_tables.add("market_overview_review")
             bucket["subject_key"] = bucket["subject_key"] or self._clean_text(row.get("subject_key"), "")
-            bucket["theme_name"] = bucket["theme_name"] or self._clean_text(row.get("theme_name"), bucket["subject_key"] or "题材")
+            bucket["theme_name"] = bucket["theme_name"] or self._display_theme_name(row.get("theme_name"), bucket["subject_key"] or "题材")
             bucket["limit_up_count"] = self._prefer_number(bucket["limit_up_count"], self._int_or_none(row.get("limit_up_count")))
             bucket["lifecycle_state"] = bucket["lifecycle_state"] or self._clean_text(row.get("lifecycle_state"), "")
             bucket["action_advice"] = bucket["action_advice"] or self._clean_text(row.get("trade_action"), "")
@@ -68,7 +68,7 @@ class PostMarketHotspotOverviewComposer:
             bucket = self._bucket(buckets, key)
             source_tables.add("mainline_daily_states")
             bucket["subject_key"] = bucket["subject_key"] or self._clean_text(row.get("canonical_subject_key"), "")
-            bucket["theme_name"] = bucket["theme_name"] or self._clean_text(row.get("mainline_name"), bucket["subject_key"] or "主线")
+            bucket["theme_name"] = bucket["theme_name"] or self._display_theme_name(row.get("mainline_name"), bucket["subject_key"] or "主线")
             bucket["lifecycle_state"] = bucket["lifecycle_state"] or self._clean_text(row.get("lifecycle_state"), "")
             bucket["action_advice"] = bucket["action_advice"] or self._clean_text(row.get("action_advice"), "")
             bucket["mainline_name"] = bucket["mainline_name"] or self._clean_text(row.get("mainline_name"), "")
@@ -96,7 +96,10 @@ class PostMarketHotspotOverviewComposer:
             bucket = self._bucket(buckets, key)
             source_tables.add("post_market_decision_v2.strong_stock_pool_reviews")
             bucket["subject_key"] = bucket["subject_key"] or self._clean_text(row.get("subject_key"), "")
-            bucket["theme_name"] = bucket["theme_name"] or self._clean_text(row.get("theme_name") or row.get("mainline_name") or row.get("resolved_theme_name"), bucket["subject_key"] or "题材")
+            bucket["theme_name"] = bucket["theme_name"] or self._display_theme_name(
+                row.get("theme_name") or row.get("mainline_name") or row.get("resolved_theme_name"),
+                bucket["subject_key"] or "题材",
+            )
             bucket["strong_stock_pool_rows"].append(row)
             bucket["source_flags"].add("post_market_decision_v2.strong_stock_pool_reviews")
             bucket["strong_stock_count"] = self._int_or_none(len(bucket["strong_stock_pool_rows"]))
@@ -271,6 +274,16 @@ class PostMarketHotspotOverviewComposer:
     def _clean_text(value: Any, default: str = "--") -> str:
         text = str(value or "").strip()
         return text or default
+
+    @staticmethod
+    def _display_theme_name(value: Any, default: str = "题材") -> str:
+        text = str(value or "").strip()
+        if not text:
+            return default
+        lowered = text.lower()
+        if lowered in {"__independent__", "independent", "unknown"} or text.startswith("__"):
+            return "未归类"
+        return text
 
     @staticmethod
     def _theme_key(*values: Any) -> str:

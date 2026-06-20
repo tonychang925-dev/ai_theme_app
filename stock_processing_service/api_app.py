@@ -5,6 +5,7 @@ import importlib.metadata
 import importlib.util
 import logging
 import os
+import fcntl
 import re
 import sys
 import time
@@ -63,6 +64,7 @@ logger = logging.getLogger(__name__)
 
 PRE_MARKET_CONFIRM_NOT_READY_MESSAGE = "9:25分之后才能进行盘前确认！"
 REALTIME_AUCTION_CACHE_PREFIX = "sps:w2s:pre_market_auction"
+SPS_SINGLETON_LOCK_PATH = Path(os.getenv("SPS_SINGLETON_LOCK_PATH", "/tmp/ai_theme_app_sps.lock"))
 
 
 def _db_name() -> str:
@@ -77,6 +79,37 @@ def _redis_url() -> str:
     if not v.startswith(("redis://", "rediss://", "unix://")):
         raise RuntimeError(f"Invalid REDIS_URL: {v!r}")
     return v
+
+
+def _acquire_sps_singleton_lock() -> int:
+    """Enforce one live SPS instance across all ports."""
+    SPS_SINGLETON_LOCK_PATH.parent.mkdir(parents=True, exist_ok=True)
+    fd = os.open(str(SPS_SINGLETON_LOCK_PATH), os.O_RDWR | os.O_CREAT, 0o644)
+    try:
+        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError as exc:
+        os.close(fd)
+        raise RuntimeError(
+            f"SPS singleton lock already held: {SPS_SINGLETON_LOCK_PATH}. "
+            "Only one stock_processing_service.api_app instance may run at a time."
+        ) from exc
+    os.ftruncate(fd, 0)
+    os.write(fd, f"pid={os.getpid()}\n".encode("utf-8"))
+    os.fsync(fd)
+    return fd
+
+
+def _release_sps_singleton_lock(fd: int | None) -> None:
+    if fd is None:
+        return
+    try:
+        fcntl.flock(fd, fcntl.LOCK_UN)
+    except Exception:
+        pass
+    try:
+        os.close(fd)
+    except Exception:
+        pass
 
 
 async def _init_stock_match_engine_background(app: FastAPI) -> None:
@@ -128,6 +161,7 @@ async def _init_stock_match_engine_background(app: FastAPI) -> None:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    app.state.singleton_lock_fd = _acquire_sps_singleton_lock()
     cfg = DatabaseConfig(db_type=DatabaseType.POSTGRESQL, postgres_database=_db_name())
     gw = await DatabaseGateway.initialize(config=cfg, auto_warm_cache=False)
 
@@ -276,6 +310,8 @@ async def lifespan(app: FastAPI):
         phase1_close = getattr(app.state.phase1_repo, "close", None)
         if callable(phase1_close):
             await phase1_close()
+        _release_sps_singleton_lock(getattr(app.state, "singleton_lock_fd", None))
+        app.state.singleton_lock_fd = None
 
 
 app = FastAPI(title="stock_processing_service_read_api", version="0.1.0", lifespan=lifespan)
@@ -2220,7 +2256,7 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
     )
 
     builder = PostMarketDailyReviewV2Builder()
-    row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
+    row = await _fetch_latest_post_market_recap_snapshot_row(d)
     if not row:
         return builder.build(trade_date=d, recap_doc=None)
 
@@ -2229,15 +2265,15 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
     if not isinstance(recap_doc, dict):
         recap_doc = {}
 
-    existing = recap_doc.get("daily_review_v2")
-    if isinstance(existing, dict) and existing.get("schema_version") == "daily_review_v2":
-        v2 = existing
-    else:
-        v2 = builder.build(
-            trade_date=d,
-            recap_doc=recap_doc,
-            recap_snapshot_version=str(row.get("snapshot_version") or ""),
-        )
+    recap_doc = await _enrich_recap_doc_with_limit_up_board_counts(d, recap_doc)
+    recap_doc = await _enrich_recap_doc_with_new_high_summary(d, recap_doc)
+    recap_doc = await _enrich_recap_doc_with_seat_money_context(d, recap_doc)
+    structured_v2 = builder.build(
+        trade_date=d,
+        recap_doc=recap_doc,
+        recap_snapshot_version=str(row.get("snapshot_version") or ""),
+    )
+    v2 = structured_v2
 
     # ── PR-14A: enrich with engine report on every read ──
     try:
@@ -2248,8 +2284,13 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
         composer_input = {**recap_doc, **v2}
         engine_report = composer.compose(composer_input)
         v2 = {**v2, **engine_report}
+        for key in ("daily_recap_essentials", "limit_up_ladder", "limit_up_theme_events", "new_high_summary", "seat_money_summary"):
+            if key in structured_v2:
+                v2[key] = structured_v2[key]
     except Exception:
         pass
+
+    v2 = await _enrich_v2_theme_names(v2, d)
 
     v2["watchlists"] = await _build_one_to_two_watchlists(d)
 
@@ -2271,7 +2312,7 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
         PostMarketDailyReviewV2Builder,
     )
 
-    row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
+    row = await _fetch_latest_post_market_recap_snapshot_row(d)
     builder = PostMarketDailyReviewV2Builder()
     if not row:
         v2 = builder.build(trade_date=d, recap_doc=None)
@@ -2289,6 +2330,10 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
     recap_doc = normalized.get("recap_doc") or normalized
     if not isinstance(recap_doc, dict):
         recap_doc = {}
+
+    recap_doc = await _enrich_recap_doc_with_limit_up_board_counts(d, recap_doc)
+    recap_doc = await _enrich_recap_doc_with_new_high_summary(d, recap_doc)
+    recap_doc = await _enrich_recap_doc_with_seat_money_context(d, recap_doc)
 
     # ── Self-healing: inject abnormal_reviews from DB if recap_doc has none ──
     if not recap_doc.get("abnormal_reviews"):
@@ -2315,11 +2360,12 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
             except Exception:
                 pass
 
-    v2 = builder.build(
+    structured_v2 = builder.build(
         trade_date=d,
         recap_doc=recap_doc,
         recap_snapshot_version=str(row.get("snapshot_version") or ""),
     )
+    v2 = structured_v2
 
     # ── P0: 事件→题材因果链 ──
     theme_driver_events = None
@@ -2337,12 +2383,13 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
                     capital_reviews, d, top_n=8, per_theme_limit=2,
                 )
             # 重新 build 并注入 driver_events
-            v2 = builder.build(
+            structured_v2 = builder.build(
                 trade_date=d,
                 recap_doc=recap_doc,
                 recap_snapshot_version=str(row.get("snapshot_version") or ""),
                 theme_driver_events=theme_driver_events,
             )
+            v2 = structured_v2
     except Exception as exc:
         logger.warning("EventDriverTracer enrichment skipped: %s", exc)
 
@@ -2355,8 +2402,13 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
         composer_input = {**recap_doc, **v2}
         engine_report = composer.compose(composer_input)
         v2 = {**v2, **engine_report}
+        for key in ("daily_recap_essentials", "limit_up_ladder", "limit_up_theme_events", "new_high_summary", "seat_money_summary"):
+            if key in structured_v2:
+                v2[key] = structured_v2[key]
     except Exception:
         pass  # best-effort, don't block
+
+    v2 = await _enrich_v2_theme_names(v2, d)
 
     v2["watchlists"] = await _build_one_to_two_watchlists(d)
 
@@ -2384,6 +2436,324 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
         "affected_rows": affected,
         "module_coverage": v2["diagnostics"]["module_coverage"],
     }
+
+
+def _daily_review_v2_has_limit_up_ladder(v2: dict[str, Any]) -> bool:
+    ladder = v2.get("limit_up_ladder")
+    if not isinstance(ladder, dict):
+        return False
+    board_rows = ladder.get("board_rows")
+    if not isinstance(board_rows, list):
+        return False
+    return any(isinstance(row, dict) and int(row.get("stock_count") or 0) > 0 for row in board_rows)
+
+
+async def _enrich_recap_doc_with_limit_up_board_counts(trade_date: date, recap_doc: dict[str, Any]) -> dict[str, Any]:
+    """Materialize board counts from `stock_daily_snapshot` for DailyReview V2."""
+    try:
+        from stock_processing_service.application.services.limit_up_board_recalculator import (
+            LimitUpBoardRecalculator,
+        )
+
+        recalculator = LimitUpBoardRecalculator()
+        client = getattr(app.state.gateway, "_client", None)
+        pool = getattr(client, "pool", None) if client else None
+        logger.warning(
+            "limit_up board recompute: client=%s pool=%s dsn_builder=%s",
+            bool(client),
+            bool(pool),
+            bool(callable(getattr(client, "_build_dsn", None))),
+        )
+        if pool is not None:
+            async with pool.acquire() as conn:
+                enriched = await recalculator.enrich_recap_doc(recap_doc, trade_date, conn)
+                logger.warning("limit_up board recompute: via_pool done")
+                return enriched
+
+        dsn_builder = getattr(client, "_build_dsn", None)
+        if callable(dsn_builder):
+            import asyncpg
+
+            conn = await asyncpg.connect(dsn=dsn_builder())
+            try:
+                enriched = await recalculator.enrich_recap_doc(recap_doc, trade_date, conn)
+                logger.warning("limit_up board recompute: via_dsn done")
+                return enriched
+            finally:
+                await conn.close()
+        return recap_doc
+    except Exception:
+        logger.exception("limit_up board recomputation skipped")
+        return recap_doc
+
+
+async def _enrich_recap_doc_with_new_high_summary(trade_date: date, recap_doc: dict[str, Any]) -> dict[str, Any]:
+    """Materialize innovation-high summary from `stock_daily_snapshot` for DailyReview V2."""
+    try:
+        existing = recap_doc.get("new_high_summary")
+        if isinstance(existing, dict) and existing.get("representative_stocks"):
+            return recap_doc
+
+        client = getattr(app.state.gateway, "_client", None)
+        pool = getattr(client, "pool", None) if client else None
+        if pool is None:
+            dsn_builder = getattr(client, "_build_dsn", None)
+            if not callable(dsn_builder):
+                return recap_doc
+            import asyncpg
+            conn = await asyncpg.connect(dsn=dsn_builder())
+            try:
+                enriched = await _build_new_high_summary_from_conn(trade_date, recap_doc, conn)
+                return enriched
+            finally:
+                await conn.close()
+        async with pool.acquire() as conn:
+            return await _build_new_high_summary_from_conn(trade_date, recap_doc, conn)
+    except Exception:
+        logger.exception("new_high summary recomputation skipped")
+        return recap_doc
+
+
+async def _build_new_high_summary_from_conn(trade_date: date, recap_doc: dict[str, Any], conn) -> dict[str, Any]:
+    from datetime import timedelta
+
+    rows = await conn.fetch(
+        """
+        WITH hist AS (
+            SELECT
+                split_part(stock_id, '.', 1) AS stock_key,
+                trade_date,
+                high_price,
+                MAX(high_price) OVER (
+                    PARTITION BY split_part(stock_id, '.', 1)
+                    ORDER BY trade_date
+                    ROWS BETWEEN 250 PRECEDING AND 1 PRECEDING
+                ) AS prev_250_high
+            FROM stock_daily_snapshot
+            WHERE trade_date >= $1::date - INTERVAL '260 days'
+              AND trade_date <= $1::date
+              AND source_name LIKE 'tushare%'
+        )
+        SELECT
+            h.trade_date,
+            h.stock_key,
+            h.high_price,
+            COALESCE(s.name, h.stock_key) AS stock_name,
+            COALESCE(gp.concept, '') AS industry_name
+        FROM hist h
+        LEFT JOIN stocks s ON s.stock_id = h.stock_key
+        LEFT JOIN stock_gate_profile gp ON gp.stock_id = h.stock_key
+        WHERE h.trade_date = ANY($2::date[])
+          AND h.prev_250_high IS NOT NULL
+          AND h.high_price >= h.prev_250_high
+        ORDER BY h.trade_date DESC, h.high_price DESC, h.stock_key
+        """,
+        trade_date,
+        [trade_date, trade_date - timedelta(days=1), trade_date - timedelta(days=2)],
+    )
+    if not rows:
+        return recap_doc
+
+    by_date: dict[Any, list[dict[str, Any]]] = {}
+    for row in rows:
+        trade_day = row.get("trade_date")
+        by_date.setdefault(trade_day, []).append(dict(row))
+
+    today_rows = by_date.get(trade_date, [])
+    yesterday_rows = by_date.get(trade_date - timedelta(days=1), [])
+    day_before_rows = by_date.get(trade_date - timedelta(days=2), [])
+
+    industry_rows: dict[str, list[dict[str, Any]]] = {}
+    for row in today_rows:
+        key = str(row.get("industry_name") or "未分类").strip() or "未分类"
+        industry_rows.setdefault(key, []).append(row)
+    industry_summary = [
+        {
+            "industry_name": name,
+            "count": len(items),
+            "representative_stocks": items[:3],
+        }
+        for name, items in sorted(industry_rows.items(), key=lambda item: (-len(item[1]), item[0]))[:5]
+    ]
+    summary = "暂无结构化创新高数据"
+    if today_rows:
+        industries = "、".join([item["industry_name"] for item in industry_summary[:3] if item.get("industry_name")]) or "暂无明确行业聚焦"
+        reps = "、".join([item["stock_name"] for item in today_rows[:4] if item.get("stock_name")]) or "暂无代表股"
+        summary = f"今日创新高 {len(today_rows)} 家，集中在 {industries}，代表股 {reps}。"
+
+    enriched = dict(recap_doc)
+    enriched["new_high_summary"] = {
+        "summary": summary,
+        "today_count": len(today_rows),
+        "yesterday_count": len(yesterday_rows),
+        "day_before_count": len(day_before_rows),
+        "industry_summary": industry_summary,
+        "representative_stocks": today_rows[:10],
+        "diagnostics": {
+            "source": "recomputed_from_stock_daily_snapshot",
+            "row_count": len(today_rows),
+        },
+    }
+    return enriched
+
+
+async def _enrich_v2_theme_names(v2: dict[str, Any], trade_date: date) -> dict[str, Any]:
+    """Translate numeric subject keys in V2 payload to readable theme names."""
+    if not isinstance(v2, dict):
+        return v2
+
+    subject_keys: list[str] = []
+
+    def collect_keys(rows: Any) -> None:
+        if not isinstance(rows, list):
+            return
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            for key in ("subject_key", "theme_name"):
+                value = str(row.get(key) or "").strip()
+                if value and value.isdigit():
+                    subject_keys.append(value)
+
+    collect_keys(v2.get("stock_capital_reviews"))
+    collect_keys(v2.get("theme_capital_reviews"))
+    seat_money = v2.get("seat_money_summary")
+    if isinstance(seat_money, dict):
+        for key in ("institution_top_buys", "institution_top_sells", "hot_money_top_buys", "hot_money_top_sells", "theme_rows"):
+            collect_keys(seat_money.get(key))
+
+    subject_keys = sorted(set(subject_keys))
+    if not subject_keys:
+        return v2
+
+    theme_map = await _resolve_theme_name_map(subject_keys, trade_date)
+    if not theme_map:
+        return v2
+
+    def normalize_rows(rows: Any) -> None:
+        if not isinstance(rows, list):
+            return
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            key = str(row.get("subject_key") or row.get("theme_name") or "").strip()
+            if key and key in theme_map:
+                row["theme_name"] = theme_map.get(key, key)
+
+    normalize_rows(v2.get("stock_capital_reviews"))
+    normalize_rows(v2.get("theme_capital_reviews"))
+    if isinstance(seat_money, dict):
+        for key in ("institution_top_buys", "institution_top_sells", "hot_money_top_buys", "hot_money_top_sells", "theme_rows"):
+            normalize_rows(seat_money.get(key))
+
+        institution_names = [
+            str(row.get("stock_name") or "").strip()
+            for row in (seat_money.get("institution_top_buys") or [])[:3]
+            if isinstance(row, dict) and str(row.get("stock_name") or "").strip()
+        ]
+        hot_money_names = [
+            str(row.get("stock_name") or "").strip()
+            for row in (seat_money.get("hot_money_top_buys") or [])[:3]
+            if isinstance(row, dict) and str(row.get("stock_name") or "").strip()
+        ]
+        theme_names = [
+            str(row.get("theme_name") or "").strip()
+            for row in (seat_money.get("theme_rows") or [])[:3]
+            if isinstance(row, dict) and str(row.get("theme_name") or "").strip()
+        ]
+        if institution_names or hot_money_names or theme_names:
+            parts: list[str] = []
+            if institution_names:
+                parts.append(f"机构关注 {'、'.join(institution_names)}")
+            if hot_money_names:
+                parts.append(f"游资关注 {'、'.join(hot_money_names)}")
+            cohesion = str(seat_money.get("cohesion") or "").strip()
+            if cohesion and cohesion != "--":
+                parts.append(f"资金{cohesion}")
+            if theme_names:
+                parts.append(f"主题聚焦 {'、'.join(theme_names)}")
+            seat_money["summary"] = "，".join(parts)
+
+    return v2
+
+
+async def _enrich_recap_doc_with_seat_money_context(trade_date: date, recap_doc: dict[str, Any]) -> dict[str, Any]:
+    """Inject structured dragon_tiger_object / hot_money_trading_activity facts when snapshot is missing them."""
+    try:
+        context = recap_doc.get("report_context") if isinstance(recap_doc.get("report_context"), dict) else {}
+        dragon_missing = not (isinstance(context.get("dragon_tiger"), list) and context.get("dragon_tiger"))
+        hot_money_missing = not (isinstance(context.get("hot_money_activities"), list) and context.get("hot_money_activities"))
+        if not dragon_missing and not hot_money_missing:
+            return recap_doc
+
+        client = getattr(app.state.gateway, "_client", None)
+        fetch_context = getattr(client, "get_post_market_report_context", None)
+        if not callable(fetch_context):
+            return recap_doc
+
+        report_context = await fetch_context(trade_date)
+        if not isinstance(report_context, dict):
+            return recap_doc
+
+        enriched = dict(recap_doc)
+        merged_context = dict(context)
+        if dragon_missing and isinstance(report_context.get("dragon_tiger"), list) and report_context.get("dragon_tiger"):
+            merged_context["dragon_tiger"] = report_context["dragon_tiger"]
+        if hot_money_missing and isinstance(report_context.get("hot_money_activities"), list) and report_context.get("hot_money_activities"):
+            merged_context["hot_money_activities"] = report_context["hot_money_activities"]
+        if isinstance(report_context.get("theme_name_map"), dict) and report_context.get("theme_name_map") and not merged_context.get("theme_name_map"):
+            merged_context["theme_name_map"] = report_context["theme_name_map"]
+        if merged_context:
+            enriched["report_context"] = merged_context
+        if dragon_missing and isinstance(report_context.get("dragon_tiger"), list) and report_context.get("dragon_tiger"):
+            enriched["dragon_tiger_reviews"] = report_context["dragon_tiger"]
+        if hot_money_missing and isinstance(report_context.get("hot_money_activities"), list) and report_context.get("hot_money_activities"):
+            enriched["hot_money_activities"] = report_context["hot_money_activities"]
+        return enriched
+    except Exception:
+        logger.exception("seat money context recomputation skipped")
+        return recap_doc
+
+
+async def _fetch_latest_post_market_recap_snapshot_row(trade_date: date) -> dict[str, Any] | None:
+    """Bypass gateway caching and read the latest recap snapshot directly."""
+    try:
+        client = getattr(app.state.gateway, "_client", None)
+        pool = getattr(client, "pool", None) if client else None
+        if pool is not None:
+            row = await pool.fetchrow(
+                """
+                SELECT trade_date, snapshot_version, batch_id, trace_id, payload
+                FROM post_market_recap_snapshot
+                WHERE trade_date = $1::date
+                ORDER BY updated_at DESC
+                LIMIT 1
+                """,
+                trade_date,
+            )
+            return dict(row) if row else None
+
+        dsn_builder = getattr(client, "_build_dsn", None)
+        if callable(dsn_builder):
+            import asyncpg
+            conn = await asyncpg.connect(dsn=dsn_builder())
+            try:
+                row = await conn.fetchrow(
+                    """
+                    SELECT trade_date, snapshot_version, batch_id, trace_id, payload
+                    FROM post_market_recap_snapshot
+                    WHERE trade_date = $1::date
+                    ORDER BY updated_at DESC
+                    LIMIT 1
+                    """,
+                    trade_date,
+                )
+                return dict(row) if row else None
+            finally:
+                await conn.close()
+    except Exception:
+        logger.exception("failed to fetch recap snapshot directly")
+    return None
 
 
 # ── P1: PostMarket Readiness API ──
@@ -2465,6 +2835,7 @@ async def generate_post_market_derived_data(payload: dict[str, Any] | None = Non
     uc = PostMarketDerivedDataGenerateUseCase(pool=pool, db_manager=db_manager)
     uc.register_theme_cycle_truth()
     uc.register_dragon_tiger_object_build()
+    uc.register_hot_money_activity_build(project_root=str(_project_root()))
     uc.register_theme_leader_candidate_build(project_root=str(_project_root()))
     uc.register_money_flow_enhanced_build(project_root=str(_project_root()))
     uc.register_stock_abnormal_signal_build(project_root=str(_project_root()))

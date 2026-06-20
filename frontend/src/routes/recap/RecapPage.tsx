@@ -1218,6 +1218,39 @@ export function RecapPage() {
     }
     return result;
   }, [themeSummaryRows, themeCapitalFlowRows, watchlistRows]);
+  const themeNameBySubjectKey = useMemo(() => {
+    const result = new Map<string, string>();
+    const canonicalMap = dailyReviewV2?.theme_name_map;
+    if (canonicalMap && typeof canonicalMap === "object") {
+      for (const [subjectKey, themeName] of Object.entries(canonicalMap)) {
+        const key = String(subjectKey || "").trim();
+        const value = String(themeName || "").trim();
+        if (key && value) result.set(key, value);
+      }
+    }
+    for (const row of mainlineDailyStates) {
+      if (row.canonical_subject_key && row.canonical_subject_key !== "--" && row.mainline_name) {
+        result.set(row.canonical_subject_key, row.mainline_name);
+      }
+      if (row.mainline_id && row.mainline_id !== "--" && row.mainline_name && !result.has(row.mainline_id)) {
+        result.set(row.mainline_id, row.mainline_name);
+      }
+    }
+    for (const row of themeSummaryRows) {
+      if (row.subjectKey && row.subjectKey !== "--" && row.theme && !result.has(row.subjectKey)) result.set(row.subjectKey, row.theme);
+    }
+    for (const row of themeCapitalFlowRows) {
+      if (row.subjectKey && row.subjectKey !== "--" && row.theme && !result.has(row.subjectKey)) {
+        result.set(row.subjectKey, row.theme);
+      }
+    }
+    for (const row of watchlistRows) {
+      if (row.subjectKey && row.subjectKey !== "--" && row.theme && !result.has(row.subjectKey)) {
+        result.set(row.subjectKey, row.theme);
+      }
+    }
+    return result;
+  }, [themeSummaryRows, themeCapitalFlowRows, watchlistRows]);
   const moneyFlowRows = useMemo(
     () => {
       const v2Rows = dailyReviewV2?.money_flow_reviews;
@@ -1671,10 +1704,11 @@ export function RecapPage() {
             <section className="workspace-column">
               {isPostMarket ? (
                 engineReportReady ? (
-                  <EnginePostMarketView
-                    dailyReviewV2={dailyReviewV2!}
-                    tradeDate={tradeDate}
-                  />
+                <EnginePostMarketView
+                  dailyReviewV2={dailyReviewV2!}
+                  tradeDate={tradeDate}
+                  subjectKeyToThemeName={themeNameBySubjectKey}
+                />
                 ) : (
                   <EngineMissingState
                     dailyReviewV2={dailyReviewV2}

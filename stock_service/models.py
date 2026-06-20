@@ -345,7 +345,7 @@ class DragonTigerObject:
     institution_sell_amount: float
     institution_net_buy: float
     institution_seat_count: int
-    seat_summary: List[str] = field(default_factory=list)
+    seat_summary: List[Dict[str, Any]] = field(default_factory=list)
     source_trace_id: str = ""
     source_trace: Dict[str, Any] = field(default_factory=dict)
     source_version: str = "tushare.top_list+top_inst.v1"

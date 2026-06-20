@@ -1,10 +1,11 @@
 import { Tag } from "antd";
-import type { MarketOverviewReview, ThemeLimitUpColumn, ThemeLimitUpStock } from "../../../lib/api";
+import type { MarketOverviewReview, ThemeLimitUpBoardGroup, ThemeLimitUpColumn, ThemeLimitUpStock } from "../../../lib/api";
 import { navigateTo } from "../../../lib/navigation";
 
 interface Props {
   marketOverview?: MarketOverviewReview | null;
   tradeDate?: string;
+  subjectKeyToThemeName?: Map<string, string>;
 }
 
 function formatAmount(value?: number | null) {
@@ -52,29 +53,38 @@ function translateCountMethod(value?: string | null) {
   return map[key] || key || "--";
 }
 
-function displayThemeName(col: ThemeLimitUpColumn) {
-  const record = col as ThemeLimitUpColumn & Record<string, unknown>;
-  return String(record.mainline_name || col.theme_name || "其他").trim() || "其他";
+function stockLink(stockId?: string, tradeDate?: string) {
+  if (!stockId) return "";
+  return `/stocks/${encodeURIComponent(stockId)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`;
 }
 
-function renderFocusStock(stock: ThemeLimitUpStock | undefined, tradeDate?: string) {
-  if (!stock) return <span style={{ color: "#66d9ef" }}>--</span>;
-  const href = stock.stock_id ? `/stocks/${encodeURIComponent(stock.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}` : "";
-  const body = (
-    <div className="recap-tag-stack" style={{ gap: 4 }}>
-      <button type="button" className="recap-theme-link recap-stock-highlight" onClick={() => href && navigateTo(href)}>
-        {stock.stock_name || stock.stock_id || "--"}
-      </button>
-      <div className="recap-tag-stack" style={{ gap: 4, flexWrap: "wrap" }}>
-        {typeof stock.board_count === "number" && stock.board_count > 0 && <Tag color="gold">连板 {stock.board_count}</Tag>}
-        {stock.in_layer_c && <Tag color="green">强势股池</Tag>}
-        {stock.is_d1_candidate && <Tag color="blue">次日观察</Tag>}
-        {stock.role_label && <Tag color="default">{translateTagText(stock.role_label)}</Tag>}
-        {stock.trade_action && <Tag color="orange">{translateTagText(stock.trade_action)}</Tag>}
-      </div>
-    </div>
-  );
-  return body;
+function displayThemeName(col: ThemeLimitUpColumn, subjectKeyToThemeName?: Map<string, string>) {
+  const record = col as ThemeLimitUpColumn & Record<string, unknown>;
+  const mapped = subjectKeyToThemeName?.get(String(col.subject_key || "").trim())?.trim() || "";
+  const raw = String(mapped || record.mainline_name || col.theme_name || "其他").trim() || "其他";
+  if (raw === "__independent__" || raw.toLowerCase() === "independent" || raw.startsWith("__")) {
+    return "未归类";
+  }
+  return raw;
+}
+
+function buildBoardGroups(col: ThemeLimitUpColumn): ThemeLimitUpBoardGroup[] {
+  if (Array.isArray(col.board_groups) && col.board_groups.length > 0) {
+    return col.board_groups;
+  }
+  const source = Array.isArray(col.focus_stocks) ? col.focus_stocks : [];
+  const buckets: Record<number, ThemeLimitUpStock[]> = { 4: [], 3: [], 2: [], 1: [] };
+  for (const stock of source) {
+    const boardCount = Math.min(Math.max(Number(stock.board_count || 0), 0), 4);
+    if (boardCount <= 0) continue;
+    buckets[boardCount].push(stock);
+  }
+  return [4, 3, 2, 1].map((boardCount) => ({
+    board_count: boardCount,
+    board_label: boardCount === 1 ? "首板" : `${boardCount}板`,
+    stock_count: buckets[boardCount].length,
+    stocks: buckets[boardCount],
+  }));
 }
 
 function columnStatusTag(col: ThemeLimitUpColumn) {
@@ -87,78 +97,117 @@ function columnStatusTag(col: ThemeLimitUpColumn) {
   return <Tag color="default">轮动</Tag>;
 }
 
-export default function MarketOverviewPanel({ marketOverview, tradeDate }: Props) {
+function renderThemeHead(col: ThemeLimitUpColumn, tradeDate?: string, subjectKeyToThemeName?: Map<string, string>) {
+  const themeName = displayThemeName(col, subjectKeyToThemeName);
+  const canNavigate = Boolean(col.subject_key && themeName !== "未归类" && col.subject_key !== "__independent__");
+  return (
+    <div className="market-overview-theme-head">
+      {canNavigate ? (
+        <button
+          type="button"
+          className="recap-theme-link market-overview-theme-name"
+          onClick={() => navigateTo(`/themes/${encodeURIComponent(col.subject_key)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}
+        >
+          {themeName}
+        </button>
+      ) : (
+        <span className="market-overview-theme-name">{themeName}</span>
+      )}
+      <div className="market-overview-theme-tags">
+        {columnStatusTag(col)}
+        <Tag color={col.active_mainline ? "green" : "default"}>{translateTagText(col.lifecycle_state)}</Tag>
+      </div>
+    </div>
+  );
+}
+
+function renderBoardStocks(stocks: ThemeLimitUpStock[] | undefined, tradeDate?: string) {
+  if (!stocks || stocks.length === 0) return <span className="workspace-note">--</span>;
+  return (
+    <div className="market-overview-stock-list">
+      {stocks.map((stock) => {
+        const href = stockLink(stock.stock_id, tradeDate);
+        const boardCount = Number(stock.board_count || 0);
+        const cls = `recap-theme-link recap-stock-highlight market-overview-stock is-board-${boardCount >= 4 ? 4 : boardCount >= 3 ? 3 : boardCount >= 2 ? 2 : 1}`;
+        return (
+          <button
+            key={`${stock.stock_id || stock.stock_name}-${stock.board_count ?? "x"}`}
+            type="button"
+            className={cls}
+            onClick={() => href && navigateTo(href)}
+          >
+            {stock.stock_name || stock.stock_id || "--"}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+export default function MarketOverviewPanel({ marketOverview, tradeDate, subjectKeyToThemeName }: Props) {
   const columns = marketOverview?.theme_limitup_matrix?.columns ?? [];
   if (!columns.length) return null;
-
-  const maxRows = Math.max(
-    marketOverview?.theme_limitup_matrix?.max_rows ?? 0,
-    ...columns.map((col) => col.focus_stocks?.length ?? 0),
-  );
+  const boardRows = [
+    { board_count: 4, board_label: "4板" },
+    { board_count: 3, board_label: "3板" },
+    { board_count: 2, board_label: "2板" },
+    { board_count: 1, board_label: "首板" },
+  ];
+  const matrixColumns: Array<ThemeLimitUpColumn & { board_groups: ThemeLimitUpBoardGroup[] }> = columns.map((col) => ({
+    ...col,
+    board_groups: buildBoardGroups(col),
+  }));
 
   return (
     <div className="workspace-card recap-engine-panel">
       <h3 className="section-title recap-panel-title">
-        题材涨停总表
-        <Tag color="gold" style={{ marginLeft: 8 }}>题材涨停总表</Tag>
+        涨停热点分布图
+        <Tag color="gold" style={{ marginLeft: 8 }}>题材矩阵</Tag>
         <Tag color="blue">{marketOverview?.limit_up_total ?? "--"} 涨停</Tag>
         {typeof marketOverview?.limit_down_total === "number" && <Tag color="red">跌停 {marketOverview.limit_down_total}</Tag>}
       </h3>
       <div className="workspace-note" style={{ marginBottom: 10 }}>
-        展示方式：按题材独立统计涨停数目，聚焦今日赚钱效应集中方向与对应重点个股。
+        展示方式：按题材列展示各板位涨停股，便于查看主线、分歧与首板扩散结构。
       </div>
       <div className="recap-table-wrap">
-        <table className="recap-table market-overview-matrix">
+        <table className="recap-table market-overview-distribution">
           <thead>
             <tr>
-              <th style={{ minWidth: 130 }}>指标</th>
-              {columns.map((col) => (
-                <th key={col.subject_key} style={{ minWidth: 260, verticalAlign: "top" }}>
-                  <div className="recap-tag-stack" style={{ gap: 4 }}>
-                    <button type="button" className="recap-theme-link" onClick={() => navigateTo(`/themes/${encodeURIComponent(col.subject_key)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
-                      {displayThemeName(col)}
-                    </button>
-                    <div className="recap-tag-stack" style={{ gap: 4, flexWrap: "wrap" }}>
-                      {columnStatusTag(col)}
-                      <Tag color={col.active_mainline ? "green" : "default"}>{translateTagText(col.lifecycle_state)}</Tag>
-                    </div>
-                  </div>
+              <th style={{ minWidth: 92 }}>板位</th>
+              {matrixColumns.map((col) => (
+                <th key={col.subject_key} style={{ minWidth: 180, verticalAlign: "top" }}>
+                  {renderThemeHead(col, tradeDate, subjectKeyToThemeName)}
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
+            {boardRows.map((boardRow) => (
+              <tr key={boardRow.board_count}>
+                <td className="market-overview-rowhead">
+                  <strong>{boardRow.board_label}</strong>
+                </td>
+                {matrixColumns.map((col) => {
+                  const group = col.board_groups?.find((item) => item.board_count === boardRow.board_count);
+                  return (
+                    <td key={`${col.subject_key}-${boardRow.board_count}`} className="market-overview-cell">
+                      {renderBoardStocks(group?.stocks, tradeDate)}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+          <tfoot>
             <tr>
-              <td><strong>涨停数目</strong></td>
-              {columns.map((col) => (
-                <td key={`${col.subject_key}-count`}>
+              <td className="market-overview-rowhead"><strong>涨停数</strong></td>
+              {matrixColumns.map((col) => (
+                <td key={`${col.subject_key}-count`} className="market-overview-cell">
                   <span className="recap-chip is-status">{col.limit_up_count ?? 0}</span>
                 </td>
               ))}
             </tr>
-            <tr>
-              <td><strong>主线状态</strong></td>
-              {columns.map((col) => (
-                <td key={`${col.subject_key}-state`}>{col.active_mainline ? "主线" : "轮动观察"}</td>
-              ))}
-            </tr>
-            <tr>
-              <td><strong>交易动作</strong></td>
-              {columns.map((col) => (
-                <td key={`${col.subject_key}-action`}>{translateTagText(col.trade_action)}</td>
-              ))}
-            </tr>
-            {Array.from({ length: maxRows }).map((_, rowIndex) => (
-              <tr key={`focus-${rowIndex}`}>
-                <td><strong>重点关注 {rowIndex + 1}</strong></td>
-                {columns.map((col) => (
-                  <td key={`${col.subject_key}-focus-${rowIndex}`} className="recap-cell-wrap">
-                    {renderFocusStock(col.focus_stocks?.[rowIndex], tradeDate)}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
+          </tfoot>
         </table>
       </div>
       <div className="workspace-note" style={{ marginTop: 8 }}>

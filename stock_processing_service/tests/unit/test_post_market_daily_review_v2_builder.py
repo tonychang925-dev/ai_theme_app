@@ -95,6 +95,235 @@ def test_daily_review_v2_builder_maps_theme_capital_from_report_context() -> Non
     assert coverage["missing_fields"] == []
 
 
+def test_daily_review_v2_builder_uses_strong_stock_rows_for_ladder_without_matrix() -> None:
+    recap_doc = {
+        "strong_stock_reviews": [
+            {
+                "stock_id": "603186.SH",
+                "stock_name": "华正新材",
+                "subject_key": "pcb",
+                "theme_name": "PCB",
+                "board_count": 3,
+                "role_label": "核心",
+                "trade_action": "观察分歧承接",
+                "reason": "光模块PCB",
+            },
+            {
+                "stock_id": "600110.SH",
+                "stock_name": "诺德股份",
+                "subject_key": "pcb",
+                "theme_name": "PCB",
+                "board_count": 3,
+                "role_label": "核心",
+                "trade_action": "观察分歧承接",
+                "reason": "铜箔",
+            },
+            {
+                "stock_id": "688549.SH",
+                "stock_name": "中巨芯",
+                "subject_key": "semiconductor",
+                "theme_name": "半导体设备",
+                "board_count": 2,
+                "role_label": "补涨",
+                "trade_action": "等回踩",
+                "reason": "六氟化钨",
+            },
+        ],
+        "post_market_decision_v2": {
+            "strong_stock_pool_reviews": [
+                {
+                    "stock_id": "603186.SH",
+                    "stock_name": "华正新材",
+                    "subject_key": "pcb",
+                    "theme_name": "PCB",
+                    "board_count": 3,
+                }
+            ]
+        },
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 6, 17),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.strong.stock.fallback",
+    )
+
+    ladder = {row["board_count"]: row for row in payload["limit_up_ladder"]["board_rows"]}
+    assert ladder[3]["stock_count"] >= 1
+    assert ladder[2]["stock_count"] >= 1
+    assert any(row["stock_count"] > 0 for row in ladder.values())
+    assert payload["limit_up_ladder"]["theme_rows"]
+
+    theme_events = payload["limit_up_theme_events"]
+    assert theme_events["themes"]
+    assert theme_events["themes"][0]["theme_name"] == "PCB"
+    assert theme_events["themes"][0]["representative_stocks"]
+    assert theme_events["diagnostics"]["candidate_count"] >= 3
+
+
+def test_daily_review_v2_builder_normalizes_independent_placeholder_theme() -> None:
+    recap_doc = {
+        "strong_stock_reviews": [
+            {
+                "stock_id": "000001.SZ",
+                "stock_name": "平安银行",
+                "subject_key": "__independent__",
+                "theme_name": "__independent__",
+                "board_count": 4,
+                "role_label": "核心",
+                "trade_action": "观察",
+                "reason": "独立信号",
+            },
+            {
+                "stock_id": "301366.SZ",
+                "stock_name": "一博科技",
+                "subject_key": "pcb",
+                "theme_name": "PCB印制电路板",
+                "board_count": 3,
+                "role_label": "核心",
+                "trade_action": "主线参与",
+                "reason": "PCB",
+            },
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 6, 17),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.independent.normalize",
+    )
+
+    ladder_summary = payload["limit_up_ladder"]["summary"]
+    theme_summary = payload["limit_up_theme_events"]["summary"]
+    theme_rows = payload["limit_up_theme_events"]["themes"]
+    assert "__independent__" not in ladder_summary
+    assert "__independent__" not in theme_summary
+    assert any(
+        row["theme_name"] == "未归类"
+        and any(stock["stock_name"] == "平安银行" for stock in row["representative_stocks"])
+        for row in theme_rows
+    )
+    assert any(
+        row["theme_name"] == "PCB印制电路板"
+        and any(stock["stock_name"] == "一博科技" for stock in row["representative_stocks"])
+        for row in theme_rows
+    )
+
+
+def test_daily_review_v2_builder_prefers_canonical_mainline_name_map() -> None:
+    recap_doc = {
+        "report_context": {
+            "theme_name_map": {"pcb": "PCB印制电路板"},
+            "theme_capital_flow": [
+                {
+                    "subject_key": "pcb",
+                    "theme_name": "__independent__",
+                    "main_net_inflow_sum": 880000000,
+                    "leader_main_net_inflow": 160000000,
+                    "top3_main_net_inflow": 320000000,
+                    "positive_stock_count": 12,
+                    "theme_structure": "放量突破",
+                    "final_cycle_state": "rebound",
+                    "trade_action": "观察分歧承接",
+                    "rank": 1,
+                    "mainline_strength_score": 72,
+                }
+            ],
+            "market_overview_review": {
+                "theme_limitup_matrix": {
+                    "columns": [
+                        {
+                            "subject_key": "pcb",
+                            "theme_name": "__independent__",
+                            "limit_up_count": 8,
+                            "active_mainline": True,
+                            "lifecycle_state": "divergence",
+                            "trade_action": "主线分歧",
+                            "focus_stocks": [
+                                {"stock_id": "1", "stock_name": "A", "board_count": 3, "role_label": "leader", "trade_action": "主线参与"},
+                            ],
+                        }
+                    ],
+                }
+            },
+        },
+        "mainline_daily_states": [
+            {
+                "mainline_id": "pcb",
+                "canonical_subject_key": "pcb",
+                "mainline_name": "PCB印制电路板",
+                "lifecycle_state": "divergence",
+                "mainline_strength_score": 86.2,
+                "fade_risk_score": 27.5,
+                "strong_pool_count": 8,
+                "d1_count": 3,
+                "focus_count": 0,
+                "action_advice": "观察分歧修复",
+                "conclusion": "主线仍有资金，但处于分歧阶段",
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 6, 17),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.canonical.theme.map",
+    )
+
+    assert payload["theme_name_map"]["pcb"] == "PCB印制电路板"
+    assert payload["theme_capital_reviews"][0]["theme_name"] == "PCB印制电路板"
+    assert payload["theme_reviews"][0]["theme_name"] == "PCB印制电路板"
+    assert payload["seat_money_summary"]["theme_rows"][0]["theme_name"] == "PCB印制电路板"
+
+
+def test_daily_review_v2_builder_uses_capital_reviews_for_seat_money_fallback() -> None:
+    recap_doc = {
+        "capital_reviews": [
+            {
+                "stock_code": "600703.SH",
+                "stock_name": "三安光电",
+                "related_theme": "LED芯片",
+                "seat_type": "INSTITUTION",
+                "net_buy_amount": 1558608781.19,
+                "ai_comment": "非ST、*ST和S证券连续三个交易日内收盘价格涨幅偏离值累计达到20%的证券",
+            },
+            {
+                "stock_code": "300475.SZ",
+                "stock_name": "香农芯创",
+                "related_theme": "分销商",
+                "seat_type": "INSTITUTION",
+                "net_buy_amount": 885431494.64,
+                "ai_comment": "日涨幅达到15%的前5只证券",
+            },
+            {
+                "stock_code": "000725.SZ",
+                "stock_name": "京东方A",
+                "related_theme": "显示面板",
+                "seat_type": "HOT_MONEY",
+                "net_buy_amount": 532500000.0,
+                "ai_comment": "日涨幅达到7%的前5只证券",
+            },
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 6, 17),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.seat.fallback",
+    )
+
+    seat = payload["seat_money_summary"]
+    assert seat["summary"].startswith("机构关注")
+    assert seat["institution_top_buys"]
+    assert seat["hot_money_top_buys"]
+    assert seat["theme_rows"]
+    assert seat["diagnostics"]["source"] == "structured"
+
+
 def test_daily_review_v2_builder_dedupes_stock_capital_reviews_by_stock_id() -> None:
     recap_doc = {
         "report_context": {
@@ -1434,6 +1663,25 @@ def test_daily_review_v2_builder_emits_fixed_recap_modules() -> None:
                             },
                         ],
                     }
+                    ,
+                    {
+                        "subject_key": "glass",
+                        "theme_name": "玻璃基板",
+                        "limit_up_count": 5,
+                        "active_mainline": False,
+                        "lifecycle_state": "start",
+                        "trade_action": "轮动观察",
+                        "focus_stocks": [
+                            {
+                                "stock_id": "002845",
+                                "stock_name": "同兴达",
+                                "board_count": 2,
+                                "role_label": "leader",
+                                "trade_action": "轮动跟随",
+                                "reason": "玻璃基板",
+                            }
+                        ],
+                    },
                 ]
             }
         },
@@ -1509,3 +1757,101 @@ def test_daily_review_v2_builder_emits_fixed_recap_modules() -> None:
     assert payload["new_high_summary"]["industry_summary"][0]["industry_name"] == "电子元件"
     assert payload["seat_money_summary"]["cohesion"] in {"同向", "分歧"}
     assert payload["seat_money_summary"]["institution_top_buys"]
+    assert len(payload["market_overview_review"]["theme_limitup_matrix"]["columns"]) == 2
+
+
+def test_daily_review_v2_builder_builds_structured_seat_money_tables() -> None:
+    recap_doc = {
+        "report_context": {
+            "hot_money_activities": [
+                {
+                    "hot_money_name": "紫阳东路",
+                    "seat_name": "紫阳东路",
+                    "stock_id": "000001",
+                    "stock_name": "平安银行",
+                    "subject_key": "bank",
+                    "theme_name": "银行",
+                    "side": "买入",
+                    "buy_amount": 36700000,
+                    "sell_amount": 0,
+                    "net_amount": 36700000,
+                    "reason": "机构席位观察",
+                    "rank_order": 1,
+                    "is_theme_leader": True,
+                    "style_tags": ["接力"],
+                },
+                {
+                    "hot_money_name": "紫阳东路",
+                    "seat_name": "紫阳东路",
+                    "stock_id": "600000",
+                    "stock_name": "浦发银行",
+                    "subject_key": "bank",
+                    "theme_name": "银行",
+                    "side": "卖出",
+                    "buy_amount": 0,
+                    "sell_amount": 32800000,
+                    "net_amount": -32800000,
+                    "reason": "机构席位观察",
+                    "rank_order": 2,
+                    "is_theme_leader": False,
+                    "style_tags": ["接力"],
+                },
+            ],
+        },
+        "dragon_tiger_reviews": [
+            {
+                "stock_code": "688766",
+                "stock_name": "普冉股份",
+                "theme_name": "存储芯片",
+                "seat_type": "INSTITUTION",
+                "institution_seat_count": 3,
+                "buy_amount": 989430000,
+                "sell_amount": 376270000,
+                "net_buy": 613160000,
+                "seat_summary": [
+                    {
+                        "seat_name": "机构专用",
+                        "side": "0",
+                        "side_label": "买入席位",
+                        "buy_amount": 560000000,
+                        "sell_amount": 120000000,
+                        "net_buy": 440000000,
+                    },
+                    {
+                        "seat_name": "机构专用(二)",
+                        "side": "1",
+                        "side_label": "卖出席位",
+                        "buy_amount": 180000000,
+                        "sell_amount": 220000000,
+                        "net_buy": -40000000,
+                    },
+                ],
+            }
+        ],
+        "money_flow_reviews": [
+            {
+                "stock_id": "688766",
+                "stock_name": "普冉股份",
+                "theme_name": "存储芯片",
+                "main_net_inflow": 12000000,
+                "money_flow_tier": "强",
+                "role_enhanced": "主线加速",
+            }
+        ],
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 6, 18),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.seat_tables",
+    )
+
+    seat = payload["seat_money_summary"]
+    assert seat["summary"].startswith("机构关注")
+    assert seat["institution_buy_rows"][0]["stock_name"] == "普冉股份"
+    assert seat["institution_buy_rows"][0]["buy_seat_count"] == 1
+    assert seat["institution_buy_rows"][0]["seat_summary"][0]["seat_name"] == "机构专用"
+    assert seat["hot_money_buy_rows"][0]["hot_money_name"] == "紫阳东路"
+    assert seat["hot_money_buy_rows"][0]["buy_entries"][0]["stock_name"] == "平安银行"
+    assert seat["hot_money_sell_rows"][0]["sell_entries"][0]["stock_name"] == "浦发银行"

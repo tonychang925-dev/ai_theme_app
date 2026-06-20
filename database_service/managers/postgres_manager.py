@@ -4393,6 +4393,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             COALESCE(rank_order, 9999)
         LIMIT 120
         """
+        sql_hot_money = """
+        SELECT
+            hm.*,
+            COALESCE(vtb.theme_name, hm.theme_name, hm.subject_key) AS resolved_theme_name
+        FROM hot_money_trading_activity hm
+        LEFT JOIN vw_subject_theme_binding vtb
+          ON vtb.subject_key = hm.subject_key
+        WHERE hm.trade_date = $1::date
+        ORDER BY
+            ABS(COALESCE(hm.net_amount, 0)) DESC,
+            hm.hot_money_name,
+            hm.rank_order,
+            hm.stock_name
+        LIMIT 200
+        """
         query_timeout_sec = float(os.getenv("POST_MARKET_REPORT_CONTEXT_QUERY_TIMEOUT_SEC", "120"))
         async with self.pool.acquire() as conn:
             market = await conn.fetchrow(sql_market, trade_date, timeout=query_timeout_sec)
@@ -4414,6 +4429,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             theme_gainers = await conn.fetch(sql_theme_gainers, trade_date, timeout=query_timeout_sec)
             abnormal = await conn.fetch(sql_abnormal, trade_date, timeout=query_timeout_sec)
             dragon = await conn.fetch(sql_dragon, trade_date, timeout=query_timeout_sec)
+            hot_money = await conn.fetch(sql_hot_money, trade_date, timeout=query_timeout_sec)
         return {
             "theme_name_map": theme_name_map,
             "market": dict(market) if market else None,
@@ -4424,6 +4440,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             "money_flow": [dict(r) for r in money],
             "abnormal_signals": [dict(r) for r in abnormal],
             "dragon_tiger": [dict(r) for r in dragon],
+            "hot_money_activities": [dict(r) for r in hot_money],
         }
 
     async def get_theme_stock_leaderboard_by_trade_date(

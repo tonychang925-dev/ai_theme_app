@@ -3,21 +3,21 @@ import LayerCStrongPoolPanel from "./LayerCStrongPoolPanel";
 import MainlineStateBoard from "./MainlineStateBoard";
 import MainlineNarrativePanel from "./MainlineNarrativePanel";
 import MarketOverviewNarrativePanel from "./MarketOverviewNarrativePanel";
-import MarketHotspotOverviewPanel from "./MarketHotspotOverviewPanel";
-import MarketOverviewPanel from "./MarketOverviewPanel";
 import MarketRegimePanel from "./MarketRegimePanel";
 import D1NarrativePanel from "./D1NarrativePanel";
 import EvidenceLayerPanel from "./EvidenceLayerPanel";
 import RecapDataQualityBar from "./RecapDataQualityBar";
 import D1NextDayWatchPanel from "./D1NextDayWatchPanel";
 import OneToTwoWatchPanel from "./OneToTwoWatchPanel";
+import DailyRecapStoryPanel from "./DailyRecapStoryPanel";
 
 interface Props {
   dailyReviewV2: PostMarketDailyReviewV2;
   tradeDate?: string;
+  subjectKeyToThemeName?: Map<string, string>;
 }
 
-export default function EnginePostMarketView({ dailyReviewV2, tradeDate }: Props) {
+export default function EnginePostMarketView({ dailyReviewV2, tradeDate, subjectKeyToThemeName }: Props) {
   const review = dailyReviewV2.post_market_decision_v2;
   if (!review || !dailyReviewV2.engine_summary || !dailyReviewV2.market_regime_review) return null;
 
@@ -29,6 +29,17 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate }: Props
         pdv2Ready={!!dailyReviewV2.post_market_decision_v2}
       />
       <div className="recap-engine-groups">
+        <DailyRecapStoryPanel
+          essentials={dailyReviewV2.daily_recap_essentials ?? null}
+          ladder={dailyReviewV2.limit_up_ladder ?? null}
+          themeEvents={dailyReviewV2.limit_up_theme_events ?? null}
+          newHigh={dailyReviewV2.new_high_summary ?? null}
+          seatMoney={dailyReviewV2.seat_money_summary ?? null}
+          marketOverview={dailyReviewV2.market_overview_review ?? null}
+          subjectKeyToThemeName={subjectKeyToThemeName}
+          tradeDate={tradeDate}
+        />
+
         <section className="workspace-card recap-engine-group">
           <h3 className="section-title recap-panel-title">市场概览</h3>
           <div className="recap-engine-group-stack">
@@ -44,22 +55,6 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate }: Props
                 tradeDate={tradeDate}
               />
             </div>
-          </div>
-        </section>
-
-        <section className="workspace-card recap-engine-group">
-          <h3 className="section-title recap-panel-title">热点概览</h3>
-          <div className="recap-engine-group-stack">
-            <MarketHotspotOverviewPanel
-              marketHotspotOverview={dailyReviewV2.market_hotspot_overview ?? null}
-              tradeDate={tradeDate}
-            />
-            {dailyReviewV2.market_overview_review && (
-              <MarketOverviewPanel
-                marketOverview={dailyReviewV2.market_overview_review}
-                tradeDate={tradeDate}
-              />
-            )}
           </div>
         </section>
 

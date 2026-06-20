@@ -459,13 +459,24 @@ class PostMarketNarrativeComposer:
         market_state_summary = self._clean_text(market_overview_narrative.get("market_state_summary"), "")
         if market_state_summary and market_state_summary != "--":
             summary_points.append(market_state_summary)
-        hotspot_summary = self._clean_text(market_hotspot_narrative.get("market_heat_summary"), "")
-        if hotspot_summary and hotspot_summary != "--":
-            summary_points.append(hotspot_summary)
-
-        ladder_summary = self._clean_text(limit_up_ladder.get("summary"), "")
+        ladder_summary = self._limit_up_summary_from_rows(limit_up_ladder)
+        if not ladder_summary or ladder_summary == "--":
+            ladder_summary = self._clean_text(limit_up_ladder.get("summary"), "")
         if ladder_summary and ladder_summary != "--":
             summary_points.append(ladder_summary)
+        hotspot_summary = self._clean_text(market_hotspot_narrative.get("market_heat_summary"), "")
+        ladder_has_rows = bool(
+            isinstance(limit_up_ladder.get("board_rows"), list)
+            and any(int(row.get("stock_count") or 0) > 0 for row in limit_up_ladder.get("board_rows") if isinstance(row, dict))
+        )
+        if (
+            hotspot_summary
+            and hotspot_summary != "--"
+            and hotspot_summary != ladder_summary
+            and "梯队暂无显著分布" not in hotspot_summary
+            and not ladder_has_rows
+        ):
+            summary_points.append(hotspot_summary)
         event_summary = self._clean_text(limit_up_theme_events.get("summary"), "")
         if event_summary and event_summary != "--":
             summary_points.append(event_summary)
@@ -501,8 +512,7 @@ class PostMarketNarrativeComposer:
                 summary_points = summary_points[:6]
         section_order = [
             "今日复盘要点",
-            "连板梯队和涨停分布",
-            "涨停事件与题材催化",
+            "涨停热点总览",
             "股价新高与行业趋势",
             "机构席位和游资动向",
             "次日观察与交易建议",
@@ -546,6 +556,38 @@ class PostMarketNarrativeComposer:
             return float(value)
         except Exception:
             return None
+
+    @staticmethod
+    def _limit_up_summary_from_rows(limit_up_ladder: dict[str, Any]) -> str:
+        if not isinstance(limit_up_ladder, dict):
+            return ""
+        board_rows = limit_up_ladder.get("board_rows")
+        if not isinstance(board_rows, list):
+            return ""
+        parts: list[str] = []
+        for row in board_rows:
+            if not isinstance(row, dict):
+                continue
+            count = int(row.get("stock_count") or 0)
+            if count <= 0:
+                continue
+            label = str(row.get("board_label") or "").strip()
+            if label:
+                parts.append(f"{label} {count} 只")
+        theme_rows = limit_up_ladder.get("theme_rows")
+        themes: list[str] = []
+        if isinstance(theme_rows, list):
+            for row in theme_rows[:3]:
+                if not isinstance(row, dict):
+                    continue
+                name = str(row.get("theme_name") or "").strip()
+                if name and name not in themes:
+                    themes.append(name)
+        if not parts and not themes:
+            return ""
+        ladder_text = "，".join(parts) if parts else "梯队暂无显著分布"
+        theme_text = "、".join(themes) if themes else "暂无明确热点题材"
+        return f"连板梯队分布：{ladder_text}；热点题材：{theme_text}。"
 
     def _headline(
         self,

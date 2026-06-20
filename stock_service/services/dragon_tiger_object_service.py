@@ -125,11 +125,18 @@ class DragonTigerObjectService:
             key = (row.trade_date, row.stock_id, row.reason)
             seats = inst_map.get(key, [])
             seats_sorted = sorted(seats, key=lambda item: abs(item.net_buy), reverse=True)
-            seat_summary = []
+            seat_summary: list[dict[str, object]] = []
             for seat in seats_sorted[:3]:
                 direction = "买入席位" if str(seat.side) == "0" else "卖出席位"
                 seat_summary.append(
-                    f"{seat.seat_name or '未知席位'} {direction} 净额 {seat.net_buy:.2f}"
+                    {
+                        "seat_name": seat.seat_name or "未知席位",
+                        "side": str(seat.side or ""),
+                        "side_label": direction,
+                        "buy_amount": round(float(seat.buy_amount or 0.0), 2),
+                        "sell_amount": round(float(seat.sell_amount or 0.0), 2),
+                        "net_buy": round(float(seat.net_buy or 0.0), 2),
+                    }
                 )
 
             object_item = DragonTigerObject(

@@ -651,7 +651,14 @@ export interface DragonTigerReviewV2 {
   reason: string | null;
   continuous_days: number | null;
   side_summary: string;
-  seat_summary: string[];
+  seat_summary: Array<{
+    seat_name?: string;
+    side?: string;
+    side_label?: string;
+    buy_amount?: number | null;
+    sell_amount?: number | null;
+    net_buy?: number | null;
+  }>;
   diagnostics: Record<string, unknown>;
   f10_capital?: F10CapitalEvidence;
 }
@@ -812,6 +819,188 @@ export interface PostMarketDecisionV2Review {
   diagnostics?: Record<string, unknown>;
 }
 
+export interface DailyRecapEssentials {
+  headline: string;
+  summary_points: string[];
+  next_day_strategy?: string | null;
+  section_order: string[];
+  source?: string | null;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface LimitUpLadderStock {
+  stock_id?: string;
+  stock_name?: string;
+  subject_key?: string;
+  theme_name?: string;
+  board_count?: number | null;
+  role_label?: string | null;
+  trade_action?: string | null;
+  reason?: string | null;
+}
+
+export interface LimitUpLadderRow {
+  board_count: number;
+  board_label: string;
+  stock_count: number;
+  stocks: LimitUpLadderStock[];
+}
+
+export interface LimitUpThemeEventItem {
+  event_id?: string | null;
+  summary?: string | null;
+  event_time?: string | null;
+  confidence?: number | null;
+  match_reason?: string | null;
+}
+
+export interface LimitUpThemeEventStock {
+  stock_id?: string;
+  stock_name?: string;
+  board_count?: number | null;
+  role_label?: string | null;
+  trade_action?: string | null;
+}
+
+export interface LimitUpThemeEventRow {
+  subject_key: string;
+  theme_name: string;
+  limit_up_count: number | null;
+  active_mainline: boolean;
+  lifecycle_state?: string | null;
+  trade_action?: string | null;
+  representative_stocks: LimitUpThemeEventStock[];
+  catalyst_events: LimitUpThemeEventItem[];
+}
+
+export interface LimitUpLadderSummary {
+  summary: string;
+  board_rows: LimitUpLadderRow[];
+  theme_rows: Array<{
+    subject_key: string;
+    theme_name: string;
+    limit_up_count: number | null;
+    active_mainline: boolean;
+    lifecycle_state?: string | null;
+    trade_action?: string | null;
+    representative_stocks: LimitUpThemeEventStock[];
+  }>;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface LimitUpThemeEventsSummary {
+  summary: string;
+  rows: LimitUpThemeEventRow[];
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface NewHighIndustrySummary {
+  industry_name: string;
+  count: number;
+  representative_stocks: Array<{
+    stock_id?: string;
+    stock_name?: string;
+    industry_name?: string;
+    pct_chg?: number | null;
+    high_price?: number | null;
+    close_price?: number | null;
+    trade_date?: string | null;
+  }>;
+}
+
+export interface NewHighSummary {
+  summary: string;
+  today_count?: number | null;
+  yesterday_count?: number | null;
+  day_before_count?: number | null;
+  industry_summary: NewHighIndustrySummary[];
+  representative_stocks: Array<{
+    stock_id?: string;
+    stock_name?: string;
+    industry_name?: string;
+    pct_chg?: number | null;
+    high_price?: number | null;
+    close_price?: number | null;
+    trade_date?: string | null;
+  }>;
+  diagnostics?: Record<string, unknown>;
+}
+
+export interface SeatMoneyRow {
+  stock_id?: string;
+  stock_name?: string;
+  theme_name?: string;
+  seat_type?: string;
+  hot_money_name?: string | null;
+  institution_seat_count?: number | null;
+  net_buy?: number | null;
+  side_summary?: string | null;
+  reason?: string | null;
+  seat_summary?: Record<string, unknown>[];
+}
+
+export interface HotMoneySeatActivityEntry {
+  stock_id?: string;
+  stock_name?: string;
+  theme_name?: string;
+  subject_key?: string;
+  buy_amount?: number | null;
+  sell_amount?: number | null;
+  net_amount?: number | null;
+  reason?: string | null;
+  rank_order?: number | null;
+  is_theme_leader?: boolean;
+  style_tags?: string[];
+}
+
+export interface HotMoneySeatActivityRow {
+  hot_money_name: string;
+  buy_entries: HotMoneySeatActivityEntry[];
+  sell_entries: HotMoneySeatActivityEntry[];
+  buy_net?: number | null;
+  sell_net?: number | null;
+  net_buy?: number | null;
+}
+
+export interface SeatMoneyInstitutionRow {
+  stock_id?: string;
+  stock_name?: string;
+  close_price?: number | null;
+  pct_change?: number | null;
+  buy_seat_count?: number | null;
+  sell_seat_count?: number | null;
+  institution_buy_amount?: number | null;
+  institution_sell_amount?: number | null;
+  net_buy?: number | null;
+  theme_name?: string;
+  reason?: string | null;
+  seat_summary?: Array<{
+    seat_name?: string;
+    side?: string;
+    side_label?: string;
+    buy_amount?: number | null;
+    sell_amount?: number | null;
+    net_buy?: number | null;
+  }>;
+}
+
+export interface SeatMoneySummary {
+  summary: string;
+  cohesion?: string | null;
+  theme_rows?: SeatMoneyRow[];
+  institution_net_buy?: number | null;
+  institution_buy_rows?: SeatMoneyInstitutionRow[];
+  institution_sell_rows?: SeatMoneyInstitutionRow[];
+  institution_top_buys: SeatMoneyRow[];
+  institution_top_sells: SeatMoneyRow[];
+  hot_money_net_buy?: number | null;
+  hot_money_buy_rows?: HotMoneySeatActivityRow[];
+  hot_money_sell_rows?: HotMoneySeatActivityRow[];
+  hot_money_top_buys: SeatMoneyRow[];
+  hot_money_top_sells: SeatMoneyRow[];
+  diagnostics?: Record<string, unknown>;
+}
+
 export interface PostMarketDailyReviewV2 {
   schema_version: "daily_review_v2";
   trade_date: string;
@@ -831,6 +1020,11 @@ export interface PostMarketDailyReviewV2 {
   market_overview_narrative?: MarketOverviewNarrative;
   market_hotspot_overview?: MarketHotspotOverview;
   market_hotspot_narrative?: MarketHotspotNarrative;
+  daily_recap_essentials?: DailyRecapEssentials;
+  limit_up_ladder?: LimitUpLadderSummary;
+  limit_up_theme_events?: LimitUpThemeEventsSummary;
+  new_high_summary?: NewHighSummary;
+  seat_money_summary?: SeatMoneySummary;
   evidence_layer_review?: EvidenceLayerReview;
   mainline_narrative?: MainlineNarrative;
   d1_narrative?: D1Narrative;
@@ -851,6 +1045,7 @@ export interface PostMarketDailyReviewV2 {
   index_technical_reviews?: IndexTechnicalReview[];
   mainline_daily_states?: MainlineDailyStateReview[];
   post_market_decision_v2?: PostMarketDecisionV2Review;
+  theme_name_map?: Record<string, string>;
   // PR-14C: evidence alignment
   evidence_alignment_index?: EvidenceAlignmentIndex;
 }
@@ -865,6 +1060,13 @@ export interface ThemeLimitUpStock {
   trade_action?: string | null;
 }
 
+export interface ThemeLimitUpBoardGroup {
+  board_count: number;
+  board_label: string;
+  stock_count: number;
+  stocks: ThemeLimitUpStock[];
+}
+
 export interface ThemeLimitUpColumn {
   subject_key: string;
   theme_name: string;
@@ -873,6 +1075,7 @@ export interface ThemeLimitUpColumn {
   lifecycle_state?: string | null;
   trade_action?: string | null;
   focus_stocks: ThemeLimitUpStock[];
+  board_groups?: ThemeLimitUpBoardGroup[];
 }
 
 export interface ThemeLimitUpMatrix {

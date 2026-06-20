@@ -20,6 +20,7 @@ CORE_TABLE_CHECKS: list[tuple[str, str, bool]] = [
     ("money_flow_enhanced", "derived", True),
     ("strong_stock_watch_history", "derived", True),
     ("dragon_tiger_object", "derived", False),  # 无榜日可为空
+    ("hot_money_trading_activity", "derived", False),  # 游资动向可为空，但若存在应纳入复盘席位层
     ("stock_abnormal_signal", "derived", False),  # 异动信号，非每日必达；缺失时异动证据/换手率不可用
 ]
 

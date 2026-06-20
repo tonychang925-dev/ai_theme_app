@@ -686,6 +686,75 @@ select {
   letter-spacing: 0.04em;
 }
 
+.market-overview-distribution {
+  min-width: 1500px;
+}
+
+.market-overview-distribution th,
+.market-overview-distribution td {
+  white-space: normal;
+}
+
+.market-overview-theme-head {
+  display: grid;
+  gap: 6px;
+}
+
+.market-overview-theme-name {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.market-overview-theme-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.market-overview-rowhead {
+  color: #8ddcff;
+  font-weight: 700;
+  vertical-align: top;
+}
+
+.market-overview-cell {
+  min-width: 180px;
+  vertical-align: top;
+  white-space: normal !important;
+}
+
+.market-overview-stock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 48px;
+}
+
+.market-overview-stock {
+  padding: 0;
+  text-align: left;
+  line-height: 1.4;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.market-overview-stock.is-board-4 {
+  color: #f7d45a;
+}
+
+.market-overview-stock.is-board-3 {
+  color: #ff9a9a;
+}
+
+.market-overview-stock.is-board-2 {
+  color: #9cc0ff;
+}
+
+.market-overview-stock.is-board-1 {
+  color: #8ee0a1;
+}
+
 .recap-theme-link {
   appearance: none;
   border: 0;

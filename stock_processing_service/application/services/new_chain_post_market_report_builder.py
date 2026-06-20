@@ -30,6 +30,7 @@ class NewChainPostMarketReportBuilder:
         recap_stock_rows = self._recap_stock_rows(context)
         recap_strong_rows = self._recap_strong_rows(recap_stock_rows)
         recap_theme_rows = self._recap_theme_rows(context, recap_stock_rows)
+        board_source_rows = self._board_source_rows(recap_doc)
 
         dependency_status = self._dependency_status(recap_doc)
         missing_dependencies = [name for name, ok in dependency_status.items() if not ok]
@@ -59,6 +60,7 @@ class NewChainPostMarketReportBuilder:
             theme_name_map=theme_name_map,
             cycles_by_theme=cycles_by_theme,
             stock_fact_map=stock_fact_map,
+            board_source_rows=board_source_rows,
         )
 
         sections = [
@@ -195,6 +197,43 @@ class NewChainPostMarketReportBuilder:
         return [dict(row or {}) for row in context.get("cycles") or []]
 
     @staticmethod
+    def _board_source_rows(recap_doc: dict[str, Any]) -> list[dict[str, Any]]:
+        rows: list[dict[str, Any]] = []
+        seen: set[tuple[str, str]] = set()
+        sources = [
+            recap_doc.get("strong_stock_reviews"),
+            (recap_doc.get("post_market_decision_v2") or {}).get("strong_stock_pool_reviews")
+            if isinstance(recap_doc.get("post_market_decision_v2"), dict)
+            else [],
+            (recap_doc.get("report_context") or {}).get("stock_facts")
+            if isinstance(recap_doc.get("report_context"), dict)
+            else [],
+        ]
+        for source in sources:
+            if not isinstance(source, list):
+                continue
+            for row in source:
+                if not isinstance(row, dict):
+                    continue
+                board_count = NewChainPostMarketReportBuilder._int(
+                    row.get("board_count")
+                    or row.get("limit_up_days")
+                    or row.get("max_consecutive_limit_up_days")
+                )
+                if board_count <= 0:
+                    continue
+                stock_id = str(row.get("stock_id") or row.get("stock_code") or "").strip()
+                stock_name = str(row.get("stock_name") or "").strip()
+                dedupe_key = (stock_id or stock_name, str(board_count))
+                if dedupe_key in seen:
+                    continue
+                seen.add(dedupe_key)
+                item = dict(row)
+                item["board_count"] = 4 if board_count >= 4 else board_count
+                rows.append(item)
+        return rows
+
+    @staticmethod
     def _recap_strong_rows(stock_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         leader_rows = [
             row
@@ -296,9 +335,12 @@ class NewChainPostMarketReportBuilder:
         theme_name_map: dict[str, str],
         cycles_by_theme: dict[str, dict[str, Any]],
         stock_fact_map: dict[tuple[str, str], dict[str, Any]],
+        board_source_rows: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
         market = dict(context.get("market") or {})
-        stock_rows = [dict(row or {}) for row in context.get("stock_facts") or []]
+        stock_rows = [dict(row or {}) for row in (board_source_rows or context.get("stock_facts") or [])]
+        if not stock_rows:
+            stock_rows = [dict(row or {}) for row in context.get("stock_facts") or []]
         grouped = NewChainPostMarketReportBuilder._group_market_overview_rows(stock_rows, theme_name_map)
 
         columns: list[dict[str, Any]] = []
@@ -324,8 +366,10 @@ class NewChainPostMarketReportBuilder:
                 "lifecycle_state": str(cycle.get("final_cycle_state") or item["rows"][0].get("cycle_state") or "unknown"),
                 "trade_action": NewChainPostMarketReportBuilder._theme_trade_action(cycle, limit_up_count),
                 "focus_stocks": focus_stocks,
+                "board_groups": NewChainPostMarketReportBuilder._build_board_groups(rows, stock_fact_map),
             })
 
+        columns = [col for col in columns if int(col.get("limit_up_count") or 0) > 0]
         columns.sort(
             key=lambda col: (
                 -int(col.get("limit_up_count") or 0),
@@ -333,7 +377,6 @@ class NewChainPostMarketReportBuilder:
                 str(col.get("theme_name") or ""),
             )
         )
-        top_columns = columns[:10]
         return {
             "trade_date": str(context.get("trade_date") or market.get("trade_date") or ""),
             "limit_up_total": NewChainPostMarketReportBuilder._int(market.get("limit_up_count")),
@@ -342,12 +385,19 @@ class NewChainPostMarketReportBuilder:
             "down_count": NewChainPostMarketReportBuilder._int(market.get("down_count")),
             "total_amount": market.get("market_total_amount"),
             "theme_limitup_matrix": {
-                "columns": top_columns,
-                "max_rows": max((len(col.get("focus_stocks") or []) for col in top_columns), default=0),
+                "columns": columns,
+                "max_rows": max(
+                    (
+                        max((len(group.get("stocks") or []) for group in (col.get("board_groups") or [])), default=0)
+                        for col in columns
+                    ),
+                    default=0,
+                ),
                 "count_method": "display_by_theme",
             },
             "diagnostics": {
-                "theme_count": len(columns),
+                "theme_count": len(grouped),
+                "visible_theme_count": len(columns),
                 "stock_count": len(stock_rows),
             },
         }
@@ -365,6 +415,54 @@ class NewChainPostMarketReportBuilder:
             bucket = grouped.setdefault(group_key, {"subject_key": subject_key or group_key, "theme_name": theme_name, "rows": []})
             bucket["rows"].append(row)
         return grouped
+
+    @staticmethod
+    def _build_board_groups(
+        rows: list[dict[str, Any]],
+        stock_fact_map: dict[tuple[str, str], dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        buckets: dict[int, list[dict[str, Any]]] = {4: [], 3: [], 2: [], 1: []}
+        seen: set[tuple[str, str]] = set()
+        for row in rows:
+            fact = NewChainPostMarketReportBuilder._fact_for(row, stock_fact_map)
+            board_count = int(
+                row.get("max_consecutive_limit_up_days")
+                or row.get("limit_up_days")
+                or row.get("board_count")
+                or fact.get("max_consecutive_limit_up_days")
+                or fact.get("limit_up_days")
+                or fact.get("board_count")
+                or 0
+            )
+            if board_count <= 0:
+                continue
+            board_count = 4 if board_count >= 4 else board_count
+            stock_id = str(row.get("stock_id") or "").strip()
+            stock_name = str(row.get("stock_name") or "").strip()
+            dedupe_key = (stock_id or stock_name, str(board_count))
+            if dedupe_key in seen:
+                continue
+            seen.add(dedupe_key)
+            buckets.setdefault(board_count, []).append({
+                "stock_id": stock_id,
+                "stock_name": stock_name,
+                "board_count": board_count,
+                "role_label": str(row.get("role_label") or row.get("role") or fact.get("role_label") or fact.get("candidate_level") or "").strip(),
+                "in_layer_c": bool(row.get("in_layer_c") or fact.get("is_leader") or fact.get("leader_composite_score") is not None),
+                "is_d1_candidate": bool(row.get("is_d1_candidate") or fact.get("watch_score") is not None or fact.get("candidate_score") is not None),
+                "trade_action": str(row.get("trade_action") or row.get("next_day_action") or fact.get("trade_action") or "观察").strip(),
+            })
+
+        groups: list[dict[str, Any]] = []
+        for board_count in (4, 3, 2, 1):
+            stocks = buckets.get(board_count, [])
+            groups.append({
+                "board_count": board_count,
+                "board_label": "首板" if board_count == 1 else f"{board_count}板",
+                "stock_count": len(stocks),
+                "stocks": stocks[:8],
+            })
+        return groups
 
     @staticmethod
     def _is_limit_up(row: dict[str, Any]) -> bool:
@@ -1012,12 +1110,24 @@ class NewChainPostMarketReportBuilder:
             or row.get("subject_name")
             or ""
         ).strip()
-        if raw and raw != subject_key and not raw.isdigit():
-            return raw
         mapped = str(theme_name_map.get(subject_key) or "").strip()
         if mapped and mapped != subject_key and not mapped.isdigit():
             return mapped
+        if raw and raw != subject_key and not raw.isdigit() and not NewChainPostMarketReportBuilder._is_placeholder_theme(raw):
+            return raw
+        if mapped and mapped != subject_key and not mapped.isdigit():
+            return mapped
+        if NewChainPostMarketReportBuilder._is_placeholder_theme(raw):
+            return "未归类"
         return subject_key or raw or "未分类"
+
+    @staticmethod
+    def _is_placeholder_theme(value: Any) -> bool:
+        text = str(value or "").strip()
+        if not text:
+            return True
+        lowered = text.lower()
+        return lowered in {"__independent__", "independent", "unknown", "未分类"} or text.startswith("__")
 
     @staticmethod
     def _stock_fact_map(rows: list[Any]) -> dict[tuple[str, str], dict[str, Any]]:

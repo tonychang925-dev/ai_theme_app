@@ -4,6 +4,7 @@ import pytest
 
 from stock_processing_service.application.services.collection_task_runners import (
     BuildDragonTigerObjectRunner,
+    BuildHotMoneyTradingActivityRunner,
     TushareKlineRunner,
 )
 from stock_processing_service.application.services.collection_task_registry import (
@@ -67,6 +68,30 @@ async def test_dragon_tiger_runner_treats_no_data_as_skipped() -> None:
     assert result.error_message == ""
     assert "龙虎榜数据为空，skip到下一个流程: rows=0" in result.logs
     assert "龙虎榜详情: dragon_tiger raw snapshots exist but payload is empty" in result.logs
+
+
+@pytest.mark.asyncio
+async def test_hot_money_activity_runner_reports_execution_failure_when_script_raises(monkeypatch) -> None:
+    runner = BuildHotMoneyTradingActivityRunner()
+
+    async def _boom():
+        raise RuntimeError("boom")
+
+    import database_service.scripts.build_hot_money_trading_activity as script_module
+
+    monkeypatch.setattr(script_module, "main_async", _boom)
+    context = CollectionTaskContext(
+        trade_date="2026-06-04",
+        env={"TUSHARE_TOKEN": "token"},
+        container=_FakeContainer(),
+    )
+
+    result = await runner.run(context)
+
+    assert result.status == "failed"
+    assert result.current_label == "游资动向活动表构建异常"
+    assert "RuntimeError" in result.error_message
+    assert "hot_money_activity_build status=failed" in result.logs
 
 
 @pytest.mark.asyncio
