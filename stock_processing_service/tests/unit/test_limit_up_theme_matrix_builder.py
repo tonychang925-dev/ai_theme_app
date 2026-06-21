@@ -89,6 +89,78 @@ class _FakeConn:
         raise AssertionError(f"unexpected query: {query}")
 
 
+class _PrimaryMainlineFakeConn(_FakeConn):
+    def __init__(self, trade_date: date, *, scenario: str) -> None:
+        super().__init__(trade_date)
+        self.scenario = scenario
+
+    async def fetch(self, query: str, *args: Any) -> list[dict[str, Any]]:
+        q = " ".join(query.lower().split())
+        self.queries.append(q)
+        assert "stock_facts" not in q
+        assert "strong_stock_reviews" not in q
+        assert "market_overview_review" not in q
+        assert "limit_up_theme_events" not in q
+        assert "theme_master" not in q
+
+        if "from stock_daily_snapshot" in q and "trade_date = $1::date" in q and "pct_chg" in q and ">= $2" in q:
+            return [
+                {
+                    "stock_key": "000001",
+                    "stock_id": "000001.SZ",
+                    "stock_name": "多义股",
+                    "close_price": 12.3,
+                    "pct_chg": 10.01,
+                    "amount": 100000000,
+                }
+            ]
+
+        if "from stock_daily_snapshot" in q and "trade_date <= $1::date" in q:
+            return [{"stock_key": "000001", "trade_date": self.trade_date, "pct_chg": 10.01}]
+
+        if "from subject_stock_map" in q:
+            if self.scenario == "canonical_priority":
+                return [
+                    {"stock_id": "000001", "subject_key": "canonical-a", "stock_name": "多义股", "sort": 2, "top": 0, "source_type": "db", "confidence": 1.0, "reason": ""},
+                    {"stock_id": "000001", "subject_key": "active-b", "stock_name": "多义股", "sort": 1, "top": 0, "source_type": "db", "confidence": 1.0, "reason": ""},
+                ]
+            return [
+                {"stock_id": "000001", "subject_key": "active-a", "stock_name": "多义股", "sort": 1, "top": 0, "source_type": "db", "confidence": 1.0, "reason": ""},
+                {"stock_id": "000001", "subject_key": "active-b", "stock_name": "多义股", "sort": 2, "top": 0, "source_type": "db", "confidence": 1.0, "reason": ""},
+            ]
+
+        if "from mainline_daily_state" in q:
+            return [
+                {
+                    "id": 1,
+                    "canonical_subject_key": "canonical-a",
+                    "mainline_name": "主线A",
+                    "active_subject_keys_json": ["active-a"],
+                    "lifecycle_state": "start",
+                    "mainline_alive": True,
+                    "mainline_trade_alive": True,
+                    "trade_mode": "mainline_core_only",
+                    "allow_trade": True,
+                },
+                {
+                    "id": 2,
+                    "canonical_subject_key": "canonical-b",
+                    "mainline_name": "主线B",
+                    "active_subject_keys_json": ["active-b"],
+                    "lifecycle_state": "start",
+                    "mainline_alive": True,
+                    "mainline_trade_alive": True,
+                    "trade_mode": "mainline_core_only",
+                    "allow_trade": True,
+                },
+            ]
+
+        if "from subject_rank_daily" in q:
+            return []
+
+        raise AssertionError(f"unexpected query: {query}")
+
+
 @pytest.mark.asyncio
 async def test_limit_up_theme_matrix_builder_uses_snapshot_board_count_and_deterministic_mapping() -> None:
     trade_date = date(2026, 6, 18)
@@ -130,3 +202,38 @@ async def test_limit_up_theme_matrix_builder_does_not_emit_non_limit_up_rows() -
     assert "未归类" not in [column["theme_name"] for column in matrix["columns"]]
     assert "__independent__" not in [column["theme_name"] for column in matrix["columns"]]
     assert not any(str(column["theme_name"]).isdigit() for column in matrix["columns"])
+
+
+@pytest.mark.asyncio
+async def test_limit_up_theme_matrix_builder_does_not_assign_one_stock_to_multiple_mainlines() -> None:
+    trade_date = date(2026, 6, 18)
+    matrix = await LimitUpThemeMatrixBuilder().build(
+        trade_date=trade_date,
+        conn=_PrimaryMainlineFakeConn(trade_date, scenario="ambiguous_active"),
+    )
+
+    assert len(matrix["columns"]) == 2
+    assert [column["theme_name"] for column in matrix["columns"]] == ["主线A", "主线B"]
+    assert matrix["visible_columns"] == []
+    assert matrix["board_totals"] == {"4": 0, "3": 0, "2": 0, "1": 0}
+    assert matrix["diagnostics"]["ambiguous_mainline_stock_count"] == 1
+    assert matrix["diagnostics"]["ambiguous_mainline_stocks"][0]["stock_name"] == "多义股"
+    assert matrix["diagnostics"]["assignment_audit_rows"][0]["chosen_theme_name"] == "主线A、主线B"
+    assert matrix["diagnostics"]["assignment_audit_rows"][0]["chosen_reason"] == "ambiguous_mainline_mapping"
+
+
+@pytest.mark.asyncio
+async def test_limit_up_theme_matrix_builder_prefers_canonical_subject_key_over_active_key() -> None:
+    trade_date = date(2026, 6, 18)
+    matrix = await LimitUpThemeMatrixBuilder().build(
+        trade_date=trade_date,
+        conn=_PrimaryMainlineFakeConn(trade_date, scenario="canonical_priority"),
+    )
+
+    assert len(matrix["columns"]) == 2
+    assert [column["theme_name"] for column in matrix["columns"]] == ["主线A", "主线B"]
+    assert [column["theme_name"] for column in matrix["visible_columns"]] == ["主线A"]
+    assert matrix["columns"][0]["limit_up_count"] == 1
+    assert matrix["columns"][1]["limit_up_count"] == 0
+    assert matrix["columns"][0]["board_groups"][3]["stocks"][0]["stock_name"] == "多义股"
+    assert matrix["diagnostics"]["ambiguous_mainline_stock_count"] == 0

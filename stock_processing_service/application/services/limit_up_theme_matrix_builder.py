@@ -49,12 +49,14 @@ class LimitUpThemeMatrixBuilder:
             if board_count <= 0:
                 continue
             stock_name = self._resolve_stock_name(row, subject_rows_by_stock.get(stock_key, []))
-            resolved_items = self._resolve_themes(
+            resolution = self._resolve_primary_mainline(
                 stock_key=stock_key,
                 subject_rows=subject_rows_by_stock.get(stock_key, []),
                 mainline_index=mainline_index,
                 ranked_subject_keys=ranked_subject_keys,
             )
+            resolved = resolution.get("resolved")
+            ambiguous_matches = resolution.get("ambiguous_matches") or []
             audit_row = self._assignment_audit_row(
                 row=row,
                 stock_name=stock_name,
@@ -62,53 +64,51 @@ class LimitUpThemeMatrixBuilder:
                 subject_rows=subject_rows_by_stock.get(stock_key, []),
                 ranked_subject_keys=ranked_subject_keys,
                 mainline_index=mainline_index,
-                resolved_items=resolved_items,
+                resolved=resolved,
+                ambiguous_matches=ambiguous_matches,
             )
-            if not resolved_items:
+            if ambiguous_matches:
+                non_mainline_limit_up_stocks.append(self._diagnostic_stock(row, board_count, "ambiguous_mainline_mapping", stock_name))
+                assignment_audit_rows.append(audit_row)
+                continue
+            if not resolved:
                 non_mainline_limit_up_stocks.append(self._diagnostic_stock(row, board_count, "no_mainline_mapping", stock_name))
                 assignment_audit_rows.append(audit_row)
                 continue
 
-            chosen_subject_keys: list[str] = []
-            chosen_theme_names: list[str] = []
-            chosen_reasons: list[str] = []
-            for resolved in resolved_items:
-                if self._is_invalid_theme_name(resolved["theme_name"]):
-                    invalid_theme_rows.append({
-                        **self._diagnostic_stock(row, board_count, "invalid_theme_name", stock_name),
-                        "subject_key": resolved.get("subject_key", ""),
-                        "theme_name": resolved.get("theme_name", ""),
-                    })
-                    continue
-
-                theme_key = self._theme_bucket_key(resolved)
-                bucket = columns_map.get(theme_key)
-                if bucket is None:
-                    non_mainline_limit_up_stocks.append(self._diagnostic_stock(row, board_count, "mainline_column_missing", stock_name))
-                    continue
-                stock_identity = stock_key or stock_name
-                if stock_identity in bucket["_stock_keys"]:
-                    continue
-                bucket["_stock_keys"].add(stock_identity)
-                chosen_subject_keys.append(self._text(resolved.get("subject_key")))
-                chosen_theme_names.append(self._text(resolved.get("theme_name")))
-                chosen_reasons.append(self._text(resolved.get("mapping_source")))
-                stock = {
-                    "stock_id": self._text(row.get("stock_id") or stock_key),
-                    "stock_name": stock_name,
+            if self._is_invalid_theme_name(resolved["theme_name"]):
+                invalid_theme_rows.append({
+                    **self._diagnostic_stock(row, board_count, "invalid_theme_name", stock_name),
                     "subject_key": resolved.get("subject_key", ""),
-                    "theme_name": resolved["theme_name"],
-                    "board_count": board_count,
-                    "pct_chg": self._float_or_none(row.get("pct_chg")),
-                    "close_price": self._float_or_none(row.get("close_price")),
-                    "amount": self._float_or_none(row.get("amount")),
-                }
-                bucket["_board_groups"][board_count].append(stock)
-                bucket["focus_stocks"].append(stock)
-                mapped_stock_count += 1
-            audit_row["chosen_subject_key"] = "、".join([item for item in chosen_subject_keys if item])
-            audit_row["chosen_theme_name"] = "、".join([item for item in chosen_theme_names if item])
-            audit_row["chosen_reason"] = "、".join([item for item in chosen_reasons if item]) or "not_assigned_to_column"
+                    "theme_name": resolved.get("theme_name", ""),
+                })
+                assignment_audit_rows.append(audit_row)
+                continue
+
+            theme_key = self._theme_bucket_key(resolved)
+            bucket = columns_map.get(theme_key)
+            if bucket is None:
+                non_mainline_limit_up_stocks.append(self._diagnostic_stock(row, board_count, "mainline_column_missing", stock_name))
+                assignment_audit_rows.append(audit_row)
+                continue
+            stock_identity = stock_key or stock_name
+            if stock_identity in bucket["_stock_keys"]:
+                assignment_audit_rows.append(audit_row)
+                continue
+            bucket["_stock_keys"].add(stock_identity)
+            stock = {
+                "stock_id": self._text(row.get("stock_id") or stock_key),
+                "stock_name": stock_name,
+                "subject_key": resolved.get("subject_key", ""),
+                "theme_name": resolved["theme_name"],
+                "board_count": board_count,
+                "pct_chg": self._float_or_none(row.get("pct_chg")),
+                "close_price": self._float_or_none(row.get("close_price")),
+                "amount": self._float_or_none(row.get("amount")),
+            }
+            bucket["_board_groups"][board_count].append(stock)
+            bucket["focus_stocks"].append(stock)
+            mapped_stock_count += 1
             assignment_audit_rows.append(audit_row)
 
         mainline_columns = [
@@ -122,14 +122,14 @@ class LimitUpThemeMatrixBuilder:
                 str(col.get("theme_name") or ""),
             )
         )
-        board_totals = self._visible_board_totals(visible_columns)
+        board_totals = self._visible_board_totals(mainline_columns)
         summary = self._summary(visible_columns, board_totals)
         return {
             "source": self.source,
             "trade_date": trade_date.isoformat(),
             "summary": summary,
             "board_totals": board_totals,
-            "columns": visible_columns,
+            "columns": mainline_columns,
             "visible_columns": visible_columns,
             "mainline_columns": mainline_columns,
             "non_mainline_columns": [],
@@ -141,6 +141,12 @@ class LimitUpThemeMatrixBuilder:
                 "unmapped_stocks": non_mainline_limit_up_stocks,
                 "non_mainline_limit_up_stock_count": len(non_mainline_limit_up_stocks),
                 "non_mainline_limit_up_stocks": non_mainline_limit_up_stocks,
+                "ambiguous_mainline_stock_count": len([
+                    row for row in assignment_audit_rows if row.get("chosen_reason") == "ambiguous_mainline_mapping"
+                ]),
+                "ambiguous_mainline_stocks": [
+                    row for row in assignment_audit_rows if row.get("chosen_reason") == "ambiguous_mainline_mapping"
+                ],
                 "invalid_theme_rows": invalid_theme_rows,
                 "invalid_theme_row_count": len(invalid_theme_rows),
                 "assignment_audit_rows": assignment_audit_rows,
@@ -272,7 +278,7 @@ class LimitUpThemeMatrixBuilder:
                 "diagnostics": {"mapping_source": "mainline_daily_state"},
                 "_board_groups": {1: [], 2: [], 3: [], 4: []},
                 "_stock_keys": set(),
-            "_order": idx,
+                "_order": idx,
             }
         return columns
 
@@ -313,32 +319,33 @@ class LimitUpThemeMatrixBuilder:
             mainline_name = self._text(row.get("mainline_name"))
             if self._is_invalid_theme_name(mainline_name):
                 continue
-            keys = {
-                self._text(row.get("canonical_subject_key")),
-                mainline_name,
-            }
             bucket_key = self._mainline_bucket_key(row, len(index))
-            active_keys = self._json_list(row.get("active_subject_keys_json"))
-            keys.update(
+            canonical_key = self._text(row.get("canonical_subject_key"))
+            if self._is_valid_subject_key(canonical_key):
+                indexed = dict(row)
+                indexed["_bucket_key"] = bucket_key
+                indexed["_match_type"] = "canonical_subject_key"
+                index.setdefault(canonical_key, []).append(indexed)
+            for key in {
                 self._text(item)
-                for item in active_keys
+                for item in self._json_list(row.get("active_subject_keys_json"))
                 if active_key_counts.get(self._text(item), 0) == 1
-            )
-            for key in keys:
-                if self._is_valid_subject_key(key):
+            }:
+                if self._is_valid_subject_key(key) and key != canonical_key:
                     indexed = dict(row)
                     indexed["_bucket_key"] = bucket_key
+                    indexed["_match_type"] = "active_subject_keys_json"
                     index.setdefault(key, []).append(indexed)
         return index
 
-    def _resolve_themes(
+    def _resolve_primary_mainline(
         self,
         *,
         stock_key: str,
         subject_rows: list[dict[str, Any]],
         mainline_index: dict[str, list[dict[str, Any]]],
         ranked_subject_keys: set[str],
-    ) -> list[dict[str, Any]]:
+    ) -> dict[str, Any]:
         ranked_rows = sorted(
             subject_rows,
             key=lambda item: (
@@ -347,17 +354,16 @@ class LimitUpThemeMatrixBuilder:
                 self._text(item.get("subject_key")),
             ),
         )
-        resolved: list[dict[str, Any]] = []
-        seen_bucket_keys: set[str] = set()
+        canonical_matches: dict[str, dict[str, Any]] = {}
+        active_matches: dict[str, dict[str, Any]] = {}
         for row in ranked_rows:
             subject_key = self._text(row.get("subject_key"))
             for mainline in mainline_index.get(subject_key, []):
                 mainline_name = self._text(mainline.get("mainline_name"))
                 bucket_key = self._text(mainline.get("_bucket_key"))
-                if self._is_invalid_theme_name(mainline_name) or not bucket_key or bucket_key in seen_bucket_keys:
+                if self._is_invalid_theme_name(mainline_name) or not bucket_key:
                     continue
-                seen_bucket_keys.add(bucket_key)
-                resolved.append({
+                resolved = {
                     "subject_key": self._text(mainline.get("canonical_subject_key") or subject_key),
                     "theme_name": mainline_name,
                     "mainline_name": mainline_name,
@@ -365,10 +371,22 @@ class LimitUpThemeMatrixBuilder:
                     "active_mainline": bool(mainline.get("mainline_alive") or mainline.get("mainline_trade_alive")),
                     "lifecycle_state": self._text(mainline.get("lifecycle_state")),
                     "trade_action": self._text(mainline.get("trade_mode")),
-                    "mapping_source": "mainline_daily_state",
-                })
+                    "mapping_source": self._text(mainline.get("_match_type")) or "mainline_daily_state",
+                }
+                if self._text(mainline.get("_match_type")) == "canonical_subject_key":
+                    canonical_matches.setdefault(bucket_key, resolved)
+                else:
+                    active_matches.setdefault(bucket_key, resolved)
 
-        return resolved
+        if len(canonical_matches) == 1:
+            return {"resolved": next(iter(canonical_matches.values())), "ambiguous_matches": []}
+        if len(canonical_matches) > 1:
+            return {"resolved": None, "ambiguous_matches": list(canonical_matches.values())}
+        if len(active_matches) == 1:
+            return {"resolved": next(iter(active_matches.values())), "ambiguous_matches": []}
+        if len(active_matches) > 1:
+            return {"resolved": None, "ambiguous_matches": list(active_matches.values())}
+        return {"resolved": None, "ambiguous_matches": []}
 
     def _assignment_audit_row(
         self,
@@ -379,7 +397,8 @@ class LimitUpThemeMatrixBuilder:
         subject_rows: list[dict[str, Any]],
         ranked_subject_keys: set[str],
         mainline_index: dict[str, list[dict[str, Any]]],
-        resolved_items: list[dict[str, Any]],
+        resolved: dict[str, Any] | None,
+        ambiguous_matches: list[dict[str, Any]],
     ) -> dict[str, Any]:
         all_subject_keys: list[str] = []
         all_subject_names: list[str] = []
@@ -399,6 +418,7 @@ class LimitUpThemeMatrixBuilder:
                 mainline_name = self._text(mainline.get("mainline_name"))
                 if mainline_name:
                     mainline_matches.append(mainline_name)
+        chosen_items = ambiguous_matches if ambiguous_matches else ([resolved] if resolved else [])
         return {
             "stock_id": self._text(row.get("stock_id")),
             "stock_name": stock_name,
@@ -408,15 +428,15 @@ class LimitUpThemeMatrixBuilder:
             "ranked_subject_keys_hit": self._unique_keep_order(ranked_hits),
             "mainline_matches": self._unique_keep_order(mainline_matches),
             "chosen_subject_key": "、".join(
-                self._unique_keep_order([self._text(item.get("subject_key")) for item in resolved_items])
+                self._unique_keep_order([self._text(item.get("subject_key")) for item in chosen_items])
             ),
             "chosen_theme_name": "、".join(
-                self._unique_keep_order([self._text(item.get("theme_name")) for item in resolved_items])
+                self._unique_keep_order([self._text(item.get("theme_name")) for item in chosen_items])
             ),
-            "chosen_reason": "、".join(
-                self._unique_keep_order([self._text(item.get("mapping_source")) for item in resolved_items])
-            ) or "no_mainline_mapping",
-            "mainline_hit": bool(resolved_items),
+            "chosen_reason": "ambiguous_mainline_mapping" if ambiguous_matches else (
+                self._text(resolved.get("mapping_source")) if resolved else "no_mainline_mapping"
+            ),
+            "mainline_hit": bool(resolved) and not ambiguous_matches,
         }
 
     def _finalize_column(self, bucket: dict[str, Any]) -> dict[str, Any]:
@@ -490,6 +510,16 @@ class LimitUpThemeMatrixBuilder:
             except Exception:
                 return []
         return []
+
+    @staticmethod
+    def _unique_keep_order(values: list[str]) -> list[str]:
+        seen: set[str] = set()
+        result: list[str] = []
+        for value in values:
+            if value and value not in seen:
+                seen.add(value)
+                result.append(value)
+        return result
 
     @staticmethod
     def _diagnostic_stock(row: dict[str, Any], board_count: int, reason: str, stock_name: str | None = None) -> dict[str, Any]:
