@@ -42,8 +42,8 @@ function stockLink(stockId?: string, tradeDate?: string) {
 }
 
 function displayThemeName(col: LimitUpThemeMatrixColumn, subjectKeyToThemeName?: Map<string, string>) {
-  const mapped = subjectKeyToThemeName?.get(String(col.subject_key || "").trim())?.trim() || "";
-  const raw = String(col.mainline_name || col.theme_name || mapped || "其他").trim() || "其他";
+  void subjectKeyToThemeName;
+  const raw = String(col.mainline_name || col.theme_name || "其他").trim() || "其他";
   if (raw === "__independent__" || raw.toLowerCase() === "independent" || raw === "未归类" || raw.startsWith("__")) {
     return "未归类";
   }

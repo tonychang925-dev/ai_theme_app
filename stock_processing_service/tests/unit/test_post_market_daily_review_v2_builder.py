@@ -190,10 +190,9 @@ def test_daily_review_v2_builder_uses_strong_stock_rows_for_ladder_without_matri
     assert payload["limit_up_ladder"]["theme_rows"]
 
     theme_events = payload["limit_up_theme_events"]
-    assert theme_events["themes"]
-    assert theme_events["themes"][0]["theme_name"] == "PCB印制电路板"
-    assert theme_events["themes"][0]["representative_stocks"]
-    assert theme_events["diagnostics"]["candidate_count"] >= 2
+    assert theme_events["themes"] == []
+    assert theme_events["rows"] == []
+    assert payload["limit_up_theme_matrix"]["diagnostics"]["error"] == "missing_limit_up_theme_matrix"
 
 
 def test_daily_review_v2_builder_normalizes_independent_placeholder_theme() -> None:
@@ -258,12 +257,8 @@ def test_daily_review_v2_builder_normalizes_independent_placeholder_theme() -> N
     theme_rows = payload["limit_up_theme_events"]["themes"]
     assert "__independent__" not in ladder_summary
     assert "__independent__" not in theme_summary
-    assert any(row["theme_name"] == "PCB印制电路板" for row in theme_rows)
-    assert any(
-        row["theme_name"] == "PCB印制电路板"
-        and any(stock["stock_name"] == "一博科技" for stock in row["representative_stocks"])
-        for row in theme_rows
-    )
+    assert theme_rows == []
+    assert payload["limit_up_theme_matrix"]["diagnostics"]["error"] == "missing_limit_up_theme_matrix"
 
 
 def test_daily_review_v2_builder_prefers_canonical_mainline_name_map() -> None:
@@ -333,278 +328,63 @@ def test_daily_review_v2_builder_prefers_canonical_mainline_name_map() -> None:
     assert payload["seat_money_summary"]["theme_rows"][0]["theme_name"] == "PCB印制电路板"
 
 
-def test_daily_review_v2_builder_emits_limit_up_theme_matrix_from_single_contract() -> None:
+def test_daily_review_v2_builder_passes_through_limit_up_theme_matrix_contract() -> None:
     recap_doc = {
-        "report_context": {
-            "theme_name_map": {"pcb": "PCB印制电路板"},
-            "stock_facts": [
+        "limit_up_theme_matrix": {
+            "source": "limit_up_theme_matrix_builder",
+            "trade_date": "2026-06-18",
+            "summary": "涨停热点矩阵：4板 1 只，3板 0 只，2板 0 只，首板 1 只；热点题材：PCB印制电路板。",
+            "board_totals": {"4": 1, "3": 0, "2": 0, "1": 1},
+            "columns": [
                 {
-                    "stock_id": "1",
-                    "stock_name": "A",
                     "subject_key": "pcb",
                     "theme_name": "PCB印制电路板",
-                    "board_count": 4,
-                    "role_label": "leader",
-                    "trade_action": "主线参与",
-                },
-                {
-                    "stock_id": "2",
-                    "stock_name": "B",
-                    "subject_key": "pcb",
-                    "theme_name": "PCB印制电路板",
-                    "board_count": 1,
-                    "role_label": "watch",
-                    "trade_action": "观察",
-                },
-                {
-                    "stock_id": "3",
-                    "stock_name": "C",
-                    "subject_key": "__independent__",
-                    "theme_name": "未归类",
-                    "board_count": 2,
-                    "role_label": "watch",
-                    "trade_action": "观察",
-                },
+                    "mainline_name": "PCB印制电路板",
+                    "limit_up_count": 2,
+                    "board_groups": [
+                        {"board_count": 4, "board_label": "4板", "stock_count": 1, "stocks": [{"stock_id": "1", "stock_name": "A", "board_count": 4}]},
+                        {"board_count": 3, "board_label": "3板", "stock_count": 0, "stocks": []},
+                        {"board_count": 2, "board_label": "2板", "stock_count": 0, "stocks": []},
+                        {"board_count": 1, "board_label": "首板", "stock_count": 1, "stocks": [{"stock_id": "2", "stock_name": "B", "board_count": 1}]},
+                    ],
+                    "catalyst_events": [],
+                    "diagnostics": {"mapping_source": "mainline_daily_state"},
+                }
             ],
+            "diagnostics": {
+                "source": "limit_up_theme_matrix_builder",
+                "count_method": "stock_daily_snapshot_continuous_limit_up",
+                "theme_count": 1,
+                "candidate_count": 2,
+            },
         },
-        "mainline_daily_states": [
-            {
-                "mainline_id": "pcb",
-                "canonical_subject_key": "pcb",
-                "mainline_name": "PCB印制电路板",
-                "lifecycle_state": "divergence",
-                "mainline_strength_score": 86.2,
-                "fade_risk_score": 27.5,
-                "strong_pool_count": 8,
-                "d1_count": 3,
-                "focus_count": 0,
-                "focus_stocks": [
-                    {"stock_id": "1", "stock_name": "A", "subject_key": "pcb", "theme_name": "PCB印制电路板"},
-                    {"stock_id": "2", "stock_name": "B", "subject_key": "pcb", "theme_name": "PCB印制电路板"},
-                ],
-                "action_advice": "观察分歧修复",
-                "conclusion": "主线仍有资金，但处于分歧阶段",
-            }
-        ],
         "diagnostics": {"readiness": {"status": "ready"}},
     }
 
     payload = PostMarketDailyReviewV2Builder().build(
         trade_date=date(2026, 6, 18),
         recap_doc=recap_doc,
-        theme_driver_events=[
-            {
-                "subject_key": "pcb",
-                "theme_name": "PCB印制电路板",
-                "driver_events": [
-                    {
-                        "event_id": "evt-1",
-                        "summary": "Rubin BOM拆解",
-                        "event_time": "2026-06-18",
-                        "confidence": 0.93,
-                        "match_reason": "主题命中",
-                    }
-                ],
-            }
-        ],
         snapshot_version="daily_review_v2.limit_up_theme_matrix",
     )
 
     matrix = payload["limit_up_theme_matrix"]
-    assert matrix["diagnostics"]["source"] == "daily_review_v2.limit_up_theme_matrix"
+    assert matrix == recap_doc["limit_up_theme_matrix"]
+    assert matrix["source"] == "limit_up_theme_matrix_builder"
     assert matrix["board_totals"]["4"] == 1
     assert matrix["board_totals"]["1"] == 1
-    themes = [col["theme_name"] for col in matrix["columns"]]
-    assert themes == ["PCB印制电路板"]
-    assert "未归类" not in themes
-    assert "9017093" not in themes
-    col = matrix["columns"][0]
-    assert col["board_groups"][0]["board_count"] == 4
-    assert col["board_groups"][0]["stock_count"] == 1
-    assert col["board_groups"][3]["board_count"] == 1
-    assert col["board_groups"][3]["stock_count"] == 1
-    assert col["catalyst_events"][0]["summary"] == "Rubin BOM拆解"
-    assert matrix["diagnostics"]["unclassified_board_count"] == 1
 
 
-def test_daily_review_v2_builder_keeps_unclassified_rows_in_diagnostics_but_counts_them() -> None:
-    recap_doc = {
-        "report_context": {
-            "theme_name_map": {"pcb": "PCB印制电路板"},
-            "stock_facts": [
-                {
-                    "stock_id": "600353.SH",
-                    "stock_name": "旭光电子",
-                    "subject_key": "__independent__",
-                    "theme_name": "未归类",
-                    "board_count": 4,
-                    "trade_action": "观察",
-                },
-                {
-                    "stock_id": "1",
-                    "stock_name": "A",
-                    "subject_key": "pcb",
-                    "theme_name": "PCB印制电路板",
-                    "board_count": 1,
-                    "trade_action": "观察",
-                },
-            ],
-        },
-        "mainline_daily_states": [
-            {
-                "mainline_id": "pcb",
-                "canonical_subject_key": "pcb",
-                "mainline_name": "PCB印制电路板",
-                "lifecycle_state": "divergence",
-                "mainline_strength_score": 86.2,
-                "fade_risk_score": 27.5,
-                "strong_pool_count": 8,
-                "d1_count": 3,
-                "focus_count": 0,
-                "focus_stocks": [
-                    {"stock_id": "1", "stock_name": "A", "subject_key": "pcb", "theme_name": "PCB印制电路板"},
-                ],
-                "action_advice": "观察分歧修复",
-                "conclusion": "主线仍有资金，但处于分歧阶段",
-            }
-        ],
-        "diagnostics": {"readiness": {"status": "ready"}},
-    }
-
+def test_daily_review_v2_builder_reports_missing_limit_up_theme_matrix() -> None:
     payload = PostMarketDailyReviewV2Builder().build(
         trade_date=date(2026, 6, 18),
-        recap_doc=recap_doc,
-        snapshot_version="daily_review_v2.unclassified.diagnostics",
+        recap_doc={"report_context": {"stock_facts": [{"stock_id": "1", "board_count": 4}]}},
+        snapshot_version="daily_review_v2.missing.limit_up_theme_matrix",
     )
 
     matrix = payload["limit_up_theme_matrix"]
-    assert matrix["board_totals"]["4"] == 1
-    assert matrix["diagnostics"]["unclassified_board_count"] == 1
-    assert matrix["diagnostics"]["unclassified_board_rows"][0]["stock_name"] == "旭光电子"
-    assert [col["theme_name"] for col in matrix["columns"]] == ["PCB印制电路板"]
-
-
-def test_daily_review_v2_builder_records_duplicate_stock_rows_in_diagnostics() -> None:
-    recap_doc = {
-        "report_context": {
-            "theme_name_map": {"pcb": "PCB印制电路板"},
-            "stock_facts": [
-                {
-                    "stock_id": "1",
-                    "stock_name": "A",
-                    "subject_key": "theme-a",
-                    "theme_name": "主题A",
-                    "board_count": 4,
-                },
-            ],
-        },
-        "strong_stock_reviews": [
-            {
-                "stock_id": "1",
-                "stock_name": "A",
-                "subject_key": "theme-b",
-                "theme_name": "主题B",
-                "board_count": 4,
-            }
-        ],
-        "mainline_daily_states": [
-            {
-                "mainline_id": "pcb",
-                "canonical_subject_key": "pcb",
-                "mainline_name": "PCB印制电路板",
-                "lifecycle_state": "divergence",
-                "mainline_strength_score": 86.2,
-                "fade_risk_score": 27.5,
-                "strong_pool_count": 8,
-                "d1_count": 3,
-                "focus_count": 0,
-                "focus_stocks": [
-                    {"stock_id": "1", "stock_name": "A", "subject_key": "pcb", "theme_name": "PCB印制电路板"},
-                ],
-                "action_advice": "观察分歧修复",
-                "conclusion": "主线仍有资金，但处于分歧阶段",
-            }
-        ],
-        "diagnostics": {"readiness": {"status": "ready"}},
-    }
-
-    payload = PostMarketDailyReviewV2Builder().build(
-        trade_date=date(2026, 6, 18),
-        recap_doc=recap_doc,
-        snapshot_version="daily_review_v2.duplicate.diagnostics",
-    )
-
-    matrix = payload["limit_up_theme_matrix"]
-    assert matrix["board_totals"]["4"] == 1
-    assert matrix["diagnostics"]["duplicate_stock_count"] == 0
-    assert matrix["diagnostics"]["duplicate_stock_rows"] == []
-    assert [col["theme_name"] for col in matrix["columns"]] == ["主题A"]
-
-
-def test_daily_review_v2_builder_uses_report_context_stock_facts_to_resolve_unclassified_stock() -> None:
-    recap_doc = {
-        "report_context": {
-            "theme_name_map": {"pcb": "PCB印制电路板"},
-            "stock_facts": [
-                {
-                    "stock_id": "600353.SH",
-                    "stock_name": "旭光电子",
-                    "subject_key": "pcb",
-                    "theme_name": "PCB印制电路板",
-                    "board_count": 4,
-                }
-            ],
-        },
-        "limit_up_ladder": {
-            "board_rows": [
-                {
-                    "board_count": 4,
-                    "stock_count": 1,
-                    "stocks": [
-                        {
-                            "stock_id": "600353.SH",
-                            "stock_name": "旭光电子",
-                            "subject_key": "__independent__",
-                            "theme_name": "未归类",
-                            "board_count": 4,
-                        }
-                    ],
-                }
-            ]
-        },
-        "mainline_daily_states": [
-            {
-                "mainline_id": "pcb",
-                "canonical_subject_key": "pcb",
-                "mainline_name": "PCB印制电路板",
-                "lifecycle_state": "divergence",
-                "mainline_strength_score": 86.2,
-                "fade_risk_score": 27.5,
-                "strong_pool_count": 8,
-                "d1_count": 3,
-                "focus_count": 0,
-                "focus_stocks": [
-                    {"stock_id": "1", "stock_name": "A", "subject_key": "pcb", "theme_name": "PCB印制电路板"},
-                ],
-                "action_advice": "观察分歧修复",
-                "conclusion": "主线仍有资金，但处于分歧阶段",
-            }
-        ],
-        "diagnostics": {"readiness": {"status": "ready"}},
-    }
-
-    payload = PostMarketDailyReviewV2Builder().build(
-        trade_date=date(2026, 6, 18),
-        recap_doc=recap_doc,
-        snapshot_version="daily_review_v2.stock_facts.resolve",
-    )
-
-    matrix = payload["limit_up_theme_matrix"]
-    assert matrix["board_totals"]["4"] == 1
-    assert matrix["diagnostics"]["unclassified_board_count"] == 0
-    assert [col["theme_name"] for col in matrix["columns"]] == ["PCB印制电路板"]
-    assert matrix["columns"][0]["board_groups"][0]["stock_count"] == 1
-    assert matrix["columns"][0]["board_groups"][0]["stocks"][0]["stock_name"] == "旭光电子"
+    assert matrix["columns"] == []
+    assert matrix["board_totals"] == {}
+    assert matrix["diagnostics"]["error"] == "missing_limit_up_theme_matrix"
 
 
 def test_daily_review_v2_builder_uses_capital_reviews_for_seat_money_fallback() -> None:
@@ -2056,6 +1836,56 @@ def test_daily_review_v2_builder_emits_fixed_recap_modules() -> None:
                     ],
                 },
             ]
+        },
+        "limit_up_theme_matrix": {
+            "source": "limit_up_theme_matrix_builder",
+            "trade_date": "2026-06-17",
+            "summary": "涨停热点矩阵：4板 0 只，3板 1 只，2板 2 只，首板 0 只；热点题材：PCB、玻璃基板。",
+            "board_totals": {"4": 0, "3": 1, "2": 2, "1": 0},
+            "columns": [
+                {
+                    "subject_key": "pcb",
+                    "theme_name": "PCB",
+                    "mainline_name": "PCB",
+                    "limit_up_count": 2,
+                    "board_groups": [
+                        {"board_count": 4, "board_label": "4板", "stock_count": 0, "stocks": []},
+                        {"board_count": 3, "board_label": "3板", "stock_count": 1, "stocks": [{"stock_id": "301366", "stock_name": "一博科技", "board_count": 3}]},
+                        {"board_count": 2, "board_label": "2板", "stock_count": 1, "stocks": [{"stock_id": "300903", "stock_name": "科翔股份", "board_count": 2}]},
+                        {"board_count": 1, "board_label": "首板", "stock_count": 0, "stocks": []},
+                    ],
+                    "catalyst_events": [
+                        {
+                            "event_id": "evt-1",
+                            "summary": "摩根士丹利拆解Rubin机架BOM，PCB价值增幅显著",
+                            "confidence": 0.92,
+                            "event_time": "2026-06-17",
+                            "match_reason": "PCB",
+                        }
+                    ],
+                    "diagnostics": {"mapping_source": "mainline_daily_state"},
+                },
+                {
+                    "subject_key": "glass",
+                    "theme_name": "玻璃基板",
+                    "mainline_name": "玻璃基板",
+                    "limit_up_count": 1,
+                    "board_groups": [
+                        {"board_count": 4, "board_label": "4板", "stock_count": 0, "stocks": []},
+                        {"board_count": 3, "board_label": "3板", "stock_count": 0, "stocks": []},
+                        {"board_count": 2, "board_label": "2板", "stock_count": 1, "stocks": [{"stock_id": "002845", "stock_name": "同兴达", "board_count": 2}]},
+                        {"board_count": 1, "board_label": "首板", "stock_count": 0, "stocks": []},
+                    ],
+                    "catalyst_events": [],
+                    "diagnostics": {"mapping_source": "subject_stock_map"},
+                },
+            ],
+            "diagnostics": {
+                "source": "limit_up_theme_matrix_builder",
+                "count_method": "stock_daily_snapshot_continuous_limit_up",
+                "theme_count": 2,
+                "candidate_count": 3,
+            },
         },
         "theme_driver_events": [
             {

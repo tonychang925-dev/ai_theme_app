@@ -385,6 +385,7 @@ class NewChainPostMarketReportBuilder:
             "down_count": NewChainPostMarketReportBuilder._int(market.get("down_count")),
             "total_amount": market.get("market_total_amount"),
             "theme_limitup_matrix": {
+                "source": "legacy_market_overview",
                 "columns": columns,
                 "max_rows": max(
                     (

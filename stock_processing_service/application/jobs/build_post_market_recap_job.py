@@ -33,6 +33,9 @@ from stock_processing_service.application.services.mainline_discovery_fact_conte
 from stock_processing_service.application.services.f10_capital_evidence_service import (
     F10CapitalEvidenceService,
 )
+from stock_processing_service.application.services.limit_up_theme_matrix_builder import (
+    LimitUpThemeMatrixBuilder,
+)
 from stock_processing_service.domain.services.mainline_discovery.mainline_logic_chain_builder import (
     MainlineLogicChainBuilder,
 )
@@ -120,6 +123,7 @@ class BuildPostMarketRecapJob:
         self._evidence_job = evidence_job
         self._abnormal_signal_job = abnormal_signal_job
         self._f10_capital_evidence_service = f10_capital_evidence_service or F10CapitalEvidenceService()
+        self._limit_up_theme_matrix_builder = LimitUpThemeMatrixBuilder()
         self._report_builder = report_builder or NewChainPostMarketReportBuilder()
         self._market_summary_llm_service = market_summary_llm_service or PostMarketMarketSummaryLlmService()
         self._decision_engine = post_market_decision_engine or PostMarketDecisionEngine()
@@ -132,6 +136,45 @@ class BuildPostMarketRecapJob:
             int(os.getenv("POST_MARKET_RECAP_NARRATIVE_LLM_TIMEOUT_SEC", "25") or 25),
             10,
         )
+
+    async def _attach_limit_up_theme_matrix(self, recap_doc: dict[str, Any], trade_date: date) -> None:
+        pool = getattr(self._read_port, "_pool", None)
+        if pool is None:
+            facade = getattr(self._read_port, "_db", None)
+            db_client = getattr(facade, "_db", None) if facade else None
+            pool = getattr(db_client, "pool", None) if db_client else None
+
+        if pool is None:
+            recap_doc["limit_up_theme_matrix"] = {
+                "source": LimitUpThemeMatrixBuilder.source,
+                "trade_date": trade_date.isoformat(),
+                "columns": [],
+                "board_totals": {},
+                "diagnostics": {
+                    "source": LimitUpThemeMatrixBuilder.source,
+                    "error": "missing_database_pool",
+                },
+            }
+            return
+
+        try:
+            async with pool.acquire() as conn:
+                recap_doc["limit_up_theme_matrix"] = await self._limit_up_theme_matrix_builder.build(
+                    trade_date=trade_date,
+                    conn=conn,
+                )
+        except Exception as exc:
+            logger.exception("failed to build limit_up_theme_matrix for %s", trade_date)
+            recap_doc["limit_up_theme_matrix"] = {
+                "source": LimitUpThemeMatrixBuilder.source,
+                "trade_date": trade_date.isoformat(),
+                "columns": [],
+                "board_totals": {},
+                "diagnostics": {
+                    "source": LimitUpThemeMatrixBuilder.source,
+                    "error": str(exc),
+                },
+            }
 
     @staticmethod
     def _d(value: Any) -> Decimal:
@@ -913,6 +956,8 @@ class BuildPostMarketRecapJob:
             if theme_name_map:
                 report_context["theme_name_map"] = theme_name_map
                 recap_doc["report_context"] = report_context
+
+            await self._attach_limit_up_theme_matrix(recap_doc, trade_date)
 
             recap_report = self._report_builder.build(recap_doc)
             recap_doc["report"] = recap_report
