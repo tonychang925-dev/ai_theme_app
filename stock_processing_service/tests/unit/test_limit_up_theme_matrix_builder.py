@@ -80,6 +80,9 @@ class _FakeConn:
                 }
             ]
 
+        if "from mainline_registry" in q:
+            return []
+
         if "from subject_rank_daily" in q:
             return [{"subject_key": "pcb", "heat_name": "PCB印制电路板"}]
 
@@ -155,6 +158,9 @@ class _PrimaryMainlineFakeConn(_FakeConn):
                 },
             ]
 
+        if "from mainline_registry" in q:
+            return []
+
         if "from subject_rank_daily" in q:
             return []
 
@@ -212,8 +218,9 @@ async def test_limit_up_theme_matrix_builder_does_not_assign_one_stock_to_multip
         conn=_PrimaryMainlineFakeConn(trade_date, scenario="ambiguous_active"),
     )
 
-    assert len(matrix["columns"]) == 2
-    assert [column["theme_name"] for column in matrix["columns"]] == ["主线A", "主线B"]
+    assert len(matrix["mainline_columns"]) == 2
+    assert [column["theme_name"] for column in matrix["mainline_columns"]] == ["主线A", "主线B"]
+    assert matrix["columns"] == []
     assert matrix["visible_columns"] == []
     assert matrix["board_totals"] == {"4": 0, "3": 0, "2": 0, "1": 0}
     assert matrix["diagnostics"]["ambiguous_mainline_stock_count"] == 1
@@ -230,10 +237,88 @@ async def test_limit_up_theme_matrix_builder_prefers_canonical_subject_key_over_
         conn=_PrimaryMainlineFakeConn(trade_date, scenario="canonical_priority"),
     )
 
-    assert len(matrix["columns"]) == 2
-    assert [column["theme_name"] for column in matrix["columns"]] == ["主线A", "主线B"]
+    assert len(matrix["mainline_columns"]) == 2
+    assert [column["theme_name"] for column in matrix["mainline_columns"]] == ["主线A", "主线B"]
+    assert len(matrix["columns"]) == 1
     assert [column["theme_name"] for column in matrix["visible_columns"]] == ["主线A"]
     assert matrix["columns"][0]["limit_up_count"] == 1
-    assert matrix["columns"][1]["limit_up_count"] == 0
+    assert matrix["mainline_columns"][1]["limit_up_count"] == 0
     assert matrix["columns"][0]["board_groups"][3]["stocks"][0]["stock_name"] == "多义股"
     assert matrix["diagnostics"]["ambiguous_mainline_stock_count"] == 0
+
+
+class _RegistryMainlineFakeConn(_FakeConn):
+    async def fetch(self, query: str, *args: Any) -> list[dict[str, Any]]:
+        q = " ".join(query.lower().split())
+        self.queries.append(q)
+        assert "stock_facts" not in q
+        assert "strong_stock_reviews" not in q
+        assert "market_overview_review" not in q
+        assert "limit_up_theme_events" not in q
+        assert "theme_master" not in q
+
+        if "from stock_daily_snapshot" in q and "trade_date = $1::date" in q and "pct_chg" in q and ">= $2" in q:
+            return [
+                {
+                    "stock_key": "600353",
+                    "stock_id": "600353.SH",
+                    "stock_name": "旭光电子",
+                    "close_price": 1.0,
+                    "pct_chg": 10.0,
+                    "amount": 100000000,
+                }
+            ]
+
+        if "from stock_daily_snapshot" in q and "trade_date <= $1::date" in q:
+            return [{"stock_key": "600353", "trade_date": self.trade_date, "pct_chg": 10.0}]
+
+        if "from subject_stock_map" in q:
+            return [
+                {
+                    "stock_id": "600353",
+                    "subject_key": "9032828",
+                    "stock_name": "旭光电子",
+                    "sort": 1,
+                    "top": 0,
+                    "source_type": "jyhf_stock_daily",
+                    "confidence": 0.9,
+                    "reason": "电子元器件确定映射",
+                }
+            ]
+
+        if "from mainline_daily_state" in q:
+            return []
+
+        if "from mainline_registry" in q:
+            return [
+                {
+                    "mainline_id": "ml_9032828_202606",
+                    "mainline_name": "电子元器件",
+                    "canonical_subject_key": "9032828",
+                    "mainline_type": "unknown",
+                    "core_subject_keys_json": [],
+                    "branch_subject_keys_json": [],
+                    "related_subject_keys_json": [],
+                }
+            ]
+
+        if "from subject_rank_daily" in q:
+            return [{"subject_key": "9032828"}]
+
+        raise AssertionError(f"unexpected query: {query}")
+
+
+@pytest.mark.asyncio
+async def test_limit_up_theme_matrix_builder_uses_confirmed_registry_mainline_when_daily_state_missing() -> None:
+    trade_date = date(2026, 6, 18)
+    matrix = await LimitUpThemeMatrixBuilder().build(
+        trade_date=trade_date,
+        conn=_RegistryMainlineFakeConn(trade_date),
+    )
+
+    assert [column["theme_name"] for column in matrix["mainline_columns"]] == ["电子元器件"]
+    assert [column["theme_name"] for column in matrix["columns"]] == ["电子元器件"]
+    assert matrix["columns"][0]["subject_key"] == "9032828"
+    assert matrix["columns"][0]["board_groups"][3]["stocks"][0]["stock_name"] == "旭光电子"
+    assert matrix["diagnostics"]["mapped_stock_count"] == 1
+    assert matrix["diagnostics"]["unmapped_stock_count"] == 0

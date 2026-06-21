@@ -135,7 +135,10 @@ function renderInstitutionRows(rows: SeatMoneyInstitutionRow[] = [], kind: "buy"
 }
 
 function buildThemeEventRowsFromMatrix(matrix?: LimitUpThemeMatrix | null): LimitUpThemeEventsSummary["rows"] {
-  return (matrix?.columns || []).map((col) => ({
+  const columns = matrix?.visible_columns?.length
+    ? matrix.visible_columns
+    : (matrix?.columns || []).filter((col) => Number(col.limit_up_count || 0) > 0);
+  return columns.map((col) => ({
     subject_key: col.subject_key,
     theme_name: col.theme_name,
     limit_up_count: Number(col.limit_up_count || 0),

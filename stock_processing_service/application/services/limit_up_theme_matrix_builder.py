@@ -122,14 +122,17 @@ class LimitUpThemeMatrixBuilder:
                 str(col.get("theme_name") or ""),
             )
         )
-        board_totals = self._visible_board_totals(mainline_columns)
-        summary = self._summary(visible_columns, board_totals)
+        market_board_totals = self._market_board_totals(limit_up_rows, board_by_stock)
+        mainline_board_totals = self._visible_board_totals(mainline_columns)
+        summary = self._summary(visible_columns, market_board_totals, mainline_board_totals)
         return {
             "source": self.source,
             "trade_date": trade_date.isoformat(),
             "summary": summary,
-            "board_totals": board_totals,
-            "columns": mainline_columns,
+            "board_totals": mainline_board_totals,
+            "market_board_totals": market_board_totals,
+            "mainline_board_totals": mainline_board_totals,
+            "columns": visible_columns,
             "visible_columns": visible_columns,
             "mainline_columns": mainline_columns,
             "non_mainline_columns": [],
@@ -234,7 +237,68 @@ class LimitUpThemeMatrixBuilder:
             """,
             trade_date,
         )
-        return [dict(row) for row in rows]
+        daily_rows = [dict(row) for row in rows]
+        existing_keys = {
+            self._text(row.get("canonical_subject_key"))
+            for row in daily_rows
+            if self._text(row.get("canonical_subject_key"))
+        }
+        existing_names = {
+            self._text(row.get("mainline_name"))
+            for row in daily_rows
+            if self._text(row.get("mainline_name"))
+        }
+
+        registry_rows = await conn.fetch(
+            """
+            SELECT mainline_id,
+                   mainline_name,
+                   canonical_subject_key,
+                   mainline_type,
+                   core_subject_keys_json,
+                   branch_subject_keys_json,
+                   related_subject_keys_json
+            FROM mainline_registry
+            WHERE identity_status = 'confirmed'
+              AND valid_from <= $1::date
+              AND (valid_to IS NULL OR valid_to >= $1::date)
+            ORDER BY valid_from DESC, mainline_id
+            """,
+            trade_date,
+        )
+        for raw in registry_rows:
+            row = dict(raw)
+            canonical_key = self._text(row.get("canonical_subject_key"))
+            mainline_name = self._text(row.get("mainline_name"))
+            if (
+                self._is_invalid_theme_name(mainline_name)
+                or not canonical_key
+                or canonical_key in existing_keys
+                or mainline_name in existing_names
+            ):
+                continue
+            active_keys = self._unique_keep_order([
+                canonical_key,
+                mainline_name,
+                *[self._text(item) for item in self._json_list(row.get("core_subject_keys_json"))],
+                *[self._text(item) for item in self._json_list(row.get("branch_subject_keys_json"))],
+                *[self._text(item) for item in self._json_list(row.get("related_subject_keys_json"))],
+            ])
+            daily_rows.append({
+                "id": self._text(row.get("mainline_id")) or canonical_key,
+                "canonical_subject_key": canonical_key,
+                "mainline_name": mainline_name,
+                "active_subject_keys_json": active_keys,
+                "lifecycle_state": "",
+                "mainline_alive": True,
+                "mainline_trade_alive": True,
+                "trade_mode": self._text(row.get("mainline_type")),
+                "allow_trade": True,
+                "_source": "mainline_registry",
+            })
+            existing_keys.add(canonical_key)
+            existing_names.add(mainline_name)
+        return daily_rows
 
     async def _fetch_ranked_subject_keys(self, conn: Any, trade_date: date, subject_keys: list[str]) -> set[str]:
         if not subject_keys:
@@ -472,12 +536,26 @@ class LimitUpThemeMatrixBuilder:
         return totals
 
     @staticmethod
-    def _summary(columns: list[dict[str, Any]], board_totals: dict[str, int]) -> str:
+    def _market_board_totals(limit_up_rows: list[dict[str, Any]], board_by_stock: dict[str, int]) -> dict[str, int]:
+        totals = {"4": 0, "3": 0, "2": 0, "1": 0}
+        for row in limit_up_rows:
+            stock_key = LimitUpThemeMatrixBuilder._text(row.get("stock_key"))
+            board_count = board_by_stock.get(stock_key, 0)
+            key = str(board_count)
+            if key in totals:
+                totals[key] += 1
+        return totals
+
+    @staticmethod
+    def _summary(columns: list[dict[str, Any]], market_board_totals: dict[str, int], mainline_board_totals: dict[str, int]) -> str:
         hot = "、".join([str(col.get("theme_name") or "") for col in columns[:3] if col.get("theme_name")]) or "暂无"
         return (
-            f"涨停热点矩阵：4板 {board_totals.get('4', 0)} 只，"
-            f"3板 {board_totals.get('3', 0)} 只，2板 {board_totals.get('2', 0)} 只，"
-            f"首板 {board_totals.get('1', 0)} 只；热点题材：{hot}。"
+            f"全市场连板：4板 {market_board_totals.get('4', 0)} 只，"
+            f"3板 {market_board_totals.get('3', 0)} 只，2板 {market_board_totals.get('2', 0)} 只，"
+            f"首板 {market_board_totals.get('1', 0)} 只；"
+            f"主线矩阵：4板 {mainline_board_totals.get('4', 0)} 只，"
+            f"3板 {mainline_board_totals.get('3', 0)} 只，2板 {mainline_board_totals.get('2', 0)} 只，"
+            f"首板 {mainline_board_totals.get('1', 0)} 只；热点题材：{hot}。"
         )
 
     @staticmethod

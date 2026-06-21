@@ -883,7 +883,11 @@ export interface LimitUpThemeMatrixColumn extends ThemeLimitUpColumn {
 export interface LimitUpThemeMatrix {
   summary: string;
   columns: LimitUpThemeMatrixColumn[];
+  visible_columns?: LimitUpThemeMatrixColumn[];
+  mainline_columns?: LimitUpThemeMatrixColumn[];
   board_totals: Record<string, number>;
+  market_board_totals?: Record<string, number>;
+  mainline_board_totals?: Record<string, number>;
   diagnostics?: Record<string, unknown>;
 }
 
