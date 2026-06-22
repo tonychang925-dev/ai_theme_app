@@ -192,6 +192,11 @@ class CollectionJobManager:
             tasks.append(CollectionTaskState(key="leader_llm", title="龙头候选LLM裁决"))
         if options.get("recap_snapshot", False):
             tasks.append(CollectionTaskState(key="recap_snapshot", title="盘后复盘快照生成"))
+
+        # ── M4/M5 Evidence Layer 采集 ──
+        if options.get("evidence_collection", False):
+            tasks.append(CollectionTaskState(key="evidence_collection", title="多源证据采集（THS+CNInfo+EPS+Research）"))
+
         return tasks
 
     def _append_log(self, job: CollectionJob, message: str) -> None:

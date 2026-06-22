@@ -178,6 +178,10 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     )
 
 
+    # ── M4/M5: Evidence Collection Runners ──
+    registry.register("evidence.ths_hot_reason", ScriptCommandRunner())
+    registry.register("evidence.recap_generate", EvidenceRecapGenerateRunner())
+
 __all__ = [
     "CollectionTaskContext",
     "CollectionTaskResult",

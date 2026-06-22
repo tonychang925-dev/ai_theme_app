@@ -3,6 +3,8 @@
 - ScriptCommandRunner：兼容旧脚本（subprocess 执行）
 - PostMarketRecapRunner：服务化 recap（直接调 BuildPostMarketRecapJob）
 - ProcessIsolatedRunner：子进程隔离执行重任务
+- EvidenceRecapGenerateRunner: M4/M5 证据融合 → 复盘快照生成
+"""
 """
 from __future__ import annotations
 
@@ -1758,5 +1760,108 @@ class IndexKlineCollectRunner:
             return CollectionTaskResult(
                 status="failed",
                 current_label=f"指数采集异常: {type(exc).__name__}",
+                error_message=str(exc),
+            )
+
+
+# ── M4/M5: Evidence → Recap Generate Runner ──────────────────────
+
+class EvidenceRecapGenerateRunner:
+    """Generate market recap snapshot from collected evidence data."""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        import asyncio as _asyncio
+        import json as _json
+        from datetime import date as _date
+
+        try:
+            td = _date.fromisoformat(context.trade_date)
+            import asyncpg
+
+            conn = await asyncpg.connect(
+                host="localhost", port=5432, database="stock_data_test",
+                user="postgres", password="postgres", timeout=10,
+            )
+            try:
+                # Load available evidence
+                ths_count = await conn.fetchval(
+                    "SELECT COUNT(*) FROM ths_hot_reason_snapshot WHERE trade_date=$1", td)
+                cd_count = await conn.fetchval(
+                    "SELECT COUNT(*) FROM subject_history_staging WHERE rank_date=$1 AND source_type='jyhf_cdp'", td)
+                evidence_count = await conn.fetchval(
+                    "SELECT COUNT(*) FROM stock_theme_reason_evidence WHERE trade_date=$1", td)
+
+                is_degraded = ths_count == 0
+                reasons = []
+                if is_degraded:
+                    reasons.append("ths_hot_reason not collected")
+
+                # Build recap from CDP events
+                rows = await conn.fetch(
+                    "SELECT subject_key, subject_name, description FROM subject_history_staging "
+                    "WHERE rank_date=$1 AND source_type='jyhf_cdp' ORDER BY rank_date DESC", td)
+
+                themes: dict[str, dict] = {}
+                for r in rows:
+                    name = r["subject_name"] or r["subject_key"]
+                    if name not in themes:
+                        themes[name] = {"count": 0}
+                    themes[name]["count"] += 1
+
+                sorted_themes = sorted(themes.items(), key=lambda x: -x[1]["count"])
+                top_themes = []
+                for rank, (name, data) in enumerate(sorted_themes[:8], 1):
+                    top_themes.append({
+                        "rank": rank, "theme_name": name,
+                        "strength_score": round(0.1 + data["count"] * 0.05, 4),
+                        "stock_count": data["count"], "leader_count": 0,
+                        "avg_leader_score": 0, "resonance_count": 0,
+                        "why_strong": ["事件驱动"],
+                        "leaders": [], "evidence_sources": ["jyhf_cdp"],
+                    })
+
+                recap_json = {
+                    "version": "1.0.0", "trade_date": td.isoformat(),
+                    "top_themes": top_themes,
+                    "market_summary": {
+                        "theme_count": len(top_themes), "leader_count": 0,
+                        "evidence_source_count": 1 if cd_count > 0 else 0,
+                        "evidence_sources": ["jyhf_cdp"] if cd_count > 0 else [],
+                        "top_theme": top_themes[0]["theme_name"] if top_themes else "",
+                        "top_theme_strength": top_themes[0]["strength_score"] if top_themes else 0,
+                    },
+                    "diagnostics": {
+                        "input_theme_count": len(top_themes), "input_leader_count": 0,
+                        "input_evidence_count": evidence_count + cd_count,
+                        "degraded": is_degraded,
+                        "degraded_reasons": reasons,
+                        "ths_rows": ths_count, "cdp_rows": cd_count,
+                    },
+                }
+
+                await conn.execute(
+                    """INSERT INTO market_recap_snapshot (trade_date, recap_json, source_trace_id)
+                       VALUES ($1, $2::jsonb, $3)
+                       ON CONFLICT (trade_date) DO UPDATE SET
+                         recap_json=EXCLUDED.recap_json, source_trace_id=EXCLUDED.source_trace_id""",
+                    td, _json.dumps(recap_json, ensure_ascii=False, default=str),
+                    f"recap:{td.isoformat()}:{'degraded' if is_degraded else 'full'}",
+                )
+
+                return CollectionTaskResult(
+                    status="success",
+                    current_label=f"复盘生成完成: {len(top_themes)} themes{' (降级)' if is_degraded else ''}",
+                    progress_percent=100,
+                    logs=[
+                        f"ths={ths_count} cd={cd_count} evidence={evidence_count}",
+                        f"themes={len(top_themes)} degraded={is_degraded}",
+                    ],
+                )
+            finally:
+                await conn.close()
+        except Exception as exc:
+            return CollectionTaskResult(
+                status="failed",
+                current_label=f"复盘生成失败: {type(exc).__name__}",
                 error_message=str(exc),
             )
