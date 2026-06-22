@@ -13,7 +13,6 @@ from stock_processing_service.domain.services.evidence_fusion import (
     CNINFO_MAX_AGE_DAYS,
     DAILY_DECAY,
     RESONANCE_BONUS,
-    SOURCE_WEIGHTS,
     EvidenceFusionEngine,
     EvidenceItem,
 )
@@ -207,6 +206,50 @@ def test_score_capped_at_2_0():
 
 
 # ── Empty / no evidence ─────────────────────────────────────────
+
+# ── M4d: EPS expectation evidence ──────────────────────────────
+
+def test_eps_contributes_expectation_score():
+    """EPS evidence should contribute to expectation_score, not event_score."""
+    engine = EvidenceFusionEngine()
+    items = [
+        _item("ths", "AI算力基础设施", reason="液冷"),
+        _item("eps", "AI算力基础设施", reason="EPS增速+35%"),
+    ]
+    results = engine.fuse(TD, items)
+    assert results[0].source_count == 2
+    assert results[0].expectation_score > 0
+    assert results[0].event_score > 0  # THS contributes to event
+    # Total score should include both
+    assert results[0].evidence_score > results[0].event_score
+
+
+def test_eps_alone_has_zero_event_score():
+    """EPS-only evidence should have 0 event_score."""
+    engine = EvidenceFusionEngine()
+    items = [_item("eps", "AI算力基础设施", reason="EPS+50%")]
+    results = engine.fuse(TD, items)
+    assert results[0].source_count == 1
+    assert results[0].expectation_score == pytest.approx(0.70)
+    assert results[0].event_score == 0.0
+
+
+def test_five_source_full_resonance():
+    """All 5 sources → 5-source resonance bonus."""
+    engine = EvidenceFusionEngine()
+    items = [
+        _item("ths", "机器人"),
+        _item("eps", "机器人"),
+        _item("cninfo", "机器人"),
+        _item("eastmoney", "机器人"),
+        _item("jyhf", "机器人"),
+    ]
+    results = engine.fuse(TD, items)
+    assert results[0].source_count == 5
+    assert results[0].evidence_score == 2.00  # capped
+    assert results[0].expectation_score > 0
+    assert results[0].event_score > 0
+
 
 def test_empty_returns_empty():
     engine = EvidenceFusionEngine()

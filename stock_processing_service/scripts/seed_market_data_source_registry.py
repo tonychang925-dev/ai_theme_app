@@ -79,6 +79,26 @@ REGISTRY_SEEDS = [
         "raw_snapshot_required": True,
         "enabled": True,
     },
+    {
+        "source_name": "ths",
+        "endpoint_key": "eps_forecast",
+        "domain": "expectation",
+        "owned_fields": ["eps_mean", "eps_growth", "analyst_count", "expectation_level"],
+        "usage": "预期驱动证据：THS EPS分析师一致预期，服务龙头识别与题材持续性判断",
+        "fallback_order": 15,
+        "rate_limit_policy": {
+            "type": "conservative",
+            "min_interval_ms": 1500,
+            "jitter_ms": 500,
+            "max_retries": 1,
+            "backoff": "linear",
+            "timeout_ms": 30000,
+        },
+        "auth_type": "none",
+        "freshness_sla": "1d",
+        "raw_snapshot_required": False,
+        "enabled": True,
+    },
 ]
 
 UPSERT_SQL = """

@@ -17,6 +17,7 @@ from typing import Any
 SOURCE_WEIGHTS = {
     "ths": 1.00,          # THS hot reason — highest signal
     "cninfo": 0.80,       # CNInfo announcement — event-driven
+    "eps": 0.70,          # THS EPS forecast — expectation-driven
     "eastmoney": 0.45,    # Eastmoney concept block — structural
     "jyhf": 0.35,         # JYHF subject_stock_map — static fallback
 }
@@ -25,7 +26,8 @@ SOURCE_WEIGHTS = {
 RESONANCE_BONUS: dict[int, float] = {
     2: 0.20,
     3: 0.30,
-    4: 0.50,
+    4: 0.40,
+    5: 0.50,
 }
 
 # Daily decay rate (exponential)
@@ -62,14 +64,16 @@ class FusedStockTheme:
     stock_code: str
     stock_name: str
     theme_name: str
-    evidence_score: float         # 0.0 — MAX_SCORE
-    evidence_sources: list[str]   # distinct source names
-    source_count: int
-    freshness_score: float        # 0.0 — 1.0
-    confidence: float             # composite confidence
-    primary_reason: str           # best human-readable evidence
+    evidence_score: float         # 0.0 — MAX_SCORE (composite)
+    event_score: float = 0.0      # event-driven component (ths+cninfo+eastmoney+jyhf)
+    expectation_score: float = 0.0  # expectation-driven component (eps)
+    evidence_sources: list[str] = field(default_factory=list)
+    source_count: int = 0
+    freshness_score: float = 0.0
+    confidence: float = 0.0
+    primary_reason: str = ""
     supporting_evidence: list[dict[str, Any]] = field(default_factory=list)
-    is_resonance: bool = False    # 2+ independent sources agree
+    is_resonance: bool = False
 
 
 # ── Fusion Engine ───────────────────────────────────────────────
@@ -113,11 +117,14 @@ class EvidenceFusionEngine:
         """Score a single stock-theme group."""
         sources: set[str] = set()
         total_weight = 0.0
+        event_weight = 0.0
+        expectation_weight = 0.0
         total_confidence = 0.0
         best_reason = ""
         best_priority = 999
 
-        source_priority = {"ths": 0, "cninfo": 1, "eastmoney": 2, "jyhf": 3}
+        source_priority = {"ths": 0, "eps": 0, "cninfo": 1, "eastmoney": 2, "jyhf": 3}
+        event_sources = {"ths", "cninfo", "eastmoney", "jyhf"}
         supporting: list[dict[str, Any]] = []
 
         for ev in items:
@@ -126,7 +133,7 @@ class EvidenceFusionEngine:
 
             # Apply source-specific age checks
             if ev.source_name == "cninfo" and days_old > CNINFO_MAX_AGE_DAYS:
-                continue  # skip stale CNInfo announcements
+                continue
 
             # Apply decay
             if days_old > 0:
@@ -134,9 +141,15 @@ class EvidenceFusionEngine:
 
             sources.add(ev.source_name)
             total_weight += weight
+
+            # Split: event vs expectation
+            if ev.source_name in event_sources:
+                event_weight += weight
+            if ev.source_name == "eps":
+                expectation_weight += weight
+
             total_confidence = max(total_confidence, ev.confidence)
 
-            # Best reason: highest priority source with non-empty reason
             pri = source_priority.get(ev.source_name, 99)
             if ev.reason and pri < best_priority:
                 best_priority = pri
@@ -150,11 +163,10 @@ class EvidenceFusionEngine:
                 "tags": ev.tags,
             })
 
-        # Multi-source resonance bonus
         n_sources = len(sources)
         bonus = RESONANCE_BONUS.get(n_sources, 0)
         if n_sources > max(RESONANCE_BONUS.keys()):
-            bonus = 0.50  # capped
+            bonus = RESONANCE_BONUS[max(RESONANCE_BONUS.keys())]
 
         score = min(total_weight + bonus, MAX_SCORE)
         freshness = 1.0 if min(
@@ -169,6 +181,8 @@ class EvidenceFusionEngine:
             stock_name=items[0].stock_name,
             theme_name=theme_name,
             evidence_score=round(score, 3),
+            event_score=round(min(event_weight + (bonus if n_sources >= 2 else 0), MAX_SCORE), 3),
+            expectation_score=round(min(expectation_weight, 1.0), 3),
             evidence_sources=sorted(sources),
             source_count=n_sources,
             freshness_score=round(freshness, 2),
