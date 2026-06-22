@@ -103,6 +103,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         BuildStockKlineJudgementsRunner,
         BuildStockAbnormalSignalRunner,
         CallLeaderLLMRunner,
+        EvidenceRecapGenerateRunner,
         JyhfImportHistoryRunner,
         JyhfImportStockDailyRunner,
         JyhfLoadSubjectNodeStagingRunner,
