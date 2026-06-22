@@ -15,11 +15,16 @@ from stock_processing_service.domain.services.theme_strength import ThemeStrengt
 from stock_processing_service.domain.services.leader_scoring import LeaderScore
 
 
+RECAP_VERSION = "1.0.0"
+
+
 @dataclass
 class MarketRecap:
-    trade_date: str
+    version: str = RECAP_VERSION
+    trade_date: str = ""
     top_themes: list[dict[str, Any]] = field(default_factory=list)
     market_summary: dict[str, Any] = field(default_factory=dict)
+    diagnostics: dict[str, Any] = field(default_factory=dict)
     source_trace_id: str = ""
 
 
@@ -32,8 +37,16 @@ class RecapAggregationService:
         theme_strengths: list[ThemeStrength],
         leader_scores: list[LeaderScore],
         top_n: int = 8,
+        evidence_items_count: int = 0,
     ) -> MarketRecap:
         td_str = trade_date.isoformat()
+        diag: dict[str, Any] = {
+            "input_theme_count": len(theme_strengths),
+            "input_leader_count": len(leader_scores),
+            "input_evidence_count": evidence_items_count,
+            "degraded": False,
+            "degraded_reasons": [],
+        }
 
         top_themes = []
         for ts in theme_strengths[:top_n]:
@@ -45,6 +58,19 @@ class RecapAggregationService:
             theme_leaders.sort(key=lambda x: -x.leader_score)
             top3 = theme_leaders[:3]
 
+            # Explain why this theme is strong
+            reasons: list[str] = []
+            if ts.stock_count >= 3:
+                reasons.append(f"板块广度{ts.stock_count}只")
+            if ts.resonance_count >= 2:
+                reasons.append(f"多源共振({ts.resonance_count}源)")
+            if ts.avg_leader_score >= 0.3:
+                reasons.append("龙头强度高")
+            if ts.avg_expectation_score >= 0.2:
+                reasons.append("预期驱动强")
+            if not reasons:
+                reasons.append("事件驱动")
+
             top_themes.append({
                 "rank": ts.rank,
                 "theme_name": ts.theme_name,
@@ -53,6 +79,7 @@ class RecapAggregationService:
                 "leader_count": ts.leader_count,
                 "avg_leader_score": ts.avg_leader_score,
                 "resonance_count": ts.resonance_count,
+                "why_strong": reasons,
                 "leaders": [
                     {
                         "stock_code": ls.stock_code,
@@ -83,10 +110,17 @@ class RecapAggregationService:
             "top_theme_strength": top_themes[0]["strength_score"] if top_themes else 0,
         }
 
+        # Degradation check
+        if not top_themes:
+            diag["degraded"] = True
+            diag["degraded_reasons"].append("no themes with leaders")
+
         return MarketRecap(
+            version=RECAP_VERSION,
             trade_date=td_str,
             top_themes=top_themes,
             market_summary=market_summary,
+            diagnostics=diag,
             source_trace_id=f"recap:{td_str}",
         )
 
@@ -95,9 +129,11 @@ class RecapAggregationService:
         return {
             "trade_date": date.fromisoformat(recap.trade_date),
             "recap_json": {
+                "version": recap.version,
                 "trade_date": recap.trade_date,
                 "top_themes": recap.top_themes,
                 "market_summary": recap.market_summary,
+                "diagnostics": recap.diagnostics,
             },
             "source_trace_id": recap.source_trace_id,
         }

@@ -458,6 +458,45 @@ async def theme_workspace(subject_key: str, request: Request) -> dict:
     return await _proxy_stock_processing_json(f"/api/v1/theme_workspace/{subject_key}", params)
 
 
+# ── M4h: Recap Read APIs ──
+
+@router.get("/recap/latest")
+async def recap_latest(request: Request) -> dict:
+    return await _proxy_stock_processing_json("/api/v1/recap/latest", {})
+
+
+@router.get("/recap/{trade_date}")
+async def recap_by_date(trade_date: str, request: Request) -> dict:
+    return await _proxy_stock_processing_json(f"/api/v1/recap/{trade_date}", {})
+
+
+@router.get("/themes/top")
+async def themes_top(
+    trade_date: str | None = None,
+    limit: int = 10,
+    request: Request | None = None,
+) -> list[dict]:
+    params: dict[str, str] = {}
+    if trade_date:
+        params["trade_date"] = trade_date
+    params["limit"] = str(limit)
+    return await _proxy_stock_processing_json("/api/v1/themes/top", params)
+
+
+@router.get("/leaders/{theme_name}")
+async def theme_leaders(
+    theme_name: str,
+    trade_date: str | None = None,
+    limit: int = 10,
+    request: Request | None = None,
+) -> list[dict]:
+    params: dict[str, str] = {}
+    if trade_date:
+        params["trade_date"] = trade_date
+    params["limit"] = str(limit)
+    return await _proxy_stock_processing_json(f"/api/v1/leaders/{theme_name}", params)
+
+
 # ── P1: PostMarket Readiness API ──
 
 @router.get("/post-market/derived-data/readiness")
