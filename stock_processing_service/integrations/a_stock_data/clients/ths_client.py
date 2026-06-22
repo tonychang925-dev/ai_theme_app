@@ -9,7 +9,10 @@ import httpx
 
 SOURCE_NAME = "ths"
 THS_HOT_REASON_ENDPOINT_KEY = "ths_hot_reason"
-THS_HOT_REASON_URL = "https://eq.10jqka.com.cn/open/api/hot_list/v1/stock_reason"
+THS_HOT_REASON_URL = (
+    "http://zx.10jqka.com.cn/event/api/getharden/"
+    "date/{date}/orderby/date/orderway/desc/charset/GBK/"
+)
 
 
 @dataclass(frozen=True)
@@ -40,14 +43,15 @@ class ThsClient:
         self._user_agent = user_agent
 
     async def fetch_hot_reason(self, trade_date: date) -> RawHttpResult:
-        params = {"date": trade_date.isoformat()}
+        params = {} if "{date}" in self._base_url else {"date": trade_date.isoformat()}
+        url = self._base_url.format(date=trade_date.isoformat())
         headers = {
             "User-Agent": self._user_agent,
             "Accept": "application/json,text/plain,*/*",
-            "Referer": "https://eq.10jqka.com.cn/",
+            "Referer": "http://zx.10jqka.com.cn/",
         }
         async with httpx.AsyncClient(timeout=self._timeout_seconds, headers=headers, follow_redirects=True) as client:
-            response = await client.get(self._base_url, params=params)
+            response = await client.get(url, params=params)
         response_json: Any | None = None
         try:
             response_json = response.json()
@@ -64,4 +68,3 @@ class ThsClient:
             response_text=response.text,
             headers=dict(response.headers),
         )
-

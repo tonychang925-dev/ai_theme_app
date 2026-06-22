@@ -26,6 +26,18 @@ def normalize_stock_code(code: Any) -> str:
     return str(code or "").strip().zfill(6)
 
 
+def _date(value: Any, fallback: date) -> date:
+    if isinstance(value, date):
+        return value
+    text = str(value or "").strip()
+    if not text:
+        return fallback
+    try:
+        return date.fromisoformat(text[:10])
+    except ValueError:
+        return fallback
+
+
 class ThsHotReasonNormalizer:
     """Converts THS hot reason payloads to DB-ready DTO dictionaries."""
 
@@ -48,7 +60,7 @@ class ThsHotReasonNormalizer:
             source_trace_id = f"ths_hot_reason:{trade_date.isoformat()}:{stock_code}"
             rows.append(
                 {
-                    "trade_date": item.get("date") or trade_date,
+                    "trade_date": _date(item.get("date"), trade_date),
                     "stock_code": stock_code,
                     "stock_name": str(item.get("name") or "").strip(),
                     "reason_raw": reason_raw,
