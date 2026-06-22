@@ -68,6 +68,13 @@ class RecapAggregationService:
                 reasons.append("龙头强度高")
             if ts.avg_expectation_score >= 0.2:
                 reasons.append("预期驱动强")
+            # Check if research evidence is present
+            has_research = any("research" in s.evidence_sources
+                              for ls in leader_scores
+                              if ls.theme_name == ts.theme_name
+                              for s in [ls])
+            if has_research:
+                reasons.append("机构研报覆盖")
             if not reasons:
                 reasons.append("事件驱动")
 

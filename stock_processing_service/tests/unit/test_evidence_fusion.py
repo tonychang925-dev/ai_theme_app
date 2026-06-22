@@ -251,6 +251,47 @@ def test_five_source_full_resonance():
     assert results[0].event_score > 0
 
 
+# ── M5b: Research evidence ──────────────────────────────────────
+
+def test_research_source_weight():
+    """Research reports contribute 0.55 weight."""
+    engine = EvidenceFusionEngine()
+    items = [
+        _item("ths", "AI算力基础设施", reason="液冷"),
+        _item("research", "AI算力基础设施", reason="中信证券买入"),
+    ]
+    results = engine.fuse(TD, items)
+    # 1.00 + 0.55 + 0.20 resonance = 1.75
+    assert results[0].source_count == 2
+    assert results[0].is_resonance
+    assert results[0].evidence_score > 1.5
+
+
+def test_research_contributes_to_event_score():
+    """Research is an event source, not expectation."""
+    engine = EvidenceFusionEngine()
+    items = [_item("research", "AI算力基础设施", reason="买入评级")]
+    results = engine.fuse(TD, items)
+    assert results[0].event_score == pytest.approx(0.55)
+    assert results[0].expectation_score == 0.0
+
+
+def test_six_source_full_resonance():
+    """All 6 sources → capped at 2.00."""
+    engine = EvidenceFusionEngine()
+    items = [
+        _item("ths", "机器人"),
+        _item("eps", "机器人"),
+        _item("cninfo", "机器人"),
+        _item("eastmoney", "机器人"),
+        _item("jyhf", "机器人"),
+        _item("research", "机器人"),
+    ]
+    results = engine.fuse(TD, items)
+    assert results[0].source_count == 6
+    assert results[0].evidence_score == 2.00
+
+
 def test_empty_returns_empty():
     engine = EvidenceFusionEngine()
     results = engine.fuse(TD, [])

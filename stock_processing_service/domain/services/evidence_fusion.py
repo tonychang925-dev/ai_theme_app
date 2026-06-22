@@ -18,6 +18,7 @@ SOURCE_WEIGHTS = {
     "ths": 1.00,          # THS hot reason — highest signal
     "cninfo": 0.80,       # CNInfo announcement — event-driven
     "eps": 0.70,          # THS EPS forecast — expectation-driven
+    "research": 0.55,     # Research report metadata — institutional view
     "eastmoney": 0.45,    # Eastmoney concept block — structural
     "jyhf": 0.35,         # JYHF subject_stock_map — static fallback
 }
@@ -28,6 +29,7 @@ RESONANCE_BONUS: dict[int, float] = {
     3: 0.30,
     4: 0.40,
     5: 0.50,
+    6: 0.55,
 }
 
 # Daily decay rate (exponential)
@@ -124,7 +126,7 @@ class EvidenceFusionEngine:
         best_priority = 999
 
         source_priority = {"ths": 0, "eps": 0, "cninfo": 1, "eastmoney": 2, "jyhf": 3}
-        event_sources = {"ths", "cninfo", "eastmoney", "jyhf"}
+        event_sources = {"ths", "cninfo", "research", "eastmoney", "jyhf"}
         supporting: list[dict[str, Any]] = []
 
         for ev in items:
