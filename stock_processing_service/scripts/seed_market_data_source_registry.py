@@ -38,6 +38,27 @@ REGISTRY_SEEDS = [
         "raw_snapshot_required": True,
         "enabled": True,
     },
+    {
+        "source_name": "eastmoney",
+        "endpoint_key": "eastmoney_concept_blocks",
+        "domain": "concept_blocks",
+        "owned_fields": ["concept_blocks", "industry_blocks", "region_blocks"],
+        "usage": "股票-题材静态/半动态补证据：概念/行业/地域板块归属",
+        "fallback_order": 40,
+        "rate_limit_policy": {
+            "type": "conservative",
+            "min_interval_ms": 1000,
+            "jitter_ms": 300,
+            "max_retries": 1,
+            "backoff": "linear",
+            "timeout_ms": 15000,
+            "session_reuse": True,
+        },
+        "auth_type": "none",
+        "freshness_sla": "T+0 post-market after 16:00 CN",
+        "raw_snapshot_required": True,
+        "enabled": False,  # enable after API connectivity confirmed
+    },
 ]
 
 UPSERT_SQL = """
