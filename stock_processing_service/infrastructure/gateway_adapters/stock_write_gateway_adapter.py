@@ -32,6 +32,30 @@ class StockWriteGatewayAdapter:
             return await fn([_row(r) for r in rows])
         raise RuntimeError("DatabaseGatewayStockFacade missing upsert_stock_daily_strategy_snapshot_rows")
 
+    async def upsert_source_raw_snapshot(self, row: dict[str, Any]) -> int:
+        fn = getattr(self._db, "upsert_source_raw_snapshot", None)
+        if callable(fn):
+            return await fn(_row(row))
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_source_raw_snapshot")
+
+    async def upsert_market_data_source_registry_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_market_data_source_registry_rows", None)
+        if callable(fn):
+            return await fn([_row(r) for r in rows])
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_market_data_source_registry_rows")
+
+    async def upsert_ths_hot_reason_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_ths_hot_reason_snapshot_rows", None)
+        if callable(fn):
+            return await fn([_row(r) for r in rows])
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_ths_hot_reason_snapshot_rows")
+
+    async def upsert_stock_theme_reason_evidence_rows(self, rows: list[dict[str, Any]]) -> int:
+        fn = getattr(self._db, "upsert_stock_theme_reason_evidence_rows", None)
+        if callable(fn):
+            return await fn([_row(r) for r in rows])
+        raise RuntimeError("DatabaseGatewayStockFacade missing upsert_stock_theme_reason_evidence_rows")
+
     async def upsert_subject_stock_daily_snapshot_rows(self, rows: list[SubjectStockDailySnapshot]) -> int:
         return await self._db.upsert_subject_stock_daily_snapshot_rows([_row(r) for r in rows])
 

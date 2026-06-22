@@ -1900,6 +1900,194 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             await conn.executemany(sql, payload)
         return len(payload)
 
+    async def upsert_source_raw_snapshot(self, row: Dict[str, Any]) -> int:
+        """UPSERT external source raw response and return raw snapshot id."""
+        if not row:
+            return 0
+        sql = """
+        INSERT INTO source_raw_snapshot (
+            source_name, endpoint_key, trade_date, request_url, request_params,
+            response_raw, response_text, response_hash, fetched_at
+        ) VALUES (
+            $1, $2, $3::date, $4, $5::jsonb,
+            $6::jsonb, $7, $8, COALESCE($9::timestamptz, now())
+        )
+        ON CONFLICT (source_name, endpoint_key, trade_date, response_hash) DO UPDATE SET
+            request_url = COALESCE(EXCLUDED.request_url, source_raw_snapshot.request_url),
+            request_params = COALESCE(EXCLUDED.request_params, source_raw_snapshot.request_params),
+            response_raw = COALESCE(EXCLUDED.response_raw, source_raw_snapshot.response_raw),
+            response_text = COALESCE(EXCLUDED.response_text, source_raw_snapshot.response_text),
+            fetched_at = EXCLUDED.fetched_at
+        RETURNING id
+        """
+        async with self.pool.acquire() as conn:
+            snapshot_id = await conn.fetchval(
+                sql,
+                row.get("source_name"),
+                row.get("endpoint_key"),
+                row.get("trade_date"),
+                row.get("request_url"),
+                _safe_json_dumps(row.get("request_params"), {}),
+                _safe_json_dumps(row.get("response_raw"), {}),
+                row.get("response_text"),
+                row.get("response_hash"),
+                row.get("fetched_at"),
+            )
+        return int(snapshot_id or 0)
+
+    async def upsert_market_data_source_registry_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT market_data_source_registry。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO market_data_source_registry (
+            source_name, endpoint_key, domain, owned_fields, fallback_order,
+            rate_limit_policy, auth_type, freshness_sla, raw_snapshot_required,
+            enabled, usage
+        ) VALUES (
+            $1, $2, $3, $4::jsonb, $5,
+            $6::jsonb, $7, $8, $9,
+            $10, $11
+        )
+        ON CONFLICT (source_name, endpoint_key) DO UPDATE SET
+            domain = EXCLUDED.domain,
+            owned_fields = EXCLUDED.owned_fields,
+            fallback_order = EXCLUDED.fallback_order,
+            rate_limit_policy = EXCLUDED.rate_limit_policy,
+            auth_type = EXCLUDED.auth_type,
+            freshness_sla = EXCLUDED.freshness_sla,
+            raw_snapshot_required = EXCLUDED.raw_snapshot_required,
+            enabled = EXCLUDED.enabled,
+            usage = EXCLUDED.usage,
+            updated_at = now()
+        """
+        payload = [
+            (
+                row.get("source_name"),
+                row.get("endpoint_key"),
+                row.get("domain"),
+                _safe_json_dumps(row.get("owned_fields"), []),
+                int(row.get("fallback_order", 100) or 100),
+                _safe_json_dumps(row.get("rate_limit_policy"), {}),
+                str(row.get("auth_type") or "none"),
+                row.get("freshness_sla"),
+                bool(row.get("raw_snapshot_required", True)),
+                bool(row.get("enabled", True)),
+                row.get("usage"),
+            )
+            for row in rows
+            if row.get("source_name") and row.get("endpoint_key") and row.get("domain")
+        ]
+        if not payload:
+            return 0
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
+
+    async def upsert_ths_hot_reason_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT ths_hot_reason_snapshot。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO ths_hot_reason_snapshot (
+            trade_date, stock_code, stock_name, reason_raw, reason_tags,
+            close_price, pct_chg, turnover_rate, amount, volume, big_order_net,
+            market, source_name, source_trace_id, raw_snapshot_id
+        ) VALUES (
+            $1::date, $2, $3, $4, $5::jsonb,
+            $6, $7, $8, $9, $10, $11,
+            $12, $13, $14, $15
+        )
+        ON CONFLICT (trade_date, stock_code, source_name) DO UPDATE SET
+            stock_name = EXCLUDED.stock_name,
+            reason_raw = EXCLUDED.reason_raw,
+            reason_tags = EXCLUDED.reason_tags,
+            close_price = EXCLUDED.close_price,
+            pct_chg = EXCLUDED.pct_chg,
+            turnover_rate = EXCLUDED.turnover_rate,
+            amount = EXCLUDED.amount,
+            volume = EXCLUDED.volume,
+            big_order_net = EXCLUDED.big_order_net,
+            market = EXCLUDED.market,
+            source_trace_id = EXCLUDED.source_trace_id,
+            raw_snapshot_id = EXCLUDED.raw_snapshot_id,
+            updated_at = now()
+        """
+        payload = [
+            (
+                row.get("trade_date"),
+                row.get("stock_code"),
+                row.get("stock_name"),
+                row.get("reason_raw"),
+                _safe_json_dumps(row.get("reason_tags"), []),
+                row.get("close_price"),
+                row.get("pct_chg"),
+                row.get("turnover_rate"),
+                row.get("amount"),
+                row.get("volume"),
+                row.get("big_order_net"),
+                row.get("market"),
+                str(row.get("source_name") or "ths"),
+                row.get("source_trace_id"),
+                row.get("raw_snapshot_id"),
+            )
+            for row in rows
+            if row.get("trade_date") and row.get("stock_code") and row.get("reason_raw")
+        ]
+        if not payload:
+            return 0
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
+
+    async def upsert_stock_theme_reason_evidence_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT stock_theme_reason_evidence。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO stock_theme_reason_evidence (
+            trade_date, stock_code, stock_name, theme_name, source_name,
+            evidence_text, reason_tags, matched_reason_tags, primary_theme,
+            confidence, source_trace_id, raw_snapshot_id
+        ) VALUES (
+            $1::date, $2, $3, $4, $5,
+            $6, $7::jsonb, $8::jsonb, $9,
+            $10, $11, $12
+        )
+        ON CONFLICT (trade_date, stock_code, theme_name, source_name, evidence_text) DO UPDATE SET
+            stock_name = EXCLUDED.stock_name,
+            reason_tags = EXCLUDED.reason_tags,
+            matched_reason_tags = EXCLUDED.matched_reason_tags,
+            primary_theme = EXCLUDED.primary_theme,
+            confidence = EXCLUDED.confidence,
+            source_trace_id = EXCLUDED.source_trace_id,
+            raw_snapshot_id = EXCLUDED.raw_snapshot_id,
+            updated_at = now()
+        """
+        payload = [
+            (
+                row.get("trade_date"),
+                row.get("stock_code"),
+                row.get("stock_name"),
+                row.get("theme_name"),
+                str(row.get("source_name") or "ths"),
+                row.get("evidence_text"),
+                _safe_json_dumps(row.get("reason_tags"), []),
+                _safe_json_dumps(row.get("matched_reason_tags"), []),
+                bool(row.get("primary_theme", False)),
+                row.get("confidence"),
+                row.get("source_trace_id"),
+                row.get("raw_snapshot_id"),
+            )
+            for row in rows
+            if row.get("trade_date") and row.get("stock_code") and row.get("theme_name") and row.get("evidence_text")
+        ]
+        if not payload:
+            return 0
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
+
     async def get_stock_daily_snapshot_by_trade_date(self, trade_date) -> List[Dict[str, Any]]:
         """按交易日读取 stock_daily_snapshot。"""
         sql = """

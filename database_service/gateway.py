@@ -1419,6 +1419,54 @@ class DatabaseGateway:
             logger.error(f"批量写入 stock_daily_strategy_snapshot 失败: {e}")
             raise
 
+    async def upsert_source_raw_snapshot(self, row: Dict[str, Any]) -> int:
+        """股票域显式写入：source_raw_snapshot，并返回快照 id。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_source_raw_snapshot(row)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 source_raw_snapshot 失败: {e}")
+            raise
+
+    async def upsert_market_data_source_registry_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：market_data_source_registry。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_market_data_source_registry_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量写入 market_data_source_registry 失败: {e}")
+            raise
+
+    async def upsert_ths_hot_reason_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：ths_hot_reason_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_ths_hot_reason_snapshot_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量写入 ths_hot_reason_snapshot 失败: {e}")
+            raise
+
+    async def upsert_stock_theme_reason_evidence_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：stock_theme_reason_evidence。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_stock_theme_reason_evidence_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量写入 stock_theme_reason_evidence 失败: {e}")
+            raise
+
     async def upsert_subject_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
         """股票域显式写入：subject_stock_daily_snapshot。"""
         try:
