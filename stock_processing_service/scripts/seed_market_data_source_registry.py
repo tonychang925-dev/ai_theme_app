@@ -59,6 +59,26 @@ REGISTRY_SEEDS = [
         "raw_snapshot_required": True,
         "enabled": False,  # enable after API connectivity confirmed
     },
+    {
+        "source_name": "cninfo",
+        "endpoint_key": "cninfo_announcements",
+        "domain": "announcements",
+        "owned_fields": ["announcement_title", "announcement_type", "pdf_url"],
+        "usage": "事件驱动公告证据：重大合同/业绩预告/资产重组等，服务 event_theme_map 与主题发现",
+        "fallback_order": 30,
+        "rate_limit_policy": {
+            "type": "conservative",
+            "min_interval_ms": 1000,
+            "jitter_ms": 300,
+            "max_retries": 1,
+            "backoff": "linear",
+            "timeout_ms": 20000,
+        },
+        "auth_type": "none",
+        "freshness_sla": "T+0 post-market after 16:00 CN",
+        "raw_snapshot_required": True,
+        "enabled": True,
+    },
 ]
 
 UPSERT_SQL = """
