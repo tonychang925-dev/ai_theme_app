@@ -1793,28 +1793,40 @@ class EvidenceRecapGenerateRunner:
                     RecapAggregationService,
                 )
 
-                # Load THS evidence
+                # Load THS evidence — use resolved theme_name from evidence table
                 ths_rows = await conn.fetch(
-                    "SELECT stock_code, stock_name, reason_raw, reason_tags "
-                    "FROM ths_hot_reason_snapshot WHERE trade_date=$1", td)
+                    "SELECT stock_code, stock_name, theme_name, reason_raw, reason_tags, evidence_text "
+                    "FROM ths_hot_reason_snapshot t "
+                    "JOIN stock_theme_reason_evidence e ON e.stock_code=t.stock_code AND e.trade_date=t.trade_date AND e.source_name='ths' "
+                    "WHERE t.trade_date=$1", td)
+
+                # Fallback: raw THS if no resolved evidence
+                if not ths_rows:
+                    ths_rows = await conn.fetch(
+                        "SELECT stock_code, stock_name, '' as theme_name, reason_raw, reason_tags, reason_raw as evidence_text "
+                        "FROM ths_hot_reason_snapshot WHERE trade_date=$1", td)
 
                 # Load CDP evidence
                 cdp_rows = await conn.fetch(
                     "SELECT subject_key, subject_name, description "
                     "FROM subject_history_staging WHERE rank_date=$1 AND source_type='jyhf_cdp'", td)
 
-                # Build EvidenceItems from THS (stock_code → theme via reason_tags)
+                # Build EvidenceItems
                 evidence_items: list[EvidenceItem] = []
                 seen = set()
                 for r in ths_rows:
-                    tags = r["reason_tags"] or []
                     code = str(r["stock_code"] or "")
                     name = str(r["stock_name"] or "")
-                    reason = str(r["reason_raw"] or "")
-                    if not code or not tags:
+                    reason = str(r["evidence_text"] or r["reason_raw"] or "")
+                    tags = r["reason_tags"] or []
+                    theme = str(r["theme_name"] or "")
+                    if not code:
                         continue
-                    # Use first reason_tag as theme_name
-                    theme = str(tags[0]) if tags else "其他"
+                    # If theme is empty, use first meaningful tag
+                    if not theme and tags:
+                        theme = str(tags[0])
+                    if not theme:
+                        continue
                     key = (code, theme)
                     if key in seen:
                         continue
@@ -1853,10 +1865,16 @@ class EvidenceRecapGenerateRunner:
 
                 # Build board signals from THS snapshot
                 board_signals: dict[str, dict] = {}
-                for r in ths_rows:
+                raw_ths = await conn.fetch(
+                    "SELECT stock_code, pct_chg FROM ths_hot_reason_snapshot WHERE trade_date=$1", td)
+                for r in raw_ths:
                     code = str(r["stock_code"] or "")
+                    pct = float(r["pct_chg"] or 0)
                     if code:
-                        board_signals[code] = {"is_limit_up": False, "pct_chg": 5.0}
+                        board_signals[code] = {
+                            "is_limit_up": pct >= 9.5,
+                            "pct_chg": pct,
+                        }
 
                 # Full pipeline: Evidence → Fusion → Leader → Theme → Recap
                 fusion = EvidenceFusionEngine()
