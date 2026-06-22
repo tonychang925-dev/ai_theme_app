@@ -347,6 +347,11 @@ class CollectionCommandPlanner:
                         runner_key="evidence.recap_generate",
                         label="证据融合 + 复盘快照生成",
                     ),
+                    CollectionTaskStep(
+                        key="evidence_m7b",
+                        runner_key="evidence.m7b_error",
+                        label="M7b 预测误差计算",
+                    ),
                 ],
             )
 

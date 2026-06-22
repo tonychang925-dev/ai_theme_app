@@ -1761,6 +1761,132 @@ class IndexKlineCollectRunner:
 
 # ── M4/M5: Evidence → Recap Generate Runner ──────────────────────
 
+
+class M7bErrorComputeRunner:
+    """M7b: Compute prediction vs reality errors after recap generation."""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        import json as _json
+        from datetime import date as _date
+
+        try:
+            td = _date.fromisoformat(context.trade_date)
+            import asyncpg
+
+            conn = await asyncpg.connect(
+                host="localhost", port=5432, database="stock_data_test",
+                user="postgres", password="postgres", timeout=10,
+            )
+            try:
+                from stock_processing_service.domain.services.market_feedback import (
+                    PredictionVsRealityEngine,
+                )
+                from stock_processing_service.domain.services.theme_return import (
+                    ThemeReturnAttributionEngine,
+                )
+
+                # Read M6 predictions from market_recap_snapshot
+                recap_row = await conn.fetchrow(
+                    "SELECT recap_json FROM market_recap_snapshot WHERE trade_date=$1", td)
+                if not recap_row:
+                    return CollectionTaskResult(
+                        status="skipped",
+                        current_label="无复盘快照，跳过误差计算",
+                    )
+
+                recap = recap_row["recap_json"] if isinstance(recap_row["recap_json"], dict) else _json.loads(recap_row["recap_json"])
+                top_themes = recap.get("top_themes", [])
+
+                # Build predicted map from recap
+                predicted: dict[str, dict] = {}
+                for t in top_themes:
+                    predicted[t["theme_name"]] = {
+                        "strength": float(t.get("strength_score", 0)),
+                        "rank": int(t.get("rank", 0)),
+                        "sources": t.get("evidence_sources", []),
+                        "stability": 0.5,
+                        "anchor": 0.5,
+                    }
+
+                # Build actual map from theme returns (leaders' pct_chg)
+                actual: dict[str, dict] = {}
+                theme_leaders: dict[str, list] = {}
+                for t in top_themes:
+                    for ld in t.get("leaders", []):
+                        theme_leaders.setdefault(t["theme_name"], []).append(ld["stock_code"])
+
+                # Use THS pct_chg as market truth baseline
+                ths_rows = await conn.fetch(
+                    "SELECT stock_code, pct_chg FROM ths_hot_reason_snapshot WHERE trade_date=$1", td)
+                stock_pct: dict[str, float] = {}
+                for r in ths_rows:
+                    stock_pct[str(r["stock_code"] or "")] = float(r["pct_chg"] or 0)
+
+                for theme, stock_codes in theme_leaders.items():
+                    pcts = [stock_pct.get(c, 0) for c in stock_codes[:5] if stock_pct.get(c)]
+                    if pcts:
+                        avg_pct = sum(pcts) / len(pcts)
+                        actual[theme] = {
+                            "strength": round(max(0, min(1, (avg_pct + 5) / 15)), 4),
+                            "rank": 0,
+                        }
+
+                if not actual:
+                    return CollectionTaskResult(
+                        status="skipped",
+                        current_label="无市场真值数据，跳过误差计算",
+                    )
+
+                # Compute errors
+                engine = PredictionVsRealityEngine()
+                report = engine.compute(td, predicted, actual)
+
+                # Persist to theme_prediction_snapshot
+                count = 0
+                for err in report.errors:
+                    await conn.execute(
+                        """INSERT INTO theme_prediction_snapshot (
+                             trade_date, theme_name, predicted_strength, predicted_rank,
+                             actual_strength, actual_rank, strength_error, rank_error,
+                             abs_strength_error, error_bucket, stability_score, anchor_score,
+                             source_trace_id
+                           ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)
+                           ON CONFLICT (trade_date, theme_name) DO UPDATE SET
+                             predicted_strength=EXCLUDED.predicted_strength,
+                             actual_strength=EXCLUDED.actual_strength,
+                             strength_error=EXCLUDED.strength_error,
+                             error_bucket=EXCLUDED.error_bucket""",
+                        td, err.theme_name, err.predicted_strength, err.predicted_rank,
+                        err.actual_strength, err.actual_rank, err.strength_error,
+                        err.rank_error, err.abs_strength_error, err.error_bucket,
+                        err.stability_score, err.anchor_score,
+                        f"m7b:{td.isoformat()}:{err.theme_name}",
+                    )
+                    count += 1
+
+                over = report.overestimated[:3]
+                under = report.underestimated[:3]
+                bias_msgs = [f"{s}={report.source_bias.get(s,0):.3f}" for s in report.source_bias]
+
+                return CollectionTaskResult(
+                    status="success",
+                    current_label=f"M7b 误差计算完成: {count} themes, over={len(report.overestimated)} under={len(report.underestimated)}",
+                    progress_percent=100,
+                    logs=[
+                        f"over={over} under={under}" if over or under else "all correct",
+                        f"mean_abs_error={report.summary['mean_abs_error']}",
+                        f"source_bias={bias_msgs}" if bias_msgs else "no bias detected",
+                    ],
+                )
+            finally:
+                await conn.close()
+        except Exception as exc:
+            return CollectionTaskResult(
+                status="failed",
+                current_label=f"M7b 误差计算失败: {type(exc).__name__}",
+                error_message=str(exc)[:500],
+            )
+
 class EvidenceRecapGenerateRunner:
     """Generate market recap snapshot via full M4 evidence pipeline.
 

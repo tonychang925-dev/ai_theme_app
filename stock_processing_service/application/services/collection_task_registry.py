@@ -104,6 +104,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         BuildStockAbnormalSignalRunner,
         CallLeaderLLMRunner,
         EvidenceRecapGenerateRunner,
+        M7bErrorComputeRunner,
         JyhfImportHistoryRunner,
         JyhfImportStockDailyRunner,
         JyhfLoadSubjectNodeStagingRunner,
@@ -182,6 +183,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     # ── M4/M5: Evidence Collection Runners ──
     registry.register("evidence.ths_hot_reason", ScriptCommandRunner())
     registry.register("evidence.recap_generate", EvidenceRecapGenerateRunner())
+    registry.register("evidence.m7b_error", M7bErrorComputeRunner())
 
 __all__ = [
     "CollectionTaskContext",
