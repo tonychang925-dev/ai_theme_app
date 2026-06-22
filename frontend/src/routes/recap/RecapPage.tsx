@@ -1671,16 +1671,20 @@ export function RecapPage() {
       {reportType === "post_market" && <MarketRecapPanel tradeDate={tradeDate} />}
 
       {loading && <div className="empty-state">正在加载复盘视图...</div>}
-      {error && <div className="empty-state error">{error}</div>}
+      {error && !reportType.includes("post_market") && <div className="empty-state error">{error}</div>}
       {!loading && reportType === "post_market" && !payload && (
-        <div style={{ marginBottom: 12 }}>
+        <div style={{ marginBottom: 12, padding: 12, background: "#1a1a1a", borderRadius: 8 }}>
+          <span style={{ color: "#999", fontSize: 13 }}>
+            遗留引擎报告尚未生成。上方题材强度面板已使用 M4g 证据融合引擎生成。
+          </span>
           <button
             className="tag tag-button is-pass"
             type="button"
+            style={{ marginLeft: 12 }}
             disabled={derivedDataBusy || recapBusy}
             onClick={handleStartPostMarketRecap}
           >
-            {derivedDataBusy || recapBusy ? "复盘中..." : "开始复盘"}
+            {derivedDataBusy || recapBusy ? "复盘中..." : "生成遗留报告"}
           </button>
         </div>
       )}
