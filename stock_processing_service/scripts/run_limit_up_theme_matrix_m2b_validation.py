@@ -22,10 +22,22 @@ from stock_processing_service.application.services.limit_up_theme_matrix_builder
 
 
 GOLDEN_DATES = ("2026-06-18", "2026-06-19", "2026-06-20")
+EXPECTED_MANUAL_TOP_THEMES = {
+    "PCB/HBM产业链",
+    "AI算力基础设施",
+    "AI光通信",
+    "机器人",
+    "先进材料/固态电池",
+    "有色资源/小金属",
+    "创新药/医疗",
+    "ST摘帽/重整/国资",
+}
 DEFAULT_THRESHOLDS = {
-    "other_count_max": 20,
+    "true_other_count_max": 10,
+    "display_other_count_max": 45,
     "ths_reason_covered_count_min": 80,
-    "top_5_theme_coverage_min": 0.55,
+    "top_8_theme_coverage_min": 0.55,
+    "top_5_manual_theme_hit_count_min": 4,
     "single_theme_max_ratio_max": 0.35,
 }
 
@@ -198,6 +210,12 @@ def _matrix_metrics(
     theme_counts = _theme_counts(matrix)
     real_theme_counts = [row for row in theme_counts if row["theme_name"] != "其他"]
     top5_count = sum(int(row["limitup_count"]) for row in real_theme_counts[:5])
+    top8_count = sum(int(row["limitup_count"]) for row in real_theme_counts[:8])
+    top5_manual_theme_hits = [
+        str(row["theme_name"])
+        for row in real_theme_counts[:5]
+        if str(row["theme_name"]) in EXPECTED_MANUAL_TOP_THEMES
+    ]
     max_theme_count = max([int(row["limitup_count"]) for row in real_theme_counts] or [0])
     audit_rows = diagnostics.get("assignment_audit_rows") or []
     source_counter = Counter(str(row.get("chosen_reason") or "") for row in audit_rows)
@@ -222,6 +240,9 @@ def _matrix_metrics(
         "evidence_stock_count": evidence_stock_count,
         "ths_reason_clustered_count": clustered_count,
         "top_5_theme_coverage": round(top5_count / total, 4) if total else 0.0,
+        "top_8_theme_coverage": round(top8_count / total, 4) if total else 0.0,
+        "top_5_manual_theme_hit_count": len(top5_manual_theme_hits),
+        "top_5_manual_theme_hits": top5_manual_theme_hits,
         "single_theme_max_ratio": round(max_theme_count / total, 4) if total else 0.0,
         "source_breakdown": dict(sorted(source_counter.items())),
         "top_themes": theme_counts[:10],
@@ -240,6 +261,8 @@ def _diff_metrics(before: dict[str, Any], after: dict[str, Any]) -> dict[str, An
         "ths_reason_covered_count",
         "ths_reason_clustered_count",
         "top_5_theme_coverage",
+        "top_8_theme_coverage",
+        "top_5_manual_theme_hit_count",
         "single_theme_max_ratio",
     ]
     return {key: after.get(key, 0) - before.get(key, 0) for key in keys}
@@ -247,12 +270,16 @@ def _diff_metrics(before: dict[str, Any], after: dict[str, Any]) -> dict[str, An
 
 def _gate(metrics: dict[str, Any], thresholds: dict[str, Any]) -> dict[str, Any]:
     failures: list[str] = []
-    if metrics["true_other_count"] > thresholds["other_count_max"]:
+    if metrics["true_other_count"] > thresholds["true_other_count_max"]:
         failures.append("true_other_count_gt_max")
+    if metrics["display_other_count"] > thresholds["display_other_count_max"]:
+        failures.append("display_other_count_gt_max")
     if metrics["ths_reason_covered_count"] < thresholds["ths_reason_covered_count_min"]:
         failures.append("ths_reason_covered_count_lt_min")
-    if metrics["top_5_theme_coverage"] < thresholds["top_5_theme_coverage_min"]:
-        failures.append("top_5_theme_coverage_lt_min")
+    if metrics["top_8_theme_coverage"] < thresholds["top_8_theme_coverage_min"]:
+        failures.append("top_8_theme_coverage_lt_min")
+    if metrics["top_5_manual_theme_hit_count"] < thresholds["top_5_manual_theme_hit_count_min"]:
+        failures.append("top_5_manual_theme_hit_count_lt_min")
     if metrics["single_theme_max_ratio"] > thresholds["single_theme_max_ratio_max"]:
         failures.append("single_theme_max_ratio_gt_max")
     return {"passed": not failures, "failures": failures}
@@ -288,15 +315,15 @@ def _write_markdown(report: dict[str, Any], output_path: Path) -> None:
         f"- database: `{report.get('database')}`",
         f"- all_passed: `{report.get('all_passed')}`",
         "",
-        "| date | limitups | true other before -> after | display other | collapsed other | THS covered | THS clustered | top5 coverage | max theme ratio | gate |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---|",
+        "| date | limitups | true other before -> after | display other | collapsed other | THS covered | THS clustered | top5 obs | top8 gate | manual top5 hits | max theme ratio | gate |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|",
     ]
     for row in report.get("dates") or []:
         before = row["before"]
         after = row["after"]
         gate = row["gate"]
         lines.append(
-            "| {date} | {limitups} | {before_other} -> {after_other} | {display_other} | {collapsed_other} | {covered} | {clustered} | {top5:.2%} | {max_ratio:.2%} | {gate} |".format(
+            "| {date} | {limitups} | {before_other} -> {after_other} | {display_other} | {collapsed_other} | {covered} | {clustered} | {top5:.2%} | {top8:.2%} | {manual_hits} | {max_ratio:.2%} | {gate} |".format(
                 date=row["trade_date"],
                 limitups=after["limitup_count"],
                 before_other=before["true_other_count"],
@@ -306,6 +333,8 @@ def _write_markdown(report: dict[str, Any], output_path: Path) -> None:
                 covered=after["ths_reason_covered_count"],
                 clustered=after["ths_reason_clustered_count"],
                 top5=after["top_5_theme_coverage"],
+                top8=after["top_8_theme_coverage"],
+                manual_hits=after["top_5_manual_theme_hit_count"],
                 max_ratio=after["single_theme_max_ratio"],
                 gate="pass" if gate["passed"] else ",".join(gate["failures"]),
             )

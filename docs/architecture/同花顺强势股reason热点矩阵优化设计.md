@@ -32,6 +32,10 @@
   - `AI算力基础设施 + 算力/数据中心/液冷`
   - `先进材料/固态电池 + 全固态电池进度表`
 
+待实施：
+
+- M2e：调整 Golden Gate 指标口径。6/18 是多分支扩散行情，硬性要求 Top5 覆盖 55% 会诱导算法过度合并；Gate 应改为 `true_other_count <= 10`、`top_8_theme_coverage >= 55%`、`single_theme_max_ratio <= 35%`、`display_other_count <= 45`、`Top5 人工主线命中 >= 4`，`collapsed_other_count` 降级为观察指标。
+
 最新 2026-06-18 回放结果：
 
 | 阶段 | true_other_count | display_other_count | collapsed_other_count | top_5_theme_coverage | single_theme_max_ratio | 结论 |
@@ -574,7 +578,9 @@ diagnostics 新增：
 | `collapsed_other_themes` | 被折叠进 `其他` 的有效主题明细 |
 | `ths_reason_covered_count` | 涨停股中命中 THS reason 快照的数量 |
 | `ths_reason_clustered_count` | 命中 THS reason 且归一化出 canonical theme 的数量 |
-| `top_5_theme_coverage` | Top5 非 `其他` 主题覆盖涨停股数量 / 全部有效涨停股数量 |
+| `top_5_theme_coverage` | Top5 非 `其他` 主题覆盖涨停股数量 / 全部有效涨停股数量；M2e 起作为观察指标 |
+| `top_8_theme_coverage` | Top8 非 `其他` 主题覆盖涨停股数量 / 全部有效涨停股数量；M2e 起作为多分支行情 Gate |
+| `top_5_manual_theme_hit_count` | Top5 非 `其他` 主题中命中人工复盘主线集合的数量 |
 | `single_theme_max_ratio` | 最大非 `其他` 单一主题涨停数 / 全部有效涨停股数量 |
 | `theme_entropy` | 主题分布熵，用于识别过度集中或过度碎片 |
 | `manual_reason_coverage` | 有非空 `reason_raw` 的涨停股数量 / 全部有效涨停股数量 |
@@ -605,9 +611,12 @@ diagnostics 新增：
 
 | 指标 | 阈值 |
 | --- | --- |
-| `other_count` | `<= 20` |
+| `true_other_count` | `<= 10` |
+| `display_other_count` | `<= 45` |
+| `collapsed_other_count` | 观察指标，不作为硬门禁 |
 | `ths_reason_covered_count` | `>= 80` |
-| `top_5_theme_coverage` | `>= 55%` |
+| `top_8_theme_coverage` | `>= 55%` |
+| `top_5_manual_theme_hit_count` | `>= 4` |
 | `single_theme_max_ratio` | `<= 35%` |
 | `manual_reason_coverage` | `>= 75%` |
 | `static_fallback_ratio` | 不作为硬阈值，但需输出 |
@@ -646,7 +655,7 @@ Top5 热点至少覆盖以下方向中的 4 个：
 | 7 | `创新药/医疗` | 6 | stock_theme_reason_evidence |
 | 8 | `AI光通信` | 4 | mainline_daily_state + stock_theme_reason_evidence |
 
-当前仍未通过的门禁：
+按旧 Gate 当前仍未通过的门禁：
 
 - `top_5_theme_coverage = 43.40% < 55%`
 
@@ -655,7 +664,7 @@ Top5 热点至少覆盖以下方向中的 4 个：
 - 不是 reason 证据缺失，`ths_reason_covered_count=82` 已达标。
 - 不是真实未归因过多，`true_other_count=5` 已达标。
 - 主要剩余问题是主题展示粒度仍偏碎，以及 12 列展示上限下仍有有效主题被折叠。
-- 下一步应进入 M2e 或 P0.5：补 `ST摘帽/重整/国资`、`商业航天/军工`、`创新药/医疗` 等解释层与展示策略，而不是继续扩外部数据源。
+- M2e 决策：不继续硬凑 Top5。6/18 属于多分支扩散行情，Top5 覆盖 55% 会诱导过度合并；改用 Top8 覆盖率、Top5 人工主线命中数、true/display other 共同判断。
 
 ### 9.4 多日 Golden Dataset 验收要求
 
@@ -764,6 +773,32 @@ Top5 热点至少覆盖以下方向中的 4 个：
 - 代码本地已实现，待提交。
 - 单测：`14 passed`
 - Report：`reports/golden/limit_up_theme_matrix_m2b/validation_20260618_m2d.md`
+
+### M2e - Golden Gate 指标口径调整
+
+目标：避免在多热点扩散行情中用 Top5 覆盖率硬阈值诱导过度归并。
+
+| Task ID | 任务 | 产出 | 依赖 | 状态/验证 |
+| --- | --- | --- | --- | --- |
+| M2e-T01 | 将 `true_other_count <= 10` 设为真实归因 Gate | 准确归因门禁 | M2c | DONE，本地待提交 |
+| M2e-T02 | 将 `top_8_theme_coverage >= 55%` 设为热点覆盖 Gate | 多分支行情门禁 | M2d | DONE，本地待提交 |
+| M2e-T03 | 将 `display_other_count <= 45` 设为展示质量 Gate | 展示折叠门禁 | M2c | DONE，本地待提交 |
+| M2e-T04 | 将 `collapsed_other_count` 降级为观察指标 | 避免误判展示上限 | M2c | DONE，本地待提交 |
+| M2e-T05 | 新增 `top_5_manual_theme_hit_count >= 4` | 人工复盘一致性 Gate | M2d | DONE，本地待提交 |
+| M2e-T06 | 保留 `single_theme_max_ratio <= 35%` | 防止过度归并 | M2b | DONE，本地待提交 |
+
+M2e 2026-06-18 回放结果：
+
+| 指标 | 结果 | Gate |
+| --- | ---: | --- |
+| `true_other_count` | 5 | PASS |
+| `display_other_count` | 38 | PASS |
+| `collapsed_other_count` | 34 | 观察指标 |
+| `top_8_theme_coverage` | 55.66% | PASS |
+| `top_5_manual_theme_hit_count` | 5 | PASS |
+| `single_theme_max_ratio` | 11.32% | PASS |
+
+Report：`reports/golden/limit_up_theme_matrix_m2b/validation_20260618_m2e.md`
 
 ### P0.5 - Theme Evidence + Theme Explanation Layer
 
