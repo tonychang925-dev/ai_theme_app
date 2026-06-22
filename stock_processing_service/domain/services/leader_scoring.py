@@ -90,6 +90,7 @@ class LeaderScore:
     board_strength_score: float  # trading strength
     rank_in_theme: int = 0
     evidence_sources: list[str] = field(default_factory=list)
+    primary_reason: str = ""     # best evidence description (catalyst)
     source_trace_id: str = ""
     confidence: float = 0.0
 
@@ -166,6 +167,7 @@ class LeaderScoringEngine:
                 resonance_score=round(resonance_bonus, 4),
                 board_strength_score=round(board, 4),
                 evidence_sources=fused.evidence_sources,
+                primary_reason=fused.primary_reason,
                 source_trace_id=f"leader:{trade_date.isoformat()}:{fused.stock_code}:{fused.theme_name}",
                 confidence=round(fused.confidence, 2),
             ))
@@ -191,6 +193,7 @@ class LeaderScoringEngine:
                     board_strength_score=s.board_strength_score,
                     rank_in_theme=rank,
                     evidence_sources=s.evidence_sources,
+                    primary_reason=s.primary_reason,
                     source_trace_id=s.source_trace_id,
                     confidence=s.confidence,
                 ))

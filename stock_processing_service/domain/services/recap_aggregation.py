@@ -78,6 +78,15 @@ class RecapAggregationService:
             if not reasons:
                 reasons.append("事件驱动")
 
+            # Get catalyst event from top leader's primary_reason
+            catalyst = ""
+            top_leader_reasons = [
+                ls.primary_reason for ls in theme_leaders[:3]
+                if ls.primary_reason
+            ]
+            if top_leader_reasons:
+                catalyst = top_leader_reasons[0]
+
             top_themes.append({
                 "rank": ts.rank,
                 "theme_name": ts.theme_name,
@@ -87,6 +96,7 @@ class RecapAggregationService:
                 "avg_leader_score": ts.avg_leader_score,
                 "resonance_count": ts.resonance_count,
                 "why_strong": reasons,
+                "catalyst": catalyst,
                 "leaders": [
                     {
                         "stock_code": ls.stock_code,
