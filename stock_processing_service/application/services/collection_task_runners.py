@@ -1762,10 +1762,12 @@ class IndexKlineCollectRunner:
 # ── M4/M5: Evidence → Recap Generate Runner ──────────────────────
 
 class EvidenceRecapGenerateRunner:
-    """Generate market recap snapshot from collected evidence data."""
+    """Generate market recap snapshot via full M4 evidence pipeline.
+
+    Pipeline: THS+CDP evidence → FusionEngine → LeaderEngine → ThemeEngine → RecapAggregation.
+    """
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
-        import asyncio as _asyncio
         import json as _json
         from datetime import date as _date
 
@@ -1778,85 +1780,127 @@ class EvidenceRecapGenerateRunner:
                 user="postgres", password="postgres", timeout=10,
             )
             try:
-                # Load available evidence
-                ths_count = await conn.fetchval(
-                    "SELECT COUNT(*) FROM ths_hot_reason_snapshot WHERE trade_date=$1", td)
-                cd_count = await conn.fetchval(
-                    "SELECT COUNT(*) FROM subject_history_staging WHERE rank_date=$1 AND source_type='jyhf_cdp'", td)
-                evidence_count = await conn.fetchval(
-                    "SELECT COUNT(*) FROM stock_theme_reason_evidence WHERE trade_date=$1", td)
+                from stock_processing_service.domain.services.evidence_fusion import (
+                    EvidenceFusionEngine, EvidenceItem,
+                )
+                from stock_processing_service.domain.services.leader_scoring import (
+                    LeaderScoringEngine,
+                )
+                from stock_processing_service.domain.services.theme_strength import (
+                    ThemeStrengthEngine,
+                )
+                from stock_processing_service.domain.services.recap_aggregation import (
+                    RecapAggregationService,
+                )
 
-                is_degraded = ths_count == 0
+                # Load THS evidence
+                ths_rows = await conn.fetch(
+                    "SELECT stock_code, stock_name, reason_raw, reason_tags "
+                    "FROM ths_hot_reason_snapshot WHERE trade_date=$1", td)
+
+                # Load CDP evidence
+                cdp_rows = await conn.fetch(
+                    "SELECT subject_key, subject_name, description "
+                    "FROM subject_history_staging WHERE rank_date=$1 AND source_type='jyhf_cdp'", td)
+
+                # Build EvidenceItems from THS (stock_code → theme via reason_tags)
+                evidence_items: list[EvidenceItem] = []
+                seen = set()
+                for r in ths_rows:
+                    tags = r["reason_tags"] or []
+                    code = str(r["stock_code"] or "")
+                    name = str(r["stock_name"] or "")
+                    reason = str(r["reason_raw"] or "")
+                    if not code or not tags:
+                        continue
+                    # Use first reason_tag as theme_name
+                    theme = str(tags[0]) if tags else "其他"
+                    key = (code, theme)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    evidence_items.append(EvidenceItem(
+                        source_name="ths", theme_name=theme,
+                        stock_code=code, stock_name=name,
+                        evidence_date=td, reason=reason, tags=list(tags),
+                    ))
+
+                # Build EvidenceItems from CDP
+                for r in cdp_rows:
+                    theme = str(r["subject_name"] or r["subject_key"] or "")
+                    key = f"cdp:{theme}"
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    desc = str(r["description"] or "")[:100]
+                    evidence_items.append(EvidenceItem(
+                        source_name="jyhf", theme_name=theme,
+                        stock_code=r["subject_key"] or theme,
+                        stock_name=theme, evidence_date=td, reason=desc,
+                    ))
+
+                is_degraded = len(ths_rows) == 0
                 reasons = []
                 if is_degraded:
                     reasons.append("ths_hot_reason not collected")
 
-                # Build recap from CDP events
-                rows = await conn.fetch(
-                    "SELECT subject_key, subject_name, description FROM subject_history_staging "
-                    "WHERE rank_date=$1 AND source_type='jyhf_cdp' ORDER BY rank_date DESC", td)
+                if not evidence_items:
+                    return CollectionTaskResult(
+                        status="failed",
+                        current_label="无证据数据可融合",
+                        error_message="no evidence items from THS or CDP",
+                    )
 
-                themes: dict[str, dict] = {}
-                for r in rows:
-                    name = r["subject_name"] or r["subject_key"]
-                    if name not in themes:
-                        themes[name] = {"count": 0}
-                    themes[name]["count"] += 1
+                # Build board signals from THS snapshot
+                board_signals: dict[str, dict] = {}
+                for r in ths_rows:
+                    code = str(r["stock_code"] or "")
+                    if code:
+                        board_signals[code] = {"is_limit_up": False, "pct_chg": 5.0}
 
-                sorted_themes = sorted(themes.items(), key=lambda x: -x[1]["count"])
-                top_themes = []
-                for rank, (name, data) in enumerate(sorted_themes[:8], 1):
-                    top_themes.append({
-                        "rank": rank, "theme_name": name,
-                        "strength_score": round(0.1 + data["count"] * 0.05, 4),
-                        "stock_count": data["count"], "leader_count": 0,
-                        "avg_leader_score": 0, "resonance_count": 0,
-                        "why_strong": ["事件驱动"],
-                        "leaders": [], "evidence_sources": ["jyhf_cdp"],
-                    })
+                # Full pipeline: Evidence → Fusion → Leader → Theme → Recap
+                fusion = EvidenceFusionEngine()
+                leader_engine = LeaderScoringEngine(fusion)
+                theme_engine = ThemeStrengthEngine()
+                recap_service = RecapAggregationService()
 
-                recap_json = {
-                    "version": "1.0.0", "trade_date": td.isoformat(),
-                    "top_themes": top_themes,
-                    "market_summary": {
-                        "theme_count": len(top_themes), "leader_count": 0,
-                        "evidence_source_count": 1 if cd_count > 0 else 0,
-                        "evidence_sources": ["jyhf_cdp"] if cd_count > 0 else [],
-                        "top_theme": top_themes[0]["theme_name"] if top_themes else "",
-                        "top_theme_strength": top_themes[0]["strength_score"] if top_themes else 0,
-                    },
-                    "diagnostics": {
-                        "input_theme_count": len(top_themes), "input_leader_count": 0,
-                        "input_evidence_count": evidence_count + cd_count,
-                        "degraded": is_degraded,
-                        "degraded_reasons": reasons,
-                        "ths_rows": ths_count, "cdp_rows": cd_count,
-                    },
-                }
+                leaders = leader_engine.score(td, evidence_items, board_signals)
+                themes = theme_engine.compute(td, leaders)
+                recap = recap_service.aggregate(td, themes, leaders,
+                                                evidence_items_count=len(evidence_items))
+
+                row = recap_service.to_snapshot_row(recap)
+                # Override diagnostics with collection-level info
+                recap_data = row["recap_json"]
+                recap_data["diagnostics"]["ths_rows"] = len(ths_rows)
+                recap_data["diagnostics"]["cdp_rows"] = len(cdp_rows)
+                recap_data["diagnostics"]["degraded"] = is_degraded
+                recap_data["diagnostics"]["degraded_reasons"] = reasons
 
                 await conn.execute(
                     """INSERT INTO market_recap_snapshot (trade_date, recap_json, source_trace_id)
                        VALUES ($1, $2::jsonb, $3)
                        ON CONFLICT (trade_date) DO UPDATE SET
                          recap_json=EXCLUDED.recap_json, source_trace_id=EXCLUDED.source_trace_id""",
-                    td, _json.dumps(recap_json, ensure_ascii=False, default=str),
-                    f"recap:{td.isoformat()}:{'degraded' if is_degraded else 'full'}",
+                    td, _json.dumps(recap_data, ensure_ascii=False, default=str),
+                    recap.source_trace_id,
                 )
 
                 return CollectionTaskResult(
                     status="success",
-                    current_label=f"复盘生成完成: {len(top_themes)} themes{' (降级)' if is_degraded else ''}",
+                    current_label=f"复盘生成完成: {len(recap.top_themes)} themes, {len(leaders)} leaders{' (降级)' if is_degraded else ''}",
                     progress_percent=100,
                     logs=[
-                        f"ths={ths_count} cd={cd_count} evidence={evidence_count}",
-                        f"themes={len(top_themes)} degraded={is_degraded}",
+                        f"ths={len(ths_rows)} cdp={len(cdp_rows)} evidence={len(evidence_items)}",
+                        f"leaders={len(leaders)} themes={len(themes)} degraded={is_degraded}",
                     ],
                 )
             finally:
                 await conn.close()
         except Exception as exc:
+            import traceback
             return CollectionTaskResult(
                 status="failed",
                 current_label=f"复盘生成失败: {type(exc).__name__}",
-                error_message=str(exc),
+                error_message=str(exc)[:500],
             )
