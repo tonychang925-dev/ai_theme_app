@@ -19,6 +19,22 @@ class LimitUpThemeMatrixBuilder:
 
     source = "limit_up_theme_matrix_builder"
     count_method = "stock_daily_snapshot_continuous_limit_up"
+    display_theme_aliases = {
+        "PCB印制电路板": "PCB/HBM产业链",
+        "PCB/HBM产业链": "PCB/HBM产业链",
+        "AI光纤": "AI光通信",
+        "AI光通信": "AI光通信",
+        "人形机器人": "机器人",
+        "工业机器人": "机器人",
+        "机器人": "机器人",
+        "算力": "AI算力基础设施",
+        "算力租赁": "AI算力基础设施",
+        "数据中心": "AI算力基础设施",
+        "液冷": "AI算力基础设施",
+        "AI算力基础设施": "AI算力基础设施",
+        "全固态电池进度表": "先进材料/固态电池",
+        "先进材料/固态电池": "先进材料/固态电池",
+    }
     limit_up_threshold = 9.5
 
     def __init__(self, *, reason_theme_resolver: Any | None = None) -> None:
@@ -1015,10 +1031,13 @@ class LimitUpThemeMatrixBuilder:
             theme_name = self._text(column.get("theme_name"))
             if not theme_name:
                 continue
-            target = merged.get(theme_name)
+            display_theme_name = self._display_theme_name(theme_name)
+            target = merged.get(display_theme_name)
             if target is None:
+                original_theme_names = [] if display_theme_name == theme_name else [theme_name]
                 target = {
                     **column,
+                    "theme_name": display_theme_name,
                     "focus_stocks": [],
                     "board_groups": [
                         {
@@ -1030,14 +1049,23 @@ class LimitUpThemeMatrixBuilder:
                         for board_count in (4, 3, 2, 1)
                     ],
                     "_seen_stock_ids": set(),
+                    "_merged_theme_aliases": original_theme_names,
                 }
-                merged[theme_name] = target
+                target["diagnostics"] = self._with_display_theme_diagnostics(
+                    target.get("diagnostics") or {},
+                    display_theme_name=display_theme_name,
+                    original_theme_name=theme_name,
+                )
+                merged[display_theme_name] = target
             else:
                 target["active_mainline"] = bool(target.get("active_mainline")) or bool(column.get("active_mainline"))
                 target["diagnostics"] = self._merge_column_diagnostics(
                     target.get("diagnostics") or {},
                     column.get("diagnostics") or {},
                 )
+                aliases = target.setdefault("_merged_theme_aliases", [])
+                if theme_name != display_theme_name and theme_name not in aliases:
+                    aliases.append(theme_name)
             group_by_board = {
                 int(group.get("board_count") or 0): group
                 for group in target.get("board_groups") or []
@@ -1054,8 +1082,12 @@ class LimitUpThemeMatrixBuilder:
                     if not identity or identity in target["_seen_stock_ids"]:
                         continue
                     target["_seen_stock_ids"].add(identity)
-                    target_group["stocks"].append(dict(stock))
-                    target["focus_stocks"].append(dict(stock))
+                    display_stock = {
+                        **dict(stock),
+                        "theme_name": display_theme_name,
+                    }
+                    target_group["stocks"].append(display_stock)
+                    target["focus_stocks"].append(display_stock)
         result: list[dict[str, Any]] = []
         for column in merged.values():
             limit_up_count = 0
@@ -1064,6 +1096,11 @@ class LimitUpThemeMatrixBuilder:
                 group["stock_count"] = len(stocks)
                 limit_up_count += len(stocks)
             column["limit_up_count"] = limit_up_count
+            aliases = column.pop("_merged_theme_aliases", [])
+            if aliases:
+                diagnostics = column.get("diagnostics") or {}
+                diagnostics["merged_theme_aliases"] = self._unique_keep_order(list(diagnostics.get("merged_theme_aliases") or []) + aliases)
+                column["diagnostics"] = diagnostics
             column.pop("_seen_stock_ids", None)
             result.append(column)
         return result
@@ -1073,11 +1110,36 @@ class LimitUpThemeMatrixBuilder:
         left_source = LimitUpThemeMatrixBuilder._text(left.get("mapping_source"))
         right_source = LimitUpThemeMatrixBuilder._text(right.get("mapping_source"))
         sources = LimitUpThemeMatrixBuilder._unique_keep_order([left_source, right_source])
+        aliases = LimitUpThemeMatrixBuilder._unique_keep_order(
+            list(left.get("merged_theme_aliases") or []) + list(right.get("merged_theme_aliases") or [])
+        )
         return {
             **left,
             **right,
             "mapping_source": sources[0] if len(sources) == 1 else "+".join(sources),
             "merged_mapping_sources": sources,
+            "merged_theme_aliases": aliases,
+        }
+
+    @classmethod
+    def _display_theme_name(cls, theme_name: str) -> str:
+        return cls.display_theme_aliases.get(cls._text(theme_name), cls._text(theme_name))
+
+    @classmethod
+    def _with_display_theme_diagnostics(
+        cls,
+        diagnostics: dict[str, Any],
+        *,
+        display_theme_name: str,
+        original_theme_name: str,
+    ) -> dict[str, Any]:
+        if display_theme_name == original_theme_name:
+            return diagnostics
+        aliases = cls._unique_keep_order(list(diagnostics.get("merged_theme_aliases") or []) + [original_theme_name])
+        return {
+            **diagnostics,
+            "display_theme_name": display_theme_name,
+            "merged_theme_aliases": aliases,
         }
 
     @staticmethod

@@ -209,9 +209,10 @@ async def test_limit_up_theme_matrix_builder_uses_snapshot_board_count_and_deter
 
     assert len(matrix["columns"]) == 2
     column = matrix["columns"][0]
-    assert column["theme_name"] == "PCB印制电路板"
+    assert column["theme_name"] == "PCB/HBM产业链"
     assert column["mainline_name"] == "PCB印制电路板"
     assert column["diagnostics"]["mapping_source"] == "mainline_daily_state"
+    assert column["diagnostics"]["merged_theme_aliases"] == ["PCB印制电路板"]
     assert column["limit_up_count"] == 1
     assert column["board_groups"][1]["board_count"] == 3
     assert column["board_groups"][1]["stock_count"] == 1
@@ -618,3 +619,24 @@ def test_limit_up_theme_matrix_builder_merges_duplicate_market_theme_columns() -
     assert by_theme["机器人"]["limit_up_count"] == 3
     assert by_theme["机器人"]["active_mainline"] is True
     assert by_theme["机器人"]["diagnostics"]["mapping_source"] == "mainline_daily_state+stock_theme_reason_evidence"
+
+
+def test_limit_up_theme_matrix_builder_merges_canonical_display_theme_aliases() -> None:
+    builder = LimitUpThemeMatrixBuilder()
+    merged = builder._merge_market_columns_by_theme([
+        _test_column("PCB印制电路板", ["000001"], active_mainline=True),
+        _test_column("PCB/HBM产业链", ["000002", "000003"]),
+        _test_column("AI光纤", ["000004"], active_mainline=True),
+        _test_column("AI光通信", ["000005"]),
+        _test_column("全固态电池进度表", ["000006"], active_mainline=True),
+        _test_column("先进材料/固态电池", ["000007"]),
+    ])
+
+    by_theme = {column["theme_name"]: column for column in merged}
+    assert sorted(by_theme) == ["AI光通信", "PCB/HBM产业链", "先进材料/固态电池"]
+    assert by_theme["PCB/HBM产业链"]["limit_up_count"] == 3
+    assert by_theme["AI光通信"]["limit_up_count"] == 2
+    assert by_theme["先进材料/固态电池"]["limit_up_count"] == 2
+    assert by_theme["PCB/HBM产业链"]["diagnostics"]["merged_theme_aliases"] == ["PCB印制电路板"]
+    assert by_theme["AI光通信"]["diagnostics"]["merged_theme_aliases"] == ["AI光纤"]
+    assert by_theme["先进材料/固态电池"]["diagnostics"]["merged_theme_aliases"] == ["全固态电池进度表"]

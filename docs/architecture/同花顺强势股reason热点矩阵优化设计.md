@@ -12,6 +12,40 @@
 
 本设计目标是在不替换现有主链路、不引入大规模数据源扩展的前提下，优先接入同花顺强势股 `reason tags` 作为外部证据源，修复热点矩阵归因质量。
 
+## 1.1 当前实施进度（2026-06-22）
+
+当前已完成 M0a/M0b/M1/M2/M2b/M2c，并已进入 M2d。
+
+已完成并推送：
+
+- M0a/M0b/M1：raw snapshot、registry、THS snapshot、theme evidence 四张表；THS client/schema/normalizer/resolver/job；Gateway/Manager/port/adapter 写入能力。
+- M2：`LimitUpThemeMatrixBuilder` 已接入 `stock_theme_reason_evidence` 与 `ths_hot_reason_snapshot`，归因优先级为 `confirmed_mainline > reason evidence > subject_stock_map > 其他`。
+- M2b：已新增 6/18 全量回放脚本与报告输出。
+- M2c：已区分 `true_other_count`、`display_other_count`、`collapsed_other_count`，并修复展示折叠误吞有效主题的问题。提交 `ac69ca228 Separate true and collapsed other in limit-up matrix` 已推送远端。
+
+当前本地已实现、待提交：
+
+- M2d：Canonical display theme alias merge。矩阵展示层已合并以下同义主题，不改写底层 evidence 和 assignment audit：
+  - `PCB/HBM产业链 + PCB印制电路板`
+  - `AI光通信 + AI光纤`
+  - `机器人 + 人形机器人/工业机器人`
+  - `AI算力基础设施 + 算力/数据中心/液冷`
+  - `先进材料/固态电池 + 全固态电池进度表`
+
+最新 2026-06-18 回放结果：
+
+| 阶段 | true_other_count | display_other_count | collapsed_other_count | top_5_theme_coverage | single_theme_max_ratio | 结论 |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| M2b 初版 | 5 | 57 | 53 | 32.08% | 7.55% | 归因证据有效，但展示折叠吞掉有效主题 |
+| M2c | 5 | 42 | 38 | 36.79% | 8.49% | true other 口径修正，展示折叠改善 |
+| M2d | 5 | 38 | 34 | 43.40% | 11.32% | alias merge 明显改善 Top 主题，但 Top5 覆盖率仍未达 55% |
+
+重要结论：
+
+- 6/18 的主要问题已从“无归因”转为“展示主题粒度仍偏碎”。
+- `true_other_count=5` 说明真实未归因数量已经可控；报告里看到的 `其他` 主要是 12 列展示上限导致的折叠结果。
+- 6/19、6/20 为非交易日，不能作为首批 Golden Dataset 的有效交易日样本；后续需替换为其他交易日。
+
 ## 2. 目标与非目标
 
 ### 2.1 目标
@@ -533,11 +567,15 @@ diagnostics 新增：
 
 | 指标 | 定义 |
 | --- | --- |
-| `other_count` | 最终进入 `其他` 的涨停股数量 |
+| `other_count` | 兼容旧字段；M2c 起语义等同 `true_other_count` |
+| `true_other_count` | 真实无有效归因的涨停股数量，不包含因展示列上限被折叠的有效主题股票 |
+| `display_other_count` | 最终展示在 `其他` 列中的涨停股数量，包含 true other 与 collapsed other |
+| `collapsed_other_count` | 已有有效主题但因展示列上限被折叠进 `其他` 的涨停股数量 |
+| `collapsed_other_themes` | 被折叠进 `其他` 的有效主题明细 |
 | `ths_reason_covered_count` | 涨停股中命中 THS reason 快照的数量 |
 | `ths_reason_clustered_count` | 命中 THS reason 且归一化出 canonical theme 的数量 |
-| `top_5_theme_coverage` | Top5 主题覆盖涨停股数量 / 全部有效涨停股数量 |
-| `single_theme_max_ratio` | 最大单一主题涨停数 / 全部有效涨停股数量 |
+| `top_5_theme_coverage` | Top5 非 `其他` 主题覆盖涨停股数量 / 全部有效涨停股数量 |
+| `single_theme_max_ratio` | 最大非 `其他` 单一主题涨停数 / 全部有效涨停股数量 |
 | `theme_entropy` | 主题分布熵，用于识别过度集中或过度碎片 |
 | `manual_reason_coverage` | 有非空 `reason_raw` 的涨停股数量 / 全部有效涨停股数量 |
 | `mainline_hit_count` | 被 confirmed mainline 捕获的涨停股数量 |
@@ -557,6 +595,7 @@ diagnostics 新增：
 
 后续补充：
 
+- 替换 `2026-06-19/2026-06-20` 非交易日样本。
 - 创新药单主线样本。
 - 军工单主线样本。
 - 商业航天单主线样本。
@@ -586,6 +625,37 @@ Top5 热点至少覆盖以下方向中的 4 个：
 - `有色资源/小金属`
 - `创新药/医疗`
 - `ST摘帽/重整/国资`
+
+### 9.3.1 2026-06-18 当前回放结果
+
+回放报告：
+
+- M2c：`reports/golden/limit_up_theme_matrix_m2b/validation_20260618_m2c.md`
+- M2d：`reports/golden/limit_up_theme_matrix_m2b/validation_20260618_m2d.md`
+
+当前 M2d 输出 Top 主题：
+
+| Rank | Theme | 涨停数 | 来源 |
+| ---: | --- | ---: | --- |
+| 1 | `其他` | 38 | collapsed_tail |
+| 2 | `PCB/HBM产业链` | 12 | mainline_daily_state + stock_theme_reason_evidence |
+| 3 | `AI算力基础设施` | 9 | stock_theme_reason_evidence + subject_stock_map |
+| 4 | `机器人` | 9 | mainline_daily_state + stock_theme_reason_evidence |
+| 5 | `先进材料/固态电池` | 8 | stock_theme_reason_evidence |
+| 6 | `有色资源/小金属` | 8 | stock_theme_reason_evidence |
+| 7 | `创新药/医疗` | 6 | stock_theme_reason_evidence |
+| 8 | `AI光通信` | 4 | mainline_daily_state + stock_theme_reason_evidence |
+
+当前仍未通过的门禁：
+
+- `top_5_theme_coverage = 43.40% < 55%`
+
+原因判断：
+
+- 不是 reason 证据缺失，`ths_reason_covered_count=82` 已达标。
+- 不是真实未归因过多，`true_other_count=5` 已达标。
+- 主要剩余问题是主题展示粒度仍偏碎，以及 12 列展示上限下仍有有效主题被折叠。
+- 下一步应进入 M2e 或 P0.5：补 `ST摘帽/重整/国资`、`商业航天/军工`、`创新药/医疗` 等解释层与展示策略，而不是继续扩外部数据源。
 
 ### 9.4 多日 Golden Dataset 验收要求
 
@@ -657,6 +727,43 @@ Top5 热点至少覆盖以下方向中的 4 个：
 | M2b-T01 | 固化 2026-06-18/19/20 THS reason fixture 或 raw snapshot 回放样本 | 回放输入 | M0a-M0b | fixture 可复现 |
 | M2b-T02 | 增加 Golden Dataset matrix 回放测试 | 质量门禁 | M2 | 多日阈值断言 |
 | M2b-T03 | 输出 before/after 诊断报告 | 验收证据 | T02 | `其他`、Top5、熵、覆盖率对比 |
+
+### M2c - true other 与 collapsed other 口径拆分
+
+目标：解决 `其他` 列指标失真，区分真实无归因与展示折叠。
+
+| Task ID | 任务 | 产出 | 依赖 | 状态/验证 |
+| --- | --- | --- | --- | --- |
+| M2c-T01 | Builder diagnostics 新增 `true_other_count/display_other_count/collapsed_other_count` | 新诊断字段 | M2b | DONE，单测覆盖 |
+| M2c-T02 | `collapsed_other_themes` 输出被折叠主题明细 | 展示折叠解释 | T01 | DONE，6/18 报告可见 |
+| M2c-T03 | 调整 validation 脚本，用 `true_other_count` 做归因质量门禁 | 准确验收口径 | T01 | DONE |
+| M2c-T04 | 调整折叠策略，按涨停数和来源优先级保留展示列 | 减少主热点被吞 | T02 | DONE，`display_other_count 57 -> 42` |
+| M2c-T05 | 合并完全同名主题列 | 避免 mainline/reason 同名重复列 | T04 | DONE，`机器人` 合并 |
+
+提交与报告：
+
+- Commit：`ac69ca228 Separate true and collapsed other in limit-up matrix`
+- Report：`reports/golden/limit_up_theme_matrix_m2b/validation_20260618_m2c.md`
+
+### M2d - Canonical display theme alias merge
+
+目标：在矩阵展示层合并同义主题列，保留底层 evidence 与 audit 原始归因。
+
+| Task ID | 任务 | 产出 | 依赖 | 状态/验证 |
+| --- | --- | --- | --- | --- |
+| M2d-T01 | 新增 display theme alias 表 | canonical 展示名 | M2c | DONE，本地实现 |
+| M2d-T02 | 合并 `PCB/HBM产业链 + PCB印制电路板` | 单一 PCB/HBM 展示列 | T01 | DONE，6/18 涨停数 12 |
+| M2d-T03 | 合并 `AI光通信 + AI光纤` | 单一 AI 光通信展示列 | T01 | DONE，6/18 涨停数 4 |
+| M2d-T04 | 合并 `机器人 + 人形机器人/工业机器人` | 单一机器人展示列 | T01 | DONE，6/18 涨停数 9 |
+| M2d-T05 | 合并 `AI算力基础设施 + 算力/数据中心/液冷` | 单一 AI 算力展示列 | T01 | DONE，6/18 涨停数 9 |
+| M2d-T06 | 合并 `先进材料/固态电池 + 全固态电池进度表` | 单一材料/固态电池展示列 | T01 | DONE，6/18 涨停数 8 |
+| M2d-T07 | diagnostics 输出 `merged_theme_aliases/merged_mapping_sources` | 可审计 alias 合并 | T01-T06 | DONE，单测覆盖 |
+
+当前状态：
+
+- 代码本地已实现，待提交。
+- 单测：`14 passed`
+- Report：`reports/golden/limit_up_theme_matrix_m2b/validation_20260618_m2d.md`
 
 ### P0.5 - Theme Evidence + Theme Explanation Layer
 
