@@ -38,6 +38,12 @@ DAILY_DECAY = 0.90  # evidence loses 10% relevance per day
 # CNInfo: only count if within this many days
 CNINFO_MAX_AGE_DAYS = 3
 
+# Research: only count reports within this many days
+RESEARCH_MAX_AGE_DAYS = 30
+
+# Research: cap per-theme contribution to prevent over-weighting
+RESEARCH_MAX_CONTRIBUTION = 0.30  # max research contribution to total score
+
 MAX_SCORE = 2.00  # cap fused score
 
 
@@ -136,6 +142,8 @@ class EvidenceFusionEngine:
             # Apply source-specific age checks
             if ev.source_name == "cninfo" and days_old > CNINFO_MAX_AGE_DAYS:
                 continue
+            if ev.source_name == "research" and days_old > RESEARCH_MAX_AGE_DAYS:
+                continue
 
             # Apply decay
             if days_old > 0:
@@ -170,7 +178,16 @@ class EvidenceFusionEngine:
         if n_sources > max(RESONANCE_BONUS.keys()):
             bonus = RESONANCE_BONUS[max(RESONANCE_BONUS.keys())]
 
-        score = min(total_weight + bonus, MAX_SCORE)
+        # Research contribution cap: prevent institutional coverage from
+        # over-weighting themes relative to event-driven evidence.
+        research_contrib = sum(
+            s["weight"] for s in supporting
+            if s["source"] == "research"
+        )
+        capped_research = min(research_contrib, RESEARCH_MAX_CONTRIBUTION)
+        capped_total = total_weight - research_contrib + capped_research
+
+        score = min(capped_total + bonus, MAX_SCORE)
         freshness = 1.0 if min(
             (trade_date - ev.evidence_date).days for ev in items
         ) <= 1 else max(0.3, 1.0 - 0.1 * max(

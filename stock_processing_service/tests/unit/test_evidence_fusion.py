@@ -12,6 +12,8 @@ import pytest
 from stock_processing_service.domain.services.evidence_fusion import (
     CNINFO_MAX_AGE_DAYS,
     DAILY_DECAY,
+    RESEARCH_MAX_AGE_DAYS,
+    RESEARCH_MAX_CONTRIBUTION,
     RESONANCE_BONUS,
     EvidenceFusionEngine,
     EvidenceItem,
@@ -261,10 +263,10 @@ def test_research_source_weight():
         _item("research", "AI算力基础设施", reason="中信证券买入"),
     ]
     results = engine.fuse(TD, items)
-    # 1.00 + 0.55 + 0.20 resonance = 1.75
+    # 1.00 + 0.55(capped to 0.30) + 0.20 resonance = 1.50
     assert results[0].source_count == 2
     assert results[0].is_resonance
-    assert results[0].evidence_score > 1.5
+    assert results[0].evidence_score >= 1.50
 
 
 def test_research_contributes_to_event_score():
@@ -290,6 +292,64 @@ def test_six_source_full_resonance():
     results = engine.fuse(TD, items)
     assert results[0].source_count == 6
     assert results[0].evidence_score == 2.00
+
+
+# ── M5b.1 Research Quality Gate ─────────────────────────────────
+
+def test_research_aged_out_is_skipped():
+    """Research older than 30 days should be excluded."""
+    engine = EvidenceFusionEngine()
+    old_date = TD - __import__("datetime").timedelta(days=RESEARCH_MAX_AGE_DAYS + 1)
+    items = [
+        _item("ths", "AI算力基础设施", reason="液冷"),
+        _item("research", "AI算力基础设施", ev_date=old_date, reason="旧研报"),
+    ]
+    results = engine.fuse(TD, items)
+    assert results[0].source_count == 1  # research excluded
+    assert results[0].evidence_score == 1.00
+
+
+def test_research_capped_contribution():
+    """Multiple research reports should not exceed cap."""
+    engine = EvidenceFusionEngine()
+    items = [
+        _item("research", "AI算力基础设施", reason="买入"),
+        _item("research", "AI算力基础设施", reason="增持"),
+        _item("research", "AI算力基础设施", reason="强推"),
+    ]
+    results = engine.fuse(TD, items)
+    # 3 × 0.55 = 1.65, but capped at 0.30 contribution
+    assert results[0].evidence_score <= RESEARCH_MAX_CONTRIBUTION + 0.05  # ~0.30
+    assert results[0].source_count == 1  # all same source
+
+
+def test_why_strong_includes_research_count():
+    """When research evidence is present, why_strong should show count."""
+    from stock_processing_service.domain.services.leader_scoring import LeaderScoringEngine
+    from stock_processing_service.domain.services.theme_strength import ThemeStrengthEngine
+    from stock_processing_service.domain.services.recap_aggregation import RecapAggregationService
+
+    fusion = EvidenceFusionEngine()
+    leader_engine = LeaderScoringEngine(fusion)
+    theme_engine = ThemeStrengthEngine()
+    recap_service = RecapAggregationService()
+
+    items = [
+        _item("ths", "机器人", "002747", "埃斯顿", reason="人形机器人"),
+        _item("research", "机器人", "002747", "埃斯顿", reason="中信买入"),
+        _item("research", "机器人", "002747", "埃斯顿", reason="华泰增持"),
+    ]
+    board = {"002747": {"pct_chg": 10.0}}
+
+    leaders = leader_engine.score(TD, items, board)
+    themes = theme_engine.compute(TD, leaders)
+    recap = recap_service.aggregate(TD, themes, leaders)
+
+    robot_theme = recap.top_themes[0]
+    has_research_reason = any("机构覆盖" in r for r in robot_theme["why_strong"])
+    assert has_research_reason
+    assert recap.market_summary["research_covered_stocks"] >= 1
+    assert recap.market_summary["research_evidence_count"] >= 1  # fused per stock-theme
 
 
 def test_empty_returns_empty():

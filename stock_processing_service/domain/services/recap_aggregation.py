@@ -68,13 +68,13 @@ class RecapAggregationService:
                 reasons.append("龙头强度高")
             if ts.avg_expectation_score >= 0.2:
                 reasons.append("预期驱动强")
-            # Check if research evidence is present
-            has_research = any("research" in s.evidence_sources
-                              for ls in leader_scores
-                              if ls.theme_name == ts.theme_name
-                              for s in [ls])
-            if has_research:
-                reasons.append("机构研报覆盖")
+            # Check if research evidence is present and count it
+            research_count = sum(
+                1 for ls in leader_scores
+                if ls.theme_name == ts.theme_name and "research" in ls.evidence_sources
+            )
+            if research_count:
+                reasons.append(f"机构覆盖({research_count}篇)")
             if not reasons:
                 reasons.append("事件驱动")
 
@@ -108,6 +108,15 @@ class RecapAggregationService:
         for ls in all_leaders:
             all_sources.update(ls.evidence_sources)
 
+        # Research diagnosis
+        research_covered_stocks = len({
+            ls.stock_code for ls in leader_scores
+            if "research" in ls.evidence_sources
+        })
+        research_evidence_count = sum(
+            1 for ls in leader_scores if "research" in ls.evidence_sources
+        )
+
         market_summary = {
             "theme_count": len(theme_strengths),
             "leader_count": len(all_leaders),
@@ -115,6 +124,8 @@ class RecapAggregationService:
             "evidence_sources": sorted(all_sources),
             "top_theme": top_themes[0]["theme_name"] if top_themes else "",
             "top_theme_strength": top_themes[0]["strength_score"] if top_themes else 0,
+            "research_covered_stocks": research_covered_stocks,
+            "research_evidence_count": research_evidence_count,
         }
 
         # Degradation check
