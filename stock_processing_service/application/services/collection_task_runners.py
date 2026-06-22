@@ -1795,7 +1795,7 @@ class EvidenceRecapGenerateRunner:
 
                 # Load THS evidence — use resolved theme_name from evidence table
                 ths_rows = await conn.fetch(
-                    "SELECT stock_code, stock_name, theme_name, reason_raw, reason_tags, evidence_text "
+                    "SELECT t.stock_code, t.stock_name, e.theme_name, t.reason_raw, t.reason_tags, e.evidence_text "
                     "FROM ths_hot_reason_snapshot t "
                     "JOIN stock_theme_reason_evidence e ON e.stock_code=t.stock_code AND e.trade_date=t.trade_date AND e.source_name='ths' "
                     "WHERE t.trade_date=$1", td)
@@ -1803,7 +1803,7 @@ class EvidenceRecapGenerateRunner:
                 # Fallback: raw THS if no resolved evidence
                 if not ths_rows:
                     ths_rows = await conn.fetch(
-                        "SELECT stock_code, stock_name, '' as theme_name, reason_raw, reason_tags, reason_raw as evidence_text "
+                        "SELECT stock_code, stock_name, reason_raw, reason_tags "
                         "FROM ths_hot_reason_snapshot WHERE trade_date=$1", td)
 
                 # Load CDP evidence
@@ -1817,12 +1817,12 @@ class EvidenceRecapGenerateRunner:
                 for r in ths_rows:
                     code = str(r["stock_code"] or "")
                     name = str(r["stock_name"] or "")
-                    reason = str(r["evidence_text"] or r["reason_raw"] or "")
                     tags = r["reason_tags"] or []
-                    theme = str(r["theme_name"] or "")
+                    # theme_name column exists only in JOIN result
+                    theme = str(r["theme_name"] or "") if "theme_name" in r.keys() else ""
+                    reason = str(r["evidence_text"] or "") if "evidence_text" in r.keys() else str(r["reason_raw"] or "")
                     if not code:
                         continue
-                    # If theme is empty, use first meaningful tag
                     if not theme and tags:
                         theme = str(tags[0])
                     if not theme:
