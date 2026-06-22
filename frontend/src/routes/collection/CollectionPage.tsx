@@ -107,6 +107,7 @@ export function CollectionPage() {
     f10Capital: false,
     dragonTiger: true,
     indexKline: true,
+    evidenceCollection: false,
   });
 
   const totalSteps = job?.total_steps ?? 0;
@@ -227,6 +228,7 @@ export function CollectionPage() {
           f10_capital: options.f10Capital,
           dragon_tiger: options.dragonTiger,
           index_kline: options.indexKline,
+          evidence_collection: options.evidenceCollection,
           auto_build_v2_if_missing: false,
         },
         tushare_pause_seconds: 0.1,
@@ -618,6 +620,14 @@ export function CollectionPage() {
                 onChange={() => setOptions((s) => ({ ...s, indexKline: !s.indexKline }))}
               />
               <span>指数采集</span>
+            </label>
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.evidenceCollection}
+                onChange={() => setOptions((s) => ({ ...s, evidenceCollection: !s.evidenceCollection }))}
+              />
+              <span>多源证据采集 (THS+EPS+Research → 复盘快照)</span>
             </label>
           </div>
 
