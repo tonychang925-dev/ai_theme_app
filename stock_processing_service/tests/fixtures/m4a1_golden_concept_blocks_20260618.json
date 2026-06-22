@@ -1,0 +1,75 @@
+{
+  "fixture_name": "M4a.1 Golden Dataset — Eastmoney concept blocks for 5 verification stocks",
+  "trade_date": "2026-06-18",
+  "source_name": "eastmoney",
+  "endpoint_key": "eastmoney_concept_blocks",
+  "verification_stocks": [
+    {
+      "stock_code": "000811",
+      "stock_name": "冰轮环境",
+      "reason_raw": "数据中心液冷+拟收购整合+权益分派+烟台国资",
+      "expected_theme": "AI算力基础设施",
+      "concept_blocks": [
+        {"block_code": "BK0584", "block_name": "数据中心液冷", "block_type": "concept"},
+        {"block_code": "BK0456", "block_name": "液冷服务器", "block_type": "concept"},
+        {"block_code": "BK0489", "block_name": "数据中心", "block_type": "concept"},
+        {"block_code": "BK0198", "block_name": "国资改革", "block_type": "concept"}
+      ]
+    },
+    {
+      "stock_code": "002579",
+      "stock_name": "中京电子",
+      "reason_raw": "HDI板+PCB印制电路板+AI服务器+汽车电子",
+      "expected_theme": "PCB/HBM产业链",
+      "concept_blocks": [
+        {"block_code": "BK0435", "block_name": "PCB印制电路板", "block_type": "concept"},
+        {"block_code": "BK0441", "block_name": "HDI技术", "block_type": "concept"},
+        {"block_code": "BK0533", "block_name": "AI服务器", "block_type": "concept"},
+        {"block_code": "BK0481", "block_name": "汽车电子", "block_type": "concept"}
+      ]
+    },
+    {
+      "stock_code": "002281",
+      "stock_name": "光迅科技",
+      "reason_raw": "光模块+CPO共封装光学+AI光通信+硅光技术",
+      "expected_theme": "AI光通信",
+      "concept_blocks": [
+        {"block_code": "BK0587", "block_name": "CPO共封装光学", "block_type": "concept"},
+        {"block_code": "BK0488", "block_name": "光通信", "block_type": "concept"},
+        {"block_code": "BK0438", "block_name": "光模块", "block_type": "concept"},
+        {"block_code": "BK0542", "block_name": "AI光通信", "block_type": "concept"}
+      ]
+    },
+    {
+      "stock_code": "002167",
+      "stock_name": "东方锆业",
+      "reason_raw": "锆材料+氧化锆+陶瓷材料+固态电池+核级锆",
+      "expected_theme": "先进材料/固态电池",
+      "concept_blocks": [
+        {"block_code": "BK0479", "block_name": "氧化锆", "block_type": "concept"},
+        {"block_code": "BK0459", "block_name": "陶瓷材料", "block_type": "concept"},
+        {"block_code": "BK0612", "block_name": "固态电池", "block_type": "concept"},
+        {"block_code": "BK0538", "block_name": "核级锆材", "block_type": "concept"}
+      ]
+    },
+    {
+      "stock_code": "002747",
+      "stock_name": "埃斯顿",
+      "reason_raw": "工业机器人+人形机器人+具身智能+机器人线束",
+      "expected_theme": "机器人",
+      "concept_blocks": [
+        {"block_code": "BK0491", "block_name": "工业机器人", "block_type": "concept"},
+        {"block_code": "BK0634", "block_name": "人形机器人", "block_type": "concept"},
+        {"block_code": "BK0652", "block_name": "具身智能", "block_type": "concept"},
+        {"block_code": "BK0427", "block_name": "机器人零部件", "block_type": "concept"}
+      ]
+    }
+  ],
+  "golden_gate_assertions": {
+    "all_5_stocks_have_blocks": true,
+    "expected_theme_has_evidence_in_blocks": true,
+    "block_evidence_covers_reason_tags": true,
+    "block_count_per_stock_min": 2,
+    "block_count_per_stock_max": 8
+  }
+}
