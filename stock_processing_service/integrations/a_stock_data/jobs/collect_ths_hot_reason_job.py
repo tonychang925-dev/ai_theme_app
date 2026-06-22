@@ -72,7 +72,13 @@ class CollectThsHotReasonJob:
                 )
 
             warnings = validate_ths_hot_reason_payload(payload)
-            raw_snapshot_id = await self._upsert_raw_snapshot(raw)
+            raw_snapshot_id = None
+            raw_snapshot_error: str | None = None
+            try:
+                raw_snapshot_id = await self._upsert_raw_snapshot(raw)
+            except Exception as exc:
+                raw_snapshot_error = str(exc)
+            raw_snapshot_written = raw_snapshot_id is not None
             snapshot_rows = self._normalizer.normalize_snapshot_rows(
                 payload,
                 trade_date=trade_date,
@@ -82,6 +88,7 @@ class CollectThsHotReasonJob:
             snapshot_count = await self._write_port.upsert_ths_hot_reason_snapshot_rows(snapshot_rows)
             evidence_rows = await self._build_evidence_rows(snapshot_rows, raw_snapshot_id)
             evidence_count = await self._write_port.upsert_stock_theme_reason_evidence_rows(evidence_rows)
+            diag = self._client.diagnostics
             return BuildResult(
                 name="collect_ths_hot_reason",
                 trade_date=td,
@@ -89,9 +96,17 @@ class CollectThsHotReasonJob:
                 warnings=warnings,
                 metrics={
                     "raw_snapshot_id": raw_snapshot_id,
+                    "raw_snapshot_written": raw_snapshot_written,
+                    "raw_snapshot_error": raw_snapshot_error,
                     "snapshot_rows": snapshot_count,
                     "evidence_rows": evidence_count,
                     "reason_covered_count": len({row["stock_code"] for row in evidence_rows}),
+                    # M3 governance diagnostics
+                    "source_consecutive_failures": diag.consecutive_failures,
+                    "source_total_requests": diag.total_requests,
+                    "source_total_failures": diag.total_failures,
+                    "source_last_success_at": diag.last_success_at,
+                    "source_last_failure_at": diag.last_failure_at,
                 },
             )
         except ThsHotReasonSchemaError as exc:

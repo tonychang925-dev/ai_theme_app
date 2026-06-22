@@ -14,7 +14,7 @@
 
 ## 1.1 当前实施进度（2026-06-22）
 
-当前已完成 M0a/M0b/M1/M2/M2b/M2c，并已进入 M2d。
+当前 P0 Hot Matrix 修复已完成并推送，下一阶段进入 P1 Data Source Governance（M3）。
 
 已完成并推送：
 
@@ -22,33 +22,29 @@
 - M2：`LimitUpThemeMatrixBuilder` 已接入 `stock_theme_reason_evidence` 与 `ths_hot_reason_snapshot`，归因优先级为 `confirmed_mainline > reason evidence > subject_stock_map > 其他`。
 - M2b：已新增 6/18 全量回放脚本与报告输出。
 - M2c：已区分 `true_other_count`、`display_other_count`、`collapsed_other_count`，并修复展示折叠误吞有效主题的问题。提交 `ac69ca228 Separate true and collapsed other in limit-up matrix` 已推送远端。
-
-当前本地已实现、待提交：
-
-- M2d：Canonical display theme alias merge。矩阵展示层已合并以下同义主题，不改写底层 evidence 和 assignment audit：
+- M2d：Canonical display theme alias merge。矩阵展示层已合并以下同义主题，不改写底层 evidence 和 assignment audit。提交 `9fed8a7a8 Merge canonical display themes in limit-up matrix` 已推送远端：
   - `PCB/HBM产业链 + PCB印制电路板`
   - `AI光通信 + AI光纤`
   - `机器人 + 人形机器人/工业机器人`
   - `AI算力基础设施 + 算力/数据中心/液冷`
   - `先进材料/固态电池 + 全固态电池进度表`
-
-待实施：
-
-- M2e：调整 Golden Gate 指标口径。6/18 是多分支扩散行情，硬性要求 Top5 覆盖 55% 会诱导算法过度合并；Gate 应改为 `true_other_count <= 10`、`top_8_theme_coverage >= 55%`、`single_theme_max_ratio <= 35%`、`display_other_count <= 45`、`Top5 人工主线命中 >= 4`，`collapsed_other_count` 降级为观察指标。
+- M2e：已调整 Golden Gate 指标口径。6/18 是多分支扩散行情，硬性要求 Top5 覆盖 55% 会诱导算法过度合并；Gate 已改为 `true_other_count <= 10`、`top_8_theme_coverage >= 55%`、`single_theme_max_ratio <= 35%`、`display_other_count <= 45`、`Top5 人工主线命中 >= 4`，`collapsed_other_count` 降级为观察指标。提交 `5ccbf209d Adjust limit-up matrix golden gate metrics` 已推送远端。
 
 最新 2026-06-18 回放结果：
 
-| 阶段 | true_other_count | display_other_count | collapsed_other_count | top_5_theme_coverage | single_theme_max_ratio | 结论 |
-| --- | ---: | ---: | ---: | ---: | ---: | --- |
-| M2b 初版 | 5 | 57 | 53 | 32.08% | 7.55% | 归因证据有效，但展示折叠吞掉有效主题 |
-| M2c | 5 | 42 | 38 | 36.79% | 8.49% | true other 口径修正，展示折叠改善 |
-| M2d | 5 | 38 | 34 | 43.40% | 11.32% | alias merge 明显改善 Top 主题，但 Top5 覆盖率仍未达 55% |
+| 阶段 | true_other_count | display_other_count | collapsed_other_count | top_5_theme_coverage | top_8_theme_coverage | single_theme_max_ratio | 结论 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| M2b 初版 | 5 | 57 | 53 | 32.08% | 未统计 | 7.55% | 归因证据有效，但展示折叠吞掉有效主题 |
+| M2c | 5 | 42 | 38 | 36.79% | 未统计 | 8.49% | true other 口径修正，展示折叠改善 |
+| M2d | 5 | 38 | 34 | 43.40% | 未统计 | 11.32% | alias merge 明显改善 Top 主题 |
+| M2e | 5 | 38 | 34 | 43.40% | 55.66% | 11.32% | 新 Golden Gate 通过 |
 
 重要结论：
 
-- 6/18 的主要问题已从“无归因”转为“展示主题粒度仍偏碎”。
+- P0 Hot Matrix 修复已完成：归因质量、展示质量、扩散行情覆盖、人工主线命中、过度聚合风险均通过当前 Gate。
 - `true_other_count=5` 说明真实未归因数量已经可控；报告里看到的 `其他` 主要是 12 列展示上限导致的折叠结果。
 - 6/19、6/20 为非交易日，不能作为首批 Golden Dataset 的有效交易日样本；后续需替换为其他交易日。
+- 下一阶段不优先做前端或研报，而是进入 P1 Data Source Governance（M3），先治理多数据源接入方式。
 
 ## 2. 目标与非目标
 
@@ -760,7 +756,7 @@ Top5 热点至少覆盖以下方向中的 4 个：
 
 | Task ID | 任务 | 产出 | 依赖 | 状态/验证 |
 | --- | --- | --- | --- | --- |
-| M2d-T01 | 新增 display theme alias 表 | canonical 展示名 | M2c | DONE，本地实现 |
+| M2d-T01 | 新增 display theme alias 表 | canonical 展示名 | M2c | DONE，已提交推送 |
 | M2d-T02 | 合并 `PCB/HBM产业链 + PCB印制电路板` | 单一 PCB/HBM 展示列 | T01 | DONE，6/18 涨停数 12 |
 | M2d-T03 | 合并 `AI光通信 + AI光纤` | 单一 AI 光通信展示列 | T01 | DONE，6/18 涨停数 4 |
 | M2d-T04 | 合并 `机器人 + 人形机器人/工业机器人` | 单一机器人展示列 | T01 | DONE，6/18 涨停数 9 |
@@ -768,9 +764,9 @@ Top5 热点至少覆盖以下方向中的 4 个：
 | M2d-T06 | 合并 `先进材料/固态电池 + 全固态电池进度表` | 单一材料/固态电池展示列 | T01 | DONE，6/18 涨停数 8 |
 | M2d-T07 | diagnostics 输出 `merged_theme_aliases/merged_mapping_sources` | 可审计 alias 合并 | T01-T06 | DONE，单测覆盖 |
 
-当前状态：
+提交与报告：
 
-- 代码本地已实现，待提交。
+- Commit：`9fed8a7a8 Merge canonical display themes in limit-up matrix`
 - 单测：`14 passed`
 - Report：`reports/golden/limit_up_theme_matrix_m2b/validation_20260618_m2d.md`
 
@@ -780,12 +776,12 @@ Top5 热点至少覆盖以下方向中的 4 个：
 
 | Task ID | 任务 | 产出 | 依赖 | 状态/验证 |
 | --- | --- | --- | --- | --- |
-| M2e-T01 | 将 `true_other_count <= 10` 设为真实归因 Gate | 准确归因门禁 | M2c | DONE，本地待提交 |
-| M2e-T02 | 将 `top_8_theme_coverage >= 55%` 设为热点覆盖 Gate | 多分支行情门禁 | M2d | DONE，本地待提交 |
-| M2e-T03 | 将 `display_other_count <= 45` 设为展示质量 Gate | 展示折叠门禁 | M2c | DONE，本地待提交 |
-| M2e-T04 | 将 `collapsed_other_count` 降级为观察指标 | 避免误判展示上限 | M2c | DONE，本地待提交 |
-| M2e-T05 | 新增 `top_5_manual_theme_hit_count >= 4` | 人工复盘一致性 Gate | M2d | DONE，本地待提交 |
-| M2e-T06 | 保留 `single_theme_max_ratio <= 35%` | 防止过度归并 | M2b | DONE，本地待提交 |
+| M2e-T01 | 将 `true_other_count <= 10` 设为真实归因 Gate | 准确归因门禁 | M2c | DONE，已提交推送 |
+| M2e-T02 | 将 `top_8_theme_coverage >= 55%` 设为热点覆盖 Gate | 多分支行情门禁 | M2d | DONE，已提交推送 |
+| M2e-T03 | 将 `display_other_count <= 45` 设为展示质量 Gate | 展示折叠门禁 | M2c | DONE，已提交推送 |
+| M2e-T04 | 将 `collapsed_other_count` 降级为观察指标 | 避免误判展示上限 | M2c | DONE，已提交推送 |
+| M2e-T05 | 新增 `top_5_manual_theme_hit_count >= 4` | 人工复盘一致性 Gate | M2d | DONE，已提交推送 |
+| M2e-T06 | 保留 `single_theme_max_ratio <= 35%` | 防止过度归并 | M2b | DONE，已提交推送 |
 
 M2e 2026-06-18 回放结果：
 
@@ -799,6 +795,8 @@ M2e 2026-06-18 回放结果：
 | `single_theme_max_ratio` | 11.32% | PASS |
 
 Report：`reports/golden/limit_up_theme_matrix_m2b/validation_20260618_m2e.md`
+
+Commit：`5ccbf209d Adjust limit-up matrix golden gate metrics`
 
 ### P0.5 - Theme Evidence + Theme Explanation Layer
 
@@ -868,9 +866,11 @@ Report：`reports/golden/limit_up_theme_matrix_m2b/validation_20260618_m2e.md`
 
 断言：
 
-- `other_count <= 20`
+- `true_other_count <= 10`
+- `display_other_count <= 45`
 - `ths_reason_covered_count >= 80`
-- `top_5_theme_coverage >= 0.55`
+- `top_8_theme_coverage >= 0.55`
+- `top_5_manual_theme_hit_count >= 4`
 - `single_theme_max_ratio <= 0.35`
 - `mainline_hit_count` 不低于改造前 fixture 结果
 - Top5 覆盖人工复盘主线至少 4 个
@@ -907,19 +907,142 @@ THS_REASON_FALLBACK_CLASSIFIER=none/embedding/llm
 - 保留 raw snapshot 和 THS 快照表，不删除数据。
 - 热点矩阵回到 `confirmed_mainline -> subject_stock_map -> 其他`。
 
-## 13. 后续扩展路线
+## 13. P1 Data Source Governance（M3）
 
-P0 完成后，再进入 P1/P2：
+P0 已证明 THS reason 能显著改善热点矩阵。后续接入东财概念板块、巨潮公告、同花顺 EPS、东财研报之前，必须先治理数据源接入方式，避免多个 client/job 各自实现 sleep、retry、headers、raw snapshot 和错误处理。
 
-1. P0.5：实现 Theme Evidence + Theme Explanation Layer。
-2. P1：扩展 `market_data_source_registry` 完整字段。
-3. P1：抽象 `RateLimitedHttpClient`，优先服务 Eastmoney。
-4. P1：接入 `eastmoney_concept_blocks` 作为静态/半动态补证据。
-5. P1：接入 `cninfo_announcements` 作为事件驱动公告证据。
-6. P1：把 `stock_theme_reason_evidence` 纳入题材热度、龙头评分、早盘必读上下文。
-7. P2：接入东财个股研报、行业研报、同花顺 EPS、PDF 摘要。
+优先级：
 
-## 14. 决策记录
+```text
+M3 Data Source Governance > 前端 diagnostics/reason tags > M4 数据源扩展 > M5 研报/EPS/PDF
+```
+
+### 13.1 M3 目标
+
+1. 将 `market_data_source_registry` 从轻量记录升级为数据源治理真源。
+2. 新增统一 `RateLimitedHttpClient`，把限流、重试、UA/Referer、session 复用、错误计数从 job/client 中抽出。
+3. 先迁移现有 THS reason client 使用治理能力，证明基础设施可服务现有链路。
+4. 为后续 Eastmoney、CNInfo、THS EPS 提供统一接入模板。
+5. 保持 domain/application builder 不直接触碰 requests、pandas、SQL 或外部 API。
+
+### 13.2 `market_data_source_registry` 完整字段
+
+M3 建议扩展字段：
+
+| 字段 | 说明 |
+| --- | --- |
+| `source_name` | 数据源名称，如 `ths`、`eastmoney`、`cninfo` |
+| `endpoint_key` | 端点唯一键，如 `ths_hot_reason` |
+| `domain` | 业务域，如 `hot_reason`、`concept_blocks`、`announcements` |
+| `owned_fields` | 该端点负责提供的字段集合 |
+| `usage` | 使用场景，如盘后热点归因、题材补证据 |
+| `fallback_order` | 多源冲突时的 fallback 顺序 |
+| `rate_limit_policy` | 限流策略 JSON |
+| `auth_type` | `none/cookie/token` 等 |
+| `freshness_sla` | 数据新鲜度要求 |
+| `raw_snapshot_required` | 是否必须写 raw snapshot |
+| `enabled` | 是否启用 |
+| `created_at/updated_at` | 审计字段 |
+
+示例：
+
+```yaml
+ths_hot_reason:
+  source_name: ths
+  endpoint_key: ths_hot_reason
+  domain: hot_reason
+  owned_fields:
+    - reason_raw
+    - reason_tags
+    - hot_stock_list
+  usage: 盘后热点归因
+  rate_limit_policy:
+    type: simple
+    min_interval_ms: 500
+    jitter_ms: 100
+  auth_type: none
+  raw_snapshot_required: true
+  enabled: true
+
+eastmoney_concept_blocks:
+  source_name: eastmoney
+  endpoint_key: eastmoney_concept_blocks
+  domain: concept_blocks
+  owned_fields:
+    - concept_blocks
+    - industry_blocks
+    - region_blocks
+  usage: 股票-题材静态/半动态补证据
+  rate_limit_policy:
+    type: conservative
+    min_interval_ms: 1000
+    jitter_ms: 300
+    session_reuse: true
+  auth_type: none
+  raw_snapshot_required: true
+  enabled: false
+```
+
+### 13.3 `RateLimitedHttpClient`
+
+统一能力：
+
+| 能力 | 说明 |
+| --- | --- |
+| `source_name` / `endpoint_key` | 绑定 registry 策略 |
+| `min_interval_ms` | 同源最小请求间隔 |
+| `jitter_ms` | 随机抖动，降低风控命中 |
+| `max_retries` | 最大重试次数 |
+| `backoff` | 指数/线性退避 |
+| `session_reuse` | 复用 HTTP session |
+| `ua/referer` | 统一 headers 策略 |
+| `timeout` | 请求超时 |
+| `error_counter` | 连续失败计数 |
+| `last_success_at` / `last_failure_at` | 运行诊断 |
+
+约束：
+
+- job 不再手写 `sleep()`。
+- Eastmoney 默认串行、间隔 `>= 1s`、复用 session。
+- client 只负责请求，不做业务归因。
+- raw snapshot 写入仍由 job/gateway 编排。
+
+### 13.4 M3 任务分解
+
+| Task ID | 任务 | 产出 | 依赖 | 验证 |
+| --- | --- | --- | --- | --- |
+| M3-T01 | 扩展 `market_data_source_registry` migration | 完整治理字段 | M0a | migration 可重复执行 |
+| M3-T02 | Registry Gateway 增加查询/更新 API | source config 读取能力 | T01 | unit test |
+| M3-T03 | 实现 `RateLimitedHttpClient` | 统一限流 HTTP 基建 | T02 | retry/rate limit 单测 |
+| M3-T04 | 将 `ThsClient` 迁移到 `RateLimitedHttpClient` | 现有 THS 链路使用治理能力 | T03 | THS reason 单测和 6/18 采集验证 |
+| M3-T05 | 将 THS registry 初始记录升级为完整配置 | 可配置 THS endpoint | T01-T04 | registry 查询结果符合预期 |
+| M3-T06 | 增加 source diagnostics | 最近成功/失败、连续失败、限流命中 | T03-T04 | job 输出 diagnostics |
+| M3-T07 | 更新设计文档与运行手册 | 可运维说明 | T01-T06 | 文档落地 |
+
+### 13.5 M3 验收标准
+
+| 验收项 | 目标 |
+| --- | --- |
+| THS reason 采集 | 2026-06-18 可正常拉取/落库，结果不低于当前 M0b 能力 |
+| Registry 配置读取 | THS endpoint 不再硬编码 source 元信息 |
+| Rate limit 行为 | 同一 source 连续请求遵守 `min_interval_ms + jitter` |
+| Retry 行为 | 429/403/timeout 可按策略退避，不阻塞主流程 |
+| Raw snapshot | 成功和失败响应均可保留 trace |
+| 单测 | 新增 registry/http client/client migration 单测 |
+| 回归 | M2e 6/18 validation 仍通过 |
+
+## 14. 后续扩展路线
+
+M3 完成后，再进入前端与更多数据源：
+
+1. 前端展示 diagnostics / reason tags。
+2. P0.5：实现 Theme Evidence + Theme Explanation Layer。
+3. M4：接入 `eastmoney_concept_blocks` 作为静态/半动态补证据。
+4. M4：接入 `cninfo_announcements` 作为事件驱动公告证据。
+5. M4：把 `stock_theme_reason_evidence` 纳入题材热度、龙头评分、早盘必读上下文。
+6. M5：接入东财个股研报、行业研报、同花顺 EPS、PDF 摘要。
+
+## 15. 决策记录
 
 | 决策 | 结果 | 理由 |
 | --- | --- | --- |
@@ -933,3 +1056,5 @@ P0 完成后，再进入 P1/P2：
 | 是否前置 Theme Explanation Layer | 是 | 直接改善盘后复盘、早盘必读、热点理解 |
 | 矩阵是否允许一个股票多个题材 | 算法层允许，展示层唯一主列 | 兼顾可读性和共振分析 |
 | 是否改变涨停判定口径 | 否 | 保持 `stock_daily_snapshot` 真源稳定 |
+| P0 后是否立即做前端 | 否 | 先做 M3 数据源治理，降低后续多数据源接入债务 |
+| P0 后是否立即接研报 | 否 | 研报价值高但不是当前最短板；先标准化 registry/http 基建 |

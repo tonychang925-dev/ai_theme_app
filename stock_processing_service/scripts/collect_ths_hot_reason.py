@@ -64,7 +64,11 @@ async def _run(args: argparse.Namespace) -> int:
     manager = PostgresDatabaseManager(_config_from_dsn(dsn))
     await manager.connect()
     try:
-        client = ThsClient(timeout_seconds=args.timeout_seconds, base_url=args.base_url)
+        from stock_processing_service.integrations.a_stock_data.clients.rate_limited_http_client import RegistryPolicy
+        policy = RegistryPolicy(
+            timeout_ms=args.timeout_seconds * 1000 if args.timeout_seconds else 10_000,
+        )
+        client = ThsClient(base_url=args.base_url, policy=policy)
         job = CollectThsHotReasonJob(write_port=manager, client=client)
         results = []
         for item in args.dates:
