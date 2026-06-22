@@ -326,8 +326,6 @@ class CollectionCommandPlanner:
         if task_key == "evidence_collection":
             _dsn = env.get("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/stock_data_test")
             _py = self._python_bin
-            _root = str(self._project_root)
-            _dates_arg = f"--dates {trade_date}"
             return CollectionTaskPlan(
                 pre_logs=[
                     "多源证据采集: THS hot reason → EPS forecast → Research reports",
@@ -340,7 +338,7 @@ class CollectionCommandPlanner:
                         label="THS 强势股 reason 采集",
                         commands=[CollectionCommand(
                             cmd=[_py, "-m", "stock_processing_service.scripts.collect_ths_hot_reason",
-                                 _dates_arg, "--dsn", _dsn],
+                                 "--dates", trade_date, "--dsn", _dsn],
                             initial_percent=5, success_percent=100,
                         )],
                     ),
