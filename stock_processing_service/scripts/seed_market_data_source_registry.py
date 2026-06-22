@@ -99,6 +99,26 @@ REGISTRY_SEEDS = [
         "raw_snapshot_required": False,
         "enabled": True,
     },
+    {
+        "source_name": "eastmoney",
+        "endpoint_key": "research_report",
+        "domain": "research_metadata",
+        "owned_fields": ["title", "organization", "rating", "target_price", "pdf_url", "eps_forecast"],
+        "usage": "研报元数据：评级/目标价/盈利预测，服务 LeaderScore 和 ThemeStrength",
+        "fallback_order": 25,
+        "rate_limit_policy": {
+            "type": "conservative",
+            "min_interval_ms": 2000,
+            "jitter_ms": 500,
+            "max_retries": 1,
+            "backoff": "linear",
+            "timeout_ms": 30000,
+        },
+        "auth_type": "none",
+        "freshness_sla": "1d",
+        "raw_snapshot_required": False,
+        "enabled": True,
+    },
 ]
 
 UPSERT_SQL = """
