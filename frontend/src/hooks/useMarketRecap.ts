@@ -22,6 +22,7 @@ export interface RecapTheme {
   avg_leader_score: number;
   resonance_count: number;
   why_strong: string[];
+  catalyst: string;
   leaders: RecapLeader[];
   evidence_sources: string[];
 }

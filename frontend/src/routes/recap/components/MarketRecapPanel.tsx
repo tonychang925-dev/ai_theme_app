@@ -62,13 +62,20 @@ export const MarketRecapPanel: FC<Props> = ({ tradeDate }) => {
             </div>
 
             {/* Why strong */}
-            <div style={{ marginBottom: 8 }}>
+            <div style={{ marginBottom: 4 }}>
               {theme.why_strong?.map((reason: string) => (
                 <span key={reason} className="tag" style={{ marginRight: 4, fontSize: 11 }}>
                   {reason}
                 </span>
               ))}
             </div>
+
+            {/* Catalyst event */}
+            {theme.catalyst && (
+              <div style={{ fontSize: 12, color: "#aaa", marginBottom: 6, lineHeight: 1.4 }}>
+                {theme.catalyst}
+              </div>
+            )}
 
             {/* Leaders */}
             <div style={{ fontSize: 13 }}>
