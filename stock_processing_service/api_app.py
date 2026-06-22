@@ -6707,3 +6707,159 @@ async def submit_mainline_review_decision(review_id: str, payload: dict[str, Any
 
         # watch / reject / downgrade_to_theme — queue only, no registry
         return {"ok": True, "action": decision, "registry_written": False}
+
+
+# ── M4g: Recap Read Model API ───────────────────────────────────
+
+
+@app.get("/api/v1/recap/latest")
+async def get_recap_latest() -> dict[str, Any]:
+    """Return the most recent market recap snapshot."""
+    try:
+        from asyncpg import connect as _pg_connect
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        conn = await _pg_connect(
+            host="localhost", port=5432, database=db,
+            user=os.environ.get("PG_USERNAME", "postgres"),
+            password=os.environ.get("PG_PASSWORD", ""),
+        )
+        try:
+            row = await conn.fetchrow(
+                "SELECT recap_json, trade_date, created_at "
+                "FROM market_recap_snapshot ORDER BY trade_date DESC LIMIT 1"
+            )
+            if not row:
+                raise HTTPException(status_code=404, detail="no recap snapshot found")
+            data = row["recap_json"] if isinstance(row["recap_json"], dict) else json.loads(row["recap_json"])
+            data["_meta"] = {
+                "trade_date": str(row["trade_date"] or ""),
+                "created_at": str(row["created_at"] or ""),
+            }
+            return data
+        finally:
+            await conn.close()
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.get("/api/v1/recap/{trade_date}")
+async def get_recap_by_date(trade_date: str) -> dict[str, Any]:
+    """Return market recap for a specific trade date."""
+    try:
+        from asyncpg import connect as _pg_connect
+        import json as _json
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        conn = await _pg_connect(
+            host="localhost", port=5432, database=db,
+            user=os.environ.get("PG_USERNAME", "postgres"),
+            password=os.environ.get("PG_PASSWORD", ""),
+        )
+        try:
+            td_date = date.fromisoformat(trade_date) if isinstance(trade_date, str) else trade_date
+            row = await conn.fetchrow(
+                "SELECT recap_json, trade_date, created_at "
+                "FROM market_recap_snapshot WHERE trade_date = $1::date",
+                td_date,
+            )
+            if not row:
+                raise HTTPException(
+                    status_code=404,
+                    detail=f"no recap snapshot for {trade_date}",
+                )
+            data = row["recap_json"] if isinstance(row["recap_json"], dict) else _json.loads(row["recap_json"])
+            data["_meta"] = {
+                "trade_date": str(row["trade_date"] or ""),
+                "created_at": str(row["created_at"] or ""),
+            }
+            return data
+        finally:
+            await conn.close()
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.get("/api/v1/themes/top")
+async def get_top_themes(
+    trade_date: str | None = None,
+    limit: int = 10,
+) -> list[dict[str, Any]]:
+    """Return top themes by strength score."""
+    try:
+        from asyncpg import connect as _pg_connect
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        conn = await _pg_connect(
+            host="localhost", port=5432, database=db,
+            user=os.environ.get("PG_USERNAME", "postgres"),
+            password=os.environ.get("PG_PASSWORD", ""),
+        )
+        try:
+            if trade_date:
+                rows = await conn.fetch(
+                    "SELECT theme_name, strength_score, rank, stock_count, "
+                    "leader_count, top_stocks, evidence_sources "
+                    "FROM theme_strength_snapshot "
+                    "WHERE trade_date = $1::date ORDER BY rank LIMIT $2",
+                    trade_date, min(limit, 20),
+                )
+            else:
+                rows = await conn.fetch(
+                    "SELECT DISTINCT ON (theme_name) theme_name, strength_score, "
+                    "rank, stock_count, leader_count, top_stocks, evidence_sources, trade_date "
+                    "FROM theme_strength_snapshot "
+                    "ORDER BY theme_name, trade_date DESC "
+                    "LIMIT $1",
+                    min(limit, 20),
+                )
+            return [dict(r) for r in rows]
+        finally:
+            await conn.close()
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.get("/api/v1/leaders/{theme_name}")
+async def get_theme_leaders(
+    theme_name: str,
+    trade_date: str | None = None,
+    limit: int = 10,
+) -> list[dict[str, Any]]:
+    """Return leader scores for a specific theme."""
+    try:
+        from asyncpg import connect as _pg_connect
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        conn = await _pg_connect(
+            host="localhost", port=5432, database=db,
+            user=os.environ.get("PG_USERNAME", "postgres"),
+            password=os.environ.get("PG_PASSWORD", ""),
+        )
+        try:
+            if trade_date:
+                rows = await conn.fetch(
+                    "SELECT stock_code, stock_name, leader_score, event_score, "
+                    "expectation_score, resonance_score, board_strength_score, "
+                    "rank_in_theme, evidence_sources "
+                    "FROM leader_score_snapshot "
+                    "WHERE trade_date = $1::date AND theme_name = $2 "
+                    "ORDER BY rank_in_theme LIMIT $3",
+                    trade_date, theme_name, min(limit, 20),
+                )
+            else:
+                rows = await conn.fetch(
+                    "SELECT stock_code, stock_name, leader_score, event_score, "
+                    "expectation_score, resonance_score, board_strength_score, "
+                    "rank_in_theme, evidence_sources, trade_date "
+                    "FROM leader_score_snapshot "
+                    "WHERE theme_name = $1 "
+                    "ORDER BY trade_date DESC, rank_in_theme "
+                    "LIMIT $2",
+                    theme_name, min(limit, 20),
+                )
+            return [dict(r) for r in rows]
+        finally:
+            await conn.close()
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
