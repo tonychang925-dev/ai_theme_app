@@ -14,6 +14,7 @@ import recapIcon from "../../assets/intel-icons/当日复盘.png";
 import EngineMissingState from "./components/EngineMissingState";
 import EnginePostMarketView from "./components/EnginePostMarketView";
 import LegacyRecapSections from "./components/LegacyRecapSections";
+import { MarketRecapPanel } from "./components/MarketRecapPanel";
 
 const DISPLAY_REPLACEMENTS: Array<[string, string]> = [
   ["risk_off", "避险防御"],
@@ -1665,6 +1666,9 @@ export function RecapPage() {
           返回
         </button>
       </section>
+
+      {/* M4h: Market Recap — top themes + leaders from evidence fusion */}
+      {reportType === "post_market" && <MarketRecapPanel tradeDate={tradeDate} />}
 
       {loading && <div className="empty-state">正在加载复盘视图...</div>}
       {error && <div className="empty-state error">{error}</div>}
