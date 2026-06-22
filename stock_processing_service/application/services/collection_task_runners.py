@@ -1,10 +1,9 @@
-"""采集任务 Runner 实现。
+"""Collection task Runner implementations
 
-- ScriptCommandRunner：兼容旧脚本（subprocess 执行）
-- PostMarketRecapRunner：服务化 recap（直接调 BuildPostMarketRecapJob）
-- ProcessIsolatedRunner：子进程隔离执行重任务
-- EvidenceRecapGenerateRunner: M4/M5 证据融合 → 复盘快照生成
-"""
+- ScriptCommandRunner: legacy script (subprocess)
+- PostMarketRecapRunner: serviced recap (BuildPostMarketRecapJob)
+- ProcessIsolatedRunner: process-isolated heavy tasks
+- EvidenceRecapGenerateRunner: M4/M5 evidence fusion to recap snapshot
 """
 from __future__ import annotations
 
@@ -39,11 +38,7 @@ from stock_processing_service.application.services.f10_capital_parser import F10
 
 
 class ScriptCommandRunner:
-    """兼容旧脚本的 Runner。
-
-    内部通过 subprocess 执行预定命令列表。
-    后续逐个替换为服务化 Runner。
-    """
+    """Legacy script runner: executes pre-defined commands via subprocess."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if not context.commands:
@@ -89,7 +84,7 @@ class ScriptCommandRunner:
 
 
 class BuildStockAbnormalSignalRunner:
-    """异动信号检测 Runner — 委托到 BuildStockAbnormalSignalJob（新链 Job 架构）。"""
+    """Abnormal signal detection Runner via BuildStockAbnormalSignalJob."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
@@ -120,7 +115,7 @@ class BuildStockAbnormalSignalRunner:
 
 
 class BuildStockKlineJudgementsRunner:
-    """个股K线位置与形态判断 Runner — in-process 调用脚本入口。"""
+    """Stock K-line position/pattern Runner -- in-process script entry."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -147,11 +142,11 @@ class BuildStockKlineJudgementsRunner:
 
 
 class PostMarketReportContextRunner:
-    """新链盘后报告上下文 Runner。
+    """Post-market report context Runner
 
-    该 Runner 不写旧表；它只触发 stock_processing_service 新链上下文查询，
-    用于在 recap.snapshot 前暴露市场环境/题材资金流的采集状态。
-    最终 report 仍由 BuildPostMarketRecapJob 写入 post_market_recap_snapshot。
+    This Runner queries new-chain context only; does not write legacy tables.
+    Exposes market/theme flow collection status before recap.snapshot.
+    Final report still written by BuildPostMarketRecapJob to snapshot.
     """
 
     def __init__(self, context_key: str, label: str) -> None:
@@ -371,7 +366,7 @@ class PostMarketPrerequisitesRunner:
 
 
 class BuildDragonTigerObjectRunner:
-    """龙虎榜对象构建 Runner — 新链 Job 架构。"""
+    """Dragon-tiger object build Runner -- new chain Job architecture."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
@@ -417,7 +412,7 @@ class BuildDragonTigerObjectRunner:
 
 
 class BuildHotMoneyTradingActivityRunner:
-    """游资动向活动表构建 Runner — 复用落表脚本的标准入口。"""
+    """Hot-money activity table Runner -- standard script entry."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -460,7 +455,7 @@ class BuildHotMoneyTradingActivityRunner:
 
 
 class AuctionSnapshotRunner:
-    """竞价快照 Runner — 委托到 BuildAuctionSnapshotJob（新链 Job 架构）。"""
+    """Auction snapshot Runner via BuildAuctionSnapshotJob."""
 
     def __init__(self, universe_source: str = "auction_watch_universe", max_stocks: int = 0) -> None:
         self._universe_source = universe_source
@@ -499,7 +494,7 @@ class AuctionSnapshotRunner:
 
 
 class JyhfSyncListsRunner:
-    """JYHF 题材列表同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
+    """JYHF subject list sync Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -533,7 +528,7 @@ class JyhfSyncListsRunner:
 
 
 class JyhfLoadSubjectNodeStagingRunner:
-    """JYHF 题材节点入库 Runner — in-process 调用 load_subject_node_staging（semi-service 模式）。"""
+    """JYHF subject node staging Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -549,7 +544,7 @@ class JyhfLoadSubjectNodeStagingRunner:
 
 
 class JyhfSyncDetailsRunner:
-    """JYHF 题材详情同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
+    """JYHF subject detail sync Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -583,7 +578,7 @@ class JyhfSyncDetailsRunner:
 
 
 class JyhfSyncStockDetailsRunner:
-    """JYHF 股票详情同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
+    """JYHF stock detail sync Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -617,7 +612,7 @@ class JyhfSyncStockDetailsRunner:
 
 
 class JyhfImportStockDailyRunner:
-    """JYHF 股票日快照 Runner — API → DB，不经过本地 JSONL。"""
+    """JYHF stock daily snapshot Runner -- API to DB, no local JSONL."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         self._ctx = context  # 保存上下文，供 _collect_subject_records 使用 progress_callback
@@ -799,7 +794,7 @@ class JyhfImportStockDailyRunner:
 
 
 class JyhfSyncHistoryRunner:
-    """JYHF 历史事件同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
+    """JYHF history event sync Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -834,7 +829,7 @@ class JyhfSyncHistoryRunner:
 
 
 class JyhfImportHistoryRunner:
-    """JYHF 历史事件导入 Runner — in-process 调用 import_jyhf_history_incremental（semi-service 模式）。"""
+    """JYHF history import Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -856,7 +851,7 @@ class JyhfImportHistoryRunner:
 
 
 class AuctionSignalRunner:
-    """竞价信号 Runner — 委托到 BuildAuctionSignalJob（新链 Job 架构）。"""
+    """竞价信号 Runner -- 委托到 BuildAuctionSignalJob（新链 Job 架构）"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
@@ -882,7 +877,7 @@ class AuctionSignalRunner:
 
 
 class AuctionWatchUniverseRunner:
-    """竞价观察池构建 Runner — 新链 Job 架构。"""
+    """竞价观察池构建 Runner -- 新链 Job 架构"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
@@ -929,7 +924,7 @@ class TushareDailyBasicRunner:
 
 
 class F10CapitalCollectRunner:
-    """F10 资金动向快照采集 Runner — 通过本地脚本采集并落库。"""
+    """F10 资金动向快照采集 Runner -- 通过本地脚本采集并落库"""
 
     MAX_CONCURRENT_REQUESTS = 5
     MAX_SUCCESS_LOG_SAMPLES = 20
@@ -1199,7 +1194,7 @@ class F10CapitalCollectRunner:
 
 
 class TushareKlineRunner:
-    """Tushare K线采集 Runner — 直接拉取 API → Gateway 写入，不经过本地 JSONL。"""
+    """Tushare K线采集 Runner -- 直接拉取 API → Gateway 写入，不经过本地 JSONL"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
@@ -1237,7 +1232,7 @@ class TushareKlineRunner:
 
 
 class BuildLeaderLLMQueueRunner:
-    """龙头候选 LLM 审查队列 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+    """龙头候选 LLM 审查队列 Runner -- 进程内调用旧链服务（semi-service 模式）"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -1259,7 +1254,7 @@ class BuildLeaderLLMQueueRunner:
 
 
 class BuildLeaderLLMJudgementRunner:
-    """龙头候选 LLM 研判 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+    """龙头候选 LLM 研判 Runner -- 进程内调用旧链服务（semi-service 模式）"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -1283,7 +1278,7 @@ class BuildLeaderLLMJudgementRunner:
 
 
 class CallLeaderLLMRunner:
-    """龙头候选 LLM 调用 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+    """龙头候选 LLM 调用 Runner -- 进程内调用旧链服务（semi-service 模式）"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -1308,7 +1303,7 @@ class CallLeaderLLMRunner:
 
 
 class BuildLeaderCandidateRunner:
-    """龙头候选构建 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+    """龙头候选构建 Runner -- 进程内调用旧链服务（semi-service 模式）"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -1330,9 +1325,9 @@ class BuildLeaderCandidateRunner:
 
 
 class PostMarketRecapRunner:
-    """服务化盘后复盘 Runner。
+    """服务化盘后复盘 Runner
 
-    直接调用 BuildPostMarketRecapJob.execute()，不再启动脚本子进程。
+    直接调用 BuildPostMarketRecapJob.execute()，不再启动脚本子进程
     """
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
@@ -1374,7 +1369,7 @@ class PostMarketRecapRunner:
 # ── P1: 股票快照可插拔数据源 Runner ──
 
 class StockSnapshotBuildRunner:
-    """股票快照统一入口 Runner — 通过 Orchestrator 自动选择 Producer.
+    """股票快照统一入口 Runner -- 通过 Orchestrator 自动选择 Producer.
 
     provider=jyhf          → JyhfSubjectStockDailySnapshotProducer (API→DB)
     provider=tushare_join  → TushareJoinSubjectStockDailySnapshotProducer (SQL JOIN)
@@ -1491,7 +1486,7 @@ def _format_snapshot_result(result) -> list[str]:
 # ── P1: 题材热度排名可插拔数据源 Runner ──
 
 class SubjectRankBuildRunner:
-    """题材热度排名统一入口 Runner — 通过 Orchestrator 自动选择 Producer.
+    """题材热度排名统一入口 Runner -- 通过 Orchestrator 自动选择 Producer.
 
     provider=jyhf          → JyhfSubjectRankProducer (JSONL→DB)
     provider=snapshot_agg  → SnapshotAggSubjectRankProducer (SQL 聚合)
@@ -1599,9 +1594,9 @@ def _format_rank_result(result) -> list[str]:
 # ── P2: 子进程隔离 Runner ──
 
 class ProcessIsolatedRunner:
-    """P2: 将重任务 runner 隔离到独立子进程，不阻塞 SPS 主进程。
+    """P2: 将重任务 runner 隔离到独立子进程，不阻塞 SPS 主进程
 
-    子进程执行真实 runner_key，主进程只做 stdout 读取和超时管理。
+    子进程执行真实 runner_key，主进程只做 stdout 读取和超时管理
     """
 
     def __init__(
@@ -1725,7 +1720,7 @@ class ProcessIsolatedRunner:
 
 # ── PR-13D: 指数采集 Runner ──
 class IndexKlineCollectRunner:
-    """在采集链路中执行指数K线采集 + 技术分析。"""
+    """在采集链路中执行指数K线采集 + 技术分析"""
 
     runner_key: str = "index_kline_collect"
 
