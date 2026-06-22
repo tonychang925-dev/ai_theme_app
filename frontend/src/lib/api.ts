@@ -885,6 +885,7 @@ export interface LimitUpThemeMatrix {
   columns: LimitUpThemeMatrixColumn[];
   visible_columns?: LimitUpThemeMatrixColumn[];
   mainline_columns?: LimitUpThemeMatrixColumn[];
+  non_mainline_columns?: LimitUpThemeMatrixColumn[];
   board_totals: Record<string, number>;
   market_board_totals?: Record<string, number>;
   mainline_board_totals?: Record<string, number>;

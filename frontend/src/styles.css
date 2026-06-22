@@ -687,7 +687,8 @@ select {
 }
 
 .market-overview-distribution {
-  min-width: 1500px;
+  min-width: 1180px;
+  table-layout: fixed;
 }
 
 .market-overview-distribution th,
@@ -696,20 +697,18 @@ select {
 }
 
 .market-overview-theme-head {
-  display: grid;
-  gap: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 28px;
 }
 
 .market-overview-theme-name {
   font-size: 13px;
   font-weight: 700;
-  line-height: 1.35;
-}
-
-.market-overview-theme-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+  line-height: 1.25;
+  color: #ffb6a8;
+  text-align: center;
 }
 
 .market-overview-rowhead {
@@ -719,7 +718,7 @@ select {
 }
 
 .market-overview-cell {
-  min-width: 180px;
+  min-width: 126px;
   vertical-align: top;
   white-space: normal !important;
 }
@@ -727,16 +726,17 @@ select {
 .market-overview-stock-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  min-height: 48px;
+  gap: 2px;
+  min-height: 28px;
 }
 
 .market-overview-stock {
   padding: 0;
-  text-align: left;
-  line-height: 1.4;
+  text-align: center;
+  line-height: 1.35;
   white-space: normal;
   word-break: break-word;
+  font-size: 13px;
 }
 
 .market-overview-stock.is-board-4 {

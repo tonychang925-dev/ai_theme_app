@@ -4246,6 +4246,56 @@ async def get_intel_feed_debug_counts(feed_date: str = Query(...)) -> dict[str, 
     }
 
 
+async def _subject_has_children(app, subject_key: str) -> bool:
+    try:
+        async with app.state.gateway._client.pool.acquire() as conn:
+            return bool(await conn.fetchval(
+                "SELECT 1 FROM subject_children_staging "
+                "WHERE parent_subject_key = $1 LIMIT 1", subject_key,
+            ))
+    except Exception:
+        return False
+
+
+async def _resolve_canonical_subject(app, subject_key: str) -> str | None:
+    """Resolve a leaf/missing taxonomy node to its canonical subject."""
+    try:
+        async with app.state.gateway._client.pool.acquire() as conn:
+            # Get the node's display name
+            name = await conn.fetchval(
+                "SELECT child_name FROM subject_children_staging "
+                "WHERE child_subject_key = $1 LIMIT 1", subject_key,
+            )
+            # 1) Name match in theme_gate_profile
+            if name:
+                canonical = await conn.fetchval(
+                    "SELECT subject_key FROM theme_gate_profile "
+                    "WHERE concept = $1 AND subject_key != $2 "
+                    "ORDER BY subject_key LIMIT 1",
+                    name, subject_key,
+                )
+                if canonical:
+                    return canonical
+            # 2) Walk ancestry to nearest parent with gate_profile
+            return await conn.fetchval("""
+                WITH RECURSIVE ancestors AS (
+                    SELECT parent_subject_key, 0 as depth
+                    FROM subject_children_staging
+                    WHERE child_subject_key = $1
+                    UNION ALL
+                    SELECT s.parent_subject_key, a.depth + 1
+                    FROM subject_children_staging s
+                    JOIN ancestors a ON a.parent_subject_key = s.child_subject_key
+                    WHERE a.depth < 5
+                )
+                SELECT a.parent_subject_key FROM ancestors a
+                JOIN theme_gate_profile gp ON gp.subject_key = a.parent_subject_key
+                ORDER BY a.depth LIMIT 1
+            """, subject_key)
+    except Exception:
+        return None
+
+
 @app.get("/api/v1/theme_workspace/{subject_key}")
 @app.get("/api/v1/theme/workspace/{subject_key}")
 async def get_theme_workspace(
@@ -4262,6 +4312,14 @@ async def get_theme_workspace(
 ) -> dict[str, Any]:
     """题材工作台统一端点（semi-service — 后续 P3 Gateway 化升级）。"""
     detail = await app.state.phase1_repo.fetch_theme_detail(subject_key)
+    # Resolve leaf / missing taxonomy nodes to canonical subject
+    if not detail or not await _subject_has_children(app, subject_key):
+        canonical = await _resolve_canonical_subject(app, subject_key)
+        if canonical:
+            canonical_detail = await app.state.phase1_repo.fetch_theme_detail(canonical)
+            if canonical_detail:
+                detail = canonical_detail
+                subject_key = canonical
     if not detail:
         raise HTTPException(status_code=404, detail=f"theme workspace not found for subject_key={subject_key}")
 
@@ -4530,22 +4588,30 @@ async def get_theme_workspace(
             root_rank = await gconn.fetchrow("SELECT pct_chg FROM subject_history_staging WHERE subject_key=$1 ORDER BY rank_date DESC LIMIT 1", subject_key)
             if root_rank and root_rank["pct_chg"] is not None:
                 graph["root"]["pct_chg"] = float(root_rank["pct_chg"])
-            # Helper: fetch stocks for a subject, checking both its own key and parent key
-            async def _fetch_stocks(sk: str, sn: str) -> list[dict]:
-                """Fetch all stocks for a subject, combining own key + parent key lookups.
-                All stocks are tagged with the taxonomy name *sn* regardless of their
-                individual child_name in the DB."""
+            # Helper: normalize stock_id to bare code (no .SH/.SZ suffix) for dedup
+            def _norm_sid(raw: str) -> str:
+                return raw.strip().upper().rsplit(".", 1)[0] if "." in raw else raw.strip().upper()
+
+            # Helper: fetch stocks for a child subject, scoped to parent's stocks
+            async def _fetch_stocks(sk: str, sn: str, parent_stock_ids: set[str] | None = None) -> list[dict]:
+                """Fetch stocks for a child subject.  When *parent_stock_ids* is
+                provided, results are filtered to only include stocks that also
+                appear in the parent subject's constituent list."""
                 stocks = []
                 seen = set()
                 # Own key: ALL stocks regardless of child_name
                 for row in await gconn.fetch(
                     "SELECT scr.stock_id, scr.stock_name, scr.reason, COALESCE(ssm.pct_chg,0) AS sp "
                     "FROM subject_child_stock_reason scr LEFT JOIN subject_stock_map ssm ON ssm.subject_key=$2 AND ssm.stock_id=scr.stock_id "
-                    "WHERE scr.subject_key=$1 ORDER BY scr.sort_order LIMIT 100", sk, subject_key):
+                    "WHERE scr.subject_key=$1 ORDER BY scr.sort_order LIMIT 200", sk, subject_key):
                     sid = row["stock_id"]
-                    if sid not in seen:
-                        seen.add(sid)
-                        stocks.append({"stock_id": sid, "stock_name": row["stock_name"], "child_name": sn, "reason": row["reason"] or "", "pct_chg": float(row["sp"] or 0)})
+                    norm = _norm_sid(sid)
+                    if norm in seen:
+                        continue
+                    if parent_stock_ids and norm not in parent_stock_ids:
+                        continue
+                    seen.add(norm)
+                    stocks.append({"stock_id": sid, "stock_name": row["stock_name"], "child_name": sn, "reason": row["reason"] or "", "pct_chg": float(row["sp"] or 0)})
                 # Parent key with child_name matching sn
                 parent_row = await gconn.fetchrow("SELECT parent_subject_key FROM jyhf_subject_taxonomy_relation WHERE child_subject_key=$1 LIMIT 1", sk)
                 if parent_row:
@@ -4555,51 +4621,77 @@ async def get_theme_workspace(
                         "FROM subject_child_stock_reason scr LEFT JOIN subject_stock_map ssm ON ssm.subject_key=$3 AND ssm.stock_id=scr.stock_id "
                         "WHERE scr.subject_key=$1 AND scr.child_name=$2 ORDER BY scr.sort_order LIMIT 50", pk, sn, subject_key):
                         sid = row["stock_id"]
-                        if sid not in seen:
-                            seen.add(sid)
-                            stocks.append({"stock_id": sid, "stock_name": row["stock_name"], "child_name": sn, "reason": row["reason"] or "", "pct_chg": float(row["sp"] or 0)})
+                        norm = _norm_sid(sid)
+                        if norm in seen:
+                            continue
+                        if parent_stock_ids and norm not in parent_stock_ids:
+                            continue
+                        seen.add(norm)
+                        stocks.append({"stock_id": sid, "stock_name": row["stock_name"], "child_name": sn, "reason": row["reason"] or "", "pct_chg": float(row["sp"] or 0)})
                 return stocks
 
-            # Build full hierarchy from jyhf_subject_taxonomy_relation
+            # Collect parent subject's own stock IDs for cross-filtering
+            parent_stock_rows = await gconn.fetch(
+                "SELECT DISTINCT stock_id FROM subject_stock_staging "
+                "WHERE subject_key=$1 AND stock_id IS NOT NULL", subject_key
+            )
+            parent_stock_ids: set[str] = {_norm_sid(r["stock_id"]) for r in parent_stock_rows}
+            # Also check subject_child_stock_reason under parent key
+            if not parent_stock_ids:
+                parent_reason_rows = await gconn.fetch(
+                    "SELECT DISTINCT stock_id FROM subject_child_stock_reason "
+                    "WHERE subject_key=$1", subject_key
+                )
+                parent_stock_ids = {r["stock_id"].strip().upper() for r in parent_reason_rows}
+
+            # Build hierarchy from subject_children_staging (CDP-extracted
+            # internal taxonomy tree — NOT jyhf_subject_taxonomy_relation
+            # which stores global subject-to-subject relations).
             root_children = await gconn.fetch(
-                "SELECT child_subject_key, child_subject_name FROM jyhf_subject_taxonomy_relation "
-                "WHERE parent_subject_key=$1 ORDER BY child_subject_key", subject_key
+                "SELECT child_subject_key, child_name FROM subject_children_staging "
+                "WHERE parent_subject_key=$1 ORDER BY sort", subject_key
             )
             assigned_ids: set[str] = set()
             for rc in root_children:
                 child_key = rc["child_subject_key"]
-                child_name = rc["child_subject_name"] or child_key
+                child_name = rc["child_name"] or child_key
+                child_stocks = await _fetch_stocks(child_key, child_name, parent_stock_ids)
+                # Level 2: grandchildren from subject_children_staging.
+                # Both jyhf_children (imported taxonomy) and jyhf_cdp_dom
+                # (CDP-extracted) are valid — JYHF vip-table view shows
+                # 3-level trees for most subjects.
+                grands = await gconn.fetch(
+                    "SELECT child_subject_key, child_name FROM subject_children_staging "
+                    "WHERE parent_subject_key=$1 ORDER BY sort", child_key
+                )
+                gc_nodes = []
+                for gr in grands:
+                    gk = gr["child_subject_key"]
+                    gn = gr["child_name"] or gk
+                    gc_stocks = await _fetch_stocks(gk, gn, parent_stock_ids)
+                    gc_node = {"name": gn, "child_subject_key": gk, "stocks": gc_stocks or []}
+                    for s in (gc_stocks or []):
+                        assigned_ids.add(s["stock_id"])
+                    gc_nodes.append(gc_node)
+                # Show child if it has direct stocks OR grandchildren
+                if not child_stocks and not grands:
+                    continue
                 child_node = {
                     "name": child_name,
                     "child_subject_key": child_key,
                     "pct_chg": None,
-                    "children": [],
-                    "stocks": await _fetch_stocks(child_key, child_name),
+                    "children": gc_nodes,
+                    "stocks": child_stocks,
                 }
-                for s in child_node["stocks"]:
-                    # 记录一级子题材自身股票，避免后续被算作 root 兜底“成分股”
+                for s in child_stocks:
                     assigned_ids.add(s["stock_id"])
-                # Level 2: grandchildren
-                grands = await gconn.fetch(
-                    "SELECT child_subject_key, child_subject_name FROM jyhf_subject_taxonomy_relation "
-                    "WHERE parent_subject_key=$1 ORDER BY child_subject_key", child_key
-                )
-                for gr in grands:
-                    gk = gr["child_subject_key"]
-                    gn = gr["child_subject_name"] or gk
-                    gc_node = {"name": gn, "child_subject_key": gk, "stocks": await _fetch_stocks(gk, gn)}
-                    for s in gc_node["stocks"]:
-                        assigned_ids.add(s["stock_id"])
-                    child_node["children"].append(gc_node)
                 graph["children"].append(child_node)
-            # Leaf node with no children: still may have stocks via parent key
+            # Leaf node with no children: fetch stocks and show directly
             if not root_children:
-                leaf_name = await gconn.fetchval("SELECT child_subject_name FROM jyhf_subject_taxonomy_relation WHERE child_subject_key=$1 LIMIT 1", subject_key)
-                if not leaf_name:
-                    leaf_name = theme_name
-                leaf_stocks = await _fetch_stocks(subject_key, leaf_name)
-                if leaf_stocks:
-                    graph["children"].append({"name": leaf_name, "child_subject_key": subject_key, "children": [{"name": leaf_name, "stocks": leaf_stocks}]})
+                leaf_stocks = await _fetch_stocks(subject_key, theme_name)
+                for s in (leaf_stocks or []):
+                    assigned_ids.add(s["stock_id"])
+                    graph["uncategorized_stocks"].append(s)
             # Remaining: stocks under root key not assigned to any child/grandchild
             # Show them as direct stocks of the root rather than "其他"
             all_assigned_ids = set(assigned_ids)
@@ -4629,11 +4721,7 @@ async def get_theme_workspace(
                         "pct_chg": float(row["pct_chg"] or 0) if row["pct_chg"] is not None else None,
                     })
             if direct_stocks:
-                graph["children"].append({
-                    "name": theme_name,
-                    "child_subject_key": subject_key,
-                    "children": [{"name": "成分股", "child_subject_key": subject_key, "stocks": direct_stocks}]
-                })
+                graph["uncategorized_stocks"].extend(direct_stocks)
         finally:
             await gconn.close()
     except Exception:

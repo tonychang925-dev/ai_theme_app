@@ -418,11 +418,20 @@ class JyhfCdpCollectorService:
         except Exception:
             self._logger.exception("db_sink flush failed batch_id=%s count=%s", batch_id, len(events))
 
+    # ── P1.5: New subject auto-registration ───────────────────────
+    # Per CDP_DOM行情数据采集P1设计方案.md §12.6, when a popup
+    # notification carries a subject_key not in subject_detail, the
+    # collector auto-registers it: subject_detail + theme_gate_profile
+    # + subject_stock_staging (best-effort API fetch).
+
     async def _write_popup_rows_to_staging(self, rows: list[dict]) -> int:
         """Write popup/hook event dicts directly to subject_history_staging.
 
         This is the table that SPS polls for the intel feed frontend display.
         Uses ``source_type='jyhf_cdp'`` to match the SPS query filter.
+
+        P1.5: New subjects (subject_key not in subject_detail) trigger
+        auto-registration of subject_detail + theme_gate_profile.
         """
         import asyncpg
 
@@ -438,6 +447,7 @@ class JyhfCdpCollectorService:
             td = datetime.now(CN_TZ).date()
             batch_id = f"popup_{datetime.now(CN_TZ).strftime('%Y%m%d_%H%M%S')}"
             written = 0
+            newly_registered: set[str] = set()
 
             for ev in rows:
                 sn = str(ev.get("subject_name") or "").strip()
@@ -454,6 +464,52 @@ class JyhfCdpCollectorService:
                     desc += f"\n{desc_text}"
                 if ns:
                     desc += f"\n（新闻来源：{ns}）"
+
+                # ── P1.5: New subject detection & auto-registration ──
+                if sid and sid.strip().isdigit() and sid not in newly_registered:
+                    newly_registered.add(sid)
+                    try:
+                        is_new = await self._ensure_subject_registered(
+                            conn, sid, sn, dt, desc_text, ns,
+                        )
+                        if is_new:
+                            self._logger.info(
+                                "new_subject_registered: key=%s name=%s",
+                                sid, sn,
+                            )
+                            # Best-effort: fetch constituent stocks via JYHF API
+                            try:
+                                stock_count = await self._fetch_subject_stocks(
+                                    conn, sid, sn,
+                                )
+                                if stock_count:
+                                    self._logger.info(
+                                        "new_subject_stocks: key=%s count=%s",
+                                        sid, stock_count,
+                                    )
+                                    # P1.5: extract taxonomy graph via CDP DOM
+                                    stock_rows = await conn.fetch(
+                                        "SELECT stock_id, stock_name FROM "
+                                        "subject_stock_staging WHERE subject_key=$1",
+                                        sid,
+                                    )
+                                    api_stocks = [
+                                        {"stock_id": r["stock_id"],
+                                         "stock_name": r["stock_name"]}
+                                        for r in stock_rows
+                                    ]
+                                    await self._extract_subject_graph_via_cdp(
+                                        conn, sid, sn, api_stocks,
+                                    )
+                            except Exception:
+                                self._logger.exception(
+                                    "new_subject_stocks_failed: key=%s", sid,
+                                )
+                    except Exception:
+                        self._logger.exception(
+                            "new_subject_registration_failed: key=%s name=%s",
+                            sid, sn,
+                        )
 
                 await conn.execute(
                     "INSERT INTO subject_history_staging "
@@ -473,6 +529,708 @@ class JyhfCdpCollectorService:
             return written
         finally:
             await conn.close()
+
+    async def _ensure_subject_registered(
+        self,
+        conn,
+        subject_key: str,
+        subject_name: str,
+        driver_title: str,
+        driver_desc: str,
+        news_source: str,
+    ) -> bool:
+        """Ensure subject_key exists in subject_detail + theme_gate_profile.
+
+        Returns True if this is a newly registered subject, False if it
+        already existed.
+        """
+        existing = await conn.fetchval(
+            "SELECT 1 FROM subject_detail WHERE subject_key = $1", subject_key,
+        )
+        if existing:
+            return False
+
+        reason_short = driver_title
+        detail_html = (
+            f"<p><strong>题材：</strong>{subject_name}</p>"
+            f"<p><strong>驱动事件：</strong>{driver_title}</p>"
+        )
+        if driver_desc:
+            detail_html += f"<p>{driver_desc}</p>"
+        if news_source:
+            detail_html += f"<p><strong>新闻来源：</strong>{news_source}</p>"
+            reason_short += f"（来源：{news_source}）"
+
+        # Step 1: subject_detail
+        await conn.execute(
+            """INSERT INTO subject_detail
+               (subject_key, detail_html, reason_short, detail_version,
+                is_current, created_at, updated_at)
+               VALUES ($1, $2, $3, 1, true, NOW(), NOW())
+               ON CONFLICT (subject_key) DO UPDATE SET
+                  reason_short = EXCLUDED.reason_short,
+                  detail_html = EXCLUDED.detail_html,
+                  updated_at = NOW()""",
+            subject_key, detail_html, reason_short,
+        )
+
+        # Step 2: theme_master (required for active_binding status in
+        # vw_subject_theme_binding — without it the frontend shows "staging_only")
+        await conn.execute(
+            """INSERT INTO theme_master (
+                 name, code, description, status, theme_type,
+                 source_system, source_id,
+                 heat_score, confidence_score, lifecycle_stage,
+                 created_at, updated_at
+               ) VALUES ($1, $2, $3, 'active', 'concept',
+                         'jyhf', $4, 60, 0.85, 'growth', NOW(), NOW())
+               ON CONFLICT DO NOTHING""",
+            subject_name, subject_key,
+            f"【驱动事件：{driver_title}】{driver_desc[:200] if driver_desc else ''}",
+            subject_key,
+        )
+
+        # Step 3: subject_node_staging (required by vw_subject_theme_binding
+        # for ThemeWorkspace frontend navigation to resolve).
+        await conn.execute(
+            """INSERT INTO subject_node_staging
+               (subject_key, subject_name, node_level, source_type,
+                status, created_at, updated_at)
+               VALUES ($1, $2, 1, 'jyhf_cdp_popup', 'active', NOW(), NOW())
+               ON CONFLICT DO NOTHING""",
+            subject_key, subject_name,
+        )
+
+        # Step 3: theme_gate_profile (auto-derived from subject_name + driver)
+        gate = self._derive_gate_profile(subject_name, driver_title, driver_desc)
+        await self._upsert_gate_profile(conn, subject_key, subject_name, gate)
+
+        # Step 4: subject_rank_daily — so the subject appears in frontend rankings
+        rank_desc = f"【驱动事件：{driver_title}】{driver_desc[:120] if driver_desc else ''}"
+        await conn.execute(
+            """INSERT INTO subject_rank_daily
+               (subject_key, rank_date, heat, heat_name, pct_chg, his_pct_chg,
+                red, description, source_system, created_at, updated_at)
+               VALUES ($1, CURRENT_DATE, 3, '热', 0.0, 0.0,
+                       true, $2, 'jyhf', NOW(), NOW())
+               ON CONFLICT (subject_key, rank_date) DO NOTHING""",
+            subject_key, rank_desc,
+        )
+
+        return True
+
+    async def _upsert_gate_profile(
+        self, conn, subject_key: str, subject_name: str, gate: dict,
+    ) -> None:
+        import json as _json
+
+        must_terms = gate.get("must", [])
+        strong_terms = gate.get("strong", [])
+        weak_terms = gate.get("weak", [])
+        negative_terms = gate.get("not", [])
+        all_terms = [subject_name, *must_terms, *strong_terms, *weak_terms]
+        search_text = " ".join(dict.fromkeys(all_terms))
+
+        ontology = _json.dumps({
+            "concept": subject_name,
+            "semantic_type": "event_driven",
+            "strategy_type": "concept",
+            "dimensions": {},
+        }, ensure_ascii=False)
+        gate_json = _json.dumps({
+            "concept": subject_name,
+            "semantic_type": "event_driven",
+            "strategy_type": "concept",
+            "must": must_terms,
+            "should": strong_terms + weak_terms,
+            "not": negative_terms,
+            "quality": "cdp_auto",
+            "source": "jyhf_cdp_popup",
+        }, ensure_ascii=False)
+
+        await conn.execute(
+            """INSERT INTO theme_gate_profile (
+                 subject_key, source_system, concept, semantic_type, strategy_type,
+                 ontology_json, gate_json,
+                 must_terms, should_terms, not_terms,
+                 strong_terms, weak_terms, negative_terms,
+                 search_text, quality, gate_version,
+                 created_at, updated_at
+               ) VALUES (
+                 $1, 'jyhf', $2, 'event_driven', 'concept',
+                 $3::jsonb, $4::jsonb,
+                 $5::jsonb, $6::jsonb, $7::jsonb,
+                 $8::jsonb, $9::jsonb, $10::jsonb,
+                 $11, 'cdp_auto', 1,
+                 NOW(), NOW()
+               )
+               ON CONFLICT (subject_key) DO UPDATE SET
+                 concept = EXCLUDED.concept,
+                 gate_json = EXCLUDED.gate_json,
+                 must_terms = EXCLUDED.must_terms,
+                 strong_terms = EXCLUDED.strong_terms,
+                 weak_terms = EXCLUDED.weak_terms,
+                 search_text = EXCLUDED.search_text,
+                 quality = EXCLUDED.quality,
+                 updated_at = NOW()""",
+            subject_key, subject_name,
+            ontology, gate_json,
+            _json.dumps(must_terms, ensure_ascii=False),
+            _json.dumps(strong_terms + weak_terms, ensure_ascii=False),
+            _json.dumps(negative_terms, ensure_ascii=False),
+            _json.dumps(strong_terms, ensure_ascii=False),
+            _json.dumps(weak_terms, ensure_ascii=False),
+            _json.dumps(negative_terms, ensure_ascii=False),
+            search_text,
+        )
+
+    async def _fetch_subject_stocks(
+        self, conn, subject_key: str, subject_name: str,
+    ) -> int:
+        """Fetch constituent stocks via JYHF API and write to
+        subject_stock_staging.  Best-effort — failures are logged but
+        never propagate.
+        """
+        import json as _json
+        import httpx
+
+        token = self._load_jyhf_token()
+        if not token:
+            self._logger.warning("new_subject_stocks: no JYHF token available")
+            return 0
+
+        try:
+            async with httpx.AsyncClient(timeout=15, trust_env=False) as client:
+                r = await client.get(
+                    "https://app.txcfgl.com/api/app/stock/realtime-by-subject/v2",
+                    params={"subjectId": subject_key},
+                    headers={"Authorization": f"Bearer {token}"},
+                )
+            if r.status_code != 200:
+                self._logger.warning(
+                    "new_subject_stocks API returned %s for subject %s",
+                    r.status_code, subject_key,
+                )
+                return 0
+            rows = r.json().get("rows", [])
+        except Exception:
+            self._logger.exception(
+                "new_subject_stocks API call failed for subject %s", subject_key,
+            )
+            return 0
+
+        if not rows:
+            return 0
+
+        batch_id = f"jyhf_api_{datetime.now(CN_TZ).strftime('%Y%m%d_%H%M%S')}"
+        inserted = 0
+        for rank_idx, row in enumerate(rows):
+            try:
+                raw_code = str(row[2])
+                stock_id = f"{raw_code}.{'SH' if raw_code.startswith(('6','9')) else 'SZ'}"
+                stock_name = str(row[3])
+                ev = _json.dumps({
+                    "current": row[4], "pct_chg": row[10],
+                    "amount": row[13], "vol": row[12],
+                    "open": row[5], "high": row[7], "low": row[6],
+                    "rank_no": row[19] if len(row) > 19 and row[19] else None,
+                }, ensure_ascii=False)
+                await conn.execute(
+                    """INSERT INTO subject_stock_staging (
+                         subject_key, stock_id, stock_name, source_type,
+                         confidence, sort, evidence_json, ingest_batch_id,
+                         created_at, updated_at
+                       ) VALUES (
+                         $1, $2, $3, 'jyhf_api',
+                         1.0, $4, $5::jsonb, $6,
+                         NOW(), NOW()
+                       )
+                       ON CONFLICT (subject_key, stock_id) DO UPDATE SET
+                         stock_name = EXCLUDED.stock_name,
+                         confidence = EXCLUDED.confidence,
+                         sort = EXCLUDED.sort,
+                         evidence_json = EXCLUDED.evidence_json,
+                         updated_at = NOW()""",
+                    subject_key, stock_id, stock_name,
+                    rank_idx + 1, ev, batch_id,
+                )
+                inserted += 1
+            except Exception:
+                self._logger.exception(
+                    "new_subject_stocks insert failed for %s row %s",
+                    subject_key, rank_idx,
+                )
+        return inserted
+
+    # ── P1.5: CDP subject taxonomy graph extraction ─────────────────
+    # Per CDP_DOM行情数据采集P1设计方案.md §12.7, the subject taxonomy
+    # (参股/合作/钼矿 etc.) is embedded in the JYHF app DOM (not API).
+    # This extracts the tree via CDP, maps API-returned stocks to nodes,
+    # and persists everything to subject_children_staging +
+    # jyhf_subject_taxonomy_relation + subject_child_stock_reason.
+
+    async def _extract_subject_graph_via_cdp(
+        self, conn, subject_key: str, subject_name: str, api_stocks: list[dict],
+    ) -> bool:
+        """Extract JYHF subject taxonomy graph via CDP DOM and persist.
+
+        Navigates to ``#/subject/detail/{id}/vip-table``, parses the
+        taxonomy tree from body text, maps API-provided stocks to
+        taxonomy nodes, and inserts into the three graph tables.
+
+        Best-effort — failures are logged but never propagate.
+        """
+        import asyncio as _asyncio
+        import time as _time
+
+        cdp = None
+        try:
+            # ── Navigate to subject detail page ──
+            cdp = CDPClient(self._config.cdp_port)
+            cdp.connect()
+
+            # Click the subject in the excavate page (only reliable method)
+            clicked = cdp.evaluate(
+                f"""(function() {{
+    var all = document.querySelectorAll('td, [class*="row"], [class*="item"]');
+    for (var i = 0; i < all.length; i++) {{
+        if (all[i].innerText && all[i].innerText.indexOf('{subject_name}') >= 0) {{
+            all[i].click();
+            return 'clicked';
+        }}
+    }}
+    return 'not_found';
+}})()""",
+                timeout=6.0,
+            )
+            if str(clicked) != "clicked":
+                # Fallback: router push
+                cdp.evaluate(
+                    f"""(function() {{
+    var app = document.querySelector('#app');
+    if (app && app.__vue_app__) {{
+        app.__vue_app__.config.globalProperties.$router.push(
+            '/subject/detail/{subject_key}/vip-table');
+    }}
+}})()""",
+                    timeout=3.0,
+                )
+
+            # Wait for page render
+            _time.sleep(4.0)
+
+            # ── Extract body text ──
+            body_text = cdp.evaluate("document.body.innerText", timeout=6.0)
+            if not isinstance(body_text, str) or len(body_text) < 50:
+                self._logger.warning(
+                    "subject_graph: empty body text for %s", subject_key,
+                )
+                return False
+
+            # ── Parse taxonomy tree ──
+            taxonomy = self._parse_subject_taxonomy(body_text, subject_name)
+            if not taxonomy:
+                self._logger.warning(
+                    "subject_graph: taxonomy parse failed for %s", subject_key,
+                )
+                return False
+
+            # ── Map stocks to taxonomy nodes ──
+            self._map_stocks_to_taxonomy(taxonomy, api_stocks)
+
+            # ── Persist ──
+            await self._persist_taxonomy_graph(
+                conn, subject_key, subject_name, taxonomy,
+            )
+
+            total_nodes = sum(
+                1 + len(v) for v in taxonomy.values()
+            )
+            self._logger.info(
+                "subject_graph: persisted taxonomy for %s (%s branches, %s nodes)",
+                subject_key, len(taxonomy), total_nodes,
+            )
+            return True
+
+        except Exception:
+            self._logger.exception(
+                "subject_graph: CDP extraction failed for %s", subject_key,
+            )
+            return False
+        finally:
+            if cdp:
+                cdp.close()
+
+    @staticmethod
+    def _parse_subject_taxonomy(body_text: str, subject_name: str) -> dict | None:
+        """Parse JYHF subject detail DOM text into taxonomy tree.
+
+        Returns ``{l1_name: {l2_name: []}}`` where leaf values are
+        placeholder lists for stock mappings.
+
+        Heuristic: a node is Level-1 (category) if it is immediately
+        followed by PCT then another NODE (its first child).  A node is
+        Level-2 (leaf) if it is followed by PCT then STAR (masked stock).
+        """
+        import re
+
+        graph_idx = body_text.find("题材图谱")
+        if graph_idx < 0:
+            return None
+
+        section = body_text[graph_idx:]
+        lines = [line.strip() for line in section.split("\n") if line.strip()]
+
+        # Find root node (second occurrence of subject_name)
+        root_idx = None
+        for i, line in enumerate(lines):
+            if line == subject_name and i > 0:
+                root_idx = i
+                break
+        if root_idx is None:
+            return None
+
+        pct_re = re.compile(r"^[+-]?\d+\.?\d*%$")
+        star_re = re.compile(r"^\*+$")
+
+        # Skip root + its pct_chg
+        i = root_idx + 1
+        if i < len(lines) and pct_re.match(lines[i]):
+            i += 1
+
+        taxonomy: dict[str, dict[str, list]] = {}
+        current_l1: str | None = None
+
+        while i < len(lines):
+            line = lines[i]
+
+            if pct_re.match(line) or star_re.match(line):
+                i += 1
+                continue
+
+            if line == subject_name:
+                i += 1
+                continue
+
+            # Determine L1 vs L2: skip the immediate PCT, then check
+            # whether the next meaningful line is a NODE (→ L1) or
+            # STAR/end (→ L2).
+            look = i + 1
+            if look < len(lines) and pct_re.match(lines[look]):
+                look += 1
+            next_is_node = (
+                look < len(lines)
+                and not pct_re.match(lines[look])
+                and not star_re.match(lines[look])
+            )
+
+            if current_l1 is None or next_is_node:
+                # New Level-1 branch (first node, or node has children)
+                current_l1 = line
+                taxonomy[line] = {}
+            else:
+                # Level-2 leaf under current L1
+                if current_l1 and current_l1 in taxonomy:
+                    taxonomy[current_l1][line] = []
+
+            i = look
+
+        return taxonomy if taxonomy else None
+
+    @staticmethod
+    def _map_stocks_to_taxonomy(
+        taxonomy: dict, api_stocks: list[dict],
+    ) -> None:
+        """Map API-returned stocks to taxonomy leaf nodes by keyword matching.
+
+        Modifies *taxonomy* in-place, setting leaf values to lists of
+        ``{"stock_id": ..., "stock_name": ..., "reason": ...}`` dicts.
+        """
+        # Build keyword index from taxonomy node names
+        node_keywords: dict[str, list[str]] = {}
+        for l1_name, l2_map in taxonomy.items():
+            for l2_name in l2_map:
+                keywords = [l2_name]
+                # Add L1 context words
+                if "原材料" in l1_name:
+                    keywords.extend(["矿", "材料", "金属", "资源"])
+                if "半导体" in l1_name:
+                    keywords.extend(["半导体", "芯片", "封测", "靶材", "气"])
+                if "钼" in l2_name:
+                    keywords.append("钼")
+                if "钨" in l2_name:
+                    keywords.append("钨")
+                if "参股" in l2_name:
+                    keywords.extend(["合资", "持股", "参股"])
+                if "合作" in l2_name:
+                    keywords.extend(["合作", "供应", "分销", "封测", "服务"])
+                node_keywords[l2_name] = keywords
+
+        # For each stock, find best matching node
+        for stock in api_stocks:
+            stock_id = stock.get("stock_id", "")
+            stock_name = stock.get("stock_name", "")
+            stock_text = f"{stock_name}"
+
+            best_node = None
+            best_score = 0
+
+            for l2_name, keywords in node_keywords.items():
+                score = sum(1 for kw in keywords if kw in stock_text)
+                if score > best_score:
+                    best_score = score
+                    best_node = l2_name
+
+            if best_node and best_score > 0:
+                for l1_name, l2_map in taxonomy.items():
+                    if best_node in l2_map:
+                        l2_map[best_node].append({
+                            "stock_id": stock_id,
+                            "stock_name": stock_name,
+                            "reason": f"「{best_node}」相关标的",
+                        })
+                        break
+
+    async def _persist_taxonomy_graph(
+        self,
+        conn,
+        subject_key: str,
+        subject_name: str,
+        taxonomy: dict,
+    ) -> None:
+        """Insert taxonomy tree into subject_children_staging +
+        jyhf_subject_taxonomy_relation + subject_child_stock_reason.
+        """
+        import json as _json
+
+        # Delete old entries for idempotent rebuild
+        await conn.execute(
+            "DELETE FROM jyhf_subject_taxonomy_relation "
+            "WHERE parent_subject_key LIKE $1",
+            f"{subject_key}%",
+        )
+        await conn.execute(
+            "DELETE FROM subject_children_staging "
+            "WHERE parent_subject_key LIKE $1",
+            f"{subject_key}%",
+        )
+        await conn.execute(
+            "DELETE FROM subject_child_stock_reason "
+            "WHERE subject_key LIKE $1",
+            f"{subject_key}%",
+        )
+
+        l1_sort = 0
+        for l1_name, l2_map in taxonomy.items():
+            l1_sort += 1
+            l1_key = f"{subject_key}_{l1_name}"
+
+            # ── subject_children_staging (L1) ──
+            total_stocks = sum(len(v) for v in l2_map.values())
+            await conn.execute(
+                """INSERT INTO subject_children_staging (
+                     parent_subject_key, child_subject_key, child_name,
+                     stock_count, source_type, sort, created_at, updated_at
+                   ) VALUES ($1, $2, $3, $4, 'jyhf_cdp_dom', $5, NOW(), NOW())""",
+                subject_key, l1_key, l1_name, total_stocks, l1_sort,
+            )
+
+            # ── jyhf_subject_taxonomy_relation (root → L1) ──
+            await conn.execute(
+                """INSERT INTO jyhf_subject_taxonomy_relation (
+                     parent_subject_key, parent_subject_name,
+                     child_subject_key, child_subject_name,
+                     relation_type, depth, source_table, confidence
+                   ) VALUES ($1, $2, $3, $4, 'child', 1,
+                             'subject_children_staging', 1.0)""",
+                subject_key, subject_name, l1_key, l1_name,
+            )
+
+            l2_sort = 0
+            for l2_name, stocks in l2_map.items():
+                l2_sort += 1
+                l2_key = f"{subject_key}_{l2_name}"
+
+                # ── subject_children_staging (L2) ──
+                await conn.execute(
+                    """INSERT INTO subject_children_staging (
+                         parent_subject_key, child_subject_key, child_name,
+                         stock_count, source_type, sort, created_at, updated_at
+                       ) VALUES ($1, $2, $3, $4, 'jyhf_cdp_dom', $5, NOW(), NOW())""",
+                    l1_key, l2_key, l2_name, len(stocks), l2_sort,
+                )
+
+                # ── jyhf_subject_taxonomy_relation (L1 → L2) ──
+                await conn.execute(
+                    """INSERT INTO jyhf_subject_taxonomy_relation (
+                         parent_subject_key, parent_subject_name,
+                         child_subject_key, child_subject_name,
+                         relation_type, depth, source_table, confidence
+                       ) VALUES ($1, $2, $3, $4, 'child', 2,
+                                 'subject_children_staging', 1.0)""",
+                    l1_key, l1_name, l2_key, l2_name,
+                )
+
+                # ── subject_child_stock_reason ──
+                for sort_order, s in enumerate(stocks):
+                    await conn.execute(
+                        """INSERT INTO subject_child_stock_reason (
+                             subject_key, child_name, stock_id, stock_name,
+                             reason, source_type, sort_order,
+                             created_at, updated_at
+                           ) VALUES ($1, $2, $3, $4, $5,
+                                     'jyhf_cdp_dom', $6, NOW(), NOW())""",
+                        l2_key, l2_name,
+                        s["stock_id"], s["stock_name"],
+                        s.get("reason", f"「{l2_name}」相关标的"),
+                        sort_order + 1,
+                    )
+
+    def _load_jyhf_token(self) -> str | None:
+        """Read JYHF auth token from the in-memory extractor or on-disk file."""
+        if self._token_extractor.last_token:
+            return self._token_extractor.last_token
+        try:
+            import json as _json
+            return _json.loads(
+                Path("/tmp/jyhf_auth_token.json").read_text()
+            ).get("token")
+        except Exception:
+            return None
+
+    @staticmethod
+    def _derive_gate_profile(
+        subject_name: str, driver_title: str, driver_desc: str,
+    ) -> dict:
+        """Auto-generate a minimal gate profile from popup event fields.
+
+        Rule-based term extraction without external NLP dependencies.
+        Produces must/strong/weak term lists for theme_gate_profile.
+        """
+        import re
+
+        # ── Segment subject name on common separators ──
+        name_parts: list[str] = []
+        for chunk in re.split(r"[以的及与和：:，,、（）()\s]+", subject_name):
+            chunk = chunk.strip()
+            if len(chunk) >= 2:
+                name_parts.append(chunk)
+
+        # ── Extract structured terms from driver event text ──
+        full_text = f"{driver_title} {driver_desc}"
+
+        def _dedup(items: list[str]) -> list[str]:
+            return list(dict.fromkeys(item for item in items if item))
+
+        _fn_prefixes = {
+            "使用", "在于", "并将", "并在", "以及", "及其", "替代", "计划",
+            "此次", "该产", "在同等",
+        }
+        _fn_chars = "的使用在为将于和与及以并最已该此代士正可即"
+
+        def _trim_fn_prefix(raw: str) -> str:
+            """Strip common function-word prefixes that create sentence fragments."""
+            for pf in sorted(_fn_prefixes, key=len, reverse=True):
+                if raw.startswith(pf):
+                    raw = raw[len(pf):]
+                    break
+            else:
+                while raw and raw[0] in _fn_chars:
+                    raw = raw[1:]
+            return raw
+
+        # Company names: 2-6 汉字 + 公司/集团/股份
+        company_hits: list[str] = []
+        for m in re.finditer(
+            r"[\u4e00-\u9fff]{2,6}(?:公司|集团|股份)", full_text,
+        ):
+            company_hits.append(m.group(0))
+
+        # Product/technology: 2-4 汉字 + 材料/闪存/芯片/内存/金属/工艺/技术
+        product_hits: list[str] = []
+        for m in re.finditer(
+            r"[\u4e00-\u9fff]{2,4}(?:材料|闪存|芯片|内存|金属|工艺|技术)",
+            full_text,
+        ):
+            raw = _trim_fn_prefix(m.group(0))
+            if len(raw) >= 3:
+                product_hits.append(raw)
+        product_hits = _dedup(product_hits)
+
+        # Acronyms: NAND, HBM, DRAM, HBM4E etc. (delimited by non-letter)
+        acronym_hits: list[str] = []
+        for m in re.finditer(r"(?:^|[^A-Za-z])([A-Z]{2,}[0-9]*[A-Z]*)", full_text):
+            acronym_hits.append(m.group(1))
+
+        # Bracket-quoted key phrases 【驱动事件：XXX】
+        bracket_hits: list[str] = []
+        for m in re.finditer(r"【(.+?)】", full_text):
+            inner = m.group(1)
+            inner = re.sub(r"^(驱动事件|新题材更新)[：:]", "", inner)
+            for chunk in re.split(r"[：:，,、]", inner):
+                chunk = chunk.strip()
+                if len(chunk) >= 3:
+                    bracket_hits.append(chunk)
+
+        # Technical nouns with suffixes
+        tech_hits: list[str] = []
+        for m in re.finditer(
+            r"[\u4e00-\u9fff]{2,6}(?:线|层|制程|电阻|读写|量产|生产|验证)",
+            full_text,
+        ):
+            raw = _trim_fn_prefix(m.group(0))
+            if len(raw) >= 3:
+                tech_hits.append(raw)
+        tech_hits = _dedup(tech_hits)
+
+        # Acronym-heavy tech terms (NAND, HBM, DRAM, HBM4E, etc.)
+        acronym_hits = re.findall(
+            r"\b([A-Z]{2,}[0-9]*[A-Z]*)\b", full_text,
+        )
+
+        # Bracket-quoted key phrases 【驱动事件：XXX】
+        bracket_hits: list[str] = []
+        for m in re.finditer(r"【(.+?)】", full_text):
+            inner = m.group(1)
+            inner = re.sub(r"^(驱动事件|新题材更新)[：:]", "", inner)
+            for chunk in re.split(r"[：:，,、]", inner):
+                chunk = chunk.strip()
+                if len(chunk) >= 3:
+                    bracket_hits.append(chunk)
+
+        # Technical nouns with specific suffixes
+        tech_hits = re.findall(
+            r"([\u4e00-\u9fff]{2,6}(?:线|层|制程|电阻|读写|速度|量产|生产))",
+            full_text,
+        )
+
+        # ── Build term hierarchies ──
+        must_terms = _dedup([subject_name, *name_parts])[:6]
+        strong_terms = _dedup([
+            *name_parts, *company_hits, *product_hits,
+            *acronym_hits, *bracket_hits, *tech_hits,
+        ])[:16]
+
+        # Weak: meaningful 3-10 char Chinese clauses (split by punctuation, not
+        # sliding-window, to avoid fragment noise like "海力士使"/"用钼材料").
+        clauses = re.split(r"[，,、。；：:！!？?\s]+", full_text)
+        clause_terms = [
+            c.strip() for c in clauses
+            if 3 <= len(c.strip()) <= 10 and not c.strip().startswith(("《", "》"))
+        ]
+        weak_candidates = _dedup([*clause_terms, *product_hits, *tech_hits])
+        strong_set = set(strong_terms) | set(must_terms)
+        weak_terms = [
+            t for t in weak_candidates
+            if t not in strong_set and len(t) >= 3
+        ][:24]
+
+        return {
+            "must": must_terms,
+            "strong": strong_terms,
+            "weak": weak_terms,
+            "not": [],
+        }
 
     # ── Notification conversion ──────────────────────────────────
 
