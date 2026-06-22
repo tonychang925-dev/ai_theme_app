@@ -541,3 +541,80 @@ async def test_limit_up_theme_matrix_builder_m2_reason_priority_replay_20260618(
     assert audit_by_stock["002392"]["chosen_reason"] == "subject_stock_map"
     assert audit_by_stock["000003"]["chosen_reason"] == "no_mainline_mapping"
     assert matrix["diagnostics"]["limit_up_stock_count"] == 5
+
+
+def _test_column(theme_name: str, stock_codes: list[str], *, active_mainline: bool = False) -> dict[str, Any]:
+    stocks = [
+        {
+            "stock_id": f"{stock_code}.SZ",
+            "stock_name": f"{theme_name}{index}",
+            "subject_key": theme_name,
+            "theme_name": theme_name,
+            "board_count": 1,
+        }
+        for index, stock_code in enumerate(stock_codes, start=1)
+    ]
+    return {
+        "subject_key": theme_name,
+        "theme_name": theme_name,
+        "active_mainline": active_mainline,
+        "board_groups": [
+            {"board_count": 4, "board_label": "4板", "stock_count": 0, "stocks": []},
+            {"board_count": 3, "board_label": "3板", "stock_count": 0, "stocks": []},
+            {"board_count": 2, "board_label": "2板", "stock_count": 0, "stocks": []},
+            {"board_count": 1, "board_label": "首板", "stock_count": len(stocks), "stocks": stocks},
+        ],
+        "limit_up_count": len(stocks),
+        "focus_stocks": stocks,
+        "diagnostics": {"mapping_source": "mainline_daily_state" if active_mainline else "stock_theme_reason_evidence"},
+    }
+
+
+def test_limit_up_theme_matrix_builder_separates_true_other_from_collapsed_other() -> None:
+    builder = LimitUpThemeMatrixBuilder()
+    result = builder._collapse_tail_columns(
+        columns=[
+            _test_column("主线", ["000001", "000002", "000003"], active_mainline=True),
+            _test_column("AI算力基础设施", ["000004", "000005"]),
+            _test_column("创新药/医疗", ["000006"]),
+        ],
+        diagnostics=[
+            {
+                "stock_id": "000007.SZ",
+                "stock_name": "无归因股",
+                "board_count": 1,
+            }
+        ],
+        max_columns=3,
+    )
+
+    assert result["true_other_count"] == 1
+    assert result["collapsed_other_count"] == 1
+    assert result["display_other_count"] == 2
+    assert result["collapsed_other_themes"] == [
+        {
+            "theme_name": "创新药/医疗",
+            "subject_key": "创新药/医疗",
+            "limit_up_count": 1,
+            "mapping_source": "stock_theme_reason_evidence",
+        }
+    ]
+    other_column = result["columns"][-1]
+    assert other_column["theme_name"] == "其他"
+    assert other_column["diagnostics"]["true_other_count"] == 1
+    assert other_column["diagnostics"]["collapsed_other_count"] == 1
+
+
+def test_limit_up_theme_matrix_builder_merges_duplicate_market_theme_columns() -> None:
+    builder = LimitUpThemeMatrixBuilder()
+    merged = builder._merge_market_columns_by_theme([
+        _test_column("机器人", ["000001", "000002"], active_mainline=True),
+        _test_column("机器人", ["000003"]),
+        _test_column("AI算力基础设施", ["000004"]),
+    ])
+
+    by_theme = {column["theme_name"]: column for column in merged}
+    assert sorted(by_theme) == ["AI算力基础设施", "机器人"]
+    assert by_theme["机器人"]["limit_up_count"] == 3
+    assert by_theme["机器人"]["active_mainline"] is True
+    assert by_theme["机器人"]["diagnostics"]["mapping_source"] == "mainline_daily_state+stock_theme_reason_evidence"

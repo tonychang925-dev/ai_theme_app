@@ -186,12 +186,16 @@ class LimitUpThemeMatrixBuilder:
                 str(col.get("theme_name") or ""),
             )
         )
-        raw_market_columns = [*visible_columns, *non_mainline_columns]
-        market_columns = self._collapse_tail_columns(
+        raw_market_columns = sorted(
+            self._merge_market_columns_by_theme([*visible_columns, *non_mainline_columns]),
+            key=self._market_column_sort_key,
+        )
+        collapse_result = self._collapse_tail_columns(
             columns=raw_market_columns,
             diagnostics=non_mainline_limit_up_stocks,
             max_columns=12,
         )
+        market_columns = collapse_result["columns"]
         market_board_totals = self._market_board_totals(effective_limit_up_rows, board_by_stock)
         mainline_board_totals = self._visible_board_totals(mainline_columns)
         summary = self._summary(market_columns, market_board_totals, mainline_board_totals)
@@ -211,6 +215,10 @@ class LimitUpThemeMatrixBuilder:
                 "limit_up_stock_count": len(effective_limit_up_rows),
                 "mapped_stock_count": mapped_stock_count,
                 "unmapped_stock_count": len(non_mainline_limit_up_stocks),
+                "true_other_count": len(non_mainline_limit_up_stocks),
+                "collapsed_other_count": collapse_result["collapsed_other_count"],
+                "display_other_count": collapse_result["display_other_count"],
+                "collapsed_other_themes": collapse_result["collapsed_other_themes"],
                 "unmapped_stocks": non_mainline_limit_up_stocks,
                 "non_mainline_limit_up_stock_count": len(non_mainline_limit_up_stocks),
                 "non_mainline_limit_up_stocks": non_mainline_limit_up_stocks,
@@ -906,25 +914,35 @@ class LimitUpThemeMatrixBuilder:
         columns: list[dict[str, Any]],
         diagnostics: list[dict[str, Any]],
         max_columns: int,
-    ) -> list[dict[str, Any]]:
+    ) -> dict[str, Any]:
         if len(columns) <= max_columns and not diagnostics:
-            return columns
+            return {
+                "columns": columns,
+                "true_other_count": 0,
+                "collapsed_other_count": 0,
+                "display_other_count": 0,
+                "collapsed_other_themes": [],
+            }
         keep: list[dict[str, Any]] = []
         tail: list[dict[str, Any]] = []
         keep_limit = max(1, max_columns - 1)
-        non_mainline_slots = max(0, keep_limit - len([col for col in columns if bool(col.get("active_mainline"))]))
-        kept_non_mainline = 0
-        for col in columns:
-            is_mainline = bool(col.get("active_mainline"))
-            if is_mainline or kept_non_mainline < non_mainline_slots:
+        for index, col in enumerate(columns):
+            if index < keep_limit:
                 keep.append(col)
-                if not is_mainline:
-                    kept_non_mainline += 1
             else:
                 tail.append(col)
         other_stocks_by_board: dict[int, list[dict[str, Any]]] = {1: [], 2: [], 3: [], 4: []}
         seen: set[str] = set()
+        collapsed_theme_stats: list[dict[str, Any]] = []
         for col in tail:
+            collapsed_count = self._column_stock_count(col)
+            if collapsed_count > 0:
+                collapsed_theme_stats.append({
+                    "theme_name": self._text(col.get("theme_name")),
+                    "subject_key": self._text(col.get("subject_key")),
+                    "limit_up_count": collapsed_count,
+                    "mapping_source": self._text((col.get("diagnostics") or {}).get("mapping_source")),
+                })
             for group in col.get("board_groups") or []:
                 board_count = int(group.get("board_count") or 0)
                 if board_count not in other_stocks_by_board:
@@ -937,6 +955,7 @@ class LimitUpThemeMatrixBuilder:
                         continue
                     seen.add(identity)
                     other_stocks_by_board[board_count].append(dict(stock))
+        collapsed_other_count = len(seen)
         for row in diagnostics:
             board_count = int(row.get("board_count") or 0)
             stock_name = self._text(row.get("stock_name"))
@@ -953,7 +972,14 @@ class LimitUpThemeMatrixBuilder:
                 "board_count": board_count,
             })
         if not any(other_stocks_by_board.values()):
-            return keep
+            return {
+                "columns": keep,
+                "true_other_count": len(diagnostics),
+                "collapsed_other_count": collapsed_other_count,
+                "display_other_count": 0,
+                "collapsed_other_themes": collapsed_theme_stats,
+            }
+        display_other_count = sum(len(items) for items in other_stocks_by_board.values())
         other_bucket = {
             "subject_key": "other",
             "theme_name": "其他",
@@ -964,12 +990,122 @@ class LimitUpThemeMatrixBuilder:
             "trade_action": "rotation_watch",
             "focus_stocks": [],
             "catalyst_events": [],
-            "diagnostics": {"mapping_source": "collapsed_tail"},
+            "diagnostics": {
+                "mapping_source": "collapsed_tail",
+                "true_other_count": len(diagnostics),
+                "collapsed_other_count": collapsed_other_count,
+                "display_other_count": display_other_count,
+                "collapsed_other_themes": collapsed_theme_stats,
+            },
             "_board_groups": other_stocks_by_board,
             "_stock_keys": set(),
             "_order": 999999,
         }
-        return [*keep, self._finalize_column(other_bucket)]
+        return {
+            "columns": [*keep, self._finalize_column(other_bucket)],
+            "true_other_count": len(diagnostics),
+            "collapsed_other_count": collapsed_other_count,
+            "display_other_count": display_other_count,
+            "collapsed_other_themes": collapsed_theme_stats,
+        }
+
+    def _merge_market_columns_by_theme(self, columns: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        merged: dict[str, dict[str, Any]] = {}
+        for column in columns:
+            theme_name = self._text(column.get("theme_name"))
+            if not theme_name:
+                continue
+            target = merged.get(theme_name)
+            if target is None:
+                target = {
+                    **column,
+                    "focus_stocks": [],
+                    "board_groups": [
+                        {
+                            "board_count": board_count,
+                            "board_label": "首板" if board_count == 1 else f"{board_count}板",
+                            "stock_count": 0,
+                            "stocks": [],
+                        }
+                        for board_count in (4, 3, 2, 1)
+                    ],
+                    "_seen_stock_ids": set(),
+                }
+                merged[theme_name] = target
+            else:
+                target["active_mainline"] = bool(target.get("active_mainline")) or bool(column.get("active_mainline"))
+                target["diagnostics"] = self._merge_column_diagnostics(
+                    target.get("diagnostics") or {},
+                    column.get("diagnostics") or {},
+                )
+            group_by_board = {
+                int(group.get("board_count") or 0): group
+                for group in target.get("board_groups") or []
+            }
+            for group in column.get("board_groups") or []:
+                board_count = int(group.get("board_count") or 0)
+                target_group = group_by_board.get(board_count)
+                if target_group is None:
+                    continue
+                for stock in group.get("stocks") or []:
+                    stock_id = self._text(stock.get("stock_id"))
+                    stock_name = self._text(stock.get("stock_name"))
+                    identity = stock_id or stock_name
+                    if not identity or identity in target["_seen_stock_ids"]:
+                        continue
+                    target["_seen_stock_ids"].add(identity)
+                    target_group["stocks"].append(dict(stock))
+                    target["focus_stocks"].append(dict(stock))
+        result: list[dict[str, Any]] = []
+        for column in merged.values():
+            limit_up_count = 0
+            for group in column.get("board_groups") or []:
+                stocks = group.get("stocks") or []
+                group["stock_count"] = len(stocks)
+                limit_up_count += len(stocks)
+            column["limit_up_count"] = limit_up_count
+            column.pop("_seen_stock_ids", None)
+            result.append(column)
+        return result
+
+    @staticmethod
+    def _merge_column_diagnostics(left: dict[str, Any], right: dict[str, Any]) -> dict[str, Any]:
+        left_source = LimitUpThemeMatrixBuilder._text(left.get("mapping_source"))
+        right_source = LimitUpThemeMatrixBuilder._text(right.get("mapping_source"))
+        sources = LimitUpThemeMatrixBuilder._unique_keep_order([left_source, right_source])
+        return {
+            **left,
+            **right,
+            "mapping_source": sources[0] if len(sources) == 1 else "+".join(sources),
+            "merged_mapping_sources": sources,
+        }
+
+    @staticmethod
+    def _column_stock_count(column: dict[str, Any]) -> int:
+        return sum(
+            int(group.get("stock_count") or 0)
+            for group in column.get("board_groups") or []
+        )
+
+    @staticmethod
+    def _market_column_sort_key(column: dict[str, Any]) -> tuple[int, int, str]:
+        source = LimitUpThemeMatrixBuilder._text((column.get("diagnostics") or {}).get("mapping_source"))
+        sources = set(source.split("+")) if source else set()
+        if "mainline_daily_state" in sources:
+            source_priority = 0
+        elif "stock_theme_reason_evidence" in sources:
+            source_priority = 1
+        elif "ths_hot_reason_snapshot" in sources:
+            source_priority = 2
+        elif "subject_stock_map" in sources:
+            source_priority = 3
+        else:
+            source_priority = 9
+        return (
+            -LimitUpThemeMatrixBuilder._column_stock_count(column),
+            source_priority,
+            LimitUpThemeMatrixBuilder._text(column.get("theme_name")),
+        )
 
     @staticmethod
     def _visible_board_totals(columns: list[dict[str, Any]]) -> dict[str, int]:
