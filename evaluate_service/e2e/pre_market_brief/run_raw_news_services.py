@@ -55,7 +55,8 @@ async def run_services(args: argparse.Namespace) -> None:
         if not args.processor_group:
             args.processor_group = f"news_business_processors_e2e_{args.run_id}"
     await _ensure_group_clean_start(redis_client, "stream:news:raw", args.storage_group)
-    await _ensure_group_clean_start(redis_client, "stream:events:normal", args.processor_group)
+    # Phase 4F: Processor 直接从 news:raw 消费，不再经过废弃的 events:normal
+    await _ensure_group_clean_start(redis_client, "stream:news:raw", args.processor_group)
     stream_config = SimpleNamespace(
         redis=SimpleNamespace(
             # realtime 生产跑使用稳定 group 名，避免每次重启产生 pm_e2e 僵尸组
@@ -95,7 +96,8 @@ async def run_services(args: argparse.Namespace) -> None:
             "triage_skip_threshold": -0.02,
             "batch_processing": True,
             "batch_size": args.batch_size,
-            "run_id_filter": args.run_id,
+            # Phase 4F: 实时生产不设 run_id 过滤，所有消息均需处理
+            "run_id_filter": None if (args.run_id and args.run_id.startswith("realtime_")) else args.run_id,
         },
     )
 
@@ -132,7 +134,7 @@ async def run_services(args: argparse.Namespace) -> None:
         for _stream, _group, _cname in [
             ("stream:news:raw", args.storage_group,
              storage_handler.consumer_config.get("consumer_name", "")),
-            ("stream:events:normal", args.processor_group,
+            ("stream:news:raw", args.processor_group,
              processor.processor_config.get("processor_name", "")),
         ]:
             if _cname:

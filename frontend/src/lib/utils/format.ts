@@ -184,3 +184,18 @@ export function getSourceLabel(sourceType: string): string {
 
   return sourceMap[sourceType] || sourceType;
 }
+
+/**
+ * 获取来源通道标签（区分 akshare / JYHF / 公告）
+ */
+export function getSourceChannelLabel(sourceChannel?: string): string {
+  if (!sourceChannel) return '';
+  const channelMap: Record<string, string> = {
+    'akshare_realtime': 'akshare实时',
+    'jyhf_cdp': 'JYHF',
+    'cninfo_announcement': '公告',
+    'jyhf_dom': 'JYHF DOM',
+    'realtime_news': '实时新闻',
+  };
+  return channelMap[sourceChannel] || sourceChannel;
+}

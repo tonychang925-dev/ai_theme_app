@@ -7,6 +7,7 @@ import {
   getItemTone,
   getItemTypeLabel,
   getSourceLabel,
+  getSourceChannelLabel,
 } from '../../lib/utils/format';
 
 interface IntelListItemProps {
@@ -38,6 +39,11 @@ export function IntelListItem({ item, active, onClick }: IntelListItemProps) {
             <span className={`pill pill-${item.item_type}`}>{getItemTypeLabel(item.item_type)}</span>
           )}
           <span className="intel-row-source">{getSourceLabel(item.source_type)}</span>
+          {item.source_channel && (
+            <span className={`pill pill-channel pill-channel-${item.source_channel}`}>
+              {getSourceChannelLabel(item.source_channel)}
+            </span>
+          )}
         </div>
         <div className="intel-row-theme">
           <strong className="intel-row-theme-name">{primaryThemeName}</strong>

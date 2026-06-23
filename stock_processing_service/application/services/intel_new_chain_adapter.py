@@ -280,6 +280,11 @@ class NewChainIntelFeedAdapter:
             return []
         items: List[Dict[str, Any]] = []
         for row in rows:
+            source_channel = str(row.get("source_channel", "realtime_news"))
+            # Phase 4F: jyhf_cdp 通道已由 load_subject_history_items 作为 "JYHF实时" 输出，
+            # 此处跳过避免重复显示。
+            if source_channel == "jyhf_cdp":
+                continue
             items.append({
                 "item_id": str(row.get("item_id", "")),
                 "item_type": "event",
@@ -293,7 +298,7 @@ class NewChainIntelFeedAdapter:
                 "confidence": float(row.get("confidence") or 0) if row.get("confidence") else None,
                 "impact_score": float(row.get("impact_score") or 0),
                 "source_type": str(row.get("source_type", "event_theme_map")),
-                "source_channel": str(row.get("source_channel", "realtime_news")),
+                "source_channel": source_channel,
             })
         return items
 
@@ -549,6 +554,10 @@ class NewChainIntelFeedAdapter:
                 }
             )
         )
+        # Phase 4F: 有 theme_keys 时按主题去重（title 因不同路径差异不作为 key），
+        # 无 theme_keys 时仍按 title 去重。
+        if theme_keys:
+            return ("__theme__", theme_names, theme_keys, stock_ids)
         return (title, theme_names, theme_keys, stock_ids)
 
     @staticmethod

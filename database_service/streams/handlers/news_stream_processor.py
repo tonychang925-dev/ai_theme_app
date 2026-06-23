@@ -177,50 +177,73 @@ class NewsStreamProcessor:
         return True
     
     async def _business_processing_loop(self):
-        """业务处理主循环"""
+        """业务处理主循环
+
+        Phase 4F: 读取和处理分离。消费者读完立即返回继续心跳，
+        LLM 处理在后台异步执行，避免阻塞导致 Redis 消费者变僵尸。
+        """
         logger.info("进入业务处理循环...")
-        
+
+        # 最大并发处理任务数，防止无界内存增长
+        _max_concurrent = int(os.getenv("PROCESSOR_MAX_CONCURRENT_TASKS", "3"))
+        _processing_tasks: set[asyncio.Task] = set()
+
         while self.running:
             try:
-                # 监听事件（这里需要根据event_bus的实际接口调整）
+                # 清理已完成的后台任务
+                _processing_tasks = {t for t in _processing_tasks if not t.done()}
+
+                # 等待有空余槽位才读取新消息（背压控制）
+                if len(_processing_tasks) >= _max_concurrent:
+                    await asyncio.sleep(1)
+                    continue
+
                 events = await self._listen_for_events()
-                
+
                 if events:
                     logger.info(f"📨 收到 {len(events)} 个业务事件")
-                    
-                    # 批量处理事件
-                    processing_results = await self._process_events_batch(events)
-                    
-                    # 更新统计
-                    await self._update_business_stats(processing_results)
 
-                    # 确认处理成功的消息
-                    await self._acknowledge_processed_events(events, processing_results)
-                    
+                    # Phase 4F: 后台异步处理，主循环立即回去读下一批
+                    task = asyncio.create_task(self._process_events_batch(events))
+                    _processing_tasks.add(task)
+
+                    # 完成后更新统计
+                    def _on_done(t: asyncio.Task, _events=events) -> None:
+                        try:
+                            results = t.result()
+                            asyncio.create_task(self._update_business_stats(results))
+                        except Exception:
+                            pass
+                    task.add_done_callback(_on_done)
+
                 else:
-                    # 没有事件时
                     if self.business_stats["total_events"] % 10 == 0:
                         logger.info(f"⏳ 等待业务事件... (已处理: {self.business_stats['processed_events']})")
                     await asyncio.sleep(5)
-                    
+
             except asyncio.CancelledError:
                 logger.info("业务处理服务被取消")
                 break
             except Exception as e:
                 logger.error(f"业务处理循环异常: {e}")
                 await asyncio.sleep(5)
+
+        # 等待所有后台任务完成
+        if _processing_tasks:
+            logger.info("等待 %d 个后台处理任务完成...", len(_processing_tasks))
+            await asyncio.gather(*_processing_tasks, return_exceptions=True)
     
     async def _listen_for_events(self) -> List[Dict[str, Any]]:
-        """监听事件 - 从 events_normal Stream消费news.stored事件
+        """监听事件 - 直接从 news_raw Stream消费原始新闻消息
 
         Phase 6A: 连续 N 批消息全部因 run_id 不匹配被过滤时，
                   触发 fast-forward 到 $，避免逐条 ACK 旧消息。
         """
         try:
             if hasattr(self.event_bus, 'consume_from_stream'):
-                # 从独立业务事件流消费，避免与news_raw原始流形成回路
+                # Phase 4F: 直接从 news:raw 消费，跳过废弃的 events:normal 中转
                 messages = await self.event_bus.consume_from_stream(
-                    stream="events_normal",
+                    stream="news_raw",
                     group=self.processor_config["processor_group"],
                     consumer=self.processor_config["processor_name"],
                     count=self.processor_config["batch_size"],
@@ -262,6 +285,9 @@ class NewsStreamProcessor:
 
                     # 检查事件类型是否符合监听类型
                     event_type = event_data.get('event_type')
+                    # Phase 4F: raw news 消息无 event_type，但有 news_id → 视为 "news.stored"
+                    if not event_type and event_data.get('news_id'):
+                        event_type = "news.stored"
                     logger.debug(f"检查事件类型: {event_type}, 监听类型: {self.processor_config['event_types']}")
 
                     if event_type in self.processor_config["event_types"]:
@@ -283,8 +309,11 @@ class NewsStreamProcessor:
                         logger.info(f"✅ 识别到事件: {event_type}, 消息ID: {msg_id}")
                     else:
                         logger.debug(f"不是监听的事件类型: {event_type}")
-                    # 记录所有消息ID用于确认
+                    # Phase 4F: 立即逐条 ack 所有消息，防止 LLM 处理慢导致僵尸消费者
                     message_ids_to_ack.append(msg_id)
+                    if len(message_ids_to_ack) >= 5:
+                        await self._acknowledge_messages(message_ids_to_ack)
+                        message_ids_to_ack.clear()
 
                 # Phase 6A: fast-forward when stuck on stale run_id messages
                 if messages and stale_run_id_count > 0 and stale_run_id_count == len(messages):
@@ -296,7 +325,7 @@ class NewsStreamProcessor:
                         )
                         try:
                             await self.event_bus.redis.xgroup_setid(
-                                self.event_bus._stream_definitions["events_normal"]["key"],
+                                self.event_bus._stream_definitions["news_raw"]["key"],
                                 self.processor_config["processor_group"],
                                 "$",
                             )
@@ -631,6 +660,19 @@ class NewsStreamProcessor:
                 "processing_steps": ["stress_test_blocked"],
                 "results": {"blocked": True, "reason": "stress_test_news_blocked"},
             }
+        # Phase 4F: news:raw 直接消费时，通过 hash news_id 查询 news_raw.id
+        news_row_id = self._resolve_news_row_id(news_data)
+        if news_row_id is None and self.database_gateway and news_id != 'unknown':
+            try:
+                stored = await self.database_gateway.get_news(str(news_id))
+                if stored and stored.get("id"):
+                    news_row_id = int(stored["id"])
+                    news_data["news_row_id"] = news_row_id
+                    news_data["stored_news_id"] = news_row_id
+                    logger.debug(f"🔗 查询到 news_raw.id={news_row_id} for hash={news_id}")
+            except Exception as e:
+                logger.warning(f"查询 news_raw 失败: {news_id}, err={e}")
+
         logger.info(f"🔄 开始处理新闻存储事件: {news_id}")
 
         business_results = {
