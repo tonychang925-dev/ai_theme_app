@@ -103,6 +103,9 @@ class RealTimeNewsCollector:
         self.cls_max_age_minutes = int(self.config.get("cls_max_age_minutes", 10))
         self.cls_max_items = int(self.config.get("cls_max_items", 60))
 
+        # CDP 采集器复用（防止每轮新建实例导致缓存失效/页面加载超时）
+        self._eastmoney_cdp_collector = None
+
         # news_id 短窗口去重（保留作为快速第一层）
         self.dedup_window_seconds = int(self.config.get("collector_dedup_window_seconds", 1800))
         self._recent_news_ids: Dict[str, float] = {}
@@ -695,17 +698,19 @@ class RealTimeNewsCollector:
                 from news_crawler_service.collectors.cls_cdp import (
                     ClsCdpCollector, KUXUN_URL, KUXUN_EXTRACTION_JS,
                 )
-                em_collector = ClsCdpCollector(
-                    cdp_port=9224,
-                    url=KUXUN_URL,
-                    extraction_js=KUXUN_EXTRACTION_JS,
-                    source_name="eastmoney_kuaixun",
-                    cache_max_age=60,
-                    content_min_length=200,
-                )
+                # 复用 CDP 采集器实例以避免每轮新建导致缓存失效 → 全量页面加载 → 30s 超时
+                if self._eastmoney_cdp_collector is None:
+                    self._eastmoney_cdp_collector = ClsCdpCollector(
+                        cdp_port=9224,
+                        url=KUXUN_URL,
+                        extraction_js=KUXUN_EXTRACTION_JS,
+                        source_name="eastmoney_kuaixun",
+                        cache_max_age=300,  # 对齐采集间隔，避免过期导致全量加载
+                        content_min_length=200,
+                    )
                 em_df = await asyncio.wait_for(
-                    asyncio.to_thread(em_collector.fetch_df, limit=30),
-                    timeout=35,
+                    asyncio.to_thread(self._eastmoney_cdp_collector.fetch_df, limit=30),
+                    timeout=45,  # 首轮可能需全量加载，给足时间
                 )
                 if em_df is not None and not em_df.empty:
                     for _, row in em_df.iterrows():

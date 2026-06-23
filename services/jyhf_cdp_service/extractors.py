@@ -437,3 +437,106 @@ class NewEventExtractor:
         )
         payload = json.loads(raw) if isinstance(raw, str) else (raw or {})
         return payload.get("events") or [], str(payload.get("feed_date") or ""), str(payload.get("body_text") or "")
+
+
+class ReviewSubjectDetailExtractor:
+    """Extract full DOM content from JYHF review/lising subject pages.
+
+    When a popup or hook notification captures a review-type subject
+    (e.g. 连板复盘, 热门题材复盘, 龙虎榜), the notification URL only
+    carries the subject_id and name — NO driver event body.  This
+    extractor navigates CDP into the subject detail page and reads the
+    full rendered DOM text, which contains the stock ranking table.
+
+    Review subjects detected by name pattern::
+
+        REVIEW_KEYWORDS = ['连板复盘', '热门题材复盘', '龙虎榜',
+                           '涨停复盘', '盘前必读', '题材掘金', '题材排名']
+
+    Usage (after popup/hook captures a review subject)::
+
+        extractor = ReviewSubjectDetailExtractor()
+        body_text = extractor.extract(cdp, subject_key='9068870',
+                                      subject_name='6月23日连板复盘')
+        description = extractor.format_description(subject_name, body_text)
+    """
+
+    REVIEW_KEYWORDS = [
+        "连板复盘", "热门题材复盘", "龙虎榜",
+        "涨停复盘", "盘前必读", "题材掘金", "题材排名",
+        "涨停榜", "题材轮动", "题材挖掘榜",
+    ]
+
+    @staticmethod
+    def is_review_subject(subject_name: str) -> bool:
+        """Return True if the subject is a review/listing page needing deep extraction."""
+        if not subject_name:
+            return False
+        for kw in ReviewSubjectDetailExtractor.REVIEW_KEYWORDS:
+            if kw in subject_name:
+                return True
+        return False
+
+    def extract(
+        self, cdp: CDPClient, *, subject_key: str, subject_name: str,
+    ) -> str | None:
+        """Navigate to the subject detail page and return the body innerText.
+
+        Returns None if navigation or extraction fails.
+        """
+        import time as _time
+
+        try:
+            # Navigate to subject detail page via Vue Router
+            result = cdp.evaluate(
+                f"""(function() {{
+    try {{
+        var app = document.querySelector('#app');
+        if (app && app.__vue_app__) {{
+            app.__vue_app__.config.globalProperties.$router.push(
+                '/subject/detail/{subject_key}/vip-table');
+            return 'router_ok';
+        }}
+    }} catch(e) {{}}
+    window.location.hash = '#/subject/detail/{subject_key}/vip-table';
+    return 'hash_ok';
+}})()""",
+                timeout=8.0,
+            )
+
+            # Wait for page render (review subjects need time for stock tables)
+            for _ in range(20):  # up to 10s wait
+                _time.sleep(0.5)
+                try:
+                    loc = cdp.evaluate("window.location.hash", timeout=2.0)
+                    if isinstance(loc, str) and subject_key in loc:
+                        body = cdp.evaluate("document.body.innerText", timeout=3.0)
+                        if isinstance(body, str) and len(body) > 100:
+                            return body
+                except Exception:
+                    pass
+
+            # Final attempt
+            body = cdp.evaluate("document.body.innerText", timeout=5.0)
+            if isinstance(body, str) and len(body) > 50:
+                return body
+            return None
+
+        except Exception:
+            return None
+
+    @staticmethod
+    def format_description(subject_name: str, body_text: str) -> str:
+        """Format extracted DOM body text into a frontend-displayable description.
+
+        Truncates to ~2000 chars to fit subject_history_staging.description.
+        """
+        if not body_text:
+            return f"{subject_name}"
+
+        # Keep only the first 2000 chars (description field is TEXT, not unlimited)
+        clean = body_text.strip()
+        if len(clean) > 2000:
+            clean = clean[:2000] + "…"
+
+        return f"{subject_name}\n\n{clean}"

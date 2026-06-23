@@ -230,7 +230,7 @@ class DatabaseManagerFactory:
         Returns:
             数据库客户端实例
         """
-        from client import DatabaseClient
+        from database_service.client import DatabaseClient
         
         manager = await cls.create_manager(config, enable_streams)
         client = DatabaseClient(manager)

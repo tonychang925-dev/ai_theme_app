@@ -18,6 +18,7 @@ from services.jyhf_cdp_service.extractors import (
     NotificationPopupExtractor,
     PersistentHookInjector,
     PrepareRetryError,
+    ReviewSubjectDetailExtractor,
 )
 from services.jyhf_cdp_service.intel_pusher import IntelPusher
 from services.jyhf_cdp_service.normalizer import JyhfEventNormalizer
@@ -44,6 +45,7 @@ class JyhfCdpCollectorService:
         self._extractor = NewEventExtractor()
         self._popup_extractor = NotificationPopupExtractor()
         self._hook_injector = PersistentHookInjector()
+        self._review_extractor = ReviewSubjectDetailExtractor()
         self._normalizer = JyhfEventNormalizer()
         self._sink = RawEventJsonlSink(config.raw_event_dir)
         self._intel_pusher = IntelPusher(config, logger) if config.allow_push_intel else None
@@ -245,6 +247,57 @@ class JyhfCdpCollectorService:
                                 popup_evs[0].get("subject_name"),
                                 popup_evs[0].get("subject_key"),
                             )
+                except Exception:
+                    pass
+
+                # ── Phase 2.5: Review subject deep extraction ──
+                # 复盘类主体（连板复盘/热门题材复盘/龙虎榜 等）的弹窗
+                # URL 不含 driver event body，需 CDP 导航到主体详情页
+                # 提取完整 DOM 内容（股票排行表格）。
+                # Must run BEFORE raw_events are queued so enriched fields
+                # reach _write_popup_rows_to_staging.
+                try:
+                    review_subjects = [
+                        e for e in raw_events
+                        if ReviewSubjectDetailExtractor.is_review_subject(
+                            str(e.get("subject_name", ""))
+                        )
+                    ]
+                    if review_subjects:
+                        self._logger.info(
+                            "review subjects detected: %s",
+                            [e.get("subject_name") for e in review_subjects],
+                        )
+                        for ev in review_subjects:
+                            sid = str(ev.get("subject_key", ""))
+                            sn = str(ev.get("subject_name", ""))
+                            if not sid or not sn:
+                                continue
+                            try:
+                                body_text = self._review_extractor.extract(
+                                    cdp, subject_key=sid, subject_name=sn,
+                                )
+                                if body_text:
+                                    full_desc = self._review_extractor.format_description(
+                                        sn, body_text,
+                                    )
+                                    ev["driver_desc"] = full_desc
+                                    ev["driver_title"] = sn
+                                    self._logger.info(
+                                        "review detail extracted: %s (%d chars)",
+                                        sn, len(body_text),
+                                    )
+                                    # Also enrich via _fetch_subject_stocks to get
+                                    # API-level stock detail (rank, pct_chg, etc.)
+                                    # for the subject_history_staging entry.
+                                else:
+                                    self._logger.warning(
+                                        "review detail extraction returned empty: %s", sn,
+                                    )
+                            except Exception as exc:
+                                self._logger.exception(
+                                    "review detail extraction failed: %s", exc,
+                                )
                 except Exception:
                     pass
 
