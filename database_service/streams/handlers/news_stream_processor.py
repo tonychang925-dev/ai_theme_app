@@ -661,17 +661,27 @@ class NewsStreamProcessor:
                 "results": {"blocked": True, "reason": "stress_test_news_blocked"},
             }
         # Phase 4F: news:raw 直接消费时，通过 hash news_id 查询 news_raw.id
+        # 若 news_raw 中尚不存在（StorageHandler 延迟/卡死），Processor 主动调用
+        # create_news 写入，保证后续 news_event.news_id 不为 NULL。
         news_row_id = self._resolve_news_row_id(news_data)
         if news_row_id is None and self.database_gateway and news_id != 'unknown':
             try:
                 stored = await self.database_gateway.get_news(str(news_id))
                 if stored and stored.get("id"):
                     news_row_id = int(stored["id"])
+                else:
+                    logger.info("📝 news_raw 中未找到 %s，Processor 主动写入", news_id)
+                    created = await self.database_gateway.create_news(news_data)
+                    if created:
+                        stored = await self.database_gateway.get_news(str(news_id))
+                        if stored and stored.get("id"):
+                            news_row_id = int(stored["id"])
+                            logger.info("✅ Processor 主动写入 news_raw 成功: id=%d hash=%s", news_row_id, news_id)
+                if news_row_id is not None:
                     news_data["news_row_id"] = news_row_id
                     news_data["stored_news_id"] = news_row_id
-                    logger.debug(f"🔗 查询到 news_raw.id={news_row_id} for hash={news_id}")
             except Exception as e:
-                logger.warning(f"查询 news_raw 失败: {news_id}, err={e}")
+                logger.warning(f"查询/创建 news_raw 失败: news_id=%s err=%s", news_id, e)
 
         logger.info(f"🔄 开始处理新闻存储事件: {news_id}")
 
@@ -700,6 +710,12 @@ class NewsStreamProcessor:
                     triage_decision,
                     triage_result.get("reason_code") or triage_result.get("reason"),
                 )
+                # 当 triage_block_on_skip 开启且决策为 SKIP/DUPLICATE 时，
+                # 完全不落库也不发布，直接丢弃低质量事件。
+                if self.processor_config.get("triage_block_on_skip") and triage_decision in {"SKIP", "DUPLICATE"}:
+                    logger.info("🚫 triage_block_on_skip: 丢弃低质量事件 %s decision=%s", news_id, triage_decision)
+                    business_results["processing_steps"].append("triage_blocked")
+                    return business_results
                 basic_structured_event = {
                     "news_id": self._resolve_news_row_id(news_data),
                     "event_type": "news.stored",
@@ -874,7 +890,10 @@ class NewsStreamProcessor:
                 logger.info(
                     f"🔄 调用 _persist_and_publish_structured_event: 标识={fallback_news_display_id}, news_row_id={fallback_news_row_id}"
                 )
-                persistence = await self._persist_and_publish_structured_event(basic_structured_event)
+                persistence = await self._persist_and_publish_structured_event(
+                    basic_structured_event,
+                    publish_stream=False,  # AI fallback 不可信，不发布到 structured stream
+                )
                 logger.info(f"🔄 _persist_and_publish_structured_event 返回: {persistence}")
 
                 business_results["results"]["structured_event"] = basic_structured_event

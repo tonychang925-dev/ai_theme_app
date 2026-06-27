@@ -1,0 +1,674 @@
+{
+  "trade_date": "2026-06-24",
+  "title": "6月24日热门题材复盘",
+  "columns": [
+    {
+      "subject_key": "",
+      "theme_name": "AI算力基础设施",
+      "limit_up_count": 16,
+      "board_groups": [
+        {
+          "board_count": 4,
+          "board_label": "4连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 3,
+          "board_label": "3连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 2,
+          "board_label": "2连板",
+          "stock_count": 1,
+          "stocks": [
+            {
+              "stock_id": "002580",
+              "stock_name": "圣阳股份",
+              "board_count": 2
+            }
+          ]
+        },
+        {
+          "board_count": 1,
+          "board_label": "首板",
+          "stock_count": 15,
+          "stocks": [
+            {
+              "stock_id": "002289",
+              "stock_name": "*ST宇顺",
+              "board_count": 1
+            },
+            {
+              "stock_id": "600289",
+              "stock_name": "ST信通",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002051",
+              "stock_name": "中工国际",
+              "board_count": 1
+            },
+            {
+              "stock_id": "600141",
+              "stock_name": "兴发集团",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002354",
+              "stock_name": "天娱数科",
+              "board_count": 1
+            },
+            {
+              "stock_id": "301396",
+              "stock_name": "宏景科技",
+              "board_count": 1
+            },
+            {
+              "stock_id": "605020",
+              "stock_name": "永和股份",
+              "board_count": 1
+            },
+            {
+              "stock_id": "600563",
+              "stock_name": "法拉电子",
+              "board_count": 1
+            },
+            {
+              "stock_id": "000967",
+              "stock_name": "盈峰环境",
+              "board_count": 1
+            },
+            {
+              "stock_id": "603045",
+              "stock_name": "福达合金",
+              "board_count": 1
+            },
+            {
+              "stock_id": "603989",
+              "stock_name": "艾华集团",
+              "board_count": 1
+            },
+            {
+              "stock_id": "003018",
+              "stock_name": "金富科技",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002452",
+              "stock_name": "长高电气",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002600",
+              "stock_name": "领益智造",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002536",
+              "stock_name": "飞龙股份",
+              "board_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_key": "",
+      "theme_name": "AI光通信",
+      "limit_up_count": 14,
+      "board_groups": [
+        {
+          "board_count": 4,
+          "board_label": "4连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 3,
+          "board_label": "3连板",
+          "stock_count": 1,
+          "stocks": [
+            {
+              "stock_id": "603938",
+              "stock_name": "三孚股份",
+              "board_count": 3
+            }
+          ]
+        },
+        {
+          "board_count": 2,
+          "board_label": "2连板",
+          "stock_count": 1,
+          "stocks": [
+            {
+              "stock_id": "605366",
+              "stock_name": "宏柏新材",
+              "board_count": 2
+            }
+          ]
+        },
+        {
+          "board_count": 1,
+          "board_label": "首板",
+          "stock_count": 12,
+          "stocks": [
+            {
+              "stock_id": "600703",
+              "stock_name": "三安光电",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002428",
+              "stock_name": "云南锗业",
+              "board_count": 1
+            },
+            {
+              "stock_id": "603083",
+              "stock_name": "剑桥科技",
+              "board_count": 1
+            },
+            {
+              "stock_id": "603203",
+              "stock_name": "快克智能",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002897",
+              "stock_name": "意华股份",
+              "board_count": 1
+            },
+            {
+              "stock_id": "600596",
+              "stock_name": "新安股份",
+              "board_count": 1
+            },
+            {
+              "stock_id": "600105",
+              "stock_name": "永鼎股份",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002254",
+              "stock_name": "泰和新材",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002025",
+              "stock_name": "航天电器",
+              "board_count": 1
+            },
+            {
+              "stock_id": "000818",
+              "stock_name": "航锦科技",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002491",
+              "stock_name": "通鼎互联",
+              "board_count": 1
+            },
+            {
+              "stock_id": "600584",
+              "stock_name": "长电科技",
+              "board_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_key": "",
+      "theme_name": "PCB/HBM产业链",
+      "limit_up_count": 10,
+      "board_groups": [
+        {
+          "board_count": 4,
+          "board_label": "4连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 3,
+          "board_label": "3连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 2,
+          "board_label": "2连板",
+          "stock_count": 1,
+          "stocks": [
+            {
+              "stock_id": "002584",
+              "stock_name": "西陇科学",
+              "board_count": 2
+            }
+          ]
+        },
+        {
+          "board_count": 1,
+          "board_label": "首板",
+          "stock_count": 9,
+          "stocks": [
+            {
+              "stock_id": "301366",
+              "stock_name": "一博科技",
+              "board_count": 1
+            },
+            {
+              "stock_id": "600176",
+              "stock_name": "中国巨石",
+              "board_count": 1
+            },
+            {
+              "stock_id": "600226",
+              "stock_name": "亨通股份",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002552",
+              "stock_name": "宝鼎科技",
+              "board_count": 1
+            },
+            {
+              "stock_id": "001359",
+              "stock_name": "平安电工",
+              "board_count": 1
+            },
+            {
+              "stock_id": "301132",
+              "stock_name": "满坤科技",
+              "board_count": 1
+            },
+            {
+              "stock_id": "000823",
+              "stock_name": "超声电子",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002409",
+              "stock_name": "雅克科技",
+              "board_count": 1
+            },
+            {
+              "stock_id": "603386",
+              "stock_name": "骏亚科技",
+              "board_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_key": "",
+      "theme_name": "ST摘帽/重整/国资",
+      "limit_up_count": 9,
+      "board_groups": [
+        {
+          "board_count": 4,
+          "board_label": "4连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 3,
+          "board_label": "3连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 2,
+          "board_label": "2连板",
+          "stock_count": 1,
+          "stocks": [
+            {
+              "stock_id": "600909",
+              "stock_name": "华安证券",
+              "board_count": 2
+            }
+          ]
+        },
+        {
+          "board_count": 1,
+          "board_label": "首板",
+          "stock_count": 8,
+          "stocks": [
+            {
+              "stock_id": "002713",
+              "stock_name": "*ST东易",
+              "board_count": 1
+            },
+            {
+              "stock_id": "000838",
+              "stock_name": "*ST发展",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002822",
+              "stock_name": "ST中装",
+              "board_count": 1
+            },
+            {
+              "stock_id": "300506",
+              "stock_name": "名家汇",
+              "board_count": 1
+            },
+            {
+              "stock_id": "600667",
+              "stock_name": "太极实业",
+              "board_count": 1
+            },
+            {
+              "stock_id": "603001",
+              "stock_name": "奥康国际",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002427",
+              "stock_name": "尤夫股份",
+              "board_count": 1
+            },
+            {
+              "stock_id": "000908",
+              "stock_name": "景峰医药",
+              "board_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_key": "",
+      "theme_name": "机器人",
+      "limit_up_count": 7,
+      "board_groups": [
+        {
+          "board_count": 4,
+          "board_label": "4连板",
+          "stock_count": 1,
+          "stocks": [
+            {
+              "stock_id": "002674",
+              "stock_name": "兴业科技",
+              "board_count": 4
+            }
+          ]
+        },
+        {
+          "board_count": 3,
+          "board_label": "3连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 2,
+          "board_label": "2连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 1,
+          "board_label": "首板",
+          "stock_count": 6,
+          "stocks": [
+            {
+              "stock_id": "002046",
+              "stock_name": "国机精工",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002943",
+              "stock_name": "宇晶股份",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002520",
+              "stock_name": "日发精机",
+              "board_count": 1
+            },
+            {
+              "stock_id": "001339",
+              "stock_name": "智微智能",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002990",
+              "stock_name": "盛视科技",
+              "board_count": 1
+            },
+            {
+              "stock_id": "301310",
+              "stock_name": "鑫宏业",
+              "board_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_key": "",
+      "theme_name": "先进材料/固态电池",
+      "limit_up_count": 5,
+      "board_groups": [
+        {
+          "board_count": 4,
+          "board_label": "4连板",
+          "stock_count": 2,
+          "stocks": [
+            {
+              "stock_id": "002167",
+              "stock_name": "东方锆业",
+              "board_count": 4
+            },
+            {
+              "stock_id": "603407",
+              "stock_name": "长裕集团",
+              "board_count": 4
+            }
+          ]
+        },
+        {
+          "board_count": 3,
+          "board_label": "3连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 2,
+          "board_label": "2连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 1,
+          "board_label": "首板",
+          "stock_count": 3,
+          "stocks": [
+            {
+              "stock_id": "603595",
+              "stock_name": "ST东尼",
+              "board_count": 1
+            },
+            {
+              "stock_id": "003043",
+              "stock_name": "华亚智能",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002240",
+              "stock_name": "盛新锂能",
+              "board_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_key": "",
+      "theme_name": "商业航天/军工",
+      "limit_up_count": 4,
+      "board_groups": [
+        {
+          "board_count": 4,
+          "board_label": "4连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 3,
+          "board_label": "3连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 2,
+          "board_label": "2连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 1,
+          "board_label": "首板",
+          "stock_count": 4,
+          "stocks": [
+            {
+              "stock_id": "605598",
+              "stock_name": "上海港湾",
+              "board_count": 1
+            },
+            {
+              "stock_id": "000925",
+              "stock_name": "众合科技",
+              "board_count": 1
+            },
+            {
+              "stock_id": "603678",
+              "stock_name": "火炬电子",
+              "board_count": 1
+            },
+            {
+              "stock_id": "600877",
+              "stock_name": "电科芯片",
+              "board_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_key": "",
+      "theme_name": "有色资源/小金属",
+      "limit_up_count": 4,
+      "board_groups": [
+        {
+          "board_count": 4,
+          "board_label": "4连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 3,
+          "board_label": "3连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 2,
+          "board_label": "2连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 1,
+          "board_label": "首板",
+          "stock_count": 4,
+          "stocks": [
+            {
+              "stock_id": "605277",
+              "stock_name": "新亚电子",
+              "board_count": 1
+            },
+            {
+              "stock_id": "603399",
+              "stock_name": "永杉锂业",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002192",
+              "stock_name": "融捷股份",
+              "board_count": 1
+            },
+            {
+              "stock_id": "002497",
+              "stock_name": "雅化集团",
+              "board_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subject_key": "",
+      "theme_name": "创新药/医疗",
+      "limit_up_count": 3,
+      "board_groups": [
+        {
+          "board_count": 4,
+          "board_label": "4连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 3,
+          "board_label": "3连板",
+          "stock_count": 0,
+          "stocks": []
+        },
+        {
+          "board_count": 2,
+          "board_label": "2连板",
+          "stock_count": 1,
+          "stocks": [
+            {
+              "stock_id": "000566",
+              "stock_name": "海南海药",
+              "board_count": 2
+            }
+          ]
+        },
+        {
+          "board_count": 1,
+          "board_label": "首板",
+          "stock_count": 2,
+          "stocks": [
+            {
+              "stock_id": "002550",
+              "stock_name": "千红制药",
+              "board_count": 1
+            },
+            {
+              "stock_id": "688593",
+              "stock_name": "新相微",
+              "board_count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "board_totals": {
+    "4": 3,
+    "3": 1,
+    "2": 5,
+    "1": 63
+  },
+  "market_board_totals": {
+    "4": 3,
+    "3": 1,
+    "2": 5,
+    "1": 63
+  }
+}

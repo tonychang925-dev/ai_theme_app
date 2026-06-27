@@ -241,3 +241,17 @@ class DatabaseClient:
         except Exception as e:
             logger.error(f"健康检查失败: {e}")
             return False
+
+    # ── 透传方法：DatabaseGateway 通过 _client 调用 ──
+
+    async def get_news(self, news_id: str) -> Optional[Dict[str, Any]]:
+        """透传 get_news → 解决 _reconnect 后 _client 被替换为 DatabaseClient 的问题"""
+        if hasattr(self._db, "get_news"):
+            return await self._db.get_news(news_id)
+        raise NotImplementedError("underlying manager missing get_news")
+
+    async def create_news_event(self, event_data: Dict[str, Any]) -> Optional[int]:
+        """透传 create_news_event → 解决 _reconnect 后 _client 被替换为 DatabaseClient 的问题"""
+        if hasattr(self._db, "create_news_event"):
+            return await self._db.create_news_event(event_data)
+        raise NotImplementedError("underlying manager missing create_news_event")

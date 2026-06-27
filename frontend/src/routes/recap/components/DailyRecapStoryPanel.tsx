@@ -12,6 +12,7 @@ import type {
 } from "../../../lib/api";
 import { navigateTo } from "../../../lib/navigation";
 import MarketOverviewPanel from "./MarketOverviewPanel";
+import JyhfThemeRecapPanel from "./JyhfThemeRecapPanel";
 
 interface Props {
   essentials?: DailyRecapEssentials | null;

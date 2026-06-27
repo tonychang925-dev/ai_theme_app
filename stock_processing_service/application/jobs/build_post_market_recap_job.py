@@ -728,7 +728,7 @@ class BuildPostMarketRecapJob:
             # ── P0-2: readiness guard — 核心表为空时拒绝写快照 ──
             readiness = await self._check_post_market_readiness(trade_date)
             recap_doc.setdefault("diagnostics", {})["readiness"] = readiness
-            if readiness["status"] != "ready":
+            if not skip_prereqs and readiness["status"] != "ready":
                 await self._mark_job_status(trade_date, "post_market_recap_generate", "failed_precondition",
                     error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
                     diagnostics={"readiness": readiness, "snapshot_version": snapshot_version})

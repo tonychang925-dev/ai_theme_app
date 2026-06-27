@@ -78,10 +78,10 @@ RECAP_TYPE_POST_MARKET = "post_market"
 RECAP_TYPE_PRE_MARKET = "pre_market"
 
 
-async def _proxy_stock_processing_json(path: str, params: dict[str, str]) -> dict:
+async def _proxy_stock_processing_json(path: str, params: dict[str, str], timeout: float = 30.0) -> dict:
     url = f"{STOCK_PROCESSING_BASE_URL}{path}"
     try:
-        async with httpx.AsyncClient(timeout=15.0, trust_env=False) as http:
+        async with httpx.AsyncClient(timeout=timeout, trust_env=False) as http:
             resp = await http.get(url, params=params)
             resp.raise_for_status()
             data = resp.json()
@@ -579,6 +579,7 @@ async def daily_review_v2(date: str = Query(..., description="YYYY-MM-DD")) -> d
     return await _proxy_stock_processing_json(
         "/api/v2/daily-review-v2",
         {"date": date},
+        timeout=120.0,
     )
 
 

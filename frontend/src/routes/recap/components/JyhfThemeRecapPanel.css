@@ -1,0 +1,205 @@
+/* ================================================================
+   JyhfThemeRecapPanel — 模仿久赢恒丰 App 题材复盘面板
+   ================================================================ */
+
+.jyhf-recap-panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 16px;
+  margin: 16px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* ---- 标题区 ---- */
+.jyhf-header {
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.jyhf-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+.jyhf-subtitle {
+  font-size: 13px;
+  color: #999;
+  margin-top: 4px;
+}
+
+/* ---- 矩阵容器 ---- */
+.jyhf-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.jyhf-row {
+  display: grid;
+  grid-template-columns: 120px 56px repeat(4, 1fr);
+  gap: 1px;
+  background: #f5f5f5;
+  min-height: 44px;
+}
+
+.jyhf-row > div {
+  background: #fff;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ---- 表头 ---- */
+.jyhf-head-row {
+  background: #fafafa;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.jyhf-head-row > div {
+  background: #fafafa;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px 4px;
+}
+
+/* ---- 列定义 ---- */
+.jyhf-theme-col {
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding-left: 12px !important;
+}
+
+.jyhf-pct-col {
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center;
+}
+
+.jyhf-board-col {
+  align-items: flex-start !important;
+  padding: 4px 4px !important;
+}
+
+/* ---- 主题名 ---- */
+.jyhf-theme-link {
+  background: none;
+  border: none;
+  color: #1a6dd4;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 110px;
+}
+
+.jyhf-theme-link:hover {
+  color: #0d4fa8;
+  text-decoration: underline;
+}
+
+.jyhf-theme-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* ---- 涨幅 ---- */
+.jyhf-pct-up {
+  color: #e03030;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ---- 股票列表 ---- */
+.jyhf-stock-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.jyhf-stock-chip {
+  background: #f0f5ff;
+  border: 1px solid #d6e4ff;
+  border-radius: 4px;
+  color: #1a6dd4;
+  font-size: 12px;
+  padding: 2px 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.jyhf-stock-chip:hover {
+  background: #d6e4ff;
+  border-color: #91b8f5;
+}
+
+.jyhf-empty {
+  color: #ccc;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+/* ---- 底部统计 ---- */
+.jyhf-footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.jyhf-footer-chip {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* ---- 响应式：移动端优化 ---- */
+@media (max-width: 768px) {
+  .jyhf-row {
+    grid-template-columns: 80px 48px repeat(4, 1fr);
+  }
+
+  .jyhf-theme-link {
+    font-size: 12px;
+    max-width: 70px;
+  }
+
+  .jyhf-pct-up {
+    font-size: 11px;
+  }
+
+  .jyhf-stock-chip {
+    font-size: 10px;
+    padding: 1px 4px;
+  }
+
+  .jyhf-recap-panel {
+    padding: 12px 8px;
+  }
+}

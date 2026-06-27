@@ -1058,3 +1058,133 @@ M3 完成后，再进入前端与更多数据源：
 | 是否改变涨停判定口径 | 否 | 保持 `stock_daily_snapshot` 真源稳定 |
 | P0 后是否立即做前端 | 否 | 先做 M3 数据源治理，降低后续多数据源接入债务 |
 | P0 后是否立即接研报 | 否 | 研报价值高但不是当前最短板；先标准化 registry/http 基建 |
+
+---
+
+## 16. M7 Weight Auto-Calibration Engine（系统自进化层）
+
+### 16.1 定位
+
+M7 是在 M3–M6 完整闭环基础上的“参数自优化层”，用于将系统从：
+
+- 固定权重模型 → 自适应市场模型
+
+升级为：
+
+- 可根据市场误差自动修正权重的认知系统
+
+---
+
+### 16.2 总体结构
+
+```text
+M7a Market Truth Layer
+M7b Error Diagnosis Layer
+M7c Weight Auto-Calibration Engine
+```
+
+---
+
+### 16.3 M7a Market Truth Layer
+
+职责：
+
+- 收集真实市场结果（涨幅、连板、资金、板块强度）
+- 输出标准化 MarketTruth object
+
+核心字段：
+
+- return_score
+- limitup_hit
+- board_strength
+- money_flow
+- leader_stability
+
+---
+
+### 16.4 M7b Error Diagnosis Layer
+
+职责：
+
+对比：
+
+- M6预测（ThemeStrength + LeaderScore）
+vs
+- M7a真实市场
+
+输出误差结构：
+
+- theme_bias_map
+- source_bias_map
+- rank_error
+- strength_error
+
+---
+
+### 16.5 M7c Weight Auto-Calibration Engine（核心）
+
+#### 🎯 目标
+
+根据 M7b 自动调整 M4–M6 权重。
+
+---
+
+#### ① Source Weight Calibration
+
+```python
+if source_bias > 0.1:
+    weight[source] -= 0.02
+elif source_bias < -0.1:
+    weight[source] += 0.02
+```
+
+---
+
+#### ② Theme Weight Calibration
+
+```text
+overestimate → EPS / Research ↓
+underestimate → Eastmoney ↑
+```
+
+---
+
+#### ③ Stability Feedback Calibration
+
+```text
+high_stability_low_return → anchor ↑
+high_drift_high_return → event ↑
+```
+
+---
+
+### 16.6 权重约束
+
+- 单次调整 ≤ 0.03
+- 总权重归一化
+- EPS + Research 不可同时大幅下降
+- anchor ≥ 0.15
+
+---
+
+### 16.7 输出
+
+```json
+{
+  "updated_weights": {},
+  "delta": {},
+  "reason": "market_bias_correction"
+}
+```
+
+---
+
+### 16.8 系统意义
+
+M7 使系统具备：
+
+- 自我纠错能力
+- 权重随市场结构漂移
+- 长期稳定性增强
+
+---

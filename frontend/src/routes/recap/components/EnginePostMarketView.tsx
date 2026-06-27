@@ -1,13 +1,10 @@
 import type { PostMarketDailyReviewV2 } from "../../../lib/api";
 import LayerCStrongPoolPanel from "./LayerCStrongPoolPanel";
-import MainlineStateBoard from "./MainlineStateBoard";
 import MainlineNarrativePanel from "./MainlineNarrativePanel";
 import MarketOverviewNarrativePanel from "./MarketOverviewNarrativePanel";
 import MarketRegimePanel from "./MarketRegimePanel";
-import D1NarrativePanel from "./D1NarrativePanel";
 import EvidenceLayerPanel from "./EvidenceLayerPanel";
 import RecapDataQualityBar from "./RecapDataQualityBar";
-import D1NextDayWatchPanel from "./D1NextDayWatchPanel";
 import OneToTwoWatchPanel from "./OneToTwoWatchPanel";
 import DailyRecapStoryPanel from "./DailyRecapStoryPanel";
 
@@ -58,15 +55,14 @@ export default function EnginePostMarketView({ dailyReviewV2, tradeDate, subject
           </div>
         </section>
 
-        <section className="workspace-card recap-engine-group">
-          <h3 className="section-title recap-panel-title">主线概览</h3>
-          <div className="recap-engine-group-stack">
-            <MainlineNarrativePanel narrative={dailyReviewV2.mainline_narrative ?? null} />
-            {(dailyReviewV2.mainline_daily_states?.length ?? 0) > 0 && (
-              <MainlineStateBoard rows={dailyReviewV2.mainline_daily_states!} tradeDate={tradeDate} />
-            )}
-          </div>
-        </section>
+        {dailyReviewV2.mainline_narrative && (
+          <section className="workspace-card recap-engine-group">
+            <h3 className="section-title recap-panel-title">主线概览</h3>
+            <div className="recap-engine-group-stack">
+              <MainlineNarrativePanel narrative={dailyReviewV2.mainline_narrative} />
+            </div>
+          </section>
+        )}
 
         <section className="workspace-card recap-engine-group">
           <h3 className="section-title recap-panel-title">强股与证据</h3>

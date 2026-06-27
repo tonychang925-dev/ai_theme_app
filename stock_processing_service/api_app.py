@@ -2167,6 +2167,42 @@ async def _build_one_to_two_watchlists(trade_date: date) -> dict[str, Any]:
     return {"one_to_two": {"summary": summary, "items": items, "diagnostics": diagnostics}}
 
 
+def _trim_daily_review_v2_response(v2: dict[str, Any]) -> dict[str, Any]:
+    """裁剪 daily-review-v2 响应中的冗余数据，减少传输体积。
+
+    主要优化：
+    1. 剔除 f10_capital 大字段（每只股票 ~14KB）
+    2. 去除 limit_up_theme_matrix 中与 columns 完全重复的 visible_columns
+    3. 去除 non_mainline_columns（前端不需要）
+    """
+    # 1. money_flow_reviews: 剔除每项的 f10_capital
+    for item in v2.get("money_flow_reviews") or []:
+        if isinstance(item, dict):
+            item.pop("f10_capital", None)
+
+    # 2. stock_capital_reviews: 同上
+    for item in v2.get("stock_capital_reviews") or []:
+        if isinstance(item, dict):
+            item.pop("f10_capital", None)
+
+    # 3. limit_up_theme_matrix: 去重
+    mtx = v2.get("limit_up_theme_matrix")
+    if isinstance(mtx, dict):
+        mtx.pop("visible_columns", None)
+        mtx.pop("non_mainline_columns", None)
+
+    # 4. strong_stock_pool_reviews 可能也很大，但先保留
+    pdv2 = v2.get("post_market_decision_v2")
+    if isinstance(pdv2, dict) and isinstance(pdv2.get("strong_stock_pool_reviews"), list):
+        # 保留必要字段，剔除冗余 JSON
+        for item in pdv2["strong_stock_pool_reviews"]:
+            if isinstance(item, dict):
+                item.pop("raw_source", None)
+                item.pop("debug_context", None)
+
+    return v2
+
+
 @app.get("/api/v1/daily_review")
 async def get_daily_review(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
     """结构化每日复盘 — 从 post_market_recap_snapshot 派生。
@@ -2293,6 +2329,9 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
     v2 = await _enrich_v2_theme_names(v2, d)
 
     v2["watchlists"] = await _build_one_to_two_watchlists(d)
+
+    # ── 响应瘦身：裁剪前端不需要的冗余数据 ──
+    v2 = _trim_daily_review_v2_response(v2)
 
     return v2
 

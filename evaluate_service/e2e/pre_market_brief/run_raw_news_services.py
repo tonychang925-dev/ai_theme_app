@@ -91,9 +91,9 @@ async def run_services(args: argparse.Namespace) -> None:
             "enable_ai_analysis": True,
             "enable_local_triage": True,
             "triage_mode": "hybrid",
-            "triage_block_on_skip": False,
-            "triage_pass_threshold": 0.03,
-            "triage_skip_threshold": -0.02,
+            "triage_block_on_skip": True,
+            "triage_pass_threshold": 0.10,
+            "triage_skip_threshold": 0.0,
             "batch_processing": True,
             "batch_size": args.batch_size,
             # Phase 4F: 实时生产不设 run_id 过滤，所有消息均需处理
