@@ -4631,6 +4631,20 @@ async def get_theme_workspace(
             def _norm_sid(raw: str) -> str:
                 return raw.strip().upper().rsplit(".", 1)[0] if "." in raw else raw.strip().upper()
 
+            # Helper: format trade amount for display (e.g. 42.02亿, 1.36亿)
+            def _format_amount(amount) -> str | None:
+                if amount is None:
+                    return None
+                try:
+                    v = float(amount)
+                except (TypeError, ValueError):
+                    return None
+                if v >= 1e8:
+                    return f"{v / 1e8:.2f}亿"
+                if v >= 1e4:
+                    return f"{v / 1e4:.2f}万"
+                return f"{v:.2f}"
+
             # Helper: fetch stocks for a child subject, scoped to parent's stocks
             async def _fetch_stocks(sk: str, sn: str, parent_stock_ids: set[str] | None = None) -> list[dict]:
                 """Fetch stocks for a child subject.  When *parent_stock_ids* is
@@ -4762,10 +4776,11 @@ async def get_theme_workspace(
             if direct_stocks:
                 graph["uncategorized_stocks"].extend(direct_stocks)
             # Fallback: when child_stock_reason and stock_map are both empty
-            # for this subject, pull stocks from subject_stock_staging directly
+            # for this subject, pull stocks from subject_stock_staging directly,
+            # including evidence_json financial data (amount, pct_chg, vol, etc.)
             if not root_children and not graph["uncategorized_stocks"]:
                 staging_stocks = await gconn.fetch(
-                    "SELECT stock_id, stock_name FROM subject_stock_staging "
+                    "SELECT stock_id, stock_name, evidence_json FROM subject_stock_staging "
                     "WHERE subject_key=$1 ORDER BY sort LIMIT 200",
                     subject_key,
                 )
@@ -4773,12 +4788,27 @@ async def get_theme_workspace(
                     sid = row["stock_id"]
                     if sid not in assigned_ids:
                         assigned_ids.add(sid)
+                        ev = row["evidence_json"] or {}
+                        if isinstance(ev, str):
+                            ev = json.loads(ev)
                         graph["uncategorized_stocks"].append({
                             "stock_id": sid,
                             "stock_name": row["stock_name"] or sid,
                             "child_name": theme_name,
                             "reason": "",
-                            "pct_chg": None,
+                            "pct_chg": (
+                                float(ev.get("pct_chg", 0))
+                                if ev.get("pct_chg") is not None
+                                else None
+                            ),
+                            "amount": ev.get("amount"),
+                            "amount_str": (
+                                _format_amount(ev.get("amount"))
+                                if ev.get("amount") is not None
+                                else None
+                            ),
+                            "vol": ev.get("vol"),
+                            "rank_no": ev.get("rank_no"),
                         })
         finally:
             await gconn.close()

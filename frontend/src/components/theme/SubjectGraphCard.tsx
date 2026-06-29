@@ -5,6 +5,12 @@ export interface GraphStock {
   stock_name: string;
   child_name?: string;
   reason?: string;
+  // Financial data from evidence_json (e.g. 龙虎榜 subjects)
+  pct_chg?: number | null;
+  amount?: number | null;
+  amount_str?: string | null;
+  vol?: number | null;
+  rank_no?: number | null;
 }
 
 export interface GraphGrandChild {
@@ -165,20 +171,24 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
           );
         })}
         {uncategorized_stocks.length > 0 && (
-          <div className="jyhf-row jyhf-theme-row">
-            <div className="jyhf-theme-col">
-              <span className="jyhf-theme-name" style={{ color: "#999" }}>其他 ({uncategorized_stocks.length})</span>
-            </div>
-            <div className="jyhf-board-col" style={{ gridColumn: "2 / -1" }}>
-              <div className="jyhf-stock-list">
-                {uncategorized_stocks.map((s, si) => (
-                  <button key={si} type="button" className="jyhf-stock-chip" onClick={() => navigateTo(`/stocks/${encodeURIComponent(s.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
-                    {s.stock_name}
-                  </button>
-                ))}
+          hasFinancialData(uncategorized_stocks)
+            ? renderFinancialTable(uncategorized_stocks, tradeDate)
+            : (
+              <div className="jyhf-row jyhf-theme-row">
+                <div className="jyhf-theme-col">
+                  <span className="jyhf-theme-name" style={{ color: "#999" }}>其他 ({uncategorized_stocks.length})</span>
+                </div>
+                <div className="jyhf-board-col" style={{ gridColumn: "2 / -1" }}>
+                  <div className="jyhf-stock-list">
+                    {uncategorized_stocks.map((s, si) => (
+                      <button key={si} type="button" className="jyhf-stock-chip" onClick={() => navigateTo(`/stocks/${encodeURIComponent(s.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
+                        {s.stock_name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            )
         )}
       </div>
       <JyhfStyles />
@@ -260,6 +270,55 @@ function renderMatrixView(matrix: MatrixData, tradeDate?: string) {
   );
 }
 
+/** 检测 uncategorized_stocks 是否包含金融数据（如龙虎榜） */
+function hasFinancialData(stocks: GraphStock[]): boolean {
+  return stocks.some((s) => s.pct_chg != null || s.amount_str != null);
+}
+
+/** 金融数据表格（龙虎榜风格：排名、股票、涨跌幅、成交额） */
+function renderFinancialTable(stocks: GraphStock[], tradeDate?: string) {
+  return (
+    <div className="jyhf-financial-table">
+      <div className="jyhf-row jyhf-head-row">
+        <div className="jyhf-board-col">#</div>
+        <div className="jyhf-theme-col">股票</div>
+        <div className="jyhf-pct-col">涨跌幅</div>
+        <div className="jyhf-board-col">成交额</div>
+      </div>
+      {stocks.map((s, si) => (
+        <div key={si} className="jyhf-row jyhf-theme-row">
+          <div className="jyhf-board-col" style={{ alignItems: "center", justifyContent: "center" }}>
+            <span style={{ fontSize: 12, color: si < 3 ? "#e03030" : "#999" }}>
+              {s.rank_no != null ? Number(s.rank_no).toFixed(0) : si + 1}
+            </span>
+          </div>
+          <div className="jyhf-theme-col">
+            <button
+              type="button"
+              className="jyhf-theme-link"
+              onClick={() => navigateTo(`/stocks/${encodeURIComponent(s.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}
+            >
+              {s.stock_name}
+            </button>
+            <span style={{ fontSize: 10, color: "#999" }}>{s.stock_id?.replace(/\.(SH|SZ)$/, "")}</span>
+          </div>
+          <div className="jyhf-pct-col">
+            <span className="jyhf-pct-up" style={{ fontSize: 13 }}>
+              {formatPct(s.pct_chg)}
+            </span>
+          </div>
+          <div className="jyhf-board-col" style={{ alignItems: "flex-end", justifyContent: "center" }}>
+            <span style={{ fontSize: 12, fontWeight: 600, color: "#333" }}>
+              {s.amount_str || (s.amount != null ? `${(s.amount / 1e8).toFixed(2)}亿` : "--")}
+            </span>
+          </div>
+        </div>
+      ))}
+      <JyhfStyles />
+    </div>
+  );
+}
+
 /** 递归收集子题材下所有股票 */
 function collectChildStocks(child: GraphChild): GraphStock[] {
   const direct = child.stocks || [];
@@ -298,8 +357,11 @@ function JyhfStyles() {
       .jyhf-empty { color:#ccc; font-size:12px; text-align:center; width:100%; }
       .jyhf-footer { margin-top:12px; padding-top:10px; border-top:1px solid #f0f0f0; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
       .jyhf-footer-chip { background:#f5f5f5; border-radius:12px; padding:4px 10px; font-size:12px; color:#666; }
+      .jyhf-financial-table { margin-top:8px; }
+      .jyhf-financial-table .jyhf-row { grid-template-columns:40px 100px 56px 1fr; }
       @media(max-width:768px) {
         .jyhf-row { grid-template-columns:80px 48px repeat(4,1fr); }
+        .jyhf-financial-table .jyhf-row { grid-template-columns:30px 70px 48px 1fr; }
         .jyhf-theme-link { font-size:12px; max-width:70px; }
         .jyhf-stock-chip { font-size:10px; padding:2px 5px; }
         .jyhf-recap-panel { padding:12px 8px; }
