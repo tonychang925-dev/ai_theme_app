@@ -65,7 +65,7 @@ class ConnectionPoolConfig:
     max_size: int = 20
     min_size: int = 5
     max_queries: int = 50000
-    max_inactive_connection_lifetime: float = 300.0  # 秒
+    max_inactive_connection_lifetime: float = 60.0  # 秒 (曾300s, 降低以避免AI长时间调用期间连接僵死)
     connection_timeout: int = 30  # 秒
     command_timeout: int = 120  # 秒
 

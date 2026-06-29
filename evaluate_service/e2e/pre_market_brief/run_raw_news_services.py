@@ -104,6 +104,18 @@ async def run_services(args: argparse.Namespace) -> None:
     await storage_handler.start_storage_service()
     await processor.start_business_processing()
 
+    # P4: consumer watchdog — monitors idle time + pending/lag and auto-reclaims
+    watchdog_task = asyncio.create_task(
+        _consumer_watchdog(
+            redis_client,
+            stream_key=args.raw_stream,
+            groups=[args.storage_group, args.processor_group],
+            idle_warn_seconds=300,
+            idle_reclaim_seconds=600,
+            stop_event=stop_event,
+        ),
+    )
+
     loop = asyncio.get_running_loop()
     for signame in ("SIGINT", "SIGTERM"):
         try:
@@ -122,11 +134,11 @@ async def run_services(args: argparse.Namespace) -> None:
     finally:
         storage_handler.running = False
         processor.running = False
-        for task in [storage_handler.handler_task, processor.processor_task]:
+        for task in [storage_handler.handler_task, processor.processor_task, watchdog_task]:
             if task:
                 task.cancel()
         await asyncio.gather(
-            *[task for task in [storage_handler.handler_task, processor.processor_task] if task],
+            *[task for task in [storage_handler.handler_task, processor.processor_task, watchdog_task] if task],
             return_exceptions=True,
         )
 
@@ -217,24 +229,54 @@ async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> No
         except Exception as e:
             logging.debug("Group lag check skipped: %s", e)
 
-    # Clean up zombie consumers (idle > 60s) — never ACK pending
+    # Clean up zombie consumers (idle > 60s) — never ACK pending, reclaim via XAUTOCLAIM
     zombie_count = 0
     orphaned_pending = 0
+    total_reclaimed = 0
     try:
         consumers = await redis_client.xinfo_consumers(stream, group)
         for c in consumers:
             idle_ms = int(c.get("idle", 0))
             if idle_ms > 60000:
-                orphaned_pending += int(c.get("pending", 0))
+                consumer_name = c["name"]
+                pending_count = int(c.get("pending", 0))
+                orphaned_pending += pending_count
+
+                # P3: XAUTOCLAIM pending messages before deleting zombie consumer.
+                # This reclaims messages that were claimed by the dead consumer
+                # but never ACKed, so the new consumer can re-process them.
+                if pending_count > 0:
+                    try:
+                        # XAUTOCLAIM stream group consumer min-idle-time start COUNT
+                        import time as _time
+                        reclaim_consumer = f"{consumer_name}_reclaim_{int(_time.time())}"
+                        # redis-py xautoclaim returns: [next_id, [msg_id, {fields}, ...]]
+                        claimed = await redis_client.xautoclaim(
+                            stream, group, reclaim_consumer, 60000, "0-0", count=pending_count,
+                        )
+                        claimed_msgs = claimed[1] if isinstance(claimed, (list, tuple)) and len(claimed) > 1 else []
+                        reclaimed = len(claimed_msgs)
+                        total_reclaimed += reclaimed
+                        if reclaimed > 0:
+                            logging.info(
+                                "XAUTOCLAIM reclaimed %d pending messages from zombie %s in %s/%s",
+                                reclaimed, consumer_name, stream, group,
+                            )
+                    except Exception as exc:
+                        logging.warning(
+                            "XAUTOCLAIM failed for zombie %s in %s/%s: %s",
+                            consumer_name, stream, group, exc,
+                        )
+
                 try:
-                    await redis_client.xgroup_delconsumer(stream, group, c["name"])
+                    await redis_client.xgroup_delconsumer(stream, group, consumer_name)
                     zombie_count += 1
                 except Exception:
                     pass
         if zombie_count:
             logging.warning(
-                "Cleaned %d zombie consumers from %s/%s (orphaned pending=%d, NOT acked)",
-                zombie_count, stream, group, orphaned_pending,
+                "Cleaned %d zombie consumers from %s/%s (orphaned pending=%d, reclaimed=%d)",
+                zombie_count, stream, group, orphaned_pending, total_reclaimed,
             )
             if orphaned_pending > 1000:
                 logging.warning(
@@ -334,6 +376,78 @@ async def _watch_memory(stop_event: asyncio.Event, max_mb: int, interval: float 
                 "P0-B1: RSS %sMB approaching limit %sMB (%.0f%%)",
                 rss_mb, max_mb, 100 * rss_mb / max_mb,
             )
+
+
+async def _consumer_watchdog(
+    redis_client,
+    stream_key: str,
+    groups: list,
+    idle_warn_seconds: int = 300,
+    idle_reclaim_seconds: int = 600,
+    stop_event: asyncio.Event | None = None,
+    check_interval: float = 60.0,
+) -> None:
+    """P4: consumer watchdog — periodic health check + XAUTOCLAIM for stale consumers.
+
+    - idle > idle_warn_seconds + pending/lag > 0 → WARNING log
+    - idle > idle_reclaim_seconds + pending > 0 → XAUTOCLAIM reclaim
+    - Does NOT restart consumers (supervisor handles that via memory/RSS watchdog)
+    """
+    import time as _time
+
+    while stop_event is None or not stop_event.is_set():
+        try:
+            await asyncio.wait_for(
+                stop_event.wait() if stop_event else asyncio.sleep(0),
+                timeout=check_interval,
+            )
+            return
+        except asyncio.TimeoutError:
+            pass
+
+        for group in groups:
+            try:
+                consumers = await redis_client.xinfo_consumers(stream_key, group)
+                group_info = await redis_client.xinfo_groups(stream_key)
+                group_lag = 0
+                for gi in group_info:
+                    if gi.get("name") == group:
+                        group_lag = int(gi.get("lag", 0))
+                        break
+
+                for c in consumers:
+                    idle_s = int(c.get("idle", 0)) / 1000.0
+                    pending = int(c.get("pending", 0))
+                    cname = c.get("name", "?")
+
+                    if idle_s > idle_warn_seconds and (pending > 0 or group_lag > 0):
+                        logging.warning(
+                            "⚠️ P4 watchdog: consumer %s in %s/%s idle=%.0fs pending=%d lag=%d",
+                            cname, stream_key, group, idle_s, pending, group_lag,
+                        )
+
+                    if idle_s > idle_reclaim_seconds and pending > 0:
+                        logging.warning(
+                            "🔄 P4 watchdog: reclaiming %d pending from idle=%.0fs consumer %s in %s/%s",
+                            pending, idle_s, cname, stream_key, group,
+                        )
+                        reclaim_consumer = f"{cname}_watchdog_{int(_time.time())}"
+                        try:
+                            claimed = await redis_client.xautoclaim(
+                                stream_key, group, reclaim_consumer,
+                                int(idle_reclaim_seconds * 1000), "0-0", count=pending,
+                            )
+                            claimed_msgs = claimed[1] if isinstance(claimed, (list, tuple)) and len(claimed) > 1 else []
+                            if len(claimed_msgs) > 0:
+                                logging.info(
+                                    "✅ P4 watchdog: reclaimed %d messages from %s in %s/%s",
+                                    len(claimed_msgs), cname, stream_key, group,
+                                )
+                        except Exception as exc:
+                            logging.warning("P4 watchdog XAUTOCLAIM failed: %s", exc)
+
+            except Exception as exc:
+                logging.debug("P4 watchdog check skipped for %s/%s: %s", stream_key, group, exc)
 
 
 if __name__ == "__main__":

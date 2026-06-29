@@ -91,9 +91,28 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         try:
             # 构建连接字符串
             dsn = self._build_dsn()
-            
+
             # 创建连接池
             pool_config = self.config.connection_pool
+
+            # Inline connection setup: validate + enable TCP keepalive to
+            # prevent stale connections after long idle periods (e.g. during
+            # AI model calls that take 15+ minutes).
+            async def _setup_connection(conn):
+                await conn.execute("SELECT 1")
+                # Enable TCP keepalive on the underlying socket so that dead
+                # connections are detected quickly rather than surfacing as
+                # "pool is closing" or "[Errno 22] Invalid argument".
+                try:
+                    _raw = conn.get_server_pid()
+                    # Set application-level keepalive via PG settings
+                    await conn.execute("SET idle_in_transaction_session_timeout = '10min'")
+                    await conn.execute("SET tcp_keepalives_idle = '60'")
+                    await conn.execute("SET tcp_keepalives_interval = '15'")
+                    await conn.execute("SET tcp_keepalives_count = '3'")
+                except Exception:
+                    pass  # non-critical; best-effort keepalive
+
             self.pool = await asyncpg.create_pool(
                 dsn=dsn,
                 min_size=pool_config.min_size,
@@ -101,19 +120,20 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 max_queries=pool_config.max_queries,
                 max_inactive_connection_lifetime=pool_config.max_inactive_connection_lifetime,
                 command_timeout=pool_config.command_timeout,
+                setup=_setup_connection,
                 server_settings={
                     'search_path': f'{self.schema},public',
                     'application_name': 'database_service'
                 }
             )
-            
+
             # 测试连接
             async with self.pool.acquire() as conn:
                 await conn.execute('SELECT 1')
-            
+
             self.connected = True
             logger.info(f"✅ PostgreSQL连接成功: {self.config.postgres_host}:{self.config.postgres_port}")
-            
+
         except Exception as e:
             logger.error(f"❌ PostgreSQL连接失败: {e}")
             raise
