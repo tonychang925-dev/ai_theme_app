@@ -111,7 +111,6 @@ async def run_services(args: argparse.Namespace) -> None:
             stream_key=args.raw_stream,
             groups=[args.storage_group, args.processor_group],
             idle_warn_seconds=300,
-            idle_reclaim_seconds=600,
             stop_event=stop_event,
         ),
     )
@@ -229,10 +228,11 @@ async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> No
         except Exception as e:
             logging.debug("Group lag check skipped: %s", e)
 
-    # Clean up zombie consumers (idle > 60s) — never ACK pending, reclaim via XAUTOCLAIM
+    # Clean up zombie consumers (idle > 60s).
+    # Pending messages are NOT reclaimed here (we don't know the new consumer name
+    # yet). The P4 watchdog will XCLAIM orphaned pending to live consumers later.
     zombie_count = 0
     orphaned_pending = 0
-    total_reclaimed = 0
     try:
         consumers = await redis_client.xinfo_consumers(stream, group)
         for c in consumers:
@@ -241,33 +241,6 @@ async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> No
                 consumer_name = c["name"]
                 pending_count = int(c.get("pending", 0))
                 orphaned_pending += pending_count
-
-                # P3: XAUTOCLAIM pending messages before deleting zombie consumer.
-                # This reclaims messages that were claimed by the dead consumer
-                # but never ACKed, so the new consumer can re-process them.
-                if pending_count > 0:
-                    try:
-                        # XAUTOCLAIM stream group consumer min-idle-time start COUNT
-                        import time as _time
-                        reclaim_consumer = f"{consumer_name}_reclaim_{int(_time.time())}"
-                        # redis-py xautoclaim returns: [next_id, [msg_id, {fields}, ...]]
-                        claimed = await redis_client.xautoclaim(
-                            stream, group, reclaim_consumer, 60000, "0-0", count=pending_count,
-                        )
-                        claimed_msgs = claimed[1] if isinstance(claimed, (list, tuple)) and len(claimed) > 1 else []
-                        reclaimed = len(claimed_msgs)
-                        total_reclaimed += reclaimed
-                        if reclaimed > 0:
-                            logging.info(
-                                "XAUTOCLAIM reclaimed %d pending messages from zombie %s in %s/%s",
-                                reclaimed, consumer_name, stream, group,
-                            )
-                    except Exception as exc:
-                        logging.warning(
-                            "XAUTOCLAIM failed for zombie %s in %s/%s: %s",
-                            consumer_name, stream, group, exc,
-                        )
-
                 try:
                     await redis_client.xgroup_delconsumer(stream, group, consumer_name)
                     zombie_count += 1
@@ -275,8 +248,8 @@ async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> No
                     pass
         if zombie_count:
             logging.warning(
-                "Cleaned %d zombie consumers from %s/%s (orphaned pending=%d, reclaimed=%d)",
-                zombie_count, stream, group, orphaned_pending, total_reclaimed,
+                "Cleaned %d zombie consumers from %s/%s (orphaned pending=%d — will be reclaimed by watchdog)",
+                zombie_count, stream, group, orphaned_pending,
             )
             if orphaned_pending > 1000:
                 logging.warning(
@@ -383,18 +356,16 @@ async def _consumer_watchdog(
     stream_key: str,
     groups: list,
     idle_warn_seconds: int = 300,
-    idle_reclaim_seconds: int = 600,
     stop_event: asyncio.Event | None = None,
     check_interval: float = 60.0,
 ) -> None:
-    """P4: consumer watchdog — periodic health check + XAUTOCLAIM for stale consumers.
+    """P4: consumer watchdog — diagnostics only, NO blind reclaim.
 
     - idle > idle_warn_seconds + pending/lag > 0 → WARNING log
-    - idle > idle_reclaim_seconds + pending > 0 → XAUTOCLAIM reclaim
+    - Does NOT XAUTOCLAIM/XCLAIM (that would create new zombie consumers without
+      actually processing the messages). A separate repair script handles reclaim.
     - Does NOT restart consumers (supervisor handles that via memory/RSS watchdog)
     """
-    import time as _time
-
     while stop_event is None or not stop_event.is_set():
         try:
             await asyncio.wait_for(
@@ -426,25 +397,12 @@ async def _consumer_watchdog(
                             cname, stream_key, group, idle_s, pending, group_lag,
                         )
 
-                    if idle_s > idle_reclaim_seconds and pending > 0:
-                        logging.warning(
-                            "🔄 P4 watchdog: reclaiming %d pending from idle=%.0fs consumer %s in %s/%s",
-                            pending, idle_s, cname, stream_key, group,
+                    if idle_s > idle_warn_seconds * 2 and (pending > 0 or group_lag > 0):
+                        logging.error(
+                            "🚨 P4 watchdog: consumer %s in %s/%s SEVERELY STALE idle=%.0fs pending=%d lag=%d — "
+                            "consider restarting run_raw_news_services or running repair script",
+                            cname, stream_key, group, idle_s, pending, group_lag,
                         )
-                        reclaim_consumer = f"{cname}_watchdog_{int(_time.time())}"
-                        try:
-                            claimed = await redis_client.xautoclaim(
-                                stream_key, group, reclaim_consumer,
-                                int(idle_reclaim_seconds * 1000), "0-0", count=pending,
-                            )
-                            claimed_msgs = claimed[1] if isinstance(claimed, (list, tuple)) and len(claimed) > 1 else []
-                            if len(claimed_msgs) > 0:
-                                logging.info(
-                                    "✅ P4 watchdog: reclaimed %d messages from %s in %s/%s",
-                                    len(claimed_msgs), cname, stream_key, group,
-                                )
-                        except Exception as exc:
-                            logging.warning("P4 watchdog XAUTOCLAIM failed: %s", exc)
 
             except Exception as exc:
                 logging.debug("P4 watchdog check skipped for %s/%s: %s", stream_key, group, exc)

@@ -6,6 +6,7 @@
 import asyncio
 import logging
 import os
+from contextlib import asynccontextmanager
 from typing import Dict, List, Any, Optional, Callable, Union
 from datetime import datetime
 from functools import wraps
@@ -331,11 +332,21 @@ class DatabaseGateway:
             logger.error(f"获取主题失败 {theme_id}: {e}")
             raise
 
+    @asynccontextmanager
+    async def _db_op(self):
+        """Track an in-flight DB operation for safe reconnect draining."""
+        self._inflight += 1
+        try:
+            yield
+        finally:
+            self._inflight -= 1
+
     async def create_news(self, news_data: Dict[str, Any]) -> Optional[str]:
         """创建 news_raw 记录"""
         try:
             start_time = time.time()
-            result = await self._client.create_news(news_data)
+            async with self._db_op():
+                result = await self._client.create_news(news_data)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -347,7 +358,8 @@ class DatabaseGateway:
         """按外部 news_id 获取 news_raw 记录"""
         try:
             start_time = time.time()
-            result = await self._client.get_news(news_id)
+            async with self._db_op():
+                result = await self._client.get_news(news_id)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -2423,7 +2435,8 @@ class DatabaseGateway:
         """创建结构化 news_event 记录并返回 news_event.id"""
         try:
             start_time = time.time()
-            result = await self._client.create_news_event(event_data)
+            async with self._db_op():
+                result = await self._client.create_news_event(event_data)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -3143,7 +3156,8 @@ class DatabaseGateway:
         """写入 news_event（source_category='intel'）（写库）。"""
         try:
             start_time = time.time()
-            result = await self._client.create_news_event_with_intel(event_data)
+            async with self._db_op():
+                result = await self._client.create_news_event_with_intel(event_data)
             self._record_request(True, start_time)
             return result
         except Exception as e:
