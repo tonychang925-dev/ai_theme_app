@@ -171,7 +171,7 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
           );
         })}
         {uncategorized_stocks.length > 0 && (
-          hasFinancialData(uncategorized_stocks)
+          root.name.includes("龙虎榜")
             ? renderFinancialTable(uncategorized_stocks, tradeDate)
             : (
               <div className="jyhf-row jyhf-theme-row">
@@ -270,12 +270,7 @@ function renderMatrixView(matrix: MatrixData, tradeDate?: string) {
   );
 }
 
-/** 检测 uncategorized_stocks 是否包含金融数据（如龙虎榜） */
-function hasFinancialData(stocks: GraphStock[]): boolean {
-  return stocks.some((s) => s.pct_chg != null || s.amount_str != null);
-}
-
-/** 金融数据表格（龙虎榜风格：排名、股票、涨跌幅、成交额） */
+/** 龙虎榜金融数据表格（排名、股票、涨跌幅、成交额） */
 function renderFinancialTable(stocks: GraphStock[], tradeDate?: string) {
   return (
     <div className="jyhf-financial-table">
