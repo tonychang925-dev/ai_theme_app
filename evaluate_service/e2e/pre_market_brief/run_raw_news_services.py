@@ -359,12 +359,14 @@ async def _consumer_watchdog(
     stop_event: asyncio.Event | None = None,
     check_interval: float = 60.0,
 ) -> None:
-    """P4: consumer watchdog — diagnostics only, NO blind reclaim.
+    """P4+P5: consumer watchdog — diagnostics + graceful restart on stall.
 
     - idle > idle_warn_seconds + pending/lag > 0 → WARNING log
-    - Does NOT XAUTOCLAIM/XCLAIM (that would create new zombie consumers without
-      actually processing the messages). A separate repair script handles reclaim.
-    - Does NOT restart consumers (supervisor handles that via memory/RSS watchdog)
+    - idle > idle_warn_seconds * 2 + pending > 0 → ERROR log (stuck on a message)
+    - idle > idle_warn_seconds * 2 + pending == 0 + lag > 0 → P5 stall:
+      consumer loop is alive but not polling new messages → trigger graceful
+      shutdown via stop_event so the supervisor restarts the process.
+    - Does NOT XAUTOCLAIM/XCLAIM.
     """
     while stop_event is None or not stop_event.is_set():
         try:
@@ -397,10 +399,27 @@ async def _consumer_watchdog(
                             cname, stream_key, group, idle_s, pending, group_lag,
                         )
 
+                    # P5: pending==0 && lag>0 && idle > 2*warn => consumer loop
+                    # is not polling new messages. This is a stall, not a DB hang.
+                    # Trigger graceful restart via stop_event; supervisor respawns.
+                    if (
+                        idle_s > idle_warn_seconds * 2
+                        and pending == 0
+                        and group_lag > 0
+                        and stop_event is not None
+                    ):
+                        logging.error(
+                            "🔄 P5 watchdog: consumer %s in %s/%s STALLED idle=%.0fs pending=%d lag=%d — "
+                            "triggering graceful shutdown for supervisor restart",
+                            cname, stream_key, group, idle_s, pending, group_lag,
+                        )
+                        stop_event.set()
+                        return  # exit watchdog; shutdown will follow
+
                     if idle_s > idle_warn_seconds * 2 and (pending > 0 or group_lag > 0):
                         logging.error(
                             "🚨 P4 watchdog: consumer %s in %s/%s SEVERELY STALE idle=%.0fs pending=%d lag=%d — "
-                            "consider restarting run_raw_news_services or running repair script",
+                            "DB operation may be stuck (pending>0) — cannot auto-restart",
                             cname, stream_key, group, idle_s, pending, group_lag,
                         )
 
