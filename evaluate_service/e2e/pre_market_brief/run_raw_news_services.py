@@ -363,13 +363,16 @@ async def _consumer_watchdog(
 
     - idle > idle_warn_seconds + pending/lag > 0 → WARNING log
     - idle > idle_warn_seconds * 2 + pending > 0 → ERROR log (stuck on a message)
-    - idle > idle_warn_seconds * 2 + pending == 0 + lag > 0 → P5 stall:
-      consumer loop is alive but not polling new messages.
-      Requires 2 CONSECUTIVE detections (hysteresis) to avoid restart loops
-      from transient slowdowns. Trigger graceful shutdown via stop_event.
+    - idle > idle_warn_seconds * 2 + pending == 0 + lag > 0 AND lag increasing →
+      P5 stall: consumer loop is alive but falling behind.
+      Requires 2 CONSECUTIVE detections (hysteresis).
+      Lag must be INCREASING to avoid false positives during low-volume periods
+      (e.g. after-hours) where a single new message creates lag > 0 but the
+      consumer processes it instantly and then idles waiting for the next batch.
     - Does NOT XAUTOCLAIM/XCLAIM.
     """
     _stall_count: dict[tuple[str, str], int] = {}  # (stream, group) → consecutive stalls
+    _prev_lag: dict[tuple[str, str], int] = {}      # track lag trend
 
     while stop_event is None or not stop_event.is_set():
         try:
@@ -404,19 +407,24 @@ async def _consumer_watchdog(
                         )
 
                     # P5: pending==0 && lag>0 && idle > 2*warn => consumer loop
-                    # is not polling new messages. This is a stall, not a DB hang.
-                    # Hysteresis: require 2 consecutive stalls before restart to
-                    # avoid restart-loop from transient AI/CPU/Redis jitter.
+                    # may not be polling. But a single new message during low-volume
+                    # periods (after-hours) can create lag>0 that triggers a false
+                    # positive. Only count as stall if lag is INCREASING between checks.
+                    prev_lag = _prev_lag.get(stall_key, 0)
+                    lag_increasing = group_lag > prev_lag
+                    _prev_lag[stall_key] = group_lag
+
                     if (
                         idle_s > idle_warn_seconds * 2
                         and pending == 0
                         and group_lag > 0
+                        and lag_increasing
                         and stop_event is not None
                     ):
                         _stall_count[stall_key] = _stall_count.get(stall_key, 0) + 1
                         if _stall_count[stall_key] >= 2:
                             logging.error(
-                                "🔄 P5 watchdog: consumer %s in %s/%s STALLED ×%d idle=%.0fs pending=%d lag=%d — "
+                                "🔄 P5 watchdog: consumer %s in %s/%s STALLED ×%d idle=%.0fs pending=%d lag=%d↑ — "
                                 "triggering graceful shutdown for supervisor restart",
                                 cname, stream_key, group, _stall_count[stall_key],
                                 idle_s, pending, group_lag,
@@ -425,14 +433,16 @@ async def _consumer_watchdog(
                             return
                         else:
                             logging.warning(
-                                "⏳ P5 hysteresis: consumer %s in %s/%s stall #%d/2 idle=%.0fs lag=%d — "
+                                "⏳ P5 hysteresis: consumer %s in %s/%s stall #%d/2 idle=%.0fs lag=%d↑ prev=%d — "
                                 "waiting for next check before restart",
                                 cname, stream_key, group, _stall_count[stall_key],
-                                idle_s, group_lag,
+                                idle_s, group_lag, prev_lag,
                             )
                     else:
                         # Reset stall count when conditions clear
                         _stall_count.pop(stall_key, None)
+                        if idle_s <= idle_warn_seconds:
+                            _prev_lag.pop(stall_key, None)  # reset trend baseline on recovery
 
                     if idle_s > idle_warn_seconds * 2 and (pending > 0 or group_lag > 0):
                         logging.error(
