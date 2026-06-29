@@ -32,7 +32,7 @@ function deriveDateFromName(name: string): string {
 }
 
 function needsMatrixFallback(subjectKey: string, graph: unknown): boolean {
-  return !graph || !(graph as any)?.children?.length;
+  return !graph || (!(graph as any)?.children?.length && !(graph as any)?.uncategorized_stocks?.length);
 }
 
 export function ThemeWorkspacePage({ subjectKey }: Props) {

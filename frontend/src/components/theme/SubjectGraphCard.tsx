@@ -86,7 +86,7 @@ const BOARD_LABELS: Record<number, string> = { 4: "4连板", 3: "3连板", 2: "2
  */
 export function SubjectGraphCard({ graph, tradeDate, fallbackMatrix }: Props) {
   // ---- 优先从 graph 渲染 ----
-  if (graph?.root && graph.children && graph.children.length > 0) {
+  if (graph?.root && (graph.children?.length > 0 || graph.uncategorized_stocks?.length > 0)) {
     return renderGraphTree(graph, tradeDate);
   }
 

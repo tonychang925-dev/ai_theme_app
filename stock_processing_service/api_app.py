@@ -4761,6 +4761,25 @@ async def get_theme_workspace(
                     })
             if direct_stocks:
                 graph["uncategorized_stocks"].extend(direct_stocks)
+            # Fallback: when child_stock_reason and stock_map are both empty
+            # for this subject, pull stocks from subject_stock_staging directly
+            if not root_children and not graph["uncategorized_stocks"]:
+                staging_stocks = await gconn.fetch(
+                    "SELECT stock_id, stock_name FROM subject_stock_staging "
+                    "WHERE subject_key=$1 ORDER BY sort LIMIT 200",
+                    subject_key,
+                )
+                for row in staging_stocks:
+                    sid = row["stock_id"]
+                    if sid not in assigned_ids:
+                        assigned_ids.add(sid)
+                        graph["uncategorized_stocks"].append({
+                            "stock_id": sid,
+                            "stock_name": row["stock_name"] or sid,
+                            "child_name": theme_name,
+                            "reason": "",
+                            "pct_chg": None,
+                        })
         finally:
             await gconn.close()
     except Exception:
