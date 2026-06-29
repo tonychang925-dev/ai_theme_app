@@ -364,10 +364,13 @@ async def _consumer_watchdog(
     - idle > idle_warn_seconds + pending/lag > 0 → WARNING log
     - idle > idle_warn_seconds * 2 + pending > 0 → ERROR log (stuck on a message)
     - idle > idle_warn_seconds * 2 + pending == 0 + lag > 0 → P5 stall:
-      consumer loop is alive but not polling new messages → trigger graceful
-      shutdown via stop_event so the supervisor restarts the process.
+      consumer loop is alive but not polling new messages.
+      Requires 2 CONSECUTIVE detections (hysteresis) to avoid restart loops
+      from transient slowdowns. Trigger graceful shutdown via stop_event.
     - Does NOT XAUTOCLAIM/XCLAIM.
     """
+    _stall_count: dict[tuple[str, str], int] = {}  # (stream, group) → consecutive stalls
+
     while stop_event is None or not stop_event.is_set():
         try:
             await asyncio.wait_for(
@@ -392,6 +395,7 @@ async def _consumer_watchdog(
                     idle_s = int(c.get("idle", 0)) / 1000.0
                     pending = int(c.get("pending", 0))
                     cname = c.get("name", "?")
+                    stall_key = (stream_key, group)
 
                     if idle_s > idle_warn_seconds and (pending > 0 or group_lag > 0):
                         logging.warning(
@@ -401,20 +405,34 @@ async def _consumer_watchdog(
 
                     # P5: pending==0 && lag>0 && idle > 2*warn => consumer loop
                     # is not polling new messages. This is a stall, not a DB hang.
-                    # Trigger graceful restart via stop_event; supervisor respawns.
+                    # Hysteresis: require 2 consecutive stalls before restart to
+                    # avoid restart-loop from transient AI/CPU/Redis jitter.
                     if (
                         idle_s > idle_warn_seconds * 2
                         and pending == 0
                         and group_lag > 0
                         and stop_event is not None
                     ):
-                        logging.error(
-                            "🔄 P5 watchdog: consumer %s in %s/%s STALLED idle=%.0fs pending=%d lag=%d — "
-                            "triggering graceful shutdown for supervisor restart",
-                            cname, stream_key, group, idle_s, pending, group_lag,
-                        )
-                        stop_event.set()
-                        return  # exit watchdog; shutdown will follow
+                        _stall_count[stall_key] = _stall_count.get(stall_key, 0) + 1
+                        if _stall_count[stall_key] >= 2:
+                            logging.error(
+                                "🔄 P5 watchdog: consumer %s in %s/%s STALLED ×%d idle=%.0fs pending=%d lag=%d — "
+                                "triggering graceful shutdown for supervisor restart",
+                                cname, stream_key, group, _stall_count[stall_key],
+                                idle_s, pending, group_lag,
+                            )
+                            stop_event.set()
+                            return
+                        else:
+                            logging.warning(
+                                "⏳ P5 hysteresis: consumer %s in %s/%s stall #%d/2 idle=%.0fs lag=%d — "
+                                "waiting for next check before restart",
+                                cname, stream_key, group, _stall_count[stall_key],
+                                idle_s, group_lag,
+                            )
+                    else:
+                        # Reset stall count when conditions clear
+                        _stall_count.pop(stall_key, None)
 
                     if idle_s > idle_warn_seconds * 2 and (pending > 0 or group_lag > 0):
                         logging.error(
