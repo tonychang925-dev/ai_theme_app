@@ -31,13 +31,14 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--status-path", default=None)
     parser.add_argument("--once", action="store_true")
     parser.add_argument("--parent-pid", type=int, default=None)
+    parser.add_argument("--timeout-seconds", type=float, default=120.0)
     return parser
 
 
 async def async_main() -> None:
     args = build_parser().parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
-    client = PreMarketBriefSpsClient(base_url=args.sps_base_url)
+    client = PreMarketBriefSpsClient(base_url=args.sps_base_url, timeout_seconds=args.timeout_seconds)
     interval = max(30, int(args.interval_seconds))
     status_path = Path(args.status_path) if args.status_path else None
 
