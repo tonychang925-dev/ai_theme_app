@@ -702,7 +702,9 @@ class NewsStreamProcessor:
         # 步骤0: 本地预筛选（可选）
         triage_decision = "PASS"
         if self.local_triage_service:
-            triage_result = self.local_triage_service.evaluate(news_data)
+            triage_result = await asyncio.to_thread(
+                self.local_triage_service.evaluate, news_data
+            )
             triage_decision = str(triage_result.get("decision") or "PASS").upper()
             business_results["results"]["local_triage"] = triage_result
             business_results["processing_steps"].append("local_triage")

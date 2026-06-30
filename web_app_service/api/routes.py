@@ -8,6 +8,7 @@ from typing import Any, AsyncIterator
 from zoneinfo import ZoneInfo
 
 import httpx
+import redis.asyncio as aioredis
 from fastapi import APIRouter, HTTPException, Query, Request
 from fastapi.responses import JSONResponse, StreamingResponse
 
@@ -17,6 +18,9 @@ logger = logging.getLogger(__name__)
 
 router = APIRouter()
 client = StockProcessingReadClient()
+
+_RAW_FEED_REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0").strip()
+_RAW_FEED_STREAM = "stream:news:raw"
 
 
 def _to_float_or_none(value: object) -> float | None:
@@ -2095,6 +2099,61 @@ async def workspace_market_validation(
         }
     _ws_cache_set(_ck, result)
     return result
+
+
+@router.get("/intel/stream/raw")
+async def intel_raw_stream(request: Request) -> StreamingResponse:
+    """Raw akshare news feed — 直接从 stream:news:raw 推送到前端。
+
+    使用 XREAD（非 XREADGROUP），不参与消费组，不 ACK，不改 last-delivered-id。
+    即使 triage SKIP / AI 熔断 / structured 不出 / decision 不出，前端仍能看到原始消息。
+    """
+    async def _raw_feed_generator():
+        r = aioredis.from_url(_RAW_FEED_REDIS_URL, socket_connect_timeout=5)
+        last_id = "$"
+        heartbeat_interval = 15
+        last_heartbeat = time.monotonic()
+
+        try:
+            while True:
+                if await request.is_disconnected():
+                    break
+
+                now = time.monotonic()
+                if now - last_heartbeat >= heartbeat_interval:
+                    yield _emit_sse("heartbeat", {"status": "ok", "stream": "raw"})
+                    last_heartbeat = now
+
+                try:
+                    result = await asyncio.wait_for(
+                        r.xread({_RAW_FEED_STREAM: last_id}, block=2000, count=20),
+                        timeout=3.0,
+                    )
+                except (asyncio.TimeoutError, ConnectionError):
+                    continue
+
+                if result is None:
+                    continue
+
+                for stream_name, messages in result:
+                    for msg_id, fields in messages:
+                        last_id = msg_id
+                        news_data = {k.decode() if isinstance(k, bytes) else k:
+                                     v.decode() if isinstance(v, bytes) else v
+                                     for k, v in fields.items()}
+                        yield _emit_sse("raw_news", news_data)
+        finally:
+            await r.aclose()
+
+    return StreamingResponse(
+        _raw_feed_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
 
 
 @router.get("/intel/stream")

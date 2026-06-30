@@ -95,7 +95,9 @@ async def run_services(args: argparse.Namespace) -> None:
             "triage_pass_threshold": 0.10,
             "triage_skip_threshold": 0.0,
             "batch_processing": True,
-            "batch_size": args.batch_size,
+            "batch_size": min(args.batch_size, 5),  # 上限 5，避免单批处理超时
+            "structuring_total_timeout_s": 60,      # 从默认 90s 降到 60s
+            "structuring_max_retries": 1,            # 从默认 2 降到 1
             # Phase 4F: 实时生产不设 run_id 过滤，所有消息均需处理
             "run_id_filter": None if (args.run_id and args.run_id.startswith("realtime_")) else args.run_id,
         },
