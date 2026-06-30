@@ -752,11 +752,14 @@ class NewsStreamProcessor:
                 }
                 persistence = await self._persist_and_publish_structured_event(
                     basic_structured_event,
-                    publish_stream=False,
+                    publish_stream=True,  # 实时链路 triage 事件也必须推流
                 )
                 business_results["results"]["structured_event"] = basic_structured_event
                 business_results["results"]["news_event_persistence"] = persistence
                 business_results["processing_steps"].append("news_event_persist_triage_only")
+                if persistence.get("structured_stream_published"):
+                    business_results["processing_steps"].append("structured_event_publish_triage")
+                    self.business_stats["fallback_published_count"] += 1
                 return business_results
 
         # 步骤1: AI分析（如果启用）
