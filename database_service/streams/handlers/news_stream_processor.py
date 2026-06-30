@@ -87,6 +87,7 @@ class NewsStreamProcessor:
             "structuring_max_retries": int(self.config.get("structuring_max_retries", 2)),
             "structuring_retry_delay_s": float(self.config.get("structuring_retry_delay_s", 1)),
             "structuring_circuit_breaker_threshold": int(self.config.get("structuring_circuit_breaker_threshold", 5)),
+            "structuring_circuit_breaker_recovery_timeout_s": int(self.config.get("structuring_circuit_breaker_recovery_timeout_s", 120)),
         }
 
         self.local_triage_service = None
@@ -132,11 +133,18 @@ class NewsStreamProcessor:
             "triage_false_positive_review_count": 0,
             "sentiment_analysis_count": 0,
             "topic_extraction_count": 0,
-            "business_results": []
+            "business_results": [],
+            # 结构化熔断器统计
+            "structuring_circuit_breaker_state": "CLOSED",
+            "fallback_structured_count": 0,
+            "fallback_published_count": 0,
+            "fallback_suppressed_count": 0,
+            "last_structuring_error": None,
         }
         self._structuring_consecutive_timeouts = 0
         self._structuring_circuit_breaker_open = False
         self._structuring_circuit_breaker_open_at = None
+        self._structuring_circuit_breaker_opened_time = 0  # 熔断打开的时间戳
         
         logger.info(f"🧠 新闻Stream业务处理器初始化")
         logger.info(f"   处理器组: {self.processor_config['processor_group']}")
@@ -892,7 +900,7 @@ class NewsStreamProcessor:
                 )
                 persistence = await self._persist_and_publish_structured_event(
                     basic_structured_event,
-                    publish_stream=False,  # AI fallback 不可信，不发布到 structured stream
+                    publish_stream=True,  # 实时链路 fallback 也必须推流，避免 AI 熔断导致静默断流
                 )
                 logger.info(f"🔄 _persist_and_publish_structured_event 返回: {persistence}")
 
@@ -909,7 +917,10 @@ class NewsStreamProcessor:
                 )
                 self.business_stats["fallback_structured_count"] += 1
                 if persistence.get("structured_stream_published"):
+                    self.business_stats["fallback_published_count"] += 1
                     self.business_stats["processed_after_fallback_count"] += 1
+                else:
+                    self.business_stats["fallback_suppressed_count"] += 1
                 if persistence.get("structured_stream_published"):
                     business_results["processing_steps"].append("structured_event_publish_fallback")
                     logger.info(f"✅ 基本结构化事件发布成功: {fallback_news_display_id}")
@@ -924,15 +935,26 @@ class NewsStreamProcessor:
 
     async def _extract_event_with_stability(self, ai_service: Any, news_data: Dict[str, Any]) -> tuple[Optional[Dict[str, Any]], Dict[str, Any]]:
         """Bound one LLM structuring item so one external stall cannot block the stream."""
+        probing = False  # 标记本次是否为 HALF_OPEN 探测调用
+
         if self._structuring_circuit_breaker_open:
-            return None, {
-                "status": "fallback_minimal",
-                "error": "structuring_circuit_breaker_open",
-                "attempts": 0,
-                "llm_retry_count": 0,
-                "circuit_breaker_open": True,
-                "open_at_index": self._structuring_circuit_breaker_open_at,
-            }
+            now = time.time()
+            cooldown = self.processor_config["structuring_circuit_breaker_recovery_timeout_s"]
+            if self._structuring_circuit_breaker_opened_time > 0 and \
+               now - self._structuring_circuit_breaker_opened_time > cooldown:
+                logger.info("🔄 本地结构化熔断器 cooldown 已过（%.0fs），进入 HALF_OPEN 探测", cooldown)
+                probing = True
+                self.business_stats["structuring_circuit_breaker_state"] = "HALF_OPEN"
+            else:
+                self.business_stats["structuring_circuit_breaker_state"] = "OPEN"
+                return None, {
+                    "status": "fallback_minimal",
+                    "error": "structuring_circuit_breaker_open",
+                    "attempts": 0,
+                    "llm_retry_count": 0,
+                    "circuit_breaker_open": True,
+                    "open_at_index": self._structuring_circuit_breaker_open_at,
+                }
 
         attempts = 0
         last_error = ""
@@ -951,6 +973,16 @@ class NewsStreamProcessor:
                 if ai_result and ai_result.get("status") == "success":
                     self._structuring_consecutive_timeouts = 0
                     self.business_stats["structuring_success_count"] += 1
+
+                    # HALF_OPEN 探测成功 → 恢复 CLOSED
+                    if self._structuring_circuit_breaker_open or probing:
+                        self._structuring_circuit_breaker_open = False
+                        self._structuring_circuit_breaker_opened_time = 0
+                        self._structuring_circuit_breaker_open_at = None
+                        self._structuring_consecutive_timeouts = 0
+                        self.business_stats["structuring_circuit_breaker_state"] = "CLOSED"
+                        logger.info("✅ 本地结构化熔断器 HALF_OPEN 探测成功，恢复 CLOSED")
+
                     return ai_result, {
                         "status": "success",
                         "error": None,
@@ -967,16 +999,28 @@ class NewsStreamProcessor:
                 last_status = "structuring_error"
                 last_error = str(exc)
 
+        # HALF_OPEN 探测失败 → 重新打开熔断器
+        if probing:
+            self._structuring_circuit_breaker_open = True
+            self._structuring_circuit_breaker_opened_time = time.time()
+            self.business_stats["structuring_circuit_breaker_state"] = "OPEN"
+            logger.warning("⚠️ 本地结构化熔断器 HALF_OPEN 探测失败，重新熔断（cooldown 重置）")
+
         if last_status == "structuring_timeout":
             self.business_stats["structuring_timeout_count"] += 1
             self._structuring_consecutive_timeouts += 1
             if self._structuring_consecutive_timeouts >= self.processor_config["structuring_circuit_breaker_threshold"]:
                 self._structuring_circuit_breaker_open = True
                 self._structuring_circuit_breaker_open_at = news_data.get("sequence") or news_data.get("news_id")
+                self._structuring_circuit_breaker_opened_time = time.time()
                 self.business_stats["circuit_breaker_open_count"] += 1
+                self.business_stats["structuring_circuit_breaker_state"] = "OPEN"
         else:
             self.business_stats["structuring_error_count"] += 1
             self._structuring_consecutive_timeouts = 0
+
+        # 记录最后错误
+        self.business_stats["last_structuring_error"] = last_error[:200] if last_error else None
 
         return None, {
             "status": last_status,
@@ -996,7 +1040,6 @@ class NewsStreamProcessor:
             "total_timeout_s": self.processor_config["structuring_total_timeout_s"],
         }
 
-    @staticmethod
     @staticmethod
     def _extract_content_summary(news_data: Dict[str, Any]) -> str:
         """从新闻内容中提取更实质性的摘要，优于直接使用标题。
