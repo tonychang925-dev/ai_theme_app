@@ -9,6 +9,7 @@ import json
 import logging
 import os
 import re
+import threading
 from pathlib import Path
 from typing import Any, Dict, Optional
 
@@ -32,6 +33,7 @@ class LocalQwenNewsTriageService:
         self._prompt_llm = None
         self._prompt_ready = False
         self._prompt_init_attempted = False
+        self._prompt_lock = threading.Lock()  # llama.cpp is NOT thread-safe
 
         # embedding fallback
         self._matcher = None
@@ -91,8 +93,10 @@ class LocalQwenNewsTriageService:
             return rule_result
 
         # 第3层：Qwen prompt 兜底 — 仅对规则不确定的弱信号/无信号场景调用
+        # NOTE: llama.cpp is NOT thread-safe; serialize inference with a lock
         if self._ensure_prompt_ready():
-            prompt_result = self._prompt_decision(text, rule_features)
+            with self._prompt_lock:
+                prompt_result = self._prompt_decision(text, rule_features)
             if prompt_result is not None:
                 return prompt_result
 
