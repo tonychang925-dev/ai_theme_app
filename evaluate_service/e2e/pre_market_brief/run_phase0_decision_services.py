@@ -84,13 +84,15 @@ async def run_services(args: argparse.Namespace) -> None:
     host, port = _redis_host_port(args.redis_url)
     redis_client = redis.Redis.from_url(args.redis_url, decode_responses=True)
 
-    # P1-C-pre: realtime 使用稳定 group 名，避免 e2e_{run_id} 被 cleanup 误删
+    # P1-C-pre: realtime 使用稳定 group 名 + clean consumer 前缀
     if args.run_id and args.run_id.startswith("realtime_"):
         theme_group = args.theme_consumer_group or "theme_processor_realtime"
         decision_group = args.decision_consumer_group or "decision_executor_realtime"
+        _consumer_prefix = "realtime"
     else:
         theme_group = args.theme_consumer_group or f"theme_processors_e2e_{args.run_id}"
         decision_group = args.decision_consumer_group or f"decision_executors_e2e_{args.run_id}"
+        _consumer_prefix = "e2e"
     await _ensure_group_at_tail(redis_client, args.structured_stream, theme_group)
     await _ensure_group_at_tail(redis_client, args.decision_stream, decision_group)
 
@@ -98,7 +100,7 @@ async def run_services(args: argparse.Namespace) -> None:
     processor = ThemeProcessor(
         redis_host=host,
         redis_port=port,
-        consumer_name=f"theme_processor_e2e_{args.run_id}",
+        consumer_name=f"theme_processor_{_consumer_prefix}_{args.run_id}",
         enable_clustering=False,
         enable_classification_first=True,
         config={
@@ -118,7 +120,7 @@ async def run_services(args: argparse.Namespace) -> None:
     executor = DecisionExecutor(
         redis_client,
         gateway,
-        consumer_name=f"decision_executor_e2e_{args.run_id}",
+        consumer_name=f"decision_executor_{_consumer_prefix}_{args.run_id}",
     )
     executor.decision_stream = args.decision_stream
     executor.consumer_group = decision_group
@@ -153,10 +155,10 @@ async def run_services(args: argparse.Namespace) -> None:
 
         # Phase 6A: self-cleanup — remove our consumers (prefix-matched) on exit
         for _stream, _group, _prefix in [
-            (args.structured_stream, theme_group, f"theme_processor_e2e_{args.run_id}"),
-            (args.decision_stream, theme_group, f"theme_processor_e2e_{args.run_id}"),
-            (args.decision_stream, decision_group, f"decision_executor_e2e_{args.run_id}"),
-            (args.pending_stream, decision_group, f"decision_executor_e2e_{args.run_id}"),
+            (args.structured_stream, theme_group, f"theme_processor_{_consumer_prefix}_{args.run_id}"),
+            (args.decision_stream, theme_group, f"theme_processor_{_consumer_prefix}_{args.run_id}"),
+            (args.decision_stream, decision_group, f"decision_executor_{_consumer_prefix}_{args.run_id}"),
+            (args.pending_stream, decision_group, f"decision_executor_{_consumer_prefix}_{args.run_id}"),
         ]:
             try:
                 consumers = await redis_client.xinfo_consumers(_stream, _group)

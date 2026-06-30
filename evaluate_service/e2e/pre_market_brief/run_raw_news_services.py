@@ -87,7 +87,7 @@ async def run_services(args: argparse.Namespace) -> None:
         config={
             "database_gateway": gateway,
             "processor_group": args.processor_group,
-            "processor_name": f"news_processor_e2e_{args.run_id}",
+            "processor_name": f"news_processor_realtime_{args.run_id}",
             "enable_ai_analysis": True,
             "enable_local_triage": True,
             "triage_mode": "hybrid",
