@@ -89,11 +89,11 @@ async def run_services(args: argparse.Namespace) -> None:
             "processor_group": args.processor_group,
             "processor_name": f"news_processor_e2e_{args.run_id}",
             "enable_ai_analysis": True,
-            "enable_local_triage": False,  # 实时链路禁用本地Qwen triage，避免阻塞asyncio + 过度过滤
-            "triage_mode": "rule",         # 仅使用规则过滤（低开销，非阻塞）
-            "triage_block_on_skip": False, # 不阻塞SKIP事件，让其流入AI分析/fallback推流
-            "triage_pass_threshold": 0.06,
-            "triage_skip_threshold": -0.02,
+            "enable_local_triage": True,
+            "triage_mode": "hybrid",
+            "triage_block_on_skip": True,
+            "triage_pass_threshold": 0.10,
+            "triage_skip_threshold": 0.0,
             "batch_processing": True,
             "batch_size": args.batch_size,
             # Phase 4F: 实时生产不设 run_id 过滤，所有消息均需处理
