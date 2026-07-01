@@ -16,7 +16,7 @@ else:
     from .common import require_safe_db
 
 
-async def _ensure_group_at_tail(client, stream: str, group: str, *, reset_to_latest: bool = False) -> None:
+async def _ensure_group_at_tail(client, stream: str, group: str, *, reset_to_latest: bool = False, run_id: str = "") -> None:
     """创建或复用 consumer group，默认从上次位置继续（不再丢弃积压）。
 
     仅在 reset_to_latest=True 或首次创建时从 $ 开始。
@@ -32,14 +32,17 @@ async def _ensure_group_at_tail(client, stream: str, group: str, *, reset_to_lat
         # Group already exists — DO NOT reset; continue from last position
         logging.info("Consumer group already exists: %s/%s (keeping position)", stream, group)
 
-    # Phase 6A: clean zombie consumers (idle > 60s) — never ACK pending
+    # Phase 6A: clean zombie consumers — run_id mismatch or idle > 60s
     zombie_count = 0
     orphaned_pending = 0
     try:
         consumers = await client.xinfo_consumers(stream, group)
         for c in consumers:
+            consumer_name = c.get("name", "")
             idle_ms = int(c.get("idle", 0))
-            if idle_ms > 60000:
+            is_foreign = bool(run_id) and run_id not in consumer_name
+            is_stale = idle_ms > 60000
+            if is_foreign or is_stale:
                 orphaned_pending += int(c.get("pending", 0))
                 try:
                     await client.xgroup_delconsumer(stream, group, c["name"])
@@ -93,8 +96,8 @@ async def run_services(args: argparse.Namespace) -> None:
         theme_group = args.theme_consumer_group or f"theme_processors_e2e_{args.run_id}"
         decision_group = args.decision_consumer_group or f"decision_executors_e2e_{args.run_id}"
         _consumer_prefix = "e2e"
-    await _ensure_group_at_tail(redis_client, args.structured_stream, theme_group)
-    await _ensure_group_at_tail(redis_client, args.decision_stream, decision_group)
+    await _ensure_group_at_tail(redis_client, args.structured_stream, theme_group, run_id=args.run_id)
+    await _ensure_group_at_tail(redis_client, args.decision_stream, decision_group, run_id=args.run_id)
 
     gateway = await get_gateway(enable_retry=True)
     processor = ThemeProcessor(

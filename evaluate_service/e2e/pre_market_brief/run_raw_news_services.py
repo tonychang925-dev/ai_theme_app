@@ -54,9 +54,9 @@ async def run_services(args: argparse.Namespace) -> None:
             args.storage_group = f"news_storage_handlers_e2e_{args.run_id}"
         if not args.processor_group:
             args.processor_group = f"news_business_processors_e2e_{args.run_id}"
-    await _ensure_group_clean_start(redis_client, "stream:news:raw", args.storage_group)
+    await _ensure_group_clean_start(redis_client, "stream:news:raw", args.storage_group, args.run_id)
     # Phase 4F: Processor 直接从 news:raw 消费，不再经过废弃的 events:normal
-    await _ensure_group_clean_start(redis_client, "stream:news:raw", args.processor_group)
+    await _ensure_group_clean_start(redis_client, "stream:news:raw", args.processor_group, args.run_id)
     stream_config = SimpleNamespace(
         redis=SimpleNamespace(
             # realtime 生产跑使用稳定 group 名，避免每次重启产生 pm_e2e 僵尸组
@@ -184,13 +184,13 @@ async def run_services(args: argparse.Namespace) -> None:
         await redis_client.aclose()
 
 
-async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> None:
+async def _ensure_group_clean_start(redis_client, stream: str, group: str, run_id: str = "") -> None:
     """Phase 6A: 创建/复用 consumer group，live mode 从最新开始并清理僵尸。
 
     - 默认从 "0" 创建，避免跳过积压
     - 仅显式 REALTIME_STREAM_START_MODE=latest 时允许从 "$" 创建
     - latest 模式下 lag > 95% 才自动重置到 $
-    - 僵尸清理：只 XGROUP DELCONSUMER，不 XACK pending（防止丢消息）
+    - 僵尸清理：同一 run_id 前缀不匹配的 consumer 直接删 + idle > 60s 兜底
     """
     import os as _os
     start_mode = _os.environ.get("REALTIME_STREAM_START_MODE", "0").lower()
@@ -235,17 +235,19 @@ async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> No
         except Exception as e:
             logging.debug("Group lag check skipped: %s", e)
 
-    # Clean up zombie consumers (idle > 60s).
-    # Pending messages are NOT reclaimed here (we don't know the new consumer name
-    # yet). The P4 watchdog will XCLAIM orphaned pending to live consumers later.
+    # Clean up zombie consumers.
+    # Rule 1: consumer name doesn't contain current run_id → definitely foreign → delete immediately
+    # Rule 2: idle > 60s → stale → delete (fallback for consumers without run_id in name)
     zombie_count = 0
     orphaned_pending = 0
     try:
         consumers = await redis_client.xinfo_consumers(stream, group)
         for c in consumers:
+            consumer_name = c.get("name", "")
             idle_ms = int(c.get("idle", 0))
-            if idle_ms > 60000:
-                consumer_name = c["name"]
+            is_foreign = bool(run_id) and run_id not in consumer_name
+            is_stale = idle_ms > 60000
+            if is_foreign or is_stale:
                 pending_count = int(c.get("pending", 0))
                 orphaned_pending += pending_count
                 try:
