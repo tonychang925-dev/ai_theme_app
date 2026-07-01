@@ -134,7 +134,7 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
             <div key={ci} className="jyhf-row jyhf-theme-row">
               <div className="jyhf-theme-col">
                 {child.child_subject_key ? (
-                  <button type="button" className="jyhf-theme-link" onClick={() => navigateTo(`/themes/${encodeURIComponent(child.child_subject_key)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
+                  <button type="button" className="jyhf-theme-link" onClick={() => navigateTo(`/themes/${encodeURIComponent(child.child_subject_key ?? "")}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
                     {child.name}
                   </button>
                 ) : (
