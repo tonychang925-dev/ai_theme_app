@@ -137,9 +137,16 @@
 }
 
 .jyhf-stock-row {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 4px;
+  margin-bottom: 2px;
+}
+
+.jyhf-stock-connector {
+  color: #bbb;
+  font-size: 12px;
+  margin: 0 1px;
 }
 
 .jyhf-stock-chip {
@@ -160,10 +167,10 @@
 }
 
 .jyhf-stock-reason {
-  background: #f6ffed;
-  border: 1px solid #b7eb8f;
+  background: #fff7e6;
+  border: 1px solid #ffa940;
   border-radius: 4px;
-  color: #52c41a;
+  color: #d46b08;
   font-size: 11px;
   padding: 1px 6px;
   white-space: nowrap;

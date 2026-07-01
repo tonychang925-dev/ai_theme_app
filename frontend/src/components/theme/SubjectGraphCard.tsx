@@ -150,24 +150,26 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
                     <div className="jyhf-grand-label">{gc.name}</div>
                     <div className="jyhf-stock-list">
                       {gc.stocks.map((s, si) => (
-                        <span key={si} className="jyhf-stock-row">
+                        <div key={si} className="jyhf-stock-row">
                           <button type="button" className="jyhf-stock-chip" onClick={() => navigateTo(`/stocks/${encodeURIComponent(s.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
                             {s.stock_name}
                           </button>
-                          {s.reason && <span className="jyhf-stock-reason">{s.reason}</span>}
-                        </span>
+                          {s.reason && <span className="jyhf-stock-connector">—</span>}
+                          {s.reason && <span className="jyhf-stock-reason">{s.reason.length > 40 ? s.reason.slice(0, 40) + '…' : s.reason}</span>}
+                        </div>
                       ))}
                     </div>
                   </div>
                 )) : (
                   <div className="jyhf-stock-list">
                     {allStocks.map((s, si) => (
-                      <span key={si} className="jyhf-stock-row">
+                      <div key={si} className="jyhf-stock-row">
                         <button type="button" className="jyhf-stock-chip" onClick={() => navigateTo(`/stocks/${encodeURIComponent(s.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
                           {s.stock_name}
                         </button>
-                        {s.reason && <span className="jyhf-stock-reason">{s.reason}</span>}
-                      </span>
+                        {s.reason && <span className="jyhf-stock-connector">—</span>}
+                        {s.reason && <span className="jyhf-stock-reason">{s.reason.length > 40 ? s.reason.slice(0, 40) + '…' : s.reason}</span>}
+                      </div>
                     ))}
                   </div>
                 )}
@@ -187,12 +189,13 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
                 <div className="jyhf-board-col" style={{ gridColumn: "2 / -1" }}>
                   <div className="jyhf-stock-list">
                     {uncategorized_stocks.map((s, si) => (
-                      <span key={si} className="jyhf-stock-row">
+                      <div key={si} className="jyhf-stock-row">
                         <button type="button" className="jyhf-stock-chip" onClick={() => navigateTo(`/stocks/${encodeURIComponent(s.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
                           {s.stock_name}
                         </button>
-                        {s.reason && <span className="jyhf-stock-reason">{s.reason}</span>}
-                      </span>
+                        {s.reason && <span className="jyhf-stock-connector">—</span>}
+                        {s.reason && <span className="jyhf-stock-reason">{s.reason.length > 40 ? s.reason.slice(0, 40) + '…' : s.reason}</span>}
+                      </div>
                     ))}
                   </div>
                 </div>
