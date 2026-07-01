@@ -2164,7 +2164,7 @@ async def intel_stream(
     type: str = Query(default="all"),
     subject_key: str | None = Query(default=None),
     stock_id: str | None = Query(default=None),
-    limit: int = Query(default=20, ge=1, le=100),
+    limit: int = Query(default=100, ge=1, le=500),
 ) -> StreamingResponse:
     params = {
         "feed_date": date,
