@@ -181,7 +181,7 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
                 <div className="jyhf-board-col" style={{ gridColumn: "2 / -1" }}>
                   <div className="jyhf-stock-list">
                     {uncategorized_stocks.map((s, si) => (
-                      <button key={si} type="button" className="jyhf-stock-chip" onClick={() => navigateTo(`/stocks/${encodeURIComponent(s.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
+                      <button key={si} type="button" className="jyhf-stock-chip" title={s.reason || ""} onClick={() => navigateTo(`/stocks/${encodeURIComponent(s.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
                         {s.stock_name}
                       </button>
                     ))}
