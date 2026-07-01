@@ -4622,9 +4622,11 @@ async def get_theme_workspace(
             password=os.environ.get("PG_PASSWORD", ""),
         )
         try:
+            # Resolve to numeric subject_key — the API parameter may be a semantic name
+            _resolved_key = str(detail.get("subject_key") or subject_key)
             theme_name = str(detail.get("theme_name") or detail.get("subject_key", subject_key))
-            graph = {"root": {"name": theme_name, "subject_key": subject_key, "pct_chg": None}, "children": [], "uncategorized_stocks": []}
-            root_rank = await gconn.fetchrow("SELECT pct_chg FROM subject_history_staging WHERE subject_key=$1 ORDER BY rank_date DESC LIMIT 1", subject_key)
+            graph = {"root": {"name": theme_name, "subject_key": _resolved_key, "pct_chg": None}, "children": [], "uncategorized_stocks": []}
+            root_rank = await gconn.fetchrow("SELECT pct_chg FROM subject_history_staging WHERE subject_key=$1 ORDER BY rank_date DESC LIMIT 1", _resolved_key)
             if root_rank and root_rank["pct_chg"] is not None:
                 graph["root"]["pct_chg"] = float(root_rank["pct_chg"])
             # Helper: normalize stock_id to bare code (no .SH/.SZ suffix) for dedup
@@ -4686,14 +4688,14 @@ async def get_theme_workspace(
             # Collect parent subject's own stock IDs for cross-filtering
             parent_stock_rows = await gconn.fetch(
                 "SELECT DISTINCT stock_id FROM subject_stock_staging "
-                "WHERE subject_key=$1 AND stock_id IS NOT NULL", subject_key
+                "WHERE subject_key=$1 AND stock_id IS NOT NULL", _resolved_key
             )
             parent_stock_ids: set[str] = {_norm_sid(r["stock_id"]) for r in parent_stock_rows}
             # Also check subject_child_stock_reason under parent key
             if not parent_stock_ids:
                 parent_reason_rows = await gconn.fetch(
                     "SELECT DISTINCT stock_id FROM subject_child_stock_reason "
-                    "WHERE subject_key=$1", subject_key
+                    "WHERE subject_key=$1", _resolved_key
                 )
                 parent_stock_ids = {r["stock_id"].strip().upper() for r in parent_reason_rows}
 
@@ -4702,7 +4704,7 @@ async def get_theme_workspace(
             # which stores global subject-to-subject relations).
             root_children = await gconn.fetch(
                 "SELECT child_subject_key, child_name FROM subject_children_staging "
-                "WHERE parent_subject_key=$1 ORDER BY sort", subject_key
+                "WHERE parent_subject_key=$1 ORDER BY sort", _resolved_key
             )
             assigned_ids: set[str] = set()
             for rc in root_children:
