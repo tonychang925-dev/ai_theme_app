@@ -445,64 +445,7 @@ def test_intel_stream_contract_headers(monkeypatch):
     assert resp.headers.get("cache-control") == "no-cache"
 
 
-def test_intel_stream_streams_upstream_events(monkeypatch):
-    monkeypatch.setattr(routes, "STOCK_PROCESSING_BASE_URL", "http://127.0.0.1:65535")
 
-    class FakeClient:
-        def __init__(self):
-            self.calls = 0
-
-        async def __aenter__(self):
-            return self
-
-        async def __aexit__(self, exc_type, exc, tb):
-            return None
-
-        async def get(self, url, params=None):
-            assert url == "http://127.0.0.1:65535/api/v1/intel_feed"
-            self.calls += 1
-            if self.calls == 1:
-                payload = {
-                    "items": [
-                        {
-                            "item_id": "evt-1",
-                            "item_type": "event",
-                            "occurred_at": "2026-06-03T10:00:00Z",
-                            "title": "sample",
-                        }
-                    ],
-                    "count": 1,
-                }
-            else:
-                payload = {"items": [], "count": 0}
-            return type(
-                "R",
-                (),
-                {
-                    "raise_for_status": lambda self: None,
-                    "json": lambda self, payload=payload: payload,
-                },
-            )()
-
-    class FakeRequest:
-        async def is_disconnected(self):
-            return False
-
-    monkeypatch.setattr(routes.httpx, "AsyncClient", lambda *args, **kwargs: FakeClient())
-
-    async def _collect():
-        gen = routes._intel_stream_proxy(
-            FakeRequest(),
-            url="http://127.0.0.1:65535/api/intel/stream",
-            query={"limit": "5"},
-        )
-        first = (await gen.__anext__()).decode("utf-8")
-        await gen.aclose()
-        return [first]
-
-    chunks = asyncio.run(_collect())
-    assert len(chunks) == 1
-    assert chunks[0].startswith("event:") and "\ndata:" in chunks[0]
 
 
 def test_recap_contract_shape(monkeypatch):

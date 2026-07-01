@@ -221,84 +221,6 @@ def _validate_sse_payload(event_name: str, payload: dict) -> tuple[bool, str | N
     return True, None
 
 
-async def _intel_stream_proxy(
-    request: Request,
-    *,
-    url: str,
-    query: dict[str, str],
-    heartbeat_interval: float = 15.0,
-    poll_interval: float = 5.0,
-) -> AsyncIterator[bytes]:
-    try:
-        seen_item_ids: set[str] = set()
-        elapsed = 0.0
-        initialized = False
-        async with httpx.AsyncClient(timeout=30.0, trust_env=False) as http:
-            while True:
-                if await request.is_disconnected():
-                    return
-
-                resp = await http.get(url, params=query)
-                resp.raise_for_status()
-                data = resp.json()
-                items = list(data.get("items") or []) if isinstance(data, dict) else []
-
-                if not initialized:
-                    yield _emit_sse(
-                        "stream_state",
-                        {"status": "connected", "source": "stock_processing_read_api", "count": len(items)},
-                    )
-                    initialized = True
-
-                fresh_items: list[dict[str, Any]] = []
-                for item in items:
-                    if not isinstance(item, dict):
-                        continue
-                    item_id = str(item.get("item_id") or item.get("event_id") or "")
-                    if not item_id or item_id in seen_item_ids:
-                        continue
-                    seen_item_ids.add(item_id)
-                    fresh_items.append(item)
-
-                for item in reversed(fresh_items):
-                    payload = {
-                        "event_id": str(item.get("item_id") or item.get("event_id") or ""),
-                        "occurred_at": str(item.get("occurred_at") or item.get("event_time") or ""),
-                        "event_type": str(item.get("item_type") or item.get("event_type") or "event"),
-                        "item": item,
-                    }
-                    ok, reason = _validate_sse_payload("intel_item", payload)
-                    if not ok:
-                        yield _emit_sse(
-                            "error",
-                            {
-                                "code": "INVALID_EVENT_PAYLOAD",
-                                "message": reason or "payload contract mismatch",
-                                "retryable": True,
-                                "event_type": "intel_item",
-                            },
-                        )
-                        continue
-                    yield _emit_sse("intel_item", payload)
-
-                elapsed += poll_interval
-                if elapsed >= heartbeat_interval:
-                    yield _emit_sse("heartbeat", {"source": "stock_processing_read_api", "ts": datetime.now(timezone.utc).isoformat()})
-                    elapsed = 0.0
-
-                await asyncio.sleep(poll_interval)
-    except Exception as exc:
-        yield _emit_sse(
-            "error",
-            {
-                "code": "SSE_UPSTREAM_UNREACHABLE",
-                "message": str(exc),
-                "retryable": True,
-                "upstream": url,
-            },
-        )
-
-
 def _as_recap_view_model_v2_from_snapshot(snapshot: dict, report_type: str) -> dict:
     trade_date = str(snapshot.get("trade_date") or "")
     snapshot_version = str(snapshot.get("snapshot_version") or "unknown")
@@ -2209,38 +2131,6 @@ async def intel_realtime_stream(request: Request) -> StreamingResponse:
 
     return StreamingResponse(
         _realtime_feed_generator(),
-        media_type="text/event-stream",
-        headers={
-            "Cache-Control": "no-cache",
-            "Connection": "keep-alive",
-            "X-Accel-Buffering": "no",
-        },
-    )
-
-
-@router.get("/intel/stream")
-async def intel_stream(
-    request: Request,
-    date: str | None = Query(default=None),
-    session: str = Query(default="all"),
-    type: str = Query(default="all"),
-    subject_key: str | None = Query(default=None),
-    stock_id: str | None = Query(default=None),
-    limit: int = Query(default=100, ge=1, le=500),
-) -> StreamingResponse:
-    params = {
-        "feed_date": date,
-        "session": session,
-        "item_type": type,
-        "subject_key": subject_key,
-        "stock_id": stock_id,
-        "limit": str(limit),
-    }
-    query = {k: v for k, v in params.items() if v is not None and v != ""}
-    url = f"{STOCK_PROCESSING_BASE_URL}/api/v1/intel_feed"
-
-    return StreamingResponse(
-        _intel_stream_proxy(request, url=url, query=query),
         media_type="text/event-stream",
         headers={
             "Cache-Control": "no-cache",
