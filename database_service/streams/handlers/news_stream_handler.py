@@ -31,7 +31,7 @@ class NewsStreamHandler:
         # 消费者配置
         self.consumer_config = {
             "consumer_group": self.config.get("consumer_group", "news_storage_handlers"),
-            "consumer_name": f"storage_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+            "consumer_name": self.config.get("consumer_name", f"storage_{datetime.now().strftime('%Y%m%d_%H%M%S')}"),
             "stream_name": self.config.get("stream_name", "stream:news:raw"),
             "batch_size": self.config.get("batch_size", 10),
             "block_time": self.config.get("block_time", 5000),

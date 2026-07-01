@@ -67,7 +67,7 @@ class NewsStreamProcessor:
         # 处理器配置
         self.processor_config = {
             "processor_group": self.config.get("processor_group", "news_business_processors"),
-            "processor_name": f"business_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+            "processor_name": self.config.get("processor_name", f"business_{datetime.now().strftime('%Y%m%d_%H%M%S')}"),
             "event_types": ["news.stored", "news.updated"],  # 监听的事件类型
             "enable_ai_analysis": self.config.get("enable_ai_analysis", True),  # 🔥 默认启用
             "enable_local_triage": self.config.get("enable_local_triage", True),
