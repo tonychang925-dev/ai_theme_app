@@ -156,7 +156,7 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
                             {s.stock_name}
                           </button>
                           {s.reason && <span className="jyhf-stock-connector">—</span>}
-                          {s.reason && <span className="jyhf-stock-reason">{(() => { const r = s.reason || ''; const cut = r.search(/软件局限性|免责|投资有风险|风险揭示|鉴此|《证券/); return (cut > 0 ? r.slice(0, cut) : r.slice(0, 30)).trim().replace(/，?$/,'') || r.slice(0, 30); })()}</span>}
+                          {s.reason && <span className="jyhf-stock-reason">{(() => { const r = s.reason || ''; const idx = r.indexOf('软件局限性'); if (idx > 0) return r.slice(0, idx).trim(); const idx2 = r.indexOf('免责'); if (idx2 > 0) return r.slice(0, idx2).trim(); return r; })()}</span>}
                         </div>
                       ))}
                     </div>
@@ -169,7 +169,7 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
                           {s.stock_name}
                         </button>
                         {s.reason && <span className="jyhf-stock-connector">—</span>}
-                        {s.reason && <span className="jyhf-stock-reason">{(() => { const r = s.reason || ''; const cut = r.search(/软件局限性|免责|投资有风险|风险揭示|鉴此|《证券/); return (cut > 0 ? r.slice(0, cut) : r.slice(0, 30)).trim().replace(/，?$/,'') || r.slice(0, 30); })()}</span>}
+                        {s.reason && <span className="jyhf-stock-reason">{(() => { const r = s.reason || ''; const idx = r.indexOf('软件局限性'); if (idx > 0) return r.slice(0, idx).trim(); const idx2 = r.indexOf('免责'); if (idx2 > 0) return r.slice(0, idx2).trim(); return r; })()}</span>}
                       </div>
                     ))}
                   </div>
@@ -195,7 +195,7 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
                           {s.stock_name}
                         </button>
                         {s.reason && <span className="jyhf-stock-connector">—</span>}
-                        {s.reason && <span className="jyhf-stock-reason">{(() => { const r = s.reason || ''; const cut = r.search(/软件局限性|免责|投资有风险|风险揭示|鉴此|《证券/); return (cut > 0 ? r.slice(0, cut) : r.slice(0, 30)).trim().replace(/，?$/,'') || r.slice(0, 30); })()}</span>}
+                        {s.reason && <span className="jyhf-stock-reason">{(() => { const r = s.reason || ''; const idx = r.indexOf('软件局限性'); if (idx > 0) return r.slice(0, idx).trim(); const idx2 = r.indexOf('免责'); if (idx2 > 0) return r.slice(0, idx2).trim(); return r; })()}</span>}
                       </div>
                     ))}
                   </div>

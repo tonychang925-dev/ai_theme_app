@@ -138,15 +138,17 @@
 
 .jyhf-stock-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 4px;
   margin-bottom: 2px;
+  width: 100%;
 }
 
 .jyhf-stock-connector {
   color: #bbb;
   font-size: 12px;
   margin: 0 1px;
+  flex-shrink: 0;
 }
 
 .jyhf-stock-chip {
@@ -172,11 +174,10 @@
   border-radius: 4px;
   color: #d46b08;
   font-size: 11px;
-  padding: 1px 6px;
-  white-space: nowrap;
-  max-width: 140px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 2px 6px;
+  flex: 1;
+  word-break: break-all;
+  line-height: 1.4;
 }
 
 .jyhf-empty {
