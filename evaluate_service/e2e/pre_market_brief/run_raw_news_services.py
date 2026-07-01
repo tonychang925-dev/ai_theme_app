@@ -107,6 +107,10 @@ async def run_services(args: argparse.Namespace) -> None:
     await processor.start_business_processing()
 
     # P4: consumer watchdog — monitors idle time + pending/lag and auto-reclaims
+    _our_names = {
+        storage_handler.consumer_config.get("consumer_name", ""),
+        processor.processor_config.get("processor_name", ""),
+    }
     watchdog_task = asyncio.create_task(
         _consumer_watchdog(
             redis_client,
@@ -114,6 +118,7 @@ async def run_services(args: argparse.Namespace) -> None:
             groups=[args.storage_group, args.processor_group],
             idle_warn_seconds=300,
             stop_event=stop_event,
+            our_consumer_names=_our_names,
         ),
     )
 
@@ -360,6 +365,7 @@ async def _consumer_watchdog(
     idle_warn_seconds: int = 300,
     stop_event: asyncio.Event | None = None,
     check_interval: float = 60.0,
+    our_consumer_names: set | None = None,
 ) -> None:
     """P4+P5: consumer watchdog — diagnostics + graceful restart on stall.
 
@@ -368,10 +374,9 @@ async def _consumer_watchdog(
     - idle > idle_warn_seconds * 2 + pending == 0 + lag > 0 AND lag increasing →
       P5 stall: consumer loop is alive but falling behind.
       Requires 2 CONSECUTIVE detections (hysteresis).
-      Lag must be INCREASING to avoid false positives during low-volume periods
-      (e.g. after-hours) where a single new message creates lag > 0 but the
-      consumer processes it instantly and then idles waiting for the next batch.
-    - Does NOT XAUTOCLAIM/XCLAIM.
+    - Only monitors and restarts for OUR consumers (our_consumer_names).
+      Zombies from previous runs are logged but ignored — killing our process
+      won't fix another process's dead consumer.
     """
     _stall_count: dict[tuple[str, str], int] = {}  # (stream, group) → consecutive stalls
     _prev_lag: dict[tuple[str, str], int] = {}      # track lag trend
@@ -401,6 +406,16 @@ async def _consumer_watchdog(
                     pending = int(c.get("pending", 0))
                     cname = c.get("name", "?")
                     stall_key = (stream_key, group)
+
+                    # Skip consumers that don't belong to THIS process
+                    if our_consumer_names and cname not in our_consumer_names:
+                        if idle_s > idle_warn_seconds * 4:
+                            logging.warning(
+                                "👻 P4: foreign zombie consumer %s in %s/%s idle=%.0fs — "
+                                "will be cleaned by next _ensure_group_clean_start",
+                                cname, stream_key, group, idle_s,
+                            )
+                        continue
 
                     if idle_s > idle_warn_seconds and (pending > 0 or group_lag > 0):
                         logging.warning(
