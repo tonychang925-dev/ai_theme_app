@@ -2156,6 +2156,68 @@ async def intel_raw_stream(request: Request) -> StreamingResponse:
     )
 
 
+@router.get("/intel/stream/realtime")
+async def intel_realtime_stream(request: Request) -> StreamingResponse:
+    """Realtime intel feed — 直接从 stream:event:feed + stream:jyhf:feed XREAD 推送。
+
+    XREAD（非 XREADGROUP），不创建消费组，不 ACK，不改 last-delivered-id。
+    akshare 管道事件和 JYHF CDP 事件独立 channel，各推各的。
+    """
+    _FEEDS = {"stream:event:feed": "$", "stream:jyhf:feed": "$"}
+
+    async def _realtime_feed_generator():
+        r = aioredis.from_url(_RAW_FEED_REDIS_URL, socket_connect_timeout=5)
+        last_ids = dict(_FEEDS)
+        heartbeat_interval = 15
+        last_heartbeat = time.monotonic()
+
+        try:
+            while True:
+                if await request.is_disconnected():
+                    break
+
+                now = time.monotonic()
+                if now - last_heartbeat >= heartbeat_interval:
+                    yield _emit_sse("heartbeat", {"status": "ok"})
+                    last_heartbeat = now
+
+                try:
+                    result = await asyncio.wait_for(
+                        r.xread(last_ids, block=2000, count=50),
+                        timeout=3.0,
+                    )
+                except (asyncio.TimeoutError, ConnectionError):
+                    continue
+
+                if result is None:
+                    continue
+
+                for stream_name_bytes, messages in result:
+                    stream_name = stream_name_bytes.decode() if isinstance(stream_name_bytes, bytes) else stream_name_bytes
+                    for msg_id, fields in messages:
+                        last_ids[stream_name] = msg_id
+                        data = {k.decode() if isinstance(k, bytes) else k:
+                                v.decode() if isinstance(v, bytes) else v
+                                for k, v in fields.items()}
+                        yield _emit_sse("intel_item", {
+                            "stream": stream_name,
+                            "message_id": msg_id.decode() if isinstance(msg_id, bytes) else msg_id,
+                            "data": data,
+                        })
+        finally:
+            await r.aclose()
+
+    return StreamingResponse(
+        _realtime_feed_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
 @router.get("/intel/stream")
 async def intel_stream(
     request: Request,
