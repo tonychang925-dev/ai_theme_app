@@ -64,7 +64,7 @@ def load_config() -> JyhfCdpServiceConfig:
         redis_host=str(os.getenv("REDIS_HOST", "127.0.0.1")),
         redis_port=int(os.getenv("REDIS_PORT", "6379")),
         redis_db=int(os.getenv("REDIS_DB", "0")),
-        redis_stream_feed=str(os.getenv("JYHF_CDP_REDIS_STREAM_FEED", "stream:event:feed")),
+        redis_stream_feed=str(os.getenv("JYHF_CDP_REDIS_STREAM_FEED", "stream:jyhf:feed")),
         pg_host=str(os.getenv("PG_HOST", "localhost")),
         pg_port=int(os.getenv("PG_PORT", "5432")),
         pg_database=str(os.getenv("PG_DATABASE", "stock_data_test")),

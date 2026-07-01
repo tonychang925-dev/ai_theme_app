@@ -439,6 +439,7 @@ class RealtimePushService:
         self.stream_consumer: Optional[RedisStreamConsumer] = None
         self.default_streams = [
             "stream:event:feed",
+            "stream:jyhf:feed",
             "stream:theme:feed",
             "stream:news:feed",
             "stream:stock:feed"
