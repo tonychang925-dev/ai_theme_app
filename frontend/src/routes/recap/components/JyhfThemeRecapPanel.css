@@ -136,6 +136,12 @@
   gap: 3px;
 }
 
+.jyhf-stock-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .jyhf-stock-chip {
   background: #f0f5ff;
   border: 1px solid #d6e4ff;
@@ -151,6 +157,19 @@
 .jyhf-stock-chip:hover {
   background: #d6e4ff;
   border-color: #91b8f5;
+}
+
+.jyhf-stock-reason {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  border-radius: 4px;
+  color: #52c41a;
+  font-size: 11px;
+  padding: 1px 6px;
+  white-space: nowrap;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .jyhf-empty {
