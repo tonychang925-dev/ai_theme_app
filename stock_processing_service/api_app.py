@@ -4356,7 +4356,7 @@ async def get_theme_workspace(
             async with app.state.gateway._client.pool.acquire() as _conn:
                 _resolved = await _conn.fetchval(
                     "SELECT subject_key FROM vw_subject_theme_binding "
-                    "WHERE theme_name = $1 AND binding_status = 'active' "
+                    "WHERE theme_name = $1 "
                     "ORDER BY node_level LIMIT 1", subject_key)
                 if _resolved:
                     subject_key = _resolved
