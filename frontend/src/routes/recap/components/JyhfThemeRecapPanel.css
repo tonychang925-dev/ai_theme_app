@@ -141,6 +141,8 @@
   align-items: center;
   gap: 4px;
   margin-bottom: 2px;
+  flex-wrap: nowrap;
+  flex-basis: 100%;
 }
 
 .jyhf-stock-connector {
