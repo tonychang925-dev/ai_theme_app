@@ -1,4 +1,5 @@
 import { navigateTo } from "../../lib/navigation";
+import "../../routes/recap/components/JyhfThemeRecapPanel.css";
 
 export interface GraphStock {
   stock_id: string;
@@ -155,7 +156,7 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
                             {s.stock_name}
                           </button>
                           {s.reason && <span className="jyhf-stock-connector">—</span>}
-                          {s.reason && <span className="jyhf-stock-reason">{s.reason.length > 40 ? s.reason.slice(0, 40) + '…' : s.reason}</span>}
+                          {s.reason && <span className="jyhf-stock-reason">{(() => { const r = s.reason || ''; const cut = r.search(/软件局限性|免责|投资有风险|风险揭示|鉴此|《证券/); return (cut > 0 ? r.slice(0, cut) : r.slice(0, 30)).trim().replace(/，?$/,'') || r.slice(0, 30); })()}</span>}
                         </div>
                       ))}
                     </div>
@@ -168,7 +169,7 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
                           {s.stock_name}
                         </button>
                         {s.reason && <span className="jyhf-stock-connector">—</span>}
-                        {s.reason && <span className="jyhf-stock-reason">{s.reason.length > 40 ? s.reason.slice(0, 40) + '…' : s.reason}</span>}
+                        {s.reason && <span className="jyhf-stock-reason">{(() => { const r = s.reason || ''; const cut = r.search(/软件局限性|免责|投资有风险|风险揭示|鉴此|《证券/); return (cut > 0 ? r.slice(0, cut) : r.slice(0, 30)).trim().replace(/，?$/,'') || r.slice(0, 30); })()}</span>}
                       </div>
                     ))}
                   </div>
@@ -194,7 +195,7 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
                           {s.stock_name}
                         </button>
                         {s.reason && <span className="jyhf-stock-connector">—</span>}
-                        {s.reason && <span className="jyhf-stock-reason">{s.reason.length > 40 ? s.reason.slice(0, 40) + '…' : s.reason}</span>}
+                        {s.reason && <span className="jyhf-stock-reason">{(() => { const r = s.reason || ''; const cut = r.search(/软件局限性|免责|投资有风险|风险揭示|鉴此|《证券/); return (cut > 0 ? r.slice(0, cut) : r.slice(0, 30)).trim().replace(/，?$/,'') || r.slice(0, 30); })()}</span>}
                       </div>
                     ))}
                   </div>
