@@ -150,15 +150,21 @@ function renderGraphTree(graph: SubjectGraph, tradeDate?: string) {
                   <div key={gi} style={{ marginBottom: gi < grands.length - 1 ? 6 : 0, width: "100%" }}>
                     <div className="jyhf-grand-label">{gc.name}</div>
                     <div className="jyhf-stock-list">
-                      {gc.stocks.map((s, si) => (
-                        <div key={si} className="jyhf-stock-row">
-                          <button type="button" className="jyhf-stock-chip" onClick={() => navigateTo(`/stocks/${encodeURIComponent(s.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
+                      {gc.stocks.map((s, si) =>
+                        s.reason ? (
+                          <div key={si} className="jyhf-stock-row">
+                            <button type="button" className="jyhf-stock-chip" onClick={() => navigateTo(`/stocks/${encodeURIComponent(s.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
+                              {s.stock_name}
+                            </button>
+                            <span className="jyhf-stock-connector">—</span>
+                            <span className="jyhf-stock-reason">{(() => { const r = s.reason; const idx = r.indexOf('软件局限性'); if (idx > 0) return r.slice(0, idx).trim(); const idx2 = r.indexOf('免责'); if (idx2 > 0) return r.slice(0, idx2).trim(); return r; })()}</span>
+                          </div>
+                        ) : (
+                          <button key={si} type="button" className="jyhf-stock-chip" onClick={() => navigateTo(`/stocks/${encodeURIComponent(s.stock_id)}${tradeDate ? `?date=${encodeURIComponent(tradeDate)}` : ""}`)}>
                             {s.stock_name}
                           </button>
-                          {s.reason && <span className="jyhf-stock-connector">—</span>}
-                          {s.reason && <span className="jyhf-stock-reason">{(() => { const r = s.reason || ''; const idx = r.indexOf('软件局限性'); if (idx > 0) return r.slice(0, idx).trim(); const idx2 = r.indexOf('免责'); if (idx2 > 0) return r.slice(0, idx2).trim(); return r; })()}</span>}
-                        </div>
-                      ))}
+                        )
+                      )}
                     </div>
                   </div>
                 )) : (
