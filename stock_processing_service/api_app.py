@@ -4350,6 +4350,18 @@ async def get_theme_workspace(
     stocks_limit: int = Query(default=50, ge=1, le=500),
 ) -> dict[str, Any]:
     """题材工作台统一端点（semi-service — 后续 P3 Gateway 化升级）。"""
+    # Resolve semantic name to numeric key via vw_subject_theme_binding
+    if subject_key and not subject_key.isdigit():
+        try:
+            async with app.state.gateway._client.pool.acquire() as _conn:
+                _resolved = await _conn.fetchval(
+                    "SELECT subject_key FROM vw_subject_theme_binding "
+                    "WHERE theme_name = $1 AND binding_status = 'active' "
+                    "ORDER BY node_level LIMIT 1", subject_key)
+                if _resolved:
+                    subject_key = _resolved
+        except Exception:
+            pass
     detail = await app.state.phase1_repo.fetch_theme_detail(subject_key)
     # Resolve leaf / missing taxonomy nodes to canonical subject
     if not detail or not await _subject_has_children(app, subject_key):
