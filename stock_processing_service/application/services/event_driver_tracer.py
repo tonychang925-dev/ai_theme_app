@@ -13,6 +13,10 @@ import logging
 from datetime import date, timedelta
 from typing import Any, Dict, List, Optional
 
+from stock_processing_service.integrations.a_stock_data.resolvers.reason_theme_resolver import (
+    DEFAULT_THEME_KEYWORDS,
+)
+
 logger = logging.getLogger(__name__)
 
 # 单次查询最大题材数
@@ -177,6 +181,132 @@ class EventDriverTracer:
             })
 
         return enriched
+
+    async def trace_theme_rows(
+        self,
+        theme_rows: List[Dict[str, Any]],
+        trade_date: date,
+        *,
+        lookback_days: int = _DEFAULT_LOOKBACK_DAYS,
+        per_theme_limit: int = 2,
+    ) -> List[Dict[str, Any]]:
+        """Trace every limit-up matrix theme and map reason buckets to subjects."""
+        normalized_rows: List[Dict[str, Any]] = []
+        reason_theme_names: List[str] = []
+        for row in theme_rows:
+            if not isinstance(row, dict):
+                continue
+            subject_key = str(row.get("subject_key") or "").strip()
+            theme_name = str(row.get("theme_name") or "").strip()
+            normalized_rows.append(
+                {
+                    "subject_key": subject_key,
+                    "theme_name": theme_name,
+                }
+            )
+            if subject_key.startswith("reason:") and theme_name:
+                reason_theme_names.append(theme_name)
+
+        resolved_by_theme = await self._resolve_subject_keys_by_theme_names(
+            reason_theme_names
+        )
+        query_keys: List[str] = []
+        source_keys_by_row: Dict[str, List[str]] = {}
+        for row in normalized_rows:
+            subject_key = row["subject_key"]
+            theme_name = row["theme_name"]
+            source_keys: List[str] = []
+            if (
+                subject_key
+                and subject_key != "other"
+                and not subject_key.startswith("reason:")
+            ):
+                source_keys.append(subject_key)
+            source_keys.extend(resolved_by_theme.get(theme_name, []))
+            source_keys = list(dict.fromkeys(source_keys))
+            source_keys_by_row[subject_key] = source_keys
+            query_keys.extend(source_keys)
+
+        events_by_key = await self.trace(
+            list(dict.fromkeys(query_keys)),
+            trade_date,
+            lookback_days=lookback_days,
+            per_theme_limit=per_theme_limit,
+        )
+
+        enriched: List[Dict[str, Any]] = []
+        for row in normalized_rows:
+            subject_key = row["subject_key"]
+            events: List[Dict[str, Any]] = []
+            seen: set[tuple[str, str]] = set()
+            for source_key in source_keys_by_row.get(subject_key, []):
+                for event in events_by_key.get(source_key, []):
+                    event_id = str(event.get("event_id") or "")
+                    summary = str(event.get("summary") or "").strip()
+                    dedupe_key = (event_id, summary)
+                    if dedupe_key in seen:
+                        continue
+                    seen.add(dedupe_key)
+                    events.append(event)
+            events.sort(
+                key=lambda event: (
+                    float(event.get("confidence") or 0),
+                    str(event.get("event_time") or ""),
+                    str(event.get("event_id") or ""),
+                ),
+                reverse=True,
+            )
+            enriched.append(
+                {
+                    **row,
+                    "resolved_subject_keys": source_keys_by_row.get(subject_key, []),
+                    "driver_events": events[:per_theme_limit],
+                }
+            )
+        return enriched
+
+    async def _resolve_subject_keys_by_theme_names(
+        self,
+        theme_names: List[str],
+    ) -> Dict[str, List[str]]:
+        unique_names = list(dict.fromkeys(name for name in theme_names if name))
+        if not unique_names:
+            return {}
+
+        aliases_by_theme: Dict[str, set[str]] = {}
+        all_aliases: set[str] = set()
+        for theme_name in unique_names:
+            aliases = {
+                theme_name,
+                *DEFAULT_THEME_KEYWORDS.get(theme_name, ()),
+            }
+            aliases_by_theme[theme_name] = aliases
+            all_aliases.update(aliases)
+
+        sql = """
+        SELECT subject_key, concept
+        FROM theme_gate_profile
+        WHERE concept = ANY($1::text[])
+          AND NULLIF(subject_key, '') IS NOT NULL
+        ORDER BY concept, subject_key
+        """
+        try:
+            async with self._pool.acquire() as conn:
+                rows = await conn.fetch(sql, sorted(all_aliases))
+        except Exception as exc:
+            logger.warning("EventDriverTracer theme resolution failed: %s", exc)
+            return {name: [] for name in unique_names}
+
+        result: Dict[str, List[str]] = {name: [] for name in unique_names}
+        for row in rows:
+            concept = str(row["concept"] or "").strip()
+            subject_key = str(row["subject_key"] or "").strip()
+            if not concept or not subject_key:
+                continue
+            for theme_name, aliases in aliases_by_theme.items():
+                if concept in aliases and subject_key not in result[theme_name]:
+                    result[theme_name].append(subject_key)
+        return result
 
 
 async def create_event_driver_tracer(pool: Any) -> EventDriverTracer:

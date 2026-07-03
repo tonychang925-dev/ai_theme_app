@@ -2416,10 +2416,11 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
         pool = getattr(pool, "pool", None) if pool else None
         if pool is not None:
             tracer = EventDriverTracer(pool)
-            capital_reviews = v2.get("theme_capital_reviews") or []
-            if capital_reviews:
-                theme_driver_events = await tracer.trace_top_themes(
-                    capital_reviews, d, top_n=8, per_theme_limit=2,
+            limit_up_matrix = v2.get("limit_up_theme_matrix") or {}
+            matrix_columns = limit_up_matrix.get("columns") or []
+            if matrix_columns:
+                theme_driver_events = await tracer.trace_theme_rows(
+                    matrix_columns, d, per_theme_limit=2,
                 )
             # 重新 build 并注入 driver_events
             structured_v2 = builder.build(
@@ -2452,6 +2453,8 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
     v2["watchlists"] = await _build_one_to_two_watchlists(d)
 
     updated_recap_doc = dict(recap_doc)
+    if isinstance(v2.get("limit_up_theme_matrix"), dict):
+        updated_recap_doc["limit_up_theme_matrix"] = v2["limit_up_theme_matrix"]
     updated_recap_doc["daily_review_v2"] = v2
     updated_payload = dict(normalized)
     updated_payload["recap_doc"] = updated_recap_doc
