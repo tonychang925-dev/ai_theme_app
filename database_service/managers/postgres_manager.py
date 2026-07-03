@@ -1668,38 +1668,37 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 if theme_stats:
                     stats['themes'] = dict(theme_stats)
                 
-                # 事件统计
+                # 事件统计 — 使用实际存在的列
                 try:
                     event_stats = await conn.fetchrow("""
-                        SELECT 
+                        SELECT
                             COUNT(*) as total_events,
-                            COUNT(CASE WHEN processed = TRUE THEN 1 END) as processed,
-                            COUNT(CASE WHEN processed = FALSE THEN 1 END) as unprocessed,
-                            COUNT(CASE WHEN processing_status = 'pending' THEN 1 END) as pending
+                            COUNT(CASE WHEN theme_directive_processed = TRUE THEN 1 END) as processed,
+                            COUNT(CASE WHEN theme_directive_processed = FALSE THEN 1 END) as unprocessed
                         FROM news_event
                     """)
-                    
                     if event_stats:
                         stats['events'] = dict(event_stats)
-                except Exception:
-                    logger.warning("news_event表可能不存在，跳过事件统计")
-                
-                # 关联统计
+                except Exception as exc:
+                    logger.warning("news_event 统计跳过: %s", exc)
+
+                # 关联统计 — 使用实际存在的列 (confidence numeric, match_status)
                 try:
                     relation_stats = await conn.fetchrow("""
-                        SELECT 
+                        SELECT
                             COUNT(*) as total_relations,
                             AVG(confidence) as avg_confidence,
-                            COUNT(CASE WHEN confidence_level = 'high' THEN 1 END) as high_confidence_count,
-                            COUNT(CASE WHEN confidence_level = 'medium' THEN 1 END) as medium_confidence_count,
-                            COUNT(CASE WHEN confidence_level = 'low' THEN 1 END) as low_confidence_count
+                            COUNT(CASE WHEN confidence >= 0.8 THEN 1 END) as high_confidence_count,
+                            COUNT(CASE WHEN confidence >= 0.5 AND confidence < 0.8 THEN 1 END) as medium_confidence_count,
+                            COUNT(CASE WHEN confidence < 0.5 THEN 1 END) as low_confidence_count,
+                            COUNT(CASE WHEN is_primary = TRUE THEN 1 END) as primary_count,
+                            COUNT(CASE WHEN match_status = 'matched' THEN 1 END) as matched_count
                         FROM event_theme_map
                     """)
-                    
                     if relation_stats:
                         stats['relations'] = dict(relation_stats)
-                except Exception:
-                    logger.warning("event_theme_map表可能不存在，跳关联统计")
+                except Exception as exc:
+                    logger.warning("event_theme_map 统计跳过: %s", exc)
                 
                 # 数据库信息
                 db_info = await conn.fetchrow("""
