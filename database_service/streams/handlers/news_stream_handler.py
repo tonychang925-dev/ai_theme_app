@@ -31,7 +31,7 @@ class NewsStreamHandler:
         # 消费者配置
         self.consumer_config = {
             "consumer_group": self.config.get("consumer_group", "news_storage_handlers"),
-            "consumer_name": self.config.get("consumer_name", f"storage_{datetime.now().strftime('%Y%m%d_%H%M%S')}"),
+            "consumer_name": self.config.get("consumer_name", "news_storage_worker"),
             "stream_name": self.config.get("stream_name", "stream:news:raw"),
             "batch_size": self.config.get("batch_size", 10),
             "block_time": self.config.get("block_time", 5000),
@@ -979,24 +979,42 @@ class NewsStreamHandler:
         except Exception as e:
             return {"valid": False, "error": f"数据格式异常: {str(e)}"}
     
-    async def _acknowledge_messages(self, messages: List[Dict[str, Any]], 
+    async def _acknowledge_messages(self, messages: List[Dict[str, Any]],
                                    storage_results: List[Dict[str, Any]]):
-        """确认消息"""
+        """确认消息 — 无条件 ACK 所有消息，避免 PENDING 堆积。
+
+        所有失败模式均不可重试：
+        - 提取失败: 格式/结构问题，重试无效
+        - 验证失败: 缺少必要字段，重试无效
+        - 存储失败: 无重试机制，留在 PENDING 会永久卡死
+        失败的统计信息在 _update_storage_stats 中记录，便于监控。
+        """
         for message, result in zip(messages, storage_results):
             message_id = message.get('id')
-            
-            # 只有存储成功的消息才确认
-            if result.get("storage_success"):
-                try:
-                    if hasattr(self.stream_bus, 'ack_message'):
-                        await self.stream_bus.ack_message(
-                            stream=self._resolve_stream_key(),
-                            group=self.consumer_config["consumer_group"],
-                            message_id=message_id
-                        )
+            if not message_id:
+                continue
+
+            storage_ok = result.get("storage_success")
+            reason = ""
+            if not storage_ok:
+                reason = result.get("error", "unknown")
+
+            try:
+                if hasattr(self.stream_bus, 'ack_message'):
+                    await self.stream_bus.ack_message(
+                        stream=self._resolve_stream_key(),
+                        group=self.consumer_config["consumer_group"],
+                        message_id=message_id
+                    )
+                    if storage_ok:
                         logger.debug(f"✅ 消息确认: {message_id}")
-                except Exception as e:
-                    logger.error(f"消息确认失败 {message_id}: {e}")
+                    else:
+                        logger.warning(
+                            "消息确认(非重试失败): %s reason=%s",
+                            message_id, reason,
+                        )
+            except Exception as e:
+                logger.error(f"消息确认失败 {message_id}: {e}")
     
     async def _update_storage_stats_legacy(self, storage_results: List[Dict[str, Any]]):
         """更新存储统计"""

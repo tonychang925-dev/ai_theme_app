@@ -67,7 +67,7 @@ class NewsStreamProcessor:
         # 处理器配置
         self.processor_config = {
             "processor_group": self.config.get("processor_group", "news_business_processors"),
-            "processor_name": self.config.get("processor_name", f"business_{datetime.now().strftime('%Y%m%d_%H%M%S')}"),
+            "processor_name": self.config.get("processor_name", "news_processor_worker"),
             "event_types": ["news.stored", "news.updated"],  # 监听的事件类型
             "enable_ai_analysis": self.config.get("enable_ai_analysis", True),  # 🔥 默认启用
             "enable_local_triage": self.config.get("enable_local_triage", True),
@@ -189,10 +189,14 @@ class NewsStreamProcessor:
 
         Phase 4F: 读取和处理分离。消费者读完立即返回继续心跳，
         LLM 处理在后台异步执行，避免阻塞导致 Redis 消费者变僵尸。
+
+        Phase 6A fix: 移除背压阻塞（之前的 _max_concurrent 检查在
+        _listen_for_events 之前，导致 LLM call hang 时 consumer 永远
+        不再调用 XREADGROUP → Redis 认为 consumer idle → 变僵尸）。
+        现在永远先读再处理，consumer 始终存活。
         """
         logger.info("进入业务处理循环...")
 
-        # 最大并发处理任务数，防止无界内存增长
         _max_concurrent = int(os.getenv("PROCESSOR_MAX_CONCURRENT_TASKS", "3"))
         _processing_tasks: set[asyncio.Task] = set()
 
@@ -201,28 +205,30 @@ class NewsStreamProcessor:
                 # 清理已完成的后台任务
                 _processing_tasks = {t for t in _processing_tasks if not t.done()}
 
-                # 等待有空余槽位才读取新消息（背压控制）
-                if len(_processing_tasks) >= _max_concurrent:
-                    await asyncio.sleep(1)
-                    continue
-
+                # Phase 6A: 永远先读 stream，保持 consumer 存活。
+                # 即使处理积压也不跳过 XREADGROUP — 否则 consumer idle 变僵尸。
                 events = await self._listen_for_events()
 
                 if events:
-                    logger.info(f"📨 收到 {len(events)} 个业务事件")
+                    logger.info(f"📨 收到 {len(events)} 个业务事件 (并发处理: {len(_processing_tasks)})")
 
-                    # Phase 4F: 后台异步处理，主循环立即回去读下一批
-                    task = asyncio.create_task(self._process_events_batch(events))
-                    _processing_tasks.add(task)
+                    if len(_processing_tasks) >= _max_concurrent:
+                        logger.warning(
+                            "⚠️ 处理积压: %d/%d 槽位占用，跳过本批 %d 个事件（已 ACK，不会重投）",
+                            len(_processing_tasks), _max_concurrent, len(events),
+                        )
+                    else:
+                        # 直接在后台处理 — _process_events_batch 内部有 asyncio.wait 超时保护
+                        task = asyncio.create_task(self._process_events_batch(events))
+                        _processing_tasks.add(task)
 
-                    # 完成后更新统计
-                    def _on_done(t: asyncio.Task, _events=events) -> None:
-                        try:
-                            results = t.result()
-                            asyncio.create_task(self._update_business_stats(results))
-                        except Exception:
-                            pass
-                    task.add_done_callback(_on_done)
+                        def _on_done(t: asyncio.Task, _events=events) -> None:
+                            try:
+                                results = t.result()
+                                asyncio.create_task(self._update_business_stats(results))
+                            except Exception:
+                                pass
+                        task.add_done_callback(_on_done)
 
                 else:
                     if self.business_stats["total_events"] % 10 == 0:
@@ -356,58 +362,79 @@ class NewsStreamProcessor:
             return []
     
     async def _process_events_batch(self, events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        """处理事件批次 - 优化版：并行处理以提高AI分析效率"""
+        """处理事件批次 — 并行处理 + 超时保护，保留已完成任务的结果。
+
+        使用 asyncio.wait 替代 asyncio.gather：
+        - 超时后已完成的任务结果保留，不会全部丢弃
+        - 未完成的任务被取消，记录为 batch_timeout
+        """
         if not events:
             return []
 
-        # 记录批次信息
         logger.info(f"🧠 并行处理批次: {len(events)} 个事件")
 
-        # 创建并行处理任务
-        tasks = [self._process_single_event(event) for event in events]
+        batch_timeout = float(os.getenv("PROCESSOR_BATCH_HARD_TIMEOUT_S", "120"))
+
+        tasks = [asyncio.ensure_future(self._process_single_event(event)) for event in events]
 
         try:
-            # 并行执行所有任务，允许异常返回
-            results = await asyncio.gather(*tasks, return_exceptions=True)
+            done, pending = await asyncio.wait(tasks, timeout=batch_timeout)
+        except Exception as exc:
+            logger.error(f"批次处理异常: {exc}")
+            for t in tasks:
+                if not t.done():
+                    t.cancel()
+            logger.warning("⚠️  回退到顺序处理")
+            return await self._sequential_process_events_batch(events)
 
-            processed_results = []
-            success_count = 0
-            error_count = 0
+        # 取消超时任务
+        if pending:
+            logger.warning(
+                "⏰ 批次部分超时 (%.0fs): %d/%d 个事件未完成",
+                batch_timeout, len(pending), len(tasks),
+            )
+            for t in pending:
+                t.cancel()
 
-            for i, result in enumerate(results):
+        processed_results = []
+        success_count = 0
+
+        for i, task in enumerate(tasks):
+            if task in pending:
+                # 超时未完成
+                processed_results.append({
+                    "event_id": events[i].get('id', f'unknown_{i}'),
+                    "event_type": events[i].get('event_type', 'unknown'),
+                    "processing_success": False,
+                    "business_results": {},
+                    "error": "batch_timeout",
+                    "processing_time": datetime.now().isoformat(),
+                    "source_type": "parallel_batch",
+                })
+            else:
+                try:
+                    result = task.result()
+                except Exception as exc:
+                    result = exc
                 if isinstance(result, Exception):
-                    # 处理异常结果
-                    error_count += 1
                     logger.error(f"处理事件 {i} 失败: {result}")
-
-                    # 生成错误结果记录
-                    event_id = events[i].get('id', f'unknown_{i}')
                     processed_results.append({
-                        "event_id": event_id,
+                        "event_id": events[i].get('id', f'unknown_{i}'),
                         "event_type": events[i].get('event_type', 'unknown'),
                         "processing_success": False,
                         "business_results": {},
                         "error": str(result),
                         "processing_time": datetime.now().isoformat(),
-                        "source_type": "parallel_batch"
+                        "source_type": "parallel_batch",
                     })
                 else:
-                    # 正常结果
                     success_count += 1
                     processed_results.append(result)
 
-            # 记录批次处理统计
-            if success_count > 0:
-                logger.info(f"✅ 批次处理完成: {success_count} 成功, {error_count} 失败")
+        if success_count > 0:
+            logger.info(f"✅ 批次处理完成: {success_count}/{len(tasks)} 成功")
 
-            return processed_results
-
-        except Exception as e:
-            # 整体批次处理异常
-            logger.error(f"批次处理异常: {e}")
-            # 回退到顺序处理作为降级方案
-            logger.warning("⚠️  回退到顺序处理")
-            return await self._sequential_process_events_batch(events)
+        return processed_results
 
     async def _sequential_process_events_batch(self, events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """顺序处理事件批次 - 降级方案"""
