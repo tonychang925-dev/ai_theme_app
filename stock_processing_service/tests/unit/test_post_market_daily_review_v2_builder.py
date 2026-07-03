@@ -374,6 +374,126 @@ def test_daily_review_v2_builder_passes_through_limit_up_theme_matrix_contract()
     assert matrix["board_totals"]["1"] == 1
 
 
+def test_tc_recap_catalyst_001_merges_driver_events_into_authoritative_matrix() -> None:
+    recap_doc = {
+        "limit_up_theme_matrix": {
+            "source": "limit_up_theme_matrix_builder",
+            "trade_date": "2026-07-02",
+            "columns": [
+                {
+                    "subject_key": "9014636",
+                    "theme_name": "机器人",
+                    "mainline_name": "机器人",
+                    "limit_up_count": 22,
+                    "focus_stocks": [],
+                    "catalyst_events": [],
+                },
+                {
+                    "subject_key": "9018144",
+                    "theme_name": "PCB/HBM产业链",
+                    "mainline_name": "PCB/HBM产业链",
+                    "limit_up_count": 1,
+                    "focus_stocks": [],
+                    "catalyst_events": [],
+                },
+            ],
+            "board_totals": {"4": 0, "3": 0, "2": 0, "1": 23},
+            "diagnostics": {"source": "limit_up_theme_matrix_builder"},
+        },
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+    driver_events = [
+        {
+            "subject_key": "9014636",
+            "theme_name": "机器人",
+            "driver_events": [
+                {
+                    "event_id": 101,
+                    "summary": "优必选发布超仿生人形机器人",
+                    "event_time": "2026-06-30T10:00:00",
+                    "confidence": 0.95,
+                    "match_reason": "机器人",
+                }
+            ],
+        },
+        {
+            "subject_key": "9018144",
+            "theme_name": "PCB印制电路板",
+            "driver_events": [
+                {
+                    "event_id": 102,
+                    "summary": "PCB厂商上调产品价格",
+                    "event_time": "2026-07-01T09:00:00",
+                    "confidence": 0.9,
+                    "match_reason": "PCB",
+                }
+            ],
+        },
+    ]
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 7, 2),
+        recap_doc=recap_doc,
+        theme_driver_events=driver_events,
+        snapshot_version="daily_review_v2.tc_recap_catalyst_001",
+    )
+
+    rows = payload["limit_up_theme_events"]["rows"]
+    assert rows[0]["catalyst_events"][0]["summary"] == "优必选发布超仿生人形机器人"
+    assert rows[1]["catalyst_events"][0]["summary"] == "PCB厂商上调产品价格"
+    assert payload["limit_up_theme_events"]["diagnostics"]["catalyst_count"] == 2
+    assert recap_doc["limit_up_theme_matrix"]["columns"][0]["catalyst_events"] == []
+
+
+def test_tc_recap_catalyst_002_reuses_persisted_driver_events_on_get_rebuild() -> None:
+    recap_doc = {
+        "limit_up_theme_matrix": {
+            "source": "limit_up_theme_matrix_builder",
+            "trade_date": "2026-07-02",
+            "columns": [
+                {
+                    "subject_key": "9014636",
+                    "theme_name": "机器人",
+                    "mainline_name": "机器人",
+                    "limit_up_count": 22,
+                    "focus_stocks": [],
+                    "catalyst_events": [],
+                }
+            ],
+            "board_totals": {"4": 0, "3": 0, "2": 0, "1": 22},
+            "diagnostics": {"source": "limit_up_theme_matrix_builder"},
+        },
+        "daily_review_v2": {
+            "theme_driver_events": [
+                {
+                    "subject_key": "9014636",
+                    "theme_name": "机器人",
+                    "driver_events": [
+                        {
+                            "event_id": 101,
+                            "summary": "优必选发布超仿生人形机器人",
+                            "event_time": "2026-06-30T10:00:00",
+                            "confidence": 0.95,
+                            "match_reason": "机器人",
+                        }
+                    ],
+                }
+            ]
+        },
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 7, 2),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.tc_recap_catalyst_002",
+    )
+
+    catalysts = payload["limit_up_theme_events"]["rows"][0]["catalyst_events"]
+    assert catalysts[0]["summary"] == "优必选发布超仿生人形机器人"
+    assert payload["limit_up_theme_events"]["diagnostics"]["catalyst_count"] == 1
+
+
 def test_daily_review_v2_builder_reports_missing_limit_up_theme_matrix() -> None:
     payload = PostMarketDailyReviewV2Builder().build(
         trade_date=date(2026, 6, 18),

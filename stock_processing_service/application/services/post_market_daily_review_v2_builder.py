@@ -1272,7 +1272,28 @@ class PostMarketDailyReviewV2Builder:
     ) -> dict[str, Any]:
         matrix = recap_doc.get("limit_up_theme_matrix")
         if isinstance(matrix, dict) and matrix.get("source") == "limit_up_theme_matrix_builder":
-            return deepcopy(matrix)
+            result = deepcopy(matrix)
+            effective_driver_events = theme_driver_events
+            if effective_driver_events is None:
+                persisted_v2 = recap_doc.get("daily_review_v2")
+                if isinstance(persisted_v2, dict):
+                    persisted_events = persisted_v2.get("theme_driver_events")
+                    if isinstance(persisted_events, list):
+                        effective_driver_events = persisted_events
+            driver_index = self._limit_up_driver_event_index(effective_driver_events, theme_name_map)
+            columns = result.get("columns")
+            for column in columns if isinstance(columns, list) else []:
+                if not isinstance(column, dict):
+                    continue
+                matched_events = self._limit_up_theme_matrix_catalyst_events(
+                    driver_index,
+                    self._text(column.get("subject_key")),
+                    self._text(column.get("theme_name")),
+                    self._text(column.get("mainline_name")),
+                )
+                if matched_events:
+                    column["catalyst_events"] = matched_events
+            return result
         return {
             "columns": [],
             "board_totals": {},
