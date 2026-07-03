@@ -69,12 +69,18 @@ function fmtPct(value?: number | null) {
   return `${n.toFixed(2)}%`;
 }
 
+function displayStockName(stockName?: string | null) {
+  const text = String(stockName || "").trim();
+  if (!text || /^\d+$/.test(text) || /^\d{6}\.(SH|SZ|BJ)$/i.test(text)) return "名称缺失";
+  return text;
+}
+
 function renderMoneyCell(entry?: HotMoneySeatActivityEntry | null, kind?: "buy" | "sell") {
   if (!entry) return <span className="workspace-note">--</span>;
   const amount = kind === "sell" ? Math.abs(Number(entry.net_amount || 0)) : entry.net_amount;
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-      <span>{entry.stock_name || entry.stock_id || "--"}</span>
+      <span>{displayStockName(entry.stock_name)}</span>
       <span className="workspace-note">{fmtAmount(amount)}</span>
     </div>
   );
@@ -262,10 +268,10 @@ export default function DailyRecapStoryPanel({
               render: (_: unknown, row: { subject_key?: string; theme_name?: string }) => (
                 row.subject_key && !isPlaceholderTheme(row.subject_key) ? (
                   <button type="button" className="recap-theme-link" onClick={() => navigateTo(themeLink(row.subject_key, tradeDate))}>
-                    {resolveThemeName(row.subject_key) || resolveThemeName(row.theme_name) || "--"}
+                    {resolveThemeName(row.theme_name) || resolveThemeName(row.subject_key) || "--"}
                   </button>
                 ) : (
-                  <span>{resolveThemeName(row.subject_key) || resolveThemeName(row.theme_name) || "--"}</span>
+                  <span>{resolveThemeName(row.theme_name) || resolveThemeName(row.subject_key) || "--"}</span>
                 )
               ),
             },
@@ -277,7 +283,7 @@ export default function DailyRecapStoryPanel({
                 <div className="recap-tag-stack" style={{ gap: 6, flexWrap: "wrap" }}>
                   {(row.representative_stocks || []).length > 0
                     ? row.representative_stocks!.slice(0, 3).map((stock: any, idx: number) => (
-                        <Tag key={`${stock.stock_id || stock.stock_name || idx}`}>{stock.stock_name || stock.stock_id || "--"}</Tag>
+                        <Tag key={`${stock.stock_id || stock.stock_name || idx}`}>{displayStockName(stock.stock_name)}</Tag>
                       ))
                     : <span className="workspace-note">--</span>}
                 </div>
@@ -324,7 +330,7 @@ export default function DailyRecapStoryPanel({
                             className="recap-theme-link recap-stock-highlight"
                             onClick={() => href && navigateTo(href)}
                           >
-                            {stock.stock_name || stock.stock_id || "--"}
+                            {displayStockName(stock.stock_name)}
                           </button>
                         );
                       })

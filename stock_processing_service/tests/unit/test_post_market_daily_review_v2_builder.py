@@ -494,6 +494,42 @@ def test_tc_recap_catalyst_002_reuses_persisted_driver_events_on_get_rebuild() -
     assert payload["limit_up_theme_events"]["diagnostics"]["catalyst_count"] == 1
 
 
+def test_tc_recap_name_002_builds_display_name_map_from_limit_up_matrix() -> None:
+    recap_doc = {
+        "limit_up_theme_matrix": {
+            "source": "limit_up_theme_matrix_builder",
+            "columns": [
+                {
+                    "subject_key": "9045298",
+                    "theme_name": "电梯",
+                    "mainline_name": "",
+                    "limit_up_count": 2,
+                    "focus_stocks": [],
+                    "catalyst_events": [],
+                },
+                {
+                    "subject_key": "reason:有色资源/小金属",
+                    "theme_name": "有色资源/小金属",
+                    "mainline_name": "",
+                    "limit_up_count": 5,
+                    "focus_stocks": [],
+                    "catalyst_events": [],
+                },
+            ],
+            "board_totals": {},
+        }
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 7, 2),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.tc_recap_name_002",
+    )
+
+    assert payload["theme_name_map"]["9045298"] == "电梯"
+    assert payload["theme_name_map"]["reason:有色资源/小金属"] == "有色资源/小金属"
+
+
 def test_daily_review_v2_builder_reports_missing_limit_up_theme_matrix() -> None:
     payload = PostMarketDailyReviewV2Builder().build(
         trade_date=date(2026, 6, 18),

@@ -3076,6 +3076,16 @@ class PostMarketDailyReviewV2Builder:
                 name = str(value or "").strip()
                 if sk and name:
                     result.setdefault(sk, name)
+        matrix = recap_doc.get("limit_up_theme_matrix")
+        if isinstance(matrix, dict):
+            columns = matrix.get("columns")
+            for column in columns if isinstance(columns, list) else []:
+                if not isinstance(column, dict):
+                    continue
+                sk = str(column.get("subject_key") or "").strip()
+                name = str(column.get("theme_name") or column.get("mainline_name") or "").strip()
+                if sk and name and not self._is_placeholder_theme_name(name):
+                    result.setdefault(sk, name)
         mainline_rows = recap_doc.get("mainline_daily_states")
         if isinstance(mainline_rows, list):
             for row in mainline_rows:

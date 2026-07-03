@@ -195,6 +195,20 @@ class _PrimaryMainlineFakeConn(_FakeConn):
 
 
 @pytest.mark.asyncio
+async def test_tc_recap_name_001_stock_name_lookup_includes_reason_evidence() -> None:
+    class _NameConn:
+        async def fetch(self, query: str, *args: Any) -> list[dict[str, Any]]:
+            normalized = " ".join(query.lower().split())
+            assert "from stock_theme_reason_evidence" in normalized
+            assert "from ths_hot_reason_snapshot" in normalized
+            return [{"stock_key": "001378", "stock_name": "德冠新材"}]
+
+    names = await LimitUpThemeMatrixBuilder()._fetch_stock_names(_NameConn(), ["001378"])
+
+    assert names == {"001378": "德冠新材"}
+
+
+@pytest.mark.asyncio
 async def test_limit_up_theme_matrix_builder_uses_snapshot_board_count_and_deterministic_mapping() -> None:
     trade_date = date(2026, 6, 18)
     conn = _FakeConn(trade_date)

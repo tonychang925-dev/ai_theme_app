@@ -363,6 +363,14 @@ class LimitUpThemeMatrixBuilder:
             SELECT split_part(stock_id, '.', 1) AS stock_key, stock_name
             FROM jyhf_stock_quote_snapshot
             WHERE split_part(stock_id, '.', 1) = ANY($1::text[])
+            UNION ALL
+            SELECT split_part(stock_code, '.', 1) AS stock_key, stock_name
+            FROM stock_theme_reason_evidence
+            WHERE split_part(stock_code, '.', 1) = ANY($1::text[])
+            UNION ALL
+            SELECT split_part(stock_code, '.', 1) AS stock_key, stock_name
+            FROM ths_hot_reason_snapshot
+            WHERE split_part(stock_code, '.', 1) = ANY($1::text[])
             """,
             stock_keys,
         )
