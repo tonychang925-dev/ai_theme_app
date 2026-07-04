@@ -2092,3 +2092,36 @@ Then:
 
 - 若旧 M8 分期与 Overall Architecture v4.0 冲突，以 v4.0 为准。
 - 若现有 Notion 重构与 Phase 0 目标重叠，保留现有 renderer，使用 Adapter 与 feature flag 增量接入。
+
+---
+
+## Phase M8.phase1 — Cognitive Validation
+
+### 1) 验收目标（Acceptance Targets）
+
+- [ ] `ACPT-M8P1-001` Validation Record 必填字段、schema version、record hash 与 EvidenceRef 完整率为 100%。
+- [ ] `ACPT-M8P1-002` 标签枚举与失败分类约束全部生效；UNVERIFIABLE 不计作错误方向。
+- [ ] `ACPT-M8P1-003` Yesterday Thesis 与 Today Reality 时点守卫通过，未来数据泄漏为 0。
+- [ ] `ACPT-M8P1-004` Dataset Writer 重复写幂等、冲突写拒绝、既有记录不覆盖；Manifest 扫描的记录数与聚合 hash 一致。
+- [ ] `ACPT-M8P1-005` Binary Accuracy、Brier Score、ECE、Timing Offset 的固定样例计算误差为 0。
+- [ ] `ACPT-M8P1-006` 连续 20 个真实交易日 Validation Record 可 replay，Decision Drift 为 0，Belief/Learning 写入为 0。
+
+### 2) 验证命令
+
+- `.venv/bin/python -m pytest -q stock_processing_service/tests/unit/test_m8_phase1_validation_contract.py`
+- `.venv/bin/python -m pytest -q stock_processing_service/tests/unit/test_m8_phase1_validation_metrics.py`
+- `.venv/bin/python -m pytest -q stock_processing_service/tests/integration/test_m8_phase1_validation_dataset.py`
+
+### 3) 失败判定
+
+- 缺少 failure type 仍写入数据集；
+- Thesis `as_of >= reality.available_at`；
+- 重复记录覆盖原文件；
+- Manifest 记录数或聚合 hash 与实际 Record 不一致但未阻断；
+- UNVERIFIABLE 被计入 Binary Accuracy 分母；
+- 任一 Belief/Learning/Decision 写入；
+- 用模型输出直接充当 Ground Truth。
+
+### 4) 通过判定
+
+`ACPT-M8P1-001~006` 必须全部满足；工程能力可先进入 Shadow，20 日真实验证完成后再结束 Phase 1。

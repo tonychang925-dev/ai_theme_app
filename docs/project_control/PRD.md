@@ -1630,3 +1630,64 @@ Then：逐层 hash 一致、未来数据泄漏为 0、unsupported claim 为 0。
 ### 12) Change Log
 
 - `2026-07-04`：冻结 `M8.phase0` Cognition Homepage 需求，禁止引入 Adaptive Layer。
+
+---
+
+## Phase M8.phase1 — Cognitive Validation
+
+> 状态：`实施中（2026-07-04）`
+
+### 1) 目标（Objective）
+
+建立 `Yesterday Market Thesis -> Today Reality -> Verification -> Outcome -> Replay` 的认知验证闭环，为后续 Belief/Learning 提供 Ground Truth。
+
+量化目标：
+
+- Validation Record 必填字段完整率 `100%`；
+- 未来数据泄漏 `0`；
+- `NO/PARTIAL/UNVERIFIABLE` 失败原因完整率 `100%`；
+- Binary Accuracy、Brier Score、ECE、Timing Offset 可确定性复算；
+- 首轮连续 20 个交易日验证，长期累计 100 个交易日。
+
+### 2) 范围（Scope）
+
+In Scope：
+
+- `MarketThesisValidationRecord` 不可变契约；
+- `YES/NO/PARTIAL/UNVERIFIABLE` 验证标签；
+- 标准失败分类；
+- Append-only Dataset Writer；
+- Dataset Manifest Integrity 扫描与校验；
+- Binary Accuracy、Brier Score、ECE、Timing Offset；
+- Yesterday Thesis 与 Today Evidence 的时点守卫和 replay；
+- 20 日试运行与 100 日数据集积累。
+
+Out of Scope：
+
+- Belief 更新；
+- Learning、Memory、World Model 更新；
+- 多 Hypothesis 竞争；
+- 自动交易决策变更；
+- 用 LLM 自动生成 Ground Truth。
+
+### 3) 功能需求（Functional Requirements）
+
+- [ ] `PRD-REQ-M8.phase1-001` 系统必须生成不可变 Validation Record，包含 trade_date、各层 hash、thesis、confidence、verification、reason、time、outcome 和 EvidenceRef。
+- [ ] `PRD-REQ-M8.phase1-002` 验证标签必须限制为 `YES/NO/PARTIAL/UNVERIFIABLE`；非 YES 必须记录合法 failure type，证据不足不得计为 NO。
+- [ ] `PRD-REQ-M8.phase1-003` Yesterday Thesis 的 `as_of` 必须早于 Today Reality 的 `available_at`；任何未来数据污染必须 fail fast。
+- [ ] `PRD-REQ-M8.phase1-004` Dataset Writer 必须 append-only、幂等且可按 record hash 重放；重复写相同记录跳过，冲突记录拒绝覆盖；派生 Manifest 必须校验记录数与聚合 hash。
+- [ ] `PRD-REQ-M8.phase1-005` 指标服务必须输出 Binary Accuracy、Brier Score、ECE 与 Timing Offset，并明确排除 UNVERIFIABLE 的统计口径。
+- [ ] `PRD-REQ-M8.phase1-006` 20 日验证期间不得写入 Belief/Learning，也不得改变正式 Decision。
+
+### 4) 验收映射
+
+- `PRD-REQ-M8.phase1-001` -> `ACPT-M8P1-001`
+- `PRD-REQ-M8.phase1-002` -> `ACPT-M8P1-002`
+- `PRD-REQ-M8.phase1-003` -> `ACPT-M8P1-003`
+- `PRD-REQ-M8.phase1-004` -> `ACPT-M8P1-004`
+- `PRD-REQ-M8.phase1-005` -> `ACPT-M8P1-005`
+- `PRD-REQ-M8.phase1-006` -> `ACPT-M8P1-006`
+
+### 5) 通过判定
+
+以上 6 项全部通过，且完成连续 20 个真实交易日验证。100 日是长期数据资产目标，不阻塞工程能力交付。

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "market_thesis_validation.v1",
+  "type": "object",
+  "required": [
+    "record_id",
+    "schema_version",
+    "thesis_trade_date",
+    "verification_trade_date",
+    "source_thesis_id",
+    "source_thesis_as_of",
+    "reality_available_at",
+    "verified_at",
+    "knowledge_hash",
+    "evidence_hash",
+    "context_hash",
+    "thesis_hash",
+    "confidence",
+    "label",
+    "verification_reason",
+    "outcome",
+    "evidence_refs",
+    "record_hash"
+  ],
+  "properties": {
+    "schema_version": {"const": "market_thesis_validation.v1"},
+    "label": {
+      "enum": ["YES", "NO", "PARTIAL", "UNVERIFIABLE"]
+    },
+    "failure_type": {
+      "type": ["string", "null"],
+      "enum": [
+        "WRONG_DIRECTION",
+        "WRONG_TIMING",
+        "WRONG_THEME",
+        "INSUFFICIENT_EVIDENCE",
+        "UNEXPECTED_EVENT",
+        "MARKET_REGIME_SHIFT",
+        null
+      ]
+    },
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "record_hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": false
+}

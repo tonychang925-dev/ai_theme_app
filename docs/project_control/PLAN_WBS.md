@@ -981,3 +981,30 @@ T01 Contracts/Knowledge/Evidence
 - 阈值：EvidenceRef 覆盖 100%；Decision diff 0；旧证据章节减少 0；unsupported claim 0。
 - 回滚：设置 `M8_NOTION_RENDER_MODE=legacy_only`，不删除任何历史快照。
 - 失败：任一 P0 验收失败、旧报告不可用、M8 访问数据库或启动 8002/8003。
+
+---
+
+## 13. M8.phase1 — Cognitive Validation
+
+### 13.1 WBS
+
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证 |
+|---|---|---|---:|---|---|
+| M8.phase1-T01 | 冻结 Validation Record、标签、失败类型与 Dataset Schema | - | 1 | P0 | Contract UT |
+| M8.phase1-T02 | 实现 append-only Dataset Writer、Manifest Integrity 与时点/幂等守卫 | T01 | 1.5 | P0 | Writer IT |
+| M8.phase1-T03 | 实现人工/规则验证录入流程，不引入 Belief | T02 | 1.5 | P0 | Workflow UT |
+| M8.phase1-T04 | 实现 Binary Accuracy、Brier Score、ECE、Timing Offset 与 replay 汇总 | T03 | 1 | P1 | Metrics UT |
+| M8.phase1-T05 | 连续运行 20 个真实交易日并建立 100 日 Dataset 任务 | T04 | 20 个交易日 | P0 | Daily replay |
+
+### 13.2 关键路径
+
+```text
+Validation Contract -> Append-only Dataset -> Verification Workflow
+-> Metrics/Replay -> 20-day Shadow -> 100-day Corpus
+```
+
+### 13.3 禁止项
+
+- Phase 1 不实现 Belief、Learning、Memory。
+- Verification Ground Truth 不由 LLM 单独裁决。
+- 不改变正式 Decision。
