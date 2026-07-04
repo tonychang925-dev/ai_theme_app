@@ -208,3 +208,61 @@ async def test_unknown_action_still_uses_pending_not_human_review():
 
     redis.xadd.assert_awaited_once()
     gateway.enqueue_event_review.assert_not_awaited()
+
+
+# TC-ID: TC-SSE-P0-004
+@pytest.mark.asyncio
+async def test_publish_clustering_is_not_published_to_intel_feed():
+    exe = _executor()
+    published = await exe._publish_to_feed(
+        "publish_clustering",
+        {
+            "event_id": 9001,
+            "event_data": {"event_id": 9001, "title": "待聚类内部事件"},
+            "reason": "weak_candidate_evidence",
+        },
+        "mid-9001",
+    )
+
+    assert published is False
+    exe.redis.xadd.assert_not_awaited()
+
+
+# TC-ID: TC-SSE-P0-005
+@pytest.mark.asyncio
+async def test_matched_news_is_published_as_canonical_intel_item():
+    exe = _executor()
+    published = await exe._publish_to_feed(
+        "update_theme",
+        {
+            "event_id": 9002,
+            "timestamp": "2026-07-02T15:46:04+08:00",
+            "source": "structured_theme_match",
+            "confidence": 0.95,
+            "reason": "llm_accept_match",
+            "event_data": {
+                "event_id": 9002,
+                "news_id": 8002,
+                "title": "中欧贸易投资磋商机制举行例会",
+                "summary": "中欧将举行贸易投资磋商机制第二次例会",
+            },
+            "theme_data": {"subject_key": "9046092", "name": "中欧贸易"},
+            "match_result": {
+                "decision": "MATCH",
+                "matched_subject_key": "9046092",
+                "matched_theme_name": "中欧贸易",
+            },
+        },
+        "mid-9002",
+    )
+
+    assert published is True
+    stream_name, feed_item = exe.redis.xadd.await_args.args
+    assert stream_name == "stream:event:feed"
+    assert feed_item["item_id"] == "event:9002"
+    assert feed_item["item_type"] == "event"
+    assert json.loads(feed_item["theme_subject_keys"]) == ["9046092"]
+    assert json.loads(feed_item["theme_names"]) == ["中欧贸易"]
+    assert feed_item["source_type"] == "event_theme_map"
+    assert feed_item["source_channel"] == "structured_theme_match"
+    assert "decision_executor_feed" not in feed_item.values()

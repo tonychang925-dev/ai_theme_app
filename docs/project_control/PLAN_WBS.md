@@ -992,7 +992,7 @@ T01 Contracts/Knowledge/Evidence
 |---|---|---|---:|---|---|
 | M8.phase1-T01 | 冻结 Validation Record、标签、失败类型与 Dataset Schema | - | 1 | P0 | Contract UT |
 | M8.phase1-T02 | 实现 append-only Dataset Writer、Manifest Integrity 与时点/幂等守卫 | T01 | 1.5 | P0 | Writer IT |
-| M8.phase1-T03 | 实现人工/规则验证录入流程，不引入 Belief | T02 | 1.5 | P0 | Workflow UT |
+| M8.phase1-T03 | 实现 eligible Hypothesis source freeze、Eligibility Gate 与人工验证录入，不引入 Belief | T02 | 1.5 | P0 | Workflow UT |
 | M8.phase1-T04 | 实现 Binary Accuracy、Brier Score、ECE、Timing Offset 与 replay 汇总 | T03 | 1 | P1 | Metrics UT |
 | M8.phase1-T05 | 连续运行 20 个真实交易日并建立 100 日 Dataset 任务 | T04 | 20 个交易日 | P0 | Daily replay |
 

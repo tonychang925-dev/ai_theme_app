@@ -30,12 +30,13 @@
 
 ## 4. Reviewer 操作顺序
 
-1. 冻结并核对昨日 `thesis_id`、`thesis_hash`、`as_of`。
-2. 只加载 `reality_available_at` 之前可用的 Evidence。
-3. 对照 Thesis 的对象、方向、验证窗口与失效条件。
-4. 录入 Label、Failure Type、客观 Outcome、Reason 和 EvidenceRefs。
-5. 复核无未来数据泄漏后提交 append-only Record。
-6. 刷新并验证 Dataset Manifest。
+1. 读取并核对收盘时 append-only 冻结的 eligible Hypothesis Source；禁止次日重新运行新版本代码生成昨日命题。
+2. 核对待验证 `HypothesisState` 的 probability、deadline、expected observations 与 falsifiers；Reviewer 不得事后修改 probability。
+3. 只加载 `reality_available_at` 之前可用的 Evidence。
+4. 对照 Hypothesis 的对象、方向、验证窗口与失效条件。
+5. 录入 Label、Failure Type、客观 Outcome、Reason 和 EvidenceRefs。
+6. 复核无未来数据泄漏后提交 append-only Record。
+7. 刷新并验证 Dataset Manifest。
 
 ## 5. 冲突处理
 

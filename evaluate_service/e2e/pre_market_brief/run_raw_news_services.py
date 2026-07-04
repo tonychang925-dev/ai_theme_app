@@ -87,7 +87,7 @@ async def run_services(args: argparse.Namespace) -> None:
         config={
             "database_gateway": gateway,
             "processor_group": args.processor_group,
-            "processor_name": f"news_processor_realtime_{args.run_id}",
+            "processor_name": "news_processor_worker",
             "enable_ai_analysis": True,
             "enable_local_triage": True,
             "triage_mode": "hybrid",
@@ -190,7 +190,7 @@ async def _ensure_group_clean_start(redis_client, stream: str, group: str, run_i
     - 默认从 "0" 创建，避免跳过积压
     - 仅显式 REALTIME_STREAM_START_MODE=latest 时允许从 "$" 创建
     - latest 模式下 lag > 95% 才自动重置到 $
-    - 僵尸清理：同一 run_id 前缀不匹配的 consumer 直接删 + idle > 60s 兜底
+    - 僵尸清理：同一 run_id 前缀不匹配的 consumer 直接删（不再单独依赖 idle > 60s 兜底，避免假阳性）
     """
     import os as _os
     start_mode = _os.environ.get("REALTIME_STREAM_START_MODE", "0").lower()
@@ -235,37 +235,26 @@ async def _ensure_group_clean_start(redis_client, stream: str, group: str, run_i
         except Exception as e:
             logging.debug("Group lag check skipped: %s", e)
 
-    # Clean up zombie consumers.
-    # Rule 1: consumer name doesn't contain current run_id → definitely foreign → delete immediately
-    # Rule 2: idle > 60s → stale → delete (fallback for consumers without run_id in name)
+    # With fixed consumer names, remove all existing consumers at startup.
+    # Our process will recreate the consumer naturally via XREADGROUP.
+    # No run_id matching or idle-timeout heuristics needed.
     zombie_count = 0
     orphaned_pending = 0
     try:
         consumers = await redis_client.xinfo_consumers(stream, group)
         for c in consumers:
-            consumer_name = c.get("name", "")
-            idle_ms = int(c.get("idle", 0))
-            is_foreign = bool(run_id) and run_id not in consumer_name
-            is_stale = idle_ms > 60000
-            if is_foreign or is_stale:
-                pending_count = int(c.get("pending", 0))
-                orphaned_pending += pending_count
-                try:
-                    await redis_client.xgroup_delconsumer(stream, group, consumer_name)
-                    zombie_count += 1
-                except Exception:
-                    pass
+            pending_count = int(c.get("pending", 0))
+            orphaned_pending += pending_count
+            try:
+                await redis_client.xgroup_delconsumer(stream, group, c["name"])
+                zombie_count += 1
+            except Exception:
+                pass
         if zombie_count:
             logging.warning(
-                "Cleaned %d zombie consumers from %s/%s (orphaned pending=%d — will be reclaimed by watchdog)",
+                "Cleaned %d existing consumers from %s/%s (orphaned pending=%d — will be reclaimed by watchdog)",
                 zombie_count, stream, group, orphaned_pending,
             )
-            if orphaned_pending > 1000:
-                logging.warning(
-                    "Large orphaned pending (%d) in %s/%s. "
-                    "Suggested: scripts/repair_realtime_redis_groups.sh --stream %s --group %s --reset-to-latest",
-                    orphaned_pending, stream, group, stream, group,
-                )
     except Exception:
         pass
 

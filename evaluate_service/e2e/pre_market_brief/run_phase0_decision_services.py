@@ -32,30 +32,26 @@ async def _ensure_group_at_tail(client, stream: str, group: str, *, reset_to_lat
         # Group already exists — DO NOT reset; continue from last position
         logging.info("Consumer group already exists: %s/%s (keeping position)", stream, group)
 
-    # Phase 6A: clean zombie consumers — run_id mismatch or idle > 60s
+    # With fixed consumer names, remove all existing consumers at startup.
+    # Our process will recreate the consumer naturally via XREADGROUP.
     zombie_count = 0
     orphaned_pending = 0
     try:
         consumers = await client.xinfo_consumers(stream, group)
         for c in consumers:
-            consumer_name = c.get("name", "")
-            idle_ms = int(c.get("idle", 0))
-            is_foreign = bool(run_id) and run_id not in consumer_name
-            is_stale = idle_ms > 60000
-            if is_foreign or is_stale:
-                orphaned_pending += int(c.get("pending", 0))
-                try:
-                    await client.xgroup_delconsumer(stream, group, c["name"])
-                    zombie_count += 1
-                except Exception:
-                    pass
+            orphaned_pending += int(c.get("pending", 0))
+            try:
+                await client.xgroup_delconsumer(stream, group, c["name"])
+                zombie_count += 1
+            except Exception:
+                pass
         if zombie_count:
             logging.warning(
-                "Cleaned %d zombie consumers from %s/%s (orphaned pending=%d, NOT acked)",
+                "Cleaned %d existing consumers from %s/%s (orphaned pending=%d)",
                 zombie_count, stream, group, orphaned_pending,
             )
     except Exception as e:
-        logging.debug("Zombie cleanup skipped for %s/%s: %s", stream, group, e)
+        logging.debug("Consumer cleanup skipped for %s/%s: %s", stream, group, e)
 
 
 def _redis_host_port(redis_url: str) -> tuple[str, int]:
@@ -103,7 +99,7 @@ async def run_services(args: argparse.Namespace) -> None:
     processor = ThemeProcessor(
         redis_host=host,
         redis_port=port,
-        consumer_name=f"theme_processor_{_consumer_prefix}_{args.run_id}",
+        consumer_name=f"theme_processor_{_consumer_prefix}_worker",
         enable_clustering=False,
         enable_classification_first=True,
         config={
@@ -124,7 +120,7 @@ async def run_services(args: argparse.Namespace) -> None:
     executor = DecisionExecutor(
         redis_client,
         gateway,
-        consumer_name=f"decision_executor_{_consumer_prefix}_{args.run_id}",
+        consumer_name=f"decision_executor_{_consumer_prefix}_worker",
     )
     executor.decision_stream = args.decision_stream
     executor.consumer_group = decision_group

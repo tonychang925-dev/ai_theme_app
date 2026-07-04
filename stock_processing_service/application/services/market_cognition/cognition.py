@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import date, timedelta
+from datetime import date
 
 from stock_processing_service.contracts.market_cognition import (
     BeliefState,
@@ -114,6 +114,7 @@ class FixedCognitionPolicy:
         allow_trade = _item(evidence, "decision.allow_trade")
         blocking = _item(evidence, "decision.blocking_rule")
         mainline = _mainline_name(evidence)
+        next_trade_date = _item(evidence, "calendar.next_trade_date")
         beliefs: list[BeliefState] = []
         hypotheses: list[HypothesisState] = []
 
@@ -128,11 +129,19 @@ class FixedCognitionPolicy:
                 )
             )
 
-        if allow_trade is not None and not bool(allow_trade.value):
-            hypothesis_refs = _unique_refs([allow_trade, blocking, mainline])
-            deadline = (
-                date.fromisoformat(evidence.trade_date) + timedelta(days=1)
-            ).isoformat()
+        deadline: str | None = None
+        if next_trade_date is not None:
+            try:
+                candidate = date.fromisoformat(str(next_trade_date.value))
+                if candidate > date.fromisoformat(evidence.trade_date):
+                    deadline = candidate.isoformat()
+            except ValueError:
+                deadline = None
+
+        if allow_trade is not None and not bool(allow_trade.value) and deadline:
+            hypothesis_refs = _unique_refs(
+                [allow_trade, blocking, mainline, next_trade_date]
+            )
             hypotheses.append(
                 HypothesisState(
                     hypothesis_id=f"hyp:{evidence.trade_date}:mainline_repair",

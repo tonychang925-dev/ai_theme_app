@@ -9,11 +9,11 @@
 
 ## 2. Objective
 
-建立 Yesterday Thesis 到 Today Reality 的可审计验证数据集和指标闭环，不实施 Belief/Learning。
+建立 Yesterday Hypothesis 经 Eligibility、Reviewer Verdict 到 Ground Truth 的可审计验证数据集和指标闭环，不实施 Belief/Learning。
 
 ## 3. Acceptance Targets
 
-- `ACPT-M8P1-001` Validation Record 完整；
+- `ACPT-M8P1-001` eligible Hypothesis Source 与 Validation Record 完整；
 - `ACPT-M8P1-002` 标签/失败类型合法；
 - `ACPT-M8P1-003` 无未来泄漏；
 - `ACPT-M8P1-004` append-only、幂等与 Manifest Integrity；

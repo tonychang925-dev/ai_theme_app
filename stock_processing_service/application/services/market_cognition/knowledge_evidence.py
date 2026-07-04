@@ -25,6 +25,7 @@ _MODULES = (
     "new_high_summary",
     "seat_money_summary",
     "watchlists",
+    "post_market_setup_plan",
 )
 
 _MODULE_ALIASES: dict[str, tuple[str, ...]] = {
@@ -41,6 +42,7 @@ _MODULE_ALIASES: dict[str, tuple[str, ...]] = {
     "new_high_summary": ("new_high_summary",),
     "seat_money_summary": ("seat_money_summary",),
     "watchlists": ("watchlists",),
+    "post_market_setup_plan": ("post_market_setup_plan",),
 }
 
 
@@ -200,6 +202,28 @@ class MarketEvidenceAdapter:
                 continue
             items.append(cls._item(bundle, module, field, key, deepcopy(value[field])))
             emitted_keys.add(key)
+
+        setup_plan = bundle.knowledge.get("post_market_setup_plan")
+        setup_summary = (
+            setup_plan.get("summary")
+            if isinstance(setup_plan, dict)
+            else None
+        )
+        if (
+            isinstance(setup_summary, dict)
+            and setup_summary.get("watch_date")
+            and "calendar.next_trade_date" not in emitted_keys
+        ):
+            items.append(
+                cls._item(
+                    bundle,
+                    "post_market_setup_plan",
+                    "summary.watch_date",
+                    "calendar.next_trade_date",
+                    deepcopy(setup_summary["watch_date"]),
+                )
+            )
+            emitted_keys.add("calendar.next_trade_date")
 
         mainlines = bundle.knowledge.get("mainline_states")
         if isinstance(mainlines, list):

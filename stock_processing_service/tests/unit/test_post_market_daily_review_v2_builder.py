@@ -494,6 +494,56 @@ def test_tc_recap_catalyst_002_reuses_persisted_driver_events_on_get_rebuild() -
     assert payload["limit_up_theme_events"]["diagnostics"]["catalyst_count"] == 1
 
 
+def test_tc_recap_catalyst_003_rejects_events_without_match_evidence_and_clears_stale_matrix() -> None:
+    recap_doc = {
+        "limit_up_theme_matrix": {
+            "source": "limit_up_theme_matrix_builder",
+            "columns": [
+                {
+                    "subject_key": "9015778",
+                    "theme_name": "低空经济",
+                    "mainline_name": "低空经济",
+                    "limit_up_count": 2,
+                    "focus_stocks": [],
+                    "catalyst_events": [
+                        {
+                            "event_id": 209782,
+                            "summary": "与低空经济无关的算力新闻",
+                            "match_reason": None,
+                        }
+                    ],
+                }
+            ],
+            "board_totals": {},
+        },
+        "diagnostics": {"readiness": {"status": "ready"}},
+    }
+    driver_events = [
+        {
+            "subject_key": "9015778",
+            "theme_name": "低空经济",
+            "driver_events": [
+                {
+                    "event_id": 209782,
+                    "summary": "与低空经济无关的算力新闻",
+                    "confidence": 1.0,
+                    "match_reason": None,
+                }
+            ],
+        }
+    ]
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 7, 3),
+        recap_doc=recap_doc,
+        theme_driver_events=driver_events,
+        snapshot_version="daily_review_v2.tc_recap_catalyst_003",
+    )
+
+    assert payload["limit_up_theme_matrix"]["columns"][0]["catalyst_events"] == []
+    assert payload["limit_up_theme_events"]["rows"][0]["catalyst_events"] == []
+
+
 def test_tc_recap_name_002_builds_display_name_map_from_limit_up_matrix() -> None:
     recap_doc = {
         "limit_up_theme_matrix": {
@@ -2202,3 +2252,41 @@ def test_daily_review_v2_builder_builds_structured_seat_money_tables() -> None:
     assert seat["hot_money_buy_rows"][0]["hot_money_name"] == "紫阳东路"
     assert seat["hot_money_buy_rows"][0]["buy_entries"][0]["stock_name"] == "平安银行"
     assert seat["hot_money_sell_rows"][0]["sell_entries"][0]["stock_name"] == "浦发银行"
+
+
+def test_daily_review_v2_builder_deduplicates_same_hot_money_trade_across_themes() -> None:
+    trade = {
+        "hot_money_name": "章盟主系",
+        "seat_name": "章盟主系",
+        "stock_id": "002384",
+        "stock_name": "东山精密",
+        "side": "买入",
+        "buy_amount": 1_000_000_000,
+        "sell_amount": 3_000_000,
+        "net_amount": 997_000_000,
+        "reason": "同一龙虎榜席位交易",
+        "rank_order": 1,
+    }
+    recap_doc = {
+        "report_context": {
+            "hot_money_activities": [
+                {**trade, "subject_key": "9064103", "theme_name": "AI光纤"},
+                {
+                    **trade,
+                    "subject_key": "9018144",
+                    "theme_name": "PCB印制电路板",
+                    "rank_order": 12,
+                },
+            ]
+        }
+    }
+
+    payload = PostMarketDailyReviewV2Builder().build(
+        trade_date=date(2026, 7, 3),
+        recap_doc=recap_doc,
+        snapshot_version="daily_review_v2.hot_money_dedup",
+    )
+
+    seat = payload["seat_money_summary"]
+    assert seat["hot_money_top_buys"][0]["net_buy"] == 997_000_000
+    assert len(seat["hot_money_top_buys"][0]["buy_entries"]) == 1

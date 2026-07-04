@@ -1,4 +1,6 @@
 import asyncio
+import base64
+import binascii
 import json
 import logging
 import os
@@ -188,8 +190,12 @@ async def _proxy_jyhf_cdp_service_json(
     return data if isinstance(data, dict) else {}
 
 
-def _emit_sse(event: str, payload: dict) -> bytes:
-    return f"event: {event}\ndata: {json.dumps(payload, ensure_ascii=False)}\n\n".encode("utf-8")
+def _emit_sse(event: str, payload: dict, *, event_id: str | None = None) -> bytes:
+    id_line = ""
+    if event_id:
+        safe_event_id = event_id.replace("\r", "").replace("\n", "")
+        id_line = f"id: {safe_event_id}\n"
+    return f"{id_line}event: {event}\ndata: {json.dumps(payload, ensure_ascii=False)}\n\n".encode("utf-8")
 
 
 def _try_parse_event_line(line: str) -> str | None:
@@ -219,6 +225,155 @@ def _validate_sse_payload(event_name: str, payload: dict) -> tuple[bool, str | N
         if key not in candidate_payload:
             return False, f"missing required field '{key}' for event '{event_name}'"
     return True, None
+
+
+_INTEL_REALTIME_STREAMS = ("stream:event:feed", "stream:jyhf:feed")
+_INTEL_ITEM_TYPES = {"event", "event_review", "theme_move", "new_theme", "stock_move"}
+
+
+def _encode_sse_cursor(last_ids: dict[str, str]) -> str:
+    data = {
+        stream: str(last_ids[stream])
+        for stream in _INTEL_REALTIME_STREAMS
+        if stream in last_ids and str(last_ids[stream])
+    }
+    raw = json.dumps(data, ensure_ascii=True, separators=(",", ":")).encode("utf-8")
+    return base64.urlsafe_b64encode(raw).decode("ascii").rstrip("=")
+
+
+def _decode_sse_cursor(cursor: str | None) -> dict[str, str]:
+    if not cursor:
+        return {}
+    try:
+        padding = "=" * (-len(cursor) % 4)
+        data = json.loads(base64.urlsafe_b64decode(cursor + padding).decode("utf-8"))
+    except (ValueError, TypeError, UnicodeDecodeError, binascii.Error, json.JSONDecodeError):
+        return {}
+    if not isinstance(data, dict):
+        return {}
+    return {
+        stream: str(data[stream])
+        for stream in _INTEL_REALTIME_STREAMS
+        if stream in data and str(data[stream])
+    }
+
+
+def _stream_message_time(message_id: str) -> str:
+    try:
+        timestamp_ms = int(str(message_id).split("-", 1)[0])
+        return datetime.fromtimestamp(timestamp_ms / 1000, tz=timezone.utc).isoformat()
+    except (TypeError, ValueError, OSError):
+        return datetime.now(timezone.utc).isoformat()
+
+
+def _as_string_list(value: object) -> list[str]:
+    if isinstance(value, list):
+        return [str(item) for item in value if str(item).strip()]
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return []
+        try:
+            parsed = json.loads(text)
+        except json.JSONDecodeError:
+            return [text]
+        if isinstance(parsed, list):
+            return [str(item) for item in parsed if str(item).strip()]
+        return [text]
+    return []
+
+
+def _as_optional_float(value: object) -> float | None:
+    try:
+        return float(value) if value not in (None, "") else None
+    except (TypeError, ValueError):
+        return None
+
+
+def _normalize_realtime_intel_event(
+    stream_name: str,
+    message_id: str,
+    fields: dict,
+) -> dict[str, Any]:
+    raw = {
+        str(key.decode() if isinstance(key, bytes) else key): (
+            value.decode() if isinstance(value, bytes) else value
+        )
+        for key, value in fields.items()
+    }
+    payload = raw.get("payload")
+    if isinstance(payload, str):
+        try:
+            parsed = json.loads(payload)
+        except json.JSONDecodeError:
+            parsed = None
+        if isinstance(parsed, dict):
+            raw = {**raw, **parsed}
+
+    item_id = str(raw.get("item_id") or raw.get("event_id") or f"{stream_name}:{message_id}")
+    item_type = str(raw.get("item_type") or raw.get("event_type") or "event")
+    if item_type not in _INTEL_ITEM_TYPES:
+        item_type = "event"
+    occurred_at = str(raw.get("occurred_at") or raw.get("created_at") or "").strip()
+    if not occurred_at:
+        occurred_at = _stream_message_time(message_id)
+    title = str(raw.get("title") or raw.get("summary") or "").strip()
+    summary = str(raw.get("summary") or raw.get("title") or "").strip()
+
+    theme_subject_keys = _as_string_list(raw.get("theme_subject_keys"))
+    if not theme_subject_keys and raw.get("subject_key"):
+        theme_subject_keys = [str(raw["subject_key"])]
+    theme_names = _as_string_list(raw.get("theme_names"))
+    if not theme_names and raw.get("theme_name"):
+        theme_names = [str(raw["theme_name"])]
+    stock_ids = _as_string_list(raw.get("stock_ids"))
+    if not stock_ids and raw.get("stock_id"):
+        stock_ids = [str(raw["stock_id"])]
+    stock_names = _as_string_list(raw.get("stock_names"))
+    if not stock_names and raw.get("stock_name"):
+        stock_names = [str(raw["stock_name"])]
+
+    item = dict(raw)
+    item.update(
+        {
+            "item_id": item_id,
+            "item_type": item_type,
+            "occurred_at": occurred_at,
+            "title": title,
+            "summary": summary,
+            "theme_subject_keys": theme_subject_keys,
+            "theme_names": theme_names,
+            "stock_ids": stock_ids,
+            "stock_names": stock_names,
+            "confidence": _as_optional_float(raw.get("confidence")),
+            "impact_score": _as_optional_float(raw.get("impact_score")),
+            "source_type": str(raw.get("source_type") or raw.get("source") or stream_name),
+            "source_channel": str(raw.get("source_channel") or stream_name),
+        }
+    )
+    return {
+        "event_id": item_id,
+        "occurred_at": occurred_at,
+        "event_type": item_type,
+        "item": item,
+        "cursor": message_id,
+    }
+
+
+def _is_displayable_realtime_event(payload: dict[str, Any]) -> bool:
+    item = payload.get("item") if isinstance(payload.get("item"), dict) else {}
+    source_type = str(item.get("source_type") or "")
+    decision = str(item.get("decision") or "")
+    if source_type == "decision_executor_feed":
+        return False
+    if decision in {"publish_clustering", "human_review", "clustering_result"}:
+        return False
+    if not str(item.get("title") or item.get("summary") or "").strip():
+        return False
+    if source_type == "event_theme_map":
+        if not item.get("theme_subject_keys") or not item.get("theme_names"):
+            return False
+    return True
 
 
 def _as_recap_view_model_v2_from_snapshot(snapshot: dict, report_type: str) -> dict:
@@ -400,13 +555,18 @@ async def recap_by_date(trade_date: str, request: Request):
 async def themes_top(
     trade_date: str | None = None,
     limit: int = 10,
-    
+
 ):
     params: dict[str, str] = {}
     if trade_date:
         params["trade_date"] = trade_date
     params["limit"] = str(limit)
     return await _proxy_stock_processing_json("/api/v1/themes/top", params)
+
+
+@router.get("/subject-search")
+async def subject_search(q: str = Query(...), limit: int = Query(default=30)):
+    return await _proxy_stock_processing_json("/api/v1/subject-search", {"q": q, "limit": str(limit)})
 
 
 @router.get("/leaders/{theme_name}", response_model=None)
@@ -2078,18 +2238,22 @@ async def intel_raw_stream(request: Request) -> StreamingResponse:
     )
 
 
+@router.get("/intel/stream")
 @router.get("/intel/stream/realtime")
-async def intel_realtime_stream(request: Request) -> StreamingResponse:
+async def intel_realtime_stream(
+    request: Request,
+    last_event_id: str | None = Query(default=None),
+) -> StreamingResponse:
     """Realtime intel feed — 直接从 stream:event:feed + stream:jyhf:feed XREAD 推送。
 
     XREAD（非 XREADGROUP），不创建消费组，不 ACK，不改 last-delivered-id。
     akshare 管道事件和 JYHF CDP 事件独立 channel，各推各的。
     """
-    _FEEDS = {"stream:event:feed": "$", "stream:jyhf:feed": "$"}
-
     async def _realtime_feed_generator():
         r = aioredis.from_url(_RAW_FEED_REDIS_URL, socket_connect_timeout=5)
-        last_ids = dict(_FEEDS)
+        resume_cursor = request.headers.get("last-event-id") or last_event_id
+        last_ids = {stream: "$" for stream in _INTEL_REALTIME_STREAMS}
+        last_ids.update(_decode_sse_cursor(resume_cursor))
         heartbeat_interval = 15
         last_heartbeat = time.monotonic()
 
@@ -2108,7 +2272,20 @@ async def intel_realtime_stream(request: Request) -> StreamingResponse:
                         r.xread(last_ids, block=2000, count=50),
                         timeout=3.0,
                     )
-                except (asyncio.TimeoutError, ConnectionError):
+                except asyncio.TimeoutError:
+                    continue
+                except asyncio.CancelledError:
+                    raise
+                except Exception as exc:
+                    yield _emit_sse(
+                        "error",
+                        {
+                            "code": "SSE_REDIS_READ_FAILED",
+                            "message": str(exc),
+                            "retryable": True,
+                        },
+                    )
+                    await asyncio.sleep(1)
                     continue
 
                 if result is None:
@@ -2117,15 +2294,38 @@ async def intel_realtime_stream(request: Request) -> StreamingResponse:
                 for stream_name_bytes, messages in result:
                     stream_name = stream_name_bytes.decode() if isinstance(stream_name_bytes, bytes) else stream_name_bytes
                     for msg_id, fields in messages:
-                        last_ids[stream_name] = msg_id
-                        data = {k.decode() if isinstance(k, bytes) else k:
-                                v.decode() if isinstance(v, bytes) else v
-                                for k, v in fields.items()}
-                        yield _emit_sse("intel_item", {
-                            "stream": stream_name,
-                            "message_id": msg_id.decode() if isinstance(msg_id, bytes) else msg_id,
-                            "data": data,
-                        })
+                        message_id = msg_id.decode() if isinstance(msg_id, bytes) else str(msg_id)
+                        last_ids[stream_name] = message_id
+                        payload = _normalize_realtime_intel_event(
+                            stream_name,
+                            message_id,
+                            fields,
+                        )
+                        cursor = _encode_sse_cursor(last_ids)
+                        payload["cursor"] = cursor
+                        if not _is_displayable_realtime_event(payload):
+                            logger.warning(
+                                "SSE skipped non-display event: stream=%s message_id=%s source_type=%s decision=%s",
+                                stream_name,
+                                message_id,
+                                payload["item"].get("source_type"),
+                                payload["item"].get("decision"),
+                            )
+                            continue
+                        ok, reason = _validate_sse_payload("intel_item", payload)
+                        if not ok:
+                            yield _emit_sse(
+                                "error",
+                                {
+                                    "code": "INVALID_EVENT_PAYLOAD",
+                                    "message": reason or "payload contract mismatch",
+                                    "retryable": False,
+                                    "source_stream": stream_name,
+                                    "message_id": message_id,
+                                },
+                            )
+                            continue
+                        yield _emit_sse("intel_item", payload, event_id=cursor)
         finally:
             await r.aclose()
 

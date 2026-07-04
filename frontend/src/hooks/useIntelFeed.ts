@@ -62,13 +62,20 @@ interface UseIntelFeedReturn {
   applyFeedData: (data: IntelFeedView) => void;
 }
 
+function isRejectedIntelItem(item: IntelFeedItem): boolean {
+  return (
+    item.source_type === 'decision_executor_feed' ||
+    item.source_channel === 'stream:event:feed'
+  );
+}
+
 export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedReturn {
   const {
     initialDate,
     initialType = 'all',
     initialSession = 'all',
     initialSelectedItemId = null,
-    limit = 50,
+    limit = 200,
     subjectKey = null,
   } = options;
 
@@ -108,7 +115,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
   // Data fetching with useApi
   const fetcher = useCallback(async () => {
     const ctx = await fetchWorkspaceIntelContext({ date, session, limit });
-    let rawItems = ctx.items || [];
+    let rawItems = (ctx.items || []).filter((item) => !isRejectedIntelItem(item));
     // 前端过滤：按 type 和 theme_name 过滤（后端 subject_key 为 None，不支持精确过滤）
     if (type !== 'all') {
       rawItems = rawItems.filter((item) => item.item_type === type);
@@ -174,7 +181,7 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
   const mergeIncomingItems = useCallback((incomingItems: IntelFeedItem[]) => {
     if (incomingItems.length === 0) return;
     // 前端过滤：按 type 和 subjectKey 过滤 SSE 推送的 items
-    let scopedItems = incomingItems;
+    let scopedItems = incomingItems.filter((item) => !isRejectedIntelItem(item));
     if (type !== 'all') {
       scopedItems = scopedItems.filter((item) => item.item_type === type);
     }
@@ -307,6 +314,10 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
     const stockIds = Array.isArray(raw.stock_ids) ? raw.stock_ids : [];
     const stockNames = Array.isArray(raw.stock_names) ? raw.stock_names : [];
     if (!raw.item_id || !raw.item_type || !raw.occurred_at) return null;
+    if (
+      String(raw.source_type || "") === "decision_executor_feed" ||
+      String((raw as any).source_channel || "") === "stream:event:feed"
+    ) return null;
     // 过滤 CNINFO 公告（source_channel=cninfo_announcement）
     if (String((raw as any).source_channel || "") === "cninfo_announcement") return null;
     return {
@@ -325,6 +336,16 @@ export function useIntelFeed(options: UseIntelFeedOptions = {}): UseIntelFeedRet
       source_channel: raw.source_channel ? String(raw.source_channel) : undefined,
     };
   }, []);
+
+  // HMR 或链路切换时，立即移除当前内存状态中已混入的内部决策事件。
+  useEffect(() => {
+    setPayload((current) => {
+      if (!current) return current;
+      const items = current.items.filter((item) => !isRejectedIntelItem(item));
+      if (items.length === current.items.length) return current;
+      return { ...current, items, count: items.length };
+    });
+  }, [setPayload]);
 
   useEffect(() => {
     // 清理现有的SSE管理器

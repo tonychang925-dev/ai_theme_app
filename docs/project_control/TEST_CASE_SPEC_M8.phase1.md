@@ -17,8 +17,8 @@ Contract UT -> Writer IT -> Verification UT -> Metrics UT -> 20-day Replay
 | TC-M8P1-T02-01 | T02 | IT | append-only、duplicate skip、conflict reject |
 | TC-M8P1-T02-02 | T02 | IT | Yesterday/Today 时点守卫 |
 | TC-M8P1-T02-03 | T02 | IT | Manifest 扫描记录数与聚合 hash，缺失/篡改 fail fast |
-| TC-M8P1-T03-01 | T03 | UT | YES/NO/PARTIAL/UNVERIFIABLE 工作流 |
-| TC-M8P1-T03-02 | T03 | UT | Ground Truth 不由模型自动裁决 |
+| TC-M8P1-T03-01 | T03 | UT | eligible Hypothesis source freeze、四类 Verdict 与 probability/quality 独立 |
+| TC-M8P1-T03-02 | T03 | UT | Observation/Assessment、不完整 Hypothesis、未授权 Reviewer 被拒绝 |
 | TC-M8P1-T04-01 | T04 | UT | Binary Accuracy、Brier、ECE 固定样例 |
 | TC-M8P1-T04-02 | T04 | UT | Timing Offset / Delay Accuracy 分布可复算 |
 | TC-M8P1-T05-01 | T05 | RT | 连续 20 日 replay、Decision Drift=0 |

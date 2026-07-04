@@ -6,6 +6,9 @@ from types import SimpleNamespace
 import pytest
 
 from stock_processing_service import api_app
+from stock_processing_service.application.services.post_market_engine_report_composer import (
+    PostMarketEngineReportComposer,
+)
 
 
 class _Gateway:
@@ -41,6 +44,34 @@ class _Gateway:
         self.row = dict(self.row)
         self.row["payload"] = doc["payload"]
         return 1
+
+
+def test_engine_report_aligns_llm_market_action_with_no_trade_gate() -> None:
+    report = PostMarketEngineReportComposer().compose(
+        {
+            "market_summary": {
+                "source": "llm",
+                "action_bias": "主做主线",
+                "market_overview": "短线情绪强，市场定性为进攻格局。",
+            },
+            "market_regime_review": {
+                "trade_mode": "no_trade",
+                "allow_trade": False,
+                "no_trade_reasons": ["短线情绪死亡"],
+            },
+            "post_market_decision_v2": {
+                "trading_permission": {
+                    "trade_mode": "no_trade",
+                    "allow_trade": False,
+                    "position_limit": 0,
+                }
+            },
+        }
+    )
+
+    assert report["market_summary"]["action_bias"] == "防守"
+    assert report["market_summary"]["diagnostics"]["engine_consistency_override"] is True
+    assert report["market_summary"]["market_overview"] == ""
 
 
 @pytest.mark.asyncio

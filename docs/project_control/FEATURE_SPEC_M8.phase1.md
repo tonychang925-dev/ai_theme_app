@@ -5,7 +5,7 @@
 ### 子功能分解
 
 - `F-T01-01` 枚举：输入 label/failure type；校验固定枚举；非法值拒绝；证据为异常类型。
-- `F-T01-02` Record：输入各层 hash、confidence、reason、outcome、refs；输出 frozen record；缺字段 fail fast；证据为 record hash。
+- `F-T01-02` Record：输入 source/reality hashes、prediction probability、source quality、reason、outcome、refs；输出 frozen record；缺字段 fail fast；证据为 record hash。
 - `F-T01-03` Temporal Guard：输入 thesis as_of/reality available_at；要求前者严格早于后者；未来泄漏拒绝；证据为时间字段。
 
 接口：`MarketThesisValidationRecordBuilder.build(...)`。
@@ -27,11 +27,13 @@
 
 ### 子功能分解
 
-- `F-T03-01` Yesterday Thesis Source；只接受已冻结 Thesis/hash。
+- `F-T03-01` Yesterday Thesis Source；从已冻结 `HypothesisState` 读取 statement、probability、deadline、expected observations、falsifiers 与 EvidenceRefs；deadline 必须引用 Trade Calendar Producer 的下一交易日，禁止自然日推算；禁止把 Narrative confidence 当作预测概率。
+- `F-T03-01A` Source Freeze；eligible Hypothesis 在收盘时 create-only 落盘；重复内容 skip，历史内容变化 conflict reject。
 - `F-T03-02` Today Reality；只接受 verification time 前可用 Evidence。
 - `F-T03-03` Reviewer Verdict；显式录入 label/reason/failure type，禁止模型自动确认为 Ground Truth。
+- `F-T03-04` Eligibility Gate；只接受 `HypothesisState`，要求 deadline、probability、expected observations、falsifiers、EvidenceRefs、policy version 且 source quality 非 BLOCKED。
 
-接口：`MarketThesisVerificationService.verify(...)`。
+接口：`FrozenHypothesisSourceStore.append/read(...)`、`MarketThesisVerificationService.check_eligibility/verify(...)`。
 回滚：停止录入，不修改既有记录。
 
 ## Task M8.phase1-T04 — Metrics

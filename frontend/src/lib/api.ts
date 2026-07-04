@@ -1636,6 +1636,13 @@ export async function fetchWorkspaceThemeRadar(params: {
   return fetchJsonWithTimeout<ThemeRadarView>(`/api/v2/workspace/theme-radar?${query.toString()}`, undefined, 20000);
 }
 
+export async function fetchSubjectSearch(q: string, limit = 30): Promise<ThemeRadarView> {
+  const query = new URLSearchParams();
+  query.set("q", q);
+  query.set("limit", String(limit));
+  return fetchJsonWithTimeout<ThemeRadarView>(`/api/v2/subject-search?${query.toString()}`, undefined, 10000);
+}
+
 export async function fetchWorkspaceIntelContext(params: {
   date?: string;
   session?: IntelSession;

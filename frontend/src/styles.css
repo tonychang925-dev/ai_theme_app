@@ -3896,3 +3896,81 @@ select {
   display: flex;
   gap: 4px;
 }
+
+/* ── ThemeRadarPanel 标签栏 ── */
+
+.theme-search-tab-bar {
+  display: flex;
+  border-bottom: 1px solid #1d2a3d;
+}
+
+.theme-search-tab {
+  flex: 1;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.theme-search-tab:hover {
+  color: #e2e8f0;
+}
+
+.theme-search-tab.active {
+  color: #00e5ff;
+  border-bottom-color: #00e5ff;
+}
+
+/* ── ThemeSearchTab 搜索 ── */
+
+.theme-search-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.theme-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-bottom: 1px solid #1d2a3d;
+}
+
+.theme-search-input {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #11171f;
+  border: 1px solid #1d2a3d;
+  color: #e2e8f0;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.theme-search-input:focus {
+  border-color: #00e5ff;
+}
+
+.theme-search-input::placeholder {
+  color: #4a5568;
+}
+
+.theme-search-container .empty-state {
+  text-align: center;
+  color: #64748b;
+  padding: 24px 14px;
+  font-size: 13px;
+}
+
+.theme-search-container .empty-state.error {
+  color: #f87171;
+}

@@ -23,7 +23,7 @@ export function IntelPage() {
     liveStatus, liveNewCount, sseConnectionState,
     realtimeHealth,
     streamDiagnostics, recapDates,
-  } = useIntelFeed({ limit: 50, subjectKey: themeFilterEnabled ? selectedTheme : null });
+  } = useIntelFeed({ limit: 200, subjectKey: themeFilterEnabled ? selectedTheme : null });
   const [themeRadar, setThemeRadar] = useState<ThemeRadarItem[]>([]);
   const [marketValidation, setMarketValidation] = useState<MarketValidationView | null>(null);
   const [workspaceErrors, setWorkspaceErrors] = useState<{ themeRadar: string | null; marketValidation: string | null }>({

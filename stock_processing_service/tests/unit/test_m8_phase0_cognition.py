@@ -47,6 +47,12 @@ def test_no_trade_evidence_when_cognition_runs_then_thesis_is_explainable_and_fa
             "mainline_states": [
                 {"theme_name": "机器人", "lifecycle": "divergence", "strong_stock_count": 4}
             ],
+            "post_market_setup_plan": {
+                "summary": {
+                    "trade_date": "2026-07-03",
+                    "watch_date": "2026-07-06",
+                }
+            },
         }
     )
 
@@ -59,9 +65,35 @@ def test_no_trade_evidence_when_cognition_runs_then_thesis_is_explainable_and_fa
     assert result.thesis.evidence_ref_coverage == 1.0
     assert result.cognition.hypotheses
     assert all(item.deadline for item in result.cognition.hypotheses)
+    assert result.cognition.hypotheses[0].deadline == "2026-07-06"
     assert all(item.falsifiers for item in result.cognition.hypotheses)
     assert "no_trade" not in result.thesis.primary_thesis.statement
     assert "short_term_sentiment_dead" not in result.thesis.primary_thesis.statement
+
+
+# TC-M8P0-T02-01
+def test_no_trade_without_next_trading_day_when_cognition_runs_then_hypothesis_is_not_invented() -> None:
+    assert Phase0CognitionPipeline is not None, "cognition implementation is missing"
+    evidence = _evidence(
+        {
+            "schema_version": "post_market_recap.v2",
+            "engine_summary": {
+                "allow_trade": False,
+                "trade_mode": "no_trade",
+                "blocking_rule": "short_term_sentiment_dead",
+            },
+            "market_regime_review": {
+                "short_term_sentiment": "dead",
+                "mainline_environment": "mainline_tradable",
+            },
+            "mainline_states": [{"theme_name": "机器人"}],
+        }
+    )
+
+    result = Phase0CognitionPipeline.build(evidence)
+
+    assert evidence.get("calendar.next_trade_date") is None
+    assert result.cognition.hypotheses == ()
 
 
 # TC-M8P0-T02-02

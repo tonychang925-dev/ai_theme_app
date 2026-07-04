@@ -2099,7 +2099,8 @@ Then:
 
 ### 1) 验收目标（Acceptance Targets）
 
-- [ ] `ACPT-M8P1-001` Validation Record 必填字段、schema version、record hash 与 EvidenceRef 完整率为 100%。
+- [ ] `ACPT-M8P1-001` eligible Hypothesis Source 与 Validation Record 均为 append-only；必填字段、schema version、hash 与 EvidenceRef 完整率为 100%。
+- [ ] Calibration 使用昨日冻结 `HypothesisState.probability`，不得使用 Evidence Quality 或 Reviewer 事后评分替代。
 - [ ] `ACPT-M8P1-002` 标签枚举与失败分类约束全部生效；UNVERIFIABLE 不计作错误方向。
 - [ ] `ACPT-M8P1-003` Yesterday Thesis 与 Today Reality 时点守卫通过，未来数据泄漏为 0。
 - [ ] `ACPT-M8P1-004` Dataset Writer 重复写幂等、冲突写拒绝、既有记录不覆盖；Manifest 扫描的记录数与聚合 hash 一致。
@@ -2121,6 +2122,9 @@ Then:
 - UNVERIFIABLE 被计入 Binary Accuracy 分母；
 - 任一 Belief/Learning/Decision 写入；
 - 用模型输出直接充当 Ground Truth。
+- 用 Primary Narrative、Observation、Assessment 或 Evidence Quality 生成 Calibration 样本。
+- 次日使用新代码重算并覆盖昨日 Hypothesis，而不是读取冻结 Source。
+- deadline 落在非交易日，或没有 Trade Calendar EvidenceRef。
 
 ### 4) 通过判定
 

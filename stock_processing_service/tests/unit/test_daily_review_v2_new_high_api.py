@@ -68,6 +68,29 @@ async def test_enrich_recap_doc_with_new_high_summary_recomputes_from_snapshot(m
     assert summary["representative_stocks"]
     assert summary["industry_summary"][0]["industry_name"] in {"化合物半导体", "显示面板"}
     assert summary["diagnostics"]["source"] == "recomputed_from_stock_daily_snapshot"
+    assert summary["diagnostics"]["classified_count"] == 2
+    assert summary["diagnostics"]["unclassified_count"] == 0
+    assert summary["diagnostics"]["classification_rate"] == 1.0
+
+
+@pytest.mark.asyncio
+async def test_new_high_summary_discloses_low_industry_classification_coverage() -> None:
+    rows = [
+        {"trade_date": date(2026, 7, 3), "stock_key": "000001", "high_price": 10, "stock_name": "已分类股", "industry_name": "工业机器人"},
+        {"trade_date": date(2026, 7, 3), "stock_key": "000002", "high_price": 11, "stock_name": "未分类甲", "industry_name": ""},
+        {"trade_date": date(2026, 7, 3), "stock_key": "000003", "high_price": 12, "stock_name": "未分类乙", "industry_name": ""},
+    ]
+
+    enriched = await api_app._build_new_high_summary_from_conn(
+        date(2026, 7, 3),
+        {},
+        _FakeConn(rows),
+    )
+
+    summary = enriched["new_high_summary"]
+    assert "行业已识别 1 家（33%）" in summary["summary"]
+    assert summary["diagnostics"]["classified_count"] == 1
+    assert summary["diagnostics"]["unclassified_count"] == 2
 
 
 @pytest.mark.asyncio

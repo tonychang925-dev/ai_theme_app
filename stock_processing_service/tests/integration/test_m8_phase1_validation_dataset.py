@@ -21,20 +21,26 @@ from stock_processing_service.application.services.market_cognition.validation_d
 def _record(
     *,
     outcome: str = "修复失败",
-    source_thesis_id: str = "thesis:2026-07-03:robot-repair",
+    source_hypothesis_id: str = "hyp:2026-07-03:robot-repair",
 ):
     return MarketThesisValidationRecordBuilder.build(
         thesis_trade_date="2026-07-03",
         verification_trade_date="2026-07-06",
-        source_thesis_id=source_thesis_id,
-        source_thesis_as_of=datetime(2026, 7, 3, 7, 30, tzinfo=timezone.utc),
+        source_hypothesis_id=source_hypothesis_id,
+        source_hypothesis_as_of=datetime(
+            2026, 7, 3, 7, 30, tzinfo=timezone.utc
+        ),
+        hypothesis_deadline="2026-07-06",
         reality_available_at=datetime(2026, 7, 6, 7, 30, tzinfo=timezone.utc),
         verified_at=datetime(2026, 7, 6, 8, 0, tzinfo=timezone.utc),
-        knowledge_hash="a" * 64,
-        evidence_hash="b" * 64,
-        context_hash="c" * 64,
-        thesis_hash="d" * 64,
-        confidence=0.72,
+        source_knowledge_hash="a" * 64,
+        source_evidence_hash="b" * 64,
+        source_context_hash="c" * 64,
+        source_thesis_hash="d" * 64,
+        reality_evidence_hash="e" * 64,
+        prediction_probability=0.72,
+        source_quality_score=0.91,
+        source_policy_version="m8_phase0_cognition.v1",
         label=VerificationLabel.NO,
         failure_type=VerificationFailureType.WRONG_DIRECTION,
         verification_reason="机器人未出现预期修复，核心载体继续走弱。",
@@ -104,7 +110,9 @@ def test_manifest_when_records_change_after_refresh_then_integrity_check_fails(
 ) -> None:
     dataset = MarketThesisValidationDataset(tmp_path)
     first = dataset.append(_record())
-    dataset.append(_record(source_thesis_id="thesis:2026-07-03:pcb-takeover"))
+    dataset.append(
+        _record(source_hypothesis_id="hyp:2026-07-03:pcb-takeover")
+    )
 
     manifest = dataset.refresh_manifest()
     verified = dataset.verify_manifest()
@@ -125,15 +133,19 @@ def test_today_reality_not_after_yesterday_thesis_when_built_then_rejected() -> 
         for field in (
             "thesis_trade_date",
             "verification_trade_date",
-            "source_thesis_id",
-            "source_thesis_as_of",
+            "source_hypothesis_id",
+            "source_hypothesis_as_of",
+            "hypothesis_deadline",
             "reality_available_at",
             "verified_at",
-            "knowledge_hash",
-            "evidence_hash",
-            "context_hash",
-            "thesis_hash",
-            "confidence",
+            "source_knowledge_hash",
+            "source_evidence_hash",
+            "source_context_hash",
+            "source_thesis_hash",
+            "reality_evidence_hash",
+            "prediction_probability",
+            "source_quality_score",
+            "source_policy_version",
             "label",
             "failure_type",
             "verification_reason",
@@ -141,9 +153,9 @@ def test_today_reality_not_after_yesterday_thesis_when_built_then_rejected() -> 
             "evidence_refs",
         )
     }
-    kwargs["reality_available_at"] = kwargs["source_thesis_as_of"]
+    kwargs["reality_available_at"] = kwargs["source_hypothesis_as_of"]
 
     with pytest.raises(ValueError, match="future data leak") as exc_info:
         MarketThesisValidationRecordBuilder.build(**kwargs)
 
-    assert "source thesis as_of" in str(exc_info.value)
+    assert "source hypothesis as_of" in str(exc_info.value)

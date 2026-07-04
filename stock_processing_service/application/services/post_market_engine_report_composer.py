@@ -70,7 +70,10 @@ class PostMarketEngineReportComposer:
         )
 
         # ── 7. market overview ──
-        market_summary = self._pass_through(source_doc, "market_summary")
+        market_summary = self._align_market_summary_with_engine(
+            self._pass_through(source_doc, "market_summary"),
+            engine_summary,
+        )
         market_overview_review = self._pass_through(source_doc, "market_overview_review")
         limit_up_ladder = self._pass_through(source_doc, "limit_up_ladder")
         limit_up_theme_events = self._pass_through(source_doc, "limit_up_theme_events")
@@ -142,6 +145,7 @@ class PostMarketEngineReportComposer:
 
         return {
             "engine_summary": engine_summary,
+            "market_summary": market_summary,
             "market_regime_review": market_regime_review,
             "index_technical_reviews": index_technical_reviews,
             "mainline_daily_states": mainline_daily_states,
@@ -194,6 +198,27 @@ class PostMarketEngineReportComposer:
             "next_day_strategy": self._next_day_strategy(regime),
             "risk_notes": list(regime.get("risk_notes", [])),
         }
+
+    @staticmethod
+    def _align_market_summary_with_engine(
+        market_summary: dict[str, Any],
+        engine_summary: dict[str, Any],
+    ) -> dict[str, Any]:
+        aligned = dict(market_summary)
+        if engine_summary.get("allow_trade") or not aligned:
+            return aligned
+        action_bias = str(aligned.get("action_bias") or "").strip()
+        if action_bias in {"", "防守", "观望", "仅观察", "不交易"}:
+            return aligned
+        diagnostics = aligned.get("diagnostics")
+        diagnostics = dict(diagnostics) if isinstance(diagnostics, dict) else {}
+        diagnostics["engine_consistency_override"] = True
+        diagnostics["original_action_bias"] = action_bias
+        aligned["diagnostics"] = diagnostics
+        aligned["action_bias"] = str(engine_summary.get("action_bias") or "防守")
+        aligned["market_overview"] = ""
+        aligned["conclusion"] = ""
+        return aligned
 
     def _build_market_regime_review(
         self, regime: dict, regime_diag: dict

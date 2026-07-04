@@ -1291,7 +1291,7 @@ class PostMarketDailyReviewV2Builder:
                     self._text(column.get("theme_name")),
                     self._text(column.get("mainline_name")),
                 )
-                if matched_events:
+                if effective_driver_events is not None:
                     column["catalyst_events"] = matched_events
             return result
         return {
@@ -1945,7 +1945,7 @@ class PostMarketDailyReviewV2Builder:
         ][:20]
 
         hot_money_grouped: dict[str, dict[str, Any]] = {}
-        seen_hot_money: set[tuple[str, str, str, str]] = set()
+        seen_hot_money: set[tuple[Any, ...]] = set()
         for row in hot_money_activity_rows:
             if not isinstance(row, dict):
                 continue
@@ -1955,7 +1955,15 @@ class PostMarketDailyReviewV2Builder:
             side = self._text(row.get("side"))
             stock_id = self._text(row.get("stock_id"))
             subject_key = self._text(row.get("subject_key"))
-            unique_key = (seat_name, side, stock_id, subject_key)
+            unique_key = (
+                seat_name,
+                side,
+                stock_id,
+                self._float_or_none(row.get("buy_amount")),
+                self._float_or_none(row.get("sell_amount")),
+                self._float_or_none(row.get("net_amount")),
+                self._nullable_text(row.get("reason")),
+            )
             if unique_key in seen_hot_money:
                 continue
             seen_hot_money.add(unique_key)
@@ -3136,8 +3144,22 @@ class PostMarketDailyReviewV2Builder:
             if not text:
                 continue
             for event in driver_index.get(text, []):
+                match_reason = str(event.get("match_reason") or "").strip()
                 event_id = str(event.get("event_id") or "")
                 summary = str(event.get("summary") or "").strip()
+                theme_names = [
+                    str(value or "").strip()
+                    for value in (theme_name, mainline_name)
+                    if str(value or "").strip()
+                ]
+                theme_name_hit = any(
+                    name in summary and f"与{name}无关" not in summary
+                    for name in theme_names
+                )
+                if not match_reason and not theme_name_hit:
+                    continue
+                if not match_reason:
+                    match_reason = "theme_name_in_summary"
                 dedupe_key = (event_id, summary)
                 if dedupe_key in seen:
                     continue
@@ -3147,7 +3169,7 @@ class PostMarketDailyReviewV2Builder:
                     "summary": summary,
                     "event_time": event.get("event_time"),
                     "confidence": event.get("confidence"),
-                    "match_reason": event.get("match_reason"),
+                    "match_reason": match_reason,
                 })
                 if len(events) >= 5:
                     return events

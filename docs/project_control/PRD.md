@@ -1639,7 +1639,7 @@ Then：逐层 hash 一致、未来数据泄漏为 0、unsupported claim 为 0。
 
 ### 1) 目标（Objective）
 
-建立 `Yesterday Market Thesis -> Today Reality -> Verification -> Outcome -> Replay` 的认知验证闭环，为后续 Belief/Learning 提供 Ground Truth。
+建立 `Yesterday Hypothesis -> Eligibility -> Reviewer Verdict -> Ground Truth -> Replay` 的认知验证闭环，为后续 Belief/Learning 提供 Ground Truth。
 
 量化目标：
 
@@ -1654,6 +1654,8 @@ Then：逐层 hash 一致、未来数据泄漏为 0、unsupported claim 为 0。
 In Scope：
 
 - `MarketThesisValidationRecord` 不可变契约；
+- eligible `HypothesisState` 的 append-only source freeze；
+- Observation/Assessment/Hypothesis 语义边界与 Eligibility Gate；
 - `YES/NO/PARTIAL/UNVERIFIABLE` 验证标签；
 - 标准失败分类；
 - Append-only Dataset Writer；
@@ -1672,9 +1674,11 @@ Out of Scope：
 
 ### 3) 功能需求（Functional Requirements）
 
-- [ ] `PRD-REQ-M8.phase1-001` 系统必须生成不可变 Validation Record，包含 trade_date、各层 hash、thesis、confidence、verification、reason、time、outcome 和 EvidenceRef。
+- [ ] `PRD-REQ-M8.phase1-001` 系统必须先 append-only 冻结 eligible `HypothesisState`，再生成不可变 Validation Record；Record 包含 trade_date、source/reality hashes、`prediction_probability`、`source_quality_score`、verification、reason、time、outcome 和 EvidenceRef。两种数值必须独立存储，Reviewer 不得事后修改 probability。
 - [ ] `PRD-REQ-M8.phase1-002` 验证标签必须限制为 `YES/NO/PARTIAL/UNVERIFIABLE`；非 YES 必须记录合法 failure type，证据不足不得计为 NO。
 - [ ] `PRD-REQ-M8.phase1-003` Yesterday Thesis 的 `as_of` 必须早于 Today Reality 的 `available_at`；任何未来数据污染必须 fail fast。
+- [ ] Observation、Assessment、Primary Narrative 或缺少 deadline/probability/expected observations/falsifiers/EvidenceRefs 的命题必须在 Dataset 写入前拒绝。
+- [ ] Hypothesis deadline 必须来自既有 Trade Calendar Producer；禁止使用 `trade_date + 1自然日` 推算。
 - [ ] `PRD-REQ-M8.phase1-004` Dataset Writer 必须 append-only、幂等且可按 record hash 重放；重复写相同记录跳过，冲突记录拒绝覆盖；派生 Manifest 必须校验记录数与聚合 hash。
 - [ ] `PRD-REQ-M8.phase1-005` 指标服务必须输出 Binary Accuracy、Brier Score、ECE 与 Timing Offset，并明确排除 UNVERIFIABLE 的统计口径。
 - [ ] `PRD-REQ-M8.phase1-006` 20 日验证期间不得写入 Belief/Learning，也不得改变正式 Decision。

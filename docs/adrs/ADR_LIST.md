@@ -1075,3 +1075,62 @@
   - Dashboard 初期会以 GRAY 为主，只有接入可复现数据后才能转为 GREEN。
 - Trigger
   - 指定 Architecture Delegate、发生 Chief Architect 缺席、登记关键架构决策、生成治理健康报告或评估 Phase 0 是否被治理阻塞时。
+
+## 增量附录（2026-07-04，M8 Prediction Semantics Boundary）
+
+### ADR-M8-009: 只有 Validation-Eligible Hypothesis 可以进入 Ground Truth Dataset
+- Status
+  - Accepted
+- Principles
+  - `ARCH-P03 Evidence before Conclusion`
+  - `ARCH-P04 Stable Core First`
+  - `ARCH-P06 Human Explainable`
+  - `ARCH-P07 Quality governs Confidence`
+- Context
+  - M8 Phase 1 Pilot 对 `stock_data_test.post_market_recap_snapshot` 的 2026-07-01～2026-07-03 快照执行真实回放：3/3 ready、Decision Drift=0、EvidenceRef=100%、Unsupported Claim=0。
+  - Pilot 同时发现 `MarketThesisSnapshot.primary_thesis` 表达的是当日 Observation/Assessment，不是带验证期限的未来命题。
+  - 现有 `primary_thesis.confidence=1.0` 来源是 Evidence Quality。将其当作预测概率写入 Dataset 会使 Brier/ECE 失真，并污染未来 Belief/Learning。
+  - 这是 Prediction Semantics Boundary，不是 Dataset Writer 或 Replay 的工程故障。
+- Decision
+  - Market Thesis 采用三类明确词汇：
+    - `Observation`：已经发生、可由 Evidence 直接支持的市场事实摘要；
+    - `Assessment`：对当前状态、风险或交易权限的评价；
+    - `Hypothesis`：关于未来结果的可证伪命题。
+  - Observation 与 Assessment 可以进入 Narrative/Report，但永远不得作为 Calibration 样本。
+  - Validation 只消费通过 Eligibility Gate 的冻结 `HypothesisState`。全部条件必须同时满足：
+    - `statement` 非空且表达未来命题；
+    - `deadline` 存在，并严格晚于命题冻结时点；
+    - `prediction_probability` 在命题冻结时已存在且位于 `[0, 1]`；
+    - `expected_observations` 非空；
+    - `falsifiers` 非空；
+    - `EvidenceRef`、source snapshot/hash、policy version 完整；
+    - source quality 不为 `BLOCKED`；
+    - Reviewer Verdict 显式存在。
+  - `quality_score` 表示数据/推理链可靠性；`prediction_probability` 表示事件发生的事前估计概率。二者必须独立命名、独立存储、禁止互相复制。
+  - `Narrative Confidence ≠ Prediction Probability`。现有 `primary_thesis.confidence` 不得进入 Brier、ECE 或任何 Calibration 指标。
+  - Phase 1 Pipeline 冻结为：
+
+    ```text
+    Yesterday Market Thesis
+      ├─ Observation ───────────────> Report only
+      ├─ Assessment ────────────────> Report only
+      └─ Hypothesis
+           -> Eligibility Check
+           -> Reviewer Verdict
+           -> Ground Truth Record
+           -> Append-only Dataset
+           -> Replay / Metrics
+    ```
+
+  - Failure Type 一级枚举维持现有六种，不因 Eligibility Reject 扩充；不合格命题在写 Dataset 前拒绝，不产生伪 Validation Record。
+- Alternatives
+  - 将所有 Primary Thesis 统一视为 Prediction，并复用 Narrative confidence。
+  - 由 Reviewer 在事后补填预测概率。
+  - 先写 Dataset，再在 Metrics 阶段排除不可校准样本。
+- Consequences
+  - Phase 1 从 `Yesterday Thesis -> Verification` 修订为 `Yesterday Hypothesis -> Eligibility -> Reviewer Verdict -> Ground Truth -> Replay`。
+  - 在首条生产 Validation Record 写入前，需要冻结 `prediction_probability` 与 `quality_score` 的字段语义；当前 Dataset 保持 0 条是正确状态。
+  - T03 必须先实现 Eligibility Gate；T04 只能读取 eligible 且已审核的记录。
+  - 未来 Learning 只能消费该 Dataset，不能从 Narrative、Observation 或 Assessment 反向构造标签。
+- Trigger
+  - 创建 Validation Record、计算 Brier/ECE/Calibration、修改 Thesis/Hypothesis 契约，或启动 Belief/Learning 前。

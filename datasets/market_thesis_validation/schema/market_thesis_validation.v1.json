@@ -7,23 +7,41 @@
     "schema_version",
     "thesis_trade_date",
     "verification_trade_date",
-    "source_thesis_id",
-    "source_thesis_as_of",
+    "source_hypothesis_id",
+    "source_hypothesis_as_of",
+    "hypothesis_deadline",
     "reality_available_at",
     "verified_at",
-    "knowledge_hash",
-    "evidence_hash",
-    "context_hash",
-    "thesis_hash",
-    "confidence",
+    "source_knowledge_hash",
+    "source_evidence_hash",
+    "source_context_hash",
+    "source_thesis_hash",
+    "reality_evidence_hash",
+    "prediction_probability",
+    "source_quality_score",
+    "source_policy_version",
     "label",
+    "failure_type",
     "verification_reason",
     "outcome",
     "evidence_refs",
     "record_hash"
   ],
   "properties": {
+    "record_id": {"type": "string", "minLength": 1},
     "schema_version": {"const": "market_thesis_validation.v1"},
+    "thesis_trade_date": {"type": "string", "format": "date"},
+    "verification_trade_date": {"type": "string", "format": "date"},
+    "source_hypothesis_id": {"type": "string", "minLength": 1},
+    "source_hypothesis_as_of": {"type": "string", "format": "date-time"},
+    "hypothesis_deadline": {"type": "string", "format": "date"},
+    "reality_available_at": {"type": "string", "format": "date-time"},
+    "verified_at": {"type": "string", "format": "date-time"},
+    "source_knowledge_hash": {"$ref": "#/$defs/sha256"},
+    "source_evidence_hash": {"$ref": "#/$defs/sha256"},
+    "source_context_hash": {"$ref": "#/$defs/sha256"},
+    "source_thesis_hash": {"$ref": "#/$defs/sha256"},
+    "reality_evidence_hash": {"$ref": "#/$defs/sha256"},
     "label": {
       "enum": ["YES", "NO", "PARTIAL", "UNVERIFIABLE"]
     },
@@ -39,13 +57,28 @@
         null
       ]
     },
-    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "prediction_probability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "source_quality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "source_policy_version": {"type": "string", "minLength": 1},
+    "verification_reason": {"type": "string", "minLength": 1},
+    "outcome": {"type": "string", "minLength": 1},
     "evidence_refs": {
       "type": "array",
       "minItems": 1,
       "items": {"type": "string", "minLength": 1}
     },
-    "record_hash": {
+    "record_hash": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {
       "type": "string",
       "pattern": "^[0-9a-f]{64}$"
     }

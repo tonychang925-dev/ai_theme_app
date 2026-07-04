@@ -2605,6 +2605,13 @@ async def _build_new_high_summary_from_conn(trade_date: date, recap_doc: dict[st
     yesterday_rows = by_date.get(trade_date - timedelta(days=1), [])
     day_before_rows = by_date.get(trade_date - timedelta(days=2), [])
 
+    classified_rows = [
+        row for row in today_rows if str(row.get("industry_name") or "").strip()
+    ]
+    unclassified_count = len(today_rows) - len(classified_rows)
+    classification_rate = (
+        len(classified_rows) / len(today_rows) if today_rows else 0.0
+    )
     industry_rows: dict[str, list[dict[str, Any]]] = {}
     for row in today_rows:
         key = str(row.get("industry_name") or "未分类").strip() or "未分类"
@@ -2619,9 +2626,16 @@ async def _build_new_high_summary_from_conn(trade_date: date, recap_doc: dict[st
     ]
     summary = "暂无结构化创新高数据"
     if today_rows:
-        industries = "、".join([item["industry_name"] for item in industry_summary[:3] if item.get("industry_name")]) or "暂无明确行业聚焦"
+        industries = "、".join(
+            item["industry_name"]
+            for item in industry_summary
+            if item.get("industry_name") not in {"未分类", "未知"}
+        ) or "暂无明确行业聚焦"
         reps = "、".join([item["stock_name"] for item in today_rows[:4] if item.get("stock_name")]) or "暂无代表股"
-        summary = f"今日创新高 {len(today_rows)} 家，集中在 {industries}，代表股 {reps}。"
+        summary = (
+            f"今日创新高 {len(today_rows)} 家；行业已识别 {len(classified_rows)} 家"
+            f"（{classification_rate:.0%}），已分类方向为 {industries}；代表股 {reps}。"
+        )
 
     enriched = dict(recap_doc)
     enriched["new_high_summary"] = {
@@ -2634,6 +2648,9 @@ async def _build_new_high_summary_from_conn(trade_date: date, recap_doc: dict[st
         "diagnostics": {
             "source": "recomputed_from_stock_daily_snapshot",
             "row_count": len(today_rows),
+            "classified_count": len(classified_rows),
+            "unclassified_count": unclassified_count,
+            "classification_rate": classification_rate,
         },
     }
     return enriched
@@ -4336,6 +4353,47 @@ async def _resolve_canonical_subject(app, subject_key: str) -> str | None:
             """, subject_key)
     except Exception:
         return None
+
+
+@app.get("/api/v1/subject-search")
+async def subject_search(
+    q: str = Query(default=..., min_length=1),
+    limit: int = Query(default=30, ge=1, le=100),
+) -> dict[str, Any]:
+    """搜索题材：按关键字匹配 theme_gate_profile，返回 subject_key 列表供跳转 Theme Workspace。"""
+    try:
+        async with app.state.gateway._client.pool.acquire() as conn:
+            rows = await conn.fetch("""
+                WITH latest_rank AS (
+                    SELECT DISTINCT ON (subject_key)
+                        subject_key,
+                        heat,
+                        heat_name
+                    FROM subject_rank_daily
+                    ORDER BY subject_key, rank_date DESC
+                )
+                SELECT
+                    tgp.subject_key AS theme_id,
+                    tgp.concept AS theme_name,
+                    COALESCE(lr.heat, 0) AS heat,
+                    COALESCE(NULLIF(lr.heat_name, ''), 'UNKNOWN') AS stage,
+                    COALESCE(
+                        (SELECT COUNT(DISTINCT stock_id) FROM subject_stock_staging
+                         WHERE subject_key = tgp.subject_key),
+                        0
+                    ) AS stock_count
+                FROM theme_gate_profile tgp
+                LEFT JOIN latest_rank lr ON lr.subject_key = tgp.subject_key
+                WHERE tgp.concept ILIKE $1
+                   OR tgp.subject_key ILIKE $1
+                ORDER BY lr.heat DESC NULLS LAST, tgp.subject_key
+                LIMIT $2
+            """, f"%{q}%", limit)
+        themes = [dict(r) for r in rows]
+        return {"themes": themes, "count": len(themes), "query": q}
+    except Exception as e:
+        logger.exception("subject search failed")
+        return {"themes": [], "count": 0, "query": q, "error": str(e)}
 
 
 @app.get("/api/v1/theme_workspace/{subject_key}")

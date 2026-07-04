@@ -438,8 +438,9 @@ def test_workspace_intel_context_contract_shape(monkeypatch):
 
 def test_intel_stream_contract_headers(monkeypatch):
     monkeypatch.setattr(routes, "STOCK_PROCESSING_BASE_URL", "http://127.0.0.1:65535")
+    request = type("RequestStub", (), {"headers": {}})()
 
-    resp = client.get("/api/v2/intel/stream", params={"date": "2026-04-29", "limit": 5})
+    resp = asyncio.run(routes.intel_realtime_stream(request, last_event_id=None))
     assert resp.status_code == 200
     assert resp.headers.get("content-type", "").startswith("text/event-stream")
     assert resp.headers.get("cache-control") == "no-cache"
@@ -644,3 +645,175 @@ def test_sse_payload_validation_invalid_payload_to_error_event():
     data_line = [line for line in payload.splitlines() if line.startswith("data:")][0]
     obj = json.loads(data_line.split("data:", 1)[1].strip())
     assert obj["code"] == "INVALID_EVENT_PAYLOAD"
+
+
+def test_tc_sse_p0_001_normalizes_event_feed_entry():
+    payload = routes._normalize_realtime_intel_event(
+        "stream:event:feed",
+        "1782968168596-0",
+        {
+            "event_id": "209104",
+            "event_type": "event",
+            "title": "AI算力扩产",
+            "summary": "PCB赛道扩产",
+            "confidence": "0.9667",
+            "source": "decision_executor_feed",
+        },
+    )
+
+    assert payload["event_id"] == "209104"
+    assert payload["event_type"] == "event"
+    assert payload["cursor"] == "1782968168596-0"
+    assert payload["item"]["item_id"] == "209104"
+    assert payload["item"]["item_type"] == "event"
+    assert payload["item"]["title"] == "AI算力扩产"
+    assert payload["item"]["source_type"] == "decision_executor_feed"
+    assert routes._is_displayable_realtime_event(payload) is False
+
+
+def test_tc_sse_p0_004_accepts_canonical_news_and_rejects_decision_audit():
+    canonical = routes._normalize_realtime_intel_event(
+        "stream:event:feed",
+        "1782978364988-0",
+        {
+            "item_id": "event:209427",
+            "item_type": "event",
+            "occurred_at": "2026-07-02T15:46:04+08:00",
+            "title": "中欧贸易投资磋商机制举行例会",
+            "summary": "中欧将举行第二次例会",
+            "theme_subject_keys": json.dumps(["9046092"]),
+            "theme_names": json.dumps(["中欧贸易"], ensure_ascii=False),
+            "source_type": "event_theme_map",
+            "source_channel": "structured_theme_match",
+        },
+    )
+    audit = routes._normalize_realtime_intel_event(
+        "stream:event:feed",
+        "1782978054878-0",
+        {
+            "event_id": "209417",
+            "event_type": "event",
+            "summary": "修订股东会议事规则",
+            "decision": "publish_clustering",
+            "source": "decision_executor_feed",
+        },
+    )
+
+    assert routes._is_displayable_realtime_event(canonical) is True
+    assert routes._is_displayable_realtime_event(audit) is False
+
+
+def test_tc_sse_p0_001_normalizes_jyhf_payload_entry():
+    payload = routes._normalize_realtime_intel_event(
+        "stream:jyhf:feed",
+        "1782962597037-0",
+        {
+            "payload": json.dumps(
+                {
+                    "item_id": "jyhf_cdp:item-1",
+                    "event_type": "event",
+                    "occurred_at": "2026-07-02T00:00:00+08:00",
+                    "title": "电子级氢氟酸",
+                    "summary": "供货商调涨售价",
+                    "theme_names": ["电子级氢氟酸"],
+                    "theme_subject_keys": ["theme_hf"],
+                    "source_type": "jyhf_cdp_dom",
+                    "source_channel": "jyhf_cdp",
+                },
+                ensure_ascii=False,
+            )
+        },
+    )
+
+    assert payload["event_id"] == "jyhf_cdp:item-1"
+    assert payload["item"]["item_type"] == "event"
+    assert payload["item"]["theme_subject_keys"] == ["theme_hf"]
+    assert payload["item"]["source_channel"] == "jyhf_cdp"
+
+
+def test_tc_sse_p0_002_canonical_and_realtime_routes_share_handler():
+    stream_routes = {
+        route.path: route.endpoint
+        for route in app.router.routes
+        if getattr(route, "path", "") in {
+            "/api/v2/intel/stream",
+            "/api/v2/intel/stream/realtime",
+        }
+    }
+
+    assert set(stream_routes) == {
+        "/api/v2/intel/stream",
+        "/api/v2/intel/stream/realtime",
+    }
+    assert stream_routes["/api/v2/intel/stream"] is stream_routes["/api/v2/intel/stream/realtime"]
+
+
+def test_tc_sse_p0_003_cursor_round_trip_and_sse_id():
+    cursor = {
+        "stream:event:feed": "1782968168596-0",
+        "stream:jyhf:feed": "1782962597037-0",
+    }
+    encoded = routes._encode_sse_cursor(cursor)
+
+    assert routes._decode_sse_cursor(encoded) == cursor
+    frame = routes._emit_sse("intel_item", {"event_id": "evt-1"}, event_id=encoded).decode("utf-8")
+    assert f"id: {encoded}\n" in frame
+
+
+def test_tc_sse_p0_003_stream_resumes_from_cursor_and_emits_contract(monkeypatch):
+    previous_ids = {
+        "stream:event:feed": "1782968000000-0",
+        "stream:jyhf:feed": "1782962000000-0",
+    }
+    captured_streams = {}
+
+    class FakeRedis:
+        async def xread(self, streams, **kwargs):
+            captured_streams.update(streams)
+            return [
+                (
+                    b"stream:event:feed",
+                    [
+                        (
+                            b"1782968168596-0",
+                            {
+                                b"item_id": b"event:209104",
+                                b"item_type": b"event",
+                                b"title": "AI算力扩产".encode(),
+                                b"occurred_at": b"2026-07-02T12:56:08+08:00",
+                                b"theme_subject_keys": b"[\"theme_ai\"]",
+                                b"theme_names": "[\"人工智能\"]".encode(),
+                                b"source_type": b"event_theme_map",
+                                b"source_channel": b"structured_theme_match",
+                            },
+                        )
+                    ],
+                )
+            ]
+
+        async def aclose(self):
+            return None
+
+    class RequestStub:
+        headers = {"last-event-id": routes._encode_sse_cursor(previous_ids)}
+
+        async def is_disconnected(self):
+            return False
+
+    monkeypatch.setattr(routes.aioredis, "from_url", lambda *args, **kwargs: FakeRedis())
+
+    async def scenario():
+        response = await routes.intel_realtime_stream(RequestStub(), last_event_id=None)
+        frame = (await anext(response.body_iterator)).decode("utf-8")
+        await response.body_iterator.aclose()
+        return frame
+
+    frame = asyncio.run(scenario())
+    assert captured_streams == previous_ids
+    assert "event: intel_item" in frame
+    assert "\nid: " not in frame
+    assert frame.startswith("id: ")
+    data_line = next(line for line in frame.splitlines() if line.startswith("data:"))
+    payload = json.loads(data_line.split("data:", 1)[1].strip())
+    assert payload["event_id"] == "event:209104"
+    assert payload["item"]["item_id"] == "event:209104"
