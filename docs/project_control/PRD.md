@@ -1486,3 +1486,147 @@ Out of Scope：
 ### 10) Change Log
 
 - `2026-04-23`：新增 `P3.phase1` 收口增补（`PRD-REQ-P3.phase1-011~018`），将 `stock_processing_service` 的协议冻结、网关边界、缓存版本切换、事件 envelope、对账样本落盘与程序设计前置门禁纳入正式 PRD 合同。
+
+---
+
+## Phase M8.phase0 — Cognition Homepage
+
+> 状态：`实施基线（2026-07-04）`
+> 架构真源：`AI_Theme_App_Overall_Architecture_v4.0.md` 第 10、14、18、20 章。
+
+### 1) 目标（Objective）
+
+在不改变 Layer A/B/C/D、DailyReviewV2 和正式交易决策语义的前提下，使用现有盘后快照生成可回放、可追溯的认知首页，并通过 feature flag 以 Shadow 或 Notion 双层模式运行。
+
+量化目标：
+
+- DailyReviewV2 原字段删除或重命名数为 `0`；
+- Market Thesis 核心命题 EvidenceRef 覆盖率为 `100%`；
+- 认知首页业务区块不超过 `6` 个；
+- M8 任一层失败时旧 Notion 报告可用率为 `100%`；
+- `2026-07-02`、`2026-07-03` 及至少 5 个历史交易日可确定性 replay。
+
+### 2) 范围（Scope）
+
+In Scope：
+
+- `MarketKnowledgeBundle`：只汇聚现有 producer 输出，不重算领域指标；
+- `MarketEvidenceAdapter` 与版本化 `MarketEvidenceSnapshot`；
+- `CLOSE` 类型、带版本的 `MarketContextSnapshot`；
+- 固定模板的最小 `CognitionState`、Belief 与 Hypothesis；
+- 结构化 `MarketThesisSnapshot`；
+- Shadow replay 与差异诊断；
+- `legacy_only / cognition_shadow / dual_layer` 三种 Notion 渲染模式；
+- Thesis 首页 + 原证据章节的双层报告。
+
+Out of Scope：
+
+- 自动 World Model 学习；
+- 动态 Goal Manager 或 Attention Engine；
+- Counterfactual 因果推断；
+- 多策略选择与正式交易决策变更；
+- Self Reflection、Episodic Retrieval；
+- DailyReviewV3；
+- 8002/8003 或其他已废弃服务的启动与依赖。
+
+### 3) 功能需求（Functional Requirements）
+
+- [ ] `PRD-REQ-M8.phase0-001` 当盘后 `recap_doc` 可用时，系统必须构建版本化 `MarketKnowledgeBundle`；Bundle 只保留 producer 输出、lineage、coverage 和 quality，不允许重算 ThemeCycle、Mainline、StrongStock 或交易结论。
+- [ ] `PRD-REQ-M8.phase0-002` `MarketEvidenceAdapter` 必须把 Bundle 映射为不可变 Evidence Snapshot；所有判断性字段必须包含 `EvidenceRef`，缺失字段必须记录 coverage/quality，不得用 `0`、`--` 或自由文本伪装有效事实。
+- [ ] `PRD-REQ-M8.phase0-003` Context、Cognition 与 Thesis 必须使用固定模板从 Evidence 构建；Context 类型固定为 `CLOSE`，Thesis 核心命题必须可追溯，Hypothesis 必须包含 deadline 与 falsifier。
+- [ ] `PRD-REQ-M8.phase0-004` Shadow replay 必须读取已有快照，不访问新的数据库 Gateway、不回写 M1～M7 真源、不改变正式 Decision；相同输入和 policy version 必须产生相同内容 hash。
+- [ ] `PRD-REQ-M8.phase0-005` Notion 必须支持 `legacy_only`、`cognition_shadow`、`dual_layer`；`dual_layer` 在原证据章节前最多插入 6 个认知区块，认知链失败时必须自动回退原报告，禁止发布空认知首页。
+- [ ] `PRD-REQ-M8.phase0-006` 认知正文不得出现内部状态码、无来源结论或重复章节摘要；无足够证据时必须显示“无法判定”或省略命题。
+
+### 4) 非功能需求（NFR）
+
+- `NFR-M8.phase0-001` 同输入、同 schema/policy version 的 Evidence、Context、Thesis 内容 hash 必须一致。
+- `NFR-M8.phase0-002` M8 模块不得导入数据库 Gateway、Redis client 或 Notion client。
+- `NFR-M8.phase0-003` Phase 0 核心持久化契约不超过 5 个，新增核心 Job 不超过 1 个，正式策略新增为 0。
+- `NFR-M8.phase0-004` 所有失败必须输出结构化 diagnostics，禁止 `except: pass`。
+- `NFR-M8.phase0-005` Phase 0 不启动或探测端口 8002/8003。
+
+### 5) 用例（Given/When/Then）
+
+#### `PRD-UC-M8.phase0-01` — Evidence 映射
+
+Given：存在结构化 DailyReviewV2/recap snapshot。
+When：构建 Bundle 与 Evidence Snapshot。
+Then：输出稳定 ID/hash、producer lineage、coverage、quality；缺失资金字段不会被映射为零资金。
+
+#### `PRD-UC-M8.phase0-02` — Thesis Shadow
+
+Given：存在 Evidence Snapshot，且 Context/Cognition 固定 policy 可用。
+When：执行 `M8.phase0` replay。
+Then：生成不超过 6 个首页区块；每个核心命题存在 EvidenceRef；不修改正式 Decision。
+
+#### `PRD-UC-M8.phase0-03` — Notion 双层与回退
+
+Given：渲染模式分别为 `legacy_only`、`cognition_shadow`、`dual_layer`。
+When：构建 Notion blocks。
+Then：旧模式输出保持不变；Shadow 不发布 Part A；Dual Layer 先输出 Thesis 再输出完整证据；认知输入非法时回退旧报告。
+
+#### `PRD-UC-M8.phase0-04` — 历史回放
+
+Given：7/2、7/3 和至少 5 个历史交易日快照。
+When：连续执行两次 replay。
+Then：逐层 hash 一致、未来数据泄漏为 0、unsupported claim 为 0。
+
+### 6) 验收映射（Acceptance Link）
+
+- `PRD-REQ-M8.phase0-001` -> `ACPT-M8P0-001`
+- `PRD-REQ-M8.phase0-002` -> `ACPT-M8P0-002`
+- `PRD-REQ-M8.phase0-003` -> `ACPT-M8P0-003`
+- `PRD-REQ-M8.phase0-004` -> `ACPT-M8P0-004`
+- `PRD-REQ-M8.phase0-005` -> `ACPT-M8P0-005`
+- `PRD-REQ-M8.phase0-006` -> `ACPT-M8P0-006`
+
+### 7) 数据与接口样例
+
+```json
+{
+  "schema_version": "market_thesis.v1",
+  "trade_date": "2026-07-03",
+  "primary_thesis": {
+    "statement": "机器人修复假设失败，资金关注转向容量方向。",
+    "evidence_refs": ["ev:theme:robot:cycle", "ev:capital:pcb:institution"]
+  },
+  "invalidation_conditions": ["机器人核心载体重新获得资金与广度确认"]
+}
+```
+
+### 8) 风险与假设（Risks/Assumptions）
+
+- 风险等级：`P0`，原因是 Notion 复盘属于业务关键消费者。
+- 风险：当前快照字段存在缺失和历史兼容分支。缓解：Adapter 显式 coverage/quality，缺失不补结论。
+- 风险：旧发布器已有未提交重构。缓解：Adapter over Rewrite，只在新 renderer 前增加可关闭的认知层。
+- 假设：`post_market_recap_snapshot` 已保存可回放的 `recap_doc`。
+
+### 9) 发布与回滚约束（Release Constraints）
+
+- 默认 `M8_NOTION_RENDER_MODE=legacy_only`；
+- 先 Evidence Shadow，再 Cognition Shadow，最后才允许 `dual_layer`；
+- 任一 P0 unsupported claim、旧证据章节减少或正式 Decision 漂移立即回滚到 `legacy_only`；
+- 回滚不删除快照，只关闭 feature flag。
+
+### 10) 通过判定（Exit Criteria）
+
+以下条件必须全部满足（AND）：
+
+1. `ACPT-M8P0-001~006` 全部通过；
+2. UT -> IT -> Replay/E2E 按顺序通过；
+3. 7/2、7/3 和至少 5 个历史交易日 replay 产物完整；
+4. 原 DailyReviewV2 契约测试通过；
+5. 无开放 P0/P1 缺陷；
+6. Phase 0 阶段报告进入人工验收。
+
+### 11) Conflict Resolution
+
+| 冲突项 | 采用来源 | 放弃来源 | 裁决 |
+|---|---|---|---|
+| 早期 M8 文档把 Phase 0 定义为直接改写报告 | Overall Architecture v4.0 | M8 v1.3 第 22 章早期分期 | v4.0 是冻结 Baseline；采用只读编排、Shadow、Dual Layer |
+| DailyReviewV2 是否立即扩展 cognition | Overall Architecture v4.0 第 18/57 章 | 直接创建 DailyReviewV3 | Phase 0 使用独立快照与渲染聚合，不破坏 V2 |
+
+### 12) Change Log
+
+- `2026-07-04`：冻结 `M8.phase0` Cognition Homepage 需求，禁止引入 Adaptive Layer。

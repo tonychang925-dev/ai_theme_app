@@ -931,3 +931,147 @@
   - 文档边界与实现边界同步冻结；CI 里可直接阻断越界实现。
 - Trigger
   - 1进2 计划层进入开发前或做任何实现改动前。
+
+## 增量附录（2026-07-02，SSE 实时推送稳定性）
+
+### ADR-SSE-001: 冻结单一 SSE 路由与 IntelFeedEvent v1
+- Context
+  - `/api/v2/intel/stream`、`/api/v2/intel/stream/realtime`、`web_app_service` 与 `frontend_bff` 当前存在多套实现和不同事件包络。
+- Decision
+  - 生产 canonical 路由固定为 `/api/v2/intel/stream`，统一输出 `IntelFeedEvent v1`：`event_id/occurred_at/event_type/item/cursor`。`/realtime` 只允许作为迁移期别名并复用同一 handler。
+- Alternatives
+  - 继续让前端按运行栈选择不同路由和不同 payload。
+- Consequences
+  - 前后端契约和测试收口；需要为 `stream:event:feed` 与 `stream:jyhf:feed` 增加 source adapter。
+- Trigger
+  - SSE 路由、源 Stream 字段或前端实时事件模型发生变更时。
+
+### ADR-SSE-002: SSE 必须支持 cursor replay 与 REST gap fill
+- Context
+  - 当前直接 `XREAD "$"` 只读取连接后的新消息，未输出 SSE `id:`，断线期间消息无法证明可恢复。
+- Decision
+  - SSE 每条业务事件输出稳定 `id:`，重连处理 `Last-Event-ID`；REST feed 提供 `after_cursor` 或等价参数完成显式缺口回补。cursor 被 trim 时必须返回结构化 gap 状态。
+- Alternatives
+  - 依赖浏览器自动重连和最新列表去重，接受小概率缺口。
+- Consequences
+  - 满足无永久数据缺口要求；需要冻结 Stream 保留策略、cursor 语义和回补测试。
+- Trigger
+  - 网络断线、浏览器休眠、服务重启或 Redis 短时不可用时。
+
+### ADR-SSE-003: 广播投递禁止使用共享 consumer group
+- Context
+  - `SSEPushService` 使用 `sse_pushers` consumer group 时，多实例会分流消息；无客户端实例仍可能 ACK，无法保证所有连接收到同一事件。
+- Decision
+  - SSE 广播读取采用每客户端独立 `XREAD` canonical `stream:intel:feed`，或由唯一集中 fanout 服务消费后广播。禁止多个进程通过同一 consumer group 直接承担客户端广播。
+- Alternatives
+  - 为每个 BFF worker 建独立 consumer group，或继续共享 `sse_pushers`。
+- Consequences
+  - 消除随机分流丢消息；需要容量评估，并默认禁用旧 BFF pusher。
+- Trigger
+  - 启动多个 BFF worker、同时启动 stream pusher，或扩容实时服务时。
+
+### ADR-SSE-004: 慢客户端隔离与业务流健康分离
+- Context
+  - 旧广播实现串行等待客户端队列，且按连接年龄清理；当前前端又把 heartbeat 直接视为 live，无法识别“连接活着但业务消息停止”。
+- Decision
+  - 每客户端使用有界非阻塞队列或独立写任务；队列满时只丢弃/断开该客户端。连接清理依据最后成功发送或断开状态。监控分别记录 transport heartbeat 与最后有效业务事件时间。
+- Alternatives
+  - 所有客户端共用串行广播等待，并以 heartbeat 作为唯一健康信号。
+- Consequences
+  - 慢客户端不会拖垮全局，静默业务中断可被发现；需要增加队列水位、drop reason 和业务事件 age 指标。
+- Trigger
+  - 队列积压、连接超过 5 分钟、业务事件停止但 heartbeat 正常时。
+
+## 增量附录（2026-07-03，Notion 盘后报告内容输出）
+
+### ADR-NOTION-001: DailyReview V2/Engine 作为 Notion 主体唯一内容契约
+- Context
+  - Publisher 同时渲染新版故事、Engine Report 和旧候选模板，字段生命周期不同，页面重复且大量为空。
+- Decision
+  - Notion 主体只消费 DailyReview V2 与 Engine 结构化字段；legacy 文本不再参与默认主体渲染。
+- Alternatives
+  - 继续保留三套模板，并为每个缺失字段输出空态。
+- Consequences
+  - 内容真源收口；旧页面目录会变化，但发布 API 和数据库 schema 不变。
+- Trigger
+  - 新增、删除或重命名任一盘后报告主体模块时。
+
+### ADR-NOTION-002: 有效内容驱动渲染，空态集中到数据质量区
+- Context
+  - 旧代码对空数组也创建标题和“暂无数据”，无法区分正常无事件和上游未产出。
+- Decision
+  - 每个业务 Section 必须定义有效内容谓词；无内容不渲染。partial/failed/required-empty 统一在末尾数据质量 toggle 中说明。
+- Alternatives
+  - 每个业务栏目独立展示“暂无数据”。
+- Consequences
+  - 页面更短且决策密度提高；需要可靠消费 `diagnostics.module_coverage`。
+- Trigger
+  - 模块数据为空、部分 join 失败或上游 coverage 状态变化时。
+
+### ADR-NOTION-003: 核心渲染异常必须 fail-fast
+- Context
+  - 重复 `@classmethod` 导致 Engine 栏目构建失败，外围 `except: pass` 将核心内容静默丢弃。
+- Decision
+  - 删除渲染主链的宽泛静默捕获；异常携带 section 上下文并阻止残缺页面被当作成功发布。
+- Alternatives
+  - 捕获全部异常后继续发布剩余栏目。
+- Consequences
+  - 故障会显式暴露；已创建但 append 失败的页面仍需由下一次 force 发布覆盖。
+- Trigger
+  - 任一核心 section renderer 抛出异常或内容契约不满足时。
+
+### ADR-NOTION-004: Publisher 与报告 Renderer 职责分离
+- Context
+  - 单一 Publisher 同时承担幂等 CRUD、字段兼容、内容选择和 block 格式化，修改风险持续上升。
+- Decision
+  - Publisher 只负责页面生命周期与 append；PostMarket Renderer 负责内容契约、条件渲染和 diagnostics。
+- Alternatives
+  - 继续在 `build_blocks` 单函数中追加分支。
+- Consequences
+  - 渲染可独立测试和演进；增加一个内部组件但不改变外部 API。
+- Trigger
+  - 本轮内容架构迁移或未来增加新的 DailyReview V2 模块时。
+
+## 增量附录（2026-07-04，Architecture Graduation 治理）
+
+### ADR-ARCH-GOV-001: 建立轻量 ARB 与风险分级 ADR Decision Matrix
+- Context
+  - Architecture Baseline v4.0 已冻结，并已具备 Principles、ADR-only Policy、Capability Registry、KPI、Budget、Shadow、Replay 与 Deprecation Policy。
+  - 当前缺少“谁负责裁决”和“不同风险变更需要何种审批”的统一规则；同时存在治理过重、阻塞 Phase 0 的风险。
+- Decision
+  - 建立轻量 Architecture Review Board：Chief Architect、受影响 Domain Owner、QA/Risk，以及生产迁移时的 Release。
+  - ARB 只审核 P0 ADR、Stable Core、Source of Truth、Baseline、Freeze、Shadow/Migration 等结构性决策。
+  - 采用 L0～L3 + Emergency 的 ADR Decision Matrix；普通 Adapter、模板、Evidence 映射和局部实现由 Code Owner/Domain Owner 轻量审批。
+  - 默认异步评审，并设置 L2 两个工作日、L3 三个工作日的目标 SLA。
+  - Architecture Graduation 是项目阶段；Freeze 继续作为变更控制规则。
+- Alternatives
+  - 所有变更均提交完整 ARB 评审。
+  - 完全依赖个人临时裁决，不建立正式 Board 与审批矩阵。
+- Consequences
+  - 高风险架构变化具备明确责任与审批证据，团队扩大后仍能稳定裁决。
+  - 普通 Phase 0 交付不进入重型治理，降低 Governance Overhead。
+  - 需要维护 Domain Owner、Business Criticality、Review Policy 和 ARB 决策记录。
+- Trigger
+  - 提交 P0 ADR、修改 Stable Core/Source of Truth/Baseline、申请进入 Shadow/Migrating、解除 Freeze 或筹备 v5 时。
+
+### ADR-ARCH-GOV-002: Architecture Delegate、Decision Log 与 Governance Health
+- Context
+  - ARB 已明确 Chief Architect、Domain Owner、QA/Risk 和 Release 的裁决职责，但 Chief Architect 可能成为日常审批单点。
+  - ADR 数量长期增长后，新成员难以通过完整 ADR Index 快速理解关键演进；现有 Architecture KPI 也缺少治理健康度的单页视图。
+- Decision
+  - Chief Architect 可书面指定临时或长期 Architecture Delegate，在指定 Domain、决策级别和时间窗口内代理审批。
+  - Delegate 不得批准自身变更，不得再次转授权；Baseline 发布、Principles 修改和 Stable Core 重大变更仍需 Chief Architect 最终确认。
+  - 新增 append-only `Architecture_Decision_Log.md`，只摘要已接受或已验证的重要决策并链接 ADR。
+  - 新增 `Governance_Health_Dashboard.md`，统一展示 Review SLA、ADR Queue、Replay/Evidence Coverage、Freeze Violation 和 Phase 0 Scope Leakage。
+  - 无可复现数据的 Dashboard 指标必须标记 `GRAY/NOT_MEASURED`，禁止伪造 GREEN。
+  - 冻结五条 Architecture Culture，作为日常执行口令。
+- Alternatives
+  - 所有架构审批永久集中在 Chief Architect。
+  - 只保留 ADR Index，不提供时间线摘要与治理健康页。
+  - Dashboard 由人工主观标记健康状态。
+- Consequences
+  - 降低人员单点风险，提高团队扩张后的审批连续性和架构可读性。
+  - 增加 Delegate 授权记录、Decision Log 和 Dashboard 自动化维护成本。
+  - Dashboard 初期会以 GRAY 为主，只有接入可复现数据后才能转为 GREEN。
+- Trigger
+  - 指定 Architecture Delegate、发生 Chief Architect 缺席、登记关键架构决策、生成治理健康报告或评估 Phase 0 是否被治理阻塞时。

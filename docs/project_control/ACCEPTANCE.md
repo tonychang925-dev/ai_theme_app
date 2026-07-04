@@ -1983,3 +1983,112 @@ Then:
   3. 不存在未来函数。
   4. 不产生买点语义。
   5. 空结果样本可被统计且不视为失败。
+
+---
+
+## Phase M8.phase0 — Cognition Homepage
+
+### 1) 目标（Objective）
+
+验证 M8 作为现有复盘之上的只读认知编排层，能够生成可追溯 Thesis 首页，并在任何失败下保持 DailyReviewV2、正式 Decision 和原 Notion 证据章节零破坏。
+
+### 2) 验收目标（Acceptance Targets）
+
+- [ ] `ACPT-M8P0-001` `MarketKnowledgeBundle` 只汇聚已有 producer 输出，包含版本、lineage、coverage、quality 与稳定内容 hash，不包含领域指标重算。
+- [ ] `ACPT-M8P0-002` Evidence Snapshot 中 100% 判断性字段具备 EvidenceRef；缺失字段不会变成 `0`、`--` 或确定性结论。
+- [ ] `ACPT-M8P0-003` Context/Cognition/Thesis 可由固定 policy 确定性生成；Hypothesis 100% 包含 deadline/falsifier，Thesis 核心命题 EvidenceRef 覆盖率为 100%。
+- [ ] `ACPT-M8P0-004` Shadow replay 对相同输入连续运行两次逐层 hash 完全一致，正式 Decision diff 为 0，M8 域数据库/Redis/Notion client 依赖为 0。
+- [ ] `ACPT-M8P0-005` Notion 三种 render mode 行为符合契约；Dual Layer 认知首页不超过 6 个区块且完整保留旧证据章节；认知链失败时 100% 回退旧报告。
+- [ ] `ACPT-M8P0-006` 7/2、7/3 与至少 5 个历史交易日 replay 中，内部状态码、unsupported claim、重复核心章节、未来数据泄漏均为 0。
+
+### 3) 验收用例（Given/When/Then）
+
+- `ACC-M8P0-01`
+  - Given：包含结构化与缺失模块的 `recap_doc`。
+  - When：运行 Bundle/Evidence 单元测试。
+  - Then：字段映射、lineage、coverage、quality 和缺失语义全部通过。
+  - Command：`.venv/bin/python -m pytest -q stock_processing_service/tests/unit/test_m8_phase0_knowledge_evidence.py`
+
+- `ACC-M8P0-02`
+  - Given：固定 Evidence 与 policy。
+  - When：运行 Context/Cognition/Thesis 单元测试。
+  - Then：输出 hash 确定、命题引用完整、Hypothesis 可证伪。
+  - Command：`.venv/bin/python -m pytest -q stock_processing_service/tests/unit/test_m8_phase0_cognition.py`
+
+- `ACC-M8P0-03`
+  - Given：正常、部分缺失和非法 cognition 输入。
+  - When：运行 Notion renderer 集成测试。
+  - Then：三种模式、双层顺序与回退行为全部通过。
+  - Command：`.venv/bin/python -m pytest -q stock_processing_service/tests/unit/test_m8_phase0_notion_dual_layer.py`
+
+- `ACC-M8P0-04`
+  - Given：历史 snapshot 数据库中存在至少 7 个交易日。
+  - When：运行 replay 集成测试。
+  - Then：两次运行 hash 一致；Decision diff、unsupported claim、future leak 均为 0。
+  - Command：`.venv/bin/python -m pytest -q stock_processing_service/tests/integration/test_m8_phase0_replay.py`
+
+- `ACC-M8P0-05`
+  - Given：现有 DailyReviewV2 与 Notion 发布回归集。
+  - When：运行兼容测试。
+  - Then：原字段、旧 render mode、原证据章节通过。
+  - Command：`.venv/bin/python -m pytest -q stock_processing_service/tests/unit/test_post_market_daily_review_v2_builder.py stock_processing_service/tests/unit/test_notion_post_market_recap_publisher.py`
+
+### 4) 边界与非目标（Boundary/Non-Goals）
+
+- 不验收动态 Goal/Attention、World Model 学习、多策略、Counterfactual、Self Reflection 或 Episodic Retrieval。
+- 不验收自动交易收益率。
+- 不启动 8002/8003。
+- Phase 0 最高发布模式为 `dual_layer`，禁止 `cognition_primary`。
+
+### 5) 数据样例
+
+```json
+{
+  "render_mode": "dual_layer",
+  "thesis_status": "ready",
+  "thesis_block_count": 6,
+  "legacy_evidence_preserved": true,
+  "fallback_used": false
+}
+```
+
+### 6) 失败判定（Fail Fast Criteria）
+
+以下任一命中即 Phase 0 失败：
+
+- 删除、重命名或改变 DailyReviewV2 原字段语义；
+- M8 重新计算既有领域指标或直接访问数据库；
+- 任一核心 Thesis 命题缺 EvidenceRef；
+- 缺失数据被输出为确定性零值或伪结论；
+- cognition 失败导致原 Notion 报告无法发布；
+- Shadow 改变正式 Decision；
+- Phase 0 启动或依赖 8002/8003；
+- 测试只用 mock 代替历史真实 snapshot replay。
+
+### 7) 可观察性要求（Observability）
+
+- 日志字段：`trade_date,bundle_id,evidence_snapshot_id,context_id,cognition_state_id,thesis_id,schema_version,policy_version,render_mode,fallback_reason`。
+- 质量字段：`coverage_ratio,missing_modules,unsupported_claim_count,evidence_ref_coverage,quality_score`。
+- Replay 产物必须记录输入 snapshot ID 与各层 content hash。
+
+### 8) 变更兼容性说明（Compatibility）
+
+- DailyReviewV2 原契约只读且不修改；
+- Notion 默认保持 `legacy_only`；
+- 新契约只允许向后兼容扩展；
+- 破坏 Stable Core 或 Source of Truth 的变更必须另行 ADR/ARB 审批。
+
+### 9) 通过判定（Exit Criteria）
+
+以下条件必须全部满足（AND）：
+
+1. `ACPT-M8P0-001~006` 全部通过；
+2. 所有 P0/P1 测试有 TC-ID、机读输出与失败路径；
+3. UT、IT、Replay/E2E 依序通过；
+4. 阶段报告列出历史 replay 样本、质量指标和已知限制；
+5. 任务状态完成对账并进入人工验收。
+
+### 10) Conflict Resolution
+
+- 若旧 M8 分期与 Overall Architecture v4.0 冲突，以 v4.0 为准。
+- 若现有 Notion 重构与 Phase 0 目标重叠，保留现有 renderer，使用 Adapter 与 feature flag 增量接入。
