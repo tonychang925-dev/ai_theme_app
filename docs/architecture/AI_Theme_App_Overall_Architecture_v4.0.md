@@ -2,6 +2,7 @@
 
 > 版本：v4.0
 > 日期：2026-07-04
+> 最新实施状态：2026-07-05
 > 状态：Architecture Baseline v4.0 — FROZEN
 > 核心原则：Stable Core + Adaptive Layer + Incremental Evolution
 > 实施原则：Build Cognition without Breaking Report
@@ -39,6 +40,42 @@ AI Theme App 停止继续横向增加 Engine，进入架构收敛与工程验证
 > 校准
 > 再设计
 ```
+
+### 0.1 Baseline 实施状态附录（2026-07-05）
+
+本附录只同步实施状态和已接受 ADR，不改变 v4.0 Baseline 版本号，不发布 v4.1。
+
+| 能力 | 状态 | 当前裁决 |
+|---|---|---|
+| M8 Phase 0 Cognition Homepage | GA | Dual Layer、Replay、EvidenceRef、Decision Drift 守卫已落地 |
+| M8 Phase 1 | Cognitive Validation，T01～T03 In Review | 暂缓 Stateful Belief；先建立 Ground Truth |
+| Prediction Semantics | ADR-M8-009 Accepted | 仅 eligible Hypothesis 可进入 Validation Dataset |
+| Observation / Assessment | Report only | 永不作为 Calibration sample |
+| Probability / Quality | 已拆分 | `prediction_probability` 与 `source_quality_score` 独立 |
+| Hypothesis Source | append-only freeze | 禁止次日用新代码反向重算昨日命题 |
+| Deadline | Trade Calendar owned | 禁止 `trade_date + 1自然日` |
+| Ground Truth Dataset | 0 production records | 等待首个到期 Reality 与 approved Reviewer Verdict |
+| Metrics | Not Started | T04 实现 Binary、Brier、ECE、Timing Offset |
+| Belief / Learning | Deferred | 20 日 Validation 结束前不得进入正式链路 |
+
+最新控制流：
+
+```text
+Existing Knowledge/Decision Plane
+  -> Evidence / Context / Cognition / Market Thesis
+       ├─ Observation + Assessment -> Report Consumer
+       └─ Hypothesis
+            -> Eligibility Gate
+            -> Frozen Source
+            -> Reviewer Verdict
+            -> Ground Truth Dataset
+            -> Metrics / Replay
+
+Belief / Learning
+  -> deferred until validated Ground Truth exists
+```
+
+本附录采用 `ADR-M8-009`，并服从 `ARCH-P03/P04/P06/P07`。
 
 ---
 
@@ -398,6 +435,13 @@ class HypothesisState:
     timeline_head_event_id: str
 ```
 
+实施语义补充：
+
+- `probability` 是事前 `prediction_probability`，不是 Evidence Quality；
+- deadline 必须由 Trade Calendar Producer 提供；
+- expected observations、falsifiers、EvidenceRefs、policy version 缺一不可；
+- Hypothesis 必须在收盘时 append-only 冻结，次日验证不得重新生成昨日定义。
+
 ### 4.6 MarketThesisSnapshot
 
 `Market Narrative` 对外更名为 `Market Thesis`。
@@ -424,6 +468,16 @@ class MarketThesisSnapshot:
 ```
 
 LLM 只负责将 Thesis 翻译成人话，不决定 Thesis。
+
+Market Thesis 内部词汇边界：
+
+```text
+Observation = 已发生事实的结构化表达
+Assessment  = 当前状态/风险/交易权限判断
+Hypothesis  = 带 deadline、事前概率和判据的未来命题
+```
+
+三类内容都可用于报告；只有通过 Eligibility Gate 的 Hypothesis 可以进入 Ground Truth Validation Dataset。
 
 ---
 
@@ -794,7 +848,31 @@ Phase 0 铁律：
 
 ---
 
-## 11. Phase 1：Stateful Cognition
+## 11. Phase 1：Stateful Cognition（长期目标，当前延期）
+
+> `ADR-M8-009` 实施顺序修订：当前 `M8.phase1` 正式名称为 **Cognitive Validation**。本章 Stateful Belief/Hypothesis State 保留为长期目标，但不得在 20 个真实交易日 Ground Truth 验证完成前启动。
+
+### 11.0 当前 M8.phase1：Cognitive Validation
+
+```text
+Yesterday Hypothesis
+-> Eligibility
+-> Frozen Source
+-> Today Reality
+-> Approved Reviewer Verdict
+-> Ground Truth Record
+-> Replay / Metrics
+```
+
+当前范围：
+
+- Validation Record Contract；
+- append-only Source/Dataset 与 Manifest Integrity；
+- Observation/Assessment/Narrative Reject；
+- Binary Accuracy、Brier、ECE、Timing Offset；
+- 连续 20 个真实交易日验证；
+- Decision Drift=0；
+- Belief/Learning 写入=0。
 
 ### 11.1 目标
 
@@ -1700,6 +1778,9 @@ decision_trace_coverage = 100%
 - 数据缺失、过期、冲突和 lineage 缺口必须降低质量；
 - LLM confidence 不能覆盖结构化 Quality；
 - BLOCKED 质量不得输出可执行 Decision。
+- `quality_score` 表达数据/推理可靠性；`prediction_probability` 表达未来事件的事前概率，二者不得互相复制；
+- Narrative confidence、LLM confidence 和 Reviewer 事后评分不得作为 Calibration probability；
+- `prediction_probability` 不适用“直接等于或数值复制 Quality 上限”的实现；低质量样本通过 Eligibility、分层统计或排除口径治理；
 
 门禁：
 

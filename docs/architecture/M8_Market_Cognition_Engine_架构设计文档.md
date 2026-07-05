@@ -2,7 +2,8 @@
 
 > 版本：v1.3
 > 日期：2026-07-04
-> 状态：Core Contract Frozen（停止扩展；进入 Phase 0/1 工程验证）
+> 最新状态日期：2026-07-05
+> 状态：Core Contract Frozen；Phase 0 GA；Phase 1 Cognitive Validation T01～T03 In Review
 > 系统定位：AI Theme App 的跨日市场认知、信念更新、假设验证与决策中枢
 > 长期演进：M9 Market Intelligence System（World Model / Meta Cognition / Goal / Attention / Strategy / Diary / Episodic Memory）
 > 分析师样本：[2026-07-02 盘后复盘](https://bloom-rayon-9e1.notion.site/2026-07-02-3897bab0ee1d807fbe3ae9bacd4d2e20)
@@ -13,6 +14,8 @@
 > - `docs/architecture/weak_to_strong_strategy_design.md`
 > - `docs/project_control/PRD.md`
 > - `docs/project_control/ACCEPTANCE.md`
+> - `docs/adrs/ADR_LIST.md`（ADR-M8-009）
+> - `docs/project_control/reports/phase-M8.phase1-pilot-20260704.md`
 
 > **首要架构原则**：M8 不是对现有盘后复盘系统的重写（Rewrite），而是建立在 Layer A/B/C/D、PostMarketDecisionV2 与 DailyReviewV2 之上的只读认知编排层（Cognitive Orchestration Layer）。
 > **工程目标**：Build Cognition without Breaking Report。
@@ -60,6 +63,143 @@ Evidence
 ```
 
 Notion、盘前必读、M6、M7、W2S 和实时监控应通过 feature flag 渐进消费认知对象；迁移期继续保留并验证原有结构化输出，禁止一次性切断现有链路。
+
+### 0.1 最新实施状态（2026-07-05）
+
+本节是 v1.3 冻结设计的实施状态附录，不新增顶层 Engine，也不发布 v1.4。
+
+| 范围 | 当前状态 | 已完成 | 未完成/门禁 |
+|---|---|---|---|
+| M8 Phase 0 | GA | Knowledge → Evidence → Context → Cognition → Thesis；Notion Dual Layer；真实快照 Replay；Decision Drift=0 | 默认 Consumer 迁移仍受 feature flag 控制 |
+| M8.phase1-T01 | In Review | Validation Record、四类 Verdict、六种 Failure Type、source/reality hash 契约 | 等待阶段统一验收 |
+| M8.phase1-T02 | In Review | append-only Dataset、duplicate skip、conflict reject、Manifest Integrity | 正式 Ground Truth Record 仍为 0 |
+| ADR-M8-009 | Accepted | Observation/Assessment/Hypothesis 语义边界；Prediction Eligibility | 禁止 Narrative 进入 Calibration |
+| M8.phase1-T03 | In Review | eligible Hypothesis source freeze、Eligibility Gate、approved Reviewer Verdict | 等待首个到期 Reality 与人工复核 |
+| M8.phase1-T04 | Not Started | 指标契约已定义 | Binary Accuracy、Brier、ECE、Timing Offset 尚未实现 |
+| M8.phase1-T05 | Not Started | 20 日退出条件已冻结 | 尚未开始连续 20 个真实交易日验证 |
+
+当前真实试运行结论：
+
+- 2026-07-01～2026-07-03 三日 Replay 均为 ready；
+- EvidenceRef coverage 为 100%，Unsupported Claim 为 0，Decision Drift 为 0；
+- 2026-07-03 eligible Hypothesis 已证明可冻结，deadline 由 Trade Calendar Producer 修正为 `2026-07-06`；
+- 截至 2026-07-05，2026-07-06 Reality 尚未发生，因此不得提前生成 Reviewer Verdict 或 Ground Truth Record；
+- Belief、Learning、Memory 继续延期，避免在没有 Ground Truth 时形成自我强化闭环。
+
+当前实际链路：
+
+```text
+Layer A/B/C/D + DailyReviewV2
+  -> MarketKnowledgeBundle
+  -> MarketEvidenceSnapshot
+  -> MarketContextSnapshot
+  -> CognitionState
+  -> MarketThesisSnapshot
+       ├─ Observation ─────────────> Notion / Report only
+       ├─ Assessment ──────────────> Notion / Report only
+       └─ Hypothesis
+            -> Eligibility Gate
+            -> FrozenHypothesisSource (append-only)
+            -> Today Reality
+            -> Approved Reviewer Verdict
+            -> MarketThesisValidationRecord
+            -> Validation Dataset + Manifest
+            -> Replay / Metrics
+```
+
+Phase 1 的正式定义已从：
+
+```text
+Yesterday Thesis -> Verification -> Outcome -> Replay
+```
+
+修订为：
+
+```text
+Yesterday Hypothesis
+  -> Eligibility
+  -> Frozen Source
+  -> Reviewer Verdict
+  -> Ground Truth
+  -> Replay
+```
+
+### 0.2 当前 Phase 1 冻结契约
+
+`FrozenHypothesisSource` 是内部审计投影，不是新的认知 Engine：
+
+```python
+@dataclass(frozen=True, slots=True)
+class FrozenHypothesisSource:
+    thesis_trade_date: str
+    source_snapshot_id: str
+    source_as_of: datetime
+    source_knowledge_hash: str
+    source_evidence_hash: str
+    source_context_hash: str
+    source_thesis_hash: str
+    source_quality_status: str
+    source_quality_score: float
+    source_policy_version: str
+    hypothesis: HypothesisState
+```
+
+Eligibility Gate 同时要求：
+
+1. 输入类型必须是 `HypothesisState`，Observation/Assessment/ThesisStatement 直接拒绝；
+2. status 为 `VALIDATING`；
+3. statement、hypothesis_id、policy version 非空；
+4. deadline 晚于 source trade date，且来自 Trade Calendar EvidenceRef；
+5. `0 <= prediction_probability <= 1`；
+6. expected observations、falsifiers、EvidenceRefs 非空；
+7. source quality 非 `BLOCKED`，source hashes 为有效 SHA-256；
+8. 验证时必须提供 approved Reviewer Verdict。
+
+当前 `MarketThesisValidationRecord v1`：
+
+```python
+@dataclass(frozen=True, slots=True)
+class MarketThesisValidationRecord:
+    record_id: str
+    schema_version: str
+    thesis_trade_date: str
+    verification_trade_date: str
+    source_hypothesis_id: str
+    source_hypothesis_as_of: datetime
+    hypothesis_deadline: str
+    reality_available_at: datetime
+    verified_at: datetime
+
+    source_knowledge_hash: str
+    source_evidence_hash: str
+    source_context_hash: str
+    source_thesis_hash: str
+    reality_evidence_hash: str
+
+    prediction_probability: float
+    source_quality_score: float
+    source_policy_version: str
+
+    label: VerificationLabel
+    failure_type: VerificationFailureType | None
+    verification_reason: str
+    outcome: str
+    evidence_refs: tuple[str, ...]
+    record_hash: str
+```
+
+Verdict 固定为 `YES/NO/PARTIAL/UNVERIFIABLE`。Failure Type 一级分类继续冻结为六种：
+
+```text
+WRONG_DIRECTION
+WRONG_TIMING
+WRONG_THEME
+INSUFFICIENT_EVIDENCE
+UNEXPECTED_EVENT
+MARKET_REGIME_SHIFT
+```
+
+不合格命题在 Dataset 写入前 reject，不通过新增 Failure Type 表达。由于正式 Dataset 仍为 0 条，本次 `confidence -> prediction_probability + source_quality_score` 是首条生产记录前的契约校正，不需要历史数据迁移。
 
 ---
 
@@ -162,15 +302,31 @@ Notion、盘前必读、M6、M7、W2S 和实时监控应通过 feature flag 渐�
 
 ## 3. 核心设计原则
 
-### 3.1 事实、判断、信念、假设、行动分离
+### 3.1 Observation、Assessment、Hypothesis、信念与行动分离
 
 ```text
-Evidence  = 市场实际观测
-Reasoning = 对观测的确定性或概率性解释
-Belief    = 系统当前对某个命题的可信程度
-Hypothesis= 带时间范围和可证伪条件的待验证命题
-Decision  = 在风险约束下基于当前信念选择的行动
+Evidence    = 市场实际观测及其 lineage
+Observation = 对已经发生事实的结构化陈述
+Assessment  = 对当前状态、风险或交易权限的判断
+Reasoning   = 对观测的确定性或概率性解释
+Belief      = 系统当前对某个命题的可信程度
+Hypothesis  = 带未来期限、事前概率和可证伪条件的待验证命题
+Decision    = 在风险与 Strategy 约束下选择的行动
 ```
+
+Validation 与 Calibration 只消费 eligible Hypothesis。Observation、Assessment 和 Narrative 可以进入报告，但不得进入 Ground Truth Dataset。
+
+质量与概率必须使用不同词汇：
+
+```text
+quality_score
+  = 数据完整性、lineage、时效性和推理链可靠性
+
+prediction_probability
+  = 在 Hypothesis 冻结时，对未来事件发生概率的事前估计
+```
+
+`Narrative Confidence ≠ Prediction Probability`。禁止将 `quality_score`、LLM 语气强度或 Reviewer 事后评分复制为 `prediction_probability`。
 
 禁止：
 
@@ -606,7 +762,8 @@ class MarketHypothesis:
 
     prior_probability: float
     current_probability: float
-    confidence: float
+    prediction_probability: float
+    source_quality_score: float
 
     expected_observations: tuple["ExpectedObservation", ...]
     falsification_conditions: tuple["FalsificationCondition", ...]
@@ -623,6 +780,13 @@ class MarketHypothesis:
     policy_version: str
     created_by: str
 ```
+
+字段语义：
+
+- `prediction_probability` 必须在 Hypothesis 冻结时产生，Reviewer 不得事后修改；
+- `source_quality_score` 独立表达 Evidence/Reasoning 质量，不是事件概率；
+- `evaluation_deadline` 必须来自 Trade Calendar Producer，禁止使用 `trade_date + 1自然日`；
+- 只有 statement、deadline、prediction probability、expected observations、falsifiers、EvidenceRefs、policy version 全部存在，且 source quality 非 BLOCKED，Hypothesis 才具备 Validation Eligibility。
 
 ### 9.3 状态机
 
@@ -1292,20 +1456,25 @@ Case：
 
 ## 21. 验收指标
 
-### 21.1 Phase 0 契约验收
+### 21.1 Phase 0 契约验收（已完成）
 
 - 100% 核心判断包含 EvidenceRef；
-- Hypothesis 100% 有 deadline 与 falsifier；
+- eligible Hypothesis 100% 有交易日 deadline、prediction probability、expected observations、falsifier 与 EvidenceRef；
 - 不合法状态转移为 0；
 - 未来数据泄漏为 0；
 - Narrative unsupported claim 为 0。
 
-### 21.2 模型质量
+### 21.2 Cognitive Validation 质量
 
 | 指标 | 初始目标 |
 |---|---|
-| Hypothesis Brier Score | 相对 naive baseline 改善 ≥10% |
-| Belief calibration ECE | ≤0.10 |
+| Eligibility false accept | 0 |
+| Narrative/Observation/Assessment 进入 Calibration | 0 |
+| Reviewer 事后修改 prediction probability | 0 |
+| Hypothesis Binary Accuracy | 记录基线，不预设优秀值 |
+| Hypothesis Brier Score | 首批人工样本后建立基线 |
+| Hypothesis ECE | 样本量满足最低门槛后计算 |
+| Timing Offset | 按交易日统计 0/1/2/... 日分布 |
 | Falsifier 触发可解释率 | ≥95% |
 | 核心假设人工一致率 | ≥75% |
 | Narrative 证据引用覆盖 | 100% |
@@ -1323,6 +1492,47 @@ Case：
 ---
 
 ## 22. 分阶段实施计划
+
+> 状态说明：下方原 v1.3 Engine 路线保留为长期能力地图，不再作为当前执行顺序。当前执行以 `M8.phase0 GA -> M8.phase1 Cognitive Validation -> 20 Trading Days -> 再评估 Belief/Learning` 为准。
+
+### 当前 Phase 0：Cognition Homepage（已完成）
+
+交付：
+
+1. `MarketKnowledgeBundle` 与 Evidence Adapter；
+2. CLOSE Context、固定 Cognition Policy、Market Thesis；
+3. Notion `legacy_only/cognition_shadow/dual_layer`；
+4. 无副作用 Replay、canonical hash、Decision Drift 守卫；
+5. 原 DailyReviewV2 与证据章节零破坏。
+
+### 当前 Phase 1：Cognitive Validation（进行中）
+
+目标：先建立可审计 Ground Truth，不实现 Belief/Learning。
+
+```text
+Frozen eligible Hypothesis
+-> Today Reality
+-> Approved Reviewer Verdict
+-> Append-only Validation Record
+-> Manifest Integrity
+-> Replay
+-> Binary / Brier / ECE / Timing Offset
+```
+
+退出条件：
+
+- T01～T04 工程任务通过；
+- 连续 20 个真实交易日完成 Hypothesis Validation；
+- 未来数据泄漏为 0；
+- Narrative calibration sample 为 0；
+- Decision Drift 为 0；
+- Belief/Learning 写入为 0。
+
+### 当前 Phase 2：Belief/Learning 评估（延期）
+
+只有当 Validation Dataset 已形成足够 Ground Truth、Reviewer 口径稳定且 Calibration 可解释后，才允许通过新 ADR 评估 Belief Update 与 Learning。不得因 T04 指标代码完成而自动进入 Phase 2。
+
+### v1.3 长期能力地图（保留）
 
 ### Phase 0：认知契约与可读报告切片（1-2 周）
 
@@ -1411,6 +1621,8 @@ Case：
 | P0 | Belief 对同源派生证据重复计票 | Evidence lineage 去重 |
 | P0 | 回放读取未来数据 | `available_at` 强制门禁 |
 | P0 | LLM 生成无依据市场故事 | Narrative Compiler 定主轴，Claim Validator 阻断 |
+| P0 | Observation/Assessment 或 Narrative confidence 被写入 Calibration Dataset | ADR-M8-009 Eligibility Gate；仅冻结 Hypothesis 可写入 |
+| P0 | 自然日 deadline 落在休市日 | deadline 只引用 Trade Calendar Producer |
 | P0 | 风险门禁被 Belief 融合稀释 | Risk hard gate 独立优先 |
 | P1 | 假设数量爆炸 | subject/type 配额、去重、deadline、supersede |
 | P1 | 反事实被误解为因果 | CF-0~CF-3 可信等级与措辞门禁 |
@@ -1430,6 +1642,7 @@ Case：
 6. ADR-M8-006：Pattern Memory 升级为 Case Library，并强制防未来数据泄漏。
 7. ADR-M8-007：所有核心认知快照 append-only、可回放、带策略版本。
 8. ADR-M8-008：Notion 正文以认知变化组织，原始事实降级到折叠证据附录。
+9. ADR-M8-009：只有 Validation-Eligible Hypothesis 可以进入 Ground Truth Dataset；Narrative Confidence 不等于 Prediction Probability。
 
 ---
 
@@ -4139,6 +4352,7 @@ M8_CONSUMER_W2S_ENABLED
 8. ADR-CONTINUITY-008：所有消费者必须按 feature flag 独立灰度和回滚。
 9. ADR-WORLD-001：World Model 分为 Stable World 与 Dynamic World。
 10. ADR-NAMING-001：建立 M1～M9 Capability Registry，消除模块/里程碑编号冲突。
+11. ADR-M8-009：Observation/Assessment 仅用于报告；eligible Hypothesis 经冻结、人工裁决后才进入 Ground Truth Dataset。
 
 ---
 
