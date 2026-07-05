@@ -23,6 +23,14 @@
 
 ---
 
+# PART I — Current Baseline (Frozen)
+
+> **阅读指引**：PART I（第 0–22 节）描述 M8 当前已冻结并正在实施的架构基线。
+> PART I 的内容受 ADR 流程约束，修改前必须经过架构评审、回放和批准。
+> 长期能力展望已移至 PART II（第 23–27 节），仅作为信息性参考，不代表当前开发承诺。
+
+---
+
 ## 0. 文档目的
 
 当前系统已经能稳定完成：
@@ -333,7 +341,40 @@ prediction_probability
 - 把“炸板率 18%”直接存为“市场很差”；
 - 把“机器人弱”作为不可验证的假设；
 - 把“Belief 82”当作客观市场事实；
-- 把“如果龙头不炸板”写成已证实因果结论。
+- 把”如果龙头不炸板”写成已证实因果结论。
+
+### 3.1.1 Semantic Contract（词汇边界契约）
+
+以下表格是 M8 所有消费者的强制性语义边界。任何违反此边界的实现将被 Eligibility Gate 或 CI 契约测试拒绝。
+
+| 对象 | 是否进入 Report/Notion | 是否进入 Validation | 是否进入 Ground Truth Dataset | 是否进入 Calibration (Brier/ECE) |
+|---|---|---|---|---|
+| Observation | ✅ | ❌ | ❌ | ❌ |
+| Assessment | ✅ | ❌ | ❌ | ❌ |
+| Narrative / ThesisStatement | ✅ | ❌ | ❌ | ❌ |
+| Hypothesis（通过 Eligibility） | ✅ | ✅ | ✅ | ✅ |
+| Reviewer Verdict | ✅ | ✅ | ✅ | ✅ |
+| Ground Truth Record | — | — | ✅ | ✅ |
+
+**Eligibility Gate 规则**（写入 Dataset 前的强制性门禁）：
+
+```text
+输入必须是 HypothesisState（Observation/Assessment/ThesisStatement 直接拒绝）
+  AND hypothesis.status == “VALIDATING”
+  AND hypothesis_id 非空 AND statement 非空
+  AND deadline 来自 Trade Calendar Producer 且晚于 source trade date
+  AND 0 <= prediction_probability <= 1
+  AND expected_observations 非空
+  AND falsifiers 非空
+  AND EvidenceRefs 完整（含 Trade Calendar EvidenceRef）
+  AND source quality != “BLOCKED”
+  AND source hashes 为有效 SHA-256
+  AND source_policy_version 非空
+  AND Reviewer Verdict 显式存在（reviewer_id 在 approved_reviewer_ids 中）
+  AND Reality available_at >= hypothesis deadline
+```
+
+**不合格处理**：不满足任一条件 → `HypothesisEligibilityError`。不合格命题在 Dataset 写入前拒绝，不产生 Validation Record，不新增 Failure Type。
 
 ### 3.2 时间一致性
 
@@ -1489,6 +1530,53 @@ Case：
 - 旧报告回滚不需要修改数据表；
 - 连续 10 个交易日 shadow 无 P0 数据一致性问题。
 
+### 21.4 Dataset Write Readiness Checklist
+
+以下 Checklist 是向 Ground Truth Dataset 写入任何 Validation Record 的**唯一入口**。全部条件必须按顺序满足，缺一不可。
+
+```text
+□ 1. Hypothesis Frozen
+     昨日收盘时 Hypothesis 已通过 Eligibility Gate 并 append-only 冻结
+     来源：FrozenHypothesisSourceStore.append()
+
+□ 2. Eligibility PASS
+     HypothesisState 类型、VALIDATING 状态、statement、deadline、
+     prediction_probability、expected_observations、falsifiers、
+     EvidenceRefs（含 Trade Calendar）、source hashes、policy version
+     全部通过 MarketThesisVerificationService.check_eligibility()
+
+□ 3. Reality Available
+     verification trade date >= hypothesis deadline
+     且 TodayReality.available_at 早于 verified_at
+     且 TodayReality.evidence_refs 非空
+
+□ 4. Reviewer Approved
+     ReviewerVerdict.reviewer_id 在 approved_reviewer_ids 中
+     Reviewer 未修改 prediction_probability
+     Verdict label 为 YES/NO/PARTIAL/UNVERIFIABLE
+     NO/PARTIAL 必须携带 failure_type
+
+□ 5. Manifest Ready
+     Dataset 目录存在、schema 版本匹配
+     Manifest 完整性校验就绪
+
+□ 6. Integrity PASS
+     record_hash 唯一且可重现
+     无 duplicate（重复写入跳过）
+     无 conflict（同 identity 不同内容拒绝）
+
+     ↓
+  [ Append Ground Truth Record ]
+```
+
+**反模式（禁止）**：
+
+- ❌ 跳过任一 Checklist 项直接写入
+- ❌ 用 Narrative confidence 替代 prediction_probability
+- ❌ 用模型自动输出替代 Reviewer Verdict
+- ❌ 在 Reality 未发生时提前生成 Record
+- ❌ 用新版本代码重算昨日 Hypothesis 后覆盖 Frozen Source
+
 ---
 
 ## 22. 分阶段实施计划
@@ -1531,6 +1619,15 @@ Frozen eligible Hypothesis
 ### 当前 Phase 2：Belief/Learning 评估（延期）
 
 只有当 Validation Dataset 已形成足够 Ground Truth、Reviewer 口径稳定且 Calibration 可解释后，才允许通过新 ADR 评估 Belief Update 与 Learning。不得因 T04 指标代码完成而自动进入 Phase 2。
+
+---
+
+# PART II — Future Roadmap (Informative)
+
+> **阅读指引**：PART II（第 23–27 节）描述 M8 长期能力愿景和 M9 演进方向。
+> 本节内容为信息性参考，不构成当前开发承诺。
+> 所有 PART II 能力的启动必须先通过独立 ADR、回放验证和真实交易日评估。
+> 当前执行顺序以 PART I 中 Phase 0/1 的门禁为准。
 
 ### v1.3 长期能力地图（保留）
 
