@@ -1,0 +1,31 @@
+{
+  "evidence_refs": [
+    "ev:mkb:2026-07-02:a1107a49e36bad11:engine_summary:allow_trade",
+    "ev:mkb:2026-07-02:a1107a49e36bad11:engine_summary:no_trade_blocking_rule",
+    "ev:mkb:2026-07-02:a1107a49e36bad11:mainline_states:0.mainline_name",
+    "ev:mkb:2026-07-02:a1107a49e36bad11:post_market_setup_plan:summary.watch_date",
+    "ev:reality:2026-07-03"
+  ],
+  "failure_type": "WRONG_DIRECTION",
+  "hypothesis_deadline": "2026-07-03",
+  "label": "NO",
+  "outcome": "主线未修复，全市场普跌，交易权限维持不交易。",
+  "prediction_probability": 0.35,
+  "reality_available_at": "2026-07-03T15:30:00+08:00",
+  "reality_evidence_hash": "f34e85279e1d889e98fb5dd73ad4755559fc9509debdf1b3ee2e5bedabc9331c",
+  "record_hash": "4b1443b38b7a842fbe335bc656973ba376d02cd01b4a7c89679b12bc138fba75",
+  "record_id": "mtv:2026-07-02:2026-07-03:4b1443b38b7a842f",
+  "schema_version": "market_thesis_validation.v1",
+  "source_context_hash": "0720cc754fd379b6886a625c43ffd8ef885d39747104e094fb4e3993f4ece686",
+  "source_evidence_hash": "bd1b3110d399c0d4800f3e719df9a327bbe65d0e5dcf96240bdef10de265b840",
+  "source_hypothesis_as_of": "2026-07-02T15:30:00+08:00",
+  "source_hypothesis_id": "hyp:2026-07-02:mainline_repair",
+  "source_knowledge_hash": "a1107a49e36bad113d75fd1bf0da231d1a3ef964bb0c5a99668c49cf119975d6",
+  "source_policy_version": "m8_phase0_cognition.v1",
+  "source_quality_score": 0.9,
+  "source_thesis_hash": "09080982f31f5a654a35b99e4c9ad642347bed36d898bdf43a2ef91be06dbf1d",
+  "thesis_trade_date": "2026-07-02",
+  "verification_reason": "07-03 没有出现修复。通信/半导体继续主跌，科技赛道全线走弱，高位加速杀跌，低位冲高回落。主线修复的假设被市场明确拒绝。",
+  "verification_trade_date": "2026-07-03",
+  "verified_at": "2026-07-05T11:58:27.341620+08:00"
+}

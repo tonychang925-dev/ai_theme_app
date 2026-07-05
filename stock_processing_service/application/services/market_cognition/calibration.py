@@ -123,6 +123,9 @@ class CalibrationReport:
     eligible_for_probability_metrics: int = 0   # YES + NO count
     excluded_partial: int = 0
     excluded_unverifiable: int = 0
+    # Coverage: how many eligible Hypotheses made it to Ground Truth
+    eligible_hypotheses_generated: int = 0      # total Hypothesis generated in period
+    coverage_rate: float | None = None          # Ground Truth / Eligible Hypotheses
     excluded_other: int = 0
     warnings: tuple[str, ...] = ()
     policy_versions_observed: tuple[str, ...] = ()
@@ -136,6 +139,8 @@ class CalibrationReport:
             "excluded_partial": self.excluded_partial,
             "excluded_unverifiable": self.excluded_unverifiable,
             "excluded_other": self.excluded_other,
+            "eligible_hypotheses_generated": self.eligible_hypotheses_generated,
+            "coverage_rate": round(self.coverage_rate, 4) if self.coverage_rate is not None else None,
         }
         if self.binary_accuracy is not None:
             result["binary_accuracy"] = self.binary_accuracy.to_dict()
@@ -169,12 +174,21 @@ class CalibrationMetricsService:
             raise ValueError("ece_bins must be at least 2")
         self._ece_bins = ece_bins
 
-    def compute(self, records: list[MarketThesisValidationRecord]) -> CalibrationReport:
+    def compute(
+        self,
+        records: list[MarketThesisValidationRecord],
+        *,
+        eligible_hypotheses_generated: int | None = None,
+    ) -> CalibrationReport:
         """Compute all metrics from a list of validation records.
 
+        Args:
+            records: Ground Truth validation records.
+            eligible_hypotheses_generated: Total eligible Hypotheses generated
+                in the period (used for Coverage = Ground Truth / Eligible).
+
         Records are NOT filtered by this service — the caller is responsible
-        for providing only eligible Ground Truth records. Records with
-        invalid labels are counted as excluded_other and trigger a warning.
+        for providing only eligible Ground Truth records.
         """
         if not records:
             return CalibrationReport(
@@ -240,6 +254,10 @@ class CalibrationMetricsService:
                 "metrics are indicative, not reliable"
             )
 
+        coverage_rate: float | None = None
+        if eligible_hypotheses_generated is not None and eligible_hypotheses_generated > 0:
+            coverage_rate = len(yes_no) / eligible_hypotheses_generated
+
         return CalibrationReport(
             generated_at=datetime.now().isoformat(),
             total_records=len(records),
@@ -247,6 +265,8 @@ class CalibrationMetricsService:
             excluded_partial=len(partial),
             excluded_unverifiable=len(unverifiable),
             excluded_other=len(other),
+            eligible_hypotheses_generated=eligible_hypotheses_generated or 0,
+            coverage_rate=coverage_rate,
             binary_accuracy=binary_accuracy,
             brier_score=brier_score,
             ece=ece,
