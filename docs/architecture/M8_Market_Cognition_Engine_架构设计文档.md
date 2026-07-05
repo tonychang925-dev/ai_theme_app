@@ -3,7 +3,7 @@
 > 版本：v1.3
 > 日期：2026-07-04
 > 最新状态日期：2026-07-05
-> 状态：Core Contract Frozen；Phase 0 GA；Phase 1 Cognitive Validation T01～T03 In Review
+> 状态：Core Contract Frozen；Phase 0 GA；Phase 1 READY FOR MARKET VALIDATION
 > 系统定位：AI Theme App 的跨日市场认知、信念更新、假设验证与决策中枢
 > 长期演进：M9 Market Intelligence System（World Model / Meta Cognition / Goal / Attention / Strategy / Diary / Episodic Memory）
 > 分析师样本：[2026-07-02 盘后复盘](https://bloom-rayon-9e1.notion.site/2026-07-02-3897bab0ee1d807fbe3ae9bacd4d2e20)
@@ -82,9 +82,10 @@ Notion、盘前必读、M6、M7、W2S 和实时监控应通过 feature flag 渐�
 | M8.phase1-T01 | In Review | Validation Record、四类 Verdict、六种 Failure Type、source/reality hash 契约 | 等待阶段统一验收 |
 | M8.phase1-T02 | In Review | append-only Dataset、duplicate skip、conflict reject、Manifest Integrity | 正式 Ground Truth Record 仍为 0 |
 | ADR-M8-009 | Accepted | Observation/Assessment/Hypothesis 语义边界；Prediction Eligibility | 禁止 Narrative 进入 Calibration |
-| M8.phase1-T03 | In Review | eligible Hypothesis source freeze、Eligibility Gate、approved Reviewer Verdict | 等待首个到期 Reality 与人工复核 |
-| M8.phase1-T04 | Not Started | 指标契约已定义 | Binary Accuracy、Brier、ECE、Timing Offset 尚未实现 |
-| M8.phase1-T05 | Not Started | 20 日退出条件已冻结 | 尚未开始连续 20 个真实交易日验证 |
+| M8.phase1-T03 | Complete | eligible Hypothesis source freeze、Eligibility Gate、approved Reviewer Verdict | 等待首个到期 Reality 与人工复核 |
+| M8.phase1-T04 | Complete | Binary Accuracy、Brier、ECE、Timing Offset 已实现 | 等待 Ground Truth > 0 后建立基线 |
+| M8.phase1-T05 | Complete | 7-gate Readiness Gate：GO | 正式进入 20 Trading-Day Observation Mode |
+| Graduation | Complete | READY FOR MARKET VALIDATION | 见 `docs/project_control/reports/phase-M8.phase1-readiness.md` |
 
 当前真实试运行结论：
 
@@ -1593,9 +1594,12 @@ Case：
 4. 无副作用 Replay、canonical hash、Decision Drift 守卫；
 5. 原 DailyReviewV2 与证据章节零破坏。
 
-### 当前 Phase 1：Cognitive Validation（进行中）
+### 当前 Phase 1：Cognitive Validation（✅ Complete — READY FOR MARKET VALIDATION）
 
-目标：先建立可审计 Ground Truth，不实现 Belief/Learning。
+Phase 1 开发已完成。T01-T05 全部通过，Readiness Gate 输出 GO。
+正式进入 **20 Trading-Day Observation Mode**。
+
+Graduation Report: `docs/project_control/reports/phase-M8.phase1-readiness.md`
 
 ```text
 Frozen eligible Hypothesis
@@ -1609,12 +1613,13 @@ Frozen eligible Hypothesis
 
 退出条件：
 
-- T01～T04 工程任务通过；
-- 连续 20 个真实交易日完成 Hypothesis Validation；
-- 未来数据泄漏为 0；
-- Narrative calibration sample 为 0；
-- Decision Drift 为 0；
-- Belief/Learning 写入为 0。
+- T01～T04 工程任务通过 ✅
+- T05 Readiness Gate GO ✅
+- 连续 20 个真实交易日完成 Hypothesis Validation ⏳
+- 未来数据泄漏为 0 ✅
+- Narrative calibration sample 为 0 ✅
+- Decision Drift 为 0 ✅
+- Belief/Learning 写入为 0 ✅
 
 ### 当前 Phase 2：Belief/Learning 评估（延期）
 
