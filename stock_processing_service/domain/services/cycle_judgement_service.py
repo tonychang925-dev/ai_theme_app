@@ -87,9 +87,37 @@ class CycleJudgementService:
             + e.leader_score * Decimal("0.16")
         )
 
-        # acceleration / fermentation: 旧链用 mainline_strength 阈值判定，非独立公式
-        acceleration = mainline_strength  # 旧链: mainline_strength >= 75 → acceleration
-        fermentation = mainline_strength  # 旧链: mainline_strength >= 60 → fermentation
+        # ── acceleration / fermentation: 独立复合评分公式 ──
+        # Fix Bug 2: 不再直接等于 mainline_strength。两个公式分别捕获"速度"和"广度"。
+        #
+        # fermentation（发酵）= 题材扩散广度
+        #   涨停覆盖面广、红盘比高、前排存活率高、连续性强的题材应得高分
+        fermentation = (
+            e.board_score * Decimal("0.25")
+            + e.continuity_score * Decimal("0.20")
+            + red_ratio * Decimal("25")
+            + e.front_row_survival_ratio * Decimal("15")
+            + e.leader_score * Decimal("0.15")
+            + e.relay_score * Decimal("0.05")
+        )
+
+        # acceleration（加速）= 题材上涨速度
+        #   龙头强、接力活跃、主线强度高、有连续性积累的题材应得高分
+        acceleration = (
+            mainline_strength * Decimal("0.35")
+            + e.leader_score * Decimal("0.30")
+            + e.relay_score * Decimal("0.20")
+            + e.board_score * Decimal("0.10")
+            + e.continuity_score * Decimal("0.05")
+        )
+
+        # Velocity bonus: 从 divergence/fermentation 过渡到 acceleration 更容易
+        # Fix Bug 3: 使用 previous_state 推断变化方向
+        # divergence→acceleration 是经典的高潮模式（分歧后二次加速），给予更高奖励
+        if e.previous_state == "divergence":
+            acceleration += Decimal("12")
+        elif e.previous_state == "fermentation":
+            acceleration += Decimal("6")
 
         # ── 6 维 fade_confirmed 证据计数（等价旧链 _count_fade_confirmed_evidence）──
         evidence_count = 0
@@ -111,31 +139,44 @@ class CycleJudgementService:
             e.break_start_pivot or e.theme_support_score <= Decimal("35")
         )
 
-        # ── Fixed priority（与旧链一致）──
+        # ── Fixed priority（v2.1 修正：acceleration/fermentation 优先于 divergence）──
+        # Fix Bug 1: divergence 不再优先于 acceleration/fermentation。
+        # 两个公式现在使用独立复合评分，量纲可比，不再需要 divergence 兜底。
+        #
         # 1 fade_confirmed (score>=60, evidence>=3, support_break)
-        # 2 repair (from divergence/fade_watch), 3 divergence, 4 fade_watch,
-        # 5 acceleration, 6 fermentation, 7 start
+        # 2 repair (score>=65 AND from divergence/fade_watch)
+        # 3 acceleration (score>=65, 独立复合评分+velocity bonus)
+        # 4 fermentation (score>=55, 独立复合评分)
+        # 5 divergence (score>=60)
+        # 6 fade_watch (score>=50)
+        # 7 start
         THRESHOLDS = {
             "fade_confirmed_min": Decimal("60"),
-            "fade_watch_min": Decimal("50"),
             "repair_min": Decimal("65"),
-            "divergence_min": Decimal("60"),
-            "acceleration_min": Decimal("75"),
-            "fermentation_min": Decimal("60"),
+            "acceleration_min": Decimal("65"),
+            "fermentation_min": Decimal("55"),
+            "divergence_min": Decimal("50"),
+            "fade_watch_min": Decimal("50"),
         }
 
         if fade_confirmed >= THRESHOLDS["fade_confirmed_min"] and evidence_count >= 3 and support_break:
             state = "fade_confirmed"
+        elif acceleration >= THRESHOLDS["acceleration_min"] and fermentation < acceleration + Decimal("5"):
+            # acceleration 优先，但若 fermentation 显著更高（>=5分差距），则 fermentation 更准确
+            # 避免在"加速但广度更突出"时误判为纯加速
+            state = "acceleration"
+        elif fermentation >= THRESHOLDS["fermentation_min"]:
+            state = "fermentation"
         elif repair >= THRESHOLDS["repair_min"] and e.previous_state in {"divergence", "fade_watch"}:
+            # repair 仅在 acceleration 不满足时才触发
+            # 避免把"分歧后二次加速"误判为"缓慢修复"
             state = "repair"
+        elif fermentation >= THRESHOLDS["fermentation_min"]:
+            state = "fermentation"
         elif divergence >= THRESHOLDS["divergence_min"]:
             state = "divergence"
         elif fade_watch >= THRESHOLDS["fade_watch_min"]:
             state = "fade_watch"
-        elif acceleration >= THRESHOLDS["acceleration_min"]:
-            state = "acceleration"
-        elif fermentation >= THRESHOLDS["fermentation_min"]:
-            state = "fermentation"
         else:
             state = "start"
 
