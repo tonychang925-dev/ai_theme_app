@@ -8,6 +8,7 @@ from .verification import MarketThesisVerificationService
 from .hypothesis_source_store import FrozenHypothesisSourceStore
 from .calibration import CalibrationMetricsService, CalibrationReport
 from .phase1_gate import Phase1GateEvaluator, Phase1GateReport, write_graduation_report
+from .registry import MarketThesisRegistry, RegistryEntry
 
 __all__ = [
     "MarketEvidenceAdapter",
@@ -24,4 +25,6 @@ __all__ = [
     "Phase1GateEvaluator",
     "Phase1GateReport",
     "write_graduation_report",
+    "MarketThesisRegistry",
+    "RegistryEntry",
 ]
