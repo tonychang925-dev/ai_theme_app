@@ -6,6 +6,7 @@
 import asyncio
 import logging
 import os
+from contextlib import asynccontextmanager
 from typing import Dict, List, Any, Optional, Callable, Union
 from datetime import datetime
 from functools import wraps
@@ -53,7 +54,7 @@ class DatabaseGateway:
         """私有构造函数"""
         if DatabaseGateway._instance is not None:
             raise Exception("DatabaseGateway是单例，请使用get_instance()")
-        
+
         self._client = None
         self._read_client = None
         self._initialized = False
@@ -65,6 +66,11 @@ class DatabaseGateway:
             'errors': 0,
             'response_times': []
         }
+        # In-flight DB operation tracking for safe reconnect
+        self._inflight = 0
+        self._inflight_lock = asyncio.Lock()
+        self._pending_old_pools: List[asyncio.Task] = []
+        self._reconnect_health_failures = 0
     
     @classmethod
     async def initialize(cls, config: Optional[DatabaseConfig] = None, 
@@ -152,22 +158,52 @@ class DatabaseGateway:
         return cls._instance
     
     async def _reconnect(self):
-        """重新连接"""
+        """Non-destructive reconnect: create new pool → swap → gracefully close old.
+
+        The old pool is NOT closed immediately — in-flight handlers may still be
+        using it. Instead we defer the close by OLD_POOL_GRACE_SECONDS to avoid
+        'pool is closing' cascading failures.
+        """
+        OLD_POOL_GRACE_SECONDS = 30.0
+
         try:
             logger.warning("🔄 尝试重新连接数据库...")
 
-            if self._client:
-                try:
-                    # PostgresDatabaseManager 的 pool 有 close() 方法
-                    if hasattr(self._client, 'pool') and self._client.pool is not None:
-                        await self._client.pool.close()
-                except Exception as close_exc:
-                    logger.warning("关闭旧连接时出错: %s", close_exc)
+            # 1. Create new manager and connect it FIRST
+            from database_service.managers.postgres_manager import PostgresDatabaseManager
+            new_client = PostgresDatabaseManager(self._config)
+            await new_client.connect()
 
-            self._client = await DatabaseManagerFactory.create_client(self._config)
+            # 2. Swap atomically — new operations use new pool immediately
+            old_client = self._client
+            self._client = new_client
             self._initialized = True
 
-            logger.info("✅ DatabaseGateway 重新连接成功")
+            # 3. Schedule graceful close of old pool
+            #    Give in-flight handlers OLD_POOL_GRACE_SECONDS to finish their
+            #    current DB operation before we close the pool underneath them.
+            if old_client and hasattr(old_client, 'pool') and old_client.pool is not None:
+                old_pool = old_client.pool
+
+                async def _graceful_close():
+                    await asyncio.sleep(OLD_POOL_GRACE_SECONDS)
+                    try:
+                        # Wait for in-flight ops on the old pool to drain
+                        waited = 0.0
+                        while self._inflight > 0 and waited < 60.0:
+                            await asyncio.sleep(1.0)
+                            waited += 1.0
+                        await old_pool.close()
+                        logger.info("✅ 旧数据库连接池已关闭 (grace=%.0fs)", OLD_POOL_GRACE_SECONDS + waited)
+                    except Exception as e:
+                        logger.warning("关闭旧连接池时出错: %s", e)
+
+                task = asyncio.create_task(_graceful_close())
+                self._pending_old_pools.append(task)
+
+            self._reconnect_health_failures = 0
+            logger.info("✅ DatabaseGateway 重新连接成功 (non-destructive)")
+
         except Exception as e:
             logger.error(f"❌ 重新连接失败: {e}")
             self._initialized = False
@@ -196,22 +232,35 @@ class DatabaseGateway:
         logger.info("📊 后台任务已启动")
     
     async def _health_check_task(self):
-        """健康检查后台任务"""
+        """健康检查后台任务（带重试容错，避免误触发破坏性重连）"""
         check_interval = self._config.health_check_interval
-        
+        MAX_CONSECUTIVE_FAILURES = 3  # require 3 consecutive failures before reconnect
+
         while True:
             try:
                 healthy = await self.health_check()
-                
-                if not healthy:
-                    logger.warning("⚠️  数据库健康检查失败，尝试重新连接...")
-                    try:
-                        await self._reconnect()
-                    except:
-                        logger.error("重连失败，将稍后重试")
-                
+
+                if healthy:
+                    self._reconnect_health_failures = 0
+                else:
+                    self._reconnect_health_failures += 1
+                    logger.warning(
+                        "⚠️  数据库健康检查失败 (%d/%d)",
+                        self._reconnect_health_failures,
+                        MAX_CONSECUTIVE_FAILURES,
+                    )
+                    # Only reconnect after consecutive failures — avoids
+                    # triggering a destructive pool swap on transient errors
+                    if self._reconnect_health_failures >= MAX_CONSECUTIVE_FAILURES:
+                        logger.warning("⚠️  连续 %d 次健康检查失败，尝试重新连接...",
+                                       self._reconnect_health_failures)
+                        try:
+                            await self._reconnect()
+                        except Exception:
+                            logger.error("重连失败，将稍后重试")
+
                 await asyncio.sleep(check_interval)
-                
+
             except asyncio.CancelledError:
                 break
             except Exception as e:
@@ -283,11 +332,21 @@ class DatabaseGateway:
             logger.error(f"获取主题失败 {theme_id}: {e}")
             raise
 
+    @asynccontextmanager
+    async def _db_op(self):
+        """Track an in-flight DB operation for safe reconnect draining."""
+        self._inflight += 1
+        try:
+            yield
+        finally:
+            self._inflight -= 1
+
     async def create_news(self, news_data: Dict[str, Any]) -> Optional[str]:
         """创建 news_raw 记录"""
         try:
             start_time = time.time()
-            result = await self._client.create_news(news_data)
+            async with self._db_op():
+                result = await self._client.create_news(news_data)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -299,7 +358,8 @@ class DatabaseGateway:
         """按外部 news_id 获取 news_raw 记录"""
         try:
             start_time = time.time()
-            result = await self._client.get_news(news_id)
+            async with self._db_op():
+                result = await self._client.get_news(news_id)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -1419,6 +1479,54 @@ class DatabaseGateway:
             logger.error(f"批量写入 stock_daily_strategy_snapshot 失败: {e}")
             raise
 
+    async def upsert_source_raw_snapshot(self, row: Dict[str, Any]) -> int:
+        """股票域显式写入：source_raw_snapshot，并返回快照 id。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_source_raw_snapshot(row)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 source_raw_snapshot 失败: {e}")
+            raise
+
+    async def upsert_market_data_source_registry_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：market_data_source_registry。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_market_data_source_registry_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量写入 market_data_source_registry 失败: {e}")
+            raise
+
+    async def upsert_ths_hot_reason_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：ths_hot_reason_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_ths_hot_reason_snapshot_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量写入 ths_hot_reason_snapshot 失败: {e}")
+            raise
+
+    async def upsert_stock_theme_reason_evidence_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：stock_theme_reason_evidence。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_stock_theme_reason_evidence_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"批量写入 stock_theme_reason_evidence 失败: {e}")
+            raise
+
     async def upsert_subject_stock_daily_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
         """股票域显式写入：subject_stock_daily_snapshot。"""
         try:
@@ -2327,7 +2435,8 @@ class DatabaseGateway:
         """创建结构化 news_event 记录并返回 news_event.id"""
         try:
             start_time = time.time()
-            result = await self._client.create_news_event(event_data)
+            async with self._db_op():
+                result = await self._client.create_news_event(event_data)
             self._record_request(True, start_time)
             return result
         except Exception as e:
@@ -3047,7 +3156,8 @@ class DatabaseGateway:
         """写入 news_event（source_category='intel'）（写库）。"""
         try:
             start_time = time.time()
-            result = await self._client.create_news_event_with_intel(event_data)
+            async with self._db_op():
+                result = await self._client.create_news_event_with_intel(event_data)
             self._record_request(True, start_time)
             return result
         except Exception as e:

@@ -14,6 +14,7 @@ import recapIcon from "../../assets/intel-icons/当日复盘.png";
 import EngineMissingState from "./components/EngineMissingState";
 import EnginePostMarketView from "./components/EnginePostMarketView";
 import LegacyRecapSections from "./components/LegacyRecapSections";
+import { MarketRecapPanel } from "./components/MarketRecapPanel";
 
 const DISPLAY_REPLACEMENTS: Array<[string, string]> = [
   ["risk_off", "避险防御"],
@@ -1218,6 +1219,39 @@ export function RecapPage() {
     }
     return result;
   }, [themeSummaryRows, themeCapitalFlowRows, watchlistRows]);
+  const themeNameBySubjectKey = useMemo(() => {
+    const result = new Map<string, string>();
+    const canonicalMap = dailyReviewV2?.theme_name_map;
+    if (canonicalMap && typeof canonicalMap === "object") {
+      for (const [subjectKey, themeName] of Object.entries(canonicalMap)) {
+        const key = String(subjectKey || "").trim();
+        const value = String(themeName || "").trim();
+        if (key && value) result.set(key, value);
+      }
+    }
+    for (const row of mainlineDailyStates) {
+      if (row.canonical_subject_key && row.canonical_subject_key !== "--" && row.mainline_name) {
+        result.set(row.canonical_subject_key, row.mainline_name);
+      }
+      if (row.mainline_id && row.mainline_id !== "--" && row.mainline_name && !result.has(row.mainline_id)) {
+        result.set(row.mainline_id, row.mainline_name);
+      }
+    }
+    for (const row of themeSummaryRows) {
+      if (row.subjectKey && row.subjectKey !== "--" && row.theme && !result.has(row.subjectKey)) result.set(row.subjectKey, row.theme);
+    }
+    for (const row of themeCapitalFlowRows) {
+      if (row.subjectKey && row.subjectKey !== "--" && row.theme && !result.has(row.subjectKey)) {
+        result.set(row.subjectKey, row.theme);
+      }
+    }
+    for (const row of watchlistRows) {
+      if (row.subjectKey && row.subjectKey !== "--" && row.theme && !result.has(row.subjectKey)) {
+        result.set(row.subjectKey, row.theme);
+      }
+    }
+    return result;
+  }, [themeSummaryRows, themeCapitalFlowRows, watchlistRows]);
   const moneyFlowRows = useMemo(
     () => {
       const v2Rows = dailyReviewV2?.money_flow_reviews;
@@ -1633,17 +1667,24 @@ export function RecapPage() {
         </button>
       </section>
 
+      {/* M4h: Market Recap — top themes + leaders from evidence fusion */}
+      {reportType === "post_market" && <MarketRecapPanel tradeDate={tradeDate} />}
+
       {loading && <div className="empty-state">正在加载复盘视图...</div>}
-      {error && <div className="empty-state error">{error}</div>}
+      {error && !reportType.includes("post_market") && <div className="empty-state error">{error}</div>}
       {!loading && reportType === "post_market" && !payload && (
-        <div style={{ marginBottom: 12 }}>
+        <div style={{ marginBottom: 12, padding: 12, background: "#1a1a1a", borderRadius: 8 }}>
+          <span style={{ color: "#999", fontSize: 13 }}>
+            遗留引擎报告尚未生成。上方题材强度面板已使用 M4g 证据融合引擎生成。
+          </span>
           <button
             className="tag tag-button is-pass"
             type="button"
+            style={{ marginLeft: 12 }}
             disabled={derivedDataBusy || recapBusy}
             onClick={handleStartPostMarketRecap}
           >
-            {derivedDataBusy || recapBusy ? "复盘中..." : "开始复盘"}
+            {derivedDataBusy || recapBusy ? "复盘中..." : "生成遗留报告"}
           </button>
         </div>
       )}
@@ -1671,10 +1712,11 @@ export function RecapPage() {
             <section className="workspace-column">
               {isPostMarket ? (
                 engineReportReady ? (
-                  <EnginePostMarketView
-                    dailyReviewV2={dailyReviewV2!}
-                    tradeDate={tradeDate}
-                  />
+                <EnginePostMarketView
+                  dailyReviewV2={dailyReviewV2!}
+                  tradeDate={tradeDate}
+                  subjectKeyToThemeName={themeNameBySubjectKey}
+                />
                 ) : (
                   <EngineMissingState
                     dailyReviewV2={dailyReviewV2}

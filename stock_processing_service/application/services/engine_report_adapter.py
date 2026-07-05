@@ -23,6 +23,11 @@ class EngineReportAdapter:
             "mainline_daily_states": recap_doc.get("mainline_daily_states") or v2.get("mainline_daily_states", []),
             "post_market_decision_v2": recap_doc.get("post_market_decision_v2"),
             "evidence_alignment_index": recap_doc.get("evidence_alignment_index") or v2.get("evidence_alignment_index"),
+            "limit_up_ladder": recap_doc.get("limit_up_ladder") or v2.get("limit_up_ladder"),
+            "limit_up_theme_events": recap_doc.get("limit_up_theme_events") or v2.get("limit_up_theme_events"),
+            "new_high_summary": recap_doc.get("new_high_summary") or v2.get("new_high_summary"),
+            "seat_money_summary": recap_doc.get("seat_money_summary") or v2.get("seat_money_summary"),
+            "daily_recap_essentials": recap_doc.get("daily_recap_essentials") or v2.get("daily_recap_essentials"),
         }
 
     @property
@@ -69,6 +74,21 @@ class EngineReportAdapter:
             "d1_observe": sum(1 for d in d1s if d.get("candidate_level") != "formal"),
             "focus_count": len(focus),
         }
+
+    def notion_daily_recap_essentials(self) -> dict[str, Any]:
+        return self._engine["daily_recap_essentials"] or {}
+
+    def notion_limit_up_ladder(self) -> dict[str, Any]:
+        return self._engine["limit_up_ladder"] or {}
+
+    def notion_limit_up_theme_events(self) -> dict[str, Any]:
+        return self._engine["limit_up_theme_events"] or {}
+
+    def notion_new_high_summary(self) -> dict[str, Any]:
+        return self._engine["new_high_summary"] or {}
+
+    def notion_seat_money_summary(self) -> dict[str, Any]:
+        return self._engine["seat_money_summary"] or {}
 
     # ── PreMarket Brief sections ──
 

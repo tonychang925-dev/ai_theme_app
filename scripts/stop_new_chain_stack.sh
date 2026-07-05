@@ -45,6 +45,22 @@ for label in "${LAUNCHD_LABELS[@]}"; do
   launchctl bootout "gui/$(id -u)/${label}" >/dev/null 2>&1 || true
 done
 
+# ── P0: kill realtime subprocesses BEFORE SPS, otherwise they become orphans ──
+# Try graceful stop via SPS API first
+curl -s -X POST http://127.0.0.1:8090/api/v1/realtime/stop 2>/dev/null || true
+sleep 2
+# Brute-force kill all known realtime child processes (belt-and-suspenders)
+echo "[stop] realtime pipeline subprocesses"
+pkill -f 'run_raw_news_services.py' 2>/dev/null || true
+pkill -f 'run_realtime_news_collector.py' 2>/dev/null || true
+pkill -f 'run_phase0_decision_services.py' 2>/dev/null || true
+pkill -f 'run_pre_market_brief_rebuild_loop.py' 2>/dev/null || true
+pkill -f 'run_intel_stream_producer.py' 2>/dev/null || true
+pkill -f 'run_intel_collection_pipeline.py' 2>/dev/null || true
+# Clean pidfiles so next start has a clean slate
+rm -f "$ROOT_DIR/logs/realtime/runtime/"*.pid \
+      "$ROOT_DIR/logs/realtime/runtime/realtime_stack.json" 2>/dev/null || true
+
 # stop new-chain surface first
 screen -S ai_theme_sps_8090 -X quit >/dev/null 2>&1 || true
 screen -S ai_theme_web_8000 -X quit >/dev/null 2>&1 || true

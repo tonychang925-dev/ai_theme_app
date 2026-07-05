@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "frozen_hypothesis_source.v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "thesis_trade_date",
+    "source_snapshot_id",
+    "source_as_of",
+    "source_knowledge_hash",
+    "source_evidence_hash",
+    "source_context_hash",
+    "source_thesis_hash",
+    "source_quality_status",
+    "source_quality_score",
+    "source_policy_version",
+    "hypothesis",
+    "source_hash"
+  ],
+  "properties": {
+    "schema_version": {"const": "frozen_hypothesis_source.v1"},
+    "thesis_trade_date": {"type": "string", "format": "date"},
+    "source_snapshot_id": {"type": "string", "minLength": 1},
+    "source_as_of": {"type": "string", "format": "date-time"},
+    "source_knowledge_hash": {"$ref": "#/$defs/sha256"},
+    "source_evidence_hash": {"$ref": "#/$defs/sha256"},
+    "source_context_hash": {"$ref": "#/$defs/sha256"},
+    "source_thesis_hash": {"$ref": "#/$defs/sha256"},
+    "source_quality_status": {"type": "string", "minLength": 1},
+    "source_quality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "source_policy_version": {"type": "string", "minLength": 1},
+    "hypothesis": {
+      "type": "object",
+      "required": [
+        "hypothesis_id",
+        "statement",
+        "status",
+        "probability",
+        "deadline",
+        "expected_observations",
+        "falsifiers",
+        "evidence_refs"
+      ],
+      "properties": {
+        "hypothesis_id": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1},
+        "status": {"const": "VALIDATING"},
+        "probability": {"type": "number", "minimum": 0, "maximum": 1},
+        "deadline": {"type": "string", "format": "date"},
+        "expected_observations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "falsifiers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/evidence_ref"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_hash": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "evidence_ref": {
+      "type": "object",
+      "required": [
+        "ref_id",
+        "source_module",
+        "source_path",
+        "source_snapshot_id"
+      ],
+      "properties": {
+        "ref_id": {"type": "string", "minLength": 1},
+        "source_module": {"type": "string", "minLength": 1},
+        "source_path": {"type": "string", "minLength": 1},
+        "source_snapshot_id": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

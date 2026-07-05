@@ -1,6 +1,7 @@
 """P2-1/P2-2: 每日动态复盘派生数据生成 UseCase。
 
 总编排：按顺序执行 theme_cycle_truth → dragon_tiger_object_build →
+hot_money_activity_build → theme_leader_candidate_build →
 money_flow_enhanced_build → stock_abnormal_signal_build → strong_stock_watch_build。
 每个子任务统一写 post_market_job_status，执行前后记录 readiness。
 
@@ -21,6 +22,7 @@ logger = logging.getLogger(__name__)
 SUB_TASK_ORDER = [
     ("theme_cycle_truth",             "theme_cycle_truth_build"),
     ("dragon_tiger_object_build",      "dragon_tiger_object_build"),
+    ("hot_money_activity_build",       "hot_money_activity_build"),
     ("theme_leader_candidate_build",   "theme_leader_candidate_build"),
     ("money_flow_enhanced_build",      "money_flow_enhanced_build"),
     ("stock_abnormal_signal_build",    "stock_abnormal_signal_build"),
@@ -58,6 +60,7 @@ FORCE_REBUILD_TABLES = [
     "money_flow_enhanced",
     "theme_leader_candidate",
     "dragon_tiger_object",
+    "hot_money_trading_activity",
     "mainline_state_transition",
     "mainline_state_daily",
     "theme_cycle_judgement_v2",
@@ -92,6 +95,10 @@ class PostMarketDerivedDataGenerateUseCase:
     def register_dragon_tiger_object_build(self) -> None:
         self._builders["dragon_tiger_object_build"] = _DragonTigerObjectBuilder(
             pool=self._pool, db_manager=self._db_manager)
+
+    def register_hot_money_activity_build(self, project_root: str = "") -> None:
+        self._builders["hot_money_activity_build"] = _HotMoneyActivityBuilder(
+            pool=self._pool, project_root=project_root)
 
     def register_theme_leader_candidate_build(self, project_root: str = "") -> None:
         self._builders["theme_leader_candidate_build"] = _ThemeLeaderCandidateBuilder(
@@ -407,6 +414,62 @@ class _DragonTigerObjectBuilder:
         except Exception as exc:
             return {"job_key": "dragon_tiger_object_build", "status": "failed",
                     "affected_rows": 0, "error": str(exc)[:200]}
+
+
+class _HotMoneyActivityBuilder:
+    """P2-3: hot_money_activity_build — 调用现有的 build_hot_money_trading_activity.py。"""
+
+    def __init__(self, pool=None, project_root: str = ""):
+        self._pool = pool
+        self._project_root = project_root
+
+    async def run(self, trade_date: date) -> dict[str, Any]:
+        import os
+
+        script = Path(self._project_root) / "database_service/scripts/build_hot_money_trading_activity.py"
+        if not script.exists():
+            return {"job_key": "hot_money_activity_build", "status": "failed_precondition",
+                    "error": f"script not found: {script}"}
+
+        td_str = trade_date.isoformat()
+        token = os.environ.get("TUSHARE_TOKEN", "")
+        argv = [str(script), "--trade-date", td_str]
+        if token:
+            argv.extend(["--token", token])
+
+        _orig_argv = sys.argv[:]
+        sys.argv = argv
+        try:
+            from database_service.scripts.build_hot_money_trading_activity import main_async
+            exit_code = await main_async()
+        finally:
+            sys.argv = _orig_argv
+
+        row_count = 0
+        if self._pool:
+            async with self._pool.acquire() as conn:
+                row = await conn.fetchrow(
+                    "SELECT COUNT(*) AS cnt FROM hot_money_trading_activity WHERE trade_date = $1::date",
+                    trade_date,
+                )
+                row_count = int(row["cnt"]) if row else 0
+
+        if row_count > 0:
+            return {"job_key": "hot_money_activity_build", "status": "success", "affected_rows": row_count}
+        if (exit_code or 0) == 0:
+            return {
+                "job_key": "hot_money_activity_build",
+                "status": "skipped_no_data",
+                "affected_rows": 0,
+                "error_code": "HOT_MONEY_ACTIVITY_EMPTY",
+                "error": "hot_money_trading_activity rows=0 after source rows were normalized",
+            }
+        return {
+            "job_key": "hot_money_activity_build",
+            "status": "failed",
+            "affected_rows": 0,
+            "error": f"hot_money_activity exit_code={exit_code}",
+        }
 
 
 class _ThemeLeaderCandidateBuilder:

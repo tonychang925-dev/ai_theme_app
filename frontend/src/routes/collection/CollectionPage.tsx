@@ -107,6 +107,7 @@ export function CollectionPage() {
     f10Capital: false,
     dragonTiger: true,
     indexKline: true,
+    evidenceCollection: false,
   });
 
   const totalSteps = job?.total_steps ?? 0;
@@ -227,6 +228,7 @@ export function CollectionPage() {
           f10_capital: options.f10Capital,
           dragon_tiger: options.dragonTiger,
           index_kline: options.indexKline,
+          evidence_collection: options.evidenceCollection,
           auto_build_v2_if_missing: false,
         },
         tushare_pause_seconds: 0.1,
@@ -379,7 +381,8 @@ export function CollectionPage() {
               <span>F10资金动向采集</span>
             </label>
             <div className="workspace-note">
-              自动从当日复盘候选池提取股票，专项采集资金动向快照，不参与评分。
+              顺序执行到该 step 时自动从当日复盘候选池提取股票，专项采集资金动向快照，不参与评分。
+              如需自动解析候选池，请先执行能生成当日候选池的前置任务，例如股票快照/题材热度排名。
             </div>
 
             {/* ── 股票快照（可插拔数据源）── */}
@@ -617,6 +620,14 @@ export function CollectionPage() {
                 onChange={() => setOptions((s) => ({ ...s, indexKline: !s.indexKline }))}
               />
               <span>指数采集</span>
+            </label>
+            <label className="collection-check">
+              <input
+                type="checkbox"
+                checked={options.evidenceCollection}
+                onChange={() => setOptions((s) => ({ ...s, evidenceCollection: !s.evidenceCollection }))}
+              />
+              <span>多源证据采集 (THS+EPS+Research → 复盘快照)</span>
             </label>
           </div>
 

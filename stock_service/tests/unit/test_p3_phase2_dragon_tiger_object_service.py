@@ -63,6 +63,9 @@ def test_build_objects_aggregates_institution_summary_and_trace():
     assert item.source_trace["top_inst_row_count"] == 2
     assert item.source_trace_id
     assert len(item.seat_summary) == 2
+    assert item.seat_summary[0]["seat_name"] == "机构专用"
+    assert item.seat_summary[0]["side_label"] == "买入席位"
+    assert item.seat_summary[1]["side_label"] == "卖出席位"
 
 
 def test_normalize_top_list_skips_rows_without_reason_or_code():

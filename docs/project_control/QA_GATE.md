@@ -120,3 +120,50 @@
 
 ### D. 当前 Gate 状态
 - `P2.phase0`：**CONDITIONAL PASS（100条正式 Gate 已达标，保留少量误判与旧初始化噪音观察项）**
+
+---
+
+## M8.phase0 Quality Gate（2026-07-04）
+
+### 1. Definition of Done
+
+- [x] Stable Core 契约、Knowledge/Evidence、Context/Cognition/Thesis 已实现。
+- [x] Notion `legacy_only/cognition_shadow/dual_layer` 已实现。
+- [x] 新增测试均带 TC-ID 并保留先失败证据。
+- [x] DailyReviewV2 和旧 Notion 证据回归通过。
+- [x] 7 个真实历史快照 replay 通过。
+- [x] 无 P0/P1 未解决缺陷。
+- [x] 回滚方式固定为 `M8_NOTION_RENDER_MODE=legacy_only`。
+
+### 2. Required Checks
+
+| 检查 | 结果 | 证据 |
+|---|---|---|
+| M8 UT/IT/RT | PASS | 12 个 M8 行为测试 |
+| DailyReviewV2/Notion regression | PASS | 合计 76 passed |
+| Real replay | PASS | 7/7 ready、7/7 deterministic |
+| EvidenceRef | PASS | 核心 Thesis 100% |
+| Decision isolation | PASS | 7/7 unchanged |
+| Unsupported claims | PASS | 0 |
+| Compile | PASS | `compileall` |
+| Lint | NOT CONFIGURED | `.venv` 未安装 `ruff`，本阶段不引入新依赖 |
+| Forbidden dependency scan | PASS | M8 service/contracts 无 DB/Redis/Notion client |
+| 8002/8003 | PASS | 未启动、未依赖 |
+
+### 3. 必跑命令
+
+```bash
+.venv/bin/python -m pytest -q \
+  stock_processing_service/tests/unit/test_m8_phase0_knowledge_evidence.py \
+  stock_processing_service/tests/unit/test_m8_phase0_cognition.py \
+  stock_processing_service/tests/unit/test_m8_phase0_notion_dual_layer.py \
+  stock_processing_service/tests/integration/test_m8_phase0_replay.py \
+  stock_processing_service/tests/unit/test_post_market_daily_review_v2_builder.py \
+  stock_processing_service/tests/unit/test_notion_post_market_recap_publisher.py
+```
+
+### 4. Gate Decision
+
+- Acceptance Gate：`PASSED`
+- 阶段状态：等待用户在 STEP 5.2 执行最终验收。
+- 已知非阻断限制：昨日结构化 Hypothesis 的跨日验证属于 Phase 1 Stateful Cognition。

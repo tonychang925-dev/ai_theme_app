@@ -686,6 +686,75 @@ select {
   letter-spacing: 0.04em;
 }
 
+.market-overview-distribution {
+  min-width: 1180px;
+  table-layout: fixed;
+}
+
+.market-overview-distribution th,
+.market-overview-distribution td {
+  white-space: normal;
+}
+
+.market-overview-theme-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 28px;
+}
+
+.market-overview-theme-name {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffb6a8;
+  text-align: center;
+}
+
+.market-overview-rowhead {
+  color: #8ddcff;
+  font-weight: 700;
+  vertical-align: top;
+}
+
+.market-overview-cell {
+  min-width: 126px;
+  vertical-align: top;
+  white-space: normal !important;
+}
+
+.market-overview-stock-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 28px;
+}
+
+.market-overview-stock {
+  padding: 0;
+  text-align: center;
+  line-height: 1.35;
+  white-space: normal;
+  word-break: break-word;
+  font-size: 13px;
+}
+
+.market-overview-stock.is-board-4 {
+  color: #f7d45a;
+}
+
+.market-overview-stock.is-board-3 {
+  color: #ff9a9a;
+}
+
+.market-overview-stock.is-board-2 {
+  color: #9cc0ff;
+}
+
+.market-overview-stock.is-board-1 {
+  color: #8ee0a1;
+}
+
 .recap-theme-link {
   appearance: none;
   border: 0;
@@ -3826,4 +3895,82 @@ select {
 .theme-radar-item-meta {
   display: flex;
   gap: 4px;
+}
+
+/* ── ThemeRadarPanel 标签栏 ── */
+
+.theme-search-tab-bar {
+  display: flex;
+  border-bottom: 1px solid #1d2a3d;
+}
+
+.theme-search-tab {
+  flex: 1;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.theme-search-tab:hover {
+  color: #e2e8f0;
+}
+
+.theme-search-tab.active {
+  color: #00e5ff;
+  border-bottom-color: #00e5ff;
+}
+
+/* ── ThemeSearchTab 搜索 ── */
+
+.theme-search-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.theme-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-bottom: 1px solid #1d2a3d;
+}
+
+.theme-search-input {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #11171f;
+  border: 1px solid #1d2a3d;
+  color: #e2e8f0;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.theme-search-input:focus {
+  border-color: #00e5ff;
+}
+
+.theme-search-input::placeholder {
+  color: #4a5568;
+}
+
+.theme-search-container .empty-state {
+  text-align: center;
+  color: #64748b;
+  padding: 24px 14px;
+  font-size: 13px;
+}
+
+.theme-search-container .empty-state.error {
+  color: #f87171;
 }

@@ -22,7 +22,7 @@ class NewsCrawlerService:
         """
         self.collector = None
         self.initialized = False
-        self.fetch_timeout_seconds = int(os.getenv("NEWS_CRAWLER_FETCH_TIMEOUT_SECONDS", "25"))
+        self.fetch_timeout_seconds = int(os.getenv("NEWS_CRAWLER_FETCH_TIMEOUT_SECONDS", "45"))
         self.healthcheck_timeout_seconds = int(os.getenv("NEWS_CRAWLER_HEALTHCHECK_TIMEOUT_SECONDS", "8"))
         
         try:

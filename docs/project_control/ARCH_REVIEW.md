@@ -624,3 +624,366 @@ recap prerequisites
 - `post_market_recap_snapshot` 仍是 `/recap` 与 Notion 的唯一对外真源。
 - D1 候选池仍不得被 `/recap` 页面直接读取。
 - 弱转强选股可以消费复盘准备好的冻结对象/日频事实，再由 Stage1 显式生成 D1。
+
+---
+
+# ARCH REVIEW - SSE 实时推送稳定性专项评审（2026-07-02）
+
+## 1. 当前架构摘要（Current Architecture Summary）
+
+- 当前前端开发入口由 `frontend/vite.config.ts` 将 `/api/v2/*` 代理到 `web_app_service:8000`，新链启动脚本也以 `web_app_service` 为生产 BFF。
+- 2026-07-01 的提交 `c54d28dd5` 删除了基于 HTTP 轮询的 `/api/v2/intel/stream`，保留 `/api/v2/intel/stream/realtime`，该端点直接对 `stream:event:feed` 与 `stream:jyhf:feed` 执行 `XREAD`。
+- 前端当前工作区改动已把 `SSEManager` 默认端点切到 `/api/v2/intel/stream/realtime`，但前端仍按 `IntelFeedEvent` 契约校验消息。
+- `frontend_bff:8003` 仍保留另一套 `SSEPushService + Redis consumer group + process-local queue broadcast` 实现，运行手册仍引用该入口，形成双 BFF、双 SSE 实现和双运维口径。
+- 结论：从 HTTP 轮询切换到 Redis Stream 实时读取的方向合理，但当前实现尚未形成稳定的事件适配、断点恢复和单一生产入口，现状不满足“无永久数据缺口”和稳定实时推送要求。
+
+## 2. 风险矩阵（Risk Matrix）
+
+| 风险ID | 等级 | 风险描述 | 影响范围 | 概率 | 发现难度 | Trigger | 缓解措施 | Owner |
+|---|---|---|---|---|---|---|---|---|
+| R-SSE-001 | P0 | realtime 端点输出 `{stream,message_id,data}`，前端要求 `{event_id,occurred_at,event_type,item}`；心跳正常但业务事件被前端静默丢弃 | `/intel` 实时情报主链 | 高 | 高 | 任一 Redis Stream 新消息到达 | 服务端增加 source adapter，统一输出 `IntelFeedEvent v1`；发送前执行 schema 校验 | Web App/FE |
+| R-SSE-002 | P0 | 每次连接都从 `"$"` 开始，未输出 SSE `id:`，也未处理 `Last-Event-ID`；断线窗口内消息永久跳过 | 所有断线、页面休眠和网络切换场景 | 高 | 中 | SSE 重连、浏览器后台恢复 | 支持 cursor/`Last-Event-ID` replay；REST feed 增加显式 `after_cursor` 回补 | Web App/Data |
+| R-SSE-003 | P0 | canonical 路由、测试、指标脚本和运行手册仍指向 `/api/v2/intel/stream`，实际新链只保留 `/realtime`；缺失路由被 SPA fallback 返回 200 HTML | 发布门禁、监控、前端建连 | 高 | 中 | 新链启动或监控探测旧路由 | 恢复单一 canonical `/api/v2/intel/stream`，`/realtime` 仅做临时别名；非 API 路由禁止 SPA 200 fallback | Web App/Release |
+| R-SSE-004 | P1 | `SSEManager.connect()` 每次重连把 `retryCount` 清零，最大 3 次重试实际上不会收敛到稳定 fallback | 前端降级与资源占用 | 高 | 中 | 网络持续异常 | 仅首次连接清零；重连成功并稳定一段时间后再清零；增加 jitter | FE |
+| R-SSE-005 | P1 | 旧 BFF 与 stream services 可用同一 `sse_pushers` consumer group 竞争消费；无客户端实例也会 ACK，若重新启用会造成随机丢事件 | 旧实时栈、多 worker 部署 | 中 | 高 | 同时启动 BFF SSEPushService 与 stream `sse_pusher` | 禁止 consumer group 直接承担客户端广播；删除/禁用旧 pusher，或建设独立集中 fanout 服务 | Platform/BFF |
+| R-SSE-006 | P1 | 旧 BFF 广播队列 `put()` 串行等待，单个慢客户端可阻塞消费与 ACK；连接又按创建时间在 300 秒后无条件清理 | 旧 BFF SSE 稳定性 | 中 | 高 | 慢连接、连接超过 5 分钟 | 有界非阻塞队列、单客户端丢弃/断开策略；按最后发送时间清理，不按连接年龄清理 | BFF |
+| R-SSE-007 | P1 | realtime 路由忽略 `date/type/session/subject_key/stock_id`，两条源流格式也不同；跨流事件没有统一排序规则 | 筛选准确性与展示顺序 | 高 | 中 | 多源同时产生消息 | 服务端统一映射、过滤和排序字段；建立 canonical intel stream | Web App/Domain |
+| R-SSE-008 | P2 | 现有指标只覆盖连接状态，缺少接收、适配失败、丢弃、重放、队列水位和端到端延迟 | 故障发现与定位 | 高 | 高 | 业务消息停止但心跳仍正常 | 增加结构化指标和 trace 字段，区分 transport alive 与 business flow alive | SRE/QA |
+
+## 3. 维度化发现
+
+### 3.1 契约与一致性
+
+- `stream:event:feed` 当前消息是扁平字段，常见主键为 `event_id`；`stream:jyhf:feed` 当前消息把业务对象放在 JSON 字符串字段 `payload` 中。
+- `web_app_service` 未对两种源格式做适配，直接包装为 `{stream,message_id,data}`。
+- `frontend/src/lib/realtime/sseManager.ts` 的 `isValidIntelEvent()` 强制要求顶层 `event_id/occurred_at/event_type/item` 和 `item.item_id/item_type/occurred_at`，因此当前 realtime 业务事件无法通过校验。
+- `_validate_sse_payload()` 已存在，但 realtime 路径没有调用，契约测试只验证静态辅助函数，没有覆盖 Redis 消息到 SSE 输出的真实转换。
+
+### 3.2 一致性与恢复
+
+- `XREAD` 用于广播读取是合理的，因为每个客户端都应收到事件，不能使用同一 consumer group 做负载均衡。
+- 当前起点固定为 `"$"`，只保证“连接后新事件”，不保证断线恢复。
+- 前端 fallback 仅在连接错误时启动；如果心跳仍存在而业务事件适配失败，fallback 不会触发。
+- 现有 REST 回补按最新列表去重，不带服务端 cursor，无法证明一定覆盖断线窗口。
+
+### 3.3 性能与容量
+
+- 当前每个 SSE 客户端持有一个 Redis 连接并对两个 Stream 执行阻塞 `XREAD`。小规模单机可接受，但需要连接上限和容量基线。
+- 推荐先保持单进程直读，不立即引入重型消息基础设施；连接数达到 Redis 池或 BFF worker 容量阈值后，再迁移到集中 fanout。
+- 两源直接合并缺少全局顺序。中期应归一到 `stream:intel:feed`，以单一 Redis ID 提供顺序和恢复游标。
+
+### 3.4 可观测性
+
+至少需要以下指标：
+
+- `sse_active_connections`
+- `sse_connect_total{result}`
+- `sse_business_event_received_total{source}`
+- `sse_event_adapt_failed_total{source,reason}`
+- `sse_event_sent_total{event_type}`
+- `sse_replay_total`、`sse_replay_gap_total`
+- `sse_last_business_event_age_seconds`
+- `sse_end_to_end_latency_ms`
+- `sse_client_drop_total{reason}`
+
+心跳成功只能说明传输连接存活，不能作为业务流健康证据。
+
+### 3.5 可运维性与测试证据
+
+- 当前运行态只检测到 `web_app_service:8000`，未检测到 `frontend_bff:8003`；Vite 也固定代理到 8000，说明新链实际入口是 web_app。
+- Redis 当前 `stream:event:feed` 和 `stream:jyhf:feed` 均有数据，但不存在 `sse_pushers` group，进一步证明当前运行路径是直接 `XREAD`，不是 BFF 广播服务。
+- 定向测试命令：
+  - `.venv/bin/python -m pytest -q web_app_service/tests/test_p4_phase0_contracts.py -k 'intel_stream or sse_payload'`
+  - 结果：`1 failed, 4 passed`。
+  - 失败原因：`/api/v2/intel/stream` 被 SPA fallback 返回 `200 text/html`，而不是 `text/event-stream`。
+
+## 4. 目标架构（Target Architecture）
+
+```text
+stream:event:feed -----\
+                        -> IntelEventAdapter -> stream:intel:feed
+stream:jyhf:feed ------/
+
+stream:intel:feed
+  -> GET /api/v2/intel/stream
+     - event: intel_item
+     - id: <redis-stream-id>
+     - data: IntelFeedEvent v1
+     - heartbeat
+     - Last-Event-ID replay
+
+GET /api/v2/intel/feed?after_cursor=<id>
+  -> 断线窗口显式回补
+
+frontend SSEManager
+  -> 连接/重连
+  -> schema 校验
+  -> cursor 持久化
+  -> 超过重试阈值后 REST fallback
+  -> 重连后先 replay，再退出 fallback
+```
+
+核心约束：
+
+1. 生产 BFF 只保留 `web_app_service`，落实既有 `ADR-SVC-005`。
+2. canonical SSE 路由固定为 `/api/v2/intel/stream`；`/realtime` 只作为迁移期别名。
+3. SSE 出口只消费 canonical `stream:intel:feed`，不得把多个源流原始字段直接暴露给前端。
+4. 每个客户端读取同一广播 Stream，使用 `XREAD` 和独立 cursor；不得共享 consumer group 分流。
+5. 实时链故障不影响日频快照链，REST feed 始终可独立工作。
+
+## 5. 迁移计划（Migration Plan）
+
+1. P0：恢复 `/api/v2/intel/stream` canonical 路由，并让 `/realtime` 临时复用同一 handler；API 未命中必须返回 404，不得落到 SPA HTML。
+2. P0：实现 `event_feed_adapter` 与 `jyhf_feed_adapter`，统一产出 `IntelFeedEvent v1`；发送前调用 schema 校验，失败只计数和告警，不发送畸形事件。
+3. P0：补端到端契约测试，覆盖两种真实 Redis entry 格式，断言前端必需字段完整。
+4. P0：修复前端 retry counter；把“收到 heartbeat”和“收到有效业务事件”拆成两个健康状态。
+5. P1：增加 SSE `id:`、`Last-Event-ID` 和 REST `after_cursor`；完成断线 30 秒、浏览器休眠和 Redis 短断恢复测试。
+6. P1：建立 canonical `stream:intel:feed`，统一双源排序、去重、保留策略与 cursor。
+7. P1：删除或默认禁用 `frontend_bff` 旧 `SSEPushService` 和 stream services 中无客户端的 `sse_pusher`，避免未来误启竞争消费。
+8. P2：补连接容量、慢客户端、10 分钟 soak、双客户端同消息一致性和端到端 P95 延迟门禁。
+
+## 6. 子阶段方案
+
+本次采用 `scope=system`，不强制拆分 phase 子阶段。建议执行顺序为 `P0 契约收口 -> P1 恢复语义 -> P2 容量与可观测性`。
+
+## 7. ADR 建议清单
+
+- ADR-SSE-001：冻结单一 SSE 路由与 `IntelFeedEvent v1`。
+- ADR-SSE-002：SSE 必须提供 cursor replay，并由 REST 提供显式 gap fill。
+- ADR-SSE-003：广播投递禁止使用共享 consumer group，统一到 canonical intel stream。
+- ADR-SSE-004：慢客户端与连接存活采用隔离背压和业务流健康指标。
+
+## 8. 冲突裁决记录
+
+| 冲突 | 采用来源 | 放弃/后置来源 | 裁决理由 |
+|---|---|---|---|
+| PRD 指定 `/api/v2/intel/stream`，代码只保留 `/realtime` | PRD/P4 契约与现有测试 | 长期保留双路由语义 | 对外契约必须稳定，`/realtime` 可临时别名但不能成为第二套实现 |
+| 新链使用 web_app，运行手册仍要求 frontend_bff | 新链启动脚本、Vite proxy、当前运行态 | frontend_bff 作为生产 SSE 入口 | 双 BFF 已导致路由和事件 DTO 漂移 |
+| 直接 XREAD 与 consumer group 广播 | 每客户端独立 XREAD canonical stream | 共享 `sse_pushers` group 直接广播 | consumer group 是任务分发语义，不满足每个客户端都收到每条事件 |
+| 是否恢复 HTTP 轮询 SSE | 保留 Stream 实时 SSE + REST gap fill | 恢复 5 秒 HTTP 轮询作为主实现 | 轮询不应重新成为实时主链，但 REST 必须保留为可靠回补通道 |
+
+## 9. 非目标范围（Non-Goals）
+
+- 不恢复 5 秒 HTTP 轮询作为 SSE 主实现。
+- 不引入 WebSocket Hub、Kafka 或事件溯源平台。
+- 不在本轮改造日频快照、盘前必读和盘后复盘链路。
+- 不承诺 Tick 级或高频行情分发。
+
+---
+
+# ARCH REVIEW - Notion 盘后报告内容输出专项评审（2026-07-03）
+
+## 1. 当前架构摘要（Current Architecture Summary）
+
+- 发布链路只读 `post_market_recap_snapshot`，由 `EngineReportAdapter` 同时适配 `recap_doc` 与 `daily_review_v2`。
+- 发布器当前连续执行“新版复盘故事”“Engine Report”“2026-05 旧候选模板”三套渲染逻辑，页面结构没有单一内容契约。
+- 旧候选模板无条件创建“弱转强候选、正式候选、观察候选、强势池历史、候选诊断、旧链报告”栏目；DailyReview V2 不保证这些旧字段存在，因此稳定产生空栏目。
+- `_build_engine_sections` 被重复 `@classmethod` 装饰，且调用异常被 `except Exception: pass` 吞掉，导致交易结论、大盘环境、主线状态、次日观察整组静默缺失。
+- 2026-07-02 快照包含 Engine Summary、34 条主线状态及 6 条指数技术数据，但现行渲染仍出现 63 个区块和多组空栏目，证明问题位于内容编排层而非单纯“源数据为空”。
+
+## 2. 风险矩阵（Risk Matrix）
+
+| 风险ID | 等级 | 风险描述 | 影响范围 | 概率 | 发现难度 | Trigger | 缓解措施 | Owner |
+|---|---|---|---|---|---|---|---|---|
+| R-NOTION-001 | P0 | 重复装饰器触发类型错误，异常又被静默吞掉，核心决策栏目不发布 | 所有包含 Engine Report 的盘后页面 | 高 | 高 | 调用 `_build_engine_sections` | 移除重复装饰器；禁止渲染主链 `except: pass`；增加契约测试 | SPS |
+| R-NOTION-002 | P1 | 三套模板并行、旧字段栏目无条件追加，产生重复与空栏目 | Notion 页面可读性及决策效率 | 高 | 低 | 任一 V2 快照发布 | 冻结单一 V2 内容编排器；按有效内容渲染 | SPS/Product |
+| R-NOTION-003 | P1 | 空字段被默认值包装成“暂无数据”业务结论，无法区分正常无事件与上游缺失 | 数据质量判断 | 高 | 高 | 模块数组为空或 join 失败 | 将缺口集中到数据质量区，使用 module_coverage 状态 | SPS/Data |
+| R-NOTION-004 | P1 | Publisher 同时承担 API、幂等、内容选择、字段格式化和 legacy 解析 | 可维护性与回归风险 | 高 | 中 | 增加任一新栏目 | Publisher 保留发布编排；独立 renderer 负责内容契约 | SPS |
+| R-NOTION-005 | P2 | 旧链文本反解析继续参与主题名与主体展示 | 真源一致性 | 中 | 中 | V2 字段缺失 | 主体只读 V2/Engine；legacy 仅在显式兼容模式展示 | SPS |
+
+## 3. 维度化发现
+
+### 3.1 契约与一致性
+
+- `PostMarketDailyReviewV2` 已定义页面级结构化模块与 `diagnostics.module_coverage`，应成为 Notion 主体真源。
+- 现行 Publisher 仍以 2026-05 候选字段为固定目录，违反 V2 “每个模块直接对应一个展示模块”的约束。
+- 正常“无龙虎榜/无候选”和异常“上游未产出”必须通过 coverage/status 区分，不能都展开为空栏目。
+
+### 3.2 内容架构
+
+目标页面按投资决策阅读顺序收敛为四层：
+
+1. 交易结论：是否交易、模式、仓位、阻断原因、次日策略。
+2. 市场结构：市场环境、复盘要点、涨停梯队、主线状态、新高趋势。
+3. 资金验证：机构、游资、龙虎榜及主题资金，只展示存在的结构化事实。
+4. 次日计划：D1/观察清单/重点股票；无计划时仅在交易结论中说明，不创建多张空表。
+
+数据缺口统一放入末尾折叠的“数据质量”区，不与业务内容混排。
+
+### 3.3 可观测性
+
+- 渲染异常必须带 section 名称记录并中止发布，避免成功页面残缺。
+- 建议记录 `rendered_sections/skipped_sections/partial_sections/block_count/schema_version`。
+- 页面本身只展示需要人工关注的 partial/failed 模块，不展示全量内部 diagnostics。
+
+### 3.4 性能与可运维性
+
+- 条件渲染会减少无意义 block 数量和 Notion append 请求体积。
+- 每个表继续保留行数上限；详细诊断使用 toggle，避免正文超过 Notion block 限制。
+- 幂等归档重建策略、本地 snapshot 真源和盘前报告渲染保持不变。
+
+## 4. 目标架构（Target Architecture）
+
+```text
+post_market_recap_snapshot
+  -> EngineReportAdapter / DailyReviewV2
+  -> PostMarketNotionReportRenderer
+       -> SectionSpec(content predicate + renderer)
+       -> 交易结论
+       -> 市场结构
+       -> 资金验证
+       -> 次日计划
+       -> 数据质量
+  -> NotionPostMarketRecapPublisher
+       -> 幂等查询/建页/分批 append
+```
+
+硬约束：
+
+1. 主体只消费结构化 V2/Engine 字段，不从 legacy 文本反解析业务语义。
+2. 业务栏目仅在包含有效内容时渲染；禁止为每个空数组创建“暂无数据”栏目。
+3. 核心渲染异常不得静默降级。
+4. legacy 内容默认不发布，仅保留显式兼容开关的迁移能力。
+5. 数据缺口通过 `diagnostics.module_coverage` 集中表达。
+
+## 5. 迁移计划（Migration Plan）
+
+1. 先补发布内容契约测试，覆盖空快照、Engine 数据、V2 模块和 partial diagnostics。
+2. 修复重复 `@classmethod` 和 `position_limit=None` 等确定性渲染故障。
+3. 将旧模板替换为按内容谓词驱动的 V2 编排器，默认关闭 legacy。
+4. 保持发布 API、幂等键、数据库 properties 和盘前报告路径不变。
+5. 使用 2026-07-02 实际快照回放，核对标题顺序、空栏目数和 block 数。
+6. 若需回滚，仅恢复旧 `build_blocks`；snapshot 和 Notion database schema 无需回滚。
+
+## 6. 子阶段方案
+
+本次采用 `scope=system` 专项评审，不新增跨系统阶段。实施按“测试保护 → renderer 收口 → 快照回放”顺序执行。
+
+## 7. ADR 建议清单
+
+- ADR-NOTION-001：Notion 主体以 DailyReview V2/Engine 为唯一内容契约。
+- ADR-NOTION-002：采用有效内容驱动的条件渲染，空态集中到数据质量区。
+- ADR-NOTION-003：核心渲染异常 fail-fast，禁止静默残缺发布。
+- ADR-NOTION-004：Publisher 与报告 Renderer 职责分离。
+
+## 8. 冲突裁决记录
+
+| 冲突 | 采用来源 | 放弃来源 | 裁决理由 |
+|---|---|---|---|
+| 2026-05 Notion 固定七栏模板 vs DailyReview V2 页面级契约 | DailyReview V2 重构设计与当前快照 | 固定七栏旧候选模板 | V2 是当前结构化真源，旧字段不再保证存在 |
+| “每栏显示暂无数据” vs 减少空栏目 | coverage 驱动的集中数据质量区 | 业务正文逐栏空态 | 集中表达才能区分正常无事件和上游故障 |
+| 渲染失败继续发布 vs 中止残缺页面 | fail-fast + 测试 | `except Exception: pass` | 残缺页面比明确失败更难发现且会误导决策 |
+
+## 9. 非目标范围（Non-Goals）
+
+- 不修改 DailyReview V2 上游计算规则。
+- 不重新生成或回填历史 snapshot。
+- 不调整 Notion database properties、幂等键或归档策略。
+- 不改盘前必读报告内容。
+
+---
+
+# ARCH REVIEW - M8 Prediction Semantics Boundary 专项评审（2026-07-04）
+
+## 1. 当前架构摘要（Current Architecture Summary）
+
+- Phase 0 已证明 Evidence、Context、Cognition、Thesis、Replay 和 Decision 隔离在工程上可重复。
+- Phase 1 Pilot 首次验证认知输出是否具备可校准语义，而不仅是输出能否生成。
+- 真实回放显示 Primary Thesis 主要表达当日 Observation/Assessment；其 confidence 实际是 Evidence Quality。
+- Dataset Writer 已具备 append-only、冲突拒绝和 Manifest Integrity，但语义不合格的输入不能因存储能力可用而进入 Ground Truth Dataset。
+
+## 2. 风险矩阵（Risk Matrix）
+
+| 风险ID | 等级 | 风险描述 | 影响范围 | 概率 | 发现难度 | 缓解措施 | Trigger | Owner |
+|---|---|---|---|---|---|---|---|---|
+| R-M8-SEM-001 | P0 | 将当日 Narrative 当作未来 Prediction | Validation Dataset、Calibration、Learning | 高 | 高 | 三类词汇边界 + Eligibility Gate | 写首条 Validation Record | M8 Owner |
+| R-M8-SEM-002 | P0 | 将 Evidence Quality 当作 Prediction Probability | Brier、ECE、Belief 更新 | 高 | 高 | 字段独立命名与存储，禁止互相复制 | 计算 Calibration | M8/QA |
+| R-M8-SEM-003 | P1 | Reviewer 事后补概率形成 hindsight bias | Ground Truth 可审计性 | 中 | 高 | probability 必须随昨日 Hypothesis 冻结 | Reviewer 提交 Verdict | QA/Risk |
+| R-M8-SEM-004 | P1 | 为 Eligibility Reject 扩充 Failure Type | 标注一致性、长期可维护性 | 中 | 中 | 写入前拒绝；六种一级分类保持冻结 | 命题字段不完整 | Dataset Owner |
+
+## 3. 维度化发现
+
+### 3.1 契约
+
+- `Observation` 回答“已经发生了什么”。
+- `Assessment` 回答“当前应如何理解/约束行动”。
+- `Hypothesis` 回答“在截止时点前，未来最可能发生什么，以及什么证据可证实或证伪”。
+- 三者可共同组成 Market Thesis，但 Validation Consumer 只能读取 Hypothesis。
+
+### 3.2 一致性
+
+- `quality_score` 与 `prediction_probability` 不是同一量纲。前者衡量输入和推理链可靠性，后者是事前事件概率。
+- `ARCH-P07` 约束质量传播，但不能把 Quality 数值直接复制为事件概率。
+- Dataset Record 必须引用冻结版本，禁止用新版本 policy 重跑昨日数据后改写昨日 Hypothesis。
+
+### 3.3 可解释性
+
+- Eligible Hypothesis 必须同时展示 statement、deadline、expected observations、falsifiers、prediction probability 和 EvidenceRefs。
+- Reviewer 只裁决 Outcome/Label/Reason，不得修改昨日 probability。
+
+### 3.4 可运维性
+
+- Eligibility Reject 是写入前门禁，不是 NO、PARTIAL 或 UNVERIFIABLE。
+- 建议记录 `eligible_count/rejected_count/reject_reason/reviewer_disagreement_rate`，但 Reject 不进入 Calibration 分母。
+
+## 4. 目标架构（Target Architecture）
+
+```text
+Frozen Market Thesis
+  ├─ Observation ----------------------> Narrative / Notion
+  ├─ Assessment -----------------------> Narrative / Notion
+  └─ Hypothesis
+       -> Eligibility Gate
+          deadline
+          prediction_probability
+          expected_observations
+          falsifiers
+          evidence_refs + lineage
+          source_quality != BLOCKED
+       -> Explicit Reviewer Verdict
+       -> Ground Truth Validation Record
+       -> Append-only Dataset + Manifest
+       -> Binary / Brier / ECE / Timing Offset
+```
+
+## 5. 迁移计划（Migration Plan）
+
+1. 在首条生产 Record 前冻结字段语义：保留 `quality_score`，将校准输入明确命名为 `prediction_probability`。
+2. T03 只从冻结 `HypothesisState` 构造候选，不消费 Primary Narrative。
+3. 先实现 Eligibility Reject 测试，再实现 Reviewer Verdict Workflow。
+4. 以 2026-07-01～2026-07-03 Pilot 重新执行准入检查；不合格命题必须保持 Dataset 写入 0。
+5. 首条 eligible 样本执行双人 Review、append、Manifest Verify 和 replay。
+6. T04 在至少存在人工审核样本后实现指标；低质量/不可验证样本按冻结口径排除。
+
+## 6. 子阶段方案
+
+本次为 M8.phase1 语义边界评审，不新增顶层阶段。执行顺序固定为：
+
+```text
+Vocabulary Freeze
+-> Eligibility Contract
+-> Reviewer Workflow
+-> First Ground Truth Record
+-> Metrics
+```
+
+## 7. ADR 建议清单
+
+- `ADR-M8-009`：只有 Validation-Eligible Hypothesis 可以进入 Ground Truth Dataset。
+
+## 8. 冲突裁决记录
+
+| 冲突 | 采用来源 | 放弃来源 | 裁决理由 |
+|---|---|---|---|
+| Primary Thesis 是否等于 Prediction | Pilot 真实输出 + Hypothesis 可证伪定义 | 将 Narrative 整体作为预测 | 当日状态陈述没有未来期限，无法校准 |
+| Evidence Quality 是否可作概率 | 独立 `quality_score/prediction_probability` | 复用统一 confidence | 可靠性与事件概率语义不同 |
+| 不合格命题如何处理 | Eligibility Gate 写入前拒绝 | 写 UNVERIFIABLE 或新增 Failure Type | Eligibility 是输入契约问题，不是市场结果 |
+| 是否立即启动 Learning | 先积累 eligible Ground Truth | 从 Narrative 自监督学习 | 当前没有可靠预测标签，学习会自我强化错误 |
+
+## 9. 非目标范围（Non-Goals）
+
+- 不新增 Engine、Belief、Learning 或 Memory。
+- 不修改正式 Decision。
+- 不增加 Failure Type。
+- 不在本次架构评审中修改业务实现代码。
+- 不把 Observation/Assessment 从 Notion 或 Market Thesis 中删除。

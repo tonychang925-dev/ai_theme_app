@@ -1,0 +1,870 @@
+{
+  "generated_at": "2026-06-22",
+  "database": "stock_data_test",
+  "dates": [
+    {
+      "trade_date": "2026-06-18",
+      "before": {
+        "limitup_count": 106,
+        "theme_count": 12,
+        "other_count": 5,
+        "true_other_count": 5,
+        "display_other_count": 72,
+        "collapsed_other_count": 68,
+        "collapsed_other_themes": [
+          {
+            "theme_name": "钇90",
+            "subject_key": "9050919",
+            "limit_up_count": 2,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "人工智能硬件",
+            "subject_key": "9014001",
+            "limit_up_count": 1,
+            "mapping_source": "mainline_daily_state"
+          },
+          {
+            "theme_name": "电力运营",
+            "subject_key": "9013416",
+            "limit_up_count": 1,
+            "mapping_source": "mainline_daily_state"
+          },
+          {
+            "theme_name": "2026美加墨世界杯",
+            "subject_key": "9065362",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "AI内容审核",
+            "subject_key": "9063886",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "AI算力基础设施",
+            "subject_key": "9017846",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "CXO医药外包",
+            "subject_key": "9017184",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "ISO3级洁净室",
+            "subject_key": "9061576",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "“苏超”联赛",
+            "subject_key": "9049868",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "三季报业绩",
+            "subject_key": "9057999",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "三胎",
+            "subject_key": "9023826",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "上海智算中心",
+            "subject_key": "9041936",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "东北振兴",
+            "subject_key": "9020387",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "中药",
+            "subject_key": "9011211",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "元宝派（AI社交）",
+            "subject_key": "9063261",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "充电桩",
+            "subject_key": "9012413",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "光伏",
+            "subject_key": "9014072",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "冰雪经济",
+            "subject_key": "9023556",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "努比亚手机",
+            "subject_key": "9060646",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "华为芯片链",
+            "subject_key": "9028660",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "卫生巾",
+            "subject_key": "9035051",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "国内机器人",
+            "subject_key": "9027744",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "复合集流体",
+            "subject_key": "9015208",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "多智能体系统（MAS）",
+            "subject_key": "9062579",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "天然气",
+            "subject_key": "54",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "安全防护与监管",
+            "subject_key": "9011468",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "巴基斯坦军事",
+            "subject_key": "9047612",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "建材",
+            "subject_key": "9016949",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "房地产",
+            "subject_key": "9013718",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "数据要素",
+            "subject_key": "9016254",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "文化创意国际大奖",
+            "subject_key": "9050658",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "新能源车",
+            "subject_key": "9014270",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "旅游",
+            "subject_key": "9011685",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "旧城改造",
+            "subject_key": "9047321",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "智能穿戴",
+            "subject_key": "9031543",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "有色金属",
+            "subject_key": "9010270",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "机器人无线充电",
+            "subject_key": "9057722",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "比亚迪DMi",
+            "subject_key": "9028282",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "氢能源",
+            "subject_key": "9015235",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "氦气",
+            "subject_key": "9064513",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "水利工程",
+            "subject_key": "9014720",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "汽车零部件DSO",
+            "subject_key": "9050618",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "沿江高铁",
+            "subject_key": "9065709",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "煤炭",
+            "subject_key": "9012624",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "照明LED",
+            "subject_key": "9052032",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "牛散鑫多多",
+            "subject_key": "9065824",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "特斯拉",
+            "subject_key": "9034539",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "电子特气",
+            "subject_key": "9055301",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "益生菌",
+            "subject_key": "9049638",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "益生菌减肥",
+            "subject_key": "9066437",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "科技赛道十大主线",
+            "subject_key": "9062084",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "突破性治疗品种名单",
+            "subject_key": "9030559",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "统一大市场",
+            "subject_key": "9033525",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "苹果MR",
+            "subject_key": "9022942",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "裸眼3D",
+            "subject_key": "9025298",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "财税改革",
+            "subject_key": "9029210",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "车路云一体化",
+            "subject_key": "9020715",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "轮胎",
+            "subject_key": "9015970",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "辅助生殖",
+            "subject_key": "9054487",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "近端次新",
+            "subject_key": "9065105",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "钠离子电池",
+            "subject_key": "9035101",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "铜",
+            "subject_key": "9052240",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "铝",
+            "subject_key": "9023134",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "锂电池",
+            "subject_key": "9010168",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "雄安新区",
+            "subject_key": "9065354",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "马斯克四大产业",
+            "subject_key": "9062206",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "黄金",
+            "subject_key": "9038372",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          }
+        ],
+        "unmapped_count": 5,
+        "ths_reason_covered_count": 0,
+        "evidence_stock_count": 0,
+        "ths_reason_clustered_count": 0,
+        "top_5_theme_coverage": 0.1792,
+        "top_8_theme_coverage": 0.2547,
+        "top_5_manual_theme_hit_count": 3,
+        "top_5_manual_theme_hits": [
+          "PCB/HBM产业链",
+          "机器人",
+          "AI光通信"
+        ],
+        "single_theme_max_ratio": 0.0566,
+        "source_breakdown": {
+          "ambiguous_mainline_mapping": 4,
+          "canonical_subject_key": 24,
+          "no_mainline_mapping": 1,
+          "subject_stock_map": 77
+        },
+        "top_themes": [
+          {
+            "theme_name": "其他",
+            "limitup_count": 72,
+            "mapping_source": "collapsed_tail"
+          },
+          {
+            "theme_name": "PCB/HBM产业链",
+            "limitup_count": 6,
+            "mapping_source": "mainline_daily_state"
+          },
+          {
+            "theme_name": "机器人",
+            "limitup_count": 4,
+            "mapping_source": "mainline_daily_state"
+          },
+          {
+            "theme_name": "AI光通信",
+            "limitup_count": 3,
+            "mapping_source": "mainline_daily_state"
+          },
+          {
+            "theme_name": "低空经济",
+            "limitup_count": 3,
+            "mapping_source": "mainline_daily_state"
+          },
+          {
+            "theme_name": "光伏新技术",
+            "limitup_count": 3,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "商业航天",
+            "limitup_count": 3,
+            "mapping_source": "mainline_daily_state"
+          },
+          {
+            "theme_name": "电子元器件",
+            "limitup_count": 3,
+            "mapping_source": "mainline_daily_state"
+          },
+          {
+            "theme_name": "东方头",
+            "limitup_count": 2,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "先进材料/固态电池",
+            "limitup_count": 2,
+            "mapping_source": "subject_stock_map"
+          }
+        ],
+        "top_reason_tags": []
+      },
+      "after": {
+        "limitup_count": 106,
+        "theme_count": 12,
+        "other_count": 5,
+        "true_other_count": 5,
+        "display_other_count": 38,
+        "collapsed_other_count": 34,
+        "collapsed_other_themes": [
+          {
+            "theme_name": "人工智能硬件",
+            "subject_key": "9014001",
+            "limit_up_count": 1,
+            "mapping_source": "mainline_daily_state"
+          },
+          {
+            "theme_name": "电力运营",
+            "subject_key": "9013416",
+            "limit_up_count": 1,
+            "mapping_source": "mainline_daily_state"
+          },
+          {
+            "theme_name": "ST摘帽/重整/国资",
+            "subject_key": "reason:ST摘帽/重整/国资",
+            "limit_up_count": 1,
+            "mapping_source": "stock_theme_reason_evidence"
+          },
+          {
+            "theme_name": "商业航天/军工",
+            "subject_key": "reason:商业航天/军工",
+            "limit_up_count": 1,
+            "mapping_source": "stock_theme_reason_evidence"
+          },
+          {
+            "theme_name": "2026美加墨世界杯",
+            "subject_key": "9065362",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "AI内容审核",
+            "subject_key": "9063886",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "ISO3级洁净室",
+            "subject_key": "9061576",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "“苏超”联赛",
+            "subject_key": "9049868",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "三季报业绩",
+            "subject_key": "9057999",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "上海智算中心",
+            "subject_key": "9041936",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "元宝派（AI社交）",
+            "subject_key": "9063261",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "充电桩",
+            "subject_key": "9012413",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "努比亚手机",
+            "subject_key": "9060646",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "医药医疗",
+            "subject_key": "1",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "华为芯片链",
+            "subject_key": "9028660",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "卫生巾",
+            "subject_key": "9035051",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "国内机器人",
+            "subject_key": "9027744",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "多智能体系统（MAS）",
+            "subject_key": "9062579",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "天然气",
+            "subject_key": "54",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "房地产",
+            "subject_key": "9013718",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "数据要素",
+            "subject_key": "9016254",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "新能源车",
+            "subject_key": "9014270",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "旅游",
+            "subject_key": "9011685",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "比亚迪DMi",
+            "subject_key": "9028282",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "氦气",
+            "subject_key": "9064513",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "汽车零部件",
+            "subject_key": "9014198",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "沿江高铁",
+            "subject_key": "9065709",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "照明LED",
+            "subject_key": "9052032",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "牛散鑫多多",
+            "subject_key": "9065824",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "苹果MR",
+            "subject_key": "9022942",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "财税改革",
+            "subject_key": "9029210",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "车路云一体化",
+            "subject_key": "9020715",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "轮胎",
+            "subject_key": "9015970",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          },
+          {
+            "theme_name": "钠离子电池",
+            "subject_key": "9035101",
+            "limit_up_count": 1,
+            "mapping_source": "subject_stock_map"
+          }
+        ],
+        "unmapped_count": 5,
+        "ths_reason_covered_count": 82,
+        "evidence_stock_count": 66,
+        "ths_reason_clustered_count": 44,
+        "top_5_theme_coverage": 0.434,
+        "top_8_theme_coverage": 0.5566,
+        "top_5_manual_theme_hit_count": 5,
+        "top_5_manual_theme_hits": [
+          "PCB/HBM产业链",
+          "AI算力基础设施",
+          "机器人",
+          "先进材料/固态电池",
+          "有色资源/小金属"
+        ],
+        "single_theme_max_ratio": 0.1132,
+        "source_breakdown": {
+          "ambiguous_mainline_mapping": 4,
+          "canonical_subject_key": 24,
+          "no_mainline_mapping": 1,
+          "stock_theme_reason_evidence": 44,
+          "subject_stock_map": 33
+        },
+        "top_themes": [
+          {
+            "theme_name": "其他",
+            "limitup_count": 38,
+            "mapping_source": "collapsed_tail"
+          },
+          {
+            "theme_name": "PCB/HBM产业链",
+            "limitup_count": 12,
+            "mapping_source": "mainline_daily_state+stock_theme_reason_evidence"
+          },
+          {
+            "theme_name": "AI算力基础设施",
+            "limitup_count": 9,
+            "mapping_source": "stock_theme_reason_evidence+subject_stock_map"
+          },
+          {
+            "theme_name": "机器人",
+            "limitup_count": 9,
+            "mapping_source": "mainline_daily_state+stock_theme_reason_evidence"
+          },
+          {
+            "theme_name": "先进材料/固态电池",
+            "limitup_count": 8,
+            "mapping_source": "stock_theme_reason_evidence"
+          },
+          {
+            "theme_name": "有色资源/小金属",
+            "limitup_count": 8,
+            "mapping_source": "stock_theme_reason_evidence"
+          },
+          {
+            "theme_name": "创新药/医疗",
+            "limitup_count": 6,
+            "mapping_source": "stock_theme_reason_evidence"
+          },
+          {
+            "theme_name": "AI光通信",
+            "limitup_count": 4,
+            "mapping_source": "mainline_daily_state+stock_theme_reason_evidence"
+          },
+          {
+            "theme_name": "低空经济",
+            "limitup_count": 3,
+            "mapping_source": "mainline_daily_state"
+          },
+          {
+            "theme_name": "商业航天",
+            "limitup_count": 3,
+            "mapping_source": "mainline_daily_state"
+          }
+        ],
+        "top_reason_tags": [
+          {
+            "tag": "一季报增长",
+            "count": 8
+          },
+          {
+            "tag": "央企",
+            "count": 7
+          },
+          {
+            "tag": "人形机器人",
+            "count": 6
+          },
+          {
+            "tag": "固态电池",
+            "count": 4
+          },
+          {
+            "tag": "业绩增长",
+            "count": 3
+          },
+          {
+            "tag": "创新药",
+            "count": 3
+          },
+          {
+            "tag": "机器人",
+            "count": 3
+          },
+          {
+            "tag": "定增",
+            "count": 2
+          },
+          {
+            "tag": "数据中心",
+            "count": 2
+          },
+          {
+            "tag": "可控核聚变",
+            "count": 2
+          },
+          {
+            "tag": "AI服务器",
+            "count": 2
+          },
+          {
+            "tag": "定增通过",
+            "count": 2
+          },
+          {
+            "tag": "PCB",
+            "count": 2
+          },
+          {
+            "tag": "无锡国资",
+            "count": 2
+          },
+          {
+            "tag": "商业航天",
+            "count": 2
+          }
+        ]
+      },
+      "diff": {
+        "other_count": 0,
+        "true_other_count": 0,
+        "display_other_count": -34,
+        "collapsed_other_count": -34,
+        "unmapped_count": 0,
+        "theme_count": 0,
+        "ths_reason_covered_count": 82,
+        "ths_reason_clustered_count": 44,
+        "top_5_theme_coverage": 0.2548,
+        "top_8_theme_coverage": 0.3019,
+        "top_5_manual_theme_hit_count": 2,
+        "single_theme_max_ratio": 0.0566
+      },
+      "gate": {
+        "passed": true,
+        "failures": []
+      }
+    }
+  ],
+  "thresholds": {
+    "true_other_count_max": 10,
+    "display_other_count_max": 45,
+    "ths_reason_covered_count_min": 80,
+    "top_8_theme_coverage_min": 0.55,
+    "top_5_manual_theme_hit_count_min": 4,
+    "single_theme_max_ratio_max": 0.35
+  },
+  "all_passed": true
+}

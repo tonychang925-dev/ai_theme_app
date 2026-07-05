@@ -104,18 +104,26 @@ def test_f10_capital_collect_runner_writes_snapshot_rows(monkeypatch):
     assert "主力净流入" in write_port.rows[0]["capital_flow_json"]["summary"]
 
 
-def test_collection_job_manager_prepares_f10_payload_from_subject_pool():
+def test_collection_job_manager_leaves_f10_payload_unresolved_until_runner_time(monkeypatch):
     container = SimpleNamespace(
         build_post_market_recap=SimpleNamespace(_read_port=_SubjectPoolReadPort()),
     )
     CollectionJobManager = _load_collection_job_manager_class()
     manager = CollectionJobManager(container=container)
+    called = {"value": False}
+
+    async def forbidden_resolve(_trade_date):
+        called["value"] = True
+        raise AssertionError("prepare_payload must not resolve subject pool before execution")
+
+    monkeypatch.setattr(manager, "_resolve_f10_capital_stock_ids", forbidden_resolve)
 
     payload = asyncio.run(manager.prepare_payload("2026-06-14", {"options": {"f10_capital": True}}))
 
     assert payload["options"]["f10_capital"] is True
-    assert payload["stock_ids"] == ["000001", "600000"]
-    assert payload["options"]["stock_ids"] == ["000001", "600000"]
+    assert "stock_ids" not in payload
+    assert "stock_ids" not in payload["options"]
+    assert called["value"] is False
 
 
 def test_f10_capital_collect_runner_auto_resolves_stock_ids_from_subject_pool(monkeypatch):

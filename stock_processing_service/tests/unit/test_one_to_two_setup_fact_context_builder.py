@@ -268,3 +268,16 @@ def test_independent_subject_not_in_strong_hotspot_subjects_by_subject_name() ->
     }
     result = builder._extract_hotspot_subjects(source_doc)
     assert len(result) == 0
+def test_subject_name_map_prefers_active_mainline_registry_name() -> None:
+    names = PostMarketSetupFactContextBuilder._build_subject_name_map(
+        [
+            {
+                "mainline_name": "低空经济",
+                "canonical_subject_key": "9015778",
+                "related_subject_keys_json": ["9025720"],
+            }
+        ]
+    )
+
+    assert names["9015778"] == "低空经济"
+    assert names["9025720"] == "低空经济"

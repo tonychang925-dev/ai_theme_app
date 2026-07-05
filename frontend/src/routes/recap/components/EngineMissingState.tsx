@@ -8,7 +8,7 @@ interface Props {
 
 function getMissingParts(dailyReviewV2?: PostMarketDailyReviewV2 | null) {
   if (!dailyReviewV2) {
-    return ["DailyReviewV2 引擎报告未生成"];
+    return ["遗留引擎(DailyReviewV2)未生成 — 上方题材强度面板已使用M4g证据融合引擎"];
   }
 
   const missing: string[] = [];
@@ -25,7 +25,7 @@ export default function EngineMissingState({ dailyReviewV2, onRetry }: Props) {
   return (
     <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(239,68,68,0.25)", borderRadius: 8, padding: 16, marginBottom: 14 }}>
       <Alert
-        type="warning"
+        type="info"
         showIcon
         message="复盘引擎报告尚未生成或字段不完整"
         description={`缺失项：${missing.join("、")}。请点击“重新复盘”生成 DailyReviewV2 engine report。`}

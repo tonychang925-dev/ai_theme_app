@@ -79,6 +79,7 @@ async def test_derived_data_generation_fast_fails_after_required_upstream_no_row
     uc = PostMarketDerivedDataGenerateUseCase(pool=object(), db_manager=object())
     uc.register_builder("theme_cycle_truth", _Builder("theme_cycle_truth", "success", calls))
     uc.register_builder("dragon_tiger_object_build", _Builder("dragon_tiger_object_build", "skipped_no_data", calls))
+    uc.register_builder("hot_money_activity_build", _Builder("hot_money_activity_build", "success", calls))
     uc.register_builder("theme_leader_candidate_build", _Builder("theme_leader_candidate_build", "failed_no_rows", calls))
     uc.register_builder("money_flow_enhanced_build", _Builder("money_flow_enhanced_build", "success", calls))
     uc.register_builder("stock_abnormal_signal_build", _Builder("stock_abnormal_signal_build", "success", calls))
@@ -87,7 +88,7 @@ async def test_derived_data_generation_fast_fails_after_required_upstream_no_row
     result = await uc.execute(date(2026, 5, 28), force=False)
 
     assert result.status == "failed_precondition"
-    assert calls == ["theme_cycle_truth", "dragon_tiger_object_build", "theme_leader_candidate_build"]
+    assert calls == ["theme_cycle_truth", "dragon_tiger_object_build", "hot_money_activity_build", "theme_leader_candidate_build"]
     skipped = [item for item in result.job_results if item.get("error_code") == "UPSTREAM_TASK_FAILED"]
     assert [item["job_key"] for item in skipped] == [
         "money_flow_enhanced_build",

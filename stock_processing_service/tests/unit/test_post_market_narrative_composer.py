@@ -322,3 +322,59 @@ def test_post_market_engine_report_composer_includes_market_overview_narrative()
     assert "d1_narrative" in report
     assert report["mainline_narrative"]["summary"]
     assert report["d1_narrative"]["summary"]
+
+
+def test_post_market_narrative_composer_generates_daily_recap_essentials() -> None:
+    doc = _sample_engine_report_doc()
+    doc["limit_up_ladder"] = {
+        "summary": "连板梯队分布：4板 1 只，3板 2 只；热点题材：PCB、玻璃基板。",
+        "board_rows": [{"board_label": "4板", "stock_count": 1, "stocks": []}],
+    }
+    doc["limit_up_theme_events"] = {
+        "summary": "涨停事件聚焦 PCB、玻璃基板，优先观察板位股与催化事件是否继续扩散。",
+        "rows": [{"theme_name": "PCB", "limit_up_count": 8, "representative_stocks": [], "catalyst_events": []}],
+    }
+    doc["new_high_summary"] = {
+        "summary": "今日创新高 84 家，集中在 PCB、半导体，代表股 一博科技、科翔股份。",
+        "representative_stocks": [{"stock_name": "一博科技"}],
+    }
+    doc["seat_money_summary"] = {
+        "summary": "机构关注 一博科技，游资关注 科翔股份，资金整体同向，主题聚焦 PCB。",
+        "institution_top_buys": [{"stock_name": "一博科技"}],
+        "hot_money_top_buys": [{"stock_name": "科翔股份"}],
+    }
+
+    essentials = PostMarketNarrativeComposer().compose_daily_recap_essentials(
+        engine_summary=doc["engine_summary"],  # type: ignore[arg-type]
+        market_summary=doc["market_summary"],  # type: ignore[arg-type]
+        market_overview_narrative=PostMarketNarrativeComposer().compose_market_overview(
+            engine_summary=doc["engine_summary"],  # type: ignore[arg-type]
+            market_regime_review=doc["market_regime_review"],  # type: ignore[arg-type]
+            index_technical_reviews=doc["index_technical_reviews"],  # type: ignore[arg-type]
+            mainline_daily_states=doc["mainline_daily_states"],  # type: ignore[arg-type]
+            post_market_decision_v2=doc["post_market_decision_v2"],  # type: ignore[arg-type]
+            market_overview_review=doc["market_overview_review"],  # type: ignore[arg-type]
+            market_summary=doc["market_summary"],  # type: ignore[arg-type]
+        ),
+        market_hotspot_narrative=PostMarketNarrativeComposer().compose_market_hotspot(
+            market_overview_review=doc["market_overview_review"],  # type: ignore[arg-type]
+            market_summary=doc["market_summary"],  # type: ignore[arg-type]
+            market_regime_review=doc["market_regime_review"],  # type: ignore[arg-type]
+            mainline_daily_states=doc["mainline_daily_states"],  # type: ignore[arg-type]
+            engine_summary=doc["engine_summary"],  # type: ignore[arg-type]
+            post_market_decision_v2=doc["post_market_decision_v2"],  # type: ignore[arg-type]
+        ),
+        limit_up_ladder=doc["limit_up_ladder"],  # type: ignore[arg-type]
+        limit_up_theme_events=doc["limit_up_theme_events"],  # type: ignore[arg-type]
+        new_high_summary=doc["new_high_summary"],  # type: ignore[arg-type]
+        seat_money_summary=doc["seat_money_summary"],  # type: ignore[arg-type]
+    )
+
+    assert essentials["headline"]
+    assert essentials["summary_points"]
+    assert "涨停热点总览" in essentials["section_order"]
+    assert "次日观察" in essentials["summary_points"][-1]
+    assert essentials["diagnostics"]["has_ladder"] is True
+    assert essentials["diagnostics"]["has_theme_events"] is True
+    assert essentials["diagnostics"]["has_new_high"] is True
+    assert essentials["diagnostics"]["has_seat_money"] is True

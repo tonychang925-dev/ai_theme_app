@@ -108,7 +108,11 @@ class DatabaseSink:
 
 
 def _event_to_row(event: RawJyhfCdpEvent, batch_id: str) -> tuple:
-    subject_key = _derive_subject_key(event.subject_name)
+    # Prefer numeric JYHF subject_key (from popup extraId) over name-derived key
+    if event.subject_key and event.subject_key.strip().isdigit():
+        subject_key = event.subject_key.strip()
+    else:
+        subject_key = _derive_subject_key(event.subject_name)
     trade_date = _parse_date(event.trade_date, event.subject_name)
     description = _build_description(event)
     pct_chg = event.pct_chg

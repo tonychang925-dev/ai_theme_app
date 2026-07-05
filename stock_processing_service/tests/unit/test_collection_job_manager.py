@@ -95,6 +95,31 @@ def test_collection_planner_builds_f10_capital_runner():
     assert any("资金动向快照采集" in msg for msg in plan.pre_logs)
 
 
+def test_collection_planner_builds_hot_money_activity_runner():
+    planner = CollectionCommandPlanner()
+
+    plan = planner.build_task_plan(
+        task_key="hot_money_activity",
+        trade_date="2026-05-06",
+        payload={},
+        env={"TUSHARE_TOKEN": "abc123"},
+    )
+
+    assert plan.runner_key == "hot_money_activity.build"
+    assert len(plan.steps) == 0
+    assert any("游资席位活动表" in msg for msg in plan.pre_logs)
+
+
+def test_collection_job_manager_includes_hot_money_activity_by_default():
+    manager = CollectionJobManager()
+
+    tasks = manager._build_tasks({"options": {}})
+    task_keys = [task.key for task in tasks]
+
+    assert "hot_money_activity" in task_keys
+    assert task_keys.index("dragon_tiger") < task_keys.index("hot_money_activity")
+
+
 def test_collection_planner_keeps_strong_watch_as_service_owned_step():
     planner = CollectionCommandPlanner()
 
@@ -160,6 +185,7 @@ def test_collection_registry_does_not_register_recap_report_overlay_runner():
     assert registry.get("recap.theme_capital_flow_daily") is not None
     assert registry.get("recap.report") is None
     assert registry.get("f10.capital.collect") is not None
+    assert registry.get("hot_money_activity.build") is not None
 
 
 def test_collection_planner_jyhf_commands_preserve_script_order():

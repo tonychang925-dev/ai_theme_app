@@ -99,9 +99,12 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         BuildLeaderCandidateRunner,
         BuildLeaderLLMJudgementRunner,
         BuildLeaderLLMQueueRunner,
+        BuildHotMoneyTradingActivityRunner,
         BuildStockKlineJudgementsRunner,
         BuildStockAbnormalSignalRunner,
         CallLeaderLLMRunner,
+        EvidenceRecapGenerateRunner,
+        M7bErrorComputeRunner,
         JyhfImportHistoryRunner,
         JyhfImportStockDailyRunner,
         JyhfLoadSubjectNodeStagingRunner,
@@ -148,6 +151,7 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     )
     registry.register("abnormal.signal", BuildStockAbnormalSignalRunner())
     registry.register("dragon_tiger.object", BuildDragonTigerObjectRunner())
+    registry.register("hot_money_activity.build", BuildHotMoneyTradingActivityRunner())
     registry.register("f10.capital.collect", F10CapitalCollectRunner())
     registry.register("index_kline.collect", IndexKlineCollectRunner())
     registry.register("tushare.daily_basic", TushareDailyBasicRunner())
@@ -175,6 +179,11 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         ),
     )
 
+
+    # ── M4/M5: Evidence Collection Runners ──
+    registry.register("evidence.ths_hot_reason", ScriptCommandRunner())
+    registry.register("evidence.recap_generate", EvidenceRecapGenerateRunner())
+    registry.register("evidence.m7b_error", M7bErrorComputeRunner())
 
 __all__ = [
     "CollectionTaskContext",

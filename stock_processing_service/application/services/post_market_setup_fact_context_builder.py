@@ -134,11 +134,17 @@ class PostMarketSetupFactContextBuilder:
             turnover_rate_by_stock = await self._read_turnover_rate_from_daily_basic(trade_date)
 
         # Resolve Chinese subject names from theme_gate_profile
-        subject_name_map: dict[str, str] = {}
+        subject_name_map = self._build_subject_name_map(active_mainlines)
         try:
             fn = getattr(self._read, "get_theme_gate_profile_names", None)
             if callable(fn):
-                subject_name_map = await fn(list(active_subject_keys))
+                profile_names = await fn(list(active_subject_keys))
+                if isinstance(profile_names, dict):
+                    for key, value in profile_names.items():
+                        normalized_key = self._subject_key(key)
+                        normalized_name = str(value or "").strip()
+                        if normalized_key and normalized_name:
+                            subject_name_map.setdefault(normalized_key, normalized_name)
         except Exception:
             pass
 
@@ -493,6 +499,34 @@ class PostMarketSetupFactContextBuilder:
                 values = row.get(key_name) or []
                 if isinstance(values, list):
                     result.update(str(v) for v in values if v)
+        return result
+
+    @classmethod
+    def _build_subject_name_map(
+        cls,
+        active_mainlines: list[dict[str, Any]],
+    ) -> dict[str, str]:
+        result: dict[str, str] = {}
+        for row in active_mainlines:
+            name = str(row.get("mainline_name") or "").strip()
+            if not name:
+                continue
+            keys = [
+                row.get("canonical_subject_key"),
+                row.get("subject_key"),
+            ]
+            for field in (
+                "core_subject_keys_json",
+                "branch_subject_keys_json",
+                "related_subject_keys_json",
+            ):
+                values = row.get(field) or []
+                if isinstance(values, list):
+                    keys.extend(values)
+            for key in keys:
+                normalized_key = cls._subject_key(key)
+                if normalized_key:
+                    result.setdefault(normalized_key, name)
         return result
 
     @staticmethod

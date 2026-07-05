@@ -91,9 +91,28 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         try:
             # 构建连接字符串
             dsn = self._build_dsn()
-            
+
             # 创建连接池
             pool_config = self.config.connection_pool
+
+            # Inline connection setup: validate + enable TCP keepalive to
+            # prevent stale connections after long idle periods (e.g. during
+            # AI model calls that take 15+ minutes).
+            async def _setup_connection(conn):
+                await conn.execute("SELECT 1")
+                # Enable TCP keepalive on the underlying socket so that dead
+                # connections are detected quickly rather than surfacing as
+                # "pool is closing" or "[Errno 22] Invalid argument".
+                try:
+                    _raw = conn.get_server_pid()
+                    # Set application-level keepalive via PG settings
+                    await conn.execute("SET idle_in_transaction_session_timeout = '10min'")
+                    await conn.execute("SET tcp_keepalives_idle = '60'")
+                    await conn.execute("SET tcp_keepalives_interval = '15'")
+                    await conn.execute("SET tcp_keepalives_count = '3'")
+                except Exception:
+                    pass  # non-critical; best-effort keepalive
+
             self.pool = await asyncpg.create_pool(
                 dsn=dsn,
                 min_size=pool_config.min_size,
@@ -101,19 +120,20 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 max_queries=pool_config.max_queries,
                 max_inactive_connection_lifetime=pool_config.max_inactive_connection_lifetime,
                 command_timeout=pool_config.command_timeout,
+                setup=_setup_connection,
                 server_settings={
                     'search_path': f'{self.schema},public',
                     'application_name': 'database_service'
                 }
             )
-            
+
             # 测试连接
             async with self.pool.acquire() as conn:
                 await conn.execute('SELECT 1')
-            
+
             self.connected = True
             logger.info(f"✅ PostgreSQL连接成功: {self.config.postgres_host}:{self.config.postgres_port}")
-            
+
         except Exception as e:
             logger.error(f"❌ PostgreSQL连接失败: {e}")
             raise
@@ -1648,38 +1668,37 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 if theme_stats:
                     stats['themes'] = dict(theme_stats)
                 
-                # 事件统计
+                # 事件统计 — 使用实际存在的列
                 try:
                     event_stats = await conn.fetchrow("""
-                        SELECT 
+                        SELECT
                             COUNT(*) as total_events,
-                            COUNT(CASE WHEN processed = TRUE THEN 1 END) as processed,
-                            COUNT(CASE WHEN processed = FALSE THEN 1 END) as unprocessed,
-                            COUNT(CASE WHEN processing_status = 'pending' THEN 1 END) as pending
+                            COUNT(CASE WHEN theme_directive_processed = TRUE THEN 1 END) as processed,
+                            COUNT(CASE WHEN theme_directive_processed = FALSE THEN 1 END) as unprocessed
                         FROM news_event
                     """)
-                    
                     if event_stats:
                         stats['events'] = dict(event_stats)
-                except Exception:
-                    logger.warning("news_event表可能不存在，跳过事件统计")
-                
-                # 关联统计
+                except Exception as exc:
+                    logger.warning("news_event 统计跳过: %s", exc)
+
+                # 关联统计 — 使用实际存在的列 (confidence numeric, match_status)
                 try:
                     relation_stats = await conn.fetchrow("""
-                        SELECT 
+                        SELECT
                             COUNT(*) as total_relations,
                             AVG(confidence) as avg_confidence,
-                            COUNT(CASE WHEN confidence_level = 'high' THEN 1 END) as high_confidence_count,
-                            COUNT(CASE WHEN confidence_level = 'medium' THEN 1 END) as medium_confidence_count,
-                            COUNT(CASE WHEN confidence_level = 'low' THEN 1 END) as low_confidence_count
+                            COUNT(CASE WHEN confidence >= 0.8 THEN 1 END) as high_confidence_count,
+                            COUNT(CASE WHEN confidence >= 0.5 AND confidence < 0.8 THEN 1 END) as medium_confidence_count,
+                            COUNT(CASE WHEN confidence < 0.5 THEN 1 END) as low_confidence_count,
+                            COUNT(CASE WHEN is_primary = TRUE THEN 1 END) as primary_count,
+                            COUNT(CASE WHEN match_status = 'matched' THEN 1 END) as matched_count
                         FROM event_theme_map
                     """)
-                    
                     if relation_stats:
                         stats['relations'] = dict(relation_stats)
-                except Exception:
-                    logger.warning("event_theme_map表可能不存在，跳关联统计")
+                except Exception as exc:
+                    logger.warning("event_theme_map 统计跳过: %s", exc)
                 
                 # 数据库信息
                 db_info = await conn.fetchrow("""
@@ -1893,6 +1912,194 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             )
             for row in rows
             if row.get("trade_date") and row.get("stock_id")
+        ]
+        if not payload:
+            return 0
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
+
+    async def upsert_source_raw_snapshot(self, row: Dict[str, Any]) -> int:
+        """UPSERT external source raw response and return raw snapshot id."""
+        if not row:
+            return 0
+        sql = """
+        INSERT INTO source_raw_snapshot (
+            source_name, endpoint_key, trade_date, request_url, request_params,
+            response_raw, response_text, response_hash, fetched_at
+        ) VALUES (
+            $1, $2, $3::date, $4, $5::jsonb,
+            $6::jsonb, $7, $8, COALESCE($9::timestamptz, now())
+        )
+        ON CONFLICT (source_name, endpoint_key, trade_date, response_hash) DO UPDATE SET
+            request_url = COALESCE(EXCLUDED.request_url, source_raw_snapshot.request_url),
+            request_params = COALESCE(EXCLUDED.request_params, source_raw_snapshot.request_params),
+            response_raw = COALESCE(EXCLUDED.response_raw, source_raw_snapshot.response_raw),
+            response_text = COALESCE(EXCLUDED.response_text, source_raw_snapshot.response_text),
+            fetched_at = EXCLUDED.fetched_at
+        RETURNING id
+        """
+        async with self.pool.acquire() as conn:
+            snapshot_id = await conn.fetchval(
+                sql,
+                row.get("source_name"),
+                row.get("endpoint_key"),
+                row.get("trade_date"),
+                row.get("request_url"),
+                _safe_json_dumps(row.get("request_params"), {}),
+                _safe_json_dumps(row.get("response_raw"), {}),
+                row.get("response_text"),
+                row.get("response_hash"),
+                row.get("fetched_at"),
+            )
+        return int(snapshot_id or 0)
+
+    async def upsert_market_data_source_registry_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT market_data_source_registry。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO market_data_source_registry (
+            source_name, endpoint_key, domain, owned_fields, fallback_order,
+            rate_limit_policy, auth_type, freshness_sla, raw_snapshot_required,
+            enabled, usage
+        ) VALUES (
+            $1, $2, $3, $4::jsonb, $5,
+            $6::jsonb, $7, $8, $9,
+            $10, $11
+        )
+        ON CONFLICT (source_name, endpoint_key) DO UPDATE SET
+            domain = EXCLUDED.domain,
+            owned_fields = EXCLUDED.owned_fields,
+            fallback_order = EXCLUDED.fallback_order,
+            rate_limit_policy = EXCLUDED.rate_limit_policy,
+            auth_type = EXCLUDED.auth_type,
+            freshness_sla = EXCLUDED.freshness_sla,
+            raw_snapshot_required = EXCLUDED.raw_snapshot_required,
+            enabled = EXCLUDED.enabled,
+            usage = EXCLUDED.usage,
+            updated_at = now()
+        """
+        payload = [
+            (
+                row.get("source_name"),
+                row.get("endpoint_key"),
+                row.get("domain"),
+                _safe_json_dumps(row.get("owned_fields"), []),
+                int(row.get("fallback_order", 100) or 100),
+                _safe_json_dumps(row.get("rate_limit_policy"), {}),
+                str(row.get("auth_type") or "none"),
+                row.get("freshness_sla"),
+                bool(row.get("raw_snapshot_required", True)),
+                bool(row.get("enabled", True)),
+                row.get("usage"),
+            )
+            for row in rows
+            if row.get("source_name") and row.get("endpoint_key") and row.get("domain")
+        ]
+        if not payload:
+            return 0
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
+
+    async def upsert_ths_hot_reason_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT ths_hot_reason_snapshot。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO ths_hot_reason_snapshot (
+            trade_date, stock_code, stock_name, reason_raw, reason_tags,
+            close_price, pct_chg, turnover_rate, amount, volume, big_order_net,
+            market, source_name, source_trace_id, raw_snapshot_id
+        ) VALUES (
+            $1::date, $2, $3, $4, $5::jsonb,
+            $6, $7, $8, $9, $10, $11,
+            $12, $13, $14, $15
+        )
+        ON CONFLICT (trade_date, stock_code, source_name) DO UPDATE SET
+            stock_name = EXCLUDED.stock_name,
+            reason_raw = EXCLUDED.reason_raw,
+            reason_tags = EXCLUDED.reason_tags,
+            close_price = EXCLUDED.close_price,
+            pct_chg = EXCLUDED.pct_chg,
+            turnover_rate = EXCLUDED.turnover_rate,
+            amount = EXCLUDED.amount,
+            volume = EXCLUDED.volume,
+            big_order_net = EXCLUDED.big_order_net,
+            market = EXCLUDED.market,
+            source_trace_id = EXCLUDED.source_trace_id,
+            raw_snapshot_id = EXCLUDED.raw_snapshot_id,
+            updated_at = now()
+        """
+        payload = [
+            (
+                row.get("trade_date"),
+                row.get("stock_code"),
+                row.get("stock_name"),
+                row.get("reason_raw"),
+                _safe_json_dumps(row.get("reason_tags"), []),
+                row.get("close_price"),
+                row.get("pct_chg"),
+                row.get("turnover_rate"),
+                row.get("amount"),
+                row.get("volume"),
+                row.get("big_order_net"),
+                row.get("market"),
+                str(row.get("source_name") or "ths"),
+                row.get("source_trace_id"),
+                row.get("raw_snapshot_id"),
+            )
+            for row in rows
+            if row.get("trade_date") and row.get("stock_code") and row.get("reason_raw")
+        ]
+        if not payload:
+            return 0
+        async with self.pool.acquire() as conn:
+            await conn.executemany(sql, payload)
+        return len(payload)
+
+    async def upsert_stock_theme_reason_evidence_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """批量 UPSERT stock_theme_reason_evidence。"""
+        if not rows:
+            return 0
+        sql = """
+        INSERT INTO stock_theme_reason_evidence (
+            trade_date, stock_code, stock_name, theme_name, source_name,
+            evidence_text, reason_tags, matched_reason_tags, primary_theme,
+            confidence, source_trace_id, raw_snapshot_id
+        ) VALUES (
+            $1::date, $2, $3, $4, $5,
+            $6, $7::jsonb, $8::jsonb, $9,
+            $10, $11, $12
+        )
+        ON CONFLICT (trade_date, stock_code, theme_name, source_name, evidence_text) DO UPDATE SET
+            stock_name = EXCLUDED.stock_name,
+            reason_tags = EXCLUDED.reason_tags,
+            matched_reason_tags = EXCLUDED.matched_reason_tags,
+            primary_theme = EXCLUDED.primary_theme,
+            confidence = EXCLUDED.confidence,
+            source_trace_id = EXCLUDED.source_trace_id,
+            raw_snapshot_id = EXCLUDED.raw_snapshot_id,
+            updated_at = now()
+        """
+        payload = [
+            (
+                row.get("trade_date"),
+                row.get("stock_code"),
+                row.get("stock_name"),
+                row.get("theme_name"),
+                str(row.get("source_name") or "ths"),
+                row.get("evidence_text"),
+                _safe_json_dumps(row.get("reason_tags"), []),
+                _safe_json_dumps(row.get("matched_reason_tags"), []),
+                bool(row.get("primary_theme", False)),
+                row.get("confidence"),
+                row.get("source_trace_id"),
+                row.get("raw_snapshot_id"),
+            )
+            for row in rows
+            if row.get("trade_date") and row.get("stock_code") and row.get("theme_name") and row.get("evidence_text")
         ]
         if not payload:
             return 0
@@ -4393,6 +4600,21 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             COALESCE(rank_order, 9999)
         LIMIT 120
         """
+        sql_hot_money = """
+        SELECT
+            hm.*,
+            COALESCE(vtb.theme_name, hm.theme_name, hm.subject_key) AS resolved_theme_name
+        FROM hot_money_trading_activity hm
+        LEFT JOIN vw_subject_theme_binding vtb
+          ON vtb.subject_key = hm.subject_key
+        WHERE hm.trade_date = $1::date
+        ORDER BY
+            ABS(COALESCE(hm.net_amount, 0)) DESC,
+            hm.hot_money_name,
+            hm.rank_order,
+            hm.stock_name
+        LIMIT 200
+        """
         query_timeout_sec = float(os.getenv("POST_MARKET_REPORT_CONTEXT_QUERY_TIMEOUT_SEC", "120"))
         async with self.pool.acquire() as conn:
             market = await conn.fetchrow(sql_market, trade_date, timeout=query_timeout_sec)
@@ -4414,6 +4636,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             theme_gainers = await conn.fetch(sql_theme_gainers, trade_date, timeout=query_timeout_sec)
             abnormal = await conn.fetch(sql_abnormal, trade_date, timeout=query_timeout_sec)
             dragon = await conn.fetch(sql_dragon, trade_date, timeout=query_timeout_sec)
+            hot_money = await conn.fetch(sql_hot_money, trade_date, timeout=query_timeout_sec)
         return {
             "theme_name_map": theme_name_map,
             "market": dict(market) if market else None,
@@ -4424,6 +4647,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             "money_flow": [dict(r) for r in money],
             "abnormal_signals": [dict(r) for r in abnormal],
             "dragon_tiger": [dict(r) for r in dragon],
+            "hot_money_activities": [dict(r) for r in hot_money],
         }
 
     async def get_theme_stock_leaderboard_by_trade_date(

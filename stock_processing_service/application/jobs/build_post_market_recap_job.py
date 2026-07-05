@@ -33,6 +33,9 @@ from stock_processing_service.application.services.mainline_discovery_fact_conte
 from stock_processing_service.application.services.f10_capital_evidence_service import (
     F10CapitalEvidenceService,
 )
+from stock_processing_service.application.services.limit_up_theme_matrix_builder import (
+    LimitUpThemeMatrixBuilder,
+)
 from stock_processing_service.domain.services.mainline_discovery.mainline_logic_chain_builder import (
     MainlineLogicChainBuilder,
 )
@@ -120,6 +123,7 @@ class BuildPostMarketRecapJob:
         self._evidence_job = evidence_job
         self._abnormal_signal_job = abnormal_signal_job
         self._f10_capital_evidence_service = f10_capital_evidence_service or F10CapitalEvidenceService()
+        self._limit_up_theme_matrix_builder = LimitUpThemeMatrixBuilder()
         self._report_builder = report_builder or NewChainPostMarketReportBuilder()
         self._market_summary_llm_service = market_summary_llm_service or PostMarketMarketSummaryLlmService()
         self._decision_engine = post_market_decision_engine or PostMarketDecisionEngine()
@@ -132,6 +136,45 @@ class BuildPostMarketRecapJob:
             int(os.getenv("POST_MARKET_RECAP_NARRATIVE_LLM_TIMEOUT_SEC", "25") or 25),
             10,
         )
+
+    async def _attach_limit_up_theme_matrix(self, recap_doc: dict[str, Any], trade_date: date) -> None:
+        pool = getattr(self._read_port, "_pool", None)
+        if pool is None:
+            facade = getattr(self._read_port, "_db", None)
+            db_client = getattr(facade, "_db", None) if facade else None
+            pool = getattr(db_client, "pool", None) if db_client else None
+
+        if pool is None:
+            recap_doc["limit_up_theme_matrix"] = {
+                "source": LimitUpThemeMatrixBuilder.source,
+                "trade_date": trade_date.isoformat(),
+                "columns": [],
+                "board_totals": {},
+                "diagnostics": {
+                    "source": LimitUpThemeMatrixBuilder.source,
+                    "error": "missing_database_pool",
+                },
+            }
+            return
+
+        try:
+            async with pool.acquire() as conn:
+                recap_doc["limit_up_theme_matrix"] = await self._limit_up_theme_matrix_builder.build(
+                    trade_date=trade_date,
+                    conn=conn,
+                )
+        except Exception as exc:
+            logger.exception("failed to build limit_up_theme_matrix for %s", trade_date)
+            recap_doc["limit_up_theme_matrix"] = {
+                "source": LimitUpThemeMatrixBuilder.source,
+                "trade_date": trade_date.isoformat(),
+                "columns": [],
+                "board_totals": {},
+                "diagnostics": {
+                    "source": LimitUpThemeMatrixBuilder.source,
+                    "error": str(exc),
+                },
+            }
 
     @staticmethod
     def _d(value: Any) -> Decimal:
@@ -685,7 +728,7 @@ class BuildPostMarketRecapJob:
             # ── P0-2: readiness guard — 核心表为空时拒绝写快照 ──
             readiness = await self._check_post_market_readiness(trade_date)
             recap_doc.setdefault("diagnostics", {})["readiness"] = readiness
-            if readiness["status"] != "ready":
+            if not skip_prereqs and readiness["status"] != "ready":
                 await self._mark_job_status(trade_date, "post_market_recap_generate", "failed_precondition",
                     error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
                     diagnostics={"readiness": readiness, "snapshot_version": snapshot_version})
@@ -763,6 +806,15 @@ class BuildPostMarketRecapJob:
                 strong_stock_reviews=recap_doc.get("strong_stock_reviews") or [],
             )
             recap_doc.update(decision_payload)
+            recap_doc["report_context"] = self._materialize_report_context_stock_facts(
+                recap_doc=recap_doc,
+                base_report_context=report_context,
+                stock_facts_by_subject=(
+                    recap_doc.get("report_context").get("stock_facts_by_subject")
+                    if isinstance(recap_doc.get("report_context"), dict)
+                    else {}
+                ),
+            )
 
             confirmed_mainline_hotspots = self._build_confirmed_mainline_hotspots(recap_doc.get("active_mainline_universe") or {})
             if confirmed_mainline_hotspots:
@@ -898,6 +950,14 @@ class BuildPostMarketRecapJob:
                 diagnostics = {}
                 recap_doc["diagnostics"] = diagnostics
             diagnostics["f10_capital"] = f10_diag
+
+            report_context = dict(recap_doc.get("report_context") or {})
+            theme_name_map = self._build_canonical_theme_name_map(recap_doc)
+            if theme_name_map:
+                report_context["theme_name_map"] = theme_name_map
+                recap_doc["report_context"] = report_context
+
+            await self._attach_limit_up_theme_matrix(recap_doc, trade_date)
 
             recap_report = self._report_builder.build(recap_doc)
             recap_doc["report"] = recap_report
@@ -1301,6 +1361,14 @@ class BuildPostMarketRecapJob:
                 lookback_days=7,
             )
             fc = fact_ctx.to_dict()
+            persisted_report_context = dict(recap_doc.get("report_context") or report_context or {})
+            persisted_stock_facts = self._materialize_stock_facts_by_subject(
+                fc.get("stock_facts_by_subject") or {}
+            )
+            persisted_report_context["stock_facts_by_subject"] = fc.get("stock_facts_by_subject") or {}
+            if persisted_stock_facts:
+                persisted_report_context["stock_facts"] = persisted_stock_facts
+            recap_doc["report_context"] = persisted_report_context
 
             # ── run logic chain ──
             logic_builder = MainlineLogicChainBuilder()
@@ -1926,6 +1994,132 @@ class BuildPostMarketRecapJob:
                 "stock_facts": sf_list,
             }
 
+        return result
+
+    @staticmethod
+    def _materialize_stock_facts_by_subject(
+        stock_facts_by_subject: dict[str, list[dict[str, Any]]] | None,
+    ) -> list[dict[str, Any]]:
+        """Flatten structured stock facts into the recap snapshot contract.
+
+        This preserves the authoritative per-subject fact layer so downstream
+        report builders can consume `report_context.stock_facts` directly.
+        """
+        rows: list[dict[str, Any]] = []
+        for subject_key, facts in (stock_facts_by_subject or {}).items():
+            if not isinstance(facts, list):
+                continue
+            for fact in facts:
+                if not isinstance(fact, dict):
+                    continue
+                row = dict(fact)
+                if not str(row.get("subject_key") or "").strip():
+                    row["subject_key"] = str(subject_key)
+                rows.append(row)
+
+        rows.sort(
+            key=lambda item: (
+                str(item.get("subject_key") or ""),
+                -float(item.get("leader_composite_score") or 0),
+                -float(item.get("leader_capital_score") or 0),
+                -float(item.get("pct_chg") or 0),
+                str(item.get("stock_id") or ""),
+            ),
+        )
+        return rows
+
+    @staticmethod
+    def _materialize_report_context_stock_facts(
+        *,
+        recap_doc: dict[str, Any],
+        base_report_context: dict[str, Any],
+        stock_facts_by_subject: dict[str, list[dict[str, Any]]] | None,
+    ) -> dict[str, Any]:
+        """Persist the structured stock fact layer into report_context.
+
+        This keeps the recap snapshot contract compatible with downstream
+        board-count consumers without falling back to section parsing.
+        """
+        merged_report_context = dict(base_report_context or {})
+        rows = BuildPostMarketRecapJob._materialize_stock_facts_by_subject(stock_facts_by_subject)
+
+        def append_rows(source_rows: Any, *, default_subject_key: str = "") -> None:
+            if not isinstance(source_rows, list):
+                return
+            for row in source_rows:
+                if not isinstance(row, dict):
+                    continue
+                stock_id = str(row.get("stock_id") or row.get("stock_code") or "").strip()
+                stock_name = str(row.get("stock_name") or "").strip()
+                if not stock_id and not stock_name:
+                    continue
+                item = dict(row)
+                if default_subject_key and not str(item.get("subject_key") or "").strip():
+                    item["subject_key"] = default_subject_key
+                rows.append(item)
+
+        append_rows(recap_doc.get("strong_stock_reviews") or [])
+        decision = recap_doc.get("post_market_decision_v2")
+        if isinstance(decision, dict):
+            append_rows(decision.get("strong_stock_pool_reviews") or [])
+
+        # Retain only structured rows that can participate in board grouping.
+        normalized: list[dict[str, Any]] = []
+        seen: set[tuple[str, str]] = set()
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            stock_id = str(row.get("stock_id") or row.get("stock_code") or "").strip()
+            stock_name = str(row.get("stock_name") or "").strip()
+            board_count = row.get("board_count") or row.get("limit_up_days") or row.get("max_consecutive_limit_up_days")
+            try:
+                board_count_int = int(float(board_count))
+            except Exception:
+                board_count_int = 0
+            if board_count_int <= 0:
+                continue
+            dedupe_key = (stock_id or stock_name, str(board_count_int))
+            if dedupe_key in seen:
+                continue
+            seen.add(dedupe_key)
+            item = dict(row)
+            item["board_count"] = 4 if board_count_int >= 4 else board_count_int
+            if not str(item.get("subject_key") or "").strip():
+                item["subject_key"] = str(row.get("subject_key") or "").strip()
+            normalized.append(item)
+
+        normalized.sort(
+            key=lambda item: (
+                str(item.get("subject_key") or ""),
+                -float(item.get("leader_composite_score") or 0),
+                -float(item.get("leader_capital_score") or 0),
+                -float(item.get("pct_chg") or 0),
+                str(item.get("stock_id") or item.get("stock_code") or ""),
+            ),
+        )
+        if normalized:
+            merged_report_context["stock_facts"] = normalized
+        merged_report_context["stock_facts_by_subject"] = stock_facts_by_subject or {}
+        return merged_report_context
+
+    @staticmethod
+    def _build_canonical_theme_name_map(recap_doc: dict[str, Any]) -> dict[str, str]:
+        """Build the canonical subject_key -> mainline_name map."""
+        result: dict[str, str] = {}
+        active_universe = recap_doc.get("active_mainline_universe")
+        active_mainlines = []
+        if isinstance(active_universe, dict):
+            active_mainlines = list(active_universe.get("active_mainlines") or [])
+        for ml in active_mainlines:
+            if not isinstance(ml, dict):
+                continue
+            canonical_key = str(ml.get("canonical_subject_key") or "").strip()
+            mainline_name = str(ml.get("mainline_name") or "").strip()
+            mainline_id = str(ml.get("mainline_id") or "").strip()
+            if canonical_key and mainline_name:
+                result.setdefault(canonical_key, mainline_name)
+            if mainline_id and mainline_name:
+                result.setdefault(mainline_id, mainline_name)
         return result
 
     @staticmethod

@@ -92,6 +92,7 @@ export class SSEManager {
   // 内存泄漏防护：跟踪所有事件监听器以便清理
   private eventListeners: Map<string, EventListener> = new Map();
   private isDisposed: boolean = false;
+  private lastEventId: string = '';
 
   constructor(
     params: {
@@ -245,6 +246,7 @@ export class SSEManager {
     if (this.params.type) query.set('type', this.params.type);
     if (this.params.session) query.set('session', this.params.session);
     query.set('limit', '20');
+    if (this.lastEventId) query.set('last_event_id', this.lastEventId);
 
     return `${this.options.endpoint}?${query.toString()}`;
   }
@@ -260,8 +262,13 @@ export class SSEManager {
       try {
         const messageEvent = event as MessageEvent;
         const payload = JSON.parse(messageEvent.data) as IntelFeedEvent;
-        if (this.isValidIntelEvent(payload) && this.eventHandlers.onIntelItem) {
-          this.eventHandlers.onIntelItem(payload);
+        if (this.isValidIntelEvent(payload)) {
+          if (messageEvent.lastEventId) {
+            this.lastEventId = messageEvent.lastEventId;
+          }
+          if (this.eventHandlers.onIntelItem) {
+            this.eventHandlers.onIntelItem(payload);
+          }
         }
         this.resetHeartbeatTimer();
       } catch (error) {

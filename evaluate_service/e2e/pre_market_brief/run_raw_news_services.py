@@ -54,8 +54,9 @@ async def run_services(args: argparse.Namespace) -> None:
             args.storage_group = f"news_storage_handlers_e2e_{args.run_id}"
         if not args.processor_group:
             args.processor_group = f"news_business_processors_e2e_{args.run_id}"
-    await _ensure_group_clean_start(redis_client, "stream:news:raw", args.storage_group)
-    await _ensure_group_clean_start(redis_client, "stream:events:normal", args.processor_group)
+    await _ensure_group_clean_start(redis_client, "stream:news:raw", args.storage_group, args.run_id)
+    # Phase 4F: Processor 直接从 news:raw 消费，不再经过废弃的 events:normal
+    await _ensure_group_clean_start(redis_client, "stream:news:raw", args.processor_group, args.run_id)
     stream_config = SimpleNamespace(
         redis=SimpleNamespace(
             # realtime 生产跑使用稳定 group 名，避免每次重启产生 pm_e2e 僵尸组
@@ -86,21 +87,40 @@ async def run_services(args: argparse.Namespace) -> None:
         config={
             "database_gateway": gateway,
             "processor_group": args.processor_group,
-            "processor_name": f"news_processor_e2e_{args.run_id}",
+            "processor_name": "news_processor_worker",
             "enable_ai_analysis": True,
             "enable_local_triage": True,
             "triage_mode": "hybrid",
-            "triage_block_on_skip": False,
-            "triage_pass_threshold": 0.03,
-            "triage_skip_threshold": -0.02,
+            "triage_block_on_skip": True,
+            "triage_pass_threshold": 0.10,
+            "triage_skip_threshold": 0.0,
             "batch_processing": True,
-            "batch_size": args.batch_size,
-            "run_id_filter": args.run_id,
+            "batch_size": min(args.batch_size, 5),  # 上限 5，避免单批处理超时
+            "structuring_total_timeout_s": 60,      # 从默认 90s 降到 60s
+            "structuring_max_retries": 1,            # 从默认 2 降到 1
+            # Phase 4F: 实时生产不设 run_id 过滤，所有消息均需处理
+            "run_id_filter": None if (args.run_id and args.run_id.startswith("realtime_")) else args.run_id,
         },
     )
 
     await storage_handler.start_storage_service()
     await processor.start_business_processing()
+
+    # P4: consumer watchdog — monitors idle time + pending/lag and auto-reclaims
+    _our_names = {
+        storage_handler.consumer_config.get("consumer_name", ""),
+        processor.processor_config.get("processor_name", ""),
+    }
+    watchdog_task = asyncio.create_task(
+        _consumer_watchdog(
+            redis_client,
+            stream_key=args.raw_stream,
+            groups=[args.storage_group, args.processor_group],
+            idle_warn_seconds=300,
+            stop_event=stop_event,
+            our_consumer_names=_our_names,
+        ),
+    )
 
     loop = asyncio.get_running_loop()
     for signame in ("SIGINT", "SIGTERM"):
@@ -120,11 +140,11 @@ async def run_services(args: argparse.Namespace) -> None:
     finally:
         storage_handler.running = False
         processor.running = False
-        for task in [storage_handler.handler_task, processor.processor_task]:
+        for task in [storage_handler.handler_task, processor.processor_task, watchdog_task]:
             if task:
                 task.cancel()
         await asyncio.gather(
-            *[task for task in [storage_handler.handler_task, processor.processor_task] if task],
+            *[task for task in [storage_handler.handler_task, processor.processor_task, watchdog_task] if task],
             return_exceptions=True,
         )
 
@@ -132,7 +152,7 @@ async def run_services(args: argparse.Namespace) -> None:
         for _stream, _group, _cname in [
             ("stream:news:raw", args.storage_group,
              storage_handler.consumer_config.get("consumer_name", "")),
-            ("stream:events:normal", args.processor_group,
+            ("stream:news:raw", args.processor_group,
              processor.processor_config.get("processor_name", "")),
         ]:
             if _cname:
@@ -164,13 +184,13 @@ async def run_services(args: argparse.Namespace) -> None:
         await redis_client.aclose()
 
 
-async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> None:
+async def _ensure_group_clean_start(redis_client, stream: str, group: str, run_id: str = "") -> None:
     """Phase 6A: 创建/复用 consumer group，live mode 从最新开始并清理僵尸。
 
     - 默认从 "0" 创建，避免跳过积压
     - 仅显式 REALTIME_STREAM_START_MODE=latest 时允许从 "$" 创建
     - latest 模式下 lag > 95% 才自动重置到 $
-    - 僵尸清理：只 XGROUP DELCONSUMER，不 XACK pending（防止丢消息）
+    - 僵尸清理：同一 run_id 前缀不匹配的 consumer 直接删（不再单独依赖 idle > 60s 兜底，避免假阳性）
     """
     import os as _os
     start_mode = _os.environ.get("REALTIME_STREAM_START_MODE", "0").lower()
@@ -215,31 +235,26 @@ async def _ensure_group_clean_start(redis_client, stream: str, group: str) -> No
         except Exception as e:
             logging.debug("Group lag check skipped: %s", e)
 
-    # Clean up zombie consumers (idle > 60s) — never ACK pending
+    # With fixed consumer names, remove all existing consumers at startup.
+    # Our process will recreate the consumer naturally via XREADGROUP.
+    # No run_id matching or idle-timeout heuristics needed.
     zombie_count = 0
     orphaned_pending = 0
     try:
         consumers = await redis_client.xinfo_consumers(stream, group)
         for c in consumers:
-            idle_ms = int(c.get("idle", 0))
-            if idle_ms > 60000:
-                orphaned_pending += int(c.get("pending", 0))
-                try:
-                    await redis_client.xgroup_delconsumer(stream, group, c["name"])
-                    zombie_count += 1
-                except Exception:
-                    pass
+            pending_count = int(c.get("pending", 0))
+            orphaned_pending += pending_count
+            try:
+                await redis_client.xgroup_delconsumer(stream, group, c["name"])
+                zombie_count += 1
+            except Exception:
+                pass
         if zombie_count:
             logging.warning(
-                "Cleaned %d zombie consumers from %s/%s (orphaned pending=%d, NOT acked)",
+                "Cleaned %d existing consumers from %s/%s (orphaned pending=%d — will be reclaimed by watchdog)",
                 zombie_count, stream, group, orphaned_pending,
             )
-            if orphaned_pending > 1000:
-                logging.warning(
-                    "Large orphaned pending (%d) in %s/%s. "
-                    "Suggested: scripts/repair_realtime_redis_groups.sh --stream %s --group %s --reset-to-latest",
-                    orphaned_pending, stream, group, stream, group,
-                )
     except Exception:
         pass
 
@@ -332,6 +347,120 @@ async def _watch_memory(stop_event: asyncio.Event, max_mb: int, interval: float 
                 "P0-B1: RSS %sMB approaching limit %sMB (%.0f%%)",
                 rss_mb, max_mb, 100 * rss_mb / max_mb,
             )
+
+
+async def _consumer_watchdog(
+    redis_client,
+    stream_key: str,
+    groups: list,
+    idle_warn_seconds: int = 300,
+    stop_event: asyncio.Event | None = None,
+    check_interval: float = 60.0,
+    our_consumer_names: set | None = None,
+) -> None:
+    """P4+P5: consumer watchdog — diagnostics + graceful restart on stall.
+
+    - idle > idle_warn_seconds + pending/lag > 0 → WARNING log
+    - idle > idle_warn_seconds * 2 + pending > 0 → ERROR log (stuck on a message)
+    - idle > idle_warn_seconds * 2 + pending == 0 + lag > 0 AND lag increasing →
+      P5 stall: consumer loop is alive but falling behind.
+      Requires 2 CONSECUTIVE detections (hysteresis).
+    - Only monitors and restarts for OUR consumers (our_consumer_names).
+      Zombies from previous runs are logged but ignored — killing our process
+      won't fix another process's dead consumer.
+    """
+    _stall_count: dict[tuple[str, str], int] = {}  # (stream, group) → consecutive stalls
+    _prev_lag: dict[tuple[str, str], int] = {}      # track lag trend
+
+    while stop_event is None or not stop_event.is_set():
+        try:
+            await asyncio.wait_for(
+                stop_event.wait() if stop_event else asyncio.sleep(0),
+                timeout=check_interval,
+            )
+            return
+        except asyncio.TimeoutError:
+            pass
+
+        for group in groups:
+            try:
+                consumers = await redis_client.xinfo_consumers(stream_key, group)
+                group_info = await redis_client.xinfo_groups(stream_key)
+                group_lag = 0
+                for gi in group_info:
+                    if gi.get("name") == group:
+                        group_lag = int(gi.get("lag", 0))
+                        break
+
+                for c in consumers:
+                    idle_s = int(c.get("idle", 0)) / 1000.0
+                    pending = int(c.get("pending", 0))
+                    cname = c.get("name", "?")
+                    stall_key = (stream_key, group)
+
+                    # Skip consumers that don't belong to THIS process
+                    if our_consumer_names and cname not in our_consumer_names:
+                        if idle_s > idle_warn_seconds * 4:
+                            logging.warning(
+                                "👻 P4: foreign zombie consumer %s in %s/%s idle=%.0fs — "
+                                "will be cleaned by next _ensure_group_clean_start",
+                                cname, stream_key, group, idle_s,
+                            )
+                        continue
+
+                    if idle_s > idle_warn_seconds and (pending > 0 or group_lag > 0):
+                        logging.warning(
+                            "⚠️ P4 watchdog: consumer %s in %s/%s idle=%.0fs pending=%d lag=%d",
+                            cname, stream_key, group, idle_s, pending, group_lag,
+                        )
+
+                    # P5: pending==0 && lag>0 && idle > 2*warn => consumer loop
+                    # may not be polling. But a single new message during low-volume
+                    # periods (after-hours) can create lag>0 that triggers a false
+                    # positive. Only count as stall if lag is INCREASING between checks.
+                    prev_lag = _prev_lag.get(stall_key, 0)
+                    lag_increasing = group_lag > prev_lag
+                    _prev_lag[stall_key] = group_lag
+
+                    if (
+                        idle_s > idle_warn_seconds * 2
+                        and pending == 0
+                        and group_lag > 0
+                        and lag_increasing
+                        and stop_event is not None
+                    ):
+                        _stall_count[stall_key] = _stall_count.get(stall_key, 0) + 1
+                        if _stall_count[stall_key] >= 2:
+                            logging.error(
+                                "🔄 P5 watchdog: consumer %s in %s/%s STALLED ×%d idle=%.0fs pending=%d lag=%d↑ — "
+                                "triggering graceful shutdown for supervisor restart",
+                                cname, stream_key, group, _stall_count[stall_key],
+                                idle_s, pending, group_lag,
+                            )
+                            stop_event.set()
+                            return
+                        else:
+                            logging.warning(
+                                "⏳ P5 hysteresis: consumer %s in %s/%s stall #%d/2 idle=%.0fs lag=%d↑ prev=%d — "
+                                "waiting for next check before restart",
+                                cname, stream_key, group, _stall_count[stall_key],
+                                idle_s, group_lag, prev_lag,
+                            )
+                    else:
+                        # Reset stall count when conditions clear
+                        _stall_count.pop(stall_key, None)
+                        if idle_s <= idle_warn_seconds:
+                            _prev_lag.pop(stall_key, None)  # reset trend baseline on recovery
+
+                    if idle_s > idle_warn_seconds * 2 and (pending > 0 or group_lag > 0):
+                        logging.error(
+                            "🚨 P4 watchdog: consumer %s in %s/%s SEVERELY STALE idle=%.0fs pending=%d lag=%d — "
+                            "DB operation may be stuck (pending>0) — cannot auto-restart",
+                            cname, stream_key, group, idle_s, pending, group_lag,
+                        )
+
+            except Exception as exc:
+                logging.debug("P4 watchdog check skipped for %s/%s: %s", stream_key, group, exc)
 
 
 if __name__ == "__main__":

@@ -255,8 +255,8 @@ class DecisionExecutor:
         else:
             raise ValueError(f"未知决策类型: {action}")
 
-        # 非 DROP 事件发布到 stream:event:feed，供 SSE 前端实时展示
-        if action != 'drop_event':
+        # 只有已匹配新闻可进入面向前端的 Intel feed。
+        if action == 'update_theme':
             await self._publish_to_feed(action, decision, message_id)
 
     async def _execute_drop_event_fixed(self, decision: Dict):
@@ -1303,28 +1303,83 @@ class DecisionExecutor:
 
     # ── Feed 发布（Phase 4B：DecisionResult → stream:event:feed → SSE → 前端）──
 
-    async def _publish_to_feed(self, action: str, decision: Dict, message_id: str):
-        """将非 DROP 的决策结果发布到 stream:event:feed，供 SSE 前端实时展示。"""
+    async def _publish_to_feed(self, action: str, decision: Dict, message_id: str) -> bool:
+        """将通过题材匹配的新闻投影为 canonical Intel feed item。"""
         try:
             event_data = decision.get("event_data") if isinstance(decision.get("event_data"), dict) else {}
+            match_result = decision.get("match_result") if isinstance(decision.get("match_result"), dict) else {}
+            theme_data = decision.get("theme_data") if isinstance(decision.get("theme_data"), dict) else {}
+            match_decision = str(match_result.get("decision") or "").upper()
+            if action != "update_theme" or (match_decision and match_decision != "MATCH"):
+                logger.debug("跳过非展示决策: action=%s match_decision=%s", action, match_decision)
+                return False
+
+            event_id = str(event_data.get("event_id") or decision.get("event_id") or "").strip()
+            news_id = str(event_data.get("news_id") or decision.get("news_id") or "").strip()
+            title = str(event_data.get("title") or decision.get("event_title") or "").strip()
+            summary = str(event_data.get("summary") or title).strip()
+            occurred_at = str(
+                event_data.get("occurred_at")
+                or event_data.get("publish_time")
+                or event_data.get("created_at")
+                or decision.get("timestamp")
+                or decision.get("created_at")
+                or ""
+            ).strip()
+            subject_key = str(
+                theme_data.get("subject_key")
+                or match_result.get("matched_subject_key")
+                or ""
+            ).strip()
+            theme_name = str(
+                theme_data.get("name")
+                or theme_data.get("theme_name")
+                or match_result.get("matched_theme_name")
+                or ""
+            ).strip()
+            source_channel = str(
+                event_data.get("source_channel")
+                or decision.get("source")
+                or ""
+            ).strip()
+            if not all((event_id, title, occurred_at, subject_key, theme_name, source_channel)):
+                logger.warning(
+                    "跳过不完整 Intel feed 投影: event_id=%s title=%s occurred_at=%s "
+                    "subject_key=%s theme_name=%s source_channel=%s",
+                    event_id,
+                    bool(title),
+                    bool(occurred_at),
+                    bool(subject_key),
+                    bool(theme_name),
+                    bool(source_channel),
+                )
+                return False
+
             feed_item = {
-                "event_id": str(event_data.get("event_id") or decision.get("event_id") or ""),
-                "news_id": str(event_data.get("news_id") or decision.get("news_id") or ""),
+                "item_id": f"event:{event_id}",
+                "item_type": "event",
+                "event_id": event_id,
+                "news_id": news_id,
                 "event_type": "event",
-                "title": str(event_data.get("title") or decision.get("title") or ""),
-                "summary": str(event_data.get("summary") or decision.get("summary") or ""),
-                "decision": action,
-                "subject_key": str(event_data.get("subject_key") or decision.get("subject_key") or ""),
-                "theme_name": str(event_data.get("theme_name") or decision.get("theme_name") or ""),
+                "occurred_at": occurred_at,
+                "title": title,
+                "summary": summary,
+                "theme_subject_keys": json.dumps([subject_key], ensure_ascii=False),
+                "theme_names": json.dumps([theme_name], ensure_ascii=False),
+                "stock_ids": "[]",
+                "stock_names": "[]",
                 "confidence": str(decision.get("confidence") or "0"),
+                "impact_score": str(event_data.get("severity_score") or "0"),
                 "reason_code": str(decision.get("reason_code") or decision.get("reason") or action),
-                "source": "decision_executor_feed",
-                "dropped": "false",
-                "created_at": str(decision.get("created_at") or ""),
+                "source_type": "event_theme_map",
+                "source_channel": source_channel,
+                "match_decision": "MATCH",
             }
             msg_id = await self.redis.xadd("stream:event:feed", feed_item, maxlen=2000)
             logger.info("📤 已发布 feed: event_id=%s action=%s msg_id=%s title=%s",
                         feed_item.get("event_id", ""), action, msg_id,
                         str(feed_item.get("title", ""))[:60])
+            return True
         except Exception as e:
             logger.error("发布 feed 失败: action=%s error=%s", action, e)
+            return False

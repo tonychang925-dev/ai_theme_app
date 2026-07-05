@@ -131,7 +131,7 @@ async def _startup_cdp_manager() -> None:
     app.state.realtime_stack_manager = RealtimeStackManager(
         project_root=str(project_root),
         web_port=int(_os.getenv("WEB_PORT", "8000")),
-        sps_port=int(_os.getenv("SPS_PORT", "8090")),
+        sps_port=8090,
     )
 
     # BFF 不再清理 8090 上的 SPS。Runtime Profile P0 固定 SPS 由
@@ -161,7 +161,7 @@ async def _startup_cdp_manager() -> None:
     # TODO P4-2D-Final: remove after orchestrator action validation passes
     _legacy_auto = _os.getenv("LEGACY_JYHF_AUTO_START_ENABLED", "").lower()
     if _legacy_auto in ("1", "true", "yes", "on"):
-        sps_base = _os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090").rstrip("/")
+        sps_base = "http://127.0.0.1:8090"
         _auto_start_task = asyncio.create_task(_auto_start_jyhf_collectors(sps_base))
         _DIAG_LOGGER.warning("legacy jyhf auto-start ENABLED")
     else:
@@ -224,7 +224,7 @@ async def healthz() -> dict[str, str]:
 
 
 # ── Ready (深度就绪检查) ──
-_SPS_BASE_URL = _os.getenv("STOCK_PROCESSING_READ_BASE_URL", "http://127.0.0.1:8090").rstrip("/")
+_SPS_BASE_URL = "http://127.0.0.1:8090"
 _REDIS_URL = _os.getenv("REDIS_URL", "redis://localhost:6379/0").strip()
 
 

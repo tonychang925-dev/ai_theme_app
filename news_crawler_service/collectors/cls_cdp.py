@@ -253,6 +253,7 @@ class _CDPClient:
 
 CACHE_MAX_AGE_SECONDS = 120    # 缓存最长有效期，超期强制重新提取
 DEDUP_MAX_SIZE = 1000           # 去重窗口大小（最近 N 条）
+DEDUP_MAX_AGE_SECONDS = 3600    # 去重条目最长保留时间（超期自动清理，防止无限累积）
 
 # ── CLS CDP 采集器 ────────────────────────────────────────────────────────
 
@@ -288,7 +289,7 @@ class ClsCdpCollector:
         self._cache_at: float = 0.0
         self._cache_fingerprint: str = ""
         self._cache_items: list[dict] = []
-        self._seen_hashes: OrderedDict[str, None] = OrderedDict()
+        self._seen_hashes: OrderedDict[str, float] = OrderedDict()  # hash → insertion_time
         self._stats = {"cache_hits": 0, "fresh_fetches": 0, "duplicates_skipped": 0}
 
     @property
@@ -380,11 +381,20 @@ class ClsCdpCollector:
                 items = self._fresh_fetch(cdp, fingerprint, limit=None)
 
             # ── 阶段 2: 去重 ──
+            # 清理过期条目（超过 DEDUP_MAX_AGE_SECONDS 的哈希）
+            now_ts = time.time()
+            expired_keys = [
+                k for k, ts in self._seen_hashes.items()
+                if now_ts - ts > DEDUP_MAX_AGE_SECONDS
+            ]
+            for k in expired_keys:
+                self._seen_hashes.pop(k, None)
+
             deduped = []
             for item in items:
                 key = self._make_dedup_key(item)
                 if key not in self._seen_hashes:
-                    self._seen_hashes[key] = None
+                    self._seen_hashes[key] = now_ts
                     deduped.append(item)
 
             while len(self._seen_hashes) > DEDUP_MAX_SIZE:

@@ -12,6 +12,7 @@ from stock_processing_service.contracts.dto import PostMarketDailyReviewV2
 MODULE_SECTION_HEADINGS: dict[str, str] = {
     "theme_reviews": "主线与支线",
     "theme_capital_reviews": "主线资金流入前10",
+    "theme_driver_events": "题材驱动事件溯源",
     "strong_stock_reviews": "强势股分层",
     "watchlist_reviews": "次日观察清单",
     "stock_capital_reviews": "主线股票资金流入前20",
@@ -42,17 +43,29 @@ class PostMarketDailyReviewV2Builder:
         snapshot_id: str | None = None,
         generated_at: datetime | None = None,
         snapshot_version: str | None = None,
+        theme_driver_events: list[dict[str, Any]] | None = None,
     ) -> PostMarketDailyReviewV2:
         doc = deepcopy(recap_doc) if isinstance(recap_doc, dict) else {}
         generated = generated_at or datetime.now(timezone.utc)
-        theme_capital_reviews, theme_capital_missing_fields = self._build_theme_capital_reviews(doc)
-        theme_reviews, theme_missing_fields = self._build_theme_reviews(doc, theme_capital_reviews)
+        theme_name_map = self._build_theme_name_map(doc)
+        theme_capital_reviews, theme_capital_missing_fields = self._build_theme_capital_reviews(doc, theme_name_map)
+        theme_reviews, theme_missing_fields = self._build_theme_reviews(doc, theme_capital_reviews, theme_name_map)
         strong_stock_reviews, strong_stock_missing_fields = self._build_strong_stock_reviews(doc)
         watchlist_reviews, watchlist_missing_fields = self._build_watchlist_reviews(doc)
         stock_capital_reviews, stock_capital_missing_fields = self._build_stock_capital_reviews(doc)
         abnormal_reviews, abnormal_missing_fields = self._build_abnormal_reviews(doc)
         money_flow_reviews, money_flow_missing_fields = self._build_money_flow_reviews(doc)
         dragon_tiger_reviews, dragon_tiger_missing_fields, dragon_tiger_errors = self._build_dragon_tiger_reviews(doc)
+        limit_up_ladder = self._build_limit_up_ladder(doc, theme_name_map)
+        limit_up_theme_matrix = self._build_limit_up_theme_matrix(doc, theme_driver_events, theme_name_map)
+        limit_up_theme_events = self._build_limit_up_theme_events(limit_up_theme_matrix)
+        new_high_summary = self._build_new_high_summary(doc)
+        seat_money_summary = self._build_seat_money_summary(
+            doc,
+            stock_capital_reviews=stock_capital_reviews,
+            theme_capital_reviews=theme_capital_reviews,
+            theme_name_map=theme_name_map,
+        )
         legacy_section_counts = self._legacy_section_counts(doc)
         diagnostics = self._build_diagnostics(
             doc,
@@ -102,6 +115,9 @@ class PostMarketDailyReviewV2Builder:
             "theme_decision_reviews": self._pass_through_list(doc, "theme_decision_reviews"),
             "theme_reviews": theme_reviews,
             "theme_capital_reviews": theme_capital_reviews,
+            "theme_driver_events": self._enrich_with_driver_events(
+                theme_capital_reviews, theme_driver_events,
+            ),
             "strong_stock_decision_reviews": self._pass_through_list(doc, "strong_stock_decision_reviews"),
             "strong_stock_reviews": strong_stock_reviews,
             "watchlist_reviews": watchlist_reviews,
@@ -111,6 +127,12 @@ class PostMarketDailyReviewV2Builder:
             "abnormal_reviews": abnormal_reviews,
             "money_flow_reviews": money_flow_reviews,
             "dragon_tiger_reviews": dragon_tiger_reviews,
+            "limit_up_ladder": limit_up_ladder,
+            "limit_up_theme_matrix": limit_up_theme_matrix,
+            "limit_up_theme_events": limit_up_theme_events,
+            "new_high_summary": new_high_summary,
+            "seat_money_summary": seat_money_summary,
+            "theme_name_map": theme_name_map,
             "trading_principle": self._trading_principle(doc),
             "decision_diagnostics": self._pass_through_dict(doc, "decision_diagnostics"),
             "mainline_reviews": self._pass_through_list(doc, "mainline_discovery_reviews"),
@@ -125,6 +147,49 @@ class PostMarketDailyReviewV2Builder:
             "post_market_decision_v2": self._pass_through_dict(doc, "post_market_decision_v2"),
             "diagnostics": diagnostics,
         }
+
+    @staticmethod
+    def _enrich_with_driver_events(
+        theme_capital_reviews: list[dict[str, Any]],
+        driver_events: list[dict[str, Any]] | None,
+    ) -> list[dict[str, Any]]:
+        """将 EventDriverTracer 输出合并到主题资金流数据中。
+
+        生成每个领涨题材的：题材名称、资金数据、驱动事件摘要、龙头代表。
+        """
+        if not driver_events:
+            return []
+
+        enriched: list[dict[str, Any]] = []
+        events_by_key: dict[str, list[dict[str, Any]]] = {}
+        for item in driver_events:
+            sk = str(item.get("subject_key") or "")
+            if sk:
+                events_by_key[sk] = item.get("driver_events") or []
+
+        for row in theme_capital_reviews:
+            sk = str(row.get("subject_key") or "")
+            events = events_by_key.get(sk, [])
+            enriched.append({
+                "subject_key": sk,
+                "theme_name": row.get("theme_name", sk),
+                "total_inflow": row.get("total_inflow"),
+                "leader_inflow": row.get("leader_inflow"),
+                "limit_up_count": row.get("limit_up_count"),
+                "cycle_stage": row.get("cycle_stage"),
+                "driver_events": [
+                    {
+                        "event_id": e.get("event_id"),
+                        "summary": e.get("summary"),
+                        "event_time": e.get("event_time"),
+                        "confidence": e.get("confidence"),
+                        "match_reason": e.get("match_reason"),
+                    }
+                    for e in events
+                ],
+            })
+
+        return enriched
 
     @staticmethod
     def _pass_through_list(recap_doc: dict[str, Any], key: str) -> list[Any]:
@@ -175,7 +240,11 @@ class PostMarketDailyReviewV2Builder:
         source = recap_doc.get("trading_principle")
         return deepcopy(source) if isinstance(source, dict) else {}
 
-    def _build_theme_capital_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
+    def _build_theme_capital_reviews(
+        self,
+        recap_doc: dict[str, Any],
+        theme_name_map: dict[str, str] | None = None,
+    ) -> tuple[list[dict[str, Any]], list[str]]:
         source_key, source_rows = self._first_non_empty_list_source(
             recap_doc,
             (
@@ -193,7 +262,7 @@ class PostMarketDailyReviewV2Builder:
             if not isinstance(source, dict):
                 continue
             subject_key = self._theme_subject_key(source)
-            theme_name = self._theme_name(source)
+            theme_name = self._display_theme_name(self._theme_name(source), subject_key, theme_name_map)
             total_inflow = self._float_or_none(
                 self._first_present(source, "total_inflow", "main_net_inflow_sum", "net_inflow_sum", "main_net_inflow")
             )
@@ -282,6 +351,7 @@ class PostMarketDailyReviewV2Builder:
         self,
         recap_doc: dict[str, Any],
         theme_capital_reviews: list[dict[str, Any]],
+        theme_name_map: dict[str, str] | None = None,
     ) -> tuple[list[dict[str, Any]], list[str]]:
         source_key, source_rows = self._first_non_empty_list_source(
             recap_doc,
@@ -305,27 +375,37 @@ class PostMarketDailyReviewV2Builder:
                     capital = capital_by_key.get(self._theme_subject_key(source)) or {}
                     merged_rows.append({**capital, **source, "action": source.get("action") or capital.get("action")})
                 source_rows = merged_rows
-            rows, missing = self._map_theme_review_rows(source_key, source_rows)
+            rows, missing = self._map_theme_review_rows(source_key, source_rows, theme_name_map)
             if rows:
                 return rows, missing
         if theme_capital_reviews:
-            return self._synthesize_theme_reviews_from_capital(theme_capital_reviews, recap_doc)
+            return self._synthesize_theme_reviews_from_capital(theme_capital_reviews, recap_doc, theme_name_map)
         return [], []
 
-    def _map_theme_review_rows(self, source_key: str, source_rows: list[Any]) -> tuple[list[dict[str, Any]], list[str]]:
+    def _map_theme_review_rows(
+        self,
+        source_key: str,
+        source_rows: list[Any],
+        theme_name_map: dict[str, str] | None = None,
+    ) -> tuple[list[dict[str, Any]], list[str]]:
         rows: list[dict[str, Any]] = []
         missing_fields: set[str] = set()
         for source in source_rows[:20]:
             if not isinstance(source, dict):
                 continue
-            row, missing = self._theme_review_row_from_source(source, source_key)
+            row, missing = self._theme_review_row_from_source(source, source_key, theme_name_map)
             rows.append(row)
             missing_fields.update(missing)
         return rows, sorted(missing_fields)
 
-    def _theme_review_row_from_source(self, source: dict[str, Any], source_key: str) -> tuple[dict[str, Any], set[str]]:
+    def _theme_review_row_from_source(
+        self,
+        source: dict[str, Any],
+        source_key: str,
+        theme_name_map: dict[str, str] | None = None,
+    ) -> tuple[dict[str, Any], set[str]]:
         subject_key = self._theme_subject_key(source)
-        theme_name = self._theme_name(source)
+        theme_name = self._display_theme_name(self._theme_name(source), subject_key, theme_name_map)
         total_inflow = self._float_or_none(self._first_present(source, "total_inflow", "main_net_inflow_sum"))
         leader_inflow = self._float_or_none(self._first_present(source, "leader_inflow", "leader_main_net_inflow"))
         theme_kline = self._theme_kline_text(
@@ -461,6 +541,7 @@ class PostMarketDailyReviewV2Builder:
         self,
         theme_capital_reviews: list[dict[str, Any]],
         recap_doc: dict[str, Any],
+        theme_name_map: dict[str, str] | None = None,
     ) -> tuple[list[dict[str, Any]], list[str]]:
         cycles = self._cycle_by_subject_key(recap_doc)
         rows: list[dict[str, Any]] = []
@@ -478,7 +559,7 @@ class PostMarketDailyReviewV2Builder:
                 or source.get("total_inflow"),
                 "source": "synthesized_from_theme_capital_reviews",
             }
-            row, missing = self._theme_review_row_from_source(merged, "synthesized_from_theme_capital_reviews")
+            row, missing = self._theme_review_row_from_source(merged, "synthesized_from_theme_capital_reviews", theme_name_map)
             row["diagnostics"]["capital_joined"] = True
             row["diagnostics"]["cycle_joined"] = bool(cycle)
             row["diagnostics"]["fallback_used"] = ["theme_reviews.from_theme_capital_reviews"]
@@ -1092,6 +1173,991 @@ class PostMarketDailyReviewV2Builder:
 
         return rows, sorted(missing_fields), sorted(set(errors))
 
+    def _build_limit_up_ladder(self, recap_doc: dict[str, Any], theme_name_map: dict[str, str] | None = None) -> dict[str, Any]:
+        candidates = self._limit_up_source_candidates(recap_doc, theme_name_map=theme_name_map)
+        ladder_buckets: dict[int, list[dict[str, Any]]] = {4: [], 3: [], 2: [], 1: []}
+        theme_rows_map: dict[str, dict[str, Any]] = {}
+        for row in candidates:
+            board_count = self._int_or_none(row.get("board_count"))
+            if board_count is None or board_count <= 0:
+                continue
+            board_count = 4 if board_count >= 4 else board_count
+            board_row = {
+                "stock_id": self._text(row.get("stock_id")),
+                "stock_name": self._text(row.get("stock_name")),
+                "subject_key": self._text(row.get("subject_key")),
+                "theme_name": self._text(row.get("theme_name")),
+                "board_count": board_count,
+                "role_label": self._text(row.get("role_label"), ""),
+                "trade_action": self._text(row.get("trade_action"), ""),
+                "reason": self._text(row.get("reason"), ""),
+            }
+            ladder_buckets.setdefault(board_count, []).append(board_row)
+
+            theme_key = self._theme_key(row.get("subject_key"), row.get("theme_name"), row.get("theme_name"))
+            if not theme_key:
+                theme_key = self._text(row.get("stock_id"))
+            bucket = theme_rows_map.setdefault(
+                theme_key,
+                {
+                    "subject_key": self._text(row.get("subject_key")),
+                    "theme_name": self._text(row.get("theme_name") or row.get("subject_key")),
+                    "limit_up_count": self._int_or_none(row.get("limit_up_count")),
+                    "active_mainline": bool(row.get("active_mainline")),
+                    "lifecycle_state": self._text(row.get("lifecycle_state"), ""),
+                    "trade_action": self._text(row.get("trade_action"), ""),
+                    "representative_stocks": [],
+                    "_board_stock_count": 0,
+                },
+            )
+            if bucket["limit_up_count"] in (None, ""):
+                bucket["limit_up_count"] = 0
+            bucket["limit_up_count"] = max(int(bucket["limit_up_count"] or 0), int(row.get("limit_up_count") or 0))
+            bucket["active_mainline"] = bool(bucket["active_mainline"] or row.get("active_mainline"))
+            bucket["lifecycle_state"] = bucket["lifecycle_state"] or self._text(row.get("lifecycle_state"), "")
+            bucket["trade_action"] = bucket["trade_action"] or self._text(row.get("trade_action"), "")
+            bucket["_board_stock_count"] += 1
+            if len(bucket["representative_stocks"]) < 3:
+                bucket["representative_stocks"].append(board_row)
+
+        for bucket in ladder_buckets.values():
+            bucket.sort(
+                key=lambda item: (
+                    -int(item.get("board_count") or 0),
+                    str(item.get("stock_name") or item.get("stock_id") or ""),
+                )
+            )
+
+        board_rows = []
+        for board_count in (4, 3, 2, 1):
+            items = ladder_buckets.get(board_count, [])
+            board_rows.append({
+                "board_count": board_count,
+                "board_label": "首板" if board_count == 1 else f"{board_count}板",
+                "stock_count": len(items),
+                "stocks": items[:8],
+            })
+
+        theme_rows = []
+        for bucket in theme_rows_map.values():
+            bucket["limit_up_count"] = int(bucket.get("limit_up_count") or bucket.get("_board_stock_count") or 0)
+            theme_rows.append({key: value for key, value in bucket.items() if not str(key).startswith("_")})
+
+        theme_rows.sort(
+            key=lambda item: (
+                -int(item.get("limit_up_count") or 0),
+                0 if bool(item.get("active_mainline")) else 1,
+                str(item.get("theme_name") or ""),
+            )
+        )
+        summary = self._limit_up_ladder_summary(board_rows, theme_rows)
+        source = "structured" if any(bucket["stock_count"] for bucket in board_rows) else "none"
+        return {
+            "summary": summary,
+            "board_rows": board_rows,
+            "theme_rows": theme_rows[:10],
+            "diagnostics": {
+                "source": source,
+                "theme_count": len(theme_rows),
+                "board_stock_count": sum(len(bucket["stocks"]) for bucket in board_rows),
+                "candidate_count": len(candidates),
+            },
+        }
+
+    def _build_limit_up_theme_matrix(
+        self,
+        recap_doc: dict[str, Any],
+        theme_driver_events: list[dict[str, Any]] | None,
+        theme_name_map: dict[str, str] | None = None,
+    ) -> dict[str, Any]:
+        matrix = recap_doc.get("limit_up_theme_matrix")
+        if isinstance(matrix, dict) and matrix.get("source") == "limit_up_theme_matrix_builder":
+            result = deepcopy(matrix)
+            effective_driver_events = theme_driver_events
+            if effective_driver_events is None:
+                persisted_v2 = recap_doc.get("daily_review_v2")
+                if isinstance(persisted_v2, dict):
+                    persisted_events = persisted_v2.get("theme_driver_events")
+                    if isinstance(persisted_events, list):
+                        effective_driver_events = persisted_events
+            driver_index = self._limit_up_driver_event_index(effective_driver_events, theme_name_map)
+            columns = result.get("columns")
+            for column in columns if isinstance(columns, list) else []:
+                if not isinstance(column, dict):
+                    continue
+                matched_events = self._limit_up_theme_matrix_catalyst_events(
+                    driver_index,
+                    self._text(column.get("subject_key")),
+                    self._text(column.get("theme_name")),
+                    self._text(column.get("mainline_name")),
+                )
+                if effective_driver_events is not None:
+                    column["catalyst_events"] = matched_events
+            return result
+        return {
+            "columns": [],
+            "board_totals": {},
+            "diagnostics": {
+                "error": "missing_limit_up_theme_matrix",
+            },
+        }
+
+    def _theme_stock_theme_index(self, columns: list[dict[str, Any]]) -> dict[str, str]:
+        index: dict[str, str] = {}
+        for row in columns:
+            if not isinstance(row, dict):
+                continue
+            theme_name = self._text(row.get("theme_name") or row.get("subject_key"))
+            for stock in self._list(row.get("focus_stocks")):
+                if not isinstance(stock, dict):
+                    continue
+                stock_name = self._text(stock.get("stock_name"))
+                stock_id = self._text(stock.get("stock_id"))
+                if stock_name and stock_name not in index:
+                    index[stock_name] = theme_name
+                if stock_id and stock_id not in index:
+                    index[stock_id] = theme_name
+        return index
+
+    def _parse_limit_up_ladder_report(
+        self,
+        recap_doc: dict[str, Any],
+        theme_index: dict[str, str],
+    ) -> list[dict[str, Any]]:
+        report = recap_doc.get("report") if isinstance(recap_doc.get("report"), dict) else {}
+        sections = self._list(report.get("sections")) if isinstance(report.get("sections"), list) else []
+        if not sections:
+            return []
+        items: list[dict[str, Any]] = []
+        current_board_count: int | None = None
+        current_theme_name: str | None = None
+        for section in sections:
+            if not isinstance(section, dict):
+                continue
+            heading = self._text(section.get("heading"))
+            if heading and ("连板" in heading or "涨停分布" in heading):
+                current_board_count = None
+                current_theme_name = None
+            section_items = self._list(section.get("items"))
+            for raw_item in section_items:
+                text = self._text(raw_item)
+                if not text:
+                    continue
+                matched = False
+                for label, count in (("4板", 4), ("3板", 3), ("2板", 2), ("首板", 1), ("1板", 1)):
+                    if label in text:
+                        current_board_count = count
+                        text = text.replace(label, "", 1)
+                        matched = True
+                        break
+                if "：" in text:
+                    maybe_theme, _, body = text.partition("：")
+                    maybe_theme = maybe_theme.strip()
+                    if maybe_theme and len(maybe_theme) <= 20 and not any(ch.isdigit() for ch in maybe_theme):
+                        current_theme_name = maybe_theme
+                        text = body.strip()
+                if current_board_count is None:
+                    continue
+                names = self._split_candidate_names(text)
+                if not names and matched:
+                    continue
+                for name in names:
+                    items.append({
+                        "board_count": current_board_count,
+                        "board_label": "首板" if current_board_count == 1 else f"{current_board_count}板",
+                        "stock_name": name,
+                        "stock_id": "",
+                        "subject_key": "",
+                        "theme_name": current_theme_name or theme_index.get(name, ""),
+                        "role_label": "",
+                        "trade_action": "",
+                        "reason": "",
+                    })
+        return items
+
+    @staticmethod
+    def _split_candidate_names(text: str) -> list[str]:
+        raw = str(text or "").strip()
+        if not raw:
+            return []
+        parts = [
+            part.strip()
+            for part in raw.replace("；", ",").replace("、", ",").replace("/", ",").replace("，", ",").split(",")
+            if part.strip()
+        ]
+        cleaned: list[str] = []
+        for part in parts:
+            tokens = [token.strip() for token in part.split() if token.strip()]
+            cleaned.extend(tokens or [part])
+        return cleaned[:20]
+
+    def _build_limit_up_theme_events(self, matrix: dict[str, Any]) -> dict[str, Any]:
+        columns = self._list(matrix.get("columns")) if isinstance(matrix, dict) else []
+        rows: list[dict[str, Any]] = []
+        for col in columns:
+            if not isinstance(col, dict):
+                continue
+            rows.append({
+                "subject_key": self._text(col.get("subject_key")),
+                "theme_name": self._text(col.get("theme_name")),
+                "limit_up_count": self._int_or_none(col.get("limit_up_count")),
+                "active_mainline": bool(col.get("active_mainline")),
+                "lifecycle_state": self._text(col.get("lifecycle_state"), ""),
+                "trade_action": self._text(col.get("trade_action"), ""),
+                "representative_stocks": self._list(col.get("focus_stocks"))[:3],
+                "catalyst_events": self._list(col.get("catalyst_events")),
+            })
+        summary = self._limit_up_theme_events_summary(rows)
+        source = "structured" if rows else "none"
+        return {
+            "summary": summary,
+            "rows": rows[:10],
+            "themes": rows[:10],
+            "diagnostics": {
+                "source": source,
+                "theme_count": len(rows),
+                "catalyst_count": sum(len(item.get("catalyst_events") or []) for item in rows),
+                "candidate_count": len(rows),
+            },
+        }
+
+    def _limit_up_source_candidates(
+        self,
+        recap_doc: dict[str, Any],
+        *,
+        theme_name_map: dict[str, str] | None = None,
+    ) -> list[dict[str, Any]]:
+        candidates: list[dict[str, Any]] = []
+        seen: set[tuple[str, str, str, int]] = set()
+
+        def add_candidate(stock: dict[str, Any], subject_key: str, theme_name: str, source_kind: str, limit_up_count: int | None = None, active_mainline: bool = False, lifecycle_state: str = "", trade_action: str = "") -> None:
+            stock_id = self._text(self._first_present(stock, "stock_id", "stock_code", "stock_key"))
+            stock_name = self._text(stock.get("stock_name"))
+            board_count = self._int_or_none(self._first_present(stock, "board_count", "limit_up_days", "max_consecutive_limit_up_days"))
+            if board_count is None or board_count <= 0:
+                return
+            display_theme_name = self._display_theme_name(theme_name or subject_key, subject_key, theme_name_map)
+            dedupe_key = (
+                source_kind,
+                stock_id or stock_name,
+                display_theme_name or theme_name or subject_key,
+                int(board_count),
+            )
+            if dedupe_key in seen:
+                return
+            seen.add(dedupe_key)
+            candidates.append({
+                "stock_id": stock_id,
+                "stock_name": stock_name,
+                "subject_key": self._text(subject_key),
+                "theme_name": display_theme_name,
+                "board_count": 4 if board_count >= 4 else board_count,
+                "limit_up_count": self._int_or_none(limit_up_count),
+                "active_mainline": bool(active_mainline),
+                "lifecycle_state": self._text(lifecycle_state, ""),
+                "trade_action": self._text(trade_action, ""),
+                "role_label": self._text(self._first_present(stock, "role_label", "role"), ""),
+                "reason": self._text(self._first_present(stock, "reason", "rationale", "summary"), ""),
+                "source_kind": source_kind,
+            })
+
+        for stock in self._list(recap_doc.get("strong_stock_reviews")):
+            if isinstance(stock, dict):
+                add_candidate(
+                    stock,
+                    self._text(stock.get("subject_key")),
+                    self._text(stock.get("theme_name") or stock.get("resolved_theme_name") or stock.get("mainline_name")),
+                    "strong_stock_reviews",
+                )
+
+        decision = self._pass_through_dict(recap_doc, "post_market_decision_v2")
+        for stock in self._list(decision.get("strong_stock_pool_reviews")):
+            if isinstance(stock, dict):
+                add_candidate(
+                    stock,
+                    self._text(stock.get("subject_key")),
+                    self._text(stock.get("theme_name") or stock.get("mainline_name") or stock.get("resolved_theme_name")),
+                    "post_market_decision_v2.strong_stock_pool_reviews",
+                )
+
+        ladder = self._pass_through_dict(recap_doc, "limit_up_ladder")
+        for row in self._list(ladder.get("board_rows")):
+            if not isinstance(row, dict):
+                continue
+            board_count = self._int_or_none(row.get("board_count"))
+            if board_count is None or board_count <= 0:
+                continue
+            for stock in self._list(row.get("stocks")):
+                if not isinstance(stock, dict):
+                    continue
+                add_candidate(
+                    stock,
+                    self._text(self._first_present(stock, "subject_key", "theme_key") or row.get("subject_key")),
+                    self._text(self._first_present(stock, "theme_name") or row.get("theme_name") or row.get("subject_key")),
+                    "limit_up_ladder.board_rows",
+                    limit_up_count=self._int_or_none(row.get("stock_count")),
+                    active_mainline=bool(row.get("active_mainline")),
+                    lifecycle_state=self._text(row.get("lifecycle_state"), ""),
+                    trade_action=self._text(self._first_present(stock, "trade_action") or row.get("trade_action"), ""),
+                )
+
+        return candidates
+
+    def _build_mainline_stock_index(
+        self,
+        recap_doc: dict[str, Any],
+        theme_name_map: dict[str, str] | None = None,
+    ) -> dict[str, dict[str, Any]]:
+        index: dict[str, dict[str, Any]] = {}
+        rows = self._list(recap_doc.get("mainline_daily_states"))
+        for order, row in enumerate(rows):
+            if not isinstance(row, dict):
+                continue
+            mainline_name = self._text(row.get("mainline_name"))
+            canonical_subject_key = self._text(row.get("canonical_subject_key") or row.get("mainline_id"))
+            mainline_id = self._text(row.get("mainline_id"))
+            lifecycle_state = self._text(row.get("lifecycle_state"), "")
+            trade_action = self._text(row.get("action_advice") or row.get("trade_action"), "")
+            priority = self._float_or_none(row.get("mainline_strength_score")) or 0.0
+            base_info = {
+                "mainline_id": mainline_id,
+                "mainline_name": mainline_name,
+                "subject_key": canonical_subject_key,
+                "lifecycle_state": lifecycle_state,
+                "trade_action": trade_action,
+                "active_mainline": bool(row.get("mainline_alive") or row.get("mainline_trade_alive") or row.get("active_mainline")),
+                "priority": priority,
+                "order": order,
+            }
+            self._register_mainline_index_value(index, canonical_subject_key, base_info, priority=priority + 100.0)
+            self._register_mainline_index_value(index, mainline_id, base_info, priority=priority + 90.0)
+            self._register_mainline_index_value(index, mainline_name, base_info, priority=priority + 80.0)
+            for subject_key in self._list(row.get("active_subject_keys")):
+                self._register_mainline_index_value(index, self._text(subject_key), base_info, priority=priority + 70.0)
+            self._index_stock_rows(
+                index=index,
+                rows=self._list(row.get("focus_stocks")),
+                theme_name_map=None,
+                base_info=base_info,
+                priority=priority + 60.0,
+            )
+            self._index_stock_rows(
+                index=index,
+                rows=self._list(row.get("leader_stocks")),
+                theme_name_map=None,
+                base_info=base_info,
+                priority=priority + 60.0,
+            )
+            self._index_stock_rows(
+                index=index,
+                rows=self._list(row.get("representative_stocks")),
+                theme_name_map=None,
+                base_info=base_info,
+                priority=priority + 60.0,
+            )
+            self._index_stock_rows(
+                index=index,
+                rows=self._list(row.get("stocks")),
+                theme_name_map=None,
+                base_info=base_info,
+                priority=priority + 60.0,
+            )
+
+        self._index_stock_rows(
+            index=index,
+            rows=self._list(recap_doc.get("strong_stock_reviews")),
+            theme_name_map=theme_name_map,
+            priority=55.0,
+        )
+        decision = self._pass_through_dict(recap_doc, "post_market_decision_v2")
+        self._index_stock_rows(
+            index=index,
+            rows=self._list(decision.get("strong_stock_pool_reviews")),
+            theme_name_map=theme_name_map,
+            priority=55.0,
+        )
+        self._index_stock_rows(
+            index=index,
+            rows=self._context_rows(recap_doc, "stock_facts"),
+            theme_name_map=theme_name_map,
+            priority=50.0,
+        )
+        ladder = self._pass_through_dict(recap_doc, "limit_up_ladder")
+        self._index_stock_rows(
+            index=index,
+            rows=self._list(ladder.get("theme_rows")),
+            theme_name_map=theme_name_map,
+            priority=45.0,
+            nested_stock_fields=("representative_stocks",),
+        )
+        return index
+
+    def _index_stock_rows(
+        self,
+        *,
+        index: dict[str, dict[str, Any]],
+        rows: list[Any],
+        theme_name_map: dict[str, str] | None,
+        priority: float,
+        base_info: dict[str, Any] | None = None,
+        nested_stock_fields: tuple[str, ...] = (),
+    ) -> None:
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            theme_name = self._display_theme_name(
+                row.get("theme_name") or row.get("mainline_name") or row.get("subject_key"),
+                row.get("subject_key"),
+                theme_name_map,
+            )
+            if self._is_placeholder_theme_name(theme_name):
+                continue
+            subject_key = self._text(row.get("subject_key"))
+            mainline_name = self._text(row.get("mainline_name") or theme_name)
+            info = {
+                "mainline_id": self._text(row.get("mainline_id") or row.get("mainline_key")),
+                "mainline_name": mainline_name,
+                "subject_key": subject_key,
+                "lifecycle_state": self._text(row.get("lifecycle_state"), ""),
+                "trade_action": self._text(row.get("trade_action") or row.get("action_advice"), ""),
+                "active_mainline": bool(row.get("active_mainline") or row.get("mainline_alive") or row.get("mainline_trade_alive")),
+                "priority": priority,
+            }
+            if base_info:
+                for key in ("mainline_id", "mainline_name", "subject_key", "lifecycle_state", "trade_action", "active_mainline"):
+                    if key not in info or not info.get(key):
+                        info[key] = base_info.get(key)
+                info["priority"] = max(float(info.get("priority") or 0.0), float(base_info.get("priority") or 0.0))
+            if not self._is_placeholder_theme_name(subject_key):
+                self._register_mainline_index_value(index, subject_key, info, priority=priority + 100.0)
+            self._register_mainline_index_value(index, mainline_name, info, priority=priority + 90.0)
+            mainline_id = self._text(row.get("mainline_id"))
+            if not self._is_placeholder_theme_name(mainline_id):
+                self._register_mainline_index_value(index, mainline_id, info, priority=priority + 85.0)
+            self._register_mainline_index_value(index, self._text(row.get("stock_id")), info, priority=priority + 80.0)
+            self._register_mainline_index_value(index, self._text(row.get("stock_code")), info, priority=priority + 80.0)
+            self._register_mainline_index_value(index, self._text(row.get("stock_name")), info, priority=priority + 80.0)
+            raw_theme_name = self._text(row.get("theme_name"))
+            if not self._is_placeholder_theme_name(raw_theme_name):
+                self._register_mainline_index_value(index, raw_theme_name, info, priority=priority + 70.0)
+            for field in nested_stock_fields:
+                for stock in self._list(row.get(field)):
+                    if not isinstance(stock, dict):
+                        continue
+                    self._register_mainline_index_value(index, self._text(stock.get("stock_id")), info, priority=priority + 60.0)
+                    self._register_mainline_index_value(index, self._text(stock.get("stock_code")), info, priority=priority + 60.0)
+                    self._register_mainline_index_value(index, self._text(stock.get("stock_name")), info, priority=priority + 60.0)
+                    nested_subject_key = self._text(stock.get("subject_key"))
+                    if not self._is_placeholder_theme_name(nested_subject_key):
+                        self._register_mainline_index_value(index, nested_subject_key, info, priority=priority + 60.0)
+                    nested_theme_name = self._text(stock.get("theme_name"))
+                    if not self._is_placeholder_theme_name(nested_theme_name):
+                        self._register_mainline_index_value(index, nested_theme_name, info, priority=priority + 60.0)
+                    self._register_mainline_index_value(index, self._text(stock.get("mainline_name")), info, priority=priority + 60.0)
+
+    @staticmethod
+    def _register_mainline_index_value(
+        index: dict[str, dict[str, Any]],
+        key: Any,
+        value: dict[str, Any],
+        *,
+        priority: float,
+    ) -> None:
+        text = str(key or "").strip()
+        if not text:
+            return
+        current = index.get(text)
+        if current is None or float(current.get("priority") or 0.0) <= priority:
+            index[text] = {**value, "priority": priority}
+
+    def _resolve_limit_up_theme_for_stock(
+        self,
+        row: dict[str, Any],
+        mainline_index: dict[str, dict[str, Any]],
+        theme_name_map: dict[str, str] | None = None,
+    ) -> dict[str, Any]:
+        stock_keys = [
+            self._text(row.get("stock_id")),
+            self._text(row.get("stock_code")),
+            self._text(row.get("stock_name")),
+        ]
+        for key in stock_keys:
+            info = mainline_index.get(key)
+            if not info:
+                continue
+            resolved_theme_name = self._display_theme_name(info.get("mainline_name") or key, info.get("subject_key") or row.get("subject_key"), theme_name_map)
+            if self._is_placeholder_theme_name(resolved_theme_name):
+                continue
+            return {
+                "is_classified": True,
+                "subject_key": self._text(info.get("subject_key") or row.get("subject_key")),
+                "theme_name": resolved_theme_name,
+                "mainline_name": self._text(info.get("mainline_name") or resolved_theme_name),
+                "mainline_id": self._text(info.get("mainline_id")),
+                "active_mainline": bool(info.get("active_mainline") or row.get("active_mainline")),
+                "lifecycle_state": self._text(info.get("lifecycle_state") or row.get("lifecycle_state"), ""),
+                "trade_action": self._text(info.get("trade_action") or row.get("trade_action"), ""),
+                "reason": self._text(row.get("reason"), ""),
+                "match_key": key,
+                "priority": float(info.get("priority") or 0.0),
+            }
+
+        direct_theme_name = self._display_theme_name(row.get("theme_name") or row.get("subject_key"), row.get("subject_key"), theme_name_map)
+        if self._is_placeholder_theme_name(direct_theme_name):
+            return {
+                "is_classified": False,
+                "reason": "no_mainline_mapping",
+                "theme_name": direct_theme_name,
+                "subject_key": self._text(row.get("subject_key")),
+            }
+        return {
+            "is_classified": True,
+            "subject_key": self._text(row.get("subject_key")),
+            "theme_name": direct_theme_name,
+            "mainline_name": self._text(row.get("mainline_name") or direct_theme_name),
+            "mainline_id": self._text(row.get("mainline_id")),
+            "active_mainline": bool(row.get("active_mainline")),
+            "lifecycle_state": self._text(row.get("lifecycle_state"), ""),
+            "trade_action": self._text(row.get("trade_action"), ""),
+            "reason": self._text(row.get("reason"), ""),
+            "match_key": self._text(row.get("subject_key") or row.get("stock_id") or row.get("stock_name")),
+            "priority": 0.0,
+        }
+
+    @staticmethod
+    def _stock_identity_key(row: dict[str, Any]) -> str:
+        for key in ("stock_id", "stock_code", "stock_name"):
+            text = str(row.get(key) or "").strip()
+            if text:
+                return text
+        return ""
+
+    def _build_new_high_summary(self, recap_doc: dict[str, Any]) -> dict[str, Any]:
+        market_summary = self._pass_through_dict(recap_doc, "market_summary")
+        market_overview = self._pass_through_dict(recap_doc, "market_overview_review")
+        context = recap_doc.get("report_context") if isinstance(recap_doc.get("report_context"), dict) else {}
+        explicit = self._normalize_new_high_summary(recap_doc.get("new_high_summary"))
+        if explicit:
+            return explicit
+        explicit = self._normalize_new_high_summary(
+            self._first_present(
+                market_summary,
+                "new_high_summary",
+                "new_high",
+                "high_new_summary",
+                "new_high_review",
+            )
+        )
+        if explicit:
+            return explicit
+        explicit = self._normalize_new_high_summary(
+            self._first_present(
+                market_overview,
+                "new_high_summary",
+                "new_high",
+                "high_new_summary",
+            )
+        )
+        if explicit:
+            return explicit
+
+        rows = self._list(context.get("new_high_reviews")) if isinstance(context.get("new_high_reviews"), list) else []
+        if not rows:
+            rows = self._list(context.get("new_high_stocks")) if isinstance(context.get("new_high_stocks"), list) else []
+        if not rows:
+            rows = self._list(context.get("stock_facts")) if isinstance(context.get("stock_facts"), list) else []
+
+        today_rows: list[dict[str, Any]] = []
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            if not self._is_new_high_row(row):
+                continue
+            today_rows.append({
+                "stock_id": self._text(row.get("stock_id") or row.get("stock_code")),
+                "stock_name": self._text(row.get("stock_name")),
+                "industry_name": self._text(
+                    self._first_present(row, "industry_name", "industry", "sector_name", "theme_name", "subject_name")
+                ),
+                "pct_chg": self._float_or_none(row.get("pct_chg")),
+                "high_price": self._float_or_none(row.get("high_price")),
+                "close_price": self._float_or_none(row.get("close_price")),
+                "trade_date": self._text(row.get("trade_date"), ""),
+            })
+
+        industry_rows: dict[str, list[dict[str, Any]]] = {}
+        for row in today_rows:
+            key = row["industry_name"] or "未分类"
+            industry_rows.setdefault(key, []).append(row)
+        industry_summary = [
+            {
+                "industry_name": name,
+                "count": len(items),
+                "representative_stocks": items[:3],
+            }
+            for name, items in sorted(industry_rows.items(), key=lambda item: (-len(item[1]), item[0]))[:5]
+        ]
+        today_count = len(today_rows)
+        yesterday_count = self._int_or_none(self._first_present(market_summary, "new_high_yesterday", "new_high_count_yesterday"))
+        day_before_count = self._int_or_none(self._first_present(market_summary, "new_high_prev", "new_high_count_prev"))
+        if today_count == 0:
+            summary = "暂无结构化创新高数据"
+            source = "none"
+        else:
+            industries = "、".join([item["industry_name"] for item in industry_summary[:3] if item.get("industry_name")]) or "暂无明确行业聚焦"
+            reps = "、".join([item["stock_name"] for item in today_rows[:4] if item.get("stock_name")]) or "暂无代表股"
+            summary = f"今日创新高 {today_count} 家，集中在 {industries}，代表股 {reps}。"
+            source = "structured"
+        return {
+            "summary": summary,
+            "today_count": today_count or self._int_or_none(self._first_present(market_summary, "new_high_count", "today_new_high_count")),
+            "yesterday_count": yesterday_count,
+            "day_before_count": day_before_count,
+            "industry_summary": industry_summary,
+            "representative_stocks": today_rows[:10],
+            "diagnostics": {
+                "source": source,
+                "row_count": today_count,
+            },
+        }
+
+    def _build_seat_money_summary(
+        self,
+        recap_doc: dict[str, Any],
+        *,
+        stock_capital_reviews: list[dict[str, Any]] | None = None,
+        theme_capital_reviews: list[dict[str, Any]] | None = None,
+        theme_name_map: dict[str, str] | None = None,
+    ) -> dict[str, Any]:
+        money_flow_rows = self._list(recap_doc.get("money_flow_reviews")) if isinstance(recap_doc.get("money_flow_reviews"), list) else []
+        stock_capital_rows = self._list(stock_capital_reviews) if isinstance(stock_capital_reviews, list) else self._list(recap_doc.get("stock_capital_reviews")) if isinstance(recap_doc.get("stock_capital_reviews"), list) else []
+        theme_capital_rows = self._list(theme_capital_reviews) if isinstance(theme_capital_reviews, list) else self._list(recap_doc.get("theme_capital_reviews")) if isinstance(recap_doc.get("theme_capital_reviews"), list) else []
+        context = recap_doc.get("report_context") if isinstance(recap_doc.get("report_context"), dict) else {}
+        dragon_rows = self._list(recap_doc.get("dragon_tiger_reviews")) if isinstance(recap_doc.get("dragon_tiger_reviews"), list) else []
+        if not dragon_rows and isinstance(context, dict):
+            dragon_rows = self._list(context.get("dragon_tiger")) if isinstance(context.get("dragon_tiger"), list) else []
+        if not dragon_rows:
+            capital_rows = self._list(recap_doc.get("capital_reviews")) if isinstance(recap_doc.get("capital_reviews"), list) else []
+            if not capital_rows and isinstance(context, dict):
+                capital_rows = self._list(context.get("capital_reviews")) if isinstance(context.get("capital_reviews"), list) else []
+            if capital_rows:
+                dragon_rows = [
+                    {
+                        "stock_id": self._text(row.get("stock_code") or row.get("stock_id")),
+                        "stock_name": self._text(row.get("stock_name")),
+                        "theme_name": self._text(row.get("related_theme") or row.get("theme_name")),
+                        "seat_type": self._text(row.get("seat_type") or ("INSTITUTION" if self._float_or_none(row.get("net_buy_amount")) is None or float(row.get("net_buy_amount") or 0) >= 0 else "HOT_MONEY")),
+                        "hot_money_name": self._text(row.get("ai_comment")),
+                        "net_buy": self._float_or_none(row.get("net_buy_amount")),
+                        "side_summary": self._text(row.get("ai_comment")),
+                        "reason": self._text(row.get("ai_comment")),
+                    }
+                    for row in capital_rows
+                    if isinstance(row, dict)
+                ]
+        if not dragon_rows and stock_capital_rows:
+            dragon_rows = [
+                {
+                    "stock_id": self._text(row.get("stock_id") or row.get("stock_code")),
+                    "stock_name": self._text(row.get("stock_name")),
+                    "theme_name": self._text(self._first_present(row, "theme_name", "subject_name", "resolved_theme_name")),
+                    "seat_type": "INSTITUTION" if self._float_or_none(row.get("main_net_inflow")) is None or float(row.get("main_net_inflow") or 0) >= 0 else "HOT_MONEY",
+                    "hot_money_name": self._text((row.get("f10_capital") or {}).get("summary") if isinstance(row.get("f10_capital"), dict) else row.get("stock_name")),
+                    "net_buy": self._float_or_none(row.get("main_net_inflow")),
+                    "side_summary": self._text((row.get("f10_capital") or {}).get("summary") if isinstance(row.get("f10_capital"), dict) else ""),
+                    "reason": self._text((row.get("f10_capital") or {}).get("summary") if isinstance(row.get("f10_capital"), dict) else ""),
+                    "seat_summary": [],
+                    "institution_seat_count": None,
+                }
+                for row in stock_capital_rows
+                if isinstance(row, dict)
+            ]
+
+        hot_money_activity_rows = self._list(context.get("hot_money_activities")) if isinstance(context, dict) and isinstance(context.get("hot_money_activities"), list) else []
+
+        institution_rows: list[dict[str, Any]] = []
+        hot_money_legacy_rows: list[dict[str, Any]] = []
+        for row in dragon_rows:
+            if not isinstance(row, dict):
+                continue
+            seat_type = self._text(self._first_present(row, "seat_type", "seat_category", "seat_role", "role_type"))
+            structured_seats = [
+                seat for seat in self._dragon_tiger_seat_summary(
+                    self._first_present(row, "seat_summary", "seats", "seat_details", "seat_summaries")
+                )
+                if isinstance(seat, dict)
+            ]
+            buy_seat_count = sum(
+                1
+                for seat in structured_seats
+                if str(seat.get("side") or seat.get("side_label") or "").strip() in {"0", "买入席位", "BUY", "IN"}
+            )
+            sell_seat_count = sum(
+                1
+                for seat in structured_seats
+                if str(seat.get("side") or seat.get("side_label") or "").strip() in {"1", "卖出席位", "SELL", "OUT"}
+            )
+            institution_seat_count = self._int_or_none(self._first_present(row, "institution_seat_count", "org_seat_count", "institution_count"))
+            net_buy = self._float_or_none(self._first_present(row, "net_buy", "net_buy_amount", "lhb_net_buy", "net_amount"))
+            buy_amount = self._float_or_none(self._first_present(row, "buy_amount", "total_buy", "lhb_buy_amount", "buy", "billboard_buy_amount"))
+            sell_amount = self._float_or_none(self._first_present(row, "sell_amount", "total_sell", "lhb_sell_amount", "sell", "billboard_sell_amount"))
+            if net_buy is None and buy_amount is not None and sell_amount is not None:
+                net_buy = buy_amount - sell_amount
+            institution_rows.append(
+                {
+                    "stock_id": self._text(row.get("stock_id") or row.get("stock_code")),
+                    "stock_name": self._text(row.get("stock_name")),
+                    "close_price": self._float_or_none(self._first_present(row, "close_price", "close", "latest_close")),
+                    "pct_change": self._float_or_none(self._first_present(row, "pct_change", "pct_chg", "change_pct")),
+                    "buy_seat_count": buy_seat_count if structured_seats else institution_seat_count,
+                    "sell_seat_count": sell_seat_count if structured_seats else None,
+                    "institution_buy_amount": buy_amount,
+                    "institution_sell_amount": sell_amount,
+                    "net_buy": net_buy,
+                    "theme_name": self._text(self._first_present(row, "theme_name", "subject_name", "resolved_theme_name"), ""),
+                    "reason": self._nullable_text(self._first_present(row, "reason", "lhb_reason", "list_reason")),
+                    "seat_summary": structured_seats,
+                }
+            )
+            if seat_type in {"HOT_MONEY", "MIXED"} or self._nullable_text(self._first_present(row, "hot_money_name", "famous_seat", "seat_name", "hot_money")):
+                hot_money_legacy_rows.append(
+                    {
+                        "hot_money_name": self._text(self._first_present(row, "hot_money_name", "famous_seat", "seat_name", "hot_money")),
+                        "stock_id": self._text(row.get("stock_id") or row.get("stock_code")),
+                        "stock_name": self._text(row.get("stock_name")),
+                        "theme_name": self._text(self._first_present(row, "theme_name", "subject_name", "resolved_theme_name"), ""),
+                        "buy_amount": buy_amount,
+                        "sell_amount": sell_amount,
+                        "net_amount": net_buy,
+                        "reason": self._nullable_text(self._first_present(row, "reason", "lhb_reason", "list_reason")),
+                        "rank_order": self._int_or_none(self._first_present(row, "rank_order", "sort_order")),
+                        "is_theme_leader": bool(self._first_present(row, "is_leader", "leader_flag")),
+                        "style_tags": [],
+                    }
+                )
+
+        institution_rows.sort(key=lambda item: (-float(item.get("net_buy") or 0), str(item.get("stock_name") or "")))
+        institution_buy_rows = [row for row in institution_rows if (row.get("net_buy") or 0) >= 0][:20]
+        institution_sell_rows = [
+            row
+            for row in sorted(institution_rows, key=lambda item: (float(item.get("net_buy") or 0), str(item.get("stock_name") or "")))
+            if (row.get("net_buy") or 0) <= 0
+        ][:20]
+
+        hot_money_grouped: dict[str, dict[str, Any]] = {}
+        seen_hot_money: set[tuple[Any, ...]] = set()
+        for row in hot_money_activity_rows:
+            if not isinstance(row, dict):
+                continue
+            seat_name = self._text(self._first_present(row, "hot_money_name", "seat_name"))
+            if not seat_name:
+                continue
+            side = self._text(row.get("side"))
+            stock_id = self._text(row.get("stock_id"))
+            subject_key = self._text(row.get("subject_key"))
+            unique_key = (
+                seat_name,
+                side,
+                stock_id,
+                self._float_or_none(row.get("buy_amount")),
+                self._float_or_none(row.get("sell_amount")),
+                self._float_or_none(row.get("net_amount")),
+                self._nullable_text(row.get("reason")),
+            )
+            if unique_key in seen_hot_money:
+                continue
+            seen_hot_money.add(unique_key)
+            bucket = hot_money_grouped.setdefault(
+                seat_name,
+                {
+                    "hot_money_name": seat_name,
+                    "buy_entries": [],
+                    "sell_entries": [],
+                    "buy_net": 0.0,
+                    "sell_net": 0.0,
+                    "net_buy": 0.0,
+                },
+            )
+            entry = {
+                "stock_id": stock_id,
+                "stock_name": self._text(row.get("stock_name")),
+                "theme_name": self._text(self._first_present(row, "theme_name", "resolved_theme_name", "subject_key")),
+                "subject_key": subject_key,
+                "buy_amount": self._float_or_none(row.get("buy_amount")),
+                "sell_amount": self._float_or_none(row.get("sell_amount")),
+                "net_amount": self._float_or_none(row.get("net_amount")),
+                "reason": self._nullable_text(row.get("reason")),
+                "rank_order": self._int_or_none(row.get("rank_order")),
+                "is_theme_leader": bool(row.get("is_theme_leader")),
+                "style_tags": self._list(row.get("style_tags")) if isinstance(row.get("style_tags"), list) else [],
+            }
+            bucket["net_buy"] = float(bucket["net_buy"] or 0) + float(entry["net_amount"] or 0)
+            if side == "买入":
+                bucket["buy_net"] = float(bucket["buy_net"] or 0) + float(entry["net_amount"] or 0)
+                bucket["buy_entries"].append(entry)
+            elif side == "卖出":
+                bucket["sell_net"] = float(bucket["sell_net"] or 0) + float(entry["net_amount"] or 0)
+                bucket["sell_entries"].append(entry)
+
+        hot_money_buy_rows = []
+        hot_money_sell_rows = []
+        for bucket in hot_money_grouped.values():
+            bucket["buy_entries"] = sorted(bucket["buy_entries"], key=lambda item: (-float(item.get("net_amount") or 0), str(item.get("stock_name") or "")))[:3]
+            bucket["sell_entries"] = sorted(bucket["sell_entries"], key=lambda item: (-float(item.get("net_amount") or 0), str(item.get("stock_name") or "")))[:3]
+            if bucket["buy_entries"]:
+                hot_money_buy_rows.append(bucket)
+            if bucket["sell_entries"]:
+                hot_money_sell_rows.append(bucket)
+        if not hot_money_grouped and hot_money_legacy_rows:
+            legacy_grouped: dict[str, dict[str, Any]] = {}
+            for row in hot_money_legacy_rows:
+                seat_name = self._text(row.get("hot_money_name") or row.get("stock_name"))
+                if not seat_name:
+                    continue
+                bucket = legacy_grouped.setdefault(
+                    seat_name,
+                    {
+                        "hot_money_name": seat_name,
+                        "buy_entries": [],
+                        "sell_entries": [],
+                        "buy_net": 0.0,
+                        "sell_net": 0.0,
+                        "net_buy": 0.0,
+                    },
+                )
+                entry = {
+                    "stock_id": row.get("stock_id"),
+                    "stock_name": row.get("stock_name"),
+                    "theme_name": row.get("theme_name"),
+                    "subject_key": "",
+                    "buy_amount": row.get("buy_amount"),
+                    "sell_amount": row.get("sell_amount"),
+                    "net_amount": row.get("net_amount"),
+                    "reason": row.get("reason"),
+                    "rank_order": row.get("rank_order"),
+                    "is_theme_leader": row.get("is_theme_leader"),
+                    "style_tags": row.get("style_tags") or [],
+                }
+                bucket["net_buy"] = float(bucket["net_buy"] or 0) + float(entry["net_amount"] or 0)
+                if float(entry["net_amount"] or 0) >= 0:
+                    bucket["buy_net"] = float(bucket["buy_net"] or 0) + float(entry["net_amount"] or 0)
+                    bucket["buy_entries"].append(entry)
+                else:
+                    bucket["sell_net"] = float(bucket["sell_net"] or 0) + float(entry["net_amount"] or 0)
+                    bucket["sell_entries"].append(entry)
+            for bucket in legacy_grouped.values():
+                bucket["buy_entries"] = sorted(bucket["buy_entries"], key=lambda item: (-float(item.get("net_amount") or 0), str(item.get("stock_name") or "")))[:3]
+                bucket["sell_entries"] = sorted(bucket["sell_entries"], key=lambda item: (-float(item.get("net_amount") or 0), str(item.get("stock_name") or "")))[:3]
+                if bucket["buy_entries"]:
+                    hot_money_buy_rows.append(bucket)
+                if bucket["sell_entries"]:
+                    hot_money_sell_rows.append(bucket)
+            hot_money_grouped = legacy_grouped
+        hot_money_buy_rows.sort(key=lambda item: (-float(item.get("net_buy") or 0), str(item.get("hot_money_name") or "")))
+        hot_money_sell_rows.sort(key=lambda item: (float(item.get("net_buy") or 0), str(item.get("hot_money_name") or "")))
+
+        hot_money_sum = sum(float(bucket.get("net_buy") or 0) for bucket in hot_money_grouped.values())
+        institution_sum = sum(float(row.get("net_buy") or 0) for row in institution_rows)
+        if institution_rows and hot_money_grouped:
+            if (institution_sum >= 0) == (hot_money_sum >= 0):
+                cohesion = "同向"
+            else:
+                cohesion = "分歧"
+        elif institution_rows or hot_money_grouped:
+            cohesion = "未知"
+        else:
+            cohesion = "未知"
+
+        theme_rows = [
+            {
+                "theme_name": self._display_theme_name(
+                    row.get("theme_name") or row.get("subject_name") or row.get("resolved_theme_name"),
+                    row.get("subject_key") or row.get("mainline_name"),
+                    theme_name_map,
+                ),
+                "stock_name": self._text(row.get("stock_name")),
+                "main_net_inflow": self._float_or_none(self._first_present(row, "main_net_inflow", "net_inflow", "net_inflow_amount")),
+                "money_flow_tier": self._nullable_text(row.get("money_flow_tier")),
+                "role_enhanced": self._nullable_text(row.get("role_enhanced")),
+            }
+            for row in money_flow_rows[:10]
+            if isinstance(row, dict)
+        ]
+        if not theme_rows and theme_capital_rows:
+            theme_rows = [
+                {
+                    "theme_name": self._display_theme_name(row.get("theme_name"), row.get("subject_key"), theme_name_map),
+                    "stock_name": self._text(row.get("theme_name")),
+                    "main_net_inflow": self._float_or_none(self._first_present(row, "total_inflow", "leader_inflow", "top3_inflow")),
+                    "money_flow_tier": self._nullable_text(row.get("tier")),
+                    "role_enhanced": self._nullable_text(self._first_present(row, "action", "cycle_stage")),
+                }
+                for row in theme_capital_rows[:10]
+                if isinstance(row, dict)
+            ]
+        if not theme_rows and dragon_rows:
+            theme_rows = [
+                {
+                    "theme_name": self._display_theme_name(row.get("theme_name"), row.get("subject_key"), theme_name_map),
+                    "stock_name": self._text(row.get("stock_name")),
+                    "main_net_inflow": self._float_or_none(self._first_present(row, "net_buy", "net_buy_amount")),
+                    "money_flow_tier": self._nullable_text(row.get("seat_type")),
+                    "role_enhanced": self._nullable_text(row.get("seat_type")),
+                }
+                for row in dragon_rows[:10]
+                if isinstance(row, dict)
+            ]
+        if not theme_rows and hot_money_activity_rows:
+            theme_rows = [
+                {
+                    "theme_name": self._display_theme_name(self._first_present(row, "theme_name", "resolved_theme_name", "subject_key"), row.get("subject_key"), theme_name_map),
+                    "stock_name": self._text(row.get("stock_name")),
+                    "main_net_inflow": self._float_or_none(row.get("net_amount")),
+                    "money_flow_tier": self._nullable_text(row.get("hot_money_name")),
+                    "role_enhanced": self._nullable_text(row.get("side")),
+                }
+                for row in hot_money_activity_rows[:10]
+                if isinstance(row, dict)
+            ]
+        theme_rows.sort(key=lambda item: (-float(item.get("main_net_inflow") or 0), str(item.get("theme_name") or "")))
+
+        if not institution_rows and not hot_money_grouped:
+            summary = "暂无结构化机构席位/游资数据"
+            source = "none"
+        else:
+            institution_text = "、".join([row["stock_name"] for row in institution_buy_rows[:3] if row.get("stock_name")]) or "暂无机构重点"
+            hot_money_focus_rows = (hot_money_buy_rows[:3] or hot_money_sell_rows[:3])
+            hot_money_text = "、".join([row["hot_money_name"] for row in hot_money_focus_rows if row.get("hot_money_name")]) or "暂无游资重点"
+            theme_text = "、".join(
+                [row["theme_name"] for row in theme_rows[:3] if row.get("theme_name")]
+            ) or "暂无主题聚焦"
+            summary = f"机构关注 {institution_text}，游资关注 {hot_money_text}，资金整体{cohesion}，主题聚焦 {theme_text}。"
+            source = "structured"
+
+        return {
+            "summary": summary,
+            "cohesion": cohesion,
+            "institution_net_buy": institution_sum,
+            "hot_money_net_buy": hot_money_sum,
+            "institution_buy_rows": institution_buy_rows,
+            "institution_sell_rows": institution_sell_rows,
+            "hot_money_buy_rows": hot_money_buy_rows,
+            "hot_money_sell_rows": hot_money_sell_rows,
+            "institution_top_buys": institution_buy_rows[:3],
+            "institution_top_sells": institution_sell_rows[:3],
+            "hot_money_top_buys": hot_money_buy_rows[:3],
+            "hot_money_top_sells": hot_money_sell_rows[:3],
+            "theme_rows": theme_rows[:10],
+            "diagnostics": {
+                "source": source,
+                "dragon_tiger_row_count": len(dragon_rows),
+                "money_flow_row_count": len(money_flow_rows),
+                "hot_money_activity_row_count": len(hot_money_activity_rows),
+                "institution_row_count": len(institution_rows),
+                "hot_money_seat_count": len(hot_money_grouped),
+            },
+        }
+
     def _build_watchlist_reviews(self, recap_doc: dict[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
         source_key, source_rows = self._first_non_empty_list_source(
             recap_doc,
@@ -1475,8 +2541,8 @@ class PostMarketDailyReviewV2Builder:
         return []
 
     @staticmethod
-    def _text(value: Any) -> str:
-        return str(value or "").strip()
+    def _text(value: Any, default: str = "") -> str:
+        return str(value).strip() if value not in (None, "") else default
 
     @classmethod
     def _nullable_text(cls, value: Any) -> str | None:
@@ -1508,6 +2574,14 @@ class PostMarketDailyReviewV2Builder:
             if value not in (None, ""):
                 return value
         return None
+
+    @staticmethod
+    def _theme_key(*values: Any) -> str:
+        for value in values:
+            text = str(value or "").strip().lower()
+            if text:
+                return "".join(ch for ch in text if not ch.isspace())
+        return ""
 
     @classmethod
     def _first_list_source(
@@ -1930,6 +3004,283 @@ class PostMarketDailyReviewV2Builder:
             "unknown": "未知",
         }
         return labels.get(role, "未知")
+
+    @staticmethod
+    def _limit_up_ladder_summary(board_rows: list[dict[str, Any]], theme_rows: list[dict[str, Any]]) -> str:
+        ladder_parts = [
+            f"{row['board_label']} {row['stock_count']} 只"
+            for row in board_rows
+            if int(row.get("stock_count") or 0) > 0
+        ]
+        theme_parts = []
+        for row in theme_rows:
+            theme_name = str(row.get("theme_name") or "").strip()
+            if not theme_name or PostMarketDailyReviewV2Builder._is_placeholder_theme_name(theme_name):
+                continue
+            theme_parts.append(theme_name)
+            if len(theme_parts) >= 3:
+                break
+        if not ladder_parts and not theme_parts:
+            return "暂无结构化连板梯队数据"
+        ladder_text = "，".join(ladder_parts) if ladder_parts else "梯队暂无显著分布"
+        theme_text = "、".join(theme_parts) if theme_parts else "暂无明确热点题材"
+        return f"连板梯队分布：{ladder_text}；热点题材：{theme_text}。"
+
+    @staticmethod
+    def _limit_up_theme_events_summary(rows: list[dict[str, Any]]) -> str:
+        themes: list[str] = []
+        for row in rows:
+            theme_name = str(row.get("theme_name") or "").strip()
+            if not theme_name or PostMarketDailyReviewV2Builder._is_placeholder_theme_name(theme_name):
+                continue
+            themes.append(theme_name)
+            if len(themes) >= 3:
+                break
+        if not themes:
+            return "暂无结构化涨停题材事件"
+        return f"涨停事件聚焦 { '、'.join(themes) }，优先观察板位股与催化事件是否继续扩散。"
+
+    @staticmethod
+    def _limit_up_theme_matrix_summary(columns: list[dict[str, Any]], board_totals: dict[str, int]) -> str:
+        themes: list[str] = []
+        for row in columns:
+            theme_name = str(row.get("theme_name") or "").strip()
+            if not theme_name or PostMarketDailyReviewV2Builder._is_placeholder_theme_name(theme_name):
+                continue
+            themes.append(theme_name)
+            if len(themes) >= 3:
+                break
+        if not themes:
+            return "暂无结构化涨停热点矩阵"
+        board_text = "，".join(
+            f"{label} {int(board_totals.get(label, 0) or 0)} 只"
+            for label in ("4", "3", "2", "1")
+        )
+        return f"涨停热点矩阵：{board_text}；热点题材：{'、'.join(themes)}。"
+
+    @staticmethod
+    def _display_theme_name(value: Any, subject_key: Any = "", theme_name_map: dict[str, str] | None = None) -> str:
+        text = str(value or "").strip()
+        sk = str(subject_key or "").strip()
+        if theme_name_map:
+            mapped = str(theme_name_map.get(sk) or "").strip()
+            if mapped and not mapped.isdigit() and not PostMarketDailyReviewV2Builder._is_placeholder_theme_name(mapped):
+                return mapped
+        lowered = text.lower()
+        if not text:
+            return "未归类"
+        if lowered in {"__independent__", "independent", "unknown"} or text.startswith("__"):
+            return "未归类"
+        return text
+
+    def _build_theme_name_map(self, recap_doc: dict[str, Any]) -> dict[str, str]:
+        result: dict[str, str] = {}
+        context = recap_doc.get("report_context") if isinstance(recap_doc.get("report_context"), dict) else {}
+        for source in (context.get("theme_name_map"), recap_doc.get("theme_name_map")):
+            if not isinstance(source, dict):
+                continue
+            for key, value in source.items():
+                sk = str(key or "").strip()
+                name = str(value or "").strip()
+                if sk and name:
+                    result.setdefault(sk, name)
+        matrix = recap_doc.get("limit_up_theme_matrix")
+        if isinstance(matrix, dict):
+            columns = matrix.get("columns")
+            for column in columns if isinstance(columns, list) else []:
+                if not isinstance(column, dict):
+                    continue
+                sk = str(column.get("subject_key") or "").strip()
+                name = str(column.get("theme_name") or column.get("mainline_name") or "").strip()
+                if sk and name and not self._is_placeholder_theme_name(name):
+                    result.setdefault(sk, name)
+        mainline_rows = recap_doc.get("mainline_daily_states")
+        if isinstance(mainline_rows, list):
+            for row in mainline_rows:
+                if not isinstance(row, dict):
+                    continue
+                canonical_key = str(row.get("canonical_subject_key") or row.get("mainline_id") or "").strip()
+                mainline_name = str(row.get("mainline_name") or "").strip()
+                if canonical_key and mainline_name:
+                    result.setdefault(canonical_key, mainline_name)
+                mainline_id = str(row.get("mainline_id") or "").strip()
+                if mainline_id and mainline_name:
+                    result.setdefault(mainline_id, mainline_name)
+        active_universe = recap_doc.get("active_mainline_universe")
+        if isinstance(active_universe, dict):
+            active_mainlines = active_universe.get("active_mainlines")
+            if isinstance(active_mainlines, list):
+                for ml in active_mainlines:
+                    if not isinstance(ml, dict):
+                        continue
+                    canonical_key = str(ml.get("canonical_subject_key") or "").strip()
+                    mainline_name = str(ml.get("mainline_name") or "").strip()
+                    mainline_id = str(ml.get("mainline_id") or "").strip()
+                if canonical_key and mainline_name:
+                    result.setdefault(canonical_key, mainline_name)
+                if mainline_id and mainline_name:
+                    result.setdefault(mainline_id, mainline_name)
+        return result
+
+    @staticmethod
+    def _limit_up_theme_matrix_catalyst_events(
+        driver_index: dict[str, list[dict[str, Any]]],
+        subject_key: str,
+        theme_name: str,
+        mainline_name: str | None = None,
+    ) -> list[dict[str, Any]]:
+        keys = [
+            subject_key,
+            theme_name,
+            mainline_name,
+            PostMarketDailyReviewV2Builder._theme_key(subject_key, theme_name),
+            PostMarketDailyReviewV2Builder._theme_key(subject_key, mainline_name),
+            PostMarketDailyReviewV2Builder._theme_key(theme_name, mainline_name),
+        ]
+        events: list[dict[str, Any]] = []
+        seen: set[tuple[str, str]] = set()
+        for key in keys:
+            text = str(key or "").strip()
+            if not text:
+                continue
+            for event in driver_index.get(text, []):
+                match_reason = str(event.get("match_reason") or "").strip()
+                event_id = str(event.get("event_id") or "")
+                summary = str(event.get("summary") or "").strip()
+                theme_names = [
+                    str(value or "").strip()
+                    for value in (theme_name, mainline_name)
+                    if str(value or "").strip()
+                ]
+                theme_name_hit = any(
+                    name in summary and f"与{name}无关" not in summary
+                    for name in theme_names
+                )
+                if not match_reason and not theme_name_hit:
+                    continue
+                if not match_reason:
+                    match_reason = "theme_name_in_summary"
+                dedupe_key = (event_id, summary)
+                if dedupe_key in seen:
+                    continue
+                seen.add(dedupe_key)
+                events.append({
+                    "event_id": event.get("event_id"),
+                    "summary": summary,
+                    "event_time": event.get("event_time"),
+                    "confidence": event.get("confidence"),
+                    "match_reason": match_reason,
+                })
+                if len(events) >= 5:
+                    return events
+        return events
+
+    @staticmethod
+    def _limit_up_driver_event_index(
+        theme_driver_events: list[dict[str, Any]] | None,
+        theme_name_map: dict[str, str] | None = None,
+    ) -> dict[str, list[dict[str, Any]]]:
+        index: dict[str, list[dict[str, Any]]] = {}
+        for item in theme_driver_events or []:
+            if not isinstance(item, dict):
+                continue
+            subject_key = str(item.get("subject_key") or "").strip()
+            theme_name = str(item.get("theme_name") or "").strip()
+            resolved_theme_name = str(item.get("resolved_theme_name") or "").strip()
+            if theme_name_map:
+                theme_name = str(theme_name_map.get(subject_key) or theme_name or "").strip()
+            events = item.get("driver_events")
+            if not isinstance(events, list):
+                continue
+            alias_theme_name = str(theme_name_map.get(subject_key) if theme_name_map else "").strip()
+            for key in {
+                subject_key,
+                theme_name,
+                resolved_theme_name,
+                PostMarketDailyReviewV2Builder._theme_key(subject_key, theme_name),
+                PostMarketDailyReviewV2Builder._theme_key(subject_key, resolved_theme_name),
+                PostMarketDailyReviewV2Builder._theme_key(theme_name, resolved_theme_name),
+                PostMarketDailyReviewV2Builder._theme_key(subject_key, alias_theme_name),
+            }:
+                text = str(key or "").strip()
+                if not text:
+                    continue
+                bucket = index.setdefault(text, [])
+                for event in events:
+                    if isinstance(event, dict):
+                        bucket.append(event)
+        return index
+
+    @staticmethod
+    def _mainline_theme_order_map(recap_doc: dict[str, Any], theme_name_map: dict[str, str] | None = None) -> dict[str, int]:
+        result: dict[str, int] = {}
+        rows = recap_doc.get("mainline_daily_states")
+        if not isinstance(rows, list):
+            return result
+        for idx, row in enumerate(rows):
+            if not isinstance(row, dict):
+                continue
+            mainline_name = str(row.get("mainline_name") or "").strip()
+            canonical_key = str(row.get("canonical_subject_key") or row.get("mainline_id") or "").strip()
+            if mainline_name:
+                result.setdefault(mainline_name, idx)
+            if canonical_key and theme_name_map:
+                mapped = str(theme_name_map.get(canonical_key) or "").strip()
+                if mapped:
+                    result.setdefault(mapped, idx)
+        return result
+
+    @staticmethod
+    def _is_placeholder_theme_name(value: Any) -> bool:
+        text = str(value or "").strip()
+        if not text:
+            return True
+        lowered = text.lower()
+        return lowered in {"__independent__", "independent", "unknown", "未分类", "未归类"} or text.startswith("__") or text.isdigit()
+
+    @staticmethod
+    def _normalize_new_high_summary(value: Any) -> dict[str, Any]:
+        if not isinstance(value, dict) or not value:
+            return {}
+        summary = str(value.get("summary") or value.get("conclusion") or value.get("text") or "").strip()
+        today_count = value.get("today_count") or value.get("new_high_count") or value.get("count")
+        try:
+            today_count = int(today_count) if today_count not in (None, "") else None
+        except Exception:
+            today_count = None
+        return {
+            "summary": summary or "暂无结构化创新高摘要",
+            "today_count": today_count,
+            "yesterday_count": value.get("yesterday_count"),
+            "day_before_count": value.get("day_before_count"),
+            "industry_summary": value.get("industry_summary") if isinstance(value.get("industry_summary"), list) else [],
+            "representative_stocks": value.get("representative_stocks") if isinstance(value.get("representative_stocks"), list) else [],
+            "diagnostics": value.get("diagnostics") if isinstance(value.get("diagnostics"), dict) else {},
+        }
+
+    @staticmethod
+    def _is_new_high_row(row: dict[str, Any]) -> bool:
+        flags = (
+            row.get("is_new_high"),
+            row.get("new_high"),
+            row.get("hit_new_high"),
+            row.get("high_52w"),
+            row.get("new_high_52w"),
+            row.get("new_high_20d"),
+            row.get("new_high_60d"),
+            row.get("new_high_250d"),
+        )
+        if any(bool(flag) for flag in flags):
+            return True
+        high_price = row.get("high_price")
+        close_price = row.get("close_price")
+        pre_close = row.get("pre_close")
+        if high_price not in (None, "") and close_price not in (None, "") and pre_close not in (None, ""):
+            try:
+                return float(high_price) >= float(close_price) >= float(pre_close)
+            except Exception:
+                return False
+        return False
 
     @staticmethod
     def _candidate_level(source: dict[str, Any]) -> str:

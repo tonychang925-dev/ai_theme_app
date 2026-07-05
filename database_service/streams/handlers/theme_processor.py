@@ -535,6 +535,15 @@ class ThemeProcessor:
             event_id = payload.get("event_id")
             if not event_id:
                 raise ValueError("structured payload 缺少 event_id")
+            if isinstance(event_id, str) and not event_id.isdigit():
+                logger.warning(
+                    "structured payload 的 event_id 为非数字临时ID（事件未落库或落库失败），跳过: "
+                    "event_id=%s message_id=%s",
+                    event_id,
+                    message_id,
+                )
+                await self._ack_message(stream_name, message_id)
+                return
 
             event_row = await self.gateway.get_news_event_for_match(int(event_id))
             if not event_row:

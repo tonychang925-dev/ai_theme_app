@@ -178,6 +178,8 @@ class CollectionJobManager:
         # ── 其余采集/构建任务 ──
         if options.get("dragon_tiger", True):
             tasks.append(CollectionTaskState(key="dragon_tiger", title="龙虎榜构建"))
+        if options.get("hot_money_activity", True):
+            tasks.append(CollectionTaskState(key="hot_money_activity", title="游资动向活动表构建"))
         if options.get("f10_capital", False):
             tasks.append(CollectionTaskState(key="f10_capital", title="F10资金动向快照"))
         if options.get("index_kline", True):
@@ -190,6 +192,11 @@ class CollectionJobManager:
             tasks.append(CollectionTaskState(key="leader_llm", title="龙头候选LLM裁决"))
         if options.get("recap_snapshot", False):
             tasks.append(CollectionTaskState(key="recap_snapshot", title="盘后复盘快照生成"))
+
+        # ── M4/M5 Evidence Layer 采集 ──
+        if options.get("evidence_collection", False):
+            tasks.append(CollectionTaskState(key="evidence_collection", title="多源证据采集（THS+CNInfo+EPS+Research）"))
+
         return tasks
 
     def _append_log(self, job: CollectionJob, message: str) -> None:
@@ -344,11 +351,13 @@ class CollectionJobManager:
         if not isinstance(stock_ids, list):
             stock_ids = []
         normalized = [str(item).strip() for item in stock_ids if str(item).strip()]
-        if not normalized:
-            normalized = await self._resolve_f10_capital_stock_ids(trade_date)
         prepared = copy.deepcopy(payload)
-        prepared["stock_ids"] = normalized
-        prepared.setdefault("options", {})["stock_ids"] = normalized
+        # 不在启动前强行解析 subject pool:
+        # f10_capital 作为编排中的一个后置 step，应该在运行时读取前置步骤写入的池子。
+        # 若前置步骤没有提供 stock_ids，则保留为空，交给 runner 在执行阶段兜底。
+        if normalized:
+            prepared["stock_ids"] = normalized
+            prepared.setdefault("options", {})["stock_ids"] = normalized
         return prepared
 
     def _latest_jyhf_subject_keys(self) -> list[str]:

@@ -67,7 +67,7 @@ class NewsStreamProcessor:
         # 处理器配置
         self.processor_config = {
             "processor_group": self.config.get("processor_group", "news_business_processors"),
-            "processor_name": f"business_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
+            "processor_name": self.config.get("processor_name", "news_processor_worker"),
             "event_types": ["news.stored", "news.updated"],  # 监听的事件类型
             "enable_ai_analysis": self.config.get("enable_ai_analysis", True),  # 🔥 默认启用
             "enable_local_triage": self.config.get("enable_local_triage", True),
@@ -87,6 +87,7 @@ class NewsStreamProcessor:
             "structuring_max_retries": int(self.config.get("structuring_max_retries", 2)),
             "structuring_retry_delay_s": float(self.config.get("structuring_retry_delay_s", 1)),
             "structuring_circuit_breaker_threshold": int(self.config.get("structuring_circuit_breaker_threshold", 5)),
+            "structuring_circuit_breaker_recovery_timeout_s": int(self.config.get("structuring_circuit_breaker_recovery_timeout_s", 120)),
         }
 
         self.local_triage_service = None
@@ -132,11 +133,18 @@ class NewsStreamProcessor:
             "triage_false_positive_review_count": 0,
             "sentiment_analysis_count": 0,
             "topic_extraction_count": 0,
-            "business_results": []
+            "business_results": [],
+            # 结构化熔断器统计
+            "structuring_circuit_breaker_state": "CLOSED",
+            "fallback_structured_count": 0,
+            "fallback_published_count": 0,
+            "fallback_suppressed_count": 0,
+            "last_structuring_error": None,
         }
         self._structuring_consecutive_timeouts = 0
         self._structuring_circuit_breaker_open = False
         self._structuring_circuit_breaker_open_at = None
+        self._structuring_circuit_breaker_opened_time = 0  # 熔断打开的时间戳
         
         logger.info(f"🧠 新闻Stream业务处理器初始化")
         logger.info(f"   处理器组: {self.processor_config['processor_group']}")
@@ -177,50 +185,79 @@ class NewsStreamProcessor:
         return True
     
     async def _business_processing_loop(self):
-        """业务处理主循环"""
+        """业务处理主循环
+
+        Phase 4F: 读取和处理分离。消费者读完立即返回继续心跳，
+        LLM 处理在后台异步执行，避免阻塞导致 Redis 消费者变僵尸。
+
+        Phase 6A fix: 移除背压阻塞（之前的 _max_concurrent 检查在
+        _listen_for_events 之前，导致 LLM call hang 时 consumer 永远
+        不再调用 XREADGROUP → Redis 认为 consumer idle → 变僵尸）。
+        现在永远先读再处理，consumer 始终存活。
+        """
         logger.info("进入业务处理循环...")
-        
+
+        _max_concurrent = int(os.getenv("PROCESSOR_MAX_CONCURRENT_TASKS", "3"))
+        _processing_tasks: set[asyncio.Task] = set()
+
         while self.running:
             try:
-                # 监听事件（这里需要根据event_bus的实际接口调整）
-                events = await self._listen_for_events()
-                
-                if events:
-                    logger.info(f"📨 收到 {len(events)} 个业务事件")
-                    
-                    # 批量处理事件
-                    processing_results = await self._process_events_batch(events)
-                    
-                    # 更新统计
-                    await self._update_business_stats(processing_results)
+                # 清理已完成的后台任务
+                _processing_tasks = {t for t in _processing_tasks if not t.done()}
 
-                    # 确认处理成功的消息
-                    await self._acknowledge_processed_events(events, processing_results)
-                    
+                # Phase 6A: 永远先读 stream，保持 consumer 存活。
+                # 即使处理积压也不跳过 XREADGROUP — 否则 consumer idle 变僵尸。
+                events = await self._listen_for_events()
+
+                if events:
+                    logger.info(f"📨 收到 {len(events)} 个业务事件 (并发处理: {len(_processing_tasks)})")
+
+                    if len(_processing_tasks) >= _max_concurrent:
+                        logger.warning(
+                            "⚠️ 处理积压: %d/%d 槽位占用，跳过本批 %d 个事件（已 ACK，不会重投）",
+                            len(_processing_tasks), _max_concurrent, len(events),
+                        )
+                    else:
+                        # 直接在后台处理 — _process_events_batch 内部有 asyncio.wait 超时保护
+                        task = asyncio.create_task(self._process_events_batch(events))
+                        _processing_tasks.add(task)
+
+                        def _on_done(t: asyncio.Task, _events=events) -> None:
+                            try:
+                                results = t.result()
+                                asyncio.create_task(self._update_business_stats(results))
+                            except Exception:
+                                pass
+                        task.add_done_callback(_on_done)
+
                 else:
-                    # 没有事件时
                     if self.business_stats["total_events"] % 10 == 0:
                         logger.info(f"⏳ 等待业务事件... (已处理: {self.business_stats['processed_events']})")
                     await asyncio.sleep(5)
-                    
+
             except asyncio.CancelledError:
                 logger.info("业务处理服务被取消")
                 break
             except Exception as e:
                 logger.error(f"业务处理循环异常: {e}")
                 await asyncio.sleep(5)
+
+        # 等待所有后台任务完成
+        if _processing_tasks:
+            logger.info("等待 %d 个后台处理任务完成...", len(_processing_tasks))
+            await asyncio.gather(*_processing_tasks, return_exceptions=True)
     
     async def _listen_for_events(self) -> List[Dict[str, Any]]:
-        """监听事件 - 从 events_normal Stream消费news.stored事件
+        """监听事件 - 直接从 news_raw Stream消费原始新闻消息
 
         Phase 6A: 连续 N 批消息全部因 run_id 不匹配被过滤时，
                   触发 fast-forward 到 $，避免逐条 ACK 旧消息。
         """
         try:
             if hasattr(self.event_bus, 'consume_from_stream'):
-                # 从独立业务事件流消费，避免与news_raw原始流形成回路
+                # Phase 4F: 直接从 news:raw 消费，跳过废弃的 events:normal 中转
                 messages = await self.event_bus.consume_from_stream(
-                    stream="events_normal",
+                    stream="news_raw",
                     group=self.processor_config["processor_group"],
                     consumer=self.processor_config["processor_name"],
                     count=self.processor_config["batch_size"],
@@ -262,6 +299,9 @@ class NewsStreamProcessor:
 
                     # 检查事件类型是否符合监听类型
                     event_type = event_data.get('event_type')
+                    # Phase 4F: raw news 消息无 event_type，但有 news_id → 视为 "news.stored"
+                    if not event_type and event_data.get('news_id'):
+                        event_type = "news.stored"
                     logger.debug(f"检查事件类型: {event_type}, 监听类型: {self.processor_config['event_types']}")
 
                     if event_type in self.processor_config["event_types"]:
@@ -283,8 +323,11 @@ class NewsStreamProcessor:
                         logger.info(f"✅ 识别到事件: {event_type}, 消息ID: {msg_id}")
                     else:
                         logger.debug(f"不是监听的事件类型: {event_type}")
-                    # 记录所有消息ID用于确认
+                    # Phase 4F: 立即逐条 ack 所有消息，防止 LLM 处理慢导致僵尸消费者
                     message_ids_to_ack.append(msg_id)
+                    if len(message_ids_to_ack) >= 5:
+                        await self._acknowledge_messages(message_ids_to_ack)
+                        message_ids_to_ack.clear()
 
                 # Phase 6A: fast-forward when stuck on stale run_id messages
                 if messages and stale_run_id_count > 0 and stale_run_id_count == len(messages):
@@ -296,7 +339,7 @@ class NewsStreamProcessor:
                         )
                         try:
                             await self.event_bus.redis.xgroup_setid(
-                                self.event_bus._stream_definitions["events_normal"]["key"],
+                                self.event_bus._stream_definitions["news_raw"]["key"],
                                 self.processor_config["processor_group"],
                                 "$",
                             )
@@ -319,58 +362,79 @@ class NewsStreamProcessor:
             return []
     
     async def _process_events_batch(self, events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        """处理事件批次 - 优化版：并行处理以提高AI分析效率"""
+        """处理事件批次 — 并行处理 + 超时保护，保留已完成任务的结果。
+
+        使用 asyncio.wait 替代 asyncio.gather：
+        - 超时后已完成的任务结果保留，不会全部丢弃
+        - 未完成的任务被取消，记录为 batch_timeout
+        """
         if not events:
             return []
 
-        # 记录批次信息
         logger.info(f"🧠 并行处理批次: {len(events)} 个事件")
 
-        # 创建并行处理任务
-        tasks = [self._process_single_event(event) for event in events]
+        batch_timeout = float(os.getenv("PROCESSOR_BATCH_HARD_TIMEOUT_S", "120"))
+
+        tasks = [asyncio.ensure_future(self._process_single_event(event)) for event in events]
 
         try:
-            # 并行执行所有任务，允许异常返回
-            results = await asyncio.gather(*tasks, return_exceptions=True)
+            done, pending = await asyncio.wait(tasks, timeout=batch_timeout)
+        except Exception as exc:
+            logger.error(f"批次处理异常: {exc}")
+            for t in tasks:
+                if not t.done():
+                    t.cancel()
+            logger.warning("⚠️  回退到顺序处理")
+            return await self._sequential_process_events_batch(events)
 
-            processed_results = []
-            success_count = 0
-            error_count = 0
+        # 取消超时任务
+        if pending:
+            logger.warning(
+                "⏰ 批次部分超时 (%.0fs): %d/%d 个事件未完成",
+                batch_timeout, len(pending), len(tasks),
+            )
+            for t in pending:
+                t.cancel()
 
-            for i, result in enumerate(results):
+        processed_results = []
+        success_count = 0
+
+        for i, task in enumerate(tasks):
+            if task in pending:
+                # 超时未完成
+                processed_results.append({
+                    "event_id": events[i].get('id', f'unknown_{i}'),
+                    "event_type": events[i].get('event_type', 'unknown'),
+                    "processing_success": False,
+                    "business_results": {},
+                    "error": "batch_timeout",
+                    "processing_time": datetime.now().isoformat(),
+                    "source_type": "parallel_batch",
+                })
+            else:
+                try:
+                    result = task.result()
+                except Exception as exc:
+                    result = exc
                 if isinstance(result, Exception):
-                    # 处理异常结果
-                    error_count += 1
                     logger.error(f"处理事件 {i} 失败: {result}")
-
-                    # 生成错误结果记录
-                    event_id = events[i].get('id', f'unknown_{i}')
                     processed_results.append({
-                        "event_id": event_id,
+                        "event_id": events[i].get('id', f'unknown_{i}'),
                         "event_type": events[i].get('event_type', 'unknown'),
                         "processing_success": False,
                         "business_results": {},
                         "error": str(result),
                         "processing_time": datetime.now().isoformat(),
-                        "source_type": "parallel_batch"
+                        "source_type": "parallel_batch",
                     })
                 else:
-                    # 正常结果
                     success_count += 1
                     processed_results.append(result)
 
-            # 记录批次处理统计
-            if success_count > 0:
-                logger.info(f"✅ 批次处理完成: {success_count} 成功, {error_count} 失败")
+        if success_count > 0:
+            logger.info(f"✅ 批次处理完成: {success_count}/{len(tasks)} 成功")
 
-            return processed_results
-
-        except Exception as e:
-            # 整体批次处理异常
-            logger.error(f"批次处理异常: {e}")
-            # 回退到顺序处理作为降级方案
-            logger.warning("⚠️  回退到顺序处理")
-            return await self._sequential_process_events_batch(events)
+        return processed_results
 
     async def _sequential_process_events_batch(self, events: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """顺序处理事件批次 - 降级方案"""
@@ -631,6 +695,29 @@ class NewsStreamProcessor:
                 "processing_steps": ["stress_test_blocked"],
                 "results": {"blocked": True, "reason": "stress_test_news_blocked"},
             }
+        # Phase 4F: news:raw 直接消费时，通过 hash news_id 查询 news_raw.id
+        # 若 news_raw 中尚不存在（StorageHandler 延迟/卡死），Processor 主动调用
+        # create_news 写入，保证后续 news_event.news_id 不为 NULL。
+        news_row_id = self._resolve_news_row_id(news_data)
+        if news_row_id is None and self.database_gateway and news_id != 'unknown':
+            try:
+                stored = await self.database_gateway.get_news(str(news_id))
+                if stored and stored.get("id"):
+                    news_row_id = int(stored["id"])
+                else:
+                    logger.info("📝 news_raw 中未找到 %s，Processor 主动写入", news_id)
+                    created = await self.database_gateway.create_news(news_data)
+                    if created:
+                        stored = await self.database_gateway.get_news(str(news_id))
+                        if stored and stored.get("id"):
+                            news_row_id = int(stored["id"])
+                            logger.info("✅ Processor 主动写入 news_raw 成功: id=%d hash=%s", news_row_id, news_id)
+                if news_row_id is not None:
+                    news_data["news_row_id"] = news_row_id
+                    news_data["stored_news_id"] = news_row_id
+            except Exception as e:
+                logger.warning(f"查询/创建 news_raw 失败: news_id=%s err=%s", news_id, e)
+
         logger.info(f"🔄 开始处理新闻存储事件: {news_id}")
 
         business_results = {
@@ -642,7 +729,9 @@ class NewsStreamProcessor:
         # 步骤0: 本地预筛选（可选）
         triage_decision = "PASS"
         if self.local_triage_service:
-            triage_result = self.local_triage_service.evaluate(news_data)
+            triage_result = await asyncio.to_thread(
+                self.local_triage_service.evaluate, news_data
+            )
             triage_decision = str(triage_result.get("decision") or "PASS").upper()
             business_results["results"]["local_triage"] = triage_result
             business_results["processing_steps"].append("local_triage")
@@ -658,6 +747,12 @@ class NewsStreamProcessor:
                     triage_decision,
                     triage_result.get("reason_code") or triage_result.get("reason"),
                 )
+                # 当 triage_block_on_skip 开启且决策为 SKIP/DUPLICATE 时，
+                # 完全不落库也不发布，直接丢弃低质量事件。
+                if self.processor_config.get("triage_block_on_skip") and triage_decision in {"SKIP", "DUPLICATE"}:
+                    logger.info("🚫 triage_block_on_skip: 丢弃低质量事件 %s decision=%s", news_id, triage_decision)
+                    business_results["processing_steps"].append("triage_blocked")
+                    return business_results
                 basic_structured_event = {
                     "news_id": self._resolve_news_row_id(news_data),
                     "event_type": "news.stored",
@@ -686,11 +781,14 @@ class NewsStreamProcessor:
                 }
                 persistence = await self._persist_and_publish_structured_event(
                     basic_structured_event,
-                    publish_stream=False,
+                    publish_stream=True,  # 实时链路 triage 事件也必须推流
                 )
                 business_results["results"]["structured_event"] = basic_structured_event
                 business_results["results"]["news_event_persistence"] = persistence
                 business_results["processing_steps"].append("news_event_persist_triage_only")
+                if persistence.get("structured_stream_published"):
+                    business_results["processing_steps"].append("structured_event_publish_triage")
+                    self.business_stats["fallback_published_count"] += 1
                 return business_results
 
         # 步骤1: AI分析（如果启用）
@@ -804,7 +902,7 @@ class NewsStreamProcessor:
                     "event_type": "unknown",
                     "impact_industries": [],
                     "direction": "neutral",
-                    "confidence": 0.5,
+                    "confidence": 0.2,
                     "summary": self._extract_content_summary(news_data) or '无标题新闻',
                     "title": news_data.get("title", ""),
                     "content": news_data.get("content", ""),
@@ -812,10 +910,11 @@ class NewsStreamProcessor:
                         "structuring_version": "1.0",
                         "llm_request_id": None,
                         "reason": "ai_fallback",
+                        "llm_available": False,
                     },
                     "theme_directive_processed": False,
-                    "severity_score": 0.5,
-                    "source_weight": 0.5,
+                    "severity_score": 0.2,
+                    "source_weight": 0.2,
                     "event_time": news_data.get('publish_date', datetime.now().isoformat()),
                     "entities": [],
                     "causal_claim": [],
@@ -832,7 +931,10 @@ class NewsStreamProcessor:
                 logger.info(
                     f"🔄 调用 _persist_and_publish_structured_event: 标识={fallback_news_display_id}, news_row_id={fallback_news_row_id}"
                 )
-                persistence = await self._persist_and_publish_structured_event(basic_structured_event)
+                persistence = await self._persist_and_publish_structured_event(
+                    basic_structured_event,
+                    publish_stream=True,  # 实时链路 fallback 也必须推流，避免 AI 熔断导致静默断流
+                )
                 logger.info(f"🔄 _persist_and_publish_structured_event 返回: {persistence}")
 
                 business_results["results"]["structured_event"] = basic_structured_event
@@ -848,7 +950,10 @@ class NewsStreamProcessor:
                 )
                 self.business_stats["fallback_structured_count"] += 1
                 if persistence.get("structured_stream_published"):
+                    self.business_stats["fallback_published_count"] += 1
                     self.business_stats["processed_after_fallback_count"] += 1
+                else:
+                    self.business_stats["fallback_suppressed_count"] += 1
                 if persistence.get("structured_stream_published"):
                     business_results["processing_steps"].append("structured_event_publish_fallback")
                     logger.info(f"✅ 基本结构化事件发布成功: {fallback_news_display_id}")
@@ -863,15 +968,26 @@ class NewsStreamProcessor:
 
     async def _extract_event_with_stability(self, ai_service: Any, news_data: Dict[str, Any]) -> tuple[Optional[Dict[str, Any]], Dict[str, Any]]:
         """Bound one LLM structuring item so one external stall cannot block the stream."""
+        probing = False  # 标记本次是否为 HALF_OPEN 探测调用
+
         if self._structuring_circuit_breaker_open:
-            return None, {
-                "status": "fallback_minimal",
-                "error": "structuring_circuit_breaker_open",
-                "attempts": 0,
-                "llm_retry_count": 0,
-                "circuit_breaker_open": True,
-                "open_at_index": self._structuring_circuit_breaker_open_at,
-            }
+            now = time.time()
+            cooldown = self.processor_config["structuring_circuit_breaker_recovery_timeout_s"]
+            if self._structuring_circuit_breaker_opened_time > 0 and \
+               now - self._structuring_circuit_breaker_opened_time > cooldown:
+                logger.info("🔄 本地结构化熔断器 cooldown 已过（%.0fs），进入 HALF_OPEN 探测", cooldown)
+                probing = True
+                self.business_stats["structuring_circuit_breaker_state"] = "HALF_OPEN"
+            else:
+                self.business_stats["structuring_circuit_breaker_state"] = "OPEN"
+                return None, {
+                    "status": "fallback_minimal",
+                    "error": "structuring_circuit_breaker_open",
+                    "attempts": 0,
+                    "llm_retry_count": 0,
+                    "circuit_breaker_open": True,
+                    "open_at_index": self._structuring_circuit_breaker_open_at,
+                }
 
         attempts = 0
         last_error = ""
@@ -890,6 +1006,16 @@ class NewsStreamProcessor:
                 if ai_result and ai_result.get("status") == "success":
                     self._structuring_consecutive_timeouts = 0
                     self.business_stats["structuring_success_count"] += 1
+
+                    # HALF_OPEN 探测成功 → 恢复 CLOSED
+                    if self._structuring_circuit_breaker_open or probing:
+                        self._structuring_circuit_breaker_open = False
+                        self._structuring_circuit_breaker_opened_time = 0
+                        self._structuring_circuit_breaker_open_at = None
+                        self._structuring_consecutive_timeouts = 0
+                        self.business_stats["structuring_circuit_breaker_state"] = "CLOSED"
+                        logger.info("✅ 本地结构化熔断器 HALF_OPEN 探测成功，恢复 CLOSED")
+
                     return ai_result, {
                         "status": "success",
                         "error": None,
@@ -906,16 +1032,28 @@ class NewsStreamProcessor:
                 last_status = "structuring_error"
                 last_error = str(exc)
 
+        # HALF_OPEN 探测失败 → 重新打开熔断器
+        if probing:
+            self._structuring_circuit_breaker_open = True
+            self._structuring_circuit_breaker_opened_time = time.time()
+            self.business_stats["structuring_circuit_breaker_state"] = "OPEN"
+            logger.warning("⚠️ 本地结构化熔断器 HALF_OPEN 探测失败，重新熔断（cooldown 重置）")
+
         if last_status == "structuring_timeout":
             self.business_stats["structuring_timeout_count"] += 1
             self._structuring_consecutive_timeouts += 1
             if self._structuring_consecutive_timeouts >= self.processor_config["structuring_circuit_breaker_threshold"]:
                 self._structuring_circuit_breaker_open = True
                 self._structuring_circuit_breaker_open_at = news_data.get("sequence") or news_data.get("news_id")
+                self._structuring_circuit_breaker_opened_time = time.time()
                 self.business_stats["circuit_breaker_open_count"] += 1
+                self.business_stats["structuring_circuit_breaker_state"] = "OPEN"
         else:
             self.business_stats["structuring_error_count"] += 1
             self._structuring_consecutive_timeouts = 0
+
+        # 记录最后错误
+        self.business_stats["last_structuring_error"] = last_error[:200] if last_error else None
 
         return None, {
             "status": last_status,
@@ -935,7 +1073,6 @@ class NewsStreamProcessor:
             "total_timeout_s": self.processor_config["structuring_total_timeout_s"],
         }
 
-    @staticmethod
     @staticmethod
     def _extract_content_summary(news_data: Dict[str, Any]) -> str:
         """从新闻内容中提取更实质性的摘要，优于直接使用标题。
@@ -1119,6 +1256,8 @@ class NewsStreamProcessor:
                 "summary": structured_event.get("summary"),
                 "source": "news_stream_processor",
                 "structuring_version": structured_event.get("structuring_version"),
+                "structuring_status": structured_event.get("structuring_status"),
+                "confidence": structured_event.get("confidence"),
                 "llm_request_id": structured_event.get("llm_request_id"),
                 "run_id": structured_event.get("run_id"),
                 "case_id": structured_event.get("case_id"),

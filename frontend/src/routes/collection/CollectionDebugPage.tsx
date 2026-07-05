@@ -245,7 +245,8 @@ export function CollectionDebugPage() {
             <span>F10资金动向采集</span>
           </label>
           <div className="workspace-note">
-            自动从当日复盘候选池提取股票，专项采集资金动向快照，不参与评分。
+            顺序执行到该 step 时自动从当日复盘候选池提取股票，专项采集资金动向快照，不参与评分。
+            如需自动解析候选池，请先执行能生成当日候选池的前置任务，例如股票快照/题材热度排名。
           </div>
           <div className="collection-action-row">
             <button

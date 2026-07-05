@@ -1,4 +1,6 @@
 import asyncio
+import base64
+import binascii
 import json
 import logging
 import os
@@ -8,6 +10,7 @@ from typing import Any, AsyncIterator
 from zoneinfo import ZoneInfo
 
 import httpx
+import redis.asyncio as aioredis
 from fastapi import APIRouter, HTTPException, Query, Request
 from fastapi.responses import JSONResponse, StreamingResponse
 
@@ -17,6 +20,9 @@ logger = logging.getLogger(__name__)
 
 router = APIRouter()
 client = StockProcessingReadClient()
+
+_RAW_FEED_REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0").strip()
+_RAW_FEED_STREAM = "stream:news:raw"
 
 
 def _to_float_or_none(value: object) -> float | None:
@@ -78,10 +84,10 @@ RECAP_TYPE_POST_MARKET = "post_market"
 RECAP_TYPE_PRE_MARKET = "pre_market"
 
 
-async def _proxy_stock_processing_json(path: str, params: dict[str, str]) -> dict:
+async def _proxy_stock_processing_json(path: str, params: dict[str, str], timeout: float = 30.0) -> dict:
     url = f"{STOCK_PROCESSING_BASE_URL}{path}"
     try:
-        async with httpx.AsyncClient(timeout=15.0, trust_env=False) as http:
+        async with httpx.AsyncClient(timeout=timeout, trust_env=False) as http:
             resp = await http.get(url, params=params)
             resp.raise_for_status()
             data = resp.json()
@@ -184,8 +190,12 @@ async def _proxy_jyhf_cdp_service_json(
     return data if isinstance(data, dict) else {}
 
 
-def _emit_sse(event: str, payload: dict) -> bytes:
-    return f"event: {event}\ndata: {json.dumps(payload, ensure_ascii=False)}\n\n".encode("utf-8")
+def _emit_sse(event: str, payload: dict, *, event_id: str | None = None) -> bytes:
+    id_line = ""
+    if event_id:
+        safe_event_id = event_id.replace("\r", "").replace("\n", "")
+        id_line = f"id: {safe_event_id}\n"
+    return f"{id_line}event: {event}\ndata: {json.dumps(payload, ensure_ascii=False)}\n\n".encode("utf-8")
 
 
 def _try_parse_event_line(line: str) -> str | None:
@@ -217,82 +227,153 @@ def _validate_sse_payload(event_name: str, payload: dict) -> tuple[bool, str | N
     return True, None
 
 
-async def _intel_stream_proxy(
-    request: Request,
-    *,
-    url: str,
-    query: dict[str, str],
-    heartbeat_interval: float = 15.0,
-    poll_interval: float = 5.0,
-) -> AsyncIterator[bytes]:
+_INTEL_REALTIME_STREAMS = ("stream:event:feed", "stream:jyhf:feed")
+_INTEL_ITEM_TYPES = {"event", "event_review", "theme_move", "new_theme", "stock_move"}
+
+
+def _encode_sse_cursor(last_ids: dict[str, str]) -> str:
+    data = {
+        stream: str(last_ids[stream])
+        for stream in _INTEL_REALTIME_STREAMS
+        if stream in last_ids and str(last_ids[stream])
+    }
+    raw = json.dumps(data, ensure_ascii=True, separators=(",", ":")).encode("utf-8")
+    return base64.urlsafe_b64encode(raw).decode("ascii").rstrip("=")
+
+
+def _decode_sse_cursor(cursor: str | None) -> dict[str, str]:
+    if not cursor:
+        return {}
     try:
-        seen_item_ids: set[str] = set()
-        elapsed = 0.0
-        initialized = False
-        async with httpx.AsyncClient(timeout=30.0, trust_env=False) as http:
-            while True:
-                if await request.is_disconnected():
-                    return
+        padding = "=" * (-len(cursor) % 4)
+        data = json.loads(base64.urlsafe_b64decode(cursor + padding).decode("utf-8"))
+    except (ValueError, TypeError, UnicodeDecodeError, binascii.Error, json.JSONDecodeError):
+        return {}
+    if not isinstance(data, dict):
+        return {}
+    return {
+        stream: str(data[stream])
+        for stream in _INTEL_REALTIME_STREAMS
+        if stream in data and str(data[stream])
+    }
 
-                resp = await http.get(url, params=query)
-                resp.raise_for_status()
-                data = resp.json()
-                items = list(data.get("items") or []) if isinstance(data, dict) else []
 
-                if not initialized:
-                    yield _emit_sse(
-                        "stream_state",
-                        {"status": "connected", "source": "stock_processing_read_api", "count": len(items)},
-                    )
-                    initialized = True
+def _stream_message_time(message_id: str) -> str:
+    try:
+        timestamp_ms = int(str(message_id).split("-", 1)[0])
+        return datetime.fromtimestamp(timestamp_ms / 1000, tz=timezone.utc).isoformat()
+    except (TypeError, ValueError, OSError):
+        return datetime.now(timezone.utc).isoformat()
 
-                fresh_items: list[dict[str, Any]] = []
-                for item in items:
-                    if not isinstance(item, dict):
-                        continue
-                    item_id = str(item.get("item_id") or item.get("event_id") or "")
-                    if not item_id or item_id in seen_item_ids:
-                        continue
-                    seen_item_ids.add(item_id)
-                    fresh_items.append(item)
 
-                for item in reversed(fresh_items):
-                    payload = {
-                        "event_id": str(item.get("item_id") or item.get("event_id") or ""),
-                        "occurred_at": str(item.get("occurred_at") or item.get("event_time") or ""),
-                        "event_type": str(item.get("item_type") or item.get("event_type") or "event"),
-                        "item": item,
-                    }
-                    ok, reason = _validate_sse_payload("intel_item", payload)
-                    if not ok:
-                        yield _emit_sse(
-                            "error",
-                            {
-                                "code": "INVALID_EVENT_PAYLOAD",
-                                "message": reason or "payload contract mismatch",
-                                "retryable": True,
-                                "event_type": "intel_item",
-                            },
-                        )
-                        continue
-                    yield _emit_sse("intel_item", payload)
+def _as_string_list(value: object) -> list[str]:
+    if isinstance(value, list):
+        return [str(item) for item in value if str(item).strip()]
+    if isinstance(value, str):
+        text = value.strip()
+        if not text:
+            return []
+        try:
+            parsed = json.loads(text)
+        except json.JSONDecodeError:
+            return [text]
+        if isinstance(parsed, list):
+            return [str(item) for item in parsed if str(item).strip()]
+        return [text]
+    return []
 
-                elapsed += poll_interval
-                if elapsed >= heartbeat_interval:
-                    yield _emit_sse("heartbeat", {"source": "stock_processing_read_api", "ts": datetime.now(timezone.utc).isoformat()})
-                    elapsed = 0.0
 
-                await asyncio.sleep(poll_interval)
-    except Exception as exc:
-        yield _emit_sse(
-            "error",
-            {
-                "code": "SSE_UPSTREAM_UNREACHABLE",
-                "message": str(exc),
-                "retryable": True,
-                "upstream": url,
-            },
+def _as_optional_float(value: object) -> float | None:
+    try:
+        return float(value) if value not in (None, "") else None
+    except (TypeError, ValueError):
+        return None
+
+
+def _normalize_realtime_intel_event(
+    stream_name: str,
+    message_id: str,
+    fields: dict,
+) -> dict[str, Any]:
+    raw = {
+        str(key.decode() if isinstance(key, bytes) else key): (
+            value.decode() if isinstance(value, bytes) else value
         )
+        for key, value in fields.items()
+    }
+    payload = raw.get("payload")
+    if isinstance(payload, str):
+        try:
+            parsed = json.loads(payload)
+        except json.JSONDecodeError:
+            parsed = None
+        if isinstance(parsed, dict):
+            raw = {**raw, **parsed}
+
+    item_id = str(raw.get("item_id") or raw.get("event_id") or f"{stream_name}:{message_id}")
+    item_type = str(raw.get("item_type") or raw.get("event_type") or "event")
+    if item_type not in _INTEL_ITEM_TYPES:
+        item_type = "event"
+    occurred_at = str(raw.get("occurred_at") or raw.get("created_at") or "").strip()
+    if not occurred_at:
+        occurred_at = _stream_message_time(message_id)
+    title = str(raw.get("title") or raw.get("summary") or "").strip()
+    summary = str(raw.get("summary") or raw.get("title") or "").strip()
+
+    theme_subject_keys = _as_string_list(raw.get("theme_subject_keys"))
+    if not theme_subject_keys and raw.get("subject_key"):
+        theme_subject_keys = [str(raw["subject_key"])]
+    theme_names = _as_string_list(raw.get("theme_names"))
+    if not theme_names and raw.get("theme_name"):
+        theme_names = [str(raw["theme_name"])]
+    stock_ids = _as_string_list(raw.get("stock_ids"))
+    if not stock_ids and raw.get("stock_id"):
+        stock_ids = [str(raw["stock_id"])]
+    stock_names = _as_string_list(raw.get("stock_names"))
+    if not stock_names and raw.get("stock_name"):
+        stock_names = [str(raw["stock_name"])]
+
+    item = dict(raw)
+    item.update(
+        {
+            "item_id": item_id,
+            "item_type": item_type,
+            "occurred_at": occurred_at,
+            "title": title,
+            "summary": summary,
+            "theme_subject_keys": theme_subject_keys,
+            "theme_names": theme_names,
+            "stock_ids": stock_ids,
+            "stock_names": stock_names,
+            "confidence": _as_optional_float(raw.get("confidence")),
+            "impact_score": _as_optional_float(raw.get("impact_score")),
+            "source_type": str(raw.get("source_type") or raw.get("source") or stream_name),
+            "source_channel": str(raw.get("source_channel") or stream_name),
+        }
+    )
+    return {
+        "event_id": item_id,
+        "occurred_at": occurred_at,
+        "event_type": item_type,
+        "item": item,
+        "cursor": message_id,
+    }
+
+
+def _is_displayable_realtime_event(payload: dict[str, Any]) -> bool:
+    item = payload.get("item") if isinstance(payload.get("item"), dict) else {}
+    source_type = str(item.get("source_type") or "")
+    decision = str(item.get("decision") or "")
+    if source_type == "decision_executor_feed":
+        return False
+    if decision in {"publish_clustering", "human_review", "clustering_result"}:
+        return False
+    if not str(item.get("title") or item.get("summary") or "").strip():
+        return False
+    if source_type == "event_theme_map":
+        if not item.get("theme_subject_keys") or not item.get("theme_names"):
+            return False
+    return True
 
 
 def _as_recap_view_model_v2_from_snapshot(snapshot: dict, report_type: str) -> dict:
@@ -458,6 +539,50 @@ async def theme_workspace(subject_key: str, request: Request) -> dict:
     return await _proxy_stock_processing_json(f"/api/v1/theme_workspace/{subject_key}", params)
 
 
+# ── M4h: Recap Read APIs ──
+
+@router.get("/recap/latest", response_model=None)
+async def recap_latest(request: Request):
+    return await _proxy_stock_processing_json("/api/v1/recap/latest", {})
+
+
+@router.get("/recap/{trade_date}", response_model=None)
+async def recap_by_date(trade_date: str, request: Request):
+    return await _proxy_stock_processing_json(f"/api/v1/recap/{trade_date}", {})
+
+
+@router.get("/themes/top", response_model=None)
+async def themes_top(
+    trade_date: str | None = None,
+    limit: int = 10,
+
+):
+    params: dict[str, str] = {}
+    if trade_date:
+        params["trade_date"] = trade_date
+    params["limit"] = str(limit)
+    return await _proxy_stock_processing_json("/api/v1/themes/top", params)
+
+
+@router.get("/subject-search")
+async def subject_search(q: str = Query(...), limit: int = Query(default=30)):
+    return await _proxy_stock_processing_json("/api/v1/subject-search", {"q": q, "limit": str(limit)})
+
+
+@router.get("/leaders/{theme_name}", response_model=None)
+async def theme_leaders(
+    theme_name: str,
+    trade_date: str | None = None,
+    limit: int = 10,
+    
+):
+    params: dict[str, str] = {}
+    if trade_date:
+        params["trade_date"] = trade_date
+    params["limit"] = str(limit)
+    return await _proxy_stock_processing_json(f"/api/v1/leaders/{theme_name}", params)
+
+
 # ── P1: PostMarket Readiness API ──
 
 @router.get("/post-market/derived-data/readiness")
@@ -540,6 +665,7 @@ async def daily_review_v2(date: str = Query(..., description="YYYY-MM-DD")) -> d
     return await _proxy_stock_processing_json(
         "/api/v2/daily-review-v2",
         {"date": date},
+        timeout=120.0,
     )
 
 
@@ -2057,29 +2183,154 @@ async def workspace_market_validation(
     return result
 
 
-@router.get("/intel/stream")
-async def intel_stream(
-    request: Request,
-    date: str | None = Query(default=None),
-    session: str = Query(default="all"),
-    type: str = Query(default="all"),
-    subject_key: str | None = Query(default=None),
-    stock_id: str | None = Query(default=None),
-    limit: int = Query(default=20, ge=1, le=100),
-) -> StreamingResponse:
-    params = {
-        "feed_date": date,
-        "session": session,
-        "item_type": type,
-        "subject_key": subject_key,
-        "stock_id": stock_id,
-        "limit": str(limit),
-    }
-    query = {k: v for k, v in params.items() if v is not None and v != ""}
-    url = f"{STOCK_PROCESSING_BASE_URL}/api/v1/intel_feed"
+@router.get("/intel/stream/raw")
+async def intel_raw_stream(request: Request) -> StreamingResponse:
+    """Raw akshare news feed — 直接从 stream:news:raw 推送到前端。
+
+    使用 XREAD（非 XREADGROUP），不参与消费组，不 ACK，不改 last-delivered-id。
+    即使 triage SKIP / AI 熔断 / structured 不出 / decision 不出，前端仍能看到原始消息。
+    """
+    async def _raw_feed_generator():
+        r = aioredis.from_url(_RAW_FEED_REDIS_URL, socket_connect_timeout=5)
+        last_id = "$"
+        heartbeat_interval = 15
+        last_heartbeat = time.monotonic()
+
+        try:
+            while True:
+                if await request.is_disconnected():
+                    break
+
+                now = time.monotonic()
+                if now - last_heartbeat >= heartbeat_interval:
+                    yield _emit_sse("heartbeat", {"status": "ok", "stream": "raw"})
+                    last_heartbeat = now
+
+                try:
+                    result = await asyncio.wait_for(
+                        r.xread({_RAW_FEED_STREAM: last_id}, block=2000, count=20),
+                        timeout=3.0,
+                    )
+                except (asyncio.TimeoutError, ConnectionError):
+                    continue
+
+                if result is None:
+                    continue
+
+                for stream_name, messages in result:
+                    for msg_id, fields in messages:
+                        last_id = msg_id
+                        news_data = {k.decode() if isinstance(k, bytes) else k:
+                                     v.decode() if isinstance(v, bytes) else v
+                                     for k, v in fields.items()}
+                        yield _emit_sse("raw_news", news_data)
+        finally:
+            await r.aclose()
 
     return StreamingResponse(
-        _intel_stream_proxy(request, url=url, query=query),
+        _raw_feed_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
+@router.get("/intel/stream")
+@router.get("/intel/stream/realtime")
+async def intel_realtime_stream(
+    request: Request,
+    last_event_id: str | None = Query(default=None),
+) -> StreamingResponse:
+    """Realtime intel feed — 直接从 stream:event:feed + stream:jyhf:feed XREAD 推送。
+
+    XREAD（非 XREADGROUP），不创建消费组，不 ACK，不改 last-delivered-id。
+    akshare 管道事件和 JYHF CDP 事件独立 channel，各推各的。
+    """
+    async def _realtime_feed_generator():
+        r = aioredis.from_url(_RAW_FEED_REDIS_URL, socket_connect_timeout=5)
+        resume_cursor = request.headers.get("last-event-id") or last_event_id
+        last_ids = {stream: "$" for stream in _INTEL_REALTIME_STREAMS}
+        last_ids.update(_decode_sse_cursor(resume_cursor))
+        heartbeat_interval = 15
+        last_heartbeat = time.monotonic()
+
+        try:
+            while True:
+                if await request.is_disconnected():
+                    break
+
+                now = time.monotonic()
+                if now - last_heartbeat >= heartbeat_interval:
+                    yield _emit_sse("heartbeat", {"status": "ok"})
+                    last_heartbeat = now
+
+                try:
+                    result = await asyncio.wait_for(
+                        r.xread(last_ids, block=2000, count=50),
+                        timeout=3.0,
+                    )
+                except asyncio.TimeoutError:
+                    continue
+                except asyncio.CancelledError:
+                    raise
+                except Exception as exc:
+                    yield _emit_sse(
+                        "error",
+                        {
+                            "code": "SSE_REDIS_READ_FAILED",
+                            "message": str(exc),
+                            "retryable": True,
+                        },
+                    )
+                    await asyncio.sleep(1)
+                    continue
+
+                if result is None:
+                    continue
+
+                for stream_name_bytes, messages in result:
+                    stream_name = stream_name_bytes.decode() if isinstance(stream_name_bytes, bytes) else stream_name_bytes
+                    for msg_id, fields in messages:
+                        message_id = msg_id.decode() if isinstance(msg_id, bytes) else str(msg_id)
+                        last_ids[stream_name] = message_id
+                        payload = _normalize_realtime_intel_event(
+                            stream_name,
+                            message_id,
+                            fields,
+                        )
+                        cursor = _encode_sse_cursor(last_ids)
+                        payload["cursor"] = cursor
+                        if not _is_displayable_realtime_event(payload):
+                            logger.warning(
+                                "SSE skipped non-display event: stream=%s message_id=%s source_type=%s decision=%s",
+                                stream_name,
+                                message_id,
+                                payload["item"].get("source_type"),
+                                payload["item"].get("decision"),
+                            )
+                            continue
+                        ok, reason = _validate_sse_payload("intel_item", payload)
+                        if not ok:
+                            yield _emit_sse(
+                                "error",
+                                {
+                                    "code": "INVALID_EVENT_PAYLOAD",
+                                    "message": reason or "payload contract mismatch",
+                                    "retryable": False,
+                                    "source_stream": stream_name,
+                                    "message_id": message_id,
+                                },
+                            )
+                            continue
+                        yield _emit_sse("intel_item", payload, event_id=cursor)
+        finally:
+            await r.aclose()
+
+    return StreamingResponse(
+        _realtime_feed_generator(),
         media_type="text/event-stream",
         headers={
             "Cache-Control": "no-cache",

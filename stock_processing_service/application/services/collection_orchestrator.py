@@ -188,6 +188,12 @@ class CollectionCommandPlanner:
         if task_key == "dragon_tiger":
             return CollectionTaskPlan(runner_key="dragon_tiger.object")
 
+        if task_key == "hot_money_activity":
+            return CollectionTaskPlan(
+                runner_key="hot_money_activity.build",
+                pre_logs=["hot_money_activity: 构建游资席位活动表 hot_money_trading_activity"],
+            )
+
         if task_key == "f10_capital":
             stock_ids = options.get("stock_ids") or payload.get("stock_ids") or []
             stock_count = len(stock_ids) if isinstance(stock_ids, list) else 0
@@ -316,6 +322,38 @@ class CollectionCommandPlanner:
             ))
 
             return CollectionTaskPlan(pre_logs=pre_logs, steps=steps)
+
+        if task_key == "evidence_collection":
+            _dsn = env.get("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/stock_data_test")
+            _py = self._python_bin
+            return CollectionTaskPlan(
+                pre_logs=[
+                    "多源证据采集: THS hot reason → EPS forecast → Research reports",
+                    f"trade_date={trade_date}",
+                ],
+                steps=[
+                    CollectionTaskStep(
+                        key="evidence_ths",
+                        runner_key="evidence.ths_hot_reason",
+                        label="THS 强势股 reason 采集",
+                        commands=[CollectionCommand(
+                            cmd=[_py, "-m", "stock_processing_service.scripts.collect_ths_hot_reason",
+                                 "--dates", trade_date, "--dsn", _dsn],
+                            initial_percent=5, success_percent=100,
+                        )],
+                    ),
+                    CollectionTaskStep(
+                        key="evidence_recap",
+                        runner_key="evidence.recap_generate",
+                        label="证据融合 + 复盘快照生成",
+                    ),
+                    CollectionTaskStep(
+                        key="evidence_m7b",
+                        runner_key="evidence.m7b_error",
+                        label="M7b 预测误差计算",
+                    ),
+                ],
+            )
 
         return CollectionTaskPlan(terminal_status="skipped", terminal_label="未知任务，已跳过")
 

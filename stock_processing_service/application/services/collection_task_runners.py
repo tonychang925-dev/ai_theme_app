@@ -1,8 +1,9 @@
-"""采集任务 Runner 实现。
+"""Collection task Runner implementations
 
-- ScriptCommandRunner：兼容旧脚本（subprocess 执行）
-- PostMarketRecapRunner：服务化 recap（直接调 BuildPostMarketRecapJob）
-- ProcessIsolatedRunner：子进程隔离执行重任务
+- ScriptCommandRunner: legacy script (subprocess)
+- PostMarketRecapRunner: serviced recap (BuildPostMarketRecapJob)
+- ProcessIsolatedRunner: process-isolated heavy tasks
+- EvidenceRecapGenerateRunner: M4/M5 evidence fusion to recap snapshot
 """
 from __future__ import annotations
 
@@ -37,11 +38,7 @@ from stock_processing_service.application.services.f10_capital_parser import F10
 
 
 class ScriptCommandRunner:
-    """兼容旧脚本的 Runner。
-
-    内部通过 subprocess 执行预定命令列表。
-    后续逐个替换为服务化 Runner。
-    """
+    """Legacy script runner: executes pre-defined commands via subprocess."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if not context.commands:
@@ -87,7 +84,7 @@ class ScriptCommandRunner:
 
 
 class BuildStockAbnormalSignalRunner:
-    """异动信号检测 Runner — 委托到 BuildStockAbnormalSignalJob（新链 Job 架构）。"""
+    """Abnormal signal detection Runner via BuildStockAbnormalSignalJob."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
@@ -118,7 +115,7 @@ class BuildStockAbnormalSignalRunner:
 
 
 class BuildStockKlineJudgementsRunner:
-    """个股K线位置与形态判断 Runner — in-process 调用脚本入口。"""
+    """Stock K-line position/pattern Runner -- in-process script entry."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -145,11 +142,11 @@ class BuildStockKlineJudgementsRunner:
 
 
 class PostMarketReportContextRunner:
-    """新链盘后报告上下文 Runner。
+    """Post-market report context Runner
 
-    该 Runner 不写旧表；它只触发 stock_processing_service 新链上下文查询，
-    用于在 recap.snapshot 前暴露市场环境/题材资金流的采集状态。
-    最终 report 仍由 BuildPostMarketRecapJob 写入 post_market_recap_snapshot。
+    This Runner queries new-chain context only; does not write legacy tables.
+    Exposes market/theme flow collection status before recap.snapshot.
+    Final report still written by BuildPostMarketRecapJob to snapshot.
     """
 
     def __init__(self, context_key: str, label: str) -> None:
@@ -369,7 +366,7 @@ class PostMarketPrerequisitesRunner:
 
 
 class BuildDragonTigerObjectRunner:
-    """龙虎榜对象构建 Runner — 新链 Job 架构。"""
+    """Dragon-tiger object build Runner -- new chain Job architecture."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
@@ -414,8 +411,51 @@ class BuildDragonTigerObjectRunner:
             )
 
 
+class BuildHotMoneyTradingActivityRunner:
+    """Hot-money activity table Runner -- standard script entry."""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        try:
+            import sys as _sys
+
+            token = context.env.get("TUSHARE_TOKEN", "")
+            payload = context.payload or {}
+            options = payload.get("hot_money_activity") or {}
+            force_refresh = bool(options.get("force_refresh", False))
+            argv = ["build_hot_money_trading_activity.py", "--trade-date", context.trade_date]
+            if token:
+                argv.extend(["--token", token])
+            if force_refresh:
+                argv.append("--force-refresh")
+
+            _orig = _sys.argv[:]
+            _sys.argv = argv
+            try:
+                from database_service.scripts.build_hot_money_trading_activity import main_async
+                exit_code = await main_async()
+            finally:
+                _sys.argv = _orig
+
+            logs = [f"hot_money_activity_build status={'success' if (exit_code or 0) == 0 else 'failed'}"]
+            logs.append(f"hot_money_trading_activity exit_code={exit_code}")
+
+            return CollectionTaskResult(
+                status="success" if (exit_code or 0) == 0 else "failed",
+                current_label=f"游资动向活动表构建完成 (exit={exit_code})",
+                logs=logs,
+                error_message="" if (exit_code or 0) == 0 else f"hot_money_trading_activity exit_code={exit_code}",
+            )
+        except Exception as e:
+            return CollectionTaskResult(
+                status="failed",
+                current_label="游资动向活动表构建异常",
+                logs=["hot_money_activity_build status=failed"],
+                error_message=f"{type(e).__name__}: {e!r}",
+            )
+
+
 class AuctionSnapshotRunner:
-    """竞价快照 Runner — 委托到 BuildAuctionSnapshotJob（新链 Job 架构）。"""
+    """Auction snapshot Runner via BuildAuctionSnapshotJob."""
 
     def __init__(self, universe_source: str = "auction_watch_universe", max_stocks: int = 0) -> None:
         self._universe_source = universe_source
@@ -454,7 +494,7 @@ class AuctionSnapshotRunner:
 
 
 class JyhfSyncListsRunner:
-    """JYHF 题材列表同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
+    """JYHF subject list sync Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -488,7 +528,7 @@ class JyhfSyncListsRunner:
 
 
 class JyhfLoadSubjectNodeStagingRunner:
-    """JYHF 题材节点入库 Runner — in-process 调用 load_subject_node_staging（semi-service 模式）。"""
+    """JYHF subject node staging Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -504,7 +544,7 @@ class JyhfLoadSubjectNodeStagingRunner:
 
 
 class JyhfSyncDetailsRunner:
-    """JYHF 题材详情同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
+    """JYHF subject detail sync Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -538,7 +578,7 @@ class JyhfSyncDetailsRunner:
 
 
 class JyhfSyncStockDetailsRunner:
-    """JYHF 股票详情同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
+    """JYHF stock detail sync Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -572,7 +612,7 @@ class JyhfSyncStockDetailsRunner:
 
 
 class JyhfImportStockDailyRunner:
-    """JYHF 股票日快照 Runner — API → DB，不经过本地 JSONL。"""
+    """JYHF stock daily snapshot Runner -- API to DB, no local JSONL."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         self._ctx = context  # 保存上下文，供 _collect_subject_records 使用 progress_callback
@@ -754,7 +794,7 @@ class JyhfImportStockDailyRunner:
 
 
 class JyhfSyncHistoryRunner:
-    """JYHF 历史事件同步 Runner — in-process 调用 sync_jyhf_to_local（semi-service 模式）。"""
+    """JYHF history event sync Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -789,7 +829,7 @@ class JyhfSyncHistoryRunner:
 
 
 class JyhfImportHistoryRunner:
-    """JYHF 历史事件导入 Runner — in-process 调用 import_jyhf_history_incremental（semi-service 模式）。"""
+    """JYHF history import Runner -- in-process semi-service mode."""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -811,7 +851,7 @@ class JyhfImportHistoryRunner:
 
 
 class AuctionSignalRunner:
-    """竞价信号 Runner — 委托到 BuildAuctionSignalJob（新链 Job 架构）。"""
+    """竞价信号 Runner -- 委托到 BuildAuctionSignalJob（新链 Job 架构）"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
@@ -837,7 +877,7 @@ class AuctionSignalRunner:
 
 
 class AuctionWatchUniverseRunner:
-    """竞价观察池构建 Runner — 新链 Job 架构。"""
+    """竞价观察池构建 Runner -- 新链 Job 架构"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
@@ -884,7 +924,7 @@ class TushareDailyBasicRunner:
 
 
 class F10CapitalCollectRunner:
-    """F10 资金动向快照采集 Runner — 通过本地脚本采集并落库。"""
+    """F10 资金动向快照采集 Runner -- 通过本地脚本采集并落库"""
 
     MAX_CONCURRENT_REQUESTS = 5
     MAX_SUCCESS_LOG_SAMPLES = 20
@@ -1154,7 +1194,7 @@ class F10CapitalCollectRunner:
 
 
 class TushareKlineRunner:
-    """Tushare K线采集 Runner — 直接拉取 API → Gateway 写入，不经过本地 JSONL。"""
+    """Tushare K线采集 Runner -- 直接拉取 API → Gateway 写入，不经过本地 JSONL"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         if context.container is None:
@@ -1192,7 +1232,7 @@ class TushareKlineRunner:
 
 
 class BuildLeaderLLMQueueRunner:
-    """龙头候选 LLM 审查队列 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+    """龙头候选 LLM 审查队列 Runner -- 进程内调用旧链服务（semi-service 模式）"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -1214,7 +1254,7 @@ class BuildLeaderLLMQueueRunner:
 
 
 class BuildLeaderLLMJudgementRunner:
-    """龙头候选 LLM 研判 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+    """龙头候选 LLM 研判 Runner -- 进程内调用旧链服务（semi-service 模式）"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -1238,7 +1278,7 @@ class BuildLeaderLLMJudgementRunner:
 
 
 class CallLeaderLLMRunner:
-    """龙头候选 LLM 调用 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+    """龙头候选 LLM 调用 Runner -- 进程内调用旧链服务（semi-service 模式）"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -1263,7 +1303,7 @@ class CallLeaderLLMRunner:
 
 
 class BuildLeaderCandidateRunner:
-    """龙头候选构建 Runner — 进程内调用旧链服务（semi-service 模式）。"""
+    """龙头候选构建 Runner -- 进程内调用旧链服务（semi-service 模式）"""
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
         try:
@@ -1285,9 +1325,9 @@ class BuildLeaderCandidateRunner:
 
 
 class PostMarketRecapRunner:
-    """服务化盘后复盘 Runner。
+    """服务化盘后复盘 Runner
 
-    直接调用 BuildPostMarketRecapJob.execute()，不再启动脚本子进程。
+    直接调用 BuildPostMarketRecapJob.execute()，不再启动脚本子进程
     """
 
     async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
@@ -1329,7 +1369,7 @@ class PostMarketRecapRunner:
 # ── P1: 股票快照可插拔数据源 Runner ──
 
 class StockSnapshotBuildRunner:
-    """股票快照统一入口 Runner — 通过 Orchestrator 自动选择 Producer.
+    """股票快照统一入口 Runner -- 通过 Orchestrator 自动选择 Producer.
 
     provider=jyhf          → JyhfSubjectStockDailySnapshotProducer (API→DB)
     provider=tushare_join  → TushareJoinSubjectStockDailySnapshotProducer (SQL JOIN)
@@ -1446,7 +1486,7 @@ def _format_snapshot_result(result) -> list[str]:
 # ── P1: 题材热度排名可插拔数据源 Runner ──
 
 class SubjectRankBuildRunner:
-    """题材热度排名统一入口 Runner — 通过 Orchestrator 自动选择 Producer.
+    """题材热度排名统一入口 Runner -- 通过 Orchestrator 自动选择 Producer.
 
     provider=jyhf          → JyhfSubjectRankProducer (JSONL→DB)
     provider=snapshot_agg  → SnapshotAggSubjectRankProducer (SQL 聚合)
@@ -1554,9 +1594,9 @@ def _format_rank_result(result) -> list[str]:
 # ── P2: 子进程隔离 Runner ──
 
 class ProcessIsolatedRunner:
-    """P2: 将重任务 runner 隔离到独立子进程，不阻塞 SPS 主进程。
+    """P2: 将重任务 runner 隔离到独立子进程，不阻塞 SPS 主进程
 
-    子进程执行真实 runner_key，主进程只做 stdout 读取和超时管理。
+    子进程执行真实 runner_key，主进程只做 stdout 读取和超时管理
     """
 
     def __init__(
@@ -1680,7 +1720,7 @@ class ProcessIsolatedRunner:
 
 # ── PR-13D: 指数采集 Runner ──
 class IndexKlineCollectRunner:
-    """在采集链路中执行指数K线采集 + 技术分析。"""
+    """在采集链路中执行指数K线采集 + 技术分析"""
 
     runner_key: str = "index_kline_collect"
 
@@ -1716,4 +1756,295 @@ class IndexKlineCollectRunner:
                 status="failed",
                 current_label=f"指数采集异常: {type(exc).__name__}",
                 error_message=str(exc),
+            )
+
+
+# ── M4/M5: Evidence → Recap Generate Runner ──────────────────────
+
+
+class M7bErrorComputeRunner:
+    """M7b: Compute prediction vs reality errors after recap generation."""
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        import json as _json
+        from datetime import date as _date
+
+        try:
+            td = _date.fromisoformat(context.trade_date)
+            import asyncpg
+
+            conn = await asyncpg.connect(
+                host="localhost", port=5432, database="stock_data_test",
+                user="postgres", password="postgres", timeout=10,
+            )
+            try:
+                from stock_processing_service.domain.services.market_feedback import (
+                    PredictionVsRealityEngine,
+                )
+                from stock_processing_service.domain.services.theme_return import (
+                    ThemeReturnAttributionEngine,
+                )
+
+                # Read M6 predictions from market_recap_snapshot
+                recap_row = await conn.fetchrow(
+                    "SELECT recap_json FROM market_recap_snapshot WHERE trade_date=$1", td)
+                if not recap_row:
+                    return CollectionTaskResult(
+                        status="skipped",
+                        current_label="无复盘快照，跳过误差计算",
+                    )
+
+                recap = recap_row["recap_json"] if isinstance(recap_row["recap_json"], dict) else _json.loads(recap_row["recap_json"])
+                top_themes = recap.get("top_themes", [])
+
+                # Build predicted map from recap
+                predicted: dict[str, dict] = {}
+                for t in top_themes:
+                    predicted[t["theme_name"]] = {
+                        "strength": float(t.get("strength_score", 0)),
+                        "rank": int(t.get("rank", 0)),
+                        "sources": t.get("evidence_sources", []),
+                        "stability": 0.5,
+                        "anchor": 0.5,
+                    }
+
+                # Build actual map from theme returns (leaders' pct_chg)
+                actual: dict[str, dict] = {}
+                theme_leaders: dict[str, list] = {}
+                for t in top_themes:
+                    for ld in t.get("leaders", []):
+                        theme_leaders.setdefault(t["theme_name"], []).append(ld["stock_code"])
+
+                # Use THS pct_chg as market truth baseline
+                ths_rows = await conn.fetch(
+                    "SELECT stock_code, pct_chg FROM ths_hot_reason_snapshot WHERE trade_date=$1", td)
+                stock_pct: dict[str, float] = {}
+                for r in ths_rows:
+                    stock_pct[str(r["stock_code"] or "")] = float(r["pct_chg"] or 0)
+
+                for theme, stock_codes in theme_leaders.items():
+                    pcts = [stock_pct.get(c, 0) for c in stock_codes[:5] if stock_pct.get(c)]
+                    if pcts:
+                        avg_pct = sum(pcts) / len(pcts)
+                        actual[theme] = {
+                            "strength": round(max(0, min(1, (avg_pct + 5) / 15)), 4),
+                            "rank": 0,
+                        }
+
+                if not actual:
+                    return CollectionTaskResult(
+                        status="skipped",
+                        current_label="无市场真值数据，跳过误差计算",
+                    )
+
+                # Compute errors
+                engine = PredictionVsRealityEngine()
+                report = engine.compute(td, predicted, actual)
+
+                # Persist to theme_prediction_snapshot
+                count = 0
+                for err in report.errors:
+                    await conn.execute(
+                        """INSERT INTO theme_prediction_snapshot (
+                             trade_date, theme_name, predicted_strength, predicted_rank,
+                             actual_strength, actual_rank, strength_error, rank_error,
+                             abs_strength_error, error_bucket, stability_score, anchor_score,
+                             source_trace_id
+                           ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)
+                           ON CONFLICT (trade_date, theme_name) DO UPDATE SET
+                             predicted_strength=EXCLUDED.predicted_strength,
+                             actual_strength=EXCLUDED.actual_strength,
+                             strength_error=EXCLUDED.strength_error,
+                             error_bucket=EXCLUDED.error_bucket""",
+                        td, err.theme_name, err.predicted_strength, err.predicted_rank,
+                        err.actual_strength, err.actual_rank, err.strength_error,
+                        err.rank_error, err.abs_strength_error, err.error_bucket,
+                        err.stability_score, err.anchor_score,
+                        f"m7b:{td.isoformat()}:{err.theme_name}",
+                    )
+                    count += 1
+
+                over = report.overestimated[:3]
+                under = report.underestimated[:3]
+                bias_msgs = [f"{s}={report.source_bias.get(s,0):.3f}" for s in report.source_bias]
+
+                return CollectionTaskResult(
+                    status="success",
+                    current_label=f"M7b 误差计算完成: {count} themes, over={len(report.overestimated)} under={len(report.underestimated)}",
+                    progress_percent=100,
+                    logs=[
+                        f"over={over} under={under}" if over or under else "all correct",
+                        f"mean_abs_error={report.summary['mean_abs_error']}",
+                        f"source_bias={bias_msgs}" if bias_msgs else "no bias detected",
+                    ],
+                )
+            finally:
+                await conn.close()
+        except Exception as exc:
+            return CollectionTaskResult(
+                status="failed",
+                current_label=f"M7b 误差计算失败: {type(exc).__name__}",
+                error_message=str(exc)[:500],
+            )
+
+class EvidenceRecapGenerateRunner:
+    """Generate market recap snapshot via full M4 evidence pipeline.
+
+    Pipeline: THS+CDP evidence → FusionEngine → LeaderEngine → ThemeEngine → RecapAggregation.
+    """
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        import json as _json
+        from datetime import date as _date
+
+        try:
+            td = _date.fromisoformat(context.trade_date)
+            import asyncpg
+
+            conn = await asyncpg.connect(
+                host="localhost", port=5432, database="stock_data_test",
+                user="postgres", password="postgres", timeout=10,
+            )
+            try:
+                from stock_processing_service.domain.services.evidence_fusion import (
+                    EvidenceFusionEngine, EvidenceItem,
+                )
+                from stock_processing_service.domain.services.leader_scoring import (
+                    LeaderScoringEngine,
+                )
+                from stock_processing_service.domain.services.theme_strength import (
+                    ThemeStrengthEngine,
+                )
+                from stock_processing_service.domain.services.recap_aggregation import (
+                    RecapAggregationService,
+                )
+
+                # Load THS evidence — use resolved theme_name from evidence table
+                ths_rows = await conn.fetch(
+                    "SELECT t.stock_code, t.stock_name, e.theme_name, t.reason_raw, t.reason_tags, e.evidence_text "
+                    "FROM ths_hot_reason_snapshot t "
+                    "JOIN stock_theme_reason_evidence e ON e.stock_code=t.stock_code AND e.trade_date=t.trade_date AND e.source_name='ths' "
+                    "WHERE t.trade_date=$1", td)
+
+                # Fallback: raw THS if no resolved evidence
+                if not ths_rows:
+                    ths_rows = await conn.fetch(
+                        "SELECT stock_code, stock_name, reason_raw, reason_tags "
+                        "FROM ths_hot_reason_snapshot WHERE trade_date=$1", td)
+
+                # Load CDP evidence
+                cdp_rows = await conn.fetch(
+                    "SELECT subject_key, subject_name, description "
+                    "FROM subject_history_staging WHERE rank_date=$1 AND source_type='jyhf_cdp'", td)
+
+                # Build EvidenceItems
+                evidence_items: list[EvidenceItem] = []
+                seen = set()
+                for r in ths_rows:
+                    code = str(r["stock_code"] or "")
+                    name = str(r["stock_name"] or "")
+                    tags = r["reason_tags"] or []
+                    # theme_name column exists only in JOIN result
+                    theme = str(r["theme_name"] or "") if "theme_name" in r.keys() else ""
+                    reason = str(r["evidence_text"] or "") if "evidence_text" in r.keys() else str(r["reason_raw"] or "")
+                    if not code:
+                        continue
+                    if not theme and tags:
+                        theme = str(tags[0])
+                    if not theme:
+                        continue
+                    key = (code, theme)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    evidence_items.append(EvidenceItem(
+                        source_name="ths", theme_name=theme,
+                        stock_code=code, stock_name=name,
+                        evidence_date=td, reason=reason, tags=list(tags),
+                    ))
+
+                # Build EvidenceItems from CDP
+                for r in cdp_rows:
+                    theme = str(r["subject_name"] or r["subject_key"] or "")
+                    key = f"cdp:{theme}"
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    desc = str(r["description"] or "")[:100]
+                    evidence_items.append(EvidenceItem(
+                        source_name="jyhf", theme_name=theme,
+                        stock_code=r["subject_key"] or theme,
+                        stock_name=theme, evidence_date=td, reason=desc,
+                    ))
+
+                is_degraded = len(ths_rows) == 0
+                reasons = []
+                if is_degraded:
+                    reasons.append("ths_hot_reason not collected")
+
+                if not evidence_items:
+                    return CollectionTaskResult(
+                        status="failed",
+                        current_label="无证据数据可融合",
+                        error_message="no evidence items from THS or CDP",
+                    )
+
+                # Build board signals from THS snapshot
+                board_signals: dict[str, dict] = {}
+                raw_ths = await conn.fetch(
+                    "SELECT stock_code, pct_chg FROM ths_hot_reason_snapshot WHERE trade_date=$1", td)
+                for r in raw_ths:
+                    code = str(r["stock_code"] or "")
+                    pct = float(r["pct_chg"] or 0)
+                    if code:
+                        board_signals[code] = {
+                            "is_limit_up": pct >= 9.5,
+                            "pct_chg": pct,
+                        }
+
+                # Full pipeline: Evidence → Fusion → Leader → Theme → Recap
+                fusion = EvidenceFusionEngine()
+                leader_engine = LeaderScoringEngine(fusion)
+                theme_engine = ThemeStrengthEngine()
+                recap_service = RecapAggregationService()
+
+                leaders = leader_engine.score(td, evidence_items, board_signals)
+                themes = theme_engine.compute(td, leaders)
+                recap = recap_service.aggregate(td, themes, leaders,
+                                                evidence_items_count=len(evidence_items))
+
+                row = recap_service.to_snapshot_row(recap)
+                # Override diagnostics with collection-level info
+                recap_data = row["recap_json"]
+                recap_data["diagnostics"]["ths_rows"] = len(ths_rows)
+                recap_data["diagnostics"]["cdp_rows"] = len(cdp_rows)
+                recap_data["diagnostics"]["degraded"] = is_degraded
+                recap_data["diagnostics"]["degraded_reasons"] = reasons
+
+                await conn.execute(
+                    """INSERT INTO market_recap_snapshot (trade_date, recap_json, source_trace_id)
+                       VALUES ($1, $2::jsonb, $3)
+                       ON CONFLICT (trade_date) DO UPDATE SET
+                         recap_json=EXCLUDED.recap_json, source_trace_id=EXCLUDED.source_trace_id""",
+                    td, _json.dumps(recap_data, ensure_ascii=False, default=str),
+                    recap.source_trace_id,
+                )
+
+                return CollectionTaskResult(
+                    status="success",
+                    current_label=f"复盘生成完成: {len(recap.top_themes)} themes, {len(leaders)} leaders{' (降级)' if is_degraded else ''}",
+                    progress_percent=100,
+                    logs=[
+                        f"ths={len(ths_rows)} cdp={len(cdp_rows)} evidence={len(evidence_items)}",
+                        f"leaders={len(leaders)} themes={len(themes)} degraded={is_degraded}",
+                    ],
+                )
+            finally:
+                await conn.close()
+        except Exception as exc:
+            import traceback
+            return CollectionTaskResult(
+                status="failed",
+                current_label=f"复盘生成失败: {type(exc).__name__}",
+                error_message=str(exc)[:500],
             )

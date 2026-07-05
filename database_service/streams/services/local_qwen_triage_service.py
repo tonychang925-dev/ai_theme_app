@@ -9,6 +9,7 @@ import json
 import logging
 import os
 import re
+import threading
 from pathlib import Path
 from typing import Any, Dict, Optional
 
@@ -26,12 +27,13 @@ class LocalQwenNewsTriageService:
         self.skip_threshold = float(cfg.get("triage_skip_threshold", -0.02))
         self.min_text_len = int(cfg.get("triage_min_text_len", 40))
         self.model_path = str(cfg.get("local_qwen_model_path") or "").strip()
-        self.prompt_max_tokens = int(cfg.get("triage_prompt_max_tokens", 420))
+        self.prompt_max_tokens = int(cfg.get("triage_prompt_max_tokens", 800))
 
         # prompt judge (Qwen1.5B gguf)
         self._prompt_llm = None
         self._prompt_ready = False
         self._prompt_init_attempted = False
+        self._prompt_lock = threading.Lock()  # llama.cpp is NOT thread-safe
 
         # embedding fallback
         self._matcher = None
@@ -44,11 +46,13 @@ class LocalQwenNewsTriageService:
             "政策", "预增", "预亏", "并购", "重组", "订单", "中标",
             "财政", "降息", "加息", "关税", "出口", "制裁", "突破技术",
             "新品", "扩产", "投产", "供给短缺", "价格上涨", "技术突破",
+            "涨价", "提价", "上调", "涨价函", "价格上调", "供给收紧",
         }
         self._concrete_catalyst_keywords = {
             "中标", "签约", "订单", "业绩预告", "并购", "重组", "停牌",
             "复牌", "产能", "投产", "召回", "获批", "批文", "补贴",
             "关税", "出口管制", "降息", "加息", "财政刺激", "重大合同",
+            "涨价", "提价", "上调", "涨价函", "价格上调",
         }
         self._generic_move_phrases = {
             "市场分析认为与政策面变化有关",
@@ -65,6 +69,12 @@ class LocalQwenNewsTriageService:
         text = self._build_text(news_data)
         rule_features = self._rule_features(text)
 
+        # 第0层：内容时效检查 — 正文引用远超当前日期的旧事件，直接 SKIP
+        stale_result = self._check_content_staleness(news_data, text)
+        if stale_result is not None:
+            return stale_result
+
+        # 第1层：规则预筛选 — 高频关键词直接命中/过滤
         forced_result = self._rule_prefilter(news_data, text, rule_features)
         if forced_result is not None:
             return forced_result
@@ -72,70 +82,80 @@ class LocalQwenNewsTriageService:
         if not self.enabled:
             return self._rule_decision(news_data, rule_features, reason_prefix="local_triage_disabled")
 
-        # 1) prompt判定优先
-        if self.mode in {"prompt", "hybrid"} and self._ensure_prompt_ready():
-            prompt_result = self._prompt_decision(text, rule_features)
+        # 第2层：规则兜底 — strong_signal 直接 PASS，empty/short 直接 SKIP
+        rule_result = self._rule_decision(news_data, rule_features, reason_prefix="rule")
+        is_definitive = (
+            rule_features.get("strong_signal")
+            or rule_features.get("empty")
+            or rule_features.get("text_len", 0) < self.min_text_len
+        )
+        if is_definitive:
+            return rule_result
+
+        # 第3层：Qwen prompt 兜底 — 仅对规则不确定的弱信号/无信号场景调用
+        # NOTE: llama.cpp is NOT thread-safe; serialize inference with a lock
+        if self._ensure_prompt_ready():
+            with self._prompt_lock:
+                prompt_result = self._prompt_decision(text, rule_features)
             if prompt_result is not None:
                 return prompt_result
 
-        # 2) 仅prompt模式下直接回退规则
-        if self.mode == "prompt":
-            return self._rule_decision(news_data, rule_features, reason_prefix="prompt_unavailable")
+        return rule_result  # Qwen 不可用或失败 → 使用规则结果
 
-        # 3) embedding 回退
-        if not self._ensure_qwen_ready():
-            return self._rule_decision(news_data, rule_features, reason_prefix="qwen_unavailable")
+    def _check_content_staleness(self, news_data: Dict[str, Any], text: str) -> Optional[Dict[str, Any]]:
+        """检测正文中引用的日期是否过于陈旧（源站重发旧文章但标记为当日）。
 
-        try:
-            vec = self._matcher._encode_single_direct(text)
-            if vec is None:
-                return self._rule_decision(news_data, rule_features, reason_prefix="qwen_encode_empty")
+        匹配中文日期模式如 "4月24日"、"2024年4月24日"、"4/24" 等，
+        与当前日期对比，超过 3 天则直接 SKIP。
+        """
+        import re as _re
+        from datetime import date as _date, timedelta as _td
 
-            pos = float(self._matcher._cosine_similarity(vec, self._positive_anchor))
-            neg = float(self._matcher._cosine_similarity(vec, self._negative_anchor))
-            score = pos - neg
+        # 尝试从正文中提取日期引用
+        # 模式: X月X日, X年X月X日, X/X, X-X
+        patterns = [
+            (r'(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日', 'ymd_full'),
+            (r'(?:^|[^0-9])(\d{1,2})\s*月\s*(\d{1,2})\s*日', 'md'),
+            (r'(?:^|[^0-9])(\d{1,2})/(\d{1,2})(?:[^0-9]|$)', 'md_slash'),
+        ]
+        today = _date.today()
+        max_age_days = 3  # 超过3天视为陈旧
 
-            if score >= self.pass_threshold:
-                return self._build_result(
-                    news_data,
-                    decision="PASS",
-                    importance_level="B",
-                    event_value_type="theme_catalyst",
-                    reason_code="embedding_importance_pass",
-                    reason=f"embedding_score={score:.4f} >= pass_threshold={self.pass_threshold:.4f}",
-                    confidence=min(1.0, max(0.0, score + 0.5)),
-                    score=score,
-                    mode="local_qwen_embedding",
-                    evidence=["embedding_score"],
-                )
-            if score <= self.skip_threshold and not rule_features["strong_signal"]:
-                return self._build_result(
-                    news_data,
-                    decision="SKIP",
-                    importance_level="D",
-                    event_value_type="market_noise",
-                    reason_code="embedding_importance_skip",
-                    reason=f"embedding_score={score:.4f} <= skip_threshold={self.skip_threshold:.4f}",
-                    confidence=min(1.0, max(0.0, 0.5 - score)),
-                    score=score,
-                    mode="local_qwen_embedding",
-                    evidence=["embedding_score"],
-                )
-            return self._build_result(
-                news_data,
-                decision="REVIEW",
-                importance_level="C",
-                event_value_type="market_noise",
-                reason_code="embedding_importance_review",
-                reason=f"embedding_score={score:.4f}, between thresholds",
-                confidence=0.5,
-                score=score,
-                mode="local_qwen_embedding",
-                evidence=["embedding_score"],
-            )
-        except Exception as e:
-            logger.warning(f"本地Qwen预筛选异常，降级规则模式: {e}")
-            return self._rule_decision(news_data, rule_features, reason_prefix="qwen_exception")
+        for pattern, ptype in patterns:
+            for m in _re.finditer(pattern, text):
+                try:
+                    if ptype == 'ymd_full':
+                        year, month, day = int(m.group(1)), int(m.group(2)), int(m.group(3))
+                        # 忽略未来年份和太早的年份
+                        if year < 2020 or year > today.year:
+                            continue
+                        ref_date = _date(year, month, day)
+                    elif ptype in ('md', 'md_slash'):
+                        month, day = int(m.group(1)), int(m.group(2))
+                        # 假设今年，如果结果在未来则可能是去年
+                        ref_date = _date(today.year, month, day)
+                        if ref_date > today:
+                            ref_date = _date(today.year - 1, month, day)
+                    else:
+                        continue
+
+                    age = (today - ref_date).days
+                    if age > max_age_days:
+                        return self._build_result(
+                            news_data,
+                            decision="SKIP",
+                            importance_level="D",
+                            event_value_type="market_noise",
+                            reason_code="stale_content_date",
+                            reason=f"正文引用日期 {ref_date.isoformat()}，距今 {age} 天超过阈值 {max_age_days}",
+                            confidence=0.95,
+                            score=-1.0,
+                            mode="rule_staleness",
+                        )
+                except ValueError:
+                    continue
+
+        return None
 
     def _ensure_prompt_ready(self) -> bool:
         if self._prompt_ready:
@@ -195,16 +215,13 @@ class LocalQwenNewsTriageService:
 
     @staticmethod
     def _build_prompt(text: str) -> str:
-        short_text = text[:420]
+        short_text = text[:300]
         return (
-            "你是A股盘前新闻重要性预筛选器，只输出严格JSON。\n"
-            "目标：只有重要产业/公司/宏观催化进入LLM结构化和题材匹配。\n"
-            "默认SKIP：普通财报、回购、减持、澄清、风险提示、连板公告、行政监管措施、监管函、警示函、责令改正、天气灾害、列车停运、普通人事任命、普通IPO。\n"
-            "地域词、监管机构所在地、公司行业属性不能构成PASS。重复事件输出DUPLICATE。\n"
-            "PASS仅用于明确题材催化、公司重大订单/中标/并购重组、产业政策、技术突破、行业供需价格变化、海外产业链催化。\n"
-            "信息有交易价值但证据不足输出REVIEW。\n"
-            "C/D级REVIEW不得进入人工复核，只有S/A/B且有明确催化证据的REVIEW才可should_enter_review=true。\n"
-            'JSON schema: {"decision":"PASS|REVIEW|SKIP|DUPLICATE","importance_level":"S|A|B|C|D","event_value_type":"theme_catalyst|company_catalyst|macro_policy|sector_supply_demand|major_risk_alert|low_value_disclosure|market_noise|duplicate","should_structurize":true,"should_publish_structured_stream":true,"should_enter_theme_match":true,"should_enter_review":false,"should_enter_premarket_major_events":true,"reason_code":"string","confidence":0.0,"evidence":["最多3条"],"dedupe_key":"规范化事件key"}\n'
+            "你是A股新闻重要性预筛选器。只输出一行紧凑JSON，不要换行，不要markdown，不要解释。\n"
+            "PASS：题材催化/重大订单/并购重组/产业政策/技术突破/行业供需价格变化/海外产业链催化。\n"
+            "SKIP：普通财报/回购/减持/澄清/风险提示/连板公告/监管函/天气灾害/人事任命/IPO。\n"
+            "REVIEW：有交易价值但证据不足。\n"
+            '格式：{"d":"PASS|REVIEW|SKIP","l":"S|A|B|C|D","t":"theme_catalyst|company_catalyst|macro_policy|sector_supply_demand|major_risk_alert|low_value_disclosure|market_noise","c":0.0,"r":"原因"}\n'
             f"新闻：{short_text}\n"
             "输出："
         )
@@ -374,6 +391,17 @@ class LocalQwenNewsTriageService:
         return result
 
     def _normalize_result(self, raw: Dict[str, Any], *, fallback_text: str) -> Dict[str, Any]:
+        # 紧凑格式映射: {"d": "PASS", "l": "B", "t": "...", "c": 0.9, "r": "..."}
+        if "d" in raw and "decision" not in raw:
+            raw = {
+                "decision": raw.get("d"),
+                "importance_level": raw.get("l"),
+                "event_value_type": raw.get("t"),
+                "confidence": raw.get("c"),
+                "reason_code": raw.get("r"),
+                "evidence": raw.get("e", []),
+                "raw": raw.get("raw"),
+            }
         decision = str(raw.get("decision") or "REVIEW").strip().upper()
         event_value_type = str(raw.get("event_value_type") or "market_noise").strip()
         evidence = raw.get("evidence") if isinstance(raw.get("evidence"), list) else []
@@ -408,7 +436,16 @@ class LocalQwenNewsTriageService:
 
     @staticmethod
     def _parse_prompt_json(raw: str) -> Dict[str, Any] | None:
-        match = re.search(r"\{.*\}", raw, flags=re.DOTALL)
+        # 剥离 markdown 代码块包裹 (```json ... ```)
+        cleaned = raw.strip()
+        if cleaned.startswith("```"):
+            # Remove opening ```json or ```
+            cleaned = re.sub(r"^```(?:json)?\s*", "", cleaned)
+            # Remove closing ```
+            cleaned = re.sub(r"\s*```\s*$", "", cleaned)
+        # 取第一行作为紧凑格式候选，非贪婪只取第一个JSON对象
+        first_line = cleaned.split("\n")[0].strip()
+        match = re.search(r"\{.*?\}", first_line) or re.search(r"\{.*?\}", cleaned)
         if not match:
             return None
         try:
@@ -422,6 +459,7 @@ class LocalQwenNewsTriageService:
             "重大订单", "中标", "签署合同", "重大合同", "重大并购", "重大资产重组",
             "并购重组", "产业政策", "技术突破", "首次突破", "供给短缺", "价格上涨",
             "价格大涨", "需求激增", "出口管制", "获批上市", "投产", "扩产",
+            "涨价函", "提价", "上调", "涨价", "价格上调", "供给收紧",
         }
         # Phase 4C: strong industry/policy catalyst whitelist
         # — only these can override routine government / discipline SKIP
@@ -570,6 +608,11 @@ class LocalQwenNewsTriageService:
                 "北向",
                 "回购",
                 "减持",
+                "涨价",
+                "提价",
+                "上调",
+                "涨价函",
+                "价格上涨",
             )
             if k in text
         )

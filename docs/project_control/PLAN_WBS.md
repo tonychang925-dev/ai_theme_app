@@ -920,3 +920,91 @@
 - `post_market_setup_plan.plan_status` 必须区分 `planned / expired / cancelled`；`setup_plan_realtime_confirmation` 必须是 append-only。
 - 空候选、空计划、空确认都必须是可接受结果，禁止 fallback/mock/default 补数。
 - 1进2 不修改 A/B/C/D 任何生产链，不反向影响 `confirmed_mainline`。
+
+---
+
+## 12. M8.phase0 — Cognition Homepage
+
+### 12.1 规划范围
+
+- Scope：`phase:M8.phase0`
+- 目标：在原盘后复盘之上建立只读认知首页，完成 Shadow、Replay 和 Notion Dual Layer。
+- 约束：不修改 M1～M7 真源，不修改正式 Decision，不启动 8002/8003，不进入 Adaptive Layer。
+
+### 12.2 架构拆解
+
+- Knowledge 边界：`recap_doc/DailyReviewV2 -> MarketKnowledgeBundle`
+- Stable Core：`Evidence -> CLOSE Context -> Cognition -> Thesis`
+- 消费边界：Notion renderer only
+- 迁移边界：`legacy_only -> cognition_shadow -> dual_layer`
+- 关键风险：缺失字段伪结论、旧报告回归、现有未提交 renderer 重构冲突。
+
+### 12.3 里程碑
+
+| Phase | 名称 | Objective | 风险 | 预计时长 | 依赖 |
+|---|---|---|---|---|---|
+| M8.phase0 | Cognition Homepage | 交付可回放 Thesis 首页并保留完整旧证据报告 | P0 | 5～8 人天 | Overall Architecture v4.0 |
+
+### 12.4 WBS
+
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证方式 | DoD Checklist |
+|---|---|---|---:|---|---|---|
+| M8.phase0-T01 | 冻结 Stable Core 契约，实现 MarketKnowledgeBundle 与 Evidence Adapter | - | 2 | P0 | Bundle/Evidence UT | 单元测试; 文档更新; 代码审查 |
+| M8.phase0-T02 | 实现 CLOSE Context、固定模板 Cognition 与 Market Thesis | M8.phase0-T01 | 2 | P0 | Cognition UT | 单元测试; 文档更新; 代码审查 |
+| M8.phase0-T03 | 实现历史 snapshot Shadow replay、逐层 hash 与质量诊断 | M8.phase0-T02 | 1.5 | P1 | Replay IT | 集成测试; 回放验证; 代码审查 |
+| M8.phase0-T04 | 接入 Notion 三种 render mode、Dual Layer 与失败回退 | M8.phase0-T02 | 1.5 | P0 | Renderer IT + regression | 单元测试; 集成测试; 回滚验证; 代码审查 |
+| M8.phase0-T05 | 完成 7 日 replay、阶段 QA、报告与 20 日验证基线 | M8.phase0-T03,M8.phase0-T04 | 1 | P1 | Phase gate | 回放验证; 测试报告; 文档更新 |
+
+### 12.5 依赖与关键路径
+
+```text
+T01 Contracts/Knowledge/Evidence
+  -> T02 Context/Cognition/Thesis
+      -> T03 Shadow Replay
+      -> T04 Notion Dual Layer
+          -> T05 Phase Gate
+```
+
+- T03 与 T04 在 T02 后可并行。
+- T01/T02/T04 影响 P0 复盘能力，必须由 Domain Owner + QA/Risk 评审。
+
+### 12.6 排期
+
+- 激进：5 人天；
+- 风险调整：8 人天；
+- 保守：10 人天；
+- 最大不确定性：历史 snapshot 字段一致性和当前 Notion renderer 未提交改动。
+
+### 12.7 门禁与回滚
+
+- 必跑：Bundle/Evidence UT -> Cognition UT -> Notion IT -> Replay IT -> 兼容回归。
+- 阈值：EvidenceRef 覆盖 100%；Decision diff 0；旧证据章节减少 0；unsupported claim 0。
+- 回滚：设置 `M8_NOTION_RENDER_MODE=legacy_only`，不删除任何历史快照。
+- 失败：任一 P0 验收失败、旧报告不可用、M8 访问数据库或启动 8002/8003。
+
+---
+
+## 13. M8.phase1 — Cognitive Validation
+
+### 13.1 WBS
+
+| Task ID | 任务描述 | Depends On | 估算 | 风险 | 验证 |
+|---|---|---|---:|---|---|
+| M8.phase1-T01 | 冻结 Validation Record、标签、失败类型与 Dataset Schema | - | 1 | P0 | Contract UT |
+| M8.phase1-T02 | 实现 append-only Dataset Writer、Manifest Integrity 与时点/幂等守卫 | T01 | 1.5 | P0 | Writer IT |
+| M8.phase1-T03 | 实现 eligible Hypothesis source freeze、Eligibility Gate 与人工验证录入，不引入 Belief | T02 | 1.5 | P0 | Workflow UT |
+| M8.phase1-T04 | 实现 Binary Accuracy、Brier Score、ECE、Timing Offset 与 replay 汇总 | T03 | 1 | P1 | Metrics UT |
+| M8.phase1-T05 | 连续运行 20 个真实交易日并建立 100 日 Dataset 任务 | T04 | 20 个交易日 | P0 | Daily replay |
+
+### 13.2 关键路径
+
+```text
+Validation Contract -> Append-only Dataset -> Verification Workflow
+-> Metrics/Replay -> 20-day Shadow -> 100-day Corpus
+```
+
+### 13.3 禁止项
+
+- Phase 1 不实现 Belief、Learning、Memory。
+- Verification Ground Truth 不由 LLM 单独裁决。
+- 不改变正式 Decision。

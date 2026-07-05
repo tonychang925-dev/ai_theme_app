@@ -5,6 +5,7 @@ import importlib.metadata
 import importlib.util
 import logging
 import os
+import fcntl
 import re
 import sys
 import time
@@ -63,6 +64,7 @@ logger = logging.getLogger(__name__)
 
 PRE_MARKET_CONFIRM_NOT_READY_MESSAGE = "9:25分之后才能进行盘前确认！"
 REALTIME_AUCTION_CACHE_PREFIX = "sps:w2s:pre_market_auction"
+SPS_SINGLETON_LOCK_PATH = Path(os.getenv("SPS_SINGLETON_LOCK_PATH", "/tmp/ai_theme_app_sps.lock"))
 
 
 def _db_name() -> str:
@@ -77,6 +79,37 @@ def _redis_url() -> str:
     if not v.startswith(("redis://", "rediss://", "unix://")):
         raise RuntimeError(f"Invalid REDIS_URL: {v!r}")
     return v
+
+
+def _acquire_sps_singleton_lock() -> int:
+    """Enforce one live SPS instance across all ports."""
+    SPS_SINGLETON_LOCK_PATH.parent.mkdir(parents=True, exist_ok=True)
+    fd = os.open(str(SPS_SINGLETON_LOCK_PATH), os.O_RDWR | os.O_CREAT, 0o644)
+    try:
+        fcntl.flock(fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError as exc:
+        os.close(fd)
+        raise RuntimeError(
+            f"SPS singleton lock already held: {SPS_SINGLETON_LOCK_PATH}. "
+            "Only one stock_processing_service.api_app instance may run at a time."
+        ) from exc
+    os.ftruncate(fd, 0)
+    os.write(fd, f"pid={os.getpid()}\n".encode("utf-8"))
+    os.fsync(fd)
+    return fd
+
+
+def _release_sps_singleton_lock(fd: int | None) -> None:
+    if fd is None:
+        return
+    try:
+        fcntl.flock(fd, fcntl.LOCK_UN)
+    except Exception:
+        pass
+    try:
+        os.close(fd)
+    except Exception:
+        pass
 
 
 async def _init_stock_match_engine_background(app: FastAPI) -> None:
@@ -128,6 +161,7 @@ async def _init_stock_match_engine_background(app: FastAPI) -> None:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    app.state.singleton_lock_fd = _acquire_sps_singleton_lock()
     cfg = DatabaseConfig(db_type=DatabaseType.POSTGRESQL, postgres_database=_db_name())
     gw = await DatabaseGateway.initialize(config=cfg, auto_warm_cache=False)
 
@@ -276,6 +310,8 @@ async def lifespan(app: FastAPI):
         phase1_close = getattr(app.state.phase1_repo, "close", None)
         if callable(phase1_close):
             await phase1_close()
+        _release_sps_singleton_lock(getattr(app.state, "singleton_lock_fd", None))
+        app.state.singleton_lock_fd = None
 
 
 app = FastAPI(title="stock_processing_service_read_api", version="0.1.0", lifespan=lifespan)
@@ -2131,6 +2167,42 @@ async def _build_one_to_two_watchlists(trade_date: date) -> dict[str, Any]:
     return {"one_to_two": {"summary": summary, "items": items, "diagnostics": diagnostics}}
 
 
+def _trim_daily_review_v2_response(v2: dict[str, Any]) -> dict[str, Any]:
+    """裁剪 daily-review-v2 响应中的冗余数据，减少传输体积。
+
+    主要优化：
+    1. 剔除 f10_capital 大字段（每只股票 ~14KB）
+    2. 去除 limit_up_theme_matrix 中与 columns 完全重复的 visible_columns
+    3. 去除 non_mainline_columns（前端不需要）
+    """
+    # 1. money_flow_reviews: 剔除每项的 f10_capital
+    for item in v2.get("money_flow_reviews") or []:
+        if isinstance(item, dict):
+            item.pop("f10_capital", None)
+
+    # 2. stock_capital_reviews: 同上
+    for item in v2.get("stock_capital_reviews") or []:
+        if isinstance(item, dict):
+            item.pop("f10_capital", None)
+
+    # 3. limit_up_theme_matrix: 去重
+    mtx = v2.get("limit_up_theme_matrix")
+    if isinstance(mtx, dict):
+        mtx.pop("visible_columns", None)
+        mtx.pop("non_mainline_columns", None)
+
+    # 4. strong_stock_pool_reviews 可能也很大，但先保留
+    pdv2 = v2.get("post_market_decision_v2")
+    if isinstance(pdv2, dict) and isinstance(pdv2.get("strong_stock_pool_reviews"), list):
+        # 保留必要字段，剔除冗余 JSON
+        for item in pdv2["strong_stock_pool_reviews"]:
+            if isinstance(item, dict):
+                item.pop("raw_source", None)
+                item.pop("debug_context", None)
+
+    return v2
+
+
 @app.get("/api/v1/daily_review")
 async def get_daily_review(trade_date: str = Query(..., description="YYYY-MM-DD")) -> dict[str, Any]:
     """结构化每日复盘 — 从 post_market_recap_snapshot 派生。
@@ -2220,7 +2292,7 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
     )
 
     builder = PostMarketDailyReviewV2Builder()
-    row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
+    row = await _fetch_latest_post_market_recap_snapshot_row(d)
     if not row:
         return builder.build(trade_date=d, recap_doc=None)
 
@@ -2229,15 +2301,15 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
     if not isinstance(recap_doc, dict):
         recap_doc = {}
 
-    existing = recap_doc.get("daily_review_v2")
-    if isinstance(existing, dict) and existing.get("schema_version") == "daily_review_v2":
-        v2 = existing
-    else:
-        v2 = builder.build(
-            trade_date=d,
-            recap_doc=recap_doc,
-            recap_snapshot_version=str(row.get("snapshot_version") or ""),
-        )
+    recap_doc = await _enrich_recap_doc_with_limit_up_board_counts(d, recap_doc)
+    recap_doc = await _enrich_recap_doc_with_new_high_summary(d, recap_doc)
+    recap_doc = await _enrich_recap_doc_with_seat_money_context(d, recap_doc)
+    structured_v2 = builder.build(
+        trade_date=d,
+        recap_doc=recap_doc,
+        recap_snapshot_version=str(row.get("snapshot_version") or ""),
+    )
+    v2 = structured_v2
 
     # ── PR-14A: enrich with engine report on every read ──
     try:
@@ -2248,10 +2320,18 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
         composer_input = {**recap_doc, **v2}
         engine_report = composer.compose(composer_input)
         v2 = {**v2, **engine_report}
+        for key in ("daily_recap_essentials", "limit_up_ladder", "limit_up_theme_events", "new_high_summary", "seat_money_summary"):
+            if key in structured_v2:
+                v2[key] = structured_v2[key]
     except Exception:
         pass
 
+    v2 = await _enrich_v2_theme_names(v2, d)
+
     v2["watchlists"] = await _build_one_to_two_watchlists(d)
+
+    # ── 响应瘦身：裁剪前端不需要的冗余数据 ──
+    v2 = _trim_daily_review_v2_response(v2)
 
     return v2
 
@@ -2271,7 +2351,7 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
         PostMarketDailyReviewV2Builder,
     )
 
-    row = await app.state.gateway.get_existing_post_market_recap_snapshot(d)
+    row = await _fetch_latest_post_market_recap_snapshot_row(d)
     builder = PostMarketDailyReviewV2Builder()
     if not row:
         v2 = builder.build(trade_date=d, recap_doc=None)
@@ -2289,6 +2369,10 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
     recap_doc = normalized.get("recap_doc") or normalized
     if not isinstance(recap_doc, dict):
         recap_doc = {}
+
+    recap_doc = await _enrich_recap_doc_with_limit_up_board_counts(d, recap_doc)
+    recap_doc = await _enrich_recap_doc_with_new_high_summary(d, recap_doc)
+    recap_doc = await _enrich_recap_doc_with_seat_money_context(d, recap_doc)
 
     # ── Self-healing: inject abnormal_reviews from DB if recap_doc has none ──
     if not recap_doc.get("abnormal_reviews"):
@@ -2315,11 +2399,39 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
             except Exception:
                 pass
 
-    v2 = builder.build(
+    structured_v2 = builder.build(
         trade_date=d,
         recap_doc=recap_doc,
         recap_snapshot_version=str(row.get("snapshot_version") or ""),
     )
+    v2 = structured_v2
+
+    # ── P0: 事件→题材因果链 ──
+    theme_driver_events = None
+    try:
+        from stock_processing_service.application.services.event_driver_tracer import (
+            EventDriverTracer,
+        )
+        pool = getattr(app.state.gateway, "_client", None)
+        pool = getattr(pool, "pool", None) if pool else None
+        if pool is not None:
+            tracer = EventDriverTracer(pool)
+            limit_up_matrix = v2.get("limit_up_theme_matrix") or {}
+            matrix_columns = limit_up_matrix.get("columns") or []
+            if matrix_columns:
+                theme_driver_events = await tracer.trace_theme_rows(
+                    matrix_columns, d, per_theme_limit=2,
+                )
+            # 重新 build 并注入 driver_events
+            structured_v2 = builder.build(
+                trade_date=d,
+                recap_doc=recap_doc,
+                recap_snapshot_version=str(row.get("snapshot_version") or ""),
+                theme_driver_events=theme_driver_events,
+            )
+            v2 = structured_v2
+    except Exception as exc:
+        logger.warning("EventDriverTracer enrichment skipped: %s", exc)
 
     # ── PR-14A: compose engine report into DailyReviewV2 ──
     try:
@@ -2330,12 +2442,19 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
         composer_input = {**recap_doc, **v2}
         engine_report = composer.compose(composer_input)
         v2 = {**v2, **engine_report}
+        for key in ("daily_recap_essentials", "limit_up_ladder", "limit_up_theme_events", "new_high_summary", "seat_money_summary"):
+            if key in structured_v2:
+                v2[key] = structured_v2[key]
     except Exception:
         pass  # best-effort, don't block
+
+    v2 = await _enrich_v2_theme_names(v2, d)
 
     v2["watchlists"] = await _build_one_to_two_watchlists(d)
 
     updated_recap_doc = dict(recap_doc)
+    if isinstance(v2.get("limit_up_theme_matrix"), dict):
+        updated_recap_doc["limit_up_theme_matrix"] = v2["limit_up_theme_matrix"]
     updated_recap_doc["daily_review_v2"] = v2
     updated_payload = dict(normalized)
     updated_payload["recap_doc"] = updated_recap_doc
@@ -2359,6 +2478,341 @@ async def generate_daily_review_v2(payload: dict[str, Any] | None = None) -> dic
         "affected_rows": affected,
         "module_coverage": v2["diagnostics"]["module_coverage"],
     }
+
+
+def _daily_review_v2_has_limit_up_ladder(v2: dict[str, Any]) -> bool:
+    ladder = v2.get("limit_up_ladder")
+    if not isinstance(ladder, dict):
+        return False
+    board_rows = ladder.get("board_rows")
+    if not isinstance(board_rows, list):
+        return False
+    return any(isinstance(row, dict) and int(row.get("stock_count") or 0) > 0 for row in board_rows)
+
+
+async def _enrich_recap_doc_with_limit_up_board_counts(trade_date: date, recap_doc: dict[str, Any]) -> dict[str, Any]:
+    """Materialize board counts from `stock_daily_snapshot` for DailyReview V2."""
+    try:
+        from stock_processing_service.application.services.limit_up_board_recalculator import (
+            LimitUpBoardRecalculator,
+        )
+
+        recalculator = LimitUpBoardRecalculator()
+        client = getattr(app.state.gateway, "_client", None)
+        pool = getattr(client, "pool", None) if client else None
+        logger.warning(
+            "limit_up board recompute: client=%s pool=%s dsn_builder=%s",
+            bool(client),
+            bool(pool),
+            bool(callable(getattr(client, "_build_dsn", None))),
+        )
+        if pool is not None:
+            async with pool.acquire() as conn:
+                enriched = await recalculator.enrich_recap_doc(recap_doc, trade_date, conn)
+                logger.warning("limit_up board recompute: via_pool done")
+                return enriched
+
+        dsn_builder = getattr(client, "_build_dsn", None)
+        if callable(dsn_builder):
+            import asyncpg
+
+            conn = await asyncpg.connect(dsn=dsn_builder())
+            try:
+                enriched = await recalculator.enrich_recap_doc(recap_doc, trade_date, conn)
+                logger.warning("limit_up board recompute: via_dsn done")
+                return enriched
+            finally:
+                await conn.close()
+        return recap_doc
+    except Exception:
+        logger.exception("limit_up board recomputation skipped")
+        return recap_doc
+
+
+async def _enrich_recap_doc_with_new_high_summary(trade_date: date, recap_doc: dict[str, Any]) -> dict[str, Any]:
+    """Materialize innovation-high summary from `stock_daily_snapshot` for DailyReview V2."""
+    try:
+        existing = recap_doc.get("new_high_summary")
+        if isinstance(existing, dict) and existing.get("representative_stocks"):
+            return recap_doc
+
+        client = getattr(app.state.gateway, "_client", None)
+        pool = getattr(client, "pool", None) if client else None
+        if pool is None:
+            dsn_builder = getattr(client, "_build_dsn", None)
+            if not callable(dsn_builder):
+                return recap_doc
+            import asyncpg
+            conn = await asyncpg.connect(dsn=dsn_builder())
+            try:
+                enriched = await _build_new_high_summary_from_conn(trade_date, recap_doc, conn)
+                return enriched
+            finally:
+                await conn.close()
+        async with pool.acquire() as conn:
+            return await _build_new_high_summary_from_conn(trade_date, recap_doc, conn)
+    except Exception:
+        logger.exception("new_high summary recomputation skipped")
+        return recap_doc
+
+
+async def _build_new_high_summary_from_conn(trade_date: date, recap_doc: dict[str, Any], conn) -> dict[str, Any]:
+    from datetime import timedelta
+
+    rows = await conn.fetch(
+        """
+        WITH hist AS (
+            SELECT
+                split_part(stock_id, '.', 1) AS stock_key,
+                trade_date,
+                high_price,
+                MAX(high_price) OVER (
+                    PARTITION BY split_part(stock_id, '.', 1)
+                    ORDER BY trade_date
+                    ROWS BETWEEN 250 PRECEDING AND 1 PRECEDING
+                ) AS prev_250_high
+            FROM stock_daily_snapshot
+            WHERE trade_date >= $1::date - INTERVAL '260 days'
+              AND trade_date <= $1::date
+              AND source_name LIKE 'tushare%'
+        )
+        SELECT
+            h.trade_date,
+            h.stock_key,
+            h.high_price,
+            COALESCE(s.name, h.stock_key) AS stock_name,
+            COALESCE(gp.concept, '') AS industry_name
+        FROM hist h
+        LEFT JOIN stocks s ON s.stock_id = h.stock_key
+        LEFT JOIN stock_gate_profile gp ON gp.stock_id = h.stock_key
+        WHERE h.trade_date = ANY($2::date[])
+          AND h.prev_250_high IS NOT NULL
+          AND h.high_price >= h.prev_250_high
+        ORDER BY h.trade_date DESC, h.high_price DESC, h.stock_key
+        """,
+        trade_date,
+        [trade_date, trade_date - timedelta(days=1), trade_date - timedelta(days=2)],
+    )
+    if not rows:
+        return recap_doc
+
+    by_date: dict[Any, list[dict[str, Any]]] = {}
+    for row in rows:
+        trade_day = row.get("trade_date")
+        by_date.setdefault(trade_day, []).append(dict(row))
+
+    today_rows = by_date.get(trade_date, [])
+    yesterday_rows = by_date.get(trade_date - timedelta(days=1), [])
+    day_before_rows = by_date.get(trade_date - timedelta(days=2), [])
+
+    classified_rows = [
+        row for row in today_rows if str(row.get("industry_name") or "").strip()
+    ]
+    unclassified_count = len(today_rows) - len(classified_rows)
+    classification_rate = (
+        len(classified_rows) / len(today_rows) if today_rows else 0.0
+    )
+    industry_rows: dict[str, list[dict[str, Any]]] = {}
+    for row in today_rows:
+        key = str(row.get("industry_name") or "未分类").strip() or "未分类"
+        industry_rows.setdefault(key, []).append(row)
+    industry_summary = [
+        {
+            "industry_name": name,
+            "count": len(items),
+            "representative_stocks": items[:3],
+        }
+        for name, items in sorted(industry_rows.items(), key=lambda item: (-len(item[1]), item[0]))[:5]
+    ]
+    summary = "暂无结构化创新高数据"
+    if today_rows:
+        industries = "、".join(
+            item["industry_name"]
+            for item in industry_summary
+            if item.get("industry_name") not in {"未分类", "未知"}
+        ) or "暂无明确行业聚焦"
+        reps = "、".join([item["stock_name"] for item in today_rows[:4] if item.get("stock_name")]) or "暂无代表股"
+        summary = (
+            f"今日创新高 {len(today_rows)} 家；行业已识别 {len(classified_rows)} 家"
+            f"（{classification_rate:.0%}），已分类方向为 {industries}；代表股 {reps}。"
+        )
+
+    enriched = dict(recap_doc)
+    enriched["new_high_summary"] = {
+        "summary": summary,
+        "today_count": len(today_rows),
+        "yesterday_count": len(yesterday_rows),
+        "day_before_count": len(day_before_rows),
+        "industry_summary": industry_summary,
+        "representative_stocks": today_rows[:10],
+        "diagnostics": {
+            "source": "recomputed_from_stock_daily_snapshot",
+            "row_count": len(today_rows),
+            "classified_count": len(classified_rows),
+            "unclassified_count": unclassified_count,
+            "classification_rate": classification_rate,
+        },
+    }
+    return enriched
+
+
+async def _enrich_v2_theme_names(v2: dict[str, Any], trade_date: date) -> dict[str, Any]:
+    """Translate numeric subject keys in V2 payload to readable theme names."""
+    if not isinstance(v2, dict):
+        return v2
+
+    subject_keys: list[str] = []
+
+    def collect_keys(rows: Any) -> None:
+        if not isinstance(rows, list):
+            return
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            for key in ("subject_key", "theme_name"):
+                value = str(row.get(key) or "").strip()
+                if value and value.isdigit():
+                    subject_keys.append(value)
+
+    collect_keys(v2.get("stock_capital_reviews"))
+    collect_keys(v2.get("theme_capital_reviews"))
+    seat_money = v2.get("seat_money_summary")
+    if isinstance(seat_money, dict):
+        for key in ("institution_top_buys", "institution_top_sells", "hot_money_top_buys", "hot_money_top_sells", "theme_rows"):
+            collect_keys(seat_money.get(key))
+
+    subject_keys = sorted(set(subject_keys))
+    if not subject_keys:
+        return v2
+
+    theme_map = await _resolve_theme_name_map(subject_keys, trade_date)
+    if not theme_map:
+        return v2
+
+    def normalize_rows(rows: Any) -> None:
+        if not isinstance(rows, list):
+            return
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            key = str(row.get("subject_key") or row.get("theme_name") or "").strip()
+            if key and key in theme_map:
+                row["theme_name"] = theme_map.get(key, key)
+
+    normalize_rows(v2.get("stock_capital_reviews"))
+    normalize_rows(v2.get("theme_capital_reviews"))
+    if isinstance(seat_money, dict):
+        for key in ("institution_top_buys", "institution_top_sells", "hot_money_top_buys", "hot_money_top_sells", "theme_rows"):
+            normalize_rows(seat_money.get(key))
+
+        institution_names = [
+            str(row.get("stock_name") or "").strip()
+            for row in (seat_money.get("institution_top_buys") or [])[:3]
+            if isinstance(row, dict) and str(row.get("stock_name") or "").strip()
+        ]
+        hot_money_names = [
+            str(row.get("stock_name") or "").strip()
+            for row in (seat_money.get("hot_money_top_buys") or [])[:3]
+            if isinstance(row, dict) and str(row.get("stock_name") or "").strip()
+        ]
+        theme_names = [
+            str(row.get("theme_name") or "").strip()
+            for row in (seat_money.get("theme_rows") or [])[:3]
+            if isinstance(row, dict) and str(row.get("theme_name") or "").strip()
+        ]
+        if institution_names or hot_money_names or theme_names:
+            parts: list[str] = []
+            if institution_names:
+                parts.append(f"机构关注 {'、'.join(institution_names)}")
+            if hot_money_names:
+                parts.append(f"游资关注 {'、'.join(hot_money_names)}")
+            cohesion = str(seat_money.get("cohesion") or "").strip()
+            if cohesion and cohesion != "--":
+                parts.append(f"资金{cohesion}")
+            if theme_names:
+                parts.append(f"主题聚焦 {'、'.join(theme_names)}")
+            seat_money["summary"] = "，".join(parts)
+
+    return v2
+
+
+async def _enrich_recap_doc_with_seat_money_context(trade_date: date, recap_doc: dict[str, Any]) -> dict[str, Any]:
+    """Inject structured dragon_tiger_object / hot_money_trading_activity facts when snapshot is missing them."""
+    try:
+        context = recap_doc.get("report_context") if isinstance(recap_doc.get("report_context"), dict) else {}
+        dragon_missing = not (isinstance(context.get("dragon_tiger"), list) and context.get("dragon_tiger"))
+        hot_money_missing = not (isinstance(context.get("hot_money_activities"), list) and context.get("hot_money_activities"))
+        if not dragon_missing and not hot_money_missing:
+            return recap_doc
+
+        client = getattr(app.state.gateway, "_client", None)
+        fetch_context = getattr(client, "get_post_market_report_context", None)
+        if not callable(fetch_context):
+            return recap_doc
+
+        report_context = await fetch_context(trade_date)
+        if not isinstance(report_context, dict):
+            return recap_doc
+
+        enriched = dict(recap_doc)
+        merged_context = dict(context)
+        if dragon_missing and isinstance(report_context.get("dragon_tiger"), list) and report_context.get("dragon_tiger"):
+            merged_context["dragon_tiger"] = report_context["dragon_tiger"]
+        if hot_money_missing and isinstance(report_context.get("hot_money_activities"), list) and report_context.get("hot_money_activities"):
+            merged_context["hot_money_activities"] = report_context["hot_money_activities"]
+        if isinstance(report_context.get("theme_name_map"), dict) and report_context.get("theme_name_map") and not merged_context.get("theme_name_map"):
+            merged_context["theme_name_map"] = report_context["theme_name_map"]
+        if merged_context:
+            enriched["report_context"] = merged_context
+        if dragon_missing and isinstance(report_context.get("dragon_tiger"), list) and report_context.get("dragon_tiger"):
+            enriched["dragon_tiger_reviews"] = report_context["dragon_tiger"]
+        if hot_money_missing and isinstance(report_context.get("hot_money_activities"), list) and report_context.get("hot_money_activities"):
+            enriched["hot_money_activities"] = report_context["hot_money_activities"]
+        return enriched
+    except Exception:
+        logger.exception("seat money context recomputation skipped")
+        return recap_doc
+
+
+async def _fetch_latest_post_market_recap_snapshot_row(trade_date: date) -> dict[str, Any] | None:
+    """Bypass gateway caching and read the latest recap snapshot directly."""
+    try:
+        client = getattr(app.state.gateway, "_client", None)
+        pool = getattr(client, "pool", None) if client else None
+        if pool is not None:
+            row = await pool.fetchrow(
+                """
+                SELECT trade_date, snapshot_version, batch_id, trace_id, payload
+                FROM post_market_recap_snapshot
+                WHERE trade_date = $1::date
+                ORDER BY updated_at DESC
+                LIMIT 1
+                """,
+                trade_date,
+            )
+            return dict(row) if row else None
+
+        dsn_builder = getattr(client, "_build_dsn", None)
+        if callable(dsn_builder):
+            import asyncpg
+            conn = await asyncpg.connect(dsn=dsn_builder())
+            try:
+                row = await conn.fetchrow(
+                    """
+                    SELECT trade_date, snapshot_version, batch_id, trace_id, payload
+                    FROM post_market_recap_snapshot
+                    WHERE trade_date = $1::date
+                    ORDER BY updated_at DESC
+                    LIMIT 1
+                    """,
+                    trade_date,
+                )
+                return dict(row) if row else None
+            finally:
+                await conn.close()
+    except Exception:
+        logger.exception("failed to fetch recap snapshot directly")
+    return None
 
 
 # ── P1: PostMarket Readiness API ──
@@ -2440,6 +2894,7 @@ async def generate_post_market_derived_data(payload: dict[str, Any] | None = Non
     uc = PostMarketDerivedDataGenerateUseCase(pool=pool, db_manager=db_manager)
     uc.register_theme_cycle_truth()
     uc.register_dragon_tiger_object_build()
+    uc.register_hot_money_activity_build(project_root=str(_project_root()))
     uc.register_theme_leader_candidate_build(project_root=str(_project_root()))
     uc.register_money_flow_enhanced_build(project_root=str(_project_root()))
     uc.register_stock_abnormal_signal_build(project_root=str(_project_root()))
@@ -2857,6 +3312,65 @@ async def get_theme_workspace(subject_key: str, trade_date: str = "") -> dict[st
         stocks = await conn.fetch("SELECT * FROM subject_stock_staging WHERE subject_key=$1 LIMIT 12", subject_key)
         result["stocks"] = [dict(r) for r in stocks]
         detail["stock_count"] = len(result["stocks"])
+
+        # Graph: hierarchical children + stocks for 题材图谱 tab
+        graph: dict[str, Any] = {
+            "root": {
+                "name": theme_name,
+                "subject_key": subject_key,
+                "pct_chg": None,
+            },
+            "children": [],
+            "uncategorized_stocks": [],
+        }
+        # Root pct_chg from recent rank
+        root_rank = await conn.fetchrow(
+            "SELECT pct_chg FROM subject_history_staging WHERE subject_key=$1 ORDER BY rank_date DESC LIMIT 1",
+            subject_key,
+        )
+        if root_rank and root_rank["pct_chg"] is not None:
+            graph["root"]["pct_chg"] = float(root_rank["pct_chg"])
+
+        # Children with per-child stocks
+        graph_children = await conn.fetch(
+            "SELECT * FROM subject_children_staging WHERE parent_subject_key=$1 ORDER BY sort LIMIT 20",
+            subject_key,
+        )
+        for ch in graph_children:
+            child_node: dict[str, Any] = {
+                "name": ch["child_name"] or ch["child_subject_key"],
+                "child_subject_key": ch["child_subject_key"],
+                "pct_chg": float(ch["pct_chg"]) if ch["pct_chg"] is not None else None,
+                "stocks": [],
+            }
+            # Stocks under this child
+            child_stocks = await conn.fetch(
+                "SELECT stock_id, stock_name, reason FROM subject_child_stock_reason "
+                "WHERE subject_key=$1 AND child_name=$2 ORDER BY sort_order LIMIT 20",
+                subject_key, ch["child_name"],
+            )
+            for cs in child_stocks:
+                child_node["stocks"].append({
+                    "stock_id": cs["stock_id"],
+                    "stock_name": cs["stock_name"],
+                    "reason": cs["reason"] or "",
+                })
+            graph["children"].append(child_node)
+
+        # Uncategorized stocks (cdp_extracted or no child_name)
+        uncat = await conn.fetch(
+            "SELECT stock_id, stock_name, reason FROM subject_child_stock_reason "
+            "WHERE subject_key=$1 AND (child_name='cdp_extracted' OR child_name IS NULL OR child_name='') "
+            "ORDER BY sort_order LIMIT 50",
+            subject_key,
+        )
+        for us in uncat:
+            graph["uncategorized_stocks"].append({
+                "stock_id": us["stock_id"],
+                "stock_name": us["stock_name"],
+                "reason": us["reason"] or "",
+            })
+        result["graph"] = graph
 
         result["detail"] = detail
 
@@ -3791,6 +4305,97 @@ async def get_intel_feed_debug_counts(feed_date: str = Query(...)) -> dict[str, 
     }
 
 
+async def _subject_has_children(app, subject_key: str) -> bool:
+    try:
+        async with app.state.gateway._client.pool.acquire() as conn:
+            return bool(await conn.fetchval(
+                "SELECT 1 FROM subject_children_staging "
+                "WHERE parent_subject_key = $1 LIMIT 1", subject_key,
+            ))
+    except Exception:
+        return False
+
+
+async def _resolve_canonical_subject(app, subject_key: str) -> str | None:
+    """Resolve a leaf/missing taxonomy node to its canonical subject."""
+    try:
+        async with app.state.gateway._client.pool.acquire() as conn:
+            # Get the node's display name
+            name = await conn.fetchval(
+                "SELECT child_name FROM subject_children_staging "
+                "WHERE child_subject_key = $1 LIMIT 1", subject_key,
+            )
+            # 1) Name match in theme_gate_profile
+            if name:
+                canonical = await conn.fetchval(
+                    "SELECT subject_key FROM theme_gate_profile "
+                    "WHERE concept = $1 AND subject_key != $2 "
+                    "ORDER BY subject_key LIMIT 1",
+                    name, subject_key,
+                )
+                if canonical:
+                    return canonical
+            # 2) Walk ancestry to nearest parent with gate_profile
+            return await conn.fetchval("""
+                WITH RECURSIVE ancestors AS (
+                    SELECT parent_subject_key, 0 as depth
+                    FROM subject_children_staging
+                    WHERE child_subject_key = $1
+                    UNION ALL
+                    SELECT s.parent_subject_key, a.depth + 1
+                    FROM subject_children_staging s
+                    JOIN ancestors a ON a.parent_subject_key = s.child_subject_key
+                    WHERE a.depth < 5
+                )
+                SELECT a.parent_subject_key FROM ancestors a
+                JOIN theme_gate_profile gp ON gp.subject_key = a.parent_subject_key
+                ORDER BY a.depth LIMIT 1
+            """, subject_key)
+    except Exception:
+        return None
+
+
+@app.get("/api/v1/subject-search")
+async def subject_search(
+    q: str = Query(default=..., min_length=1),
+    limit: int = Query(default=30, ge=1, le=100),
+) -> dict[str, Any]:
+    """搜索题材：按关键字匹配 theme_gate_profile，返回 subject_key 列表供跳转 Theme Workspace。"""
+    try:
+        async with app.state.gateway._client.pool.acquire() as conn:
+            rows = await conn.fetch("""
+                WITH latest_rank AS (
+                    SELECT DISTINCT ON (subject_key)
+                        subject_key,
+                        heat,
+                        heat_name
+                    FROM subject_rank_daily
+                    ORDER BY subject_key, rank_date DESC
+                )
+                SELECT
+                    tgp.subject_key AS theme_id,
+                    tgp.concept AS theme_name,
+                    COALESCE(lr.heat, 0) AS heat,
+                    COALESCE(NULLIF(lr.heat_name, ''), 'UNKNOWN') AS stage,
+                    COALESCE(
+                        (SELECT COUNT(DISTINCT stock_id) FROM subject_stock_staging
+                         WHERE subject_key = tgp.subject_key),
+                        0
+                    ) AS stock_count
+                FROM theme_gate_profile tgp
+                LEFT JOIN latest_rank lr ON lr.subject_key = tgp.subject_key
+                WHERE tgp.concept ILIKE $1
+                   OR tgp.subject_key ILIKE $1
+                ORDER BY lr.heat DESC NULLS LAST, tgp.subject_key
+                LIMIT $2
+            """, f"%{q}%", limit)
+        themes = [dict(r) for r in rows]
+        return {"themes": themes, "count": len(themes), "query": q}
+    except Exception as e:
+        logger.exception("subject search failed")
+        return {"themes": [], "count": 0, "query": q, "error": str(e)}
+
+
 @app.get("/api/v1/theme_workspace/{subject_key}")
 @app.get("/api/v1/theme/workspace/{subject_key}")
 async def get_theme_workspace(
@@ -3806,7 +4411,27 @@ async def get_theme_workspace(
     stocks_limit: int = Query(default=50, ge=1, le=500),
 ) -> dict[str, Any]:
     """题材工作台统一端点（semi-service — 后续 P3 Gateway 化升级）。"""
+    # Resolve semantic name to numeric key via vw_subject_theme_binding
+    if subject_key and not subject_key.isdigit():
+        try:
+            async with app.state.gateway._client.pool.acquire() as _conn:
+                _resolved = await _conn.fetchval(
+                    "SELECT subject_key FROM vw_subject_theme_binding "
+                    "WHERE theme_name = $1 "
+                    "ORDER BY node_level LIMIT 1", subject_key)
+                if _resolved:
+                    subject_key = _resolved
+        except Exception:
+            pass
     detail = await app.state.phase1_repo.fetch_theme_detail(subject_key)
+    # Resolve leaf / missing taxonomy nodes to canonical subject
+    if not detail or not await _subject_has_children(app, subject_key):
+        canonical = await _resolve_canonical_subject(app, subject_key)
+        if canonical:
+            canonical_detail = await app.state.phase1_repo.fetch_theme_detail(canonical)
+            if canonical_detail:
+                detail = canonical_detail
+                subject_key = canonical
     if not detail:
         raise HTTPException(status_code=404, detail=f"theme workspace not found for subject_key={subject_key}")
 
@@ -4059,13 +4684,221 @@ async def get_theme_workspace(
             partial = True
             missing_sections.append("stocks")
 
+    # ── 题材图谱 (graph) ──
+    graph = None
+    try:
+        from asyncpg import connect as _pg_connect
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        gconn = await _pg_connect(
+            host="localhost", port=5432, database=db,
+            user=os.environ.get("PG_USERNAME", "postgres"),
+            password=os.environ.get("PG_PASSWORD", ""),
+        )
+        try:
+            # Resolve to numeric subject_key — the API parameter may be a semantic name
+            _resolved_key = str(detail.get("subject_key") or subject_key)
+            theme_name = str(detail.get("theme_name") or detail.get("subject_key", subject_key))
+            graph = {"root": {"name": theme_name, "subject_key": _resolved_key, "pct_chg": None}, "children": [], "uncategorized_stocks": []}
+            root_rank = await gconn.fetchrow("SELECT pct_chg FROM subject_history_staging WHERE subject_key=$1 ORDER BY rank_date DESC LIMIT 1", _resolved_key)
+            if root_rank and root_rank["pct_chg"] is not None:
+                graph["root"]["pct_chg"] = float(root_rank["pct_chg"])
+            # Helper: normalize stock_id to bare code (no .SH/.SZ suffix) for dedup
+            def _norm_sid(raw: str) -> str:
+                return raw.strip().upper().rsplit(".", 1)[0] if "." in raw else raw.strip().upper()
+
+            # Helper: format trade amount for display (e.g. 42.02亿, 1.36亿)
+            def _format_amount(amount) -> str | None:
+                if amount is None:
+                    return None
+                try:
+                    v = float(amount)
+                except (TypeError, ValueError):
+                    return None
+                if v >= 1e8:
+                    return f"{v / 1e8:.2f}亿"
+                if v >= 1e4:
+                    return f"{v / 1e4:.2f}万"
+                return f"{v:.2f}"
+
+            # Helper: fetch stocks for a child subject, scoped to parent's stocks
+            async def _fetch_stocks(sk: str, sn: str, parent_stock_ids: set[str] | None = None) -> list[dict]:
+                """Fetch stocks for a child subject.  When *parent_stock_ids* is
+                provided, results are filtered to only include stocks that also
+                appear in the parent subject's constituent list."""
+                stocks = []
+                seen = set()
+                # Own key: ALL stocks regardless of child_name
+                for row in await gconn.fetch(
+                    "SELECT scr.stock_id, scr.stock_name, scr.reason, COALESCE(ssm.pct_chg,0) AS sp "
+                    "FROM subject_child_stock_reason scr LEFT JOIN subject_stock_map ssm ON ssm.subject_key=$2 AND ssm.stock_id=scr.stock_id "
+                    "WHERE scr.subject_key=$1 ORDER BY scr.sort_order LIMIT 200", sk, subject_key):
+                    sid = row["stock_id"]
+                    norm = _norm_sid(sid)
+                    if norm in seen:
+                        continue
+                    if parent_stock_ids and norm not in parent_stock_ids:
+                        continue
+                    seen.add(norm)
+                    stocks.append({"stock_id": sid, "stock_name": row["stock_name"], "child_name": sn, "reason": row["reason"] or "", "pct_chg": float(row["sp"] or 0)})
+                # Parent key with child_name matching sn
+                parent_row = await gconn.fetchrow("SELECT parent_subject_key FROM jyhf_subject_taxonomy_relation WHERE child_subject_key=$1 LIMIT 1", sk)
+                if parent_row:
+                    pk = parent_row["parent_subject_key"]
+                    for row in await gconn.fetch(
+                        "SELECT scr.stock_id, scr.stock_name, scr.reason, COALESCE(ssm.pct_chg,0) AS sp "
+                        "FROM subject_child_stock_reason scr LEFT JOIN subject_stock_map ssm ON ssm.subject_key=$3 AND ssm.stock_id=scr.stock_id "
+                        "WHERE scr.subject_key=$1 AND scr.child_name=$2 ORDER BY scr.sort_order LIMIT 50", pk, sn, subject_key):
+                        sid = row["stock_id"]
+                        norm = _norm_sid(sid)
+                        if norm in seen:
+                            continue
+                        if parent_stock_ids and norm not in parent_stock_ids:
+                            continue
+                        seen.add(norm)
+                        stocks.append({"stock_id": sid, "stock_name": row["stock_name"], "child_name": sn, "reason": row["reason"] or "", "pct_chg": float(row["sp"] or 0)})
+                return stocks
+
+            # Collect parent subject's own stock IDs for cross-filtering
+            parent_stock_rows = await gconn.fetch(
+                "SELECT DISTINCT stock_id FROM subject_stock_staging "
+                "WHERE subject_key=$1 AND stock_id IS NOT NULL", _resolved_key
+            )
+            parent_stock_ids: set[str] = {_norm_sid(r["stock_id"]) for r in parent_stock_rows}
+            # Also check subject_child_stock_reason under parent key
+            if not parent_stock_ids:
+                parent_reason_rows = await gconn.fetch(
+                    "SELECT DISTINCT stock_id FROM subject_child_stock_reason "
+                    "WHERE subject_key=$1", _resolved_key
+                )
+                parent_stock_ids = {r["stock_id"].strip().upper() for r in parent_reason_rows}
+
+            # Build hierarchy from subject_children_staging (CDP-extracted
+            # internal taxonomy tree — NOT jyhf_subject_taxonomy_relation
+            # which stores global subject-to-subject relations).
+            root_children = await gconn.fetch(
+                "SELECT child_subject_key, child_name FROM subject_children_staging "
+                "WHERE parent_subject_key=$1 ORDER BY sort", _resolved_key
+            )
+            assigned_ids: set[str] = set()
+            for rc in root_children:
+                child_key = rc["child_subject_key"]
+                child_name = rc["child_name"] or child_key
+                child_stocks = await _fetch_stocks(child_key, child_name, parent_stock_ids)
+                # Level 2: grandchildren from subject_children_staging.
+                # Both jyhf_children (imported taxonomy) and jyhf_cdp_dom
+                # (CDP-extracted) are valid — JYHF vip-table view shows
+                # 3-level trees for most subjects.
+                grands = await gconn.fetch(
+                    "SELECT child_subject_key, child_name FROM subject_children_staging "
+                    "WHERE parent_subject_key=$1 ORDER BY sort", child_key
+                )
+                gc_nodes = []
+                for gr in grands:
+                    gk = gr["child_subject_key"]
+                    gn = gr["child_name"] or gk
+                    gc_stocks = await _fetch_stocks(gk, gn, parent_stock_ids)
+                    gc_node = {"name": gn, "child_subject_key": gk, "stocks": gc_stocks or []}
+                    for s in (gc_stocks or []):
+                        assigned_ids.add(s["stock_id"])
+                    gc_nodes.append(gc_node)
+                # Show child if it has direct stocks OR grandchildren
+                if not child_stocks and not grands:
+                    continue
+                child_node = {
+                    "name": child_name,
+                    "child_subject_key": child_key,
+                    "pct_chg": None,
+                    "children": gc_nodes,
+                    "stocks": child_stocks,
+                }
+                for s in child_stocks:
+                    assigned_ids.add(s["stock_id"])
+                graph["children"].append(child_node)
+            # Leaf node with no children: fetch stocks and show directly
+            if not root_children:
+                leaf_stocks = await _fetch_stocks(subject_key, theme_name)
+                for s in (leaf_stocks or []):
+                    assigned_ids.add(s["stock_id"])
+                    graph["uncategorized_stocks"].append(s)
+            # Remaining: stocks under root key not assigned to any child/grandchild
+            # Show them as direct stocks of the root rather than "其他"
+            all_assigned_ids = set(assigned_ids)
+            for c in graph["children"]:
+                for s in c.get("stocks", []):
+                    all_assigned_ids.add(s["stock_id"])
+                for gc in c.get("children", []):
+                    for s in gc.get("stocks", []):
+                        all_assigned_ids.add(s["stock_id"])
+            # Also collect stocks from root key in child_stock_reason
+            direct_stocks = []
+            for row in await gconn.fetch(
+                "SELECT ssm.stock_id, ssm.name AS stock_name, scr.reason, ssm.pct_chg "
+                "FROM subject_stock_map ssm "
+                "LEFT JOIN subject_child_stock_reason scr ON scr.subject_key=ssm.subject_key AND scr.stock_id=ssm.stock_id "
+                "WHERE ssm.subject_key=$1 ORDER BY ssm.sort LIMIT 200",
+                subject_key,
+            ):
+                sid = row["stock_id"]
+                if sid not in all_assigned_ids:
+                    all_assigned_ids.add(sid)
+                    direct_stocks.append({
+                        "stock_id": sid,
+                        "stock_name": row["stock_name"],
+                        "child_name": theme_name,
+                        "reason": row["reason"] or "",
+                        "pct_chg": float(row["pct_chg"] or 0) if row["pct_chg"] is not None else None,
+                    })
+            if direct_stocks:
+                graph["uncategorized_stocks"].extend(direct_stocks)
+            # Fallback: when child_stock_reason and stock_map are both empty
+            # for this subject, pull stocks from subject_stock_staging directly,
+            # including evidence_json financial data (amount, pct_chg, vol, etc.)
+            if not root_children and not graph["uncategorized_stocks"]:
+                staging_stocks = await gconn.fetch(
+                    "SELECT stock_id, stock_name, evidence_json FROM subject_stock_staging "
+                    "WHERE subject_key=$1 ORDER BY sort LIMIT 200",
+                    subject_key,
+                )
+                for row in staging_stocks:
+                    sid = row["stock_id"]
+                    if sid not in assigned_ids:
+                        assigned_ids.add(sid)
+                        ev = row["evidence_json"] or {}
+                        if isinstance(ev, str):
+                            ev = json.loads(ev)
+                        graph["uncategorized_stocks"].append({
+                            "stock_id": sid,
+                            "stock_name": row["stock_name"] or sid,
+                            "child_name": theme_name,
+                            "reason": "",
+                            "pct_chg": (
+                                float(ev.get("pct_chg", 0))
+                                if ev.get("pct_chg") is not None
+                                else None
+                            ),
+                            "amount": ev.get("amount"),
+                            "amount_str": (
+                                _format_amount(ev.get("amount"))
+                                if ev.get("amount") is not None
+                                else None
+                            ),
+                            "vol": ev.get("vol"),
+                            "rank_no": ev.get("rank_no"),
+                        })
+        finally:
+            await gconn.close()
+    except Exception:
+        if graph is None:
+            graph = {"root": {"name": detail.get("theme_name", subject_key), "subject_key": subject_key}, "children": [], "uncategorized_stocks": []}
+
     return {
         "subject_key": detail.get("subject_key", subject_key),
         "trade_date": trade_date,
         "detail": detail,
-        "history": history,
-        "children": children,
-        "stocks": stocks,
+        "history": [dict(r) for r in history] if history else None,
+        "children": [dict(r) for r in children] if children else None,
+        "stocks": [dict(r) for r in stocks] if stocks else None,
+        "graph": graph,
         "analytics": analytics,
         "diagnostics": {
             "partial": partial,
@@ -6037,3 +6870,159 @@ async def submit_mainline_review_decision(review_id: str, payload: dict[str, Any
 
         # watch / reject / downgrade_to_theme — queue only, no registry
         return {"ok": True, "action": decision, "registry_written": False}
+
+
+# ── M4g: Recap Read Model API ───────────────────────────────────
+
+
+@app.get("/api/v1/recap/latest")
+async def get_recap_latest() -> dict[str, Any]:
+    """Return the most recent market recap snapshot."""
+    try:
+        from asyncpg import connect as _pg_connect
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        conn = await _pg_connect(
+            host="localhost", port=5432, database=db,
+            user=os.environ.get("PG_USERNAME", "postgres"),
+            password=os.environ.get("PG_PASSWORD", ""),
+        )
+        try:
+            row = await conn.fetchrow(
+                "SELECT recap_json, trade_date, created_at "
+                "FROM market_recap_snapshot ORDER BY trade_date DESC LIMIT 1"
+            )
+            if not row:
+                raise HTTPException(status_code=404, detail="no recap snapshot found")
+            data = row["recap_json"] if isinstance(row["recap_json"], dict) else json.loads(row["recap_json"])
+            data["_meta"] = {
+                "trade_date": str(row["trade_date"] or ""),
+                "created_at": str(row["created_at"] or ""),
+            }
+            return data
+        finally:
+            await conn.close()
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.get("/api/v1/recap/{trade_date}")
+async def get_recap_by_date(trade_date: str) -> dict[str, Any]:
+    """Return market recap for a specific trade date."""
+    try:
+        from asyncpg import connect as _pg_connect
+        import json as _json
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        conn = await _pg_connect(
+            host="localhost", port=5432, database=db,
+            user=os.environ.get("PG_USERNAME", "postgres"),
+            password=os.environ.get("PG_PASSWORD", ""),
+        )
+        try:
+            td_date = date.fromisoformat(trade_date) if isinstance(trade_date, str) else trade_date
+            row = await conn.fetchrow(
+                "SELECT recap_json, trade_date, created_at "
+                "FROM market_recap_snapshot WHERE trade_date = $1::date",
+                td_date,
+            )
+            if not row:
+                raise HTTPException(
+                    status_code=404,
+                    detail=f"no recap snapshot for {trade_date}",
+                )
+            data = row["recap_json"] if isinstance(row["recap_json"], dict) else _json.loads(row["recap_json"])
+            data["_meta"] = {
+                "trade_date": str(row["trade_date"] or ""),
+                "created_at": str(row["created_at"] or ""),
+            }
+            return data
+        finally:
+            await conn.close()
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.get("/api/v1/themes/top")
+async def get_top_themes(
+    trade_date: str | None = None,
+    limit: int = 10,
+) -> list[dict[str, Any]]:
+    """Return top themes by strength score."""
+    try:
+        from asyncpg import connect as _pg_connect
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        conn = await _pg_connect(
+            host="localhost", port=5432, database=db,
+            user=os.environ.get("PG_USERNAME", "postgres"),
+            password=os.environ.get("PG_PASSWORD", ""),
+        )
+        try:
+            if trade_date:
+                rows = await conn.fetch(
+                    "SELECT theme_name, strength_score, rank, stock_count, "
+                    "leader_count, top_stocks, evidence_sources "
+                    "FROM theme_strength_snapshot "
+                    "WHERE trade_date = $1::date ORDER BY rank LIMIT $2",
+                    trade_date, min(limit, 20),
+                )
+            else:
+                rows = await conn.fetch(
+                    "SELECT DISTINCT ON (theme_name) theme_name, strength_score, "
+                    "rank, stock_count, leader_count, top_stocks, evidence_sources, trade_date "
+                    "FROM theme_strength_snapshot "
+                    "ORDER BY theme_name, trade_date DESC "
+                    "LIMIT $1",
+                    min(limit, 20),
+                )
+            return [dict(r) for r in rows]
+        finally:
+            await conn.close()
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.get("/api/v1/leaders/{theme_name}")
+async def get_theme_leaders(
+    theme_name: str,
+    trade_date: str | None = None,
+    limit: int = 10,
+) -> list[dict[str, Any]]:
+    """Return leader scores for a specific theme."""
+    try:
+        from asyncpg import connect as _pg_connect
+        db = os.environ.get("PG_DATABASE", "stock_data_test")
+        conn = await _pg_connect(
+            host="localhost", port=5432, database=db,
+            user=os.environ.get("PG_USERNAME", "postgres"),
+            password=os.environ.get("PG_PASSWORD", ""),
+        )
+        try:
+            if trade_date:
+                rows = await conn.fetch(
+                    "SELECT stock_code, stock_name, leader_score, event_score, "
+                    "expectation_score, resonance_score, board_strength_score, "
+                    "rank_in_theme, evidence_sources "
+                    "FROM leader_score_snapshot "
+                    "WHERE trade_date = $1::date AND theme_name = $2 "
+                    "ORDER BY rank_in_theme LIMIT $3",
+                    trade_date, theme_name, min(limit, 20),
+                )
+            else:
+                rows = await conn.fetch(
+                    "SELECT stock_code, stock_name, leader_score, event_score, "
+                    "expectation_score, resonance_score, board_strength_score, "
+                    "rank_in_theme, evidence_sources, trade_date "
+                    "FROM leader_score_snapshot "
+                    "WHERE theme_name = $1 "
+                    "ORDER BY trade_date DESC, rank_in_theme "
+                    "LIMIT $2",
+                    theme_name, min(limit, 20),
+                )
+            return [dict(r) for r in rows]
+        finally:
+            await conn.close()
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))

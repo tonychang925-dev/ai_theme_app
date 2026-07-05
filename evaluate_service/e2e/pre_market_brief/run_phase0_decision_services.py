@@ -16,7 +16,7 @@ else:
     from .common import require_safe_db
 
 
-async def _ensure_group_at_tail(client, stream: str, group: str, *, reset_to_latest: bool = False) -> None:
+async def _ensure_group_at_tail(client, stream: str, group: str, *, reset_to_latest: bool = False, run_id: str = "") -> None:
     """创建或复用 consumer group，默认从上次位置继续（不再丢弃积压）。
 
     仅在 reset_to_latest=True 或首次创建时从 $ 开始。
@@ -32,27 +32,26 @@ async def _ensure_group_at_tail(client, stream: str, group: str, *, reset_to_lat
         # Group already exists — DO NOT reset; continue from last position
         logging.info("Consumer group already exists: %s/%s (keeping position)", stream, group)
 
-    # Phase 6A: clean zombie consumers (idle > 60s) — never ACK pending
+    # With fixed consumer names, remove all existing consumers at startup.
+    # Our process will recreate the consumer naturally via XREADGROUP.
     zombie_count = 0
     orphaned_pending = 0
     try:
         consumers = await client.xinfo_consumers(stream, group)
         for c in consumers:
-            idle_ms = int(c.get("idle", 0))
-            if idle_ms > 60000:
-                orphaned_pending += int(c.get("pending", 0))
-                try:
-                    await client.xgroup_delconsumer(stream, group, c["name"])
-                    zombie_count += 1
-                except Exception:
-                    pass
+            orphaned_pending += int(c.get("pending", 0))
+            try:
+                await client.xgroup_delconsumer(stream, group, c["name"])
+                zombie_count += 1
+            except Exception:
+                pass
         if zombie_count:
             logging.warning(
-                "Cleaned %d zombie consumers from %s/%s (orphaned pending=%d, NOT acked)",
+                "Cleaned %d existing consumers from %s/%s (orphaned pending=%d)",
                 zombie_count, stream, group, orphaned_pending,
             )
     except Exception as e:
-        logging.debug("Zombie cleanup skipped for %s/%s: %s", stream, group, e)
+        logging.debug("Consumer cleanup skipped for %s/%s: %s", stream, group, e)
 
 
 def _redis_host_port(redis_url: str) -> tuple[str, int]:
@@ -84,21 +83,23 @@ async def run_services(args: argparse.Namespace) -> None:
     host, port = _redis_host_port(args.redis_url)
     redis_client = redis.Redis.from_url(args.redis_url, decode_responses=True)
 
-    # P1-C-pre: realtime 使用稳定 group 名，避免 e2e_{run_id} 被 cleanup 误删
+    # P1-C-pre: realtime 使用稳定 group 名 + clean consumer 前缀
     if args.run_id and args.run_id.startswith("realtime_"):
         theme_group = args.theme_consumer_group or "theme_processor_realtime"
         decision_group = args.decision_consumer_group or "decision_executor_realtime"
+        _consumer_prefix = "realtime"
     else:
         theme_group = args.theme_consumer_group or f"theme_processors_e2e_{args.run_id}"
         decision_group = args.decision_consumer_group or f"decision_executors_e2e_{args.run_id}"
-    await _ensure_group_at_tail(redis_client, args.structured_stream, theme_group)
-    await _ensure_group_at_tail(redis_client, args.decision_stream, decision_group)
+        _consumer_prefix = "e2e"
+    await _ensure_group_at_tail(redis_client, args.structured_stream, theme_group, run_id=args.run_id)
+    await _ensure_group_at_tail(redis_client, args.decision_stream, decision_group, run_id=args.run_id)
 
     gateway = await get_gateway(enable_retry=True)
     processor = ThemeProcessor(
         redis_host=host,
         redis_port=port,
-        consumer_name=f"theme_processor_e2e_{args.run_id}",
+        consumer_name=f"theme_processor_{_consumer_prefix}_worker",
         enable_clustering=False,
         enable_classification_first=True,
         config={
@@ -107,7 +108,8 @@ async def run_services(args: argparse.Namespace) -> None:
             "stream_decision": args.decision_stream,
             "stream_pending": args.pending_stream,
             "stream_dead_letter": args.dead_letter_stream,
-            "run_id_filter": args.run_id,
+            # Phase 4F: realtime 生产不设 run_id 过滤，所有 structured 消息均需处理
+            "run_id_filter": None if (args.run_id and args.run_id.startswith("realtime_")) else args.run_id,
             "require_news_id": True,
             # P0-B2: batch 间延迟(ms)，控制 CPU 占用
             "batch_delay_ms": int(os.environ.get("PHASE0_BATCH_DELAY_MS", "100")),
@@ -118,7 +120,7 @@ async def run_services(args: argparse.Namespace) -> None:
     executor = DecisionExecutor(
         redis_client,
         gateway,
-        consumer_name=f"decision_executor_e2e_{args.run_id}",
+        consumer_name=f"decision_executor_{_consumer_prefix}_worker",
     )
     executor.decision_stream = args.decision_stream
     executor.consumer_group = decision_group
@@ -153,10 +155,10 @@ async def run_services(args: argparse.Namespace) -> None:
 
         # Phase 6A: self-cleanup — remove our consumers (prefix-matched) on exit
         for _stream, _group, _prefix in [
-            (args.structured_stream, theme_group, f"theme_processor_e2e_{args.run_id}"),
-            (args.decision_stream, theme_group, f"theme_processor_e2e_{args.run_id}"),
-            (args.decision_stream, decision_group, f"decision_executor_e2e_{args.run_id}"),
-            (args.pending_stream, decision_group, f"decision_executor_e2e_{args.run_id}"),
+            (args.structured_stream, theme_group, f"theme_processor_{_consumer_prefix}_{args.run_id}"),
+            (args.decision_stream, theme_group, f"theme_processor_{_consumer_prefix}_{args.run_id}"),
+            (args.decision_stream, decision_group, f"decision_executor_{_consumer_prefix}_{args.run_id}"),
+            (args.pending_stream, decision_group, f"decision_executor_{_consumer_prefix}_{args.run_id}"),
         ]:
             try:
                 consumers = await redis_client.xinfo_consumers(_stream, _group)

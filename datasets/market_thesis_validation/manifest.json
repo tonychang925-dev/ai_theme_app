@@ -1,0 +1,25 @@
+{
+  "dataset_id": "market_thesis_validation",
+  "schema_version": "market_thesis_validation.v1",
+  "status": "COLLECTING",
+  "ground_truth_policy": "human_or_approved_rule",
+  "validation_source": "append_only_eligible_hypothesis",
+  "probability_field": "prediction_probability",
+  "quality_field": "source_quality_score",
+  "excluded_capabilities": ["belief", "learning", "memory"],
+  "pilot_target_trading_days": 20,
+  "corpus_target_trading_days": 100,
+  "record_storage": "versioned_persistent_runtime_store",
+  "repository_contents": ["schema", "manifest"],
+  "schemas": [
+    "schema/frozen_hypothesis_source.v1.json",
+    "schema/market_thesis_validation.v1.json"
+  ],
+  "runtime_integrity": {
+    "schema_version": "market_thesis_validation_manifest.v1",
+    "checks": ["record_count", "dataset_hash", "manifest_hash"],
+    "refresh_policy": "after_daily_review_batch"
+  },
+  "review_guideline": "docs/project_control/VALIDATION_REVIEW_GUIDELINE.md",
+  "planned_metrics": ["binary_accuracy", "brier_score", "ece", "timing_offset"]
+}
