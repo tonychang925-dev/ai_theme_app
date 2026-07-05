@@ -2,7 +2,7 @@
 
 from .knowledge_evidence import MarketEvidenceAdapter, MarketKnowledgeBundleBuilder
 from .cognition import Phase0CognitionPipeline
-from .replay import MarketCognitionReplay
+from .replay import BacktestPendingRecord, MarketCognitionReplay, build_pairs
 from .validation_dataset import MarketThesisValidationDataset
 from .verification import MarketThesisVerificationService
 from .hypothesis_source_store import FrozenHypothesisSourceStore
@@ -13,7 +13,9 @@ __all__ = [
     "MarketEvidenceAdapter",
     "MarketKnowledgeBundleBuilder",
     "Phase0CognitionPipeline",
+    "BacktestPendingRecord",
     "MarketCognitionReplay",
+    "build_pairs",
     "MarketThesisValidationDataset",
     "MarketThesisVerificationService",
     "FrozenHypothesisSourceStore",
