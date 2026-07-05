@@ -6,6 +6,8 @@ from .replay import MarketCognitionReplay
 from .validation_dataset import MarketThesisValidationDataset
 from .verification import MarketThesisVerificationService
 from .hypothesis_source_store import FrozenHypothesisSourceStore
+from .calibration import CalibrationMetricsService, CalibrationReport
+from .phase1_gate import Phase1GateEvaluator, Phase1GateReport, write_graduation_report
 
 __all__ = [
     "MarketEvidenceAdapter",
@@ -15,4 +17,9 @@ __all__ = [
     "MarketThesisValidationDataset",
     "MarketThesisVerificationService",
     "FrozenHypothesisSourceStore",
+    "CalibrationMetricsService",
+    "CalibrationReport",
+    "Phase1GateEvaluator",
+    "Phase1GateReport",
+    "write_graduation_report",
 ]
