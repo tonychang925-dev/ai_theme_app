@@ -1,12 +1,19 @@
 # M8 Market Cognition Engine 架构设计文档
 
-> 版本：v1.3
-> 日期：2026-07-04
-> 最新状态日期：2026-07-05
-> 状态：Core Contract Frozen；Phase 0 GA；Phase 1 MARKET VALIDATION IN PROGRESS（Ground Truth = 1）
-> 系统定位：AI Theme App 的跨日市场认知、信念更新、假设验证与决策中枢
-> 长期演进：M9 Market Intelligence System（World Model / Meta Cognition / Goal / Attention / Strategy / Diary / Episodic Memory）
-> 分析师样本：[2026-07-02 盘后复盘](https://bloom-rayon-9e1.notion.site/2026-07-02-3897bab0ee1d807fbe3ae9bacd4d2e20)
+> 版本：v1.5 (Core Contract Frozen — FINAL)
+> 日期：2026-07-06 (v1.3: 07-04 / v1.4: 07-06 / v1.5: 07-06)
+> 最新状态日期：2026-07-06
+> 状态：**Core Contract Frozen**；Phase 0 GA；Phase 1 MARKET VALIDATION IN PROGRESS（Ground Truth = 1）；**Phase 1.5 实施基线已确立**
+> 体系命名：M8 = Market World State Builder / M9 = Market World Intelligence Loop
+> 实施基线：`tmp/plan/wbs_M8.phase1.5.md`（Phase 1.5 — Market World State Verification）
+>
+> **v1.4 变更**：New 7A-7G (Multi-Horizon Context, Cognition Graph, Theme/Trading Cognitive Card, Cycle Node Recognition, Divergence Quality, Node Transition Hypothesis)；New ADR M8-010, M8-011
+> **v1.5 变更**：New 7C.6 (Dynamic Causal Chain)；New 7H (Historical Case Projection)；New 7I (Expectation Projection)；New 7J (Node Maturity Estimation)；New 7K (最终认知投影总链路)；New 7L (M9 Bridge — 6 个预留接口)；New 7M (从 Market Cognition 到 Market World Model)；New 7N (Phase 1.5 执行路线)；New ADR M8-012~M8-015, M9-BRIDGE-001~007
+> **v1.5 Architecture Budget**：Stable Core 冻结 9 个核心对象（MarketSubject / MarketWorldModel / DailyMarketState / CognitionPipeline / CycleNode / DivergenceQuality / NodeMaturity / PolicyRegistry / FrozenHypothesisSource）；未来能力以 Adaptive Layer 消费者接入，不侵入 Stable Core
+>
+> 系统定位：AI Theme App 的市场世界模型——可推理、可验证、可演化
+> 长期演进：M9 Market Intelligence System（Belief / Goal / Attention / Mental Simulation / Reflection / World Model Update）
+> 分析师样本：[2026-07-02](https://bloom-rayon-9e1.notion.site/2026-07-02-3897bab0ee1d807fbe3ae9bacd4d2e20) / [2026-07-03](https://bloom-rayon-9e1.notion.site/2026-07-03-3937bab0ee1d81ca97b2df2898732f5b)
 > 关联文档：
 > - `docs/architecture/盘后复盘模块彻底重构设计文档.md`
 > - `docs/architecture/Notion_盘后复盘发布系统_设计文档.md`
@@ -14,12 +21,13 @@
 > - `docs/architecture/weak_to_strong_strategy_design.md`
 > - `docs/project_control/PRD.md`
 > - `docs/project_control/ACCEPTANCE.md`
-> - `docs/adrs/ADR_LIST.md`（ADR-M8-009）
+> - `docs/adrs/ADR_LIST.md`（ADR-M8-001~015, ADR-M9-BRIDGE-001~007）
 > - `docs/project_control/reports/phase-M8.phase1-pilot-20260704.md`
+> - `docs/project_control/wbs_M8.phase1.5.md`（Phase 1.5 实施基线）
 
 > **首要架构原则**：M8 不是对现有盘后复盘系统的重写（Rewrite），而是建立在 Layer A/B/C/D、PostMarketDecisionV2 与 DailyReviewV2 之上的只读认知编排层（Cognitive Orchestration Layer）。
 > **工程目标**：Build Cognition without Breaking Report。
-> **冻结说明**：v1.3 为 M8 设计冻结版本。后续不再向本文追加新 Engine 或核心对象；总体分层、Stable/Adaptive 边界、Snapshot/State 和工程实施以 `AI_Theme_App_Overall_Architecture_v4.0.md` 为准。
+> **冻结说明**：v1.5 为 M8 设计冻结最终版本。不再向本文追加新 Engine 或核心对象。Stable Core 9 个对象已冻结。后续新增能力（GraphReasoner / Belief / Attention / Goal / Simulation / MetaCognition / Learning）作为 Adaptive Layer 通过 DailyMarketState 接口消费，不侵入 MarketWorldModel。
 
 ---
 
@@ -700,6 +708,2018 @@ temporal_lead
 
 ---
 
+## 7A. Cognition Projections — 定位与设计原则
+
+### 7A.1 为什么需要 Cognition Projections
+
+当前 M8 Phase 1 已建立扎实的 Hypothesis Validation 链：
+
+```text
+Yesterday Hypothesis
+  -> Eligibility
+  -> Frozen Source
+  -> Reviewer Verdict
+  -> Ground Truth
+  -> Replay
+```
+
+但 Hypothesis 生成前的市场认知过程仍然薄弱。分析师实际流程是：
+
+```text
+多天行情
+  -> 外围市场
+  -> 题材间强弱
+  -> 板块内标的强弱
+  -> 周期节点定位
+  -> 交易节点判断
+  -> 明日假设
+```
+
+M8 需要从 Hypothesis Validator 升级为 Hypothesis Generator — 生成的假设必须具备周期节点精度。
+
+### 7A.2 设计约束
+
+Cognition Projections 不是新 Engine，而是落在现有 Stable Core 内部的只读认知投影：
+
+| 投影 | 宿主对象 | 说明 |
+|---|---|---|
+| Multi-Horizon Context | `MarketContextSnapshot` | 多周期维度扩展 |
+| Market Cognition Graph | `MarketReasoningSnapshot` | 关系图扩展 |
+| ThemeCognitiveCard + TradingCognitionCard | `CognitionState` | 题材/交易认知卡 |
+
+核心约束：
+
+1. 所有投影只消费 `versioned + as_of` 的 Evidence Snapshot，不直接读取业务数据库表
+2. 每条判断必须携带 `EvidenceRef`，满足文档 19.2 节审计要求
+3. 每日 append-only 快照，不覆盖历史版本
+4. 严格遵守文档 3.1.1 节 Semantic Contract：Observation/Assessment 可入 Report，不可入 Validation/Dataset
+5. 投影失败不阻塞旧复盘链
+
+---
+
+## 7B. Multi-Horizon Market Context
+
+### 7B.1 定位
+
+解决核心问题：**分析师不是只看一天。**
+
+当前 `MarketEvidenceSnapshot` 已包含 D-5 至 Today 的时间序列（Section 6.3），但未结构化为多周期认知上下文。`MultiHorizonContext` 将每个题材/市场维度的 D1/D3/D5/D10/D20 状态显式化为结构化投影。
+
+### 7B.2 契约
+
+```python
+@dataclass(frozen=True, slots=True)
+class MultiHorizonContext:
+    trade_date: date
+    horizons: tuple[str, ...]  # "D1", "D3", "D5", "D10", "D20"
+    
+    market_windows: tuple[MarketWindowContext, ...]
+    theme_windows: tuple[ThemeWindowContext, ...]
+    stock_windows: tuple[StockWindowContext, ...]
+    external_windows: tuple[ExternalMarketWindowContext, ...]
+    earnings_windows: tuple[EarningsWindowContext, ...]
+    
+    as_of: datetime
+    source_snapshot_ids: tuple[str, ...]
+    policy_version: str
+
+
+@dataclass(frozen=True, slots=True)
+class ThemeWindowContext:
+    theme_id: str
+    theme_name: str
+    
+    d1_state: str          # 今日是否修复/分歧/高潮
+    d3_trend: str          # 连续三天是加速/分歧/修复
+    d5_phase: str          # 是否进入阶段末端
+    d10_cycle_position: str  # 是否处于大周期主升/调整
+    d20_mainline_status: str  # 是否仍属于中期主线
+    
+    consecutive_days: int   # 当前节点持续天数
+    phase_day: int          # 当前阶段第几天
+    
+    available_snapshot_ids: tuple[str, ...]  # 每个 horizon 可追溯到具体 snapshot
+    evidence_refs: tuple[str, ...]
+```
+
+### 7B.3 示例
+
+机器人：
+
+```text
+theme: 机器人
+D1: 高潮 (CLIMAX)
+D3: 连续增强 (连续3日走强)
+D5: 一阶段第4天
+D10: 新主线尝试确立
+D20: 尚未进入大周期确认
+
+来源 snapshots:
+  D1 -> snapshot:2026-07-03
+  D3 -> snapshot:2026-07-01, snapshot:2026-07-02, snapshot:2026-07-03
+  D5 -> snapshot:2026-06-29..2026-07-03
+  D10 -> snapshot:2026-06-24..2026-07-03
+```
+
+通信/CPO：
+
+```text
+theme: 通信/CPO
+D1: 止跌 (DIVERGENCE_WEAKENING)
+D3: 分歧减弱 (DIVERGENCE_D3)
+D5: 主升后调整
+D10: 高位科技退潮压力
+D20: 仍是中期科技主线候选
+```
+
+### 7B.4 External Anchor Context
+
+外围市场不应放在备注，而应结构化：
+
+```python
+@dataclass(frozen=True, slots=True)
+class ExternalAnchorContext:
+    anchor_id: str
+    anchor_name: str          # 韩国股市 / SK Hynix / 美股半导体
+    affected_themes: tuple[str, ...]
+    affected_industry_chain: tuple[str, ...]
+    not_directly_affected: tuple[str, ...]
+    horizon: str              # D1 / D3 / D5
+    direction: str            # bullish / bearish / neutral
+    strength: float           # 0-1，对 A 股题材的实际传导强度
+    evidence_refs: tuple[str, ...]
+```
+
+示例：
+
+```text
+anchor: 韩国股市
+affected_themes: [存储芯片, HBM, 半导体设备]
+not_directly_affected: [机器人, 商业航天]
+direction: bearish
+strength: 0.82
+```
+
+### 7B.5 Earnings Season Context
+
+```python
+@dataclass(frozen=True, slots=True)
+class EarningsSeasonContext:
+    theme_id: str
+    stage: str                # 预热 / 披露 / 兑现 / 结束
+    expected_beneficiaries: tuple[str, ...]
+    risk_of_sell_the_news: float  # 0-1
+    evidence_refs: tuple[str, ...]
+```
+
+---
+
+## 7C. Market Cognition Graph
+
+### 7C.1 定位
+
+解决核心问题：**分析师不是孤立看题材，而是看关系。**
+
+分析师在盘后复盘时维护的是一张关系网：韩国半导体传导至A股存储芯片、机器人从高位科技抽走资金、中报业绩支撑光模块趋势承接。`MarketCognitionGraph` 将这张关系网结构化为可查询、可审计的认知投影。
+
+### 7C.2 与 M9 World Model 的边界
+
+| 维度 | M8 Cognition Graph | M9 World Model |
+|---|---|---|
+| 时间尺度 | 当日 + 回溯窗口 | 跨周期、版本化 |
+| 更新方式 | 每日重建 (append-only snapshot) | Proposal → Replay → Shadow → Approval |
+| 关系来源 | 当日 Evidence 推导 | 长期校准的结构规则 |
+| 可靠性 | `strength` 基于当前数据窗口 | `confidence` 基于历史校准 |
+| 字段 | `graph_type = "daily_cognitive_projection"` | `world_model_version` |
+
+### 7C.3 契约
+
+```python
+@dataclass(frozen=True, slots=True)
+class MarketCognitionGraph:
+    graph_id: str
+    graph_type: str  # "daily_cognitive_projection"
+    trade_date: date
+    as_of: datetime
+    
+    nodes: tuple[CognitionNode, ...]
+    edges: tuple[CognitionEdge, ...]
+    
+    world_model_version: str | None  # 如果 M9 已有 World Model，用作先验
+    evidence_refs: tuple[str, ...]
+    policy_version: str
+
+
+@dataclass(frozen=True, slots=True)
+class CognitionNode:
+    node_id: str
+    node_type: str  # Market / Index / Theme / Stock / Leader /
+                    # ExternalMarket / IndustryChain / Earnings /
+                    # Commodity / CapitalStyle / EmotionCarrier
+    entity_id: str
+    entity_name: str
+    properties: Mapping[str, Any]  # 迁移期允许，进入 Evidence 前转为类型化
+    as_of: datetime
+
+
+@dataclass(frozen=True, slots=True)
+class CognitionEdge:
+    edge_id: str
+    source_node_id: str
+    target_node_id: str
+    relation_type: str
+    # resonates_with / competes_with / rotates_to / crowds_out /
+    # anchors / leads / follows / constrains / supports / weakens /
+    # external_anchor / capital_rotation / fundamental_support
+    strength: float          # 0-1，基于当前窗口数据
+    direction: str           # positive / negative / neutral
+    reason: str              # 不超过 80 字的结构化原因
+    evidence_refs: tuple[str, ...]
+```
+
+### 7C.4 示例
+
+```text
+edges:
+  - source: 韩国股市
+    target: 存储芯片
+    relation: external_anchor
+    strength: 0.82
+    direction: negative
+    reason: 韩国半导体走弱主要影响存储/HBM方向，不直接影响机器人和商业航天
+
+  - source: 机器人
+    target: 黄线(市场情绪载体)
+    relation: resonates_with
+    strength: 0.75
+    direction: positive
+    reason: 机器人日内强于白线，成为全市场情绪载体
+
+  - source: 高位科技(通信/CPO/PCB)
+    target: 机器人
+    relation: capital_rotation
+    strength: 0.68
+    direction: positive
+    reason: 高位科技补跌后资金寻找低位趋势承载，机器人承接流出资金
+
+  - source: 中报业绩
+    target: 光模块/CPO
+    relation: fundamental_support
+    strength: 0.71
+    direction: positive
+    reason: 业绩高增长细分开始披露，支撑机构趋势资金在调整中承接
+```
+
+### 7C.5 构建约束
+
+- 边的关系类型必须是枚举值，不允许自由文本
+- 每条边的 `strength` 必须有至少一个 `EvidenceRef` 支撑
+- `world_model_version` 非空时，Graph 必须声明与 World Model 先验一致或冲突
+- 分辨率标记：若只用日级数据推导关系，必须标记 `resolution=daily_proxy`
+
+### 7C.6 Dynamic Causal Chain
+
+Cognition Graph 不应只是静态关系图，而应支持因果链推演。分析师在复盘时维护的不是孤立关系，而是一条因果传导链：
+
+```text
+韩国半导体跌
+  ↓ cause
+HBM 板块承压
+  ↓ cause
+PCB 走弱
+  ↓ cause (capital rotation)
+资金流向机器人
+  ↓ cause
+机器人加强
+  ↓ cause
+黄线加强
+  ↓ cause (but)
+指数没有加强
+  ↓ conclusion
+赚钱效应局部化，跷跷板持续
+```
+
+**契约**：
+
+```python
+@dataclass(frozen=True, slots=True)
+class CausalChain:
+    chain_id: str
+    chain_name: str
+    trade_date: date
+    
+    steps: tuple[CausalStep, ...]
+    # ordered list of cause → effect steps
+    
+    confidence: float         # 整条链的整体置信度
+    alternative_chains: tuple[str, ...]  # 引用其他 chain_id（替代因果解释）
+    policy_version: str
+
+@dataclass(frozen=True, slots=True)
+class CausalStep:
+    step_no: int
+    cause_node_id: str        # -> CognitionNode
+    effect_node_id: str       # -> CognitionNode
+    relation_type: str        # causes / strengthens / weakens / redirects / blocks
+    
+    mechanism: str            # 传导机制描述（不超过 100 字）
+    strength: float           # 0-1，因果强度
+    time_lag: str             # immediate / same_day / next_day / multi_day
+    
+    is_conjecture: bool       # 是否为推测（Phase 1 允许猜想，但必须标记）
+    counterfactual_testable: bool  # 是否可通过反事实检验
+    
+    evidence_refs: tuple[str, ...]
+```
+
+**关键约束**：
+
+- 因果链只连接 Graph 中已存在的节点
+- `is_conjecture=True` 的步骤必须标记，且不能进入 Calibration Dataset
+- 每条因果链必须至少有一条 alternative_chain（防止过度归因）
+- `time_lag` 为 `next_day` 或 `multi_day` 的因果步骤，必须进入 Hypothesis（而非 Assessment）
+- Phase 1 只允许 `immediate` 和 `same_day` 的因果链；跨日因果必须是 Hypothesis
+
+CausalChain 与 CognitionEdge 的关系：
+- `CognitionEdge` 描述节点之间的关联强度与方向（静态快照）
+- `CausalChain` 描述关联的传导顺序与机制（动态推演）
+- 一条 `CausalChain` 的每个步骤引用一条 `CognitionEdge`，但增加了顺序、时滞和机制描述
+
+---
+
+## 7D. Theme Cognitive Card
+
+### 7D.1 定位
+
+`ThemeCognitiveCard` 是分析师题材分析的结构化投影，直接对应分析师字段。它聚合多周期 Context、关系图和周期节点，形成每个题材的完整认知画像。
+
+### 7D.2 分析师字段映射
+
+| 分析师字段 | 系统字段 | 语义边界 (3.1.1节) |
+|---|---|---|
+| 炒作风格 | `style` | Assessment → Report only |
+| 多头辨识度 | `leaders / followers` | Observation → Report only |
+| 空头辨识度 | `bears` | Observation → Report only |
+| 老龙头/题材锚定 | `old_leaders` | Observation → Report only |
+| 与指数共振 | `index_resonance` | Assessment → Report only |
+| 日内理解 | `intraday_interpretation` | Observation → Report only |
+| 交易者心态(场内) | `holder_psychology` | Assessment → Report only |
+| 交易者心态(场外) | `cash_holder_psychology` | Assessment → Report only |
+| 阶段研判 | `cycle_node / stage / stage_day` | Assessment → Report only |
+| 昨日思路 → 今日验证 | `yesterday_view → today_validation` | Hypothesis → Verdict → **Eligible for Dataset** |
+| 隔日思考 | `tomorrow_watch` | ThesisStatement → Report only |
+| 外围影响 | `external_relations` | Assessment → Report only |
+| 中报影响 | `earnings_relations` | Assessment → Report only |
+
+### 7D.3 契约
+
+```python
+@dataclass(frozen=True, slots=True)
+class ThemeCognitiveCard:
+    card_id: str
+    theme_id: str
+    theme_name: str
+    trade_date: date
+    as_of: datetime
+
+    # ---- 风格与风格偏好 ----
+    style: str                  # 机游合力 / 机构趋势 / 庄游合力 / 游资接力 / 量化套利
+    style_confidence: float
+
+    # ---- 周期与阶段 ----
+    cycle_node: "CycleNodeRecognition"
+    stage: str                  # 启动 / 发酵 / 加速 / 高潮 / 分歧 / 弱转强 / 退潮
+    stage_day: int | None
+    multi_horizon_ref: str      # -> MultiHorizonContext 的引用
+
+    # ---- 角色识别 ----
+    leaders: tuple[LeaderRole, ...]     # 周期龙、中军、先锋
+    followers: tuple[StockRole, ...]     # 跟风、补涨
+    bears: tuple[StockRole, ...]         # 空头辨识度
+    old_leaders: tuple[StockRole, ...]   # 老龙头/题材锚定
+
+    # ---- 共振与资金 ----
+    index_resonance: str        # 有共振 / 无共振 / 跷跷板 / 中等偏强
+    capital_recognition: str    # 机构认可 / 游资主导 / 混合 / 资金回避
+    emotion_carrier_role: str   # 市场情绪载体 / 局部载体 / 无载体角色
+
+    # ---- 日内与心理 ----
+    intraday_interpretation: str
+    holder_psychology: str      # 场内持筹方心态
+    cash_holder_psychology: str # 场外持币方心态
+
+    # ---- 跨题材与外部关系 ----
+    cross_theme_relations: tuple[str, ...]   # 引用 CognitionEdge ID
+    external_relations: tuple[str, ...]      # 引用 ExternalAnchorContext
+    earnings_relations: tuple[str, ...]      # 引用 EarningsSeasonContext
+
+    # ---- 时间线认知 ----
+    yesterday_view: str | None
+    today_validation: str | None
+    tomorrow_watch: str
+
+    # ---- 交易认知 ----
+    trading_cognition: "TradingCognitionCard"
+
+    # ---- 溯源 ----
+    evidence_refs: tuple[str, ...]
+    policy_version: str
+```
+
+### 7D.4 LeaderRole / StockRole
+
+```python
+@dataclass(frozen=True, slots=True)
+class LeaderRole:
+    stock_code: str
+    stock_name: str
+    role: str       # cycle_leader / sector_leader / capacity_core / front_row / pioneer
+    stage: str      # 对应题材阶段的角色批次（一阶段/二阶段/...）
+    evidence_refs: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class StockRole:
+    stock_code: str
+    stock_name: str
+    role: str       # follower / supplement / eliminated / bear / old_leader
+    note: str
+    evidence_refs: tuple[str, ...]
+```
+
+### 7D.5 示例
+
+```text
+ThemeCognitiveCard:
+  theme_name: 机器人/减速器
+  style: 机游合力、趋势风格为主
+  stage: 启动后的强化阶段
+  cycle_node: CLIMAX, node_day=4
+  leaders:
+    - 绿的谐波 (谐波减速器A股市占率25%, 有望供货特斯拉)
+    - 埃斯顿 2B, 海晨股份 2B, 福莱新材 2B
+    - 兆威机电, 雷赛智能 2B, 日盈电子 2B
+  bears: 无
+  index_resonance: 无(黄线强于白线)
+  capital_recognition: 机构资金开始认可
+  emotion_carrier_role: 市场情绪载体(机器人成为黄线共振方向)
+  intraday_interpretation: 受宇树机器人IPO消息刺激发酵,
+    资金从芯片/通信/玻璃基板流入机器人
+  holder_psychology: 资金偏向科技赛道高低切
+  cross_theme_relations:
+    - capital_rotation from 高位科技(通信/CPO/PCB) strength=0.68
+  external_relations: []
+  yesterday_view: "机器人可能成为修复方向" → 得到验证
+  tomorrow_watch: 关注是否继续获得资金确认;
+    若继续加强则进入主线确认阶段
+```
+
+---
+
+## 7E. Cycle Node Recognition & Divergence Quality
+
+### 7E.1 Cycle Node Recognition
+
+解决核心问题：**判断市场/题材/龙头现在处在哪个交易节点。**
+
+这是 M8 生成 Hypothesis 的前提——只有知道当前节点，才能预测下一个节点迁移。
+
+```python
+@dataclass(frozen=True, slots=True)
+class CycleNodeRecognition:
+    recognition_id: str
+    subject_type: str       # market / theme / leader
+    subject_id: str
+    trade_date: date
+
+    # ---- 当前节点 ----
+    current_node: str
+    # CHAOS / INITIAL / FERMENTATION / ACCELERATION / CLIMAX /
+    # FIRST_DIVERGENCE / DIVERGENCE_REPAIR / WEAK_TO_STRONG /
+    # SECOND_ACCELERATION / SECOND_DIVERGENCE / FADE /
+    # ICE_POINT / REBOUND / DIVERGENCE_WEAKENING / CYCLE_END
+    previous_node: str | None
+    node_day: int           # 当前节点持续天数
+    consecutive_direction: str  # accelerating / diverging / repairing / fading / neutral
+
+    # ---- 分歧状态 ----
+    divergence_state: str   # healthy / forced / panic / insufficient / not_applicable
+    repair_state: str       # confirmed / weak / failed / not_applicable
+    climax_state: str       # accelerating / peaking / exhausting / not_applicable
+    fade_state: str         # orderly / panic / acceleration / not_applicable
+
+    # ---- 下一个节点预测 ----
+    expected_next_nodes: tuple[ExpectedNodeTransition, ...]
+    node_confidence: float  # 0-1，当前节点定位的置信度
+
+    evidence_refs: tuple[str, ...]
+    policy_version: str
+
+
+@dataclass(frozen=True, slots=True)
+class ExpectedNodeTransition:
+    target_node: str
+    probability: float       # 0-1，事前估计
+    required_conditions: tuple[str, ...]
+    evidence_refs: tuple[str, ...]
+```
+
+示例：
+
+```text
+机器人:
+  current_node: CLIMAX
+  node_day: 4
+  divergence_state: not_applicable (尚未分歧)
+  expected_next_nodes:
+    - target: FIRST_DIVERGENCE, probability: 0.65
+      required: [板块不再继续一致加速, 前排核心分歧但不破位]
+    - target: SECOND_ACCELERATION, probability: 0.20
+    - target: FADE, probability: 0.15
+
+通信/CPO:
+  current_node: DIVERGENCE_WEAKENING
+  node_day: 3
+  divergence_state: healthy (缩量分歧, 核心未破位)
+  expected_next_nodes:
+    - target: DIVERGENCE_REPAIR, probability: 0.45
+    - target: FADE, probability: 0.35
+    - target: REBOUND, probability: 0.20
+```
+
+### 7E.2 Divergence Quality
+
+分歧质量是分析师判断"能不能出手"的核心依据，应成为一等指标：
+
+```python
+@dataclass(frozen=True, slots=True)
+class DivergenceQuality:
+    quality_id: str
+    subject_id: str
+    trade_date: date
+
+    quality_score: float         # 0-1
+    volume_contraction: float    # 缩量程度 0-1 (1=极致缩量)
+    core_intact: bool            # 核心/龙头是否守位
+    rear_cleared: bool           # 后排风险是否释放
+    capital_redirected: bool     # 资金是否有承接方向
+    duration_sufficient: bool    # 分歧时间是否充分
+    external_support: bool       # 外围是否支撑
+
+    quality_label: str           # healthy / forced / panic / insufficient
+    # healthy:      缩量有序，核心守位，后排释放，资金有承接 → left_side_allowed
+    # forced:       受外力挤压，非内生分歧 → 等待确认
+    # panic:        放量杀跌，核心破位，后排崩溃 → avoid
+    # insufficient: 分歧时间不足，风险未释放 → wait
+
+    evidence_refs: tuple[str, ...]
+```
+
+`DivergenceQuality` 直接决定 `TradingCognitionCard` 的 `left_side_allowed` 和 `right_side_allowed`：
+
+```text
+quality_label == "healthy"   → left_side_allowed = true (左侧可以试探)
+quality_label == "panic"     → left_side_allowed = false, right_side_allowed = false (全面回避)
+quality_label == "forced"    → left_side_allowed = false, right_side_allowed = true (只等右侧确认)
+quality_label == "insufficient" → left_side_allowed = false, right_side_allowed = false (继续等待)
+```
+
+---
+
+## 7F. Trading Cognition Card
+
+### 7F.1 定位
+
+`TradingCognitionCard` 回答交易员最核心的问题：**这个题材/标的现在能不能出手，以什么方式出手。**
+
+它不绑定特定策略（那是 Strategy Layer 的职责），而是表达基于当前认知的交易节点判断。
+
+### 7F.2 与 Strategy Layer 的关系
+
+```
+CycleNodeRecognition + DivergenceQuality
+        ↓
+TradingCognitionCard    ← 交易认知投影（不绑定特定策略）
+        ↓
+Strategy Eligibility    ← 策略适配（绑定 strategy_id + version，Section 38-41）
+        ↓
+Strategy Proposal
+        ↓
+Risk Gate → Decision
+```
+
+### 7F.3 契约
+
+```python
+@dataclass(frozen=True, slots=True)
+class TradingCognitionCard:
+    card_id: str
+    subject_id: str
+    subject_type: str         # theme / stock / leader
+    trade_date: date
+
+    # ---- 动作偏向 ----
+    action_bias: str
+    # wait / left_probe / right_confirm / hold_core / reduce / avoid
+
+    left_side_allowed: bool
+    right_side_allowed: bool
+
+    # ---- 入场节点 ----
+    next_entry_node: str | None
+    # 例如: "龙头第一次良性分歧后修复" / "分歧充分后的超跌修复"
+    required_divergence_quality: str | None
+
+    confirmation_conditions: tuple[str, ...]
+    invalidation_conditions: tuple[str, ...]
+
+    # ---- 状态快照 ----
+    leader_divergence_status: str
+    leader_repair_status: str
+    divergence_quality_ref: str    # -> DivergenceQuality
+
+    # ---- 风险与仓位 ----
+    risk_level: str           # low / medium / high / extreme
+    position_suggestion: str  # 建议仓位表述（非精确百分比）
+
+    # ---- 溯源 ----
+    source_cycle_node_ref: str     # -> CycleNodeRecognition
+    evidence_refs: tuple[str, ...]
+    policy_version: str
+```
+
+### 7F.4 示例
+
+机器人：
+
+```text
+TradingCognitionCard:
+  subject: 机器人/减速器
+  action_bias: wait
+  left_side_allowed: false
+  right_side_allowed: false
+  next_entry_node: 龙头第一次良性分歧后修复
+  required_divergence_quality: 缩量分歧，核心不破位，后排释放风险
+  confirmation_conditions:
+    - 核心股弱转强
+    - 板块资金回流
+    - 黄线继续共振
+  invalidation_conditions:
+    - 龙头放量破位
+    - 板块批量跌停
+    - 后排先于核心崩溃
+  risk_level: medium
+  position_suggestion: 分歧后右侧确认再考虑轻仓试探
+```
+
+通信/CPO：
+
+```text
+TradingCognitionCard:
+  subject: 通信/CPO
+  action_bias: left_probe
+  left_side_allowed: true
+  right_side_allowed: false
+  next_entry_node: 分歧充分后的超跌修复
+  required_divergence_quality: 低开恐慌释放但周期龙不继续破位
+  confirmation_conditions:
+    - 韩国半导体继续支撑
+    - 光模块/存储核心止跌
+    - 中报业绩方向出现承接
+  invalidation_conditions:
+    - 韩国冲高回落
+    - 高位科技继续放量杀跌
+  risk_level: high
+  position_suggestion: 左侧轻仓试探，严格止损
+```
+
+---
+
+## 7H. Historical Case Projection
+
+### 7H.1 定位
+
+分析师最核心的能力之一是：**"这个行情，我以前见过。"**
+
+当前 M8 的 Hypothesis 生成直接走 Evidence → Hypothesis，缺少历史类比环节。`HistoricalCaseProjection` 在 Hypothesis 生成前插入 Case-based Reasoning 层：
+
+```text
+当前行情
+  ↓
+检索历史相似场景
+  ↓
+对齐差异（指数环境、量能、情绪、资金、外部）
+  ↓
+参考历史路径与结果
+  ↓
+校准当前概率
+  ↓
+Hypothesis
+```
+
+### 7H.2 与现有 Case Library 的关系
+
+文档 Section 13 已定义了 `MarketCase`（完整认知链归档）。`HistoricalCaseProjection` 是对 Case Library 的**在线检索投影**：
+
+| 维度 | MarketCase (Section 13) | HistoricalCaseProjection |
+|---|---|---|
+| 目的 | 完整归档、离线回放 | 当前决策时的相似检索 |
+| 查询时点 | 事后 | 当前 `as_of`，只访问 `available_at <= as_of` 的数据 |
+| 输出 | 案例完整链 | Top-K 相似案例 + 差异分析 + 路径参考 |
+
+### 7H.3 契约
+
+```python
+@dataclass(frozen=True, slots=True)
+class HistoricalCaseProjection:
+    projection_id: str
+    trade_date: date
+    as_of: datetime
+    query_context_hash: str      # 当前 Context 的 hash（防止用未来数据检索）
+
+    top_k_cases: tuple[SimilarCase, ...]
+    # 按 similarity 降序，最多 K 个（建议 K ≤ 5）
+
+    ensemble_conclusion: str     # 综合历史案例的结论
+    ensemble_confidence: float   # 综合置信度（不能是 similarity 平均）
+
+    evidence_refs: tuple[str, ...]
+    policy_version: str
+    retrieval_model_version: str
+
+@dataclass(frozen=True, slots=True)
+class SimilarCase:
+    case_id: str                # -> MarketCase.case_id
+    similarity: float           # 0-1，综合相似度
+    similar_dimensions: tuple[str, ...]
+    # market_fsm / emotion / theme_structure / leader_state /
+    # capital_rotation / belief_trajectory / cycle_node / external_context
+    different_dimensions: tuple[str, ...]
+    # 相同维度的差异描述，如 "当前指数弱 vs 历史指数强"
+
+    historical_path: tuple[str, ...]
+    # 该案例后续的关键节点序列，如 ["CLIMAX_D4", "FIRST_DIVERGENCE_D1", "WEAK_TO_STRONG_D2"]
+
+    historical_outcome: str     # 该案例的最终结果摘要
+    success: bool | None        # 该案例的 Hypothesis 是否正确
+
+    applicable_lessons: tuple[str, ...]
+    invalid_transfer_risks: tuple[str, ...]
+    # 为什么当前情况可能不适用该历史案例
+
+    transfer_confidence: float  # 0-1，该案例可迁移到当前的可信度
+    # 不是 similarity，而是扣除差异惩罚后的迁移可信度
+```
+
+### 7H.4 相似度计算维度
+
+```text
+retrieval_vector = [
+    market_fsm_state,
+    emotion_vector,
+    theme_structure(leading_themes, theme_count, concentration),
+    cycle_node_distribution,
+    leader_state(leader_count, leader_strength),
+    capital_rotation_direction,
+    external_market_direction,
+    volume_trend,
+    index_position
+]
+
+# 关键约束：
+# - 所有特征必须来自 available_at <= query_as_of 的数据
+# - Outcome 标签绝对禁止进入检索向量
+# - 检索结果必须记录查询时点的特征快照
+```
+
+### 7H.5 示例
+
+```text
+当前：机器人高潮 D4，指数缩量弱，黄线强于白线
+
+Top-K:
+  1. DeepSeek 2025-04
+     similarity: 0.91
+     similar: [高潮D4, 黄线共振, 机构认可, 消息催化]
+     different: [当前指数弱 vs 历史指数强]
+     historical_path: [CLIMAX_D4 → FIRST_DIVERGENCE_D1 → WEAK_TO_STRONG → SECOND_WAVE]
+     transfer_confidence: 0.78
+     applicable_lessons:
+       - 高潮第4天不宜追高
+       - 第一次分歧若缩量且核心不破位，是左侧观察节点
+     invalid_transfer_risks:
+       - 历史指数强支撑，当前指数弱势 → 上涨空间预计降低
+       - 如果指数继续走弱可能压缩修复空间
+
+  2. 机器人 2024-06
+     similarity: 0.88
+     ...
+
+  3. AI Agent 2025-09
+     similarity: 0.84
+     ...
+
+  4. 商业航天 2025-07
+     similarity: 0.80
+     different: [外围刺激 vs 内生催化]
+     historical_path: [CLIMAX → FADE(直接A杀)]
+     transfer_confidence: 0.62
+     invalid_transfer_risks:
+       - 历史是纯消息驱动，机器人有机构资金
+       - 但如消息兑现后无增量，需要警惕
+```
+
+### 7H.6 关键约束
+
+- **Outcome 隔离**：检索向量禁止使用未来 Outcome 标签。相似度基于"当时状态"，不是"事后结果"
+- **差异维度强制输出**：不能只输出 `similarity=0.91`，必须输出不同维度
+- **transfer_confidence ≠ similarity**：transfer_confidence 必须在 similarity 基础上扣除差异惩罚
+- **高相似不可覆盖当前 Evidence**：即使检索到 `similarity=0.95` 的案例，当前 Evidence 仍优先
+- **历史路径仅供参考**：`historical_path` 不直接进入 Calibration。仅当路径对应 Hypothesis 被验证后，该案例的 `success` 标记才能更新
+
+---
+
+## 7I. Expectation Projection
+
+### 7I.1 定位
+
+真正决定分析师水平的是**预期差（Expectation Gap）**，而不是事实本身。
+
+> 机器人今天涨停 → 不是重点。
+> 市场原本预期分歧，结果继续高潮 → 这才是重点。
+
+`ExpectationProjection` 对每个关键维度维护 Consensus → Actual → Surprise 三元组，将预期差显式化为可审计的结构化对象。
+
+### 7I.2 契约
+
+```python
+@dataclass(frozen=True, slots=True)
+class ExpectationProjection:
+    projection_id: str
+    trade_date: date
+    as_of: datetime
+
+    items: tuple[ExpectationItem, ...]
+    # 至少覆盖：market / theme / leader / external / earnings / volume
+
+    aggregate_surprise: float    # -5 到 +5，全市场综合预期差
+    surprise_direction: str      # positive / negative / mixed / neutral
+
+    evidence_refs: tuple[str, ...]
+    policy_version: str
+
+
+@dataclass(frozen=True, slots=True)
+class ExpectationItem:
+    item_id: str
+    subject_type: str           # market / theme / stock / leader / external / volume / emotion
+    subject_id: str
+    subject_name: str
+
+    consensus: str              # 市场共识预期（前一日或盘前形成）
+    consensus_source: str       # prior_hypothesis / analyst_consensus / model_prior / market_pricing
+    
+    expected: str               # 系统预期（具体可观测的预期值）
+    actual: str                 # 实际结果
+    surprise: int               # -5 到 +5
+    
+    # -5: 严重负面预期差（预期强修复，实际加速杀跌）
+    # -3: 明显负面预期差
+    # -1: 轻微负面预期差
+    #  0: 符合预期
+    # +1: 轻微正面预期差
+    # +3: 明显正面预期差
+    # +5: 严重正面预期差（预期跌停，实际涨停）
+
+    expectation_shift: str      # 预期如何被修正：reinforced / weakened / reversed / unchanged
+    
+    impact_on_hypothesis: str   # 该预期差对活跃 Hypothesis 的影响
+    evidence_refs: tuple[str, ...]
+```
+
+### 7I.3 示例
+
+```text
+Expectation Items:
+  
+  1. 机器人/减速器:
+     consensus: 高潮后即将分歧
+     expected: 龙头走弱、板块内部分化
+     actual: 继续高潮、兆威机电/雷赛智能晋级
+     surprise: +2
+     expectation_shift: reinforced
+     # 连续超预期 → 市场对机器人的共识正在从"轮动反弹"转向"新主线确立"
+     impact_on_hypothesis: 分歧预期推迟但不消除，
+       高潮越久后续分歧可能越剧烈
+
+  2. 韩国半导体/HBM:
+     consensus: 韩国企稳→A股存储/HBM修复
+     expected: HBM/存储小幅修复
+     actual: 韩国继续大跌
+     surprise: -3
+     expectation_shift: reversed
+     impact_on_hypothesis: 07-02 修复假设被外部冲击打断
+
+  3. 市场量能:
+     consensus: 量能维持
+     expected: 成交额与昨日持平
+     actual: 萎缩 7.77%
+     surprise: -2
+     expectation_shift: weakened
+     impact_on_hypothesis: 缩量环境降低所有修复概率
+
+  4. 中报业绩:
+     consensus: 光模块业绩超预期支撑趋势
+     expected: 中际旭创/新易盛业绩预告
+     actual: 尚未披露
+     surprise: 0
+     expectation_shift: unchanged
+```
+
+### 7I.4 预期差的来源与消费
+
+**Consensus 来源优先级**：
+1. 昨日活跃 Hypothesis 的 expected_observations
+2. `CycleNodeRecognition` 的 `expected_next_nodes` 中最高概率路径
+3. `HistoricalCaseProjection` 中 Top-1 案例的 historical_path
+4. 市场定价隐含预期（期货、期权、竞价）
+5. LLM 提议的待审核预期（标记为 `consensus_source=llm_draft`）
+
+**Surprise 的消费路径**：
+- `surprise >= +2`：检查 Hypothesis 是否过于保守 → 可能触发 `REVISED`
+- `surprise <= -3`：检查 Hypothesis 是否被外部冲击否定 → 可能触发 `REJECTED` (UNEXPECTED_EVENT)
+- `surprise == 0`：预期被确认 → 增强对应 Hypothesis 的 posterior
+- 大面积 `surprise != 0` 说明市场认知框架需要检讨（→ 触发 Meta Cognition）
+
+### 7I.5 约束
+
+- Consensus 必须在盘前冻结，不允许盘后用 Actual 反向修改 Consensus
+- `consensus_source` 必须记录，`model_prior` 和 `llm_draft` 不可混用
+- 预期差不直接进入 Calibration，但 `surprise` 值作为 Hypothesis 验证的辅助上下文
+- 连续 N 天 `surprise >= 3` 或 `surprise <= -3` 触发 World Model 审视
+
+---
+
+## 7J. Node Maturity Estimation
+
+### 7J.1 定位
+
+`CycleNodeRecognition` (7E) 回答"现在在哪个节点"。`NodeMaturityEstimation` 回答**"距离下一节点还有多远"**。
+
+这两个区别就是：
+
+```text
+CycleNodeRecognition:    CLIMAX
+NodeMaturityEstimation:  CLIMAX, 成熟度 82%
+                         Crowding 91%, Volume 83%, Emotion 95%
+                         Leader Healthy
+                         → FIRST_DIVERGENCE probability: 72%
+                         → estimated arrival: 1-2 trading days
+```
+
+### 7J.2 契约
+
+```python
+@dataclass(frozen=True, slots=True)
+class NodeMaturityEstimation:
+    estimation_id: str
+    subject_type: str         # market / theme / leader
+    subject_id: str
+    trade_date: date
+
+    current_node: str         # 引用 CycleNodeRecognition
+    node_day: int             # 当前节点持续天数
+
+    # ---- 成熟度子维度 (0-100) ----
+    maturity_score: float     # 0-100，综合成熟度
+    crowding_score: float     # 拥挤度
+    volume_score: float       # 量能健康度
+    leader_score: float       # 龙头健康度
+    emotion_score: float      # 情绪极端度
+    time_score: float         # 时间充分度
+
+    quality_label: str        # accelerating / peaking / exhausting / stalling
+
+    # ---- 下一节点 ----
+    next_node_probability: float  # 0-1，短期（1-2 日）内迁移到下一节点的概率
+    estimated_arrival: str        # "1_day" / "2_days" / "3_5_days" / "1_week_plus"
+    
+    expected_next_nodes: tuple[NodeTransitionEstimate, ...]
+
+    evidence_refs: tuple[str, ...]
+    policy_version: str
+
+
+@dataclass(frozen=True, slots=True)
+class NodeTransitionEstimate:
+    target_node: str
+    probability: float        # 0-1
+    maturity_threshold: float # 0-100，触发该迁移需要的成熟度阈值
+    key_indicators: tuple[str, ...]
+    evidence_refs: tuple[str, ...]
+```
+
+### 7J.3 成熟度计算公式
+
+```text
+maturity_score = weighted_sum(
+    crowding_score × 0.25,     # 拥挤度：参与资金是否饱和
+    volume_score × 0.20,       # 量能：缩量/放量是否健康
+    leader_score × 0.25,       # 龙头：龙头是否健康
+    emotion_score × 0.15,      # 情绪：情绪是否极端
+    time_score × 0.15          # 时间：当前节点是否"到时间了"
+)
+
+其中：
+  crowding:  连板股占比、涨停集中度、同向资金集中度 → 越高越接近转折
+  volume:    量价配合度、缩量程度 → 缩量极致 = 变盘前夜
+  leader:    龙头是否加速、是否分歧 → 龙头状态是节点迁移的最佳领先指标
+  emotion:   贪婪/恐惧/犹豫的极端程度 → 极端情绪预示转折
+  time:      当前节点天数 vs 历史同节点平均天数 → 时间窗口
+```
+
+### 7J.4 示例
+
+```text
+机器人:
+  current_node: CLIMAX
+  node_day: 4
+  maturity_score: 82
+  crowding_score: 91     ← 高度拥挤，涨停集中度极高
+  volume_score: 83        ← 放量但未失控
+  leader_score: 95        ← 龙头健康，尚未分歧
+  emotion_score: 95       ← 情绪极度亢奋
+  time_score: 60          ← D4 在历史 CLIMAX 中处于中位
+  quality_label: peaking  ← 高潮见顶中
+  
+  next_node_probability: 0.72
+  estimated_arrival: 1-2_days
+  expected_next_nodes:
+    - target: FIRST_DIVERGENCE, probability: 0.72
+      maturity_threshold: 88
+      key_indicators: [龙头首次分歧, 后排亏钱效应出现]
+    - target: SECOND_ACCELERATION, probability: 0.18
+    - target: FADE, probability: 0.10
+
+通信/CPO:
+  current_node: DIVERGENCE_WEAKENING
+  node_day: 3
+  maturity_score: 65
+  crowding_score: 35      ← 资金已大幅流出
+  volume_score: 72        ← 缩量止跌
+  leader_score: 55        ← 周期龙仍有破位风险
+  emotion_score: 45       ← 恐慌释放中
+  time_score: 70          ← D3 分歧接近充分
+  
+  quality_label: exhausting
+  next_node_probability: 0.55
+  estimated_arrival: 2_days
+```
+
+### 7J.5 与 DivergenceQuality 和 TradingCognitionCard 的关系
+
+```text
+NodeMaturityEstimation.maturity_score >= threshold
+  AND
+DivergenceQuality.quality_label == "healthy"
+  → TradingCognitionCard.left_side_allowed = true
+
+NodeMaturityEstimation.maturity_score >= threshold
+  AND
+DivergenceQuality.quality_label == "healthy"
+  AND
+LeaderEvidence.weak_to_strong_confirmed == true
+  → TradingCognitionCard.right_side_allowed = true
+```
+
+---
+
+## 7K. 最终认知投影总链路（v1.4 完整版）
+
+### 7K.1 分析师的五个核心问题
+
+分析师每天不是简单看盘，而是持续回答五个问题：
+
+| # | 问题 | M8 对应投影 |
+|---|---|---|
+| 1 | **Where are we?** 市场现在处于什么阶段？ | Multi-Horizon Context + CycleNodeRecognition |
+| 2 | **Have I seen this before?** 历史上有没有类似场景？ | HistoricalCaseProjection |
+| 3 | **What surprised?** 市场预期差在哪里？ | ExpectationProjection |
+| 4 | **How mature is this node?** 距离下一次转折还有多远？ | NodeMaturityEstimation |
+| 5 | **What happens next?** 下一步最可能迁移到哪个节点？ | Node Transition Hypothesis |
+
+### 7K.2 v1.4 完整链路
+
+```text
+Layer A/B/C/D + DailyReviewV2
+        │
+        ▼
+MarketKnowledgeBundle
+        │
+        ▼
+MarketEvidenceSnapshot
+        │
+        ├──────────────────────────────────────────┐
+        ▼                                          ▼
+Multi-Horizon MarketContext (7B)         Market Cognition Graph (7C)
+  D1/D3/D5/D10/D20 windows                + Dynamic Causal Chains (7C.6)
+  + ExternalAnchorContext
+  + EarningsSeasonContext
+        │                                          │
+        └────────────┬─────────────────────────────┘
+                     ▼
+              ThemeCognitiveCards (7D)
+                     │
+        ┌────────────┼────────────┐
+        ▼            ▼            ▼
+  CycleNode       Expectation  Historical
+  Recognition     Projection   Case
+  (7E)            (7I)         Projection (7H)
+        │            │            │
+        ▼            │            │
+  Divergence        │            │
+  Quality (7E.2)    │            │
+        │            │            │
+        └────────────┼────────────┘
+                     ▼
+            Node Maturity
+            Estimation (7J)
+                     │
+                     ▼
+            Trading Cognition
+            Cards (7F)
+                     │
+                     ▼
+            Node Transition
+            Hypothesis (9.7)
+                     │
+                     ▼
+            MarketThesisSnapshot
+                     │
+                     ▼
+            Validation Dataset
+```
+
+### 7K.3 从"市场指标"到"市场世界观"
+
+这次升级的本质不是新增数据结构，而是系统认知方式的范式转换：
+
+```text
+旧：Indicator（指标）
+  今天成交额多少？
+  今天涨停多少只？
+  今天机器人强不强？
+
+新：World Model（世界观）
+  机器人已经高潮第四天 → 成熟度 82%
+  韩国半导体今天大跌 → 预期差 -3
+  资金开始从 PCB 撤退 → 因果链：韩国 → HBM → PCB → 机器人
+  中报开始进入兑现窗口 → 业绩锚定
+  指数缩量、黄线强于白线 → 跷跷板效应
+  →
+  历史相似：DS 2025-04 (相似度 0.91)，但指数环境更弱
+  →
+  机器人今天不能追，等第一次分歧。
+  如果分歧健康（缩量+核心不破位+后排释放），
+  后天可能出现弱转强。
+```
+
+这正是**市场认知操作系统（Market Cognitive Operating System）**的雏形。
+
+### 7K.4 不变量保证
+
+1. Phase 0 (GA) 和 Phase 1 (Validation) 链路完整保留
+2. 全部 Cognition Projections 落在 `MarketContextSnapshot` / `MarketReasoningSnapshot` / `CognitionState` 内部
+3. 不新增顶层 Engine，不破坏现有分层架构
+4. 所有投影 append-only，携带 `as_of` 和 `source_snapshot_ids`
+5. Semantic Contract（文档 3.1.1）严格执行：Observation/Assessment → Report only；仅 eligible Hypothesis → Dataset
+
+### 7K.5 分阶段实施路线
+
+Step 0 — Schema Freeze（1-2 天）：
+- 冻结以上全部 dataclass 定义
+- 新增 ADR-M8-010（Cognition Projection 不是 Engine）
+- 新增 ADR-M8-011（Node Transition Hypothesis）
+- 新增 ADR-M8-012（Causal Chain 与 Cognition Graph 关系）
+- 新增 ADR-M8-013（Historical Case 检索必须隔离 Outcome）
+- 新增 ADR-M8-014（Expectation Consensus 盘前冻结、不可事后修改）
+- 新增 ADR-M8-015（Node Maturity 不作为 Calibration 目标）
+- 与现有 `MarketThesisValidationRecord` 做兼容性检查
+
+Step 1 — Multi-Horizon Context（先做 D1/D3/D5/D10/D20）：
+- 验收：每个核心题材输出阶段天数，识别连续分歧/修复/加速
+- Replay hash 稳定，不改变 Decision
+
+Step 2 — Cognition Graph + Causal Chain：
+- 先输出静态关系图，再增量加入动态因果链
+- 验收：每条边有 EvidenceRef，每条因果链有至少一条替代链
+
+Step 3 — Cycle Node + Divergence Quality + Node Maturity：
+- 先定位当前节点，再估计成熟度
+- 验收：每个核心题材有节点定位和成熟度评分
+
+Step 4 — Expectation Projection + Historical Case Projection：
+- Expectation 的 Consensus 必须先于 Actual 冻结
+- Historical Case 检索必须 Outcome 隔离
+- 验收：预期差不事后修改，历史检索无未来数据泄漏
+
+Step 5 — Theme Cognitive Card + Trading Cognitive Card：
+- 聚合以上所有投影
+- 先不参与决策，只进入 Notion shadow
+
+Step 6 — Node Transition Hypothesis：
+- 所有进入 Dataset 的命题必须是 Node Transition 类型
+- Brier/ECE 只统计节点迁移命题
+
+### 7K.6 新增关键 KPI
+
+| KPI | 目的 |
+|---|---|
+| Hypothesis Generation Rate | 每日生成 ≥3 条可验证 Node Transition 命题 |
+| Node Recognition Coverage | 核心题材 100% 有节点定位 |
+| Node Maturity Accuracy | 成熟度评分与实际转折时间的相关性 |
+| Transition Accuracy | 节点迁移方向判断正确率 |
+| Divergence Quality Accuracy | 分歧质量判断正确率 |
+| Left-side Hit Rate | 左侧先手节点有效性 |
+| Right-side Hit Rate | 右侧确认节点有效性 |
+| Expectation Surprise Calibration | Surprise 绝对值与后续市场波动的相关性 |
+| Historical Transfer Precision | 历史案例迁移判断的正确率（transfer_confidence vs 实际结果） |
+| Causal Chain Verification | 因果链被后续 Evidence 确认/否定的比例 |
+| External Anchor Precision | 外围影响判断准确率 |
+| Cross-theme Relation Accuracy | 轮动/竞争/共振判断准确率 |
+
+---
+
+## 7L. M9 Bridge — 预留接口（v1.5 Frozen, M9 Growth Path）
+
+> **阅读指引**：本节是 v1.5 Core Contract 的冻结附录。以下六个 Projection 和三个升级方向**不属于当前 M8 实施范围**，而是为 M9 Market Intelligence System 预留的契约接口。
+> 它们的 dataclass 定义、字段语义和与其他对象的关联在此冻结，确保未来 M9 在 M8 基础上自然生长，而非推倒重来。
+> M9 启动前，每项必须通过独立 ADR、Replay 验证和真实交易日评估。
+
+### 7L.1 优先级矩阵
+
+| 优先级 | 接口 | 理由 |
+|---|---|---|
+| P0 (M9 首批) | **BeliefProjection** | Evidence → Hypothesis 之间缺失的信念层；M9 Meta Cognition 全部依赖它 |
+| P0 (M9 首批) | **AttentionProjection** | 市场注意力迁移是轮动预测的最领先指标 |
+| P1 | **CausalNetwork** | 线性因果链升级为 DAG，支撑 Graph Search 和 Counterfactual |
+| P1 | **CaseTrajectory** | 历史案例从静态快照升级为序列演化 |
+| P2 | **MaturityVelocity / Acceleration** | 节点成熟度的一阶/二阶导数 |
+| P2 | **Multi-layer Expectation** | 不同参与者的预期层分离 |
+| P3 | **M9 完整链路** | Belief → Goal → Attention → Hypothesis 全链 |
+
+---
+
+### 7L.2 BeliefProjection
+
+#### 定位
+
+当前架构中，Section 8 定义了 `BeliefState`，但它仍然是"盘后快照"，不是"连续维护的信念状态投影"。真正的大脑运行方式：
+
+```text
+Evidence 增强，但 Belief 没有变 → 为什么？
+Evidence 一般，Belief 突然增强 → 因为历史案例或预期差？
+多个 Evidence 指向同一方向，但 Belief 仍低 → 有什么冲突？
+```
+
+`BeliefProjection` 将 Belief 从"Snapshot 结果"升级为"可解释的状态迁移过程"。
+
+#### 契约（预留）
+
+```python
+@dataclass(frozen=True, slots=True)
+class BeliefProjection:
+    projection_id: str
+    trade_date: date
+    as_of: datetime
+
+    # ---- 信念快照 ----
+    belief_snapshot_id: str          # -> BeliefState
+    
+    # ---- 信念变化归因 ----
+    belief_score: float              # 0-100
+    belief_direction: str            # strengthening / weakening / stable / volatile
+    belief_delta: float              # vs 前一日
+    belief_momentum: float           # 连续变化的速率
+    
+    # ---- 信念来源分解 ----
+    evidence_contribution: float     # Evidence 更新对 belief 的贡献
+    historical_contribution: float   # HistoricalCaseProjection 对 belief 的贡献
+    expectation_contribution: float  # ExpectationProjection (surprise) 对 belief 的贡献
+    graph_contribution: float        # CausalChain/Network 对 belief 的贡献
+    prior_contribution: float        # 先验信念的惯性
+    
+    # ---- 冲突与不确定性 ----
+    belief_conflicts: tuple[BeliefConflict, ...]
+    uncertainty: float               # 信念的不确定性（不是 probability）
+    divergence_among_sources: float  # 不同来源的分歧程度
+    
+    evidence_refs: tuple[str, ...]
+    policy_version: str
+```
+
+#### 关键约束
+
+- `belief_score` 不等于 `prediction_probability`。Belief 是主观确信度，probability 是事前事件概率
+- `evidence_contribution + historical_contribution + expectation_contribution + graph_contribution + prior_contribution` 应大致解释 belief_delta
+- 冲突大的 Belief 是高价值认知信号（→ Meta Cognition）
+- BeliefProjection 本身不进入 Calibration；Calibration 只针对 Hypothesis
+
+---
+
+### 7L.3 AttentionProjection
+
+#### 定位
+
+不是 Transformer 的 Attention，而是**市场注意力分配**。分析师天天在看：
+
+```text
+机器人：所有人都在看（Attention 95）
+PCB：没人看，但正在悄悄启动（Attention 15→32）
+军工：开始有人关注（Attention 42→50）
+消费：完全被忽略（Attention 5）
+```
+
+注意力迁移是题材轮动的最领先指标。当 Attention 还在机器人高位时，PCB 的 Attention 已经从 15 爬到 32 —— 这是轮动的前兆。
+
+#### 契约（预留）
+
+```python
+@dataclass(frozen=True, slots=True)
+class AttentionProjection:
+    projection_id: str
+    trade_date: date
+    as_of: datetime
+
+    items: tuple[ThemeAttention, ...]
+    # 按 attention_score 降序排列
+    
+    attention_concentration: float  # Top-3 占比（0-1），越高说明注意力越集中
+    attention_entropy: float        # 注意力分布熵，越高说明越分散
+    attention_drift: tuple[AttentionDrift, ...]  # 本周注意力迁移事件
+    
+    evidence_refs: tuple[str, ...]
+    policy_version: str
+
+
+@dataclass(frozen=True, slots=True)
+class ThemeAttention:
+    theme_id: str
+    theme_name: str
+    attention_score: float          # 0-100，综合注意力
+    attention_delta: float          # vs 前一日
+    attention_velocity: float       # 注意力变化速率（连续 N 日）
+    
+    # 注意力分项来源
+    media_attention: float          # 媒体/舆情
+    capital_attention: float        # 资金流向
+    volume_attention: float         # 成交活跃度
+    social_attention: float         # 社交/论坛讨论度
+    institutional_attention: float  # 机构调研/评级
+    
+    # 注意力状态
+    status: str                     # surging / stable / fading / ignored / awakening
+    # awakening = 从低注意力开始持续上升（≤32但velocity>0 且连续上升）
+
+
+@dataclass(frozen=True, slots=True)
+class AttentionDrift:
+    from_theme_id: str
+    to_theme_id: str
+    drift_strength: float           # 0-1
+    started_at: date
+    evidence_refs: tuple[str, ...]
+```
+
+#### 关键洞察
+
+```text
+Attention 状态转换的商业含义：
+
+ignored (0-15)    → 无人区。低位埋伏机会。
+awakening (15-35)  → 开始被注意到。这是最早的轮动信号。
+surging (35-70)    → 加速关注。确认轮动方向。
+peaking (70-100)   → 过度关注。反向信号。
+fading (下降中)     → 注意力退潮。旧主线让位。
+```
+
+#### 约束
+
+- Attention 不等同于 Belief。高 Attention + 低 Belief = 噪音；低 Attention + 高 Belief = 被忽视的机会
+- Attention 不直接生成交易信号；它只是帮助系统分配认知资源
+- M9 的 Attention Engine（Section 29）将消费这个投影来分配 LLM token / 深度推理 / 人工复核预算
+
+---
+
+### 7L.4 CausalNetwork（从 CausalChain 升级）
+
+#### 定位
+
+`CausalChain` (7C.6) 描述线性因果：A → B → C → D。但真实市场是网状因果：
+
+```text
+              韩国
+           ↙      ↘
+        HBM      AI服务器
+         ↓           ↓
+        PCB        CPO
+          ↘       ↙
+           机器人
+```
+
+这是 **Directed Acyclic Graph (DAG)**，不是 Chain。Chain 负责**解释**（向人类呈现因果故事），Network 负责**推理**（Graph Search、Counterfactual、What-if）。
+
+#### 契约（预留）
+
+```python
+@dataclass(frozen=True, slots=True)
+class CausalNetwork:
+    network_id: str
+    trade_date: date
+    as_of: datetime
+
+    nodes: tuple[CausalNode, ...]   # 引用 CognitionNode
+    edges: tuple[CausalEdge, ...]   # 有向边，带因果强度和时滞
+    
+    # 网络分析
+    root_causes: tuple[str, ...]    # 入度为0的节点（源头变量）
+    terminal_effects: tuple[str, ...]  # 出度为0的节点（最终结果）
+    critical_paths: tuple[CausalPath, ...]  # 最长/最强因果路径
+    
+    # Graph Search 能力
+    downstream_effects: Callable[[str], tuple[str, ...]]
+    # 给定一个节点，返回所有下游影响（BFS/DFS）
+    upstream_causes: Callable[[str], tuple[str, ...]]
+    # 给定一个节点，返回所有上游原因
+    
+    counterfactual_basis: tuple[InterventionNode, ...]
+    # 预标注的关键干预节点（可做反事实实验的节点）
+    
+    evidence_refs: tuple[str, ...]
+    policy_version: str
+
+
+@dataclass(frozen=True, slots=True)
+class CausalPath:
+    path_id: str
+    steps: tuple[str, ...]          # 有序节点序列
+    total_effect_strength: float    # 路径总效应（乘法叠加）
+    bottleneck_nodes: tuple[str, ...]  # 路径上的关键瓶颈
+    alternative: bool               # 是否为主要路径的替代路径
+```
+
+#### CausalChain vs CausalNetwork
+
+| 维度 | CausalChain (7C.6) | CausalNetwork (7L.4) |
+|---|---|---|
+| 结构 | 线性链 | DAG |
+| 用途 | 解释（向人呈现因果故事） | 推理（Graph Search, Counterfactual, What-if） |
+| 复杂度 | O(n) | O(n²) |
+| 实施阶段 | M8 Phase 2 | M9 Phase 2+ |
+| 节点数 | ≤10 per chain | ≤100 per network |
+
+---
+
+### 7L.5 CaseTrajectory
+
+#### 定位
+
+`HistoricalCaseProjection` (7H) 将历史案例检索为静态 Top-K 快照。但真正的分析师不是回忆一个静态切片，而是回放整个演化过程：
+
+```text
+DS 案例不是 "DS 高潮 D4"
+而是：
+  DS 启动 → 发酵 D2 → 加速 D3 → 高潮 D4 → 第一次分歧 D1 →
+  分歧修复 D1 → 弱转强 D2 → 二波加速 → 二波高潮 → 退潮
+```
+
+`CaseTrajectory` 将案例从 `Snapshot` 升级为 `Sequence`，为未来 Transformer / Sequence Matching 奠定基础。
+
+#### 契约（预留）
+
+```python
+@dataclass(frozen=True, slots=True)
+class CaseTrajectory:
+    trajectory_id: str
+    case_id: str                   # -> MarketCase.case_id
+    trade_date_range: tuple[date, date]
+
+    # ---- 状态序列 ----
+    state_sequence: tuple[TrajectoryState, ...]
+    # 每日的 market_fsm / emotion / theme_structure / cycle_node
+    
+    transition_sequence: tuple[NodeTransition, ...]
+    # 每个节点迁移的时间点和特征
+    
+    belief_sequence: tuple[float, ...]
+    # 每日的 belief_score（如果案例有对应 M8 数据）
+    
+    capital_sequence: tuple[CapitalSnapshot, ...]
+    # 每日的资金流向快照
+    
+    # ---- 序列匹配 ----
+    key_inflection_points: tuple[InflectionPoint, ...]
+    # 关键转折点（趋势改变的位置）
+    
+    trajectory_signature: str      # 序列的压缩签名（用于快速粗筛）
+
+
+@dataclass(frozen=True, slots=True)
+class TrajectoryState:
+    trade_date: date
+    market_fsm: str
+    emotion_vector: tuple[float, ...]   # [greed, fear, hesitation, fomo, confidence]
+    theme_structure: str
+    cycle_node: str
+    volume_trend: str
+    capital_rotation_direction: str
+
+
+@dataclass(frozen=True, slots=True)
+class InflectionPoint:
+    inflection_id: str
+    trade_date: date
+    from_state: str
+    to_state: str
+    trigger_type: str              # divergence / repair / climax / external / earnings
+    pre_inflection_signals: tuple[str, ...]  # 转折前的可观测信号
+```
+
+#### 未来能力
+
+- **Trajectory Matching**：不是 "相似度 0.91"，而是 "当前前 4 天的演化轨迹与 DS 案例前 4 天高度重合，且都在 D4 出现分歧信号"
+- **Inflection Point 识别**：训练模型识别"转折前信号"
+- **Sequence Generation**：基于当前轨迹，生成可能的未来演化路径
+
+---
+
+### 7L.6 MaturityVelocity & MaturityAcceleration
+
+#### 定位
+
+`NodeMaturityEstimation` (7J) 输出静态成熟度：`maturity_score = 82`。但分析师真正看的是**成熟度的变化率**：
+
+```text
+成熟度 昨天 55 → 今天 82 → 快速成熟 → 危险（即将转折）
+成熟度 昨天 80 → 今天 81 → 缓慢成熟 → 安全（仍有参与时间）
+```
+
+一阶导数（Velocity）告诉系统"节点在加速成熟还是减速"，二阶导数（Acceleration）告诉系统"成熟速度本身在加快还是放缓"。
+
+#### 契约（预留）
+
+```python
+@dataclass(frozen=True, slots=True)
+class MaturityDynamics:
+    dynamics_id: str
+    subject_id: str
+    trade_date: date
+
+    maturity_score: float          # 当前成熟度 (7J)
+    
+    # ---- 一阶导数：成熟度变化率 ----
+    maturity_velocity: float       # dmaturity/dt (per trading day)
+    velocity_direction: str        # accelerating / decelerating / steady
+    velocity_smoothed: float       # N 日平滑后的速度
+    
+    # ---- 二阶导数：成熟度加速度 ----
+    maturity_acceleration: float   # d²maturity/dt²
+    acceleration_direction: str    # speeding_up / slowing_down / constant
+    
+    # ---- 转折预测 ----
+    estimated_days_to_threshold: float | None
+    # 如果 velocity > 0，预测多少天达到 maturity_threshold
+    inflection_likelihood: float   # 0-1，短期内发生节点迁移的概率
+    inflection_window: str         # "1_day" / "2_days" / "3_5_days" / "unknown"
+    
+    # ---- 历史对标 ----
+    historical_velocity_profile: str  # 引用 CaseTrajectory 中的相似速度曲线
+    
+    evidence_refs: tuple[str, ...]
+```
+
+#### 示例
+
+```text
+机器人:
+  maturity_score: 82
+  maturity_velocity: +11.3/day    ← 快速成熟！危险信号
+  maturity_acceleration: +2.1     ← 还在加速！
+  velocity_direction: accelerating
+  estimated_days_to_threshold: 0.7 → 明天就触发
+  inflection_likelihood: 0.94
+
+通信/CPO:
+  maturity_score: 65
+  maturity_velocity: +2.5/day     ← 缓慢成熟
+  maturity_acceleration: -0.5     ← 减速中
+  velocity_direction: decelerating
+  estimated_days_to_threshold: 9.2 → 还有时间
+  inflection_likelihood: 0.38
+```
+
+---
+
+### 7L.7 Multi-layer Expectation
+
+#### 定位
+
+`ExpectationProjection` (7I) 只有一个 Consensus。但真实市场不同参与者持有不同预期：
+
+```text
+散户预期：机器人在涨，继续涨（momentum bias）
+机构预期：机器人高潮后兑现，转向低位科技（rotation bias）
+游资预期：高潮中只做核心，分歧即撤离（concentration bias）
+宏观预期：韩国拖累半导体，科技整体承压（external bias）
+```
+
+`MultiLayerExpectation` 将共识拆解为参与层，分别追踪每层的预期和预期差，然后融合为综合 Consensus。
+
+#### 契约（预留）
+
+```python
+@dataclass(frozen=True, slots=True)
+class MultiLayerExpectation:
+    projection_id: str
+    trade_date: date
+    as_of: datetime
+
+    layers: tuple[ExpectationLayer, ...]
+    
+    consensus: str                 # 加权融合后的综合共识（→ ExpectationProjection.consensus）
+    layer_divergence: float        # 各层之间的预期分歧程度（0-1）
+    dominant_layer: str            # 当前主导预期的层级
+    
+    evidence_refs: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class ExpectationLayer:
+    layer_type: str                # retail / institution / hot_money / macro / model
+    layer_weight: float            # 该层在当前市场状态下的影响力权重
+    
+    direction: str                 # bullish / bearish / neutral
+    conviction: float              # 该层对自身预期的坚定程度（0-1）
+    
+    key_themes: tuple[str, ...]    # 该层关注的核心题材
+    expected_action: str           # buy / hold / reduce / rotate / wait
+    
+    surprise_vs_actual: int        # -5 to +5，该层的预期差
+    
+    evidence_refs: tuple[str, ...]
+```
+
+#### 融合规则（预留）
+
+```text
+consensus = weighted_majority(layers, weights=[
+    institution × 0.35,     # 机构资金体量最大
+    hot_money × 0.25,       # 游资方向判断最敏锐
+    macro × 0.20,           # 宏观提供大背景
+    retail × 0.15,          # 散户情绪是反向指标
+    model × 0.05            # 模型作为校准
+])
+
+layer_divergence 高 → 市场处于分歧状态 → volatility 升高
+dominant_layer 切换 → 市场风格转变 → 新的交易逻辑确立
+```
+
+---
+
+### 7L.8 M9 完整链路接口
+
+#### v1.5 Frozen 链路 → M9 生长路径
+
+```text
+【v1.5 已冻结 — M8 Cognition Projections】
+Evidence → Context → Graph → History → Expectation → Maturity → Trading Card → Hypothesis
+
+                              ↓ (M9 预留接口)
+                              
+【M9 Phase 1 — Belief & Attention】
+BeliefProjection ← 聚合全部 Cognition Projections 的信念状态
+AttentionProjection ← 市场注意力分配与迁移
+
+                              ↓
+
+【M9 Phase 2 — Goal & Planning】
+Goal Manager ← Belief + Attention → 今日最需要弄清楚什么
+Attention Engine ← Goal → 有限认知资源的分配
+
+                              ↓
+
+【M9 Phase 3 — Meta Cognition】
+Cognitive Trace → Self Reflection → Diary → Learning
+
+                              ↓
+
+【M9 Phase 4 — World Model Update】
+CaseTrajectory + CausalNetwork + MaturityDynamics
+  → World Model Update Proposal
+  → Replay → Shadow → Approval
+```
+
+#### M9 完整链路（预留）
+
+```text
+World Model
+        │
+        ▼
+Belief Projection ──────────────────────────┐
+        │                                     │
+        ▼                                     │
+Goal Manager                                  │
+        │                                     │
+        ▼                                     │
+Attention Projection                          │
+        │                                     │
+        ▼                                     │
+Multi-Horizon Context                         │
+        │                                     │
+        ▼                                     │
+Cognition Graph + Causal Network              │
+        │                                     │
+        ├── Historical Case Projection ───────┤
+        │   + CaseTrajectory                  │
+        │                                     │
+        ├── Expectation Projection ───────────┤
+        │   + Multi-layer Expectation         │
+        │                                     │
+        ├── Cycle Node Recognition ───────────┤
+        │   + Maturity + Velocity/Accel       │
+        │                                     │
+        ▼                                     │
+Trading Cognition Cards                       │
+        │                                     │
+        ▼                                     │
+Node Transition Hypothesis                    │
+        │                                     │
+        ▼                                     │
+Strategy Selector → Risk Gate → Decision      │
+        │                                     │
+        ▼                                     │
+Outcome → Diary → Self Reflection ────────────┘
+        │
+        ▼
+Case Library + CaseTrajectory
+        │
+        ▼
+World Model Update Proposal
+```
+
+---
+
+### 7L.9 新增 ADR（M9 Bridge）
+
+16. **ADR-M9-BRIDGE-001**：BeliefProjection 是 Evidence 与 Hypothesis 之间的信念中间层。Belief score ≠ prediction probability。Belief 变化归因必须可分解（evidence / historical / expectation / graph / prior）。Belief 本身不进入 Calibration。
+
+17. **ADR-M9-BRIDGE-002**：AttentionProjection 描述市场注意力分配而非系统注意力分配。Attention ≠ Belief。高 Attention + 低 Belief = 噪音；低 Attention + 高 Belief = 被忽视的机会。
+
+18. **ADR-M9-BRIDGE-003**：CausalNetwork（DAG）是 CausalChain 的超集。Chain 负责解释，Network 负责推理。Network 必须在 Chain 验证稳定后才引入。
+
+19. **ADR-M9-BRIDGE-004**：CaseTrajectory 将历史案例从静态 Snapshot 升级为时间序列。Trajectory 匹配特征禁止包含未来 Outcome。
+
+20. **ADR-M9-BRIDGE-005**：MaturityVelocity 和 MaturityAcceleration 是 NodeMaturity 的一阶和二阶导数。它们不作为独立 Calibration 目标；Calibration 仍只针对 Node Transition Hypothesis。
+
+21. **ADR-M9-BRIDGE-006**：Multi-layer Expectation 的共识融合规则必须版本化且可回放。各层权重不可硬编码为常数，必须随市场状态动态调整。
+
+22. **ADR-M9-BRIDGE-007**：M9 在 M8 v1.5 Frozen Contract 基础上生长。M9 不得修改 M8 已冻结的 dataclass 字段语义。新增字段以 Optional 扩展或独立 Projection 形式添加。
+
+---
+
+## 7M. 最终定位：从 Market Cognition 到 Market World Model
+
+### 7M.1 范式转变
+
+v1.5 冻结时刻，系统完成的不仅仅是架构升级，而是定位的根本转变：
+
+```text
+旧范式：Market Cognition Engine
+  = 一个分析行情的引擎
+  = Engine 是主体，市场是客体
+
+新范式：Market World Model
+  = 维护一个可推理、可验证、可演化的市场世界
+  = 世界是主体，引擎只是世界内部的运行机制
+```
+
+这个转变的本质是：
+
+```text
+以前：系统"分析市场"
+  输入 → 处理 → 输出报告
+
+现在：系统"维护一个市场世界"
+  市场状态 → 题材 → 龙头 → 资金 → 外围 → 预期 →
+  历史 → 因果 → 信念 → 注意力 → 目标 → 假设
+  =
+  一个完整的 Market World
+```
+
+LLM 以后不需要查询数据库。它直接**进入这个世界**，在世界内部进行推理：
+
+```text
+LLM: "机器人现在什么状态？"
+World: "CLIMAX D4, 成熟度 82%, 拥挤度 91%"
+
+LLM: "历史上类似情况怎么走的？"
+World: "DS 2025-04, 相似度 0.91, 但当前指数更弱"
+
+LLM: "市场预期是什么？"
+World: "共识预期分歧, 实际继续高潮, Surprise +2"
+
+LLM: "那应该怎么办？"
+World: "不追高, 等第一次分歧。如果缩量+核心不破位, 分歧后弱转强概率 72%"
+```
+
+### 7M.2 世界的构成
+
+```text
+                    Market World
+                         │
+        ┌────────────────┼────────────────┐
+        │                │                │
+   World State      World Laws       World Dynamics
+   (状态)           (规律)           (演化)
+        │                │                │
+   - 市场FSM        - 因果网络       - 节点迁移
+   - 题材周期       - 历史案例       - 成熟度变化
+   - 龙头状态       - 外部锚定       - 注意力迁移
+   - 资金分布       - 业绩周期       - 预期差演化
+   - 情绪向量       - 关系图         - 信念更新
+   - 预期层         - 因果链         - 目标漂移
+```
+
+### 7M.3 M9 认知闭环
+
+M9 不应围绕单个模块命名，而应围绕一个完整的认知闭环：
+
+```text
+                    Market World
+                         │
+                         ▼
+                    World State
+                  (世界当前状态)
+                         │
+                         ▼
+                    Belief Update
+                (信念如何被证据改变)
+                         │
+                         ▼
+                    Goal Selection
+              (今天最需要弄清楚什么)
+                         │
+                         ▼
+                  Attention Allocation
+              (有限认知资源投向哪里)
+                         │
+                         ▼
+                  Mental Simulation
+            (在当前世界模型中推演未来)
+                         │
+                         ▼
+                  Scenario Ranking
+              (哪个路径最可能、赔率最高)
+                         │
+                         ▼
+                    Hypothesis
+              (可证伪的节点迁移命题)
+                         │
+                         ▼
+                     Decision
+              (策略 + 风险 + 仓位)
+                         │
+                         ▼
+                     Outcome
+                  (世界如何回应)
+                         │
+                         ▼
+                    Reflection
+            (系统对自身认知过程的审计)
+                         │
+                         ▼
+                World Model Update
+          (从错误中学习；Proposal→Replay→Shadow→Approval)
+                         │
+                         └────────→ 回到 Market World
+```
+
+### 7M.4 与 M8 v1.5 Frozen Contract 的关系
+
+这个闭环与已冻结的 M8 v1.5 Contract 完全兼容：
+
+| M9 步骤 | M8 v1.5 对应 |
+|---|---|
+| Market World | 全部 Cognition Projections (7A-7K) + M9 Bridge (7L) |
+| World State | MarketEvidenceSnapshot + Multi-Horizon Context |
+| Belief Update | BeliefState (Section 8) + BeliefProjection (7L.2) |
+| Goal Selection | MarketGoal (Section 28) |
+| Attention Allocation | AttentionProjection (7L.3) + AttentionEngine (Section 29) |
+| Mental Simulation | CausalNetwork (7L.4) + Counterfactual (Section 10) |
+| Scenario Ranking | ScenarioPath (Section 11) + ExpectedNodeTransition (7E) |
+| Hypothesis | Node Transition Hypothesis (9.7) |
+| Decision | Strategy → Risk Gate → Portfolio (Section 38-42) |
+| Outcome | MarketThesisValidationRecord (0.2) |
+| Reflection | Meta Cognition (Section 43) + MarketDiary (Section 31) |
+| World Model Update | UpdateProposal → Replay → Shadow → Approval (Section 27.7) |
+
+M9 不是在 M8 旁边堆叠新模块，而是将 M8 已冻结的认知对象**串成环**，赋予它们时序、目标和学习能力。
+
+### 7M.5 命名的意义
+
+```text
+"Market Cognition Engine"
+  → 暗示：这是一个分析工具
+  → 边界：Engine 是一个模块
+
+"Market World Model"
+  → 暗示：这是一个世界
+  → 边界：World 包含一切
+  → 其中 Engine、Projection、Hypothesis、Validation
+    都只是世界内部的运行机制
+
+未来：
+  LLM 不查数据库
+  交易员不读报告
+  系统不做分析
+
+  他们直接进入这个世界
+  在世界中感知、推理、假设、决策、反思、进化
+```
+
+### 7M.6 体系命名约定
+
+```text
+M8 = Market World State Builder
+     构建并维护市场世界的当前状态
+     Evidence → Context → Graph → Card → Node → Expectation →
+     History → Maturity → Trading Cognition → Hypothesis → Validation
+
+M9 = Market World Intelligence Loop
+     让这个世界"活起来"
+     World State → Belief → Goal → Attention → Simulation →
+     Scenario → Hypothesis → Decision → Outcome → Reflection → Update
+```
+
+此后所有模块评审，不追问"报告好不好看"，只追问：
+
+> 这个模块是否让 Market World 更准确、更可解释、更可验证、更能演化？
+
+---
+
+## 7N. Phase 1.5 — Node Transition Backtest
+
+### 7N.1 执行纪律
+
+v1.5 Core Contract Frozen 之后，所有新增实现必须服务于 Node Transition Hypothesis：
+
+> 这个字段/投影/指标/脚本是否提高了节点定位、节点成熟度、分歧质量或节点迁移假设的质量？
+
+否则延期到 M9。
+
+### 7N.2 Step 1 — 最小闭环（不碰 M9）
+
+```text
+Multi-Horizon Context
+  → Cycle Node Recognition
+  → Divergence Quality
+  → Node Maturity
+  → Node Transition Hypothesis
+```
+
+### 7N.3 Step 2 — 历史回测（先验证认知，不验证收益）
+
+| 验证项 | 问题 |
+|---|---|
+| Node Recognition | 系统能否正确识别高潮、分歧、修复、退潮？ |
+| Node Maturity | 成熟度高时，是否真的更接近转折？ |
+| Divergence Quality | 良性分歧是否更容易修复？ |
+| Node Transition | 昨天预测的节点迁移，今天是否发生？ |
+| Timing Offset | 节点是否提前/滞后 1～2 天？ |
+
+### 7N.4 Step 3 — 交易认知验证（认知稳定后）
+
+```text
+left_probe / right_confirm / wait / avoid / reduce
+→ 是否符合历史行情
+```
+
+### 7N.5 v1.5 冻结确认
+
+```text
+☑ Core Contract Frozen — v1.5 (FINAL)
+☑ 22 ADR (M8-001~009 + M8-010~015 + M9-BRIDGE-001~007)
+☑ 10 Cognition Projections (7A-7K)
+☑ 6 M9 Bridge Interfaces (7L)
+☑ 3 核心对象 (MarketSubject / MarketWorldModel / PolicyRegistry)
+☑ M8/M9 体系命名 (7M.6)
+☑ Architecture Budget — Stable Core 冻结 (0.1~0.3)
+☑ Phase 1.5 实施基线 (7N + docs/project_control/wbs_M8.phase1.5.md)
+☑ 不再扩架构 — 进入 Market World State Verification
+```
+
+---
+
 ## 8. Layer 3：Market Belief Engine
 
 ### 8.1 定位
@@ -891,9 +2911,90 @@ class HypothesisEvaluation:
     trace: tuple[TraceStep, ...]
 ```
 
----
+### 9.7 Node Transition Hypothesis
 
-## 10. Layer 4：Counterfactual Engine
+Node Transition Hypothesis 是 M8 从 Hypothesis Validator 升级为 Hypothesis Generator 的核心机制。它将 Hypothesis 从"笼统市场命题"升级为"可验证的周期节点迁移预测"。
+
+**定位**：
+
+当前假设示例（笼统）：
+
+> 主线修复后，交易权限才具备重新评估条件。
+
+升级后（节点迁移）：
+
+```json
+{
+  "hypothesis_type": "NODE_TRANSITION",
+  "subject": "机器人/减速器",
+  "current_node": "CLIMAX",
+  "expected_transition": "FIRST_DIVERGENCE",
+  "deadline": "2026-07-04",
+  "prediction_probability": 0.65,
+  "expected_observations": [
+    "板块不再继续一致加速",
+    "前排核心出现分歧但不破位",
+    "后排释放亏钱效应",
+    "成交额放大但未失控"
+  ],
+  "falsifiers": [
+    "龙头直接放量破位",
+    "板块批量跌停",
+    "机器人继续无分歧高潮",
+    "资金完全切换到其他主线"
+  ],
+  "trading_condition": {
+    "left_side": "分歧充分但核心不死",
+    "right_side": "分歧后核心弱转强"
+  }
+}
+```
+
+**Eligibility 兼容性**：
+
+Node Transition Hypothesis 完全符合 ADR-M8-009 的 Eligibility Gate：
+
+- `hypothesis_type` 必须是 `NODE_TRANSITION`
+- `statement`：由 `current_node -> expected_transition` 自动编译，但保留人工可读覆盖
+- `deadline`：来自 Trade Calendar Producer
+- `prediction_probability`：冻结时的事前估计
+- `expected_observations`：节点迁移应出现的关键观测
+- `falsifiers`：否定该节点迁移的明确条件
+- `trading_condition`：进入 ThesisStatement（Report only），不进 Dataset
+
+**Failure Type 语义精度**：
+
+节点迁移假设使 Failure Type 获得更高分辨率：
+
+| Failure Type | 节点迁移语义 | 示例 |
+|---|---|---|
+| `WRONG_DIRECTION` | 节点迁移方向判断错误 | 预期 FIRST_DIVERGENCE，实际 SECOND_ACCELERATION |
+| `WRONG_TIMING` | 节点到达时间判断错误 | 预期当日分歧，实际次日才分歧 |
+| `INSUFFICIENT_EVIDENCE` | 分歧质量不足以判定节点迁移 | 缩量不足、核心未确认守位 |
+| `UNEXPECTED_EVENT` | 外部冲击打乱节点节奏 | 韩国暴跌改变A股科技赛道节奏 |
+| `WRONG_THEME` | 判断了错误的题材节点 | 该题材实际不在该周期位置 |
+| `MARKET_REGIME_SHIFT` | 全市场环境切换 | 系统性风险改变所有节点预期 |
+
+**生成来源优先级**（在 9.5 节基础上补充）：
+
+1. 昨日活跃 Hypothesis 的节点迁移延续或修订
+2. `CycleNodeRecognition` 的 `expected_next_nodes` 中 probability 最高的迁移路径
+3. `DivergenceQuality` 达到 `healthy` 或 `forced` 水平的题材
+4. FSM 允许的状态转移（Section 7.1）
+5. `MarketCognitionGraph` 中检测到的 capital_rotation / external_anchor 变化
+6. `TradingCognitionCard` 中 `action_bias != wait` 且 `left_side_allowed or right_side_allowed` 的标的
+7. Case Library 的差异化候选
+8. LLM 提议的待审核候选（默认 DRAFT）
+
+**验收标准**：
+
+- 每日至少生成 1～3 条 eligible Node Transition Hypothesis
+- 所有 eligible 命题必须通过 Eligibility Gate
+- 进入 Ground Truth Dataset 的命题类型必须包含 `NODE_TRANSITION`
+- Brier Score / ECE / Timing Offset 只统计节点迁移命题
+- 笼统市场命题（无 current_node / expected_transition）不得进入 Dataset
+
+---
 
 ### 10.1 定位
 
@@ -1740,6 +3841,12 @@ Frozen eligible Hypothesis
 7. ADR-M8-007：所有核心认知快照 append-only、可回放、带策略版本。
 8. ADR-M8-008：Notion 正文以认知变化组织，原始事实降级到折叠证据附录。
 9. ADR-M8-009：只有 Validation-Eligible Hypothesis 可以进入 Ground Truth Dataset；Narrative Confidence 不等于 Prediction Probability。
+10. ADR-M8-010：Cognition Projection 不是新 Engine。Multi-Horizon Context、Market Cognition Graph、Theme/Trading Cognitive Card、Historical Case Projection、Expectation Projection、Node Maturity Estimation 是落在现有 Stable Core 内部的只读认知投影，不新增顶层模块，不破坏 Phase 0/Phase 1 链路。
+11. ADR-M8-011：Hypothesis 升级为 Node Transition Hypothesis。所有进入 Ground Truth Dataset 的命题必须声明 `hypothesis_type = NODE_TRANSITION`，包含 `current_node` 和 `expected_transition`。笼统市场命题不得进入 Dataset。
+12. ADR-M8-012：Causal Chain 与 Cognition Edge 的关系。CognitionEdge 描述静态关联强度，CausalChain 描述动态传导顺序与机制。每条 CausalChain 必须包含至少一条 alternative_chain。跨日因果（time_lag >= next_day）必须是 Hypothesis，不是 Assessment。
+13. ADR-M8-013：Historical Case Retrieval 必须隔离 Outcome。检索向量禁止包含未来 Outcome 标签。transfer_confidence 必须在 similarity 基础上扣除差异惩罚。高相似案例不可覆盖当前 Evidence。
+14. ADR-M8-014：Expectation Consensus 必须在盘前冻结。禁止盘后用 Actual 反向修改 Consensus。consensus_source 必须显式记录（prior_hypothesis / analyst_consensus / model_prior / llm_draft），不可混用。
+15. ADR-M8-015：Node Maturity 不作为 Calibration 目标。NodeMaturityEstimation 是认知辅助，不是预测对象。Calibration 只针对 Node Transition Hypothesis，不对 maturity_score 计算 Brier/ECE。
 
 ---
 
