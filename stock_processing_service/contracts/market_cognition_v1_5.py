@@ -23,18 +23,35 @@ from .market_cognition import EvidenceRef, QualityEnvelope, canonical_hash
 
 
 # ──────────────────────────────────────────────
-#  A.2  MarketSubject — Unified Aggregate Root
+#  Subject ID Convention — Stable Canonical Keys
 # ──────────────────────────────────────────────
+#
+#  subject_id MUST be a stable canonical key, NOT a natural-language name.
+#
+#  Pattern:
+#    theme:<jyhf_subject_id>          — e.g. theme:9026027
+#    leader:stock:<stock_code>        — e.g. leader:stock:002361
+#    index:<index_code>               — e.g. index:000001.SH
+#    external:<market_code>           — e.g. external:KOSPI
+#    macro:<macro_topic>              — e.g. macro:earnings_season:2026Q2
+#    sector:<sector_name>             — e.g. sector:semiconductor
+#    emotion_carrier:<entity_id>     — e.g. emotion_carrier:theme:9026027
+#
+#  Natural-language names ("机器人", "机器人/减速器", "人形机器人")
+#  go in the `name` field ONLY. subject_id is the join key across
+#  State Chain / Node Transition / Simulation — it MUST NOT drift.
 
-SUBJECT_TYPES = (
-    "theme",
-    "leader",
-    "index",
-    "external",
-    "macro",
-    "sector",
-    "emotion_carrier",
-)
+SUBJECT_ID_PATTERNS: dict[str, str] = {
+    "theme": "theme:<jyhf_subject_id>",
+    "leader": "leader:stock:<stock_code>",
+    "index": "index:<code>",
+    "external": "external:<code>",
+    "macro": "macro:<topic>",
+    "sector": "sector:<name>",
+    "emotion_carrier": "emotion_carrier:<entity_id>",
+}
+
+SUBJECT_TYPES = tuple(SUBJECT_ID_PATTERNS.keys())
 
 
 @dataclass(frozen=True, slots=True)
@@ -44,6 +61,9 @@ class MarketSubject:
     Theme / Leader / Index / External / Macro / Sector / EmotionCarrier
     are all Subjects. Node / Context / Quality / Hypothesis reference
     subject_id, never theme_id directly.
+
+    subject_id MUST be a stable canonical key following SUBJECT_ID_PATTERNS.
+    Natural-language names go in `name` ONLY.
     """
 
     subject_id: str
@@ -56,6 +76,12 @@ class MarketSubject:
         if self.subject_type not in SUBJECT_TYPES:
             raise ValueError(
                 f"subject_type must be one of {SUBJECT_TYPES}, got {self.subject_type!r}"
+            )
+        prefix = f"{self.subject_type}:"
+        if not self.subject_id.startswith(prefix):
+            raise ValueError(
+                f"subject_id must follow pattern '{SUBJECT_ID_PATTERNS[self.subject_type]}', "
+                f"got {self.subject_id!r}. Natural-language names go in `name` field only."
             )
 
 
@@ -117,10 +143,31 @@ class DailyMarketState:
     attention_state: None = None
     goal_state: None = None
 
+    # Fields included in deterministic content_hash.
+    # Excludes: created_at, state_id (auto-generated), and any UUID/random fields.
+    HASH_FIELDS = (
+        "trade_date", "parent_state", "subjects", "cycle_nodes",
+        "divergence_qualities", "maturity_estimates", "policy_snapshot",
+        "evidence_refs",
+    )
+
+    def compute_content_hash(self) -> str:
+        """Deterministic hash over non-volatile fields only.
+
+        Excludes: created_at, state_id, working_memory, belief_state,
+        attention_state, goal_state (all Optional/M9 Bridge or auto-generated).
+        """
+        payload = {}
+        for fname in self.HASH_FIELDS:
+            val = getattr(self, fname, None)
+            payload[fname] = canonical_hash(val) if val is not None else ""
+        raw = json.dumps(payload, ensure_ascii=False, sort_keys=True)
+        return hashlib.sha256(raw.encode()).hexdigest()
+
     def compute_state_id(self) -> str:
         payload = {
             "trade_date": self.trade_date.isoformat(),
-            "content_hash": self.content_hash,
+            "content_hash": self.content_hash or self.compute_content_hash(),
         }
         raw = json.dumps(payload, ensure_ascii=False, sort_keys=True)
         return hashlib.sha256(raw.encode()).hexdigest()
@@ -147,8 +194,25 @@ class MaturityChange:
 
 
 @dataclass(frozen=True, slots=True)
+class DivergenceQualityChange:
+    subject_id: str
+    from_label: str | None
+    to_label: str | None
+    volume_contraction_delta: float = 0.0
+    leader_intact_delta: float = 0.0
+    rear_cleared_delta: float = 0.0
+    capital_redirected_delta: float = 0.0
+    duration_sufficient_delta: float = 0.0
+
+
+@dataclass(frozen=True, slots=True)
 class StateDiff:
-    """Structured difference between two World States."""
+    """Structured difference between two World States.
+
+    Primary input to WorldStateTransitionCompiler (Phase B).
+    Compiler should consume (prev_state + current_state + state_diff),
+    not re-scan all state fields.
+    """
 
     from_state: str  # state_id
     to_state: str    # state_id
@@ -156,10 +220,14 @@ class StateDiff:
     subjects_added: tuple[str, ...] = ()
     subjects_removed: tuple[str, ...] = ()
 
+    # ── Phase B primary inputs ──
     node_changes: tuple[NodeChange, ...] = ()
     maturity_changes: tuple[MaturityChange, ...] = ()
-    hypothesis_results: tuple[str, ...] = ()
+    divergence_quality_changes: tuple[DivergenceQualityChange, ...] = ()
+    context_changes: tuple[str, ...] = ()       # human-readable summaries
+    policy_changes: tuple[str, ...] = ()        # policy version diffs
 
+    hypothesis_results: tuple[str, ...] = ()
     summary: str = ""
 
 

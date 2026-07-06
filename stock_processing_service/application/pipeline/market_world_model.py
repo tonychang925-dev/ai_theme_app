@@ -11,6 +11,9 @@ from datetime import date, datetime
 
 from stock_processing_service.contracts.market_cognition_v1_5 import (
     DailyMarketState,
+    DivergenceQualityChange,
+    MaturityChange,
+    NodeChange,
     StateDiff,
 )
 from stock_processing_service.domain.policies.policy_registry import PolicyRegistry
@@ -68,7 +71,12 @@ class MarketWorldModel:
     def diff(
         self, s1: DailyMarketState, s2: DailyMarketState
     ) -> StateDiff:
-        """Compute structured diff between two World States."""
+        """Compute structured diff between two World States.
+
+        Serves as primary input to WorldStateTransitionCompiler (Phase B).
+        Compiler should consume (prev_state + current_state + state_diff),
+        not re-scan all state fields.
+        """
         s1_nodes = {n.subject_id: n.name for n in s1.cycle_nodes}
         s2_nodes = {n.subject_id: n.name for n in s2.cycle_nodes}
 
@@ -78,33 +86,63 @@ class MarketWorldModel:
             from_n = s1_nodes.get(sid)
             to_n = s2_nodes.get(sid)
             if from_n != to_n:
-                from stock_processing_service.contracts.market_cognition_v1_5 import (
-                    NodeChange,
-                )
                 node_changes.append(NodeChange(
                     subject_id=sid, from_node=from_n, to_node=to_n,
                 ))
 
-        s1_maturities = {m.subject_id: m.overall for m in s1.maturity_estimates}
-        s2_maturities = {m.subject_id: m.overall for m in s2.maturity_estimates}
+        s1_maturities = {m.subject_id: m for m in s1.maturity_estimates}
+        s2_maturities = {m.subject_id: m for m in s2.maturity_estimates}
 
         maturity_changes = []
         for sid in set(s1_maturities.keys()) | set(s2_maturities.keys()):
             fm = s1_maturities.get(sid)
             tm = s2_maturities.get(sid)
-            if fm is not None and tm is not None:
-                from stock_processing_service.contracts.market_cognition_v1_5 import (
-                    MaturityChange,
-                )
+            if fm is not None and tm is not None and fm.overall != tm.overall:
                 maturity_changes.append(MaturityChange(
-                    subject_id=sid, from_maturity=fm, to_maturity=tm, delta=tm - fm,
+                    subject_id=sid,
+                    from_maturity=fm.overall,
+                    to_maturity=tm.overall,
+                    delta=tm.overall - fm.overall,
                 ))
+
+        # Divergence quality changes — full vector delta
+        s1_dqs = {d.subject_id: d for d in s1.divergence_qualities}
+        s2_dqs = {d.subject_id: d for d in s2.divergence_qualities}
+
+        dq_changes = []
+        for sid in set(s1_dqs.keys()) | set(s2_dqs.keys()):
+            d1 = s1_dqs.get(sid)
+            d2 = s2_dqs.get(sid)
+            if d1 is not None and d2 is not None:
+                if d1.quality_label != d2.quality_label:
+                    dq_changes.append(DivergenceQualityChange(
+                        subject_id=sid,
+                        from_label=d1.quality_label,
+                        to_label=d2.quality_label,
+                        volume_contraction_delta=d2.volume_contraction - d1.volume_contraction,
+                        leader_intact_delta=d2.leader_intact - d1.leader_intact,
+                        rear_cleared_delta=d2.rear_cleared - d1.rear_cleared,
+                        capital_redirected_delta=d2.capital_redirected - d1.capital_redirected,
+                        duration_sufficient_delta=d2.duration_sufficient - d1.duration_sufficient,
+                    ))
+
+        # Policy changes
+        policy_diffs = []
+        if s1.policy_snapshot.to_dict() != s2.policy_snapshot.to_dict():
+            for k in s1.policy_snapshot.to_dict():
+                v1 = s1.policy_snapshot.to_dict().get(k)
+                v2 = s2.policy_snapshot.to_dict().get(k)
+                if v1 != v2:
+                    policy_diffs.append(f"{k}: {v1} → {v2}")
 
         return StateDiff(
             from_state=s1.state_id,
             to_state=s2.state_id,
             node_changes=tuple(node_changes),
             maturity_changes=tuple(maturity_changes),
+            divergence_quality_changes=tuple(dq_changes),
+            policy_changes=tuple(policy_diffs),
+            summary=f"{len(node_changes)} node changes, {len(maturity_changes)} maturity changes, {len(dq_changes)} DQ changes",
         )
 
     def simulate(self, start: date, end: date) -> Any:
