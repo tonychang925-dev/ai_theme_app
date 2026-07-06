@@ -1,0 +1,36 @@
+# Divergence Quality Policy v1
+# Derives quality_label from the 5-dimension divergence vector.
+version: "divergence_policy.v1"
+valid_from: "2026-01-01"
+
+# Five dimensions (each 0-1):
+#   volume_contraction  — 缩量程度 (1 = extreme contraction)
+#   leader_intact       — 核心守位度 (1 = fully intact)
+#   rear_cleared        — 后排风险释放度 (1 = fully cleared)
+#   capital_redirected  — 资金承接度 (1 = clear new direction)
+#   duration_sufficient — 时间充分度 (1 = historically sufficient)
+
+labels:
+  healthy:
+    description: "良性分歧 — 缩量有序，核心守位，后排释放，资金有承接"
+    condition: "volume_contraction >= 0.5 AND leader_intact >= 0.6 AND rear_cleared >= 0.6 AND capital_redirected >= 0.5 AND duration_sufficient >= 0.5"
+    left_side_allowed: true
+    right_side_allowed: false
+
+  forced:
+    description: "外部挤压 — 非内生分歧，受外部冲击"
+    condition: "volume_contraction < 0.5 AND leader_intact >= 0.5 AND capital_redirected >= 0.4"
+    left_side_allowed: false
+    right_side_allowed: true
+
+  panic:
+    description: "恐慌分歧 — 放量杀跌，核心破位，全线崩溃"
+    condition: "leader_intact < 0.3 OR (volume_contraction < 0.2 AND leader_intact < 0.4)"
+    left_side_allowed: false
+    right_side_allowed: false
+
+  insufficient:
+    description: "分歧不足 — 时间不够或风险未释放"
+    condition: "duration_sufficient < 0.3 OR rear_cleared < 0.3"
+    left_side_allowed: false
+    right_side_allowed: false

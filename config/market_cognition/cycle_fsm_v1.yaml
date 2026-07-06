@@ -1,0 +1,90 @@
+# Cycle FSM v1 — Market World State Transition Policy
+# Phase 1.5: Externalized FSM. Add new nodes without code changes.
+version: "cycle_fsm.v1"
+valid_from: "2026-01-01"
+description: >
+  Defines valid Cycle Node states and allowed transitions for Market World State.
+  Each state represents a recognizable phase in market/theme/leader lifecycle.
+  Future nodes (FALSE_BREAKOUT, FAILED_REPAIR, ACCELERATION_EXTENSION, etc.)
+  can be added to this YAML without modifying any code.
+
+states:
+  CHAOS:
+    label: "混沌"
+    description: "无明确方向，市场极度不确定"
+    allowed_transitions: [INITIAL, ICE_POINT]
+
+  INITIAL:
+    label: "启动"
+    description: "新方向开始形成"
+    allowed_transitions: [FERMENTATION, CHAOS]
+
+  FERMENTATION:
+    label: "发酵"
+    description: "方向确认，资金开始聚集"
+    allowed_transitions: [ACCELERATION, CHAOS, FIRST_DIVERGENCE]
+
+  ACCELERATION:
+    label: "加速"
+    description: "共识形成，加速上行"
+    allowed_transitions: [CLIMAX, FIRST_DIVERGENCE]
+
+  CLIMAX:
+    label: "高潮"
+    description: "情绪顶点，极度拥挤"
+    allowed_transitions: [FIRST_DIVERGENCE, SECOND_ACCELERATION, FADE]
+
+  FIRST_DIVERGENCE:
+    label: "第一次分歧"
+    description: "首次显著分歧，检验方向质量"
+    allowed_transitions: [DIVERGENCE_REPAIR, DIVERGENCE_WEAKENING, FADE]
+
+  DIVERGENCE_REPAIR:
+    label: "分歧修复"
+    description: "分歧后资金回流确认"
+    allowed_transitions: [WEAK_TO_STRONG, SECOND_ACCELERATION, FIRST_DIVERGENCE]
+
+  WEAK_TO_STRONG:
+    label: "弱转强"
+    description: "分歧后超越前高，确认强度"
+    allowed_transitions: [SECOND_ACCELERATION, FIRST_DIVERGENCE, FADE]
+
+  SECOND_ACCELERATION:
+    label: "二次加速"
+    description: "二波主升"
+    allowed_transitions: [SECOND_DIVERGENCE, CLIMAX, FADE]
+
+  SECOND_DIVERGENCE:
+    label: "第二次分歧"
+    description: "二波后的分歧"
+    allowed_transitions: [DIVERGENCE_REPAIR, FADE, REBOUND]
+
+  DIVERGENCE_WEAKENING:
+    label: "分歧减弱"
+    description: "分歧力度衰减，方向不明"
+    allowed_transitions: [DIVERGENCE_REPAIR, FADE, REBOUND]
+
+  FADE:
+    label: "退潮"
+    description: "方向确认走弱，资金撤离"
+    allowed_transitions: [ICE_POINT, REBOUND, CYCLE_END]
+
+  ICE_POINT:
+    label: "冰点"
+    description: "情绪极度悲观，缩量至极致"
+    allowed_transitions: [REBOUND, INITIAL, CHAOS]
+
+  REBOUND:
+    label: "反弹"
+    description: "超跌后技术性修复"
+    allowed_transitions: [INITIAL, FADE, SECOND_WAVE]
+
+  SECOND_WAVE:
+    label: "二波"
+    description: "调整后重新走强"
+    allowed_transitions: [ACCELERATION, FIRST_DIVERGENCE, FADE]
+
+  CYCLE_END:
+    label: "周期结束"
+    description: "完整周期结束，等待新周期"
+    allowed_transitions: [CHAOS, INITIAL]

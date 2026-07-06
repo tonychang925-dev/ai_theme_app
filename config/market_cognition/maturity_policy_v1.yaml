@@ -1,0 +1,35 @@
+# Node Maturity Policy v1
+# Computes overall maturity_score from the 6-dimension vector.
+version: "maturity_policy.v1"
+valid_from: "2026-01-01"
+
+# Six dimensions (each 0-100):
+#   crowding — 拥挤度 (higher = closer to inflection)
+#   volume   — 量能健康度
+#   leader   — 龙头健康度
+#   emotion  — 情绪极端度 (higher = closer to extreme)
+#   time     — 时间充分度 (higher = closer to typical max)
+
+weights:
+  crowding: 0.25
+  volume: 0.20
+  leader: 0.25
+  emotion: 0.15
+  time: 0.15
+
+quality_labels:
+  accelerating:
+    description: "加速成熟 — 接近转折"
+    condition: "overall >= 80 AND velocity > 5"
+
+  peaking:
+    description: "成熟高峰 — 即将转折"
+    condition: "overall >= 80 AND velocity <= 5"
+
+  exhausting:
+    description: "成熟减速 — 分歧消化中"
+    condition: "overall >= 50 AND overall < 80"
+
+  stalling:
+    description: "成熟停滞 — 方向不明"
+    condition: "overall < 50"
