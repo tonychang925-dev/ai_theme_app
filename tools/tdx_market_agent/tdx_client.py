@@ -166,11 +166,15 @@ class TdxClient:
         result = self._client.F10C(symbol=numeric_id)
         return _normalize_payload(result)
 
+    # mootdx F10 section mapping — "资金动向" 内容实际在 "龙虎榜单" 章节下
+    _SECTION_ALIAS: dict[str, str] = {"资金动向": "龙虎榜单"}
+
     def get_f10_content(self, numeric_id: str, name: str = "") -> dict | list | str:
         """获取 F10 公司信息详情，name 为空则返回全部目录项."""
         self._ensure_connected()
         if name.strip():
-            result = self._client.F10(symbol=numeric_id, name=name.strip())
+            resolved = self._SECTION_ALIAS.get(name.strip(), name.strip())
+            result = self._client.F10(symbol=numeric_id, name=resolved)
         else:
             result = self._client.F10(symbol=numeric_id)
         return _normalize_payload(result)

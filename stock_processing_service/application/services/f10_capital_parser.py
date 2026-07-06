@@ -107,36 +107,19 @@ class F10CapitalParser:
         split_sections = self.split_sections(text)
         sections = {section.title: section.body for section in split_sections if section.title}
 
-        # Resolve sections by fuzzy key matching.
-        # mootdx F10() may return different section numbering depending on which
-        # top-level section is returned (e.g. "资金动向" → "1.交易龙虎榜/2.大宗交易/..."
-        # vs "最新提示" → "6.大宗交易/7.融资融券/...").  Match by canonical name.
-        def _find_section(*canonical_names: str) -> str:
-            for name in canonical_names:
-                # Exact match first
-                if name in sections:
-                    return sections[name]
-                # Fuzzy match on any key containing the canonical name
-                for key, body in sections.items():
-                    key_stripped = re.sub(r"^\d+\.", "", key).strip()
-                    name_stripped = re.sub(r"^\d+\.", "", name).strip()
-                    if key_stripped == name_stripped:
-                        return body
-            return ""
-
-        dragon_tiger = self._parse_dragon_tiger(_find_section("1.交易龙虎榜", "交易龙虎榜"))
-        block_trade = self._parse_block_trade(_find_section("2.大宗交易", "6.大宗交易", "大宗交易"))
-        margin_trading = self._parse_margin_trading(_find_section("3.融资融券", "7.融资融券", "融资融券"))
-        capital_flow = self._parse_capital_flow(_find_section("4.资金流向", "资金流向"))
-        strategic_lending = self._parse_strategic_lending(_find_section("5.战略配售可出借", "战略配售可出借"))
+        dragon_tiger = self._parse_dragon_tiger(sections.get("1.交易龙虎榜", ""))
+        block_trade = self._parse_block_trade(sections.get("2.大宗交易", ""))
+        margin_trading = self._parse_margin_trading(sections.get("3.融资融券", ""))
+        capital_flow = self._parse_capital_flow(sections.get("4.资金流向", ""))
+        strategic_lending = self._parse_strategic_lending(sections.get("5.战略配售可出借", ""))
 
         section_hits = [
             name for name, body in (
-                ("交易龙虎榜", dragon_tiger.get("summary")),
-                ("大宗交易", block_trade.get("summary")),
-                ("融资融券", margin_trading.get("summary")),
-                ("资金流向", capital_flow.get("summary")),
-                ("战略配售可出借", strategic_lending.get("summary")),
+                ("1.交易龙虎榜", dragon_tiger.get("summary")),
+                ("2.大宗交易", block_trade.get("summary")),
+                ("3.融资融券", margin_trading.get("summary")),
+                ("4.资金流向", capital_flow.get("summary")),
+                ("5.战略配售可出借", strategic_lending.get("summary")),
             )
             if body
         ]
