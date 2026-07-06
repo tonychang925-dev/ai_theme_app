@@ -104,6 +104,14 @@ def main() -> int:
             source_updated_date = None
             if isinstance(content, dict):
                 raw_text = str(content.get("content") or content.get("raw") or "")
+                # 如果 dict 没有 "content"/"raw" key，则从 dict values 中提取正文
+                # （mootdx F10 可能返回 {section_name: text} 或 {key: text} 格式）
+                if not raw_text.strip():
+                    for _v in content.values():
+                        _t = str(_v or "").strip()
+                        if _t:
+                            raw_text = _t
+                            break
                 source_updated_date = content.get("source_updated_date") or content.get("updated_date") or content.get("date")
             elif isinstance(content, str):
                 raw_text = content

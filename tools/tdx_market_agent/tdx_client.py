@@ -170,14 +170,33 @@ class TdxClient:
     _SECTION_ALIAS: dict[str, str] = {"资金动向": "龙虎榜单"}
 
     def get_f10_content(self, numeric_id: str, name: str = "") -> dict | list | str:
-        """获取 F10 公司信息详情，name 为空则返回全部目录项."""
+        """获取 F10 公司信息详情.
+
+        不同 mootdx 版本/server 的 F10(name=X) 行为不一致：
+        - 有的返回全部章节 dict，有的只返回默认章节。
+        - 统一策略：始终先取全量章节，从 dict 中提取目标 key。
+        """
         self._ensure_connected()
         if name.strip():
             resolved = self._SECTION_ALIAS.get(name.strip(), name.strip())
-            result = self._client.F10(symbol=numeric_id, name=resolved)
+            # 先拿全量（不传 name），不同 server 行为一致
+            all_result = self._client.F10(symbol=numeric_id)
+            all_normalized = _normalize_payload(all_result)
+            if isinstance(all_normalized, dict):
+                # 优先精确匹配目标章节名
+                if resolved in all_normalized:
+                    return all_normalized[resolved]
+                # 再尝试部分匹配
+                for key in all_normalized:
+                    key_str = str(key)
+                    if resolved in key_str:
+                        return all_normalized[key]
+                # 全部章节 dict 中未找到 → 返回 dict，由调用方兜底
+                return all_normalized
+            return all_normalized
         else:
             result = self._client.F10(symbol=numeric_id)
-        return _normalize_payload(result)
+            return _normalize_payload(result)
 
     def _ensure_connected(self) -> None:
         if self._client is None:
