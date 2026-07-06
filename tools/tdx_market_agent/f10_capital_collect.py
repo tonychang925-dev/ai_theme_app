@@ -39,6 +39,56 @@ def _strip_text(text: str) -> str:
     return text.replace("\r\n", "\n").replace("\r", "\n").strip()
 
 
+def _extract_raw_text_from_dict(content: dict, *, requested_section: str = "") -> str:
+    """mootdx F10(name=X) returns {section_name: text, ...}.
+
+    Extract actual text content from the dict. Prioritize:
+    1. Exact section name match
+    2. Partial section name match (e.g. "资金" in key)
+    3. Any value that looks like F10 content (>200 chars with ◇ marker)
+    4. First non-empty value
+    """
+    if not content:
+        return ""
+
+    requested = str(requested_section or "").strip()
+
+    # Exact match
+    if requested and requested in content:
+        return str(content[requested] or "")
+
+    # Partial match on requested section
+    if requested:
+        for key, value in content.items():
+            if requested in str(key):
+                return str(value or "")
+
+    # Any value that looks like F10 content
+    for value in content.values():
+        text = str(value or "").strip()
+        if len(text) > 200 and "◇" in text:
+            return text
+
+    # Fallback: longest non-empty value
+    best = ""
+    for value in content.values():
+        text = str(value or "").strip()
+        if len(text) > len(best):
+            best = text
+    return best
+
+
+def _extract_updated_date(content: dict) -> str | None:
+    """Extract update date from F10 content dict."""
+    # Check all values for 更新日期 pattern
+    for value in content.values():
+        text = str(value or "")
+        match = re.search(r"更新日期[：:]\s*(\d{4}-\d{2}-\d{2})", text)
+        if match:
+            return match.group(1)
+    return None
+
+
 def _extract_stock_name(text: str) -> str | None:
     if not text:
         return None
@@ -103,8 +153,10 @@ def main() -> int:
             raw_text = ""
             source_updated_date = None
             if isinstance(content, dict):
-                raw_text = str(content.get("content") or content.get("raw") or "")
-                source_updated_date = content.get("source_updated_date") or content.get("updated_date") or content.get("date")
+                # mootdx F10(name=X) 返回 {section_name: text_content, ...}
+                # section name 不一定是请求的 name，需要从 dict values 中提取正文
+                raw_text = _extract_raw_text_from_dict(content, requested_section=args.section)
+                source_updated_date = _extract_updated_date(content)
             elif isinstance(content, str):
                 raw_text = content
             else:
