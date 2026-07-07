@@ -7244,7 +7244,8 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     from stock_processing_service.application.services.market_cognition.attention_engine import AttentionEngine
     from stock_processing_service.application.services.market_cognition.cognition_card_builder import CognitionCardBuilder
 
-    # Load recap theme_reviews directly — the authoritative daily theme list
+    # Load strong_hotspot_subjects — the authoritative daily hot theme list
+    # supplemented by theme_name_map for proper Chinese names
     import asyncpg as _pg
     import json as _recap_json
     _conn = await _pg.connect("postgresql://localhost:5432/stock_data_test", user="postgres", password="")
@@ -7258,18 +7259,28 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
             if isinstance(_payload, str):
                 _payload = _recap_json.loads(_payload)
             _recap = _payload.get("recap_doc", _payload)
-            for t in _recap.get("theme_reviews", []):
-                sk = str(t.get("subject_key", ""))
-                name = str(t.get("theme_name", ""))
-                # Filter: skip event descriptions stored as theme names
-                if name.startswith("【") or len(name) > 30 or name.isdigit() or (name == sk and sk.isdigit()):
+            # Use strong_hotspot_subjects as the theme source (proper theme names)
+            hotspots = _recap.get("strong_hotspot_subjects") or _recap.get("mainline_hotspots") or []
+            seen = set()
+            for h in hotspots:
+                if not isinstance(h, dict):
                     continue
+                sk = str(h.get("subject_key", ""))
+                name = str(h.get("theme_name", "")).strip()
+                # Skip garbage names
+                if not name or name.startswith("【") or len(name) > 30:
+                    continue
+                if name.isdigit():
+                    continue
+                if sk in seen:
+                    continue
+                seen.add(sk)
                 recap_themes.append({
                     "subject_key": sk,
                     "subject_name": name,
-                    "is_mainline": t.get("final_mainline_alive", False),
-                    "cycle_state": t.get("final_cycle_state", t.get("theme_stage", "start")),
-                    "strength_score": float(t.get("mainline_strength_score", 50)),
+                    "is_mainline": h.get("cycle_state") == "confirmed" or h.get("watch_status") == "confirmed_mainline",
+                    "cycle_state": h.get("cycle_state", "unknown"),
+                    "strength_score": 50.0,
                 })
     finally:
         await _conn.close()
@@ -7287,8 +7298,15 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     for rt in recap_themes:
         subject_id = f"theme:{rt['subject_key']}"
         att = attention_map.get(subject_id)
-        level = att.level if att else ("HIGH" if rt["is_mainline"] else "MEDIUM")
-        score = att.attention_score if att else int(rt["strength_score"])
+        # Assign attention levels: first 5 CRITICAL, next 5 HIGH, rest MEDIUM
+        rank = themes.__len__()
+        if rank < 5:
+            level = "CRITICAL"
+        elif rank < 10:
+            level = "HIGH"
+        else:
+            level = "MEDIUM"
+        score = att.attention_score if att else 90 - rank
 
         card = await card_builder.build_async(td, subject_id)
         themes.append({
