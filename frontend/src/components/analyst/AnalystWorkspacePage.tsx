@@ -366,77 +366,21 @@ function StockPoolEditor({
 }: {
   theme: ThemeEntry; onChange: (t: ThemeEntry) => void;
 }) {
-  const updatePool = (poolType: "leaders" | "bull_pool" | "bear_pool", stocks: StockEntry[]) => {
-    onChange({ ...theme, [poolType]: stocks, is_ai_draft: false });
-  };
+  const [localLeaders, setLocalLeaders] = useState<StockEntry[]>([]);
+  const [localBull, setLocalBull] = useState<StockEntry[]>([]);
+  const [localBear, setLocalBear] = useState<StockEntry[]>([]);
+  const [init, setInit] = useState(false);
+  if (!init) { setLocalLeaders(theme.leaders||[]); setLocalBull(theme.bull_pool||[]); setLocalBear(theme.bear_pool||[]); setInit(true); }
 
-  const PoolSection = ({ title, poolType, color }: { title: string; poolType: "leaders" | "bull_pool" | "bear_pool"; color: string }) => {
-    const stocks: StockEntry[] = theme[poolType];
-    return (
-      <div style={{ marginBottom: 16 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 8 }}>
-          <label style={{ fontSize: 13, fontWeight: 600, color }}>{title} ({stocks.length})</label>
-          <button onClick={() => updatePool(poolType, [...stocks, newStock()])}
-            style={{ fontSize: 11, padding: "2px 8px", background: color, color: "#fff", border: "none", borderRadius: 3, cursor: "pointer" }}>+</button>
-        </div>
-        {stocks.map((s, i) => (
-          <div key={i} style={{ padding: 8, marginBottom: 6, background: "#f7fafc", borderRadius: 4, border: "1px solid #e2e8f0" }}>
-            <div style={{ display: "flex", gap: 6, marginBottom: 4 }}>
-              <input value={s.stock_code} onChange={(e) => {
-                const arr = [...stocks]; arr[i] = { ...arr[i], stock_code: e.target.value, analyst_modified: true };
-                updatePool(poolType, arr);
-              }} placeholder="代码" style={{ width: 70, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }} />
-              <input value={s.stock_name} onChange={(e) => {
-                const arr = [...stocks]; arr[i] = { ...arr[i], stock_name: e.target.value, analyst_modified: true };
-                updatePool(poolType, arr);
-              }} placeholder="名称" style={{ width: 80, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }} />
-              <select value={s.role} onChange={(e) => {
-                const arr = [...stocks]; arr[i] = { ...arr[i], role: e.target.value, analyst_modified: true };
-                updatePool(poolType, arr);
-              }} style={{ flex: 1, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }}>
-                {STOCK_ROLES.map((r) => <option key={r} value={r}>{r}</option>)}
-              </select>
-              <button onClick={() => updatePool(poolType, stocks.filter((_: any, j: number) => j !== i))}
-                style={{ fontSize: 12, color: "#e53e3e", background: "none", border: "none", cursor: "pointer" }}>✕</button>
-            </div>
-            {/* Reasons */}
-            {(s.reasons.length === 0 ? [""] : s.reasons).map((r: string, j: number) => (
-              <div key={j} style={{ display: "flex", gap: 4, marginBottom: 2 }}>
-                <input value={r} onChange={(e) => {
-                  const arr = [...stocks];
-                  const reasons = [...arr[i].reasons];
-                  reasons[j] = e.target.value;
-                  arr[i] = { ...arr[i], reasons, analyst_modified: true };
-                  updatePool(poolType, arr);
-                }} placeholder={`理由 ${j + 1}`}
-                  style={{ flex: 1, padding: 3, fontSize: 11, borderRadius: 3, border: "1px solid #e2e8f0" }} />
-                <button onClick={() => {
-                  const arr = [...stocks];
-                  arr[i] = { ...arr[i], reasons: arr[i].reasons.filter((_: any, k: number) => k !== j), analyst_modified: true };
-                  updatePool(poolType, arr);
-                }} style={{ fontSize: 11, color: "#a0aec0", background: "none", border: "none", cursor: "pointer" }}>✕</button>
-              </div>
-            ))}
-            {s.reasons.length < 5 && (
-              <button onClick={() => {
-                const arr = [...stocks];
-                arr[i] = { ...arr[i], reasons: [...arr[i].reasons, ""], analyst_modified: true };
-                updatePool(poolType, arr);
-              }} style={{ fontSize: 10, color: "#3182ce", background: "none", border: "none", cursor: "pointer" }}>
-                + 添加理由 ({s.reasons.length}/5)
-              </button>
-            )}
-          </div>
-        ))}
-      </div>
-    );
+  const sync = (leaders: StockEntry[], bull: StockEntry[], bear: StockEntry[]) => {
+    onChange({ ...theme, leaders, bull_pool: bull, bear_pool: bear, is_ai_draft: false });
   };
 
   return (
     <div style={{ padding: 12, overflow: "auto", height: "100%" }}>
-      <PoolSection title="龙头 / 潜在龙头 / 中军" poolType="leaders" color="#e53e3e" />
-      <PoolSection title="多头池 Bull Pool" poolType="bull_pool" color="#38a169" />
-      <PoolSection title="空头池 Bear Pool" poolType="bear_pool" color="#dd6b20" />
+      <PoolSection title="龙头 / 潜在龙头 / 中军" color="#e53e3e" stocks={localLeaders} setStocks={(s) => { setLocalLeaders(s); sync(s, localBull, localBear); }} />
+      <PoolSection title="多头池 Bull Pool" color="#38a169" stocks={localBull} setStocks={(s) => { setLocalBull(s); sync(localLeaders, s, localBear); }} />
+      <PoolSection title="空头池 Bear Pool" color="#dd6b20" stocks={localBear} setStocks={(s) => { setLocalBear(s); sync(localLeaders, localBull, s); }} />
     </div>
   );
 }
@@ -668,54 +612,67 @@ function GroupCognitionEditor({ group, onChange }: { group: WatchGroup; onChange
   );
 }
 
-// ── Group-level stock pool editor ──
+// ── Group-level stock pool editor (local state to prevent input focus loss) ──
 
 function GroupStockPoolEditor({ group, onChange }: { group: WatchGroup; onChange: (g: WatchGroup) => void }) {
-  const updatePool = (poolType: string, stocks: StockEntry[]) => onChange({ ...group, [poolType]: stocks });
-  const ROLES = ["龙头","潜在龙头","中军","助攻","跟风","补涨","穿越龙"];
-  const PoolSection = ({ title, poolType, color }: { title: string; poolType: string; color: string }) => {
-    const stocks: StockEntry[] = (group as any)[poolType] || [];
-    return (
-      <div style={{ marginBottom: 16 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
-          <label style={{ fontSize: 13, fontWeight: 600, color }}>{title} ({stocks.length})</label>
-          <button onClick={() => updatePool(poolType, [...stocks, { stock_code: "", stock_name: "", role: "跟风", reasons: [""], ai_recommended: false, analyst_confirmed: false, analyst_modified: true }])}
-            style={{ fontSize: 11, padding: "2px 8px", background: color, color: "#fff", border: "none", borderRadius: 3, cursor: "pointer" }}>+</button>
-        </div>
-        {stocks.map((s, i) => (
-          <div key={i} style={{ padding: 8, marginBottom: 6, background: "#f7fafc", borderRadius: 4, border: "1px solid #e2e8f0" }}>
-            <div style={{ display: "flex", gap: 6, marginBottom: 4 }}>
-              <input value={s.stock_code} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], stock_code: e.target.value, analyst_modified: true }; updatePool(poolType, a); }} placeholder="代码" style={{ width: 70, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }} />
-              <input value={s.stock_name} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], stock_name: e.target.value, analyst_modified: true }; updatePool(poolType, a); }} placeholder="名称" style={{ width: 80, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }} />
-              <select value={s.role} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], role: e.target.value, analyst_modified: true }; updatePool(poolType, a); }}
-                style={{ flex: 1, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }}>
-                {ROLES.map(r => <option key={r} value={r}>{r}</option>)}
-              </select>
-              <button onClick={() => updatePool(poolType, stocks.filter((_, j) => j !== i))}
-                style={{ fontSize: 12, color: "#e53e3e", background: "none", border: "none", cursor: "pointer" }}>✕</button>
-            </div>
-            {(s.reasons.length === 0 ? [""] : s.reasons).map((r, j) => (
-              <div key={j} style={{ display: "flex", gap: 4, marginBottom: 2 }}>
-                <input value={r} onChange={e => { const a = [...stocks]; const rs = [...a[i].reasons]; rs[j] = e.target.value; a[i] = { ...a[i], reasons: rs, analyst_modified: true }; updatePool(poolType, a); }} placeholder={`理由 ${j + 1}`}
-                  style={{ flex: 1, padding: 3, fontSize: 11, borderRadius: 3, border: "1px solid #e2e8f0" }} />
-                <button onClick={() => { const a = [...stocks]; a[i] = { ...a[i], reasons: a[i].reasons.filter((_, k) => k !== j), analyst_modified: true }; updatePool(poolType, a); }}
-                  style={{ fontSize: 11, color: "#a0aec0", background: "none", border: "none", cursor: "pointer" }}>✕</button>
-              </div>
-            ))}
-            {s.reasons.length < 5 && (
-              <button onClick={() => { const a = [...stocks]; a[i] = { ...a[i], reasons: [...a[i].reasons, ""], analyst_modified: true }; updatePool(poolType, a); }}
-                style={{ fontSize: 10, color: "#3182ce", background: "none", border: "none", cursor: "pointer" }}>+ 理由</button>
-            )}
-          </div>
-        ))}
-      </div>
-    );
+  const [localLeaders, setLocalLeaders] = useState<StockEntry[]>([]);
+  const [localBull, setLocalBull] = useState<StockEntry[]>([]);
+  const [localBear, setLocalBear] = useState<StockEntry[]>([]);
+  const [init, setInit] = useState(false);
+
+  // Init from props once
+  if (!init) { setLocalLeaders(group.leaders||[]); setLocalBull(group.bull_pool||[]); setLocalBear(group.bear_pool||[]); setInit(true); }
+
+  const sync = (leaders: StockEntry[], bull: StockEntry[], bear: StockEntry[]) => {
+    onChange({ ...group, leaders, bull_pool: bull, bear_pool: bear });
   };
+
   return (
     <div style={{ padding: 12, overflow: "auto", height: "100%" }}>
-      <PoolSection title="龙头 / 中军" poolType="leaders" color="#e53e3e" />
-      <PoolSection title="多头池 Bull Pool" poolType="bull_pool" color="#38a169" />
-      <PoolSection title="空头池 Bear Pool" poolType="bear_pool" color="#dd6b20" />
+      <PoolSection title="龙头 / 中军" color="#e53e3e" stocks={localLeaders} setStocks={(s) => { setLocalLeaders(s); sync(s, localBull, localBear); }} />
+      <PoolSection title="多头池 Bull Pool" color="#38a169" stocks={localBull} setStocks={(s) => { setLocalBull(s); sync(localLeaders, s, localBear); }} />
+      <PoolSection title="空头池 Bear Pool" color="#dd6b20" stocks={localBear} setStocks={(s) => { setLocalBear(s); sync(localLeaders, localBull, s); }} />
+    </div>
+  );
+}
+
+const ROLES = ["龙头","潜在龙头","中军","助攻","跟风","补涨","穿越龙"];
+const newEmptyStock = (): StockEntry => ({ stock_code: "", stock_name: "", role: "跟风", reasons: [""], ai_recommended: false, analyst_confirmed: false, analyst_modified: true });
+
+function PoolSection({ title, color, stocks, setStocks }: { title: string; color: string; stocks: StockEntry[]; setStocks: (s: StockEntry[]) => void }) {
+  return (
+    <div style={{ marginBottom: 16 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+        <label style={{ fontSize: 13, fontWeight: 600, color }}>{title} ({stocks.length})</label>
+        <button onClick={() => setStocks([...stocks, newEmptyStock()])}
+          style={{ fontSize: 11, padding: "2px 8px", background: color, color: "#fff", border: "none", borderRadius: 3, cursor: "pointer" }}>+</button>
+      </div>
+      {stocks.map((s, i) => (
+        <div key={i} style={{ padding: 8, marginBottom: 6, background: "#f7fafc", borderRadius: 4, border: "1px solid #e2e8f0" }}>
+          <div style={{ display: "flex", gap: 6, marginBottom: 4 }}>
+            <input value={s.stock_code} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], stock_code: e.target.value, analyst_modified: true }; setStocks(a); }} placeholder="代码" style={{ width: 70, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }} />
+            <input value={s.stock_name} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], stock_name: e.target.value, analyst_modified: true }; setStocks(a); }} placeholder="名称" style={{ width: 80, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }} />
+            <select value={s.role} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], role: e.target.value, analyst_modified: true }; setStocks(a); }}
+              style={{ flex: 1, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }}>
+              {ROLES.map(r => <option key={r} value={r}>{r}</option>)}
+            </select>
+            <button onClick={() => setStocks(stocks.filter((_, j) => j !== i))}
+              style={{ fontSize: 12, color: "#e53e3e", background: "none", border: "none", cursor: "pointer" }}>✕</button>
+          </div>
+          {(s.reasons.length === 0 ? [""] : s.reasons).map((r, j) => (
+            <div key={j} style={{ display: "flex", gap: 4, marginBottom: 2 }}>
+              <input value={r} onChange={e => { const a = [...stocks]; const rs = [...a[i].reasons]; rs[j] = e.target.value; a[i] = { ...a[i], reasons: rs, analyst_modified: true }; setStocks(a); }} placeholder={`理由 ${j + 1}`}
+                style={{ flex: 1, padding: 3, fontSize: 11, borderRadius: 3, border: "1px solid #e2e8f0" }} />
+              <button onClick={() => { const a = [...stocks]; a[i] = { ...a[i], reasons: a[i].reasons.filter((_, k) => k !== j), analyst_modified: true }; setStocks(a); }}
+                style={{ fontSize: 11, color: "#a0aec0", background: "none", border: "none", cursor: "pointer" }}>✕</button>
+            </div>
+          ))}
+          {s.reasons.length < 5 && (
+            <button onClick={() => { const a = [...stocks]; a[i] = { ...a[i], reasons: [...a[i].reasons, ""], analyst_modified: true }; setStocks(a); }}
+              style={{ fontSize: 10, color: "#3182ce", background: "none", border: "none", cursor: "pointer" }}>+ 理由</button>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
