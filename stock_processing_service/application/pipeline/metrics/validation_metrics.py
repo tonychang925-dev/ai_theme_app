@@ -278,6 +278,14 @@ def _compute_l0(timeline: SimulationTimeline) -> LevelResult:
                      question="Is the Market World true? (World Integrity)")
     states = timeline.states
 
+    if not states:
+        lv.add(MetricResult("Evidence Coverage", 0.0, 0.95, False, "0 states — no data"))
+        lv.add(MetricResult("State Consistency", 0.0, 0.0, False, "0 states"))
+        lv.add(MetricResult("Policy Consistency", 0.0, 0.0, False, "0 states"))
+        lv.add(MetricResult("Hash Stability", 0.0, 1.0, False, "0 states"))
+        lv.add(MetricResult("Replay Stability", 0.0, 1.0, False, "0 states"))
+        return lv
+
     # Evidence Coverage
     if states:
         covered = sum(1 for s in states if s.evidence_refs)
