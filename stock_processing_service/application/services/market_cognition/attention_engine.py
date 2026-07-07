@@ -90,6 +90,10 @@ class AttentionEngine:
     def run(self, trade_date: date) -> MarketAttentionState:
         return asyncio.run(self._run_async(trade_date))
 
+    async def run_async(self, trade_date: date) -> MarketAttentionState:
+        """Async-native entry point for FastAPI handlers."""
+        return await self._run_async(trade_date)
+
     async def _run_async(self, trade_date: date) -> MarketAttentionState:
         import asyncpg
 

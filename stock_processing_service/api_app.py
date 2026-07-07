@@ -6996,7 +6996,7 @@ async def get_attention_state(trade_date: str) -> dict[str, Any]:
     try:
         td = _date.fromisoformat(trade_date)
         engine = AttentionEngine()
-        state = engine.run(td)
+        state = await engine.run_async(td)
         return state.to_dict()
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
@@ -7062,7 +7062,7 @@ async def get_cognition_card(trade_date: str, subject_id: str) -> dict[str, Any]
     try:
         td = _date.fromisoformat(trade_date)
         builder = CognitionCardBuilder()
-        card = builder.build(td, subject_id)
+        card = await builder.build_async(td, subject_id)
         return card
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
@@ -7147,7 +7147,7 @@ async def get_playbook(trade_date: str, subject_id: str) -> dict[str, Any]:
     try:
         td = _date.fromisoformat(trade_date)
         card_builder = CognitionCardBuilder()
-        card = card_builder.build(td, subject_id)
+        card = await card_builder.build_async(td, subject_id)
         pb = PlaybookBuilder()
         playbook = pb.build(card)
         playbook["review"] = pb.build_review(card)
@@ -7244,14 +7244,15 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     from stock_processing_service.application.services.market_cognition.cognition_card_builder import CognitionCardBuilder
 
     engine = AttentionEngine()
-    state = engine.run(td)
+    state = await engine.run_async(td)
 
     # Build initial workspace with HIGH/CRITICAL subjects filled from AI
+    card_builder = CognitionCardBuilder()
     themes = []
     for s in state.subjects:
         if s.level not in ("CRITICAL", "HIGH", "MEDIUM"):
             continue
-        card = CognitionCardBuilder().build(td, s.subject_id)
+        card = await card_builder.build_async(td, s.subject_id)
         themes.append({
             "subject_id": s.subject_id,
             "subject_name": s.subject_name,

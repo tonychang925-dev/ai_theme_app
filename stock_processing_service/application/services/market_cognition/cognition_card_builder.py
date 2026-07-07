@@ -45,6 +45,10 @@ class CognitionCardBuilder:
     def build(self, trade_date: date, subject_id: str) -> dict[str, Any]:
         return asyncio.run(self._build_async(trade_date, subject_id))
 
+    async def build_async(self, trade_date: date, subject_id: str) -> dict[str, Any]:
+        """Async-native entry point for FastAPI handlers."""
+        return await self._build_async(trade_date, subject_id)
+
     async def _build_async(self, trade_date: date, subject_id: str) -> dict[str, Any]:
         import asyncpg
 
