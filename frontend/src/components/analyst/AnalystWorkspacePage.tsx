@@ -140,7 +140,7 @@ function ThemeWatchList({
 
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 12px", borderBottom: "1px solid #e2e8f0" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 12px", borderBottom: "1px solid #243040" }}>
         <strong style={{ fontSize: 14 }}>观察方向</strong>
         <button onClick={onAddGroup}
           style={{ fontSize: 11, padding: "2px 8px", background: "#38a169", color: "#fff", border: "none", borderRadius: 4, cursor: "pointer" }}>
@@ -149,7 +149,7 @@ function ThemeWatchList({
       </div>
 
       {/* Watch Groups */}
-      <div style={{ padding: "4px 0", borderBottom: "1px solid #e2e8f0" }}>
+      <div style={{ padding: "4px 0", borderBottom: "1px solid #243040" }}>
         {watchGroups.map((g, gi) => (
           <div key={g.id} style={{ padding: "4px 12px", borderBottom: "1px solid #f0f0f0" }}>
             {editingGroup === g.id ? (
@@ -174,7 +174,7 @@ function ThemeWatchList({
                     ))}
                   </select>
                   <button onClick={() => onDeleteGroup(g.id)}
-                    style={{ fontSize: 10, color: "#a0aec0", background: "none", border: "none", cursor: "pointer" }}>✕</button>
+                    style={{ fontSize: 10, color: "#5a7a8a", background: "none", border: "none", cursor: "pointer" }}>✕</button>
                 </div>
               </div>
             )}
@@ -184,7 +184,7 @@ function ThemeWatchList({
               if (!t) return null;
               return (
                 <div key={sid} onClick={() => { const idx = themes.findIndex(x => x.subject_id === sid); if (idx >= 0) onSelect(idx); }}
-                  style={{ fontSize: 11, marginLeft: 12, padding: "2px 6px", cursor: "pointer", color: "#4a5568" }}>
+                  style={{ fontSize: 11, marginLeft: 12, padding: "2px 6px", cursor: "pointer", color: "#8ddcff" }}>
                   · {t.subject_name}
                 </div>
               );
@@ -194,7 +194,7 @@ function ThemeWatchList({
       </div>
 
       {/* Ungrouped themes header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 12px", borderBottom: "1px solid #e2e8f0" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 12px", borderBottom: "1px solid #243040" }}>
         <strong style={{ fontSize: 14 }}>重点题材</strong>
         <div style={{ display: "flex", gap: 4 }}>
           <label style={{ fontSize: 10, cursor: "pointer", display: "flex", alignItems: "center", gap: 2 }}>
@@ -282,15 +282,15 @@ function CognitionEditor({
 
   const TextField = ({ label, field, rows = 2 }: { label: string; field: string; rows?: number }) => (
     <div style={{ marginBottom: 10 }}>
-      <label style={{ fontSize: 12, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 3 }}>
+      <label style={{ fontSize: 12, fontWeight: 600, color: "#8ddcff", display: "block", marginBottom: 3 }}>
         {label} <span style={{ color: statusColor(field), fontSize: 10 }}>{s(field) === "ai" ? "(AI)" : s(field) === "modified" ? "(已修改)" : ""}</span>
       </label>
       {rows > 1 ? (
         <textarea value={(theme as any)[field] || ""} onChange={(e) => update(field, e.target.value)} rows={rows}
-          style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: `1px solid ${statusColor(field)}`, resize: "vertical" }} />
+          style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: `1px solid ${statusColor(field)}`, resize: "vertical", background: "#1a1a1a", color: "#f5f5f5" }} />
       ) : (
         <input value={(theme as any)[field] || ""} onChange={(e) => update(field, e.target.value)}
-          style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: `1px solid ${statusColor(field)}` }} />
+          style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: `1px solid ${statusColor(field)}`, background: "#1a1a1a", color: "#f5f5f5" }} />
       )}
     </div>
   );
@@ -303,7 +303,7 @@ function CognitionEditor({
       {/* Style + identifiability row */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 10 }}>
         <div>
-          <label style={{ fontSize: 12, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 3 }}>炒作风格</label>
+          <label style={{ fontSize: 12, fontWeight: 600, color: "#8ddcff", display: "block", marginBottom: 3 }}>炒作风格</label>
           <select value={theme.trading_style || ""} onChange={(e) => update("trading_style", e.target.value)}
             style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: `1px solid ${statusColor("trading_style")}` }}>
             <option value="">—</option>
@@ -311,7 +311,7 @@ function CognitionEditor({
           </select>
         </div>
         <div>
-          <label style={{ fontSize: 12, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 3 }}>
+          <label style={{ fontSize: 12, fontWeight: 600, color: "#8ddcff", display: "block", marginBottom: 3 }}>
             多头辨识度 {theme.long_identifiability.toFixed(1)}
           </label>
           <input type="range" min="0" max="1" step="0.1" value={theme.long_identifiability}
@@ -319,7 +319,7 @@ function CognitionEditor({
             style={{ width: "100%" }} />
         </div>
         <div>
-          <label style={{ fontSize: 12, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 3 }}>
+          <label style={{ fontSize: 12, fontWeight: 600, color: "#8ddcff", display: "block", marginBottom: 3 }}>
             空头辨识度 {theme.short_identifiability.toFixed(1)}
           </label>
           <input type="range" min="0" max="1" step="0.1" value={theme.short_identifiability}
@@ -332,7 +332,7 @@ function CognitionEditor({
 
       {/* Events */}
       <div style={{ marginBottom: 10 }}>
-        <label style={{ fontSize: 12, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 3 }}>事件刺激</label>
+        <label style={{ fontSize: 12, fontWeight: 600, color: "#8ddcff", display: "block", marginBottom: 3 }}>事件刺激</label>
         {(theme.event_stimuli.length === 0 ? [""] : theme.event_stimuli).map((ev: string, i: number) => (
           <div key={i} style={{ display: "flex", gap: 4, marginBottom: 4 }}>
             <input value={ev} onChange={(e) => {
@@ -340,7 +340,7 @@ function CognitionEditor({
               arr[i] = e.target.value;
               update("event_stimuli", arr);
             }} placeholder="事件描述"
-              style={{ flex: 1, padding: 4, fontSize: 13, borderRadius: 4, border: "1px solid #e2e8f0" }} />
+              style={{ flex: 1, padding: 4, fontSize: 13, borderRadius: 4, border: "1px solid #243040" }} />
             <button onClick={() => update("event_stimuli", theme.event_stimuli.filter((_: any, j: number) => j !== i))}
               style={{ fontSize: 12, color: "#e53e3e", background: "none", border: "none", cursor: "pointer" }}>✕</button>
           </div>
@@ -452,32 +452,36 @@ export function AnalystWorkspacePage() {
   };
 
   return (
-    <div style={{ height: "100vh", display: "flex", flexDirection: "column" }}>
-      {/* Top bar */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "10px 16px", borderBottom: "1px solid #e2e8f0", background: "#f7fafc" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <h2 style={{ margin: 0, fontSize: 18 }}>📊 分析师工作台</h2>
-          <input type="date" value={dateInput} onChange={(e) => setDateInput(e.target.value)}
-            style={{ padding: "4px 8px", fontSize: 14, borderRadius: 4, border: "1px solid #cbd5e0" }} />
-          {activeGroup && <span style={{ fontSize: 13, color: activeGroup.color, fontWeight: 600 }}>当前: {activeGroup.name}</span>}
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <span style={{ fontSize: 13, color: "#718096" }}>
-            {workspace.themes.length} 题材 · {(workspace.watch_groups || []).length} 观察方向
-            {workspace.override_count > 0 && ` · ${workspace.override_count} 修改`}
+    <div className="workspace-page recap-dark-theme" style={{ display: "flex", flexDirection: "column", height: "100vh", padding: 0 }}>
+      {/* Top bar — matching system dark theme */}
+      <section className="strong-watch-toolbar" style={{ padding: "10px 16px", borderBottom: "1px solid #243040" }}>
+        <img src="/assets/recap-icon-B0VZ9YED.png" alt="" style={{ height: 40, width: 40, flexShrink: 0 }} onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
+        <h1 className="strong-watch-title" style={{ fontSize: 20, margin: 0 }}>分析师工作台</h1>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
+          <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
+            <span style={{ fontSize: 12, color: "#66d9ef" }}>交易日</span>
+            <input type="date" value={dateInput} onChange={(e) => setDateInput(e.target.value)}
+              style={{ border: "1px solid #2a2a2a", borderRadius: 6, background: "#1a1a1a", color: "#f5f5f5", padding: "4px 8px" }} />
+          </label>
+          {activeGroup && <span style={{ fontSize: 13, color: activeGroup.color, fontWeight: 600 }}>{activeGroup.name}</span>}
+          <span style={{ fontSize: 12, color: "#66d9ef" }}>
+            {workspace.themes.length} 题材 · {(workspace.watch_groups || []).length} 方向
           </span>
-          {savedMsg && <span style={{ fontSize: 12, color: "#38a169" }}>{savedMsg}</span>}
-          <button onClick={handleSave} disabled={saving}
-            style={{ padding: "8px 20px", fontSize: 14, fontWeight: 600, background: saving ? "#a0aec0" : "#3182ce", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer" }}>
+          {savedMsg && <span style={{ fontSize: 12, color: "#39ff14" }}>{savedMsg}</span>}
+          <button className="tag tag-button is-pass" type="button" style={{ fontSize: 14, padding: "6px 16px" }}
+            disabled={saving} onClick={handleSave}>
             {saving ? "保存中…" : "保存"}
           </button>
         </div>
-      </div>
+        <button className="back-button" type="button" onClick={() => { window.history.back(); }}>
+          返回
+        </button>
+      </section>
 
-      {/* Three-panel body */}
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "240px 1fr 340px", overflow: "hidden" }}>
+      {/* Three-panel body — dark theme */}
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "240px 1fr 340px", overflow: "hidden", background: "#0c1118" }}>
         {/* Left: Theme list */}
-        <div style={{ borderRight: "1px solid #e2e8f0", overflow: "hidden" }}>
+        <div style={{ borderRight: "1px solid #243040", overflow: "hidden", background: "#111720" }}>
           <ThemeWatchList
             themes={workspace.themes}
             allThemes={workspace.themes}
@@ -525,18 +529,18 @@ export function AnalystWorkspacePage() {
         </div>
 
         {/* Center: Group Cognition or Individual Theme */}
-        <div style={{ borderRight: "1px solid #e2e8f0", overflow: "hidden" }}>
+        <div style={{ borderRight: "1px solid #243040", overflow: "hidden", background: "#0c1118" }}>
           {activeGroup ? (
             <>
-              <div style={{ padding: "8px 12px", borderBottom: "1px solid #e2e8f0", background: activeGroup.color + "15" }}>
-                <span style={{ fontSize: 14, fontWeight: 600, color: activeGroup.color }}>📁 {activeGroup.name}</span>
-                <span style={{ marginLeft: 8, fontSize: 12, color: "#718096" }}>
+              <div style={{ padding: "10px 14px", borderBottom: "1px solid #243040", background: activeGroup.color + "20" }}>
+                <span className="recap-panel-title" style={{ fontSize: 15, color: activeGroup.color }}>{activeGroup.name}</span>
+                <span style={{ marginLeft: 8, fontSize: 12, color: "#5a7a8a" }}>
                   {activeGroup.subject_ids.length} 个子题材
                 </span>
-                <div style={{ marginTop: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>
+                <div style={{ marginTop: 6, display: "flex", flexWrap: "wrap", gap: 4 }}>
                   {activeGroup.subject_ids.map(sid => {
                     const t = workspace.themes.find(x => x.subject_id === sid);
-                    return t ? <span key={sid} style={{ fontSize: 11, padding: "1px 6px", background: "#edf2f7", borderRadius: 10 }}>{t.subject_name}</span> : null;
+                    return t ? <span key={sid} style={{ fontSize: 11, padding: "2px 8px", background: "#1a2a3a", borderRadius: 10, color: "#8ddcff" }}>{t.subject_name}</span> : null;
                   })}
                 </div>
               </div>
@@ -544,24 +548,24 @@ export function AnalystWorkspacePage() {
             </>
           ) : theme ? (
             <>
-              <div style={{ padding: "8px 12px", borderBottom: "1px solid #e2e8f0", background: theme.is_ai_draft ? "#fefcbf" : "#f0fff4" }}>
-                <span style={{ fontSize: 13, fontWeight: 600 }}>
-                  {theme.is_ai_draft ? "🤖 AI 草稿" : "✎ 分析师编辑中"} — {theme.subject_name}
+              <div style={{ padding: "10px 14px", borderBottom: "1px solid #243040", background: theme.is_ai_draft ? "#1a2a1a" : "#1a2a3a" }}>
+                <span style={{ fontSize: 14, fontWeight: 600, color: "#8ddcff" }}>
+                  {theme.is_ai_draft ? "AI 草稿" : "分析师编辑中"} — <span style={{ color: "#ffd85e" }}>{theme.subject_name}</span>
                 </span>
               </div>
               <CognitionEditor theme={theme} onChange={updateTheme} />
             </>
           ) : (
-            <div style={{ padding: 40, textAlign: "center", color: "#a0aec0" }}>
+            <div style={{ padding: 60, textAlign: "center", color: "#5a7a8a", fontSize: 14 }}>
               选择一个观察方向或题材开始编辑
             </div>
           )}
         </div>
 
         {/* Right: Stock Pool */}
-        <div style={{ overflow: "hidden" }}>
-          <div style={{ padding: "8px 12px", borderBottom: "1px solid #e2e8f0" }}>
-            <span style={{ fontSize: 13, fontWeight: 600 }}>
+        <div style={{ overflow: "hidden", background: "#0c1118" }}>
+          <div style={{ padding: "10px 14px", borderBottom: "1px solid #243040" }}>
+            <span className="recap-panel-title" style={{ fontSize: 14 }}>
               {activeGroup ? `${activeGroup.name} — 股票池` : "股票池审核"}
             </span>
           </div>
@@ -586,13 +590,13 @@ function GroupCognitionEditor({ group, onChange }: { group: WatchGroup; onChange
   };
   const TF = ({ label, field, rows = 2 }: { label: string; field: string; rows?: number }) => (
     <div style={{ marginBottom: 10 }}>
-      <label style={{ fontSize: 12, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 3 }}>{label}</label>
+      <label style={{ fontSize: 12, fontWeight: 600, color: "#8ddcff", display: "block", marginBottom: 3 }}>{label}</label>
       {rows > 1 ? (
         <textarea value={(group as any)[field] || ""} onChange={(e) => update(field, e.target.value)} rows={rows}
-          style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: "1px solid #e2e8f0", resize: "vertical" }} />
+          style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: "1px solid #243040", resize: "vertical", background: "#1a1a1a", color: "#f5f5f5" }} />
       ) : (
         <input value={(group as any)[field] || ""} onChange={(e) => update(field, e.target.value)}
-          style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: "1px solid #e2e8f0" }} />
+          style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: "1px solid #243040", background: "#1a1a1a", color: "#f5f5f5" }} />
       )}
     </div>
   );
@@ -648,12 +652,12 @@ function PoolSection({ title, color, stocks, setStocks }: { title: string; color
           style={{ fontSize: 11, padding: "2px 8px", background: color, color: "#fff", border: "none", borderRadius: 3, cursor: "pointer" }}>+</button>
       </div>
       {stocks.map((s, i) => (
-        <div key={i} style={{ padding: 8, marginBottom: 6, background: "#f7fafc", borderRadius: 4, border: "1px solid #e2e8f0" }}>
+        <div key={i} style={{ padding: 8, marginBottom: 6, background: "#111720", borderRadius: 4, border: "1px solid #243040" }}>
           <div style={{ display: "flex", gap: 6, marginBottom: 4 }}>
-            <input value={s.stock_code} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], stock_code: e.target.value, analyst_modified: true }; setStocks(a); }} placeholder="代码" style={{ width: 70, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }} />
-            <input value={s.stock_name} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], stock_name: e.target.value, analyst_modified: true }; setStocks(a); }} placeholder="名称" style={{ width: 80, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }} />
+            <input value={s.stock_code} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], stock_code: e.target.value, analyst_modified: true }; setStocks(a); }} placeholder="代码" style={{ width: 70, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #2a2a2a", background: "#1a1a1a", color: "#f5f5f5" }} />
+            <input value={s.stock_name} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], stock_name: e.target.value, analyst_modified: true }; setStocks(a); }} placeholder="名称" style={{ width: 80, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #2a2a2a", background: "#1a1a1a", color: "#f5f5f5" }} />
             <select value={s.role} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], role: e.target.value, analyst_modified: true }; setStocks(a); }}
-              style={{ flex: 1, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }}>
+              style={{ flex: 1, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #2a2a2a", background: "#1a1a1a", color: "#f5f5f5" }}>
               {ROLES.map(r => <option key={r} value={r}>{r}</option>)}
             </select>
             <button onClick={() => setStocks(stocks.filter((_, j) => j !== i))}
@@ -662,9 +666,9 @@ function PoolSection({ title, color, stocks, setStocks }: { title: string; color
           {(s.reasons.length === 0 ? [""] : s.reasons).map((r, j) => (
             <div key={j} style={{ display: "flex", gap: 4, marginBottom: 2 }}>
               <input value={r} onChange={e => { const a = [...stocks]; const rs = [...a[i].reasons]; rs[j] = e.target.value; a[i] = { ...a[i], reasons: rs, analyst_modified: true }; setStocks(a); }} placeholder={`理由 ${j + 1}`}
-                style={{ flex: 1, padding: 3, fontSize: 11, borderRadius: 3, border: "1px solid #e2e8f0" }} />
+                style={{ flex: 1, padding: 3, fontSize: 11, borderRadius: 3, border: "1px solid #2a2a2a", background: "#1a1a1a", color: "#f5f5f5" }} />
               <button onClick={() => { const a = [...stocks]; a[i] = { ...a[i], reasons: a[i].reasons.filter((_, k) => k !== j), analyst_modified: true }; setStocks(a); }}
-                style={{ fontSize: 11, color: "#a0aec0", background: "none", border: "none", cursor: "pointer" }}>✕</button>
+                style={{ fontSize: 11, color: "#5a7a8a", background: "none", border: "none", cursor: "pointer" }}>✕</button>
             </div>
           ))}
           {s.reasons.length < 5 && (
