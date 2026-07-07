@@ -1339,6 +1339,15 @@ export function RecapPage() {
       const readinessPromise = fetchPostMarketReadiness(tradeDate).catch(() => null);
       const jobsPromise = fetchPostMarketJobsStatus(tradeDate).catch(() => null);
 
+      // Safety timeout: force stop loading after 30s to handle all edge cases
+      // (zombie jobs, network issues, unexpected API responses, etc.)
+      const safetyTimer = setTimeout(() => {
+        if (active && !bootstrapFinalized) {
+          bootstrapFinalized = true;
+          setLoading(false);
+        }
+      }, 30000);
+
       snapshotPromise
         .then((snapshot) => {
           finalizeBootstrap(() => {
@@ -1365,10 +1374,26 @@ export function RecapPage() {
       void (async () => {
         const [readiness, jobs] = await Promise.all([readinessPromise, jobsPromise]);
         if (!active || bootstrapFinalized) return;
+        // If data isn't ready and no jobs running at all, stop loading
         if (readiness?.status === "failed_precondition" && !hasRunningPostMarketJob(jobs)) {
           bootstrapFinalized = true;
           setLoading(false);
           return;
+        }
+        // Wait for snapshot request to settle, then check if we need to stop loading.
+        // If snapshot is missing and there's no genuinely running recap job
+        // (e.g. zombie job with finished_at but stuck "running" status), stop loading.
+        await snapshotPromise.catch(() => {});
+        if (!active || bootstrapFinalized) return;
+        const recapJob = jobs?.items?.find(
+          (item: { job_key?: string; status?: string; finished_at?: string }) =>
+            item.job_key === "post_market_recap_generate",
+        );
+        const recapGenuinelyRunning =
+          recapJob?.status === "running" && !recapJob?.finished_at;
+        if (!recapGenuinelyRunning) {
+          bootstrapFinalized = true;
+          setLoading(false);
         }
       })();
 
@@ -1384,7 +1409,7 @@ export function RecapPage() {
           setDailyReviewV2(data);
         })
         .catch(() => {});
-      return () => { active = false; };
+      return () => { active = false; clearTimeout(safetyTimer); };
     }
 
     // pre_market: 原逻辑不变
