@@ -10,6 +10,7 @@ import {
   LazyStrongStockWatchDetailPage,
   LazyRecapPage,
   LazyPreMarketBriefPage,
+  LazyAnalystWorkspacePage,
   LazyMobileHomePage,
   LazyMobileRecapPage,
   LazyMobileScreenerPage,
@@ -204,6 +205,14 @@ function AppRoutes() {
         <LazyLoadErrorBoundary>
           <Suspense fallback={<LoadingFallback message="加载盘前必读..." />}>
             <LazyPreMarketBriefPage />
+          </Suspense>
+        </LazyLoadErrorBoundary>
+      )}
+
+      {path.startsWith("/analyst-workspace") && (
+        <LazyLoadErrorBoundary>
+          <Suspense fallback={<LoadingFallback message="加载分析师工作台..." />}>
+            <LazyAnalystWorkspacePage />
           </Suspense>
         </LazyLoadErrorBoundary>
       )}

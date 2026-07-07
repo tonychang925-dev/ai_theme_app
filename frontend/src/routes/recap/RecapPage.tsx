@@ -1687,6 +1687,14 @@ export function RecapPage() {
             </a>
           )}
         </div>
+        <button
+          className="tag tag-button"
+          type="button"
+          style={{ fontSize: 16, padding: "8px 16px", background: "#f6ad55", color: "#1a1a1a", border: "none" }}
+          onClick={() => navigateTo(`/analyst-workspace?trade_date=${tradeDate}`)}
+        >
+          分析师工作台
+        </button>
         <button className="back-button" type="button" onClick={() => navigateTo("/intel")}>
           返回
         </button>

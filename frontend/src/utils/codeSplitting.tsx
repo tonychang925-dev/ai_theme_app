@@ -165,6 +165,7 @@ const routeChunks = {
       import('../routes/intel/StrongStockWatchDetailPage').then((m) => ({ default: m.StrongStockWatchDetailPage })),
     recap: () => import('../routes/recap/RecapPage').then((m) => ({ default: m.RecapPage })),
     preMarketBrief: () => import('../routes/PreMarketBriefPage').then((m) => ({ default: m.PreMarketBriefPage })),
+    analystWorkspace: () => import('../components/analyst/AnalystWorkspacePage').then((m) => ({ default: m.AnalystWorkspacePage })),
   },
   theme: {
     workspace: () => import('../routes/theme/ThemeWorkspacePage').then((m) => ({ default: m.ThemeWorkspacePage })),
@@ -236,6 +237,10 @@ export const LazyStrongStockWatchDetailPage = createLazyComponent(routeChunks.ma
 export const LazyRecapPage = createLazyComponent(routeChunks.main.recap, { name: 'RecapPage', timeout: 5000 });
 export const LazyPreMarketBriefPage = createLazyComponent(routeChunks.main.preMarketBrief, {
   name: 'PreMarketBriefPage',
+  timeout: 5000,
+});
+export const LazyAnalystWorkspacePage = createLazyComponent(routeChunks.main.analystWorkspace, {
+  name: 'AnalystWorkspacePage',
   timeout: 5000,
 });
 export const LazyMobileHomePage = createLazyComponent(routeChunks.mobile.home, { name: 'MobileHomePage', timeout: 5000 });
