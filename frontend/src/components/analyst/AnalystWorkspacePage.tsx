@@ -46,6 +46,25 @@ interface WatchGroup {
   name: string;
   subject_ids: string[];
   color: string;
+  // Group-level cognition fields — these belong to the observation direction
+  trading_style: string;
+  long_identifiability: number;
+  short_identifiability: number;
+  old_leaders: string;
+  event_stimuli: string[];
+  yesterday_view: string;
+  today_actual: string;
+  stage_judgement: string;
+  intraday_understanding: string;
+  trader_sentiment: string;
+  index_resonance: string;
+  tomorrow_view: string;
+  analyst_notes: string;
+  // Group-level stock pools
+  leaders: StockEntry[];
+  bull_pool: StockEntry[];
+  bear_pool: StockEntry[];
+  field_overrides: Record<string, { ai_value: string; analyst_value: string; reason: string }>;
 }
 
 interface Workspace {
@@ -55,6 +74,18 @@ interface Workspace {
   themes: ThemeEntry[];
   watch_groups: WatchGroup[];
   override_count: number;
+}
+
+function newWatchGroup(color: string): WatchGroup {
+  return {
+    id: `group_${Date.now()}`, name: "新观察方向", subject_ids: [], color,
+    trading_style: "", long_identifiability: 0.5, short_identifiability: 0.3,
+    old_leaders: "", event_stimuli: [""],
+    yesterday_view: "", today_actual: "", stage_judgement: "",
+    intraday_understanding: "", trader_sentiment: "", index_resonance: "",
+    tomorrow_view: "", analyst_notes: "", field_overrides: {},
+    leaders: [], bull_pool: [], bear_pool: [],
+  };
 }
 
 // ── Constants ──
@@ -91,11 +122,12 @@ function newStock(): StockEntry {
 // ── Sub-components ──
 
 function ThemeWatchList({
-  themes, selectedIdx, onSelect, onAdd, onDelete, onLevelChange,
+  themes, selectedIdx, selectedGroupId, onSelect, onSelectGroup, onAdd, onDelete, onLevelChange,
   watchGroups, onAddGroup, onUpdateGroup, onDeleteGroup, onAddThemeToGroup,
   allThemes,
 }: {
-  themes: ThemeEntry[]; selectedIdx: number; onSelect: (i: number) => void;
+  themes: ThemeEntry[]; selectedIdx: number; selectedGroupId: string | null;
+  onSelect: (i: number) => void; onSelectGroup: (id: string | null) => void;
   onAdd: () => void; onDelete: (i: number) => void; onLevelChange: (i: number, level: string) => void;
   watchGroups: WatchGroup[]; onAddGroup: () => void; onUpdateGroup: (g: WatchGroup) => void;
   onDeleteGroup: (id: string) => void; onAddThemeToGroup: (groupId: string, subjectId: string) => void;
@@ -126,8 +158,8 @@ function ThemeWatchList({
                 style={{ width: "100%", padding: 4, fontSize: 13, fontWeight: 600, borderRadius: 3, border: `2px solid ${g.color}`, background: g.color + "10" }} />
             ) : (
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span onClick={() => setEditingGroup(g.id)}
-                  style={{ fontSize: 13, fontWeight: 600, cursor: "pointer", color: g.color, padding: "2px 0" }}>
+                <span onClick={() => { onSelectGroup(g.id); }}
+                  style={{ fontSize: 13, fontWeight: 600, cursor: "pointer", color: g.color, padding: "2px 0", background: selectedGroupId === g.id ? g.color + "20" : "transparent", borderRadius: 3, paddingLeft: 4, paddingRight: 4 }}>
                   {g.name} ({g.subject_ids.length})
                 </span>
                 <div style={{ display: "flex", gap: 2 }}>
@@ -414,6 +446,7 @@ export function AnalystWorkspacePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedIdx, setSelectedIdx] = useState(0);
+  const [selectedGroupId, setSelectedGroupId] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [savedMsg, setSavedMsg] = useState("");
 
@@ -458,11 +491,18 @@ export function AnalystWorkspacePage() {
   if (!workspace) return <div style={{ padding: 24 }}>无数据</div>;
 
   const theme = workspace.themes[selectedIdx] || newTheme();
+  const activeGroup = (workspace.watch_groups || []).find(g => g.id === selectedGroupId);
+  const groupedThemeIds = new Set((workspace.watch_groups || []).flatMap(g => g.subject_ids));
 
   const updateTheme = (t: ThemeEntry) => {
     const themes = [...workspace.themes];
     themes[selectedIdx] = t;
     setWorkspace({ ...workspace, themes, is_ai_draft: false });
+  };
+
+  const updateGroup = (g: WatchGroup) => {
+    const groups = (workspace.watch_groups || []).map(x => x.id === g.id ? g : x);
+    setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
   };
 
   return (
@@ -473,12 +513,12 @@ export function AnalystWorkspacePage() {
           <h2 style={{ margin: 0, fontSize: 18 }}>📊 分析师工作台</h2>
           <input type="date" value={dateInput} onChange={(e) => setDateInput(e.target.value)}
             style={{ padding: "4px 8px", fontSize: 14, borderRadius: 4, border: "1px solid #cbd5e0" }} />
+          {activeGroup && <span style={{ fontSize: 13, color: activeGroup.color, fontWeight: 600 }}>当前: {activeGroup.name}</span>}
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <span style={{ fontSize: 13, color: "#718096" }}>
-            {workspace.themes.length} 题材
+            {workspace.themes.length} 题材 · {(workspace.watch_groups || []).length} 观察方向
             {workspace.override_count > 0 && ` · ${workspace.override_count} 修改`}
-            {workspace.analyst_finalized && " · 已定稿"}
           </span>
           {savedMsg && <span style={{ fontSize: 12, color: "#38a169" }}>{savedMsg}</span>}
           <button onClick={handleSave} disabled={saving}
@@ -489,14 +529,16 @@ export function AnalystWorkspacePage() {
       </div>
 
       {/* Three-panel body */}
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "220px 1fr 340px", overflow: "hidden" }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "240px 1fr 340px", overflow: "hidden" }}>
         {/* Left: Theme list */}
         <div style={{ borderRight: "1px solid #e2e8f0", overflow: "hidden" }}>
           <ThemeWatchList
             themes={workspace.themes}
             allThemes={workspace.themes}
             selectedIdx={selectedIdx}
-            onSelect={setSelectedIdx}
+            selectedGroupId={selectedGroupId}
+            onSelect={(i) => { setSelectedGroupId(null); setSelectedIdx(i); }}
+            onSelectGroup={(id) => { setSelectedGroupId(id); }}
             onAdd={() => {
               const themes = [...workspace.themes, newTheme()];
               setWorkspace({ ...workspace, themes, is_ai_draft: false });
@@ -516,10 +558,7 @@ export function AnalystWorkspacePage() {
             onAddGroup={() => {
               const groups = [...(workspace.watch_groups || [])];
               const colors = ["#e53e3e", "#3182ce", "#38a169", "#dd6b20", "#805ad5", "#d69e2e"];
-              groups.push({
-                id: `group_${Date.now()}`, name: "新观察方向", subject_ids: [],
-                color: colors[groups.length % colors.length],
-              });
+              groups.push(newWatchGroup(colors[groups.length % colors.length]));
               setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
             }}
             onUpdateGroup={(g) => {
@@ -539,26 +578,143 @@ export function AnalystWorkspacePage() {
           />
         </div>
 
-        {/* Center: Cognition Editor */}
+        {/* Center: Group Cognition or Individual Theme */}
         <div style={{ borderRight: "1px solid #e2e8f0", overflow: "hidden" }}>
-          <div style={{ padding: "8px 12px", borderBottom: "1px solid #e2e8f0", background: theme.is_ai_draft ? "#fefcbf" : "#f0fff4" }}>
-            <span style={{ fontSize: 13, fontWeight: 600 }}>
-              {theme.is_ai_draft ? "🤖 AI 草稿" : "✎ 分析师编辑中"}
-            </span>
-            {theme.analyst_added && <span style={{ marginLeft: 8, fontSize: 12, color: "#d69e2e" }}>分析师新增</span>}
-            {theme.ai_recommended && <span style={{ marginLeft: 8, fontSize: 12, color: "#3182ce" }}>AI 推荐</span>}
-          </div>
-          <CognitionEditor theme={theme} onChange={updateTheme} />
+          {activeGroup ? (
+            <>
+              <div style={{ padding: "8px 12px", borderBottom: "1px solid #e2e8f0", background: activeGroup.color + "15" }}>
+                <span style={{ fontSize: 14, fontWeight: 600, color: activeGroup.color }}>📁 {activeGroup.name}</span>
+                <span style={{ marginLeft: 8, fontSize: 12, color: "#718096" }}>
+                  {activeGroup.subject_ids.length} 个子题材
+                </span>
+                <div style={{ marginTop: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>
+                  {activeGroup.subject_ids.map(sid => {
+                    const t = workspace.themes.find(x => x.subject_id === sid);
+                    return t ? <span key={sid} style={{ fontSize: 11, padding: "1px 6px", background: "#edf2f7", borderRadius: 10 }}>{t.subject_name}</span> : null;
+                  })}
+                </div>
+              </div>
+              <GroupCognitionEditor group={activeGroup} onChange={updateGroup} />
+            </>
+          ) : theme ? (
+            <>
+              <div style={{ padding: "8px 12px", borderBottom: "1px solid #e2e8f0", background: theme.is_ai_draft ? "#fefcbf" : "#f0fff4" }}>
+                <span style={{ fontSize: 13, fontWeight: 600 }}>
+                  {theme.is_ai_draft ? "🤖 AI 草稿" : "✎ 分析师编辑中"} — {theme.subject_name}
+                </span>
+              </div>
+              <CognitionEditor theme={theme} onChange={updateTheme} />
+            </>
+          ) : (
+            <div style={{ padding: 40, textAlign: "center", color: "#a0aec0" }}>
+              选择一个观察方向或题材开始编辑
+            </div>
+          )}
         </div>
 
-        {/* Right: Stock Pool Editor */}
+        {/* Right: Stock Pool */}
         <div style={{ overflow: "hidden" }}>
           <div style={{ padding: "8px 12px", borderBottom: "1px solid #e2e8f0" }}>
-            <span style={{ fontSize: 13, fontWeight: 600 }}>股票池审核</span>
+            <span style={{ fontSize: 13, fontWeight: 600 }}>
+              {activeGroup ? `${activeGroup.name} — 股票池` : "股票池审核"}
+            </span>
           </div>
-          <StockPoolEditor theme={theme} onChange={updateTheme} />
+          {activeGroup ? (
+            <GroupStockPoolEditor group={activeGroup} onChange={updateGroup} />
+          ) : (
+            <StockPoolEditor theme={theme} onChange={updateTheme} />
+          )}
         </div>
       </div>
     </div>
   );
+}
+
+// ── Group-level cognition editor ──
+
+function GroupCognitionEditor({ group, onChange }: { group: WatchGroup; onChange: (g: WatchGroup) => void }) {
+  const update = (field: string, value: any) => {
+    const g = { ...group, [field]: value };
+    g.field_overrides = { ...g.field_overrides, [field]: { ai_value: "", analyst_value: String(value), reason: "" } };
+    onChange(g);
+  };
+  const TF = ({ label, field, rows = 2 }: { label: string; field: string; rows?: number }) => (
+    <div style={{ marginBottom: 10 }}>
+      <label style={{ fontSize: 12, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 3 }}>{label}</label>
+      {rows > 1 ? (
+        <textarea value={(group as any)[field] || ""} onChange={(e) => update(field, e.target.value)} rows={rows}
+          style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: "1px solid #e2e8f0", resize: "vertical" }} />
+      ) : (
+        <input value={(group as any)[field] || ""} onChange={(e) => update(field, e.target.value)}
+          style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: "1px solid #e2e8f0" }} />
+      )}
+    </div>
+  );
+  return (
+    <div style={{ padding: 12, overflow: "auto", height: "100%" }}>
+      <TF label="炒作风格" field="trading_style" rows={1} />
+      <TF label="老龙头 / 锚定" field="old_leaders" rows={1} />
+      <TF label="昨日思路" field="yesterday_view" rows={2} />
+      <TF label="今日实际" field="today_actual" rows={2} />
+      <TF label="阶段研判" field="stage_judgement" rows={2} />
+      <TF label="日内理解" field="intraday_understanding" rows={2} />
+      <TF label="交易者心态" field="trader_sentiment" rows={1} />
+      <TF label="指数共振" field="index_resonance" rows={1} />
+      <TF label="隔日思考" field="tomorrow_view" rows={2} />
+      <TF label="分析师备注" field="analyst_notes" rows={3} />
+    </div>
+  );
+}
+
+// ── Group-level stock pool editor ──
+
+function GroupStockPoolEditor({ group, onChange }: { group: WatchGroup; onChange: (g: WatchGroup) => void }) {
+  const updatePool = (poolType: string, stocks: StockEntry[]) => onChange({ ...group, [poolType]: stocks });
+  const ROLES = ["龙头","潜在龙头","中军","助攻","跟风","补涨","穿越龙"];
+  const PoolSection = ({ title, poolType, color }: { title: string; poolType: string; color: string }) => {
+    const stocks: StockEntry[] = (group as any)[poolType] || [];
+    return (
+      <div style={{ marginBottom: 16 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+          <label style={{ fontSize: 13, fontWeight: 600, color }}>{title} ({stocks.length})</label>
+          <button onClick={() => updatePool(poolType, [...stocks, { stock_code: "", stock_name: "", role: "跟风", reasons: [""], ai_recommended: false, analyst_confirmed: false, analyst_modified: true }])}
+            style={{ fontSize: 11, padding: "2px 8px", background: color, color: "#fff", border: "none", borderRadius: 3, cursor: "pointer" }}>+</button>
+        </div>
+        {stocks.map((s, i) => (
+          <div key={i} style={{ padding: 8, marginBottom: 6, background: "#f7fafc", borderRadius: 4, border: "1px solid #e2e8f0" }}>
+            <div style={{ display: "flex", gap: 6, marginBottom: 4 }}>
+              <input value={s.stock_code} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], stock_code: e.target.value, analyst_modified: true }; updatePool(poolType, a); }} placeholder="代码" style={{ width: 70, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }} />
+              <input value={s.stock_name} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], stock_name: e.target.value, analyst_modified: true }; updatePool(poolType, a); }} placeholder="名称" style={{ width: 80, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }} />
+              <select value={s.role} onChange={e => { const a = [...stocks]; a[i] = { ...a[i], role: e.target.value, analyst_modified: true }; updatePool(poolType, a); }}
+                style={{ flex: 1, padding: 4, fontSize: 12, borderRadius: 3, border: "1px solid #e2e8f0" }}>
+                {ROLES.map(r => <option key={r} value={r}>{r}</option>)}
+              </select>
+              <button onClick={() => updatePool(poolType, stocks.filter((_, j) => j !== i))}
+                style={{ fontSize: 12, color: "#e53e3e", background: "none", border: "none", cursor: "pointer" }}>✕</button>
+            </div>
+            {(s.reasons.length === 0 ? [""] : s.reasons).map((r, j) => (
+              <div key={j} style={{ display: "flex", gap: 4, marginBottom: 2 }}>
+                <input value={r} onChange={e => { const a = [...stocks]; const rs = [...a[i].reasons]; rs[j] = e.target.value; a[i] = { ...a[i], reasons: rs, analyst_modified: true }; updatePool(poolType, a); }} placeholder={`理由 ${j + 1}`}
+                  style={{ flex: 1, padding: 3, fontSize: 11, borderRadius: 3, border: "1px solid #e2e8f0" }} />
+                <button onClick={() => { const a = [...stocks]; a[i] = { ...a[i], reasons: a[i].reasons.filter((_, k) => k !== j), analyst_modified: true }; updatePool(poolType, a); }}
+                  style={{ fontSize: 11, color: "#a0aec0", background: "none", border: "none", cursor: "pointer" }}>✕</button>
+              </div>
+            ))}
+            {s.reasons.length < 5 && (
+              <button onClick={() => { const a = [...stocks]; a[i] = { ...a[i], reasons: [...a[i].reasons, ""], analyst_modified: true }; updatePool(poolType, a); }}
+                style={{ fontSize: 10, color: "#3182ce", background: "none", border: "none", cursor: "pointer" }}>+ 理由</button>
+            )}
+          </div>
+        ))}
+      </div>
+    );
+  };
+  return (
+    <div style={{ padding: 12, overflow: "auto", height: "100%" }}>
+      <PoolSection title="龙头 / 中军" poolType="leaders" color="#e53e3e" />
+      <PoolSection title="多头池 Bull Pool" poolType="bull_pool" color="#38a169" />
+      <PoolSection title="空头池 Bear Pool" poolType="bear_pool" color="#dd6b20" />
+    </div>
+  );
+}
 }
