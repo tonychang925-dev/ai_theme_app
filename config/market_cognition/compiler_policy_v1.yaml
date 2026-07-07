@@ -1,0 +1,99 @@
+# Compiler Policy v1 — NodeTransitionCompiler rules
+# Phase B1: Deterministic, no LLM. First version handles 3 key transitions.
+version: "compiler_policy.v1"
+valid_from: "2026-01-01"
+description: >
+  Rules for compiling World State Transitions into NODE_TRANSITION Hypotheses.
+  Phase B1 only handles the 3 most critical trader-relevant transitions.
+  Expand coverage after Phase B1 validates on 2026-07-03 data.
+
+# ── Which transitions to compile ──
+# Priority order matters — first matching transition wins per subject.
+# Phase B1: only 3 transition types (closest to trader decision nodes)
+
+transitions:
+  - name: climax_to_first_divergence
+    description: "高潮后第一次分歧 — 最核心的交易节点"
+    from_node: CLIMAX
+    to_node: FIRST_DIVERGENCE
+    priority: 1
+    enabled: true
+    min_maturity: 70             # NodeMaturity.overall >= 70
+    min_transition_probability: 0.45
+    requires_divergence_signal: false  # CLIMAX has not diverged yet
+    expected_observations:
+      - 板块不再继续一致加速
+      - 前排核心出现分歧但不破关键均线
+      - 后排跟风股开始释放亏钱效应
+      - 成交额放大但未失控
+    falsifiers:
+      - 龙头直接放量破位
+      - 板块批量跌停（≥3只核心股跌停）
+      - 机器人继续无分歧高潮（连续涨停无分歧）
+      - 资金完全切换到其他主线（日内无任何回流）
+
+  - name: divergence_weakening_to_repair
+    description: "分歧减弱后修复 — 分歧充分的左侧机会"
+    from_node: DIVERGENCE_WEAKENING
+    to_node: DIVERGENCE_REPAIR
+    priority: 2
+    enabled: true
+    min_maturity: 50
+    min_transition_probability: 0.35
+    requires_divergence_signal: true    # Must have DivergenceQuality = healthy
+    required_divergence_label: healthy
+    expected_observations:
+      - 周期龙不再继续破位（守住关键支撑）
+      - 缩量企稳（成交量萎缩至前5日均量70%以下）
+      - 板块内出现资金承接信号（至少1只核心股资金净流入）
+      - 外部锚定企稳或转强（如韩国/美股半导体）
+    falsifiers:
+      - 周期龙继续放量破位
+      - 板块继续放量杀跌（无缩量企稳信号）
+      - 韩国/外围继续加速下跌
+      - 中报业绩预告大幅低于预期
+
+  - name: first_divergence_to_repair
+    description: "第一次分歧→修复 — 首次分歧后的确认"
+    from_node: FIRST_DIVERGENCE
+    to_node: DIVERGENCE_REPAIR
+    priority: 3
+    enabled: true
+    min_maturity: 55
+    min_transition_probability: 0.35
+    requires_divergence_signal: true
+    required_divergence_label: healthy
+    expected_observations:
+      - 缩量分歧（量能萎缩至高潮期50-70%）
+      - 核心股不破10日/20日均线
+      - 板块内出现弱转强信号（至少1只前排股止跌回升）
+    falsifiers:
+      - 龙头继续放量杀跌
+      - 分歧变成恐慌（放量+全线破位）
+      - 高位科技整体退潮确认
+
+  - name: first_divergence_to_fade
+    description: "第一次分歧→退潮 — 分歧失败的确认"
+    from_node: FIRST_DIVERGENCE
+    to_node: FADE
+    priority: 4
+    enabled: true
+    min_maturity: 60
+    min_transition_probability: 0.25
+    requires_divergence_signal: true
+    required_divergence_label: panic
+    expected_observations:
+      - 核心股放量破位（跌破关键均线）
+      - 板块内多只核心股跌停
+      - 资金无回流迹象
+    falsifiers:
+      - 核心股止跌回升
+      - 机构资金逆势承接
+      - 板块出现超预期催化
+
+# ── Per-subject daily cap ──
+max_hypotheses_per_day: 5
+min_hypotheses_per_day: 1
+
+# ── Deadline computation ──
+deadline_mode: next_trade_day  # from TradeCalendarProducer

@@ -4,7 +4,7 @@ import dataclasses
 import hashlib
 import json
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import date, datetime
 from typing import Any, Mapping
 
 
@@ -15,6 +15,8 @@ def _jsonable(value: Any) -> Any:
             for field in dataclasses.fields(value)
         }
     if isinstance(value, datetime):
+        return value.isoformat()
+    if isinstance(value, date):
         return value.isoformat()
     if isinstance(value, Mapping):
         return {
