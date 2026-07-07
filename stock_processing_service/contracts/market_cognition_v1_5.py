@@ -156,11 +156,19 @@ class DailyMarketState:
 
         Excludes: created_at, state_id, working_memory, belief_state,
         attention_state, goal_state (all Optional/M9 Bridge or auto-generated).
+
+        policy_snapshot is hashed via to_dict() to exclude snapshot_at
+        (an audit timestamp that is not part of the content identity).
         """
         payload = {}
         for fname in self.HASH_FIELDS:
             val = getattr(self, fname, None)
-            payload[fname] = canonical_hash(val) if val is not None else ""
+            if val is None:
+                payload[fname] = ""
+            elif fname == "policy_snapshot" and hasattr(val, "to_dict"):
+                payload[fname] = canonical_hash(val.to_dict())
+            else:
+                payload[fname] = canonical_hash(val)
         raw = json.dumps(payload, ensure_ascii=False, sort_keys=True)
         return hashlib.sha256(raw.encode()).hexdigest()
 

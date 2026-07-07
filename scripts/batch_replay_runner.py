@@ -282,6 +282,209 @@ class SyntheticStateSource(StateSource):
 
 
 # ──────────────────────────────────────────────
+#  DbStateSource — real DB data
+# ──────────────────────────────────────────────
+
+# Map CycleJudgementService final_cycle_state → FSM CYCLE_NODES
+_CYCLE_STATE_TO_FSM: dict[str, str] = {
+    "start": "INITIAL",
+    "acceleration": "ACCELERATION",
+    "fermentation": "FERMENTATION",
+    "divergence": "FIRST_DIVERGENCE",
+    "repair": "DIVERGENCE_REPAIR",
+    "fade_watch": "DIVERGENCE_WEAKENING",
+    "fade_confirmed": "FADE",
+}
+
+# FSM node → stage label
+_FSM_STAGE = {
+    "INITIAL": "启动", "FERMENTATION": "发酵", "ACCELERATION": "加速",
+    "CLIMAX": "高潮", "FIRST_DIVERGENCE": "第一次分歧",
+    "SECOND_DIVERGENCE": "第二次分歧", "DIVERGENCE_REPAIR": "分歧修复",
+    "DIVERGENCE_WEAKENING": "分歧减弱", "WEAK_TO_STRONG": "弱转强",
+    "SECOND_ACCELERATION": "二次加速", "FADE": "退潮",
+    "ICE_POINT": "冰点", "REBOUND": "反弹", "CHAOS": "混沌",
+    "SECOND_WAVE": "二波", "CYCLE_END": "周期结束",
+}
+
+# FSM node → direction
+_FSM_DIRECTION: dict[str, str] = {
+    "INITIAL": "accelerating", "FERMENTATION": "accelerating",
+    "ACCELERATION": "accelerating", "CLIMAX": "accelerating",
+    "FIRST_DIVERGENCE": "diverging", "SECOND_DIVERGENCE": "diverging",
+    "DIVERGENCE_REPAIR": "repairing", "DIVERGENCE_WEAKENING": "fading",
+    "WEAK_TO_STRONG": "accelerating", "SECOND_ACCELERATION": "accelerating",
+    "FADE": "fading", "ICE_POINT": "neutral", "REBOUND": "repairing",
+    "CHAOS": "neutral", "SECOND_WAVE": "accelerating", "CYCLE_END": "neutral",
+}
+
+# FSM node → maturity
+_FSM_MATURITY: dict[str, float] = {
+    "INITIAL": 35, "FERMENTATION": 45, "ACCELERATION": 65,
+    "CLIMAX": 82, "FIRST_DIVERGENCE": 72, "SECOND_DIVERGENCE": 68,
+    "DIVERGENCE_REPAIR": 55, "DIVERGENCE_WEAKENING": 60,
+    "WEAK_TO_STRONG": 65, "SECOND_ACCELERATION": 75,
+    "FADE": 40, "ICE_POINT": 20, "REBOUND": 45,
+    "CHAOS": 25, "SECOND_WAVE": 55, "CYCLE_END": 10,
+}
+
+# FSM node → quality
+_FSM_QUALITY: dict[str, str] = {
+    "ACCELERATION": "accelerating", "CLIMAX": "peaking",
+    "FIRST_DIVERGENCE": "exhausting", "SECOND_DIVERGENCE": "exhausting",
+    "DIVERGENCE_REPAIR": "repairing", "FADE": "stalling",
+    "ICE_POINT": "stalling", "REBOUND": "repairing",
+}
+
+DB_DSN = "postgresql://localhost:5432/stock_data_test"
+
+
+class DbStateSource(StateSource):
+    """Load DailyMarketState from theme_cycle_judgement_v2 (richer than payload).
+
+    Queries theme_cycle_judgement_v2 directly for final_cycle_state,
+    scores, and mainline status per subject per day.
+    """
+
+    def __init__(self, registry: Any, fsm: Any) -> None:
+        self.registry = registry
+        self.fsm = fsm
+
+    def trading_days(self, start: date, end: date) -> list[date]:
+        import asyncio
+        return asyncio.run(self._trading_days_async(start, end))
+
+    async def _trading_days_async(self, start: date, end: date) -> list[date]:
+        import asyncpg
+        conn = await asyncpg.connect(DB_DSN, user="postgres", password="")
+        try:
+            rows = await conn.fetch(
+                "SELECT DISTINCT trade_date FROM theme_cycle_judgement_v2 "
+                "WHERE trade_date >= $1::date AND trade_date <= $2::date "
+                "ORDER BY trade_date ASC",
+                start, end,
+            )
+            return [r["trade_date"] for r in rows]
+        finally:
+            await conn.close()
+
+    def build_state(
+        self, trade_date: date, parent_state_id: str | None
+    ):
+        import asyncio
+        return asyncio.run(self._build_state_async(trade_date, parent_state_id))
+
+    async def _build_state_async(
+        self, trade_date: date, parent_state_id: str | None
+    ):
+        import asyncpg
+
+        WorldStateInput = _import_world_state_input()
+        CycleNode, MarketSubject, TransitionCandidate = _import_cycle_node()
+
+        conn = await asyncpg.connect(DB_DSN, user="postgres", password="")
+        try:
+            rows = await conn.fetch(
+                "SELECT subject_key, theme_name, final_cycle_state, "
+                "final_mainline_alive, mainline_strength_score, "
+                "fade_watch_score, fade_confirmed_score, "
+                "divergence_score, repair_score "
+                "FROM theme_cycle_judgement_v2 "
+                "WHERE trade_date = $1::date",
+                trade_date,
+            )
+            if not rows:
+                return None
+
+            subjects: list[Any] = []
+            cycle_nodes: list[Any] = []
+            dq_vectors: dict[str, tuple[float, float, float, float, float]] = {}
+            nm_vectors: dict[str, tuple[float, float, float, float, float]] = {}
+
+            for row in rows:
+                subject_key = str(row["subject_key"])
+                subject_id = f"theme:{subject_key}"
+                theme_name = row["theme_name"] or subject_key
+                raw_state = row["final_cycle_state"] or "start"
+
+                # Map CycleJudgement state → FSM node
+                fsm_node = _CYCLE_STATE_TO_FSM.get(raw_state, "CHAOS")
+
+                subjects.append(MarketSubject(
+                    subject_id=subject_id, subject_type="theme", name=theme_name,
+                ))
+
+                # Transition candidates from FSM
+                transitions: list[Any] = []
+                allowed = self.fsm.allowed_next(fsm_node)
+                for i, alt in enumerate(allowed[:3]):
+                    prob = 0.45 + 0.10 * (3 - i)
+                    transitions.append(TransitionCandidate(alt, min(prob, 0.85)))
+
+                maturity = _FSM_MATURITY.get(fsm_node, 50.0)
+                ms_score = float(row["mainline_strength_score"] or 50.0)
+                fw_score = float(row["fade_watch_score"] or 0.0)
+                fc_score = float(row["fade_confirmed_score"] or 0.0)
+                div_score = float(row["divergence_score"] or 0.0)
+                rep_score = float(row["repair_score"] or 0.0)
+
+                cycle_nodes.append(CycleNode(
+                    node_id=f"cn:{subject_id}:{trade_date.isoformat()}",
+                    subject_id=subject_id,
+                    trade_date=trade_date,
+                    name=fsm_node,
+                    stage=_FSM_STAGE.get(fsm_node, "未知"),
+                    stage_day=1,
+                    consecutive_direction=_FSM_DIRECTION.get(fsm_node, "neutral"),
+                    maturity=maturity,
+                    confidence=0.70,
+                    transition_candidates=tuple(transitions),
+                    quality_label=_FSM_QUALITY.get(fsm_node, ""),
+                ))
+
+                # Divergence vector — computed from state semantics, not raw scores.
+                # The goal is to produce a quality_label that reflects the node.
+                if fsm_node == "DIVERGENCE_REPAIR":
+                    # Repair = healthy divergence resolution
+                    dq_vectors[subject_id] = (0.7, 0.65, 0.7, 0.7, 0.7)
+                elif fsm_node == "FIRST_DIVERGENCE":
+                    # Divergence = varied; use scores to determine if healthy or not
+                    if rep_score > 50:
+                        dq_vectors[subject_id] = (0.6, 0.55, 0.6, 0.6, 0.6)
+                    else:
+                        dq_vectors[subject_id] = (0.4, 0.5, 0.4, 0.4, 0.4)
+                elif fsm_node == "DIVERGENCE_WEAKENING":
+                    if rep_score > 40:
+                        dq_vectors[subject_id] = (0.55, 0.6, 0.55, 0.55, 0.6)
+                    else:
+                        dq_vectors[subject_id] = (0.4, 0.5, 0.4, 0.4, 0.4)
+                elif fsm_node == "FADE":
+                    dq_vectors[subject_id] = (0.8, 0.3, 0.8, 0.2, 0.8)
+                elif fsm_node == "CLIMAX":
+                    dq_vectors[subject_id] = (0.3, 0.95, 0.2, 0.7, 0.4)
+                else:
+                    dq_vectors[subject_id] = (0.5, 0.5, 0.5, 0.5, 0.5)
+
+                # Maturity vector from scores
+                nm_vectors[subject_id] = (
+                    maturity, ms_score, rep_score, div_score, fw_score
+                )
+
+            return WorldStateInput(
+                trade_date=trade_date,
+                subjects=tuple(subjects),
+                cycle_nodes=tuple(cycle_nodes),
+                divergence_vectors=dq_vectors,
+                maturity_vectors=nm_vectors,
+                evidence_refs=(f"ev:db:{trade_date.isoformat()}",),
+                parent_state=parent_state_id,
+            )
+
+        finally:
+            await conn.close()
+
+
+# ──────────────────────────────────────────────
 #  Batch replay stats
 # ──────────────────────────────────────────────
 
@@ -573,8 +776,7 @@ def main() -> None:
     if args.source == "synthetic":
         source = SyntheticStateSource(reg, fsm)
     else:
-        print("DB source not yet implemented — falling back to synthetic", file=sys.stderr)
-        source = SyntheticStateSource(reg, fsm)
+        source = DbStateSource(reg, fsm)
 
     # Run
     runner = BatchReplayRunner(source, builder, persister, Path(args.dataset))

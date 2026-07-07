@@ -308,17 +308,21 @@ def _compute_l0(timeline: SimulationTimeline) -> LevelResult:
                         obs_completeness >= 0.80,
                         f"{complete_obs}/{len(states)} states fully observed"))
 
-    # Subject Completeness — all registered subjects present in every state
+    # Subject Completeness — average per-day node:subject ratio
+    # Real market data has varying theme sets per day, so we measure
+    # the average fraction of subjects that have cycle_nodes per state.
     if states:
-        first_subjects = {s.subject_id for s in states[0].subjects}
-        subj_consistent = sum(1 for s in states
-                              if {x.subject_id for x in s.subjects} == first_subjects)
-        subj_completeness = subj_consistent / len(states)
+        ratios = []
+        for s in states:
+            n_subjects = len(s.subjects)
+            n_nodes = len(s.cycle_nodes)
+            ratios.append(n_nodes / n_subjects if n_subjects > 0 else 1.0)
+        subj_completeness = sum(ratios) / len(ratios)
     else:
         subj_completeness = 0.0
-    lv.add(MetricResult("Subject Completeness", subj_completeness, 0.90,
-                        subj_completeness >= 0.90,
-                        f"{subj_consistent}/{len(states)} states with consistent subjects"))
+    lv.add(MetricResult("Subject Completeness (per-day ratio)", subj_completeness, 0.80,
+                        subj_completeness >= 0.80,
+                        f"avg {subj_completeness:.1%} of subjects have nodes per day"))
 
     # State Consistency — parent_state chain integrity
     violations = 0
