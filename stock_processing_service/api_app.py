@@ -7250,7 +7250,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     card_builder = CognitionCardBuilder()
     themes = []
     for s in state.subjects:
-        if s.level not in ("CRITICAL", "HIGH", "MEDIUM"):
+        if s.level not in ("CRITICAL", "HIGH"):
             continue
         card = await card_builder.build_async(td, s.subject_id)
         themes.append({
@@ -7290,6 +7290,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
         "is_ai_draft": True,
         "analyst_finalized": False,
         "themes": themes,
+        "watch_groups": [],
         "override_count": 0,
     }
     return workspace

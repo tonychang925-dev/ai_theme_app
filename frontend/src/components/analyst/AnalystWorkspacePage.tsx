@@ -41,11 +41,19 @@ interface ThemeEntry {
   bear_pool: StockEntry[];
 }
 
+interface WatchGroup {
+  id: string;
+  name: string;
+  subject_ids: string[];
+  color: string;
+}
+
 interface Workspace {
   trade_date: string;
   is_ai_draft: boolean;
   analyst_finalized: boolean;
   themes: ThemeEntry[];
+  watch_groups: WatchGroup[];
   override_count: number;
 }
 
@@ -84,31 +92,104 @@ function newStock(): StockEntry {
 
 function ThemeWatchList({
   themes, selectedIdx, onSelect, onAdd, onDelete, onLevelChange,
+  watchGroups, onAddGroup, onUpdateGroup, onDeleteGroup, onAddThemeToGroup,
+  allThemes,
 }: {
   themes: ThemeEntry[]; selectedIdx: number; onSelect: (i: number) => void;
   onAdd: () => void; onDelete: (i: number) => void; onLevelChange: (i: number, level: string) => void;
+  watchGroups: WatchGroup[]; onAddGroup: () => void; onUpdateGroup: (g: WatchGroup) => void;
+  onDeleteGroup: (id: string) => void; onAddThemeToGroup: (groupId: string, subjectId: string) => void;
+  allThemes: ThemeEntry[];
 }) {
+  const [editingGroup, setEditingGroup] = useState<string | null>(null);
+  const [showIgnored, setShowIgnored] = useState(false);
+
+  const GROUP_COLORS = ["#e53e3e", "#3182ce", "#38a169", "#dd6b20", "#805ad5", "#d69e2e"];
+
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 12px", borderBottom: "1px solid #e2e8f0" }}>
-        <strong style={{ fontSize: 14 }}>重点题材</strong>
-        <button onClick={onAdd}
-          style={{ fontSize: 12, padding: "2px 10px", background: "#3182ce", color: "#fff", border: "none", borderRadius: 4, cursor: "pointer" }}>
-          + 新增
+        <strong style={{ fontSize: 14 }}>观察方向</strong>
+        <button onClick={onAddGroup}
+          style={{ fontSize: 11, padding: "2px 8px", background: "#38a169", color: "#fff", border: "none", borderRadius: 4, cursor: "pointer" }}>
+          + 新增方向
         </button>
       </div>
+
+      {/* Watch Groups */}
+      <div style={{ padding: "4px 0", borderBottom: "1px solid #e2e8f0" }}>
+        {watchGroups.map((g, gi) => (
+          <div key={g.id} style={{ padding: "4px 12px", borderBottom: "1px solid #f0f0f0" }}>
+            {editingGroup === g.id ? (
+              <input autoFocus value={g.name} onChange={(e) => onUpdateGroup({ ...g, name: e.target.value })}
+                onBlur={() => setEditingGroup(null)} onKeyDown={(e) => { if (e.key === "Enter") setEditingGroup(null); }}
+                style={{ width: "100%", padding: 4, fontSize: 13, fontWeight: 600, borderRadius: 3, border: `2px solid ${g.color}`, background: g.color + "10" }} />
+            ) : (
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span onClick={() => setEditingGroup(g.id)}
+                  style={{ fontSize: 13, fontWeight: 600, cursor: "pointer", color: g.color, padding: "2px 0" }}>
+                  {g.name} ({g.subject_ids.length})
+                </span>
+                <div style={{ display: "flex", gap: 2 }}>
+                  <select size={1}
+                    onChange={(e) => { if (e.target.value) onAddThemeToGroup(g.id, e.target.value); e.target.value = ""; }}
+                    style={{ fontSize: 10, maxWidth: 80, padding: 0 }}>
+                    <option value="">+</option>
+                    {allThemes.filter(t => !g.subject_ids.includes(t.subject_id) && t.subject_name !== "(新题材)").map(t => (
+                      <option key={t.subject_id} value={t.subject_id}>{t.subject_name.slice(0, 10)}</option>
+                    ))}
+                  </select>
+                  <button onClick={() => onDeleteGroup(g.id)}
+                    style={{ fontSize: 10, color: "#a0aec0", background: "none", border: "none", cursor: "pointer" }}>✕</button>
+                </div>
+              </div>
+            )}
+            {/* Show themes in this group */}
+            {g.subject_ids.map(sid => {
+              const t = allThemes.find(x => x.subject_id === sid);
+              if (!t) return null;
+              return (
+                <div key={sid} onClick={() => { const idx = themes.findIndex(x => x.subject_id === sid); if (idx >= 0) onSelect(idx); }}
+                  style={{ fontSize: 11, marginLeft: 12, padding: "2px 6px", cursor: "pointer", color: "#4a5568" }}>
+                  · {t.subject_name}
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+
+      {/* Ungrouped themes header */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 12px", borderBottom: "1px solid #e2e8f0" }}>
+        <strong style={{ fontSize: 14 }}>重点题材</strong>
+        <div style={{ display: "flex", gap: 4 }}>
+          <label style={{ fontSize: 10, cursor: "pointer", display: "flex", alignItems: "center", gap: 2 }}>
+            <input type="checkbox" checked={showIgnored} onChange={(e) => setShowIgnored(e.target.checked)} /> 显示全部
+          </label>
+          <button onClick={onAdd}
+            style={{ fontSize: 11, padding: "2px 8px", background: "#3182ce", color: "#fff", border: "none", borderRadius: 4, cursor: "pointer" }}>
+            + 新增
+          </button>
+        </div>
+      </div>
+
+      {/* Theme list — only CRITICAL/HIGH by default */}
       <div style={{ flex: 1, overflow: "auto" }}>
-        {themes.map((t, i) => (
+        {themes.filter(t => showIgnored || t.attention_level === "CRITICAL" || t.attention_level === "HIGH" || t.analyst_added).map((t, i) => {
+          const realIdx = themes.indexOf(t);
+          const inGroup = watchGroups.find(g => g.subject_ids.includes(t.subject_id));
+          return (
           <div key={t.subject_id}
-            onClick={() => onSelect(i)}
+            onClick={() => onSelect(realIdx)}
             style={{
               padding: "8px 12px", cursor: "pointer", borderBottom: "1px solid #edf2f7",
-              background: i === selectedIdx ? "#ebf8ff" : "#fff",
-              borderLeft: i === selectedIdx ? "3px solid #3182ce" : "3px solid transparent",
+              background: realIdx === selectedIdx ? "#ebf8ff" : inGroup ? inGroup.color + "08" : "#fff",
+              borderLeft: realIdx === selectedIdx ? "3px solid #3182ce" : inGroup ? `3px solid ${inGroup.color}` : "3px solid transparent",
             }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span style={{ fontSize: 13, fontWeight: i === selectedIdx ? 700 : 400 }}>
+              <span style={{ fontSize: 13, fontWeight: realIdx === selectedIdx ? 700 : 400 }}>
                 {t.analyst_added ? "✎ " : ""}{t.subject_name || "(新题材)"}
+                {inGroup && <span style={{ marginLeft: 4, fontSize: 9, color: inGroup.color, background: inGroup.color + "20", padding: "1px 4px", borderRadius: 3 }}>{inGroup.name}</span>}
               </span>
               <span style={{ fontSize: 11, color: LEVEL_COLORS[t.attention_level] || "#a0aec0" }}>
                 {LEVEL_STARS[t.attention_level] || "★★★☆☆"}
@@ -117,7 +198,7 @@ function ThemeWatchList({
             <div style={{ display: "flex", gap: 4, marginTop: 3 }}>
               {(["CRITICAL", "HIGH", "MEDIUM", "LOW"] as const).map((lvl) => (
                 <span key={lvl}
-                  onClick={(e) => { e.stopPropagation(); onLevelChange(i, lvl); }}
+                  onClick={(e) => { e.stopPropagation(); onLevelChange(realIdx, lvl); }}
                   style={{
                     fontSize: 10, cursor: "pointer", padding: "1px 4px", borderRadius: 3,
                     background: t.attention_level === lvl ? LEVEL_COLORS[lvl] + "30" : "transparent",
@@ -127,13 +208,13 @@ function ThemeWatchList({
                 </span>
               ))}
               <span style={{ flex: 1 }} />
-              <button onClick={(e) => { e.stopPropagation(); onDelete(i); }}
+              <button onClick={(e) => { e.stopPropagation(); onDelete(realIdx); }}
                 style={{ fontSize: 10, color: "#e53e3e", background: "none", border: "none", cursor: "pointer" }}>
                 ✕
               </button>
             </div>
           </div>
-        ))}
+        )})}
       </div>
     </div>
   );
@@ -413,6 +494,7 @@ export function AnalystWorkspacePage() {
         <div style={{ borderRight: "1px solid #e2e8f0", overflow: "hidden" }}>
           <ThemeWatchList
             themes={workspace.themes}
+            allThemes={workspace.themes}
             selectedIdx={selectedIdx}
             onSelect={setSelectedIdx}
             onAdd={() => {
@@ -429,6 +511,30 @@ export function AnalystWorkspacePage() {
               const themes = [...workspace.themes];
               themes[i] = { ...themes[i], attention_level: lvl, is_ai_draft: false };
               setWorkspace({ ...workspace, themes });
+            }}
+            watchGroups={workspace.watch_groups || []}
+            onAddGroup={() => {
+              const groups = [...(workspace.watch_groups || [])];
+              const colors = ["#e53e3e", "#3182ce", "#38a169", "#dd6b20", "#805ad5", "#d69e2e"];
+              groups.push({
+                id: `group_${Date.now()}`, name: "新观察方向", subject_ids: [],
+                color: colors[groups.length % colors.length],
+              });
+              setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
+            }}
+            onUpdateGroup={(g) => {
+              const groups = (workspace.watch_groups || []).map(x => x.id === g.id ? g : x);
+              setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
+            }}
+            onDeleteGroup={(id) => {
+              const groups = (workspace.watch_groups || []).filter(x => x.id !== id);
+              setWorkspace({ ...workspace, watch_groups: groups });
+            }}
+            onAddThemeToGroup={(groupId, subjectId) => {
+              const groups = (workspace.watch_groups || []).map(g =>
+                g.id === groupId ? { ...g, subject_ids: [...g.subject_ids, subjectId] } : g
+              );
+              setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
             }}
           />
         </div>

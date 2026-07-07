@@ -118,8 +118,11 @@ class AttentionEngine:
             )
             external_anchors = self._extract_external_anchors(anchor_rows)
 
-            # Build name lookup for subjects with missing/bad names
+            # Build name lookup from both cycle_judgement and recap snapshot
             name_lookup = await self._build_name_lookup(conn, [str(r["subject_key"]) for r in rows])
+            recap_name_lookup = await self._build_recap_name_lookup(conn, [str(r["subject_key"]) for r in rows])
+            # Recap names take priority (they have real Chinese names)
+            name_lookup.update(recap_name_lookup)
 
             subjects: list[SubjectAttention] = []
             for row in rows:
@@ -215,7 +218,7 @@ class AttentionEngine:
 
     @staticmethod
     async def _build_name_lookup(conn, subject_keys: list[str]) -> dict[str, str]:
-        """Find best available name for each subject_key from all trade_dates."""
+        """Find best available name for each subject_key from cycle_judgement table."""
         if not subject_keys:
             return {}
         lookup: dict[str, str] = {}
@@ -231,6 +234,32 @@ class AttentionEngine:
         )
         for r in rows:
             lookup[str(r["subject_key"])] = r["theme_name"]
+        return lookup
+
+    @staticmethod
+    async def _build_recap_name_lookup(conn, subject_keys: list[str]) -> dict[str, str]:
+        """Find real Chinese theme names from post_market_recap_snapshot."""
+        if not subject_keys:
+            return {}
+        lookup: dict[str, str] = {}
+        try:
+            row = await conn.fetchrow(
+                "SELECT payload FROM post_market_recap_snapshot "
+                "ORDER BY trade_date DESC LIMIT 1"
+            )
+            if row:
+                payload = row["payload"]
+                if isinstance(payload, str):
+                    import json as _json
+                    payload = _json.loads(payload)
+                recap = payload.get("recap_doc", payload)
+                for t in recap.get("theme_reviews", []):
+                    sk = str(t.get("subject_key", ""))
+                    name = str(t.get("theme_name", ""))
+                    if sk in subject_keys and name and len(name) < 50 and name != sk:
+                        lookup[sk] = name
+        except Exception:
+            pass
         return lookup
 
     # ── Signal dimension scorers ──
