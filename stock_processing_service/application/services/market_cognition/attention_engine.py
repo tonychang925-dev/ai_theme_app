@@ -128,14 +128,15 @@ class AttentionEngine:
             for row in rows:
                 subject_key = str(row["subject_key"])
                 subject_id = f"theme:{subject_key}"
-                theme_name = row["theme_name"] or ""
-                if theme_name and len(theme_name) < 50 and not theme_name.startswith("【"):
-                    pass  # good name
+                raw_name = row["theme_name"] or ""
+                # Use raw_name only if it looks like a real name (not numeric, not event text)
+                if raw_name and not raw_name.isdigit() and len(raw_name) < 50 and not raw_name.startswith("【"):
+                    theme_name = raw_name
                 else:
-                    theme_name = name_lookup.get(subject_key, subject_key)
+                    theme_name = name_lookup.get(subject_key) or subject_key
 
-                # Skip event descriptions that got stored as theme names
-                if theme_name.startswith("【") or len(theme_name) > 50:
+                # Skip event descriptions that leaked into theme_names
+                if theme_name.startswith("【") or len(theme_name) > 50 or theme_name == subject_key:
                     continue
                 raw_state = row["final_cycle_state"] or "start"
                 is_mainline = row["final_mainline_alive"] or False
