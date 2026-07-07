@@ -6984,6 +6984,72 @@ async def get_top_themes(
         raise HTTPException(status_code=500, detail=str(exc))
 
 
+# ── P2.1 Attention Radar ──
+
+@app.get("/api/v1/attention/{trade_date}")
+async def get_attention_state(trade_date: str) -> dict[str, Any]:
+    """Return MarketAttentionState for a trading day."""
+    from datetime import date as _date
+    from stock_processing_service.application.services.market_cognition.attention_engine import (
+        AttentionEngine,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        engine = AttentionEngine()
+        state = engine.run(td)
+        return state.to_dict()
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.post("/api/v1/attention/{trade_date}/override")
+async def record_attention_override(
+    trade_date: str,
+    body: dict[str, Any],
+) -> dict[str, Any]:
+    """Record an analyst override to attention state."""
+    from datetime import date as _date, datetime as _dt, timezone as _tz
+    from stock_processing_service.contracts.analyst_attention import AttentionOverride
+    import json as _json
+    from pathlib import Path as _Path
+
+    try:
+        td = _date.fromisoformat(trade_date)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+
+    override = AttentionOverride(
+        trade_date=td,
+        subject_id=body.get("subject_id", ""),
+        field_name=body.get("field", "level"),
+        ai_value=str(body.get("ai_value", "")),
+        analyst_value=str(body.get("analyst_value", "")),
+        override_reason=body.get("reason", ""),
+        analyst_id=body.get("analyst_id", "analyst"),
+        created_at=_dt.now(_tz.utc),
+    )
+
+    # Persist to JSONL file
+    log_dir = _Path("tmp/analyst_overrides")
+    log_dir.mkdir(parents=True, exist_ok=True)
+    log_file = log_dir / f"{trade_date}_overrides.jsonl"
+    with open(log_file, "a", encoding="utf-8") as fh:
+        fh.write(_json.dumps({
+            "trade_date": override.trade_date.isoformat(),
+            "subject_id": override.subject_id,
+            "field_name": override.field_name,
+            "ai_value": override.ai_value,
+            "analyst_value": override.analyst_value,
+            "override_reason": override.override_reason,
+            "analyst_id": override.analyst_id,
+            "created_at": override.created_at.isoformat() if override.created_at else None,
+        }, ensure_ascii=False) + "\n")
+
+    return {"status": "recorded", "trade_date": trade_date, "subject_id": override.subject_id}
+
+
 @app.get("/api/v1/leaders/{theme_name}")
 async def get_theme_leaders(
     theme_name: str,
