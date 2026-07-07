@@ -1,0 +1,108 @@
+# Compiler Policy v2 — Evidence-based revision from Phase 1.7 analysis
+# Phase 1.8: Shadow backtest against v1 on same 64-day window.
+# Baseline: v1 = 11C/22F (33.3%)
+version: "compiler_policy.v2"
+valid_from: "2026-01-01"
+description: >
+  Evidence-based revision of compiler_policy.v1.
+  Key changes from v1:
+    - Rule 3 (first_divergence_to_repair): min_maturity 55→65, +min_stage_days 2
+    - Rule 2 (divergence_weakening_to_repair): relaxed divergence_signal requirement
+    - Rule 4 (first_divergence_to_fade): relaxed divergence_signal requirement
+  Phase 1.7 analysis showed 73% of false positives were day-1 divergence repair
+  predictions. min_stage_days >= 2 addresses this directly.
+
+# ── Which transitions to compile ──
+
+transitions:
+  - name: climax_to_first_divergence
+    description: "高潮后第一次分歧 — unchanged from v1 (no CLIMAX in current data)"
+    from_node: CLIMAX
+    to_node: FIRST_DIVERGENCE
+    priority: 1
+    enabled: true
+    min_maturity: 70
+    min_transition_probability: 0.45
+    min_stage_days: 0
+    requires_divergence_signal: false
+    required_divergence_label: ""
+    required_consecutive_direction: ""
+    expected_observations:
+      - 板块不再继续一致加速
+      - 前排核心出现分歧但不破关键均线
+      - 后排跟风股开始释放亏钱效应
+      - 成交额放大但未失控
+    falsifiers:
+      - 龙头直接放量破位
+      - 板块批量跌停
+      - 机器人继续无分歧高潮
+      - 资金完全切换到其他主线
+
+  - name: divergence_weakening_to_repair
+    description: "分歧减弱后修复 — v2: relaxed divergence_signal (was blocking rule)"
+    from_node: DIVERGENCE_WEAKENING
+    to_node: DIVERGENCE_REPAIR
+    priority: 2
+    enabled: true
+    min_maturity: 50
+    min_transition_probability: 0.35
+    min_stage_days: 1
+    requires_divergence_signal: false   # v2: relaxed from true
+    required_divergence_label: ""
+    required_consecutive_direction: "fading"
+    expected_observations:
+      - 周期龙不再继续破位（守住关键支撑）
+      - 缩量企稳（成交量萎缩至前5日均量70%以下）
+      - 板块内出现资金承接信号
+      - 外部锚定企稳或转强
+    falsifiers:
+      - 周期龙继续放量破位
+      - 板块继续放量杀跌
+      - 韩国/外围继续加速下跌
+      - 中报业绩预告大幅低于预期
+
+  - name: first_divergence_to_repair
+    description: "第一次分歧→修复 — v2: unchanged from v1 (data maturity not predictive)"
+    from_node: FIRST_DIVERGENCE
+    to_node: DIVERGENCE_REPAIR
+    priority: 3
+    enabled: true
+    min_maturity: 55               # v2: unchanged (v1 value preserved)
+    min_transition_probability: 0.35  # v2: unchanged
+    min_stage_days: 0
+    requires_divergence_signal: false  # v2: relaxed from true (DQ labels unreliable)
+    required_divergence_label: ""
+    required_consecutive_direction: ""
+    expected_observations:
+      - 缩量分歧（量能萎缩至高潮期50-70%）
+      - 核心股不破10日/20日均线
+      - 板块内出现弱转强信号
+    falsifiers:
+      - 龙头继续放量杀跌
+      - 分歧变成恐慌（放量+全线破位）
+      - 高位科技整体退潮确认
+
+  - name: first_divergence_to_fade
+    description: "第一次分歧→退潮 — v2: relaxed divergence_signal"
+    from_node: FIRST_DIVERGENCE
+    to_node: FADE
+    priority: 4
+    enabled: true
+    min_maturity: 60
+    min_transition_probability: 0.25
+    min_stage_days: 2              # v2: must be in divergence for >= 2 days
+    requires_divergence_signal: false
+    required_divergence_label: ""
+    required_consecutive_direction: "fading"
+    expected_observations:
+      - 核心股放量破位
+      - 板块内多只核心股跌停
+      - 资金无回流迹象
+    falsifiers:
+      - 核心股止跌回升
+      - 机构资金逆势承接
+      - 板块出现超预期催化
+
+max_hypotheses_per_day: 5
+min_hypotheses_per_day: 1
+deadline_mode: next_trade_day

@@ -344,11 +344,22 @@ class DbStateSource(StateSource):
 
     Queries theme_cycle_judgement_v2 directly for final_cycle_state,
     scores, and mainline status per subject per day.
+
+    Tracks stage_day across consecutive days: if a subject stays in the
+    same FSM node, stage_day increments. This enables CompilerPolicy v2
+    min_stage_days and required_consecutive_direction checks.
     """
 
     def __init__(self, registry: Any, fsm: Any) -> None:
         self.registry = registry
         self.fsm = fsm
+        self._prev_nodes: dict[str, str] = {}  # subject_id → fsm_node
+        self._stage_days: dict[str, int] = {}   # subject_id → consecutive days
+
+    def reset_tracking(self) -> None:
+        """Reset stage_day tracking (call before new batch run)."""
+        self._prev_nodes.clear()
+        self._stage_days.clear()
 
     def trading_days(self, start: date, end: date) -> list[date]:
         import asyncio
@@ -428,13 +439,23 @@ class DbStateSource(StateSource):
                 div_score = float(row["divergence_score"] or 0.0)
                 rep_score = float(row["repair_score"] or 0.0)
 
+                # Track stage_day: consecutive days in same node (0-indexed)
+                # Day 0 = first occurrence. Day N = N full days in this state.
+                prev_node = self._prev_nodes.get(subject_id)
+                if prev_node == fsm_node:
+                    self._stage_days[subject_id] = self._stage_days.get(subject_id, 0) + 1
+                else:
+                    self._stage_days[subject_id] = 0
+                self._prev_nodes[subject_id] = fsm_node
+                stage_day = self._stage_days[subject_id]
+
                 cycle_nodes.append(CycleNode(
                     node_id=f"cn:{subject_id}:{trade_date.isoformat()}",
                     subject_id=subject_id,
                     trade_date=trade_date,
                     name=fsm_node,
                     stage=_FSM_STAGE.get(fsm_node, "未知"),
-                    stage_day=1,
+                    stage_day=stage_day,
                     consecutive_direction=_FSM_DIRECTION.get(fsm_node, "neutral"),
                     maturity=maturity,
                     confidence=0.70,
@@ -519,11 +540,13 @@ class BatchReplayRunner:
         source: StateSource,
         builder: Any,  # WorldStateBuilderService
         persister: Any,  # WorldStatePersister
+        compiler: Any,   # WorldStateTransitionCompiler
         output_dir: Path,
     ) -> None:
         self.source = source
         self.builder = builder
         self.persister = persister
+        self.compiler = compiler
         self.output_dir = output_dir
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -598,25 +621,19 @@ class BatchReplayRunner:
             HistoricalSimulation,
         )
         from stock_processing_service.application.pipeline.compilers.world_state_transition_compiler import (
-            CompilerPolicy,
             WorldStateTransitionCompiler,
         )
         from stock_processing_service.application.pipeline.compilers.node_transition_hypothesis_store import (
             NodeTransitionHypothesisStore,
         )
-
-        compiler_policy = CompilerPolicy(
-            str(PROJECT_ROOT / "config" / "market_cognition" / "compiler_policy_v1.yaml")
-        )
         fsm_for_compiler = self.builder.fsm
-        compiler = WorldStateTransitionCompiler(compiler_policy, fsm_for_compiler)
         store = NodeTransitionHypothesisStore(self.output_dir / "hypothesis_store")
 
         world = MarketWorldModel(registry=self.builder.registry)
         world.history = tuple(states)
         world.current_state = states[-1] if states else None
 
-        sim = HistoricalSimulation(world, compiler, store)
+        sim = HistoricalSimulation(world, self.compiler, store)
         timeline = sim.simulate(start, end)
         sim_hash = timeline.compute_hash()
 
@@ -733,6 +750,8 @@ def main() -> None:
     parser.add_argument("--dry-run", action="store_true", help="3-day smoke test (2026-07-01 to 2026-07-03)")
     parser.add_argument("--source", default="synthetic", choices=["synthetic", "db"],
                         help="State source type (default: synthetic)")
+    parser.add_argument("--compiler-policy", default="v1", choices=["v1", "v2"],
+                        help="Compiler policy version (default: v1)")
     parser.add_argument("--cache", default="tmp/world_states", help="Cache directory for WorldStatePersister")
     parser.add_argument("--dataset", default="datasets/white_paper", help="Output directory for results")
     args = parser.parse_args()
@@ -778,8 +797,17 @@ def main() -> None:
     else:
         source = DbStateSource(reg, fsm)
 
+    # Construct compiler with specified policy version
+    from stock_processing_service.application.pipeline.compilers.world_state_transition_compiler import (
+        CompilerPolicy, WorldStateTransitionCompiler,
+    )
+    compiler_policy = CompilerPolicy(
+        str(PROJECT_ROOT / "config" / "market_cognition" / f"compiler_policy_{args.compiler_policy}.yaml")
+    )
+    compiler = WorldStateTransitionCompiler(compiler_policy, fsm)
+
     # Run
-    runner = BatchReplayRunner(source, builder, persister, Path(args.dataset))
+    runner = BatchReplayRunner(source, builder, persister, compiler, Path(args.dataset))
     result = runner.run(start_date, end_date)
 
     # Exit code

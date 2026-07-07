@@ -57,10 +57,12 @@ class CompilerTransitionRule:
     enabled: bool
     min_maturity: float
     min_transition_probability: float
-    requires_divergence_signal: bool
-    required_divergence_label: str
-    expected_observations: tuple[str, ...]
-    falsifiers: tuple[str, ...]
+    min_stage_days: int = 0                     # v2: minimum days in current stage
+    requires_divergence_signal: bool = False
+    required_divergence_label: str = ""
+    required_consecutive_direction: str = ""     # v2: e.g. "weakening", "fading"
+    expected_observations: tuple[str, ...] = ()
+    falsifiers: tuple[str, ...] = ()
 
 
 class CompilerPolicy:
@@ -86,8 +88,10 @@ class CompilerPolicy:
                 enabled=t["enabled"],
                 min_maturity=t.get("min_maturity", 0),
                 min_transition_probability=t.get("min_transition_probability", 0.3),
+                min_stage_days=t.get("min_stage_days", 0),
                 requires_divergence_signal=t.get("requires_divergence_signal", False),
                 required_divergence_label=t.get("required_divergence_label", ""),
+                required_consecutive_direction=t.get("required_consecutive_direction", ""),
                 expected_observations=tuple(t.get("expected_observations", [])),
                 falsifiers=tuple(t.get("falsifiers", [])),
             ))
@@ -385,6 +389,18 @@ class WorldStateTransitionCompiler:
         if inf.confidence < rule.min_transition_probability:
             return False
 
+        # v2: min_stage_days — subject must be in current node for >= N days
+        if rule.min_stage_days > 0:
+            node = _find_cycle_node(current, inf.subject_id)
+            if node is not None and node.stage_day < rule.min_stage_days:
+                return False
+
+        # v2: required_consecutive_direction — e.g. "weakening", "fading"
+        if rule.required_consecutive_direction:
+            node = _find_cycle_node(current, inf.subject_id)
+            if node is not None and node.consecutive_direction != rule.required_consecutive_direction:
+                return False
+
         # Divergence signal requirement
         if rule.requires_divergence_signal:
             dq = _find_divergence_quality(current, inf.subject_id)
@@ -437,6 +453,15 @@ def _find_maturity(state: DailyMarketState | None, subject_id: str) -> NodeMatur
     for m in state.maturity_estimates:
         if m.subject_id == subject_id:
             return m
+    return None
+
+
+def _find_cycle_node(state: DailyMarketState | None, subject_id: str) -> CycleNode | None:
+    if state is None:
+        return None
+    for n in state.cycle_nodes:
+        if n.subject_id == subject_id:
+            return n
     return None
 
 
