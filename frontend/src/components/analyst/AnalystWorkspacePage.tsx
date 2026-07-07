@@ -154,11 +154,13 @@ function ThemeWatchList({
           <div key={g.id} style={{ padding: "4px 12px", borderBottom: "1px solid #f0f0f0" }}>
             {editingGroup === g.id ? (
               <input autoFocus value={g.name} onChange={(e) => onUpdateGroup({ ...g, name: e.target.value })}
-                onBlur={() => setEditingGroup(null)} onKeyDown={(e) => { if (e.key === "Enter") setEditingGroup(null); }}
-                style={{ width: "100%", padding: 4, fontSize: 13, fontWeight: 600, borderRadius: 3, border: `2px solid ${g.color}`, background: g.color + "10" }} />
+                onBlur={() => setEditingGroup(null)} onKeyDown={(e) => { if (e.key === "Enter") { setEditingGroup(null); e.preventDefault(); } }}
+                style={{ width: "100%", padding: "4px 6px", fontSize: 13, fontWeight: 600, borderRadius: 3, border: `2px solid ${g.color}`, background: g.color + "10", outline: "none" }} />
             ) : (
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span onClick={() => { onSelectGroup(g.id); }}
+                <span onClick={() => onSelectGroup(g.id)}
+                  onDoubleClick={() => setEditingGroup(g.id)}
+                  title="双击修改名称"
                   style={{ fontSize: 13, fontWeight: 600, cursor: "pointer", color: g.color, padding: "2px 0", background: selectedGroupId === g.id ? g.color + "20" : "transparent", borderRadius: 3, paddingLeft: 4, paddingRight: 4 }}>
                   {g.name} ({g.subject_ids.length})
                 </span>
