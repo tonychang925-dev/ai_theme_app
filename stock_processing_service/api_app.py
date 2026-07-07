@@ -7215,6 +7215,163 @@ async def save_playbook(
     }
 
 
+# ── P2.5 Analyst Workspace ──
+
+@app.get("/api/v1/analyst-workspace/{trade_date}")
+async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
+    """Return full workspace state for a trading day.
+
+    If a saved workspace exists, return it.
+    Otherwise, initialize from AI drafts (AttentionEngine + CognitionCardBuilder).
+    """
+    from datetime import date as _date
+    import json as _json
+    from pathlib import Path as _Path
+
+    try:
+        td = _date.fromisoformat(trade_date)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+
+    save_path = _Path("tmp/analyst_workspace") / f"{trade_date}.json"
+
+    # Return saved workspace if exists
+    if save_path.exists():
+        return _json.loads(save_path.read_text(encoding="utf-8"))
+
+    # Initialize from AI drafts
+    from stock_processing_service.application.services.market_cognition.attention_engine import AttentionEngine
+    from stock_processing_service.application.services.market_cognition.cognition_card_builder import CognitionCardBuilder
+
+    engine = AttentionEngine()
+    state = engine.run(td)
+
+    # Build initial workspace with HIGH/CRITICAL subjects filled from AI
+    themes = []
+    for s in state.subjects:
+        if s.level not in ("CRITICAL", "HIGH", "MEDIUM"):
+            continue
+        card = CognitionCardBuilder().build(td, s.subject_id)
+        themes.append({
+            "subject_id": s.subject_id,
+            "subject_name": s.subject_name,
+            "attention_level": s.analyst_level or s.level,
+            "attention_score": s.attention_score,
+            "attention_reasons": list(s.reasons),
+            "ai_recommended": True,
+            "analyst_added": False,
+            # Cognition fields
+            "trading_style": card.get("trading_style", ""),
+            "long_identifiability": 0.5,
+            "short_identifiability": 0.3,
+            "old_leaders": "",
+            "event_stimuli": card.get("event_stimuli", []),
+            "yesterday_view": card.get("yesterday_view", ""),
+            "today_actual": card.get("today_actual", ""),
+            "stage_judgement": card.get("market_phase", ""),
+            "intraday_understanding": "",
+            "trader_sentiment": "",
+            "index_resonance": "",
+            "tomorrow_view": card.get("tomorrow_view", ""),
+            "analyst_notes": "",
+            "is_ai_draft": True,
+            "analyst_reviewed": False,
+            "field_overrides": {},
+            # Stock pools
+            "leaders": [],
+            "bull_pool": [],
+            "bear_pool": [],
+        })
+
+    workspace = {
+        "trade_date": trade_date,
+        "generated_at": datetime.now(_tz.utc).isoformat(),
+        "is_ai_draft": True,
+        "analyst_finalized": False,
+        "themes": themes,
+        "override_count": 0,
+    }
+    return workspace
+
+
+@app.post("/api/v1/analyst-workspace/{trade_date}/save")
+async def save_analyst_workspace(
+    trade_date: str,
+    body: dict[str, Any],
+) -> dict[str, Any]:
+    """Save workspace state and log all overrides."""
+    from datetime import date as _date, datetime as _dt
+    import json as _json
+    from pathlib import Path as _Path
+
+    try:
+        td = _date.fromisoformat(trade_date)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+
+    # Log overrides
+    override_count = 0
+    log_dir = _Path("tmp/analyst_overrides")
+    log_dir.mkdir(parents=True, exist_ok=True)
+    log_file = log_dir / f"{trade_date}_workspace_overrides.jsonl"
+
+    themes = body.get("themes", [])
+    for theme in themes:
+        field_overrides = theme.get("field_overrides", {})
+        for field_name, change in field_overrides.items():
+            if isinstance(change, dict) and change.get("analyst_value") != change.get("ai_value"):
+                with open(log_file, "a", encoding="utf-8") as fh:
+                    fh.write(_json.dumps({
+                        "trade_date": trade_date,
+                        "subject_id": theme.get("subject_id", ""),
+                        "object_type": "cognition_field",
+                        "field_name": field_name,
+                        "ai_value": str(change.get("ai_value", ""))[:200],
+                        "analyst_value": str(change.get("analyst_value", ""))[:200],
+                        "override_reason": str(change.get("reason", ""))[:200],
+                        "analyst_id": "analyst",
+                        "created_at": _dt.now(_tz.utc).isoformat(),
+                    }, ensure_ascii=False) + "\n")
+                override_count += 1
+
+        # Log stock pool overrides
+        for pool_type in ("leaders", "bull_pool", "bear_pool"):
+            for stock in theme.get(pool_type, []):
+                if stock.get("analyst_modified"):
+                    with open(log_file, "a", encoding="utf-8") as fh:
+                        fh.write(_json.dumps({
+                            "trade_date": trade_date,
+                            "subject_id": theme.get("subject_id", ""),
+                            "object_type": f"stock_{pool_type}",
+                            "field_name": "stock_entry",
+                            "ai_value": "",
+                            "analyst_value": _json.dumps(stock, ensure_ascii=False),
+                            "override_reason": "analyst added/modified stock",
+                            "analyst_id": "analyst",
+                            "created_at": _dt.now(_tz.utc).isoformat(),
+                        }, ensure_ascii=False) + "\n")
+                    override_count += 1
+
+    # Save workspace
+    save_dir = _Path("tmp/analyst_workspace")
+    save_dir.mkdir(parents=True, exist_ok=True)
+    save_path = save_dir / f"{trade_date}.json"
+    save_path.write_text(_json.dumps({
+        **body,
+        "analyst_finalized": body.get("analyst_finalized", False),
+        "is_ai_draft": False,
+        "override_count": override_count,
+        "saved_at": _dt.now(_tz.utc).isoformat(),
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    return {
+        "status": "saved",
+        "trade_date": trade_date,
+        "themes_saved": len(themes),
+        "overrides_recorded": override_count,
+    }
+
+
 @app.get("/api/v1/leaders/{theme_name}")
 async def get_theme_leaders(
     theme_name: str,
