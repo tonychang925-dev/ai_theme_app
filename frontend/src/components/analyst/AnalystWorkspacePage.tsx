@@ -151,7 +151,7 @@ function ThemeWatchList({
       {/* Watch Groups */}
       <div style={{ padding: "4px 0", borderBottom: "1px solid #243040" }}>
         {watchGroups.map((g, gi) => (
-          <div key={g.id} style={{ padding: "4px 12px", borderBottom: "1px solid #f0f0f0" }}>
+          <div key={g.id} style={{ padding: "4px 12px", borderBottom: "1px solid #243040" }}>
             {editingGroup === g.id ? (
               <input autoFocus value={g.name} onChange={(e) => onUpdateGroup({ ...g, name: e.target.value })}
                 onBlur={() => setEditingGroup(null)} onKeyDown={(e) => { if (e.key === "Enter") { setEditingGroup(null); e.preventDefault(); } }}
@@ -217,8 +217,8 @@ function ThemeWatchList({
             onClick={() => onSelect(realIdx)}
             style={{
               padding: "8px 12px", cursor: "pointer", borderBottom: "1px solid #edf2f7",
-              background: realIdx === selectedIdx ? "#ebf8ff" : inGroup ? inGroup.color + "08" : "#fff",
-              borderLeft: realIdx === selectedIdx ? "3px solid #3182ce" : inGroup ? `3px solid ${inGroup.color}` : "3px solid transparent",
+              background: realIdx === selectedIdx ? "#1a2a3a" : inGroup ? inGroup.color + "10" : "transparent",
+              borderLeft: realIdx === selectedIdx ? "3px solid #66d9ef" : inGroup ? `3px solid ${inGroup.color}` : "3px solid transparent",
             }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontSize: 13, fontWeight: realIdx === selectedIdx ? 700 : 400 }}>
