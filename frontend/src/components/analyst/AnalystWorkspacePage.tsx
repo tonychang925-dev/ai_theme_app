@@ -717,4 +717,3 @@ function GroupStockPoolEditor({ group, onChange }: { group: WatchGroup; onChange
     </div>
   );
 }
-}
