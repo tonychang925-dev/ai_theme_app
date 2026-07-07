@@ -7050,6 +7050,88 @@ async def record_attention_override(
     return {"status": "recorded", "trade_date": trade_date, "subject_id": override.subject_id}
 
 
+# ── P2.2 Cognition Workspace ──
+
+@app.get("/api/v1/cognition/{trade_date}/{subject_id}")
+async def get_cognition_card(trade_date: str, subject_id: str) -> dict[str, Any]:
+    """Return AI-generated CognitionCard for a subject."""
+    from datetime import date as _date
+    from stock_processing_service.application.services.market_cognition.cognition_card_builder import (
+        CognitionCardBuilder,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        builder = CognitionCardBuilder()
+        card = builder.build(td, subject_id)
+        return card
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+@app.post("/api/v1/cognition/{trade_date}/{subject_id}/save")
+async def save_cognition_card(
+    trade_date: str,
+    subject_id: str,
+    body: dict[str, Any],
+) -> dict[str, Any]:
+    """Save analyst-modified CognitionCard and log all overrides."""
+    from datetime import date as _date, datetime as _dt, timezone as _tz
+    import json as _json
+    from pathlib import Path as _Path
+
+    try:
+        td = _date.fromisoformat(trade_date)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+
+    overrides = body.get("analyst_overrides", {})
+    override_count = 0
+
+    # Log each override
+    if overrides:
+        log_dir = _Path("tmp/analyst_overrides")
+        log_dir.mkdir(parents=True, exist_ok=True)
+        log_file = log_dir / f"{trade_date}_cognition_overrides.jsonl"
+
+        for field_name, change in overrides.items():
+            if isinstance(change, dict):
+                with open(log_file, "a", encoding="utf-8") as fh:
+                    fh.write(_json.dumps({
+                        "trade_date": trade_date,
+                        "subject_id": subject_id,
+                        "object_type": "cognition_card",
+                        "field_name": field_name,
+                        "ai_value": str(change.get("ai_value", "")),
+                        "analyst_value": str(change.get("analyst_value", "")),
+                        "override_reason": str(change.get("reason", "")),
+                        "analyst_id": "analyst",
+                        "created_at": _dt.now(_tz.utc).isoformat(),
+                    }, ensure_ascii=False) + "\n")
+                override_count += 1
+
+    # Save card to JSON
+    save_dir = _Path("tmp/cognition_cards")
+    save_dir.mkdir(parents=True, exist_ok=True)
+    safe_id = subject_id.replace("/", "_")
+    save_path = save_dir / f"{trade_date}_{safe_id}.json"
+    save_path.write_text(_json.dumps({
+        **body,
+        "analyst_reviewed": True,
+        "ai_draft": False,
+        "saved_at": _dt.now(_tz.utc).isoformat(),
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    return {
+        "status": "saved",
+        "trade_date": trade_date,
+        "subject_id": subject_id,
+        "overrides_recorded": override_count,
+        "path": str(save_path),
+    }
+
+
 @app.get("/api/v1/leaders/{theme_name}")
 async def get_theme_leaders(
     theme_name: str,

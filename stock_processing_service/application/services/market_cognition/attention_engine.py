@@ -114,14 +114,21 @@ class AttentionEngine:
             )
             external_anchors = self._extract_external_anchors(anchor_rows)
 
+            # Build name lookup for subjects with missing/bad names
+            name_lookup = await self._build_name_lookup(conn, [str(r["subject_key"]) for r in rows])
+
             subjects: list[SubjectAttention] = []
             for row in rows:
                 subject_key = str(row["subject_key"])
                 subject_id = f"theme:{subject_key}"
-                theme_name = row["theme_name"] or subject_key
+                theme_name = row["theme_name"] or ""
+                if theme_name and len(theme_name) < 50 and not theme_name.startswith("【"):
+                    pass  # good name
+                else:
+                    theme_name = name_lookup.get(subject_key, subject_key)
 
-                # Skip malformed names (event descriptions stored as theme names)
-                if len(theme_name) > 50 or theme_name.startswith("【"):
+                # Skip event descriptions that got stored as theme names
+                if theme_name.startswith("【") or len(theme_name) > 50:
                     continue
                 raw_state = row["final_cycle_state"] or "start"
                 is_mainline = row["final_mainline_alive"] or False
@@ -199,6 +206,28 @@ class AttentionEngine:
 
         finally:
             await conn.close()
+
+    # ── Name lookup ──
+
+    @staticmethod
+    async def _build_name_lookup(conn, subject_keys: list[str]) -> dict[str, str]:
+        """Find best available name for each subject_key from all trade_dates."""
+        if not subject_keys:
+            return {}
+        lookup: dict[str, str] = {}
+        rows = await conn.fetch(
+            "SELECT DISTINCT ON (subject_key) subject_key, theme_name "
+            "FROM theme_cycle_judgement_v2 "
+            "WHERE subject_key = ANY($1::text[]) "
+            "AND theme_name IS NOT NULL "
+            "AND theme_name !~ '^[0-9]+$' "
+            "AND length(theme_name) < 50 "
+            "AND theme_name NOT LIKE '【%'",
+            subject_keys,
+        )
+        for r in rows:
+            lookup[str(r["subject_key"])] = r["theme_name"]
+        return lookup
 
     # ── Signal dimension scorers ──
 
