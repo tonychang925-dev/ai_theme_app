@@ -7239,29 +7239,66 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     if save_path.exists():
         return _json.loads(save_path.read_text(encoding="utf-8"))
 
-    # Initialize from AI drafts
+    # Initialize from recap snapshot theme_reviews (authoritative theme list)
+    # supplemented by AttentionEngine scoring and CognitionCardBuilder
     from stock_processing_service.application.services.market_cognition.attention_engine import AttentionEngine
     from stock_processing_service.application.services.market_cognition.cognition_card_builder import CognitionCardBuilder
 
-    engine = AttentionEngine()
-    state = await engine.run_async(td)
+    # Load recap theme_reviews directly — the authoritative daily theme list
+    import asyncpg as _pg
+    import json as _recap_json
+    _conn = await _pg.connect("postgresql://localhost:5432/stock_data_test", user="postgres", password="")
+    recap_themes = []
+    try:
+        _row = await _conn.fetchrow(
+            "SELECT payload FROM post_market_recap_snapshot "
+            "WHERE trade_date = $1::date ORDER BY created_at DESC LIMIT 1", td)
+        if _row:
+            _payload = _row["payload"]
+            if isinstance(_payload, str):
+                _payload = _recap_json.loads(_payload)
+            _recap = _payload.get("recap_doc", _payload)
+            for t in _recap.get("theme_reviews", []):
+                sk = str(t.get("subject_key", ""))
+                name = str(t.get("theme_name", ""))
+                # Filter: skip event descriptions stored as theme names
+                if name.startswith("【") or len(name) > 30 or name.isdigit() or (name == sk and sk.isdigit()):
+                    continue
+                recap_themes.append({
+                    "subject_key": sk,
+                    "subject_name": name,
+                    "is_mainline": t.get("final_mainline_alive", False),
+                    "cycle_state": t.get("final_cycle_state", t.get("theme_stage", "start")),
+                    "strength_score": float(t.get("mainline_strength_score", 50)),
+                })
+    finally:
+        await _conn.close()
 
-    # Build initial workspace with HIGH/CRITICAL subjects filled from AI
+    # Also get attention scores for cross-reference
+    engine = AttentionEngine()
+    try:
+        attention_state = await engine.run_async(td)
+        attention_map = {s.subject_id: s for s in attention_state.subjects}
+    except Exception:
+        attention_map = {}
+
     card_builder = CognitionCardBuilder()
     themes = []
-    for s in state.subjects:
-        if s.level not in ("CRITICAL", "HIGH"):
-            continue
-        card = await card_builder.build_async(td, s.subject_id)
+    for rt in recap_themes:
+        subject_id = f"theme:{rt['subject_key']}"
+        att = attention_map.get(subject_id)
+        level = att.level if att else ("HIGH" if rt["is_mainline"] else "MEDIUM")
+        score = att.attention_score if att else int(rt["strength_score"])
+
+        card = await card_builder.build_async(td, subject_id)
         themes.append({
-            "subject_id": s.subject_id,
-            "subject_name": s.subject_name,
-            "attention_level": s.analyst_level or s.level,
-            "attention_score": s.attention_score,
-            "attention_reasons": list(s.reasons),
+            "subject_id": subject_id,
+            "subject_name": rt["subject_name"],
+            "attention_level": level,
+            "attention_score": score,
+            "attention_reasons": list(att.reasons) if att else [f"{rt['cycle_state']}阶段"],
             "ai_recommended": True,
             "analyst_added": False,
-            # Cognition fields
             "trading_style": card.get("trading_style", ""),
             "long_identifiability": 0.5,
             "short_identifiability": 0.3,
@@ -7278,7 +7315,6 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
             "is_ai_draft": True,
             "analyst_reviewed": False,
             "field_overrides": {},
-            # Stock pools
             "leaders": [],
             "bull_pool": [],
             "bear_pool": [],
