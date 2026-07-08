@@ -189,32 +189,80 @@ class FundFlowMetrics:
 
 @dataclass(frozen=True, slots=True)
 class LeaderSnapshot:
-    """A single leader stock state for one trading day."""
+    """A single leader stock state for one trading day.
+
+    Status values (8-state expectation model):
+      NEW                — first detection, no prior to compare
+      NORMAL_CONTINUE    — continued as expected (yesterday H → today H+1)
+      SUPER_CONTINUE     — exceeded expectation (sealed when expected to break)
+      WEAKEN_EXPECTED    — weakened but it was predictable (late-stage fatigue)
+      WEAKEN_UNEXPECTED  — weakened when expected to continue (negative surprise)
+      BREAK              — did not continue (moderate-strong negative)
+      REPLACED           — old leader broke, new leader took over
+      CROSS_OVER         — leader jumped themes (interesting signal)
+    """
     stock_code: str
     stock_name: str
     board_height: int                # 当前连板高度
-    status: str                      # CONTINUE | BREAK | WEAKEN | NEW
+    status: str                      # 8-state expectation model
+    expected_height: int = 0         # yesterday's expected height for today
+    surprise_score: float = 0.0      # -100~+100, positive = exceeded expectation
     yesterday_status: str = ""
     strength_score: float = 0.0      # 0-100
     risk_score: float = 0.0          # 0-100
     sealed: bool = True
-    theme_hint: str = ""             # rough theme from reason_tags
+    theme_hint: str = ""
     reason: str = ""
 
 
 @dataclass(frozen=True, slots=True)
 class LeaderEvolutionMetrics:
-    """Daily leader lifecycle: leader health and state transitions."""
+    """Daily leader lifecycle with expectation tracking."""
     trade_date: date
     leaders: tuple[LeaderSnapshot, ...]
     yesterday_leader_count: int = 0
     continue_count: int = 0
-    weaken_count: int = 0
+    super_continue_count: int = 0
+    weaken_expected_count: int = 0
+    weaken_unexpected_count: int = 0
     break_count: int = 0
     new_leader_count: int = 0
-    leader_health_score: float = 0.0       # 0-100
-    leader_health_label: str = ""          # STRONG | NORMAL | WEAK | COLLAPSE
+    replaced_count: int = 0
+    leader_health_score: float = 0.0
+    leader_health_label: str = ""        # STRONG | NORMAL | WEAK | COLLAPSE
     leader_break_alert: bool = False
+    # Expectation summary
+    avg_surprise_score: float = 0.0      # -100~+100 average across all leaders
+    source: MetricSource = field(default_factory=lambda: MetricSource("db_query"))
+
+
+# ── Loss Attribution (Phase 2.4) ──
+
+@dataclass(frozen=True, slots=True)
+class LossAttributionMetrics:
+    """Categorize losses by source — who lost money and why?
+
+    Answers: was today's damage concentrated in high-board stocks,
+    yesterday's limit-up stocks, or specific themes?
+    """
+    trade_date: date
+
+    # ── By position ──
+    limit_down_count: int = 0            # total limit-down
+    high_board_loss_count: int = 0       # 跌停 ∩ 昨>=2板
+    yesterday_limitup_loss_count: int = 0  # 跌停 ∩ 昨涨停
+    leader_loss_count: int = 0           # 跌停 ∩ 昨>=3板
+
+    # ── By theme ──
+    theme_loss: dict[str, int] = field(default_factory=dict)
+    primary_loss_theme: str = ""         # theme with most losses
+    primary_loss_count: int = 0
+
+    # ── Risk signal ──
+    concentrated_high_board: bool = False  # >30% of losses are high-board
+    concentrated_leader: bool = False      # leaders among the loss
+    loss_conclusion: str = ""              # one-line narrative
+
     source: MetricSource = field(default_factory=lambda: MetricSource("db_query"))
 
 
@@ -235,6 +283,7 @@ class MarketMetricsSnapshot:
     emotion_momentum: EmotionMomentumMetrics
     loss_effect: LossEffectMetrics | None = None
     leader_evolution: LeaderEvolutionMetrics | None = None
+    loss_attribution: LossAttributionMetrics | None = None
     fund_flow: FundFlowMetrics | None = None
 
     # Calibration

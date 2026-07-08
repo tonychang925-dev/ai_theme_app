@@ -129,17 +129,16 @@ class DiagnosisEngine:
         )
 
         # ── Step 6: Emotion Phase ──
-        # v3: Emotion = breadth(30%) + relay(20%) + leader(20%) + momentum(15%) + capital(10%) - loss(5%)
+        # v3.1: breadth(25%) + leader(25%) + relay(20%) + capital(10%) + momentum(10%) - loss(10%)
         capital_value = int((c.active_ratio - 0.03) * 500)
         loss = snap.loss_effect
         loss_penalty = int(loss.loss_effect_score * 0.5) if loss else 0
         leader = snap.leader_evolution
-        # Leader health: 0-100, normalized to -50 ~ +50 contribution
         leader_contribution = int((leader.leader_health_score - 50) * 0.8) if leader else 0
         composite = int(
-            m.momentum_normalized * 0.15 + breadth_value * 0.30
-            + relay_value * 0.20 + leader_contribution * 0.20
-            + capital_value * 0.10 - loss_penalty * 0.05
+            m.momentum_normalized * 0.10 + breadth_value * 0.25
+            + relay_value * 0.20 + leader_contribution * 0.25
+            + capital_value * 0.10 - loss_penalty * 0.10
         )
 
         if composite >= 50:      node, node_desc = "CLIMAX", "情绪高潮"
@@ -155,6 +154,11 @@ class DiagnosisEngine:
         loss_desc = ""
         if loss and loss.loss_effect_label != "安全":
             loss_desc = f"，亏钱{loss.loss_effect_label}(跌停{loss.limit_down_count}，大面{loss.big_loss_count})"
+        if leader and leader.avg_surprise_score < -20:
+            loss_desc += f"，龙头低于预期(avg_surprise={leader.avg_surprise_score:.0f})"
+
+        attr = snap.loss_attribution
+        att_desc = attr.loss_conclusion if attr else ""
 
         emotion_signal = MarketSignal(
             signal_id=f"emotion_{trade_date.isoformat()}", name="情绪阶段",
@@ -162,11 +166,11 @@ class DiagnosisEngine:
             reason=f"{node_desc}（{node}）{loss_desc}",
             evidence=tuple([
                 f"赚钱效应: {breadth_signal.label} ({breadth_signal.reason})",
-                f"活跃资金: {money_signal.label} ({money_signal.reason})",
                 f"接力生态: {relay_signal.label} ({relay_signal.reason})",
                 f"龙头状态: {leader_signal.label} ({leader_signal.reason})",
-                f"板块节奏: {theme_signal.label} ({theme_signal.reason})",
+                f"龙头预期差: avg_surprise={leader.avg_surprise_score:.0f}" if leader else "龙头预期差: 无数据",
                 f"亏钱效应: {loss.loss_effect_label}(跌停{loss.limit_down_count},大面{loss.big_loss_count})" if loss else "亏钱效应: 无数据",
+                f"亏钱归因: {att_desc}" if att_desc else "亏钱归因: 无数据",
             ]),
         )
 

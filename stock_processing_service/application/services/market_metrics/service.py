@@ -19,6 +19,7 @@ from .contracts import (
     EmotionMomentumMetrics,
     LeaderEvolutionMetrics,
     LimitUpMetrics,
+    LossAttributionMetrics,
     LossEffectMetrics,
     MarketBreadthMetrics,
     MarketMetricsSnapshot,
@@ -84,6 +85,7 @@ class MarketMetricsService:
         momentum = self._build_momentum(breadth, limitup)
         loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay)
         leader_evolution = self._build_leader_evolution(trade_date, stock_detail, streak_dist, yesterday_codes)
+        loss_attr = self._build_loss_attribution(trade_date, loss_effect, relay, leader_evolution)
 
         return MarketMetricsSnapshot(
             trade_date=trade_date,
@@ -91,6 +93,7 @@ class MarketMetricsService:
             capital=capital, emotion_momentum=momentum,
             loss_effect=loss_effect,
             leader_evolution=leader_evolution,
+            loss_attribution=loss_attr,
             data_quality_score=0.85 if breadth.up_count > 0 else 0.5,
         )
 
@@ -506,20 +509,86 @@ class MarketMetricsService:
                                  stock_detail: dict[str, dict],
                                  today_streaks: dict[str, int],
                                  yesterday_codes: set[str]) -> LeaderEvolutionMetrics:
-        """Build leader evolution from streak data + stock details.
+        """Build leader evolution with expectation tracking (v2).
 
-        Detects high-board stocks and classifies state transitions.
+        Estimates yesterday heights from today's streaks:
+        - today streak 3+ means yesterday streak 2+
+        - subtract 1 from today's streak to estimate yesterday's height
         """
         from .leader_evolution import LeaderEvolutionBuilder
 
         # yesterday_high_boards: codes that were >= 2-board yesterday
-        # (today's streak >= 3 means yesterday streak >= 2)
         yesterday_high = {c for c, h in today_streaks.items()
                          if h >= 3 and c in yesterday_codes}
 
+        # yesterday_heights: estimate from today streak - 1
+        yesterday_heights = {}
+        for c, h in today_streaks.items():
+            if c in yesterday_codes:
+                yesterday_heights[c] = max(1, h - 1)
+        # Also include yesterday codes not in today's limitup (they broke)
+        for c in yesterday_codes:
+            if c not in today_streaks:
+                yesterday_heights[c] = 1  # at minimum 1-board yesterday
+
         builder = LeaderEvolutionBuilder()
         return builder.build(td, stock_detail, today_streaks,
-                            yesterday_codes, yesterday_high)
+                            yesterday_codes, yesterday_high, yesterday_heights)
+
+    @staticmethod
+    def _build_loss_attribution(td: date, loss: LossEffectMetrics | None,
+                                 relay: RelayEcologyMetrics,
+                                 leader: LeaderEvolutionMetrics | None) -> LossAttributionMetrics:
+        """Attribute losses to their source: high-board, leader, or specific themes.
+
+        Uses relay v2 data for yesterday's limit-up losses and leader evolution
+        for high-board/leader-specific breakdowns.
+        """
+        if loss is None:
+            return LossAttributionMetrics(trade_date=td)
+
+        ld_count = loss.limit_down_count
+        yest_loss = loss.big_loss_count  # from relay v2: 昨涨停今日大面
+        leader_loss = leader.break_count if leader else 0
+        hb_loss = leader_loss + min(ld_count, leader.yesterday_leader_count if leader else 0)
+
+        # Theme loss from leader breaks
+        theme_loss: dict[str, int] = {}
+        if leader:
+            for l in leader.leaders:
+                if l.status == "BREAK" and l.theme_hint:
+                    theme_loss[l.theme_hint] = theme_loss.get(l.theme_hint, 0) + 1
+
+        primary_theme = max(theme_loss, key=theme_loss.get) if theme_loss else ""
+        primary_count = theme_loss.get(primary_theme, 0)
+
+        concentrated_hb = hb_loss > ld_count * 0.3 if ld_count > 0 else False
+        concentrated_ldr = leader_loss > 0
+
+        # One-line conclusion
+        if ld_count == 0:
+            conclusion = "今日无显著亏钱效应"
+        elif concentrated_ldr and concentrated_hb:
+            conclusion = f"亏损集中于高位龙头方向({primary_theme}断板{leader_loss}只)，退潮风险高"
+        elif yest_loss > ld_count * 0.5:
+            conclusion = f"亏损集中于昨日涨停股(大面{yest_loss}只)，接力情绪差"
+        else:
+            conclusion = f"跌停{ld_count}家，大面{yest_loss}只，分布较分散"
+
+        return LossAttributionMetrics(
+            trade_date=td,
+            limit_down_count=ld_count,
+            high_board_loss_count=hb_loss,
+            yesterday_limitup_loss_count=yest_loss,
+            leader_loss_count=leader_loss,
+            theme_loss=theme_loss,
+            primary_loss_theme=primary_theme,
+            primary_loss_count=primary_count,
+            concentrated_high_board=concentrated_hb,
+            concentrated_leader=concentrated_ldr,
+            loss_conclusion=conclusion,
+            source=MetricSource("derived", "loss_effect + relay + leader_evolution", confidence=0.80),
+        )
 
     async def _build_loss_effect(self, conn, td: date, breadth: MarketBreadthMetrics,
                                   relay: RelayEcologyMetrics) -> LossEffectMetrics:
