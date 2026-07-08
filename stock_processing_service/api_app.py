@@ -7215,6 +7215,68 @@ async def save_playbook(
     }
 
 
+# ── M2.5 Market Metrics (canonical facts) ──
+
+@app.get("/api/v1/market-metrics/{trade_date}")
+async def get_market_metrics(trade_date: str) -> dict[str, Any]:
+    """Return MarketMetricsSnapshot — canonical facts for a trading day."""
+    from datetime import date as _date
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        svc = MarketMetricsService()
+        snap = await svc.get_async(td)
+        return {
+            "trade_date": snap.trade_date.isoformat(),
+            "calibration_applied": snap.calibration_applied,
+            "calibration_source": snap.calibration_source,
+            "calibration_fields": list(snap.calibration_fields),
+            "breadth": {
+                "up_count": snap.breadth.up_count,
+                "down_count": snap.breadth.down_count,
+                "limit_up_count": snap.breadth.limit_up_count,
+                "limit_down_count": snap.breadth.limit_down_count,
+                "up_ratio": snap.breadth.up_ratio,
+                "turnover_yi": snap.breadth.turnover_yi,
+                "turnover_display": f"{snap.breadth.turnover_yi / 10000:.2f}万亿" if snap.breadth.turnover_yi >= 10000 else f"{snap.breadth.turnover_yi:.1f}亿",
+                "source": snap.breadth.source.source_type,
+                "is_calibrated": snap.breadth.source.is_calibrated,
+            },
+            "limitup": {
+                "total_count": snap.limitup.total_count,
+                "chain_board_count": snap.limitup.chain_board_count,
+                "max_board_height": snap.limitup.max_board_height,
+                "max_turnover_board_height": snap.limitup.max_turnover_board_height,
+                "first_board_count": snap.limitup.first_board_count,
+                "source": snap.limitup.source.source_type,
+            },
+            "relay": {
+                "promotion_1_to_2": snap.relay.promotion_1_to_2,
+                "promotion_2_to_3": snap.relay.promotion_2_to_3,
+                "promotion_3_to_4": snap.relay.promotion_3_to_4,
+                "chain_board_count": snap.relay.chain_board_count,
+                "max_board_height": snap.relay.max_board_height,
+            },
+            "capital": {
+                "total_turnover_yi": snap.capital.total_turnover_yi,
+                "active_limitup_amount_yi": snap.capital.active_limitup_amount_yi,
+                "active_ratio": snap.capital.active_ratio,
+            },
+            "emotion_momentum": {
+                "momentum_raw": snap.emotion_momentum.momentum_raw,
+                "momentum_normalized": snap.emotion_momentum.momentum_normalized,
+                "first_board_red_ratio": snap.emotion_momentum.first_board_red_ratio,
+                "first_board_big_loss_ratio": snap.emotion_momentum.first_board_big_loss_ratio,
+            },
+        }
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 # ── M8.6 Market Diagnosis ──
 
 @app.get("/api/v1/diagnosis/{trade_date}")
