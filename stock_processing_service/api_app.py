@@ -7215,6 +7215,26 @@ async def save_playbook(
     }
 
 
+# ── M8.6 Market Diagnosis ──
+
+@app.get("/api/v1/diagnosis/{trade_date}")
+async def get_market_diagnosis(trade_date: str) -> dict[str, Any]:
+    """Return MarketDiagnosis tree for a trading day."""
+    from datetime import date as _date
+    from stock_processing_service.application.services.analyst_charts.diagnosis_engine import (
+        DiagnosisEngine,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        engine = DiagnosisEngine()
+        diagnosis = await engine.run_async(td)
+        return diagnosis.to_dict()
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 # ── P2.7 Analyst Charts (multi-day trends) ──
 
 @app.get("/api/v1/analyst-charts/{trade_date}/trends")
