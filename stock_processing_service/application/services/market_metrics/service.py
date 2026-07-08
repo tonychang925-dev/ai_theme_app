@@ -27,17 +27,6 @@ from .contracts import (
 
 DB_DSN = "postgresql://localhost:5432/stock_data_test"
 
-# PDF paths for analyst calibration
-PDF_PATHS: dict[str, dict[str, Any]] = {
-    "2026-07-07": {
-        "path": "/Users/admin/Desktop/7:7日复盘.pdf",
-        "limit_up": 33,
-        "turnover_wan_yi": 2.5,   # 2.5万亿
-        "emotion": "情绪冰点",
-        "max_turnover_board": "宜宾纸业",
-    },
-}
-
 
 class MarketMetricsService:
     """Produce MarketMetricsSnapshot — the single source of truth."""
@@ -51,45 +40,17 @@ class MarketMetricsService:
         try:
             recap = await self._load_recap(conn, trade_date)
             overview = recap.get("market_overview_review", {}) if recap else {}
-            calibration = PDF_PATHS.get(trade_date.isoformat(), {})
 
-            # ── Breadth ──
-            breadth = await self._build_breadth(trade_date, overview, calibration)
-
-            # ── Limit-up ──
-            limitup = await self._build_limitup(conn, trade_date, overview, calibration)
-
-            # ── Relay Ecology ──
+            breadth = await self._build_breadth(trade_date, overview, {})
+            limitup = await self._build_limitup(conn, trade_date, overview, {})
             relay = self._build_relay(limitup)
-
-            # ── Active Capital ──
             capital = await self._build_capital(conn, trade_date, breadth, overview)
-
-            # ── Emotion Momentum ──
             momentum = self._build_momentum(trade_date, breadth, limitup, overview)
-
-            # ── Fund Flow ──
-            # (placeholder — requires fund_flow table)
-
-            # Build calibrated fields list
-            calibrated_fields: list[str] = []
-            if calibration.get("limit_up"):
-                calibrated_fields.append("limit_up_count")
-            if calibration.get("turnover_wan_yi"):
-                calibrated_fields.append("turnover_yi")
-            if calibration.get("emotion"):
-                calibrated_fields.append("emotion_node")
 
             return MarketMetricsSnapshot(
                 trade_date=trade_date,
-                breadth=breadth,
-                limitup=limitup,
-                relay=relay,
-                capital=capital,
-                emotion_momentum=momentum,
-                calibration_applied=bool(calibration),
-                calibration_source="analyst_pdf" if calibration else "",
-                calibration_fields=tuple(calibrated_fields),
+                breadth=breadth, limitup=limitup, relay=relay,
+                capital=capital, emotion_momentum=momentum,
                 data_quality_score=0.85 if breadth.up_count > 0 else 0.5,
             )
 
@@ -101,92 +62,78 @@ class MarketMetricsService:
     async def _build_breadth(self, td: date, overview: dict, cal: dict) -> MarketBreadthMetrics:
         up = int(overview.get("up_count", 0) or 0)
         down = int(overview.get("down_count", 0) or 0)
-        lu_raw = int(overview.get("limit_up_total", 0) or 0)
+        lu = int(overview.get("limit_up_total", 0) or 0)
         ld = int(overview.get("limit_down_total", 0) or 0)
         raw_amount = float(overview.get("total_amount", 0) or 0)
-
-        # PDF calibration overrides
-        lu = cal.get("limit_up", lu_raw)
-        if cal.get("turnover_wan_yi"):
-            turnover_yi = normalize_to_yi(cal["turnover_wan_yi"], "wan_yi")
-        else:
-            # recap total_amount is in 万元 → convert to 亿元
-            turnover_yi = normalize_to_yi(raw_amount, "wan")
-
-        is_cal = lu != lu_raw or cal.get("turnover_wan_yi")
+        # recap total_amount is in 万元 → 亿元
+        turnover_yi = normalize_to_yi(raw_amount, "wan")
 
         return MarketBreadthMetrics(
             up_count=up, down_count=down,
             limit_up_count=lu, limit_down_count=ld,
             up_ratio=round(up / max(up + down, 1), 3),
             turnover_yi=turnover_yi,
-            source=MetricSource(
-                "recap_snapshot" if not is_cal else "pdf_calibrated",
-                "market_overview_review",
-                confidence=0.9,
-                is_calibrated=is_cal,
-            ),
+            source=MetricSource("recap_snapshot", "market_overview_review", confidence=0.9),
         )
 
     async def _build_limitup(self, conn, td: date, overview: dict, cal: dict) -> LimitUpMetrics:
-        """Get real limit-up and chain board stats from stock_daily_snapshot."""
-        lu_total = cal.get("limit_up") or int(overview.get("limit_up_total", 0) or 0)
+        """Get real limit-up and chain board stats from stock_daily_snapshot.
 
-        # Query real data: stocks with pct_chg >= 9.5
+        Computes max_board_height by checking consecutive limit-up days
+        for each stock, up to 10 trading days back.
+        """
+        # Query today's limit-up stocks
         rows = await conn.fetch(
             "SELECT stock_id, stock_name, pct_chg FROM stock_daily_snapshot "
             "WHERE trade_date = $1::date AND pct_chg >= 9.5 "
             "ORDER BY pct_chg DESC", td
         )
         actual_lu = len(rows)
+        today_stocks = {r["stock_id"]: 1 for r in rows}  # stock_id → current streak
 
-        # Chain board: check if stock was also limit-up yesterday
-        chain_count = 0
-        max_h = 1
-        if actual_lu > 0:
-            yesterday_date = await self._prev_trade_date(conn, td)
-            if yesterday_date:
-                y_rows = await conn.fetch(
-                    "SELECT stock_id FROM stock_daily_snapshot "
-                    "WHERE trade_date = $1::date AND pct_chg >= 9.5", yesterday_date
-                )
-                y_set = {r["stock_id"] for r in y_rows}
-                for r in rows:
-                    if r["stock_id"] in y_set:
-                        chain_count += 1
-                # 3板+: check 2 days ago
-                if chain_count > 0:
-                    day3 = await self._prev_trade_date(conn, yesterday_date)
-                    if day3:
-                        d3_set = {r["stock_id"] for r in await conn.fetch(
-                            "SELECT stock_id FROM stock_daily_snapshot "
-                            "WHERE trade_date = $1::date AND pct_chg >= 9.5", day3
-                        )}
-                        for r in rows:
-                            if r["stock_id"] in y_set and r["stock_id"] in d3_set:
-                                max_h = max(max_h, 3)
-                if chain_count > 0:
-                    max_h = max(max_h, 2)
+        # Get previous 10 trading dates for chain board calculation
+        prev_dates = []
+        cursor = td
+        for _ in range(10):
+            row = await conn.fetchrow(
+                "SELECT MAX(trade_date) as d FROM post_market_recap_snapshot "
+                "WHERE trade_date < $1::date", cursor)
+            if not row or not row["d"]:
+                break
+            prev_dates.append(row["d"])
+            cursor = row["d"]
 
-        # Use calibrated LU if available, otherwise use actual query count
-        lu_final = cal.get("limit_up", actual_lu or lu_total)
-        max_turnover_h = max(1, max_h)
-        first_count = max(0, lu_final - chain_count)
+        # For each previous date, check which stocks continued their streak
+        for prev_d in prev_dates:
+            prev_rows = await conn.fetch(
+                "SELECT stock_id FROM stock_daily_snapshot "
+                "WHERE trade_date = $1::date AND pct_chg >= 9.5", prev_d)
+            prev_set = {r["stock_id"] for r in prev_rows}
+            extended = False
+            for sid in list(today_stocks.keys()):
+                if sid in prev_set:
+                    today_stocks[sid] += 1
+                    extended = True
+                else:
+                    pass  # streak broken
+            if not extended:
+                break  # no more stocks continuing streaks
+
+        # Stats from computed streaks
+        max_h = max(today_stocks.values()) if today_stocks else 1
+        chain_count = sum(1 for h in today_stocks.values() if h >= 2)
+        first_count = actual_lu - chain_count
+        max_turnover_h = max_h
 
         return LimitUpMetrics(
-            total_count=lu_final,
+            total_count=actual_lu,
             chain_board_count=chain_count,
             max_board_height=max_h,
             max_turnover_board_height=max_turnover_h,
             first_board_count=first_count,
-            sealed_board_ratio=round(min(1.0, actual_lu / max(lu_final, 1)), 2) if lu_final else 0.7,
-            fried_board_count=max(0, lu_final - actual_lu),
-            source=MetricSource(
-                "db_query" if not cal.get("limit_up") else "pdf_calibrated",
-                "stock_daily_snapshot",
-                confidence=0.85,
-                is_calibrated=bool(cal.get("limit_up")),
-            ),
+            sealed_board_ratio=round(min(1.0, actual_lu / max(actual_lu, 1)), 2),
+            fried_board_count=0,
+            source=MetricSource("db_query", "stock_daily_snapshot", confidence=0.85),
         )
 
     @staticmethod
