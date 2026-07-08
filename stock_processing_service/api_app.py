@@ -7285,6 +7285,7 @@ async def get_evidence_artifacts(
                     "artifact_id": c["chart_id"],
                     "trade_date": c["trade_date"],
                     "artifact_type": "chart",
+                    "chart_type": c.get("chart_type", ""),
                     "title": c["title"],
                     "source": "system_generated",
                     "related_module": c["module"],

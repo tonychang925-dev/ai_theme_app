@@ -420,34 +420,36 @@ class ChartReproductionEngine:
 
     def _chart_institution_style(self, td: date, recap: dict) -> dict[str, Any]:
         """Chart 5: Institution Style (机构资金审美方向) — PDF page 7."""
+        # Use mainline_lifecycle_reviews + theme_reviews for real institution data
+        lifecycle_reviews = recap.get("mainline_lifecycle_reviews", [])
         theme_reviews = recap.get("theme_reviews", [])
-        mainline_reviews = recap.get("mainline_reviews", [])
         regime = recap.get("market_regime_review", {})
 
-        # Build institution direction table
         directions: list[dict[str, Any]] = []
         seen_names = set()
+        # First from lifecycle_reviews (has richer state data)
+        for t in lifecycle_reviews:
+            if not isinstance(t, dict):
+                continue
+            name = str(t.get("theme_name", t.get("subject_name", ""))).strip()
+            if not name or name in seen_names:
+                continue
+            seen_names.add(name)
+            state = str(t.get("cycle_state", t.get("state", "观察")))
+            d_state = self._inst_state_label(state)
+            if len(directions) < 12:
+                directions.append({"name": name, "state": d_state})
+
+        # Supplement from theme_reviews
         for t in theme_reviews:
             name = str(t.get("theme_name", "")).strip()
             if not name or name.startswith("【") or name in seen_names:
                 continue
             seen_names.add(name)
-            stage = str(t.get("theme_stage", "start"))
-            state = str(t.get("final_cycle_state", stage))
             ms = float(t.get("mainline_strength_score", 50))
-
-            if state == "divergence" and ms < 50:
-                d_state = "调整中"
-            elif state == "repair":
-                d_state = "修复中"
-            elif state == "start":
-                d_state = "启动观察"
-            elif ms > 60:
-                d_state = "趋势向上"
-            else:
-                d_state = "震荡"
-
-            if len(directions) < 12:
+            fc = str(t.get("final_cycle_state", ""))
+            d_state = self._inst_state_label(fc, ms)
+            if len(directions) < 15:
                 directions.append({"name": name, "state": d_state, "score": round(ms, 1)})
 
         market_mode = str(regime.get("trade_mode", "wait"))
@@ -470,38 +472,70 @@ class ChartReproductionEngine:
                 "label": s_label,
             },
             "interpretation": (
-                f"机构资金风格：{s_label}。"
+                f"机构资金风格：{s_label}（{market_mode}）。"
                 + f"共跟踪{len(directions)}个方向。"
                 + ("多数方向仍在调整。" if s_label != "机构趋势主导" else "趋势方向确认。")
             ),
         }
 
+    @staticmethod
+    def _inst_state_label(cycle_state: str, ms: float = 50) -> str:
+        if cycle_state in ("divergence", "分歧"):
+            return "调整中" if ms < 50 else "高位分歧"
+        elif cycle_state in ("repair", "修复"):
+            return "修复中"
+        elif cycle_state in ("fermentation", "start", "启动", "发酵"):
+            return "启动观察"
+        elif cycle_state in ("acceleration", "加速", "高潮"):
+            return "趋势向上"
+        elif cycle_state in ("fade_watch", "退潮观察"):
+            return "退潮中"
+        elif cycle_state in ("fade_confirmed", "退潮确认"):
+            return "退潮确认"
+        return "震荡"
+
     def _chart_hot_money(self, td: date, recap: dict) -> dict[str, Any]:
         """Chart 6: Hot Money Direction (游资方向) — PDF page 8-9."""
-        theme_reviews = recap.get("theme_reviews", [])
+        # Use strong_hotspot_subjects + mainline_hotspots for real hot money data
+        strong_hotspots = recap.get("strong_hotspot_subjects", [])
+        mainline_hotspots = recap.get("mainline_hotspots", [])
         overview = recap.get("market_overview_review", {})
         limit_up = int(overview.get("limit_up_total", 0) or 0)
 
         hot_directions: list[dict[str, Any]] = []
         seen = set()
-        for t in theme_reviews:
-            name = str(t.get("theme_name", "")).strip()
-            if not name or name.startswith("【") or name in seen:
+        # Use strong_hotspot_subjects first (has proper theme names)
+        for h in strong_hotspots:
+            if not isinstance(h, dict):
                 continue
-            seen.add(name)
-            inflow = float(t.get("total_inflow", 0) or 0)
-            leader_inflow = float(t.get("leader_inflow", 0) or 0)
-            action = str(t.get("action_advice", "") or "")
+            name = str(h.get("theme_name", "")).strip()
+            sk = str(h.get("subject_key", ""))
+            if not name or name.startswith("【") or sk in seen:
+                continue
+            seen.add(sk)
+            cycle = str(h.get("cycle_state", ""))
+            source = str(h.get("source", ""))
 
-            if leader_inflow > 0 or "接力" in action:
-                hm_state = "游资关注"
-            elif inflow > 0:
-                hm_state = "资金试探"
+            if "mainline" in source:
+                state = "游资关注" if cycle == "confirmed" else "观察中"
             else:
-                hm_state = "暂未关注"
+                state = "方向跟踪"
 
-            if len(hot_directions) < 10:
-                hot_directions.append({"name": name, "state": hm_state, "inflow": round(inflow, 1)})
+            if len(hot_directions) < 12:
+                hot_directions.append({"name": name, "state": state, "cycle": cycle})
+
+        # Fallback to mainline_hotspots
+        if not hot_directions:
+            for h in mainline_hotspots:
+                if not isinstance(h, dict):
+                    continue
+                sk = str(h.get("subject_key", ""))
+                if sk in seen:
+                    continue
+                seen.add(sk)
+                name = str(h.get("theme_name", sk))
+                if len(hot_directions) < 12:
+                    hot_directions.append({"name": name, "state": "观察中"})
 
         if limit_up > 80:
             h_label = "游资活跃"

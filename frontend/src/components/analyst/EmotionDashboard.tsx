@@ -331,7 +331,7 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
                     <ChartRenderer chart={{
                       chart_id: a.artifact_id,
                       trade_date: a.trade_date,
-                      chart_type: a.artifact_type === "chart" ? (a.title.includes("势能") ? "market_breadth" : a.title.includes("动能") ? "emotion_momentum" : a.title.includes("资金") ? "active_capital" : a.title.includes("节律") ? "relay_ecology" : a.title.includes("机构") ? "institution_style" : a.title.includes("游资") ? "hot_money_style" : a.title.includes("涨停") ? "limitup_classification" : "market_breadth") : "market_breadth",
+                      chart_type: a.chart_type || (a.title.includes("势能") ? "market_breadth" : a.title.includes("动能") ? "emotion_momentum" : a.title.includes("节律") ? "relay_ecology" : a.title.includes("机构") ? "institution_style" : a.title.includes("游资") ? "hot_money_style" : a.title.includes("涨停") ? "limitup_classification" : a.title.includes("资金") ? "active_capital" : "market_breadth"),
                       title: a.title,
                       data: a.extracted_metrics || {},
                       interpretation: a.summary || "",
