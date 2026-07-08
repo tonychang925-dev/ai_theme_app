@@ -94,6 +94,65 @@ class ChartReproductionEngine:
         finally:
             await conn.close()
 
+    async def run_trend_async(self, trade_date: date, days: int = 7) -> dict[str, Any]:
+        """Generate multi-day trend data for line charts."""
+        import asyncpg
+        conn = await asyncpg.connect(DB_DSN, user="postgres", password="")
+        try:
+            # Get last N trading days with recap data
+            rows = await conn.fetch(
+                "SELECT DISTINCT trade_date FROM post_market_recap_snapshot "
+                "WHERE trade_date <= $1::date ORDER BY trade_date DESC LIMIT $2",
+                trade_date, days,
+            )
+            dates = [r["trade_date"] for r in rows][::-1]  # oldest first
+
+            trend = {
+                "trade_date": trade_date.isoformat(),
+                "dates": [d.isoformat() for d in dates],
+                "breadth": [],
+                "momentum": [],
+                "capital": [],
+                "relay": [],
+            }
+
+            for td in dates:
+                recap = await self._load_recap(conn, td)
+                if not recap:
+                    continue
+                overview = recap.get("market_overview_review", {})
+                regime = recap.get("market_regime_review", {})
+
+                up = int(overview.get("up_count", 0) or 0)
+                down = int(overview.get("down_count", 0) or 0)
+                lu = int(overview.get("limit_up_total", 0) or 0)
+                ld = int(overview.get("limit_down_total", 0) or 0)
+                amount = float(overview.get("total_amount", 0) or 0) / 10_000
+                total = up + down or 1
+                up_ratio = round(up / total, 3)
+
+                # Breadth: composite score
+                b_score = int((up_ratio - 0.5) * 200 + (lu - 50) * 0.5)
+
+                # Momentum: estimated from up_ratio
+                m_score = round(up_ratio * 100 - 50 + lu * 0.05, 1)
+
+                # Capital: total in 万亿
+                c_val = round(amount / 10_000, 1)
+
+                # Relay: max board height estimate
+                max_h = max(1, min(8, lu // 25))
+                r_val = max_h
+
+                trend["breadth"].append({"date": td.isoformat(), "up": up, "down": down, "limit_up": lu, "limit_down": ld, "score": b_score})
+                trend["momentum"].append({"date": td.isoformat(), "score": m_score, "limit_up": lu})
+                trend["capital"].append({"date": td.isoformat(), "amount": c_val, "limit_up": lu})
+                trend["relay"].append({"date": td.isoformat(), "max_height": r_val, "limit_up": lu})
+
+            return trend
+        finally:
+            await conn.close()
+
     def _apply_pdf_overrides(self, charts: list[dict], pdf_metrics: dict, pdf_text: str) -> None:
         """Override chart data with analyst-verified numbers from PDF."""
         for c in charts:

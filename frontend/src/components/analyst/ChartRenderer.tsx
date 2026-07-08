@@ -5,6 +5,66 @@ interface ChartData {
   title: string; data: Record<string, any>; interpretation: string;
 }
 
+// ── Multi-day Trend Chart ──
+
+interface TrendPoint { date: string; [key: string]: any; }
+
+export function TrendLineChart({ title, data, yKey, yLabel, color, yMax }: {
+  title: string; data: TrendPoint[]; yKey: string; yLabel: string; color: string; yMax?: number;
+}) {
+  if (!data || data.length < 2) return null;
+  const W2 = 360, H2 = 140;
+  const values = data.map(d => d[yKey] || 0);
+  const maxV = yMax || Math.max(...values, 1);
+  const minV = Math.min(...values, 0);
+  const range = maxV - minV || 1;
+  const px = PAD.left, py = PAD.top, pw = W2 - PAD.left - PAD.right, ph = H2 - PAD.top - PAD.bottom;
+
+  const pts = data.map((d, i) => {
+    const x = px + (i / (data.length - 1)) * pw;
+    const y = py + ph - ((d[yKey] - minV) / range) * ph;
+    return `${x},${y}`;
+  }).join(" ");
+
+  // Fill area under line
+  const fillPts = `${px},${py + ph} ${pts} ${px + pw},${py + ph}`;
+
+  return (
+    <div style={{ marginBottom: 12 }}>
+      <div style={{ fontWeight: 600, color: "#ffd85e", marginBottom: 4, fontSize: 12 }}>{title}</div>
+      <svg width={W2} height={H2} style={{ background: "#0c1118" }}>
+        {/* Grid */}
+        {[0, 0.25, 0.5, 0.75, 1].map(pct => {
+          const y = py + ph * (1 - pct);
+          return <g key={pct}>
+            <line x1={px} y1={y} x2={px + pw} y2={y} stroke="#1a2a3a" strokeWidth={0.5} />
+            <text x={px - 4} y={y + 4} textAnchor="end" fill="#5a7a8a" fontSize={8}>{Math.round(minV + range * pct)}</text>
+          </g>;
+        })}
+        {/* Area fill */}
+        <polygon points={fillPts} fill={color} opacity={0.1} />
+        {/* Line */}
+        <polyline points={pts} fill="none" stroke={color} strokeWidth={2} />
+        {/* Dots */}
+        {data.map((d, i) => {
+          const x = px + (i / (data.length - 1)) * pw;
+          const y = py + ph - ((d[yKey] - minV) / range) * ph;
+          return <g key={i}>
+            <circle cx={x} cy={y} r={4} fill={color} />
+            <text x={x} y={y - 8} textAnchor="middle" fill={color} fontSize={9} fontWeight={600}>{d[yKey]}</text>
+          </g>;
+        })}
+        {/* X labels */}
+        {data.map((d, i) => {
+          const x = px + (i / (data.length - 1)) * pw;
+          const label = (d.date || "").slice(5); // MM-DD
+          return <text key={i} x={x} y={H2 - 4} textAnchor="middle" fill="#5a7a8a" fontSize={8}>{label}</text>;
+        })}
+      </svg>
+    </div>
+  );
+}
+
 export function ChartRenderer({ chart }: { chart: ChartData }) {
   switch (chart.chart_type) {
     case "market_breadth": return <BreadthChart data={chart.data} title={chart.title} interpretation={chart.interpretation} />;

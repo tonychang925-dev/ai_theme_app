@@ -7215,6 +7215,25 @@ async def save_playbook(
     }
 
 
+# ── P2.7 Analyst Charts (multi-day trends) ──
+
+@app.get("/api/v1/analyst-charts/{trade_date}/trends")
+async def get_analyst_chart_trends(trade_date: str, days: int = 7) -> dict[str, Any]:
+    """Return multi-day trend data for line charts."""
+    from datetime import date as _date
+    from stock_processing_service.application.services.analyst_charts.chart_engine import (
+        ChartReproductionEngine,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        engine = ChartReproductionEngine()
+        return await engine.run_trend_async(td, days)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 # ── P2.7 Analyst Charts ──
 
 @app.get("/api/v1/analyst-charts/{trade_date}")

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { ChartRenderer } from "./ChartRenderer";
+import { ChartRenderer, TrendLineChart } from "./ChartRenderer";
 
 interface EvidenceArtifact {
   artifact_id: string;
@@ -93,7 +93,15 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   const [loading, setLoading] = useState(true);
   const [artifacts, setArtifacts] = useState<EvidenceArtifact[]>([]);
   const [showEvidence, setShowEvidence] = useState(false);
+  const [trendData, setTrendData] = useState<any>(null);
   const trend = useEmotionTrend(tradeDate);
+
+  const loadTrends = useCallback(async () => {
+    try {
+      const resp = await fetch(`http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}/trends?days=7`);
+      if (resp.ok) setTrendData(await resp.json());
+    } catch { /* ignore */ }
+  }, [tradeDate]);
 
   const loadArtifacts = useCallback(async () => {
     try {
@@ -296,13 +304,22 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
       {/* ── Evidence Charts (collapsible) ── */}
       <div style={{ marginTop: 10 }}>
         <div
-          onClick={() => { setShowEvidence(!showEvidence); if (!showEvidence) loadArtifacts(); }}
+          onClick={() => { setShowEvidence(!showEvidence); if (!showEvidence) { loadArtifacts(); loadTrends(); } }}
           style={{ fontSize: 11, color: "#5a7a8a", cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}>
-          <span>{showEvidence ? "▼" : "▶"} 证据图表 Evidence Charts</span>
+          <span>{showEvidence ? "▼" : "▶"} 分析师图表 Evidence Charts</span>
           {artifacts.length > 0 && <span style={{ color: "#66d9ef" }}>({artifacts.length})</span>}
         </div>
         {showEvidence && (
           <div style={{ marginTop: 8 }}>
+            {/* Multi-day trend line charts */}
+            {trendData && (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(370px, 1fr))", gap: 10, marginBottom: 12, padding: 10, background: "#111720", borderRadius: 4 }}>
+                <TrendLineChart title="涨停家数趋势" data={trendData.breadth || []} yKey="limit_up" yLabel="涨停" color="#e53e3e" />
+                <TrendLineChart title="情绪动能趋势" data={trendData.momentum || []} yKey="score" yLabel="动能" color="#dd6b20" />
+                <TrendLineChart title="活跃资金趋势（万亿）" data={trendData.capital || []} yKey="amount" yLabel="万亿" color="#66d9ef" />
+                <TrendLineChart title="最高板高度" data={trendData.relay || []} yKey="max_height" yLabel="板" color="#d69e2e" />
+              </div>
+            )}
             {/* System-generated charts — rendered visually */}
             {artifacts.some(a => a.source === "system_generated") && (
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: 10, marginBottom: 12 }}>
