@@ -403,7 +403,7 @@ export function AnalystWorkspacePage() {
   const fetchWorkspace = useCallback(async (d: string) => {
     setLoading(true);
     try {
-      const resp = await fetch(`/api/v1/analyst-workspace/${d}`);
+      const resp = await fetch(`http://127.0.0.1:8090/api/v1/analyst-workspace/${d}`);
       if (!resp.ok) throw new Error(`${resp.status}`);
       const data = await resp.json();
       setWorkspace(data);
@@ -421,7 +421,7 @@ export function AnalystWorkspacePage() {
     if (!workspace) return;
     setSaving(true);
     try {
-      const resp = await fetch(`/api/v1/analyst-workspace/${dateInput}/save`, {
+      const resp = await fetch(`http://127.0.0.1:8090/api/v1/analyst-workspace/${dateInput}/save`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(workspace),

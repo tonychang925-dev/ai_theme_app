@@ -66,7 +66,7 @@ export function AttentionRadar() {
     setLoading(true);
     setError(null);
     try {
-      const resp = await fetch(`/api/v1/attention/${date}`);
+      const resp = await fetch(`http://127.0.0.1:8090/api/v1/attention/${date}`);
       if (!resp.ok) throw new Error(`${resp.status} ${resp.statusText}`);
       const data = await resp.json();
       setState(data);
@@ -90,7 +90,7 @@ export function AttentionRadar() {
     setOverrides((prev) => ({ ...prev, [subjectId]: newLevel }));
 
     try {
-      await fetch(`/api/v1/attention/${tradeDate}/override`, {
+      await fetch(`http://127.0.0.1:8090/api/v1/attention/${tradeDate}/override`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

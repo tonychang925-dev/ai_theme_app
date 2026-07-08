@@ -76,7 +76,7 @@ function useEmotionTrend(tradeDate: string) {
 
     Promise.all(
       dates.map(dt =>
-        fetch(`/api/v1/emotion/${dt}`)
+        fetch(`http://127.0.0.1:8090/api/v1/emotion/${dt}`)
           .then(r => r.json())
           .then(data => ({ date: dt, node: (data && data.emotion_node) || "CHAOS", score: (data && data.emotion_score) || 0 }))
           .catch(() => ({ date: dt, node: "CHAOS", score: 0 }))
@@ -97,14 +97,14 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
 
   const loadArtifacts = useCallback(async () => {
     try {
-      const resp = await fetch(`/api/v1/evidence-artifacts/${tradeDate}?module=emotion`);
+      const resp = await fetch(`http://127.0.0.1:8090/api/v1/evidence-artifacts/${tradeDate}?module=emotion`);
       if (resp.ok) setArtifacts(await resp.json());
     } catch { /* ignore */ }
   }, [tradeDate]);
 
   useEffect(() => {
     setLoading(true);
-    fetch(`/api/v1/emotion/${tradeDate}`)
+    fetch(`http://127.0.0.1:8090/api/v1/emotion/${tradeDate}`)
       .then(r => r.json()).then(d => { setEmotion(d); setLoading(false); })
       .catch(() => setLoading(false));
   }, [tradeDate]);

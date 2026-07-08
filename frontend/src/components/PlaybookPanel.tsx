@@ -64,7 +64,7 @@ export function PlaybookPanel({ tradeDate, subjectId, subjectName, onClose }: Pr
   const fetchPlaybook = useCallback(async () => {
     setLoading(true);
     try {
-      const resp = await fetch(`/api/v1/playbook/${tradeDate}/${encodeURIComponent(subjectId)}`);
+      const resp = await fetch(`http://127.0.0.1:8090/api/v1/playbook/${tradeDate}/${encodeURIComponent(subjectId)}`);
       if (!resp.ok) throw new Error(`${resp.status}`);
       const data = await resp.json();
       setPlaybook(data);
@@ -98,7 +98,7 @@ export function PlaybookPanel({ tradeDate, subjectId, subjectName, onClose }: Pr
   const handleSave = async () => {
     setSaving(true);
     try {
-      const resp = await fetch(`/api/v1/playbook/${tradeDate}/${encodeURIComponent(subjectId)}/save`, {
+      const resp = await fetch(`http://127.0.0.1:8090/api/v1/playbook/${tradeDate}/${encodeURIComponent(subjectId)}/save`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...playbook, ...Object.fromEntries(Object.entries(draftValues).map(([k, v]) => [k, v])), analyst_overrides: overrides }),
