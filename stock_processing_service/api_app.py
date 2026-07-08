@@ -7563,36 +7563,6 @@ async def get_market_narrative(trade_date: str) -> dict[str, Any]:
 
 # ── M2.5 Phase 3.1b: Analyst Replay Benchmark ──
 
-@app.get("/api/v1/metrics/replay-benchmark/{trade_date}")
-async def get_replay_benchmark(trade_date: str, analyst_text: str = "") -> dict[str, Any]:
-    """Score AI narrative against analyst PDF for a single trading day.
-
-    Query param 'analyst_text': raw text extracted from analyst PDF.
-    Returns per-dimension scores and mismatch details.
-    """
-    from datetime import date as _date
-    from stock_processing_service.application.services.market_metrics.service import (
-        MarketMetricsService,
-    )
-    from stock_processing_service.application.services.market_metrics.narrative_engine import (
-        NarrativeEngine,
-    )
-    from stock_processing_service.application.services.market_metrics.replay_benchmark import (
-        ReplayBenchmark,
-    )
-    try:
-        td = _date.fromisoformat(trade_date)
-        snap = MarketMetricsService().get(td)
-        story = NarrativeEngine().generate(snap)
-        bench = ReplayBenchmark()
-        record = bench.score_one(story, analyst_text or "")
-        return record.to_dict()
-    except ValueError:
-        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
-    except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc))
-
-
 # ── M2.5 Phase 3.3: Market Memory ──
 
 @app.get("/api/v1/market-memory/{trade_date}")
@@ -7678,6 +7648,72 @@ async def get_market_memory(trade_date: str, top_n: int = 5) -> dict[str, Any]:
             } for dt, d, sig, sim in engine.find_similar_sequence(seq, top_n=5)]
             result["query_path"] = seq.path_signature
         return result
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+# ── M2.5 Phase 3.4: Replay Benchmark ──
+
+@app.get("/api/v1/metrics/replay-benchmark/{trade_date}")
+async def get_replay_benchmark(trade_date: str) -> dict[str, Any]:
+    """Score AI vs analyst alignment for a trading day (100-point scale).
+
+    L0(50): fact accuracy — limit-up, turnover, height, relay, sealed
+    L1(25): state recognition — phase/emotion match
+    L2(15): risk recognition — death index + risk level match
+    L3(10): strategy alignment — allowed/forbidden match
+    """
+    from datetime import date as _date
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
+    from stock_processing_service.application.services.market_metrics.narrative_engine import (
+        NarrativeEngine,
+    )
+    from stock_processing_service.application.services.market_metrics.replay_benchmark import (
+        ReplayEngine,
+        build_20260707_reference,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        snap = MarketMetricsService().get(td)
+        story = NarrativeEngine().generate(snap)
+
+        engine = ReplayEngine()
+        # Register known reference cases
+        if td == _date(2026, 7, 7):
+            engine.add_reference(build_20260707_reference())
+
+        result = engine.score_one(snap, story)
+        return {
+            "trade_date": trade_date,
+            "ai": {
+                "phase": result.ai_phase,
+                "risk": result.ai_risk,
+                "death_label": result.ai_death_label,
+                "death_index": result.ai_death_index,
+                "headline": result.ai_headline,
+                "strategy": result.ai_strategy,
+            },
+            "reference": {
+                "phase": result.reference.market_phase,
+                "risk": result.reference.risk_level,
+                "notes": result.reference.analyst_notes,
+            },
+            "scores": {
+                "l0_facts": result.scores.l0_total,
+                "l1_state": result.scores.l1_total,
+                "l2_risk": result.scores.l2_total,
+                "l3_strategy": result.scores.l3_total,
+                "overall": result.scores.overall,
+                "grade": result.scores.grade,
+            },
+            "matches": result.scores.match_details,
+            "mismatches": result.scores.mismatch_details,
+            "explain": result.explain,
+        }
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
     except Exception as exc:
