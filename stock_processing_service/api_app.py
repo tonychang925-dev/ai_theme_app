@@ -7593,6 +7593,74 @@ async def get_replay_benchmark(trade_date: str, analyst_text: str = "") -> dict[
         raise HTTPException(status_code=500, detail=str(exc))
 
 
+# ── M2.5 Phase 3.3: Market Memory ──
+
+@app.get("/api/v1/market-memory/{trade_date}")
+async def get_market_memory(trade_date: str, top_n: int = 5) -> dict[str, Any]:
+    """Return similar historical market states and transition analysis.
+
+    Retrieves top-N most similar trading days from history and analyzes
+    what happened next — the AI equivalent of "I have seen this before."
+    """
+    from datetime import date as _date, timedelta
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
+    from stock_processing_service.application.services.market_metrics.market_memory import (
+        MarketMemoryEngine,
+        MarketFingerprint,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+
+        # Build memory from recent history (last 90 days)
+        engine = MarketMemoryEngine()
+        svc = MarketMetricsService()
+        snapshots = svc.get_range(td - timedelta(days=90), td)
+        for s in snapshots:
+            fp = MarketFingerprint.from_snapshot(s)
+            engine.remember(fp)
+
+        # Query today
+        snap_today = svc.get(td)
+        query_fp = MarketFingerprint.from_snapshot(snap_today)
+        analysis = engine.analyze_transition(query_fp, top_n=top_n)
+
+        return {
+            "query_date": trade_date,
+            "query_fingerprint": {
+                "phase_bucket": query_fp.phase_bucket,
+                "death_bucket": query_fp.death_bucket,
+                "feedback_bucket": query_fp.feedback_bucket,
+                "raw_values": query_fp.raw_values,
+            },
+            "similar_days": [{
+                "date": s.trade_date.isoformat(),
+                "distance": s.distance,
+                "similarity_pct": s.similarity_pct,
+                "transition_label": s.transition_label,
+                "next_day_phase": s.next_day_phase,
+            } for s in analysis.similar_days],
+            "transition": {
+                "total_similar": analysis.total_similar,
+                "improved_pct": analysis.improved_pct,
+                "worsened_pct": analysis.worsened_pct,
+                "stable_pct": analysis.stable_pct,
+                "expected_next_phase": analysis.expected_next_phase,
+                "avg_next_feedback": analysis.avg_next_feedback,
+            },
+            "memory_summary": analysis.memory_summary,
+            "best_match": {
+                "date": analysis.best_match_date.isoformat() if analysis.best_match_date else None,
+                "narrative": analysis.best_match_narrative,
+            },
+        }
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 # ── P2.6.1 Evidence Artifacts ──
 
 @app.get("/api/v1/evidence-artifacts/{trade_date}")
