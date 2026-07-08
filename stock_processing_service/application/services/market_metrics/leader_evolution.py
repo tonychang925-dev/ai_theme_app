@@ -42,11 +42,12 @@ class LeaderEvolutionBuilder:
     def build(
         self,
         trade_date: date,
-        today_limitup: dict[str, dict],       # code → {name, pct_chg, sealed, reason_tags, turnover_rate}
-        today_streaks: dict[str, int],         # code → board_height
+        today_limitup: dict[str, dict],
+        today_streaks: dict[str, int],
         yesterday_codes: set[str],
-        yesterday_high_boards: set[str],      # yesterday streak >= 2
-        yesterday_heights: dict[str, int],    # code → yesterday's board height (estimated)
+        yesterday_high_boards: set[str],
+        yesterday_heights: dict[str, int],
+        market_max_height: int = 5,
     ) -> LeaderEvolutionMetrics:
         """Classify leaders with expectation tracking."""
 
@@ -121,6 +122,9 @@ class LeaderEvolutionBuilder:
                 surprise = -15
                 s_reason = f"板位下降{expected_h}→{height}但封板"
 
+            # ── Relative height ──
+            rel_h = round(height / max(market_max_height, 1), 2)
+
             # ── Quality scores ──
             height_score = min(30, (height - 2) * 10)
             seal_score = 30 if sealed else 0
@@ -157,14 +161,22 @@ class LeaderEvolutionBuilder:
             surprise = round(height_surprise * 0.5 + capital_surprise * 0.3 + theme_surprise * 0.2, 1)
             surprises.append(surprise)
 
+            # Death type for today's active leaders
+            dt = ""
+            if not sealed and status.startswith("WEAKEN"):
+                dt = "FRIED"
+            elif status == "BREAK":
+                dt = "NORMAL"
+
             leaders.append(LeaderSnapshot(
                 stock_code=code, stock_name=stock_name,
-                board_height=height, status=status,
+                board_height=height, relative_height=rel_h,
+                status=status,
                 expected_height=expected_h, surprise_score=surprise,
                 strength_score=round(strength, 1),
                 risk_score=round(risk, 1),
                 sealed=sealed, theme_hint=theme_hint,
-                reason=s_reason,
+                reason=s_reason, death_type=dt,
             ))
 
         # ── Count breaks (yesterday leaders NOT in today's limitup) ──
@@ -176,11 +188,13 @@ class LeaderEvolutionBuilder:
                 surprise = -30 - yest_h * 10  # -40 for 2-board, -60 for 3-board, etc.
                 surprises.append(round(surprise, 1))
                 info = today_limitup.get(code, {}) if code in today_limitup else {}
+                rel_h = round(yest_h / max(market_max_height, 1), 2)
                 leaders.append(LeaderSnapshot(
                     stock_code=code, stock_name=info.get("name", code),
-                    board_height=0, status="BREAK",
+                    board_height=0, relative_height=rel_h,
+                    status="BREAK",
                     expected_height=yest_h + 1, surprise_score=round(surprise, 1),
-                    strength_score=0, risk_score=100, sealed=False,
+                    strength_score=0, risk_score=100, sealed=False, death_type="NORMAL",
                     reason=f"龙头断板！昨日{yest_h}板，今日未涨停",
                 ))
 

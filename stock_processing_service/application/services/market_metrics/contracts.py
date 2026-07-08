@@ -204,15 +204,17 @@ class LeaderSnapshot:
     stock_code: str
     stock_name: str
     board_height: int                # 当前连板高度
+    relative_height: float = 0.0     # board_height / market_max_height (0-1)
     status: str                      # 8-state expectation model
-    expected_height: int = 0         # yesterday's expected height for today
-    surprise_score: float = 0.0      # -100~+100, positive = exceeded expectation
+    expected_height: int = 0
+    surprise_score: float = 0.0
     yesterday_status: str = ""
-    strength_score: float = 0.0      # 0-100
-    risk_score: float = 0.0          # 0-100
+    strength_score: float = 0.0
+    risk_score: float = 0.0
     sealed: bool = True
     theme_hint: str = ""
     reason: str = ""
+    death_type: str = ""             # NONE | NORMAL | FRIED | LIMIT_DOWN | HEAVEN_EARTH
 
 
 @dataclass(frozen=True, slots=True)

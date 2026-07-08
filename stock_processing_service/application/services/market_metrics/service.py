@@ -535,8 +535,10 @@ class MarketMetricsService:
                 yesterday_heights[c] = 1  # at minimum 1-board yesterday
 
         builder = LeaderEvolutionBuilder()
+        market_max = max(today_streaks.values()) if today_streaks else 5
         return builder.build(td, stock_detail, today_streaks,
-                            yesterday_codes, yesterday_high, yesterday_heights)
+                            yesterday_codes, yesterday_high, yesterday_heights,
+                            market_max_height=market_max)
 
     @staticmethod
     def _build_loss_attribution(td: date, loss: LossEffectMetrics | None,
@@ -666,47 +668,56 @@ class MarketMetricsService:
     def _build_death_index(leader: LeaderEvolutionMetrics | None,
                             loss: LossEffectMetrics | None,
                             relay: RelayEcologyMetrics) -> HighPositionDeathMetrics:
-        """High Position Death Index: WHO died matters more than HOW MANY.
+        """Death Index v2: relative height + death type + contagion.
 
-        Leader breaks are WEIGHTED by importance:
-          importance = board_height_factor * strength_factor * severity_factor
-          - 5板龙头断板 ≈ 8× 2板小票断板
-          - WEAKEN_UNEXPECTED (预期延续但炸板) ≈ 1.5× BREAK
+        importance = relative_height_factor * strength_factor * death_type_factor
 
-        Formula: weighted_leader_break*40% + high_board_loss*30% + feedback*20% + big_loss*10%
+        Death type factors:
+          NORMAL=1.0, FRIED=1.2, LIMIT_DOWN=2.0, HEAVEN_EARTH=3.0
+
+        relative_height = stock_height / market_max — 5板 when max=5 >>> 5板 when max=8
         """
-        # ── Weighted leader breaks ──
+        # ── Death type factor mapping ──
+        DEATH_TYPE_FACTOR = {"NORMAL": 1.0, "FRIED": 1.2, "LIMIT_DOWN": 2.0, "HEAVEN_EARTH": 3.0}
+
         lb_raw = 0
         lb_weighted = 0.0
+        contagion_score = 0.0
         broken_leaders_detail: list[str] = []
+
         if leader:
             for l in leader.leaders:
                 if l.status in ("BREAK", "WEAKEN_UNEXPECTED"):
                     lb_raw += 1
-                    # Importance factors
-                    h_factor = min(1.0, l.board_height / 5.0)   # 5板=1.0, 2板=0.4
-                    s_factor = l.strength_score / 100.0          # 0-1
-                    # Severity: was this unexpected?
-                    sev = 1.5 if l.status == "WEAKEN_UNEXPECTED" else 1.0
-                    imp = h_factor * s_factor * sev
+                    # relative_height: weight by stock/market ratio
+                    rh_factor = l.relative_height if l.relative_height > 0 else (l.board_height / 5.0)
+                    s_factor = l.strength_score / 100.0 if l.strength_score > 0 else 0.4
+                    dt_factor = DEATH_TYPE_FACTOR.get(l.death_type, 1.0)
+                    imp = rh_factor * s_factor * dt_factor
                     lb_weighted += imp
                     broken_leaders_detail.append(
-                        f"{l.stock_name}({l.board_height}板,imp={imp:.2f})")
+                        f"{l.stock_name}({l.board_height}板,rh={rh_factor:.1f},dt={l.death_type},imp={imp:.2f})")
 
-        # 4.0 importance units → 100 (one 5-board WEAKEN_UNEXPECTED ≈ 1.5 units)
+                    # Contagion: theme-hint leaders have followers, their death spreads
+                    if l.theme_hint and dt_factor >= 1.2:
+                        contagion_score += imp * 0.3  # weight contagion at 30% of importance
+
+        # 4.0 importance units → 100
         lb_norm = min(100, lb_weighted * 25)
+        contagion_norm = min(100, contagion_score * 25)
 
         hb = loss.high_board_break_count if loss else 0
         bl = loss.big_loss_count if loss else 0
         fb_inv = max(0, (100 - max(0, relay.feedback_score))) * 0.3
 
-        hb_norm = min(100, hb * 12.5)        # 8 high board losses → 100
+        hb_norm = min(100, hb * 12.5)
         fb_norm = min(100, fb_inv)
-        bl_norm = min(100, bl * 10)           # 10 big losses → 100
+        bl_norm = min(100, bl * 10)
 
-        death = round(lb_norm * 0.40 + hb_norm * 0.30 + fb_norm * 0.20 + bl_norm * 0.10, 1)
+        # v2: contagion replaces part of the high_board_loss weight
+        death = round(lb_norm * 0.40 + contagion_norm * 0.15 + hb_norm * 0.15 + fb_norm * 0.20 + bl_norm * 0.10, 1)
 
-        # ── Label + conclusion ──
+        # ── Label ──
         if death >= 60:
             label = "CRITICAL"
             detail = "; ".join(broken_leaders_detail[:3]) if broken_leaders_detail else f"龙头断板{lb_raw}只"
