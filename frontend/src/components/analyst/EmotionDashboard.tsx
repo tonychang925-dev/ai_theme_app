@@ -1,4 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
+
+interface EvidenceArtifact {
+  artifact_id: string;
+  trade_date: string;
+  artifact_type: string;
+  title: string;
+  source: string;
+  related_module: string;
+  page_no?: number;
+  extracted_metrics?: Record<string, any>;
+  summary: string;
+}
 
 interface EmotionState {
   trade_date: string;
@@ -78,7 +90,16 @@ function useEmotionTrend(tradeDate: string) {
 export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   const [emotion, setEmotion] = useState<EmotionState | null>(null);
   const [loading, setLoading] = useState(true);
+  const [artifacts, setArtifacts] = useState<EvidenceArtifact[]>([]);
+  const [showEvidence, setShowEvidence] = useState(false);
   const trend = useEmotionTrend(tradeDate);
+
+  const loadArtifacts = useCallback(async () => {
+    try {
+      const resp = await fetch(`/api/v1/evidence-artifacts/${tradeDate}?module=emotion`);
+      if (resp.ok) setArtifacts(await resp.json());
+    } catch { /* ignore */ }
+  }, [tradeDate]);
 
   useEffect(() => {
     setLoading(true);
@@ -269,6 +290,50 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* ── Evidence Charts (collapsible) ── */}
+      <div style={{ marginTop: 10 }}>
+        <div
+          onClick={() => { setShowEvidence(!showEvidence); if (!showEvidence) loadArtifacts(); }}
+          style={{ fontSize: 11, color: "#5a7a8a", cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}>
+          <span>{showEvidence ? "▼" : "▶"} 证据图表 Evidence Charts</span>
+          {artifacts.length > 0 && <span style={{ color: "#66d9ef" }}>({artifacts.length})</span>}
+        </div>
+        {showEvidence && (
+          <div style={{ marginTop: 8, display: "flex", flexWrap: "wrap", gap: 8 }}>
+            {artifacts.map(a => (
+              <div key={a.artifact_id} style={{
+                padding: 8, background: "#111720", borderRadius: 4, border: "1px solid #243040",
+                width: 280, fontSize: 11,
+              }}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                  <span style={{ fontWeight: 600, color: "#8ddcff" }}>{a.title}</span>
+                  <span style={{ color: "#5a7a8a" }}>P{a.page_no || "?"}</span>
+                </div>
+                <div style={{ color: "#5a7a8a", marginBottom: 4 }}>
+                  <span>{a.artifact_type === "table" ? "📊" : "📈"} {a.source}</span>
+                </div>
+                {a.extracted_metrics && (
+                  <div style={{ marginBottom: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>
+                    {Object.entries(a.extracted_metrics).filter(([k]) => !k.startsWith("key_")).map(([k, v]) => (
+                      <span key={k} style={{ fontSize: 10, padding: "1px 6px", background: "#1a2a3a", borderRadius: 3, color: "#66d9ef" }}>
+                        {k.replace(/_/g, " ")}: {String(v).slice(0, 40)}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {a.extracted_metrics?.key_finding && (
+                  <div style={{ fontSize: 10, color: "#d69e2e", marginBottom: 4 }}>{a.extracted_metrics.key_finding}</div>
+                )}
+                <div style={{ fontSize: 10, color: "#8ddcff", lineHeight: 1.4 }}>{a.summary}</div>
+              </div>
+            ))}
+            {artifacts.length === 0 && (
+              <div style={{ fontSize: 11, color: "#5a7a8a", padding: 8 }}>该日期暂无分析师图表证据</div>
+            )}
+          </div>
+        )}
       </div>
 
     </div>

@@ -7215,6 +7215,27 @@ async def save_playbook(
     }
 
 
+# ── P2.6.1 Evidence Artifacts ──
+
+@app.get("/api/v1/evidence-artifacts/{trade_date}")
+async def get_evidence_artifacts(
+    trade_date: str, module: str | None = None
+) -> list[dict[str, Any]]:
+    """Return evidence artifacts for a trading day, optionally filtered by module."""
+    from datetime import date as _date
+    from stock_processing_service.application.services.market_cognition.evidence_artifact_service import (
+        EvidenceArtifactService,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        service = EvidenceArtifactService()
+        return service.list(td, module)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 # ── P2.6 Market Emotion Engine ──
 
 @app.get("/api/v1/emotion/{trade_date}")
