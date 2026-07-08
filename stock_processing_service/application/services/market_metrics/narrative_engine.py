@@ -74,6 +74,14 @@ class MarketStory:
     forbidden_actions: tuple[str, ...]
     risk_level: str
 
+    # ── Confidence (v2) ──
+    confidence: dict[str, float] = field(default_factory=dict)
+    # e.g. {"market_phase": 0.87, "leader_state": 0.72, "risk": 0.91, "overall": 0.83}
+
+    # ── Counterfactual (v2) ──
+    counterfactuals: tuple[dict, ...] = ()
+    # e.g. {"condition": "龙头重新涨停+晋级率>50%", "flip_to": "REPAIR"}
+
     # ── Key numbers ──
     key_metrics: dict[str, Any] = field(default_factory=dict)
 
@@ -97,6 +105,8 @@ class MarketStory:
             "allowed": list(self.allowed_actions),
             "forbidden": list(self.forbidden_actions),
             "risk_level": self.risk_level,
+            "confidence": self.confidence,
+            "counterfactuals": [dict(cf) for cf in self.counterfactuals],
             "key_metrics": self.key_metrics,
         }
 
@@ -158,6 +168,12 @@ class NarrativeEngine:
         # ═══ Strategy ═══
         strategy, allowed, forbidden, risk = self._build_strategy(r, leader, loss)
 
+        # ═══ Confidence ═══
+        confidence = self._compute_confidence(b, l, r, leader, loss)
+
+        # ═══ Counterfactual ═══
+        counterfactuals = self._build_counterfactuals(r, leader, loss)
+
         # ═══ Key Metrics ═══
         key_metrics = {
             "涨停": l.total_count,
@@ -184,6 +200,8 @@ class NarrativeEngine:
             allowed_actions=tuple(allowed),
             forbidden_actions=tuple(forbidden),
             risk_level=risk,
+            confidence=confidence,
+            counterfactuals=tuple(counterfactuals),
             key_metrics=key_metrics,
         )
 
@@ -364,6 +382,66 @@ class NarrativeEngine:
         return "强势"
 
     # ── Strategy ──
+
+    # ── Confidence ──
+
+    def _compute_confidence(self, b, l, r, leader, loss) -> dict[str, float]:
+        phase_conf = 0.95 if l.total_count > 0 else 0.50
+        signal_conflict = abs(b.up_ratio - r.continue_ratio) > 0.3
+        if signal_conflict:
+            phase_conf -= 0.15
+
+        leader_conf = 0.80 if leader and leader.leaders else 0.40
+        if leader and leader.leaders:
+            if leader.continue_count > 0 and leader.break_count == 0:
+                leader_conf = 0.85
+            elif leader.break_count > leader.continue_count:
+                leader_conf = 0.82
+
+        risk_conf = 0.85 if loss else 0.50
+        if loss and loss.loss_effect_label in ("恐慌", "严重"):
+            risk_conf = 0.92
+        elif loss and loss.loss_effect_label == "安全":
+            risk_conf = 0.82
+
+        return {
+            "market_phase": round(phase_conf, 2),
+            "leader_state": round(leader_conf, 2),
+            "risk": round(risk_conf, 2),
+            "overall": round((phase_conf + leader_conf + risk_conf) / 3, 2),
+        }
+
+    # ── Counterfactual ──
+
+    def _build_counterfactuals(self, r, leader, loss) -> list[dict]:
+        cfs: list[dict] = []
+        fb = r.feedback_score
+
+        if fb < -20 and leader and leader.break_count > 0:
+            cfs.append({
+                "scenario": "龙头修复反转",
+                "condition": "断板龙头重新涨停 + 晋级率1→2 > 50%",
+                "flip_to": "REPAIR",
+                "current_blockers": [f"接力反馈{fb:.0f}", f"龙头断板{leader.break_count}只"],
+            })
+
+        if loss and loss.limit_down_count > 30:
+            cfs.append({
+                "scenario": "恐慌消退",
+                "condition": "跌停数降至10只以下 + 封板率 > 80%",
+                "flip_to": "REPAIR",
+                "current_blockers": [f"跌停{loss.limit_down_count}家"],
+            })
+
+        if r.promotion_1_to_2 < 0.3:
+            cfs.append({
+                "scenario": "接力恢复",
+                "condition": "一进二晋级率 > 40% + 连板数 > 涨停数20%",
+                "flip_to": "NORMAL",
+                "current_blockers": [f"晋级率1→2={r.promotion_1_to_2:.0%}"],
+            })
+
+        return cfs
 
     def _build_strategy(self, r, leader, loss) -> tuple[str, tuple, tuple, str]:
         fb = r.feedback_score

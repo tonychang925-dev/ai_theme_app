@@ -7552,6 +7552,38 @@ async def get_market_narrative(trade_date: str) -> dict[str, Any]:
         raise HTTPException(status_code=500, detail=str(exc))
 
 
+# ── M2.5 Phase 3.1b: Analyst Replay Benchmark ──
+
+@app.get("/api/v1/metrics/replay-benchmark/{trade_date}")
+async def get_replay_benchmark(trade_date: str, analyst_text: str = "") -> dict[str, Any]:
+    """Score AI narrative against analyst PDF for a single trading day.
+
+    Query param 'analyst_text': raw text extracted from analyst PDF.
+    Returns per-dimension scores and mismatch details.
+    """
+    from datetime import date as _date
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
+    from stock_processing_service.application.services.market_metrics.narrative_engine import (
+        NarrativeEngine,
+    )
+    from stock_processing_service.application.services.market_metrics.replay_benchmark import (
+        ReplayBenchmark,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        snap = MarketMetricsService().get(td)
+        story = NarrativeEngine().generate(snap)
+        bench = ReplayBenchmark()
+        record = bench.score_one(story, analyst_text or "")
+        return record.to_dict()
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 # ── P2.6.1 Evidence Artifacts ──
 
 @app.get("/api/v1/evidence-artifacts/{trade_date}")
