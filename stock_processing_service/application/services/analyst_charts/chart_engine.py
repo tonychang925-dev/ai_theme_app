@@ -1,16 +1,7 @@
 """P2.7 — Analyst Chart Reproduction Engine.
 
-Auto-generates analyst-style chart data from DB + recap snapshots.
-Step C1: compute chart JSON + interpretation. No styling/rendering yet.
-
-Charts:
-  1. Market Breadth (大盘势能)
-  2. Emotion Momentum (情绪动能)
-  3. Active Capital (活跃资金)
-  4. Relay Ecology (核心板块节律)
-  5. Institution Style (机构资金审美)
-  6. Hot Money Direction (游资方向)
-  7. Limit-up Classification (涨停分类)
+Orchestrates data loading → chart building → calibration.
+Charts are built by individual builder modules under builders/.
 """
 
 from __future__ import annotations
@@ -21,19 +12,25 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from .builders import market_power_chart, emotion_momentum_chart, relay_ecology_chart
+from .builders import active_capital_chart
+
 DB_DSN = "postgresql://localhost:5432/stock_data_test"
 
-# PDF paths for analyst recaps
+# PDF paths for analyst calibration
 PDF_PATHS: dict[str, str] = {
     "2026-07-07": "/Users/admin/Desktop/7:7日复盘.pdf",
 }
 
+# ── Data source priority ──
+# 1. market_environment_metrics (deterministic, up to May 2026)
+# 2. post_market_recap_snapshot (for recent dates)
+# 3. Analyst PDF calibration (authoritative override)
+# 4. Estimates (last resort)
+
 
 class ChartReproductionEngine:
-    """Generate analyst chart data for a trading day.
-
-    Auto-computes from DB + recap, then applies PDF overrides if available.
-    """
+    """Orchestrate chart generation with data source priority + calibration."""
 
     def run(self, trade_date: date) -> list[dict[str, Any]]:
         return asyncio.run(self._run_async(trade_date))
@@ -41,53 +38,70 @@ class ChartReproductionEngine:
     async def run_async(self, trade_date: date) -> list[dict[str, Any]]:
         import asyncpg
 
-        # ── Check for analyst PDF and parse it first ──
-        pdf_metrics: dict[str, Any] = {}
-        pdf_text = ""
-        date_str = trade_date.isoformat()
-        if date_str in PDF_PATHS and Path(PDF_PATHS[date_str]).exists():
-            try:
-                from .pdf_parser import parse_analyst_pdf
-                parsed = parse_analyst_pdf(PDF_PATHS[date_str], trade_date)
-                pdf_metrics = parsed.get("metrics", {})
-                pdf_text = parsed.get("narrative", "")[:500]
-            except Exception:
-                pass
+        # ── Load PDF calibration data ──
+        pdf_cal = await self._load_pdf_calibration(trade_date)
 
         conn = await asyncpg.connect(DB_DSN, user="postgres", password="")
         try:
-            charts: list[dict[str, Any]] = []
-
-            # ── Load recap data ──
             recap = await self._load_recap(conn, trade_date)
-
-            # ── Load metrics (may be None for recent dates) ──
             metrics = await self._load_metrics(conn, trade_date)
 
-            # ── Chart 1: Market Breadth ──
-            charts.append(self._chart_breadth(trade_date, recap, metrics))
+            # ── Extract raw data with priority ──
+            data = self._extract_data(recap, metrics, pdf_cal)
 
-            # ── Chart 2: Emotion Momentum ──
-            charts.append(self._chart_momentum(trade_date, recap, metrics))
+            # ── Build charts using individual builders ──
+            charts: list[dict[str, Any]] = []
 
-            # ── Chart 3: Active Capital ──
-            charts.append(self._chart_active_capital(trade_date, recap))
+            # Chart 1: Market Breadth
+            charts.append(market_power_chart.build(
+                up_count=data["up"], down_count=data["down"],
+                limit_up=data["lu"], limit_down=data["ld"],
+                turnover_yi=data["turnover_yi"],
+                chain_board_count=data["chain_board"],
+                calibrated_lu=pdf_cal.get("lu"),
+                calibrated_turnover=pdf_cal.get("turnover"),
+                calibrated_emotion=pdf_cal.get("emotion"),
+            ))
 
-            # ── Chart 4: Relay Ecology (async — uses DB for chain board) ──
-            charts.append(await self._chart_relay_ecology_async(trade_date, recap, conn))
+            # Chart 2: Emotion Momentum
+            charts.append(emotion_momentum_chart.build(
+                first_board_red_ratio=data["first_red"],
+                first_board_big_loss_ratio=data["first_loss"],
+                chain_board_red_ratio=data["chain_red"],
+                chain_board_ratio=data["chain_ratio"],
+                chain_board_big_loss_ratio=data["chain_loss"],
+                yesterday_chain_not_limit_red_ratio=data["yest_chain_red"],
+                limit_up_count=data["lu"],
+                chain_board_count=data["chain_board"],
+            ))
 
-            # ── Chart 5: Institution Style ──
-            charts.append(self._chart_institution_style(trade_date, recap))
+            # Chart 3: Active Capital
+            charts.append(active_capital_chart.build(
+                total_amount_yi=data["turnover_yi"],
+                active_amount_yi=data["active_amount"],
+                limit_up_count=data["lu"],
+            ))
 
-            # ── Chart 6: Hot Money Direction ──
-            charts.append(self._chart_hot_money(trade_date, recap))
+            # Chart 4: Relay Ecology
+            charts.append(await self._build_relay(trade_date, recap, conn, data))
 
-            # ── Chart 7: Limit-up Classification ──
-            charts.append(self._chart_limitup_classification(trade_date, recap))
+            # Chart 5: Institution Style
+            charts.append(self._build_institution(recap))
 
-            # ── Apply PDF overrides ──
-            if pdf_metrics:
-                self._apply_pdf_overrides(charts, pdf_metrics, pdf_text)
+            # Chart 6: Hot Money
+            charts.append(self._build_hot_money(recap, data["lu"]))
+
+            # Chart 7: Limit-up Classification
+            charts.append(self._build_limitup(recap, data["lu"]))
+
+            # ── Apply PDF calibration to all charts ──
+            if pdf_cal:
+                for c in charts:
+                    c["calibrated"] = True
+                    c["calibration_source"] = "analyst_pdf"
+                    c["source_priority"] = data.get("priority", "recap_snapshot")
+                    if pdf_cal.get("emotion"):
+                        c["data"]["pdf_emotion"] = pdf_cal["emotion"]
 
             return charts
 
@@ -179,6 +193,179 @@ class ChartReproductionEngine:
 
             # Mark PDF source
             c["source"] = "analyst_pdf_calibrated"
+
+    # ── Data loaders + extraction ──
+
+    async def _load_pdf_calibration(self, trade_date: date) -> dict[str, Any]:
+        """Load analyst PDF calibration data if available."""
+        date_str = trade_date.isoformat()
+        if date_str not in PDF_PATHS:
+            return {}
+        path = Path(PDF_PATHS[date_str])
+        if not path.exists():
+            return {}
+        try:
+            from .pdf_parser import parse_analyst_pdf
+            parsed = parse_analyst_pdf(str(path), trade_date)
+            metrics = parsed.get("metrics", {})
+            return {
+                "lu": metrics.get("limit_up_count"),
+                "turnover": metrics.get("turnover_wan_yi"),
+                "emotion": metrics.get("emotion_node_text"),
+                "risk": metrics.get("risk_signal"),
+                "narrative": parsed.get("narrative", "")[:500],
+            }
+        except Exception:
+            return {}
+
+    def _extract_data(self, recap: dict, metrics: dict | None, pdf_cal: dict) -> dict[str, Any]:
+        """Extract raw data with priority: metrics > recap > estimate."""
+        overview = recap.get("market_overview_review", {})
+        priority = "recap_snapshot"
+
+        # Priority 1: metrics table
+        if metrics:
+            up = int(metrics.get("up_count", 0) or 0)
+            down = int(metrics.get("down_count", 0) or 0)
+            lu = int(metrics.get("limit_up_count", 0) or 0)
+            ld = int(metrics.get("limit_down_count", 0) or 0)
+            amount = float(metrics.get("market_total_amount", 0) or 0)
+            amount_yi = amount / 100_000_000  # 元→亿
+            first_red = float(metrics.get("yesterday_limit_up_open_red_ratio", 0) or 0)
+            first_loss = float(metrics.get("yesterday_limit_up_fail_ratio", 0) or 0)
+            chain_red = float(metrics.get("yesterday_limit_up_premium_ratio", 0) or 0) * 0.8
+            chain_loss = first_loss * 0.6
+            priority = "metrics_table"
+        else:
+            # Priority 2: recap snapshot
+            up = int(overview.get("up_count", 0) or 0)
+            down = int(overview.get("down_count", 0) or 0)
+            lu = int(overview.get("limit_up_total", 0) or 0)
+            ld = int(overview.get("limit_down_total", 0) or 0)
+            raw_amount = float(overview.get("total_amount", 0) or 0)
+            amount_yi = raw_amount / 10_000  # 万元→亿
+            total = up + down or 1
+            r = up / total
+            first_red = min(0.8, r)
+            first_loss = max(0.05, 1 - r - 0.3)
+            chain_red = first_red * 0.8
+            chain_loss = first_loss * 0.7
+
+        # Priority 3: PDF calibration overrides
+        if pdf_cal.get("lu"):
+            lu = pdf_cal["lu"]
+        if pdf_cal.get("turnover"):
+            amount_yi = pdf_cal["turnover"] * 10_000  # 万亿→亿
+
+        # Derived
+        chain_board = max(1, lu // 15)
+        chain_ratio = min(0.5, chain_board / max(lu, 1))
+        yest_chain_red = 0.3
+        active_amount = round(amount_yi * min(0.06, lu / 2000) / 10_000, 1)  # 亿→万亿
+
+        return {
+            "up": up, "down": down, "lu": lu, "ld": ld,
+            "turnover_yi": round(amount_yi / 10_000, 1),  # 万亿
+            "active_amount": active_amount,
+            "chain_board": chain_board,
+            "first_red": first_red, "first_loss": first_loss,
+            "chain_red": chain_red, "chain_loss": chain_loss,
+            "chain_ratio": chain_ratio, "yest_chain_red": yest_chain_red,
+            "priority": priority,
+        }
+
+    # ── Builder methods (delegate to individual chart builders) ──
+
+    async def _build_relay(self, td: date, recap: dict, conn, data: dict) -> dict[str, Any]:
+        """Build relay ecology chart using LimitUpBoardRecalculator."""
+        from stock_processing_service.application.services.limit_up_board_recalculator import (
+            LimitUpBoardRecalculator,
+        )
+        try:
+            recalc = LimitUpBoardRecalculator()
+            enriched = await recalc.enrich_recap_doc(recap, td, conn)
+            matrix = enriched.get("market_overview_review", {}).get("theme_limitup_matrix", {})
+            columns = matrix.get("columns", []) if isinstance(matrix, dict) else []
+            board_groups = []
+            height_counts: dict[int, int] = {}
+            for col in (columns or []):
+                if isinstance(col, dict):
+                    for bg in col.get("board_groups", []):
+                        board_groups.append(bg)
+                        h = bg.get("board_count", 0)
+                        height_counts[h] = height_counts.get(h, 0) + bg.get("stock_count", 0)
+            max_h = max(height_counts.keys()) if height_counts else 1
+            t1 = height_counts.get(1, 0); t2 = height_counts.get(2, 0)
+            t3 = height_counts.get(3, 0); t4 = height_counts.get(4, 0)
+            p1to2 = round(t2 / max(t1, 1), 2)
+            p2to3 = round(t3 / max(t2, 1), 2)
+            p3to4 = round(t4 / max(t3, 1), 2)
+            success = round(t1 / max(data["lu"], 1), 2)
+            return relay_ecology_chart.build(max_h, success, p1to2, p2to3, p3to4, board_groups)
+        except Exception:
+            max_h = max(1, min(8, data["lu"] // 20))
+            return relay_ecology_chart.build(max_h, 0.7,
+                0.4 + (max_h - 3) * 0.08, 0.3 + (max_h - 3) * 0.06,
+                0.2 + (max_h - 4) * 0.08)
+
+    @staticmethod
+    def _build_institution(recap: dict) -> dict[str, Any]:
+        lifecycle = recap.get("mainline_lifecycle_reviews", [])
+        regime = recap.get("market_regime_review", {})
+        directions = []
+        seen = set()
+        for t in lifecycle:
+            if not isinstance(t, dict): continue
+            name = str(t.get("theme_name", t.get("subject_name", ""))).strip()
+            if not name or name in seen: continue
+            seen.add(name)
+            state = str(t.get("cycle_state", "观察"))
+            label = {"divergence":"调整中","repair":"修复中","fermentation":"启动观察","acceleration":"趋势向上","fade_watch":"退潮中","fade_confirmed":"退潮确认"}.get(state, "震荡")
+            directions.append({"name": name, "state": label})
+        mode = str(regime.get("trade_mode", "wait"))
+        s_label = {"normal":"机构趋势主导","defense":"防御为主"}.get(mode, "等待观望")
+        return {
+            "chart_type": "institution_style", "title": "机构资金审美方向", "module": "style",
+            "data": {"directions": directions[:12], "market_mode": mode, "label": s_label},
+            "interpretation": f"机构资金风格：{s_label}。共{len(directions)}个方向。" + ("多数调整。" if s_label != "机构趋势主导" else "趋势确认。"),
+        }
+
+    @staticmethod
+    def _build_hot_money(recap: dict, lu: int) -> dict[str, Any]:
+        hotspots = recap.get("strong_hotspot_subjects", [])
+        directions = []
+        seen = set()
+        for h in hotspots:
+            if not isinstance(h, dict): continue
+            sk = str(h.get("subject_key", ""))
+            if sk in seen: continue
+            seen.add(sk)
+            name = str(h.get("theme_name", ""))
+            cycle = str(h.get("cycle_state", ""))
+            state = "游资关注" if "confirmed" in str(h.get("source", "")) else "观察中"
+            directions.append({"name": name, "state": state, "cycle": cycle})
+        h_label = "游资活跃" if lu > 80 else "游资正常" if lu > 40 else "游资退潮"
+        return {
+            "chart_type": "hot_money_style", "title": "游资情绪方向", "module": "style",
+            "data": {"directions": directions[:12], "limit_up_count": lu, "label": h_label},
+            "interpretation": f"游资：{h_label}（涨停{lu}家）。" + ("方向活跃。" if h_label == "游资活跃" else "新题材未成合力。"),
+        }
+
+    @staticmethod
+    def _build_limitup(recap: dict, lu: int) -> dict[str, Any]:
+        hotspots = recap.get("strong_hotspot_subjects", [])
+        cats: dict[str, list] = {}
+        for h in hotspots:
+            if not isinstance(h, dict): continue
+            name = str(h.get("theme_name", "")).strip()
+            if not name or name.startswith("【"): continue
+            source = str(h.get("source", "other"))
+            cats.setdefault(source, []).append(name)
+        return {
+            "chart_type": "limitup_classification", "title": "涨停股分类", "module": "limitup",
+            "data": {"limit_up_count": lu, "categories": {k: v[:5] for k, v in list(cats.items())[:5]}},
+            "interpretation": f"涨停{lu}家。" + ("方向分散。" if lu < 60 else "主线明确。" if len(cats) <= 3 else "多线并行。"),
+        }
 
     # ── Data loaders ──
 
