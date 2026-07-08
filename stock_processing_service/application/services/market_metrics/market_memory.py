@@ -217,6 +217,36 @@ class FailureCase:
     reviewed: bool = False
 
 
+# ── Success case memory ──
+
+@dataclass(frozen=True, slots=True)
+class SuccessCase:
+    """A prediction that went RIGHT — pattern to replicate."""
+    trade_date: date
+    fingerprint: MarketFingerprint
+    prediction: str            # what AI predicted
+    actual_outcome: str        # confirmatory result
+    lesson: str = ""           # "恐慌阶段核心龙头修复是最佳确认信号"
+
+
+# ── Turning point memory ──
+
+@dataclass(frozen=True, slots=True)
+class MarketTurningPoint:
+    """A key inflection point in market cycles.
+
+    These are the moments analysts care most about:
+      ICE_POINT → first leader emerges → REPAIR
+      CLIMAX → leader death → PANIC
+    """
+    trade_date: date
+    before_phase: str          # phase before the turn
+    after_phase: str           # phase after the turn
+    trigger: str               # what triggered the turn
+    leader_behavior: str       # leader action during the turn
+    lesson: str = ""           # "龙头修复优先于指数修复"
+
+
 # ── Memory Engine ──
 
 class MarketMemoryEngine:
@@ -224,6 +254,10 @@ class MarketMemoryEngine:
 
     def __init__(self):
         self._memory: dict[date, MarketFingerprint] = {}
+        self._sequences: dict[date, MarketSequenceFingerprint] = {}
+        self._failures: list[FailureCase] = []
+        self._successes: list[SuccessCase] = []
+        self._turning_points: list[MarketTurningPoint] = []
 
     def remember(self, fingerprint: MarketFingerprint) -> None:
         """Store a market state in memory."""
@@ -438,6 +472,74 @@ class MarketMemoryEngine:
         for fc in failures[:3]:
             lessons.append(f"  {fc.trade_date.isoformat()}: {fc.error_type} — {fc.lesson}")
         return lessons
+
+    # ── Success memory ──
+
+    def record_success(self, trade_date: date, fingerprint: MarketFingerprint,
+                       prediction: str, actual: str, lesson: str = "") -> None:
+        """Record a correct prediction — pattern to replicate."""
+        self._successes.append(SuccessCase(
+            trade_date=trade_date, fingerprint=fingerprint,
+            prediction=prediction, actual_outcome=actual, lesson=lesson))
+
+    def get_relevant_successes(self, fingerprint: MarketFingerprint,
+                                max_distance: int = 8) -> list[tuple[int, SuccessCase]]:
+        """Find successful predictions from similar states."""
+        results = []
+        for sc in self._successes:
+            d = fingerprint.distance(sc.fingerprint)
+            if d <= max_distance:
+                results.append((d, sc))
+        results.sort(key=lambda x: x[0])
+        return results[:5]
+
+    def get_success_paths(self, fingerprint: MarketFingerprint) -> list[str]:
+        """Get actionable patterns from similar past successes."""
+        successes = self.get_relevant_successes(fingerprint)
+        if not successes:
+            return []
+        paths = [f"历史上有{len(successes)}次类似状态的成功应对:"]
+        for _, sc in successes[:3]:
+            paths.append(f"  {sc.trade_date.isoformat()}: {sc.prediction} → {sc.actual_outcome}")
+            if sc.lesson:
+                paths.append(f"    经验: {sc.lesson}")
+        return paths
+
+    # ── Turning point memory ──
+
+    def record_turning_point(self, trade_date: date, before: str, after: str,
+                              trigger: str, leader_behavior: str, lesson: str = "") -> None:
+        """Record a market cycle inflection point."""
+        self._turning_points.append(MarketTurningPoint(
+            trade_date=trade_date, before_phase=before, after_phase=after,
+            trigger=trigger, leader_behavior=leader_behavior, lesson=lesson))
+
+    def get_similar_turning_points(self, current_phase: str,
+                                    death_label: str = "") -> list[MarketTurningPoint]:
+        """Find historical turning points similar to current state."""
+        results = []
+        for tp in self._turning_points:
+            if tp.before_phase == current_phase:
+                score = 1
+                if death_label and "死亡" in tp.trigger:
+                    score += 1
+                results.append((score, tp))
+        results.sort(key=lambda x: -x[0])
+        return [tp for _, tp in results[:3]]
+
+    def get_turning_point_guidance(self, current_phase: str, death_label: str = "") -> list[str]:
+        """Get guidance from similar historical turning points."""
+        tps = self.get_similar_turning_points(current_phase, death_label)
+        if not tps:
+            return []
+        guidance = ["历史转折点参考:"]
+        for tp in tps:
+            guidance.append(
+                f"  {tp.trade_date.isoformat()}: {tp.before_phase} → {tp.after_phase} "
+                f"({tp.trigger})")
+            if tp.lesson:
+                guidance.append(f"    教训: {tp.lesson}")
+        return guidance
 
     @staticmethod
     def _phase_name(bucket: int) -> str:
