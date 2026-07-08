@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { EmotionDashboard } from "./EmotionDashboard";
 
 // ── Types ──
 
@@ -477,6 +478,11 @@ export function AnalystWorkspacePage() {
           返回
         </button>
       </section>
+
+      {/* Emotion Dashboard */}
+      <div style={{ padding: "8px 16px", borderBottom: "1px solid #243040", background: "#0c1118" }}>
+        <EmotionDashboard tradeDate={dateInput} />
+      </div>
 
       {/* Three-panel body — dark theme */}
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: "240px 1fr 340px", overflow: "hidden", background: "#0c1118" }}>
