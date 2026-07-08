@@ -309,25 +309,29 @@ class ChartReproductionEngine:
                 0.2 + (max_h - 4) * 0.08)
 
     @staticmethod
+    @staticmethod
     def _build_institution(recap: dict) -> dict[str, Any]:
         lifecycle = recap.get("mainline_lifecycle_reviews", [])
+        theme_reviews = recap.get("theme_reviews", [])
         regime = recap.get("market_regime_review", {})
-        directions = []
-        seen = set()
-        for t in lifecycle:
-            if not isinstance(t, dict): continue
-            name = str(t.get("theme_name", t.get("subject_name", ""))).strip()
-            if not name or name in seen: continue
-            seen.add(name)
-            state = str(t.get("cycle_state", "观察"))
-            label = {"divergence":"调整中","repair":"修复中","fermentation":"启动观察","acceleration":"趋势向上","fade_watch":"退潮中","fade_confirmed":"退潮确认"}.get(state, "震荡")
-            directions.append({"name": name, "state": label})
+        directions, seen = [], set()
+        for source in [lifecycle, theme_reviews]:
+            for t in (source if isinstance(source, list) else []):
+                if not isinstance(t, dict): continue
+                name = str(t.get("theme_name", t.get("subject_name", ""))).strip()
+                if not name or name.startswith("【") or name in seen: continue
+                seen.add(name)
+                state = str(t.get("cycle_state", t.get("final_cycle_state", t.get("theme_stage", "观察"))))
+                ms = float(t.get("mainline_strength_score", 50))
+                label = {"divergence":"调整中" if ms<50 else "高位分歧", "repair":"修复中", "fermentation":"启动观察",
+                         "start":"启动观察", "acceleration":"趋势向上", "fade_watch":"退潮中", "fade_confirmed":"退潮确认"}.get(state, "震荡")
+                directions.append({"name": name, "state": label, "score": round(ms,1)})
         mode = str(regime.get("trade_mode", "wait"))
         s_label = {"normal":"机构趋势主导","defense":"防御为主"}.get(mode, "等待观望")
         return {
             "chart_type": "institution_style", "title": "机构资金审美方向", "module": "style",
-            "data": {"directions": directions[:12], "market_mode": mode, "label": s_label},
-            "interpretation": f"机构资金风格：{s_label}。共{len(directions)}个方向。" + ("多数调整。" if s_label != "机构趋势主导" else "趋势确认。"),
+            "data": {"directions": directions[:15], "market_mode": mode, "label": s_label},
+            "interpretation": f"机构资金风格：{s_label}。共{len(directions)}个方向。" + ("多数调整。" if s_label!="机构趋势主导" else "趋势确认。"),
         }
 
     @staticmethod
