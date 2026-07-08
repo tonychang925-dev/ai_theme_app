@@ -266,6 +266,29 @@ class LossAttributionMetrics:
     source: MetricSource = field(default_factory=lambda: MetricSource("db_query"))
 
 
+@dataclass(frozen=True, slots=True)
+class HighPositionDeathMetrics:
+    """High Position Death Index — WHO died, not just HOW MANY.
+
+    Core analyst question: Did today's losses hit the CORE positions?
+
+    Formula: leader_break*40% + high_board_loss*30% + yesterday_feedback*20% + big_loss*10%
+    """
+    death_index: float = 0.0              # 0-100, the composite death index
+    death_label: str = ""                 # SAFE | WARNING | DANGER | CRITICAL
+
+    leader_break_count: int = 0           # how many leaders broke
+    high_board_loss_count: int = 0        # 高位连板亏损数
+    yesterday_feedback_inverted: float = 0.0  # 100 - abs(feedback_score), inverted
+    big_loss_count: int = 0               # 大面数
+
+    # Narrative
+    death_conclusion: str = ""            # one-line: "高位核心死亡，风险升级至CRITICAL"
+    risk_escalation: bool = False         # True if death_index >= 60 (should override risk to CRITICAL)
+
+    source: MetricSource = field(default_factory=lambda: MetricSource("derived"))
+
+
 # ── Unified snapshot ──
 
 @dataclass(frozen=True, slots=True)
@@ -284,6 +307,7 @@ class MarketMetricsSnapshot:
     loss_effect: LossEffectMetrics | None = None
     leader_evolution: LeaderEvolutionMetrics | None = None
     loss_attribution: LossAttributionMetrics | None = None
+    high_position_death: HighPositionDeathMetrics | None = None
     fund_flow: FundFlowMetrics | None = None
 
     # Calibration

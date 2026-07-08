@@ -82,6 +82,13 @@ class MarketStory:
     counterfactuals: tuple[dict, ...] = ()
     # e.g. {"condition": "龙头重新涨停+晋级率>50%", "flip_to": "REPAIR"}
 
+    # ── Analyst schema v2 ──
+    phase_statement: str = ""          # 情绪定位："高潮后的第一次冰点确认"
+    market_memory: str = ""            # 市场记忆："此前机器人连续3日加速"
+    watch_points: tuple[str, ...] = () # 明日观察点
+    trade_permission: str = ""         # 操作含义："禁止接力，允许首板试错"
+    analyst_vocab: str = ""            # 分析师语言等价词
+
     # ── Key numbers ──
     key_metrics: dict[str, Any] = field(default_factory=dict)
 
@@ -107,6 +114,11 @@ class MarketStory:
             "risk_level": self.risk_level,
             "confidence": self.confidence,
             "counterfactuals": [dict(cf) for cf in self.counterfactuals],
+            "phase_statement": self.phase_statement,
+            "market_memory": self.market_memory,
+            "watch_points": list(self.watch_points),
+            "trade_permission": self.trade_permission,
+            "analyst_vocab": self.analyst_vocab,
             "key_metrics": self.key_metrics,
         }
 
@@ -121,6 +133,7 @@ class NarrativeEngine:
     """
 
     def generate(self, snap: MarketMetricsSnapshot) -> MarketStory:
+        death = snap.high_position_death
         b = snap.breadth
         l = snap.limitup
         r = snap.relay
@@ -174,6 +187,13 @@ class NarrativeEngine:
         # ═══ Counterfactual ═══
         counterfactuals = self._build_counterfactuals(r, leader, loss)
 
+        # ═══ Enriched schema (v2) ═══
+        phase_stmt = self._build_phase_statement(b, l, r, leader, loss, death)
+        memory = self._build_market_memory(r, leader)
+        watch = self._build_watch_points(r, leader, loss)
+        permission = self._build_trade_permission(strategy, forbidden)
+        vocab = self._analyst_vocab(self._phase_label(r, leader, loss))
+
         # ═══ Key Metrics ═══
         key_metrics = {
             "涨停": l.total_count,
@@ -202,6 +222,11 @@ class NarrativeEngine:
             risk_level=risk,
             confidence=confidence,
             counterfactuals=tuple(counterfactuals),
+            phase_statement=phase_stmt,
+            market_memory=memory,
+            watch_points=tuple(watch),
+            trade_permission=permission,
+            analyst_vocab=vocab,
             key_metrics=key_metrics,
         )
 
@@ -442,6 +467,75 @@ class NarrativeEngine:
             })
 
         return cfs
+
+    # ── Enriched schema builders (v2) ──
+
+    def _build_phase_statement(self, b, l, r, leader, loss, death) -> str:
+        phase = self._phase_label(r, leader, loss)
+        parts = []
+
+        if death and death.death_label == "CRITICAL":
+            parts.append("高位核心死亡，全市场风险升级至最高级")
+        elif leader and leader.leader_health_label == "COLLAPSE":
+            parts.append("龙头全面崩坏，市场进入无序阶段")
+        elif r.feedback_score < -40:
+            parts.append(f"接力情绪{phase}，此前龙头加速后出现第一次冰点确认")
+        elif r.feedback_score < -10:
+            parts.append(f"市场进入{phase}阶段，资金从一致转向分歧")
+        elif r.feedback_score >= 40:
+            parts.append(f"市场处于{phase}，赚钱效应强，龙头延续")
+        else:
+            parts.append(f"市场{phase}，方向待明确")
+
+        if r.yesterday_big_loss_count > 5:
+            parts.append(f"昨涨停大面{r.yesterday_big_loss_count}只，短线资金受伤")
+        if l.sealed_board_ratio < 0.6:
+            parts.append("封板率偏低，资金认同度不足")
+
+        return "。".join(parts) + "。"
+
+    def _build_market_memory(self, r, leader) -> str:
+        parts = []
+        if leader and leader.continue_count >= 3:
+            parts.append(f"龙头已连续{leader.continue_count}日延续")
+        if leader and leader.break_count > 0:
+            parts.append(f"今日{leader.break_count}只高标断板")
+        if r.feedback_score < -30:
+            parts.append("此前接力情绪已转弱")
+        return "；".join(parts) + "。" if parts else "无前期市场记忆。"
+
+    def _build_watch_points(self, r, leader, loss) -> list[str]:
+        points = []
+        if leader and leader.break_count > 0:
+            points.append("观察断板龙头是否修复")
+        if r.yesterday_big_loss_count > 3:
+            points.append("观察昨涨停股今日反馈是否恢复")
+        if loss and loss.loss_effect_label in ("恐慌", "严重"):
+            points.append("观察跌停数是否收敛")
+        if r.promotion_1_to_2 < 0.3:
+            points.append("观察一进二晋级率是否回升")
+        if not points:
+            points = ["观察涨停数量变化", "观察新题材方向"]
+        return points
+
+    def _build_trade_permission(self, strategy: str, forbidden: tuple) -> str:
+        forbid = "、".join(forbidden) if forbidden else "无"
+        allowed = strategy.split("。")[0] if "。" in strategy else strategy
+        return f"{allowed}。禁止: {forbid}。"
+
+    # ── Analyst vocabulary mapping ──
+
+    ANALYST_VOCAB = {
+        "强势": "上升趋势确认，赚钱效应强",
+        "修复": "情绪修复，前期超跌方向回补",
+        "混沌": "方向不明，轮动为主",
+        "分歧": "第一次分歧，高位资金松动",
+        "退潮": "高位派发，退潮确认，应降低仓位",
+        "恐慌/冰点": "恐慌释放或冰点确认，全市场避险",
+    }
+
+    def _analyst_vocab(self, phase: str) -> str:
+        return self.ANALYST_VOCAB.get(phase, "市场状态待确认")
 
     def _build_strategy(self, r, leader, loss) -> tuple[str, tuple, tuple, str]:
         fb = r.feedback_score

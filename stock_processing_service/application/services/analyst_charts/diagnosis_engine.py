@@ -136,30 +136,57 @@ class DiagnosisEngine:
         leader = snap.leader_evolution
         leader_contribution = int((leader.leader_health_score - 50) * 0.8) if leader else 0
 
-        # Dynamic loss weight: heavier in risk states
+        # ── High Position Death Index ──
+        death = snap.high_position_death
+        death_penalty = int(death.death_index * 0.6) if death else 0
+
+        # Dynamic loss weight (v3.2): up to 35% in panic
         relay_fb = snap.relay.feedback_score
-        if relay_fb < -50 or (loss and loss.loss_effect_label in ("恐慌", "严重")):
-            loss_weight = 0.30   # ice point / panic — loss dominates
+        if death and death.death_label == "CRITICAL":
+            loss_weight = 0.35   # 高位核心死亡 — loss dominates everything
+        elif death and death.death_label == "DANGER":
+            loss_weight = 0.25   # 高位风险释放
+        elif relay_fb < -50 or (loss and loss.loss_effect_label in ("恐慌", "严重")):
+            loss_weight = 0.25
         elif relay_fb < -20:
-            loss_weight = 0.20   # divergence/fade — elevated concern
+            loss_weight = 0.20
         elif relay_fb < 0:
-            loss_weight = 0.15   # weak relay — moderate concern
+            loss_weight = 0.15
         else:
-            loss_weight = 0.10   # normal market
+            loss_weight = 0.10
 
         composite = int(
             m.momentum_normalized * 0.10 + breadth_value * 0.25
             + relay_value * 0.20 + leader_contribution * 0.25
-            + capital_value * 0.10 - loss_penalty * loss_weight
+            + capital_value * 0.10 - loss_penalty * loss_weight - death_penalty * 0.10
         )
 
-        if composite >= 50:      node, node_desc = "CLIMAX", "情绪高潮"
-        elif composite >= 20:    node, node_desc = "ACCELERATION", "情绪加速"
-        elif composite >= 0:     node, node_desc = "FERMENTATION", "情绪发酵"
-        elif composite >= -20:   node, node_desc = "REPAIR", "情绪修复"
-        elif composite >= -40:   node, node_desc = "DIVERGENCE", "情绪分歧"
-        elif composite >= -60:   node, node_desc = "FADE", "情绪退潮"
-        else:                    node, node_desc = "ICE_POINT", "情绪冰点"
+        # ── 10-phase ontology v2 ──
+        if composite >= 60 and (loss is None or loss.loss_effect_label == "安全"):
+            node, node_desc = "CLIMAX", "情绪高潮"
+        elif composite >= 35:
+            node, node_desc = "ACCELERATION", "情绪加速"
+        elif composite >= 15:
+            node, node_desc = "FERMENTATION", "情绪发酵"
+        elif composite >= 5:
+            node, node_desc = "START", "情绪启动"
+        elif composite >= -10:
+            node, node_desc = "REPAIR", "情绪修复"
+        elif composite >= -25:
+            node, node_desc = "FIRST_DIVERGENCE", "第一次分歧"
+        elif composite >= -45:
+            node, node_desc = "DISTRIBUTION", "高位派发/退潮"
+        elif composite >= -65:
+            # Distinguish PANIC from FREEZE
+            if death and death.death_label == "CRITICAL":
+                node, node_desc = "PANIC", "恐慌释放"
+            else:
+                node, node_desc = "FREEZE", "情绪冰点"
+        else:
+            node, node_desc = "PANIC", "恐慌"
+
+        # SECOND_WAVE detection: repair followed by re-breaking
+        # (requires historical state; stub for now)
 
         e_dir, e_str = _signal_strength(composite,
             {"VERY_STRONG":50,"STRONG":20,"NORMAL":-10,"WEAK":-40}, "UP" if composite >= 0 else "DOWN")
@@ -187,21 +214,16 @@ class DiagnosisEngine:
         )
 
         # ── Step 7: Strategy ──
-        # Elevate to ICE_POINT when loss effect is 严重/恐慌 or leader health is COLLAPSE
-        force_ice = False
-        if node not in ("ICE_POINT",):
-            if loss and loss.loss_effect_label in ("恐慌", "严重"):
-                force_ice = True
-                node_desc = "情绪冰点（亏钱效应驱动）"
-            elif leader and leader.leader_health_label == "COLLAPSE":
-                force_ice = True
-                node_desc = "情绪冰点（龙头崩坏驱动）"
-            if force_ice:
-                node = "ICE_POINT"
+        # Death index escalation: override to PANIC when high position death is CRITICAL
+        if death and death.risk_escalation and node not in ("PANIC", "FREEZE"):
+            node = "PANIC"
+            node_desc = "恐慌（高位核心死亡驱动）"
 
-        if node in ("ICE_POINT",):
+        if node in ("PANIC", "FREEZE"):
+            mode = "全面防守"; allowed = ("观察",); forbidden = ("接力", "追高", "打板", "低吸", "重仓"); risk = "CRITICAL"
+        elif node in ("ICE_POINT",):
             mode = "首板试错"; allowed = ("首板", "新题材观察", "低吸"); forbidden = ("高位接力", "追龙头", "打连板"); risk = "HIGH"
-        elif node in ("REPAIR", "FERMENTATION"):
+        elif node in ("REPAIR", "FERMENTATION", "START"):
             mode = "右侧跟随"; allowed = ("龙头", "趋势", "首板"); forbidden = ("追高",); risk = "MEDIUM"
         elif node in ("ACCELERATION", "CLIMAX"):
             mode = "防守等分歧"; allowed = ("低位补涨", "趋势"); forbidden = ("追龙头", "高位接力"); risk = "MEDIUM"

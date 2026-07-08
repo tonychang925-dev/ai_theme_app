@@ -17,6 +17,7 @@ from typing import Any
 from .contracts import (
     ActiveCapitalMetrics,
     EmotionMomentumMetrics,
+    HighPositionDeathMetrics,
     LeaderEvolutionMetrics,
     LimitUpMetrics,
     LossAttributionMetrics,
@@ -86,6 +87,7 @@ class MarketMetricsService:
         loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay)
         leader_evolution = self._build_leader_evolution(trade_date, stock_detail, streak_dist, yesterday_codes)
         loss_attr = self._build_loss_attribution(trade_date, loss_effect, relay, leader_evolution)
+        death = self._build_death_index(leader_evolution, loss_effect, relay)
 
         return MarketMetricsSnapshot(
             trade_date=trade_date,
@@ -94,6 +96,7 @@ class MarketMetricsService:
             loss_effect=loss_effect,
             leader_evolution=leader_evolution,
             loss_attribution=loss_attr,
+            high_position_death=death,
             data_quality_score=0.85 if breadth.up_count > 0 else 0.5,
         )
 
@@ -657,6 +660,52 @@ class MarketMetricsService:
             total_damage_count=total_damage,
             damage_ratio=damage_ratio,
             source=MetricSource("db_query", "stock_daily_snapshot + relay", confidence=0.85),
+        )
+
+    @staticmethod
+    def _build_death_index(leader: LeaderEvolutionMetrics | None,
+                            loss: LossEffectMetrics | None,
+                            relay: RelayEcologyMetrics) -> HighPositionDeathMetrics:
+        """High Position Death Index: WHO died matters more than HOW MANY.
+
+        Formula: leader_break*40% + high_board_loss*30% + yesterday_feedback_inverted*20% + big_loss*10%
+        """
+        lb = leader.break_count if leader else 0
+        hb = loss.high_board_break_count if loss else 0
+        bl = loss.big_loss_count if loss else 0
+        fb_inv = max(0, (100 - max(0, relay.feedback_score))) * 0.3  # invert positive feedback
+
+        # Normalize each component to 0-100 scale
+        lb_norm = min(100, lb * 25)          # 4 breaks → 100
+        hb_norm = min(100, hb * 12.5)        # 8 high board losses → 100
+        fb_norm = min(100, fb_inv)            # already 0-100
+        bl_norm = min(100, bl * 10)           # 10 big losses → 100
+
+        death = round(lb_norm * 0.40 + hb_norm * 0.30 + fb_norm * 0.20 + bl_norm * 0.10, 1)
+
+        if death >= 60:
+            label = "CRITICAL"
+            conclusion = f"高位核心死亡！龙头断板{lb}只+高标亏损{hb}只，风险升级至最高级"
+        elif death >= 35:
+            label = "DANGER"
+            conclusion = f"高位风险释放中：龙头断板{lb}只，高标亏损{hb}只"
+        elif death >= 15:
+            label = "WARNING"
+            conclusion = f"高位出现松动，龙头断板{lb}只"
+        else:
+            label = "SAFE"
+            conclusion = "高位核心安全，无明显死亡信号"
+
+        return HighPositionDeathMetrics(
+            death_index=death,
+            death_label=label,
+            leader_break_count=lb,
+            high_board_loss_count=hb,
+            yesterday_feedback_inverted=fb_norm,
+            big_loss_count=bl,
+            death_conclusion=conclusion,
+            risk_escalation=death >= 60,
+            source=MetricSource("derived", "leader + loss + relay", confidence=0.82),
         )
 
     @staticmethod

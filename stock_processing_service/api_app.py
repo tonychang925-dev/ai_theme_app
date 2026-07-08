@@ -7320,6 +7320,15 @@ async def get_market_metrics(trade_date: str) -> dict[str, Any]:
                     "reason": l.reason,
                 } for l in snap.leader_evolution.leaders],
             },
+            "high_position_death": None if snap.high_position_death is None else {
+                "death_index": snap.high_position_death.death_index,
+                "death_label": snap.high_position_death.death_label,
+                "leader_break_count": snap.high_position_death.leader_break_count,
+                "high_board_loss_count": snap.high_position_death.high_board_loss_count,
+                "big_loss_count": snap.high_position_death.big_loss_count,
+                "death_conclusion": snap.high_position_death.death_conclusion,
+                "risk_escalation": snap.high_position_death.risk_escalation,
+            },
             "loss_attribution": None if snap.loss_attribution is None else {
                 "limit_down_count": snap.loss_attribution.limit_down_count,
                 "high_board_loss_count": snap.loss_attribution.high_board_loss_count,
