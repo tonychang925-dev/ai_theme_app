@@ -18,19 +18,42 @@ from __future__ import annotations
 import asyncio
 import json
 from datetime import date, datetime, timezone
+from pathlib import Path
 from typing import Any
 
 DB_DSN = "postgresql://localhost:5432/stock_data_test"
 
+# PDF paths for analyst recaps
+PDF_PATHS: dict[str, str] = {
+    "2026-07-07": "/Users/admin/Desktop/7:7日复盘.pdf",
+}
+
 
 class ChartReproductionEngine:
-    """Generate analyst chart data for a trading day."""
+    """Generate analyst chart data for a trading day.
+
+    Auto-computes from DB + recap, then applies PDF overrides if available.
+    """
 
     def run(self, trade_date: date) -> list[dict[str, Any]]:
         return asyncio.run(self._run_async(trade_date))
 
     async def run_async(self, trade_date: date) -> list[dict[str, Any]]:
         import asyncpg
+
+        # ── Check for analyst PDF and parse it first ──
+        pdf_metrics: dict[str, Any] = {}
+        pdf_text = ""
+        date_str = trade_date.isoformat()
+        if date_str in PDF_PATHS and Path(PDF_PATHS[date_str]).exists():
+            try:
+                from .pdf_parser import parse_analyst_pdf
+                parsed = parse_analyst_pdf(PDF_PATHS[date_str], trade_date)
+                pdf_metrics = parsed.get("metrics", {})
+                pdf_text = parsed.get("narrative", "")[:500]
+            except Exception:
+                pass
+
         conn = await asyncpg.connect(DB_DSN, user="postgres", password="")
         try:
             charts: list[dict[str, Any]] = []
@@ -62,10 +85,41 @@ class ChartReproductionEngine:
             # ── Chart 7: Limit-up Classification ──
             charts.append(self._chart_limitup_classification(trade_date, recap))
 
+            # ── Apply PDF overrides ──
+            if pdf_metrics:
+                self._apply_pdf_overrides(charts, pdf_metrics, pdf_text)
+
             return charts
 
         finally:
             await conn.close()
+
+    def _apply_pdf_overrides(self, charts: list[dict], pdf_metrics: dict, pdf_text: str) -> None:
+        """Override chart data with analyst-verified numbers from PDF."""
+        for c in charts:
+            ct = c["chart_type"]
+
+            if ct == "market_breadth":
+                if "limit_up_count" in pdf_metrics:
+                    c["data"]["limit_up_count"] = pdf_metrics["limit_up_count"]
+                if "turnover_wan_yi" in pdf_metrics:
+                    c["data"]["turnover_yi"] = pdf_metrics["turnover_wan_yi"]
+                # Recompute interpretation
+                lu = c["data"]["limit_up_count"]
+                c["interpretation"] = (
+                    f"【分析师校准】涨停{lu}家（分析师PDF数据）。"
+                    + c["interpretation"].split("。")[-1] if "。" in c["interpretation"] else ""
+                )
+
+            if "emotion_node_text" in pdf_metrics:
+                c["data"]["pdf_emotion"] = pdf_metrics["emotion_node_text"]
+
+            # Add PDF narrative reference
+            if pdf_text:
+                c["pdf_narrative"] = pdf_text[:200]
+
+            # Mark PDF source
+            c["source"] = "analyst_pdf_calibrated"
 
     # ── Data loaders ──
 
