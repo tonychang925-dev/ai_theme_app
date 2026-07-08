@@ -54,6 +54,13 @@ class LeaderEvolutionBuilder:
         super_cont = normal_cont = weaken_exp = weaken_unexp = breaks = new_count = replaced = 0
         surprises: list[float] = []
 
+        # ── Pre-compute theme followers (for diffusion factor) ──
+        theme_followers: dict[str, int] = {}
+        for code, info in today_limitup.items():
+            tags = info.get("reason_tags", [])
+            for tag in tags:
+                theme_followers[tag] = theme_followers.get(tag, 0) + 1
+
         for code, height in today_streaks.items():
             if height < self.MIN_LEADER_HEIGHT:
                 continue
@@ -121,7 +128,33 @@ class LeaderEvolutionBuilder:
             strength = height_score + seal_score + turnover_score + 20
             risk = max(5, min(100, 100 - strength + (30 if not sealed else 0) - (surprise * 0.3)))
 
-            surprise = round(surprise, 1)
+            # ── v2: 3-factor surprise adjustment ──
+            # Factor 1: Height surprise (50%) — already computed as base surprise
+            height_surprise = surprise
+
+            # Factor 2: Capital quality (30%) — is volume healthy or shrinking?
+            # High turnover + sealed = capital conviction. Low turnover = weak.
+            if turnover > 10 and sealed:
+                capital_surprise = min(20, turnover * 0.8)   # +0 to +20
+            elif turnover < 3:
+                capital_surprise = -15                         # very thin
+            elif not sealed:
+                capital_surprise = -10                         # failed to seal
+            else:
+                capital_surprise = 5
+
+            # Factor 3: Theme diffusion (20%) — how many peer stocks followed?
+            followers = theme_followers.get(theme_hint, 1) if theme_hint else 1
+            if followers >= 10:
+                theme_surprise = 20                            # strong sector follow
+            elif followers >= 5:
+                theme_surprise = 10
+            elif followers >= 2:
+                theme_surprise = 5
+            else:
+                theme_surprise = -10                           # isolated leader, fragile
+
+            surprise = round(height_surprise * 0.5 + capital_surprise * 0.3 + theme_surprise * 0.2, 1)
             surprises.append(surprise)
 
             leaders.append(LeaderSnapshot(

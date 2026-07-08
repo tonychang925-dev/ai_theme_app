@@ -7525,6 +7525,33 @@ async def get_metrics_lineage() -> dict[str, Any]:
     return to_lineage_dict()
 
 
+# ── M2.5 Phase 3.0: Causal Narrative ──
+
+@app.get("/api/v1/market-narrative/{trade_date}")
+async def get_market_narrative(trade_date: str) -> dict[str, Any]:
+    """Return analyst-style market narrative from canonical metrics.
+
+    Rule-driven, not LLM. Every claim is bound to a registered metric.
+    """
+    from datetime import date as _date
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
+    from stock_processing_service.application.services.market_metrics.narrative_engine import (
+        NarrativeEngine,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        snap = MarketMetricsService().get(td)
+        engine = NarrativeEngine()
+        story = engine.generate(snap)
+        return story.to_dict()
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 # ── P2.6.1 Evidence Artifacts ──
 
 @app.get("/api/v1/evidence-artifacts/{trade_date}")

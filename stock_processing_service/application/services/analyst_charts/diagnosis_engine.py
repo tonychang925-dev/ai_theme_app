@@ -129,16 +129,28 @@ class DiagnosisEngine:
         )
 
         # ── Step 6: Emotion Phase ──
-        # v3.1: breadth(25%) + leader(25%) + relay(20%) + capital(10%) + momentum(10%) - loss(10%)
+        # v3.2: dynamic loss weight based on relay feedback
         capital_value = int((c.active_ratio - 0.03) * 500)
         loss = snap.loss_effect
         loss_penalty = int(loss.loss_effect_score * 0.5) if loss else 0
         leader = snap.leader_evolution
         leader_contribution = int((leader.leader_health_score - 50) * 0.8) if leader else 0
+
+        # Dynamic loss weight: heavier in risk states
+        relay_fb = snap.relay.feedback_score
+        if relay_fb < -50 or (loss and loss.loss_effect_label in ("恐慌", "严重")):
+            loss_weight = 0.30   # ice point / panic — loss dominates
+        elif relay_fb < -20:
+            loss_weight = 0.20   # divergence/fade — elevated concern
+        elif relay_fb < 0:
+            loss_weight = 0.15   # weak relay — moderate concern
+        else:
+            loss_weight = 0.10   # normal market
+
         composite = int(
             m.momentum_normalized * 0.10 + breadth_value * 0.25
             + relay_value * 0.20 + leader_contribution * 0.25
-            + capital_value * 0.10 - loss_penalty * 0.10
+            + capital_value * 0.10 - loss_penalty * loss_weight
         )
 
         if composite >= 50:      node, node_desc = "CLIMAX", "情绪高潮"
