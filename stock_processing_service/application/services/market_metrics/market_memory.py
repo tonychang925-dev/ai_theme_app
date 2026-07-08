@@ -173,6 +173,50 @@ class TransitionAnalysis:
     best_match_narrative: str = ""
 
 
+# ── Temporal (sequence) fingerprint ──
+
+@dataclass(frozen=True, slots=True)
+class MarketSequenceFingerprint:
+    """Multi-day market state path — the TRAJECTORY matters.
+
+    Two markets both at PANIC today, but:
+      A: CLIMAX → DIVERGENCE → PANIC  (likely to repair)
+      B: HIGH → FADE → FADE → PANIC   (likely to continue)
+    """
+    trade_date: date
+    sequence: tuple[MarketFingerprint, ...]   # oldest → newest, length 3-5
+    path_signature: str = ""                  # e.g. "CLIMAX>DIVERGENCE>PANIC"
+
+    @property
+    def current(self) -> MarketFingerprint:
+        return self.sequence[-1]
+
+    def distance(self, other: MarketSequenceFingerprint) -> int:
+        """Weighted sequence distance — recent days matter more."""
+        if len(self.sequence) != len(other.sequence):
+            return 999
+        total = 0
+        n = len(self.sequence)
+        for i, (a, b) in enumerate(zip(self.sequence, other.sequence)):
+            day_weight = (i + 1) / n  # later days = higher weight
+            total += int(a.distance(b) * day_weight)
+        return total
+
+
+# ── Failure case memory ──
+
+@dataclass(frozen=True, slots=True)
+class FailureCase:
+    """A prediction that went wrong — stored for learning."""
+    trade_date: date
+    fingerprint: MarketFingerprint
+    ai_prediction: str        # what AI expected
+    actual_outcome: str       # what actually happened
+    error_type: str           # OVER_OPTIMISTIC | OVER_PESSIMISTIC | PHASE_WRONG | RISK_WRONG
+    lesson: str = ""
+    reviewed: bool = False
+
+
 # ── Memory Engine ──
 
 class MarketMemoryEngine:
@@ -297,6 +341,103 @@ class MarketMemoryEngine:
             best_match_narrative=f"最相似: {best.trade_date.isoformat()}({best.similarity_pct:.0f}%相似), "
                                  f"次日: {best.transition_label}" if best else "",
         )
+
+    # ── Sequence matching (v2) ──
+
+    def build_sequences(self, seq_len: int = 4) -> None:
+        """Build multi-day sequence fingerprints from memory.
+
+        A sequence represents the path to today, not just today's snapshot.
+        Two markets both at PANIC can have very different trajectories.
+        """
+        sorted_dates = sorted(self._memory.keys())
+        self._sequences.clear()
+        for i, dt in enumerate(sorted_dates):
+            if i >= seq_len - 1:
+                seq = tuple(self._memory[sorted_dates[j]] for j in range(i - seq_len + 1, i + 1))
+                phases = ">".join(self._phase_name(fp.phase_bucket) for fp in seq)
+                self._sequences[dt] = MarketSequenceFingerprint(
+                    trade_date=dt, sequence=seq, path_signature=phases)
+
+    def find_similar_sequence(self, query: MarketSequenceFingerprint,
+                               top_n: int = 5) -> list[tuple[date, int, str, float]]:
+        """Find top-N sequences similar to this path trajectory."""
+        results: list[tuple[date, int, str, float]] = []
+        for dt, seq in self._sequences.items():
+            if dt == query.trade_date:
+                continue
+            d = query.distance(seq)
+            sim = round(max(0, (1 - d / max(36, d + 1))) * 100, 1)
+            results.append((dt, d, seq.path_signature, sim))
+        results.sort(key=lambda x: x[1])
+        return results[:top_n]
+
+    # ── Confidence levels ──
+
+    @staticmethod
+    def confidence_level(sample_count: int) -> str:
+        """Confidence level based on sample size."""
+        if sample_count >= 30:     return "HIGH"
+        elif sample_count >= 10:   return "MEDIUM"
+        else:                      return "LOW"
+
+    def analyze_transition_v2(self, query: MarketFingerprint,
+                               top_n: int = 12) -> dict:
+        """Transition analysis v2 with confidence interval."""
+        similar = self.find_similar(query, top_n=top_n)
+        total = len(similar)
+        conf = self.confidence_level(total)
+
+        if total == 0:
+            return {"total": 0, "confidence": "NONE",
+                    "message": "无足够历史数据", "repair_pct": 0}
+
+        improved = sum(1 for s in similar if s.transition_label == "修复")
+        worsened = sum(1 for s in similar if s.transition_label == "持续退潮")
+        stable = total - improved - worsened
+
+        return {
+            "total_similar": total,
+            "confidence": conf,
+            "sample_size_warning": f"仅{total}个样本，置信度{conf}" if conf != "HIGH" else "",
+            "repair_probability": round(improved / total, 2),
+            "worsen_probability": round(worsened / total, 2),
+            "stable_probability": round(stable / total, 2),
+            "improved_count": improved,
+            "worsened_count": worsened,
+        }
+
+    # ── Failure case memory ──
+
+    def record_failure(self, trade_date: date, fingerprint: MarketFingerprint,
+                       ai_prediction: str, actual_outcome: str,
+                       error_type: str = "", lesson: str = "") -> None:
+        """Record a prediction that went wrong for future learning."""
+        self._failures.append(FailureCase(
+            trade_date=trade_date, fingerprint=fingerprint,
+            ai_prediction=ai_prediction, actual_outcome=actual_outcome,
+            error_type=error_type, lesson=lesson))
+
+    def get_relevant_failures(self, fingerprint: MarketFingerprint,
+                               max_distance: int = 8) -> list[FailureCase]:
+        """Retrieve past failures similar to current state for caution."""
+        relevant: list[tuple[int, FailureCase]] = []
+        for fc in self._failures:
+            d = fingerprint.distance(fc.fingerprint)
+            if d <= max_distance:
+                relevant.append((d, fc))
+        relevant.sort(key=lambda x: x[0])
+        return [fc for _, fc in relevant[:5]]
+
+    def get_failure_lessons(self, fingerprint: MarketFingerprint) -> list[str]:
+        """Get lessons from similar past failures."""
+        failures = self.get_relevant_failures(fingerprint)
+        if not failures:
+            return []
+        lessons = [f"历史上有{len(failures)}次类似判断出错:"]
+        for fc in failures[:3]:
+            lessons.append(f"  {fc.trade_date.isoformat()}: {fc.error_type} — {fc.lesson}")
+        return lessons
 
     @staticmethod
     def _phase_name(bucket: int) -> str:

@@ -7621,10 +7621,14 @@ async def get_market_memory(trade_date: str, top_n: int = 5) -> dict[str, Any]:
             fp = MarketFingerprint.from_snapshot(s)
             engine.remember(fp)
 
+        # Build sequence fingerprints (4-day trajectories)
+        engine.build_sequences(seq_len=4)
+
         # Query today
         snap_today = svc.get(td)
         query_fp = MarketFingerprint.from_snapshot(snap_today)
         analysis = engine.analyze_transition(query_fp, top_n=top_n)
+        v2 = engine.analyze_transition_v2(query_fp, top_n=top_n)
 
         return {
             "query_date": trade_date,
@@ -7654,7 +7658,26 @@ async def get_market_memory(trade_date: str, top_n: int = 5) -> dict[str, Any]:
                 "date": analysis.best_match_date.isoformat() if analysis.best_match_date else None,
                 "narrative": analysis.best_match_narrative,
             },
+            "v2_confidence": {
+                "confidence": v2["confidence"],
+                "sample_size_warning": v2.get("sample_size_warning", ""),
+                "repair_probability": v2["repair_probability"],
+                "worsen_probability": v2["worsen_probability"],
+                "stable_probability": v2["stable_probability"],
+            },
+            "sequence_matches": [],
+            "failure_warnings": engine.get_failure_lessons(query_fp),
+            "failure_warnings": engine.get_failure_lessons(query_fp),
         }
+        # Add sequence matches if available
+        seq = engine._sequences.get(td)
+        if seq:
+            result["sequence_matches"] = [{
+                "date": dt.isoformat(), "distance": d,
+                "path_signature": sig, "similarity_pct": sim,
+            } for dt, d, sig, sim in engine.find_similar_sequence(seq, top_n=5)]
+            result["query_path"] = seq.path_signature
+        return result
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
     except Exception as exc:
