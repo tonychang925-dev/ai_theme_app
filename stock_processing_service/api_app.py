@@ -7215,6 +7215,26 @@ async def save_playbook(
     }
 
 
+# ── P2.7 Analyst Charts ──
+
+@app.get("/api/v1/analyst-charts/{trade_date}")
+async def get_analyst_charts(trade_date: str) -> list[dict[str, Any]]:
+    """Return auto-generated analyst chart data for a trading day."""
+    from datetime import date as _date
+    from stock_processing_service.application.services.analyst_charts.chart_engine import (
+        ChartReproductionEngine,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        engine = ChartReproductionEngine()
+        charts = await engine.run_async(td)
+        return charts
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 # ── P2.6.1 Evidence Artifacts ──
 
 @app.get("/api/v1/evidence-artifacts/{trade_date}")
@@ -7229,7 +7249,33 @@ async def get_evidence_artifacts(
     try:
         td = _date.fromisoformat(trade_date)
         service = EvidenceArtifactService()
-        return service.list(td, module)
+        artifacts = service.list(td, module)
+
+        # Also include auto-generated charts from ChartReproductionEngine
+        try:
+            from stock_processing_service.application.services.analyst_charts.chart_engine import (
+                ChartReproductionEngine,
+            )
+            engine = ChartReproductionEngine()
+            charts = await engine.run_async(td)
+            # Convert charts to artifact format
+            for c in charts:
+                if module and c.get("module") != module:
+                    continue
+                artifacts.append({
+                    "artifact_id": c["chart_id"],
+                    "trade_date": c["trade_date"],
+                    "artifact_type": "chart",
+                    "title": c["title"],
+                    "source": "system_generated",
+                    "related_module": c["module"],
+                    "extracted_metrics": c.get("data", {}),
+                    "summary": c.get("interpretation", ""),
+                })
+        except Exception:
+            pass  # chart engine not available
+
+        return artifacts
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
     except Exception as exc:
