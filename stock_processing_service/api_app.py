@@ -7280,6 +7280,18 @@ async def get_market_metrics(trade_date: str) -> dict[str, Any]:
                 "high_board_count": snap.relay.high_board_count,
                 "high_board_break_count": snap.relay.high_board_break_count,
             },
+            "loss_effect": None if snap.loss_effect is None else {
+                "limit_down_count": snap.loss_effect.limit_down_count,
+                "limit_down_ratio": snap.loss_effect.limit_down_ratio,
+                "limit_down_amount_yi": snap.loss_effect.limit_down_amount_yi,
+                "big_loss_count": snap.loss_effect.big_loss_count,
+                "big_loss_from_yesterday_ratio": snap.loss_effect.big_loss_from_yesterday_ratio,
+                "high_board_break_count": snap.loss_effect.high_board_break_count,
+                "loss_effect_score": snap.loss_effect.loss_effect_score,
+                "loss_effect_label": snap.loss_effect.loss_effect_label,
+                "total_damage_count": snap.loss_effect.total_damage_count,
+                "damage_ratio": snap.loss_effect.damage_ratio,
+            },
             "capital": {
                 "total_turnover_yi": snap.capital.total_turnover_yi,
                 "total_turnover_display": f"{snap.capital.total_turnover_yi / 10000:.2f}万亿" if snap.capital.total_turnover_yi >= 10000 else f"{snap.capital.total_turnover_yi:.0f}亿",

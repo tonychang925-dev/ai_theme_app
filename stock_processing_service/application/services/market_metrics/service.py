@@ -18,6 +18,7 @@ from .contracts import (
     ActiveCapitalMetrics,
     EmotionMomentumMetrics,
     LimitUpMetrics,
+    LossEffectMetrics,
     MarketBreadthMetrics,
     MarketMetricsSnapshot,
     MetricSource,
@@ -80,11 +81,13 @@ class MarketMetricsService:
         relay = await self._build_relay(conn, trade_date, limitup, streak_dist, yesterday_codes)
         capital = await self._build_capital(conn, trade_date, breadth, overview)
         momentum = self._build_momentum(breadth, limitup)
+        loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay)
 
         return MarketMetricsSnapshot(
             trade_date=trade_date,
             breadth=breadth, limitup=limitup, relay=relay,
             capital=capital, emotion_momentum=momentum,
+            loss_effect=loss_effect,
             data_quality_score=0.85 if breadth.up_count > 0 else 0.5,
         )
 
@@ -483,6 +486,75 @@ class MarketMetricsService:
         payload = row["payload"]
         if isinstance(payload, str): payload = json.loads(payload)
         return payload.get("recap_doc", payload)
+
+    async def _build_loss_effect(self, conn, td: date, breadth: MarketBreadthMetrics,
+                                  relay: RelayEcologyMetrics) -> LossEffectMetrics:
+        """Build loss effect metrics from stock_daily_snapshot + relay data.
+
+        Sources:
+          - limit_down: stock_daily_snapshot pct_chg <= -threshold
+          - big_loss: relay.yesterday_big_loss_count
+          - high_board_break: from relay
+        """
+        # ── Limit down stocks ──
+        # Main board: -9.5, 20cm boards: -19.5, ST: -4.5
+        rows = await conn.fetch(
+            "SELECT pct_chg, amount FROM stock_daily_snapshot "
+            "WHERE trade_date = $1::date", td)
+        ld_count = 0
+        ld_amount = 0.0
+        for r in rows:
+            pct = float(r["pct_chg"] or 0)
+            amt = float(r["amount"] or 0)
+            # Simplified: main board threshold. TODO: per-stock threshold
+            if pct <= -9.5:
+                ld_count += 1
+                ld_amount += amt
+
+        total_stocks = breadth.up_count + breadth.down_count
+        ld_ratio = round(ld_count / max(total_stocks, 1), 4)
+        ld_amount_yi = normalize_to_yi(ld_amount, "yuan") if ld_amount > 0 else 0.0
+
+        # ── Big loss from relay ──
+        big_loss = relay.yesterday_big_loss_count
+        yesterday_total = relay.yesterday_limitup_count
+        big_loss_ratio = round(big_loss / max(yesterday_total, 1), 3)
+
+        # ── High board break ──
+        hb_break = relay.high_board_break_count
+
+        # ── Composite loss effect score (0~100) ──
+        # 跌停权重 40%, 大面权重 40%, 高位断板权重 20%
+        ld_contribution = min(100, (ld_count / max(total_stocks, 1)) * 1000)
+        bl_contribution = min(100, (big_loss / max(yesterday_total, 1)) * 100)
+        hb_contribution = min(100, hb_break * 20)
+
+        raw_score = ld_contribution * 0.4 + bl_contribution * 0.4 + hb_contribution * 0.2
+        score = round(min(100, raw_score), 1)
+
+        if score >= 60:       label = "恐慌"
+        elif score >= 35:     label = "严重"
+        elif score >= 15:     label = "明显"
+        elif score >= 3:      label = "轻微"
+        else:                 label = "安全"
+
+        # ── Total damage ──
+        total_damage = ld_count + big_loss  # rough estimate, may overlap
+        damage_ratio = round(total_damage / max(total_stocks, 1), 4)
+
+        return LossEffectMetrics(
+            limit_down_count=ld_count,
+            limit_down_ratio=ld_ratio,
+            limit_down_amount_yi=ld_amount_yi,
+            big_loss_count=big_loss,
+            big_loss_from_yesterday_ratio=big_loss_ratio,
+            high_board_break_count=hb_break,
+            loss_effect_score=score,
+            loss_effect_label=label,
+            total_damage_count=total_damage,
+            damage_ratio=damage_ratio,
+            source=MetricSource("db_query", "stock_daily_snapshot + relay", confidence=0.85),
+        )
 
     @staticmethod
     def _norm_code(code: str) -> str:

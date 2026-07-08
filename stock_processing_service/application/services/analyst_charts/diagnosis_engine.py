@@ -129,10 +129,14 @@ class DiagnosisEngine:
         )
 
         # ── Step 6: Emotion Phase ──
-        # Emotion = breadth (40%) + momentum (25%) + relay (20%) + capital (15%)
-        # Breadth dominates because 赚钱效应 is the primary driver of market emotion
+        # v2: Emotion = breadth(35%) + momentum(25%) + relay(20%) + capital(10%) - loss_effect(10%)
         capital_value = int((c.active_ratio - 0.03) * 500)
-        composite = int(m.momentum_normalized * 0.25 + breadth_value * 0.40 + relay_value * 0.20 + capital_value * 0.15)
+        loss = snap.loss_effect
+        loss_penalty = int(loss.loss_effect_score * 0.5) if loss else 0
+        composite = int(
+            m.momentum_normalized * 0.25 + breadth_value * 0.35
+            + relay_value * 0.20 + capital_value * 0.10 - loss_penalty * 0.10
+        )
 
         if composite >= 50:      node, node_desc = "CLIMAX", "情绪高潮"
         elif composite >= 20:    node, node_desc = "ACCELERATION", "情绪加速"
@@ -144,20 +148,31 @@ class DiagnosisEngine:
 
         e_dir, e_str = _signal_strength(composite,
             {"VERY_STRONG":50,"STRONG":20,"NORMAL":-10,"WEAK":-40}, "UP" if composite >= 0 else "DOWN")
+        loss_desc = ""
+        if loss and loss.loss_effect_label != "安全":
+            loss_desc = f"，亏钱{loss.loss_effect_label}(跌停{loss.limit_down_count}，大面{loss.big_loss_count})"
+
         emotion_signal = MarketSignal(
             signal_id=f"emotion_{trade_date.isoformat()}", name="情绪阶段",
             direction=e_dir, strength=e_str, value=composite, threshold=0,
-            reason=f"{node_desc}（{node}）",
+            reason=f"{node_desc}（{node}）{loss_desc}",
             evidence=tuple([
                 f"赚钱效应: {breadth_signal.label} ({breadth_signal.reason})",
                 f"活跃资金: {money_signal.label} ({money_signal.reason})",
                 f"接力生态: {relay_signal.label} ({relay_signal.reason})",
                 f"龙头状态: {leader_signal.label} ({leader_signal.reason})",
                 f"板块节奏: {theme_signal.label} ({theme_signal.reason})",
+                f"亏钱效应: {loss.loss_effect_label}(跌停{loss.limit_down_count},大面{loss.big_loss_count})" if loss else "亏钱效应: 无数据",
             ]),
         )
 
         # ── Step 7: Strategy ──
+        # Elevate risk when loss effect is 严重 or 恐慌, even if composite is borderline
+        if loss and loss.loss_effect_label in ("恐慌", "严重") and node not in ("ICE_POINT",):
+            if node in ("DIVERGENCE", "FADE"):
+                node = "ICE_POINT"
+                node_desc = "情绪冰点（亏钱效应驱动）"
+
         if node in ("ICE_POINT",):
             mode = "首板试错"; allowed = ("首板", "新题材观察", "低吸"); forbidden = ("高位接力", "追龙头", "打连板"); risk = "HIGH"
         elif node in ("REPAIR", "FERMENTATION"):

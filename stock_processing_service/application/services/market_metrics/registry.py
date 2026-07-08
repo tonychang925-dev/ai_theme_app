@@ -438,6 +438,46 @@ register(MetricDefinition(
 ))
 
 
+# ── Loss Effect (source: stock_daily_snapshot + relay) ──
+
+_Q_LOSS = MetricQuality(
+    freshness="T+0", completeness=0.85, confidence=0.82,
+    notes="stock_daily_snapshot 跌停 + relay v2 大面数据; 主板阈值简化",
+)
+
+register(MetricDefinition(
+    name="loss_effect_score",
+    display_name="亏钱效应分数",
+    description="0~100：跌停(40%) + 大面(40%) + 高位断板(20%). 0=安全, 100=恐慌",
+    owner="MarketMetricsService",
+    source_tables=("stock_daily_snapshot", "ths_hot_reason_snapshot"),
+    source_fields=("pct_chg", "amount"),
+    calculator="_build_loss_effect",
+    consumers=("DiagnosisEngine", "EmotionDashboard", "PlaybookEngine"),
+    unit="score",
+    version="1.0",
+    quality=_Q_LOSS,
+    depends_on=("relay.yesterday_big_loss_count", "breadth.up_count"),
+    tags=("loss", "emotion", "risk"),
+))
+
+register(MetricDefinition(
+    name="limit_down_count",
+    display_name="跌停家数",
+    description="全市场跌停(pct_chg <= -9.5)家数",
+    owner="MarketMetricsService",
+    source_tables=("stock_daily_snapshot",),
+    source_fields=("pct_chg",),
+    calculator="_build_loss_effect",
+    consumers=("DiagnosisEngine", "EmotionDashboard"),
+    unit="count",
+    version="1.0",
+    quality=_Q_LOSS,
+    depends_on=(),
+    tags=("loss", "base"),
+))
+
+
 # ═══════════════════════════════════════════════════════════════════════
 # Dependency Graph
 # ═══════════════════════════════════════════════════════════════════════
