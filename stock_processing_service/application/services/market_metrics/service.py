@@ -76,8 +76,8 @@ class MarketMetricsService:
         overview = recap.get("market_overview_review", {}) if recap else {}
 
         breadth = await self._build_breadth(trade_date, overview, {})
-        limitup, streak_dist = await self._build_limitup(conn, trade_date, overview, {})
-        relay = self._build_relay(limitup, streak_dist)
+        limitup, streak_dist, yesterday_codes = await self._build_limitup(conn, trade_date, overview, {})
+        relay = await self._build_relay(conn, trade_date, limitup, streak_dist, yesterday_codes)
         capital = await self._build_capital(conn, trade_date, breadth, overview)
         momentum = self._build_momentum(breadth, limitup)
 
@@ -155,7 +155,7 @@ class MarketMetricsService:
             return "北交所"
         return "主板"
 
-    async def _build_limitup(self, conn, td: date, overview: dict, cal: dict) -> tuple[LimitUpMetrics, dict[int, int]]:
+    async def _build_limitup(self, conn, td: date, overview: dict, cal: dict) -> tuple[LimitUpMetrics, dict[int, int], set[str]]:
         """Build real LimitUpMetrics from ths_hot_reason_snapshot.
 
         Uses pct_chg to classify sealed vs fried per stock, with
@@ -228,11 +228,15 @@ class MarketMetricsService:
             prev_dates.append(row["d"])
             cursor = row["d"]
 
+        yesterday_codes: set[str] = set()
         for prev_d in prev_dates:
             prev_rows = await conn.fetch(
                 "SELECT stock_code FROM ths_hot_reason_snapshot "
                 "WHERE trade_date = $1::date", prev_d)
             prev_set = {self._norm_code(r["stock_code"]) for r in prev_rows}
+            # Capture yesterday's (most recent previous date) limit-up stocks for feedback calc
+            if not yesterday_codes:
+                yesterday_codes = prev_set.copy()
             extended = False
             for code in list(today_streaks.keys()):
                 if code in prev_set:
@@ -293,16 +297,24 @@ class MarketMetricsService:
             board_type_counts=board_type_counts,
             source=MetricSource("db_query", "ths_hot_reason_snapshot", confidence=0.9),
         )
-        return metrics, streak_dist
+        return metrics, streak_dist, yesterday_codes
 
     @staticmethod
-    def _build_relay(lu: LimitUpMetrics, streak_dist: dict[int, int] | None = None) -> RelayEcologyMetrics:
-        """Compute real promotion rates from streak distribution.
+    async def _build_relay(conn, td: date, lu: LimitUpMetrics,
+                           streak_dist: dict[int, int] | None = None,
+                           yesterday_codes: set[str] | None = None) -> RelayEcologyMetrics:
+        """Compute promotion rates + yesterday feedback score (v2).
 
-        p1to2 = stocks at height >= 2 / stocks at height >= 1 (i.e. all)
-        p2to3 = stocks at height >= 3 / stocks at height >= 2
-        p3to4 = stocks at height >= 4 / stocks at height >= 3
+        v2 adds:
+          - Yesterday limit-up cross-reference (continue / big loss / avg return)
+          - LimitUp Feedback Score (-100 ~ +100)
+
+        Promotion rates from streak_dist.
+        Feedback score from yesterday ∩ today cross-reference.
         """
+        _norm = MarketMetricsService._norm_code
+
+        # ── Promotion rates ──
         if streak_dist:
             h1 = sum(v for h, v in streak_dist.items() if h >= 1)
             h2 = sum(v for h, v in streak_dist.items() if h >= 2)
@@ -318,6 +330,74 @@ class MarketMetricsService:
             p2to3 = round(max(0, (lu.max_board_height - 2)) * 0.1, 2)
             p3to4 = round(max(0, (lu.max_board_height - 3)) * 0.05, 2)
 
+        # ── Yesterday feedback (v2) ──
+        yesterday_count = len(yesterday_codes) if yesterday_codes else 0
+
+        if yesterday_codes:
+            # Today's limit-up stocks
+            today_rows = await conn.fetch(
+                "SELECT stock_code FROM ths_hot_reason_snapshot "
+                "WHERE trade_date = $1::date", td)
+            today_set = {_norm(r["stock_code"]) for r in today_rows if _norm(r["stock_code"])}
+
+            # Continued = yesterday ∩ today
+            continue_codes = yesterday_codes & today_set
+            today_continue = len(continue_codes)
+            continue_ratio = round(today_continue / max(yesterday_count, 1), 3)
+
+            # Failed = yesterday - today — check today's return
+            failed_codes = yesterday_codes - today_set
+            big_loss_count = 0
+            failed_returns: list[float] = []
+
+            if failed_codes:
+                # Query today's stock_daily_snapshot for failed codes' pct_chg
+                rows = await conn.fetch(
+                    "SELECT stock_code, pct_chg FROM stock_daily_snapshot "
+                    "WHERE trade_date = $1::date", td)
+                today_pct: dict[str, float] = {}
+                for r in rows:
+                    code = _norm(r["stock_code"])
+                    if code and code in failed_codes:
+                        today_pct[code] = float(r["pct_chg"] or 0)
+
+                for code in failed_codes:
+                    pct = today_pct.get(code)
+                    if pct is not None:
+                        failed_returns.append(pct)
+                        if pct <= -5.0:
+                            big_loss_count += 1
+
+            avg_return = round(sum(failed_returns) / max(len(failed_returns), 1), 2) if failed_returns else None
+        else:
+            today_continue = 0
+            continue_ratio = 0.0
+            big_loss_count = 0
+            avg_return = None
+
+        # ── LimitUp Feedback Score (-100 ~ +100) ──
+        if yesterday_count > 0:
+            continue_score = (today_continue / yesterday_count) * 100
+            loss_penalty = (big_loss_count / yesterday_count) * 100
+            feedback_raw = continue_score - loss_penalty
+            if avg_return is not None:
+                feedback_raw += avg_return * 2
+
+            feedback_comps = {
+                "continue_bonus": round(continue_score, 1),
+                "big_loss_penalty": round(-loss_penalty, 1),
+                "avg_return_adjust": round(avg_return * 2, 1) if avg_return is not None else 0,
+            }
+        else:
+            feedback_raw = 0.0
+            feedback_comps = {"continue_bonus": 0, "big_loss_penalty": 0, "avg_return_adjust": 0}
+
+        if feedback_raw >= 60:       fb_label = "强正反馈"
+        elif feedback_raw >= 20:     fb_label = "正反馈"
+        elif feedback_raw >= -20:    fb_label = "中性"
+        elif feedback_raw >= -60:    fb_label = "负反馈"
+        else:                        fb_label = "强负反馈"
+
         return RelayEcologyMetrics(
             promotion_1_to_2=min(0.99, p1to2),
             promotion_2_to_3=min(0.99, p2to3),
@@ -325,6 +405,16 @@ class MarketMetricsService:
             chain_board_count=lu.chain_board_count,
             max_board_height=lu.max_board_height,
             max_turnover_board_height=lu.max_turnover_board_height,
+            yesterday_limitup_count=yesterday_count,
+            today_continue_count=today_continue,
+            continue_ratio=continue_ratio,
+            yesterday_big_loss_count=big_loss_count,
+            yesterday_avg_return_pct=avg_return,
+            feedback_score=round(feedback_raw, 1),
+            feedback_label=fb_label,
+            feedback_components=feedback_comps,
+            high_board_count=lu.high_board_count,
+            high_board_break_count=0,  # TODO: needs yesterday board height per stock
             source=lu.source,
         )
 

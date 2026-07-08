@@ -232,6 +232,45 @@ register(MetricDefinition(
     tags=("relay",),
 ))
 
+# ── Relay v2: Yesterday feedback ──
+
+_Q_FEEDBACK = MetricQuality(
+    freshness="T+0", completeness=0.80, confidence=0.75,
+    notes="昨涨停∩今数据交叉验证; 升级到昨涨停池后confidence→0.90",
+)
+
+register(MetricDefinition(
+    name="yesterday_limitup_feedback",
+    display_name="昨日涨停反馈",
+    description="昨天打板的人今天赚钱了吗？接力成功率 + 大面率 + 反馈分数",
+    owner="MarketMetricsService",
+    source_tables=("ths_hot_reason_snapshot", "stock_daily_snapshot"),
+    source_fields=("stock_code", "pct_chg"),
+    calculator="_build_relay (yesterday cross-ref)",
+    consumers=("DiagnosisEngine", "EmotionDashboard", "PlaybookEngine"),
+    unit="composite",
+    version="2.0",
+    quality=_Q_FEEDBACK,
+    depends_on=("chain_board_count", "limit_up_total_count"),
+    tags=("relay", "emotion", "feedback"),
+))
+
+register(MetricDefinition(
+    name="limitup_feedback_score",
+    display_name="接力反馈分数",
+    description="-100 ~ +100：继续涨停得分 - 大面扣分 + 平均收益调整",
+    owner="MarketMetricsService",
+    source_tables=("ths_hot_reason_snapshot", "stock_daily_snapshot"),
+    source_fields=("stock_code", "pct_chg"),
+    calculator="_build_relay (feedback_score)",
+    consumers=("DiagnosisEngine", "EmotionDashboard", "PlaybookEngine"),
+    unit="score",
+    version="2.0",
+    quality=_Q_FEEDBACK,
+    depends_on=("yesterday_limitup_feedback", "chain_board_count"),
+    tags=("relay", "emotion", "feedback", "derived"),
+))
+
 register(MetricDefinition(
     name="high_board_count",
     display_name="高标板数",

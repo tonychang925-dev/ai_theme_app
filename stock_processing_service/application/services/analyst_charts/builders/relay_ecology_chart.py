@@ -1,12 +1,18 @@
-"""Chart 4: Relay Ecology 核心板块节律 — PDF page 6."""
+"""Chart 4: Relay Ecology 核心板块节律 — PDF page 6.
+
+v2: includes LimitUp Feedback Score from yesterday cross-reference.
+"""
 
 from typing import Any
 
 
 def build(max_board_height: int, first_board_success_rate: float,
           promotion_1_to_2: float, promotion_2_to_3: float, promotion_3_to_4: float,
+          feedback_score: float = 0.0, feedback_label: str = "",
+          continue_ratio: float = 0.0, yesterday_count: int = 0,
+          big_loss_count: int = 0,
           board_groups: list[dict] | None = None) -> dict[str, Any]:
-    """Build relay ecology chart with promotion rates."""
+    """Build relay ecology chart with promotion rates + feedback score."""
 
     if max_board_height >= 5 and promotion_1_to_2 > 0.4:
         r_label = "接力活跃"
@@ -23,9 +29,17 @@ def build(max_board_height: int, first_board_success_rate: float,
         f"首板封板率{first_board_success_rate:.0%}",
     ]
 
+    # v2: add feedback evidence
+    if yesterday_count > 0:
+        evidence.append(
+            f"昨涨停{yesterday_count}只→今继续{continue_ratio:.0%}，大面{big_loss_count}只"
+        )
+        evidence.append(f"接力反馈: {feedback_label}({feedback_score:.0f})")
+
     interpretation = (
         f"核心板块节律：{r_label}。"
         + f"最高{max_board_height}板。"
+        + (f" 反馈{feedback_label}。" if feedback_label else "")
         + ("接力活跃，高度打开。" if r_label == "接力活跃"
            else "接力退潮，高度压制，慎打高位。" if r_label in ("接力退潮", "高度压制")
            else "接力正常。")
@@ -41,6 +55,11 @@ def build(max_board_height: int, first_board_success_rate: float,
             "promotion_1_to_2": round(promotion_1_to_2, 2),
             "promotion_2_to_3": round(promotion_2_to_3, 2),
             "promotion_3_to_4": round(promotion_3_to_4, 2),
+            "feedback_score": round(feedback_score, 1),
+            "feedback_label": feedback_label,
+            "continue_ratio": round(continue_ratio, 2),
+            "yesterday_limitup_count": yesterday_count,
+            "yesterday_big_loss_count": big_loss_count,
             "board_groups": board_groups or [],
             "label": r_label,
         },

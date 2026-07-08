@@ -92,13 +92,21 @@ class DiagnosisEngine:
         )
 
         # ── Step 3: Relay Ecology ──
-        relay_value = int((l.max_board_height - 3) * 30 + (b.limit_up_count - 80) * 0.2)
+        # v2: feedback_score (接力反馈分数) weights more than board height alone
+        fb = snap.relay.feedback_score
+        relay_value = int((l.max_board_height - 3) * 20 + fb * 0.4 + (b.limit_up_count - 80) * 0.2)
         r_dir, r_str = _signal_strength(relay_value,
             {"VERY_STRONG":40,"STRONG":10,"NORMAL":-20,"WEAK":-40}, "UP" if relay_value >= 0 else "DOWN")
+        fb_reason = f"，反馈{snap.relay.feedback_label}({fb:.0f})" if fb != 0 else ""
         relay_signal = MarketSignal(
             signal_id=f"relay_{trade_date.isoformat()}", name="接力生态",
             direction=r_dir, strength=r_str, value=relay_value, threshold=0,
-            reason=f"最高{l.max_board_height}板，连板{l.chain_board_count}只，涨停{b.limit_up_count}家",
+            reason=f"最高{l.max_board_height}板，连板{l.chain_board_count}只{fb_reason}",
+            evidence=tuple([
+                f"晋级率: 1→2={snap.relay.promotion_1_to_2:.0%}, 2→3={snap.relay.promotion_2_to_3:.0%}",
+                f"昨涨停{snap.relay.yesterday_limitup_count}只，今继续{snap.relay.continue_ratio:.0%}",
+                f"大面{snap.relay.yesterday_big_loss_count}只，反馈{snap.relay.feedback_label}",
+            ]),
         )
 
         # ── Step 4: Leader Status ──

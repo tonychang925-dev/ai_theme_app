@@ -86,13 +86,17 @@ class ChartReproductionEngine:
         ))
 
         # ── Chart 4: Relay Ecology (核心板块节律) ──
-        first_board_success = l.first_board_success_rate
         charts.append(relay_ecology_chart.build(
             max_board_height=r.max_board_height,
-            first_board_success_rate=first_board_success,
+            first_board_success_rate=l.first_board_success_rate,
             promotion_1_to_2=r.promotion_1_to_2,
             promotion_2_to_3=r.promotion_2_to_3,
             promotion_3_to_4=r.promotion_3_to_4,
+            feedback_score=r.feedback_score,
+            feedback_label=r.feedback_label,
+            continue_ratio=r.continue_ratio,
+            yesterday_count=r.yesterday_limitup_count,
+            big_loss_count=r.yesterday_big_loss_count,
             board_groups=[],  # thematic detail, not in snapshot
         ))
 
@@ -165,6 +169,10 @@ class ChartReproductionEngine:
             trend["relay"].append({
                 "date": s.trade_date.isoformat(),
                 "max_height": r.max_board_height,
+                "promotion_1_to_2": r.promotion_1_to_2,
+                "feedback_score": r.feedback_score,
+                "feedback_label": r.feedback_label,
+                "continue_ratio": r.continue_ratio,
                 "limit_up": b.limit_up_count,
             })
 

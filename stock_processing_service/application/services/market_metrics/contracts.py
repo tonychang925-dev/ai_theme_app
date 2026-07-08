@@ -86,13 +86,38 @@ class LimitUpMetrics:
 
 @dataclass(frozen=True, slots=True)
 class RelayEcologyMetrics:
-    promotion_1_to_2: float   # 一进二晋级率
-    promotion_2_to_3: float   # 二进三晋级率
-    promotion_3_to_4: float   # 三进四晋级率
-    chain_board_count: int
-    max_board_height: int
-    max_turnover_board_height: int
-    source: MetricSource
+    """Relay ecology — answers: "Did yesterday's traders make money today?"
+
+    v2 adds feedback score and yesterday cross-reference instead of
+    pure streak backtracking. Core unit for Emotion Engine cycle detection.
+    """
+    # ── Promotion rates ──
+    promotion_1_to_2: float               # 一进二晋级率
+    promotion_2_to_3: float               # 二进三晋级率
+    promotion_3_to_4: float               # 三进四晋级率
+    chain_board_count: int                # 连板家数
+    max_board_height: int                 # 最高板
+    max_turnover_board_height: int        # 最高换手板
+
+    # ── Yesterday limit-up feedback (v2) ──
+    yesterday_limitup_count: int          # 昨日涨停总数
+    today_continue_count: int             # 今日继续涨停数 (昨涨停 ∩ 今涨停)
+    continue_ratio: float                 # 接力成功率 = today_continue / yesterday
+    yesterday_big_loss_count: int         # 昨涨停今日大面数 (跌 >5%)
+    yesterday_avg_return_pct: float | None = None  # 昨涨停股今日平均收益率(%)
+
+    # ── LimitUp Feedback Score (v2) ──
+    feedback_score: float                 # -100 ~ +100 接力反馈分数
+    feedback_label: str = ""              # "强正反馈"|"正反馈"|"中性"|"负反馈"|"强负反馈"
+    feedback_components: dict[str, float] = field(default_factory=dict)
+    # keys: "continue_bonus", "big_loss_penalty", "avg_return_adjust"
+
+    # ── High board health ──
+    high_board_count: int = 0             # >= 3板的股票数
+    high_board_break_count: int = 0       # 高标断板数 (昨高标 ∧ 今未涨停)
+
+    # ── Provenance ──
+    source: MetricSource = field(default_factory=lambda: MetricSource("db_query"))
 
 
 @dataclass(frozen=True, slots=True)
