@@ -51,14 +51,37 @@ class MarketBreadthMetrics:
 
 @dataclass(frozen=True, slots=True)
 class LimitUpMetrics:
-    total_count: int
-    chain_board_count: int           # 连板家数
+    """Limit-up board statistics with sealed/fried classification.
+
+    Source: ths_hot_reason_snapshot (同花顺涨停原因) with pct_chg for board quality.
+
+    Board thresholds:
+      - 主板 (Main):   pct_chg >= 9.5  → sealed
+      - 创业板/科创板:  pct_chg >= 19.5 → sealed  (300/301/688/689)
+      - 北交所:         pct_chg >= 29.5 → sealed  (8xx/4xx)
+      - ST stocks:      pct_chg >= 4.5  → sealed  (name contains "ST")
+
+    Total = sealed + fried (all stocks that touched the limit-up board).
+    """
+    total_count: int                 # 触及涨停总数 = sealed + fried
+    sealed_count: int                # 封板成功数 (pct_chg >= threshold)
+    fried_board_count: int           # 炸板数 (hit limit but did not seal)
+    chain_board_count: int           # 连板家数 (streak >= 2)
     max_board_height: int            # 最高板（含一字板）
     max_turnover_board_height: int   # 最高换手板
     first_board_count: int           # 首板数
-    sealed_board_ratio: float        # 封板率 0-1
-    fried_board_count: int           # 炸板数
-    source: MetricSource
+    first_board_success_rate: float  # 首板占比 = first_board_count / total_count
+    sealed_board_ratio: float        # 封板率 = sealed_count / total_count
+    high_board_count: int            # 高标板数 (>= 3板)
+    # ── Board quality ──
+    avg_turnover_rate: float | None = None        # 封板成功股平均换手率
+    avg_amount_yi: float | None = None            # 封板成功股平均成交额（亿元）
+    avg_big_order_net_yi: float | None = None     # 封板成功股平均大单净量（亿元）
+    fried_amount_ratio: float | None = None       # 炸板金额 / 总触板金额
+    # ── Classification ──
+    board_type_counts: dict[str, int] = field(default_factory=dict)
+    # ── Provenance ──
+    source: MetricSource = field(default_factory=lambda: MetricSource("db_query", "ths_hot_reason_snapshot"))
 
 
 @dataclass(frozen=True, slots=True)
@@ -86,7 +109,9 @@ class EmotionMomentumMetrics:
     first_board_red_ratio: float
     first_board_big_loss_ratio: float
     chain_board_red_ratio: float
+    chain_board_ratio: float         # 连板占比 = chain_board_count / total_count
     chain_board_big_loss_ratio: float
+    yesterday_chain_not_limit_red_ratio: float  # 昨连板非涨停红盘比
     momentum_raw: float              # -18 ~ +10 (analyst scale)
     momentum_normalized: float       # -100 ~ +100
     source: MetricSource

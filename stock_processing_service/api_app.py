@@ -7246,10 +7246,20 @@ async def get_market_metrics(trade_date: str) -> dict[str, Any]:
             },
             "limitup": {
                 "total_count": snap.limitup.total_count,
+                "sealed_count": snap.limitup.sealed_count,
+                "fried_board_count": snap.limitup.fried_board_count,
+                "sealed_board_ratio": snap.limitup.sealed_board_ratio,
                 "chain_board_count": snap.limitup.chain_board_count,
                 "max_board_height": snap.limitup.max_board_height,
                 "max_turnover_board_height": snap.limitup.max_turnover_board_height,
                 "first_board_count": snap.limitup.first_board_count,
+                "first_board_success_rate": snap.limitup.first_board_success_rate,
+                "high_board_count": snap.limitup.high_board_count,
+                "avg_turnover_rate": snap.limitup.avg_turnover_rate,
+                "avg_amount_yi": snap.limitup.avg_amount_yi,
+                "avg_big_order_net_yi": snap.limitup.avg_big_order_net_yi,
+                "fried_amount_ratio": snap.limitup.fried_amount_ratio,
+                "board_type_counts": snap.limitup.board_type_counts,
                 "source": snap.limitup.source.source_type,
             },
             "relay": {
@@ -7258,9 +7268,11 @@ async def get_market_metrics(trade_date: str) -> dict[str, Any]:
                 "promotion_3_to_4": snap.relay.promotion_3_to_4,
                 "chain_board_count": snap.relay.chain_board_count,
                 "max_board_height": snap.relay.max_board_height,
+                "max_turnover_board_height": snap.relay.max_turnover_board_height,
             },
             "capital": {
                 "total_turnover_yi": snap.capital.total_turnover_yi,
+                "total_turnover_display": f"{snap.capital.total_turnover_yi / 10000:.2f}万亿" if snap.capital.total_turnover_yi >= 10000 else f"{snap.capital.total_turnover_yi:.0f}亿",
                 "active_limitup_amount_yi": snap.capital.active_limitup_amount_yi,
                 "active_ratio": snap.capital.active_ratio,
             },
@@ -7269,6 +7281,10 @@ async def get_market_metrics(trade_date: str) -> dict[str, Any]:
                 "momentum_normalized": snap.emotion_momentum.momentum_normalized,
                 "first_board_red_ratio": snap.emotion_momentum.first_board_red_ratio,
                 "first_board_big_loss_ratio": snap.emotion_momentum.first_board_big_loss_ratio,
+                "chain_board_red_ratio": snap.emotion_momentum.chain_board_red_ratio,
+                "chain_board_ratio": snap.emotion_momentum.chain_board_ratio,
+                "chain_board_big_loss_ratio": snap.emotion_momentum.chain_board_big_loss_ratio,
+                "yesterday_chain_not_limit_red_ratio": snap.emotion_momentum.yesterday_chain_not_limit_red_ratio,
             },
         }
     except ValueError:
@@ -7301,15 +7317,22 @@ async def get_market_diagnosis(trade_date: str) -> dict[str, Any]:
 
 @app.get("/api/v1/analyst-charts/{trade_date}/trends")
 async def get_analyst_chart_trends(trade_date: str, days: int = 7) -> dict[str, Any]:
-    """Return multi-day trend data for line charts."""
-    from datetime import date as _date
+    """Return multi-day trend data for line charts.
+
+    Data flow: MarketMetricsService.get_range() → ChartEngine.build_trend()
+    """
+    from datetime import date as _date, timedelta
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
     from stock_processing_service.application.services.analyst_charts.chart_engine import (
         ChartReproductionEngine,
     )
     try:
         td = _date.fromisoformat(trade_date)
-        engine = ChartReproductionEngine()
-        return await engine.run_trend_async(td, days)
+        start = td - timedelta(days=days + 5)  # extra buffer for non-trading days
+        snapshots = MarketMetricsService().get_range(start, td)
+        return ChartReproductionEngine.build_trend(snapshots)
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
     except Exception as exc:
@@ -7320,20 +7343,124 @@ async def get_analyst_chart_trends(trade_date: str, days: int = 7) -> dict[str, 
 
 @app.get("/api/v1/analyst-charts/{trade_date}")
 async def get_analyst_charts(trade_date: str) -> list[dict[str, Any]]:
-    """Return auto-generated analyst chart data for a trading day."""
+    """Return analyst chart data for a trading day.
+
+    Data flow: MarketMetricsService → snapshot → ChartEngine.build()
+    Charts 1-4 from snapshot metrics, 5-7 from recap narrative data.
+    """
     from datetime import date as _date
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
     from stock_processing_service.application.services.analyst_charts.chart_engine import (
         ChartReproductionEngine,
     )
     try:
         td = _date.fromisoformat(trade_date)
+
+        # ── Load canonical metrics ──
+        snap = MarketMetricsService().get(td)
+
+        # ── Load recap for thematic charts 5-7 ──
+        recap = await _load_recap_doc(td)
+
+        # ── Load PDF calibration ──
+        pdf_cal = ChartReproductionEngine.load_pdf_calibration(td)
+
+        # ── Build charts (no DB inside engine) ──
         engine = ChartReproductionEngine()
-        charts = await engine.run_async(td)
-        return charts
+        return engine.build(snap, recap, pdf_cal)
+
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc))
+
+
+async def _load_recap_doc(trade_date) -> dict:
+    """Load post_market_recap_snapshot for a trading date. Single source for recap loading."""
+    import json
+    import asyncpg
+    conn = await asyncpg.connect("postgresql://localhost:5432/stock_data_test", user="postgres", password="")
+    try:
+        row = await conn.fetchrow(
+            "SELECT payload FROM post_market_recap_snapshot "
+            "WHERE trade_date = $1::date ORDER BY created_at DESC LIMIT 1",
+            trade_date,
+        )
+        if not row:
+            return {}
+        payload = row["payload"]
+        if isinstance(payload, str):
+            payload = json.loads(payload)
+        return payload.get("recap_doc", payload)
+    finally:
+        await conn.close()
+
+
+# ── M2.5 Phase 0.5: Metrics Validation ──
+
+@app.get("/api/v1/metrics/validation/{trade_date}")
+async def get_metrics_validation(trade_date: str) -> dict[str, Any]:
+    """Return validation report: system snapshot vs analyst PDF reference."""
+    from datetime import date as _date
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
+    from stock_processing_service.application.services.market_metrics.validation import (
+        MetricsValidator,
+    )
+    from stock_processing_service.application.services.analyst_charts.chart_engine import (
+        ChartReproductionEngine,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        snap = MarketMetricsService().get(td)
+        pdf_cal = ChartReproductionEngine.load_pdf_calibration(td)
+        analyst_ref: dict = {}
+        if pdf_cal:
+            analyst_ref = {"lu": pdf_cal.get("lu"), "turnover": pdf_cal.get("turnover")}
+        report = MetricsValidator.compare(snap, analyst_ref or None)
+        frozen = MetricsValidator.freeze(snap)
+        return {
+            "trade_date": trade_date,
+            "snapshot_frozen": frozen,
+            "report": {
+                "overall_status": report.overall_status,
+                "match_count": report.match_count,
+                "diverged_count": report.diverged_count,
+                "missing_analyst_count": report.missing_analyst_count,
+                "missing_system_count": report.missing_system_count,
+                "notes": list(report.notes),
+                "diffs": [{
+                    "metric_name": d.metric_name,
+                    "system_value": d.system_value,
+                    "analyst_value": d.analyst_value,
+                    "absolute_diff": d.absolute_diff,
+                    "relative_diff_pct": d.relative_diff_pct,
+                    "status": d.status,
+                } for d in report.diffs],
+            },
+        }
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
+# ── M2.5 Phase 1: Metric Registry / Data Lineage ──
+
+@app.get("/api/v1/metrics/lineage")
+async def get_metrics_lineage() -> dict[str, Any]:
+    """Return complete data lineage for all registered metrics.
+
+    Shows: metric → source_table → owner → consumers.
+    No module should compute any market metric outside this registry.
+    """
+    from stock_processing_service.application.services.market_metrics.registry import (
+        to_lineage_dict,
+    )
+    return to_lineage_dict()
 
 
 # ── P2.6.1 Evidence Artifacts ──

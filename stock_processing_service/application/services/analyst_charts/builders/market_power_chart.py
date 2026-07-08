@@ -1,4 +1,7 @@
-"""Chart 1: Market Power 大盘势能 — PDF page 4."""
+"""Chart 1: Market Power 大盘势能 — PDF page 4.
+
+All amounts in 亿元 (100M CNY) internally.
+"""
 
 from typing import Any
 
@@ -9,11 +12,22 @@ def build(up_count: int, down_count: int, limit_up: int, limit_down: int,
           calibrated_emotion: str | None = None) -> dict[str, Any]:
     """Build market breadth chart data.
 
+    Args:
+        turnover_yi: 全市场成交额（亿元）. e.g. 25600 = 2.56万亿
+        calibrated_lu: 分析师PDF校准涨停数
+        calibrated_turnover: 分析师PDF校准成交额（亿元）
+
     Scoring: z-score weighted composite across 6 dimensions.
     """
     # Apply analyst calibration overrides
     limit_up_final = calibrated_lu if calibrated_lu else limit_up
     turnover_final = calibrated_turnover if calibrated_turnover else turnover_yi
+
+    # Display: 亿 → 万亿/亿
+    if turnover_final >= 10000:
+        turnover_display = f"{turnover_final / 10000:.2f}万亿"
+    else:
+        turnover_display = f"{turnover_final:.0f}亿"
 
     total = up_count + down_count or 1
     up_ratio = round(up_count / total, 3)
@@ -41,7 +55,7 @@ def build(up_count: int, down_count: int, limit_up: int, limit_down: int,
     evidence = [
         f"涨停{limit_up_final}家，跌停{limit_down}家",
         f"上涨{up_count}/下跌{down_count}，上涨比{up_ratio:.1%}",
-        f"成交额{turnover_final}万亿",
+        f"成交额{turnover_display}",
         f"连板{chain_board_count}只",
     ]
 
@@ -62,7 +76,8 @@ def build(up_count: int, down_count: int, limit_up: int, limit_down: int,
             "limit_up_count": limit_up_final,
             "limit_down_count": limit_down,
             "chain_board_count": chain_board_count,
-            "turnover_yi": turnover_final,
+            "turnover_yi": turnover_final,          # 亿元
+            "turnover_display": turnover_display,   # 格式化
             "composite_score": score,
             "label": label,
             "calibrated": calibrated_lu is not None or calibrated_emotion is not None,
