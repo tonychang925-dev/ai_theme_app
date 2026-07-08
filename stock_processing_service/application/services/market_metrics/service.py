@@ -77,63 +77,64 @@ class MarketMetricsService:
         )
 
     async def _build_limitup(self, conn, td: date, overview: dict, cal: dict) -> LimitUpMetrics:
-        """Get real limit-up and chain board stats from stock_daily_snapshot.
+        """Get real limit-up stats from ths_hot_reason_snapshot (同花顺涨停原因).
 
-        Computes max_board_height by checking consecutive limit-up days
-        for each stock, up to 10 trading days back.
+        Computes chain board by joining previous trading dates from the same table.
+        ths_hot_reason_snapshot has proper stock_name and reason_raw/reason_tags.
         """
-        # Query today's limit-up stocks
+        # Query today's limit-up stocks from THS hot reason table
         rows = await conn.fetch(
-            "SELECT stock_id, stock_name, pct_chg FROM stock_daily_snapshot "
-            "WHERE trade_date = $1::date AND pct_chg >= 9.5 "
-            "ORDER BY pct_chg DESC", td
+            "SELECT stock_code, stock_name, reason_raw, reason_tags "
+            "FROM ths_hot_reason_snapshot "
+            "WHERE trade_date = $1::date",
+            td
         )
         actual_lu = len(rows)
-        today_stocks = {r["stock_id"]: 1 for r in rows}  # stock_id → current streak
+        today_stocks: dict[str, int] = {}
+        for r in rows:
+            code = self._norm_code(r["stock_code"])
+            if code:
+                today_stocks[code] = 1
 
-        # Get previous 10 trading dates for chain board calculation
+        # Get previous trading dates for chain board calculation
         prev_dates = []
         cursor = td
         for _ in range(10):
             row = await conn.fetchrow(
-                "SELECT MAX(trade_date) as d FROM post_market_recap_snapshot "
+                "SELECT MAX(trade_date) as d FROM ths_hot_reason_snapshot "
                 "WHERE trade_date < $1::date", cursor)
             if not row or not row["d"]:
                 break
             prev_dates.append(row["d"])
             cursor = row["d"]
 
-        # For each previous date, check which stocks continued their streak
+        # For each previous date, extend streaks
         for prev_d in prev_dates:
             prev_rows = await conn.fetch(
-                "SELECT stock_id FROM stock_daily_snapshot "
-                "WHERE trade_date = $1::date AND pct_chg >= 9.5", prev_d)
-            prev_set = {r["stock_id"] for r in prev_rows}
+                "SELECT stock_code FROM ths_hot_reason_snapshot "
+                "WHERE trade_date = $1::date", prev_d)
+            prev_set = {self._norm_code(r["stock_code"]) for r in prev_rows}
             extended = False
-            for sid in list(today_stocks.keys()):
-                if sid in prev_set:
-                    today_stocks[sid] += 1
+            for code in list(today_stocks.keys()):
+                if code in prev_set:
+                    today_stocks[code] += 1
                     extended = True
-                else:
-                    pass  # streak broken
             if not extended:
-                break  # no more stocks continuing streaks
+                break
 
-        # Stats from computed streaks
         max_h = max(today_stocks.values()) if today_stocks else 1
         chain_count = sum(1 for h in today_stocks.values() if h >= 2)
         first_count = actual_lu - chain_count
-        max_turnover_h = max_h
 
         return LimitUpMetrics(
             total_count=actual_lu,
             chain_board_count=chain_count,
             max_board_height=max_h,
-            max_turnover_board_height=max_turnover_h,
+            max_turnover_board_height=max_h,
             first_board_count=first_count,
             sealed_board_ratio=round(min(1.0, actual_lu / max(actual_lu, 1)), 2),
             fried_board_count=0,
-            source=MetricSource("db_query", "stock_daily_snapshot", confidence=0.85),
+            source=MetricSource("db_query", "ths_hot_reason_snapshot", confidence=0.9),
         )
 
     @staticmethod
@@ -216,8 +217,7 @@ class MarketMetricsService:
         if isinstance(payload, str): payload = json.loads(payload)
         return payload.get("recap_doc", payload)
 
-    async def _prev_trade_date(self, conn, trade_date: date):
-        row = await conn.fetchrow(
-            "SELECT MAX(trade_date) as d FROM post_market_recap_snapshot "
-            "WHERE trade_date < $1::date", trade_date)
-        return row["d"] if row else None
+    @staticmethod
+    def _norm_code(code: str) -> str:
+        """Normalize stock code: strip .SZ/.SH suffix, uppercase."""
+        return str(code or "").strip().upper().split(".")[0]
