@@ -35,7 +35,7 @@ class LimitUpBoardRecalculator:
               AND trade_date >= $1::date - INTERVAL '10 days'
               AND split_part(stock_id, '.', 1) = ANY($2::text[])
               AND source_name LIKE 'tushare%'
-            ORDER BY split_part(stock_id, '.', 1), trade_date DESC, source_name DESC
+            ORDER BY split_part(stock_id, '.', 1), trade_date DESC
             """,
             trade_date,
             stock_ids,

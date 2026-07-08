@@ -73,8 +73,8 @@ class ChartReproductionEngine:
             # ── Chart 3: Active Capital ──
             charts.append(self._chart_active_capital(trade_date, recap))
 
-            # ── Chart 4: Relay Ecology ──
-            charts.append(self._chart_relay_ecology(trade_date, recap))
+            # ── Chart 4: Relay Ecology (async — uses DB for chain board) ──
+            charts.append(await self._chart_relay_ecology_async(trade_date, recap, conn))
 
             # ── Chart 5: Institution Style ──
             charts.append(self._chart_institution_style(trade_date, recap))
@@ -372,20 +372,57 @@ class ChartReproductionEngine:
             ),
         }
 
-    def _chart_relay_ecology(self, td: date, recap: dict) -> dict[str, Any]:
-        """Chart 4: Relay Ecology (核心板块节律) — PDF page 6."""
+    async def _chart_relay_ecology_async(self, td: date, recap: dict, conn) -> dict[str, Any]:
+        """Chart 4: Relay Ecology (核心板块节律) — uses LimitUpBoardRecalculator."""
+        from stock_processing_service.application.services.limit_up_board_recalculator import (
+            LimitUpBoardRecalculator,
+        )
+
         overview = recap.get("market_overview_review", {})
         limit_up = int(overview.get("limit_up_total", 0) or 0)
-        ladder = recap.get("limit_up_ladder", {})
 
-        # Estimate board heights from ladder or limit_up count
-        max_height = max(1, min(8, limit_up // 20))
-        success_rate = min(0.95, max(0.3, 0.7 - (limit_up - 100) * 0.002))
+        # Use the existing chain board module to enrich recap data
+        try:
+            recalc = LimitUpBoardRecalculator()
+            enriched = await recalc.enrich_recap_doc(recap, td, conn)
+            matrix = enriched.get("market_overview_review", {}).get("theme_limitup_matrix", {})
+            columns = matrix.get("columns", []) if isinstance(matrix, dict) else []
 
-        # Promotion rates (estimated from board height distribution)
-        p1to2 = round(min(0.8, max(0.1, 0.4 + (max_height - 3) * 0.08)), 2)
-        p2to3 = round(min(0.7, max(0.05, 0.3 + (max_height - 3) * 0.06)), 2)
-        p3to4 = round(min(0.6, max(0.0, 0.2 + (max_height - 4) * 0.08)), 2)
+            # Collect board groups from enriched data
+            board_groups: list[dict] = []
+            for col in (columns or []):
+                if isinstance(col, dict):
+                    for bg in col.get("board_groups", []):
+                        board_groups.append(bg)
+
+            # Compute max height and promotion rates from board groups
+            height_counts: dict[int, int] = {}
+            for bg in board_groups:
+                h = bg.get("board_count", 0)
+                height_counts[h] = height_counts.get(h, 0) + bg.get("stock_count", 0)
+
+            max_height = max(height_counts.keys()) if height_counts else 1
+            total_1board = height_counts.get(1, 0)
+            total_2board = height_counts.get(2, 0)
+            total_3board = height_counts.get(3, 0)
+            total_4board = height_counts.get(4, 0)
+
+            p1to2 = round(total_2board / max(total_1board, 1), 2)
+            p2to3 = round(total_3board / max(total_2board, 1), 2)
+            p3to4 = round(total_4board / max(total_3board, 1), 2)
+            first_board_success = round(total_1board / max(limit_up, 1), 2)
+
+            # Log
+            ladder_ctx = enriched.get("limit_up_ladder_context", {})
+            print(f"Board recalc: {ladder_ctx.get('tracked_stock_count',0)} stocks, "
+                  f"heights={height_counts}, 1→2={p1to2:.0%}, 2→3={p2to3:.0%}, 3→4={p3to4:.0%}")
+        except Exception as e:
+            print(f"Board recalc failed: {e}, using estimates")
+            max_height = max(1, min(8, limit_up // 20))
+            success_rate = min(0.95, max(0.3, 0.7 - (limit_up - 100) * 0.002))
+            p1to2 = round(min(0.8, max(0.1, 0.4 + (max_height - 3) * 0.08)), 2)
+            p2to3 = round(min(0.7, max(0.05, 0.3 + (max_height - 3) * 0.06)), 2)
+            p3to4 = round(min(0.6, max(0.0, 0.2 + (max_height - 4) * 0.08)), 2)
 
         if max_height >= 5 and p1to2 > 0.4:
             r_label = "接力活跃"
