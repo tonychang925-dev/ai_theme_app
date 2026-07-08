@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
+import { ChartRenderer } from "./ChartRenderer";
 
 interface EvidenceArtifact {
   artifact_id: string;
@@ -301,36 +302,52 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
           {artifacts.length > 0 && <span style={{ color: "#66d9ef" }}>({artifacts.length})</span>}
         </div>
         {showEvidence && (
-          <div style={{ marginTop: 8, display: "flex", flexWrap: "wrap", gap: 8 }}>
-            {artifacts.map(a => (
-              <div key={a.artifact_id} style={{
-                padding: 8, background: "#111720", borderRadius: 4, border: "1px solid #243040",
-                width: 280, fontSize: 11,
-              }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
-                  <span style={{ fontWeight: 600, color: "#8ddcff" }}>{a.title}</span>
-                  <span style={{ color: "#5a7a8a" }}>P{a.page_no || "?"}</span>
-                </div>
-                <div style={{ color: "#5a7a8a", marginBottom: 4 }}>
-                  <span>{a.artifact_type === "table" ? "📊" : "📈"} {a.source}</span>
-                </div>
-                {a.extracted_metrics && (
-                  <div style={{ marginBottom: 4, display: "flex", flexWrap: "wrap", gap: 4 }}>
-                    {Object.entries(a.extracted_metrics).filter(([k]) => !k.startsWith("key_")).map(([k, v]) => (
-                      <span key={k} style={{ fontSize: 10, padding: "1px 6px", background: "#1a2a3a", borderRadius: 3, color: "#66d9ef" }}>
-                        {k.replace(/_/g, " ")}: {String(v).slice(0, 40)}
-                      </span>
-                    ))}
+          <div style={{ marginTop: 8 }}>
+            {/* System-generated charts — rendered visually */}
+            {artifacts.some(a => a.source === "system_generated") && (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: 10, marginBottom: 12 }}>
+                {artifacts.filter(a => a.source === "system_generated").map(a => (
+                  <div key={a.artifact_id} style={{
+                    padding: 10, background: "#111720", borderRadius: 4, border: "1px solid #243040",
+                  }}>
+                    <div style={{ fontSize: 12, fontWeight: 600, color: "#ffd85e", marginBottom: 8 }}>{a.title}</div>
+                    <ChartRenderer chart={{
+                      chart_id: a.artifact_id,
+                      trade_date: a.trade_date,
+                      chart_type: a.artifact_type === "chart" ? (a.title.includes("势能") ? "market_breadth" : a.title.includes("动能") ? "emotion_momentum" : a.title.includes("资金") ? "active_capital" : a.title.includes("节律") ? "relay_ecology" : a.title.includes("机构") ? "institution_style" : a.title.includes("游资") ? "hot_money_style" : a.title.includes("涨停") ? "limitup_classification" : "market_breadth") : "market_breadth",
+                      title: a.title,
+                      data: a.extracted_metrics || {},
+                      interpretation: a.summary || "",
+                    }} />
                   </div>
-                )}
-                {a.extracted_metrics?.key_finding && (
-                  <div style={{ fontSize: 10, color: "#d69e2e", marginBottom: 4 }}>{a.extracted_metrics.key_finding}</div>
-                )}
-                <div style={{ fontSize: 10, color: "#8ddcff", lineHeight: 1.4 }}>{a.summary}</div>
+                ))}
               </div>
-            ))}
+            )}
+
+            {/* PDF artifacts — card display */}
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {artifacts.filter(a => a.source !== "system_generated").map(a => (
+                <div key={a.artifact_id} style={{
+                  padding: 8, background: "#111720", borderRadius: 4, border: "1px solid #243040",
+                  width: 280, fontSize: 11,
+                }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                    <span style={{ fontWeight: 600, color: "#8ddcff" }}>{a.title}</span>
+                    <span style={{ color: "#5a7a8a" }}>P{a.page_no || "?"}</span>
+                  </div>
+                  <div style={{ color: "#5a7a8a", marginBottom: 4 }}>
+                    <span>{a.artifact_type === "table" ? "📊" : "📈"} {a.source}</span>
+                  </div>
+                  {a.extracted_metrics?.key_finding && (
+                    <div style={{ fontSize: 10, color: "#d69e2e", marginBottom: 4 }}>{a.extracted_metrics.key_finding}</div>
+                  )}
+                  <div style={{ fontSize: 10, color: "#8ddcff", lineHeight: 1.4 }}>{a.summary}</div>
+                </div>
+              ))}
+            </div>
+
             {artifacts.length === 0 && (
-              <div style={{ fontSize: 11, color: "#5a7a8a", padding: 8 }}>该日期暂无分析师图表证据</div>
+              <div style={{ fontSize: 11, color: "#5a7a8a", padding: 8 }}>该日期暂无图表证据</div>
             )}
           </div>
         )}
