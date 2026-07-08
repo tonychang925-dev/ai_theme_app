@@ -7215,6 +7215,26 @@ async def save_playbook(
     }
 
 
+# ── P2.6 Market Emotion Engine ──
+
+@app.get("/api/v1/emotion/{trade_date}")
+async def get_market_emotion(trade_date: str) -> dict[str, Any]:
+    """Return MarketEmotionState for a trading day."""
+    from datetime import date as _date
+    from stock_processing_service.application.services.market_cognition.emotion_engine import (
+        MarketEmotionEngine,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        engine = MarketEmotionEngine()
+        state = await engine.run_async(td)
+        return state
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 # ── P2.5 Analyst Workspace ──
 
 @app.get("/api/v1/analyst-workspace/{trade_date}")
