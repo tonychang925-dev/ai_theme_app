@@ -478,6 +478,46 @@ register(MetricDefinition(
 ))
 
 
+# ── Leader Evolution (source: ths_hot_reason_snapshot streak + quality) ──
+
+_Q_LEADER = MetricQuality(
+    freshness="T+0", completeness=0.80, confidence=0.80,
+    notes="从高标streak+封板质量识别; 未接入主题review的龙头确认",
+)
+
+register(MetricDefinition(
+    name="leader_health_score",
+    display_name="龙头健康分数",
+    description="0-100: 龙头延续加分 - 断板扣分 - 炸板惩罚. 100=全数延续, 0=全面崩坏",
+    owner="MarketMetricsService",
+    source_tables=("ths_hot_reason_snapshot",),
+    source_fields=("stock_code", "pct_chg", "turnover_rate", "reason_tags"),
+    calculator="_build_leader_evolution",
+    consumers=("DiagnosisEngine", "PlaybookEngine"),
+    unit="score",
+    version="1.0",
+    quality=_Q_LEADER,
+    depends_on=("chain_board_count", "limit_up_sealed_count"),
+    tags=("leader", "emotion", "risk"),
+))
+
+register(MetricDefinition(
+    name="leader_break_alert",
+    display_name="龙头断板警报",
+    description="昨日高标(>=2板)中 >=30% 今日未涨停 → True",
+    owner="MarketMetricsService",
+    source_tables=("ths_hot_reason_snapshot",),
+    source_fields=("stock_code",),
+    calculator="_build_leader_evolution",
+    consumers=("DiagnosisEngine", "PlaybookEngine"),
+    unit="boolean",
+    version="1.0",
+    quality=_Q_LEADER,
+    depends_on=("leader_health_score",),
+    tags=("leader", "risk", "alert"),
+))
+
+
 # ═══════════════════════════════════════════════════════════════════════
 # Dependency Graph
 # ═══════════════════════════════════════════════════════════════════════

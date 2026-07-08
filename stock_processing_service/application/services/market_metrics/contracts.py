@@ -183,6 +183,41 @@ class FundFlowMetrics:
     source: MetricSource
 
 
+# ═══════════════════════════════════════════════════════════════
+# Leader Evolution (Phase 2.3)
+# ═══════════════════════════════════════════════════════════════
+
+@dataclass(frozen=True, slots=True)
+class LeaderSnapshot:
+    """A single leader stock state for one trading day."""
+    stock_code: str
+    stock_name: str
+    board_height: int                # 当前连板高度
+    status: str                      # CONTINUE | BREAK | WEAKEN | NEW
+    yesterday_status: str = ""
+    strength_score: float = 0.0      # 0-100
+    risk_score: float = 0.0          # 0-100
+    sealed: bool = True
+    theme_hint: str = ""             # rough theme from reason_tags
+    reason: str = ""
+
+
+@dataclass(frozen=True, slots=True)
+class LeaderEvolutionMetrics:
+    """Daily leader lifecycle: leader health and state transitions."""
+    trade_date: date
+    leaders: tuple[LeaderSnapshot, ...]
+    yesterday_leader_count: int = 0
+    continue_count: int = 0
+    weaken_count: int = 0
+    break_count: int = 0
+    new_leader_count: int = 0
+    leader_health_score: float = 0.0       # 0-100
+    leader_health_label: str = ""          # STRONG | NORMAL | WEAK | COLLAPSE
+    leader_break_alert: bool = False
+    source: MetricSource = field(default_factory=lambda: MetricSource("db_query"))
+
+
 # ── Unified snapshot ──
 
 @dataclass(frozen=True, slots=True)
@@ -199,6 +234,7 @@ class MarketMetricsSnapshot:
     capital: ActiveCapitalMetrics
     emotion_momentum: EmotionMomentumMetrics
     loss_effect: LossEffectMetrics | None = None
+    leader_evolution: LeaderEvolutionMetrics | None = None
     fund_flow: FundFlowMetrics | None = None
 
     # Calibration

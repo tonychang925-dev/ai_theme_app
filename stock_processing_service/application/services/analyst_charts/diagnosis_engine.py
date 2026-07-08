@@ -129,13 +129,17 @@ class DiagnosisEngine:
         )
 
         # ── Step 6: Emotion Phase ──
-        # v2: Emotion = breadth(35%) + momentum(25%) + relay(20%) + capital(10%) - loss_effect(10%)
+        # v3: Emotion = breadth(30%) + relay(20%) + leader(20%) + momentum(15%) + capital(10%) - loss(5%)
         capital_value = int((c.active_ratio - 0.03) * 500)
         loss = snap.loss_effect
         loss_penalty = int(loss.loss_effect_score * 0.5) if loss else 0
+        leader = snap.leader_evolution
+        # Leader health: 0-100, normalized to -50 ~ +50 contribution
+        leader_contribution = int((leader.leader_health_score - 50) * 0.8) if leader else 0
         composite = int(
-            m.momentum_normalized * 0.25 + breadth_value * 0.35
-            + relay_value * 0.20 + capital_value * 0.10 - loss_penalty * 0.10
+            m.momentum_normalized * 0.15 + breadth_value * 0.30
+            + relay_value * 0.20 + leader_contribution * 0.20
+            + capital_value * 0.10 - loss_penalty * 0.05
         )
 
         if composite >= 50:      node, node_desc = "CLIMAX", "情绪高潮"
@@ -167,11 +171,17 @@ class DiagnosisEngine:
         )
 
         # ── Step 7: Strategy ──
-        # Elevate risk when loss effect is 严重 or 恐慌, even if composite is borderline
-        if loss and loss.loss_effect_label in ("恐慌", "严重") and node not in ("ICE_POINT",):
-            if node in ("DIVERGENCE", "FADE"):
-                node = "ICE_POINT"
+        # Elevate to ICE_POINT when loss effect is 严重/恐慌 or leader health is COLLAPSE
+        force_ice = False
+        if node not in ("ICE_POINT",):
+            if loss and loss.loss_effect_label in ("恐慌", "严重"):
+                force_ice = True
                 node_desc = "情绪冰点（亏钱效应驱动）"
+            elif leader and leader.leader_health_label == "COLLAPSE":
+                force_ice = True
+                node_desc = "情绪冰点（龙头崩坏驱动）"
+            if force_ice:
+                node = "ICE_POINT"
 
         if node in ("ICE_POINT",):
             mode = "首板试错"; allowed = ("首板", "新题材观察", "低吸"); forbidden = ("高位接力", "追龙头", "打连板"); risk = "HIGH"

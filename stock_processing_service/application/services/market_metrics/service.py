@@ -17,6 +17,7 @@ from typing import Any
 from .contracts import (
     ActiveCapitalMetrics,
     EmotionMomentumMetrics,
+    LeaderEvolutionMetrics,
     LimitUpMetrics,
     LossEffectMetrics,
     MarketBreadthMetrics,
@@ -77,17 +78,19 @@ class MarketMetricsService:
         overview = recap.get("market_overview_review", {}) if recap else {}
 
         breadth = await self._build_breadth(trade_date, overview, {})
-        limitup, streak_dist, yesterday_codes = await self._build_limitup(conn, trade_date, overview, {})
+        limitup, streak_dist, yesterday_codes, stock_detail = await self._build_limitup(conn, trade_date, overview, {})
         relay = await self._build_relay(conn, trade_date, limitup, streak_dist, yesterday_codes)
         capital = await self._build_capital(conn, trade_date, breadth, overview)
         momentum = self._build_momentum(breadth, limitup)
         loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay)
+        leader_evolution = self._build_leader_evolution(trade_date, stock_detail, streak_dist, yesterday_codes)
 
         return MarketMetricsSnapshot(
             trade_date=trade_date,
             breadth=breadth, limitup=limitup, relay=relay,
             capital=capital, emotion_momentum=momentum,
             loss_effect=loss_effect,
+            leader_evolution=leader_evolution,
             data_quality_score=0.85 if breadth.up_count > 0 else 0.5,
         )
 
@@ -158,7 +161,7 @@ class MarketMetricsService:
             return "北交所"
         return "主板"
 
-    async def _build_limitup(self, conn, td: date, overview: dict, cal: dict) -> tuple[LimitUpMetrics, dict[int, int], set[str]]:
+    async def _build_limitup(self, conn, td: date, overview: dict, cal: dict) -> tuple[LimitUpMetrics, dict[int, int], set[str], dict[str, dict]]:
         """Build real LimitUpMetrics from ths_hot_reason_snapshot.
 
         Uses pct_chg to classify sealed vs fried per stock, with
@@ -183,6 +186,7 @@ class MarketMetricsService:
         fried_amounts: list[float] = []
 
         board_type_counts: dict[str, int] = {}
+        stock_detail: dict[str, dict] = {}  # code → {name, pct_chg, sealed, reason_tags, turnover_rate}
 
         for r in rows:
             code = self._norm_code(r["stock_code"])
@@ -200,7 +204,8 @@ class MarketMetricsService:
             board = self._board_class(code, stock_name)
             board_type_counts[board] = board_type_counts.get(board, 0) + 1
 
-            if pct >= threshold:
+            sealed = pct >= threshold
+            if sealed:
                 sealed_codes.add(code)
                 if turnover > 0:
                     sealed_turnovers.append(turnover)
@@ -212,6 +217,16 @@ class MarketMetricsService:
                 fried_codes.add(code)
                 if raw_amount > 0:
                     fried_amounts.append(raw_amount)
+
+            # Store per-stock detail for leader evolution
+            reason_tags = [t.strip() for t in str(r.get("reason_tags") or "").split("+") if t.strip()] if r.get("reason_tags") else []
+            stock_detail[code] = {
+                "name": stock_name,
+                "pct_chg": pct,
+                "sealed": sealed,
+                "reason_tags": reason_tags,
+                "turnover_rate": turnover,
+            }
 
         total = len(all_codes)
         sealed = len(sealed_codes)
@@ -300,7 +315,7 @@ class MarketMetricsService:
             board_type_counts=board_type_counts,
             source=MetricSource("db_query", "ths_hot_reason_snapshot", confidence=0.9),
         )
-        return metrics, streak_dist, yesterday_codes
+        return metrics, streak_dist, yesterday_codes, stock_detail
 
     @staticmethod
     async def _build_relay(conn, td: date, lu: LimitUpMetrics,
@@ -486,6 +501,25 @@ class MarketMetricsService:
         payload = row["payload"]
         if isinstance(payload, str): payload = json.loads(payload)
         return payload.get("recap_doc", payload)
+
+    def _build_leader_evolution(self, td: date,
+                                 stock_detail: dict[str, dict],
+                                 today_streaks: dict[str, int],
+                                 yesterday_codes: set[str]) -> LeaderEvolutionMetrics:
+        """Build leader evolution from streak data + stock details.
+
+        Detects high-board stocks and classifies state transitions.
+        """
+        from .leader_evolution import LeaderEvolutionBuilder
+
+        # yesterday_high_boards: codes that were >= 2-board yesterday
+        # (today's streak >= 3 means yesterday streak >= 2)
+        yesterday_high = {c for c, h in today_streaks.items()
+                         if h >= 3 and c in yesterday_codes}
+
+        builder = LeaderEvolutionBuilder()
+        return builder.build(td, stock_detail, today_streaks,
+                            yesterday_codes, yesterday_high)
 
     async def _build_loss_effect(self, conn, td: date, breadth: MarketBreadthMetrics,
                                   relay: RelayEcologyMetrics) -> LossEffectMetrics:
