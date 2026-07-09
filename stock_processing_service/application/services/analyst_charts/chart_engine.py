@@ -85,7 +85,7 @@ class ChartReproductionEngine:
         charts.append(active_capital_chart.build(
             total_amount_yi=c.total_turnover_yi,
             active_amount_yi=c.active_limitup_amount_yi,
-            limit_up_count=b.limit_up_count,
+            limit_up_count=l.total_count,
         ))
 
         # ── Chart 4: Relay Ecology (核心板块节律) ──
@@ -106,8 +106,8 @@ class ChartReproductionEngine:
         # ── Charts 5-7: Thematic / narrative charts ──
         recap = recap or {}
         charts.append(self._build_institution(recap))
-        charts.append(self._build_hot_money(recap, b.limit_up_count))
-        charts.append(self._build_limitup(recap, b.limit_up_count))
+        charts.append(self._build_hot_money(recap, l.total_count))
+        charts.append(self._build_limitup(recap, l.total_count))
 
         # ── Apply PDF calibration marker ──
         if pdf_cal:
@@ -150,24 +150,24 @@ class ChartReproductionEngine:
 
             # Breadth: composite score
             up_ratio = b.up_ratio
-            b_score = int((up_ratio - 0.5) * 200 + (b.limit_up_count - 50) * 0.5)
+            b_score = int((up_ratio - 0.5) * 200 + (l.total_count - 50) * 0.5)
 
             trend["breadth"].append({
                 "date": s.trade_date.isoformat(),
                 "up": b.up_count, "down": b.down_count,
-                "limit_up": b.limit_up_count, "limit_down": b.limit_down_count,
+                "limit_up": l.total_count, "limit_down": b.limit_down_count,
                 "score": b_score,
             })
             trend["momentum"].append({
                 "date": s.trade_date.isoformat(),
                 "score": m.momentum_raw,
-                "limit_up": b.limit_up_count,
+                "limit_up": l.total_count,
             })
             trend["capital"].append({
                 "date": s.trade_date.isoformat(),
                 # 亿 → 万亿 for display
                 "amount": round(c.total_turnover_yi / 10_000, 1),
-                "limit_up": b.limit_up_count,
+                "limit_up": l.total_count,
             })
             trend["relay"].append({
                 "date": s.trade_date.isoformat(),
@@ -176,7 +176,7 @@ class ChartReproductionEngine:
                 "feedback_score": r.feedback_score,
                 "feedback_label": r.feedback_label,
                 "continue_ratio": r.continue_ratio,
-                "limit_up": b.limit_up_count,
+                "limit_up": l.total_count,
             })
 
         return trend
