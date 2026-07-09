@@ -7772,6 +7772,42 @@ async def get_calibration_drift(trade_date: str) -> dict[str, Any]:
         raise HTTPException(status_code=500, detail=str(exc))
 
 
+# ── M2.5 Phase 3.5: Calibration Dashboard ──
+
+@app.get("/api/v1/metrics/calibration-dashboard")
+async def get_calibration_dashboard() -> dict[str, Any]:
+    """Return calibration dashboard: phase accuracy, error attribution, bias trends."""
+    from stock_processing_service.application.services.market_metrics.calibration import (
+        CalibrationEngine, CalibrationConfig,
+        build_20260707_calibration_ref,
+    )
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
+    from datetime import date as _date
+    try:
+        config = CalibrationConfig(window_days=60, min_samples=10, confidence_threshold=0.7)
+        engine = CalibrationEngine(config)
+
+        # Register known references
+        engine.add_reference(build_20260707_calibration_ref())
+
+        # Run calibration for 7/7
+        snap = MarketMetricsService().get(_date(2026, 7, 7))
+        r = snap.relay; l = snap.limitup
+        engine.compute_drift(
+            _date(2026, 7, 7),
+            ai_facts={"limit_up": l.total_count, "max_board": l.max_board_height,
+                       "relay_1_2": r.promotion_1_to_2},
+            ai_phase="PANIC", ai_risk="CRITICAL",
+            ai_emotion=snap.emotion_momentum.momentum_raw,
+        )
+        engine.propose_weights(min_evidence=1)
+        return engine.dashboard()
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 # ── P2.6.1 Evidence Artifacts ──
 
 @app.get("/api/v1/evidence-artifacts/{trade_date}")

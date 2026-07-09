@@ -88,6 +88,7 @@ class MarketMetricsService:
         leader_evolution = self._build_leader_evolution(trade_date, stock_detail, streak_dist, yesterday_codes)
         loss_attr = self._build_loss_attribution(trade_date, loss_effect, relay, leader_evolution)
         death = self._build_death_index(leader_evolution, loss_effect, relay)
+        death_prop = self._build_death_propagation(leader_evolution, relay, loss_effect)
 
         return MarketMetricsSnapshot(
             trade_date=trade_date,
@@ -97,6 +98,7 @@ class MarketMetricsService:
             leader_evolution=leader_evolution,
             loss_attribution=loss_attr,
             high_position_death=death,
+            death_propagation=death_prop,
             data_quality_score=0.85 if breadth.up_count > 0 else 0.5,
         )
 
@@ -839,6 +841,41 @@ class MarketMetricsService:
         else:
             label = "SAFE"
             conclusion = "高位核心安全，无明显死亡信号"
+
+    @staticmethod
+    def _build_death_propagation(leader: LeaderEvolutionMetrics | None,
+                                   relay: RelayEcologyMetrics,
+                                   loss: LossEffectMetrics | None) -> DeathPropagationMetrics:
+        """Death propagation: did leader death spread to the broader market?"""
+        from .contracts import DeathPropagationMetrics
+
+        lb = leader.break_count if leader else 0
+        tf_ratio = relay.continue_ratio if relay else 0  # low continue = high failure
+        theme_fail = round(1 - tf_ratio, 2) if tf_ratio > 0 else 0.5
+        hb_loss = loss.high_board_break_count if loss else 0
+        yest_fail = round(1 - tf_ratio, 2)  # yesterday limit-up failure ratio
+
+        # Composite 0-100
+        prop = round(
+            min(lb * 15, 40) +              # leader failure: max 40
+            theme_fail * 30 +                # theme follow failure: max 30
+            min(hb_loss * 5, 20) +           # high board loss: max 20
+            yest_fail * 10,                  # yesterday failure: max 10
+            1)
+
+        if prop >= 60:
+            label, narrative = "SYSTEMIC", "系统性崩溃：龙头死亡已扩散至全市场"
+        elif prop >= 30:
+            label, narrative = "SPREADING", "扩散中：龙头死亡正向外传播"
+        else:
+            label, narrative = "CONTAINED", "局部调整：龙头死亡未明显扩散"
+
+        return DeathPropagationMetrics(
+            propagation_index=prop, propagation_label=label,
+            leader_failure_count=lb, theme_failure_ratio=theme_fail,
+            high_position_loss_count=hb_loss,
+            yesterday_limit_failure_ratio=yest_fail,
+            narrative=narrative, source=MetricSource("derived", confidence=0.78))
 
         return HighPositionDeathMetrics(
             death_index=death,

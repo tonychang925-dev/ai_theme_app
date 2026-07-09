@@ -67,6 +67,26 @@ class AnalystReferenceRecord:
         }
 
 
+# ═══ Error Type Classification ═══
+
+class DriftType:
+    UNDER_REACTION = "UNDER_REACTION"        # AI underestimated severity
+    OVER_REACTION = "OVER_REACTION"          # AI overestimated severity
+    TIMING_ERROR = "TIMING_ERROR"            # right direction, wrong timing
+    DATA_ERROR = "DATA_ERROR"                # input data was wrong
+    SEMANTIC_ERROR = "SEMANTIC_ERROR"        # metric definition mismatch
+
+
+# ═══ Calibration Config ═══
+
+@dataclass
+class CalibrationConfig:
+    window_days: int = 60
+    min_samples: int = 20
+    confidence_threshold: float = 0.75
+    min_similar_errors: int = 5
+
+
 # ═══ Metric Drift ═══
 
 @dataclass
@@ -114,14 +134,19 @@ class DriftReport:
 @dataclass
 class WeightProposal:
     """Suggested weight adjustment — NEVER auto-apply."""
-    target_component: str                  # "emotion_formula" | "death_index" | "relay"
+    target_component: str
     current_weight: float
     proposed_weight: float
     delta: float
     rationale: str
-    evidence_count: int                    # how many calibration points support this
-    confidence: float                      # 0-1
-    status: str = "proposed"               # proposed | accepted | rejected
+    evidence_count: int
+    confidence: float
+    # v2: evidence with cases
+    supporting_cases: list[str] = field(default_factory=list)   # dates that support
+    counter_cases: list[str] = field(default_factory=list)      # dates that contradict
+    expected_gain: str = ""              # "PANIC recall +18%"
+    error_type: str = ""                 # DriftType classification
+    status: str = "proposed"
     accepted_at: datetime | None = None
 
 
@@ -130,7 +155,8 @@ class WeightProposal:
 class CalibrationEngine:
     """Compare AI output against analyst reference and track drift."""
 
-    def __init__(self):
+    def __init__(self, config: CalibrationConfig | None = None):
+        self.config = config or CalibrationConfig()
         self._references: dict[date, AnalystReferenceRecord] = {}
         self._drift_history: list[DriftReport] = []
         self._proposals: list[WeightProposal] = []
@@ -243,6 +269,58 @@ class CalibrationEngine:
     def reject_proposal(self, index: int) -> None:
         if 0 <= index < len(self._proposals):
             self._proposals[index].status = "rejected"
+
+    def dashboard(self) -> dict:
+        """Generate Calibration Dashboard summary."""
+        n = len(self._drift_history)
+        if n == 0:
+            return {"status": "no_data", "total_calibrations": 0}
+
+        # Phase accuracy
+        phases: dict[str, dict] = {}
+        for r in self._drift_history:
+            for d in r.drifts:
+                if d.metric_name == "emotion_momentum":
+                    bucket = "match" if d.severity == "NONE" else d.direction
+                    phases.setdefault("emotion", {"total": 0, "match": 0, "opt": 0, "pes": 0})
+                    phases["emotion"]["total"] += 1
+                    if d.severity == "NONE": phases["emotion"]["match"] += 1
+                    elif d.direction == "OVER_OPTIMISTIC": phases["emotion"]["opt"] += 1
+                    else: phases["emotion"]["pes"] += 1
+
+        # Error attribution
+        error_counts: dict[str, int] = {}
+        for r in self._drift_history:
+            for d in r.drifts:
+                if d.severity in ("CRITICAL", "SIGNIFICANT"):
+                    cause = d.likely_cause or "unknown"
+                    error_counts[cause] = error_counts.get(cause, 0) + 1
+
+        total_errors = sum(error_counts.values())
+        error_pct = {k: round(v / max(total_errors, 1) * 100, 1) for k, v in error_counts.items()}
+
+        # Overall bias trend
+        bias_counts = {"OPTIMISTIC": 0, "PESSIMISTIC": 0, "BALANCED": 0}
+        for r in self._drift_history:
+            bias_counts[r.overall_bias] = bias_counts.get(r.overall_bias, 0) + 1
+
+        return {
+            "total_calibrations": n,
+            "config": {
+                "window_days": self.config.window_days,
+                "min_samples": self.config.min_samples,
+                "confidence_threshold": self.config.confidence_threshold,
+            },
+            "phase_accuracy": {
+                k: {"accuracy": round(v["match"] / max(v["total"], 1) * 100, 1)}
+                for k, v in phases.items()
+            },
+            "error_attribution": error_pct,
+            "bias_trend": bias_counts,
+            "pending_proposals": len([p for p in self._proposals if p.status == "proposed"]),
+            "accepted_proposals": len([p for p in self._proposals if p.status == "accepted"]),
+            "recent_drifts": [r.to_dict() for r in self._drift_history[-5:]],
+        }
 
 
 # ═══ Pre-built 7/7 reference ═══

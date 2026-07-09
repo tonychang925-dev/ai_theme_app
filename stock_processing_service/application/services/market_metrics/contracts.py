@@ -291,6 +291,27 @@ class HighPositionDeathMetrics:
     source: MetricSource = field(default_factory=lambda: MetricSource("derived"))
 
 
+@dataclass(frozen=True, slots=True)
+class DeathPropagationMetrics:
+    """Death propagation — did leader death spread to peer stocks?
+
+    Core analyst question: is this a local adjustment or a systemic collapse?
+
+    Formula: leader_failure + theme_failure_ratio + high_position_loss
+             + yesterday_limit_failure
+    """
+    propagation_index: float = 0.0        # 0-100
+    propagation_label: str = ""           # CONTAINED | SPREADING | SYSTEMIC
+
+    leader_failure_count: int = 0         # how many leaders failed
+    theme_failure_ratio: float = 0.0      # peer stocks declining / total peers
+    high_position_loss_count: int = 0     # high-board stocks that declined
+    yesterday_limit_failure_ratio: float = 0.0  # yesterday limit-up stocks declining
+
+    narrative: str = ""                   # one-line: "局部调整" | "扩散中" | "系统性崩溃"
+    source: MetricSource = field(default_factory=lambda: MetricSource("derived"))
+
+
 # ── Unified snapshot ──
 
 @dataclass(frozen=True, slots=True)
@@ -310,6 +331,7 @@ class MarketMetricsSnapshot:
     leader_evolution: LeaderEvolutionMetrics | None = None
     loss_attribution: LossAttributionMetrics | None = None
     high_position_death: HighPositionDeathMetrics | None = None
+    death_propagation: DeathPropagationMetrics | None = None
     fund_flow: FundFlowMetrics | None = None
 
     # Calibration
