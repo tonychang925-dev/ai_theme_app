@@ -433,17 +433,32 @@ class ReplayEngine:
 # ═══ Pre-built reference cases ═══
 
 def build_20260707_reference() -> AnalystReference:
-    """7/7 analyst reference from PDF."""
+    """7/7 analyst reference from DeepSeek结构化版.
+
+    Source: 7月7日复盘_DeepSeek完整结构版.md
+    """
     return AnalystReference(
         trade_date=date(2026, 7, 7),
-        limit_up_count=33,
-        turnover_wan_yi=2.56,
-        market_phase="情绪冰点",
-        risk_level="CRITICAL",
-        death_signal="高位科技补跌，涨停家数骤降",
-        key_concern="高位核心是否继续退潮",
-        strategy="防守等待，禁止高位接力，观察新方向首板",
-        forbidden="高位接力,追龙头,重仓",
-        analyst_notes="情绪冰点。涨停33家。高位科技补跌。等待修复。",
+        # Section 4: 大盘势能
+        limit_up_count=33,          # 涨停33家
+        max_board_height=5,         # 最高板5
+        # Section 7: 活跃资金成交量 897亿
+        turnover_wan_yi=0.0897,     # 活跃资金 897亿 = 0.0897万亿
+        # Section 9: 情绪周期
+        market_phase="PANIC",       # phase:PANIC
+        risk_level="HIGH",          # risk:HIGH (NOT CRITICAL)
+        # Section 6: 情绪动能 -12
+        death_signal="涨停数量下降，连板生态弱化",
+        key_concern="高位方向风险释放，等待新题材和核心标的修复",
+        # Section 9 strategy
+        strategy="等待修复，关注新题材是否出现，弱势行情重点观察情绪连板",
+        forbidden="追高,高位接力",
+        analyst_notes=(
+            "情绪冰点。涨停33家，连板5只。"
+            "情绪动能-12。活跃资金897亿。"
+            "晋级率: 首板28/51, 一进二3/59=5.1%, 二进三0/4, 三进四0/1, 四进五1/1。"
+            "最高板5。最高换手板: 宜宾纸业。"
+            "关注台风概念催化。"
+        ),
         source="analyst_pdf",
     )

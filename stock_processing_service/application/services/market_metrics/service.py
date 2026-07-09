@@ -80,8 +80,8 @@ class MarketMetricsService:
         overview = recap.get("market_overview_review", {}) if recap else {}
 
         breadth = await self._build_breadth(trade_date, overview, {})
-        limitup, streak_dist, yesterday_codes, stock_detail = await self._build_limitup(conn, trade_date, overview, {})
-        relay = await self._build_relay(conn, trade_date, limitup, streak_dist, yesterday_codes)
+        limitup, streak_dist, yesterday_codes, stock_detail, today_streaks = await self._build_limitup(conn, trade_date, overview, {})
+        relay = await self._build_relay(conn, trade_date, limitup, streak_dist, yesterday_codes, today_streaks)
         capital = await self._build_capital(conn, trade_date, breadth, overview)
         momentum = self._build_momentum(breadth, limitup)
         loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay)
@@ -362,12 +362,13 @@ class MarketMetricsService:
             board_type_counts=board_type_counts,
             source=MetricSource("db_query", "ths_hot_reason_snapshot", confidence=0.9),
         )
-        return metrics, streak_dist, yesterday_codes, stock_detail
+        return metrics, streak_dist, yesterday_codes, stock_detail, today_streaks
 
     @staticmethod
     async def _build_relay(conn, td: date, lu: LimitUpMetrics,
                            streak_dist: dict[int, int] | None = None,
-                           yesterday_codes: set[str] | None = None) -> RelayEcologyMetrics:
+                           yesterday_codes: set[str] | None = None,
+                           today_streaks: dict[str, int] | None = None) -> RelayEcologyMetrics:
         """Compute promotion rates + yesterday feedback score (v2).
 
         v2 adds:
@@ -379,15 +380,71 @@ class MarketMetricsService:
         """
         _norm = MarketMetricsService._norm_code
 
-        # ── Promotion rates ──
-        if streak_dist:
-            h1 = sum(v for h, v in streak_dist.items() if h >= 1)
-            h2 = sum(v for h, v in streak_dist.items() if h >= 2)
-            h3 = sum(v for h, v in streak_dist.items() if h >= 3)
-            h4 = sum(v for h, v in streak_dist.items() if h >= 4)
-            p1to2 = round(h2 / max(h1, 1), 3)
-            p2to3 = round(h3 / max(h2, 1), 3)
-            p3to4 = round(h4 / max(h3, 1), 3)
+        # ── Promotion rates (v3: real yesterday per-stock streaks) ──
+        # Query yesterday's ths data, compute per-stock streaks for yesterday,
+        # then cross-reference with today to get real promotion rates.
+        if yesterday_codes:
+            today_rows = await conn.fetch(
+                "SELECT stock_code FROM ths_hot_reason_snapshot "
+                "WHERE trade_date = $1::date", td)
+            today_set = {_norm(r["stock_code"]) for r in today_rows if _norm(r["stock_code"])}
+
+            # Get the most recent previous trading date (yesterday)
+            prev_row = await conn.fetchrow(
+                "SELECT MAX(trade_date) as d FROM ths_hot_reason_snapshot "
+                "WHERE trade_date < $1::date", td)
+            yesterday_date = prev_row["d"] if prev_row else None
+
+            # Compute yesterday's per-stock streaks
+            yesterday_streaks: dict[str, int] = {}
+            if yesterday_date:
+                y_rows = await conn.fetch(
+                    "SELECT stock_code FROM ths_hot_reason_snapshot "
+                    "WHERE trade_date = $1::date", yesterday_date)
+                for yr in y_rows:
+                    code = _norm(yr["stock_code"])
+                    if code:
+                        yesterday_streaks[code] = 1
+
+                # Backtrack one more day to compute yesterday's true streaks
+                prev2_row = await conn.fetchrow(
+                    "SELECT MAX(trade_date) as d FROM ths_hot_reason_snapshot "
+                    "WHERE trade_date < $1::date", yesterday_date)
+                if prev2_row and prev2_row["d"]:
+                    p2_rows = await conn.fetch(
+                        "SELECT stock_code FROM ths_hot_reason_snapshot "
+                        "WHERE trade_date = $1::date", prev2_row["d"])
+                    p2_set = {_norm(r["stock_code"]) for r in p2_rows if _norm(r["stock_code"])}
+                    for code in list(yesterday_streaks.keys()):
+                        if code in p2_set:
+                            yesterday_streaks[code] += 1
+
+            # Now compute promotion rates
+            y1 = y2 = y3 = 0  # yesterday pools
+            s1 = s2 = s3 = 0  # today successes
+            for code, y_streak in yesterday_streaks.items():
+                t_streak = today_streaks.get(code, 0) if today_streaks else 0
+                if y_streak == 1:
+                    y1 += 1
+                    if t_streak >= 2: s1 += 1
+                elif y_streak == 2:
+                    y2 += 1
+                    if t_streak >= 3: s2 += 1
+                elif y_streak >= 3:
+                    y3 += 1
+                    if t_streak >= 4: s3 += 1
+
+            p1to2 = round(s1 / max(y1, 1), 3)
+            p2to3 = round(s2 / max(y2, 1), 3)
+            p3to4 = round(s3 / max(y3, 1), 3)
+        elif streak_dist:
+            h_exact_2 = streak_dist.get(2, 0)
+            h_exact_3 = streak_dist.get(3, 0)
+            h_exact_4 = streak_dist.get(4, 0)
+            h_total = lu.total_count
+            p1to2 = round(h_exact_2 / max(h_total, 1), 3)
+            p2to3 = round(h_exact_3 / max(h_exact_2 + h_exact_3 + h_exact_4, 1), 3)
+            p3to4 = round(h_exact_4 / max(h_exact_3 + h_exact_4, 1), 3)
         else:
             t1 = lu.first_board_count
             t2 = lu.chain_board_count
