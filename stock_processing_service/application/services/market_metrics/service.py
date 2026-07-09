@@ -105,7 +105,7 @@ class MarketMetricsService:
                                          yesterday_codes, today_streaks, em_yzt, em_zt)
         capital = await self._build_capital(conn, trade_date, breadth, overview)
         momentum = self._build_momentum(breadth, limitup)
-        loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay)
+        loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay, em_dt)
         leader_evolution = self._build_leader_evolution(trade_date, stock_detail, streak_dist, yesterday_codes)
         loss_attr = self._build_loss_attribution(trade_date, loss_effect, relay, leader_evolution)
         death = self._build_death_index(leader_evolution, loss_effect, relay)
@@ -301,7 +301,12 @@ class MarketMetricsService:
 
         total = len(all_codes)
         sealed = len(sealed_codes)
-        fried = len(fried_codes)
+
+        # ── Use Eastmoney fried count when available (real data) ──
+        if em_zb:
+            fried = len(em_zb)
+        else:
+            fried = len(fried_codes)
 
         # ── Streak / board height ──
         # Priority: Eastmoney API limit_days (a-stock-data) → streak backtracking
@@ -799,28 +804,32 @@ class MarketMetricsService:
         )
 
     async def _build_loss_effect(self, conn, td: date, breadth: MarketBreadthMetrics,
-                                  relay: RelayEcologyMetrics) -> LossEffectMetrics:
+                                  relay: RelayEcologyMetrics, em_dt=None) -> LossEffectMetrics:
         """Build loss effect metrics from stock_daily_snapshot + relay data.
 
         Sources:
-          - limit_down: stock_daily_snapshot pct_chg <= -threshold
+          - limit_down: Eastmoney DT pool (primary) or SDS pct_chg (fallback)
           - big_loss: relay.yesterday_big_loss_count
           - high_board_break: from relay
         """
         # ── Limit down stocks ──
-        # Main board: -9.5, 20cm boards: -19.5, ST: -4.5
-        rows = await conn.fetch(
-            "SELECT pct_chg, amount FROM stock_daily_snapshot "
-            "WHERE trade_date = $1::date", td)
-        ld_count = 0
-        ld_amount = 0.0
-        for r in rows:
-            pct = float(r["pct_chg"] or 0)
-            amt = float(r["amount"] or 0)
-            # Simplified: main board threshold. TODO: per-stock threshold
-            if pct <= -9.5:
-                ld_count += 1
-                ld_amount += amt
+        if em_dt:
+            # Use Eastmoney DT pool for real limit-down count
+            ld_count = len(em_dt)
+            ld_amount = 0.0
+        else:
+            # Fallback: SDS pct_chg threshold
+            rows = await conn.fetch(
+                "SELECT pct_chg, amount FROM stock_daily_snapshot "
+                "WHERE trade_date = $1::date", td)
+            ld_count = 0
+            ld_amount = 0.0
+            for r in rows:
+                pct = float(r["pct_chg"] or 0)
+                amt = float(r["amount"] or 0)
+                if pct <= -9.5:
+                    ld_count += 1
+                    ld_amount += amt
 
         total_stocks = breadth.up_count + breadth.down_count
         ld_ratio = round(ld_count / max(total_stocks, 1), 4)
