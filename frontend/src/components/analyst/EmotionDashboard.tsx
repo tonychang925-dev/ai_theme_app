@@ -350,89 +350,69 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
         </div>
         {showEvidence && (
           <div style={{ marginTop: 8 }}>
-            {/* Multi-day trend overview (6/25~7/8) — single source, no duplicate */}
-            {multiTrend && (
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: 10, marginBottom: 12, padding: 10, background: "#111720", borderRadius: 4 }}>
-                <TrendLineChart title="涨停家数趋势" data={multiTrend.breadth || []} yKey="limit_up" yLabel="涨停" color="#e53e3e" />
-                <TrendLineChart title="情绪动能趋势" data={multiTrend.momentum || []} yKey="score" yLabel="动能" color="#dd6b20" />
-                <TrendLineChart title="活跃资金趋势（亿）" data={multiTrend.capital || []} yKey="active_yi" yLabel="亿" color="#66d9ef" />
-                <TrendLineChart title="最高板高度" data={multiTrend.relay || []} yKey="max_height" yLabel="板" color="#d69e2e" />
-              </div>
-            )}
-            {/* System-generated charts — rendered visually */}
-            {artifacts.some(a => a.source === "system_generated") && (
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: 10, marginBottom: 12 }}>
-                {artifacts.filter(a => a.source === "system_generated").map(a => (
-                  <div key={a.artifact_id} style={{
-                    padding: 10, background: "#111720", borderRadius: 4, border: "1px solid #243040",
-                  }}>
-                    <div style={{ fontSize: 12, fontWeight: 600, color: "#ffd85e", marginBottom: 8 }}>{a.title}</div>
-                    <ChartRenderer chart={{
-                      chart_id: a.artifact_id,
-                      trade_date: a.trade_date,
-                      chart_type: a.chart_type || (a.title.includes("势能") ? "market_breadth" : a.title.includes("动能") ? "emotion_momentum" : a.title.includes("节律") ? "relay_ecology" : a.title.includes("机构") ? "institution_style" : a.title.includes("游资") ? "hot_money_style" : a.title.includes("涨停") ? "limitup_classification" : a.title.includes("资金") ? "active_capital" : "market_breadth"),
-                      title: a.title,
-                      data: a.extracted_metrics || {},
-                      interpretation: a.summary || "",
-                    }} />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* System-generated single-day charts from /api/v1/analyst-charts */}
+            {/* ── Unified Cards: trend(top) + detail(bottom) ── */}
             {systemCharts.length > 0 && (
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: 10, marginBottom: 12 }}>
-                {systemCharts.map((chart: any, idx: number) => (
-                  <div key={chart.chart_id || idx} style={{
-                    padding: 10, background: "#111720", borderRadius: 4, border: "1px solid #243040",
-                  }}>
-                    <div style={{ fontSize: 12, fontWeight: 600, color: "#ffd85e", marginBottom: 4 }}>
-                      {chart.title}
+              <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 12 }}>
+                {(() => {
+                  const c = (t: string) => systemCharts.find((x: any) => x.chart_type === t);
+                  const m = multiTrend;
+                  return [
+                    <UnifiedCard key="breadth" title="大盘势能" borderColor="#e53e3e">
+                      {m?.breadth && <TrendLineChart title="涨停家数趋势 (6/25~7/8)" data={m.breadth} yKey="limit_up" yLabel="涨停" color="#e53e3e" />}
+                      {c("market_breadth") && <ChartRenderer chart={c("market_breadth")} />}
+                    </UnifiedCard>,
+                    <UnifiedCard key="momentum" title="情绪动能" borderColor="#dd6b20">
+                      {m?.momentum && <TrendLineChart title="情绪动能趋势 (6/25~7/8)" data={m.momentum} yKey="score" yLabel="动能" color="#dd6b20" />}
+                      {c("emotion_momentum") && <ChartRenderer chart={c("emotion_momentum")} />}
+                    </UnifiedCard>,
+                    <UnifiedCard key="capital" title="活跃资金成交量" borderColor="#66d9ef">
+                      {m?.capital && <TrendLineChart title="活跃资金趋势 (6/25~7/8)" data={m.capital} yKey="active_yi" yLabel="亿" color="#66d9ef" />}
+                      {c("active_capital") && <ChartRenderer chart={c("active_capital")} />}
+                    </UnifiedCard>,
+                    <UnifiedCard key="relay" title="核心板块节律" borderColor="#805ad5">
+                      {m?.relay && <TrendLineChart title="最高板趋势 (6/25~7/8)" data={m.relay} yKey="max_height" yLabel="板" color="#d69e2e" />}
+                      {c("relay_ecology") && <ChartRenderer chart={c("relay_ecology")} />}
+                    </UnifiedCard>,
+                    ...["institution_style","hot_money_style","limitup_classification"].map(ct => {
+                      const ch = c(ct); if (!ch) return null;
+                      return <UnifiedCard key={ct} title={ch.title} borderColor="#5a7a8a"><ChartRenderer chart={ch} /></UnifiedCard>;
+                    }).filter(Boolean),
+                  ].flat().filter(Boolean);
+                })()}
+              </div>
+            )}
+            {/* PDF fallback */}
+            {systemCharts.length === 0 && artifacts.length > 0 && (
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {artifacts.map(a => (
+                  <div key={a.artifact_id} style={{ padding: 8, background: "#111720", borderRadius: 4, border: "1px solid #243040", width: 280, fontSize: 11 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                      <span style={{ fontWeight: 600, color: "#8ddcff" }}>{a.title}</span>
+                      <span style={{ color: "#5a7a8a" }}>P{a.page_no || "?"}</span>
                     </div>
-                    <div style={{ fontSize: 10, color: "#5a7a8a", marginBottom: 6 }}>
-                      {chart.module} · {chart.calibrated ? "analyst_pdf" : chart.calibration_source || "system_generated"}
-                    </div>
-                    <ChartRenderer chart={chart} />
-                    {chart.interpretation && (
-                      <div style={{ fontSize: 10, color: "#8ddcff", marginTop: 6, lineHeight: 1.4, padding: "4px 6px", background: "#0c1118", borderRadius: 3 }}>
-                        {chart.interpretation}
-                      </div>
-                    )}
+                    <div style={{ color: "#5a7a8a", marginBottom: 4 }}>{a.artifact_type === "table" ? "📊" : "📈"} {a.source}</div>
+                    {a.summary && <div style={{ fontSize: 10, color: "#8ddcff", lineHeight: 1.4 }}>{a.summary}</div>}
                   </div>
                 ))}
               </div>
             )}
-
-            {/* PDF artifacts — card display */}
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {artifacts.filter(a => a.source !== "system_generated").map(a => (
-                <div key={a.artifact_id} style={{
-                  padding: 8, background: "#111720", borderRadius: 4, border: "1px solid #243040",
-                  width: 280, fontSize: 11,
-                }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
-                    <span style={{ fontWeight: 600, color: "#8ddcff" }}>{a.title}</span>
-                    <span style={{ color: "#5a7a8a" }}>P{a.page_no || "?"}</span>
-                  </div>
-                  <div style={{ color: "#5a7a8a", marginBottom: 4 }}>
-                    <span>{a.artifact_type === "table" ? "📊" : "📈"} {a.source}</span>
-                  </div>
-                  {a.extracted_metrics?.key_finding && (
-                    <div style={{ fontSize: 10, color: "#d69e2e", marginBottom: 4 }}>{a.extracted_metrics.key_finding}</div>
-                  )}
-                  <div style={{ fontSize: 10, color: "#8ddcff", lineHeight: 1.4 }}>{a.summary}</div>
-                </div>
-              ))}
-            </div>
-
-            {artifacts.length === 0 && (
+            {systemCharts.length === 0 && artifacts.length === 0 && (
               <div style={{ fontSize: 11, color: "#5a7a8a", padding: 8 }}>该日期暂无图表证据</div>
             )}
           </div>
         )}
       </div>
 
+    </div>
+  );
+}
+
+// ── Unified Card: trend chart (top) + detail data (bottom) ──
+function UnifiedCard({ title, borderColor, children }: { title: string; borderColor: string; children: React.ReactNode }) {
+  return (
+    <div style={{ padding: 12, background: "#111720", borderRadius: 6, border: `1px solid ${borderColor}20` }}>
+      <div style={{ fontWeight: 700, color: "#ffd85e", marginBottom: 10, fontSize: 14, borderLeft: `3px solid ${borderColor}`, paddingLeft: 10 }}>{title}</div>
+      {children}
     </div>
   );
 }
