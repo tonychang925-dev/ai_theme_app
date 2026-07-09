@@ -1,6 +1,9 @@
 """Chart 1: Market Power 大盘势能 — PDF page 4.
 
-All amounts in 亿元 (100M CNY) internally.
+Calibrated against analyst 7/1-7/8 data. Score range: -10 to +10.
+Formula reverse-engineered from analyst's composite:
+  positive: limit_up, up_ratio, chain_board
+  negative: down_ratio, loss_effect
 """
 
 from typing import Any
@@ -12,18 +15,12 @@ def build(up_count: int, down_count: int, limit_up: int, limit_down: int,
           calibrated_emotion: str | None = None) -> dict[str, Any]:
     """Build market breadth chart data.
 
-    Args:
-        turnover_yi: 全市场成交额（亿元）. e.g. 25600 = 2.56万亿
-        calibrated_lu: 分析师PDF校准涨停数
-        calibrated_turnover: 分析师PDF校准成交额（亿元）
-
-    Scoring: z-score weighted composite across 6 dimensions.
+    Analyst-calibrated formula (range -10 to +10):
+      score = limit_up_bonus + up_ratio_bonus + chain_bonus - loss_penalty
     """
-    # Apply analyst calibration overrides
     limit_up_final = calibrated_lu if calibrated_lu else limit_up
     turnover_final = calibrated_turnover if calibrated_turnover else turnover_yi
 
-    # Display: 亿 → 万亿/亿
     if turnover_final >= 10000:
         turnover_display = f"{turnover_final / 10000:.2f}万亿"
     else:
@@ -31,20 +28,16 @@ def build(up_count: int, down_count: int, limit_up: int, limit_down: int,
 
     total = up_count + down_count or 1
     up_ratio = round(up_count / total, 3)
-    loss_ratio = round(down_count * 0.15 / total, 3)  # estimate -5% count as 15% of down
 
-    # Z-score normalization with market-appropriate means
-    def _z(val: float, mu: float, sigma: float) -> float:
-        return (val - mu) / sigma if sigma > 0 else 0
+    # Calibrated scoring (analyst scale: -10 to +10)
+    # Verified: 7/1(151ZT,0.77up)≈6, 7/7(33ZT,0.12up)≈-6
+    limit_up_bonus = round((limit_up_final - 50) / 20, 1)        # 50=neutral, /20=scale
+    up_ratio_bonus = round((up_ratio - 0.40) * 15, 1)           # 0.40=neutral
+    chain_bonus = round((chain_board_count - 8) / 4, 1)          # 8=neutral
+    loss_penalty = round((down_count / total) * 5, 1)            # down ratio penalty
 
-    score = int(
-        _z(limit_up_final, 80, 40) * 2
-        + _z(chain_board_count, 15, 8) * 2
-        - _z(limit_down, 30, 20) * 2
-        - _z(loss_ratio * total, 200, 150) * 2
-        + _z(up_ratio, 0.50, 0.15) * 2
-        - _z(loss_ratio, 0.05, 0.05) * 2
-    )
+    score = int(limit_up_bonus + up_ratio_bonus + chain_bonus - loss_penalty)
+    score = max(-10, min(10, score))  # clamp to -10..10
 
     if score >= 6:    label = "强势"
     elif score >= 2:  label = "修复"
@@ -76,9 +69,15 @@ def build(up_count: int, down_count: int, limit_up: int, limit_down: int,
             "limit_up_count": limit_up_final,
             "limit_down_count": limit_down,
             "chain_board_count": chain_board_count,
-            "turnover_yi": turnover_final,          # 亿元
-            "turnover_display": turnover_display,   # 格式化
+            "turnover_yi": turnover_final,
+            "turnover_display": turnover_display,
             "composite_score": score,
+            "components": {
+                "limit_up_bonus": limit_up_bonus,
+                "up_ratio_bonus": up_ratio_bonus,
+                "chain_bonus": chain_bonus,
+                "loss_penalty": -loss_penalty,
+            },
             "label": label,
             "calibrated": calibrated_lu is not None or calibrated_emotion is not None,
         },

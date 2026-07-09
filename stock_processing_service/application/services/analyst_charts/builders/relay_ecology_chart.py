@@ -14,14 +14,21 @@ def build(max_board_height: int, first_board_success_rate: float,
           board_groups: list[dict] | None = None) -> dict[str, Any]:
     """Build relay ecology chart with promotion rates + feedback score."""
 
-    if max_board_height >= 5 and promotion_1_to_2 > 0.4:
+    # Multi-condition label: feedback_score + promotion + max_height
+    if feedback_score < -30:
+        r_label = "接力崩塌"
+    elif promotion_1_to_2 < 0.10:
+        r_label = "接力冻结"
+    elif promotion_1_to_2 < 0.20:
+        r_label = "接力退潮"
+    elif max_board_height >= 5 and promotion_1_to_2 > 0.40:
         r_label = "接力活跃"
     elif max_board_height >= 3:
         r_label = "接力正常"
     elif max_board_height >= 2:
-        r_label = "接力退潮"
-    else:
         r_label = "高度压制"
+    else:
+        r_label = "接力缺失"
 
     evidence = [
         f"最高{max_board_height}板",

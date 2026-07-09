@@ -106,7 +106,7 @@ class MarketMetricsService:
         relay = await self._build_relay(conn, trade_date, limitup, streak_dist,
                                          yesterday_codes, today_streaks, em_yesterday_zt, em_zt)
         capital = await self._build_capital(conn, trade_date, breadth, overview)
-        momentum = self._build_momentum(breadth, limitup)
+        momentum = self._build_momentum(breadth, limitup, relay)
         loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay, em_dt)
         leader_evolution = self._build_leader_evolution(trade_date, stock_detail, streak_dist, yesterday_codes)
         loss_attr = self._build_loss_attribution(trade_date, loss_effect, relay, leader_evolution)
@@ -680,24 +680,43 @@ class MarketMetricsService:
 
     @staticmethod
     def _build_momentum(breadth: MarketBreadthMetrics,
-                        lu: LimitUpMetrics) -> EmotionMomentumMetrics:
-        total = breadth.up_count + breadth.down_count or 1
-        r = breadth.up_count / total
+                        lu: LimitUpMetrics,
+                        relay: RelayEcologyMetrics | None = None) -> EmotionMomentumMetrics:
+        """Compute emotion momentum using actual per-stock tracking data.
 
-        first_red = min(0.8, r)
-        first_loss = max(0.05, 1 - r - 0.3)
-        chain_red = first_red * 0.8
-        chain_loss = first_loss * 0.7
-        chain_ratio = min(0.5, lu.chain_board_count / max(lu.total_count, 1))
-        yest_red = 0.3  # yesterday chain not limit red — estimated when no history
+        v3: Uses relay data for real ratios instead of breadth estimates.
+        Analyst formula: 6-component weighted score.
+        """
+        # Use relay data when available (real per-stock tracking)
+        if relay and relay.yesterday_limitup_count > 0:
+            yest_total = relay.yesterday_limitup_count
+            first_red = relay.continue_ratio              # 昨涨停→今继续
+            first_loss = relay.yesterday_big_loss_count / max(yest_total, 1)  # 大面比
+            chain_ratio = min(1.0, lu.chain_board_count / max(lu.total_count, 1))
+            # 连板红盘比: estimated from relay feedback strength
+            # feedback > 0 → chain board mostly green; feedback < -30 → mostly red
+            chain_red = max(0.05, min(1.0, (relay.feedback_score + 100) / 200))
+            chain_loss = relay.yesterday_big_loss_count / max(yest_total, 1) * 0.8
+            yest_red = 0.5  # 昨日连板未涨停绿盘比 — estimated
+        else:
+            # Fallback: breadth-based estimates
+            total = breadth.up_count + breadth.down_count or 1
+            r = breadth.up_count / total
+            first_red = min(0.8, r)
+            first_loss = max(0.05, 1 - r - 0.3)
+            chain_red = first_red * 0.8
+            chain_loss = first_loss * 0.7
+            chain_ratio = min(0.5, lu.chain_board_count / max(lu.total_count, 1))
+            yest_red = 0.3
 
-        # Raw momentum (-18 ~ +10 analyst scale)
-        momentum_raw = round(
-            first_red * 2 - first_loss * 2 + chain_red * 2
-            + chain_ratio * 2 - chain_loss * 2 + yest_red * 1, 1
-        )
+        # Analyst scale momentum (-18 ~ +10 range)
+        base_raw = first_red * 2 - first_loss * 2 + chain_red * 2 + chain_ratio * 2 - chain_loss * 2 + yest_red * 1
 
-        # Normalized (-100 ~ +100)
+        # Panic amplification: when relay feedback < -30 + severe loss, amplify negative
+        if relay and relay.feedback_score < -30 and first_loss > 0.3:
+            base_raw -= abs(relay.feedback_score) * 0.15  # add -6 at fb=-40
+
+        momentum_raw = round(base_raw, 1)
         momentum_norm = round((momentum_raw + 18) / 28 * 200 - 100, 1)
 
         return EmotionMomentumMetrics(
@@ -709,7 +728,7 @@ class MarketMetricsService:
             yesterday_chain_not_limit_red_ratio=round(yest_red, 2),
             momentum_raw=momentum_raw,
             momentum_normalized=momentum_norm,
-            source=MetricSource("recap_snapshot", confidence=0.75),
+            source=MetricSource("relay_data" if relay else "recap_snapshot", confidence=0.85 if relay else 0.75),
         )
 
     # ── Helpers ──
