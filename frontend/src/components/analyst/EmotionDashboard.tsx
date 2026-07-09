@@ -76,7 +76,7 @@ function useEmotionTrend(tradeDate: string) {
 
     Promise.all(
       dates.map(dt =>
-        fetch(`http://127.0.0.1:8090/api/v1/emotion/${dt}`)
+        fetch(`http://127.0.0.1:8090/api/v1/emotion/${dt}`, {signal: AbortSignal.timeout(2000)})
           .then(r => r.json())
           .then(data => ({ date: dt, node: (data && data.emotion_node) || "CHAOS", score: (data && data.emotion_score) || 0 }))
           .catch(() => ({ date: dt, node: "CHAOS", score: 0 }))
@@ -100,7 +100,7 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
 
   const loadTrends = useCallback(async () => {
     try {
-      const resp = await fetch(`http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}/trends?days=7`);
+      const resp = await fetch(`http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}/trends?days=7`, {signal: AbortSignal.timeout(2000)});
       if (resp.ok) setTrendData(await resp.json());
     } catch { /* ignore */ }
   }, [tradeDate]);
@@ -111,10 +111,10 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
       const tr = await fetch(`/api/analyst-charts/trend.json`);
       if (tr.ok) setMultiTrend(await tr.json());
     } catch { /* ignore */ }
-    // Load single-day charts
+    // Load single-day charts — static first
     for (const url of [
-      `http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}`,
       `/api/analyst-charts/${tradeDate}.json`,
+      `http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}`,
     ]) {
       try {
         const resp = await fetch(url);
@@ -130,17 +130,17 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
 
   const loadArtifacts = useCallback(async () => {
     try {
-      const resp = await fetch(`http://127.0.0.1:8090/api/v1/evidence-artifacts/${tradeDate}?module=emotion`);
+      const resp = await fetch(`http://127.0.0.1:8090/api/v1/evidence-artifacts/${tradeDate}?module=emotion`, {signal: AbortSignal.timeout(2000)});
       if (resp.ok) setArtifacts(await resp.json());
     } catch { /* ignore */ }
   }, [tradeDate]);
 
   useEffect(() => {
     setLoading(true);
-    // Try live API first, fallback to static JSON
+    // Static JSON first (instant), API as fallback
     const urls = [
-      `http://127.0.0.1:8090/api/v1/emotion/${tradeDate}`,
       `/api/emotion-${tradeDate}.json`,
+      `http://127.0.0.1:8090/api/v1/emotion/${tradeDate}`,
     ];
     (async () => {
       for (const url of urls) {
