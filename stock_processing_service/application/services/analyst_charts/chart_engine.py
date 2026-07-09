@@ -75,6 +75,7 @@ class ChartReproductionEngine:
             yesterday_chain_not_limit_red_ratio=m.yesterday_chain_not_limit_red_ratio,
             limit_up_count=b.limit_up_count,
             chain_board_count=l.chain_board_count,
+            momentum_raw=m.momentum_raw,  # v3 relay-based formula
         ))
 
         # ── Chart 3: Active Capital (活跃资金) ──

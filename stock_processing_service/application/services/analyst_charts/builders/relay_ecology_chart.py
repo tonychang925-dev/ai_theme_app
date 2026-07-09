@@ -48,7 +48,10 @@ def build(max_board_height: int, first_board_success_rate: float,
         + f"最高{max_board_height}板。"
         + (f" 反馈{feedback_label}。" if feedback_label else "")
         + ("接力活跃，高度打开。" if r_label == "接力活跃"
+           else "接力崩塌，全面退潮，停止接力。" if r_label == "接力崩塌"
+           else "接力冻结，谨慎观望。" if r_label == "接力冻结"
            else "接力退潮，高度压制，慎打高位。" if r_label in ("接力退潮", "高度压制")
+           else "接力缺失，市场无方向。" if r_label == "接力缺失"
            else "接力正常。")
     )
 

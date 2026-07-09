@@ -6,18 +6,18 @@ from typing import Any
 def build(first_board_red_ratio: float, first_board_big_loss_ratio: float,
           chain_board_red_ratio: float, chain_board_ratio: float,
           chain_board_big_loss_ratio: float, yesterday_chain_not_limit_red_ratio: float,
-          limit_up_count: int, chain_board_count: int) -> dict[str, Any]:
+          limit_up_count: int, chain_board_count: int,
+          momentum_raw: float | None = None) -> dict[str, Any]:
     """Build emotion momentum chart. Score range: roughly -18 to +10."""
 
-    momentum = round(
-        first_board_red_ratio * 2
-        - first_board_big_loss_ratio * 2
-        + chain_board_red_ratio * 2
-        + min(1.0, chain_board_ratio) * 2
-        - chain_board_big_loss_ratio * 2
-        + yesterday_chain_not_limit_red_ratio * 1,
-        1,
-    )
+    # Use service-computed momentum_raw when available (v3 relay-based formula)
+    if momentum_raw is not None:
+        momentum = round(momentum_raw, 1)
+    else:
+        momentum = round(
+            first_board_red_ratio * 2 - first_board_big_loss_ratio * 2
+            + chain_board_red_ratio * 2 + min(1.0, chain_board_ratio) * 2
+            - chain_board_big_loss_ratio * 2 + yesterday_chain_not_limit_red_ratio * 1, 1)
 
     if momentum >= 5:       m_label = "情绪高涨"
     elif momentum >= 0:     m_label = "情绪正常"
