@@ -82,13 +82,6 @@ _METRICS_ONLY_MISSING: frozenset[str] = frozenset({
     "strategy_label.watch_points",
 })
 
-# Strategy keywords for overlap scoring
-_STRATEGY_KEYWORDS: tuple[str, ...] = (
-    "观察", "空仓", "轻仓", "快进快出", "反弹套利",
-    "情绪连板", "科技硬件", "韩国指数", "指数企稳",
-    "缩量十字星", "深V", "核心方向", "条件单",
-    "不扩大仓位", "重仓追高", "支撑平台",
-)
 
 
 # ═══ AnalystComparator ═══
@@ -621,12 +614,15 @@ class AnalystComparator:
             reason=f"Risk distance={distance}: {analyst_risk} vs {ai_risk}",
         )
 
-    # ── Strategy text comparator ──
+    # ── Strategy intent comparator ──
 
     def _compare_strategy_text(
         self, a_text: str, ai_text: str, ai_view: AIDiagnosisReferenceView
     ) -> SemanticDiff:
-        """Keyword overlap score for strategy text."""
+        """Strategy intent matching via StrategyIntentMatcher (v1).
+
+        Replaces keyword overlap with 8-label intent extraction + recall-weighted scoring.
+        """
 
         if not ai_text:
             if not ai_view.has_strategy_data:
@@ -658,29 +654,27 @@ class AnalystComparator:
                 excluded_from_score=True,
             )
 
-        a_kw = {kw for kw in _STRATEGY_KEYWORDS if kw in a_text}
-        ai_kw = {kw for kw in _STRATEGY_KEYWORDS if kw in ai_text}
+        # Use StrategyIntentMatcher
+        from .strategy_intent import StrategyIntentMatcher
+        matcher = StrategyIntentMatcher()
+        match = matcher.compare(a_text, ai_text)
 
-        if not a_kw and not ai_kw:
-            return SemanticDiff(
-                field_path="strategy_label",
-                analyst_label=a_text[:100], ai_label=ai_text[:100],
-                match_type=MatchType.NEAR_MISS, score=0.7,
-                reason="No keywords detected — text comparison deferred",
-            )
-
-        combined = a_kw | ai_kw
-        overlap = a_kw & ai_kw
-        score = len(overlap) / max(len(combined), 1)
-
-        match_type = MatchType.EXACT if score >= 0.8 else MatchType.COMPATIBLE if score >= 0.5 else MatchType.NEAR_MISS if score >= 0.2 else MatchType.OPPOSITE
+        score = match.score
+        if score >= 0.85:
+            match_type = MatchType.EXACT
+        elif score >= 0.65:
+            match_type = MatchType.COMPATIBLE
+        elif score >= 0.35:
+            match_type = MatchType.NEAR_MISS
+        else:
+            match_type = MatchType.OPPOSITE
 
         return SemanticDiff(
             field_path="strategy_label",
-            analyst_label=f"keywords: {sorted(a_kw)[:8]}",
-            ai_label=f"keywords: {sorted(ai_kw)[:8]}",
+            analyst_label=f"intents={match.analyst_intents}",
+            ai_label=f"intents={match.ai_intents}",
             match_type=match_type, score=round(score, 3),
-            reason=f"Keyword overlap: {len(overlap)}/{len(combined)}",
+            reason=match.reason,
         )
 
     # ── Score aggregation ──

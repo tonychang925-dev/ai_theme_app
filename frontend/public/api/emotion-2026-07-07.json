@@ -1,1 +1,22 @@
-{"trade_date": "2026-07-07", "emotion_node": "ICE_POINT", "emotion_desc": "恐慌/冰点", "emotion_score": -15, "key_evidence": ["涨停 33 家，炸板 23 家", "上涨 633 / 下跌 4482", "活跃资金 903亿", "1→2: 5.4% 反馈: 负反馈"], "strategy_bias": "防守等待。耐心等待龙头修复或新周期启动，不做后排。", "raw": {"limit_up": 33, "limit_down": 30, "up_count": 633, "down_count": 4482, "active_capital_yi": 902.7}, "confidence": 0.87, "source": "market_metrics_snapshot"}
+{
+  "trade_date": "2026-07-07",
+  "emotion_node": "ICE_POINT",
+  "emotion_desc": "恐慌/冰点",
+  "emotion_score": -15,
+  "key_evidence": [
+    "涨停 33 家，炸板 23 家",
+    "上涨 633 / 下跌 4482",
+    "活跃资金 903亿",
+    "1→2: 5.4% 反馈: 负反馈"
+  ],
+  "strategy_bias": "空仓等待，观察修复信号，回避高位",
+  "raw": {
+    "limit_up": 33,
+    "limit_down": 30,
+    "up_count": 633,
+    "down_count": 4482,
+    "active_capital_yi": 902.7
+  },
+  "confidence": 0.87,
+  "source": "market_metrics_snapshot"
+}

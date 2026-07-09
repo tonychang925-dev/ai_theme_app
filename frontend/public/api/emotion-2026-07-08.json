@@ -1,1 +1,22 @@
-{"trade_date": "2026-07-08", "emotion_node": "CHAOS", "emotion_desc": "混沌", "emotion_score": 40, "key_evidence": ["涨停 47 家，炸板 14 家", "上涨 1514 / 下跌 3493", "活跃资金 738亿", "1→2: 21.4% 反馈: 中性"], "strategy_bias": "正常参与。关注龙头晋级和主线延续，控制仓位。", "raw": {"limit_up": 47, "limit_down": 41, "up_count": 1514, "down_count": 3493, "active_capital_yi": 738.17}, "confidence": 0.87, "source": "market_metrics_snapshot"}
+{
+  "trade_date": "2026-07-08",
+  "emotion_node": "CHAOS",
+  "emotion_desc": "混沌",
+  "emotion_score": 40,
+  "key_evidence": [
+    "涨停 47 家，炸板 14 家",
+    "上涨 1514 / 下跌 3493",
+    "活跃资金 738亿",
+    "1→2: 21.4% 反馈: 中性"
+  ],
+  "strategy_bias": "快进快出反弹套利，聚焦核心方向，控制仓位等待确认",
+  "raw": {
+    "limit_up": 47,
+    "limit_down": 41,
+    "up_count": 1514,
+    "down_count": 3493,
+    "active_capital_yi": 738.17
+  },
+  "confidence": 0.87,
+  "source": "market_metrics_snapshot"
+}

@@ -23,6 +23,20 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 
+def _get_ai_strategy_text(td, chart_dir, breadth, hm, capital) -> str:
+    """Get AI strategy text: prefer emotion JSON strategy_bias."""
+    emotion_path = chart_dir.parent / f"emotion-{td.isoformat()}.json"
+    if emotion_path.exists():
+        try:
+            emo = json.loads(emotion_path.read_text())
+            text = emo.get("strategy_bias", "")
+            if text:
+                return text
+        except (json.JSONDecodeError, OSError):
+            pass
+    return f"{breadth.get('label', '')}, {hm.get('label', '')}, {capital.get('label', '')}"
+
+
 def _build_ai_view_from_charts(
     td: date,
     chart_dir: Path,
@@ -129,8 +143,9 @@ def _build_ai_view_from_charts(
             promotion_2_to_3=relay.get('promotion_2_to_3'),
         ),
         theme_lifecycle=themes,
+        # AI strategy text: prefer emotion JSON strategy_bias over label concatenation
         strategy_label=StrategyLabel(
-            summary=f"AI: {breadth.get('label', '')}, {hm.get('label', '')}, {capital.get('label', '')}"
+            summary=_get_ai_strategy_text(td, chart_dir, breadth, hm, capital)
         ),
         source_quality=0.85,
     )
