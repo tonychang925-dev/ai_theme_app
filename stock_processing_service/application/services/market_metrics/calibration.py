@@ -546,6 +546,20 @@ def _suggest_action(cause: str) -> str:
 
 # ═══ Pre-built 7/7 reference ═══
 
+def build_20260708_calibration_ref() -> AnalystReferenceRecord:
+    """7/8 analyst reference from DeepSeek结构化版."""
+    return AnalystReferenceRecord(
+        trade_date=date(2026, 7, 8),
+        limit_up_count=46, max_board_height=7,
+        relay_1_to_2=0.21, relay_2_to_3=0.33,
+        active_capital_yi=739.0,
+        market_phase="REPAIR_WATCH", risk_level="MEDIUM_HIGH",
+        strategy="等待核心方向确认；科技硬件快进快出反弹套利；关注情绪连板",
+        emotion_momentum=-4.0,
+        source="analyst_pdf", notes="DeepSeek结构化版 7月8日复盘. 韩国指数-5.35%. 冰点后弱修复",
+    )
+
+
 def build_20260707_calibration_ref() -> AnalystReferenceRecord:
     return AnalystReferenceRecord(
         trade_date=date(2026, 7, 7),
