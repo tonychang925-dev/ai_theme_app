@@ -269,20 +269,57 @@ class LossAttributionMetrics:
 
 
 @dataclass(frozen=True, slots=True)
+class LeaderDeathItem:
+    """A single leader death event — WHO died, WHY it matters.
+
+    importance = relative_height × strength_score × death_type_weight
+    One CVL (Core Variable Leader) death ≈ ten small-cap board breaks.
+    """
+    stock_code: str
+    stock_name: str
+    board_height: int
+    death_type: str = ""                 # NORMAL | FRIED | LIMIT_DOWN | HEAVEN_EARTH
+    death_importance: float = 0.0        # weighted importance score
+    relative_height: float = 0.0         # board_height / market_max_height
+    strength_score: float = 0.0          # leader strength from LeaderSnapshot
+    theme: str = ""
+    role: str = ""                       # 总龙头 / 板块龙头 / 中军 / 补涨
+
+
+@dataclass(frozen=True, slots=True)
 class HighPositionDeathMetrics:
-    """High Position Death Index — WHO died, not just HOW MANY.
+    """High Position Death Index v2 — WHO died, not just HOW MANY.
 
     Core analyst question: Did today's losses hit the CORE positions?
 
-    Formula: leader_break*40% + high_board_loss*30% + yesterday_feedback*20% + big_loss*10%
+    v2 semantics:
+      importance_i = relative_height_i × strength_score_i × death_type_weight_i
+      death_index = weighted_leader_death_score × 0.5 + high_board_loss × 0.2
+                    + yesterday_feedback_inverted × 0.15 + big_loss × 0.1
+                    + contagion_score × 0.05
+
+    One core leader death (涨停→跌停) ≫ ten small-cap board breaks.
+    Contagion_score captures intra-theme spread: how many peers followed.
     """
     death_index: float = 0.0              # 0-100, the composite death index
     death_label: str = ""                 # SAFE | WARNING | DANGER | CRITICAL
 
+    # v2: weighted leader death
+    weighted_leader_death_score: float = 0.0  # sum of death_importance across all dead leaders
+    leader_death_importance_sum: float = 0.0  # total importance of dead leaders
+    death_type_score: float = 0.0             # severity weighted by death_type
+
+    # v1 legacy (kept for backward compat)
     leader_break_count: int = 0           # how many leaders broke
     high_board_loss_count: int = 0        # 高位连板亏损数
     yesterday_feedback_inverted: float = 0.0  # 100 - abs(feedback_score), inverted
     big_loss_count: int = 0               # 大面数
+
+    # v2: contagion
+    contagion_score: float = 0.0          # intra-theme death spread score (0-100)
+
+    # Top deaths (sorted by importance, max 10)
+    top_death_leaders: tuple[LeaderDeathItem, ...] = ()
 
     # Narrative
     death_conclusion: str = ""            # one-line: "高位核心死亡，风险升级至CRITICAL"

@@ -6637,7 +6637,7 @@ MarketMetricsSnapshot (单日快照)
 ├── LossEffectMetrics       # 跌停/大面/亏钱效应
 ├── LossAttributionMetrics  # 亏钱归因 (高位/龙头/板块)
 ├── HighPositionDeathMetrics # 高位死亡指数 (三维加权)
-├── DeathPropagationMetrics v2 # 死亡传播指数 (+capital_escape)
+├── DeathPropagationMetrics v1 # 死亡传播指数
 ├── ActiveCapitalMetrics    # 活跃资金/占比
 └── EmotionMomentumMetrics v3 # 情绪动能 (relay-based real ratios)
 ```
@@ -6764,6 +6764,7 @@ frontend/src/components/analyst/
 | Death Index 偶发 None | `_build_death_index` 返回 None bug | P2 |
 | 7/8 Phase 混沌≠REPAIR_WATCH | 修复信号检测不足 | P1 |
 | 活跃资金 25.6万亿总成交额 | recap total_amount 单位待校准 | P2 |
+| DeathPropagation 缺少 capital_escape | 资金逃离预警字段未实现，已从 §28.2 降级为 v1 | P1 |
 | SPS 服务器不稳定 | 前端已切换为静态 JSON 优先 | P0 (已缓解) |
 
 ---
@@ -6779,4 +6780,37 @@ L4 市场记忆        ✅ (Market Memory + TurningPoint + Failure)
 L5 认知校准        ✅ (Calibration Learning Loop + Drift Engine)
 L6 外部环境        ⬜ (Phase 4, 未开始)
 ```
+
+---
+
+## 32. Phase 4.1 Analyst Reference Ingestion 实现状态
+
+> 状态更新：2026-07-09
+
+| Phase | 描述 | 状态 |
+|-------|------|------|
+| Phase 4.1a | Core Metrics Parser — 涨停数/max_board/phase/risk/emotion_momentum | ✅ Done |
+| Phase 4.1b | Full Reference Parser — relay/strategy/themes/leaders/limitup_attribution | 🟡 In Progress |
+| Phase 4.1c | Field-level Evidence — ExtractedField / quality report / missing tracking | ⬜ Not Started |
+| Phase 4.1d | Analyst Reference Store — DB migration + persistence layer | ⬜ Not Started |
+| Phase 4.2 | Historical Replay Benchmark | ⬜ Blocked by 4.1b/4.1c |
+
+**当前实际交付 (a0cd510d9)**：
+- Core 指标解析完成（limit_up_count, max_board_height, market_phase, risk_level, emotion_momentum）
+- relay / strategy / theme_lifecycle / limitup_attribution / leader_state / external_env 解析入口已存在
+- **尚未完成**：股票级涨停明细 (code/name/board/time/reason)、字段级 evidence tracking、ratio normalization、section-scoped parser
+
+**进入 Phase 4.2 的最低门槛**：
+
+| 能力 | 当前状态 |
+|------|----------|
+| 核心 facts 解析 | ✅ |
+| phase/risk 解析 | ✅ |
+| relay 解析 | 🟡 |
+| strategy 解析 | 🟡 |
+| theme lifecycle 解析 | 🟡 |
+| limitup stock events 明细 | ❌ 只计数，未结构化 |
+| leader role classification | 🟡 粗规则 |
+| field-level evidence | ❌ |
+| extraction quality report | ❌ |
 

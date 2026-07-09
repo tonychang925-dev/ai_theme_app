@@ -16,14 +16,25 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from datetime import date, datetime, timezone
-from typing import Any
+from typing import Any, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from stock_processing_service.application.services.analyst_reference.contracts import (
+        AnalystReferenceRecord as ContractAnalystReferenceRecord,
+    )
 
 
 # ═══ Analyst Reference Dataset ═══
+# Two variants exist by design:
+#   analyst_reference/contracts.AnalystReferenceRecord — canonical storage/exchange
+#       with structured sub-objects (MarketFacts, EmotionLabel, etc.)
+#   market_metrics/calibration.AnalystReferenceRecord — flat computational format
+#       optimized for CalibrationEngine drift computation
+# The adapter below bridges between them.
 
 @dataclass
 class AnalystReferenceRecord:
-    """One trading day's analyst ground truth."""
+    """One trading day's analyst ground truth (flat computational format)."""
     trade_date: date
 
     # L0: Market Facts
@@ -44,6 +55,26 @@ class AnalystReferenceRecord:
     # Meta
     source: str = "analyst_pdf"
     notes: str = ""
+
+    @classmethod
+    def from_contract_record(cls, cr: "ContractAnalystReferenceRecord") -> "AnalystReferenceRecord":
+        """Convert canonical AnalystReferenceRecord to flat calibration format."""
+        return cls(
+            trade_date=cr.trade_date,
+            limit_up_count=cr.market_facts.limit_up_count,
+            max_board_height=cr.market_facts.max_board_height,
+            relay_1_to_2=cr.relay_label.promotion_1_to_2,
+            relay_2_to_3=cr.relay_label.promotion_2_to_3,
+            loss_count=getattr(cr.market_facts, "down_below_minus5", None),
+            active_capital_yi=cr.market_facts.active_capital_yi,
+            market_phase=cr.emotion_label.market_phase,
+            risk_level=cr.emotion_label.risk_level,
+            strategy=cr.emotion_label.strategy or cr.strategy_label.summary,
+            emotion_momentum=cr.emotion_label.emotion_momentum,
+            source=cr.source_type,
+            notes=f"extraction_status={cr.quality.extraction_status.value}"
+                  f" coverage={cr.quality.required_field_coverage:.0%}",
+        )
 
     def to_dict(self) -> dict:
         return {
