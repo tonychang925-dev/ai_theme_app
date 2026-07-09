@@ -293,7 +293,7 @@ function CognitionEditor({
         <input value={(theme as any)[field] || ""} onChange={(e) => update(field, e.target.value)}
           style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: `1px solid ${statusColor(field)}`, background: "#1a1a1a", color: "#f5f5f5" }} />
       )}
-      </div>
+    </div>
   );
 
   return (
@@ -358,8 +358,6 @@ function CognitionEditor({
       <TextField label="与指数共振" field="index_resonance" rows={1} />
       <TextField label="隔日思考" field="tomorrow_view" rows={2} />
       <TextField label="分析师备注" field="analyst_notes" rows={3} />
-      </div>
-      )}
     </div>
   );
 }
@@ -384,8 +382,6 @@ function StockPoolEditor({
       <PoolSection title="龙头 / 潜在龙头 / 中军" color="#e53e3e" stocks={localLeaders} setStocks={(s) => { setLocalLeaders(s); sync(s, localBull, localBear); }} />
       <PoolSection title="多头池 Bull Pool" color="#38a169" stocks={localBull} setStocks={(s) => { setLocalBull(s); sync(localLeaders, s, localBear); }} />
       <PoolSection title="空头池 Bear Pool" color="#dd6b20" stocks={localBear} setStocks={(s) => { setLocalBear(s); sync(localLeaders, localBull, s); }} />
-      </div>
-      )}
     </div>
   );
 }
@@ -408,7 +404,7 @@ export function AnalystWorkspacePage() {
   const fetchWorkspace = useCallback(async (d: string) => {
     setLoading(true);
     try {
-      const resp = await fetch(`http://127.0.0.1:8090/api/v1/analyst-workspace/${d}`);
+      const resp = await fetch(`/api/v1/analyst-workspace/${d}`);
       if (!resp.ok) throw new Error(`${resp.status}`);
       const data = await resp.json();
       setWorkspace(data);
@@ -426,7 +422,7 @@ export function AnalystWorkspacePage() {
     if (!workspace) return;
     setSaving(true);
     try {
-      const resp = await fetch(`http://127.0.0.1:8090/api/v1/analyst-workspace/${dateInput}/save`, {
+      const resp = await fetch(`/api/v1/analyst-workspace/${dateInput}/save`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(workspace),
@@ -484,35 +480,25 @@ export function AnalystWorkspacePage() {
         </button>
       </section>
 
-      {/* Emotion Dashboard — always visible */}
-      {activeTab === "emotion" && (
-        <div style={{ flex: 1, overflow: "auto", background: "#0c1118" }}>
-          <EmotionDashboard tradeDate={dateInput} />
-        </div>
-      )}
-
-      {/* Tabs + Theme workspace */}
-      <div style={{ borderTop: "1px solid #243040", background: "#0c1118" }}>
-        <div style={{ display: "flex", gap: 0, padding: "0 16px", background: "#0c1118" }}>
-          {[
-            { key: "emotion" as const, label: "情绪与图表" },
-            { key: "watch" as const, label: "观察方向" },
-          ].map(tab => (
-            <div key={tab.key}
-              onClick={() => setActiveTab(tab.key)}
-              style={{
-                padding: "8px 16px", cursor: "pointer", fontSize: 13, fontWeight: 600,
-                color: activeTab === tab.key ? "#ffd85e" : "#5a7a8a",
-                borderBottom: activeTab === tab.key ? "2px solid #ffd85e" : "2px solid transparent",
-                transition: "0.2s",
-              }}>{tab.label}</div>
-          ))}
-        </div>
+      {/* Tab bar */}
+      <div style={{ display: "flex", gap: 0, padding: "0 16px", background: "#0c1118", borderBottom: "1px solid #243040" }}>
+        {(["emotion", "watch"] as const).map(tab => (
+          <div key={tab} onClick={() => setActiveTab(tab)}
+            style={{ padding: "8px 16px", cursor: "pointer", fontSize: 13, fontWeight: 600,
+              color: activeTab === tab ? "#ffd85e" : "#5a7a8a",
+              borderBottom: activeTab === tab ? "2px solid #ffd85e" : "2px solid transparent" }}>
+            {tab === "emotion" ? "情绪与图表" : "观察方向"}
+          </div>
+        ))}
       </div>
 
-      {/* Three-panel body — Theme workspace (观察方向 tab) */}
-      {activeTab === "watch" && (
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "240px 1fr 340px", overflow: "hidden", background: "#0c1118" }}>
+      {/* Tab 1: Emotion Dashboard */}
+      <div style={{ flex: 1, overflow: "auto", background: "#0c1118", display: activeTab === "emotion" ? "block" : "none" }}>
+        <EmotionDashboard tradeDate={dateInput} />
+      </div>
+
+      {/* Tab 2: Three-panel body — dark theme */}
+      <div style={{ flex: 1, display: activeTab === "watch" ? "grid" : "none", gridTemplateColumns: "240px 1fr 340px", overflow: "hidden", background: "#0c1118" }}>
         {/* Left: Theme list */}
         <div style={{ borderRight: "1px solid #243040", overflow: "hidden", background: "#111720" }}>
           <ThemeWatchList
@@ -609,8 +595,6 @@ export function AnalystWorkspacePage() {
           )}
         </div>
       </div>
-      </div>
-      )}
     </div>
   );
 }
@@ -633,8 +617,6 @@ function GroupCognitionEditor({ group, onChange }: { group: WatchGroup; onChange
         <input value={(group as any)[field] || ""} onChange={(e) => update(field, e.target.value)}
           style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: "1px solid #243040", background: "#1a1a1a", color: "#f5f5f5" }} />
       )}
-      </div>
-      )}
     </div>
   );
   return (
@@ -649,8 +631,6 @@ function GroupCognitionEditor({ group, onChange }: { group: WatchGroup; onChange
       <TF label="指数共振" field="index_resonance" rows={1} />
       <TF label="隔日思考" field="tomorrow_view" rows={2} />
       <TF label="分析师备注" field="analyst_notes" rows={3} />
-      </div>
-      )}
     </div>
   );
 }
@@ -675,8 +655,6 @@ function GroupStockPoolEditor({ group, onChange }: { group: WatchGroup; onChange
       <PoolSection title="龙头 / 中军" color="#e53e3e" stocks={localLeaders} setStocks={(s) => { setLocalLeaders(s); sync(s, localBull, localBear); }} />
       <PoolSection title="多头池 Bull Pool" color="#38a169" stocks={localBull} setStocks={(s) => { setLocalBull(s); sync(localLeaders, s, localBear); }} />
       <PoolSection title="空头池 Bear Pool" color="#dd6b20" stocks={localBear} setStocks={(s) => { setLocalBear(s); sync(localLeaders, localBull, s); }} />
-      </div>
-      )}
     </div>
   );
 }
@@ -718,8 +696,6 @@ function PoolSection({ title, color, stocks, setStocks }: { title: string; color
           )}
         </div>
       ))}
-      </div>
-      )}
     </div>
   );
 }
