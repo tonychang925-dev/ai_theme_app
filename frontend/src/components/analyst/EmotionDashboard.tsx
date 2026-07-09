@@ -89,26 +89,21 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   const trend = useEmotionTrend(tradeDate);
 
   const loadSystemCharts = useCallback(async () => {
-    // Load multi-day trend data
+    // Load multi-day trend data (static, instant)
     try {
       const tr = await fetch(`/api/analyst-charts/trend.json`);
       if (tr.ok) setMultiTrend(await tr.json());
     } catch { /* ignore */ }
-    // Load single-day charts — static first
-    for (const url of [
-      `/api/analyst-charts/${tradeDate}.json`,
-      `http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}`,
-    ]) {
-      try {
-        const resp = await fetch(url);
-        if (resp.ok) {
-          const data = await resp.json();
-          if (Array.isArray(data) && data.length > 0) {
-            setSystemCharts(data); return;
-          }
+    // Load single-day charts
+    try {
+      const resp = await fetch(`/api/analyst-charts/${tradeDate}.json`);
+      if (resp.ok) {
+        const data = await resp.json();
+        if (Array.isArray(data) && data.length > 0) {
+          setSystemCharts(data); return;
         }
-      } catch { /* try next */ }
-    }
+      }
+    } catch { /* ignore */ }
   }, [tradeDate]);
 
   const loadArtifacts = useCallback(async () => {
