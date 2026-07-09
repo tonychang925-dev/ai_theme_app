@@ -95,6 +95,7 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   const [showEvidence, setShowEvidence] = useState(false);
   const [trendData, setTrendData] = useState<any>(null);
   const [systemCharts, setSystemCharts] = useState<any[]>([]);
+  const [multiTrend, setMultiTrend] = useState<any>(null);
   const trend = useEmotionTrend(tradeDate);
 
   const loadTrends = useCallback(async () => {
@@ -105,7 +106,12 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   }, [tradeDate]);
 
   const loadSystemCharts = useCallback(async () => {
-    // Try SPS API first, fallback to static JSON
+    // Load multi-day trend data
+    try {
+      const tr = await fetch(`/api/analyst-charts/trend.json`);
+      if (tr.ok) setMultiTrend(await tr.json());
+    } catch { /* ignore */ }
+    // Load single-day charts
     for (const url of [
       `http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}`,
       `/api/analyst-charts/${tradeDate}.json`,
@@ -360,6 +366,16 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
               </div>
             )}
 
+            {/* Multi-day trend overview (analyst style: 6/25~7/8) */}
+            {multiTrend && (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: 10, marginBottom: 12, padding: 10, background: "#111720", borderRadius: 4 }}>
+                <TrendLineChart title="涨停家数趋势" data={multiTrend.breadth || []} yKey="limit_up" yLabel="涨停" color="#e53e3e" />
+                <TrendLineChart title="情绪动能趋势" data={multiTrend.momentum || []} yKey="score" yLabel="动能" color="#dd6b20" />
+                <TrendLineChart title="活跃资金趋势（亿）" data={multiTrend.capital || []} yKey="active_yi" yLabel="亿" color="#66d9ef" />
+                <TrendLineChart title="最高板高度" data={multiTrend.relay || []} yKey="max_height" yLabel="板" color="#d69e2e" />
+              </div>
+            )}
+
             {/* System-generated charts from /api/v1/analyst-charts */}
             {systemCharts.length > 0 && (
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: 10, marginBottom: 12 }}>
@@ -373,7 +389,7 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
                     <div style={{ fontSize: 10, color: "#5a7a8a", marginBottom: 6 }}>
                       {chart.module} · {chart.calibrated ? "analyst_pdf" : chart.calibration_source || "system_generated"}
                     </div>
-                    <ChartRenderer chart={chart} />
+                    <ChartRenderer chart={chart} trendData={multiTrend} />
                     {chart.interpretation && (
                       <div style={{ fontSize: 10, color: "#8ddcff", marginTop: 6, lineHeight: 1.4, padding: "4px 6px", background: "#0c1118", borderRadius: 3 }}>
                         {chart.interpretation}
