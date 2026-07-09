@@ -412,11 +412,9 @@ function AnalystLimitUpChart({ data, interpretation }: { data: any; interpretati
                 <span key={i} style={{ fontSize: 9, color: "#8ddcff", padding: "2px 6px", background: "#111720", borderRadius: 3, border: "1px solid #1a2a3a" }}>{n}</span>
               ))}
             </div>
-          ))}
-        </div>
         );
       })()}
-      <div style={{ fontSize: 10, color: "#8ddcff", lineHeight: 1.5, padding: "4px 6px", background: "#0c1118", borderRadius: 3 }}>{interpretation}</div>
+      {interpretation && <div style={{ fontSize: 10, color: "#8ddcff", lineHeight: 1.5, padding: "4px 6px", background: "#0c1118", borderRadius: 3, marginTop: 4 }}>{interpretation}</div>}
     </div>
   );
 }
