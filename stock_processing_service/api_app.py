@@ -7722,6 +7722,56 @@ async def get_replay_benchmark(trade_date: str) -> dict[str, Any]:
         raise HTTPException(status_code=500, detail=str(exc))
 
 
+# ── M2.5 Phase 3.4: Calibration Loop ──
+
+@app.get("/api/v1/metrics/calibration/{trade_date}")
+async def get_calibration_drift(trade_date: str) -> dict[str, Any]:
+    """Compute AI↔Analyst drift for a trading day."""
+    from datetime import date as _date
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
+    from stock_processing_service.application.services.market_metrics.calibration import (
+        CalibrationEngine,
+        build_20260707_calibration_ref,
+    )
+    try:
+        td = _date.fromisoformat(trade_date)
+        snap = MarketMetricsService().get(td)
+        r = snap.relay; l = snap.limitup
+
+        engine = CalibrationEngine()
+        if td == _date(2026, 7, 7):
+            engine.add_reference(build_20260707_calibration_ref())
+
+        report = engine.compute_drift(
+            td,
+            ai_facts={"limit_up": l.total_count, "max_board": l.max_board_height,
+                       "relay_1_2": r.promotion_1_to_2},
+            ai_phase="PANIC", ai_risk="CRITICAL",
+            ai_emotion=snap.emotion_momentum.momentum_raw,
+        )
+        if report is None:
+            return {"trade_date": trade_date, "status": "no_reference"}
+
+        proposals = engine.propose_weights(min_evidence=1)
+
+        return {
+            "trade_date": trade_date,
+            "report": report.to_dict(),
+            "weight_proposals": [{
+                "target": p.target_component,
+                "current": p.current_weight, "proposed": p.proposed_weight,
+                "delta": p.delta, "rationale": p.rationale,
+                "confidence": p.confidence, "status": p.status,
+            } for p in proposals],
+        }
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+
+
 # ── P2.6.1 Evidence Artifacts ──
 
 @app.get("/api/v1/evidence-artifacts/{trade_date}")
