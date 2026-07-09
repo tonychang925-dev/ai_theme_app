@@ -328,7 +328,7 @@ class CollectionCommandPlanner:
             _py = self._python_bin
             return CollectionTaskPlan(
                 pre_logs=[
-                    "多源证据采集: THS hot reason → EPS forecast → Research reports",
+                    "多源证据采集: THS hot reason → Eastmoney Board Pool → 复盘快照",
                     f"trade_date={trade_date}",
                 ],
                 steps=[
@@ -339,6 +339,16 @@ class CollectionCommandPlanner:
                         commands=[CollectionCommand(
                             cmd=[_py, "-m", "stock_processing_service.scripts.collect_ths_hot_reason",
                                  "--dates", trade_date, "--dsn", _dsn],
+                            initial_percent=5, success_percent=100,
+                        )],
+                    ),
+                    CollectionTaskStep(
+                        key="evidence_eastmoney_board",
+                        runner_key="evidence.eastmoney_board_pool",
+                        label="东财打板池采集（涨停/炸板/跌停/昨涨停）",
+                        commands=[CollectionCommand(
+                            cmd=[_py, "-m", "stock_processing_service.scripts.collect_eastmoney_board_pool",
+                                 "--date", trade_date],
                             initial_percent=5, success_percent=100,
                         )],
                     ),

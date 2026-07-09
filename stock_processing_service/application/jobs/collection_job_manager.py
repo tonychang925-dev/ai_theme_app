@@ -195,7 +195,7 @@ class CollectionJobManager:
 
         # ── M4/M5 Evidence Layer 采集 ──
         if options.get("evidence_collection", False):
-            tasks.append(CollectionTaskState(key="evidence_collection", title="多源证据采集（THS+CNInfo+EPS+Research）"))
+            tasks.append(CollectionTaskState(key="evidence_collection", title="多源证据采集（THS+BoardPool+EPS+Research→复盘）"))
 
         return tasks
 
