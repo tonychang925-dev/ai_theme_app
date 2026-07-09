@@ -1,0 +1,23 @@
+{
+  "trade_date": "2026-07-09",
+  "emotion_node": "REBOUND",
+  "emotion_desc": "反弹修复",
+  "emotion_score": 65,
+  "key_evidence": [
+    "涨停 75 家，炸板 13 家",
+    "上涨 2484 / 下跌 2916",
+    "活跃资金 2707亿（前日738亿，大幅回流）",
+    "1→2: 10%  2→3: 17%  反馈: 正反馈",
+    "恒尚节能 8板 总龙头"
+  ],
+  "strategy_bias": "修复参与。反弹套利为主，关注存储芯片/半导体设备延续性，台风概念观察。",
+  "raw": {
+    "limit_up": 75,
+    "limit_down": 18,
+    "up_count": 2484,
+    "down_count": 2916,
+    "active_capital_yi": 2707.0
+  },
+  "confidence": 0.82,
+  "source": "market_metrics_snapshot"
+}
