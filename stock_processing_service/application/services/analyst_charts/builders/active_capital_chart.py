@@ -45,10 +45,12 @@ def build(total_amount_yi: float, active_amount_yi: float,
         "title": "活跃资金成交量",
         "module": "emotion",
         "data": {
-            "total_amount_yi": total_amount_yi,         # 亿元
-            "total_amount_display": total_display,      # 格式化
-            "active_amount_yi": active_amount_yi,       # 亿元
-            "active_amount_display": active_display,    # 格式化
+            "total_amount_yi": total_amount_yi,
+            "total_amount_display": total_display,
+            "active_amount_yi": active_amount_yi,
+            "active_amount_display": active_display,
+            "total_amount_wan_yi": round(total_amount_yi / 10_000, 1),    # 万亿 (frontend)
+            "active_amount_wan_yi": round(active_amount_yi / 10_000, 2),  # 万亿 (frontend)
             "limit_up_count": limit_up_count,
             "label": c_label,
         },

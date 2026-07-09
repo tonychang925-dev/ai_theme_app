@@ -71,6 +71,7 @@ def build(up_count: int, down_count: int, limit_up: int, limit_down: int,
             "chain_board_count": chain_board_count,
             "turnover_yi": turnover_final,
             "turnover_display": turnover_display,
+            "turnover_wan_yi": round(turnover_final / 10_000, 2),
             "composite_score": score,
             "components": {
                 "limit_up_bonus": limit_up_bonus,
