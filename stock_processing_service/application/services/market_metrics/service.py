@@ -88,13 +88,15 @@ class MarketMetricsService:
         overview = recap.get("market_overview_review", {}) if recap else {}
 
         # ── Board pool data from a-stock-data (Eastmoney API) ──
-        em_zt = em_zb = em_dt = em_yzt = None
+        em_zt = em_zb = em_dt = em_yesterday_zt = None
         if self._board_provider:
             try:
                 em_zt = await self._board_provider._client.fetch_zt_pool(trade_date)
                 em_zb = await self._board_provider._client.fetch_zb_pool(trade_date)
                 em_dt = await self._board_provider._client.fetch_dt_pool(trade_date)
-                em_yzt = await self._board_provider._client.fetch_yzt_pool(trade_date)
+                # YZT endpoint unreliable; use yesterday's ZT pool for promotion calc
+                from datetime import timedelta
+                em_yesterday_zt = await self._board_provider._client.fetch_zt_pool(trade_date - timedelta(days=1))
             except Exception:
                 pass  # fallback to DB-backed computation
 
@@ -102,7 +104,7 @@ class MarketMetricsService:
         limitup, streak_dist, yesterday_codes, stock_detail, today_streaks = await self._build_limitup(
             conn, trade_date, overview, {}, em_zt, em_zb)
         relay = await self._build_relay(conn, trade_date, limitup, streak_dist,
-                                         yesterday_codes, today_streaks, em_yzt, em_zt)
+                                         yesterday_codes, today_streaks, em_yesterday_zt, em_zt)
         capital = await self._build_capital(conn, trade_date, breadth, overview)
         momentum = self._build_momentum(breadth, limitup)
         loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay, em_dt)
@@ -328,7 +330,7 @@ class MarketMetricsService:
                 else:
                     today_streaks[code] = 1
 
-            # Yesterday codes: populated in _build_relay from em_yzt
+            # Yesterday codes: populated in _build_relay from em_yesterday_zt
             yesterday_codes = set()
 
         else:
@@ -432,7 +434,7 @@ class MarketMetricsService:
                            streak_dist: dict[int, int] | None = None,
                            yesterday_codes: set[str] | None = None,
                            today_streaks: dict[str, int] | None = None,
-                           em_yzt=None, em_zt=None) -> RelayEcologyMetrics:
+                           em_yesterday_zt=None, em_zt=None) -> RelayEcologyMetrics:
         """Compute promotion rates + yesterday feedback score (v2).
 
         v2 adds:
@@ -445,9 +447,9 @@ class MarketMetricsService:
         _norm = MarketMetricsService._norm_code
 
         # ── Promotion rates (v4: Eastmoney 昨涨停池 OR fallback) ──
-        if em_yzt and em_zt:
-            # ── Eastmoney 昨涨停池 JOIN 涨停池: precise 晋级率 ──
-            # em_yzt: yesterday's ZT stocks with y_limit_days + today pct
+        if em_yesterday_zt and em_zt:
+            # ── 昨日 ZT pool JOIN 今日 ZT pool: precise 晋级率 ──
+            # em_yesterday_zt: yesterday's ZT stocks (ZT pool with limit_days)
             # em_zt: today's ZT stocks with limit_days
             y1_total = y2_total = y3_total = 0
             y1_success = y2_success = y3_success = 0
@@ -458,9 +460,10 @@ class MarketMetricsService:
                 if code:
                     em_today_codes[code] = s.limit_days
 
-            for ys in (em_yzt or []):
+            for ys in (em_yesterday_zt or []):
                 code = (ys.code or "").strip()
-                y_h = ys.y_limit_days
+                # LimitUpPoolStock has limit_days (not y_limit_days)
+                y_h = ys.limit_days
                 today_h = em_today_codes.get(code, 0)
 
                 if y_h == 1:
@@ -547,13 +550,17 @@ class MarketMetricsService:
             p3to4 = round(max(0, (lu.max_board_height - 3)) * 0.05, 2)
 
         # ── Yesterday feedback (v2) ──
-        if em_yzt:
-            # Eastmoney 昨涨停池 provides precise counts
-            yesterday_count = len(em_yzt)
-            today_continue = sum(1 for s in em_yzt if s.today_pct >= 9.5)
+        if em_yesterday_zt and em_zt:
+            # Compute from yesterday ZT pool + today ZT pool
+            yesterday_count = len(em_yesterday_zt)
+            today_codes = {s.code.strip(): s for s in em_zt}
+            today_continue = 0
+            for ys in em_yesterday_zt:
+                if ys.code.strip() in today_codes:
+                    today_continue += 1
             continue_ratio = round(today_continue / max(yesterday_count, 1), 3)
-            big_loss_count = sum(1 for s in em_yzt if s.today_pct <= -5.0)
-            avg_return = round(sum(s.today_pct for s in em_yzt) / max(yesterday_count, 1), 2)
+            big_loss_count = yesterday_count - today_continue  # rough: didn't continue
+            avg_return = None
         elif yesterday_codes:
             yesterday_count = len(yesterday_codes)
             # Today's limit-up stocks
