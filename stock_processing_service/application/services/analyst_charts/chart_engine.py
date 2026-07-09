@@ -53,19 +53,21 @@ class ChartReproductionEngine:
         charts: list[dict[str, Any]] = []
 
         # ── Chart 1: Market Breadth (大盘势能) ──
-        # PDF turnover is wan_yi (万亿); convert to yi (亿) for builder
+        # Data source: snap.limitup (THS/EM), snap.breadth (recap)
         calibrated_turnover_yi = round(calibrated_turnover * 10_000) if calibrated_turnover else None
         charts.append(market_power_chart.build(
             up_count=b.up_count, down_count=b.down_count,
-            limit_up=b.limit_up_count, limit_down=b.limit_down_count,
-            turnover_yi=b.turnover_yi,
-            chain_board_count=l.chain_board_count,
+            limit_up=l.total_count,  # from THS/EM, not recap
+            limit_down=b.limit_down_count,
+            turnover_yi=c.total_turnover_yi,  # active capital total (calibrated)
+            chain_board_count=l.current_board_height,  # analyst口径: streak=2
             calibrated_lu=calibrated_lu,
             calibrated_turnover=calibrated_turnover_yi,
             calibrated_emotion=calibrated_emotion,
         ))
 
         # ── Chart 2: Emotion Momentum (情绪动能) ──
+        # Data source: snap.emotion_momentum (relay-based v3 formula)
         charts.append(emotion_momentum_chart.build(
             first_board_red_ratio=m.first_board_red_ratio,
             first_board_big_loss_ratio=m.first_board_big_loss_ratio,
@@ -73,8 +75,8 @@ class ChartReproductionEngine:
             chain_board_ratio=m.chain_board_ratio,
             chain_board_big_loss_ratio=m.chain_board_big_loss_ratio,
             yesterday_chain_not_limit_red_ratio=m.yesterday_chain_not_limit_red_ratio,
-            limit_up_count=b.limit_up_count,
-            chain_board_count=l.chain_board_count,
+            limit_up_count=l.total_count,
+            chain_board_count=l.current_board_height,
             momentum_raw=m.momentum_raw,  # v3 relay-based formula
         ))
 

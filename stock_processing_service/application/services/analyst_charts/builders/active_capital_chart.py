@@ -15,10 +15,11 @@ def build(total_amount_yi: float, active_amount_yi: float,
         active_amount_yi: 涨停/触板活跃资金成交额（亿元）
     """
 
-    # Thresholds in 亿元 (1.5万亿=15000亿, 0.8万亿=8000亿, 0.4万亿=4000亿)
-    if active_amount_yi > 15000:        c_label = "资金扩张"
-    elif active_amount_yi > 8000:       c_label = "资金正常"
-    elif active_amount_yi > 4000:       c_label = "资金收缩"
+    # Thresholds for active capital (limit-up pool turnover in 亿元)
+    # Analyst scale: >2000活跃, 1000-2000正常, 500-1000收缩, <500冰点
+    if active_amount_yi > 2000:         c_label = "资金扩张"
+    elif active_amount_yi > 1000:       c_label = "资金正常"
+    elif active_amount_yi > 500:        c_label = "资金收缩"
     else:                               c_label = "冰点低量"
 
     # Display formatting
