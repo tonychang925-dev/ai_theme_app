@@ -251,8 +251,6 @@ function ThemeWatchList({
           </div>
         )})}
       </div>
-      </div>
-      )}
     </div>
   );
 }
