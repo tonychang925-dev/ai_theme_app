@@ -846,21 +846,29 @@ class MarketMetricsService:
     def _build_death_propagation(leader: LeaderEvolutionMetrics | None,
                                    relay: RelayEcologyMetrics,
                                    loss: LossEffectMetrics | None) -> DeathPropagationMetrics:
-        """Death propagation: did leader death spread to the broader market?"""
+        """Death propagation v2: adds capital_escape as early warning signal.
+
+        Capital flight often precedes visible losses — money leaves before
+        prices crash. v2 weights: leader 30% + theme 25% + high_board 20%
+        + yesterday 10% + capital_escape 15%
+        """
         from .contracts import DeathPropagationMetrics
 
         lb = leader.break_count if leader else 0
-        tf_ratio = relay.continue_ratio if relay else 0  # low continue = high failure
+        tf_ratio = relay.continue_ratio if relay else 0
         theme_fail = round(1 - tf_ratio, 2) if tf_ratio > 0 else 0.5
         hb_loss = loss.high_board_break_count if loss else 0
-        yest_fail = round(1 - tf_ratio, 2)  # yesterday limit-up failure ratio
+        yest_fail = round(1 - tf_ratio, 2)
 
-        # Composite 0-100
+        # Capital escape: proxy from relay feedback (negative = outflow)
+        capital_escape = min(100, max(0, -relay.feedback_score)) if relay.feedback_score < 0 else 0
+
         prop = round(
-            min(lb * 15, 40) +              # leader failure: max 40
-            theme_fail * 30 +                # theme follow failure: max 30
-            min(hb_loss * 5, 20) +           # high board loss: max 20
-            yest_fail * 10,                  # yesterday failure: max 10
+            min(lb * 15, 30) +              # leader failure: max 30
+            theme_fail * 25 +                # theme follow: max 25
+            min(hb_loss * 5, 20) +           # high board: max 20
+            yest_fail * 10 +                 # yesterday: max 10
+            capital_escape * 0.15,           # capital flight: max 15
             1)
 
         if prop >= 60:

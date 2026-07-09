@@ -70,11 +70,12 @@ class AnalystReferenceRecord:
 # ═══ Error Type Classification ═══
 
 class DriftType:
-    UNDER_REACTION = "UNDER_REACTION"        # AI underestimated severity
-    OVER_REACTION = "OVER_REACTION"          # AI overestimated severity
-    TIMING_ERROR = "TIMING_ERROR"            # right direction, wrong timing
-    DATA_ERROR = "DATA_ERROR"                # input data was wrong
-    SEMANTIC_ERROR = "SEMANTIC_ERROR"        # metric definition mismatch
+    UNDER_REACTION = "UNDER_REACTION"
+    OVER_REACTION = "OVER_REACTION"
+    TIMING_ERROR = "TIMING_ERROR"
+    DATA_ERROR = "DATA_ERROR"
+    SEMANTIC_ERROR = "SEMANTIC_ERROR"
+    PRIORITY_ERROR = "PRIORITY_ERROR"        # saw data, focused on wrong variable
 
 
 # ═══ Calibration Config ═══
@@ -321,6 +322,130 @@ class CalibrationEngine:
             "accepted_proposals": len([p for p in self._proposals if p.status == "accepted"]),
             "recent_drifts": [r.to_dict() for r in self._drift_history[-5:]],
         }
+
+
+# ═══ Policy Versioning ═══
+
+@dataclass
+class PolicyVersion:
+    """Immutable snapshot of the full cognition policy at a point in time."""
+    version: str                           # "M8_POLICY_v1"
+    created_at: datetime
+    emotion_formula: str                   # "v4.1"
+    death_index_version: str               # "v2"
+    propagation_version: str               # "v2"
+    relay_version: str                     # "v2"
+    weights: dict[str, float] = field(default_factory=dict)
+    notes: str = ""
+
+
+# ═══ Proposal Simulator ═══
+
+@dataclass
+class SimulatorResult:
+    proposal: WeightProposal
+    before_recall: float          # recall with old weight
+    after_recall: float           # recall with new weight (simulated)
+    false_positive_change: float  # +X% false alarms from weight change
+    net_benefit: str              # "POSITIVE" | "NEUTRAL" | "NEGATIVE"
+    recommendation: str           # "建议接受" | "建议拒绝" | "需更多数据"
+
+
+class ProposalSimulator:
+    """Simulate weight changes against historical data before approving."""
+
+    @staticmethod
+    def simulate(proposal: WeightProposal,
+                 history_days: int = 60) -> SimulatorResult:
+        """Run what-if simulation for a weight proposal.
+
+        Currently uses heuristics based on evidence_count and confidence.
+        Future: actual backtest against historical replay cache.
+        """
+        # Heuristic simulation
+        before = round(proposal.confidence * 0.8, 2)  # approximate recall
+        after = round(min(1.0, before + abs(proposal.delta) * 2), 2)
+        fp_change = round(abs(proposal.delta) * 1.5 * 100, 1)  # % increase in false positives
+
+        if after - before > 0.1 and fp_change < 15:
+            benefit = "POSITIVE"
+            rec = "建议接受"
+        elif after - before > 0.05:
+            benefit = "NEUTRAL"
+            rec = "需更多数据"
+        else:
+            benefit = "NEGATIVE"
+            rec = "建议拒绝"
+
+        return SimulatorResult(
+            proposal=proposal, before_recall=before, after_recall=after,
+            false_positive_change=fp_change, net_benefit=benefit,
+            recommendation=rec)
+
+
+# ═══ Cognitive Evolution Report ═══
+
+@dataclass
+class EvolutionReport:
+    policy_version: str
+    total_days: int
+    top_errors: list[dict]            # [{cause, pct, action}]
+    weight_changes: list[dict]        # [{component, old, new, reason}]
+    improvement_summary: str
+    generated_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
+
+    def to_dict(self) -> dict:
+        return {
+            "policy_version": self.policy_version,
+            "total_days": self.total_days,
+            "top_errors": self.top_errors,
+            "weight_changes": self.weight_changes,
+            "improvement_summary": self.improvement_summary,
+        }
+
+
+def build_evolution_report(engine: CalibrationEngine) -> EvolutionReport:
+    """Generate cognitive evolution report from calibration history."""
+    drifts = engine._drift_history
+    n = len(drifts)
+
+    # Aggregate error causes
+    cause_counts: dict[str, int] = {}
+    for r in drifts:
+        for d in r.drifts:
+            if d.severity in ("CRITICAL", "SIGNIFICANT"):
+                cause_counts[d.likely_cause] = cause_counts.get(d.likely_cause, 0) + 1
+
+    total = sum(cause_counts.values()) or 1
+    top_errors = sorted(
+        [{"cause": k, "pct": round(v / total * 100, 1),
+          "action": _suggest_action(k)} for k, v in cause_counts.items()],
+        key=lambda x: -x["pct"])[:3]
+
+    # Summarize accepted proposals
+    changes = [{
+        "component": p.target_component,
+        "old": p.current_weight, "new": p.proposed_weight,
+        "reason": p.rationale[:60],
+    } for p in engine._proposals if p.status == "accepted"]
+
+    summary = (f"过去{n}天，AI最大错误来源：{top_errors[0]['cause']}({top_errors[0]['pct']}%)。"
+               if top_errors else "暂无足够校准数据。")
+
+    return EvolutionReport(
+        policy_version="M8_POLICY_v1",
+        total_days=n, top_errors=top_errors,
+        weight_changes=changes, improvement_summary=summary)
+
+
+def _suggest_action(cause: str) -> str:
+    return {
+        "loss_weight不足": "Death weight +5%, Breadth weight -5%",
+        "loss_weight过重": "Death weight -5%",
+        "涨停统计口径差异": "统一涨停统计口径",
+        "最高板定义不同(streak回溯深度)": "限制streak回溯深度为2日",
+        "晋级率计算窗口不一致": "升级为relay_ecology_daily表JOIN",
+    }.get(cause, "待分析")
 
 
 # ═══ Pre-built 7/7 reference ═══
