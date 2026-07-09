@@ -310,38 +310,21 @@ class MarketMetricsService:
 
         if em_zt:
             # ── Use Eastmoney board pool limit_days ──
-            # Map stock codes from Eastmoney format (with market prefix like "SH603137")
-            em_code_map: dict[str, str] = {}
+            # Eastmoney returns plain 6-digit codes (e.g. "001229")
+            em_code_map: dict[str, int] = {}
             for s in em_zt:
-                raw_code = (s.code or "").strip()
-                # Eastmoney returns codes like "SH603137" or "SZ000001"
-                norm = raw_code[2:] if len(raw_code) >= 3 and raw_code[:2] in ("SH", "SZ", "BJ") else raw_code
-                em_code_map[norm] = raw_code
+                code = (s.code or "").strip()
+                if code:
+                    em_code_map[code] = s.limit_days
 
-            # Match today's limit-up stocks with Eastmoney pool
             for code in all_codes:
-                em_code = em_code_map.get(code, "")
-                if em_code:
-                    em_stock = next((s for s in em_zt if (s.code or "").strip() == em_code), None)
-                    if em_stock and em_stock.limit_days > 0:
-                        today_streaks[code] = em_stock.limit_days
-                    else:
-                        today_streaks[code] = 1
+                if code in em_code_map:
+                    today_streaks[code] = max(1, em_code_map[code])
                 else:
-                    # Try fuzzy match
-                    matched = False
-                    for s in em_zt:
-                        raw_code = (s.code or "").strip()
-                        norm = raw_code[2:] if len(raw_code) >= 3 and raw_code[:2] in ("SH", "SZ", "BJ") else raw_code
-                        if norm == code:
-                            today_streaks[code] = max(1, s.limit_days)
-                            matched = True
-                            break
-                    if not matched:
-                        today_streaks[code] = 1
+                    today_streaks[code] = 1
 
-            # Yesterday codes: from Eastmoney 昨涨停池 (fetched separately in _build_relay)
-            yesterday_codes = set()  # populated in _build_relay from em_yzt
+            # Yesterday codes: populated in _build_relay from em_yzt
+            yesterday_codes = set()
 
         else:
             # ── Fallback: streak backtracking from ths_hot_reason_snapshot ──
@@ -466,15 +449,14 @@ class MarketMetricsService:
 
             em_today_codes: dict[str, int] = {}
             for s in (em_zt or []):
-                raw = (s.code or "").strip()
-                norm = raw[2:] if len(raw) >= 3 and raw[:2] in ("SH", "SZ", "BJ") else raw
-                em_today_codes[norm] = s.limit_days
+                code = (s.code or "").strip()
+                if code:
+                    em_today_codes[code] = s.limit_days
 
             for ys in (em_yzt or []):
-                raw = (ys.code or "").strip()
-                norm = raw[2:] if len(raw) >= 3 and raw[:2] in ("SH", "SZ", "BJ") else raw
+                code = (ys.code or "").strip()
                 y_h = ys.y_limit_days
-                today_h = em_today_codes.get(norm, 0)
+                today_h = em_today_codes.get(code, 0)
 
                 if y_h == 1:
                     y1_total += 1

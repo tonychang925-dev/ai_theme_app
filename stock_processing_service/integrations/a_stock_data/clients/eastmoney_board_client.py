@@ -134,14 +134,14 @@ class EastmoneyBoardClient:
             f"{EM_BASE}/getTopicZTPool", params,
             lambda item: LimitUpPoolStock(
                 code=str(item.get("c", "")), name=str(item.get("n", "")),
-                price=float(item.get("p", 0)) / 100 if item.get("p") else 0,
-                pct=float(item.get("pct", 0)) / 100 if item.get("pct") else 0,
-                limit_days=int(item.get("lbc", 0)), zt_stat=str(item.get("zttj", {}).get("s", "") if isinstance(item.get("zttj"), dict) else ""),
-                first_seal=_fmt_time(item.get("fts", 0)), last_seal=_fmt_time(item.get("lts", 0)),
-                seal_fund=float(item.get("fund", 0)), break_times=int(item.get("oc", 0)),
-                turnover=float(item.get("hs", 0))/100 if item.get("hs") else 0,
-                amount=float(item.get("amount", 0)), float_cap=float(item.get("f20", 0)),
-                industry=str(item.get("hybk", "")),
+                price=float(item.get("p", 0)) / 1000 if item.get("p") else 0,
+                pct=float(item.get("zdp", 0)),
+                limit_days=int(item.get("lbc", 0)),
+                zt_stat=f"{int(item.get('lbc', 0))}天{item.get('lbc', 0)}板",
+                first_seal=_fmt_time(item.get("fbt", 0)), last_seal=_fmt_time(item.get("lbt", 0)),
+                seal_fund=float(item.get("fund", 0)), break_times=int(item.get("zbc", 0)),
+                turnover=float(item.get("hs", 0)), amount=float(item.get("amount", 0)),
+                float_cap=float(item.get("ltsz", 0)), industry=str(item.get("hybk", "")),
             ))
 
     async def fetch_zb_pool(self, trade_date: date) -> list[FriedBoardPoolStock]:
@@ -156,12 +156,12 @@ class EastmoneyBoardClient:
             f"{EM_BASE}/getTopicZBPool", params,
             lambda item: FriedBoardPoolStock(
                 code=str(item.get("c", "")), name=str(item.get("n", "")),
-                price=float(item.get("p", 0)) / 100 if item.get("p") else 0,
-                pct=float(item.get("pct", 0)) / 100 if item.get("pct") else 0,
-                limit_price=float(item.get("limit_p", 0)) / 100 if item.get("limit_p") else 0,
-                break_times=int(item.get("oc", 0)),
-                first_seal=_fmt_time(item.get("fts", 0)), amplitude=float(item.get("zf", 0))/100 if item.get("zf") else 0,
-                turnover=float(item.get("hs", 0))/100 if item.get("hs") else 0,
+                price=float(item.get("p", 0)) / 1000 if item.get("p") else 0,
+                pct=float(item.get("zdp", 0)),
+                break_times=int(item.get("zbc", 0)),
+                first_seal=_fmt_time(item.get("fbt", 0)),
+                amplitude=float(item.get("zf", 0)) if item.get("zf") else 0,
+                turnover=float(item.get("hs", 0)),
                 industry=str(item.get("hybk", "")),
             ))
 
@@ -177,11 +177,11 @@ class EastmoneyBoardClient:
             f"{EM_BASE}/getTopicDTPool", params,
             lambda item: LimitDownPoolStock(
                 code=str(item.get("c", "")), name=str(item.get("n", "")),
-                price=float(item.get("p", 0)) / 100 if item.get("p") else 0,
-                pct=float(item.get("pct", 0)) / 100 if item.get("pct") else 0,
+                price=float(item.get("p", 0)) / 1000 if item.get("p") else 0,
+                pct=float(item.get("zdp", 0)),
                 dt_days=int(item.get("lbc", 0)), seal_fund=float(item.get("fund", 0)),
-                turnover=float(item.get("hs", 0))/100 if item.get("hs") else 0,
-                open_times=int(item.get("oc", 0)), industry=str(item.get("hybk", "")),
+                turnover=float(item.get("hs", 0)),
+                open_times=int(item.get("zbc", 0)), industry=str(item.get("hybk", "")),
             ))
 
     async def fetch_yzt_pool(self, trade_date: date) -> list[YesterdayLimitUpPoolStock]:
@@ -200,10 +200,10 @@ class EastmoneyBoardClient:
             f"{EM_BASE}/getYesterdayZTPool", params,
             lambda item: YesterdayLimitUpPoolStock(
                 code=str(item.get("c", "")), name=str(item.get("n", "")),
-                today_pct=float(item.get("pct", 0)) / 100 if item.get("pct") else 0,
+                today_pct=float(item.get("zdp", 0)),
                 y_limit_days=int(item.get("lbc", 0)),
-                y_first_seal=_fmt_time(item.get("fts", 0)),
-                today_turnover=float(item.get("hs", 0))/100 if item.get("hs") else 0,
+                y_first_seal=_fmt_time(item.get("fbt", 0)),
+                today_turnover=float(item.get("hs", 0)),
                 industry=str(item.get("hybk", "")),
             ))
 
@@ -229,17 +229,25 @@ class EastmoneyBoardClient:
             ladder=ladder,
         )
 
+    @staticmethod
+    def _parse_response(data: dict) -> list[dict]:
+        """Parse Eastmoney push2ex response: data.pool contains stock list."""
+        if data.get("rc") != 0:
+            return []
+        d = data.get("data")
+        if not isinstance(d, dict):
+            return []
+        pool = d.get("pool", [])
+        if not isinstance(pool, list):
+            return []
+        return pool
+
     async def _fetch_pool(self, url: str, params: dict, mapper):
         """Generic pool fetcher with Eastmoney response parsing."""
         try:
             r = await self._http.get(url, params=params)
             data = r.json()
-            if data.get("rc") != 0:
-                print(f"[EM Board] API error: rc={data.get('rc')} msg={data.get('rt')}")
-                return []
-            items = data.get("data", [])
-            if not isinstance(items, list):
-                return []
+            items = self._parse_response(data)
             return [mapper(item) for item in items if isinstance(item, dict)]
         except Exception as e:
             print(f"[EM Board] fetch failed: {e}")
@@ -250,7 +258,7 @@ class EastmoneyBoardClient:
 
 
 def _fmt_time(ts: int) -> str:
-    """Convert Unix ms timestamp to HH:MM:SS string."""
+    """Convert ms timestamp to HH:MM:SS string."""
     if not ts or ts == 0:
         return ""
     try:
