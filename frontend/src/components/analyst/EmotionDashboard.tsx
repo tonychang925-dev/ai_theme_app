@@ -279,8 +279,8 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
         </span>
       </div>
 
-      {/* ── Row 3: Why Panel + Next Probability + Trading Mode ── */}
-      <div style={{ marginTop: 10, display: "grid", gridTemplateColumns: "1fr 200px 260px", gap: 12 }}>
+      {/* ── Row 3: Why Panel + Next Probability + Trading Mode (vertical) ── */}
+      <div style={{ marginTop: 10, display: "flex", flexDirection: "column", gap: 10 }}>
 
         {/* Why Panel */}
         <div style={{ padding: 8, background: "#111720", borderRadius: 4 }}>
@@ -294,8 +294,8 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
         </div>
 
         {/* Next Probability */}
-        <div style={{ padding: 8, background: "#111720", borderRadius: 4 }}>
-          <div style={{ fontSize: 11, fontWeight: 600, color: "#ffd85e", marginBottom: 6 }}>明日预测</div>
+        <div style={{ padding: 10, background: "#111720", borderRadius: 4 }}>
+          <div style={{ fontSize: 12, fontWeight: 600, color: "#ffd85e", marginBottom: 8 }}>明日预测</div>
           <div style={{ marginBottom: 4 }}>
             <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11 }}>
               <span style={{ color: "#38a169" }}>修复</span><span style={{ color: "#8ddcff" }}>{Math.round(repairProb)}%</span>
@@ -323,8 +323,8 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
         </div>
 
         {/* Trading Mode */}
-        <div style={{ padding: 8, background: "#111720", borderRadius: 4 }}>
-          <div style={{ fontSize: 11, fontWeight: 600, color: "#66d9ef", marginBottom: 6 }}>今日交易模式</div>
+        <div style={{ padding: 10, background: "#111720", borderRadius: 4 }}>
+          <div style={{ fontSize: 12, fontWeight: 600, color: "#66d9ef", marginBottom: 8 }}>今日交易模式</div>
           <div style={{ marginBottom: 6 }}>
             <div style={{ fontSize: 10, color: "#39ff14", marginBottom: 3 }}>✓ 允许</div>
             {allowedActions.map(a => (
