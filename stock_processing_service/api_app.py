@@ -7912,16 +7912,74 @@ async def get_evidence_artifacts(
 
 @app.get("/api/v1/emotion/{trade_date}")
 async def get_market_emotion(trade_date: str) -> dict[str, Any]:
-    """Return MarketEmotionState for a trading day."""
+    """Return MarketEmotionState from MarketMetricsSnapshot (M2.5 canonical)."""
     from datetime import date as _date
-    from stock_processing_service.application.services.market_cognition.emotion_engine import (
-        MarketEmotionEngine,
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
+    from stock_processing_service.application.services.market_metrics.narrative_engine import (
+        NarrativeEngine,
     )
     try:
         td = _date.fromisoformat(trade_date)
-        engine = MarketEmotionEngine()
-        state = await engine.run_async(td)
-        return state
+        snap = MarketMetricsService().get(td)
+        story = NarrativeEngine().generate(snap)
+
+        b = snap.breadth; l = snap.limitup; r = snap.relay
+        c = snap.capital; loss = snap.loss_effect
+        leader = snap.leader_evolution; death = snap.high_position_death
+
+        # Phase mapping: NarrativeEngine phase → frontend node
+        phase_map = {
+            "恐慌/冰点": "ICE_POINT", "退潮": "FADE", "分歧": "DIVERGENCE",
+            "修复": "REPAIR", "混沌": "CHAOS", "强势": "CLIMAX",
+        }
+        node = phase_map.get(story.market_phase, "CHAOS")
+
+        # Star ratings (1-5)
+        def stars(value: float, thresholds: list[float]) -> int:
+            for i, t in enumerate(thresholds):
+                if value <= t: return i + 1
+            return 5
+
+        return {
+            "trade_date": td.isoformat(),
+            "emotion_node": node,
+            "emotion_desc": story.market_phase,
+            "emotion_score": int(snap.emotion_momentum.momentum_normalized),
+            "breadth_score": int(snap.emotion_momentum.momentum_normalized),
+            "breadth_label": story.market_phase,
+            "momentum_score": int(snap.emotion_momentum.momentum_raw),
+            "momentum_label": snap.emotion_momentum.momentum_raw,
+            "relay_score": int(r.feedback_score),
+            "relay_label": r.feedback_label,
+            "capital_score": int(c.active_ratio * 1000),
+            "capital_label": f"活跃{c.active_limitup_amount_yi:.0f}亿",
+            "style_score": death.death_index if death else 0,
+            "style_label": death.death_label if death else "N/A",
+            "key_evidence": [
+                f"涨停 {l.total_count} 家，跌停 {loss.limit_down_count if loss else '?'} 家",
+                f"上涨 {b.up_count} / 下跌 {b.down_count}",
+                f"活跃资金 {c.active_limitup_amount_yi:.0f}亿",
+                f"晋级率 1→2: {r.promotion_1_to_2:.1%}，反馈: {r.feedback_label}",
+                f"龙头: {leader.leader_health_label if leader else 'N/A'}，死亡: {death.death_label if death else 'N/A'}",
+            ],
+            "strategy_bias": story.strategy_summary,
+            "raw": {
+                "limit_up": l.total_count,
+                "limit_down": loss.limit_down_count if loss else 0,
+                "up_count": b.up_count,
+                "down_count": b.down_count,
+                "active_capital_yi": c.active_limitup_amount_yi,
+                "promotion_1_to_2": r.promotion_1_to_2,
+                "phase": story.market_phase,
+                "risk": story.risk_level,
+                "confidence": story.confidence.get("overall", 0),
+            },
+            "confidence": story.confidence.get("overall", 0),
+            "generated_at": _date.today().isoformat(),
+            "source": "market_metrics_snapshot",
+        }
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
     except Exception as exc:
