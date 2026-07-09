@@ -217,6 +217,29 @@ class MarkdownReferenceParser:
             parser_rule=rule,
         )
 
+    def _detect_fact_conflicts(self, existing: "MarketFacts",
+                                incoming: dict) -> list[tuple[str, object, object]]:
+        """Detect value conflicts between already-parsed facts and incoming JSON.
+
+        Returns list of (field_path, old_value, new_value) for each conflict.
+        Does NOT modify values — caller decides how to resolve.
+        """
+        conflicts: list[tuple[str, object, object]] = []
+        field_map = {
+            "limit_up_count": ("market_facts.limit_up_count", existing.limit_up_count, normalize_int),
+            "max_board_height": ("market_facts.max_board_height", existing.max_board_height, normalize_int),
+            "active_capital_yi": ("market_facts.active_capital_yi", existing.active_capital_yi, normalize_int),
+            "chain_board_count": ("market_facts.chain_board_count", existing.chain_board_count, normalize_int),
+            "market_up_ratio": ("market_facts.market_up_ratio", existing.market_up_ratio, normalize_ratio),
+            "loss_effect_ratio": ("market_facts.loss_effect_ratio", existing.loss_effect_ratio, normalize_ratio),
+        }
+        for json_key, (field_path, old_val, normalizer) in field_map.items():
+            if json_key in incoming and old_val is not None:
+                new_val = normalizer(incoming[json_key])
+                if new_val is not None and new_val != old_val:
+                    conflicts.append((field_path, old_val, new_val))
+        return conflicts
+
     # ── Fact extractors ──
 
     def _parse_facts(self, text: str, json_data: dict) -> tuple[MarketFacts, list[ExtractedField]]:
@@ -283,9 +306,18 @@ class MarkdownReferenceParser:
                 "root JSON", f"max_board={root['max_board']}", 0.95,
                 "json_block:root"))
 
-        # P1: facts JSON blocks
+        # P1: facts JSON blocks — with conflict detection vs prior values
         for fb in json_data.get("facts_blocks", []):
             if fb.get("limit_up_count"):
+                conflicts = self._detect_fact_conflicts(facts, fb)
+                if conflicts:
+                    for conflict_path, old_val, new_val in conflicts:
+                        fields.append(self._make_field(
+                            conflict_path, new_val, None,
+                            "facts JSON block (CONFLICT)",
+                            f"old={old_val} new={new_val}", 0.50,
+                            "json_block:facts:conflict"))
+                # Apply values
                 facts.limit_up_count = normalize_int(fb["limit_up_count"])
                 facts.max_board_height = normalize_int(fb.get("max_board_height"))
                 facts.active_capital_yi = normalize_int(fb.get("active_capital_yi"))
@@ -655,7 +687,8 @@ class MarkdownReferenceParser:
                 rest = stock_m.group(5).strip()
 
                 # Try to parse remaining columns: time | theme | reason
-                remaining_parts = [p.strip() for p in rest.split("|")]
+                # Filter empty trailing columns (trailing | in MD rows)
+                remaining_parts = [p.strip() for p in rest.split("|") if p.strip()]
                 stock_time = ""
                 stock_theme = current_theme
                 stock_reason = ""
@@ -812,13 +845,21 @@ class MarkdownReferenceParser:
         # P1: external_market JSON
         em = json_data.get("external", {})
         if isinstance(em, dict) and "external_market" in em:
-            market_data = em.get("external_market", {}).get("market", {})
-            if market_data:
-                ext.korea_index = market_data
+            external = em.get("external_market", {})
+            market_raw = external.get("market", {}) if isinstance(external, dict) else {}
+            # market can be a string ("韩国综合指数 KS11") or a dict
+            if isinstance(market_raw, str) and market_raw:
+                ext.korea_index = {"market": market_raw}
                 fields.append(self._make_field(
-                    "external_env.korea_index", str(market_data), None,
-                    "external JSON", json.dumps(market_data)[:150], 0.90,
-                    "json_block:external_market"))
+                    "external_env.korea_index", market_raw, None,
+                    "external JSON", str(external)[:150], 0.88,
+                    "json_block:external_market:string"))
+            elif isinstance(market_raw, dict) and market_raw:
+                ext.korea_index = market_raw
+                fields.append(self._make_field(
+                    "external_env.korea_index", str(market_raw), None,
+                    "external JSON", json.dumps(market_raw)[:150], 0.90,
+                    "json_block:external_market:dict"))
 
         # P1: root JSON external_environment
         root = json_data.get("root", {})

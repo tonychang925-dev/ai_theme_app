@@ -315,3 +315,106 @@ def test_missing_sentinel():
     assert MISSING is not False
     # normalize_ratio with MISSING-like sentinel
     assert normalize_ratio(None) is None
+
+
+# ═══ TC-4.1c-01 (preflight): external_market with string market ═══
+
+def test_external_market_string_preserved_as_dict():
+    """When external_market.market is a string, wrap in dict."""
+    import tempfile, os
+    md = """# Test
+
+```json
+{
+  "external_market": {
+    "market": "韩国综合指数 KS11",
+    "pct_change": -5.35
+  }
+}
+```
+"""
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".md", delete=False, encoding="utf-8") as f:
+        f.write(md)
+        tmp_path = f.name
+
+    try:
+        parser = MarkdownReferenceParser()
+        rec = parser.parse_file(tmp_path, trade_date=date(2026, 7, 8))
+        ki = rec.external_env.korea_index
+        assert isinstance(ki, dict), f"korea_index should be dict, got {type(ki)}: {ki}"
+        assert ki.get("market") == "韩国综合指数 KS11", f"Expected market name, got {ki}"
+    finally:
+        os.unlink(tmp_path)
+
+
+# ═══ TC-4.1c-02 (preflight): limitup reason not eaten by trailing | ═══
+
+def test_limitup_reason_survives_trailing_pipe():
+    """When markdown table has trailing |, reason is not empty."""
+    parser = MarkdownReferenceParser()
+    md = """# Test
+
+## 12. 涨停股分类
+
+### 12.1 算力
+
+| 板型 | 代码 | 名称 | 时间 | 题材 | 原因 |
+|------|------|------|------|------|------|
+| 7板 | 603137 | 恒尚节能 | 14:23:06 | 算力 | 拟收购存储公司 + 跨界转型 |
+| 3板 | 002855 | 捷荣技术 | 09:45:12 | 半导体 | 华为供应链 |
+"""
+    import tempfile, os
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".md", delete=False, encoding="utf-8") as f:
+        f.write(md)
+        tmp_path = f.name
+
+    try:
+        rec = parser.parse_file(tmp_path, trade_date=date(2026, 7, 8))
+        lu = rec.limitup_attribution
+        assert len(lu) >= 1
+        # First stock should have a non-empty reason
+        stocks = lu[0].key_stocks
+        assert len(stocks) >= 1
+        reason = stocks[0].get("reason", "")
+        assert reason != "", f"Reason should not be empty, got {stocks[0]}"
+        assert "收购" in reason, f"Reason should contain 收购, got: {reason}"
+    finally:
+        os.unlink(tmp_path)
+
+
+# ═══ TC-4.1c-03 (preflight): root vs facts conflict recorded ═══
+
+def test_root_vs_facts_conflict_lowers_confidence():
+    """When root JSON and facts JSON conflict on limit_up, record conflict."""
+    parser = MarkdownReferenceParser()
+    md = """# Test
+
+```json
+{"limit_up": 46, "phase": "PANIC", "risk": "HIGH", "emotion_momentum": -12}
+```
+
+```json
+{"facts": {"limit_up_count": 48, "max_board_height": 7}}
+```
+"""
+    import tempfile, os
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".md", delete=False, encoding="utf-8") as f:
+        f.write(md)
+        tmp_path = f.name
+
+    try:
+        rec = parser.parse_file(tmp_path, trade_date=date(2026, 7, 8))
+        # Should have detected the conflict
+        conflict_fields = [ef for ef in rec.extracted_fields if ef.parser_rule == "json_block:facts:conflict"]
+        assert len(conflict_fields) >= 1, \
+            f"Expected at least 1 conflict field, got {len(conflict_fields)}"
+        # Conflict confidence should be ≤ 0.50
+        for cf in conflict_fields:
+            assert cf.confidence <= 0.50, \
+                f"Conflict field {cf.field_path} should have low confidence, got {cf.confidence}"
+        # Check that low_confidence_fields includes the conflicting field
+        low_conf = set(rec.quality.low_confidence_fields)
+        assert len(low_conf) >= 1, \
+            f"Expected low_confidence_fields to include conflict paths, got {low_conf}"
+    finally:
+        os.unlink(tmp_path)
