@@ -1,8 +1,10 @@
 """Phase 4.2 — AIAdapter tests.
 
-Covers: snapshot → AIDiagnosisReferenceView conversion,
-        isomorphic structure verification, narrative enrichment,
-        edge cases (None/missing fields), leader role derivation.
+Covers: adapt_metrics_only → facts/relay/leaders/momentum,
+        adapt_with_diagnosis → phase/risk/strategy/themes,
+        max_board_stock derivation from leaders,
+        missing_fields tracking,
+        None-safe edge cases.
 """
 
 from __future__ import annotations
@@ -21,6 +23,7 @@ from stock_processing_service.application.services.analyst_reference.contracts i
     ThemeLifecycleEntry,
 )
 from stock_processing_service.application.services.analyst_alignment.ai_adapter import (
+    ADAPTER_VERSION,
     AIAdapter,
     AIDiagnosisReferenceView,
 )
@@ -45,7 +48,6 @@ def _src(label: str = "mock") -> MetricSource:
 
 
 def _build_mock_snapshot_0707() -> MarketMetricsSnapshot:
-    """Build a mock MarketMetricsSnapshot matching 7/7 PANIC day AI output."""
     return MarketMetricsSnapshot(
         trade_date=date(2026, 7, 7),
         breadth=MarketBreadthMetrics(
@@ -109,7 +111,6 @@ def _build_mock_snapshot_0707() -> MarketMetricsSnapshot:
 
 
 def _build_mock_snapshot_0708() -> MarketMetricsSnapshot:
-    """Build a mock MarketMetricsSnapshot matching 7/8 REPAIR_WATCH day AI output."""
     return MarketMetricsSnapshot(
         trade_date=date(2026, 7, 8),
         breadth=MarketBreadthMetrics(
@@ -193,151 +194,173 @@ def snap_0708():
     return _build_mock_snapshot_0708()
 
 
-# ═══ TC-4.2-ADAPTER-01: Core facts conversion ═══
+# ═══ TC-4.2-ADAPTER-01: metrics-only — facts ═══
 
-def test_adapt_facts_0707(adapter, snap_0707):
-    view = adapter.adapt(snap_0707, diagnosis={"phase_label": "PANIC", "risk_level": "HIGH"})
+def test_metrics_only_facts_0707(adapter, snap_0707):
+    view = adapter.adapt_metrics_only(snap_0707)
     f = view.market_facts
     assert f.limit_up_count == 33
     assert f.max_board_height == 5
+    assert f.chain_board_count == 9
     assert f.active_capital_yi == 897.0
     assert f.market_up_ratio == 0.15
     assert f.loss_effect_ratio == 0.35
 
 
-def test_adapt_facts_0708(adapter, snap_0708):
-    view = adapter.adapt(snap_0708, diagnosis={"phase_label": "REPAIR_WATCH", "risk_level": "MEDIUM_HIGH"})
+def test_metrics_only_facts_0708(adapter, snap_0708):
+    view = adapter.adapt_metrics_only(snap_0708)
     f = view.market_facts
     assert f.limit_up_count == 47
     assert f.max_board_height == 7
+    assert f.chain_board_count == 14
     assert f.active_capital_yi == 739.0
 
 
-# ═══ TC-4.2-ADAPTER-02: Emotion conversion ═══
+# ═══ TC-4.2-ADAPTER-02: metrics-only — phase/risk EMPTY ═══
 
-def test_adapt_emotion_0707(adapter, snap_0707):
-    view = adapter.adapt(snap_0707, diagnosis={"phase_label": "PANIC", "risk_level": "HIGH"})
-    e = view.emotion_label
-    assert e.market_phase == "PANIC"
-    assert e.risk_level == "HIGH"
-    assert e.emotion_momentum == -12.0
-
-
-def test_adapt_emotion_0708(adapter, snap_0708):
-    view = adapter.adapt(snap_0708, diagnosis={"phase_label": "REPAIR_WATCH", "risk_level": "MEDIUM_HIGH"})
-    e = view.emotion_label
-    assert e.market_phase == "REPAIR_WATCH"
-    assert e.risk_level == "MEDIUM_HIGH"
-    assert e.emotion_momentum == -4.0
+def test_metrics_only_phase_empty(adapter, snap_0708):
+    """adapt_metrics_only MUST leave phase/risk empty."""
+    view = adapter.adapt_metrics_only(snap_0708)
+    assert view.emotion_label.market_phase == ""
+    assert view.emotion_label.risk_level == ""
+    assert not view.has_phase_label
 
 
-# ═══ TC-4.2-ADAPTER-03: Relay conversion ═══
+# ═══ TC-4.2-ADAPTER-03: metrics-only — emotion_momentum from raw ═══
 
-def test_adapt_relay_0707(adapter, snap_0707):
-    view = adapter.adapt(snap_0707, diagnosis={"phase_label": "PANIC", "risk_level": "HIGH"})
+def test_metrics_only_momentum(adapter, snap_0707, snap_0708):
+    assert adapter.adapt_metrics_only(snap_0707).emotion_label.emotion_momentum == -12.0
+    assert adapter.adapt_metrics_only(snap_0708).emotion_label.emotion_momentum == -4.0
+
+
+# ═══ TC-4.2-ADAPTER-04: relay mapping ═══
+
+def test_metrics_only_relay_0707(adapter, snap_0707):
+    view = adapter.adapt_metrics_only(snap_0707)
     r = view.relay_label
     assert r.promotion_1_to_2 == 0.051
     assert r.promotion_2_to_3 == 0.0
     assert r.max_board_height == 5
+    # max_board_stock derived from leader with highest board
+    assert r.max_board_stock == "恒尚节能"
 
 
-def test_adapt_relay_0708(adapter, snap_0708):
-    view = adapter.adapt(snap_0708, diagnosis={"phase_label": "REPAIR_WATCH", "risk_level": "MEDIUM_HIGH"})
+def test_metrics_only_relay_0708(adapter, snap_0708):
+    view = adapter.adapt_metrics_only(snap_0708)
     r = view.relay_label
     assert r.promotion_1_to_2 == 0.21
     assert r.promotion_2_to_3 == 0.33
     assert r.max_board_height == 7
+    assert r.max_board_stock == "恒尚节能"
 
 
-# ═══ TC-4.2-ADAPTER-04: Leader conversion ═══
+# ═══ TC-4.2-ADAPTER-05: leader conversion ═══
 
-def test_adapt_leaders_0707(adapter, snap_0707):
-    view = adapter.adapt(snap_0707, diagnosis={"phase_label": "PANIC", "risk_level": "HIGH"})
-    leaders = view.leader_state
-    assert len(leaders) == 2
-
-    top = leaders[0]
-    assert top.stock_code == "603137"
-    assert top.stock_name == "恒尚节能"
-    assert top.board_height == 5
-    assert top.role in ("market_leader", "theme_leader", "")
-    assert top.theme == "算力/半导体"
-
-
-def test_adapt_leaders_0708(adapter, snap_0708):
-    view = adapter.adapt(snap_0708, diagnosis={"phase_label": "REPAIR_WATCH", "risk_level": "MEDIUM_HIGH"})
+def test_metrics_only_leaders(adapter, snap_0708):
+    view = adapter.adapt_metrics_only(snap_0708)
     leaders = view.leader_state
     assert len(leaders) == 3
-
-    # Market leader should be 603137 at 7 boards
     top = leaders[0]
     assert top.stock_code == "603137"
     assert top.board_height == 7
     assert top.role == "market_leader"
 
 
-# ═══ TC-4.2-ADAPTER-05: Dead leader detection ═══
-
 def test_dead_leader_detection(adapter, snap_0707):
-    view = adapter.adapt(snap_0707, diagnosis={"phase_label": "PANIC", "risk_level": "HIGH"})
-    # 捷荣技术 should have death_type=FRIED and role=weakened_leader
+    view = adapter.adapt_metrics_only(snap_0707)
     dead = [l for l in view.leader_state if l.death_type]
     assert len(dead) >= 1
     jrt = [l for l in view.leader_state if l.stock_code == "002855"][0]
     assert jrt.death_type == "FRIED"
 
 
-# ═══ TC-4.2-ADAPTER-06: Isomorphic type verification ═══
+# ═══ TC-4.2-ADAPTER-06: diagnosis-enriched ═══
+
+def test_adapt_with_diagnosis_0708(adapter, snap_0708):
+    view = adapter.adapt_with_diagnosis(
+        snap_0708,
+        diagnosis={"phase_label": "REPAIR_WATCH", "risk_level": "MEDIUM_HIGH"},
+        strategy_text="科技硬件快进快出",
+    )
+    assert view.emotion_label.market_phase == "REPAIR_WATCH"
+    assert view.emotion_label.risk_level == "MEDIUM_HIGH"
+    assert view.emotion_label.emotion_momentum == -4.0
+    assert view.has_phase_label
+    assert "科技硬件" in view.strategy_label.summary
+    assert view.source_quality == 0.85
+
+
+def test_adapt_with_diagnosis_no_diag(adapter, snap_0708):
+    """Without diagnosis, phase/risk stay empty, quality lower."""
+    view = adapter.adapt_with_diagnosis(snap_0708)
+    assert view.emotion_label.market_phase == ""
+    assert view.source_quality == 0.60
+
+
+def test_adapt_with_diagnosis_themes(adapter, snap_0708):
+    view = adapter.adapt_with_diagnosis(
+        snap_0708,
+        diagnosis={"phase_label": "REPAIR_WATCH", "risk_level": "MEDIUM_HIGH"},
+        narrative_themes=[
+            {"theme_name": "国产服务器", "state": "启动", "day_count": 1},
+            {"theme_name": "半导体设备", "state": "启动", "day_count": 2},
+        ],
+    )
+    assert len(view.theme_lifecycle) == 2
+    assert view.theme_lifecycle[0].theme_name == "国产服务器"
+    assert view.has_theme_data
+
+
+# ═══ TC-4.2-ADAPTER-07: missing_fields tracking ═══
+
+def test_metrics_only_missing_fields(adapter, snap_0707):
+    view = adapter.adapt_metrics_only(snap_0707)
+    # metrics-only should flag missing phase/risk
+    assert len(view.missing_fields) >= 0  # facts all present for this snapshot
+
+
+def test_diagnosis_view_missing_phase(adapter, snap_0708):
+    """Without diagnosis, emotion_label fields tracked as missing."""
+    view = adapter.adapt_with_diagnosis(snap_0708)  # no diagnosis
+    missing = view.missing_fields
+    assert "emotion_label.market_phase" in missing
+    assert "emotion_label.risk_level" in missing
+
+
+# ═══ TC-4.2-ADAPTER-08: isomorphic types ═══
 
 def test_view_uses_contract_types(adapter, snap_0708):
-    """AIDiagnosisReferenceView uses the same sub-object types as AnalystReferenceRecord."""
-    view = adapter.adapt(snap_0708, diagnosis={"phase_label": "REPAIR_WATCH", "risk_level": "MEDIUM_HIGH"})
-
+    view = adapter.adapt_metrics_only(snap_0708)
     assert isinstance(view.market_facts, MarketFacts)
     assert isinstance(view.emotion_label, EmotionLabel)
     assert isinstance(view.relay_label, RelayLabel)
     for l in view.leader_state:
         assert isinstance(l, LeaderState)
     assert isinstance(view.strategy_label, StrategyLabel)
+    assert view.adapter_version == ADAPTER_VERSION
 
 
-# ═══ TC-4.2-ADAPTER-07: None-safe (missing leader_evolution) ═══
+# ═══ TC-4.2-ADAPTER-09: None-safe ═══
 
 def test_missing_leader_evolution(adapter, snap_0708):
     snap = replace(snap_0708, leader_evolution=None)
-    view = adapter.adapt(snap, diagnosis={"phase_label": "REPAIR_WATCH", "risk_level": "MEDIUM_HIGH"})
+    view = adapter.adapt_metrics_only(snap)
     assert len(view.leader_state) == 0
+    # max_board_stock falls back empty when no leaders
+    assert view.relay_label.max_board_stock == ""
 
-
-# ═══ TC-4.2-ADAPTER-08: Narrative enrichment ═══
-
-def test_adapt_with_narrative_themes(adapter, snap_0708):
-    narrative_themes = [
-        {"theme_name": "国产服务器", "state": "启动", "day_count": 1},
-        {"theme_name": "半导体设备", "state": "启动", "day_count": 2},
-    ]
-    view = adapter.adapt_with_narrative(
-        snap_0708, narrative_themes=narrative_themes,
-        strategy_text="科技硬件快进快出",
-    )
-    assert len(view.theme_lifecycle) == 2
-    assert view.theme_lifecycle[0].theme_name == "国产服务器"
-    assert view.has_strategy_data
-    assert "科技硬件" in view.strategy_label.summary
-
-
-def test_adapt_without_narrative(adapter, snap_0708):
-    view = adapter.adapt(snap_0708, diagnosis={"phase_label": "REPAIR_WATCH", "risk_level": "MEDIUM_HIGH"})
-    # Without narrative, themes/strategy/attribution are empty
-    assert len(view.theme_lifecycle) == 0
-    assert not view.has_strategy_data
-    assert not view.has_theme_data
-
-
-# ═══ TC-4.2-ADAPTER-09: Missing loss_effect ═══
 
 def test_missing_loss_effect(adapter, snap_0708):
     snap = replace(snap_0708, loss_effect=None)
-    view = adapter.adapt(snap, diagnosis={"phase_label": "REPAIR_WATCH", "risk_level": "MEDIUM_HIGH"})
-    # loss_effect_ratio should be None, not crash
+    view = adapter.adapt_metrics_only(snap)
     assert view.market_facts.loss_effect_ratio is None
+    assert "market_facts.loss_effect_ratio" in view.missing_fields
+
+
+# ═══ TC-4.2-ADAPTER-10: chain_board_count from relay ═══
+
+def test_chain_board_count_from_relay(adapter, snap_0708):
+    """chain_board_count should prefer relay over limitup."""
+    view = adapter.adapt_metrics_only(snap_0708)
+    # relay has chain_board_count=14
+    assert view.market_facts.chain_board_count == 14

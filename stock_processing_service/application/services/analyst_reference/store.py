@@ -35,30 +35,57 @@ class AnalystReferenceStore:
     # ── Write ──
 
     def append(self, record: AnalystReferenceRecord) -> str:
-        """Append a record to the store. Returns record_hash.
+        """Append a record to the store. Returns content_hash.
 
-        If a record for the same date already exists, it is replaced.
+        Versioning:
+          - same date + same content → skip (no-op, return existing hash)
+          - same date + diff content → add new version, update latest_hash
+          - new date                 → add with single version
         """
         record_dict = _serialize_record(record)
-        record_hash = self._repo.append_jsonl(record_dict)
-
-        # Update manifest
-        manifest = self._repo.read_manifest()
+        # Content hash excludes volatile fields (ingested_at)
+        content_hash = self._content_hash(record_dict)
         date_str = record.trade_date.isoformat()
 
-        if date_str not in manifest.dates:
-            manifest.dates = sorted(set(manifest.dates + [date_str]))
+        # Read existing manifest
+        manifest = self._repo.read_manifest()
+        existing = manifest.records.get(date_str)
 
-        manifest.records[date_str] = ManifestEntry(
-            trade_date=date_str,
-            record_hash=record_hash,
-            extraction_status=record.quality.extraction_status.value,
-            ingested_at=datetime.now(timezone.utc).isoformat(),
-        )
+        if existing is not None:
+            # Check if this exact content already exists
+            if content_hash in existing.versions:
+                return content_hash  # skip duplicate
+
+            # Same date, different content → new version
+            existing.versions.append(content_hash)
+            existing.latest_hash = content_hash
+            existing.extraction_status = record.quality.extraction_status.value
+            existing.ingested_at = datetime.now(timezone.utc).isoformat()
+        else:
+            # New date
+            if date_str not in manifest.dates:
+                manifest.dates = sorted(set(manifest.dates + [date_str]))
+
+            manifest.records[date_str] = ManifestEntry(
+                trade_date=date_str,
+                latest_hash=content_hash,
+                versions=[content_hash],
+                extraction_status=record.quality.extraction_status.value,
+                ingested_at=datetime.now(timezone.utc).isoformat(),
+            )
+
+        # Persist JSONL
+        self._repo.append_jsonl(record_dict)
+
         manifest.record_count = len(manifest.dates)
         self._repo.write_manifest(manifest)
 
-        return record_hash
+        return content_hash
+
+    def _content_hash(self, record_dict: dict[str, Any]) -> str:
+        """Compute hash over stable fields (excludes ingested_at timestamp)."""
+        stable = {k: v for k, v in record_dict.items() if k != "ingested_at"}
+        return compute_record_hash(stable)
 
     # ── Read ──
 

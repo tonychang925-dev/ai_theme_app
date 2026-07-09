@@ -80,14 +80,20 @@ def _dataclass_to_dict(obj: object) -> dict[str, Any]:
 @dataclass
 class ManifestEntry:
     trade_date: str
-    record_hash: str
-    extraction_status: str
-    ingested_at: str
+    latest_hash: str                          # most recent version
+    versions: list[str] = field(default_factory=list)  # all hashes, newest last
+    extraction_status: str = ""
+    ingested_at: str = ""
+
+    @property
+    def record_hash(self) -> str:
+        """Backward compat — same as latest_hash."""
+        return self.latest_hash
 
 
 @dataclass
 class Manifest:
-    version: str = "1"
+    version: str = "2"                        # v2: added versioning
     record_count: int = 0
     dates: list[str] = field(default_factory=list)
     records: dict[str, ManifestEntry] = field(default_factory=dict)
@@ -99,8 +105,12 @@ class Manifest:
             "record_count": self.record_count,
             "dates": self.dates,
             "records": {
-                k: {"hash": v.record_hash, "status": v.extraction_status,
-                    "ingested_at": v.ingested_at}
+                k: {
+                    "latest_hash": v.latest_hash,
+                    "versions": v.versions,
+                    "status": v.extraction_status,
+                    "ingested_at": v.ingested_at,
+                }
                 for k, v in self.records.items()
             },
             "last_updated": self.last_updated,
@@ -110,9 +120,13 @@ class Manifest:
     def from_dict(cls, d: dict) -> "Manifest":
         records = {}
         for k, v in d.get("records", {}).items():
+            # v1 compat: "hash" → v2 "latest_hash"
+            latest = v.get("latest_hash", v.get("hash", ""))
+            versions = v.get("versions", [latest] if latest else [])
             records[k] = ManifestEntry(
                 trade_date=k,
-                record_hash=v.get("hash", ""),
+                latest_hash=latest,
+                versions=versions,
                 extraction_status=v.get("status", ""),
                 ingested_at=v.get("ingested_at", ""),
             )
@@ -235,10 +249,12 @@ class ReferenceRepository:
         )
         for r in records:
             date_str = r.get("trade_date", "")
-            h = compute_record_hash(r)
+            content = {k: v for k, v in r.items() if k != "ingested_at"}
+            h = compute_record_hash(content)
             manifest.records[date_str] = ManifestEntry(
                 trade_date=date_str,
-                record_hash=h,
+                latest_hash=h,
+                versions=[h],
                 extraction_status=r.get("extraction_status", ""),
                 ingested_at=r.get("ingested_at", ""),
             )
@@ -257,17 +273,19 @@ class ReferenceRepository:
         jsonl_hashes: dict[str, str] = {}
         for r in records:
             date_str = r.get("trade_date", "")
-            h = compute_record_hash(r)
+            # Content hash excludes volatile fields like ingested_at
+            content = {k: v for k, v in r.items() if k != "ingested_at"}
+            h = compute_record_hash(content)
             jsonl_hashes[date_str] = h
 
             if date_str not in manifest.records:
                 report.missing_in_manifest.append(date_str)
                 report.errors.append(f"Record {date_str} in JSONL but not in manifest")
-            elif manifest.records[date_str].record_hash != h:
+            elif manifest.records[date_str].latest_hash != h:
                 report.hash_mismatches.append(date_str)
                 report.errors.append(
                     f"Hash mismatch for {date_str}: "
-                    f"jsonl={h[:12]} manifest={manifest.records[date_str].record_hash[:12]}"
+                    f"jsonl={h[:12]} manifest={manifest.records[date_str].latest_hash[:12]}"
                 )
 
         # Check manifest entries not in JSONL

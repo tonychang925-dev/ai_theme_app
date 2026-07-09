@@ -2,6 +2,12 @@
 
 Converts MarketMetricsSnapshot (AI output) to AIDiagnosisReferenceView,
 a structure isomorphic to AnalystReferenceRecord for comparison.
+
+Design principle (per M2.5 canonical fact layer):
+  adapt_metrics_only() — facts, relay, capital, leaders, emotion_momentum.
+                         Does NOT fill market_phase / risk_level.
+  adapt_with_diagnosis() — enriched with phase / risk / strategy / themes
+                           from MarketDiagnosis and Narrative.
 """
 
 from __future__ import annotations
@@ -20,10 +26,13 @@ from stock_processing_service.application.services.analyst_reference.contracts i
     ThemeLifecycleEntry,
 )
 from stock_processing_service.application.services.market_metrics.contracts import (
-    LeaderSnapshot,
     LeaderEvolutionMetrics,
+    LeaderSnapshot,
     MarketMetricsSnapshot,
 )
+
+
+ADAPTER_VERSION = "ai_adapter_v1"
 
 
 # ═══ AI Reference View ═══
@@ -34,6 +43,10 @@ class AIDiagnosisReferenceView:
 
     This is the bridge between AI market metrics and analyst ground truth —
     both sides must use the same sub-object types for comparison to work.
+
+    quality fields tell the Comparator:
+      - which AI fields are missing
+      - whether the adapter itself is confident
     """
     trade_date: date
 
@@ -42,7 +55,7 @@ class AIDiagnosisReferenceView:
     emotion_label: EmotionLabel
     relay_label: RelayLabel
 
-    # Optional layers — best-effort from narrative / engine outputs
+    # Optional layers — best-effort from diagnosis / narrative
     theme_lifecycle: tuple[ThemeLifecycleEntry, ...] = ()
     limitup_attribution: tuple[LimitUpAttribution, ...] = ()
     leader_state: tuple[LeaderState, ...] = ()
@@ -52,6 +65,11 @@ class AIDiagnosisReferenceView:
     source_snapshot_ids: tuple[str, ...] = ()
     ai_module_versions: dict[str, str] = field(default_factory=dict)
 
+    # Quality tracking (Phase 4.2 Comparator needs these)
+    missing_fields: tuple[str, ...] = ()
+    source_quality: float = 1.0            # 0–1, adapter confidence
+    adapter_version: str = ADAPTER_VERSION
+
     @property
     def has_theme_data(self) -> bool:
         return len(self.theme_lifecycle) > 0
@@ -60,136 +78,211 @@ class AIDiagnosisReferenceView:
     def has_strategy_data(self) -> bool:
         return bool(self.strategy_label.allowed or self.strategy_label.summary)
 
+    @property
+    def has_phase_label(self) -> bool:
+        return bool(self.emotion_label.market_phase)
+
 
 # ═══ AI Adapter ═══
 
 class AIAdapter:
     """Convert MarketMetricsSnapshot → AIDiagnosisReferenceView.
 
-    Mapping rules:
-      MarketBreadthMetrics  + LimitUpMetrics  → MarketFacts
-      EmotionMomentumMetrics                   → EmotionLabel
-      RelayEcologyMetrics                      → RelayLabel
-      LeaderEvolutionMetrics                   → LeaderState[]
-      ActiveCapitalMetrics                     → MarketFacts.active_capital_yi
-      LossEffectMetrics                        → MarketFacts.loss_effect_ratio
+    Two-layer design:
+      adapt_metrics_only()    — pure fact layer, no diagnosis
+      adapt_with_diagnosis()  — enriched with phase/risk/strategy/themes
     """
 
-    # ── Public API ──
+    # ── Public API: metrics-only ──
 
-    def adapt(
-        self,
-        snapshot: MarketMetricsSnapshot,
-        diagnosis: dict[str, str] | None = None,
+    def adapt_metrics_only(
+        self, snapshot: MarketMetricsSnapshot
     ) -> AIDiagnosisReferenceView:
-        """Convert a MarketMetricsSnapshot to analyst-comparable view.
+        """Convert snapshot to analyst-comparable view — FACTS ONLY.
 
-        diagnosis dict provides phase_label/risk_level that are not in
-        EmotionMomentumMetrics itself but are computed by MarketDiagnosis.
-        Example: {"phase_label": "PANIC", "risk_level": "HIGH"}
+        market_phase / risk_level are left empty.
+        Use adapt_with_diagnosis() for diagnosis-enriched conversion.
         """
-        diagnosis = diagnosis or {}
+        leaders = self._adapt_leaders(snapshot)
+        relay, relay_missing = self._adapt_relay(snapshot, leaders)
+        facts, facts_missing = self._adapt_facts(snapshot)
+
+        missing = tuple(
+            f"market_facts.{m}" for m in facts_missing
+        ) + tuple(
+            f"relay_label.{m}" for m in relay_missing
+        )
+
         return AIDiagnosisReferenceView(
             trade_date=snapshot.trade_date,
-            market_facts=self._adapt_facts(snapshot),
-            emotion_label=self._adapt_emotion(snapshot, diagnosis),
-            relay_label=self._adapt_relay(snapshot),
-            leader_state=self._adapt_leaders(snapshot),
+            market_facts=facts,
+            emotion_label=EmotionLabel(
+                market_phase="",          # left empty — requires diagnosis
+                risk_level="",            # left empty — requires diagnosis
+                emotion_momentum=snapshot.emotion_momentum.momentum_raw,
+            ),
+            relay_label=relay,
+            leader_state=leaders,
             theme_lifecycle=(),
             limitup_attribution=(),
             strategy_label=StrategyLabel(),
             source_snapshot_ids=(),
+            missing_fields=missing,
+            source_quality=1.0,
+            adapter_version=ADAPTER_VERSION,
         )
 
-    def adapt_with_narrative(
+    # ── Public API: diagnosis-enriched ──
+
+    def adapt_with_diagnosis(
         self,
         snapshot: MarketMetricsSnapshot,
+        diagnosis: dict[str, str] | None = None,
         narrative_themes: list[dict[str, Any]] | None = None,
         strategy_text: str | None = None,
-        diagnosis: dict[str, str] | None = None,
     ) -> AIDiagnosisReferenceView:
-        """Extended conversion with narrative enrichment for themes/strategy."""
-        view = self.adapt(snapshot, diagnosis=diagnosis)
+        """Convert snapshot with diagnosis/narrative enrichment.
 
-        # Enrich themes from narrative output
+        diagnosis dict keys: phase_label, risk_label (from MarketDiagnosis)
+        narrative_themes: list of {"theme_name", "state", "day_count", ...}
+        strategy_text: free-text strategy summary from Narrative
+        """
+        base = self.adapt_metrics_only(snapshot)
+        diag = diagnosis or {}
+
+        # Enrich emotion with phase/risk from diagnosis
+        emotion = EmotionLabel(
+            market_phase=diag.get("phase_label", ""),
+            risk_level=diag.get("risk_level", ""),
+            emotion_momentum=base.emotion_label.emotion_momentum,
+        )
+
+        # Enrich themes from narrative
         themes = self._adapt_themes_from_narrative(narrative_themes or [])
+
+        # Enrich strategy from narrative text
         strategy = self._adapt_strategy_from_text(strategy_text or "")
 
+        # Track what's still missing after enrichment
+        extra_missing = list(base.missing_fields)
+        if not emotion.market_phase:
+            extra_missing.append("emotion_label.market_phase")
+        if not emotion.risk_level:
+            extra_missing.append("emotion_label.risk_level")
+        if not strategy_text:
+            extra_missing.append("strategy_label")
+
         return AIDiagnosisReferenceView(
-            trade_date=view.trade_date,
-            market_facts=view.market_facts,
-            emotion_label=view.emotion_label,
-            relay_label=view.relay_label,
-            leader_state=view.leader_state,
+            trade_date=base.trade_date,
+            market_facts=base.market_facts,
+            emotion_label=emotion,
+            relay_label=base.relay_label,
+            leader_state=base.leader_state,
             theme_lifecycle=tuple(themes),
             limitup_attribution=(),
             strategy_label=strategy,
-            source_snapshot_ids=view.source_snapshot_ids,
+            source_snapshot_ids=base.source_snapshot_ids,
+            missing_fields=tuple(extra_missing),
+            source_quality=0.85 if diag else 0.60,
+            adapter_version=ADAPTER_VERSION,
         )
 
-    # ── Layer adapters ──
+    # ── Layer adapters (return value + missing field names) ──
 
-    def _adapt_facts(self, s: MarketMetricsSnapshot) -> MarketFacts:
-        """Map AI breadth + limitup + capital + loss → MarketFacts."""
+    def _adapt_facts(
+        self, s: MarketMetricsSnapshot
+    ) -> tuple[MarketFacts, list[str]]:
+        """Map AI breadth + limitup + capital + loss → MarketFacts.
+
+        Source priority per the conversion table:
+          chain_board_count: relay > limitup (deprecated)
+          max_board_height:  relay > limitup
+          active_capital_yi: capital.active_limitup_amount_yi
+        """
         facts = MarketFacts()
+        missing: list[str] = []
 
         # From breadth
         facts.market_up_ratio = s.breadth.up_ratio
-        # breadth.limit_up_count is per breadth metrics (may differ from limitup module)
-        # Prefer limitup module for limit_up count
 
-        # From limitup (preferred source for limit-up data)
+        # From limitup
         facts.limit_up_count = s.limitup.total_count
-        facts.chain_board_count = s.limitup.chain_board_count
-        facts.max_board_height = s.limitup.max_board_height
 
-        # From capital: active_limitup_amount_yi is the 涨停活跃资金 in 亿元
-        facts.active_capital_yi = s.capital.active_limitup_amount_yi
+        # chain_board_count: relay preferred, limitup fallback
+        facts.chain_board_count = (
+            s.relay.chain_board_count
+            if hasattr(s.relay, "chain_board_count") and s.relay.chain_board_count
+            else getattr(s.limitup, "chain_board_count", None)
+        )
 
-        # From loss effect (if available)
+        # max_board_height: relay preferred, limitup fallback
+        facts.max_board_height = (
+            s.relay.max_board_height
+            if hasattr(s.relay, "max_board_height") and s.relay.max_board_height
+            else getattr(s.limitup, "max_board_height", None)
+        )
+
+        # From capital
+        if hasattr(s.capital, "active_limitup_amount_yi"):
+            facts.active_capital_yi = s.capital.active_limitup_amount_yi
+        else:
+            missing.append("active_capital_yi")
+
+        # From loss effect
         if s.loss_effect is not None:
             facts.loss_effect_ratio = s.loss_effect.damage_ratio
+        else:
+            missing.append("loss_effect_ratio")
 
-        # From high_position_death (if available)
+        # From high_position_death
         if s.high_position_death is not None:
             facts.composite_score = int(s.high_position_death.death_index)
 
-        return facts
+        return facts, missing
 
-    def _adapt_emotion(
-        self, s: MarketMetricsSnapshot, diagnosis: dict[str, str]
-    ) -> EmotionLabel:
-        """Map AI emotion momentum → EmotionLabel.
-
-        EmotionMomentumMetrics carries raw momentum scores.
-        phase_label / risk_level come from MarketDiagnosis (or diagnosis dict).
-        """
-        em = s.emotion_momentum
-        return EmotionLabel(
-            market_phase=diagnosis.get("phase_label", ""),
-            risk_level=diagnosis.get("risk_level", ""),
-            emotion_momentum=em.momentum_raw,
-            cycle_score=None,
-            strategy="",
-        )
-
-    def _adapt_relay(self, s: MarketMetricsSnapshot) -> RelayLabel:
+    def _adapt_relay(
+        self, s: MarketMetricsSnapshot, leaders: tuple[LeaderState, ...]
+    ) -> tuple[RelayLabel, list[str]]:
         """Map AI relay ecology → RelayLabel.
 
-        RelayEcologyMetrics has promotion rates and board heights.
-        max_board_stock is NOT in RelayEcologyMetrics — stays empty.
+        max_board_stock: derived from leader_evolution (highest board_height leader).
+        RelayEcologyMetrics does NOT carry max_board_stock directly.
         """
         r = s.relay
-        return RelayLabel(
+        missing: list[str] = []
+
+        # Derive max_board_stock from leaders
+        max_stock = ""
+        if leaders:
+            max_leader = max(leaders, key=lambda l: l.board_height)
+            max_stock = max_leader.stock_name
+
+        if not max_stock:
+            # Fallback: try getattr
+            max_stock = getattr(r, "max_board_stock", "")
+
+        relay = RelayLabel(
             max_board_height=r.max_board_height,
-            max_board_stock="",
-            first_board_success_rate=None,
+            max_board_stock=max_stock,
+            first_board_success_rate=(
+                getattr(r, "first_board_success_rate", None)
+                if hasattr(r, "first_board_success_rate") else None
+            ),
             promotion_1_to_2=r.promotion_1_to_2,
             promotion_2_to_3=r.promotion_2_to_3,
-            promotion_3_to_4=r.promotion_3_to_4 if hasattr(r, "promotion_3_to_4") else None,
+            promotion_3_to_4=(
+                r.promotion_3_to_4 if hasattr(r, "promotion_3_to_4") else None
+            ),
         )
 
-    def _adapt_leaders(self, s: MarketMetricsSnapshot) -> tuple[LeaderState, ...]:
+        if not max_stock:
+            missing.append("max_board_stock")
+
+        return relay, missing
+
+    def _adapt_leaders(
+        self, s: MarketMetricsSnapshot
+    ) -> tuple[LeaderState, ...]:
         """Map AI leader evolution → LeaderState tuple."""
         if s.leader_evolution is None:
             return ()

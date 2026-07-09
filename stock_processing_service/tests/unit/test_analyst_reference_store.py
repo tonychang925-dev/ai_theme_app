@@ -72,23 +72,44 @@ def test_append_and_get_round_trip(tmp_store, rec_0707):
     assert loaded.quality.extraction_status == ExtractionStatus.FULL_COMPLETE
 
 
-# ═══ TC-4.2-STORE-02: Duplicate date replaces ═══
+# ═══ TC-4.2-STORE-02: Same date, same hash → skip ═══
 
-def test_append_same_date_replaces(tmp_store, rec_0707, parser):
+def test_append_same_hash_skipped(tmp_store, rec_0707):
+    h1 = tmp_store.append(rec_0707)
+    # Append the exact same record again
+    h2 = tmp_store.append(rec_0707)
+    assert h1 == h2  # should return same hash, no-op
+
+    dates = tmp_store.list_dates()
+    assert len(dates) == 1
+
+    # Manifest should have one version
+    manifest = tmp_store._repo.read_manifest()
+    entry = manifest.records["2026-07-07"]
+    assert len(entry.versions) == 1
+
+
+# ═══ TC-4.2-STORE-02b: Same date, diff hash → new version ═══
+
+def test_append_same_date_diff_hash_adds_version(tmp_store, rec_0707, parser):
     tmp_store.append(rec_0707)
 
-    # Append a different record for same date (re-parsed)
+    # Append a record with different content under same date
     rec2 = parser.parse_file(FIXTURES / "analyst_recap_0708.md", trade_date=date(2026, 7, 7))
     h2 = tmp_store.append(rec2)
 
-    # Should only have one record for 7/7
     dates = tmp_store.list_dates()
     assert len(dates) == 1
-    assert dates[0] == date(2026, 7, 7)
 
-    # Loaded record should match the second (replacement) record
+    # Manifest should have 2 versions
+    manifest = tmp_store._repo.read_manifest()
+    entry = manifest.records["2026-07-07"]
+    assert len(entry.versions) == 2
+    assert entry.latest_hash == h2
+
+    # Latest record should be the new one
     loaded = tmp_store.get_by_date(date(2026, 7, 7))
-    assert loaded.market_facts.limit_up_count == 47  # 7/8 data, stored under 7/7
+    assert loaded.market_facts.limit_up_count == 47  # from 7/8 data
 
 
 # ═══ TC-4.2-STORE-03: Multiple dates ═══
