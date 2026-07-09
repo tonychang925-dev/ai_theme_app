@@ -62,26 +62,17 @@ function useEmotionTrend(tradeDate: string) {
   const [trend, setTrend] = useState<{ date: string; node: string; score: number }[]>([]);
 
   useEffect(() => {
-    const dates: string[] = [];
-    const d = new Date(tradeDate);
-    for (let i = 4; i >= 0; i--) {
-      const prev = new Date(d);
-      prev.setDate(prev.getDate() - i * 1);
-      // Skip weekends roughly
-      const day = prev.getDay();
-      if (day === 0) prev.setDate(prev.getDate() - 2);
-      if (day === 6) prev.setDate(prev.getDate() - 1);
-      dates.push(prev.toISOString().slice(0, 10));
-    }
-
-    Promise.all(
-      dates.map(dt =>
-        fetch(`http://127.0.0.1:8090/api/v1/emotion/${dt}`, {signal: AbortSignal.timeout(2000)})
-          .then(r => r.json())
-          .then(data => ({ date: dt, node: (data && data.emotion_node) || "CHAOS", score: (data && data.emotion_score) || 0 }))
-          .catch(() => ({ date: dt, node: "CHAOS", score: 0 }))
-      )
-    ).then(setTrend);
+    // Load from static trend.json — instant, no API calls
+    fetch(`/api/analyst-charts/trend.json`)
+      .then(r => r.json())
+      .then(data => {
+        const scores = (data.momentum || []).map((m: any) => ({
+          date: m.date, score: m.score,
+          node: m.score < -10 ? "ICE_POINT" : m.score < -5 ? "FADE" : m.score < 0 ? "DIVERGENCE" : m.score > 5 ? "CLIMAX" : m.score > 0 ? "FERMENTATION" : "CHAOS",
+        }));
+        setTrend(scores);
+      })
+      .catch(() => setTrend([]));
   }, [tradeDate]);
 
   return trend;
@@ -93,17 +84,9 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   const [loading, setLoading] = useState(true);
   const [artifacts, setArtifacts] = useState<EvidenceArtifact[]>([]);
   const [showEvidence, setShowEvidence] = useState(false);
-  const [trendData, setTrendData] = useState<any>(null);
   const [systemCharts, setSystemCharts] = useState<any[]>([]);
   const [multiTrend, setMultiTrend] = useState<any>(null);
   const trend = useEmotionTrend(tradeDate);
-
-  const loadTrends = useCallback(async () => {
-    try {
-      const resp = await fetch(`http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}/trends?days=7`, {signal: AbortSignal.timeout(2000)});
-      if (resp.ok) setTrendData(await resp.json());
-    } catch { /* ignore */ }
-  }, [tradeDate]);
 
   const loadSystemCharts = useCallback(async () => {
     // Load multi-day trend data
@@ -343,7 +326,7 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
       {/* ── Evidence Charts (collapsible) ── */}
       <div style={{ marginTop: 10 }}>
         <div
-          onClick={() => { setShowEvidence(!showEvidence); if (!showEvidence) { loadArtifacts(); loadTrends(); loadSystemCharts(); } }}
+          onClick={() => { setShowEvidence(!showEvidence); if (!showEvidence) { loadArtifacts(); loadSystemCharts(); } }}
           style={{ fontSize: 11, color: "#5a7a8a", cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}>
           <span>{showEvidence ? "▼" : "▶"} 分析师图表 Evidence Charts</span>
           {(artifacts.length + systemCharts.length) > 0 && <span style={{ color: "#66d9ef" }}>({artifacts.length + systemCharts.length}) {systemCharts.length > 0 ? `含${systemCharts.length}张系统图表` : ""}</span>}
