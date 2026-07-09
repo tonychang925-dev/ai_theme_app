@@ -137,9 +137,23 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://127.0.0.1:8090/api/v1/emotion/${tradeDate}`)
-      .then(r => r.json()).then(d => { setEmotion(d); setLoading(false); })
-      .catch(() => setLoading(false));
+    // Try live API first, fallback to static JSON
+    const urls = [
+      `http://127.0.0.1:8090/api/v1/emotion/${tradeDate}`,
+      `/api/emotion-${tradeDate}.json`,
+    ];
+    (async () => {
+      for (const url of urls) {
+        try {
+          const resp = await fetch(url);
+          if (resp.ok) {
+            const d = await resp.json();
+            if (d && d.emotion_node) { setEmotion(d); setLoading(false); return; }
+          }
+        } catch { /* try next */ }
+      }
+      setLoading(false);
+    })();
   }, [tradeDate]);
 
   if (loading) return <div style={{ padding: "8px 16px", color: "#5a7a8a", fontSize: 13 }}>加载情绪数据…</div>;
