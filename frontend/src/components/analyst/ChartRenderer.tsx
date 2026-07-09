@@ -13,7 +13,7 @@ export function TrendLineChart({ title, data, yKey, yLabel, color, yMax }: {
   title: string; data: any[]; yKey: string; yLabel: string; color: string; yMax?: number;
 }) {
   if (!data || data.length < 2) return null;
-  const W = 370, H = 140, PAD = { top: 12, right: 16, bottom: 28, left: 48 };
+  const W = 700, H = 140, PAD = { top: 12, right: 16, bottom: 28, left: 48 };
   const vals = data.map(d => d[yKey] || 0);
   const maxV = yMax || Math.max(...vals, 1);
   const minV = Math.min(0, Math.min(...vals));
@@ -31,7 +31,7 @@ export function TrendLineChart({ title, data, yKey, yLabel, color, yMax }: {
   return (
     <div style={{ marginBottom: 4 }}>
       <div style={{ fontWeight: 700, color: "#ffd85e", marginBottom: 4, fontSize: 12, borderLeft: "3px solid #d69e2e", paddingLeft: 8 }}>{title}</div>
-      <svg width={W} height={H} style={{ background: "#0c1118", borderRadius: 4 }}>
+      <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} style={{ background: "#0c1118", borderRadius: 4 }}>
         {[0, 0.25, 0.5, 0.75, 1].map(pct => {
           const y = py + ph * (1 - pct);
           return <g key={pct}>
@@ -394,20 +394,28 @@ function AnalystLimitUpChart({ data, interpretation }: { data: any; interpretati
       <div style={{ fontWeight: 700, color: "#ffd85e", marginBottom: 8, fontSize: 13, borderLeft: "3px solid #38a169", paddingLeft: 8 }}>
         涨停股分类 <span style={{ fontSize: 16, color: "#e53e3e", fontWeight: 700, marginLeft: 8 }}>{data.limit_up_count || 0}家</span>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>
-        {Object.entries(cats).slice(0, 6).map(([cat, names]) => (
-          <div key={cat} style={{ padding: 8, background: "#0c1118", borderRadius: 4, border: "1px solid #1a2a3a" }}>
-            <div style={{ fontSize: 11, fontWeight: 600, color: "#d69e2e", marginBottom: 4, paddingBottom: 4, borderBottom: "1px solid #1a2a3a" }}>
-              {cat} <span style={{ fontSize: 10, color: "#5a7a8a", fontWeight: 400 }}>({(names as string[]).length})</span>
+      {/* Filter garbage theme names (pure numbers, ids starting with digits) */}
+      {(() => {
+        const clean = (s: string) => !/^\d+$/.test(s) && !s.startsWith("90") && s.length < 20;
+        const validCats = Object.fromEntries(
+          Object.entries(cats).filter(([k]) => clean(k)).slice(0, 6)
+        );
+        return Object.keys(validCats).length > 0 && (
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>
+            {Object.entries(validCats).map(([cat, names]) => (
+              <div key={cat} style={{ padding: 8, background: "#0c1118", borderRadius: 4, border: "1px solid #1a2a3a" }}>
+                <div style={{ fontSize: 11, fontWeight: 600, color: "#d69e2e", marginBottom: 4, paddingBottom: 4, borderBottom: "1px solid #1a2a3a" }}>
+                  {cat} <span style={{ fontSize: 10, color: "#5a7a8a", fontWeight: 400 }}>({(names as string[]).length})</span>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 3 }}>
               {(names as string[]).slice(0, 6).map((n, i) => (
                 <span key={i} style={{ fontSize: 9, color: "#8ddcff", padding: "2px 6px", background: "#111720", borderRadius: 3, border: "1px solid #1a2a3a" }}>{n}</span>
               ))}
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+        );
+      })()}
       <div style={{ fontSize: 10, color: "#8ddcff", lineHeight: 1.5, padding: "4px 6px", background: "#0c1118", borderRadius: 3 }}>{interpretation}</div>
     </div>
   );
