@@ -301,13 +301,14 @@ class MarketMetricsService:
                 "turnover_rate": turnover,
             }
 
-        total = len(all_codes)
-        sealed = len(sealed_codes)
-
-        # ── Use Eastmoney fried count when available (real data) ──
-        if em_zb:
-            fried = len(em_zb)
+        # ── When EM provider active: use EM as single source of truth ──
+        if em_zt:
+            total = len(em_zt)     # EM ZT pool count (analyst-verified)
+            sealed = len(em_zt)    # EM ZT = sealed (no fried in ZT pool)
+            fried = len(em_zb) if em_zb else 0
         else:
+            total = len(all_codes)
+            sealed = len(sealed_codes)
             fried = len(fried_codes)
 
         # ── Streak / board height ──
@@ -369,13 +370,24 @@ class MarketMetricsService:
                 if not extended:
                     break
 
-        max_h = max(today_streaks.values()) if today_streaks else 1
-        # current_board_height: analyst口径 — 仅统计 streak=2 (昨1板+今2板=真实连板)
-        current_board = sum(1 for h in today_streaks.values() if h == 2)
-        # historical_streak_height: streak回溯 — streak>=2 (包含3+,4+,5+)
-        historical_streak = sum(1 for h in today_streaks.values() if h >= 2)
-        first_count = total - current_board
-        high_board = sum(1 for h in today_streaks.values() if h >= 3)
+        if em_zt:
+            # EM provides exact ladder: {board_height: stock_count}
+            em_ladder: dict[int, int] = {}
+            for s in em_zt:
+                h = s.limit_days
+                if h > 0:
+                    em_ladder[h] = em_ladder.get(h, 0) + 1
+            max_h = max(em_ladder.keys()) if em_ladder else 1
+            current_board = em_ladder.get(2, 0)
+            historical_streak = sum(v for h, v in em_ladder.items() if h >= 2)
+            first_count = em_ladder.get(1, 0)
+            high_board = sum(v for h, v in em_ladder.items() if h >= 3)
+        else:
+            max_h = max(today_streaks.values()) if today_streaks else 1
+            current_board = sum(1 for h in today_streaks.values() if h == 2)
+            historical_streak = sum(1 for h in today_streaks.values() if h >= 2)
+            first_count = total - current_board
+            high_board = sum(1 for h in today_streaks.values() if h >= 3)
 
         # ── Streak distribution for relay ──
         streak_dist: dict[int, int] = {}
