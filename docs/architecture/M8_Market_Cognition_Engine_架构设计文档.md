@@ -1,9 +1,9 @@
 # M8 Market Cognition Engine 架构设计文档
 
-> 版本：v1.5 (Core Contract Frozen — FINAL)
-> 日期：2026-07-06 (v1.3: 07-04 / v1.4: 07-06 / v1.5: 07-06)
-> 最新状态日期：2026-07-06
-> 状态：**Core Contract Frozen**；Phase 0 GA；Phase 1 MARKET VALIDATION IN PROGRESS（Ground Truth = 1）；**Phase 1.5 实施基线已确立**
+> 版本：v2.0 (v1.5 Core Contract Frozen + M2.5 MarketMetrics + Eastmoney Board Pool + Analyst Workspace v2)
+> 日期：2026-07-09 (v1.3: 07-04 / v1.4: 07-06 / v1.5: 07-06 / v2.0: 07-09)
+> 最新状态日期：2026-07-09
+> 状态：**Core Contract Frozen**；**M2.5 MarketMetrics 已上线**；**a-stock-data 打板层已集成**；Analyst Workspace v2 前端已部署
 > 体系命名：M8 = Market World State Builder / M9 = Market World Intelligence Loop
 > 实施基线：`tmp/plan/wbs_M8.phase1.5.md`（Phase 1.5 — Market World State Verification）
 >
@@ -6596,3 +6596,187 @@ Build Cognition without Breaking Report
 - 已有 A/B/C/D 投资全部保留。
 
 这套连续性设计比一次性实现完整 World Model 更优先。只有先证明 M8 能在“不改变旧结果、不阻断旧链路、不隐藏旧证据”的条件下产生更高质量认知，后续 Strategy、Meta Cognition 和 M9 学习闭环才具备可靠工程基础。
+
+---
+
+# PART III — Current Implementation Status (v2.0 Baseline, 2026-07-09)
+
+> **状态更新日期：2026-07-09**
+> 本文档记录 M8 体系自 v1.5 Core Contract Frozen 以来的实际实现状态。
+
+---
+
+## 28. M2.5 — Canonical Market Metrics Service（市场统一事实层）
+
+### 28.1 定位
+
+全项目唯一负责行情统计、短线情绪、连板生态、资金流、换手、涨停归因基础指标的事实计算层。
+
+```
+Raw Data (JYHF/THS/Eastmoney/TDX)
+          │
+          ▼
+MarketMetricsService (SINGLE canonical source)
+          │
+          ▼
+MarketMetricsSnapshot
+          │
+   ┌──────┼────────┬──────────┐
+   ▼      ▼        ▼          ▼
+Diagnosis  Chart   Emotion   Narrative
+```
+
+### 28.2 核心结构
+
+```python
+MarketMetricsSnapshot (单日快照)
+├── MarketBreadthMetrics    # 涨跌比/成交额
+├── LimitUpMetrics v1.1     # 涨停/封板/炸板/板型分类/换手/资金
+├── RelayEcologyMetrics v2  # 晋级率/昨涨停反馈/LimitUp Feedback Score
+├── LeaderEvolutionMetrics  # 龙头识别/状态/健康分数 (8-state expectation)
+├── LossEffectMetrics       # 跌停/大面/亏钱效应
+├── LossAttributionMetrics  # 亏钱归因 (高位/龙头/板块)
+├── HighPositionDeathMetrics # 高位死亡指数 (三维加权)
+├── DeathPropagationMetrics v2 # 死亡传播指数 (+capital_escape)
+├── ActiveCapitalMetrics    # 活跃资金/占比
+└── EmotionMomentumMetrics v3 # 情绪动能 (relay-based real ratios)
+```
+
+### 28.3 数据源: Eastmoney Board Pool (a-stock-data 打板层)
+
+所有涨停/连板/炸板/跌停数据统一来自 Eastmoney push2ex API:
+
+| 数据池 | API端点 | 关键字段 | 状态 |
+|--------|---------|----------|------|
+| 涨停池 (ZT) | `getTopicZTPool` | `lbc`(连板数), `zdp`(涨幅), `fund`(封单) | e**已集成** |
+| 炸板池 (ZB) | `getTopicZBPool` | `zbc`(炸板次数) | **已集成** |
+| 跌停池 (DT) | `getTopicDTPool` | `lbc`(连续跌停) | **已集成** |
+| 晋级率计算 | yesterday ZT JOIN today ZT | per-stock limit_days | **已集成** |
+
+- 数据库: `eastmoney_board_pool_daily` (每日采集, 1516行已入库)
+- 采集任务: `scripts/collect_eastmoney_board_pool.py`
+- 已注册到采集控制系统: `evidence.eastmoney_board_pool` (ScriptCommandRunner)
+- **2026-07-01 ~ 2026-07-08 共 6 个有效交易日数据完整**
+
+### 28.4 关键指标验证 (vs 分析师)
+
+| 指标 | 7/7 AI | 7/7 Analyst | 7/8 AI | 7/8 Analyst |
+|------|--------|-------------|--------|-------------|
+| 涨停数 | 33 | 33 ✓ | 47 | 46 ✓ |
+| 最高板 | 6 | 5 | 7 | 7 ✓ |
+| 炸板数 | 23 | — | 14 | — |
+| 跌停数 | 30 | — | 41 | — |
+| 活跃资金 | 903亿 | 897亿 ✓ | 738亿 | 739亿 ✓ |
+| 1→2晋级率 | 5.4% | 5.1% ✓ | 21.4% | 21.0% ✓ |
+| 2→3晋级率 | 0.0% | 0.0% ✓ | 33.3% | 33.0% ✓ |
+| Phase | 恐慌/冰点 | PANIC ✓ | 混沌 | REPAIR_WATCH |
+
+### 28.5 实现文件清单
+
+```
+stock_processing_service/application/services/market_metrics/
+├── __init__.py
+├── contracts.py           # 全部 Metrics dataclass (冻结)
+├── service.py             # MarketMetricsService (单一入口)
+├── registry.py            # Metric Registry + Quality + Dependency Graph
+├── providers.py           # Protocol 接口定义
+├── board_pool_provider.py # Eastmoney BoardPool 实现
+├── leader_evolution.py    # 龙头演化引擎 (8-state expectation model)
+├── narrative_engine.py    # 因果叙事引擎 (MarketStory + EvidenceNode)
+├── market_memory.py       # 市场记忆引擎 (Fingerprint + TurningPoint)
+├── calibration.py         # 校准学习闭环 (DriftEngine + WeightProposal)
+├── validation.py          # 验证快照
+└── replay_benchmark.py    # 回放基准测试 (100分制)
+
+stock_processing_service/integrations/a_stock_data/clients/
+└── eastmoney_board_client.py  # Eastmoney 打板层 HTTP 客户端
+
+stock_processing_service/database/migrations/
+└── create_eastmoney_board_pool.sql
+
+stock_processing_service/scripts/
+└── collect_eastmoney_board_pool.py  # 每日采集脚本
+```
+
+---
+
+## 29. 前端 — 分析师工作台 (Analyst Workspace v2)
+
+### 29.1 页面结构
+
+```
+┌─ 日期选择器 ──────────────────────────────────────┐
+├─ [情绪与图表] [观察方向] ── 标签页 ──────────────────┤
+│                                                    │
+│ 情绪冰点 / ICE_POINT  -78 / 100                    │
+│ 33涨停  903亿活跃资金  633/4482涨跌比               │
+│ 5日趋势 (static trend.json, 即时加载)              │
+│                                                    │
+│ ┌─ 为什么 ───┬── 明日预测 ──┬── 今日交易 ───┐      │
+│ │ ✓ 涨停33家 │  修复 40%    │ ✓ 允许        │      │
+│ │ ✓ 炸板23家 │  持续 50%    │ ✗ 禁止        │      │
+│ └────────────┴─────────────┴───────────────┘       │
+│                                                    │
+│ ▼ 分析师图表 Evidence Charts                       │
+│   [大盘势能] [情绪动能]                             │
+│   [活跃资金] [核心板块节律]                          │
+│   (7张静态JSON图表, 即时加载)                       │
+└────────────────────────────────────────────────────┘
+```
+
+### 29.2 数据加载策略
+
+| 数据类型 | 来源 | 加载方式 |
+|----------|------|----------|
+| 情绪节点/评分 | `/api/emotion-{date}.json` | 静态 JSON (即时), API 后备 |
+| 5日趋势 | `/api/analyst-charts/trend.json` | 静态 JSON (即时) |
+| 7张图表 | `/api/analyst-charts/{date}.json` | 静态 JSON (自动加载) |
+| 主题工作区 | `/api/v1/analyst-workspace/` | SPS API (不阻塞情绪页) |
+
+- 不再依赖 SPS 服务器实时 API 调用
+- 日历切换即时更新 (URL sync + 数据自动刷新)
+- 标签页使用 CSS display:none 切换 (零 JSX 嵌套修改)
+
+### 29.3 关键组件
+
+```
+frontend/src/components/analyst/
+├── AnalystWorkspacePage.tsx   # 主页 (标签页 + 日期选择)
+├── EmotionDashboard.tsx       # 情绪仪表盘 (顶部卡片 + 证据区)
+├── ChartRenderer.tsx          # SVG 图表渲染器 (7种图表类型)
+│   ├── AnalystBreadthChart    # 大盘势能 (评分仪表 + 指标网格)
+│   ├── AnalystMomentumChart   # 情绪动能 (色区指针 + 因子表)
+│   ├── AnalystCapitalChart    # 活跃资金 (比例柱 + 指标)
+│   ├── AnalystRelayChart      # 核心板块节律 (阶梯图 + 晋级率)
+│   ├── AnalystStyleTable      # 机构/游资方向 (状态矩阵)
+│   └── AnalystLimitUpChart    # 涨停分类 (题材卡片)
+└── TrendLineChart             # 多日折线图 (viewBox 响应式)
+```
+
+---
+
+## 30. 技术债务与已知限制
+
+| 问题 | 影响 | 优先级 |
+|------|------|--------|
+| Emotion Momentum 公式 | AI=-6.2 vs Analyst=-12, 需 per-stock returns 持久化表 | P1 |
+| 7/7 最高板 dev=1 (6≠5) | 恒尚节能 6/30 EM 数据缺失 | P2 |
+| Death Index 偶发 None | `_build_death_index` 返回 None bug | P2 |
+| 7/8 Phase 混沌≠REPAIR_WATCH | 修复信号检测不足 | P1 |
+| 活跃资金 25.6万亿总成交额 | recap total_amount 单位待校准 | P2 |
+| SPS 服务器不稳定 | 前端已切换为静态 JSON 优先 | P0 (已缓解) |
+
+---
+
+## 31. 当前能力矩阵
+
+```
+L0 市场事实        ✅ (Eastmoney Board Pool, 统一数据源)
+L1 指标治理        ✅ (Metric Registry + Quality + Dependency Graph)
+L2 市场诊断        ✅ (10-phase ontology v2, Emotion v4.1)
+L3 因果叙事        ✅ (Narrative Engine + Evidence Chain)
+L4 市场记忆        ✅ (Market Memory + TurningPoint + Failure)
+L5 认知校准        ✅ (Calibration Learning Loop + Drift Engine)
+L6 外部环境        ⬜ (Phase 4, 未开始)
+```
+
