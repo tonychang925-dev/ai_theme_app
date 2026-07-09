@@ -562,8 +562,12 @@ class MarketMetricsService:
             p3to4 = round(max(0, (lu.max_board_height - 3)) * 0.05, 2)
 
         # ── Yesterday feedback (v2) ──
+        yesterday_count = 0
+        today_continue = 0
+        continue_ratio = 0.0
+        big_loss_count = 0
+        avg_return = None
         if em_yesterday_zt and em_zt:
-            # Compute from yesterday ZT pool + today ZT pool
             yesterday_count = len(em_yesterday_zt)
             today_codes = {s.code.strip(): s for s in em_zt}
             today_continue = 0
@@ -571,28 +575,30 @@ class MarketMetricsService:
                 if ys.code.strip() in today_codes:
                     today_continue += 1
             continue_ratio = round(today_continue / max(yesterday_count, 1), 3)
-            big_loss_count = yesterday_count - today_continue  # rough: didn't continue
-            avg_return = None
-        elif yesterday_codes:
-            yesterday_count = len(yesterday_codes)
-            # Today's limit-up stocks
-            today_rows = await conn.fetch(
-                "SELECT stock_code FROM ths_hot_reason_snapshot "
-                "WHERE trade_date = $1::date", td)
-            today_set = {_norm(r["stock_code"]) for r in today_rows if _norm(r["stock_code"])}
+            # Populate yesterday_codes from EM so SDS big_loss query works
+            yesterday_codes = {s.code.strip() for s in em_yesterday_zt}
+        if yesterday_codes:
+            # Compute SDS-based big_loss for failed codes (always, regardless of EM path)
+            if not em_yesterday_zt:  # EM path already set yesterday_count/continue/ratio
+                yesterday_count = len(yesterday_codes)
+                # Today's limit-up stocks
+                today_rows = await conn.fetch(
+                    "SELECT stock_code FROM ths_hot_reason_snapshot "
+                    "WHERE trade_date = $1::date", td)
+                today_set = {_norm(r["stock_code"]) for r in today_rows if _norm(r["stock_code"])}
+                continue_codes = yesterday_codes & today_set
+                today_continue = len(continue_codes)
+                continue_ratio = round(today_continue / max(yesterday_count, 1), 3)
+                failed_codes = yesterday_codes - today_set
+            else:
+                # EM already computed continue; use today EM codes for failed detection
+                em_today_set = {s.code.strip() for s in em_zt}
+                failed_codes = yesterday_codes - em_today_set
 
-            # Continued = yesterday ∩ today
-            continue_codes = yesterday_codes & today_set
-            today_continue = len(continue_codes)
-            continue_ratio = round(today_continue / max(yesterday_count, 1), 3)
-
-            # Failed = yesterday - today — check today's return
-            failed_codes = yesterday_codes - today_set
             big_loss_count = 0
             failed_returns: list[float] = []
 
             if failed_codes:
-                # Query today's stock_daily_snapshot for failed codes' pct_chg
                 rows = await conn.fetch(
                     "SELECT stock_id, pct_chg FROM stock_daily_snapshot "
                     "WHERE trade_date = $1::date", td)
@@ -610,11 +616,6 @@ class MarketMetricsService:
                             big_loss_count += 1
 
             avg_return = round(sum(failed_returns) / max(len(failed_returns), 1), 2) if failed_returns else None
-        else:
-            today_continue = 0
-            continue_ratio = 0.0
-            big_loss_count = 0
-            avg_return = None
 
         # ── LimitUp Feedback Score (-100 ~ +100) ──
         if yesterday_count > 0:
