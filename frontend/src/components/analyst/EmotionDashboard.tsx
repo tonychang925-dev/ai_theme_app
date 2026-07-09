@@ -94,12 +94,20 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   const [artifacts, setArtifacts] = useState<EvidenceArtifact[]>([]);
   const [showEvidence, setShowEvidence] = useState(false);
   const [trendData, setTrendData] = useState<any>(null);
+  const [systemCharts, setSystemCharts] = useState<any[]>([]);
   const trend = useEmotionTrend(tradeDate);
 
   const loadTrends = useCallback(async () => {
     try {
       const resp = await fetch(`http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}/trends?days=7`);
       if (resp.ok) setTrendData(await resp.json());
+    } catch { /* ignore */ }
+  }, [tradeDate]);
+
+  const loadSystemCharts = useCallback(async () => {
+    try {
+      const resp = await fetch(`http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}`);
+      if (resp.ok) setSystemCharts(await resp.json());
     } catch { /* ignore */ }
   }, [tradeDate]);
 
@@ -304,10 +312,10 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
       {/* ── Evidence Charts (collapsible) ── */}
       <div style={{ marginTop: 10 }}>
         <div
-          onClick={() => { setShowEvidence(!showEvidence); if (!showEvidence) { loadArtifacts(); loadTrends(); } }}
+          onClick={() => { setShowEvidence(!showEvidence); if (!showEvidence) { loadArtifacts(); loadTrends(); loadSystemCharts(); } }}
           style={{ fontSize: 11, color: "#5a7a8a", cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}>
           <span>{showEvidence ? "▼" : "▶"} 分析师图表 Evidence Charts</span>
-          {artifacts.length > 0 && <span style={{ color: "#66d9ef" }}>({artifacts.length})</span>}
+          {(artifacts.length + systemCharts.length) > 0 && <span style={{ color: "#66d9ef" }}>({artifacts.length + systemCharts.length}) {systemCharts.length > 0 ? `含${systemCharts.length}张系统图表` : ""}</span>}
         </div>
         {showEvidence && (
           <div style={{ marginTop: 8 }}>
@@ -336,6 +344,30 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
                       data: a.extracted_metrics || {},
                       interpretation: a.summary || "",
                     }} />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* System-generated charts from /api/v1/analyst-charts */}
+            {systemCharts.length > 0 && (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: 10, marginBottom: 12 }}>
+                {systemCharts.map((chart: any, idx: number) => (
+                  <div key={chart.chart_id || idx} style={{
+                    padding: 10, background: "#111720", borderRadius: 4, border: "1px solid #243040",
+                  }}>
+                    <div style={{ fontSize: 12, fontWeight: 600, color: "#ffd85e", marginBottom: 4 }}>
+                      {chart.title}
+                    </div>
+                    <div style={{ fontSize: 10, color: "#5a7a8a", marginBottom: 6 }}>
+                      {chart.module} · {chart.calibrated ? "analyst_pdf" : chart.calibration_source || "system_generated"}
+                    </div>
+                    <ChartRenderer chart={chart} />
+                    {chart.interpretation && (
+                      <div style={{ fontSize: 10, color: "#8ddcff", marginTop: 6, lineHeight: 1.4, padding: "4px 6px", background: "#0c1118", borderRadius: 3 }}>
+                        {chart.interpretation}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
