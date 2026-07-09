@@ -7250,6 +7250,8 @@ async def get_market_metrics(trade_date: str) -> dict[str, Any]:
                 "fried_board_count": snap.limitup.fried_board_count,
                 "sealed_board_ratio": snap.limitup.sealed_board_ratio,
                 "chain_board_count": snap.limitup.chain_board_count,
+                "current_board_height": snap.limitup.current_board_height,
+                "historical_streak_height": snap.limitup.historical_streak_height,
                 "max_board_height": snap.limitup.max_board_height,
                 "max_turnover_board_height": snap.limitup.max_turnover_board_height,
                 "first_board_count": snap.limitup.first_board_count,

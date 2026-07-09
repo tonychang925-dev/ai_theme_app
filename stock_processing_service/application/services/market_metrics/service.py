@@ -311,8 +311,11 @@ class MarketMetricsService:
                 break
 
         max_h = max(today_streaks.values()) if today_streaks else 1
-        chain_count = sum(1 for h in today_streaks.values() if h >= 2)
-        first_count = total - chain_count
+        # current_board_height: analyst口径 — 仅统计 streak=2 (昨1板+今2板=真实连板)
+        current_board = sum(1 for h in today_streaks.values() if h == 2)
+        # historical_streak_height: streak回溯 — streak>=2 (包含3+,4+,5+)
+        historical_streak = sum(1 for h in today_streaks.values() if h >= 2)
+        first_count = total - current_board
         high_board = sum(1 for h in today_streaks.values() if h >= 3)
 
         # ── Streak distribution for relay ──
@@ -348,7 +351,9 @@ class MarketMetricsService:
             total_count=total,
             sealed_count=sealed,
             fried_board_count=fried,
-            chain_board_count=chain_count,
+            chain_board_count=current_board,  # backward compat → current_board_height
+            current_board_height=current_board,
+            historical_streak_height=historical_streak,
             max_board_height=max_h,
             max_turnover_board_height=max_h,  # TODO: proper turnover board height
             first_board_count=first_count,

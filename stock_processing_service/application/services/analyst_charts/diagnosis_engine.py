@@ -128,37 +128,26 @@ class DiagnosisEngine:
             reason=f"涨停{b.limit_up_count}家，连板{l.chain_board_count}只",
         )
 
-        # ── Step 6: Emotion Phase ──
-        # v3.2: dynamic loss weight based on relay feedback
-        capital_value = int((c.active_ratio - 0.03) * 500)
+        # ── Step 6: Emotion Phase (v4: short-term trading ecology) ──
+        # Recalibrated: analyst focus is 接力>龙头>亏钱>质量>宽度
+        # NOT market breadth dominated
         loss = snap.loss_effect
-        loss_penalty = int(loss.loss_effect_score * 0.5) if loss else 0
+        loss_penalty = int(loss.loss_effect_score * 0.8) if loss else 0
         leader = snap.leader_evolution
         leader_contribution = int((leader.leader_health_score - 50) * 0.8) if leader else 0
-
-        # ── High Position Death Index ──
         death = snap.high_position_death
         death_penalty = int(death.death_index * 0.6) if death else 0
 
-        # Dynamic loss weight (v3.2): up to 35% in panic
-        relay_fb = snap.relay.feedback_score
-        if death and death.death_label == "CRITICAL":
-            loss_weight = 0.35   # 高位核心死亡 — loss dominates everything
-        elif death and death.death_label == "DANGER":
-            loss_weight = 0.25   # 高位风险释放
-        elif relay_fb < -50 or (loss and loss.loss_effect_label in ("恐慌", "严重")):
-            loss_weight = 0.25
-        elif relay_fb < -20:
-            loss_weight = 0.20
-        elif relay_fb < 0:
-            loss_weight = 0.15
-        else:
-            loss_weight = 0.10
+        # Board quality: penalize low sealed ratio, reward high quality
+        sealed_quality = int((l.sealed_board_ratio - 0.5) * 200)  # -100 to +100
 
         composite = int(
-            m.momentum_normalized * 0.10 + breadth_value * 0.25
-            + relay_value * 0.20 + leader_contribution * 0.25
-            + capital_value * 0.10 - loss_penalty * loss_weight - death_penalty * 0.10
+            relay_value * 0.30                    # 接力生态 30%
+            + leader_contribution * 0.25          # 龙头状态 25%
+            - loss_penalty * 0.20                 # 亏钱效应 20%
+            + sealed_quality * 0.15               # 涨停质量 15%
+            + breadth_value * 0.10                # 市场宽度 10%
+            - death_penalty * 0.10                # 高位死亡惩罚
         )
 
         # ── 10-phase ontology v2 ──

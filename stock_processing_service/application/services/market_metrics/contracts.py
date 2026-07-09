@@ -66,7 +66,9 @@ class LimitUpMetrics:
     total_count: int                 # 触及涨停总数 = sealed + fried
     sealed_count: int                # 封板成功数 (pct_chg >= threshold)
     fried_board_count: int           # 炸板数 (hit limit but did not seal)
-    chain_board_count: int           # 连板家数 (streak >= 2)
+    chain_board_count: int           # [DEPRECATED] use current_board_height
+    current_board_height: int        # 当日有效连板梯队 (analyst口径: 今日涨停 ∩ 昨日有板)
+    historical_streak_height: int    # 历史最大连续板 (streak回溯, 趋势研究用)
     max_board_height: int            # 最高板（含一字板）
     max_turnover_board_height: int   # 最高换手板
     first_board_count: int           # 首板数
