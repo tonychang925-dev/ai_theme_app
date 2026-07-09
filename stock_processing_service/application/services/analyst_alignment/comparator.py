@@ -434,11 +434,14 @@ class AnalystComparator:
         abs_diff = abs(a_num - b_num)
         rel_diff = abs_diff / max(abs(a_num), 1e-6)
 
-        # Combined tolerance: must satisfy BOTH abs AND pct, or either if only one set
+        # Combined tolerance: satisfy EITHER abs OR pct (business semantics: "±X or ±Y%")
         if tol_abs > 0 or tol_pct > 0:
-            passed_abs = abs_diff <= tol_abs if tol_abs > 0 else True
-            passed_pct = rel_diff <= tol_pct if tol_pct > 0 else True
-            passed = passed_abs and passed_pct  # AND logic: both tols must be satisfied (if set)
+            passed_checks: list[bool] = []
+            if tol_abs > 0:
+                passed_checks.append(abs_diff <= tol_abs)
+            if tol_pct > 0:
+                passed_checks.append(rel_diff <= tol_pct)
+            passed = any(passed_checks) if passed_checks else abs_diff == 0
         else:
             passed = abs_diff == 0
 
@@ -712,7 +715,7 @@ class AnalystComparator:
                 continue
             if isinstance(d, MetricDiff):
                 if d.diff_type == DiffType.MISSING_AI and not d.excluded_from_score:
-                    errors.append(ErrorType.REFERENCE_WEAK)
+                    errors.append(ErrorType.DATA_ERROR)
                 elif d.diff_type == DiffType.NUMERIC_DIFF:
                     if d.absolute_diff is not None and d.absolute_diff > (d.tolerance * 3 if d.tolerance > 0 else 0):
                         errors.append(ErrorType.DATA_ERROR)

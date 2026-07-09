@@ -391,3 +391,53 @@ def test_leader_overlap(comparator, analyst_0708):
     assert len(report.leader_diffs) > 0
     leader_diff = report.leader_diffs[0]
     assert leader_diff.score > 0.0
+
+
+# ═══ TC-4.2-T03.1-01: tolerance OR logic — pct passes when abs fails ═══
+
+def test_numeric_tolerance_or_logic_pct_passes(comparator):
+    """1000 vs 1030: abs=30 > 20, pct=3% <= 5% → should PASS via OR."""
+    analyst = AnalystReferenceRecord(
+        trade_date=date(2026, 7, 9), source_type="mock",
+        market_facts=MarketFacts(active_capital_yi=1000.0, limit_up_count=50, max_board_height=5),
+        emotion_label=EmotionLabel(),
+        relay_label=RelayLabel(max_board_height=5),
+        quality=AnalystReferenceQuality(extraction_status=ExtractionStatus.CORE_COMPLETE),
+    )
+    ai = AIDiagnosisReferenceView(
+        trade_date=date(2026, 7, 9),
+        market_facts=MarketFacts(active_capital_yi=1030.0, limit_up_count=50, max_board_height=5),
+        emotion_label=EmotionLabel(),
+        relay_label=RelayLabel(max_board_height=5),
+    )
+    report = comparator.compare(analyst, ai)
+    cap_diff = [d for d in report.fact_diffs if "active_capital" in d.field_path][0]
+    assert cap_diff.passed, \
+        f"Expected OR logic: abs=30>20 but pct=3%<=5% should pass. diff={cap_diff}"
+
+
+# ═══ TC-4.2-T03.1-02: MISSING_AI → DATA_ERROR ═══
+
+def test_missing_ai_classified_as_data_error(comparator):
+    """MISSING_AI should be DATA_ERROR, not REFERENCE_WEAK."""
+    analyst = AnalystReferenceRecord(
+        trade_date=date(2026, 7, 9), source_type="mock",
+        market_facts=MarketFacts(limit_up_count=50, max_board_height=5),
+        emotion_label=EmotionLabel(),
+        relay_label=RelayLabel(max_board_height=5),
+        quality=AnalystReferenceQuality(extraction_status=ExtractionStatus.CORE_COMPLETE),
+    )
+    ai = AIDiagnosisReferenceView(
+        trade_date=date(2026, 7, 9),
+        market_facts=MarketFacts(limit_up_count=None),
+        emotion_label=EmotionLabel(),
+        relay_label=RelayLabel(max_board_height=5),
+        missing_fields=("market_facts.limit_up_count",),
+    )
+    report = comparator.compare(analyst, ai)
+    # MISSING_AI should appear as DATA_ERROR, not REFERENCE_WEAK
+    from stock_processing_service.application.services.analyst_alignment.contracts import ErrorType
+    assert ErrorType.DATA_ERROR in report.error_types, \
+        f"Expected DATA_ERROR for MISSING_AI, got {report.error_types}"
+    assert ErrorType.REFERENCE_WEAK not in report.error_types, \
+        f"MISSING_AI should NOT be REFERENCE_WEAK, got {report.error_types}"
