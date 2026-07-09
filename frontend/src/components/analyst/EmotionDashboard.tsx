@@ -88,6 +88,9 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   const [multiTrend, setMultiTrend] = useState<any>(null);
   const trend = useEmotionTrend(tradeDate);
 
+  // Auto-load chart data when date changes (not just on expand)
+  useEffect(() => { loadSystemCharts(); }, [tradeDate]);
+
   const loadSystemCharts = useCallback(async () => {
     // Load multi-day trend data (static, instant)
     try {
