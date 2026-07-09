@@ -161,8 +161,8 @@ PHASE_TO_ANALYST = {
 
 # Analyst keywords → AI phase (reverse mapping for comparison)
 ANALYST_KEYWORDS = {
-    "PANIC":            ["恐慌", "恐慌释放", "情绪恐慌"],
-    "FREEZE":           ["冰点", "情绪冰点", "极致冰点", "冻结"],
+    "PANIC":            ["恐慌", "恐慌释放", "情绪恐慌", "恐慌/冰点", "情绪冰点"],
+    "FREEZE":           ["冰点", "极致冰点", "冻结"],
     "DISTRIBUTION":     ["退潮", "派发", "高位退潮", "补跌"],
     "FIRST_DIVERGENCE": ["分歧", "第一次分歧", "高位分歧"],
     "REPAIR":           ["修复", "反弹", "回暖", "情绪修复"],
@@ -248,6 +248,9 @@ class ReplayEngine:
 
         # ═══ L1: Market State Recognition (25pts) ═══
         ai_phase = narrative.market_phase if narrative else self._infer_phase(r, death)
+        # Normalize combined labels
+        if ai_phase == "恐慌/冰点":
+            ai_phase = "PANIC"
         ai_phase_analyst = PHASE_TO_ANALYST.get(ai_phase, ai_phase)
 
         ref_phase = ref.market_phase

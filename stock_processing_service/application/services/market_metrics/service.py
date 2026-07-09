@@ -172,6 +172,9 @@ class MarketMetricsService:
 
         Uses pct_chg to classify sealed vs fried per stock, with
         threshold varying by board type (主板 10%, 创业板/科创 20%, ST 5%).
+
+        When ths_hot_reason_snapshot lacks pct_chg (NULL), cross-references
+        stock_daily_snapshot for the missing data.
         """
         rows = await conn.fetch(
             "SELECT stock_code, stock_name, reason_raw, reason_tags, "
@@ -180,6 +183,26 @@ class MarketMetricsService:
             "WHERE trade_date = $1::date",
             td,
         )
+
+        # ── Detect pct_chg gap and backfill from stock_daily_snapshot ──
+        ths_has_pct = any(float(r["pct_chg"] or 0) != 0 for r in rows) if rows else False
+        sds_backfill: dict[str, dict] = {}
+        if not ths_has_pct and rows:
+            # Batch lookup from stock_daily_snapshot via stock_code + suffix join
+            codes = [self._norm_code(r["stock_code"]) for r in rows]
+            sds_rows = await conn.fetch(
+                "SELECT stock_id, pct_chg, amount FROM stock_daily_snapshot "
+                "WHERE trade_date = $1::date", td)
+            sds_map: dict[str, dict] = {}
+            for sr in sds_rows:
+                sid = str(sr["stock_id"] or "")
+                # stock_daily_snapshot.stock_id is like "000001.SZ"
+                code = sid.split(".")[0] if "." in sid else sid
+                sds_map[code] = {"pct_chg": float(sr["pct_chg"] or 0),
+                                 "amount": float(sr["amount"] or 0)}
+            for code in codes:
+                if code in sds_map:
+                    sds_backfill[code] = sds_map[code]
 
         # ── Per-stock classification ──
         sealed_codes: set[str] = set()
@@ -201,10 +224,28 @@ class MarketMetricsService:
             all_codes.add(code)
 
             stock_name = str(r["stock_name"] or "")
-            pct = float(r["pct_chg"] or 0)
-            turnover = float(r["turnover_rate"] or 0)
-            raw_amount = float(r["amount"] or 0)
-            big_order = float(r["big_order_net"] or 0)
+
+            # Priority: THS pct_chg → stock_daily_snapshot backfill → assume sealed
+            ths_pct = float(r["pct_chg"] or 0)
+            ths_turnover = float(r["turnover_rate"] or 0)
+            ths_has_data = ths_pct != 0.0 or ths_turnover != 0.0
+
+            if ths_has_data:
+                pct = ths_pct
+                turnover = ths_turnover
+                raw_amount = float(r["amount"] or 0)
+                big_order = float(r["big_order_net"] or 0)
+            elif code in sds_backfill:
+                bf = sds_backfill[code]
+                pct = bf["pct_chg"]
+                turnover = 0.0  # sds doesn't have turnover_rate
+                raw_amount = bf["amount"]
+                big_order = 0.0
+            else:
+                pct = 10.0  # conservative: assume sealed at 10%
+                turnover = 0.0
+                raw_amount = 0.0
+                big_order = 0.0
 
             threshold = self._limit_threshold(code, stock_name)
             board = self._board_class(code, stock_name)
@@ -377,11 +418,11 @@ class MarketMetricsService:
             if failed_codes:
                 # Query today's stock_daily_snapshot for failed codes' pct_chg
                 rows = await conn.fetch(
-                    "SELECT stock_code, pct_chg FROM stock_daily_snapshot "
+                    "SELECT stock_id, pct_chg FROM stock_daily_snapshot "
                     "WHERE trade_date = $1::date", td)
                 today_pct: dict[str, float] = {}
                 for r in rows:
-                    code = _norm(r["stock_code"])
+                    code = _norm(r["stock_id"])
                     if code and code in failed_codes:
                         today_pct[code] = float(r["pct_chg"] or 0)
 
@@ -714,8 +755,12 @@ class MarketMetricsService:
         fb_norm = min(100, fb_inv)
         bl_norm = min(100, bl * 10)
 
-        # v2: contagion replaces part of the high_board_loss weight
-        death = round(lb_norm * 0.40 + contagion_norm * 0.15 + hb_norm * 0.15 + fb_norm * 0.20 + bl_norm * 0.10, 1)
+        # v2: contagion + relay-driven escalation
+        death = round(lb_norm * 0.35 + contagion_norm * 0.15 + hb_norm * 0.10 + fb_norm * 0.25 + bl_norm * 0.15, 1)
+        # Relay-driven death escalation: even without leader breaks,
+        # terrible relay feedback signals systemic risk
+        if death < 35 and relay.feedback_score < -35:
+            death = min(50, death + (abs(relay.feedback_score) - 35) * 0.5)
 
         # ── Label ──
         if death >= 60:

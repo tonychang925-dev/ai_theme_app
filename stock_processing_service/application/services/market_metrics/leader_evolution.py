@@ -52,7 +52,7 @@ class LeaderEvolutionBuilder:
         """Classify leaders with expectation tracking."""
 
         leaders: list[LeaderSnapshot] = []
-        super_cont = normal_cont = weaken_exp = weaken_unexp = breaks = new_count = replaced = 0
+        super_cont = normal_cont = weaken_exp = weaken_unexp = breaks = new_count = replaced_count = 0
         surprises: list[float] = []
 
         # ── Pre-compute theme followers (for diffusion factor) ──

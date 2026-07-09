@@ -327,7 +327,7 @@ class NarrativeEngine:
         chain: list[CausalStep] = []
 
         # 1: Leader → Relay
-        if leader and leader.break_alert:
+        if leader and leader.leader_break_alert:
             chain.append(CausalStep(
                 from_node=f"龙头断板({leader.break_count}/{leader.yesterday_leader_count}只高标断裂)",
                 to_node=f"接力情绪下降(反馈{r.feedback_label})",
@@ -392,10 +392,14 @@ class NarrativeEngine:
 
     def _phase_label(self, r, leader, loss) -> str:
         fb = r.feedback_score
-        if loss and loss.loss_effect_label == "恐慌":
+        # Relay + loss combined escalation: even without leader deaths,
+        # terrible relay + significant loss = panic/freeze
+        if loss and loss.loss_effect_label in ("恐慌", "严重"):
+            return "恐慌/冰点"
+        if fb < -40 and loss and loss.loss_effect_label in ("明显", "严重", "恐慌"):
             return "恐慌/冰点"
         if leader and leader.leader_health_label == "COLLAPSE":
-            return "退潮"
+            return "恐慌/冰点"
         if fb < -40:
             return "退潮"
         if fb < -10:
@@ -539,8 +543,13 @@ class NarrativeEngine:
 
     def _build_strategy(self, r, leader, loss) -> tuple[str, tuple, tuple, str]:
         fb = r.feedback_score
-        if (loss and loss.loss_effect_label == "恐慌") or fb < -60:
+        # CRITICAL: panic loss OR very negative relay + significant loss
+        if (loss and loss.loss_effect_label in ("恐慌", "严重")) or fb < -60:
             return ("全面防守。不买任何短线品种，只观察不操作。",
+                    ("观察",), ("接力", "追高", "打板", "低吸", "重仓"), "CRITICAL")
+        # Relay-driven CRITICAL: weak feedback + concrete damage
+        if fb < -35 and loss and loss.loss_effect_label == "明显" and loss.limit_down_count > 30:
+            return ("全面防守。接力崩塌+亏钱扩散，耐心等待情绪修复。",
                     ("观察",), ("接力", "追高", "打板", "低吸", "重仓"), "CRITICAL")
         if fb < -30 or (leader and leader.leader_health_label == "COLLAPSE"):
             return ("防守等待。耐心等待龙头修复或新周期启动，不做后排。",

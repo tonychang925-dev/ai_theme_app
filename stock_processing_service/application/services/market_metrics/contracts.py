@@ -107,7 +107,7 @@ class RelayEcologyMetrics:
     yesterday_avg_return_pct: float | None = None  # 昨涨停股今日平均收益率(%)
 
     # ── LimitUp Feedback Score (v2) ──
-    feedback_score: float                 # -100 ~ +100 接力反馈分数
+    feedback_score: float = 0.0           # -100 ~ +100 接力反馈分数
     feedback_label: str = ""              # "强正反馈"|"正反馈"|"中性"|"负反馈"|"强负反馈"
     feedback_components: dict[str, float] = field(default_factory=dict)
     # keys: "continue_bonus", "big_loss_penalty", "avg_return_adjust"
@@ -133,28 +133,26 @@ class LossEffectMetrics:
       - big_loss: reuses relay.yesterday_big_loss_count
       - high_board_break: cross-ref yesterday high-board stocks with today
     """
-    # ── Limit down ──
+    # ── Limit down (non-default first) ──
     limit_down_count: int              # 跌停家数
     limit_down_ratio: float            # 跌停/全市场
-    limit_down_amount_yi: float = 0.0  # 跌停股票总成交额（亿元）
 
-    # ── Big loss (大面) ──
+    # ── Big loss ──
     big_loss_count: int                # 大面数（昨涨停今日跌>5%）
-    big_loss_from_yesterday_ratio: float = 0.0  # 大面/昨涨停
 
-    # ── High board break (高位断板) ──
-    high_board_break_count: int = 0    # 高标断板（昨>=3板，今未涨停）
-
-    # ── Composite loss effect score ──
-    loss_effect_score: float = 0.0     # 0~100 (0=无亏钱效应, 100=极致亏钱)
-    loss_effect_label: str = ""        # "安全"|"轻微"|"明显"|"严重"|"恐慌"
-
-    # ── Total damage ──
-    total_damage_count: int = 0        # 跌停 + 大面 (去重估计)
-    damage_ratio: float = 0.0          # total_damage / 全市场股票数
-
-    # ── Provenance ──
+    # ── Optional with defaults ──
+    limit_down_amount_yi: float = 0.0
+    big_loss_from_yesterday_ratio: float = 0.0
+    high_board_break_count: int = 0
+    loss_effect_score: float = 0.0
+    loss_effect_label: str = ""
+    total_damage_count: int = 0
+    damage_ratio: float = 0.0
     source: MetricSource = field(default_factory=lambda: MetricSource("db_query"))
+
+
+@dataclass(frozen=True, slots=True)
+class ActiveCapitalMetrics:
     total_turnover_yi: float          # 全市场成交额（亿元）
     active_limitup_amount_yi: float   # 涨停/触板活跃资金成交额（亿元）
     active_ratio: float               # 活跃资金 / 全市场成交额
@@ -204,8 +202,8 @@ class LeaderSnapshot:
     stock_code: str
     stock_name: str
     board_height: int                # 当前连板高度
-    relative_height: float = 0.0     # board_height / market_max_height (0-1)
     status: str                      # 8-state expectation model
+    relative_height: float = 0.0     # board_height / market_max_height (0-1)
     expected_height: int = 0
     surprise_score: float = 0.0
     yesterday_status: str = ""
