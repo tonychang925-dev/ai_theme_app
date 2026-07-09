@@ -33,7 +33,15 @@ DB_DSN = "postgresql://localhost:5432/stock_data_test"
 
 
 class MarketMetricsService:
-    """Produce MarketMetricsSnapshot — the single source of truth."""
+    """Produce MarketMetricsSnapshot — the single source of truth.
+
+    Supports optional BoardPoolProvider for a-stock-data integration.
+    When available, limit_days and promotion rates come from Eastmoney
+    board pools instead of streak backtracking.
+    """
+
+    def __init__(self, board_provider=None):
+        self._board_provider = board_provider  # BoardPoolProvider | None
 
     def get(self, trade_date: date) -> MarketMetricsSnapshot:
         return asyncio.run(self._get_async(trade_date))
@@ -79,9 +87,22 @@ class MarketMetricsService:
         recap = await self._load_recap(conn, trade_date)
         overview = recap.get("market_overview_review", {}) if recap else {}
 
+        # ── Board pool data from a-stock-data (Eastmoney API) ──
+        em_zt = em_zb = em_dt = em_yzt = None
+        if self._board_provider:
+            try:
+                em_zt = await self._board_provider._client.fetch_zt_pool(trade_date)
+                em_zb = await self._board_provider._client.fetch_zb_pool(trade_date)
+                em_dt = await self._board_provider._client.fetch_dt_pool(trade_date)
+                em_yzt = await self._board_provider._client.fetch_yzt_pool(trade_date)
+            except Exception:
+                pass  # fallback to DB-backed computation
+
         breadth = await self._build_breadth(trade_date, overview, {})
-        limitup, streak_dist, yesterday_codes, stock_detail, today_streaks = await self._build_limitup(conn, trade_date, overview, {})
-        relay = await self._build_relay(conn, trade_date, limitup, streak_dist, yesterday_codes, today_streaks)
+        limitup, streak_dist, yesterday_codes, stock_detail, today_streaks = await self._build_limitup(
+            conn, trade_date, overview, {}, em_zt, em_zb)
+        relay = await self._build_relay(conn, trade_date, limitup, streak_dist,
+                                         yesterday_codes, today_streaks, em_yzt, em_zt)
         capital = await self._build_capital(conn, trade_date, breadth, overview)
         momentum = self._build_momentum(breadth, limitup)
         loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay)
@@ -169,7 +190,8 @@ class MarketMetricsService:
             return "北交所"
         return "主板"
 
-    async def _build_limitup(self, conn, td: date, overview: dict, cal: dict) -> tuple[LimitUpMetrics, dict[int, int], set[str], dict[str, dict]]:
+    async def _build_limitup(self, conn, td: date, overview: dict, cal: dict,
+                              em_zt=None, em_zb=None) -> tuple[LimitUpMetrics, dict[int, int], set[str], dict[str, dict], dict[str, int]]:
         """Build real LimitUpMetrics from ths_hot_reason_snapshot.
 
         Uses pct_chg to classify sealed vs fried per stock, with
@@ -281,47 +303,81 @@ class MarketMetricsService:
         sealed = len(sealed_codes)
         fried = len(fried_codes)
 
-        # ── Streak calculation (chain board) ──
-        # Analyst methodology: consecutive trading days with limit-up
-        # Window: 3 most recent trading days (matching analyst 连板 tracking)
-        # Gap detection: >3 calendar day gap resets streak for that stock
-        today_streaks: dict[str, int] = {code: 1 for code in all_codes}
-        last_seen: dict[str, date] = {code: td for code in all_codes}  # track gaps
-
-        prev_dates: list[date] = []
-        cursor = td
-        MAX_STREAK_DEPTH = 5  # analyst typically tracks 3-5 day window
-        for _ in range(MAX_STREAK_DEPTH):
-            row = await conn.fetchrow(
-                "SELECT MAX(trade_date) as d FROM ths_hot_reason_snapshot "
-                "WHERE trade_date < $1::date", cursor)
-            if not row or not row["d"]:
-                break
-            prev_dates.append(row["d"])
-            cursor = row["d"]
-
+        # ── Streak / board height ──
+        # Priority: Eastmoney API limit_days (a-stock-data) → streak backtracking
+        today_streaks: dict[str, int] = {}
         yesterday_codes: set[str] = set()
-        for prev_d in prev_dates:
-            prev_rows = await conn.fetch(
-                "SELECT stock_code FROM ths_hot_reason_snapshot "
-                "WHERE trade_date = $1::date", prev_d)
-            prev_set = {self._norm_code(r["stock_code"]) for r in prev_rows}
-            # Capture yesterday's codes for feedback calc
-            if not yesterday_codes:
-                yesterday_codes = prev_set.copy()
-            extended = False
-            for code in list(today_streaks.keys()):
-                if code in prev_set:
-                    # Gap detection: >3 calendar days between appearances = broken streak
-                    gap = (last_seen[code] - prev_d).days if code in last_seen else 0
-                    if gap <= 3:  # within 3 calendar days = continuous
-                        today_streaks[code] += 1
+
+        if em_zt:
+            # ── Use Eastmoney board pool limit_days ──
+            # Map stock codes from Eastmoney format (with market prefix like "SH603137")
+            em_code_map: dict[str, str] = {}
+            for s in em_zt:
+                raw_code = (s.code or "").strip()
+                # Eastmoney returns codes like "SH603137" or "SZ000001"
+                norm = raw_code[2:] if len(raw_code) >= 3 and raw_code[:2] in ("SH", "SZ", "BJ") else raw_code
+                em_code_map[norm] = raw_code
+
+            # Match today's limit-up stocks with Eastmoney pool
+            for code in all_codes:
+                em_code = em_code_map.get(code, "")
+                if em_code:
+                    em_stock = next((s for s in em_zt if (s.code or "").strip() == em_code), None)
+                    if em_stock and em_stock.limit_days > 0:
+                        today_streaks[code] = em_stock.limit_days
                     else:
-                        today_streaks[code] = 1  # reset: gap too large
-                    last_seen[code] = prev_d
-                    extended = True
-            if not extended:
-                break
+                        today_streaks[code] = 1
+                else:
+                    # Try fuzzy match
+                    matched = False
+                    for s in em_zt:
+                        raw_code = (s.code or "").strip()
+                        norm = raw_code[2:] if len(raw_code) >= 3 and raw_code[:2] in ("SH", "SZ", "BJ") else raw_code
+                        if norm == code:
+                            today_streaks[code] = max(1, s.limit_days)
+                            matched = True
+                            break
+                    if not matched:
+                        today_streaks[code] = 1
+
+            # Yesterday codes: from Eastmoney 昨涨停池 (fetched separately in _build_relay)
+            yesterday_codes = set()  # populated in _build_relay from em_yzt
+
+        else:
+            # ── Fallback: streak backtracking from ths_hot_reason_snapshot ──
+            today_streaks = {code: 1 for code in all_codes}
+            last_seen: dict[str, date] = {code: td for code in all_codes}
+
+            prev_dates: list[date] = []
+            cursor = td
+            for _ in range(5):
+                row = await conn.fetchrow(
+                    "SELECT MAX(trade_date) as d FROM ths_hot_reason_snapshot "
+                    "WHERE trade_date < $1::date", cursor)
+                if not row or not row["d"]:
+                    break
+                prev_dates.append(row["d"])
+                cursor = row["d"]
+
+            for prev_d in prev_dates:
+                prev_rows = await conn.fetch(
+                    "SELECT stock_code FROM ths_hot_reason_snapshot "
+                    "WHERE trade_date = $1::date", prev_d)
+                prev_set = {self._norm_code(r["stock_code"]) for r in prev_rows}
+                if not yesterday_codes:
+                    yesterday_codes = prev_set.copy()
+                extended = False
+                for code in list(today_streaks.keys()):
+                    if code in prev_set:
+                        gap = (last_seen[code] - prev_d).days if code in last_seen else 0
+                        if gap <= 3:
+                            today_streaks[code] += 1
+                        else:
+                            today_streaks[code] = 1
+                        last_seen[code] = prev_d
+                        extended = True
+                if not extended:
+                    break
 
         max_h = max(today_streaks.values()) if today_streaks else 1
         # current_board_height: analyst口径 — 仅统计 streak=2 (昨1板+今2板=真实连板)
@@ -387,7 +443,8 @@ class MarketMetricsService:
     async def _build_relay(conn, td: date, lu: LimitUpMetrics,
                            streak_dist: dict[int, int] | None = None,
                            yesterday_codes: set[str] | None = None,
-                           today_streaks: dict[str, int] | None = None) -> RelayEcologyMetrics:
+                           today_streaks: dict[str, int] | None = None,
+                           em_yzt=None, em_zt=None) -> RelayEcologyMetrics:
         """Compute promotion rates + yesterday feedback score (v2).
 
         v2 adds:
@@ -399,10 +456,41 @@ class MarketMetricsService:
         """
         _norm = MarketMetricsService._norm_code
 
-        # ── Promotion rates (v3: real yesterday per-stock streaks) ──
-        # Query yesterday's ths data, compute per-stock streaks for yesterday,
-        # then cross-reference with today to get real promotion rates.
-        if yesterday_codes:
+        # ── Promotion rates (v4: Eastmoney 昨涨停池 OR fallback) ──
+        if em_yzt and em_zt:
+            # ── Eastmoney 昨涨停池 JOIN 涨停池: precise 晋级率 ──
+            # em_yzt: yesterday's ZT stocks with y_limit_days + today pct
+            # em_zt: today's ZT stocks with limit_days
+            y1_total = y2_total = y3_total = 0
+            y1_success = y2_success = y3_success = 0
+
+            em_today_codes: dict[str, int] = {}
+            for s in (em_zt or []):
+                raw = (s.code or "").strip()
+                norm = raw[2:] if len(raw) >= 3 and raw[:2] in ("SH", "SZ", "BJ") else raw
+                em_today_codes[norm] = s.limit_days
+
+            for ys in (em_yzt or []):
+                raw = (ys.code or "").strip()
+                norm = raw[2:] if len(raw) >= 3 and raw[:2] in ("SH", "SZ", "BJ") else raw
+                y_h = ys.y_limit_days
+                today_h = em_today_codes.get(norm, 0)
+
+                if y_h == 1:
+                    y1_total += 1
+                    if today_h >= 2: y1_success += 1
+                elif y_h == 2:
+                    y2_total += 1
+                    if today_h >= 3: y2_success += 1
+                elif y_h >= 3:
+                    y3_total += 1
+                    if today_h >= 4: y3_success += 1
+
+            p1to2 = round(y1_success / max(y1_total, 1), 3)
+            p2to3 = round(y2_success / max(y2_total, 1), 3)
+            p3to4 = round(y3_success / max(y3_total, 1), 3)
+
+        elif yesterday_codes:
             today_rows = await conn.fetch(
                 "SELECT stock_code FROM ths_hot_reason_snapshot "
                 "WHERE trade_date = $1::date", td)
@@ -472,9 +560,15 @@ class MarketMetricsService:
             p3to4 = round(max(0, (lu.max_board_height - 3)) * 0.05, 2)
 
         # ── Yesterday feedback (v2) ──
-        yesterday_count = len(yesterday_codes) if yesterday_codes else 0
-
-        if yesterday_codes:
+        if em_yzt:
+            # Eastmoney 昨涨停池 provides precise counts
+            yesterday_count = len(em_yzt)
+            today_continue = sum(1 for s in em_yzt if s.today_pct >= 9.5)
+            continue_ratio = round(today_continue / max(yesterday_count, 1), 3)
+            big_loss_count = sum(1 for s in em_yzt if s.today_pct <= -5.0)
+            avg_return = round(sum(s.today_pct for s in em_yzt) / max(yesterday_count, 1), 2)
+        elif yesterday_codes:
+            yesterday_count = len(yesterday_codes)
             # Today's limit-up stocks
             today_rows = await conn.fetch(
                 "SELECT stock_code FROM ths_hot_reason_snapshot "
