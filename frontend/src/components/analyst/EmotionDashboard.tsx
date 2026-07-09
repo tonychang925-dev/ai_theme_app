@@ -350,9 +350,9 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
         </div>
         {showEvidence && (
           <div style={{ marginTop: 8 }}>
-            {/* ── Unified Cards: trend(top) + detail(bottom) ── */}
+            {/* ── Unified Cards: 2-column grid, trend(top) + detail(bottom) ── */}
             {systemCharts.length > 0 && (
-              <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 12 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 12 }}>
                 {(() => {
                   const c = (t: string) => systemCharts.find((x: any) => x.chart_type === t);
                   const m = multiTrend;
