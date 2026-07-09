@@ -52,6 +52,13 @@ _PHASE_COMPATIBLE: dict[tuple[str, str], float] = {
     ("ICE_POINT", "FREEZE"): 0.7,
     ("REBOUND", "SECOND_WAVE"): 0.5,
     ("ACCELERATION", "REBOUND"): 0.4,
+    ("ACCELERATION", "FIRST_DIVERGENCE"): 0.5,
+    ("CHAOS", "FIRST_DIVERGENCE"): 0.5,
+    ("CHAOS", "DISTRIBUTION"): 0.4,
+    ("CHAOS", "FADE"): 0.5,
+    ("CHAOS", "WEAK_REPAIR"): 0.4,
+    ("CHAOS", "REPAIR_WATCH"): 0.3,
+    ("FADE", "FIRST_DIVERGENCE"): 0.5,
 }
 
 

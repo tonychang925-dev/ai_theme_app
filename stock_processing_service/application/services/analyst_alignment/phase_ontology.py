@@ -88,6 +88,9 @@ def _direct_match(label: str) -> str | None:
         "修复/反弹": "REBOUND",
         "加速": "ACCELERATION",
         "高潮": "CLIMAX",
+        "强势": "ACCELERATION",
+        "情绪正常": "ACCELERATION",
+        "分歧/退潮": "FIRST_DIVERGENCE",
         # "分歧" is NOT mapped here — it goes through context-aware _resolve_divergence
         "混沌": "CHAOS",
         "启动": "REBOUND",
