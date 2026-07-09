@@ -282,11 +282,16 @@ class MarketMetricsService:
         fried = len(fried_codes)
 
         # ── Streak calculation (chain board) ──
+        # Analyst methodology: consecutive trading days with limit-up
+        # Window: 3 most recent trading days (matching analyst 连板 tracking)
+        # Gap detection: >3 calendar day gap resets streak for that stock
         today_streaks: dict[str, int] = {code: 1 for code in all_codes}
+        last_seen: dict[str, date] = {code: td for code in all_codes}  # track gaps
 
         prev_dates: list[date] = []
         cursor = td
-        for _ in range(10):
+        MAX_STREAK_DEPTH = 5  # analyst typically tracks 3-5 day window
+        for _ in range(MAX_STREAK_DEPTH):
             row = await conn.fetchrow(
                 "SELECT MAX(trade_date) as d FROM ths_hot_reason_snapshot "
                 "WHERE trade_date < $1::date", cursor)
@@ -301,13 +306,19 @@ class MarketMetricsService:
                 "SELECT stock_code FROM ths_hot_reason_snapshot "
                 "WHERE trade_date = $1::date", prev_d)
             prev_set = {self._norm_code(r["stock_code"]) for r in prev_rows}
-            # Capture yesterday's (most recent previous date) limit-up stocks for feedback calc
+            # Capture yesterday's codes for feedback calc
             if not yesterday_codes:
                 yesterday_codes = prev_set.copy()
             extended = False
             for code in list(today_streaks.keys()):
                 if code in prev_set:
-                    today_streaks[code] += 1
+                    # Gap detection: >3 calendar days between appearances = broken streak
+                    gap = (last_seen[code] - prev_d).days if code in last_seen else 0
+                    if gap <= 3:  # within 3 calendar days = continuous
+                        today_streaks[code] += 1
+                    else:
+                        today_streaks[code] = 1  # reset: gap too large
+                    last_seen[code] = prev_d
                     extended = True
             if not extended:
                 break
