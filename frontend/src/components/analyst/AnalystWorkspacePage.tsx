@@ -294,8 +294,6 @@ function CognitionEditor({
           style={{ width: "100%", padding: 6, fontSize: 13, borderRadius: 4, border: `1px solid ${statusColor(field)}`, background: "#1a1a1a", color: "#f5f5f5" }} />
       )}
       </div>
-      )}
-    </div>
   );
 
   return (
