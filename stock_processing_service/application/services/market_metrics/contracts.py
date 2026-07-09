@@ -349,10 +349,11 @@ class MarketMetricsSnapshot:
 def normalize_to_yi(value: float, from_unit: str) -> float:
     """Convert to 亿元 (100M CNY)."""
     factors = {
-        "yuan": 1e-8,       # 元 → 亿
-        "wan": 1e-4,        # 万 → 亿
-        "yi": 1.0,          # 亿 → 亿
-        "wan_yi": 1e4,      # 万亿 → 亿
+        "yuan": 1e-8,          # 元 → 亿
+        "qian_yuan": 1e-5,     # 千元 → 亿 (stock_daily_snapshot.amount)
+        "wan": 1e-4,            # 万 → 亿
+        "yi": 1.0,              # 亿 → 亿
+        "wan_yi": 1e4,          # 万亿 → 亿
     }
     factor = factors.get(from_unit, 1.0)
     return round(value * factor, 2)

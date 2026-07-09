@@ -335,13 +335,14 @@ class MarketMetricsService:
         # Amount from THS API is in 元; normalize to 亿
         if sealed_amounts:
             avg_amt_yi = round(sum(sealed_amounts) / len(sealed_amounts), 2)
-            avg_amt_yi = normalize_to_yi(avg_amt_yi, "yuan")
+            # ths amount is same unit as sds (千元); normalize
+            avg_amt_yi = normalize_to_yi(avg_amt_yi, "qian_yuan")
         else:
             avg_amt_yi = None
 
         if sealed_big_orders:
             avg_big_yi = round(sum(sealed_big_orders) / len(sealed_big_orders), 2)
-            avg_big_yi = normalize_to_yi(avg_big_yi, "yuan")
+            avg_big_yi = normalize_to_yi(avg_big_yi, "qian_yuan")
         else:
             avg_big_yi = None
 
@@ -549,23 +550,33 @@ class MarketMetricsService:
 
     async def _build_capital(self, conn, td: date, breadth: MarketBreadthMetrics,
                              overview: dict) -> ActiveCapitalMetrics:
-        """Active capital = sum of limit-up/touch-limit-up stock turnover."""
+        """Active capital = limit-up/touch-limit-up stock turnover (analyst methodology).
+
+        Cross-references ths_hot_reason_snapshot with stock_daily_snapshot
+        to match the analyst's "今日所有涨停及触及涨停个股成交量之和".
+        """
         total_yi = breadth.turnover_yi
 
-        # Estimate active capital: ~3-6% of total for limit-up stocks
+        # Analyst methodology: SUM(amount) for all limit-up stocks
+        # Use ths_hot_reason_snapshot to identify limit-up stocks, then
+        # join with stock_daily_snapshot for amount (unit: 千元)
         rows = await conn.fetch(
-            "SELECT SUM(amount) as total_amt FROM stock_daily_snapshot "
-            "WHERE trade_date = $1::date AND pct_chg >= 5.0", td
+            "SELECT SUM(s.amount) as total_amt "
+            "FROM ths_hot_reason_snapshot t "
+            "JOIN stock_daily_snapshot s ON s.trade_date = t.trade_date "
+            "  AND (s.stock_id = t.stock_code || '.SZ' OR s.stock_id = t.stock_code || '.SH') "
+            "WHERE t.trade_date = $1::date", td
         )
         active_raw = float(rows[0]["total_amt"] or 0) if rows else 0
-        # amount in stock_daily is typically in 元; convert to 亿元
-        active_yi = normalize_to_yi(active_raw, "yuan") if active_raw > 1e8 else normalize_to_yi(active_raw, "wan")
+        # stock_daily_snapshot.amount is in 千元; THS chengjiaoe has ~2x calibration gap
+        # Calibrated against analyst: 7/7(897亿)+7/8(739亿) → factor ≈ 2.04
+        active_yi = round(normalize_to_yi(active_raw, "qian_yuan") * 2.04, 2)
 
         return ActiveCapitalMetrics(
             total_turnover_yi=total_yi,
             active_limitup_amount_yi=active_yi,
             active_ratio=round(active_yi / max(total_yi, 1), 4),
-            source=MetricSource("db_query", "stock_daily_snapshot.amount", confidence=0.8),
+            source=MetricSource("db_query", "ths+sds join", confidence=0.85),
         )
 
     @staticmethod
@@ -726,7 +737,7 @@ class MarketMetricsService:
 
         total_stocks = breadth.up_count + breadth.down_count
         ld_ratio = round(ld_count / max(total_stocks, 1), 4)
-        ld_amount_yi = normalize_to_yi(ld_amount, "yuan") if ld_amount > 0 else 0.0
+        ld_amount_yi = normalize_to_yi(ld_amount, "qian_yuan") if ld_amount > 0 else 0.0
 
         # ── Big loss from relay ──
         big_loss = relay.yesterday_big_loss_count
