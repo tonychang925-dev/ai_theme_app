@@ -105,10 +105,21 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   }, [tradeDate]);
 
   const loadSystemCharts = useCallback(async () => {
-    try {
-      const resp = await fetch(`http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}`);
-      if (resp.ok) setSystemCharts(await resp.json());
-    } catch { /* ignore */ }
+    // Try SPS API first, fallback to static JSON
+    for (const url of [
+      `http://127.0.0.1:8090/api/v1/analyst-charts/${tradeDate}`,
+      `/api/analyst-charts/${tradeDate}.json`,
+    ]) {
+      try {
+        const resp = await fetch(url);
+        if (resp.ok) {
+          const data = await resp.json();
+          if (Array.isArray(data) && data.length > 0) {
+            setSystemCharts(data); return;
+          }
+        }
+      } catch { /* try next */ }
+    }
   }, [tradeDate]);
 
   const loadArtifacts = useCallback(async () => {
