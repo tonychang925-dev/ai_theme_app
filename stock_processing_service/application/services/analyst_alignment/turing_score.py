@@ -37,7 +37,7 @@ from stock_processing_service.application.services.analyst_alignment.ai_adapter 
 )
 
 
-FORMULA_VERSION = "ats_v1"
+FORMULA_VERSION = "m8_ats_v1"
 
 
 @dataclass(frozen=True)

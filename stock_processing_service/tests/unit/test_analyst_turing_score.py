@@ -111,7 +111,7 @@ def test_perfect_report_grade_a(evaluator):
     assert ats.overall_score > 0.95
     assert ats.grade == "A"
     assert ats.confidence >= 0.9
-    assert ats.formula_version == FORMULA_VERSION
+    assert ats.formula_version == "m8_ats_v1"
 
 
 # ═══ TC-4.2-TS-02: phase mismatch lowers score ═══
