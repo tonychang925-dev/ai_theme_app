@@ -434,11 +434,7 @@ export function AnalystWorkspacePage() {
     } catch { /* ignore */ } finally { setSaving(false); }
   };
 
-  if (loading) return <div style={{ padding: 24 }}>加载中…</div>;
-  if (error) return <div style={{ padding: 24, color: "#e53e3e" }}>Error: {error} <button onClick={() => fetchWorkspace(dateInput)}>重试</button></div>;
-  if (!workspace) return <div style={{ padding: 24 }}>无数据</div>;
-
-  const theme = workspace.themes[selectedIdx] || newTheme();
+  const theme = workspace?.themes?.[selectedIdx] || newTheme();
   const activeGroup = (workspace.watch_groups || []).find(g => g.id === selectedGroupId);
   const groupedThemeIds = new Set((workspace.watch_groups || []).flatMap(g => g.subject_ids));
 
@@ -498,7 +494,8 @@ export function AnalystWorkspacePage() {
       </div>
 
       {/* Tab 2: Three-panel body — dark theme */}
-      <div style={{ flex: 1, display: activeTab === "watch" ? "grid" : "none", gridTemplateColumns: "240px 1fr 340px", overflow: "hidden", background: "#0c1118" }}>
+      {activeTab === "watch" && loading && <div style={{ padding: 24, flex: 1, background: "#0c1118", color: "#5a7a8a" }}>加载主题数据…</div>}
+      <div style={{ flex: 1, display: (activeTab === "watch" && !loading) ? "grid" : "none", gridTemplateColumns: "240px 1fr 340px", overflow: "hidden", background: "#0c1118" }}>
         {/* Left: Theme list */}
         <div style={{ borderRight: "1px solid #243040", overflow: "hidden", background: "#111720" }}>
           <ThemeWatchList
