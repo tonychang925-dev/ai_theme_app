@@ -279,8 +279,8 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
         </span>
       </div>
 
-      {/* ── Row 3: Why Panel + Next Probability + Trading Mode (vertical) ── */}
-      <div style={{ marginTop: 10, display: "flex", flexDirection: "column", gap: 10 }}>
+      {/* ── Row 3: Why Panel + Next Probability + Trading Mode (3 equal cols) ── */}
+      <div style={{ marginTop: 10, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
 
         {/* Why Panel */}
         <div style={{ padding: 8, background: "#111720", borderRadius: 4 }}>
