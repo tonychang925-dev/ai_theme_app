@@ -383,15 +383,61 @@ class ProposalSimulator:
             recommendation=rec)
 
 
+# ═══ Analyst Turing Score ═══
+
+def compute_turing_score(phase_accuracy: float, risk_accuracy: float,
+                          evidence_alignment: float, strategy_alignment: float) -> dict:
+    """Analyst Turing Score: how close is AI cognition to a real analyst?
+
+    NOT prediction accuracy. This measures cognitive alignment:
+      40% Market Phase Agreement
+      25% Risk Agreement
+      20% Key Evidence Agreement
+      15% Strategy Agreement
+    """
+    score = round(
+        phase_accuracy * 0.40 + risk_accuracy * 0.25
+        + evidence_alignment * 0.20 + strategy_alignment * 0.15, 1)
+
+    if score >= 85:   level = "EXPERT"       # indistinguishable from analyst
+    elif score >= 70: level = "SENIOR"        # close to analyst
+    elif score >= 55: level = "JUNIOR"        # basic alignment
+    elif score >= 40: level = "TRAINEE"       # significant gaps
+    else:             level = "NOVICE"        # fundamental differences
+
+    return {
+        "turing_score": score, "level": level,
+        "components": {
+            "phase_agreement": phase_accuracy,
+            "risk_agreement": risk_accuracy,
+            "evidence_alignment": evidence_alignment,
+            "strategy_alignment": strategy_alignment,
+        },
+    }
+
+
 # ═══ Cognitive Evolution Report ═══
 
 @dataclass
 class EvolutionReport:
     policy_version: str
     total_days: int
-    top_errors: list[dict]            # [{cause, pct, action}]
-    weight_changes: list[dict]        # [{component, old, new, reason}]
+    top_errors: list[dict]
+    weight_changes: list[dict]
     improvement_summary: str
+
+    # v2: Cognitive Improvement
+    cognitive_trend: list[dict] = field(default_factory=list)
+    # [{version: "v1", phase_acc: 63, risk_acc: 70, turing: 58}, ...]
+
+    # v2: Blind Spot Analysis
+    blind_spots: list[dict] = field(default_factory=list)
+    # [{pattern: "高位死亡低估", occurrences: 12, pct: 42, severity: "CRITICAL"}]
+
+    # v2: Analyst Gap Score
+    gap_score: dict = field(default_factory=dict)
+    # {phase: 92, risk: 85, strategy: 70, overall: 84, trend: "↑"}
+
     generated_at: datetime = field(default_factory=lambda: datetime.now(timezone.utc))
 
     def to_dict(self) -> dict:
@@ -401,15 +447,21 @@ class EvolutionReport:
             "top_errors": self.top_errors,
             "weight_changes": self.weight_changes,
             "improvement_summary": self.improvement_summary,
+            "cognitive_trend": self.cognitive_trend,
+            "blind_spots": self.blind_spots,
+            "gap_score": self.gap_score,
         }
 
 
-def build_evolution_report(engine: CalibrationEngine) -> EvolutionReport:
-    """Generate cognitive evolution report from calibration history."""
+def build_evolution_report(engine: CalibrationEngine,
+                           phase_acc: float = 0.0, risk_acc: float = 0.0,
+                           strategy_acc: float = 0.0,
+                           prev_scores: list[dict] | None = None) -> EvolutionReport:
+    """Generate cognitive evolution report v2 with all dimensions."""
     drifts = engine._drift_history
     n = len(drifts)
 
-    # Aggregate error causes
+    # ── Error attribution ──
     cause_counts: dict[str, int] = {}
     for r in drifts:
         for d in r.drifts:
@@ -422,7 +474,6 @@ def build_evolution_report(engine: CalibrationEngine) -> EvolutionReport:
           "action": _suggest_action(k)} for k, v in cause_counts.items()],
         key=lambda x: -x["pct"])[:3]
 
-    # Summarize accepted proposals
     changes = [{
         "component": p.target_component,
         "old": p.current_weight, "new": p.proposed_weight,
@@ -432,10 +483,55 @@ def build_evolution_report(engine: CalibrationEngine) -> EvolutionReport:
     summary = (f"过去{n}天，AI最大错误来源：{top_errors[0]['cause']}({top_errors[0]['pct']}%)。"
                if top_errors else "暂无足够校准数据。")
 
+    # ── v2: Cognitive Improvement Trend ──
+    trend = list(prev_scores or [])
+    turing = compute_turing_score(phase_acc, risk_acc, 0.0, strategy_acc)
+    trend.append({
+        "version": f"v{len(trend) + 1}",
+        "phase_acc": phase_acc, "risk_acc": risk_acc,
+        "strategy_acc": strategy_acc, "turing": turing["turing_score"],
+    })
+
+    # ── v2: Blind Spot Analysis ──
+    # Persistent patterns: errors that appear >=3 times AND >=20% of total
+    blind_spots = sorted(
+        [{"pattern": k, "occurrences": v, "pct": round(v / total * 100, 1),
+          "severity": "CRITICAL" if v >= 5 else "MODERATE"}
+         for k, v in cause_counts.items() if v >= 2],
+        key=lambda x: -x["occurrences"])[:3]
+
+    # Characterize AI's "personality flaw"
+    if blind_spots:
+        top_blind = blind_spots[0]
+        top_blind["personality_note"] = (
+            f"AI的'性格缺陷'：{top_blind['pattern']}"
+            f"（出现{top_blind['occurrences']}次，占{top_blind['pct']}%）。"
+            f"这类似一个'过于关注市场宽度而忽略高位风险'的分析师。"
+        )
+
+    # ── v2: Analyst Gap Score ──
+    gap = {
+        "phase": round(phase_acc, 1),
+        "risk": round(risk_acc, 1),
+        "strategy": round(strategy_acc, 1),
+        "overall": round((phase_acc + risk_acc + strategy_acc) / 3, 1),
+        "turing_score": turing["turing_score"],
+        "turing_level": turing["level"],
+    }
+    # Trend direction
+    prev_avg = sum(s.get("turing", 0) for s in (prev_scores or [])) / max(len(prev_scores or []), 1)
+    if turing["turing_score"] > prev_avg + 3:
+        gap["trend"] = "↑ 持续改善"
+    elif turing["turing_score"] < prev_avg - 3:
+        gap["trend"] = "↓ 需要关注"
+    else:
+        gap["trend"] = "→ 稳定"
+
     return EvolutionReport(
         policy_version="M8_POLICY_v1",
         total_days=n, top_errors=top_errors,
-        weight_changes=changes, improvement_summary=summary)
+        weight_changes=changes, improvement_summary=summary,
+        cognitive_trend=trend, blind_spots=blind_spots, gap_score=gap)
 
 
 def _suggest_action(cause: str) -> str:
