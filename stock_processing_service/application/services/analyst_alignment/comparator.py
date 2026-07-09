@@ -343,15 +343,21 @@ class AnalystComparator:
                 match_type=MatchType.MISSING, score=0.0, reason="AI theme data missing",
             ))
         else:
-            overlap = a_names & ai_names
-            score = len(overlap) / max(len(a_names), len(ai_names))
-            match_type = MatchType.EXACT if score >= 0.8 else MatchType.COMPATIBLE if score >= 0.4 else MatchType.NEAR_MISS
+            # Use ThemeAliasResolver for normalized matching
+            from .theme_alias import ThemeAliasResolver
+            resolver = ThemeAliasResolver()
+            score, detail = resolver.compare(a_names, ai_names)
+            match_type = (
+                MatchType.EXACT if score >= 0.8
+                else MatchType.COMPATIBLE if score >= 0.4
+                else MatchType.NEAR_MISS
+            )
             diffs.append(SemanticDiff(
                 field_path="theme_lifecycle",
-                analyst_label=f"{len(a_names)} themes: {sorted(a_names)[:5]}",
-                ai_label=f"{len(ai_names)} themes: {sorted(ai_names)[:5]}",
-                match_type=match_type, score=round(score, 3),
-                reason=f"Jaccard overlap: {len(overlap)}/{max(len(a_names), len(ai_names))}",
+                analyst_label=f"{len(a_names)} themes, canonical={detail.get('analyst_canonical', [])[:5]}",
+                ai_label=f"{len(ai_names)} themes, canonical={detail.get('ai_canonical', [])[:5]}",
+                match_type=match_type, score=score,
+                reason=f"Alias-normalized Jaccard={detail.get('jaccard', 0):.2f} industry={detail.get('industry_match', 0):.2f}",
             ))
 
         return tuple(diffs)
