@@ -27,12 +27,7 @@ class BoardPoolProvider:
     """Production board pool data provider using Eastmoney API."""
 
     def __init__(self, client=None):
-        if client is None:
-            from stock_processing_service.integrations.a_stock_data.clients.eastmoney_board_client import (
-                EastmoneyBoardClient,
-            )
-            client = EastmoneyBoardClient()
-        self._client = client
+        self._client = client  # EastmoneyBoardClient, injected by caller
         self._cache: dict[str, Any] = {}
 
     async def get_sentiment(self, trade_date: date) -> dict:
@@ -88,4 +83,14 @@ class BoardPoolProvider:
                   "industry": s.industry} for s in stocks]
 
     async def close(self):
-        await self._client.close()
+        if self._client:
+            await self._client.close()
+
+
+def create_board_provider():
+    """Factory: creates BoardPoolProvider with Eastmoney client.
+
+    Call this from API handlers where cross-package imports work.
+    """
+    from integrations.a_stock_data.clients.eastmoney_board_client import EastmoneyBoardClient
+    return BoardPoolProvider(client=EastmoneyBoardClient())

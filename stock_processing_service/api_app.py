@@ -7218,17 +7218,44 @@ async def save_playbook(
 # ── M2.5 Market Metrics (canonical facts) ──
 
 @app.get("/api/v1/market-metrics/{trade_date}")
-async def get_market_metrics(trade_date: str) -> dict[str, Any]:
-    """Return MarketMetricsSnapshot — canonical facts for a trading day."""
+async def get_market_metrics(trade_date: str, em: bool = False) -> dict[str, Any]:
+    """Return MarketMetricsSnapshot — canonical facts for a trading day.
+
+    Query params:
+      em=true — include Eastmoney board pool data (a-stock-data 打板层)
+    """
     from datetime import date as _date
     from stock_processing_service.application.services.market_metrics.service import (
         MarketMetricsService,
     )
     try:
         td = _date.fromisoformat(trade_date)
-        svc = MarketMetricsService()
+
+        # ── Board pool provider (a-stock-data Eastmoney API) ──
+        em_board = None; em_pool = em_fried = em_dt = None
+        board_prov = None
+        if em:
+            try:
+                from application.services.market_metrics.board_pool_provider import (
+                    create_board_provider,
+                )
+                bp = create_board_provider()
+                board_prov = bp
+                em_board = await bp.get_sentiment(td)
+                em_pool = await bp.get_limit_up_pool(td)
+                em_fried = await bp.get_fried_pool(td)
+                em_dt = await bp.get_dt_pool(td)
+            except Exception:
+                pass
+
+        svc = MarketMetricsService(board_provider=board_prov)
         snap = await svc.get_async(td)
-        return {
+        if board_prov:
+            try:
+                await board_prov.close()
+            except Exception:
+                pass
+        result = {
             "trade_date": snap.trade_date.isoformat(),
             "calibration_applied": snap.calibration_applied,
             "calibration_source": snap.calibration_source,
@@ -7359,7 +7386,32 @@ async def get_market_metrics(trade_date: str) -> dict[str, Any]:
                 "chain_board_big_loss_ratio": snap.emotion_momentum.chain_board_big_loss_ratio,
                 "yesterday_chain_not_limit_red_ratio": snap.emotion_momentum.yesterday_chain_not_limit_red_ratio,
             },
+            # ── Eastmoney Board Pool (a-stock-data 打板层) ──
+            "eastmoney_board": None if em_board is None else {
+                "source": "eastmoney_push2ex",
+                "zt_count": em_board["zt_count"],
+                "zb_count": em_board["zb_count"],
+                "dt_count": em_board["dt_count"],
+                "break_rate": em_board["break_rate"],
+                "max_height": em_board["max_height"],
+                "ladder": em_board["ladder"],
+                "zt_pool_top5": [{
+                    "code": s["code"], "name": s["name"],
+                    "limit_days": s["limit_days"], "pct": s["pct"],
+                    "zt_stat": s["zt_stat"], "break_times": s["break_times"],
+                    "turnover": s["turnover"], "industry": s["industry"],
+                } for s in (em_pool or [])[:5]] if em_pool else [],
+                "fried_pool_summary": {
+                    "count": len(em_fried or []),
+                    "avg_break_times": round(sum(s["break_times"] for s in (em_fried or [])) / max(len(em_fried or []), 1), 1),
+                } if em_fried else None,
+                "dt_pool_summary": {
+                    "count": len(em_dt or []),
+                    "avg_dt_days": round(sum(s.get("dt_days", 0) for s in (em_dt or [])) / max(len(em_dt or []), 1), 1),
+                } if em_dt else None,
+            },
         }
+        return result
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
     except Exception as exc:
