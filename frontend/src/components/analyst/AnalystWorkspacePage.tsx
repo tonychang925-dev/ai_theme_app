@@ -435,18 +435,19 @@ export function AnalystWorkspacePage() {
     } catch { /* ignore */ } finally { setSaving(false); }
   };
 
-  const theme = workspace?.themes?.[selectedIdx] || newTheme();
-  const activeGroup = (workspace.watch_groups || []).find(g => g.id === selectedGroupId);
-  const groupedThemeIds = new Set((workspace.watch_groups || []).flatMap(g => g.subject_ids));
+  const ws = workspace || { themes: [], watch_groups: [], stock_pools: {}, is_ai_draft: false } as Workspace;
+  const theme = ws.themes[selectedIdx] || newTheme();
+  const activeGroup = (ws.watch_groups || []).find(g => g.id === selectedGroupId);
+  const groupedThemeIds = new Set((ws.watch_groups || []).flatMap(g => g.subject_ids));
 
   const updateTheme = (t: ThemeEntry) => {
-    const themes = [...workspace.themes];
+    const themes = [...ws.themes];
     themes[selectedIdx] = t;
     setWorkspace({ ...workspace, themes, is_ai_draft: false });
   };
 
   const updateGroup = (g: WatchGroup) => {
-    const groups = (workspace.watch_groups || []).map(x => x.id === g.id ? g : x);
+    const groups = (ws.watch_groups || []).map(x => x.id === g.id ? g : x);
     setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
   };
 
@@ -464,7 +465,7 @@ export function AnalystWorkspacePage() {
           </label>
           {activeGroup && <span style={{ fontSize: 13, color: activeGroup.color, fontWeight: 600 }}>{activeGroup.name}</span>}
           <span style={{ fontSize: 12, color: "#66d9ef" }}>
-            {workspace.themes.length} 题材 · {(workspace.watch_groups || []).length} 方向
+            {ws.themes.length} 题材 · {(ws.watch_groups || []).length} 方向
           </span>
           {savedMsg && <span style={{ fontSize: 12, color: "#39ff14" }}>{savedMsg}</span>}
           <button className="tag tag-button is-pass" type="button" style={{ fontSize: 14, padding: "6px 16px" }}
@@ -500,44 +501,44 @@ export function AnalystWorkspacePage() {
         {/* Left: Theme list */}
         <div style={{ borderRight: "1px solid #243040", overflow: "hidden", background: "#111720" }}>
           <ThemeWatchList
-            themes={workspace.themes}
-            allThemes={workspace.themes}
+            themes={ws.themes}
+            allThemes={ws.themes}
             selectedIdx={selectedIdx}
             selectedGroupId={selectedGroupId}
             onSelect={(i) => { setSelectedGroupId(null); setSelectedIdx(i); }}
             onSelectGroup={(id) => { setSelectedGroupId(id); }}
             onAdd={() => {
-              const themes = [...workspace.themes, newTheme()];
+              const themes = [...ws.themes, newTheme()];
               setWorkspace({ ...workspace, themes, is_ai_draft: false });
               setSelectedIdx(themes.length - 1);
             }}
             onDelete={(i) => {
-              const themes = workspace.themes.filter((_, j) => j !== i);
+              const themes = ws.themes.filter((_, j) => j !== i);
               setWorkspace({ ...workspace, themes });
               setSelectedIdx(Math.min(selectedIdx, themes.length - 1));
             }}
             onLevelChange={(i, lvl) => {
-              const themes = [...workspace.themes];
+              const themes = [...ws.themes];
               themes[i] = { ...themes[i], attention_level: lvl, is_ai_draft: false };
               setWorkspace({ ...workspace, themes });
             }}
-            watchGroups={workspace.watch_groups || []}
+            watchGroups={ws.watch_groups || []}
             onAddGroup={() => {
-              const groups = [...(workspace.watch_groups || [])];
+              const groups = [...(ws.watch_groups || [])];
               const colors = ["#e53e3e", "#3182ce", "#38a169", "#dd6b20", "#805ad5", "#d69e2e"];
               groups.push(newWatchGroup(colors[groups.length % colors.length]));
               setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
             }}
             onUpdateGroup={(g) => {
-              const groups = (workspace.watch_groups || []).map(x => x.id === g.id ? g : x);
+              const groups = (ws.watch_groups || []).map(x => x.id === g.id ? g : x);
               setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
             }}
             onDeleteGroup={(id) => {
-              const groups = (workspace.watch_groups || []).filter(x => x.id !== id);
+              const groups = (ws.watch_groups || []).filter(x => x.id !== id);
               setWorkspace({ ...workspace, watch_groups: groups });
             }}
             onAddThemeToGroup={(groupId, subjectId) => {
-              const groups = (workspace.watch_groups || []).map(g =>
+              const groups = (ws.watch_groups || []).map(g =>
                 g.id === groupId ? { ...g, subject_ids: [...g.subject_ids, subjectId] } : g
               );
               setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
@@ -556,7 +557,7 @@ export function AnalystWorkspacePage() {
                 </span>
                 <div style={{ marginTop: 6, display: "flex", flexWrap: "wrap", gap: 4 }}>
                   {activeGroup.subject_ids.map(sid => {
-                    const t = workspace.themes.find(x => x.subject_id === sid);
+                    const t = ws.themes.find(x => x.subject_id === sid);
                     return t ? <span key={sid} style={{ fontSize: 11, padding: "2px 8px", background: "#1a2a3a", borderRadius: 10, color: "#8ddcff" }}>{t.subject_name}</span> : null;
                   })}
                 </div>
