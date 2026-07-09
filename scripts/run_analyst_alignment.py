@@ -58,13 +58,31 @@ def _build_ai_view_from_charts(
     if not chart_path.exists():
         return None
 
-    charts = json.loads(chart_path.read_text())
-    breadth = next(c for c in charts if c['chart_type'] == 'market_breadth')['data']
-    emotion_c = next(c for c in charts if c['chart_type'] == 'emotion_momentum')['data']
-    capital = next(c for c in charts if c['chart_type'] == 'active_capital')['data']
-    relay = next(c for c in charts if c['chart_type'] == 'relay_ecology')['data']
-    inst = next(c for c in charts if c['chart_type'] == 'institution_style')['data']
-    hm = next(c for c in charts if c['chart_type'] == 'hot_money_style')['data']
+    try:
+        charts = json.loads(chart_path.read_text())
+    except (json.JSONDecodeError, OSError):
+        return None
+
+    missing_charts: list[str] = []
+
+    def _safe_get(chart_type: str) -> dict:
+        """Get chart data by type. Returns empty dict if missing, tracks in missing_charts."""
+        for c in charts:
+            if c.get('chart_type') == chart_type:
+                return c.get('data', {})
+        missing_charts.append(chart_type)
+        return {}
+
+    breadth = _safe_get('market_breadth')
+    emotion_c = _safe_get('emotion_momentum')
+    capital = _safe_get('active_capital')
+    relay = _safe_get('relay_ecology')
+    inst = _safe_get('institution_style')
+    hm = _safe_get('hot_money_style')
+
+    # Degrade ai_quality by missing chart ratio (7 expected chart types)
+    missing_ratio = len(missing_charts) / 7.0
+    ai_quality = max(0.30, 0.85 - missing_ratio * 0.6)
 
     # ── PhaseContext from cross-date data ──
     prev_ref = prev_refs.get(td)
@@ -74,7 +92,7 @@ def _build_ai_view_from_charts(
 
     lu_count = breadth.get('limit_up_count', 0)
     lu_delta = lu_count - prev_lu if prev_lu > 0 else 0
-    composite = breadth.get('composite_score', 0)
+    composite = breadth.get('composite_score', 0) if breadth else 0
     raw_risk = (
         'HIGH' if composite <= -8 else
         'MEDIUM_HIGH' if composite <= -3 else
@@ -93,25 +111,25 @@ def _build_ai_view_from_charts(
                 break
         d -= timedelta(days=1)
 
-    feedback_label = relay.get('feedback_label', '')
+    feedback_label = relay.get('feedback_label', '') if relay else ''
     relay_health = 0.5 if feedback_label == '负反馈' else 0.7 if feedback_label == '中性' else 0.85
 
     ctx = PhaseContext(
         trade_date=td.isoformat(),
         prev_phase=prev_phase, prev_risk=prev_risk,
         limit_up_count=lu_count, limit_up_delta=lu_delta,
-        max_board_height=relay.get('max_board_height', 0),
-        emotion_momentum=emotion_c.get('emotion_momentum_score', 0),
+        max_board_height=relay.get('max_board_height', 0) if relay else 0,
+        emotion_momentum=emotion_c.get('emotion_momentum_score', 0) if emotion_c else 0,
         risk_level=raw_risk,
         days_since_panic=days_since_panic,
-        promotion_1_to_2=relay.get('promotion_1_to_2', 0),
-        promotion_2_to_3=relay.get('promotion_2_to_3', 0),
+        promotion_1_to_2=relay.get('promotion_1_to_2', 0) if relay else 0,
+        promotion_2_to_3=relay.get('promotion_2_to_3', 0) if relay else 0,
         relay_score=relay_health,
-        up_ratio=breadth.get('up_ratio', 0),
+        up_ratio=breadth.get('up_ratio', 0) if breadth else 0,
         has_index_confirmation=lu_delta > 20,
     )
 
-    ai_phase = normalize_phase_label(breadth.get('label', ''), ctx)
+    ai_phase = normalize_phase_label(breadth.get('label', '') if breadth else '', ctx)
     ai_risk = adjust_risk_by_confirmation(ai_phase, raw_risk, ctx)
 
     themes = tuple(
@@ -120,7 +138,7 @@ def _build_ai_view_from_charts(
             state='调整' if '调整' in str(d.get('state', ''))
             else '启动' if '启动' in str(d.get('state', ''))
             else str(d.get('state', ''))
-        ) for d in inst.get('directions', [])
+        ) for d in (inst.get('directions', []) if inst else [])
     )
 
     return AIDiagnosisReferenceView(
@@ -147,7 +165,8 @@ def _build_ai_view_from_charts(
         strategy_label=StrategyLabel(
             summary=_get_ai_strategy_text(td, chart_dir, breadth, hm, capital)
         ),
-        source_quality=0.85,
+        source_quality=ai_quality,
+        missing_fields=tuple(f"ai_chart.{ct}" for ct in missing_charts),
     )
 
 
@@ -234,7 +253,12 @@ def main():
     print(f"Phase 4.2 Replay: {aggregate.trading_days} days | "
           f"Avg ATS={aggregate.average_score:.3f} | Median={aggregate.median_score:.3f}")
     print(f"Grades: {aggregate.grade_distribution}")
-    print(f"Skipped: {aggregate.skipped_days}")
+    if aggregate.skipped_days:
+        print(f"Skipped ({len(aggregate.skipped_days)}): {aggregate.skipped_days}")
+    if aggregate.partial_days:
+        print(f"Partial ({len(aggregate.partial_days)}): {aggregate.partial_days}")
+    if aggregate.failed_days:
+        print(f"Failed ({len(aggregate.failed_days)}): {aggregate.failed_days}")
     if aggregate.weak_days:
         print(f"Weak: {aggregate.weak_days}")
     print(f"Output: {output_dir}/")
@@ -242,6 +266,11 @@ def main():
         if f.is_file():
             print(f"  {f.relative_to(output_dir)}")
 
+    # Exit code: 0=clean, 1=partial days present, 2=failures present
+    if aggregate.failed_days:
+        return 2
+    if aggregate.partial_days:
+        return 1
     return 0
 
 

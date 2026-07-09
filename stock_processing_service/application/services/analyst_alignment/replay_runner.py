@@ -62,6 +62,8 @@ class ReplayAggregateReport:
     trading_days: int
     skipped_days: list[str] = field(default_factory=list)
     skipped_reasons: dict[str, str] = field(default_factory=dict)
+    partial_days: list[str] = field(default_factory=list)
+    failed_days: list[str] = field(default_factory=list)
 
     average_score: float = 0.0
     median_score: float = 0.0
@@ -86,6 +88,8 @@ class ReplayAggregateReport:
             "end_date": self.end_date.isoformat(),
             "trading_days": self.trading_days,
             "skipped_days": self.skipped_days,
+            "partial_days": self.partial_days,
+            "failed_days": self.failed_days,
             "scores": {
                 "average": round(self.average_score, 4),
                 "median": round(self.median_score, 4),
@@ -113,6 +117,8 @@ class ReplayAggregateReport:
             "## Overall",
             f"- Trading days compared: {self.trading_days}",
             f"- Skipped: {len(self.skipped_days)} ({', '.join(self.skipped_days) if self.skipped_days else 'none'})",
+            f"- Partial (missing charts): {len(self.partial_days)}",
+            f"- Failed: {len(self.failed_days)}",
             f"- Average ATS: {self.average_score:.3f}",
             f"- Median ATS: {self.median_score:.3f}",
             f"- Range: {self.min_score:.3f} — {self.max_score:.3f}",
@@ -192,6 +198,8 @@ class ReplayRunner:
         daily_results: list[DailyReplayResult] = []
         skipped_days: list[str] = []
         skipped_reasons: dict[str, str] = {}
+        partial_days: list[str] = []
+        failed_days: list[str] = []
 
         all_scores: list[float] = []
         all_phases: list[float] = []
@@ -225,6 +233,10 @@ class ReplayRunner:
             # Run pipeline
             ats = self.evaluator.evaluate(analyst, ai_view)
             report = self.comparator.compare(analyst, ai_view)
+
+            # Track partial: AI view has missing charts or low quality
+            if getattr(ai_view, 'source_quality', 1.0) < 0.80:
+                partial_days.append(current.isoformat())
 
             daily_results.append(DailyReplayResult(
                 trade_date=current,
@@ -265,6 +277,8 @@ class ReplayRunner:
             trading_days=len(daily_results),
             skipped_days=skipped_days,
             skipped_reasons=skipped_reasons,
+            partial_days=partial_days,
+            failed_days=failed_days,
             average_score=sum(all_scores) / n,
             median_score=sorted_scores[len(sorted_scores) // 2],
             min_score=min(all_scores) if all_scores else 0.0,
