@@ -44,7 +44,7 @@ class MarketMetricsService:
         self._board_provider = board_provider  # BoardPoolProvider | None
 
     def get(self, trade_date: date) -> MarketMetricsSnapshot:
-        return asyncio.run(self._get_async(trade_date))
+        return asyncio.run(self.get_async(trade_date))
 
     def get_range(self, start_date: date, end_date: date) -> list[MarketMetricsSnapshot]:
         """Batch fetch snapshots for trend charts."""
