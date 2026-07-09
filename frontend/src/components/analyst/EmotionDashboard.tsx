@@ -336,13 +336,13 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
         </div>
         {showEvidence && (
           <div style={{ marginTop: 8 }}>
-            {/* Multi-day trend line charts */}
-            {trendData && (
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(370px, 1fr))", gap: 10, marginBottom: 12, padding: 10, background: "#111720", borderRadius: 4 }}>
-                <TrendLineChart title="涨停家数趋势" data={trendData.breadth || []} yKey="limit_up" yLabel="涨停" color="#e53e3e" />
-                <TrendLineChart title="情绪动能趋势" data={trendData.momentum || []} yKey="score" yLabel="动能" color="#dd6b20" />
-                <TrendLineChart title="活跃资金趋势（万亿）" data={trendData.capital || []} yKey="amount" yLabel="万亿" color="#66d9ef" />
-                <TrendLineChart title="最高板高度" data={trendData.relay || []} yKey="max_height" yLabel="板" color="#d69e2e" />
+            {/* Multi-day trend overview (6/25~7/8) — single source, no duplicate */}
+            {multiTrend && (
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: 10, marginBottom: 12, padding: 10, background: "#111720", borderRadius: 4 }}>
+                <TrendLineChart title="涨停家数趋势" data={multiTrend.breadth || []} yKey="limit_up" yLabel="涨停" color="#e53e3e" />
+                <TrendLineChart title="情绪动能趋势" data={multiTrend.momentum || []} yKey="score" yLabel="动能" color="#dd6b20" />
+                <TrendLineChart title="活跃资金趋势（亿）" data={multiTrend.capital || []} yKey="active_yi" yLabel="亿" color="#66d9ef" />
+                <TrendLineChart title="最高板高度" data={multiTrend.relay || []} yKey="max_height" yLabel="板" color="#d69e2e" />
               </div>
             )}
             {/* System-generated charts — rendered visually */}
@@ -366,17 +366,7 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
               </div>
             )}
 
-            {/* Multi-day trend overview (analyst style: 6/25~7/8) */}
-            {multiTrend && (
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(380px, 1fr))", gap: 10, marginBottom: 12, padding: 10, background: "#111720", borderRadius: 4 }}>
-                <TrendLineChart title="涨停家数趋势" data={multiTrend.breadth || []} yKey="limit_up" yLabel="涨停" color="#e53e3e" />
-                <TrendLineChart title="情绪动能趋势" data={multiTrend.momentum || []} yKey="score" yLabel="动能" color="#dd6b20" />
-                <TrendLineChart title="活跃资金趋势（亿）" data={multiTrend.capital || []} yKey="active_yi" yLabel="亿" color="#66d9ef" />
-                <TrendLineChart title="最高板高度" data={multiTrend.relay || []} yKey="max_height" yLabel="板" color="#d69e2e" />
-              </div>
-            )}
-
-            {/* System-generated charts from /api/v1/analyst-charts */}
+            {/* System-generated single-day charts from /api/v1/analyst-charts */}
             {systemCharts.length > 0 && (
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))", gap: 10, marginBottom: 12 }}>
                 {systemCharts.map((chart: any, idx: number) => (
@@ -389,7 +379,7 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
                     <div style={{ fontSize: 10, color: "#5a7a8a", marginBottom: 6 }}>
                       {chart.module} · {chart.calibrated ? "analyst_pdf" : chart.calibration_source || "system_generated"}
                     </div>
-                    <ChartRenderer chart={chart} trendData={multiTrend} />
+                    <ChartRenderer chart={chart} />
                     {chart.interpretation && (
                       <div style={{ fontSize: 10, color: "#8ddcff", marginTop: 6, lineHeight: 1.4, padding: "4px 6px", background: "#0c1118", borderRadius: 3 }}>
                         {chart.interpretation}
