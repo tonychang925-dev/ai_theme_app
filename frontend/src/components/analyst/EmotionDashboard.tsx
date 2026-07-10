@@ -80,6 +80,9 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   const [showEvidence, setShowEvidence] = useState(false);
   const [systemCharts, setSystemCharts] = useState<any[]>([]);
   const [multiTrend, setMultiTrend] = useState<any>(null);
+  const [tomorrowOutlook, setTomorrowOutlook] = useState("");
+  const [tomorrowWatchpoints, setTomorrowWatchpoints] = useState<string[]>([]);
+  const [tomorrowForbidden, setTomorrowForbidden] = useState<string[]>([]);
   const trend = useEmotionTrend(tradeDate);
 
   // Auto-load chart data when date changes (not just on expand)
@@ -119,6 +122,27 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
       } catch { /* missing file OK */ }
       setLoading(false);
     })();
+
+    // Also fetch tomorrow outlook from workbench
+    fetch(`/api/v1/analyst-workbench/${tradeDate}/comparison`, { signal: ctrl.signal })
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(cmp => {
+        const emoRow = (cmp.rows || []).find((r: any) => r.key === "phase");
+        if (emoRow?.score < 0.5) {
+          // Calibration found mismatch — fetch draft for analyst corrections
+          return fetch(`/api/v2/daily-review-v2?date=${encodeURIComponent(tradeDate)}`, { signal: ctrl.signal });
+        }
+        return Promise.reject("no calibration needed");
+      })
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then((dr: any) => {
+        const er = dr.emotion_review || {};
+        if ((er as any).tomorrow_outlook) setTomorrowOutlook((er as any).tomorrow_outlook);
+        if ((er as any).tomorrow_watchpoints?.length) setTomorrowWatchpoints((er as any).tomorrow_watchpoints);
+        if ((er as any).tomorrow_forbidden?.length) setTomorrowForbidden((er as any).tomorrow_forbidden);
+      })
+      .catch(() => {});
+
     return () => ctrl.abort();
   }, [tradeDate]);
 
@@ -305,6 +329,40 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
           </div>
         </div>
       </div>
+
+      {/* ── Tomorrow Outlook (from analyst calibration) ── */}
+      {(tomorrowOutlook || tomorrowWatchpoints.length > 0 || tomorrowForbidden.length > 0) && (
+        <div style={{
+          marginTop: 10, padding: "12px 16px",
+          background: "linear-gradient(135deg, #1a1040 0%, #111720 100%)",
+          border: "1px solid #805ad520", borderRadius: 6,
+        }}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: "#805ad5", marginBottom: 8 }}>
+            📋 明日操作提示
+          </div>
+          {tomorrowOutlook && (
+            <div style={{ fontSize: 13, color: "#c4b5fd", marginBottom: 8, lineHeight: 1.6 }}>
+              {tomorrowOutlook}
+            </div>
+          )}
+          {tomorrowWatchpoints.length > 0 && (
+            <div style={{ marginBottom: 6 }}>
+              <div style={{ fontSize: 12, fontWeight: 600, color: "#a78bfa", marginBottom: 4 }}>🔍 明日观察点</div>
+              {tomorrowWatchpoints.map((wp, i) => (
+                <div key={i} style={{ fontSize: 12, color: "#8ddcff", padding: "2px 0" }}>• {wp}</div>
+              ))}
+            </div>
+          )}
+          {tomorrowForbidden.length > 0 && (
+            <div>
+              <div style={{ fontSize: 12, fontWeight: 600, color: "#f87171", marginBottom: 4 }}>🚫 禁止操作</div>
+              {tomorrowForbidden.map((fb, i) => (
+                <div key={i} style={{ fontSize: 12, color: "#fca5a5", padding: "2px 0" }}>✗ {fb}</div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* ── Evidence Charts (collapsible) ── */}
       <div style={{ marginTop: 10 }}>
