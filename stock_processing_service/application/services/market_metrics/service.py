@@ -134,22 +134,23 @@ class MarketMetricsService:
         ld = int(overview.get("limit_down_total", 0) or 0)
         source = "recap_snapshot"
 
-        # Market breadth from TDX provider (full A-share universe)
-        # subject_stock_daily_snapshot is NOT a valid source — it only covers
-        # stocks in tracked subjects, not the full market.
+        # Market breadth from TDX provider (full A-share universe, synchronous)
         if up == 0 and down == 0:
             try:
                 from stock_processing_service.integrations.a_stock_data.tdx_market_breadth_provider import (
                     TdxMarketBreadthProvider,
                 )
                 provider = TdxMarketBreadthProvider()
-                breadth_snap = await provider.fetch(td)
+                import asyncio
+                loop = asyncio.get_event_loop()
+                breadth_snap = await loop.run_in_executor(None, provider.fetch, td)
                 if breadth_snap and breadth_snap.up_count > 0:
                     up = breadth_snap.up_count
                     down = breadth_snap.down_count
                     source = breadth_snap.source
             except Exception:
-                pass
+                import logging
+                logging.getLogger(__name__).exception("TDX breadth fetch failed")
 
         raw_amount = float(overview.get("total_amount", 0) or 0)
         # recap total_amount is in 万元 → 亿元

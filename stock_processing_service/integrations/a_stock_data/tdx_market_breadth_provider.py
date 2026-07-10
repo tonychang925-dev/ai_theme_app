@@ -50,15 +50,9 @@ class TdxMarketBreadthProvider:
                 raise RuntimeError("mootdx not available — install mootdx to use TDX provider")
         return self._client
 
-    async def fetch(self, trade_date: date) -> MarketBreadthSnapshot | None:
-        """Fetch full market breadth for a trading date.
-
-        Returns None if TDX is unavailable or coverage is too low.
-        """
-        import asyncio
-
-        loop = asyncio.get_event_loop()
-        return await loop.run_in_executor(None, self._fetch_sync, trade_date)
+    def fetch(self, trade_date: date) -> MarketBreadthSnapshot | None:
+        """Fetch full market breadth for a trading date (synchronous)."""
+        return self._fetch_sync(trade_date)
 
     def _fetch_sync(self, trade_date: date) -> MarketBreadthSnapshot | None:
         try:
@@ -66,76 +60,75 @@ class TdxMarketBreadthProvider:
         except RuntimeError:
             return None
 
-        # ── Get full A-share stock list ──
-        # TDX market codes: 0=SZ, 1=SH
+        import re
+
+        # ── Get full A-share stock list (DataFrames from mootdx) ──
         try:
-            sz_stocks = client.stocks(market=0)  # Shenzhen
-            sh_stocks = client.stocks(market=1)  # Shanghai
-            bj_stocks = client.stocks(market=2)  # Beijing (if available)
+            sz_df = client.stocks(market=0)
+            sh_df = client.stocks(market=1)
         except Exception:
             return None
 
-        all_stocks: list[str] = []
+        def is_ashare(code):
+            code_s = str(code)
+            if not re.match(r'^\d{6}$', code_s): return False
+            c = int(code_s)
+            if 0 <= c <= 3999: return True       # SZ主板
+            if 300000 <= c <= 301999: return True  # 创业板
+            if 600000 <= c <= 605999: return True  # SH主板
+            if 688000 <= c <= 689999: return True  # 科创板
+            return False
+
         try:
-            # Convert to [market_code, stock_code] format for quotes()
-            for s in sz_stocks:
-                code = s.get("code", "") if isinstance(s, dict) else str(s)
-                if code:
-                    all_stocks.append(f"0#{code}")
-            for s in sh_stocks:
-                code = s.get("code", "") if isinstance(s, dict) else str(s)
-                if code:
-                    all_stocks.append(f"1#{code}")
-            for s in bj_stocks:
-                code = s.get("code", "") if isinstance(s, dict) else str(s)
-                if code:
-                    all_stocks.append(f"2#{code}")
+            all_codes = []
+            for df in [sz_df, sh_df]:
+                if 'code' in df.columns:
+                    codes = [str(c) for c in df['code'].tolist() if is_ashare(c)]
+                    all_codes.extend(codes)
         except Exception:
             return None
 
-        total_universe = len(all_stocks)
+        total_universe = len(all_codes)
         if total_universe < 4000:
-            return None  # insufficient universe coverage
+            return None
 
-        # ── Batch-fetch quotes in chunks of 80 (TDX limit) ──
+        # ── Batch-fetch quotes (DataFrame API) ──
         up = down = flat = suspended = 0
-        valid_count = 0
         chunk_size = 80
-
-        for i in range(0, len(all_stocks), chunk_size):
-            chunk = all_stocks[i:i + chunk_size]
+        for i in range(0, len(all_codes), chunk_size):
+            chunk = all_codes[i:i + chunk_size]
             try:
                 quotes = client.quotes(symbol=chunk)
-                if quotes is None:
+                if quotes is None or len(quotes) == 0:
+                    suspended += len(chunk)
                     continue
-                for q in quotes:
-                    price = _float(q, "price")
-                    last_close = _float(q, "last_close")
-                    if price is None or last_close is None or last_close <= 0:
+                for _, row in quotes.iterrows():
+                    price = row.get('price')
+                    last = row.get('last_close')
+                    if price is None or last is None or last <= 0 or price <= 0:
                         suspended += 1
                         continue
-                    valid_count += 1
-                    if price > last_close:
+                    if price > last:
                         up += 1
-                    elif price < last_close:
+                    elif price < last:
                         down += 1
                     else:
                         flat += 1
             except Exception:
-                continue
+                suspended += len(chunk)
 
-        total_computed = up + down + flat + suspended
-        coverage = valid_count / max(total_universe, 1)
+        total_computed = up + down + flat
+        coverage = total_computed / max(total_universe, 1)
 
         if coverage < 0.95:
-            return None  # insufficient coverage for authoritative metric
+            return None
 
         return MarketBreadthSnapshot(
             trade_date=trade_date,
             up_count=up,
             down_count=down,
             flat_count=flat,
-            total_count=up + down + flat,
+            total_count=total_computed,
             suspended_count=suspended,
             source="tdx_quotes",
             source_endpoint="mootdx.quotes",
@@ -144,15 +137,3 @@ class TdxMarketBreadthProvider:
             coverage_ratio=round(coverage, 4),
             quality_status="OK" if coverage >= 0.97 else "PARTIAL",
         )
-
-
-def _float(q: dict, key: str) -> float | None:
-    """Extract float from TDX quote dict, handling various field names."""
-    for k in (key, key.replace("_", ""), f"_{key}"):
-        v = q.get(k)
-        if v is not None:
-            try:
-                return float(v)
-            except (ValueError, TypeError):
-                pass
-    return None
