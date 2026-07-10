@@ -7457,7 +7457,7 @@ async def get_analyst_chart_trends(trade_date: str, days: int = 7) -> dict[str, 
     try:
         td = _date.fromisoformat(trade_date)
         start = td - timedelta(days=days + 5)  # extra buffer for non-trading days
-        snapshots = MarketMetricsService().get_range(start, td)
+        snapshots = await MarketMetricsService()._get_range_async(start, td)
         return ChartReproductionEngine.build_trend(snapshots)
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
@@ -7485,7 +7485,7 @@ async def get_analyst_charts(trade_date: str) -> list[dict[str, Any]]:
         td = _date.fromisoformat(trade_date)
 
         # ── Load canonical metrics ──
-        snap = MarketMetricsService().get(td)
+        snap = await MarketMetricsService().get_async(td)
 
         # ── Load recap for thematic charts 5-7 ──
         recap = await _load_recap_doc(td)
@@ -7541,7 +7541,7 @@ async def get_metrics_validation(trade_date: str) -> dict[str, Any]:
     )
     try:
         td = _date.fromisoformat(trade_date)
-        snap = MarketMetricsService().get(td)
+        snap = await MarketMetricsService().get_async(td)
         pdf_cal = ChartReproductionEngine.load_pdf_calibration(td)
         analyst_ref: dict = {}
         if pdf_cal:
@@ -7606,7 +7606,7 @@ async def get_market_narrative(trade_date: str) -> dict[str, Any]:
     )
     try:
         td = _date.fromisoformat(trade_date)
-        snap = MarketMetricsService().get(td)
+        snap = await MarketMetricsService().get_async(td)
         engine = NarrativeEngine()
         story = engine.generate(snap)
         return story.to_dict()
@@ -7733,7 +7733,7 @@ async def get_replay_benchmark(trade_date: str) -> dict[str, Any]:
     )
     try:
         td = _date.fromisoformat(trade_date)
-        snap = MarketMetricsService().get(td)
+        snap = await MarketMetricsService().get_async(td)
         story = NarrativeEngine().generate(snap)
 
         engine = ReplayEngine()
@@ -7790,7 +7790,7 @@ async def get_calibration_drift(trade_date: str) -> dict[str, Any]:
     )
     try:
         td = _date.fromisoformat(trade_date)
-        snap = MarketMetricsService().get(td)
+        snap = await MarketMetricsService().get_async(td)
         r = snap.relay; l = snap.limitup
 
         engine = CalibrationEngine()
@@ -7846,7 +7846,7 @@ async def get_calibration_dashboard() -> dict[str, Any]:
         engine.add_reference(build_20260707_calibration_ref())
 
         # Run calibration for 7/7
-        snap = MarketMetricsService().get(_date(2026, 7, 7))
+        snap = await MarketMetricsService().get_async(_date(2026, 7, 7))
         r = snap.relay; l = snap.limitup
         engine.compute_drift(
             _date(2026, 7, 7),
@@ -7923,7 +7923,7 @@ async def get_market_emotion(trade_date: str) -> dict[str, Any]:
     )
     try:
         td = _date.fromisoformat(trade_date)
-        snap = MarketMetricsService().get(td)
+        snap = await MarketMetricsService().get_async(td)
         story = NarrativeEngine().generate(snap)
 
         b = snap.breadth; l = snap.limitup; r = snap.relay
