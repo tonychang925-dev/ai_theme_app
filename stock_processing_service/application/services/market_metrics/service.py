@@ -135,20 +135,19 @@ class MarketMetricsService:
         source = "recap_snapshot"
 
         # Fallback: query subject_stock_daily_snapshot directly when recap is missing
+        # Use DISTINCT stock_id because the table is stock×subject (one stock appears in many subjects)
         if up == 0 and down == 0:
             try:
                 row = await conn.fetchrow(
-                    "SELECT COUNT(*) FILTER (WHERE pct_chg > 0) AS up_count, "
-                    "COUNT(*) FILTER (WHERE pct_chg < 0) AS down_count, "
-                    "COUNT(*) FILTER (WHERE pct_chg >= 9.8) AS limit_up_count "
+                    "SELECT "
+                    "COUNT(DISTINCT stock_id) FILTER (WHERE pct_chg > 0) AS up_count, "
+                    "COUNT(DISTINCT stock_id) FILTER (WHERE pct_chg < 0) AS down_count "
                     "FROM subject_stock_daily_snapshot WHERE trade_date = $1::date",
                     td,
                 )
                 if row and row["up_count"] > 0:
                     up = row["up_count"]
                     down = row["down_count"]
-                    if lu == 0:
-                        lu = row["limit_up_count"]
                     source = "subject_stock_daily_snapshot"
             except Exception:
                 pass
