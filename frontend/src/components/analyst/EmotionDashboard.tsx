@@ -89,21 +89,23 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   const trend = useEmotionTrend(tradeDate);
 
   // Auto-load chart data when date changes (not just on expand)
-  useEffect(() => { loadSystemCharts(); }, [tradeDate]);
+  useEffect(() => { const cleanup = loadSystemCharts(); return cleanup; }, [tradeDate]);
 
   const loadSystemCharts = useCallback(async () => {
+    const ctrl = new AbortController();
     try {
-      const tr = await fetch(`/api/analyst-charts/trend.json`);
+      const tr = await fetch(`/api/analyst-charts/trend.json`, { signal: ctrl.signal });
       if (tr.ok) setMultiTrend(await tr.json());
     } catch { setMultiTrend(null); }
     try {
-      const resp = await fetch(`/api/analyst-charts/${tradeDate}.json`);
+      const resp = await fetch(`/api/analyst-charts/${tradeDate}.json`, { signal: ctrl.signal });
       if (resp.ok) {
         const data = await resp.json();
         if (Array.isArray(data) && data.length > 0) { setSystemCharts(data); return; }
       }
       setSystemCharts([]);
     } catch { setSystemCharts([]); }
+    return () => ctrl.abort();
   }, [tradeDate]);
 
   const loadArtifacts = useCallback(async () => {
@@ -114,18 +116,18 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
     setLoading(true);
     setEmotion(null);
     setSystemCharts([]);
-    let cancelled = false;
+    const ctrl = new AbortController();
     (async () => {
       try {
-        const resp = await fetch(`/api/emotion-${tradeDate}.json`);
+        const resp = await fetch(`/api/emotion-${tradeDate}.json`, { signal: ctrl.signal });
         if (resp.ok) {
           const d = await resp.json();
-          if (d && d.emotion_node) { if (!cancelled) { setEmotion(d); setLoading(false); } return; }
+          if (d && d.emotion_node) { setEmotion(d); setLoading(false); return; }
         }
-      } catch { /* file not found = expected before generate */ }
-      if (!cancelled) setLoading(false);
+      } catch { /* missing file OK */ }
+      setLoading(false);
     })();
-    return () => { cancelled = true; };
+    return () => ctrl.abort();
   }, [tradeDate]);
 
   if (loading) return <div style={{ padding: "8px 16px", color: "#5a7a8a", fontSize: 13 }}>加载情绪数据…</div>;
