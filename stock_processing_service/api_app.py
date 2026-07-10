@@ -8786,21 +8786,27 @@ async def import_analyst_reference(body: dict[str, Any]) -> dict[str, Any]:
     missing = list(quality.missing_fields) if quality.missing_fields else []
     low_conf = list(quality.low_confidence_fields) if quality.low_confidence_fields else []
 
-    # Quality gate: reject if extraction failed OR core fields insufficient
-    if extraction_status in ("failed", "FAILED", "ExtractionStatus.FAILED"):
+    # Quality gate: require FULL extraction — all-or-nothing
+    if extraction_status not in ("full_complete", "core_complete"):
         raise HTTPException(
             status_code=422,
-            detail=f"文件格式无法识别（extraction_status=failed）。"
-                   f"请使用 DeepSeek 结构化复盘格式（含 JSON 数据块的 .md 文件）。"
-                   f"缺失字段: {missing[:8] if missing else '无'}",
+            detail=f"数据提取不完整（extraction_status={extraction_status}）。"
+                   f"核心覆盖率: {core_coverage:.0%}。"
+                   f"缺失字段: {missing[:10] if missing else '无'}。"
+                   f"请确认 .md 文件包含完整的 DeepSeek 结构化 JSON 数据。",
         )
-    if core_coverage < 0.3:
+    if core_coverage < 1.0:
         raise HTTPException(
             status_code=422,
-            detail=f"数据提取不足: 核心字段覆盖率仅 {core_coverage:.0%}。"
-                   f"当前文件格式可能不是 DeepSeek 结构化复盘。"
-                   f"缺失: {missing[:8] if missing else '无'}"
-                   f"—— 请确认导入了正确的 .md 文件（应包含 JSON 结构化数据块）。",
+            detail=f"核心字段缺失（覆盖率 {core_coverage:.0%}，要求 100%）。"
+                   f"缺失: {missing[:10] if missing else '无'}。"
+                   f"请补充缺失字段后重新导入。",
+        )
+    if full_coverage < 0.5:
+        raise HTTPException(
+            status_code=422,
+            detail=f"完整字段覆盖率不足（{full_coverage:.0%}，要求至少 50%）。"
+                   f"缺失: {missing[:10] if missing else '无'}。",
         )
 
     # ── Store ──
