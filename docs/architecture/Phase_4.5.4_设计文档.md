@@ -843,9 +843,10 @@ Then:
 
 - Workbench generate 接管动态复盘数据生产 ✅ 已实现（PR1）
 - Approve 合并 `AIDraft + analyst_workspace + overrides` ✅ 已实现（PR2）
-- DailyReview 页面移除 derived data 生产入口
+- DailyReview 页面移除 derived data 生产入口 ✅ 已实现（PR3）
 - `compose-from-workbench` 成为唯一正式报告入口 ✅ 已实现（PR4）
 - 正式报告禁止 draft fallback ✅ 已实现（PR4）
+- 最终 E2E / Phase 4.5.5-RA Final Review ⏳ Planned（PR5）
 
 ### Phase 4.5.5.1-UI ✅ 已实现
 
