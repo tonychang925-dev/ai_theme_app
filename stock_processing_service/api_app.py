@@ -8325,16 +8325,11 @@ async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
 
 
 async def get_emotion_state_internal(trade_date: str) -> dict[str, Any]:
-    """Generate emotion state internally (used by workbench generate)."""
+    """Generate emotion state by calling the internal endpoint logic."""
     try:
-        from stock_processing_service.application.services.market_cognition.emotion_engine import EmotionEngine
-        from stock_processing_service.application.services.market_metrics.service import MarketMetricsService
-        td = _date.fromisoformat(trade_date)
-        metrics_svc = MarketMetricsService()
-        snapshot = await metrics_svc.build_snapshot(td)
-        engine = EmotionEngine()
-        state = await engine.compute(td, snapshot)
-        return state.to_dict() if hasattr(state, "to_dict") else {}
+        # Reuse existing emotion endpoint logic directly
+        emo = await get_market_emotion(trade_date)
+        return emo if isinstance(emo, dict) else {}
     except Exception:
         return {}
 
