@@ -72,9 +72,9 @@ def main():
     if not chart_path.exists():
         print(f"Chart data not found, calling SPS API...")
         try:
-            r = __import__('urllib.request').request.urlopen(
-                __import__('urllib.request').Request(f"{sps_url}/api/v1/analyst-charts/{args.date}", method='GET'),
-                timeout=60)
+            import urllib.request
+            req = urllib.request.Request(f"{sps_url}/api/v1/analyst-charts/{args.date}", method='GET')
+            r = urllib.request.urlopen(req, timeout=60)
             if r.status == 200:
                 data = r.read()
                 chart_path.parent.mkdir(parents=True, exist_ok=True)
@@ -88,9 +88,9 @@ def main():
     if not emotion_path.exists():
         print(f"Emotion data not found, calling SPS API...")
         try:
-            r = __import__('urllib.request').request.urlopen(
-                __import__('urllib.request').Request(f"{sps_url}/api/v1/emotion/{args.date}", method='GET'),
-                timeout=30)
+            import urllib.request
+            req = urllib.request.Request(f"{sps_url}/api/v1/emotion/{args.date}", method='GET')
+            r = urllib.request.urlopen(req, timeout=30)
             if r.status == 200:
                 data = r.read()
                 emotion_path.parent.mkdir(parents=True, exist_ok=True)
