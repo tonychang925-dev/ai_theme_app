@@ -115,13 +115,19 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
     setEmotion(null);
     const ctrl = new AbortController();
     (async () => {
-      // Prefer calibrated data from workbench, fall back to static JSON
+      // Prefer calibrated data from workbench, merge raw data from static JSON
       try {
-        const drResp = await fetch(`/api/v2/daily-review-v2?date=${encodeURIComponent(tradeDate)}`, { signal: ctrl.signal });
+        const [drResp, staticResp] = await Promise.all([
+          fetch(`/api/v2/daily-review-v2?date=${encodeURIComponent(tradeDate)}`, { signal: ctrl.signal }),
+          fetch(`/api/emotion-${tradeDate}.json`, { signal: ctrl.signal }).catch(() => null),
+        ]);
         if (drResp.ok) {
           const dr = await drResp.json();
           const er = dr.emotion_review;
           if (er && er.emotion_node) {
+            const raw = (staticResp && (staticResp as Response).ok)
+              ? await (staticResp as Response).json().then((d: any) => d.raw || d).catch(() => ({}))
+              : {};
             setEmotion({
               trade_date: tradeDate,
               emotion_node: er.emotion_node,
@@ -134,7 +140,7 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
               style_score: er.style_score || 0, style_label: er.style_label || "",
               key_evidence: er.key_evidence || [],
               strategy_bias: er.strategy_bias || "",
-              raw: {},
+              raw: raw as any,
             } as EmotionState);
             setLoading(false);
             return;
