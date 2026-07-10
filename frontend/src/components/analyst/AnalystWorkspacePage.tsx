@@ -401,6 +401,7 @@ export function AnalystWorkspacePage() {
   const [genMsg, setGenMsg] = useState("");
   const [calibrating, setCalibrating] = useState(false);
   const [calMsg, setCalMsg] = useState("");
+  const [readinessDialog, setReadinessDialog] = useState<{ show: boolean; chart: boolean; emotion: boolean; reference: boolean; mode: "generate" | "calibrate" } | null>(null);
 
   const qs = new URLSearchParams(window.location.search);
   const tradeDate = qs.get("trade_date") || new Date().toISOString().slice(0, 10);
@@ -440,6 +441,18 @@ export function AnalystWorkspacePage() {
   };
 
   const handleGenerate = async () => {
+    // Pre-check: AI data readiness (chart + emotion only — analyst reference NOT required)
+    try {
+      const [chartOk, emoOk] = await Promise.all([
+        fetch(`/api/analyst-charts/${dateInput}.json`, { method: "HEAD" }).then(r => r.ok),
+        fetch(`/api/emotion-${dateInput}.json`, { method: "HEAD" }).then(r => r.ok),
+      ]);
+      if (!chartOk || !emoOk) {
+        setReadinessDialog({ show: true, chart: chartOk, emotion: emoOk, reference: true, mode: "generate" });
+        return;
+      }
+    } catch { /* proceed anyway */ }
+
     setGenerating(true); setGenMsg("启动分析中…");
     try {
       const resp = await fetch(`/api/v1/analyst-workbench/${dateInput}/generate`, { method: "POST" });
@@ -455,13 +468,23 @@ export function AnalystWorkspacePage() {
   };
 
   const handleImportAnalyst = async () => {
+    // Pre-check: AI data + analyst reference all needed for calibration
+    try {
+      const [chartOk, emoOk] = await Promise.all([
+        fetch(`/api/analyst-charts/${dateInput}.json`, { method: "HEAD" }).then(r => r.ok),
+        fetch(`/api/emotion-${dateInput}.json`, { method: "HEAD" }).then(r => r.ok),
+      ]);
+      const sessResp = await fetch(`/api/v1/analyst-workbench/${dateInput}/session`);
+      const session = sessResp.ok ? await sessResp.json() : {};
+      const refOk = session.has_draft || session.draft_version > 0;
+      if (!chartOk || !emoOk || !refOk) {
+        setReadinessDialog({ show: true, chart: chartOk, emotion: emoOk, reference: refOk, mode: "calibrate" });
+        return;
+      }
+    } catch { /* proceed anyway */ }
+
     setCalibrating(true); setCalMsg("校准分析中…");
     try {
-      const resp = await fetch(`/api/v1/analyst-workbench/${dateInput}/session`);
-      if (!resp.ok) throw new Error(`${resp.status}`);
-      const session = await resp.json();
-      if (!session.has_draft) { setCalMsg("请先生成 AI 草稿"); setCalibrating(false); setTimeout(() => setCalMsg(""), 3000); return; }
-      // Trigger alignment via CLI
       const alignResp = await fetch(`/api/v1/analyst-alignment/${dateInput}`, { method: "POST" });
       if (alignResp.ok) {
         const ar = await alignResp.json();
@@ -642,6 +665,62 @@ export function AnalystWorkspacePage() {
           )}
         </div>
       </div>
+
+      {/* ── Data Readiness Dialog ── */}
+      {readinessDialog?.show && (
+        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.7)", zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center" }}
+          onClick={() => setReadinessDialog(null)}>
+          <div style={{ background: "#162230", border: "1px solid #ffd85e", borderRadius: 12, padding: 24, maxWidth: 420, width: "90%" }}
+            onClick={e => e.stopPropagation()}>
+            <h3 style={{ color: "#ffd85e", margin: "0 0 12px 0", fontSize: 16 }}>⚠ 数据未就绪</h3>
+            <p style={{ color: "#8da6b8", fontSize: 13, marginBottom: 16 }}>
+              {readinessDialog.mode === "generate"
+                ? <>当前日期 <b>{dateInput}</b> 缺少以下 AI 系统数据，无法生成完整草稿：</>
+                : <>当前日期 <b>{dateInput}</b> 缺少以下数据，校准分析无法进行：</>
+              }
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 16 }}>
+              <DataStatusRow label="AI 图表数据 (analyst-charts)" ok={readinessDialog.chart} />
+              <DataStatusRow label="情绪数据 (emotion JSON)" ok={readinessDialog.emotion} />
+              <DataStatusRow label="分析师参考数据 (reference)" ok={readinessDialog.reference}
+                optional={readinessDialog.mode === "generate"} />
+            </div>
+            <p style={{ color: "#5a7a8a", fontSize: 12, marginBottom: 16 }}>
+              {readinessDialog.mode === "generate"
+                ? "AI 图表和情绪数据来自盘后数据采集系统。请确认采集任务已完成后再启动分析。"
+                : "校准分析需要同时具备 AI 系统数据和分析师参考数据。请先启动分析生成 AI 草稿。"}
+            </p>
+            <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
+              <button onClick={() => setReadinessDialog(null)}
+                style={{ padding: "8px 20px", background: "#243040", color: "#8da6b8", border: "1px solid #3a5060", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
+                取消
+              </button>
+              {readinessDialog.mode === "generate" && (
+                <button onClick={() => { setReadinessDialog(null); setGenerating(true); setGenMsg("强制启动中…");
+                  fetch(`/api/v1/analyst-workbench/${dateInput}/generate`, { method: "POST" }).then(r => r.json()).then(r => {
+                    setGenMsg(r.status === "completed" ? `生成完成 (draft v${r.draft_version || "?"})` : `失败: ${r.error || "未知错误"}`);
+                    if (r.status === "completed") fetchWorkspace(dateInput);
+                  }).catch(() => setGenMsg("请求失败")).finally(() => { setGenerating(false); setTimeout(() => setGenMsg(""), 4000); });
+                }}
+                  style={{ padding: "8px 20px", background: "#d4380d", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
+                  仍然启动
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DataStatusRow({ label, ok, optional }: { label: string; ok: boolean; optional?: boolean }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13 }}>
+      <span style={{ color: ok ? "#39ff14" : optional ? "#8da6b8" : "#d4380d", fontWeight: 700 }}>{ok ? "✓" : optional ? "—" : "✗"}</span>
+      <span style={{ color: ok ? "#8da6b8" : optional ? "#5a7a8a" : "#d4886b" }}>{label}</span>
+      {optional && <span style={{ fontSize: 11, color: "#5a7a8a" }}>（可选）</span>}
+      {!ok && !optional && <span style={{ fontSize: 11, color: "#d4380d" }}>（缺失）</span>}
     </div>
   );
 }
