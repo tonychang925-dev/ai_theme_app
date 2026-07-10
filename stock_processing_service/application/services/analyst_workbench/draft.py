@@ -22,6 +22,10 @@ class AIDraft:
     # ── Calibration (Phase 4.5.1) ──
     calibration: dict[str, Any] = field(default_factory=dict)
 
+    # ── Workbench Sections (Phase 4.5.4) ──
+    emotion_review: dict[str, Any] = field(default_factory=dict)
+    chart_reviews: list[dict[str, Any]] = field(default_factory=list)
+
     generated_by: str = "ai_workbench_v1"
     generated_at: str = ""
     source_quality: float = 1.0
@@ -37,6 +41,8 @@ class AIDraft:
             "narrative": self.narrative,
             "playbook": self.playbook,
             "calibration": self.calibration,
+            "emotion_review": self.emotion_review,
+            "chart_reviews": self.chart_reviews,
             "generated_by": self.generated_by,
             "generated_at": self.generated_at or datetime.now(timezone.utc).isoformat(),
             "source_quality": self.source_quality,
@@ -54,6 +60,8 @@ class AIDraft:
             narrative=d.get("narrative", {}),
             playbook=d.get("playbook", {}),
             calibration=d.get("calibration", {}),
+            emotion_review=d.get("emotion_review", {}),
+            chart_reviews=d.get("chart_reviews", []),
             generated_by=d.get("generated_by", "ai_workbench_v1"),
             generated_at=d.get("generated_at", ""),
             source_quality=d.get("source_quality", 1.0),

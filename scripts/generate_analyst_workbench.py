@@ -113,6 +113,11 @@ def main():
             charts = json.loads(chart_path.read_text())
             draft.attention_state = {"charts_available": len(charts)}
             draft.cognition_cards = _build_cognition_cards(charts)
+            # Phase 4.5.4: structured chart reviews
+            from stock_processing_service.application.services.analyst_workbench.chart_review_builder import (
+                ChartReviewBuilder,
+            )
+            draft.chart_reviews = ChartReviewBuilder().build(charts)
         except (json.JSONDecodeError, OSError) as e:
             missing.append(f"chart_json_error: {e}")
     else:
@@ -121,6 +126,12 @@ def main():
     if emotion_path.exists():
         try:
             emo = json.loads(emotion_path.read_text())
+            # Phase 4.5.4: structured emotion review
+            from stock_processing_service.application.services.analyst_workbench.emotion_review_builder import (
+                EmotionReviewBuilder,
+            )
+            draft.emotion_review = EmotionReviewBuilder().build(emo)
+            # Keep old narrative/playbook for backward compat
             draft.narrative = {
                 "emotion_node": emo.get("emotion_node", ""),
                 "emotion_desc": emo.get("emotion_desc", ""),
@@ -138,7 +149,7 @@ def main():
         missing.append("emotion_json")
 
     draft.missing_fields = missing
-    draft.source_quality = max(0.50, 1.0 - len(missing) * 0.2)
+    draft.source_quality = max(0.50, 1.0 - len(missing) * 0.15)
 
     # Save draft
     path = draft_store.save(draft)

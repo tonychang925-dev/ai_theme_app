@@ -96,28 +96,55 @@ class WorkbenchReportComposer:
                 logger.exception("Engine report composition failed")
 
         # ── Formal / Published: enrich with workbench snapshot data ──
-        if approval.can_generate_report and approval.snapshot:
-            workbench_data = {
-                "attention_state": approval.snapshot.attention_state,
-                "cognition_cards": approval.snapshot.cognition_cards,
-                "narrative": approval.snapshot.narrative,
-                "playbook": approval.snapshot.playbook,
-                "override_summary": approval.snapshot.override_summary,
+        snap = approval.snapshot
+        if approval.can_generate_report and snap:
+            # Phase 4.5.4: first-class sections from approved snapshot
+            report = {
+                **engine_report,
+                **approval_meta,
+
+                "emotion_review": snap.emotion_review,
+                "market_chart_reviews": snap.chart_reviews,
+                "attention_review": snap.attention_state,
+                "cognition_reviews": snap.cognition_cards,
+                "narrative_review": snap.narrative,
+                "playbook_review": snap.playbook,
+                "analyst_override_review": snap.override_summary,
+
+                # backward-compat blob
+                "workbench_data": {
+                    "attention_state": snap.attention_state,
+                    "cognition_cards": snap.cognition_cards,
+                    "narrative": snap.narrative,
+                    "playbook": snap.playbook,
+                    "override_summary": snap.override_summary,
+                    "emotion_review": snap.emotion_review,
+                    "chart_reviews": snap.chart_reviews,
+                },
             }
         else:
-            workbench_data = {
-                "attention_state": {},
-                "cognition_cards": [],
-                "narrative": {},
-                "playbook": {},
-                "override_summary": {},
-            }
+            report = {
+                **engine_report,
+                **approval_meta,
 
-        report = {
-            **engine_report,
-            **approval_meta,
-            "workbench_data": workbench_data,
-        }
+                "emotion_review": {},
+                "market_chart_reviews": [],
+                "attention_review": {},
+                "cognition_reviews": [],
+                "narrative_review": {},
+                "playbook_review": {},
+                "analyst_override_review": {},
+
+                "workbench_data": {
+                    "attention_state": {},
+                    "cognition_cards": [],
+                    "narrative": {},
+                    "playbook": {},
+                    "override_summary": {},
+                    "emotion_review": {},
+                    "chart_reviews": [],
+                },
+            }
 
         return ComposedReport(
             mode=approval.mode,

@@ -145,6 +145,14 @@ class PostMarketDailyReviewV2Builder:
             "mainline_lifecycle_diagnostics": self._pass_through_dict(doc, "mainline_lifecycle_diagnostics"),
             "market_regime_review": self._pass_through_dict(doc, "market_regime_review"),
             "post_market_decision_v2": self._pass_through_dict(doc, "post_market_decision_v2"),
+            # Phase 4.5.4: workbench sections pass-through
+            "emotion_review": self._pass_through_dict(doc, "emotion_review"),
+            "market_chart_reviews": self._pass_through_list(doc, "market_chart_reviews"),
+            "attention_review": self._pass_through_dict(doc, "attention_review"),
+            "cognition_reviews": self._pass_through_list(doc, "cognition_reviews"),
+            "narrative_review": self._pass_through_dict(doc, "narrative_review"),
+            "playbook_review": self._pass_through_dict(doc, "playbook_review"),
+            "analyst_override_review": self._pass_through_dict(doc, "analyst_override_review"),
             "diagnostics": diagnostics,
         }
 

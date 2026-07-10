@@ -23,6 +23,10 @@ class ReviewSnapshot:
     playbook: dict[str, Any] = field(default_factory=dict)
     override_summary: dict[str, Any] = field(default_factory=dict)
 
+    # ── Workbench Sections (Phase 4.5.4) ──
+    emotion_review: dict[str, Any] = field(default_factory=dict)
+    chart_reviews: list[dict[str, Any]] = field(default_factory=list)
+
     def to_dict(self) -> dict[str, Any]:
         return {
             "trade_date": self.trade_date.isoformat(),
@@ -36,6 +40,8 @@ class ReviewSnapshot:
             "narrative": self.narrative,
             "playbook": self.playbook,
             "override_summary": self.override_summary,
+            "emotion_review": self.emotion_review,
+            "chart_reviews": self.chart_reviews,
         }
 
     @classmethod
@@ -52,6 +58,8 @@ class ReviewSnapshot:
             narrative=d.get("narrative", {}),
             playbook=d.get("playbook", {}),
             override_summary=d.get("override_summary", {}),
+            emotion_review=d.get("emotion_review", {}),
+            chart_reviews=d.get("chart_reviews", []),
         )
 
     @classmethod
@@ -69,6 +77,8 @@ class ReviewSnapshot:
             narrative=draft.narrative,
             playbook=draft.playbook,
             override_summary=overrides or {},
+            emotion_review=draft.emotion_review,
+            chart_reviews=draft.chart_reviews,
         )
 
 
