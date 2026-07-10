@@ -1068,6 +1068,73 @@ export interface PostMarketDailyReviewV2 {
   theme_name_map?: Record<string, string>;
   // PR-14C: evidence alignment
   evidence_alignment_index?: EvidenceAlignmentIndex;
+
+  // Phase 4.5.4: workbench sections from Approved Snapshot
+  emotion_review?: EmotionReview;
+  market_chart_reviews?: MarketChartReview[];
+  attention_review?: Record<string, unknown>;
+  cognition_reviews?: Record<string, unknown>[];
+  narrative_review?: Record<string, unknown>;
+  playbook_review?: Record<string, unknown>;
+  analyst_override_review?: Record<string, unknown>;
+
+  // Phase 4.5.3: workbench approval metadata
+  workbench_approval?: WorkbenchApproval;
+}
+
+// ── Phase 4.5.4 Workbench Section Types ──
+
+export interface EmotionReview {
+  emotion_node: string;
+  emotion_label: string;
+  emotion_score: number;
+  risk_level: "LOW" | "MEDIUM" | "HIGH" | "EXTREME" | "UNKNOWN";
+  confidence: number;
+  summary: string;
+  strategy_bias: string;
+  key_evidence: string[];
+  breadth_score: number;
+  breadth_label: string;
+  momentum_score: number;
+  momentum_label: string;
+  relay_score: number;
+  relay_label: string;
+  capital_score: number;
+  capital_label: string;
+  style_score: number;
+  style_label: string;
+  analyst_adjustment?: {
+    modified: boolean;
+    from: string;
+    to: string;
+    reason: string;
+  } | null;
+  source_quality: number;
+  missing_fields: string[];
+}
+
+export interface MarketChartReview {
+  chart_type: string;
+  title: string;
+  status: string;
+  score: number | null;
+  summary: string;
+  key_metrics: Record<string, unknown>;
+  evidence: string[];
+  analyst_note: string;
+  source_quality: number;
+}
+
+export interface WorkbenchApproval {
+  mode: "preview" | "formal" | "published" | "blocked";
+  can_generate_formal_report: boolean;
+  snapshot_version: number;
+  approved_at: string;
+  approved_by: string;
+  based_on_draft_version: number;
+  session_status: string;
+  reason: string;
+  preview_publish?: boolean;
 }
 
 export interface ThemeLimitUpStock {

@@ -15,6 +15,7 @@ import EngineMissingState from "./components/EngineMissingState";
 import EnginePostMarketView from "./components/EnginePostMarketView";
 import LegacyRecapSections from "./components/LegacyRecapSections";
 import { MarketRecapPanel } from "./components/MarketRecapPanel";
+import { WorkbenchSectionsPanel } from "./components/WorkbenchSectionsPanel";
 
 const DISPLAY_REPLACEMENTS: Array<[string, string]> = [
   ["risk_off", "避险防御"],
@@ -1743,6 +1744,10 @@ export function RecapPage() {
         <>
           <main className="workspace-layout single">
             <section className="workspace-column">
+              {/* Phase 4.5.5: Workbench sections — AI + analyst approved content */}
+              {isPostMarket && dailyReviewV2 && (
+                <WorkbenchSectionsPanel data={dailyReviewV2} />
+              )}
               {isPostMarket ? (
                 engineReportReady ? (
                 <EnginePostMarketView
