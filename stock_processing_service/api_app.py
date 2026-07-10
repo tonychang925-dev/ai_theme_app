@@ -8791,27 +8791,27 @@ async def import_analyst_reference(body: dict[str, Any]) -> dict[str, Any]:
     quality = record.quality
     extraction_status = (
         quality.extraction_status.value
-        if hasattr(quality, 'extraction_status') else "unknown"
+        if hasattr(quality.extraction_status, 'value') else str(quality.extraction_status)
     )
-    core_ok = quality.core_fields_present if hasattr(quality, 'core_fields_present') else 0
-    full_ok = quality.full_fields_present if hasattr(quality, 'full_fields_present') else 0
-    missing = quality.missing_fields if hasattr(quality, 'missing_fields') else []
-    low_conf = quality.low_confidence_fields if hasattr(quality, 'low_confidence_fields') else []
+    core_coverage = quality.required_field_coverage if hasattr(quality, 'required_field_coverage') else 0.0
+    full_coverage = quality.optional_field_coverage if hasattr(quality, 'optional_field_coverage') else 0.0
+    missing = list(quality.missing_fields) if quality.missing_fields else []
+    low_conf = list(quality.low_confidence_fields) if quality.low_confidence_fields else []
 
     # Quality gate: reject if extraction failed OR core fields insufficient
-    if extraction_status == "failed":
+    if extraction_status in ("failed", "FAILED", "ExtractionStatus.FAILED"):
         raise HTTPException(
             status_code=422,
             detail=f"文件格式无法识别（extraction_status=failed）。"
                    f"请使用 DeepSeek 结构化复盘格式（含 JSON 数据块的 .md 文件）。"
-                   f"缺失核心字段: {list(missing)[:8]}",
+                   f"缺失字段: {missing[:8] if missing else '无'}",
         )
-    if core_ok < 3:
+    if core_coverage < 0.3:
         raise HTTPException(
             status_code=422,
-            detail=f"数据提取不足: 核心字段仅 {core_ok}/5。"
+            detail=f"数据提取不足: 核心字段覆盖率仅 {core_coverage:.0%}。"
                    f"当前文件格式可能不是 DeepSeek 结构化复盘。"
-                   f"缺失: {list(missing)[:8]}"
+                   f"缺失: {missing[:8] if missing else '无'}"
                    f"—— 请确认导入了正确的 .md 文件（应包含 JSON 结构化数据块）。",
         )
 
@@ -8827,7 +8827,7 @@ async def import_analyst_reference(body: dict[str, Any]) -> dict[str, Any]:
         "trade_date": td_str,
         "content_hash": content_hash,
         "extraction_status": extraction_status,
-        "coverage": {"core_fields": core_ok, "full_fields": full_ok},
+        "coverage": {"core_coverage": core_coverage, "full_coverage": full_coverage},
         "missing_fields": missing,
         "low_confidence_fields": low_conf,
         "validation_issues": validation_issues,

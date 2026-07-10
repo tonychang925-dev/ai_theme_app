@@ -879,7 +879,7 @@ export function AnalystWorkspacePage() {
                 {importDialog.step === "imported" && importDialog.result?.import && (
                   <div style={{ marginTop: 12, padding: 10, background: "#0c1118", borderRadius: 6, fontSize: 11, color: "#5a7a8a", textAlign: "left" }}>
                     <div>提取状态: <span style={{ color: "#39ff14" }}>{importDialog.result.import.extraction_status}</span></div>
-                    <div>核心字段: {importDialog.result.import.coverage?.core_fields ?? "—"} / 完整字段: {importDialog.result.import.coverage?.full_fields ?? "—"}</div>
+                    <div>核心覆盖率: {importDialog.result.import.coverage?.core_coverage != null ? `${(importDialog.result.import.coverage.core_coverage * 100).toFixed(0)}%` : "—"} / 完整覆盖率: {importDialog.result.import.coverage?.full_coverage != null ? `${(importDialog.result.import.coverage.full_coverage * 100).toFixed(0)}%` : "—"}</div>
                     <div>市场阶段: <span style={{ color: "#8ddcff" }}>{importDialog.result.import.market_phase || "—"}</span></div>
                     <div>风险等级: <span style={{ color: "#8ddcff" }}>{importDialog.result.import.risk_level || "—"}</span></div>
                     <div>涨停数: {importDialog.result.import.limit_up_count ?? "—"} / 最高板: {importDialog.result.import.max_board_height ?? "—"}</div>
