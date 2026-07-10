@@ -8759,18 +8759,11 @@ async def import_analyst_reference(body: dict[str, Any]) -> dict[str, Any]:
     )
 
     import tempfile
-    # ── Pre-validation: check format and warn if not DeepSeek-structured ──
+    # ── Pre-validation: warn only on severe issues, let parser decide ──
     validation_issues: list[str] = []
-    has_deepseek_json = '"limitup_attribution"' in content or '"market_facts"' in content
 
-    if not has_deepseek_json:
-        validation_issues.append(
-            "⚠ 当前文件不是标准 DeepSeek 结构化格式（缺少 limitup_attribution/market_facts JSON 字段）。"
-            "系统将尝试自动提取数据，但结果可能不完整。建议使用 DeepSeek 结构化复盘 .md 文件。"
-        )
-
-    if len(content) < 200:
-        validation_issues.append(f"内容过短（{len(content)} 字符，建议至少 200 字符）")
+    if len(content) < 100:
+        validation_issues.append(f"内容过短（{len(content)} 字符），可能缺少完整复盘数据。")
 
     # ── Parse markdown ──
     try:
