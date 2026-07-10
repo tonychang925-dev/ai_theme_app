@@ -8199,6 +8199,133 @@ async def save_analyst_workspace(
     }
 
 
+# ── Phase 4.5 Analyst Workbench Session API ──
+
+def _get_wb_session_store():
+    from stock_processing_service.application.services.analyst_workbench.session import (
+        SessionStore, WorkbenchStatus,
+    )
+    return SessionStore(base_dir="tmp/analyst_workbench"), WorkbenchStatus
+
+
+def _get_wb_draft_store():
+    from stock_processing_service.application.services.analyst_workbench.draft import DraftStore
+    return DraftStore(base_dir="tmp/analyst_workbench")
+
+
+def _get_wb_snapshot_store():
+    from stock_processing_service.application.services.analyst_workbench.snapshot import (
+        SnapshotStore, ReviewSnapshot,
+    )
+    return SnapshotStore(base_dir="tmp/analyst_workbench"), ReviewSnapshot
+
+
+@app.get("/api/v1/analyst-workbench/{trade_date}/session")
+async def get_workbench_session(trade_date: str) -> dict[str, Any]:
+    """Return workbench session state. Does NOT trigger implicit generation."""
+    session_store, _ = _get_wb_session_store()
+    draft_store = _get_wb_draft_store()
+    snapshot_store, _ = _get_wb_snapshot_store()
+    td = _date.fromisoformat(trade_date)
+    session = session_store.get(td)
+    draft_version = draft_store.latest_version(td)
+    snapshot = snapshot_store.load(td)
+    if draft_version > session.draft_version:
+        session.draft_version = draft_version
+    if snapshot and snapshot.snapshot_version > session.snapshot_version:
+        session.snapshot_version = snapshot.snapshot_version
+    return {
+        "trade_date": trade_date,
+        "status": session.status,
+        "draft_version": session.draft_version,
+        "snapshot_version": session.snapshot_version,
+        "can_generate": session.can_generate,
+        "can_review": session.can_review,
+        "can_approve": session.can_approve,
+        "can_publish": session.can_publish,
+        "has_draft": session.has_draft,
+        "has_snapshot": session.has_snapshot,
+        "created_at": session.created_at,
+        "generated_at": session.generated_at,
+        "approved_at": session.approved_at,
+    }
+
+
+@app.post("/api/v1/analyst-workbench/{trade_date}/generate")
+async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
+    """Trigger AI draft generation. Synchronous in v1."""
+    import subprocess, sys
+    td = _date.fromisoformat(trade_date)
+    try:
+        result = subprocess.run(
+            [sys.executable, "scripts/generate_analyst_workbench.py", "--date", trade_date],
+            capture_output=True, text=True, timeout=120,
+        )
+        if result.returncode != 0:
+            return {"job_id": f"local_{trade_date}", "status": "failed", "error": result.stderr.strip()[-500:]}
+        session_store, _ = _get_wb_session_store()
+        session = session_store.get(td)
+        return {"job_id": f"local_{trade_date}", "status": "completed", "session_status": session.status, "draft_version": session.draft_version}
+    except Exception as e:
+        return {"job_id": f"local_{trade_date}", "status": "failed", "error": str(e)}
+
+
+@app.post("/api/v1/analyst-workbench/{trade_date}/save-review")
+async def save_workbench_review(trade_date: str, body: dict[str, Any] = None) -> dict[str, Any]:
+    """Save analyst review with overrides."""
+    session_store, WorkbenchStatus = _get_wb_session_store()
+    td = _date.fromisoformat(trade_date)
+    session = session_store.get(td)
+    if session.status == WorkbenchStatus.PUBLISHED:
+        return {"status": "error", "error": "Cannot review PUBLISHED session. Mark STALE first."}
+    body = body or {}
+    overrides = body.get("overrides", {})
+    if overrides:
+        d = _Path("tmp/analyst_workbench") / trade_date
+        d.mkdir(parents=True, exist_ok=True)
+        with open(d / "overrides.jsonl", "a", encoding="utf-8") as f:
+            f.write(_json.dumps({"trade_date": trade_date, "timestamp": _dt.now(_tz.utc).isoformat(), "overrides": overrides}, ensure_ascii=False) + "\n")
+    if session.status in (WorkbenchStatus.DRAFT_READY, WorkbenchStatus.IN_REVIEW):
+        session = session_store.transition(session, WorkbenchStatus.IN_REVIEW)
+    return {"status": "saved", "session_status": session.status, "overrides_recorded": len(overrides)}
+
+
+@app.post("/api/v1/analyst-workbench/{trade_date}/approve")
+async def approve_workbench(trade_date: str, body: dict[str, Any] = None) -> dict[str, Any]:
+    """Create approved ReviewSnapshot."""
+    session_store, WorkbenchStatus = _get_wb_session_store()
+    draft_store = _get_wb_draft_store()
+    snapshot_store, ReviewSnapshot = _get_wb_snapshot_store()
+    td = _date.fromisoformat(trade_date)
+    session = session_store.get(td)
+    if not session.can_approve:
+        return {"status": "error", "error": f"Cannot approve from status {session.status}"}
+    draft = draft_store.load(td)
+    if draft is None:
+        return {"status": "error", "error": "No draft found to approve"}
+    body = body or {}
+    snapshot = ReviewSnapshot.from_draft(draft, overrides=body.get("overrides", {}), snapshot_version=session.snapshot_version + 1, approved_by=body.get("approved_by", "analyst"))
+    snapshot_store.save(snapshot)
+    session = session_store.transition(session, WorkbenchStatus.APPROVED, snapshot_version=snapshot.snapshot_version, approved_by=snapshot.approved_by)
+    return {"status": "approved", "session_status": session.status, "snapshot_version": session.snapshot_version, "based_on_draft_version": draft.draft_version}
+
+
+@app.post("/api/v1/analyst-workbench/{trade_date}/publish")
+async def publish_workbench(trade_date: str) -> dict[str, Any]:
+    """Publish approved workbench."""
+    session_store, WorkbenchStatus = _get_wb_session_store()
+    snapshot_store, _ = _get_wb_snapshot_store()
+    td = _date.fromisoformat(trade_date)
+    session = session_store.get(td)
+    snapshot = snapshot_store.load(td)
+    if not session.can_publish:
+        return {"status": "error", "error": f"Cannot publish from status {session.status}"}
+    if snapshot is None:
+        return {"status": "error", "error": "No approved snapshot exists"}
+    session = session_store.transition(session, WorkbenchStatus.PUBLISHED)
+    return {"status": "published", "session_status": session.status, "published_at": session.published_at}
+
+
 @app.get("/api/v1/leaders/{theme_name}")
 async def get_theme_leaders(
     theme_name: str,
