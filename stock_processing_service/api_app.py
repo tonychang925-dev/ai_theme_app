@@ -8835,6 +8835,108 @@ async def import_analyst_reference(body: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+# ── Phase 4.5.6 Calibration Comparison ──
+
+@app.get("/api/v1/analyst-workbench/{trade_date}/comparison")
+async def get_ai_analyst_comparison(trade_date: str) -> dict[str, Any]:
+    """Return AI vs Analyst side-by-side comparison for each dimension."""
+    from datetime import date as _date
+    import os as _os
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    td = _date.fromisoformat(trade_date)
+
+    # Load AI draft
+    draft_store = _get_wb_draft_store()
+    draft = draft_store.load(td)
+
+    # Load analyst reference
+    from stock_processing_service.application.services.analyst_reference.store import (
+        AnalystReferenceStore,
+    )
+    ref_dir = _os.path.join(_project_root, "tmp", "analyst_reference")
+    ref_store = AnalystReferenceStore(base_dir=ref_dir)
+    ref = ref_store.get_by_date(td)
+
+    # Build comparison rows
+    cal = (draft.calibration if draft else {}) or {}
+    scores = cal.get("component_scores", {})
+
+    # AI values
+    emo = (draft.emotion_review if draft else {}) or {}
+    ai_phase = emo.get("emotion_node", "")
+    ai_risk = emo.get("risk_level", "")
+    ai_strategy = emo.get("strategy_bias", "")
+    ai_limit_up = emo.get("key_metrics", {}).get("limit_up_count", "—")
+
+    # Analyst values
+    if ref:
+        an_phase = ref.emotion_label.market_phase or ""
+        an_risk = ref.emotion_label.risk_level or ""
+        an_strategy = ref.emotion_label.strategy or ref.strategy_label.summary or ""
+        an_limit_up = ref.market_facts.limit_up_count
+    else:
+        an_phase = an_risk = an_strategy = ""
+        an_limit_up = None
+
+    # Chinese label map
+    PHASE_CN: dict[str, str] = {
+        "REBOUND": "修复反弹", "CLIMAX": "高潮", "ACCELERATION": "加速",
+        "FERMENTATION": "发酵", "DIVERGENCE": "退潮分歧", "FADE": "衰退",
+        "ICE_POINT": "冰点", "CHAOS": "混沌", "REPAIR_WATCH": "观察修复",
+        "PANIC": "恐慌", "FREEZE": "冻结", "DISTRIBUTION": "派发",
+    }
+
+    def cn_phase(v: str) -> str:
+        return PHASE_CN.get(v, v or "—")
+
+    rows = [
+        {
+            "key": "phase", "label": "市场阶段",
+            "ai_value": cn_phase(ai_phase),
+            "analyst_value": cn_phase(an_phase),
+            "score": scores.get("phase", 0),
+        },
+        {
+            "key": "risk", "label": "风险等级",
+            "ai_value": ai_risk or "—",
+            "analyst_value": an_risk or "—",
+            "score": scores.get("risk", 1),
+        },
+        {
+            "key": "facts", "label": "市场事实",
+            "ai_value": f"涨停 {ai_limit_up}" if ai_limit_up != "—" else "—",
+            "analyst_value": f"涨停 {an_limit_up}" if an_limit_up else "—",
+            "score": scores.get("facts", 0),
+        },
+        {
+            "key": "relay", "label": "接力生态",
+            "ai_value": emo.get("relay_label", "—"),
+            "analyst_value": "—",
+            "score": scores.get("relay", 0),
+        },
+        {
+            "key": "strategy", "label": "交易策略",
+            "ai_value": (ai_strategy or "—")[:50],
+            "analyst_value": (an_strategy or "—")[:50],
+            "score": scores.get("strategy", 0),
+        },
+        {
+            "key": "theme_leader", "label": "题材龙头",
+            "ai_value": "—",
+            "analyst_value": "—",
+            "score": scores.get("theme_leader", 0),
+        },
+    ]
+
+    return {
+        "trade_date": trade_date,
+        "rows": rows,
+        "overall_score": cal.get("overall_score", 0),
+        "grade": cal.get("grade", ""),
+        "has_reference": ref is not None,
+    }
+
+
 # ── Phase 4.5.6 Apply Calibration Corrections ──
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/apply-calibration")
