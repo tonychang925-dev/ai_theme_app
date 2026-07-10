@@ -8252,6 +8252,62 @@ async def get_workbench_session(trade_date: str) -> dict[str, Any]:
     }
 
 
+def _update_trend_json(trade_date: str, charts: list[dict]) -> None:
+    """Append the latest day data to each trend array in trend.json."""
+    trend_path = Path("frontend/public/api/analyst-charts/trend.json")
+    if not trend_path.exists():
+        return
+    try:
+        trend = json.loads(trend_path.read_text())
+        # Only append if date not already present
+        if trade_date in trend.get("dates", []):
+            return
+        trend.setdefault("dates", []).append(trade_date)
+
+        # Extract data from charts
+        breadth = _safe_get_chart(charts, "market_breadth")
+        relay = _safe_get_chart(charts, "relay_ecology")
+        capital = _safe_get_chart(charts, "active_capital")
+        emotion = _safe_get_chart(charts, "emotion_momentum")
+
+        if breadth:
+            trend.setdefault("breadth", []).append({
+                "date": trade_date,
+                "limit_up": breadth.get("limit_up_count", 0),
+                "chain_board": breadth.get("chain_board_count", 0),
+                "up_ratio": breadth.get("up_ratio", 0),
+            })
+        if emotion:
+            trend.setdefault("momentum", []).append({
+                "date": trade_date,
+                "score": emotion.get("emotion_momentum_score", 0),
+            })
+        if capital:
+            trend.setdefault("capital", []).append({
+                "date": trade_date,
+                "active_amount_yi": capital.get("active_amount_yi", 0),
+                "total_amount_yi": capital.get("total_amount_yi", 0),
+            })
+        if relay:
+            trend.setdefault("relay", []).append({
+                "date": trade_date,
+                "max_height": relay.get("max_board_height", 0),
+                "p1to2": relay.get("promotion_1_to_2", 0),
+                "p2to3": relay.get("promotion_2_to_3", 0),
+                "leaders": [],
+            })
+        trend_path.write_text(json.dumps(trend, ensure_ascii=False))
+    except Exception:
+        pass
+
+
+def _safe_get_chart(charts: list[dict], chart_type: str) -> dict | None:
+    for c in charts:
+        if c.get("chart_type") == chart_type:
+            return c.get("data", {})
+    return None
+
+
 @app.post("/api/v1/analyst-workbench/{trade_date}/generate")
 async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
     """Trigger full AI analysis pipeline: chart + emotion + workbench draft.
@@ -8274,6 +8330,9 @@ async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
         (chart_dir / f"{trade_date}.json").write_text(
             _json_mod.dumps(charts, ensure_ascii=False, default=str))
         steps.append("charts")
+
+        # ── Update trend.json ──
+        _update_trend_json(trade_date, charts)
     except Exception:
         pass  # chart generation is best-effort
 
