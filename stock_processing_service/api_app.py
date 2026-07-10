@@ -8257,7 +8257,9 @@ async def get_workbench_session(trade_date: str) -> dict[str, Any]:
 
 def _update_trend_json(trade_date: str, charts: list[dict]) -> None:
     """Append the latest day data to each trend array in trend.json."""
-    trend_path = Path("frontend/public/api/analyst-charts/trend.json")
+    import os as _os
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    trend_path = Path(_project_root) / "frontend" / "public" / "api" / "analyst-charts" / "trend.json"
     if not trend_path.exists():
         return
     try:
@@ -8328,28 +8330,26 @@ async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
     # Step 1: Generate & save charts
     try:
         charts = await get_analyst_charts(trade_date)
-        chart_dir = Path("frontend/public/api/analyst-charts")
+        chart_dir = Path(project_root) / "frontend" / "public" / "api" / "analyst-charts"
         chart_dir.mkdir(parents=True, exist_ok=True)
         (chart_dir / f"{trade_date}.json").write_text(
             _json_mod.dumps(charts, ensure_ascii=False, default=str))
         steps.append("charts")
-
-        # ── Update trend.json ──
         _update_trend_json(trade_date, charts)
     except Exception:
-        pass  # chart generation is best-effort
+        pass
 
     # Step 2: Generate & save emotion
     try:
         emo = await get_market_emotion(trade_date)
         if emo and emo.get("emotion_node"):
-            emo_dir = Path("frontend/public/api")
+            emo_dir = Path(project_root) / "frontend" / "public" / "api"
             emo_dir.mkdir(parents=True, exist_ok=True)
             (emo_dir / f"emotion-{trade_date}.json").write_text(
                 _json_mod.dumps(emo, ensure_ascii=False, default=str))
             steps.append("emotion")
     except Exception:
-        pass  # emotion generation is best-effort
+        pass
 
     # Step 3: Run workbench CLI (reads chart+emotion from disk, no HTTP needed)
     script = os.path.join(project_root, "scripts", "generate_analyst_workbench.py")
