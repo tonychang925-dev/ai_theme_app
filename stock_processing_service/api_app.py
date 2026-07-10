@@ -22,6 +22,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pydantic import Field
 from datetime import datetime, timezone as _tz
+import httpx
 
 # Startup watermark — any "running" job status with updated_at before this
 # timestamp belongs to a previous process and is automatically stale.
@@ -8255,44 +8256,52 @@ async def get_workbench_session(trade_date: str) -> dict[str, Any]:
 async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
     """Trigger full AI analysis pipeline: charts → emotion → workbench draft.
 
-    Step 1: Generate analyst charts (writes to frontend/public/api/analyst-charts/)
-    Step 2: Generate emotion state (writes to frontend/public/api/)
-    Step 3: Build workbench draft from generated outputs
+    Uses HTTP calls to local API endpoints to avoid asyncio nesting.
     """
-    import subprocess, sys, os
+    import subprocess, sys
     td = _date.fromisoformat(trade_date)
     steps_done = []
     errors = []
 
-    # Step 1: Generate charts by calling the chart endpoint internally
+    # Step 1: Charts — call local HTTP endpoint
     try:
-        chart_result = await get_analyst_charts(trade_date)
-        if chart_result and isinstance(chart_result, list) and len(chart_result) > 0:
-            chart_dir = _Path("frontend/public/api/analyst-charts")
-            chart_dir.mkdir(parents=True, exist_ok=True)
-            (chart_dir / f"{trade_date}.json").write_text(
-                _json.dumps(chart_result, ensure_ascii=False, default=str))
-            steps_done.append("charts")
-        else:
-            errors.append("chart generation returned empty")
+        async with httpx.AsyncClient(timeout=60) as client:
+            r = await client.get(f"http://127.0.0.1:8090/api/v1/analyst-charts/{trade_date}")
+            if r.status_code == 200:
+                charts = r.json()
+                if isinstance(charts, list) and len(charts) >= 3:
+                    chart_dir = _Path("frontend/public/api/analyst-charts")
+                    chart_dir.mkdir(parents=True, exist_ok=True)
+                    (chart_dir / f"{trade_date}.json").write_text(
+                        _json.dumps(charts, ensure_ascii=False, default=str))
+                    steps_done.append("charts")
+                else:
+                    errors.append(f"chart generation returned only {len(charts) if isinstance(charts,list) else 0} charts")
+            else:
+                errors.append(f"chart API returned {r.status_code}")
     except Exception as e:
         errors.append(f"chart: {e}")
 
-    # Step 2: Generate emotion state
+    # Step 2: Emotion — call local HTTP endpoint
     try:
-        emo_result = await get_emotion_state_internal(trade_date)
-        if emo_result and emo_result.get("emotion_node"):
-            emo_dir = _Path("frontend/public/api")
-            emo_dir.mkdir(parents=True, exist_ok=True)
-            (emo_dir / f"emotion-{trade_date}.json").write_text(
-                _json.dumps(emo_result, ensure_ascii=False, default=str))
-            steps_done.append("emotion")
-        else:
-            errors.append("emotion generation returned empty")
+        async with httpx.AsyncClient(timeout=30) as client:
+            r = await client.get(f"http://127.0.0.1:8090/api/v1/emotion/{trade_date}")
+            if r.status_code == 200:
+                emo = r.json()
+                if emo and emo.get("emotion_node"):
+                    emo_dir = _Path("frontend/public/api")
+                    emo_dir.mkdir(parents=True, exist_ok=True)
+                    (emo_dir / f"emotion-{trade_date}.json").write_text(
+                        _json.dumps(emo, ensure_ascii=False, default=str))
+                    steps_done.append("emotion")
+                else:
+                    errors.append("emotion generation returned empty")
+            else:
+                errors.append(f"emotion API returned {r.status_code}")
     except Exception as e:
         errors.append(f"emotion: {e}")
 
-    # Step 3: Build workbench draft from generated chart + emotion
+    # Step 3: Workbench draft
     try:
         result = subprocess.run(
             [sys.executable, "scripts/generate_analyst_workbench.py", "--date", trade_date],
@@ -8322,16 +8331,6 @@ async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
         "steps_completed": steps_done,
         "error": "; ".join(errors),
     }
-
-
-async def get_emotion_state_internal(trade_date: str) -> dict[str, Any]:
-    """Generate emotion state by calling the internal endpoint logic."""
-    try:
-        # Reuse existing emotion endpoint logic directly
-        emo = await get_market_emotion(trade_date)
-        return emo if isinstance(emo, dict) else {}
-    except Exception:
-        return {}
 
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/save-review")
