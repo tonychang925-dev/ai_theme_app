@@ -92,28 +92,22 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   useEffect(() => { loadSystemCharts(); }, [tradeDate]);
 
   const loadSystemCharts = useCallback(async () => {
-    // Load multi-day trend data (static, instant)
     try {
       const tr = await fetch(`/api/analyst-charts/trend.json`);
       if (tr.ok) setMultiTrend(await tr.json());
-    } catch { /* ignore */ }
-    // Load single-day charts
+    } catch { setMultiTrend(null); }
     try {
       const resp = await fetch(`/api/analyst-charts/${tradeDate}.json`);
       if (resp.ok) {
         const data = await resp.json();
-        if (Array.isArray(data) && data.length > 0) {
-          setSystemCharts(data); return;
-        }
+        if (Array.isArray(data) && data.length > 0) { setSystemCharts(data); return; }
       }
-    } catch { /* ignore */ }
+      setSystemCharts([]);
+    } catch { setSystemCharts([]); }
   }, [tradeDate]);
 
   const loadArtifacts = useCallback(async () => {
-    try {
-      const resp = await fetch(`http://127.0.0.1:8090/api/v1/evidence-artifacts/${tradeDate}?module=emotion`, {signal: AbortSignal.timeout(2000)});
-      if (resp.ok) setArtifacts(await resp.json());
-    } catch { /* ignore */ }
+    // evidence artifacts only available after generate produces them
   }, [tradeDate]);
 
   useEffect(() => {
