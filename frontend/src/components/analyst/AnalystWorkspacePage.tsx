@@ -603,10 +603,10 @@ export function AnalystWorkspacePage() {
         });
       } catch { /* non-fatal */ }
 
-      setImportDialog({
-        show: true, step: "done", msg: "校准完成",
-        result: { alignment: ar },
-      });
+      setImportDialog(p => ({
+        ...p, step: "done", msg: "校准完成",
+        result: { ...p.result, alignment: ar },
+      }));
     } catch (e: any) {
       setImportDialog(p => ({
         ...p, step: "error",
