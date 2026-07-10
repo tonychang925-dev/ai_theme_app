@@ -8592,6 +8592,10 @@ async def check_report_approval(trade_date: str) -> dict[str, Any]:
         "snapshot_version": approval.snapshot_version,
         "approved_at": approval.approved_at,
         "approved_by": approval.approved_by,
+        "snapshot_hash": approval.snapshot.snapshot_hash if approval.snapshot else "",
+        "approval_mode": approval.snapshot.approval_mode if approval.snapshot else "",
+        "source_mode": approval.snapshot.source_mode if approval.snapshot else "",
+        "composition_mode": approval.snapshot.composition_mode if approval.snapshot else "",
         "reason": approval.reason,
     }
 
@@ -8606,6 +8610,10 @@ async def _check_workbench_approval(trade_date: date) -> dict[str, Any]:
         "snapshot_version": approval.snapshot_version,
         "approved_at": approval.approved_at,
         "approved_by": approval.approved_by,
+        "snapshot_hash": approval.snapshot.snapshot_hash if approval.snapshot else "",
+        "approval_mode": approval.snapshot.approval_mode if approval.snapshot else "",
+        "source_mode": approval.snapshot.source_mode if approval.snapshot else "",
+        "composition_mode": approval.snapshot.composition_mode if approval.snapshot else "",
         "based_on_draft_version": (
             approval.snapshot.based_on_draft_version if approval.snapshot else 0
         ),

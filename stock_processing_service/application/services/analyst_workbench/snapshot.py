@@ -19,6 +19,7 @@ class ReviewSnapshot:
     approved_by: str = ""
     approval_mode: str = "preview"
     source_mode: str = "preview"
+    composition_mode: str = "preview"
     snapshot_hash: str = ""
 
     attention_state: dict[str, Any] = field(default_factory=dict)
@@ -41,6 +42,7 @@ class ReviewSnapshot:
             "approved_by": self.approved_by,
             "approval_mode": self.approval_mode,
             "source_mode": self.source_mode,
+            "composition_mode": self.composition_mode,
             "snapshot_hash": self.snapshot_hash,
             "attention_state": self.attention_state,
             "cognition_cards": self.cognition_cards,
@@ -61,7 +63,8 @@ class ReviewSnapshot:
             approved_at=d.get("approved_at", ""),
             approved_by=d.get("approved_by", ""),
             approval_mode=d.get("approval_mode", "analyst_approved" if d.get("approved", False) else "preview"),
-            source_mode=d.get("source_mode", "formal" if d.get("approved", False) else "preview"),
+            source_mode=d.get("source_mode", "analyst_workbench" if d.get("approved", False) else "preview"),
+            composition_mode=d.get("composition_mode", "formal" if d.get("approved", False) else "preview"),
             snapshot_hash=d.get("snapshot_hash", ""),
             attention_state=d.get("attention_state", {}),
             cognition_cards=d.get("cognition_cards", []),
@@ -83,7 +86,8 @@ class ReviewSnapshot:
             approved_at=datetime.now(timezone.utc).isoformat(),
             approved_by=kwargs.get("approved_by", ""),
             approval_mode=kwargs.get("approval_mode", "analyst_approved"),
-            source_mode=kwargs.get("source_mode", "formal"),
+            source_mode=kwargs.get("source_mode", "analyst_workbench"),
+            composition_mode=kwargs.get("composition_mode", "formal"),
             attention_state=draft.attention_state,
             cognition_cards=draft.cognition_cards,
             narrative=draft.narrative,
@@ -111,7 +115,8 @@ class ReviewSnapshot:
             approved_at=datetime.now(timezone.utc).isoformat(),
             approved_by=approved_by,
             approval_mode="analyst_approved",
-            source_mode="formal",
+            source_mode="analyst_workbench",
+            composition_mode="formal",
             attention_state=merged.get("attention_state", {}),
             cognition_cards=merged.get("cognition_cards", []),
             narrative=merged.get("narrative", {}),

@@ -12,6 +12,7 @@ from datetime import date
 from typing import Any
 
 from .approval_gate import ApprovalGate, ApprovalRequiredError, ReportApproval
+from .formal_gate import FormalComposeGuard
 
 logger = logging.getLogger(__name__)
 
@@ -47,6 +48,7 @@ class WorkbenchReportComposer:
 
     def __init__(self, workbench_base_dir: str = "tmp/analyst_workbench"):
         self._gate = ApprovalGate(base_dir=workbench_base_dir)
+        self._formal_guard = FormalComposeGuard()
 
     def compose(
         self,
@@ -79,6 +81,10 @@ class WorkbenchReportComposer:
                     approval.snapshot.based_on_draft_version
                     if approval.snapshot else 0
                 ),
+                "snapshot_hash": approval.snapshot.snapshot_hash if approval.snapshot else "",
+                "approval_mode": approval.snapshot.approval_mode if approval.snapshot else "",
+                "source_mode": approval.snapshot.source_mode if approval.snapshot else "",
+                "composition_mode": approval.snapshot.composition_mode if approval.snapshot else "",
                 "reason": approval.reason,
             }
         }
@@ -98,6 +104,7 @@ class WorkbenchReportComposer:
         # ── Formal / Published: enrich with workbench snapshot data ──
         snap = approval.snapshot
         if approval.can_generate_report and snap:
+            snap = self._formal_guard.validate(approval)
             # Phase 4.5.4: first-class sections from approved snapshot
             report = {
                 **engine_report,
@@ -155,7 +162,9 @@ class WorkbenchReportComposer:
 
     def require_formal(self, trade_date: date) -> ReportApproval:
         """Raise ApprovalRequiredError unless approved snapshot exists."""
-        return self._gate.require_formal(trade_date)
+        approval = self._gate.require_formal(trade_date)
+        self._formal_guard.validate(approval)
+        return approval
 
     def check(self, trade_date: date) -> ReportApproval:
         """Non-throwing gate check."""

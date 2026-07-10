@@ -583,7 +583,8 @@ snapshot = ReviewSnapshot.from_merged(
 
 ```python
 approval_mode: str = "analyst_approved"  # preview | review | analyst_approved | published
-source_mode: str = "formal"              # preview | formal | published
+source_mode: str = "analyst_workbench"   # preview | analyst_workbench
+composition_mode: str = "formal"         # preview | formal | published
 snapshot_hash: str = ""                  # canonical JSON hash
 ```
 
@@ -659,6 +660,8 @@ POST /api/v2/daily-review-v2/compose-from-workbench
 - 返回体必须带 `workbench_approval.mode=formal|published`。
 - 必须断言 `snapshot.approved is True`。
 - 必须断言 `snapshot.approval_mode == "analyst_approved"` 或 session 为 `PUBLISHED`。
+- 必须断言 `snapshot.source_mode == "analyst_workbench"`。
+- 必须断言 `snapshot.composition_mode == "formal"`。
 - 必须断言 `snapshot.snapshot_hash` 非空。
 - 若 hash 缺失或校验失败，返回 409，不生成 formal report。
 
@@ -833,8 +836,8 @@ Then:
 - Workbench generate 接管动态复盘数据生产
 - Approve 合并 `AIDraft + analyst_workspace + overrides` ✅ 已实现（PR2）
 - DailyReview 页面移除 derived data 生产入口
-- `compose-from-workbench` 成为唯一正式报告入口
-- 正式报告禁止 draft fallback
+- `compose-from-workbench` 成为唯一正式报告入口 ✅ 已实现（PR4）
+- 正式报告禁止 draft fallback ✅ 已实现（PR4）
 
 ### Phase 4.5.5.1-UI ✅ 已实现
 

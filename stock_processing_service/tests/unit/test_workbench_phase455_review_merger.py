@@ -90,7 +90,8 @@ def test_tc_p455_02_given_merged_review_when_snapshot_saved_then_hash_and_metada
     assert loaded is not None
     assert loaded.approved is True
     assert loaded.approval_mode == "analyst_approved"
-    assert loaded.source_mode == "formal"
+    assert loaded.source_mode == "analyst_workbench"
+    assert loaded.composition_mode == "formal"
     assert loaded.snapshot_hash
     assert loaded.snapshot_hash == loaded.compute_hash()
     assert loaded.based_on_draft_version == 3
