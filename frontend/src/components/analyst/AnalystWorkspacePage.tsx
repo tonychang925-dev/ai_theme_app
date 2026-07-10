@@ -397,6 +397,10 @@ export function AnalystWorkspacePage() {
   const [saving, setSaving] = useState(false);
   const [savedMsg, setSavedMsg] = useState("");
   const [activeTab, setActiveTab] = useState<"emotion" | "watch">("emotion");
+  const [generating, setGenerating] = useState(false);
+  const [genMsg, setGenMsg] = useState("");
+  const [calibrating, setCalibrating] = useState(false);
+  const [calMsg, setCalMsg] = useState("");
 
   const qs = new URLSearchParams(window.location.search);
   const tradeDate = qs.get("trade_date") || new Date().toISOString().slice(0, 10);
@@ -435,6 +439,40 @@ export function AnalystWorkspacePage() {
     } catch { /* ignore */ } finally { setSaving(false); }
   };
 
+  const handleGenerate = async () => {
+    setGenerating(true); setGenMsg("启动分析中…");
+    try {
+      const resp = await fetch(`/api/v1/analyst-workbench/${dateInput}/generate`, { method: "POST" });
+      const r = await resp.json();
+      if (r.status === "completed") {
+        setGenMsg(`生成完成 (draft v${r.draft_version || "?"})`);
+        fetchWorkspace(dateInput);
+      } else {
+        setGenMsg(`失败: ${r.error || "未知错误"}`);
+      }
+    } catch { setGenMsg("请求失败"); }
+    finally { setGenerating(false); setTimeout(() => setGenMsg(""), 4000); }
+  };
+
+  const handleImportAnalyst = async () => {
+    setCalibrating(true); setCalMsg("校准分析中…");
+    try {
+      const resp = await fetch(`/api/v1/analyst-workbench/${dateInput}/session`);
+      if (!resp.ok) throw new Error(`${resp.status}`);
+      const session = await resp.json();
+      if (!session.has_draft) { setCalMsg("请先生成 AI 草稿"); setCalibrating(false); setTimeout(() => setCalMsg(""), 3000); return; }
+      // Trigger alignment via CLI
+      const alignResp = await fetch(`/api/v1/analyst-alignment/${dateInput}`, { method: "POST" });
+      if (alignResp.ok) {
+        const ar = await alignResp.json();
+        setCalMsg(`校准完成: ATS ${ar.overall_score?.toFixed(3) || "?"} ${ar.grade || "?"}`);
+      } else {
+        setCalMsg("校准请求失败，请检查后端服务");
+      }
+    } catch { setCalMsg("请求失败"); }
+    finally { setCalibrating(false); setTimeout(() => setCalMsg(""), 5000); }
+  };
+
   const ws = workspace || { themes: [], watch_groups: [], stock_pools: {}, is_ai_draft: false } as Workspace;
   const theme = ws.themes[selectedIdx] || newTheme();
   const activeGroup = (ws.watch_groups || []).find(g => g.id === selectedGroupId);
@@ -463,6 +501,16 @@ export function AnalystWorkspacePage() {
             <input type="date" value={dateInput} onChange={(e) => { const v = e.target.value; setDateInput(v); window.history.replaceState(null, '', `?trade_date=${v}`); }}
               style={{ border: "1px solid #2a2a2a", borderRadius: 6, background: "#1a1a1a", color: "#f5f5f5", padding: "4px 8px" }} />
           </label>
+          <button className="tag tag-button" type="button" style={{ fontSize: 12, padding: "5px 12px", background: "#1a3a5c", color: "#66d9ef", border: "1px solid #243040", borderRadius: 6, cursor: "pointer" }}
+            disabled={generating} onClick={handleGenerate}>
+            {generating ? "⏳" : "▶"} 启动分析
+          </button>
+          <button className="tag tag-button" type="button" style={{ fontSize: 12, padding: "5px 12px", background: "#1a3a2c", color: "#39ff14", border: "1px solid #243040", borderRadius: 6, cursor: "pointer" }}
+            disabled={calibrating} onClick={handleImportAnalyst}>
+            {calibrating ? "⏳" : "☰"} 导入分析师数据
+          </button>
+          {genMsg && <span style={{ fontSize: 11, color: "#66d9ef" }}>{genMsg}</span>}
+          {calMsg && <span style={{ fontSize: 11, color: "#39ff14" }}>{calMsg}</span>}
           {activeGroup && <span style={{ fontSize: 13, color: activeGroup.color, fontWeight: 600 }}>{activeGroup.name}</span>}
           <span style={{ fontSize: 12, color: "#66d9ef" }}>
             {ws.themes.length} 题材 · {(ws.watch_groups || []).length} 方向

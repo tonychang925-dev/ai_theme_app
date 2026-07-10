@@ -8326,6 +8326,52 @@ async def publish_workbench(trade_date: str) -> dict[str, Any]:
     return {"status": "published", "session_status": session.status, "published_at": session.published_at}
 
 
+# ── Phase 4.5 Analyst Alignment Quick Compare ──
+
+@app.post("/api/v1/analyst-alignment/{trade_date}")
+async def run_analyst_alignment_for_date(trade_date: str) -> dict[str, Any]:
+    """Run AI↔Analyst alignment for a single date.
+
+    Requires:
+    - AI chart JSON at frontend/public/api/analyst-charts/{date}.json
+    - Emotion JSON at frontend/public/api/emotion-{date}.json
+    - Analyst reference in reference store at tmp/analyst_alignment_0701_0709/reference/
+    """
+    import subprocess, sys as _sys
+    result = subprocess.run(
+        [_sys.executable, "scripts/run_analyst_alignment.py",
+         "--start", trade_date, "--end", trade_date,
+         "--reference-dir", "tmp/analyst_alignment_0701_0709/reference",
+         "--ai-source", "charts",
+         "--ai-chart-dir", "frontend/public/api/analyst-charts",
+         "--output", f"tmp/analyst_alignment_single"],
+        capture_output=True, text=True, timeout=90,
+    )
+    if result.returncode != 0:
+        return {"status": "error", "error": result.stderr.strip()[-300:]}
+    # Read the daily turing score
+    import json
+    ts_path = _Path(f"tmp/analyst_alignment_single/daily/{trade_date}.turing.json")
+    if ts_path.exists():
+        ts = json.loads(ts_path.read_text())
+        return {
+            "status": "completed",
+            "trade_date": trade_date,
+            "overall_score": ts["scores"]["overall"],
+            "grade": ts["grade"],
+            "component_scores": {
+                "phase": ts["scores"]["phase"],
+                "risk": ts["scores"]["risk"],
+                "facts": ts["scores"]["facts"],
+                "relay": ts["scores"]["relay"],
+                "strategy": ts["scores"]["strategy"],
+                "theme_leader": ts["scores"]["theme_leader"],
+            },
+            "calibration_hints": ts.get("calibration_hints", []),
+        }
+    return {"status": "completed", "trade_date": trade_date, "note": "No reference available for comparison"}
+
+
 @app.get("/api/v1/leaders/{theme_name}")
 async def get_theme_leaders(
     theme_name: str,
