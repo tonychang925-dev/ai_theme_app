@@ -905,6 +905,21 @@ export function AnalystWorkspacePage() {
             {/* Step: Done */}
             {importDialog.step === "done" && importDialog.result?.alignment && (
               <div style={{ textAlign: "center" }}>
+                {/* Show import validation warnings prominently at top */}
+                {importDialog.result?.import?.validation_issues?.length > 0 && (
+                  <div style={{ marginBottom: 12, padding: "10px 14px", background: "#ff4d4f15", border: "1px solid #ff4d4f40", borderRadius: 6, textAlign: "left" }}>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#ff4d4f", marginBottom: 4 }}>❌ 文件格式不匹配</div>
+                    {(importDialog.result.import.validation_issues as string[]).map((issue, i) => (
+                      <div key={i} style={{ fontSize: 12, color: "#ffa940", lineHeight: 1.5 }}>{issue}</div>
+                    ))}
+                  </div>
+                )}
+                {/* Show clean import confirmation */}
+                {(!importDialog.result?.import?.validation_issues || importDialog.result.import.validation_issues.length === 0) && (
+                  <div style={{ marginBottom: 12, padding: "8px 14px", background: "#38a16915", border: "1px solid #38a16940", borderRadius: 6, fontSize: 12, color: "#38a169" }}>
+                    ✅ 文件格式正确 · 提取状态: {importDialog.result?.import?.extraction_status || "—"} · 核心覆盖率: {importDialog.result?.import?.coverage?.core_coverage != null ? `${(importDialog.result.import.coverage.core_coverage * 100).toFixed(0)}%` : "—"}
+                  </div>
+                )}
                 <div style={{ fontSize: 48, marginBottom: 8 }}>
                   {importDialog.result.alignment.grade === "A" ? "✅" :
                    importDialog.result.alignment.grade === "B" ? "👍" :
