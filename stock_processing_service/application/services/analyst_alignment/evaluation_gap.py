@@ -75,6 +75,12 @@ class EvaluationGapClassifier:
                 should_exclude_from_dnf=True,
             )
 
+        # ── Fact-level gaps (check before generic return) ──
+        if analyst_facts and ai_view is not None:
+            fact_gap = self._detect_fact_gaps(trade_date, analyst_facts, ai_view)
+            if fact_gap is not None:
+                return fact_gap
+
         # ── Weekend Transition ──
         if days_gap >= 3 and raw_score < 0.65:
             return GapClassification(
@@ -86,6 +92,45 @@ class EvaluationGapClassifier:
             )
 
         return GapClassification(trade_date=ts)
+
+    def _detect_fact_gaps(
+        self, td: date, analyst_facts: dict[str, Any], ai_view: Any
+    ) -> GapClassification | None:
+        """Detect DATA_SOURCE_GAP and COUNTING_POLICY_GAP from fact diffs."""
+        ts = td.isoformat()
+
+        # Extract diffs from report
+        fact_diffs = getattr(ai_view, 'fact_diffs', ()) if ai_view is not None else ()
+
+        for d in fact_diffs:
+            fp = getattr(d, 'field_path', '')
+
+            # ── COUNTING_POLICY_GAP: chain_board_count mismatch ──
+            if 'chain_board_count' in fp:
+                a_val = getattr(d, 'analyst_value', None)
+                ai_val = getattr(d, 'ai_value', None)
+                if a_val is not None and ai_val is not None and a_val != ai_val:
+                    return GapClassification(
+                        trade_date=ts,
+                        gap_type=EvaluationGapType.COUNTING_POLICY_GAP,
+                        reason=f"chain_board_count: analyst={a_val} vs AI={ai_val} (different counting methodology)",
+                        fair_score_penalty_reduction=0.2,
+                        should_exclude_from_dnf=False,
+                    )
+
+            # ── DATA_SOURCE_GAP: AI missing field that analyst has ──
+            if getattr(d, 'diff_type', '') == 'MISSING_AI' and not getattr(d, 'excluded_from_score', False):
+                a_val = getattr(d, 'analyst_value', None)
+                if a_val is not None:
+                    return GapClassification(
+                        trade_date=ts,
+                        gap_type=EvaluationGapType.DATA_SOURCE_GAP,
+                        reason=f"{fp}: analyst={a_val} but AI field missing",
+                        fair_score_penalty_reduction=0.15,
+                        should_exclude_from_dnf=False,
+                    )
+
+        return None
 
     def classify_batch(
         self,
@@ -175,11 +220,29 @@ def compute_fair_scores(
                     analyst_phase = getattr(d, 'analyst_label', '')
                     ai_phase = getattr(d, 'ai_label', '')
 
+        # Extract fact data for gap detection
+        analyst_facts = {}
+        ai_view = None
+        if report is not None:
+            for d in getattr(report, 'fact_diffs', ()):
+                fp = getattr(d, 'field_path', '')
+                if 'limit_up_count' in fp:
+                    analyst_facts['limit_up_count'] = getattr(d, 'analyst_value', None)
+                if 'chain_board_count' in fp:
+                    analyst_facts['chain_board_count'] = getattr(d, 'analyst_value', None)
+                if 'max_board_height' in fp:
+                    analyst_facts['max_board_height'] = getattr(d, 'analyst_value', None)
+                if 'loss_effect_ratio' in fp:
+                    analyst_facts['loss_effect_ratio'] = getattr(d, 'analyst_value', None)
+        ai_view = getattr(dr, 'ai_snapshot_id', None)  # will be None in most cases
+
         gc = classifier.classify(
             trade_date=td,
             raw_score=raw_score,
             analyst_phase=analyst_phase,
             ai_phase=ai_phase,
+            analyst_facts=analyst_facts if analyst_facts else None,
+            ai_view=report,  # pass report for fact-level gap detection
             prev_trade_date=prev_date,
         )
 

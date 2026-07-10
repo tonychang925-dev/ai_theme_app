@@ -290,3 +290,136 @@ def generate_dashboard(output_dir: str | Path) -> str:
     out_path = Path(output_dir) / "calibration_dashboard.md"
     out_path.write_text(md)
     return str(out_path)
+
+
+def generate_action_plan(output_dir: str | Path) -> str:
+    """Generate calibration_action_plan.md from replay output.
+
+    Converts calibration hints + gap classifications into prioritized,
+    executable tasks with verification steps.
+    """
+    dashboard = CalibrationDashboard(output_dir)
+    hints = dashboard.agg.get("common_calibration_hints", {})
+    gaps = dashboard.agg.get("gap_days", {})
+    scores = dashboard.agg.get("scores", {})
+
+    lines = [
+        "# M8 Calibration Action Plan",
+        "",
+        f"**Period**: {dashboard.agg.get('start_date', '?')} ~ {dashboard.agg.get('end_date', '?')}",
+        f"**Raw ATS**: {scores.get('average', 0):.3f}  |  **Fair ATS**: {scores.get('fair_average', scores.get('average',0)):.3f}",
+        f"**Gaps classified**: {sum(1 for g in gaps.values() if g.get('gap_type','NONE')!='NONE')}",
+        "",
+        "---",
+        "",
+        "## Priority 1 — Critical (score impact > 0.05)",
+        "",
+    ]
+
+    # Sort hints by frequency, assign priority
+    sorted_hints = sorted(hints.items(), key=lambda x: -x[1])
+    p1_hints = [(h, c) for h, c in sorted_hints if c >= 5]
+    p2_hints = [(h, c) for h, c in sorted_hints if 2 <= c < 5]
+    p3_hints = [(h, c) for h, c in sorted_hints if c < 2]
+
+    action_map = {
+        "STRATEGY_MAPPING_REVIEW": {
+            "task": "Upgrade StrategyIntentMatcher",
+            "detail": "Expand intent alias map. Add emotion.strategy_bias enrichment for metrics-only mode.",
+            "expected_impact": "strategy_score from 0.65→0.75 (currently 0.654 avg)",
+            "verify": "Re-run 7-day batch; verify strategy_score avg >= 0.70",
+        },
+        "THEME_LIFECYCLE_REVIEW": {
+            "task": "Upgrade ThemeAliasResolver + lifecycle matching",
+            "detail": "Add state matching (启动/调整/退潮) not just name matching. Expand alias coverage for AI direction names.",
+            "expected_impact": "theme_leader from 0.34→0.45",
+            "verify": "Re-run 7-day batch; verify theme_leader avg >= 0.40",
+        },
+        "FACT_SOURCE_REVIEW": {
+            "task": "Fix M2.5 data pipeline gaps",
+            "detail": "Ensure loss_effect_ratio in all chart JSONs. Fix chain_board_count counting methodology. Investigate max_board_height data source gap (EM board pool).",
+            "expected_impact": "facts_score from 0.68→0.78",
+            "verify": "Re-run batch; verify facts_score avg >= 0.75; loss_effect_ratio not missing",
+        },
+        "PHASE_RULE_REVIEW": {
+            "task": "Extend PhaseOntology coverage",
+            "detail": "Add missing label mappings for early-period chart labels. Improve CHAOS handling.",
+            "expected_impact": "phase_score from 0.72→0.80",
+            "verify": "Verify 7/2 CHAOS→FIRST_DIVERGENCE score >= 0.65",
+        },
+        "RELAY_ECOLOGY_REVIEW": {
+            "task": "Calibrate relay feedback formula",
+            "detail": "Compare AI relay scores vs analyst relay table data. Investigate promotion rate deviations.",
+            "expected_impact": "relay_score from 0.89→0.92",
+            "verify": "Check per-day relay diffs; max deviation < 0.05 for promotion rates",
+        },
+        "RISK_GATE_REVIEW": {
+            "task": "Review risk confirmation thresholds",
+            "detail": "Check risk gate rules for rebound/repair transitions. Reduce false LOW assignments.",
+            "expected_impact": "risk_score maintain >= 0.75",
+            "verify": "Verify no false LOW risk during REBOUND day 1-2",
+        },
+    }
+
+    for hint, count in p1_hints:
+        action = action_map.get(hint, {})
+        lines.append(f"### {hint} (×{count})")
+        lines.append("")
+        lines.append(f"**Task**: {action.get('task', 'Investigate')}")
+        lines.append(f"**Detail**: {action.get('detail', '—')}")
+        lines.append(f"**Expected Impact**: {action.get('expected_impact', '—')}")
+        lines.append(f"**Verify**: `{action.get('verify', '—')}`")
+        lines.append("")
+
+    if p2_hints:
+        lines.append("## Priority 2 — Important (score impact 0.02–0.05)")
+        lines.append("")
+        for hint, count in p2_hints:
+            action = action_map.get(hint, {})
+            lines.append(f"- **{hint}** (×{count}): {action.get('task', 'Investigate')}")
+        lines.append("")
+
+    if p3_hints:
+        lines.append("## Priority 3 — Monitor")
+        lines.append("")
+        for hint, count in p3_hints:
+            lines.append(f"- **{hint}** (×{count})")
+        lines.append("")
+
+    # Gap classification summary
+    gap_types = {}
+    for g in gaps.values():
+        gt = g.get("gap_type", "NONE")
+        if gt != "NONE":
+            gap_types[gt] = gap_types.get(gt, 0) + 1
+
+    if gap_types:
+        lines.append("## Gap Resolution Plan")
+        lines.append("")
+        lines.append("| Gap Type | Count | Resolution |")
+        lines.append("|----------|------:|------------|")
+        gap_resolutions = {
+            "FORWARD_VS_HINDSIGHT": "Acknowledge. Do NOT penalize AI. Flag for fair scoring.",
+            "WEEKEND_TRANSITION": "Add weekend/gap-day context. Check if AI phase drift is expected.",
+            "DATA_SOURCE_GAP": "Fix M2.5 pipeline to include missing field (e.g. loss_effect_ratio).",
+            "COUNTING_POLICY_GAP": "Align counting methodology. Define effective_chain_board_count spec.",
+            "SEMANTIC_MAPPING_GAP": "Extend PhaseOntology zh_map. Add missing label aliases.",
+        }
+        for gt, count in sorted(gap_types.items()):
+            lines.append(f"| {gt} | {count} | {gap_resolutions.get(gt, 'Investigate')} |")
+        lines.append("")
+
+    lines.append("## Execution Order")
+    lines.append("")
+    lines.append("1. Fix DATA_SOURCE_GAP items first (pipeline fix, no model change)")
+    lines.append("2. Apply COUNTING_POLICY_GAP alignment (definition change)")
+    lines.append("3. Extend SEMANTIC_MAPPING_GAP coverage (PhaseOntology labels)")
+    lines.append("4. Upgrade STRATEGY_MAPPING (intent alias map)")
+    lines.append("5. Upgrade THEME_LIFECYCLE (alias + state matching)")
+    lines.append("6. Re-run 7-day batch → verify Fair ATS ≥ 0.80")
+    lines.append("")
+
+    out_path = Path(output_dir) / "calibration_action_plan.md"
+    out_path.write_text("\n".join(lines))
+    return str(out_path)
+

@@ -250,8 +250,11 @@ def main():
     (output_dir / "drift_summary.md").write_text(aggregate.to_markdown())
 
     # ── 4.5. Calibration Dashboard ──
-    from stock_processing_service.application.services.analyst_alignment.calibration_dashboard import generate_dashboard
+    from stock_processing_service.application.services.analyst_alignment.calibration_dashboard import (
+        generate_dashboard, generate_action_plan,
+    )
     dashboard_path = generate_dashboard(output_dir)
+    action_plan_path = generate_action_plan(output_dir)
 
     # ── 5. Summary ──
     print(f"Phase 4.2 Replay: {aggregate.trading_days} days | "
