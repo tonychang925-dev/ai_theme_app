@@ -962,6 +962,9 @@ export function AnalystWorkspacePage() {
                           msg: `已应用 ${r.corrections.length} 项修正`,
                           result: { ...p.result, applied: r },
                         }));
+                        // Refresh workspace + emotion dashboard
+                        setGenKey(k => k + 1);
+                        fetchWorkspace(dateInput);
                       } else {
                         const err = await resp.json().catch(() => ({}));
                         throw new Error((err as any).detail || "应用失败");
