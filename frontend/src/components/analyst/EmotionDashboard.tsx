@@ -118,23 +118,17 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
 
   useEffect(() => {
     setLoading(true);
-    const opts = [
-      { url: `/api/emotion-${tradeDate}.json` },
-      { url: `http://127.0.0.1:8090/api/v1/emotion/${tradeDate}`, timeout: 3000 },
-    ];
+    setEmotion(null);
+    setSystemCharts([]);
     let cancelled = false;
     (async () => {
-      for (const { url, timeout } of opts) {
-        if (cancelled) break;
-        try {
-          const signal = timeout ? AbortSignal.timeout(timeout) : undefined;
-          const resp = await fetch(url, { signal });
-          if (resp.ok) {
-            const d = await resp.json();
-            if (d && d.emotion_node) { if (!cancelled) { setEmotion(d); setLoading(false); } return; }
-          }
-        } catch { /* try next */ }
-      }
+      try {
+        const resp = await fetch(`/api/emotion-${tradeDate}.json`);
+        if (resp.ok) {
+          const d = await resp.json();
+          if (d && d.emotion_node) { if (!cancelled) { setEmotion(d); setLoading(false); } return; }
+        }
+      } catch { /* file not found = expected before generate */ }
       if (!cancelled) setLoading(false);
     })();
     return () => { cancelled = true; };
