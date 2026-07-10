@@ -235,6 +235,33 @@ function ChartReviewCard({ chart }: { chart: MarketChartReview }) {
   );
 }
 
+// ── Data quality warning ──
+
+function DataQualityNotice({ emo, charts }: {
+  emo?: EmotionReview | null;
+  charts?: MarketChartReview[] | null;
+}) {
+  const issues: string[] = [];
+  if (emo) {
+    if ((emo.source_quality ?? 1) < 0.6) issues.push("情绪数据质量低");
+    if (emo.missing_fields?.length) issues.push(`情绪缺失字段: ${emo.missing_fields.join(", ")}`);
+  }
+  if (charts) {
+    const lowQ = charts.filter(c => (c.source_quality ?? 1) < 0.6);
+    if (lowQ.length) issues.push(`${lowQ.length} 张图表数据质量低`);
+  }
+  if (!issues.length) return null;
+  return (
+    <div style={{
+      padding: "8px 12px", borderRadius: 4, marginBottom: 10,
+      background: "#ffd85e10", border: "1px solid #ffd85e30",
+      fontSize: 11, color: "#ffd85e",
+    }}>
+      ⚡ 数据质量提醒：{issues.join("；")}
+    </div>
+  );
+}
+
 // ── Main Panel ──
 
 export function WorkbenchSectionsPanel({ data }: {
@@ -253,8 +280,13 @@ export function WorkbenchSectionsPanel({ data }: {
   const emo = data.emotion_review;
   const charts = data.market_chart_reviews;
 
-  // Hide panel if no workbench data at all
+  // (1) Hide panel if no workbench data at all
   if (!approval && !emo && (!charts || charts.length === 0)) return null;
+
+  const isBlocked = approval?.mode === "blocked";
+  const isPreview = approval && !approval.can_generate_formal_report && !isBlocked;
+  const hasEmotion = emo && emo.emotion_node;
+  const hasCharts = charts && charts.length > 0;
 
   return (
     <div style={{ marginBottom: 16 }}>
@@ -266,28 +298,61 @@ export function WorkbenchSectionsPanel({ data }: {
         {approval && <ApprovalBadge approval={approval} />}
       </div>
 
-      {/* Gating notice when not approved */}
-      {approval && !approval.can_generate_formal_report && (
+      {/* (4) Blocked mode — red error banner */}
+      {isBlocked && (
         <div style={{
-          padding: "10px 14px", borderRadius: 6, marginBottom: 12,
-          background: "#d69e2e10", border: "1px solid #d69e2e30",
-          fontSize: 12, color: "#ffd85e", lineHeight: 1.5,
+          padding: "12px 16px", borderRadius: 6, marginBottom: 12,
+          background: "#e53e3e10", border: "1px solid #e53e3e30",
         }}>
-          ⚠️ 当前复盘报告为<b>预览模式</b>。Workbench 状态为 <b>{approval.session_status}</b>。
-          需完成 AI Draft → 审核 → Approve 后生成正式报告。
-          {approval.reason && <span style={{ display: "block", color: "#5a7a8a", marginTop: 4 }}>{approval.reason}</span>}
+          <div style={{ fontSize: 13, fontWeight: 700, color: "#e53e3e", marginBottom: 4 }}>
+            🚫 报告状态异常 — Session {approval?.session_status} 但 Snapshot 丢失
+          </div>
+          <div style={{ fontSize: 12, color: "#d4886b", lineHeight: 1.5 }}>
+            {approval?.reason}
+          </div>
         </div>
       )}
 
-      {/* Emotion Review */}
-      {emo && emo.emotion_node && <EmotionReviewCard emo={emo} />}
-
-      {/* Chart Reviews */}
-      {charts && charts.length > 0 && (
-        <div style={{ marginBottom: 12 }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: "#ffd85e", marginBottom: 10, borderLeft: "3px solid #66d9ef", paddingLeft: 10 }}>
-            AI 图表解读
+      {/* (3) Preview mode notice */}
+      {isPreview && (
+        <div style={{
+          padding: "10px 14px", borderRadius: 6, marginBottom: 12,
+          background: "#d69e2e10", border: "1px solid #d69e2e30",
+        }}>
+          <div style={{ fontSize: 13, fontWeight: 600, color: "#ffd85e", marginBottom: 4 }}>
+            👁️ 预览模式 · 待分析师审核
           </div>
+          <div style={{ fontSize: 12, color: "#8da6b8", lineHeight: 1.5 }}>
+            Workbench 状态为 <b>{approval?.session_status}</b>。
+            需完成 AI Draft → 审核 → Approve 后生成正式报告。
+          </div>
+        </div>
+      )}
+
+      {/* (5) Data quality reminder */}
+      <DataQualityNotice emo={emo} charts={charts} />
+
+      {/* (1) Emotion — only show when data exists */}
+      {hasEmotion ? (
+        <EmotionReviewCard emo={emo!} />
+      ) : (
+        emo && !emo.emotion_node && (
+          <div style={{
+            padding: "16px", borderRadius: 6, marginBottom: 12, textAlign: "center",
+            background: "#111720", border: "1px solid #243040",
+            fontSize: 13, color: "#5a7a8a",
+          }}>
+            暂无情绪复盘数据。请点击「启动分析」生成。
+          </div>
+        )
+      )}
+
+      {/* (2) Chart — show placeholder when empty */}
+      <div style={{ marginBottom: 12 }}>
+        <div style={{ fontSize: 14, fontWeight: 700, color: "#ffd85e", marginBottom: 10, borderLeft: "3px solid #66d9ef", paddingLeft: 10 }}>
+          AI 图表解读
+        </div>
+        {hasCharts ? (
           <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
@@ -297,8 +362,16 @@ export function WorkbenchSectionsPanel({ data }: {
               <ChartReviewCard key={`${c.chart_type}-${i}`} chart={c} />
             ))}
           </div>
-        </div>
-      )}
+        ) : (
+          <div style={{
+            padding: "16px", borderRadius: 6, textAlign: "center",
+            background: "#111720", border: "1px solid #243040",
+            fontSize: 13, color: "#5a7a8a",
+          }}>
+            暂无图表解读数据。请点击「启动分析」生成 AI 图表。
+          </div>
+        )}
+      </div>
     </div>
   );
 }
