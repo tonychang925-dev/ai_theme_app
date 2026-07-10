@@ -532,7 +532,7 @@ export function AnalystWorkspacePage() {
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <span style={{ fontSize: 12, color: "#66d9ef" }}>交易日</span>
-            <input type="date" value={dateInput} onChange={(e) => { const v = e.target.value; setDateInput(v); window.history.replaceState(null, '', `?trade_date=${v}`); }}
+            <input type="date" value={dateInput} max={new Date().toISOString().slice(0, 10)} onChange={(e) => { const v = e.target.value; setDateInput(v); window.history.replaceState(null, '', `?trade_date=${v}`); }}
               style={{ border: "1px solid #2a2a2a", borderRadius: 6, background: "#1a1a1a", color: "#f5f5f5", padding: "4px 8px" }} />
           </label>
           <button className="tag tag-button" type="button" style={{ fontSize: 12, padding: "5px 12px", background: "#1a3a5c", color: "#66d9ef", border: "1px solid #243040", borderRadius: 6, cursor: "pointer" }}
