@@ -8469,6 +8469,41 @@ async def publish_workbench(trade_date: str) -> dict[str, Any]:
     return {"status": "published", "session_status": session.status, "published_at": session.published_at}
 
 
+# ── Phase 4.5.2 Report Composer Approval Gate ──
+
+def _get_approval_gate():
+    import os as _os
+    from stock_processing_service.application.services.analyst_workbench.approval_gate import ApprovalGate
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    return ApprovalGate(base_dir=_os.path.join(_project_root, "tmp", "analyst_workbench"))
+
+
+@app.get("/api/v1/analyst-workbench/{trade_date}/report-approval")
+async def check_report_approval(trade_date: str) -> dict[str, Any]:
+    """Check whether a formal report can be composed for this trade date.
+
+    Returns:
+      mode: "preview" | "formal" | "published"
+      can_generate_report: bool
+      snapshot_version, approved_at, approved_by: metadata if available
+      reason: human-readable explanation
+    """
+    from datetime import date as _date
+    gate = _get_approval_gate()
+    td = _date.fromisoformat(trade_date)
+    approval = gate.check(td)
+    return {
+        "trade_date": trade_date,
+        "mode": approval.mode,
+        "session_status": approval.session_status,
+        "can_generate_report": approval.can_generate_report,
+        "snapshot_version": approval.snapshot_version,
+        "approved_at": approval.approved_at,
+        "approved_by": approval.approved_by,
+        "reason": approval.reason,
+    }
+
+
 # ── Phase 4.5.1 Calibration Persistence ──
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/calibrate")
