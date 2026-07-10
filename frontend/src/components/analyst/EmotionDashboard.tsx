@@ -83,6 +83,7 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   const [tomorrowOutlook, setTomorrowOutlook] = useState("");
   const [tomorrowWatchpoints, setTomorrowWatchpoints] = useState<string[]>([]);
   const [tomorrowForbidden, setTomorrowForbidden] = useState<string[]>([]);
+  const [tomorrowLoading, setTomorrowLoading] = useState(true);
   const trend = useEmotionTrend(tradeDate);
 
   // Auto-load chart data when date changes (not just on expand)
@@ -124,6 +125,7 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
     })();
 
     // Fetch tomorrow outlook from workbench draft/session
+    setTomorrowLoading(true);
     fetch(`/api/v2/daily-review-v2?date=${encodeURIComponent(tradeDate)}`, { signal: ctrl.signal })
       .then(r => r.ok ? r.json() : Promise.reject())
       .then((dr: any) => {
@@ -132,7 +134,8 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
         if ((er as any).tomorrow_watchpoints?.length) setTomorrowWatchpoints((er as any).tomorrow_watchpoints);
         if ((er as any).tomorrow_forbidden?.length) setTomorrowForbidden((er as any).tomorrow_forbidden);
       })
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setTomorrowLoading(false));
 
     return () => ctrl.abort();
   }, [tradeDate]);
@@ -323,7 +326,9 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
         {/* Tomorrow Outlook */}
         <div style={{ padding: 10, background: "#111720", borderRadius: 4, overflow: "auto" }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: "#ffd85e", marginBottom: 6 }}>📋 明日操作提示</div>
-          {tomorrowOutlook ? (
+          {tomorrowLoading ? (
+            <div style={{ fontSize: 10, color: "#5a7a8a" }}>加载中…</div>
+          ) : tomorrowOutlook ? (
             <div style={{ fontSize: 11, color: "#8ddcff", marginBottom: 6, lineHeight: 1.5 }}>
               {tomorrowOutlook}
             </div>
