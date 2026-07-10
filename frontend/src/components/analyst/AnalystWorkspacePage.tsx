@@ -400,7 +400,9 @@ export function AnalystWorkspacePage() {
   const [generating, setGenerating] = useState(false);
   const [genProgress, setGenProgress] = useState<{ show: boolean; step: string; steps: string[]; current: number; error?: string }>({ show: false, step: "", steps: [], current: 0 });
   const [genKey, setGenKey] = useState(0);
-  const [refreshKey, setRefreshKey] = useState(0);
+  const [tomorrowOutlook, setTomorrowOutlook] = useState("");
+  const [tomorrowWatchpoints, setTomorrowWatchpoints] = useState<string[]>([]);
+  const [tomorrowForbidden, setTomorrowForbidden] = useState<string[]>([]);
   const [calibrating, setCalibrating] = useState(false);
   const [calMsg, setCalMsg] = useState("");
   const [importDialog, setImportDialog] = useState<{ show: boolean; step: "select" | "parsing" | "imported" | "calibrating" | "done" | "error"; msg: string; result?: any }>({ show: false, step: "select", msg: "" });
@@ -426,7 +428,7 @@ export function AnalystWorkspacePage() {
     }
   }, []);
 
-  useEffect(() => { fetchWorkspace(dateInput); }, [dateInput, fetchWorkspace]);
+  useEffect(() => { fetchWorkspace(dateInput); fetchTomorrow(dateInput); }, [dateInput, fetchWorkspace]);
 
   const handleSave = async () => {
     if (!workspace) return;
@@ -538,6 +540,19 @@ export function AnalystWorkspacePage() {
   const closeImportDialog = () => {
     setFileInputKey(k => k + 1);
     setImportDialog({ show: false, step: "select", msg: "" });
+  };
+
+  const fetchTomorrow = async (d: string) => {
+    try {
+      const resp = await fetch(`/api/v2/daily-review-v2?date=${encodeURIComponent(d)}`);
+      if (resp.ok) {
+        const dr = await resp.json();
+        const er = dr.emotion_review || {};
+        setTomorrowOutlook((er as any).tomorrow_outlook || "");
+        setTomorrowWatchpoints((er as any).tomorrow_watchpoints || []);
+        setTomorrowForbidden((er as any).tomorrow_forbidden || []);
+      }
+    } catch {}
   };
 
   const handleImportAnalyst = () => {
@@ -704,7 +719,7 @@ export function AnalystWorkspacePage() {
 
       {/* Tab 1: Emotion Dashboard */}
       <div style={{ flex: 1, overflow: "auto", background: "#0c1118", display: activeTab === "emotion" ? "block" : "none" }}>
-        <EmotionDashboard key={`${dateInput}-${genKey}`} tradeDate={dateInput} refreshKey={refreshKey} />
+        <EmotionDashboard key={`${dateInput}-${genKey}`} tradeDate={dateInput} tomorrowOutlook={tomorrowOutlook} tomorrowWatchpoints={tomorrowWatchpoints} tomorrowForbidden={tomorrowForbidden} />
       </div>
 
       {/* Tab 2: Three-panel body — dark theme */}
@@ -1002,8 +1017,8 @@ export function AnalystWorkspacePage() {
                           msg: `已应用 ${r.corrections.length} 项修正`,
                           result: { ...p.result, applied: r },
                         }));
-                        // Refresh workspace + tomorrow data (no unmount)
-                        setRefreshKey(k => k + 1);
+                        // Refresh workspace + tomorrow data
+                        fetchTomorrow(dateInput);
                         fetchWorkspace(dateInput);
                       } else {
                         const err = await resp.json().catch(() => ({}));

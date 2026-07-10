@@ -73,17 +73,18 @@ function useEmotionTrend(tradeDate: string) {
 }
 
 // ── Main Component ──
-export function EmotionDashboard({ tradeDate, refreshKey }: { tradeDate: string; refreshKey?: number }) {
+export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoints, tomorrowForbidden }: {
+  tradeDate: string;
+  tomorrowOutlook?: string;
+  tomorrowWatchpoints?: string[];
+  tomorrowForbidden?: string[];
+}) {
   const [emotion, setEmotion] = useState<EmotionState | null>(null);
   const [loading, setLoading] = useState(true);
   const [artifacts, setArtifacts] = useState<EvidenceArtifact[]>([]);
   const [showEvidence, setShowEvidence] = useState(false);
   const [systemCharts, setSystemCharts] = useState<any[]>([]);
   const [multiTrend, setMultiTrend] = useState<any>(null);
-  const [tomorrowOutlook, setTomorrowOutlook] = useState("");
-  const [tomorrowWatchpoints, setTomorrowWatchpoints] = useState<string[]>([]);
-  const [tomorrowForbidden, setTomorrowForbidden] = useState<string[]>([]);
-  const [tomorrowLoading, setTomorrowLoading] = useState(true);
   const trend = useEmotionTrend(tradeDate);
 
   // Auto-load chart data when date changes (not just on expand)
@@ -123,19 +124,6 @@ export function EmotionDashboard({ tradeDate, refreshKey }: { tradeDate: string;
       } catch { /* missing file OK */ }
       setLoading(false);
     })();
-
-    // Fetch tomorrow outlook from workbench draft/session
-    setTomorrowLoading(true);
-    fetch(`/api/v2/daily-review-v2?date=${encodeURIComponent(tradeDate)}`, { signal: ctrl.signal })
-      .then(r => r.ok ? r.json() : Promise.reject())
-      .then((dr: any) => {
-        const er = dr.emotion_review || {};
-        if ((er as any).tomorrow_outlook) setTomorrowOutlook((er as any).tomorrow_outlook);
-        if ((er as any).tomorrow_watchpoints?.length) setTomorrowWatchpoints((er as any).tomorrow_watchpoints);
-        if ((er as any).tomorrow_forbidden?.length) setTomorrowForbidden((er as any).tomorrow_forbidden);
-      })
-      .catch(() => {})
-      .finally(() => setTomorrowLoading(false));
 
     return () => ctrl.abort();
   }, [tradeDate, refreshKey]);
@@ -326,9 +314,7 @@ export function EmotionDashboard({ tradeDate, refreshKey }: { tradeDate: string;
         {/* Tomorrow Outlook */}
         <div style={{ padding: 10, background: "#111720", borderRadius: 4, overflow: "auto" }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: "#ffd85e", marginBottom: 6 }}>📋 明日操作提示</div>
-          {tomorrowLoading ? (
-            <div style={{ fontSize: 10, color: "#5a7a8a" }}>加载中…</div>
-          ) : tomorrowOutlook ? (
+          {tomorrowOutlook ? (
             <div style={{ fontSize: 11, color: "#8ddcff", marginBottom: 6, lineHeight: 1.5 }}>
               {tomorrowOutlook}
             </div>
