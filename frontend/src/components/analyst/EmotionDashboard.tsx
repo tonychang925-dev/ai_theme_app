@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { ChartRenderer, TrendLineChart } from "./ChartRenderer";
 
 interface EvidenceArtifact {
@@ -49,14 +49,6 @@ function Stars({ count }: { count: number }) {
   return <span style={{ fontSize: 12, letterSpacing: 1 }}>{"★".repeat(full)}{"☆".repeat(5 - full)}</span>;
 }
 
-function signalBar(value: number, max = 100) {
-  const pct = Math.max(0, Math.min(100, (value + max) / (2 * max) * 100));
-  const color = value > 0 ? "#38a169" : value < -30 ? "#e53e3e" : "#d69e2e";
-  return <div style={{ height: 3, background: "#1a2a3a", borderRadius: 2, flex: 1, minWidth: 40 }}>
-    <div style={{ width: `${pct}%`, height: "100%", background: color, borderRadius: 2 }} />
-  </div>;
-}
-
 // ── Trend data helper ──
 function useEmotionTrend(tradeDate: string) {
   const [trend, setTrend] = useState<{ date: string; node: string; score: number }[]>([]);
@@ -89,28 +81,27 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   const trend = useEmotionTrend(tradeDate);
 
   // Auto-load chart data when date changes (not just on expand)
-  useEffect(() => { const cleanup = loadSystemCharts(); return cleanup; }, [tradeDate]);
-
-  const loadSystemCharts = useCallback(async () => {
+  // NOTE: do NOT use an async function as the effect itself — React
+  // expects a synchronous cleanup function, but async always returns a Promise.
+  useEffect(() => {
     const ctrl = new AbortController();
-    try {
-      const tr = await fetch(`/api/analyst-charts/trend.json`, { signal: ctrl.signal });
-      if (tr.ok) setMultiTrend(await tr.json());
-    } catch { setMultiTrend(null); }
-    try {
-      const resp = await fetch(`/api/analyst-charts/${tradeDate}.json`, { signal: ctrl.signal });
-      if (resp.ok) {
-        const data = await resp.json();
-        if (Array.isArray(data) && data.length > 0) { setSystemCharts(data); return; }
-      }
-      setSystemCharts([]);
-    } catch { setSystemCharts([]); }
+
+    fetch(`/api/analyst-charts/trend.json`, { signal: ctrl.signal })
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(data => setMultiTrend(data))
+      .catch(() => setMultiTrend(null));
+
+    fetch(`/api/analyst-charts/${tradeDate}.json`, { signal: ctrl.signal })
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) setSystemCharts(data);
+        else setSystemCharts([]);
+      })
+      .catch(() => setSystemCharts([]));
+
     return () => ctrl.abort();
   }, [tradeDate]);
 
-  const loadArtifacts = useCallback(async () => {
-    // evidence artifacts only available after generate produces them
-  }, [tradeDate]);
 
   useEffect(() => {
     setLoading(true);
@@ -317,7 +308,7 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
       {/* ── Evidence Charts (collapsible) ── */}
       <div style={{ marginTop: 10 }}>
         <div
-          onClick={() => { setShowEvidence(!showEvidence); if (!showEvidence) { loadArtifacts(); loadSystemCharts(); } }}
+          onClick={() => setShowEvidence(!showEvidence)}
           style={{ fontSize: 11, color: "#5a7a8a", cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}>
           <span>{showEvidence ? "▼" : "▶"} 分析师图表 Evidence Charts</span>
           {(artifacts.length + systemCharts.length) > 0 && <span style={{ color: "#66d9ef" }}>({artifacts.length + systemCharts.length}) {systemCharts.length > 0 ? `含${systemCharts.length}张系统图表` : ""}</span>}
