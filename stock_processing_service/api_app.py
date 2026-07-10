@@ -8895,6 +8895,10 @@ async def run_analyst_alignment_for_date(trade_date: str, body: dict[str, Any] =
         or "tmp/analyst_reference",
     )
     output_dir = _os.path.join(_project_root, f"tmp/analyst_alignment_{trade_date}")
+    # Force fresh re-run: remove any stale output from previous calibration
+    import shutil
+    if _os.path.exists(output_dir):
+        shutil.rmtree(output_dir)
     script = _os.path.join(_project_root, "scripts", "run_analyst_alignment.py")
     chart_dir = _os.path.join(_project_root, "frontend", "public", "api", "analyst-charts")
     result = subprocess.run(

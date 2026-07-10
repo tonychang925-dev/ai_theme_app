@@ -206,8 +206,8 @@ class SessionStore:
             raise ValueError(f"No draft exists for {trade_date}. Generate first.")
 
         now = datetime.now(timezone.utc).isoformat()
+        # Full replacement — calibration is atomic per run, no merge with stale data
         draft.calibration = {
-            **draft.calibration,
             **calibration,
             "applied_at": now,
         }
