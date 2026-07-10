@@ -148,6 +148,11 @@ def main():
     else:
         missing.append("emotion_json")
 
+    # ── AI tomorrow outlook (derived from chart + emotion) ──
+    draft.emotion_review["tomorrow_outlook"] = _derive_tomorrow_outlook(draft.emotion_review, charts)
+    draft.emotion_review["tomorrow_watchpoints"] = _derive_watchpoints(draft.emotion_review, charts)
+    draft.emotion_review["tomorrow_forbidden"] = _derive_forbidden(draft.emotion_review)
+
     draft.missing_fields = missing
     draft.source_quality = max(0.50, 1.0 - len(missing) * 0.15)
 
@@ -166,6 +171,82 @@ def main():
     print(f"  Session: {session.status}")
     print(f"  Output: {path}")
     return 0
+
+
+def _derive_tomorrow_outlook(emo: dict, charts: list[dict]) -> str:
+    """AI-derived tomorrow outlook based on current market state."""
+    node = emo.get("emotion_node", "")
+    score = emo.get("emotion_score", 0) or 0
+    strategy = emo.get("strategy_bias", "")
+
+    if node in ("ICE_POINT",):
+        return "情绪冰点，明天关注修复信号。若有缩量企稳或深V反转，可左侧轻仓试错。"
+    if node in ("DIVERGENCE", "FADE"):
+        return "退潮/衰退中，明天继续等待。不抄底、不追高，观察核心是否止跌。"
+    if node in ("REBOUND", "REPAIR"):
+        return "修复进行中，明天关注持续性。若量能维持、核心不破位，可持有；若冲高回落则减仓。"
+    if node in ("FERMENTATION", "ACCELERATION"):
+        return "发酵/加速期，明天关注龙头晋级和板块扩散。龙头加速则持有，分歧则观察弱转强信号。"
+    if node in ("CLIMAX",):
+        return "情绪高潮，明天警惕分歧。不追高位，关注低位补涨方向，高位股只持有不新开。"
+    return "市场混沌，明天以观察为主。等待方向明确后再决策。"
+
+
+def _derive_watchpoints(emo: dict, charts: list[dict]) -> list[str]:
+    """AI-derived watchpoints for tomorrow."""
+    wps = []
+    node = emo.get("emotion_node", "")
+    score = emo.get("emotion_score", 0) or 0
+
+    # From chart data
+    for c in charts:
+        ct = c.get("chart_type", "")
+        data = c.get("data") or {}
+        if ct == "relay_ecology":
+            fb = data.get("feedback_score", 0) or 0
+            if fb < -10:
+                wps.append("连板反馈偏弱，关注接力生态是否改善")
+            elif fb > 0:
+                wps.append("连板反馈偏暖，关注龙头是否加速")
+        if ct == "active_capital":
+            active = data.get("active_amount_yi") or 0
+            total = data.get("total_amount_yi") or 1
+            if active / max(total, 1) < 0.05:
+                wps.append("活跃资金不足，关注量能能否放大")
+        if ct == "market_breadth":
+            up = data.get("up_count") or 0
+            down = data.get("down_count") or 0
+            if up < down:
+                wps.append("下跌家数多于上涨，关注宽度是否改善")
+
+    if node in ("REBOUND", "REPAIR"):
+        wps.append("关注修复能否持续（量能+核心守位）")
+    if node in ("CLIMAX",):
+        wps.append("关注龙头是否首次分歧")
+    if node in ("CHAOS",):
+        wps.append("等待市场方向明确")
+
+    return wps[:5]
+
+
+def _derive_forbidden(emo: dict) -> list[str]:
+    """AI-derived forbidden actions for tomorrow."""
+    fb = []
+    node = emo.get("emotion_node", "")
+    score = emo.get("emotion_score", 0) or 0
+
+    if node in ("ICE_POINT", "DIVERGENCE", "FADE"):
+        fb.extend(["不追高", "不打高位板", "不重仓"])
+    elif node in ("CLIMAX",):
+        fb.extend(["不追龙头", "不追高位板", "不新开高位仓位"])
+    elif node in ("CHAOS",):
+        fb.extend(["不重仓", "不追高"])
+    else:
+        fb.append("不追高")
+
+    if score < -10:
+        fb.append("不左侧抄底")
+    return fb[:5]
 
 
 def _build_cognition_cards(charts: list[dict]) -> list[dict]:

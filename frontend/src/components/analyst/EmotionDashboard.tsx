@@ -123,17 +123,8 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
       setLoading(false);
     })();
 
-    // Also fetch tomorrow outlook from workbench
-    fetch(`/api/v1/analyst-workbench/${tradeDate}/comparison`, { signal: ctrl.signal })
-      .then(r => r.ok ? r.json() : Promise.reject())
-      .then(cmp => {
-        const emoRow = (cmp.rows || []).find((r: any) => r.key === "phase");
-        if (emoRow?.score < 0.5) {
-          // Calibration found mismatch — fetch draft for analyst corrections
-          return fetch(`/api/v2/daily-review-v2?date=${encodeURIComponent(tradeDate)}`, { signal: ctrl.signal });
-        }
-        return Promise.reject("no calibration needed");
-      })
+    // Fetch tomorrow outlook from workbench draft/session
+    fetch(`/api/v2/daily-review-v2?date=${encodeURIComponent(tradeDate)}`, { signal: ctrl.signal })
       .then(r => r.ok ? r.json() : Promise.reject())
       .then((dr: any) => {
         const er = dr.emotion_review || {};
