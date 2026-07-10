@@ -134,24 +134,20 @@ class MarketMetricsService:
         ld = int(overview.get("limit_down_total", 0) or 0)
         source = "recap_snapshot"
 
-        # Fallback: same dedup logic as recap pipeline's stock_base CTE
+        # Market breadth from TDX provider (full A-share universe)
+        # subject_stock_daily_snapshot is NOT a valid source — it only covers
+        # stocks in tracked subjects, not the full market.
         if up == 0 and down == 0:
             try:
-                row = await conn.fetchrow(
-                    "SELECT "
-                    "COUNT(*) FILTER (WHERE pct_chg > 0) AS up_count, "
-                    "COUNT(*) FILTER (WHERE pct_chg < 0) AS down_count "
-                    "FROM ("
-                    "  SELECT DISTINCT ON (split_part(stock_id, '.', 1)) pct_chg "
-                    "  FROM subject_stock_daily_snapshot WHERE trade_date = $1::date"
-                    "  ORDER BY split_part(stock_id, '.', 1), ABS(COALESCE(pct_chg, 0)) DESC"
-                    ") AS stock_base",
-                    td,
+                from stock_processing_service.integrations.a_stock_data.tdx_market_breadth_provider import (
+                    TdxMarketBreadthProvider,
                 )
-                if row and row["up_count"] > 0:
-                    up = row["up_count"]
-                    down = row["down_count"]
-                    source = "subject_stock_daily_snapshot"
+                provider = TdxMarketBreadthProvider()
+                breadth_snap = await provider.fetch(td)
+                if breadth_snap and breadth_snap.up_count > 0:
+                    up = breadth_snap.up_count
+                    down = breadth_snap.down_count
+                    source = breadth_snap.source
             except Exception:
                 pass
 
