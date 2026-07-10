@@ -9017,6 +9017,12 @@ async def apply_calibration_to_draft(trade_date: str) -> dict[str, Any]:
     else:
         applied.append("(no analyst reference data available)")
 
+    # Extract tomorrow watchpoints from analyst reference
+    if ref_record is not None:
+        emo["tomorrow_watchpoints"] = list(ref_record.strategy_label.watch_points or [])
+        emo["tomorrow_forbidden"] = list(ref_record.strategy_label.forbidden or [])
+        emo["tomorrow_outlook"] = ref_record.strategy_label.summary or ""
+
     # Save updated draft
     draft.emotion_review = emo
     draft_store.save(draft)

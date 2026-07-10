@@ -172,6 +172,40 @@ function EmotionReviewCard({ emo }: { emo: EmotionReview }) {
           <span style={{ color: "#5a7a8a" }}>— {emo.analyst_adjustment.reason}</span>
         </div>
       )}
+
+      {/* Tomorrow outlook + watchpoints + forbidden */}
+      {((emo as any).tomorrow_outlook || (emo as any).tomorrow_watchpoints?.length > 0 || (emo as any).tomorrow_forbidden?.length > 0) && (
+        <div style={{
+          marginTop: 10, padding: "10px 14px",
+          background: "linear-gradient(135deg, #1a1040 0%, #0c1118 100%)",
+          border: "1px solid #805ad520", borderRadius: 6,
+        }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: "#805ad5", marginBottom: 8 }}>
+            📋 明日操作提示
+          </div>
+          {(emo as any).tomorrow_outlook && (
+            <div style={{ fontSize: 12, color: "#c4b5fd", marginBottom: 8, lineHeight: 1.6 }}>
+              {(emo as any).tomorrow_outlook}
+            </div>
+          )}
+          {(emo as any).tomorrow_watchpoints?.length > 0 && (
+            <div style={{ marginBottom: 6 }}>
+              <div style={{ fontSize: 11, fontWeight: 600, color: "#a78bfa", marginBottom: 4 }}>🔍 明日观察点</div>
+              {(emo as any).tomorrow_watchpoints.map((wp: string, i: number) => (
+                <div key={i} style={{ fontSize: 11, color: "#8ddcff", padding: "1px 0" }}>• {wp}</div>
+              ))}
+            </div>
+          )}
+          {(emo as any).tomorrow_forbidden?.length > 0 && (
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 600, color: "#f87171", marginBottom: 4 }}>🚫 禁止操作</div>
+              {(emo as any).tomorrow_forbidden.map((fb: string, i: number) => (
+                <div key={i} style={{ fontSize: 11, color: "#fca5a5", padding: "1px 0" }}>✗ {fb}</div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }
