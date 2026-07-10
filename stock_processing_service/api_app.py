@@ -8583,8 +8583,26 @@ def _enrich_v2_with_workbench_sections(v2: dict[str, Any], trade_date: date) -> 
     _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
     _wb_base = _Path(_project_root) / "tmp" / "analyst_workbench" / trade_date.isoformat()
 
-    # ── Try snapshot first ──
+    # ── Prefer newer source: snapshot (immutable) or draft (latest calibration) ──
     snap_path = _wb_base / "snapshot.json"
+    drafts_dir = _wb_base / "drafts"
+    draft_path = None
+    if drafts_dir.exists():
+        draft_files = sorted(drafts_dir.glob("draft_v*.json"))
+        if draft_files:
+            draft_path = draft_files[-1]
+
+    snap_mtime = snap_path.stat().st_mtime if snap_path.exists() else 0
+    draft_mtime = draft_path.stat().st_mtime if draft_path else 0
+
+    # Use newer of snapshot vs draft
+    if draft_mtime > snap_mtime and draft_path:
+        try:
+            draft = json.loads(draft_path.read_text(encoding="utf-8"))
+            return _inject_sections(v2, draft)
+        except Exception:
+            pass
+
     if snap_path.exists():
         try:
             snap = json.loads(snap_path.read_text(encoding="utf-8"))
@@ -8592,16 +8610,13 @@ def _enrich_v2_with_workbench_sections(v2: dict[str, Any], trade_date: date) -> 
         except Exception:
             pass
 
-    # ── Fall back to latest draft ──
-    drafts_dir = _wb_base / "drafts"
-    if drafts_dir.exists():
-        draft_files = sorted(drafts_dir.glob("draft_v*.json"))
-        if draft_files:
-            try:
-                draft = json.loads(draft_files[-1].read_text(encoding="utf-8"))
-                return _inject_sections(v2, draft)
-            except Exception:
-                pass
+    # Fallback: older draft still beats nothing
+    if draft_path:
+        try:
+            draft = json.loads(draft_path.read_text(encoding="utf-8"))
+            return _inject_sections(v2, draft)
+        except Exception:
+            pass
 
     return v2
 
