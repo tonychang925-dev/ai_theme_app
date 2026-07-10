@@ -931,25 +931,50 @@ export function AnalystWorkspacePage() {
                 <div style={{ fontSize: 14, color: "#8ddcff", marginBottom: 12 }}>
                   Grade {importDialog.result.alignment.grade}
                 </div>
-                {/* Component scores */}
-                {importDialog.result.alignment.component_scores && (
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 6, marginBottom: 12 }}>
-                    {Object.entries(importDialog.result.alignment.component_scores as Record<string, number>).map(([k, v]) => (
-                      <div key={k} style={{ padding: 6, background: "#0c1118", borderRadius: 4, fontSize: 11 }}>
-                        <div style={{ color: "#5a7a8a" }}>{k}</div>
-                        <div style={{ color: v < 0.3 ? "#e53e3e" : v < 0.7 ? "#d69e2e" : "#38a169", fontWeight: 700 }}>{(v * 100).toFixed(0)}%</div>
+                {/* AI vs Analyst Comparison Table */}
+                {importDialog.result.alignment.component_scores && (() => {
+                  const dims: {key: string; label: string; aiHint: string; analystHint: string}[] = [
+                    {key: "phase", label: "市场阶段", aiHint: "AI 判断的阶段", analystHint: "分析师判断的阶段"},
+                    {key: "risk", label: "风险等级", aiHint: "AI 风险评估", analystHint: "分析师风险评估"},
+                    {key: "facts", label: "市场事实", aiHint: "AI 数据（涨停/成交额等）", analystHint: "分析师记录的事实"},
+                    {key: "relay", label: "接力生态", aiHint: "AI 连板/晋级判断", analystHint: "分析师接力判断"},
+                    {key: "strategy", label: "交易策略", aiHint: "AI 策略建议", analystHint: "分析师策略建议"},
+                    {key: "theme_leader", label: "题材龙头", aiHint: "AI 龙头识别", analystHint: "分析师龙头识别"},
+                  ];
+                  return (
+                    <div style={{ marginBottom: 12, textAlign: "left" }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: "#ffd85e", marginBottom: 8 }}>
+                        AI vs 分析师 对比
                       </div>
-                    ))}
-                  </div>
-                )}
-                {importDialog.result.alignment.calibration_hints?.length > 0 && (
-                  <div style={{ textAlign: "left", padding: 8, background: "#0c1118", borderRadius: 4, fontSize: 11, maxHeight: 120, overflow: "auto" }}>
-                    <div style={{ color: "#ffd85e", fontWeight: 600, marginBottom: 4 }}>校准建议</div>
-                    {(importDialog.result.alignment.calibration_hints as string[]).map((h, i) => (
-                      <div key={i} style={{ color: "#8da6b8", padding: "1px 0" }}>• {h}</div>
-                    ))}
-                  </div>
-                )}
+                      {dims.map(d => {
+                        const score = importDialog.result.alignment.component_scores[d.key] as number;
+                        const pct = (score * 100).toFixed(0);
+                        const color = score < 0.3 ? "#e53e3e" : score < 0.7 ? "#d69e2e" : "#38a169";
+                        const icon = score < 0.3 ? "❌" : score < 0.7 ? "⚠️" : "✅";
+                        return (
+                          <div key={d.key} style={{
+                            display: "flex", alignItems: "center", gap: 8,
+                            padding: "6px 10px", marginBottom: 4,
+                            background: "#0c1118", borderRadius: 4,
+                            borderLeft: `3px solid ${color}`,
+                          }}>
+                            <span style={{ fontSize: 14 }}>{icon}</span>
+                            <span style={{ fontSize: 12, fontWeight: 600, color: "#8ddcff", minWidth: 70 }}>{d.label}</span>
+                            <div style={{ flex: 1 }}>
+                              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11 }}>
+                                <span style={{ color: "#5a7a8a" }}>{score < 0.3 ? d.analystHint : ""}</span>
+                                <span style={{ color, fontWeight: 700 }}>{pct}%</span>
+                              </div>
+                              <div style={{ height: 4, background: "#1a2a3a", borderRadius: 2, marginTop: 2 }}>
+                                <div style={{ width: `${Math.max(4, score * 100)}%`, height: "100%", background: color, borderRadius: 2 }} />
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  );
+                })()}
                 <div style={{ display: "flex", gap: 10, justifyContent: "center", marginTop: 16 }}>
                   <button onClick={async () => {
                     setImportDialog(p => ({ ...p, step: "calibrating", msg: "应用校准修正…" }));
