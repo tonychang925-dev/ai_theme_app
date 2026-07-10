@@ -134,15 +134,18 @@ class MarketMetricsService:
         ld = int(overview.get("limit_down_total", 0) or 0)
         source = "recap_snapshot"
 
-        # Fallback: query subject_stock_daily_snapshot directly when recap is missing
-        # Use DISTINCT stock_id because the table is stock×subject (one stock appears in many subjects)
+        # Fallback: same dedup logic as recap pipeline's stock_base CTE
         if up == 0 and down == 0:
             try:
                 row = await conn.fetchrow(
                     "SELECT "
-                    "COUNT(DISTINCT stock_id) FILTER (WHERE pct_chg > 0) AS up_count, "
-                    "COUNT(DISTINCT stock_id) FILTER (WHERE pct_chg < 0) AS down_count "
-                    "FROM subject_stock_daily_snapshot WHERE trade_date = $1::date",
+                    "COUNT(*) FILTER (WHERE pct_chg > 0) AS up_count, "
+                    "COUNT(*) FILTER (WHERE pct_chg < 0) AS down_count "
+                    "FROM ("
+                    "  SELECT DISTINCT ON (split_part(stock_id, '.', 1)) pct_chg "
+                    "  FROM subject_stock_daily_snapshot WHERE trade_date = $1::date"
+                    "  ORDER BY split_part(stock_id, '.', 1), ABS(COALESCE(pct_chg, 0)) DESC"
+                    ") AS stock_base",
                     td,
                 )
                 if row and row["up_count"] > 0:
