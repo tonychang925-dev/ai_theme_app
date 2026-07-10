@@ -260,7 +260,38 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
         </span>
       </div>
 
-      {/* ── Row 3: Why Panel + Next Probability + Trading Mode (3 equal cols) ── */}
+      {/* ── Row 3: Tomorrow Outlook (full width) ── */}
+      {(tomorrowOutlook || tomorrowWatchpoints.length > 0 || tomorrowForbidden.length > 0) && (
+        <div style={{
+          marginTop: 10, padding: "10px 14px",
+          background: "linear-gradient(90deg, #1a1040 0%, #111720 100%)",
+          border: "1px solid #805ad520", borderRadius: 6,
+        }}>
+          <div style={{ fontSize: 13, fontWeight: 700, color: "#805ad5", marginBottom: 8 }}>
+            📋 明日操作提示：{tomorrowOutlook}
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+            {tomorrowWatchpoints.length > 0 && (
+              <div>
+                <div style={{ fontSize: 11, fontWeight: 600, color: "#a78bfa", marginBottom: 4 }}>🔍 明日观察点</div>
+                {tomorrowWatchpoints.map((wp, i) => (
+                  <div key={i} style={{ fontSize: 11, color: "#8ddcff", padding: "1px 0" }}>• {wp}</div>
+                ))}
+              </div>
+            )}
+            {tomorrowForbidden.length > 0 && (
+              <div>
+                <div style={{ fontSize: 11, fontWeight: 600, color: "#f87171", marginBottom: 4 }}>🚫 禁止操作</div>
+                {tomorrowForbidden.map((fb, i) => (
+                  <div key={i} style={{ fontSize: 11, color: "#fca5a5", padding: "1px 0" }}>✗ {fb}</div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* ── Row 4: Why Panel + Next Probability + Trading Mode (3 equal cols) ── */}
       <div style={{ marginTop: 10, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
 
         {/* Why Panel */}
@@ -320,40 +351,6 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
           </div>
         </div>
       </div>
-
-      {/* ── Tomorrow Outlook (from analyst calibration) ── */}
-      {(tomorrowOutlook || tomorrowWatchpoints.length > 0 || tomorrowForbidden.length > 0) && (
-        <div style={{
-          marginTop: 10, padding: "12px 16px",
-          background: "linear-gradient(135deg, #1a1040 0%, #111720 100%)",
-          border: "1px solid #805ad520", borderRadius: 6,
-        }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: "#805ad5", marginBottom: 8 }}>
-            📋 明日操作提示
-          </div>
-          {tomorrowOutlook && (
-            <div style={{ fontSize: 13, color: "#c4b5fd", marginBottom: 8, lineHeight: 1.6 }}>
-              {tomorrowOutlook}
-            </div>
-          )}
-          {tomorrowWatchpoints.length > 0 && (
-            <div style={{ marginBottom: 6 }}>
-              <div style={{ fontSize: 12, fontWeight: 600, color: "#a78bfa", marginBottom: 4 }}>🔍 明日观察点</div>
-              {tomorrowWatchpoints.map((wp, i) => (
-                <div key={i} style={{ fontSize: 12, color: "#8ddcff", padding: "2px 0" }}>• {wp}</div>
-              ))}
-            </div>
-          )}
-          {tomorrowForbidden.length > 0 && (
-            <div>
-              <div style={{ fontSize: 12, fontWeight: 600, color: "#f87171", marginBottom: 4 }}>🚫 禁止操作</div>
-              {tomorrowForbidden.map((fb, i) => (
-                <div key={i} style={{ fontSize: 12, color: "#fca5a5", padding: "2px 0" }}>✗ {fb}</div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
 
       {/* ── Evidence Charts (collapsible) ── */}
       <div style={{ marginTop: 10 }}>
