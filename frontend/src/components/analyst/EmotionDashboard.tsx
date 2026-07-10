@@ -260,35 +260,8 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
         </span>
       </div>
 
-      {/* ── Row 3: Tomorrow Outlook (full width) ── */}
-      {(tomorrowOutlook || tomorrowWatchpoints.length > 0 || tomorrowForbidden.length > 0) && (
-        <div style={{ marginTop: 10, padding: 10, background: "#111720", borderRadius: 4 }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: "#ffd85e", marginBottom: 8 }}>
-            📋 明日操作提示：{tomorrowOutlook}
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
-            {tomorrowWatchpoints.length > 0 && (
-              <div>
-                <div style={{ fontSize: 10, color: "#39ff14", marginBottom: 3 }}>🔍 观察</div>
-                {tomorrowWatchpoints.map((wp, i) => (
-                  <div key={i} style={{ fontSize: 11, color: "#8ddcff", padding: "1px 0" }}>• {wp}</div>
-                ))}
-              </div>
-            )}
-            {tomorrowForbidden.length > 0 && (
-              <div>
-                <div style={{ fontSize: 10, color: "#e53e3e", marginBottom: 3 }}>🚫 禁止</div>
-                {tomorrowForbidden.map((fb, i) => (
-                  <div key={i} style={{ fontSize: 11, color: "#fca5a5", padding: "1px 0" }}>✗ {fb}</div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* ── Row 4: Why Panel + Next Probability + Trading Mode (3 equal cols) ── */}
-      <div style={{ marginTop: 10, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
+      {/* ── Row 3: Why + Next Prob + Trading + Tomorrow (4 equal cols) ── */}
+      <div style={{ marginTop: 10, display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 10 }}>
 
         {/* Why Panel */}
         <div style={{ padding: 8, background: "#111720", borderRadius: 4 }}>
@@ -345,6 +318,32 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
               <span key={a} style={{ fontSize: 11, color: "#e53e3e", background: "#e53e3e20", padding: "1px 6px", borderRadius: 3, marginRight: 4 }}>{a}</span>
             ))}
           </div>
+        </div>
+
+        {/* Tomorrow Outlook */}
+        <div style={{ padding: 10, background: "#111720", borderRadius: 4, overflow: "auto" }}>
+          <div style={{ fontSize: 12, fontWeight: 600, color: "#ffd85e", marginBottom: 6 }}>📋 明日操作提示</div>
+          {tomorrowOutlook ? (
+            <div style={{ fontSize: 11, color: "#8ddcff", marginBottom: 6, lineHeight: 1.5 }}>
+              {tomorrowOutlook}
+            </div>
+          ) : (
+            <div style={{ fontSize: 10, color: "#5a7a8a" }}>暂无明日预判</div>
+          )}
+          {tomorrowWatchpoints.length > 0 && (
+            <div style={{ marginBottom: 3 }}>
+              {tomorrowWatchpoints.slice(0, 3).map((wp, i) => (
+                <div key={i} style={{ fontSize: 10, color: "#8ddcff", padding: "1px 0" }}>• {wp}</div>
+              ))}
+            </div>
+          )}
+          {tomorrowForbidden.length > 0 && (
+            <div>
+              {tomorrowForbidden.slice(0, 2).map((fb, i) => (
+                <span key={i} style={{ fontSize: 10, color: "#fca5a5", background: "#e53e3e15", padding: "1px 5px", borderRadius: 3, marginRight: 4 }}>✗ {fb}</span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
