@@ -348,6 +348,7 @@ class NotionPublishPayload(BaseModel):
     trade_date: str
     force: bool = False
     dry_run: bool = False
+    allow_preview_publish: bool = False  # Phase 4.5.3.1: opt-in to bypass workbench gate
 
 
 class TradePlanReviewPayload(BaseModel):
@@ -2041,14 +2042,34 @@ async def publish_post_market_recap_to_notion(payload: NotionPublishPayload) -> 
 
     normalized_payload = _normalize_recap_payload(row)
 
-    # ── Phase 4.5.3: check workbench approval before publish (non-blocking) ──
+    # ── Phase 4.5.3.1: require formal workbench approval to publish ──
     try:
-        wb_approval = await _check_workbench_approval(d)
-        if not wb_approval["can_generate_formal_report"]:
-            logger.warning(
-                "Publishing to Notion without approved workbench snapshot: "
-                f"date={payload.trade_date}, mode={wb_approval['mode']}"
+        gate = _get_approval_gate()
+        approval = gate.check(d)
+        if not approval.can_generate_report and not payload.allow_preview_publish:
+            raise HTTPException(
+                status_code=409,
+                detail=(
+                    f"Cannot publish to Notion: workbench session is {approval.session_status}. "
+                    f"Approve the workbench snapshot first, or set allow_preview_publish=true "
+                    f"to bypass this gate. Reason: {approval.reason}"
+                ),
             )
+        wb_approval = {
+            "mode": approval.mode,
+            "can_generate_formal_report": approval.can_generate_report,
+            "snapshot_version": approval.snapshot_version,
+            "approved_at": approval.approved_at,
+            "approved_by": approval.approved_by,
+            "based_on_draft_version": (
+                approval.snapshot.based_on_draft_version if approval.snapshot else 0
+            ),
+            "session_status": approval.session_status,
+            "preview_publish": not approval.can_generate_report,
+            "reason": approval.reason,
+        }
+    except HTTPException:
+        raise
     except Exception:
         wb_approval = {"error": "approval check failed"}
 
