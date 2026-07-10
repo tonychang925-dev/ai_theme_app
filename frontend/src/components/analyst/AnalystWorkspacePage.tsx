@@ -582,7 +582,22 @@ export function AnalystWorkspacePage() {
       return;
     }
 
-    // Step 2: Run alignment
+    // Step 2: Check AI draft exists before calibration
+    try {
+      const sessResp = await fetch(`/api/v1/analyst-workbench/${dateInput}/session`);
+      const sess = sessResp.ok ? await sessResp.json() : {};
+      if (!sess.has_draft) {
+        setImportDialog({
+          show: true, step: "error",
+          msg: "请先生成 AI 草稿！点击工作台顶部「▶ 启动分析」按钮，等 AI 草稿生成完成后，再导入分析师数据进行校准。",
+        });
+        return;
+      }
+    } catch {
+      // proceed anyway
+    }
+
+    // Step 3: Run alignment
     setImportDialog(p => ({ ...p, step: "calibrating", msg: "AI↔分析师校准中…" }));
     try {
       const alignResp = await fetch(`/api/v1/analyst-alignment/${dateInput}`, {
