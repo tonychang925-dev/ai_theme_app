@@ -89,19 +89,23 @@ function EmotionReviewCard({ emo }: { emo: EmotionReview }) {
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
         <span style={{ fontSize: 32 }}>{NODE_ICONS[node] || "📊"}</span>
         <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 20, fontWeight: 800, color }}>{emo.emotion_label || node}</div>
-          <div style={{ fontSize: 11, color: "#5a7a8a" }}>{node}</div>
+          <span style={{
+            display: "inline-block", padding: "4px 16px", borderRadius: 20,
+            background: color + "25", border: `2px solid ${color}60`,
+            fontSize: 20, fontWeight: 800, color,
+            marginBottom: 4,
+          }}>{emo.emotion_label || node}</span>
         </div>
-        <div style={{ textAlign: "center", minWidth: 70 }}>
-          <div style={{ fontSize: 28, fontWeight: 800, color }}>{emo.emotion_score}</div>
-          <div style={{ fontSize: 10, color: "#5a7a8a" }}>/ 100</div>
+        <div style={{ textAlign: "center", minWidth: 80 }}>
+          <div style={{ fontSize: 36, fontWeight: 900, color, lineHeight: 1 }}>{emo.emotion_score}</div>
+          <div style={{ fontSize: 10, color: "#5a7a8a", marginTop: 2 }}>/ 100</div>
         </div>
         <div style={{
-          padding: "4px 12px", borderRadius: 4, textAlign: "center",
-          background: riskColor + "20", border: `1px solid ${riskColor}40`,
+          padding: "6px 16px", borderRadius: 6, textAlign: "center",
+          background: riskColor + "30", border: `2px solid ${riskColor}50`,
         }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: riskColor }}>{RISK_LABELS[emo.risk_level] || emo.risk_level}</div>
-          <div style={{ fontSize: 9, color: "#5a7a8a" }}>风险等级</div>
+          <div style={{ fontSize: 16, fontWeight: 800, color: riskColor }}>{RISK_LABELS[emo.risk_level] || emo.risk_level}</div>
+          <div style={{ fontSize: 10, color: "#5a7a8a", marginTop: 2 }}>风险等级</div>
         </div>
       </div>
 
