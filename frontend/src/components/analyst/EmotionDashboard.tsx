@@ -40,8 +40,10 @@ const NODE_ICONS: Record<string, string> = {
 };
 const NODE_LABELS: Record<string, string> = {
   CLIMAX: "情绪高潮", ACCELERATION: "情绪加速", FERMENTATION: "情绪发酵",
-  REPAIR: "情绪修复", DIVERGENCE: "情绪退潮", FADE: "情绪衰退",
-  ICE_POINT: "情绪冰点", CHAOS: "情绪混沌",
+  REPAIR: "情绪修复", REBOUND: "反弹修复", DIVERGENCE: "情绪退潮",
+  FADE: "情绪衰退", ICE_POINT: "情绪冰点", CHAOS: "情绪混沌",
+  ACCELERATING: "加速中", PEAKING: "见顶", EXHAUSTING: "衰竭",
+  HEALTHY: "健康", FORCED: "受压", PANIC: "恐慌",
 };
 
 function Stars({ count }: { count: number }) {
