@@ -249,6 +249,10 @@ def main():
         json.dumps(aggregate.to_dict(), ensure_ascii=False, indent=2))
     (output_dir / "drift_summary.md").write_text(aggregate.to_markdown())
 
+    # ── 4.5. Calibration Dashboard ──
+    from stock_processing_service.application.services.analyst_alignment.calibration_dashboard import generate_dashboard
+    dashboard_path = generate_dashboard(output_dir)
+
     # ── 5. Summary ──
     print(f"Phase 4.2 Replay: {aggregate.trading_days} days | "
           f"Avg ATS={aggregate.average_score:.3f} | Median={aggregate.median_score:.3f}")
@@ -263,7 +267,7 @@ def main():
         print(f"Weak: {aggregate.weak_days}")
     print(f"Output: {output_dir}/")
     for f in sorted(output_dir.rglob("*")):
-        if f.is_file():
+        if f.is_file() and f.name not in ("records.jsonl", "manifest.json"):
             print(f"  {f.relative_to(output_dir)}")
 
     # Exit code: 0=clean, 1=partial days present, 2=failures present
