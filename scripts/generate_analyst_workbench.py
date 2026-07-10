@@ -64,9 +64,42 @@ def main():
         generated_at=datetime.now(timezone.utc).isoformat(),
     )
 
-    # Load existing AI data
+    # ── Ensure chart + emotion data exists (call SPS API if needed) ──
     chart_path = Path(args.chart_dir) / f"{trade_date.isoformat()}.json"
     emotion_path = Path(args.emotion_dir) / f"emotion-{trade_date.isoformat()}.json"
+    sps_url = "http://127.0.0.1:8090"
+
+    if not chart_path.exists():
+        print(f"Chart data not found, calling SPS API...")
+        try:
+            r = __import__('urllib.request').request.urlopen(
+                __import__('urllib.request').Request(f"{sps_url}/api/v1/analyst-charts/{args.date}", method='GET'),
+                timeout=60)
+            if r.status == 200:
+                data = r.read()
+                chart_path.parent.mkdir(parents=True, exist_ok=True)
+                chart_path.write_bytes(data)
+                print(f"  Chart generated: {len(data)} bytes")
+            else:
+                print(f"  Chart API returned {r.status}")
+        except Exception as e:
+            print(f"  Chart generation failed: {e}")
+
+    if not emotion_path.exists():
+        print(f"Emotion data not found, calling SPS API...")
+        try:
+            r = __import__('urllib.request').request.urlopen(
+                __import__('urllib.request').Request(f"{sps_url}/api/v1/emotion/{args.date}", method='GET'),
+                timeout=30)
+            if r.status == 200:
+                data = r.read()
+                emotion_path.parent.mkdir(parents=True, exist_ok=True)
+                emotion_path.write_bytes(data)
+                print(f"  Emotion generated: {len(data)} bytes")
+            else:
+                print(f"  Emotion API returned {r.status}")
+        except Exception as e:
+            print(f"  Emotion generation failed: {e}")
 
     missing: list[str] = []
 

@@ -8254,82 +8254,49 @@ async def get_workbench_session(trade_date: str) -> dict[str, Any]:
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/generate")
 async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
-    """Trigger full AI analysis pipeline: charts → emotion → workbench draft.
+    """Trigger AI analysis pipeline for a trading date.
 
-    Uses HTTP calls to local API endpoints to avoid asyncio nesting.
+    Runs generate_analyst_workbench.py which:
+    1. Reads chart JSON + emotion JSON if available (produces them via API if needed)
+    2. Builds AIDraft with attention_state, cognition_cards, narrative, playbook
+    3. Updates WorkbenchSession to DRAFT_READY
+
+    Missing chart/emotion data is noted in draft.missing_fields.
     """
-    import subprocess, sys
+    from datetime import date as _date
+    import subprocess, sys, os
     td = _date.fromisoformat(trade_date)
-    steps_done = []
+    script = os.path.join(os.path.dirname(__file__), "..", "scripts", "generate_analyst_workbench.py")
+    script = os.path.abspath(script)
     errors = []
 
-    # Step 1: Charts — call local HTTP endpoint
-    try:
-        async with httpx.AsyncClient(timeout=60) as client:
-            r = await client.get(f"http://127.0.0.1:8090/api/v1/analyst-charts/{trade_date}")
-            if r.status_code == 200:
-                charts = r.json()
-                if isinstance(charts, list) and len(charts) >= 3:
-                    chart_dir = _Path("frontend/public/api/analyst-charts")
-                    chart_dir.mkdir(parents=True, exist_ok=True)
-                    (chart_dir / f"{trade_date}.json").write_text(
-                        _json.dumps(charts, ensure_ascii=False, default=str))
-                    steps_done.append("charts")
-                else:
-                    errors.append(f"chart generation returned only {len(charts) if isinstance(charts,list) else 0} charts")
-            else:
-                errors.append(f"chart API returned {r.status_code}")
-    except Exception as e:
-        errors.append(f"chart: {e}")
-
-    # Step 2: Emotion — call local HTTP endpoint
-    try:
-        async with httpx.AsyncClient(timeout=30) as client:
-            r = await client.get(f"http://127.0.0.1:8090/api/v1/emotion/{trade_date}")
-            if r.status_code == 200:
-                emo = r.json()
-                if emo and emo.get("emotion_node"):
-                    emo_dir = _Path("frontend/public/api")
-                    emo_dir.mkdir(parents=True, exist_ok=True)
-                    (emo_dir / f"emotion-{trade_date}.json").write_text(
-                        _json.dumps(emo, ensure_ascii=False, default=str))
-                    steps_done.append("emotion")
-                else:
-                    errors.append("emotion generation returned empty")
-            else:
-                errors.append(f"emotion API returned {r.status_code}")
-    except Exception as e:
-        errors.append(f"emotion: {e}")
-
-    # Step 3: Workbench draft
     try:
         result = subprocess.run(
-            [sys.executable, "scripts/generate_analyst_workbench.py", "--date", trade_date],
+            [sys.executable, script, "--date", trade_date],
             capture_output=True, text=True, timeout=120,
+            cwd=os.path.dirname(os.path.dirname(__file__)),  # project root
         )
         if result.returncode != 0:
-            errors.append(f"workbench: {result.stderr.strip()[-200:]}")
-        else:
-            steps_done.append("workbench")
+            errors.append(f"CLI: {result.stderr.strip()[-300:]}")
+            return {"job_id": f"local_{trade_date}", "status": "failed", "error": "; ".join(errors)}
     except Exception as e:
-        errors.append(f"workbench: {e}")
+        return {"job_id": f"local_{trade_date}", "status": "failed", "error": str(e)}
 
-    if steps_done:
-        session_store, _ = _get_wb_session_store()
-        session = session_store.get(td)
-        return {
-            "job_id": f"local_{trade_date}",
-            "status": "completed",
-            "steps_completed": steps_done,
-            "session_status": session.status,
-            "draft_version": session.draft_version,
-            "errors": errors if errors else None,
-        }
+    session_store, _ = _get_wb_session_store()
+    session = session_store.get(td)
+
+    # Report what's available
+    chart_exists = os.path.exists(f"frontend/public/api/analyst-charts/{trade_date}.json")
+    emo_exists = os.path.exists(f"frontend/public/api/emotion-{trade_date}.json")
+
     return {
         "job_id": f"local_{trade_date}",
-        "status": "failed",
-        "steps_completed": steps_done,
-        "error": "; ".join(errors),
+        "status": "completed",
+        "session_status": session.status,
+        "draft_version": session.draft_version,
+        "chart_generated": chart_exists,
+        "emotion_generated": emo_exists,
+        "note": "Chart/emotion files may need separate generation via API endpoints" if not (chart_exists and emo_exists) else None,
     }
 
 
