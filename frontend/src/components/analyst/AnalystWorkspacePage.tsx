@@ -429,17 +429,59 @@ export function AnalystWorkspacePage() {
   const handleSave = async () => {
     if (!workspace) return;
     setSaving(true);
+    setSavedMsg("");
+    const steps: string[] = [];
+
     try {
-      const resp = await fetch(`/api/v1/analyst-workspace/${dateInput}/save`, {
+      // Step 1: Save workspace overrides (old save endpoint)
+      const saveResp = await fetch(`/api/v1/analyst-workspace/${dateInput}/save`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(workspace),
       });
-      if (!resp.ok) throw new Error(`${resp.status}`);
-      const result = await resp.json();
-      setSavedMsg(`已保存 (${result.overrides_recorded} 条修改记录)`);
-      setTimeout(() => setSavedMsg(""), 3000);
-    } catch { /* ignore */ } finally { setSaving(false); }
+      if (!saveResp.ok) throw new Error(`保存失败: HTTP ${saveResp.status}`);
+      const saveResult = await saveResp.json();
+      steps.push(`已保存 ${saveResult.overrides_recorded || 0} 条修改`);
+
+      // Step 2: Save review → transition DRAFT_READY → IN_REVIEW
+      const reviewResp = await fetch(`/api/v1/analyst-workbench/${dateInput}/save-review`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ overrides: { analyst_reviewed: true, saved_at: new Date().toISOString() } }),
+      });
+      if (reviewResp.ok) {
+        const reviewResult = await reviewResp.json();
+        steps.push(`审核状态: ${reviewResult.session_status}`);
+      }
+
+      // Step 3: Auto-approve → create snapshot (analyst clicking Save = approved)
+      if (reviewResp.ok) {
+        const approveResp = await fetch(`/api/v1/analyst-workbench/${dateInput}/approve`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ approved_by: "analyst" }),
+        });
+        if (approveResp.ok) {
+          const approveResult = await approveResp.json();
+          steps.push(`已审核通过 · snapshot_v${approveResult.snapshot_version}`);
+        } else {
+          // If already APPROVED, that's OK
+          const errData = await approveResp.json().catch(() => ({}));
+          if ((errData as any).detail?.includes("Invalid transition")) {
+            steps.push("(已审核通过)");
+          }
+        }
+      }
+
+      setSavedMsg(steps.join(" · "));
+      // Refresh workspace data to reflect new status
+      fetchWorkspace(dateInput);
+    } catch (e: any) {
+      setSavedMsg(`❌ ${e.message || "保存失败"}`);
+    } finally {
+      setSaving(false);
+      setTimeout(() => setSavedMsg(""), 5000);
+    }
   };
 
   const handleGenerate = async () => {
