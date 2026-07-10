@@ -82,6 +82,21 @@ class ApprovalGate:
                 reason="Approved snapshot exists. Formal report can be generated.",
             )
 
+        if status in (WorkbenchStatus.APPROVED, WorkbenchStatus.PUBLISHED) and not snapshot:
+            return ReportApproval(
+                mode="blocked",
+                trade_date=trade_date,
+                session_status=status,
+                can_generate_report=False,
+                snapshot=None,
+                snapshot_version=0,
+                approved_at="",
+                approved_by="",
+                reason=f"Session is {status} but snapshot.json is missing. "
+                       f"This is an abnormal state — the snapshot file may have been "
+                       f"deleted or corrupted. Restore the snapshot or re-approve.",
+            )
+
         if status in (WorkbenchStatus.DRAFT_READY, WorkbenchStatus.IN_REVIEW):
             return ReportApproval(
                 mode="preview",

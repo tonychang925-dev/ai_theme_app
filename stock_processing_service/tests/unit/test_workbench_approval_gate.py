@@ -209,3 +209,37 @@ def test_in_review_returns_preview(tmp_store, td):
     approval = gate.check(td)
     assert approval.mode == "preview"
     assert approval.can_generate_report is False
+
+
+# ── Edge case: APPROVED / PUBLISHED but snapshot missing → blocked ──
+
+def test_approved_without_snapshot_returns_blocked(tmp_store, td):
+    ss = SessionStore(base_dir=tmp_store)
+    session = ss.get(td)
+    session = ss.transition(session, WorkbenchStatus.GENERATING)
+    session = ss.transition(session, WorkbenchStatus.DRAFT_READY, draft_version=1)
+    session = ss.transition(session, WorkbenchStatus.IN_REVIEW)
+    session = ss.transition(session, WorkbenchStatus.APPROVED, snapshot_version=1, approved_by="analyst")
+    # Session is APPROVED but no snapshot.json was ever created on disk
+
+    gate = ApprovalGate(base_dir=tmp_store)
+    approval = gate.check(td)
+    assert approval.mode == "blocked"
+    assert approval.can_generate_report is False
+    assert "snapshot.json is missing" in approval.reason
+
+
+def test_published_without_snapshot_returns_blocked(tmp_store, td):
+    ss = SessionStore(base_dir=tmp_store)
+    session = ss.get(td)
+    session = ss.transition(session, WorkbenchStatus.GENERATING)
+    session = ss.transition(session, WorkbenchStatus.DRAFT_READY, draft_version=1)
+    session = ss.transition(session, WorkbenchStatus.IN_REVIEW)
+    session = ss.transition(session, WorkbenchStatus.APPROVED, snapshot_version=1)
+    session = ss.transition(session, WorkbenchStatus.PUBLISHED)
+    # No snapshot file written
+
+    gate = ApprovalGate(base_dir=tmp_store)
+    approval = gate.check(td)
+    assert approval.mode == "blocked"
+    assert "snapshot.json is missing" in approval.reason
