@@ -100,7 +100,7 @@ class MarketMetricsService:
             except Exception:
                 pass  # fallback to DB-backed computation
 
-        breadth = await self._build_breadth(trade_date, overview, {})
+        breadth = await self._build_breadth(conn, trade_date, overview, {})
         limitup, streak_dist, yesterday_codes, stock_detail, today_streaks = await self._build_limitup(
             conn, trade_date, overview, {}, em_zt, em_zb)
         relay = await self._build_relay(conn, trade_date, limitup, streak_dist,
@@ -127,11 +127,32 @@ class MarketMetricsService:
 
     # ── Builders ──
 
-    async def _build_breadth(self, td: date, overview: dict, cal: dict) -> MarketBreadthMetrics:
+    async def _build_breadth(self, conn, td: date, overview: dict, cal: dict) -> MarketBreadthMetrics:
         up = int(overview.get("up_count", 0) or 0)
         down = int(overview.get("down_count", 0) or 0)
         lu = int(overview.get("limit_up_total", 0) or 0)
         ld = int(overview.get("limit_down_total", 0) or 0)
+        source = "recap_snapshot"
+
+        # Fallback: query subject_stock_daily_snapshot directly when recap is missing
+        if up == 0 and down == 0:
+            try:
+                row = await conn.fetchrow(
+                    "SELECT COUNT(*) FILTER (WHERE pct_chg > 0) AS up_count, "
+                    "COUNT(*) FILTER (WHERE pct_chg < 0) AS down_count, "
+                    "COUNT(*) FILTER (WHERE pct_chg >= 9.8) AS limit_up_count "
+                    "FROM subject_stock_daily_snapshot WHERE trade_date = $1::date",
+                    td,
+                )
+                if row and row["up_count"] > 0:
+                    up = row["up_count"]
+                    down = row["down_count"]
+                    if lu == 0:
+                        lu = row["limit_up_count"]
+                    source = "subject_stock_daily_snapshot"
+            except Exception:
+                pass
+
         raw_amount = float(overview.get("total_amount", 0) or 0)
         # recap total_amount is in 万元 → 亿元
         turnover_yi = normalize_to_yi(raw_amount, "wan")
@@ -141,7 +162,7 @@ class MarketMetricsService:
             limit_up_count=lu, limit_down_count=ld,
             up_ratio=round(up / max(up + down, 1), 3),
             turnover_yi=turnover_yi,
-            source=MetricSource("recap_snapshot", "market_overview_review", confidence=0.9),
+            source=MetricSource(source, "market_overview_review", confidence=0.9 if source == "recap_snapshot" else 0.85),
         )
 
     # ── Limit threshold by board type ──
