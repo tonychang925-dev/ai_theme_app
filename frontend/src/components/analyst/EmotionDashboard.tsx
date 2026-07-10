@@ -140,11 +140,8 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
     return () => { cancelled = true; };
   }, [tradeDate]);
 
-  const raw = emotion?.raw || {};
-  const hasData = raw && (raw.limit_up > 0 || raw.up_count > 0 || raw.active_capital_yi > 0);
   if (loading) return <div style={{ padding: "8px 16px", color: "#5a7a8a", fontSize: 13 }}>加载情绪数据…</div>;
   if (!emotion || !emotion.emotion_node) return <div style={{ padding: "8px 16px", color: "#ffa940", fontSize: 13 }}>该日期暂无数据，请点击「启动分析」生成</div>;
-  if (!hasData) return <div style={{ padding: "8px 16px", color: "#ffa940", fontSize: 13 }}>该日期数据为空，请点击「启动分析」生成分析数据</div>;
 
   const node = emotion.emotion_node || "CHAOS";
   const color = NODE_COLORS[node] || "#5a7a8a";
