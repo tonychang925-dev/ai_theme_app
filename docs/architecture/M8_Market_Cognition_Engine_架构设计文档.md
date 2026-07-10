@@ -6649,15 +6649,28 @@ MarketMetricsSnapshot (单日快照)
 
 | 数据池 | API端点 | 关键字段 | 状态 |
 |--------|---------|----------|------|
-| 涨停池 (ZT) | `getTopicZTPool` | `lbc`(连板数), `zdp`(涨幅), `fund`(封单) | e**已集成** |
+| 涨停池 (ZT) | `getTopicZTPool` | `lbc`(连板数), `zdp`(涨幅), `fund`(封单) | **已集成** |
 | 炸板池 (ZB) | `getTopicZBPool` | `zbc`(炸板次数) | **已集成** |
 | 跌停池 (DT) | `getTopicDTPool` | `lbc`(连续跌停) | **已集成** |
 | 晋级率计算 | yesterday ZT JOIN today ZT | per-stock limit_days | **已集成** |
 
-- 数据库: `eastmoney_board_pool_daily` (每日采集, 1516行已入库)
+- 数据库: `eastmoney_board_pool_daily` (每日采集)
 - 采集任务: `scripts/collect_eastmoney_board_pool.py`
-- 已注册到采集控制系统: `evidence.eastmoney_board_pool` (ScriptCommandRunner)
-- **2026-07-01 ~ 2026-07-08 共 6 个有效交易日数据完整**
+
+### 28.3.1 全市场涨跌家数: TDX MarketBreadthProvider (Phase 4.5.6-P0)
+
+全市场 A 股上涨/下跌家数来自 TDX/mootdx，**禁止从 subject_stock_daily_snapshot 临时聚合**（该表是题材映射表，非全市场行情事实表）。
+
+| 数据源 | 端点 | 字段 | 状态 |
+|--------|------|------|------|
+| TDX security list | `mootdx.quotes.stocks(market=0\|1)` | 全市场 A 股代码 | **已集成** |
+| TDX batch quotes | `mootdx.quotes.quotes(symbol=[...])` | price, last_close | **已集成** |
+
+- Provider: `stock_processing_service/integrations/a_stock_data/tdx_market_breadth_provider.py`
+- 规则: `price > last_close → up`, `price < last_close → down`
+- 覆盖: 5404 只 A 股（SZ+SH，过滤非 A 股编码）
+- 门禁: coverage < 0.95 → 返回 None，不进入正式指标
+- 7/10 基准: up=3561 down=1609（对照 THS: 3772/1678）
 
 ### 28.4 关键指标验证 (vs 分析师)
 

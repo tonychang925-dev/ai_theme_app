@@ -1,8 +1,8 @@
 # Phase 4.5.4 — Daily Review Workbench Sections 设计文档
 
-> 版本：v1.0
+> 版本：v1.1
 > 日期：2026-07-10
-> 状态：Design Review
+> 状态：Implemented
 > 关联：`docs/architecture/分析师工作台设计方案.md` (M8.5) / `docs/architecture/M8_Market_Cognition_Engine_架构设计文档.md` (M8)
 
 ---
@@ -365,7 +365,63 @@ DailyReviewV2 Response
 
 ## 11. 不在此阶段实施
 
-- ❌ 前端复盘页面渲染新章节（后续 Phase 4.5.5）
 - ❌ LLM 增强图表/情绪解读文本
 - ❌ 数据库持久化（Phase 4.5.2 已明确列为下一阶段）
-- ❌ Notion 报告模板更新
+
+---
+
+## 12. 实施状态（2026-07-10 更新）
+
+### Phase 4.5.4 ✅ 已实现
+
+- AIDraft / ReviewSnapshot 新增 `emotion_review` + `chart_reviews` 字段
+- ChartReviewBuilder（6 类图表确定性解读）
+- EmotionReviewBuilder（情绪结构化投影）
+- Draft Generator 写入新字段
+- WorkbenchReportComposer 输出 7 个一等章节
+- DailyReviewV2Builder pass-through
+- 旧 draft/snapshot 向后兼容（`d.get()` 兜底）
+
+### Phase 4.5.5 ✅ 已实现
+
+- 程序员工作台 `EmotionDashboard` 读取校准后数据
+- `WorkbenchSectionsPanel`：复盘报告页渲染 7 个章节
+- 阶段标签彩色药丸 + 风险等级中文映射
+- 4 列布局：为什么/明日预测概率/今日交易模式/明日操作提示
+- `fetchTomorrow()` prop 驱动（无异步闪烁）
+
+### Phase 4.5.5.1 ✅ 已实现
+
+- 情绪/图表数据为空时显示占位提示
+- preview 模式显示"待分析师审核"
+- blocked 模式显示红色异常提示
+- 低质量数据提醒（source_quality < 0.6）
+
+### Phase 4.5.6-P0 ✅ 已实现
+
+- 禁用 `subject_stock_daily_snapshot` 临时聚合
+- **TDX MarketBreadthProvider**：通过 mootdx 从 TDX 获取全市场 A 股行情
+- 全市场涨跌计算：`price > last_close → up`
+- 覆盖 5404 只 A 股（SZ+SH，过滤非 A 股编码）
+- 覆盖率 < 95% 时返回 None，不进入正式指标
+- 7/10 结果：up=3561 down=1609 (THS: 3772/1678, diff 5%)
+
+### MarketBreadthSourceRegistry
+
+| 指标 | a-stock-data | 可用源 | 结论 |
+|------|-------------|--------|------|
+| 涨停数 | ✅ | Eastmoney ZT Pool | 可直接用 |
+| 跌停数 | ✅ | Eastmoney DT Pool | 可直接用 |
+| 炸板数 | ✅ | Eastmoney ZB Pool | 可直接用 |
+| 昨涨停反馈 | ✅ | YZT + ZT/ZB/DT | 可直接用 |
+| 行业涨跌家数 | ✅ | industry_comparison f104/f105 | 仅行业层 |
+| 全市场涨跌家数 | ❌ 无端点 | TDX/mootdx → TdxMarketBreadthProvider | P2 源 |
+
+### 源优先级
+
+```
+P0 同花顺市场统计端点（待发现）
+P1 东财全 A 实时行情 clist（API 已确认 5537 只，但被限频）
+P2 TDX/mootdx 全市场 quotes 批量计算 ✅ 当前使用
+P3 subject_stock_daily_snapshot ❌ 已禁用
+```
