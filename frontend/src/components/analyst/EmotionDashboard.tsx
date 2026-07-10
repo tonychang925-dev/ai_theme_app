@@ -126,7 +126,7 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
     })();
 
     return () => ctrl.abort();
-  }, [tradeDate, refreshKey]);
+  }, [tradeDate]);
 
   if (loading) return <div style={{ padding: "8px 16px", color: "#5a7a8a", fontSize: 13 }}>加载情绪数据…</div>;
   if (!emotion || !emotion.emotion_node) return <div style={{ padding: "8px 16px", color: "#ffa940", fontSize: 13 }}>该日期暂无数据，请点击「启动分析」生成</div>;
