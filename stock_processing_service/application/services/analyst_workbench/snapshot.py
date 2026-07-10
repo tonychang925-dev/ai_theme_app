@@ -1,6 +1,7 @@
 """Phase 4.5 T01 — Review Snapshot model + store."""
 from __future__ import annotations
 
+import hashlib
 import json
 from dataclasses import dataclass, field
 from datetime import date, datetime, timezone
@@ -16,6 +17,9 @@ class ReviewSnapshot:
     approved: bool = False
     approved_at: str = ""
     approved_by: str = ""
+    approval_mode: str = "preview"
+    source_mode: str = "preview"
+    snapshot_hash: str = ""
 
     attention_state: dict[str, Any] = field(default_factory=dict)
     cognition_cards: list[dict[str, Any]] = field(default_factory=list)
@@ -35,6 +39,9 @@ class ReviewSnapshot:
             "approved": self.approved,
             "approved_at": self.approved_at,
             "approved_by": self.approved_by,
+            "approval_mode": self.approval_mode,
+            "source_mode": self.source_mode,
+            "snapshot_hash": self.snapshot_hash,
             "attention_state": self.attention_state,
             "cognition_cards": self.cognition_cards,
             "narrative": self.narrative,
@@ -53,6 +60,9 @@ class ReviewSnapshot:
             approved=d.get("approved", False),
             approved_at=d.get("approved_at", ""),
             approved_by=d.get("approved_by", ""),
+            approval_mode=d.get("approval_mode", "analyst_approved" if d.get("approved", False) else "preview"),
+            source_mode=d.get("source_mode", "formal" if d.get("approved", False) else "preview"),
+            snapshot_hash=d.get("snapshot_hash", ""),
             attention_state=d.get("attention_state", {}),
             cognition_cards=d.get("cognition_cards", []),
             narrative=d.get("narrative", {}),
@@ -72,6 +82,8 @@ class ReviewSnapshot:
             approved=True,
             approved_at=datetime.now(timezone.utc).isoformat(),
             approved_by=kwargs.get("approved_by", ""),
+            approval_mode=kwargs.get("approval_mode", "analyst_approved"),
+            source_mode=kwargs.get("source_mode", "formal"),
             attention_state=draft.attention_state,
             cognition_cards=draft.cognition_cards,
             narrative=draft.narrative,
@@ -80,6 +92,40 @@ class ReviewSnapshot:
             emotion_review=draft.emotion_review,
             chart_reviews=draft.chart_reviews,
         )
+
+    @classmethod
+    def from_merged(
+        cls,
+        *,
+        trade_date: date,
+        draft: "AIDraft",
+        merged: dict[str, Any],
+        snapshot_version: int = 1,
+        approved_by: str = "",
+    ) -> "ReviewSnapshot":
+        return cls(
+            trade_date=trade_date,
+            snapshot_version=snapshot_version,
+            based_on_draft_version=draft.draft_version,
+            approved=True,
+            approved_at=datetime.now(timezone.utc).isoformat(),
+            approved_by=approved_by,
+            approval_mode="analyst_approved",
+            source_mode="formal",
+            attention_state=merged.get("attention_state", {}),
+            cognition_cards=merged.get("cognition_cards", []),
+            narrative=merged.get("narrative", {}),
+            playbook=merged.get("playbook", {}),
+            override_summary=merged.get("override_summary", {}),
+            emotion_review=merged.get("emotion_review", {}),
+            chart_reviews=merged.get("chart_reviews", []),
+        )
+
+    def compute_hash(self) -> str:
+        payload = self.to_dict()
+        payload["snapshot_hash"] = ""
+        raw = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 
 class SnapshotStore:
@@ -96,6 +142,7 @@ class SnapshotStore:
         d = self._snapshot_dir(snapshot.trade_date)
         d.mkdir(parents=True, exist_ok=True)
         p = self._snapshot_path(snapshot.trade_date)
+        snapshot.snapshot_hash = snapshot.compute_hash()
         p.write_text(json.dumps(snapshot.to_dict(), ensure_ascii=False, indent=2))
         return p
 

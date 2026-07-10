@@ -8275,6 +8275,27 @@ def _get_wb_snapshot_store():
     return SnapshotStore(base_dir=_os.path.join(_project_root, "tmp", "analyst_workbench")), ReviewSnapshot
 
 
+def _load_saved_analyst_workspace(trade_date: str) -> dict[str, Any] | None:
+    import json as _json
+    import os as _os
+    from pathlib import Path as _Path
+
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    candidates = [
+        _Path(_project_root) / "tmp" / "analyst_workspace" / f"{trade_date}.json",
+        _Path("tmp") / "analyst_workspace" / f"{trade_date}.json",
+    ]
+    for path in candidates:
+        if not path.exists():
+            continue
+        try:
+            data = _json.loads(path.read_text(encoding="utf-8"))
+            return data if isinstance(data, dict) else None
+        except Exception:
+            return None
+    return None
+
+
 @app.get("/api/v1/analyst-workbench/{trade_date}/session")
 async def get_workbench_session(trade_date: str) -> dict[str, Any]:
     """Return workbench session state. Does NOT trigger implicit generation."""
@@ -8484,6 +8505,9 @@ async def save_workbench_review(trade_date: str, body: dict[str, Any] = None) ->
 async def approve_workbench(trade_date: str, body: dict[str, Any] = None) -> dict[str, Any]:
     """Create approved ReviewSnapshot."""
     from datetime import date as _date
+    from stock_processing_service.application.services.analyst_workbench.review_merger import (
+        AnalystReviewMerger,
+    )
     session_store, WorkbenchStatus = _get_wb_session_store()
     draft_store = _get_wb_draft_store()
     snapshot_store, ReviewSnapshot = _get_wb_snapshot_store()
@@ -8495,10 +8519,29 @@ async def approve_workbench(trade_date: str, body: dict[str, Any] = None) -> dic
     if draft is None:
         return {"status": "error", "error": "No draft found to approve"}
     body = body or {}
-    snapshot = ReviewSnapshot.from_draft(draft, overrides=body.get("overrides", {}), snapshot_version=session.snapshot_version + 1, approved_by=body.get("approved_by", "analyst"))
+    workspace = _load_saved_analyst_workspace(trade_date)
+    merged = AnalystReviewMerger().merge(
+        draft=draft,
+        workspace=workspace,
+        overrides=body.get("overrides", {}),
+    )
+    snapshot = ReviewSnapshot.from_merged(
+        trade_date=td,
+        draft=draft,
+        merged=merged,
+        snapshot_version=session.snapshot_version + 1,
+        approved_by=body.get("approved_by", "analyst"),
+    )
     snapshot_store.save(snapshot)
     session = session_store.transition(session, WorkbenchStatus.APPROVED, snapshot_version=snapshot.snapshot_version, approved_by=snapshot.approved_by)
-    return {"status": "approved", "session_status": session.status, "snapshot_version": session.snapshot_version, "based_on_draft_version": draft.draft_version}
+    return {
+        "status": "approved",
+        "session_status": session.status,
+        "snapshot_version": session.snapshot_version,
+        "based_on_draft_version": draft.draft_version,
+        "snapshot_hash": snapshot.snapshot_hash,
+        "merged_workspace": workspace is not None,
+    }
 
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/publish")
