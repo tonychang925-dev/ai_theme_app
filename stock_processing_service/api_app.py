@@ -7928,7 +7928,10 @@ async def get_market_emotion(trade_date: str) -> dict[str, Any]:
 
         b = snap.breadth; l = snap.limitup; r = snap.relay
         c = snap.capital; loss = snap.loss_effect
-        leader = snap.leader_evolution; death = snap.high_position_death
+
+        # Reject empty/default snapshots (no actual market data)
+        if b.up_count == 0 and b.down_count == 0 and l.total_count == 0:
+            raise HTTPException(status_code=404, detail=f"No market data available for {trade_date}")
 
         # Phase mapping: NarrativeEngine phase → frontend node
         phase_map = {
