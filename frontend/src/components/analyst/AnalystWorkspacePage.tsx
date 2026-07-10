@@ -399,6 +399,7 @@ export function AnalystWorkspacePage() {
   const [activeTab, setActiveTab] = useState<"emotion" | "watch">("emotion");
   const [generating, setGenerating] = useState(false);
   const [genProgress, setGenProgress] = useState<{ show: boolean; step: string; steps: string[]; current: number; error?: string }>({ show: false, step: "", steps: [], current: 0 });
+  const [genKey, setGenKey] = useState(0);
   const [calibrating, setCalibrating] = useState(false);
   const [calMsg, setCalMsg] = useState("");
   const [readinessDialog, setReadinessDialog] = useState<{ show: boolean; chart: boolean; emotion: boolean; reference: boolean; mode: "generate" | "calibrate" } | null>(null);
@@ -466,10 +467,11 @@ export function AnalystWorkspacePage() {
 
       advance(4);
       await fetchWorkspace(dateInput);
+      setGenKey(k => k + 1);
 
-      setGenProgress(p => ({ ...p, step: "✅ 分析完成！正在刷新页面…", current: 5 }));
-      await new Promise(r => setTimeout(r, 800));
-      window.location.reload();
+      setGenProgress(p => ({ ...p, step: "✅ 分析完成", current: 5 }));
+      await new Promise(r => setTimeout(r, 1200));
+      setGenProgress({ show: false, step: "", steps: [], current: 0 });
     } catch (e: any) {
       setGenProgress(p => ({ ...p, error: e.message || "请求失败", step: "❌ 失败" }));
     } finally {
@@ -573,7 +575,7 @@ export function AnalystWorkspacePage() {
 
       {/* Tab 1: Emotion Dashboard */}
       <div style={{ flex: 1, overflow: "auto", background: "#0c1118", display: activeTab === "emotion" ? "block" : "none" }}>
-        <EmotionDashboard tradeDate={dateInput} />
+        <EmotionDashboard key={`${dateInput}-${genKey}`} tradeDate={dateInput} />
       </div>
 
       {/* Tab 2: Three-panel body — dark theme */}
