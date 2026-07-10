@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -67,9 +68,10 @@ def main():
     # ── Ensure chart + emotion data exists (call SPS API if needed) ──
     chart_path = Path(args.chart_dir) / f"{trade_date.isoformat()}.json"
     emotion_path = Path(args.emotion_dir) / f"emotion-{trade_date.isoformat()}.json"
+    skip_fetch = os.environ.get("SPS_SKIP_FETCH") == "1"
     sps_url = "http://127.0.0.1:8090"
 
-    if not chart_path.exists():
+    if not chart_path.exists() and not skip_fetch:
         print(f"Chart data not found, calling SPS API...")
         try:
             import urllib.request
@@ -85,7 +87,7 @@ def main():
         except Exception as e:
             print(f"  Chart generation failed: {e}")
 
-    if not emotion_path.exists():
+    if not emotion_path.exists() and not skip_fetch:
         print(f"Emotion data not found, calling SPS API...")
         try:
             import urllib.request
@@ -100,6 +102,9 @@ def main():
                 print(f"  Emotion API returned {r.status}")
         except Exception as e:
             print(f"  Emotion generation failed: {e}")
+
+    if skip_fetch:
+        print("Chart/emotion fetch skipped (SPS_SKIP_FETCH=1), reading from disk")
 
     missing: list[str] = []
 
