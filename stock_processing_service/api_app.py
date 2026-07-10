@@ -8675,19 +8675,24 @@ async def run_analyst_alignment_for_date(trade_date: str, body: dict[str, Any] =
       3. Default: tmp/analyst_reference
     """
     import subprocess, sys as _sys, os as _os, json
+    from pathlib import Path as _Path
     body = body or {}
-    reference_dir = (
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    reference_dir = _os.path.join(
+        _project_root,
         body.get("reference_dir")
         or _os.environ.get("ANALYST_REFERENCE_DIR")
-        or "tmp/analyst_reference"
+        or "tmp/analyst_reference",
     )
-    output_dir = f"tmp/analyst_alignment_{trade_date}"
+    output_dir = _os.path.join(_project_root, f"tmp/analyst_alignment_{trade_date}")
+    script = _os.path.join(_project_root, "scripts", "run_analyst_alignment.py")
+    chart_dir = _os.path.join(_project_root, "frontend", "public", "api", "analyst-charts")
     result = subprocess.run(
-        [_sys.executable, "scripts/run_analyst_alignment.py",
+        [_sys.executable, script,
          "--start", trade_date, "--end", trade_date,
          "--reference-dir", reference_dir,
          "--ai-source", "charts",
-         "--ai-chart-dir", "frontend/public/api/analyst-charts",
+         "--ai-chart-dir", chart_dir,
          "--output", output_dir],
         capture_output=True, text=True, timeout=90,
     )
