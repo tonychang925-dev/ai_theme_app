@@ -2373,6 +2373,12 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
     except Exception:
         v2["workbench_approval"] = {"error": "approval check failed"}
 
+    # ── Phase 4.5.5: enrich with workbench section content from draft or snapshot ──
+    try:
+        v2 = _enrich_v2_with_workbench_sections(v2, d)
+    except Exception:
+        pass
+
     return v2
 
 
@@ -8563,6 +8569,75 @@ async def _check_workbench_approval(trade_date: date) -> dict[str, Any]:
         "session_status": approval.session_status,
         "reason": approval.reason,
     }
+
+
+def _enrich_v2_with_workbench_sections(v2: dict[str, Any], trade_date: date) -> dict[str, Any]:
+    """Inject workbench section content into the DailyReview V2 response.
+
+    Priority: approved snapshot > latest draft.
+    Only injects fields that are not already present in v2.
+    """
+    import json, os as _os
+    from pathlib import Path as _Path
+
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    _wb_base = _Path(_project_root) / "tmp" / "analyst_workbench" / trade_date.isoformat()
+
+    # ── Try snapshot first ──
+    snap_path = _wb_base / "snapshot.json"
+    if snap_path.exists():
+        try:
+            snap = json.loads(snap_path.read_text(encoding="utf-8"))
+            return _inject_sections(v2, snap)
+        except Exception:
+            pass
+
+    # ── Fall back to latest draft ──
+    drafts_dir = _wb_base / "drafts"
+    if drafts_dir.exists():
+        draft_files = sorted(drafts_dir.glob("draft_v*.json"))
+        if draft_files:
+            try:
+                draft = json.loads(draft_files[-1].read_text(encoding="utf-8"))
+                return _inject_sections(v2, draft)
+            except Exception:
+                pass
+
+    return v2
+
+
+def _inject_sections(v2: dict[str, Any], source: dict[str, Any]) -> dict[str, Any]:
+    """Inject workbench section fields from source into v2, preserving existing values."""
+    # Map source keys → v2 keys (some are the same, some differ)
+    mappings = [
+        ("emotion_review", "emotion_review"),
+        ("chart_reviews", "market_chart_reviews"),
+        ("attention_state", "attention_review"),
+        ("cognition_cards", "cognition_reviews"),
+        ("narrative", "narrative_review"),
+        ("playbook", "playbook_review"),
+        ("override_summary", "analyst_override_review"),
+    ]
+    for src_key, v2_key in mappings:
+        # Only inject if not already set by compose-from-workbench
+        if v2_key not in v2 or not v2.get(v2_key):
+            val = source.get(src_key)
+            if val is not None and val != [] and val != {}:
+                v2[v2_key] = val
+
+    # Also inject workbench_data if not present
+    if "workbench_data" not in v2:
+        v2["workbench_data"] = {
+            "attention_state": source.get("attention_state", {}),
+            "cognition_cards": source.get("cognition_cards", []),
+            "narrative": source.get("narrative", {}),
+            "playbook": source.get("playbook", {}),
+            "override_summary": source.get("override_summary", {}),
+            "emotion_review": source.get("emotion_review", {}),
+            "chart_reviews": source.get("chart_reviews", []),
+        }
+
+    return v2
 
 
 @app.post("/api/v2/daily-review-v2/compose-from-workbench")
