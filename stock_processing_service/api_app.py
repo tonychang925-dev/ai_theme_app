@@ -8746,14 +8746,28 @@ async def import_analyst_reference(body: dict[str, Any]) -> dict[str, Any]:
     import tempfile
     # ── Pre-validation: basic structure check ──
     validation_issues: list[str] = []
+    # Check for DeepSeek JSON structure markers
+    has_json_block = "```json" in content or '"market_facts"' in content or '"emotion_label"' in content
+    has_table_data = "|" in content and ("涨停" in content or "limit_up" in content.lower())
+    if not has_json_block and not has_table_data:
+        validation_issues.append("未检测到结构化数据（缺少 JSON 代码块或数据表格）")
     if "涨停" not in content and "limit" not in content.lower():
         validation_issues.append("缺少涨停数据（涨停数/limit_up）")
-    if "情绪" not in content and "emotion" not in content.lower():
+    if "情绪" not in content and "emotion" not in content.lower() and not has_json_block:
         validation_issues.append("缺少情绪标签（情绪节点/情绪评分）")
     if "策略" not in content and "strategy" not in content.lower() and "计划" not in content:
         validation_issues.append("缺少策略建议（策略/次日计划）")
     if len(content) < 200:
         validation_issues.append(f"内容过短（{len(content)} 字符，建议至少 200 字符）")
+
+    # Hard reject: completely unrecognizable format
+    if not has_json_block and not has_table_data and len(content) < 500:
+        raise HTTPException(
+            status_code=422,
+            detail="文件格式不匹配。请使用 DeepSeek 结构化复盘 .md 文件"
+                   "（应包含 ```json 代码块或结构化数据表格）。"
+                   f"当前文件: {len(content)} 字符，无结构化数据。",
+        )
 
     # ── Parse markdown ──
     try:
@@ -8784,11 +8798,21 @@ async def import_analyst_reference(body: dict[str, Any]) -> dict[str, Any]:
     missing = quality.missing_fields if hasattr(quality, 'missing_fields') else []
     low_conf = quality.low_confidence_fields if hasattr(quality, 'low_confidence_fields') else []
 
-    if extraction_status in ("failed",):
+    # Quality gate: reject if extraction failed OR core fields insufficient
+    if extraction_status == "failed":
         raise HTTPException(
             status_code=422,
-            detail=f"解析质量不足: extraction_status={extraction_status}, "
-                   f"core_fields={core_ok}, missing={missing}",
+            detail=f"文件格式无法识别（extraction_status=failed）。"
+                   f"请使用 DeepSeek 结构化复盘格式（含 JSON 数据块的 .md 文件）。"
+                   f"缺失核心字段: {list(missing)[:8]}",
+        )
+    if core_ok < 3:
+        raise HTTPException(
+            status_code=422,
+            detail=f"数据提取不足: 核心字段仅 {core_ok}/5。"
+                   f"当前文件格式可能不是 DeepSeek 结构化复盘。"
+                   f"缺失: {list(missing)[:8]}"
+                   f"—— 请确认导入了正确的 .md 文件（应包含 JSON 结构化数据块）。",
         )
 
     # ── Store ──
