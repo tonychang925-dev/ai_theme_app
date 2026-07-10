@@ -950,10 +950,41 @@ export function AnalystWorkspacePage() {
                     ))}
                   </div>
                 )}
-                <button onClick={() => closeImportDialog()}
-                  style={{ marginTop: 16, padding: "8px 24px", background: "#38a169", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
-                  完成
-                </button>
+                <div style={{ display: "flex", gap: 10, justifyContent: "center", marginTop: 16 }}>
+                  <button onClick={async () => {
+                    setImportDialog(p => ({ ...p, step: "calibrating", msg: "应用校准修正…" }));
+                    try {
+                      const resp = await fetch(`/api/v1/analyst-workbench/${dateInput}/apply-calibration`, { method: "POST" });
+                      if (resp.ok) {
+                        const r = await resp.json();
+                        setImportDialog(p => ({
+                          ...p, step: "done",
+                          msg: `已应用 ${r.corrections.length} 项修正`,
+                          result: { ...p.result, applied: r },
+                        }));
+                      } else {
+                        const err = await resp.json().catch(() => ({}));
+                        throw new Error((err as any).detail || "应用失败");
+                      }
+                    } catch (e: any) {
+                      setImportDialog(p => ({ ...p, step: "error", msg: e.message || "应用校准失败" }));
+                    }
+                  }}
+                    style={{ padding: "8px 20px", background: "#ff4d4f", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 13, fontWeight: 600 }}>
+                    ⚡ 应用校准修正
+                  </button>
+                  <button onClick={() => closeImportDialog()}
+                    style={{ padding: "8px 20px", background: "#38a169", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
+                    完成
+                  </button>
+                </div>
+                {importDialog.result?.applied && (
+                  <div style={{ marginTop: 10, padding: 8, background: "#38a16915", borderRadius: 4, fontSize: 11, textAlign: "left", color: "#38a169" }}>
+                    {(importDialog.result.applied as any).corrections?.map((c: string, i: number) => (
+                      <div key={i}>✓ {c}</div>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
 

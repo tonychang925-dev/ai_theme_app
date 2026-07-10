@@ -8835,6 +8835,90 @@ async def import_analyst_reference(body: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+# ── Phase 4.5.6 Apply Calibration Corrections ──
+
+@app.post("/api/v1/analyst-workbench/{trade_date}/apply-calibration")
+async def apply_calibration_to_draft(trade_date: str) -> dict[str, Any]:
+    """Apply calibration corrections to the latest draft.
+
+    Reads the analyst reference data and calibration results, then
+    updates the draft's emotion_review with analyst-confirmed values.
+    Only applies corrections where calibration confidence is high.
+    """
+    from datetime import date as _date
+    import os as _os
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    td = _date.fromisoformat(trade_date)
+
+    # Load draft
+    draft_store = _get_wb_draft_store()
+    draft = draft_store.load(td)
+    if draft is None:
+        raise HTTPException(status_code=409, detail="No draft exists. Generate first.")
+
+    # Load calibration
+    calibration = draft.calibration or {}
+    component_scores = calibration.get("component_scores", {})
+
+    # Load analyst reference
+    from stock_processing_service.application.services.analyst_reference.store import (
+        AnalystReferenceStore,
+    )
+    ref_dir = _os.path.join(_project_root, "tmp", "analyst_reference")
+    ref_store = AnalystReferenceStore(base_dir=ref_dir)
+    ref_record = ref_store.get_by_date(td)
+
+    applied: list[str] = []
+
+    emo = dict(draft.emotion_review) if draft.emotion_review else {}
+
+    if ref_record is not None:
+        # Phase correction
+        analyst_phase = ref_record.emotion_label.market_phase or ""
+        if analyst_phase and component_scores.get("phase", 0) < 0.5:
+            old_phase = emo.get("emotion_node", "")
+            if old_phase != analyst_phase:
+                emo["emotion_node"] = analyst_phase
+                emo["analyst_adjustment"] = {
+                    "modified": True,
+                    "from": old_phase,
+                    "to": analyst_phase,
+                    "reason": f"校准修正: phase 偏差 ({component_scores.get('phase', 0):.0%} 匹配)",
+                }
+                applied.append(f"emotion_node: {old_phase} → {analyst_phase}")
+
+        # Strategy correction
+        analyst_strategy = ref_record.emotion_label.strategy or ref_record.strategy_label.summary or ""
+        if analyst_strategy and component_scores.get("strategy", 0) < 0.5:
+            old_strategy = emo.get("strategy_bias", "")
+            if old_strategy != analyst_strategy:
+                emo["strategy_bias"] = analyst_strategy
+                applied.append(f"strategy_bias: {old_strategy[:20]} → {analyst_strategy[:20]}")
+
+        # Risk correction (only if mismatch, but risk usually aligns)
+        analyst_risk = ref_record.emotion_label.risk_level or ""
+        if analyst_risk and component_scores.get("risk", 1) < 0.8:
+            old_risk = emo.get("risk_level", "")
+            if old_risk != analyst_risk:
+                emo["risk_level"] = analyst_risk
+                applied.append(f"risk_level: {old_risk} → {analyst_risk}")
+
+    else:
+        applied.append("(no analyst reference data available)")
+
+    # Save updated draft
+    draft.emotion_review = emo
+    draft_store.save(draft)
+
+    return {
+        "status": "applied",
+        "corrections": applied,
+        "emotion_node": emo.get("emotion_node", ""),
+        "strategy_bias": emo.get("strategy_bias", ""),
+        "risk_level": emo.get("risk_level", ""),
+    }
+
+
 # ── Phase 4.5.1 Calibration Persistence ──
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/calibrate")
