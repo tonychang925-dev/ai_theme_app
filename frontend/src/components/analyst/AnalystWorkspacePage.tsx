@@ -403,6 +403,7 @@ export function AnalystWorkspacePage() {
   const [calibrating, setCalibrating] = useState(false);
   const [calMsg, setCalMsg] = useState("");
   const [importDialog, setImportDialog] = useState<{ show: boolean; step: "select" | "parsing" | "imported" | "calibrating" | "done" | "error"; msg: string; result?: any }>({ show: false, step: "select", msg: "" });
+  const [fileInputKey, setFileInputKey] = useState(0);
   const [readinessDialog, setReadinessDialog] = useState<{ show: boolean; chart: boolean; emotion: boolean; reference: boolean; mode: "generate" | "calibrate" } | null>(null);
 
   const qs = new URLSearchParams(window.location.search);
@@ -528,9 +529,19 @@ export function AnalystWorkspacePage() {
     }
   };
 
+  const resetImportDialog = (step: typeof importDialog.step = "select") => {
+    setFileInputKey(k => k + 1);
+    setImportDialog({ show: true, step, msg: "" });
+  };
+
+  const closeImportDialog = () => {
+    setFileInputKey(k => k + 1);
+    setImportDialog({ show: false, step: "select", msg: "" });
+  };
+
   const handleImportAnalyst = () => {
     // Open import dialog — user selects .md file first, then we parse + store + calibrate
-    setImportDialog({ show: true, step: "select", msg: "" });
+    resetImportDialog("select");
   };
 
   const handleFileSelected = async (file: File) => {
@@ -823,7 +834,7 @@ export function AnalystWorkspacePage() {
       {/* ── Import Analyst Reference Dialog ── */}
       {importDialog.show && (
         <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.7)", zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center" }}
-          onClick={() => { if (importDialog.step === "done" || importDialog.step === "error") setImportDialog({ show: false, step: "select", msg: "" }); }}>
+          onClick={() => { if (importDialog.step === "done" || importDialog.step === "error") closeImportDialog(); }}>
           <div style={{ background: "#162230", border: importDialog.step === "error" ? "1px solid #d4380d" : "1px solid #66d9ef", borderRadius: 12, padding: 24, maxWidth: 480, width: "90%" }}
             onClick={e => e.stopPropagation()}>
             <h3 style={{ color: importDialog.step === "error" ? "#d4380d" : "#66d9ef", margin: "0 0 16px 0", fontSize: 16 }}>
@@ -840,15 +851,13 @@ export function AnalystWorkspacePage() {
                 <p style={{ color: "#8da6b8", fontSize: 13, marginBottom: 16 }}>
                   选择分析师的 DeepSeek 复盘 .md 文件，系统将自动解析并导入为参考数据。
                 </p>
-                <input ref={(el) => {
-                  if (el) {
-                    el.value = "";
-                    el.onchange = (e: any) => {
-                      const f = e.target?.files?.[0];
-                      if (f) handleFileSelected(f);
-                    };
-                  }
-                }} type="file" accept=".md,.txt,.markdown"
+                <input
+                  key={`file-input-${fileInputKey}`}
+                  type="file" accept=".md,.txt,.markdown"
+                  onChange={(e: any) => {
+                    const f = e.target?.files?.[0];
+                    if (f) handleFileSelected(f);
+                  }}
                   style={{ display: "block", margin: "0 auto 16px", color: "#8ddcff", fontSize: 13 }} />
                 <div style={{ fontSize: 11, color: "#5a7a8a", marginTop: 12 }}>
                   数据流：导入 .md → 解析为结构化参考 → AI↔分析师校准 → 回写 draft
@@ -924,7 +933,7 @@ export function AnalystWorkspacePage() {
                     ))}
                   </div>
                 )}
-                <button onClick={() => setImportDialog({ show: false, step: "select", msg: "" })}
+                <button onClick={() => closeImportDialog()}
                   style={{ marginTop: 16, padding: "8px 24px", background: "#38a169", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
                   完成
                 </button>
@@ -936,11 +945,11 @@ export function AnalystWorkspacePage() {
               <div style={{ textAlign: "center" }}>
                 <div style={{ color: "#d4380d", fontSize: 13, marginBottom: 12 }}>{importDialog.msg}</div>
                 <div style={{ display: "flex", gap: 10, justifyContent: "center" }}>
-                  <button onClick={() => setImportDialog({ show: true, step: "select", msg: "" })}
+                  <button onClick={() => resetImportDialog("select")}
                     style={{ padding: "8px 20px", background: "#243040", color: "#8da6b8", border: "1px solid #3a5060", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
                     重试
                   </button>
-                  <button onClick={() => setImportDialog({ show: false, step: "select", msg: "" })}
+                  <button onClick={() => closeImportDialog()}
                     style={{ padding: "8px 20px", background: "#d4380d", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
                     关闭
                   </button>
