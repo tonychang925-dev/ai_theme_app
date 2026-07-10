@@ -8744,17 +8744,14 @@ async def import_analyst_reference(body: dict[str, Any]) -> dict[str, Any]:
     )
 
     import tempfile
-    # ── Pre-validation: require DeepSeek structured JSON markers ──
+    # ── Pre-validation: check format and warn if not DeepSeek-structured ──
     validation_issues: list[str] = []
     has_deepseek_json = '"limitup_attribution"' in content or '"market_facts"' in content
-    has_table_data = "|" in content and ("涨停" in content or "limit_up" in content.lower())
 
     if not has_deepseek_json:
-        raise HTTPException(
-            status_code=422,
-            detail="文件格式不匹配。请使用 DeepSeek 结构化复盘 .md 文件。"
-                   "该文件应包含 JSON 结构化数据块（含 limitup_attribution / market_facts 等字段）。"
-                   f"当前文件未检测到 DeepSeek 结构化 JSON 标记。",
+        validation_issues.append(
+            "⚠ 当前文件不是标准 DeepSeek 结构化格式（缺少 limitup_attribution/market_facts JSON 字段）。"
+            "系统将尝试自动提取数据，但结果可能不完整。建议使用 DeepSeek 结构化复盘 .md 文件。"
         )
 
     if len(content) < 200:

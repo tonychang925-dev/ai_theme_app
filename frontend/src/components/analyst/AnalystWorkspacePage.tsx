@@ -878,17 +878,19 @@ export function AnalystWorkspacePage() {
                 <p style={{ color: "#8ddcff", fontSize: 13 }}>{importDialog.msg}</p>
                 {importDialog.step === "imported" && importDialog.result?.import && (
                   <div style={{ marginTop: 12, padding: 10, background: "#0c1118", borderRadius: 6, fontSize: 11, color: "#5a7a8a", textAlign: "left" }}>
-                    <div>提取状态: <span style={{ color: "#39ff14" }}>{importDialog.result.import.extraction_status}</span></div>
+                    {/* Format warning — prominent */}
+                    {importDialog.result.import.validation_issues?.length > 0 && (
+                      <div style={{ marginBottom: 10, padding: "8px 12px", background: "#ffd85e15", border: "1px solid #ffd85e40", borderRadius: 4, fontSize: 11, color: "#ffd85e", lineHeight: 1.5 }}>
+                        {(importDialog.result.import.validation_issues as string[]).map((issue, i) => (
+                          <div key={i}>{issue}</div>
+                        ))}
+                      </div>
+                    )}
+                    <div>提取状态: <span style={{ color: importDialog.result.import.extraction_status === "full_complete" ? "#39ff14" : "#ffd85e" }}>{importDialog.result.import.extraction_status}</span></div>
                     <div>核心覆盖率: {importDialog.result.import.coverage?.core_coverage != null ? `${(importDialog.result.import.coverage.core_coverage * 100).toFixed(0)}%` : "—"} / 完整覆盖率: {importDialog.result.import.coverage?.full_coverage != null ? `${(importDialog.result.import.coverage.full_coverage * 100).toFixed(0)}%` : "—"}</div>
                     <div>市场阶段: <span style={{ color: "#8ddcff" }}>{importDialog.result.import.market_phase || "—"}</span></div>
                     <div>风险等级: <span style={{ color: "#8ddcff" }}>{importDialog.result.import.risk_level || "—"}</span></div>
                     <div>涨停数: {importDialog.result.import.limit_up_count ?? "—"} / 最高板: {importDialog.result.import.max_board_height ?? "—"}</div>
-                    {importDialog.result.import.validation_issues?.length > 0 && (
-                      <div style={{ marginTop: 6, padding: "4px 8px", background: "#d69e2e10", borderRadius: 3, fontSize: 10 }}>
-                        <span style={{ color: "#ffd85e" }}>⚠ 格式提醒: </span>
-                        {(importDialog.result.import.validation_issues as string[]).join("；")}
-                      </div>
-                    )}
                     {importDialog.result.import.missing_fields?.length > 0 && (
                       <div style={{ marginTop: 4, fontSize: 10, color: "#e53e3e" }}>
                         缺失字段: {(importDialog.result.import.missing_fields as string[]).join(", ")}
