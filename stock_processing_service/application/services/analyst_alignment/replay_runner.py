@@ -55,7 +55,7 @@ class DailyReplayResult:
 
 # ═══ Aggregate Report ═══
 
-@dataclass(frozen=True)
+@dataclass
 class ReplayAggregateReport:
     start_date: date
     end_date: date
@@ -65,10 +65,12 @@ class ReplayAggregateReport:
     partial_days: list[str] = field(default_factory=list)
     failed_days: list[str] = field(default_factory=list)
 
-    average_score: float = 0.0
+    average_score: float = 0.0       # raw ATS
     median_score: float = 0.0
     min_score: float = 0.0
     max_score: float = 0.0
+    fair_average_score: float = 0.0   # fair ATS (gap-adjusted)
+    gap_days: dict[str, dict] = field(default_factory=dict)  # per-day gap classifications
     grade_distribution: dict[str, int] = field(default_factory=dict)
 
     average_phase_score: float = 0.0
@@ -92,6 +94,7 @@ class ReplayAggregateReport:
             "failed_days": self.failed_days,
             "scores": {
                 "average": round(self.average_score, 4),
+                "fair_average": round(self.fair_average_score, 4),
                 "median": round(self.median_score, 4),
                 "min": round(self.min_score, 4),
                 "max": round(self.max_score, 4),
@@ -108,6 +111,7 @@ class ReplayAggregateReport:
             "common_calibration_hints": self.common_calibration_hints,
             "major_drifts": self.major_drifts,
             "weak_days": self.weak_days,
+            "gap_days": self.gap_days,
         }
 
     def to_markdown(self) -> str:
@@ -119,7 +123,7 @@ class ReplayAggregateReport:
             f"- Skipped: {len(self.skipped_days)} ({', '.join(self.skipped_days) if self.skipped_days else 'none'})",
             f"- Partial (missing charts): {len(self.partial_days)}",
             f"- Failed: {len(self.failed_days)}",
-            f"- Average ATS: {self.average_score:.3f}",
+            f"- Average ATS: {self.average_score:.3f} (raw) / {self.fair_average_score:.3f} (fair)",
             f"- Median ATS: {self.median_score:.3f}",
             f"- Range: {self.min_score:.3f} — {self.max_score:.3f}",
             f"- Grade Distribution: {_format_grade_dist(self.grade_distribution)}",
@@ -294,6 +298,12 @@ class ReplayRunner:
             major_drifts=all_drifts,
             weak_days=weak_days,
         )
+
+        # ── Compute fair scores + gap classification ──
+        from .evaluation_gap import compute_fair_scores
+        _, fair_avg, gaps = compute_fair_scores(daily_results)
+        aggregate.fair_average_score = round(fair_avg, 4)
+        aggregate.gap_days = gaps
 
         return daily_results, aggregate
 
