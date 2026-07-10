@@ -443,7 +443,7 @@ export function AnalystWorkspacePage() {
 
   const handleGenerate = async () => {
     setGenerating(true);
-    const steps = ["连接后端服务…", "生成 AI 图表数据…", "生成情绪分析…", "构建 AI Draft…", "刷新工作台…"];
+    const steps = ["生成 AI 图表数据…", "生成情绪分析…", "构建 AI Draft…", "完成"];
     setGenProgress({ show: true, step: steps[0], steps, current: 0 });
 
     const advance = (i: number) => {
@@ -456,21 +456,12 @@ export function AnalystWorkspacePage() {
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
 
       advance(1);
-      await new Promise(r => setTimeout(r, 600)); // simulate backend chart generation
-
-      advance(2);
-      await new Promise(r => setTimeout(r, 400));
-
-      advance(3);
       const r = await resp.json();
       if (r.status !== "completed") throw new Error(r.error || "生成失败");
 
-      advance(4);
-      await fetchWorkspace(dateInput);
       setGenKey(k => k + 1);
-
-      setGenProgress(p => ({ ...p, step: "✅ 分析完成", current: 5 }));
-      await new Promise(r => setTimeout(r, 1200));
+      setGenProgress(p => ({ ...p, step: "✅ 分析完成", current: 3 }));
+      await new Promise(r => setTimeout(r, 1000));
       setGenProgress({ show: false, step: "", steps: [], current: 0 });
     } catch (e: any) {
       setGenProgress(p => ({ ...p, error: e.message || "请求失败", step: "❌ 失败" }));
