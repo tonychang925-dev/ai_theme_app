@@ -8631,6 +8631,117 @@ async def compose_daily_review_from_workbench(payload: dict[str, Any] | None = N
     return v2
 
 
+# ── Phase 4.5.5.2 Analyst Reference Import ──
+
+@app.post("/api/v1/analyst-reference/import")
+async def import_analyst_reference(body: dict[str, Any]) -> dict[str, Any]:
+    """Import analyst recap markdown content into the reference store.
+
+    Body:
+      trade_date: str   — YYYY-MM-DD
+      content: str      — markdown file content (DeepSeek structured format)
+
+    Returns parsed record summary + extraction quality.
+    After import, the reference is available for alignment/calibration.
+    """
+    from datetime import date as _date
+    import os as _os
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    reference_dir = _os.path.join(_project_root, "tmp", "analyst_reference")
+
+    td_str = body.get("trade_date", "")
+    if not td_str:
+        raise HTTPException(status_code=400, detail="trade_date is required")
+    try:
+        td = _date.fromisoformat(td_str)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"invalid trade_date: {td_str}")
+
+    content = body.get("content", "")
+    if not content or len(content.strip()) < 50:
+        raise HTTPException(status_code=400, detail="content is required (min 50 chars of markdown)")
+
+    from stock_processing_service.application.services.analyst_reference.markdown_ingestion import (
+        MarkdownReferenceParser,
+    )
+    from stock_processing_service.application.services.analyst_reference.store import (
+        AnalystReferenceStore,
+    )
+
+    import tempfile
+    # ── Pre-validation: basic structure check ──
+    validation_issues: list[str] = []
+    if "涨停" not in content and "limit" not in content.lower():
+        validation_issues.append("缺少涨停数据（涨停数/limit_up）")
+    if "情绪" not in content and "emotion" not in content.lower():
+        validation_issues.append("缺少情绪标签（情绪节点/情绪评分）")
+    if "策略" not in content and "strategy" not in content.lower() and "计划" not in content:
+        validation_issues.append("缺少策略建议（策略/次日计划）")
+    if len(content) < 200:
+        validation_issues.append(f"内容过短（{len(content)} 字符，建议至少 200 字符）")
+
+    # ── Parse markdown ──
+    try:
+        # Write content to temp file for MarkdownReferenceParser
+        with tempfile.NamedTemporaryFile(
+            mode="w", suffix=".md", encoding="utf-8", delete=False,
+        ) as tmp:
+            tmp.write(content)
+            tmp_path = tmp.name
+        parser = MarkdownReferenceParser()
+        record = parser.parse_file(tmp_path, trade_date=td)
+    except Exception as e:
+        raise HTTPException(status_code=422, detail=f"Markdown 解析失败: {e}")
+    finally:
+        try:
+            _os.unlink(tmp_path)
+        except Exception:
+            pass
+
+    # ── Post-validation: extraction quality ──
+    quality = record.quality
+    extraction_status = (
+        quality.extraction_status.value
+        if hasattr(quality, 'extraction_status') else "unknown"
+    )
+    core_ok = quality.core_fields_present if hasattr(quality, 'core_fields_present') else 0
+    full_ok = quality.full_fields_present if hasattr(quality, 'full_fields_present') else 0
+    missing = quality.missing_fields if hasattr(quality, 'missing_fields') else []
+    low_conf = quality.low_confidence_fields if hasattr(quality, 'low_confidence_fields') else []
+
+    if extraction_status in ("failed",):
+        raise HTTPException(
+            status_code=422,
+            detail=f"解析质量不足: extraction_status={extraction_status}, "
+                   f"core_fields={core_ok}, missing={missing}",
+        )
+
+    # ── Store ──
+    try:
+        store = AnalystReferenceStore(base_dir=reference_dir)
+        content_hash = store.append(record)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"存储失败: {e}")
+
+    return {
+        "status": "imported",
+        "trade_date": td_str,
+        "content_hash": content_hash,
+        "extraction_status": extraction_status,
+        "coverage": {"core_fields": core_ok, "full_fields": full_ok},
+        "missing_fields": missing,
+        "low_confidence_fields": low_conf,
+        "validation_issues": validation_issues,
+        "market_phase": record.emotion_label.market_phase or "",
+        "risk_level": record.emotion_label.risk_level or "",
+        "emotion_momentum": record.emotion_label.emotion_momentum,
+        "strategy": record.emotion_label.strategy or record.strategy_label.summary or "",
+        "limit_up_count": record.market_facts.limit_up_count,
+        "max_board_height": record.market_facts.max_board_height,
+        "active_capital_yi": record.market_facts.active_capital_yi,
+    }
+
+
 # ── Phase 4.5.1 Calibration Persistence ──
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/calibrate")
