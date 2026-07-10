@@ -1,15 +1,16 @@
 # M8 Market Cognition Engine 架构设计文档
 
-> 版本：v2.0 (v1.5 Core Contract Frozen + M2.5 MarketMetrics + Eastmoney Board Pool + Analyst Workspace v2)
-> 日期：2026-07-09 (v1.3: 07-04 / v1.4: 07-06 / v1.5: 07-06 / v2.0: 07-09)
-> 最新状态日期：2026-07-09
-> 状态：**Core Contract Frozen**；**M2.5 MarketMetrics 已上线**；**a-stock-data 打板层已集成**；Analyst Workspace v2 前端已部署
+> 版本：v2.1 (v1.5 Core Contract Frozen + M2.5 MarketMetrics + Phase 4.2 Alignment + Phase 4.5 Workbench)
+> 日期：2026-07-10 (v1.3: 07-04 / v1.4: 07-06 / v1.5: 07-06 / v2.0: 07-09 / v2.1: 07-10)
+> 最新状态日期：2026-07-10
+> 状态：**Core Contract Frozen**；**M2.5 MarketMetrics 已上线**；**Phase 4.2 对齐引擎已交付**；**Phase 4.5 工作台审查工作流已交付**
 > 体系命名：M8 = Market World State Builder / M9 = Market World Intelligence Loop
 > 实施基线：`tmp/plan/wbs_M8.phase1.5.md`（Phase 1.5 — Market World State Verification）
 >
 > **v1.4 变更**：New 7A-7G (Multi-Horizon Context, Cognition Graph, Theme/Trading Cognitive Card, Cycle Node Recognition, Divergence Quality, Node Transition Hypothesis)；New ADR M8-010, M8-011
 > **v1.5 变更**：New 7C.6 (Dynamic Causal Chain)；New 7H (Historical Case Projection)；New 7I (Expectation Projection)；New 7J (Node Maturity Estimation)；New 7K (最终认知投影总链路)；New 7L (M9 Bridge — 6 个预留接口)；New 7M (从 Market Cognition 到 Market World Model)；New 7N (Phase 1.5 执行路线)；New ADR M8-012~M8-015, M9-BRIDGE-001~007
 > **v1.5 Architecture Budget**：Stable Core 冻结 9 个核心对象（MarketSubject / MarketWorldModel / DailyMarketState / CognitionPipeline / CycleNode / DivergenceQuality / NodeMaturity / PolicyRegistry / FrozenHypothesisSource）；未来能力以 Adaptive Layer 消费者接入，不侵入 Stable Core
+> **v2.1 变更**：Phase 4.2 对齐引擎（AnalystReferenceStore → AIAdapter → Comparator → TuringScore → Replay CLI → Dashboard）+ Phase 4.5 工作台审查工作流（Session状态机 + AI Draft + 审批API）
 >
 > 系统定位：AI Theme App 的市场世界模型——可推理、可验证、可演化
 > 长期演进：M9 Market Intelligence System（Belief / Goal / Attention / Mental Simulation / Reflection / World Model Update）
@@ -6783,34 +6784,86 @@ L6 外部环境        ⬜ (Phase 4, 未开始)
 
 ---
 
-## 32. Phase 4.1 Analyst Reference Ingestion 实现状态
+## 32. M8 实施状态（2026-07-10 更新）
 
-> 状态更新：2026-07-09
+### Phase 4.1 — Analyst Reference Ingestion ✅
 
 | Phase | 描述 | 状态 |
 |-------|------|------|
-| Phase 4.1a | Core Metrics Parser — 涨停数/max_board/phase/risk/emotion_momentum | ✅ Done |
-| Phase 4.1b | Full Reference Parser — relay/strategy/themes/leaders/limitup_attribution | 🟡 In Progress |
-| Phase 4.1c | Field-level Evidence — ExtractedField / quality report / missing tracking | ⬜ Not Started |
-| Phase 4.1d | Analyst Reference Store — DB migration + persistence layer | ⬜ Not Started |
-| Phase 4.2 | Historical Replay Benchmark | ⬜ Blocked by 4.1b/4.1c |
+| Phase 4.1a | Core Metrics Parser | ✅ Done |
+| Phase 4.1b | Full Reference Parser + Field Evidence + Quality | ✅ Done |
+| Phase 4.1c | Parser Preflight Hardening (tolerance OR, ratio normalization) | ✅ Done |
+| Phase 4.1d | Analyst Reference Store (JSONL + manifest) | ✅ Done (converged into Phase 4.2) |
 
-**当前实际交付 (a0cd510d9)**：
-- Core 指标解析完成（limit_up_count, max_board_height, market_phase, risk_level, emotion_momentum）
-- relay / strategy / theme_lifecycle / limitup_attribution / leader_state / external_env 解析入口已存在
-- **尚未完成**：股票级涨停明细 (code/name/board/time/reason)、字段级 evidence tracking、ratio normalization、section-scoped parser
+### Phase 4.2 — AI↔Analyst Alignment Replay Engine ✅
 
-**进入 Phase 4.2 的最低门槛**：
+| Phase | 描述 | 状态 | 交付物 |
+|-------|------|------|--------|
+| T01 | AnalystReferenceStore (JSONL + manifest v2) | ✅ | `analyst_reference/store.py` |
+| T02 | AI Reference View Adapter (metrics_only + diagnosis) | ✅ | `analyst_alignment/ai_adapter.py` |
+| T03 | Comparator (MetricDiff + SemanticDiff) | ✅ | `analyst_alignment/comparator.py` |
+| T04 | Analyst Turing Score (m8_ats_v1, A-F grade) | ✅ | `analyst_alignment/turing_score.py` |
+| T05 | Replay CLI (`run_analyst_alignment.py`) | ✅ | `scripts/run_analyst_alignment.py` |
 
-| 能力 | 当前状态 |
-|------|----------|
-| 核心 facts 解析 | ✅ |
-| phase/risk 解析 | ✅ |
-| relay 解析 | 🟡 |
-| strategy 解析 | 🟡 |
-| theme lifecycle 解析 | 🟡 |
-| limitup stock events 明细 | ❌ 只计数，未结构化 |
-| leader role classification | 🟡 粗规则 |
-| field-level evidence | ❌ |
-| extraction quality report | ❌ |
+### Phase 4.2.1–4.2.3 — Calibration + Hardening ✅
+
+| Phase | 描述 | 关键交付 |
+|-------|------|----------|
+| 4.2.1 | Calibration Patch (PhaseOntology + RiskGate + LossEffect) | `phase_ontology.py` |
+| 4.2.2a | StrategyIntentMatcher v1 (8 intent labels) | `strategy_intent.py` |
+| 4.2.2b | ThemeAliasResolver v1 (30+ alias map) | `theme_alias.py` |
+| 4.2.3 | CLI Hardening (safe chart reads, partial tracking, exit codes) | `run_analyst_alignment.py` v2 |
+
+### Phase 4.3 — Larger Batch Replay ✅
+
+| 指标 | 值 |
+|------|-----|
+| 回放窗口 | 2026-07-01 ~ 2026-07-09 (7 有效交易日) |
+| Raw ATS | 0.700 |
+| Fair ATS | 0.790 |
+| Fair D/F | 14% |
+| Gap 分类 | COUNTING_POLICY_GAP×5, FORWARD_VS_HINDSIGHT×1 |
+
+### Phase 4.3.1 — Evaluation Fairness ✅
+
+- EvaluationGapClassifier: FORWARD_VS_HINDSIGHT / DATA_SOURCE_GAP / COUNTING_POLICY_GAP / SEMANTIC_MAPPING_GAP / WEEKEND_TRANSITION
+- Raw vs Fair ATS dual scoring in aggregate report
+
+### Phase 4.4 — Calibration Dashboard ✅
+
+- `calibration_dashboard.md`: 7-section dashboard (score summary, gap classification, daily trend, component trend, hints ranking, D/F drilldown, phase timeline)
+- `calibration_action_plan.md`: auto-generated prioritized action plan from hints + gaps
+
+### Phase 4.5 — Workbench Review Workflow ✅
+
+| 组件 | 描述 |
+|------|------|
+| Session Store | 8-state lifecycle (NOT_STARTED → GENERATING → DRAFT_READY → IN_REVIEW → APPROVED → PUBLISHED → STALE/FAILED) |
+| AI Draft Generator | `scripts/generate_analyst_workbench.py --date YYYY-MM-DD` |
+| Workbench API | 5 endpoints: GET session, POST generate/save-review/approve/publish |
+| Guards | APPROVED blocks regenerate, PUBLISHED blocks save-review, invalid transitions raise |
+
+### 当前能力全景
+
+```
+L0 市场事实     ✅ Eastmoney Board Pool + 7 AI chart days
+L1 指标治理     ✅ Metric Registry + Quality + Dependency Graph  
+L2 市场诊断     ✅ 10-phase ontology v2 + PhaseOntology + RiskGate
+L3 因果叙事     ✅ Narrative Engine + MarketStory
+L4 市场记忆     ✅ Market Memory + TurningPoint + Failure
+L5 认知校准     ✅ Calibration Learning Loop + Drift Engine
+L6 对齐引擎     ✅ Analyst Alignment Replay (Raw/Fair ATS, dashboard)
+L7 工作台工作流  ✅ Workbench Review (draft→review→approve→publish)
+L8 外部环境     ⬜ Phase 4.x (未开始)
+```
+
+### 当前基线
+
+```
+M8 Analyst Alignment Replay v1
+  Window: 2026-07-01 ~ 2026-07-09 (7 days)
+  Raw ATS: 0.700  |  Fair ATS: 0.790
+  Tests: 32 (workbench) + 91 (alignment) = 123 all-pass
+  Tags: m8-phase-4.2-replay-v1 → m8-phase-4.5-workbench-review-v1
+```
 
