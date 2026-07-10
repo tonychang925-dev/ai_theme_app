@@ -24,6 +24,10 @@ const NODE_ICONS: Record<string, string> = {
 const RISK_COLORS: Record<string, string> = {
   LOW: "#38a169", MEDIUM: "#d69e2e", HIGH: "#e53e3e", EXTREME: "#805ad5", UNKNOWN: "#5a7a8a",
 };
+const RISK_LABELS: Record<string, string> = {
+  LOW: "低风险", MEDIUM: "中等风险", MEDIUM_HIGH: "中高风险",
+  HIGH: "高风险", EXTREME: "极高风险", CRITICAL: "危险", UNKNOWN: "未知",
+};
 const CHART_STATUS_COLORS: Record<string, string> = {
   "活跃": "#38a169", "亢奋": "#e53e3e", "回流": "#66d9ef", "改善": "#38a169",
   "偏积极": "#38a169", "中性": "#d69e2e", "收缩": "#e53e3e", "退潮": "#dd6b20",
@@ -96,7 +100,7 @@ function EmotionReviewCard({ emo }: { emo: EmotionReview }) {
           padding: "4px 12px", borderRadius: 4, textAlign: "center",
           background: riskColor + "20", border: `1px solid ${riskColor}40`,
         }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: riskColor }}>{emo.risk_level}</div>
+          <div style={{ fontSize: 14, fontWeight: 700, color: riskColor }}>{RISK_LABELS[emo.risk_level] || emo.risk_level}</div>
           <div style={{ fontSize: 9, color: "#5a7a8a" }}>风险等级</div>
         </div>
       </div>

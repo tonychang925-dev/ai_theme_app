@@ -8886,8 +8886,16 @@ async def get_ai_analyst_comparison(trade_date: str) -> dict[str, Any]:
         "PANIC": "恐慌", "FREEZE": "冻结", "DISTRIBUTION": "派发",
     }
 
+    RISK_CN: dict[str, str] = {
+        "LOW": "低风险", "MEDIUM": "中等风险", "MEDIUM_HIGH": "中高风险",
+        "HIGH": "高风险", "EXTREME": "极高风险", "CRITICAL": "危险",
+    }
+
     def cn_phase(v: str) -> str:
         return PHASE_CN.get(v, v or "—")
+
+    def cn_risk(v: str) -> str:
+        return RISK_CN.get(v, v or "—")
 
     rows = [
         {
@@ -8898,8 +8906,8 @@ async def get_ai_analyst_comparison(trade_date: str) -> dict[str, Any]:
         },
         {
             "key": "risk", "label": "风险等级",
-            "ai_value": ai_risk or "—",
-            "analyst_value": an_risk or "—",
+            "ai_value": cn_risk(ai_risk) or "—",
+            "analyst_value": cn_risk(an_risk) or "—",
             "score": scores.get("risk", 1),
         },
         {

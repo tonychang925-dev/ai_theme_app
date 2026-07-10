@@ -896,7 +896,7 @@ export function AnalystWorkspacePage() {
                     <div>提取状态: <span style={{ color: importDialog.result.import.extraction_status === "full_complete" ? "#39ff14" : "#ffd85e" }}>{importDialog.result.import.extraction_status}</span></div>
                     <div>核心覆盖率: {importDialog.result.import.coverage?.core_coverage != null ? `${(importDialog.result.import.coverage.core_coverage * 100).toFixed(0)}%` : "—"} / 完整覆盖率: {importDialog.result.import.coverage?.full_coverage != null ? `${(importDialog.result.import.coverage.full_coverage * 100).toFixed(0)}%` : "—"}</div>
                     <div>市场阶段: <span style={{ color: "#8ddcff" }}>{importDialog.result.import.market_phase || "—"}</span></div>
-                    <div>风险等级: <span style={{ color: "#8ddcff" }}>{importDialog.result.import.risk_level || "—"}</span></div>
+                    <div>风险等级: <span style={{ color: "#8ddcff" }}>{{LOW:"低风险",MEDIUM:"中等风险",HIGH:"高风险",EXTREME:"极高风险",MEDIUM_HIGH:"中高风险",CRITICAL:"危险"}[importDialog.result.import.risk_level as string] || importDialog.result.import.risk_level || "—"}</span></div>
                     <div>涨停数: {importDialog.result.import.limit_up_count ?? "—"} / 最高板: {importDialog.result.import.max_board_height ?? "—"}</div>
                     {importDialog.result.import.missing_fields?.length > 0 && (
                       <div style={{ marginTop: 4, fontSize: 10, color: "#e53e3e" }}>
