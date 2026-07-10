@@ -56,6 +56,12 @@ class WorkbenchSession:
     approved_by: str = ""
     error_message: str = ""
 
+    # ── Calibration metadata (Phase 4.5.1) ──
+    last_calibrated_at: str = ""
+    calibration_status: str = ""      # pending / completed / failed
+    calibration_score: float = 0.0
+    calibration_grade: str = ""
+
     def to_dict(self) -> dict[str, Any]:
         return {
             "trade_date": self.trade_date.isoformat(),
@@ -70,6 +76,10 @@ class WorkbenchSession:
             "published_at": self.published_at,
             "approved_by": self.approved_by,
             "error_message": self.error_message,
+            "last_calibrated_at": self.last_calibrated_at,
+            "calibration_status": self.calibration_status,
+            "calibration_score": self.calibration_score,
+            "calibration_grade": self.calibration_grade,
         }
 
     @classmethod
@@ -87,6 +97,10 @@ class WorkbenchSession:
             published_at=d.get("published_at", ""),
             approved_by=d.get("approved_by", ""),
             error_message=d.get("error_message", ""),
+            last_calibrated_at=d.get("last_calibrated_at", ""),
+            calibration_status=d.get("calibration_status", ""),
+            calibration_score=d.get("calibration_score", 0.0),
+            calibration_grade=d.get("calibration_grade", ""),
         )
 
     @property
@@ -175,6 +189,36 @@ class SessionStore:
         elif new_status == WorkbenchStatus.FAILED:
             session.error_message = kwargs.get("error_message", "")
         self.save(session)
+        return session
+
+    def apply_calibration(self, trade_date: date, calibration: dict) -> WorkbenchSession:
+        """Persist calibration result to the latest draft and session metadata.
+
+        The calibration dict is merged into the latest draft's calibration field
+        and the session is annotated with calibration metadata.
+        """
+        from .draft import DraftStore
+
+        session = self.get(trade_date)
+        draft_store = DraftStore(base_dir=str(self.base_dir))
+        draft = draft_store.load(trade_date)
+        if draft is None:
+            raise ValueError(f"No draft exists for {trade_date}. Generate first.")
+
+        now = datetime.now(timezone.utc).isoformat()
+        draft.calibration = {
+            **draft.calibration,
+            **calibration,
+            "applied_at": now,
+        }
+        draft_store.save(draft)
+
+        session.last_calibrated_at = now
+        session.calibration_status = "completed"
+        session.calibration_score = float(calibration.get("overall_score", 0))
+        session.calibration_grade = str(calibration.get("grade", ""))
+        self.save(session)
+
         return session
 
     def list_dates(self) -> list[date]:

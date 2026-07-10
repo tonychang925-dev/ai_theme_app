@@ -7997,11 +7997,17 @@ async def get_market_emotion(trade_date: str) -> dict[str, Any]:
 async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     """Return full workspace state for a trading day.
 
-    If a saved workspace exists, return it.
-    Otherwise, initialize from AI drafts (AttentionEngine + CognitionCardBuilder).
+    Read-only. Reads from the workbench session store only.
+    Does NOT trigger implicit AI generation or connect to the database.
+
+    Priority:
+      1. If approved snapshot exists → return it (analyst_finalized=true)
+      2. Else if draft exists (DRAFT_READY+) → return draft data (is_ai_draft=true)
+      3. Else → return NOT_STARTED + can_generate=true + empty payload
     """
     from datetime import date as _date
     import json as _json
+    import os as _os
     from pathlib import Path as _Path
 
     try:
@@ -8009,102 +8015,104 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
 
-    save_path = _Path("tmp/analyst_workspace") / f"{trade_date}.json"
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    _wb_base = _os.path.join(_project_root, "tmp", "analyst_workbench")
 
-    # Return saved workspace if exists
-    if save_path.exists():
-        return _json.loads(save_path.read_text(encoding="utf-8"))
+    # ── Try snapshot (approved → final analyst view) ──
+    snapshot_path = _Path(_wb_base) / trade_date / "snapshot.json"
+    if snapshot_path.exists():
+        try:
+            snap = _json.loads(snapshot_path.read_text(encoding="utf-8"))
+            themes = _workspace_themes_from_cards(
+                snap.get("cognition_cards", []),
+                snap.get("attention_state", {}),
+            )
+            return {
+                "trade_date": trade_date,
+                "is_ai_draft": False,
+                "analyst_finalized": True,
+                "themes": themes,
+                "watch_groups": [],
+                "override_count": snap.get("override_summary", {}).get("total", 0),
+            }
+        except Exception:
+            pass  # corrupt snapshot → fall through to draft
 
-    # Initialize from recap snapshot theme_reviews (authoritative theme list)
-    # supplemented by AttentionEngine scoring and CognitionCardBuilder
-    from stock_processing_service.application.services.market_cognition.attention_engine import AttentionEngine
-    from stock_processing_service.application.services.market_cognition.cognition_card_builder import CognitionCardBuilder
+    # ── Try latest draft ──
+    drafts_dir = _Path(_wb_base) / trade_date / "drafts"
+    if drafts_dir.exists():
+        draft_files = sorted(drafts_dir.glob("draft_v*.json"))
+        if draft_files:
+            try:
+                draft = _json.loads(draft_files[-1].read_text(encoding="utf-8"))
+                themes = _workspace_themes_from_cards(
+                    draft.get("cognition_cards", []),
+                    draft.get("attention_state", {}),
+                )
+                return {
+                    "trade_date": trade_date,
+                    "is_ai_draft": True,
+                    "analyst_finalized": False,
+                    "themes": themes,
+                    "watch_groups": [],
+                    "override_count": 0,
+                    "draft_version": draft.get("draft_version", 0),
+                    "source_quality": draft.get("source_quality", 0),
+                    "missing_fields": draft.get("missing_fields", []),
+                }
+            except Exception:
+                pass  # corrupt draft → fall through to empty
 
-    # Load strong_hotspot_subjects — the authoritative daily hot theme list
-    # supplemented by theme_name_map for proper Chinese names
-    import asyncpg as _pg
-    import json as _recap_json
-    _conn = await _pg.connect("postgresql://localhost:5432/stock_data_test", user="postgres", password="")
-    recap_themes = []
-    try:
-        _row = await _conn.fetchrow(
-            "SELECT payload FROM post_market_recap_snapshot "
-            "WHERE trade_date = $1::date ORDER BY created_at DESC LIMIT 1", td)
-        if _row:
-            _payload = _row["payload"]
-            if isinstance(_payload, str):
-                _payload = _recap_json.loads(_payload)
-            _recap = _payload.get("recap_doc", _payload)
-            # Use strong_hotspot_subjects as the theme source (proper theme names)
-            hotspots = _recap.get("strong_hotspot_subjects") or _recap.get("mainline_hotspots") or []
-            seen = set()
-            for h in hotspots:
-                if not isinstance(h, dict):
-                    continue
-                sk = str(h.get("subject_key", ""))
-                name = str(h.get("theme_name", "")).strip()
-                # Skip garbage names
-                if not name or name.startswith("【") or len(name) > 30:
-                    continue
-                if name.isdigit():
-                    continue
-                if sk in seen:
-                    continue
-                seen.add(sk)
-                recap_themes.append({
-                    "subject_key": sk,
-                    "subject_name": name,
-                    "is_mainline": h.get("cycle_state") == "confirmed" or h.get("watch_status") == "confirmed_mainline",
-                    "cycle_state": h.get("cycle_state", "unknown"),
-                    "strength_score": 50.0,
-                })
-    finally:
-        await _conn.close()
+    # ── Nothing available ──
+    return {
+        "trade_date": trade_date,
+        "is_ai_draft": False,
+        "analyst_finalized": False,
+        "themes": [],
+        "watch_groups": [],
+        "override_count": 0,
+        "can_generate": True,
+    }
 
-    # Also get attention scores for cross-reference
-    engine = AttentionEngine()
-    try:
-        attention_state = await engine.run_async(td)
-        attention_map = {s.subject_id: s for s in attention_state.subjects}
-    except Exception:
-        attention_map = {}
 
-    card_builder = CognitionCardBuilder()
+def _workspace_themes_from_cards(
+    cognition_cards: list[dict],
+    attention_state: dict,
+) -> list[dict]:
+    """Convert workbench cognition_cards into the workspace ThemeEntry format."""
     themes = []
-    for rt in recap_themes:
-        subject_id = f"theme:{rt['subject_key']}"
-        att = attention_map.get(subject_id)
-        # Assign attention levels: first 5 CRITICAL, next 5 HIGH, rest MEDIUM
-        rank = themes.__len__()
+    rank = 0
+    for card in cognition_cards:
+        name = card.get("subject_name", "") or card.get("name", "")
+        if not name:
+            continue
+        score = card.get("score", 50)
         if rank < 5:
             level = "CRITICAL"
         elif rank < 10:
             level = "HIGH"
         else:
             level = "MEDIUM"
-        score = att.attention_score if att else 90 - rank
-
-        card = await card_builder.build_async(td, subject_id)
         themes.append({
-            "subject_id": subject_id,
-            "subject_name": rt["subject_name"],
+            "subject_id": f"theme:{name}",
+            "subject_name": name,
             "attention_level": level,
             "attention_score": score,
-            "attention_reasons": list(att.reasons) if att else [f"{rt['cycle_state']}阶段"],
+            "attention_reasons": [card.get("state", "")],
             "ai_recommended": True,
             "analyst_added": False,
-            "trading_style": card.get("trading_style", ""),
+            "trading_style": "",
             "long_identifiability": 0.5,
             "short_identifiability": 0.3,
             "old_leaders": "",
-            "event_stimuli": card.get("event_stimuli", []),
-            "yesterday_view": card.get("yesterday_view", ""),
-            "today_actual": card.get("today_actual", ""),
-            "stage_judgement": card.get("market_phase", ""),
+            "event_stimuli": [],
+            "yesterday_view": "",
+            "today_actual": "",
+            "stage_judgement": card.get("state", ""),
             "intraday_understanding": "",
             "trader_sentiment": "",
             "index_resonance": "",
-            "tomorrow_view": card.get("tomorrow_view", ""),
+            "tomorrow_view": "",
             "analyst_notes": "",
             "is_ai_draft": True,
             "analyst_reviewed": False,
@@ -8113,17 +8121,8 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
             "bull_pool": [],
             "bear_pool": [],
         })
-
-    workspace = {
-        "trade_date": trade_date,
-        "generated_at": datetime.now(_tz.utc).isoformat(),
-        "is_ai_draft": True,
-        "analyst_finalized": False,
-        "themes": themes,
-        "watch_groups": [],
-        "override_count": 0,
-    }
-    return workspace
+        rank += 1
+    return themes
 
 
 @app.post("/api/v1/analyst-workspace/{trade_date}/save")
@@ -8207,27 +8206,34 @@ async def save_analyst_workspace(
 # ── Phase 4.5 Analyst Workbench Session API ──
 
 def _get_wb_session_store():
+    import os as _os
     from stock_processing_service.application.services.analyst_workbench.session import (
         SessionStore, WorkbenchStatus,
     )
-    return SessionStore(base_dir="tmp/analyst_workbench"), WorkbenchStatus
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    return SessionStore(base_dir=_os.path.join(_project_root, "tmp", "analyst_workbench")), WorkbenchStatus
 
 
 def _get_wb_draft_store():
+    import os as _os
     from stock_processing_service.application.services.analyst_workbench.draft import DraftStore
-    return DraftStore(base_dir="tmp/analyst_workbench")
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    return DraftStore(base_dir=_os.path.join(_project_root, "tmp", "analyst_workbench"))
 
 
 def _get_wb_snapshot_store():
+    import os as _os
     from stock_processing_service.application.services.analyst_workbench.snapshot import (
         SnapshotStore, ReviewSnapshot,
     )
-    return SnapshotStore(base_dir="tmp/analyst_workbench"), ReviewSnapshot
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    return SnapshotStore(base_dir=_os.path.join(_project_root, "tmp", "analyst_workbench")), ReviewSnapshot
 
 
 @app.get("/api/v1/analyst-workbench/{trade_date}/session")
 async def get_workbench_session(trade_date: str) -> dict[str, Any]:
     """Return workbench session state. Does NOT trigger implicit generation."""
+    from datetime import date as _date
     session_store, _ = _get_wb_session_store()
     draft_store = _get_wb_draft_store()
     snapshot_store, _ = _get_wb_snapshot_store()
@@ -8253,6 +8259,11 @@ async def get_workbench_session(trade_date: str) -> dict[str, Any]:
         "created_at": session.created_at,
         "generated_at": session.generated_at,
         "approved_at": session.approved_at,
+        # ── Calibration metadata (Phase 4.5.1) ──
+        "last_calibrated_at": session.last_calibrated_at,
+        "calibration_status": session.calibration_status,
+        "calibration_score": session.calibration_score,
+        "calibration_grade": session.calibration_grade,
     }
 
 
@@ -8354,6 +8365,8 @@ async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
 
     # Step 3: Run workbench CLI (reads chart+emotion from disk, no HTTP needed)
     script = os.path.join(project_root, "scripts", "generate_analyst_workbench.py")
+    cli_failed = False
+    cli_error = None
     try:
         result = subprocess.run(
             [sys.executable, script, "--date", trade_date],
@@ -8363,24 +8376,44 @@ async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
         )
         if result.returncode == 0:
             steps.append("workbench")
-    except Exception:
-        pass  # CLI failure is non-fatal; report partial results
+        else:
+            cli_failed = True
+            cli_error = (result.stderr or result.stdout or "").strip()[-300:]
+    except Exception as e:
+        cli_failed = True
+        cli_error = str(e)
 
     session_store, _ = _get_wb_session_store()
+    draft_store = _get_wb_draft_store()
     session = session_store.get(td)
+    draft = draft_store.load(td) if session.draft_version > 0 else None
+
+    # Determine truthful status
+    if cli_failed:
+        status = "failed"
+    elif draft and draft.missing_fields:
+        status = "partial"
+    elif "workbench" in steps:
+        status = "completed"
+    else:
+        status = "partial"
 
     return {
         "job_id": f"local_{trade_date}",
-        "status": "completed",
+        "status": status,
         "steps_completed": steps,
         "session_status": session.status,
         "draft_version": session.draft_version,
+        "error": cli_error,
+        "missing_fields": draft.missing_fields if draft else [],
+        "source_quality": draft.source_quality if draft else 0,
     }
 
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/save-review")
 async def save_workbench_review(trade_date: str, body: dict[str, Any] = None) -> dict[str, Any]:
     """Save analyst review with overrides."""
+    from datetime import date as _date
     session_store, WorkbenchStatus = _get_wb_session_store()
     td = _date.fromisoformat(trade_date)
     session = session_store.get(td)
@@ -8401,6 +8434,7 @@ async def save_workbench_review(trade_date: str, body: dict[str, Any] = None) ->
 @app.post("/api/v1/analyst-workbench/{trade_date}/approve")
 async def approve_workbench(trade_date: str, body: dict[str, Any] = None) -> dict[str, Any]:
     """Create approved ReviewSnapshot."""
+    from datetime import date as _date
     session_store, WorkbenchStatus = _get_wb_session_store()
     draft_store = _get_wb_draft_store()
     snapshot_store, ReviewSnapshot = _get_wb_snapshot_store()
@@ -8421,6 +8455,7 @@ async def approve_workbench(trade_date: str, body: dict[str, Any] = None) -> dic
 @app.post("/api/v1/analyst-workbench/{trade_date}/publish")
 async def publish_workbench(trade_date: str) -> dict[str, Any]:
     """Publish approved workbench."""
+    from datetime import date as _date
     session_store, WorkbenchStatus = _get_wb_session_store()
     snapshot_store, _ = _get_wb_snapshot_store()
     td = _date.fromisoformat(trade_date)
@@ -8434,32 +8469,70 @@ async def publish_workbench(trade_date: str) -> dict[str, Any]:
     return {"status": "published", "session_status": session.status, "published_at": session.published_at}
 
 
+# ── Phase 4.5.1 Calibration Persistence ──
+
+@app.post("/api/v1/analyst-workbench/{trade_date}/calibrate")
+async def calibrate_workbench_draft(trade_date: str, body: dict[str, Any] = None) -> dict[str, Any]:
+    """Persist calibration result into the latest draft and session metadata.
+
+    Body should contain the Turing Score payload from run_analyst_alignment:
+      { overall_score, grade, component_scores, calibration_hints, ... }
+    """
+    from datetime import date as _date
+    session_store, _ = _get_wb_session_store()
+    td = _date.fromisoformat(trade_date)
+    body = body or {}
+
+    try:
+        session = session_store.apply_calibration(td, body)
+        return {
+            "status": "calibrated",
+            "session_status": session.status,
+            "calibration_score": session.calibration_score,
+            "calibration_grade": session.calibration_grade,
+            "calibrated_at": session.last_calibrated_at,
+        }
+    except ValueError as e:
+        raise HTTPException(status_code=409, detail=str(e))
+
+
 # ── Phase 4.5 Analyst Alignment Quick Compare ──
 
 @app.post("/api/v1/analyst-alignment/{trade_date}")
-async def run_analyst_alignment_for_date(trade_date: str) -> dict[str, Any]:
+async def run_analyst_alignment_for_date(trade_date: str, body: dict[str, Any] = None) -> dict[str, Any]:
     """Run AI↔Analyst alignment for a single date.
 
     Requires:
     - AI chart JSON at frontend/public/api/analyst-charts/{date}.json
     - Emotion JSON at frontend/public/api/emotion-{date}.json
-    - Analyst reference in reference store at tmp/analyst_alignment_0701_0709/reference/
+    - Analyst reference in configured reference dir
+
+    Reference dir resolution (in priority order):
+      1. Body field: { "reference_dir": "tmp/analyst_reference" }
+      2. Env var: ANALYST_REFERENCE_DIR
+      3. Default: tmp/analyst_reference
     """
-    import subprocess, sys as _sys
+    import subprocess, sys as _sys, os as _os, json
+    body = body or {}
+    reference_dir = (
+        body.get("reference_dir")
+        or _os.environ.get("ANALYST_REFERENCE_DIR")
+        or "tmp/analyst_reference"
+    )
+    output_dir = f"tmp/analyst_alignment_{trade_date}"
     result = subprocess.run(
         [_sys.executable, "scripts/run_analyst_alignment.py",
          "--start", trade_date, "--end", trade_date,
-         "--reference-dir", "tmp/analyst_alignment_0701_0709/reference",
+         "--reference-dir", reference_dir,
          "--ai-source", "charts",
          "--ai-chart-dir", "frontend/public/api/analyst-charts",
-         "--output", f"tmp/analyst_alignment_single"],
+         "--output", output_dir],
         capture_output=True, text=True, timeout=90,
     )
     if result.returncode != 0:
         return {"status": "error", "error": result.stderr.strip()[-300:]}
     # Read the daily turing score
-    import json
-    ts_path = _Path(f"tmp/analyst_alignment_single/daily/{trade_date}.turing.json")
+    ts_path = _Path(output_dir) / "daily" / f"{trade_date}.turing.json"
     if ts_path.exists():
         ts = json.loads(ts_path.read_text())
         return {

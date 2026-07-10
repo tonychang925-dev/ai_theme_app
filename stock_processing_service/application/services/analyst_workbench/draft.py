@@ -19,6 +19,9 @@ class AIDraft:
     narrative: dict[str, Any] = field(default_factory=dict)
     playbook: dict[str, Any] = field(default_factory=dict)
 
+    # ── Calibration (Phase 4.5.1) ──
+    calibration: dict[str, Any] = field(default_factory=dict)
+
     generated_by: str = "ai_workbench_v1"
     generated_at: str = ""
     source_quality: float = 1.0
@@ -33,6 +36,7 @@ class AIDraft:
             "cognition_cards": self.cognition_cards,
             "narrative": self.narrative,
             "playbook": self.playbook,
+            "calibration": self.calibration,
             "generated_by": self.generated_by,
             "generated_at": self.generated_at or datetime.now(timezone.utc).isoformat(),
             "source_quality": self.source_quality,
@@ -49,6 +53,7 @@ class AIDraft:
             cognition_cards=d.get("cognition_cards", []),
             narrative=d.get("narrative", {}),
             playbook=d.get("playbook", {}),
+            calibration=d.get("calibration", {}),
             generated_by=d.get("generated_by", "ai_workbench_v1"),
             generated_at=d.get("generated_at", ""),
             source_quality=d.get("source_quality", 1.0),
