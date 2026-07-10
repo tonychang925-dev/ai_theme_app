@@ -106,7 +106,6 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
   useEffect(() => {
     setLoading(true);
     setEmotion(null);
-    setSystemCharts([]);
     const ctrl = new AbortController();
     (async () => {
       try {

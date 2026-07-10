@@ -8948,7 +8948,8 @@ async def apply_calibration_to_draft(trade_date: str) -> dict[str, Any]:
     Only applies corrections where calibration confidence is high.
     """
     from datetime import date as _date
-    import os as _os
+    import os as _os, json, json as _json_mod
+    from pathlib import Path
     _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
     td = _date.fromisoformat(trade_date)
 
@@ -9011,6 +9012,22 @@ async def apply_calibration_to_draft(trade_date: str) -> dict[str, Any]:
     # Save updated draft
     draft.emotion_review = emo
     draft_store.save(draft)
+
+    # Also update static emotion JSON so EmotionDashboard reflects changes
+    emo_path = Path(_project_root) / "frontend" / "public" / "api" / f"emotion-{trade_date}.json"
+    if emo_path.exists():
+        try:
+            static_emo = json.loads(emo_path.read_text(encoding="utf-8"))
+            if emo.get("emotion_node"):
+                static_emo["emotion_node"] = emo["emotion_node"]
+            if emo.get("strategy_bias"):
+                static_emo["strategy_bias"] = emo["strategy_bias"]
+            if emo.get("risk_level"):
+                static_emo["risk_level"] = emo.get("risk_level", static_emo.get("risk_level", ""))
+            emo_path.write_text(_json_mod.dumps(static_emo, ensure_ascii=False, default=str))
+        except Exception as e:
+            import logging
+            logging.getLogger(__name__).warning(f"Failed to update static emotion JSON: {e}")
 
     return {
         "status": "applied",
