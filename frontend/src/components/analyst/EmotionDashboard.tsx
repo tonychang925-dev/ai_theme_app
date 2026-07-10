@@ -118,23 +118,26 @@ export function EmotionDashboard({ tradeDate }: { tradeDate: string }) {
 
   useEffect(() => {
     setLoading(true);
-    // Static JSON first (instant), API as fallback
-    const urls = [
-      `/api/emotion-${tradeDate}.json`,
-      `http://127.0.0.1:8090/api/v1/emotion/${tradeDate}`,
+    const opts = [
+      { url: `/api/emotion-${tradeDate}.json` },
+      { url: `http://127.0.0.1:8090/api/v1/emotion/${tradeDate}`, timeout: 3000 },
     ];
+    let cancelled = false;
     (async () => {
-      for (const url of urls) {
+      for (const { url, timeout } of opts) {
+        if (cancelled) break;
         try {
-          const resp = await fetch(url);
+          const signal = timeout ? AbortSignal.timeout(timeout) : undefined;
+          const resp = await fetch(url, { signal });
           if (resp.ok) {
             const d = await resp.json();
-            if (d && d.emotion_node) { setEmotion(d); setLoading(false); return; }
+            if (d && d.emotion_node) { if (!cancelled) { setEmotion(d); setLoading(false); } return; }
           }
         } catch { /* try next */ }
       }
-      setLoading(false);
+      if (!cancelled) setLoading(false);
     })();
+    return () => { cancelled = true; };
   }, [tradeDate]);
 
   if (loading) return <div style={{ padding: "8px 16px", color: "#5a7a8a", fontSize: 13 }}>加载情绪数据…</div>;
