@@ -398,7 +398,7 @@ export function AnalystWorkspacePage() {
   const [savedMsg, setSavedMsg] = useState("");
   const [activeTab, setActiveTab] = useState<"emotion" | "watch">("emotion");
   const [generating, setGenerating] = useState(false);
-  const [genMsg, setGenMsg] = useState("");
+  const [genProgress, setGenProgress] = useState<{ show: boolean; step: string; steps: string[]; current: number; error?: string }>({ show: false, step: "", steps: [], current: 0 });
   const [calibrating, setCalibrating] = useState(false);
   const [calMsg, setCalMsg] = useState("");
   const [readinessDialog, setReadinessDialog] = useState<{ show: boolean; chart: boolean; emotion: boolean; reference: boolean; mode: "generate" | "calibrate" } | null>(null);
@@ -441,21 +441,40 @@ export function AnalystWorkspacePage() {
   };
 
   const handleGenerate = async () => {
-    // "启动分析" is the PRODUCER of chart/emotion data — not the consumer.
-    // Pre-check only verifies the workbench session is ready.
-    // If raw market data is unavailable, the generate endpoint will report the error.
-    setGenerating(true); setGenMsg("启动分析中…");
+    setGenerating(true);
+    const steps = ["连接后端服务…", "生成 AI 图表数据…", "生成情绪分析…", "构建 AI Draft…", "刷新工作台…"];
+    setGenProgress({ show: true, step: steps[0], steps, current: 0 });
+
+    const advance = (i: number) => {
+      setGenProgress(p => ({ ...p, step: steps[i], current: i }));
+    };
+
     try {
-      const resp = await fetch(`/api/v1/analyst-workbench/${dateInput}/generate`, { method: "POST" });
+      advance(0);
+      const resp = await fetch(`/api/v1/analyst-workbench/${dateInput}/generate`, { method: "POST", signal: AbortSignal.timeout(120000) });
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+
+      advance(1);
+      await new Promise(r => setTimeout(r, 600)); // simulate backend chart generation
+
+      advance(2);
+      await new Promise(r => setTimeout(r, 400));
+
+      advance(3);
       const r = await resp.json();
-      if (r.status === "completed") {
-        setGenMsg(`生成完成 (draft v${r.draft_version || "?"})`);
-        fetchWorkspace(dateInput);
-      } else {
-        setGenMsg(`失败: ${r.error || "未知错误"}`);
-      }
-    } catch { setGenMsg("请求失败"); }
-    finally { setGenerating(false); setTimeout(() => setGenMsg(""), 4000); }
+      if (r.status !== "completed") throw new Error(r.error || "生成失败");
+
+      advance(4);
+      await fetchWorkspace(dateInput);
+
+      setGenProgress(p => ({ ...p, step: "✅ 分析完成！正在刷新页面…", current: 5 }));
+      await new Promise(r => setTimeout(r, 800));
+      window.location.reload();
+    } catch (e: any) {
+      setGenProgress(p => ({ ...p, error: e.message || "请求失败", step: "❌ 失败" }));
+    } finally {
+      setGenerating(false);
+    }
   };
 
   const handleImportAnalyst = async () => {
@@ -524,7 +543,6 @@ export function AnalystWorkspacePage() {
             disabled={calibrating} onClick={handleImportAnalyst}>
             {calibrating ? "⏳" : "☰"} 导入分析师数据
           </button>
-          {genMsg && <span style={{ fontSize: 11, color: "#66d9ef" }}>{genMsg}</span>}
           {calMsg && <span style={{ fontSize: 11, color: "#39ff14" }}>{calMsg}</span>}
           {activeGroup && <span style={{ fontSize: 13, color: activeGroup.color, fontWeight: 600 }}>{activeGroup.name}</span>}
           <span style={{ fontSize: 12, color: "#66d9ef" }}>
@@ -657,6 +675,53 @@ export function AnalystWorkspacePage() {
           )}
         </div>
       </div>
+
+      {/* ── Generate Progress Dialog ── */}
+      {genProgress.show && (
+        <div style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.7)", zIndex: 9999, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ background: "#162230", border: genProgress.error ? "1px solid #d4380d" : "1px solid #66d9ef", borderRadius: 12, padding: 28, maxWidth: 440, width: "90%", textAlign: "center" }}>
+            <h3 style={{ color: genProgress.error ? "#d4380d" : "#66d9ef", margin: "0 0 20px 0", fontSize: 16 }}>
+              {genProgress.error ? "⚠ 分析失败" : "⚙ 正在启动分析"}
+            </h3>
+            <div style={{ background: "#0c1118", borderRadius: 8, padding: 16, marginBottom: 16 }}>
+              {genProgress.steps.map((s, i) => {
+                const done = i < genProgress.current;
+                const active = i === genProgress.current;
+                const failed = genProgress.error && i === genProgress.current;
+                return (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "4px 0", fontSize: 13,
+                    color: failed ? "#d4380d" : done ? "#39ff14" : active ? "#66d9ef" : "#3a5060" }}>
+                    <span style={{ width: 18, textAlign: "center" }}>
+                      {failed ? "✗" : done ? "✓" : active ? "●" : "○"}
+                    </span>
+                    <span>{s}</span>
+                  </div>
+                );
+              })}
+            </div>
+            {/* Progress bar */}
+            {!genProgress.error && (
+              <div style={{ background: "#0c1118", borderRadius: 4, height: 6, marginBottom: 16, overflow: "hidden" }}>
+                <div style={{ background: "linear-gradient(90deg, #66d9ef, #39ff14)", height: "100%",
+                  width: `${Math.max(5, (genProgress.current / genProgress.steps.length) * 100)}%`,
+                  transition: "width 0.4s ease" }} />
+              </div>
+            )}
+            {genProgress.error && (
+              <div style={{ display: "flex", gap: 10, justifyContent: "center" }}>
+                <button onClick={() => setGenProgress({ show: false, step: "", steps: [], current: 0 })}
+                  style={{ padding: "8px 20px", background: "#243040", color: "#8da6b8", border: "1px solid #3a5060", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
+                  关闭
+                </button>
+                <button onClick={() => { setGenProgress({ show: false, step: "", steps: [], current: 0 }); handleGenerate(); }}
+                  style={{ padding: "8px 20px", background: "#d4380d", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
+                  重试
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* ── Data Readiness Dialog ── */}
       {readinessDialog?.show && (

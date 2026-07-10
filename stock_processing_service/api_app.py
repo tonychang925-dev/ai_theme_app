@@ -8253,21 +8253,90 @@ async def get_workbench_session(trade_date: str) -> dict[str, Any]:
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/generate")
 async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
-    """Trigger AI draft generation. Synchronous in v1."""
-    import subprocess, sys
+    """Trigger full AI analysis pipeline: charts → emotion → workbench draft.
+
+    Step 1: Generate analyst charts (writes to frontend/public/api/analyst-charts/)
+    Step 2: Generate emotion state (writes to frontend/public/api/)
+    Step 3: Build workbench draft from generated outputs
+    """
+    import subprocess, sys, os
     td = _date.fromisoformat(trade_date)
+    steps_done = []
+    errors = []
+
+    # Step 1: Generate charts by calling the chart endpoint internally
+    try:
+        chart_result = await get_analyst_charts(trade_date)
+        if chart_result and isinstance(chart_result, list) and len(chart_result) > 0:
+            chart_dir = _Path("frontend/public/api/analyst-charts")
+            chart_dir.mkdir(parents=True, exist_ok=True)
+            (chart_dir / f"{trade_date}.json").write_text(
+                _json.dumps(chart_result, ensure_ascii=False, default=str))
+            steps_done.append("charts")
+        else:
+            errors.append("chart generation returned empty")
+    except Exception as e:
+        errors.append(f"chart: {e}")
+
+    # Step 2: Generate emotion state
+    try:
+        emo_result = await get_emotion_state_internal(trade_date)
+        if emo_result and emo_result.get("emotion_node"):
+            emo_dir = _Path("frontend/public/api")
+            emo_dir.mkdir(parents=True, exist_ok=True)
+            (emo_dir / f"emotion-{trade_date}.json").write_text(
+                _json.dumps(emo_result, ensure_ascii=False, default=str))
+            steps_done.append("emotion")
+        else:
+            errors.append("emotion generation returned empty")
+    except Exception as e:
+        errors.append(f"emotion: {e}")
+
+    # Step 3: Build workbench draft from generated chart + emotion
     try:
         result = subprocess.run(
             [sys.executable, "scripts/generate_analyst_workbench.py", "--date", trade_date],
             capture_output=True, text=True, timeout=120,
         )
         if result.returncode != 0:
-            return {"job_id": f"local_{trade_date}", "status": "failed", "error": result.stderr.strip()[-500:]}
+            errors.append(f"workbench: {result.stderr.strip()[-200:]}")
+        else:
+            steps_done.append("workbench")
+    except Exception as e:
+        errors.append(f"workbench: {e}")
+
+    if steps_done:
         session_store, _ = _get_wb_session_store()
         session = session_store.get(td)
-        return {"job_id": f"local_{trade_date}", "status": "completed", "session_status": session.status, "draft_version": session.draft_version}
-    except Exception as e:
-        return {"job_id": f"local_{trade_date}", "status": "failed", "error": str(e)}
+        return {
+            "job_id": f"local_{trade_date}",
+            "status": "completed",
+            "steps_completed": steps_done,
+            "session_status": session.status,
+            "draft_version": session.draft_version,
+            "errors": errors if errors else None,
+        }
+    return {
+        "job_id": f"local_{trade_date}",
+        "status": "failed",
+        "steps_completed": steps_done,
+        "error": "; ".join(errors),
+    }
+
+
+async def get_emotion_state_internal(trade_date: str) -> dict[str, Any]:
+    """Generate emotion state internally (used by workbench generate)."""
+    try:
+        from stock_processing_service.application.services.market_cognition.emotion_engine import EmotionEngine
+        from stock_processing_service.application.services.market_metrics.service import MarketMetricsService
+        td = _date.fromisoformat(trade_date)
+        metrics_svc = MarketMetricsService()
+        snapshot = await metrics_svc.build_snapshot(td)
+        engine = EmotionEngine()
+        state = await engine.compute(td, snapshot)
+        return state.to_dict() if hasattr(state, "to_dict") else {}
+    except Exception:
+        return {}
 
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/save-review")
