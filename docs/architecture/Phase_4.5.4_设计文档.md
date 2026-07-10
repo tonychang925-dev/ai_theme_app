@@ -438,10 +438,18 @@ class WorkbenchGenerateResult:
 ```json
 {
   "steps_completed": ["derived_data", "charts", "emotion", "workbench"],
+  "generation_steps": [
+    {"step": "derived_data", "status": "success", "started_at": "...", "finished_at": "..."},
+    {"step": "charts", "status": "success"},
+    {"step": "emotion", "status": "success"},
+    {"step": "draft", "status": "success"}
+  ],
   "derived_data_status": "success|failed_precondition|failed",
   "missing_tables": []
 }
 ```
+
+`generation_steps` 同步写入 `WorkbenchSession.generation_steps`，用于分析师排查“启动分析”失败原因。该字段只记录步骤状态，不成为 derived data 真源。
 
 #### 失败策略
 
@@ -833,7 +841,7 @@ Then:
 
 ### Phase 4.5.5-RA ⏳ In Progress
 
-- Workbench generate 接管动态复盘数据生产
+- Workbench generate 接管动态复盘数据生产 ✅ 已实现（PR1）
 - Approve 合并 `AIDraft + analyst_workspace + overrides` ✅ 已实现（PR2）
 - DailyReview 页面移除 derived data 生产入口
 - `compose-from-workbench` 成为唯一正式报告入口 ✅ 已实现（PR4）

@@ -61,6 +61,7 @@ class WorkbenchSession:
     calibration_status: str = ""      # pending / completed / failed
     calibration_score: float = 0.0
     calibration_grade: str = ""
+    generation_steps: list[dict[str, Any]] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -80,6 +81,7 @@ class WorkbenchSession:
             "calibration_status": self.calibration_status,
             "calibration_score": self.calibration_score,
             "calibration_grade": self.calibration_grade,
+            "generation_steps": self.generation_steps,
         }
 
     @classmethod
@@ -101,6 +103,7 @@ class WorkbenchSession:
             calibration_status=d.get("calibration_status", ""),
             calibration_score=d.get("calibration_score", 0.0),
             calibration_grade=d.get("calibration_grade", ""),
+            generation_steps=d.get("generation_steps", []),
         )
 
     @property

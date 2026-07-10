@@ -8330,6 +8330,7 @@ async def get_workbench_session(trade_date: str) -> dict[str, Any]:
         "calibration_status": session.calibration_status,
         "calibration_score": session.calibration_score,
         "calibration_grade": session.calibration_grade,
+        "generation_steps": session.generation_steps,
     }
 
 
@@ -8393,87 +8394,30 @@ def _safe_get_chart(charts: list[dict], chart_type: str) -> dict | None:
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/generate")
 async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
-    """Trigger full AI analysis pipeline: chart + emotion + workbench draft.
-
-    Step 1: Generate charts internally → write to disk
-    Step 2: Generate emotion internally → write to disk
-    Step 3: Run CLI to build workbench draft from the generated files
-    """
+    """Trigger workbench generation through the application service."""
     from datetime import date as _date
-    import subprocess, sys, os, json as _json_mod
+    from stock_processing_service.application.services.analyst_workbench.generate_service import (
+        AnalystWorkbenchGenerateService,
+    )
+
     td = _date.fromisoformat(trade_date)
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    steps = []
+    pool = getattr(getattr(app.state, "gateway", None), "_client", None)
+    pool = getattr(pool, "pool", None) if pool else None
+    db_manager = getattr(getattr(app.state, "gateway", None), "_client", None)
 
-    # Step 1: Generate & save charts
-    try:
-        charts = await get_analyst_charts(trade_date)
-        chart_dir = Path(project_root) / "frontend" / "public" / "api" / "analyst-charts"
-        chart_dir.mkdir(parents=True, exist_ok=True)
-        (chart_dir / f"{trade_date}.json").write_text(
-            _json_mod.dumps(charts, ensure_ascii=False, default=str))
-        steps.append("charts")
-        _update_trend_json(trade_date, charts)
-    except Exception:
-        pass
-
-    # Step 2: Generate & save emotion
-    try:
-        emo = await get_market_emotion(trade_date)
-        if emo and emo.get("emotion_node"):
-            emo_dir = Path(project_root) / "frontend" / "public" / "api"
-            emo_dir.mkdir(parents=True, exist_ok=True)
-            (emo_dir / f"emotion-{trade_date}.json").write_text(
-                _json_mod.dumps(emo, ensure_ascii=False, default=str))
-            steps.append("emotion")
-    except Exception:
-        pass
-
-    # Step 3: Run workbench CLI (reads chart+emotion from disk, no HTTP needed)
-    script = os.path.join(project_root, "scripts", "generate_analyst_workbench.py")
-    cli_failed = False
-    cli_error = None
-    try:
-        result = subprocess.run(
-            [sys.executable, script, "--date", trade_date],
-            capture_output=True, text=True, timeout=120,
-            cwd=project_root,
-            env={**os.environ, "SPS_SKIP_FETCH": "1"},  # skip HTTP fetch in CLI
-        )
-        if result.returncode == 0:
-            steps.append("workbench")
-        else:
-            cli_failed = True
-            cli_error = (result.stderr or result.stdout or "").strip()[-300:]
-    except Exception as e:
-        cli_failed = True
-        cli_error = str(e)
-
-    session_store, _ = _get_wb_session_store()
-    draft_store = _get_wb_draft_store()
-    session = session_store.get(td)
-    draft = draft_store.load(td) if session.draft_version > 0 else None
-
-    # Determine truthful status
-    if cli_failed:
-        status = "failed"
-    elif draft and draft.missing_fields:
-        status = "partial"
-    elif "workbench" in steps:
-        status = "completed"
-    else:
-        status = "partial"
-
-    return {
-        "job_id": f"local_{trade_date}",
-        "status": status,
-        "steps_completed": steps,
-        "session_status": session.status,
-        "draft_version": session.draft_version,
-        "error": cli_error,
-        "missing_fields": draft.missing_fields if draft else [],
-        "source_quality": draft.source_quality if draft else 0,
-    }
+    service = AnalystWorkbenchGenerateService(
+        project_root=_project_root(),
+        pool=pool,
+        db_manager=db_manager,
+        chart_provider=get_analyst_charts,
+        emotion_provider=get_market_emotion,
+        trend_updater=_update_trend_json,
+        python_executable=sys.executable,
+    )
+    result = await service.generate(td, force=True)
+    payload = result.to_dict()
+    payload["job_id"] = f"local_{trade_date}"
+    return payload
 
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/save-review")
