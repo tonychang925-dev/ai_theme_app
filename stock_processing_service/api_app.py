@@ -2041,6 +2041,17 @@ async def publish_post_market_recap_to_notion(payload: NotionPublishPayload) -> 
 
     normalized_payload = _normalize_recap_payload(row)
 
+    # ── Phase 4.5.3: check workbench approval before publish (non-blocking) ──
+    try:
+        wb_approval = await _check_workbench_approval(d)
+        if not wb_approval["can_generate_formal_report"]:
+            logger.warning(
+                "Publishing to Notion without approved workbench snapshot: "
+                f"date={payload.trade_date}, mode={wb_approval['mode']}"
+            )
+    except Exception:
+        wb_approval = {"error": "approval check failed"}
+
     publisher = NotionPostMarketRecapPublisher.from_env()
     result = publisher.publish_snapshot(
         row=row,
@@ -2056,6 +2067,7 @@ async def publish_post_market_recap_to_notion(payload: NotionPublishPayload) -> 
         "report_id": result.report_id,
         "report_type": result.report_type,
         "trade_date": result.trade_date,
+        "workbench_approval": wb_approval,
     }
 
 
@@ -2333,6 +2345,12 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
 
     # ── 响应瘦身：裁剪前端不需要的冗余数据 ──
     v2 = _trim_daily_review_v2_response(v2)
+
+    # ── Phase 4.5.3: enrich with workbench approval metadata (non-blocking) ──
+    try:
+        v2["workbench_approval"] = await _check_workbench_approval(d)
+    except Exception:
+        v2["workbench_approval"] = {"error": "approval check failed"}
 
     return v2
 
@@ -8413,8 +8431,12 @@ async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
 @app.post("/api/v1/analyst-workbench/{trade_date}/save-review")
 async def save_workbench_review(trade_date: str, body: dict[str, Any] = None) -> dict[str, Any]:
     """Save analyst review with overrides."""
-    from datetime import date as _date
+    from datetime import date as _date, datetime as _dt
+    import json as _json
+    import os as _os
+    from pathlib import Path as _Path
     session_store, WorkbenchStatus = _get_wb_session_store()
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
     td = _date.fromisoformat(trade_date)
     session = session_store.get(td)
     if session.status == WorkbenchStatus.PUBLISHED:
@@ -8422,7 +8444,7 @@ async def save_workbench_review(trade_date: str, body: dict[str, Any] = None) ->
     body = body or {}
     overrides = body.get("overrides", {})
     if overrides:
-        d = _Path("tmp/analyst_workbench") / trade_date
+        d = _Path(_project_root) / "tmp" / "analyst_workbench" / trade_date
         d.mkdir(parents=True, exist_ok=True)
         with open(d / "overrides.jsonl", "a", encoding="utf-8") as f:
             f.write(_json.dumps({"trade_date": trade_date, "timestamp": _dt.now(_tz.utc).isoformat(), "overrides": overrides}, ensure_ascii=False) + "\n")
@@ -8502,6 +8524,90 @@ async def check_report_approval(trade_date: str) -> dict[str, Any]:
         "approved_by": approval.approved_by,
         "reason": approval.reason,
     }
+
+
+async def _check_workbench_approval(trade_date: date) -> dict[str, Any]:
+    """Lightweight, non-throwing workbench approval check for enriching reports."""
+    gate = _get_approval_gate()
+    approval = gate.check(trade_date)
+    return {
+        "mode": approval.mode,
+        "can_generate_formal_report": approval.can_generate_report,
+        "snapshot_version": approval.snapshot_version,
+        "approved_at": approval.approved_at,
+        "approved_by": approval.approved_by,
+        "based_on_draft_version": (
+            approval.snapshot.based_on_draft_version if approval.snapshot else 0
+        ),
+        "session_status": approval.session_status,
+        "reason": approval.reason,
+    }
+
+
+@app.post("/api/v2/daily-review-v2/compose-from-workbench")
+async def compose_daily_review_from_workbench(payload: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Compose a formal DailyReview V2 gated by workbench approval.
+
+    Requires an APPROVED or PUBLISHED workbench snapshot.
+    Reads the existing recap_doc from post_market_recap_snapshot as evidence
+    base, enriches it with workbench snapshot data, and composes the report.
+
+    Returns 409 Conflict if no approved snapshot exists.
+    """
+    from datetime import date as _date
+    p = payload or {}
+    trade_date_str = p.get("trade_date") or p.get("date")
+    if not trade_date_str:
+        raise HTTPException(status_code=400, detail="trade_date is required")
+    try:
+        d = _date.fromisoformat(trade_date_str)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"invalid date: {trade_date_str}")
+
+    # ── Gate: require formal approval ──
+    from stock_processing_service.application.services.analyst_workbench.report_composer import (
+        WorkbenchReportComposer,
+    )
+    import os as _os
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    wb_composer = WorkbenchReportComposer(
+        workbench_base_dir=_os.path.join(_project_root, "tmp", "analyst_workbench"),
+    )
+
+    try:
+        approval = wb_composer.require_formal(d)
+    except Exception as e:
+        raise HTTPException(status_code=409, detail=str(e))
+
+    # ── Load recap_doc from post_market_recap_snapshot ──
+    from stock_processing_service.application.services.post_market_daily_review_v2_builder import (
+        PostMarketDailyReviewV2Builder,
+    )
+    builder = PostMarketDailyReviewV2Builder()
+    row = await _fetch_latest_post_market_recap_snapshot_row(d)
+    recap_doc: dict[str, Any] = {}
+    if row:
+        payload_data = _normalize_recap_payload(row)
+        recap_doc = payload_data.get("recap_doc") or payload_data
+        if not isinstance(recap_doc, dict):
+            recap_doc = {}
+
+    # ── Compose from workbench ──
+    result = wb_composer.compose(d, recap_doc)
+
+    # ── Build DailyReviewV2 structure around the composed report ──
+    v2 = builder.build(
+        trade_date=d,
+        recap_doc=recap_doc,
+        recap_snapshot_version=str(row.get("snapshot_version") or "") if row else "",
+    )
+    v2 = {**v2, **result.report}
+
+    v2 = await _enrich_v2_theme_names(v2, d)
+    v2["watchlists"] = await _build_one_to_two_watchlists(d)
+    v2 = _trim_daily_review_v2_response(v2)
+
+    return v2
 
 
 # ── Phase 4.5.1 Calibration Persistence ──
