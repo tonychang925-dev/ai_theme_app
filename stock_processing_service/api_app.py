@@ -8902,6 +8902,20 @@ async def _build_recap_doc_from_derived_tables(
             if tn and tn != sk and tn not in name_map.values():
                 name_map[sk] = tn
 
+        # Fallback: strong_stock_watch_history for names not found above
+        fb_rows = await conn.fetch("""
+            SELECT DISTINCT ON (subject_key) subject_key, theme_name
+            FROM strong_stock_watch_history
+            WHERE theme_name IS NOT NULL AND theme_name != subject_key
+            ORDER BY subject_key, trade_date DESC
+        """)
+        for r in fb_rows:
+            sk = str(r["subject_key"])
+            if sk not in name_map:
+                tn = str(r["theme_name"])
+                if tn and tn != sk:
+                    name_map[sk] = tn
+
         # ── theme_reviews (from theme_cycle_judgement_v2) ──
         rows = await conn.fetch("""
             SELECT subject_key, theme_name,
