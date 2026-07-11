@@ -8040,9 +8040,13 @@ async def _build_market_emotion_from_metrics(trade_date: str) -> dict[str, Any]:
         c = snap.capital; loss = snap.loss_effect
         leader = snap.leader_evolution; death = snap.high_position_death
 
-        # Reject empty/default snapshots (no actual market data)
+        # Reject empty/default snapshots (no actual market data at all)
         if b.up_count == 0 and b.down_count == 0 and l.total_count == 0:
             raise HTTPException(status_code=404, detail=f"No market data available for {trade_date}")
+
+        # Breadth quality gate: up_count=0 but total_count>0 means TDX unavailable
+        breadth_degraded = (b.up_count == 0 and b.down_count == 0 and l.total_count > 0)
+        breadth_status = "DEGRADED" if breadth_degraded else "ready"
 
         # Phase mapping: NarrativeEngine phase → frontend node
         phase_map = {
@@ -8051,11 +8055,31 @@ async def _build_market_emotion_from_metrics(trade_date: str) -> dict[str, Any]:
         }
         node = phase_map.get(story.market_phase, "CHAOS")
 
+        # Confidence normalization: clamp to 0.0-1.0
+        raw_conf = story.confidence.get("overall", 0) if story.confidence else 0
+        if raw_conf > 1.0:
+            raw_conf = raw_conf / 100.0
+        confidence = max(0.0, min(1.0, float(raw_conf)))
+
         # Star ratings (1-5)
         def stars(value: float, thresholds: list[float]) -> int:
             for i, t in enumerate(thresholds):
                 if value <= t: return i + 1
             return 5
+
+        # Build key_evidence — exclude misleading 0 values when breadth degraded
+        key_evidence = [
+            f"涨停 {l.total_count} 家，跌停 {loss.limit_down_count if loss else '?'} 家",
+        ]
+        if breadth_degraded:
+            key_evidence.append("涨跌家数: 数据暂不可用（TDX breadth 未返回）")
+        else:
+            key_evidence.append(f"上涨 {b.up_count} / 下跌 {b.down_count}")
+        key_evidence.extend([
+            f"活跃资金 {c.active_limitup_amount_yi:.0f}亿",
+            f"晋级率 1→2: {r.promotion_1_to_2:.1%}，反馈: {r.feedback_label}",
+            f"龙头: {leader.leader_health_label if leader else 'N/A'}，死亡: {death.death_label if death else 'N/A'}",
+        ])
 
         return {
             "trade_date": td.isoformat(),
@@ -8064,6 +8088,7 @@ async def _build_market_emotion_from_metrics(trade_date: str) -> dict[str, Any]:
             "emotion_score": int(snap.emotion_momentum.momentum_normalized),
             "breadth_score": int(snap.emotion_momentum.momentum_normalized),
             "breadth_label": story.market_phase,
+            "breadth_status": breadth_status,
             "momentum_score": int(snap.emotion_momentum.momentum_raw),
             "momentum_label": snap.emotion_momentum.momentum_raw,
             "relay_score": int(r.feedback_score),
@@ -8072,13 +8097,7 @@ async def _build_market_emotion_from_metrics(trade_date: str) -> dict[str, Any]:
             "capital_label": f"活跃{c.active_limitup_amount_yi:.0f}亿",
             "style_score": death.death_index if death else 0,
             "style_label": death.death_label if death else "N/A",
-            "key_evidence": [
-                f"涨停 {l.total_count} 家，跌停 {loss.limit_down_count if loss else '?'} 家",
-                f"上涨 {b.up_count} / 下跌 {b.down_count}",
-                f"活跃资金 {c.active_limitup_amount_yi:.0f}亿",
-                f"晋级率 1→2: {r.promotion_1_to_2:.1%}，反馈: {r.feedback_label}",
-                f"龙头: {leader.leader_health_label if leader else 'N/A'}，死亡: {death.death_label if death else 'N/A'}",
-            ],
+            "key_evidence": key_evidence,
             "strategy_bias": story.strategy_summary,
             "raw": {
                 "limit_up": l.total_count,
@@ -8089,9 +8108,9 @@ async def _build_market_emotion_from_metrics(trade_date: str) -> dict[str, Any]:
                 "promotion_1_to_2": r.promotion_1_to_2,
                 "phase": story.market_phase,
                 "risk": story.risk_level,
-                "confidence": story.confidence.get("overall", 0),
+                "confidence": confidence,
             },
-            "confidence": story.confidence.get("overall", 0),
+            "confidence": confidence,
             "generated_at": _date.today().isoformat(),
             "source": "market_metrics_snapshot",
         }

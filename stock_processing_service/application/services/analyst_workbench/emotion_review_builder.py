@@ -32,7 +32,12 @@ class EmotionReviewBuilder:
 
         node = emo.get("emotion_node", "CHAOS")
         score = emo.get("emotion_score", 0) or 0
-        confidence = emo.get("confidence", 0.5) or 0.5
+        raw_conf = emo.get("confidence", 0.5) or 0.5
+        # Defense-in-depth: clamp to 0.0-1.0 (source should already normalize,
+        # but older emotion JSON files may still carry raw NarrativeEngine values)
+        if raw_conf > 1.0:
+            raw_conf = raw_conf / 100.0
+        confidence = max(0.0, min(1.0, float(raw_conf)))
 
         review: dict[str, Any] = {
             "emotion_node": node,
