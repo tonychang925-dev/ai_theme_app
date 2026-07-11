@@ -48,6 +48,7 @@ from .projections import (
     stock_structure,
     theme_structure,
 )
+from .resolvers.theme_identity import ThemeIdentityResolver
 
 
 @dataclass(frozen=True, slots=True)
@@ -160,6 +161,13 @@ class FormalReviewProjectionCompiler:
             snapshot_version=snap_ver,
         )
 
+        # ── Theme identity resolver (no hardcoded mappings) ──
+        identity = ThemeIdentityResolver(
+            theme_name_map=theme_name_map,
+            theme_reviews=builder_theme_reviews,
+            cognition_cards=snap_cognition_cards,
+        )
+
         # ── Formal Review (6 chapters) ──
         formal_review: dict[str, Any] = {
             "version": self._projection_version,
@@ -168,8 +176,7 @@ class FormalReviewProjectionCompiler:
                 snapshot_emotion=snap_emotion,
                 snapshot_narrative=snap_narrative,
                 snapshot_cognition_cards=snap_cognition_cards,
-                theme_reviews=builder_theme_reviews,
-                name_map=theme_name_map,
+                identity=identity,
             ),
             "market_state": market_state.project_market_state(
                 engine_report=engine,

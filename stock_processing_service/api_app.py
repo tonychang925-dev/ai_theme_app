@@ -2340,15 +2340,6 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
         recap_doc = await _enrich_recap_doc_with_seat_money_context(d, recap_doc)
         recap_snapshot_version = str(row.get("snapshot_version") or "")
 
-    # PR-S3: When recap_doc is empty, read from derived tables via service
-    if not recap_doc:
-        _pool = _get_app_pool()
-        if _pool:
-            from stock_processing_service.application.services.analyst_workbench.derived_recap_reader import (
-                DerivedRecapDocReader,
-            )
-            recap_doc = await DerivedRecapDocReader(_pool).read(d)
-
     structured_v2 = builder.build(
         trade_date=d,
         recap_doc=recap_doc or None,
@@ -7581,13 +7572,6 @@ async def _build_analyst_charts_from_metrics(trade_date: str, pool: Any = None) 
         # ── Load recap for thematic charts 5-7 ──
         recap = await _load_recap_doc(td)
 
-        # PR-S3: when recap empty, read from derived tables via service
-        if (not recap or not (recap.get("theme_reviews") or recap.get("strong_hotspot_subjects"))) and pool:
-            from stock_processing_service.application.services.analyst_workbench.derived_recap_reader import (
-                DerivedRecapDocReader,
-            )
-            recap = await DerivedRecapDocReader(pool).read(td)
-
         # ── Load PDF calibration ──
         pdf_cal = ChartReproductionEngine.load_pdf_calibration(td)
 
@@ -8871,219 +8855,6 @@ def _enrich_v2_with_formal_review(v2: dict[str, Any], trade_date: date) -> dict[
     return v2
 
 
-def _get_app_pool():
-    """Return the asyncpg Pool from the app gateway, or None."""
-    try:
-        gateway = getattr(app.state, "gateway", None)
-        client = getattr(gateway, "_client", None) if gateway else None
-        pool = getattr(client, "pool", None) if client else None
-        return pool
-    except Exception:
-        return None
-
-
-async def _build_recap_doc_from_derived_tables(
-    pool, trade_date: date,
-) -> dict[str, Any]:
-    """Build a minimal recap_doc from derived tables via the app connection pool.
-
-    Used when post_market_recap_snapshot row is unavailable (clean replay).
-    Provides the engine report composer and V2 builder with the theme/stock/
-    limit-up data they need, sourced from the derived data tables populated by
-    Workbench generate.
-    """
-    td = trade_date.isoformat()
-    recap: dict[str, Any] = {"trade_date": td, "source": "derived_tables"}
-
-    async with pool.acquire() as conn:
-        # ── Resolve theme_name by looking up Chinese display names ──
-        # theme_cycle_judgement_v2.theme_name is sometimes the subject_key
-        # itself; find real names from any trade_date row with a display name.
-        name_rows = await conn.fetch("""
-            SELECT DISTINCT ON (subject_key) subject_key, theme_name
-            FROM theme_cycle_judgement_v2
-            WHERE theme_name IS NOT NULL
-              AND theme_name != subject_key
-              AND theme_name !~ '^[0-9]+$'
-            ORDER BY subject_key, trade_date DESC
-        """)
-        name_map: dict[str, str] = {}
-        for r in name_rows:
-            sk = str(r["subject_key"])
-            tn = str(r["theme_name"])
-            if tn and tn != sk and tn not in name_map.values():
-                name_map[sk] = tn
-
-        # Fallback: strong_stock_watch_history for names not found above
-        fb_rows = await conn.fetch("""
-            SELECT DISTINCT ON (subject_key) subject_key, theme_name
-            FROM strong_stock_watch_history
-            WHERE theme_name IS NOT NULL AND theme_name != subject_key
-            ORDER BY subject_key, trade_date DESC
-        """)
-        for r in fb_rows:
-            sk = str(r["subject_key"])
-            if sk not in name_map:
-                tn = str(r["theme_name"])
-                if tn and tn != sk:
-                    name_map[sk] = tn
-
-        # ── theme_reviews (from theme_cycle_judgement_v2) ──
-        rows = await conn.fetch("""
-            SELECT subject_key, theme_name,
-                   final_cycle_state AS cycle_state,
-                   mainline_strength_score,
-                   COALESCE(fade_risk_score, 0) AS fade_risk_score
-            FROM theme_cycle_judgement_v2
-            WHERE trade_date = $1
-            ORDER BY mainline_strength_score DESC NULLS LAST
-            LIMIT 20
-        """, trade_date)
-        theme_reviews = []
-        for r in rows:
-            item = dict(r)
-            sk = str(item.get("subject_key", ""))
-            # Resolve to Chinese display name
-            item["theme_name"] = name_map.get(sk) or item.get("theme_name") or sk
-            theme_reviews.append(item)
-        recap["theme_reviews"] = theme_reviews
-
-        # ── theme_capital_reviews (from money_flow_enhanced aggregated) ──
-        cap_rows = await conn.fetch("""
-            SELECT subject_key,
-                   SUM(COALESCE(main_net_inflow, 0)) AS total_inflow,
-                   COUNT(*) AS inflow_stock_count
-            FROM money_flow_enhanced
-            WHERE trade_date = $1 AND subject_key IS NOT NULL
-            GROUP BY subject_key
-            ORDER BY total_inflow DESC NULLS LAST
-            LIMIT 15
-        """, trade_date)
-        recap["theme_capital_reviews"] = [dict(r) for r in cap_rows]
-
-        # ── strong_stock_reviews (from strong_stock_watch_history) ──
-        stock_rows = await conn.fetch("""
-            SELECT stock_id, stock_name, subject_key, theme_name,
-                   watch_score AS composite_score,
-                   relay_role AS role,
-                   support_score AS structure_score,
-                   watch_score AS capital_score
-            FROM strong_stock_watch_history
-            WHERE trade_date = $1
-            ORDER BY watch_score DESC NULLS LAST
-            LIMIT 50
-        """, trade_date)
-        recap["strong_stock_reviews"] = [dict(r) for r in stock_rows]
-
-        # ── limit_up_ladder (from ths_hot_reason_snapshot) ──
-        # ths_hot_reason_snapshot has stock_code, stock_name, reason_tags.
-        # Group by reason_tags (theme info) to build theme-level rows.
-        lu_rows = await conn.fetch("""
-            SELECT stock_code AS stock_id, stock_name,
-                   reason_tags
-            FROM ths_hot_reason_snapshot
-            WHERE trade_date = $1
-            LIMIT 75
-        """, trade_date)
-        lu_list = [dict(r) for r in lu_rows]
-        if lu_list:
-            recap["limit_up_ladder"] = _build_ladder_from_tags(lu_list)
-
-        # ── seat_money_summary minimal (from dragon_tiger_object) ──
-        dt_rows = await conn.fetch("""
-            SELECT stock_id, stock_name,
-                   institution_seat_count,
-                   institution_net_buy,
-                   seat_summary
-            FROM dragon_tiger_object
-            WHERE trade_date = $1
-            LIMIT 20
-        """, trade_date)
-        dt_list = [dict(r) for r in dt_rows]
-        if dt_list:
-            recap["seat_money_summary"] = _build_seat_summary_from_dt(dt_list)
-
-        # ── strong_hotspot_subjects (chart engine _build_hot_money / _build_limitup) ──
-        recap["strong_hotspot_subjects"] = [
-            {"subject_key": r["subject_key"], "theme_name": r["theme_name"],
-             "cycle_state": r["cycle_state"], "source": "derived"}
-            for r in recap.get("theme_reviews", [])
-        ]
-
-        # ── market_regime_review minimal ──
-        recap["market_regime_review"] = {"trade_mode": "normal", "allow_trade": True}
-
-    return recap
-
-
-def _build_ladder_from_tags(rows: list[dict]) -> dict[str, Any]:
-    """Build limit_up_ladder from ths_hot_reason_snapshot reason_tags."""
-    import json as _json
-    theme_map: dict[str, list] = {}
-    for r in rows:
-        tags = r.get("reason_tags")
-        if isinstance(tags, str):
-            try:
-                tags = _json.loads(tags)
-            except Exception:
-                tags = [tags] if tags else []
-        if not isinstance(tags, list):
-            tags = [str(tags)] if tags else []
-        for tag in tags:
-            tn = str(tag).strip().strip('"').strip("'")
-            if tn:
-                theme_map.setdefault(tn, []).append(r)
-
-    theme_rows = [
-        {"theme_name": tn, "limit_up_count": len(stocks),
-         "representative_stocks": [{"stock_name": s.get("stock_name", "")} for s in stocks[:3]]}
-        for tn, stocks in sorted(theme_map.items(), key=lambda x: -len(x[1]))
-    ]
-    return {
-        "summary": f"涨停{len(rows)}家，{len(theme_rows)}个方向",
-        "board_rows": [],
-        "theme_rows": theme_rows[:15],
-    }
-
-
-def _build_seat_summary_from_dt(rows: list[dict]) -> dict[str, Any]:
-    """Build seat_money_summary from dragon_tiger_object rows."""
-    import json as _json
-    institution_rows: list[dict] = []
-    hot_money_rows: list[dict] = []
-
-    for r in rows:
-        inst_count = r.get("institution_seat_count", 0) or 0
-        if inst_count > 0:
-            institution_rows.append({
-                "stock_name": r.get("stock_name", ""),
-                "net_buy": r.get("institution_net_buy"),
-                "institution_seat_count": inst_count,
-            })
-
-        # seat_summary is JSON with hot money names
-        seat_raw = r.get("seat_summary")
-        if isinstance(seat_raw, str):
-            try:
-                seat_raw = _json.loads(seat_raw)
-            except Exception:
-                seat_raw = None
-        if isinstance(seat_raw, list):
-            for seat in seat_raw:
-                if isinstance(seat, dict):
-                    hm_name = seat.get("name") or seat.get("hot_money_name") or ""
-                    if hm_name:
-                        hot_money_rows.append({
-                            "stock_name": r.get("stock_name", ""),
-                            "hot_money_name": str(hm_name),
-                        })
-
-    return {
-        "institution_buy_rows": institution_rows[:10],
-        "hot_money_buy_rows": hot_money_rows[:10],
-    }
-
-
 @app.post("/api/v2/daily-review-v2/compose-from-workbench")
 async def compose_daily_review_from_workbench(payload: dict[str, Any] | None = None) -> dict[str, Any]:
     """Compose a formal DailyReview V2 gated by workbench approval.
@@ -9131,15 +8902,6 @@ async def compose_daily_review_from_workbench(payload: dict[str, Any] | None = N
         recap_doc = payload_data.get("recap_doc") or payload_data
         if not isinstance(recap_doc, dict):
             recap_doc = {}
-
-    # PR-S3: When recap_doc is empty, read from derived tables via service
-    if not recap_doc:
-        _pool = _get_app_pool()
-        if _pool:
-            from stock_processing_service.application.services.analyst_workbench.derived_recap_reader import (
-                DerivedRecapDocReader,
-            )
-            recap_doc = await DerivedRecapDocReader(_pool).read(d)
 
     # ── Compose from workbench ──
     result = wb_composer.compose(d, recap_doc)

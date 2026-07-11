@@ -42,6 +42,7 @@ def test_formal_review_has_exact_six_business_chapters() -> None:
         "stock_structure",
         "capital_evidence",
         "next_day_plan",
+        "evidence_charts",
     }
 
     forbidden_legacy_fields = {
