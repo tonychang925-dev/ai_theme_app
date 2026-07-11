@@ -8952,6 +8952,13 @@ async def _build_recap_doc_from_derived_tables(
         if dt_list:
             recap["seat_money_summary"] = _build_seat_summary_from_dt(dt_list)
 
+        # ── strong_hotspot_subjects (chart engine _build_hot_money / _build_limitup) ──
+        recap["strong_hotspot_subjects"] = [
+            {"subject_key": r["subject_key"], "theme_name": r["theme_name"],
+             "cycle_state": r["cycle_state"], "source": "derived"}
+            for r in recap.get("theme_reviews", [])
+        ]
+
         # ── market_regime_review minimal ──
         recap["market_regime_review"] = {"trade_mode": "normal", "allow_trade": True}
 
