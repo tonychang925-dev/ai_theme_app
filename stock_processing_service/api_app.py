@@ -8167,6 +8167,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
                 "emotion_review": snap.get("emotion_review") or {},
                 "chart_reviews": snap.get("chart_reviews") or [],
                 "chart_data": _read_raw_chart_json(trade_date, _project_root),
+                "trend_data": _read_trend_json(_project_root),
             }
         except Exception:
             pass  # corrupt snapshot → fall through to draft
@@ -8196,6 +8197,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
                     "emotion_review": draft.get("emotion_review") or {},
                     "chart_reviews": draft.get("chart_reviews") or [],
                     "chart_data": _read_raw_chart_json(trade_date, _project_root),
+                    "trend_data": _read_trend_json(_project_root),
                 }
             except Exception:
                 pass  # corrupt draft → fall through to empty
@@ -8223,6 +8225,19 @@ def _read_raw_chart_json(trade_date: str, project_root: str) -> list:
         except Exception:
             return []
     return []
+
+
+def _read_trend_json(project_root: str) -> dict | None:
+    """Read multi-day trend JSON for trend line charts."""
+    import json as _json, os as _os
+    trend_path = _os.path.join(project_root, "frontend", "public", "api",
+                               "analyst-charts", "trend.json")
+    if _os.path.exists(trend_path):
+        try:
+            return _json.loads(open(trend_path, encoding="utf-8").read())
+        except Exception:
+            return None
+    return None
 
 
 def _workspace_themes_from_cards(

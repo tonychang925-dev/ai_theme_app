@@ -40,6 +40,7 @@ from uuid import uuid4
 
 from .projections import (
     capital_evidence,
+    evidence_charts,
     executive_summary,
     market_state,
     metadata,
@@ -202,6 +203,14 @@ class FormalReviewProjectionCompiler:
                 builder_trading_principle=builder_trading_principle,
             ),
         }
+
+        # ── Evidence Charts (PR-S2) ──
+        formal_charts = evidence_charts.project_evidence_charts(
+            engine_report=engine,
+            snapshot_emotion=snap_emotion,
+            snapshot_chart_reviews=snap_chart_reviews,
+        )
+        formal_review["evidence_charts"] = formal_charts
 
         # ── Evidence Appendix ──
         appendix = self._build_evidence_appendix(engine, snap_chart_reviews)

@@ -74,7 +74,7 @@ function useEmotionTrend(tradeDate: string) {
 }
 
 // ── Main Component ──
-export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoints, tomorrowForbidden, emotionReview, chartReviews, chartData }: {
+export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoints, tomorrowForbidden, emotionReview, chartReviews, chartData, trendData }: {
   tradeDate: string;
   tomorrowOutlook?: string;
   tomorrowWatchpoints?: string[];
@@ -82,6 +82,7 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
   emotionReview?: Record<string, any> | null;
   chartReviews?: any[] | null;
   chartData?: any[] | null;
+  trendData?: any;
 }) {
   const watchpoints = tomorrowWatchpoints || [];
   const forbidden = tomorrowForbidden || [];
@@ -121,6 +122,12 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
     setEmotion(null);
     setLoading(false);
   }, [tradeDate, emotionReview]);
+
+  useEffect(() => {
+    if (trendData) {
+      setMultiTrend(trendData);
+    }
+  }, [tradeDate, trendData]);
 
   useEffect(() => {
     // chartData is the raw chart JSON (with 'data' field) for ChartRenderer
