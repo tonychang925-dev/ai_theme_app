@@ -27,13 +27,12 @@ def test_20260709_golden_fixture_is_semantic_not_full_report() -> None:
 
     # Semantic golden: no full report blobs.
     assert "review_document" not in fixture
-    assert "field_provenance" not in fixture
     assert "quality" not in fixture
     assert "source_refs" not in fixture
     assert "audit" not in fixture
 
     # It must stay compact enough to be manually reviewable.
-    assert len(json.dumps(fixture, ensure_ascii=False)) < 2500
+    assert len(json.dumps(fixture, ensure_ascii=False)) < 3500
 
 
 def test_20260709_golden_fixture_locks_core_market_emotion_and_override() -> None:
@@ -71,6 +70,41 @@ def test_20260709_golden_fixture_locks_required_entities() -> None:
         "stock_name": "恒尚节能",
         "board_height": 8,
     }
+
+
+def test_20260709_golden_fixture_requires_core_field_provenance() -> None:
+    fixture = _load_fixture("2026-07-09-golden.json")
+
+    provenance = fixture["field_provenance_required"]
+    required_fields = {
+        "market.limit_up_count": "FACT",
+        "emotion.score": "ASSESSMENT",
+        "themes.primary": "IDENTITY",
+    }
+    assert set(provenance) == set(required_fields)
+
+    for field_path, field_type in required_fields.items():
+        item = provenance[field_path]
+        assert item["source"]
+        assert item["field_type"] == field_type
+        assert item["source_trade_date"] == fixture["trade_date"]
+
+
+def test_20260709_golden_fixture_is_review_document_not_snapshot() -> None:
+    fixture = _load_fixture("2026-07-09-golden.json")
+
+    forbidden_snapshot_lifecycle_fields = {
+        "snapshot_hash",
+        "approved_at",
+        "approval_mode",
+        "source_mode",
+        "composition_mode",
+        "snapshot_version",
+    }
+    serialized = json.dumps(fixture, ensure_ascii=False)
+    for field_name in forbidden_snapshot_lifecycle_fields:
+        assert field_name not in fixture
+        assert field_name not in serialized
 
 
 def test_negative_missing_capital_blocks_fake_ready_state() -> None:

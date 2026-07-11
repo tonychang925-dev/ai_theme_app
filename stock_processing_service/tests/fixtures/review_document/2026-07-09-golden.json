@@ -44,5 +44,22 @@
     "ai_value": "人形机器人",
     "analyst_value": "PCB",
     "final_value": "PCB"
+  },
+  "field_provenance_required": {
+    "market.limit_up_count": {
+      "source": "snapshot.chart_reviews.market_power.limit_up_count",
+      "field_type": "FACT",
+      "source_trade_date": "2026-07-09"
+    },
+    "emotion.score": {
+      "source": "snapshot.emotion_review.score",
+      "field_type": "ASSESSMENT",
+      "source_trade_date": "2026-07-09"
+    },
+    "themes.primary": {
+      "source": "snapshot.cognition_cards.field_overrides.subject_name",
+      "field_type": "IDENTITY",
+      "source_trade_date": "2026-07-09"
+    }
   }
 }
