@@ -795,15 +795,15 @@ stocks_by_code[stock_code] = merged_stock_entity
 | PR2.2 Theme + Stock | ✅ Completed | Subject Union + stock_code entity merge |
 | PR2.3a Capital Evidence | ✅ Completed | `market capital + theme capital + stock evidence` 三层模型 |
 | PR2.3b Next Day Plan | ✅ Completed | `scenario + watch + confirmation + invalidation + forbidden` |
-| PR3 Projection Diff | ⏳ Planned | 7/9 Golden + FACT/ASSESSMENT/PLAN diff |
+| PR3 Projection Diff | ✅ Completed | 7/9 Golden + FACT/ASSESSMENT/PLAN diff |
 | PR4 FormalReview UI | ⏳ Planned | FormalReviewView 双轨 UI |
 | PR5 Multi-day Observe | ⏳ Planned | 5+ 交易日观察 |
 | PR6 Legacy Removal | ⏳ Planned | compatibility 与旧字段移除 |
 
 下一步建议：
 
-1. 进入 PR3 Projection Diff，基于 2026-07-09 Golden 数据验证 FACT/ASSESSMENT/PLAN 不丢失。
-2. 不在 PR3 删除旧字段；继续 dual-track，等待 PR4 UI 和 PR5 多交易日观察。
+1. 进入 PR4 FormalReview UI，先做双轨展示，不删除 legacy view。
+2. 保持 dual-track，等待 PR5 多交易日观察。
 3. PR6 再移除 compatibility 与旧字段。
 
 ## 16. PR2.3 设计约束（2026-07-11）
@@ -897,7 +897,7 @@ Capital Evidence
 Next Day Plan
 ```
 
-下一步进入 PR3 Projection Diff，验证新结构减少复杂度但不损失 DailyReviewV2 信息价值。
+PR3 Projection Diff 已通过。下一步进入 PR4 FormalReview UI，验证新结构在前端阅读层可用。
 
 ## 17. PR2.3 实施记录（2026-07-11）
 
@@ -966,3 +966,42 @@ Next Day Plan
 | Phase 4.5.5/4.5.6 相关后端测试 | ✅ 19 passed |
 | `test-recap-workbench-first-contract.mjs` | ✅ 通过 |
 | `test-workbench-generate-flow-contract.mjs` | ✅ 通过 |
+
+## 18. PR3 Projection Diff 实施记录（2026-07-11）
+
+新增：
+
+- `stock_processing_service/tests/unit/test_projection_formal_schema.py`
+- `stock_processing_service/tests/unit/test_projection_diff_20260709.py`
+- `docs/test_reports/projection_diff_20260709.md`
+
+完成：
+
+- 冻结 `formal_review` 六章模型：
+  - `executive_summary`
+  - `market_state`
+  - `theme_structure`
+  - `stock_structure`
+  - `capital_evidence`
+  - `next_day_plan`
+- 防止 `workbench_data / confirmed_mainlines / pending_mainline_reviews` 回流。
+- 基于 2026-07-09 Golden 样本建立语义 diff：
+  - FACT Diff
+  - ENTITY Diff
+  - ASSESSMENT Diff
+  - PLAN Diff
+- 修正 PR2.3 边界：
+  - `capital_evidence.stocks[].capital.fact` 与 `capital.assessment` 分离。
+  - `next_day_plan` 在分析师明确 watch override 时只输出 final watch universe，AI/legacy watch 仅保留在 audit/playbook 中。
+
+验证：
+
+| 验证项 | 结果 |
+|---|---|
+| PR3 focused projection tests | ✅ 12 passed |
+| Phase 4.5.5/4.5.6 相关后端测试 | ✅ 22 passed |
+| 前端 Workbench/Recap 契约 | ✅ 通过 |
+
+结论：
+
+`FormalReviewProjectionCompiler` 已证明可以压缩结构复杂度，同时保持核心市场认知价值：FACT 稳定、ENTITY 不丢、ASSESSMENT 尊重分析师校准、PLAN 消费最终确认结果。

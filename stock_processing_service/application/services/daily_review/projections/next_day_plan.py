@@ -42,6 +42,7 @@ def project_next_day_plan(
         setup_plan=setup_plan,
         decision_v2=decision_v2,
     )
+    watch_stocks = _apply_playbook_watch_overrides(watch_stocks, playbook)
 
     scenario = resolve_plan(
         analyst_value=_override_final(playbook.get("scenario")),
@@ -184,6 +185,113 @@ def _build_watch_themes(watch_stocks: list[dict[str, Any]]) -> list[dict[str, An
     return sorted(by_key.values(), key=lambda item: (-int(item.get("stock_count") or 0), str(item.get("theme_name") or "")))
 
 
+def _apply_playbook_watch_overrides(
+    watch_stocks: list[dict[str, Any]],
+    playbook: dict[str, Any],
+) -> list[dict[str, Any]]:
+    """Constrain watch universe when analyst-approved playbook has final watch fields.
+
+    This prevents a legacy/AI watch theme from remaining in the formal plan when
+    the analyst explicitly changed tomorrow's focus.
+    """
+    final_themes = _normalize_watch_items(_override_final(playbook.get("watch_themes")))
+    final_stocks = _normalize_watch_items(_override_final(playbook.get("watch_stocks")))
+    if not final_themes and not final_stocks:
+        return watch_stocks
+
+    result = watch_stocks
+    if final_themes:
+        allowed_theme_keys = {
+            _first_text(item.get("subject_key"), item.get("theme_name"), item.get("name"))
+            for item in final_themes
+            if isinstance(item, dict)
+        }
+        allowed_theme_keys.update(
+            _first_text(item)
+            for item in final_themes
+            if not isinstance(item, dict)
+        )
+        result = [
+            stock for stock in result
+            if _first_text(stock.get("subject_key"), stock.get("theme_name")) in allowed_theme_keys
+        ]
+
+    if final_stocks:
+        allowed_stock_keys = {
+            _first_text(item.get("stock_code"), item.get("stock_id"), item.get("stock_name"), item.get("name"))
+            for item in final_stocks
+            if isinstance(item, dict)
+        }
+        allowed_stock_keys.update(
+            _first_text(item)
+            for item in final_stocks
+            if not isinstance(item, dict)
+        )
+        result = [
+            stock for stock in result
+            if _first_text(stock.get("stock_code"), stock.get("stock_name")) in allowed_stock_keys
+        ]
+
+    if result:
+        return result
+
+    # If analyst final values do not correspond to legacy rows, still surface
+    # the analyst-approved watch universe instead of falling back to AI/legacy.
+    synthesized: list[dict[str, Any]] = []
+    for item in final_themes:
+        if isinstance(item, dict):
+            synthesized.append({
+                "stock_code": "",
+                "stock_name": "",
+                "subject_key": _first_text(item.get("subject_key"), item.get("theme_name"), item.get("name")),
+                "theme_name": _first_text(item.get("theme_name"), item.get("name"), item.get("subject_key")),
+                "tags": ["analyst_playbook"],
+                "priority": item.get("priority"),
+                "action": _first_text(item.get("action"), item.get("reason"), "观察"),
+                "confirmation_signals": _as_list(item.get("confirmation_signals")),
+                "invalidation_signals": _as_list(item.get("invalidation_signals")),
+                "reason": _first_text(item.get("reason")),
+            })
+        else:
+            text = _first_text(item)
+            if text:
+                synthesized.append({
+                    "stock_code": "",
+                    "stock_name": "",
+                    "subject_key": text,
+                    "theme_name": text,
+                    "tags": ["analyst_playbook"],
+                    "priority": None,
+                    "action": "观察",
+                    "confirmation_signals": [],
+                    "invalidation_signals": [],
+                    "reason": "",
+                })
+    for item in final_stocks:
+        if isinstance(item, dict):
+            synthesized.append({
+                "stock_code": _stock_code(item),
+                "stock_name": _first_text(item.get("stock_name"), item.get("name")),
+                "subject_key": _first_text(item.get("subject_key"), item.get("theme_subject_key")),
+                "theme_name": _first_text(item.get("theme_name"), item.get("subject_name")),
+                "tags": ["analyst_playbook"],
+                "priority": item.get("priority"),
+                "action": _first_text(item.get("action"), item.get("reason"), "观察"),
+                "confirmation_signals": _as_list(item.get("confirmation_signals")),
+                "invalidation_signals": _as_list(item.get("invalidation_signals")),
+                "reason": _first_text(item.get("reason")),
+            })
+    return synthesized
+
+
+def _normalize_watch_items(value: Any) -> list[Any]:
+    if value in (None, "", [], {}):
+        return []
+    if isinstance(value, list):
+        return value
+    return [value]
+
+
 def _build_principles(trading_principle: dict[str, Any], playbook: dict[str, Any]) -> dict[str, Any]:
     return _drop_empty({
         "allow_trade": trading_principle.get("allow_trade"),
@@ -211,6 +319,8 @@ def _compact_playbook(playbook: dict[str, Any]) -> dict[str, Any]:
         "confirmation_signals",
         "invalidation_signals",
         "forbidden_actions",
+        "watch_themes",
+        "watch_stocks",
         "position_plan",
         "risk_control",
     }

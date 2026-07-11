@@ -938,7 +938,7 @@ Compiler Boundary：
 | PR2.2 Theme + Stock | ✅ Completed | Subject Union + stock_code entity merge |
 | PR2.3a Capital Evidence | ✅ Completed | `market capital + theme capital + stock evidence` 三层模型 |
 | PR2.3b Next Day Plan | ✅ Completed | `scenario + watch + confirmation + invalidation + forbidden` |
-| PR3 Projection Diff | ⏳ Planned | 7/9 Golden + FACT/ASSESSMENT/PLAN diff |
+| PR3 Projection Diff | ✅ Completed | 7/9 Golden + FACT/ASSESSMENT/PLAN diff |
 | PR4 FormalReview UI | ⏳ Planned | FormalReviewView 双轨 UI |
 | PR5 Multi-day Observe | ⏳ Planned | 5+ 交易日观察 |
 | PR6 Legacy Removal | ⏳ Planned | compatibility 与旧字段移除 |
@@ -1043,7 +1043,7 @@ PR2.3 已完成，拆分为两段：
 
 #### 当前评价
 
-Phase 4.5.6 当前约完成 70%。FormalReviewProjectionCompiler 已具备完整六章输出能力：
+Phase 4.5.6 当前约完成 80%。FormalReviewProjectionCompiler 已具备完整六章输出能力，并通过 2026-07-09 Projection Diff 黄金测试：
 
 ```text
 Market State
@@ -1057,4 +1057,16 @@ Capital Evidence
 Next Day Plan
 ```
 
-下一步进入 PR3 Projection Diff，验证新结构减少复杂度但不损失原 `DailyReviewV2` 信息价值。
+PR3 验证结果：
+
+- Schema Contract：六章模型固定，legacy removed fields 不回流。
+- FACT Diff：市场事实字段保持一致。
+- ENTITY Diff：主题和股票实体不丢失。
+- ASSESSMENT Diff：AI=机器人、Analyst=PCB 时，最终值为 PCB。
+- PLAN Diff：分析师 watch override 后，正式 `watch_themes/watch_stocks` 只保留 PCB，AI/legacy 机器人仅保留在 audit/playbook。
+
+测试报告：
+
+- `docs/test_reports/projection_diff_20260709.md`
+
+下一步进入 PR4 FormalReview UI，验证新结构在前端阅读层可用。

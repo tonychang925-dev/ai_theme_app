@@ -70,8 +70,9 @@ def test_capital_evidence_merges_stock_sources_by_stock_code() -> None:
     assert len(stocks) == 1
     stock = stocks[0]
     assert stock["stock_code"] == "002384.SZ"
-    assert stock["capital_flow"]["main_net_inflow"] == 50000000
-    assert stock["capital_flow"]["money_flow_tier"] == "strong"
+    assert stock["capital"]["fact"]["main_net_inflow"] == 50000000
+    assert stock["capital"]["assessment"]["money_flow_tier"] == "strong"
+    assert stock["capital"]["assessment"]["role_enhanced"] == "leader"
     assert stock["dragon_tiger"]["net_buy"] == 30000000
     assert stock["abnormal_signals"][0]["conclusion"] == "放量异动"
     assert set(stock["sources"]) == {
@@ -179,3 +180,40 @@ def test_next_day_plan_uses_analyst_playbook_override_before_engine_plan() -> No
 
     assert result["scenario"] == "分析师计划：只看PCB确认"
     assert result["forbidden_actions"] == ["不追机器人高位"]
+
+
+def test_next_day_plan_analyst_watch_override_filters_ai_legacy_watch_theme() -> None:
+    result = project_next_day_plan(
+        engine_report={},
+        snapshot_emotion={},
+        snapshot_playbook={
+            "watch_themes": {
+                "ai_value": [{"subject_key": "robot", "theme_name": "机器人"}],
+                "analyst_value": [{"subject_key": "pcb", "theme_name": "PCB印制电路板"}],
+                "final_value": [{"subject_key": "pcb", "theme_name": "PCB印制电路板"}],
+                "override": True,
+                "reason": "机器人高位分歧，资金切换PCB",
+            }
+        },
+        builder_watchlist_reviews=[
+            {
+                "stock_code": "002361.SZ",
+                "stock_name": "神剑股份",
+                "subject_key": "robot",
+                "theme_name": "机器人",
+                "action": "AI旧观察",
+            },
+            {
+                "stock_code": "002384.SZ",
+                "stock_name": "东山精密",
+                "subject_key": "pcb",
+                "theme_name": "PCB印制电路板",
+                "action": "分析师确认方向",
+            },
+        ],
+    )
+
+    assert [row["subject_key"] for row in result["watch_themes"]] == ["pcb"]
+    assert [row["stock_code"] for row in result["watch_stocks"]] == ["002384.SZ"]
+    assert result["playbook"]["watch_themes"]["ai_value"][0]["subject_key"] == "robot"
+    assert result["playbook"]["watch_themes"]["final_value"][0]["subject_key"] == "pcb"

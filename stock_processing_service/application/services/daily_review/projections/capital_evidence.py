@@ -143,7 +143,7 @@ def _ensure_stock(
             "stock_name": _first_text(row.get("stock_name"), row.get("name")),
             "subject_key": _first_text(row.get("subject_key"), row.get("theme_subject_key")),
             "theme_name": _first_text(row.get("theme_name"), row.get("subject_name"), row.get("resolved_theme_name")),
-            "capital_flow": {},
+            "capital": {"fact": {}, "assessment": {}},
             "dragon_tiger": {},
             "abnormal_signals": [],
             "sources": [],
@@ -159,25 +159,25 @@ def _ensure_stock(
 
 
 def _merge_stock_capital(entity: dict[str, Any], row: dict[str, Any]) -> None:
-    flow = entity.setdefault("capital_flow", {})
-    _set_first(flow, "main_net_inflow", row.get("main_net_inflow") or row.get("amount"))
-    _set_first(flow, "active_buy", row.get("active_buy"))
-    _set_first(flow, "institution_net", row.get("institution_net") or row.get("institution_net_buy"))
-    _set_first(flow, "hot_money_net", row.get("hot_money_net") or row.get("hot_money_net_buy"))
-    _set_first(flow, "rank_order", row.get("rank_order") or row.get("rank_in_theme"))
-    _set_first(flow, "conclusion", row.get("conclusion") or row.get("description"))
+    fact, assessment = _capital_blocks(entity)
+    _set_first(fact, "main_net_inflow", row.get("main_net_inflow") or row.get("amount"))
+    _set_first(fact, "active_buy", row.get("active_buy"))
+    _set_first(fact, "institution_net", row.get("institution_net") or row.get("institution_net_buy"))
+    _set_first(fact, "hot_money_net", row.get("hot_money_net") or row.get("hot_money_net_buy"))
+    _set_first(fact, "rank_order", row.get("rank_order") or row.get("rank_in_theme"))
+    _set_first(assessment, "conclusion", row.get("conclusion") or row.get("description"))
     _append_source(entity, "stock_capital_reviews")
 
 
 def _merge_money_flow(entity: dict[str, Any], row: dict[str, Any]) -> None:
-    flow = entity.setdefault("capital_flow", {})
-    _set_first(flow, "main_net_inflow", row.get("main_net_inflow") or row.get("amount"))
-    _set_first(flow, "money_flow_tier", row.get("money_flow_tier"))
-    _set_first(flow, "role_enhanced", row.get("role_enhanced"))
-    _set_first(flow, "institution_signal", row.get("institution_signal"))
-    _set_first(flow, "hot_money_signal", row.get("hot_money_signal"))
-    _set_first(flow, "dragon_tiger_signal", row.get("dragon_tiger_signal"))
-    _set_first(flow, "conclusion", row.get("conclusion") or row.get("description"))
+    fact, assessment = _capital_blocks(entity)
+    _set_first(fact, "main_net_inflow", row.get("main_net_inflow") or row.get("amount"))
+    _set_first(assessment, "money_flow_tier", row.get("money_flow_tier"))
+    _set_first(assessment, "role_enhanced", row.get("role_enhanced"))
+    _set_first(assessment, "institution_signal", row.get("institution_signal"))
+    _set_first(assessment, "hot_money_signal", row.get("hot_money_signal"))
+    _set_first(assessment, "dragon_tiger_signal", row.get("dragon_tiger_signal"))
+    _set_first(assessment, "conclusion", row.get("conclusion") or row.get("description"))
     _append_source(entity, "money_flow_reviews")
 
 
@@ -227,16 +227,29 @@ def _compact_seat(row: dict[str, Any]) -> dict[str, Any]:
 def _sorted_stocks(stocks: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
     rows = []
     for entity in stocks.values():
-        entity["capital_flow"] = _drop_none(entity.get("capital_flow") or {})
+        capital = entity.get("capital") if isinstance(entity.get("capital"), dict) else {}
+        capital["fact"] = _drop_none(_dict(capital.get("fact")))
+        capital["assessment"] = _drop_none(_dict(capital.get("assessment")))
+        entity["capital"] = _drop_none(capital)
         entity["dragon_tiger"] = _drop_none(entity.get("dragon_tiger") or {})
         rows.append(entity)
     rows.sort(
         key=lambda item: (
-            int(_dict(item.get("capital_flow")).get("rank_order") or 9999),
+            int(_dict(_dict(item.get("capital")).get("fact")).get("rank_order") or 9999),
             str(item.get("stock_name") or item.get("stock_code") or ""),
         )
     )
     return rows
+
+
+def _capital_blocks(entity: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+    capital = entity.setdefault("capital", {})
+    if not isinstance(capital, dict):
+        capital = {}
+        entity["capital"] = capital
+    fact = capital.setdefault("fact", {})
+    assessment = capital.setdefault("assessment", {})
+    return fact, assessment
 
 
 def _stock_code(row: dict[str, Any]) -> str:
