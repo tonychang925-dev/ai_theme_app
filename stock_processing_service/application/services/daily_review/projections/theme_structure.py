@@ -254,6 +254,13 @@ def _is_noise_subject_key(subject_key: str, theme_name: str) -> bool:
     # Pure numeric keys shorter than 4 digits are usually noise
     if subject_key.isdigit() and len(subject_key) < 4:
         return True
+    # Garbage: text that is clearly not a theme name
+    if theme_name and len(theme_name) > 30:
+        return True
+    if theme_name and ("【" in theme_name or "】" in theme_name):
+        return True
+    if theme_name and ("连板复盘" in theme_name or "行情报价" in theme_name):
+        return True
     # Empty or code-like names
     if theme_name == subject_key and subject_key.isdigit():
         return False  # Keep pure numeric but real keys

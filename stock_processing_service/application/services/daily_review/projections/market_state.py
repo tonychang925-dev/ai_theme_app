@@ -141,41 +141,37 @@ def _build_facts(
     engine_report: dict[str, Any],
     charts: list[dict[str, Any]],
 ) -> dict[str, Any]:
-    """Build the facts block. Each FACT has a unique Owner Producer.
+    """Build the facts block from snapshot chart_reviews (primary) and engine_report (fallback).
 
-    FACT owners (per Matrix v2.1):
-      - up_count / down_count: MarketBreadth Producer
-      - limit_up_total / limit_down_total: Limit Pool Producer
-      - total_amount: Market Metrics Producer
-      - active_capital: Active Capital Producer
-      - relay metrics: Relay Ecology Producer
+    Snapshot chart_reviews are the approved data source from the workbench.
+    Engine report fields are secondary when snapshot data is unavailable.
     """
-    overview = engine_report.get("market_overview_review") or {}
+    facts: dict[str, Any] = {}
 
-    facts: dict[str, Any] = {
-        "up_count": overview.get("up_count"),
-        "down_count": overview.get("down_count"),
-        "limit_up_total": overview.get("limit_up_total"),
-        "limit_down_total": overview.get("limit_down_total"),
-        "total_amount": overview.get("total_amount"),
-    }
-
-    # Extract active_capital from chart_reviews
+    # Primary: extract from chart_reviews (from approved snapshot)
     for chart in charts:
-        if chart.get("chart_type") == "active_capital":
-            metrics = chart.get("key_metrics") or {}
+        ct = chart.get("chart_type", "")
+        metrics = chart.get("key_metrics") or {}
+        if ct == "market_breadth":
+            facts["up_count"] = metrics.get("up_count")
+            facts["down_count"] = metrics.get("down_count")
+            facts["limit_up_total"] = metrics.get("limit_up_count")
+            facts["limit_down_total"] = metrics.get("limit_down_count")
+        elif ct == "active_capital":
             facts["active_amount_yi"] = metrics.get("active_amount_yi")
             facts["total_amount_yi"] = metrics.get("total_amount_yi")
-            break
-
-    # Extract relay metrics from chart_reviews
-    for chart in charts:
-        if chart.get("chart_type") == "relay_ecology":
-            metrics = chart.get("key_metrics") or {}
+        elif ct == "relay_ecology":
             facts["max_board_height"] = metrics.get("max_board_height")
             facts["promotion_1_to_2"] = metrics.get("promotion_1_to_2")
             facts["feedback_score"] = metrics.get("feedback_score")
-            break
+
+    # Fallback: engine_report market_overview_review
+    overview = engine_report.get("market_overview_review") or {}
+    for key in ("up_count", "down_count", "limit_up_total", "limit_down_total", "total_amount"):
+        if key not in facts or facts[key] is None:
+            val = overview.get(key)
+            if val is not None:
+                facts[key] = val
 
     # Remove None values
     return {k: v for k, v in facts.items() if v is not None}
