@@ -1644,17 +1644,20 @@ export function RecapPage() {
           </div>
         </div>
       )}
+      {!loading && !error && isPostMarket && dailyReviewV2?.formal_review && (
+        <main className="workspace-layout single">
+          <section className="workspace-column">
+            <FormalReviewView
+              formalReview={dailyReviewV2.formal_review}
+              approval={dailyReviewV2.workbench_approval}
+            />
+          </section>
+        </main>
+      )}
       {!loading && !error && payload && (
         <>
           <main className="workspace-layout single">
             <section className="workspace-column">
-              {/* Phase 4.5.5: Workbench sections — AI + analyst approved content */}
-              {isPostMarket && dailyReviewV2?.formal_review && (
-                <FormalReviewView
-                  formalReview={dailyReviewV2.formal_review}
-                  approval={dailyReviewV2.workbench_approval}
-                />
-              )}
               {isPostMarket && !dailyReviewV2?.formal_review && dailyReviewV2 && (
                 <WorkbenchSectionsPanel data={dailyReviewV2} />
               )}
