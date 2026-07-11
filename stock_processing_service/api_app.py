@@ -2340,11 +2340,14 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
         recap_doc = await _enrich_recap_doc_with_seat_money_context(d, recap_doc)
         recap_snapshot_version = str(row.get("snapshot_version") or "")
 
-    # PR-S3: If recap_doc is empty and no DB row, build from derived tables
+    # PR-S3: When recap_doc is empty, read from derived tables via service
     if not recap_doc:
         _pool = _get_app_pool()
         if _pool:
-            recap_doc = await _build_recap_doc_from_derived_tables(_pool, d)
+            from stock_processing_service.application.services.analyst_workbench.derived_recap_reader import (
+                DerivedRecapDocReader,
+            )
+            recap_doc = await DerivedRecapDocReader(_pool).read(d)
 
     structured_v2 = builder.build(
         trade_date=d,
@@ -7578,9 +7581,12 @@ async def _build_analyst_charts_from_metrics(trade_date: str, pool: Any = None) 
         # ── Load recap for thematic charts 5-7 ──
         recap = await _load_recap_doc(td)
 
-        # PR-S3: when recap empty, build from derived tables via pool
+        # PR-S3: when recap empty, read from derived tables via service
         if (not recap or not (recap.get("theme_reviews") or recap.get("strong_hotspot_subjects"))) and pool:
-            recap = await _build_recap_doc_from_derived_tables(pool, td)
+            from stock_processing_service.application.services.analyst_workbench.derived_recap_reader import (
+                DerivedRecapDocReader,
+            )
+            recap = await DerivedRecapDocReader(pool).read(td)
 
         # ── Load PDF calibration ──
         pdf_cal = ChartReproductionEngine.load_pdf_calibration(td)
@@ -9126,12 +9132,14 @@ async def compose_daily_review_from_workbench(payload: dict[str, Any] | None = N
         if not isinstance(recap_doc, dict):
             recap_doc = {}
 
-    # PR-S3: When recap_doc is empty (clean replay), build engine context
-    # from derived tables via the app connection pool.
+    # PR-S3: When recap_doc is empty, read from derived tables via service
     if not recap_doc:
         _pool = _get_app_pool()
         if _pool:
-            recap_doc = await _build_recap_doc_from_derived_tables(_pool, d)
+            from stock_processing_service.application.services.analyst_workbench.derived_recap_reader import (
+                DerivedRecapDocReader,
+            )
+            recap_doc = await DerivedRecapDocReader(_pool).read(d)
 
     # ── Compose from workbench ──
     result = wb_composer.compose(d, recap_doc)
