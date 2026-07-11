@@ -1542,7 +1542,12 @@ export function RecapPage() {
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginLeft: "auto" }}>
           <label style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <span style={{ fontSize: 12, color: "#66d9ef" }}>交易日</span>
-            <input type="date" value={tradeDate} onChange={(event) => setTradeDate(event.target.value)}
+            <input type="date" value={tradeDate} onChange={(event) => {
+                const d = event.target.value;
+                setTradeDate(d);
+                const q = buildRecapSearchParams({ tradeDate: d, reportType, dataMode: "daily_review_v2_first" });
+                window.history.replaceState(null, "", `/recap?${q.toString()}`);
+              }}
               style={{ border: "1px solid #2a2a2a", borderRadius: 6, background: "#1a1a1a", color: "#f5f5f5", padding: "4px 8px" }} />
           </label>
           <div className="recap-switch">
