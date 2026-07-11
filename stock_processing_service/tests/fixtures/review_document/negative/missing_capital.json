@@ -1,0 +1,26 @@
+{
+  "fixture_type": "negative_case",
+  "case": "missing_capital",
+  "trade_date": "2026-07-09",
+  "input": {
+    "capital": {
+      "institution": [],
+      "hot_money": []
+    }
+  },
+  "expected": {
+    "quality": {
+      "overall": "BLOCKED",
+      "sections": {
+        "capital": {
+          "status": "MISSING"
+        }
+      }
+    }
+  },
+  "forbidden_outputs": [
+    "机构方向：共0个方向，多数调整",
+    "游资方向：游资正常",
+    "quality.overall=READY"
+  ]
+}

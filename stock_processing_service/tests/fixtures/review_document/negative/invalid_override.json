@@ -1,0 +1,19 @@
+{
+  "fixture_type": "negative_case",
+  "case": "invalid_override",
+  "trade_date": "2026-07-09",
+  "input": {
+    "override": {
+      "field": "themes.name",
+      "ai_value": "人形机器人",
+      "analyst_value": "PCB",
+      "final_value": null
+    }
+  },
+  "expected": {
+    "quality": {
+      "overall": "BLOCKED",
+      "reason": "explicit override final_value missing"
+    }
+  }
+}

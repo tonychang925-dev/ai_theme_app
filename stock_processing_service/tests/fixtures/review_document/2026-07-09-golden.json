@@ -1,0 +1,48 @@
+{
+  "fixture_type": "semantic_golden",
+  "schema_version": "review_document_fixture_v1",
+  "trade_date": "2026-07-09",
+  "market": {
+    "limit_up_count": 75,
+    "limit_down_count": 29,
+    "breadth": {
+      "up_count": 3561,
+      "down_count": 1609
+    }
+  },
+  "emotion": {
+    "phase": "REBOUND",
+    "score": 39
+  },
+  "themes": {
+    "must_include": [
+      "PCB",
+      "存储芯片",
+      "机器人"
+    ]
+  },
+  "capital": {
+    "institution_required": true,
+    "hot_money_required": true,
+    "institution_must_include": [
+      "存储芯片",
+      "半导体设备"
+    ],
+    "hot_money_must_include": [
+      "商业航天",
+      "洪涝"
+    ]
+  },
+  "stocks": {
+    "leader": {
+      "stock_name": "恒尚节能",
+      "board_height": 8
+    }
+  },
+  "override": {
+    "field": "themes.name",
+    "ai_value": "人形机器人",
+    "analyst_value": "PCB",
+    "final_value": "PCB"
+  }
+}

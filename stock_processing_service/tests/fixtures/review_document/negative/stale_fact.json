@@ -1,0 +1,22 @@
+{
+  "fixture_type": "negative_case",
+  "case": "stale_fact",
+  "trade_date": "2026-07-09",
+  "input": {
+    "market": {
+      "limit_up_count": 75,
+      "source_trade_date": "2026-07-08"
+    }
+  },
+  "expected": {
+    "quality": {
+      "overall": "BLOCKED",
+      "reason": "FACT source_trade_date mismatch"
+    },
+    "field_provenance": {
+      "market.limit_up_count": {
+        "validation_status": "invalid"
+      }
+    }
+  }
+}

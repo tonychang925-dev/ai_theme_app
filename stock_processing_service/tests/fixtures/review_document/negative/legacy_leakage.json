@@ -1,0 +1,32 @@
+{
+  "fixture_type": "negative_case",
+  "case": "legacy_leakage",
+  "trade_date": "2026-07-09",
+  "forbidden_top_level_fields": [
+    "formal_review",
+    "legacy",
+    "emotion_review",
+    "market_chart_reviews",
+    "recap_doc",
+    "workbench_data"
+  ],
+  "forbidden_source_terms": [
+    "/api/emotion-",
+    "/api/analyst-charts/",
+    "recap_doc",
+    "legacy"
+  ],
+  "expected": {
+    "api_contract": {
+      "must_include": [
+        "review_document"
+      ],
+      "must_not_include": [
+        "formal_review",
+        "legacy",
+        "emotion_review",
+        "market_chart_reviews"
+      ]
+    }
+  }
+}
