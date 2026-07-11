@@ -568,6 +568,8 @@ export function AnalystWorkspacePage() {
         throw new Error(failedStep?.error || r.error || "启动分析失败");
       }
 
+      // Refresh workspace to pick up the newly generated draft
+      await fetchWorkspace(dateInput);
       setGenKey(k => k + 1);
 
       if (r.status === "partial") {
