@@ -8166,6 +8166,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
                 "override_count": snap.get("override_summary", {}).get("total", 0),
                 "emotion_review": snap.get("emotion_review") or {},
                 "chart_reviews": snap.get("chart_reviews") or [],
+                "chart_data": _read_raw_chart_json(trade_date, _project_root),
             }
         except Exception:
             pass  # corrupt snapshot → fall through to draft
@@ -8194,6 +8195,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
                     "missing_fields": draft.get("missing_fields", []),
                     "emotion_review": draft.get("emotion_review") or {},
                     "chart_reviews": draft.get("chart_reviews") or [],
+                    "chart_data": _read_raw_chart_json(trade_date, _project_root),
                 }
             except Exception:
                 pass  # corrupt draft → fall through to empty
@@ -8208,6 +8210,19 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
         "override_count": 0,
         "can_generate": True,
     }
+
+
+def _read_raw_chart_json(trade_date: str, project_root: str) -> list:
+    """Read raw chart JSON for ChartRenderer compatibility."""
+    import json as _json, os as _os
+    chart_path = _os.path.join(project_root, "frontend", "public", "api",
+                               "analyst-charts", f"{trade_date}.json")
+    if _os.path.exists(chart_path):
+        try:
+            return _json.loads(open(chart_path, encoding="utf-8").read())
+        except Exception:
+            return []
+    return []
 
 
 def _workspace_themes_from_cards(

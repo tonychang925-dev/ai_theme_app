@@ -74,13 +74,14 @@ function useEmotionTrend(tradeDate: string) {
 }
 
 // ── Main Component ──
-export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoints, tomorrowForbidden, emotionReview, chartReviews }: {
+export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoints, tomorrowForbidden, emotionReview, chartReviews, chartData }: {
   tradeDate: string;
   tomorrowOutlook?: string;
   tomorrowWatchpoints?: string[];
   tomorrowForbidden?: string[];
   emotionReview?: Record<string, any> | null;
   chartReviews?: any[] | null;
+  chartData?: any[] | null;
 }) {
   const watchpoints = tomorrowWatchpoints || [];
   const forbidden = tomorrowForbidden || [];
@@ -122,10 +123,14 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
   }, [tradeDate, emotionReview]);
 
   useEffect(() => {
-    if (chartReviews && chartReviews.length > 0) {
+    // chartData is the raw chart JSON (with 'data' field) for ChartRenderer
+    // chartReviews is the structured format from ChartReviewBuilder
+    if (chartData && chartData.length > 0) {
+      setSystemCharts(chartData);
+    } else if (chartReviews && chartReviews.length > 0) {
       setSystemCharts(chartReviews);
     }
-  }, [tradeDate, chartReviews]);
+  }, [tradeDate, chartData, chartReviews]);
 
   if (loading) return <div style={{ padding: "8px 16px", color: "#5a7a8a", fontSize: 13 }}>加载情绪数据…</div>;
   if (!emotion || !emotion.emotion_node) return <div style={{ padding: "8px 16px", color: "#ffa940", fontSize: 13 }}>该日期暂无情绪分析，请点击「启动分析」生成复盘动态数据</div>;
