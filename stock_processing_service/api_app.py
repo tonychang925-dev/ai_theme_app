@@ -8967,12 +8967,19 @@ async def _build_recap_doc_from_derived_tables(
 
 def _build_ladder_from_tags(rows: list[dict]) -> dict[str, Any]:
     """Build limit_up_ladder from ths_hot_reason_snapshot reason_tags."""
+    import json as _json
     theme_map: dict[str, list] = {}
     for r in rows:
-        tags = r.get("reason_tags", "") or ""
-        # reason_tags is semicolon-separated: "机器人;PCB;AI"
-        for tag in str(tags).split(";"):
-            tn = tag.strip()
+        tags = r.get("reason_tags")
+        if isinstance(tags, str):
+            try:
+                tags = _json.loads(tags)
+            except Exception:
+                tags = [tags] if tags else []
+        if not isinstance(tags, list):
+            tags = [str(tags)] if tags else []
+        for tag in tags:
+            tn = str(tag).strip().strip('"').strip("'")
             if tn:
                 theme_map.setdefault(tn, []).append(r)
 
