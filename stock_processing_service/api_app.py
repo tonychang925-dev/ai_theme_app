@@ -8884,6 +8884,24 @@ async def _build_recap_doc_from_derived_tables(
     recap: dict[str, Any] = {"trade_date": td, "source": "derived_tables"}
 
     async with pool.acquire() as conn:
+        # ── Resolve theme_name by looking up Chinese display names ──
+        # theme_cycle_judgement_v2.theme_name is sometimes the subject_key
+        # itself; find real names from any trade_date row with a display name.
+        name_rows = await conn.fetch("""
+            SELECT DISTINCT ON (subject_key) subject_key, theme_name
+            FROM theme_cycle_judgement_v2
+            WHERE theme_name IS NOT NULL
+              AND theme_name != subject_key
+              AND theme_name !~ '^[0-9]+$'
+            ORDER BY subject_key, trade_date DESC
+        """)
+        name_map: dict[str, str] = {}
+        for r in name_rows:
+            sk = str(r["subject_key"])
+            tn = str(r["theme_name"])
+            if tn and tn != sk and tn not in name_map.values():
+                name_map[sk] = tn
+
         # ── theme_reviews (from theme_cycle_judgement_v2) ──
         rows = await conn.fetch("""
             SELECT subject_key, theme_name,
@@ -8895,7 +8913,14 @@ async def _build_recap_doc_from_derived_tables(
             ORDER BY mainline_strength_score DESC NULLS LAST
             LIMIT 20
         """, trade_date)
-        recap["theme_reviews"] = [dict(r) for r in rows]
+        theme_reviews = []
+        for r in rows:
+            item = dict(r)
+            sk = str(item.get("subject_key", ""))
+            # Resolve to Chinese display name
+            item["theme_name"] = name_map.get(sk) or item.get("theme_name") or sk
+            theme_reviews.append(item)
+        recap["theme_reviews"] = theme_reviews
 
         # ── theme_capital_reviews (from money_flow_enhanced aggregated) ──
         cap_rows = await conn.fetch("""
