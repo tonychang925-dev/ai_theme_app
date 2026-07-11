@@ -8909,40 +8909,45 @@ async def _build_recap_doc_from_derived_tables(
 
         # ── strong_stock_reviews (from strong_stock_watch_history) ──
         stock_rows = await conn.fetch("""
-            SELECT stock_id, stock_code, stock_name, subject_key,
-                   role, role_label, composite_score,
-                   capital_score, structure_score
+            SELECT stock_id, stock_name, subject_key, theme_name,
+                   watch_score AS composite_score,
+                   relay_role AS role,
+                   support_score AS structure_score,
+                   watch_score AS capital_score
             FROM strong_stock_watch_history
             WHERE trade_date = $1
-            ORDER BY composite_score DESC NULLS LAST
+            ORDER BY watch_score DESC NULLS LAST
             LIMIT 50
         """, trade_date)
         recap["strong_stock_reviews"] = [dict(r) for r in stock_rows]
 
         # ── limit_up_ladder (from ths_hot_reason_snapshot) ──
+        # ths_hot_reason_snapshot has stock_code, stock_name, reason_tags.
+        # Group by reason_tags (theme info) to build theme-level rows.
         lu_rows = await conn.fetch("""
-            SELECT stock_id, stock_name, subject_key, theme_name,
-                   board_count, first_board_type
+            SELECT stock_code AS stock_id, stock_name,
+                   reason_tags
             FROM ths_hot_reason_snapshot
-            WHERE trade_date = $1 AND board_count > 0
-            ORDER BY board_count DESC
-            LIMIT 50
+            WHERE trade_date = $1
+            LIMIT 75
         """, trade_date)
         lu_list = [dict(r) for r in lu_rows]
         if lu_list:
-            recap["limit_up_ladder"] = _build_ladder_from_rows(lu_list)
+            recap["limit_up_ladder"] = _build_ladder_from_tags(lu_list)
 
-        # ── seat_money_summary minimal (from dragon_tiger) ──
+        # ── seat_money_summary minimal (from dragon_tiger_object) ──
         dt_rows = await conn.fetch("""
-            SELECT stock_id, stock_name, subject_key, theme_name,
-                   hot_money_name, institution_seat_count, continuous_days
-            FROM dragon_tiger_daily
-            WHERE trade_date = $1 AND hot_money_name IS NOT NULL
+            SELECT stock_id, stock_name,
+                   institution_seat_count,
+                   institution_net_buy,
+                   seat_summary
+            FROM dragon_tiger_object
+            WHERE trade_date = $1
             LIMIT 20
         """, trade_date)
         dt_list = [dict(r) for r in dt_rows]
         if dt_list:
-            recap["seat_money_summary"] = _build_seat_summary_from_rows(dt_list)
+            recap["seat_money_summary"] = _build_seat_summary_from_dt(dt_list)
 
         # ── market_regime_review minimal ──
         recap["market_regime_review"] = {"trade_mode": "normal", "allow_trade": True}
@@ -8950,51 +8955,61 @@ async def _build_recap_doc_from_derived_tables(
     return recap
 
 
-def _build_ladder_from_rows(rows: list[dict]) -> dict[str, Any]:
-    """Build limit_up_ladder structure from flat limit-up rows."""
-    # Group by board_count
-    board_map: dict[int, list] = {}
+def _build_ladder_from_tags(rows: list[dict]) -> dict[str, Any]:
+    """Build limit_up_ladder from ths_hot_reason_snapshot reason_tags."""
     theme_map: dict[str, list] = {}
     for r in rows:
-        bc = r.get("board_count", 1)
-        board_map.setdefault(bc, []).append(r)
-        tn = r.get("theme_name") or r.get("subject_key") or "其他"
-        theme_map.setdefault(tn, []).append(r)
+        tags = r.get("reason_tags", "") or ""
+        # reason_tags is semicolon-separated: "机器人;PCB;AI"
+        for tag in str(tags).split(";"):
+            tn = tag.strip()
+            if tn:
+                theme_map.setdefault(tn, []).append(r)
 
-    board_rows = [
-        {"board_count": bc, "board_label": f"{bc}板", "stock_count": len(stocks)}
-        for bc, stocks in sorted(board_map.items(), reverse=True)
-    ]
     theme_rows = [
         {"theme_name": tn, "limit_up_count": len(stocks),
          "representative_stocks": [{"stock_name": s.get("stock_name", "")} for s in stocks[:3]]}
         for tn, stocks in sorted(theme_map.items(), key=lambda x: -len(x[1]))
     ]
     return {
-        "summary": f"连板分布：{'/'.join(f'{r[\"board_count\"]}板{r[\"stock_count\"]}只' for r in board_rows[:4])}",
-        "board_rows": board_rows[:5],
+        "summary": f"涨停{len(rows)}家，{len(theme_rows)}个方向",
+        "board_rows": [],
         "theme_rows": theme_rows[:15],
     }
 
 
-def _build_seat_summary_from_rows(rows: list[dict]) -> dict[str, Any]:
-    """Build minimal seat_money_summary from dragon tiger rows."""
+def _build_seat_summary_from_dt(rows: list[dict]) -> dict[str, Any]:
+    """Build seat_money_summary from dragon_tiger_object rows."""
+    import json as _json
     institution_rows: list[dict] = []
     hot_money_rows: list[dict] = []
+
     for r in rows:
-        name = r.get("hot_money_name", "")
-        if not name:
-            continue
-        entry = {
-            "stock_name": r.get("stock_name", ""),
-            "theme_name": r.get("theme_name", ""),
-            "hot_money_name": name,
-            "continuous_days": r.get("continuous_days", 1),
-        }
-        if r.get("institution_seat_count", 0) > 0:
-            institution_rows.append(entry)
-        else:
-            hot_money_rows.append(entry)
+        inst_count = r.get("institution_seat_count", 0) or 0
+        if inst_count > 0:
+            institution_rows.append({
+                "stock_name": r.get("stock_name", ""),
+                "net_buy": r.get("institution_net_buy"),
+                "institution_seat_count": inst_count,
+            })
+
+        # seat_summary is JSON with hot money names
+        seat_raw = r.get("seat_summary")
+        if isinstance(seat_raw, str):
+            try:
+                seat_raw = _json.loads(seat_raw)
+            except Exception:
+                seat_raw = None
+        if isinstance(seat_raw, list):
+            for seat in seat_raw:
+                if isinstance(seat, dict):
+                    hm_name = seat.get("name") or seat.get("hot_money_name") or ""
+                    if hm_name:
+                        hot_money_rows.append({
+                            "stock_name": r.get("stock_name", ""),
+                            "hot_money_name": str(hm_name),
+                        })
+
     return {
         "institution_buy_rows": institution_rows[:10],
         "hot_money_buy_rows": hot_money_rows[:10],
