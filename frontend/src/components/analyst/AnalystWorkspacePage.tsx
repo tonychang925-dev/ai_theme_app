@@ -789,7 +789,7 @@ export function AnalystWorkspacePage() {
 
       {/* Tab 1: Emotion Dashboard */}
       <div style={{ flex: 1, overflow: "auto", background: "#0c1118", display: activeTab === "emotion" ? "block" : "none" }}>
-        <EmotionDashboard key={`${dateInput}-${genKey}`} tradeDate={dateInput} tomorrowOutlook={tomorrowOutlook} tomorrowWatchpoints={tomorrowWatchpoints} tomorrowForbidden={tomorrowForbidden} />
+        <EmotionDashboard key={`${dateInput}-${genKey}`} tradeDate={dateInput} tomorrowOutlook={tomorrowOutlook} tomorrowWatchpoints={tomorrowWatchpoints} tomorrowForbidden={tomorrowForbidden} emotionReview={(workspace as any)?.emotion_review} chartReviews={(workspace as any)?.chart_reviews} />
       </div>
 
       {/* Tab 2: Three-panel body — dark theme */}

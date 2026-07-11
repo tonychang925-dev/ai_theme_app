@@ -8163,6 +8163,8 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
                 "themes": themes,
                 "watch_groups": [],
                 "override_count": snap.get("override_summary", {}).get("total", 0),
+                "emotion_review": snap.get("emotion_review") or {},
+                "chart_reviews": snap.get("chart_reviews") or [],
             }
         except Exception:
             pass  # corrupt snapshot → fall through to draft
@@ -8189,6 +8191,8 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
                     "draft_version": draft.get("draft_version", 0),
                     "source_quality": draft.get("source_quality", 0),
                     "missing_fields": draft.get("missing_fields", []),
+                    "emotion_review": draft.get("emotion_review") or {},
+                    "chart_reviews": draft.get("chart_reviews") or [],
                 }
             except Exception:
                 pass  # corrupt draft → fall through to empty

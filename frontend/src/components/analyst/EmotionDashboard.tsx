@@ -74,11 +74,13 @@ function useEmotionTrend(tradeDate: string) {
 }
 
 // ── Main Component ──
-export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoints, tomorrowForbidden }: {
+export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoints, tomorrowForbidden, emotionReview, chartReviews }: {
   tradeDate: string;
   tomorrowOutlook?: string;
   tomorrowWatchpoints?: string[];
   tomorrowForbidden?: string[];
+  emotionReview?: Record<string, any> | null;
+  chartReviews?: any[] | null;
 }) {
   const watchpoints = tomorrowWatchpoints || [];
   const forbidden = tomorrowForbidden || [];
@@ -113,7 +115,41 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
   }, [tradeDate]);
 
 
+  // PR4.2: use emotion/chart data from workbench snapshot when available
+  // (prevents reading stale raw JSON that should only be generate artifacts)
   useEffect(() => {
+    if (emotionReview && emotionReview.emotion_node) {
+      const er = emotionReview;
+      setEmotion({
+        trade_date: tradeDate,
+        emotion_node: er.emotion_node,
+        emotion_desc: er.summary || "",
+        emotion_score: er.emotion_score || 0,
+        confidence: er.confidence ?? 0.5,
+        breadth_score: er.breadth_score || 0, breadth_label: er.breadth_label || "",
+        momentum_score: er.momentum_score || 0, momentum_label: er.momentum_label || "",
+        relay_score: er.relay_score || 0, relay_label: er.relay_label || "",
+        capital_score: er.capital_score || 0, capital_label: er.capital_label || "",
+        style_score: er.style_score || 0, style_label: er.style_label || "",
+        key_evidence: er.key_evidence || [],
+        strategy_bias: er.strategy_bias || "",
+        raw: {} as any,
+      } as EmotionState);
+      setLoading(false);
+      return;
+    }
+  }, [tradeDate, emotionReview]);
+
+  useEffect(() => {
+    if (chartReviews && chartReviews.length > 0) {
+      setSystemCharts(chartReviews);
+      return;
+    }
+  }, [tradeDate, chartReviews]);
+
+  useEffect(() => {
+    // Skip raw JSON fetch if we already have emotion data from props
+    if (emotionReview && emotionReview.emotion_node) return;
     setLoading(true);
     setEmotion(null);
     const ctrl = new AbortController();
