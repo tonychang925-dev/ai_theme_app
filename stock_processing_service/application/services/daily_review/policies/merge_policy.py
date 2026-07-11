@@ -12,6 +12,10 @@ Enforces the constitutional merge rules:
     PLAN:
       Analyst final_value > Approved playbook > Engine plan > Legacy
 
+    IDENTITY:
+      Analyst explicit identity override > AI/entity identity.
+      Example: subject_name "人形机器人" → "PCB"
+
     AUDIT:
       Append only. Never overwrite.
 
@@ -25,6 +29,7 @@ from typing import Any
 
 class FieldClass:
     FACT = "FACT"
+    IDENTITY = "IDENTITY"
     ASSESSMENT = "ASSESSMENT"
     PLAN = "PLAN"
     AUDIT = "AUDIT"
@@ -74,6 +79,23 @@ def resolve_plan(
         if val is not None and val != "" and val != [] and val != {}:
             return val
     return None
+
+
+def resolve_identity(
+    *,
+    entity_value: Any = None,
+    override: dict[str, Any] | None = None,
+) -> Any:
+    """Resolve an IDENTITY field.
+
+    Identity fields name or key the business entity itself. They are not FACT
+    fields, but they also should not be inferred from legacy fallbacks. Only an
+    explicit analyst override is allowed to replace the AI/entity value.
+    """
+    final_value = override_final_value(override)
+    if final_value is not None and final_value != "":
+        return final_value
+    return entity_value
 
 
 def resolve_audit(existing: dict[str, Any], incoming: dict[str, Any]) -> dict[str, Any]:
@@ -156,3 +178,74 @@ def first_override_by_subject(
         if override:
             return override.get("analyst_value") or override.get("final_value")
     return None
+
+
+def normalize_subject_identity(value: Any) -> str:
+    """Normalize subject identifiers for exact identity matching."""
+    text = str(value or "").strip()
+    if text.startswith("theme:"):
+        return text.removeprefix("theme:")
+    return text
+
+
+def subject_identity_matches(card: dict[str, Any], subject_key: str | None) -> bool:
+    """Return True when a cognition card refers to the projection subject."""
+    if not subject_key:
+        return True
+    target = normalize_subject_identity(subject_key)
+    candidates = [
+        card.get("subject_key"),
+        card.get("subject_id"),
+        card.get("subject_name"),
+        card.get("theme_name"),
+        card.get("name"),
+    ]
+    return any(normalize_subject_identity(candidate) == target for candidate in candidates)
+
+
+def explicit_field_override(
+    card: dict[str, Any] | None,
+    field_name: str,
+) -> dict[str, Any] | None:
+    """Extract an explicit override from card.field_overrides.
+
+    This is intentionally separate from dual-track review fields because
+    identity edits such as subject_name live in field_overrides and are not
+    encoded as top-level {override: true} review fields.
+    """
+    if not isinstance(card, dict):
+        return None
+    overrides = card.get("field_overrides")
+    if not isinstance(overrides, dict):
+        return None
+    override = overrides.get(field_name)
+    if isinstance(override, dict):
+        return override
+    return None
+
+
+def override_final_value(override: dict[str, Any] | None) -> Any:
+    """Return the explicit analyst/final value from a field override."""
+    if not isinstance(override, dict):
+        return None
+    for key in ("final_value", "analyst_value"):
+        value = override.get(key)
+        if value is not None and value != "" and value != [] and value != {}:
+            return value
+    return None
+
+
+def resolve_identity_override_for_subject(
+    *,
+    card: dict[str, Any] | None,
+    subject_key: str | None,
+    field_name: str,
+    entity_value: Any = None,
+) -> Any:
+    """Resolve an identity field for a single subject cognition card."""
+    if not isinstance(card, dict) or not subject_identity_matches(card, subject_key):
+        return entity_value
+    return resolve_identity(
+        entity_value=entity_value,
+        override=explicit_field_override(card, field_name),
+    )

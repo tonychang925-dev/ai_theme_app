@@ -25,9 +25,13 @@ from __future__ import annotations
 from typing import Any
 
 from ..policies.merge_policy import (
+    explicit_field_override,
     first_non_null,
+    override_final_value,
+    normalize_subject_identity,
     resolve_assessment,
     resolve_fact,
+    resolve_identity_override_for_subject,
 )
 
 
@@ -83,19 +87,33 @@ def project_theme_structure(
         if sk:
             drivers_by_key[sk] = de.get("driver_events") or []
 
-    cognition_by_key: dict[str, dict[str, Any]] = {}
-    for card in cards:
-        sid = str(card.get("subject_id", ""))
-        if sid:
-            cognition_by_key[sid] = card
-
     # ── Step 2: Subject Union ──
+    non_cognition_keys: set[str] = set()
+    non_cognition_keys.update(theme_by_key.keys())
+    non_cognition_keys.update(capital_by_key.keys())
+    non_cognition_keys.update(mainline_by_key.keys())
+    non_cognition_keys.update(drivers_by_key.keys())
+
+    cognition_by_key: dict[str, dict[str, Any]] = {}
+    cognition_subject_keys: set[str] = set()
+    for card in cards:
+        candidates = _card_subject_keys(card)
+        if not candidates:
+            continue
+        for candidate in candidates:
+            cognition_by_key[candidate] = card
+            normalized = normalize_subject_identity(candidate)
+            if normalized:
+                cognition_by_key[normalized] = card
+                cognition_by_key[f"theme:{normalized}"] = card
+        cognition_subject_keys.add(_preferred_subject_key(candidates, non_cognition_keys))
+
     all_keys: set[str] = set()
     all_keys.update(theme_by_key.keys())
     all_keys.update(capital_by_key.keys())
     all_keys.update(mainline_by_key.keys())
     all_keys.update(drivers_by_key.keys())
-    all_keys.update(cognition_by_key.keys())
+    all_keys.update(cognition_subject_keys)
 
     # ── Step 3: Compile each theme ──
     themes: list[dict[str, Any]] = []
@@ -130,6 +148,34 @@ def project_theme_structure(
 # ── private helpers ──
 
 
+def _card_subject_keys(card: dict[str, Any]) -> list[str]:
+    keys: list[str] = []
+    for field in ("subject_id", "subject_key", "theme_key", "subject_name", "theme_name", "name"):
+        value = str(card.get(field, "") or "").strip()
+        if value and value not in keys:
+            keys.append(value)
+    return keys
+
+
+def _preferred_subject_key(candidates: list[str], existing_keys: set[str]) -> str:
+    """Choose the subject key that preserves existing source identity."""
+    if not existing_keys:
+        return candidates[0]
+
+    by_normalized = {
+        normalize_subject_identity(key): key
+        for key in existing_keys
+        if normalize_subject_identity(key)
+    }
+    for candidate in candidates:
+        if candidate in existing_keys:
+            return candidate
+        normalized = normalize_subject_identity(candidate)
+        if normalized in by_normalized:
+            return by_normalized[normalized]
+    return candidates[0]
+
+
 def _compile_theme(
     *,
     subject_key: str,
@@ -159,6 +205,13 @@ def _compile_theme(
     # name_map fallback
     if not theme_name:
         theme_name = name_map.get(subject_key, subject_key)
+
+    theme_name = resolve_identity_override_for_subject(
+        card=cognition_card,
+        subject_key=subject_key,
+        field_name="subject_name",
+        entity_value=theme_name,
+    )
 
     # Filter noise keys
     if _is_noise_subject_key(subject_key, theme_name):
@@ -373,6 +426,18 @@ def _build_analyst_view(
     ]
 
     overrides: list[dict[str, Any]] = []
+    subject_name_override = explicit_field_override(cognition_card, "subject_name")
+    subject_name_final = override_final_value(subject_name_override)
+    if subject_name_override and subject_name_final:
+        overrides.append({
+            "field": "subject_name",
+            "ai_value": subject_name_override.get("ai_value", ""),
+            "analyst_value": subject_name_override.get("analyst_value", ""),
+            "final_value": subject_name_final,
+            "reason": subject_name_override.get("reason", ""),
+            "field_class": "IDENTITY",
+        })
+
     for field in override_fields:
         val = cognition_card.get(field)
         if isinstance(val, dict) and val.get("override") is True:
