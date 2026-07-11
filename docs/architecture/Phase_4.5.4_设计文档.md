@@ -940,7 +940,7 @@ Compiler Boundary：
 | PR2.3b Next Day Plan | ✅ Completed | `scenario + watch + confirmation + invalidation + forbidden` |
 | PR3 Projection Diff | ✅ Completed | 7/9 Golden + FACT/ASSESSMENT/PLAN diff |
 | PR4 FormalReview UI | ✅ Completed | FormalReviewView 双轨 UI |
-| PR5 Multi-day Observe | ⏳ Planned | 5+ 交易日观察 |
+| PR5 Formal Review Stabilization | 🟡 In Progress | 自动化 5 场景通过；真实 5 交易日 approved snapshot 观察待补 |
 | PR6 Legacy Removal | ⏳ Planned | compatibility 与旧字段移除 |
 
 #### PR1a Output Cleanup
@@ -1043,7 +1043,7 @@ PR2.3 已完成，拆分为两段：
 
 #### 当前评价
 
-Phase 4.5.6 当前约完成 90%。FormalReviewProjectionCompiler 已具备完整六章输出能力，通过 2026-07-09 Projection Diff 黄金测试，并已双轨接入 FormalReviewView：
+Phase 4.5.6 当前约完成 92%。FormalReviewProjectionCompiler 已具备完整六章输出能力，通过 2026-07-09 Projection Diff 黄金测试，已双轨接入 FormalReviewView，且 PR5 自动化稳定性通过：
 
 ```text
 Market State
@@ -1077,4 +1077,23 @@ PR4 验证结果：
 - 静态契约禁止 FormalReviewView 直接读取 legacy DailyReviewV2 字段。
 - `npm run build` 通过。
 
-下一步进入 PR5 Multi-day Observe，验证新结构跨交易日稳定性。
+PR5 当前状态：
+
+- 自动化 5 场景稳定性测试通过：
+  - 主线明确日
+  - 多题材轮动日
+  - 退潮日
+  - 图表数据降级日
+  - 无 Approved Snapshot 场景
+- 本地真实 approved snapshot 不足 5 个交易日，不能宣称真实多日观察完成。
+- PR6 Legacy Removal 仍被阻断。
+
+新增测试与报告：
+
+- `stock_processing_service/tests/unit/test_projection_stabilization_scenarios.py`
+- `docs/project_control/TEST_CASE_SPEC_Phase_4.5.6_FormalReview.md`
+- `docs/test_reports/phase456_formal_review_stabilization.md`
+- `docs/test_reports/formal_review_legacy_coverage.md`
+- `docs/test_reports/formal_review_observation_log.md`
+
+下一步补齐真实 5 交易日 approved snapshot 双轨观察，再评估 PR6。

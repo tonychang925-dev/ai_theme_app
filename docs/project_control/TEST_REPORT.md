@@ -219,6 +219,63 @@
 - 当前约束：
   - `冲高回落占比 / 日内回落占比 / 昨日涨停股今开红比` 如来自日频代理，必须显式标注 `日频代理`
 
+## 12. 增量记录：`Phase 4.5.6 Formal Review Stabilization`
+
+### 基本信息
+
+- Milestone: `Phase 4.5.6`
+- 范围: `PR5 Formal Review Stabilization`
+- 执行时间: `2026-07-11`
+- 风险等级: `Medium`
+
+### 测试范围
+
+- 覆盖：
+  - `FormalReviewProjectionCompiler`
+  - `formal_review` 六章模型
+  - `FormalReviewView`
+  - Recap Workbench First 契约
+- 未覆盖：
+  - 5 个真实交易日 approved snapshot 双轨人工观察
+  - PR6 Legacy Removal
+
+### 执行命令记录
+
+| 序号 | 命令 | 执行结果 | 关键输出 |
+|---|---|---|---|
+| 1 | `/opt/miniconda3/envs/theme_matcher_env/bin/python -m pytest stock_processing_service/tests/unit/test_projection_stabilization_scenarios.py stock_processing_service/tests/unit/test_projection_formal_schema.py stock_processing_service/tests/unit/test_projection_diff_20260709.py stock_processing_service/tests/unit/test_projection_capital_plan.py stock_processing_service/tests/unit/test_projection_theme_stock_merge.py -q` | 通过 | `17 passed in 0.41s` |
+| 2 | `node scripts/test-formal-review-view-contract.mjs` | 通过 | `formal review view contract passed` |
+| 3 | `node scripts/test-recap-workbench-first-contract.mjs` | 通过 | `recap workbench-first contract passed` |
+| 4 | `node scripts/test-workbench-generate-flow-contract.mjs` | 通过 | `workbench generate flow contract passed` |
+| 5 | `npm run build` | 通过 | `✓ built`；仅 Vite chunk size warning |
+
+### 测试结果统计
+
+| 项目 | 数值 |
+|---|---:|
+| 自动化后端用例 | 17 |
+| 前端契约脚本 | 3 |
+| 前端构建 | 1 |
+| 通过数 | 21 |
+| 失败数 | 0 |
+| 跳过数 | 0 |
+| 通过率 | 100% |
+
+### 缺陷记录
+
+| 缺陷ID | 严重级别 | 描述 | 当前状态 |
+|---|---|---|---|
+| P456-PR5-001 | P2 | 本地缺少 5 个完整 approved snapshot，无法完成真实多交易日观察 | 待补真实交易日数据 |
+
+### 发布建议
+
+- ✅ PR5 自动化稳定性部分建议通过。
+- ❌ 不建议启动 PR6 Legacy Removal。
+
+详细报告：
+
+- `docs/test_reports/phase456_formal_review_stabilization.md`
+
 ## 12. 增量记录：`Phase 4.5.5-RA E2E 2026-07-09`
 
 ### 基本信息

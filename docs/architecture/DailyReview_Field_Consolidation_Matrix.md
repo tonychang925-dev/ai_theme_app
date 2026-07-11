@@ -797,14 +797,14 @@ stocks_by_code[stock_code] = merged_stock_entity
 | PR2.3b Next Day Plan | ✅ Completed | `scenario + watch + confirmation + invalidation + forbidden` |
 | PR3 Projection Diff | ✅ Completed | 7/9 Golden + FACT/ASSESSMENT/PLAN diff |
 | PR4 FormalReview UI | ✅ Completed | FormalReviewView 双轨 UI |
-| PR5 Multi-day Observe | ⏳ Planned | 5+ 交易日观察 |
+| PR5 Formal Review Stabilization | 🟡 In Progress | 自动化 5 场景通过；真实 5 交易日 approved snapshot 观察待补 |
 | PR6 Legacy Removal | ⏳ Planned | compatibility 与旧字段移除 |
 
 下一步建议：
 
-1. 进入 PR5 Multi-day Observe，至少观察 5 个交易日。
-2. 保持 dual-track，等待 PR5 结果稳定。
-3. PR6 再移除 compatibility 与旧字段。
+1. 补齐 PR5 真实 5 交易日 approved snapshot 双轨观察。
+2. 生成 Coverage Report / Missing Semantic Report / User Reading Report。
+3. 真实观察完成前禁止 PR6 移除 compatibility 与旧字段。
 
 ## 16. PR2.3 设计约束（2026-07-11）
 
@@ -883,7 +883,7 @@ Next Day Plan 统一承接所有“明天怎么办”的信息来源。
 
 ### 16.4 当前完成度
 
-Phase 4.5.6 当前约完成 90%。FormalReviewProjectionCompiler 已具备完整六章输出能力，FormalReviewView 已双轨接入 Recap：
+Phase 4.5.6 当前约完成 92%。FormalReviewProjectionCompiler 已具备完整六章输出能力，FormalReviewView 已双轨接入 Recap，PR5 自动化稳定性已通过：
 
 ```text
 Market State
@@ -897,7 +897,7 @@ Capital Evidence
 Next Day Plan
 ```
 
-PR4 FormalReview UI 已通过。下一步进入 PR5 Multi-day Observe，验证新结构跨交易日稳定性。
+PR5 自动化稳定性已通过，但真实 5 交易日 approved snapshot 观察未完成。PR6 Legacy Removal 仍被阻断。
 
 ## 17. PR2.3 实施记录（2026-07-11）
 
@@ -1044,3 +1044,39 @@ FormalReviewView 只消费：
 | `node scripts/test-formal-review-view-contract.mjs` | ✅ 通过 |
 | `node scripts/test-recap-workbench-first-contract.mjs` | ✅ 通过 |
 | `npm run build` | ✅ 通过 |
+
+## 20. PR5 Formal Review Stabilization 记录（2026-07-11）
+
+新增：
+
+- `stock_processing_service/tests/unit/test_projection_stabilization_scenarios.py`
+- `docs/project_control/TEST_CASE_SPEC_Phase_4.5.6_FormalReview.md`
+- `docs/test_reports/phase456_formal_review_stabilization.md`
+- `docs/test_reports/formal_review_legacy_coverage.md`
+- `docs/test_reports/formal_review_observation_log.md`
+- `docs/project_control/TEST_REPORT.md` 增量记录
+
+自动化覆盖 5 类场景：
+
+| 场景 | 目的 | 结果 |
+|---|---|---|
+| clear_mainline | 主线明确日 | ✅ PASS |
+| multi_theme_rotation | 多题材轮动日 | ✅ PASS |
+| fade_day | 退潮日 | ✅ PASS |
+| degraded_chart_data | 图表数据降级日 | ✅ PASS |
+| no_approved_snapshot | 无 Approved Snapshot 场景 | ✅ PASS |
+
+验证：
+
+| 验证项 | 结果 |
+|---|---|
+| PR5 projection stabilization tests | ✅ 17 passed |
+| FormalReviewView contract | ✅ 通过 |
+| Recap Workbench First contract | ✅ 通过 |
+
+真实观察状态：
+
+- 当前本地运行态不足 5 个完整 approved snapshot。
+- 不能宣称真实 5 交易日观察完成。
+- PR6 Legacy Removal 暂不允许启动。
+- `formal_review_legacy_coverage.md` 与 `formal_review_observation_log.md` 已建立为 PR6 准入跟踪文件。
