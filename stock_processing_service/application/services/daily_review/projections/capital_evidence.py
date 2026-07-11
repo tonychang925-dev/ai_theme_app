@@ -62,6 +62,16 @@ def project_capital_evidence(
             engine.get("driver_event_narrative"),
             _dict(engine.get("market_hotspot_narrative")).get("summary"),
         ),
+        # PR-S2: institution/hot_money direction + limitup classification
+        "institution_direction": _build_institution_direction(
+            engine, builder_theme_capital_reviews, seat_summary,
+        ),
+        "hot_money_direction": _build_hot_money_direction(
+            engine, seat_summary, builder_dragon_tiger_reviews,
+        ),
+        "limitup_classification": _build_limitup_classification(
+            engine, builder_theme_capital_reviews,
+        ),
     }
 
 
@@ -313,3 +323,167 @@ def _sum_ints(*values: Any) -> int:
         except (TypeError, ValueError):
             continue
     return total
+
+
+# ── PR-S2: institution / hot_money direction + limitup classification ──
+
+
+def _build_institution_direction(
+    engine: dict[str, Any],
+    theme_capital: list[dict[str, Any]] | None,
+    seat_summary: dict[str, Any],
+) -> list[dict[str, Any]]:
+    """Build institution direction from seat_money_summary + theme capital data.
+
+    Sources (no DB access):
+      - seat_summary.institution_buy_rows — institution seat activity
+      - theme_capital — theme-level capital inflow data
+    """
+    directions: list[dict[str, Any]] = []
+    seen: set[str] = set()
+
+    # Source A: institution buy rows from seat summary
+    inst_rows = _list_of_dicts(seat_summary.get("institution_buy_rows"))
+    for row in inst_rows:
+        theme = str(row.get("theme_name") or row.get("stock_name") or "")
+        if not theme or theme in seen:
+            continue
+        seen.add(theme)
+        directions.append({
+            "theme": theme,
+            "net_buy": row.get("net_buy"),
+            "seat_count": row.get("institution_seat_count"),
+            "reason": row.get("reason", ""),
+        })
+
+    # Source B: theme capital reviews with strong inflows
+    for tc in _list_of_dicts(theme_capital):
+        theme = str(tc.get("theme_name") or "")
+        if not theme or theme in seen:
+            continue
+        inflow = tc.get("total_inflow") or 0
+        if isinstance(inflow, (int, float)) and inflow > 0:
+            seen.add(theme)
+            directions.append({
+                "theme": theme,
+                "total_inflow": inflow,
+                "leader_inflow": tc.get("leader_inflow"),
+                "cycle_stage": tc.get("cycle_stage", ""),
+            })
+
+    return directions[:12]
+
+
+def _build_hot_money_direction(
+    engine: dict[str, Any],
+    seat_summary: dict[str, Any],
+    dragon_tiger: list[dict[str, Any]] | None,
+) -> list[dict[str, Any]]:
+    """Build hot money direction from seat_summary + dragon tiger data.
+
+    Sources (no DB access):
+      - seat_summary.hot_money_buy_rows — hot money seat activity
+      - dragon_tiger — dragon/tiger board data with hot money names
+    """
+    directions: list[dict[str, Any]] = []
+    seen: set[str] = set()
+
+    # Source A: hot money buy rows
+    hm_rows = _list_of_dicts(seat_summary.get("hot_money_buy_rows"))
+    for row in hm_rows:
+        theme = str(row.get("theme_name") or row.get("stock_name") or "")
+        if not theme or theme in seen:
+            continue
+        seen.add(theme)
+        directions.append({
+            "theme": theme,
+            "hot_money_name": row.get("hot_money_name", ""),
+            "net_buy": row.get("net_buy"),
+            "reason": row.get("reason", ""),
+        })
+
+    # Source B: dragon tiger hot money activity
+    for dt in _list_of_dicts(dragon_tiger):
+        hm_name = str(dt.get("hot_money_name") or "")
+        if not hm_name:
+            continue
+        theme = str(dt.get("theme_name") or dt.get("stock_name") or hm_name)
+        if theme in seen:
+            continue
+        seen.add(theme)
+        directions.append({
+            "theme": theme,
+            "hot_money_name": hm_name,
+            "continuous_days": dt.get("continuous_days"),
+            "reason": dt.get("reason", ""),
+        })
+
+    return directions[:12]
+
+
+def _build_limitup_classification(
+    engine: dict[str, Any],
+    theme_capital: list[dict[str, Any]] | None,
+) -> dict[str, Any]:
+    """Build limitup classification from engine limit_up data.
+
+    Sources (no DB access):
+      - limit_up_ladder.theme_rows — theme-level limit up distribution
+      - limit_up_theme_matrix.columns — theme × board matrix
+    """
+    ladder = _dict(engine.get("limit_up_ladder"))
+    matrix = _dict(engine.get("limit_up_theme_matrix"))
+
+    # Theme-level limit up counts
+    theme_counts: list[dict[str, Any]] = []
+    theme_rows = _list_of_dicts(ladder.get("theme_rows"))
+
+    for row in theme_rows[:15]:
+        theme_counts.append({
+            "theme": str(row.get("theme_name", "")),
+            "limit_up_count": row.get("limit_up_count", 0),
+            "active_mainline": row.get("active_mainline", False),
+            "representative_stocks": [
+                s.get("stock_name", "") for s in _list_of_dicts(row.get("representative_stocks"))[:3]
+            ],
+        })
+
+    # If theme_rows is empty, try matrix columns
+    if not theme_counts:
+        columns = _list_of_dicts(matrix.get("columns"))
+        for col in columns[:15]:
+            theme_counts.append({
+                "theme": str(col.get("theme_name", "")),
+                "limit_up_count": col.get("limit_up_count", 0),
+                "active_mainline": col.get("active_mainline", False),
+                "focus_stocks": [
+                    s.get("stock_name", "") for s in _list_of_dicts(col.get("focus_stocks"))[:3]
+                ],
+            })
+
+    # If still empty, try theme_capital with limit_up_count
+    if not theme_counts:
+        for tc in _list_of_dicts(theme_capital):
+            lu = tc.get("limit_up_count")
+            if lu and int(lu) > 0:
+                theme_counts.append({
+                    "theme": str(tc.get("theme_name", "")),
+                    "limit_up_count": int(lu),
+                })
+
+    total_lu = sum(t.get("limit_up_count", 0) for t in theme_counts)
+
+    return {
+        "total": ladder.get("summary", "") or f"涨停{total_lu}家",
+        "by_theme": theme_counts[:15],
+        "board_summary": {
+            "board_rows": [
+                {
+                    "board_label": str(r.get("board_label", "")),
+                    "board_count": r.get("board_count", 0),
+                    "stock_count": r.get("stock_count", 0),
+                }
+                for r in _list_of_dicts(ladder.get("board_rows"))[:5]
+            ],
+        },
+    }
