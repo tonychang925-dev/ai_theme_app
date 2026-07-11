@@ -20,7 +20,7 @@ from .draft import DraftStore
 from .session import SessionStore, WorkbenchStatus
 
 
-ChartProvider = Callable[[str], Awaitable[list[dict[str, Any]]]]
+ChartProvider = Callable[[str, Any | None], Awaitable[list[dict[str, Any]]]]
 EmotionProvider = Callable[[str], Awaitable[dict[str, Any]]]
 TrendUpdater = Callable[[str, list[dict[str, Any]]], None]
 
@@ -216,7 +216,7 @@ class AnalystWorkbenchGenerateService:
         try:
             if self.chart_provider is None:
                 raise RuntimeError("chart_provider is not configured")
-            charts = await self.chart_provider(trade_date_str)
+            charts = await self.chart_provider(trade_date_str, self.pool)
             chart_dir = self.project_root / "frontend" / "public" / "api" / "analyst-charts"
             chart_dir.mkdir(parents=True, exist_ok=True)
             (chart_dir / f"{trade_date_str}.json").write_text(

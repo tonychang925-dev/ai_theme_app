@@ -7550,7 +7550,7 @@ async def get_analyst_charts(trade_date: str) -> list[dict[str, Any]]:
         raise HTTPException(status_code=500, detail=f"Invalid generated chart artifact: {exc}")
 
 
-async def _build_analyst_charts_from_metrics(trade_date: str) -> list[dict[str, Any]]:
+async def _build_analyst_charts_from_metrics(trade_date: str, pool: Any = None) -> list[dict[str, Any]]:
     """Build analyst chart data for Workbench generate.
 
     This is an internal producer path. Public GET /analyst-charts is intentionally
@@ -7572,6 +7572,9 @@ async def _build_analyst_charts_from_metrics(trade_date: str) -> list[dict[str, 
         # ── Load recap for thematic charts 5-7 ──
         recap = await _load_recap_doc(td)
 
+        # PR-S3: when recap empty, build from derived tables via pool
+        if (not recap or not (recap.get("theme_reviews") or recap.get("strong_hotspot_subjects"))) and pool:
+            recap = await _build_recap_doc_from_derived_tables(pool, td)
 
         # ── Load PDF calibration ──
         pdf_cal = ChartReproductionEngine.load_pdf_calibration(td)
