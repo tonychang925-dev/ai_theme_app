@@ -28,6 +28,8 @@ def project_executive_summary(
     snapshot_emotion: dict[str, Any] | None = None,
     snapshot_narrative: dict[str, Any] | None = None,
     snapshot_cognition_cards: list[dict[str, Any]] | None = None,
+    theme_reviews: list[dict[str, Any]] | None = None,
+    name_map: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     """Build the executive_summary block.
 
@@ -81,7 +83,10 @@ def project_executive_summary(
     if not primary_theme and cards:
         top_card = _top_attention_card(cards)
         if top_card:
-            primary_theme = top_card.get("subject_name", "")
+            name = top_card.get("subject_name", "")
+            # subject_name may be a numeric subject_key — resolve from
+            # theme_reviews if available (populated by DerivedRecapDocReader)
+            primary_theme = _resolve_theme_name(name, theme_reviews or [], name_map or {})
 
     # ── secondary_themes ──
     secondary_themes: list[str] = []
@@ -170,3 +175,26 @@ def _extract_subject_name(cards: list[dict[str, Any]], match_value: str) -> str 
             if isinstance(val, dict) and val.get("final_value") == match_value:
                 return card.get("subject_name")
     return None
+
+
+def _resolve_theme_name(
+    raw: str,
+    theme_reviews: list[dict[str, Any]],
+    name_map: dict[str, str],
+) -> str:
+    """Resolve a numeric subject_key to its Chinese display name."""
+    if not raw:
+        return ""
+    # If already a Chinese name, return as-is
+    if not raw.isdigit():
+        return raw
+    # Try name_map first
+    if name_map and raw in name_map:
+        return name_map[raw]
+    # Try theme_reviews
+    for tr in theme_reviews:
+        sk = str(tr.get("subject_key", ""))
+        tn = str(tr.get("theme_name", ""))
+        if sk == raw and tn and not tn.isdigit():
+            return tn
+    return raw
