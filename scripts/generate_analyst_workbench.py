@@ -13,6 +13,7 @@ import os
 import sys
 from datetime import date, datetime, timezone
 from pathlib import Path
+from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -35,6 +36,8 @@ def main():
                         help="AI chart JSON directory")
     parser.add_argument("--emotion-dir", default="frontend/public/api",
                         help="Emotion JSON directory")
+    parser.add_argument("--context-file", default=None,
+                        help="Draft context JSON path (from DraftContextBuilder)")
     args = parser.parse_args()
 
     trade_date = date.fromisoformat(args.date)
@@ -106,13 +109,27 @@ def main():
     if skip_fetch:
         print("Chart/emotion fetch skipped (SPS_SKIP_FETCH=1), reading from disk")
 
+    # ── PR1.1: Load draft context if available ──
+    context: dict[str, Any] | None = None
+    if args.context_file:
+        ctx_path = Path(args.context_file)
+        if ctx_path.exists():
+            try:
+                context = json.loads(ctx_path.read_text(encoding="utf-8"))
+                print(f"Draft context loaded: {ctx_path} (sources: {context.get('missing_sources', [])})")
+            except Exception as e:
+                print(f"  Context load failed: {e}")
+
     missing: list[str] = []
 
     if chart_path.exists():
         try:
             charts = json.loads(chart_path.read_text())
             draft.attention_state = {"charts_available": len(charts)}
-            draft.cognition_cards = _build_cognition_cards(charts)
+            draft.cognition_cards = _build_cognition_cards_from_context(context)
+            if not draft.cognition_cards:
+                print("  Draft context produced no cognition cards; refusing chart-derived fallback")
+                return 2
             # Phase 4.5.4: structured chart reviews
             from stock_processing_service.application.services.analyst_workbench.chart_review_builder import (
                 ChartReviewBuilder,
@@ -155,6 +172,14 @@ def main():
 
     draft.missing_fields = missing
     draft.source_quality = max(0.50, 1.0 - len(missing) * 0.15)
+
+    # ── PR1.1: context trace (what data the AI saw) ──
+    if context:
+        draft.attention_state["context_source"] = "draft_context_builder"
+        draft.attention_state["context_quality"] = context.get("source_quality", 1.0)
+        draft.attention_state["context_missing"] = context.get("missing_sources", [])
+        draft.attention_state["context_theme_count"] = len(context.get("themes") or [])
+        draft.attention_state["context_strong_stock_count"] = len(context.get("strong_stocks") or [])
 
     # Save draft
     path = draft_store.save(draft)
@@ -263,6 +288,48 @@ def _build_cognition_cards(charts: list[dict]) -> list[dict]:
                     "score": d.get("score", 0),
                     "source_chart": ct,
                 })
+    return cards
+
+
+def _build_cognition_cards_from_context(context: dict[str, Any] | None) -> list[dict]:
+    """Build cognition cards from Workbench DraftContext.
+
+    Charts are a visualization layer. The Workbench AI draft should prefer
+    derived theme entities produced by the post-market derived data pipeline.
+    """
+    if not context:
+        return []
+    themes = context.get("themes") or []
+    if not isinstance(themes, list):
+        return []
+
+    cards: list[dict[str, Any]] = []
+    for item in themes:
+        if not isinstance(item, dict):
+            continue
+        subject_key = str(item.get("subject_key") or "")
+        subject_name = str(item.get("theme_name") or subject_key)
+        if not subject_name:
+            continue
+        capital = item.get("capital") if isinstance(item.get("capital"), dict) else {}
+        top_stocks = capital.get("top_stocks") if isinstance(capital, dict) else []
+        evidence_refs = item.get("evidence_refs") or []
+        if not isinstance(evidence_refs, list):
+            evidence_refs = []
+        cards.append({
+            "subject_id": f"theme:{subject_key}" if subject_key else f"theme:{subject_name}",
+            "subject_key": subject_key,
+            "subject_name": subject_name,
+            "state": item.get("stage") or item.get("final_cycle_state") or "",
+            "role": item.get("role") or "WATCH",
+            "score": item.get("mainline_strength_score") or item.get("confidence_score") or 0,
+            "capital": capital,
+            "drivers": evidence_refs[:5],
+            "risk_flags": item.get("risk_flags") or [],
+            "state_transition_reason": item.get("state_transition_reason") or "",
+            "top_stocks": top_stocks[:5] if isinstance(top_stocks, list) else [],
+            "source": "draft_context.derived",
+        })
     return cards
 
 

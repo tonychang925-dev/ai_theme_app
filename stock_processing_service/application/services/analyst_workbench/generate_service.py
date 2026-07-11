@@ -103,6 +103,26 @@ class AnalystWorkbenchGenerateService:
         if emotion_step.status == "success":
             steps_completed.append("emotion")
 
+        # ── Build AI Draft Context (PR1.1) ──
+        context_step = await self._build_draft_context(trade_date_str)
+        generation_steps.append(context_step)
+        if context_step.status == "success":
+            steps_completed.append("draft_context")
+        elif context_step.status == "failed_precondition":
+            self._persist_generation_steps(trade_date, generation_steps, status=WorkbenchStatus.FAILED)
+            return WorkbenchGenerateResult(
+                trade_date=trade_date_str,
+                status="failed_precondition",
+                steps_completed=tuple(steps_completed),
+                generation_steps=tuple(generation_steps),
+                session_status=WorkbenchStatus.FAILED,
+                draft_version=0,
+                derived_status=derived_status,
+                draft_status="not_started",
+                missing_tables=tuple(missing_tables),
+                error=context_step.error,
+            )
+
         draft_step = await self._run_draft_cli(trade_date_str)
         generation_steps.append(draft_step)
         if draft_step.status == "success":
@@ -257,13 +277,91 @@ class AnalystWorkbenchGenerateService:
                 error=str(exc)[:500],
             )
 
+    async def _build_draft_context(self, trade_date_str: str) -> WorkbenchGenerationStep:
+        """Build AI Draft context from generated chart/emotion data (PR1.1).
+
+        Packages derived data into AnalystDraftContext so the AI draft
+        generator has the full market picture, not just raw JSON files.
+        """
+        started = _now()
+        try:
+            from .draft_context_builder import (
+                DraftContextBuilder,
+                write_context_file,
+            )
+            from .derived_context_reader import DerivedContextReader
+            builder = DraftContextBuilder(project_root=self.project_root)
+
+            # Load the chart/emotion JSON we just generated
+            chart_path = self.project_root / "frontend" / "public" / "api" / "analyst-charts" / f"{trade_date_str}.json"
+            emotion_path = self.project_root / "frontend" / "public" / "api" / f"emotion-{trade_date_str}.json"
+
+            charts = None
+            if chart_path.exists():
+                charts = json.loads(chart_path.read_text(encoding="utf-8"))
+            emotion = None
+            if emotion_path.exists():
+                emotion = json.loads(emotion_path.read_text(encoding="utf-8"))
+
+            td = date.fromisoformat(trade_date_str)
+            derived_context = await DerivedContextReader(pool=self.pool).read(td)
+
+            ctx = builder.build(
+                trade_date=trade_date_str,
+                chart_json=charts,
+                emotion_json=emotion,
+                derived_context=derived_context,
+            )
+
+            # Write context file alongside the draft
+            ctx_path = write_context_file(ctx, self._workbench_base_dir() / trade_date_str)
+            diagnostics = {
+                "context_path": str(ctx_path),
+                "source_quality": ctx.source_quality,
+                "missing_sources": ctx.missing_sources,
+                "theme_count": len(ctx.themes),
+                "strong_stock_count": len(ctx.strong_stocks),
+                "quality": ctx.quality,
+                "warnings": ctx.warnings,
+            }
+            if ctx.quality == "FAILED":
+                return WorkbenchGenerationStep(
+                    step="draft_context",
+                    status="failed_precondition",
+                    started_at=started,
+                    finished_at=_now(),
+                    error="draft context has no derived themes or strong stocks",
+                    diagnostics=diagnostics,
+                )
+            return WorkbenchGenerationStep(
+                step="draft_context",
+                status="success",
+                started_at=started,
+                finished_at=_now(),
+                diagnostics=diagnostics,
+            )
+        except Exception as exc:
+            return WorkbenchGenerationStep(
+                step="draft_context",
+                status="failed",
+                started_at=started,
+                finished_at=_now(),
+                error=str(exc)[:500],
+            )
+
     async def _run_draft_cli(self, trade_date_str: str) -> WorkbenchGenerationStep:
         started = _now()
         script = self.project_root / "scripts" / "generate_analyst_workbench.py"
 
+        # PR1.1: pass draft context file if available
+        context_path = self._workbench_base_dir() / trade_date_str / "draft_context.json"
+
         def run() -> subprocess.CompletedProcess[str]:
+            cmd = [self.python_executable, str(script), "--date", trade_date_str]
+            if context_path.exists():
+                cmd.extend(["--context-file", str(context_path)])
             return subprocess.run(
-                [self.python_executable, str(script), "--date", trade_date_str],
+                cmd,
                 capture_output=True,
                 text=True,
                 timeout=self.cli_timeout_sec,

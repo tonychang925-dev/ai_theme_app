@@ -2327,38 +2327,43 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
 
     builder = PostMarketDailyReviewV2Builder()
     row = await _fetch_latest_post_market_recap_snapshot_row(d)
-    if not row:
-        return builder.build(trade_date=d, recap_doc=None)
+    recap_doc: dict[str, Any] = {}
+    recap_snapshot_version = ""
+    if row:
+        payload = _normalize_recap_payload(row)
+        recap_doc = payload.get("recap_doc") or payload
+        if not isinstance(recap_doc, dict):
+            recap_doc = {}
 
-    payload = _normalize_recap_payload(row)
-    recap_doc = payload.get("recap_doc") or payload
-    if not isinstance(recap_doc, dict):
-        recap_doc = {}
+        recap_doc = await _enrich_recap_doc_with_limit_up_board_counts(d, recap_doc)
+        recap_doc = await _enrich_recap_doc_with_new_high_summary(d, recap_doc)
+        recap_doc = await _enrich_recap_doc_with_seat_money_context(d, recap_doc)
+        recap_snapshot_version = str(row.get("snapshot_version") or "")
 
-    recap_doc = await _enrich_recap_doc_with_limit_up_board_counts(d, recap_doc)
-    recap_doc = await _enrich_recap_doc_with_new_high_summary(d, recap_doc)
-    recap_doc = await _enrich_recap_doc_with_seat_money_context(d, recap_doc)
     structured_v2 = builder.build(
         trade_date=d,
-        recap_doc=recap_doc,
-        recap_snapshot_version=str(row.get("snapshot_version") or ""),
+        recap_doc=recap_doc or None,
+        recap_snapshot_version=recap_snapshot_version,
     )
     v2 = structured_v2
 
-    # ── PR-14A: enrich with engine report on every read ──
-    try:
-        from stock_processing_service.application.services.post_market_engine_report_composer import (
-            PostMarketEngineReportComposer,
-        )
-        composer = PostMarketEngineReportComposer()
-        composer_input = {**recap_doc, **v2}
-        engine_report = composer.compose(composer_input)
-        v2 = {**v2, **engine_report}
-        for key in ("daily_recap_essentials", "limit_up_ladder", "limit_up_theme_events", "new_high_summary", "seat_money_summary"):
-            if key in structured_v2:
-                v2[key] = structured_v2[key]
-    except Exception:
-        pass
+    # ── PR-14A: enrich with engine report on every read only when legacy
+    # recap evidence exists. Clean Workbench replay must not depend on DB
+    # post_market_recap_snapshot.
+    if row:
+        try:
+            from stock_processing_service.application.services.post_market_engine_report_composer import (
+                PostMarketEngineReportComposer,
+            )
+            composer = PostMarketEngineReportComposer()
+            composer_input = {**recap_doc, **v2}
+            engine_report = composer.compose(composer_input)
+            v2 = {**v2, **engine_report}
+            for key in ("daily_recap_essentials", "limit_up_ladder", "limit_up_theme_events", "new_high_summary", "seat_money_summary"):
+                if key in structured_v2:
+                    v2[key] = structured_v2[key]
+        except Exception:
+            pass
 
     v2 = await _enrich_v2_theme_names(v2, d)
 
@@ -2376,6 +2381,12 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
     # ── Phase 4.5.5: enrich with workbench section content from draft or snapshot ──
     try:
         v2 = _enrich_v2_with_workbench_sections(v2, d)
+    except Exception:
+        pass
+
+    # ── Phase 4.5.6 PR4.1: compile formal_review from approved snapshot ──
+    try:
+        v2 = _enrich_v2_with_formal_review(v2, d)
     except Exception:
         pass
 
@@ -8152,6 +8163,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
                     "trade_date": trade_date,
                     "is_ai_draft": True,
                     "analyst_finalized": False,
+                    "cognition_cards": draft.get("cognition_cards", []),
                     "themes": themes,
                     "watch_groups": [],
                     "override_count": 0,
@@ -8185,6 +8197,7 @@ def _workspace_themes_from_cards(
         name = card.get("subject_name", "") or card.get("name", "")
         if not name:
             continue
+        subject_key = card.get("subject_key") or name
         score = card.get("score", 50)
         if rank < 5:
             level = "CRITICAL"
@@ -8193,11 +8206,17 @@ def _workspace_themes_from_cards(
         else:
             level = "MEDIUM"
         themes.append({
-            "subject_id": f"theme:{name}",
+            "subject_id": card.get("subject_id") or f"theme:{subject_key}",
+            "subject_key": subject_key,
             "subject_name": name,
             "attention_level": level,
             "attention_score": score,
-            "attention_reasons": [card.get("state", "")],
+            "attention_reasons": [
+                item for item in [
+                    card.get("state", ""),
+                    card.get("state_transition_reason", ""),
+                ] if item
+            ],
             "ai_recommended": True,
             "analyst_added": False,
             "trading_style": "",
@@ -8216,7 +8235,7 @@ def _workspace_themes_from_cards(
             "is_ai_draft": True,
             "analyst_reviewed": False,
             "field_overrides": {},
-            "leaders": [],
+            "leaders": card.get("top_stocks", [])[:5] if isinstance(card.get("top_stocks"), list) else [],
             "bull_pool": [],
             "bear_pool": [],
         })
@@ -8688,6 +8707,96 @@ def _inject_sections(v2: dict[str, Any], source: dict[str, Any]) -> dict[str, An
             val = source.get(src_key)
             if val is not None and val != [] and val != {}:
                 v2[v2_key] = val
+
+    return v2
+
+
+def _enrich_v2_with_formal_review(v2: dict[str, Any], trade_date: date) -> dict[str, Any]:
+    """Compile formal_review from approved snapshot and add to v2 response.
+
+    Only runs when an approved snapshot exists on disk and formal_review
+    is not already present (e.g. from compose-from-workbench).
+
+    This closes the PR4.1 read-path gap: formal_review was previously only
+    available in the POST compose response, never in the GET read path.
+    """
+    # If already set by compose endpoint, don't recompute
+    if v2.get("formal_review"):
+        return v2
+
+    import json as _json
+    import os as _os
+
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    snap_path = _os.path.join(
+        _project_root, "tmp", "analyst_workbench",
+        trade_date.isoformat(), "snapshot.json",
+    )
+    if not _os.path.exists(snap_path):
+        return v2
+
+    try:
+        snap_data = _json.loads(open(snap_path, encoding="utf-8").read())
+    except Exception:
+        return v2
+
+    # Must have approval metadata
+    if not snap_data.get("approved"):
+        return v2
+    sn_hash = snap_data.get("snapshot_hash", "")
+    if not sn_hash:
+        return v2
+
+    # Build snapshot meta from disk data
+    snapshot_meta = {
+        "mode": snap_data.get("approval_mode", "analyst_approved"),
+        "session_status": "APPROVED",
+        "can_generate_formal_report": True,
+        "snapshot_version": snap_data.get("snapshot_version"),
+        "approved_by": snap_data.get("approved_by", ""),
+        "approved_at": snap_data.get("approved_at", ""),
+        "snapshot_hash": sn_hash,
+        "approval_mode": snap_data.get("approval_mode", ""),
+        "source_mode": snap_data.get("source_mode", ""),
+        "composition_mode": snap_data.get("composition_mode", ""),
+    }
+
+    from stock_processing_service.application.services.daily_review.formal_review_projection_compiler import (
+        FormalReviewProjectionCompiler,
+    )
+
+    # Build a minimal snapshot-like object for the compiler
+    # The compiler extracts: emotion_review, narrative, playbook, cognition_cards, chart_reviews
+    from types import SimpleNamespace
+
+    snapshot = SimpleNamespace(**snap_data)
+
+    compiler = FormalReviewProjectionCompiler()
+    proj = compiler.compile(
+        trade_date=trade_date,
+        engine_report=v2,  # v2 already contains engine_report fields
+        snapshot=snapshot,
+        snapshot_meta=snapshot_meta,
+        source_info=v2.get("source"),
+        theme_name_map=v2.get("theme_name_map"),
+        snapshot_version=v2.get("snapshot_version"),
+        builder_theme_reviews=v2.get("theme_reviews"),
+        builder_theme_capital_reviews=v2.get("theme_capital_reviews"),
+        builder_strong_stock_reviews=v2.get("strong_stock_reviews"),
+        builder_watchlist_reviews=v2.get("watchlist_reviews"),
+        builder_stock_capital_reviews=v2.get("stock_capital_reviews"),
+        builder_money_flow_reviews=v2.get("money_flow_reviews"),
+        builder_dragon_tiger_reviews=v2.get("dragon_tiger_reviews"),
+        builder_abnormal_reviews=v2.get("abnormal_reviews"),
+        builder_post_market_setup_plan=v2.get("post_market_setup_plan"),
+        builder_trading_principle=v2.get("trading_principle"),
+    )
+
+    proj_dict = proj.to_dict()
+    v2["metadata"] = proj_dict.get("metadata", {})
+    v2["formal_review"] = proj_dict.get("formal_review", {})
+    v2["evidence_appendix"] = proj_dict.get("evidence_appendix", {})
+    v2["diagnostics"] = {**v2.get("diagnostics", {}), **proj_dict.get("diagnostics", {})}
 
     return v2
 

@@ -38,6 +38,17 @@ class SuccessfulGenerateService(AnalystWorkbenchGenerateService):
         session_store.transition(session, WorkbenchStatus.DRAFT_READY, draft_version=1)
         return WorkbenchGenerationStep(step="draft", status="success")
 
+    async def _build_draft_context(self, trade_date_str):
+        return WorkbenchGenerationStep(
+            step="draft_context",
+            status="success",
+            diagnostics={
+                "quality": "GOOD",
+                "theme_count": 1,
+                "strong_stock_count": 1,
+            },
+        )
+
 
 class FailingDerivedGenerateService(AnalystWorkbenchGenerateService):
     async def _run_derived_data(self, trade_date, *, force):
@@ -50,6 +61,18 @@ class FailingDerivedGenerateService(AnalystWorkbenchGenerateService):
             "failed_precondition",
             ["theme_cycle_judgement_v2"],
         )
+
+
+class EmptyContextGenerateService(AnalystWorkbenchGenerateService):
+    async def _run_derived_data(self, trade_date, *, force):
+        return (
+            WorkbenchGenerationStep(step="derived_data", status="success"),
+            "success",
+            [],
+        )
+
+    async def _run_draft_cli(self, trade_date_str):
+        raise AssertionError("draft CLI should not run when draft_context failed")
 
 
 async def _charts(_trade_date: str):
@@ -75,11 +98,12 @@ async def test_tc_p455_01_given_generate_when_success_then_steps_are_recorded(tm
     result = await service.generate(date(2026, 7, 10))
 
     assert result.status == "completed"
-    assert result.steps_completed == ("derived_data", "charts", "emotion", "workbench")
+    assert result.steps_completed == ("derived_data", "charts", "emotion", "draft_context", "workbench")
     assert [step.step for step in result.generation_steps] == [
         "derived_data",
         "charts",
         "emotion",
+        "draft_context",
         "draft",
     ]
     session = SessionStore(base_dir=str(tmp_path / "tmp" / "analyst_workbench")).get(date(2026, 7, 10))
@@ -88,6 +112,7 @@ async def test_tc_p455_01_given_generate_when_success_then_steps_are_recorded(tm
         "derived_data",
         "charts",
         "emotion",
+        "draft_context",
         "draft",
     ]
 
@@ -135,3 +160,22 @@ async def test_tc_p455_01_given_approved_session_when_generate_then_derived_not_
     assert result.derived_status == "not_started"
     assert result.generation_steps[0].step == "generate_guard"
     assert "APPROVED" in result.error
+
+
+async def test_tc_p455_rb_given_empty_context_when_generate_then_draft_not_started(tmp_path):
+    service = EmptyContextGenerateService(
+        project_root=tmp_path,
+        chart_provider=_charts,
+        emotion_provider=_emotion,
+        base_dir="tmp/analyst_workbench",
+    )
+
+    result = await service.generate(date(2026, 7, 10))
+
+    assert result.status == "failed_precondition"
+    assert result.draft_status == "not_started"
+    assert result.generation_steps[-1].step == "draft_context"
+    assert result.generation_steps[-1].status == "failed_precondition"
+    assert "no derived themes or strong stocks" in result.error
+    session = SessionStore(base_dir=str(tmp_path / "tmp" / "analyst_workbench")).get(date(2026, 7, 10))
+    assert session.status == WorkbenchStatus.FAILED

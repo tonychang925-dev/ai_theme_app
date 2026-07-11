@@ -1484,7 +1484,15 @@ export function RecapPage() {
     ]);
     if (snapshot) setPayload(snapshot);
     if (dr) setDailyReview(dr);
-    if (v2) setDailyReviewV2(v2);
+    if (v2) {
+      setDailyReviewV2((prev) => {
+        // PR4.1: preserve formal_review from compose if GET doesn't include it
+        if (!v2.formal_review && prev?.formal_review) {
+          return { ...v2, formal_review: prev.formal_review, metadata: prev.metadata, evidence_appendix: prev.evidence_appendix };
+        }
+        return v2;
+      });
+    }
     return snapshot;
   }
 
@@ -1642,21 +1650,23 @@ export function RecapPage() {
                   approval={dailyReviewV2.workbench_approval}
                 />
               )}
-              {isPostMarket && dailyReviewV2 && (
+              {isPostMarket && !dailyReviewV2?.formal_review && dailyReviewV2 && (
                 <WorkbenchSectionsPanel data={dailyReviewV2} />
               )}
               {isPostMarket ? (
-                engineReportReady ? (
-                <EnginePostMarketView
-                  dailyReviewV2={dailyReviewV2!}
-                  tradeDate={tradeDate}
-                  subjectKeyToThemeName={themeNameBySubjectKey}
-                />
-                ) : (
-                  <EngineMissingState
-                    dailyReviewV2={dailyReviewV2}
-                    onRetry={handleStartPostMarketRecap}
-                  />
+                dailyReviewV2?.formal_review ? null : (
+                  engineReportReady ? (
+                    <EnginePostMarketView
+                      dailyReviewV2={dailyReviewV2!}
+                      tradeDate={tradeDate}
+                      subjectKeyToThemeName={themeNameBySubjectKey}
+                    />
+                  ) : (
+                    <EngineMissingState
+                      dailyReviewV2={dailyReviewV2}
+                      onRetry={handleStartPostMarketRecap}
+                    />
+                  )
                 )
               ) : (
                 <LegacyRecapSections
