@@ -7572,10 +7572,6 @@ async def _build_analyst_charts_from_metrics(trade_date: str) -> list[dict[str, 
         # ── Load recap for thematic charts 5-7 ──
         recap = await _load_recap_doc(td)
 
-        # If recap is empty (e.g. clean replay without DB snapshot), build a
-        # minimal recap from derived data tables so charts 5-7 have content.
-        if not recap or not (recap.get("theme_reviews") or recap.get("strong_hotspot_subjects")):
-            recap = await _build_minimal_recap_from_tables(td, recap)
 
         # ── Load PDF calibration ──
         pdf_cal = ChartReproductionEngine.load_pdf_calibration(td)
@@ -7588,78 +7584,6 @@ async def _build_analyst_charts_from_metrics(trade_date: str) -> list[dict[str, 
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc))
-
-
-async def _build_minimal_recap_from_tables(td, existing: dict) -> dict:
-    """Build minimal theme/hotspot data from derived tables when recap_doc is empty.
-
-    Charts 5-7 (institution_style, hot_money_style, limitup_classification)
-    read theme_reviews and strong_hotspot_subjects from recap_doc. When the
-    post_market_recap_snapshot row doesn't exist (clean replay), query the
-    derived data tables directly.
-    """
-    import asyncpg
-    recap = dict(existing) if existing else {}
-    if not recap.get("theme_reviews"):
-        try:
-            conn = await asyncpg.connect("postgresql://localhost:5432/stock_data_test", user="postgres", password="")
-            try:
-                rows = await conn.fetch("""
-                    SELECT subject_key, theme_name, final_cycle_state, mainline_strength_score
-                    FROM theme_cycle_judgement_v2
-                    WHERE trade_date = $1
-                    ORDER BY mainline_strength_score DESC NULLS LAST
-                    LIMIT 15
-                """, td)
-                theme_reviews = []
-                for r in rows:
-                    theme_reviews.append({
-                        "subject_key": r["subject_key"],
-                        "theme_name": r["theme_name"] or r["subject_key"],
-                        "cycle_state": r["final_cycle_state"] or "unknown",
-                        "mainline_strength_score": float(r["mainline_strength_score"] or 50),
-                    })
-                if theme_reviews:
-                    recap["theme_reviews"] = theme_reviews
-            finally:
-                await conn.close()
-        except Exception:
-            pass
-
-    if not recap.get("strong_hotspot_subjects"):
-        try:
-            conn = await asyncpg.connect("postgresql://localhost:5432/stock_data_test", user="postgres", password="")
-            try:
-                rows = await conn.fetch("""
-                    SELECT DISTINCT ON (sk.subject_key)
-                        sk.subject_key,
-                        sk.stock_name AS theme_name,
-                        COALESCE(tc.final_cycle_state, 'fermentation') AS cycle_state
-                    FROM strong_stock_watch sk
-                    LEFT JOIN theme_cycle_judgement_v2 tc
-                        ON tc.subject_key = sk.subject_key AND tc.trade_date = $1
-                    WHERE sk.trade_date = $1
-                    LIMIT 15
-                """, td)
-                subjects = []
-                for r in rows:
-                    subjects.append({
-                        "subject_key": r["subject_key"],
-                        "theme_name": r["theme_name"] or r["subject_key"],
-                        "cycle_state": r["cycle_state"] or "fermentation",
-                        "source": "derived_strong_stock",
-                    })
-                if subjects:
-                    recap["strong_hotspot_subjects"] = subjects
-            finally:
-                await conn.close()
-        except Exception:
-            pass
-
-    if not recap.get("market_regime_review"):
-        recap["market_regime_review"] = {"trade_mode": "normal"}
-
-    return recap
 
 
 async def _load_recap_doc(trade_date) -> dict:
