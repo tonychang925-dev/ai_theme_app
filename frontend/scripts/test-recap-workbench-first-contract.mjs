@@ -25,6 +25,30 @@ function assertRecapDoesNotGenerateDerivedData() {
     !recapSource.includes("生成动态复盘数据"),
     "RecapPage progress UI must not present derived-data production as a recap responsibility",
   );
+  assert(
+    !recapSource.includes("force: true"),
+    "RecapPage must not send force:true for formal report generation",
+  );
+  assert(
+    !recapSource.includes("generatePostMarketRecap(tradeDate, true"),
+    "RecapPage must not force a recap rebuild",
+  );
+  assert(
+    !recapSource.includes("generatePostMarketRecap("),
+    "RecapPage formal report button must not call legacy post-market recap generation",
+  );
+  assert(
+    !recapSource.includes("generateDailyReviewV2(tradeDate, true"),
+    "RecapPage must not force DailyReviewV2 regeneration",
+  );
+  assert(
+    !recapSource.includes("generateDailyReviewV2("),
+    "RecapPage formal report button must not call legacy DailyReviewV2 generation",
+  );
+  assert(
+    recapSource.includes("composeDailyReviewFromWorkbench"),
+    "RecapPage formal report button must use compose-from-workbench",
+  );
 }
 
 function assertBackendApiRemainsAvailable() {

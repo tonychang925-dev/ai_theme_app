@@ -218,6 +218,45 @@
   - 全量 `昨日涨停池 + 高标池` 分钟级回落口径
 - 当前约束：
   - `冲高回落占比 / 日内回落占比 / 昨日涨停股今开红比` 如来自日频代理，必须显式标注 `日频代理`
+
+## 12. 增量记录：`Phase 4.5.5-RA E2E 2026-07-09`
+
+### 基本信息
+
+- Milestone: `Phase 4.5.5-RA`
+- Phase: `Analyst Workbench First Responsibility Alignment`
+- 执行时间: `2026-07-11`
+- 测试数据日期: `2026-07-09`
+- 详细报告: `docs/test_reports/phase455_e2e_20260709.md`
+
+### 执行命令
+
+| 命令 | 结果 | 关键输出 |
+|---|---|---|
+| `.venv/bin/python scripts/phase455_e2e_20260709.py` | 通过 | 所有 checks=true；snapshot hash `274226d88b1f656e3f5d420a2c3d36f80234861249369c717dc7b2ec0785d2df` |
+| `node scripts/test-recap-workbench-first-contract.mjs` | 通过 | `recap workbench-first contract passed` |
+| `node scripts/test-recap-default-data-mode-contract.mjs` | 通过 | `recap default data_mode contract passed` |
+| `node scripts/test-recap-daily-review-v2-contract.mjs` | 通过 | `recap daily_review_v2 contract passed` |
+| `.venv/bin/python -m pytest stock_processing_service/tests/unit/test_workbench_phase455_generate.py stock_processing_service/tests/unit/test_workbench_phase455_compose_gate.py stock_processing_service/tests/unit/test_workbench_phase455_review_merger.py stock_processing_service/tests/unit/test_workbench_phase455_responsibility_contract.py stock_processing_service/tests/unit/test_workbench_phase454.py stock_processing_service/tests/unit/test_workbench_approval_gate.py stock_processing_service/tests/unit/test_workbench_session.py` | 通过 | `39 passed in 1.73s` |
+| `npm run build` | 未通过 | 既有 `AnalystWorkspacePage.tsx` / `EmotionDashboard.tsx` 类型债；`RecapPage.tsx` 不在失败列表 |
+
+### 验证结论
+
+- Workbench draft 生成通过：`DRAFT_READY`, chart_reviews=6, cognition_cards=27。
+- 分析师校准进入 snapshot：`PCB印制电路板.stage_judgement.final_value=PCB成为资金承接方向`。
+- Formal compose 只读 approved snapshot：报告 `snapshot_hash` 与 approved snapshot 一致。
+- 新 AI draft 不污染正式报告：draft_v2 写入人形机器人判断后，formal report 仍输出 PCB。
+- Recap 页面职责收敛通过：契约测试禁止 derived-data generate 和 `force=true`。
+
+### 发现的问题
+
+- `P455-E2E-001`：真实 `tmp/analyst_workbench/2026-07-09/snapshot.json` 是 PR4 前旧格式，缺少 `snapshot_hash`，当前 formal gate 会拒绝。需要对真实 7/9 session 重新 approve 或执行 snapshot 元数据迁移。
+- `P455-E2E-002`：前端全量 build 仍受既有 `AnalystWorkspacePage.tsx` / `EmotionDashboard.tsx` 类型债影响。
+
+### 发布建议
+
+- ✅ Phase 4.5.5-RA 代码职责边界建议通过。
+- ⚠️ 正式使用 2026-07-09 runtime 快照前，必须完成旧 snapshot 重批或迁移。
   - 只有在接入真实分钟数据源后，才允许升级成分钟真值
 
 ### 当前结论

@@ -9,7 +9,9 @@ P2-2: theme_cycle_truth builder 已接入 A/B layer jobs。
 """
 from __future__ import annotations
 
+import asyncio
 import logging
+import os
 import sys
 import uuid
 from dataclasses import dataclass, field
@@ -66,6 +68,9 @@ FORCE_REBUILD_TABLES = [
     "theme_cycle_judgement_v2",
     "theme_cycle_evidence_daily",
 ]
+
+SUB_TASK_TIMEOUT_SEC = int(os.getenv("POST_MARKET_DERIVED_SUBTASK_TIMEOUT_SEC", "45"))
+SCRIPT_TASK_TIMEOUT_SEC = int(os.getenv("POST_MARKET_DERIVED_SCRIPT_TIMEOUT_SEC", "45"))
 
 
 @dataclass
@@ -156,7 +161,10 @@ class PostMarketDerivedDataGenerateUseCase:
             await jss.mark_running(trade_date_val, job_key)
             sub_result: dict[str, Any]
             try:
-                sub_result = await builder.run(trade_date_val)
+                sub_result = await asyncio.wait_for(
+                    builder.run(trade_date_val),
+                    timeout=SUB_TASK_TIMEOUT_SEC,
+                )
                 sub_status = sub_result.get("status", "failed")
                 sub_rows = sub_result.get("affected_rows", 0)
                 await jss.mark_finished(trade_date_val, job_key, sub_status,
@@ -167,6 +175,18 @@ class PostMarketDerivedDataGenerateUseCase:
                     "job_key": job_key, "status": sub_status, "affected_rows": sub_rows,
                     "result": sub_result,
                 })
+            except asyncio.TimeoutError:
+                logger.exception("sub task %s timed out", job_key)
+                await jss.mark_finished(trade_date_val, job_key, "failed",
+                    error_code="TIMEOUT",
+                    error_message=f"sub task timed out after {SUB_TASK_TIMEOUT_SEC}s")
+                sub_result = {
+                    "job_key": job_key,
+                    "status": "failed",
+                    "error_code": "TIMEOUT",
+                    "error": f"sub task timed out after {SUB_TASK_TIMEOUT_SEC}s",
+                }
+                job_results.append(sub_result)
             except Exception as exc:
                 logger.exception("sub task %s failed", job_key)
                 await jss.mark_finished(trade_date_val, job_key, "failed",
@@ -424,8 +444,6 @@ class _HotMoneyActivityBuilder:
         self._project_root = project_root
 
     async def run(self, trade_date: date) -> dict[str, Any]:
-        import os
-
         script = Path(self._project_root) / "database_service/scripts/build_hot_money_trading_activity.py"
         if not script.exists():
             return {"job_key": "hot_money_activity_build", "status": "failed_precondition",
@@ -433,17 +451,11 @@ class _HotMoneyActivityBuilder:
 
         td_str = trade_date.isoformat()
         token = os.environ.get("TUSHARE_TOKEN", "")
-        argv = [str(script), "--trade-date", td_str]
+        argv = [sys.executable, str(script), "--trade-date", td_str, "--no-fetch"]
         if token:
             argv.extend(["--token", token])
-
-        _orig_argv = sys.argv[:]
-        sys.argv = argv
-        try:
-            from database_service.scripts.build_hot_money_trading_activity import main_async
-            exit_code = await main_async()
-        finally:
-            sys.argv = _orig_argv
+        proc_result = await _run_subprocess(argv, timeout_sec=SCRIPT_TASK_TIMEOUT_SEC)
+        exit_code = proc_result["returncode"]
 
         row_count = 0
         if self._pool:
@@ -463,12 +475,14 @@ class _HotMoneyActivityBuilder:
                 "affected_rows": 0,
                 "error_code": "HOT_MONEY_ACTIVITY_EMPTY",
                 "error": "hot_money_trading_activity rows=0 after source rows were normalized",
+                "diagnostics": proc_result,
             }
         return {
             "job_key": "hot_money_activity_build",
             "status": "failed",
             "affected_rows": 0,
             "error": f"hot_money_activity exit_code={exit_code}",
+            "diagnostics": proc_result,
         }
 
 
@@ -487,11 +501,10 @@ class _ThemeLeaderCandidateBuilder:
                     "error": f"script not found: {script}"}
         td_str = trade_date.isoformat()
         try:
-            proc = await asyncio.create_subprocess_exec(
-                sys.executable, str(script), "--trade-date", td_str,
-                stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+            proc_result = await _run_subprocess(
+                [sys.executable, str(script), "--trade-date", td_str],
+                timeout_sec=SCRIPT_TASK_TIMEOUT_SEC,
             )
-            stdout, stderr = await proc.communicate()
         except Exception as exc:
             return {"job_key": "theme_leader_candidate_build", "status": "failed",
                     "affected_rows": 0, "error": str(exc)[:200]}
@@ -504,12 +517,12 @@ class _ThemeLeaderCandidateBuilder:
                 row_count = int(r["cnt"]) if r else 0
         if row_count > 0:
             return {"job_key": "theme_leader_candidate_build", "status": "success", "affected_rows": row_count}
-        stderr_text = (stderr or b"").decode("utf-8", errors="replace").strip()
-        stdout_text = (stdout or b"").decode("utf-8", errors="replace").strip()
+        stderr_text = str(proc_result.get("stderr") or "").strip()
+        stdout_text = str(proc_result.get("stdout") or "").strip()
         error_text = stderr_text or stdout_text or "theme_leader_candidate rows=0"
         return {"job_key": "theme_leader_candidate_build", "status": "failed_no_rows",
                 "affected_rows": 0, "error": error_text[:500],
-                "diagnostics": {"exit_code": proc.returncode}}
+                "diagnostics": {"exit_code": proc_result.get("returncode"), **proc_result}}
 
 
 class _MoneyFlowEnhancedBuilder:
@@ -541,11 +554,10 @@ class _MoneyFlowEnhancedBuilder:
 
         td_str = trade_date.isoformat()
         try:
-            proc = await asyncio.create_subprocess_exec(
-                sys.executable, str(script), "--trade-date", td_str,
-                stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE,
+            proc_result = await _run_subprocess(
+                [sys.executable, str(script), "--trade-date", td_str],
+                timeout_sec=SCRIPT_TASK_TIMEOUT_SEC,
             )
-            stdout, stderr = await proc.communicate()
         except Exception as exc:
             return {"job_key": "money_flow_enhanced_build", "status": "failed",
                     "affected_rows": 0, "error": str(exc)[:200]}
@@ -560,7 +572,8 @@ class _MoneyFlowEnhancedBuilder:
         if row_count > 0:
             return {"job_key": "money_flow_enhanced_build", "status": "success", "affected_rows": row_count}
         return {"job_key": "money_flow_enhanced_build", "status": "failed_no_rows",
-                "affected_rows": 0, "error": f"exit={proc.returncode}"}
+                "affected_rows": 0, "error": f"exit={proc_result.get('returncode')}",
+                "diagnostics": proc_result}
 
 
 class _StockAbnormalSignalBuilder:
@@ -649,3 +662,46 @@ class _StrongStockWatchBuilder:
                     "affected_rows": row_count, "diagnostics": diag}
         return {"job_key": "strong_stock_watch_build", "status": "failed_no_rows",
                 "affected_rows": 0, "diagnostics": diag, "error": "strong_stock_watch_history rows=0"}
+
+
+async def _run_subprocess(argv: list[str], *, timeout_sec: int) -> dict[str, Any]:
+    proc = await asyncio.create_subprocess_exec(
+        *argv,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    try:
+        stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout=timeout_sec)
+    except asyncio.TimeoutError:
+        proc.kill()
+        stdout, stderr = await proc.communicate()
+        return {
+            "returncode": proc.returncode,
+            "timeout": True,
+            "timeout_sec": timeout_sec,
+            "stdout": (stdout or b"").decode("utf-8", errors="replace")[-1000:],
+            "stderr": (stderr or b"").decode("utf-8", errors="replace")[-1000:],
+            "argv": _sanitize_argv(argv),
+        }
+    return {
+        "returncode": proc.returncode,
+        "timeout": False,
+        "timeout_sec": timeout_sec,
+        "stdout": (stdout or b"").decode("utf-8", errors="replace")[-1000:],
+        "stderr": (stderr or b"").decode("utf-8", errors="replace")[-1000:],
+        "argv": _sanitize_argv(argv),
+    }
+
+
+def _sanitize_argv(argv: list[str]) -> list[str]:
+    sanitized: list[str] = []
+    skip_next = False
+    for idx, item in enumerate(argv):
+        if skip_next:
+            sanitized.append("***")
+            skip_next = False
+            continue
+        sanitized.append(item)
+        if item == "--token" and idx + 1 < len(argv):
+            skip_next = True
+    return sanitized

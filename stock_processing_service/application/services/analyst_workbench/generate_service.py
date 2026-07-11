@@ -36,6 +36,7 @@ class AnalystWorkbenchGenerateService:
     base_dir: str = "tmp/analyst_workbench"
     python_executable: str = sys.executable
     cli_timeout_sec: int = 120
+    derived_timeout_sec: int = 90
 
     async def generate(self, trade_date: date, *, force: bool = True) -> WorkbenchGenerateResult:
         trade_date_str = trade_date.isoformat()
@@ -65,8 +66,18 @@ class AnalystWorkbenchGenerateService:
                 error=step.error,
             )
 
+        if session.status != WorkbenchStatus.GENERATING:
+            session = session_store.transition(session, WorkbenchStatus.GENERATING)
+        running_step = WorkbenchGenerationStep(
+            step="derived_data",
+            status="running",
+            started_at=_now(),
+        )
+        generation_steps.append(running_step)
+        self._persist_generation_steps(trade_date, generation_steps)
+
         derived_step, derived_status, missing_tables = await self._run_derived_data(trade_date, force=force)
-        generation_steps.append(derived_step)
+        generation_steps[-1] = derived_step
         if derived_step.status == "success":
             steps_completed.append("derived_data")
         else:
@@ -140,7 +151,10 @@ class AnalystWorkbenchGenerateService:
             uc.register_money_flow_enhanced_build(project_root=str(self.project_root))
             uc.register_stock_abnormal_signal_build(project_root=str(self.project_root))
             uc.register_strong_stock_watch_build()
-            result = await uc.execute(trade_date, force=force)
+            result = await asyncio.wait_for(
+                uc.execute(trade_date, force=force),
+                timeout=self.derived_timeout_sec,
+            )
             diagnostics = {
                 "before_readiness": result.before_readiness,
                 "after_readiness": result.after_readiness,
@@ -159,15 +173,21 @@ class AnalystWorkbenchGenerateService:
                 list(result.missing_tables or []),
             )
         except Exception as exc:
+            status = "timeout" if isinstance(exc, asyncio.TimeoutError) else "failed"
+            error = (
+                f"derived data timeout after {self.derived_timeout_sec}s"
+                if isinstance(exc, asyncio.TimeoutError)
+                else str(exc)[:500]
+            )
             return (
                 WorkbenchGenerationStep(
                     step="derived_data",
-                    status="failed",
+                    status=status,
                     started_at=started,
                     finished_at=_now(),
-                    error=str(exc)[:500],
+                    error=error,
                 ),
-                "failed",
+                status,
                 [],
             )
 
@@ -288,6 +308,7 @@ class AnalystWorkbenchGenerateService:
         session.generation_steps = [step.to_dict() for step in generation_steps]
         if status == WorkbenchStatus.FAILED and session.status in (
             WorkbenchStatus.NOT_STARTED,
+            WorkbenchStatus.GENERATING,
             WorkbenchStatus.DRAFT_READY,
             WorkbenchStatus.FAILED,
         ):

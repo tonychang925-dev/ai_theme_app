@@ -7514,10 +7514,35 @@ async def get_analyst_chart_trends(trade_date: str, days: int = 7) -> dict[str, 
 
 @app.get("/api/v1/analyst-charts/{trade_date}")
 async def get_analyst_charts(trade_date: str) -> list[dict[str, Any]]:
-    """Return analyst chart data for a trading day.
+    """Return generated analyst chart data for a trading day.
 
-    Data flow: MarketMetricsService → snapshot → ChartEngine.build()
-    Charts 1-4 from snapshot metrics, 5-7 from recap narrative data.
+    Formal UI read path is read-model only. Chart generation is triggered by
+    Analyst Workbench generate and persisted to frontend/public/api.
+    """
+    from pathlib import Path
+    from datetime import date as _date
+    import json
+
+    try:
+        _date.fromisoformat(trade_date)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+
+    path = Path(_project_root()) / "frontend" / "public" / "api" / "analyst-charts" / f"{trade_date}.json"
+    if not path.exists():
+        return []
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        return payload if isinstance(payload, list) else []
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Invalid generated chart artifact: {exc}")
+
+
+async def _build_analyst_charts_from_metrics(trade_date: str) -> list[dict[str, Any]]:
+    """Build analyst chart data for Workbench generate.
+
+    This is an internal producer path. Public GET /analyst-charts is intentionally
+    read-model only so Recap/Workbench views cannot silently regenerate data.
     """
     from datetime import date as _date
     from stock_processing_service.application.services.market_metrics.service import (
@@ -7958,7 +7983,36 @@ async def get_evidence_artifacts(
 
 @app.get("/api/v1/emotion/{trade_date}")
 async def get_market_emotion(trade_date: str) -> dict[str, Any]:
-    """Return MarketEmotionState from MarketMetricsSnapshot (M2.5 canonical)."""
+    """Return generated MarketEmotionState for a trading day.
+
+    Formal UI read path is read-model only. Emotion generation is triggered by
+    Analyst Workbench generate and persisted to frontend/public/api.
+    """
+    from pathlib import Path
+    from datetime import date as _date
+    import json
+
+    try:
+        _date.fromisoformat(trade_date)
+    except ValueError:
+        raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+
+    path = Path(_project_root()) / "frontend" / "public" / "api" / f"emotion-{trade_date}.json"
+    if not path.exists():
+        raise HTTPException(status_code=404, detail=f"No generated emotion artifact for {trade_date}")
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        return payload if isinstance(payload, dict) else {}
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Invalid generated emotion artifact: {exc}")
+
+
+async def _build_market_emotion_from_metrics(trade_date: str) -> dict[str, Any]:
+    """Build MarketEmotionState for Workbench generate.
+
+    This is an internal producer path. Public GET /emotion is intentionally
+    read-model only so clearing generated data is observable in the UI.
+    """
     from datetime import date as _date
     from stock_processing_service.application.services.market_metrics.service import (
         MarketMetricsService,
@@ -8409,8 +8463,8 @@ async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
         project_root=_project_root(),
         pool=pool,
         db_manager=db_manager,
-        chart_provider=get_analyst_charts,
-        emotion_provider=get_market_emotion,
+        chart_provider=_build_analyst_charts_from_metrics,
+        emotion_provider=_build_market_emotion_from_metrics,
         trend_updater=_update_trend_json,
         python_executable=sys.executable,
     )
@@ -9041,6 +9095,14 @@ async def apply_calibration_to_draft(trade_date: str) -> dict[str, Any]:
                 static_emo["strategy_bias"] = emo["strategy_bias"]
             if emo.get("risk_level"):
                 static_emo["risk_level"] = emo.get("risk_level", static_emo.get("risk_level", ""))
+            if "tomorrow_watchpoints" in emo:
+                static_emo["tomorrow_watchpoints"] = emo.get("tomorrow_watchpoints") or []
+            if "tomorrow_forbidden" in emo:
+                static_emo["tomorrow_forbidden"] = emo.get("tomorrow_forbidden") or []
+            if "tomorrow_outlook" in emo:
+                static_emo["tomorrow_outlook"] = emo.get("tomorrow_outlook") or ""
+            if "analyst_adjustment" in emo:
+                static_emo["analyst_adjustment"] = emo.get("analyst_adjustment")
             emo_path.write_text(_json_mod.dumps(static_emo, ensure_ascii=False, default=str))
         except Exception as e:
             import logging
@@ -9052,6 +9114,7 @@ async def apply_calibration_to_draft(trade_date: str) -> dict[str, Any]:
         "emotion_node": emo.get("emotion_node", ""),
         "strategy_bias": emo.get("strategy_bias", ""),
         "risk_level": emo.get("risk_level", ""),
+        "emotion_review": emo,
     }
 
 

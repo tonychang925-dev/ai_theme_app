@@ -490,24 +490,82 @@ export function AnalystWorkspacePage() {
 
   const handleGenerate = async () => {
     setGenerating(true);
-    const steps = ["生成 AI 图表数据…", "生成情绪分析…", "构建 AI Draft…", "完成"];
+    const steps = ["生成复盘动态数据…", "生成图表证据…", "生成情绪分析…", "构建 AI Draft…", "完成"];
     setGenProgress({ show: true, step: steps[0], steps, current: 0 });
 
-    const advance = (i: number) => {
-      setGenProgress(p => ({ ...p, step: steps[i], current: i }));
+    const stepIndex: Record<string, number> = {
+      derived_data: 0,
+      charts: 1,
+      emotion: 2,
+      draft: 3,
+      workbench: 3,
+    };
+    const failedStatuses = new Set(["failed", "timeout", "failed_precondition"]);
+    let pollTimer: ReturnType<typeof setInterval> | null = null;
+
+    const applyGenerationProgress = (payload: any) => {
+      const generationSteps = Array.isArray(payload?.generation_steps) ? payload.generation_steps : [];
+      let current = 0;
+      let activeStep = steps[0];
+      let errorMsg = "";
+
+      for (const item of generationSteps) {
+        const idx = stepIndex[String(item?.step || "")];
+        if (idx === undefined) continue;
+        const status = String(item?.status || "");
+        if (status === "success") {
+          current = Math.max(current, idx + 1);
+          activeStep = idx + 1 < steps.length ? steps[idx + 1] : steps[steps.length - 1];
+        } else if (status === "running") {
+          current = Math.max(current, idx);
+          activeStep = steps[idx];
+        } else if (failedStatuses.has(status)) {
+          current = idx;
+          activeStep = `${steps[idx].replace("…", "")}失败`;
+          errorMsg = item?.error || `${item?.step || "generation"} ${status}`;
+        }
+      }
+
+      if (payload?.status === "DRAFT_READY" || payload?.session_status === "DRAFT_READY" || payload?.status === "success") {
+        current = steps.length - 1;
+        activeStep = "✅ 分析完成";
+      }
+
+      setGenProgress(p => ({
+        ...p,
+        step: activeStep,
+        current: Math.min(current, steps.length - 1),
+        error: errorMsg || p.error,
+      }));
+    };
+
+    const pollSession = async () => {
+      try {
+        const sessResp = await fetch(`/api/v1/analyst-workbench/${dateInput}/session`);
+        if (!sessResp.ok) return;
+        const sess = await sessResp.json();
+        applyGenerationProgress(sess);
+      } catch {
+        // Polling is diagnostic only. The generate request remains the source of truth.
+      }
     };
 
     try {
-      advance(0);
-      const resp = await fetch(`/api/v1/analyst-workbench/${dateInput}/generate`, { method: "POST", signal: AbortSignal.timeout(120000) });
+      pollTimer = setInterval(pollSession, 1000);
+      await pollSession();
+
+      const resp = await fetch(`/api/v1/analyst-workbench/${dateInput}/generate`, { method: "POST", signal: AbortSignal.timeout(180000) });
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
 
-      advance(1);
       const r = await resp.json();
+      applyGenerationProgress(r);
 
       // Handle truthful status from backend
-      if (r.status === "failed") {
-        throw new Error(r.error || "工作台 CLI 执行失败");
+      if (r.status === "failed" || r.status === "failed_precondition") {
+        const failedStep = Array.isArray(r.generation_steps)
+          ? r.generation_steps.find((s: any) => failedStatuses.has(String(s?.status || "")))
+          : null;
+        throw new Error(failedStep?.error || r.error || "启动分析失败");
       }
 
       setGenKey(k => k + 1);
@@ -521,13 +579,17 @@ export function AnalystWorkspacePage() {
           error: undefined,
         }));
       } else {
-        setGenProgress(p => ({ ...p, step: "✅ 分析完成", current: 3 }));
+        setGenProgress(p => ({ ...p, step: "✅ 分析完成", current: steps.length - 1 }));
       }
       await new Promise(r => setTimeout(r, 1000));
       setGenProgress({ show: false, step: "", steps: [], current: 0 });
     } catch (e: any) {
-      setGenProgress(p => ({ ...p, error: e.message || "请求失败", step: "❌ 失败" }));
+      const msg = e?.name === "TimeoutError"
+        ? "启动分析超过 180 秒，后端应已记录具体失败步骤，请查看 generation_steps"
+        : e.message || "请求失败";
+      setGenProgress(p => ({ ...p, error: msg, step: "❌ 启动分析失败" }));
     } finally {
+      if (pollTimer) clearInterval(pollTimer);
       setGenerating(false);
     }
   };
@@ -653,7 +715,15 @@ export function AnalystWorkspacePage() {
     }
   };
 
-  const ws = workspace || { themes: [], watch_groups: [], stock_pools: {}, is_ai_draft: false } as Workspace;
+  const emptyWorkspace: Workspace = {
+    trade_date: dateInput,
+    is_ai_draft: false,
+    analyst_finalized: false,
+    themes: [],
+    watch_groups: [],
+    override_count: 0,
+  };
+  const ws = workspace || emptyWorkspace;
   const theme = ws.themes[selectedIdx] || newTheme();
   const activeGroup = (ws.watch_groups || []).find(g => g.id === selectedGroupId);
   const groupedThemeIds = new Set((ws.watch_groups || []).flatMap(g => g.subject_ids));
@@ -661,12 +731,12 @@ export function AnalystWorkspacePage() {
   const updateTheme = (t: ThemeEntry) => {
     const themes = [...ws.themes];
     themes[selectedIdx] = t;
-    setWorkspace({ ...workspace, themes, is_ai_draft: false });
+    setWorkspace({ ...ws, themes, is_ai_draft: false });
   };
 
   const updateGroup = (g: WatchGroup) => {
     const groups = (ws.watch_groups || []).map(x => x.id === g.id ? g : x);
-    setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
+    setWorkspace({ ...ws, watch_groups: groups, is_ai_draft: false });
   };
 
   return (
@@ -736,39 +806,39 @@ export function AnalystWorkspacePage() {
             onSelectGroup={(id) => { setSelectedGroupId(id); }}
             onAdd={() => {
               const themes = [...ws.themes, newTheme()];
-              setWorkspace({ ...workspace, themes, is_ai_draft: false });
+              setWorkspace({ ...ws, themes, is_ai_draft: false });
               setSelectedIdx(themes.length - 1);
             }}
             onDelete={(i) => {
               const themes = ws.themes.filter((_, j) => j !== i);
-              setWorkspace({ ...workspace, themes });
+              setWorkspace({ ...ws, themes });
               setSelectedIdx(Math.min(selectedIdx, themes.length - 1));
             }}
             onLevelChange={(i, lvl) => {
               const themes = [...ws.themes];
               themes[i] = { ...themes[i], attention_level: lvl, is_ai_draft: false };
-              setWorkspace({ ...workspace, themes });
+              setWorkspace({ ...ws, themes });
             }}
             watchGroups={ws.watch_groups || []}
             onAddGroup={() => {
               const groups = [...(ws.watch_groups || [])];
               const colors = ["#e53e3e", "#3182ce", "#38a169", "#dd6b20", "#805ad5", "#d69e2e"];
               groups.push(newWatchGroup(colors[groups.length % colors.length]));
-              setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
+              setWorkspace({ ...ws, watch_groups: groups, is_ai_draft: false });
             }}
             onUpdateGroup={(g) => {
               const groups = (ws.watch_groups || []).map(x => x.id === g.id ? g : x);
-              setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
+              setWorkspace({ ...ws, watch_groups: groups, is_ai_draft: false });
             }}
             onDeleteGroup={(id) => {
               const groups = (ws.watch_groups || []).filter(x => x.id !== id);
-              setWorkspace({ ...workspace, watch_groups: groups });
+              setWorkspace({ ...ws, watch_groups: groups });
             }}
             onAddThemeToGroup={(groupId, subjectId) => {
               const groups = (ws.watch_groups || []).map(g =>
                 g.id === groupId ? { ...g, subject_ids: [...g.subject_ids, subjectId] } : g
               );
-              setWorkspace({ ...workspace, watch_groups: groups, is_ai_draft: false });
+              setWorkspace({ ...ws, watch_groups: groups, is_ai_draft: false });
             }}
           />
         </div>
@@ -849,20 +919,25 @@ export function AnalystWorkspacePage() {
             {!genProgress.error && (
               <div style={{ background: "#0c1118", borderRadius: 4, height: 6, marginBottom: 16, overflow: "hidden" }}>
                 <div style={{ background: "linear-gradient(90deg, #66d9ef, #39ff14)", height: "100%",
-                  width: `${Math.max(5, (genProgress.current / genProgress.steps.length) * 100)}%`,
+                  width: `${Math.max(5, ((genProgress.current + 1) / genProgress.steps.length) * 100)}%`,
                   transition: "width 0.4s ease" }} />
               </div>
             )}
             {genProgress.error && (
-              <div style={{ display: "flex", gap: 10, justifyContent: "center" }}>
-                <button onClick={() => setGenProgress({ show: false, step: "", steps: [], current: 0 })}
-                  style={{ padding: "8px 20px", background: "#243040", color: "#8da6b8", border: "1px solid #3a5060", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
-                  关闭
-                </button>
-                <button onClick={() => { setGenProgress({ show: false, step: "", steps: [], current: 0 }); handleGenerate(); }}
-                  style={{ padding: "8px 20px", background: "#d4380d", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
-                  重试
-                </button>
+              <div>
+                <div style={{ background: "#2a1410", border: "1px solid #5a2416", borderRadius: 6, color: "#ff9b7a", fontSize: 12, lineHeight: 1.6, padding: "8px 10px", marginBottom: 14, textAlign: "left", wordBreak: "break-word" }}>
+                  {genProgress.error}
+                </div>
+                <div style={{ display: "flex", gap: 10, justifyContent: "center" }}>
+                  <button onClick={() => setGenProgress({ show: false, step: "", steps: [], current: 0 })}
+                    style={{ padding: "8px 20px", background: "#243040", color: "#8da6b8", border: "1px solid #3a5060", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
+                    关闭
+                  </button>
+                  <button onClick={() => { setGenProgress({ show: false, step: "", steps: [], current: 0 }); handleGenerate(); }}
+                    style={{ padding: "8px 20px", background: "#d4380d", color: "#fff", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 13 }}>
+                    重试
+                  </button>
+                </div>
               </div>
             )}
           </div>
@@ -1012,14 +1087,17 @@ export function AnalystWorkspacePage() {
                       const resp = await fetch(`/api/v1/analyst-workbench/${dateInput}/apply-calibration`, { method: "POST" });
                       if (resp.ok) {
                         const r = await resp.json();
+                        const emotionReview = r.emotion_review || {};
                         setImportDialog(p => ({
                           ...p, step: "done",
                           msg: `已应用 ${r.corrections.length} 项修正`,
                           result: { ...p.result, applied: r },
                         }));
-                        // Refresh workspace + tomorrow data
-                        fetchTomorrow(dateInput);
-                        fetchWorkspace(dateInput);
+                        setTomorrowOutlook(emotionReview.tomorrow_outlook || "");
+                        setTomorrowWatchpoints(emotionReview.tomorrow_watchpoints || []);
+                        setTomorrowForbidden(emotionReview.tomorrow_forbidden || []);
+                        setGenKey(k => k + 1);
+                        await fetchWorkspace(dateInput);
                       } else {
                         const err = await resp.json().catch(() => ({}));
                         throw new Error((err as any).detail || "应用失败");
@@ -1077,15 +1155,15 @@ export function AnalystWorkspacePage() {
               当前日期 <b>{dateInput}</b> 缺少以下数据，校准分析无法进行：
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 16 }}>
-              <DataStatusRow label="AI 图表数据 (由「启动分析」生成)" ok={readinessDialog.chart}
+              <DataStatusRow label="图表证据 (由「启动分析」生成)" ok={readinessDialog.chart}
                 hint={!readinessDialog.chart ? "请先点击「启动分析」" : undefined} />
-              <DataStatusRow label="情绪数据 (由「启动分析」生成)" ok={readinessDialog.emotion}
+              <DataStatusRow label="情绪分析 (由「启动分析」生成)" ok={readinessDialog.emotion}
                 hint={!readinessDialog.emotion ? "请先点击「启动分析」" : undefined} />
               <DataStatusRow label="AI Draft (由「启动分析」生成)" ok={readinessDialog.reference}
                 hint={!readinessDialog.reference ? "请先点击「启动分析」生成 AI 草稿" : undefined} />
             </div>
             <p style={{ color: "#5a7a8a", fontSize: 12, marginBottom: 16 }}>
-              数据流：盘后数据采集 → <b>启动分析</b>（生成 chart + emotion + AI draft）→ <b>导入分析师数据</b>（AI vs 分析师校准评分）
+              数据流：盘后数据采集 → <b>启动分析</b>（复盘动态数据 + 图表证据 + 情绪分析 + AI Draft）→ <b>导入分析师数据</b>（AI vs 分析师校准评分）
             </p>
             <div style={{ display: "flex", gap: 10, justifyContent: "flex-end" }}>
               <button onClick={() => setReadinessDialog(null)}

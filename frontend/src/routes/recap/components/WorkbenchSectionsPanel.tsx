@@ -384,7 +384,7 @@ export function WorkbenchSectionsPanel({ data }: {
             background: "#111720", border: "1px solid #243040",
             fontSize: 13, color: "#5a7a8a",
           }}>
-            暂无情绪复盘数据。请点击「启动分析」生成。
+            暂无情绪复盘数据。请进入「分析师工作台」点击「启动分析」生成复盘动态数据。
           </div>
         )
       )}
@@ -410,7 +410,7 @@ export function WorkbenchSectionsPanel({ data }: {
             background: "#111720", border: "1px solid #243040",
             fontSize: 13, color: "#5a7a8a",
           }}>
-            暂无图表解读数据。请点击「启动分析」生成 AI 图表。
+            暂无图表证据数据。请进入「分析师工作台」点击「启动分析」生成复盘动态数据。
           </div>
         )}
       </div>

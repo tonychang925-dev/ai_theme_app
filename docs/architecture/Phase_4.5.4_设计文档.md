@@ -697,7 +697,8 @@ POST /api/v2/daily-review-v2/compose-from-workbench
 | `TC-P455-03` | 正式 compose 禁止 draft fallback | `stock_processing_service/tests/unit/test_workbench_phase455_compose_gate.py` | draft_v2 比 snapshot 新时，compose 仍使用 snapshot_v1 |
 | `TC-P455-04` | DailyReview 不再生产 derived data | `frontend/scripts/test-recap-workbench-first-contract.mjs` | Recap 页流程不调用 `/post-market/derived-data/generate` |
 | `TC-P455-05` | read_model_only 报告生成 | `stock_processing_service/tests/unit/test_workbench_phase455_report_generate.py` | `force=false` + `mode=read_model_only` 不触发 full truth rebuild |
-| `TC-P455-E2E` | AI Draft → Analyst Correction → Approved Snapshot → Final Report | `stock_processing_service/tests/integration/test_workbench_phase455_e2e.py` | AI 主线=机器人，分析师改为 PCB，snapshot 与报告最终均为 PCB |
+| `TC-P455-06` | 生命周期职责边界 | `stock_processing_service/tests/unit/test_workbench_phase455_responsibility_contract.py` | `DRAFT_READY` 禁止 formal compose；`APPROVED` 后 generate 不覆盖 snapshot |
+| `TC-P455-E2E` | AI Draft → Analyst Correction → Approved Snapshot → Final Report | `stock_processing_service/tests/unit/test_workbench_phase455_responsibility_contract.py` | AI 主线=机器人，分析师改为 PCB，snapshot 与报告最终均为 PCB |
 
 必跑命令：
 
@@ -705,7 +706,7 @@ POST /api/v2/daily-review-v2/compose-from-workbench
 pytest stock_processing_service/tests/unit/test_workbench_phase455_generate.py
 pytest stock_processing_service/tests/unit/test_workbench_phase455_review_merger.py
 pytest stock_processing_service/tests/unit/test_workbench_phase455_compose_gate.py
-pytest stock_processing_service/tests/integration/test_workbench_phase455_e2e.py
+pytest stock_processing_service/tests/unit/test_workbench_phase455_responsibility_contract.py
 node frontend/scripts/test-recap-workbench-first-contract.mjs
 ```
 
@@ -839,14 +840,16 @@ Then:
 - 4 列布局：为什么/明日预测概率/今日交易模式/明日操作提示
 - `fetchTomorrow()` prop 驱动（无异步闪烁）
 
-### Phase 4.5.5-RA ⏳ In Progress
+### Phase 4.5.5-RA ✅ Completed
 
 - Workbench generate 接管动态复盘数据生产 ✅ 已实现（PR1）
 - Approve 合并 `AIDraft + analyst_workspace + overrides` ✅ 已实现（PR2）
 - DailyReview 页面移除 derived data 生产入口 ✅ 已实现（PR3）
 - `compose-from-workbench` 成为唯一正式报告入口 ✅ 已实现（PR4）
 - 正式报告禁止 draft fallback ✅ 已实现（PR4）
-- 最终 E2E / Phase 4.5.5-RA Final Review ⏳ Planned（PR5）
+- 职责防回归测试 / Phase 4.5.5-RA Final Review ✅ 已实现（PR5）
+
+Known issue（不阻塞 Phase 4.5.5-RA）：`npm run build` 仍因既有 `AnalystWorkspacePage.tsx` 与 `EmotionDashboard.tsx` TypeScript 类型债失败；本阶段修改后的 `RecapPage.tsx` 已无新增 build error。建议单独建立 `Frontend Type Cleanup` 任务处理。
 
 ### Phase 4.5.5.1-UI ✅ 已实现
 

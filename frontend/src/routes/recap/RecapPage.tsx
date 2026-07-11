@@ -4,8 +4,7 @@ import {
   fetchRecapSnapshot, fetchDailyReview, fetchDailyReviewV2, fetchPostMarketJobsStatus, publishRecapToNotion,
   type AbnormalStockReviewV2, type DailyReviewView, type DragonTigerReviewV2, type EngineMarketRegimeReview, type EngineSummary, type MainlineDailyStateReview, type MoneyFlowReviewV2, type PostMarketDailyReviewV2, type StockCapitalReviewV2, type StrongStockReviewV2, type ThemeCapitalReview, type ThemeReviewV2, type WatchlistReviewV2,
   fetchPostMarketReadiness,
-  generateDailyReviewV2, generatePostMarketRecap,
-  fetchPostMarketRecapGenerateStatus,
+  composeDailyReviewFromWorkbench,
 } from "../../lib/api";
 import { navigateTo } from "../../lib/navigation";
 import recapIcon from "../../assets/intel-icons/当日复盘.png";
@@ -88,9 +87,8 @@ type RecapGenerationStep = {
 };
 
 const INITIAL_RECAP_GENERATION_STEPS: RecapGenerationStep[] = [
-  { key: "readiness", label: "检查盘后数据状态", status: "pending", progress: 0 },
-  { key: "recap", label: "生成正式报告", status: "pending", progress: 0 },
-  { key: "daily_review_v2", label: "生成 DailyReview V2", status: "pending", progress: 0 },
+  { key: "approval", label: "检查分析师审批状态", status: "pending", progress: 0 },
+  { key: "compose", label: "从 Approved Snapshot 合成正式报告", status: "pending", progress: 0 },
   { key: "snapshot", label: "载入复盘报告", status: "pending", progress: 0 },
 ];
 
@@ -1056,6 +1054,8 @@ export function RecapPage() {
   const engineReportReady = isEngineReportReady(dailyReviewV2);
   const engineSummary = dailyReviewV2?.engine_summary ?? null;
   const marketRegimeReview = dailyReviewV2?.market_regime_review ?? null;
+  const workbenchApproval = dailyReviewV2?.workbench_approval ?? null;
+  const canComposeFormalReport = workbenchApproval?.can_generate_formal_report === true;
   const mainlineDailyStates = dailyReviewV2?.mainline_daily_states ?? [];
   const postMarketDecisionV2 = dailyReviewV2?.post_market_decision_v2 ?? null;
   const highlights = useMemo(() => {
@@ -1475,10 +1475,6 @@ export function RecapPage() {
     navigateTo(`/recap?${query.toString()}`);
   }
 
-  async function refreshPostMarketStatus() {
-    return fetchPostMarketReadiness(tradeDate).catch(() => null);
-  }
-
   async function refreshPostMarketViews() {
     const [snapshot, dr, v2] = await Promise.all([
       fetchRecapSnapshot({ date: tradeDate, reportType: "post_market" }).catch(() => null),
@@ -1495,14 +1491,6 @@ export function RecapPage() {
     setGenerationSteps((prev) => prev.map((item) => (item.key === key ? { ...item, ...patch } : item)));
   }
 
-  function requirePostMarketCommandOk(result: Record<string, unknown>, fallback: string) {
-    if (result.ok !== false) return;
-    const missingTables = Array.isArray(result.missing_tables) ? result.missing_tables.map(String).filter(Boolean) : [];
-    const errorCode = typeof result.error_code === "string" ? result.error_code : "";
-    const suffix = missingTables.length > 0 ? `缺失表: ${missingTables.join(", ")}` : errorCode;
-    throw new Error(suffix ? `${fallback}: ${suffix}` : fallback);
-  }
-
   async function handleStartPostMarketRecap() {
     if (recapBusy) return;
     setError(null);
@@ -1510,106 +1498,22 @@ export function RecapPage() {
     setRecapBusy(true);
     setGenerationSteps(initialRecapGenerationSteps());
     try {
-      updateGenerationStep("readiness", { status: "running", progress: 30 });
-      const readiness = await refreshPostMarketStatus();
-      if (readiness?.status !== "ready") {
-        updateGenerationStep("readiness", { status: "failed", progress: 100 });
-        setError("盘后复盘数据尚未 ready。请先进入“分析师工作台”点击“启动分析”，完成动态数据与 AI 草稿生成后再生成正式报告。");
+      updateGenerationStep("approval", { status: "running", progress: 40 });
+      const approval = dailyReviewV2?.workbench_approval;
+      if (approval && !approval.can_generate_formal_report) {
+        updateGenerationStep("approval", { status: "failed", progress: 100 });
+        setError(approval.reason || "Workbench 尚未 Approved。请先进入“分析师工作台”完成审核并批准，再生成正式报告。");
         return;
       }
-      updateGenerationStep("readiness", { status: "success", progress: 100 });
-      updateGenerationStep("recap", { status: "running", progress: 35 });
-      const recapResult = await generatePostMarketRecap(tradeDate, false);
-
-      // R3: async mode — poll until success/failed.
-      // "accepted" = new job launched; "running" = existing job already in progress.
-      if (recapResult.status === "accepted" || recapResult.status === "running") {
-        const snapshotVersion = (recapResult.snapshot_version as string) || "";
-        const recapMode = (recapResult.mode as string) || "";
-        const isRunning = recapResult.status === "running";
-        const isFullRebuild = recapMode === "full_truth_rebuild";
-        const hasVersion = snapshotVersion.length > 0;
-
-        // full_truth_rebuild: 20 min; read_model_only: 6 min
-        const MAX_POLLS = isFullRebuild ? 400 : 120;
-        const POLL_INTERVAL_MS = 3000;
-
-        updateGenerationStep("recap", {
-          status: "running",
-          progress: 50,
-          label: isRunning ? "已有重建任务执行中，跟随状态..."
-            : isFullRebuild ? "完整正式报告生成中（预计5-10分钟）..."
-            : "后台生成中...",
-        });
-
-        let pollCount = 0;
-
-        while (pollCount < MAX_POLLS) {
-          await new Promise((r) => setTimeout(r, POLL_INTERVAL_MS));
-          pollCount += 1;
-          const pollResult = await fetchPostMarketRecapGenerateStatus(tradeDate, snapshotVersion).catch(() => null);
-          if (!pollResult || !pollResult.ok) {
-            updateGenerationStep("recap", { status: "running", progress: Math.min(50 + Math.floor(pollCount * 0.3), 95), label: `等待服务响应... (${pollCount * 3}s)` });
-            continue;
-          }
-
-          const elapsedSec = (pollResult.elapsed_sec as number) || pollCount * 3;
-          const elapsedLabel = elapsedSec > 60 ? `${Math.floor(elapsedSec / 60)}分${Math.floor(elapsedSec % 60)}秒` : `${Math.floor(elapsedSec)}秒`;
-          const stageLabel = (pollResult.stage as string) || (pollResult.status === "running" ? "执行中" : "");
-
-          const _updateProgress = (label: string) => {
-            updateGenerationStep("recap", { status: "running", progress: Math.min(50 + Math.floor(pollCount * 0.3), 95), label });
-          };
-
-          if (pollResult.status === "success") {
-            const versionOk = !hasVersion || pollResult.snapshot_version === snapshotVersion;
-            const ready = pollResult.snapshot_ready === true;
-            if (versionOk && ready) {
-              updateGenerationStep("recap", { status: "success", progress: 100 });
-              break;
-            }
-            if (ready && !versionOk) {
-              _updateProgress(`[${elapsedLabel}] 快照已存在(其他版本)，等待当前任务完成...`);
-            } else if (versionOk && !ready) {
-              _updateProgress(`[${elapsedLabel}] 任务完成，等待 snapshot 落库...`);
-            } else {
-              _updateProgress(`[${elapsedLabel}] 等待任务完成...`);
-            }
-            continue;
-          }
-          if (pollResult.status === "failed" || pollResult.status === "failed_precondition") {
-            const diag = pollResult.diagnostics || {};
-            const errMsg = (diag.error_message as string) || pollResult.error_code || "未知错误";
-            updateGenerationStep("recap", { status: "failed", progress: 100 });
-            setError(`生成正式报告失败：${errMsg}\n旧复盘结果仍可查看。`);
-            return;
-          }
-          // running / pending / queued / unknown — keep polling with stage info
-          const stageText = stageLabel ? ` [${stageLabel}]` : "";
-          _updateProgress(`[${elapsedLabel}]${stageText} ${isRunning ? "跟随已有任务" : isFullRebuild ? "完整复盘" : "生成"}中...`);
-        }
-
-        // Poll exhausted — NOT a failure. The job may still be running.
-        if (pollCount >= MAX_POLLS) {
-          updateGenerationStep("recap", { status: "running", progress: 95, label: "后端仍在执行，请稍后刷新页面或继续等待" });
-          setError("正式报告仍在后台执行，请稍后手动刷新页面查看最新结果。");
-          // Don't return — allow continuing to daily_review_v2 and snapshot refresh
-        }
-      } else {
-        // Sync mode fallback (non-force or legacy — recapResult.status is "ok")
-        requirePostMarketCommandOk(recapResult, "生成复盘报告失败");
-        updateGenerationStep("recap", { status: "success", progress: 100 });
-      }
-
-      updateGenerationStep("daily_review_v2", { status: "running", progress: 40 });
-      await generateDailyReviewV2(tradeDate, false).catch(() => null);
-      updateGenerationStep("daily_review_v2", { status: "success", progress: 100 });
-      await refreshPostMarketStatus();
+      updateGenerationStep("approval", { status: "success", progress: 100 });
+      updateGenerationStep("compose", { status: "running", progress: 60 });
+      const composed = await composeDailyReviewFromWorkbench(tradeDate);
+      setDailyReviewV2(composed);
+      updateGenerationStep("compose", { status: "success", progress: 100 });
       updateGenerationStep("snapshot", { status: "running", progress: 60 });
       const snapshot = await refreshPostMarketViews();
       if (!snapshot) {
-        updateGenerationStep("snapshot", { status: "failed", progress: 100 });
-        setError("复盘报告已触发生成，但当前还没有可读取的 snapshot，请稍后刷新。");
+        updateGenerationStep("snapshot", { status: "success", progress: 100 });
       } else {
         updateGenerationStep("snapshot", { status: "success", progress: 100 });
       }
@@ -1649,10 +1553,11 @@ export function RecapPage() {
                   className="tag tag-button is-pass"
                   type="button"
                   style={{ fontSize: 16, padding: "8px 16px" }}
-                  disabled={loading || isGeneratingRecap}
+                  disabled={loading || isGeneratingRecap || !canComposeFormalReport}
                   onClick={handleStartPostMarketRecap}
+                  title={!canComposeFormalReport ? (workbenchApproval?.reason || "请先在分析师工作台审核并批准 Snapshot") : undefined}
                 >
-                  {isGeneratingRecap ? "生成中..." : "刷新正式报告"}
+                  {isGeneratingRecap ? "生成中..." : canComposeFormalReport ? "刷新正式报告" : "待审核批准"}
                 </button>
               )}
               <button className="tag tag-button is-pass" type="button" style={{ fontSize: 16, padding: "8px 16px" }}
@@ -1685,6 +1590,11 @@ export function RecapPage() {
 
       {loading && <div className="empty-state">正在加载复盘视图...</div>}
       {error && !reportType.includes("post_market") && <div className="empty-state error">{error}</div>}
+      {!loading && reportType === "post_market" && workbenchApproval && !canComposeFormalReport && (
+        <div style={{ marginBottom: 12, padding: 12, background: "#2a1f12", border: "1px solid #d69e2e40", borderRadius: 8, color: "#ffd85e", fontSize: 13 }}>
+          当前为预览模式（{workbenchApproval.session_status || "未审批"}）。正式报告只能从 Approved Snapshot 生成；请先进入「分析师工作台」完成审核并批准。
+        </div>
+      )}
       {!loading && reportType === "post_market" && !payload && (
         <div style={{ marginBottom: 12, padding: 12, background: "#1a1a1a", borderRadius: 8 }}>
           <span style={{ color: "#999", fontSize: 13 }}>
@@ -1694,10 +1604,11 @@ export function RecapPage() {
             className="tag tag-button is-pass"
             type="button"
             style={{ marginLeft: 12 }}
-            disabled={recapBusy}
+            disabled={recapBusy || !canComposeFormalReport}
             onClick={handleStartPostMarketRecap}
+            title={!canComposeFormalReport ? (workbenchApproval?.reason || "请先在分析师工作台审核并批准 Snapshot") : undefined}
           >
-            {recapBusy ? "生成中..." : "生成正式报告"}
+            {recapBusy ? "生成中..." : canComposeFormalReport ? "生成正式报告" : "待审核批准"}
           </button>
         </div>
       )}

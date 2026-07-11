@@ -79,6 +79,8 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
   tomorrowWatchpoints?: string[];
   tomorrowForbidden?: string[];
 }) {
+  const watchpoints = tomorrowWatchpoints || [];
+  const forbidden = tomorrowForbidden || [];
   const [emotion, setEmotion] = useState<EmotionState | null>(null);
   const [loading, setLoading] = useState(true);
   const [artifacts, setArtifacts] = useState<EvidenceArtifact[]>([]);
@@ -149,7 +151,10 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
       } catch { /* fall through to static JSON */ }
 
       try {
-        const resp = await fetch(`/api/emotion-${tradeDate}.json`, { signal: ctrl.signal });
+        const resp = await fetch(`/api/emotion-${tradeDate}.json?t=${Date.now()}`, {
+          signal: ctrl.signal,
+          cache: "no-store",
+        });
         if (resp.ok) {
           const d = await resp.json();
           if (d && d.emotion_node) { setEmotion(d); setLoading(false); return; }
@@ -162,7 +167,7 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
   }, [tradeDate]);
 
   if (loading) return <div style={{ padding: "8px 16px", color: "#5a7a8a", fontSize: 13 }}>加载情绪数据…</div>;
-  if (!emotion || !emotion.emotion_node) return <div style={{ padding: "8px 16px", color: "#ffa940", fontSize: 13 }}>该日期暂无数据，请点击「启动分析」生成</div>;
+  if (!emotion || !emotion.emotion_node) return <div style={{ padding: "8px 16px", color: "#ffa940", fontSize: 13 }}>该日期暂无情绪分析，请点击「启动分析」生成复盘动态数据</div>;
 
   const node = emotion.emotion_node || "CHAOS";
   const color = NODE_COLORS[node] || "#5a7a8a";
@@ -354,16 +359,16 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
           ) : (
             <div style={{ fontSize: 10, color: "#5a7a8a" }}>暂无明日预判</div>
           )}
-          {tomorrowWatchpoints.length > 0 && (
+          {watchpoints.length > 0 && (
             <div style={{ marginBottom: 3 }}>
-              {tomorrowWatchpoints.slice(0, 3).map((wp, i) => (
+              {watchpoints.slice(0, 3).map((wp, i) => (
                 <div key={i} style={{ fontSize: 10, color: "#8ddcff", padding: "1px 0" }}>• {wp}</div>
               ))}
             </div>
           )}
-          {tomorrowForbidden.length > 0 && (
+          {forbidden.length > 0 && (
             <div>
-              {tomorrowForbidden.slice(0, 2).map((fb, i) => (
+              {forbidden.slice(0, 2).map((fb, i) => (
                 <span key={i} style={{ fontSize: 10, color: "#fca5a5", background: "#e53e3e15", padding: "1px 5px", borderRadius: 3, marginRight: 4 }}>✗ {fb}</span>
               ))}
             </div>

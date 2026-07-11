@@ -1341,6 +1341,18 @@ export async function generateDailyReviewV2(date: string, force = false): Promis
   );
 }
 
+export async function composeDailyReviewFromWorkbench(date: string): Promise<PostMarketDailyReviewV2> {
+  return fetchJsonWithTimeout<PostMarketDailyReviewV2>(
+    `/api/v2/daily-review-v2/compose-from-workbench`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ trade_date: date }),
+    },
+    POST_MARKET_DAILY_REVIEW_V2_GENERATE_TIMEOUT_MS,
+  );
+}
+
 // ──
 
 interface PostMarketSnapshotView {

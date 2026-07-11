@@ -40,6 +40,11 @@ def parse_args():
     parser.add_argument("--trade-date", required=True, help="交易日 YYYY-MM-DD")
     parser.add_argument("--token", default="", help="Tushare token，优先于环境变量")
     parser.add_argument("--force-refresh", action="store_true", help="强制刷新 Tushare 原始快照")
+    parser.add_argument(
+        "--no-fetch",
+        action="store_true",
+        help="只读取本地 Tushare raw snapshot，不触发外部接口抓取",
+    )
     parser.add_argument("--top-k", type=int, default=20, help="预览条数")
     return parser.parse_args()
 
@@ -210,8 +215,18 @@ async def main_async() -> int:
         if args.token:
             stock_config.tushare_token = args.token
         snapshot_service = TushareDragonTigerSnapshotService(stock_config)
-        top_list = snapshot_service.fetch_or_cache_top_list(args.trade_date, force_refresh=args.force_refresh)
-        top_inst = snapshot_service.fetch_or_cache_top_inst(args.trade_date, force_refresh=args.force_refresh)
+        if args.no_fetch:
+            top_list = snapshot_service.load_cached_top_list(args.trade_date)
+            top_inst = snapshot_service.load_cached_top_inst(args.trade_date)
+            if top_list is None or top_inst is None:
+                print(
+                    "[SKIP] local dragon tiger raw snapshot unavailable; "
+                    "hot_money_trading_activity does not fetch external data in --no-fetch mode"
+                )
+                return 0
+        else:
+            top_list = snapshot_service.fetch_or_cache_top_list(args.trade_date, force_refresh=args.force_refresh)
+            top_inst = snapshot_service.fetch_or_cache_top_inst(args.trade_date, force_refresh=args.force_refresh)
         subject_links = await fetch_subject_links(
             manager,
             args.trade_date,

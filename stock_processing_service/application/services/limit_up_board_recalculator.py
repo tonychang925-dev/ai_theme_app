@@ -224,7 +224,7 @@ class LimitUpBoardRecalculator:
             return {}
         rows = await conn.fetch(
             """
-            SELECT DISTINCT ON (tsm.stock_id)
+            SELECT DISTINCT ON (split_part(tsm.stock_id, '.', 1))
                 split_part(tsm.stock_id, '.', 1) AS stock_key,
                 tsm.subject_key,
                 COALESCE(
