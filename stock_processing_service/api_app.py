@@ -2378,17 +2378,18 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
     except Exception:
         v2["workbench_approval"] = {"error": "approval check failed"}
 
-    # ── Phase 4.5.5: enrich with workbench section content from draft or snapshot ──
-    try:
-        v2 = _enrich_v2_with_workbench_sections(v2, d)
-    except Exception:
-        pass
-
     # ── Phase 4.5.6 PR4.1: compile formal_review from approved snapshot ──
     try:
         v2 = _enrich_v2_with_formal_review(v2, d)
     except Exception:
         pass
+
+    # ── Phase 4.5.6 Strict Mode: legacy enrichment only when formal_review unavailable ──
+    if not v2.get("formal_review"):
+        try:
+            v2 = _enrich_v2_with_workbench_sections(v2, d)
+        except Exception:
+            pass
 
     return v2
 
