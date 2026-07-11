@@ -939,7 +939,7 @@ Compiler Boundary：
 | PR2.3a Capital Evidence | ✅ Completed | `market capital + theme capital + stock evidence` 三层模型 |
 | PR2.3b Next Day Plan | ✅ Completed | `scenario + watch + confirmation + invalidation + forbidden` |
 | PR3 Projection Diff | ✅ Completed | 7/9 Golden + FACT/ASSESSMENT/PLAN diff |
-| PR4 FormalReview UI | ⏳ Planned | FormalReviewView 双轨 UI |
+| PR4 FormalReview UI | ✅ Completed | FormalReviewView 双轨 UI |
 | PR5 Multi-day Observe | ⏳ Planned | 5+ 交易日观察 |
 | PR6 Legacy Removal | ⏳ Planned | compatibility 与旧字段移除 |
 
@@ -1043,7 +1043,7 @@ PR2.3 已完成，拆分为两段：
 
 #### 当前评价
 
-Phase 4.5.6 当前约完成 80%。FormalReviewProjectionCompiler 已具备完整六章输出能力，并通过 2026-07-09 Projection Diff 黄金测试：
+Phase 4.5.6 当前约完成 90%。FormalReviewProjectionCompiler 已具备完整六章输出能力，通过 2026-07-09 Projection Diff 黄金测试，并已双轨接入 FormalReviewView：
 
 ```text
 Market State
@@ -1069,4 +1069,12 @@ PR3 验证结果：
 
 - `docs/test_reports/projection_diff_20260709.md`
 
-下一步进入 PR4 FormalReview UI，验证新结构在前端阅读层可用。
+PR4 验证结果：
+
+- 新增 `FormalReviewView`，只消费 `formal_review` 六章模型。
+- `RecapPage` 在旧 `WorkbenchSectionsPanel / EnginePostMarketView` 前渲染 FormalReviewView。
+- 旧 Recap 视图不删除，继续用于对照观察。
+- 静态契约禁止 FormalReviewView 直接读取 legacy DailyReviewV2 字段。
+- `npm run build` 通过。
+
+下一步进入 PR5 Multi-day Observe，验证新结构跨交易日稳定性。

@@ -12,6 +12,7 @@ import recapIcon from "../../assets/intel-icons/当日复盘.png";
 // PR-14F: engine-first post_market recap view
 import EngineMissingState from "./components/EngineMissingState";
 import EnginePostMarketView from "./components/EnginePostMarketView";
+import FormalReviewView from "./components/FormalReviewView";
 import LegacyRecapSections from "./components/LegacyRecapSections";
 import { MarketRecapPanel } from "./components/MarketRecapPanel";
 import { WorkbenchSectionsPanel } from "./components/WorkbenchSectionsPanel";
@@ -1635,6 +1636,12 @@ export function RecapPage() {
           <main className="workspace-layout single">
             <section className="workspace-column">
               {/* Phase 4.5.5: Workbench sections — AI + analyst approved content */}
+              {isPostMarket && dailyReviewV2?.formal_review && (
+                <FormalReviewView
+                  formalReview={dailyReviewV2.formal_review}
+                  approval={dailyReviewV2.workbench_approval}
+                />
+              )}
               {isPostMarket && dailyReviewV2 && (
                 <WorkbenchSectionsPanel data={dailyReviewV2} />
               )}

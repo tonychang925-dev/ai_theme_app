@@ -1020,6 +1020,38 @@ export interface SeatMoneySummary {
   diagnostics?: Record<string, unknown>;
 }
 
+export interface FormalReviewProjection {
+  version?: string;
+  executive_summary?: Record<string, unknown>;
+  market_state?: Record<string, unknown>;
+  theme_structure?: {
+    summary?: Record<string, unknown>;
+    themes?: Array<Record<string, unknown>>;
+  };
+  stock_structure?: {
+    stocks?: Array<Record<string, unknown>>;
+    groups?: Record<string, unknown>;
+  };
+  capital_evidence?: {
+    market?: Record<string, unknown>;
+    themes?: Array<Record<string, unknown>>;
+    stocks?: Array<Record<string, unknown>>;
+    orphan_seats?: Array<Record<string, unknown>>;
+    seat_summary?: Record<string, unknown>;
+    evidence_layer?: Record<string, unknown>;
+  };
+  next_day_plan?: {
+    scenario?: string;
+    watch_themes?: Array<Record<string, unknown>>;
+    watch_stocks?: Array<Record<string, unknown>>;
+    confirmation_signals?: string[];
+    invalidation_signals?: string[];
+    forbidden_actions?: string[];
+    principles?: Record<string, unknown>;
+    playbook?: Record<string, unknown>;
+  };
+}
+
 export interface PostMarketDailyReviewV2 {
   schema_version: "daily_review_v2";
   trade_date: string;
@@ -1080,6 +1112,11 @@ export interface PostMarketDailyReviewV2 {
 
   // Phase 4.5.3: workbench approval metadata
   workbench_approval?: WorkbenchApproval;
+
+  // Phase 4.5.6: compiled formal review projection
+  metadata?: Record<string, unknown>;
+  formal_review?: FormalReviewProjection;
+  evidence_appendix?: Record<string, unknown>;
 }
 
 // ── Phase 4.5.4 Workbench Section Types ──

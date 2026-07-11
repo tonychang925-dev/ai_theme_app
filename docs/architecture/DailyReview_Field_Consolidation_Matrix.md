@@ -796,14 +796,14 @@ stocks_by_code[stock_code] = merged_stock_entity
 | PR2.3a Capital Evidence | ✅ Completed | `market capital + theme capital + stock evidence` 三层模型 |
 | PR2.3b Next Day Plan | ✅ Completed | `scenario + watch + confirmation + invalidation + forbidden` |
 | PR3 Projection Diff | ✅ Completed | 7/9 Golden + FACT/ASSESSMENT/PLAN diff |
-| PR4 FormalReview UI | ⏳ Planned | FormalReviewView 双轨 UI |
+| PR4 FormalReview UI | ✅ Completed | FormalReviewView 双轨 UI |
 | PR5 Multi-day Observe | ⏳ Planned | 5+ 交易日观察 |
 | PR6 Legacy Removal | ⏳ Planned | compatibility 与旧字段移除 |
 
 下一步建议：
 
-1. 进入 PR4 FormalReview UI，先做双轨展示，不删除 legacy view。
-2. 保持 dual-track，等待 PR5 多交易日观察。
+1. 进入 PR5 Multi-day Observe，至少观察 5 个交易日。
+2. 保持 dual-track，等待 PR5 结果稳定。
 3. PR6 再移除 compatibility 与旧字段。
 
 ## 16. PR2.3 设计约束（2026-07-11）
@@ -883,7 +883,7 @@ Next Day Plan 统一承接所有“明天怎么办”的信息来源。
 
 ### 16.4 当前完成度
 
-Phase 4.5.6 当前约完成 70%。FormalReviewProjectionCompiler 已具备完整六章输出能力：
+Phase 4.5.6 当前约完成 90%。FormalReviewProjectionCompiler 已具备完整六章输出能力，FormalReviewView 已双轨接入 Recap：
 
 ```text
 Market State
@@ -897,7 +897,7 @@ Capital Evidence
 Next Day Plan
 ```
 
-PR3 Projection Diff 已通过。下一步进入 PR4 FormalReview UI，验证新结构在前端阅读层可用。
+PR4 FormalReview UI 已通过。下一步进入 PR5 Multi-day Observe，验证新结构跨交易日稳定性。
 
 ## 17. PR2.3 实施记录（2026-07-11）
 
@@ -1005,3 +1005,42 @@ PR3 Projection Diff 已通过。下一步进入 PR4 FormalReview UI，验证新�
 结论：
 
 `FormalReviewProjectionCompiler` 已证明可以压缩结构复杂度，同时保持核心市场认知价值：FACT 稳定、ENTITY 不丢、ASSESSMENT 尊重分析师校准、PLAN 消费最终确认结果。
+
+## 19. PR4 FormalReview UI 实施记录（2026-07-11）
+
+新增：
+
+- `frontend/src/routes/recap/components/FormalReviewView.tsx`
+- `frontend/scripts/test-formal-review-view-contract.mjs`
+
+修改：
+
+- `frontend/src/lib/api.ts`
+  - 新增 `FormalReviewProjection` 类型。
+  - `PostMarketDailyReviewV2` 暴露 `metadata / formal_review / evidence_appendix`。
+- `frontend/src/routes/recap/RecapPage.tsx`
+  - 在 `WorkbenchSectionsPanel` 与 `EnginePostMarketView` 前双轨渲染 `FormalReviewView`。
+  - 不删除旧 Workbench/Engine 视图，支持对照观察。
+
+FormalReviewView 只消费：
+
+- `formal_review.executive_summary`
+- `formal_review.market_state`
+- `formal_review.theme_structure`
+- `formal_review.stock_structure`
+- `formal_review.capital_evidence`
+- `formal_review.next_day_plan`
+
+边界：
+
+- 不读取 `theme_reviews / strong_stock_reviews / watchlist_reviews / post_market_decision_v2` 等 legacy DailyReviewV2 字段。
+- 不替换旧 Recap 组件。
+- 不新增第七章。
+
+验证：
+
+| 验证项 | 结果 |
+|---|---|
+| `node scripts/test-formal-review-view-contract.mjs` | ✅ 通过 |
+| `node scripts/test-recap-workbench-first-contract.mjs` | ✅ 通过 |
+| `npm run build` | ✅ 通过 |
