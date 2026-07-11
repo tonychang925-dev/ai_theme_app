@@ -8689,18 +8689,6 @@ def _inject_sections(v2: dict[str, Any], source: dict[str, Any]) -> dict[str, An
             if val is not None and val != [] and val != {}:
                 v2[v2_key] = val
 
-    # Also inject workbench_data if not present
-    if "workbench_data" not in v2:
-        v2["workbench_data"] = {
-            "attention_state": source.get("attention_state", {}),
-            "cognition_cards": source.get("cognition_cards", []),
-            "narrative": source.get("narrative", {}),
-            "playbook": source.get("playbook", {}),
-            "override_summary": source.get("override_summary", {}),
-            "emotion_review": source.get("emotion_review", {}),
-            "chart_reviews": source.get("chart_reviews", []),
-        }
-
     return v2
 
 
@@ -8766,6 +8754,37 @@ async def compose_daily_review_from_workbench(payload: dict[str, Any] | None = N
     v2 = await _enrich_v2_theme_names(v2, d)
     v2["watchlists"] = await _build_one_to_two_watchlists(d)
     v2 = _trim_daily_review_v2_response(v2)
+
+    # ── Phase 4.5.6 PR2.1: FormalReviewProjection (dual-track with legacy) ──
+    from stock_processing_service.application.services.daily_review.formal_review_projection_compiler import (
+        FormalReviewProjectionCompiler,
+    )
+    _compiler = FormalReviewProjectionCompiler()
+    _proj = _compiler.compile(
+        trade_date=d,
+        engine_report=result.report,
+        snapshot=approval.snapshot,
+        snapshot_meta=result.report.get("workbench_approval"),
+        source_info=v2.get("source"),
+        theme_name_map=v2.get("theme_name_map"),
+        snapshot_version=v2.get("snapshot_version"),
+        builder_theme_reviews=v2.get("theme_reviews"),
+        builder_theme_capital_reviews=v2.get("theme_capital_reviews"),
+        builder_strong_stock_reviews=v2.get("strong_stock_reviews"),
+        builder_watchlist_reviews=v2.get("watchlist_reviews"),
+        builder_stock_capital_reviews=v2.get("stock_capital_reviews"),
+        builder_money_flow_reviews=v2.get("money_flow_reviews"),
+        builder_dragon_tiger_reviews=v2.get("dragon_tiger_reviews"),
+        builder_abnormal_reviews=v2.get("abnormal_reviews"),
+        builder_post_market_setup_plan=v2.get("post_market_setup_plan"),
+        builder_trading_principle=v2.get("trading_principle"),
+    )
+    _projection_dict = _proj.to_dict()
+    # Keep legacy flat fields; add projection as dual-track
+    v2["metadata"] = _projection_dict.get("metadata", {})
+    v2["formal_review"] = _projection_dict.get("formal_review", {})
+    v2["evidence_appendix"] = _projection_dict.get("evidence_appendix", {})
+    v2["diagnostics"] = {**v2.get("diagnostics", {}), **_projection_dict.get("diagnostics", {})}
 
     return v2
 

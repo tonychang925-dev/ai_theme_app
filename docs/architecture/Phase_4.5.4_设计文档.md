@@ -849,7 +849,12 @@ Then:
 - 正式报告禁止 draft fallback ✅ 已实现（PR4）
 - 职责防回归测试 / Phase 4.5.5-RA Final Review ✅ 已实现（PR5）
 
-Known issue（不阻塞 Phase 4.5.5-RA）：`npm run build` 仍因既有 `AnalystWorkspacePage.tsx` 与 `EmotionDashboard.tsx` TypeScript 类型债失败；本阶段修改后的 `RecapPage.tsx` 已无新增 build error。建议单独建立 `Frontend Type Cleanup` 任务处理。
+后续修复（2026-07-11）：
+
+- 7/9 手工验证发现 Workbench generate 卡住根因：`hot_money_activity_build` 在请求链路内触发 Tushare 外部请求，3 次 60s ReadTimeout。已修复为 Workbench 派生阶段只读取本地 raw snapshot，不在请求内外部抓取。
+- Workbench generate 现在会立即持久化 `GENERATION` / `generation_steps`，前端可展示真实进度：`derived_data → charts → emotion → draft`。
+- Recap 页 `刷新正式报告` 已收紧为只调用 `compose-from-workbench`；`DRAFT_READY` preview 状态禁用按钮并提示先去分析师工作台审核批准。Recap 页不再触发旧 `post_market_recap_generate`。
+- `npm run build` 已通过；此前 `AnalystWorkspacePage.tsx` / `EmotionDashboard.tsx` 类型债已在相关触碰范围内修复。
 
 ### Phase 4.5.5.1-UI ✅ 已实现
 
@@ -886,3 +891,170 @@ P1 东财全 A 实时行情 clist（API 已确认 5537 只，但被限频）
 P2 TDX/mootdx 全市场 quotes 批量计算 ✅ 当前使用
 P3 subject_stock_daily_snapshot ❌ 已禁用
 ```
+
+### Phase 4.5.6 DailyReview Projection Consolidation ⏳ In Progress
+
+目标：将当前 `DailyReviewV2` 从 63 个顶级字段、4771 个扁平化 key 的历史堆叠结构，收敛为稳定的 Formal Review Projection：
+
+```json
+{
+  "metadata": {},
+  "formal_review": {},
+  "evidence_appendix": {},
+  "diagnostics": {},
+  "compatibility": {}
+}
+```
+
+设计基线：
+
+- 文档：`docs/architecture/DailyReview_Field_Consolidation_Matrix.md`
+- 当前版本：v2.2
+- 样本：2026-07-09 `compose-from-workbench` 响应
+- 核心规则：字段级 Merge Policy，禁止对象级覆盖
+
+Merge Policy：
+
+| 通道 | 优先级 | 约束 |
+|---|---|---|
+| FACT | 原始事实 > Engine 结构化事实 > 其他来源 | 禁止人工覆盖 |
+| ASSESSMENT | 分析师 final_value > Approved AI > Engine > legacy | 允许人工校准 |
+| PLAN | 分析师 final_value > Approved playbook > Engine plan > legacy | 允许人工校准 |
+| AUDIT | 只追加 | 不覆盖 |
+
+Compiler Boundary：
+
+- 名称：`FormalReviewProjectionCompiler`
+- 允许：字段 merge、schema mapping、conflict resolution、rename、grouping、dedup
+- 禁止：查询数据库、调 LLM、重新计算指标、修改 snapshot/draft/recap_doc 输入
+
+#### 当前实施状态
+
+| 阶段 | 状态 | 说明 |
+|---|---|---|
+| PR1a Output Cleanup | ✅ Completed | 删除 `workbench_data`、`confirmed_mainlines`、`pending_mainline_reviews` 输出 |
+| PR1b Migration Cleanup | ⏳ Planned | `attention_review` 等迁移后删除 |
+| PR2.1 Compiler Core | ✅ Completed | 新增 compiler core，完成 `metadata + executive_summary + market_state` |
+| PR2.2 Theme + Stock | ✅ Completed | Subject Union + stock_code entity merge |
+| PR2.3a Capital Evidence | ✅ Completed | `market capital + theme capital + stock evidence` 三层模型 |
+| PR2.3b Next Day Plan | ✅ Completed | `scenario + watch + confirmation + invalidation + forbidden` |
+| PR3 Projection Diff | ⏳ Planned | 7/9 Golden + FACT/ASSESSMENT/PLAN diff |
+| PR4 FormalReview UI | ⏳ Planned | FormalReviewView 双轨 UI |
+| PR5 Multi-day Observe | ⏳ Planned | 5+ 交易日观察 |
+| PR6 Legacy Removal | ⏳ Planned | compatibility 与旧字段移除 |
+
+#### PR1a Output Cleanup
+
+已完成：
+
+- 删除 `workbench_data` 重复 blob。
+- 删除永空字段 `confirmed_mainlines`。
+- 删除重复别名 `pending_mainline_reviews`。
+- 只清理输出契约，不删除内部生产链。
+
+验证：
+
+- 50 backend tests 通过。
+- 3 frontend contracts 通过。
+
+#### PR2.1 Compiler Core
+
+新增：
+
+- `daily_review/formal_review_projection_compiler.py`
+- `daily_review/policies/merge_policy.py`
+- `daily_review/projections/metadata.py`
+- `daily_review/projections/executive_summary.py`
+- `daily_review/projections/market_state.py`
+- `theme_structure / stock_structure / capital_evidence / next_day_plan` stub
+
+完成：
+
+- `metadata.schema_version=daily_review_v3`
+- `metadata.projection_version=formal_review_v1`
+- `formal_review.version=1.0`
+- `executive_summary` 保留 `main_story != emotion.summary`
+- `market_state` 保留 `market_health_score` 与 `emotion_score` 并列
+- `relay_summary` 与 `new_high_brief` 摘要进入正式报告
+
+验证：
+
+- 50 backend tests 通过。
+- 3 frontend contracts 通过。
+- compiler smoke test 通过。
+
+#### PR2.2 Theme + Stock
+
+Theme Structure：
+
+- 实现 Subject Union，来源包括：
+  - `theme_reviews`
+  - `theme_capital_reviews`
+  - `mainline_daily_states`
+  - `theme_driver_events`
+  - `cognition_cards`
+- 每个主题实体包含：`role / stage / state_evolution / capital / drivers / analyst_view`。
+- `analyst_view` 只保留 `override=true` 的双轨字段。
+- `state_evolution` 保留 `mainline_daily_states` 独有字段，例如 `fade_risk / alive / strength`。
+
+Stock Structure：
+
+- 按 `stock_code` 合并实体。
+- 来源包括 `strong_stock_reviews + post_market_decision_v2.pool_reviews`。
+- 同一股票只保留一个 entity，`roles` 聚合。
+- 今日角色分组：`leaders / mid_cap / frontline / eliminated`。
+- 每只股票只保留少量关键评分，全量评分后续进入 `evidence_appendix`。
+
+测试：
+
+- AI/Analyst 冲突：AI=机器人，Analyst=PCB，输出 `final_value=PCB`。
+- 主题来源缺失：`theme_reviews` 无，但 `cognition_cards + driver_events` 有，主题不丢。
+- 股票去重：同一 `stock_code` 来自多个来源，输出一个 stock entity。
+
+验证：
+
+- 55 backend tests 通过。
+- 3 frontend contracts 通过。
+
+#### PR2.3 Capital + Plan
+
+PR2.3 已完成，拆分为两段：
+
+1. PR2.3a Capital Evidence
+   - 固定三层模型：market capital / theme capital / stock evidence。
+   - `stock_capital_reviews + money_flow_reviews + dragon_tiger_reviews + abnormal_reviews` 按 `stock_code` 合并。
+   - FACT 不改变，不人工覆盖。
+   - 无 `stock_code` 的席位证据进入 `orphan_seats`，不污染股票实体。
+
+2. PR2.3b Next Day Plan
+   - 统一承接所有“明天怎么办”。
+   - 目标结构：`scenario / watch_themes / watch_stocks / confirmation_signals / invalidation_signals / forbidden_actions`。
+   - 保持 Chapter 4 只描述今天，Chapter 6 只描述明天计划。
+   - `watchlist_reviews + post_market_setup_plan + decision_v2 focus/D1` 按 `stock_code` 合并。
+   - PLAN 合并顺序保持：分析师 override > approved playbook > emotion outlook > trading principle legacy。
+
+验证：
+
+- `py_compile` projection/compiler/API 通过。
+- `test_projection_capital_plan.py`：4 passed。
+- `test_projection_theme_stock_merge.py`：5 passed。
+- Phase 4.5.5/4.5.6 相关后端测试：19 passed。
+- 前端 Workbench/Recap 契约测试通过。
+
+#### 当前评价
+
+Phase 4.5.6 当前约完成 70%。FormalReviewProjectionCompiler 已具备完整六章输出能力：
+
+```text
+Market State
+  +
+Theme Entity
+  +
+Stock Entity
+  +
+Capital Evidence
+  +
+Next Day Plan
+```
+
+下一步进入 PR3 Projection Diff，验证新结构减少复杂度但不损失原 `DailyReviewV2` 信息价值。

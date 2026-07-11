@@ -145,7 +145,4 @@ class TestV2BuilderFields:
         }
         from datetime import date
         result = builder.build(trade_date=date(2026, 5, 29), recap_doc=doc)
-        assert "pending_mainline_reviews" in result
-        assert len(result["pending_mainline_reviews"]) == 1
-        assert "confirmed_mainlines" in result
 

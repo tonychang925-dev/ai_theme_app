@@ -284,10 +284,6 @@ def test_composer_outputs_first_class_sections(tmp_store, td):
     assert report["narrative_review"] == {"main_story": "测试叙事"}
     assert report["playbook_review"] == {"strategy_bias": "观望"}
 
-    # workbench_data backward compat
-    assert "workbench_data" in report
-    assert report["workbench_data"]["emotion_review"] == {"emotion_node": "CLIMAX", "emotion_score": 75}
-
 
 # ═══ Regenerate does not affect snapshot report ═══
 

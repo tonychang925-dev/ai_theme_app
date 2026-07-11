@@ -118,16 +118,6 @@ class WorkbenchReportComposer:
                 "playbook_review": snap.playbook,
                 "analyst_override_review": snap.override_summary,
 
-                # backward-compat blob
-                "workbench_data": {
-                    "attention_state": snap.attention_state,
-                    "cognition_cards": snap.cognition_cards,
-                    "narrative": snap.narrative,
-                    "playbook": snap.playbook,
-                    "override_summary": snap.override_summary,
-                    "emotion_review": snap.emotion_review,
-                    "chart_reviews": snap.chart_reviews,
-                },
             }
         else:
             report = {
@@ -141,16 +131,6 @@ class WorkbenchReportComposer:
                 "narrative_review": {},
                 "playbook_review": {},
                 "analyst_override_review": {},
-
-                "workbench_data": {
-                    "attention_state": {},
-                    "cognition_cards": [],
-                    "narrative": {},
-                    "playbook": {},
-                    "override_summary": {},
-                    "emotion_review": {},
-                    "chart_reviews": [],
-                },
             }
 
         return ComposedReport(
