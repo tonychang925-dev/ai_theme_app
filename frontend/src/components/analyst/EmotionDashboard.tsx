@@ -92,31 +92,9 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
   const [multiTrend, setMultiTrend] = useState<any>(null);
   const trend = useEmotionTrend(tradeDate);
 
-  // Auto-load chart data when date changes (not just on expand)
-  // NOTE: do NOT use an async function as the effect itself — React
-  // expects a synchronous cleanup function, but async always returns a Promise.
-  useEffect(() => {
-    const ctrl = new AbortController();
-
-    fetch(`/api/analyst-charts/trend.json`, { signal: ctrl.signal })
-      .then(r => r.ok ? r.json() : Promise.reject())
-      .then(data => setMultiTrend(data))
-      .catch(() => setMultiTrend(null));
-
-    fetch(`/api/analyst-charts/${tradeDate}.json`, { signal: ctrl.signal })
-      .then(r => r.ok ? r.json() : Promise.reject())
-      .then(data => {
-        if (Array.isArray(data) && data.length > 0) setSystemCharts(data);
-        else setSystemCharts([]);
-      })
-      .catch(() => setSystemCharts([]));
-
-    return () => ctrl.abort();
-  }, [tradeDate]);
-
-
-  // PR4.2: use emotion/chart data from workbench snapshot when available
-  // (prevents reading stale raw JSON that should only be generate artifacts)
+  // PR4.3: Workbench First — data MUST come from Approved Snapshot (via workspace API).
+  // Raw JSON files (emotion-{date}.json, analyst-charts/{date}.json) are generate
+  // artifacts only and are no longer consumed as runtime data sources.
   useEffect(() => {
     if (emotionReview && emotionReview.emotion_node) {
       const er = emotionReview;
@@ -138,71 +116,16 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
       setLoading(false);
       return;
     }
+    // No data from workspace — show empty state (do NOT fall back to raw JSON)
+    setEmotion(null);
+    setLoading(false);
   }, [tradeDate, emotionReview]);
 
   useEffect(() => {
     if (chartReviews && chartReviews.length > 0) {
       setSystemCharts(chartReviews);
-      return;
     }
   }, [tradeDate, chartReviews]);
-
-  useEffect(() => {
-    // Skip raw JSON fetch if we already have emotion data from props
-    if (emotionReview && emotionReview.emotion_node) return;
-    setLoading(true);
-    setEmotion(null);
-    const ctrl = new AbortController();
-    (async () => {
-      // Prefer calibrated data from workbench, merge raw data from static JSON
-      try {
-        const [drResp, staticResp] = await Promise.all([
-          fetch(`/api/v2/daily-review-v2?date=${encodeURIComponent(tradeDate)}`, { signal: ctrl.signal }),
-          fetch(`/api/emotion-${tradeDate}.json`, { signal: ctrl.signal }).catch(() => null),
-        ]);
-        if (drResp.ok) {
-          const dr = await drResp.json();
-          const er = dr.emotion_review;
-          if (er && er.emotion_node) {
-            const raw = (staticResp && (staticResp as Response).ok)
-              ? await (staticResp as Response).json().then((d: any) => d.raw || d).catch(() => ({}))
-              : {};
-            setEmotion({
-              trade_date: tradeDate,
-              emotion_node: er.emotion_node,
-              emotion_desc: er.summary || "",
-              emotion_score: er.emotion_score || 0,
-              confidence: er.confidence ?? 0.5,
-              breadth_score: er.breadth_score || 0, breadth_label: er.breadth_label || "",
-              momentum_score: er.momentum_score || 0, momentum_label: er.momentum_label || "",
-              relay_score: er.relay_score || 0, relay_label: er.relay_label || "",
-              capital_score: er.capital_score || 0, capital_label: er.capital_label || "",
-              style_score: er.style_score || 0, style_label: er.style_label || "",
-              key_evidence: er.key_evidence || [],
-              strategy_bias: er.strategy_bias || "",
-              raw: raw as any,
-            } as EmotionState);
-            setLoading(false);
-            return;
-          }
-        }
-      } catch { /* fall through to static JSON */ }
-
-      try {
-        const resp = await fetch(`/api/emotion-${tradeDate}.json?t=${Date.now()}`, {
-          signal: ctrl.signal,
-          cache: "no-store",
-        });
-        if (resp.ok) {
-          const d = await resp.json();
-          if (d && d.emotion_node) { setEmotion(d); setLoading(false); return; }
-        }
-      } catch { /* missing file OK */ }
-      setLoading(false);
-    })();
-
-    return () => ctrl.abort();
-  }, [tradeDate]);
 
   if (loading) return <div style={{ padding: "8px 16px", color: "#5a7a8a", fontSize: 13 }}>加载情绪数据…</div>;
   if (!emotion || !emotion.emotion_node) return <div style={{ padding: "8px 16px", color: "#ffa940", fontSize: 13 }}>该日期暂无情绪分析，请点击「启动分析」生成复盘动态数据</div>;
