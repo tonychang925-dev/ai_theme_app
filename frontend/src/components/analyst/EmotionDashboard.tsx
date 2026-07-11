@@ -23,6 +23,7 @@ interface EmotionState {
   relay_score: number; relay_label: string;
   capital_score: number; capital_label: string;
   style_score: number; style_label: string;
+  confidence: number;
   key_evidence: string[];
   strategy_bias: string;
   raw: Record<string, number | string>;
@@ -135,6 +136,7 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
               emotion_node: er.emotion_node,
               emotion_desc: er.summary || "",
               emotion_score: er.emotion_score || 0,
+              confidence: er.confidence ?? 0.5,
               breadth_score: er.breadth_score || 0, breadth_label: er.breadth_label || "",
               momentum_score: er.momentum_score || 0, momentum_label: er.momentum_label || "",
               relay_score: er.relay_score || 0, relay_label: er.relay_label || "",
@@ -299,7 +301,7 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
             <div key={i} style={{ fontSize: 11, color: "#5a7a8a", padding: "1px 0" }}>✓ {ev}</div>
           ))}
           <div style={{ marginTop: 4, fontSize: 10, color: "#39ff14" }}>
-            Confidence {Math.max(60, 100 + emotion.emotion_score)}%
+            Confidence {Math.round((emotion.confidence ?? 0.5) * 100)}%
           </div>
         </div>
 
