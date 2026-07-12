@@ -103,11 +103,22 @@ class ReviewDocumentContextFactory:
             "composition_mode": _value(snapshot, "composition_mode"),
         }
 
+        market_state = _dict_value(derived, "market_state")
+        market_metrics = _dict_value(derived, "market_metrics")
+        market_facts = _dict_value(market_state, "facts")
+        if market_facts:
+            market_state = {**market_state, **market_facts}
+
+        capital_state = _dict_value(derived, "capital_state")
+        money_flow_rows = _list_value(derived, "money_flows")
+        if not money_flow_rows:
+            money_flow_rows = _list_value(capital_state, "top_stocks")
+
         return ReviewDocumentContext(
             trade_date=trade_date,
             metadata=metadata,
             market_context=MarketContext(
-                market_metrics=_dict_value(derived, "market_state") or _dict_value(derived, "market_metrics"),
+                market_metrics=market_state or market_metrics,
                 chart_reviews=tuple(_list_value(snapshot, "chart_reviews")),
                 source_meta=_source_meta(derived, "market_state", trade_date),
             ),
@@ -121,7 +132,7 @@ class ReviewDocumentContextFactory:
                 source_meta=_source_meta(derived, "themes", trade_date),
             ),
             capital_context=CapitalContext(
-                money_flow_rows=tuple(_list_value(derived, "money_flows")),
+                money_flow_rows=tuple(money_flow_rows),
                 institution_rows=tuple(_list_value(derived, "institution")),
                 hot_money_rows=tuple(_list_value(derived, "hot_money")),
                 source_meta=_source_meta(derived, "money_flows", trade_date),

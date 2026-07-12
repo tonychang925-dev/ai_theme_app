@@ -8151,56 +8151,53 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     # ── Try snapshot (approved → final analyst view) ──
     snapshot_path = _Path(_wb_base) / trade_date / "snapshot.json"
     if snapshot_path.exists():
-        try:
-            snap = _json.loads(snapshot_path.read_text(encoding="utf-8"))
-            themes = _workspace_themes_from_cards(
-                snap.get("cognition_cards", []),
-                snap.get("attention_state", {}),
-            )
-            return {
-                "trade_date": trade_date,
-                "is_ai_draft": False,
-                "analyst_finalized": True,
-                "themes": themes,
-                "watch_groups": [],
-                "override_count": snap.get("override_summary", {}).get("total", 0),
-                "emotion_review": snap.get("emotion_review") or {},
-                "chart_reviews": snap.get("chart_reviews") or [],
-                "chart_data": _read_raw_chart_json(trade_date, _project_root),
-                "trend_data": _read_trend_json(_project_root),
-            }
-        except Exception:
-            pass  # corrupt snapshot → fall through to draft
+        snap = _json.loads(snapshot_path.read_text(encoding="utf-8"))
+        themes = _workspace_themes_from_cards(
+            snap.get("cognition_cards", []),
+            snap.get("attention_state", {}),
+        )
+        return {
+            "trade_date": trade_date,
+            "is_ai_draft": False,
+            "analyst_finalized": True,
+            "themes": themes,
+            "watch_groups": [],
+            "override_count": snap.get("override_summary", {}).get("total", 0),
+            "emotion_review": snap.get("emotion_review") or {},
+            "chart_reviews": snap.get("chart_reviews") or [],
+            "chart_data": _read_raw_chart_json(trade_date, _project_root),
+            "trend_data": _read_trend_json(_project_root),
+            "review_document": _assemble_workspace_review_document(snap, mode="approved"),
+        }
 
     # ── Try latest draft ──
     drafts_dir = _Path(_wb_base) / trade_date / "drafts"
     if drafts_dir.exists():
         draft_files = sorted(drafts_dir.glob("draft_v*.json"))
         if draft_files:
-            try:
-                draft = _json.loads(draft_files[-1].read_text(encoding="utf-8"))
-                themes = _workspace_themes_from_cards(
-                    draft.get("cognition_cards", []),
-                    draft.get("attention_state", {}),
-                )
-                return {
-                    "trade_date": trade_date,
-                    "is_ai_draft": True,
-                    "analyst_finalized": False,
-                    "cognition_cards": draft.get("cognition_cards", []),
-                    "themes": themes,
-                    "watch_groups": [],
-                    "override_count": 0,
-                    "draft_version": draft.get("draft_version", 0),
-                    "source_quality": draft.get("source_quality", 0),
-                    "missing_fields": draft.get("missing_fields", []),
-                    "emotion_review": draft.get("emotion_review") or {},
-                    "chart_reviews": draft.get("chart_reviews") or [],
-                    "chart_data": _read_raw_chart_json(trade_date, _project_root),
-                    "trend_data": _read_trend_json(_project_root),
-                }
-            except Exception:
-                pass  # corrupt draft → fall through to empty
+            draft = _json.loads(draft_files[-1].read_text(encoding="utf-8"))
+            _attach_draft_review_document_context(draft, _Path(_wb_base) / trade_date / "draft_context.json")
+            themes = _workspace_themes_from_cards(
+                draft.get("cognition_cards", []),
+                draft.get("attention_state", {}),
+            )
+            return {
+                "trade_date": trade_date,
+                "is_ai_draft": True,
+                "analyst_finalized": False,
+                "cognition_cards": draft.get("cognition_cards", []),
+                "themes": themes,
+                "watch_groups": [],
+                "override_count": 0,
+                "draft_version": draft.get("draft_version", 0),
+                "source_quality": draft.get("source_quality", 0),
+                "missing_fields": draft.get("missing_fields", []),
+                "emotion_review": draft.get("emotion_review") or {},
+                "chart_reviews": draft.get("chart_reviews") or [],
+                "chart_data": _read_raw_chart_json(trade_date, _project_root),
+                "trend_data": _read_trend_json(_project_root),
+                "review_document": _assemble_workspace_review_document(draft, mode="draft"),
+            }
 
     # ── Nothing available ──
     return {
@@ -8212,6 +8209,38 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
         "override_count": 0,
         "can_generate": True,
     }
+
+
+def _attach_draft_review_document_context(draft: dict[str, Any], context_path: Any) -> None:
+    """Attach Workbench draft_context.json for ReviewDocument assembly.
+
+    This reads the Workbench-generated draft context artifact only. It does not
+    read static chart/emotion JSON and does not fall back to legacy recap data.
+    """
+    from pathlib import Path as _Path
+    import json as _json
+
+    path = _Path(context_path)
+    if not path.exists():
+        return
+    context = _json.loads(path.read_text(encoding="utf-8"))
+    attention_state = draft.setdefault("attention_state", {})
+    if isinstance(attention_state, dict):
+        attention_state["review_document_context"] = context
+
+
+def _assemble_workspace_review_document(snapshot_like: dict[str, Any], *, mode: str) -> dict[str, Any]:
+    """Assemble the unified ReviewDocument for Analyst Workspace preview."""
+    from stock_processing_service.application.services.review_document import (
+        ReviewDocumentAssembler,
+        ReviewDocumentAssemblerInput,
+        ReviewDocumentContextFactory,
+    )
+
+    context = ReviewDocumentContextFactory().create(snapshot_like)
+    return ReviewDocumentAssembler().assemble(
+        ReviewDocumentAssemblerInput(context=context, mode=mode)  # type: ignore[arg-type]
+    ).to_dict()
 
 
 def _read_raw_chart_json(trade_date: str, project_root: str) -> list:

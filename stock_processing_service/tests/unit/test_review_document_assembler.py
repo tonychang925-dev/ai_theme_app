@@ -244,6 +244,52 @@ def test_empty_context_is_blocked_not_ready() -> None:
     assert document["quality"]["sections"]["capital"]["status"] == SectionQualityStatus.BLOCKED.value
 
 
+def test_context_factory_accepts_workbench_draft_context_shape() -> None:
+    snapshot = {
+        "trade_date": "2026-07-09",
+        "attention_state": {
+            "review_document_context": {
+                "trade_date": "2026-07-09",
+                "market_state": {
+                    "emotion_score": 39,
+                    "facts": {
+                        "limit_up_count": 75,
+                        "limit_down_count": 29,
+                        "up_count": 3561,
+                        "down_count": 1609,
+                    },
+                },
+                "themes": [
+                    {"subject_key": "pcb", "theme_name": "PCB", "role": "MAINLINE", "stage": "承接"}
+                ],
+                "capital_state": {
+                    "status": "derived_money_flow",
+                    "top_stocks": [
+                        {"theme_name": "PCB", "role_label": "机构", "stock_name": "测试股份"}
+                    ],
+                },
+                "strong_stocks": [
+                    {"stock_code": "000001.SZ", "stock_name": "测试股份", "theme_name": "PCB"}
+                ],
+            }
+        },
+        "emotion_review": {"phase": "REBOUND", "score": 39},
+        "cognition_cards": [],
+        "playbook": {"scenario": "REBOUND_ARBITRAGE"},
+    }
+
+    context = ReviewDocumentContextFactory().create(snapshot)
+    document = ReviewDocumentAssembler().assemble(
+        ReviewDocumentAssemblerInput(context=context, mode="draft")
+    ).to_dict()
+
+    assert document["market"]["limit_up_count"] == 75
+    assert document["market"]["up_count"] == 3561
+    assert document["capital"]["institution"][0]["theme_name"] == "PCB"
+    assert document["themes"][0]["name"]["final_value"] == "PCB"
+    assert document["quality"]["sections"]["market"]["status"] == SectionQualityStatus.READY.value
+
+
 def test_assembler_output_has_no_legacy_or_formal_review() -> None:
     context = ReviewDocumentContextFactory().create(_snapshot_from_golden())
     document = ReviewDocumentAssembler().assemble(
