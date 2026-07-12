@@ -27,6 +27,7 @@ from .context import (
 )
 from .assembler import ReviewDocumentAssembler
 from .diff import ReviewDocumentDiff, ReviewDocumentDiffChange, ReviewDocumentDiffService
+from .override import ReviewOverride, ReviewOverrideApplier, ReviewOverrideResult
 from .schema import (
     FieldProvenanceEntry,
     ReviewDocument,
@@ -53,6 +54,9 @@ __all__ = [
     "ReviewDocumentDiffService",
     "ReviewDocumentMetadata",
     "ReviewDocumentQuality",
+    "ReviewOverride",
+    "ReviewOverrideApplier",
+    "ReviewOverrideResult",
     "SectionQuality",
     "SectionQualityStatus",
     "StockContext",
