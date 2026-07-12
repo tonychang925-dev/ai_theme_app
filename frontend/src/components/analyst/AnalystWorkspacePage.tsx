@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { EmotionDashboard } from "./EmotionDashboard";
-import { ReviewDocumentView, type ReviewDocument } from "../review-document/ReviewDocumentView";
-import type { ReviewOverride } from "../review-document/OverrideEditor";
+import { ReviewDocumentSections } from "../review-document/ReviewDocumentSections";
 
 // ── Types ──
 
@@ -71,15 +70,13 @@ interface WatchGroup {
 }
 
 interface Workspace {
-  trade_date?: string;
-  is_ai_draft?: boolean;
-  analyst_finalized?: boolean;
-  themes?: ThemeEntry[];
-  watch_groups?: WatchGroup[];
-  override_count?: number;
-  review_document?: ReviewDocument | null;
-  metadata?: Record<string, unknown>;
-  diagnostics?: Record<string, unknown>;
+  trade_date: string;
+  is_ai_draft: boolean;
+  analyst_finalized: boolean;
+  themes: ThemeEntry[];
+  watch_groups: WatchGroup[];
+  override_count: number;
+  review_document?: Record<string, any> | null;
 }
 
 function newWatchGroup(color: string): WatchGroup {
@@ -410,11 +407,6 @@ export function AnalystWorkspacePage() {
   const [tomorrowForbidden, setTomorrowForbidden] = useState<string[]>([]);
   const [calibrating, setCalibrating] = useState(false);
   const [calMsg, setCalMsg] = useState("");
-  // PR3: ReviewDocument override state
-  const [reviewOverrides, setReviewOverrides] = useState<ReviewOverride[]>([]);
-  const [overrideVersion, setOverrideVersion] = useState(0);
-  const [overrideSaving, setOverrideSaving] = useState(false);
-  const [overrideSaveMsg, setOverrideSaveMsg] = useState("");
   const [importDialog, setImportDialog] = useState<{ show: boolean; step: "select" | "parsing" | "imported" | "calibrating" | "done" | "error"; msg: string; result?: any }>({ show: false, step: "select", msg: "" });
   const [fileInputKey, setFileInputKey] = useState(0);
   const [readinessDialog, setReadinessDialog] = useState<{ show: boolean; chart: boolean; emotion: boolean; reference: boolean; mode: "generate" | "calibrate" } | null>(null);
@@ -429,7 +421,56 @@ export function AnalystWorkspacePage() {
       const resp = await fetch(`/api/v1/analyst-workspace/${d}`);
       if (!resp.ok) throw new Error(`${resp.status}`);
       const data = await resp.json();
-      setWorkspace(data);
+
+      // ── Map new API response (review_document-centric) to Workspace interface ──
+      const rd = data.review_document || {};
+      const meta = data.metadata || {};
+      const mode = meta.mode || "not_started";
+
+      const themes: ThemeEntry[] = (rd.themes || []).map((t: any) => {
+        const name = (typeof t.name === "object" && t.name !== null)
+          ? (t.name.final_value || t.name.ai_value || "")
+          : (t.name || "");
+        const level = t.role === "MAINLINE" ? "CRITICAL" : t.role === "SECONDARY" ? "HIGH" : "MEDIUM";
+        return {
+          subject_id: t.theme_key || `rd_${Math.random().toString(36).slice(2)}`,
+          subject_name: name || t.theme_key || "(未命名)",
+          attention_level: level,
+          attention_score: typeof t.strength_score === "number" ? Math.round(t.strength_score * 100) : 50,
+          attention_reasons: [],
+          ai_recommended: true,
+          analyst_added: false,
+          trading_style: "",
+          long_identifiability: 0.5,
+          short_identifiability: 0.3,
+          old_leaders: "",
+          event_stimuli: [""],
+          yesterday_view: "",
+          today_actual: "",
+          stage_judgement: t.stage || "",
+          intraday_understanding: "",
+          trader_sentiment: "",
+          index_resonance: "",
+          tomorrow_view: "",
+          analyst_notes: "",
+          is_ai_draft: mode === "draft",
+          analyst_reviewed: mode === "approved",
+          field_overrides: {},
+          leaders: [],
+          bull_pool: [],
+          bear_pool: [],
+        };
+      });
+
+      setWorkspace({
+        trade_date: meta.trade_date || d,
+        is_ai_draft: mode === "draft",
+        analyst_finalized: mode === "approved",
+        themes,
+        watch_groups: [],
+        override_count: (rd.audit?.explicit_overrides || []).length,
+        review_document: rd,
+      });
       setSelectedIdx(0);
     } catch (e: any) {
       setError(e.message);
@@ -438,29 +479,7 @@ export function AnalystWorkspacePage() {
     }
   }, []);
 
-  const fetchOverrides = useCallback(async (d: string) => {
-    try {
-      const resp = await fetch(`/api/v1/analyst-workspace/${d}/review-overrides`);
-      if (!resp.ok) return;
-      const data = await resp.json();
-      const raw = Array.isArray(data.overrides) ? data.overrides : [];
-      setReviewOverrides(raw.map((item: any) => ({
-        field_path: item.field_path || "",
-        field_class: (item.field_class || "ASSESSMENT") as ReviewOverride["field_class"],
-        ai_value: item.ai_value ?? "",
-        analyst_value: item.analyst_value ?? "",
-        final_value: item.final_value ?? "",
-        reason: item.reason || "",
-        author: item.author || "analyst",
-        timestamp: item.timestamp || "",
-      })));
-      setOverrideVersion(data.metadata?.version ?? 0);
-    } catch {
-      // Non-blocking: overrides are additive, workspace still works without them
-    }
-  }, []);
-
-  useEffect(() => { fetchWorkspace(dateInput); fetchTomorrow(dateInput); fetchOverrides(dateInput); }, [dateInput, fetchWorkspace, fetchOverrides]);
+  useEffect(() => { fetchWorkspace(dateInput); fetchTomorrow(dateInput); }, [dateInput, fetchWorkspace]);
 
   const handleSave = async () => {
     if (!workspace) return;
@@ -519,65 +538,6 @@ export function AnalystWorkspacePage() {
       setTimeout(() => setSavedMsg(""), 5000);
     }
   };
-
-  // ── PR3: ReviewDocument override handlers ──
-
-  const handleOverridesChange = useCallback((overrides: ReviewOverride[]) => {
-    setReviewOverrides(overrides);
-    setOverrideSaveMsg("");
-  }, []);
-
-  const handleOverridesSave = useCallback(async () => {
-    setOverrideSaving(true);
-    setOverrideSaveMsg("");
-    try {
-      const body: Record<string, any> = {
-        overrides: reviewOverrides.map((o) => ({
-          field_path: o.field_path,
-          field_class: o.field_class,
-          ai_value: o.ai_value,
-          analyst_value: o.analyst_value,
-          final_value: o.final_value,
-          reason: o.reason,
-          author: o.author || "analyst",
-          timestamp: o.timestamp || new Date().toISOString(),
-        })),
-      };
-      if (overrideVersion > 0) {
-        body.base_version = overrideVersion;
-      }
-
-      const resp = await fetch(`/api/v1/analyst-workspace/${dateInput}/review-overrides`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-
-      if (resp.status === 409) {
-        setOverrideSaveMsg("⚠ 版本冲突：数据已被其他窗口修改，请刷新后重试");
-        setOverrideSaving(false);
-        return;
-      }
-
-      if (!resp.ok) {
-        const errData = await resp.json().catch(() => ({}));
-        throw new Error((errData as any).detail || `HTTP ${resp.status}`);
-      }
-
-      const result = await resp.json();
-      setOverrideVersion(result.metadata?.version ?? overrideVersion + 1);
-      setOverrideSaveMsg(`已保存 ${result.metadata?.override_count ?? reviewOverrides.length} 项修正`);
-
-      // Refresh workspace to pick up applied overrides
-      await fetchWorkspace(dateInput);
-      await fetchOverrides(dateInput);
-    } catch (e: any) {
-      setOverrideSaveMsg(`❌ ${e.message || "保存修正失败"}`);
-    } finally {
-      setOverrideSaving(false);
-      setTimeout(() => setOverrideSaveMsg(""), 5000);
-    }
-  }, [dateInput, reviewOverrides, overrideVersion, fetchWorkspace, fetchOverrides]);
 
   const handleGenerate = async () => {
     setGenerating(true);
@@ -816,14 +776,7 @@ export function AnalystWorkspacePage() {
     watch_groups: [],
     override_count: 0,
   };
-  const ws = { ...emptyWorkspace, ...(workspace || {}) } as Workspace & {
-    trade_date: string;
-    is_ai_draft: boolean;
-    analyst_finalized: boolean;
-    themes: ThemeEntry[];
-    watch_groups: WatchGroup[];
-    override_count: number;
-  };
+  const ws = workspace || emptyWorkspace;
   const theme = ws.themes[selectedIdx] || newTheme();
   const activeGroup = (ws.watch_groups || []).find(g => g.id === selectedGroupId);
   const groupedThemeIds = new Set((ws.watch_groups || []).flatMap(g => g.subject_ids));
@@ -865,7 +818,6 @@ export function AnalystWorkspacePage() {
             {ws.themes.length} 题材 · {(ws.watch_groups || []).length} 方向
           </span>
           {savedMsg && <span style={{ fontSize: 12, color: "#39ff14" }}>{savedMsg}</span>}
-          {overrideSaveMsg && <span style={{ fontSize: 12, color: overrideSaveMsg.startsWith("⚠") ? "#ffd85e" : overrideSaveMsg.startsWith("❌") ? "#ff8a65" : "#39ff14" }}>{overrideSaveMsg}</span>}
           <button className="tag tag-button is-pass" type="button" style={{ fontSize: 14, padding: "6px 16px" }}
             disabled={saving} onClick={handleSave}>
             {saving ? "保存中…" : "保存"}
@@ -888,17 +840,10 @@ export function AnalystWorkspacePage() {
         ))}
       </div>
 
-      {/* Tab: 情绪与图表 — EmotionDashboard (rich charts) + ReviewDocumentView (structured override) */}
+      {/* Tab 1: Emotion Dashboard */}
       <div style={{ flex: 1, overflow: "auto", background: "#0c1118", display: activeTab === "emotion" ? "block" : "none" }}>
         <EmotionDashboard key={`${dateInput}-${genKey}`} tradeDate={dateInput} tomorrowOutlook={tomorrowOutlook} tomorrowWatchpoints={tomorrowWatchpoints} tomorrowForbidden={tomorrowForbidden} reviewDocument={ws.review_document} />
-        <ReviewDocumentView
-          document={ws.review_document}
-          mode="editable"
-          overrides={reviewOverrides}
-          onOverridesChange={handleOverridesChange}
-          onSave={handleOverridesSave}
-          saving={overrideSaving}
-        />
+        <ReviewDocumentSections document={ws.review_document} />
       </div>
 
       {/* Tab 2: Three-panel body — dark theme */}

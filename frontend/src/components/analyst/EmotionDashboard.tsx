@@ -52,38 +52,23 @@ function Stars({ count }: { count: number }) {
   return <span style={{ fontSize: 12, letterSpacing: 1 }}>{"★".repeat(full)}{"☆".repeat(5 - full)}</span>;
 }
 
-// ── Trend data helper ──
-function useEmotionTrend(tradeDate: string) {
-  const [trend, setTrend] = useState<{ date: string; node: string; score: number }[]>([]);
-
-  useEffect(() => {
-    // Load from static trend.json — instant, no API calls
-    fetch(`/api/analyst-charts/trend.json`)
-      .then(r => r.json())
-      .then(data => {
-        const scores = (data.momentum || []).map((m: any) => ({
-          date: m.date, score: m.score,
-          node: m.score < -10 ? "ICE_POINT" : m.score < -5 ? "FADE" : m.score < 0 ? "DIVERGENCE" : m.score > 5 ? "CLIMAX" : m.score > 0 ? "FERMENTATION" : "CHAOS",
-        }));
-        setTrend(scores);
-      })
-      .catch(() => setTrend([]));
-  }, [tradeDate]);
-
-  return trend;
+// ── Node derivation helper (pure, no fetch) ──
+function deriveNode(score: number): string {
+  if (score < -10) return "ICE_POINT";
+  if (score < -5) return "FADE";
+  if (score < 0) return "DIVERGENCE";
+  if (score > 5) return "CLIMAX";
+  if (score > 0) return "FERMENTATION";
+  return "CHAOS";
 }
 
 // ── Main Component ──
-export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoints, tomorrowForbidden, reviewDocument, emotionReview, chartReviews, chartData, trendData }: {
+export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoints, tomorrowForbidden, reviewDocument }: {
   tradeDate: string;
   tomorrowOutlook?: string;
   tomorrowWatchpoints?: string[];
   tomorrowForbidden?: string[];
   reviewDocument?: Record<string, any> | null;
-  emotionReview?: Record<string, any> | null;
-  chartReviews?: any[] | null;
-  chartData?: any[] | null;
-  trendData?: any;
 }) {
   const watchpoints = tomorrowWatchpoints || [];
   const forbidden = tomorrowForbidden || [];
@@ -93,32 +78,40 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
   const [showEvidence, setShowEvidence] = useState(false);
   const [systemCharts, setSystemCharts] = useState<any[]>([]);
   const [multiTrend, setMultiTrend] = useState<any>(null);
-  const trend = useEmotionTrend(tradeDate);
+
+  // Derive trend timeline from reviewDocument.evidence.trend_series.momentum
+  const trendSeries = reviewDocument?.evidence?.trend_series;
+  const trend: { date: string; node: string; score: number }[] = (trendSeries?.momentum || []).map((m: any) => ({
+    date: m.date,
+    score: m.score ?? 0,
+    node: deriveNode(m.score ?? 0),
+  }));
 
   // PR4.5.7: Single data source — ReviewDocument.
-  // emotionReview/chartReviews/chartData/trendData are deprecated migration props.
+  // All emotion/chart/trend data flows from the backend assembler, not from raw JSON.
   useEffect(() => {
     const rdEmotion = reviewDocument?.emotion;
+    const rdMarket = reviewDocument?.market;
     if (rdEmotion && (rdEmotion.phase || rdEmotion.score != null)) {
       setEmotion({
         trade_date: tradeDate,
         emotion_node: rdEmotion.phase || null,
         emotion_desc: rdEmotion.strategy || null,
-        emotion_score: rdEmotion.score ?? null,
-        confidence: rdEmotion.confidence ?? null,
-        breadth_score: reviewDocument?.market?.breadth_score ?? null,
-        breadth_label: reviewDocument?.market?.breadth_label ?? null,
-        momentum_score: null, momentum_label: null,
-        relay_score: null, relay_label: null,
-        capital_score: null, capital_label: null,
-        style_score: null, style_label: null,
+        emotion_score: rdEmotion.score ?? 0,
+        confidence: rdEmotion.confidence ?? 0.5,
+        breadth_score: rdMarket?.breadth_score ?? 0,
+        breadth_label: rdMarket?.breadth_label ?? "",
+        momentum_score: 0, momentum_label: "",
+        relay_score: 0, relay_label: "",
+        capital_score: 0, capital_label: "",
+        style_score: 0, style_label: "",
         key_evidence: rdEmotion.key_evidence || [],
         strategy_bias: rdEmotion.strategy || null,
         raw: {
-          limit_up: reviewDocument?.market?.limit_up_count,
-          up_count: reviewDocument?.market?.up_count,
-          down_count: reviewDocument?.market?.down_count,
-          turnover_yi: reviewDocument?.market?.active_capital_yi,
+          limit_up: rdMarket?.limit_up_count,
+          turnover_yi: rdMarket?.active_capital_yi,
+          up_count: rdMarket?.up_count,
+          down_count: rdMarket?.down_count,
         } as any,
       } as EmotionState);
       setLoading(false);
@@ -377,15 +370,17 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
                       {m?.momentum && <TrendLineChart title="情绪动能趋势 (6/25~7/8)" data={m.momentum} yKey="score" yLabel="动能" color="#dd6b20" />}
                       {c("emotion_momentum") && <ChartRenderer chart={c("emotion_momentum")} />}
                     </UnifiedCard>,
-                    <UnifiedCard key="capital" title="活跃资金成交量" borderColor="#66d9ef">
+                    <UnifiedCard key="capital" title="资金驱动" borderColor="#66d9ef">
                       {m?.capital && <TrendLineChart title="活跃资金趋势 (6/25~7/8)" data={m.capital} yKey="active_yi" yLabel="亿" color="#66d9ef" />}
                       {c("active_capital") && <ChartRenderer chart={c("active_capital")} />}
+                      {c("institution_style") && <ChartRenderer chart={c("institution_style")} />}
+                      {c("hot_money_style") && <ChartRenderer chart={c("hot_money_style")} />}
                     </UnifiedCard>,
                     <UnifiedCard key="relay" title="核心板块节律" borderColor="#805ad5">
                       {m?.relay && <TrendLineChart title="最高板趋势 (6/25~7/8)" data={m.relay} yKey="max_height" yLabel="板" color="#d69e2e" />}
                       {c("relay_ecology") && <ChartRenderer chart={c("relay_ecology")} />}
                     </UnifiedCard>,
-                    ...["institution_style","hot_money_style","limitup_classification"].map(ct => {
+                    ...["limitup_classification"].map(ct => {
                       const ch = c(ct); if (!ch) return null;
                       return <UnifiedCard key={ct} title={ch.title} borderColor="#5a7a8a"><ChartRenderer chart={ch} /></UnifiedCard>;
                     }).filter(Boolean),

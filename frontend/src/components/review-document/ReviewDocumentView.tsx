@@ -74,7 +74,7 @@ export function ReviewDocumentView({
     );
   }
 
-  const isEditable = mode === "editable" && onOverridesChange;
+  const isEditable = !!(mode === "editable" && onOverridesChange);
 
   const metadata = document.metadata || {};
   const quality = document.quality || {};
