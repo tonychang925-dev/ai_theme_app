@@ -122,9 +122,15 @@ def test_golden_replay_reports_missing_fields_without_repairing(tmp_path: Path) 
     )
 
     assert result.returncode == 1
+    assert "ReviewDocument Replay" in result.stdout
+    assert "Artifact:" in result.stdout
+    assert "Hash:" in result.stdout
+    assert "Schema:" in result.stdout
+    assert "Coverage:" in result.stdout
     assert "market  PASS" in result.stdout
     assert "emotion PASS" in result.stdout
     assert "themes  FAIL" in result.stdout
     assert "stocks  FAIL" in result.stdout
     assert "plan    FAIL" in result.stdout
+    assert "Blocking:" in result.stdout
     assert "READY=False" in result.stdout

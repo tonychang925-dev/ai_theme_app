@@ -33,6 +33,7 @@ class CheckResult:
     name: str
     status: str
     message: str
+    blocking_issue: str | None = None
 
 
 def main() -> int:
@@ -56,18 +57,41 @@ def main() -> int:
     baseline = _load_yaml(baseline_path)
     document_path = args.document or _discover_document(args.date)
 
+    print("ReviewDocument Replay")
+    print("=====================")
+    print()
+
     if document_path is None:
-        print(f"ReviewDocument not found for {args.date}")
+        _print_artifact(None)
+        print()
+        print("FINAL")
         print("READY=False")
+        print()
+        print("Blocking:")
+        print("- artifact_missing")
         return 2
 
     document = _load_json(document_path)
+    _print_artifact(document_path)
+    _print_hash(document)
+    _print_schema(document)
+    print()
+    print("Coverage:")
+    print()
     results = verify(document, baseline)
     for line in _format_results(results):
         print(line)
 
     ready = all(item.status == "PASS" for item in results)
+    blocking = [item.blocking_issue or f"{item.group}.{item.name}" for item in results if item.status != "PASS"]
+    print()
+    print("FINAL")
     print(f"READY={str(ready)}")
+    if blocking:
+        print()
+        print("Blocking:")
+        for issue in blocking:
+            print(f"- {issue}")
     return 0 if ready else 1
 
 
@@ -93,14 +117,14 @@ def _check_one(document: dict[str, Any], group: str, name: str, spec: dict[str, 
     values = [item for item in values if item not in ("", None, [], {})]
 
     if spec.get("required") and not values:
-        return CheckResult(group, name, "FAIL", f"{path} missing")
+        return CheckResult(group, name, "FAIL", f"{path} missing", _blocking_issue(group, name, "missing"))
 
     if "equals" in spec:
         expected = spec["equals"]
         actual = values[0] if values else None
         if actual == expected:
             return CheckResult(group, name, "PASS", f"{path} == {expected!r}")
-        return CheckResult(group, name, "FAIL", f"{path} expected {expected!r}, got {actual!r}")
+        return CheckResult(group, name, "FAIL", f"{path} expected {expected!r}, got {actual!r}", _blocking_issue(group, name, "mismatch"))
 
     missing: list[str] = []
     for expected in spec.get("contains_all") or []:
@@ -119,14 +143,15 @@ def _check_one(document: dict[str, Any], group: str, name: str, spec: dict[str, 
             parts.append("missing " + ", ".join(missing))
         if forbidden_hits:
             parts.append("forbidden " + ", ".join(forbidden_hits))
-        return CheckResult(group, name, "FAIL", f"{path}: {'; '.join(parts)}")
+        reason = "forbidden" if forbidden_hits else "missing"
+        return CheckResult(group, name, "FAIL", f"{path}: {'; '.join(parts)}", _blocking_issue(group, name, reason))
 
     if "contains_all" in spec or "forbidden_values" in spec:
         return CheckResult(group, name, "PASS", f"{path} values={values!r}")
 
     if values:
         return CheckResult(group, name, "PASS", f"{path} present")
-    return CheckResult(group, name, "FAIL", f"{path} missing")
+    return CheckResult(group, name, "FAIL", f"{path} missing", _blocking_issue(group, name, "missing"))
 
 
 def _extract_path(payload: Any, path: str) -> list[Any]:
@@ -166,6 +191,38 @@ def _format_results(results: list[CheckResult]) -> list[str]:
     ]
 
 
+def _print_artifact(path: Path | None) -> None:
+    print("Artifact:")
+    if path is None:
+        print("x missing")
+        return
+    print(f"✓ found {path}")
+
+
+def _print_hash(document: dict[str, Any]) -> None:
+    value = (document.get("metadata") or {}).get("final_document_hash")
+    print()
+    print("Hash:")
+    if isinstance(value, str) and value.startswith("sha256:"):
+        print(f"✓ valid {value}")
+    else:
+        print("x missing")
+
+
+def _print_schema(document: dict[str, Any]) -> None:
+    metadata = document.get("metadata") or {}
+    schema = metadata.get("document_schema_version") or metadata.get("review_document_schema_version")
+    assembler = metadata.get("assembler_version")
+    print()
+    print("Schema:")
+    print(f"✓ {schema or 'missing'}")
+    print(f"✓ assembler {assembler or 'missing'}")
+
+
+def _blocking_issue(group: str, name: str, reason: str) -> str:
+    return f"{group}.{name}_{reason}"
+
+
 def _load_yaml(path: Path) -> dict[str, Any]:
     if not path.exists():
         raise FileNotFoundError(path)
@@ -188,8 +245,6 @@ def _discover_document(trade_date: str) -> Path | None:
     candidates = [
         PROJECT_ROOT / "tmp" / "analyst_workbench" / trade_date / "review_document.json",
         PROJECT_ROOT / "stock_processing_service" / "tmp" / "analyst_workbench" / trade_date / "review_document.json",
-        PROJECT_ROOT / "tmp" / "analyst_workbench" / trade_date / "final_review_document.json",
-        PROJECT_ROOT / "stock_processing_service" / "tmp" / "analyst_workbench" / trade_date / "final_review_document.json",
     ]
     return next((path for path in candidates if path.exists()), None)
 

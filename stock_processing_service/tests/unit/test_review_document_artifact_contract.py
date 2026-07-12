@@ -129,11 +129,17 @@ async def test_review_document_artifact_can_be_replayed_by_golden_guard() -> Non
         )
 
         assert result.returncode == 1
+        assert "ReviewDocument Replay" in result.stdout
+        assert "Artifact:" in result.stdout
+        assert "Hash:" in result.stdout
+        assert "Schema:" in result.stdout
+        assert "Coverage:" in result.stdout
         assert "market  PASS" in result.stdout
         assert "emotion PASS" in result.stdout
         assert "themes  PASS" in result.stdout
         assert "stocks  FAIL" in result.stdout
         assert "plan    PASS" in result.stdout
+        assert "Blocking:" in result.stdout
         assert "READY=False" in result.stdout
     finally:
         shutil.rmtree(workbench_dir, ignore_errors=True)
