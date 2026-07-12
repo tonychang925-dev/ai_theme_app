@@ -41,18 +41,19 @@ class ThemeIdentityResolver:
     entity_type = "A_SHARE_THEME"
 
     def resolve(self, raw: RawThemeIdentity, lookup_records: list[dict[str, Any]] | None = None) -> ThemeIdentity:
+        subject_key = raw.subject_key
         direct_name = _clean_text(raw.theme_name)
         direct_source = "input.theme_name"
-        if not direct_name or direct_name.isdigit():
+        if _is_subject_key_like(direct_name, subject_key):
             fallback = _clean_text(raw.subject_name)
-            if fallback and not fallback.isdigit():
+            if fallback and not _is_subject_key_like(fallback, subject_key):
                 direct_name = fallback
                 direct_source = "input.subject_name"
             else:
                 direct_name = ""
         if direct_name:
             return ThemeIdentity(
-                subject_key=raw.subject_key,
+                subject_key=subject_key,
                 canonical_name=direct_name,
                 entity_type=self.entity_type,
                 identity_source=direct_source,
@@ -61,12 +62,12 @@ class ThemeIdentityResolver:
 
         for record in lookup_records or []:
             key = _record_key(record)
-            if key != raw.subject_key:
+            if key != subject_key:
                 continue
             name = _clean_text(record.get("theme_name")) or _clean_text(record.get("subject_name"))
-            if name and not name.isdigit():
+            if name and not _is_subject_key_like(name, subject_key):
                 return ThemeIdentity(
-                    subject_key=raw.subject_key,
+                    subject_key=subject_key,
                     canonical_name=name,
                     entity_type=self.entity_type,
                     identity_source=_record_source(record),
@@ -133,3 +134,21 @@ def _record_source(record: dict[str, Any]) -> str:
 def _clean_text(value: Any) -> str:
     text = str(value or "").strip()
     return text
+
+
+def _is_subject_key_like(text: str, subject_key: str) -> bool:
+    """Return True if text looks like a fallback subject_key, not a real name.
+
+    Guards against numeric IDs (e.g. "9055378") being accepted as canonical
+    theme names. Rules (in priority order):
+      1. Empty → True (not a name)
+      2. Exact match with subject_key → True (fallback ID)
+      3. All digits + len >= 6 → True (numeric ID pattern)
+    """
+    if not text:
+        return True
+    if text == subject_key:
+        return True
+    if text.isdigit() and len(text) >= 6:
+        return True
+    return False

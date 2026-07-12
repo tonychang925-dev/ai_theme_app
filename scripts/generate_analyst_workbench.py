@@ -155,21 +155,11 @@ def main():
                 "strategy_bias": emo.get("strategy_bias", ""),
                 "key_evidence": emo.get("key_evidence", []),
             }
-            # PR4.2.14: prefer plan_state from DraftContextBuilder (rule-derived)
-            plan_state = (context or {}).get("plan_state") if context else None
-            if isinstance(plan_state, dict) and plan_state:
-                draft.playbook = {
-                    "strategy_bias": emo.get("strategy_bias", ""),
-                    "emotion_score": emo.get("emotion_score", 0),
-                    "confidence": emo.get("confidence", 0),
-                    **plan_state,
-                }
-            else:
-                draft.playbook = {
-                    "strategy_bias": emo.get("strategy_bias", ""),
-                    "emotion_score": emo.get("emotion_score", 0),
-                    "confidence": emo.get("confidence", 0),
-                }
+            draft.playbook = {
+                "strategy_bias": emo.get("strategy_bias", ""),
+                "emotion_score": emo.get("emotion_score", 0),
+                "confidence": emo.get("confidence", 0),
+            }
         except (json.JSONDecodeError, OSError) as e:
             missing.append(f"emotion_json_error: {e}")
     else:
