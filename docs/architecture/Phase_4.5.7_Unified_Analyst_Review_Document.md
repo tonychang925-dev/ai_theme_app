@@ -1,8 +1,8 @@
 # Phase 4.5.7 — Unified Analyst Review Document 详细设计文档
 
-> 版本：v0.1  
-> 日期：2026-07-11  
-> 状态：Draft for Review  
+> 版本：v0.2  
+> 日期：2026-07-12  
+> 状态：Implementation In Progress — PR1/PR2/PR3 Backend Completed  
 > 目标：将分析师工作台升级为“正式复盘报告编辑态”，并让当日复盘页面复用同一套 ReviewDocument 展示协议与 UI 组件。
 
 关联文档：
@@ -104,6 +104,80 @@ Snapshot.emotion_review
 6. 后续逐步删除 DailyReview 二次拼装、legacy fallback、静态 JSON 读取。
 
 ---
+
+## 2.1 当前实施状态（截至 2026-07-12）
+
+当前主链已从“多 projection 拼接”切换到 ReviewDocument 增量链路：
+
+```text
+Workbench Draft / Snapshot
+  -> ReviewDocumentContextFactory
+  -> ReviewDocumentAssembler
+  -> ReviewDocumentView
+  -> ReviewOverride
+  -> OverrideApplier
+  -> ReviewDocument Final
+```
+
+已完成并推送：
+
+| 阶段 | 状态 | 关键产物 |
+|---|---:|---|
+| PR1.1 Schema + Types | ✅ Completed | `schema.py` / `enums.py` / `quality.py` |
+| PR1.2 Golden Fixture + Negative Cases | ✅ Completed | 7/9 semantic golden + negative fixtures |
+| PR1.3 ContextFactory + Assembler | ✅ Completed | typed context + pure assembler + deterministic hash |
+| PR2 Workbench Preview | ✅ Completed | Workbench API 返回 `review_document`；`ReviewDocumentView` 成为默认预览 |
+| PR2 Guard Tests | ✅ Completed | Workbench API 禁 legacy 顶层字段；View 禁旧 endpoint fetch |
+| PR3 Diff API | ✅ Completed | `/review-document-diff` 输出字段级 diff |
+| PR3 Override Model + Applier | ✅ Completed | `ReviewOverride` / `ReviewOverrideApplier` |
+| PR3 Override Persistence API | ✅ Completed | `/review-overrides` 保存 override 文件并重建 final document |
+| PR3 UI Override Editor | ⏳ Next | 只做主题身份、股票归属、明日计划三类字段 |
+| PR4 Approve + DailyReview ReviewDocument 切换 | ⏳ Pending | Approve manifest + DailyReview readonly |
+| PR5 Legacy Removal | ⏳ Pending | 删除旧正式路径，legacy 仅 debug |
+
+已落地提交：
+
+| Commit | 内容 |
+|---|---|
+| `d4f0ec3eb` | ReviewDocument schema contracts |
+| `ce9564d19` | schema contract freeze tests |
+| `7b4dd85d7` | golden fixtures + negative cases |
+| `4b6c99428` | golden provenance contract |
+| `fa55e8473` | typed context + assembler |
+| `f2088cb7a` | Workbench ReviewDocument preview |
+| `a304b7fb0` | remove stale 20260709 static artifacts |
+| `55fb22afe` | Workbench ReviewDocument contract guards |
+| `6b85985ac` | ReviewDocument Diff API |
+| `36b5c1701` | ReviewDocument OverrideApplier |
+| `a903c36e3` | override determinism / FACT path protection |
+| `d045da5f0` | Workbench review override persistence |
+
+当前后端能力：
+
+1. `GET /api/v1/analyst-workspace/{trade_date}` 只返回：
+   - `review_document`
+   - `metadata`
+   - `diagnostics`
+2. `ReviewDocumentView` 静态 contract 禁止直接 fetch：
+   - `/api/emotion-*`
+   - `/api/analyst-charts/*`
+   - `/daily-review-v2`
+3. `ReviewDocument` 自动生成 `metadata.final_document_hash`。
+4. 同一输入和同一 override 集合生成稳定 hash。
+5. override 输入顺序不影响最终 hash。
+6. `market.*` 数值事实路径不能被 `IDENTITY` 等非 FACT 类型绕过修改。
+7. 保存的 override 不写 Snapshot，只写：
+
+```text
+tmp/analyst_workbench/{trade_date}/review_overrides.json
+```
+
+当前未完成：
+
+1. Workbench UI Override Editor 尚未接入。
+2. Approve 仍未绑定 ReviewDocument Final / manifest。
+3. DailyReview 仍待 PR4 完全切换到 approved `review_document`。
+4. `review_overrides.json` 尚未引入 version 并发控制。
 
 ## 2. 非目标范围
 
@@ -1058,23 +1132,19 @@ canonical_json(ReviewDocument Final)
 
 ## 6. API 设计
 
-### 6.1 Workbench 获取 ReviewDocument Draft
+### 6.1 Workbench 获取 ReviewDocument Draft / Final
 
 ```http
-GET /api/v1/analyst-workspace/{trade_date}/review-document
+GET /api/v1/analyst-workspace/{trade_date}
 ```
 
 返回：
 
 ```json
 {
-  "status": "DRAFT",
   "review_document": {},
-  "quality": {
-    "can_approve": false,
-    "blocking_issues": [],
-    "warnings": []
-  }
+  "metadata": {},
+  "diagnostics": {}
 }
 ```
 
@@ -1082,13 +1152,21 @@ GET /api/v1/analyst-workspace/{trade_date}/review-document
 
 ```text
 tmp/analyst_workbench/{date}/draft_v1.json
+tmp/analyst_workbench/{date}/draft_context.json
 tmp/analyst_workbench/{date}/snapshot.json（若已保存/approve）
+tmp/analyst_workbench/{date}/review_overrides.json（若存在）
 ```
 
-### 6.2 保存分析师修改
+约束：
+
+1. Workbench API 顶层只允许 `review_document` / `metadata` / `diagnostics`。
+2. 不再并行返回 `emotion_review`、`chart_reviews`、`chart_data`、`formal_review`、`recap_doc`。
+3. `review_document` 每次由 draft/snapshot + overrides 重建。
+
+### 6.2 保存分析师修改（ReviewOverride）
 
 ```http
-POST /api/v1/analyst-workspace/{trade_date}/review-document
+POST /api/v1/analyst-workspace/{trade_date}/review-overrides
 ```
 
 请求：
@@ -1097,10 +1175,11 @@ POST /api/v1/analyst-workspace/{trade_date}/review-document
 {
   "overrides": [
     {
-      "path": "themes[9055378].name",
+      "field_path": "themes[robot].name",
       "field_class": "IDENTITY",
       "ai_value": "人形机器人",
       "analyst_value": "PCB",
+      "final_value": "PCB",
       "reason": "资金切换"
     }
   ]
@@ -1110,10 +1189,100 @@ POST /api/v1/analyst-workspace/{trade_date}/review-document
 规则：
 
 1. API 不直接保存 ReviewDocument 全量对象。
-2. API 只保存 overrides / review state。
+2. API 只保存 field-level ReviewOverride。
 3. ReviewDocument 每次由 Snapshot + overrides 重建。
+4. FACT 字段禁止通过 override 修改。
+5. `market.*` 数值事实路径禁止用 `IDENTITY` / `ASSESSMENT` 绕过 FACT 保护。
 
-### 6.3 Approve
+当前短期持久化：
+
+```text
+tmp/analyst_workbench/{trade_date}/review_overrides.json
+```
+
+当前格式：
+
+```json
+{
+  "trade_date": "2026-07-09",
+  "saved_at": "2026-07-12T00:00:00Z",
+  "overrides": []
+}
+```
+
+PR4 前建议升级为：
+
+```json
+{
+  "version": 3,
+  "trade_date": "2026-07-09",
+  "updated_at": "2026-07-12T00:00:00Z",
+  "overrides": []
+}
+```
+
+并发规则：
+
+1. 客户端保存时提交 `base_version`。
+2. 服务端当前 version 与 `base_version` 不一致时返回 conflict。
+3. 禁止浏览器 A 用旧 version 覆盖浏览器 B 的修改。
+
+### 6.3 获取 ReviewOverride
+
+```http
+GET /api/v1/analyst-workspace/{trade_date}/review-overrides
+```
+
+返回：
+
+```json
+{
+  "overrides": [],
+  "metadata": {
+    "trade_date": "2026-07-09",
+    "source": "review_overrides_json"
+  }
+}
+```
+
+### 6.4 获取 ReviewDocument Diff
+
+```http
+GET /api/v1/analyst-workspace/{trade_date}/review-document-diff
+```
+
+返回：
+
+```json
+{
+  "review_document_diff": {
+    "changes": [
+      {
+        "path": "themes[robot].name",
+        "field_class": "IDENTITY",
+        "before": "人形机器人",
+        "after": "PCB",
+        "final_value": "PCB",
+        "reason": "资金切换",
+        "source": "explicit_override"
+      }
+    ],
+    "summary": {
+      "total_changes": 1,
+      "identity_changes": 1
+    }
+  },
+  "metadata": {}
+}
+```
+
+用途：
+
+1. Override UI 展示 AI / Analyst / Final。
+2. 审核页展示差异。
+3. 未来 M9 Learning 学习字段级修改与结果。
+
+### 6.5 Approve
 
 ```http
 POST /api/v1/analyst-workspace/{trade_date}/approve
@@ -1128,7 +1297,7 @@ POST /api/v1/analyst-workspace/{trade_date}/approve
 5. 生成 `snapshot_hash`。
 6. 返回 approved ReviewDocument。
 
-### 6.4 DailyReview 只读展示
+### 6.6 DailyReview 只读展示
 
 ```http
 GET /api/v2/daily-review-v2?date=2026-07-09
@@ -1304,9 +1473,13 @@ AI 判断
 
 ### PR1 — ReviewDocument Schema + Assembler
 
-PR1 必须拆成三个小 PR，禁止一次性混入 UI 或 legacy 删除。
+状态：✅ Completed
+
+PR1 拆成三个小 PR，未混入 UI 或 legacy 删除。
 
 #### PR1.1 — Schema + Types
+
+状态：✅ Completed
 
 交付：
 
@@ -1328,6 +1501,8 @@ PR1 必须拆成三个小 PR，禁止一次性混入 UI 或 legacy 删除。
 
 #### PR1.2 — Golden Fixture + Negative Cases
 
+状态：✅ Completed
+
 交付：
 
 1. `docs/test_fixtures/review_document/2026-07-09-review-golden.json`
@@ -1342,6 +1517,8 @@ PR1 必须拆成三个小 PR，禁止一次性混入 UI 或 legacy 删除。
 3. 还未实现 Assembler 时，也能先审阅目标输出。
 
 #### PR1.3 — ContextFactory + Assembler + Golden Test
+
+状态：✅ Completed
 
 交付：
 
@@ -1374,33 +1551,63 @@ PR1 必须拆成三个小 PR，禁止一次性混入 UI 或 legacy 删除。
 
 ### PR2 — Workbench Preview Panel
 
+状态：✅ Completed
+
 交付：
 
 1. Workbench API 返回 `review_document`。
-2. AnalystWorkbench 页面顶部新增 `ReviewDocumentView(mode="editable")` Preview Panel。
-3. 原有 AI Draft / cognition cards / emotion cards / chart panel 保留，用于对照验证。
+2. AnalystWorkbench 默认展示 `ReviewDocumentView(mode="editable")`。
+3. Workbench API contract 收紧，只返回 `review_document` / `metadata` / `diagnostics`。
+4. `ReviewDocumentView` 禁止直接 fetch 旧 endpoint。
 
 验收：
 
-1. 点击启动分析后，页面直接展示完整复盘报告结构。
-2. ReviewDocument Preview 显示市场、情绪、题材、资金、股票、涨停分类、计划。
-3. 旧视图与新 Preview 可以并行对照。
+1. ✅ 点击启动分析后，页面直接展示完整复盘报告结构。
+2. ✅ ReviewDocument Preview 显示市场、情绪、题材、资金、股票、涨停分类、计划。
+3. ✅ Workbench API 不再泄露 `emotion_review` / `chart_reviews` / `formal_review` / `recap_doc` 顶层字段。
+4. ✅ 前端 contract 确认 `ReviewDocumentView` 不读取 `/api/emotion-*`、`/api/analyst-charts/*`、`/daily-review-v2`。
 
 ### PR3 — Override Editor
 
+状态：⏳ Backend Completed / UI Next
+
 交付：
 
-1. 在 ReviewDocumentView 中支持编辑可校准字段。
-2. 保存 explicit override 到 Snapshot / workspace 状态。
-3. 页面实时显示 AI / Analyst / Final 三层值。
+1. ✅ `ReviewDocumentDiffService`
+2. ✅ `GET /api/v1/analyst-workspace/{trade_date}/review-document-diff`
+3. ✅ `ReviewOverride`
+4. ✅ `ReviewOverrideApplier`
+5. ✅ `GET/POST /api/v1/analyst-workspace/{trade_date}/review-overrides`
+6. ✅ `review_overrides.json` 持久化，不写 Snapshot。
+7. ⏳ 在 ReviewDocumentView 中支持编辑可校准字段。
+8. ⏳ 页面实时显示 AI / Analyst / Final 三层值。
 
 验收：
 
-1. 7/9 可执行“人形机器人 -> PCB”。
-2. 页面 final value 立即显示 PCB。
-3. 刷新后修改仍存在。
+1. ✅ 后端可执行“人形机器人 -> PCB”。
+2. ✅ 后端 final value 显示 PCB。
+3. ✅ 刷新 GET workspace 后修改仍存在。
+4. ✅ 同一 override 产生同一 hash。
+5. ✅ 多 override 输入顺序不同，最终 hash 一致。
+6. ✅ FACT 路径不能被 IDENTITY 等类型绕过修改。
+7. ⏳ UI 可执行“人形机器人 -> PCB”。
+
+PR3 UI 第一版只允许三类字段：
+
+1. 主题身份：`themes[*].name`
+2. 股票归属：`stocks[*].theme_name` / `stocks[*].subject_key`
+3. 明日计划：`plan.watch_themes` / `plan.allowed_actions` / `plan.forbidden_actions`
+
+禁止：
+
+1. textarea JSON 编辑。
+2. 保存完整 ReviewDocument。
+3. 修改 Snapshot。
+4. 接入 Approve。
 
 ### PR4 — Approve 绑定 + DailyReview 复用
+
+状态：⏳ Pending
 
 交付：
 
@@ -1418,6 +1625,8 @@ PR1 必须拆成三个小 PR，禁止一次性混入 UI 或 legacy 删除。
 4. `final_review_document_hash` 可证明 Workbench Final 与 DailyReview Published 一致。
 
 ### PR5 — Legacy 删除
+
+状态：⏳ Pending
 
 交付：
 
@@ -1717,6 +1926,8 @@ assert "market_chart_reviews" not in payload
 | 旧 UI 继续显示 legacy | P0 | 用户看到新旧两套复盘 | DailyReview 优先 review_document；legacy 只 debug |
 | 缺失数据被显示为 0 | P0 | 误导交易判断 | 缺失值统一 null + quality gate |
 | override 统计污染 | P1 | M9 Learning 误学系统补齐字段 | audit 分类 explicit/system/compatibility |
+| override 文件并发覆盖 | P1 | 多浏览器同时保存 `review_overrides.json`，旧版本覆盖新版本 | PR4 前引入 `version/base_version` 冲突检测 |
+| override 绕过 FACT 保护 | P0 | 使用 IDENTITY/ASSESSMENT 修改事实字段 | `ReviewOverrideApplier` 阻止 FACT class 和 `market.*` 数值事实路径 |
 | 组件过大 | P1 | ReviewDocumentView 难维护 | 按 section 拆组件 |
 | 一次性删除 Projection 风险过高 | P1 | 回滚困难 | Phase 4.5.7 先引入 review_document，Projection 冻结不扩展 |
 
@@ -1765,6 +1976,53 @@ Assembler 缺数据时输出 quality=MISSING/DEGRADED，不从 legacy 猜。
 1. fallback 会隐藏数据链断点。
 2. 复盘报告是交易决策材料，错误 0 值比缺失更危险。
 3. Clean Replay 必须暴露真实链路问题。
+
+### D4 — Override 只保存字段级变更，不保存完整文档
+
+决策：
+
+```text
+ReviewDocument Draft
+  + ReviewOverride[]
+  -> ReviewDocument Final
+```
+
+短期持久化：
+
+```text
+tmp/analyst_workbench/{trade_date}/review_overrides.json
+```
+
+原因：
+
+1. 防止 ReviewDocument 被误当成第二真源。
+2. 保留 AI / Analyst / Final 三层值，支撑审核和 M9 Learning。
+3. Approve 时可以用 Snapshot + overrides 复现最终文档。
+4. 删除 override 后应回到原始 draft hash，保证可复现。
+
+当前风险：
+
+1. JSON 文件未带 version，存在多浏览器并发覆盖风险。
+2. PR4 前必须引入 `version/base_version`。
+3. 长期可迁移到 `review_document_override` 数据库表，但 PR3/PR4 不做。
+
+### D5 — PR3 不接 Approve
+
+决策：
+
+```text
+PR3 只完成：
+Draft -> Override -> Final Document
+
+PR4 才完成：
+Final Document -> Quality Gate -> Approve -> DailyReview
+```
+
+原因：
+
+1. 避免 UI 编辑、审计、发布三个职责混在同一 PR。
+2. PR3 的验收边界是 final document 可重建、hash 稳定、diff 可审计。
+3. PR4 的验收边界是发布对象与 Workbench Final 一致。
 
 ---
 
@@ -1847,13 +2105,31 @@ Forbidden:
 
 Phase 4.5.7 完成条件：
 
-1. Workbench 启动分析后直接展示 ReviewDocument。
-2. Workbench 和 DailyReview 使用同一个 `ReviewDocumentView`。
-3. 2026-07-09 Clean Replay 通过：
+1. ✅ Workbench 启动分析后直接展示 ReviewDocument。
+2. ⏳ Workbench 和 DailyReview 使用同一个 `ReviewDocumentView`。
+   - Workbench 已完成。
+   - DailyReview 待 PR4。
+3. ⏳ 2026-07-09 Clean Replay 通过：
    - 主题不丢。
    - 资金方向不空。
    - 涨停分类有题材清单。
    - 主线人工修改最终显示 PCB。
-4. DailyReview 正式路径不读取 static chart/emotion JSON。
-5. 缺失数据不会显示为业务 0。
-6. explicit override 统计不再包含系统补齐字段。
+4. ⏳ DailyReview 正式路径不读取 static chart/emotion JSON。
+5. ✅ Workbench 正式路径不读取 static chart/emotion JSON。
+6. ✅ 缺失数据不会显示为业务 0。
+7. ✅ explicit override 后端统计不再包含系统补齐字段。
+8. ✅ ReviewDocument final hash 可复现。
+9. ✅ ReviewOverride 输入顺序不影响 final hash。
+10. ⏳ `review_overrides.json` 增加 version 并发控制。
+11. ⏳ PR3 UI 支持主题身份、股票归属、明日计划三类 override。
+
+PR3 UI 进入条件：
+
+1. `GET /api/v1/analyst-workspace/{trade_date}` 返回 `review_document`。
+2. `POST /api/v1/analyst-workspace/{trade_date}/review-overrides` 可保存 override。
+3. `GET /api/v1/analyst-workspace/{trade_date}/review-document-diff` 可返回 AI / Analyst / Final diff。
+4. 后端测试至少包含：
+   - persistence round-trip。
+   - invalid override rejection。
+   - hash changes / hash restored。
+   - override order stability。

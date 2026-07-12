@@ -108,3 +108,65 @@ DailyReview 是 ReviewDocument 的只读态。
 
 禁止两套复盘报告 UI。
 
+---
+
+## P8. Override Is Field-Level Only
+
+分析师修改必须保存为字段级 `ReviewOverride`。
+
+允许保存：
+
+1. `field_path`
+2. `field_class`
+3. `ai_value`
+4. `analyst_value`
+5. `final_value`
+6. `reason`
+7. `author`
+8. `timestamp`
+
+禁止保存：
+
+1. 完整 ReviewDocument。
+2. 被前端直接修改后的 Snapshot。
+3. 任意 JSON textarea 结果。
+
+规则：
+
+```text
+ReviewDocument Draft
+  + ReviewOverride[]
+  -> ReviewDocument Final
+```
+
+---
+
+## P9. Facts Cannot Be Overridden Through Assessment Channels
+
+FACT 字段不能通过 `IDENTITY` / `ASSESSMENT` / `PLAN` override 绕过保护。
+
+当前强约束：
+
+1. `field_class=FACT` 的 override 直接拒绝。
+2. `market.*` 数值事实路径直接拒绝。
+3. 后续若允许事实修正，必须走单独的 data correction flow，不进入 ReviewOverride。
+
+---
+
+## P10. Override Persistence Must Be Versioned Before Approve
+
+短期允许：
+
+```text
+tmp/analyst_workbench/{trade_date}/review_overrides.json
+```
+
+PR4 前必须增加：
+
+1. `version`
+2. `updated_at`
+3. `base_version` 保存校验
+
+目标：
+
+防止多浏览器或多操作者并发保存时，旧版本覆盖新版本。

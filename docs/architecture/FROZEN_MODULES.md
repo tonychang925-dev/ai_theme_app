@@ -1,7 +1,7 @@
 # Frozen Modules Registry
 
-> 版本：v0.1  
-> 日期：2026-07-11  
+> 版本：v0.2  
+> 日期：2026-07-12  
 > 状态：Active  
 > 目的：记录进入冻结状态的模块，防止迁移期旧链路继续增长。
 
@@ -47,6 +47,13 @@ Phase 4.5.7 起，ReviewDocument 是唯一增长的复盘展示协议。
 FormalReviewProjectionCompiler 只作为 Phase 4.5.6 兼容层保留。
 ```
 
+当前执行状态（2026-07-12）：
+
+1. ReviewDocument schema / assembler / view / override 后端链路已建立。
+2. Workbench API 已切换为 `review_document` 主响应。
+3. 新增需求必须优先进入 `ReviewDocument` / `ReviewOverride` 链路。
+4. 不允许以“DailyReview 临时展示”为理由扩展 FormalReviewProjectionCompiler。
+
 ---
 
 ## 2. Review Requirement
@@ -60,3 +67,26 @@ FormalReviewProjectionCompiler 只作为 Phase 4.5.6 兼容层保留。
 
 不满足以上说明的 PR 不应合并。
 
+---
+
+## 3. ReviewDocument Growth Path
+
+Phase 4.5.7 起，复盘报告能力增长位置固定为：
+
+```text
+ReviewDocument schema
+ReviewDocumentContextFactory
+ReviewDocumentAssembler
+ReviewOverride
+ReviewDocumentView
+```
+
+禁止增长位置：
+
+```text
+FormalReviewProjectionCompiler
+legacy recap_doc
+static emotion JSON
+static analyst chart JSON
+DailyReview二次拼装字段
+```
