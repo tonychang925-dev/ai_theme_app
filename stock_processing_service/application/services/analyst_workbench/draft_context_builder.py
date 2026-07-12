@@ -517,7 +517,14 @@ def _capital_direction_from_flows(
 
 
 def _nullable_metric(value: Any) -> Any:
-    if value == 0:
+    """Return None only for truly missing values, not for valid zeroes.
+
+    In financial market data, 0 is a valid value (e.g. zero limit-downs,
+    zero net flow). Only None and empty string indicate missing data.
+    """
+    if value is None:
+        return None
+    if isinstance(value, str) and value.strip() == "":
         return None
     return value
 
