@@ -8213,10 +8213,12 @@ async def get_analyst_workspace_review_document_diff(trade_date: str) -> dict[st
 @app.get("/api/v1/analyst-workspace/{trade_date}/review-overrides")
 async def get_analyst_workspace_review_overrides(trade_date: str) -> dict[str, Any]:
     """Return saved ReviewDocument overrides for a trading day."""
+    overrides, version = _load_workspace_review_overrides(trade_date)
     return {
-        "overrides": [override.to_dict() for override in _load_workspace_review_overrides(trade_date)],
+        "overrides": [override.to_dict() for override in overrides],
         "metadata": {
             "trade_date": trade_date,
+            "version": version,
             "source": "review_overrides_json",
         },
     }
@@ -8224,21 +8226,46 @@ async def get_analyst_workspace_review_overrides(trade_date: str) -> dict[str, A
 
 @app.post("/api/v1/analyst-workspace/{trade_date}/review-overrides")
 async def save_analyst_workspace_review_overrides(trade_date: str, body: dict[str, Any] | None = None) -> dict[str, Any]:
-    """Persist field-level ReviewDocument overrides without mutating snapshot."""
-    from stock_processing_service.application.services.review_document import ReviewOverride
+    """Persist field-level ReviewDocument overrides without mutating snapshot.
+
+    Accepts optional base_version for optimistic concurrency control.
+    Returns 409 Conflict when base_version does not match the current file version.
+    Returns 400 when any override targets a protected FACT field.
+    """
+    from stock_processing_service.application.services.review_document import ReviewOverride, FieldClass
 
     payload = body or {}
     raw_overrides = payload.get("overrides") or []
     if not isinstance(raw_overrides, list):
         raise HTTPException(status_code=400, detail="overrides must be a list")
     overrides = [ReviewOverride.from_dict(item) for item in raw_overrides if isinstance(item, dict)]
-    _write_workspace_review_overrides(trade_date, overrides)
+
+    # ── reject FACT overrides before persisting ──
+    for override in overrides:
+        if override.field_class == FieldClass.FACT:
+            raise HTTPException(
+                status_code=400,
+                detail=f"FACT override forbidden: {override.field_path}",
+            )
+        if override.field_path.startswith("market.") and isinstance(override.final_value, (int, float)):
+            raise HTTPException(
+                status_code=400,
+                detail=f"FACT path override forbidden: {override.field_path}",
+            )
+
+    base_version = payload.get("base_version")
+    try:
+        new_version = _write_workspace_review_overrides(trade_date, overrides, base_version=base_version)
+    except _OverrideVersionConflict as exc:
+        raise HTTPException(status_code=409, detail=str(exc))
+
     review_document = await _load_workspace_review_document_for_date(trade_date)
     diff = _diff_workspace_review_document(review_document)
     return {
         "status": "saved",
         "metadata": {
             "trade_date": trade_date,
+            "version": new_version,
             "override_count": len(overrides),
             "document_hash": (review_document.get("metadata") or {}).get("final_document_hash"),
         },
@@ -8284,7 +8311,7 @@ def _assemble_workspace_review_document(snapshot_like: dict[str, Any], *, mode: 
     document = ReviewDocumentAssembler().assemble(
         ReviewDocumentAssemblerInput(context=context, mode=mode)  # type: ignore[arg-type]
     ).to_dict()
-    overrides = _load_workspace_review_overrides(str(document.get("metadata", {}).get("trade_date") or ""))
+    overrides, _version = _load_workspace_review_overrides(str(document.get("metadata", {}).get("trade_date") or ""))
     if overrides:
         document = ReviewOverrideApplier().apply(document, overrides).document
     return document
@@ -8321,31 +8348,66 @@ def _diff_workspace_review_document(review_document: dict[str, Any]) -> dict[str
     return ReviewDocumentDiffService().diff(review_document).to_dict()
 
 
-def _load_workspace_review_overrides(trade_date: str) -> list[Any]:
+class _OverrideVersionConflict(Exception):
+    """Raised when base_version does not match current review_overrides.json version."""
+
+
+def _load_workspace_review_overrides(trade_date: str) -> tuple[list[Any], int]:
+    """Return (overrides, version) from review_overrides.json.
+
+    Returns ([], 0) when no file exists yet.
+    """
     from stock_processing_service.application.services.review_document import ReviewOverride
 
     path = _workspace_review_overrides_path(trade_date)
     if not path.exists():
-        return []
+        return [], 0
     import json as _json
 
     payload = _json.loads(path.read_text(encoding="utf-8"))
     raw = payload.get("overrides") if isinstance(payload, dict) else []
-    return [ReviewOverride.from_dict(item) for item in raw or [] if isinstance(item, dict)]
+    overrides = [ReviewOverride.from_dict(item) for item in raw or [] if isinstance(item, dict)]
+    version = payload.get("version", 0) if isinstance(payload, dict) else 0
+    return overrides, version
 
 
-def _write_workspace_review_overrides(trade_date: str, overrides: list[Any]) -> None:
+def _write_workspace_review_overrides(
+    trade_date: str, overrides: list[Any], base_version: int | None = None
+) -> int:
+    """Persist overrides with optimistic concurrency control.
+
+    If base_version is provided, checks that it matches the current file version.
+    Raises _OverrideVersionConflict on mismatch.
+    Returns the new version number after write.
+    """
     import json as _json
     from datetime import datetime as _dt, timezone as _tz
 
     path = _workspace_review_overrides_path(trade_date)
     path.parent.mkdir(parents=True, exist_ok=True)
+
+    # ── version conflict detection ──
+    current_version = 0
+    if path.exists():
+        existing = _json.loads(path.read_text(encoding="utf-8"))
+        current_version = existing.get("version", 0) if isinstance(existing, dict) else 0
+
+    if base_version is not None and base_version != current_version:
+        raise _OverrideVersionConflict(
+            f"Version conflict: client sent base_version={base_version}, "
+            f"current version={current_version}. "
+            f"Reload the latest overrides and retry."
+        )
+
+    new_version = current_version + 1
     payload = {
+        "version": new_version,
         "trade_date": trade_date,
-        "saved_at": _dt.now(_tz.utc).isoformat(),
+        "updated_at": _dt.now(_tz.utc).isoformat(),
         "overrides": [override.to_dict() for override in overrides],
     }
     path.write_text(_json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return new_version
 
 
 def _workspace_review_overrides_path(trade_date: str) -> Any:

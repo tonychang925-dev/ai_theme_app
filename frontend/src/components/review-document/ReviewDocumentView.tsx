@@ -1,4 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import {
+  OverrideEditor,
+  fieldPathLabel,
+  type ReviewOverride,
+} from "./OverrideEditor";
 
 export type ReviewDocumentMode = "editable" | "readonly";
 
@@ -18,9 +23,25 @@ export interface ReviewDocument {
   audit?: Record<string, any>;
 }
 
+/** Context needed to render the OverrideEditor for a specific field. */
+interface EditingContext {
+  fieldPath: string;
+  fieldClass: "IDENTITY" | "ASSESSMENT" | "PLAN";
+  aiValue: any;
+  analystValue: any;
+  reason: string;
+}
+
 interface Props {
   document: ReviewDocument | null | undefined;
   mode: ReviewDocumentMode;
+  /** Current overrides (used only for display, actual state managed by parent) */
+  overrides?: ReviewOverride[];
+  /** Called when user saves an override from the editor */
+  onOverridesChange?: (overrides: ReviewOverride[]) => void;
+  /** Called to persist overrides to backend */
+  onSave?: () => void;
+  saving?: boolean;
 }
 
 const colors = {
@@ -35,7 +56,16 @@ const colors = {
   red: "#ff8a65",
 };
 
-export function ReviewDocumentView({ document, mode }: Props) {
+export function ReviewDocumentView({
+  document,
+  mode,
+  overrides,
+  onOverridesChange,
+  onSave,
+  saving,
+}: Props) {
+  const [editingContext, setEditingContext] = useState<EditingContext | null>(null);
+
   if (!document) {
     return (
       <div style={{ padding: 24, color: colors.muted, background: "#0c1118" }}>
@@ -43,6 +73,8 @@ export function ReviewDocumentView({ document, mode }: Props) {
       </div>
     );
   }
+
+  const isEditable = mode === "editable" && onOverridesChange;
 
   const metadata = document.metadata || {};
   const quality = document.quality || {};
@@ -54,14 +86,103 @@ export function ReviewDocumentView({ document, mode }: Props) {
   const hotMoney = Array.isArray(capital.hot_money) ? capital.hot_money : [];
   const plan = document.plan || {};
 
+  const handleOverrideSave = (override: ReviewOverride) => {
+    if (!onOverridesChange) return;
+
+    // Merge with existing overrides: replace any override for the same field_path
+    const existing = overrides || [];
+    const merged = existing.filter((o) => o.field_path !== override.field_path);
+    merged.push(override);
+    onOverridesChange(merged);
+    setEditingContext(null);
+  };
+
+  /** Build editing context for a theme name field. */
+  const openThemeNameEditor = (theme: Record<string, any>, idx: number) => {
+    const nameObj = theme.name || {};
+    const themeKey = theme.theme_key || theme.subject_key || String(idx);
+    const fieldPath = `themes[${themeKey}].name`;
+
+    // Look up existing override for this field
+    const existing = (overrides || []).find((o) => o.field_path === fieldPath);
+
+    setEditingContext({
+      fieldPath,
+      fieldClass: "IDENTITY",
+      aiValue: existing?.ai_value ?? (nameObj.ai_value || nameValue(theme.name)),
+      analystValue: existing?.analyst_value ?? (nameObj.analyst_value || ""),
+      reason: existing?.reason ?? (nameObj.reason || ""),
+    });
+  };
+
+  /** Build editing context for a stock theme_name field. */
+  const openStockThemeEditor = (stock: Record<string, any>, idx: number) => {
+    const stockCode = stock.stock_code || stock.stock_id || String(idx);
+    const currentName = stock.theme_name || stock.subject_key || "";
+    const fieldPath = `stocks[${stockCode}].theme_name`;
+
+    const existing = (overrides || []).find((o) => o.field_path === fieldPath);
+
+    setEditingContext({
+      fieldPath,
+      fieldClass: "IDENTITY",
+      aiValue: existing?.ai_value ?? nameValue(currentName),
+      analystValue: existing?.analyst_value ?? "",
+      reason: existing?.reason ?? "",
+    });
+  };
+
+  /** Build editing context for a plan field. */
+  const openPlanEditor = (field: string, currentValue: any) => {
+    const fieldPath = `plan.${field}`;
+    const existing = (overrides || []).find((o) => o.field_path === fieldPath);
+    const currentText = Array.isArray(currentValue) ? currentValue.join("\n") : String(currentValue || "");
+
+    setEditingContext({
+      fieldPath,
+      fieldClass: "PLAN",
+      aiValue: existing?.ai_value ?? currentText,
+      analystValue: existing?.analyst_value ?? "",
+      reason: existing?.reason ?? "",
+    });
+  };
+
+  // ── Look up overrides for display ──
+  const overrideMap = new Map<string, ReviewOverride>();
+  for (const o of overrides || []) {
+    overrideMap.set(o.field_path, o);
+  }
+
   return (
     <div style={{ color: colors.text, background: "#0c1118", minHeight: "100%" }}>
+      {/* Header */}
       <div style={{ padding: "14px 18px", borderBottom: `1px solid ${colors.border}`, background: colors.band, display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
         <h2 style={{ margin: 0, fontSize: 18, color: colors.accent, letterSpacing: 0 }}>统一复盘报告</h2>
         <Badge tone={quality.overall === "READY" ? "good" : "warn"}>{String(quality.overall || "UNKNOWN")}</Badge>
         <Badge>{mode === "editable" ? "编辑态" : "只读"}</Badge>
+        {isEditable && onSave && (
+          <button
+            onClick={onSave}
+            disabled={saving}
+            style={{
+              fontSize: 12,
+              padding: "4px 12px",
+              background: saving ? "#1a3a5c" : "#38a169",
+              color: "#fff",
+              border: "none",
+              borderRadius: 4,
+              cursor: saving ? "not-allowed" : "pointer",
+              marginLeft: 8,
+            }}
+          >
+            {saving ? "保存中…" : "保存修正"}
+          </button>
+        )}
         <span style={{ marginLeft: "auto", fontSize: 12, color: colors.muted }}>
           {String(metadata.trade_date || "")} · {String(metadata.document_schema_version || "")} · {String(metadata.assembler_version || "")}
+          {(overrides || []).length > 0 && (
+            <span style={{ marginLeft: 8, color: colors.yellow }}>{overrides!.length} 项修正</span>
+          )}
         </span>
       </div>
 
@@ -102,7 +223,32 @@ export function ReviewDocumentView({ document, mode }: Props) {
             <CompactTable
               rows={themes.slice(0, 12)}
               columns={[
-                ["题材", (row) => nameValue(row.name) || text(row.theme_name)],
+                [
+                  "题材",
+                  (row, idx) => {
+                    const themeKey = row.theme_key || row.subject_key || String(idx);
+                    const fieldPath = `themes[${themeKey}].name`;
+                    const ov = overrideMap.get(fieldPath);
+                    const display = ov?.final_value ?? nameValue(row.name);
+                    const hasOverride = !!ov;
+                    return (
+                      <span
+                        onClick={isEditable ? () => openThemeNameEditor(row, idx) : undefined}
+                        style={{
+                          cursor: isEditable ? "pointer" : "default",
+                          color: hasOverride ? colors.green : colors.text,
+                          borderBottom: isEditable ? `1px dashed ${colors.muted}` : "none",
+                          padding: "1px 2px",
+                          borderRadius: 2,
+                        }}
+                        title={isEditable ? "点击修正题材名称" : undefined}
+                      >
+                        {display || "-"}
+                        {isEditable && <span style={{ marginLeft: 4, fontSize: 10, color: colors.muted, opacity: 0.5 }}>✎</span>}
+                      </span>
+                    );
+                  },
+                ],
                 ["角色", (row) => text(row.role)],
                 ["阶段", (row) => text(row.stage)],
                 ["强度", (row) => text(row.strength_score)],
@@ -116,7 +262,32 @@ export function ReviewDocumentView({ document, mode }: Props) {
               columns={[
                 ["代码", (row) => text(row.stock_code || row.stock_id)],
                 ["名称", (row) => text(row.stock_name)],
-                ["题材", (row) => text(row.theme_name || row.subject_key)],
+                [
+                  "题材",
+                  (row, idx) => {
+                    const stockCode = row.stock_code || row.stock_id || String(idx);
+                    const fieldPath = `stocks[${stockCode}].theme_name`;
+                    const ov = overrideMap.get(fieldPath);
+                    const display = ov?.final_value ?? text(row.theme_name || row.subject_key);
+                    const hasOverride = !!ov;
+                    return (
+                      <span
+                        onClick={isEditable ? () => openStockThemeEditor(row, idx) : undefined}
+                        style={{
+                          cursor: isEditable ? "pointer" : "default",
+                          color: hasOverride ? colors.green : colors.text,
+                          borderBottom: isEditable ? `1px dashed ${colors.muted}` : "none",
+                          padding: "1px 2px",
+                          borderRadius: 2,
+                        }}
+                        title={isEditable ? "点击修正股票所属题材" : undefined}
+                      >
+                        {display || "-"}
+                        {isEditable && <span style={{ marginLeft: 4, fontSize: 10, color: colors.muted, opacity: 0.5 }}>✎</span>}
+                      </span>
+                    );
+                  },
+                ],
                 ["角色", (row) => text(row.role || row.watch_status)],
                 ["高度", (row) => text(row.board_height || row.board_count)],
               ]}
@@ -143,9 +314,43 @@ export function ReviewDocumentView({ document, mode }: Props) {
 
           <Section title="明日计划" quality={sections.plan}>
             <KeyValue label="场景" value={text(plan.scenario)} strong />
-            <ActionList label="允许" items={plan.allowed_actions} tone="good" />
-            <ActionList label="禁止" items={plan.forbidden_actions} tone="bad" />
-            <ActionList label="关注" items={plan.watch_themes} tone="watch" />
+
+            {/* Allowed actions */}
+            <EditableList
+              label="允许"
+              items={plan.allowed_actions}
+              tone="good"
+              editable={isEditable}
+              field="allowed_actions"
+              overrideMap={overrideMap}
+              onEdit={(field, current) => openPlanEditor(field, current)}
+            />
+
+            {/* Forbidden actions */}
+            <EditableList
+              label="禁止"
+              items={plan.forbidden_actions}
+              tone="bad"
+              editable={isEditable}
+              field="forbidden_actions"
+              overrideMap={overrideMap}
+              onEdit={(field, current) => openPlanEditor(field, current)}
+            />
+
+            {/* Watch themes */}
+            {isEditable ? (
+              <EditableList
+                label="关注"
+                items={plan.watch_themes}
+                tone="watch"
+                editable={isEditable}
+                field="watch_themes"
+                overrideMap={overrideMap}
+                onEdit={(field, current) => openPlanEditor(field, current)}
+              />
+            ) : (
+              <ActionList label="关注" items={plan.watch_themes} tone="watch" />
+            )}
           </Section>
 
           <Section title="风险控制" quality={sections.risk}>
@@ -154,9 +359,90 @@ export function ReviewDocumentView({ document, mode }: Props) {
           </Section>
         </aside>
       </div>
+
+      {/* ── Override Editor Modal ── */}
+      {editingContext && (
+        <OverrideEditor
+          fieldPath={editingContext.fieldPath}
+          fieldLabel={fieldPathLabel(editingContext.fieldPath)}
+          fieldClass={editingContext.fieldClass}
+          aiValue={editingContext.aiValue}
+          currentAnalystValue={editingContext.analystValue}
+          currentReason={editingContext.reason}
+          onSave={handleOverrideSave}
+          onCancel={() => setEditingContext(null)}
+        />
+      )}
     </div>
   );
 }
+
+// ── Editable List component for plan arrays ──
+
+function EditableList({
+  label,
+  items,
+  tone,
+  editable,
+  field,
+  overrideMap,
+  onEdit,
+}: {
+  label: string;
+  items: any;
+  tone: "good" | "bad" | "watch";
+  editable: boolean;
+  field: string;
+  overrideMap: Map<string, ReviewOverride>;
+  onEdit: (field: string, currentValue: any) => void;
+}) {
+  const list = Array.isArray(items) ? items : [];
+  const color = tone === "good" ? colors.green : tone === "bad" ? colors.red : colors.yellow;
+  const fieldPath = `plan.${field}`;
+  const ov = overrideMap.get(fieldPath);
+
+  // If there's an override, show the overridden items (comma-separated from analyst_value)
+  const displayItems: string[] = ov?.analyst_value
+    ? ov.analyst_value.split("\n").filter(Boolean)
+    : list.map((item: any) => text(item.theme_name || item.stock_name || item));
+
+  if (!displayItems.length && !editable) return null;
+
+  return (
+    <div style={{ marginTop: 10 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+        <span style={{ color, fontSize: 12, fontWeight: 700 }}>{label}</span>
+        {editable && (
+          <button
+            onClick={() => onEdit(field, items)}
+            style={{
+              fontSize: 10,
+              padding: "1px 8px",
+              background: ov ? `${colors.green}20` : "transparent",
+              color: ov ? colors.green : colors.muted,
+              border: `1px solid ${ov ? colors.green : colors.border}`,
+              borderRadius: 3,
+              cursor: "pointer",
+            }}
+          >
+            {ov ? "已修正" : "修正"}
+          </button>
+        )}
+      </div>
+      {displayItems.length > 0 ? (
+        <ul style={{ margin: 0, paddingLeft: 18, color: ov ? colors.green : colors.text, fontSize: 13, lineHeight: 1.7 }}>
+          {displayItems.slice(0, 8).map((item: string, idx: number) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+      ) : (
+        <div style={{ color: colors.muted, fontSize: 13 }}>暂无数据</div>
+      )}
+    </div>
+  );
+}
+
+// ── Shared sub-components ──
 
 function Section({ title, quality, children }: { title: string; quality?: any; children: React.ReactNode }) {
   return (
@@ -202,7 +488,7 @@ function KeyValue({ label, value, strong = false }: { label: string; value: stri
   );
 }
 
-function CompactTable({ rows, columns }: { rows: any[]; columns: Array<[string, (row: any) => string]> }) {
+function CompactTable({ rows, columns }: { rows: any[]; columns: Array<[string, (row: any, idx: number) => any]> }) {
   if (!rows.length) {
     return <div style={{ color: colors.muted, fontSize: 13 }}>暂无数据</div>;
   }
@@ -218,7 +504,7 @@ function CompactTable({ rows, columns }: { rows: any[]; columns: Array<[string, 
           {rows.map((row, idx) => (
             <tr key={idx}>
               {columns.map(([label, render]) => (
-                <td key={label} style={{ padding: "7px 8px", overflowWrap: "anywhere" }}>{render(row) || "-"}</td>
+                <td key={label} style={{ padding: "7px 8px", overflowWrap: "anywhere" }}>{render(row, idx) || "-"}</td>
               ))}
             </tr>
           ))}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { EmotionDashboard } from "./EmotionDashboard";
 import { ReviewDocumentView, type ReviewDocument } from "../review-document/ReviewDocumentView";
+import type { ReviewOverride } from "../review-document/OverrideEditor";
 
 // ── Types ──
 
@@ -409,6 +410,11 @@ export function AnalystWorkspacePage() {
   const [tomorrowForbidden, setTomorrowForbidden] = useState<string[]>([]);
   const [calibrating, setCalibrating] = useState(false);
   const [calMsg, setCalMsg] = useState("");
+  // PR3: ReviewDocument override state
+  const [reviewOverrides, setReviewOverrides] = useState<ReviewOverride[]>([]);
+  const [overrideVersion, setOverrideVersion] = useState(0);
+  const [overrideSaving, setOverrideSaving] = useState(false);
+  const [overrideSaveMsg, setOverrideSaveMsg] = useState("");
   const [importDialog, setImportDialog] = useState<{ show: boolean; step: "select" | "parsing" | "imported" | "calibrating" | "done" | "error"; msg: string; result?: any }>({ show: false, step: "select", msg: "" });
   const [fileInputKey, setFileInputKey] = useState(0);
   const [readinessDialog, setReadinessDialog] = useState<{ show: boolean; chart: boolean; emotion: boolean; reference: boolean; mode: "generate" | "calibrate" } | null>(null);
@@ -432,7 +438,29 @@ export function AnalystWorkspacePage() {
     }
   }, []);
 
-  useEffect(() => { fetchWorkspace(dateInput); fetchTomorrow(dateInput); }, [dateInput, fetchWorkspace]);
+  const fetchOverrides = useCallback(async (d: string) => {
+    try {
+      const resp = await fetch(`/api/v1/analyst-workspace/${d}/review-overrides`);
+      if (!resp.ok) return;
+      const data = await resp.json();
+      const raw = Array.isArray(data.overrides) ? data.overrides : [];
+      setReviewOverrides(raw.map((item: any) => ({
+        field_path: item.field_path || "",
+        field_class: (item.field_class || "ASSESSMENT") as ReviewOverride["field_class"],
+        ai_value: item.ai_value ?? "",
+        analyst_value: item.analyst_value ?? "",
+        final_value: item.final_value ?? "",
+        reason: item.reason || "",
+        author: item.author || "analyst",
+        timestamp: item.timestamp || "",
+      })));
+      setOverrideVersion(data.metadata?.version ?? 0);
+    } catch {
+      // Non-blocking: overrides are additive, workspace still works without them
+    }
+  }, []);
+
+  useEffect(() => { fetchWorkspace(dateInput); fetchTomorrow(dateInput); fetchOverrides(dateInput); }, [dateInput, fetchWorkspace, fetchOverrides]);
 
   const handleSave = async () => {
     if (!workspace) return;
@@ -491,6 +519,65 @@ export function AnalystWorkspacePage() {
       setTimeout(() => setSavedMsg(""), 5000);
     }
   };
+
+  // ── PR3: ReviewDocument override handlers ──
+
+  const handleOverridesChange = useCallback((overrides: ReviewOverride[]) => {
+    setReviewOverrides(overrides);
+    setOverrideSaveMsg("");
+  }, []);
+
+  const handleOverridesSave = useCallback(async () => {
+    setOverrideSaving(true);
+    setOverrideSaveMsg("");
+    try {
+      const body: Record<string, any> = {
+        overrides: reviewOverrides.map((o) => ({
+          field_path: o.field_path,
+          field_class: o.field_class,
+          ai_value: o.ai_value,
+          analyst_value: o.analyst_value,
+          final_value: o.final_value,
+          reason: o.reason,
+          author: o.author || "analyst",
+          timestamp: o.timestamp || new Date().toISOString(),
+        })),
+      };
+      if (overrideVersion > 0) {
+        body.base_version = overrideVersion;
+      }
+
+      const resp = await fetch(`/api/v1/analyst-workspace/${dateInput}/review-overrides`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      if (resp.status === 409) {
+        setOverrideSaveMsg("⚠ 版本冲突：数据已被其他窗口修改，请刷新后重试");
+        setOverrideSaving(false);
+        return;
+      }
+
+      if (!resp.ok) {
+        const errData = await resp.json().catch(() => ({}));
+        throw new Error((errData as any).detail || `HTTP ${resp.status}`);
+      }
+
+      const result = await resp.json();
+      setOverrideVersion(result.metadata?.version ?? overrideVersion + 1);
+      setOverrideSaveMsg(`已保存 ${result.metadata?.override_count ?? reviewOverrides.length} 项修正`);
+
+      // Refresh workspace to pick up applied overrides
+      await fetchWorkspace(dateInput);
+      await fetchOverrides(dateInput);
+    } catch (e: any) {
+      setOverrideSaveMsg(`❌ ${e.message || "保存修正失败"}`);
+    } finally {
+      setOverrideSaving(false);
+      setTimeout(() => setOverrideSaveMsg(""), 5000);
+    }
+  }, [dateInput, reviewOverrides, overrideVersion, fetchWorkspace, fetchOverrides]);
 
   const handleGenerate = async () => {
     setGenerating(true);
@@ -778,6 +865,7 @@ export function AnalystWorkspacePage() {
             {ws.themes.length} 题材 · {(ws.watch_groups || []).length} 方向
           </span>
           {savedMsg && <span style={{ fontSize: 12, color: "#39ff14" }}>{savedMsg}</span>}
+          {overrideSaveMsg && <span style={{ fontSize: 12, color: overrideSaveMsg.startsWith("⚠") ? "#ffd85e" : overrideSaveMsg.startsWith("❌") ? "#ff8a65" : "#39ff14" }}>{overrideSaveMsg}</span>}
           <button className="tag tag-button is-pass" type="button" style={{ fontSize: 14, padding: "6px 16px" }}
             disabled={saving} onClick={handleSave}>
             {saving ? "保存中…" : "保存"}
@@ -802,7 +890,14 @@ export function AnalystWorkspacePage() {
 
       {/* Tab 0: Unified ReviewDocument Preview */}
       <div style={{ flex: 1, overflow: "auto", background: "#0c1118", display: activeTab === "review" ? "block" : "none" }}>
-        <ReviewDocumentView document={ws.review_document} mode="editable" />
+        <ReviewDocumentView
+          document={ws.review_document}
+          mode="editable"
+          overrides={reviewOverrides}
+          onOverridesChange={handleOverridesChange}
+          onSave={handleOverridesSave}
+          saving={overrideSaving}
+        />
       </div>
 
       {/* Tab 1: Emotion Dashboard */}
