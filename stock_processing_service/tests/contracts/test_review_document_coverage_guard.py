@@ -65,6 +65,13 @@ def test_field_coverage_matrix_is_machine_checkable() -> None:
         assert spec["quality"] in {"required", "optional"}
         assert isinstance(spec.get("forbidden", []), list)
 
+    theme_identity = fields["themes.name"]["identity"]
+    assert theme_identity == {
+        "source": "snapshot.cognition_cards.subject_name",
+        "required": True,
+        "quality": "BLOCK_IF_MISSING",
+    }
+
 
 def test_golden_ui_baseline_is_semantic_and_compact() -> None:
     baseline = _load_yaml(BASELINE_PATH)

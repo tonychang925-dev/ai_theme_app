@@ -162,6 +162,10 @@ fields:
     snapshot:
       source: snapshot.derived_context.themes[].theme_name
     resolver: ThemeIdentityResolver
+    identity:
+      source: snapshot.cognition_cards.subject_name
+      required: true
+      quality: BLOCK_IF_MISSING
     field_class: IDENTITY
     transform: identity_resolution
     quality: required

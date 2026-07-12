@@ -10,6 +10,8 @@ from dataclasses import dataclass, field
 from datetime import date
 from typing import Any, Literal
 
+from stock_processing_service.application.services.identity import ThemeIdentityResolver
+
 
 @dataclass(frozen=True, slots=True)
 class MarketContext:
@@ -125,6 +127,10 @@ class ReviewDocumentContextFactory:
         if not money_flow_rows:
             money_flow_rows = _list_value(capital_state, "top_stocks")
 
+        cognition_cards = _list_value(snapshot, "cognition_cards")
+        theme_cycle_rows = _list_value(derived, "themes")
+        resolved_theme_rows = ThemeIdentityResolver().resolve_theme_rows(theme_cycle_rows, cognition_cards)
+
         return ReviewDocumentContext(
             trade_date=trade_date,
             metadata=metadata,
@@ -143,8 +149,8 @@ class ReviewDocumentContextFactory:
                 source_meta=_source_meta(snapshot, "chart_reviews", trade_date),
             ),
             theme_context=ThemeContext(
-                cognition_cards=tuple(_list_value(snapshot, "cognition_cards")),
-                theme_cycle_rows=tuple(_list_value(derived, "themes")),
+                cognition_cards=tuple(cognition_cards),
+                theme_cycle_rows=tuple(resolved_theme_rows),
                 source_meta=_source_meta(derived, "themes", trade_date),
             ),
             capital_context=CapitalContext(

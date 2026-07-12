@@ -52,8 +52,8 @@ def _write_golden_like_input(workbench_dir: Path) -> None:
                 }
             },
             "themes": [
-                {"subject_key": "9055378", "theme_name": "存储芯片", "role": "MAINLINE", "stage": "承接"},
-                {"subject_key": "9014001", "theme_name": "人形机器人", "role": "SECONDARY", "stage": "分歧"},
+                {"subject_key": "9055378", "role": "MAINLINE", "stage": "承接"},
+                {"subject_key": "9014001", "role": "SECONDARY", "stage": "分歧"},
             ],
             "capital_state": {
                 "active_amount": 5058.28,
@@ -76,7 +76,10 @@ def _write_golden_like_input(workbench_dir: Path) -> None:
             "trade_date": TRADE_DATE,
             "draft_version": 1,
             "emotion_review": {"phase": "CHAOS", "score": 39, "risk_level": "中"},
-            "cognition_cards": [],
+            "cognition_cards": [
+                {"subject_id": "9055378", "subject_name": "存储芯片"},
+                {"subject_id": "9014001", "subject_name": "人形机器人"},
+            ],
             "playbook": {
                 "scenario": "混沌观望",
                 "allowed_actions": ["观察", "轻仓"],
