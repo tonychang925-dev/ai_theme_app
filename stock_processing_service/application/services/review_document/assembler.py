@@ -6,6 +6,9 @@ business inference beyond mapping typed context fields into the display schema.
 
 from __future__ import annotations
 
+import hashlib
+import json
+from dataclasses import replace
 from typing import Any
 
 from .context import ReviewDocumentAssemblerInput, ReviewDocumentContext
@@ -37,7 +40,7 @@ class ReviewDocumentAssembler:
         plan = self._assemble_plan(ctx)
         quality = self._quality(ctx, market, emotion, themes, capital, stocks, plan, field_provenance)
 
-        return ReviewDocument(
+        document = ReviewDocument(
             metadata=metadata,
             summary=summary,
             market=market,
@@ -56,6 +59,7 @@ class ReviewDocumentAssembler:
                 "compatibility_mappings": [],
             },
         )
+        return _with_final_document_hash(document)
 
     def _assemble_market(
         self,
@@ -353,4 +357,15 @@ def _section(is_ready: bool, field_name: str, *, allow_missing: bool = False) ->
         status=SectionQualityStatus.BLOCKED,
         missing_fields=(field_name,),
         blocking_issues=(f"{field_name}_missing",),
+    )
+
+
+def _with_final_document_hash(document: ReviewDocument) -> ReviewDocument:
+    payload = document.to_dict()
+    payload["metadata"].pop("final_document_hash", None)
+    raw = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    digest = "sha256:" + hashlib.sha256(raw.encode("utf-8")).hexdigest()
+    return replace(
+        document,
+        metadata=replace(document.metadata, final_document_hash=digest),
     )

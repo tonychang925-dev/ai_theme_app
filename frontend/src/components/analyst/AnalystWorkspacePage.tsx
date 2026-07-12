@@ -70,13 +70,15 @@ interface WatchGroup {
 }
 
 interface Workspace {
-  trade_date: string;
-  is_ai_draft: boolean;
-  analyst_finalized: boolean;
-  themes: ThemeEntry[];
-  watch_groups: WatchGroup[];
-  override_count: number;
+  trade_date?: string;
+  is_ai_draft?: boolean;
+  analyst_finalized?: boolean;
+  themes?: ThemeEntry[];
+  watch_groups?: WatchGroup[];
+  override_count?: number;
   review_document?: ReviewDocument | null;
+  metadata?: Record<string, unknown>;
+  diagnostics?: Record<string, unknown>;
 }
 
 function newWatchGroup(color: string): WatchGroup {
@@ -727,7 +729,14 @@ export function AnalystWorkspacePage() {
     watch_groups: [],
     override_count: 0,
   };
-  const ws = workspace || emptyWorkspace;
+  const ws = { ...emptyWorkspace, ...(workspace || {}) } as Workspace & {
+    trade_date: string;
+    is_ai_draft: boolean;
+    analyst_finalized: boolean;
+    themes: ThemeEntry[];
+    watch_groups: WatchGroup[];
+    override_count: number;
+  };
   const theme = ws.themes[selectedIdx] || newTheme();
   const activeGroup = (ws.watch_groups || []).find(g => g.id === selectedGroupId);
   const groupedThemeIds = new Set((ws.watch_groups || []).flatMap(g => g.subject_ids));

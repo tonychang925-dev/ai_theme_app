@@ -8152,23 +8152,17 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     snapshot_path = _Path(_wb_base) / trade_date / "snapshot.json"
     if snapshot_path.exists():
         snap = _json.loads(snapshot_path.read_text(encoding="utf-8"))
-        themes = _workspace_themes_from_cards(
-            snap.get("cognition_cards", []),
-            snap.get("attention_state", {}),
+        review_document = _assemble_workspace_review_document(snap, mode="approved")
+        return _workspace_review_document_response(
+            trade_date=trade_date,
+            review_document=review_document,
+            mode="approved",
+            diagnostics={
+                "theme_count": len(review_document.get("themes") or []),
+                "stock_count": len(review_document.get("stocks") or []),
+                "override_count": len((review_document.get("audit") or {}).get("explicit_overrides") or []),
+            },
         )
-        return {
-            "trade_date": trade_date,
-            "is_ai_draft": False,
-            "analyst_finalized": True,
-            "themes": themes,
-            "watch_groups": [],
-            "override_count": snap.get("override_summary", {}).get("total", 0),
-            "emotion_review": snap.get("emotion_review") or {},
-            "chart_reviews": snap.get("chart_reviews") or [],
-            "chart_data": _read_raw_chart_json(trade_date, _project_root),
-            "trend_data": _read_trend_json(_project_root),
-            "review_document": _assemble_workspace_review_document(snap, mode="approved"),
-        }
 
     # ── Try latest draft ──
     drafts_dir = _Path(_wb_base) / trade_date / "drafts"
@@ -8177,38 +8171,27 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
         if draft_files:
             draft = _json.loads(draft_files[-1].read_text(encoding="utf-8"))
             _attach_draft_review_document_context(draft, _Path(_wb_base) / trade_date / "draft_context.json")
-            themes = _workspace_themes_from_cards(
-                draft.get("cognition_cards", []),
-                draft.get("attention_state", {}),
+            review_document = _assemble_workspace_review_document(draft, mode="draft")
+            return _workspace_review_document_response(
+                trade_date=trade_date,
+                review_document=review_document,
+                mode="draft",
+                diagnostics={
+                    "draft_version": draft.get("draft_version", 0),
+                    "source_quality": draft.get("source_quality", 0),
+                    "missing_fields": draft.get("missing_fields", []),
+                    "theme_count": len(review_document.get("themes") or []),
+                    "stock_count": len(review_document.get("stocks") or []),
+                },
             )
-            return {
-                "trade_date": trade_date,
-                "is_ai_draft": True,
-                "analyst_finalized": False,
-                "cognition_cards": draft.get("cognition_cards", []),
-                "themes": themes,
-                "watch_groups": [],
-                "override_count": 0,
-                "draft_version": draft.get("draft_version", 0),
-                "source_quality": draft.get("source_quality", 0),
-                "missing_fields": draft.get("missing_fields", []),
-                "emotion_review": draft.get("emotion_review") or {},
-                "chart_reviews": draft.get("chart_reviews") or [],
-                "chart_data": _read_raw_chart_json(trade_date, _project_root),
-                "trend_data": _read_trend_json(_project_root),
-                "review_document": _assemble_workspace_review_document(draft, mode="draft"),
-            }
 
     # ── Nothing available ──
-    return {
-        "trade_date": trade_date,
-        "is_ai_draft": False,
-        "analyst_finalized": False,
-        "themes": [],
-        "watch_groups": [],
-        "override_count": 0,
-        "can_generate": True,
-    }
+    return _workspace_review_document_response(
+        trade_date=trade_date,
+        review_document=_empty_workspace_review_document(trade_date),
+        mode="not_started",
+        diagnostics={"can_generate": True},
+    )
 
 
 def _attach_draft_review_document_context(draft: dict[str, Any], context_path: Any) -> None:
@@ -8241,6 +8224,31 @@ def _assemble_workspace_review_document(snapshot_like: dict[str, Any], *, mode: 
     return ReviewDocumentAssembler().assemble(
         ReviewDocumentAssemblerInput(context=context, mode=mode)  # type: ignore[arg-type]
     ).to_dict()
+
+
+def _empty_workspace_review_document(trade_date: str) -> dict[str, Any]:
+    from stock_processing_service.application.services.review_document import ReviewDocument
+
+    return ReviewDocument.create_empty(trade_date=trade_date).to_dict()
+
+
+def _workspace_review_document_response(
+    *,
+    trade_date: str,
+    review_document: dict[str, Any],
+    mode: str,
+    diagnostics: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    return {
+        "review_document": review_document,
+        "metadata": {
+            "trade_date": trade_date,
+            "mode": mode,
+            "document_schema_version": (review_document.get("metadata") or {}).get("document_schema_version"),
+            "assembler_version": (review_document.get("metadata") or {}).get("assembler_version"),
+        },
+        "diagnostics": diagnostics or {},
+    }
 
 
 def _read_raw_chart_json(trade_date: str, project_root: str) -> list:

@@ -215,6 +215,9 @@ def test_assembler_is_deterministic_for_same_context() -> None:
     doc1 = ReviewDocumentAssembler().assemble(assembler_input).to_dict()
     doc2 = ReviewDocumentAssembler().assemble(assembler_input).to_dict()
 
+    assert doc1["metadata"]["final_document_hash"].startswith("sha256:")
+    assert doc1["metadata"]["final_document_hash"] == doc2["metadata"]["final_document_hash"]
+
     raw1 = json.dumps(doc1, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     raw2 = json.dumps(doc2, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     assert hashlib.sha256(raw1.encode("utf-8")).hexdigest() == hashlib.sha256(raw2.encode("utf-8")).hexdigest()
