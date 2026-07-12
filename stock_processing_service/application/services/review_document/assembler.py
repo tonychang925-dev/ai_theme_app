@@ -120,42 +120,40 @@ class ReviewDocumentAssembler:
         by_key: dict[str, dict[str, Any]] = {}
         for row in ctx.theme_context.theme_cycle_rows:
             key = _theme_key(row)
-            if not key:
-                continue
-            by_key[key] = {
-                "theme_key": key,
-                "name": _name_value(row.get("theme_name") or row.get("subject_name") or key),
-                "role": row.get("role") or ("MAINLINE" if row.get("mainline_alive") else "WATCH"),
-                "stage": row.get("stage") or row.get("final_cycle_state"),
-                "strength_score": row.get("mainline_strength_score") or row.get("strength_score"),
-            }
+            if key:
+                by_key[key] = {
+                    "theme_key": key,
+                    "name": _name_value(row.get("theme_name")) if row.get("theme_name") else None,
+                    "role": row.get("role") or ("MAINLINE" if row.get("mainline_alive") else "WATCH"),
+                    "stage": row.get("stage") or row.get("final_cycle_state"),
+                    "strength_score": row.get("mainline_strength_score") or row.get("strength_score"),
+                }
 
         for card in ctx.theme_context.cognition_cards:
             key = _theme_key(card)
-            if not key:
-                continue
-            entry = by_key.setdefault(key, {
-                "theme_key": key,
-                "name": _name_value(card.get("subject_name") or key),
-                "role": _role_from_card(card),
-            })
-            subject_name_override = _subject_name_override(card)
-            if subject_name_override:
-                entry["name"] = subject_name_override
-                provenance[f"themes[{key}].name.final_value"] = _provenance(
-                    source=f"snapshot.cognition_cards[{key}].field_overrides.subject_name",
-                    field_type=FieldClass.IDENTITY,
-                    transform=TransformType.EXPLICIT_OVERRIDE,
-                    trade_date=ctx.trade_date,
-                )
-                provenance.setdefault("themes.primary", provenance[f"themes[{key}].name.final_value"])
-            elif "themes.primary" not in provenance:
-                provenance["themes.primary"] = _provenance(
-                    source=f"snapshot.cognition_cards[{key}].subject_name",
-                    field_type=FieldClass.IDENTITY,
-                    transform=TransformType.DIRECT_MAPPING,
-                    trade_date=ctx.trade_date,
-                )
+            if key:
+                entry = by_key.setdefault(key, {
+                    "theme_key": key,
+                    "name": _name_value(card.get("subject_name")) if card.get("subject_name") else None,
+                    "role": _role_from_card(card),
+                })
+                subject_name_override = _subject_name_override(card)
+                if subject_name_override:
+                    entry["name"] = subject_name_override
+                    provenance[f"themes[{key}].name.final_value"] = _provenance(
+                        source=f"snapshot.cognition_cards[{key}].field_overrides.subject_name",
+                        field_type=FieldClass.IDENTITY,
+                        transform=TransformType.EXPLICIT_OVERRIDE,
+                        trade_date=ctx.trade_date,
+                    )
+                    provenance.setdefault("themes.primary", provenance[f"themes[{key}].name.final_value"])
+                elif "themes.primary" not in provenance:
+                    provenance["themes.primary"] = _provenance(
+                        source=f"snapshot.cognition_cards[{key}].subject_name",
+                        field_type=FieldClass.IDENTITY,
+                        transform=TransformType.DIRECT_MAPPING,
+                        trade_date=ctx.trade_date,
+                    )
         return list(by_key.values())
 
     def _assemble_summary(
@@ -181,11 +179,6 @@ class ReviewDocumentAssembler:
     def _assemble_capital(self, ctx: ReviewDocumentContext) -> dict[str, Any]:
         institution = list(ctx.capital_context.institution_rows)
         hot_money = list(ctx.capital_context.hot_money_rows)
-        money_flows = list(ctx.capital_context.money_flow_rows)
-        if not institution:
-            institution = [row for row in money_flows if _text(row.get("role_label") or row.get("role")).lower() in {"institution", "机构"}]
-        if not hot_money:
-            hot_money = [row for row in money_flows if _text(row.get("role_label") or row.get("role")).lower() in {"hot_money", "游资"}]
         return {
             "market": {},
             "institution": institution,

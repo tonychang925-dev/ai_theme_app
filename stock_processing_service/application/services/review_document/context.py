@@ -129,7 +129,7 @@ class ReviewDocumentContextFactory:
             metadata=metadata,
             market_context=MarketContext(
                 market_metrics=market_state or market_metrics,
-                chart_reviews=tuple(_list_value(snapshot, "chart_reviews")),
+                chart_reviews=(),
                 source_meta=_source_meta(derived, "market_state", trade_date),
             ),
             emotion_context=EmotionContext(
@@ -137,9 +137,9 @@ class ReviewDocumentContextFactory:
                 source_meta=_source_meta(snapshot, "emotion_review", trade_date),
             ),
             evidence_context=EvidenceContext(
-                chart_reviews=tuple(_list_value(derived, "chart_reviews")),
+                chart_reviews=tuple(_list_value(snapshot, "chart_reviews")),
                 trend_data=_dict_value(derived, "trend_data"),
-                source_meta=_source_meta(derived, "chart_reviews", trade_date),
+                source_meta=_source_meta(snapshot, "chart_reviews", trade_date),
             ),
             theme_context=ThemeContext(
                 cognition_cards=tuple(_list_value(snapshot, "cognition_cards")),

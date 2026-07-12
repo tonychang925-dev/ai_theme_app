@@ -73,12 +73,16 @@ def _snapshot_from_golden() -> dict:
                         "stage": "观察",
                     },
                 ],
-                "money_flows": [
-                    {"theme_name": "存储芯片", "role_label": "机构"},
-                    {"theme_name": "半导体设备", "role_label": "机构"},
-                    {"theme_name": "商业航天", "role_label": "游资"},
-                    {"theme_name": "洪涝", "role_label": "游资"},
-                ],
+                "capital_state": {
+                    "institution": [
+                        {"theme_name": "存储芯片", "role_label": "机构"},
+                        {"theme_name": "半导体设备", "role_label": "机构"},
+                    ],
+                    "hot_money": [
+                        {"theme_name": "商业航天", "role_label": "游资"},
+                        {"theme_name": "洪涝", "role_label": "游资"},
+                    ],
+                },
                 "strong_stocks": [
                     {
                         "stock_code": "603137.SH",
@@ -129,7 +133,8 @@ def test_context_factory_outputs_typed_context_without_exposing_snapshot() -> No
     assert context.emotion_context.emotion_review["phase"] == "REBOUND"
     assert len(context.theme_context.cognition_cards) == 1
     assert len(context.theme_context.theme_cycle_rows) == 3
-    assert len(context.capital_context.money_flow_rows) == 4
+    assert len(context.capital_context.institution_rows) == 2
+    assert len(context.capital_context.hot_money_rows) == 2
     assert len(context.stock_context.strong_stock_rows) == 1
 
     assert not hasattr(context, "snapshot")
@@ -269,9 +274,10 @@ def test_context_factory_accepts_workbench_draft_context_shape() -> None:
                 ],
                 "capital_state": {
                     "status": "derived_money_flow",
-                    "top_stocks": [
+                    "institution": [
                         {"theme_name": "PCB", "role_label": "机构", "stock_name": "测试股份"}
                     ],
+                    "hot_money": [],
                 },
                 "strong_stocks": [
                     {"stock_code": "000001.SZ", "stock_name": "测试股份", "theme_name": "PCB"}
