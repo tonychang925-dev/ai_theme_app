@@ -2,7 +2,7 @@ import React from "react";
 
 interface ChartData {
   chart_id: string; trade_date: string; chart_type: string;
-  title: string; data: Record<string, any>; interpretation: string;
+  title: string; data?: Record<string, any>; key_metrics?: Record<string, any>; interpretation?: string;
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -76,17 +76,26 @@ function MetricBox({ label, value, unit, color }: { label: string; value: number
 // Main dispatcher
 // ═══════════════════════════════════════════════════════════
 
-export function ChartRenderer({ chart, trendData }: { chart: ChartData; trendData?: any }) {
+export function ChartRenderer({ chart, trendData }: { chart?: ChartData | null; trendData?: any }) {
+  if (!chart) return null;
+  const data = chartData(chart);
+  const interpretation = chart.interpretation || "";
   switch (chart.chart_type) {
-    case "market_breadth": return <AnalystBreadthChart data={chart.data} interpretation={chart.interpretation} trend={trendData?.breadth} />;
-    case "emotion_momentum": return <AnalystMomentumChart data={chart.data} interpretation={chart.interpretation} trend={trendData?.momentum} />;
-    case "active_capital": return <AnalystCapitalChart data={chart.data} interpretation={chart.interpretation} trend={trendData?.capital} />;
-    case "relay_ecology": return <AnalystRelayChart data={chart.data} interpretation={chart.interpretation} trend={trendData?.relay} />;
-    case "institution_style": return <AnalystStyleTable data={chart.data} title="机构资金审美方向" interpretation={chart.interpretation} theme="institution" />;
-    case "hot_money_style": return <AnalystStyleTable data={chart.data} title="游资情绪方向" interpretation={chart.interpretation} theme="hotmoney" />;
-    case "limitup_classification": return <AnalystLimitUpChart data={chart.data} interpretation={chart.interpretation} />;
-    default: return <pre style={{ fontSize: 10, color: "#5a7a8a" }}>{JSON.stringify(chart.data, null, 2)}</pre>;
+    case "market_breadth": return <AnalystBreadthChart data={data} interpretation={interpretation} trend={trendData?.breadth} />;
+    case "emotion_momentum": return <AnalystMomentumChart data={data} interpretation={interpretation} trend={trendData?.momentum} />;
+    case "active_capital": return <AnalystCapitalChart data={data} interpretation={interpretation} trend={trendData?.capital} />;
+    case "relay_ecology": return <AnalystRelayChart data={data} interpretation={interpretation} trend={trendData?.relay} />;
+    case "institution_style": return <AnalystStyleTable data={data} title="机构资金审美方向" interpretation={interpretation} theme="institution" />;
+    case "hot_money_style": return <AnalystStyleTable data={data} title="游资情绪方向" interpretation={interpretation} theme="hotmoney" />;
+    case "limitup_classification": return <AnalystLimitUpChart data={data} interpretation={interpretation} />;
+    default: return <pre style={{ fontSize: 10, color: "#5a7a8a" }}>{JSON.stringify(data, null, 2)}</pre>;
   }
+}
+
+function chartData(chart: ChartData): Record<string, any> {
+  if (chart.data && typeof chart.data === "object" && !Array.isArray(chart.data)) return chart.data;
+  if (chart.key_metrics && typeof chart.key_metrics === "object" && !Array.isArray(chart.key_metrics)) return chart.key_metrics;
+  return {};
 }
 
 // ═══════════════════════════════════════════════════════════
