@@ -39,6 +39,9 @@ class AnalystDraftContext:
     # ── Chart reviews (from chart JSON) ──
     chart_reviews: list[dict[str, Any]] = field(default_factory=list)
 
+    # ── Evidence trend series (from snapshot adapter inputs) ──
+    trend_data: dict[str, Any] = field(default_factory=dict)
+
     # ── Capital state (from metrics) ──
     capital_state: dict[str, Any] = field(default_factory=dict)
 
@@ -47,6 +50,9 @@ class AnalystDraftContext:
 
     # ── Strong stocks (from chart leader data) ──
     strong_stocks: list[dict[str, Any]] = field(default_factory=list)
+
+    # ── Limit-up classifications (from structured limit-up source) ──
+    limit_up: dict[str, Any] = field(default_factory=dict)
 
     # ── Risk signals ──
     risk_signals: list[str] = field(default_factory=list)
@@ -63,9 +69,11 @@ class AnalystDraftContext:
             "market_state": self.market_state,
             "emotion_state": self.emotion_state,
             "chart_reviews": self.chart_reviews,
+            "trend_data": self.trend_data,
             "capital_state": self.capital_state,
             "themes": self.themes,
             "strong_stocks": self.strong_stocks,
+            "limit_up": self.limit_up,
             "risk_signals": self.risk_signals,
             "source_quality": self.source_quality,
             "missing_sources": self.missing_sources,
@@ -151,6 +159,9 @@ class DraftContextBuilder:
         # ── Chart reviews (pass-through from chart JSON) ──
         chart_reviews = charts
 
+        # ── Trend data (snapshot-scoped evidence series) ──
+        trend_data = self._build_trend_data(td_str, charts, derived)
+
         # ── Capital state (from derived money flow + chart active_capital) ──
         capital_state = self._build_capital_state(charts, emotion, derived)
 
@@ -159,6 +170,9 @@ class DraftContextBuilder:
 
         # ── Strong stocks (derived tables only) ──
         strong_stocks = self._build_strong_stocks(charts, derived)
+
+        # ── Limit-up categories (structured source only) ──
+        limit_up = self._build_limit_up(charts, derived)
 
         # ── Risk signals ──
         risk_signals = self._build_risk_signals(emotion, charts)
@@ -173,9 +187,11 @@ class DraftContextBuilder:
             market_state=market_state,
             emotion_state=emotion_state,
             chart_reviews=chart_reviews,
+            trend_data=trend_data,
             capital_state=capital_state,
             themes=themes,
             strong_stocks=strong_stocks,
+            limit_up=limit_up,
             risk_signals=risk_signals,
             source_quality=quality,
             missing_sources=missing,
@@ -233,28 +249,68 @@ class DraftContextBuilder:
     @staticmethod
     def _build_capital_state(charts: list[dict], emotion: dict, derived: dict[str, Any]) -> dict[str, Any]:
         """Extract capital state from active_capital chart + emotion."""
+        capital_state: dict[str, Any] = {}
+        for chart in charts:
+            if chart.get("chart_type") == "active_capital":
+                metrics = chart.get("key_metrics") or chart.get("data") or {}
+                active_amount = metrics.get("active_amount_yi")
+                capital_state.update({
+                    "active_amount": active_amount,
+                    "active_amount_yi": active_amount,
+                    "total_amount_yi": metrics.get("total_amount_yi"),
+                    "status": chart.get("status", ""),
+                })
+                break
+
+        institution = DraftContextBuilder._style_directions(charts, "institution_style")
+        hot_money = DraftContextBuilder._style_directions(charts, "hot_money_style")
+        if institution:
+            capital_state["institution"] = institution
+        if hot_money:
+            capital_state["hot_money"] = hot_money
+
         money_flows = derived.get("money_flows") or []
         if money_flows:
             net = sum(float(item.get("main_net_inflow") or 0) for item in money_flows if isinstance(item, dict))
-            return {
+            capital_state.update({
                 "main_net_inflow": net,
                 "stock_count": len(money_flows),
                 "status": "derived_money_flow",
                 "top_stocks": money_flows[:10],
-            }
-        for chart in charts:
-            if chart.get("chart_type") == "active_capital":
-                metrics = chart.get("key_metrics") or chart.get("data") or {}
-                return {
-                    "active_amount_yi": metrics.get("active_amount_yi"),
-                    "total_amount_yi": metrics.get("total_amount_yi"),
-                    "status": chart.get("status", ""),
-                }
+            })
+            return capital_state
+
+        if capital_state:
+            return capital_state
+
         return {
+            "active_amount": None,
             "active_amount_yi": None,
             "total_amount_yi": None,
             "status": "",
         }
+
+    @staticmethod
+    def _style_directions(charts: list[dict], chart_type: str) -> list[dict[str, Any]]:
+        for chart in charts:
+            if chart.get("chart_type") != chart_type:
+                continue
+            data = chart.get("key_metrics") or chart.get("data") or {}
+            directions = data.get("directions") if isinstance(data, dict) else []
+            if not isinstance(directions, list):
+                return []
+            rows: list[dict[str, Any]] = []
+            for item in directions:
+                if not isinstance(item, dict):
+                    continue
+                rows.append({
+                    "theme_name": item.get("name") or item.get("theme_name") or "",
+                    "state": item.get("state") or "",
+                    "score": item.get("score"),
+                    "source": chart_type,
+                })
+            return rows
+        return []
 
     @staticmethod
     def _build_themes(charts: list[dict], derived: dict[str, Any]) -> list[dict[str, Any]]:
@@ -290,6 +346,68 @@ class DraftContextBuilder:
         if derived_stocks:
             return [item for item in derived_stocks if isinstance(item, dict)]
         return []
+
+    @staticmethod
+    def _build_trend_data(trade_date: str, charts: list[dict], derived: dict[str, Any]) -> dict[str, Any]:
+        """Build snapshot-scoped trend evidence from structured chart inputs."""
+        existing = derived.get("trend_data")
+        if isinstance(existing, dict) and existing:
+            return existing
+
+        trend: dict[str, Any] = {}
+        for chart in charts:
+            chart_type = chart.get("chart_type")
+            data = chart.get("key_metrics") or chart.get("data") or {}
+            if not isinstance(data, dict):
+                continue
+            if chart_type == "market_breadth":
+                trend["breadth"] = [{
+                    "date": trade_date,
+                    "limit_up": data.get("limit_up_count", 0),
+                    "chain_board": data.get("chain_board_count", 0),
+                    "up_ratio": data.get("up_ratio", 0),
+                }]
+            elif chart_type == "emotion_momentum":
+                trend["momentum"] = [{
+                    "date": trade_date,
+                    "score": data.get("emotion_momentum_score", 0),
+                }]
+            elif chart_type == "active_capital":
+                trend["capital"] = [{
+                    "date": trade_date,
+                    "active_yi": data.get("active_amount_yi", 0),
+                    "active_amount_yi": data.get("active_amount_yi", 0),
+                    "total_amount_yi": data.get("total_amount_yi", 0),
+                }]
+            elif chart_type == "relay_ecology":
+                trend["relay"] = [{
+                    "date": trade_date,
+                    "max_height": data.get("max_board_height", 0),
+                    "p1to2": data.get("promotion_1_to_2", 0),
+                    "p2to3": data.get("promotion_2_to_3", 0),
+                    "leaders": [],
+                }]
+        return trend
+
+    @staticmethod
+    def _build_limit_up(charts: list[dict], derived: dict[str, Any]) -> dict[str, Any]:
+        """Build limit-up categories from a structured limit-up source only."""
+        existing = derived.get("limit_up")
+        if isinstance(existing, dict) and existing:
+            return existing
+
+        for chart in charts:
+            if chart.get("chart_type") != "limitup_classification":
+                continue
+            data = chart.get("key_metrics") or chart.get("data") or {}
+            if not isinstance(data, dict):
+                return {}
+            return {
+                "total": data.get("limit_up_count"),
+                "categories": _limit_up_categories(data.get("categories")),
+                "source": "chart.limitup_classification",
+            }
+        return {}
 
     @staticmethod
     def _build_risk_signals(emotion: dict, charts: list[dict]) -> list[str]:
@@ -345,3 +463,28 @@ def _nullable_metric(value: Any) -> Any:
     if value == 0:
         return None
     return value
+
+
+def _limit_up_categories(value: Any) -> list[dict[str, Any]]:
+    if isinstance(value, list):
+        return [item for item in value if isinstance(item, dict)]
+    if not isinstance(value, dict):
+        return []
+
+    rows: list[dict[str, Any]] = []
+    for key, raw in value.items():
+        if isinstance(raw, dict):
+            rows.append({
+                "theme_key": raw.get("theme_key") or key,
+                "theme_name": raw.get("theme_name") or raw.get("name") or key,
+                "count": raw.get("count") or raw.get("limit_up_count"),
+                "stocks": raw.get("stocks") or [],
+            })
+        else:
+            rows.append({
+                "theme_key": str(key),
+                "theme_name": str(key),
+                "count": raw,
+                "stocks": [],
+            })
+    return rows

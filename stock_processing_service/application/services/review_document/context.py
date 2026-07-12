@@ -43,6 +43,13 @@ class CapitalContext:
 
 
 @dataclass(frozen=True, slots=True)
+class LimitUpContext:
+    total: Any = None
+    categories: tuple[dict[str, Any], ...] = ()
+    source_meta: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass(frozen=True, slots=True)
 class StockContext:
     strong_stock_rows: tuple[dict[str, Any], ...] = ()
     abnormal_signal_rows: tuple[dict[str, Any], ...] = ()
@@ -78,6 +85,7 @@ class ReviewDocumentContext:
     evidence_context: EvidenceContext
     theme_context: ThemeContext
     capital_context: CapitalContext
+    limit_up_context: LimitUpContext
     stock_context: StockContext
     plan_context: PlanContext
     override_context: OverrideContext
@@ -127,6 +135,7 @@ class ReviewDocumentContextFactory:
         if not money_flow_rows:
             money_flow_rows = _list_value(capital_state, "top_stocks")
 
+        limit_up = _dict_value(derived, "limit_up")
         cognition_cards = _list_value(snapshot, "cognition_cards")
         theme_cycle_rows = _list_value(derived, "themes")
         resolved_theme_rows = ThemeIdentityResolver().resolve_theme_rows(theme_cycle_rows, cognition_cards)
@@ -159,6 +168,11 @@ class ReviewDocumentContextFactory:
                 institution_rows=tuple(_list_value(capital_state, "institution")),
                 hot_money_rows=tuple(_list_value(capital_state, "hot_money")),
                 source_meta=_source_meta(derived, "money_flows", trade_date),
+            ),
+            limit_up_context=LimitUpContext(
+                total=_value(limit_up, "total"),
+                categories=tuple(_list_value(limit_up, "categories")),
+                source_meta=_source_meta(derived, "limit_up", trade_date),
             ),
             stock_context=StockContext(
                 strong_stock_rows=tuple(_list_value(derived, "strong_stocks")),

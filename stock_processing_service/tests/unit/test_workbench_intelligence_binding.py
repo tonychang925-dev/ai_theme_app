@@ -56,6 +56,68 @@ def test_tc_p455_rb_01_given_derived_context_when_build_then_themes_and_stocks_b
     assert ctx.strong_stocks[0]["stock_name"] == "测试股份"
 
 
+def test_tc_p455_rb_03_draft_context_produces_review_document_snapshot_fields():
+    charts = [
+        {
+            "chart_type": "active_capital",
+            "data": {
+                "active_amount_yi": 5058.28,
+                "total_amount_yi": 10000,
+                "limit_up_count": 75,
+            },
+        },
+        {
+            "chart_type": "emotion_momentum",
+            "data": {"emotion_momentum_score": 1.5},
+        },
+        {
+            "chart_type": "market_breadth",
+            "data": {"limit_up_count": 75, "chain_board_count": 7, "up_ratio": 0.689},
+        },
+        {
+            "chart_type": "relay_ecology",
+            "data": {"max_board_height": 6, "promotion_1_to_2": 0.04},
+        },
+        {
+            "chart_type": "institution_style",
+            "data": {"directions": [{"name": "存储芯片", "state": "回流", "score": 80}]},
+        },
+        {
+            "chart_type": "hot_money_style",
+            "data": {"directions": [{"name": "人形机器人", "state": "活跃", "score": 72}]},
+        },
+        {
+            "chart_type": "limitup_classification",
+            "data": {
+                "limit_up_count": 75,
+                "categories": {
+                    "storage": {
+                        "theme_name": "存储芯片",
+                        "count": 8,
+                        "stocks": [{"code": "605178.SH", "name": "时空科技"}],
+                    }
+                },
+            },
+        },
+    ]
+
+    ctx = DraftContextBuilder().build(
+        trade_date="2026-07-09",
+        chart_json=charts,
+        emotion_json={"emotion_node": "CHAOS", "emotion_score": 39},
+        derived_context={"themes": [{"subject_key": "storage", "theme_name": "存储芯片"}]},
+    )
+
+    payload = ctx.to_dict()
+    assert payload["capital_state"]["active_amount"] == 5058.28
+    assert payload["capital_state"]["institution"][0]["theme_name"] == "存储芯片"
+    assert payload["capital_state"]["hot_money"][0]["theme_name"] == "人形机器人"
+    assert payload["trend_data"]["momentum"][0]["score"] == 1.5
+    assert payload["trend_data"]["capital"][0]["active_yi"] == 5058.28
+    assert payload["limit_up"]["total"] == 75
+    assert payload["limit_up"]["categories"][0]["theme_name"] == "存储芯片"
+
+
 def test_tc_p455_rb_02_given_context_themes_when_generate_draft_then_cognition_cards_not_empty():
     context = {
         "themes": [

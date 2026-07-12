@@ -13,6 +13,7 @@ from stock_processing_service.application.services.review_document import (
     CapitalContext,
     EmotionContext,
     EvidenceContext,
+    LimitUpContext,
     MarketContext,
     OverrideContext,
     PlanContext,
@@ -238,6 +239,7 @@ def test_empty_context_is_blocked_not_ready() -> None:
         evidence_context=EvidenceContext(),
         theme_context=ThemeContext(),
         capital_context=CapitalContext(),
+        limit_up_context=LimitUpContext(),
         stock_context=StockContext(),
         plan_context=PlanContext(),
         override_context=OverrideContext(),
@@ -282,6 +284,15 @@ def test_context_factory_accepts_workbench_draft_context_shape() -> None:
                 "strong_stocks": [
                     {"stock_code": "000001.SZ", "stock_name": "测试股份", "theme_name": "PCB"}
                 ],
+                "trend_data": {
+                    "momentum": [{"date": "2026-07-09", "score": 1.5}],
+                },
+                "limit_up": {
+                    "total": 75,
+                    "categories": [
+                        {"theme_key": "pcb", "theme_name": "PCB", "count": 3, "stocks": []}
+                    ],
+                },
             }
         },
         "emotion_review": {"phase": "REBOUND", "score": 39},
@@ -298,7 +309,36 @@ def test_context_factory_accepts_workbench_draft_context_shape() -> None:
     assert document["market"]["up_count"] == 3561
     assert document["capital"]["institution"][0]["theme_name"] == "PCB"
     assert document["themes"][0]["name"]["final_value"] == "PCB"
+    assert document["evidence"]["trend_series"]["momentum"][0]["score"] == 1.5
+    assert document["limit_up"]["categories"][0]["theme_name"] == "PCB"
     assert document["quality"]["sections"]["market"]["status"] == SectionQualityStatus.READY.value
+
+
+def test_limit_up_categories_do_not_fallback_to_theme_rows() -> None:
+    snapshot = {
+        "trade_date": "2026-07-09",
+        "attention_state": {
+            "review_document_context": {
+                "market_state": {"facts": {"limit_up_count": 75}},
+                "themes": [
+                    {"subject_key": "9055378", "theme_name": "存储芯片", "role": "MAINLINE"}
+                ],
+            }
+        },
+        "emotion_review": {"phase": "CHAOS", "score": 39},
+        "cognition_cards": [],
+        "playbook": {},
+    }
+
+    context = ReviewDocumentContextFactory().create(snapshot)
+    document = ReviewDocumentAssembler().assemble(
+        ReviewDocumentAssemblerInput(context=context, mode="draft")
+    ).to_dict()
+
+    assert document["themes"][0]["name"]["final_value"] == "存储芯片"
+    assert document["limit_up"]["total"] == 75
+    assert document["limit_up"]["categories"] == []
+    assert document["quality"]["sections"]["limit_up"]["status"] == SectionQualityStatus.MISSING.value
 
 
 def test_assembler_output_has_no_legacy_or_formal_review() -> None:

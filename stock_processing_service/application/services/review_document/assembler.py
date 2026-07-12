@@ -50,7 +50,7 @@ class ReviewDocumentAssembler:
             themes=tuple(themes),
             stocks=tuple(stocks),
             capital=capital,
-            limit_up=self._assemble_limit_up(market, themes),
+            limit_up=self._assemble_limit_up(ctx),
             plan=plan,
             risk=self._assemble_risk(ctx),
             quality=quality,
@@ -203,14 +203,14 @@ class ReviewDocumentAssembler:
             "invalidation_signals": playbook.get("invalidation_signals") or [],
         }
 
-    def _assemble_limit_up(self, market: dict[str, Any], themes: list[dict[str, Any]]) -> dict[str, Any]:
-        total = market.get("limit_up_count")
-        categories = [
-            {"name": _final_name(theme.get("name")), "theme_key": theme.get("theme_key")}
-            for theme in themes
-            if _final_name(theme.get("name"))
-        ]
-        return {"total": total, "categories": categories}
+    def _assemble_limit_up(self, ctx: ReviewDocumentContext) -> dict[str, Any]:
+        total = ctx.limit_up_context.total
+        if total in (None, ""):
+            total = ctx.market_context.market_metrics.get("limit_up_count")
+        return {
+            "total": total,
+            "categories": [dict(row) for row in ctx.limit_up_context.categories],
+        }
 
     def _assemble_evidence(self, ctx: ReviewDocumentContext) -> dict[str, Any]:
         return {
@@ -242,7 +242,7 @@ class ReviewDocumentAssembler:
             "themes": _section(bool(themes), "themes"),
             "stocks": _section(bool(stocks), "stocks", allow_missing=True),
             "capital": _section(bool(capital.get("institution") or capital.get("hot_money")), "capital"),
-            "limit_up": _section(bool(themes) and "limit_up_count" in market, "limit_up_categories"),
+            "limit_up": _section(bool(ctx.limit_up_context.categories), "limit_up_categories", allow_missing=True),
             "plan": _section(any(v for v in plan.values()), "plan", allow_missing=True),
             "risk": _section(True, "risk", allow_missing=True),
         }
@@ -327,12 +327,6 @@ def _role_from_card(card: dict[str, Any]) -> str:
     if level == "HIGH":
         return "SECONDARY"
     return "WATCH"
-
-
-def _final_name(value: Any) -> str:
-    if isinstance(value, dict):
-        return _text(value.get("final_value"))
-    return _text(value)
 
 
 def _provenance(
