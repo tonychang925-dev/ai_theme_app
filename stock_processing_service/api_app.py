@@ -8161,6 +8161,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
                 "theme_count": len(review_document.get("themes") or []),
                 "stock_count": len(review_document.get("stocks") or []),
                 "override_count": len((review_document.get("audit") or {}).get("explicit_overrides") or []),
+                "quality": review_document.get("quality", {}).get("overall"),
             },
         )
 
@@ -8183,6 +8184,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
                     "theme_count": len(review_document.get("themes") or []),
                     "stock_count": len(review_document.get("stocks") or []),
                     "override_count": len((review_document.get("audit") or {}).get("explicit_overrides") or []),
+                    "quality": review_document.get("quality", {}).get("overall"),
                 },
             )
 

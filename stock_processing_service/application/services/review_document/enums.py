@@ -29,6 +29,7 @@ class SectionQualityStatus(StrEnum):
     """Section-level data quality status."""
 
     READY = "READY"
+    PROVISIONAL = "PROVISIONAL"
     DEGRADED = "DEGRADED"
     MISSING = "MISSING"
     BLOCKED = "BLOCKED"

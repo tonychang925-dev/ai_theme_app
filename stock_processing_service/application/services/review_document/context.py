@@ -110,7 +110,9 @@ class ReviewDocumentContextFactory:
             market_state = {**market_state, **market_facts}
 
         capital_state = _dict_value(derived, "capital_state")
-        money_flow_rows = _list_value(derived, "money_flows")
+        money_flow_rows = _list_value(capital_state, "money_flows")
+        if not money_flow_rows:
+            money_flow_rows = _list_value(derived, "money_flows")
         if not money_flow_rows:
             money_flow_rows = _list_value(capital_state, "top_stocks")
 
@@ -133,8 +135,8 @@ class ReviewDocumentContextFactory:
             ),
             capital_context=CapitalContext(
                 money_flow_rows=tuple(money_flow_rows),
-                institution_rows=tuple(_list_value(derived, "institution")),
-                hot_money_rows=tuple(_list_value(derived, "hot_money")),
+                institution_rows=tuple(_list_value(capital_state, "institution")),
+                hot_money_rows=tuple(_list_value(capital_state, "hot_money")),
                 source_meta=_source_meta(derived, "money_flows", trade_date),
             ),
             stock_context=StockContext(

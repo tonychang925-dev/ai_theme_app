@@ -1,0 +1,93 @@
+# Phase 4.5.7 — Architecture Enforcement Rules
+#
+# Machine-readable constraints for AI coding agents and CI validators.
+# Every rule here corresponds to a section in the Phase_4.5.7 design doc.
+# Violations MUST block the PR.
+
+version: "1.0"
+design_doc: "docs/architecture/Phase_4.5.7_Unified_Analyst_Review_Document.md"
+
+# ── Section 8: Data Source Mapping ──────────────────────────────────
+data_sources:
+  market:
+    allowed: [chart_reviews, derived_context.market_metrics]
+    forbidden: [static_json, analyst_charts_api, legacy_market_summary]
+  emotion:
+    allowed: [emotion_review]
+    forbidden: [static_emotion_json, emotion_api]
+  themes:
+    allowed: [cognition_cards, derived_context.themes]
+    forbidden: [chart_view_model_backfill, theme_stage_inference]
+  capital:
+    allowed: [derived_context.money_flows, cognition_cards]
+    forbidden: [recap_doc, institution_style_chart, theme_stage, theme_score]
+  stocks:
+    allowed: [derived_context.strong_stocks]
+    forbidden: [legacy_stock_lists]
+  limit_up:
+    allowed: [derived_context.theme_cycle_judgement_v2, chart_reviews]
+    forbidden: [theme_inference, prose_mainline]
+  plan:
+    allowed: [playbook, explicit_overrides]
+    forbidden: [emotion_node_derivation, ai_analyst_mixed_watch_list]
+  audit:
+    allowed: [field_overrides, approval_metadata]
+    forbidden: [system_generated_defaults]
+
+# ── Section 5.1: Assembler constraints ─────────────────────────────
+assembler:
+  allowed_operations:
+    - field_mapping
+    - format_conversion
+    - explicit_override_merge
+    - source_trace_marking
+    - quality_marking
+  forbidden_operations:
+    - judgment
+    - inference
+    - data_backfill
+    - fallback
+    - recalculation
+    - chart_view_model_reverse_engineering
+
+# ── Snapshot Producer constraints ───────────────────────────────────
+snapshot_producer:
+  allowed_operations:
+    - field_rename
+    - field_copy
+    - type_coercion
+    - null_preservation
+  forbidden_operations:
+    - classification
+    - filtering_by_business_rule
+    - inference_from_stage
+    - inference_from_score
+    - hardcoded_pattern_list
+    - fallback_to_alternate_source
+    - dropping_data_for_display_quality
+
+# ── Section 6.1: API Contract ──────────────────────────────────────
+api:
+  workspace_top_level:
+    allowed: [review_document, metadata, diagnostics]
+    forbidden: [emotion_review, chart_reviews, chart_data, formal_review, recap_doc, trend_data]
+  diagnostics:
+    allowed: [theme_count, stock_count, override_count, draft_version, quality, source_quality, missing_fields]
+    forbidden: [chart_reviews, trend_data, emotion_review]
+
+# ── Frozen modules ──────────────────────────────────────────────────
+frozen_modules:
+  - name: FormalReviewProjectionCompiler
+    allowed: [bug_fix, test_fix, compatibility_repair]
+    forbidden: [schema_expansion, business_logic_addition, datasource_addition, review_document_section_backfill]
+
+# ── Section 3.2: Approve Flow ──────────────────────────────────────
+approve_flow:
+  required_steps:
+    - review_document_quality_gate
+    - final_review_document_hash_computation
+    - approved_snapshot_metadata_write
+  forbidden:
+    - approve_without_quality_gate
+    - reassemble_snapshot_during_publish
+    - republish_through_projection_compiler

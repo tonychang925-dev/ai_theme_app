@@ -1,0 +1,50 @@
+# Architecture Exception Registry
+#
+# Every exception to the architecture_rules.yaml contract MUST be
+# registered here with an owner, expiration date, and replacement plan.
+# Exceptions that expire without resolution will block the build.
+#
+# AI agents: adding code that violates a rule requires adding an
+# exception entry here first.  The CI validator checks this file.
+
+version: "1.0"
+design_doc: "docs/architecture/Phase_4.5.7_Unified_Analyst_Review_Document.md"
+
+exceptions:
+  - id: EX001
+    module: ReviewDocumentAssembler._assemble_themes
+    rule: fallback
+    lines: [121, 133]
+    pattern: "if not key: continue"
+    reason: "Identity key fallback during theme dedup — skips empty keys"
+    owner: Tony
+    expire: "2026-07-20"
+    replacement: "ThemeContext should guarantee non-empty keys at production time"
+
+  - id: EX002
+    module: ReviewDocumentAssembler._assemble_capital
+    rule: fallback
+    lines: [183, 185]
+    pattern: "if not institution: institution = [row for row in money_flows if role_label in (机构, institution)]"
+    reason: "Capital classification during migration — money_flows role_label is the only available structured source"
+    owner: Tony
+    expire: "2026-07-20"
+    replacement: "CapitalSnapshotProducer v2 with money_flow_enhanced + dragon_tiger data"
+
+  - id: EX003
+    module: EmotionDashboard.useEmotionTrend
+    rule: legacy_static_fetch
+    pattern: "fetch('/api/analyst-charts/trend.json')"
+    reason: "5-day emotion trend timeline — pending migration to reviewDocument.evidence.trend_series"
+    owner: Tony
+    expire: "2026-07-20"
+    replacement: "MarketTrendProducer → reviewDocument.evidence.trend_series → EmotionDashboard"
+
+  - id: EX004
+    module: AnalystWorkspacePage.fetchTomorrow
+    rule: legacy_api_call
+    pattern: "fetch('/api/v2/daily-review-v2')"
+    reason: "Tomorrow outlook data — pending DailyReview switch to reviewDocument (PR4)"
+    owner: Tony
+    expire: "2026-07-20"
+    replacement: "DailyReview API returns approved review_document with plan section"

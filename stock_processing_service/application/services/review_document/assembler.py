@@ -72,7 +72,7 @@ class ReviewDocumentAssembler:
             "limit_down_count": _first(source, "limit_down_count", "limit_down", "limit_down_total"),
             "up_count": _first(source, "up_count", "up"),
             "down_count": _first(source, "down_count", "down"),
-            "active_capital_yi": _first(source, "active_capital_yi", "active_capital", "active_money"),
+            "active_capital_yi": _first(source, "active_capital_yi", "active_amount_yi", "active_capital", "active_money"),
             "max_board_height": _first(source, "max_board_height", "max_board"),
         }
         market = {k: v for k, v in market.items() if v is not None and v != ""}
@@ -98,6 +98,7 @@ class ReviewDocumentAssembler:
             "risk_level": _first(source, "risk_level", "risk"),
             "strategy": _first(source, "strategy", "strategy_bias"),
             "confidence": _first(source, "confidence"),
+            "key_evidence": source.get("key_evidence") or [],
         }
         emotion = {k: v for k, v in emotion.items() if v is not None and v != ""}
         if "score" in emotion:
