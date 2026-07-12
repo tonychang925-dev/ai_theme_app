@@ -7,7 +7,7 @@ import os
 import subprocess
 import sys
 from dataclasses import dataclass
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Awaitable, Callable
 
@@ -305,12 +305,14 @@ class AnalystWorkbenchGenerateService:
 
             td = date.fromisoformat(trade_date_str)
             derived_context = await DerivedContextReader(pool=self.pool).read(td)
+            trend_data = await self._build_trend_data(td)
 
             ctx = builder.build(
                 trade_date=trade_date_str,
                 chart_json=charts,
                 emotion_json=emotion,
                 derived_context=derived_context,
+                trend_data=trend_data,
             )
 
             # Write context file alongside the draft
@@ -321,6 +323,7 @@ class AnalystWorkbenchGenerateService:
                 "missing_sources": ctx.missing_sources,
                 "theme_count": len(ctx.themes),
                 "strong_stock_count": len(ctx.strong_stocks),
+                "trend_points": _trend_point_counts(ctx.trend_data),
                 "quality": ctx.quality,
                 "warnings": ctx.warnings,
             }
@@ -348,6 +351,22 @@ class AnalystWorkbenchGenerateService:
                 finished_at=_now(),
                 error=str(exc)[:500],
             )
+
+    async def _build_trend_data(self, trade_date: date) -> dict[str, Any]:
+        """Build historical trend data from MarketMetricsSnapshot inputs."""
+        try:
+            from stock_processing_service.application.services.analyst_charts.chart_engine import (
+                ChartReproductionEngine,
+            )
+            from stock_processing_service.application.services.market_metrics.service import (
+                MarketMetricsService,
+            )
+
+            start = trade_date - timedelta(days=20)
+            snapshots = await MarketMetricsService()._get_range_async(start, trade_date)
+            return ChartReproductionEngine.build_trend(snapshots)
+        except Exception:
+            return {}
 
     async def _run_draft_cli(self, trade_date_str: str) -> WorkbenchGenerationStep:
         started = _now()
@@ -422,3 +441,11 @@ class AnalystWorkbenchGenerateService:
 
 def _now() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+def _trend_point_counts(trend_data: dict[str, Any]) -> dict[str, int]:
+    return {
+        key: len(value)
+        for key, value in (trend_data or {}).items()
+        if isinstance(value, list)
+    }

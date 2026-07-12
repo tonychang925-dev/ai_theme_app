@@ -110,6 +110,7 @@ class DraftContextBuilder:
         chart_json: dict | None = None,
         emotion_json: dict | None = None,
         derived_context: WorkbenchDerivedContext | dict[str, Any] | None = None,
+        trend_data: dict[str, Any] | None = None,
     ) -> AnalystDraftContext:
         """Build the draft context from available data.
 
@@ -164,7 +165,7 @@ class DraftContextBuilder:
         chart_reviews = charts
 
         # ── Trend data (snapshot-scoped evidence series) ──
-        trend_data = self._build_trend_data(td_str, charts, derived)
+        trend_data = self._build_trend_data(trend_data, derived)
 
         # ── Capital state (from derived money flow + chart active_capital) ──
         capital_state = self._build_capital_state(charts, emotion, derived)
@@ -367,46 +368,14 @@ class DraftContextBuilder:
         return []
 
     @staticmethod
-    def _build_trend_data(trade_date: str, charts: list[dict], derived: dict[str, Any]) -> dict[str, Any]:
-        """Build snapshot-scoped trend evidence from structured chart inputs."""
+    def _build_trend_data(prebuilt_trend: dict[str, Any] | None, derived: dict[str, Any]) -> dict[str, Any]:
+        """Pass through historical trend evidence from an upstream producer."""
+        if isinstance(prebuilt_trend, dict) and prebuilt_trend:
+            return prebuilt_trend
         existing = derived.get("trend_data")
         if isinstance(existing, dict) and existing:
             return existing
-
-        trend: dict[str, Any] = {}
-        for chart in charts:
-            chart_type = chart.get("chart_type")
-            data = chart.get("key_metrics") or chart.get("data") or {}
-            if not isinstance(data, dict):
-                continue
-            if chart_type == "market_breadth":
-                trend["breadth"] = [{
-                    "date": trade_date,
-                    "limit_up": data.get("limit_up_count", 0),
-                    "chain_board": data.get("chain_board_count", 0),
-                    "up_ratio": data.get("up_ratio", 0),
-                }]
-            elif chart_type == "emotion_momentum":
-                trend["momentum"] = [{
-                    "date": trade_date,
-                    "score": data.get("emotion_momentum_score", 0),
-                }]
-            elif chart_type == "active_capital":
-                trend["capital"] = [{
-                    "date": trade_date,
-                    "active_yi": data.get("active_amount_yi", 0),
-                    "active_amount_yi": data.get("active_amount_yi", 0),
-                    "total_amount_yi": data.get("total_amount_yi", 0),
-                }]
-            elif chart_type == "relay_ecology":
-                trend["relay"] = [{
-                    "date": trade_date,
-                    "max_height": data.get("max_board_height", 0),
-                    "p1to2": data.get("promotion_1_to_2", 0),
-                    "p2to3": data.get("promotion_2_to_3", 0),
-                    "leaders": [],
-                }]
-        return trend
+        return {}
 
     @staticmethod
     def _build_limit_up(charts: list[dict], derived: dict[str, Any]) -> dict[str, Any]:

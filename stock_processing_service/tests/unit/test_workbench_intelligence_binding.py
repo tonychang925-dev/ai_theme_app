@@ -106,16 +106,40 @@ def test_tc_p455_rb_03_draft_context_produces_review_document_snapshot_fields():
         chart_json=charts,
         emotion_json={"emotion_node": "CHAOS", "emotion_score": 39},
         derived_context={"themes": [{"subject_key": "storage", "theme_name": "存储芯片"}]},
+        trend_data={
+            "breadth": [{"date": f"2026-07-{day:02d}", "limit_up": day} for day in range(1, 13)],
+            "momentum": [{"date": f"2026-07-{day:02d}", "score": day / 10} for day in range(1, 13)],
+            "capital": [{"date": f"2026-07-{day:02d}", "amount": day / 10} for day in range(1, 13)],
+            "relay": [{"date": f"2026-07-{day:02d}", "max_height": day % 7} for day in range(1, 13)],
+        },
     )
 
     payload = ctx.to_dict()
     assert payload["capital_state"]["active_amount"] == 5058.28
     assert payload["capital_state"]["institution"][0]["theme_name"] == "存储芯片"
     assert payload["capital_state"]["hot_money"][0]["theme_name"] == "人形机器人"
-    assert payload["trend_data"]["momentum"][0]["score"] == 1.5
-    assert payload["trend_data"]["capital"][0]["active_yi"] == 5058.28
+    assert len(payload["trend_data"]["breadth"]) == 12
+    assert len(payload["trend_data"]["momentum"]) == 12
+    assert len(payload["trend_data"]["capital"]) == 12
+    assert len(payload["trend_data"]["relay"]) == 12
     assert payload["limit_up"]["total"] == 75
     assert payload["limit_up"]["categories"][0]["theme_name"] == "存储芯片"
+
+
+def test_tc_p455_rb_04_draft_context_does_not_build_single_day_trend_from_charts():
+    ctx = DraftContextBuilder().build(
+        trade_date="2026-07-09",
+        chart_json=[
+            {
+                "chart_type": "emotion_momentum",
+                "data": {"emotion_momentum_score": 1.5},
+            }
+        ],
+        emotion_json={"emotion_node": "CHAOS", "emotion_score": 39},
+        derived_context={"themes": [{"subject_key": "storage", "theme_name": "存储芯片"}]},
+    )
+
+    assert ctx.trend_data == {}
 
 
 def test_tc_p455_rb_02_given_context_themes_when_generate_draft_then_cognition_cards_not_empty():

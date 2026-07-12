@@ -75,7 +75,7 @@ class EmptyContextGenerateService(AnalystWorkbenchGenerateService):
         raise AssertionError("draft CLI should not run when draft_context failed")
 
 
-async def _charts(_trade_date: str):
+async def _charts(_trade_date: str, _pool=None):
     return [{"chart_type": "market_breadth", "data": {"up_count": 1}}]
 
 
@@ -179,3 +179,40 @@ async def test_tc_p455_rb_given_empty_context_when_generate_then_draft_not_start
     assert "no derived themes or strong stocks" in result.error
     session = SessionStore(base_dir=str(tmp_path / "tmp" / "analyst_workbench")).get(date(2026, 7, 10))
     assert session.status == WorkbenchStatus.FAILED
+
+
+async def test_tc_p455_trend_build_uses_market_metrics_snapshots(monkeypatch, tmp_path):
+    from stock_processing_service.application.services.analyst_charts.chart_engine import (
+        ChartReproductionEngine,
+    )
+    from stock_processing_service.application.services.market_metrics.service import (
+        MarketMetricsService,
+    )
+
+    calls = {}
+
+    async def fake_range(self, start_date, end_date):
+        calls["range"] = (start_date, end_date)
+        return ["snapshot"] * 12
+
+    def fake_build_trend(snapshots):
+        calls["snapshots"] = snapshots
+        return {
+            "breadth": [{"date": f"2026-07-{day:02d}"} for day in range(1, 13)],
+            "momentum": [{"date": f"2026-07-{day:02d}"} for day in range(1, 13)],
+            "capital": [{"date": f"2026-07-{day:02d}"} for day in range(1, 13)],
+            "relay": [{"date": f"2026-07-{day:02d}"} for day in range(1, 13)],
+        }
+
+    monkeypatch.setattr(MarketMetricsService, "_get_range_async", fake_range)
+    monkeypatch.setattr(ChartReproductionEngine, "build_trend", staticmethod(fake_build_trend))
+
+    service = AnalystWorkbenchGenerateService(project_root=tmp_path)
+    trend = await service._build_trend_data(date(2026, 7, 9))
+
+    assert calls["range"][1] == date(2026, 7, 9)
+    assert len(calls["snapshots"]) == 12
+    assert len(trend["breadth"]) == 12
+    assert len(trend["momentum"]) == 12
+    assert len(trend["capital"]) == 12
+    assert len(trend["relay"]) == 12
