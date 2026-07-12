@@ -35,6 +35,7 @@ EXPECTED_TOP_LEVEL_FIELDS = {
     "limit_up",
     "plan",
     "risk",
+    "evidence",
     "quality",
     "field_provenance",
     "audit",

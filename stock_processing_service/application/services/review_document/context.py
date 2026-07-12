@@ -60,11 +60,19 @@ class OverrideContext:
 
 
 @dataclass(frozen=True, slots=True)
+class EvidenceContext:
+    chart_reviews: tuple[dict[str, Any], ...] = ()
+    trend_data: dict[str, Any] = field(default_factory=dict)
+    source_meta: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass(frozen=True, slots=True)
 class ReviewDocumentContext:
     trade_date: str
     metadata: dict[str, Any]
     market_context: MarketContext
     emotion_context: EmotionContext
+    evidence_context: EvidenceContext
     theme_context: ThemeContext
     capital_context: CapitalContext
     stock_context: StockContext
@@ -127,6 +135,11 @@ class ReviewDocumentContextFactory:
             emotion_context=EmotionContext(
                 emotion_review=_dict_value(snapshot, "emotion_review"),
                 source_meta=_source_meta(snapshot, "emotion_review", trade_date),
+            ),
+            evidence_context=EvidenceContext(
+                chart_reviews=tuple(_list_value(derived, "chart_reviews")),
+                trend_data=_dict_value(derived, "trend_data"),
+                source_meta=_source_meta(derived, "chart_reviews", trade_date),
             ),
             theme_context=ThemeContext(
                 cognition_cards=tuple(_list_value(snapshot, "cognition_cards")),

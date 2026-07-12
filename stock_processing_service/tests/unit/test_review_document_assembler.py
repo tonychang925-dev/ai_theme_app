@@ -12,6 +12,7 @@ import pytest
 from stock_processing_service.application.services.review_document import (
     CapitalContext,
     EmotionContext,
+    EvidenceContext,
     MarketContext,
     OverrideContext,
     PlanContext,
@@ -229,6 +230,7 @@ def test_empty_context_is_blocked_not_ready() -> None:
         metadata={},
         market_context=MarketContext(),
         emotion_context=EmotionContext(),
+        evidence_context=EvidenceContext(),
         theme_context=ThemeContext(),
         capital_context=CapitalContext(),
         stock_context=StockContext(),

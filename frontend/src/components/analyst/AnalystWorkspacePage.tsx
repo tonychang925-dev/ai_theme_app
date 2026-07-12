@@ -401,7 +401,7 @@ export function AnalystWorkspacePage() {
   const [selectedGroupId, setSelectedGroupId] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [savedMsg, setSavedMsg] = useState("");
-  const [activeTab, setActiveTab] = useState<"review" | "emotion" | "watch">("review");
+  const [activeTab, setActiveTab] = useState<"emotion" | "watch">("emotion");
   const [generating, setGenerating] = useState(false);
   const [genProgress, setGenProgress] = useState<{ show: boolean; step: string; steps: string[]; current: number; error?: string }>({ show: false, step: "", steps: [], current: 0 });
   const [genKey, setGenKey] = useState(0);
@@ -878,18 +878,19 @@ export function AnalystWorkspacePage() {
 
       {/* Tab bar */}
       <div style={{ display: "flex", gap: 0, padding: "0 16px", background: "#0c1118", borderBottom: "1px solid #243040" }}>
-        {(["review", "emotion", "watch"] as const).map(tab => (
+        {(["emotion", "watch"] as const).map(tab => (
           <div key={tab} onClick={() => setActiveTab(tab)}
             style={{ padding: "8px 16px", cursor: "pointer", fontSize: 13, fontWeight: 600,
               color: activeTab === tab ? "#ffd85e" : "#5a7a8a",
               borderBottom: activeTab === tab ? "2px solid #ffd85e" : "2px solid transparent" }}>
-            {tab === "review" ? "复盘报告" : tab === "emotion" ? "情绪与图表" : "观察方向"}
+            {tab === "emotion" ? "情绪与图表" : "观察方向"}
           </div>
         ))}
       </div>
 
-      {/* Tab 0: Unified ReviewDocument Preview */}
-      <div style={{ flex: 1, overflow: "auto", background: "#0c1118", display: activeTab === "review" ? "block" : "none" }}>
+      {/* Tab: 情绪与图表 — EmotionDashboard (rich charts) + ReviewDocumentView (structured override) */}
+      <div style={{ flex: 1, overflow: "auto", background: "#0c1118", display: activeTab === "emotion" ? "block" : "none" }}>
+        <EmotionDashboard key={`${dateInput}-${genKey}`} tradeDate={dateInput} tomorrowOutlook={tomorrowOutlook} tomorrowWatchpoints={tomorrowWatchpoints} tomorrowForbidden={tomorrowForbidden} reviewDocument={ws.review_document} />
         <ReviewDocumentView
           document={ws.review_document}
           mode="editable"
@@ -898,11 +899,6 @@ export function AnalystWorkspacePage() {
           onSave={handleOverridesSave}
           saving={overrideSaving}
         />
-      </div>
-
-      {/* Tab 1: Emotion Dashboard */}
-      <div style={{ flex: 1, overflow: "auto", background: "#0c1118", display: activeTab === "emotion" ? "block" : "none" }}>
-        <EmotionDashboard key={`${dateInput}-${genKey}`} tradeDate={dateInput} tomorrowOutlook={tomorrowOutlook} tomorrowWatchpoints={tomorrowWatchpoints} tomorrowForbidden={tomorrowForbidden} emotionReview={(workspace as any)?.emotion_review} chartReviews={(workspace as any)?.chart_reviews} chartData={(workspace as any)?.chart_data} trendData={(workspace as any)?.trend_data} />
       </div>
 
       {/* Tab 2: Three-panel body — dark theme */}

@@ -116,6 +116,7 @@ class ReviewDocument:
     limit_up: dict[str, Any] = field(default_factory=dict)
     plan: dict[str, Any] = field(default_factory=dict)
     risk: dict[str, Any] = field(default_factory=dict)
+    evidence: dict[str, Any] = field(default_factory=dict)
     field_provenance: dict[str, FieldProvenanceEntry] = field(default_factory=dict)
     audit: dict[str, Any] = field(default_factory=dict)
 
@@ -154,6 +155,7 @@ class ReviewDocument:
             "limit_up": dict(self.limit_up),
             "plan": dict(self.plan),
             "risk": dict(self.risk),
+            "evidence": dict(self.evidence),
             "quality": self.quality.to_dict(),
             "field_provenance": {
                 key: value.to_dict()

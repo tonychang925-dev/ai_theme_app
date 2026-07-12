@@ -74,11 +74,12 @@ function useEmotionTrend(tradeDate: string) {
 }
 
 // ── Main Component ──
-export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoints, tomorrowForbidden, emotionReview, chartReviews, chartData, trendData }: {
+export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoints, tomorrowForbidden, reviewDocument, emotionReview, chartReviews, chartData, trendData }: {
   tradeDate: string;
   tomorrowOutlook?: string;
   tomorrowWatchpoints?: string[];
   tomorrowForbidden?: string[];
+  reviewDocument?: Record<string, any> | null;
   emotionReview?: Record<string, any> | null;
   chartReviews?: any[] | null;
   chartData?: any[] | null;
@@ -94,50 +95,52 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
   const [multiTrend, setMultiTrend] = useState<any>(null);
   const trend = useEmotionTrend(tradeDate);
 
-  // PR4.3: Workbench First — data MUST come from Approved Snapshot (via workspace API).
-  // Raw JSON files (emotion-{date}.json, analyst-charts/{date}.json) are generate
-  // artifacts only and are no longer consumed as runtime data sources.
+  // PR4.5.7: Single data source — ReviewDocument.
+  // emotionReview/chartReviews/chartData/trendData are deprecated migration props.
   useEffect(() => {
-    if (emotionReview && emotionReview.emotion_node) {
-      const er = emotionReview;
+    const rdEmotion = reviewDocument?.emotion;
+    if (rdEmotion && (rdEmotion.phase || rdEmotion.score != null)) {
       setEmotion({
         trade_date: tradeDate,
-        emotion_node: er.emotion_node,
-        emotion_desc: er.summary || "",
-        emotion_score: er.emotion_score || 0,
-        confidence: er.confidence ?? 0.5,
-        breadth_score: er.breadth_score || 0, breadth_label: er.breadth_label || "",
-        momentum_score: er.momentum_score || 0, momentum_label: er.momentum_label || "",
-        relay_score: er.relay_score || 0, relay_label: er.relay_label || "",
-        capital_score: er.capital_score || 0, capital_label: er.capital_label || "",
-        style_score: er.style_score || 0, style_label: er.style_label || "",
-        key_evidence: er.key_evidence || [],
-        strategy_bias: er.strategy_bias || "",
-        raw: {} as any,
+        emotion_node: rdEmotion.phase || null,
+        emotion_desc: rdEmotion.strategy || null,
+        emotion_score: rdEmotion.score ?? null,
+        confidence: rdEmotion.confidence ?? null,
+        breadth_score: reviewDocument?.market?.breadth_score ?? null,
+        breadth_label: reviewDocument?.market?.breadth_label ?? null,
+        momentum_score: null, momentum_label: null,
+        relay_score: null, relay_label: null,
+        capital_score: null, capital_label: null,
+        style_score: null, style_label: null,
+        key_evidence: rdEmotion.key_evidence || [],
+        strategy_bias: rdEmotion.strategy || null,
+        raw: {
+          limit_up: reviewDocument?.market?.limit_up_count,
+          up_count: reviewDocument?.market?.up_count,
+          down_count: reviewDocument?.market?.down_count,
+          turnover_yi: reviewDocument?.market?.active_capital_yi,
+        } as any,
       } as EmotionState);
       setLoading(false);
       return;
     }
-    // No data from workspace — show empty state (do NOT fall back to raw JSON)
     setEmotion(null);
     setLoading(false);
-  }, [tradeDate, emotionReview]);
+  }, [tradeDate, reviewDocument]);
 
   useEffect(() => {
-    if (trendData) {
-      setMultiTrend(trendData);
+    const trends = reviewDocument?.evidence?.trend_series;
+    if (trends && Object.keys(trends).length > 0) {
+      setMultiTrend(trends);
     }
-  }, [tradeDate, trendData]);
+  }, [tradeDate, reviewDocument]);
 
   useEffect(() => {
-    // chartData is the raw chart JSON (with 'data' field) for ChartRenderer
-    // chartReviews is the structured format from ChartReviewBuilder
-    if (chartData && chartData.length > 0) {
-      setSystemCharts(chartData);
-    } else if (chartReviews && chartReviews.length > 0) {
-      setSystemCharts(chartReviews);
+    const charts = reviewDocument?.evidence?.charts;
+    if (Array.isArray(charts) && charts.length > 0) {
+      setSystemCharts(charts);
     }
-  }, [tradeDate, chartData, chartReviews]);
+  }, [tradeDate, reviewDocument]);
 
   if (loading) return <div style={{ padding: "8px 16px", color: "#5a7a8a", fontSize: 13 }}>加载情绪数据…</div>;
   if (!emotion || !emotion.emotion_node) return <div style={{ padding: "8px 16px", color: "#ffa940", fontSize: 13 }}>该日期暂无情绪分析，请点击「启动分析」生成复盘动态数据</div>;

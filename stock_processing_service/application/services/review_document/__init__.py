@@ -16,6 +16,7 @@ from .quality import FreshnessQuality, ReviewDocumentQuality, SectionQuality
 from .context import (
     CapitalContext,
     EmotionContext,
+    EvidenceContext,
     MarketContext,
     OverrideContext,
     PlanContext,

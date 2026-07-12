@@ -38,6 +38,7 @@ class ReviewDocumentAssembler:
         capital = self._assemble_capital(ctx)
         stocks = self._assemble_stocks(ctx)
         plan = self._assemble_plan(ctx)
+        evidence = self._assemble_evidence(ctx)
         quality = self._quality(ctx, market, emotion, themes, capital, stocks, plan, field_provenance)
 
         document = ReviewDocument(
@@ -45,6 +46,7 @@ class ReviewDocumentAssembler:
             summary=summary,
             market=market,
             emotion=emotion,
+            evidence=evidence,
             themes=tuple(themes),
             stocks=tuple(stocks),
             capital=capital,
@@ -213,6 +215,12 @@ class ReviewDocumentAssembler:
             if _final_name(theme.get("name"))
         ]
         return {"total": total, "categories": categories}
+
+    def _assemble_evidence(self, ctx: ReviewDocumentContext) -> dict[str, Any]:
+        return {
+            "charts": list(ctx.evidence_context.chart_reviews),
+            "trend_series": dict(ctx.evidence_context.trend_data),
+        }
 
     def _assemble_risk(self, ctx: ReviewDocumentContext) -> dict[str, Any]:
         return {

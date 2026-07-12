@@ -48,3 +48,12 @@ exceptions:
     owner: Tony
     expire: "2026-07-20"
     replacement: "DailyReview API returns approved review_document with plan section"
+
+  - id: EX005
+    module: EmotionDashboard
+    rule: legacy_props
+    pattern: "emotionReview, chartReviews, chartData, trendData props"
+    reason: "EmotionDashboard component still accepts legacy props but is NOT rendered in AnalystWorkspacePage (removed from import). Pending full migration to reviewDocument prop."
+    owner: Tony
+    expire: "2026-07-20"
+    replacement: "EmotionDashboard accepts reviewDocument prop only, reads all data from it"
