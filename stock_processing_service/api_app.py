@@ -8127,7 +8127,9 @@ async def _build_market_emotion_from_metrics(trade_date: str) -> dict[str, Any]:
 async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     """Return full workspace state for a trading day.
 
-    Read-only. Reads from the workbench session store only.
+    Reads from the workbench session store and persists the assembled
+    ReviewDocument artifact for deterministic replay. It does NOT mutate
+    Snapshot or draft inputs.
     Does NOT trigger implicit AI generation or connect to the database.
 
     Priority:
@@ -8153,6 +8155,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     if snapshot_path.exists():
         snap = _json.loads(snapshot_path.read_text(encoding="utf-8"))
         review_document = _assemble_workspace_review_document(snap, mode="approved")
+        _persist_workspace_review_document(trade_date, review_document)
         return _workspace_review_document_response(
             trade_date=trade_date,
             review_document=review_document,
@@ -8173,6 +8176,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
             draft = _json.loads(draft_files[-1].read_text(encoding="utf-8"))
             _attach_draft_review_document_context(draft, _Path(_wb_base) / trade_date / "draft_context.json")
             review_document = _assemble_workspace_review_document(draft, mode="draft")
+            _persist_workspace_review_document(trade_date, review_document)
             return _workspace_review_document_response(
                 trade_date=trade_date,
                 review_document=review_document,
@@ -8323,6 +8327,33 @@ def _empty_workspace_review_document(trade_date: str) -> dict[str, Any]:
     from stock_processing_service.application.services.review_document import ReviewDocument
 
     return ReviewDocument.create_empty(trade_date=trade_date).to_dict()
+
+
+def _persist_workspace_review_document(trade_date: str, review_document: dict[str, Any]) -> None:
+    """Persist the final ReviewDocument artifact for replay.
+
+    This stores only the ReviewDocument display contract. Snapshot, Context,
+    derived_context, and other intermediate inputs are intentionally excluded.
+    """
+    import json as _json
+    import os as _os
+    from pathlib import Path as _Path
+
+    if not isinstance(review_document, dict):
+        return
+    metadata = review_document.get("metadata")
+    if not isinstance(metadata, dict) or not metadata.get("final_document_hash"):
+        return
+
+    project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    artifact_path = _Path(project_root) / "tmp" / "analyst_workbench" / trade_date / "review_document.json"
+    artifact_path.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path = artifact_path.with_suffix(".json.tmp")
+    tmp_path.write_text(
+        _json.dumps(review_document, ensure_ascii=False, sort_keys=True, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    tmp_path.replace(artifact_path)
 
 
 def _workspace_review_document_response(
