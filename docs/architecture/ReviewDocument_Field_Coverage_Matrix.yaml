@@ -1,0 +1,261 @@
+version: review_document_field_coverage_v1
+status: draft_guard
+owner: Phase_4.5.7
+principle: UI reads ReviewDocument only; missing data is reported as quality debt, not filled by UI fallback.
+
+fields:
+  market.limit_up_count:
+    ui:
+      - EmotionDashboard.marketCard.limitUp
+      - ReviewDocumentView.market.limitUp
+    review_document:
+      path: market.limit_up_count
+    context:
+      path: MarketContext.market_metrics.limit_up_count
+    snapshot:
+      source: snapshot.derived_context.market_state.facts.limit_up_count
+    field_class: FACT
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - static_json
+      - frontend_default
+
+  market.up_count:
+    ui:
+      - EmotionDashboard.marketCard.riseFallRatio
+    review_document:
+      path: market.up_count
+    context:
+      path: MarketContext.market_metrics.up_count
+    snapshot:
+      source: snapshot.derived_context.market_state.facts.up_count
+    field_class: FACT
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - static_json
+      - frontend_default
+
+  market.down_count:
+    ui:
+      - EmotionDashboard.marketCard.riseFallRatio
+    review_document:
+      path: market.down_count
+    context:
+      path: MarketContext.market_metrics.down_count
+    snapshot:
+      source: snapshot.derived_context.market_state.facts.down_count
+    field_class: FACT
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - static_json
+      - frontend_default
+
+  emotion.phase:
+    ui:
+      - EmotionDashboard.emotionNode
+    review_document:
+      path: emotion.phase
+    context:
+      path: EmotionContext.emotion_review.phase
+    snapshot:
+      source: snapshot.emotion_review.phase
+    field_class: ASSESSMENT
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - frontend_derive_node
+      - frontend_default
+
+  emotion.score:
+    ui:
+      - EmotionDashboard.scoreGauge
+    review_document:
+      path: emotion.score
+    context:
+      path: EmotionContext.emotion_review.score
+    snapshot:
+      source: snapshot.emotion_review.score
+    field_class: ASSESSMENT
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - frontend_default
+
+  evidence.trend_series:
+    ui:
+      - EmotionDashboard.trendTimeline
+      - EmotionDashboard.evidenceCharts
+    review_document:
+      path: evidence.trend_series
+    context:
+      path: EvidenceContext.trend_data
+    snapshot:
+      source: snapshot.derived_context.trend_data
+    field_class: FACT
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - frontend_public_api_trend_json
+      - static_json
+
+  capital.active_amount:
+    ui:
+      - EmotionDashboard.marketCard.turnover
+    review_document:
+      path: capital.active_amount
+    context:
+      path: CapitalContext.active_amount
+    snapshot:
+      source: snapshot.derived_context.capital_state.active_amount
+    field_class: FACT
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - chart_view_model_backfill
+      - theme_score_inference
+
+  capital.institution:
+    ui:
+      - ReviewDocumentView.capital.institution
+    review_document:
+      path: capital.institution
+    context:
+      path: CapitalContext.institution_rows
+    snapshot:
+      source: snapshot.derived_context.capital_state.institution
+    field_class: EVIDENCE
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - assembler_role_label_split
+      - theme_stage_inference
+      - frontend_default
+
+  capital.hot_money:
+    ui:
+      - ReviewDocumentView.capital.hotMoney
+    review_document:
+      path: capital.hot_money
+    context:
+      path: CapitalContext.hot_money_rows
+    snapshot:
+      source: snapshot.derived_context.capital_state.hot_money
+    field_class: EVIDENCE
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - assembler_role_label_split
+      - theme_stage_inference
+      - frontend_default
+
+  themes.name:
+    ui:
+      - ReviewDocumentSections.ThemeSection.name
+      - ReviewDocumentView.ThemeSection.name
+    review_document:
+      path: themes[].name
+    context:
+      path: ThemeContext.theme_cycle_rows[].theme_name
+    snapshot:
+      source: snapshot.derived_context.themes[].theme_name
+    resolver: ThemeIdentityResolver
+    field_class: IDENTITY
+    transform: identity_resolution
+    quality: required
+    forbidden:
+      - subject_key_fallback
+      - numeric_name
+      - frontend_default
+
+  stocks.name:
+    ui:
+      - ReviewDocumentSections.StrongStockTable.name
+      - ReviewDocumentView.StrongStockTable.name
+    review_document:
+      path: stocks[].name
+    context:
+      path: StockContext.strong_stock_rows[].name
+    snapshot:
+      source: snapshot.derived_context.strong_stocks[].name
+    field_class: IDENTITY
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - stock_code_as_name
+      - frontend_default
+
+  stocks.themes.name:
+    ui:
+      - ReviewDocumentSections.StrongStockTable.theme
+      - ReviewDocumentView.StrongStockTable.theme
+    review_document:
+      path: stocks[].themes[].name
+    context:
+      path: StockContext.strong_stock_rows[].themes[].name
+    snapshot:
+      source: snapshot.derived_context.stock_theme_mapping
+    resolver: ThemeIdentityResolver
+    field_class: IDENTITY
+    transform: identity_resolution
+    quality: required
+    forbidden:
+      - unknown
+      - __independent__
+      - subject_key_fallback
+      - frontend_default
+
+  limit_up.categories:
+    ui:
+      - ReviewDocumentSections.LimitUpSection.categories
+      - ReviewDocumentView.LimitUpSection.categories
+    review_document:
+      path: limit_up.categories[].theme_name
+    context:
+      path: LimitUpContext.categories[].theme_name
+    snapshot:
+      source: snapshot.derived_context.limit_up.categories
+    resolver: ThemeIdentityResolver
+    field_class: FACT
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - themes_to_limit_up_reverse_mapping
+      - subject_key_fallback
+      - frontend_filter
+
+  plan.scenario:
+    ui:
+      - ReviewDocumentSections.PlanSection.scenario
+      - ReviewDocumentView.PlanSection.scenario
+    review_document:
+      path: plan.scenario
+    context:
+      path: PlanContext.playbook.scenario
+    snapshot:
+      source: snapshot.playbook.scenario
+    field_class: PLAN
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - frontend_default
+      - emotion_node_derivation
+
+  risk.risk_level:
+    ui:
+      - ReviewDocumentSections.RiskSection.level
+      - ReviewDocumentView.RiskSection.level
+    review_document:
+      path: risk.risk_level
+    context:
+      path: EmotionContext.emotion_review.risk_level
+    snapshot:
+      source: snapshot.emotion_review.risk_level
+    field_class: ASSESSMENT
+    transform: direct_mapping
+    quality: required
+    forbidden:
+      - frontend_default
+      - emotion_score_threshold

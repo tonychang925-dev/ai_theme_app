@@ -1,0 +1,57 @@
+version: review_document_golden_ui_v1
+trade_date: "2026-07-09"
+description: Golden UI baseline assertions for Phase 4.5.7 replay guard.
+
+assertions:
+  market:
+    limit_up_count:
+      path: market.limit_up_count
+      equals: 75
+    up_count:
+      path: market.up_count
+      equals: 3561
+    down_count:
+      path: market.down_count
+      equals: 1609
+
+  emotion:
+    phase:
+      path: emotion.phase
+      equals: CHAOS
+    score:
+      path: emotion.score
+      equals: 39
+
+  capital:
+    active_amount:
+      path: capital.active_amount
+      equals: 5058.28
+
+  themes:
+    required_names:
+      path: themes[].name
+      contains_all:
+        - 存储芯片
+        - 人形机器人
+      forbidden_values:
+        - "9055378"
+        - "9018144"
+        - "9014001"
+
+  stocks:
+    required_names:
+      path: stocks[].name
+      required: true
+      contains_all:
+        - 埃斯顿
+    required_theme_names:
+      path: stocks[].themes[].name
+      required: true
+      forbidden_values:
+        - unknown
+        - __independent__
+
+  plan:
+    scenario:
+      path: plan.scenario
+      equals: 混沌观望
