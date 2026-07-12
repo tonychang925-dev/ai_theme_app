@@ -8194,6 +8194,27 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     )
 
 
+@app.get("/api/v1/analyst-workspace/{trade_date}/review-document-diff")
+async def get_analyst_workspace_review_document_diff(trade_date: str) -> dict[str, Any]:
+    """Return ReviewDocument field-level diff for analyst override review."""
+    review_document = await _load_workspace_review_document_for_date(trade_date)
+    return {
+        "review_document_diff": _diff_workspace_review_document(review_document),
+        "metadata": {
+            "trade_date": trade_date,
+            "document_hash": (review_document.get("metadata") or {}).get("final_document_hash"),
+            "document_schema_version": (review_document.get("metadata") or {}).get("document_schema_version"),
+            "assembler_version": (review_document.get("metadata") or {}).get("assembler_version"),
+        },
+    }
+
+
+async def _load_workspace_review_document_for_date(trade_date: str) -> dict[str, Any]:
+    payload = await get_analyst_workspace(trade_date)
+    review_document = payload.get("review_document")
+    return review_document if isinstance(review_document, dict) else _empty_workspace_review_document(trade_date)
+
+
 def _attach_draft_review_document_context(draft: dict[str, Any], context_path: Any) -> None:
     """Attach Workbench draft_context.json for ReviewDocument assembly.
 
@@ -8249,6 +8270,12 @@ def _workspace_review_document_response(
         },
         "diagnostics": diagnostics or {},
     }
+
+
+def _diff_workspace_review_document(review_document: dict[str, Any]) -> dict[str, Any]:
+    from stock_processing_service.application.services.review_document import ReviewDocumentDiffService
+
+    return ReviewDocumentDiffService().diff(review_document).to_dict()
 
 
 def _read_raw_chart_json(trade_date: str, project_root: str) -> list:

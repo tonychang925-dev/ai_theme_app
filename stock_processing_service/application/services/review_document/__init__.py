@@ -26,6 +26,7 @@ from .context import (
     ThemeContext,
 )
 from .assembler import ReviewDocumentAssembler
+from .diff import ReviewDocumentDiff, ReviewDocumentDiffChange, ReviewDocumentDiffService
 from .schema import (
     FieldProvenanceEntry,
     ReviewDocument,
@@ -47,6 +48,9 @@ __all__ = [
     "ReviewDocumentAssemblerInput",
     "ReviewDocumentContext",
     "ReviewDocumentContextFactory",
+    "ReviewDocumentDiff",
+    "ReviewDocumentDiffChange",
+    "ReviewDocumentDiffService",
     "ReviewDocumentMetadata",
     "ReviewDocumentQuality",
     "SectionQuality",
