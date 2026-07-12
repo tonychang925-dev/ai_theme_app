@@ -43,9 +43,13 @@ class ThemeIdentityResolver:
     def resolve(self, raw: RawThemeIdentity, lookup_records: list[dict[str, Any]] | None = None) -> ThemeIdentity:
         direct_name = _clean_text(raw.theme_name)
         direct_source = "input.theme_name"
-        if not direct_name:
-            direct_name = _clean_text(raw.subject_name)
-            direct_source = "input.subject_name"
+        if not direct_name or direct_name.isdigit():
+            fallback = _clean_text(raw.subject_name)
+            if fallback and not fallback.isdigit():
+                direct_name = fallback
+                direct_source = "input.subject_name"
+            else:
+                direct_name = ""
         if direct_name:
             return ThemeIdentity(
                 subject_key=raw.subject_key,
@@ -60,7 +64,7 @@ class ThemeIdentityResolver:
             if key != raw.subject_key:
                 continue
             name = _clean_text(record.get("theme_name")) or _clean_text(record.get("subject_name"))
-            if name:
+            if name and not name.isdigit():
                 return ThemeIdentity(
                     subject_key=raw.subject_key,
                     canonical_name=name,
