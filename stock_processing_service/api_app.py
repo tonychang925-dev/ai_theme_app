@@ -8176,6 +8176,8 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
             draft = _json.loads(draft_files[-1].read_text(encoding="utf-8"))
             _attach_draft_review_document_context(draft, _Path(_wb_base) / trade_date / "draft_context.json")
             review_document = _assemble_workspace_review_document(draft, mode="draft")
+            # PR4.2.15: check recap completeness; block if required fields missing
+            review_document = await _apply_recap_completeness_guard(trade_date, review_document)
             _persist_workspace_review_document(trade_date, review_document)
             return _workspace_review_document_response(
                 trade_date=trade_date,
@@ -8321,6 +8323,57 @@ def _assemble_workspace_review_document(snapshot_like: dict[str, Any], *, mode: 
     if overrides:
         document = ReviewOverrideApplier().apply(document, overrides).document
     return document
+
+
+async def _apply_recap_completeness_guard(trade_date: str, review_document: dict[str, Any]) -> dict[str, Any]:
+    """PR4.2.15: check recap completeness and mark quality BLOCKED if required fields are missing.
+
+    Charts 5-7 (institution_style, hot_money_style, limitup_classification) depend
+    on post_market_recap_snapshot. When that snapshot is absent, capital.institution,
+    capital.hot_money, and limit_up.categories will be empty. This guard prevents
+    a half-complete ReviewDocument from being marked READY.
+    """
+    from datetime import date as _date
+    from stock_processing_service.application.services.analyst_workbench.recap_completeness_guard import (
+        RecapCompletenessGuard,
+    )
+
+    try:
+        td = _date.fromisoformat(trade_date)
+        recap = await _load_recap_doc(td)
+    except Exception:
+        recap = {}
+
+    result = RecapCompletenessGuard().check(recap)
+    if result.complete:
+        return review_document
+
+    quality = review_document.get("quality", {})
+    sections = dict(quality.get("sections", {}))
+    sections["capital"] = {
+        "status": "BLOCKED",
+        "missing_fields": list(result.missing),
+        "blocking_issues": list(result.blocking_issues),
+        "warnings": [],
+    }
+    sections["limit_up"] = {
+        "status": "BLOCKED",
+        "missing_fields": list(result.missing),
+        "blocking_issues": list(result.blocking_issues),
+        "warnings": [],
+    }
+    return {
+        **review_document,
+        "quality": {
+            **quality,
+            "overall": "BLOCKED",
+            "sections": sections,
+            "can_approve": False,
+            "blocking_issues": list(set(
+                list(quality.get("blocking_issues", [])) + list(result.blocking_issues)
+            )),
+        },
+    }
 
 
 def _empty_workspace_review_document(trade_date: str) -> dict[str, Any]:

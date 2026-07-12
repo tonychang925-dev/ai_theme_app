@@ -39,11 +39,15 @@ class EmotionReviewBuilder:
             raw_conf = raw_conf / 100.0
         confidence = max(0.0, min(1.0, float(raw_conf)))
 
+        risk_level = self._risk_level(score)
+        risk_flags = self._build_risk_flags(node, score, risk_level, emo)
+
         review: dict[str, Any] = {
             "emotion_node": node,
             "emotion_label": NODE_LABELS.get(node, node),
             "emotion_score": score,
-            "risk_level": self._risk_level(score),
+            "risk_level": risk_level,
+            "risk_flags": risk_flags,
             "confidence": confidence,
             "summary": self._build_summary(emo, node, score),
             "strategy_bias": emo.get("strategy_bias", ""),
@@ -79,6 +83,7 @@ class EmotionReviewBuilder:
             "emotion_label": "",
             "emotion_score": 0,
             "risk_level": "UNKNOWN",
+            "risk_flags": [],
             "confidence": 0,
             "summary": "情绪数据不可用。",
             "strategy_bias": "",
@@ -103,6 +108,22 @@ class EmotionReviewBuilder:
             return "HIGH"
         else:
             return "EXTREME"
+
+    @staticmethod
+    def _build_risk_flags(node: str, score: float, risk_level: str, emo: dict) -> list[str]:
+        """Build risk_flags from emotion state. Deterministic, no LLM."""
+        flags: list[str] = []
+        if risk_level in ("HIGH", "EXTREME"):
+            flags.append(f"风险等级: {risk_level}")
+        if node in ("DIVERGENCE", "FADE"):
+            flags.append("情绪退潮中，注意防守")
+        if node == "ICE_POINT":
+            flags.append("情绪冰点，等待修复信号")
+        if node == "CLIMAX":
+            flags.append("情绪高潮，警惕分歧")
+        if score < -20:
+            flags.append(f"情绪分数极低 ({score:.0f})，需控制仓位")
+        return flags
 
     @staticmethod
     def _build_summary(emo: dict, node: str, score: float) -> str:

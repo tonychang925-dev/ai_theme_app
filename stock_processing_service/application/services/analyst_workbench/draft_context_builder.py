@@ -54,6 +54,9 @@ class AnalystDraftContext:
     # ── Limit-up classifications (from structured limit-up source) ──
     limit_up: dict[str, Any] = field(default_factory=dict)
 
+    # ── Plan state (from PlanSnapshotProducer) ──
+    plan_state: dict[str, Any] = field(default_factory=dict)
+
     # ── Risk signals ──
     risk_signals: list[str] = field(default_factory=list)
 
@@ -74,6 +77,7 @@ class AnalystDraftContext:
             "themes": self.themes,
             "strong_stocks": self.strong_stocks,
             "limit_up": self.limit_up,
+            "plan_state": self.plan_state,
             "risk_signals": self.risk_signals,
             "source_quality": self.source_quality,
             "missing_sources": self.missing_sources,
@@ -174,6 +178,10 @@ class DraftContextBuilder:
         # ── Limit-up categories (structured source only) ──
         limit_up = self._build_limit_up(charts, derived)
 
+        # ── Plan state (from PlanSnapshotProducer, not derived inline) ──
+        from .plan_snapshot_producer import PlanSnapshotProducer
+        plan_state = PlanSnapshotProducer().produce(emotion_state, themes)
+
         # ── Risk signals ──
         risk_signals = self._build_risk_signals(emotion, charts)
 
@@ -192,6 +200,7 @@ class DraftContextBuilder:
             themes=themes,
             strong_stocks=strong_stocks,
             limit_up=limit_up,
+            plan_state=plan_state,
             risk_signals=risk_signals,
             source_quality=quality,
             missing_sources=missing,
@@ -264,12 +273,22 @@ class DraftContextBuilder:
 
         institution = DraftContextBuilder._style_directions(charts, "institution_style")
         hot_money = DraftContextBuilder._style_directions(charts, "hot_money_style")
+
+        money_flows = derived.get("money_flows") or []
+
+        # PR4.2.16: when chart directions are empty, build from money_flow role_label data.
+        # This is not inference — money_flow rows are already annotated with institution/hot_money
+        # labels by the derived data pipeline (money_flow_enhanced table).
+        if not institution and money_flows:
+            institution = _capital_direction_from_flows(money_flows, "institution")
+        if not hot_money and money_flows:
+            hot_money = _capital_direction_from_flows(money_flows, "hot_money")
+
         if institution:
             capital_state["institution"] = institution
         if hot_money:
             capital_state["hot_money"] = hot_money
 
-        money_flows = derived.get("money_flows") or []
         if money_flows:
             net = sum(float(item.get("main_net_inflow") or 0) for item in money_flows if isinstance(item, dict))
             capital_state.update({
@@ -457,6 +476,44 @@ def _derived_to_dict(value: WorkbenchDerivedContext | dict[str, Any] | None) -> 
     if isinstance(value, WorkbenchDerivedContext):
         return value.to_dict()
     return value if isinstance(value, dict) else {}
+
+
+def _capital_direction_from_flows(
+    money_flows: list[dict[str, Any]], direction_type: str
+) -> list[dict[str, Any]]:
+    """Build institution/hot_money direction from money_flow role_label annotations.
+
+    The money_flow_enhanced table already carries role_label (机构/游资),
+    institution_seat_count, and dragon_tiger_net_amount. This function filters
+    and groups by theme — no inference, no guessing.
+    """
+    seen_themes: set[str] = set()
+    rows: list[dict[str, Any]] = []
+    for item in money_flows:
+        if not isinstance(item, dict):
+            continue
+        role = str(item.get("role_label") or "").strip()
+        inst_seats = int(item.get("institution_seat_count") or 0)
+        dt_amount = float(item.get("dragon_tiger_net_amount") or 0)
+
+        if direction_type == "institution":
+            if not (role == "机构" or inst_seats > 0):
+                continue
+        else:  # hot_money
+            if not (role == "游资" or dt_amount != 0):
+                continue
+
+        theme = str(item.get("theme_name") or "")
+        if not theme or theme in seen_themes:
+            continue
+        seen_themes.add(theme)
+        rows.append({
+            "theme_name": theme,
+            "state": role,
+            "score": float(item.get("composite_score") or 0),
+            "source": "money_flow_enhanced",
+        })
+    return rows
 
 
 def _nullable_metric(value: Any) -> Any:

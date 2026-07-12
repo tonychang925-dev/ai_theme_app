@@ -180,8 +180,8 @@ class ReviewDocumentContextFactory:
                 source_meta=_source_meta(derived, "strong_stocks", trade_date),
             ),
             plan_context=PlanContext(
-                playbook=_dict_value(snapshot, "playbook"),
-                source_meta=_source_meta(snapshot, "playbook", trade_date),
+                playbook=_dict_value(derived, "plan_state"),
+                source_meta=_source_meta(derived, "plan_state", trade_date),
             ),
             override_context=OverrideContext(
                 field_overrides=_collect_field_overrides(_list_value(snapshot, "cognition_cards")),
