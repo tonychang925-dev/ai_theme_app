@@ -8182,6 +8182,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
                     "missing_fields": draft.get("missing_fields", []),
                     "theme_count": len(review_document.get("themes") or []),
                     "stock_count": len(review_document.get("stocks") or []),
+                    "override_count": len((review_document.get("audit") or {}).get("explicit_overrides") or []),
                 },
             )
 
@@ -8206,6 +8207,43 @@ async def get_analyst_workspace_review_document_diff(trade_date: str) -> dict[st
             "document_schema_version": (review_document.get("metadata") or {}).get("document_schema_version"),
             "assembler_version": (review_document.get("metadata") or {}).get("assembler_version"),
         },
+    }
+
+
+@app.get("/api/v1/analyst-workspace/{trade_date}/review-overrides")
+async def get_analyst_workspace_review_overrides(trade_date: str) -> dict[str, Any]:
+    """Return saved ReviewDocument overrides for a trading day."""
+    return {
+        "overrides": [override.to_dict() for override in _load_workspace_review_overrides(trade_date)],
+        "metadata": {
+            "trade_date": trade_date,
+            "source": "review_overrides_json",
+        },
+    }
+
+
+@app.post("/api/v1/analyst-workspace/{trade_date}/review-overrides")
+async def save_analyst_workspace_review_overrides(trade_date: str, body: dict[str, Any] | None = None) -> dict[str, Any]:
+    """Persist field-level ReviewDocument overrides without mutating snapshot."""
+    from stock_processing_service.application.services.review_document import ReviewOverride
+
+    payload = body or {}
+    raw_overrides = payload.get("overrides") or []
+    if not isinstance(raw_overrides, list):
+        raise HTTPException(status_code=400, detail="overrides must be a list")
+    overrides = [ReviewOverride.from_dict(item) for item in raw_overrides if isinstance(item, dict)]
+    _write_workspace_review_overrides(trade_date, overrides)
+    review_document = await _load_workspace_review_document_for_date(trade_date)
+    diff = _diff_workspace_review_document(review_document)
+    return {
+        "status": "saved",
+        "metadata": {
+            "trade_date": trade_date,
+            "override_count": len(overrides),
+            "document_hash": (review_document.get("metadata") or {}).get("final_document_hash"),
+        },
+        "review_document": review_document,
+        "review_document_diff": diff,
     }
 
 
@@ -8239,12 +8277,17 @@ def _assemble_workspace_review_document(snapshot_like: dict[str, Any], *, mode: 
         ReviewDocumentAssembler,
         ReviewDocumentAssemblerInput,
         ReviewDocumentContextFactory,
+        ReviewOverrideApplier,
     )
 
     context = ReviewDocumentContextFactory().create(snapshot_like)
-    return ReviewDocumentAssembler().assemble(
+    document = ReviewDocumentAssembler().assemble(
         ReviewDocumentAssemblerInput(context=context, mode=mode)  # type: ignore[arg-type]
     ).to_dict()
+    overrides = _load_workspace_review_overrides(str(document.get("metadata", {}).get("trade_date") or ""))
+    if overrides:
+        document = ReviewOverrideApplier().apply(document, overrides).document
+    return document
 
 
 def _empty_workspace_review_document(trade_date: str) -> dict[str, Any]:
@@ -8276,6 +8319,41 @@ def _diff_workspace_review_document(review_document: dict[str, Any]) -> dict[str
     from stock_processing_service.application.services.review_document import ReviewDocumentDiffService
 
     return ReviewDocumentDiffService().diff(review_document).to_dict()
+
+
+def _load_workspace_review_overrides(trade_date: str) -> list[Any]:
+    from stock_processing_service.application.services.review_document import ReviewOverride
+
+    path = _workspace_review_overrides_path(trade_date)
+    if not path.exists():
+        return []
+    import json as _json
+
+    payload = _json.loads(path.read_text(encoding="utf-8"))
+    raw = payload.get("overrides") if isinstance(payload, dict) else []
+    return [ReviewOverride.from_dict(item) for item in raw or [] if isinstance(item, dict)]
+
+
+def _write_workspace_review_overrides(trade_date: str, overrides: list[Any]) -> None:
+    import json as _json
+    from datetime import datetime as _dt, timezone as _tz
+
+    path = _workspace_review_overrides_path(trade_date)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "trade_date": trade_date,
+        "saved_at": _dt.now(_tz.utc).isoformat(),
+        "overrides": [override.to_dict() for override in overrides],
+    }
+    path.write_text(_json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _workspace_review_overrides_path(trade_date: str) -> Any:
+    from pathlib import Path as _Path
+    import os as _os
+
+    project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    return _Path(project_root) / "tmp" / "analyst_workbench" / trade_date / "review_overrides.json"
 
 
 def _read_raw_chart_json(trade_date: str, project_root: str) -> list:
