@@ -76,7 +76,7 @@ class ReviewOverrideApplier:
         applied: list[ReviewOverride] = []
         rejected: list[dict[str, Any]] = []
 
-        for override in overrides:
+        for override in sorted(overrides, key=_override_sort_key):
             ok, reason = _apply_one(next_doc, override)
             if ok:
                 applied.append(override)
@@ -106,6 +106,10 @@ def _apply_one(document: dict[str, Any], override: ReviewOverride) -> tuple[bool
 
     if override.field_path.startswith("themes["):
         return _apply_theme_override(document, override)
+
+    existing_value = _get_path_value(document, override.field_path)
+    if _is_fact_like_path(document, override.field_path, existing_value):
+        return False, "fact_path_override_forbidden"
 
     target, field_name = _resolve_simple_parent(document, override.field_path)
     if target is None or not field_name:
@@ -236,6 +240,15 @@ def _document_hash(document: dict[str, Any]) -> str:
     return "sha256:" + hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 
+def _override_sort_key(override: ReviewOverride) -> tuple[str, str, str, str]:
+    return (
+        override.field_path,
+        override.field_class.value,
+        str(override.final_value),
+        override.reason,
+    )
+
+
 def _entity_key_from_path(path: str) -> str:
     if path.startswith("themes["):
         token, _field = _parse_bracket_path(path, prefix="themes")
@@ -254,3 +267,20 @@ def _final_value(value: Any) -> Any:
     if isinstance(value, dict):
         return value.get("final_value")
     return value
+
+
+def _get_path_value(document: dict[str, Any], field_path: str) -> Any:
+    target, field_name = _resolve_simple_parent(document, field_path)
+    if target is None or not field_name:
+        return None
+    return target.get(field_name)
+
+
+def _is_fact_like_path(document: dict[str, Any], field_path: str, value: Any) -> bool:
+    provenance = document.get("field_provenance")
+    entry = provenance.get(field_path) if isinstance(provenance, dict) else None
+    if isinstance(entry, dict) and entry.get("field_type") == FieldClass.FACT.value:
+        return True
+    if field_path.startswith("market.") and isinstance(value, (int, float)):
+        return True
+    return False
