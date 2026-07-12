@@ -220,6 +220,16 @@ def _print_schema(document: dict[str, Any]) -> None:
 
 
 def _blocking_issue(group: str, name: str, reason: str) -> str:
+    explicit = {
+        ("stocks", "required_names", "missing"): "stock.identity_missing",
+        ("stocks", "required_theme_names", "missing"): "stock.theme_identity_missing",
+        ("stocks", "required_theme_names", "forbidden"): "stock.theme_identity_forbidden",
+        ("themes", "required_names", "missing"): "theme.identity_missing",
+        ("themes", "required_names", "forbidden"): "theme.identity_forbidden",
+    }
+    mapped = explicit.get((group, name, reason))
+    if mapped:
+        return mapped
     return f"{group}.{name}_{reason}"
 
 

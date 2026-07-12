@@ -179,11 +179,14 @@ class ReviewDocumentAssembler:
     def _assemble_capital(self, ctx: ReviewDocumentContext) -> dict[str, Any]:
         institution = list(ctx.capital_context.institution_rows)
         hot_money = list(ctx.capital_context.hot_money_rows)
-        return {
+        capital = {
             "market": {},
             "institution": institution,
             "hot_money": hot_money,
         }
+        if ctx.capital_context.active_amount not in (None, ""):
+            capital["active_amount"] = ctx.capital_context.active_amount
+        return capital
 
     def _assemble_stocks(self, ctx: ReviewDocumentContext) -> list[dict[str, Any]]:
         return [dict(row) for row in ctx.stock_context.strong_stock_rows]

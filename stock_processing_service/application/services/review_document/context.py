@@ -33,6 +33,7 @@ class ThemeContext:
 
 @dataclass(frozen=True, slots=True)
 class CapitalContext:
+    active_amount: Any = None
     money_flow_rows: tuple[dict[str, Any], ...] = ()
     institution_rows: tuple[dict[str, Any], ...] = ()
     hot_money_rows: tuple[dict[str, Any], ...] = ()
@@ -147,6 +148,7 @@ class ReviewDocumentContextFactory:
                 source_meta=_source_meta(derived, "themes", trade_date),
             ),
             capital_context=CapitalContext(
+                active_amount=_value(capital_state, "active_amount"),
                 money_flow_rows=tuple(money_flow_rows),
                 institution_rows=tuple(_list_value(capital_state, "institution")),
                 hot_money_rows=tuple(_list_value(capital_state, "hot_money")),
