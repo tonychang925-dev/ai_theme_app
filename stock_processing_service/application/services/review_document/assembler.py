@@ -15,6 +15,7 @@ from .context import ReviewDocumentAssemblerInput, ReviewDocumentContext
 from .enums import DocumentStatus, FieldClass, SectionQualityStatus, TransformType, ValidationStatus
 from .quality import FreshnessQuality, ReviewDocumentQuality, SectionQuality
 from .schema import FieldProvenanceEntry, ReviewDocument, ReviewDocumentMetadata
+from .stock_document_normalizer import StockDocumentNormalizer
 
 
 class ReviewDocumentAssembler:
@@ -189,7 +190,7 @@ class ReviewDocumentAssembler:
         return capital
 
     def _assemble_stocks(self, ctx: ReviewDocumentContext) -> list[dict[str, Any]]:
-        return [dict(row) for row in ctx.stock_context.strong_stock_rows]
+        return StockDocumentNormalizer().normalize_many(ctx.stock_context.strong_stock_rows)
 
     def _assemble_plan(self, ctx: ReviewDocumentContext) -> dict[str, Any]:
         playbook = ctx.plan_context.playbook

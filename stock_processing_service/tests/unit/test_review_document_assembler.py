@@ -89,6 +89,7 @@ def _snapshot_from_golden() -> dict:
                         "stock_code": "603137.SH",
                         "stock_name": golden["stocks"]["leader"]["stock_name"],
                         "board_height": golden["stocks"]["leader"]["board_height"],
+                        "subject_key": "storage",
                         "theme_name": "存储芯片",
                     }
                 ],
@@ -195,8 +196,10 @@ def test_assembler_outputs_review_document_matching_20260709_golden() -> None:
     hot_money_names = {item["theme_name"] for item in document["capital"]["hot_money"]}
     assert set(golden["capital"]["institution_must_include"]) <= institution_names
     assert set(golden["capital"]["hot_money_must_include"]) <= hot_money_names
-    assert document["stocks"][0]["stock_name"] == golden["stocks"]["leader"]["stock_name"]
-    assert document["stocks"][0]["board_height"] == golden["stocks"]["leader"]["board_height"]
+    assert document["stocks"][0]["code"] == "603137.SH"
+    assert document["stocks"][0]["name"] == golden["stocks"]["leader"]["stock_name"]
+    assert document["stocks"][0]["themes"] == [{"name": "存储芯片", "key": "storage"}]
+    assert document["stocks"][0]["height"] == golden["stocks"]["leader"]["board_height"]
 
 
 def test_assembler_outputs_core_field_provenance() -> None:
