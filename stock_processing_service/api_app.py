@@ -7593,7 +7593,7 @@ async def _load_recap_doc(trade_date) -> dict:
     try:
         row = await conn.fetchrow(
             "SELECT payload FROM post_market_recap_snapshot "
-            "WHERE trade_date = $1::date ORDER BY created_at DESC LIMIT 1",
+            "WHERE trade_date = $1::date ORDER BY updated_at DESC, created_at DESC LIMIT 1",
             trade_date,
         )
         if not row:

@@ -238,18 +238,34 @@ class ChartReproductionEngine:
     @staticmethod
     def _build_limitup(recap: dict, lu: int) -> dict[str, Any]:
         hotspots = recap.get("strong_hotspot_subjects", [])
-        cats: dict[str, list] = {}
+        cats: dict[str, dict[str, Any]] = {}
         for h in hotspots:
             if not isinstance(h, dict):
                 continue
+            key = str(h.get("subject_key") or "").strip()
             name = str(h.get("theme_name", "")).strip()
             if not name or name.startswith("【"):
                 continue
-            source = str(h.get("source", "other"))
-            cats.setdefault(source, []).append(name)
+            if not key:
+                key = name
+            item = cats.setdefault(
+                key,
+                {
+                    "theme_key": key,
+                    "theme_name": name,
+                    "count": 0,
+                    "stocks": [],
+                    "source": "post_market_recap_snapshot.strong_hotspot_subjects",
+                },
+            )
+            item["count"] = int(item.get("count") or 0) + 1
+            stock_id = str(h.get("stock_id") or h.get("code") or "").strip()
+            stock_name = str(h.get("stock_name") or h.get("name") or "").strip()
+            if stock_id or stock_name:
+                item.setdefault("stocks", []).append({"code": stock_id, "name": stock_name})
         return {
             "chart_type": "limitup_classification", "title": "涨停股分类", "module": "limitup",
-            "data": {"limit_up_count": lu, "categories": {k: v[:5] for k, v in list(cats.items())[:5]}},
+            "data": {"limit_up_count": lu, "categories": dict(list(cats.items())[:12])},
             "interpretation": f"涨停{lu}家。" + ("方向分散。" if lu < 60 else "主线明确。" if len(cats) <= 3 else "多线并行。"),
         }
 
