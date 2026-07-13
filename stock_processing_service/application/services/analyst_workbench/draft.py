@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -97,11 +98,23 @@ class DraftStore:
                 return AIDraft.from_dict(json.loads(p.read_text()))
             return None
         # Find latest version
-        files = sorted(d.glob("draft_v*.json"))
-        if not files:
+        path = latest_draft_path(d)
+        if path is None:
             return None
-        return AIDraft.from_dict(json.loads(files[-1].read_text()))
+        return AIDraft.from_dict(json.loads(path.read_text()))
 
     def latest_version(self, trade_date: date) -> int:
         draft = self.load(trade_date)
         return draft.draft_version if draft else 0
+
+
+def draft_file_version(path: Path) -> int:
+    match = re.fullmatch(r"draft_v(\d+)\.json", path.name)
+    return int(match.group(1)) if match else -1
+
+
+def latest_draft_path(drafts_dir: Path) -> Path | None:
+    files = [path for path in drafts_dir.glob("draft_v*.json") if draft_file_version(path) >= 0]
+    if not files:
+        return None
+    return max(files, key=draft_file_version)

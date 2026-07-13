@@ -178,6 +178,18 @@ def test_draft_version_increments(tmp_store):
     assert loaded.supersedes_version == 1
 
 
+def test_latest_draft_uses_numeric_version_order(tmp_store):
+    _, ds, _ = tmp_store
+    td = date(2026, 7, 9)
+    for version in (1, 2, 9, 10):
+        ds.save(AIDraft(trade_date=td, draft_version=version))
+
+    assert ds.latest_version(td) == 10
+    loaded = ds.load(td)
+    assert loaded is not None
+    assert loaded.draft_version == 10
+
+
 # ═══ TC-WB-08: snapshot from draft ═══
 
 def test_snapshot_from_draft(tmp_store):

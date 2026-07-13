@@ -8171,9 +8171,10 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     # ── Try latest draft ──
     drafts_dir = _Path(_wb_base) / trade_date / "drafts"
     if drafts_dir.exists():
-        draft_files = sorted(drafts_dir.glob("draft_v*.json"))
-        if draft_files:
-            draft = _json.loads(draft_files[-1].read_text(encoding="utf-8"))
+        from stock_processing_service.application.services.analyst_workbench.draft import latest_draft_path
+        draft_path = latest_draft_path(drafts_dir)
+        if draft_path is not None:
+            draft = _json.loads(draft_path.read_text(encoding="utf-8"))
             _attach_draft_review_document_context(draft, _Path(_wb_base) / trade_date / "draft_context.json")
             review_document = _assemble_workspace_review_document(draft, mode="draft")
             # PR4.2.15: check recap completeness; block if required fields missing
@@ -9000,9 +9001,8 @@ def _enrich_v2_with_workbench_sections(v2: dict[str, Any], trade_date: date) -> 
     drafts_dir = _wb_base / "drafts"
     draft_path = None
     if drafts_dir.exists():
-        draft_files = sorted(drafts_dir.glob("draft_v*.json"))
-        if draft_files:
-            draft_path = draft_files[-1]
+        from stock_processing_service.application.services.analyst_workbench.draft import latest_draft_path
+        draft_path = latest_draft_path(drafts_dir)
 
     snap_mtime = snap_path.stat().st_mtime if snap_path.exists() else 0
     draft_mtime = draft_path.stat().st_mtime if draft_path else 0
