@@ -28,6 +28,8 @@ from .contracts import (
     RelayEcologyMetrics,
     normalize_to_yi,
 )
+from .active_capital_producer import ActiveCapitalProducer
+from .board_pool_snapshot import BoardPoolSnapshotAdapter
 
 DB_DSN = "postgresql://localhost:5432/stock_data_test"
 
@@ -682,33 +684,22 @@ class MarketMetricsService:
 
     async def _build_capital(self, conn, td: date, breadth: MarketBreadthMetrics,
                              overview: dict) -> ActiveCapitalMetrics:
-        """Active capital = limit-up/touch-limit-up stock turnover (analyst methodology).
-
-        Cross-references ths_hot_reason_snapshot with stock_daily_snapshot
-        to match the analyst's "今日所有涨停及触及涨停个股成交量之和".
-        """
+        """Active capital from persisted board-pool turnover."""
         total_yi = breadth.turnover_yi
 
-        # Analyst methodology: SUM(amount) for all limit-up stocks
-        # Use ths_hot_reason_snapshot to identify limit-up stocks, then
-        # join with stock_daily_snapshot for amount (unit: 千元)
-        rows = await conn.fetch(
-            "SELECT SUM(s.amount) as total_amt "
-            "FROM ths_hot_reason_snapshot t "
-            "JOIN stock_daily_snapshot s ON s.trade_date = t.trade_date "
-            "  AND (s.stock_id = t.stock_code || '.SZ' OR s.stock_id = t.stock_code || '.SH') "
-            "WHERE t.trade_date = $1::date", td
-        )
-        active_raw = float(rows[0]["total_amt"] or 0) if rows else 0
-        # stock_daily_snapshot.amount is in 千元; THS chengjiaoe has ~2x calibration gap
-        # Calibrated against analyst: 7/7(897亿)+7/8(739亿) → factor ≈ 2.04
-        active_yi = round(normalize_to_yi(active_raw, "qian_yuan") * 2.04, 2)
+        board_pool = await BoardPoolSnapshotAdapter().load(conn, td)
+        active = ActiveCapitalProducer().produce(board_pool)
+        active_yi = float(active.value_yi or 0)
 
         return ActiveCapitalMetrics(
             total_turnover_yi=total_yi,
             active_limitup_amount_yi=active_yi,
             active_ratio=round(active_yi / max(total_yi, 1), 4),
-            source=MetricSource("db_query", "ths+sds join", confidence=0.85),
+            source=MetricSource(
+                "db_query",
+                f"{active.method}:{active.quality}:missing={','.join(active.missing)}",
+                confidence=active.confidence,
+            ),
         )
 
     @staticmethod
