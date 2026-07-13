@@ -324,6 +324,19 @@ class _FakeReadPort:
                     "reason": "龙虎榜确认",
                 }
             ],
+            "hot_money_activities": [
+                {
+                    "hot_money_name": "测试席位",
+                    "seat_name": "测试席位",
+                    "stock_id": "002000.SZ",
+                    "stock_name": "SampleA",
+                    "subject_key": "ai_chip",
+                    "theme_name": "AI Chip",
+                    "side": "买入",
+                    "net_amount": 5000000.0,
+                    "reason": "游资席位确认",
+                }
+            ],
         }
 
     async def get_mainline_identity_by_subject_keys(self, subject_keys: list[str], trade_date: date):
@@ -503,6 +516,10 @@ def test_build_post_market_recap_job_strong_watch_pool_flow() -> None:
         assert recap_doc["layer_c_input_mode"] == LAYER_C_INPUT_MODE
         assert recap_doc["layer_a_identity_hit_count"] >= 1
         assert recap_doc["layer_b_cycle_hit_count"] >= 1
+        seat_money = recap_doc["seat_money_summary"]
+        assert seat_money["diagnostics"]["source"] == "structured"
+        assert seat_money["institution_buy_rows"][0]["stock_name"] == "SampleA"
+        assert seat_money["hot_money_buy_rows"][0]["hot_money_name"] == "测试席位"
         report = recap_doc["report"]
         assert {
             "report_type",

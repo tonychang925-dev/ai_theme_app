@@ -36,6 +36,9 @@ from stock_processing_service.application.services.f10_capital_evidence_service 
 from stock_processing_service.application.services.limit_up_theme_matrix_builder import (
     LimitUpThemeMatrixBuilder,
 )
+from stock_processing_service.application.services.seat_money_snapshot_adapter import (
+    SeatMoneySnapshotAdapter,
+)
 from stock_processing_service.domain.services.mainline_discovery.mainline_logic_chain_builder import (
     MainlineLogicChainBuilder,
 )
@@ -124,6 +127,7 @@ class BuildPostMarketRecapJob:
         self._abnormal_signal_job = abnormal_signal_job
         self._f10_capital_evidence_service = f10_capital_evidence_service or F10CapitalEvidenceService()
         self._limit_up_theme_matrix_builder = LimitUpThemeMatrixBuilder()
+        self._seat_money_snapshot_adapter = SeatMoneySnapshotAdapter()
         self._report_builder = report_builder or NewChainPostMarketReportBuilder()
         self._market_summary_llm_service = market_summary_llm_service or PostMarketMarketSummaryLlmService()
         self._decision_engine = post_market_decision_engine or PostMarketDecisionEngine()
@@ -958,6 +962,7 @@ class BuildPostMarketRecapJob:
                 recap_doc["report_context"] = report_context
 
             await self._attach_limit_up_theme_matrix(recap_doc, trade_date)
+            recap_doc["seat_money_summary"] = self._seat_money_snapshot_adapter.build(recap_doc)
 
             recap_report = self._report_builder.build(recap_doc)
             recap_doc["report"] = recap_report
