@@ -165,8 +165,8 @@ class ChartReproductionEngine:
             })
             trend["capital"].append({
                 "date": s.trade_date.isoformat(),
-                # 亿 → 万亿 for display
-                "amount": round(c.total_turnover_yi / 10_000, 1),
+                # Analyst active-capital trend uses short-term active capital in 亿.
+                "amount": round(c.active_limitup_amount_yi, 2),
                 "limit_up": l.total_count,
             })
             trend["relay"].append({
