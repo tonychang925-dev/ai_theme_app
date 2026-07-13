@@ -317,6 +317,35 @@ def test_context_factory_accepts_workbench_draft_context_shape() -> None:
     assert document["quality"]["sections"]["market"]["status"] == SectionQualityStatus.READY.value
 
 
+def test_context_factory_resolves_theme_identity_from_registry_lookup() -> None:
+    snapshot = {
+        "trade_date": "2026-07-09",
+        "attention_state": {
+            "review_document_context": {
+                "themes": [
+                    {"subject_key": "9055378", "theme_name": "9055378", "role": "MAINLINE"}
+                ],
+                "theme_identity_lookup": [
+                    {
+                        "subject_key": "9055378",
+                        "theme_name": "国产算力",
+                        "_identity_source": "vw_subject_theme_binding",
+                    }
+                ],
+            }
+        },
+        "emotion_review": {"phase": "CHAOS", "score": 39},
+        "cognition_cards": [],
+    }
+
+    context = ReviewDocumentContextFactory().create(snapshot)
+    document = ReviewDocumentAssembler().assemble(
+        ReviewDocumentAssemblerInput(context=context, mode="draft")
+    ).to_dict()
+
+    assert document["themes"][0]["name"]["final_value"] == "国产算力"
+
+
 def test_limit_up_categories_do_not_fallback_to_theme_rows() -> None:
     snapshot = {
         "trade_date": "2026-07-09",

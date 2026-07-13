@@ -17,6 +17,7 @@ from typing import Any
 class WorkbenchDerivedContext:
     trade_date: str
     themes: list[dict[str, Any]] = field(default_factory=list)
+    theme_identity_lookup: list[dict[str, Any]] = field(default_factory=list)
     money_flows: list[dict[str, Any]] = field(default_factory=list)
     strong_stocks: list[dict[str, Any]] = field(default_factory=list)
     abnormal_signals: list[dict[str, Any]] = field(default_factory=list)
@@ -34,6 +35,7 @@ class WorkbenchDerivedContext:
         return {
             "trade_date": self.trade_date,
             "themes": self.themes,
+            "theme_identity_lookup": self.theme_identity_lookup,
             "money_flows": self.money_flows,
             "strong_stocks": self.strong_stocks,
             "abnormal_signals": self.abnormal_signals,
@@ -65,6 +67,7 @@ class DerivedContextReader:
         ctx = WorkbenchDerivedContext(trade_date=td)
         async with self.pool.acquire() as conn:
             ctx.themes = await self._fetch_themes(conn, trade_date_value, ctx)
+            ctx.theme_identity_lookup = await self._fetch_theme_identity_lookup(conn, ctx.themes, ctx)
             ctx.money_flows = await self._fetch_money_flows(conn, trade_date_value, ctx)
             ctx.strong_stocks = await self._fetch_strong_stocks(conn, trade_date_value, ctx)
             ctx.abnormal_signals = await self._fetch_abnormal_signals(conn, trade_date_value, ctx)
@@ -119,6 +122,42 @@ class DerivedContextReader:
             })
         if not items:
             ctx.missing_sources.append("theme_cycle_judgement_v2")
+        return items
+
+    async def _fetch_theme_identity_lookup(
+        self,
+        conn: Any,
+        themes: list[dict[str, Any]],
+        ctx: WorkbenchDerivedContext,
+    ) -> list[dict[str, Any]]:
+        subject_keys = sorted({
+            str(item.get("subject_key") or "")
+            for item in themes
+            if isinstance(item, dict) and str(item.get("subject_key") or "")
+        })
+        if not subject_keys:
+            return []
+        try:
+            rows = await conn.fetch(
+                """
+                SELECT subject_key, theme_name
+                FROM vw_subject_theme_binding
+                WHERE subject_key = ANY($1::text[])
+                """,
+                subject_keys,
+            )
+        except Exception:
+            ctx.missing_sources.append("vw_subject_theme_binding")
+            return []
+
+        items: list[dict[str, Any]] = []
+        for row in rows:
+            item = dict(row)
+            items.append({
+                "subject_key": str(item.get("subject_key") or ""),
+                "theme_name": str(item.get("theme_name") or ""),
+                "_identity_source": "vw_subject_theme_binding",
+            })
         return items
 
     async def _fetch_money_flows(self, conn: Any, trade_date_value: date, ctx: WorkbenchDerivedContext) -> list[dict[str, Any]]:

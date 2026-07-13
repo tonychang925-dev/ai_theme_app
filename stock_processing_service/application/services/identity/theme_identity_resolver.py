@@ -64,13 +64,17 @@ class ThemeIdentityResolver:
             key = _record_key(record)
             if key != subject_key:
                 continue
-            name = _clean_text(record.get("theme_name")) or _clean_text(record.get("subject_name"))
+            name = _clean_text(record.get("theme_name"))
+            source_field = "theme_name"
+            if not name:
+                name = _clean_text(record.get("subject_name"))
+                source_field = "subject_name"
             if name and not _is_subject_key_like(name, subject_key) and _is_valid_canonical_name(name):
                 return ThemeIdentity(
                     subject_key=subject_key,
                     canonical_name=name,
                     entity_type=self.entity_type,
-                    identity_source=_record_source(record),
+                    identity_source=_record_source(record, source_field),
                     confidence=1.0,
                 )
 
@@ -86,10 +90,12 @@ class ThemeIdentityResolver:
         self,
         theme_rows: list[dict[str, Any]],
         cognition_cards: list[dict[str, Any]],
+        lookup_records: list[dict[str, Any]] | None = None,
     ) -> list[dict[str, Any]]:
         lookup_records = [
             *_with_identity_source(theme_rows, "theme_rows"),
             *_with_identity_source(cognition_cards, "cognition_cards"),
+            *_with_identity_source(lookup_records or [], "theme_identity_lookup"),
         ]
         resolved_rows: list[dict[str, Any]] = []
         for row in theme_rows:
@@ -117,18 +123,18 @@ class ThemeIdentityResolver:
 
 
 def _with_identity_source(rows: list[dict[str, Any]], source: str) -> list[dict[str, Any]]:
-    return [{**row, "_identity_source": source} for row in rows]
+    return [{**row, "_identity_source": row.get("_identity_source") or source} for row in rows]
 
 
 def _record_key(record: dict[str, Any]) -> str:
     return _clean_text(record.get("subject_key") or record.get("theme_key") or record.get("subject_id"))
 
 
-def _record_source(record: dict[str, Any]) -> str:
+def _record_source(record: dict[str, Any], field_name: str) -> str:
     source = _clean_text(record.get("_identity_source"))
     if source:
-        return f"{source}.subject_name"
-    return "lookup.subject_name"
+        return f"{source}.{field_name}"
+    return f"lookup.{field_name}"
 
 
 def _clean_text(value: Any) -> str:

@@ -47,6 +47,7 @@ class AnalystDraftContext:
 
     # ── Themes (from chart directions + cognition) ──
     themes: list[dict[str, Any]] = field(default_factory=list)
+    theme_identity_lookup: list[dict[str, Any]] = field(default_factory=list)
 
     # ── Strong stocks (from chart leader data) ──
     strong_stocks: list[dict[str, Any]] = field(default_factory=list)
@@ -75,6 +76,7 @@ class AnalystDraftContext:
             "trend_data": self.trend_data,
             "capital_state": self.capital_state,
             "themes": self.themes,
+            "theme_identity_lookup": self.theme_identity_lookup,
             "strong_stocks": self.strong_stocks,
             "limit_up": self.limit_up,
             "plan_state": self.plan_state,
@@ -172,6 +174,7 @@ class DraftContextBuilder:
 
         # ── Themes (derived tables only) ──
         themes = self._build_themes(charts, derived)
+        theme_identity_lookup = _list_value(derived.get("theme_identity_lookup"))
 
         # ── Strong stocks (derived tables only) ──
         strong_stocks = self._build_strong_stocks(charts, derived)
@@ -199,6 +202,7 @@ class DraftContextBuilder:
             trend_data=trend_data,
             capital_state=capital_state,
             themes=themes,
+            theme_identity_lookup=theme_identity_lookup,
             strong_stocks=strong_stocks,
             limit_up=limit_up,
             plan_state=plan_state,
@@ -445,6 +449,10 @@ def _derived_to_dict(value: WorkbenchDerivedContext | dict[str, Any] | None) -> 
     if isinstance(value, WorkbenchDerivedContext):
         return value.to_dict()
     return value if isinstance(value, dict) else {}
+
+
+def _list_value(value: Any) -> list[dict[str, Any]]:
+    return [item for item in value if isinstance(item, dict)] if isinstance(value, list) else []
 
 
 def _capital_direction_from_flows(

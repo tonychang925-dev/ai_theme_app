@@ -138,7 +138,12 @@ class ReviewDocumentContextFactory:
         limit_up = _dict_value(derived, "limit_up")
         cognition_cards = _list_value(snapshot, "cognition_cards")
         theme_cycle_rows = _list_value(derived, "themes")
-        resolved_theme_rows = ThemeIdentityResolver().resolve_theme_rows(theme_cycle_rows, cognition_cards)
+        theme_identity_lookup = _list_value(derived, "theme_identity_lookup")
+        resolved_theme_rows = ThemeIdentityResolver().resolve_theme_rows(
+            theme_cycle_rows,
+            cognition_cards,
+            theme_identity_lookup,
+        )
 
         return ReviewDocumentContext(
             trade_date=trade_date,

@@ -46,6 +46,29 @@ def test_theme_identity_resolver_uses_cognition_card_lookup() -> None:
     assert identity.confidence == 1.0
 
 
+def test_theme_identity_resolver_uses_registry_lookup_for_numeric_theme_name() -> None:
+    rows = ThemeIdentityResolver().resolve_theme_rows(
+        [{"subject_key": "9055378", "theme_name": "9055378", "role": "MAINLINE"}],
+        [],
+        [{"subject_key": "9055378", "theme_name": "国产算力", "_identity_source": "vw_subject_theme_binding"}],
+    )
+
+    assert rows == [
+        {
+            "subject_key": "9055378",
+            "theme_name": "国产算力",
+            "role": "MAINLINE",
+            "theme_identity": {
+                "subject_key": "9055378",
+                "canonical_name": "国产算力",
+                "entity_type": "A_SHARE_THEME",
+                "identity_source": "vw_subject_theme_binding.theme_name",
+                "confidence": 1.0,
+            },
+        }
+    ]
+
+
 def test_theme_identity_resolver_marks_subject_name_source() -> None:
     identity = ThemeIdentityResolver().resolve(
         RawThemeIdentity(subject_key="9014001", subject_name="人形机器人")
