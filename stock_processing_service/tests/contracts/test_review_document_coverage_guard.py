@@ -88,15 +88,15 @@ def test_golden_replay_reports_missing_fields_without_repairing(tmp_path: Path) 
     incomplete_document = {
         "market": {
             "limit_up_count": 75,
-            "up_count": 3561,
-            "down_count": 1609,
+            "up_count": 2357,
+            "down_count": 2642,
         },
         "emotion": {
-            "phase": "CHAOS",
+            "phase": "REBOUND",
             "score": 39,
         },
         "capital": {
-            "active_amount": 5058.28,
+            "active_amount": 2707,
             "institution": [],
             "hot_money": [],
         },

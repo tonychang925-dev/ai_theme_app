@@ -46,28 +46,34 @@ def _write_golden_like_input(workbench_dir: Path) -> None:
                 "facts": {
                     "limit_up_count": 75,
                     "limit_down_count": 29,
-                    "up_count": 3561,
-                    "down_count": 1609,
-                    "active_capital_yi": 5058.28,
+                    "up_count": 2357,
+                    "down_count": 2642,
+                    "active_capital_yi": 2707,
                 }
             },
             "themes": [
                 {"subject_key": "9055378", "role": "MAINLINE", "stage": "承接"},
+                {"subject_key": "9018144", "theme_name": "PCB印制电路板", "role": "MAINLINE", "stage": "启动"},
                 {"subject_key": "9014001", "role": "SECONDARY", "stage": "分歧"},
             ],
             "capital_state": {
-                "active_amount": 5058.28,
+                "active_amount": 2707,
                 "institution": [{"theme_name": "存储芯片", "role_label": "机构"}],
                 "hot_money": [{"theme_name": "人形机器人", "role_label": "游资"}],
             },
             "strong_stocks": [
                 {
-                    "stock_code": "002747.SZ",
-                    "stock_name": "埃斯顿",
-                    "themes": [{"name": "人形机器人"}],
-                    "board_height": 2,
+                    "stock_code": "603137.SH",
+                    "stock_name": "603137.SH",
+                    "themes": [{"name": "存储芯片"}],
+                    "board_height": 8,
                 }
             ],
+            "plan_state": {
+                "scenario": "混沌观望",
+                "allowed_actions": ["观察", "轻仓"],
+                "forbidden_actions": ["重仓", "追高"],
+            },
         }, ensure_ascii=False),
         encoding="utf-8",
     )
@@ -75,9 +81,10 @@ def _write_golden_like_input(workbench_dir: Path) -> None:
         json.dumps({
             "trade_date": TRADE_DATE,
             "draft_version": 1,
-            "emotion_review": {"phase": "CHAOS", "score": 39, "risk_level": "中"},
+            "emotion_review": {"phase": "REBOUND", "score": 39, "risk_level": "中"},
             "cognition_cards": [
                 {"subject_id": "9055378", "subject_name": "存储芯片"},
+                {"subject_id": "9018144", "subject_name": "PCB印制电路板"},
                 {"subject_id": "9014001", "subject_name": "人形机器人"},
             ],
             "playbook": {

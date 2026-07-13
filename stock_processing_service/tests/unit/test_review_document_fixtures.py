@@ -42,8 +42,8 @@ def test_20260709_golden_fixture_locks_core_market_emotion_and_override() -> Non
         "limit_up_count": 75,
         "limit_down_count": 29,
         "breadth": {
-            "up_count": 3561,
-            "down_count": 1609,
+            "up_count": 2357,
+            "down_count": 2642,
         },
     }
     assert fixture["emotion"] == {
