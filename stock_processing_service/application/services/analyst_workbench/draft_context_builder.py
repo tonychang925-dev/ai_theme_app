@@ -17,6 +17,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from .capital_snapshot_adapter import CapitalSnapshotAdapter
 from .derived_context_reader import WorkbenchDerivedContext
 
 
@@ -276,18 +277,11 @@ class DraftContextBuilder:
                 })
                 break
 
-        institution = DraftContextBuilder._style_directions(charts, "institution_style")
-        hot_money = DraftContextBuilder._style_directions(charts, "hot_money_style")
-
+        seat_money_summary = derived.get("seat_money_summary") if isinstance(derived.get("seat_money_summary"), dict) else {}
+        directions = CapitalSnapshotAdapter.directions_from_seat_money(seat_money_summary)
+        institution = directions["institution"]
+        hot_money = directions["hot_money"]
         money_flows = derived.get("money_flows") or []
-
-        # PR4.2.16: when chart directions are empty, build from money_flow role_label data.
-        # This is not inference — money_flow rows are already annotated with institution/hot_money
-        # labels by the derived data pipeline (money_flow_enhanced table).
-        if not institution and money_flows:
-            institution = _capital_direction_from_flows(money_flows, "institution")
-        if not hot_money and money_flows:
-            hot_money = _capital_direction_from_flows(money_flows, "hot_money")
 
         if institution:
             capital_state["institution"] = institution
@@ -313,28 +307,6 @@ class DraftContextBuilder:
             "total_amount_yi": None,
             "status": "",
         }
-
-    @staticmethod
-    def _style_directions(charts: list[dict], chart_type: str) -> list[dict[str, Any]]:
-        for chart in charts:
-            if chart.get("chart_type") != chart_type:
-                continue
-            data = chart.get("key_metrics") or chart.get("data") or {}
-            directions = data.get("directions") if isinstance(data, dict) else []
-            if not isinstance(directions, list):
-                return []
-            rows: list[dict[str, Any]] = []
-            for item in directions:
-                if not isinstance(item, dict):
-                    continue
-                rows.append({
-                    "theme_name": item.get("name") or item.get("theme_name") or "",
-                    "state": item.get("state") or "",
-                    "score": item.get("score"),
-                    "source": chart_type,
-                })
-            return rows
-        return []
 
     @staticmethod
     def _build_themes(charts: list[dict], derived: dict[str, Any]) -> list[dict[str, Any]]:
@@ -453,44 +425,6 @@ def _derived_to_dict(value: WorkbenchDerivedContext | dict[str, Any] | None) -> 
 
 def _list_value(value: Any) -> list[dict[str, Any]]:
     return [item for item in value if isinstance(item, dict)] if isinstance(value, list) else []
-
-
-def _capital_direction_from_flows(
-    money_flows: list[dict[str, Any]], direction_type: str
-) -> list[dict[str, Any]]:
-    """Build institution/hot_money direction from money_flow role_label annotations.
-
-    The money_flow_enhanced table already carries role_label (机构/游资),
-    institution_seat_count, and dragon_tiger_net_amount. This function filters
-    and groups by theme — no inference, no guessing.
-    """
-    seen_themes: set[str] = set()
-    rows: list[dict[str, Any]] = []
-    for item in money_flows:
-        if not isinstance(item, dict):
-            continue
-        role = str(item.get("role_label") or "").strip()
-        inst_seats = int(item.get("institution_seat_count") or 0)
-        dt_amount = float(item.get("dragon_tiger_net_amount") or 0)
-
-        if direction_type == "institution":
-            if not (role == "机构" or inst_seats > 0):
-                continue
-        else:  # hot_money
-            if not (role == "游资" or dt_amount != 0):
-                continue
-
-        theme = str(item.get("theme_name") or "")
-        if not theme or theme in seen_themes:
-            continue
-        seen_themes.add(theme)
-        rows.append({
-            "theme_name": theme,
-            "state": role,
-            "score": float(item.get("composite_score") or 0),
-            "source": "money_flow_enhanced",
-        })
-    return rows
 
 
 def _nullable_metric(value: Any) -> Any:

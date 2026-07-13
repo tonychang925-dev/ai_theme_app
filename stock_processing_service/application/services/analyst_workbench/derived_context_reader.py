@@ -18,6 +18,7 @@ class WorkbenchDerivedContext:
     trade_date: str
     themes: list[dict[str, Any]] = field(default_factory=list)
     theme_identity_lookup: list[dict[str, Any]] = field(default_factory=list)
+    seat_money_summary: dict[str, Any] = field(default_factory=dict)
     money_flows: list[dict[str, Any]] = field(default_factory=list)
     strong_stocks: list[dict[str, Any]] = field(default_factory=list)
     abnormal_signals: list[dict[str, Any]] = field(default_factory=list)
@@ -36,6 +37,7 @@ class WorkbenchDerivedContext:
             "trade_date": self.trade_date,
             "themes": self.themes,
             "theme_identity_lookup": self.theme_identity_lookup,
+            "seat_money_summary": self.seat_money_summary,
             "money_flows": self.money_flows,
             "strong_stocks": self.strong_stocks,
             "abnormal_signals": self.abnormal_signals,
@@ -68,6 +70,7 @@ class DerivedContextReader:
         async with self.pool.acquire() as conn:
             ctx.themes = await self._fetch_themes(conn, trade_date_value, ctx)
             ctx.theme_identity_lookup = await self._fetch_theme_identity_lookup(conn, ctx.themes, ctx)
+            ctx.seat_money_summary = await self._fetch_seat_money_summary(conn, trade_date_value)
             ctx.money_flows = await self._fetch_money_flows(conn, trade_date_value, ctx)
             ctx.strong_stocks = await self._fetch_strong_stocks(conn, trade_date_value, ctx)
             ctx.abnormal_signals = await self._fetch_abnormal_signals(conn, trade_date_value, ctx)
@@ -159,6 +162,27 @@ class DerivedContextReader:
                 "_identity_source": "vw_subject_theme_binding",
             })
         return items
+
+    async def _fetch_seat_money_summary(self, conn: Any, trade_date_value: date) -> dict[str, Any]:
+        try:
+            row = await conn.fetchrow(
+                """
+                SELECT payload #> '{recap_doc,seat_money_summary}' AS seat_money_summary
+                FROM post_market_recap_snapshot
+                WHERE trade_date = $1::date
+                ORDER BY updated_at DESC, created_at DESC
+                LIMIT 1
+                """,
+                trade_date_value,
+            )
+        except Exception:
+            return {}
+        if not row:
+            return {}
+        value = dict(row).get("seat_money_summary")
+        if isinstance(value, str):
+            value = _jsonish(value, {})
+        return value if isinstance(value, dict) else {}
 
     async def _fetch_money_flows(self, conn: Any, trade_date_value: date, ctx: WorkbenchDerivedContext) -> list[dict[str, Any]]:
         try:

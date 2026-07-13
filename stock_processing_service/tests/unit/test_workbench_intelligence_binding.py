@@ -79,14 +79,6 @@ def test_tc_p455_rb_03_draft_context_produces_review_document_snapshot_fields():
             "data": {"max_board_height": 6, "promotion_1_to_2": 0.04},
         },
         {
-            "chart_type": "institution_style",
-            "data": {"directions": [{"name": "存储芯片", "state": "回流", "score": 80}]},
-        },
-        {
-            "chart_type": "hot_money_style",
-            "data": {"directions": [{"name": "人形机器人", "state": "活跃", "score": 72}]},
-        },
-        {
             "chart_type": "limitup_classification",
             "data": {
                 "limit_up_count": 75,
@@ -105,7 +97,23 @@ def test_tc_p455_rb_03_draft_context_produces_review_document_snapshot_fields():
         trade_date="2026-07-09",
         chart_json=charts,
         emotion_json={"emotion_node": "CHAOS", "emotion_score": 39},
-        derived_context={"themes": [{"subject_key": "storage", "theme_name": "存储芯片"}]},
+        derived_context={
+            "themes": [{"subject_key": "storage", "theme_name": "存储芯片"}],
+            "seat_money_summary": {
+                "institution_buy_rows": [
+                    {"theme_name": "存储芯片", "stock_name": "测试机构股", "net_buy": 50000000}
+                ],
+                "hot_money_buy_rows": [
+                    {
+                        "hot_money_name": "测试席位",
+                        "net_buy": 30000000,
+                        "buy_entries": [
+                            {"theme_name": "人形机器人", "stock_name": "测试游资股", "net_amount": 30000000}
+                        ],
+                    }
+                ],
+            },
+        },
         trend_data={
             "breadth": [{"date": f"2026-07-{day:02d}", "limit_up": day} for day in range(1, 13)],
             "momentum": [{"date": f"2026-07-{day:02d}", "score": day / 10} for day in range(1, 13)],
@@ -118,6 +126,8 @@ def test_tc_p455_rb_03_draft_context_produces_review_document_snapshot_fields():
     assert payload["capital_state"]["active_amount"] == 5058.28
     assert payload["capital_state"]["institution"][0]["theme_name"] == "存储芯片"
     assert payload["capital_state"]["hot_money"][0]["theme_name"] == "人形机器人"
+    assert payload["capital_state"]["institution"][0]["source"] == "post_market_recap_snapshot.seat_money_summary.institution_buy_rows"
+    assert payload["capital_state"]["hot_money"][0]["source"] == "post_market_recap_snapshot.seat_money_summary.hot_money_buy_rows"
     assert len(payload["trend_data"]["breadth"]) == 12
     assert len(payload["trend_data"]["momentum"]) == 12
     assert len(payload["trend_data"]["capital"]) == 12
@@ -140,6 +150,34 @@ def test_tc_p455_rb_04_draft_context_does_not_build_single_day_trend_from_charts
     )
 
     assert ctx.trend_data == {}
+
+
+def test_draft_context_does_not_infer_capital_direction_from_money_flow_role_label():
+    ctx = DraftContextBuilder().build(
+        trade_date="2026-07-09",
+        chart_json=[],
+        emotion_json={"emotion_node": "CHAOS", "emotion_score": 39},
+        derived_context={
+            "themes": [{"subject_key": "storage", "theme_name": "存储芯片"}],
+            "money_flows": [
+                {
+                    "theme_name": "存储芯片",
+                    "role_label": "机构",
+                    "institution_seat_count": 1,
+                    "dragon_tiger_net_amount": 100,
+                },
+                {
+                    "theme_name": "人形机器人",
+                    "role_label": "游资",
+                    "dragon_tiger_net_amount": 100,
+                },
+            ],
+        },
+    )
+
+    assert "institution" not in ctx.capital_state
+    assert "hot_money" not in ctx.capital_state
+    assert ctx.capital_state["status"] == "derived_money_flow"
 
 
 def test_tc_p455_rb_02_given_context_themes_when_generate_draft_then_cognition_cards_not_empty():
