@@ -80,4 +80,7 @@ def test_probe_output_contract_is_documented() -> None:
     assert "https://push2.eastmoney.com/api/qt/clist/get" in content
     assert "http://push2.eastmoney.com/api/qt/clist/get" in content
     assert "`production_write_allowed=false`" in content
+    assert "defaults to `trust_env=false`" in content
+    assert "`--trust-env`" in content
+    assert "proxy environment diagnostics" in content
     assert '"production_write_allowed"' not in content

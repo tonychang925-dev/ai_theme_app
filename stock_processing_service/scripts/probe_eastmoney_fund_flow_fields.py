@@ -11,6 +11,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import os
 from pathlib import Path
 from typing import Any
 
@@ -50,6 +51,7 @@ FIELD_MAPPING = {
     "f78": {"meaning": "medium_net_inflow_yuan", "unit": "yuan"},
     "f84": {"meaning": "small_net_inflow_yuan", "unit": "yuan"},
 }
+PROXY_ENV_KEYS = ("HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy")
 
 
 def build_probe_params(page_size: int) -> dict[str, Any]:
@@ -177,10 +179,19 @@ def summarize_all_fetch_errors(errors: list[dict[str, str]]) -> dict[str, Any]:
     }
 
 
-async def fetch_payload(page_size: int, timeout: float) -> tuple[dict[str, Any], str]:
+def proxy_env_diagnostics() -> dict[str, bool]:
+    return {key: bool(os.environ.get(key)) for key in PROXY_ENV_KEYS}
+
+
+async def fetch_payload(page_size: int, timeout: float, trust_env: bool) -> tuple[dict[str, Any], str]:
     params = build_probe_params(page_size)
     errors: list[dict[str, str]] = []
-    async with httpx.AsyncClient(timeout=timeout, headers=EASTMONEY_HEADERS, follow_redirects=True) as client:
+    async with httpx.AsyncClient(
+        timeout=timeout,
+        headers=EASTMONEY_HEADERS,
+        follow_redirects=True,
+        trust_env=trust_env,
+    ) as client:
         for url in EM_BASE_URLS:
             try:
                 response = await client.get(url, params=params)
@@ -213,6 +224,11 @@ async def main() -> None:
     parser = argparse.ArgumentParser(description="Probe Eastmoney stock fund-flow fields.")
     parser.add_argument("--page-size", type=int, default=20)
     parser.add_argument("--timeout", type=float, default=15.0)
+    parser.add_argument(
+        "--trust-env",
+        action="store_true",
+        help="Allow httpx to use HTTP_PROXY/HTTPS_PROXY/ALL_PROXY from the environment.",
+    )
     parser.add_argument("--fixture", type=Path, help="Read a saved raw response instead of calling Eastmoney.")
     args = parser.parse_args()
 
@@ -221,13 +237,15 @@ async def main() -> None:
         result = summarize_capability(payload, request_url=f"fixture://{args.fixture}")
     else:
         try:
-            payload, request_url = await fetch_payload(args.page_size, args.timeout)
+            payload, request_url = await fetch_payload(args.page_size, args.timeout, trust_env=args.trust_env)
             result = summarize_capability(payload, request_url=request_url)
         except ProbeFetchError as exc:
             result = summarize_all_fetch_errors(exc.errors)
         except Exception as exc:  # noqa: BLE001 - probe must report endpoint failures as data.
             result = summarize_fetch_error(exc)
 
+    result["trust_env"] = bool(args.trust_env)
+    result["proxy_env_present"] = proxy_env_diagnostics()
     print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
 
 

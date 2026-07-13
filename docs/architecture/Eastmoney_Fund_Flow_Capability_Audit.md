@@ -121,6 +121,11 @@ http://push2.eastmoney.com/api/qt/clist/get
 If every candidate fails, the probe must report per-URL errors and keep
 `production_write_allowed=false`.
 
+The probe defaults to `trust_env=false` so `HTTP_PROXY`, `HTTPS_PROXY`, and
+`ALL_PROXY` do not silently affect endpoint verification. If proxy behavior
+needs to be tested explicitly, run the probe with `--trust-env`. The output must
+include proxy environment diagnostics.
+
 Required probe output:
 
 ```json
@@ -133,6 +138,8 @@ Required probe output:
   "window": "1D",
   "market_scope": "CN_A",
   "source_version": "eastmoney_fund_flow_f62_mapping_v1",
+  "trust_env": false,
+  "proxy_env_present": {"HTTPS_PROXY": false},
   "field_mapping": {
     "f62": {"meaning": "net_inflow_yuan", "unit": "yuan"},
     "f66": {"meaning": "super_large_net_inflow_yuan", "unit": "yuan"},

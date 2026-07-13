@@ -7,6 +7,7 @@ from stock_processing_service.scripts.probe_eastmoney_fund_flow_fields import (
     EM_BASE_URLS,
     FIELD_MAPPING,
     build_probe_params,
+    proxy_env_diagnostics,
     summarize_all_fetch_errors,
     summarize_capability,
 )
@@ -92,3 +93,14 @@ def test_probe_reports_all_candidate_url_errors_without_allowing_writes() -> Non
     assert result["production_write_allowed"] is False
     assert result["candidate_urls"] == list(EM_BASE_URLS)
     assert result["errors"][0]["error_type"] == "RemoteProtocolError"
+
+
+def test_probe_proxy_env_diagnostics_are_boolean(monkeypatch) -> None:
+    """TC-ID: PR4.2.31c1c-probe-proxy-env-diagnostics."""
+    monkeypatch.setenv("HTTPS_PROXY", "http://127.0.0.1:7890")
+    monkeypatch.delenv("HTTP_PROXY", raising=False)
+
+    diagnostics = proxy_env_diagnostics()
+
+    assert diagnostics["HTTPS_PROXY"] is True
+    assert diagnostics["HTTP_PROXY"] is False
