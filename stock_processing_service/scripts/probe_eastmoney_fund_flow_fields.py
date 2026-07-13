@@ -31,11 +31,13 @@ EM_STOCK_FFLOW_KLINE_URLS = (
     "http://push2his.eastmoney.com/api/qt/stock/fflow/kline/get",
 )
 EM_UT = "bd1d9ddb04089700cf9c27f6f7426281"
-SOURCE_VERSION = "eastmoney_fund_flow_f62_mapping_v1"
+QUOTE_LIST_SOURCE_VERSION = "eastmoney_fund_flow_f62_mapping_v1"
+KLINE_SOURCE_VERSION = "eastmoney_fflow_daykline_f52_v1"
 ENDPOINT_KEY = "eastmoney_stock_fund_flow"
 MARKET_SCOPE = "CN_A"
 FREQUENCY = "DAILY"
 WINDOW = "1D"
+KLINE_FIELDS2 = "f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63,f64,f65"
 
 # Candidate Eastmoney all-A universe used by many quote-list endpoints.
 CN_A_FS = "m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23"
@@ -44,7 +46,7 @@ FUND_FLOW_FIELDS = "f12,f14,f62,f66,f72,f78,f84"
 EASTMONEY_HEADERS = {
     "Accept": "application/json, text/plain, */*",
     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-    "Connection": "close",
+    "Origin": "https://quote.eastmoney.com",
     "Referer": "https://quote.eastmoney.com/",
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
@@ -92,11 +94,10 @@ def secid_from_stock_code(stock_code: str) -> str:
 
 def build_stock_fflow_daykline_params(stock_code: str, limit: int) -> dict[str, Any]:
     return {
-        "ut": EM_UT,
         "secid": secid_from_stock_code(stock_code),
-        "lmt": limit,
+        "lmt": str(limit),
         "fields1": "f1,f2,f3,f7",
-        "fields2": "f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63",
+        "fields2": KLINE_FIELDS2,
     }
 
 
@@ -107,7 +108,7 @@ def build_stock_fflow_kline_params(stock_code: str, limit: int) -> dict[str, Any
         "lmt": limit,
         "klt": 1,
         "fields1": "f1,f2,f3,f7",
-        "fields2": "f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63",
+        "fields2": KLINE_FIELDS2,
     }
 
 
@@ -172,7 +173,7 @@ def summarize_capability(payload: dict[str, Any], request_url: str = EM_BASE_URL
         "frequency": FREQUENCY,
         "window": WINDOW,
         "market_scope": MARKET_SCOPE,
-        "source_version": SOURCE_VERSION,
+        "source_version": QUOTE_LIST_SOURCE_VERSION,
         "field_mapping": FIELD_MAPPING,
         "row_count": len(rows),
         "response_keys": keys,
@@ -222,11 +223,11 @@ def summarize_kline_capability(
     return {
         "endpoint": endpoint,
         "request_url": request_url,
-        "requested_fields": "f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63",
+        "requested_fields": KLINE_FIELDS2,
         "frequency": frequency,
         "window": window,
         "market_scope": MARKET_SCOPE,
-        "source_version": SOURCE_VERSION,
+        "source_version": KLINE_SOURCE_VERSION,
         "field_mapping": KLINE_FIELD_MAPPING,
         "row_count": len(klines),
         "response_keys": sorted(payload.get("data", {}).keys()) if isinstance(payload.get("data"), dict) else [],
@@ -261,7 +262,7 @@ def summarize_fetch_error(error: Exception) -> dict[str, Any]:
         "frequency": FREQUENCY,
         "window": WINDOW,
         "market_scope": MARKET_SCOPE,
-        "source_version": SOURCE_VERSION,
+        "source_version": QUOTE_LIST_SOURCE_VERSION,
         "field_mapping": FIELD_MAPPING,
         "row_count": 0,
         "response_keys": [],
@@ -284,7 +285,7 @@ def summarize_all_fetch_errors(errors: list[dict[str, str]]) -> dict[str, Any]:
         "frequency": FREQUENCY,
         "window": WINDOW,
         "market_scope": MARKET_SCOPE,
-        "source_version": SOURCE_VERSION,
+        "source_version": QUOTE_LIST_SOURCE_VERSION,
         "field_mapping": FIELD_MAPPING,
         "row_count": 0,
         "response_keys": [],

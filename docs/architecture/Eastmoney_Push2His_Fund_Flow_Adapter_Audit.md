@@ -1,8 +1,9 @@
-# PR4.2.31d Eastmoney Push2His Fund Flow Adapter Audit
+# PR4.2.31d-1 Eastmoney Official Client Reverse Audit
 
 ## Status
 
-Audit only. No production logic changes.
+Audit and request-contract alignment only. No ReviewDocument, frontend, source
+arbitration, or Capital Intelligence changes.
 
 ## Decision Summary
 
@@ -54,23 +55,74 @@ EastmoneyStockFundFlowNormalizer.normalize_daykline_row()
 
 ## a-stock-data Reference Alignment
 
-The local AkShare-compatible implementation exposes the same endpoint through
-`stock_individual_fund_flow()`:
+The referenced `simonlin1212/a-stock-data` `SKILL.md` exposes daily stock
+fund-flow through `stock_fund_flow_120d(code)`:
 
 ```text
 https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get
 ```
 
+The request shape in that code block is:
+
+```yaml
+params:
+  secid: "0.300223"
+  fields1: f1,f2,f3,f7
+  fields2: f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63,f64,f65
+  lmt: "120"
+headers:
+  User-Agent: UA
+  Referer: https://quote.eastmoney.com/
+  Origin: https://quote.eastmoney.com
+transport:
+  helper: em_get()
+  session_reuse: true
+  min_interval: ">=1s + jitter"
+```
+
 It maps:
 
 ```yaml
-f51: 日期
-f52: 主力净流入-净额
-f53: 小单净流入-净额
-f54: 中单净流入-净额
-f55: 大单净流入-净额
-f56: 超大单净流入-净额
+f51: date
+f52: main_net
+f53: small_net
+f54: mid_net
+f55: large_net
+f56: super_net
 ```
+
+The same `SKILL.md` explicitly warns that `push2/push2his` can be intermittently
+blocked at connection level for some mainland residential IPs. The recommended
+handling is lower frequency, retry later, or switch network. That means repeated
+`RemoteProtocolError` is a live-ingestion reliability finding, not enough by
+itself to disprove endpoint capability.
+
+## AKShare Reference Difference
+
+AKShare's `stock_individual_fund_flow()` also uses the same daykline endpoint,
+but its request shape differs:
+
+```yaml
+params:
+  lmt: "0"
+  klt: "101"
+  ut: b2884a393a59ad64002292a3e90d46a5
+  _: "<milliseconds timestamp>"
+  fields1: f1,f2,f3,f7
+  fields2: f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63,f64,f65
+headers:
+  User-Agent: Mozilla/5.0 ...
+```
+
+These are two known client variants. The production client should not silently
+mix variants; each probe should label the variant it is testing.
+
+## Browser Request Status
+
+Browser network capture has not yet been provided. It remains the final external
+truth check for the official page request. Until that capture is available,
+the code contract follows the `a-stock-data` `stock_fund_flow_120d()` request
+shape, with AKShare kept as a documented alternative probe shape.
 
 System terminology must not inherit the participant identity implied by
 vendor labels such as "主力". Internally these values remain order-size proxy
@@ -115,11 +167,11 @@ min_interval_ms: 2500
 jitter_ms: 1500
 max_retries: 3
 backoff: exponential
-session_reuse: false
+session_reuse: true
 headers:
   Referer: https://quote.eastmoney.com/
+  Origin: https://quote.eastmoney.com
   Accept: "*/*"
-  Connection: close
 ```
 
 For smoke validation, fail-fast is preferred:
@@ -206,10 +258,11 @@ Do not connect frontend or ReviewDocument yet.
 
 Recommended sequence:
 
-1. `PR4.2.31e Evidence Source Arbitration`
-   - classify source capability and reliability
-   - keep source rows independent
-   - define freshness/collection status contract
+1. `PR4.2.31d-2 Eastmoney Official Request Verification`
+   - run the `a-stock-data` request shape live
+   - optionally run the AKShare request shape as a separately labeled variant
+   - compare with browser network capture when available
+   - keep failures as source health diagnostics, not fake data
 2. `PR4.2.32 Theme Fund Flow Evidence`
    - aggregate stock-level evidence into theme-level evidence
    - avoid stock double counting across multiple themes

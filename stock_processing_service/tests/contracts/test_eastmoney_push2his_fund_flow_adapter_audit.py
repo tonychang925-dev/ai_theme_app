@@ -1,4 +1,4 @@
-"""PR4.2.31d Eastmoney push2his fund-flow adapter audit guards."""
+"""PR4.2.31d-1 Eastmoney official client reverse audit guards."""
 
 from __future__ import annotations
 
@@ -10,11 +10,11 @@ DOC_PATH = PROJECT_ROOT / "docs" / "architecture" / "Eastmoney_Push2His_Fund_Flo
 
 
 def test_eastmoney_push2his_adapter_audit_document_exists() -> None:
-    """TC-ID: PR4.2.31d-push2his-audit-doc-exists."""
+    """TC-ID: PR4.2.31d1-push2his-audit-doc-exists."""
     content = DOC_PATH.read_text(encoding="utf-8")
 
-    assert "PR4.2.31d Eastmoney Push2His Fund Flow Adapter Audit" in content
-    assert "Audit only. No production logic changes." in content
+    assert "PR4.2.31d-1 Eastmoney Official Client Reverse Audit" in content
+    assert "No ReviewDocument, frontend, source" in content
     assert "eastmoney_stock_fflow_daykline" in content
     assert "vendor_defined_order_size_proxy" in content
 
@@ -30,6 +30,27 @@ def test_push2his_is_canonical_daily_stock_fund_flow_source() -> None:
     assert "f54: medium_net_inflow_yuan" in content
     assert "f55: large_net_inflow_yuan" in content
     assert "f56: super_large_net_inflow_yuan" in content
+
+
+def test_push2his_audit_records_a_stock_data_request_shape() -> None:
+    """TC-ID: PR4.2.31d1-a-stock-data-request-shape."""
+    content = DOC_PATH.read_text(encoding="utf-8")
+
+    assert "stock_fund_flow_120d(code)" in content
+    assert "fields2: f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63,f64,f65" in content
+    assert "Origin: https://quote.eastmoney.com" in content
+    assert "session_reuse: true" in content
+    assert "min_interval: \">=1s + jitter\"" in content
+
+
+def test_push2his_audit_records_akshare_as_separate_variant() -> None:
+    """TC-ID: PR4.2.31d1-akshare-variant-separated."""
+    content = DOC_PATH.read_text(encoding="utf-8")
+
+    assert "AKShare Reference Difference" in content
+    assert "ut: b2884a393a59ad64002292a3e90d46a5" in content
+    assert "klt: \"101\"" in content
+    assert "The production client should not silently\nmix variants" in content
 
 
 def test_clist_and_sina_are_not_canonical_daily_replacements() -> None:
@@ -52,10 +73,11 @@ def test_push2his_audit_forbids_evidence_to_intelligence_shortcuts() -> None:
     assert "Do not connect frontend or ReviewDocument yet." in content
 
 
-def test_push2his_next_stage_is_source_arbitration_then_theme_evidence() -> None:
-    """TC-ID: PR4.2.31d-push2his-next-stage-sequence."""
+def test_push2his_next_stage_is_official_request_verification_then_theme_evidence() -> None:
+    """TC-ID: PR4.2.31d1-push2his-next-stage-sequence."""
     content = DOC_PATH.read_text(encoding="utf-8")
 
-    assert "PR4.2.31e Evidence Source Arbitration" in content
+    assert "PR4.2.31d-2 Eastmoney Official Request Verification" in content
+    assert "compare with browser network capture when available" in content
     assert "PR4.2.32 Theme Fund Flow Evidence" in content
     assert "Only after theme-level evidence exists" in content

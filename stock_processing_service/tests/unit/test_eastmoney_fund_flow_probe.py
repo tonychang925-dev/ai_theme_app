@@ -36,6 +36,7 @@ def test_probe_uses_eastmoney_headers_and_multiple_candidate_urls() -> None:
         "http://push2.eastmoney.com/api/qt/clist/get",
     )
     assert EASTMONEY_HEADERS["Referer"] == "https://quote.eastmoney.com/"
+    assert EASTMONEY_HEADERS["Origin"] == "https://quote.eastmoney.com"
     assert "Mozilla/5.0" in EASTMONEY_HEADERS["User-Agent"]
     assert EM_STOCK_FFLOW_DAYKLINE_URLS == (
         "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get",
@@ -56,8 +57,12 @@ def test_probe_builds_single_stock_fflow_params() -> None:
     intraday_params = build_stock_fflow_kline_params("300223", limit=10)
 
     assert day_params["secid"] == "0.300223"
-    assert day_params["lmt"] == 10
+    assert day_params["lmt"] == "10"
     assert day_params["fields2"].startswith("f51,f52,f53")
+    assert "f64,f65" in day_params["fields2"]
+    assert "ut" not in day_params
+    assert "klt" not in day_params
+    assert "_" not in day_params
     assert intraday_params["klt"] == 1
 
 
@@ -124,6 +129,7 @@ def test_probe_summarizes_supported_kline_fixture() -> None:
     assert result["production_write_allowed"] is False
     assert result["frequency"] == "DAILY"
     assert result["window"] == "1D"
+    assert result["source_version"] == "eastmoney_fflow_daykline_f52_v1"
     assert result["field_candidate_counts"] == {
         "f52": 1,
         "f53": 1,

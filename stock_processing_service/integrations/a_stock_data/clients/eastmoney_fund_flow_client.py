@@ -5,7 +5,6 @@ payloads. It does not interpret the values as institution or hot-money flows.
 """
 
 from __future__ import annotations
-
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -19,7 +18,12 @@ from stock_processing_service.integrations.a_stock_data.clients.rate_limited_htt
 SOURCE_NAME = "eastmoney_fund_flow"
 DAYKLINE_ENDPOINT = "eastmoney_stock_fflow_daykline"
 EASTMONEY_DAYKLINE_URL = "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get"
-EM_UT = "bd1d9ddb04089700cf9c27f6f7426281"
+DAYKLINE_FIELDS1 = "f1,f2,f3,f7"
+DAYKLINE_FIELDS2 = "f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63,f64,f65"
+EASTMONEY_FUND_FLOW_HEADERS = {
+    "Referer": "https://quote.eastmoney.com/",
+    "Origin": "https://quote.eastmoney.com",
+}
 
 
 def default_fund_flow_policy() -> RegistryPolicy:
@@ -30,10 +34,9 @@ def default_fund_flow_policy() -> RegistryPolicy:
         max_retries=3,
         backoff="exponential",
         timeout_ms=15_000,
-        session_reuse=False,
+        session_reuse=True,
         referer="https://quote.eastmoney.com/",
         accept="*/*",
-        connection="close",
     )
 
 
@@ -56,6 +59,16 @@ def secid_from_stock_code(stock_code: str) -> str:
     return f"{market}.{code}"
 
 
+def build_daykline_params(stock_code: str, limit: int = 120) -> dict[str, Any]:
+    """Build request params aligned with the Eastmoney push2his daykline client."""
+    return {
+        "secid": secid_from_stock_code(stock_code),
+        "lmt": str(limit),
+        "fields1": DAYKLINE_FIELDS1,
+        "fields2": DAYKLINE_FIELDS2,
+    }
+
+
 class EastmoneyFundFlowClient:
     """Fetch Eastmoney stock fflow daykline payloads."""
 
@@ -76,16 +89,14 @@ class EastmoneyFundFlowClient:
         return self._http.diagnostics
 
     async def fetch_stock_daykline(self, stock_code: str, limit: int = 120) -> RawHttpResult:
-        params = {
-            "ut": EM_UT,
-            "secid": secid_from_stock_code(stock_code),
-            "lmt": limit,
-            "fields1": "f1,f2,f3,f7",
-            "fields2": "f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63",
-        }
+        params = build_daykline_params(stock_code, limit=limit)
         try:
             async with self._http:
-                response = await self._http.get(EASTMONEY_DAYKLINE_URL, params=params)
+                response = await self._http.get(
+                    EASTMONEY_DAYKLINE_URL,
+                    params=params,
+                    headers=EASTMONEY_FUND_FLOW_HEADERS,
+                )
                 response.raise_for_status()
         except Exception as exc:
             return RawHttpResult(
