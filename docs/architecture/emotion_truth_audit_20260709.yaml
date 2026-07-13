@@ -1,0 +1,147 @@
+date: "2026-07-09"
+audit: "PR4.2.27a Emotion Truth Audit"
+status: "audit_only"
+generated_at: "2026-07-13"
+
+scope:
+  goal: "Determine whether ReviewDocument emotion.phase should be CHAOS or REBOUND for 2026-07-09."
+  forbidden_changes:
+    - "Do not modify emotion producer."
+    - "Do not modify Golden baseline."
+    - "Do not modify Replay matcher."
+    - "Do not modify UI text."
+    - "Do not change phase only to make Replay pass."
+
+sources:
+  raw_emotion_json:
+    path: "frontend/public/api/emotion-2026-07-09.json"
+    emotion_node: "CHAOS"
+    emotion_score: 39
+    confidence: 0.82
+    summary: "混沌"
+    strategy_bias: "正常参与。关注龙头晋级和主线延续，控制仓位。"
+    evidence:
+      - "涨停 75 家，跌停 29 家"
+      - "上涨 2357 / 下跌 2642"
+      - "活跃资金 5058亿"
+      - "晋级率 1→2: 4.3%，反馈: 中性"
+
+  emotion_review:
+    source_owner: "EmotionReviewBuilder"
+    artifact: "tmp/analyst_workbench/2026-07-09/drafts/draft_v20.json"
+    phase_field: "emotion_review.emotion_node"
+    phase: "CHAOS"
+    score: 39
+    confidence: 0.82
+    risk_level: "MEDIUM"
+    tomorrow_outlook: "市场混沌，明天以观察为主。等待方向明确后再决策。"
+    tomorrow_forbidden:
+      - "不重仓"
+      - "不追高"
+
+  draft_context:
+    artifact: "tmp/analyst_workbench/2026-07-09/draft_context.json"
+    emotion_node_paths:
+      market_state_emotion_node: "CHAOS"
+      plan_state_emotion_node: "CHAOS"
+      top_level_emotion_node: null
+    scenario: "混沌观望"
+    allowed_actions:
+      - "观察"
+      - "轻仓"
+    forbidden_actions:
+      - "重仓"
+      - "追高"
+
+  review_document:
+    artifact: "tmp/analyst_workbench/2026-07-09/review_document.json"
+    phase: "CHAOS"
+    score: 39
+    confidence: 0.82
+    risk_level: "MEDIUM"
+    plan_scenario: "混沌观望"
+    allowed_actions:
+      - "观察"
+      - "轻仓"
+    forbidden_actions:
+      - "重仓"
+      - "追高"
+
+  analyst_report:
+    primary_source: "docs/architecture/7月9日复盘_DeepSeek完整结构版.md"
+    corroborating_source: "docs/architecture/7月9日复盘.md"
+    explicit_phase_blocks:
+      - path: "docs/architecture/7月9日复盘_DeepSeek完整结构版.md#9-情绪周期判断"
+        phase: "REBOUND"
+        risk: "MEDIUM"
+        strategy: "反弹套利，快进快出。只是反弹不是反转，明天无开仓点。存储芯片/半导体设备为核心方向。"
+      - path: "docs/architecture/7月9日复盘_DeepSeek完整结构版.md#17-M8结构化提取-JSON"
+        phase: "REBOUND"
+        risk: "MEDIUM"
+        strategy: "反弹套利，快进快出。只是反弹不是反转，明天无开仓点。"
+    semantic_evidence:
+      - "反弹第1天，涨停数量回升至75家。"
+      - "情绪修复，但只是反弹不是反转。"
+      - "阶段链：7/7 PANIC -> 7/8 REPAIR_WATCH -> 7/9 REBOUND。"
+      - "7月9日情绪修复明显：涨停数75，-5以下个股降至88，指数势能从-6修复到6，活跃资金成交量从7月8日739亿跃升到2707亿。"
+      - "主板情绪综合值仅从-4修复到0，倾向反弹套利、快进快出，而非趋势反转。"
+
+comparison:
+  phase_consistency:
+    system_internal_consistency:
+      pass: true
+      value: "CHAOS"
+      notes:
+        - "raw emotion JSON, draft emotion_review, draft_context market/plan emotion_node, and ReviewDocument all agree on CHAOS."
+        - "No evidence of draft version mis-selection in current artifact; latest draft is draft_v20 and ReviewDocument matches it."
+    analyst_truth_consistency:
+      pass: false
+      expected: "REBOUND"
+      actual: "CHAOS"
+      notes:
+        - "Analyst report explicitly labels 2026-07-09 as REBOUND in two structured blocks."
+        - "Narrative supports a cautious REBOUND, not a trend reversal."
+
+  plan_emotion_consistency:
+    pass: false
+    emotion_phase: "CHAOS"
+    plan_scenario: "混沌观望"
+    analyst_strategy: "反弹套利，快进快出；明天无开仓点；核心方向可跟随。"
+    notes:
+      - "Current plan is consistent with system CHAOS."
+      - "Current plan is more defensive than the analyst report's cautious REBOUND/反弹套利 semantics."
+      - "A future fix should decide whether REBOUND maps to a special cautious-rebound plan, not simply reuse 混沌观望."
+
+business_truth:
+  expected_phase:
+    value: "REBOUND"
+    confidence: "high"
+    nuance: "Cautious rebound / repair, not reversal."
+  rejected_phase:
+    value: "CHAOS"
+    reason: "System-internal outputs are consistent, but they conflict with explicit analyst truth and semantic evidence."
+
+decision:
+  action:
+    - "fix_producer"
+    - "audit_plan_mapping"
+  do_not:
+    - "update_golden_to_CHAOS"
+    - "patch_replay_matcher"
+    - "patch_frontend_label"
+  rationale:
+    - "Golden REBOUND is supported by analyst report truth source."
+    - "Production CHAOS comes from current emotion generation/threshold logic and should be corrected at the source owner."
+    - "Plan generation should be reviewed after emotion producer fix because REBOUND here is cautious, not aggressive."
+
+follow_up:
+  recommended_pr: "PR4.2.28a Emotion Producer Truth Alignment"
+  allowed_scope:
+    - "Audit emotion generation thresholds/rules that map 2026-07-09 to CHAOS."
+    - "Add a contract test using analyst truth: 2026-07-09 -> REBOUND, score 39, risk MEDIUM."
+    - "Review plan mapping for cautious REBOUND vs CHAOS."
+  forbidden_scope:
+    - "No UI changes."
+    - "No Golden baseline changes."
+    - "No Replay matcher changes."
+    - "No hardcoded date-specific phase override."
