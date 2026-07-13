@@ -3,8 +3,15 @@
 from __future__ import annotations
 
 from datetime import date
+import sys
 
+from stock_processing_service.scripts import run_eastmoney_fund_flow_smoke
 from stock_processing_service.scripts.run_eastmoney_fund_flow_smoke import _summarize_rows
+
+
+def test_smoke_script_adds_project_root_to_syspath() -> None:
+    """TC-ID: PR4.2.31c4-smoke-script-import-path."""
+    assert str(run_eastmoney_fund_flow_smoke.PROJECT_ROOT) in sys.path
 
 
 def test_smoke_summary_detects_identity_duplicates_and_required_fields() -> None:

@@ -11,9 +11,14 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import sys
 from datetime import date
 from decimal import Decimal
+from pathlib import Path
 from typing import Any
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(PROJECT_ROOT))
 
 from database_service.gateway import get_gateway
 from stock_processing_service.integrations.a_stock_data.jobs.collect_eastmoney_fund_flow_job import (
