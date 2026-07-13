@@ -111,11 +111,15 @@ It must only print capability JSON. It must not write raw snapshots,
 `stock_fund_flow_snapshot`, ReviewDocument, or frontend artifacts.
 
 The probe should use Eastmoney-compatible request headers and try both HTTPS
-and HTTP candidate URLs before returning `UNKNOWN`:
+and HTTP candidate URLs before returning `UNKNOWN`.
 
 ```text
 https://push2.eastmoney.com/api/qt/clist/get
 http://push2.eastmoney.com/api/qt/clist/get
+https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get
+http://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get
+https://push2his.eastmoney.com/api/qt/stock/fflow/kline/get
+http://push2his.eastmoney.com/api/qt/stock/fflow/kline/get
 ```
 
 If every candidate fails, the probe must report per-URL errors and keep
@@ -153,6 +157,10 @@ Required probe output:
 
 The probe result is not production data. A successful probe only authorizes a
 future collector PR.
+
+The top-level output must include `endpoint_results[]`, with one result per
+candidate endpoint. Do not infer support from a single network error. A
+candidate endpoint is only usable when its own result is `SUPPORTED`.
 
 ## Required Collector Architecture
 

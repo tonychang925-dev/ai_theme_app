@@ -79,6 +79,9 @@ def test_probe_output_contract_is_documented() -> None:
     assert '"window": "1D"' in content
     assert "https://push2.eastmoney.com/api/qt/clist/get" in content
     assert "http://push2.eastmoney.com/api/qt/clist/get" in content
+    assert "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get" in content
+    assert "https://push2his.eastmoney.com/api/qt/stock/fflow/kline/get" in content
+    assert "endpoint_results[]" in content
     assert "`production_write_allowed=false`" in content
     assert "defaults to `trust_env=false`" in content
     assert "`--trust-env`" in content

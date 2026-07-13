@@ -22,6 +22,14 @@ EM_BASE_URLS = (
     "https://push2.eastmoney.com/api/qt/clist/get",
     "http://push2.eastmoney.com/api/qt/clist/get",
 )
+EM_STOCK_FFLOW_DAYKLINE_URLS = (
+    "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get",
+    "http://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get",
+)
+EM_STOCK_FFLOW_KLINE_URLS = (
+    "https://push2his.eastmoney.com/api/qt/stock/fflow/kline/get",
+    "http://push2his.eastmoney.com/api/qt/stock/fflow/kline/get",
+)
 EM_UT = "bd1d9ddb04089700cf9c27f6f7426281"
 SOURCE_VERSION = "eastmoney_fund_flow_f62_mapping_v1"
 ENDPOINT_KEY = "eastmoney_stock_fund_flow"
@@ -51,6 +59,14 @@ FIELD_MAPPING = {
     "f78": {"meaning": "medium_net_inflow_yuan", "unit": "yuan"},
     "f84": {"meaning": "small_net_inflow_yuan", "unit": "yuan"},
 }
+KLINE_FIELD_MAPPING = {
+    "f51": {"meaning": "timestamp_or_date", "unit": "text"},
+    "f52": {"meaning": "net_inflow_yuan", "unit": "yuan"},
+    "f53": {"meaning": "small_net_inflow_yuan", "unit": "yuan"},
+    "f54": {"meaning": "medium_net_inflow_yuan", "unit": "yuan"},
+    "f55": {"meaning": "large_net_inflow_yuan", "unit": "yuan"},
+    "f56": {"meaning": "super_large_net_inflow_yuan", "unit": "yuan"},
+}
 PROXY_ENV_KEYS = ("HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy")
 
 
@@ -68,6 +84,33 @@ def build_probe_params(page_size: int) -> dict[str, Any]:
     }
 
 
+def secid_from_stock_code(stock_code: str) -> str:
+    code = stock_code.strip().upper().split(".")[0]
+    market = "1" if code.startswith("6") else "0"
+    return f"{market}.{code}"
+
+
+def build_stock_fflow_daykline_params(stock_code: str, limit: int) -> dict[str, Any]:
+    return {
+        "ut": EM_UT,
+        "secid": secid_from_stock_code(stock_code),
+        "lmt": limit,
+        "fields1": "f1,f2,f3,f7",
+        "fields2": "f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63",
+    }
+
+
+def build_stock_fflow_kline_params(stock_code: str, limit: int) -> dict[str, Any]:
+    return {
+        "ut": EM_UT,
+        "secid": secid_from_stock_code(stock_code),
+        "lmt": limit,
+        "klt": 1,
+        "fields1": "f1,f2,f3,f7",
+        "fields2": "f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63",
+    }
+
+
 def extract_rows(payload: dict[str, Any]) -> list[dict[str, Any]]:
     data = payload.get("data")
     if not isinstance(data, dict):
@@ -76,6 +119,16 @@ def extract_rows(payload: dict[str, Any]) -> list[dict[str, Any]]:
     if not isinstance(rows, list):
         return []
     return [item for item in rows if isinstance(item, dict)]
+
+
+def extract_klines(payload: dict[str, Any]) -> list[str]:
+    data = payload.get("data")
+    if not isinstance(data, dict):
+        return []
+    klines = data.get("klines")
+    if not isinstance(klines, list):
+        return []
+    return [item for item in klines if isinstance(item, str)]
 
 
 def _is_number(value: Any) -> bool:
@@ -135,6 +188,71 @@ def summarize_capability(payload: dict[str, Any], request_url: str = EM_BASE_URL
     }
 
 
+def summarize_kline_capability(
+    payload: dict[str, Any],
+    *,
+    endpoint: str,
+    request_url: str,
+    frequency: str,
+    window: str,
+) -> dict[str, Any]:
+    klines = extract_klines(payload)
+    examples = []
+    candidate_counts = {field: 0 for field in ("f52", "f53", "f54", "f55", "f56")}
+
+    for raw in klines:
+        parts = raw.split(",")
+        if len(parts) < 6:
+            continue
+        values = {
+            "f51": parts[0],
+            "f52": parts[1],
+            "f53": parts[2],
+            "f54": parts[3],
+            "f55": parts[4],
+            "f56": parts[5],
+        }
+        hits = {field: values[field] for field in candidate_counts if _is_number(values[field])}
+        if hits:
+            for field in hits:
+                candidate_counts[field] += 1
+            examples.append({"raw": raw, "fund_flow_fields": hits})
+
+    required_supported = all(candidate_counts[field] > 0 for field in candidate_counts)
+    return {
+        "endpoint": endpoint,
+        "request_url": request_url,
+        "requested_fields": "f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63",
+        "frequency": frequency,
+        "window": window,
+        "market_scope": MARKET_SCOPE,
+        "source_version": SOURCE_VERSION,
+        "field_mapping": KLINE_FIELD_MAPPING,
+        "row_count": len(klines),
+        "response_keys": sorted(payload.get("data", {}).keys()) if isinstance(payload.get("data"), dict) else [],
+        "field_candidate_counts": {key: count for key, count in candidate_counts.items() if count > 0},
+        "examples": examples[:5],
+        "capability": "SUPPORTED" if required_supported else "UNAVAILABLE",
+        "decision": (
+            "Stock fflow kline fields can be normalized after collector mapping."
+            if required_supported
+            else "Stock fflow kline capability is not proven by this response; do not add collector."
+        ),
+        "production_write_allowed": False,
+    }
+
+
+def summarize_endpoint_error(endpoint: str, url: str, error: Exception) -> dict[str, Any]:
+    return {
+        "endpoint": endpoint,
+        "request_url": url,
+        "capability": "UNKNOWN",
+        "error_type": type(error).__name__,
+        "error": str(error),
+        "production_write_allowed": False,
+    }
+
+
 def summarize_fetch_error(error: Exception) -> dict[str, Any]:
     return {
         "endpoint": ENDPOINT_KEY,
@@ -183,6 +301,99 @@ def proxy_env_diagnostics() -> dict[str, bool]:
     return {key: bool(os.environ.get(key)) for key in PROXY_ENV_KEYS}
 
 
+async def fetch_endpoint_result(
+    client: httpx.AsyncClient,
+    *,
+    endpoint: str,
+    url: str,
+    params: dict[str, Any],
+    frequency: str,
+    window: str,
+) -> dict[str, Any]:
+    try:
+        response = await client.get(url, params=params)
+        response.raise_for_status()
+        payload = response.json()
+    except Exception as exc:  # noqa: BLE001 - probe must report endpoint failures as data.
+        return summarize_endpoint_error(endpoint, url, exc)
+
+    if endpoint == "eastmoney_stock_fund_flow_quote_list":
+        result = summarize_capability(payload, request_url=str(response.url))
+        result["endpoint"] = endpoint
+        return result
+    return summarize_kline_capability(
+        payload,
+        endpoint=endpoint,
+        request_url=str(response.url),
+        frequency=frequency,
+        window=window,
+    )
+
+
+async def discover_endpoint_capabilities(
+    page_size: int,
+    timeout: float,
+    trust_env: bool,
+    stock_code: str,
+) -> dict[str, Any]:
+    endpoint_results: list[dict[str, Any]] = []
+    async with httpx.AsyncClient(
+        timeout=timeout,
+        headers=EASTMONEY_HEADERS,
+        follow_redirects=True,
+        trust_env=trust_env,
+    ) as client:
+        for url in EM_BASE_URLS:
+            endpoint_results.append(
+                await fetch_endpoint_result(
+                    client,
+                    endpoint="eastmoney_stock_fund_flow_quote_list",
+                    url=url,
+                    params=build_probe_params(page_size),
+                    frequency="DAILY",
+                    window="1D",
+                )
+            )
+        for url in EM_STOCK_FFLOW_DAYKLINE_URLS:
+            endpoint_results.append(
+                await fetch_endpoint_result(
+                    client,
+                    endpoint="eastmoney_stock_fflow_daykline",
+                    url=url,
+                    params=build_stock_fflow_daykline_params(stock_code, page_size),
+                    frequency="DAILY",
+                    window="1D",
+                )
+            )
+        for url in EM_STOCK_FFLOW_KLINE_URLS:
+            endpoint_results.append(
+                await fetch_endpoint_result(
+                    client,
+                    endpoint="eastmoney_stock_fflow_kline",
+                    url=url,
+                    params=build_stock_fflow_kline_params(stock_code, page_size),
+                    frequency="INTRADAY",
+                    window="1MIN",
+                )
+            )
+
+    supported = [item for item in endpoint_results if item.get("capability") == "SUPPORTED"]
+    return {
+        "endpoint": ENDPOINT_KEY,
+        "sample_stock_code": stock_code,
+        "sample_secid": secid_from_stock_code(stock_code),
+        "candidate_urls": [*EM_BASE_URLS, *EM_STOCK_FFLOW_DAYKLINE_URLS, *EM_STOCK_FFLOW_KLINE_URLS],
+        "endpoint_results": endpoint_results,
+        "capability": "SUPPORTED" if supported else "UNKNOWN",
+        "decision": (
+            "At least one endpoint returned candidate fund-flow fields; review endpoint_results before collector."
+            if supported
+            else "Live endpoint capability was not verified; do not add collector."
+        ),
+        "production_write_allowed": False,
+    }
+
+
 async def fetch_payload(page_size: int, timeout: float, trust_env: bool) -> tuple[dict[str, Any], str]:
     params = build_probe_params(page_size)
     errors: list[dict[str, str]] = []
@@ -223,6 +434,7 @@ def load_fixture(path: Path) -> dict[str, Any]:
 async def main() -> None:
     parser = argparse.ArgumentParser(description="Probe Eastmoney stock fund-flow fields.")
     parser.add_argument("--page-size", type=int, default=20)
+    parser.add_argument("--stock-code", default="300223", help="Sample A-share stock code for single-stock endpoints.")
     parser.add_argument("--timeout", type=float, default=15.0)
     parser.add_argument(
         "--trust-env",
@@ -236,13 +448,12 @@ async def main() -> None:
         payload = load_fixture(args.fixture)
         result = summarize_capability(payload, request_url=f"fixture://{args.fixture}")
     else:
-        try:
-            payload, request_url = await fetch_payload(args.page_size, args.timeout, trust_env=args.trust_env)
-            result = summarize_capability(payload, request_url=request_url)
-        except ProbeFetchError as exc:
-            result = summarize_all_fetch_errors(exc.errors)
-        except Exception as exc:  # noqa: BLE001 - probe must report endpoint failures as data.
-            result = summarize_fetch_error(exc)
+        result = await discover_endpoint_capabilities(
+            args.page_size,
+            args.timeout,
+            trust_env=args.trust_env,
+            stock_code=args.stock_code,
+        )
 
     result["trust_env"] = bool(args.trust_env)
     result["proxy_env_present"] = proxy_env_diagnostics()

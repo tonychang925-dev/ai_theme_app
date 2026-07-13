@@ -5,11 +5,17 @@ from __future__ import annotations
 from stock_processing_service.scripts.probe_eastmoney_fund_flow_fields import (
     EASTMONEY_HEADERS,
     EM_BASE_URLS,
+    EM_STOCK_FFLOW_DAYKLINE_URLS,
+    EM_STOCK_FFLOW_KLINE_URLS,
     FIELD_MAPPING,
     build_probe_params,
+    build_stock_fflow_daykline_params,
+    build_stock_fflow_kline_params,
     proxy_env_diagnostics,
+    secid_from_stock_code,
     summarize_all_fetch_errors,
     summarize_capability,
+    summarize_kline_capability,
 )
 
 
@@ -31,6 +37,28 @@ def test_probe_uses_eastmoney_headers_and_multiple_candidate_urls() -> None:
     )
     assert EASTMONEY_HEADERS["Referer"] == "https://quote.eastmoney.com/"
     assert "Mozilla/5.0" in EASTMONEY_HEADERS["User-Agent"]
+    assert EM_STOCK_FFLOW_DAYKLINE_URLS == (
+        "https://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get",
+        "http://push2his.eastmoney.com/api/qt/stock/fflow/daykline/get",
+    )
+    assert EM_STOCK_FFLOW_KLINE_URLS == (
+        "https://push2his.eastmoney.com/api/qt/stock/fflow/kline/get",
+        "http://push2his.eastmoney.com/api/qt/stock/fflow/kline/get",
+    )
+
+
+def test_probe_builds_single_stock_fflow_params() -> None:
+    """TC-ID: PR4.2.31c2-endpoint-discovery-single-stock-params."""
+    assert secid_from_stock_code("300223") == "0.300223"
+    assert secid_from_stock_code("600520") == "1.600520"
+
+    day_params = build_stock_fflow_daykline_params("300223", limit=10)
+    intraday_params = build_stock_fflow_kline_params("300223", limit=10)
+
+    assert day_params["secid"] == "0.300223"
+    assert day_params["lmt"] == 10
+    assert day_params["fields2"].startswith("f51,f52,f53")
+    assert intraday_params["klt"] == 1
 
 
 def test_probe_summarizes_supported_fund_flow_fixture() -> None:
@@ -78,6 +106,31 @@ def test_probe_does_not_treat_partial_fields_as_supported() -> None:
     assert result["capability"] == "UNAVAILABLE"
     assert result["production_write_allowed"] is False
     assert result["decision"] == "Stock fund-flow capability is not proven by this response; do not add collector."
+
+
+def test_probe_summarizes_supported_kline_fixture() -> None:
+    """TC-ID: PR4.2.31c2-endpoint-discovery-kline-fixture."""
+    payload = {"data": {"klines": ["2026-07-09,100,20,-10,30,60,1,2,3,4,5,6,7"]}}
+
+    result = summarize_kline_capability(
+        payload,
+        endpoint="eastmoney_stock_fflow_daykline",
+        request_url="fixture://daykline",
+        frequency="DAILY",
+        window="1D",
+    )
+
+    assert result["capability"] == "SUPPORTED"
+    assert result["production_write_allowed"] is False
+    assert result["frequency"] == "DAILY"
+    assert result["window"] == "1D"
+    assert result["field_candidate_counts"] == {
+        "f52": 1,
+        "f53": 1,
+        "f54": 1,
+        "f55": 1,
+        "f56": 1,
+    }
 
 
 def test_probe_reports_all_candidate_url_errors_without_allowing_writes() -> None:
