@@ -57,6 +57,8 @@ class FriedBoardPoolStock:
     first_seal: str = ""
     amplitude: float = 0.0     # 振幅%
     turnover: float = 0.0
+    amount: float = 0.0        # 成交额(元)
+    float_cap: float = 0.0
     industry: str = ""
 
 
@@ -150,7 +152,7 @@ class EastmoneyBoardClient:
             "ut": EM_UT, "dpt": "wz.ztzt", "sort": "fbt:asc",
             "date": trade_date.strftime("%Y%m%d"),
             "pageindex": 0, "pagesize": 300,
-            "fields": "f12,f14,f2,f3,f4,f7,f15,f16,f17,f184,f127",
+            "fields": "f12,f14,f2,f3,f4,f6,f7,f15,f16,f17,f62,f116,f184,f127",
         }
         return await self._fetch_pool(
             f"{EM_BASE}/getTopicZBPool", params,
@@ -162,6 +164,8 @@ class EastmoneyBoardClient:
                 first_seal=_fmt_time(item.get("fbt", 0)),
                 amplitude=float(item.get("zf", 0)) if item.get("zf") else 0,
                 turnover=float(item.get("hs", 0)),
+                amount=float(item.get("amount", 0)),
+                float_cap=float(item.get("ltsz", 0)),
                 industry=str(item.get("hybk", "")),
             ))
 

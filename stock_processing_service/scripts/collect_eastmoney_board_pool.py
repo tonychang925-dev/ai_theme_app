@@ -98,7 +98,7 @@ def _stock_to_dict(s) -> dict:
     """Convert stock DTO to dict for raw_json."""
     d = {}
     for field in ["code", "name", "limit_days", "pct", "break_times", "turnover",
-                   "amount", "industry", "zt_stat", "first_seal", "last_seal"]:
+                  "amount", "industry", "zt_stat", "first_seal", "last_seal"]:
         val = getattr(s, field, None)
         if val is not None and val != "" and val != 0:
             d[field] = val
