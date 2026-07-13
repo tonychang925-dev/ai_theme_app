@@ -51,7 +51,7 @@ class ThemeIdentityResolver:
                 direct_source = "input.subject_name"
             else:
                 direct_name = ""
-        if direct_name:
+        if direct_name and _is_valid_canonical_name(direct_name):
             return ThemeIdentity(
                 subject_key=subject_key,
                 canonical_name=direct_name,
@@ -65,7 +65,7 @@ class ThemeIdentityResolver:
             if key != subject_key:
                 continue
             name = _clean_text(record.get("theme_name")) or _clean_text(record.get("subject_name"))
-            if name and not _is_subject_key_like(name, subject_key):
+            if name and not _is_subject_key_like(name, subject_key) and _is_valid_canonical_name(name):
                 return ThemeIdentity(
                     subject_key=subject_key,
                     canonical_name=name,
@@ -140,7 +140,7 @@ def _is_subject_key_like(text: str, subject_key: str) -> bool:
     """Return True if text looks like a fallback subject_key, not a real name.
 
     Guards against numeric IDs (e.g. "9055378") being accepted as canonical
-    theme names. Rules (in priority order):
+    theme names. Rules:
       1. Empty → True (not a name)
       2. Exact match with subject_key → True (fallback ID)
       3. All digits + len >= 6 → True (numeric ID pattern)
@@ -152,3 +152,12 @@ def _is_subject_key_like(text: str, subject_key: str) -> bool:
     if text.isdigit() and len(text) >= 6:
         return True
     return False
+
+
+def _is_valid_canonical_name(text: str) -> bool:
+    if not text:
+        return False
+    if len(text) > 30:
+        return False
+    forbidden_tokens = ("【", "】", "\n", "行情报价", "题材库", "系统设置", "投诉与调解", "自选股", "全部A股")
+    return not any(token in text for token in forbidden_tokens)

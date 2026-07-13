@@ -64,6 +64,20 @@ def test_theme_identity_resolver_does_not_use_subject_key_as_name() -> None:
     assert identity.confidence == 0.0
 
 
+def test_theme_identity_resolver_rejects_scraped_driver_text_as_name() -> None:
+    identity = ThemeIdentityResolver().resolve(
+        RawThemeIdentity(
+            subject_key="9069479",
+            theme_name="【驱动事件：7月9日连板复盘】7月9日连板复盘\n行情报价\n题材库\n自选股",
+        )
+    )
+
+    assert identity.subject_key == "9069479"
+    assert identity.canonical_name is None
+    assert identity.identity_source is None
+    assert identity.confidence == 0.0
+
+
 def test_theme_identity_resolver_enriches_theme_rows_before_assembler() -> None:
     rows = ThemeIdentityResolver().resolve_theme_rows(
         [{"subject_key": "9055378", "role": "MAINLINE"}],
@@ -81,6 +95,33 @@ def test_theme_identity_resolver_enriches_theme_rows_before_assembler() -> None:
                 "entity_type": "A_SHARE_THEME",
                 "identity_source": "cognition_cards.subject_name",
                 "confidence": 1.0,
+            },
+        }
+    ]
+
+
+def test_theme_identity_resolver_removes_invalid_theme_name_from_rows() -> None:
+    rows = ThemeIdentityResolver().resolve_theme_rows(
+        [
+            {
+                "subject_key": "9069479",
+                "theme_name": "【驱动事件：7月9日热门题材复盘】7月9日热门题材复盘\n系统设置\n全部A股",
+                "role": "MAINLINE",
+            }
+        ],
+        [],
+    )
+
+    assert rows == [
+        {
+            "subject_key": "9069479",
+            "role": "MAINLINE",
+            "theme_identity": {
+                "subject_key": "9069479",
+                "canonical_name": None,
+                "entity_type": "A_SHARE_THEME",
+                "identity_source": None,
+                "confidence": 0.0,
             },
         }
     ]
