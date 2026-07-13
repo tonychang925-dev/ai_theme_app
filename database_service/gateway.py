@@ -1652,6 +1652,26 @@ class DatabaseGateway:
             logger.error(f"写入 stock_fund_flow_snapshot 失败: {e}")
             raise
 
+    async def get_stock_fund_flow_snapshots(
+        self,
+        *,
+        stock_codes: List[str],
+        trade_date: str | None = None,
+    ) -> list[Dict[str, Any]]:
+        """股票域显式读取：stock_fund_flow_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.get_stock_fund_flow_snapshots(
+                stock_codes=stock_codes,
+                trade_date=trade_date,
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"读取 stock_fund_flow_snapshot 失败: {e}")
+            raise
+
     async def get_stock_f10_capital_snapshots(
         self,
         trade_date,

@@ -6719,6 +6719,35 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.exception("写入 stock_fund_flow_snapshot 失败")
             raise RuntimeError("failed to upsert stock_fund_flow_snapshot rows") from e
 
+    async def get_stock_fund_flow_snapshots(
+        self,
+        *,
+        stock_codes: list[str],
+        trade_date: str | date | None = None,
+    ) -> list[dict[str, Any]]:
+        """Read stock_fund_flow_snapshot rows for smoke/replay validation."""
+        if not stock_codes:
+            return []
+        await self._ensure_stock_fund_flow_snapshot_table()
+        trade_date_value = trade_date
+        if isinstance(trade_date_value, str) and trade_date_value.strip():
+            trade_date_value = date.fromisoformat(trade_date_value[:10])
+        sql = """
+        SELECT
+            trade_date, stock_code, stock_name,
+            net_inflow_yuan, super_large_net_inflow_yuan, large_net_inflow_yuan,
+            medium_net_inflow_yuan, small_net_inflow_yuan,
+            source_name, source_endpoint, source_version, frequency, "window", market_scope,
+            source_quality, quality, diagnostics, raw_json
+        FROM stock_fund_flow_snapshot
+        WHERE stock_code = ANY($1::text[])
+          AND ($2::date IS NULL OR trade_date = $2::date)
+        ORDER BY trade_date, stock_code, source_name, source_endpoint, source_version
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(sql, stock_codes, trade_date_value)
+        return [dict(row) for row in rows]
+
     async def get_stock_f10_capital_snapshots(
         self,
         trade_date: date,
