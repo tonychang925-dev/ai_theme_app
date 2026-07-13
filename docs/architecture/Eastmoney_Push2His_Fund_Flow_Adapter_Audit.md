@@ -91,6 +91,17 @@ f55: large_net
 f56: super_net
 ```
 
+Repository tree check:
+
+```yaml
+repo: simonlin1212/a-stock-data
+branch: main
+observed_files:
+  - SKILL.md
+python_source_files: []
+decision: "Treat a-stock-data as a documented code-block reference, not an importable source package."
+```
+
 The same `SKILL.md` explicitly warns that `push2/push2his` can be intermittently
 blocked at connection level for some mainland residential IPs. The recommended
 handling is lower frequency, retry later, or switch network. That means repeated
@@ -123,6 +134,38 @@ Browser network capture has not yet been provided. It remains the final external
 truth check for the official page request. Until that capture is available,
 the code contract follows the `a-stock-data` `stock_fund_flow_120d()` request
 shape, with AKShare kept as a documented alternative probe shape.
+
+Required HAR comparison fields:
+
+```yaml
+url:
+  - scheme
+  - host
+  - path
+query:
+  - secid
+  - fields1
+  - fields2
+  - lmt
+  - klt
+  - ut
+  - cb
+  - invt
+  - fqt
+  - "_"
+headers:
+  - Host
+  - User-Agent
+  - Accept
+  - Accept-Encoding
+  - Accept-Language
+  - Referer
+  - Origin
+  - Cookie
+transport:
+  - http_version
+  - tls
+```
 
 System terminology must not inherit the participant identity implied by
 vendor labels such as "主力". Internally these values remain order-size proxy

@@ -37,6 +37,8 @@ def test_push2his_audit_records_a_stock_data_request_shape() -> None:
     content = DOC_PATH.read_text(encoding="utf-8")
 
     assert "stock_fund_flow_120d(code)" in content
+    assert "python_source_files: []" in content
+    assert "documented code-block reference" in content
     assert "fields2: f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61,f62,f63,f64,f65" in content
     assert "Origin: https://quote.eastmoney.com" in content
     assert "session_reuse: true" in content
@@ -51,6 +53,17 @@ def test_push2his_audit_records_akshare_as_separate_variant() -> None:
     assert "ut: b2884a393a59ad64002292a3e90d46a5" in content
     assert "klt: \"101\"" in content
     assert "The production client should not silently\nmix variants" in content
+
+
+def test_push2his_audit_requires_browser_har_field_diff() -> None:
+    """TC-ID: PR4.2.31d2-browser-har-diff-fields."""
+    content = DOC_PATH.read_text(encoding="utf-8")
+
+    assert "Required HAR comparison fields" in content
+    assert "  - Cookie" in content
+    assert "  - cb" in content
+    assert "  - invt" in content
+    assert "  - http_version" in content
 
 
 def test_clist_and_sina_are_not_canonical_daily_replacements() -> None:
