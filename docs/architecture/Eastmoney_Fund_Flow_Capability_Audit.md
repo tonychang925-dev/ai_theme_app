@@ -1,6 +1,6 @@
 # PR4.2.31b Eastmoney Fund Flow Capability Audit
 
-Status: Audit only  
+Status: Audit + endpoint probe only  
 Frozen Date: 2026-07-13
 
 ## Goal
@@ -9,7 +9,8 @@ Decide whether Eastmoney/a-stock-data can provide reliable stock fund-flow
 evidence for `stock_fund_flow_snapshot`.
 
 This audit does not add a collector, does not change ReviewDocument, and does
-not produce capital intelligence fields.
+not produce capital intelligence fields. PR4.2.31c-1 may add a probe script that
+prints endpoint capability JSON, but the probe must not persist data.
 
 ## Current Local Inventory
 
@@ -62,29 +63,77 @@ large order value
   -> short_term_attack_style
 ```
 
-## Collector Precondition
+## Period And Window Semantics
 
 Before PR4.2.31c writes live rows, the evidence contract must decide whether to
 extend `stock_fund_flow_snapshot` with:
 
 ```yaml
-period_type:
+frequency:
   allowed:
     - DAILY
     - INTRADAY
+
+window:
+  allowed:
+    - 1D
     - 5D
     - 10D
     - 20D
-  reason: Eastmoney fund-flow endpoints may expose multiple windows.
+  reason: Eastmoney fund-flow endpoints may expose multiple statistical windows.
 
 market_scope:
   allowed:
     - CN_A
   reason: Future adapters may cover HK/US or mixed universe sources.
+
+source_version:
+  example: eastmoney_fund_flow_f62_mapping_v1
+  reason: Eastmoney field mappings may drift across endpoints or over time.
 ```
 
-If the live source cannot provide a period, PR4.2.31c must write
-`period_type=DAILY` only when the endpoint semantics are explicitly daily.
+Do not use `period_type=5D`. A five-day value is a window, not a frequency.
+
+If the live source cannot provide a period/window, PR4.2.31c must write
+`frequency=DAILY` and `window=1D` only when the endpoint semantics are explicitly
+daily.
+
+## PR4.2.31c-1 Endpoint Probe
+
+The first implementation step is a verification-only probe:
+
+```text
+stock_processing_service/scripts/probe_eastmoney_fund_flow_fields.py
+```
+
+The probe may call a candidate Eastmoney endpoint or read a saved raw fixture.
+It must only print capability JSON. It must not write raw snapshots,
+`stock_fund_flow_snapshot`, ReviewDocument, or frontend artifacts.
+
+Required probe output:
+
+```json
+{
+  "endpoint": "eastmoney_stock_fund_flow",
+  "request_url": "...",
+  "requested_fields": "f12,f14,f62,f66,f72,f78,f84",
+  "frequency": "DAILY",
+  "window": "1D",
+  "market_scope": "CN_A",
+  "source_version": "eastmoney_fund_flow_f62_mapping_v1",
+  "field_mapping": {
+    "f62": {"meaning": "net_inflow_yuan", "unit": "yuan"},
+    "f66": {"meaning": "super_large_net_inflow_yuan", "unit": "yuan"},
+    "f72": {"meaning": "large_net_inflow_yuan", "unit": "yuan"},
+    "f78": {"meaning": "medium_net_inflow_yuan", "unit": "yuan"},
+    "f84": {"meaning": "small_net_inflow_yuan", "unit": "yuan"}
+  },
+  "capability": "SUPPORTED | UNAVAILABLE | UNKNOWN"
+}
+```
+
+The probe result is not production data. A successful probe only authorizes a
+future collector PR.
 
 ## Required Collector Architecture
 
@@ -134,21 +183,21 @@ analyst report truth label
   -> stock_fund_flow_snapshot
 ```
 
-## PR4.2.31c Entry Criteria
+## PR4.2.31c-2 Collector Entry Criteria
 
-PR4.2.31c may start only after a live capability probe answers:
+PR4.2.31c-2 collector work may start only after a live capability probe answers:
 
 1. Which endpoint provides stock daily fund flow?
 2. Which fields correspond to net, super-large, large, medium, and small order
    flow?
 3. What units are returned?
-4. Is the period daily or another window?
+4. Is the frequency daily or intraday?
+5. Which statistical window does the endpoint represent?
 5. Is the response stable enough to write replayable snapshots?
 
-PR4.2.31c scope must remain collector-only:
+PR4.2.31c-2 scope must remain collector-only:
 
 - allowed: source client, source adapter, normalizer reuse, raw snapshot write,
   `stock_fund_flow_snapshot` write, tests
 - forbidden: ReviewDocument, UI, institution/hot-money producers, analyst truth
   labels, fallback estimates
-

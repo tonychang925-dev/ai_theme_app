@@ -15,7 +15,7 @@ def test_eastmoney_fund_flow_capability_audit_document_exists() -> None:
     content = DOC_PATH.read_text(encoding="utf-8")
 
     assert "PR4.2.31b Eastmoney Fund Flow Capability Audit" in content
-    assert "Status: Audit only" in content
+    assert "Status: Audit + endpoint probe only" in content
     assert "There is no local `EastmoneyFundFlowClient`" in content
     assert "Verify live endpoint before collector" in content
 
@@ -24,12 +24,15 @@ def test_capability_audit_requires_period_and_market_scope_decision() -> None:
     """TC-ID: PR4.2.31b-period-market-scope-precondition."""
     content = DOC_PATH.read_text(encoding="utf-8")
 
-    assert "period_type" in content
+    assert "frequency" in content
+    assert "window" in content
+    assert "Do not use `period_type=5D`" in content
     assert "DAILY" in content
     assert "INTRADAY" in content
     assert "market_scope" in content
     assert "CN_A" in content
-    assert "Collector Precondition" in content
+    assert "source_version" in content
+    assert "Period And Window Semantics" in content
 
 
 def test_capability_audit_forbids_evidence_to_intelligence_shortcuts() -> None:
@@ -59,7 +62,19 @@ def test_next_step_is_collector_only_not_review_document() -> None:
     """TC-ID: PR4.2.31b-next-step-collector-only."""
     content = DOC_PATH.read_text(encoding="utf-8")
 
-    assert "PR4.2.31c scope must remain collector-only" in content
+    assert "PR4.2.31c-1 Endpoint Probe" in content
+    assert "must only print capability JSON" in content
+    assert "PR4.2.31c-2 scope must remain collector-only" in content
     assert "forbidden: ReviewDocument, UI, institution/hot-money producers" in content
     assert "fallback estimates" in content
 
+
+def test_probe_output_contract_is_documented() -> None:
+    """TC-ID: PR4.2.31c1-probe-output-contract-doc."""
+    content = DOC_PATH.read_text(encoding="utf-8")
+
+    assert "probe_eastmoney_fund_flow_fields.py" in content
+    assert '"source_version": "eastmoney_fund_flow_f62_mapping_v1"' in content
+    assert '"frequency": "DAILY"' in content
+    assert '"window": "1D"' in content
+    assert '"production_write_allowed"' not in content
