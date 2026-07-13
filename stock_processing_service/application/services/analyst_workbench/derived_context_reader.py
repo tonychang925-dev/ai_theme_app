@@ -69,10 +69,14 @@ class DerivedContextReader:
         ctx = WorkbenchDerivedContext(trade_date=td)
         async with self.pool.acquire() as conn:
             ctx.themes = await self._fetch_themes(conn, trade_date_value, ctx)
-            ctx.theme_identity_lookup = await self._fetch_theme_identity_lookup(conn, ctx.themes, ctx)
             ctx.seat_money_summary = await self._fetch_seat_money_summary(conn, trade_date_value)
             ctx.money_flows = await self._fetch_money_flows(conn, trade_date_value, ctx)
             ctx.strong_stocks = await self._fetch_strong_stocks(conn, trade_date_value, ctx)
+            ctx.theme_identity_lookup = await self._fetch_theme_identity_lookup(
+                conn,
+                [*ctx.themes, *ctx.strong_stocks],
+                ctx,
+            )
             ctx.abnormal_signals = await self._fetch_abnormal_signals(conn, trade_date_value, ctx)
 
         self._resolve_theme_names(ctx)

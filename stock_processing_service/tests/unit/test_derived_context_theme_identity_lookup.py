@@ -43,12 +43,13 @@ async def test_theme_identity_lookup_reads_subject_binding_view() -> None:
         [
             {"subject_key": "9055378", "theme_name": "9055378"},
             {"subject_key": "9015778", "theme_name": "存储芯片"},
+            {"subject_key": "9019807", "stock_name": "超捷股份", "theme_name": "9019807"},
         ],
         ctx,
     )
 
     assert "vw_subject_theme_binding" in conn.query
-    assert conn.args == (["9015778", "9055378"],)
+    assert conn.args == (["9015778", "9019807", "9055378"],)
     assert rows == [
         {
             "subject_key": "9055378",

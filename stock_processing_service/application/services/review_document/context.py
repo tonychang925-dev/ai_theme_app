@@ -144,6 +144,11 @@ class ReviewDocumentContextFactory:
             cognition_cards,
             theme_identity_lookup,
         )
+        resolved_strong_stock_rows = ThemeIdentityResolver().resolve_theme_rows(
+            _list_value(derived, "strong_stocks"),
+            cognition_cards,
+            theme_identity_lookup,
+        )
 
         return ReviewDocumentContext(
             trade_date=trade_date,
@@ -180,7 +185,7 @@ class ReviewDocumentContextFactory:
                 source_meta=_source_meta(derived, "limit_up", trade_date),
             ),
             stock_context=StockContext(
-                strong_stock_rows=tuple(_list_value(derived, "strong_stocks")),
+                strong_stock_rows=tuple(resolved_strong_stock_rows),
                 abnormal_signal_rows=tuple(_list_value(derived, "abnormal_signals")),
                 source_meta=_source_meta(derived, "strong_stocks", trade_date),
             ),

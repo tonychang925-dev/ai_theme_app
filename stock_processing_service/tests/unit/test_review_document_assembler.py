@@ -346,6 +346,45 @@ def test_context_factory_resolves_theme_identity_from_registry_lookup() -> None:
     assert document["themes"][0]["name"]["final_value"] == "国产算力"
 
 
+def test_context_factory_resolves_stock_theme_identity_from_registry_lookup() -> None:
+    snapshot = {
+        "trade_date": "2026-07-09",
+        "attention_state": {
+            "review_document_context": {
+                "strong_stocks": [
+                    {
+                        "stock_code": "301005.SZ",
+                        "stock_name": "超捷股份",
+                        "subject_key": "9019807",
+                        "theme_name": "9019807",
+                        "role": "sub_dragon",
+                    }
+                ],
+                "theme_identity_lookup": [
+                    {
+                        "subject_key": "9019807",
+                        "theme_name": "卫星互联网",
+                        "_identity_source": "vw_subject_theme_binding",
+                    }
+                ],
+            }
+        },
+        "emotion_review": {"phase": "CHAOS", "score": 39},
+        "cognition_cards": [],
+    }
+
+    context = ReviewDocumentContextFactory().create(snapshot)
+    document = ReviewDocumentAssembler().assemble(
+        ReviewDocumentAssemblerInput(context=context, mode="draft")
+    ).to_dict()
+
+    assert document["stocks"][0]["code"] == "301005.SZ"
+    assert document["stocks"][0]["name"] == "超捷股份"
+    assert document["stocks"][0]["themes"] == [
+        {"name": "卫星互联网", "key": "9019807"}
+    ]
+
+
 def test_limit_up_categories_do_not_fallback_to_theme_rows() -> None:
     snapshot = {
         "trade_date": "2026-07-09",
