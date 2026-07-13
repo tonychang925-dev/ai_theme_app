@@ -42,6 +42,10 @@ def test_active_capital_uses_zt_plus_zb_and_marks_partial_without_yzt() -> None:
         ("ZT", 2479.55),
         ("ZB", 185.29),
     ]
+    assert [c.source for c in active.components] == [
+        "eastmoney_board_pool_daily.amount",
+        "eastmoney_board_pool_daily.amount",
+    ]
     assert "board_pool.yzt.amount_yi" in active.missing
 
 

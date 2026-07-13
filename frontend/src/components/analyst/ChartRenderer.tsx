@@ -9,16 +9,27 @@ interface ChartData {
 // Multi-day Line Chart (analyst style: 6/25~7/8 trend)
 // ═══════════════════════════════════════════════════════════
 
+const TREND_VISIBLE_POINTS = 15;
+
 export function TrendLineChart({ title, data, yKey, yLabel, color, yMax }: {
   title: string; data: any[]; yKey: string; yLabel: string; color: string; yMax?: number;
 }) {
   if (!data || data.length < 2) return null;
-  const W = 700, H = 140, PAD = { top: 12, right: 16, bottom: 28, left: 48 };
+  const scrollRef = React.useRef<HTMLDivElement | null>(null);
+  const BASE_W = 700, H = 140, PAD = { top: 12, right: 16, bottom: 28, left: 48 };
+  const pointGap = (BASE_W - PAD.left - PAD.right) / (TREND_VISIBLE_POINTS - 1);
+  const W = Math.max(BASE_W, PAD.left + PAD.right + pointGap * (data.length - 1));
   const vals = data.map(d => d[yKey] || 0);
   const maxV = yMax || Math.max(...vals, 1);
   const minV = Math.min(0, Math.min(...vals));
   const range = maxV - minV || 1;
   const px = PAD.left, py = PAD.top, pw = W - PAD.left - PAD.right, ph = H - PAD.top - PAD.bottom;
+
+  React.useEffect(() => {
+    if (data.length > TREND_VISIBLE_POINTS && scrollRef.current) {
+      scrollRef.current.scrollLeft = scrollRef.current.scrollWidth;
+    }
+  }, [data.length, title, yKey]);
 
   const pts = data.map((d, i) => {
     const x = px + (i / (data.length - 1)) * pw;
@@ -31,30 +42,32 @@ export function TrendLineChart({ title, data, yKey, yLabel, color, yMax }: {
   return (
     <div style={{ marginBottom: 4 }}>
       <div style={{ fontWeight: 700, color: "#ffd85e", marginBottom: 4, fontSize: 12, borderLeft: "3px solid #d69e2e", paddingLeft: 8 }}>{title}</div>
-      <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={H} style={{ background: "#0c1118", borderRadius: 4 }}>
-        {[0, 0.25, 0.5, 0.75, 1].map(pct => {
-          const y = py + ph * (1 - pct);
-          return <g key={pct}>
-            <line x1={px} y1={y} x2={px + pw} y2={y} stroke="#1a2a3a" strokeWidth={0.5} />
-            <text x={px - 6} y={y + 4} textAnchor="end" fill="#5a7a8a" fontSize={9}>{Math.round(minV + range * pct)}</text>
-          </g>;
-        })}
-        <polygon points={areaPath} fill={color} opacity={0.08} />
-        <polyline points={pts} fill="none" stroke={color} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
-        {data.map((d, i) => {
-          const x = px + (i / (data.length - 1)) * pw;
-          const y = py + ph - ((d[yKey] - minV) / range) * ph;
-          return <g key={i}>
-            <circle cx={x} cy={y} r={4} fill="#0c1118" stroke={color} strokeWidth={2} />
-            <text x={x} y={y - 10} textAnchor="middle" fill={color} fontSize={9} fontWeight={700}>{d[yKey]}</text>
-          </g>;
-        })}
-        {data.map((d, i) => {
-          const x = px + (i / (data.length - 1)) * pw;
-          const label = (d.date || "").slice(5);
-          return <text key={i} x={x} y={H - 6} textAnchor="middle" fill="#5a7a8a" fontSize={9}>{label}</text>;
-        })}
-      </svg>
+      <div ref={scrollRef} style={{ overflowX: "auto", overflowY: "hidden", maxWidth: "100%" }}>
+        <svg viewBox={`0 0 ${W} ${H}`} width={data.length > TREND_VISIBLE_POINTS ? W : "100%"} height={H} style={{ background: "#0c1118", borderRadius: 4, display: "block" }}>
+          {[0, 0.25, 0.5, 0.75, 1].map(pct => {
+            const y = py + ph * (1 - pct);
+            return <g key={pct}>
+              <line x1={px} y1={y} x2={px + pw} y2={y} stroke="#1a2a3a" strokeWidth={0.5} />
+              <text x={px - 6} y={y + 4} textAnchor="end" fill="#5a7a8a" fontSize={9}>{Math.round(minV + range * pct)}</text>
+            </g>;
+          })}
+          <polygon points={areaPath} fill={color} opacity={0.08} />
+          <polyline points={pts} fill="none" stroke={color} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
+          {data.map((d, i) => {
+            const x = px + (i / (data.length - 1)) * pw;
+            const y = py + ph - ((d[yKey] - minV) / range) * ph;
+            return <g key={i}>
+              <circle cx={x} cy={y} r={4} fill="#0c1118" stroke={color} strokeWidth={2} />
+              <text x={x} y={y - 10} textAnchor="middle" fill={color} fontSize={9} fontWeight={700}>{d[yKey]}</text>
+            </g>;
+          })}
+          {data.map((d, i) => {
+            const x = px + (i / (data.length - 1)) * pw;
+            const label = (d.date || "").slice(5);
+            return <text key={i} x={x} y={H - 6} textAnchor="middle" fill="#5a7a8a" fontSize={9}>{label}</text>;
+          })}
+        </svg>
+      </div>
     </div>
   );
 }

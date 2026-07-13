@@ -371,7 +371,7 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
                       {c("emotion_momentum") && <ChartRenderer chart={c("emotion_momentum")} />}
                     </UnifiedCard>,
                     <UnifiedCard key="capital" title="资金驱动" borderColor="#66d9ef">
-                      {m?.capital && <TrendLineChart title="活跃资金趋势 (6/25~7/8)" data={m.capital} yKey="active_yi" yLabel="亿" color="#66d9ef" />}
+                      {m?.capital && <TrendLineChart title="活跃资金趋势 (6/25~7/8)" data={m.capital} yKey="amount" yLabel="亿" color="#66d9ef" />}
                       {c("active_capital") && <ChartRenderer chart={c("active_capital")} />}
                       {c("institution_style") && <ChartRenderer chart={c("institution_style")} />}
                       {c("hot_money_style") && <ChartRenderer chart={c("hot_money_style")} />}
