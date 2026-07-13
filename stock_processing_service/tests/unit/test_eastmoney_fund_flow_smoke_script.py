@@ -6,7 +6,11 @@ from datetime import date
 import sys
 
 from stock_processing_service.scripts import run_eastmoney_fund_flow_smoke
-from stock_processing_service.scripts.run_eastmoney_fund_flow_smoke import _progress, _summarize_rows
+from stock_processing_service.scripts.run_eastmoney_fund_flow_smoke import (
+    _progress,
+    _summarize_rows,
+    _summarize_run_health,
+)
 
 
 def test_smoke_script_adds_project_root_to_syspath() -> None:
@@ -50,3 +54,28 @@ def test_smoke_progress_can_be_disabled(capsys) -> None:
     _progress("[smoke] hidden", enabled=False)
     hidden = capsys.readouterr()
     assert hidden.err == ""
+
+
+class _Result:
+    def __init__(self, affected_rows: int, warnings: list[str] | None = None) -> None:
+        self.affected_rows = affected_rows
+        self.warnings = warnings or []
+
+
+def test_smoke_run_health_marks_stale_readback() -> None:
+    """TC-ID: PR4.2.31c4-smoke-run-health-stale-readback."""
+    health = _summarize_run_health(
+        ["300223", "002747"],
+        [
+            ("300223", _Result(0, ["transient"])),
+            ("002747", _Result(0, ["transient"])),
+        ],
+        [{"stock_code": "300223"}],
+    )
+
+    assert health["live_success_stock_codes"] == []
+    assert health["live_failed_stock_codes"] == ["002747", "300223"]
+    assert health["readback_stock_codes"] == ["300223"]
+    assert health["stale_readback_stock_codes"] == ["300223"]
+    assert health["missing_readback_stock_codes"] == ["002747"]
+    assert health["all_requested_stocks_collected_live"] is False

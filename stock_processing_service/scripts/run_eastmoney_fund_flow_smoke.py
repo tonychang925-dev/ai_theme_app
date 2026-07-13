@@ -87,6 +87,34 @@ def _summarize_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def _summarize_run_health(
+    stock_codes: list[str],
+    run_results: list[tuple[str, Any]],
+    readback_rows: list[dict[str, Any]],
+) -> dict[str, Any]:
+    live_success = sorted({
+        stock_code
+        for stock_code, result in run_results
+        if int(getattr(result, "affected_rows", 0) or 0) > 0
+    })
+    live_failed = sorted({
+        stock_code
+        for stock_code, result in run_results
+        if int(getattr(result, "affected_rows", 0) or 0) <= 0 and getattr(result, "warnings", [])
+    })
+    readback_codes = sorted({str(row.get("stock_code") or "") for row in readback_rows if row.get("stock_code")})
+    stale_readback = sorted(set(readback_codes) - set(live_success))
+    missing_readback = sorted(set(stock_codes) - set(readback_codes))
+    return {
+        "live_success_stock_codes": live_success,
+        "live_failed_stock_codes": live_failed,
+        "readback_stock_codes": readback_codes,
+        "stale_readback_stock_codes": stale_readback,
+        "missing_readback_stock_codes": missing_readback,
+        "all_requested_stocks_collected_live": sorted(stock_codes) == live_success,
+    }
+
+
 def _progress(message: str, *, enabled: bool) -> None:
     if enabled:
         print(message, file=sys.stderr, flush=True)
@@ -154,6 +182,7 @@ async def run_smoke(
             ],
             "readback": rows,
             "summary": _summarize_rows(rows),
+            "run_health": _summarize_run_health(stock_codes, run_results, rows),
             "production_write_allowed": False,
         }
     finally:
