@@ -177,6 +177,8 @@ class RateLimitedHttpClient:
         if isinstance(exc, httpx.HTTPStatusError):
             status = exc.response.status_code
             return status in (429, 502, 503, 504)
+        if isinstance(exc, httpx.RequestError):
+            return True
         return isinstance(exc, (
             httpx.TimeoutException, httpx.ConnectError,
             ConnectionError, asyncio.TimeoutError,

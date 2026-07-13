@@ -113,6 +113,28 @@ async def test_no_retry_on_404():
     assert diag.total_failures == 1
 
 
+@pytest.mark.asyncio
+async def test_retries_on_request_transport_error():
+    policy = _policy(min_interval_ms=10, jitter_ms=0, max_retries=2, backoff="linear")
+    diag = SourceDiagnostics()
+    client = RateLimitedHttpClient("test", "test_ep", policy=policy, diagnostics=diag)
+
+    request = httpx.Request("GET", "http://example.com/transient")
+    error = httpx.RemoteProtocolError(
+        "Server disconnected without sending a response.",
+        request=request,
+    )
+    with patch.object(client, "_do_request", side_effect=error):
+        async with client:
+            try:
+                await client.get("http://example.com/transient")
+            except httpx.RemoteProtocolError:
+                pass
+
+    assert diag.total_requests == 3
+    assert diag.total_failures == 3
+
+
 # ── backoff ─────────────────────────────────────────────────────
 
 @pytest.mark.asyncio

@@ -22,6 +22,19 @@ EASTMONEY_DAYKLINE_URL = "https://push2his.eastmoney.com/api/qt/stock/fflow/dayk
 EM_UT = "bd1d9ddb04089700cf9c27f6f7426281"
 
 
+def default_fund_flow_policy() -> RegistryPolicy:
+    """Conservative policy for Eastmoney fund-flow daykline endpoint."""
+    return RegistryPolicy(
+        min_interval_ms=2500,
+        jitter_ms=1500,
+        max_retries=3,
+        backoff="exponential",
+        timeout_ms=15_000,
+        session_reuse=False,
+        referer="https://quote.eastmoney.com/",
+    )
+
+
 @dataclass(frozen=True)
 class RawHttpResult:
     source_name: str
@@ -53,15 +66,7 @@ class EastmoneyFundFlowClient:
         self._http = http_client or RateLimitedHttpClient(
             source_name=SOURCE_NAME,
             endpoint_key=DAYKLINE_ENDPOINT,
-            policy=policy or RegistryPolicy(
-                min_interval_ms=1000,
-                jitter_ms=300,
-                max_retries=1,
-                backoff="linear",
-                timeout_ms=15_000,
-                session_reuse=True,
-                referer="https://quote.eastmoney.com/",
-            ),
+            policy=policy or default_fund_flow_policy(),
         )
 
     @property
