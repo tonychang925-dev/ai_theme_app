@@ -35,6 +35,14 @@ function nameValue(value: any): string {
   return text(value);
 }
 
+function stockThemeNames(row: any): string {
+  const themes = Array.isArray(row?.themes) ? row.themes : [];
+  return themes
+    .map((theme: any) => nameValue(theme?.name))
+    .filter(Boolean)
+    .join(" / ");
+}
+
 function Badge({ children, tone = "neutral" }: { children: React.ReactNode; tone?: "neutral" | "good" | "warn" | "bad" }) {
   const color = tone === "good" ? colors.green : tone === "bad" ? colors.red : tone === "warn" ? colors.yellow : colors.muted;
   return (
@@ -117,11 +125,11 @@ export function ReviewDocumentSections({ document }: { document: ReviewDocument 
         <CompactTable
           rows={stocks.slice(0, 12)}
           columns={[
-            ["代码", (row) => text(row.stock_code || row.stock_id)],
-            ["名称", (row) => text(row.stock_name)],
-            ["题材", (row) => text(row.theme_name || row.subject_key)],
-            ["角色", (row) => text(row.role || row.watch_status)],
-            ["高度", (row) => text(row.board_height || row.board_count)],
+            ["代码", (row) => text(row.code)],
+            ["名称", (row) => text(row.name)],
+            ["题材", (row) => stockThemeNames(row)],
+            ["角色", (row) => text(row.role)],
+            ["高度", (row) => text(row.height)],
           ]}
         />
       </Section>
