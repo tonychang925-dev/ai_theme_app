@@ -3,8 +3,11 @@
 from __future__ import annotations
 
 from stock_processing_service.scripts.probe_eastmoney_fund_flow_fields import (
+    EASTMONEY_HEADERS,
+    EM_BASE_URLS,
     FIELD_MAPPING,
     build_probe_params,
+    summarize_all_fetch_errors,
     summarize_capability,
 )
 
@@ -17,6 +20,16 @@ def test_probe_requests_order_size_fund_flow_fields() -> None:
     assert params["fid"] == "f62"
     assert params["pz"] == 5
     assert "m:0+t:6" in params["fs"]
+
+
+def test_probe_uses_eastmoney_headers_and_multiple_candidate_urls() -> None:
+    """TC-ID: PR4.2.31c1b-probe-connection-hardening."""
+    assert EM_BASE_URLS == (
+        "https://push2.eastmoney.com/api/qt/clist/get",
+        "http://push2.eastmoney.com/api/qt/clist/get",
+    )
+    assert EASTMONEY_HEADERS["Referer"] == "https://quote.eastmoney.com/"
+    assert "Mozilla/5.0" in EASTMONEY_HEADERS["User-Agent"]
 
 
 def test_probe_summarizes_supported_fund_flow_fixture() -> None:
@@ -65,3 +78,17 @@ def test_probe_does_not_treat_partial_fields_as_supported() -> None:
     assert result["production_write_allowed"] is False
     assert result["decision"] == "Stock fund-flow capability is not proven by this response; do not add collector."
 
+
+def test_probe_reports_all_candidate_url_errors_without_allowing_writes() -> None:
+    """TC-ID: PR4.2.31c1b-probe-all-errors-fail-closed."""
+    result = summarize_all_fetch_errors(
+        [
+            {"request_url": EM_BASE_URLS[0], "error_type": "RemoteProtocolError", "error": "disconnect"},
+            {"request_url": EM_BASE_URLS[1], "error_type": "ConnectTimeout", "error": "timeout"},
+        ]
+    )
+
+    assert result["capability"] == "UNKNOWN"
+    assert result["production_write_allowed"] is False
+    assert result["candidate_urls"] == list(EM_BASE_URLS)
+    assert result["errors"][0]["error_type"] == "RemoteProtocolError"

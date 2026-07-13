@@ -110,12 +110,24 @@ The probe may call a candidate Eastmoney endpoint or read a saved raw fixture.
 It must only print capability JSON. It must not write raw snapshots,
 `stock_fund_flow_snapshot`, ReviewDocument, or frontend artifacts.
 
+The probe should use Eastmoney-compatible request headers and try both HTTPS
+and HTTP candidate URLs before returning `UNKNOWN`:
+
+```text
+https://push2.eastmoney.com/api/qt/clist/get
+http://push2.eastmoney.com/api/qt/clist/get
+```
+
+If every candidate fails, the probe must report per-URL errors and keep
+`production_write_allowed=false`.
+
 Required probe output:
 
 ```json
 {
   "endpoint": "eastmoney_stock_fund_flow",
   "request_url": "...",
+  "candidate_urls": ["..."],
   "requested_fields": "f12,f14,f62,f66,f72,f78,f84",
   "frequency": "DAILY",
   "window": "1D",

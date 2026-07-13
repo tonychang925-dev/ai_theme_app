@@ -17,7 +17,10 @@ from typing import Any
 import httpx
 
 
-EM_BASE = "https://push2.eastmoney.com/api/qt/clist/get"
+EM_BASE_URLS = (
+    "https://push2.eastmoney.com/api/qt/clist/get",
+    "http://push2.eastmoney.com/api/qt/clist/get",
+)
 EM_UT = "bd1d9ddb04089700cf9c27f6f7426281"
 SOURCE_VERSION = "eastmoney_fund_flow_f62_mapping_v1"
 ENDPOINT_KEY = "eastmoney_stock_fund_flow"
@@ -29,6 +32,17 @@ WINDOW = "1D"
 CN_A_FS = "m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23"
 
 FUND_FLOW_FIELDS = "f12,f14,f62,f66,f72,f78,f84"
+EASTMONEY_HEADERS = {
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+    "Connection": "close",
+    "Referer": "https://quote.eastmoney.com/",
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/126.0.0.0 Safari/537.36"
+    ),
+}
 FIELD_MAPPING = {
     "f62": {"meaning": "net_inflow_yuan", "unit": "yuan"},
     "f66": {"meaning": "super_large_net_inflow_yuan", "unit": "yuan"},
@@ -76,7 +90,7 @@ def field_hits(item: dict[str, Any]) -> dict[str, Any]:
     return {field: item.get(field) for field in FIELD_MAPPING if _is_number(item.get(field))}
 
 
-def summarize_capability(payload: dict[str, Any], request_url: str = EM_BASE) -> dict[str, Any]:
+def summarize_capability(payload: dict[str, Any], request_url: str = EM_BASE_URLS[0]) -> dict[str, Any]:
     rows = extract_rows(payload)
     keys = sorted({key for row in rows for key in row.keys()})
     candidate_counts = {field: 0 for field in FIELD_MAPPING}
@@ -122,7 +136,7 @@ def summarize_capability(payload: dict[str, Any], request_url: str = EM_BASE) ->
 def summarize_fetch_error(error: Exception) -> dict[str, Any]:
     return {
         "endpoint": ENDPOINT_KEY,
-        "request_url": EM_BASE,
+        "request_url": EM_BASE_URLS[0],
         "requested_fields": FUND_FLOW_FIELDS,
         "frequency": FREQUENCY,
         "window": WINDOW,
@@ -141,12 +155,54 @@ def summarize_fetch_error(error: Exception) -> dict[str, Any]:
     }
 
 
+def summarize_all_fetch_errors(errors: list[dict[str, str]]) -> dict[str, Any]:
+    return {
+        "endpoint": ENDPOINT_KEY,
+        "request_url": EM_BASE_URLS[0],
+        "candidate_urls": list(EM_BASE_URLS),
+        "requested_fields": FUND_FLOW_FIELDS,
+        "frequency": FREQUENCY,
+        "window": WINDOW,
+        "market_scope": MARKET_SCOPE,
+        "source_version": SOURCE_VERSION,
+        "field_mapping": FIELD_MAPPING,
+        "row_count": 0,
+        "response_keys": [],
+        "field_candidate_counts": {},
+        "examples": [],
+        "capability": "UNKNOWN",
+        "errors": errors,
+        "decision": "Live endpoint capability was not verified; do not add collector.",
+        "production_write_allowed": False,
+    }
+
+
 async def fetch_payload(page_size: int, timeout: float) -> tuple[dict[str, Any], str]:
     params = build_probe_params(page_size)
-    async with httpx.AsyncClient(timeout=timeout) as client:
-        response = await client.get(EM_BASE, params=params)
-        response.raise_for_status()
-        return response.json(), str(response.url)
+    errors: list[dict[str, str]] = []
+    async with httpx.AsyncClient(timeout=timeout, headers=EASTMONEY_HEADERS, follow_redirects=True) as client:
+        for url in EM_BASE_URLS:
+            try:
+                response = await client.get(url, params=params)
+                response.raise_for_status()
+                return response.json(), str(response.url)
+            except Exception as exc:  # noqa: BLE001 - probe must continue to the next candidate.
+                errors.append(
+                    {
+                        "request_url": url,
+                        "error_type": type(exc).__name__,
+                        "error": str(exc),
+                    }
+                )
+    raise ProbeFetchError(errors)
+
+
+class ProbeFetchError(Exception):
+    """All candidate Eastmoney probe URLs failed."""
+
+    def __init__(self, errors: list[dict[str, str]]) -> None:
+        super().__init__("All Eastmoney fund-flow probe candidates failed.")
+        self.errors = errors
 
 
 def load_fixture(path: Path) -> dict[str, Any]:
@@ -167,6 +223,8 @@ async def main() -> None:
         try:
             payload, request_url = await fetch_payload(args.page_size, args.timeout)
             result = summarize_capability(payload, request_url=request_url)
+        except ProbeFetchError as exc:
+            result = summarize_all_fetch_errors(exc.errors)
         except Exception as exc:  # noqa: BLE001 - probe must report endpoint failures as data.
             result = summarize_fetch_error(exc)
 
@@ -175,4 +233,3 @@ async def main() -> None:
 
 if __name__ == "__main__":
     asyncio.run(main())
-

@@ -77,4 +77,7 @@ def test_probe_output_contract_is_documented() -> None:
     assert '"source_version": "eastmoney_fund_flow_f62_mapping_v1"' in content
     assert '"frequency": "DAILY"' in content
     assert '"window": "1D"' in content
+    assert "https://push2.eastmoney.com/api/qt/clist/get" in content
+    assert "http://push2.eastmoney.com/api/qt/clist/get" in content
+    assert "`production_write_allowed=false`" in content
     assert '"production_write_allowed"' not in content
