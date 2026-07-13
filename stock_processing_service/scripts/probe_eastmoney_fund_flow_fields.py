@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 import httpx
+import requests
 
 
 EM_BASE_URLS = (
@@ -243,10 +244,11 @@ def summarize_kline_capability(
     }
 
 
-def summarize_endpoint_error(endpoint: str, url: str, error: Exception) -> dict[str, Any]:
+def summarize_endpoint_error(endpoint: str, url: str, error: Exception, *, transport: str = "") -> dict[str, Any]:
     return {
         "endpoint": endpoint,
         "request_url": url,
+        **({"transport": transport} if transport else {}),
         "capability": "UNKNOWN",
         "error_type": type(error).__name__,
         "error": str(error),
@@ -316,19 +318,90 @@ async def fetch_endpoint_result(
         response.raise_for_status()
         payload = response.json()
     except Exception as exc:  # noqa: BLE001 - probe must report endpoint failures as data.
-        return summarize_endpoint_error(endpoint, url, exc)
+        return summarize_endpoint_error(endpoint, url, exc, transport="httpx")
 
     if endpoint == "eastmoney_stock_fund_flow_quote_list":
         result = summarize_capability(payload, request_url=str(response.url))
         result["endpoint"] = endpoint
+        result["transport"] = "httpx"
         return result
-    return summarize_kline_capability(
+    result = summarize_kline_capability(
         payload,
         endpoint=endpoint,
         request_url=str(response.url),
         frequency=frequency,
         window=window,
     )
+    result["transport"] = "httpx"
+    return result
+
+
+def fetch_endpoint_result_requests(
+    session: requests.Session,
+    *,
+    endpoint: str,
+    url: str,
+    params: dict[str, Any],
+    frequency: str,
+    window: str,
+    timeout: float,
+) -> dict[str, Any]:
+    try:
+        response = session.get(url, params=params, headers=EASTMONEY_HEADERS, timeout=timeout)
+        response.raise_for_status()
+        payload = response.json()
+    except Exception as exc:  # noqa: BLE001 - probe must report endpoint failures as data.
+        return summarize_endpoint_error(endpoint, url, exc, transport="requests_session")
+
+    if endpoint == "eastmoney_stock_fund_flow_quote_list":
+        result = summarize_capability(payload, request_url=response.url)
+        result["endpoint"] = endpoint
+        result["transport"] = "requests_session"
+        return result
+    result = summarize_kline_capability(
+        payload,
+        endpoint=endpoint,
+        request_url=response.url,
+        frequency=frequency,
+        window=window,
+    )
+    result["transport"] = "requests_session"
+    return result
+
+
+def _candidate_specs(page_size: int, stock_code: str) -> list[dict[str, Any]]:
+    specs: list[dict[str, Any]] = []
+    for url in EM_BASE_URLS:
+        specs.append(
+            {
+                "endpoint": "eastmoney_stock_fund_flow_quote_list",
+                "url": url,
+                "params": build_probe_params(page_size),
+                "frequency": "DAILY",
+                "window": "1D",
+            }
+        )
+    for url in EM_STOCK_FFLOW_DAYKLINE_URLS:
+        specs.append(
+            {
+                "endpoint": "eastmoney_stock_fflow_daykline",
+                "url": url,
+                "params": build_stock_fflow_daykline_params(stock_code, page_size),
+                "frequency": "DAILY",
+                "window": "1D",
+            }
+        )
+    for url in EM_STOCK_FFLOW_KLINE_URLS:
+        specs.append(
+            {
+                "endpoint": "eastmoney_stock_fflow_kline",
+                "url": url,
+                "params": build_stock_fflow_kline_params(stock_code, page_size),
+                "frequency": "INTRADAY",
+                "window": "1MIN",
+            }
+        )
+    return specs
 
 
 async def discover_endpoint_capabilities(
@@ -336,47 +409,46 @@ async def discover_endpoint_capabilities(
     timeout: float,
     trust_env: bool,
     stock_code: str,
+    transport: str = "both",
 ) -> dict[str, Any]:
     endpoint_results: list[dict[str, Any]] = []
-    async with httpx.AsyncClient(
-        timeout=timeout,
-        headers=EASTMONEY_HEADERS,
-        follow_redirects=True,
-        trust_env=trust_env,
-    ) as client:
-        for url in EM_BASE_URLS:
-            endpoint_results.append(
-                await fetch_endpoint_result(
-                    client,
-                    endpoint="eastmoney_stock_fund_flow_quote_list",
-                    url=url,
-                    params=build_probe_params(page_size),
-                    frequency="DAILY",
-                    window="1D",
+    specs = _candidate_specs(page_size, stock_code)
+    if transport in ("both", "httpx"):
+        async with httpx.AsyncClient(
+            timeout=timeout,
+            headers=EASTMONEY_HEADERS,
+            follow_redirects=True,
+            trust_env=trust_env,
+        ) as client:
+            for spec in specs:
+                endpoint_results.append(
+                    await fetch_endpoint_result(
+                        client,
+                        endpoint=spec["endpoint"],
+                        url=spec["url"],
+                        params=spec["params"],
+                        frequency=spec["frequency"],
+                        window=spec["window"],
+                    )
                 )
-            )
-        for url in EM_STOCK_FFLOW_DAYKLINE_URLS:
-            endpoint_results.append(
-                await fetch_endpoint_result(
-                    client,
-                    endpoint="eastmoney_stock_fflow_daykline",
-                    url=url,
-                    params=build_stock_fflow_daykline_params(stock_code, page_size),
-                    frequency="DAILY",
-                    window="1D",
+    if transport in ("both", "requests"):
+        session = requests.Session()
+        session.headers.update({"User-Agent": EASTMONEY_HEADERS["User-Agent"]})
+        try:
+            for spec in specs:
+                endpoint_results.append(
+                    fetch_endpoint_result_requests(
+                        session,
+                        endpoint=spec["endpoint"],
+                        url=spec["url"],
+                        params=spec["params"],
+                        frequency=spec["frequency"],
+                        window=spec["window"],
+                        timeout=timeout,
+                    )
                 )
-            )
-        for url in EM_STOCK_FFLOW_KLINE_URLS:
-            endpoint_results.append(
-                await fetch_endpoint_result(
-                    client,
-                    endpoint="eastmoney_stock_fflow_kline",
-                    url=url,
-                    params=build_stock_fflow_kline_params(stock_code, page_size),
-                    frequency="INTRADAY",
-                    window="1MIN",
-                )
-            )
+        finally:
+            session.close()
 
     supported = [item for item in endpoint_results if item.get("capability") == "SUPPORTED"]
     return {
@@ -384,6 +456,7 @@ async def discover_endpoint_capabilities(
         "sample_stock_code": stock_code,
         "sample_secid": secid_from_stock_code(stock_code),
         "candidate_urls": [*EM_BASE_URLS, *EM_STOCK_FFLOW_DAYKLINE_URLS, *EM_STOCK_FFLOW_KLINE_URLS],
+        "transport": transport,
         "endpoint_results": endpoint_results,
         "capability": "SUPPORTED" if supported else "UNKNOWN",
         "decision": (
@@ -442,6 +515,12 @@ async def main() -> None:
         action="store_true",
         help="Allow httpx to use HTTP_PROXY/HTTPS_PROXY/ALL_PROXY from the environment.",
     )
+    parser.add_argument(
+        "--transport",
+        choices=("both", "httpx", "requests"),
+        default="both",
+        help="HTTP transport to probe. Default compares httpx with requests.Session.",
+    )
     parser.add_argument("--fixture", type=Path, help="Read a saved raw response instead of calling Eastmoney.")
     args = parser.parse_args()
 
@@ -454,6 +533,7 @@ async def main() -> None:
             args.timeout,
             trust_env=args.trust_env,
             stock_code=args.stock_code,
+            transport=args.transport,
         )
 
     result["trust_env"] = bool(args.trust_env)

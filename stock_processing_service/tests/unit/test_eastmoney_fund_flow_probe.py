@@ -13,9 +13,11 @@ from stock_processing_service.scripts.probe_eastmoney_fund_flow_fields import (
     build_stock_fflow_kline_params,
     proxy_env_diagnostics,
     secid_from_stock_code,
+    summarize_endpoint_error,
     summarize_all_fetch_errors,
     summarize_capability,
     summarize_kline_capability,
+    _candidate_specs,
 )
 
 
@@ -64,6 +66,31 @@ def test_probe_builds_single_stock_fflow_params() -> None:
     assert "klt" not in day_params
     assert "_" not in day_params
     assert intraday_params["klt"] == 1
+
+
+def test_probe_builds_candidate_specs_for_transport_comparison() -> None:
+    """TC-ID: PR4.2.31d2-probe-transport-comparison-specs."""
+    specs = _candidate_specs(10, "300223")
+
+    assert len(specs) == 6
+    assert specs[0]["endpoint"] == "eastmoney_stock_fund_flow_quote_list"
+    assert specs[2]["endpoint"] == "eastmoney_stock_fflow_daykline"
+    assert specs[2]["params"]["secid"] == "0.300223"
+    assert specs[4]["endpoint"] == "eastmoney_stock_fflow_kline"
+
+
+def test_probe_endpoint_error_records_transport() -> None:
+    """TC-ID: PR4.2.31d2-probe-transport-labelled-error."""
+    result = summarize_endpoint_error(
+        "eastmoney_stock_fflow_daykline",
+        "fixture://daykline",
+        RuntimeError("disconnect"),
+        transport="requests_session",
+    )
+
+    assert result["capability"] == "UNKNOWN"
+    assert result["transport"] == "requests_session"
+    assert result["production_write_allowed"] is False
 
 
 def test_probe_summarizes_supported_fund_flow_fixture() -> None:
