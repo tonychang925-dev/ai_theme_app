@@ -49,6 +49,8 @@ class RegistryPolicy:
         "Chrome/120.0.0.0 Safari/537.36"
     )
     referer: str = ""
+    accept: str = "*/*"
+    connection: str = ""
 
 
 class RateLimitedHttpClient:
@@ -119,6 +121,10 @@ class RateLimitedHttpClient:
             h["User-Agent"] = self._policy.ua
         if self._policy.referer:
             h["Referer"] = self._policy.referer
+        if self._policy.accept:
+            h["Accept"] = self._policy.accept
+        if self._policy.connection:
+            h["Connection"] = self._policy.connection
         return h
 
     async def _request(

@@ -28,3 +28,5 @@ def test_eastmoney_fund_flow_default_policy_is_conservative() -> None:
     assert policy.max_retries >= 3
     assert policy.backoff == "exponential"
     assert policy.session_reuse is False
+    assert policy.accept == "*/*"
+    assert policy.connection == "close"

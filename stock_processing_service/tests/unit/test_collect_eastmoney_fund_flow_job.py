@@ -44,6 +44,49 @@ class _FakeClient:
         )
 
 
+class _FailingClient:
+    diagnostics = _Diag(consecutive_failures=1, total_requests=1, total_failures=1, last_success_at=None)
+
+    async def fetch_stock_daykline(self, stock_code: str, limit: int = 120) -> RawHttpResult:
+        return RawHttpResult(
+            source_name="eastmoney_fund_flow",
+            endpoint_key="eastmoney_stock_fflow_daykline",
+            request_url="fixture://daykline",
+            request_params={"stock_code": stock_code, "lmt": limit},
+            status_code=0,
+            error_message="RemoteProtocolError: Server disconnected without sending a response.",
+        )
+
+
+class _MixedClient:
+    diagnostics = _Diag(consecutive_failures=1, total_requests=2, total_failures=1, last_success_at=1.0)
+
+    async def fetch_stock_daykline(self, stock_code: str, limit: int = 120) -> RawHttpResult:
+        if stock_code == "002747":
+            return RawHttpResult(
+                source_name="eastmoney_fund_flow",
+                endpoint_key="eastmoney_stock_fflow_daykline",
+                request_url="fixture://daykline",
+                request_params={"stock_code": stock_code, "lmt": limit},
+                status_code=0,
+                error_message="RemoteProtocolError: Server disconnected without sending a response.",
+            )
+        return RawHttpResult(
+            source_name="eastmoney_fund_flow",
+            endpoint_key="eastmoney_stock_fflow_daykline",
+            request_url="fixture://daykline",
+            request_params={"secid": "0.300223", "lmt": limit},
+            status_code=200,
+            response_json={
+                "data": {
+                    "code": "300223",
+                    "name": "北京君正",
+                    "klines": ["2026-07-09,100.0,20.0,-10.0,30.0,60.0,1,2,3,4,5,6,7"],
+                }
+            },
+        )
+
+
 class _FakeWritePort:
     def __init__(self) -> None:
         self.raw_rows: list[dict[str, Any]] = []
@@ -94,3 +137,43 @@ async def test_collect_eastmoney_fund_flow_writes_evidence_only() -> None:
     assert "institution" not in row
     assert "hot_money" not in row
     assert "style" not in row
+
+
+async def test_collect_eastmoney_fund_flow_marks_source_unavailable_when_all_requests_fail() -> None:
+    """TC-ID: PR4.2.31c5-collector-source-unavailable-status."""
+    write_port = _FakeWritePort()
+    job = CollectEastmoneyFundFlowJob(
+        write_port=write_port,
+        stock_codes=["300223", "002747"],
+        client=_FailingClient(),
+        limit=20,
+    )
+
+    result = await job.execute(date(2026, 7, 9))
+
+    assert result.status == "source_unavailable"
+    assert result.affected_rows == 0
+    assert result.metrics["success_count"] == 0
+    assert result.metrics["failure_count"] == 2
+    assert result.metrics["source_health"] == "UNAVAILABLE"
+    assert len(result.warnings) == 2
+
+
+async def test_collect_eastmoney_fund_flow_marks_partial_failure() -> None:
+    """TC-ID: PR4.2.31c5-collector-partial-failure-status."""
+    write_port = _FakeWritePort()
+    job = CollectEastmoneyFundFlowJob(
+        write_port=write_port,
+        stock_codes=["300223", "002747"],
+        client=_MixedClient(),
+        limit=20,
+    )
+
+    result = await job.execute(date(2026, 7, 9))
+
+    assert result.status == "partial_failure"
+    assert result.affected_rows == 1
+    assert result.metrics["success_count"] == 1
+    assert result.metrics["failure_count"] == 1
+    assert result.metrics["source_health"] == "DEGRADED"
+    assert len(result.warnings) == 1

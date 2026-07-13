@@ -47,6 +47,8 @@ class CollectEastmoneyFundFlowJob:
         warnings: list[str] = []
         total_rows = 0
         raw_snapshot_count = 0
+        success_count = 0
+        failure_count = 0
 
         if not self._stock_codes:
             return BuildResult(
@@ -60,8 +62,10 @@ class CollectEastmoneyFundFlowJob:
         for stock_code in self._stock_codes:
             raw = await self._client.fetch_stock_daykline(stock_code, limit=self._limit)
             if raw.response_json is None:
+                failure_count += 1
                 warnings.append(f"{stock_code}: {raw.error_message or 'empty response'}")
                 continue
+            success_count += 1
             raw_snapshot_id = await self._upsert_raw_snapshot(raw)
             if raw_snapshot_id is not None:
                 raw_snapshot_count += 1
@@ -81,13 +85,26 @@ class CollectEastmoneyFundFlowJob:
             total_rows += int(await fn(rows) or 0)
 
         diag = self._client.diagnostics
+        if success_count == 0 and failure_count > 0:
+            status = "source_unavailable"
+            source_health = "UNAVAILABLE"
+        elif failure_count > 0:
+            status = "partial_failure"
+            source_health = "DEGRADED"
+        else:
+            status = "ok"
+            source_health = "OK"
         return BuildResult(
             name="collect_eastmoney_fund_flow",
             trade_date=trade_date.isoformat(),
             affected_rows=total_rows,
+            status=status,
             warnings=warnings,
             metrics={
                 "stock_count": len(self._stock_codes),
+                "success_count": success_count,
+                "failure_count": failure_count,
+                "source_health": source_health,
                 "raw_snapshot_count": raw_snapshot_count,
                 "source_consecutive_failures": diag.consecutive_failures,
                 "source_total_requests": diag.total_requests,

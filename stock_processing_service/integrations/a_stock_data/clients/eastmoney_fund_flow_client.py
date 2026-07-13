@@ -32,6 +32,8 @@ def default_fund_flow_policy() -> RegistryPolicy:
         timeout_ms=15_000,
         session_reuse=False,
         referer="https://quote.eastmoney.com/",
+        accept="*/*",
+        connection="close",
     )
 
 
