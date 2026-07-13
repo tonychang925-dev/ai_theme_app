@@ -38,7 +38,7 @@ stock_fund_flow_snapshot
 Primary key:
 
 ```text
-(trade_date, stock_code, source_name)
+(trade_date, stock_code, source_name, source_endpoint, source_version, frequency, window, market_scope)
 ```
 
 Fields:
@@ -54,6 +54,10 @@ medium_net_inflow_yuan: numeric
 small_net_inflow_yuan: numeric
 source_name: eastmoney_fund_flow
 source_endpoint: eastmoney_stock_fund_flow
+source_version: eastmoney_fflow_daykline_f52_v1
+frequency: DAILY
+window: 1D
+market_scope: CN_A
 source_quality: VENDOR_DEFINED_ORDER_SIZE_FLOW
 quality: OK | MISSING
 diagnostics: jsonb
@@ -123,7 +127,6 @@ stock_fund_flow_snapshot
 
 ## Next Step
 
-After live endpoint capability is verified, add a collector that writes only to
-`stock_fund_flow_snapshot`. Do not connect the table to Capital Intelligence in
-the collector PR.
-
+The first collector may use Eastmoney `stock/fflow/daykline/get` only. It writes
+only to `stock_fund_flow_snapshot` and must not connect the table to Capital
+Intelligence in the collector PR.

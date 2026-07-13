@@ -12,6 +12,8 @@ from typing import Any
 
 
 SOURCE_EASTMONEY_FUND_FLOW = "eastmoney_fund_flow"
+SOURCE_ENDPOINT_EASTMONEY_DAYKLINE = "eastmoney_stock_fflow_daykline"
+SOURCE_VERSION_EASTMONEY_DAYKLINE = "eastmoney_fflow_daykline_f52_v1"
 
 
 @dataclass(frozen=True, slots=True)
@@ -33,6 +35,10 @@ class StockFundFlowEvidence:
     small_net_inflow_yuan: float | None = None
     source_name: str = SOURCE_EASTMONEY_FUND_FLOW
     source_endpoint: str = ""
+    source_version: str = ""
+    frequency: str = "DAILY"
+    window: str = "1D"
+    market_scope: str = "CN_A"
     source_quality: str = "UNKNOWN"
     quality: str = "MISSING"
     diagnostics: dict[str, Any] = field(default_factory=dict)
@@ -50,6 +56,10 @@ class StockFundFlowEvidence:
             "small_net_inflow_yuan": self.small_net_inflow_yuan,
             "source_name": self.source_name,
             "source_endpoint": self.source_endpoint,
+            "source_version": self.source_version,
+            "frequency": self.frequency,
+            "window": self.window,
+            "market_scope": self.market_scope,
             "source_quality": self.source_quality,
             "quality": self.quality,
             "diagnostics": self.diagnostics,
@@ -93,6 +103,10 @@ class EastmoneyStockFundFlowNormalizer:
             stock_name=stock_name,
             **amounts,
             source_endpoint=self.SOURCE_ENDPOINT,
+            source_version="eastmoney_fund_flow_f62_mapping_v1",
+            frequency="DAILY",
+            window="1D",
+            market_scope="CN_A",
             source_quality="VENDOR_DEFINED_ORDER_SIZE_FLOW",
             quality=quality,
             diagnostics={
@@ -106,6 +120,66 @@ class EastmoneyStockFundFlowNormalizer:
 
     def normalize_rows(self, rows: list[dict[str, Any]], trade_date: date) -> list[StockFundFlowEvidence]:
         return [self.normalize_row(row, trade_date) for row in rows if isinstance(row, dict)]
+
+    def normalize_daykline_row(
+        self,
+        *,
+        stock_code: str,
+        stock_name: str,
+        raw: str,
+    ) -> StockFundFlowEvidence:
+        parts = raw.split(",")
+        trade_date = date.fromisoformat(parts[0])
+        values = {
+            "net_inflow_yuan": _number(parts[1] if len(parts) > 1 else None),
+            "small_net_inflow_yuan": _number(parts[2] if len(parts) > 2 else None),
+            "medium_net_inflow_yuan": _number(parts[3] if len(parts) > 3 else None),
+            "large_net_inflow_yuan": _number(parts[4] if len(parts) > 4 else None),
+            "super_large_net_inflow_yuan": _number(parts[5] if len(parts) > 5 else None),
+        }
+        missing = [key for key, value in values.items() if value is None]
+        quality = "OK" if values["net_inflow_yuan"] is not None and not missing else "MISSING"
+        return StockFundFlowEvidence(
+            trade_date=trade_date,
+            stock_code=stock_code,
+            stock_name=stock_name,
+            **values,
+            source_endpoint=SOURCE_ENDPOINT_EASTMONEY_DAYKLINE,
+            source_version=SOURCE_VERSION_EASTMONEY_DAYKLINE,
+            frequency="DAILY",
+            window="1D",
+            market_scope="CN_A",
+            source_quality="VENDOR_DEFINED_ORDER_SIZE_FLOW",
+            quality=quality,
+            diagnostics={
+                "missing": tuple(missing),
+                "identity_inference": False,
+                "participant_type": "unknown",
+                "semantics": "vendor_order_size_proxy",
+                "raw_format": "eastmoney_fflow_daykline_csv",
+            },
+            raw_json={"raw": raw},
+        )
+
+    def normalize_daykline_payload(
+        self,
+        payload: dict[str, Any],
+        *,
+        fallback_stock_code: str,
+    ) -> list[StockFundFlowEvidence]:
+        data = payload.get("data")
+        if not isinstance(data, dict):
+            return []
+        stock_code = str(data.get("code") or fallback_stock_code).strip()
+        stock_name = str(data.get("name") or "").strip()
+        klines = data.get("klines")
+        if not isinstance(klines, list):
+            return []
+        return [
+            self.normalize_daykline_row(stock_code=stock_code, stock_name=stock_name, raw=raw)
+            for raw in klines
+            if isinstance(raw, str)
+        ]
 
 
 def _first(row: dict[str, Any], *keys: str) -> Any:
@@ -123,4 +197,3 @@ def _number(value: Any) -> float | None:
         return float(value)
     except (TypeError, ValueError):
         return None
-

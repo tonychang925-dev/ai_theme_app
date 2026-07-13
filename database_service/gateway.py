@@ -1640,6 +1640,18 @@ class DatabaseGateway:
             logger.error(f"写入 stock_f10_capital_snapshot 失败: {e}")
             raise
 
+    async def upsert_stock_fund_flow_snapshot_rows(self, rows: List[Dict[str, Any]]) -> int:
+        """股票域显式写入：stock_fund_flow_snapshot。"""
+        try:
+            start_time = time.time()
+            result = await self._client.upsert_stock_fund_flow_snapshot_rows(rows)
+            self._record_request(True, start_time)
+            return int(result or 0)
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"写入 stock_fund_flow_snapshot 失败: {e}")
+            raise
+
     async def get_stock_f10_capital_snapshots(
         self,
         trade_date,

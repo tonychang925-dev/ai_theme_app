@@ -68,3 +68,28 @@ def test_stock_fund_flow_missing_net_inflow_is_missing_not_default_zero() -> Non
     assert evidence.quality == "MISSING"
     assert "net_inflow_yuan" in evidence.diagnostics["missing"]
 
+
+def test_eastmoney_daykline_normalizer_maps_order_size_fields() -> None:
+    """TC-ID: PR4.2.31c3-daykline-normalizer."""
+    evidence = EastmoneyStockFundFlowNormalizer().normalize_daykline_row(
+        stock_code="300223",
+        stock_name="北京君正",
+        raw="2026-07-09,100.0,20.0,-10.0,30.0,60.0,1,2,3,4,5,6,7",
+    )
+
+    assert evidence.trade_date == date(2026, 7, 9)
+    assert evidence.stock_code == "300223"
+    assert evidence.stock_name == "北京君正"
+    assert evidence.net_inflow_yuan == 100.0
+    assert evidence.small_net_inflow_yuan == 20.0
+    assert evidence.medium_net_inflow_yuan == -10.0
+    assert evidence.large_net_inflow_yuan == 30.0
+    assert evidence.super_large_net_inflow_yuan == 60.0
+    assert evidence.source_endpoint == "eastmoney_stock_fflow_daykline"
+    assert evidence.source_version == "eastmoney_fflow_daykline_f52_v1"
+    assert evidence.frequency == "DAILY"
+    assert evidence.window == "1D"
+    assert evidence.market_scope == "CN_A"
+    assert evidence.quality == "OK"
+    assert evidence.diagnostics["participant_type"] == "unknown"
+    assert evidence.diagnostics["raw_format"] == "eastmoney_fflow_daykline_csv"

@@ -39,7 +39,12 @@ def test_stock_fund_flow_snapshot_schema_is_daily_evidence_not_truth_table() -> 
     assert "large_net_inflow_yuan" in sql
     assert "medium_net_inflow_yuan" in sql
     assert "small_net_inflow_yuan" in sql
-    assert "PRIMARY KEY (trade_date, stock_code, source_name)" in sql
+    assert "source_version TEXT NOT NULL DEFAULT ''" in sql
+    assert "frequency TEXT NOT NULL DEFAULT 'DAILY'" in sql
+    assert '"window" TEXT NOT NULL DEFAULT \'1D\'' in sql
+    assert "market_scope TEXT NOT NULL DEFAULT 'CN_A'" in sql
+    assert 'PRIMARY KEY (trade_date, stock_code, source_name, source_endpoint, source_version, frequency, "window", market_scope)' in sql
+    assert "uq_stock_fund_flow_snapshot_identity" in sql
     assert "stock_daily_snapshot" not in sql
 
 
@@ -63,4 +68,3 @@ def test_normalizer_module_does_not_emit_style_or_participant_identity() -> None
     assert "short_term_attack_style" not in source
     assert "participant_type" in source
     assert "vendor_order_size_proxy" in source
-

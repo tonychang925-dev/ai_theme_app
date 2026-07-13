@@ -45,17 +45,20 @@ def test_capability_audit_forbids_evidence_to_intelligence_shortcuts() -> None:
     assert "analyst report truth label\n  -> stock_fund_flow_snapshot" in content
 
 
-def test_local_a_stock_data_has_no_fund_flow_collector_yet() -> None:
-    """TC-ID: PR4.2.31b-local-inventory-no-live-collector."""
+def test_local_fund_flow_collector_remains_evidence_only() -> None:
+    """TC-ID: PR4.2.31c3-local-collector-evidence-only."""
     source = "\n".join(
         path.read_text(encoding="utf-8")
         for path in A_STOCK_DATA_DIR.rglob("*.py")
         if "__pycache__" not in path.parts
     )
 
-    assert "EastmoneyFundFlowClient" not in source
-    assert "CollectEastmoneyFundFlowJob" not in source
-    assert "stock_fund_flow_snapshot" not in source
+    assert "EastmoneyFundFlowClient" in source
+    assert "CollectEastmoneyFundFlowJob" in source
+    assert "upsert_stock_fund_flow_snapshot_rows" in source
+    assert "ReviewDocument" not in source
+    assert "institution_attention" not in source
+    assert "short_term_attack_style" not in source
 
 
 def test_next_step_is_collector_only_not_review_document() -> None:

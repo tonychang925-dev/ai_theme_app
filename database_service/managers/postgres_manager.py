@@ -6576,6 +6576,149 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             logger.exception("写入 stock_f10_capital_snapshot 失败")
             raise RuntimeError("failed to upsert stock_f10_capital_snapshot rows") from e
 
+    async def _ensure_stock_fund_flow_snapshot_table(self) -> None:
+        sql = """
+        CREATE TABLE IF NOT EXISTS stock_fund_flow_snapshot (
+            trade_date DATE NOT NULL,
+            stock_code TEXT NOT NULL,
+            stock_name TEXT NOT NULL DEFAULT '',
+            net_inflow_yuan NUMERIC(20, 2),
+            super_large_net_inflow_yuan NUMERIC(20, 2),
+            large_net_inflow_yuan NUMERIC(20, 2),
+            medium_net_inflow_yuan NUMERIC(20, 2),
+            small_net_inflow_yuan NUMERIC(20, 2),
+            source_name TEXT NOT NULL,
+            source_endpoint TEXT NOT NULL DEFAULT '',
+            source_version TEXT NOT NULL DEFAULT '',
+            frequency TEXT NOT NULL DEFAULT 'DAILY',
+            "window" TEXT NOT NULL DEFAULT '1D',
+            market_scope TEXT NOT NULL DEFAULT 'CN_A',
+            source_quality TEXT NOT NULL DEFAULT 'UNKNOWN',
+            quality TEXT NOT NULL DEFAULT 'MISSING',
+            diagnostics JSONB NOT NULL DEFAULT '{}'::jsonb,
+            raw_json JSONB NOT NULL DEFAULT '{}'::jsonb,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+            updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+            PRIMARY KEY (
+                trade_date, stock_code, source_name, source_endpoint,
+                source_version, frequency, "window", market_scope
+            )
+        )
+        """
+        async with self.pool.acquire() as conn:
+            await conn.execute(sql)
+            await conn.execute("ALTER TABLE stock_fund_flow_snapshot ADD COLUMN IF NOT EXISTS source_version TEXT NOT NULL DEFAULT ''")
+            await conn.execute("ALTER TABLE stock_fund_flow_snapshot ADD COLUMN IF NOT EXISTS frequency TEXT NOT NULL DEFAULT 'DAILY'")
+            await conn.execute("ALTER TABLE stock_fund_flow_snapshot ADD COLUMN IF NOT EXISTS \"window\" TEXT NOT NULL DEFAULT '1D'")
+            await conn.execute("ALTER TABLE stock_fund_flow_snapshot ADD COLUMN IF NOT EXISTS market_scope TEXT NOT NULL DEFAULT 'CN_A'")
+            await conn.execute(
+                """
+                CREATE INDEX IF NOT EXISTS idx_stock_fund_flow_snapshot_date
+                    ON stock_fund_flow_snapshot (trade_date)
+                """
+            )
+            await conn.execute(
+                """
+                CREATE INDEX IF NOT EXISTS idx_stock_fund_flow_snapshot_net_inflow
+                    ON stock_fund_flow_snapshot (trade_date, net_inflow_yuan DESC)
+                """
+            )
+            await conn.execute(
+                """
+                CREATE INDEX IF NOT EXISTS idx_stock_fund_flow_snapshot_source
+                    ON stock_fund_flow_snapshot (
+                        source_name, source_endpoint, source_version, frequency, "window", market_scope
+                    )
+                """
+            )
+            await conn.execute(
+                """
+                CREATE UNIQUE INDEX IF NOT EXISTS uq_stock_fund_flow_snapshot_identity
+                    ON stock_fund_flow_snapshot (
+                        trade_date, stock_code, source_name, source_endpoint,
+                        source_version, frequency, "window", market_scope
+                    )
+                """
+            )
+
+    async def upsert_stock_fund_flow_snapshot_rows(self, rows: list[dict[str, Any]]) -> int:
+        """UPSERT stock_fund_flow_snapshot evidence rows."""
+        if not rows:
+            return 0
+        await self._ensure_stock_fund_flow_snapshot_table()
+        sql = """
+        INSERT INTO stock_fund_flow_snapshot (
+            trade_date, stock_code, stock_name,
+            net_inflow_yuan, super_large_net_inflow_yuan, large_net_inflow_yuan,
+            medium_net_inflow_yuan, small_net_inflow_yuan,
+            source_name, source_endpoint, source_version, frequency, "window", market_scope,
+            source_quality, quality, diagnostics, raw_json
+        ) VALUES (
+            $1::date, $2, $3,
+            $4, $5, $6,
+            $7, $8,
+            $9, $10, $11, $12, $13, $14,
+            $15, $16, $17::jsonb, $18::jsonb
+        )
+        ON CONFLICT (
+            trade_date, stock_code, source_name, source_endpoint,
+            source_version, frequency, "window", market_scope
+        ) DO UPDATE SET
+            stock_name = EXCLUDED.stock_name,
+            net_inflow_yuan = EXCLUDED.net_inflow_yuan,
+            super_large_net_inflow_yuan = EXCLUDED.super_large_net_inflow_yuan,
+            large_net_inflow_yuan = EXCLUDED.large_net_inflow_yuan,
+            medium_net_inflow_yuan = EXCLUDED.medium_net_inflow_yuan,
+            small_net_inflow_yuan = EXCLUDED.small_net_inflow_yuan,
+            source_quality = EXCLUDED.source_quality,
+            quality = EXCLUDED.quality,
+            diagnostics = EXCLUDED.diagnostics,
+            raw_json = EXCLUDED.raw_json,
+            updated_at = NOW()
+        """
+        payload = []
+        for row in rows:
+            try:
+                trade_date_value = row.get("trade_date")
+                if isinstance(trade_date_value, str):
+                    trade_date_value = date.fromisoformat(trade_date_value[:10])
+                if not trade_date_value:
+                    raise ValueError("trade_date required")
+                stock_code = str(row.get("stock_code") or "").strip()
+                if not stock_code:
+                    raise ValueError("stock_code required")
+            except Exception as e:
+                raise ValueError(f"invalid stock_fund_flow_snapshot row: {row}") from e
+            payload.append(
+                (
+                    trade_date_value,
+                    stock_code,
+                    str(row.get("stock_name") or ""),
+                    row.get("net_inflow_yuan"),
+                    row.get("super_large_net_inflow_yuan"),
+                    row.get("large_net_inflow_yuan"),
+                    row.get("medium_net_inflow_yuan"),
+                    row.get("small_net_inflow_yuan"),
+                    str(row.get("source_name") or "eastmoney_fund_flow"),
+                    str(row.get("source_endpoint") or ""),
+                    str(row.get("source_version") or ""),
+                    str(row.get("frequency") or "DAILY"),
+                    str(row.get("window") or "1D"),
+                    str(row.get("market_scope") or "CN_A"),
+                    str(row.get("source_quality") or "UNKNOWN"),
+                    str(row.get("quality") or "MISSING"),
+                    _safe_json_dumps(row.get("diagnostics"), {}),
+                    _safe_json_dumps(row.get("raw_json"), {}),
+                )
+            )
+        try:
+            async with self.pool.acquire() as conn:
+                await conn.executemany(sql, payload)
+            return len(payload)
+        except Exception as e:
+            logger.exception("写入 stock_fund_flow_snapshot 失败")
+            raise RuntimeError("failed to upsert stock_fund_flow_snapshot rows") from e
+
     async def get_stock_f10_capital_snapshots(
         self,
         trade_date: date,
