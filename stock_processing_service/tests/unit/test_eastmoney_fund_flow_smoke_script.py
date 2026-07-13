@@ -6,7 +6,7 @@ from datetime import date
 import sys
 
 from stock_processing_service.scripts import run_eastmoney_fund_flow_smoke
-from stock_processing_service.scripts.run_eastmoney_fund_flow_smoke import _summarize_rows
+from stock_processing_service.scripts.run_eastmoney_fund_flow_smoke import _progress, _summarize_rows
 
 
 def test_smoke_script_adds_project_root_to_syspath() -> None:
@@ -39,3 +39,14 @@ def test_smoke_summary_detects_identity_duplicates_and_required_fields() -> None
     assert summary["duplicate_identity_count"] == 1
     assert summary["missing_required"] == []
     assert summary["quality_counts"] == {"OK": 2}
+
+
+def test_smoke_progress_can_be_disabled(capsys) -> None:
+    """TC-ID: PR4.2.31c4-smoke-progress-visibility."""
+    _progress("[smoke] visible", enabled=True)
+    visible = capsys.readouterr()
+    assert "[smoke] visible" in visible.err
+
+    _progress("[smoke] hidden", enabled=False)
+    hidden = capsys.readouterr()
+    assert hidden.err == ""

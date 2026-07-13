@@ -81,21 +81,48 @@ def _summarize_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-async def run_smoke(stock_codes: list[str], trade_date: date, limit: int, repeat: int) -> dict[str, Any]:
+def _progress(message: str, *, enabled: bool) -> None:
+    if enabled:
+        print(message, file=sys.stderr, flush=True)
+
+
+async def run_smoke(
+    stock_codes: list[str],
+    trade_date: date,
+    limit: int,
+    repeat: int,
+    *,
+    progress: bool = True,
+) -> dict[str, Any]:
+    _progress(
+        f"[smoke] start date={trade_date.isoformat()} stocks={','.join(stock_codes)} "
+        f"limit={limit} repeat={repeat}",
+        enabled=progress,
+    )
     gateway = await get_gateway()
     try:
         run_results = []
-        for _ in range(max(repeat, 1)):
+        total_runs = max(repeat, 1)
+        for idx in range(total_runs):
+            _progress(f"[smoke] run {idx + 1}/{total_runs}: collecting fund-flow evidence", enabled=progress)
             job = CollectEastmoneyFundFlowJob(
                 write_port=gateway,
                 stock_codes=stock_codes,
                 limit=limit,
             )
-            run_results.append(await job.execute(trade_date))
+            result = await job.execute(trade_date)
+            run_results.append(result)
+            _progress(
+                f"[smoke] run {idx + 1}/{total_runs}: status={result.status} "
+                f"affected_rows={result.affected_rows} warnings={len(result.warnings)}",
+                enabled=progress,
+            )
+        _progress("[smoke] reading back persisted rows", enabled=progress)
         rows = await gateway.get_stock_fund_flow_snapshots(
             stock_codes=stock_codes,
             trade_date=trade_date.isoformat(),
         )
+        _progress(f"[smoke] readback rows={len(rows)}", enabled=progress)
         return {
             "trade_date": trade_date.isoformat(),
             "stock_codes": stock_codes,
@@ -125,10 +152,17 @@ async def main() -> None:
     parser.add_argument("--stock-code", action="append", default=[], help="Stock code; repeatable.")
     parser.add_argument("--limit", type=int, default=120)
     parser.add_argument("--repeat", type=int, default=2, help="Run collector N times to validate idempotent upsert.")
+    parser.add_argument("--quiet", action="store_true", help="Disable stderr progress messages.")
     args = parser.parse_args()
 
     stock_codes = args.stock_code or ["300223", "002747"]
-    result = await run_smoke(stock_codes, date.fromisoformat(args.date), args.limit, args.repeat)
+    result = await run_smoke(
+        stock_codes,
+        date.fromisoformat(args.date),
+        args.limit,
+        args.repeat,
+        progress=not args.quiet,
+    )
     print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True, default=_json_default))
 
 
