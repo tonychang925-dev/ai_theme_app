@@ -21,6 +21,12 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from database_service.gateway import get_gateway
+from stock_processing_service.integrations.a_stock_data.clients.eastmoney_fund_flow_client import (
+    EastmoneyFundFlowClient,
+)
+from stock_processing_service.integrations.a_stock_data.clients.rate_limited_http_client import (
+    RegistryPolicy,
+)
 from stock_processing_service.integrations.a_stock_data.jobs.collect_eastmoney_fund_flow_job import (
     CollectEastmoneyFundFlowJob,
 )
@@ -93,6 +99,7 @@ async def run_smoke(
     repeat: int,
     *,
     progress: bool = True,
+    policy: RegistryPolicy | None = None,
 ) -> dict[str, Any]:
     _progress(
         f"[smoke] start date={trade_date.isoformat()} stocks={','.join(stock_codes)} "
@@ -104,19 +111,25 @@ async def run_smoke(
         run_results = []
         total_runs = max(repeat, 1)
         for idx in range(total_runs):
-            _progress(f"[smoke] run {idx + 1}/{total_runs}: collecting fund-flow evidence", enabled=progress)
-            job = CollectEastmoneyFundFlowJob(
-                write_port=gateway,
-                stock_codes=stock_codes,
-                limit=limit,
-            )
-            result = await job.execute(trade_date)
-            run_results.append(result)
-            _progress(
-                f"[smoke] run {idx + 1}/{total_runs}: status={result.status} "
-                f"affected_rows={result.affected_rows} warnings={len(result.warnings)}",
-                enabled=progress,
-            )
+            for stock_code in stock_codes:
+                _progress(
+                    f"[smoke] run {idx + 1}/{total_runs} stock={stock_code}: collecting",
+                    enabled=progress,
+                )
+                job = CollectEastmoneyFundFlowJob(
+                    write_port=gateway,
+                    stock_codes=[stock_code],
+                    client=EastmoneyFundFlowClient(policy=policy),
+                    limit=limit,
+                )
+                result = await job.execute(trade_date)
+                run_results.append((stock_code, result))
+                _progress(
+                    f"[smoke] run {idx + 1}/{total_runs} stock={stock_code}: "
+                    f"status={result.status} affected_rows={result.affected_rows} "
+                    f"warnings={len(result.warnings)}",
+                    enabled=progress,
+                )
         _progress("[smoke] reading back persisted rows", enabled=progress)
         rows = await gateway.get_stock_fund_flow_snapshots(
             stock_codes=stock_codes,
@@ -130,13 +143,14 @@ async def run_smoke(
             "repeat": repeat,
             "run_results": [
                 {
+                    "stock_code": stock_code,
                     "name": result.name,
                     "status": result.status,
                     "affected_rows": result.affected_rows,
                     "warnings": result.warnings,
                     "metrics": result.metrics,
                 }
-                for result in run_results
+                for stock_code, result in run_results
             ],
             "readback": rows,
             "summary": _summarize_rows(rows),
@@ -152,16 +166,30 @@ async def main() -> None:
     parser.add_argument("--stock-code", action="append", default=[], help="Stock code; repeatable.")
     parser.add_argument("--limit", type=int, default=120)
     parser.add_argument("--repeat", type=int, default=2, help="Run collector N times to validate idempotent upsert.")
+    parser.add_argument("--timeout-ms", type=int, default=5000, help="Smoke request timeout in milliseconds.")
+    parser.add_argument("--max-retries", type=int, default=0, help="Smoke request retries per stock.")
+    parser.add_argument("--min-interval-ms", type=int, default=1200, help="Smoke request min interval in milliseconds.")
+    parser.add_argument("--jitter-ms", type=int, default=300, help="Smoke request jitter in milliseconds.")
     parser.add_argument("--quiet", action="store_true", help="Disable stderr progress messages.")
     args = parser.parse_args()
 
     stock_codes = args.stock_code or ["300223", "002747"]
+    smoke_policy = RegistryPolicy(
+        min_interval_ms=args.min_interval_ms,
+        jitter_ms=args.jitter_ms,
+        max_retries=args.max_retries,
+        backoff="linear",
+        timeout_ms=args.timeout_ms,
+        session_reuse=False,
+        referer="https://quote.eastmoney.com/",
+    )
     result = await run_smoke(
         stock_codes,
         date.fromisoformat(args.date),
         args.limit,
         args.repeat,
         progress=not args.quiet,
+        policy=smoke_policy,
     )
     print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True, default=_json_default))
 
