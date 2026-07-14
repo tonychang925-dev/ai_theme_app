@@ -935,18 +935,15 @@ class TushareMoneyflowCollectRunner:
 
     @staticmethod
     def _get_tushare_pro():
-        # Read token from .env.theme (not os.environ, which may not be set)
-        token = os.getenv("TUSHARE_TOKEN", "")
+        token = ""
+        env_path = PROJECT_ROOT / ".env.theme"
+        for line in env_path.read_text(encoding="utf-8", errors="ignore").splitlines():
+            line = line.strip()
+            if line.startswith("TUSHARE_TOKEN="):
+                token = line.split("=", 1)[1].strip().strip("\"'")
+                break
         if not token:
-            env_path = PROJECT_ROOT / ".env.theme"
-            if env_path.exists():
-                for line in env_path.read_text(encoding="utf-8", errors="ignore").splitlines():
-                    line = line.strip()
-                    if line.startswith("TUSHARE_TOKEN="):
-                        token = line.split("=", 1)[1].strip().strip("\"'")
-                        break
-        if not token:
-            raise RuntimeError("TUSHARE_TOKEN not found in .env.theme or environment")
+            raise RuntimeError("TUSHARE_TOKEN not found in .env.theme")
         import tushare as ts
         ts.set_token(token)
         return ts.pro_api()
