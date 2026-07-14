@@ -88,6 +88,7 @@ async def _persist_rows(
                     buy_sm_amount_yuan, sell_sm_amount_yuan,
                     buy_sm_vol_shou, sell_sm_vol_shou,
                     order_size_flow_amount_yuan, net_mf_vol_shou,
+                    available_at,
                     source_name, source_endpoint, source_version, collected_at,
                     semantic_type, not_owner_identity,
                     quality, diagnostics, raw_json
@@ -98,9 +99,10 @@ async def _persist_rows(
                     $11, $12, $13, $14,
                     $15, $16, $17, $18,
                     $19, $20,
-                    $21, $22, $23, $24,
-                    $25, $26,
-                    $27, $28::jsonb, $29::jsonb
+                    $21::timestamptz,
+                    $22, $23, $24, $25,
+                    $26, $27,
+                    $28, $29::jsonb, $30::jsonb
                 )
                 ON CONFLICT (trade_date, ts_code, source_name, source_endpoint, source_version)
                 DO UPDATE SET
@@ -122,6 +124,7 @@ async def _persist_rows(
                     sell_sm_vol_shou = EXCLUDED.sell_sm_vol_shou,
                     order_size_flow_amount_yuan = EXCLUDED.order_size_flow_amount_yuan,
                     net_mf_vol_shou = EXCLUDED.net_mf_vol_shou,
+                    available_at = EXCLUDED.available_at,
                     collected_at = EXCLUDED.collected_at,
                     quality = EXCLUDED.quality,
                     diagnostics = EXCLUDED.diagnostics,
@@ -138,6 +141,7 @@ async def _persist_rows(
                 row.get("buy_sm_amount_yuan"), row.get("sell_sm_amount_yuan"),
                 row.get("buy_sm_vol_shou"), row.get("sell_sm_vol_shou"),
                 row.get("order_size_flow_amount_yuan"), row.get("net_mf_vol_shou"),
+                row.get("available_at"),
                 row["source_name"], row["source_endpoint"], row["source_version"],
                 row["collected_at"],
                 row["semantic_type"], row["not_owner_identity"],

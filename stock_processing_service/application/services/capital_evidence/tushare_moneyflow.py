@@ -71,6 +71,9 @@ class TushareStockFundFlowEvidence:
     order_size_flow_amount_yuan: float | None = None
     net_mf_vol_shou: float | None = None
 
+    # timing (available_at = when source made data available)
+    available_at: str = ""
+
     # provenance (C6)
     source_name: str = SOURCE_NAME
     source_endpoint: str = SOURCE_ENDPOINT
@@ -110,6 +113,7 @@ class TushareStockFundFlowEvidence:
             "sell_sm_vol_shou": self.sell_sm_vol_shou,
             "order_size_flow_amount_yuan": self.order_size_flow_amount_yuan,
             "net_mf_vol_shou": self.net_mf_vol_shou,
+            "available_at": self.available_at,
             "source_name": self.source_name,
             "source_endpoint": self.source_endpoint,
             "source_version": self.source_version,
@@ -197,6 +201,7 @@ class TushareMoneyflowNormalizer:
             sell_sm_vol_shou=sell_sm_vol,
             order_size_flow_amount_yuan=order_size_flow,
             net_mf_vol_shou=net_mf_vol,
+            available_at=collected_at or _now(),
             collected_at=collected_at or _now(),
             quality="OK" if has_amount else "MISSING",
             diagnostics={

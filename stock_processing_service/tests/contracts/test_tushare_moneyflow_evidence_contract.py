@@ -68,6 +68,7 @@ def _row_to_hash(evidence) -> str:
     payload = evidence.to_row()
     # Remove non-deterministic fields before hashing
     payload.pop("collected_at", None)
+    payload.pop("available_at", None)
     payload.pop("diagnostics", None)
     payload.pop("raw_json", None)
     # Convert date objects to ISO string for JSON serialization
@@ -291,6 +292,7 @@ class TestDBSchema:
         assert "source_name" in sql
         assert "source_version" in sql
         assert "collected_at" in sql
+        assert "available_at" in sql
 
     def test_table_has_semantic_metadata_columns(self):
         sql = SQL_PATH.read_text(encoding="utf-8")

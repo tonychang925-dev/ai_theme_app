@@ -42,6 +42,9 @@ CREATE TABLE IF NOT EXISTS stock_fund_flow_daily (
     order_size_flow_amount_yuan  NUMERIC(20, 2),
     net_mf_vol_shou              NUMERIC(20, 2),
 
+    -- timing (available_at = when the source made this data accessible)
+    available_at            TIMESTAMPTZ,
+
     -- source provenance (C6: M7 traceability)
     source_name             TEXT NOT NULL DEFAULT 'tushare',
     source_endpoint         TEXT NOT NULL DEFAULT 'moneyflow',
