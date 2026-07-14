@@ -357,14 +357,29 @@ class InstitutionStyleProducer:
             cov_factor = min(1.0, coverage / 0.70) if coverage > 0 else 0.5
             missing_c = sum(1 for s in [flow_score, cycle_score, structure_score] if s is None)
             ev_comp = 1.0 - (EVIDENCE_COMPLETENESS_PER_SIGNAL * missing_c)
-            conf = BASE_CONFIDENCE * cov_factor * ev_comp
+
+            # PR4.2.35c: direction confidence from coverage metrics
+            stock_cov = len(stocks) / max(float(dflow.get("theme_count", 1)), 1) if stocks else 0.0
+            identity_quality = min(1.0, stock_cov)
+            direction_confidence = round(
+                0.5 * coverage + 0.3 * stock_cov + 0.2 * identity_quality, 4
+            )
+
+            conf = BASE_CONFIDENCE * cov_factor * ev_comp * direction_confidence
             if dt_missing:
                 conf *= DT_MISSING_CONF_PENALTY_STRONG if (flow_quality == "HIGH" and cycle_quality == "HIGH") else DT_MISSING_CONF_PENALTY_WEAK
             conf = round(min(1.0, max(0.0, conf)), 4)
 
             eq = {"flow": flow_quality, "cycle": cycle_quality, "structure": structure_quality, "dragon_tiger": dt_quality}
             signals = flow_signals + cycle_signals + structure_signals + dt_signals
-            ev = {"flow_coverage_ratio": coverage, "lifecycle_stage": lifecycle_stage, "stock_count": len(stocks), "dt_seat_count": len(seats), "direction_quality_modifier": quality_modifier}
+            ev = {
+                "flow_coverage_ratio": coverage,
+                "lifecycle_stage": lifecycle_stage,
+                "stock_count": len(stocks),
+                "dt_seat_count": len(seats),
+                "direction_quality_modifier": quality_modifier,
+                "direction_confidence": direction_confidence,
+            }
 
             results.append(InstitutionStyleOutput(
                 trade_date=td, subject_key=key, theme_name=name,
