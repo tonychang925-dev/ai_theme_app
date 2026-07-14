@@ -480,6 +480,7 @@ Evidence Layer ONLY — no UI connection
 | C3 | No forbidden fields | Zero occurrences of: `institution`, `hot_money`, `smart_money`, `main_force` |
 | C4 | Evidence replayable | Same `(trade_date, ts_code)` → same snapshot every time |
 | C5 | Semantic metadata | Every row carries `semantic_type: order_size_flow, not_owner_identity: true` |
+| C6 | Source provenance | Every row carries `source_name`, `source_version`, `collected_at`, `semantic_type`, `not_owner_identity` for M7 traceability |
 
 **Forbidden in this PR:**
 ```
