@@ -8155,6 +8155,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     if snapshot_path.exists():
         snap = _json.loads(snapshot_path.read_text(encoding="utf-8"))
         review_document = _assemble_workspace_review_document(snap, mode="approved")
+        review_document = await _inject_capital_producer_outputs_async(review_document)
         _persist_workspace_review_document(trade_date, review_document)
         return _workspace_review_document_response(
             trade_date=trade_date,
