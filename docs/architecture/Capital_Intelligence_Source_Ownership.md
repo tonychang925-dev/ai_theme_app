@@ -1,257 +1,285 @@
 # Capital Intelligence Source Ownership
 
-PR: PR4.2.20d Capital Intelligence Source Audit  
-Status: Audit Only  
-Frozen Date: 2026-07-13
+**PR:** PR4.2.30 / PR4.2.31
+**Status:** Frozen — Source Registry
+**Frozen Date:** 2026-07-14
+**Reference:** `Capital_Intelligence_Pipeline_Design.md` v2.0, `Capital_Intelligence_Source_Audit.md`
 
-## 1. Decision
+---
 
-`capital` must not mean only dragon-tiger seat statistics. In ReviewDocument,
-Capital Intelligence means:
+## 1. Ownership Registry
 
-- market money activity
-- institutional style preference by theme
-- short-term hot-money attack direction
-- evidence used to support the above
+### 1.1 Stock Daily Order Size Flow
 
-The previous narrow path:
+```yaml
+owner: TushareMoneyflowAdapter
+status: VERIFIED (probe: 2026-07-14)
+table: stock_fund_flow_daily
 
-```text
-seat_money_summary
-  -> institution_buy_rows / hot_money_buy_rows
-  -> capital.institution / capital.hot_money
+primary:
+  source: tushare.moneyflow
+  version: v1
+  verified_date: 2026-07-14
+  frequency: DAILY
+  unit_input: 万元
+  unit_storage: 元
+  buy_sell_direction: PRESERVED
+  semantic:
+    vendor_defined: order_size_flow
+    not_owner_identity: true
+  change_policy:
+    require_audit: true
+
+secondary:
+  source: eastmoney.push2his
+  status: CONNECTION_UNAVAILABLE
+  buy_sell_direction: MISSING
+  change_policy:
+    require_audit: true
+
+limited:
+  source: sina.moneyflow_daily
+  status: CAPABILITY_LIMITED
+  available_buckets: [net, super_large]
+  buy_sell_direction: MISSING
 ```
 
-is valid only as a dragon-tiger evidence path. It is not sufficient to produce
-analyst-style institution/hot-money direction.
+### 1.2 Theme Daily Fund Flow
 
-## 2. Source Inventory
+```yaml
+owner: ThemeCapitalAttributionEngine
+status: DESIGN (implementation: PR4.2.32)
+table: theme_fund_flow_daily
 
-### 2.1 Market Active Capital
+preferred:
+  source: tushare.moneyflow_cnt_ths
+  status: ACCESS_DENIED
+  required_credits: 6000
 
-| Target field | Source owner | Current status |
-| --- | --- | --- |
-| `capital.active_amount` | `MarketMetricsSnapshot.capital.active_limitup_amount_yi` / active-capital chart | READY |
-| `capital.turnover` | `MarketMetricsSnapshot.capital.total_turnover_yi` | candidate |
-| `capital.money_activity_score` | `MarketMetricsSnapshot` or chart review score | candidate |
-
-This layer is a market fact layer. It does not produce institution or hot-money
-style by itself.
-
-### 2.2 Institution Style Candidates
-
-Institution style means medium-term capital preference by industry/theme. It is
-closer to the analyst report sections such as "科技硬件", "材料/服务器",
-"存储/光通信/PCB", with states like "启动第1天", "调整第3天", and
-"资金回流".
-
-| Candidate source | Role | Value | Restriction |
-| --- | --- | --- | --- |
-| `theme_cycle_judgement_v2` | theme lifecycle | phase, cycle day, divergence/start/recovery state | must not be converted directly into participant identity |
-| `theme_strength_snapshot` | theme strength | score, rank, breadth, leader strength | strength is not institution identity |
-| `subject_daily_feature` | daily theme behavior | limit-up count, breadth, leader behavior, turnover candidates | requires field-level ownership proof before production use |
-| `theme_capital_flow` | theme-level money flow | capital return / inflow signal by theme | not hot-money identity by itself |
-| `post_market_recap_snapshot.recap_doc.strong_hotspot_subjects` | confirmed hot theme list | market-recognized theme directions | evidence for style, not a complete producer |
-| `money_flow_enhanced` | stock-level money evidence | stock money strength and concentration | `role_label` is stock role, not participant type |
-
-Future owner:
-
-```text
-ThemeCapitalIntelligenceProducer
-  inputs:
-    - theme_cycle_judgement_v2
-    - theme_strength_snapshot
-    - subject_daily_feature
-    - theme_capital_flow
-    - strong_hotspot_subjects
-  output:
-    capital.institution_style[]
+primary (self-aggregated):
+  source: stock_fund_flow_daily + stock_theme_map
+  method: weighted_attribution
+  rule: theme_flow = stock_flow × theme_weight
+  constraint: SUM(theme_weight per stock) ≤ 1.0
 ```
 
-Candidate contract:
+### 1.3 Market Capital State
 
-```json
-{
-  "theme_key": "9018144",
-  "theme_name": "PCB印制电路板",
-  "phase": "启动",
-  "cycle_day": 1,
-  "strength": 92,
-  "capital_signal": "资金回流",
-  "evidence": [
-    "theme_strength_snapshot",
-    "theme_capital_flow",
-    "subject_daily_feature"
-  ]
-}
+```yaml
+owner: MarketCapitalStateProducer
+status: DESIGN (implementation: PR4.2.31e)
+table: market_capital_state_daily
+
+inputs:
+  - active_capital_yi (board_pool_zt_zb)
+  - limit_up_count (MarketMetricsSnapshot)
+  - limit_down_count (MarketMetricsSnapshot)
+  - up_down_ratio (MarketMetricsSnapshot)
+  - theme_rotation_speed (derived)
+
+outputs:
+  - capital_style: rotation_attack | defensive | risk_off
+  - risk_preference_score: 0-100
 ```
 
-### 2.3 Hot-Money Style Candidates
+### 1.4 Institution Style
 
-Hot-money style means short-term attack direction. It is closer to analyst
-statements such as "商业航天 关注", "洪涝/水利 台风催化，观察", and
-"光刻胶/材料 大面积启动第1天".
+```yaml
+owner: InstitutionStyleProducer
+status: DESIGN (implementation: PR4.2.33)
 
-| Candidate source | Role | Value | Restriction |
-| --- | --- | --- | --- |
-| `limit_up.categories` | limit-up theme spread | short-term attack breadth by theme | category names must be identity-resolved |
-| `strong_stock_watch_history` | strong-stock pool | leader/sub-dragon/replenishment structure | stock role is not capital participant identity |
-| event catalyst sources | event-driven pressure | commercial aerospace, flood/water, policy/news catalyst | must be structured event evidence |
-| `DragonTigerSnapshot` | seat evidence | institution/hot-money seat confirmation | evidence only; not the sole style producer |
+inputs:
+  theme_fund_flow:
+    source: theme_fund_flow_daily
+    weight: 0.35
+  theme_cycle:
+    source: theme_cycle_judgement_v2
+    weight: 0.30
+  stock_structure:
+    source: strong_stock_watch_history
+    weight: 0.25
+  dragon_tiger:
+    source: seat_evidence
+    weight: 0.10
+    role: evidence_only
 
-Future owner:
-
-```text
-ShortTermCapitalProducer
-  inputs:
-    - limit_up.categories
-    - strong_stock_watch_history
-    - structured event catalysts
-    - DragonTigerSnapshot evidence
-  output:
-    capital.hot_money_style[]
+output: capital.institution_style[]
 ```
 
-Candidate contract:
+### 1.5 Hot Money Style
 
-```json
-{
-  "theme_key": "9019807",
-  "theme_name": "商业航天",
-  "state": "关注",
-  "attack_strength": 85,
-  "drivers": [
-    "涨停扩散",
-    "事件催化"
-  ],
-  "evidence": [
-    "limit_up",
-    "strong_stock",
-    "dragon_tiger"
-  ]
-}
+```yaml
+owner: HotMoneyStyleProducer
+status: DESIGN (implementation: PR4.2.34)
+
+inputs:
+  limit_up:
+    source: limit_up.categories
+    weight: 0.35
+  relay:
+    source: relay_ecology
+    weight: 0.25
+  strong_stock:
+    source: strong_stock_watch_history
+    weight: 0.25
+  dragon_tiger:
+    source: seat_evidence
+    weight: 0.15
+    role: evidence_only
+
+output: capital.hot_money_style[]
 ```
 
-## 3. Dragon-Tiger Data Ownership
+### 1.6 AI Capital Explanation
 
-Tushare dragon-tiger data is unstable around 16:30. The future preferred path is:
+```yaml
+owner: CapitalExplanationProducer
+status: DESIGN (implementation: PR4.2.35)
 
-```text
-a-stock-data adapter
-  -> DragonTigerSnapshot
-  -> Capital Evidence Layer
-  -> ReviewDocument.capital.evidence.dragon_tiger
+inputs:
+  - institution_style[] output
+  - hot_money_style[] output
+  - market_capital_state output
+
+output:
+  capital.explanation.capital_story
+  capital.explanation.risk_note
 ```
 
-The adapter owns raw acquisition. `DragonTigerSnapshot` owns normalization.
-Capital Intelligence Producers may use it as supporting evidence, but must not
-block all style output solely because dragon-tiger data is unavailable.
+### 1.7 Active Capital (Existing)
 
-## 4. ReviewDocument Capital Contract Direction
-
-Do not break the current schema in this audit PR. The target contract for a
-future implementation is:
-
-```json
-{
-  "capital": {
-    "active_amount": 5058.28,
-    "institution_style": [],
-    "hot_money_style": [],
-    "evidence": {
-      "dragon_tiger": {},
-      "theme_rotation": {}
-    }
-  }
-}
+```yaml
+owner: ActiveCapitalProducer
+status: COMPLETE (PR4.2.28)
+source: board_pool_zt_zb
+field: capital.active_amount
+quality: PARTIAL (missing board_pool.yzt.amount_yi)
+calibration: M7 Analyst Feedback (future)
 ```
 
-Backward-compatible mapping may continue to expose `institution` and `hot_money`
-only after their semantics are explicitly migrated to `institution_style` and
-`hot_money_style`.
+### 1.8 Dragon Tiger Evidence
 
-## 5. Seat Money Positioning
+```yaml
+owner: DragonTigerSnapshot
+status: DEFERRED (Phase 4+)
 
-`seat_money_summary` remains useful, but its owner is evidence:
-
-```text
-seat_money_summary
-  -> capital.evidence.dragon_tiger
+role: evidence_only
+usage:
+  - institution_style confidence boost (10%)
+  - hot_money_style confidence boost (15%)
+forbidden:
+  - sole producer of institution_style
+  - sole producer of hot_money_style
+  - blocking style output when unavailable
 ```
 
-It must not be treated as the sole source for:
+---
 
-- `capital.institution_style`
-- `capital.hot_money_style`
-- theme cycle state
-- theme attack strength
+## 2. Source Ownership Matrix
 
-If dragon-tiger data is missing, the output should preserve the diagnostic:
+| Target Field | Owner | Primary Source | Status | Forbidden Path |
+|-------------|-------|---------------|--------|---------------|
+| `capital.active_amount` | `ActiveCapitalProducer` | `board_pool_zt_zb` | ✅ COMPLETE | theme_capital_flow → active_amount |
+| `capital.market_capital_state` | `MarketCapitalStateProducer` | MarketMetricsSnapshot | DESIGN | single metric → capital_style |
+| `capital.institution_style[]` | `InstitutionStyleProducer` | 4-source weighted model | DESIGN | any single source → style |
+| `capital.hot_money_style[]` | `HotMoneyStyleProducer` | 4-source weighted model | DESIGN | any single source → style |
+| `capital.explanation` | `CapitalExplanationProducer` | institution + hot_money + state | DESIGN | template text without evidence |
+| `capital.evidence.fund_flow` | `TushareMoneyflowAdapter` | Tushare `moneyflow` | ✅ VERIFIED | fund_flow → institution_style (direct) |
+| `capital.evidence.theme_flow` | `ThemeCapitalAttributionEngine` | stock→theme weighted | DESIGN | simple SUM without attribution |
+| `capital.evidence.dragon_tiger` | `DragonTigerSnapshot` | Tushare / a-stock-data | DEFERRED | seat rows as sole style producer |
 
-```json
-{
-  "seat_money_summary": {
-    "institution_buy_rows": [],
-    "hot_money_buy_rows": [],
-    "diagnostics": {
-      "source": "none"
-    }
-  }
-}
+---
+
+## 3. Dragon Tiger Positioning
+
+Dragon tiger data is **evidence enhancement only** — never the primary style producer.
+
+```
+DragonTigerSnapshot
+  → capital.evidence.dragon_tiger    (事实存储)
+  → InstitutionStyleProducer         (10% weight, confidence boost)
+  → HotMoneyStyleProducer            (15% weight, confidence boost)
+
+❌ DragonTigerSnapshot → institution_style (sole source)
+❌ DragonTigerSnapshot → hot_money_style (sole source)
+❌ Dragon tiger missing → infer from role_label / theme stage
+❌ Dragon tiger missing → block all style output
 ```
 
-## 6. Forbidden Paths
+---
 
-The following paths are forbidden for all future agents and tests:
+## 4. Market Capital State Positioning
 
-```text
-money_flow_enhanced.role_label == "龙头"
-  -> institution_style
+Market Capital State sits BETWEEN Evidence and Intelligence. It answers the environment question first, preventing style misattribution.
+
+```
+Same theme_fund_flow signal, different environments:
+
+Market STRONG (risk_preference=72, capital_style=rotation_attack):
+  theme_flow + persistence → institution_accumulation
+
+Market WEAK (risk_preference=25, capital_style=defensive):
+  theme_flow + persistence → capital_sheltering (not accumulation)
 ```
 
-```text
-money_flow_enhanced.role_label == "龙头"
-  -> hot_money_style
+The same fund flow signal means different things in different market environments. Market Capital State provides this context.
+
+---
+
+## 5. Forbidden Paths (Frozen)
+
+```
+❌ Single source → capital intelligence
+❌ net_amount > 0 → institution_attention
+❌ net_amount > 0 → hot_money_style
+❌ money_flow_enhanced.role_label → institution_style
+❌ money_flow_enhanced.role_label → hot_money_style
+❌ theme_capital_flow → hot_money_style
+❌ theme_capital_flow → active_amount
+❌ seat_money_summary → institution_style (sole)
+❌ seat_money_summary → hot_money_style (sole)
+❌ dragon_tiger missing → infer from role_label
+❌ automatic source fallback (must be explicit registry)
+❌ recomputing net_mf_amount from bucket data
+❌ direct UI connection without Intelligence Layer
+❌ stock flow SUM without theme_weight attribution
 ```
 
-```text
-theme_capital_flow
-  -> hot_money_style
-```
+---
 
-```text
-seat_money_summary
-  -> institution_style
-```
+## 6. Change Policy
 
-```text
-seat_money_summary
-  -> hot_money_style
-```
+Any change to a source in this registry must:
 
-```text
-dragon_tiger missing
-  -> infer from money_flow_enhanced / role_label / theme stage
-```
+1. Update the `verified_date` and `version` fields
+2. Pass probe verification before status change
+3. Not silently switch sources (explicit registry update required)
+4. Not add automatic fallback paths
+
+---
 
 ## 7. Migration Plan
 
-1. Keep current empty capital directions when only `seat_money_summary.source=none`
-   exists.
-2. Add `DragonTigerSnapshot` acquisition audit for `a-stock-data`.
-3. Design `ThemeCapitalIntelligenceProducer` with field-level evidence.
-4. Design `ShortTermCapitalProducer` with limit-up, strong-stock, catalyst, and
-   dragon-tiger evidence.
-5. Add ReviewDocument contract extension only after producer contracts are
-   frozen.
-6. Update UI after `institution_style[]` and `hot_money_style[]` are produced by
-   approved sources.
+```
+1.  PR4.2.31e: Market Capital State Producer        ← Phase 0
+2.  PR4.2.31f: Tushare Moneyflow Adapter            ← Phase 1 (P0, ready)
+3.  PR4.2.32:  Theme Capital Attribution Engine      ← Phase 2
+4.  PR4.2.33:  Theme Capital Lifecycle Adapter       ← Phase 2.5
+5.  PR4.2.34:  Institution Style Producer            ← Phase 3
+6.  PR4.2.35:  Hot Money Style Producer              ← Phase 4
+7.  PR4.2.36:  AI Capital Explanation Producer       ← Phase 5
+8.  PR4.2.37:  Frontend Connection                   ← Phase 6
+9.  M7:        Analyst Feedback Calibration           ← Future
+```
+
+---
 
 ## 8. Non-Goals
 
-- No frontend change.
-- No assembler change.
-- No ContextFactory change.
-- No ReviewDocument schema change.
-- No inference from stock role to capital participant type.
-- No replacement of dragon-tiger provider in this PR.
+- No frontend change in Phase 0-4
+- No Assembler change
+- No ContextFactory change
+- No ReviewDocument schema change until Phase 5
+- No inference from stock role to capital participant type
+- No automatic source fallback
+- No dragon tiger as sole style producer
