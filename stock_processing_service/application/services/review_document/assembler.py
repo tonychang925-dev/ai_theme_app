@@ -182,11 +182,19 @@ class ReviewDocumentAssembler:
         hot_money = list(ctx.capital_context.hot_money_rows)
         capital = {
             "market": {},
+            # @deprecated: compatibility_only, not_source_owner. Use institution_style[] instead.
+            # Will be removed after PR4.2.37a capital_render_source validates fallback_used=false for 30 days.
             "institution": institution,
             "hot_money": hot_money,
-            # PR4.2.37: new producer fields — populated by _assemble_workspace_review_document
+            # PR4.2.37: canonical producer fields
             "institution_style": [],
             "hot_money_style": [],
+            # PR4.2.37a: render source tracking
+            "capital_render_source": {
+                "institution": "institution_style",
+                "hot_money": "hot_money_style",
+                "fallback_used": False,
+            },
         }
         if ctx.capital_context.active_amount not in (None, ""):
             capital["active_amount"] = ctx.capital_context.active_amount

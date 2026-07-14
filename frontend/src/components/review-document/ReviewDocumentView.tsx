@@ -82,11 +82,18 @@ export function ReviewDocumentView({
   const themes = Array.isArray(document.themes) ? document.themes : [];
   const stocks = Array.isArray(document.stocks) ? document.stocks : [];
   const capital = document.capital || {};
-  // PR4.2.37: prefer new producer fields, fallback to old evidence fields
+  // PR4.2.37: prefer new producer fields, fallback to old evidence fields (deprecated)
   const institutionStyle = Array.isArray(capital.institution_style) && capital.institution_style.length > 0
     ? capital.institution_style : (Array.isArray(capital.institution) ? capital.institution : []);
   const hotMoneyStyle = Array.isArray(capital.hot_money_style) && capital.hot_money_style.length > 0
     ? capital.hot_money_style : (Array.isArray(capital.hot_money) ? capital.hot_money : []);
+
+  // PR4.2.37a: track whether fallback was used (diagnostic for quality gate)
+  const renderSource = capital.capital_render_source || {};
+  const institutionFallbackUsed = !(Array.isArray(capital.institution_style) && capital.institution_style.length > 0)
+    && Array.isArray(capital.institution) && capital.institution.length > 0;
+  const hotMoneyFallbackUsed = !(Array.isArray(capital.hot_money_style) && capital.hot_money_style.length > 0)
+    && Array.isArray(capital.hot_money) && capital.hot_money.length > 0;
   const plan = document.plan || {};
 
   const handleOverrideSave = (override: ReviewOverride) => {

@@ -8580,6 +8580,11 @@ def _inject_capital_producer_outputs(document: dict[str, Any]) -> dict[str, Any]
 
     capital["institution_style"] = inst_style
     capital["hot_money_style"] = hm_style
+    capital["capital_render_source"] = {
+        "institution": "institution_style",
+        "hot_money": "hot_money_style",
+        "fallback_used": False,
+    }
 
     return {**document, "capital": capital}
 
