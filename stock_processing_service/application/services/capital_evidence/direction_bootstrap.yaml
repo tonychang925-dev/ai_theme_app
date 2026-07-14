@@ -62,26 +62,15 @@ directions:
     name: 先进半导体制造
     description: 半导体设备、硅片、光刻胶构成的制造能力链
     themes:
-      - subject_key: "9019001"
-        theme_name: 半导体设备
-        weight: 0.35
+      - theme_name: 半导体设备
+        weight: 0.40
         role: PRIMARY_DRIVER
-      - subject_key: "9025001"
-        theme_name: 半导体硅片
-        weight: 0.25
+      - theme_name: 光刻胶
+        weight: 0.30
         role: PRIMARY_DRIVER
-      - subject_key: "9035001"
-        theme_name: 光刻胶
-        weight: 0.20
+      - theme_name: 生成式物理AI
+        weight: 0.30
         role: SUPPORTING
-      - subject_key: "9046001"
-        theme_name: 靶材
-        weight: 0.10
-        role: SUPPORTING
-      - subject_key: "9056001"
-        theme_name: 碳化硅
-        weight: 0.10
-        role: OPTIONAL
 
   SEMICONDUCTOR_MATERIALS:
     name: 半导体材料

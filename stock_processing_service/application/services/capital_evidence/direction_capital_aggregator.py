@@ -8,6 +8,11 @@ using direction_theme_binding weights. Enforces:
 Direction = unit of capital cognition (投资认知单位)
 Theme    = unit of market classification (市场标签单位)
 
+Theme matching: bindings reference themes by name (theme_name field),
+NOT by internal subject_key. The identity mapping (name→key) is resolved
+at query time from DB tables, not hardcoded in bootstrap config.
+This follows the same principle as ThemeIdentityResolver.
+
 Deterministic only. No AI, no event inference, no producer modification.
 """
 
@@ -111,12 +116,16 @@ class DirectionCapitalAggregator:
         Returns:
             (direction_flows, allocations) tuple.
         """
-        # Index theme flows by subject_key
+        # Index theme flows by BOTH subject_key AND theme_name for flexible matching
         flow_by_key: dict[str, dict[str, Any]] = {}
+        flow_by_name: dict[str, dict[str, Any]] = {}
         for f in theme_flows:
             key = str(f.get("subject_key") or "").strip()
+            name = str(f.get("theme_name") or "").strip()
             if key:
                 flow_by_key[key] = f
+            if name:
+                flow_by_name[name] = f
 
         # Group bindings by direction
         dir_bindings: dict[str, list[dict[str, Any]]] = {}
@@ -139,9 +148,13 @@ class DirectionCapitalAggregator:
             total_count = len(binds)
 
             for b in binds:
+                # Match by theme_name (primary) or subject_key (fallback)
+                tn = str(b.get("theme_name") or "").strip()
                 sk = str(b.get("subject_key") or "").strip()
                 weight = float(b.get("weight") or 0)
-                flow = flow_by_key.get(sk)
+
+                # Try name match first, then key match
+                flow = flow_by_name.get(tn) or flow_by_key.get(sk)
 
                 if flow:
                     net = float(flow.get("net_flow_yuan") or 0)
