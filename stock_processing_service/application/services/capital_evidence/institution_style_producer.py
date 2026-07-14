@@ -1,13 +1,18 @@
-"""PR4.2.33a — Institution Style Producer (Core Multi-Signal Model).
+"""PR4.2.33a / PR4.2.35a — Institution Style Producer.
 
-Answers: "Which themes are becoming preferred by medium-term institutional capital?"
+Answers: "Which themes/directions are becoming preferred by medium-term
+institutional capital?"
+
+v1 (theme-level): S1 = theme_capital_flow_daily (35%)
+v2 (direction-level): S1 = direction_capital_flow_daily (35%) + quality gate
 
 4-signal weighted model:
-  S1 Theme Fund Flow (35%): persistence + acceleration + large_flow_ratio + consistency
+  S1 Fund Flow (35%): persistence + acceleration + large_flow_ratio + consistency
   S2 Industry Cycle (30%): 7-stage lifecycle bonus + transition direction
   S3 Stock Structure (25%): leader quality + core stock strength + breadth depth
   S4 Dragon Tiger (10%): seat quality weighted + institution buy intensity
 
+v2 adds direction_quality gate: low coverage → confidence downgraded.
 DT-missing: weights redistributed, dynamic confidence penalty.
 Market regime modifier: deferred to PR4.2.33b (factor=1.0 in 33a).
 
@@ -277,6 +282,100 @@ class InstitutionStyleProducer:
                 evidence_quality=evidence_quality,
                 evidence=evidence,
                 top_signals=top_signals[:6],
+            ))
+
+        return results
+
+    def produce_with_direction(
+        self,
+        direction_flows: list[dict[str, Any]],
+        theme_cycles: list[dict[str, Any]],
+        stock_structures: dict[str, list[dict[str, Any]]],
+        dragon_tiger: dict[str, list[dict[str, Any]]] | None = None,
+        *,
+        market_regime_factor: float = 1.0,
+    ) -> list[InstitutionStyleOutput]:
+        """PR4.2.35a v2: produce institution style scores using Direction flows as S1.
+
+        S1 = direction_capital_flow_daily (35%) with quality gate.
+        S2/S3/S4 unchanged from v1.
+        """
+        dt = dragon_tiger or {}
+        cycle_by_key: dict[str, dict[str, Any]] = {}
+        for c in theme_cycles:
+            key = str(c.get("subject_key") or "").strip()
+            if key:
+                cycle_by_key[key] = c
+
+        results: list[InstitutionStyleOutput] = []
+        td = _trade_date_from(direction_flows)
+
+        for dflow in direction_flows:
+            key = str(dflow.get("direction_key") or "").strip()
+            if not key:
+                continue
+            name = str(dflow.get("direction_name") or key)
+
+            # S1: Direction flow score (v2)
+            flow_score, flow_quality, flow_signals = _compute_flow_score(dflow)
+
+            # Direction quality gate (PR4.2.35b)
+            coverage = float(dflow.get("flow_coverage_ratio") or 0.0)
+            if coverage >= 0.80:
+                quality_modifier = 1.0
+            elif coverage >= 0.50:
+                quality_modifier = 0.85
+            else:
+                quality_modifier = 0.60
+            if flow_score is not None:
+                flow_score *= quality_modifier
+
+            # S2: Cycle score (reuse theme-level cycles, map by direction key)
+            cycle_row = cycle_by_key.get(key, {})
+            cycle_score, cycle_quality, cycle_signals, lifecycle_stage = _compute_cycle_score(cycle_row)
+
+            # S3: Structure score
+            stocks = stock_structures.get(key, [])
+            structure_score, structure_quality, structure_signals = _compute_structure_score(stocks)
+
+            # S4: Dragon tiger
+            seats = dt.get(key, [])
+            dt_score, dt_quality, dt_signals = _compute_dragon_tiger_score(seats)
+            dt_missing = dt_score is None
+
+            if dt_missing:
+                w_f, w_c, w_s, w_d = W_FLOW + 0.04, W_CYCLE + 0.03, W_STRUCTURE + 0.03, 0.0
+                dt_eff = 0.0
+            else:
+                w_f, w_c, w_s, w_d = W_FLOW, W_CYCLE, W_STRUCTURE, W_DRAGON_TIGER
+                dt_eff = dt_score or 0.0
+
+            base = w_f * (flow_score or 0) + w_c * (cycle_score or 0) + w_s * (structure_score or 0) + w_d * dt_eff
+            final = round(base * market_regime_factor, 2)
+            base = round(base, 2)
+
+            cov_factor = min(1.0, coverage / 0.70) if coverage > 0 else 0.5
+            missing_c = sum(1 for s in [flow_score, cycle_score, structure_score] if s is None)
+            ev_comp = 1.0 - (EVIDENCE_COMPLETENESS_PER_SIGNAL * missing_c)
+            conf = BASE_CONFIDENCE * cov_factor * ev_comp
+            if dt_missing:
+                conf *= DT_MISSING_CONF_PENALTY_STRONG if (flow_quality == "HIGH" and cycle_quality == "HIGH") else DT_MISSING_CONF_PENALTY_WEAK
+            conf = round(min(1.0, max(0.0, conf)), 4)
+
+            eq = {"flow": flow_quality, "cycle": cycle_quality, "structure": structure_quality, "dragon_tiger": dt_quality}
+            signals = flow_signals + cycle_signals + structure_signals + dt_signals
+            ev = {"flow_coverage_ratio": coverage, "lifecycle_stage": lifecycle_stage, "stock_count": len(stocks), "dt_seat_count": len(seats), "direction_quality_modifier": quality_modifier}
+
+            results.append(InstitutionStyleOutput(
+                trade_date=td, subject_key=key, theme_name=name,
+                institution_score=final, base_score=base, confidence=conf,
+                market_regime_factor=round(market_regime_factor, 3),
+                flow_score=round(flow_score, 2) if flow_score is not None else None,
+                cycle_score=round(cycle_score, 2) if cycle_score is not None else None,
+                structure_score=round(structure_score, 2) if structure_score is not None else None,
+                dragon_tiger_score=round(dt_score, 2) if dt_score is not None else None,
+                lifecycle_stage=lifecycle_stage, evidence_quality=eq, evidence=ev,
+                top_signals=signals[:6],
             ))
 
         return results
