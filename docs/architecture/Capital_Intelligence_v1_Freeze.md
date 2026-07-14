@@ -241,7 +241,24 @@ After:  calibrate separately —
 
 ---
 
-## 8. Stable Baseline for Production
+## 8. Design Document Index
+
+| PR | Document | Status |
+|----|----------|--------|
+| — | `Capital_Intelligence_Pipeline_Design.md` | v2.2 Frozen |
+| — | `Capital_Intelligence_Source_Audit.md` | Verified |
+| — | `Capital_Intelligence_Source_Ownership.md` | Frozen |
+| 4.2.31f | `Tushare_Fund_Flow_Capability_Audit.md` | ✅ Implemented |
+| 4.2.32a | `PR4.2.32_Theme_Capital_Attribution_Design.md` | v2.0, ✅ Implemented |
+| 4.2.33a | `PR4.2.33_Institution_Style_Producer_Design.md` | v2.0, ✅ Implemented |
+| 4.2.34a | `PR4.2.34_Investment_Direction_Layer_Design.md` | v2.0, ✅ Implemented |
+| 4.2.36b | `PR4.2.36_Hot_Money_Style_Design.md` | v1.0, ✅ Implemented |
+| — | `Golden_UI_Field_Recovery_Checklist.md` | 11/18 recovered |
+| — | `Capital_Intelligence_v1_Freeze.md` | This document |
+
+---
+
+## 9. Stable Baseline for Production
 
 This freeze establishes a **regressable, auditable, contract-verified** capital intelligence foundation. All 82 contract tests provide a safety net for future development.
 

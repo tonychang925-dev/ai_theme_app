@@ -2,7 +2,7 @@
 
 **Version:** v1.0
 **Date:** 2026-07-14
-**Status:** Audit Complete — Design Frozen
+**Status:** ✅ Implemented (PR4.2.36b) — See `Capital_Intelligence_v1_Freeze.md`
 
 ---
 
