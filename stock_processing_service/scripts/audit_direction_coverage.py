@@ -50,9 +50,10 @@ async def main() -> int:
         dir_themes: dict[str, list[str]] = defaultdict(list)
         for dk, d in config["directions"].items():
             for t in d["themes"]:
-                sk = t["subject_key"]
-                all_keys.add(sk)
-                dir_themes[dk].append(sk)
+                # Bootstrap uses theme_name as primary key; subject_key is optional fallback
+                tn = t.get("theme_name") or t.get("subject_key", "")
+                all_keys.add(tn)
+                dir_themes[dk].append(tn)
 
         # Fetch stock universe for all themes
         db_stocks: dict[str, list[dict]] = defaultdict(list)
