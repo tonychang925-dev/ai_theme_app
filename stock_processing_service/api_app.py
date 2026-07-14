@@ -9895,8 +9895,15 @@ async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
         python_executable=sys.executable,
     )
     result = await service.generate(td, force=True)
-    payload = result.to_dict()
-    payload["job_id"] = f"local_{trade_date}"
+    try:
+        payload = result.to_dict()
+        payload["job_id"] = f"local_{trade_date}"
+        # Verify serializable
+        json.dumps(payload, default=str)
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        payload = {"status": "error", "error": f"Serialization failed: {e}"}
     return payload
 
 
