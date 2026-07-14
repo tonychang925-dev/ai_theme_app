@@ -378,7 +378,7 @@ export function CollectionPage() {
                 checked={options.f10Capital}
                 onChange={() => setOptions((s) => ({ ...s, f10Capital: !s.f10Capital }))}
               />
-              <span>F10资金动向采集</span>
+              <span>F10 Tushare资金证据采集</span>
             </label>
             <div className="workspace-note">
               顺序执行到该 step 时自动从当日复盘候选池提取股票，专项采集资金动向快照，不参与评分。

@@ -181,7 +181,7 @@ class CollectionJobManager:
         if options.get("hot_money_activity", True):
             tasks.append(CollectionTaskState(key="hot_money_activity", title="游资动向活动表构建"))
         if options.get("f10_capital", False):
-            tasks.append(CollectionTaskState(key="f10_capital", title="F10资金动向快照"))
+            tasks.append(CollectionTaskState(key="f10_capital", title="Tushare资金证据采集"))
         if options.get("index_kline", True):
             tasks.append(CollectionTaskState(key="index_kline", title="大盘指数采集+技术分析"))
         if options.get("abnormal_signal", False):

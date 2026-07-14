@@ -260,7 +260,7 @@ function AnalystCapitalChart({ data, interpretation, trend }: { data: any; inter
           <div style={{ width: `${Math.min(100, (active / Math.max(total, 1)) * 30)}%`, height: "100%", background: "linear-gradient(90deg, #66d9ef, #38a169)", borderRadius: 7 }} />
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "#5a7a8a", marginTop: 3 }}>
-          <span>{active.toFixed(0)}亿</span>
+          <span>{((active / Math.max(total, 1)) * 100).toFixed(1)}%</span>
           <span>{label}</span>
         </div>
       </div>

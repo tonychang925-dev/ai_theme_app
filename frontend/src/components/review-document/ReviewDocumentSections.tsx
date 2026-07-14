@@ -52,6 +52,10 @@ function Badge({ children, tone = "neutral" }: { children: React.ReactNode; tone
   );
 }
 
+function isNumericKey(v: any): boolean {
+  return /^\d{5,}$/.test(String(v ?? ""));
+}
+
 function Section({ title, quality, children }: { title: string; quality?: any; children: React.ReactNode }) {
   return (
     <section style={{ borderBottom: `1px solid ${colors.border}`, padding: "14px 18px", background: colors.panel }}>
@@ -111,10 +115,10 @@ export function ReviewDocumentSections({ document }: { document: ReviewDocument 
           rows={themes.slice(0, 12)}
           columns={[
             ["题材", (row) => (
-              <span style={{ color: colors.text }}>{nameValue(row.name) || text(row.theme_key) || "-"}</span>
+              <span style={{ color: colors.text }}>{nameValue(row.name) || (isNumericKey(row.theme_key) ? "" : text(row.theme_key)) || "名称待解析"}</span>
             )],
             ["角色", (row) => text(row.role)],
-            ["阶段", (row) => text(row.stage)],
+            ["阶段", (row) => stageLabel(text(row.stage)) || text(row.stage)],
             ["强度", (row) => typeof row.strength_score === "number" ? row.strength_score.toFixed(1) : text(row.strength_score)],
           ]}
         />
@@ -123,7 +127,7 @@ export function ReviewDocumentSections({ document }: { document: ReviewDocument 
       {/* 强势股票池 */}
       <Section title="强势股票池" quality={sections.stocks}>
         <CompactTable
-          rows={stocks.slice(0, 12)}
+          rows={stocks.filter(s => !!text(s.name)).slice(0, 12)}
           columns={[
             ["代码", (row) => text(row.code)],
             ["名称", (row) => text(row.name)],
@@ -145,7 +149,7 @@ export function ReviewDocumentSections({ document }: { document: ReviewDocument 
               fontSize: 12, color: colors.text, border: `1px solid ${colors.border}`,
               borderRadius: 4, padding: "3px 7px", background: "#101a24",
             }}>
-              {nameValue(item.name) || text(item.theme_key)}
+              {nameValue(item.name) || (isNumericKey(item.theme_key) ? "" : text(item.theme_key)) || ""}
             </span>
           ))}
         </div>
@@ -161,16 +165,6 @@ export function ReviewDocumentSections({ document }: { document: ReviewDocument 
           <ActionList label="禁止" items={plan.forbidden_actions} tone="bad" />
           <ActionList label="关注" items={plan.watch_themes} tone="watch" />
         </div>
-      </Section>
-
-      {/* 机构资金审美方向 */}
-      <Section title="机构资金审美方向" quality={sections.capital}>
-        <DirectionList rows={(document.capital || {}).institution_style || []} />
-      </Section>
-
-      {/* 游资情绪方向 */}
-      <Section title="游资情绪方向" quality={{ status: "READY" }}>
-        <DirectionList rows={(document.capital || {}).hot_money_style || []} isHotMoney />
       </Section>
 
       {/* 风险控制 */}
@@ -251,9 +245,11 @@ function ActionList({ label, items, tone }: { label: string; items: any; tone: "
     <div>
       <div style={{ color, fontSize: 12, fontWeight: 700, marginBottom: 6 }}>{label}</div>
       <ul style={{ margin: 0, paddingLeft: 18, color: colors.text, fontSize: 13, lineHeight: 1.7 }}>
-        {list.slice(0, 8).map((item: any, idx: number) => (
-          <li key={idx}>{text(item.theme_name || item.stock_name || item)}</li>
-        ))}
+        {list.slice(0, 8).map((item: any, idx: number) => {
+          const name = text(item.theme_name || item.stock_name || item);
+          if (!name || isNumericKey(name)) return null;
+          return <li key={idx}>{name}</li>;
+        })}
       </ul>
     </div>
   );

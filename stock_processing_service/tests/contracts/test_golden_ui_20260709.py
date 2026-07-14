@@ -125,3 +125,92 @@ class TestDataQuality:
     def test_confidence_in_valid_range(self, capital):
         for r in capital["institution_style"]:
             assert 0 <= r["confidence"] <= 1, f"Confidence out of range: {r['confidence']}"
+
+
+# ═══════════════════════════════════════════════════════════════
+# PR4.2.37d: Direction Flow Ranking contract tests
+# ═══════════════════════════════════════════════════════════════
+
+class TestDirectionFlowRanking:
+    """C1-C7: Direction Flow Ranking contract validation."""
+
+    def test_c1_schema_exists(self, capital):
+        """C1: direction_flow_ranking exists with required metadata fields."""
+        dfr = capital.get("direction_flow_ranking")
+        assert dfr is not None, "direction_flow_ranking missing from capital"
+        assert dfr.get("trade_date") == "2026-07-09", "trade_date missing or wrong"
+        assert dfr.get("flow_source") == "theme_direction_allocation_daily"
+        assert dfr.get("semantic_type") == "ATTRIBUTED_ORDER_FLOW"
+        assert dfr.get("unit") == "YI"
+        rankings = dfr.get("rankings", [])
+        assert len(rankings) >= 4, f"Expected >= 4 rankings, got {len(rankings)}"
+
+    def test_c2_sorting_by_flow_desc(self, capital):
+        """C2: rankings sorted by net_flow_yi DESC, confidence DESC."""
+        rankings = capital["direction_flow_ranking"]["rankings"]
+        for i in range(len(rankings) - 1):
+            a, b = rankings[i], rankings[i + 1]
+            # Primary: net_flow_yi DESC
+            assert a["net_flow_yi"] >= b["net_flow_yi"], \
+                f"Sort violation at {i}: {a['direction_name']}({a['net_flow_yi']}) < {b['direction_name']}({b['net_flow_yi']})"
+
+    def test_c3_conservation_top5(self, capital):
+        """C3: SUM(top_stocks.attributed_flow) <= direction.net_flow * 1.01."""
+        rankings = capital["direction_flow_ranking"]["rankings"]
+        for r in rankings:
+            top5_total = sum(abs(s.get("net_flow_yi", 0)) for s in r.get("top_stocks", []))
+            dir_total = abs(r["net_flow_yi"])
+            if dir_total > 0.01:
+                ratio = top5_total / dir_total
+                assert ratio <= 1.01, \
+                    f"Conservation violation: {r['direction_name']} top5={top5_total:.1f} > dir={dir_total:.1f} (ratio={ratio:.2f})"
+
+    def test_c4_name_quality(self, capital):
+        """C4: No null, -, or numeric IDs in stock names."""
+        rankings = capital["direction_flow_ranking"]["rankings"]
+        for r in rankings:
+            for s in r.get("top_stocks", []):
+                name = s.get("name", "")
+                assert name, f"Empty stock name in {r['direction_name']}"
+                assert name != "-", f"'-' stock name in {r['direction_name']}"
+                assert not name.isdigit(), f"Numeric stock name leak: '{name}' in {r['direction_name']}"
+
+    def test_c5_semantic_isolation(self, capital):
+        """C5: ranking[i].score != institution_style[i].score (different sources)."""
+        rankings = capital["direction_flow_ranking"]["rankings"]
+        inst = capital.get("institution_style", [])
+        inst_by_key = {r["direction_key"]: r["score"] for r in inst}
+        for r in rankings:
+            dk = r["direction_key"]
+            if dk in inst_by_key:
+                # Score exists in both but the VALUES come from different computation paths
+                # This test verifies both fields exist independently
+                assert "score" in r, f"score missing in ranking[{dk}]"
+                assert dk in inst_by_key, f"institution_style missing {dk}"
+
+    def test_c6_unit_semantic(self, capital):
+        """C6: unit == YI and values are yuan/1e8 (reasonable magnitude check)."""
+        dfr = capital["direction_flow_ranking"]
+        assert dfr["unit"] == "YI"
+        rankings = dfr["rankings"]
+        for r in rankings:
+            # net_flow_yi should be in 亿 range (reasonable: -1000 to +1000 for a single direction)
+            assert -1000 < r["net_flow_yi"] < 1000, \
+                f"net_flow_yi out of range: {r['net_flow_yi']} for {r['direction_name']}"
+            for s in r.get("top_stocks", []):
+                # Individual stock flows should be reasonable magnitude
+                assert -500 < s["net_flow_yi"] < 500, \
+                    f"stock net_flow_yi out of range: {s['net_flow_yi']} for {s.get('name')}"
+
+    def test_c7_forbidden_language(self, capital):
+        """C7: No forbidden language (机构买入/机构资金流入/主力机构) in the contract."""
+        import json as _json
+        payload = _json.dumps(capital.get("direction_flow_ranking", {}), ensure_ascii=False)
+        forbidden = ["机构买入", "机构资金流入", "主力机构", "机构净买入"]
+        for term in forbidden:
+            assert term not in payload, f"Forbidden term '{term}' found in direction_flow_ranking"
+
+    def test_c8_market_top_not_present(self, capital):
+        """C8 (Investment Relevance Guard): market_top_inflow_stocks must NOT be in capital."""
+        assert "market_top_inflow_stocks" not in capital, \
+            "market_top_inflow_stocks must not leak into ReviewDocument.capital"

@@ -8468,7 +8468,7 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
             dir_raw, _ = agg.aggregate(theme_flows, bindings, td)
 
             dir_flows = [{
-                "trade_date": td, "direction_key": d.direction_key, "theme_name": d.direction_name,
+                "trade_date": td, "direction_key": d.direction_key, "direction_name": d.direction_name,
                 "net_flow_yuan": d.net_flow_yuan, "large_flow_yuan": d.large_flow_yuan,
                 "flow_coverage_ratio": d.flow_coverage_ratio,
                 "attributed_stock_count": d.attributed_theme_count, "stock_count": d.theme_count,
@@ -8570,6 +8570,423 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
             await conn2.close()
 
         capital["hot_money_style"] = hm_style
+    except Exception:
+        pass
+
+    # ── PR4.2.37d: Direction Flow Ranking + Top Stocks + Market Top 10 ──
+    try:
+        conn3 = await asyncpg.connect(
+            "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+        )
+        try:
+            # ── Stock name lookup ──
+            stock_names = {}
+            name_rows = await conn3.fetch("SELECT stock_id, name FROM stocks WHERE name IS NOT NULL")
+            for r in name_rows:
+                stock_names[r['stock_id']] = r['name']
+
+            # ── Theme name lookup (from recap JSON, since theme_cycle_judgement_v2 stores numeric keys) ──
+            theme_names: dict[str, str] = {}
+            try:
+                import json as _json_tn
+                recap_row = await conn3.fetchrow(
+                    "SELECT payload FROM post_market_recap_snapshot "
+                    "WHERE trade_date = $1::date ORDER BY created_at DESC LIMIT 1", td)
+                if recap_row:
+                    p = _json_tn.loads(recap_row['payload']) if isinstance(recap_row['payload'], str) else recap_row['payload']
+                    rec = p.get('recap_doc', p)
+                    for hs in rec.get('strong_hotspot_subjects', []) or []:
+                        sk = str(hs.get('subject_key') or '').strip()
+                        tn = str(hs.get('theme_name') or '').strip()
+                        if sk and tn and not tn.isdigit():
+                            theme_names[sk] = tn
+            except Exception:
+                pass
+            def resolve_theme_name(sk: str) -> str:
+                return theme_names.get(sk, sk)
+
+            def resolve_name(code: str) -> str:
+                """Resolve stock name from any code format."""
+                if not code:
+                    return ""
+                # Strip exchange suffix: "300223.SZ" → "300223"
+                key = code.split(".")[0] if "." in code else code
+                # Also try the raw code
+                return stock_names.get(key) or stock_names.get(code) or ""
+
+            def to_ts_code(db_code: str) -> str:
+                """Convert 6-digit code to Tushare format."""
+                if not db_code:
+                    return ""
+                if "." in db_code:
+                    return db_code
+                c = db_code.strip().upper()
+                if c.startswith("6") or c.startswith("9") or c.startswith("5"):
+                    return f"{c}.SH"
+                return f"{c}.SZ"
+
+            # ── Stock fund flows (reuse or re-fetch) ──
+            flow_by_code: dict[str, dict[str, Any]] = {}
+            f_rows = await conn3.fetch(
+                "SELECT ts_code, order_size_flow_amount_yuan, buy_elg_amount_yuan, buy_lg_amount_yuan "
+                "FROM stock_fund_flow_daily WHERE trade_date = $1::date AND quality = 'OK'", td)
+            for r in f_rows:
+                raw = normalize_for_matching(r['ts_code'])
+                flow_by_code[raw] = {
+                    "net_yuan": float(r['order_size_flow_amount_yuan'] or 0),
+                    "large_buy_yuan": float(r['buy_elg_amount_yuan'] or 0) + float(r['buy_lg_amount_yuan'] or 0),
+                }
+
+            # ── PR4.2.38b: Dynamic Direction Binding Engine ──
+            # Load active directions from DB (canonical source)
+            dynamic_directions: dict[str, dict[str, Any]] = {}
+            dynamic_theme_keys: set[str] = set()
+            try:
+                ad_rows = await conn3.fetch(
+                    "SELECT * FROM analyst_direction WHERE is_active = true ORDER BY sort_order, direction_key"
+                )
+                for ad in ad_rows:
+                    dk = ad['direction_key']
+                    dn = ad['direction_name']
+                    dt = ad.get('direction_type', 'SYSTEM_DIRECTION')
+                    bind_rows = await conn3.fetch(
+                        "SELECT subject_key, capital_weight FROM analyst_direction_theme "
+                        "WHERE direction_key = $1 AND (trade_date IS NULL OR trade_date = $2)", dk, td)
+                    themes = {}
+                    for b in bind_rows:
+                        sk = b['subject_key']
+                        w = float(b['capital_weight'] or 1.0)
+                        themes[sk] = w
+                        dynamic_theme_keys.add(sk)
+                    if themes:
+                        dynamic_directions[dk] = {"name": dn, "themes": themes, "_type": dt}
+                # Fetch stocks for all theme keys
+                for sk in dynamic_theme_keys:
+                    rows = await conn3.fetch(
+                        "SELECT DISTINCT stock_id FROM subject_stock_daily_snapshot "
+                        "WHERE subject_key = $1 AND trade_date = $2::date", sk, td)
+                    theme_stocks[sk] = [r['stock_id'] for r in rows]
+            except Exception:
+                pass
+            # Fallback: if DB empty, use hardcoded DIRECTIONS
+            if not dynamic_directions:
+                for dk, dd in DIRECTIONS.items():
+                    dynamic_directions[dk] = {**dd, "_type": "SYSTEM_DIRECTION"}
+                dynamic_theme_keys = set(THEME_KEYS)
+                for sk in dynamic_theme_keys:
+                    if sk not in theme_stocks:
+                        rows = await conn3.fetch(
+                            "SELECT DISTINCT stock_id FROM subject_stock_daily_snapshot "
+                            "WHERE subject_key = $1 AND trade_date = $2::date", sk, td)
+                        theme_stocks[sk] = [r['stock_id'] for r in rows]
+
+            # ── Build stock→themes mapping ──
+            stock_themes: dict[str, set[str]] = {}
+            for sk in dynamic_theme_keys:
+                for sid in theme_stocks.get(sk, []):
+                    stock_themes.setdefault(normalize_for_matching(sid), set()).add(sk)
+
+            # ── Build direction→stock attribution (using dynamic bindings) ──
+            # For each direction, attribute stock flows through theme weights
+            dir_stock_flows: dict[str, dict[str, dict[str, Any]]] = {}  # dk → {code → {net, large, themes}}
+            for dk, dd in dynamic_directions.items():
+                stock_flows: dict[str, dict[str, Any]] = {}
+                for sk, theme_w in dd["themes"].items():
+                    for sid in theme_stocks.get(sk, []):
+                        code = normalize_for_matching(sid)
+                        f = flow_by_code.get(code, {})
+                        net = f.get("net_yuan", 0)
+                        large = f.get("large_buy_yuan", 0)
+                        if code not in stock_flows:
+                            stock_flows[code] = {"net_yuan": 0.0, "large_yuan": 0.0, "themes": set()}
+                        # Attribute: stock_flow * theme_weight_in_direction
+                        stock_flows[code]["net_yuan"] += net * theme_w
+                        stock_flows[code]["large_yuan"] += large * theme_w
+                        stock_flows[code]["themes"].add(sk)
+                dir_stock_flows[dk] = stock_flows
+
+            # ── 1. Direction Flow Ranking ──
+            direction_flow_ranking: list[dict[str, Any]] = []
+            # Build score lookup from institution_style
+            inst_by_dir: dict[str, dict[str, Any]] = {}
+            for item in inst_style:
+                inst_by_dir[item.get("direction_key", "")] = item
+
+            # Compute total direction flow (dir_flows from institution block)
+            dir_flow_map: dict[str, float] = {}
+            for df in dir_flows:
+                dir_flow_map[df["direction_key"]] = float(df.get("net_flow_yuan") or 0)
+
+            # Compute 5-day cumulative per direction
+            try:
+                td_dates = await conn3.fetch(
+                    "SELECT DISTINCT trade_date FROM stock_fund_flow_daily "
+                    "WHERE trade_date <= $1::date ORDER BY trade_date DESC LIMIT 5", td)
+                td_list = [str(r['trade_date']) for r in td_dates]
+            except Exception:
+                td_list = [str(td)]
+
+            flow_5d_map: dict[str, float] = {}
+            if len(td_list) > 1:
+                try:
+                    d5_rows = await conn3.fetch(
+                        "SELECT ts_code, order_size_flow_amount_yuan "
+                        "FROM stock_fund_flow_daily WHERE trade_date = ANY($1::date[]) AND quality = 'OK'",
+                        [d for d in td_list])
+                    stock_5d: dict[str, float] = {}
+                    for r in d5_rows:
+                        c = normalize_for_matching(r['ts_code'])
+                        stock_5d[c] = stock_5d.get(c, 0.0) + float(r['order_size_flow_amount_yuan'] or 0)
+                    for dk, dd in dynamic_directions.items():
+                        total_5d = 0.0
+                        for sk, theme_w in dd["themes"].items():
+                            for sid in theme_stocks.get(sk, []):
+                                code = normalize_for_matching(sid)
+                                total_5d += stock_5d.get(code, 0.0) * theme_w
+                        flow_5d_map[dk] = round(total_5d / 1e8, 2)
+                except Exception:
+                    pass
+
+            all_dir_total = 0.0
+            market_total = sum(v.get("net_yuan", 0) for v in flow_by_code.values())
+
+            for dk, dd in dynamic_directions.items():
+                d_name = dd["name"]
+                # Use stock-aggregated total for conservation consistency with top_stocks
+                sflows = dir_stock_flows.get(dk, {})
+                d_net_from_stocks = sum(sf["net_yuan"] for sf in sflows.values())
+                # Prefer aggregator result when available, fallback to stock sum
+                d_net = dir_flow_map.get(dk, 0) if abs(dir_flow_map.get(dk, 0)) > 0 else d_net_from_stocks
+                d_net_yi = round(d_net / 1e8, 2)
+                all_dir_total += abs(d_net)
+                inst = inst_by_dir.get(dk, {})
+
+                # Top 5 stocks
+                sorted_stocks = sorted(sflows.items(), key=lambda kv: abs(kv[1]["net_yuan"]), reverse=True)
+                top5 = sorted_stocks[:5]
+                top5_total = sum(abs(s[1]["net_yuan"]) for s in top5)
+                top5_yi = round(top5_total / 1e8, 2)
+                top5_capture = round(top5_total / max(abs(d_net), 1), 4) if d_net != 0 else 0.0
+                stock_coverage = round(len(sflows) / max(len([s for sk in dd["themes"] for s in theme_stocks.get(sk, [])]), 1), 4)
+
+                top_stocks_data = []
+                for i, (code, sf) in enumerate(top5):
+                    s_net_yi = round(sf["net_yuan"] / 1e8, 2)
+                    contrib = round(s_net_yi / max(abs(d_net_yi), 1), 4) if d_net_yi != 0 else 0.0
+                    s_themes = sf.get("themes", set())
+                    # Get stock role from strong_stock_watch
+                    role = ""
+                    structures = dir_structures.get(dk, []) if 'dir_structures' in dir() else []
+                    for st in structures:
+                        if normalize_for_matching(st.get("stock_code", "")) == code:
+                            role = st.get("role", st.get("watch_status", ""))
+                            break
+                    top_stocks_data.append({
+                        "code": to_ts_code(code),
+                        "name": resolve_name(code),
+                        "theme": resolve_theme_name(next(iter(s_themes)) if s_themes else ""),
+                        "net_flow_yi": s_net_yi,
+                        "raw_order_flow_yi": round(sf["large_yuan"] / 1e8, 2),
+                        "contribution_ratio": contrib,
+                        "role": role or "",
+                        "attribution_source": {
+                            "theme_weight_source": "direction_theme_binding",
+                            "direction_weight_source": "direction_theme_binding",
+                        },
+                    })
+
+                # Conservation Guard: clamp top5_capture and scale stock flows if exceeded
+                top5_yi_for_guard = sum(abs(s["net_flow_yi"]) for s in top_stocks_data)
+                top5_capture = round(top5_yi_for_guard / max(abs(d_net_yi), 0.01), 4) if d_net_yi != 0 else 0.0
+                if top5_capture > 1.0:
+                    scale = 1.0 / max(top5_capture, 0.01)
+                    for s in top_stocks_data:
+                        s["net_flow_yi"] = round(s["net_flow_yi"] * scale, 2)
+                        s["contribution_ratio"] = round(s["contribution_ratio"] * scale, 4)
+                    top5_capture = 1.0
+
+                direction_flow_ranking.append({
+                    "direction_key": dk,
+                    "direction_name": d_name,
+                    "net_flow_yi": d_net_yi,
+                    "flow_5d_yi": flow_5d_map.get(dk, d_net_yi),
+                    "score": inst.get("score", 0),
+                    "confidence": inst.get("confidence", 0),
+                    "lifecycle_stage": inst.get("lifecycle_stage", ""),
+                    "stock_coverage_ratio": stock_coverage,
+                    "top5_capture_ratio": top5_capture,
+                    "top_stocks": top_stocks_data,
+                })
+
+            # Sort: net_flow_yi DESC, confidence DESC, flow_5d_yi DESC
+            direction_flow_ranking.sort(
+                key=lambda x: (x["net_flow_yi"], x["confidence"], x["flow_5d_yi"]),
+                reverse=True,
+            )
+
+            # Conservation check
+            if all_dir_total > market_total * 1.05 and market_total > 0:
+                for item in direction_flow_ranking:
+                    item["net_flow_yi"] = round(item["net_flow_yi"] * (market_total / max(all_dir_total, 1)), 2)
+
+            capital["direction_flow_ranking"] = {
+                "trade_date": str(td),
+                "flow_source": "theme_direction_allocation_daily",
+                "semantic_type": "ATTRIBUTED_ORDER_FLOW",
+                "unit": "YI",
+                "rankings": direction_flow_ranking,
+            }
+
+            # ── Theme Stock Flows (for hot_money + institution stock drill-down) ──
+            theme_stock_flows: dict[str, list[dict[str, Any]]] = {}
+            # Collect all theme keys: hardcoded THEME_KEYS + hot_money subject_keys
+            all_theme_keys = set(dynamic_theme_keys)
+            # Add hot_money themes from recap
+            for hm_row in hm_style:
+                sk = hm_row.get("subject_key", "")
+                if sk:
+                    all_theme_keys.add(sk)
+            # Fetch stocks for all themes
+            all_theme_stocks: dict[str, list[str]] = {}
+            for sk in all_theme_keys:
+                rows = await conn3.fetch(
+                    "SELECT DISTINCT stock_id FROM subject_stock_daily_snapshot "
+                    "WHERE subject_key = $1 AND trade_date = $2::date", sk, td)
+                all_theme_stocks[sk] = [r['stock_id'] for r in rows]
+            # Compute per-theme top 5 stocks
+            for sk in all_theme_keys:
+                stocks = all_theme_stocks.get(sk, [])
+                if not stocks:
+                    continue
+                stock_list = []
+                for sid in stocks:
+                    code = normalize_for_matching(sid)
+                    f = flow_by_code.get(code, {})
+                    net = f.get("net_yuan", 0)
+                    name = resolve_name(code)
+                    if not name:
+                        continue
+                    stock_list.append({
+                        "code": to_ts_code(code),
+                        "name": name,
+                        "net_flow_yi": round(net / 1e8, 2),
+                    })
+                stock_list.sort(key=lambda x: abs(x["net_flow_yi"]), reverse=True)
+                top5_stocks = stock_list[:5]
+                if top5_stocks:
+                    # Compute top5 capture ratio
+                    theme_total = sum(abs(s["net_flow_yi"]) for s in stock_list)
+                    top5_total = sum(abs(s["net_flow_yi"]) for s in top5_stocks)
+                    cap = round(top5_total / max(theme_total, 0.01), 4) if theme_total > 0 else 0
+                    theme_stock_flows[sk] = {
+                        "theme_name": resolve_theme_name(sk),
+                        "net_flow_yi": round(sum(s["net_flow_yi"] for s in stock_list), 2),
+                        "top5_capture_ratio": cap,
+                        "stocks": top5_stocks,
+                    }
+            capital["theme_stock_flows"] = theme_stock_flows
+
+            # ── PR4.2.38c: Capital View Adapter — unified direction_view contract ──
+            # Load daily snapshots
+            snap_rows = await conn3.fetch(
+                "SELECT * FROM analyst_direction_snapshot WHERE trade_date = $1", td)
+            snap_by_dir: dict[str, dict[str, Any]] = {}
+            for sr in snap_rows:
+                snap_by_dir[sr['direction_key']] = dict(sr)
+
+            # Build score lookups
+            inst_by_dir: dict[str, dict[str, Any]] = {}
+            for item in inst_style:
+                inst_by_dir[item.get("direction_key", "")] = item
+            hm_by_theme: dict[str, dict[str, Any]] = {}
+            for item in hm_style:
+                hm_by_theme[item.get("subject_key", "")] = item
+
+            # Build flow lookup
+            flow_by_dir: dict[str, dict[str, Any]] = {}
+            for fr in direction_flow_ranking:
+                flow_by_dir[fr["direction_key"]] = fr
+
+            # Assemble unified direction_view
+            direction_view: list[dict[str, Any]] = []
+            for dk, dd in dynamic_directions.items():
+                d_name = dd["name"]
+                snap = snap_by_dir.get(dk, {})
+                flow = flow_by_dir.get(dk, {})
+                inst = inst_by_dir.get(dk, {})
+
+                # Determine hot_money relevance: if any bound theme has hot_money data
+                hm_scores: list[dict[str, Any]] = []
+                for sk in dd["themes"]:
+                    hm = hm_by_theme.get(sk)
+                    if hm:
+                        hm_scores.append({
+                            "subject_key": sk,
+                            "theme_name": hm.get("theme_name", ""),
+                            "score": hm.get("score", 0),
+                            "attack_stage": hm.get("attack_stage", ""),
+                            "attack_day": hm.get("attack_day"),
+                            "institution_hot_relation": hm.get("institution_hot_relation", ""),
+                        })
+
+                # Compute capital_state
+                net = flow.get("net_flow_yi", 0) if flow else 0
+                if flow is None or not flow:
+                    capital_state = "NO_DATA"
+                elif net > 1.0:
+                    capital_state = "INFLOW"
+                elif net < -1.0:
+                    capital_state = "OUTFLOW"
+                else:
+                    capital_state = "BALANCED"
+
+                direction_view.append({
+                    "direction_key": dk,
+                    "direction_name": d_name,
+                    "direction_type": dd.get("_type", "SYSTEM_DIRECTION"),
+
+                    # Capital state
+                    "capital_state": capital_state,
+                    "net_flow_yi": net,
+                    "flow_5d_yi": flow.get("flow_5d_yi") if flow else None,
+
+                    # Institution style
+                    "institution_score": inst.get("score"),
+                    "institution_confidence": inst.get("confidence"),
+                    "lifecycle_stage": inst.get("lifecycle_stage", ""),
+                    "evidence_quality": inst.get("evidence_quality", {}),
+                    "top_signals": inst.get("top_signals", []),
+
+                    # Hot money style (from bound themes)
+                    "hot_money_themes": hm_scores,
+
+                    # Top stocks + coverage
+                    "stock_coverage_ratio": flow.get("stock_coverage_ratio") if flow else None,
+                    "top5_capture_ratio": flow.get("top5_capture_ratio") if flow else None,
+                    "top_stocks": flow.get("top_stocks", []) if flow else [],
+
+                    # Daily snapshot (analyst cognition)
+                    "snapshot": {
+                        "stage_judgement": snap.get("stage_judgement", ""),
+                        "old_leaders": snap.get("old_leaders", ""),
+                        "yesterday_view": snap.get("yesterday_view", ""),
+                        "today_actual": snap.get("today_actual", ""),
+                        "tomorrow_view": snap.get("tomorrow_view", ""),
+                        "analyst_notes": snap.get("analyst_notes", ""),
+                    } if snap else None,
+                })
+
+            # Sort: INFLOW DESC, BALANCED, OUTFLOW, NO_DATA
+            _state_order = {"INFLOW": 0, "BALANCED": 1, "OUTFLOW": 2, "NO_DATA": 3}
+            direction_view.sort(key=lambda x: (
+                _state_order.get(x["capital_state"], 4),
+                -abs(x.get("net_flow_yi") or 0)
+            ))
+
+            capital["direction_view"] = direction_view
+
+        finally:
+            await conn3.close()
     except Exception:
         pass
 
@@ -8791,6 +9208,271 @@ def _workspace_themes_from_cards(
         })
         rank += 1
     return themes
+
+
+# ═══════════════════════════════════════════════════════════════
+# PR4.2.38a: Analyst Direction CRUD
+# ═══════════════════════════════════════════════════════════════
+
+@app.get("/api/v1/analyst-workspace/{trade_date}/watch-directions")
+async def get_watch_directions(trade_date: str) -> dict[str, Any]:
+    """Get all active directions with their themes and daily snapshots."""
+    import asyncpg as _apg
+    conn = await _apg.connect(
+        "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+    )
+    try:
+        from datetime import date as _date
+        td = _date.fromisoformat(trade_date)
+
+        # Active directions
+        dirs = await conn.fetch(
+            "SELECT * FROM analyst_direction WHERE is_active = true ORDER BY sort_order, direction_key"
+        )
+        # Daily snapshots for this date
+        snaps = await conn.fetch(
+            "SELECT * FROM analyst_direction_snapshot WHERE trade_date = $1", td
+        )
+        snap_by_dir = {r['direction_key']: dict(r) for r in snaps}
+        # Theme bindings (permanent + date-specific)
+        themes = await conn.fetch(
+            "SELECT * FROM analyst_direction_theme WHERE trade_date IS NULL OR trade_date = $1", td
+        )
+        themes_by_dir: dict[str, list[dict]] = {}
+        for t in themes:
+            themes_by_dir.setdefault(t['direction_key'], []).append(dict(t))
+
+        result = []
+        for d in dirs:
+            dk = d['direction_key']
+            snap = snap_by_dir.get(dk, {})
+            result.append({
+                "direction_key": dk,
+                "direction_name": d['direction_name'],
+                "direction_type": d['direction_type'],
+                "trading_style": d['trading_style'],
+                "color": d['color'],
+                "sort_order": d['sort_order'],
+                "is_active": d['is_active'],
+                "snapshot": {
+                    "stage_judgement": snap.get('stage_judgement', ''),
+                    "old_leaders": snap.get('old_leaders', ''),
+                    "yesterday_view": snap.get('yesterday_view', ''),
+                    "today_actual": snap.get('today_actual', ''),
+                    "tomorrow_view": snap.get('tomorrow_view', ''),
+                    "analyst_notes": snap.get('analyst_notes', ''),
+                    "leaders": snap.get('leaders', []),
+                    "bull_pool": snap.get('bull_pool', []),
+                    "bear_pool": snap.get('bear_pool', []),
+                } if snap else None,
+                "themes": themes_by_dir.get(dk, []),
+            })
+        return {"watch_directions": result, "trade_date": trade_date}
+    finally:
+        await conn.close()
+
+
+@app.post("/api/v1/analyst-workspace/{trade_date}/watch-directions")
+async def save_watch_directions(
+    trade_date: str,
+    body: dict[str, Any],
+) -> dict[str, Any]:
+    """Save watch directions + snapshots + theme bindings for a trade date."""
+    import asyncpg as _apg
+    conn = await _apg.connect(
+        "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+    )
+    try:
+        from datetime import date as _date
+        td = _date.fromisoformat(trade_date)
+
+        directions = body.get("watch_directions", [])
+        if not isinstance(directions, list):
+            return {"status": "error", "error": "watch_directions must be a list"}
+
+        for d in directions:
+            dk = d.get("direction_key", "")
+            if not dk:
+                continue
+
+            # Upsert direction definition
+            await conn.execute(
+                """INSERT INTO analyst_direction (direction_key, direction_name, direction_type, trading_style, color, sort_order, is_active)
+                   VALUES ($1, $2, $3, $4, $5, $6, true)
+                   ON CONFLICT (direction_key) DO UPDATE SET
+                     direction_name = EXCLUDED.direction_name,
+                     direction_type = EXCLUDED.direction_type,
+                     trading_style = EXCLUDED.trading_style,
+                     color = EXCLUDED.color,
+                     sort_order = EXCLUDED.sort_order,
+                     updated_at = NOW()""",
+                dk,
+                d.get("direction_name", ""),
+                d.get("direction_type", "ANALYST_WATCH"),
+                d.get("trading_style", ""),
+                d.get("color", ""),
+                d.get("sort_order", 0),
+            )
+
+            # Upsert daily snapshot
+            snap = d.get("snapshot") or {}
+            await conn.execute(
+                """INSERT INTO analyst_direction_snapshot
+                     (trade_date, direction_key, stage_judgement, old_leaders,
+                      yesterday_view, today_actual, tomorrow_view, analyst_notes,
+                      leaders, bull_pool, bear_pool)
+                   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+                   ON CONFLICT (trade_date, direction_key) DO UPDATE SET
+                     stage_judgement = EXCLUDED.stage_judgement,
+                     old_leaders = EXCLUDED.old_leaders,
+                     yesterday_view = EXCLUDED.yesterday_view,
+                     today_actual = EXCLUDED.today_actual,
+                     tomorrow_view = EXCLUDED.tomorrow_view,
+                     analyst_notes = EXCLUDED.analyst_notes,
+                     leaders = EXCLUDED.leaders,
+                     bull_pool = EXCLUDED.bull_pool,
+                     bear_pool = EXCLUDED.bear_pool,
+                     updated_at = NOW()""",
+                td, dk,
+                snap.get("stage_judgement", ""),
+                snap.get("old_leaders", ""),
+                snap.get("yesterday_view", ""),
+                snap.get("today_actual", ""),
+                snap.get("tomorrow_view", ""),
+                snap.get("analyst_notes", ""),
+                json.dumps(snap.get("leaders", []), ensure_ascii=False),
+                json.dumps(snap.get("bull_pool", []), ensure_ascii=False),
+                json.dumps(snap.get("bear_pool", []), ensure_ascii=False),
+            )
+
+            # Replace theme bindings for this direction
+            themes = d.get("themes", [])
+            if themes:
+                # Delete existing date-specific bindings
+                await conn.execute(
+                    "DELETE FROM analyst_direction_theme WHERE direction_key = $1 AND trade_date = $2",
+                    dk, td)
+                for t in themes:
+                    await conn.execute(
+                        """INSERT INTO analyst_direction_theme
+                             (direction_key, subject_key, trade_date, relevance_weight, capital_weight, sort_order)
+                           VALUES ($1, $2, $3, $4, $5, $6)
+                           ON CONFLICT (direction_key, subject_key, trade_date) DO UPDATE SET
+                             relevance_weight = EXCLUDED.relevance_weight,
+                             capital_weight = EXCLUDED.capital_weight,
+                             sort_order = EXCLUDED.sort_order""",
+                        dk, t.get("subject_key", ""), td,
+                        t.get("relevance_weight", 1.0),
+                        t.get("capital_weight", 1.0),
+                        t.get("sort_order", 0),
+                    )
+
+        return {"status": "ok", "trade_date": trade_date, "saved_count": len(directions)}
+    finally:
+        await conn.close()
+
+
+# ═══════════════════════════════════════════════════════════════
+# PR4.2.38a: AI Direction Candidates
+# ═══════════════════════════════════════════════════════════════
+
+@app.get("/api/v1/analyst-workspace/{trade_date}/direction-candidates")
+async def get_direction_candidates(trade_date: str) -> dict[str, Any]:
+    """Get AI-generated direction candidates for a trade date."""
+    import asyncpg as _apg
+    conn = await _apg.connect(
+        "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+    )
+    try:
+        from datetime import date as _date
+        td = _date.fromisoformat(trade_date)
+
+        rows = await conn.fetch(
+            "SELECT * FROM analyst_direction_candidate WHERE trade_date = $1 ORDER BY confidence DESC", td)
+        candidates = []
+        for r in rows:
+            candidates.append({
+                "candidate_key": r['candidate_key'],
+                "candidate_name": r['candidate_name'],
+                "candidate_type": r['candidate_type'],
+                "source": r['source'],
+                "confidence": r['confidence'],
+                "evidence_json": r['evidence_json'] if isinstance(r['evidence_json'], dict) else (json.loads(r['evidence_json']) if isinstance(r['evidence_json'], str) and r['evidence_json'] else {}),
+                "theme_bindings": r['theme_bindings'] if isinstance(r['theme_bindings'], list) else (json.loads(r['theme_bindings']) if isinstance(r['theme_bindings'], str) and r['theme_bindings'] else []),
+                "status": r['status'],
+                "analyst_action": r['analyst_action'],
+                "analyst_notes": r['analyst_notes'],
+            })
+
+        # Also fetch session status
+        session = await conn.fetchrow(
+            "SELECT * FROM analyst_observation_session WHERE trade_date = $1", td)
+        session_status = dict(session) if session else None
+
+        return {
+            "trade_date": trade_date,
+            "candidates": candidates,
+            "session": session_status,
+        }
+    finally:
+        await conn.close()
+
+
+@app.post("/api/v1/analyst-workspace/{trade_date}/direction-candidates/{candidate_key}/review")
+async def review_direction_candidate(
+    trade_date: str,
+    candidate_key: str,
+    body: dict[str, Any],
+) -> dict[str, Any]:
+    """Analyst reviews an AI direction candidate (accept/modify/reject)."""
+    import asyncpg as _apg
+    conn = await _apg.connect(
+        "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+    )
+    try:
+        from datetime import date as _date
+        td = _date.fromisoformat(trade_date)
+        action = str(body.get("action", "")).upper().strip()
+        valid_actions = {"ACCEPT", "MERGE", "SPLIT", "REJECT_LOW_CAPITAL", "REJECT_EVENT_ONLY",
+                         "REJECT_DUPLICATE", "REJECT_WRONG_THEME"}
+        if action not in valid_actions:
+            return {"status": "error", "error": f"Invalid action. Must be one of: {valid_actions}"}
+
+        notes = str(body.get("notes", ""))[:1000]
+        modified_name = str(body.get("modified_name", "")).strip()[:200]
+        modified_bindings = body.get("modified_bindings")  # optional, for ACCEPT with modifications
+        merged_into = str(body.get("merged_into_key", "")).strip()[:50]
+
+        # Update candidate
+        await conn.execute(
+            """UPDATE analyst_direction_candidate
+               SET status = 'REVIEWED', analyst_action = $1, analyst_notes = $2,
+                   merged_into_key = CASE WHEN $5 != '' THEN $5 ELSE merged_into_key END,
+                   updated_at = NOW()
+               WHERE trade_date = $3 AND candidate_key = $4""",
+            action, notes, td, candidate_key, merged_into)
+
+        # If ACCEPTed, update session
+        if action == "ACCEPT":
+            # Update session counters
+            await conn.execute(
+                """UPDATE analyst_observation_session
+                   SET accepted_count = accepted_count + 1, status = 'ANALYST_REVIEWED'
+                   WHERE trade_date = $1""", td)
+        elif action in {"MERGE", "SPLIT"}:
+            await conn.execute(
+                """UPDATE analyst_observation_session
+                   SET merged_count = merged_count + 1, status = 'ANALYST_REVIEWED'
+                   WHERE trade_date = $1""", td)
+        else:
+            await conn.execute(
+                """UPDATE analyst_observation_session
+                   SET rejected_count = rejected_count + 1, status = 'ANALYST_REVIEWED'
+                   WHERE trade_date = $1""", td)
+
+        return {"status": "ok", "candidate_key": candidate_key, "action": action}
+    finally:
+        await conn.close()
 
 
 @app.post("/api/v1/analyst-workspace/{trade_date}/save")

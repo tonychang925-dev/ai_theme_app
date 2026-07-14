@@ -119,6 +119,8 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
         ProcessIsolatedRunner,
         ScriptCommandRunner,
         F10CapitalCollectRunner,
+        ObservationDirectionDraftRunner,
+        TushareMoneyflowCollectRunner,
         StockSnapshotBuildRunner,
         SubjectRankBuildRunner,
         TushareKlineRunner,
@@ -152,7 +154,8 @@ def _register_default_runners(registry: CollectionTaskRegistry) -> None:
     registry.register("abnormal.signal", BuildStockAbnormalSignalRunner())
     registry.register("dragon_tiger.object", BuildDragonTigerObjectRunner())
     registry.register("hot_money_activity.build", BuildHotMoneyTradingActivityRunner())
-    registry.register("f10.capital.collect", F10CapitalCollectRunner())
+    registry.register("f10.capital.collect", TushareMoneyflowCollectRunner())
+    registry.register("recap.direction_draft", ObservationDirectionDraftRunner())
     registry.register("index_kline.collect", IndexKlineCollectRunner())
     registry.register("tushare.daily_basic", TushareDailyBasicRunner())
     registry.register("tushare.daily_bar", TushareKlineRunner())

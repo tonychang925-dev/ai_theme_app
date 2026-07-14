@@ -79,6 +79,14 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
   const [systemCharts, setSystemCharts] = useState<any[]>([]);
   const [multiTrend, setMultiTrend] = useState<any>(null);
 
+  // Auto-expand evidence section when data is available
+  const hasCapitalData = (reviewDocument?.capital?.institution_style || []).length > 0 || (reviewDocument?.capital?.hot_money_style || []).length > 0;
+  useEffect(() => {
+    if (hasCapitalData || systemCharts.length > 0) {
+      setShowEvidence(true);
+    }
+  }, [hasCapitalData, systemCharts.length]);
+
   // Derive trend timeline from reviewDocument.evidence.trend_series.momentum
   const trendSeries = reviewDocument?.evidence?.trend_series;
   const trend: { date: string; node: string; score: number }[] = (trendSeries?.momentum || []).map((m: any) => ({
@@ -199,7 +207,7 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
           )}
           {(raw.turnover_wan_yi !== undefined || raw.turnover_yi !== undefined) && (
             <div style={{ textAlign: "center" }}>
-              <div style={{ fontSize: 16, fontWeight: 700, color: "#d69e2e" }}>{raw.turnover_wan_yi || raw.turnover_yi}万亿</div>
+              <div style={{ fontSize: 16, fontWeight: 700, color: "#d69e2e" }}>{raw.turnover_wan_yi != null ? `${raw.turnover_wan_yi}万亿` : `${raw.turnover_yi}亿`}</div>
               <div style={{ fontSize: 10, color: "#5a7a8a" }}>成交额</div>
             </div>
           )}
@@ -356,7 +364,7 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
         {showEvidence && (
           <div style={{ marginTop: 8 }}>
             {/* ── Unified Cards: 2-column grid, trend(top) + detail(bottom) ── */}
-            {systemCharts.length > 0 && (
+            {(systemCharts.length > 0 || (reviewDocument?.capital?.institution_style || []).length > 0 || (reviewDocument?.capital?.hot_money_style || []).length > 0) && (
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 12 }}>
                 {(() => {
                   const c = (t: string) => systemCharts.find((x: any) => x.chart_type === t);
@@ -373,8 +381,7 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
                     <UnifiedCard key="capital" title="资金驱动" borderColor="#66d9ef">
                       {m?.capital && <TrendLineChart title="活跃资金趋势 (6/25~7/8)" data={m.capital} yKey="amount" yLabel="亿" color="#66d9ef" />}
                       {c("active_capital") && <ChartRenderer chart={c("active_capital")} />}
-                      <CapitalDirectionCard title="机构资金审美方向" rows={reviewDocument?.capital?.institution_style || []} kind="institution" />
-                      <CapitalDirectionCard title="游资情绪方向" rows={reviewDocument?.capital?.hot_money_style || []} kind="hot_money" />
+                      <DirectionViewCard directionView={reviewDocument?.capital?.direction_view || []} fallbackInstStyle={reviewDocument?.capital?.institution_style || []} fallbackHmStyle={reviewDocument?.capital?.hot_money_style || []} />
                     </UnifiedCard>,
                     <UnifiedCard key="relay" title="核心板块节律" borderColor="#805ad5">
                       {m?.relay && <TrendLineChart title="最高板趋势 (6/25~7/8)" data={m.relay} yKey="max_height" yLabel="板" color="#d69e2e" />}
@@ -424,33 +431,159 @@ function UnifiedCard({ title, borderColor, children }: { title: string; borderCo
   );
 }
 
-// ── PR4.2.37b: Capital Direction Card (reads canonical capital.*_style contract) ──
-function CapitalDirectionCard({ title, rows, kind }: { title: string; rows: any[]; kind: "institution" | "hot_money" }) {
-  if (!rows || rows.length === 0) return null;
-  const display = rows.slice(0, 5);
-  const isInst = kind === "institution";
+// ── PR4.2.38d: Unified Direction View Card (reads canonical capital.direction_view) ──
+function DirectionViewCard({ directionView, fallbackInstStyle, fallbackHmStyle }: {
+  directionView: any[];
+  fallbackInstStyle: any[];
+  fallbackHmStyle: any[];
+}) {
+  const [expanded, setExpanded] = React.useState<Record<string, boolean>>({});
+  const toggleExpand = (key: string) => { setExpanded(prev => ({ ...prev, [key]: !prev[key] })); };
+
+  // Split direction_view into institution and hot_money sections
+  const instDirs = directionView.filter((d: any) => d.institution_score != null);
+  // Collect unique hot_money themes across all directions
+  const seenHm = new Set<string>();
+  const hmThemes: any[] = [];
+  for (const d of directionView) {
+    for (const hm of (d.hot_money_themes || [])) {
+      if (!seenHm.has(hm.subject_key)) {
+        seenHm.add(hm.subject_key);
+        hmThemes.push({ ...hm, _parent_direction: d.direction_name, _parent_flow: d.net_flow_yi, _parent_stocks: d.top_stocks, _parent_capture: d.top5_capture_ratio });
+      }
+    }
+  }
+  // Fallback: include hm_style themes not bound to any direction
+  for (const hm of fallbackHmStyle) {
+    const sk = hm.subject_key || "";
+    if (!seenHm.has(sk)) {
+      seenHm.add(sk);
+      hmThemes.push({ ...hm, _parent_direction: null, _parent_flow: null, _parent_stocks: null, _parent_capture: null });
+    }
+  }
+  // For institution, fallback to inst_style rows not in direction_view
+  const seenInst = new Set(instDirs.map((d: any) => d.direction_key));
+  const fallbackInst = fallbackInstStyle.filter((r: any) => !seenInst.has(r.direction_key || ""));
+
+  if (instDirs.length === 0 && hmThemes.length === 0 && fallbackInst.length === 0) return null;
+
+  const renderRow = (row: any, key: string, opts: {
+    name: string; score: number; conf: number | null; stage: string;
+    attackDay?: number | null; relation?: string | null;
+    flowYi: number | null; topStocks: any[]; captureRatio: number | null;
+  }) => {
+    const { name, score, conf, stage, attackDay, relation, flowYi, topStocks, captureRatio } = opts;
+    const stageText = _cs(stage);
+    const stars = score >= 80 ? "★★★★★" : score >= 65 ? "★★★★☆" : score >= 50 ? "★★★☆☆" : score >= 35 ? "★★☆☆☆" : "★☆☆☆☆";
+    const isExpanded = expanded[key] || false;
+    const hasFlow = flowYi != null;
+    const hasStocks = topStocks.length > 0;
+
+    return (
+      <div key={key}>
+        <div onClick={() => toggleExpand(key)}
+          style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) auto", gap: 6,
+            padding: "5px 0", borderTop: "1px solid #243040", fontSize: 12, alignItems: "center", cursor: "pointer" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, minWidth: 0 }}>
+            <span style={{ color: "#5a7a8a", fontSize: 10, flexShrink: 0 }}>{isExpanded ? "▼" : "▶"}</span>
+            <span style={{ color: "#d8e6ef", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{name}</span>
+            {relation && relation !== "HOT_MONEY_ONLY" && (
+              <span style={{ fontSize: 9, color: "#6f8898", border: "1px solid #243040", borderRadius: 3, padding: "0 4px", flexShrink: 0 }}>
+                {relation === "BOTH" ? "机构共振" : relation === "DIVERGENCE" ? "背离" : ""}
+              </span>
+            )}
+          </div>
+          <span style={{ color: "#6f8898", fontSize: 11, textAlign: "right", whiteSpace: "nowrap" }}>
+            {hasFlow
+              ? <span style={{ color: flowYi >= 0 ? "#38a169" : "#e53e3e", fontWeight: 600, marginRight: 6 }}>{flowYi >= 0 ? "+" : ""}{flowYi.toFixed(1)}亿</span>
+              : <span style={{ color: "#5a7a8a", marginRight: 6 }}>暂无资金</span>
+            }
+            {score > 0 && <>{stars} {score.toFixed(0)}分</>}
+            {conf != null && ` · ${conf}%`}
+            {stageText && ` · ${stageText}`}
+            {attackDay != null && ` · 第${attackDay}天`}
+          </span>
+        </div>
+        {isExpanded && (
+          <div style={{ marginLeft: 18, marginBottom: 6, padding: "6px 8px", background: "#0c1118", borderRadius: 4, border: "1px solid #1a2a3a" }}>
+            {hasStocks ? (
+              <>
+                {captureRatio != null && (
+                  <div style={{ fontSize: 10, color: "#6f8898", marginBottom: 4 }}>
+                    核心股票 · Top{topStocks.length}贡献 {(captureRatio * 100).toFixed(0)}% 资金
+                  </div>
+                )}
+                {topStocks.slice(0, 5).map((s: any, si: number) => (
+                  <div key={si} style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) 72px 65px", gap: 6,
+                    padding: "2px 0", fontSize: 11, alignItems: "center", borderTop: si > 0 ? "1px solid #0f1722" : "none" }}>
+                    <span style={{ color: "#d8e6ef", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{s.name}</span>
+                    <span style={{ color: "#5a7a8a", fontSize: 10 }}>{s.code}</span>
+                    <span style={{ color: (s.net_flow_yi || 0) >= 0 ? "#38a169" : "#e53e3e", fontWeight: 600, textAlign: "right" }}>
+                      {(s.net_flow_yi || 0) >= 0 ? "+" : ""}{s.net_flow_yi?.toFixed(1)}亿
+                    </span>
+                  </div>
+                ))}
+                <div style={{ fontSize: 9, color: "#3a5a6a", marginTop: 4 }}>
+                  来源: stock_fund_flow_daily.order_size_flow_amount · 订单规模净流入
+                </div>
+              </>
+            ) : (
+              <div style={{ fontSize: 11, color: "#5a7a8a", lineHeight: 1.6 }}>
+                {hasFlow ? "暂无核心股票归因数据" : "暂无资金归因数据 — 该主题未接入方向绑定链路"}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div style={{ marginTop: 8 }}>
-      <div style={{ fontWeight: 700, color: "#ffd85e", fontSize: 13, marginBottom: 6 }}>{title}</div>
-      {display.map((row: any, i: number) => {
-        const name = row.direction_name || row.theme_name || "";
-        const score = row.score ?? 0;
-        const conf = row.confidence != null ? Math.round(row.confidence * 100) : null;
-        const stage = row.lifecycle_stage || row.attack_stage || "";
-        const stageText = _cs(stage);
-        const stars = score >= 80 ? "★★★★★" : score >= 65 ? "★★★★☆" : score >= 50 ? "★★★☆☆" : score >= 35 ? "★★☆☆☆" : "★☆☆☆☆";
-        return (
-          <div key={i} style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) auto auto", gap: 6, padding: "6px 0", borderTop: "1px solid #243040", fontSize: 12, alignItems: "center" }}>
-            <span style={{ color: "#d8e6ef", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis" }}>{name}</span>
-            <span style={{ color: "#6f8898", fontSize: 11 }}>
-              {stars} {score.toFixed(0)}{conf != null ? ` ${conf}%` : ""}{stageText ? ` ${stageText}` : ""}
-            </span>
-            <span style={{ color: "#66d9ef", fontWeight: 700, textAlign: "right", minWidth: 28 }}>{score.toFixed(0)}</span>
-          </div>
-        );
-      })}
+      {/* Institution Section */}
+      {(instDirs.length > 0 || fallbackInst.length > 0) && (
+        <>
+          <div style={{ fontWeight: 700, color: "#ffd85e", fontSize: 13, marginBottom: 6 }}>机构资金审美方向</div>
+          {instDirs.map((d: any) => renderRow(d, d.direction_key, {
+            name: d.direction_name,
+            score: d.institution_score ?? 0,
+            conf: d.institution_confidence != null ? Math.round(d.institution_confidence * 100) : null,
+            stage: d.lifecycle_stage || "",
+            flowYi: d.net_flow_yi,
+            topStocks: d.top_stocks || [],
+            captureRatio: d.top5_capture_ratio,
+          }))}
+          {fallbackInst.map((r: any) => renderRow(r, r.direction_key || r.direction_name, {
+            name: r.direction_name || "",
+            score: r.score ?? 0,
+            conf: r.confidence != null ? Math.round(r.confidence * 100) : null,
+            stage: r.lifecycle_stage || "",
+            flowYi: null,
+            topStocks: [],
+            captureRatio: null,
+          }))}
+        </>
+      )}
+
+      {/* Hot Money Section */}
+      {hmThemes.length > 0 && (
+        <>
+          <div style={{ fontWeight: 700, color: "#ffd85e", fontSize: 13, marginBottom: 6, marginTop: 8 }}>游资情绪方向</div>
+          {hmThemes.map((hm: any) => renderRow(hm, hm.subject_key || hm.theme_name, {
+            name: hm.theme_name || "",
+            score: hm.score ?? 0,
+            conf: hm.confidence != null ? Math.round(hm.confidence * 100) : null,
+            stage: hm.attack_stage || "",
+            attackDay: hm.attack_day,
+            relation: hm.institution_hot_relation,
+            flowYi: hm._parent_stocks ? (hm._parent_flow) : null,
+            topStocks: hm._parent_stocks || [],
+            captureRatio: hm._parent_capture,
+          }))}
+        </>
+      )}
     </div>
   );
 }
-const _CS: Record<string,string> = {"fermentation":"发酵","FERMENTATION":"发酵","divergence":"分歧","DIVERGENCE":"分歧","start":"启动","START":"启动","incubation":"孵化","INCUBATION":"孵化","FIRST_WAVE":"首波","CONTINUING":"持续","CLIMAX":"高潮","RETREATING":"退却","decay":"衰退","DECAY":"衰退"};
-function _cs(s: string): string { return _CS[s] || s || ""; }
+const _CS: Record<string,string> = {"fermentation":"发酵","divergence":"分歧","start":"启动","incubation":"孵化","first_wave":"首波","continuing":"持续","climax":"高潮","retreating":"退却","decay":"衰退","peak":"高潮","distribution":"退潮","diffusion":"扩散","fade_watch":"退潮观察","fade_confirmed":"确认退潮"};
+function _cs(s: string): string { return _CS[(s || "").toLowerCase()] || s || ""; }

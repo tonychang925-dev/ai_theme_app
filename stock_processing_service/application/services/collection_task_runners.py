@@ -923,6 +923,340 @@ class TushareDailyBasicRunner:
             return CollectionTaskResult(status="failed", current_label="daily_basic采集异常", error_message=str(e))
 
 
+class TushareMoneyflowCollectRunner:
+    """PR4.2.37e — Tushare Moneyflow Evidence Collector.
+
+    Replaces F10CapitalCollectRunner. Fetches order-size fund-flow facts
+    from Tushare moneyflow API for all CN_A stocks and persists to
+    stock_fund_flow_daily. Uses the existing collection framework.
+    """
+
+    BATCH_SIZE = 50  # Tushare API supports comma-separated ts_codes
+
+    @staticmethod
+    def _get_tushare_pro():
+        token = os.getenv("TUSHARE_TOKEN", "")
+        if not token:
+            raise RuntimeError("TUSHARE_TOKEN not set in environment")
+        import tushare as ts
+        ts.set_token(token)
+        return ts.pro_api()
+
+    @staticmethod
+    async def _fetch_all_stock_codes(trade_date: date) -> list[str]:
+        """Get all CN_A stock codes for the given trade date from stocks table."""
+        import asyncpg
+        conn = await asyncpg.connect(
+            "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+        )
+        try:
+            rows = await conn.fetch(
+                "SELECT DISTINCT stock_id FROM stocks WHERE stock_id ~ '^[0-9]{6}$'"
+            )
+            codes = []
+            for r in rows:
+                sid = r['stock_id']
+                if sid.startswith("6") or sid.startswith("9") or sid.startswith("5"):
+                    codes.append(f"{sid}.SH")
+                else:
+                    codes.append(f"{sid}.SZ")
+            return codes
+        finally:
+            await conn.close()
+
+    @staticmethod
+    def _call_moneyflow_batch(pro: Any, ts_codes: list[str], trade_date_str: str) -> list[dict[str, Any]]:
+        """Call Tushare moneyflow with comma-separated codes."""
+        code_str = ",".join(ts_codes)
+        raw = pro.moneyflow(ts_code=code_str, trade_date=trade_date_str)
+        if raw is None:
+            return []
+        if isinstance(raw, list):
+            return [row for row in raw if isinstance(row, dict)]
+        if hasattr(raw, "to_dict"):
+            try:
+                records = raw.to_dict(orient="records")
+                return [row for row in records if isinstance(row, dict)]
+            except Exception:
+                return []
+        return []
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        from stock_processing_service.application.services.capital_evidence.tushare_moneyflow import (
+            TushareMoneyflowNormalizer,
+        )
+        import asyncpg
+
+        logs: list[str] = []
+        trade_date_str = context.trade_date
+        td = date.fromisoformat(trade_date_str)
+
+        try:
+            # Get stock codes
+            stock_ids = context.payload.get("stock_ids") or []
+            if isinstance(stock_ids, str):
+                stock_ids = [s.strip() for s in stock_ids.split(",") if s.strip()]
+            if not stock_ids:
+                logs.append("从 stocks 表获取全市场股票代码...")
+                try:
+                    stock_ids = await self._fetch_all_stock_codes(td)
+                except Exception as e:
+                    logs.append(f"获取股票代码失败: {e}")
+                    stock_ids = []
+            if not stock_ids:
+                return CollectionTaskResult(status="failed", current_label="无股票代码", logs=logs,
+                                            error_message="无法获取股票代码列表")
+
+            total = len(stock_ids)
+            logs.append(f"共 {total} 只股票待采集")
+
+            # Call Tushare API
+            pro = self._get_tushare_pro()
+            normalizer = TushareMoneyflowNormalizer()
+            collected_at = datetime.now(timezone.utc).isoformat()
+            all_evidence: list[Any] = []
+
+            batches = [stock_ids[i:i + self.BATCH_SIZE] for i in range(0, total, self.BATCH_SIZE)]
+            success_batches = 0
+            fail_batches = 0
+
+            for bi, batch in enumerate(batches):
+                try:
+                    raw_rows = self._call_moneyflow_batch(pro, batch, trade_date_str)
+                    if raw_rows:
+                        evidence_list = normalizer.normalize_rows(raw_rows, collected_at=collected_at)
+                        all_evidence.extend(evidence_list)
+                        success_batches += 1
+                    else:
+                        fail_batches += 1
+                except Exception:
+                    fail_batches += 1
+
+                # Progress reporting
+                pct = int((bi + 1) / len(batches) * 90)
+                if context.progress_callback and bi % 5 == 0:
+                    try:
+                        context.progress_callback({
+                            "current_label": f"采集 {trade_date_str}: {bi+1}/{len(batches)}批 ({success_batches}成/{fail_batches}败)",
+                            "progress_percent": pct,
+                            "logs": [],
+                        })
+                    except Exception:
+                        pass
+                # Small delay to avoid API rate limiting
+                if bi > 0 and bi % 20 == 0:
+                    await asyncio.sleep(0.5)
+
+            logs.append(f"API采集完成: {success_batches}批成功, {fail_batches}批失败, 共{len(all_evidence)}条记录")
+
+            # Persist to stock_fund_flow_daily
+            if all_evidence:
+                conn = await asyncpg.connect(
+                    "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+                )
+                try:
+                    inserted = 0
+                    for ev in all_evidence:
+                        try:
+                            await conn.execute(
+                                """INSERT INTO stock_fund_flow_daily
+                                   (trade_date, ts_code, buy_elg_amount_yuan, sell_elg_amount_yuan,
+                                    buy_elg_vol_shou, sell_elg_vol_shou,
+                                    buy_lg_amount_yuan, sell_lg_amount_yuan,
+                                    buy_lg_vol_shou, sell_lg_vol_shou,
+                                    buy_md_amount_yuan, sell_md_amount_yuan,
+                                    buy_md_vol_shou, sell_md_vol_shou,
+                                    buy_sm_amount_yuan, sell_sm_amount_yuan,
+                                    buy_sm_vol_shou, sell_sm_vol_shou,
+                                    order_size_flow_amount_yuan, net_mf_vol_shou,
+                                    available_at, source_name, source_endpoint, source_version,
+                                    collected_at, semantic_type, quality, not_owner_identity)
+                                 VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,$21,$22,$23,$24,$25,$26,$27,$28)
+                                 ON CONFLICT (trade_date, ts_code, source_name, source_endpoint, source_version)
+                                 DO UPDATE SET
+                                   buy_elg_amount_yuan = EXCLUDED.buy_elg_amount_yuan,
+                                   sell_elg_amount_yuan = EXCLUDED.sell_elg_amount_yuan,
+                                   buy_lg_amount_yuan = EXCLUDED.buy_lg_amount_yuan,
+                                   sell_lg_amount_yuan = EXCLUDED.sell_lg_amount_yuan,
+                                   buy_md_amount_yuan = EXCLUDED.buy_md_amount_yuan,
+                                   sell_md_amount_yuan = EXCLUDED.sell_md_amount_yuan,
+                                   buy_sm_amount_yuan = EXCLUDED.buy_sm_amount_yuan,
+                                   sell_sm_amount_yuan = EXCLUDED.sell_sm_amount_yuan,
+                                   order_size_flow_amount_yuan = EXCLUDED.order_size_flow_amount_yuan,
+                                   available_at = EXCLUDED.available_at,
+                                   collected_at = EXCLUDED.collected_at,
+                                   quality = EXCLUDED.quality""",
+                                ev.trade_date, ev.ts_code,
+                                ev.buy_elg_amount_yuan, ev.sell_elg_amount_yuan,
+                                ev.buy_elg_vol_shou, ev.sell_elg_vol_shou,
+                                ev.buy_lg_amount_yuan, ev.sell_lg_amount_yuan,
+                                ev.buy_lg_vol_shou, ev.sell_lg_vol_shou,
+                                ev.buy_md_amount_yuan, ev.sell_md_amount_yuan,
+                                ev.buy_md_vol_shou, ev.sell_md_vol_shou,
+                                ev.buy_sm_amount_yuan, ev.sell_sm_amount_yuan,
+                                ev.buy_sm_vol_shou, ev.sell_sm_vol_shou,
+                                ev.order_size_flow_amount_yuan, ev.net_mf_vol_shou,
+                                ev.available_at, ev.source_name, ev.source_endpoint, ev.source_version,
+                                ev.collected_at, ev.semantic_type, ev.quality, ev.not_owner_identity,
+                            )
+                            inserted += 1
+                        except Exception:
+                            pass
+                    logs.append(f"持久化完成: {inserted}/{len(all_evidence)} 条写入 stock_fund_flow_daily")
+                finally:
+                    await conn.close()
+
+            # Quality summary
+            quality_ok = len([e for e in all_evidence if getattr(e, 'quality', '') == 'OK'])
+            logs.append(f"Evidence质量: {quality_ok}/{len(all_evidence)} ({100*quality_ok//max(len(all_evidence),1)}%)")
+
+            return CollectionTaskResult(
+                status="success",
+                current_label=f"Tushare资金证据采集完成: {len(all_evidence)}条",
+                progress_percent=100,
+                logs=logs,
+            )
+        except Exception as e:
+            logger.exception("TushareMoneyflowCollectRunner failed")
+            return CollectionTaskResult(
+                status="failed",
+                current_label="Tushare资金采集异常",
+                logs=logs,
+                error_message=str(e),
+            )
+
+
+class ObservationDirectionDraftRunner:
+    """PR4.2.38a — AI Observation Direction Draft Runner.
+
+    Runs after recap snapshot is built. Reads capital evidence + hotspot subjects
+    and generates 3-5 direction candidates via LLM. Best-effort: skips gracefully
+    if DEEPSEEK_API_KEY is not set.
+    """
+
+    async def run(self, context: CollectionTaskContext) -> CollectionTaskResult:
+        import asyncpg
+        from datetime import date as _date
+
+        logs: list[str] = []
+        trade_date_str = context.trade_date
+        td = _date.fromisoformat(trade_date_str)
+
+        try:
+            # Check if LLM is available
+            if not os.getenv("DEEPSEEK_API_KEY"):
+                logs.append("DEEPSEEK_API_KEY not set — 跳过AI方向草案生成")
+                return CollectionTaskResult(status="skipped", current_label="AI方向草案: 跳过（无API key）",
+                                            progress_percent=100, logs=logs)
+
+            # Read recap snapshot
+            conn = await asyncpg.connect(
+                "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+            )
+            try:
+                import json as _json
+                recap_row = await conn.fetchrow(
+                    "SELECT payload FROM post_market_recap_snapshot "
+                    "WHERE trade_date = $1::date ORDER BY created_at DESC LIMIT 1", td)
+                if not recap_row:
+                    logs.append("recap snapshot 不存在，跳过AI方向草案")
+                    return CollectionTaskResult(status="skipped", current_label="AI方向草案: 无recap数据",
+                                                progress_percent=100, logs=logs)
+
+                p = _json.loads(recap_row['payload']) if isinstance(recap_row['payload'], str) else recap_row['payload']
+                rec = p.get('recap_doc', p)
+
+                # Build context for LLM
+                market_summary = rec.get('market_summary', {})
+                hotspot_subjects = rec.get('strong_hotspot_subjects', []) or []
+                # Extract theme capital flows from report_context
+                report_ctx = rec.get('report_context', {})
+                theme_capital = report_ctx.get('theme_capital_flow', []) or []
+                strong_stocks_data = rec.get('strong_stock_reviews', []) or []
+
+                # Read existing system directions
+                dir_rows = await conn.fetch(
+                    "SELECT direction_key, direction_name FROM analyst_direction WHERE is_active = true")
+                existing = [{"direction_key": r['direction_key'], "direction_name": r['direction_name']}
+                           for r in dir_rows]
+
+                context_data = {
+                    "market_summary": market_summary,
+                    "hotspot_subjects": hotspot_subjects,
+                    "theme_capital_flows": theme_capital[:10],
+                    "strong_stocks": strong_stocks_data[:20],
+                    "existing_directions": existing,
+                }
+
+                # Call LLM
+                from stock_processing_service.application.services.observation_direction_draft_service import (
+                    ObservationDirectionDraftService,
+                )
+                service = ObservationDirectionDraftService()
+                result = await service.build(trade_date=td, context=context_data)
+
+                if not result or not result.get("directions"):
+                    logs.append("LLM 未返回有效方向候选")
+                    return CollectionTaskResult(status="skipped", current_label="AI方向草案: LLM无输出",
+                                                progress_percent=100, logs=logs)
+
+                candidates = result["directions"]
+                logs.append(f"LLM 生成 {len(candidates)} 个方向候选")
+
+                # Create observation session
+                session_id = f"OBS_{trade_date_str.replace('-', '')}"
+                await conn.execute(
+                    """INSERT INTO analyst_observation_session (trade_date, session_id, status)
+                       VALUES ($1, $2, 'AI_PROPOSED')
+                       ON CONFLICT (trade_date) DO UPDATE SET status = 'AI_PROPOSED', updated_at = NOW()""",
+                    td, session_id)
+
+                # Write candidates
+                inserted = 0
+                for c in candidates:
+                    try:
+                        await conn.execute(
+                            """INSERT INTO analyst_direction_candidate
+                               (trade_date, candidate_key, candidate_name, candidate_type, source,
+                                confidence, evidence_json, theme_bindings, status)
+                               VALUES ($1,$2,$3,$4,'AI',$5,$6,$7,'DRAFT')
+                               ON CONFLICT (trade_date, candidate_key) DO UPDATE SET
+                                 candidate_name = EXCLUDED.candidate_name,
+                                 confidence = EXCLUDED.confidence,
+                                 evidence_json = EXCLUDED.evidence_json,
+                                 theme_bindings = EXCLUDED.theme_bindings,
+                                 updated_at = NOW()""",
+                            td,
+                            c["candidate_key"],
+                            c["candidate_name"],
+                            c.get("candidate_type", "GROUP_DIRECTION"),
+                            c.get("confidence", 0.5),
+                            _json.dumps(c.get("evidence_json", {}), ensure_ascii=False),
+                            _json.dumps(c.get("theme_bindings", []), ensure_ascii=False),
+                        )
+                        inserted += 1
+                    except Exception as e:
+                        logs.append(f"写入候选失败 {c.get('candidate_key')}: {e}")
+
+                logs.append(f"持久化 {inserted}/{len(candidates)} 个方向候选")
+                return CollectionTaskResult(
+                    status="success",
+                    current_label=f"AI方向草案: {inserted}个候选",
+                    progress_percent=100,
+                    logs=logs,
+                )
+            finally:
+                await conn.close()
+        except Exception as e:
+            logger.exception("ObservationDirectionDraftRunner failed")
+            return CollectionTaskResult(
+                status="failed",
+                current_label="AI方向草案异常",
+                logs=logs,
+                error_message=str(e),
+            )
+
+
 class F10CapitalCollectRunner:
     """F10 资金动向快照采集 Runner -- 通过本地脚本采集并落库"""
 

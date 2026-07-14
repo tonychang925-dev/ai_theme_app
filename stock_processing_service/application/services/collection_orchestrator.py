@@ -203,9 +203,9 @@ class CollectionCommandPlanner:
                     (
                         f"f10_capital: stock_count={stock_count}"
                         if stock_count
-                        else "f10_capital: stock_count=auto (候选池自动解析)"
+                        else "f10_capital: stock_count=auto (全市场CN_A)"
                     ),
-                    "f10_capital: 通达信 F10 资金动向本地脚本采集 → stock_f10_capital_snapshot",
+                    "f10_capital: Tushare moneyflow API采集 → stock_fund_flow_daily",
                 ],
             )
 

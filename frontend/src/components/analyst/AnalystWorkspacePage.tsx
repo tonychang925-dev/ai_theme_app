@@ -462,12 +462,44 @@ export function AnalystWorkspacePage() {
         };
       });
 
+      // Load watch directions from API
+      let watchGroups: WatchGroup[] = [];
+      try {
+        const wdResp = await fetch(`/api/v1/analyst-workspace/${d}/watch-directions`);
+        if (wdResp.ok) {
+          const wdData = await wdResp.json();
+          watchGroups = (wdData.watch_directions || []).map((ad: any) => ({
+            id: ad.direction_key,
+            name: ad.direction_name,
+            subject_ids: [...new Set((ad.themes || []).map((t: any) => t.subject_key))] as string[],
+            color: ad.color || "#66d9ef",
+            trading_style: ad.trading_style || "",
+            long_identifiability: ad.snapshot?.long_identifiability ?? 0.5,
+            short_identifiability: ad.snapshot?.short_identifiability ?? 0.3,
+            old_leaders: ad.snapshot?.old_leaders || "",
+            event_stimuli: ad.snapshot?.event_stimuli || [""],
+            yesterday_view: ad.snapshot?.yesterday_view || "",
+            today_actual: ad.snapshot?.today_actual || "",
+            stage_judgement: ad.snapshot?.stage_judgement || "",
+            intraday_understanding: ad.snapshot?.intraday_understanding || "",
+            trader_sentiment: ad.snapshot?.trader_sentiment || "",
+            index_resonance: ad.snapshot?.index_resonance || "",
+            tomorrow_view: ad.snapshot?.tomorrow_view || "",
+            analyst_notes: ad.snapshot?.analyst_notes || "",
+            leaders: (ad.snapshot?.leaders || []).map((l: any) => ({ ...l, is_ai_draft: false, analyst_reviewed: true })),
+            bull_pool: (ad.snapshot?.bull_pool || []).map((s: any) => ({ ...s, is_ai_draft: false, analyst_reviewed: true })),
+            bear_pool: (ad.snapshot?.bear_pool || []).map((s: any) => ({ ...s, is_ai_draft: false, analyst_reviewed: true })),
+            field_overrides: {},
+          } as WatchGroup));
+        }
+      } catch { /* non-fatal */ }
+
       setWorkspace({
         trade_date: meta.trade_date || d,
         is_ai_draft: mode === "draft",
         analyst_finalized: mode === "approved",
         themes,
-        watch_groups: [],
+        watch_groups: watchGroups,
         override_count: (rd.audit?.explicit_overrides || []).length,
         review_document: rd,
       });
@@ -497,6 +529,45 @@ export function AnalystWorkspacePage() {
       if (!saveResp.ok) throw new Error(`保存失败: HTTP ${saveResp.status}`);
       const saveResult = await saveResp.json();
       steps.push(`已保存 ${saveResult.overrides_recorded || 0} 条修改`);
+
+      // Step 1.5: Save watch directions
+      try {
+        const wdPayload = {
+          watch_directions: (workspace.watch_groups || []).map((g: WatchGroup) => ({
+            direction_key: g.id,
+            direction_name: g.name,
+            direction_type: "ANALYST_WATCH",
+            trading_style: g.trading_style || "",
+            color: g.color || "",
+            sort_order: 0,
+            snapshot: {
+              stage_judgement: g.stage_judgement || "",
+              old_leaders: g.old_leaders || "",
+              yesterday_view: g.yesterday_view || "",
+              today_actual: g.today_actual || "",
+              tomorrow_view: g.tomorrow_view || "",
+              analyst_notes: g.analyst_notes || "",
+              leaders: g.leaders || [],
+              bull_pool: g.bull_pool || [],
+              bear_pool: g.bear_pool || [],
+            },
+            themes: (g.subject_ids || []).map((sk: string) => ({
+              subject_key: sk,
+              relevance_weight: 1.0,
+              capital_weight: 1.0,
+            })),
+          })),
+        };
+        const wdResp = await fetch(`/api/v1/analyst-workspace/${dateInput}/watch-directions`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(wdPayload),
+        });
+        if (wdResp.ok) {
+          const wdResult = await wdResp.json();
+          steps.push(`已保存 ${wdResult.saved_count || 0} 个观察方向`);
+        }
+      } catch { /* non-fatal */ }
 
       // Step 2: Save review → transition DRAFT_READY → IN_REVIEW
       const reviewResp = await fetch(`/api/v1/analyst-workbench/${dateInput}/save-review`, {
