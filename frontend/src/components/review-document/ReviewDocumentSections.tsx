@@ -163,6 +163,16 @@ export function ReviewDocumentSections({ document }: { document: ReviewDocument 
         </div>
       </Section>
 
+      {/* 机构资金审美方向 */}
+      <Section title="机构资金审美方向" quality={sections.capital}>
+        <DirectionList rows={(document.capital || {}).institution_style || []} />
+      </Section>
+
+      {/* 游资情绪方向 */}
+      <Section title="游资情绪方向" quality={{ status: "READY" }}>
+        <DirectionList rows={(document.capital || {}).hot_money_style || []} isHotMoney />
+      </Section>
+
       {/* 风险控制 */}
       <Section title="风险控制" quality={sections.risk}>
         <div style={{ fontSize: 16, fontWeight: 700, color: colors.red, marginBottom: 10 }}>
@@ -173,6 +183,65 @@ export function ReviewDocumentSections({ document }: { document: ReviewDocument 
     </div>
   );
 }
+
+function DirectionList({ rows, isHotMoney }: { rows: any[]; isHotMoney?: boolean }) {
+  if (!rows.length) {
+    return <div style={{ color: colors.muted, fontSize: 13 }}>暂无数据</div>;
+  }
+  const topRows = rows.slice(0, 6);
+  return (
+    <div>
+      {topRows.map((row: any, idx: number) => {
+        const name = text(row.direction_name || row.theme_name || row.subject_key);
+        const score = row.score != null ? row.score : 0;
+        const stars = score >= 80 ? "★★★★★" : score >= 65 ? "★★★★☆" : score >= 50 ? "★★★☆☆" : score >= 35 ? "★★☆☆☆" : "★☆☆☆☆";
+        const stage = stageLabel(row.lifecycle_stage || row.attack_stage);
+        const conf = row.confidence != null ? `${Math.round(row.confidence * 100)}%` : "";
+        const signals = Array.isArray(row.top_signals) ? row.top_signals.slice(0, 3) : [];
+        const relation = isHotMoney ? row.institution_hot_relation : null;
+        return (
+          <div key={idx} style={{ borderTop: `1px solid ${colors.border}`, padding: "10px 0", display: "flex", gap: 12, alignItems: "flex-start" }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+                <span style={{ fontSize: 14, fontWeight: 700, color: colors.text }}>{name}</span>
+                {relation && relation !== "HOT_MONEY_ONLY" && (
+                  <span style={{ fontSize: 10, color: colors.muted, border: `1px solid ${colors.border}`, borderRadius: 3, padding: "1px 5px" }}>{relation === "BOTH" ? "机构+游资" : relation === "DIVERGENCE" ? "背离" : ""}</span>
+                )}
+              </div>
+              <div style={{ fontSize: 12, color: colors.muted, marginBottom: 4 }}>
+                <span style={{ color: colors.accent }}>{stars}</span>
+                <span style={{ marginLeft: 8 }}>{score.toFixed(0)}分</span>
+                {conf && <span style={{ marginLeft: 8 }}>{conf}</span>}
+                {stage && <span style={{ marginLeft: 8, color: colors.yellow }}>{stage}</span>}
+              </div>
+              {signals.length > 0 && (
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+                  {signals.map((s: string, si: number) => (
+                    <span key={si} style={{ fontSize: 11, color: colors.muted, background: "#101a24", padding: "2px 6px", borderRadius: 3 }}>{text(s)}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// PR4.2.37b: stage Chinese labels
+const STAGE_LABELS: Record<string, string> = {
+  "fermentation": "发酵", "Fermentation": "发酵", "FERMENTATION": "发酵",
+  "divergence": "分歧", "Divergence": "分歧", "DIVERGENCE": "分歧",
+  "start": "启动", "Start": "启动", "START": "启动",
+  "incubation": "孵化", "Incubation": "孵化",
+  "diffusion": "扩散", "Diffusion": "扩散",
+  "peak": "高潮", "Peak": "高潮",
+  "distribution": "退潮", "decay": "衰退",
+  "fade_watch": "退潮观察", "fade_confirmed": "确认退潮",
+  "FIRST_WAVE": "首波", "CONTINUING": "持续", "CLIMAX": "高潮", "RETREATING": "退却",
+};
+function stageLabel(s: string): string { return STAGE_LABELS[s] || s || ""; }
 
 function ActionList({ label, items, tone }: { label: string; items: any; tone: "good" | "bad" | "watch" }) {
   const list = Array.isArray(items) ? items : [];
