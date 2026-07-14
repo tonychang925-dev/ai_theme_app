@@ -9018,10 +9018,13 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
                     "top5_capture_ratio": flow.get("top5_capture_ratio") if flow else None,
                     "top_stocks": flow.get("top_stocks", []) if flow else [],
 
-                    # Direction hierarchy
+                    # Direction hierarchy (multi-parent)
                     "parent_directions": [
                         {"direction_key": r["parent_direction_key"],
-                         "overlap_ratio": r["overlap_ratio"],
+                         "relation_type": r.get("relation_type", "THEME_OVERLAP"),
+                         "capital_overlap_ratio": r.get("capital_overlap_ratio", 0),
+                         "industry_relation_weight": r.get("industry_relation_weight", 0),
+                         "rationale": r.get("rationale", ""),
                          "shared_theme_keys": r["shared_theme_keys"] if isinstance(r["shared_theme_keys"], list) else json.loads(r["shared_theme_keys"]) if isinstance(r["shared_theme_keys"], str) else []}
                         for r in relations.get(dk, [])
                     ],
@@ -9588,10 +9591,9 @@ async def review_direction_candidate(
                    SET accepted_count = accepted_count + 1, status = 'ANALYST_REVIEWED'
                    WHERE trade_date = $1""", td)
 
-            # Auto-create direction relations: find which system directions share themes
+            # Auto-create direction relations: multi-parent with relation types
             obs_theme_keys = {b.get('subject_key', '') for b in final_bindings if isinstance(b, dict)}
             if obs_theme_keys:
-                # Find system directions with overlapping themes
                 sys_rows = await conn.fetch(
                     "SELECT adt.direction_key, adt.subject_key, adt.capital_weight "
                     "FROM analyst_direction_theme adt "
@@ -9600,23 +9602,35 @@ async def review_direction_candidate(
                     "AND adt.subject_key = ANY($1) "
                     "AND (adt.trade_date IS NULL OR adt.trade_date = $2)",
                     list(obs_theme_keys), td)
-                # Group by parent direction
-                parent_themes: dict[str, set] = {}
+                # Group by parent direction with theme-level detail
+                parent_details: dict[str, dict] = {}
                 for sr in sys_rows:
-                    parent_themes.setdefault(sr['direction_key'], set()).add(sr['subject_key'])
-                for parent_dk, shared in parent_themes.items():
-                    overlap = len(shared) / max(len(obs_theme_keys), 1)
+                    pdk = sr['direction_key']
+                    if pdk not in parent_details:
+                        parent_details[pdk] = {"themes": set(), "total_weight": 0.0}
+                    parent_details[pdk]["themes"].add(sr['subject_key'])
+                    parent_details[pdk]["total_weight"] += float(sr.get('capital_weight', 1.0))
+                total_obs_themes = len(obs_theme_keys)
+                for parent_dk, pd in parent_details.items():
+                    shared = pd["themes"]
+                    theme_overlap = len(shared) / max(total_obs_themes, 1)
+                    cap_overlap = min(1.0, pd["total_weight"] / max(total_obs_themes, 1))
+                    industry_weight = round(cap_overlap * 0.7 + theme_overlap * 0.3, 4)
                     await conn.execute(
                         """INSERT INTO direction_relation
                            (trade_date, parent_direction_key, child_direction_key,
-                            relation_type, overlap_ratio, shared_theme_keys, created_from)
-                           VALUES ($1,$2,$3,'SYSTEM_TO_OBSERVATION',$4,$5,'AUTO')
-                           ON CONFLICT (trade_date, parent_direction_key, child_direction_key)
-                           DO UPDATE SET overlap_ratio = EXCLUDED.overlap_ratio,
+                            relation_type, capital_overlap_ratio, industry_relation_weight,
+                            shared_theme_keys, rationale, created_from)
+                           VALUES ($1,$2,$3,'THEME_OVERLAP',$4,$5,$6,$7,'AUTO')
+                           ON CONFLICT (trade_date, parent_direction_key, child_direction_key, relation_type)
+                           DO UPDATE SET capital_overlap_ratio = EXCLUDED.capital_overlap_ratio,
+                                         industry_relation_weight = EXCLUDED.industry_relation_weight,
                                          shared_theme_keys = EXCLUDED.shared_theme_keys""",
                         td, parent_dk, final_key,
-                        round(overlap, 4),
+                        round(cap_overlap, 4),
+                        industry_weight,
                         json.dumps(list(shared), ensure_ascii=False),
+                        f"共享{len(shared)}/{total_obs_themes}个主题, 资金权重覆盖{cap_overlap*100:.0f}%",
                     )
         else:
             # REJECT — update session rejected counter
