@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
-"""PR4.2.33a Institution Style Replay Audit.
+"""PR4.2.33a Institution Style Replay Audit (Multi-Date Batch).
 
 Validates InstitutionStyleProducer against analyst expectations:
   Metric 1: Top-5 theme overlap
-  Metric 2: Rank correlation (Spearman)
-  Metric 3: Component sanity (no single-component outlier scores)
+  Metric 2: Rank correlation (Spearman ρ)
+  Metric 3: NDCG@5 (Normalized Discounted Cumulative Gain)
+  Metric 4: Component sanity (no single-component outlier)
+  Metric 5: Cycle discrimination (detects stage concentration)
 
 Usage:
-    # Dry-run with sample data (no DB):
+    # Single date dry-run:
     python stock_processing_service/scripts/validate_institution_style_replay.py --date 2026-07-09 --dry-run
 
-    # Real replay from DB (requires PR4.2.31f + PR4.2.32a tables populated):
+    # Multi-date batch dry-run:
+    python stock_processing_service/scripts/validate_institution_style_replay.py --dates 2026-06-25,2026-06-30,2026-07-03,2026-07-07,2026-07-08,2026-07-09 --dry-run
+
+    # From DB:
     python stock_processing_service/scripts/validate_institution_style_replay.py --date 2026-07-09
 """
 
@@ -34,6 +39,31 @@ if str(PROJECT_ROOT) not in sys.path:
 # ── Analyst baselines (from report analysis) ──
 
 ANALYST_BASELINES: dict[str, list[str]] = {
+    "2026-06-25": [
+        # TODO: fill from analyst report for this date
+        "存储芯片", "国产算力", "PCB", "光通信", "半导体设备",
+        "液冷", "卫星", "机器人", "磷化铟", "电力",
+    ],
+    "2026-06-30": [
+        # TODO: fill from analyst report for this date
+        "存储芯片", "国产算力", "PCB", "光通信", "半导体设备",
+        "液冷", "卫星", "机器人", "磷化铟", "电力",
+    ],
+    "2026-07-03": [
+        # TODO: fill from analyst report for this date
+        "存储芯片", "国产算力", "PCB", "光通信", "半导体设备",
+        "液冷", "卫星", "机器人", "磷化铟", "电力",
+    ],
+    "2026-07-07": [
+        # TODO: fill from analyst report for this date
+        "存储芯片", "国产算力", "PCB", "光通信", "半导体设备",
+        "液冷", "卫星", "机器人", "磷化铟", "电力",
+    ],
+    "2026-07-08": [
+        # TODO: fill from analyst report for this date
+        "存储芯片", "国产算力", "PCB", "光通信", "半导体设备",
+        "液冷", "卫星", "机器人", "磷化铟", "电力",
+    ],
     "2026-07-09": [
         "存储芯片",
         "国产算力",
@@ -57,8 +87,72 @@ class ReplayResult:
     top5_overlap: int
     top5_overlap_pct: float
     rank_correlation: float | None
+    ndcg_at_5: float | None
     component_sanity: dict[str, Any]
+    cycle_discrimination: dict[str, Any]
     summary: str
+
+
+def _ndcg_at_k(system_ranked: list[str], analyst_ranked: list[str], k: int = 5) -> float | None:
+    """Compute NDCG@k — penalizes ranking important themes too low.
+
+    Analyst ranking provides relevance scores: #1 = k, #2 = k-1, ..., #k = 1.
+    DCG = Σ (relevance_i / log2(i+1)) for i=1..k
+    IDCG = ideal DCG (analyst's own ranking)
+    NDCG = DCG / IDCG
+    """
+    if len(system_ranked) < k or len(analyst_ranked) < k:
+        return None
+
+    # Relevance: analyst rank position → score (higher rank = higher relevance)
+    relevance = {name: max(0, k - i) for i, name in enumerate(analyst_ranked[:k])}
+
+    import math
+
+    def _dcg(ranked: list[str]) -> float:
+        score = 0.0
+        for i, name in enumerate(ranked[:k]):
+            rel = relevance.get(name, 0)
+            if rel > 0:
+                score += rel / math.log2(i + 2)  # i+2 because log2(1)=0
+        return score
+
+    dcg = _dcg(system_ranked)
+    idcg = _dcg(analyst_ranked)
+    if idcg == 0:
+        return None
+    return round(dcg / idcg, 4)
+
+
+def _cycle_discrimination_check(results: list[dict[str, Any]]) -> dict[str, Any]:
+    """Detect cycle stage concentration — if many themes share the same stage,
+    cycle_score loses discrimination power."""
+    from collections import Counter
+
+    stages = [r.get("lifecycle_stage", "") for r in results if r.get("lifecycle_stage")]
+    if not stages:
+        return {"status": "NO_DATA", "dominant_stage": None, "concentration": 0.0}
+
+    counts = Counter(stages)
+    top_stage, top_count = counts.most_common(1)[0]
+    concentration = top_count / len(stages)
+
+    if concentration > 0.50:
+        status = "WARN"
+        detail = f"{top_stage} dominates ({top_count}/{len(stages)} = {concentration:.0%}) — cycle_score loses discrimination"
+    elif concentration > 0.35:
+        status = "NOTE"
+        detail = f"{top_stage} is common ({concentration:.0%}) — monitor for future concentration"
+    else:
+        status = "OK"
+        detail = f"stages well distributed (max={top_stage} at {concentration:.0%})"
+
+    return {
+        "status": status,
+        "dominant_stage": top_stage,
+        "concentration": round(concentration, 3),
+        "detail": detail,
+    }
 
 
 def _spearman_rank(system_ranked: list[str], analyst_ranked: list[str]) -> float | None:
@@ -139,16 +233,34 @@ def run_replay(
     # Metric 2: Rank correlation
     rank_corr = _spearman_rank(system_names[:10], baseline[:10])
 
-    # Metric 3: Component sanity
+    # Metric 3: NDCG@5 — penalizes ranking important themes too low
+    ndcg = _ndcg_at_k(system_names, baseline, k=5)
+
+    # Metric 4: Component sanity
     sanity = _component_sanity_check([r for r in sorted_results[:10]])
 
+    # Metric 5: Cycle discrimination
+    cycle_disc = _cycle_discrimination_check(sorted_results[:20])
+
     # Summary
-    if overlap >= 3 and (rank_corr is None or (rank_corr is not None and rank_corr > 0.5)):
+    issues = []
+    if overlap < 3:
+        issues.append(f"low overlap ({overlap}/5)")
+    if rank_corr is not None and rank_corr < 0.3:
+        issues.append(f"weak ranking (ρ={rank_corr})")
+    if ndcg is not None and ndcg < 0.5:
+        issues.append(f"low NDCG@5 ({ndcg})")
+    if sanity["status"] == "WARN":
+        issues.append(f"component imbalance ({sanity['issues_count']} issues)")
+    if cycle_disc["status"] == "WARN":
+        issues.append(f"cycle concentration ({cycle_disc['dominant_stage']})")
+
+    if not issues:
         summary = "PASS: System direction aligns with analyst."
-    elif overlap >= 2:
-        summary = "PARTIAL: Some overlap but ranking differs."
+    elif len(issues) <= 1:
+        summary = f"PARTIAL: {issues[0]}"
     else:
-        summary = "MISMATCH: System and analyst diverge. Check component scores."
+        summary = f"MISMATCH: {'; '.join(issues)}"
 
     return ReplayResult(
         trade_date=trade_date,
@@ -165,7 +277,9 @@ def run_replay(
         top5_overlap=overlap,
         top5_overlap_pct=overlap_pct,
         rank_correlation=rank_corr,
+        ndcg_at_5=ndcg,
         component_sanity=sanity,
+        cycle_discrimination=cycle_disc,
         summary=summary,
     )
 
@@ -278,19 +392,19 @@ async def run_from_db(trade_date_str: str) -> ReplayResult:
     return run_replay([r.to_row() for r in results], baseline, trade_date_str)
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description="PR4.2.33a Institution Style Replay Audit")
-    parser.add_argument("--date", required=True, help="Trade date YYYY-MM-DD")
-    parser.add_argument("--dry-run", action="store_true", help="Use sample data (no DB)")
-    args = parser.parse_args()
+def run_batch(dates: list[str], dry_run: bool = True) -> list[ReplayResult]:
+    """Run replay audit for multiple dates and produce batch summary."""
+    results: list[ReplayResult] = []
+    for d in dates:
+        if dry_run:
+            result = run_dry_run(d)
+        else:
+            result = asyncio.run(run_from_db(d))
+        results.append(result)
+    return results
 
-    td = date.fromisoformat(args.date)
 
-    if args.dry_run:
-        result = run_dry_run(args.date)
-    else:
-        result = asyncio.run(run_from_db(args.date))
-
+def _print_single_result(result: ReplayResult) -> None:
     print("=" * 60)
     print(f"Institution Style Replay Audit — {result.trade_date}")
     print("=" * 60)
@@ -300,7 +414,7 @@ def main() -> int:
 
     print("Metric 1: Top-5 Overlap")
     print(f"  Overlap: {result.top5_overlap}/5 ({result.top5_overlap_pct}%)")
-    print(f"  Analyst Top-5: {result.analyst_baseline[:5]}")
+    print(f"  Analyst Top-5: {result.analyst_baseline[:5] if result.analyst_baseline else 'N/A'}")
     print(f"  System  Top-5: {[r['theme'] for r in result.system_top10[:5]]}")
     print()
 
@@ -308,11 +422,21 @@ def main() -> int:
     print(f"  Spearman ρ: {result.rank_correlation}")
     print()
 
-    print("Metric 3: Component Sanity")
+    print("Metric 3: NDCG@5")
+    print(f"  NDCG: {result.ndcg_at_5}")
+    print()
+
+    print("Metric 4: Component Sanity")
     print(f"  Status: {result.component_sanity['status']}")
     print(f"  Issues: {result.component_sanity['issues_count']}")
     for issue in result.component_sanity.get("issues", []):
         print(f"    - {issue}")
+    print()
+
+    print("Metric 5: Cycle Discrimination")
+    cd = result.cycle_discrimination
+    print(f"  Status: {cd['status']}")
+    print(f"  {cd.get('detail', '')}")
     print()
 
     print("System Top-10:")
@@ -323,18 +447,85 @@ def main() -> int:
               f"struct={c['structure'] or 0:5.1f}  dt={c['dt'] or 0:5.1f}  "
               f"conf={r['confidence']:.2f}  stage={r['lifecycle']}")
 
-    # Output JSON for programmatic use
-    print()
-    print(json.dumps({
-        "trade_date": result.trade_date,
-        "summary": result.summary,
-        "top5_overlap": result.top5_overlap,
-        "top5_overlap_pct": result.top5_overlap_pct,
-        "rank_correlation": result.rank_correlation,
-        "component_sanity": result.component_sanity,
-    }, ensure_ascii=False, indent=2))
 
-    return 0 if result.top5_overlap >= 2 else 1
+def _print_batch_summary(results: list[ReplayResult]) -> None:
+    print()
+    print("=" * 80)
+    print("BATCH SUMMARY — Institution Style Replay Audit")
+    print("=" * 80)
+    print()
+    print(f"{'Date':<12} {'Overlap':>8} {'ρ':>8} {'NDCG@5':>8} {'Sanity':>8} {'Cycle':>8} {'Summary'}")
+    print("-" * 80)
+    for r in results:
+        print(f"{r.trade_date:<12} {r.top5_overlap:>4}/5{r.top5_overlap_pct:>4.0f}% "
+              f"{r.rank_correlation or '-':>8} "
+              f"{r.ndcg_at_5 or '-':>8} "
+              f"{r.component_sanity['status']:>8} "
+              f"{r.cycle_discrimination['status']:>8} "
+              f"  {r.summary[:50]}")
+
+    # Aggregate stats
+    avg_overlap = sum(r.top5_overlap for r in results) / max(len(results), 1)
+    pass_count = sum(1 for r in results if r.summary.startswith("PASS"))
+    partial_count = sum(1 for r in results if r.summary.startswith("PARTIAL"))
+    fail_count = sum(1 for r in results if r.summary.startswith("MISMATCH"))
+
+    print("-" * 80)
+    print(f"  Avg overlap: {avg_overlap:.1f}/5  |  PASS: {pass_count}  PARTIAL: {partial_count}  FAIL: {fail_count}")
+    print()
+
+    # M7 calibration dataset output
+    calibration = {
+        "model_version": "institution_style_v1",
+        "evaluation_dates": [r.trade_date for r in results],
+        "metrics": {
+            "avg_top5_overlap": round(avg_overlap, 1),
+            "avg_ndcg_at_5": round(
+                sum(r.ndcg_at_5 for r in results if r.ndcg_at_5 is not None) / max(
+                    sum(1 for r in results if r.ndcg_at_5 is not None), 1
+                ), 4
+            ) if any(r.ndcg_at_5 is not None for r in results) else None,
+        },
+        "per_date": [
+            {
+                "trade_date": r.trade_date,
+                "top5_overlap": r.top5_overlap,
+                "rank_correlation": r.rank_correlation,
+                "ndcg_at_5": r.ndcg_at_5,
+                "component_sanity": r.component_sanity["status"],
+                "cycle_discrimination": r.cycle_discrimination["status"],
+                "summary": r.summary,
+            }
+            for r in results
+        ],
+    }
+    print("M7 Calibration Dataset (JSON):")
+    print(json.dumps(calibration, ensure_ascii=False, indent=2))
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="PR4.2.33a Institution Style Replay Audit")
+    parser.add_argument("--date", default=None, help="Single trade date YYYY-MM-DD")
+    parser.add_argument("--dates", default=None, help="Comma-separated dates for batch replay")
+    parser.add_argument("--dry-run", action="store_true", help="Use sample data (no DB)")
+    args = parser.parse_args()
+
+    if args.dates:
+        dates = [d.strip() for d in args.dates.split(",") if d.strip()]
+        results = run_batch(dates, dry_run=args.dry_run)
+        for r in results:
+            _print_single_result(r)
+        _print_batch_summary(results)
+        return 0
+    elif args.date:
+        if args.dry_run:
+            result = run_dry_run(args.date)
+        else:
+            result = asyncio.run(run_from_db(args.date))
+        _print_single_result(result)
+        return 0 if result.top5_overlap >= 2 else 1
+    else:
+        parser.error("Either --date or --dates is required")
 
 
 if __name__ == "__main__":
