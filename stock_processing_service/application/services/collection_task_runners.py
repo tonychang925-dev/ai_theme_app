@@ -994,6 +994,16 @@ class TushareMoneyflowCollectRunner:
         import asyncpg
 
         logs: list[str] = []
+        # Debug: verify token read
+        try:
+            _test_token = ""
+            for _line in (PROJECT_ROOT / ".env.theme").read_text(encoding="utf-8", errors="ignore").splitlines():
+                if _line.strip().startswith("TUSHARE_TOKEN="):
+                    _test_token = _line.strip().split("=", 1)[1].strip().strip("\"'")
+                    break
+            logs.append(f"TOKEN_DEBUG: len={len(_test_token)} first4={_test_token[:4]} last4={_test_token[-4:]}")
+        except Exception as _e:
+            logs.append(f"TOKEN_DEBUG: read error {_e}")
         trade_date_str = context.trade_date
         td = date.fromisoformat(trade_date_str)
         tushare_date = td.strftime("%Y%m%d")  # Tushare API expects YYYYMMDD
