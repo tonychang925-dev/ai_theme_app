@@ -945,8 +945,7 @@ class TushareMoneyflowCollectRunner:
         if not token:
             raise RuntimeError("TUSHARE_TOKEN not found in .env.theme")
         import tushare as ts
-        ts.set_token(token)
-        return ts.pro_api()
+        return ts.pro_api(token=token)
 
     @staticmethod
     async def _fetch_all_stock_codes(trade_date: date) -> list[str]:
@@ -994,16 +993,21 @@ class TushareMoneyflowCollectRunner:
         import asyncpg
 
         logs: list[str] = []
-        # Debug: verify token read
+        # ── 5-point production diagnostics ──
+        logs.append(f"DIAG1 sys.executable={sys.executable}")
+        logs.append(f"DIAG2 cwd={os.getcwd()}")
         try:
-            _test_token = ""
-            for _line in (PROJECT_ROOT / ".env.theme").read_text(encoding="utf-8", errors="ignore").splitlines():
-                if _line.strip().startswith("TUSHARE_TOKEN="):
-                    _test_token = _line.strip().split("=", 1)[1].strip().strip("\"'")
-                    break
-            logs.append(f"TOKEN_DEBUG: len={len(_test_token)} first4={_test_token[:4]} last4={_test_token[-4:]}")
+            import tushare as _ts
+            logs.append(f"DIAG3 tushare.__file__={_ts.__file__}")
         except Exception as _e:
-            logs.append(f"TOKEN_DEBUG: read error {_e}")
+            logs.append(f"DIAG3 tushare import error: {_e}")
+        _token = ""
+        for _line in (PROJECT_ROOT / ".env.theme").read_text(encoding="utf-8", errors="ignore").splitlines():
+            if _line.strip().startswith("TUSHARE_TOKEN="):
+                _token = _line.strip().split("=", 1)[1].strip().strip("\"'")
+                break
+        logs.append(f"DIAG4 token len={len(_token)} hash={hash(_token)}")
+        logs.append(f"DIAG5 os.environ TUSHARE_TOKEN={'SET' if os.getenv('TUSHARE_TOKEN') else 'NOT SET'}")
         trade_date_str = context.trade_date
         td = date.fromisoformat(trade_date_str)
         tushare_date = td.strftime("%Y%m%d")  # Tushare API expects YYYYMMDD

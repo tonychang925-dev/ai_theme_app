@@ -628,7 +628,7 @@ export function AnalystWorkspacePage() {
   const handleGenerate = async () => {
     setGenerating(true);
     const steps = ["生成复盘动态数据…", "生成图表证据…", "生成情绪分析…", "构建 AI Draft…", "完成"];
-    setGenProgress({ show: true, step: steps[0], steps, current: 0 });
+    setGenProgress({ show: true, step: steps[0], steps, current: 0, error: undefined });
 
     const stepIndex: Record<string, number> = {
       derived_data: 0,
