@@ -39,8 +39,11 @@ W_CYCLE = 0.30
 W_STRUCTURE = 0.25
 W_DRAGON_TIGER = 0.10
 
-# S2 stage bonus (7-stage model)
+# S2 stage bonus — covers both model stages and real system vocabulary
+# theme_cycle_judgement_v2 uses: fermentation, divergence, fade_watch, fade_confirmed,
+#   start, incubation, acceleration, climax, repair, decay
 STAGE_BONUS: dict[str, float] = {
+    # Model stages
     "START": 0.65,
     "INCUBATION": 0.75,
     "FERMENTATION": 0.85,
@@ -48,6 +51,13 @@ STAGE_BONUS: dict[str, float] = {
     "PEAK": 0.45,
     "DISTRIBUTION": 0.20,
     "DECAY": 0.05,
+    # Real system stages (theme_cycle_judgement_v2)
+    "DIVERGENCE": 0.55,
+    "FADE_WATCH": 0.25,
+    "FADE_CONFIRMED": 0.15,
+    "REPAIR": 0.60,
+    "ACCELERATION": 0.70,
+    "CLIMAX": 0.40,
 }
 DEFAULT_STAGE_BONUS = 0.50
 
