@@ -22,8 +22,9 @@ RD_PATH = PROJECT_ROOT / "tmp" / "analyst_workbench" / "2026-07-09" / "review_do
 @pytest.fixture
 def capital():
     """Load 7/09 review_document.json capital section."""
+    import asyncio
     sys.path.insert(0, str(PROJECT_ROOT))
-    from stock_processing_service.api_app import _inject_capital_producer_outputs
+    from stock_processing_service.api_app import _inject_capital_producer_outputs_async
 
     if RD_PATH.exists():
         with open(RD_PATH) as f:
@@ -31,7 +32,7 @@ def capital():
     else:
         doc = {"metadata": {"trade_date": "2026-07-09"}, "capital": {}}
 
-    result = _inject_capital_producer_outputs(doc)
+    result = asyncio.run(_inject_capital_producer_outputs_async(doc))
     return result.get("capital", {})
 
 

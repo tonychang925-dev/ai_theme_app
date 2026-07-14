@@ -8177,6 +8177,8 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
             draft = _json.loads(draft_path.read_text(encoding="utf-8"))
             _attach_draft_review_document_context(draft, _Path(_wb_base) / trade_date / "draft_context.json")
             review_document = _assemble_workspace_review_document(draft, mode="draft")
+            # PR4.2.37: inject Institution + Hot Money producer outputs
+            review_document = await _inject_capital_producer_outputs_async(review_document)
             # PR4.2.15: check recap completeness; block if required fields missing
             review_document = await _apply_recap_completeness_guard(trade_date, review_document)
             _persist_workspace_review_document(trade_date, review_document)
@@ -8320,10 +8322,6 @@ def _assemble_workspace_review_document(snapshot_like: dict[str, Any], *, mode: 
     document = ReviewDocumentAssembler().assemble(
         ReviewDocumentAssemblerInput(context=context, mode=mode)  # type: ignore[arg-type]
     ).to_dict()
-
-    # PR4.2.37: wire Institution + Hot Money producers into ReviewDocument.capital
-    document = _inject_capital_producer_outputs(document)
-
     overrides, _version = _load_workspace_review_overrides(str(document.get("metadata", {}).get("trade_date") or ""))
     if overrides:
         document = ReviewOverrideApplier().apply(document, overrides).document
@@ -8381,11 +8379,11 @@ async def _apply_recap_completeness_guard(trade_date: str, review_document: dict
     }
 
 
-def _inject_capital_producer_outputs(document: dict[str, Any]) -> dict[str, Any]:
+async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> dict[str, Any]:
     """PR4.2.37: merge Institution + Hot Money producer outputs into ReviewDocument.capital.
 
-    Reads from in-memory producers (not DB tables) to keep the assembly path
-    self-contained. Falls back gracefully if producers are unavailable.
+    Async version — must be awaited from within FastAPI event loop.
+    Falls back gracefully if producers or DB are unavailable.
     """
     trade_date_str = (document.get("metadata") or {}).get("trade_date") or ""
     if not trade_date_str:
@@ -8412,174 +8410,168 @@ def _inject_capital_producer_outputs(document: dict[str, Any]) -> dict[str, Any]
         from stock_processing_service.application.services.capital_evidence.stock_identity_normalizer import (
             normalize_for_matching,
         )
+        import asyncpg
 
-        import asyncpg, asyncio, os
+        conn = await asyncpg.connect(
+            "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+        )
+        try:
+            THEME_KEYS = ['9015778','9014001','9018144','9014636','9019807','9066740','9013416']
+            DIRECTIONS = {
+                "AI_COMPUTE": {"name": "AI算力方向", "themes": {"9015778":0.50, "9014001":0.50}},
+                "ADVANCED_SEMICONDUCTOR": {"name": "先进半导体", "themes": {"9018144":0.50, "9066740":0.50}},
+                "OPTICAL_ROBOTICS": {"name": "光通信与机器人", "themes": {"9019807":0.50, "9014636":0.50}},
+                "POWER_INFRA": {"name": "电力基础设施", "themes": {"9013416":1.00}},
+            }
 
-        async def _run_inst():
-            conn = await asyncpg.connect(
-                "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
-            )
-            try:
-                THEME_KEYS = ['9015778','9014001','9018144','9014636','9019807','9066740','9013416']
-                DIRECTIONS = {
-                    "AI_COMPUTE": {"name": "AI算力方向", "themes": {"9015778":0.50, "9014001":0.50}},
-                    "ADVANCED_SEMICONDUCTOR": {"name": "先进半导体", "themes": {"9018144":0.50, "9066740":0.50}},
-                    "OPTICAL_ROBOTICS": {"name": "光通信与机器人", "themes": {"9019807":0.50, "9014636":0.50}},
-                    "POWER_INFRA": {"name": "电力基础设施", "themes": {"9013416":1.00}},
+            theme_stocks = {}
+            for sk in THEME_KEYS:
+                rows = await conn.fetch(
+                    "SELECT DISTINCT stock_id FROM subject_stock_daily_snapshot "
+                    "WHERE subject_key = $1 AND trade_date = $2::date", sk, td)
+                theme_stocks[sk] = [r['stock_id'] for r in rows]
+
+            flow_rows = await conn.fetch(
+                "SELECT ts_code, order_size_flow_amount_yuan, buy_elg_amount_yuan, sell_elg_amount_yuan, "
+                "buy_lg_amount_yuan, sell_lg_amount_yuan FROM stock_fund_flow_daily WHERE trade_date = $1::date", td)
+            flow_by = {}
+            for r in flow_rows:
+                c = normalize_for_matching(r['ts_code'])
+                flow_by[c] = {
+                    "net": float(r['order_size_flow_amount_yuan'] or 0),
+                    "elg_b": float(r['buy_elg_amount_yuan'] or 0), "elg_s": float(r['sell_elg_amount_yuan'] or 0),
+                    "lg_b": float(r['buy_lg_amount_yuan'] or 0), "lg_s": float(r['sell_lg_amount_yuan'] or 0),
                 }
 
-                theme_stocks = {}
-                for sk in THEME_KEYS:
-                    rows = await conn.fetch(
-                        "SELECT DISTINCT stock_id FROM subject_stock_daily_snapshot "
-                        "WHERE subject_key = $1 AND trade_date = $2::date", sk, td)
-                    theme_stocks[sk] = [r['stock_id'] for r in rows]
+            theme_flows = []
+            for sk in THEME_KEYS:
+                net = 0.0; large = 0.0; matched = 0
+                for sid in theme_stocks[sk]:
+                    f = flow_by.get(normalize_for_matching(sid))
+                    if f: net += f["net"]; large += (f["elg_b"]-f["elg_s"])+(f["lg_b"]-f["lg_s"]); matched += 1
+                n = len(theme_stocks[sk])
+                theme_flows.append({
+                    "trade_date": td, "subject_key": sk, "theme_name": sk,
+                    "net_flow_yuan": net, "large_flow_yuan": large if large!=0 else None,
+                    "flow_coverage_ratio": round(matched/max(n,1), 4),
+                    "attributed_stock_count": matched, "stock_count": n,
+                    "positive_stock_count": sum(1 for sid in theme_stocks[sk] if flow_by.get(normalize_for_matching(sid), {}).get("net", 0) > 0),
+                })
 
-                flow_rows = await conn.fetch(
-                    "SELECT ts_code, order_size_flow_amount_yuan, buy_elg_amount_yuan, sell_elg_amount_yuan, "
-                    "buy_lg_amount_yuan, sell_lg_amount_yuan FROM stock_fund_flow_daily WHERE trade_date = $1::date", td)
-                flow_by = {}
-                for r in flow_rows:
-                    c = normalize_for_matching(r['ts_code'])
-                    flow_by[c] = {
-                        "net": float(r['order_size_flow_amount_yuan'] or 0),
-                        "elg_b": float(r['buy_elg_amount_yuan'] or 0), "elg_s": float(r['sell_elg_amount_yuan'] or 0),
-                        "lg_b": float(r['buy_lg_amount_yuan'] or 0), "lg_s": float(r['sell_lg_amount_yuan'] or 0),
-                    }
+            bindings = []
+            for dk, dd in DIRECTIONS.items():
+                for sk, w in dd["themes"].items():
+                    bindings.append({"direction_key": dk, "direction_name": dd["name"], "subject_key": sk, "weight": w})
 
-                theme_flows = []
-                for sk in THEME_KEYS:
-                    net = 0.0; large = 0.0; matched = 0
-                    for sid in theme_stocks[sk]:
-                        f = flow_by.get(normalize_for_matching(sid))
-                        if f: net += f["net"]; large += (f["elg_b"]-f["elg_s"])+(f["lg_b"]-f["lg_s"]); matched += 1
-                    n = len(theme_stocks[sk])
-                    theme_flows.append({
-                        "trade_date": td, "subject_key": sk, "theme_name": sk,
-                        "net_flow_yuan": net, "large_flow_yuan": large if large!=0 else None,
-                        "flow_coverage_ratio": round(matched/max(n,1), 4),
-                        "attributed_stock_count": matched, "stock_count": n,
-                        "positive_stock_count": sum(1 for sid in theme_stocks[sk] if flow_by.get(normalize_for_matching(sid), {}).get("net", 0) > 0),
-                    })
+            agg = DirectionCapitalAggregator()
+            dir_raw, _ = agg.aggregate(theme_flows, bindings, td)
 
-                bindings = []
-                for dk, dd in DIRECTIONS.items():
-                    for sk, w in dd["themes"].items():
-                        bindings.append({"direction_key": dk, "direction_name": dd["name"], "subject_key": sk, "weight": w})
+            dir_flows = [{
+                "trade_date": td, "direction_key": d.direction_key, "theme_name": d.direction_name,
+                "net_flow_yuan": d.net_flow_yuan, "large_flow_yuan": d.large_flow_yuan,
+                "flow_coverage_ratio": d.flow_coverage_ratio,
+                "attributed_stock_count": d.attributed_theme_count, "stock_count": d.theme_count,
+                "positive_stock_count": d.attributed_theme_count,
+            } for d in dir_raw]
 
-                agg = DirectionCapitalAggregator()
-                dir_raw, _ = agg.aggregate(theme_flows, bindings, td)
+            cycle_rows = await conn.fetch(
+                "SELECT subject_key, final_cycle_state FROM theme_cycle_judgement_v2 WHERE trade_date = $1::date", td)
+            cycles_db = {r['subject_key']: r['final_cycle_state'] for r in cycle_rows}
 
-                dir_flows = [{
-                    "trade_date": td, "direction_key": d.direction_key, "theme_name": d.direction_name,
-                    "net_flow_yuan": d.net_flow_yuan, "large_flow_yuan": d.large_flow_yuan,
-                    "flow_coverage_ratio": d.flow_coverage_ratio,
-                    "attributed_stock_count": d.attributed_theme_count, "stock_count": d.theme_count,
-                    "positive_stock_count": d.attributed_theme_count,
-                } for d in dir_raw]
+            dir_cycles = []
+            for dk, dd in DIRECTIONS.items():
+                primary = list(dd["themes"].keys())[0]
+                dir_cycles.append({"subject_key": dk, "final_cycle_state": cycles_db.get(primary, "divergence"), "previous_stage": ""})
 
-                cycle_rows = await conn.fetch(
-                    "SELECT subject_key, final_cycle_state FROM theme_cycle_judgement_v2 WHERE trade_date = $1::date", td)
-                cycles_db = {r['subject_key']: r['final_cycle_state'] for r in cycle_rows}
+            ss_rows = await conn.fetch(
+                "SELECT subject_key, stock_id, watch_status FROM strong_stock_watch_history WHERE trade_date = $1::date", td)
+            structures = {}
+            for r in ss_rows:
+                sk = r['subject_key']
+                structures.setdefault(sk, []).append({"stock_code": r['stock_id'], "role": r['watch_status'], "watch_score": 50.0})
 
-                dir_cycles = []
-                for dk, dd in DIRECTIONS.items():
-                    primary = list(dd["themes"].keys())[0]
-                    dir_cycles.append({"subject_key": dk, "final_cycle_state": cycles_db.get(primary, "divergence"), "previous_stage": ""})
+            dir_structures = {}
+            for dk, dd in DIRECTIONS.items():
+                stocks = []
+                for sk in dd["themes"]:
+                    stocks.extend(structures.get(sk, []))
+                dir_structures[dk] = stocks[:8]
 
-                ss_rows = await conn.fetch(
-                    "SELECT subject_key, stock_id, watch_status FROM strong_stock_watch_history WHERE trade_date = $1::date", td)
-                structures = {}
-                for r in ss_rows:
-                    sk = r['subject_key']
-                    structures.setdefault(sk, []).append({"stock_code": r['stock_id'], "role": r['watch_status'], "watch_score": 50.0})
+            producer = InstitutionStyleProducer()
+            results = producer.produce_with_direction(dir_flows, dir_cycles, dir_structures, None)
 
-                dir_structures = {}
-                for dk, dd in DIRECTIONS.items():
-                    stocks = []
-                    for sk in dd["themes"]:
-                        stocks.extend(structures.get(sk, []))
-                    dir_structures[dk] = stocks[:8]
+            inst_style = []
+            for r in sorted(results, key=lambda x: x.institution_score, reverse=True):
+                inst_style.append({
+                    "direction_key": r.subject_key,
+                    "direction_name": r.theme_name,
+                    "score": r.institution_score,
+                    "confidence": r.confidence,
+                    "lifecycle_stage": r.lifecycle_stage,
+                    "flow_score": r.flow_score,
+                    "cycle_score": r.cycle_score,
+                    "structure_score": r.structure_score,
+                    "evidence_quality": r.evidence_quality,
+                    "top_signals": r.top_signals,
+                })
+        finally:
+            await conn.close()
 
-                producer = InstitutionStyleProducer()
-                results = producer.produce_with_direction(dir_flows, dir_cycles, dir_structures, None)
-
-                inst_style = []
-                for r in sorted(results, key=lambda x: x.institution_score, reverse=True):
-                    inst_style.append({
-                        "direction_key": r.subject_key,
-                        "direction_name": r.theme_name,
-                        "score": r.institution_score,
-                        "confidence": r.confidence,
-                        "lifecycle_stage": r.lifecycle_stage,
-                        "flow_score": r.flow_score,
-                        "cycle_score": r.cycle_score,
-                        "structure_score": r.structure_score,
-                        "evidence_quality": r.evidence_quality,
-                        "top_signals": r.top_signals,
-                    })
-                return inst_style
-            finally:
-                await conn.close()
-
-        inst_style = asyncio.run(_run_inst())
+        capital["institution_style"] = inst_style
     except Exception:
-        inst_style = []
+        pass
 
     # ── Run Hot Money Style Producer ──
     try:
-        async def _run_hm():
-            conn = await asyncpg.connect(
-                "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+        import asyncpg as _apg
+        conn2 = await _apg.connect(
+            "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+        )
+        try:
+            import json as _json
+            recap = await conn2.fetchrow(
+                "SELECT payload FROM post_market_recap_snapshot WHERE trade_date = $1::date ORDER BY created_at DESC LIMIT 1", td)
+            hotspots = []
+            if recap:
+                p = _json.loads(recap['payload']) if isinstance(recap['payload'], str) else recap['payload']
+                rec = p.get('recap_doc', p)
+                hotspots = rec.get('strong_hotspot_subjects', [])[:15]
+
+            hm_stocks = {}
+            ss_rows = await conn2.fetch(
+                "SELECT subject_key, stock_id, watch_status, relay_role FROM strong_stock_watch_history WHERE trade_date = $1::date", td)
+            for r in ss_rows:
+                hm_stocks.setdefault(r['subject_key'], []).append({
+                    "stock_code": r['stock_id'], "relay_role": r.get('relay_role', ''),
+                    "watch_score": 50.0,
+                })
+
+            from stock_processing_service.application.services.capital_evidence.hot_money_style_producer import (
+                HotMoneyStyleProducer,
             )
-            try:
-                import json as _json
-                recap = await conn.fetchrow(
-                    "SELECT payload FROM post_market_recap_snapshot WHERE trade_date = $1::date ORDER BY created_at DESC LIMIT 1", td)
-                hotspots = []
-                if recap:
-                    p = _json.loads(recap['payload']) if isinstance(recap['payload'], str) else recap['payload']
-                    rec = p.get('recap_doc', p)
-                    hotspots = rec.get('strong_hotspot_subjects', [])[:15]
+            producer = HotMoneyStyleProducer()
+            results = producer.produce(hotspots, hm_stocks, None, None, None, emotion_node="CHAOS")
 
-                hm_stocks = {}
-                ss_rows = await conn.fetch(
-                    "SELECT subject_key, stock_id, watch_status, relay_role FROM strong_stock_watch_history WHERE trade_date = $1::date", td)
-                for r in ss_rows:
-                    hm_stocks.setdefault(r['subject_key'], []).append({
-                        "stock_code": r['stock_id'], "relay_role": r.get('relay_role', ''),
-                        "watch_score": 50.0,
-                    })
+            hm_style = []
+            for r in sorted(results, key=lambda x: x.hot_money_score, reverse=True):
+                hm_style.append({
+                    "subject_key": r.subject_key,
+                    "theme_name": r.theme_name,
+                    "score": r.hot_money_score,
+                    "confidence": r.confidence,
+                    "attack_stage": r.attack_stage,
+                    "attack_day": r.attack_day,
+                    "institution_hot_relation": r.institution_hot_relation,
+                    "evidence_quality": r.evidence_quality,
+                    "top_signals": r.top_signals,
+                })
+        finally:
+            await conn2.close()
 
-                from stock_processing_service.application.services.capital_evidence.hot_money_style_producer import (
-                    HotMoneyStyleProducer,
-                )
-                producer = HotMoneyStyleProducer()
-                results = producer.produce(hotspots, hm_stocks, None, None, None, emotion_node="CHAOS")
-
-                hm_style = []
-                for r in sorted(results, key=lambda x: x.hot_money_score, reverse=True):
-                    hm_style.append({
-                        "subject_key": r.subject_key,
-                        "theme_name": r.theme_name,
-                        "score": r.hot_money_score,
-                        "confidence": r.confidence,
-                        "attack_stage": r.attack_stage,
-                        "attack_day": r.attack_day,
-                        "institution_hot_relation": r.institution_hot_relation,
-                        "evidence_quality": r.evidence_quality,
-                        "top_signals": r.top_signals,
-                    })
-                return hm_style
-            finally:
-                await conn.close()
-
-        hm_style = asyncio.run(_run_hm())
+        capital["hot_money_style"] = hm_style
     except Exception:
-        hm_style = []
+        pass
 
-    capital["institution_style"] = inst_style
-    capital["hot_money_style"] = hm_style
     capital["capital_render_source"] = {
         "institution": "institution_style",
         "hot_money": "hot_money_style",

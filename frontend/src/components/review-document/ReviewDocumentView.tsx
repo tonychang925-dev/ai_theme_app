@@ -528,14 +528,39 @@ function MiniList({ title, rows }: { title: string; rows: any[] }) {
   return (
     <div style={{ marginBottom: 14 }}>
       <div style={{ color: colors.accent, fontSize: 13, fontWeight: 700, marginBottom: 8 }}>{title}</div>
-      {rows.length ? rows.map((row, idx) => (
-        <div key={idx} style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) auto", gap: 8, borderTop: `1px solid ${colors.border}`, padding: "7px 0", fontSize: 12 }}>
-          <span style={{ overflowWrap: "anywhere" }}>{text(row.theme_name || row.subject_key || row.stock_name)}</span>
-          <span style={{ color: colors.muted }}>{text(row.role_label || row.money_flow_tier || row.composite_score)}</span>
-        </div>
-      )) : <div style={{ color: colors.muted, fontSize: 13 }}>暂无数据</div>}
+      {rows.length ? rows.map((row, idx) => {
+        // PR4.2.37b: handle institution_style (direction_name) and hot_money_style (theme_name)
+        const name = text(row.direction_name || row.theme_name || row.subject_key || row.stock_name);
+        const score = row.score != null ? `${row.score.toFixed(0)}` : "";
+        const sub = row.lifecycle_stage || row.attack_stage || row.role_label || row.money_flow_tier || "";
+        const conf = row.confidence != null ? ` ${Math.round(row.confidence * 100)}%` : "";
+        return (
+          <div key={idx} style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) auto auto", gap: 8, borderTop: `1px solid ${colors.border}`, padding: "7px 0", fontSize: 12, alignItems: "center" }}>
+            <span style={{ overflowWrap: "anywhere", fontWeight: 600 }}>{name}</span>
+            <span style={{ color: colors.muted, fontSize: 11 }}>{_stageLabel(sub)}{conf}</span>
+            <span style={{ color: colors.accent, fontWeight: 700, textAlign: "right", minWidth: 30 }}>{score}</span>
+          </div>
+        );
+      }) : <div style={{ color: colors.muted, fontSize: 13 }}>暂无数据</div>}
     </div>
   );
+}
+
+// PR4.2.37b: lifecycle stage Chinese labels
+const STAGE_CN: Record<string, string> = {
+  "fermentation": "发酵", "Fermentation": "发酵", "FERMENTATION": "发酵",
+  "divergence": "分歧", "Divergence": "分歧", "DIVERGENCE": "分歧",
+  "start": "启动", "Start": "启动", "START": "启动",
+  "incubation": "孵化", "Incubation": "孵化", "INCUBATION": "孵化",
+  "diffusion": "扩散", "Diffusion": "扩散", "DIFFUSION": "扩散",
+  "peak": "高潮", "Peak": "高潮", "PEAK": "高潮",
+  "distribution": "退潮", "Distribution": "退潮", "DISTRIBUTION": "退潮",
+  "decay": "衰退", "Decay": "衰退", "DECAY": "衰退",
+  "fade_watch": "观察", "fade_confirmed": "确认退潮",
+  "FIRST_WAVE": "首波", "CONTINUING": "持续中", "CLIMAX": "高潮", "RETREATING": "退却",
+};
+function _stageLabel(stage: string): string {
+  return STAGE_CN[stage] || stage || "";
 }
 
 function ActionList({ label, items, tone }: { label: string; items: any; tone: "good" | "bad" | "watch" }) {
