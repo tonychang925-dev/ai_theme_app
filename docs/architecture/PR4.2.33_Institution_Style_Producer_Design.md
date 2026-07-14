@@ -74,10 +74,10 @@ theme_capital_flow_daily (PR4.2.32a)
 
 ```
 flow_score = normalize(
-    flow_persistence  × 0.40
-  + flow_acceleration × 0.30
+    flow_persistence  × 0.30
+  + flow_acceleration × 0.25
   + large_flow_ratio  × 0.20
-  + flow_consistency  × 0.10
+  + flow_consistency  × 0.25
 )
 
 Where:
