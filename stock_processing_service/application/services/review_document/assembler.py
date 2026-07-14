@@ -184,6 +184,9 @@ class ReviewDocumentAssembler:
             "market": {},
             "institution": institution,
             "hot_money": hot_money,
+            # PR4.2.37: new producer fields — populated by _assemble_workspace_review_document
+            "institution_style": [],
+            "hot_money_style": [],
         }
         if ctx.capital_context.active_amount not in (None, ""):
             capital["active_amount"] = ctx.capital_context.active_amount

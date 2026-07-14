@@ -82,8 +82,11 @@ export function ReviewDocumentView({
   const themes = Array.isArray(document.themes) ? document.themes : [];
   const stocks = Array.isArray(document.stocks) ? document.stocks : [];
   const capital = document.capital || {};
-  const institution = Array.isArray(capital.institution) ? capital.institution : [];
-  const hotMoney = Array.isArray(capital.hot_money) ? capital.hot_money : [];
+  // PR4.2.37: prefer new producer fields, fallback to old evidence fields
+  const institutionStyle = Array.isArray(capital.institution_style) && capital.institution_style.length > 0
+    ? capital.institution_style : (Array.isArray(capital.institution) ? capital.institution : []);
+  const hotMoneyStyle = Array.isArray(capital.hot_money_style) && capital.hot_money_style.length > 0
+    ? capital.hot_money_style : (Array.isArray(capital.hot_money) ? capital.hot_money : []);
   const plan = document.plan || {};
 
   const handleOverrideSave = (override: ReviewOverride) => {
@@ -297,8 +300,8 @@ export function ReviewDocumentView({
 
         <aside style={{ minWidth: 0, borderLeft: `1px solid ${colors.border}` }}>
           <Section title="资金证据" quality={sections.capital}>
-            <MiniList title="机构方向" rows={institution.slice(0, 8)} />
-            <MiniList title="游资方向" rows={hotMoney.slice(0, 8)} />
+            <MiniList title="机构方向" rows={institutionStyle.slice(0, 8)} />
+            <MiniList title="游资方向" rows={hotMoneyStyle.slice(0, 8)} />
           </Section>
 
           <Section title="涨停分类" quality={sections.limit_up}>
