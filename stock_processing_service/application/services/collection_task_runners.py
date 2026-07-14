@@ -990,6 +990,7 @@ class TushareMoneyflowCollectRunner:
         logs: list[str] = []
         trade_date_str = context.trade_date
         td = date.fromisoformat(trade_date_str)
+        tushare_date = td.strftime("%Y%m%d")  # Tushare API expects YYYYMMDD
 
         try:
             # Get stock codes
@@ -1022,7 +1023,7 @@ class TushareMoneyflowCollectRunner:
 
             for bi, batch in enumerate(batches):
                 try:
-                    raw_rows = self._call_moneyflow_batch(pro, batch, trade_date_str)
+                    raw_rows = self._call_moneyflow_batch(pro, batch, tushare_date)
                     if raw_rows:
                         evidence_list = normalizer.normalize_rows(raw_rows, collected_at=collected_at)
                         all_evidence.extend(evidence_list)
@@ -1037,7 +1038,7 @@ class TushareMoneyflowCollectRunner:
                 if context.progress_callback and bi % 5 == 0:
                     try:
                         context.progress_callback({
-                            "current_label": f"采集 {trade_date_str}: {bi+1}/{len(batches)}批 ({success_batches}成/{fail_batches}败)",
+                            "current_label": f"采集 {tushare_date}: {bi+1}/{len(batches)}批 ({success_batches}成/{fail_batches}败)",
                             "progress_percent": pct,
                             "logs": [],
                         })
