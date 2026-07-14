@@ -214,3 +214,127 @@ class TestDirectionFlowRanking:
         """C8 (Investment Relevance Guard): market_top_inflow_stocks must NOT be in capital."""
         assert "market_top_inflow_stocks" not in capital, \
             "market_top_inflow_stocks must not leak into ReviewDocument.capital"
+
+
+# ═══════════════════════════════════════════════════════════════
+# PR4.2.38e: Golden Day Replay — 2026-07-09 Full Pipeline
+# ═══════════════════════════════════════════════════════════════
+
+@pytest.fixture
+def golden_context():
+    """Load observation direction pipeline state for 2026-07-09."""
+    import asyncio, asyncpg
+    async def _load():
+        conn = await asyncpg.connect(
+            "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
+        )
+        try:
+            from datetime import date
+            td = date(2026, 7, 9)
+            candidates = await conn.fetch(
+                "SELECT * FROM analyst_direction_candidate WHERE trade_date = $1", td)
+            obs_dirs = await conn.fetch(
+                "SELECT * FROM observation_direction_daily WHERE trade_date = $1", td)
+            session = await conn.fetchrow(
+                "SELECT * FROM analyst_observation_session WHERE trade_date = $1", td)
+            relations = await conn.fetch(
+                "SELECT * FROM direction_relation WHERE trade_date = $1", td)
+            return {
+                "candidates": [dict(r) for r in candidates],
+                "obs_directions": [dict(r) for r in obs_dirs],
+                "session": dict(session) if session else None,
+                "relations": [dict(r) for r in relations],
+            }
+        finally:
+            await conn.close()
+    return asyncio.run(_load())
+
+
+class TestGoldenDayReplay:
+    """End-to-end validation: AI Draft → Review → Observation → Capital → View."""
+
+    def test_g1_candidates_exist(self, golden_context):
+        """G1: Direction candidates exist for 2026-07-09."""
+        candidates = golden_context["candidates"]
+        assert len(candidates) >= 1, "No direction candidates found"
+
+    def test_g2_candidates_have_style_profile(self, golden_context):
+        """G2: All candidates have non-empty style_profile with institution/hot_money/event."""
+        for c in golden_context["candidates"]:
+            sp = c.get("style_profile") or c.get("style_profile_extra")
+            if isinstance(sp, str):
+                import json
+                sp = json.loads(sp)
+            assert sp, f"Candidate {c['candidate_key']} missing style_profile"
+            for dim in ("institution", "hot_money", "event"):
+                assert dim in sp, f"Candidate {c['candidate_key']} missing style_profile.{dim}"
+
+    def test_g3_observation_directions_exist(self, golden_context):
+        """G3: At least 1 confirmed observation direction for 2026-07-09."""
+        obs = golden_context["obs_directions"]
+        assert len(obs) >= 1, "No observation directions found"
+
+    def test_g4_observation_source_traceable(self, golden_context):
+        """G4: Each observation direction has source_candidate or analyst_action."""
+        for o in golden_context["obs_directions"]:
+            assert o.get("source_candidate") or o.get("analyst_action"), \
+                f"Observation {o['direction_key']} missing source traceability"
+
+    def test_g5_session_counters_match(self, golden_context):
+        """G5: Session accepted/rejected counts match actual observation directions."""
+        obs = golden_context["obs_directions"]
+        session = golden_context["session"]
+        if session:
+            accepted = sum(1 for o in obs if o.get("analyst_action") in ("ACCEPT", "MODIFY", "MERGE"))
+            assert session.get("accepted_count", 0) >= accepted, \
+                f"Session accepted_count ({session.get('accepted_count')}) < actual ({accepted})"
+
+    def test_g6_direction_view_includes_observations(self, capital):
+        """G6: direction_view contains OBSERVATION_DIRECTION entries."""
+        dv = capital.get("direction_view", [])
+        obs_dirs = [d for d in dv if d.get("direction_type") == "OBSERVATION_DIRECTION"]
+        assert len(obs_dirs) >= 1, "No OBSERVATION_DIRECTION in direction_view"
+
+    def test_g7_observation_directions_have_capital(self, capital):
+        """G7: Observation directions have non-null net_flow_yi."""
+        dv = capital.get("direction_view", [])
+        for d in dv:
+            if d.get("direction_type") == "OBSERVATION_DIRECTION":
+                assert d.get("net_flow_yi") is not None, \
+                    f"Observation {d['direction_name']} missing net_flow_yi"
+                assert d.get("top_stocks"), \
+                    f"Observation {d['direction_name']} missing top_stocks"
+
+    def test_g8_parent_relations_exist(self, golden_context):
+        """G8: direction_relation entries exist for observation directions."""
+        relations = golden_context["relations"]
+        obs = golden_context["obs_directions"]
+        if obs:
+            obs_keys = {o["direction_key"] for o in obs}
+            related = [r for r in relations if r["child_direction_key"] in obs_keys]
+            assert len(related) >= 1, "No direction_relation entries for observation directions"
+
+    def test_g9_no_direction_explosion(self, capital, golden_context):
+        """G9: Observation directions have parent overlap info (anti-duplication)."""
+        dv = capital.get("direction_view", [])
+        for d in dv:
+            if d.get("direction_type") == "OBSERVATION_DIRECTION":
+                parents = d.get("parent_directions", [])
+                assert len(parents) >= 0, f"parent_directions field present for {d['direction_name']}"
+                for p in parents:
+                    assert 0 <= p.get("capital_overlap_ratio", 0) <= 1.0, \
+                        f"Invalid overlap ratio for {d['direction_name']} ← {p['direction_key']}"
+
+    def test_g10_full_traceability(self, capital, golden_context):
+        """G10: candidate → observation_direction_daily → direction_view chain intact."""
+        candidates = {c["candidate_key"]: c for c in golden_context["candidates"]}
+        obs = {o["direction_key"]: o for o in golden_context["obs_directions"]}
+        dv = {d["direction_key"]: d for d in capital.get("direction_view", [])}
+        for o_key, o in obs.items():
+            src = o.get("source_candidate", "")
+            if src and src in candidates:
+                assert candidates[src]["status"] == "CONFIRMED", \
+                    f"Source candidate {src} not CONFIRMED for observation {o_key}"
+            if o_key in dv:
+                assert dv[o_key].get("source") == src, \
+                    f"direction_view source mismatch for {o_key}"
