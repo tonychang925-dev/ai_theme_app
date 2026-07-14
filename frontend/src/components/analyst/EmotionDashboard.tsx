@@ -373,8 +373,8 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
                     <UnifiedCard key="capital" title="资金驱动" borderColor="#66d9ef">
                       {m?.capital && <TrendLineChart title="活跃资金趋势 (6/25~7/8)" data={m.capital} yKey="amount" yLabel="亿" color="#66d9ef" />}
                       {c("active_capital") && <ChartRenderer chart={c("active_capital")} />}
-                      {c("institution_style") && <ChartRenderer chart={c("institution_style")} />}
-                      {c("hot_money_style") && <ChartRenderer chart={c("hot_money_style")} />}
+                      <CapitalDirectionCard title="机构资金审美方向" rows={reviewDocument?.capital?.institution_style || []} kind="institution" />
+                      <CapitalDirectionCard title="游资情绪方向" rows={reviewDocument?.capital?.hot_money_style || []} kind="hot_money" />
                     </UnifiedCard>,
                     <UnifiedCard key="relay" title="核心板块节律" borderColor="#805ad5">
                       {m?.relay && <TrendLineChart title="最高板趋势 (6/25~7/8)" data={m.relay} yKey="max_height" yLabel="板" color="#d69e2e" />}
@@ -423,3 +423,34 @@ function UnifiedCard({ title, borderColor, children }: { title: string; borderCo
     </div>
   );
 }
+
+// ── PR4.2.37b: Capital Direction Card (reads canonical capital.*_style contract) ──
+function CapitalDirectionCard({ title, rows, kind }: { title: string; rows: any[]; kind: "institution" | "hot_money" }) {
+  if (!rows || rows.length === 0) return null;
+  const display = rows.slice(0, 5);
+  const isInst = kind === "institution";
+  return (
+    <div style={{ marginTop: 8 }}>
+      <div style={{ fontWeight: 700, color: "#ffd85e", fontSize: 13, marginBottom: 6 }}>{title}</div>
+      {display.map((row: any, i: number) => {
+        const name = row.direction_name || row.theme_name || "";
+        const score = row.score ?? 0;
+        const conf = row.confidence != null ? Math.round(row.confidence * 100) : null;
+        const stage = row.lifecycle_stage || row.attack_stage || "";
+        const stageText = _cs(stage);
+        const stars = score >= 80 ? "★★★★★" : score >= 65 ? "★★★★☆" : score >= 50 ? "★★★☆☆" : score >= 35 ? "★★☆☆☆" : "★☆☆☆☆";
+        return (
+          <div key={i} style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) auto auto", gap: 6, padding: "6px 0", borderTop: "1px solid #243040", fontSize: 12, alignItems: "center" }}>
+            <span style={{ color: "#d8e6ef", fontWeight: 600, overflow: "hidden", textOverflow: "ellipsis" }}>{name}</span>
+            <span style={{ color: "#6f8898", fontSize: 11 }}>
+              {stars} {score.toFixed(0)}{conf != null ? ` ${conf}%` : ""}{stageText ? ` ${stageText}` : ""}
+            </span>
+            <span style={{ color: "#66d9ef", fontWeight: 700, textAlign: "right", minWidth: 28 }}>{score.toFixed(0)}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+const _CS: Record<string,string> = {"fermentation":"发酵","FERMENTATION":"发酵","divergence":"分歧","DIVERGENCE":"分歧","start":"启动","START":"启动","incubation":"孵化","INCUBATION":"孵化","FIRST_WAVE":"首波","CONTINUING":"持续","CLIMAX":"高潮","RETREATING":"退却","decay":"衰退","DECAY":"衰退"};
+function _cs(s: string): string { return _CS[s] || s || ""; }
