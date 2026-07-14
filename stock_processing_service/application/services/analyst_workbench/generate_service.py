@@ -36,7 +36,7 @@ class AnalystWorkbenchGenerateService:
     base_dir: str = "tmp/analyst_workbench"
     python_executable: str = sys.executable
     cli_timeout_sec: int = 120
-    derived_timeout_sec: int = 90
+    derived_timeout_sec: int = 180
 
     async def generate(self, trade_date: date, *, force: bool = True) -> WorkbenchGenerateResult:
         trade_date_str = trade_date.isoformat()
@@ -69,20 +69,20 @@ class AnalystWorkbenchGenerateService:
         if session.status != WorkbenchStatus.GENERATING:
             session = session_store.transition(session, WorkbenchStatus.GENERATING)
         running_step = WorkbenchGenerationStep(
-            step="derived_data",
-            status="running",
-            started_at=_now(),
-        )
-        generation_steps.append(running_step)
-        self._persist_generation_steps(trade_date, generation_steps)
+                step="derived_data",
+                status="running",
+                started_at=_now(),
+            )
+            generation_steps.append(running_step)
+            self._persist_generation_steps(trade_date, generation_steps)
 
-        derived_step, derived_status, missing_tables = await self._run_derived_data(trade_date, force=force)
-        generation_steps[-1] = derived_step
-        if derived_step.status == "success":
-            steps_completed.append("derived_data")
-        else:
-            self._persist_generation_steps(trade_date, generation_steps, status=WorkbenchStatus.FAILED)
-            return WorkbenchGenerateResult(
+            derived_step, derived_status, missing_tables = await self._run_derived_data(trade_date, force=force)
+            generation_steps[-1] = derived_step
+            if derived_step.status == "success":
+                steps_completed.append("derived_data")
+            else:
+                self._persist_generation_steps(trade_date, generation_steps, status=WorkbenchStatus.FAILED)
+                return WorkbenchGenerateResult(
                 trade_date=trade_date_str,
                 status="failed_precondition" if derived_step.status == "failed_precondition" else "failed",
                 steps_completed=tuple(steps_completed),

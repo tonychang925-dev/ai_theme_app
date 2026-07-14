@@ -1030,8 +1030,12 @@ class TushareMoneyflowCollectRunner:
                         success_batches += 1
                     else:
                         fail_batches += 1
-                except Exception:
+                        if bi == 0:
+                            logs.append(f"DEBUG: first batch returned empty. codes={batch[:3]}... date={tushare_date}")
+                except Exception as e:
                     fail_batches += 1
+                    if bi == 0:
+                        logs.append(f"DEBUG: first batch exception: {type(e).__name__}: {e}")
 
                 # Progress reporting
                 pct = int((bi + 1) / len(batches) * 90)
@@ -1059,6 +1063,9 @@ class TushareMoneyflowCollectRunner:
                     inserted = 0
                     for ev in all_evidence:
                         try:
+                            # Convert string timestamps to datetime for asyncpg
+                            avail_dt = datetime.fromisoformat(ev.available_at) if ev.available_at else datetime.now(timezone.utc)
+                            coll_dt = datetime.fromisoformat(ev.collected_at) if ev.collected_at else datetime.now(timezone.utc)
                             await conn.execute(
                                 """INSERT INTO stock_fund_flow_daily
                                    (trade_date, ts_code, buy_elg_amount_yuan, sell_elg_amount_yuan,
@@ -1097,12 +1104,13 @@ class TushareMoneyflowCollectRunner:
                                 ev.buy_sm_amount_yuan, ev.sell_sm_amount_yuan,
                                 ev.buy_sm_vol_shou, ev.sell_sm_vol_shou,
                                 ev.order_size_flow_amount_yuan, ev.net_mf_vol_shou,
-                                ev.available_at, ev.source_name, ev.source_endpoint, ev.source_version,
-                                ev.collected_at, ev.semantic_type, ev.quality, ev.not_owner_identity,
+                                avail_dt, ev.source_name, ev.source_endpoint, ev.source_version,
+                                coll_dt, ev.semantic_type, ev.quality, ev.not_owner_identity,
                             )
                             inserted += 1
-                        except Exception:
-                            pass
+                        except Exception as e:
+                            if inserted == 0:
+                                logs.append(f"DEBUG persist error (first): {type(e).__name__}: {e}")
                     logs.append(f"持久化完成: {inserted}/{len(all_evidence)} 条写入 stock_fund_flow_daily")
                 finally:
                     await conn.close()
