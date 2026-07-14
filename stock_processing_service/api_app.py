@@ -8668,6 +8668,48 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
                     theme_stocks[sk] = [r['stock_id'] for r in rows]
             except Exception:
                 pass
+
+            # ── PR4.2.38c: Load confirmed observation directions ──
+            try:
+                obs_rows = await conn3.fetch(
+                    "SELECT * FROM observation_direction_daily WHERE trade_date = $1 AND status = 'CONFIRMED'", td)
+                for obs in obs_rows:
+                    odk = obs['direction_key']
+                    odn = obs['direction_name']
+                    tb = obs['theme_bindings']
+                    bindings = json.loads(tb) if isinstance(tb, str) else (tb or [])
+                    themes = {}
+                    for b in bindings:
+                        if isinstance(b, dict):
+                            sk = b.get('subject_key', '')
+                            w = float(b.get('weight', 1.0))
+                            if sk:
+                                themes[sk] = w
+                                dynamic_theme_keys.add(sk)
+                    if themes:
+                        sp = obs.get('style_profile') or obs.get('style_profile_extra')
+                        if isinstance(sp, str):
+                            try:
+                                sp = json.loads(sp)
+                            except Exception:
+                                sp = {}
+                        dynamic_directions[odk] = {
+                            "name": odn,
+                            "themes": themes,
+                            "_type": "OBSERVATION_DIRECTION",
+                            "_source": obs.get('source_candidate', ''),
+                            "_style_profile": sp or {},
+                        }
+                # Fetch stocks for any new theme keys
+                for sk in dynamic_theme_keys:
+                    if sk not in theme_stocks:
+                        rows = await conn3.fetch(
+                            "SELECT DISTINCT stock_id FROM subject_stock_daily_snapshot "
+                            "WHERE subject_key = $1 AND trade_date = $2::date", sk, td)
+                        theme_stocks[sk] = [r['stock_id'] for r in rows]
+            except Exception:
+                pass
+
             # Fallback: if DB empty, use hardcoded DIRECTIONS
             if not dynamic_directions:
                 for dk, dd in DIRECTIONS.items():
@@ -8944,11 +8986,15 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
                     "direction_key": dk,
                     "direction_name": d_name,
                     "direction_type": dd.get("_type", "SYSTEM_DIRECTION"),
+                    "source": dd.get("_source", ""),           # AI candidate_key for observation directions
 
                     # Capital state
                     "capital_state": capital_state,
                     "net_flow_yi": net,
                     "flow_5d_yi": flow.get("flow_5d_yi") if flow else None,
+
+                    # Style profile (observation directions)
+                    "style_profile": dd.get("_style_profile", {}),
 
                     # Institution style
                     "institution_score": inst.get("score"),
