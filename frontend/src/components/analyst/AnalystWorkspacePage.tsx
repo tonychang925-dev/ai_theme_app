@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { EmotionDashboard } from "./EmotionDashboard";
+import { AIDirectionDraftPanel } from "./AIDirectionDraftPanel";
 import { ReviewDocumentSections } from "../review-document/ReviewDocumentSections";
 
 // ── Types ──
@@ -407,6 +408,8 @@ export function AnalystWorkspacePage() {
   const [tomorrowForbidden, setTomorrowForbidden] = useState<string[]>([]);
   const [calibrating, setCalibrating] = useState(false);
   const [calMsg, setCalMsg] = useState("");
+  const [dirCandidates, setDirCandidates] = useState<any[]>([]);
+  const [dirCandidatesLoading, setDirCandidatesLoading] = useState(false);
   const [importDialog, setImportDialog] = useState<{ show: boolean; step: "select" | "parsing" | "imported" | "calibrating" | "done" | "error"; msg: string; result?: any }>({ show: false, step: "select", msg: "" });
   const [fileInputKey, setFileInputKey] = useState(0);
   const [readinessDialog, setReadinessDialog] = useState<{ show: boolean; chart: boolean; emotion: boolean; reference: boolean; mode: "generate" | "calibrate" } | null>(null);
@@ -511,7 +514,19 @@ export function AnalystWorkspacePage() {
     }
   }, []);
 
-  useEffect(() => { fetchWorkspace(dateInput); fetchTomorrow(dateInput); }, [dateInput, fetchWorkspace]);
+  const fetchDirCandidates = useCallback(async (d: string) => {
+    setDirCandidatesLoading(true);
+    try {
+      const resp = await fetch(`/api/v1/analyst-workspace/${d}/direction-candidates`);
+      if (resp.ok) {
+        const data = await resp.json();
+        setDirCandidates(data.candidates || []);
+      }
+    } catch { /* non-fatal */ }
+    finally { setDirCandidatesLoading(false); }
+  }, []);
+
+  useEffect(() => { fetchWorkspace(dateInput); fetchTomorrow(dateInput); fetchDirCandidates(dateInput); }, [dateInput, fetchWorkspace, fetchDirCandidates]);
 
   const handleSave = async () => {
     if (!workspace) return;
@@ -918,6 +933,14 @@ export function AnalystWorkspacePage() {
       </div>
 
       {/* Tab 2: Three-panel body — dark theme */}
+      {activeTab === "watch" && !loading && (
+        <AIDirectionDraftPanel
+          candidates={dirCandidates}
+          loading={dirCandidatesLoading}
+          tradeDate={dateInput}
+          onRefresh={() => fetchDirCandidates(dateInput)}
+        />
+      )}
       {activeTab === "watch" && loading && <div style={{ padding: 24, flex: 1, background: "#0c1118", color: "#5a7a8a" }}>加载主题数据…</div>}
       <div style={{ flex: 1, display: (activeTab === "watch" && !loading) ? "grid" : "none", gridTemplateColumns: "240px 1fr 340px", overflow: "hidden", background: "#0c1118" }}>
         {/* Left: Theme list */}

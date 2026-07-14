@@ -471,8 +471,10 @@ function DirectionViewCard({ directionView, fallbackInstStyle, fallbackHmStyle }
     name: string; score: number; conf: number | null; stage: string;
     attackDay?: number | null; relation?: string | null;
     flowYi: number | null; topStocks: any[]; captureRatio: number | null;
+    directionType?: string; parentDirs?: any[]; styleProfile?: any;
   }) => {
-    const { name, score, conf, stage, attackDay, relation, flowYi, topStocks, captureRatio } = opts;
+    const { name, score, conf, stage, attackDay, relation, flowYi, topStocks, captureRatio,
+            directionType, parentDirs, styleProfile } = opts;
     const stageText = _cs(stage);
     const stars = score >= 80 ? "★★★★★" : score >= 65 ? "★★★★☆" : score >= 50 ? "★★★☆☆" : score >= 35 ? "★★☆☆☆" : "★☆☆☆☆";
     const isExpanded = expanded[key] || false;
@@ -532,6 +534,20 @@ function DirectionViewCard({ directionView, fallbackInstStyle, fallbackHmStyle }
                 {hasFlow ? "暂无核心股票归因数据" : "暂无资金归因数据 — 该主题未接入方向绑定链路"}
               </div>
             )}
+            {directionType === "OBSERVATION_DIRECTION" && (
+              <div style={{ fontSize: 10, color: "#6f8898", marginTop: 4, padding: "4px 6px", background: "#0c1118", borderRadius: 3 }}>
+                {styleProfile && (
+                  <span>
+                    机构:{spStarsBrief(styleProfile.institution?.score || 0)} 游资:{spStarsBrief(styleProfile.hot_money?.score || 0)}
+                  </span>
+                )}
+                {parentDirs && parentDirs.length > 0 && (
+                  <span style={{ marginLeft: 8 }}>
+                    ← {parentDirs.map((p: any) => `${p.direction_key}(重叠${(p.capital_overlap_ratio * 100).toFixed(0)}%)`).join(", ")}
+                  </span>
+                )}
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -552,6 +568,9 @@ function DirectionViewCard({ directionView, fallbackInstStyle, fallbackHmStyle }
             flowYi: d.net_flow_yi,
             topStocks: d.top_stocks || [],
             captureRatio: d.top5_capture_ratio,
+            directionType: d.direction_type,
+            parentDirs: d.parent_directions,
+            styleProfile: d.style_profile,
           }))}
           {fallbackInst.map((r: any) => renderRow(r, r.direction_key || r.direction_name, {
             name: r.direction_name || "",
@@ -587,3 +606,4 @@ function DirectionViewCard({ directionView, fallbackInstStyle, fallbackHmStyle }
 }
 const _CS: Record<string,string> = {"fermentation":"发酵","divergence":"分歧","start":"启动","incubation":"孵化","first_wave":"首波","continuing":"持续","climax":"高潮","retreating":"退却","decay":"衰退","peak":"高潮","distribution":"退潮","diffusion":"扩散","fade_watch":"退潮观察","fade_confirmed":"确认退潮"};
 function _cs(s: string): string { return _CS[(s || "").toLowerCase()] || s || ""; }
+function spStarsBrief(v: number): string { return v >= 0.8 ? "★★★★★" : v >= 0.6 ? "★★★★" : v >= 0.4 ? "★★★" : v >= 0.2 ? "★★" : "★"; }
