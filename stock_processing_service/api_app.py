@@ -8949,6 +8949,13 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
             for fr in direction_flow_ranking:
                 flow_by_dir[fr["direction_key"]] = fr
 
+            # Load direction relations (parent-child + overlap)
+            rel_rows = await conn3.fetch(
+                "SELECT * FROM direction_relation WHERE trade_date = $1", td)
+            relations: dict[str, list[dict]] = {}
+            for rr in rel_rows:
+                relations.setdefault(rr['child_direction_key'], []).append(dict(rr))
+
             # Assemble unified direction_view
             direction_view: list[dict[str, Any]] = []
             for dk, dd in dynamic_directions.items():
@@ -9010,6 +9017,14 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
                     "stock_coverage_ratio": flow.get("stock_coverage_ratio") if flow else None,
                     "top5_capture_ratio": flow.get("top5_capture_ratio") if flow else None,
                     "top_stocks": flow.get("top_stocks", []) if flow else [],
+
+                    # Direction hierarchy
+                    "parent_directions": [
+                        {"direction_key": r["parent_direction_key"],
+                         "overlap_ratio": r["overlap_ratio"],
+                         "shared_theme_keys": r["shared_theme_keys"] if isinstance(r["shared_theme_keys"], list) else json.loads(r["shared_theme_keys"]) if isinstance(r["shared_theme_keys"], str) else []}
+                        for r in relations.get(dk, [])
+                    ],
 
                     # Daily snapshot (analyst cognition)
                     "snapshot": {
@@ -9572,6 +9587,37 @@ async def review_direction_candidate(
                 """UPDATE analyst_observation_session
                    SET accepted_count = accepted_count + 1, status = 'ANALYST_REVIEWED'
                    WHERE trade_date = $1""", td)
+
+            # Auto-create direction relations: find which system directions share themes
+            obs_theme_keys = {b.get('subject_key', '') for b in final_bindings if isinstance(b, dict)}
+            if obs_theme_keys:
+                # Find system directions with overlapping themes
+                sys_rows = await conn.fetch(
+                    "SELECT adt.direction_key, adt.subject_key, adt.capital_weight "
+                    "FROM analyst_direction_theme adt "
+                    "JOIN analyst_direction ad ON ad.direction_key = adt.direction_key "
+                    "WHERE ad.direction_type IN ('SYSTEM_DIRECTION','ANALYST_WATCH') "
+                    "AND adt.subject_key = ANY($1) "
+                    "AND (adt.trade_date IS NULL OR adt.trade_date = $2)",
+                    list(obs_theme_keys), td)
+                # Group by parent direction
+                parent_themes: dict[str, set] = {}
+                for sr in sys_rows:
+                    parent_themes.setdefault(sr['direction_key'], set()).add(sr['subject_key'])
+                for parent_dk, shared in parent_themes.items():
+                    overlap = len(shared) / max(len(obs_theme_keys), 1)
+                    await conn.execute(
+                        """INSERT INTO direction_relation
+                           (trade_date, parent_direction_key, child_direction_key,
+                            relation_type, overlap_ratio, shared_theme_keys, created_from)
+                           VALUES ($1,$2,$3,'SYSTEM_TO_OBSERVATION',$4,$5,'AUTO')
+                           ON CONFLICT (trade_date, parent_direction_key, child_direction_key)
+                           DO UPDATE SET overlap_ratio = EXCLUDED.overlap_ratio,
+                                         shared_theme_keys = EXCLUDED.shared_theme_keys""",
+                        td, parent_dk, final_key,
+                        round(overlap, 4),
+                        json.dumps(list(shared), ensure_ascii=False),
+                    )
         else:
             # REJECT — update session rejected counter
             await conn.execute(
