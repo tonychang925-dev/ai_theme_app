@@ -109,7 +109,8 @@ class WorkbenchSession:
     @property
     def can_generate(self) -> bool:
         return self.status in (WorkbenchStatus.NOT_STARTED, WorkbenchStatus.DRAFT_READY,
-                                WorkbenchStatus.FAILED, WorkbenchStatus.STALE)
+                                WorkbenchStatus.FAILED, WorkbenchStatus.STALE,
+                                WorkbenchStatus.GENERATING)  # allow re-generation if stuck
 
     @property
     def can_review(self) -> bool:
