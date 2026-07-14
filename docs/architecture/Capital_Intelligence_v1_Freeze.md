@@ -258,7 +258,18 @@ After:  calibrate separately —
 
 ---
 
-## 9. Stable Baseline for Production
+## 9. Next Phase: Market Brain v2
+
+See `Market_Brain_v2_Roadmap.md` for the full v2 plan.
+
+Key shifts:
+- **Producer → Brain**: Stop building new producers. Build cognitive layers on top.
+- **Assemble → Render**: ReviewDocument becomes a render layer, reading from unified MarketBrainSnapshot.
+- **Hardcode → Learn**: All future weight adjustments via M7 Feedback, not manual tuning.
+
+---
+
+## 10. Stable Baseline for Production
 
 This freeze establishes a **regressable, auditable, contract-verified** capital intelligence foundation. All 82 contract tests provide a safety net for future development.
 
