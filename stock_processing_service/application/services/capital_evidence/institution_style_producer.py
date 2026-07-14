@@ -297,9 +297,21 @@ def _compute_flow_score(flow: dict[str, Any]) -> tuple[float | None, str, list[s
         + W_CONSISTENCY * consistency
     )
 
-    # Coverage penalty
+    # Coverage penalty (data availability)
     if coverage < COVERAGE_THRESHOLD:
         flow_score *= coverage / COVERAGE_THRESHOLD
+
+    # Theme depth penalty (single-stock themes are stock volatility, not theme flow)
+    stock_count = max(1, int(flow.get("stock_count") or flow.get("attributed_stock_count") or 1))
+    if stock_count <= 2:
+        depth_factor = 0.55  # single/dual-stock: heavy penalty
+    elif stock_count <= 5:
+        depth_factor = 0.75  # narrow theme
+    elif stock_count <= 10:
+        depth_factor = 0.90  # medium breadth
+    else:
+        depth_factor = 1.00  # broad theme, no penalty
+    flow_score *= depth_factor
 
     flow_score = round(min(1.0, max(0.0, flow_score)) * 100, 2)
 
