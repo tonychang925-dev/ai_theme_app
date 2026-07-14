@@ -1,0 +1,376 @@
+# PR4.2.34a-2 Investment Direction Bootstrap
+# 20 analyst-verified directions with theme bindings.
+# Max 5-8 themes per direction in Phase 1.
+# Role: PRIMARY_DRIVER | SUPPORTING | OPTIONAL
+
+directions:
+  AI_COMPUTE_INFRA:
+    name: AI算力基础设施
+    description: 国产算力、服务器、液冷、存储芯片构成的核心算力底座
+    themes:
+      - subject_key: "9014001"
+        theme_name: 国产算力
+        weight: 0.30
+        role: PRIMARY_DRIVER
+      - subject_key: "9015778"
+        theme_name: 存储芯片
+        weight: 0.25
+        role: PRIMARY_DRIVER
+      - subject_key: "9045001"
+        theme_name: 液冷服务器
+        weight: 0.20
+        role: SUPPORTING
+      - subject_key: "9055001"
+        theme_name: AIDC
+        weight: 0.15
+        role: SUPPORTING
+      - subject_key: "9065001"
+        theme_name: HBM
+        weight: 0.10
+        role: OPTIONAL
+
+  AI_HIGH_SPEED_INTERCONNECT:
+    name: AI高速互联
+    description: PCB、高速铜连接、MPO、光模块构成的AI互联硬件产业链
+    themes:
+      - subject_key: "9018144"
+        theme_name: PCB印制电路板
+        weight: 0.25
+        role: PRIMARY_DRIVER
+      - subject_key: "9023001"
+        theme_name: 高速铜连接
+        weight: 0.25
+        role: PRIMARY_DRIVER
+      - subject_key: "9034501"
+        theme_name: MPO
+        weight: 0.15
+        role: SUPPORTING
+      - subject_key: "9019807"
+        theme_name: 光模块
+        weight: 0.15
+        role: SUPPORTING
+      - subject_key: "9024001"
+        theme_name: 覆铜板
+        weight: 0.10
+        role: SUPPORTING
+      - subject_key: "9034001"
+        theme_name: 电子布
+        weight: 0.10
+        role: OPTIONAL
+
+  ADVANCED_SEMICONDUCTOR_MFG:
+    name: 先进半导体制造
+    description: 半导体设备、硅片、光刻胶构成的制造能力链
+    themes:
+      - subject_key: "9019001"
+        theme_name: 半导体设备
+        weight: 0.35
+        role: PRIMARY_DRIVER
+      - subject_key: "9025001"
+        theme_name: 半导体硅片
+        weight: 0.25
+        role: PRIMARY_DRIVER
+      - subject_key: "9035001"
+        theme_name: 光刻胶
+        weight: 0.20
+        role: SUPPORTING
+      - subject_key: "9046001"
+        theme_name: 靶材
+        weight: 0.10
+        role: SUPPORTING
+      - subject_key: "9056001"
+        theme_name: 碳化硅
+        weight: 0.10
+        role: OPTIONAL
+
+  SEMICONDUCTOR_MATERIALS:
+    name: 半导体材料
+    description: 电子特气、氟化工、靶材构成的材料供应链
+    themes:
+      - subject_key: "9064103"
+        theme_name: 电子特气
+        weight: 0.30
+        role: PRIMARY_DRIVER
+      - subject_key: "9066740"
+        theme_name: 磷化铟
+        weight: 0.25
+        role: PRIMARY_DRIVER
+      - subject_key: "9077001"
+        theme_name: 氟化工
+        weight: 0.25
+        role: SUPPORTING
+      - subject_key: "9046001"
+        theme_name: 靶材
+        weight: 0.20
+        role: SUPPORTING
+
+  DOMESTIC_COMPUTE_CHAIN:
+    name: 国产算力链
+    description: 华为昇腾、国产服务器为核心的自主算力生态
+    themes:
+      - subject_key: "9014001"
+        theme_name: 国产算力
+        weight: 0.40
+        role: PRIMARY_DRIVER
+      - subject_key: "9088001"
+        theme_name: 华为昇腾
+        weight: 0.30
+        role: PRIMARY_DRIVER
+      - subject_key: "9099001"
+        theme_name: 国产服务器
+        weight: 0.20
+        role: SUPPORTING
+      - subject_key: "9100001"
+        theme_name: 华为智算
+        weight: 0.10
+        role: OPTIONAL
+
+  OPTICAL_COMMUNICATION:
+    name: 光通信产业链
+    description: CPO、光模块、光纤组成的完整光通信链
+    themes:
+      - subject_key: "9019807"
+        theme_name: 光通信
+        weight: 0.35
+        role: PRIMARY_DRIVER
+      - subject_key: "9111001"
+        theme_name: CPO
+        weight: 0.25
+        role: PRIMARY_DRIVER
+      - subject_key: "9122001"
+        theme_name: 光纤
+        weight: 0.20
+        role: SUPPORTING
+      - subject_key: "9112001"
+        theme_name: 光模块
+        weight: 0.20
+        role: SUPPORTING
+
+  ROBOTICS_AUTOMATION:
+    name: 人形机器人
+    description: 人形机器人整机及核心零部件产业链
+    themes:
+      - subject_key: "9014636"
+        theme_name: 人形机器人
+        weight: 0.40
+        role: PRIMARY_DRIVER
+      - subject_key: "9133001"
+        theme_name: 伺服电机
+        weight: 0.25
+        role: PRIMARY_DRIVER
+      - subject_key: "9144001"
+        theme_name: 减速器
+        weight: 0.20
+        role: SUPPORTING
+      - subject_key: "9155001"
+        theme_name: 传感器
+        weight: 0.15
+        role: SUPPORTING
+
+  COMMERCIAL_SPACE:
+    name: 商业航天
+    description: 卫星互联网、商业火箭构成的航天经济
+    themes:
+      - subject_key: "9019807"
+        theme_name: 卫星互联网
+        weight: 0.35
+        role: PRIMARY_DRIVER
+      - subject_key: "9166001"
+        theme_name: 商业航天
+        weight: 0.35
+        role: PRIMARY_DRIVER
+      - subject_key: "9177001"
+        theme_name: 火箭发动机
+        weight: 0.20
+        role: SUPPORTING
+      - subject_key: "9188001"
+        theme_name: 地面设备
+        weight: 0.10
+        role: OPTIONAL
+
+  NEW_ENERGY_TECH:
+    name: 新能源新技术
+    description: 固态电池、钙钛矿等下一代新能源技术
+    themes:
+      - subject_key: "9199001"
+        theme_name: 固态电池
+        weight: 0.35
+        role: PRIMARY_DRIVER
+      - subject_key: "9200001"
+        theme_name: 钙钛矿
+        weight: 0.25
+        role: PRIMARY_DRIVER
+      - subject_key: "9211001"
+        theme_name: 算电协同
+        weight: 0.20
+        role: SUPPORTING
+      - subject_key: "9222001"
+        theme_name: 储能
+        weight: 0.20
+        role: SUPPORTING
+
+  POWER_INFRA:
+    name: 电力基础设施
+    description: 电力运营、特高压、智能电网
+    themes:
+      - subject_key: "9013416"
+        theme_name: 电力运营
+        weight: 0.40
+        role: PRIMARY_DRIVER
+      - subject_key: "9233001"
+        theme_name: 特高压
+        weight: 0.30
+        role: PRIMARY_DRIVER
+      - subject_key: "9244001"
+        theme_name: 智能电网
+        weight: 0.30
+        role: SUPPORTING
+
+  DEFENSE_MILITARY:
+    name: 国防军工
+    themes:
+      - subject_key: "9255001"
+        theme_name: 军工电子
+        weight: 0.50
+        role: PRIMARY_DRIVER
+      - subject_key: "9266001"
+        theme_name: 军用材料
+        weight: 0.50
+        role: PRIMARY_DRIVER
+
+  PHARMA_HEALTHCARE:
+    name: 医药健康
+    themes:
+      - subject_key: "9277001"
+        theme_name: 创新药
+        weight: 0.50
+        role: PRIMARY_DRIVER
+      - subject_key: "9288001"
+        theme_name: 医疗器械
+        weight: 0.50
+        role: PRIMARY_DRIVER
+
+  CONSUMER_RETAIL:
+    name: 消费零售
+    themes:
+      - subject_key: "9299001"
+        theme_name: 食品饮料
+        weight: 0.50
+        role: PRIMARY_DRIVER
+      - subject_key: "9300001"
+        theme_name: 新零售
+        weight: 0.50
+        role: PRIMARY_DRIVER
+
+  AUTO_SUPPLY_CHAIN:
+    name: 汽车产业链
+    themes:
+      - subject_key: "9311001"
+        theme_name: 智能驾驶
+        weight: 0.35
+        role: PRIMARY_DRIVER
+      - subject_key: "9322001"
+        theme_name: 汽车电子
+        weight: 0.30
+        role: SUPPORTING
+      - subject_key: "9333001"
+        theme_name: 一体化压铸
+        weight: 0.20
+        role: SUPPORTING
+      - subject_key: "9344001"
+        theme_name: 激光雷达
+        weight: 0.15
+        role: OPTIONAL
+
+  MATERIAL_CHEMICAL:
+    name: 材料化工
+    themes:
+      - subject_key: "9355001"
+        theme_name: 磷化工
+        weight: 0.35
+        role: PRIMARY_DRIVER
+      - subject_key: "9077001"
+        theme_name: 氟化工
+        weight: 0.30
+        role: PRIMARY_DRIVER
+      - subject_key: "9366001"
+        theme_name: 稀土永磁
+        weight: 0.35
+        role: PRIMARY_DRIVER
+
+  AI_APPLICATION:
+    name: AI应用
+    themes:
+      - subject_key: "9377001"
+        theme_name: AI Agent
+        weight: 0.40
+        role: PRIMARY_DRIVER
+      - subject_key: "9388001"
+        theme_name: 物理AI
+        weight: 0.30
+        role: SUPPORTING
+      - subject_key: "9399001"
+        theme_name: AI大模型
+        weight: 0.30
+        role: SUPPORTING
+
+  DISPLAY_OPTOELECTRONICS:
+    name: 光电显示
+    themes:
+      - subject_key: "9400001"
+        theme_name: MiniLED
+        weight: 0.40
+        role: PRIMARY_DRIVER
+      - subject_key: "9411001"
+        theme_name: MicroLED
+        weight: 0.35
+        role: PRIMARY_DRIVER
+      - subject_key: "9422001"
+        theme_name: 光学
+        weight: 0.25
+        role: SUPPORTING
+
+  LOW_ALTITUDE_ECONOMY:
+    name: 低空经济
+    themes:
+      - subject_key: "9433001"
+        theme_name: 无人机
+        weight: 0.50
+        role: PRIMARY_DRIVER
+      - subject_key: "9444001"
+        theme_name: eVTOL
+        weight: 0.50
+        role: PRIMARY_DRIVER
+
+  CROSS_BORDER_TRADE:
+    name: 跨境贸易
+    themes:
+      - subject_key: "9455001"
+        theme_name: 跨境电商
+        weight: 0.50
+        role: PRIMARY_DRIVER
+      - subject_key: "9466001"
+        theme_name: 一带一路
+        weight: 0.50
+        role: PRIMARY_DRIVER
+
+  AI_STORAGE_CHAIN:
+    name: AI存储产业链
+    description: 存储芯片、模组、HBM构成的完整存储链
+    themes:
+      - subject_key: "9015778"
+        theme_name: 存储芯片
+        weight: 0.35
+        role: PRIMARY_DRIVER
+      - subject_key: "9477001"
+        theme_name: 存储模组
+        weight: 0.25
+        role: PRIMARY_DRIVER
+      - subject_key: "9065001"
+        theme_name: HBM
+        weight: 0.25
+        role: SUPPORTING
+      - subject_key: "9018144"
+        theme_name: PCB印制电路板
+        weight: 0.15
+        role: OPTIONAL
