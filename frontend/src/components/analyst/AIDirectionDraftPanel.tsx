@@ -16,6 +16,7 @@ export function AIDirectionDraftPanel({ candidates, loading, tradeDate, onRefres
   if (!candidates || candidates.length === 0) return null;
 
   const drafts = candidates.filter((c: any) => c.status === 'DRAFT');
+  const confirmed = candidates.filter((c: any) => c.status === 'CONFIRMED');
 
   const handleReview = async (candidateKey: string, action: string, extra?: Record<string, any>) => {
     setActionLoading(prev => ({ ...prev, [candidateKey]: true }));
@@ -89,8 +90,29 @@ export function AIDirectionDraftPanel({ candidates, loading, tradeDate, onRefres
           </div>
         );
       })}
-      {drafts.length === 0 && (
+      {drafts.length === 0 && confirmed.length === 0 && (
         <div style={{ color: "#5a7a8a", fontSize: 12 }}>暂无AI方向草案 — 运行采集后自动生成</div>
+      )}
+
+      {confirmed.length > 0 && (
+        <div style={{ marginTop: 8 }}>
+          <div style={{ fontWeight: 700, color: "#39ff14", fontSize: 12, marginBottom: 6 }}>
+            已确认观察方向 ({confirmed.length})
+          </div>
+          {confirmed.map((c: any) => (
+            <div key={c.candidate_key} style={{
+              padding: "6px 8px", marginBottom: 4, background: "#0c1118",
+              borderRadius: 3, border: "1px solid #1a2a3a", fontSize: 11,
+              display: "flex", alignItems: "center", gap: 8,
+            }}>
+              <span style={{ color: "#39ff14", fontSize: 10 }}>已确认</span>
+              <span style={{ color: "#d8e6ef", fontWeight: 600 }}>{c.candidate_name}</span>
+              <span style={{ color: "#6f8898" }}>
+                {c.analyst_action === "ACCEPT" ? "接受" : c.analyst_action === "MERGE" ? "合并" : c.analyst_action}
+              </span>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
