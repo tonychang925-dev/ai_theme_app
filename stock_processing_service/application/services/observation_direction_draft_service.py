@@ -100,6 +100,11 @@ class ObservationDirectionDraftService:
 3. **去重**: 不要重复已有系统方向: {directions}
 4. **每个方向2-4个主题**，标注核心(CORE)与辅助(SUPPORT)
 5. candidate_key使用英文大写下划线，candidate_name使用中文
+6. **必须输出style_profile**: 每个方向评估机构/游资/事件三个维度的属性评分(0-1)
+   - institution: 机构资金持续流入、大单占比高、周期处于发酵/启动阶段
+   - hot_money: 涨停扩散、连板活跃、游资席位参与
+   - event: 产业事件催化、政策驱动、突发事件
+   - 一个方向可以同时拥有多个属性（如：机构0.92 + 游资0.65 + 事件0.88）
 
 ## 市场数据
 {market}
@@ -123,6 +128,11 @@ class ObservationDirectionDraftService:
       "candidate_type": "GROUP_DIRECTION",
       "confidence": 0.88,
       "rationale": "PCB+覆铜板+铜连接 资金同步流入+38亿，英伟达Rubin驱动",
+      "style_profile": {{
+        "institution": {{ "score": 0.92, "reason": "大资金持续流入PCB/覆铜板" }},
+        "hot_money": {{ "score": 0.65, "reason": "CPO涨停扩散" }},
+        "event": {{ "score": 0.88, "reason": "英伟达Rubin发布" }}
+      }},
       "evidence_json": {{
         "capital_score": 5,
         "event_score": 4,
@@ -186,12 +196,28 @@ class ObservationDirectionDraftService:
             if not isinstance(evidence, dict):
                 evidence = {}
 
+            # Normalize style_profile
+            sp = d.get("style_profile", {})
+            if not isinstance(sp, dict):
+                sp = {}
+            norm_sp = {}
+            for st in ("institution", "hot_money", "event"):
+                si = sp.get(st, {})
+                if isinstance(si, dict):
+                    norm_sp[st] = {
+                        "score": min(1.0, max(0.0, float(si.get("score", 0.5)))),
+                        "reason": str(si.get("reason", ""))[:200],
+                    }
+                else:
+                    norm_sp[st] = {"score": 0.5, "reason": ""}
+
             normalized.append({
                 "candidate_key": dk,
                 "candidate_name": dn,
                 "candidate_type": str(d.get("candidate_type", "GROUP_DIRECTION"))[:20],
                 "confidence": min(1.0, max(0.1, float(d.get("confidence", 0.5)))),
                 "rationale": str(d.get("rationale", ""))[:500],
+                "style_profile": norm_sp,
                 "evidence_json": {
                     "capital_score": int(evidence.get("capital_score", 3)),
                     "event_score": int(evidence.get("event_score", 3)),

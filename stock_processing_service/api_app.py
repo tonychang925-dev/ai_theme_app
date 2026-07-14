@@ -9424,7 +9424,14 @@ async def review_direction_candidate(
     candidate_key: str,
     body: dict[str, Any],
 ) -> dict[str, Any]:
-    """Analyst reviews an AI direction candidate (accept/modify/reject)."""
+    """Analyst reviews an AI direction candidate.
+
+    Actions:
+      ACCEPT  — confirm as-is → writes observation_direction_daily
+      MODIFY  — accept with changes (name, bindings, style) → writes observation_direction_daily
+      MERGE   — merge multiple candidates into one → writes observation_direction_daily with merged_from
+      REJECT_* — reject with structured reason → records feedback only
+    """
     import asyncpg as _apg
     conn = await _apg.connect(
         "postgresql://localhost:5432/stock_data_test", user="postgres", password=""
@@ -9433,44 +9440,106 @@ async def review_direction_candidate(
         from datetime import date as _date
         td = _date.fromisoformat(trade_date)
         action = str(body.get("action", "")).upper().strip()
-        valid_actions = {"ACCEPT", "MERGE", "SPLIT", "REJECT_LOW_CAPITAL", "REJECT_EVENT_ONLY",
-                         "REJECT_DUPLICATE", "REJECT_WRONG_THEME"}
+        valid_actions = {"ACCEPT", "MODIFY", "MERGE", "REJECT_LOW_CAPITAL", "REJECT_EVENT_ONLY",
+                         "REJECT_DUPLICATE", "REJECT_WRONG_THEME", "REJECT_OTHER"}
         if action not in valid_actions:
             return {"status": "error", "error": f"Invalid action. Must be one of: {valid_actions}"}
 
         notes = str(body.get("notes", ""))[:1000]
-        modified_name = str(body.get("modified_name", "")).strip()[:200]
-        modified_bindings = body.get("modified_bindings")  # optional, for ACCEPT with modifications
-        merged_into = str(body.get("merged_into_key", "")).strip()[:50]
 
-        # Update candidate
+        # Fetch the candidate to get its data
+        candidate = await conn.fetchrow(
+            "SELECT * FROM analyst_direction_candidate WHERE trade_date = $1 AND candidate_key = $2",
+            td, candidate_key)
+        if not candidate:
+            return {"status": "error", "error": f"Candidate {candidate_key} not found"}
+
+        is_confirm = action in ("ACCEPT", "MODIFY", "MERGE")
+
+        # Determine final direction data
+        final_name = str(body.get("direction_name", "")).strip() or candidate['candidate_name']
+        final_bindings = body.get("theme_bindings")
+        if not isinstance(final_bindings, list):
+            # Use candidate's original bindings
+            tb = candidate['theme_bindings']
+            final_bindings = json.loads(tb) if isinstance(tb, str) else (tb or [])
+        final_style = body.get("style_profile")
+        if not isinstance(final_style, dict):
+            sp = candidate.get('style_profile')
+            if isinstance(sp, str):
+                try:
+                    final_style = json.loads(sp)
+                except Exception:
+                    final_style = {}
+            else:
+                final_style = sp or {}
+
+        # Generate direction_key from name for observation_direction_daily
+        import re as _re
+        final_key = candidate_key
+        if action == "MODIFY" and final_name != candidate['candidate_name']:
+            # Keep same key but use modified name
+            pass
+
+        # Update candidate status
         await conn.execute(
             """UPDATE analyst_direction_candidate
-               SET status = 'REVIEWED', analyst_action = $1, analyst_notes = $2,
-                   merged_into_key = CASE WHEN $5 != '' THEN $5 ELSE merged_into_key END,
-                   updated_at = NOW()
-               WHERE trade_date = $3 AND candidate_key = $4""",
-            action, notes, td, candidate_key, merged_into)
+               SET status = $1, analyst_action = $2, analyst_notes = $3, updated_at = NOW()
+               WHERE trade_date = $4 AND candidate_key = $5""",
+            'CONFIRMED' if is_confirm else 'REVIEWED',
+            action, notes, td, candidate_key)
 
-        # If ACCEPTed, update session
-        if action == "ACCEPT":
-            # Update session counters
+        # Write to observation_direction_daily on confirmation
+        if is_confirm:
+            merged_from = []
+            if action == "MERGE":
+                merged_from = body.get("merged_from") or []
+                if isinstance(merged_from, str):
+                    merged_from = [merged_from]
+                # Also update merged_into_key on this candidate
+                merged_target_name = str(body.get("merged_into_name", final_name)).strip()[:200]
+                final_name = merged_target_name or final_name
+
+            await conn.execute(
+                """INSERT INTO observation_direction_daily
+                   (trade_date, direction_key, direction_name, source_candidate,
+                    analyst_action, confidence, style_profile, theme_bindings,
+                    status, analyst_notes, merged_from)
+                   VALUES ($1,$2,$3,$4,$5,$6,$7,$8,'CONFIRMED',$9,$10)
+                   ON CONFLICT (trade_date, direction_key) DO UPDATE SET
+                     direction_name = EXCLUDED.direction_name,
+                     analyst_action = EXCLUDED.analyst_action,
+                     style_profile = EXCLUDED.style_profile,
+                     theme_bindings = EXCLUDED.theme_bindings,
+                     analyst_notes = EXCLUDED.analyst_notes,
+                     merged_from = EXCLUDED.merged_from""",
+                td, final_key, final_name, candidate_key,
+                action, candidate['confidence'],
+                json.dumps(final_style, ensure_ascii=False),
+                json.dumps(final_bindings, ensure_ascii=False),
+                notes,
+                json.dumps(merged_from, ensure_ascii=False),
+            )
+
+            # Update session counter
             await conn.execute(
                 """UPDATE analyst_observation_session
                    SET accepted_count = accepted_count + 1, status = 'ANALYST_REVIEWED'
                    WHERE trade_date = $1""", td)
-        elif action in {"MERGE", "SPLIT"}:
-            await conn.execute(
-                """UPDATE analyst_observation_session
-                   SET merged_count = merged_count + 1, status = 'ANALYST_REVIEWED'
-                   WHERE trade_date = $1""", td)
         else:
+            # REJECT — update session rejected counter
             await conn.execute(
                 """UPDATE analyst_observation_session
                    SET rejected_count = rejected_count + 1, status = 'ANALYST_REVIEWED'
                    WHERE trade_date = $1""", td)
 
-        return {"status": "ok", "candidate_key": candidate_key, "action": action}
+        return {
+            "status": "ok",
+            "candidate_key": candidate_key,
+            "action": action,
+            "confirmed": is_confirm,
+            "direction_key": final_key if is_confirm else None,
+        }
     finally:
         await conn.close()
 

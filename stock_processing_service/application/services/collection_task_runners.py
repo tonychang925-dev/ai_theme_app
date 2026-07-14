@@ -1218,13 +1218,14 @@ class ObservationDirectionDraftRunner:
                         await conn.execute(
                             """INSERT INTO analyst_direction_candidate
                                (trade_date, candidate_key, candidate_name, candidate_type, source,
-                                confidence, evidence_json, theme_bindings, status)
-                               VALUES ($1,$2,$3,$4,'AI',$5,$6,$7,'DRAFT')
+                                confidence, evidence_json, theme_bindings, style_profile, status)
+                               VALUES ($1,$2,$3,$4,'AI',$5,$6,$7,$8,'DRAFT')
                                ON CONFLICT (trade_date, candidate_key) DO UPDATE SET
                                  candidate_name = EXCLUDED.candidate_name,
                                  confidence = EXCLUDED.confidence,
                                  evidence_json = EXCLUDED.evidence_json,
                                  theme_bindings = EXCLUDED.theme_bindings,
+                                 style_profile = EXCLUDED.style_profile,
                                  updated_at = NOW()""",
                             td,
                             c["candidate_key"],
@@ -1233,6 +1234,7 @@ class ObservationDirectionDraftRunner:
                             c.get("confidence", 0.5),
                             _json.dumps(c.get("evidence_json", {}), ensure_ascii=False),
                             _json.dumps(c.get("theme_bindings", []), ensure_ascii=False),
+                            _json.dumps(c.get("style_profile", {}), ensure_ascii=False),
                         )
                         inserted += 1
                     except Exception as e:
