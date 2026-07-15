@@ -46,6 +46,8 @@ class ReviewSnapshot:
     stock_structure: list[dict[str, Any]] = field(default_factory=list)
     # Plan: playbook + scenario from plan_state
     plan_state: dict[str, Any] = field(default_factory=dict)
+    # Quality annotations: distinguish NO_DATA from MISSING for completeness checks
+    capital_quality: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -75,6 +77,7 @@ class ReviewSnapshot:
             "theme_structure": self.theme_structure,
             "stock_structure": self.stock_structure,
             "plan_state": self.plan_state,
+            "capital_quality": self.capital_quality,
         }
 
     @classmethod
@@ -106,6 +109,7 @@ class ReviewSnapshot:
             theme_structure=d.get("theme_structure", []),
             stock_structure=d.get("stock_structure", []),
             plan_state=d.get("plan_state", {}),
+            capital_quality=d.get("capital_quality", {}),
         )
 
     @classmethod
@@ -136,6 +140,7 @@ class ReviewSnapshot:
             theme_structure=ctx.get("themes", []),
             stock_structure=ctx.get("strong_stocks", []),
             plan_state=ctx.get("plan_state", {}),
+            capital_quality=ctx.get("capital_quality", {}),
         )
 
     @classmethod
@@ -176,6 +181,7 @@ class ReviewSnapshot:
             theme_structure=ctx.get("themes", []),
             stock_structure=ctx.get("strong_stocks", []),
             plan_state=ctx.get("plan_state", {}),
+            capital_quality=ctx.get("capital_quality", {}),
         )
 
     def compute_hash(self) -> str:

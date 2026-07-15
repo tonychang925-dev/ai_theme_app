@@ -10117,7 +10117,6 @@ async def _enrich_draft_context_with_capital(trade_date: str, ctx: dict[str, Any
                     ctx["capital_hot_money_style"] = capital["hot_money_style"]
                 # Also capture direction_view if available
                 if capital.get("direction_view"):
-                    # Process direction_view into institution/hotmoney splits
                     inst_from_dir = [d for d in capital["direction_view"] if d.get("institution_score") is not None]
                     if inst_from_dir and not ctx.get("capital_institution_style"):
                         ctx["capital_institution_style"] = inst_from_dir
@@ -10131,6 +10130,18 @@ async def _enrich_draft_context_with_capital(trade_date: str, ctx: dict[str, Any
                                 hm_from_dir.append(hm)
                     if hm_from_dir and not ctx.get("capital_hot_money_style"):
                         ctx["capital_hot_money_style"] = hm_from_dir
+
+                # P0-A quality annotations: distinguish NO_DATA from MISSING
+                ctx["capital_quality"] = {
+                    "institution_rows": len(ctx.get("capital_institution_style", [])),
+                    "institution_status": "OK" if ctx.get("capital_institution_style") else "NO_DATA",
+                    "hot_money_rows": len(ctx.get("capital_hot_money_style", [])),
+                    "hot_money_status": "OK" if ctx.get("capital_hot_money_style") else "NO_DATA",
+                    "hot_money_diagnostics": {
+                        "reason": "no_hot_money_activity_for_trade_date",
+                        "trade_date": trade_date,
+                    } if not ctx.get("capital_hot_money_style") else None,
+                }
         except Exception:
             pass
     except Exception:

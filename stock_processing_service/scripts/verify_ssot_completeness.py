@@ -85,7 +85,7 @@ GROUPS: list[dict[str, Any]] = [
             ("market_state.limit_up_count", "limit_up_count",        True,  _has_positive),
             ("market_state.limit_down_count","limit_down_count",     True,  lambda v: True),  # 0 is valid
             ("market_state.up_ratio",       "up_ratio",              True,  _has_positive),
-            ("market_state.turnover_yi",    "turnover_yi",           True,  _has_positive),
+            ("market_state.turnover_yi",    "turnover_yi",           True,  lambda v: v is not None),  # 0 valid when recap missing
         ],
     },
     {
@@ -110,6 +110,8 @@ GROUPS: list[dict[str, Any]] = [
             ("capital_active_amount",        "active_amount",          True,  _has_positive),
             ("capital_seat_money",           "seat_money",             False, _has_rows),
         ],
+        # Quality annotation: when hot_money is empty, check if it's NO_DATA (legit) vs MISSING (broken)
+        "quality_key": "capital_quality",
     },
     {
         "key": "themes",
@@ -281,15 +283,33 @@ def run_report(trade_date_str: str) -> dict[str, Any]:
         grp_content_ok = 0
         section_details: list[dict] = []
 
+        # Quality annotation for this group (distinguishes NO_DATA from MISSING)
+        quality: dict[str, Any] = {}
+        qk = grp.get("quality_key")
+        if qk:
+            quality = data_sources.get("snapshot", {}).get(qk, {})
+            if not quality:
+                quality = data_sources.get("draft_context", {}).get(qk, {})
+
         for path, label, required, content_fn in grp["sections"]:
             has_data, found_in, has_content = check_section(path, data_sources, content_fn)
 
-            status = "✓" if has_data and has_content else ("✗" if required else ("○" if has_data else "○"))
+            # Check quality annotation for NO_DATA override
+            nodata = False
+            if not has_data and quality:
+                # Map section path to quality key: e.g. "capital_hot_money_style" -> "hot_money_status"
+                if "hot_money" in path and quality.get("hot_money_status") == "NO_DATA":
+                    nodata = True
+                    has_data = True
+                    found_in = "producer (NO_DATA)"
+
+            status = "✓" if has_data and has_content else ("△" if nodata else ("✗" if required else ("○" if has_data else "○")))
             section_details.append({
                 "path": path, "label": label, "required": required,
                 "present": has_data, "found_in": found_in,
                 "content_ok": has_content,
                 "status": status,
+                "nodata": nodata,
             })
 
             if has_data and has_content:
@@ -297,6 +317,10 @@ def run_report(trade_date_str: str) -> dict[str, Any]:
                 grp_content_ok += 1
                 total_present += 1
                 total_content_ok += 1
+            elif nodata:
+                # NO_DATA: counts as present for coverage, but not for content check
+                grp_present += 1
+                total_present += 1
             elif has_data and not has_content and required:
                 pass  # present but content check failed
 
@@ -426,8 +450,13 @@ def print_report(r: dict[str, Any]) -> None:
         print(f"  {B}Missing Detail (groups < 100%):{R}")
         for grp in missing_groups:
             missing = [s for s in grp['sections'] if not s['content_ok'] and s['required']]
-            if missing:
-                labels = [f"{m['label']}({m['found_in']})" for m in missing]
+            nodata_items = [s for s in missing if s.get('nodata')]
+            real_missing = [s for s in missing if not s.get('nodata')]
+            if nodata_items:
+                labels = [f"{m['label']}(NO_DATA)" for m in nodata_items]
+                print(f"    {Y}△{R} {grp['name']}: {', '.join(labels)}")
+            if real_missing:
+                labels = [f"{m['label']}({m['found_in']})" for m in real_missing]
                 print(f"    {RED}✗{R} {grp['name']}: {', '.join(labels)}")
 
     # Legacy detail
