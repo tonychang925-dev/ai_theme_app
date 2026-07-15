@@ -118,6 +118,7 @@ async def test_tc_p455_01_given_generate_when_success_then_steps_are_recorded(tm
 
 
 async def test_tc_p455_01_given_derived_failure_when_generate_then_draft_not_started(tmp_path):
+    """Derived failure without force=True should block generation."""
     service = FailingDerivedGenerateService(
         project_root=tmp_path,
         chart_provider=_should_not_call,
@@ -125,7 +126,7 @@ async def test_tc_p455_01_given_derived_failure_when_generate_then_draft_not_sta
         base_dir="tmp/analyst_workbench",
     )
 
-    result = await service.generate(date(2026, 7, 10))
+    result = await service.generate(date(2026, 7, 10), force=False)
 
     assert result.status == "failed_precondition"
     assert result.steps_completed == ()

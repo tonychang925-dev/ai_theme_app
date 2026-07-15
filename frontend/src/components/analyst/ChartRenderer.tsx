@@ -94,7 +94,7 @@ export function ChartRenderer({ chart, trendData }: { chart?: ChartData | null; 
   const data = chartData(chart);
   const interpretation = chart.interpretation || "";
   switch (chart.chart_type) {
-    case "market_breadth": return <AnalystBreadthChart data={data} interpretation={interpretation} trend={trendData?.breadth} />;
+    case "market_breadth": return <AnalystBreadthChart data={data} interpretation={interpretation} trend={trendData?.breadth} marketPowerTrend={trendData?.market_power} />;
     case "emotion_momentum": return <AnalystMomentumChart data={data} interpretation={interpretation} trend={trendData?.momentum} />;
     case "active_capital": return <AnalystCapitalChart data={data} interpretation={interpretation} trend={trendData?.capital} />;
     case "relay_ecology": return <AnalystRelayChart data={data} interpretation={interpretation} trend={trendData?.relay} />;
@@ -115,7 +115,7 @@ function chartData(chart: ChartData): Record<string, any> {
 // Chart 1: 大盘势能 — multi-day line + score gauge + metrics
 // ═══════════════════════════════════════════════════════════
 
-function AnalystBreadthChart({ data, interpretation, trend }: { data: any; interpretation: string; trend?: any[] }) {
+function AnalystBreadthChart({ data, interpretation, trend, marketPowerTrend }: { data: any; interpretation: string; trend?: any[]; marketPowerTrend?: any[] }) {
   const up = data.up_count || 0; const down = data.down_count || 0;
   const score = data.composite_score ?? 0;
   const label = data.label || "";
@@ -124,10 +124,11 @@ function AnalystBreadthChart({ data, interpretation, trend }: { data: any; inter
 
   return (
     <div style={{ fontSize: 12 }}>
-      <div style={{ fontWeight: 700, color: "#ffd85e", marginBottom: 8, fontSize: 13, borderLeft: "3px solid #e53e3e", paddingLeft: 8 }}>大盘势能</div>
+      {/* 大盘势能指标 趋势折线图 */}
+      {marketPowerTrend && marketPowerTrend.length >= 3 && <TrendLineChart title="大盘势能指标 (近15日)" data={marketPowerTrend} yKey="composite_score" yLabel="评分" color="#e53e3e" />}
 
       {/* Multi-day trend line */}
-      {trend && trend.length >= 3 && <TrendLineChart title="涨停数趋势 (6/25~7/8)" data={trend} yKey="limit_up" yLabel="涨停" color="#e53e3e" />}
+      {trend && trend.length >= 3 && <TrendLineChart title="涨停数趋势" data={trend} yKey="limit_up" yLabel="涨停" color="#d69e2e" />}
 
       {/* Score gauge */}
       <div style={{ background: "#0c1118", borderRadius: 6, padding: 10, marginBottom: 8 }}>

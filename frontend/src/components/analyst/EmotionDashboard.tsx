@@ -371,8 +371,7 @@ export function EmotionDashboard({ tradeDate, tomorrowOutlook, tomorrowWatchpoin
                   const m = multiTrend;
                   return [
                     <UnifiedCard key="breadth" title="大盘势能" borderColor="#e53e3e">
-                      {m?.breadth && <TrendLineChart title="涨停家数趋势 (6/25~7/8)" data={m.breadth} yKey="limit_up" yLabel="涨停" color="#e53e3e" />}
-                      {c("market_breadth") && <ChartRenderer chart={c("market_breadth")} />}
+                      {c("market_breadth") && <ChartRenderer chart={c("market_breadth")} trendData={m} />}
                     </UnifiedCard>,
                     <UnifiedCard key="momentum" title="情绪动能" borderColor="#dd6b20">
                       {m?.momentum && <TrendLineChart title="情绪动能趋势 (6/25~7/8)" data={m.momentum} yKey="score" yLabel="动能" color="#dd6b20" />}
@@ -470,10 +469,13 @@ function DirectionViewCard({ directionView, fallbackInstStyle, fallbackHmStyle }
   const renderRow = (row: any, key: string, opts: {
     name: string; score: number; conf: number | null; stage: string;
     attackDay?: number | null; relation?: string | null;
-    flowYi: number | null; topStocks: any[]; captureRatio: number | null;
+    flowYi: number | null; mainForceYi?: number | null;
+    divergence?: any; themeCancellation?: boolean;
+    topStocks: any[]; captureRatio: number | null;
     directionType?: string; parentDirs?: any[]; styleProfile?: any;
   }) => {
-    const { name, score, conf, stage, attackDay, relation, flowYi, topStocks, captureRatio,
+    const { name, score, conf, stage, attackDay, relation, flowYi, mainForceYi, divergence,
+            themeCancellation, topStocks, captureRatio,
             directionType, parentDirs, styleProfile } = opts;
     const stageText = _cs(stage);
     const stars = score >= 80 ? "★★★★★" : score >= 65 ? "★★★★☆" : score >= 50 ? "★★★☆☆" : score >= 35 ? "★★☆☆☆" : "★☆☆☆☆";
@@ -497,36 +499,82 @@ function DirectionViewCard({ directionView, fallbackInstStyle, fallbackHmStyle }
           </div>
           <span style={{ color: "#6f8898", fontSize: 11, textAlign: "right", whiteSpace: "nowrap" }}>
             {hasFlow
-              ? <span style={{ color: flowYi >= 0 ? "#38a169" : "#e53e3e", fontWeight: 600, marginRight: 6 }}>{flowYi >= 0 ? "+" : ""}{flowYi.toFixed(1)}亿</span>
+              ? <>
+                  {mainForceYi != null && (
+                    <span style={{ color: (mainForceYi || 0) >= 0 ? "#f6ad55" : "#38a169", fontWeight: 600, marginRight: 2 }}
+                      title="主力净额(特大单+大单净)">{mainForceYi >= 0 ? "+" : ""}{mainForceYi?.toFixed(1)}亿 </span>
+                  )}
+                  <span style={{ color: flowYi >= 0 ? "#38a169" : "#e53e3e", fontWeight: 600, marginRight: 6 }}
+                    title="主买净额(主动-被动)">{flowYi >= 0 ? "+" : ""}{flowYi.toFixed(1)}亿</span>
+                </>
               : <span style={{ color: "#5a7a8a", marginRight: 6 }}>暂无资金</span>
             }
             {score > 0 && <>{stars} {score.toFixed(0)}分</>}
             {conf != null && ` · ${conf}%`}
             {stageText && ` · ${stageText}`}
             {attackDay != null && ` · 第${attackDay}天`}
+            {divergence && (
+              <span style={{
+                marginLeft: 4, fontSize: 9, fontWeight: 700,
+                color: divergence.type === "dark_accumulation" ? "#f6ad55" : "#fc8181",
+                border: `1px solid ${divergence.type === "dark_accumulation" ? "#f6ad55" : "#fc8181"}`,
+                borderRadius: 2, padding: "0 3px",
+              }} title={divergence.detail}>{divergence.label}</span>
+            )}
           </span>
         </div>
         {isExpanded && (
           <div style={{ marginLeft: 18, marginBottom: 6, padding: "6px 8px", background: "#0c1118", borderRadius: 4, border: "1px solid #1a2a3a" }}>
             {hasStocks ? (
               <>
-                {captureRatio != null && (
-                  <div style={{ fontSize: 10, color: "#6f8898", marginBottom: 4 }}>
-                    核心股票 · Top{topStocks.length}贡献 {(captureRatio * 100).toFixed(0)}% 资金
+                {(captureRatio != null || themeCancellation) && (
+                  <div style={{ fontSize: 10, color: themeCancellation ? "#f6ad55" : "#6f8898", marginBottom: 4 }}>
+                    核心股票 · Top{topStocks.length}
+                    {themeCancellation && captureRatio && captureRatio > 2.0
+                      ? <span title="板块内部资金对倒，个股贡献远超方向净额"> 贡献 &gt;100% 资金</span>
+                      : <span>贡献 {(captureRatio * 100).toFixed(0)}% 资金</span>
+                    }
+                    {themeCancellation && (
+                      <span style={{ color: "#f6ad55", marginLeft: 6 }}>⚠ 板块内部资金对倒</span>
+                    )}
                   </div>
                 )}
+                {/* Column header */}
+                <div style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) 62px 62px 62px 68px", gap: 4,
+                  padding: "1px 0 3px 0", fontSize: 9, alignItems: "end",
+                  borderBottom: "1px solid #1a2a3a", marginBottom: 2 }}>
+                  <span style={{ color: "#3a5a6a" }}></span>
+                  <span style={{ color: "#3a5a6a", textAlign: "center" }}></span>
+                  <span style={{ color: "#f6ad55", textAlign: "right", fontWeight: 600 }}>主力净额</span>
+                  <span style={{ color: "#5a8a6a", textAlign: "right", fontWeight: 600 }}>主买净额</span>
+                  <span style={{ color: "#3a5a6a", textAlign: "right" }}>信号</span>
+                </div>
                 {topStocks.slice(0, 5).map((s: any, si: number) => (
-                  <div key={si} style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) 72px 65px", gap: 6,
+                  <div key={si} style={{ display: "grid", gridTemplateColumns: "minmax(0,1fr) 62px 62px 62px 68px", gap: 4,
                     padding: "2px 0", fontSize: 11, alignItems: "center", borderTop: si > 0 ? "1px solid #0f1722" : "none" }}>
                     <span style={{ color: "#d8e6ef", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{s.name}</span>
-                    <span style={{ color: "#5a7a8a", fontSize: 10 }}>{s.code}</span>
-                    <span style={{ color: (s.net_flow_yi || 0) >= 0 ? "#38a169" : "#e53e3e", fontWeight: 600, textAlign: "right" }}>
+                    <span style={{ color: "#5a7a8a", fontSize: 10, textAlign: "center" }}>{s.code}</span>
+                    <span style={{ color: (s.main_force_yi || 0) >= 0 ? "#f6ad55" : "#38a169", fontWeight: 600, textAlign: "right", fontSize: 11 }}
+                      title="主力净额 (特大单+大单净)">
+                      {(s.main_force_yi || 0) >= 0 ? "+" : ""}{s.main_force_yi?.toFixed(1)}亿
+                    </span>
+                    <span style={{ color: (s.net_flow_yi || 0) >= 0 ? "#38a169" : "#e53e3e", fontWeight: 600, textAlign: "right", fontSize: 11 }}
+                      title="主买净额 (主动-被动)">
                       {(s.net_flow_yi || 0) >= 0 ? "+" : ""}{s.net_flow_yi?.toFixed(1)}亿
+                    </span>
+                    <span style={{ textAlign: "right" }}>
+                      {s.divergence ? (
+                        <span style={{
+                          fontSize: 9, color: s.divergence.type === "dark_accumulation" ? "#f6ad55" : "#fc8181",
+                          border: `1px solid ${s.divergence.type === "dark_accumulation" ? "#f6ad55" : "#fc8181"}`,
+                          borderRadius: 2, padding: "0 3px", whiteSpace: "nowrap",
+                        }} title={s.divergence.detail}>{s.divergence.label}</span>
+                      ) : <span style={{ fontSize: 9, color: "#3a5a6a" }}>共振</span>}
                     </span>
                   </div>
                 ))}
                 <div style={{ fontSize: 9, color: "#3a5a6a", marginTop: 4 }}>
-                  来源: stock_fund_flow_daily.order_size_flow_amount · 订单规模净流入
+                  主力净额: 特大单+大单净 · 主买净额: 订单主动-被动 · 来源: stock_fund_flow_daily
                 </div>
               </>
             ) : (
@@ -566,6 +614,9 @@ function DirectionViewCard({ directionView, fallbackInstStyle, fallbackHmStyle }
             conf: d.institution_confidence != null ? Math.round(d.institution_confidence * 100) : null,
             stage: d.lifecycle_stage || "",
             flowYi: d.net_flow_yi,
+            mainForceYi: d.main_force_yi,
+            divergence: d.divergence,
+            themeCancellation: d.theme_cancellation,
             topStocks: d.top_stocks || [],
             captureRatio: d.top5_capture_ratio,
             directionType: d.direction_type,

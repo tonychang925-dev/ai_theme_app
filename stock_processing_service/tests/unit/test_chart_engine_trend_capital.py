@@ -20,7 +20,7 @@ def test_build_trend_capital_uses_active_capital_not_market_turnover() -> None:
             up_ratio=0.471,
             limit_down_count=25,
         ),
-        limitup=SimpleNamespace(total_count=75),
+        limitup=SimpleNamespace(total_count=75, current_board_height=6),
         capital=SimpleNamespace(
             total_turnover_yi=289258.22,
             active_limitup_amount_yi=2707.0,

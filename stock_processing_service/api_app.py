@@ -2155,14 +2155,10 @@ async def _build_one_to_two_watchlists(trade_date: date) -> dict[str, Any]:
         )
     rows = await fn(trade_date, "one_to_two")
     if not rows:
-        raise HTTPException(
-            status_code=424,
-            detail={
-                "error_code": "ONE_TO_TWO_SETUP_PLAN_MISSING",
-                "message": "Persisted one_to_two setup plan missing",
-                "trade_date": trade_date.isoformat(),
-            },
-        )
+        # Non-blocking: return empty watchlist instead of failing the entire
+        # daily-review-v2 response. Missing setup plan should not prevent the
+        # recap page from rendering workbench_approval and other sections.
+        return {"one_to_two": None, "_missing": True}
 
     summary_row = next((dict(r) for r in rows if str((r or {}).get("stock_id") or "") == "__SUMMARY__"), None)
     if summary_row is None:
@@ -8154,6 +8150,9 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     snapshot_path = _Path(_wb_base) / trade_date / "snapshot.json"
     if snapshot_path.exists():
         snap = _json.loads(snapshot_path.read_text(encoding="utf-8"))
+        # Attach draft_context.json so the assembler can access derived data
+        # (themes, strong_stocks, trend_data, etc.) when reading from approved snapshot.
+        _attach_draft_review_document_context(snap, _Path(_wb_base) / trade_date / "draft_context.json")
         review_document = _assemble_workspace_review_document(snap, mode="approved")
         review_document = await _inject_capital_producer_outputs_async(review_document)
         _persist_workspace_review_document(trade_date, review_document)
@@ -8628,13 +8627,20 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
             # ── Stock fund flows (reuse or re-fetch) ──
             flow_by_code: dict[str, dict[str, Any]] = {}
             f_rows = await conn3.fetch(
-                "SELECT ts_code, order_size_flow_amount_yuan, buy_elg_amount_yuan, buy_lg_amount_yuan "
+                "SELECT ts_code, order_size_flow_amount_yuan, "
+                "buy_elg_amount_yuan, sell_elg_amount_yuan, "
+                "buy_lg_amount_yuan, sell_lg_amount_yuan "
                 "FROM stock_fund_flow_daily WHERE trade_date = $1::date AND quality = 'OK'", td)
             for r in f_rows:
                 raw = normalize_for_matching(r['ts_code'])
+                _elg_b = float(r['buy_elg_amount_yuan'] or 0)
+                _elg_s = float(r['sell_elg_amount_yuan'] or 0)
+                _lg_b = float(r['buy_lg_amount_yuan'] or 0)
+                _lg_s = float(r['sell_lg_amount_yuan'] or 0)
                 flow_by_code[raw] = {
                     "net_yuan": float(r['order_size_flow_amount_yuan'] or 0),
-                    "large_buy_yuan": float(r['buy_elg_amount_yuan'] or 0) + float(r['buy_lg_amount_yuan'] or 0),
+                    "main_force_yuan": (_elg_b - _elg_s) + (_lg_b - _lg_s),
+                    "large_buy_yuan": _elg_b + _lg_b,
                 }
 
             # ── PR4.2.38b: Dynamic Direction Binding Engine ──
@@ -8734,18 +8740,26 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
             for dk, dd in dynamic_directions.items():
                 stock_flows: dict[str, dict[str, Any]] = {}
                 for sk, theme_w in dd["themes"].items():
-                    for sid in theme_stocks.get(sk, []):
+                    stocks_in_theme = theme_stocks.get(sk, [])
+                    for sid in stocks_in_theme:
                         code = normalize_for_matching(sid)
                         f = flow_by_code.get(code, {})
                         net = f.get("net_yuan", 0)
+                        mf = f.get("main_force_yuan", 0)
                         large = f.get("large_buy_yuan", 0)
                         if code not in stock_flows:
-                            stock_flows[code] = {"net_yuan": 0.0, "large_yuan": 0.0, "themes": set()}
+                            stock_flows[code] = {"net_yuan": 0.0, "main_force_yuan": 0.0, "large_yuan": 0.0, "themes": set()}
                         # Attribute: stock_flow * theme_weight_in_direction
                         stock_flows[code]["net_yuan"] += net * theme_w
+                        stock_flows[code]["main_force_yuan"] += mf * theme_w
                         stock_flows[code]["large_yuan"] += large * theme_w
                         stock_flows[code]["themes"].add(sk)
                 dir_stock_flows[dk] = stock_flows
+                # Debug for 600118
+                if "600118" in stock_flows:
+                    sf600 = stock_flows["600118"]
+                    _logger = __import__('logging').getLogger(__name__)
+                    _logger.warning(f"DEBUG 600118 in {dk}: net_yuan={sf600['net_yuan']} main_force_yuan={sf600['main_force_yuan']} large_yuan={sf600['large_yuan']} themes={sf600['themes']}")
 
             # ── 1. Direction Flow Ranking ──
             direction_flow_ranking: list[dict[str, Any]] = []
@@ -8789,33 +8803,53 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
                 except Exception:
                     pass
 
+            # ── Divergence Detector ──
+            def detect_divergence(mf_yi: float, nf_yi: float, threshold: float = 0.5) -> dict | None:
+                """Detect 主力净额 vs 主买净额 divergence (机构暗吸 / 边拉边撤)."""
+                if abs(mf_yi) < threshold and abs(nf_yi) < threshold:
+                    return None
+                if mf_yi > threshold and nf_yi < -threshold:
+                    return {"type": "dark_accumulation", "label": "机构暗吸",
+                            "detail": f"主力净买{mf_yi:.1f}亿，主买净额{nf_yi:.1f}亿，机构被动挂单吸筹"}
+                if mf_yi < -threshold and nf_yi > threshold:
+                    return {"type": "lure_dump", "label": "疑似诱多",
+                            "detail": f"主力净卖{abs(mf_yi):.1f}亿，主买净额{nf_yi:.1f}亿，边拉边撤"}
+                return None
+
             all_dir_total = 0.0
             market_total = sum(v.get("net_yuan", 0) for v in flow_by_code.values())
 
             for dk, dd in dynamic_directions.items():
                 d_name = dd["name"]
-                # Use stock-aggregated total for conservation consistency with top_stocks
                 sflows = dir_stock_flows.get(dk, {})
                 d_net_from_stocks = sum(sf["net_yuan"] for sf in sflows.values())
-                # Prefer aggregator result when available, fallback to stock sum
-                d_net = dir_flow_map.get(dk, 0) if abs(dir_flow_map.get(dk, 0)) > 0 else d_net_from_stocks
+                d_mf_from_stocks = sum(sf["main_force_yuan"] for sf in sflows.values())
+                d_net = d_net_from_stocks
+                d_mf = d_mf_from_stocks
                 d_net_yi = round(d_net / 1e8, 2)
+                d_mf_yi = round(d_mf / 1e8, 2)
                 all_dir_total += abs(d_net)
                 inst = inst_by_dir.get(dk, {})
 
-                # Top 5 stocks
-                sorted_stocks = sorted(sflows.items(), key=lambda kv: abs(kv[1]["net_yuan"]), reverse=True)
+                # Top 5 stocks (sorted by abs(main_force) as primary, abs(net) as tiebreaker)
+                sorted_stocks = sorted(sflows.items(),
+                    key=lambda kv: (abs(kv[1].get("main_force_yuan", 0)), abs(kv[1]["net_yuan"])), reverse=True)
                 top5 = sorted_stocks[:5]
-                top5_total = sum(abs(s[1]["net_yuan"]) for s in top5)
-                top5_yi = round(top5_total / 1e8, 2)
-                top5_capture = round(top5_total / max(abs(d_net), 1), 4) if d_net != 0 else 0.0
+                top5_total_net = sum(abs(s[1]["net_yuan"]) for s in top5)
+                top5_total_mf = sum(abs(s[1].get("main_force_yuan", 0)) for s in top5)
+                top5_capture = round(top5_total_net / max(abs(d_net), 1), 4) if d_net != 0 else 0.0
                 stock_coverage = round(len(sflows) / max(len([s for sk in dd["themes"] for s in theme_stocks.get(sk, [])]), 1), 4)
+
+                # Direction-level divergence
+                dir_divergence = detect_divergence(d_mf_yi, d_net_yi, threshold=1.0)
 
                 top_stocks_data = []
                 for i, (code, sf) in enumerate(top5):
                     s_net_yi = round(sf["net_yuan"] / 1e8, 2)
-                    contrib = round(s_net_yi / max(abs(d_net_yi), 1), 4) if d_net_yi != 0 else 0.0
+                    s_mf_yi = round(sf.get("main_force_yuan", 0) / 1e8, 2)
                     s_themes = sf.get("themes", set())
+                    # Stock-level divergence
+                    stock_div = detect_divergence(s_mf_yi, s_net_yi, threshold=0.3)
                     # Get stock role from strong_stock_watch
                     role = ""
                     structures = dir_structures.get(dk, []) if 'dir_structures' in dir() else []
@@ -8828,8 +8862,10 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
                         "name": resolve_name(code),
                         "theme": resolve_theme_name(next(iter(s_themes)) if s_themes else ""),
                         "net_flow_yi": s_net_yi,
+                        "main_force_yi": s_mf_yi,
                         "raw_order_flow_yi": round(sf["large_yuan"] / 1e8, 2),
-                        "contribution_ratio": contrib,
+                        "contribution_ratio": round(s_net_yi / max(abs(d_net_yi), 0.01), 4) if d_net_yi != 0 else 0.0,
+                        "divergence": stock_div,
                         "role": role or "",
                         "attribution_source": {
                             "theme_weight_source": "direction_theme_binding",
@@ -8837,21 +8873,14 @@ async def _inject_capital_producer_outputs_async(document: dict[str, Any]) -> di
                         },
                     })
 
-                # Conservation Guard: clamp top5_capture and scale stock flows if exceeded
-                top5_yi_for_guard = sum(abs(s["net_flow_yi"]) for s in top_stocks_data)
-                top5_capture = round(top5_yi_for_guard / max(abs(d_net_yi), 0.01), 4) if d_net_yi != 0 else 0.0
-                if top5_capture > 1.0:
-                    scale = 1.0 / max(top5_capture, 0.01)
-                    for s in top_stocks_data:
-                        s["net_flow_yi"] = round(s["net_flow_yi"] * scale, 2)
-                        s["contribution_ratio"] = round(s["contribution_ratio"] * scale, 4)
-                    top5_capture = 1.0
-
                 direction_flow_ranking.append({
                     "direction_key": dk,
                     "direction_name": d_name,
                     "net_flow_yi": d_net_yi,
+                    "main_force_yi": d_mf_yi,
                     "flow_5d_yi": flow_5d_map.get(dk, d_net_yi),
+                    "divergence": dir_divergence,
+                    "theme_cancellation": top5_capture > 2.0,  # Flag when internal themes are opposing
                     "score": inst.get("score", 0),
                     "confidence": inst.get("confidence", 0),
                     "lifecycle_stage": inst.get("lifecycle_stage", ""),
@@ -9956,12 +9985,25 @@ async def approve_workbench(trade_date: str, body: dict[str, Any] = None) -> dic
         workspace=workspace,
         overrides=body.get("overrides", {}),
     )
+
+    # P0-A: Load draft_context.json and inject canonical fields
+    draft_context: dict[str, Any] | None = None
+    ctx_path = _Path(_project_root) / "tmp" / "analyst_workbench" / trade_date / "draft_context.json"
+    if ctx_path.exists():
+        try:
+            draft_context = json.loads(ctx_path.read_text(encoding="utf-8"))
+            # Inject capital Producer outputs into context
+            draft_context = await _enrich_draft_context_with_capital(trade_date, draft_context)
+        except Exception:
+            pass
+
     snapshot = ReviewSnapshot.from_merged(
         trade_date=td,
         draft=draft,
         merged=merged,
         snapshot_version=session.snapshot_version + 1,
         approved_by=body.get("approved_by", "analyst"),
+        draft_context=draft_context,
     )
     snapshot_store.save(snapshot)
     session = session_store.transition(session, WorkbenchStatus.APPROVED, snapshot_version=snapshot.snapshot_version, approved_by=snapshot.approved_by)
@@ -10029,6 +10071,52 @@ async def check_report_approval(trade_date: str) -> dict[str, Any]:
         "composition_mode": approval.snapshot.composition_mode if approval.snapshot else "",
         "reason": approval.reason,
     }
+
+
+async def _enrich_draft_context_with_capital(trade_date: str, ctx: dict[str, Any]) -> dict[str, Any]:
+    """P0-A: Inject capital Producer outputs into draft context during approve.
+
+    Reads institution_style / hot_money_style from the chart engine
+    (which already computes them). These are frozen into the Snapshot
+    so compose-from-workbench does not need to re-compute them.
+    """
+    try:
+        td = date.fromisoformat(trade_date)
+        from stock_processing_service.application.services.market_metrics.service import (
+            MarketMetricsService,
+        )
+        from stock_processing_service.application.services.analyst_charts.chart_engine import (
+            ChartReproductionEngine,
+        )
+        snap = await MarketMetricsService().get_async(td)
+        engine = ChartReproductionEngine()
+        charts = engine.build(snap)
+
+        # Extract institution_style projection
+        inst_chart = next((c for c in charts if c.get("chart_type") == "institution_style"), None)
+        if inst_chart:
+            inst_data = inst_chart.get("data") or {}
+            ctx["capital_institution_style"] = inst_data.get("directions") or []
+
+        # Extract hot_money_style projection
+        hm_chart = next((c for c in charts if c.get("chart_type") == "hot_money_style"), None)
+        if hm_chart:
+            hm_data = hm_chart.get("data") or {}
+            ctx["capital_hot_money_style"] = hm_data.get("directions") or []
+
+        # Market metrics from MarketMetricsSnapshot
+        b = snap.breadth
+        ctx["market_state"] = {
+            "up_count": b.up_count,
+            "down_count": b.down_count,
+            "up_ratio": b.up_ratio,
+            "limit_up_count": snap.limitup.total_count,
+            "limit_down_count": b.limit_down_count,
+            "turnover_yi": b.turnover_yi,
+        }
+    except Exception:
+        pass
+    return ctx
 
 
 async def _check_workbench_approval(trade_date: date) -> dict[str, Any]:
@@ -10249,60 +10337,65 @@ async def compose_daily_review_from_workbench(payload: dict[str, Any] | None = N
     except Exception as e:
         raise HTTPException(status_code=409, detail=str(e))
 
-    # ── Load recap_doc from post_market_recap_snapshot ──
-    from stock_processing_service.application.services.post_market_daily_review_v2_builder import (
-        PostMarketDailyReviewV2Builder,
-    )
-    builder = PostMarketDailyReviewV2Builder()
-    row = await _fetch_latest_post_market_recap_snapshot_row(d)
-    recap_doc: dict[str, Any] = {}
-    if row:
-        payload_data = _normalize_recap_payload(row)
-        recap_doc = payload_data.get("recap_doc") or payload_data
-        if not isinstance(recap_doc, dict):
-            recap_doc = {}
+    # ── P0-B: Compose from Canonical Snapshot only — no recap_doc, no Builder, no Engine ──
+    snap = approval.snapshot
 
-    # ── Compose from workbench ──
-    result = wb_composer.compose(d, recap_doc)
+    # Build v2 structure directly from snapshot canonical fields
+    v2: dict[str, Any] = {
+        "trade_date": trade_date_str,
+        "snapshot_version": str(snap.snapshot_version),
+        "workbench_approval": {
+            "mode": "formal",
+            "session_status": approval.session_status,
+            "can_generate_formal_report": True,
+            "snapshot_version": snap.snapshot_version,
+            "approved_at": snap.approved_at,
+            "approved_by": snap.approved_by,
+            "based_on_draft_version": snap.based_on_draft_version,
+            "snapshot_hash": snap.snapshot_hash,
+            "reason": "Approved snapshot exists. Formal report can be generated.",
+        },
+        "emotion_review": snap.emotion_review,
+        "market_chart_reviews": snap.chart_reviews,
+    }
 
-    # ── Build DailyReviewV2 structure around the composed report ──
-    v2 = builder.build(
-        trade_date=d,
-        recap_doc=recap_doc,
-        recap_snapshot_version=str(row.get("snapshot_version") or "") if row else "",
-    )
-    v2 = {**v2, **result.report}
-
-    v2 = await _enrich_v2_theme_names(v2, d)
-    v2["watchlists"] = await _build_one_to_two_watchlists(d)
+    # watchlists — non-blocking
+    try:
+        v2["watchlists"] = await _build_one_to_two_watchlists(d)
+    except Exception:
+        v2["watchlists"] = {"one_to_two": None, "_missing": True}
     v2 = _trim_daily_review_v2_response(v2)
 
-    # ── Phase 4.5.6 PR2.1: FormalReviewProjection (dual-track with legacy) ──
+    # ── P0-B: FormalReviewProjection from Canonical Snapshot (no Builder/Engine/recap_doc) ──
     from stock_processing_service.application.services.daily_review.formal_review_projection_compiler import (
         FormalReviewProjectionCompiler,
     )
     _compiler = FormalReviewProjectionCompiler()
     _proj = _compiler.compile(
         trade_date=d,
-        engine_report=result.report,
-        snapshot=approval.snapshot,
-        snapshot_meta=result.report.get("workbench_approval"),
-        source_info=v2.get("source"),
-        theme_name_map=v2.get("theme_name_map"),
-        snapshot_version=v2.get("snapshot_version"),
-        builder_theme_reviews=v2.get("theme_reviews"),
-        builder_theme_capital_reviews=v2.get("theme_capital_reviews"),
-        builder_strong_stock_reviews=v2.get("strong_stock_reviews"),
-        builder_watchlist_reviews=v2.get("watchlist_reviews"),
-        builder_stock_capital_reviews=v2.get("stock_capital_reviews"),
-        builder_money_flow_reviews=v2.get("money_flow_reviews"),
-        builder_dragon_tiger_reviews=v2.get("dragon_tiger_reviews"),
-        builder_abnormal_reviews=v2.get("abnormal_reviews"),
-        builder_post_market_setup_plan=v2.get("post_market_setup_plan"),
-        builder_trading_principle=v2.get("trading_principle"),
+        engine_report={
+            "active_capital": {"active_amount": snap.capital_active_amount},
+            "market_overview_narrative": snap.market_state,
+            "seat_money_summary": snap.capital_seat_money,
+        },
+        snapshot=snap,
+        snapshot_meta=v2.get("workbench_approval"),
+        source_info={"source": "canonical_snapshot"},
+        theme_name_map=None,
+        snapshot_version=str(snap.snapshot_version),
+        # P0-B: All builder_*=None — snapshot is the sole data source
+        builder_theme_reviews=None,
+        builder_theme_capital_reviews=None,
+        builder_strong_stock_reviews=None,
+        builder_watchlist_reviews=None,
+        builder_stock_capital_reviews=None,
+        builder_money_flow_reviews=None,
+        builder_dragon_tiger_reviews=None,
+        builder_abnormal_reviews=None,
+        builder_post_market_setup_plan=None,
+        builder_trading_principle=None,
     )
     _projection_dict = _proj.to_dict()
-    # Keep legacy flat fields; add projection as dual-track
     v2["metadata"] = _projection_dict.get("metadata", {})
     v2["formal_review"] = _projection_dict.get("formal_review", {})
     v2["evidence_appendix"] = _projection_dict.get("evidence_appendix", {})

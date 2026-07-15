@@ -17,7 +17,8 @@ logger = logging.getLogger(__name__)
 CHART_SPECS: dict[str, dict] = {
     "market_breadth": {
         "title": "市场宽度",
-        "key_metrics": ["up_count", "down_count", "limit_up_count", "limit_down_count"],
+        "key_metrics": ["up_count", "down_count", "limit_up_count", "limit_down_count",
+                        "composite_score", "label", "up_ratio", "chain_board_count"],
         "status_fn": "_breadth_status",
     },
     "emotion_momentum": {

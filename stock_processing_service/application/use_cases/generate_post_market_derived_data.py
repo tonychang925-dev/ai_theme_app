@@ -140,8 +140,19 @@ class PostMarketDerivedDataGenerateUseCase:
 
         job_results: list[dict[str, Any]] = []
         if force and not dry_run:
-            cleanup = await self._cleanup_force_rebuild_rows(trade_date_val)
-            job_results.append(cleanup)
+            # Guard: only cleanup if recap is available (theme_cycle_truth needs it).
+            # Otherwise the destructive delete-then-rebuild pattern loses existing data
+            # when rebuild fails due to missing upstream sources.
+            recap_ok = await self._check_recap_exists(trade_date_val)
+            if recap_ok:
+                cleanup = await self._cleanup_force_rebuild_rows(trade_date_val)
+                job_results.append(cleanup)
+            else:
+                job_results.append({
+                    "job_key": "force_rebuild_cleanup",
+                    "status": "skipped",
+                    "error": "recap missing — preserving existing derived data",
+                })
 
         skipped_jobs: set[str] = set()
         for job_key, _builder_key in SUB_TASK_ORDER:
@@ -238,6 +249,20 @@ class PostMarketDerivedDataGenerateUseCase:
             before_readiness=before_dict, after_readiness=after_dict, job_results=job_results,
             missing_tables=after.missing_tables,
         )
+
+    async def _check_recap_exists(self, trade_date_val: date) -> bool:
+        """Check if post_market_recap_snapshot exists for this date."""
+        if self._pool is None:
+            return False
+        try:
+            async with self._pool.acquire() as conn:
+                cnt = await conn.fetchval(
+                    "SELECT COUNT(*) FROM post_market_recap_snapshot WHERE trade_date = $1::date",
+                    trade_date_val,
+                )
+                return int(cnt or 0) > 0
+        except Exception:
+            return False
 
     async def _cleanup_force_rebuild_rows(self, trade_date_val: date) -> dict[str, Any]:
         if self._pool is None:

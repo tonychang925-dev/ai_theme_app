@@ -80,6 +80,17 @@ class AnalystWorkbenchGenerateService:
         generation_steps[-1] = derived_step
         if derived_step.status == "success":
             steps_completed.append("derived_data")
+        elif force:
+            # Degraded mode: proceed with chart+emotion only, skip derived
+            derived_step = WorkbenchGenerationStep(
+                step="derived_data",
+                status="success",
+                started_at=derived_step.started_at,
+                finished_at=_now(),
+                diagnostics={"degraded": True, "missing_tables": missing_tables, "original_error": derived_step.error},
+            )
+            generation_steps[-1] = derived_step
+            steps_completed.append("derived_data")
         else:
             self._persist_generation_steps(trade_date, generation_steps, status=WorkbenchStatus.FAILED)
             return WorkbenchGenerateResult(

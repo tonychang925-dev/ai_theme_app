@@ -53,7 +53,7 @@ class ChartReproductionEngine:
         charts: list[dict[str, Any]] = []
 
         # ── Chart 1: Market Breadth (大盘势能) ──
-        # Data source: snap.limitup (THS/EM), snap.breadth (recap)
+        # Data source: snap.limitup (THS/EM), snap.breadth (recap + DB fallback)
         calibrated_turnover_yi = round(calibrated_turnover * 10_000) if calibrated_turnover else None
         charts.append(market_power_chart.build(
             up_count=b.up_count, down_count=b.down_count,
@@ -64,6 +64,7 @@ class ChartReproductionEngine:
             calibrated_lu=calibrated_lu,
             calibrated_turnover=calibrated_turnover_yi,
             calibrated_emotion=calibrated_emotion,
+            loss_effect=snapshot.loss_effect,
         ))
 
         # ── Chart 2: Emotion Momentum (情绪动能) ──
@@ -130,7 +131,8 @@ class ChartReproductionEngine:
         """
         dates = [s.trade_date.isoformat() for s in snapshots]
         if not dates:
-            return {"dates": [], "breadth": [], "momentum": [], "capital": [], "relay": []}
+            return {"dates": [], "breadth": [], "momentum": [], "capital": [], "relay": [],
+                    "market_power": []}
 
         trend = {
             "trade_date": dates[-1],
@@ -139,6 +141,7 @@ class ChartReproductionEngine:
             "momentum": [],
             "capital": [],
             "relay": [],
+            "market_power": [],
         }
 
         for s in snapshots:
@@ -148,7 +151,20 @@ class ChartReproductionEngine:
             m = s.emotion_momentum
             r = s.relay
 
-            # Breadth: composite score
+            # ── Composite score via market_power_chart (analyst formula) ──
+            mp_chart = market_power_chart.build(
+                up_count=b.up_count,
+                down_count=b.down_count,
+                limit_up=l.total_count,
+                limit_down=b.limit_down_count,
+                turnover_yi=c.total_turnover_yi,
+                chain_board_count=l.current_board_height,
+                loss_effect=getattr(s, 'loss_effect', None),
+            )
+            composite_score = mp_chart["data"]["composite_score"]
+            composite_label = mp_chart["data"]["label"]
+
+            # Breadth: daily roundup data
             up_ratio = b.up_ratio
             b_score = int((up_ratio - 0.5) * 200 + (l.total_count - 50) * 0.5)
 
@@ -157,6 +173,7 @@ class ChartReproductionEngine:
                 "up": b.up_count, "down": b.down_count,
                 "limit_up": l.total_count, "limit_down": b.limit_down_count,
                 "score": b_score,
+                "composite_score": composite_score,
             })
             trend["momentum"].append({
                 "date": s.trade_date.isoformat(),
@@ -176,6 +193,12 @@ class ChartReproductionEngine:
                 "feedback_score": r.feedback_score,
                 "feedback_label": r.feedback_label,
                 "continue_ratio": r.continue_ratio,
+                "limit_up": l.total_count,
+            })
+            trend["market_power"].append({
+                "date": s.trade_date.isoformat(),
+                "composite_score": composite_score,
+                "label": composite_label,
                 "limit_up": l.total_count,
             })
 

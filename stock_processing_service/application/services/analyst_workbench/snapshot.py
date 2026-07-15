@@ -32,6 +32,21 @@ class ReviewSnapshot:
     emotion_review: dict[str, Any] = field(default_factory=dict)
     chart_reviews: list[dict[str, Any]] = field(default_factory=list)
 
+    # ── Canonical Fields (P0-C): Approved Facts frozen at approve time ──
+    # Market facts: up/down, limit counts, turnover
+    market_state: dict[str, Any] = field(default_factory=dict)
+    # Capital: institution/hot_money directions, active amount, seat money
+    capital_institution_style: list[dict[str, Any]] = field(default_factory=list)
+    capital_hot_money_style: list[dict[str, Any]] = field(default_factory=list)
+    capital_active_amount: float | None = None
+    capital_seat_money: dict[str, Any] = field(default_factory=dict)
+    # Themes: cognition cards enriched with derived context
+    theme_structure: list[dict[str, Any]] = field(default_factory=list)
+    # Stocks: strong_stock rows from derived context
+    stock_structure: list[dict[str, Any]] = field(default_factory=list)
+    # Plan: playbook + scenario from plan_state
+    plan_state: dict[str, Any] = field(default_factory=dict)
+
     def to_dict(self) -> dict[str, Any]:
         return {
             "trade_date": self.trade_date.isoformat(),
@@ -51,6 +66,15 @@ class ReviewSnapshot:
             "override_summary": self.override_summary,
             "emotion_review": self.emotion_review,
             "chart_reviews": self.chart_reviews,
+            # Canonical fields (P0-C)
+            "market_state": self.market_state,
+            "capital_institution_style": self.capital_institution_style,
+            "capital_hot_money_style": self.capital_hot_money_style,
+            "capital_active_amount": self.capital_active_amount,
+            "capital_seat_money": self.capital_seat_money,
+            "theme_structure": self.theme_structure,
+            "stock_structure": self.stock_structure,
+            "plan_state": self.plan_state,
         }
 
     @classmethod
@@ -73,11 +97,21 @@ class ReviewSnapshot:
             override_summary=d.get("override_summary", {}),
             emotion_review=d.get("emotion_review", {}),
             chart_reviews=d.get("chart_reviews", []),
+            # Canonical fields (P0-C) — backward compatible, defaults for old snapshots
+            market_state=d.get("market_state", {}),
+            capital_institution_style=d.get("capital_institution_style", []),
+            capital_hot_money_style=d.get("capital_hot_money_style", []),
+            capital_active_amount=d.get("capital_active_amount"),
+            capital_seat_money=d.get("capital_seat_money", {}),
+            theme_structure=d.get("theme_structure", []),
+            stock_structure=d.get("stock_structure", []),
+            plan_state=d.get("plan_state", {}),
         )
 
     @classmethod
-    def from_draft(cls, draft: "AIDraft", overrides: dict | None = None, **kwargs) -> "ReviewSnapshot":
+    def from_draft(cls, draft: "AIDraft", overrides: dict | None = None, draft_context: dict[str, Any] | None = None, **kwargs) -> "ReviewSnapshot":
         from datetime import datetime, timezone
+        ctx = draft_context or {}
         return cls(
             trade_date=draft.trade_date,
             snapshot_version=kwargs.get("snapshot_version", 1),
@@ -95,6 +129,13 @@ class ReviewSnapshot:
             override_summary=overrides or {},
             emotion_review=draft.emotion_review,
             chart_reviews=draft.chart_reviews,
+            # Canonical fields from draft_context
+            market_state=ctx.get("market_state", {}),
+            capital_active_amount=ctx.get("capital_state", {}).get("active_amount"),
+            capital_seat_money=ctx.get("seat_money_summary", {}),
+            theme_structure=ctx.get("themes", []),
+            stock_structure=ctx.get("strong_stocks", []),
+            plan_state=ctx.get("plan_state", {}),
         )
 
     @classmethod
@@ -106,7 +147,9 @@ class ReviewSnapshot:
         merged: dict[str, Any],
         snapshot_version: int = 1,
         approved_by: str = "",
+        draft_context: dict[str, Any] | None = None,
     ) -> "ReviewSnapshot":
+        ctx = draft_context or {}
         return cls(
             trade_date=trade_date,
             snapshot_version=snapshot_version,
@@ -124,6 +167,15 @@ class ReviewSnapshot:
             override_summary=merged.get("override_summary", {}),
             emotion_review=merged.get("emotion_review", {}),
             chart_reviews=merged.get("chart_reviews", []),
+            # Canonical fields from draft_context (enriched by _enrich_draft_context_with_capital)
+            market_state=ctx.get("market_state", {}),
+            capital_active_amount=ctx.get("capital_state", {}).get("active_amount"),
+            capital_institution_style=ctx.get("capital_institution_style", []),
+            capital_hot_money_style=ctx.get("capital_hot_money_style", []),
+            capital_seat_money=ctx.get("seat_money_summary", {}),
+            theme_structure=ctx.get("themes", []),
+            stock_structure=ctx.get("strong_stocks", []),
+            plan_state=ctx.get("plan_state", {}),
         )
 
     def compute_hash(self) -> str:
@@ -146,9 +198,17 @@ class SnapshotStore:
     def save(self, snapshot: ReviewSnapshot) -> Path:
         d = self._snapshot_dir(snapshot.trade_date)
         d.mkdir(parents=True, exist_ok=True)
-        p = self._snapshot_path(snapshot.trade_date)
+
         snapshot.snapshot_hash = snapshot.compute_hash()
-        p.write_text(json.dumps(snapshot.to_dict(), ensure_ascii=False, indent=2))
+        payload = json.dumps(snapshot.to_dict(), ensure_ascii=False, indent=2)
+
+        # P0-E: Versioned snapshot (v1, v2, ... → Final)
+        v_path = d / f"snapshot_v{snapshot.snapshot_version}.json"
+        v_path.write_text(payload)
+
+        # Latest snapshot (for fast reads)
+        p = self._snapshot_path(snapshot.trade_date)
+        p.write_text(payload)
         return p
 
     def load(self, trade_date: date) -> ReviewSnapshot | None:

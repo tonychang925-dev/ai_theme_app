@@ -34,6 +34,25 @@ from .board_pool_snapshot import BoardPoolSnapshotAdapter
 DB_DSN = "postgresql://localhost:5432/stock_data_test"
 
 
+def _is_limit_down(stock_id: str, pct_chg: float) -> bool:
+    """Check if a stock has hit its board-specific limit-down threshold.
+
+    Thresholds:
+      - 主板 (60xxxx, 00xxxx): -10% → pct_chg <= -9.5
+      - 创业板 (30xxxx): -20% → pct_chg <= -19.5
+      - 科创板 (688xxx, 689xxx): -20% → pct_chg <= -19.5
+      - 北交所 (8xxxxx, 4xxxxx): -30% → pct_chg <= -29.5
+    """
+    if stock_id.startswith(("60", "00")):
+        return pct_chg <= -9.5
+    if stock_id.startswith(("30", "688", "689")):
+        return pct_chg <= -19.5
+    if stock_id.startswith(("8", "4")):
+        return pct_chg <= -29.5
+    # Unknown board: conservative, use main board threshold
+    return pct_chg <= -9.5
+
+
 class MarketMetricsService:
     """Produce MarketMetricsSnapshot — the single source of truth.
 
@@ -43,7 +62,14 @@ class MarketMetricsService:
     """
 
     def __init__(self, board_provider=None):
-        self._board_provider = board_provider  # BoardPoolProvider | None
+        if board_provider is not None:
+            self._board_provider = board_provider
+        else:
+            try:
+                from .board_pool_provider import create_board_provider
+                self._board_provider = create_board_provider()
+            except Exception:
+                self._board_provider = None
 
     def get(self, trade_date: date) -> MarketMetricsSnapshot:
         return asyncio.run(self.get_async(trade_date))
@@ -110,6 +136,11 @@ class MarketMetricsService:
         capital = await self._build_capital(conn, trade_date, breadth, overview)
         momentum = self._build_momentum(breadth, limitup, relay)
         loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay, em_dt)
+        # When Eastmoney DT pool is available, it is the authoritative limit_down source.
+        # Align breadth so chart consumers and loss_effect show the same count.
+        if em_dt:
+            from dataclasses import replace
+            breadth = replace(breadth, limit_down_count=loss_effect.limit_down_count)
         leader_evolution = self._build_leader_evolution(trade_date, stock_detail, streak_dist, yesterday_codes)
         loss_attr = self._build_loss_attribution(trade_date, loss_effect, relay, leader_evolution)
         death = self._build_death_index(leader_evolution, loss_effect, relay)
@@ -136,7 +167,27 @@ class MarketMetricsService:
         ld = int(overview.get("limit_down_total", 0) or 0)
         source = "recap_snapshot"
 
+        # ── SDS fallback: fetch stock_daily_snapshot once for up/down + limit_down ──
+        need_updown = (up == 0 and down == 0)
+        need_ld = (ld == 0)
+        if need_updown or need_ld:
+            try:
+                rows = await conn.fetch(
+                    "SELECT pct_chg, stock_id FROM stock_daily_snapshot "
+                    "WHERE trade_date = $1::date", td)
+                if need_updown:
+                    up = sum(1 for r in rows if float(r["pct_chg"] or 0) > 0)
+                    down = sum(1 for r in rows if float(r["pct_chg"] or 0) < 0)
+                if need_ld:
+                    ld = sum(1 for r in rows if _is_limit_down(str(r["stock_id"] or ""), float(r["pct_chg"] or 0)))
+                if (up > 0 or ld > 0) and source == "recap_snapshot":
+                    source = "recap_snapshot+sds_fallback"
+            except Exception:
+                pass
+
         # Market breadth from TDX provider (full A-share universe, synchronous)
+        # TDX is preferred over SDS when recap is missing (it has more accurate up/down),
+        # but SDS fallback above handles the case where TDX also fails.
         if up == 0 and down == 0:
             try:
                 from stock_processing_service.integrations.a_stock_data.tdx_market_breadth_provider import (
@@ -868,16 +919,20 @@ class MarketMetricsService:
             ld_count = len(em_dt)
             ld_amount = 0.0
         else:
-            # Fallback: SDS pct_chg threshold
+            # Fallback: SDS with board-specific thresholds
+            # 主板(60/00): -10% limit → pct_chg <= -9.5
+            # 科创(688/689)/创业(30): -20% limit → pct_chg <= -19.5
+            # 北交所(8/4): -30% limit → pct_chg <= -29.5
             rows = await conn.fetch(
-                "SELECT pct_chg, amount FROM stock_daily_snapshot "
+                "SELECT pct_chg, amount, stock_id FROM stock_daily_snapshot "
                 "WHERE trade_date = $1::date", td)
             ld_count = 0
             ld_amount = 0.0
             for r in rows:
                 pct = float(r["pct_chg"] or 0)
                 amt = float(r["amount"] or 0)
-                if pct <= -9.5:
+                sid = str(r["stock_id"] or "")
+                if _is_limit_down(sid, pct):
                     ld_count += 1
                     ld_amount += amt
 

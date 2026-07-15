@@ -92,5 +92,5 @@ def create_board_provider():
 
     Call this from API handlers where cross-package imports work.
     """
-    from integrations.a_stock_data.clients.eastmoney_board_client import EastmoneyBoardClient
+    from stock_processing_service.integrations.a_stock_data.clients.eastmoney_board_client import EastmoneyBoardClient
     return BoardPoolProvider(client=EastmoneyBoardClient())
