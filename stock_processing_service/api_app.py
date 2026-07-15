@@ -10089,22 +10089,8 @@ async def _enrich_draft_context_with_capital(trade_date: str, ctx: dict[str, Any
             ChartReproductionEngine,
         )
         snap = await MarketMetricsService().get_async(td)
-        engine = ChartReproductionEngine()
-        charts = engine.build(snap)
 
-        # Extract institution_style projection
-        inst_chart = next((c for c in charts if c.get("chart_type") == "institution_style"), None)
-        if inst_chart:
-            inst_data = inst_chart.get("data") or {}
-            ctx["capital_institution_style"] = inst_data.get("directions") or []
-
-        # Extract hot_money_style projection
-        hm_chart = next((c for c in charts if c.get("chart_type") == "hot_money_style"), None)
-        if hm_chart:
-            hm_data = hm_chart.get("data") or {}
-            ctx["capital_hot_money_style"] = hm_data.get("directions") or []
-
-        # Market metrics from MarketMetricsSnapshot
+        # Market metrics from MarketMetricsSnapshot (always available via SDS fallback)
         b = snap.breadth
         ctx["market_state"] = {
             "up_count": b.up_count,
@@ -10114,6 +10100,39 @@ async def _enrich_draft_context_with_capital(trade_date: str, ctx: dict[str, Any
             "limit_down_count": b.limit_down_count,
             "turnover_yi": b.turnover_yi,
         }
+        # Capital institution/hotmoney/direction — read from Producer outputs
+        # (same computation as _inject_capital_producer_outputs_async used by Dashboard)
+        try:
+            # Build minimal review document and run the same Producer injection
+            minimal_doc = {
+                "metadata": {"trade_date": trade_date},
+                "capital": {},
+            }
+            enriched_doc = await _inject_capital_producer_outputs_async(minimal_doc)
+            capital = enriched_doc.get("capital", {})
+            if isinstance(capital, dict):
+                if capital.get("institution_style"):
+                    ctx["capital_institution_style"] = capital["institution_style"]
+                if capital.get("hot_money_style"):
+                    ctx["capital_hot_money_style"] = capital["hot_money_style"]
+                # Also capture direction_view if available
+                if capital.get("direction_view"):
+                    # Process direction_view into institution/hotmoney splits
+                    inst_from_dir = [d for d in capital["direction_view"] if d.get("institution_score") is not None]
+                    if inst_from_dir and not ctx.get("capital_institution_style"):
+                        ctx["capital_institution_style"] = inst_from_dir
+                    hm_from_dir = []
+                    seen = set()
+                    for d in capital.get("direction_view", []):
+                        for hm in (d.get("hot_money_themes") or []):
+                            sk = hm.get("subject_key", "")
+                            if sk not in seen:
+                                seen.add(sk)
+                                hm_from_dir.append(hm)
+                    if hm_from_dir and not ctx.get("capital_hot_money_style"):
+                        ctx["capital_hot_money_style"] = hm_from_dir
+        except Exception:
+            pass
     except Exception:
         pass
     return ctx
