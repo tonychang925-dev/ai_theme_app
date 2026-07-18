@@ -1,0 +1,16 @@
+{
+  "market_facts": {
+    "limit_up_count": 79,
+    "chain_board_count": 5,
+    "market_up_ratio": 0.76,
+    "below_minus5_count": 147,
+    "loss_effect_ratio": 1.86
+  },
+  "evidence": [
+    {
+      "source_image": 7,
+      "source_text": "大盘势能 涨停数 79 连扳股 5 在-5下个股数 147 大盘上涨比 0.76 亏钱效应比 1.86",
+      "confidence": 0.5
+    }
+  ]
+}

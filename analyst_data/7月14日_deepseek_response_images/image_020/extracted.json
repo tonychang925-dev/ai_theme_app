@@ -1,0 +1,110 @@
+{
+  "hot_money_directions": [
+    {
+      "direction": "长鑫长江存储",
+      "status": "调整第3天",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "长鑫长江存储 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "direction": "商业航天",
+      "status": "调整第3天",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "商业航天 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "direction": "机器人",
+      "status": "启动第3天，涨停4",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "机器人 启动第3天，涨停4",
+      "confidence": 0.9
+    },
+    {
+      "direction": "医疗医药",
+      "status": "启动第2天，涨停2",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "医疗医药 启动第2天，涨停2",
+      "confidence": 0.9
+    },
+    {
+      "direction": "消费",
+      "status": "调整第7天，强于",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "消费 调整第7天，强于",
+      "confidence": 0.9
+    },
+    {
+      "direction": "算电协同",
+      "status": "调整第9天",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "算电协同 调整第9天",
+      "confidence": 0.9
+    },
+    {
+      "direction": "指数",
+      "status": "调整第5天，有资",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "指数 调整第5天，有资",
+      "confidence": 0.9
+    },
+    {
+      "direction": "氟化工（无水氢氟酸）",
+      "status": "调整第6天",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "氟化工（无水氢氟酸） 调整第6天",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "source_image": 20,
+      "source_text": "长鑫长江存储 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "商业航天 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "机器人 启动第3天，涨停4",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "医疗医药 启动第2天，涨停2",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "消费 调整第7天，强于",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "算电协同 调整第9天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "指数 调整第5天，有资",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "氟化工（无水氢氟酸） 调整第6天",
+      "confidence": 0.9
+    }
+  ]
+}

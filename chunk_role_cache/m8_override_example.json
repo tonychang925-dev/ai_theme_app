@@ -1,0 +1,17 @@
+{
+  "market_facts": {
+    "limit_up_count": 81,
+    "chain_board_count": 5,
+    "max_board_height": 3,
+    "max_board_stock": "哈药股份"
+  },
+  "emotion_label": {
+    "market_phase": "REBOUND",
+    "risk_level": "MEDIUM_HIGH",
+    "emotion_momentum": 6,
+    "cycle_score": 0,
+    "phase_cn": "恐慌后的强修复/反弹",
+    "is_reversal_confirmed": false,
+    "strategy": "午后深V属于强修复，尚不能直接确认趋势反转。"
+  }
+}

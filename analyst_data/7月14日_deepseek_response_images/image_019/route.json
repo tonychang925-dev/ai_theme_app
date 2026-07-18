@@ -1,0 +1,14 @@
+{
+  "image_index": 19,
+  "route": "institutional_rhythm",
+  "route_score": 0.85,
+  "matched_keywords": [
+    "调整第",
+    "启动第",
+    "资金回流"
+  ],
+  "section_group": "institutional_rhythm",
+  "section_title": "核心板块节律",
+  "forced_by_section": true,
+  "reason": "目标章节图片，强制OCR并结构化提取"
+}

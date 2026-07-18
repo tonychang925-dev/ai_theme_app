@@ -4,11 +4,47 @@ import json
 from pathlib import Path
 
 from web_app_service.main import app
+import web_app_service.main as main_mod
 import web_app_service.api.routes as routes
 from web_app_service.services.realtime_stack_manager import RealtimeStackManager
 
 
 client = TestClient(app)
+
+
+def test_analyst_workbench_v1_routes_proxy_to_sps(monkeypatch):
+    calls = []
+
+    class FakeResponse:
+        content = b'{"status":"approved","snapshot_version":1}'
+        status_code = 200
+        headers = {"content-type": "application/json"}
+
+    class FakeAsyncClient:
+        def __init__(self, **kwargs):
+            self.kwargs = kwargs
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, tb):
+            return False
+
+        async def request(self, method, url, **kwargs):
+            calls.append((method, url, kwargs))
+            return FakeResponse()
+
+    monkeypatch.setattr(main_mod.httpx, "AsyncClient", FakeAsyncClient)
+
+    resp = client.post(
+        "/api/v1/analyst-workbench/2026-07-16/approve",
+        json={"approved_by": "analyst"},
+    )
+
+    assert resp.status_code == 200
+    assert resp.json()["status"] == "approved"
+    assert calls[0][0] == "POST"
+    assert calls[0][1] == "http://127.0.0.1:8090/api/v1/analyst-workbench/2026-07-16/approve"
 
 
 def test_realtime_collector_routes_do_not_proxy_frontend_bff():
@@ -514,6 +550,23 @@ def test_post_market_generate_routes_use_long_proxy_timeouts(monkeypatch):
         ("/api/v1/post-market/recap/generate", payload, 300.0),
         ("/api/v2/post-market/daily-review-v2/generate", payload, 180.0),
     ]
+
+
+def test_daily_review_v2_compose_from_workbench_proxy(monkeypatch):
+    calls = []
+
+    async def _fake_proxy_stock_processing_post_json(path, payload, timeout=120.0):
+        calls.append((path, payload, timeout))
+        return {"workbench_approval": {"mode": "formal"}, "formal_review": {"stock_structure": {"stocks": [1]}}}
+
+    monkeypatch.setattr(routes, "_proxy_stock_processing_post_json", _fake_proxy_stock_processing_post_json)
+
+    payload = {"trade_date": "2026-07-16"}
+    resp = client.post("/api/v2/daily-review-v2/compose-from-workbench", json=payload)
+
+    assert resp.status_code == 200
+    assert resp.json()["workbench_approval"]["mode"] == "formal"
+    assert calls == [("/api/v2/daily-review-v2/compose-from-workbench", payload, 180.0)]
 
 
 def test_strong_watch_new_alias_contract_shape(monkeypatch):

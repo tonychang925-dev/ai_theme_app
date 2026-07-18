@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { EmotionDashboard } from "./EmotionDashboard";
 import { AIDirectionDraftPanel } from "./AIDirectionDraftPanel";
 import { ReviewDocumentSections } from "../review-document/ReviewDocumentSections";
+import { navigateTo } from "../../lib/navigation";
 
 // ── Types ──
 
@@ -595,23 +596,19 @@ export function AnalystWorkspacePage() {
         steps.push(`审核状态: ${reviewResult.session_status}`);
       }
 
-      // Step 3: Auto-approve → create snapshot (analyst clicking Save = approved)
+      // Step 3: Auto-approve -> create snapshot (analyst clicking Save = approved)
       if (reviewResp.ok) {
         const approveResp = await fetch(`/api/v1/analyst-workbench/${dateInput}/approve`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ approved_by: "analyst" }),
         });
-        if (approveResp.ok) {
-          const approveResult = await approveResp.json();
-          steps.push(`已审核通过 · snapshot_v${approveResult.snapshot_version}`);
-        } else {
-          // If already APPROVED, that's OK
-          const errData = await approveResp.json().catch(() => ({}));
-          if ((errData as any).detail?.includes("Invalid transition")) {
-            steps.push("(已审核通过)");
-          }
+        const approveResult = await approveResp.json().catch(() => ({}));
+        if (!approveResp.ok || approveResult.status !== "approved" || !approveResult.snapshot_version) {
+          const detail = approveResult.detail || approveResult.error || `HTTP ${approveResp.status}`;
+          throw new Error(`批准失败: ${detail}`);
         }
+        steps.push(`已审核通过 · snapshot_v${approveResult.snapshot_version}`);
       }
 
       setSavedMsg(steps.join(" · "));
@@ -909,7 +906,7 @@ export function AnalystWorkspacePage() {
             {saving ? "保存中…" : "保存"}
           </button>
         </div>
-        <button className="back-button" type="button" onClick={() => { window.history.back(); }}>
+        <button className="back-button" type="button" onClick={() => { navigateTo(`/recap?date=${dateInput}&report_type=post_market&data_mode=daily_review_v2`); }}>
           返回
         </button>
       </section>

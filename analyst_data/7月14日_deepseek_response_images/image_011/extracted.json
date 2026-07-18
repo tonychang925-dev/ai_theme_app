@@ -1,0 +1,34 @@
+{
+  "market_facts": {
+    "limit_up_count": null,
+    "chain_board_count": null,
+    "max_board_height": null,
+    "max_board_stock": "",
+    "market_up_ratio": null,
+    "below_minus5_count": null,
+    "loss_effect_ratio": null,
+    "first_board_success_rate": null
+  },
+  "relay_ecology": {
+    "max_board_height": null,
+    "max_board_stock": "",
+    "chain_board_count": null,
+    "first_board_success_rate": null,
+    "daily_rows": []
+  },
+  "emotion_label": {
+    "market_phase": "",
+    "risk_level": "",
+    "cycle_score": null,
+    "phase_cn": "",
+    "is_reversal_confirmed": false,
+    "strategy": ""
+  },
+  "evidence": [
+    {
+      "source_image": 11,
+      "source_text": "今日所有涨停及触及涨停个股的成交量之和（单位：亿）: 7.08:498, 7.09:591, 7.10:1289, 7.13:244, 7.14:376; 中午: 7.08:765, 7.09:730, 7.10:2481, 7.13:1944, 7.14:308; 昨日所有涨停及触及涨停个股的今日成交量之和(单位：亿): 7.08:739, 7.09:2707, 7.10:2779, 7.13:371, 7.14:1739; 昨日所有涨停及触及涨停个股的今日成交量之和（单位：亿）: 7.08:1024, 7.09:969, 7.10:3793, 7.13:2665, 7.14:409",
+      "confidence": 0.5
+    }
+  ]
+}

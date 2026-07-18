@@ -123,3 +123,27 @@ def test_review_document_view_does_not_fetch_legacy_api() -> None:
         + "\n".join(violations)
         + "\n\nMust only read from reviewDocument prop."
     )
+
+
+def test_analyst_workspace_save_requires_real_approved_snapshot() -> None:
+    """Save must not report approval success from HTTP 200 business errors."""
+    wsp = FRONTEND_SRC / "components" / "analyst" / "AnalystWorkspacePage.tsx"
+    if not wsp.exists():
+        pytest.skip("AnalystWorkspacePage.tsx not found")
+    text = _read(wsp)
+
+    assert 'approveResult.status !== "approved"' in text
+    assert "!approveResult.snapshot_version" in text
+    assert "批准失败:" in text
+    assert "已审核通过 · snapshot_v${approveResult.snapshot_version}" in text
+
+
+def test_analyst_workspace_back_button_routes_to_recap_date() -> None:
+    """Workbench back button must not no-op on a direct page entry."""
+    wsp = FRONTEND_SRC / "components" / "analyst" / "AnalystWorkspacePage.tsx"
+    if not wsp.exists():
+        pytest.skip("AnalystWorkspacePage.tsx not found")
+    text = _read(wsp)
+
+    assert "window.history.back()" not in text
+    assert "navigateTo(`/recap?date=${dateInput}&report_type=post_market&data_mode=daily_review_v2`)" in text

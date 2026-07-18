@@ -1,0 +1,15 @@
+{
+  "image_index": 7,
+  "route": "market_energy",
+  "route_score": 0.95,
+  "matched_keywords": [
+    "上涨比",
+    "亏钱效应",
+    "在-5下",
+    "综合值"
+  ],
+  "section_group": "emotion_section",
+  "section_title": "情绪风向指标",
+  "forced_by_section": true,
+  "reason": "目标章节图片，强制OCR并结构化提取"
+}

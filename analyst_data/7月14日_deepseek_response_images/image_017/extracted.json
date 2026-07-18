@@ -1,0 +1,541 @@
+{
+  "institutional_rhythm": [
+    {
+      "group": "六氟化钨",
+      "stage": "调整",
+      "stage_day": 3,
+      "status": "部分",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第3天，部分",
+      "confidence": 0.9
+    },
+    {
+      "group": "六氟化钨",
+      "stage": "调整",
+      "stage_day": 5,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第5天",
+      "confidence": 0.9
+    },
+    {
+      "group": "六氟化钨",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "六氟化钨",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "六氟化钨",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": "有回流",
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "六氟化钨",
+      "stage": "调整",
+      "stage_day": 3,
+      "status": "部分",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第3天，部分",
+      "confidence": 0.9
+    },
+    {
+      "group": "靶材",
+      "stage": "调整",
+      "stage_day": 7,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第7天",
+      "confidence": 0.9
+    },
+    {
+      "group": "靶材",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "靶材",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "靶材",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": "有回流",
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "靶材",
+      "stage": "调整",
+      "stage_day": 3,
+      "status": "部分",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第3天，部分",
+      "confidence": 0.9
+    },
+    {
+      "group": "光刻胶",
+      "stage": "调整",
+      "stage_day": 6,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第6天",
+      "confidence": 0.9
+    },
+    {
+      "group": "光刻胶",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "光刻胶",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "光刻胶",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": "有回流",
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "光刻胶",
+      "stage": "调整",
+      "stage_day": 3,
+      "status": "部分",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第3天，部分",
+      "confidence": 0.9
+    },
+    {
+      "group": "氧化锆",
+      "stage": "调整",
+      "stage_day": 10,
+      "status": "部分",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第10天，部分",
+      "confidence": 0.9
+    },
+    {
+      "group": "氧化锆",
+      "stage": "调整",
+      "stage_day": 6,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第6天",
+      "confidence": 0.9
+    },
+    {
+      "group": "氧化锆",
+      "stage": "调整",
+      "stage_day": 7,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第7天",
+      "confidence": 0.9
+    },
+    {
+      "group": "氧化锆",
+      "stage": "调整",
+      "stage_day": 8,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第8天",
+      "confidence": 0.9
+    },
+    {
+      "group": "氧化锆",
+      "stage": "调整",
+      "stage_day": 9,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": "有回流",
+      "source_image": 17,
+      "source_text": "调整第9天",
+      "confidence": 0.9
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "弱启",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": "板块",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天，板块",
+      "confidence": 0.9
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "调整",
+      "stage_day": 6,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第6天",
+      "confidence": 0.9
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "分歧",
+      "stage_day": null,
+      "status": "部分收红",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "分歧，部分收红",
+      "confidence": 0.9
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage": "调整",
+      "stage_day": 3,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "弱启",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 9,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第9天",
+      "confidence": 0.9
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "光纤",
+      "stage": null,
+      "stage_day": null,
+      "status": "动，有资金回流",
+      "relative_strength": null,
+      "capital_signal": "有资金回流",
+      "source_image": 17,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 7,
+      "status": "有资金",
+      "relative_strength": null,
+      "capital_signal": "有资金",
+      "source_image": 17,
+      "source_text": "调整第7天，有资金",
+      "confidence": 0.9
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 10,
+      "status": "有资",
+      "relative_strength": null,
+      "capital_signal": "有资",
+      "source_image": 17,
+      "source_text": "调整第10天，有资",
+      "confidence": 0.9
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 8,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第8天",
+      "confidence": 0.9
+    },
+    {
+      "group": "MP0",
+      "stage": "调整",
+      "stage_day": 6,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": "回流",
+      "source_image": 17,
+      "source_text": "调整第6天",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "source_image": 17,
+      "source_text": "调整第3天，部分",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第5天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "有回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第7天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第6天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第10天，部分",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第1天，板块",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "分歧，部分收红",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第9天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第7天，有资金",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第10天，有资",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第8天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "回流",
+      "confidence": 0.9
+    }
+  ]
+}

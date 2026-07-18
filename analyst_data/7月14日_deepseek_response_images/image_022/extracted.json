@@ -1,0 +1,302 @@
+{
+  "limitup_attribution": [
+    {
+      "board_level": "首板",
+      "stock_code": "000008",
+      "stock_name": "神州高铁",
+      "limit_time": "09:25:00",
+      "theme": "控制权变更",
+      "reason": "控制权变更+复牌+轨道交通+浙江国资",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "603580",
+      "stock_name": "艾艾精工",
+      "limit_time": "09:25:00",
+      "theme": "控制权变更",
+      "reason": "控制权拟变更+复牌+轻型输送带+消费电子",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "002718",
+      "stock_name": "友邦吊顶",
+      "limit_time": "13:31:39",
+      "theme": "控制权变更",
+      "reason": "集成吊顶+智能家居+实控人变更",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "二板",
+      "stock_code": "001388",
+      "stock_name": "信通电子",
+      "limit_time": "09:32:42",
+      "theme": "电力",
+      "reason": "高送转+防冰机器人+电网设备",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "605028",
+      "stock_name": "世茂能源",
+      "limit_time": "09:30:28",
+      "theme": "电力",
+      "reason": "协议转让+热电联产+扣非增长",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "603577",
+      "stock_name": "汇金通",
+      "limit_time": "13:32:10",
+      "theme": "电力",
+      "reason": "特高压+电网设备+光伏支架",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "二板",
+      "stock_code": "603065",
+      "stock_name": "宿迁联盛",
+      "limit_time": "10:31:13",
+      "theme": "光通信",
+      "reason": "磷化铟衬底+光稳定剂+终止减持",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "603042",
+      "stock_name": "华脉科技",
+      "limit_time": "09:30:38",
+      "theme": "光通信",
+      "reason": "半年报预盈+光纤光缆+FPGA芯片",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "limit_time": "13:03:39",
+      "theme": "光通信",
+      "reason": "光芯片+光模块+AIPCB",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "002484",
+      "stock_name": "江海股份",
+      "limit_time": "13:29:00",
+      "theme": "电容/被动元件",
+      "reason": "AI服务器电源+超级电容+浙江国资",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "603989",
+      "stock_name": "艾华集团",
+      "limit_time": "13:33:37",
+      "theme": "电容/被动元件",
+      "reason": "MLPC+AI服务器+铝电解电容+薄膜电容",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "000636",
+      "stock_name": "风华高科",
+      "limit_time": "14:50:00",
+      "theme": "电容/被动元件",
+      "reason": "MLCC+半年报预增+广东国资",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "二板",
+      "stock_code": "920305",
+      "stock_name": "云创退",
+      "limit_time": "13:00:01",
+      "theme": "其他概念",
+      "reason": "退市整理期+大数据存储+AI大模型",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "600293",
+      "stock_name": "三峡新材",
+      "limit_time": "09:53:58",
+      "theme": "其他概念",
+      "reason": "电子玻璃+高端玻璃转型+汽车玻璃+宜昌国资",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "001283",
+      "stock_name": "豪鹏科技",
+      "limit_time": "10:12:18",
+      "theme": "其他概念",
+      "reason": "AI端侧电池+固态电池+机器人+储能定增",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "001226",
+      "stock_name": "拓山重工",
+      "limit_time": "11:00:30",
+      "theme": "其他概念",
+      "reason": "钛合金+工程机械+一季报增长",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "002628",
+      "stock_name": "成都路桥",
+      "limit_time": "13:01:27",
+      "theme": "其他概念",
+      "reason": "萤石矿+氟化工+机器人+西部基建",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "002432",
+      "stock_name": "九安医疗",
+      "limit_time": "13:03:39",
+      "theme": "其他概念",
+      "reason": "参股月之暗面+拟投资阶跃星辰+AI医疗",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "000759",
+      "stock_name": "中百集团",
+      "limit_time": "13:28:06",
+      "theme": "其他概念",
+      "reason": "商业零售+本地生活+国企改革",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "000036",
+      "stock_name": "华联控股",
+      "limit_time": "14:38:15",
+      "theme": "其他概念",
+      "reason": "房地产开发+物业管理+盐湖提锂",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "603201",
+      "stock_name": "常润股份",
+      "limit_time": "14:39:50",
+      "theme": "其他概念",
+      "reason": "收购达峰智能+汽车电子+千斤顶龙头+跨境电商",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "003001",
+      "stock_name": "中岩大地",
+      "limit_time": "14:51:03",
+      "theme": "其他概念",
+      "reason": "岩土固化剂+可控核聚变+核电",
+      "source_image": 22,
+      "confidence": 0.95
+    }
+  ],
+  "limitup_themes": [
+    {
+      "theme": "控制权变更",
+      "status": "",
+      "stock_count": 3,
+      "stocks": [
+        "神州高铁",
+        "艾艾精工",
+        "友邦吊顶"
+      ],
+      "source_image": 22,
+      "confidence": 0.9
+    },
+    {
+      "theme": "电力",
+      "status": "",
+      "stock_count": 3,
+      "stocks": [
+        "信通电子",
+        "世茂能源",
+        "汇金通"
+      ],
+      "source_image": 22,
+      "confidence": 0.9
+    },
+    {
+      "theme": "光通信",
+      "status": "",
+      "stock_count": 3,
+      "stocks": [
+        "宿迁联盛",
+        "华脉科技",
+        "东山精密"
+      ],
+      "source_image": 22,
+      "confidence": 0.9
+    },
+    {
+      "theme": "电容/被动元件",
+      "status": "",
+      "stock_count": 3,
+      "stocks": [
+        "江海股份",
+        "艾华集团",
+        "风华高科"
+      ],
+      "source_image": 22,
+      "confidence": 0.9
+    },
+    {
+      "theme": "其他概念",
+      "status": "",
+      "stock_count": 10,
+      "stocks": [
+        "云创退",
+        "三峡新材",
+        "豪鹏科技",
+        "拓山重工",
+        "成都路桥",
+        "九安医疗",
+        "中百集团",
+        "华联控股",
+        "常润股份",
+        "中岩大地"
+      ],
+      "source_image": 22,
+      "confidence": 0.9
+    }
+  ],
+  "board_ladder": [],
+  "market_leader": {
+    "board": "",
+    "stock": "",
+    "total_stocks": 22,
+    "exchange_board": "沪深",
+    "source_image": 22
+  },
+  "evidence": []
+}

@@ -1,0 +1,10 @@
+{
+  "image_index": 22,
+  "route": "limitup_classification",
+  "route_score": 0.85,
+  "matched_keywords": [],
+  "section_group": "limitup_classification",
+  "section_title": "涨停股分类",
+  "forced_by_section": true,
+  "reason": "目标章节图片，强制OCR并结构化提取"
+}

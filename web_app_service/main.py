@@ -193,6 +193,30 @@ async def _shutdown_cdp_manager() -> None:
 # ── API 路由最先注册 ──
 app.include_router(router, prefix="/api/v2")
 
+
+@app.api_route("/api/v1/analyst-workbench/{path:path}", methods=["GET", "POST"])
+@app.api_route("/api/v1/analyst-workspace/{path:path}", methods=["GET", "POST"])
+async def proxy_analyst_workspace_v1(path: str, request: Request):
+    upstream_path = request.url.path
+    url = f"http://127.0.0.1:8090{upstream_path}"
+    body = await request.body()
+    try:
+        async with httpx.AsyncClient(timeout=120.0, trust_env=False) as client:
+            resp = await client.request(
+                request.method,
+                url,
+                params=dict(request.query_params),
+                content=body or None,
+                headers={"content-type": request.headers.get("content-type", "application/json")},
+            )
+    except httpx.RequestError as exc:
+        raise HTTPException(status_code=502, detail=f"upstream unavailable: {exc}") from exc
+    return Response(
+        content=resp.content,
+        status_code=resp.status_code,
+        media_type=resp.headers.get("content-type", "application/json"),
+    )
+
 # ── JWT 认证 ──
 security = HTTPBearer(auto_error=False)
 

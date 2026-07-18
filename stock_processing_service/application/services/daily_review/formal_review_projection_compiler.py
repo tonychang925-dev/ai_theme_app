@@ -142,6 +142,11 @@ class FormalReviewProjectionCompiler:
         snap_playbook: dict[str, Any] = {}
         snap_cognition_cards: list[dict[str, Any]] = []
         snap_chart_reviews: list[dict[str, Any]] = []
+        snap_stock_structure: list[dict[str, Any]] = []
+        snap_capital_institution_style: list[dict[str, Any]] = []
+        snap_capital_hot_money_style: list[dict[str, Any]] = []
+        snap_capital_active_amount: Any = None
+        snap_capital_seat_money: dict[str, Any] = {}
 
         if snapshot is not None:
             snap_emotion = getattr(snapshot, "emotion_review", {}) or {}
@@ -149,6 +154,47 @@ class FormalReviewProjectionCompiler:
             snap_playbook = getattr(snapshot, "playbook", {}) or {}
             snap_cognition_cards = getattr(snapshot, "cognition_cards", []) or []
             snap_chart_reviews = getattr(snapshot, "chart_reviews", []) or []
+            snap_stock_structure = getattr(snapshot, "stock_structure", []) or []
+            snap_capital_institution_style = getattr(snapshot, "capital_institution_style", []) or []
+            snap_capital_hot_money_style = getattr(snapshot, "capital_hot_money_style", []) or []
+            snap_capital_active_amount = getattr(snapshot, "capital_active_amount", None)
+            snap_capital_seat_money = getattr(snapshot, "capital_seat_money", {}) or {}
+
+        if snapshot is not None:
+            engine = dict(engine)
+            if snap_capital_active_amount is not None:
+                active_capital = dict(engine.get("active_capital") or {})
+                active_capital.setdefault("active_amount", snap_capital_active_amount)
+                active_capital.setdefault("active_amount_yi", snap_capital_active_amount)
+                engine["active_capital"] = active_capital
+            if snap_capital_seat_money and not engine.get("seat_money_summary"):
+                engine["seat_money_summary"] = snap_capital_seat_money
+
+        effective_strong_stock_reviews = (
+            builder_strong_stock_reviews
+            if builder_strong_stock_reviews is not None
+            else snap_stock_structure
+        )
+        effective_watchlist_reviews = (
+            builder_watchlist_reviews
+            if builder_watchlist_reviews is not None
+            else snap_stock_structure
+        )
+        effective_stock_capital_reviews = (
+            builder_stock_capital_reviews
+            if builder_stock_capital_reviews is not None
+            else snap_stock_structure
+        )
+        effective_money_flow_reviews = (
+            builder_money_flow_reviews
+            if builder_money_flow_reviews is not None
+            else snap_stock_structure
+        )
+        effective_theme_capital_reviews = (
+            builder_theme_capital_reviews
+            if builder_theme_capital_reviews is not None
+            else snap_capital_institution_style + snap_capital_hot_money_style
+        )
 
         # ── Metadata ──
         meta = metadata.project_metadata(
@@ -192,14 +238,14 @@ class FormalReviewProjectionCompiler:
             ),
             "stock_structure": stock_structure.project_stock_structure(
                 engine_report=engine,
-                builder_strong_stock_reviews=builder_strong_stock_reviews,
-                builder_watchlist_reviews=builder_watchlist_reviews,
+                builder_strong_stock_reviews=effective_strong_stock_reviews,
+                builder_watchlist_reviews=effective_watchlist_reviews,
             ),
             "capital_evidence": capital_evidence.project_capital_evidence(
                 engine_report=engine,
-                builder_theme_capital_reviews=builder_theme_capital_reviews,
-                builder_stock_capital_reviews=builder_stock_capital_reviews,
-                builder_money_flow_reviews=builder_money_flow_reviews,
+                builder_theme_capital_reviews=effective_theme_capital_reviews,
+                builder_stock_capital_reviews=effective_stock_capital_reviews,
+                builder_money_flow_reviews=effective_money_flow_reviews,
                 builder_dragon_tiger_reviews=builder_dragon_tiger_reviews,
                 builder_abnormal_reviews=builder_abnormal_reviews,
             ),
@@ -207,7 +253,7 @@ class FormalReviewProjectionCompiler:
                 engine_report=engine,
                 snapshot_emotion=snap_emotion,
                 snapshot_playbook=snap_playbook,
-                builder_watchlist_reviews=builder_watchlist_reviews,
+                builder_watchlist_reviews=effective_watchlist_reviews,
                 builder_post_market_setup_plan=builder_post_market_setup_plan,
                 builder_trading_principle=builder_trading_principle,
             ),

@@ -9974,10 +9974,22 @@ async def approve_workbench(trade_date: str, body: dict[str, Any] = None) -> dic
     td = _date.fromisoformat(trade_date)
     session = session_store.get(td)
     if not session.can_approve:
-        return {"status": "error", "error": f"Cannot approve from status {session.status}"}
+        if session.status in (WorkbenchStatus.APPROVED, WorkbenchStatus.PUBLISHED):
+            snapshot = snapshot_store.load(td)
+            if snapshot is not None:
+                return {
+                    "status": "approved",
+                    "session_status": session.status,
+                    "snapshot_version": snapshot.snapshot_version,
+                    "based_on_draft_version": snapshot.based_on_draft_version,
+                    "snapshot_hash": snapshot.snapshot_hash,
+                    "merged_workspace": False,
+                    "idempotent": True,
+                }
+        raise HTTPException(status_code=409, detail=f"Cannot approve from status {session.status}")
     draft = draft_store.load(td)
     if draft is None:
-        return {"status": "error", "error": "No draft found to approve"}
+        raise HTTPException(status_code=404, detail="No draft found to approve")
     body = body or {}
     workspace = _load_saved_analyst_workspace(trade_date)
     merged = AnalystReviewMerger().merge(
@@ -9988,12 +10000,19 @@ async def approve_workbench(trade_date: str, body: dict[str, Any] = None) -> dic
 
     # P0-A: Load draft_context.json and inject canonical fields
     draft_context: dict[str, Any] | None = None
-    ctx_path = _Path(_project_root) / "tmp" / "analyst_workbench" / trade_date / "draft_context.json"
+    ctx_path = Path(_project_root()) / "tmp" / "analyst_workbench" / trade_date / "draft_context.json"
     if ctx_path.exists():
         try:
             draft_context = json.loads(ctx_path.read_text(encoding="utf-8"))
-            # Inject capital Producer outputs into context
-            draft_context = await _enrich_draft_context_with_capital(trade_date, draft_context)
+            try:
+                draft_context = await asyncio.wait_for(
+                    _enrich_draft_context_with_capital(trade_date, draft_context),
+                    timeout=15.0,
+                )
+            except Exception as exc:
+                quality = draft_context.setdefault("capital_quality", {})
+                quality["approve_enrichment_status"] = "skipped"
+                quality["approve_enrichment_error"] = str(exc) or exc.__class__.__name__
         except Exception:
             pass
 
@@ -10256,18 +10275,19 @@ def _enrich_v2_with_formal_review(v2: dict[str, Any], trade_date: date) -> dict[
         return v2
 
     import json as _json
-    import os as _os
 
-    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
-    snap_path = _os.path.join(
-        _project_root, "tmp", "analyst_workbench",
-        trade_date.isoformat(), "snapshot.json",
+    snap_path = (
+        Path(_project_root())
+        / "tmp"
+        / "analyst_workbench"
+        / trade_date.isoformat()
+        / "snapshot.json"
     )
-    if not _os.path.exists(snap_path):
+    if not snap_path.exists():
         return v2
 
     try:
-        snap_data = _json.loads(open(snap_path, encoding="utf-8").read())
+        snap_data = _json.loads(snap_path.read_text(encoding="utf-8"))
     except Exception:
         return v2
 
@@ -10302,6 +10322,9 @@ def _enrich_v2_with_formal_review(v2: dict[str, Any], trade_date: date) -> dict[
 
     snapshot = SimpleNamespace(**snap_data)
 
+    def _non_empty_list(value: Any) -> list[dict[str, Any]] | None:
+        return value if isinstance(value, list) and value else None
+
     compiler = FormalReviewProjectionCompiler()
     proj = compiler.compile(
         trade_date=trade_date,
@@ -10311,14 +10334,14 @@ def _enrich_v2_with_formal_review(v2: dict[str, Any], trade_date: date) -> dict[
         source_info=v2.get("source"),
         theme_name_map=v2.get("theme_name_map"),
         snapshot_version=v2.get("snapshot_version"),
-        builder_theme_reviews=v2.get("theme_reviews"),
-        builder_theme_capital_reviews=v2.get("theme_capital_reviews"),
-        builder_strong_stock_reviews=v2.get("strong_stock_reviews"),
-        builder_watchlist_reviews=v2.get("watchlist_reviews"),
-        builder_stock_capital_reviews=v2.get("stock_capital_reviews"),
-        builder_money_flow_reviews=v2.get("money_flow_reviews"),
-        builder_dragon_tiger_reviews=v2.get("dragon_tiger_reviews"),
-        builder_abnormal_reviews=v2.get("abnormal_reviews"),
+        builder_theme_reviews=_non_empty_list(v2.get("theme_reviews")),
+        builder_theme_capital_reviews=_non_empty_list(v2.get("theme_capital_reviews")),
+        builder_strong_stock_reviews=_non_empty_list(v2.get("strong_stock_reviews")),
+        builder_watchlist_reviews=_non_empty_list(v2.get("watchlist_reviews")),
+        builder_stock_capital_reviews=_non_empty_list(v2.get("stock_capital_reviews")),
+        builder_money_flow_reviews=_non_empty_list(v2.get("money_flow_reviews")),
+        builder_dragon_tiger_reviews=_non_empty_list(v2.get("dragon_tiger_reviews")),
+        builder_abnormal_reviews=_non_empty_list(v2.get("abnormal_reviews")),
         builder_post_market_setup_plan=v2.get("post_market_setup_plan"),
         builder_trading_principle=v2.get("trading_principle"),
     )

@@ -1,0 +1,12 @@
+{
+  "image_index": 14,
+  "route": "relay_ecology",
+  "route_score": 0.75,
+  "matched_keywords": [
+    "晋级率"
+  ],
+  "section_group": "emotion_section",
+  "section_title": "情绪风向指标",
+  "forced_by_section": true,
+  "reason": "目标章节图片，强制OCR并结构化提取"
+}

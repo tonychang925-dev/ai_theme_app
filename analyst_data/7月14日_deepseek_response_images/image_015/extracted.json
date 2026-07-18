@@ -1,0 +1,16 @@
+{
+  "market_facts": {
+    "chain_board_count": null,
+    "max_board_height": null,
+    "max_board_stock": "",
+    "first_board_success_rate": null
+  },
+  "relay_ecology": {
+    "max_board_height": 8,
+    "max_board_stock": "恒尚节能",
+    "chain_board_count": null,
+    "first_board_success_rate": null,
+    "daily_rows": []
+  },
+  "evidence": []
+}

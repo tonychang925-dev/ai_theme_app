@@ -1,0 +1,92 @@
+{
+  "market_facts": {
+    "chain_board_count": null,
+    "max_board_height": null,
+    "max_board_stock": "",
+    "first_board_success_rate": null
+  },
+  "relay_ecology": {
+    "max_board_height": 8,
+    "max_board_stock": "立方制药/贵绳股份",
+    "chain_board_count": 3,
+    "first_board_success_rate": 0.79,
+    "daily_rows": [
+      {
+        "date": "7.08",
+        "max_board_height": 7,
+        "max_board_stock": "恒尚节能",
+        "chain_board_count": null,
+        "first_board_success_rate": 0.76,
+        "first_to_second": 0.21,
+        "second_to_third": 0.33,
+        "third_to_fourth": 0.0,
+        "fourth_to_fifth": null,
+        "fifth_to_sixth": null,
+        "sixth_to_seventh": null,
+        "seventh_to_eighth": null,
+        "eighth_to_ninth": null
+      },
+      {
+        "date": "7.09",
+        "max_board_height": 8,
+        "max_board_stock": "立方制药/贵绳股份",
+        "chain_board_count": null,
+        "first_board_success_rate": 0.78,
+        "first_to_second": 0.1,
+        "second_to_third": 0.17,
+        "third_to_fourth": null,
+        "fourth_to_fifth": null,
+        "fifth_to_sixth": null,
+        "sixth_to_seventh": null,
+        "seventh_to_eighth": null,
+        "eighth_to_ninth": null
+      },
+      {
+        "date": "7.10",
+        "max_board_height": 3,
+        "max_board_stock": "哈药股份/亚联机械",
+        "chain_board_count": null,
+        "first_board_success_rate": 0.49,
+        "first_to_second": 0.14,
+        "second_to_third": 0.0,
+        "third_to_fourth": null,
+        "fourth_to_fifth": null,
+        "fifth_to_sixth": null,
+        "sixth_to_seventh": null,
+        "seventh_to_eighth": null,
+        "eighth_to_ninth": null
+      },
+      {
+        "date": "7.13",
+        "max_board_height": null,
+        "max_board_stock": "宿迁联盛；富满微",
+        "chain_board_count": null,
+        "first_board_success_rate": 0.54,
+        "first_to_second": 0.08,
+        "second_to_third": 0.4,
+        "third_to_fourth": null,
+        "fourth_to_fifth": null,
+        "fifth_to_sixth": null,
+        "sixth_to_seventh": null,
+        "seventh_to_eighth": null,
+        "eighth_to_ninth": null
+      },
+      {
+        "date": "7.14",
+        "max_board_height": null,
+        "max_board_stock": "兴业科技；有研硅",
+        "chain_board_count": null,
+        "first_board_success_rate": 0.79,
+        "first_to_second": 0.23,
+        "second_to_third": 0.14,
+        "third_to_fourth": null,
+        "fourth_to_fifth": null,
+        "fifth_to_sixth": null,
+        "sixth_to_seventh": null,
+        "seventh_to_eighth": null,
+        "eighth_to_ninth": null
+      }
+    ]
+  },
+  "evidence": []
+}

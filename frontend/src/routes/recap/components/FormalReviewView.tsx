@@ -23,6 +23,11 @@ function amount(value: unknown): string {
   return value.toFixed(0);
 }
 
+function yiAmount(value: unknown): string {
+  if (typeof value !== "number" || !Number.isFinite(value)) return text(value);
+  return `${value.toFixed(2).replace(/\.00$/, "")}亿`;
+}
+
 function list(value: unknown): unknown[] {
   return Array.isArray(value) ? value : [];
 }
@@ -99,7 +104,7 @@ function MarketState({ marketState }: { marketState: Record<string, unknown> }) 
       <KeyValueGrid rows={[
         ["上涨/下跌", `${text(facts.up_count)} / ${text(facts.down_count)}`],
         ["涨停/跌停", `${text(facts.limit_up_total)} / ${text(facts.limit_down_total)}`],
-        ["成交额", amount(facts.total_amount)],
+        ["成交额", facts.total_amount_yi != null ? yiAmount(facts.total_amount_yi) : amount(facts.total_amount)],
         ["市场健康度", marketState.market_health_score],
         ["情绪分", marketState.emotion_score],
         ["情绪节点", emotion.emotion_node || emotion.emotion_label],
@@ -178,7 +183,7 @@ function CapitalEvidence({ capital }: { capital: NonNullable<FormalReviewProject
   return (
     <Section title="资金证据">
       <KeyValueGrid rows={[
-        ["活跃资金", amount(market.active_amount)],
+        ["活跃资金", market.active_amount_yi != null ? yiAmount(market.active_amount_yi) : yiAmount(market.active_amount)],
         ["资金状态", market.state],
         ["游资净买", amount(market.hot_money_net_buy)],
         ["机构净买", amount(market.institution_net_buy)],

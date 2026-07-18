@@ -1,0 +1,28 @@
+{
+  "market_facts": {
+    "limit_up_count": null,
+    "chain_board_count": null,
+    "max_board_height": null,
+    "max_board_stock": "",
+    "market_up_ratio": null,
+    "below_minus5_count": null,
+    "loss_effect_ratio": null,
+    "first_board_success_rate": null
+  },
+  "relay_ecology": {
+    "max_board_height": null,
+    "max_board_stock": "",
+    "chain_board_count": null,
+    "first_board_success_rate": null,
+    "daily_rows": []
+  },
+  "emotion_label": {
+    "market_phase": "",
+    "risk_level": "",
+    "cycle_score": null,
+    "phase_cn": "",
+    "is_reversal_confirmed": false,
+    "strategy": ""
+  },
+  "evidence": []
+}

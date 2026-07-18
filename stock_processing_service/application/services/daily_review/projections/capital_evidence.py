@@ -133,8 +133,8 @@ def _build_theme_capital(rows: list[dict[str, Any]] | None) -> list[dict[str, An
             "top3_inflow": row.get("top3_inflow"),
             "inflow_stock_count": row.get("inflow_stock_count"),
             "rank_order": row.get("rank_order"),
-            "capital_validation": row.get("capital_validation"),
-            "theme_kline": row.get("theme_kline"),
+            "capital_validation": row.get("capital_validation") or row.get("flow_score"),
+            "theme_kline": row.get("theme_kline") or row.get("lifecycle_stage"),
         }))
     themes.sort(key=lambda item: (int(item.get("rank_order") or 9999), str(item.get("theme_name") or "")))
     return themes
@@ -171,19 +171,19 @@ def _ensure_stock(
 def _merge_stock_capital(entity: dict[str, Any], row: dict[str, Any]) -> None:
     fact, assessment = _capital_blocks(entity)
     _set_first(fact, "main_net_inflow", row.get("main_net_inflow") or row.get("amount"))
-    _set_first(fact, "active_buy", row.get("active_buy"))
+    _set_first(fact, "active_buy", row.get("active_buy") or row.get("watch_score"))
     _set_first(fact, "institution_net", row.get("institution_net") or row.get("institution_net_buy"))
     _set_first(fact, "hot_money_net", row.get("hot_money_net") or row.get("hot_money_net_buy"))
-    _set_first(fact, "rank_order", row.get("rank_order") or row.get("rank_in_theme"))
-    _set_first(assessment, "conclusion", row.get("conclusion") or row.get("description"))
+    _set_first(fact, "rank_order", row.get("rank_order") or row.get("rank_in_theme") or row.get("watch_priority"))
+    _set_first(assessment, "conclusion", row.get("conclusion") or row.get("description") or row.get("watch_status") or row.get("cycle_state"))
     _append_source(entity, "stock_capital_reviews")
 
 
 def _merge_money_flow(entity: dict[str, Any], row: dict[str, Any]) -> None:
     fact, assessment = _capital_blocks(entity)
     _set_first(fact, "main_net_inflow", row.get("main_net_inflow") or row.get("amount"))
-    _set_first(assessment, "money_flow_tier", row.get("money_flow_tier"))
-    _set_first(assessment, "role_enhanced", row.get("role_enhanced"))
+    _set_first(assessment, "money_flow_tier", row.get("money_flow_tier") or row.get("watch_status"))
+    _set_first(assessment, "role_enhanced", row.get("role_enhanced") or row.get("role"))
     _set_first(assessment, "institution_signal", row.get("institution_signal"))
     _set_first(assessment, "hot_money_signal", row.get("hot_money_signal"))
     _set_first(assessment, "dragon_tiger_signal", row.get("dragon_tiger_signal"))

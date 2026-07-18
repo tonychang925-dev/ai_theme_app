@@ -1,0 +1,65 @@
+{
+  "market_facts": {
+    "chain_board_count": null,
+    "max_board_height": null,
+    "max_board_stock": "",
+    "first_board_success_rate": null
+  },
+  "relay_ecology": {
+    "max_board_height": 3,
+    "max_board_stock": "哈药股份",
+    "chain_board_count": 4,
+    "first_board_success_rate": 0.22,
+    "daily_rows": [
+      {
+        "board_height": 3,
+        "stock_count": 4,
+        "promotion_rate": 0.17,
+        "stocks": [
+          "哈药股份",
+          "信通电子",
+          "宏桥控股",
+          "宿迁联盛"
+        ]
+      },
+      {
+        "board_height": 2,
+        "stock_count": 1,
+        "promotion_rate": null,
+        "stocks": [
+          "恒尚节能"
+        ]
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "source_image": 14,
+      "source_text": "一板 数量 79 晋级率 22.0%",
+      "fact": "first_board_success_rate",
+      "value": 0.22,
+      "confidence": 0.5
+    },
+    {
+      "source_image": 14,
+      "source_text": "二板 数量 4 晋级率 17.0%",
+      "fact": "chain_board_count",
+      "value": 4,
+      "confidence": 0.5
+    },
+    {
+      "source_image": 14,
+      "source_text": "3板 哈药股份 信通电子 宏桥控股 宿迁联盛",
+      "fact": "max_board_stock",
+      "value": "哈药股份",
+      "confidence": 0.5
+    },
+    {
+      "source_image": 14,
+      "source_text": "3板 哈药股份 信通电子 宏桥控股 宿迁联盛",
+      "fact": "max_board_height",
+      "value": 3,
+      "confidence": 0.5
+    }
+  ]
+}

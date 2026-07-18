@@ -1,0 +1,10 @@
+{
+  "image_index": 20,
+  "route": "hot_money_direction",
+  "route_score": 0.85,
+  "matched_keywords": [],
+  "section_group": "hot_money_direction",
+  "section_title": "情绪资金，游资方向",
+  "forced_by_section": true,
+  "reason": "目标章节图片，强制OCR并结构化提取"
+}

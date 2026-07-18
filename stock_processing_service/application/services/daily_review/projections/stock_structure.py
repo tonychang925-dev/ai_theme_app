@@ -136,10 +136,13 @@ def _merge_strong_stock(entity: dict[str, Any], ss: dict[str, Any]) -> None:
         entity["subject_key"] = str(ss.get("subject_key", ""))
 
     # Role mapping
-    role = str(ss.get("role", "")).upper()
+    role_raw = str(ss.get("role", ""))
+    role = role_raw.upper()
     role_label = str(ss.get("role_label", ""))
-    if role in ("LEADER", "龙头"):
+    if role in ("LEADER", "DRAGON", "龙头"):
         entity["today_role"] = "LEADER"
+    elif role in ("SUB_DRAGON", "POTENTIAL_LEADER", "潜在龙头"):
+        entity["today_role"] = "FRONTLINE"
     elif role in ("MID_CAP", "中军"):
         entity["today_role"] = "MID_CAP"
     elif role in ("REJECT", "ELIMINATED", "淘汰"):
@@ -153,10 +156,10 @@ def _merge_strong_stock(entity: dict[str, Any], ss: dict[str, Any]) -> None:
 
     # Scores (keep the ones that matter for formal review, per Matrix)
     entity["scores"] = {
-        "composite": ss.get("composite_score"),
-        "capital": ss.get("capital_score"),
-        "structure": ss.get("structure_score"),
-        "leading": ss.get("leading_score"),
+        "composite": _first_non_empty(ss.get("composite_score"), ss.get("watch_score")),
+        "capital": _first_non_empty(ss.get("capital_score"), ss.get("money_flow_score")),
+        "structure": _first_non_empty(ss.get("structure_score"), ss.get("support_score")),
+        "leading": _first_non_empty(ss.get("leading_score"), ss.get("mainline_strength_score")),
         "purity": ss.get("purity_score"),
         "resilience": ss.get("resilience_score"),
     }
@@ -164,24 +167,35 @@ def _merge_strong_stock(entity: dict[str, Any], ss: dict[str, Any]) -> None:
     # Capital data from money_flow
     mf = ss.get("money_flow") or {}
     entity["capital"] = {
-        "main_net_inflow": mf.get("main_net_inflow"),
-        "money_flow_tier": mf.get("money_flow_tier", ""),
-        "role_enhanced": mf.get("role_enhanced", ""),
+        "main_net_inflow": _first_non_empty(mf.get("main_net_inflow"), ss.get("main_net_inflow")),
+        "money_flow_tier": _first_non_empty(mf.get("money_flow_tier"), ss.get("money_flow_tier"), ""),
+        "role_enhanced": _first_non_empty(mf.get("role_enhanced"), ss.get("role_enhanced"), ""),
     }
 
     # Today status from kline/llm
     kline = ss.get("kline") or {}
     llm = ss.get("llm") or {}
+    evidence = ss.get("evidence") or {}
     entity["today_status"] = (
         str(kline.get("position_label", ""))
         or str(kline.get("pattern_summary", ""))
         or str(llm.get("judgement", ""))
+        or str(ss.get("watch_status", ""))
+        or str(ss.get("cycle_state", ""))
+        or str(evidence.get("position_label", ""))
     )
     entity["rationale"] = ss.get("rationale", "")
     entity["rejection_reason"] = ss.get("rejection_reason")
 
     if "strong_stock_reviews" not in entity["source"]:
         entity["source"].append("strong_stock_reviews")
+
+
+def _first_non_empty(*values: Any) -> Any:
+    for value in values:
+        if value not in (None, "", [], {}):
+            return value
+    return None
 
 
 def _merge_pool_review(entity: dict[str, Any], pr: dict[str, Any]) -> None:

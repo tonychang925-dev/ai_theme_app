@@ -1,0 +1,2265 @@
+{
+  "mode": "chunked_stock_batches",
+  "attempts": [
+    {
+      "task": "核心事实与策略",
+      "attempt": 1,
+      "finish_reason": "stop",
+      "content_length": 1486,
+      "usage": {
+        "prompt_tokens": 6479,
+        "completion_tokens": 576,
+        "total_tokens": 7055,
+        "prompt_tokens_details": {
+          "cached_tokens": 384
+        },
+        "prompt_cache_hit_tokens": 384,
+        "prompt_cache_miss_tokens": 6095
+      },
+      "status": "success"
+    },
+    {
+      "task": "历史序列与连板生态",
+      "attempt": 1,
+      "finish_reason": "stop",
+      "content_length": 6750,
+      "usage": {
+        "prompt_tokens": 6295,
+        "completion_tokens": 2620,
+        "total_tokens": 8915,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 6295
+      },
+      "status": "success"
+    },
+    {
+      "task": "板块节律与题材",
+      "attempt": 1,
+      "finish_reason": "stop",
+      "content_length": 3301,
+      "usage": {
+        "prompt_tokens": 6262,
+        "completion_tokens": 1260,
+        "total_tokens": 7522,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 6262
+      },
+      "status": "success"
+    },
+    {
+      "task": "连板天梯与专题股池",
+      "attempt": 1,
+      "finish_reason": "stop",
+      "content_length": 8265,
+      "usage": {
+        "prompt_tokens": 6234,
+        "completion_tokens": 3076,
+        "total_tokens": 9310,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 6234
+      },
+      "status": "success"
+    },
+    {
+      "task": "涨停股票明细批次1",
+      "attempt": 1,
+      "finish_reason": "stop",
+      "content_length": 27,
+      "usage": {
+        "prompt_tokens": 3482,
+        "completion_tokens": 9,
+        "total_tokens": 3491,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 3482
+      },
+      "status": "success"
+    },
+    {
+      "task": "涨停股票明细批次2",
+      "attempt": 1,
+      "finish_reason": "stop",
+      "content_length": 3124,
+      "usage": {
+        "prompt_tokens": 747,
+        "completion_tokens": 1114,
+        "total_tokens": 1861,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 747
+      },
+      "status": "success"
+    },
+    {
+      "task": "涨停股票明细批次3",
+      "attempt": 1,
+      "finish_reason": "stop",
+      "content_length": 3808,
+      "usage": {
+        "prompt_tokens": 742,
+        "completion_tokens": 1363,
+        "total_tokens": 2105,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 742
+      },
+      "status": "success"
+    },
+    {
+      "task": "涨停股票明细批次4",
+      "attempt": 1,
+      "finish_reason": "stop",
+      "content_length": 4105,
+      "usage": {
+        "prompt_tokens": 766,
+        "completion_tokens": 1581,
+        "total_tokens": 2347,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 766
+      },
+      "status": "success"
+    },
+    {
+      "task": "涨停股票明细批次5",
+      "attempt": 1,
+      "finish_reason": "stop",
+      "content_length": 6715,
+      "usage": {
+        "prompt_tokens": 1219,
+        "completion_tokens": 2419,
+        "total_tokens": 3638,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1219
+      },
+      "status": "success"
+    }
+  ],
+  "stock_batch_progress": {
+    "completed": 5,
+    "total": 5,
+    "merged_rows": 73
+  },
+  "partial_payload": {
+    "extraction_status": "failed",
+    "schema_version": "m8_deepseek_v2",
+    "trade_date": "7.15",
+    "source_title": "7月15日，医药连续走强的4天",
+    "market_facts": {
+      "limit_up_count": 71,
+      "chain_board_count": 15,
+      "max_board_height": 4,
+      "max_board_stock": "哈药股份",
+      "active_capital_yi": 591,
+      "market_up_count": null,
+      "market_down_count": null,
+      "market_up_ratio": 0.62,
+      "limit_down_count": null,
+      "below_minus5_count": 433,
+      "loss_effect_ratio": 6.1,
+      "first_board_success_rate": 0.67,
+      "index_support_zone": "深成指14250附近",
+      "intraday_driver": "医药",
+      "shanghai_close": null,
+      "shanghai_change_pct": null,
+      "shenzhen_close": null,
+      "shenzhen_change_pct": null,
+      "chinext_close": null,
+      "chinext_change_pct": null
+    },
+    "market_energy_series": {
+      "rows": [
+        {
+          "date": "7.09",
+          "zhangting": 75,
+          "liangban": 6,
+          "under_minus5": 88,
+          "up_ratio": 0.46,
+          "loss_effect": 1.17,
+          "composite": 6
+        },
+        {
+          "date": "7.10",
+          "zhangting": 90,
+          "liangban": 9,
+          "under_minus5": 355,
+          "up_ratio": 0.67,
+          "loss_effect": 3.94,
+          "composite": 2
+        },
+        {
+          "date": "7.13",
+          "zhangting": 27,
+          "liangban": 5,
+          "under_minus5": 1999,
+          "up_ratio": 0.15,
+          "loss_effect": 74.04,
+          "composite": 10
+        },
+        {
+          "date": "7.14",
+          "zhangting": 79,
+          "liangban": 15,
+          "under_minus5": 147,
+          "up_ratio": 0.76,
+          "loss_effect": 1.86,
+          "composite": null
+        },
+        {
+          "date": "7.15",
+          "zhangting": 71,
+          "liangban": null,
+          "under_minus5": 433,
+          "up_ratio": 0.62,
+          "loss_effect": 6.1,
+          "composite": null
+        }
+      ]
+    },
+    "index_energy_series": [
+      {
+        "date": "7.03",
+        "value": 10
+      },
+      {
+        "date": "7.06",
+        "value": 6
+      },
+      {
+        "date": "7.07",
+        "value": 5
+      },
+      {
+        "date": "7.08",
+        "value": 2
+      },
+      {
+        "date": "7.09",
+        "value": 2
+      },
+      {
+        "date": "7.10",
+        "value": 0
+      },
+      {
+        "date": "7.13",
+        "value": -5
+      },
+      {
+        "date": "7.14",
+        "value": -6
+      },
+      {
+        "date": "7.15",
+        "value": -10
+      }
+    ],
+    "emotion_momentum_series": [
+      {
+        "date": "7.02",
+        "value": 8
+      },
+      {
+        "date": "7.03",
+        "value": 3
+      },
+      {
+        "date": "7.06",
+        "value": 0
+      },
+      {
+        "date": "7.07",
+        "value": -2
+      },
+      {
+        "date": "7.08",
+        "value": -4
+      },
+      {
+        "date": "7.09",
+        "value": -7
+      },
+      {
+        "date": "7.10",
+        "value": -8
+      },
+      {
+        "date": "7.13",
+        "value": -12
+      },
+      {
+        "date": "7.14",
+        "value": null
+      },
+      {
+        "date": "7.15",
+        "value": null
+      }
+    ],
+    "active_capital_series": [
+      {
+        "date": "7.03",
+        "value": null
+      },
+      {
+        "date": "7.06",
+        "value": null
+      },
+      {
+        "date": "7.07",
+        "value": null
+      },
+      {
+        "date": "7.10",
+        "value": 2122
+      },
+      {
+        "date": "7.13",
+        "value": 1280
+      },
+      {
+        "date": "7.14",
+        "value": 897
+      },
+      {
+        "date": "7.15",
+        "value": 739
+      }
+    ],
+    "relay_ecology": {
+      "max_board_height": 4,
+      "max_board_stock": "哈药股份",
+      "chain_board_count": null,
+      "promotion_rate": null,
+      "first_board_success_rate": null,
+      "special_height_stocks": [],
+      "daily_rows": [
+        {
+          "date": "7.09",
+          "max_board": "恒尚节能",
+          "max_board_stock": "恒尚节能",
+          "first_board_count": 69,
+          "first_board_success": 88,
+          "first_board_rate": "78%",
+          "one_to_two_success": 4,
+          "one_to_two_total": 39,
+          "one_to_two_rate": "10%",
+          "two_to_three_success": 1,
+          "two_to_three_total": 6,
+          "two_to_three_rate": "17%",
+          "three_to_four_success": 0,
+          "three_to_four_total": 4,
+          "three_to_four_rate": "0%",
+          "four_to_five_success": null,
+          "four_to_five_total": null,
+          "four_to_five_rate": null,
+          "five_to_six_success": null,
+          "five_to_six_total": null,
+          "five_to_six_rate": null,
+          "six_to_seven_success": null,
+          "six_to_seven_total": null,
+          "six_to_seven_rate": null,
+          "seven_to_eight_success": null,
+          "seven_to_eight_total": null,
+          "seven_to_eight_rate": null,
+          "eight_to_nine_success": null,
+          "eight_to_nine_total": null,
+          "eight_to_nine_rate": null
+        },
+        {
+          "date": "7.10",
+          "max_board": "恒尚节能",
+          "max_board_stock": "恒尚节能",
+          "first_board_count": 62,
+          "first_board_success": 169,
+          "first_board_rate": "49%",
+          "one_to_two_success": 10,
+          "one_to_two_total": 69,
+          "one_to_two_rate": "14%",
+          "two_to_three_success": 0,
+          "two_to_three_total": 3,
+          "two_to_three_rate": "0%",
+          "three_to_four_success": 1,
+          "three_to_four_total": 1,
+          "three_to_four_rate": "100%",
+          "four_to_five_success": null,
+          "four_to_five_total": null,
+          "four_to_five_rate": null,
+          "five_to_six_success": null,
+          "five_to_six_total": null,
+          "five_to_six_rate": null,
+          "six_to_seven_success": null,
+          "six_to_seven_total": null,
+          "six_to_seven_rate": null,
+          "seven_to_eight_success": null,
+          "seven_to_eight_total": null,
+          "seven_to_eight_rate": null,
+          "eight_to_nine_success": null,
+          "eight_to_nine_total": null,
+          "eight_to_nine_rate": null
+        },
+        {
+          "date": "7.13",
+          "max_board": "哈药股份",
+          "max_board_stock": "哈药股份",
+          "first_board_count": 19,
+          "first_board_success": 35,
+          "first_board_rate": "54%",
+          "one_to_two_success": 6,
+          "one_to_two_total": 80,
+          "one_to_two_rate": "8%",
+          "two_to_three_success": 4,
+          "two_to_three_total": 10,
+          "two_to_three_rate": "40%",
+          "three_to_four_success": 0,
+          "three_to_four_total": 1,
+          "three_to_four_rate": "0%",
+          "four_to_five_success": null,
+          "four_to_five_total": null,
+          "four_to_five_rate": null,
+          "five_to_six_success": null,
+          "five_to_six_total": null,
+          "five_to_six_rate": null,
+          "six_to_seven_success": null,
+          "six_to_seven_total": null,
+          "six_to_seven_rate": null,
+          "seven_to_eight_success": null,
+          "seven_to_eight_total": null,
+          "seven_to_eight_rate": null,
+          "eight_to_nine_success": null,
+          "eight_to_nine_total": null,
+          "eight_to_nine_rate": null
+        },
+        {
+          "date": "7.14",
+          "max_board": "哈药股份",
+          "max_board_stock": "哈药股份",
+          "first_board_count": 75,
+          "first_board_success": 95,
+          "first_board_rate": "79%",
+          "one_to_two_success": 5,
+          "one_to_two_total": 22,
+          "one_to_two_rate": "23%",
+          "two_to_three_success": 1,
+          "two_to_three_total": 7,
+          "two_to_three_rate": "14%",
+          "three_to_four_success": null,
+          "three_to_four_total": null,
+          "three_to_four_rate": null,
+          "four_to_five_success": null,
+          "four_to_five_total": null,
+          "four_to_five_rate": null,
+          "five_to_six_success": null,
+          "five_to_six_total": null,
+          "five_to_six_rate": null,
+          "six_to_seven_success": null,
+          "six_to_seven_total": null,
+          "six_to_seven_rate": null,
+          "seven_to_eight_success": null,
+          "seven_to_eight_total": null,
+          "seven_to_eight_rate": null,
+          "eight_to_nine_success": null,
+          "eight_to_nine_total": null,
+          "eight_to_nine_rate": null
+        },
+        {
+          "date": "7.15",
+          "max_board": "哈药股份",
+          "max_board_stock": "哈药股份",
+          "first_board_count": 56,
+          "first_board_success": 84,
+          "first_board_rate": "67%",
+          "one_to_two_success": 12,
+          "one_to_two_total": 77,
+          "one_to_two_rate": "16%",
+          "two_to_three_success": 3,
+          "two_to_three_total": 5,
+          "two_to_three_rate": "60%",
+          "three_to_four_success": null,
+          "three_to_four_total": null,
+          "three_to_four_rate": null,
+          "four_to_five_success": null,
+          "four_to_five_total": null,
+          "four_to_five_rate": null,
+          "five_to_six_success": null,
+          "five_to_six_total": null,
+          "five_to_six_rate": null,
+          "six_to_seven_success": null,
+          "six_to_seven_total": null,
+          "six_to_seven_rate": null,
+          "seven_to_eight_success": null,
+          "seven_to_eight_total": null,
+          "seven_to_eight_rate": null,
+          "eight_to_nine_success": null,
+          "eight_to_nine_total": null,
+          "eight_to_nine_rate": null
+        }
+      ]
+    },
+    "emotion_label": {
+      "market_phase": "下跌周期",
+      "risk_level": "中",
+      "emotion_momentum": 2,
+      "cycle_score": 14,
+      "phase_cn": "逆指数风格",
+      "is_reversal_confirmed": false,
+      "strategy": "聚焦医药主线",
+      "phase_chain": [
+        "7.09",
+        "7.10",
+        "7.13",
+        "7.14",
+        "7.15"
+      ]
+    },
+    "strategy_label": {
+      "allowed": [
+        "医药",
+        "中报预增",
+        "并购重组"
+      ],
+      "forbidden": [
+        "机构资金审美方向"
+      ],
+      "watch_points": [
+        "7.20后指数企稳节点",
+        "世界人工智能大会超预期"
+      ],
+      "summary": "医药连续走强第4天，哈药股份4连板，指数下跌周期，逆指数风格，关注7.20后转折。",
+      "dao": "聚焦主线，专注核心",
+      "shu": "医药为主，中报预增为辅",
+      "fa": [
+        "医药",
+        "中报预增",
+        "并购重组"
+      ],
+      "qi": [
+        "指数企稳反弹风险",
+        "人工智能大会超预期"
+      ]
+    },
+    "market_leader": {
+      "board": "主板",
+      "stock": "哈药股份",
+      "total_stocks": 71,
+      "special_trend_leader": "恒尚节能",
+      "special_trend_height": 3,
+      "exchange_board": "沪市"
+    },
+    "leader_history": [
+      {
+        "date": "7.08",
+        "stocks": [
+          "恒尚节能7",
+          "哈药股份2",
+          "大连电1",
+          "科陆电子1",
+          "华瑞股份1",
+          "药易购1",
+          "睿智医药1",
+          "国林科技1",
+          "日科化学1"
+        ]
+      },
+      {
+        "date": "7.09",
+        "stocks": [
+          "恒尚节能88",
+          "亚联机械2",
+          "哈药股份3",
+          "大恒科技3",
+          "视源股份3",
+          "金器之",
+          "威尔高2",
+          "三维通信1"
+        ]
+      },
+      {
+        "date": "7.10",
+        "stocks": [
+          "恒尚节能7",
+          "贵绳股份3",
+          "哈药股份3",
+          "大恒科技3",
+          "视源股份3",
+          "金器之",
+          "威尔高2",
+          "三维通信1"
+        ]
+      },
+      {
+        "date": "7.13",
+        "stocks": [
+          "哈药股份4",
+          "亚联机械2",
+          "贵绳股份3",
+          "大恒科技3",
+          "视源股份3",
+          "金器之",
+          "威尔高2",
+          "三维通信1"
+        ]
+      },
+      {
+        "date": "7.14",
+        "stocks": [
+          "哈药股份4",
+          "亚联机械2",
+          "贵绳股份3",
+          "大恒科技3",
+          "视源股份3",
+          "金器之",
+          "威尔高2",
+          "三维通信1"
+        ]
+      },
+      {
+        "date": "7.15",
+        "stocks": [
+          "哈药股份4",
+          "亚联机械2",
+          "贵绳股份3",
+          "大恒科技3",
+          "视源股份3",
+          "金器之",
+          "威尔高2",
+          "三维通信1"
+        ]
+      }
+    ],
+    "institutional_rhythm": [],
+    "hot_money_directions": [
+      {
+        "direction": "医药",
+        "status": "连续走强第4天，涨停14家，哈药股份4连板",
+        "source_image": 19,
+        "confidence": "high"
+      },
+      {
+        "direction": "消费",
+        "status": "启动第4天，涨停9家，都市首板",
+        "source_image": 19,
+        "confidence": "high"
+      },
+      {
+        "direction": "机器人",
+        "status": "启动第4天，涨停4家",
+        "source_image": 19,
+        "confidence": "medium"
+      },
+      {
+        "direction": "算力/半导体",
+        "status": "算力板块活跃，涨停2家",
+        "source_image": 21,
+        "confidence": "medium"
+      },
+      {
+        "direction": "煤化工/煤炭",
+        "status": "国际油价上涨，涨停4家",
+        "source_image": 21,
+        "confidence": "medium"
+      },
+      {
+        "direction": "并购重组",
+        "status": "持续活跃，涨停2家",
+        "source_image": 21,
+        "confidence": "medium"
+      },
+      {
+        "direction": "电力",
+        "status": "AI驱动电力需求，涨停2家",
+        "source_image": 21,
+        "confidence": "medium"
+      },
+      {
+        "direction": "游戏",
+        "status": "业绩高增长，涨停2家",
+        "source_image": 21,
+        "confidence": "medium"
+      }
+    ],
+    "limitup_themes": [
+      {
+        "theme": "医药",
+        "status": "《国民健康十五五规划》印发；实验猴涨价",
+        "stock_count": 21,
+        "stocks": [
+          "哈药股份",
+          "迪哲医药",
+          "人民同泰",
+          "大湖股份",
+          "蓝帆医疗",
+          "海南海药",
+          "昭衍新药",
+          "南华生物",
+          "博瑞医药",
+          "百花医药",
+          "永安药业",
+          "昂利康",
+          "睿智医药",
+          "石药景峰",
+          "哈三联",
+          "基蛋生物",
+          "四川双马",
+          "宏辉果蔬",
+          "美诺华",
+          "凯莱英",
+          "万邦医药"
+        ],
+        "source_image": 21,
+        "confidence": "high"
+      },
+      {
+        "theme": "大消费",
+        "status": "《扩大消费十五五规划》批复；上半年社零增长1.3%",
+        "stock_count": 13,
+        "stocks": [
+          "儒意电影",
+          "宁波中百",
+          "香江控股",
+          "中宠股份",
+          "若羽臣",
+          "金种子酒",
+          "安正时尚",
+          "幸福蓝海",
+          "跨境通",
+          "古井贡酒",
+          "味知香",
+          "美盈森",
+          "新华百货"
+        ],
+        "source_image": 21,
+        "confidence": "high"
+      },
+      {
+        "theme": "中报预增",
+        "status": "市场密集披露业绩预告",
+        "stock_count": 10,
+        "stocks": [
+          "九安医疗",
+          "世茂能源",
+          "中嘉博创",
+          "中利集团",
+          "智度股份",
+          "爱旭股份",
+          "东方新能",
+          "三羊马",
+          "湖南发展",
+          "银宝山新",
+          "璞源材料"
+        ],
+        "source_image": 21,
+        "confidence": "high"
+      },
+      {
+        "theme": "机器人",
+        "status": "人形机器人加速落地",
+        "stock_count": 6,
+        "stocks": [
+          "富春染织",
+          "天安新材",
+          "春光科技",
+          "首钢股份",
+          "汇得科技",
+          "宏润建设"
+        ],
+        "source_image": 21,
+        "confidence": "high"
+      },
+      {
+        "theme": "煤化工/煤炭",
+        "status": "国际油价上涨；煤化工企业业绩向好",
+        "stock_count": 5,
+        "stocks": [
+          "大有能源",
+          "金煤科技",
+          "赤天化",
+          "江苏索普",
+          "新大洲A"
+        ],
+        "source_image": 21,
+        "confidence": "high"
+      },
+      {
+        "theme": "算力/半导体产业链",
+        "status": "算力板块活跃",
+        "stock_count": 3,
+        "stocks": [
+          "天普股份",
+          "贤丰控股",
+          "华盛昌",
+          "银信科技"
+        ],
+        "source_image": 21,
+        "confidence": "medium"
+      },
+      {
+        "theme": "并购重组",
+        "status": "市场并购重组持续活跃",
+        "stock_count": 3,
+        "stocks": [
+          "恒尚节能",
+          "艾艾精工",
+          "狮头股份"
+        ],
+        "source_image": 21,
+        "confidence": "medium"
+      },
+      {
+        "theme": "电力",
+        "status": "AI驱动电力需求",
+        "stock_count": 2,
+        "stocks": [
+          "信通电子",
+          "豫能控股"
+        ],
+        "source_image": 21,
+        "confidence": "medium"
+      },
+      {
+        "theme": "游戏",
+        "status": "游戏板块业绩高增长带动估值修复",
+        "stock_count": 2,
+        "stocks": [
+          "恺英网络",
+          "巨人网络"
+        ],
+        "source_image": 21,
+        "confidence": "medium"
+      },
+      {
+        "theme": "其他概念",
+        "status": "",
+        "stock_count": 6,
+        "stocks": [
+          "云创退",
+          "德龙汇能",
+          "天顺股份",
+          "云中马",
+          "银龙股份"
+        ],
+        "source_image": 21,
+        "confidence": "low"
+      }
+    ],
+    "limitup_attribution": [
+      {
+        "board_level": "首板",
+        "stock_code": "600664",
+        "stock_name": "哈药股份",
+        "limit_time": "09:30:39",
+        "theme": "医药",
+        "reason": "中报预增+基药目录+创新药+化学制药",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "二板",
+        "stock_code": "688192",
+        "stock_name": "迪哲医药",
+        "limit_time": "09:31:45",
+        "theme": "医药",
+        "reason": "授权阿斯利康+EGFR靶向药+创新药",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "二板",
+        "stock_code": "600829",
+        "stock_name": "人民同泰",
+        "limit_time": "09:37:22",
+        "theme": "医药",
+        "reason": "医药零售+医药流通+黑龙江国资",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "600257",
+        "stock_name": "大湖股份",
+        "limit_time": "09:32:57",
+        "theme": "医药",
+        "reason": "业绩扭亏+康复医疗+水产品",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002382",
+        "stock_name": "蓝帆医疗",
+        "limit_time": "09:33:57",
+        "theme": "医药",
+        "reason": "半年报扭亏+手套涨价+心脑血管+医疗器械",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "000566",
+        "stock_name": "海南海药",
+        "limit_time": "09:37:03",
+        "theme": "医药",
+        "reason": "创新药+化学制药+脑机接口+央企",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "603127",
+        "stock_name": "昭衍新药",
+        "limit_time": "09:37:59",
+        "theme": "医药",
+        "reason": "中报预增+实验猴涨价+CRO",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "000504",
+        "stock_name": "南华生物",
+        "limit_time": "09:41:15",
+        "theme": "医药",
+        "reason": "细胞医疗+中报预增+湖南国资",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "688166",
+        "stock_name": "博瑞医药",
+        "limit_time": "09:43:01",
+        "theme": "医药",
+        "reason": "GLP-1减肥药+创新药+原料药制剂一体化",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "600721",
+        "stock_name": "百花医药",
+        "limit_time": "09:48:48",
+        "theme": "医药",
+        "reason": "CRO+创新药+金华国资入主",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002365",
+        "stock_name": "永安药业",
+        "limit_time": "09:50:48",
+        "theme": "医药",
+        "reason": "中报预增+化学制药+牛磺酸",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002940",
+        "stock_name": "昂利康",
+        "limit_time": "09:53:48",
+        "theme": "医药",
+        "reason": "创新药+化学制药+定增注册稿",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "300149",
+        "stock_name": "睿智医药",
+        "limit_time": "09:54:39",
+        "theme": "医药",
+        "reason": "CRO+ADC/XDC+AI制药",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "000908",
+        "stock_name": "石药景峰",
+        "limit_time": "09:55:00",
+        "theme": "医药",
+        "reason": "中报扭亏+石药入主+创新药+中药",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002900",
+        "stock_name": "哈三联",
+        "limit_time": "10:02:27",
+        "theme": "医药",
+        "reason": "中报预亏收窄+医药+创新药",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "603387",
+        "stock_name": "基蛋生物",
+        "limit_time": "10:13:39",
+        "theme": "医药",
+        "reason": "中报预增+POCT+体外诊断",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "000935",
+        "stock_name": "四川双马",
+        "limit_time": "10:40:51",
+        "theme": "医药",
+        "reason": "GLP-1+多肽CDMO+创投",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "603336",
+        "stock_name": "宏辉果蔬",
+        "limit_time": "10:41:40",
+        "theme": "医药",
+        "reason": "果蔬服务+创新药+收购施美药业+苏州国资",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "603538",
+        "stock_name": "美诺华",
+        "limit_time": "14:43:53",
+        "theme": "医药",
+        "reason": "GLP-1减肥药+原料药+医药",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002821",
+        "stock_name": "凯莱英",
+        "limit_time": "14:53:09",
+        "theme": "医药",
+        "reason": "创新药+CDMO+多肽+股权激励",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "301520",
+        "stock_name": "万邦医药",
+        "limit_time": "15:00:00",
+        "theme": "医药",
+        "reason": "创新药+CRO+收购赛德盛",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002739",
+        "stock_name": "儒意电影",
+        "limit_time": "09:41:15",
+        "theme": "大消费",
+        "reason": "院线龙头+暑期档+IP潮玩",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "600857",
+        "stock_name": "宁波中百",
+        "limit_time": "09:45:54",
+        "theme": "大消费",
+        "reason": "零售+黄金+杭州金帝入主",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "600162",
+        "stock_name": "香江控股",
+        "limit_time": "09:50:19",
+        "theme": "大消费",
+        "reason": "家居商贸+房地产",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002891",
+        "stock_name": "中宠股份",
+        "limit_time": "10:20:30",
+        "theme": "大消费",
+        "reason": "宠物食品+全球化产能+国内营收增长",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "003010",
+        "stock_name": "若羽臣",
+        "limit_time": "10:26:21",
+        "theme": "大消费",
+        "reason": "中报预增+自有品牌+AI应用",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "600199",
+        "stock_name": "金种子酒",
+        "limit_time": "10:29:17",
+        "theme": "大消费",
+        "reason": "亏损收窄+白酒+阜阳国资",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "603839",
+        "stock_name": "安正时尚",
+        "limit_time": "10:33:42",
+        "theme": "大消费",
+        "reason": "中报预增+中高端女装+网红经济",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "300528",
+        "stock_name": "幸福蓝海",
+        "limit_time": "10:33:42",
+        "theme": "大消费",
+        "reason": "影视+暑期档",
+        "source_image": 21,
+        "confidence": 0.95
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "300528",
+        "stock_name": "幸福蓝海",
+        "limit_time": "10:37:57",
+        "theme": "影视院线+动漫IP+微短剧+江苏国资",
+        "reason": "影视院线+动漫IP+微短剧+江苏国资",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002640",
+        "stock_name": "跨境通",
+        "limit_time": "10:56:51",
+        "theme": "中报扭亏+跨境电商+母婴",
+        "reason": "中报扭亏+跨境电商+母婴",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "000596",
+        "stock_name": "古井贡酒",
+        "limit_time": "13:00:54",
+        "theme": "白酒+全国化次端+国企改革",
+        "reason": "白酒+全国化次端+国企改革",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "605089",
+        "stock_name": "味知香",
+        "limit_time": "13:01:22",
+        "theme": "大消费+预制菜+一季报增长+渠道下沉",
+        "reason": "大消费+预制菜+一季报增长+渠道下沉",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002303",
+        "stock_name": "美盈森",
+        "limit_time": "13:32:36",
+        "theme": "消费电子包装+包装一体化+海外产能释放",
+        "reason": "消费电子包装+包装一体化+海外产能释放",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "600785",
+        "stock_name": "新华百货",
+        "limit_time": "14:24:45",
+        "theme": "新质零售+区域零售龙头+股权转让终止",
+        "reason": "新质零售+区域零售龙头+股权转让终止",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "二板",
+        "stock_code": "002432",
+        "stock_name": "九安医疗",
+        "limit_time": "09:25:00",
+        "theme": "中报预增+参股月之暗面+拟投资阶跃星辰+AI医疗",
+        "reason": "中报预增+参股月之暗面+拟投资阶跃星辰+AI医疗",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "605028",
+        "stock_name": "世茂能源",
+        "limit_time": "09:33:36",
+        "theme": "扣非增长+协议转让+热电联产",
+        "reason": "扣非增长+协议转让+热电联产",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "000889",
+        "stock_name": "中嘉博创",
+        "limit_time": "09:30:00",
+        "theme": "扭亏为盈+追索款项确认+算力销售+通信网络维护",
+        "reason": "扭亏为盈+追索款项确认+算力销售+通信网络维护",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002309",
+        "stock_name": "中利集团",
+        "limit_time": "09:30:00",
+        "theme": "中报预计扭亏+特种线缆+光伏+厦门国资",
+        "reason": "中报预计扭亏+特种线缆+光伏+厦门国资",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "000676",
+        "stock_name": "智度股份",
+        "limit_time": "09:43:45",
+        "theme": "中报预增+华为鲸鸿+互联网媒体+广告",
+        "reason": "中报预增+华为鲸鸿+互联网媒体+广告",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "600732",
+        "stock_name": "爱旭股份",
+        "limit_time": "10:00:52",
+        "theme": "亏损收窄+BC电池+海外高溢价",
+        "reason": "亏损收窄+BC电池+海外高溢价",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002310",
+        "stock_name": "东方新能",
+        "limit_time": "10:01:39",
+        "theme": "中报扭亏+新能源发电+并购重组+北京国资",
+        "reason": "中报扭亏+新能源发电+并购重组+北京国资",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "001317",
+        "stock_name": "三羊马",
+        "limit_time": "10:02:27",
+        "theme": "扭亏为盈+物流+多式联运+小米汽车",
+        "reason": "扭亏为盈+物流+多式联运+小米汽车",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "000722",
+        "stock_name": "湖南发展",
+        "limit_time": "10:07:33",
+        "theme": "中报预增+水力发电+资产重组+湖南国资",
+        "reason": "中报预增+水力发电+资产重组+湖南国资",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002786",
+        "stock_name": "银宝山新",
+        "limit_time": "10:07:33",
+        "theme": "中报预增+水力发电+资产重组+湖南国资",
+        "reason": "中报预增+水力发电+资产重组+湖南国资",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "603196",
+        "stock_name": "璞源材料",
+        "limit_time": "10:27:03",
+        "theme": "半导体封装",
+        "reason": "中报预计扭亏+半导体封装+总经理增持+中央汇金",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "二板",
+        "stock_code": "605189",
+        "stock_name": "富春染织",
+        "limit_time": "14:23:08",
+        "theme": "人形机器人",
+        "reason": "半年报预增+PEEK材料+人形机器人+筒子纱龙头",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "603725",
+        "stock_name": "天安新材",
+        "limit_time": "09:36:26",
+        "theme": "机器人",
+        "reason": "机器人+电子皮肤+高分子新材料",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "603657",
+        "stock_name": "春光科技",
+        "limit_time": "09:57:27",
+        "theme": "家庭具身机器人",
+        "reason": "家庭具身机器人+小米产业链+定增受理",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "000959",
+        "stock_name": "首钢股份",
+        "limit_time": "10:42:42",
+        "theme": "人形机器人",
+        "reason": "人形机器人+新能源汽车钢+北京国资",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "603192",
+        "stock_name": "汇得科技",
+        "limit_time": "13:03:44",
+        "theme": "聚氨酯",
+        "reason": "聚氨酯+机器人材料+新能源电池材料",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002062",
+        "stock_name": "宏润建设",
+        "limit_time": "13:12:45",
+        "theme": "机器人",
+        "reason": "机器人+新能源电池+市政基建",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "二板",
+        "stock_code": "600403",
+        "stock_name": "大有能源",
+        "limit_time": "09:47:40",
+        "theme": "煤炭",
+        "reason": "中报减亏+煤炭+河南国资",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "二板",
+        "stock_code": "600844",
+        "stock_name": "金煤科技",
+        "limit_time": "10:11:38",
+        "theme": "煤化工",
+        "reason": "半年报预计扭亏+草酸扩产+煤化工",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "二板",
+        "stock_code": "600227",
+        "stock_name": "赤天化",
+        "limit_time": "10:39:21",
+        "theme": "煤化工",
+        "reason": "中报预计扭亏+尿素+甲醇",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "二板",
+        "stock_code": "600746",
+        "stock_name": "江苏索普",
+        "limit_time": "13:03:59",
+        "theme": "煤化工",
+        "reason": "中报预增+醋酸+国企改革",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "000571",
+        "stock_name": "新大洲A",
+        "limit_time": "10:41:51",
+        "theme": "煤炭",
+        "reason": "聚焦煤炭主业+长焰煤+海南自贸区",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "二板",
+        "stock_code": "605255",
+        "stock_name": "天普股份",
+        "limit_time": "09:32:30",
+        "theme": "算力",
+        "reason": "中昊芯英+汽车管路+外部流通盘小",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "二板",
+        "stock_code": "002141",
+        "stock_name": "贤丰控股",
+        "limit_time": "09:38:33",
+        "theme": "覆铜板",
+        "reason": "覆铜板+PCB上游+盐湖钾肥参股",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002980",
+        "stock_name": "华盛昌",
+        "limit_time": "09:25:00",
+        "theme": "光通信测试",
+        "reason": "中报预增+光通信测试+CPO",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "300231",
+        "stock_name": "银信科技",
+        "limit_time": "13:43:00",
+        "theme": "金融科技",
+        "reason": "金融科技+算力服务+AI教育",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "三板",
+        "stock_code": "603137",
+        "stock_name": "恒尚节能",
+        "limit_time": "14:17:53",
+        "theme": "并购重组",
+        "reason": "拟收购存储公司+建筑幕墙+跨界转型",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "二板",
+        "stock_code": "603580",
+        "stock_name": "艾艾精工",
+        "limit_time": "09:25:03",
+        "theme": "控制权变更",
+        "reason": "控制权拟变更+复牌+轻型输送带+消费电子",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "600539",
+        "stock_name": "狮头股份",
+        "limit_time": "10:25:16",
+        "theme": "并购重组",
+        "reason": "重组恢复审核+机器视觉+半导体封装+AI应用",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "三板",
+        "stock_code": "001388",
+        "stock_name": "信通电子",
+        "limit_time": "10:25:18",
+        "theme": "电力",
+        "reason": "电力智能运维+算力租赁+防冰机器人+高送转",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "001896",
+        "stock_name": "豫能控股",
+        "limit_time": "14:55:18",
+        "theme": "算力",
+        "reason": "算力+火电+河南国资",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002517",
+        "stock_name": "恺英网络",
+        "limit_time": "13:00:00",
+        "theme": "游戏",
+        "reason": "半年报预增+游戏+AI应用",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002558",
+        "stock_name": "巨人网络",
+        "limit_time": "13:39:48",
+        "theme": "游戏",
+        "reason": "游戏+AI应用+半年报预增",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "三板",
+        "stock_code": "920305",
+        "stock_name": "云创退",
+        "limit_time": "10:08:41",
+        "theme": "退市整理",
+        "reason": "退市整理期投机+大数据存储+AI大模型",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "000593",
+        "stock_name": "德龙汇能",
+        "limit_time": "09:34:18",
+        "theme": "天然气",
+        "reason": "天然+氢能+资产注入澄清+一季报增长",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "002800",
+        "stock_name": "天顺股份",
+        "limit_time": "11:22:30",
+        "theme": "物流",
+        "reason": "物流+一带一路+航空货运",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "603130",
+        "stock_name": "云中马",
+        "limit_time": "13:04:11",
+        "theme": "革基布",
+        "reason": "革基布龙头+入股商业卫星+定增获批",
+        "source_image": 21,
+        "confidence": 0.9
+      },
+      {
+        "board_level": "首板",
+        "stock_code": "603969",
+        "stock_name": "银龙股份",
+        "limit_time": "13:18:59",
+        "theme": "预应力材料",
+        "reason": "预应力材料+水利管网+高铁轨交+中报预增",
+        "source_image": 21,
+        "confidence": 0.9
+      }
+    ],
+    "board_ladder": [
+      {
+        "date": "7.15",
+        "height": 4,
+        "stocks": [
+          {
+            "name": "哈药股份",
+            "code": "600664",
+            "board": 4
+          }
+        ]
+      },
+      {
+        "date": "7.15",
+        "height": 3,
+        "stocks": [
+          {
+            "name": "信通电子",
+            "code": "001388",
+            "board": 3
+          },
+          {
+            "name": "恒尚节能",
+            "code": "603137",
+            "board": 3
+          },
+          {
+            "name": "贤丰控股",
+            "code": "002141",
+            "board": 3
+          },
+          {
+            "name": "九安医疗",
+            "code": "002432",
+            "board": 3
+          },
+          {
+            "name": "赤天化",
+            "code": "600227",
+            "board": 3
+          },
+          {
+            "name": "大有能源",
+            "code": "600403",
+            "board": 3
+          },
+          {
+            "name": "江苏索普",
+            "code": "600746",
+            "board": 3
+          },
+          {
+            "name": "人民同泰",
+            "code": "600829",
+            "board": 3
+          }
+        ]
+      },
+      {
+        "date": "7.15",
+        "height": 2,
+        "stocks": [
+          {
+            "name": "金煤科技",
+            "code": "600844",
+            "board": 2
+          },
+          {
+            "name": "艾艾精工",
+            "code": "603580",
+            "board": 2
+          },
+          {
+            "name": "世茂能源",
+            "code": "605028",
+            "board": 2
+          },
+          {
+            "name": "富春染织",
+            "code": "605189",
+            "board": 2
+          },
+          {
+            "name": "天普股份",
+            "code": "605255",
+            "board": 2
+          }
+        ]
+      }
+    ],
+    "special_stock_pools": [
+      {
+        "pool_name": "医药",
+        "stocks": [
+          {
+            "name": "哈药股份",
+            "code": "600664",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "迪哲医药",
+            "code": "688192",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "人民同泰",
+            "code": "600829",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "大湖股份",
+            "code": "600257",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "蓝帆医疗",
+            "code": "002382",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "海南海药",
+            "code": "000566",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "昭衍新药",
+            "code": "603127",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "南华生物",
+            "code": "000504",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "博瑞医药",
+            "code": "688166",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "百花医药",
+            "code": "600721",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "永安药业",
+            "code": "002365",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "昂利康",
+            "code": "002940",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "睿智医药",
+            "code": "300149",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "石药景峰",
+            "code": "000908",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "哈三联",
+            "code": "002900",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "基蛋生物",
+            "code": "603387",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "四川双马",
+            "code": "000935",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "宏辉果蔬",
+            "code": "603336",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "美诺华",
+            "code": "603538",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "凯莱英",
+            "code": "002821",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "万邦医药",
+            "code": "301520",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          }
+        ]
+      },
+      {
+        "pool_name": "大消费",
+        "stocks": [
+          {
+            "name": "儒意电影",
+            "code": "002739",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "宁波中百",
+            "code": "600857",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "香江控股",
+            "code": "600162",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "中宠股份",
+            "code": "002891",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "若羽臣",
+            "code": "003010",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "金种子酒",
+            "code": "600199",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "安正时尚",
+            "code": "603839",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "幸福蓝海",
+            "code": "300528",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "跨境通",
+            "code": "002640",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "古井贡酒",
+            "code": "000596",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "味知香",
+            "code": "605089",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "美盈森",
+            "code": "002303",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "新华百货",
+            "code": "600785",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          }
+        ]
+      },
+      {
+        "pool_name": "中报预增",
+        "stocks": [
+          {
+            "name": "九安医疗",
+            "code": "002432",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "世茂能源",
+            "code": "605028",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "中嘉博创",
+            "code": "000889",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "中利集团",
+            "code": "002309",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "智度股份",
+            "code": "000676",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "爱旭股份",
+            "code": "600732",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "东方新能",
+            "code": "002310",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "三羊马",
+            "code": "001317",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "湖南发展",
+            "code": "000722",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "银宝山新",
+            "code": "002786",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "璞源材料",
+            "code": "603196",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          }
+        ]
+      },
+      {
+        "pool_name": "机器人",
+        "stocks": [
+          {
+            "name": "富春染织",
+            "code": "605189",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "天安新材",
+            "code": "603725",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "春光科技",
+            "code": "603657",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "首钢股份",
+            "code": "000959",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "汇得科技",
+            "code": "603192",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "宏润建设",
+            "code": "002062",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          }
+        ]
+      },
+      {
+        "pool_name": "煤化工/煤炭",
+        "stocks": [
+          {
+            "name": "大有能源",
+            "code": "600403",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "金煤科技",
+            "code": "600844",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "赤天化",
+            "code": "600227",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "江苏索普",
+            "code": "600746",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "新大洲A",
+            "code": "000571",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          }
+        ]
+      },
+      {
+        "pool_name": "算力/半导体产业链",
+        "stocks": [
+          {
+            "name": "天普股份",
+            "code": "605255",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "贤丰控股",
+            "code": "002141",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "华盛昌",
+            "code": "002980",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "银信科技",
+            "code": "300231",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          }
+        ]
+      },
+      {
+        "pool_name": "并购重组",
+        "stocks": [
+          {
+            "name": "恒尚节能",
+            "code": "603137",
+            "board": 3,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "艾艾精工",
+            "code": "603580",
+            "board": 2,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "狮头股份",
+            "code": "600539",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          }
+        ]
+      },
+      {
+        "pool_name": "电力",
+        "stocks": [
+          {
+            "name": "信通电子",
+            "code": "001388",
+            "board": 3,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "豫能控股",
+            "code": "001896",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          }
+        ]
+      },
+      {
+        "pool_name": "游戏",
+        "stocks": [
+          {
+            "name": "恺英网络",
+            "code": "002517",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "巨人网络",
+            "code": "002558",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          }
+        ]
+      },
+      {
+        "pool_name": "其他概念",
+        "stocks": [
+          {
+            "name": "云创退",
+            "code": "920305",
+            "board": 3,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "德龙汇能",
+            "code": "000593",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "天顺股份",
+            "code": "002800",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "云中马",
+            "code": "603130",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          },
+          {
+            "name": "银龙股份",
+            "code": "603969",
+            "board": 1,
+            "price": null,
+            "change_pct": null
+          }
+        ]
+      }
+    ],
+    "evidence": [],
+    "pipeline": {
+      "ocr_requested": false,
+      "ocr_engine": "",
+      "ocr_success_images": 0,
+      "ocr_failed_images": 0,
+      "ocr_total_lines": 0,
+      "llm_requested": false,
+      "llm_provider": "",
+      "llm_called": false,
+      "llm_status": "not_requested",
+      "fallback_used": false
+    },
+    "quality": {
+      "core_coverage": 0.0,
+      "full_coverage": 0.0,
+      "missing_fields": [],
+      "validation_passed": false,
+      "data_notes": [],
+      "warnings": []
+    }
+  }
+}

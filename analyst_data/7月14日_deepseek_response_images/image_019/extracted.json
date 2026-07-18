@@ -1,0 +1,57 @@
+{
+  "institutional_rhythm": [
+    {
+      "group": "金属铟",
+      "stage": "调整",
+      "stage_day": 10,
+      "status": "个别",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 19,
+      "source_text": "调整第10天，个别",
+      "confidence": 0.9
+    },
+    {
+      "group": "金属钨",
+      "stage": "调整",
+      "stage_day": 9,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 19,
+      "source_text": "调整第9天",
+      "confidence": 0.9
+    },
+    {
+      "group": "SST",
+      "stage": "调整",
+      "stage_day": 13,
+      "status": "个别",
+      "relative_strength": "强",
+      "capital_signal": "有资金回流",
+      "source_image": 19,
+      "source_text": "调整第13天，个别 SST 强，有资金回流",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "source_image": 19,
+      "source_text": "调整第7天，个别调整第8天，有资金",
+      "note": "未明确板块名称，忽略",
+      "confidence": 0.5
+    },
+    {
+      "source_image": 19,
+      "source_text": "启动第1天 强 回流",
+      "note": "未明确板块名称，忽略",
+      "confidence": 0.5
+    },
+    {
+      "source_image": 19,
+      "source_text": "调整第9天 调整第10天 调整第11天 调整第12天 调整第13天 调整第12天 调整第13天，个别",
+      "note": "部分无板块名称，忽略",
+      "confidence": 0.5
+    }
+  ]
+}

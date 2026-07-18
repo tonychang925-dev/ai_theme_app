@@ -1,0 +1,71 @@
+{
+  "hot_money_directions": [
+    {
+      "direction": "物理AI",
+      "status": "调整第4天，有资金回流",
+      "driver": null,
+      "source_image": 21,
+      "source_text": "物理AI 调整第4天，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "direction": "AIDC",
+      "status": "启动第1天",
+      "driver": null,
+      "source_image": 21,
+      "source_text": "AIDC 启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "direction": "玻璃基板",
+      "status": "调整第10天，个别",
+      "driver": null,
+      "source_image": 21,
+      "source_text": "玻璃基板 调整第10天，个别",
+      "confidence": 0.9
+    },
+    {
+      "direction": "金刚石散热",
+      "status": "调整第6天，个别",
+      "driver": null,
+      "source_image": 21,
+      "source_text": "金刚石散热 调整第6天，个别",
+      "confidence": 0.9
+    },
+    {
+      "direction": "AI应用",
+      "status": "启动第1天",
+      "driver": null,
+      "source_image": 21,
+      "source_text": "AI应用 启动第1天",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "source_image": 21,
+      "source_text": "物理AI 调整第4天，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 21,
+      "source_text": "AIDC 启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 21,
+      "source_text": "玻璃基板 调整第10天，个别",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 21,
+      "source_text": "金刚石散热 调整第6天，个别",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 21,
+      "source_text": "AI应用 启动第1天",
+      "confidence": 0.9
+    }
+  ]
+}

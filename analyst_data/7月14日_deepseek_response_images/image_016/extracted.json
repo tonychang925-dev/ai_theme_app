@@ -1,0 +1,118 @@
+{
+  "institutional_rhythm": [
+    {
+      "group": "华为昇腾950",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": "个别强",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "调整第2天，个别强",
+      "confidence": 0.9
+    },
+    {
+      "group": "华为韬",
+      "stage": "调整",
+      "stage_day": 3,
+      "status": "个别",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "调整第3天，个别",
+      "confidence": 0.9
+    },
+    {
+      "group": "存储芯片模组厂",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": "强，部分有回流",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "调整第2天，强，部分有回流",
+      "confidence": 0.9
+    },
+    {
+      "group": "国产服务器",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "弱启",
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "group": "半导体设备",
+      "stage": "启动",
+      "stage_day": 3,
+      "status": "强，部分有回流",
+      "relative_strength": "强于指数",
+      "capital_signal": "资金回流",
+      "source_image": 16,
+      "source_text": "动，强于指数，资金回流",
+      "confidence": 0.9
+    },
+    {
+      "group": "半导体硅片",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "碳化硅",
+      "stage": "调整",
+      "stage_day": 6,
+      "status": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "调整第6天",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "source_image": 16,
+      "source_text": "华为昇腾950 调整第2天，个别强",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "华为韬 调整第3天，个别",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "存储芯片模组厂 调整第2天，强，部分有回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "国产服务器 启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "半导体设备 动，强于指数，资金回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "半导体硅片 调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "碳化硅 调整第6天",
+      "confidence": 0.9
+    }
+  ]
+}

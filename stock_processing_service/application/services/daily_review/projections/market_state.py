@@ -78,12 +78,18 @@ def _build_facts(charts: list[dict[str, Any]]) -> dict[str, Any]:
             facts["limit_down_total"] = metrics.get("limit_down_count")
         elif ct == "active_capital":
             facts["active_amount_yi"] = metrics.get("active_amount_yi")
-            facts["total_amount_yi"] = metrics.get("total_amount_yi")
+            facts["total_amount_yi"] = _positive_number(metrics.get("total_amount_yi"))
         elif ct == "relay_ecology":
             facts["max_board_height"] = metrics.get("max_board_height")
             facts["promotion_1_to_2"] = metrics.get("promotion_1_to_2")
             facts["feedback_score"] = metrics.get("feedback_score")
     return {k: v for k, v in facts.items() if v is not None}
+
+
+def _positive_number(value: Any) -> Any:
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
+        return value if value > 0 else None
+    return value
 
 
 def _build_relay_summary(charts: list[dict[str, Any]]) -> dict[str, Any]:

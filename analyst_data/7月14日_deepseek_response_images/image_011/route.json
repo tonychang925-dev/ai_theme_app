@@ -1,0 +1,10 @@
+{
+  "image_index": 11,
+  "route": "emotion_wind",
+  "route_score": 0.65,
+  "matched_keywords": [],
+  "section_group": "emotion_section",
+  "section_title": "情绪风向指标",
+  "forced_by_section": true,
+  "reason": "目标章节图片，强制OCR并结构化提取"
+}

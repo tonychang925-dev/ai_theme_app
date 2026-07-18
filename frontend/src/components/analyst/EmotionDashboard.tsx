@@ -530,9 +530,9 @@ function DirectionViewCard({ directionView, fallbackInstStyle, fallbackHmStyle }
                 {(captureRatio != null || themeCancellation) && (
                   <div style={{ fontSize: 10, color: themeCancellation ? "#f6ad55" : "#6f8898", marginBottom: 4 }}>
                     核心股票 · Top{topStocks.length}
-                    {themeCancellation && captureRatio && captureRatio > 2.0
+                    {themeCancellation && captureRatio != null && captureRatio > 2.0
                       ? <span title="板块内部资金对倒，个股贡献远超方向净额"> 贡献 &gt;100% 资金</span>
-                      : <span>贡献 {(captureRatio * 100).toFixed(0)}% 资金</span>
+                      : <span>贡献 {captureRatio != null ? `${(captureRatio * 100).toFixed(0)}%` : "未知"} 资金</span>
                     }
                     {themeCancellation && (
                       <span style={{ color: "#f6ad55", marginLeft: 6 }}>⚠ 板块内部资金对倒</span>

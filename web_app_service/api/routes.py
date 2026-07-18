@@ -669,6 +669,15 @@ async def daily_review_v2(date: str = Query(..., description="YYYY-MM-DD")) -> d
     )
 
 
+@router.post("/daily-review-v2/compose-from-workbench")
+async def daily_review_v2_compose_from_workbench(payload: dict | None = None) -> dict:
+    return await _proxy_stock_processing_post_json(
+        "/api/v2/daily-review-v2/compose-from-workbench",
+        payload or {},
+        timeout=180.0,
+    )
+
+
 @router.post("/post-market/daily-review-v2/generate")
 async def daily_review_v2_generate(payload: dict | None = None) -> dict:
     return await _proxy_stock_processing_post_json(

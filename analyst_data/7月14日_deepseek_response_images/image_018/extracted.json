@@ -1,0 +1,508 @@
+{
+  "institutional_rhythm": [
+    {
+      "group": "cpo光模块",
+      "stage": "调整",
+      "stage_day": 6,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "cpo光模块 调整第6天",
+      "confidence": 0.9
+    },
+    {
+      "group": "cpo光模块",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "cpo光模块",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "cpo光模块",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "PCB",
+      "stage": "调整",
+      "stage_day": 3,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "PCB 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "group": "PCB",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "PCB",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "PCB",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "PCB",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "弱启",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "group": "MLCC",
+      "stage": "调整",
+      "stage_day": 9,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "MLCC 调整第9天",
+      "confidence": 0.9
+    },
+    {
+      "group": "MLCC",
+      "stage": "动",
+      "stage_day": null,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "有资金回流",
+      "source_image": 18,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "group": "MLCC",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "MLCC",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "MLCC",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "MLCC",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "弱启",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "group": "覆铜板",
+      "stage": "调整",
+      "stage_day": 3,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "覆铜板 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "group": "覆铜板",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "覆铜板",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "覆铜板",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "覆铜板",
+      "stage": "动",
+      "stage_day": null,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "有资金回流",
+      "source_image": 18,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "group": "覆铜板",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "弱启",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "group": "电子布",
+      "stage": "调整",
+      "stage_day": 3,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "电子布 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "group": "电子布",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "电子布",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "电子布",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "电子布",
+      "stage": "动",
+      "stage_day": null,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "有资金回流",
+      "source_image": 18,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "group": "电子布",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "弱启",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "group": "铜箔",
+      "stage": "调整",
+      "stage_day": 3,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "铜箔 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "group": "铜箔",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "铜箔",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "铜箔",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "铜箔",
+      "stage": "动",
+      "stage_day": null,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "有资金回流",
+      "source_image": 18,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 9,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "环氧树脂 调整第9天",
+      "confidence": 0.9
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 10,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第10天",
+      "confidence": 0.9
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 2,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "启动",
+      "stage_day": 1,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 12,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第12天",
+      "confidence": 0.9
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 13,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "有资",
+      "source_image": 18,
+      "source_text": "调整第13天，有资",
+      "confidence": 0.9
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 16,
+      "status": "部分",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第16天，部分",
+      "confidence": 0.9
+    },
+    {
+      "group": "金属钼",
+      "stage": "金回流",
+      "stage_day": null,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "金属钼 金回流",
+      "confidence": 0.9
+    },
+    {
+      "group": "金属钼",
+      "stage": "调整",
+      "stage_day": 14,
+      "status": "",
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第14天",
+      "confidence": 0.9
+    }
+  ],
+  "evidence": [
+    {
+      "source_image": 18,
+      "source_text": "cpo光模块 调整第6天 启动第1天 调整第1天 调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "PCB 调整第3天 启动第1天 调整第1天 调整第2天 启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "MLCC 调整第9天 动，有资金回流 调整第1天 调整第2天 启动第1天 启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "覆铜板 调整第3天 调整第1天 调整第2天 启动第1天 动，有资金回流 启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "电子布 调整第3天 调整第1天 调整第2天 启动第1天 动，有资金回流 启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "铜箔 调整第3天 调整第1天 调整第2天 启动第1天 动，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "环氧树脂 调整第9天 调整第10天 调整第1天 调整第2天 启动第1天 调整第12天 调整第13天，有资 调整第16天，部分",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "金属钼 金回流 调整第14天",
+      "confidence": 0.9
+    }
+  ]
+}

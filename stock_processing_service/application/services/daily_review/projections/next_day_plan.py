@@ -121,7 +121,7 @@ def _ensure_stock(stocks: dict[str, dict[str, Any]], row: dict[str, Any]) -> dic
             "subject_key": _first_text(row.get("subject_key"), row.get("theme_subject_key")),
             "theme_name": _first_text(row.get("theme_name"), row.get("subject_name"), row.get("resolved_theme_name")),
             "tags": [],
-            "priority": row.get("priority") or row.get("rank_order") or row.get("rank"),
+            "priority": row.get("priority") or row.get("rank_order") or row.get("rank") or row.get("watch_priority"),
             "action": "",
             "confirmation_signals": [],
             "invalidation_signals": [],
@@ -139,10 +139,10 @@ def _ensure_stock(stocks: dict[str, dict[str, Any]], row: dict[str, Any]) -> dic
 
 def _merge_watch_row(entity: dict[str, Any], row: dict[str, Any], *, tag: str) -> None:
     _append_unique(entity.setdefault("tags", []), tag)
-    _set_first(entity, "priority", row.get("priority") or row.get("rank_order") or row.get("rank"))
-    _set_first(entity, "watch_level", row.get("watch_level") or row.get("candidate_level") or row.get("category") or row.get("role_label"))
-    _set_first(entity, "action", row.get("action") or row.get("next_day_action") or row.get("plan_status"))
-    _set_first(entity, "reason", row.get("reason") or row.get("rank_reason") or row.get("catalyst"))
+    _set_first(entity, "priority", row.get("priority") or row.get("rank_order") or row.get("rank") or row.get("watch_priority"))
+    _set_first(entity, "watch_level", row.get("watch_level") or row.get("candidate_level") or row.get("category") or row.get("role_label") or row.get("role"))
+    _set_first(entity, "action", row.get("action") or row.get("next_day_action") or row.get("plan_status") or row.get("watch_status"))
+    _set_first(entity, "reason", row.get("reason") or row.get("rank_reason") or row.get("catalyst") or row.get("cycle_state"))
 
     tomorrow_plan = _dict(row.get("tomorrow_plan"))
     confirmations = (

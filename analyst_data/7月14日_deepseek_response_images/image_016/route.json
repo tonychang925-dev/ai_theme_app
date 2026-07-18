@@ -1,0 +1,15 @@
+{
+  "image_index": 16,
+  "route": "institutional_rhythm",
+  "route_score": 0.95,
+  "matched_keywords": [
+    "调整第",
+    "启动第",
+    "个别强",
+    "板块分化"
+  ],
+  "section_group": "institutional_rhythm",
+  "section_title": "核心板块节律",
+  "forced_by_section": true,
+  "reason": "目标章节图片，强制OCR并结构化提取"
+}

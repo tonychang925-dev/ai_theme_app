@@ -1,0 +1,2191 @@
+{
+  "extraction_status": "success_with_warnings",
+  "schema_version": "m8_reference_20260709_v1",
+  "trade_date": "2026-07-14",
+  "source_title": "7月14日，反弹还是反转",
+  "market_facts": {
+    "limit_up_count": 79,
+    "chain_board_count": 5,
+    "max_board_height": 2,
+    "max_board_stock": "信通电子",
+    "active_capital_yi": null,
+    "market_up_count": null,
+    "market_down_count": null,
+    "market_up_ratio": 0.76,
+    "limit_down_count": null,
+    "below_minus5_count": 147,
+    "loss_effect_ratio": 1.86,
+    "first_board_success_rate": null,
+    "index_support_zone": "",
+    "intraday_driver": "",
+    "shanghai_close": null,
+    "shanghai_change_pct": null,
+    "shenzhen_close": null,
+    "shenzhen_change_pct": null,
+    "chinext_close": null,
+    "chinext_change_pct": null
+  },
+  "market_energy_series": {
+    "rows": []
+  },
+  "index_energy_series": [],
+  "emotion_momentum_series": [],
+  "active_capital_series": [],
+  "relay_ecology": {
+    "max_board_height": 2,
+    "max_board_stock": "信通电子",
+    "chain_board_count": 5,
+    "promotion_rate": null,
+    "first_board_success_rate": 0.22,
+    "special_height_stocks": [],
+    "daily_rows": [
+      {
+        "board_height": 3,
+        "stock_count": 4,
+        "promotion_rate": 0.17,
+        "stocks": [
+          "哈药股份",
+          "信通电子",
+          "宏桥控股",
+          "宿迁联盛"
+        ],
+        "first_board_success_rate": null
+      },
+      {
+        "board_height": 2,
+        "stock_count": 1,
+        "promotion_rate": null,
+        "stocks": [
+          "恒尚节能"
+        ],
+        "first_board_success_rate": null
+      }
+    ]
+  },
+  "emotion_label": {
+    "market_phase": "REBOUND",
+    "risk_level": "MEDIUM_HIGH",
+    "emotion_momentum": 6,
+    "cycle_score": 0,
+    "phase_cn": "修复/反弹",
+    "is_reversal_confirmed": false,
+    "strategy": "",
+    "phase_chain": []
+  },
+  "strategy_label": {
+    "allowed": [],
+    "forbidden": [],
+    "watch_points": [],
+    "summary": "",
+    "dao": "",
+    "shu": "",
+    "fa": [],
+    "qi": []
+  },
+  "market_leader": {
+    "board": "2板",
+    "stock": "信通电子",
+    "total_stocks": 79,
+    "special_trend_leader": "恒尚节能",
+    "special_trend_height": 8,
+    "exchange_board": "沪深",
+    "source_image": 22
+  },
+  "leader_history": [
+    {
+      "date": "2026-07-14",
+      "stock": "信通电子",
+      "height": 2
+    }
+  ],
+  "institutional_rhythm": [
+    {
+      "group": "华为昇腾950",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "调整第2天，个别强",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "个别强"
+      }
+    },
+    {
+      "group": "华为韬",
+      "stage": "调整",
+      "stage_day": 3,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "调整第3天，个别",
+      "confidence": 0.5,
+      "daily_status": {
+        "当日": "个别"
+      }
+    },
+    {
+      "group": "存储芯片模组厂",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "调整第2天，强，部分有回流",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "强，部分有回流"
+      }
+    },
+    {
+      "group": "国产服务器",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "弱启"
+      }
+    },
+    {
+      "group": "半导体设备",
+      "stage": "启动",
+      "stage_day": 3,
+      "relative_strength": "强于指数",
+      "capital_signal": "资金回流",
+      "source_image": 16,
+      "source_text": "动，强于指数，资金回流",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "强，部分有回流"
+      }
+    },
+    {
+      "group": "半导体硅片",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "碳化硅",
+      "stage": "调整",
+      "stage_day": 6,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 16,
+      "source_text": "调整第6天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "六氟化钨",
+      "stage": "调整",
+      "stage_day": 3,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第3天，部分",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "部分"
+      }
+    },
+    {
+      "group": "六氟化钨",
+      "stage": "调整",
+      "stage_day": 5,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第5天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "六氟化钨",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "六氟化钨",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "六氟化钨",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": null,
+      "capital_signal": "有回流",
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "六氟化钨",
+      "stage": "调整",
+      "stage_day": 3,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第3天，部分",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "部分"
+      }
+    },
+    {
+      "group": "靶材",
+      "stage": "调整",
+      "stage_day": 7,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第7天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "靶材",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "靶材",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "靶材",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": null,
+      "capital_signal": "有回流",
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "靶材",
+      "stage": "调整",
+      "stage_day": 3,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第3天，部分",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "部分"
+      }
+    },
+    {
+      "group": "光刻胶",
+      "stage": "调整",
+      "stage_day": 6,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第6天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "光刻胶",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "光刻胶",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "光刻胶",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": null,
+      "capital_signal": "有回流",
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "光刻胶",
+      "stage": "调整",
+      "stage_day": 3,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第3天，部分",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "部分"
+      }
+    },
+    {
+      "group": "氧化锆",
+      "stage": "调整",
+      "stage_day": 10,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第10天，部分",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "部分"
+      }
+    },
+    {
+      "group": "氧化锆",
+      "stage": "调整",
+      "stage_day": 6,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第6天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "氧化锆",
+      "stage": "调整",
+      "stage_day": 7,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第7天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "氧化锆",
+      "stage": "调整",
+      "stage_day": 8,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第8天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "氧化锆",
+      "stage": "调整",
+      "stage_day": 9,
+      "relative_strength": null,
+      "capital_signal": "有回流",
+      "source_image": 17,
+      "source_text": "调整第9天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "弱启"
+      }
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天，板块",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "板块"
+      }
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "调整",
+      "stage_day": 6,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第6天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "液冷服务器",
+      "stage": "分歧",
+      "stage_day": null,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "分歧，部分收红",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "部分收红"
+      }
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage": "调整",
+      "stage_day": 3,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第3天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "弱启"
+      }
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 9,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第9天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "光纤",
+      "stage": null,
+      "stage_day": null,
+      "relative_strength": null,
+      "capital_signal": "有资金回流",
+      "source_image": 17,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "动，有资金回流"
+      }
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 7,
+      "relative_strength": null,
+      "capital_signal": "有资金",
+      "source_image": 17,
+      "source_text": "调整第7天，有资金",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "有资金"
+      }
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 10,
+      "relative_strength": null,
+      "capital_signal": "有资",
+      "source_image": 17,
+      "source_text": "调整第10天，有资",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "有资"
+      }
+    },
+    {
+      "group": "光纤",
+      "stage": "调整",
+      "stage_day": 8,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 17,
+      "source_text": "调整第8天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "MP0",
+      "stage": "调整",
+      "stage_day": 6,
+      "relative_strength": null,
+      "capital_signal": "回流",
+      "source_image": 17,
+      "source_text": "调整第6天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "cpo光模块",
+      "stage": "调整",
+      "stage_day": 6,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "cpo光模块 调整第6天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "cpo光模块",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "cpo光模块",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "cpo光模块",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "PCB",
+      "stage": "调整",
+      "stage_day": 3,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "PCB 调整第3天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "PCB",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "PCB",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "PCB",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "PCB",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "弱启"
+      }
+    },
+    {
+      "group": "MLCC",
+      "stage": "调整",
+      "stage_day": 9,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "MLCC 调整第9天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "MLCC",
+      "stage": "动",
+      "stage_day": null,
+      "relative_strength": "",
+      "capital_signal": "有资金回流",
+      "source_image": 18,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "MLCC",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "MLCC",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "MLCC",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "MLCC",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "弱启"
+      }
+    },
+    {
+      "group": "覆铜板",
+      "stage": "调整",
+      "stage_day": 3,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "覆铜板 调整第3天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "覆铜板",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "覆铜板",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "覆铜板",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "覆铜板",
+      "stage": "动",
+      "stage_day": null,
+      "relative_strength": "",
+      "capital_signal": "有资金回流",
+      "source_image": 18,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "覆铜板",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "弱启"
+      }
+    },
+    {
+      "group": "电子布",
+      "stage": "调整",
+      "stage_day": 3,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "电子布 调整第3天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "电子布",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "电子布",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "电子布",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "电子布",
+      "stage": "动",
+      "stage_day": null,
+      "relative_strength": "",
+      "capital_signal": "有资金回流",
+      "source_image": 18,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "电子布",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "弱启"
+      }
+    },
+    {
+      "group": "铜箔",
+      "stage": "调整",
+      "stage_day": 3,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "铜箔 调整第3天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "铜箔",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "铜箔",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "铜箔",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "铜箔",
+      "stage": "动",
+      "stage_day": null,
+      "relative_strength": "",
+      "capital_signal": "有资金回流",
+      "source_image": 18,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 9,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "环氧树脂 调整第9天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 10,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第10天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 2,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第2天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "启动",
+      "stage_day": 1,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "启动第1天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 12,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第12天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 13,
+      "relative_strength": "",
+      "capital_signal": "有资",
+      "source_image": 18,
+      "source_text": "调整第13天，有资",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "环氧树脂",
+      "stage": "调整",
+      "stage_day": 16,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第16天，部分",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "部分"
+      }
+    },
+    {
+      "group": "金属钼",
+      "stage": "金回流",
+      "stage_day": null,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "金属钼 金回流",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "金属钼",
+      "stage": "调整",
+      "stage_day": 14,
+      "relative_strength": "",
+      "capital_signal": "",
+      "source_image": 18,
+      "source_text": "调整第14天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "金属铟",
+      "stage": "调整",
+      "stage_day": 10,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 19,
+      "source_text": "调整第10天，个别",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "个别"
+      }
+    },
+    {
+      "group": "金属钨",
+      "stage": "调整",
+      "stage_day": 9,
+      "relative_strength": null,
+      "capital_signal": null,
+      "source_image": 19,
+      "source_text": "调整第9天",
+      "confidence": 0.9,
+      "daily_status": {}
+    },
+    {
+      "group": "SST",
+      "stage": "调整",
+      "stage_day": 13,
+      "relative_strength": "强",
+      "capital_signal": "有资金回流",
+      "source_image": 19,
+      "source_text": "调整第13天，个别 SST 强，有资金回流",
+      "confidence": 0.9,
+      "daily_status": {
+        "当日": "个别"
+      }
+    }
+  ],
+  "hot_money_directions": [
+    {
+      "direction": "长鑫长江存储",
+      "status": "调整第3天",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "长鑫长江存储 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "direction": "商业航天",
+      "status": "调整第3天",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "商业航天 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "direction": "机器人",
+      "status": "启动第3天，涨停4",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "机器人 启动第3天，涨停4",
+      "confidence": 0.9
+    },
+    {
+      "direction": "医疗医药",
+      "status": "启动第2天，涨停2",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "医疗医药 启动第2天，涨停2",
+      "confidence": 0.9
+    },
+    {
+      "direction": "消费",
+      "status": "调整第7天，强于",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "消费 调整第7天，强于",
+      "confidence": 0.9
+    },
+    {
+      "direction": "算电协同",
+      "status": "调整第9天",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "算电协同 调整第9天",
+      "confidence": 0.9
+    },
+    {
+      "direction": "指数",
+      "status": "调整第5天，有资",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "指数 调整第5天，有资",
+      "confidence": 0.9
+    },
+    {
+      "direction": "氟化工（无水氢氟酸）",
+      "status": "调整第6天",
+      "driver": null,
+      "source_image": 20,
+      "source_text": "氟化工（无水氢氟酸） 调整第6天",
+      "confidence": 0.9
+    },
+    {
+      "direction": "物理AI",
+      "status": "调整第4天，有资金回流",
+      "driver": null,
+      "source_image": 21,
+      "source_text": "物理AI 调整第4天，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "direction": "AIDC",
+      "status": "启动第1天",
+      "driver": null,
+      "source_image": 21,
+      "source_text": "AIDC 启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "direction": "玻璃基板",
+      "status": "调整第10天，个别",
+      "driver": null,
+      "source_image": 21,
+      "source_text": "玻璃基板 调整第10天，个别",
+      "confidence": 0.9
+    },
+    {
+      "direction": "金刚石散热",
+      "status": "调整第6天，个别",
+      "driver": null,
+      "source_image": 21,
+      "source_text": "金刚石散热 调整第6天，个别",
+      "confidence": 0.9
+    },
+    {
+      "direction": "AI应用",
+      "status": "启动第1天",
+      "driver": null,
+      "source_image": 21,
+      "source_text": "AI应用 启动第1天",
+      "confidence": 0.9
+    }
+  ],
+  "limitup_themes": [
+    {
+      "theme": "控制权变更",
+      "status": "",
+      "stock_count": 3,
+      "stocks": [
+        "神州高铁",
+        "艾艾精工",
+        "友邦吊顶"
+      ],
+      "source_image": 22,
+      "confidence": 0.9
+    },
+    {
+      "theme": "电力",
+      "status": "",
+      "stock_count": 3,
+      "stocks": [
+        "信通电子",
+        "世茂能源",
+        "汇金通"
+      ],
+      "source_image": 22,
+      "confidence": 0.9
+    },
+    {
+      "theme": "光通信",
+      "status": "",
+      "stock_count": 3,
+      "stocks": [
+        "宿迁联盛",
+        "华脉科技",
+        "东山精密"
+      ],
+      "source_image": 22,
+      "confidence": 0.9
+    },
+    {
+      "theme": "电容/被动元件",
+      "status": "",
+      "stock_count": 3,
+      "stocks": [
+        "江海股份",
+        "艾华集团",
+        "风华高科"
+      ],
+      "source_image": 22,
+      "confidence": 0.9
+    },
+    {
+      "theme": "其他概念",
+      "status": "",
+      "stock_count": 10,
+      "stocks": [
+        "云创退",
+        "三峡新材",
+        "豪鹏科技",
+        "拓山重工",
+        "成都路桥",
+        "九安医疗",
+        "中百集团",
+        "华联控股",
+        "常润股份",
+        "中岩大地"
+      ],
+      "source_image": 22,
+      "confidence": 0.9
+    }
+  ],
+  "limitup_attribution": [
+    {
+      "board_level": "首板",
+      "stock_code": "000008",
+      "stock_name": "神州高铁",
+      "limit_time": "09:25:00",
+      "theme": "控制权变更",
+      "reason": "控制权变更+复牌+轨道交通+浙江国资",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "603580",
+      "stock_name": "艾艾精工",
+      "limit_time": "09:25:00",
+      "theme": "控制权变更",
+      "reason": "控制权拟变更+复牌+轻型输送带+消费电子",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "002718",
+      "stock_name": "友邦吊顶",
+      "limit_time": "13:31:39",
+      "theme": "控制权变更",
+      "reason": "集成吊顶+智能家居+实控人变更",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "2板",
+      "stock_code": "001388",
+      "stock_name": "信通电子",
+      "limit_time": "09:32:42",
+      "theme": "电力",
+      "reason": "高送转+防冰机器人+电网设备",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "605028",
+      "stock_name": "世茂能源",
+      "limit_time": "09:30:28",
+      "theme": "电力",
+      "reason": "协议转让+热电联产+扣非增长",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "603577",
+      "stock_name": "汇金通",
+      "limit_time": "13:32:10",
+      "theme": "电力",
+      "reason": "特高压+电网设备+光伏支架",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "2板",
+      "stock_code": "603065",
+      "stock_name": "宿迁联盛",
+      "limit_time": "10:31:13",
+      "theme": "光通信",
+      "reason": "磷化铟衬底+光稳定剂+终止减持",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "603042",
+      "stock_name": "华脉科技",
+      "limit_time": "09:30:38",
+      "theme": "光通信",
+      "reason": "半年报预盈+光纤光缆+FPGA芯片",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "002384",
+      "stock_name": "东山精密",
+      "limit_time": "13:03:39",
+      "theme": "光通信",
+      "reason": "光芯片+光模块+AIPCB",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "002484",
+      "stock_name": "江海股份",
+      "limit_time": "13:29:00",
+      "theme": "电容/被动元件",
+      "reason": "AI服务器电源+超级电容+浙江国资",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "603989",
+      "stock_name": "艾华集团",
+      "limit_time": "13:33:37",
+      "theme": "电容/被动元件",
+      "reason": "MLPC+AI服务器+铝电解电容+薄膜电容",
+      "source_image": 22,
+      "confidence": 0.5
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "000636",
+      "stock_name": "风华高科",
+      "limit_time": "14:50:00",
+      "theme": "电容/被动元件",
+      "reason": "MLCC+半年报预增+广东国资",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "2板",
+      "stock_code": "920305",
+      "stock_name": "云创退",
+      "limit_time": "13:00:01",
+      "theme": "其他概念",
+      "reason": "退市整理期+大数据存储+AI大模型",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "600293",
+      "stock_name": "三峡新材",
+      "limit_time": "09:53:58",
+      "theme": "其他概念",
+      "reason": "电子玻璃+高端玻璃转型+汽车玻璃+宜昌国资",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "001283",
+      "stock_name": "豪鹏科技",
+      "limit_time": "10:12:18",
+      "theme": "其他概念",
+      "reason": "AI端侧电池+固态电池+机器人+储能定增",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "001226",
+      "stock_name": "拓山重工",
+      "limit_time": "11:00:30",
+      "theme": "其他概念",
+      "reason": "钛合金+工程机械+一季报增长",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "002628",
+      "stock_name": "成都路桥",
+      "limit_time": "13:01:27",
+      "theme": "其他概念",
+      "reason": "萤石矿+氟化工+机器人+西部基建",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "002432",
+      "stock_name": "九安医疗",
+      "limit_time": "13:03:39",
+      "theme": "其他概念",
+      "reason": "参股月之暗面+拟投资阶跃星辰+AI医疗",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "000759",
+      "stock_name": "中百集团",
+      "limit_time": "13:28:06",
+      "theme": "其他概念",
+      "reason": "商业零售+本地生活+国企改革",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "000036",
+      "stock_name": "华联控股",
+      "limit_time": "14:38:15",
+      "theme": "其他概念",
+      "reason": "房地产开发+物业管理+盐湖提锂",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "603201",
+      "stock_name": "常润股份",
+      "limit_time": "14:39:50",
+      "theme": "其他概念",
+      "reason": "收购达峰智能+汽车电子+千斤顶龙头+跨境电商",
+      "source_image": 22,
+      "confidence": 0.95
+    },
+    {
+      "board_level": "首板",
+      "stock_code": "003001",
+      "stock_name": "中岩大地",
+      "limit_time": "14:51:03",
+      "theme": "其他概念",
+      "reason": "岩土固化剂+可控核聚变+核电",
+      "source_image": 22,
+      "confidence": 0.95
+    }
+  ],
+  "board_ladder": [
+    {
+      "date": "2026-07-14",
+      "height": 2,
+      "stocks": [
+        {
+          "name": "信通电子",
+          "code": "001388"
+        },
+        {
+          "name": "宿迁联盛",
+          "code": "603065"
+        },
+        {
+          "name": "云创退",
+          "code": "920305"
+        }
+      ],
+      "stock": "信通电子；宿迁联盛；云创退"
+    }
+  ],
+  "special_stock_pools": [],
+  "evidence": [
+    {
+      "source_image": 7,
+      "source_text": "大盘势能 涨停数 79 连扳股 5 在-5下个股数 147 大盘上涨比 0.76 亏钱效应比 1.86",
+      "confidence": 0.5
+    },
+    {
+      "source_image": 11,
+      "source_text": "今日所有涨停及触及涨停个股的成交量之和（单位：亿）: 7.08:498, 7.09:591, 7.10:1289, 7.13:244, 7.14:376; 中午: 7.08:765, 7.09:730, 7.10:2481, 7.13:1944, 7.14:308; 昨日所有涨停及触及涨停个股的今日成交量之和(单位：亿): 7.08:739, 7.09:2707, 7.10:2779, 7.13:371, 7.14:1739; 昨日所有涨停及触及涨停个股的今日成交量之和（单位：亿）: 7.08:1024, 7.09:969, 7.10:3793, 7.13:2665, 7.14:409",
+      "confidence": 0.5
+    },
+    {
+      "source_image": 14,
+      "source_text": "一板 数量 79 晋级率 22.0%",
+      "fact": "first_board_success_rate",
+      "value": 0.22,
+      "confidence": 0.5
+    },
+    {
+      "source_image": 14,
+      "source_text": "二板 数量 4 晋级率 17.0%",
+      "fact": "chain_board_count",
+      "value": 4,
+      "confidence": 0.5
+    },
+    {
+      "source_image": 14,
+      "source_text": "3板 哈药股份 信通电子 宏桥控股 宿迁联盛",
+      "fact": "max_board_stock",
+      "value": "哈药股份",
+      "confidence": 0.5
+    },
+    {
+      "source_image": 14,
+      "source_text": "3板 哈药股份 信通电子 宏桥控股 宿迁联盛",
+      "fact": "max_board_height",
+      "value": 3,
+      "confidence": 0.5
+    },
+    {
+      "source_image": 16,
+      "source_text": "华为昇腾950 调整第2天，个别强",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "华为韬 调整第3天，个别",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "存储芯片模组厂 调整第2天，强，部分有回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "国产服务器 启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "半导体设备 动，强于指数，资金回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "半导体硅片 调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 16,
+      "source_text": "碳化硅 调整第6天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第3天，部分",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第5天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第1天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "有回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第7天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第6天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第10天，部分",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第1天，板块",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "分歧，部分收红",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第9天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "动，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第7天，有资金",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第10天，有资",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "调整第8天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 17,
+      "source_text": "回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "cpo光模块 调整第6天 启动第1天 调整第1天 调整第2天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "PCB 调整第3天 启动第1天 调整第1天 调整第2天 启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "MLCC 调整第9天 动，有资金回流 调整第1天 调整第2天 启动第1天 启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "覆铜板 调整第3天 调整第1天 调整第2天 启动第1天 动，有资金回流 启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "电子布 调整第3天 调整第1天 调整第2天 启动第1天 动，有资金回流 启动第1天，弱启",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "铜箔 调整第3天 调整第1天 调整第2天 启动第1天 动，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "环氧树脂 调整第9天 调整第10天 调整第1天 调整第2天 启动第1天 调整第12天 调整第13天，有资 调整第16天，部分",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 18,
+      "source_text": "金属钼 金回流 调整第14天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 19,
+      "source_text": "调整第7天，个别调整第8天，有资金",
+      "note": "未明确板块名称，忽略",
+      "confidence": 0.5
+    },
+    {
+      "source_image": 19,
+      "source_text": "启动第1天 强 回流",
+      "note": "未明确板块名称，忽略",
+      "confidence": 0.5
+    },
+    {
+      "source_image": 19,
+      "source_text": "调整第9天 调整第10天 调整第11天 调整第12天 调整第13天 调整第12天 调整第13天，个别",
+      "note": "部分无板块名称，忽略",
+      "confidence": 0.5
+    },
+    {
+      "source_image": 20,
+      "source_text": "长鑫长江存储 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "商业航天 调整第3天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "机器人 启动第3天，涨停4",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "医疗医药 启动第2天，涨停2",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "消费 调整第7天，强于",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "算电协同 调整第9天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "指数 调整第5天，有资",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 20,
+      "source_text": "氟化工（无水氢氟酸） 调整第6天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 21,
+      "source_text": "物理AI 调整第4天，有资金回流",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 21,
+      "source_text": "AIDC 启动第1天",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 21,
+      "source_text": "玻璃基板 调整第10天，个别",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 21,
+      "source_text": "金刚石散热 调整第6天，个别",
+      "confidence": 0.9
+    },
+    {
+      "source_image": 21,
+      "source_text": "AI应用 启动第1天",
+      "confidence": 0.9
+    }
+  ],
+  "pipeline": {
+    "ocr_requested": true,
+    "ocr_engine": "paddle",
+    "ocr_success_images": 16,
+    "ocr_failed_images": 0,
+    "ocr_total_lines": 1123,
+    "llm_requested": true,
+    "llm_provider": "deepseek",
+    "llm_called": true,
+    "llm_status": "success",
+    "fallback_used": false,
+    "llm_mode": "single_image_router",
+    "image_router_enabled": true,
+    "target_routes": [
+      "market_energy",
+      "relay_ecology",
+      "emotion_wind",
+      "institutional_rhythm",
+      "hot_money_direction",
+      "limitup_classification"
+    ],
+    "section_image_plan": {
+      "emotion_section": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "institutional_rhythm": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "hot_money_direction": [
+        20,
+        21
+      ],
+      "limitup_classification": [
+        22
+      ]
+    },
+    "target_image_count": 16,
+    "section_policy": "html_title_ranges_ocr_extract_every_image",
+    "selected_images": 16,
+    "ignored_images": 6,
+    "image_routes": [
+      {
+        "image_index": 1,
+        "route": "ignored",
+        "section_group": "outside_target_sections",
+        "forced_by_section": false,
+        "reason": "不属于四个目标标题区块，跳过OCR与结构化提取"
+      },
+      {
+        "image_index": 2,
+        "route": "ignored",
+        "section_group": "outside_target_sections",
+        "forced_by_section": false,
+        "reason": "不属于四个目标标题区块，跳过OCR与结构化提取"
+      },
+      {
+        "image_index": 3,
+        "route": "ignored",
+        "section_group": "outside_target_sections",
+        "forced_by_section": false,
+        "reason": "不属于四个目标标题区块，跳过OCR与结构化提取"
+      },
+      {
+        "image_index": 4,
+        "route": "ignored",
+        "section_group": "outside_target_sections",
+        "forced_by_section": false,
+        "reason": "不属于四个目标标题区块，跳过OCR与结构化提取"
+      },
+      {
+        "image_index": 5,
+        "route": "ignored",
+        "section_group": "outside_target_sections",
+        "forced_by_section": false,
+        "reason": "不属于四个目标标题区块，跳过OCR与结构化提取"
+      },
+      {
+        "image_index": 6,
+        "route": "ignored",
+        "section_group": "outside_target_sections",
+        "forced_by_section": false,
+        "reason": "不属于四个目标标题区块，跳过OCR与结构化提取"
+      },
+      {
+        "image_index": 7,
+        "route": "market_energy",
+        "route_score": 0.95,
+        "matched_keywords": [
+          "上涨比",
+          "亏钱效应",
+          "在-5下",
+          "综合值"
+        ],
+        "section_group": "emotion_section",
+        "section_title": "情绪风向指标",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 8,
+        "route": "emotion_wind",
+        "route_score": 0.65,
+        "matched_keywords": [],
+        "section_group": "emotion_section",
+        "section_title": "情绪风向指标",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 9,
+        "route": "emotion_wind",
+        "route_score": 0.65,
+        "matched_keywords": [],
+        "section_group": "emotion_section",
+        "section_title": "情绪风向指标",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 10,
+        "route": "emotion_wind",
+        "route_score": 0.65,
+        "matched_keywords": [],
+        "section_group": "emotion_section",
+        "section_title": "情绪风向指标",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 11,
+        "route": "emotion_wind",
+        "route_score": 0.65,
+        "matched_keywords": [],
+        "section_group": "emotion_section",
+        "section_title": "情绪风向指标",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 12,
+        "route": "emotion_wind",
+        "route_score": 0.65,
+        "matched_keywords": [],
+        "section_group": "emotion_section",
+        "section_title": "情绪风向指标",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 13,
+        "route": "relay_ecology",
+        "route_score": 0.95,
+        "matched_keywords": [
+          "最高板",
+          "首板封板率",
+          "一进二",
+          "二进三"
+        ],
+        "section_group": "emotion_section",
+        "section_title": "情绪风向指标",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 14,
+        "route": "relay_ecology",
+        "route_score": 0.75,
+        "matched_keywords": [
+          "晋级率"
+        ],
+        "section_group": "emotion_section",
+        "section_title": "情绪风向指标",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 15,
+        "route": "relay_ecology",
+        "route_score": 0.75,
+        "matched_keywords": [
+          "连板高度"
+        ],
+        "section_group": "emotion_section",
+        "section_title": "情绪风向指标",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 16,
+        "route": "institutional_rhythm",
+        "route_score": 0.95,
+        "matched_keywords": [
+          "调整第",
+          "启动第",
+          "个别强",
+          "板块分化"
+        ],
+        "section_group": "institutional_rhythm",
+        "section_title": "核心板块节律",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 17,
+        "route": "institutional_rhythm",
+        "route_score": 0.85,
+        "matched_keywords": [
+          "调整第",
+          "启动第",
+          "资金回流"
+        ],
+        "section_group": "institutional_rhythm",
+        "section_title": "核心板块节律",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 18,
+        "route": "institutional_rhythm",
+        "route_score": 0.85,
+        "matched_keywords": [
+          "调整第",
+          "启动第",
+          "资金回流"
+        ],
+        "section_group": "institutional_rhythm",
+        "section_title": "核心板块节律",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 19,
+        "route": "institutional_rhythm",
+        "route_score": 0.85,
+        "matched_keywords": [
+          "调整第",
+          "启动第",
+          "资金回流"
+        ],
+        "section_group": "institutional_rhythm",
+        "section_title": "核心板块节律",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 20,
+        "route": "hot_money_direction",
+        "route_score": 0.85,
+        "matched_keywords": [],
+        "section_group": "hot_money_direction",
+        "section_title": "情绪资金，游资方向",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 21,
+        "route": "hot_money_direction",
+        "route_score": 0.85,
+        "matched_keywords": [],
+        "section_group": "hot_money_direction",
+        "section_title": "情绪资金，游资方向",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      },
+      {
+        "image_index": 22,
+        "route": "limitup_classification",
+        "route_score": 0.85,
+        "matched_keywords": [],
+        "section_group": "limitup_classification",
+        "section_title": "涨停股分类",
+        "forced_by_section": true,
+        "reason": "目标章节图片，强制OCR并结构化提取"
+      }
+    ],
+    "cross_image_llm_merge": false,
+    "ocr_streaming_per_image": true,
+    "time_series_mode": "ocr_spatial_verified_only",
+    "time_series_llm_forbidden": true,
+    "time_series_provenance": []
+  },
+  "quality": {
+    "core_coverage": 1.0,
+    "full_coverage": 0.85,
+    "missing_fields": [],
+    "validation_passed": true,
+    "data_notes": [
+      "图表22涨停股分类采用OCR分批提取，并由本地代码确定性重建题材汇总、连板天梯和市场龙头",
+      "r11.7按HTML标题区间严格处理16张目标图：情绪风向9张、机构节律4张、情绪资金2张、涨停股分类1张；非目标章节不OCR，目标章节逐图OCR后立即提取"
+    ],
+    "warnings": [
+      "核心字段缺失或为空: market_facts.limit_up_count",
+      "核心字段缺失或为空: market_facts.chain_board_count",
+      "核心字段缺失或为空: market_facts.max_board_height",
+      "DeepSeek子任务[图表22-涨停明细批次1/2]连续3次未返回合法JSON：JSONDecodeError: Expecting ',' delimiter: line 233 column 6 (char 6753)",
+      "index_energy_series未找到可验证的OCR坐标证据，已留空",
+      "emotion_momentum_series未找到可验证的OCR坐标证据，已留空",
+      "active_capital_series未找到可验证的OCR坐标证据，已留空",
+      "已区分标准连板2板与特殊/趋势高度8板",
+      "疑似OCR残缺：华为韬    ",
+      "疑似OCR残缺： 电容/被动元件  艾华集团 MLPC+AI服务器+铝电解电容+薄膜电容"
+    ],
+    "validation_errors": [],
+    "validation_profile": "image_router_v1"
+  }
+}
