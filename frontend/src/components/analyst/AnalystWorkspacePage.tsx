@@ -3,6 +3,8 @@ import { EmotionDashboard } from "./EmotionDashboard";
 import { AIDirectionDraftPanel } from "./AIDirectionDraftPanel";
 import { ReviewDocumentSections } from "../review-document/ReviewDocumentSections";
 import { navigateTo } from "../../lib/navigation";
+import { JuliaCopilot } from "../julia/JuliaCopilot";
+import { themeToContextRequest, groupToContextRequest, type ContextRequest } from "../../services/julia/workspaceContextAdapter";
 
 // ── Types ──
 
@@ -409,6 +411,9 @@ export function AnalystWorkspacePage() {
   const [tomorrowForbidden, setTomorrowForbidden] = useState<string[]>([]);
   const [calibrating, setCalibrating] = useState(false);
   const [calMsg, setCalMsg] = useState("");
+  const [juliaPanelOpen, setJuliaPanelOpen] = useState(false);
+  const [juliaContextRequest, setJuliaContextRequest] = useState<ContextRequest | null>(null);
+  const [juliaAnalyzing, setJuliaAnalyzing] = useState(false);
   const [dirCandidates, setDirCandidates] = useState<any[]>([]);
   const [dirCandidatesLoading, setDirCandidatesLoading] = useState(false);
   const [importDialog, setImportDialog] = useState<{ show: boolean; step: "select" | "parsing" | "imported" | "calibrating" | "done" | "error"; msg: string; result?: any }>({ show: false, step: "select", msg: "" });
@@ -1003,6 +1008,22 @@ export function AnalystWorkspacePage() {
                     return t ? <span key={sid} style={{ fontSize: 11, padding: "2px 8px", background: "#1a2a3a", borderRadius: 10, color: "#8ddcff" }}>{t.subject_name}</span> : null;
                   })}
                 </div>
+                {/* Julia action buttons for group */}
+                <div style={{ marginTop: 8, display: "flex", gap: 6 }}>
+                  <span style={{ fontSize: 10, color: "#5a7a8a", lineHeight: "22px" }}>问 Julia:</span>
+                  {(["why", "risk", "compare"] as const).map(action => (
+                    <button key={action} type="button"
+                      onClick={() => {
+                        const cr = groupToContextRequest(activeGroup, action);
+                        setJuliaContextRequest(cr);
+                        setJuliaAnalyzing(true);
+                        setJuliaPanelOpen(true);
+                      }}
+                      style={{ fontSize: 11, padding: "2px 10px", background: "#1a3a5c", color: "#66d9ef", border: "1px solid #243040", borderRadius: 4, cursor: "pointer" }}>
+                      {action === "why" ? "为什么关注" : action === "risk" ? "风险评估" : "对比变化"}
+                    </button>
+                  ))}
+                </div>
               </div>
               <GroupCognitionEditor group={activeGroup} onChange={updateGroup} />
             </>
@@ -1012,6 +1033,22 @@ export function AnalystWorkspacePage() {
                 <span style={{ fontSize: 14, fontWeight: 600, color: "#8ddcff" }}>
                   {theme.is_ai_draft ? "AI 草稿" : "分析师编辑中"} — <span style={{ color: "#ffd85e" }}>{theme.subject_name}</span>
                 </span>
+                {/* Julia action buttons for theme */}
+                <div style={{ marginTop: 6, display: "flex", gap: 6 }}>
+                  <span style={{ fontSize: 10, color: "#5a7a8a", lineHeight: "22px" }}>问 Julia:</span>
+                  {(["why", "risk", "compare"] as const).map(action => (
+                    <button key={action} type="button"
+                      onClick={() => {
+                        const cr = themeToContextRequest(theme, action);
+                        setJuliaContextRequest(cr);
+                        setJuliaAnalyzing(true);
+                        setJuliaPanelOpen(true);
+                      }}
+                      style={{ fontSize: 11, padding: "2px 10px", background: "#1a3a2c", color: "#39ff14", border: "1px solid #243040", borderRadius: 4, cursor: "pointer" }}>
+                      {action === "why" ? "为什么关注" : action === "risk" ? "风险评估" : "对比变化"}
+                    </button>
+                  ))}
+                </div>
               </div>
               <CognitionEditor theme={theme} onChange={updateTheme} />
             </>
@@ -1036,6 +1073,54 @@ export function AnalystWorkspacePage() {
           )}
         </div>
       </div>
+
+      {/* ── Julia Copilot Bottom Dock ── */}
+      {juliaPanelOpen && (
+        <div style={{
+          height: 280,
+          minHeight: 280,
+          borderTop: "2px solid #243040",
+          background: "#0c1118",
+          transition: "height 0.2s ease",
+        }}>
+          <div style={{ display: "flex", justifyContent: "flex-end", padding: "2px 14px 0 0" }}>
+            <button
+              onClick={() => { setJuliaPanelOpen(false); setJuliaAnalyzing(false); }}
+              style={{ fontSize: 16, background: "none", border: "none", color: "#5a7a8a", cursor: "pointer", lineHeight: 1 }}
+            >
+              ✕
+            </button>
+          </div>
+          <div style={{ height: "calc(100% - 22px)" }}>
+            <JuliaCopilot
+              contextRequest={juliaContextRequest}
+              isAnalyzing={juliaAnalyzing}
+              onAnalysisComplete={() => setJuliaAnalyzing(false)}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Julia toggle tab — always visible when dock is closed */}
+      {!juliaPanelOpen && (
+        <div
+          onClick={() => setJuliaPanelOpen(true)}
+          style={{
+            padding: "4px 14px",
+            background: "#111720",
+            borderTop: "1px solid #243040",
+            display: "flex",
+            alignItems: "center",
+            gap: 6,
+            cursor: "pointer",
+            userSelect: "none",
+          }}
+        >
+          <span style={{ fontSize: 10, color: "#66d9ef" }}>▲</span>
+          <span style={{ fontSize: 11, color: "#66d9ef", fontWeight: 600 }}>Julia Copilot</span>
+          <span style={{ fontSize: 10, color: "#5a7a8a" }}>— 分析师助手 (选择题材后点击"为什么关注"开始)</span>
+        </div>
+      )}
 
       {/* ── Generate Progress Dialog ── */}
       {genProgress.show && (
