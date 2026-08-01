@@ -4,7 +4,8 @@
  * Converts AnalystWorkspace ThemeEntry/WatchGroup cognitive state
  * into structured ContextRequests that Julia Agent can process.
  *
- * Contract: Analyst_Workspace_Context_Binding_v1.0.md (FROZEN)
+ * Contract: ContextRequest_Schema_v1.0_FROZEN.md
+ *           Analyst_Workspace_Context_Binding_v1.0.md (FROZEN)
  */
 
 // ── Types ──
@@ -172,4 +173,63 @@ export function contextRequestToQuestion(request: ContextRequest): string {
     default:
       return `分析${name}。`;
   }
+}
+
+// ── Schema Enforcement ──
+
+/** Fields that MUST NOT appear in ContextRequest (per frozen schema v1.0). */
+const FORBIDDEN_KEYS = [
+  "stocks", "leaders", "bull_pool", "bear_pool",
+  "news", "articles", "full_workspace", "all_themes",
+  "raw_market_data", "ai_draft",
+] as const;
+
+export interface ValidationResult {
+  valid: boolean;
+  violations: string[];
+}
+
+/**
+ * Validate that a ContextRequest conforms to the frozen v1.0 schema.
+ * Blocks: full object dumps, raw data, stock pools, AI drafts.
+ */
+export function validateContextRequest(request: ContextRequest): ValidationResult {
+  const violations: string[] = [];
+
+  // Check action
+  if (!["why", "risk", "compare"].includes(request.action)) {
+    violations.push(`Invalid action: ${request.action}. Allowed: why, risk, compare.`);
+  }
+
+  // Check object_type
+  if (!["theme", "group"].includes(request.object_type)) {
+    violations.push(`Invalid object_type: ${request.object_type}. Allowed: theme, group.`);
+  }
+
+  // Check required fields
+  if (!request.object_id) {
+    violations.push("object_id is required.");
+  }
+
+  // Check forbidden keys in snapshot
+  const snapKeys = Object.keys(request.workspace_snapshot);
+  for (const key of FORBIDDEN_KEYS) {
+    if (snapKeys.includes(key)) {
+      violations.push(`FORBIDDEN key in workspace_snapshot: "${key}". Use field_overrides_summary instead.`);
+    }
+  }
+
+  // Check action-specific required fields
+  const snap = request.workspace_snapshot;
+  if (request.action === "why" && !snap.stage_judgement && !snap.analyst_notes) {
+    violations.push("why action requires at least stage_judgement or analyst_notes in snapshot.");
+  }
+  if (request.action === "risk" && !snap.trader_sentiment && !snap.index_resonance) {
+    violations.push("risk action requires at least trader_sentiment or index_resonance in snapshot.");
+  }
+  if (request.action === "compare" && !snap.yesterday_view && !snap.today_actual) {
+    violations.push("compare action requires at least yesterday_view or today_actual in snapshot.");
+  }
+
+  return { valid: violations.length === 0, violations };
 }

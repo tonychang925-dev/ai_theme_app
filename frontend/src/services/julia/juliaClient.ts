@@ -11,7 +11,7 @@ import type { ContextRequest, JuliaResponse } from "./workspaceContextAdapter";
 
 // ── Config ──
 
-const DEFAULT_WS_URL = "ws://127.0.0.1:8000/analyst/chat";
+const DEFAULT_WS_URL = "ws://127.0.0.1:8001/analyst/chat";
 const RECONNECT_DELAY_MS = 3000;
 const MAX_RECONNECT_ATTEMPTS = 5;
 
@@ -40,14 +40,14 @@ export class JuliaClient {
   private onMessage?: (response: JuliaResponse) => void;
   private onError?: (error: string) => void;
 
-  private localFallback: boolean;
+  private workspaceOfflineMode: boolean;
 
   constructor(options: JuliaClientOptions = {}) {
     this.wsUrl = options.wsUrl || DEFAULT_WS_URL;
     this.onStateChange = options.onStateChange;
     this.onMessage = options.onMessage;
     this.onError = options.onError;
-    this.localFallback = false;
+    this.workspaceOfflineMode = false;
   }
 
   // ── Public API ──
@@ -102,14 +102,14 @@ export class JuliaClient {
         this.setState("error");
         // Fall back to local/mock if WebSocket fails
         if (this.reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
-          this.localFallback = true;
-          this.onError?.("Julia Agent 服务未连接。使用本地分析模式。");
+          this.workspaceOfflineMode = true;
+          this.onError?.("Julia Agent 服务未连接。使用离线工作区预览模式。");
         }
       };
     } catch {
       this.setState("error");
-      this.localFallback = true;
-      this.onError?.("无法连接到 Julia Agent。");
+      this.workspaceOfflineMode = true;
+      this.onError?.("无法连接到 Julia Agent。使用离线工作区预览。");
     }
   }
 
@@ -130,14 +130,14 @@ export class JuliaClient {
    * Send a ContextRequest to Julia and return the response.
    */
   async ask(contextRequest: ContextRequest, question: string): Promise<JuliaResponse> {
-    if (this.localFallback || !this.ws || this.ws.readyState !== WebSocket.OPEN) {
-      return this.generateLocalResponse(contextRequest, question);
+    if (this.workspaceOfflineMode || !this.ws || this.ws.readyState !== WebSocket.OPEN) {
+      return this.generateWorkspaceOfflinePreview(contextRequest, question);
     }
 
     return new Promise((resolve) => {
       const timeout = setTimeout(() => {
         this.pendingRequests.delete(question);
-        resolve(this.generateLocalResponse(contextRequest, question));
+        resolve(this.generateWorkspaceOfflinePreview(contextRequest, question));
       }, 15000);
 
       this.pendingRequests.set(question, (response) => {
@@ -173,78 +173,53 @@ export class JuliaClient {
   }
 
   /**
-   * Local fallback: generate analyst-style responses when Julia Agent is unavailable.
-   * Preserves the same JuliaResponse shape so the UI works identically.
+   * Workspace Offline Preview: display existing workspace fields only.
+   *
+   * DOES NOT: reason, generate new financial judgments, compute buy/sell logic.
+   * ONLY: renders workspace_snapshot fields already present in the ContextRequest.
    */
-  private generateLocalResponse(
-    _request: ContextRequest,
-    question: string,
+  private generateWorkspaceOfflinePreview(
+    request: ContextRequest,
+    _question: string,
   ): JuliaResponse {
-    const q = question.toLowerCase();
+    const snap = request.workspace_snapshot;
 
-    if (q.includes("为什么") || q.includes("why")) {
-      return {
-        intent: "deep_dive",
-        text:
-          `[本地分析] 基于工作区已有数据，该题材的当前阶段判断与事件刺激基本一致。` +
-          `建议关注因果链的完整性——是否所有事件都已反映在盘面，以及是否存在未被纳入分析的反向证据。` +
-          `V0.1 本地分析模式，连接 Julia Agent 后可获取完整 EvidenceRef。`,
-        evidence_refs: ["workspace:field_overrides", "workspace:event_stimuli"],
-        rendered_evidence_links: [
-          "工作区:分析师覆盖记录",
-          "工作区:事件刺激列表",
-        ],
-        confidence: 0.55,
-        limitations: ["本地分析模式，未连接 Julia Agent。", "仅基于工作区已有数据。", "不包含实时市场证据。"],
-        status: "shadow",
-      };
-    }
+    const fields: string[] = [];
+    if (snap.stage_judgement) fields.push(`阶段判断: ${snap.stage_judgement}`);
+    if (snap.attention_level) fields.push(`关注等级: ${snap.attention_level}`);
+    if (snap.trader_sentiment) fields.push(`交易情绪: ${snap.trader_sentiment}`);
+    if (snap.index_resonance) fields.push(`指数共振: ${snap.index_resonance}`);
+    if (snap.yesterday_view) fields.push(`昨日看法: ${snap.yesterday_view}`);
+    if (snap.today_actual) fields.push(`今日实际: ${snap.today_actual}`);
+    if (snap.analyst_notes) fields.push(`分析师笔记: ${snap.analyst_notes}`);
+    if (snap.event_stimuli.length > 0) fields.push(`事件刺激: ${snap.event_stimuli.filter(s => s.trim()).join("、")}`);
+    if (snap.old_leaders) fields.push(`老龙头: ${snap.old_leaders}`);
+    if (snap.trading_style) fields.push(`交易风格: ${snap.trading_style}`);
 
-    if (q.includes("风险") || q.includes("risk")) {
-      return {
-        intent: "morning_brief",
-        text:
-          `[本地分析] 根据当前交易情绪与指数共振判断，主要风险来自：\n` +
-          `1. 题材扩散阶段的资金结构变化\n` +
-          `2. 事件刺激消退后的认知修正\n` +
-          `3. 大盘情绪转向时的流动性压力\n` +
-          `具体风险阈值需连接 Julia Agent 获取实时市场状态。`,
-        evidence_refs: ["workspace:trader_sentiment", "workspace:index_resonance"],
-        rendered_evidence_links: [
-          "工作区:交易情绪",
-          "工作区:指数共振",
-        ],
-        confidence: 0.50,
-        limitations: ["本地分析模式，未连接 Julia Agent。", "风险判断基于工作区静态数据。"],
-        status: "shadow",
-      };
-    }
+    const field_overrides_info = request.field_overrides_summary
+      .map(f => `${f.field}: AI→"${f.ai_value}" | 分析师→"${f.analyst_value}"`)
+      .join("; ");
 
-    if (q.includes("比") || q.includes("compare") || q.includes("昨天")) {
-      return {
-        intent: "research",
-        text:
-          `[本地分析] 对比昨天的看法和今天的实际表现：\n` +
-          `工作区已记录 yesterday_view 和 today_actual 字段。` +
-          `连接 Julia Agent 后可自动提取偏差模式并进行历史案例匹配。`,
-        evidence_refs: ["workspace:yesterday_view", "workspace:today_actual"],
-        rendered_evidence_links: [
-          "工作区:昨日看法",
-          "工作区:今日实际",
-        ],
-        confidence: 0.48,
-        limitations: ["本地分析模式，未连接 Julia Agent。", "对比仅基于工作区字段，未做历史案例匹配。"],
-        status: "shadow",
-      };
-    }
+    const displayText = fields.length > 0
+      ? `[离线工作区预览] ${request.object_name || "当前题材"} 的已有数据：\n\n${fields.join("\n")}${field_overrides_info ? `\n\n分析师覆盖记录: ${field_overrides_info}` : ""}\n\n连接 Julia Agent 后可获取证据驱动的完整分析。`
+      : `[离线工作区预览] ${request.object_name || "当前题材"} 暂无工作区数据。选择题材后连接 Julia Agent 获取分析。`;
+
+    const refs: string[] = [];
+    if (snap.event_stimuli.length > 0) refs.push("workspace:event_stimuli");
+    if (request.field_overrides_summary.length > 0) refs.push("workspace:field_overrides");
+    if (snap.analyst_notes) refs.push("workspace:analyst_notes");
 
     return {
       intent: "unknown",
-      text: "请告诉我你想研究的方向——为什么关注、风险在哪里、还是对比变化？",
-      evidence_refs: [],
-      rendered_evidence_links: [],
+      text: displayText,
+      evidence_refs: refs,
+      rendered_evidence_links: refs.map(r => `工作区:${r.replace("workspace:", "")}`),
       confidence: 0,
-      limitations: [],
+      limitations: [
+        "离线工作区预览模式 — 仅展示已有工作区字段。",
+        "不生成新的金融判断、不推理、不计算买卖逻辑。",
+        "连接 Julia Agent 后自动切换为在线证据分析。",
+      ],
       status: "shadow",
     };
   }

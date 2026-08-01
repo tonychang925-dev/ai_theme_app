@@ -220,7 +220,7 @@ export const JuliaCopilot: React.FC<JuliaCopilotProps> = ({
               ? "在线"
               : connState === "connecting"
                 ? "连接中"
-                : "本地分析"}
+                : "离线预览"}
           </span>
           {sending && (
             <span style={{ fontSize: 10, color: "#d69e2e" }}>分析中...</span>
