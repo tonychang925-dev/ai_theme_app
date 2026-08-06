@@ -75,15 +75,17 @@ def _alerts_from_workbench(trade_date: str, min_level: str) -> list[dict]:
     envelope = exporter.export(snapshot)
     data = envelope.to_dict()
 
-    observations = data.get("observations", [])
+    claims = data.get("claims", [])
 
-    # Filter by minimum signal level
-    level_rank = {"L4": 0, "L3": 1, "L2": 2, "L1": 3}
-    min_rank = level_rank.get(min_level, 1)
+    # Filter by attention_level (P0 fix: ai_theme_app outputs attention, not signal)
+    attention_rank = {"CRITICAL": 0, "HIGH": 1, "MEDIUM": 2, "LOW": 3}
+    if min_level == "L4": min_rank = 0
+    elif min_level == "L3": min_rank = 1
+    else: min_rank = 2
 
     filtered = [
-        obs for obs in observations
-        if level_rank.get(obs.get("signal_level", "L1"), 9) <= min_rank
+        claim for claim in claims
+        if attention_rank.get(claim.get("attention_level", "LOW"), 9) <= min_rank
     ]
 
     return filtered

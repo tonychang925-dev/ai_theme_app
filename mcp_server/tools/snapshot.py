@@ -30,8 +30,8 @@ def review_market_snapshot(date: str | None = None) -> dict:
     except Exception:
         pass
 
-    # Fallback: synthetic intelligence (no approved snapshot available)
-    return _synthetic_envelope(trade_date)
+    # Fallback: no approved snapshot → not_ready (P0: never fake market conclusions)
+    return _not_ready_envelope(trade_date)
 
 
 def _export_from_workbench(trade_date: str) -> dict | None:
@@ -87,26 +87,16 @@ def _export_from_workbench(trade_date: str) -> dict | None:
     return envelope.to_dict()
 
 
-def _synthetic_envelope(trade_date: str) -> dict:
-    """Synthetic envelope when no approved workbench snapshot exists."""
+def _not_ready_envelope(trade_date: str) -> dict:
+    """No approved snapshot → not_ready. No fake market conclusions."""
     return {
         "schema_version": "analyst-workbench.intelligence.v1",
         "provider": "ai_theme_app",
         "trade_date": trade_date,
-        "status": "synthetic",
-        "approval": {"status": "UNAVAILABLE", "reason": "no approved workbench snapshot for this date"},
-        "market_view": {
-            "emotion": {
-                "node": "UNKNOWN",
-                "label": "数据不可用",
-                "risk_level": "UNKNOWN",
-                "confidence": 0.0,
-                "summary": "分析师工作台暂无已审批数据",
-                "strategy_bias": "",
-            },
-        },
-        "observations": [],
-        "quality": {"source_quality": 0.0, "evidence_count": 0, "analyst_reviewed": False},
+        "status": "not_ready",
+        "reason": "approved_snapshot_not_found",
+        "claims": [],
+        "market_view": {},
     }
 
 

@@ -38,8 +38,10 @@ class AnalystIntelligenceEnvelope:
     # Market view — analyst-approved conclusions
     market_view: dict[str, Any] = field(default_factory=dict)
 
-    # Theme observations — cognition cards mapped to Julia observation format
-    observations: list[dict[str, Any]] = field(default_factory=list)
+    # Analyst claims — workbench judgments as CLAIMS to be verified
+    # Julia maps these to ObservationEvent via her own IntelligenceContractMapper.
+    # ai_theme_app does NOT produce Julia observation format.
+    claims: list[dict[str, Any]] = field(default_factory=list)
 
     # Quality metadata
     quality: dict[str, Any] = field(default_factory=dict)
@@ -52,7 +54,7 @@ class AnalystIntelligenceEnvelope:
             "generated_at": self.generated_at,
             "approval": self.approval,
             "market_view": self.market_view,
-            "observations": self.observations,
+            "claims": self.claims,
             "quality": self.quality,
         }
 
@@ -71,18 +73,7 @@ FORBIDDEN_OUTPUT_FIELDS = frozenset({
 })
 
 
-# ── Attention level → Julia signal level mapping ────────────────────────────
-
-ATTENTION_TO_SIGNAL = {
-    "CRITICAL": "L4",
-    "HIGH":     "L3",
-    "MEDIUM":   "L2",
-    "LOW":      "L1",
-}
-
-
 __all__ = [
     "AnalystIntelligenceEnvelope",
     "FORBIDDEN_OUTPUT_FIELDS",
-    "ATTENTION_TO_SIGNAL",
 ]
