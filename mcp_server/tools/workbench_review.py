@@ -65,7 +65,7 @@ def _try_approved(td: str) -> tuple[bool, dict | None]:
             "attention_level": str(c.get("attention_level", "LOW")),
             "attention_score": int(c.get("attention_score", 0)),
             "confidence": float(c.get("confidence", 0.5)),
-            "analyst_reviewed": bool(c.get("analyst_reviewed", False)),
+            "analyst_reviewed": True,  # approved snapshot → always reviewed
             "analyst_override": bool(c.get("analyst_added", False)),
             "evidence_refs": [str(e) for e in c.get("evidence", []) if e][:5],
         })
