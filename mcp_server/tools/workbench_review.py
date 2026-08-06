@@ -13,25 +13,43 @@ CST = timezone(timedelta(hours=8))
 
 def market_workbench_review(trade_date: str | None = None) -> dict:
     td = trade_date or datetime.now(CST).strftime("%Y-%m-%d")
-    result = _try_approved(td) or _try_draft(td) or _not_ready(td)
-    return result
+
+    # Check approved first
+    exists, result = _try_approved(td)
+    if exists:
+        return result  # either valid approved or rejected — no fallback
+
+    # No approved snapshot → try draft
+    return _try_draft(td) or _not_ready(td)
 
 
-def _try_approved(td: str) -> dict | None:
+def _try_approved(td: str) -> tuple[bool, dict | None]:
+    """Returns (snapshot_exists, result_or_None).
+
+    If snapshot exists but validation fails → exists=True, result=rejected.
+    """
     import os, json
     from pathlib import Path
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     wb_base = Path(project_root) / "tmp" / "analyst_workbench" / td
+
     if not (wb_base / "session.json").exists() or not (wb_base / "snapshot.json").exists():
-        return None
+        return (False, None)  # no snapshot at all → draft fallback OK
+
     session = json.loads((wb_base / "session.json").read_text(encoding="utf-8"))
     from stock_processing_service.application.services.analyst_workbench.snapshot import ReviewSnapshot
-    snap = ReviewSnapshot.from_dict(json.loads((wb_base / "snapshot.json").read_text(encoding="utf-8")))
-    from stock_processing_service.application.services.analyst_workbench.snapshot_validator import ApprovedSnapshotValidator
-    if not ApprovedSnapshotValidator().validate(session.get("status", ""), snap).valid:
-        return None
+    try:
+        snap = ReviewSnapshot.from_dict(json.loads((wb_base / "snapshot.json").read_text(encoding="utf-8")))
+    except Exception:
+        return (True, _rejected(td, "snapshot_json_corrupted"))
 
-    # Build claims from approved snapshot cognition_cards using final_value
+    from stock_processing_service.application.services.analyst_workbench.snapshot_validator import ApprovedSnapshotValidator
+    vr = ApprovedSnapshotValidator().validate(session.get("status", ""), snap)
+    if not vr.valid:
+        return (True, _rejected(td, "approved_snapshot_validation_failed",
+                                [e.value for e in vr.errors]))
+
+    # Build approved claims
     cards = snap.cognition_cards or []
     claims = []
     for c in cards:
@@ -52,14 +70,14 @@ def _try_approved(td: str) -> dict | None:
             "evidence_refs": [str(e) for e in c.get("evidence", []) if e][:5],
         })
 
-    return _build_envelope(td, "analyst_approved", claims, {
+    return (True, _build_envelope(td, "analyst_approved", claims, {
         "snapshot_version": snap.snapshot_version,
         "snapshot_hash": snap.snapshot_hash,
         "approved_at": snap.approved_at,
         "approved_by": snap.approved_by,
         "approval_mode": snap.approval_mode,
         "analyst_reviewed": True,
-    }, snap.narrative or {}, float(getattr(snap, 'source_quality', 0.8)))
+    }, snap.narrative or {}, float(getattr(snap, 'source_quality', 0.8))))
 
 
 def _try_draft(td: str) -> dict | None:
@@ -105,6 +123,16 @@ def _build_envelope(td, mode, claims, approval, narrative, quality) -> dict:
         } if narrative else {},
         "approval": approval,
         "quality": {"source_quality": quality, "claim_count": len(claims)},
+    }
+
+
+def _rejected(td: str, reason: str, errors: list | None = None) -> dict:
+    return {
+        "schema_version": "analyst-workbench.review.v1", "provider": "ai_theme_app",
+        "trade_date": td, "generated_at": datetime.now(CST).isoformat(),
+        "opinion_mode": "rejected", "reason": reason,
+        "validation_errors": errors or [],
+        "claims": [], "market_judgment": {}, "approval": {"status": "rejected"},
     }
 
 
