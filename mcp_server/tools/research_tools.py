@@ -62,27 +62,36 @@ def market_stock_history(stock_code: str, as_of: str, lookback_sessions: int = 5
         return {**guard, "tool": "market_stock_history",
                 "stock_code": stock_code, "as_of": as_of}
 
-    # Add exchange suffix for DB lookup
+    import os as _os
+    dsn = _os.environ.get("STOCK_DB_DSN", "")
+    if not dsn:
+        return {
+            "status": "unavailable",
+            "tool": "market_stock_history",
+            "stock_code": stock_code, "as_of": as_of,
+            "reason": "STOCK_DB_DSN not configured",
+        }
+
     db_code = _with_exchange_suffix(stock_code)
 
     try:
         import asyncpg, asyncio
+        from datetime import date as _date
 
         async def _fetch():
-            conn = await asyncpg.connect(
-                "postgresql://postgres:zxbzj~925@localhost/stock_data_test")
+            conn = await asyncpg.connect(dsn)
             try:
-                from datetime import date as _date
+                # P0-1: exact trading-session LIMIT (not calendar days)
                 rows = await conn.fetch("""
                     SELECT trade_date, open_price, high_price, low_price,
                            close_price, pre_close, volume, amount
                     FROM stock_daily_snapshot
                     WHERE stock_id = $1
-                    AND trade_date >= $2::date - ($3 || ' days')::interval
                     AND trade_date <= $2::date
-                    ORDER BY trade_date
-                """, db_code, _date.fromisoformat(as_of), str(lookback_sessions + 5))
-                return rows
+                    ORDER BY trade_date DESC
+                    LIMIT $3
+                """, db_code, _date.fromisoformat(as_of), lookback_sessions)
+                return list(reversed(rows))
             finally:
                 await conn.close()
 
@@ -95,71 +104,109 @@ def market_stock_history(stock_code: str, as_of: str, lookback_sessions: int = 5
             "reason": f"DB query failed: {type(e).__name__}: {e}",
         }
 
-    if not rows:
+    if len(rows) < lookback_sessions:
         return {
-            "status": "unavailable",
-            "tool": "market_stock_history",
-            "stock_code": stock_code, "as_of": as_of,
-            "reason": f"no data for {db_code} in lookback window",
+            "status": "partial",
+            "source_kind": "objective_stock_history",
+            "stock_code": stock_code,
+            "as_of": as_of,
+            "requested_sessions": lookback_sessions,
+            "actual_sessions": len(rows),
+            "reason": f"only {len(rows)} bars available (requested {lookback_sessions})",
+            "bars": _build_bars(rows),
         }
 
-    # Build OHLCV bars
-    bars = [{
-        "trade_date": str(r["trade_date"]),
-        "open": float(r["open_price"]), "high": float(r["high_price"]),
-        "low": float(r["low_price"]), "close": float(r["close_price"]),
-        "pre_close": float(r["pre_close"]),
-        "volume": float(r["volume"]), "amount": float(r["amount"]),
-    } for r in rows]
-
-    # Derive metrics
-    closes = [b["close"] for b in bars]
-    highs = [b["high"] for b in bars]
-    first_close = closes[0]
-    last_close = closes[-1]
-    total_return = (last_close / first_close - 1) if first_close else 0
-
-    peak = max(highs)
-    dd_from_peak = (last_close / peak - 1) if peak else 0
-
-    # Volume trend: compare first half vs second half
-    mid = len(bars) // 2
-    vol_first = sum(b["volume"] for b in bars[:mid]) / max(mid, 1)
-    vol_second = sum(b["volume"] for b in bars[mid:]) / max(len(bars) - mid, 1)
-    if vol_second > vol_first * 1.3:
-        vol_trend = "elevated"
-    elif vol_second < vol_first * 0.7:
-        vol_trend = "contracting"
-    else:
-        vol_trend = "normal"
-
-    # Key level: is close near session high?
-    last_bar = bars[-1]
-    close_vs_high = last_bar["close"] / last_bar["high"] if last_bar["high"] else 1
-    if close_vs_high > 0.98:
-        key_level = "intact"
-    elif close_vs_high > 0.95:
-        key_level = "testing"
-    else:
-        key_level = "broken"
+    bars = _build_bars(rows)
+    metrics = _compute_metrics(bars)
 
     return {
         "status": "live",
         "source_kind": "objective_stock_history",
         "stock_code": stock_code,
-        "db_code": db_code,
         "as_of": as_of,
-        "lookback_sessions": lookback_sessions,
-        "bar_count": len(bars),
+        "requested_sessions": lookback_sessions,
+        "actual_sessions": len(bars),
         "bars": bars,
-        "total_return": round(total_return, 4),
-        "max_drawdown_from_peak": round(dd_from_peak, 4),
-        "volume_trend": vol_trend,
-        "key_level_status": key_level,
+        **metrics,
         "provenance": {
             "source": "stock_data_test.stock_daily_snapshot",
             "max_trade_date": str(rows[-1]["trade_date"]),
             "future_rows_used": False,
+            "rule_version": "stock-metrics.v1",
+        },
+    }
+
+
+def _build_bars(rows) -> list:
+    return [{
+        "trade_date": str(r["trade_date"]),
+        "open": float(r["open_price"]), "high": float(r["high_price"]),
+        "low": float(r["low_price"]), "close": float(r["close_price"]),
+        "pre_close": float(r["pre_close"]),
+        "volume": float(r["volume"]), "amount": float(r["amount"]),
+        "pct_chg": round((float(r["close_price"]) / float(r["pre_close"]) - 1) * 100, 2)
+            if float(r["pre_close"]) else None,
+    } for r in rows]
+
+
+def _compute_metrics(bars: list) -> dict:
+    closes = [b["close"] for b in bars]
+    first_close = closes[0]
+    last_close = closes[-1]
+
+    # P0-2: true max drawdown (running peak → trough, close-based)
+    running_peak = 0.0
+    max_dd = 0.0
+    for b in bars:
+        running_peak = max(running_peak, b["close"])
+        dd = b["close"] / running_peak - 1 if running_peak else 0
+        max_dd = min(max_dd, dd)
+
+    total_return = round((last_close / first_close - 1), 4) if first_close else 0
+
+    # Volume trend: compare first half vs second half
+    mid = len(bars) // 2
+    v1 = sum(b["volume"] for b in bars[:mid]) / max(mid, 1)
+    v2 = sum(b["volume"] for b in bars[mid:]) / max(len(bars) - mid, 1)
+    if v2 > v1 * 1.3:
+        vol_trend = "elevated"
+    elif v2 < v1 * 0.7:
+        vol_trend = "contracting"
+    else:
+        vol_trend = "normal"
+
+    # P0-3: key-level from moving averages + prior limit-up close
+    ma5 = sum(closes[-5:]) / min(len(closes), 5)
+    above_ma5 = last_close > ma5
+    prior_high = bars[-2]["close"] if len(bars) >= 2 else last_close
+    above_prior_close = last_close > prior_high
+    limit_up_flag = bars[-1].get("pct_chg", 0) and bars[-1]["pct_chg"] >= 9.9
+
+    if above_ma5 and limit_up_flag:
+        key_state = "intact_limit_up"
+    elif above_ma5:
+        key_state = "intact"
+    elif last_close > ma5 * 0.97:
+        key_state = "testing"
+    else:
+        key_state = "broken"
+
+    return {
+        "total_return": total_return,
+        "max_drawdown_from_peak": round(max_dd, 4),
+        "volume_trend": vol_trend,
+        "key_level_status": {
+            "state": key_state,
+            "levels": {
+                "ma5": round(ma5, 2),
+                "close_vs_ma5": round(last_close / ma5, 4) if ma5 else None,
+            },
+            "tests": {
+                "above_ma5": above_ma5,
+                "above_prior_close": above_prior_close,
+                "limit_up_flag": limit_up_flag,
+            },
+            "rule_version": "key-level.v1",
         },
     }
 
