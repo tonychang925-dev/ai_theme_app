@@ -18,12 +18,17 @@ sys.path.insert(0, "/Users/admin/julia_core")
 import subprocess
 
 def _git_sha(repo_path: str) -> str:
-    try:
-        return subprocess.check_output(
-            ["git", "rev-parse", "HEAD"], cwd=repo_path, text=True
-        ).strip()
-    except Exception:
-        return "unknown"
+    dirty = subprocess.check_output(
+        ["git", "status", "--porcelain"], cwd=repo_path, text=True
+    ).strip()
+    if dirty:
+        raise RuntimeError(
+            f"REPLAY FORBIDDEN: dirty worktree at {repo_path}\n"
+            f"Uncommitted changes:\n{dirty[:500]}"
+        )
+    return subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=repo_path, text=True
+    ).strip()
 
 from julia_core.reasoning.independent_review import (
     StageSignalEvaluator,
@@ -363,6 +368,17 @@ def run():
     assert sum(actual_dist.values()) == len(juds)
     assert all(j.get("subject_key") for j in juds), "G3 FAIL: missing subject_key"
     print(f"✅ G3: serialized invariant — {len(juds)} judgments, all have subject_key")
+
+    # G3b: three-way key-set identity — no missing, no extra
+    ctx_keys = {t["subject_key"] for t in market_context["themes"]}
+    claim_keys = {c["subject"]["key"] for c in workbench_review["claims"]}
+    jud_keys = {j["subject_key"] for j in juds}
+    assert ctx_keys == claim_keys == jud_keys, (
+        f"G3b FAIL: key-set mismatch. "
+        f"context={len(ctx_keys)} claims={len(claim_keys)} judgments={len(jud_keys)}. "
+        f"ctx∖claims={ctx_keys - claim_keys} claims∖jud={claim_keys - jud_keys}"
+    )
+    print(f"✅ G3b: 1:1 identity — {len(jud_keys)} = context = claims = judgments")
 
     # Save market_context as Golden Fixture
     ctx_path = output_dir / "market_context.json"
