@@ -42,6 +42,44 @@ def _with_exchange_suffix(code: str) -> str:
     return f"{code}.SZ"
 
 
+def _fetch_stock_bars(stock_code: str, as_of: str, sessions: int) -> list | None:
+    """Fetch up to N trading bars from DB. Returns None on failure."""
+    import os as _os, asyncpg, asyncio
+    from datetime import date as _date
+
+    dsn = _os.environ.get("STOCK_DB_DSN", "")
+    if not dsn:
+        return None
+
+    db_code = _with_exchange_suffix(stock_code)
+    try:
+        async def _fetch():
+            conn = await asyncpg.connect(dsn)
+            try:
+                rows = await conn.fetch("""
+                    SELECT trade_date, open_price, high_price, low_price,
+                           close_price, pre_close, volume, amount
+                    FROM stock_daily_snapshot
+                    WHERE stock_id = $1 AND trade_date <= $2::date
+                    ORDER BY trade_date DESC LIMIT $3
+                """, db_code, _date.fromisoformat(as_of), sessions)
+                return list(reversed(rows))
+            finally:
+                await conn.close()
+        return asyncio.run(_fetch())
+    except Exception:
+        return None
+
+
+def _above_ma5_direct(built_bars: list, n: int = 5) -> bool:
+    """Check if last close is above MA5. Uses _build_bars dict format."""
+    closes = [b["close"] for b in built_bars[-n:]]
+    if len(closes) < n:
+        return False
+    ma5 = sum(closes) / n
+    return closes[-1] > ma5
+
+
 def _guard_as_of(as_of: str) -> dict | None:
     """Only SUPPORTED_AS_OF is available for historical replay.
     Future dates, previous dates → unavailable (never latest fallback).
@@ -247,17 +285,100 @@ def market_theme_constituents(subject_key: str, as_of: str) -> dict:
         )
         subject = universe["subjects"].get(subject_key)
         if not subject:
-            return {
-                "status": "unavailable",
-                "tool": "market_theme_constituents",
-                "subject_key": subject_key, "as_of": as_of,
-                "reason": f"subject_key {subject_key} not in frozen 7/14 baseline",
-            }
+            return {"status": "unavailable", "tool": "market_theme_constituents",
+                    "subject_key": subject_key, "as_of": as_of,
+                    "reason": f"subject_key {subject_key} not in frozen 7/14 baseline"}
 
         constits = subject.get("constituent_codes", [])
         leaders = subject.get("leader_codes", [])
 
-        # P0: return full list (not [:10]). P1: add total_count/truncated.
+        # Fetch real stock bars for all constituents
+        stock_metrics = {}
+        t0_date = None
+        prev_date = None
+        for code in constits:
+            bars = _fetch_stock_bars(code, as_of, 6)  # 6 bars = 5 trailing + T0
+            if bars and len(bars) >= 2:
+                built = _build_bars(bars)
+                bar_5d = built[-5:] if len(built) >= 5 else built
+                first_pre = bar_5d[0]["pre_close"]
+                last_close = bar_5d[-1]["close"]
+                ret_5d = (last_close / first_pre - 1) if first_pre else 0
+
+                t0_bar = built[-1]
+                prev_bar = built[-2]
+                t0_date = t0_bar["trade_date"]
+                prev_date = prev_bar["trade_date"]
+                t0_pct = t0_bar["pct_chg"] or 0
+                t0_limit_up = t0_pct >= 9.9
+                t0_above_ma5 = _above_ma5_direct(built, 5)
+
+                prev_pct = prev_bar["pct_chg"] or 0
+
+                stock_metrics[code] = {
+                    "return_5d": round(ret_5d, 4),
+                    "return_5d_pct": round(ret_5d * 100, 2),
+                    "t0_pct_chg": t0_pct,
+                    "t0_limit_up": t0_limit_up,
+                    "t0_above_ma5": t0_above_ma5,
+                    "prev_pct_chg": prev_pct,
+                    "leader_flag": code in leaders,
+                }
+
+        if not stock_metrics:
+            return {"status": "partial", "tool": "market_theme_constituents",
+                    "subject_key": subject_key, "as_of": as_of,
+                    "reason": "no stock history data for any constituent"}
+
+        # Peer relative strength ranking
+        ranked = sorted(stock_metrics.items(), key=lambda x: x[1]["return_5d"], reverse=True)
+        peer_relative_strength = {
+            "window_sessions": 5,
+            "ranking": [
+                {"stock_code": code, "return_5d": m["return_5d"],
+                 "return_5d_pct": m["return_5d_pct"], "rank": i + 1,
+                 "leader_flag": m["leader_flag"]}
+                for i, (code, m) in enumerate(ranked)
+            ],
+            "dispersion": {
+                "max_min_spread": round(
+                    ranked[0][1]["return_5d"] - ranked[-1][1]["return_5d"], 4) if len(ranked) >= 2 else 0,
+            },
+        }
+
+        # Emerging leaders: non-leader codes with top 2 return
+        non_leaders = [(c, m) for c, m in ranked if not m["leader_flag"]]
+        emerging_leaders = [
+            {"stock_code": c, "return_5d_pct": m["return_5d_pct"],
+             "candidate_status": "candidate", "note": "top return among non-leaders"}
+            for c, m in non_leaders[:1]
+        ]
+
+        # Current breadth (T0)
+        t0_count = len(stock_metrics)
+        t0_limit_up_count = sum(1 for m in stock_metrics.values() if m["t0_limit_up"])
+        t0_above_ma5_count = sum(1 for m in stock_metrics.values() if m["t0_above_ma5"])
+        t0_positive_count = sum(1 for m in stock_metrics.values() if m["t0_pct_chg"] > 0)
+
+        current_breadth = {
+            "trade_date": t0_date,
+            "constituent_count": t0_count,
+            "limit_up_count": t0_limit_up_count,
+            "limit_up_ratio": round(t0_limit_up_count / t0_count, 2) if t0_count else 0,
+            "above_ma5_count": t0_above_ma5_count,
+            "above_ma5_ratio": round(t0_above_ma5_count / t0_count, 2) if t0_count else 0,
+            "positive_count": t0_positive_count,
+            "positive_ratio": round(t0_positive_count / t0_count, 2) if t0_count else 0,
+        }
+
+        # Breadth change: T0 vs previous session
+        # (simplified — full implementation would compute prev session breadth)
+        breadth_change = {
+            "from_trade_date": prev_date,
+            "to_trade_date": t0_date,
+            "note": "T0 vs prev session breadth change requires full prev-session constituent computation — placeholder",
+        }
+
         return {
             "status": "live",
             "source_kind": "objective_constituent_universe",
@@ -266,17 +387,18 @@ def market_theme_constituents(subject_key: str, as_of: str) -> dict:
             "constituent_codes": constits,
             "constituent_count": len(constits),
             "leader_codes": leaders,
-            "leader_count": len(leaders),
-            # P0: NO workbench_stage, julia_stage, or verdict in factual evidence
-            "data_note": "Constituent identity frozen from 7/14 baseline_universe. Price returns pending kline ingestion.",
+            "peer_relative_strength": peer_relative_strength,
+            "current_breadth": current_breadth,
+            "breadth_change": breadth_change,
+            "emerging_leaders": emerging_leaders,
+            "stock_metrics": stock_metrics,
         }
-    except Exception:
-        return {
-            "status": "unavailable",
-            "tool": "market_theme_constituents",
-            "subject_key": subject_key, "as_of": as_of,
-            "reason": "baseline universe read error",
-        }
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return {"status": "unavailable", "tool": "market_theme_constituents",
+                "subject_key": subject_key, "as_of": as_of,
+                "reason": f"export failed: {type(e).__name__}: {e}"}
 
 
 # ── Theme Capital ───────────────────────────────────────────────────────────
