@@ -1,0 +1,21 @@
+{
+  "schema_version": "case-extension-manifest.v1",
+  "case_id": "001-r1",
+  "base_artifact_commit": "f90721c5ea7a538b3ae944f9a2c4c69f0880448a",
+  "base_manifest_sha256": "8fa88236c5c78f2b45fecd936a94788edfdf346a2db1c6bf8a8fd6ba507e2140",
+  "extensions": {
+    "human_observations": {
+      "path": "human/analyst_observations.json",
+      "sha256": "2dc2dd90abc7e3895b525782ef3aa880441c85ade0b96e5d0420bc26c667052f"
+    },
+    "outcome_baseline": {
+      "path": "outcomes/baseline_universe.json",
+      "sha256": "ba2b6274ab071011981ce3a966d3e255e4561aaccb4ef78adb0e780fb6e910f0"
+    },
+    "outcome_manifest": {
+      "path": "outcomes/manifest.json",
+      "sha256": "94563ab54b60f83669954eb54138b3206922cab521290e4f8147b0ee6c2f1809"
+    }
+  },
+  "generated_at": "2026-08-07T13:20:13.004165+08:00"
+}

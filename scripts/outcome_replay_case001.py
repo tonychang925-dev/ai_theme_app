@@ -16,6 +16,11 @@ GOLDEN = Path("/Users/admin/Desktop/ai_theme_app/golden/2026-07-14")
 OUTCOMES = GOLDEN / "outcomes"
 BASELINE_COMMIT = "f90721c5ea7a538b3ae944f9a2c4c69f0880448a"
 
+# Immutable: SHA256 of f90721c golden/2026-07-14/manifest.json
+EXPECTED_F90721C_MANIFEST_SHA256 = (
+    "8fa88236c5c78f2b45fecd936a94788edfdf346a2db1c6bf8a8fd6ba507e2140"
+)
+
 TRADE_DATES = {
     "baseline": "2026-07-14",
     "T+1":      "2026-07-15",
@@ -28,14 +33,18 @@ TRADE_DATES = {
 def run():
     OUTCOMES.mkdir(parents=True, exist_ok=True)
 
-    # O1: verify ALL baseline hashes including manifest itself
+    # O1: verify baseline manifest matches immutable f90721c artifact
     base_manifest = json.loads((GOLDEN / "manifest.json").read_text(encoding="utf-8"))
     base_manifest_hash = _sha256(GOLDEN / "manifest.json")
+    assert base_manifest_hash == EXPECTED_F90721C_MANIFEST_SHA256, (
+        f"O1 FAIL: manifest SHA mismatch. Local={base_manifest_hash[:16]}... "
+        f"Expected f90721c={EXPECTED_F90721C_MANIFEST_SHA256[:16]}..."
+    )
     for name in ("market_context", "workbench_review", "julia_review"):
         expected = base_manifest["hashes"][name]
         actual = _sha256(GOLDEN / f"{name}.json")
         assert expected == actual, f"O1 FAIL: {name} hash mismatch"
-    print(f"✅ O1: all 3 golden hashes + manifest SHA verified")
+    print(f"✅ O1: manifest verified against f90721c + 3 golden hashes verified")
 
     # Load frozen data
     ctx = json.loads((GOLDEN / "market_context.json").read_text(encoding="utf-8"))
@@ -134,7 +143,7 @@ def run():
         "schema_version": "outcome-baseline.v1",
         "case_id": "001-r1",
         "baseline_artifact_commit": BASELINE_COMMIT,
-        "baseline_manifest_hash": manifest["hashes"]["julia_review"],
+        "baseline_manifest_sha256": base_manifest_hash,
         "trade_dates": TRADE_DATES,
         "subject_count": len(juds),
         "groups": {
@@ -167,11 +176,11 @@ def run():
         "schema_version": "outcome-manifest.v1",
         "case_id": "001-r1",
         "baseline_artifact_commit": BASELINE_COMMIT,
-        "baseline_manifest_hash": manifest["hashes"]["julia_review"],
+        "baseline_manifest_sha256": base_manifest_hash,
         "generated_at": _now(),
         "trade_dates": TRADE_DATES,
         "data_availability": {
-            "constituent_data": f"{len(card_index)}/{len(juds)} subjects have constituents",
+            "constituent_data": f"{total_with_constituents}/{total_subjects} subjects have non-empty frozen constituents",
             "stock_price_data": "NOT_YET_AVAILABLE — needs stock daily kline ingestion",
             "theme_level_metrics": "PARTIAL — chart JSON market-level only",
         },
@@ -208,6 +217,10 @@ def run():
             "outcome_baseline": {
                 "path": "outcomes/baseline_universe.json",
                 "sha256": _sha256(OUTCOMES / "baseline_universe.json"),
+            },
+            "outcome_manifest": {
+                "path": "outcomes/manifest.json",
+                "sha256": _sha256(OUTCOMES / "manifest.json"),
             },
         },
         "generated_at": _now(),

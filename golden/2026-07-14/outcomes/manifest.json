@@ -2,8 +2,8 @@
   "schema_version": "outcome-manifest.v1",
   "case_id": "001-r1",
   "baseline_artifact_commit": "f90721c5ea7a538b3ae944f9a2c4c69f0880448a",
-  "baseline_manifest_hash": "c35ec51956bf4675c80275c53bdc8ff89c9e26e94f55f7730faf2883710d46ce",
-  "generated_at": "2026-08-07T11:34:42.099848+08:00",
+  "baseline_manifest_sha256": "8fa88236c5c78f2b45fecd936a94788edfdf346a2db1c6bf8a8fd6ba507e2140",
+  "generated_at": "2026-08-07T13:20:13.001732+08:00",
   "trade_dates": {
     "baseline": "2026-07-14",
     "T+1": "2026-07-15",
@@ -12,7 +12,7 @@
     "T+5": "2026-07-21"
   },
   "data_availability": {
-    "constituent_data": "130/130 subjects have constituents",
+    "constituent_data": "95/130 subjects have non-empty frozen constituents",
     "stock_price_data": "NOT_YET_AVAILABLE — needs stock daily kline ingestion",
     "theme_level_metrics": "PARTIAL — chart JSON market-level only"
   },
