@@ -151,8 +151,10 @@ def _build_bars(rows) -> list:
 
 def _compute_metrics(bars: list) -> dict:
     closes = [b["close"] for b in bars]
-    first_close = closes[0]
     last_close = closes[-1]
+    # P0-1: true 5-session cumulative return (last_close / first pre_close - 1)
+    first_pre_close = bars[0]["pre_close"]
+    total_return = round((last_close / first_pre_close - 1), 4) if first_pre_close else 0
 
     # P0-2: true max drawdown (running peak → trough, close-based)
     running_peak = 0.0
@@ -161,8 +163,6 @@ def _compute_metrics(bars: list) -> dict:
         running_peak = max(running_peak, b["close"])
         dd = b["close"] / running_peak - 1 if running_peak else 0
         max_dd = min(max_dd, dd)
-
-    total_return = round((last_close / first_close - 1), 4) if first_close else 0
 
     # Volume trend: compare first half vs second half
     mid = len(bars) // 2
@@ -175,12 +175,14 @@ def _compute_metrics(bars: list) -> dict:
     else:
         vol_trend = "normal"
 
-    # P0-3: key-level from moving averages + prior limit-up close
+    # P0-3: key-level from moving averages + prior session close
     ma5 = sum(closes[-5:]) / min(len(closes), 5)
     above_ma5 = last_close > ma5
-    prior_high = bars[-2]["close"] if len(bars) >= 2 else last_close
-    above_prior_close = last_close > prior_high
+    prior_session_close = bars[-2]["close"] if len(bars) >= 2 else last_close
+    above_prior_session_close = last_close > prior_session_close
     limit_up_flag = bars[-1].get("pct_chg", 0) and bars[-1]["pct_chg"] >= 9.9
+    # NOTE: "prior limit-up close" support level (from StrategyCard) requires
+    # scanning history for last 涨停日, not just prior session. Not implemented.
 
     if above_ma5 and limit_up_flag:
         key_state = "intact_limit_up"
@@ -203,9 +205,10 @@ def _compute_metrics(bars: list) -> dict:
             },
             "tests": {
                 "above_ma5": above_ma5,
-                "above_prior_close": above_prior_close,
+                "above_prior_session_close": above_prior_session_close,
                 "limit_up_flag": limit_up_flag,
             },
+            "_note": "prior_limit_up_close support level (StrategyCard) not yet implemented — scanning for last 涨停 close TBD.",
             "rule_version": "key-level.v1",
         },
     }
