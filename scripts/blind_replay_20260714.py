@@ -229,7 +229,12 @@ def run():
     jc_sha = _git_sha("/Users/admin/julia_core",
                        ["julia_core/reasoning/", "tests/runtime/test_independent_review.py"])
     at_sha = _git_sha("/Users/admin/Desktop/ai_theme_app",
-                       ["scripts/", "mcp_server/", "stock_processing_service/"])
+                       ["scripts/blind_replay_20260714.py",
+                        "stock_processing_service/application/services/analyst_workbench/market_context_exporter.py",
+                        "stock_processing_service/application/services/analyst_workbench/intelligence_exporter.py",
+                        "stock_processing_service/application/services/analyst_workbench/intelligence_contract.py",
+                        "mcp_server/tools/market_context.py",
+                        "mcp_server/tools/workbench_review.py"])
     print(f"Julia Core: {jc_sha}")
     print(f"ai_theme_app: {at_sha}")
     print(f"Taxonomy: stage-taxonomy.v1")
