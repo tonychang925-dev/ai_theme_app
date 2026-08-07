@@ -33,6 +33,15 @@ def _strength_dist(ctx: dict) -> dict:
     }
 
 
+def _with_exchange_suffix(code: str) -> str:
+    """Add exchange suffix for stock_data_test.stock_daily_snapshot.stock_id."""
+    if "." in code:
+        return code
+    if code.startswith(("6", "5")):
+        return f"{code}.SH"
+    return f"{code}.SZ"
+
+
 def _guard_as_of(as_of: str) -> dict | None:
     """Only SUPPORTED_AS_OF is available for historical replay.
     Future dates, previous dates → unavailable (never latest fallback).
@@ -53,12 +62,105 @@ def market_stock_history(stock_code: str, as_of: str, lookback_sessions: int = 5
         return {**guard, "tool": "market_stock_history",
                 "stock_code": stock_code, "as_of": as_of}
 
+    # Add exchange suffix for DB lookup
+    db_code = _with_exchange_suffix(stock_code)
+
+    try:
+        import asyncpg, asyncio
+
+        async def _fetch():
+            conn = await asyncpg.connect(
+                "postgresql://postgres:zxbzj~925@localhost/stock_data_test")
+            try:
+                from datetime import date as _date
+                rows = await conn.fetch("""
+                    SELECT trade_date, open_price, high_price, low_price,
+                           close_price, pre_close, volume, amount
+                    FROM stock_daily_snapshot
+                    WHERE stock_id = $1
+                    AND trade_date >= $2::date - ($3 || ' days')::interval
+                    AND trade_date <= $2::date
+                    ORDER BY trade_date
+                """, db_code, _date.fromisoformat(as_of), str(lookback_sessions + 5))
+                return rows
+            finally:
+                await conn.close()
+
+        rows = asyncio.run(_fetch())
+    except Exception as e:
+        return {
+            "status": "unavailable",
+            "tool": "market_stock_history",
+            "stock_code": stock_code, "as_of": as_of,
+            "reason": f"DB query failed: {type(e).__name__}: {e}",
+        }
+
+    if not rows:
+        return {
+            "status": "unavailable",
+            "tool": "market_stock_history",
+            "stock_code": stock_code, "as_of": as_of,
+            "reason": f"no data for {db_code} in lookback window",
+        }
+
+    # Build OHLCV bars
+    bars = [{
+        "trade_date": str(r["trade_date"]),
+        "open": float(r["open_price"]), "high": float(r["high_price"]),
+        "low": float(r["low_price"]), "close": float(r["close_price"]),
+        "pre_close": float(r["pre_close"]),
+        "volume": float(r["volume"]), "amount": float(r["amount"]),
+    } for r in rows]
+
+    # Derive metrics
+    closes = [b["close"] for b in bars]
+    highs = [b["high"] for b in bars]
+    first_close = closes[0]
+    last_close = closes[-1]
+    total_return = (last_close / first_close - 1) if first_close else 0
+
+    peak = max(highs)
+    dd_from_peak = (last_close / peak - 1) if peak else 0
+
+    # Volume trend: compare first half vs second half
+    mid = len(bars) // 2
+    vol_first = sum(b["volume"] for b in bars[:mid]) / max(mid, 1)
+    vol_second = sum(b["volume"] for b in bars[mid:]) / max(len(bars) - mid, 1)
+    if vol_second > vol_first * 1.3:
+        vol_trend = "elevated"
+    elif vol_second < vol_first * 0.7:
+        vol_trend = "contracting"
+    else:
+        vol_trend = "normal"
+
+    # Key level: is close near session high?
+    last_bar = bars[-1]
+    close_vs_high = last_bar["close"] / last_bar["high"] if last_bar["high"] else 1
+    if close_vs_high > 0.98:
+        key_level = "intact"
+    elif close_vs_high > 0.95:
+        key_level = "testing"
+    else:
+        key_level = "broken"
+
     return {
-        "status": "unavailable",
-        "tool": "market_stock_history",
-        "stock_code": stock_code, "as_of": as_of,
-        "reason": "stock daily kline not yet ingested for July 2026 dates",
-        "data_status": "pending_ingestion",
+        "status": "live",
+        "source_kind": "objective_stock_history",
+        "stock_code": stock_code,
+        "db_code": db_code,
+        "as_of": as_of,
+        "lookback_sessions": lookback_sessions,
+        "bar_count": len(bars),
+        "bars": bars,
+        "total_return": round(total_return, 4),
+        "max_drawdown_from_peak": round(dd_from_peak, 4),
+        "volume_trend": vol_trend,
+        "key_level_status": key_level,
+        "provenance": {
+            "source": "stock_data_test.stock_daily_snapshot",
+            "max_trade_date": str(rows[-1]["trade_date"]),
+            "future_rows_used": False,
+        },
     }
 
 
