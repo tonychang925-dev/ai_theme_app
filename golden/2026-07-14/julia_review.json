@@ -1,0 +1,2027 @@
+{
+  "trade_date": "2026-07-14",
+  "as_of": "2026-07-14T15:30:00+08:00",
+  "generated_at": "2026-08-07T09:14:06.158605+08:00",
+  "versions": {
+    "julia_core": "a96a1ab",
+    "taxonomy": "stage-taxonomy.v1",
+    "market_context_schema": "market-context.v1",
+    "workbench_review_schema": "analyst-workbench.review.v1"
+  },
+  "input_hash": "e654357bf0b30f0a1d20b16ac7068314e4bab98dd43d73e2bc96ff923e309184",
+  "status": "completed",
+  "verdict_distribution": {
+    "partially_agree": 46,
+    "insufficient_data": 78,
+    "partially_disagree": 6
+  },
+  "stage_distribution": {
+    "fading_momentum": 31,
+    "data_inconclusive": 76,
+    "start": 23
+  },
+  "agreement_ratio": 0.35384615384615387,
+  "overall_assessment": "reviewed 130 claims, 46 agree, 6 disagree, 78 insufficient",
+  "judgments": [
+    {
+      "subject": "9025631",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.5,
+      "supporting_evidence": [
+        "strength_strong"
+      ],
+      "contradicting_evidence": [
+        "leader_weak"
+      ],
+      "missing_evidence": [
+        "stages_close::fading_momentum=acceleration"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=1 missing=1"
+    },
+    {
+      "subject": "9064082",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion",
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9018216",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9013933",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "电力运营",
+      "verdict": "insufficient_data",
+      "julia_stage": "unknown",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "theme_fact_not_found"
+      ],
+      "inference_evidence": [],
+      "rationale": "no_market_facts_for_this_subject"
+    },
+    {
+      "subject": "9017645",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9034770",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "1",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9010270",
+      "verdict": "partially_disagree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.6,
+      "supporting_evidence": [
+        "strength_strong"
+      ],
+      "contradicting_evidence": [
+        "stages_diverged::fading_momentum=diffusion",
+        "leader_weak"
+      ],
+      "missing_evidence": [],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=2 missing=0"
+    },
+    {
+      "subject": "9012624",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9031968",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9049134",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9064619",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9050897",
+      "verdict": "partially_disagree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.6,
+      "supporting_evidence": [
+        "strength_strong"
+      ],
+      "contradicting_evidence": [
+        "stages_diverged::fading_momentum=diffusion",
+        "leader_weak"
+      ],
+      "missing_evidence": [],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=2 missing=0"
+    },
+    {
+      "subject": "9055879",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "卫星互联网",
+      "verdict": "insufficient_data",
+      "julia_stage": "unknown",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "theme_fact_not_found"
+      ],
+      "inference_evidence": [],
+      "rationale": "no_market_facts_for_this_subject"
+    },
+    {
+      "subject": "9038372",
+      "verdict": "partially_disagree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.6,
+      "supporting_evidence": [
+        "strength_strong"
+      ],
+      "contradicting_evidence": [
+        "stages_diverged::fading_momentum=diffusion",
+        "leader_weak"
+      ],
+      "missing_evidence": [],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=2 missing=0"
+    },
+    {
+      "subject": "9065256",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9060420",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9064086",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9064230",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence",
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9032516",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9058917",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence",
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9060403",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9058466",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9064422",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9065541",
+      "verdict": "partially_disagree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.6,
+      "supporting_evidence": [
+        "strength_strong"
+      ],
+      "contradicting_evidence": [
+        "stages_diverged::fading_momentum=diffusion",
+        "leader_weak"
+      ],
+      "missing_evidence": [],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=2 missing=0"
+    },
+    {
+      "subject": "9014001",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9021093",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9053147",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9064363",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9066512",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9036559",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9010168",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9010317",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9011277",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9012747",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "PCB印制电路板",
+      "verdict": "insufficient_data",
+      "julia_stage": "unknown",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "theme_fact_not_found"
+      ],
+      "inference_evidence": [],
+      "rationale": "no_market_facts_for_this_subject"
+    },
+    {
+      "subject": "9045920",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9058762",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion",
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9060591",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9063703",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9065757",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9057472",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9061633",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9054118",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9056553",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9016949",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9064110",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9064983",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9065632",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9055378",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=3"
+    },
+    {
+      "subject": "9064972",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9066807",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9037857",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9047508",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9062454",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9023134",
+      "verdict": "partially_disagree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.6,
+      "supporting_evidence": [
+        "strength_strong"
+      ],
+      "contradicting_evidence": [
+        "stages_diverged::fading_momentum=diffusion",
+        "leader_weak"
+      ],
+      "missing_evidence": [],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=2 missing=0"
+    },
+    {
+      "subject": "9024880",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9047087",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9048533",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9064573",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9067036",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9066005",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9027825",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9058346",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9021399",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9025765",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9038814",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9050315",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9060250",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9063491",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9056283",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9028660",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9034539",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9064072",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion",
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "磷化铟",
+      "verdict": "insufficient_data",
+      "julia_stage": "unknown",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "theme_fact_not_found"
+      ],
+      "inference_evidence": [],
+      "rationale": "no_market_facts_for_this_subject"
+    },
+    {
+      "subject": "9055746",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9022942",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9023919",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9027969",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9038599",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9050187",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9041968",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9059322",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9017116",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9023110",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9028541",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "电子元器件",
+      "verdict": "insufficient_data",
+      "julia_stage": "unknown",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "theme_fact_not_found"
+      ],
+      "inference_evidence": [],
+      "rationale": "no_market_facts_for_this_subject"
+    },
+    {
+      "subject": "9064170",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9028878",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=diffusion"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9012785",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9014270",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9030805",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9062339",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence",
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9027808",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9053538",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9066928",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9057022",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=3"
+    },
+    {
+      "subject": "9021735",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9064103",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9055600",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence",
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9064411",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9054580",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
+    },
+    {
+      "subject": "9039054",
+      "verdict": "insufficient_data",
+      "julia_stage": "data_inconclusive",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "julia_inconclusive::data_inconclusive=divergence"
+      ],
+      "inference_evidence": [],
+      "rationale": "cannot_form_independent_stage"
+    },
+    {
+      "subject": "9015778",
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=3"
+    },
+    {
+      "subject": "人形机器人",
+      "verdict": "partially_disagree",
+      "julia_stage": "start",
+      "confidence": 0.6,
+      "supporting_evidence": [],
+      "contradicting_evidence": [
+        "stages_diverged::start=divergence"
+      ],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=0 contradict=1 missing=3"
+    },
+    {
+      "subject": "英伟达Rubin液冷",
+      "verdict": "insufficient_data",
+      "julia_stage": "unknown",
+      "confidence": 0.25,
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "theme_fact_not_found"
+      ],
+      "inference_evidence": [],
+      "rationale": "no_market_facts_for_this_subject"
+    },
+    {
+      "subject": "MLCC电容",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "SpaceX",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "TGV玻璃基板封装",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "Token出海",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "Token工厂",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "化工-氟-电子级氢氟酸",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "光刻胶",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "电子布Low-DK",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "太空算力",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "存储芯片",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "电子特气",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "算电协同",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "电子特气-六氟化钨",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "长鑫存储IPO",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "人形机器人",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "半导体设备",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "宇树机器人",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "金刚石散热",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "卫星互联网-航天国家队",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "生成式物理AI",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "共封装光学CPO",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    },
+    {
+      "subject": "特斯拉机器人",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "strength_low"
+      ],
+      "rationale": "support=2 contradict=0 missing=3"
+    }
+  ]
+}

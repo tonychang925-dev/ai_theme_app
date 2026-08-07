@@ -1,0 +1,3263 @@
+{
+  "schema_version": "market-context.v1",
+  "provider": "ai_theme_app",
+  "trade_date": "2026-07-14",
+  "generated_at": "2026-08-07T09:14:06.153921+08:00",
+  "status": "live",
+  "themes": [
+    {
+      "subject": "9025631",
+      "subject_key": "9025631",
+      "raw_metrics": {
+        "mainline_strength_score": 0.996875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 19.152,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "acceleration"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9064082",
+      "subject_key": "9064082",
+      "raw_metrics": {
+        "mainline_strength_score": 0.814375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "9018216",
+      "subject_key": "9018216",
+      "raw_metrics": {
+        "mainline_strength_score": 0.810625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 3.5,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9013933",
+      "subject_key": "9013933",
+      "raw_metrics": {
+        "mainline_strength_score": 0.76375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 4.9,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "电力运营",
+      "subject_key": "9013416",
+      "raw_metrics": {
+        "mainline_strength_score": 0.7421875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 2.856,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9017645",
+      "subject_key": "9017645",
+      "raw_metrics": {
+        "mainline_strength_score": 0.716875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.812,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9034770",
+      "subject_key": "9034770",
+      "raw_metrics": {
+        "mainline_strength_score": 0.716875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.756,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "1",
+      "subject_key": "1",
+      "raw_metrics": {
+        "mainline_strength_score": 0.711875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 4.172,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9010270",
+      "subject_key": "9010270",
+      "raw_metrics": {
+        "mainline_strength_score": 0.709375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 15.904,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9012624",
+      "subject_key": "9012624",
+      "raw_metrics": {
+        "mainline_strength_score": 0.706875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9031968",
+      "subject_key": "9031968",
+      "raw_metrics": {
+        "mainline_strength_score": 0.701875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.784,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9049134",
+      "subject_key": "9049134",
+      "raw_metrics": {
+        "mainline_strength_score": 0.696875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 7.588,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9064619",
+      "subject_key": "9064619",
+      "raw_metrics": {
+        "mainline_strength_score": 0.696875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9050897",
+      "subject_key": "9050897",
+      "raw_metrics": {
+        "mainline_strength_score": 0.690625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 16.8,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9055879",
+      "subject_key": "9055879",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6865625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 14.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "卫星互联网",
+      "subject_key": "9019807",
+      "raw_metrics": {
+        "mainline_strength_score": 0.68375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 51.828,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9038372",
+      "subject_key": "9038372",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6765625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 16.408,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9065256",
+      "subject_key": "9065256",
+      "raw_metrics": {
+        "mainline_strength_score": 0.675625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 2.8,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9060420",
+      "subject_key": "9060420",
+      "raw_metrics": {
+        "mainline_strength_score": 0.670625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9064086",
+      "subject_key": "9064086",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6671875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.964,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9064230",
+      "subject_key": "9064230",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6671875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.068,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "9032516",
+      "subject_key": "9032516",
+      "raw_metrics": {
+        "mainline_strength_score": 0.665625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 17.78,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9058917",
+      "subject_key": "9058917",
+      "raw_metrics": {
+        "mainline_strength_score": 0.665625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 4.676,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "9060403",
+      "subject_key": "9060403",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6621875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.6,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9058466",
+      "subject_key": "9058466",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6571875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.18,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9064422",
+      "subject_key": "9064422",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6571875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 3.5,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9065541",
+      "subject_key": "9065541",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6521875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 15.4,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9014001",
+      "subject_key": "9014001",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6515625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 10.052,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9021093",
+      "subject_key": "9021093",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6515625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 7.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9053147",
+      "subject_key": "9053147",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6515625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 19.208,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9064363",
+      "subject_key": "9064363",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6515625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 23.856,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9066512",
+      "subject_key": "9066512",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6471875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 1.876,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9036559",
+      "subject_key": "9036559",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6465625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 14.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9010168",
+      "subject_key": "9010168",
+      "raw_metrics": {
+        "mainline_strength_score": 0.64375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 3.948,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9010317",
+      "subject_key": "9010317",
+      "raw_metrics": {
+        "mainline_strength_score": 0.64375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 40.628,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9011277",
+      "subject_key": "9011277",
+      "raw_metrics": {
+        "mainline_strength_score": 0.64375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 42.224,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9012747",
+      "subject_key": "9012747",
+      "raw_metrics": {
+        "mainline_strength_score": 0.64375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 32.396,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "PCB印制电路板",
+      "subject_key": "9018144",
+      "raw_metrics": {
+        "mainline_strength_score": 0.64375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 1.316,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "9045920",
+      "subject_key": "9045920",
+      "raw_metrics": {
+        "mainline_strength_score": 0.64375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.992,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9058762",
+      "subject_key": "9058762",
+      "raw_metrics": {
+        "mainline_strength_score": 0.64375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.728,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "9060591",
+      "subject_key": "9060591",
+      "raw_metrics": {
+        "mainline_strength_score": 0.64375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 21.504,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9063703",
+      "subject_key": "9063703",
+      "raw_metrics": {
+        "mainline_strength_score": 0.64375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 3.724,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9065757",
+      "subject_key": "9065757",
+      "raw_metrics": {
+        "mainline_strength_score": 0.64375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 7.476,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9057472",
+      "subject_key": "9057472",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6421875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 4.004,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9061633",
+      "subject_key": "9061633",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6421875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 2.24,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9054118",
+      "subject_key": "9054118",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6415625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 26.068,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9056553",
+      "subject_key": "9056553",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6415625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 2.8,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9016949",
+      "subject_key": "9016949",
+      "raw_metrics": {
+        "mainline_strength_score": 0.63875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 6.3,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9064110",
+      "subject_key": "9064110",
+      "raw_metrics": {
+        "mainline_strength_score": 0.63875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 3.36,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9064983",
+      "subject_key": "9064983",
+      "raw_metrics": {
+        "mainline_strength_score": 0.63875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9065632",
+      "subject_key": "9065632",
+      "raw_metrics": {
+        "mainline_strength_score": 0.63875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 7.532,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9055378",
+      "subject_key": "9055378",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6375625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 32.928,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "9064972",
+      "subject_key": "9064972",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6371875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 1.12,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9066807",
+      "subject_key": "9066807",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6371875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 1.4,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9037857",
+      "subject_key": "9037857",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6365625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 22.988,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9047508",
+      "subject_key": "9047508",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6365625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 8.904,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9062454",
+      "subject_key": "9062454",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6365625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 10.5,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9023134",
+      "subject_key": "9023134",
+      "raw_metrics": {
+        "mainline_strength_score": 0.63375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 16.548,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9024880",
+      "subject_key": "9024880",
+      "raw_metrics": {
+        "mainline_strength_score": 0.63375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 33.936,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9047087",
+      "subject_key": "9047087",
+      "raw_metrics": {
+        "mainline_strength_score": 0.63375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 29.176,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9048533",
+      "subject_key": "9048533",
+      "raw_metrics": {
+        "mainline_strength_score": 0.63375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 7.616,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9064573",
+      "subject_key": "9064573",
+      "raw_metrics": {
+        "mainline_strength_score": 0.63375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 41.244,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9067036",
+      "subject_key": "9067036",
+      "raw_metrics": {
+        "mainline_strength_score": 0.63375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.6,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9066005",
+      "subject_key": "9066005",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6331875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 4.144,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9027825",
+      "subject_key": "9027825",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6321875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.924,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9058346",
+      "subject_key": "9058346",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6315625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 28.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9021399",
+      "subject_key": "9021399",
+      "raw_metrics": {
+        "mainline_strength_score": 0.62875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 7.784,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9025765",
+      "subject_key": "9025765",
+      "raw_metrics": {
+        "mainline_strength_score": 0.62875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 19.096,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9038814",
+      "subject_key": "9038814",
+      "raw_metrics": {
+        "mainline_strength_score": 0.62875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9050315",
+      "subject_key": "9050315",
+      "raw_metrics": {
+        "mainline_strength_score": 0.62875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9060250",
+      "subject_key": "9060250",
+      "raw_metrics": {
+        "mainline_strength_score": 0.62875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 11.2,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9063491",
+      "subject_key": "9063491",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6265625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 8.176,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9056283",
+      "subject_key": "9056283",
+      "raw_metrics": {
+        "mainline_strength_score": 0.624375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9028660",
+      "subject_key": "9028660",
+      "raw_metrics": {
+        "mainline_strength_score": 0.62375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 24.612,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9034539",
+      "subject_key": "9034539",
+      "raw_metrics": {
+        "mainline_strength_score": 0.62375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 7.14,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9064072",
+      "subject_key": "9064072",
+      "raw_metrics": {
+        "mainline_strength_score": 0.62375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 1.932,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "磷化铟",
+      "subject_key": "9066740",
+      "raw_metrics": {
+        "mainline_strength_score": 0.62375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.6,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9055746",
+      "subject_key": "9055746",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6225625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.712,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9022942",
+      "subject_key": "9022942",
+      "raw_metrics": {
+        "mainline_strength_score": 0.61875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 8.512,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9023919",
+      "subject_key": "9023919",
+      "raw_metrics": {
+        "mainline_strength_score": 0.61875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.572,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9027969",
+      "subject_key": "9027969",
+      "raw_metrics": {
+        "mainline_strength_score": 0.61875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 34.16,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9038599",
+      "subject_key": "9038599",
+      "raw_metrics": {
+        "mainline_strength_score": 0.61875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 18.144,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9050187",
+      "subject_key": "9050187",
+      "raw_metrics": {
+        "mainline_strength_score": 0.61875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 6.076,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "moderate"
+        }
+      }
+    },
+    {
+      "subject": "9041968",
+      "subject_key": "9041968",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6165625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 11.2,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9059322",
+      "subject_key": "9059322",
+      "raw_metrics": {
+        "mainline_strength_score": 0.6165625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 4.676,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9017116",
+      "subject_key": "9017116",
+      "raw_metrics": {
+        "mainline_strength_score": 0.61375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.096,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9023110",
+      "subject_key": "9023110",
+      "raw_metrics": {
+        "mainline_strength_score": 0.61375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 9.324,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9028541",
+      "subject_key": "9028541",
+      "raw_metrics": {
+        "mainline_strength_score": 0.61375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 22.008,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "电子元器件",
+      "subject_key": "9032828",
+      "raw_metrics": {
+        "mainline_strength_score": 0.61375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 13.104,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9064170",
+      "subject_key": "9064170",
+      "raw_metrics": {
+        "mainline_strength_score": 0.61375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 1.344,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9028878",
+      "subject_key": "9028878",
+      "raw_metrics": {
+        "mainline_strength_score": 0.60975,
+        "confidence_score": 0.85,
+        "fade_risk_score": 0.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "fermentation"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9012785",
+      "subject_key": "9012785",
+      "raw_metrics": {
+        "mainline_strength_score": 0.60875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 20.496,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9014270",
+      "subject_key": "9014270",
+      "raw_metrics": {
+        "mainline_strength_score": 0.60875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.768,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9030805",
+      "subject_key": "9030805",
+      "raw_metrics": {
+        "mainline_strength_score": 0.60875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 7.7,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9062339",
+      "subject_key": "9062339",
+      "raw_metrics": {
+        "mainline_strength_score": 0.60875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 6.104,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "9027808",
+      "subject_key": "9027808",
+      "raw_metrics": {
+        "mainline_strength_score": 0.60375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 3.892,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9053538",
+      "subject_key": "9053538",
+      "raw_metrics": {
+        "mainline_strength_score": 0.60375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 4.144,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9066928",
+      "subject_key": "9066928",
+      "raw_metrics": {
+        "mainline_strength_score": 0.60375,
+        "confidence_score": 0.85,
+        "fade_risk_score": 10.584,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9057022",
+      "subject_key": "9057022",
+      "raw_metrics": {
+        "mainline_strength_score": 0.59975,
+        "confidence_score": 0.85,
+        "fade_risk_score": 19.6,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "9021735",
+      "subject_key": "9021735",
+      "raw_metrics": {
+        "mainline_strength_score": 0.59875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 4.928,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9064103",
+      "subject_key": "9064103",
+      "raw_metrics": {
+        "mainline_strength_score": 0.59875,
+        "confidence_score": 0.85,
+        "fade_risk_score": 3.724,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9055600",
+      "subject_key": "9055600",
+      "raw_metrics": {
+        "mainline_strength_score": 0.5975625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.6,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "9064411",
+      "subject_key": "9064411",
+      "raw_metrics": {
+        "mainline_strength_score": 0.59675,
+        "confidence_score": 0.85,
+        "fade_risk_score": 5.096,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9054580",
+      "subject_key": "9054580",
+      "raw_metrics": {
+        "mainline_strength_score": 0.5885625,
+        "confidence_score": 0.85,
+        "fade_risk_score": 25.844,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9039054",
+      "subject_key": "9039054",
+      "raw_metrics": {
+        "mainline_strength_score": 0.58675,
+        "confidence_score": 0.85,
+        "fade_risk_score": 4.368,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "mixed"
+        },
+        "leader_health": {
+          "value": "strong"
+        },
+        "strong_stock_coverage": {
+          "value": "narrow"
+        }
+      }
+    },
+    {
+      "subject": "9015778",
+      "subject_key": "9015778",
+      "raw_metrics": {
+        "mainline_strength_score": 0.558125,
+        "confidence_score": 0.85,
+        "fade_risk_score": 23.576,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "人形机器人",
+      "subject_key": "9014636",
+      "raw_metrics": {
+        "mainline_strength_score": 0.5005,
+        "confidence_score": 0.85,
+        "fade_risk_score": 39.452,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "divergence"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "weakening"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "英伟达Rubin液冷",
+      "subject_key": "9068866",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "MLCC电容",
+      "subject_key": "MLCC电容",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "SpaceX",
+      "subject_key": "SpaceX",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "TGV玻璃基板封装",
+      "subject_key": "TGV玻璃基板封装",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "Token出海",
+      "subject_key": "Token出海",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "Token工厂",
+      "subject_key": "Token工厂",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "化工-氟-电子级氢氟酸",
+      "subject_key": "化工-氟-电子级氢氟酸",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "光刻胶",
+      "subject_key": "光刻胶",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "电子布Low-DK",
+      "subject_key": "电子布Low-DK",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "太空算力",
+      "subject_key": "太空算力",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "存储芯片",
+      "subject_key": "存储芯片",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "电子特气",
+      "subject_key": "电子特气",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "算电协同",
+      "subject_key": "算电协同",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "电子特气-六氟化钨",
+      "subject_key": "电子特气-六氟化钨",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "长鑫存储IPO",
+      "subject_key": "长鑫存储IPO",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "人形机器人",
+      "subject_key": "人形机器人",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "半导体设备",
+      "subject_key": "半导体设备",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "宇树机器人",
+      "subject_key": "宇树机器人",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "金刚石散热",
+      "subject_key": "金刚石散热",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "卫星互联网-航天国家队",
+      "subject_key": "卫星互联网-航天国家队",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "生成式物理AI",
+      "subject_key": "生成式物理AI",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "共封装光学CPO",
+      "subject_key": "共封装光学CPO",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    },
+    {
+      "subject": "特斯拉机器人",
+      "subject_key": "特斯拉机器人",
+      "raw_metrics": {
+        "mainline_strength_score": 0.0,
+        "confidence_score": 0.85,
+        "fade_risk_score": 46.0,
+        "divergence_score": 0.0,
+        "repair_score": 0.0
+      },
+      "derived_signals": {
+        "stage_signal": {
+          "value": "start"
+        },
+        "capital_direction": {
+          "value": "unknown"
+        },
+        "leader_health": {
+          "value": "unknown"
+        },
+        "strong_stock_coverage": {
+          "value": "unknown"
+        }
+      }
+    }
+  ],
+  "quality": {
+    "coverage": 0.9,
+    "source_quality": 1.0
+  }
+}

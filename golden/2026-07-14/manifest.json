@@ -1,0 +1,17 @@
+{
+  "case": "001",
+  "trade_date": "2026-07-14",
+  "created_at": "2026-08-07T09:14:06.164580+08:00",
+  "files": {
+    "market_context": "market_context.json",
+    "workbench_review": "workbench_review.json",
+    "julia_review": "julia_review.json"
+  },
+  "hashes": {
+    "market_context": "e114151ed76bbf0412aec24193b65c327b2a085a2539727c0443d99c2126bcf8",
+    "workbench_review": "072a6961eb752293e2287d3aa55e0aac50c9488446ee6c7951ce4e59d024a35c",
+    "julia_review": "6ae9fd72273c8c675d7bfd64f0d4cf161af722eed4538fe2da64a8c757edb93a"
+  },
+  "no_future_data": true,
+  "workbench_snapshot_hash": "e654357bf0b30f0a1d20b16ac7068314e4bab98dd43d73e2bc96ff923e309184"
+}

@@ -1,0 +1,1969 @@
+{
+  "schema_version": "analyst-workbench.review.v1",
+  "provider": "ai_theme_app",
+  "trade_date": "2026-07-14",
+  "generated_at": "2026-08-07T09:14:06.154281+08:00",
+  "opinion_mode": "analyst_approved",
+  "claims": [
+    {
+      "claim_id": "claim_0714_9025631",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9025631",
+        "subject_key": "9025631"
+      },
+      "stage_judgement": "acceleration",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064082",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064082",
+        "subject_key": "9064082"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9018216",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9018216",
+        "subject_key": "9018216"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9013933",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9013933",
+        "subject_key": "9013933"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9013416",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "电力运营",
+        "subject_key": "9013416"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9017645",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9017645",
+        "subject_key": "9017645"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9034770",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9034770",
+        "subject_key": "9034770"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_1",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "1",
+        "subject_key": "1"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9010270",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9010270",
+        "subject_key": "9010270"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9012624",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9012624",
+        "subject_key": "9012624"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9031968",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9031968",
+        "subject_key": "9031968"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9049134",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9049134",
+        "subject_key": "9049134"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064619",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064619",
+        "subject_key": "9064619"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9050897",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9050897",
+        "subject_key": "9050897"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9055879",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9055879",
+        "subject_key": "9055879"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9019807",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "卫星互联网",
+        "subject_key": "9019807"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9038372",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9038372",
+        "subject_key": "9038372"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9065256",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9065256",
+        "subject_key": "9065256"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9060420",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9060420",
+        "subject_key": "9060420"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064086",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064086",
+        "subject_key": "9064086"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064230",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064230",
+        "subject_key": "9064230"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9032516",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9032516",
+        "subject_key": "9032516"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9058917",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9058917",
+        "subject_key": "9058917"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9060403",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9060403",
+        "subject_key": "9060403"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9058466",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9058466",
+        "subject_key": "9058466"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064422",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064422",
+        "subject_key": "9064422"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9065541",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9065541",
+        "subject_key": "9065541"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9014001",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9014001",
+        "subject_key": "9014001"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9021093",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9021093",
+        "subject_key": "9021093"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9053147",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9053147",
+        "subject_key": "9053147"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064363",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064363",
+        "subject_key": "9064363"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9066512",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9066512",
+        "subject_key": "9066512"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9036559",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9036559",
+        "subject_key": "9036559"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9010168",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9010168",
+        "subject_key": "9010168"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9010317",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9010317",
+        "subject_key": "9010317"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9011277",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9011277",
+        "subject_key": "9011277"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9012747",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9012747",
+        "subject_key": "9012747"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9018144",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "PCB印制电路板",
+        "subject_key": "9018144"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9045920",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9045920",
+        "subject_key": "9045920"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9058762",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9058762",
+        "subject_key": "9058762"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9060591",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9060591",
+        "subject_key": "9060591"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9063703",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9063703",
+        "subject_key": "9063703"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9065757",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9065757",
+        "subject_key": "9065757"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9057472",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9057472",
+        "subject_key": "9057472"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9061633",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9061633",
+        "subject_key": "9061633"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9054118",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9054118",
+        "subject_key": "9054118"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9056553",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9056553",
+        "subject_key": "9056553"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9016949",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9016949",
+        "subject_key": "9016949"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064110",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064110",
+        "subject_key": "9064110"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064983",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064983",
+        "subject_key": "9064983"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9065632",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9065632",
+        "subject_key": "9065632"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9055378",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9055378",
+        "subject_key": "9055378"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064972",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064972",
+        "subject_key": "9064972"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9066807",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9066807",
+        "subject_key": "9066807"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9037857",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9037857",
+        "subject_key": "9037857"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9047508",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9047508",
+        "subject_key": "9047508"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9062454",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9062454",
+        "subject_key": "9062454"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9023134",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9023134",
+        "subject_key": "9023134"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9024880",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9024880",
+        "subject_key": "9024880"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9047087",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9047087",
+        "subject_key": "9047087"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9048533",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9048533",
+        "subject_key": "9048533"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064573",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064573",
+        "subject_key": "9064573"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9067036",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9067036",
+        "subject_key": "9067036"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9066005",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9066005",
+        "subject_key": "9066005"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9027825",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9027825",
+        "subject_key": "9027825"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9058346",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9058346",
+        "subject_key": "9058346"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9021399",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9021399",
+        "subject_key": "9021399"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9025765",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9025765",
+        "subject_key": "9025765"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9038814",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9038814",
+        "subject_key": "9038814"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9050315",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9050315",
+        "subject_key": "9050315"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9060250",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9060250",
+        "subject_key": "9060250"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9063491",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9063491",
+        "subject_key": "9063491"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9056283",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9056283",
+        "subject_key": "9056283"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9028660",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9028660",
+        "subject_key": "9028660"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9034539",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9034539",
+        "subject_key": "9034539"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064072",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064072",
+        "subject_key": "9064072"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9066740",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "磷化铟",
+        "subject_key": "9066740"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9055746",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9055746",
+        "subject_key": "9055746"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9022942",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9022942",
+        "subject_key": "9022942"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9023919",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9023919",
+        "subject_key": "9023919"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9027969",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9027969",
+        "subject_key": "9027969"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9038599",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9038599",
+        "subject_key": "9038599"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9050187",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9050187",
+        "subject_key": "9050187"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9041968",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9041968",
+        "subject_key": "9041968"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9059322",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9059322",
+        "subject_key": "9059322"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9017116",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9017116",
+        "subject_key": "9017116"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9023110",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9023110",
+        "subject_key": "9023110"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9028541",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9028541",
+        "subject_key": "9028541"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9032828",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "电子元器件",
+        "subject_key": "9032828"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064170",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064170",
+        "subject_key": "9064170"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9028878",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9028878",
+        "subject_key": "9028878"
+      },
+      "stage_judgement": "diffusion",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9012785",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9012785",
+        "subject_key": "9012785"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9014270",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9014270",
+        "subject_key": "9014270"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9030805",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9030805",
+        "subject_key": "9030805"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9062339",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9062339",
+        "subject_key": "9062339"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9027808",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9027808",
+        "subject_key": "9027808"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9053538",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9053538",
+        "subject_key": "9053538"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9066928",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9066928",
+        "subject_key": "9066928"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9057022",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9057022",
+        "subject_key": "9057022"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9021735",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9021735",
+        "subject_key": "9021735"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064103",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064103",
+        "subject_key": "9064103"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9055600",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9055600",
+        "subject_key": "9055600"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9064411",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9064411",
+        "subject_key": "9064411"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9054580",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9054580",
+        "subject_key": "9054580"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9039054",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9039054",
+        "subject_key": "9039054"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9015778",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "9015778",
+        "subject_key": "9015778"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9014636",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "人形机器人",
+        "subject_key": "9014636"
+      },
+      "stage_judgement": "divergence",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_9068866",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "英伟达Rubin液冷",
+        "subject_key": "9068866"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_MLCC电容",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "MLCC电容",
+        "subject_key": "MLCC电容"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_SpaceX",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "SpaceX",
+        "subject_key": "SpaceX"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_TGV玻璃基板封装",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "TGV玻璃基板封装",
+        "subject_key": "TGV玻璃基板封装"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_Token出海",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "Token出海",
+        "subject_key": "Token出海"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_Token工厂",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "Token工厂",
+        "subject_key": "Token工厂"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_化工-氟-电子级氢氟酸",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "化工-氟-电子级氢氟酸",
+        "subject_key": "化工-氟-电子级氢氟酸"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_光刻胶",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "光刻胶",
+        "subject_key": "光刻胶"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_电子布Low-DK",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "电子布Low-DK",
+        "subject_key": "电子布Low-DK"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_太空算力",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "太空算力",
+        "subject_key": "太空算力"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_存储芯片",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "存储芯片",
+        "subject_key": "存储芯片"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_电子特气",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "电子特气",
+        "subject_key": "电子特气"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_算电协同",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "算电协同",
+        "subject_key": "算电协同"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_电子特气-六氟化钨",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "电子特气-六氟化钨",
+        "subject_key": "电子特气-六氟化钨"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_长鑫存储IPO",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "长鑫存储IPO",
+        "subject_key": "长鑫存储IPO"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_人形机器人",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "人形机器人",
+        "subject_key": "人形机器人"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_半导体设备",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "半导体设备",
+        "subject_key": "半导体设备"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_宇树机器人",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "宇树机器人",
+        "subject_key": "宇树机器人"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_金刚石散热",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "金刚石散热",
+        "subject_key": "金刚石散热"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_卫星互联网-航天国家队",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "卫星互联网-航天国家队",
+        "subject_key": "卫星互联网-航天国家队"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_生成式物理AI",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "生成式物理AI",
+        "subject_key": "生成式物理AI"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_共封装光学CPO",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "共封装光学CPO",
+        "subject_key": "共封装光学CPO"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    },
+    {
+      "claim_id": "claim_0714_特斯拉机器人",
+      "claim_type": "theme_stage",
+      "subject": {
+        "type": "theme",
+        "name": "特斯拉机器人",
+        "subject_key": "特斯拉机器人"
+      },
+      "stage_judgement": "start",
+      "confidence": 0.7,
+      "attention_level": "MEDIUM",
+      "analyst_reviewed": true,
+      "analyst_override": false,
+      "evidence_refs": []
+    }
+  ],
+  "approval": {
+    "snapshot_version": 3,
+    "snapshot_hash": "e654357bf0b30f0a1d20b16ac7068314e4bab98dd43d73e2bc96ff923e309184",
+    "approved_at": "2026-07-15T12:52:21.308684+00:00",
+    "approved_by": "analyst"
+  },
+  "quality": {
+    "source_quality": 0.9,
+    "claim_count": 130
+  }
+}
