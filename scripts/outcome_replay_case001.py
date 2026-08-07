@@ -28,10 +28,14 @@ TRADE_DATES = {
 def run():
     OUTCOMES.mkdir(parents=True, exist_ok=True)
 
-    # O1: verify baseline manifest
+    # O1: verify ALL four baseline hashes (not just julia_review)
     manifest = json.loads((GOLDEN / "manifest.json").read_text(encoding="utf-8"))
-    assert manifest["hashes"]["julia_review"] == _sha256(GOLDEN / "julia_review.json"), "O1 FAIL: julia_review hash mismatch"
-    print(f"✅ O1: baseline manifest SHA verified")
+    for name in ("market_context", "workbench_review", "julia_review"):
+        expected = manifest["hashes"][name]
+        actual = _sha256(GOLDEN / f"{name}.json")
+        assert expected == actual, f"O1 FAIL: {name} hash mismatch. expected={expected[:16]}... actual={actual[:16]}..."
+    manifest_hash = _sha256(GOLDEN / "manifest.json")
+    print(f"✅ O1: all 4 baseline hashes verified")
 
     # Load frozen data
     ctx = json.loads((GOLDEN / "market_context.json").read_text(encoding="utf-8"))
@@ -140,7 +144,8 @@ def run():
         "agreement_keys": agreements,
         "subjects": {
             sk: {
-                "constituent_count": card_index.get(sk, {}).get("constituent_count", 0),
+                "constituent_codes": card_index.get(sk, {}).get("constituents", []),
+                "constituent_count": len(card_index.get(sk, {}).get("constituents", [])),
                 "leader_codes": card_index.get(sk, {}).get("leaders", []),
                 "state_7_14": card_index.get(sk, {}).get("state", "unknown"),
                 "julia_stage": juds[sk]["julia_stage"],

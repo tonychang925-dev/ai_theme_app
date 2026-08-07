@@ -154,6 +154,9 @@
   ],
   "subjects": {
     "9025631": {
+      "constituent_codes": [
+        "688192"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "688192"
@@ -164,6 +167,7 @@
       "verdict": "partially_agree"
     },
     "9064082": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "fermentation",
@@ -172,6 +176,10 @@
       "verdict": "insufficient_data"
     },
     "9018216": {
+      "constituent_codes": [
+        "300164",
+        "300157"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "300164"
@@ -182,6 +190,11 @@
       "verdict": "insufficient_data"
     },
     "9013933": {
+      "constituent_codes": [
+        "300489",
+        "688498",
+        "301205"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "300489"
@@ -192,6 +205,10 @@
       "verdict": "insufficient_data"
     },
     "9013416": {
+      "constituent_codes": [
+        "301127",
+        "605028"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "301127"
@@ -202,6 +219,11 @@
       "verdict": "insufficient_data"
     },
     "9017645": {
+      "constituent_codes": [
+        "300937",
+        "301584",
+        "301408"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "300937"
@@ -212,6 +234,11 @@
       "verdict": "insufficient_data"
     },
     "9034770": {
+      "constituent_codes": [
+        "300937",
+        "000078",
+        "002162"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "300937"
@@ -222,6 +249,10 @@
       "verdict": "insufficient_data"
     },
     "1": {
+      "constituent_codes": [
+        "603367",
+        "600664"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "603367"
@@ -232,6 +263,11 @@
       "verdict": "insufficient_data"
     },
     "9010270": {
+      "constituent_codes": [
+        "601969",
+        "600497",
+        "002532"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "601969"
@@ -242,6 +278,11 @@
       "verdict": "partially_disagree"
     },
     "9012624": {
+      "constituent_codes": [
+        "600403",
+        "601101",
+        "002128"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "600403"
@@ -252,6 +293,11 @@
       "verdict": "insufficient_data"
     },
     "9031968": {
+      "constituent_codes": [
+        "002162",
+        "600227",
+        "603222"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "002162"
@@ -262,6 +308,10 @@
       "verdict": "insufficient_data"
     },
     "9049134": {
+      "constituent_codes": [
+        "603367",
+        "603222"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "603367"
@@ -272,6 +322,11 @@
       "verdict": "insufficient_data"
     },
     "9064619": {
+      "constituent_codes": [
+        "301100",
+        "603255",
+        "603065"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "301100"
@@ -282,6 +337,11 @@
       "verdict": "insufficient_data"
     },
     "9050897": {
+      "constituent_codes": [
+        "300483",
+        "000554",
+        "600759"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "300483"
@@ -292,6 +352,9 @@
       "verdict": "partially_disagree"
     },
     "9055879": {
+      "constituent_codes": [
+        "688309"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "688309"
@@ -302,6 +365,11 @@
       "verdict": "insufficient_data"
     },
     "9019807": {
+      "constituent_codes": [
+        "688048",
+        "605196",
+        "002484"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "688048"
@@ -312,6 +380,9 @@
       "verdict": "partially_agree"
     },
     "9038372": {
+      "constituent_codes": [
+        "603077"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "603077"
@@ -322,6 +393,11 @@
       "verdict": "partially_disagree"
     },
     "9065256": {
+      "constituent_codes": [
+        "688048",
+        "688498",
+        "300502"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "688048"
@@ -332,6 +408,10 @@
       "verdict": "insufficient_data"
     },
     "9060420": {
+      "constituent_codes": [
+        "301205",
+        "300502"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "301205"
@@ -342,6 +422,10 @@
       "verdict": "insufficient_data"
     },
     "9064086": {
+      "constituent_codes": [
+        "300164",
+        "300157"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "300164"
@@ -352,6 +436,7 @@
       "verdict": "insufficient_data"
     },
     "9064230": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "divergence",
@@ -360,6 +445,10 @@
       "verdict": "insufficient_data"
     },
     "9032516": {
+      "constituent_codes": [
+        "000554",
+        "600497"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "000554"
@@ -370,6 +459,7 @@
       "verdict": "partially_agree"
     },
     "9058917": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "divergence",
@@ -378,6 +468,10 @@
       "verdict": "insufficient_data"
     },
     "9060403": {
+      "constituent_codes": [
+        "301259",
+        "300502"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "301259"
@@ -388,6 +482,10 @@
       "verdict": "insufficient_data"
     },
     "9058466": {
+      "constituent_codes": [
+        "300164",
+        "300157"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "300164"
@@ -398,6 +496,11 @@
       "verdict": "insufficient_data"
     },
     "9064422": {
+      "constituent_codes": [
+        "300164",
+        "601969",
+        "603619"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "300164"
@@ -408,6 +511,11 @@
       "verdict": "insufficient_data"
     },
     "9065541": {
+      "constituent_codes": [
+        "603077",
+        "600497",
+        "600227"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "603077"
@@ -418,6 +526,11 @@
       "verdict": "partially_disagree"
     },
     "9014001": {
+      "constituent_codes": [
+        "688048",
+        "688498",
+        "301205"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "688048"
@@ -428,6 +541,10 @@
       "verdict": "insufficient_data"
     },
     "9021093": {
+      "constituent_codes": [
+        "300209",
+        "301125"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "300209"
@@ -438,6 +555,9 @@
       "verdict": "insufficient_data"
     },
     "9053147": {
+      "constituent_codes": [
+        "300502"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "300502"
@@ -448,6 +568,9 @@
       "verdict": "partially_agree"
     },
     "9064363": {
+      "constituent_codes": [
+        "002838"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "002838"
@@ -458,6 +581,9 @@
       "verdict": "partially_agree"
     },
     "9066512": {
+      "constituent_codes": [
+        "688498"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "688498"
@@ -468,6 +594,11 @@
       "verdict": "insufficient_data"
     },
     "9036559": {
+      "constituent_codes": [
+        "301259",
+        "300502",
+        "605255"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "301259"
@@ -478,6 +609,11 @@
       "verdict": "insufficient_data"
     },
     "9010168": {
+      "constituent_codes": [
+        "688388",
+        "301217",
+        "301511"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "688388"
@@ -488,6 +624,11 @@
       "verdict": "insufficient_data"
     },
     "9010317": {
+      "constituent_codes": [
+        "301100",
+        "300107",
+        "600844"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "301100"
@@ -498,6 +639,10 @@
       "verdict": "partially_agree"
     },
     "9011277": {
+      "constituent_codes": [
+        "688048",
+        "688498"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "688048"
@@ -508,6 +653,11 @@
       "verdict": "partially_agree"
     },
     "9012747": {
+      "constituent_codes": [
+        "688388",
+        "301217",
+        "301511"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "688388"
@@ -518,6 +668,7 @@
       "verdict": "partially_agree"
     },
     "9018144": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "fermentation",
@@ -526,6 +677,10 @@
       "verdict": "insufficient_data"
     },
     "9045920": {
+      "constituent_codes": [
+        "603989",
+        "603580"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "603989"
@@ -536,6 +691,7 @@
       "verdict": "insufficient_data"
     },
     "9058762": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "fermentation",
@@ -544,6 +700,10 @@
       "verdict": "insufficient_data"
     },
     "9060591": {
+      "constituent_codes": [
+        "301176",
+        "301217"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "301176"
@@ -554,6 +714,9 @@
       "verdict": "partially_agree"
     },
     "9063703": {
+      "constituent_codes": [
+        "301176"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "301176"
@@ -564,6 +727,11 @@
       "verdict": "insufficient_data"
     },
     "9065757": {
+      "constituent_codes": [
+        "688388",
+        "603077",
+        "301511"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "688388"
@@ -574,6 +742,9 @@
       "verdict": "insufficient_data"
     },
     "9057472": {
+      "constituent_codes": [
+        "300502"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "300502"
@@ -584,6 +755,11 @@
       "verdict": "insufficient_data"
     },
     "9061633": {
+      "constituent_codes": [
+        "000677",
+        "000703",
+        "000759"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "000677"
@@ -594,6 +770,10 @@
       "verdict": "insufficient_data"
     },
     "9054118": {
+      "constituent_codes": [
+        "301205",
+        "300502"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "301205"
@@ -604,6 +784,9 @@
       "verdict": "partially_agree"
     },
     "9056553": {
+      "constituent_codes": [
+        "300502"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "300502"
@@ -614,6 +797,10 @@
       "verdict": "insufficient_data"
     },
     "9016949": {
+      "constituent_codes": [
+        "301125",
+        "002162"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "301125"
@@ -624,6 +811,9 @@
       "verdict": "insufficient_data"
     },
     "9064110": {
+      "constituent_codes": [
+        "301377"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "301377"
@@ -634,6 +824,9 @@
       "verdict": "insufficient_data"
     },
     "9064983": {
+      "constituent_codes": [
+        "301217"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "301217"
@@ -644,6 +837,9 @@
       "verdict": "insufficient_data"
     },
     "9065632": {
+      "constituent_codes": [
+        "688069"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "688069"
@@ -654,6 +850,7 @@
       "verdict": "insufficient_data"
     },
     "9055378": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "divergence",
@@ -662,6 +859,10 @@
       "verdict": "partially_agree"
     },
     "9064972": {
+      "constituent_codes": [
+        "600844",
+        "000703"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "600844"
@@ -672,6 +873,10 @@
       "verdict": "insufficient_data"
     },
     "9066807": {
+      "constituent_codes": [
+        "688498",
+        "300502"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "688498"
@@ -682,6 +887,11 @@
       "verdict": "insufficient_data"
     },
     "9037857": {
+      "constituent_codes": [
+        "002245",
+        "600255",
+        "300502"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "002245"
@@ -692,6 +902,10 @@
       "verdict": "partially_agree"
     },
     "9047508": {
+      "constituent_codes": [
+        "301205",
+        "002463"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "301205"
@@ -702,6 +916,9 @@
       "verdict": "insufficient_data"
     },
     "9062454": {
+      "constituent_codes": [
+        "301217"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "301217"
@@ -712,6 +929,11 @@
       "verdict": "insufficient_data"
     },
     "9023134": {
+      "constituent_codes": [
+        "603989",
+        "002379",
+        "002484"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "603989"
@@ -722,6 +944,11 @@
       "verdict": "partially_disagree"
     },
     "9024880": {
+      "constituent_codes": [
+        "300990",
+        "002536",
+        "002975"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "300990"
@@ -732,6 +959,10 @@
       "verdict": "partially_agree"
     },
     "9047087": {
+      "constituent_codes": [
+        "688048",
+        "688498"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "688048"
@@ -742,6 +973,11 @@
       "verdict": "partially_agree"
     },
     "9048533": {
+      "constituent_codes": [
+        "301205",
+        "300502",
+        "002384"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "301205"
@@ -752,6 +988,11 @@
       "verdict": "insufficient_data"
     },
     "9064573": {
+      "constituent_codes": [
+        "301259",
+        "688069",
+        "300502"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "301259"
@@ -762,6 +1003,10 @@
       "verdict": "partially_agree"
     },
     "9067036": {
+      "constituent_codes": [
+        "301217",
+        "301511"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "301217"
@@ -772,6 +1017,10 @@
       "verdict": "insufficient_data"
     },
     "9066005": {
+      "constituent_codes": [
+        "600844",
+        "002128"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "600844"
@@ -782,6 +1031,10 @@
       "verdict": "insufficient_data"
     },
     "9027825": {
+      "constituent_codes": [
+        "000677",
+        "000703"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "000677"
@@ -792,6 +1045,10 @@
       "verdict": "insufficient_data"
     },
     "9058346": {
+      "constituent_codes": [
+        "603042",
+        "300502"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "603042"
@@ -802,6 +1059,11 @@
       "verdict": "partially_agree"
     },
     "9021399": {
+      "constituent_codes": [
+        "301099",
+        "600183",
+        "603186"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "301099"
@@ -812,6 +1074,11 @@
       "verdict": "insufficient_data"
     },
     "9025765": {
+      "constituent_codes": [
+        "603042",
+        "600255",
+        "300502"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "603042"
@@ -822,6 +1089,11 @@
       "verdict": "partially_agree"
     },
     "9038814": {
+      "constituent_codes": [
+        "603989",
+        "002484",
+        "000636"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "603989"
@@ -832,6 +1104,10 @@
       "verdict": "insufficient_data"
     },
     "9050315": {
+      "constituent_codes": [
+        "600293",
+        "002636"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "600293"
@@ -842,6 +1118,9 @@
       "verdict": "insufficient_data"
     },
     "9060250": {
+      "constituent_codes": [
+        "603042"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "603042"
@@ -852,6 +1131,10 @@
       "verdict": "insufficient_data"
     },
     "9063491": {
+      "constituent_codes": [
+        "688183",
+        "300502"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "688183"
@@ -862,6 +1145,9 @@
       "verdict": "insufficient_data"
     },
     "9056283": {
+      "constituent_codes": [
+        "600497"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "600497"
@@ -872,6 +1158,10 @@
       "verdict": "insufficient_data"
     },
     "9028660": {
+      "constituent_codes": [
+        "688048",
+        "688498"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "688048"
@@ -882,6 +1172,11 @@
       "verdict": "partially_agree"
     },
     "9034539": {
+      "constituent_codes": [
+        "002838",
+        "605133",
+        "301099"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "002838"
@@ -892,6 +1187,7 @@
       "verdict": "insufficient_data"
     },
     "9064072": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "fermentation",
@@ -900,6 +1196,10 @@
       "verdict": "insufficient_data"
     },
     "9066740": {
+      "constituent_codes": [
+        "688498",
+        "603065"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "688498"
@@ -910,6 +1210,11 @@
       "verdict": "insufficient_data"
     },
     "9055746": {
+      "constituent_codes": [
+        "000008",
+        "002628",
+        "688257"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "000008"
@@ -920,6 +1225,10 @@
       "verdict": "insufficient_data"
     },
     "9022942": {
+      "constituent_codes": [
+        "300566",
+        "603466"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "300566"
@@ -930,6 +1239,11 @@
       "verdict": "insufficient_data"
     },
     "9023919": {
+      "constituent_codes": [
+        "301259",
+        "688069",
+        "301127"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "301259"
@@ -940,6 +1254,10 @@
       "verdict": "insufficient_data"
     },
     "9027969": {
+      "constituent_codes": [
+        "003001",
+        "688257"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "003001"
@@ -950,6 +1268,11 @@
       "verdict": "partially_agree"
     },
     "9038599": {
+      "constituent_codes": [
+        "002245",
+        "002536",
+        "002484"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "002245"
@@ -960,6 +1283,11 @@
       "verdict": "partially_agree"
     },
     "9050187": {
+      "constituent_codes": [
+        "688183",
+        "300502",
+        "002463"
+      ],
       "constituent_count": 3,
       "leader_codes": [
         "688183"
@@ -970,6 +1298,10 @@
       "verdict": "insufficient_data"
     },
     "9041968": {
+      "constituent_codes": [
+        "600255",
+        "603516"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "600255"
@@ -980,6 +1312,9 @@
       "verdict": "insufficient_data"
     },
     "9059322": {
+      "constituent_codes": [
+        "002162"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "002162"
@@ -990,6 +1325,10 @@
       "verdict": "insufficient_data"
     },
     "9017116": {
+      "constituent_codes": [
+        "600595",
+        "600497"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "600595"
@@ -1000,6 +1339,10 @@
       "verdict": "insufficient_data"
     },
     "9023110": {
+      "constituent_codes": [
+        "000636",
+        "002384"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "000636"
@@ -1010,6 +1353,10 @@
       "verdict": "insufficient_data"
     },
     "9028541": {
+      "constituent_codes": [
+        "002384",
+        "002975"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "002384"
@@ -1020,6 +1367,10 @@
       "verdict": "partially_agree"
     },
     "9032828": {
+      "constituent_codes": [
+        "301099",
+        "000636"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "301099"
@@ -1030,6 +1381,9 @@
       "verdict": "insufficient_data"
     },
     "9064170": {
+      "constituent_codes": [
+        "600497"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "600497"
@@ -1040,6 +1394,10 @@
       "verdict": "insufficient_data"
     },
     "9028878": {
+      "constituent_codes": [
+        "300283",
+        "000636"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "300283"
@@ -1050,6 +1408,10 @@
       "verdict": "insufficient_data"
     },
     "9012785": {
+      "constituent_codes": [
+        "603577",
+        "001388"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "603577"
@@ -1060,6 +1422,10 @@
       "verdict": "partially_agree"
     },
     "9014270": {
+      "constituent_codes": [
+        "603201",
+        "002463"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "603201"
@@ -1070,6 +1436,10 @@
       "verdict": "insufficient_data"
     },
     "9030805": {
+      "constituent_codes": [
+        "603466",
+        "301511"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "603466"
@@ -1080,6 +1450,7 @@
       "verdict": "insufficient_data"
     },
     "9062339": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "divergence",
@@ -1088,6 +1459,10 @@
       "verdict": "insufficient_data"
     },
     "9027808": {
+      "constituent_codes": [
+        "605196",
+        "603577"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "605196"
@@ -1098,6 +1473,10 @@
       "verdict": "insufficient_data"
     },
     "9053538": {
+      "constituent_codes": [
+        "605196",
+        "603577"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "605196"
@@ -1108,6 +1487,9 @@
       "verdict": "insufficient_data"
     },
     "9066928": {
+      "constituent_codes": [
+        "300502"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "300502"
@@ -1118,6 +1500,7 @@
       "verdict": "insufficient_data"
     },
     "9057022": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "divergence",
@@ -1126,6 +1509,9 @@
       "verdict": "partially_agree"
     },
     "9021735": {
+      "constituent_codes": [
+        "688048"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "688048"
@@ -1136,6 +1522,9 @@
       "verdict": "insufficient_data"
     },
     "9064103": {
+      "constituent_codes": [
+        "603042"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "603042"
@@ -1146,6 +1535,7 @@
       "verdict": "insufficient_data"
     },
     "9055600": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "divergence",
@@ -1154,6 +1544,10 @@
       "verdict": "insufficient_data"
     },
     "9064411": {
+      "constituent_codes": [
+        "688479",
+        "603197"
+      ],
       "constituent_count": 2,
       "leader_codes": [
         "688479"
@@ -1164,6 +1558,9 @@
       "verdict": "insufficient_data"
     },
     "9054580": {
+      "constituent_codes": [
+        "300502"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "300502"
@@ -1174,6 +1571,9 @@
       "verdict": "partially_agree"
     },
     "9039054": {
+      "constituent_codes": [
+        "002384"
+      ],
       "constituent_count": 1,
       "leader_codes": [
         "002384"
@@ -1184,6 +1584,7 @@
       "verdict": "insufficient_data"
     },
     "9015778": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "divergence",
@@ -1192,6 +1593,7 @@
       "verdict": "partially_agree"
     },
     "9014636": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "divergence",
@@ -1200,6 +1602,7 @@
       "verdict": "partially_agree"
     },
     "9068866": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1208,6 +1611,7 @@
       "verdict": "partially_agree"
     },
     "MLCC电容": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1216,6 +1620,7 @@
       "verdict": "partially_agree"
     },
     "SpaceX": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1224,6 +1629,7 @@
       "verdict": "partially_agree"
     },
     "TGV玻璃基板封装": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1232,6 +1638,7 @@
       "verdict": "partially_agree"
     },
     "Token出海": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1240,6 +1647,7 @@
       "verdict": "partially_agree"
     },
     "Token工厂": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1248,6 +1656,7 @@
       "verdict": "partially_agree"
     },
     "化工-氟-电子级氢氟酸": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1256,6 +1665,7 @@
       "verdict": "partially_agree"
     },
     "光刻胶": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1264,6 +1674,7 @@
       "verdict": "partially_agree"
     },
     "电子布Low-DK": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1272,6 +1683,7 @@
       "verdict": "partially_agree"
     },
     "太空算力": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1280,6 +1692,7 @@
       "verdict": "partially_agree"
     },
     "存储芯片": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1288,6 +1701,7 @@
       "verdict": "partially_agree"
     },
     "电子特气": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1296,6 +1710,7 @@
       "verdict": "partially_agree"
     },
     "算电协同": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1304,6 +1719,7 @@
       "verdict": "partially_agree"
     },
     "电子特气-六氟化钨": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1312,6 +1728,7 @@
       "verdict": "partially_agree"
     },
     "长鑫存储IPO": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1320,6 +1737,7 @@
       "verdict": "partially_agree"
     },
     "人形机器人": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1328,6 +1746,7 @@
       "verdict": "partially_agree"
     },
     "半导体设备": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1336,6 +1755,7 @@
       "verdict": "partially_agree"
     },
     "宇树机器人": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1344,6 +1764,7 @@
       "verdict": "partially_agree"
     },
     "金刚石散热": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1352,6 +1773,7 @@
       "verdict": "partially_agree"
     },
     "卫星互联网-航天国家队": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1360,6 +1782,7 @@
       "verdict": "partially_agree"
     },
     "生成式物理AI": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1368,6 +1791,7 @@
       "verdict": "partially_agree"
     },
     "共封装光学CPO": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",
@@ -1376,6 +1800,7 @@
       "verdict": "partially_agree"
     },
     "特斯拉机器人": {
+      "constituent_codes": [],
       "constituent_count": 0,
       "leader_codes": [],
       "state_7_14": "start",

@@ -3,7 +3,7 @@
   "case_id": "001-r1",
   "baseline_artifact_commit": "f90721c5ea7a538b3ae944f9a2c4c69f0880448a",
   "baseline_manifest_hash": "c35ec51956bf4675c80275c53bdc8ff89c9e26e94f55f7730faf2883710d46ce",
-  "generated_at": "2026-08-07T10:34:43.972842+08:00",
+  "generated_at": "2026-08-07T11:34:42.099848+08:00",
   "trade_dates": {
     "baseline": "2026-07-14",
     "T+1": "2026-07-15",
