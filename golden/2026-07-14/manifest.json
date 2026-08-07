@@ -1,16 +1,21 @@
 {
-  "case": "001",
+  "case": "001-r1",
   "trade_date": "2026-07-14",
-  "created_at": "2026-08-07T09:52:29.077518+08:00",
+  "created_at": "2026-08-07T10:05:03.288003+08:00",
+  "versions": {
+    "julia_core": "cdff4d9824ff055c0f7b5e2e7d230de5bce11f76",
+    "ai_theme_app": "2a28125f1970537d893057066d87d31ffc34b2a2",
+    "taxonomy": "stage-taxonomy.v1"
+  },
   "files": {
     "market_context": "market_context.json",
     "workbench_review": "workbench_review.json",
     "julia_review": "julia_review.json"
   },
   "hashes": {
-    "market_context": "be7599552df4d564313cef27af66fdf1ea6f4a1de63ec4ece1f34ab420be9ab9",
-    "workbench_review": "f4b226785190c64c12244dddb76f0dbd5b5368a2bb695aa64076f1bbece865ac",
-    "julia_review": "cb56bd2963e8e6b458f67132b74706427733efea68a1d8041d1daaeabfe68f60"
+    "market_context": "febf7cb0a6a00dc5ee3033cdb81cf3cb59909a096b6c8cb945ef91ada6796a90",
+    "workbench_review": "0d74be2c01054dacf32ca185ebf15a92e0d2afd82ce3c8a9e91d0e74e171e8ef",
+    "julia_review": "9381b32832f2b9e999e072ee388e98565677992fc7f63c535928c8ea6a4a31c6"
   },
   "no_future_data": true,
   "workbench_snapshot_hash": "e654357bf0b30f0a1d20b16ac7068314e4bab98dd43d73e2bc96ff923e309184"

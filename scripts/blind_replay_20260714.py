@@ -15,6 +15,16 @@ CST = timezone(timedelta(hours=8))
 # Add julia_core to path
 sys.path.insert(0, "/Users/admin/julia_core")
 
+import subprocess
+
+def _git_sha(repo_path: str) -> str:
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=repo_path, text=True
+        ).strip()
+    except Exception:
+        return "unknown"
+
 from julia_core.reasoning.independent_review import (
     StageSignalEvaluator,
     StageInferenceEngine,
@@ -209,7 +219,10 @@ def run_blind_inference(context: dict) -> list[dict]:
 def run():
     print("=" * 70)
     print("M3.2.4 Blind Replay — Case 001: 2026-07-14")
-    print(f"Julia Core commit: TBD")
+    jc_sha = _git_sha("/Users/admin/julia_core")
+    at_sha = _git_sha("/Users/admin/Desktop/ai_theme_app")
+    print(f"Julia Core: {jc_sha}")
+    print(f"ai_theme_app: {at_sha}")
     print(f"Taxonomy: stage-taxonomy.v1")
     print(f"As of: 2026-07-14 15:30 CST (no future data)")
     print("=" * 70)
@@ -296,15 +309,6 @@ def run():
         if j.missing_evidence:
             print(f"  Missing:    {', '.join(j.missing_evidence[:3])}")
 
-    # G3: recomputed distribution must match
-    from collections import Counter
-    recomputed = Counter(j.verdict for j in review.judgments)
-    assert dict(recomputed) == dict(verdict_dist), (
-        f"G3 FAIL: verdict distribution mismatch. "
-        f"recomputed={dict(recomputed)} vs traced={dict(verdict_dist)}"
-    )
-    print(f"✅ G3: verdict distribution verified ({len(review.judgments)} judgments)")
-
     # Phase 4: Save results
     output_dir = Path("/Users/admin/Desktop/ai_theme_app/golden/2026-07-14")
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -315,7 +319,8 @@ def run():
         "as_of": "2026-07-14T15:30:00+08:00",
         "generated_at": datetime.now(CST).isoformat(),
         "versions": {
-            "julia_core": "c820e1b",
+            "julia_core": jc_sha,
+            "ai_theme_app": at_sha,
             "taxonomy": "stage-taxonomy.v1",
             "market_context_schema": "market-context.v1",
             "workbench_review_schema": "analyst-workbench.review.v1",
@@ -328,7 +333,8 @@ def run():
         "overall_assessment": review.overall_assessment,
         "judgments": [
             {
-                "subject": j.subject,
+                "subject_key": j.subject_key,
+                "subject_name": j.subject_name if hasattr(j, 'subject_name') else j.subject,
                 "verdict": j.verdict,
                 "julia_stage": j.julia_stage,
                 "confidence": j.confidence,
@@ -346,6 +352,18 @@ def run():
     review_path.write_text(json.dumps(review_output, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\n✅ Review saved to: {review_path}")
 
+    # G3: re-read serialized file — verify distribution matches + subject_key present
+    saved = json.loads(review_path.read_text(encoding="utf-8"))
+    juds = saved["judgments"]
+    actual_dist = Counter(j["verdict"] for j in juds)
+    assert dict(actual_dist) == saved["verdict_distribution"], (
+        f"G3 FAIL: serialized verdicts don't match declared. "
+        f"actual={dict(actual_dist)} vs declared={saved['verdict_distribution']}"
+    )
+    assert sum(actual_dist.values()) == len(juds)
+    assert all(j.get("subject_key") for j in juds), "G3 FAIL: missing subject_key"
+    print(f"✅ G3: serialized invariant — {len(juds)} judgments, all have subject_key")
+
     # Save market_context as Golden Fixture
     ctx_path = output_dir / "market_context.json"
     ctx_path.write_text(json.dumps(market_context, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -358,9 +376,14 @@ def run():
 
     # Manifest
     manifest = {
-        "case": "001",
+        "case": "001-r1",
         "trade_date": "2026-07-14",
         "created_at": datetime.now(CST).isoformat(),
+        "versions": {
+            "julia_core": jc_sha,
+            "ai_theme_app": at_sha,
+            "taxonomy": "stage-taxonomy.v1",
+        },
         "files": {
             "market_context": "market_context.json",
             "workbench_review": "workbench_review.json",

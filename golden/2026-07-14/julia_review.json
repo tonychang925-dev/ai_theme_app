@@ -1,9 +1,10 @@
 {
   "trade_date": "2026-07-14",
   "as_of": "2026-07-14T15:30:00+08:00",
-  "generated_at": "2026-08-07T09:52:29.074717+08:00",
+  "generated_at": "2026-08-07T10:05:03.282369+08:00",
   "versions": {
-    "julia_core": "c820e1b",
+    "julia_core": "cdff4d9824ff055c0f7b5e2e7d230de5bce11f76",
+    "ai_theme_app": "2a28125f1970537d893057066d87d31ffc34b2a2",
     "taxonomy": "stage-taxonomy.v1",
     "market_context_schema": "market-context.v1",
     "workbench_review_schema": "analyst-workbench.review.v1"
@@ -24,7 +25,8 @@
   "overall_assessment": "reviewed 130 claims, 49 agree, 5 disagree, 76 insufficient",
   "judgments": [
     {
-      "subject": "9025631",
+      "subject_key": "9025631",
+      "subject_name": "9025631",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.5,
@@ -43,7 +45,8 @@
       "rationale": "support=1 contradict=1 missing=1"
     },
     {
-      "subject": "9064082",
+      "subject_key": "9064082",
+      "subject_name": "9064082",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -59,7 +62,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9018216",
+      "subject_key": "9018216",
+      "subject_name": "9018216",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -72,7 +76,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9013933",
+      "subject_key": "9013933",
+      "subject_name": "9013933",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -85,7 +90,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "电力运营",
+      "subject_key": "9013416",
+      "subject_name": "电力运营",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -98,7 +104,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9017645",
+      "subject_key": "9017645",
+      "subject_name": "9017645",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -111,7 +118,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9034770",
+      "subject_key": "9034770",
+      "subject_name": "9034770",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -124,7 +132,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "1",
+      "subject_key": "1",
+      "subject_name": "1",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -137,7 +146,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9010270",
+      "subject_key": "9010270",
+      "subject_name": "9010270",
       "verdict": "partially_disagree",
       "julia_stage": "fading_momentum",
       "confidence": 0.6,
@@ -155,7 +165,8 @@
       "rationale": "support=1 contradict=2 missing=0"
     },
     {
-      "subject": "9012624",
+      "subject_key": "9012624",
+      "subject_name": "9012624",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -168,7 +179,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9031968",
+      "subject_key": "9031968",
+      "subject_name": "9031968",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -181,7 +193,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9049134",
+      "subject_key": "9049134",
+      "subject_name": "9049134",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -194,7 +207,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9064619",
+      "subject_key": "9064619",
+      "subject_name": "9064619",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -207,7 +221,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9050897",
+      "subject_key": "9050897",
+      "subject_name": "9050897",
       "verdict": "partially_disagree",
       "julia_stage": "fading_momentum",
       "confidence": 0.6,
@@ -225,7 +240,8 @@
       "rationale": "support=1 contradict=2 missing=0"
     },
     {
-      "subject": "9055879",
+      "subject_key": "9055879",
+      "subject_name": "9055879",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -238,7 +254,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "卫星互联网",
+      "subject_key": "9019807",
+      "subject_name": "卫星互联网",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -255,7 +272,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9038372",
+      "subject_key": "9038372",
+      "subject_name": "9038372",
       "verdict": "partially_disagree",
       "julia_stage": "fading_momentum",
       "confidence": 0.6,
@@ -273,7 +291,8 @@
       "rationale": "support=1 contradict=2 missing=0"
     },
     {
-      "subject": "9065256",
+      "subject_key": "9065256",
+      "subject_name": "9065256",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -286,7 +305,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9060420",
+      "subject_key": "9060420",
+      "subject_name": "9060420",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -299,7 +319,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9064086",
+      "subject_key": "9064086",
+      "subject_name": "9064086",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -312,7 +333,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9064230",
+      "subject_key": "9064230",
+      "subject_name": "9064230",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -328,7 +350,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9032516",
+      "subject_key": "9032516",
+      "subject_name": "9032516",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -345,7 +368,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9058917",
+      "subject_key": "9058917",
+      "subject_name": "9058917",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -361,7 +385,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9060403",
+      "subject_key": "9060403",
+      "subject_name": "9060403",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -374,7 +399,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9058466",
+      "subject_key": "9058466",
+      "subject_name": "9058466",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -387,7 +413,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9064422",
+      "subject_key": "9064422",
+      "subject_name": "9064422",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -400,7 +427,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9065541",
+      "subject_key": "9065541",
+      "subject_name": "9065541",
       "verdict": "partially_disagree",
       "julia_stage": "fading_momentum",
       "confidence": 0.6,
@@ -418,7 +446,8 @@
       "rationale": "support=1 contradict=2 missing=0"
     },
     {
-      "subject": "9014001",
+      "subject_key": "9014001",
+      "subject_name": "9014001",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -431,7 +460,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9021093",
+      "subject_key": "9021093",
+      "subject_name": "9021093",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -444,7 +474,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9053147",
+      "subject_key": "9053147",
+      "subject_name": "9053147",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -461,7 +492,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9064363",
+      "subject_key": "9064363",
+      "subject_name": "9064363",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -478,7 +510,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9066512",
+      "subject_key": "9066512",
+      "subject_name": "9066512",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -491,7 +524,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9036559",
+      "subject_key": "9036559",
+      "subject_name": "9036559",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -504,7 +538,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9010168",
+      "subject_key": "9010168",
+      "subject_name": "9010168",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -517,7 +552,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9010317",
+      "subject_key": "9010317",
+      "subject_name": "9010317",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -534,7 +570,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9011277",
+      "subject_key": "9011277",
+      "subject_name": "9011277",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -551,7 +588,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9012747",
+      "subject_key": "9012747",
+      "subject_name": "9012747",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -568,7 +606,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "PCB印制电路板",
+      "subject_key": "9018144",
+      "subject_name": "PCB印制电路板",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -584,7 +623,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9045920",
+      "subject_key": "9045920",
+      "subject_name": "9045920",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -597,7 +637,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9058762",
+      "subject_key": "9058762",
+      "subject_name": "9058762",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -613,7 +654,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9060591",
+      "subject_key": "9060591",
+      "subject_name": "9060591",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -630,7 +672,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9063703",
+      "subject_key": "9063703",
+      "subject_name": "9063703",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -643,7 +686,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9065757",
+      "subject_key": "9065757",
+      "subject_name": "9065757",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -656,7 +700,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9057472",
+      "subject_key": "9057472",
+      "subject_name": "9057472",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -669,7 +714,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9061633",
+      "subject_key": "9061633",
+      "subject_name": "9061633",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -682,7 +728,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9054118",
+      "subject_key": "9054118",
+      "subject_name": "9054118",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -699,7 +746,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9056553",
+      "subject_key": "9056553",
+      "subject_name": "9056553",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -712,7 +760,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9016949",
+      "subject_key": "9016949",
+      "subject_name": "9016949",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -725,7 +774,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9064110",
+      "subject_key": "9064110",
+      "subject_name": "9064110",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -738,7 +788,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9064983",
+      "subject_key": "9064983",
+      "subject_name": "9064983",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -751,7 +802,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9065632",
+      "subject_key": "9065632",
+      "subject_name": "9065632",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -764,7 +816,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9055378",
+      "subject_key": "9055378",
+      "subject_name": "9055378",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -783,7 +836,8 @@
       "rationale": "support=1 contradict=0 missing=3"
     },
     {
-      "subject": "9064972",
+      "subject_key": "9064972",
+      "subject_name": "9064972",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -796,7 +850,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9066807",
+      "subject_key": "9066807",
+      "subject_name": "9066807",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -809,7 +864,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9037857",
+      "subject_key": "9037857",
+      "subject_name": "9037857",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -826,7 +882,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9047508",
+      "subject_key": "9047508",
+      "subject_name": "9047508",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -839,7 +896,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9062454",
+      "subject_key": "9062454",
+      "subject_name": "9062454",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -852,7 +910,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9023134",
+      "subject_key": "9023134",
+      "subject_name": "9023134",
       "verdict": "partially_disagree",
       "julia_stage": "fading_momentum",
       "confidence": 0.6,
@@ -870,7 +929,8 @@
       "rationale": "support=1 contradict=2 missing=0"
     },
     {
-      "subject": "9024880",
+      "subject_key": "9024880",
+      "subject_name": "9024880",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -887,7 +947,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9047087",
+      "subject_key": "9047087",
+      "subject_name": "9047087",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -904,7 +965,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9048533",
+      "subject_key": "9048533",
+      "subject_name": "9048533",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -917,7 +979,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9064573",
+      "subject_key": "9064573",
+      "subject_name": "9064573",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -934,7 +997,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9067036",
+      "subject_key": "9067036",
+      "subject_name": "9067036",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -947,7 +1011,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9066005",
+      "subject_key": "9066005",
+      "subject_name": "9066005",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -960,7 +1025,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9027825",
+      "subject_key": "9027825",
+      "subject_name": "9027825",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -973,7 +1039,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9058346",
+      "subject_key": "9058346",
+      "subject_name": "9058346",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -990,7 +1057,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9021399",
+      "subject_key": "9021399",
+      "subject_name": "9021399",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1003,7 +1071,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9025765",
+      "subject_key": "9025765",
+      "subject_name": "9025765",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -1020,7 +1089,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9038814",
+      "subject_key": "9038814",
+      "subject_name": "9038814",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1033,7 +1103,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9050315",
+      "subject_key": "9050315",
+      "subject_name": "9050315",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1046,7 +1117,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9060250",
+      "subject_key": "9060250",
+      "subject_name": "9060250",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1059,7 +1131,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9063491",
+      "subject_key": "9063491",
+      "subject_name": "9063491",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1072,7 +1145,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9056283",
+      "subject_key": "9056283",
+      "subject_name": "9056283",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1085,7 +1159,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9028660",
+      "subject_key": "9028660",
+      "subject_name": "9028660",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -1102,7 +1177,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9034539",
+      "subject_key": "9034539",
+      "subject_name": "9034539",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1115,7 +1191,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9064072",
+      "subject_key": "9064072",
+      "subject_name": "9064072",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1131,7 +1208,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "磷化铟",
+      "subject_key": "9066740",
+      "subject_name": "磷化铟",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1144,7 +1222,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9055746",
+      "subject_key": "9055746",
+      "subject_name": "9055746",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1157,7 +1236,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9022942",
+      "subject_key": "9022942",
+      "subject_name": "9022942",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1170,7 +1250,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9023919",
+      "subject_key": "9023919",
+      "subject_name": "9023919",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1183,7 +1264,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9027969",
+      "subject_key": "9027969",
+      "subject_name": "9027969",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -1200,7 +1282,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9038599",
+      "subject_key": "9038599",
+      "subject_name": "9038599",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -1217,7 +1300,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9050187",
+      "subject_key": "9050187",
+      "subject_name": "9050187",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1230,7 +1314,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9041968",
+      "subject_key": "9041968",
+      "subject_name": "9041968",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1243,7 +1328,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9059322",
+      "subject_key": "9059322",
+      "subject_name": "9059322",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1256,7 +1342,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9017116",
+      "subject_key": "9017116",
+      "subject_name": "9017116",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1269,7 +1356,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9023110",
+      "subject_key": "9023110",
+      "subject_name": "9023110",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1282,7 +1370,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9028541",
+      "subject_key": "9028541",
+      "subject_name": "9028541",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -1299,7 +1388,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "电子元器件",
+      "subject_key": "9032828",
+      "subject_name": "电子元器件",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1312,7 +1402,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9064170",
+      "subject_key": "9064170",
+      "subject_name": "9064170",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1325,7 +1416,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9028878",
+      "subject_key": "9028878",
+      "subject_name": "9028878",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1338,7 +1430,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9012785",
+      "subject_key": "9012785",
+      "subject_name": "9012785",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -1355,7 +1448,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9014270",
+      "subject_key": "9014270",
+      "subject_name": "9014270",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1368,7 +1462,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9030805",
+      "subject_key": "9030805",
+      "subject_name": "9030805",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1381,7 +1476,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9062339",
+      "subject_key": "9062339",
+      "subject_name": "9062339",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1397,7 +1493,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9027808",
+      "subject_key": "9027808",
+      "subject_name": "9027808",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1410,7 +1507,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9053538",
+      "subject_key": "9053538",
+      "subject_name": "9053538",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1423,7 +1521,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9066928",
+      "subject_key": "9066928",
+      "subject_name": "9066928",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1436,7 +1535,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9057022",
+      "subject_key": "9057022",
+      "subject_name": "9057022",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -1455,7 +1555,8 @@
       "rationale": "support=1 contradict=0 missing=3"
     },
     {
-      "subject": "9021735",
+      "subject_key": "9021735",
+      "subject_name": "9021735",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1468,7 +1569,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9064103",
+      "subject_key": "9064103",
+      "subject_name": "9064103",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1481,7 +1583,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9055600",
+      "subject_key": "9055600",
+      "subject_name": "9055600",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1497,7 +1600,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9064411",
+      "subject_key": "9064411",
+      "subject_name": "9064411",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1510,7 +1614,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9054580",
+      "subject_key": "9054580",
+      "subject_name": "9054580",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -1527,7 +1632,8 @@
       "rationale": "support=1 contradict=0 missing=1"
     },
     {
-      "subject": "9039054",
+      "subject_key": "9039054",
+      "subject_name": "9039054",
       "verdict": "insufficient_data",
       "julia_stage": "data_inconclusive",
       "confidence": 0.25,
@@ -1540,7 +1646,8 @@
       "rationale": "cannot_form_independent_stage"
     },
     {
-      "subject": "9015778",
+      "subject_key": "9015778",
+      "subject_name": "9015778",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -1559,7 +1666,8 @@
       "rationale": "support=1 contradict=0 missing=3"
     },
     {
-      "subject": "人形机器人",
+      "subject_key": "9014636",
+      "subject_name": "人形机器人",
       "verdict": "partially_agree",
       "julia_stage": "fading_momentum",
       "confidence": 0.55,
@@ -1578,7 +1686,8 @@
       "rationale": "support=1 contradict=0 missing=3"
     },
     {
-      "subject": "英伟达Rubin液冷",
+      "subject_key": "9068866",
+      "subject_name": "英伟达Rubin液冷",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1598,7 +1707,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "MLCC电容",
+      "subject_key": "MLCC电容",
+      "subject_name": "MLCC电容",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1618,7 +1728,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "SpaceX",
+      "subject_key": "SpaceX",
+      "subject_name": "SpaceX",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1638,7 +1749,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "TGV玻璃基板封装",
+      "subject_key": "TGV玻璃基板封装",
+      "subject_name": "TGV玻璃基板封装",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1658,7 +1770,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "Token出海",
+      "subject_key": "Token出海",
+      "subject_name": "Token出海",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1678,7 +1791,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "Token工厂",
+      "subject_key": "Token工厂",
+      "subject_name": "Token工厂",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1698,7 +1812,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "化工-氟-电子级氢氟酸",
+      "subject_key": "化工-氟-电子级氢氟酸",
+      "subject_name": "化工-氟-电子级氢氟酸",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1718,7 +1833,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "光刻胶",
+      "subject_key": "光刻胶",
+      "subject_name": "光刻胶",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1738,7 +1854,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "电子布Low-DK",
+      "subject_key": "电子布Low-DK",
+      "subject_name": "电子布Low-DK",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1758,7 +1875,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "太空算力",
+      "subject_key": "太空算力",
+      "subject_name": "太空算力",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1778,7 +1896,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "存储芯片",
+      "subject_key": "存储芯片",
+      "subject_name": "存储芯片",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1798,7 +1917,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "电子特气",
+      "subject_key": "电子特气",
+      "subject_name": "电子特气",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1818,7 +1938,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "算电协同",
+      "subject_key": "算电协同",
+      "subject_name": "算电协同",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1838,7 +1959,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "电子特气-六氟化钨",
+      "subject_key": "电子特气-六氟化钨",
+      "subject_name": "电子特气-六氟化钨",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1858,7 +1980,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "长鑫存储IPO",
+      "subject_key": "长鑫存储IPO",
+      "subject_name": "长鑫存储IPO",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1878,7 +2001,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "人形机器人",
+      "subject_key": "人形机器人",
+      "subject_name": "人形机器人",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1898,7 +2022,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "半导体设备",
+      "subject_key": "半导体设备",
+      "subject_name": "半导体设备",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1918,7 +2043,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "宇树机器人",
+      "subject_key": "宇树机器人",
+      "subject_name": "宇树机器人",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1938,7 +2064,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "金刚石散热",
+      "subject_key": "金刚石散热",
+      "subject_name": "金刚石散热",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1958,7 +2085,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "卫星互联网-航天国家队",
+      "subject_key": "卫星互联网-航天国家队",
+      "subject_name": "卫星互联网-航天国家队",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1978,7 +2106,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "生成式物理AI",
+      "subject_key": "生成式物理AI",
+      "subject_name": "生成式物理AI",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -1998,7 +2127,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "共封装光学CPO",
+      "subject_key": "共封装光学CPO",
+      "subject_name": "共封装光学CPO",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
@@ -2018,7 +2148,8 @@
       "rationale": "support=2 contradict=0 missing=3"
     },
     {
-      "subject": "特斯拉机器人",
+      "subject_key": "特斯拉机器人",
+      "subject_name": "特斯拉机器人",
       "verdict": "partially_agree",
       "julia_stage": "start",
       "confidence": 0.65,
