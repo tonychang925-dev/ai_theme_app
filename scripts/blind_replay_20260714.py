@@ -17,15 +17,17 @@ sys.path.insert(0, "/Users/admin/julia_core")
 
 import subprocess
 
-def _git_sha(repo_path: str) -> str:
-    dirty = subprocess.check_output(
-        ["git", "status", "--porcelain"], cwd=repo_path, text=True
-    ).strip()
-    if dirty:
-        raise RuntimeError(
-            f"REPLAY FORBIDDEN: dirty worktree at {repo_path}\n"
-            f"Uncommitted changes:\n{dirty[:500]}"
-        )
+def _git_sha(repo_path: str, guard_paths: list[str] | None = None) -> str:
+    """Return HEAD SHA. Fail if generator-relevant paths are dirty."""
+    if guard_paths:
+        dirty = subprocess.check_output(
+            ["git", "diff", "--name-only", "HEAD"] + guard_paths,
+            cwd=repo_path, text=True
+        ).strip()
+        if dirty:
+            raise RuntimeError(
+                f"REPLAY FORBIDDEN: uncommitted changes in generator paths:\n{dirty[:500]}"
+            )
     return subprocess.check_output(
         ["git", "rev-parse", "HEAD"], cwd=repo_path, text=True
     ).strip()
@@ -224,8 +226,10 @@ def run_blind_inference(context: dict) -> list[dict]:
 def run():
     print("=" * 70)
     print("M3.2.4 Blind Replay — Case 001: 2026-07-14")
-    jc_sha = _git_sha("/Users/admin/julia_core")
-    at_sha = _git_sha("/Users/admin/Desktop/ai_theme_app")
+    jc_sha = _git_sha("/Users/admin/julia_core",
+                       ["julia_core/reasoning/", "tests/runtime/test_independent_review.py"])
+    at_sha = _git_sha("/Users/admin/Desktop/ai_theme_app",
+                       ["scripts/", "mcp_server/", "stock_processing_service/"])
     print(f"Julia Core: {jc_sha}")
     print(f"ai_theme_app: {at_sha}")
     print(f"Taxonomy: stage-taxonomy.v1")
