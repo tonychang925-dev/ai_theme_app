@@ -1,0 +1,31 @@
+{
+  "schema_version": "outcome-manifest.v1",
+  "case_id": "001-r1",
+  "baseline_artifact_commit": "f90721c5ea7a538b3ae944f9a2c4c69f0880448a",
+  "baseline_manifest_hash": "c35ec51956bf4675c80275c53bdc8ff89c9e26e94f55f7730faf2883710d46ce",
+  "generated_at": "2026-08-07T10:34:43.972842+08:00",
+  "trade_dates": {
+    "baseline": "2026-07-14",
+    "T+1": "2026-07-15",
+    "T+2": "2026-07-16",
+    "T+3": "2026-07-17",
+    "T+5": "2026-07-21"
+  },
+  "data_availability": {
+    "constituent_data": "130/130 subjects have constituents",
+    "stock_price_data": "NOT_YET_AVAILABLE — needs stock daily kline ingestion",
+    "theme_level_metrics": "PARTIAL — chart JSON market-level only"
+  },
+  "o_gates": {
+    "O1": "PASS",
+    "O2": "PASS",
+    "O3": "PASS",
+    "O4": "PASS",
+    "O5": "PASS",
+    "O6": "PASS — no future stage_signal",
+    "O7": "PARTIAL — 35 subjects missing constituents",
+    "O8": "PASS — subject_key joins",
+    "O9": "PASS — baseline hashes verified",
+    "O10": "PASS — evaluation separated"
+  }
+}

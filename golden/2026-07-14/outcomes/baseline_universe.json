@@ -1,0 +1,1387 @@
+{
+  "schema_version": "outcome-baseline.v1",
+  "case_id": "001-r1",
+  "baseline_artifact_commit": "f90721c5ea7a538b3ae944f9a2c4c69f0880448a",
+  "baseline_manifest_hash": "c35ec51956bf4675c80275c53bdc8ff89c9e26e94f55f7730faf2883710d46ce",
+  "trade_dates": {
+    "baseline": "2026-07-14",
+    "T+1": "2026-07-15",
+    "T+2": "2026-07-16",
+    "T+3": "2026-07-17",
+    "T+5": "2026-07-21"
+  },
+  "subject_count": 130,
+  "groups": {
+    "disagreement_count": 5,
+    "abstention_count": 76,
+    "agreement_count": 49
+  },
+  "disagreement_keys": [
+    "9010270",
+    "9050897",
+    "9038372",
+    "9065541",
+    "9023134"
+  ],
+  "abstention_keys": [
+    "9064082",
+    "9018216",
+    "9013933",
+    "9013416",
+    "9017645",
+    "9034770",
+    "1",
+    "9012624",
+    "9031968",
+    "9049134",
+    "9064619",
+    "9055879",
+    "9065256",
+    "9060420",
+    "9064086",
+    "9064230",
+    "9058917",
+    "9060403",
+    "9058466",
+    "9064422",
+    "9014001",
+    "9021093",
+    "9066512",
+    "9036559",
+    "9010168",
+    "9018144",
+    "9045920",
+    "9058762",
+    "9063703",
+    "9065757",
+    "9057472",
+    "9061633",
+    "9056553",
+    "9016949",
+    "9064110",
+    "9064983",
+    "9065632",
+    "9064972",
+    "9066807",
+    "9047508",
+    "9062454",
+    "9048533",
+    "9067036",
+    "9066005",
+    "9027825",
+    "9021399",
+    "9038814",
+    "9050315",
+    "9060250",
+    "9063491",
+    "9056283",
+    "9034539",
+    "9064072",
+    "9066740",
+    "9055746",
+    "9022942",
+    "9023919",
+    "9050187",
+    "9041968",
+    "9059322",
+    "9017116",
+    "9023110",
+    "9032828",
+    "9064170",
+    "9028878",
+    "9014270",
+    "9030805",
+    "9062339",
+    "9027808",
+    "9053538",
+    "9066928",
+    "9021735",
+    "9064103",
+    "9055600",
+    "9064411",
+    "9039054"
+  ],
+  "agreement_keys": [
+    "9025631",
+    "9019807",
+    "9032516",
+    "9053147",
+    "9064363",
+    "9010317",
+    "9011277",
+    "9012747",
+    "9060591",
+    "9054118",
+    "9055378",
+    "9037857",
+    "9024880",
+    "9047087",
+    "9064573",
+    "9058346",
+    "9025765",
+    "9028660",
+    "9027969",
+    "9038599",
+    "9028541",
+    "9012785",
+    "9057022",
+    "9054580",
+    "9015778",
+    "9014636",
+    "9068866",
+    "MLCC电容",
+    "SpaceX",
+    "TGV玻璃基板封装",
+    "Token出海",
+    "Token工厂",
+    "化工-氟-电子级氢氟酸",
+    "光刻胶",
+    "电子布Low-DK",
+    "太空算力",
+    "存储芯片",
+    "电子特气",
+    "算电协同",
+    "电子特气-六氟化钨",
+    "长鑫存储IPO",
+    "人形机器人",
+    "半导体设备",
+    "宇树机器人",
+    "金刚石散热",
+    "卫星互联网-航天国家队",
+    "生成式物理AI",
+    "共封装光学CPO",
+    "特斯拉机器人"
+  ],
+  "subjects": {
+    "9025631": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "688192"
+      ],
+      "state_7_14": "acceleration",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "acceleration",
+      "verdict": "partially_agree"
+    },
+    "9064082": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9018216": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "300164"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9013933": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "300489"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9013416": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "301127"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9017645": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "300937"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9034770": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "300937"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "1": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "603367"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9010270": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "601969"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "diffusion",
+      "verdict": "partially_disagree"
+    },
+    "9012624": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "600403"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9031968": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "002162"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9049134": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "603367"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9064619": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "301100"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9050897": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "300483"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "diffusion",
+      "verdict": "partially_disagree"
+    },
+    "9055879": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "688309"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9019807": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "688048"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9038372": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "603077"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "diffusion",
+      "verdict": "partially_disagree"
+    },
+    "9065256": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "688048"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9060420": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "301205"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9064086": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "300164"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9064230": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9032516": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "000554"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9058917": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9060403": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "301259"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9058466": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "300164"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9064422": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "300164"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9065541": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "603077"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "diffusion",
+      "verdict": "partially_disagree"
+    },
+    "9014001": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "688048"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9021093": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "300209"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9053147": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "300502"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9064363": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "002838"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9066512": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "688498"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9036559": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "301259"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9010168": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "688388"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9010317": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "301100"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9011277": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "688048"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9012747": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "688388"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9018144": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9045920": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "603989"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9058762": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9060591": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "301176"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9063703": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "301176"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9065757": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "688388"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9057472": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "300502"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9061633": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "000677"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9054118": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "301205"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9056553": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "300502"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9016949": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "301125"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9064110": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "301377"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9064983": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "301217"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9065632": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "688069"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9055378": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9064972": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "600844"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9066807": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "688498"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9037857": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "002245"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9047508": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "301205"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9062454": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "301217"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9023134": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "603989"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "diffusion",
+      "verdict": "partially_disagree"
+    },
+    "9024880": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "300990"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9047087": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "688048"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9048533": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "301205"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9064573": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "301259"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9067036": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "301217"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9066005": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "600844"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9027825": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "000677"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9058346": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "603042"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9021399": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "301099"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9025765": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "603042"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9038814": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "603989"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9050315": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "600293"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9060250": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "603042"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9063491": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "688183"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9056283": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "600497"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9028660": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "688048"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9034539": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "002838"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9064072": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9066740": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "688498"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9055746": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "000008"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9022942": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "300566"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9023919": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "301259"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9027969": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "003001"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9038599": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "002245"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9050187": {
+      "constituent_count": 3,
+      "leader_codes": [
+        "688183"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9041968": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "600255"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9059322": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "002162"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9017116": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "600595"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9023110": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "000636"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9028541": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "002384"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9032828": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "301099"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9064170": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "600497"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9028878": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "300283"
+      ],
+      "state_7_14": "fermentation",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "diffusion",
+      "verdict": "insufficient_data"
+    },
+    "9012785": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "603577"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9014270": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "603201"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9030805": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "603466"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9062339": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9027808": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "605196"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9053538": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "605196"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9066928": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "300502"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9057022": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9021735": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "688048"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9064103": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "603042"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9055600": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9064411": {
+      "constituent_count": 2,
+      "leader_codes": [
+        "688479"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9054580": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "300502"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9039054": {
+      "constituent_count": 1,
+      "leader_codes": [
+        "002384"
+      ],
+      "state_7_14": "divergence",
+      "julia_stage": "data_inconclusive",
+      "workbench_stage": "divergence",
+      "verdict": "insufficient_data"
+    },
+    "9015778": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9014636": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "divergence",
+      "julia_stage": "fading_momentum",
+      "workbench_stage": "divergence",
+      "verdict": "partially_agree"
+    },
+    "9068866": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "MLCC电容": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "SpaceX": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "TGV玻璃基板封装": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "Token出海": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "Token工厂": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "化工-氟-电子级氢氟酸": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "光刻胶": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "电子布Low-DK": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "太空算力": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "存储芯片": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "电子特气": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "算电协同": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "电子特气-六氟化钨": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "长鑫存储IPO": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "人形机器人": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "半导体设备": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "宇树机器人": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "金刚石散热": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "卫星互联网-航天国家队": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "生成式物理AI": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "共封装光学CPO": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    },
+    "特斯拉机器人": {
+      "constituent_count": 0,
+      "leader_codes": [],
+      "state_7_14": "start",
+      "julia_stage": "start",
+      "workbench_stage": "start",
+      "verdict": "partially_agree"
+    }
+  }
+}
