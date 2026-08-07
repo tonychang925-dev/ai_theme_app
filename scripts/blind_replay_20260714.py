@@ -150,7 +150,7 @@ def build_workbench_review(snap: dict) -> dict:
         claims.append({
             "claim_id": f"claim_0714_{subject_key_val}",
             "claim_type": "theme_stage",
-            "subject": {"type": "theme", "name": name, "subject_key": subject_key_val},
+            "subject": {"type": "theme", "key": subject_key_val, "name": name},
             "stage_judgement": _normalize_stage(state),
             "confidence": 0.7,
             "attention_level": "MEDIUM",
@@ -220,16 +220,25 @@ def run():
     workbench_review = build_workbench_review(snap)
 
     # ── Integrity checks ──────────────────────────────────────────────────
+    # G1: Every theme has subject_key
+    assert all(t.get("subject_key") for t in market_context["themes"]), (
+        "G1 FAIL: some themes missing subject_key"
+    )
+    # G2: Every claim has subject.key
+    assert all(
+        isinstance(c["subject"], dict) and c["subject"].get("key")
+        for c in workbench_review["claims"]
+    ), "G2 FAIL: some claims missing subject.key"
     # Unique subject keys
-    subject_keys = [t.get("subject_key", t["subject"]) for t in market_context["themes"]]
+    subject_keys = [t["subject_key"] for t in market_context["themes"]]
     assert len(subject_keys) == len(set(subject_keys)), (
-        f"DUPLICATE subject_key detected: {len(subject_keys)} themes but {len(set(subject_keys))} unique keys"
+        f"DUPLICATE subject_key: {len(subject_keys)} themes but {len(set(subject_keys))} unique"
     )
     claim_ids = [c["claim_id"] for c in workbench_review["claims"]]
     assert len(claim_ids) == len(set(claim_ids)), (
-        f"DUPLICATE claim_id detected: {len(claim_ids)} claims but {len(set(claim_ids))} unique"
+        f"DUPLICATE claim_id: {len(claim_ids)} claims but {len(set(claim_ids))} unique"
     )
-    print(f"\n✅ Integrity: {len(subject_keys)} unique subject keys, {len(claim_ids)} unique claim IDs")
+    print(f"✅ G1+G2: {len(subject_keys)} unique subject keys, {len(claim_ids)} unique claim IDs")
 
     # Phase 1: Blind inference
     print("\n📊 Phase 1: Julia Blind Stage Inference")
@@ -287,6 +296,15 @@ def run():
         if j.missing_evidence:
             print(f"  Missing:    {', '.join(j.missing_evidence[:3])}")
 
+    # G3: recomputed distribution must match
+    from collections import Counter
+    recomputed = Counter(j.verdict for j in review.judgments)
+    assert dict(recomputed) == dict(verdict_dist), (
+        f"G3 FAIL: verdict distribution mismatch. "
+        f"recomputed={dict(recomputed)} vs traced={dict(verdict_dist)}"
+    )
+    print(f"✅ G3: verdict distribution verified ({len(review.judgments)} judgments)")
+
     # Phase 4: Save results
     output_dir = Path("/Users/admin/Desktop/ai_theme_app/golden/2026-07-14")
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -297,7 +315,7 @@ def run():
         "as_of": "2026-07-14T15:30:00+08:00",
         "generated_at": datetime.now(CST).isoformat(),
         "versions": {
-            "julia_core": "a96a1ab",
+            "julia_core": "c820e1b",
             "taxonomy": "stage-taxonomy.v1",
             "market_context_schema": "market-context.v1",
             "workbench_review_schema": "analyst-workbench.review.v1",

@@ -2,7 +2,7 @@
   "schema_version": "analyst-workbench.review.v1",
   "provider": "ai_theme_app",
   "trade_date": "2026-07-14",
-  "generated_at": "2026-08-07T09:14:06.154281+08:00",
+  "generated_at": "2026-08-07T09:52:29.070309+08:00",
   "opinion_mode": "analyst_approved",
   "claims": [
     {
@@ -10,8 +10,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9025631",
-        "subject_key": "9025631"
+        "key": "9025631",
+        "name": "9025631"
       },
       "stage_judgement": "acceleration",
       "confidence": 0.7,
@@ -25,8 +25,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064082",
-        "subject_key": "9064082"
+        "key": "9064082",
+        "name": "9064082"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -40,8 +40,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9018216",
-        "subject_key": "9018216"
+        "key": "9018216",
+        "name": "9018216"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -55,8 +55,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9013933",
-        "subject_key": "9013933"
+        "key": "9013933",
+        "name": "9013933"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -70,8 +70,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "电力运营",
-        "subject_key": "9013416"
+        "key": "9013416",
+        "name": "电力运营"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -85,8 +85,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9017645",
-        "subject_key": "9017645"
+        "key": "9017645",
+        "name": "9017645"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -100,8 +100,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9034770",
-        "subject_key": "9034770"
+        "key": "9034770",
+        "name": "9034770"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -115,8 +115,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "1",
-        "subject_key": "1"
+        "key": "1",
+        "name": "1"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -130,8 +130,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9010270",
-        "subject_key": "9010270"
+        "key": "9010270",
+        "name": "9010270"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -145,8 +145,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9012624",
-        "subject_key": "9012624"
+        "key": "9012624",
+        "name": "9012624"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -160,8 +160,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9031968",
-        "subject_key": "9031968"
+        "key": "9031968",
+        "name": "9031968"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -175,8 +175,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9049134",
-        "subject_key": "9049134"
+        "key": "9049134",
+        "name": "9049134"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -190,8 +190,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064619",
-        "subject_key": "9064619"
+        "key": "9064619",
+        "name": "9064619"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -205,8 +205,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9050897",
-        "subject_key": "9050897"
+        "key": "9050897",
+        "name": "9050897"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -220,8 +220,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9055879",
-        "subject_key": "9055879"
+        "key": "9055879",
+        "name": "9055879"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -235,8 +235,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "卫星互联网",
-        "subject_key": "9019807"
+        "key": "9019807",
+        "name": "卫星互联网"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -250,8 +250,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9038372",
-        "subject_key": "9038372"
+        "key": "9038372",
+        "name": "9038372"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -265,8 +265,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9065256",
-        "subject_key": "9065256"
+        "key": "9065256",
+        "name": "9065256"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -280,8 +280,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9060420",
-        "subject_key": "9060420"
+        "key": "9060420",
+        "name": "9060420"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -295,8 +295,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064086",
-        "subject_key": "9064086"
+        "key": "9064086",
+        "name": "9064086"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -310,8 +310,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064230",
-        "subject_key": "9064230"
+        "key": "9064230",
+        "name": "9064230"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -325,8 +325,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9032516",
-        "subject_key": "9032516"
+        "key": "9032516",
+        "name": "9032516"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -340,8 +340,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9058917",
-        "subject_key": "9058917"
+        "key": "9058917",
+        "name": "9058917"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -355,8 +355,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9060403",
-        "subject_key": "9060403"
+        "key": "9060403",
+        "name": "9060403"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -370,8 +370,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9058466",
-        "subject_key": "9058466"
+        "key": "9058466",
+        "name": "9058466"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -385,8 +385,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064422",
-        "subject_key": "9064422"
+        "key": "9064422",
+        "name": "9064422"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -400,8 +400,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9065541",
-        "subject_key": "9065541"
+        "key": "9065541",
+        "name": "9065541"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -415,8 +415,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9014001",
-        "subject_key": "9014001"
+        "key": "9014001",
+        "name": "9014001"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -430,8 +430,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9021093",
-        "subject_key": "9021093"
+        "key": "9021093",
+        "name": "9021093"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -445,8 +445,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9053147",
-        "subject_key": "9053147"
+        "key": "9053147",
+        "name": "9053147"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -460,8 +460,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064363",
-        "subject_key": "9064363"
+        "key": "9064363",
+        "name": "9064363"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -475,8 +475,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9066512",
-        "subject_key": "9066512"
+        "key": "9066512",
+        "name": "9066512"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -490,8 +490,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9036559",
-        "subject_key": "9036559"
+        "key": "9036559",
+        "name": "9036559"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -505,8 +505,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9010168",
-        "subject_key": "9010168"
+        "key": "9010168",
+        "name": "9010168"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -520,8 +520,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9010317",
-        "subject_key": "9010317"
+        "key": "9010317",
+        "name": "9010317"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -535,8 +535,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9011277",
-        "subject_key": "9011277"
+        "key": "9011277",
+        "name": "9011277"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -550,8 +550,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9012747",
-        "subject_key": "9012747"
+        "key": "9012747",
+        "name": "9012747"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -565,8 +565,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "PCB印制电路板",
-        "subject_key": "9018144"
+        "key": "9018144",
+        "name": "PCB印制电路板"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -580,8 +580,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9045920",
-        "subject_key": "9045920"
+        "key": "9045920",
+        "name": "9045920"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -595,8 +595,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9058762",
-        "subject_key": "9058762"
+        "key": "9058762",
+        "name": "9058762"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -610,8 +610,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9060591",
-        "subject_key": "9060591"
+        "key": "9060591",
+        "name": "9060591"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -625,8 +625,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9063703",
-        "subject_key": "9063703"
+        "key": "9063703",
+        "name": "9063703"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -640,8 +640,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9065757",
-        "subject_key": "9065757"
+        "key": "9065757",
+        "name": "9065757"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -655,8 +655,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9057472",
-        "subject_key": "9057472"
+        "key": "9057472",
+        "name": "9057472"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -670,8 +670,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9061633",
-        "subject_key": "9061633"
+        "key": "9061633",
+        "name": "9061633"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -685,8 +685,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9054118",
-        "subject_key": "9054118"
+        "key": "9054118",
+        "name": "9054118"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -700,8 +700,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9056553",
-        "subject_key": "9056553"
+        "key": "9056553",
+        "name": "9056553"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -715,8 +715,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9016949",
-        "subject_key": "9016949"
+        "key": "9016949",
+        "name": "9016949"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -730,8 +730,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064110",
-        "subject_key": "9064110"
+        "key": "9064110",
+        "name": "9064110"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -745,8 +745,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064983",
-        "subject_key": "9064983"
+        "key": "9064983",
+        "name": "9064983"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -760,8 +760,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9065632",
-        "subject_key": "9065632"
+        "key": "9065632",
+        "name": "9065632"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -775,8 +775,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9055378",
-        "subject_key": "9055378"
+        "key": "9055378",
+        "name": "9055378"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -790,8 +790,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064972",
-        "subject_key": "9064972"
+        "key": "9064972",
+        "name": "9064972"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -805,8 +805,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9066807",
-        "subject_key": "9066807"
+        "key": "9066807",
+        "name": "9066807"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -820,8 +820,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9037857",
-        "subject_key": "9037857"
+        "key": "9037857",
+        "name": "9037857"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -835,8 +835,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9047508",
-        "subject_key": "9047508"
+        "key": "9047508",
+        "name": "9047508"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -850,8 +850,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9062454",
-        "subject_key": "9062454"
+        "key": "9062454",
+        "name": "9062454"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -865,8 +865,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9023134",
-        "subject_key": "9023134"
+        "key": "9023134",
+        "name": "9023134"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -880,8 +880,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9024880",
-        "subject_key": "9024880"
+        "key": "9024880",
+        "name": "9024880"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -895,8 +895,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9047087",
-        "subject_key": "9047087"
+        "key": "9047087",
+        "name": "9047087"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -910,8 +910,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9048533",
-        "subject_key": "9048533"
+        "key": "9048533",
+        "name": "9048533"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -925,8 +925,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064573",
-        "subject_key": "9064573"
+        "key": "9064573",
+        "name": "9064573"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -940,8 +940,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9067036",
-        "subject_key": "9067036"
+        "key": "9067036",
+        "name": "9067036"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -955,8 +955,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9066005",
-        "subject_key": "9066005"
+        "key": "9066005",
+        "name": "9066005"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -970,8 +970,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9027825",
-        "subject_key": "9027825"
+        "key": "9027825",
+        "name": "9027825"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -985,8 +985,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9058346",
-        "subject_key": "9058346"
+        "key": "9058346",
+        "name": "9058346"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1000,8 +1000,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9021399",
-        "subject_key": "9021399"
+        "key": "9021399",
+        "name": "9021399"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1015,8 +1015,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9025765",
-        "subject_key": "9025765"
+        "key": "9025765",
+        "name": "9025765"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1030,8 +1030,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9038814",
-        "subject_key": "9038814"
+        "key": "9038814",
+        "name": "9038814"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -1045,8 +1045,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9050315",
-        "subject_key": "9050315"
+        "key": "9050315",
+        "name": "9050315"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -1060,8 +1060,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9060250",
-        "subject_key": "9060250"
+        "key": "9060250",
+        "name": "9060250"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1075,8 +1075,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9063491",
-        "subject_key": "9063491"
+        "key": "9063491",
+        "name": "9063491"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1090,8 +1090,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9056283",
-        "subject_key": "9056283"
+        "key": "9056283",
+        "name": "9056283"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -1105,8 +1105,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9028660",
-        "subject_key": "9028660"
+        "key": "9028660",
+        "name": "9028660"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1120,8 +1120,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9034539",
-        "subject_key": "9034539"
+        "key": "9034539",
+        "name": "9034539"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1135,8 +1135,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064072",
-        "subject_key": "9064072"
+        "key": "9064072",
+        "name": "9064072"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -1150,8 +1150,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "磷化铟",
-        "subject_key": "9066740"
+        "key": "9066740",
+        "name": "磷化铟"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1165,8 +1165,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9055746",
-        "subject_key": "9055746"
+        "key": "9055746",
+        "name": "9055746"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1180,8 +1180,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9022942",
-        "subject_key": "9022942"
+        "key": "9022942",
+        "name": "9022942"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1195,8 +1195,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9023919",
-        "subject_key": "9023919"
+        "key": "9023919",
+        "name": "9023919"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1210,8 +1210,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9027969",
-        "subject_key": "9027969"
+        "key": "9027969",
+        "name": "9027969"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1225,8 +1225,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9038599",
-        "subject_key": "9038599"
+        "key": "9038599",
+        "name": "9038599"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1240,8 +1240,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9050187",
-        "subject_key": "9050187"
+        "key": "9050187",
+        "name": "9050187"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1255,8 +1255,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9041968",
-        "subject_key": "9041968"
+        "key": "9041968",
+        "name": "9041968"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1270,8 +1270,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9059322",
-        "subject_key": "9059322"
+        "key": "9059322",
+        "name": "9059322"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1285,8 +1285,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9017116",
-        "subject_key": "9017116"
+        "key": "9017116",
+        "name": "9017116"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1300,8 +1300,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9023110",
-        "subject_key": "9023110"
+        "key": "9023110",
+        "name": "9023110"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1315,8 +1315,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9028541",
-        "subject_key": "9028541"
+        "key": "9028541",
+        "name": "9028541"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1330,8 +1330,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "电子元器件",
-        "subject_key": "9032828"
+        "key": "9032828",
+        "name": "电子元器件"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1345,8 +1345,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064170",
-        "subject_key": "9064170"
+        "key": "9064170",
+        "name": "9064170"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -1360,8 +1360,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9028878",
-        "subject_key": "9028878"
+        "key": "9028878",
+        "name": "9028878"
       },
       "stage_judgement": "diffusion",
       "confidence": 0.7,
@@ -1375,8 +1375,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9012785",
-        "subject_key": "9012785"
+        "key": "9012785",
+        "name": "9012785"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1390,8 +1390,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9014270",
-        "subject_key": "9014270"
+        "key": "9014270",
+        "name": "9014270"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1405,8 +1405,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9030805",
-        "subject_key": "9030805"
+        "key": "9030805",
+        "name": "9030805"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1420,8 +1420,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9062339",
-        "subject_key": "9062339"
+        "key": "9062339",
+        "name": "9062339"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1435,8 +1435,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9027808",
-        "subject_key": "9027808"
+        "key": "9027808",
+        "name": "9027808"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1450,8 +1450,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9053538",
-        "subject_key": "9053538"
+        "key": "9053538",
+        "name": "9053538"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1465,8 +1465,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9066928",
-        "subject_key": "9066928"
+        "key": "9066928",
+        "name": "9066928"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1480,8 +1480,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9057022",
-        "subject_key": "9057022"
+        "key": "9057022",
+        "name": "9057022"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1495,8 +1495,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9021735",
-        "subject_key": "9021735"
+        "key": "9021735",
+        "name": "9021735"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1510,8 +1510,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064103",
-        "subject_key": "9064103"
+        "key": "9064103",
+        "name": "9064103"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1525,8 +1525,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9055600",
-        "subject_key": "9055600"
+        "key": "9055600",
+        "name": "9055600"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1540,8 +1540,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9064411",
-        "subject_key": "9064411"
+        "key": "9064411",
+        "name": "9064411"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1555,8 +1555,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9054580",
-        "subject_key": "9054580"
+        "key": "9054580",
+        "name": "9054580"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1570,8 +1570,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9039054",
-        "subject_key": "9039054"
+        "key": "9039054",
+        "name": "9039054"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1585,8 +1585,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "9015778",
-        "subject_key": "9015778"
+        "key": "9015778",
+        "name": "9015778"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1600,8 +1600,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "人形机器人",
-        "subject_key": "9014636"
+        "key": "9014636",
+        "name": "人形机器人"
       },
       "stage_judgement": "divergence",
       "confidence": 0.7,
@@ -1615,8 +1615,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "英伟达Rubin液冷",
-        "subject_key": "9068866"
+        "key": "9068866",
+        "name": "英伟达Rubin液冷"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1630,8 +1630,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "MLCC电容",
-        "subject_key": "MLCC电容"
+        "key": "MLCC电容",
+        "name": "MLCC电容"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1645,8 +1645,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "SpaceX",
-        "subject_key": "SpaceX"
+        "key": "SpaceX",
+        "name": "SpaceX"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1660,8 +1660,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "TGV玻璃基板封装",
-        "subject_key": "TGV玻璃基板封装"
+        "key": "TGV玻璃基板封装",
+        "name": "TGV玻璃基板封装"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1675,8 +1675,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "Token出海",
-        "subject_key": "Token出海"
+        "key": "Token出海",
+        "name": "Token出海"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1690,8 +1690,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "Token工厂",
-        "subject_key": "Token工厂"
+        "key": "Token工厂",
+        "name": "Token工厂"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1705,8 +1705,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "化工-氟-电子级氢氟酸",
-        "subject_key": "化工-氟-电子级氢氟酸"
+        "key": "化工-氟-电子级氢氟酸",
+        "name": "化工-氟-电子级氢氟酸"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1720,8 +1720,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "光刻胶",
-        "subject_key": "光刻胶"
+        "key": "光刻胶",
+        "name": "光刻胶"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1735,8 +1735,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "电子布Low-DK",
-        "subject_key": "电子布Low-DK"
+        "key": "电子布Low-DK",
+        "name": "电子布Low-DK"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1750,8 +1750,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "太空算力",
-        "subject_key": "太空算力"
+        "key": "太空算力",
+        "name": "太空算力"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1765,8 +1765,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "存储芯片",
-        "subject_key": "存储芯片"
+        "key": "存储芯片",
+        "name": "存储芯片"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1780,8 +1780,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "电子特气",
-        "subject_key": "电子特气"
+        "key": "电子特气",
+        "name": "电子特气"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1795,8 +1795,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "算电协同",
-        "subject_key": "算电协同"
+        "key": "算电协同",
+        "name": "算电协同"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1810,8 +1810,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "电子特气-六氟化钨",
-        "subject_key": "电子特气-六氟化钨"
+        "key": "电子特气-六氟化钨",
+        "name": "电子特气-六氟化钨"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1825,8 +1825,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "长鑫存储IPO",
-        "subject_key": "长鑫存储IPO"
+        "key": "长鑫存储IPO",
+        "name": "长鑫存储IPO"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1840,8 +1840,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "人形机器人",
-        "subject_key": "人形机器人"
+        "key": "人形机器人",
+        "name": "人形机器人"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1855,8 +1855,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "半导体设备",
-        "subject_key": "半导体设备"
+        "key": "半导体设备",
+        "name": "半导体设备"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1870,8 +1870,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "宇树机器人",
-        "subject_key": "宇树机器人"
+        "key": "宇树机器人",
+        "name": "宇树机器人"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1885,8 +1885,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "金刚石散热",
-        "subject_key": "金刚石散热"
+        "key": "金刚石散热",
+        "name": "金刚石散热"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1900,8 +1900,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "卫星互联网-航天国家队",
-        "subject_key": "卫星互联网-航天国家队"
+        "key": "卫星互联网-航天国家队",
+        "name": "卫星互联网-航天国家队"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1915,8 +1915,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "生成式物理AI",
-        "subject_key": "生成式物理AI"
+        "key": "生成式物理AI",
+        "name": "生成式物理AI"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1930,8 +1930,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "共封装光学CPO",
-        "subject_key": "共封装光学CPO"
+        "key": "共封装光学CPO",
+        "name": "共封装光学CPO"
       },
       "stage_judgement": "start",
       "confidence": 0.7,
@@ -1945,8 +1945,8 @@
       "claim_type": "theme_stage",
       "subject": {
         "type": "theme",
-        "name": "特斯拉机器人",
-        "subject_key": "特斯拉机器人"
+        "key": "特斯拉机器人",
+        "name": "特斯拉机器人"
       },
       "stage_judgement": "start",
       "confidence": 0.7,

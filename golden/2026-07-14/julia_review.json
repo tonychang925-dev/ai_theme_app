@@ -1,9 +1,9 @@
 {
   "trade_date": "2026-07-14",
   "as_of": "2026-07-14T15:30:00+08:00",
-  "generated_at": "2026-08-07T09:14:06.158605+08:00",
+  "generated_at": "2026-08-07T09:52:29.074717+08:00",
   "versions": {
-    "julia_core": "a96a1ab",
+    "julia_core": "c820e1b",
     "taxonomy": "stage-taxonomy.v1",
     "market_context_schema": "market-context.v1",
     "workbench_review_schema": "analyst-workbench.review.v1"
@@ -11,17 +11,17 @@
   "input_hash": "e654357bf0b30f0a1d20b16ac7068314e4bab98dd43d73e2bc96ff923e309184",
   "status": "completed",
   "verdict_distribution": {
-    "partially_agree": 46,
-    "insufficient_data": 78,
-    "partially_disagree": 6
+    "partially_agree": 49,
+    "insufficient_data": 76,
+    "partially_disagree": 5
   },
   "stage_distribution": {
     "fading_momentum": 31,
     "data_inconclusive": 76,
     "start": 23
   },
-  "agreement_ratio": 0.35384615384615387,
-  "overall_assessment": "reviewed 130 claims, 46 agree, 6 disagree, 78 insufficient",
+  "agreement_ratio": 0.3769230769230769,
+  "overall_assessment": "reviewed 130 claims, 49 agree, 5 disagree, 76 insufficient",
   "judgments": [
     {
       "subject": "9025631",
@@ -87,15 +87,15 @@
     {
       "subject": "电力运营",
       "verdict": "insufficient_data",
-      "julia_stage": "unknown",
+      "julia_stage": "data_inconclusive",
       "confidence": 0.25,
       "supporting_evidence": [],
       "contradicting_evidence": [],
       "missing_evidence": [
-        "theme_fact_not_found"
+        "julia_inconclusive::data_inconclusive=diffusion"
       ],
       "inference_evidence": [],
-      "rationale": "no_market_facts_for_this_subject"
+      "rationale": "cannot_form_independent_stage"
     },
     {
       "subject": "9017645",
@@ -239,16 +239,20 @@
     },
     {
       "subject": "卫星互联网",
-      "verdict": "insufficient_data",
-      "julia_stage": "unknown",
-      "confidence": 0.25,
-      "supporting_evidence": [],
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
+      ],
       "contradicting_evidence": [],
       "missing_evidence": [
-        "theme_fact_not_found"
+        "stages_close::fading_momentum=divergence"
       ],
-      "inference_evidence": [],
-      "rationale": "no_market_facts_for_this_subject"
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=1"
     },
     {
       "subject": "9038372",
@@ -566,15 +570,18 @@
     {
       "subject": "PCB印制电路板",
       "verdict": "insufficient_data",
-      "julia_stage": "unknown",
+      "julia_stage": "data_inconclusive",
       "confidence": 0.25,
       "supporting_evidence": [],
       "contradicting_evidence": [],
       "missing_evidence": [
-        "theme_fact_not_found"
+        "julia_inconclusive::data_inconclusive=diffusion",
+        "missing_leader_health",
+        "missing_breadth",
+        "missing_capital_direction"
       ],
       "inference_evidence": [],
-      "rationale": "no_market_facts_for_this_subject"
+      "rationale": "cannot_form_independent_stage"
     },
     {
       "subject": "9045920",
@@ -1126,15 +1133,15 @@
     {
       "subject": "磷化铟",
       "verdict": "insufficient_data",
-      "julia_stage": "unknown",
+      "julia_stage": "data_inconclusive",
       "confidence": 0.25,
       "supporting_evidence": [],
       "contradicting_evidence": [],
       "missing_evidence": [
-        "theme_fact_not_found"
+        "julia_inconclusive::data_inconclusive=divergence"
       ],
       "inference_evidence": [],
-      "rationale": "no_market_facts_for_this_subject"
+      "rationale": "cannot_form_independent_stage"
     },
     {
       "subject": "9055746",
@@ -1294,15 +1301,15 @@
     {
       "subject": "电子元器件",
       "verdict": "insufficient_data",
-      "julia_stage": "unknown",
+      "julia_stage": "data_inconclusive",
       "confidence": 0.25,
       "supporting_evidence": [],
       "contradicting_evidence": [],
       "missing_evidence": [
-        "theme_fact_not_found"
+        "julia_inconclusive::data_inconclusive=divergence"
       ],
       "inference_evidence": [],
-      "rationale": "no_market_facts_for_this_subject"
+      "rationale": "cannot_form_independent_stage"
     },
     {
       "subject": "9064170",
@@ -1553,13 +1560,33 @@
     },
     {
       "subject": "人形机器人",
-      "verdict": "partially_disagree",
-      "julia_stage": "start",
-      "confidence": 0.6,
-      "supporting_evidence": [],
-      "contradicting_evidence": [
-        "stages_diverged::start=divergence"
+      "verdict": "partially_agree",
+      "julia_stage": "fading_momentum",
+      "confidence": 0.55,
+      "supporting_evidence": [
+        "leader_weak"
       ],
+      "contradicting_evidence": [],
+      "missing_evidence": [
+        "stages_close::fading_momentum=divergence",
+        "missing_breadth",
+        "missing_capital_direction"
+      ],
+      "inference_evidence": [
+        "leader_weak"
+      ],
+      "rationale": "support=1 contradict=0 missing=3"
+    },
+    {
+      "subject": "英伟达Rubin液冷",
+      "verdict": "partially_agree",
+      "julia_stage": "start",
+      "confidence": 0.65,
+      "supporting_evidence": [
+        "stages_aligned::start=start",
+        "strength_low"
+      ],
+      "contradicting_evidence": [],
       "missing_evidence": [
         "missing_leader_health",
         "missing_breadth",
@@ -1568,20 +1595,7 @@
       "inference_evidence": [
         "strength_low"
       ],
-      "rationale": "support=0 contradict=1 missing=3"
-    },
-    {
-      "subject": "英伟达Rubin液冷",
-      "verdict": "insufficient_data",
-      "julia_stage": "unknown",
-      "confidence": 0.25,
-      "supporting_evidence": [],
-      "contradicting_evidence": [],
-      "missing_evidence": [
-        "theme_fact_not_found"
-      ],
-      "inference_evidence": [],
-      "rationale": "no_market_facts_for_this_subject"
+      "rationale": "support=2 contradict=0 missing=3"
     },
     {
       "subject": "MLCC电容",
