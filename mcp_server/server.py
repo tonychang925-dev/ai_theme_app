@@ -18,6 +18,13 @@ from mcp_server.tools.subscription import subscribe_agent_channel
 from mcp_server.tools.explain import explain_decision
 from mcp_server.tools.market_context import market_context_snapshot
 from mcp_server.tools.workbench_review import market_workbench_review
+from mcp_server.tools.research_tools import (
+    market_stock_history,
+    market_stock_auction,
+    market_theme_constituents,
+    market_theme_capital,
+    market_regime_read,
+)
 
 MCP_TOOLS = {
     # ── Fact layer ──
@@ -25,6 +32,13 @@ MCP_TOOLS = {
 
     # ── Judgment layer ──
     "market_workbench_review": market_workbench_review,
+
+    # ── Research layer (M3.2.7) ──
+    "market_stock_history": market_stock_history,
+    "market_stock_auction": market_stock_auction,
+    "market_theme_constituents": market_theme_constituents,
+    "market_theme_capital": market_theme_capital,
+    "market_regime_read": market_regime_read,
 
     # ── Intelligence layer ──
     "review_market_snapshot": review_market_snapshot,
