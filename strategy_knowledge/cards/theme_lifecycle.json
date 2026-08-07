@@ -1,0 +1,124 @@
+{
+  "strategy_id": "theme_lifecycle",
+  "name": "题材生命周期",
+  "concept": "题材周期",
+  "version": "1.0",
+  "created_at": "2026-08-07",
+
+  "market_phases": ["all"],
+
+  "trigger_conditions": [
+    "any stage judgment is made (always applicable)",
+    "provides the macro framework for interpreting other StrategyCards"
+  ],
+
+  "required_data": [
+    "market_regime",
+    "theme_age_days",
+    "leader_board_height",
+    "breadth_trend",
+    "limit_up_count_trend",
+    "capital_flow_trend"
+  ],
+
+  "possible_states": [
+    {
+      "state": "初期试错",
+      "order": 0,
+      "features": "1-3只股票涨停，板块异动排名靠前，消息集中爆发",
+      "operation": "关注第一个换手板龙头，轻仓试探打板或低吸前排人气股",
+      "duration": "1-3 days",
+      "julia_taxonomy_analog": "start"
+    },
+    {
+      "state": "发酵进场",
+      "order": 1,
+      "features": "首个3连板以上龙头出现，资金开始抱团，主升浪开启",
+      "operation": "加仓龙头（换手高标），围绕分歧转一致节点参与前排",
+      "duration": "3-8 days",
+      "julia_taxonomy_analog": "diffusion"
+    },
+    {
+      "state": "高潮警惕",
+      "order": 2,
+      "features": "连续3天超10家涨停，龙虎榜频繁，成交量大幅上升",
+      "operation": "高度警惕，必要时止盈离场",
+      "duration": "1-3 days",
+      "julia_taxonomy_analog": "acceleration (late)"
+    },
+    {
+      "state": "分歧关注",
+      "order": 3,
+      "features": "龙头或次龙头出现首阴分歧",
+      "operation": "密切关注第二天弱转强信号，当天不低吸",
+      "rules": [
+        "大盘好+板块涨+龙头分歧 → 绝不能买",
+        "大盘不好+被动分歧+盘口承接好+换手<50% → 可以买"
+      ],
+      "duration": "1-2 days",
+      "julia_taxonomy_analog": "divergence (with strategy nuance)"
+    },
+    {
+      "state": "弱转强切入",
+      "order": 4,
+      "features": "首阴后第二天反包，放量涨停，弱转强确认",
+      "operation": "围绕分歧转一致节点参与龙头或次龙头",
+      "duration": "1 day signal",
+      "julia_taxonomy_analog": "NOT IN CURRENT TAXONOMY"
+    },
+    {
+      "state": "分歧补涨",
+      "order": 5,
+      "features": "高标龙头再次分歧，后排出现补涨行情",
+      "operation": "观望，不参与跟风股二次分歧",
+      "rules": [
+        "补涨股高度不太可能超过龙头",
+        "不参与跟风股的二次分歧"
+      ],
+      "duration": "2-3 days",
+      "julia_taxonomy_analog": "NOT IN CURRENT TAXONOMY"
+    },
+    {
+      "state": "退潮放弃",
+      "order": 6,
+      "features": "板块大面积跌停，龙头连续下跌",
+      "operation": "彻底观望，不参与任何反弹",
+      "duration": "until new cycle",
+      "julia_taxonomy_analog": "decline"
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "当前题材处于周期的哪个阶段？",
+      "probes": ["theme_age_days", "leader_board_height", "limit_up_count_trend"]
+    },
+    {
+      "question": "题材是否已经过度透支？",
+      "probes": ["volume_trend", "capital_flow_trend", "breadth_trend"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "发酵进场", "condition": "no_3_board_leader_within_5_days", "new_state": "初期试错或题材失败"},
+    {"state": "分歧关注", "condition": "next_day_weak_to_strong", "new_state": "弱转强切入"},
+    {"state": "分歧关注", "condition": "leader_continues_decline_no_defense", "new_state": "退潮放弃"}
+  ],
+
+  "source_refs": [
+    {
+      "document": "如何建立正确的交易体系.pdf",
+      "version": "2026.07",
+      "page": 2,
+      "section": "看市场情绪（30%）— 找准切入周期",
+      "text": "市场的情绪轨迹包括：市场初期→市场发酵→市场加速→市场高潮→市场分歧→市场退潮→周期结束"
+    },
+    {
+      "document": "如何建立正确的交易体系.pdf",
+      "version": "2026.07",
+      "page": 2,
+      "section": "相对确定性的行情的判断依据",
+      "text": "大环境保护：大盘如果是盛极而衰行情，坚决不能做龙头股。小环境安全：板块行情健康。个股具有高胜算：选对强股，选对位置。"
+    }
+  ]
+}

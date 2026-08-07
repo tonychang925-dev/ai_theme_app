@@ -1,0 +1,122 @@
+{
+  "strategy_id": "leader_divergence",
+  "name": "龙头分歧识别",
+  "concept": "分歧",
+  "version": "1.0",
+  "created_at": "2026-08-07",
+
+  "market_phases": ["diffusion", "acceleration", "divergence"],
+
+  "trigger_conditions": [
+    "StageInferenceEngine detects leader_weak",
+    "leader health signal = weakening",
+    "Workbench or Julia flags theme stage concern"
+  ],
+
+  "required_data": [
+    "leader_5d_return",
+    "leader_drawdown_from_peak",
+    "leader_volume_pattern",
+    "key_level_status",
+    "peer_relative_strength",
+    "theme_breadth_change",
+    "capital_persistence",
+    "market_regime",
+    "new_leader_candidates"
+  ],
+
+  "possible_states": [
+    {
+      "state": "normal_adjustment",
+      "evidence_pattern": {
+        "leader_drawdown": "<= 5%",
+        "key_level": "intact",
+        "volume": "contracting_not_selling",
+        "peer_strength": "maintained",
+        "breadth": "stable_or_expanding"
+      },
+      "action": "hold_observe",
+      "confidence_modifier": 0.1
+    },
+    {
+      "state": "active_divergence",
+      "evidence_pattern": {
+        "leader_drawdown": "5-15%",
+        "key_level": "testing",
+        "volume": "elevated_on_decline",
+        "peer_strength": "mixed",
+        "breadth": "contracting"
+      },
+      "action": "wait_for_weak_to_strong_signal",
+      "confidence_modifier": -0.1,
+      "note": "分歧关注阶段 — 密切关注第二天弱转强信号，当天不低吸"
+    },
+    {
+      "state": "leader_failure",
+      "evidence_pattern": {
+        "leader_drawdown": "> 15%",
+        "key_level": "broken",
+        "volume": "heavy_selling",
+        "peer_strength": "weakening",
+        "breadth": "contracting",
+        "capital": "outflow"
+      },
+      "action": "reduce_or_exit",
+      "confidence_modifier": -0.3
+    },
+    {
+      "state": "leader_rotation",
+      "evidence_pattern": {
+        "leader_drawdown": "> 5%",
+        "key_level": "broken_or_testing",
+        "peer_strength": "new_strength_emerging",
+        "breadth": "stable",
+        "new_leader_candidates": ">= 1",
+        "capital": "persistent"
+      },
+      "action": "monitor_new_leader",
+      "confidence_modifier": 0.0,
+      "note": "老龙头走弱但新核心出现 — 不是退潮，是切换"
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "龙头走弱是正常调整还是结构破坏？",
+      "probes": ["leader_5d_return", "leader_drawdown", "volume_pattern", "key_level_status"]
+    },
+    {
+      "question": "是否出现新核心接替？",
+      "probes": ["peer_relative_strength", "new_leader_candidates"]
+    },
+    {
+      "question": "题材整体是否仍在扩散？",
+      "probes": ["theme_breadth_change", "capital_persistence"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "normal_adjustment", "condition": "leader_breaks_key_support", "new_state": "active_divergence"},
+    {"state": "active_divergence", "condition": "breadth_contracts_and_peers_weaken", "new_state": "leader_failure"},
+    {"state": "active_divergence", "condition": "next_day_weak_to_strong_confirmed", "new_state": "weak_to_strong_entry"},
+    {"state": "leader_failure", "condition": "new_leader_emerges_with_breadth", "new_state": "leader_rotation"},
+    {"state": "leader_rotation", "condition": "old_leader_recovers_key_level", "new_state": "normal_adjustment"}
+  ],
+
+  "source_refs": [
+    {
+      "document": "如何建立正确的交易体系.pdf",
+      "version": "2026.07",
+      "page": 2,
+      "section": "分歧-关注",
+      "text": "龙头或次龙头出现首阴分歧。密切关注第二天龙头股是否会再次反包，实现弱转强行情，下跌的当天此时尽量不要低吸操作。"
+    },
+    {
+      "document": "如何建立正确的交易体系.pdf",
+      "version": "2026.07",
+      "page": 2,
+      "section": "分歧-关注-注意事项",
+      "text": "如果大盘环境好，指数在上涨，对应的板块也在上涨，此时龙头股出现的分歧绝不能买。如果大盘大环境不好出现的被动分歧...此时龙头股的分歧可以买。"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "strategy_id": "weak_to_strong",
+  "name": "弱转强识别",
+  "concept": "弱转强",
+  "version": "1.0",
+  "created_at": "2026-08-07",
+
+  "market_phases": ["divergence", "fading_momentum"],
+
+  "trigger_conditions": [
+    "previous session had leader divergence (首阴)",
+    "leader closed near key support (5日/10日均线 or 前涨停价)",
+    "closing showed capital defense (护盘)"
+  ],
+
+  "required_data": [
+    "auction_strength",
+    "open_gap",
+    "intraday_volume",
+    "leader_key_level",
+    "limit_up_seal_quality",
+    "peer_follow_through",
+    "market_regime"
+  ],
+
+  "possible_states": [
+    {
+      "state": "confirmed_weak_to_strong",
+      "evidence_pattern": {
+        "auction": "high_open_or_scrambling",
+        "open": "high_open_or_low_open_recovery",
+        "volume": "amplified_vs_previous",
+        "intraday": "strong_buying_wall",
+        "limit_up": "decisive_seal",
+        "peers": "follow_through_present"
+      },
+      "action": "entry_on_confirmation",
+      "confidence_modifier": 0.25
+    },
+    {
+      "state": "false_weak_to_strong",
+      "evidence_pattern": {
+        "volume": "contracting",
+        "intraday": "pullback_fails_recovery",
+        "limit_up": "weak_seal_or_no_seal",
+        "next_day": "gap_down_or_continue_decline"
+      },
+      "action": "avoid_or_exit",
+      "confidence_modifier": -0.3,
+      "note": "缩量拉升、封单虚弱、次日冲高回落 — 假弱转强"
+    },
+    {
+      "state": "no_signal_yet",
+      "evidence_pattern": {
+        "auction": "flat_or_weak",
+        "open": "flat",
+        "volume": "normal_or_low"
+      },
+      "action": "wait_for_next_session",
+      "confidence_modifier": 0.0
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "集合竞价是否出现弱转强信号？",
+      "probes": ["auction_strength", "open_gap"]
+    },
+    {
+      "question": "拉升是真放量还是假诱多？",
+      "probes": ["intraday_volume", "intraday_price_pattern", "limit_up_seal_quality"]
+    },
+    {
+      "question": "板块是否有联动确认？",
+      "probes": ["peer_follow_through"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "confirmed_weak_to_strong", "condition": "next_day_gap_down", "new_state": "false_weak_to_strong"},
+    {"state": "no_signal_yet", "condition": "leader_breaks_key_support_intraday", "new_state": "leader_failure"}
+  ],
+
+  "weak_to_strong_types": [
+    {
+      "type": "集合竞价弱转强",
+      "signal": "高开或抢筹",
+      "source_page": 2
+    },
+    {
+      "type": "早盘分时弱转强",
+      "signal": "放量拉升，大部分时间在分时均线上",
+      "source_page": 2
+    },
+    {
+      "type": "盘中弱转强",
+      "signal": "从弱于大盘到强于大盘，突破30分钟以上盘整平台",
+      "source_page": 3
+    }
+  ],
+
+  "key_principle": "该弱不弱则为强",
+
+  "source_refs": [
+    {
+      "document": "弱转强买入法.pdf",
+      "version": "2026.07",
+      "page": 1,
+      "section": "什么是弱转强",
+      "text": "龙头股在高位分歧后，出现看似走弱，但第二天通过强势反包、放量涨停，重新夺回市场话语权，完成从弱势到强势的转化。"
+    },
+    {
+      "document": "弱转强买入法.pdf",
+      "version": "2026.07",
+      "page": 1,
+      "section": "弱转强的特征信号",
+      "text": "前一日分歧...次日反包...板块联动"
+    },
+    {
+      "document": "弱转强买入法.pdf",
+      "version": "2026.07",
+      "page": 4,
+      "section": "注意事项",
+      "text": "一定要是强势股或者龙头，杂毛不配弱转强。真：放量换手，封单坚决，次日承接良好。假：缩量拉升，封单虚弱，次日冲高回落。"
+    }
+  ]
+}
