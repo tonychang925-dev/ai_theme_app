@@ -35,6 +35,13 @@
         "peer_strength": "maintained",
         "breadth": "stable_or_expanding"
       },
+      "predicates": [
+        {"requirement_id": "leader_drawdown_from_peak", "operator": ">=", "value": -0.05, "role": "core"},
+        {"requirement_id": "key_level_status", "path": "state", "operator": "in", "value": ["intact", "intact_limit_up"], "role": "core"},
+        {"requirement_id": "leader_volume_pattern", "operator": "in", "value": ["contracting", "normal"], "role": "supporting"},
+        {"requirement_id": "peer_relative_strength", "path": "dispersion.max_min_spread", "operator": "<=", "value": 0.15, "role": "supporting"},
+        {"requirement_id": "theme_breadth_change", "path": "delta.positive_ratio", "operator": ">=", "value": 0.5, "role": "supporting"}
+      ],
       "action": "hold_observe",
       "confidence_modifier": 0.1
     },
@@ -47,6 +54,13 @@
         "peer_strength": "mixed",
         "breadth": "contracting"
       },
+      "predicates": [
+        {"requirement_id": "leader_drawdown_from_peak", "operator": "<=", "value": -0.05, "role": "core"},
+        {"requirement_id": "leader_drawdown_from_peak", "operator": ">=", "value": -0.15, "role": "core"},
+        {"requirement_id": "key_level_status", "path": "state", "operator": "eq", "value": "testing", "role": "core"},
+        {"requirement_id": "leader_volume_pattern", "operator": "eq", "value": "elevated", "role": "supporting"},
+        {"requirement_id": "theme_breadth_change", "path": "delta.positive_ratio", "operator": "<", "value": 0.30, "role": "supporting"}
+      ],
       "action": "wait_for_weak_to_strong_signal",
       "confidence_modifier": -0.1,
       "note": "分歧关注阶段 — 密切关注第二天弱转强信号，当天不低吸"
@@ -61,6 +75,13 @@
         "breadth": "contracting",
         "capital": "outflow"
       },
+      "predicates": [
+        {"requirement_id": "leader_drawdown_from_peak", "operator": "<", "value": -0.15, "role": "decisive"},
+        {"requirement_id": "key_level_status", "path": "state", "operator": "eq", "value": "broken", "role": "decisive"},
+        {"requirement_id": "leader_volume_pattern", "operator": "eq", "value": "heavy_selling", "role": "core"},
+        {"requirement_id": "theme_breadth_change", "operator": "eq", "value": "contracting", "role": "core"},
+        {"requirement_id": "capital_persistence", "operator": "eq", "value": "outflow", "role": "core"}
+      ],
       "action": "reduce_or_exit",
       "confidence_modifier": -0.3
     },
@@ -74,6 +95,14 @@
         "new_leader_candidates": ">= 1",
         "capital": "persistent"
       },
+      "predicates": [
+        {"requirement_id": "leader_drawdown_from_peak", "operator": "<", "value": -0.05, "role": "core"},
+        {"requirement_id": "key_level_status", "path": "state", "operator": "in", "value": ["broken", "testing"], "role": "core"},
+        {"requirement_id": "peer_relative_strength", "path": "dispersion.max_min_spread", "operator": ">", "value": 0.10, "role": "core"},
+        {"requirement_id": "emerging_leaders", "operator": ">=", "value": 1, "role": "core", "is_list_count": true},
+        {"requirement_id": "theme_breadth_change", "path": "delta.positive_ratio", "operator": ">=", "value": 0.3, "role": "supporting"},
+        {"requirement_id": "capital_persistence", "operator": "!=", "value": "outflow", "role": "supporting"}
+      ],
       "action": "monitor_new_leader",
       "confidence_modifier": 0.0,
       "note": "老龙头走弱但新核心出现 — 不是退潮，是切换"
