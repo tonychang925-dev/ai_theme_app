@@ -38,26 +38,186 @@
     "emotion_momentum": 6,
     "is_reversal_confirmed": false,
     "facts": {
-      "limit_up_count": 79,
-      "chain_board_count": 5,
-      "max_board_height": 2,
-      "max_board_stock": "信通电子",
-      "active_capital_yi": null,
-      "market_up_count": null,
-      "market_down_count": null,
-      "market_up_ratio": 0.76,
-      "limit_down_count": null,
-      "below_minus5_count": 147,
-      "loss_effect_ratio": 1.86,
-      "first_board_success_rate": null,
-      "index_support_zone": "",
-      "intraday_driver": "",
-      "shanghai_close": null,
-      "shanghai_change_pct": null,
-      "shenzhen_close": null,
-      "shenzhen_change_pct": null,
-      "chinext_close": null,
-      "chinext_change_pct": null
+      "limit_up_count": {
+        "value": 79,
+        "provenance": {
+          "source": "image_22_deterministic_reconstruction",
+          "method": "local_deterministic_rebuild_from_OCR_batches",
+          "authored_by_human": false,
+          "confidence": 0.95
+        }
+      },
+      "chain_board_count": {
+        "value": 5,
+        "provenance": {
+          "source": "image_22_deterministic_reconstruction",
+          "method": "local_deterministic_rebuild_from_OCR_batches",
+          "authored_by_human": false,
+          "confidence": 0.95
+        }
+      },
+      "max_board_height": {
+        "value": 2,
+        "provenance": {
+          "source": "image_22_deterministic_reconstruction",
+          "method": "local_deterministic_rebuild_from_OCR_batches",
+          "authored_by_human": false,
+          "confidence": 0.95
+        }
+      },
+      "max_board_stock": {
+        "value": "信通电子",
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": true,
+          "confidence": 0.7
+        }
+      },
+      "active_capital_yi": {
+        "value": null,
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": false,
+          "confidence": 0.0
+        }
+      },
+      "market_up_count": {
+        "value": null,
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": false,
+          "confidence": 0.0
+        }
+      },
+      "market_down_count": {
+        "value": null,
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": false,
+          "confidence": 0.0
+        }
+      },
+      "market_up_ratio": {
+        "value": 0.76,
+        "provenance": {
+          "source": "image_22_chart_data",
+          "method": "OCR_extraction",
+          "authored_by_human": false,
+          "confidence": 0.85
+        }
+      },
+      "limit_down_count": {
+        "value": null,
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": false,
+          "confidence": 0.0
+        }
+      },
+      "below_minus5_count": {
+        "value": 147,
+        "provenance": {
+          "source": "image_22_chart_data",
+          "method": "OCR_extraction",
+          "authored_by_human": false,
+          "confidence": 0.85
+        }
+      },
+      "loss_effect_ratio": {
+        "value": 1.86,
+        "provenance": {
+          "source": "image_22_chart_data",
+          "method": "OCR_extraction",
+          "authored_by_human": false,
+          "confidence": 0.85
+        }
+      },
+      "first_board_success_rate": {
+        "value": null,
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": false,
+          "confidence": 0.0
+        }
+      },
+      "index_support_zone": {
+        "value": "",
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": true,
+          "confidence": 0.7
+        }
+      },
+      "intraday_driver": {
+        "value": "",
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": true,
+          "confidence": 0.7
+        }
+      },
+      "shanghai_close": {
+        "value": null,
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": false,
+          "confidence": 0.0
+        }
+      },
+      "shanghai_change_pct": {
+        "value": null,
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": false,
+          "confidence": 0.0
+        }
+      },
+      "shenzhen_close": {
+        "value": null,
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": false,
+          "confidence": 0.0
+        }
+      },
+      "shenzhen_change_pct": {
+        "value": null,
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": false,
+          "confidence": 0.0
+        }
+      },
+      "chinext_close": {
+        "value": null,
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": false,
+          "confidence": 0.0
+        }
+      },
+      "chinext_change_pct": {
+        "value": null,
+        "provenance": {
+          "source": "analyst_original_article",
+          "method": "direct_OCR_or_null",
+          "authored_by_human": false,
+          "confidence": 0.0
+        }
+      }
     },
     "leader": {
       "board": "2板",
@@ -133,553 +293,899 @@
       "group": "华为昇腾950",
       "stage_raw": "调整",
       "day_count": 2,
-      "daily_notes": "个别强"
+      "daily_notes": "个别强",
+      "is_multi_day_sequence": false,
+      "temporal_alignment_status": "likely_current"
     },
     {
       "group": "华为韬",
       "stage_raw": "调整",
       "day_count": 3,
-      "daily_notes": "个别"
+      "daily_notes": "个别",
+      "is_multi_day_sequence": false,
+      "temporal_alignment_status": "likely_current"
     },
     {
       "group": "存储芯片模组厂",
       "stage_raw": "调整",
       "day_count": 2,
-      "daily_notes": "强，部分有回流"
+      "daily_notes": "强，部分有回流",
+      "is_multi_day_sequence": false,
+      "temporal_alignment_status": "likely_current"
     },
     {
       "group": "国产服务器",
       "stage_raw": "启动",
       "day_count": 1,
-      "daily_notes": "弱启"
+      "daily_notes": "弱启",
+      "is_multi_day_sequence": false,
+      "temporal_alignment_status": "likely_current"
     },
     {
       "group": "半导体设备",
       "stage_raw": "启动",
       "day_count": 3,
-      "daily_notes": "强，部分有回流"
+      "daily_notes": "强，部分有回流",
+      "is_multi_day_sequence": false,
+      "temporal_alignment_status": "likely_current"
     },
     {
       "group": "半导体硅片",
       "stage_raw": "调整",
       "day_count": 1,
-      "daily_notes": ""
+      "daily_notes": "",
+      "is_multi_day_sequence": false,
+      "temporal_alignment_status": "likely_current"
     },
     {
       "group": "碳化硅",
       "stage_raw": "调整",
       "day_count": 6,
-      "daily_notes": ""
-    },
-    {
-      "group": "六氟化钨",
-      "stage_raw": "调整",
-      "day_count": 3,
-      "daily_notes": "部分"
-    },
-    {
-      "group": "六氟化钨",
-      "stage_raw": "调整",
-      "day_count": 5,
-      "daily_notes": ""
-    },
-    {
-      "group": "六氟化钨",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "六氟化钨",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "六氟化钨",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "六氟化钨",
-      "stage_raw": "调整",
-      "day_count": 3,
-      "daily_notes": "部分"
-    },
-    {
-      "group": "靶材",
-      "stage_raw": "调整",
-      "day_count": 7,
-      "daily_notes": ""
-    },
-    {
-      "group": "靶材",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "靶材",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "靶材",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "靶材",
-      "stage_raw": "调整",
-      "day_count": 3,
-      "daily_notes": "部分"
-    },
-    {
-      "group": "光刻胶",
-      "stage_raw": "调整",
-      "day_count": 6,
-      "daily_notes": ""
-    },
-    {
-      "group": "光刻胶",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "光刻胶",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "光刻胶",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "光刻胶",
-      "stage_raw": "调整",
-      "day_count": 3,
-      "daily_notes": "部分"
-    },
-    {
-      "group": "氧化锆",
-      "stage_raw": "调整",
-      "day_count": 10,
-      "daily_notes": "部分"
-    },
-    {
-      "group": "氧化锆",
-      "stage_raw": "调整",
-      "day_count": 6,
-      "daily_notes": ""
-    },
-    {
-      "group": "氧化锆",
-      "stage_raw": "调整",
-      "day_count": 7,
-      "daily_notes": ""
-    },
-    {
-      "group": "氧化锆",
-      "stage_raw": "调整",
-      "day_count": 8,
-      "daily_notes": ""
-    },
-    {
-      "group": "氧化锆",
-      "stage_raw": "调整",
-      "day_count": 9,
-      "daily_notes": ""
-    },
-    {
-      "group": "液冷服务器",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": "弱启"
-    },
-    {
-      "group": "液冷服务器",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": "板块"
-    },
-    {
-      "group": "液冷服务器",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "液冷服务器",
-      "stage_raw": "调整",
-      "day_count": 6,
-      "daily_notes": ""
-    },
-    {
-      "group": "液冷服务器",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "液冷服务器",
-      "stage_raw": "分歧",
-      "day_count": null,
-      "daily_notes": "部分收红"
-    },
-    {
-      "group": "英伟达rubin架构",
-      "stage_raw": "调整",
-      "day_count": 3,
-      "daily_notes": ""
-    },
-    {
-      "group": "英伟达rubin架构",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "英伟达rubin架构",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "英伟达rubin架构",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "英伟达rubin架构",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": "弱启"
-    },
-    {
-      "group": "光纤",
-      "stage_raw": "调整",
-      "day_count": 9,
-      "daily_notes": ""
-    },
-    {
-      "group": "光纤",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "光纤",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "光纤",
-      "stage_raw": null,
-      "day_count": null,
-      "daily_notes": "动，有资金回流"
-    },
-    {
-      "group": "光纤",
-      "stage_raw": "调整",
-      "day_count": 7,
-      "daily_notes": "有资金"
-    },
-    {
-      "group": "光纤",
-      "stage_raw": "调整",
-      "day_count": 10,
-      "daily_notes": "有资"
-    },
-    {
-      "group": "光纤",
-      "stage_raw": "调整",
-      "day_count": 8,
-      "daily_notes": ""
+      "daily_notes": "",
+      "is_multi_day_sequence": false,
+      "temporal_alignment_status": "likely_current"
     },
     {
       "group": "MP0",
       "stage_raw": "调整",
       "day_count": 6,
-      "daily_notes": ""
-    },
-    {
-      "group": "cpo光模块",
-      "stage_raw": "调整",
-      "day_count": 6,
-      "daily_notes": ""
-    },
-    {
-      "group": "cpo光模块",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "cpo光模块",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "cpo光模块",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "PCB",
-      "stage_raw": "调整",
-      "day_count": 3,
-      "daily_notes": ""
-    },
-    {
-      "group": "PCB",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "PCB",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "PCB",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "PCB",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": "弱启"
-    },
-    {
-      "group": "MLCC",
-      "stage_raw": "调整",
-      "day_count": 9,
-      "daily_notes": ""
-    },
-    {
-      "group": "MLCC",
-      "stage_raw": "动",
-      "day_count": null,
-      "daily_notes": ""
-    },
-    {
-      "group": "MLCC",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "MLCC",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "MLCC",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "MLCC",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": "弱启"
-    },
-    {
-      "group": "覆铜板",
-      "stage_raw": "调整",
-      "day_count": 3,
-      "daily_notes": ""
-    },
-    {
-      "group": "覆铜板",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "覆铜板",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "覆铜板",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "覆铜板",
-      "stage_raw": "动",
-      "day_count": null,
-      "daily_notes": ""
-    },
-    {
-      "group": "覆铜板",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": "弱启"
-    },
-    {
-      "group": "电子布",
-      "stage_raw": "调整",
-      "day_count": 3,
-      "daily_notes": ""
-    },
-    {
-      "group": "电子布",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "电子布",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "电子布",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "电子布",
-      "stage_raw": "动",
-      "day_count": null,
-      "daily_notes": ""
-    },
-    {
-      "group": "电子布",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": "弱启"
-    },
-    {
-      "group": "铜箔",
-      "stage_raw": "调整",
-      "day_count": 3,
-      "daily_notes": ""
-    },
-    {
-      "group": "铜箔",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "铜箔",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "铜箔",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "铜箔",
-      "stage_raw": "动",
-      "day_count": null,
-      "daily_notes": ""
-    },
-    {
-      "group": "环氧树脂",
-      "stage_raw": "调整",
-      "day_count": 9,
-      "daily_notes": ""
-    },
-    {
-      "group": "环氧树脂",
-      "stage_raw": "调整",
-      "day_count": 10,
-      "daily_notes": ""
-    },
-    {
-      "group": "环氧树脂",
-      "stage_raw": "调整",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "环氧树脂",
-      "stage_raw": "调整",
-      "day_count": 2,
-      "daily_notes": ""
-    },
-    {
-      "group": "环氧树脂",
-      "stage_raw": "启动",
-      "day_count": 1,
-      "daily_notes": ""
-    },
-    {
-      "group": "环氧树脂",
-      "stage_raw": "调整",
-      "day_count": 12,
-      "daily_notes": ""
-    },
-    {
-      "group": "环氧树脂",
-      "stage_raw": "调整",
-      "day_count": 13,
-      "daily_notes": ""
-    },
-    {
-      "group": "环氧树脂",
-      "stage_raw": "调整",
-      "day_count": 16,
-      "daily_notes": "部分"
-    },
-    {
-      "group": "金属钼",
-      "stage_raw": "金回流",
-      "day_count": null,
-      "daily_notes": ""
-    },
-    {
-      "group": "金属钼",
-      "stage_raw": "调整",
-      "day_count": 14,
-      "daily_notes": ""
+      "daily_notes": "",
+      "is_multi_day_sequence": false,
+      "temporal_alignment_status": "likely_current"
     },
     {
       "group": "金属铟",
       "stage_raw": "调整",
       "day_count": 10,
-      "daily_notes": "个别"
+      "daily_notes": "个别",
+      "is_multi_day_sequence": false,
+      "temporal_alignment_status": "likely_current"
     },
     {
       "group": "金属钨",
       "stage_raw": "调整",
       "day_count": 9,
-      "daily_notes": ""
+      "daily_notes": "",
+      "is_multi_day_sequence": false,
+      "temporal_alignment_status": "likely_current"
     },
     {
       "group": "SST",
       "stage_raw": "调整",
       "day_count": 13,
-      "daily_notes": "个别"
+      "daily_notes": "个别",
+      "is_multi_day_sequence": false,
+      "temporal_alignment_status": "likely_current"
+    },
+    {
+      "group": "六氟化钨",
+      "stage_raw": "调整",
+      "day_count": 3,
+      "daily_notes": "部分",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "六氟化钨",
+      "stage_raw": "调整",
+      "day_count": 5,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "六氟化钨",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "六氟化钨",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "六氟化钨",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "六氟化钨",
+      "stage_raw": "调整",
+      "day_count": 3,
+      "daily_notes": "部分",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "靶材",
+      "stage_raw": "调整",
+      "day_count": 7,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "靶材",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "靶材",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "靶材",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "靶材",
+      "stage_raw": "调整",
+      "day_count": 3,
+      "daily_notes": "部分",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光刻胶",
+      "stage_raw": "调整",
+      "day_count": 6,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光刻胶",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光刻胶",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光刻胶",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光刻胶",
+      "stage_raw": "调整",
+      "day_count": 3,
+      "daily_notes": "部分",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "氧化锆",
+      "stage_raw": "调整",
+      "day_count": 10,
+      "daily_notes": "部分",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "氧化锆",
+      "stage_raw": "调整",
+      "day_count": 6,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "氧化锆",
+      "stage_raw": "调整",
+      "day_count": 7,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "氧化锆",
+      "stage_raw": "调整",
+      "day_count": 8,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "氧化锆",
+      "stage_raw": "调整",
+      "day_count": 9,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "液冷服务器",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "弱启",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "液冷服务器",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "板块",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "液冷服务器",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "液冷服务器",
+      "stage_raw": "调整",
+      "day_count": 6,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "液冷服务器",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "液冷服务器",
+      "stage_raw": "分歧",
+      "day_count": null,
+      "daily_notes": "部分收红",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage_raw": "调整",
+      "day_count": 3,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "英伟达rubin架构",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "弱启",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光纤",
+      "stage_raw": "调整",
+      "day_count": 9,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光纤",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光纤",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光纤",
+      "stage_raw": null,
+      "day_count": null,
+      "daily_notes": "动，有资金回流",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光纤",
+      "stage_raw": "调整",
+      "day_count": 7,
+      "daily_notes": "有资金",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光纤",
+      "stage_raw": "调整",
+      "day_count": 10,
+      "daily_notes": "有资",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "光纤",
+      "stage_raw": "调整",
+      "day_count": 8,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "cpo光模块",
+      "stage_raw": "调整",
+      "day_count": 6,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "cpo光模块",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "cpo光模块",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "cpo光模块",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "PCB",
+      "stage_raw": "调整",
+      "day_count": 3,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "PCB",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "PCB",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "PCB",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "PCB",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "弱启",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "MLCC",
+      "stage_raw": "调整",
+      "day_count": 9,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "MLCC",
+      "stage_raw": "动",
+      "day_count": null,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "MLCC",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "MLCC",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "MLCC",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "MLCC",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "弱启",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "覆铜板",
+      "stage_raw": "调整",
+      "day_count": 3,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "覆铜板",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "覆铜板",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "覆铜板",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "覆铜板",
+      "stage_raw": "动",
+      "day_count": null,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "覆铜板",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "弱启",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "电子布",
+      "stage_raw": "调整",
+      "day_count": 3,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "电子布",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "电子布",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "电子布",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "电子布",
+      "stage_raw": "动",
+      "day_count": null,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "电子布",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "弱启",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "铜箔",
+      "stage_raw": "调整",
+      "day_count": 3,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "铜箔",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "铜箔",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "铜箔",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "铜箔",
+      "stage_raw": "动",
+      "day_count": null,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "环氧树脂",
+      "stage_raw": "调整",
+      "day_count": 9,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "环氧树脂",
+      "stage_raw": "调整",
+      "day_count": 10,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "环氧树脂",
+      "stage_raw": "调整",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "环氧树脂",
+      "stage_raw": "调整",
+      "day_count": 2,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "环氧树脂",
+      "stage_raw": "启动",
+      "day_count": 1,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "环氧树脂",
+      "stage_raw": "调整",
+      "day_count": 12,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "环氧树脂",
+      "stage_raw": "调整",
+      "day_count": 13,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "环氧树脂",
+      "stage_raw": "调整",
+      "day_count": 16,
+      "daily_notes": "部分",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "金属钼",
+      "stage_raw": "金回流",
+      "day_count": null,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
+    },
+    {
+      "group": "金属钼",
+      "stage_raw": "调整",
+      "day_count": 14,
+      "daily_notes": "",
+      "is_multi_day_sequence": true,
+      "temporal_alignment_status": "unresolved",
+      "exclude_from_human_score": true,
+      "_note": "Part of multi-day rhythm sequence. Observation date not independently verifiable from OCR."
     }
   ],
   "hot_money_directions": [
@@ -752,5 +1258,12 @@
   "bindings": {
     "_note": "Theme name to subject_key mappings require vw_subject_theme_binding lookup. Current candidates are from fuzzy matching.",
     "_status": "needs_review"
+  },
+  "institutional_rhythm_summary": {
+    "total_groups": 26,
+    "likely_current_views": 11,
+    "multi_day_history_entries": 81,
+    "excluded_from_score": 81,
+    "_note": "Multi-day sequences excluded from human accuracy scoring. Only likely_current entries used."
   }
 }

@@ -28,14 +28,14 @@ TRADE_DATES = {
 def run():
     OUTCOMES.mkdir(parents=True, exist_ok=True)
 
-    # O1: verify ALL four baseline hashes (not just julia_review)
-    manifest = json.loads((GOLDEN / "manifest.json").read_text(encoding="utf-8"))
+    # O1: verify ALL baseline hashes including manifest itself
+    base_manifest = json.loads((GOLDEN / "manifest.json").read_text(encoding="utf-8"))
+    base_manifest_hash = _sha256(GOLDEN / "manifest.json")
     for name in ("market_context", "workbench_review", "julia_review"):
-        expected = manifest["hashes"][name]
+        expected = base_manifest["hashes"][name]
         actual = _sha256(GOLDEN / f"{name}.json")
-        assert expected == actual, f"O1 FAIL: {name} hash mismatch. expected={expected[:16]}... actual={actual[:16]}..."
-    manifest_hash = _sha256(GOLDEN / "manifest.json")
-    print(f"✅ O1: all 4 baseline hashes verified")
+        assert expected == actual, f"O1 FAIL: {name} hash mismatch"
+    print(f"✅ O1: all 3 golden hashes + manifest SHA verified")
 
     # Load frozen data
     ctx = json.loads((GOLDEN / "market_context.json").read_text(encoding="utf-8"))
@@ -94,9 +94,12 @@ def run():
     # O6: do NOT use future stage_signal as truth
     print(f"✅ O6: no future stage_signal used — outcomes are market performance")
 
-    # O7: note where data is incomplete
-    missing_constituents = sum(1 for o in outcomes.values() if o["baseline"]["constituent_count"] == 0)
-    print(f"⚠️  O7: {missing_constituents} subjects have 0 constituents (partial outcomes)")
+    # O7: note where data is incomplete (count cards with non-empty constituents)
+    total_with_constituents = sum(1 for c in card_index.values() if len(c.get("constituents", [])) > 0)
+    total_subjects = len(juds)
+    missing_constituents = total_subjects - total_with_constituents
+    print(f"⚠️  O7: {total_with_constituents}/{total_subjects} subjects have non-empty constituent universes "
+          f"({missing_constituents} partial — outcome_status=constituents_unavailable)")
 
     # ── Group Analysis ────────────────────────────────────────────────────
     disagreements = [sk for sk, j in juds.items() if j["verdict"] == "partially_disagree"]
@@ -190,14 +193,38 @@ def run():
     print(f"✅ Outcome manifest saved")
 
     # ── Summary report ────────────────────────────────────────────────────
+    # ── Extension manifest (additive — does not modify f90721c baseline) ──
+    human_obs_path = GOLDEN / "human" / "analyst_observations.json"
+    extension_manifest = {
+        "schema_version": "case-extension-manifest.v1",
+        "case_id": "001-r1",
+        "base_artifact_commit": BASELINE_COMMIT,
+        "base_manifest_sha256": base_manifest_hash,
+        "extensions": {
+            "human_observations": {
+                "path": "human/analyst_observations.json",
+                "sha256": _sha256(human_obs_path) if human_obs_path.exists() else None,
+            },
+            "outcome_baseline": {
+                "path": "outcomes/baseline_universe.json",
+                "sha256": _sha256(OUTCOMES / "baseline_universe.json"),
+            },
+        },
+        "generated_at": _now(),
+    }
+    ext_path = GOLDEN / "case_extension_manifest.json"
+    ext_path.write_text(json.dumps(extension_manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"✅ Extension manifest: {ext_path}")
+
     print(f"\n{'='*70}")
     print(f"NEXT STEPS FOR OUTCOME REPLAY")
     print(f"{'='*70}")
     print(f"1. Ingest stock daily kline for 7/14→7/21 (theme_data_complete/stock_daily/)")
-    print(f"2. Compute per-subject_key returns based on frozen 7/14 constituents")
+    print(f"2. Compute per-subject_key returns based on frozen 7/14 constituent_codes")
     print(f"3. Compare 5 disagreements: Julia fading_momentum vs Workbench diffusion")
     print(f"4. Evaluate 76 abstentions: random or patterned?")
     print(f"5. Leader return + drawdown for each subject")
+    print(f"6. Human temporal rhythm alignment (day_count vs Julia stage)")
     print(f"")
     print(f"Baseline frozen. Ready for price data ingestion.")
 
