@@ -159,29 +159,23 @@ def market_regime_read(as_of: str) -> dict:
         # Read OBJECTIVE market_context (not workbench_review)
         ctx = json.loads((base / "market_context.json").read_text(encoding="utf-8"))
 
-        # Derive regime from objective theme signals
+        # P0-2: Derive regime from RAW strength metrics (NOT stage_signal)
         themes = ctx.get("themes", [])
-        total = len(themes)
+        dist = _strength_dist(ctx)
+        total = dist.get("count", 0)
         if total == 0:
             regime = "unknown"
         else:
-            # Count derived_stage_signal distribution from objective context
-            stages = {}
-            for t in themes:
-                ds = t.get("derived_signals", {})
-                stage = ds.get("stage_signal", {}).get("value", "unknown")
-                stages[stage] = stages.get(stage, 0) + 1
+            above_06 = dist.get("above_0_6", 0)
+            below_04 = dist.get("below_0_4", 0)
+            above_08 = dist.get("above_0_8", 0)
 
-            div_ratio = stages.get("divergence", 0) / total
-            ferm_ratio = stages.get("fermentation", 0) / total
-            acc_ratio = stages.get("acceleration", 0) / total
-
-            if div_ratio > 0.5:
-                regime = "divergence_dominant"
-            elif ferm_ratio > 0.3:
-                regime = "fermentation_active"
-            elif acc_ratio > 0.05:
-                regime = "mixed_with_acceleration"
+            if above_08 / total > 0.3:
+                regime = "strength_dominant"
+            elif above_06 / total > 0.5:
+                regime = "strength_active"
+            elif below_04 / total > 0.7:
+                regime = "weak_dominant"
             else:
                 regime = "mixed_repair"
 
@@ -198,7 +192,7 @@ def market_regime_read(as_of: str) -> dict:
                     "value": regime,
                     "provenance_kind": "engine_derived",
                     "rule_version": "market-regime.v1",
-                    "note": "Derived from strength distribution of objective market_context — NOT from workbench_review stage_judgement.",
+                    "note": "Derived from raw mainline_strength_score distribution. Provenance: market_context.json (f90721c). ZERO stage_signal used.",
                 },
             },
             "data_note": "Facts from frozen market_context (f90721c). Derived regime is engine output, not objective truth.",
