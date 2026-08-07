@@ -13,6 +13,26 @@ CST = timezone(timedelta(hours=8))
 SUPPORTED_AS_OF = "2026-07-14"
 
 
+def _strength_dist(ctx: dict) -> dict:
+    """Build strength distribution from raw_metrics."""
+    strengths = []
+    for t in ctx.get("themes", []):
+        rm = t.get("raw_metrics", {}) or {}
+        s = rm.get("mainline_strength_score")
+        if s is not None:
+            strengths.append(float(s))
+    if not strengths:
+        return {"count": 0}
+    return {
+        "count": len(strengths),
+        "min": min(strengths),
+        "max": max(strengths),
+        "below_0_4": sum(1 for s in strengths if s < 0.4),
+        "above_0_6": sum(1 for s in strengths if s >= 0.6),
+        "above_0_8": sum(1 for s in strengths if s >= 0.8),
+    }
+
+
 def _guard_as_of(as_of: str) -> dict | None:
     """Only SUPPORTED_AS_OF is available for historical replay.
     Future dates, previous dates → unavailable (never latest fallback).
@@ -167,13 +187,21 @@ def market_regime_read(as_of: str) -> dict:
 
         return {
             "status": "live",
-            "source_kind": "objective_market_context",
+            "source_kind": "objective_market_facts",
             "as_of": as_of,
-            "regime": regime,
-            "stage_distribution": stages,
-            "theme_count": total,
-            "evidence": ["market_context_via_stage_signal_distribution"],
-            "data_note": "Regime derived from objective market_context (frozen f90721c). NOT from workbench_review.",
+            "facts": {
+                "theme_count": total,
+                "strength_distribution": _strength_dist(ctx),
+            },
+            "derived": {
+                "regime_assessment": {
+                    "value": regime,
+                    "provenance_kind": "engine_derived",
+                    "rule_version": "market-regime.v1",
+                    "note": "Derived from strength distribution of objective market_context — NOT from workbench_review stage_judgement.",
+                },
+            },
+            "data_note": "Facts from frozen market_context (f90721c). Derived regime is engine output, not objective truth.",
         }
     except Exception:
         return {
