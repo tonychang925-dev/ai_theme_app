@@ -314,6 +314,9 @@ def market_theme_constituents(subject_key: str, as_of: str) -> dict:
                 t0_above_ma5 = _above_ma5_direct(built, 5)
 
                 prev_pct = prev_bar["pct_chg"] or 0
+                # Prev session MA5: compute from bars 0..-2 (exclude T0)
+                prev_built = built[:-1]
+                prev_above_ma5 = _above_ma5_direct(prev_built, 5) if len(prev_built) >= 5 else False
 
                 stock_metrics[code] = {
                     "return_5d": round(ret_5d, 4),
@@ -322,6 +325,7 @@ def market_theme_constituents(subject_key: str, as_of: str) -> dict:
                     "t0_limit_up": t0_limit_up,
                     "t0_above_ma5": t0_above_ma5,
                     "prev_pct_chg": prev_pct,
+                    "prev_above_ma5": prev_above_ma5,
                     "leader_flag": code in leaders,
                 }
 
@@ -371,12 +375,36 @@ def market_theme_constituents(subject_key: str, as_of: str) -> dict:
             "positive_ratio": round(t0_positive_count / t0_count, 2) if t0_count else 0,
         }
 
-        # Breadth change: T0 vs previous session
-        # (simplified — full implementation would compute prev session breadth)
+        # Breadth change: compute prev-session using bars[-2] data
+        prev_positive = sum(1 for m in stock_metrics.values() if m.get("prev_pct_chg", 0) > 0)
+        prev_limit_up = sum(1 for m in stock_metrics.values()
+                          if m.get("prev_pct_chg", 0) >= 9.9)
+        # prev MA5: use bars 0..-2 (exclude last bar)
+        prev_above_ma5 = sum(1 for m in stock_metrics.values() if m.get("prev_above_ma5", False))
+        bt = stock_metrics  # alias for readability
         breadth_change = {
             "from_trade_date": prev_date,
             "to_trade_date": t0_date,
-            "note": "T0 vs prev session breadth change requires full prev-session constituent computation — placeholder",
+            "from": {
+                "positive_count": prev_positive,
+                "positive_ratio": round(prev_positive / t0_count, 2) if t0_count else 0,
+                "limit_up_count": prev_limit_up,
+                "limit_up_ratio": round(prev_limit_up / t0_count, 2) if t0_count else 0,
+                "above_ma5_count": prev_above_ma5,
+                "above_ma5_ratio": round(prev_above_ma5 / t0_count, 2) if t0_count else 0,
+            },
+            "to": {
+                "positive_count": t0_positive_count,
+                "positive_ratio": current_breadth["positive_ratio"],
+                "limit_up_count": t0_limit_up_count,
+                "limit_up_ratio": current_breadth["limit_up_ratio"],
+                "above_ma5_count": t0_above_ma5_count,
+                "above_ma5_ratio": current_breadth["above_ma5_ratio"],
+            },
+            "delta": {
+                "positive_ratio": round(current_breadth["positive_ratio"] - round(prev_positive / t0_count, 2), 2) if t0_count else 0,
+                "limit_up_ratio": round(current_breadth["limit_up_ratio"] - round(prev_limit_up / t0_count, 2), 2) if t0_count else 0,
+            },
         }
 
         return {
