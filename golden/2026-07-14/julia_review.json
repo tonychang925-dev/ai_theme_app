@@ -1,10 +1,10 @@
 {
   "trade_date": "2026-07-14",
   "as_of": "2026-07-14T15:30:00+08:00",
-  "generated_at": "2026-08-07T10:05:03.282369+08:00",
+  "generated_at": "2026-08-07T10:23:53.354440+08:00",
   "versions": {
-    "julia_core": "cdff4d9824ff055c0f7b5e2e7d230de5bce11f76",
-    "ai_theme_app": "2a28125f1970537d893057066d87d31ffc34b2a2",
+    "julia_core": "2846e6c6ced46adfde2e9361aff99c31ccc097e2",
+    "ai_theme_app": "3c65a1fc5a5b91d1f2fb06bdcf399ee83221e90a",
     "taxonomy": "stage-taxonomy.v1",
     "market_context_schema": "market-context.v1",
     "workbench_review_schema": "analyst-workbench.review.v1"
