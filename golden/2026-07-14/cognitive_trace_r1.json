@@ -1,0 +1,321 @@
+{
+  "schema_version": "cognitive-trace.v1",
+  "case_id": "001-r1",
+  "trade_date": "2026-07-14",
+  "as_of": "2026-07-14T15:30:00+08:00",
+  "frozen_at": "2026-08-08T03:00:00+08:00",
+  "freeze_note": "Immutable regression baseline. All future Julia versions must reproduce this cognitive chain without Workbench access, without modifying the original blind judgment, and without using future data.",
+
+  "versions": {
+    "julia_core": "48ad6a1dc07a80a33bc00b8bebe7e24f15a86b54",
+    "ai_theme_app": "38855d36b136afb9b3d7ed5363fb5ed7c9adbdd2",
+    "taxonomy": "stage-taxonomy.v1",
+    "strategy_cards": "leader_divergence.v1 + weak_to_strong.v1",
+    "transition_detector": "transition-detector.v1",
+    "hypothesis_evaluator": "typed-predicate.v1",
+    "strategy_selector": "strategy-selector.v1"
+  },
+
+  "blind_judgment": {
+    "subject_key": "9010270",
+    "market_stage": "fading_momentum",
+    "confidence": 0.60,
+    "inference_evidence": ["leader_weak"],
+    "frozen": true,
+    "_note": "This judgment is immutable. Research cannot overwrite it — only add post_research_conclusion."
+  },
+
+  "research_plan_001": {
+    "research_case_id": "RC-001",
+    "parent_case_id": null,
+    "subject_key": "9010270",
+    "subject_name": "",
+    "trade_date": "2026-07-14",
+    "triggered_card": "leader_divergence",
+    "card_version": "1.0",
+    "auto_generated": false,
+    "probe_count": 9,
+    "probes": [
+      {"requirement_id": "leader_5d_return",      "binding_id": "leader_5d_return",      "capability_name": "market.stock.history",       "derive_metric": "total_return",           "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "leader_drawdown_from_peak","binding_id": "leader_drawdown_from_peak","capability_name": "market.stock.history",     "derive_metric": "max_drawdown_from_peak",  "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "leader_volume_pattern",  "binding_id": "leader_volume_pattern",  "capability_name": "market.stock.history",       "derive_metric": "volume_trend",           "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "key_level_status",       "binding_id": "key_level_status",       "capability_name": "market.stock.history",       "derive_metric": "key_level_status",       "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "peer_relative_strength", "binding_id": "peer_relative_strength", "capability_name": "market.theme.constituents",  "derive_metric": "peer_relative_strength", "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "theme_breadth_change",   "binding_id": "theme_breadth_change",   "capability_name": "market.theme.constituents",  "derive_metric": "breadth_change",         "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "capital_persistence",    "binding_id": "capital_persistence",    "capability_name": "market.theme.capital",       "derive_metric": "capital_flow_trend",     "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "market_regime",          "binding_id": "market_regime",          "capability_name": "market.regime.read",         "derive_metric": "derived.regime_assessment.value", "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "new_leader_candidates",  "binding_id": "new_leader_candidates",  "capability_name": "market.theme.constituents",  "derive_metric": "emerging_leaders",       "missing_policy": "INSUFFICIENT_EVIDENCE"}
+    ],
+    "candidate_hypotheses": [
+      {"state": "leader_divergence.normal_adjustment", "canonical_state": "normal_adjustment", "predicate_count": 5, "status": "untested"},
+      {"state": "leader_divergence.active_divergence", "canonical_state": "active_divergence", "predicate_count": 5, "status": "untested"},
+      {"state": "leader_divergence.leader_failure",    "canonical_state": "leader_failure",    "predicate_count": 5, "status": "untested"},
+      {"state": "leader_divergence.leader_rotation",   "canonical_state": "leader_rotation",   "predicate_count": 6, "status": "untested"}
+    ],
+    "research_questions": [
+      {"question": "龙头走弱是正常调整还是结构破坏？", "probes": ["leader_5d_return", "leader_drawdown", "volume_pattern", "key_level_status"]},
+      {"question": "是否出现新核心接替？",             "probes": ["peer_relative_strength", "new_leader_candidates"]},
+      {"question": "题材整体是否仍在扩散？",           "probes": ["theme_breadth_change", "capital_persistence"]}
+    ]
+  },
+
+  "evidence_bundle_001": {
+    "research_case_id": "RC-001",
+    "subject_key": "9010270",
+    "as_of": "2026-07-14",
+    "evidence_count": 9,
+    "summary": {"success": 8, "unavailable": 1, "insufficient": 0},
+    "evidence": [
+      {"requirement_id": "leader_5d_return",       "status": "success", "derived_value": {"total_return": -0.024}, "_note": "5-session cumulative return on leader"},
+      {"requirement_id": "leader_drawdown_from_peak","status": "success","derived_value": {"max_drawdown_from_peak": -0.043}, "_note": "Running-peak drawdown, not last_close vs window_high"},
+      {"requirement_id": "leader_volume_pattern",   "status": "success", "derived_value": {"volume_trend": "normal"}, "_note": "Volume in [contracting, normal] range"},
+      {"requirement_id": "key_level_status",        "status": "success", "derived_value": {"key_level_status": "intact_limit_up"}, "_note": "Close vs MA5, not intraday close_vs_high"},
+      {"requirement_id": "peer_relative_strength",  "status": "success", "derived_value": {"peer_relative_strength": {"dispersion": {"max_min_spread": 0.1315}}}},
+      {"requirement_id": "theme_breadth_change",    "status": "success", "derived_value": {"breadth_change": {"from": {"positive_ratio": 0.0, "limit_up_ratio": 0.0, "above_ma5_ratio": 0.33}, "to": {"positive_ratio": 1.0, "limit_up_ratio": 1.0, "above_ma5_ratio": 1.0}, "delta": {"positive_ratio": 1.0, "limit_up_ratio": 1.0}, "from_trade_date": "2026-07-13", "to_trade_date": "2026-07-14"}}},
+      {"requirement_id": "capital_persistence",     "status": "unavailable", "derived_value": null, "_note": "capital_persistence MCP inner status = unavailable; EvidenceNormalizer: outer-success + inner-unavailable → Evidence.unavailable"},
+      {"requirement_id": "market_regime",           "status": "success", "derived_value": {"derived": {"regime_assessment": {"value": "strength_active"}}}, "_note": "Derived from raw strength_dist, zero stage_signal used — no Workbench circularity"},
+      {"requirement_id": "new_leader_candidates",   "status": "success", "derived_value": {"emerging_leaders": ["002532"]}}
+    ]
+  },
+
+  "research_001": {
+    "research_case_id": "RC-001",
+    "strategy_card": "leader_divergence",
+    "probes": 9,
+    "evidence_bundle": {
+      "success": 8,
+      "unavailable": 1,
+      "insufficient": 0
+    },
+    "hypothesis_evaluations": {
+      "normal_adjustment": {
+        "status": "SUPPORTED",
+        "supported_by": [
+          "leader_drawdown: -4.3% >= -5%",
+          "key_level: intact_limit_up",
+          "volume: normal in [contracting, normal]",
+          "peer_dispersion: 13.15% <= 15%",
+          "breadth_delta: +1.0 >= 0.5"
+        ],
+        "contradicted_by": [],
+        "missing": []
+      },
+      "active_divergence": {
+        "status": "CONTRADICTED",
+        "contradicted_by": [
+          "drawdown -4.3% too mild (requires <=-5%)",
+          "key intact_limit_up ≠ testing"
+        ]
+      },
+      "leader_failure": {
+        "status": "CONTRADICTED",
+        "decisive": true,
+        "contradicted_by": [
+          "drawdown -4.3% far above -15% threshold",
+          "key intact_limit_up ≠ broken",
+          "breadth +1.0 ≠ contracting"
+        ],
+        "missing": ["capital_persistence"]
+      },
+      "leader_rotation": {
+        "status": "CONTRADICTED",
+        "supported_by": [
+          "002532 candidate identified",
+          "peer dispersion > 10%"
+        ],
+        "contradicted_by": [
+          "incumbent leader drawdown only -4.3% (requires >5%)",
+          "incumbent leader key intact (requires broken/testing)"
+        ],
+        "missing": ["capital_persistence"]
+      }
+    },
+    "post_research_conclusion": {
+      "strategy_state": "normal_adjustment",
+      "status": "SUPPORTED",
+      "_note": "Original fading_momentum judgment NOT overwritten. This is a post-research assessment."
+    }
+  },
+
+  "error_attribution": {
+    "primary": "TEMPORAL_STATE_LAG",
+    "contributing": [
+      "TRANSITION_EVIDENCE_NOT_USED_AT_INITIAL_INFERENCE"
+    ],
+    "mechanism": "Julia anchored on 7/13 leader_weak signal and carried it to 7/14 without awareness that a synchronized repair had already occurred."
+  },
+
+  "transition": {
+    "detector": "TransitionDetector",
+    "rule_version": "transition-detector.v1",
+    "transition_type": "synchronized_repair",
+    "from_date": "2026-07-13",
+    "to_date": "2026-07-14",
+    "supported_by": [
+      "positive_ratio: 0.0 → 1.0 (delta=+1.0)",
+      "limit_up_ratio: 0.0 → 1.0 (delta=+1.0)",
+      "above_ma5_ratio: 0.33 → 1.0"
+    ],
+    "source_kind": "objective_market_evidence",
+    "suggested_next_card": "weak_to_strong"
+  },
+
+  "research_plan_002": {
+    "research_case_id": "RC-002",
+    "parent_case_id": "RC-001",
+    "subject_key": "9010270",
+    "subject_name": "",
+    "trade_date": "2026-07-14",
+    "triggered_card": "weak_to_strong",
+    "card_version": "1.0",
+    "trigger_transition": "synchronized_repair",
+    "auto_generated": true,
+    "lineage_note": "RC-002 was automatically generated by RecursiveResearchHandoff: RC-001 evidence → TransitionDetector → StrategySelector → CardLoader → Compiler. Zero human input, zero Workbench involvement.",
+    "probe_count": 7,
+    "probes": [
+      {"requirement_id": "auction_strength",       "binding_id": "auction_strength",       "capability_name": "market.stock.auction",        "derive_metric": "auction_trend",              "missing_policy": "DATA_UNAVAILABLE"},
+      {"requirement_id": "open_gap",               "binding_id": "open_gap",               "capability_name": "market.stock.history",        "derive_metric": "open_gap_vs_prev_close",     "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "intraday_volume",        "binding_id": "intraday_volume",        "capability_name": "market.stock.history",        "derive_metric": "intraday_volume_vs_prev",    "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "leader_key_level",       "binding_id": "leader_key_level",       "capability_name": "market.stock.history",        "derive_metric": "key_level_status",           "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "limit_up_seal_quality",  "binding_id": "limit_up_seal_quality",  "capability_name": "market.stock.history",        "derive_metric": "limit_up_seal",              "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "peer_follow_through",    "binding_id": "peer_follow_through",    "capability_name": "market.theme.constituents",   "derive_metric": "peer_limit_up_ratio",        "missing_policy": "INSUFFICIENT_EVIDENCE"},
+      {"requirement_id": "market_regime",          "binding_id": "market_regime",          "capability_name": "market.regime.read",          "derive_metric": "derived.regime_assessment.value", "missing_policy": "INSUFFICIENT_EVIDENCE"}
+    ],
+    "candidate_hypotheses": [
+      {"state": "weak_to_strong.confirmed_weak_to_strong", "canonical_state": "confirmed_weak_to_strong", "predicate_count": 7, "status": "untested"},
+      {"state": "weak_to_strong.false_weak_to_strong",     "canonical_state": "false_weak_to_strong",     "predicate_count": 4, "status": "untested"},
+      {"state": "weak_to_strong.no_signal_yet",            "canonical_state": "no_signal_yet",            "predicate_count": 2, "status": "untested"}
+    ],
+    "research_questions": [
+      {"question": "集合竞价是否出现弱转强信号？", "probes": ["auction_strength", "open_gap"]},
+      {"question": "拉升是真放量还是假诱多？",     "probes": ["intraday_volume", "intraday_price_pattern", "limit_up_seal_quality"]},
+      {"question": "板块是否有联动确认？",         "probes": ["peer_follow_through"]}
+    ]
+  },
+
+  "evidence_bundle_002": {
+    "research_case_id": "RC-002",
+    "subject_key": "9010270",
+    "as_of": "2026-07-14",
+    "evidence_count": 7,
+    "summary": {"success": 3, "unavailable": 1, "insufficient": 3},
+    "evidence": [
+      {"requirement_id": "auction_strength",       "status": "unavailable",  "derived_value": null, "_note": "auction_strength binding has DATA_UNAVAILABLE policy; MCP returned unavailable"},
+      {"requirement_id": "open_gap",               "status": "success",     "derived_value": {"open_gap_vs_prev_close": 0.027}, "_note": "open vs prev_close, not today's own close"},
+      {"requirement_id": "intraday_volume",        "status": "insufficient","derived_value": null, "_note": "No intraday volume data available in current MCP capability set"},
+      {"requirement_id": "leader_key_level",       "status": "success",     "derived_value": {"key_level_status": "intact_limit_up"}, "_note": "Alias for key_level_status; same binding, same derive_metric"},
+      {"requirement_id": "limit_up_seal_quality",  "status": "insufficient","derived_value": null, "_note": "Seal quality requires minute-level data — not yet in MCP capability set"},
+      {"requirement_id": "peer_follow_through",    "status": "insufficient","derived_value": null, "_note": "peer_limit_up_ratio unavailable — constituent limit-up detection missing"},
+      {"requirement_id": "market_regime",          "status": "success",     "derived_value": {"derived": {"regime_assessment": {"value": "strength_active"}}}}
+    ]
+  },
+
+  "research_002": {
+    "research_case_id": "RC-002",
+    "strategy_card": "weak_to_strong",
+    "parent_case_id": "RC-001",
+    "trigger_transition": "synchronized_repair",
+    "auto_generated": true,
+    "probes": 7,
+    "evidence_bundle": {
+      "success": 3,
+      "unavailable": 1,
+      "insufficient": 3
+    },
+    "hypothesis_evaluations": {
+      "confirmed_weak_to_strong": {
+        "status": "PARTIAL",
+        "supported_by": [
+          "leader_key_level: intact_limit_up",
+          "open_gap: +2.7% >= 0%",
+          "market_regime: strength_active ≠ decline_dominant"
+        ],
+        "missing": [
+          "intraday_volume",
+          "peer_follow_through",
+          "auction_strength",
+          "limit_up_seal_quality"
+        ]
+      },
+      "false_weak_to_strong": {
+        "status": "CONTRADICTED",
+        "contradicted_by": [
+          "open_gap: +2.7% contradicts < 0%"
+        ],
+        "missing": [
+          "intraday_volume",
+          "limit_up_seal_quality"
+        ]
+      },
+      "no_signal_yet": {
+        "status": "CONTRADICTED",
+        "contradicted_by": [
+          "open_gap: +2.7% contradicts < 2%"
+        ],
+        "missing": [
+          "intraday_volume"
+        ]
+      }
+    },
+    "post_research_conclusion": {
+      "state": "abstention_with_gain",
+      "summary": "现有证据不足以确认真弱转强，但在当前 StrategyCard v1 定义下已反驳 false_weak_to_strong 和 no_signal_yet 两个假设。hypothesis contradicted ≠ 世界上绝无这种可能——假弱转强最终仍可能表现为当天看似强、随后失败；Card narrative 的 next_day gap_down / continue_decline 概念尚未进入 typed executable evidence。",
+      "information_gain": "RC-002 开始前三个假设均未知。RC-002 后：confirmed 尚不能确认，false 被反驳，no_signal 被反驳。第二轮研究产生了有效的 hypothesis elimination。",
+      "_note": "Julia chose epistemic restraint over overclaiming. This is a calibrated abstention."
+    }
+  },
+
+  "design_constraints_satisfied": {
+    "no_hindsight": true,
+    "no_workbench_as_evidence": true,
+    "blind_judgment_preserved": true,
+    "post_research_never_overwrites_original": true,
+    "autonomous_card_selection": true,
+    "recursive_handoff": true,
+    "calibrated_abstention": true,
+    "predicate_contract_validated": true,
+    "requirement_namespace_isolated": true,
+    "no_llm_in_evaluators": true,
+    "no_scores_or_confidence_numbers": true,
+    "unknown_is_not_zero": true
+  },
+
+  "cognitive_chain": [
+    "1. Blind judgment → fading_momentum",
+    "2. Autonomous research RC-001 → leader_divergence",
+    "3. Evidence gathering → 8 success / 1 unavailable",
+    "4. Hypothesis evaluation → normal_adjustment SUPPORTED",
+    "5. Error attribution → TEMPORAL_STATE_LAG",
+    "6. Transition detection → synchronized_repair",
+    "7. Autonomous strategy selection → weak_to_strong",
+    "8. Recursive handoff → RC-002 automatically generated",
+    "9. Second-round evaluation → confirmed PARTIAL, false/no_signal CONTRADICTED",
+    "10. Calibrated abstention → 'I know what this is NOT, but not yet what it IS'"
+  ],
+
+  "regression_contract": {
+    "description": "Future Julia versions must reproduce this cognitive chain under identical conditions.",
+    "required_outputs": [
+      "blind_judgment.market_stage == fading_momentum",
+      "RC-001: normal_adjustment SUPPORTED, leader_failure decisively CONTRADICTED",
+      "RC-001: error_attribution.primary == TEMPORAL_STATE_LAG",
+      "transition.transition_type == synchronized_repair",
+      "RC-002: confirmed_weak_to_strong PARTIAL, false_weak_to_strong CONTRADICTED, no_signal_yet CONTRADICTED",
+      "RC-002: abstention_with_gain (not confirmed overclaim)"
+    ],
+    "forbidden": [
+      "Use workbench_review as evidence",
+      "Overwrite blind_judgment with post_research_conclusion",
+      "Use future data beyond as_of=2026-07-14T15:30:00+08:00",
+      "Use LLM in HypothesisEvaluator, TransitionDetector, or StrategySelector",
+      "Use regex/string parsing on predicate reason strings",
+      "Treat unknown/missing data as zero"
+    ],
+    "known_p1_items": [
+      "research_questions[*].probes are narrative-only — not validated against required_data",
+      "intraday_volume canonical enum not yet frozen (amplified/elevated/normal vs contracting)",
+      "StrategyCard card_dir path is hardcoded — needs config/env injection",
+      "RecursiveResearchHandoff not yet integrated into WorkflowRuntime production entry point"
+    ]
+  }
+}
