@@ -234,6 +234,7 @@ def _compute_metrics(bars: list) -> dict:
     return {
         "total_return": total_return,
         "max_drawdown_from_peak": round(max_dd, 4),
+        "open_gap_vs_prev_close": round((bars[-1]["open"] / bars[-1]["pre_close"] - 1), 4) if bars[-1].get("pre_close") else None,
         "volume_trend": vol_trend,
         "key_level_status": {
             "state": key_state,
