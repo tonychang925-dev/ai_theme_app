@@ -17,9 +17,9 @@
   },
 
   "extension_manifest": {
-    "file": "outcomes/baseline_universe.json",
-    "sha256": "ba2b6274ab071011981ce3a966d3e255e4561aaccb4ef78adb0e780fb6e910f0",
-    "_note": "Outcome replay extension manifest created by scripts/outcome_replay_case001.py"
+    "file": "case_extension_manifest.json",
+    "sha256": "5693befb227108b1a554b5f5c9568197ad387c372fb10ddae1834992d52fe2a5",
+    "_note": "Case extension manifest (case-extension-manifest.v1) — locks human observations, outcome baseline, and outcome manifest"
   },
 
   "strategy_cards": {
