@@ -35,9 +35,9 @@
         "peers": "follow_through_present"
       },
       "predicates": [
-        {"requirement_id": "key_level_status", "path": "state", "operator": "in", "value": ["intact", "intact_limit_up"], "role": "core"},
+        {"requirement_id": "leader_key_level", "path": "state", "operator": "in", "value": ["intact", "intact_limit_up"], "role": "core"},
         {"requirement_id": "open_gap", "operator": ">=", "value": 0.0, "role": "core"},
-        {"requirement_id": "leader_volume_pattern", "operator": "in", "value": ["elevated", "normal"], "role": "core"},
+        {"requirement_id": "intraday_volume", "operator": "in", "value": ["amplified", "elevated", "normal"], "role": "core"},
         {"requirement_id": "peer_follow_through", "operator": ">=", "value": 0.5, "role": "core"},
         {"requirement_id": "auction_strength", "operator": "in", "value": ["high_open_scramble", "moderate_strength"], "role": "supporting"},
         {"requirement_id": "limit_up_seal_quality", "operator": "eq", "value": "decisive", "role": "core"},
@@ -55,7 +55,7 @@
         "next_day": "gap_down_or_continue_decline"
       },
       "predicates": [
-        {"requirement_id": "leader_volume_pattern", "operator": "eq", "value": "contracting", "role": "core"},
+        {"requirement_id": "intraday_volume", "operator": "in", "value": ["contracting"], "role": "core"},
         {"requirement_id": "open_gap", "operator": "<", "value": 0.0, "role": "core"},
         {"requirement_id": "limit_up_seal_quality", "operator": "in", "value": ["weak", "no_seal"], "role": "core"},
         {"requirement_id": "peer_follow_through", "operator": "<", "value": 0.5, "role": "core"}
@@ -72,7 +72,7 @@
         "volume": "normal_or_low"
       },
       "predicates": [
-        {"requirement_id": "leader_volume_pattern", "operator": "in", "value": ["normal"], "role": "core"},
+        {"requirement_id": "intraday_volume", "operator": "in", "value": ["normal"], "role": "core"},
         {"requirement_id": "open_gap", "operator": "<", "value": 0.02, "role": "core"}
       ],
       "action": "wait_for_next_session",
