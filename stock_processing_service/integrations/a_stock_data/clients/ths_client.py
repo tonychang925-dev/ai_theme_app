@@ -5,6 +5,7 @@ Design doc: §13.4 M3-T04
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass, field
 from datetime import date
 from typing import Any
@@ -84,9 +85,13 @@ class ThsClient:
 
         response_json: Any | None = None
         try:
-            response_json = response.json()
-        except ValueError:
-            pass
+            # THS returns GBK-encoded JSON without charset header
+            response_json = json.loads(response.content.decode('gbk'))
+        except (ValueError, UnicodeDecodeError):
+            try:
+                response_json = response.json()
+            except ValueError:
+                pass
 
         return RawHttpResult(
             source_name=SOURCE_NAME,

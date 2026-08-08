@@ -17,7 +17,7 @@ def build(first_board_red_ratio: float, first_board_big_loss_ratio: float,
         momentum = round(
             first_board_red_ratio * 2 - first_board_big_loss_ratio * 2
             + chain_board_red_ratio * 2 + min(1.0, chain_board_ratio) * 2
-            - chain_board_big_loss_ratio * 2 + yesterday_chain_not_limit_red_ratio * 1, 1)
+            - chain_board_big_loss_ratio * 2 - yesterday_chain_not_limit_red_ratio * 2, 1)
 
     if momentum >= 5:       m_label = "情绪高涨"
     elif momentum >= 0:     m_label = "情绪正常"

@@ -36,7 +36,7 @@ class AnalystWorkbenchGenerateService:
     base_dir: str = "tmp/analyst_workbench"
     python_executable: str = sys.executable
     cli_timeout_sec: int = 120
-    derived_timeout_sec: int = 180
+    derived_timeout_sec: int = 90
 
     async def generate(self, trade_date: date, *, force: bool = True) -> WorkbenchGenerateResult:
         trade_date_str = trade_date.isoformat()
@@ -80,6 +80,20 @@ class AnalystWorkbenchGenerateService:
         generation_steps[-1] = derived_step
         if derived_step.status == "success":
             steps_completed.append("derived_data")
+        elif derived_step.status == "cancelled":
+            self._persist_generation_steps(trade_date, generation_steps, status=WorkbenchStatus.FAILED)
+            return WorkbenchGenerateResult(
+                trade_date=trade_date_str,
+                status="failed",
+                steps_completed=tuple(steps_completed),
+                generation_steps=tuple(generation_steps),
+                session_status=WorkbenchStatus.FAILED,
+                draft_version=0,
+                derived_status=derived_status,
+                draft_status="not_started",
+                missing_tables=tuple(missing_tables),
+                error=derived_step.error,
+            )
         elif force:
             # Degraded mode: proceed with chart+emotion only, skip derived
             derived_step = WorkbenchGenerationStep(
@@ -202,6 +216,18 @@ class AnalystWorkbenchGenerateService:
                 ),
                 result.status,
                 list(result.missing_tables or []),
+            )
+        except asyncio.CancelledError:
+            return (
+                WorkbenchGenerationStep(
+                    step="derived_data",
+                    status="cancelled",
+                    started_at=started,
+                    finished_at=_now(),
+                    error="derived data generation cancelled before completion",
+                ),
+                "cancelled",
+                [],
             )
         except Exception as exc:
             status = "timeout" if isinstance(exc, asyncio.TimeoutError) else "failed"
@@ -374,7 +400,7 @@ class AnalystWorkbenchGenerateService:
             )
 
             start = trade_date - timedelta(days=20)
-            snapshots = await MarketMetricsService()._get_range_async(start, trade_date)
+            snapshots = await MarketMetricsService(board_provider=False)._get_range_async(start, trade_date)
             return ChartReproductionEngine.build_trend(snapshots)
         except Exception:
             return {}

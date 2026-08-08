@@ -134,7 +134,8 @@ class MarketMetricsService:
         relay = await self._build_relay(conn, trade_date, limitup, streak_dist,
                                          yesterday_codes, today_streaks, em_yesterday_zt, em_zt)
         capital = await self._build_capital(conn, trade_date, breadth, overview)
-        momentum = self._build_momentum(breadth, limitup, relay)
+        momentum = await self._build_momentum_from_board_pools(
+            conn, trade_date, breadth, limitup, relay, em_yesterday_zt, em_zt)
         loss_effect = await self._build_loss_effect(conn, trade_date, breadth, relay, em_dt)
         # When Eastmoney DT pool is available, it is the authoritative limit_down source.
         # Align breadth so chart consumers and loss_effect show the same count.
@@ -754,16 +755,195 @@ class MarketMetricsService:
         )
 
     @staticmethod
+    async def _build_momentum_from_board_pools(conn, td: date,
+                                               breadth: MarketBreadthMetrics,
+                                               lu: LimitUpMetrics,
+                                               relay: RelayEcologyMetrics | None = None,
+                                               em_yesterday_zt=None,
+                                               em_zt=None) -> EmotionMomentumMetrics:
+        """Build analyst-style emotion momentum from per-stock board-pool factors.
+
+        The analyst chart is a six-factor scorecard:
+          1. 昨日首板今天红盘比
+          2. 昨日首板大面比
+          3. 连板红盘比
+          4. 连板比例
+          5. 今日连板大面比
+          6. 昨日连板未涨停绿盘比
+
+        Use exact yesterday board heights and today's pct_chg when Eastmoney
+        board pools are available. Fall back to the legacy relay estimate only
+        when the per-stock factor set cannot be built.
+        """
+        _norm = MarketMetricsService._norm_code
+        y_first: set[str] = set()
+        y_chain: set[str] = set()
+        today_limit_codes: set[str] = set()
+        today_chain_codes: set[str] = set()
+
+        if em_yesterday_zt:
+            for s in em_yesterday_zt or []:
+                code = _norm(getattr(s, "code", "") or "")
+                h = int(getattr(s, "limit_days", 0) or 0)
+                if not code or h <= 0:
+                    continue
+                if h == 1:
+                    y_first.add(code)
+                else:
+                    y_chain.add(code)
+
+            today_limit_codes = {_norm(getattr(s, "code", "") or "") for s in (em_zt or [])}
+            today_chain_codes = {
+                _norm(getattr(s, "code", "") or "")
+                for s in (em_zt or [])
+                if int(getattr(s, "limit_days", 0) or 0) >= 2
+            }
+            factor_source = MetricSource(
+                "board_pool+sds",
+                "emotion_momentum_six_factor_scorecard",
+                confidence=0.92,
+            )
+        else:
+            prev_row = await conn.fetchrow(
+                "SELECT MAX(trade_date) as d FROM ths_hot_reason_snapshot "
+                "WHERE trade_date < $1::date", td)
+            prev_date = prev_row["d"] if prev_row else None
+            if not prev_date:
+                return MarketMetricsService._build_momentum(breadth, lu, relay)
+
+            prev_rows = await conn.fetch(
+                "SELECT stock_code FROM ths_hot_reason_snapshot "
+                "WHERE trade_date = $1::date", prev_date)
+            y_limit_codes = {_norm(r["stock_code"]) for r in prev_rows if _norm(r["stock_code"])}
+
+            prev2_row = await conn.fetchrow(
+                "SELECT MAX(trade_date) as d FROM ths_hot_reason_snapshot "
+                "WHERE trade_date < $1::date", prev_date)
+            prev2_date = prev2_row["d"] if prev2_row else None
+            prev2_codes: set[str] = set()
+            if prev2_date:
+                prev2_rows = await conn.fetch(
+                    "SELECT stock_code FROM ths_hot_reason_snapshot "
+                    "WHERE trade_date = $1::date", prev2_date)
+                prev2_codes = {_norm(r["stock_code"]) for r in prev2_rows if _norm(r["stock_code"])}
+
+            y_chain = y_limit_codes & prev2_codes
+            y_first = y_limit_codes - y_chain
+
+            today_rows = await conn.fetch(
+                "SELECT stock_code FROM ths_hot_reason_snapshot "
+                "WHERE trade_date = $1::date", td)
+            today_limit_codes = {_norm(r["stock_code"]) for r in today_rows if _norm(r["stock_code"])}
+            today_chain_codes = today_limit_codes & y_limit_codes
+            factor_source = MetricSource(
+                "ths_hot_reason+sds",
+                "emotion_momentum_six_factor_scorecard_db_fallback",
+                confidence=0.86,
+            )
+
+        y_codes = y_first | y_chain
+        if not y_codes:
+            return MarketMetricsService._build_momentum(breadth, lu, relay)
+
+        rows = await conn.fetch(
+            "SELECT stock_id, pct_chg FROM stock_daily_snapshot "
+            "WHERE trade_date = $1::date", td)
+        today_pct: dict[str, float] = {}
+        for r in rows:
+            code = _norm(r["stock_id"])
+            if code in y_codes:
+                today_pct[code] = float(r["pct_chg"] or 0)
+
+        # Without today's return data, the six-factor model would silently
+        # degrade into zeros. Keep the old path in that case.
+        if not today_pct:
+            return MarketMetricsService._build_momentum(breadth, lu, relay)
+
+        def _ratio(codes: set[str], predicate) -> float:
+            measured = [today_pct[c] for c in codes if c in today_pct]
+            if not measured:
+                return 0.0
+            return sum(1 for pct in measured if predicate(pct)) / len(measured)
+
+        first_red = _ratio(y_first, lambda pct: pct > 0)
+        first_loss = _ratio(y_first, lambda pct: pct <= -5.0)
+        chain_red = _ratio(y_chain, lambda pct: pct > 0)
+        chain_loss = _ratio(y_chain, lambda pct: pct <= -5.0)
+
+        chain_ratio = len(today_chain_codes) / max(len(y_codes), 1)
+        y_chain_failed = y_chain - today_limit_codes
+        yest_green = _ratio(y_chain_failed, lambda pct: pct < 0)
+
+        return MarketMetricsService._build_momentum(
+            breadth,
+            lu,
+            relay,
+            factor_override={
+                "first_red": first_red,
+                "first_loss": first_loss,
+                "chain_red": chain_red,
+                "chain_ratio": chain_ratio,
+                "chain_loss": chain_loss,
+                "yest_green": yest_green,
+            },
+            source=factor_source,
+        )
+
+    @staticmethod
+    def _score_emotion_momentum(first_red: float, first_loss: float,
+                                chain_red: float, chain_ratio: float,
+                                chain_loss: float, yest_green: float) -> float:
+        """Convert six ratios to the analyst-style discrete momentum scale.
+
+        The output is a scorecard bucket, not a direct copy of any analyst date.
+        Severe-retreat patterns are capped at -12 so one high-loss day cannot be
+        washed out by a small positive chain/limit-up count.
+        """
+        signal = (
+            (first_red - 0.50) * 8
+            - first_loss * 12
+            + (chain_red - 0.50) * 8
+            + (chain_ratio - 0.10) * 16
+            - chain_loss * 12
+            - max(0.0, yest_green - 0.50) * 12
+        )
+
+        severe_retreat = (
+            first_red < 0.40
+            and first_loss >= 0.15
+            and yest_green >= 0.75
+            and chain_ratio <= 0.15
+        )
+        chain_collapse = (
+            chain_red < 0.35
+            and yest_green >= 0.75
+            and chain_ratio <= 0.08
+        )
+        if severe_retreat or chain_collapse:
+            return -12.0
+
+        bucket = round(signal / 4) * 4
+        return float(max(-12, min(8, bucket)))
+
+    @staticmethod
     def _build_momentum(breadth: MarketBreadthMetrics,
                         lu: LimitUpMetrics,
-                        relay: RelayEcologyMetrics | None = None) -> EmotionMomentumMetrics:
+                        relay: RelayEcologyMetrics | None = None,
+                        factor_override: dict[str, float] | None = None,
+                        source: MetricSource | None = None) -> EmotionMomentumMetrics:
         """Compute emotion momentum using actual per-stock tracking data.
 
         v3: Uses relay data for real ratios instead of breadth estimates.
         Analyst formula: 6-component weighted score.
         """
-        # Use relay data when available (real per-stock tracking)
-        if relay and relay.yesterday_limitup_count > 0:
+        if factor_override:
+            first_red = factor_override["first_red"]
+            first_loss = factor_override["first_loss"]
+            chain_red = factor_override["chain_red"]
+            chain_ratio = factor_override["chain_ratio"]
+            chain_loss = factor_override["chain_loss"]
+            yest_green = factor_override["yest_green"]
+        elif relay and relay.yesterday_limitup_count > 0:
             yest_total = relay.yesterday_limitup_count
             first_red = relay.continue_ratio              # 昨涨停→今继续
             first_loss = relay.yesterday_big_loss_count / max(yest_total, 1)  # 大面比
@@ -772,7 +952,7 @@ class MarketMetricsService:
             # feedback > 0 → chain board mostly green; feedback < -30 → mostly red
             chain_red = max(0.05, min(1.0, (relay.feedback_score + 100) / 200))
             chain_loss = relay.yesterday_big_loss_count / max(yest_total, 1) * 0.8
-            yest_red = 0.5  # 昨日连板未涨停绿盘比 — estimated
+            yest_green = 0.5  # 昨日连板未涨停绿盘比 — estimated negative-feedback factor
         else:
             # Fallback: breadth-based estimates
             total = breadth.up_count + breadth.down_count or 1
@@ -782,16 +962,10 @@ class MarketMetricsService:
             chain_red = first_red * 0.8
             chain_loss = first_loss * 0.7
             chain_ratio = min(0.5, lu.chain_board_count / max(lu.total_count, 1))
-            yest_red = 0.3
+            yest_green = 0.3
 
-        # Analyst scale momentum (-18 ~ +10 range)
-        base_raw = first_red * 2 - first_loss * 2 + chain_red * 2 + chain_ratio * 2 - chain_loss * 2 + yest_red * 1
-
-        # Panic amplification: when relay feedback < -30 + severe loss, amplify negative
-        if relay and relay.feedback_score < -30 and first_loss > 0.3:
-            base_raw -= abs(relay.feedback_score) * 0.15  # add -6 at fb=-40
-
-        momentum_raw = round(base_raw, 1)
+        momentum_raw = MarketMetricsService._score_emotion_momentum(
+            first_red, first_loss, chain_red, chain_ratio, chain_loss, yest_green)
         momentum_norm = round((momentum_raw + 18) / 28 * 200 - 100, 1)
 
         return EmotionMomentumMetrics(
@@ -800,10 +974,10 @@ class MarketMetricsService:
             chain_board_red_ratio=round(chain_red, 2),
             chain_board_ratio=round(chain_ratio, 2),
             chain_board_big_loss_ratio=round(chain_loss, 2),
-            yesterday_chain_not_limit_red_ratio=round(yest_red, 2),
+            yesterday_chain_not_limit_red_ratio=round(yest_green, 2),
             momentum_raw=momentum_raw,
             momentum_normalized=momentum_norm,
-            source=MetricSource("relay_data" if relay else "recap_snapshot", confidence=0.85 if relay else 0.75),
+            source=source or MetricSource("relay_data" if relay else "recap_snapshot", confidence=0.85 if relay else 0.75),
         )
 
     # ── Helpers ──

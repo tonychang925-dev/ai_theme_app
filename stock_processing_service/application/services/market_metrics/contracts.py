@@ -167,9 +167,9 @@ class EmotionMomentumMetrics:
     first_board_red_ratio: float
     first_board_big_loss_ratio: float
     chain_board_red_ratio: float
-    chain_board_ratio: float         # 连板占比 = chain_board_count / total_count
+    chain_board_ratio: float         # 连板比例 = 今日连板数 / 昨日涨停池
     chain_board_big_loss_ratio: float
-    yesterday_chain_not_limit_red_ratio: float  # 昨连板非涨停红盘比
+    yesterday_chain_not_limit_red_ratio: float  # 昨连板未涨停绿盘比，负反馈指标
     momentum_raw: float              # -18 ~ +10 (analyst scale)
     momentum_normalized: float       # -100 ~ +100
     source: MetricSource

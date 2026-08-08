@@ -1,5 +1,6 @@
 """Phase 4.5.5 — Workbench generate service tests."""
 
+import asyncio
 from datetime import date
 
 from stock_processing_service.application.services.analyst_workbench.contracts import (
@@ -71,8 +72,28 @@ class EmptyContextGenerateService(AnalystWorkbenchGenerateService):
             [],
         )
 
+    async def _build_draft_context(self, trade_date_str):
+        return WorkbenchGenerationStep(
+            step="draft_context",
+            status="failed_precondition",
+            error="draft context has no derived themes or strong stocks",
+        )
+
     async def _run_draft_cli(self, trade_date_str):
         raise AssertionError("draft CLI should not run when draft_context failed")
+
+
+class CancelledDerivedGenerateService(AnalystWorkbenchGenerateService):
+    async def _run_derived_data(self, trade_date, *, force):
+        return (
+            WorkbenchGenerationStep(
+                step="derived_data",
+                status="cancelled",
+                error="derived data generation cancelled before completion",
+            ),
+            "cancelled",
+            [],
+        )
 
 
 async def _charts(_trade_date: str, _pool=None):
@@ -180,6 +201,75 @@ async def test_tc_p455_rb_given_empty_context_when_generate_then_draft_not_start
     assert "no derived themes or strong stocks" in result.error
     session = SessionStore(base_dir=str(tmp_path / "tmp" / "analyst_workbench")).get(date(2026, 7, 10))
     assert session.status == WorkbenchStatus.FAILED
+
+
+def test_tc_p455_timeout_budget_keeps_backend_inside_frontend_abort_window(tmp_path):
+    service = AnalystWorkbenchGenerateService(project_root=tmp_path)
+
+    assert service.derived_timeout_sec < 180
+
+
+async def test_tc_p455_cancelled_derived_step_is_persisted_as_failed(tmp_path):
+    service = CancelledDerivedGenerateService(
+        project_root=tmp_path,
+        chart_provider=_charts,
+        emotion_provider=_emotion,
+        base_dir="tmp/analyst_workbench",
+    )
+
+    result = await service.generate(date(2026, 7, 10))
+
+    session = SessionStore(base_dir=str(tmp_path / "tmp" / "analyst_workbench")).get(date(2026, 7, 10))
+    assert result.status == "failed"
+    assert result.derived_status == "cancelled"
+    assert session.status == WorkbenchStatus.FAILED
+    assert session.generation_steps[0]["step"] == "derived_data"
+    assert session.generation_steps[0]["status"] == "cancelled"
+
+
+async def test_tc_p455_run_derived_data_returns_cancelled_step_when_cancelled(tmp_path):
+    class BlockingUseCase:
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def register_theme_cycle_truth(self):
+            pass
+
+        def register_dragon_tiger_object_build(self):
+            pass
+
+        def register_hot_money_activity_build(self, **kwargs):
+            pass
+
+        def register_theme_leader_candidate_build(self, **kwargs):
+            pass
+
+        def register_money_flow_enhanced_build(self, **kwargs):
+            pass
+
+        def register_stock_abnormal_signal_build(self, **kwargs):
+            pass
+
+        def register_strong_stock_watch_build(self):
+            pass
+
+        async def execute(self, trade_date, *, force):
+            raise asyncio.CancelledError()
+
+    from stock_processing_service.application.services.analyst_workbench import generate_service as module
+
+    original = module.PostMarketDerivedDataGenerateUseCase
+    module.PostMarketDerivedDataGenerateUseCase = BlockingUseCase
+    try:
+        service = AnalystWorkbenchGenerateService(project_root=tmp_path)
+        step, status, missing = await service._run_derived_data(date(2026, 7, 10), force=True)
+    finally:
+        module.PostMarketDerivedDataGenerateUseCase = original
+
+    assert status == "cancelled"
+    assert missing == []
+    assert step.status == "cancelled"
+    assert step.finished_at
 
 
 async def test_tc_p455_trend_build_uses_market_metrics_snapshots(monkeypatch, tmp_path):
