@@ -211,13 +211,16 @@ class CognitiveRegressionRunner:
         card_base = self.golden_dir.parent.parent / "strategy_knowledge" / "cards"
         card_dir = str(card_base) if card_base.exists() else ""
 
+        # Use full as_of timestamp from frozen trace (not just date)
+        trace_as_of = self.trace.get("as_of", subject["trade_date"])
+
         # Create orchestrator with ForbiddenCapabilityManager
         orchestrator = CognitiveLoopOrchestrator(
             capability_manager=ForbiddenCapabilityManager(),
             card_dir=card_dir,
             config=CognitiveLoopConfig(
                 max_rounds=2,
-                as_of=subject["trade_date"],
+                as_of=trace_as_of,
             ),
             evidence_injector=injector,
         )
