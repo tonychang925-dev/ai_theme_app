@@ -66,7 +66,7 @@
     "evidence_count": 9,
     "summary": {"success": 8, "unavailable": 1, "insufficient": 0},
     "evidence": [
-      {"requirement_id": "leader_5d_return",       "status": "success", "derived_value": {"total_return": -0.024}, "_note": "5-session cumulative return on leader"},
+      {"requirement_id": "leader_5d_return",       "status": "success", "derived_value": {"total_return": 0.0413}, "_note": "5-session cumulative return (last_close/first_pre_close-1). Canonical value from commit 9cdf85d4b: 601969 +4.13%"},
       {"requirement_id": "leader_drawdown_from_peak","status": "success","derived_value": {"max_drawdown_from_peak": -0.043}, "_note": "Running-peak drawdown, not last_close vs window_high"},
       {"requirement_id": "leader_volume_pattern",   "status": "success", "derived_value": {"volume_trend": "normal"}, "_note": "Volume in [contracting, normal] range"},
       {"requirement_id": "key_level_status",        "status": "success", "derived_value": {"key_level_status": "intact_limit_up"}, "_note": "Close vs MA5, not intraday close_vs_high"},

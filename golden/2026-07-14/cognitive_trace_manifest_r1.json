@@ -1,0 +1,83 @@
+{
+  "schema": "cognitive-trace-manifest.v1",
+  "case_id": "001-r1",
+  "trade_date": "2026-07-14",
+  "frozen_at": "2026-08-08T03:00:00+08:00",
+
+  "artifact": {
+    "file": "cognitive_trace_r1.json",
+    "sha256": "f1d9881b25c3bb158e713cebfe949bd60c3fe09f1c9dac89930bdb4df93d012e",
+    "description": "Case001 complete cognitive chain: blind judgment → RC-001 → transition → RC-002 → calibrated abstention"
+  },
+
+  "parent_manifest": {
+    "file": "manifest.json",
+    "sha256": "8fa88236c5c78f2b45fecd936a94788edfdf346a2db1c6bf8a8fd6ba507e2140",
+    "_note": "Root golden manifest for Case001. This extension manifest adds cognitive trace membership without modifying the root."
+  },
+
+  "extension_manifest": {
+    "file": "outcomes/baseline_universe.json",
+    "sha256": "ba2b6274ab071011981ce3a966d3e255e4561aaccb4ef78adb0e780fb6e910f0",
+    "_note": "Outcome replay extension manifest created by scripts/outcome_replay_case001.py"
+  },
+
+  "strategy_cards": {
+    "leader_divergence": {
+      "file": "strategy_knowledge/cards/leader_divergence.json",
+      "sha256": "39515c55bed35da8c2bac3cec50f5c5547de92d9d0d8dc1b477815d0bf1437e0",
+      "version": "1.0"
+    },
+    "weak_to_strong": {
+      "file": "strategy_knowledge/cards/weak_to_strong.json",
+      "sha256": "062f337889b36526bbbd027d5096475bc6f8c7b1af8859375dcfa0527abf9aad",
+      "version": "1.0"
+    }
+  },
+
+  "versions": {
+    "julia_core": "48ad6a1dc07a80a33bc00b8bebe7e24f15a86b54",
+    "ai_theme_app": "38855d36b136afb9b3d7ed5363fb5ed7c9adbdd2",
+    "taxonomy": "stage-taxonomy.v1",
+    "transition_detector": "transition-detector.v1",
+    "hypothesis_evaluator": "typed-predicate.v1",
+    "strategy_selector": "strategy-selector.v1"
+  },
+
+  "cognitive_chain_summary": [
+    "blind_judgment → fading_momentum (frozen, immutable)",
+    "RC-001 → leader_divergence → normal_adjustment SUPPORTED, leader_failure CONTRADICTED",
+    "error_attribution → TEMPORAL_STATE_LAG (7/13 leader_weak carried to 7/14)",
+    "transition → synchronized_repair (breadth 0.0→1.0, limit_up 0.0→1.0)",
+    "RC-002 → weak_to_strong → confirmed PARTIAL, false/no_signal CONTRADICTED",
+    "calibrated_abstention → epistemic restraint, no overclaim"
+  ],
+
+  "regression_requirements": {
+    "must_reproduce": [
+      "blind_judgment.market_stage == fading_momentum",
+      "RC-001 normal_adjustment SUPPORTED",
+      "RC-001 leader_failure decisively CONTRADICTED",
+      "error_attribution.primary == TEMPORAL_STATE_LAG",
+      "transition.transition_type == synchronized_repair",
+      "RC-002 confirmed_weak_to_strong PARTIAL",
+      "RC-002 false_weak_to_strong CONTRADICTED",
+      "RC-002 no_signal_yet CONTRADICTED",
+      "RC-002 abstention_with_gain"
+    ],
+    "forbidden": [
+      "workbench_review as evidence",
+      "overwrite blind_judgment",
+      "future data beyond as_of=2026-07-14T15:30:00+08:00",
+      "LLM in evaluators/detectors/selectors",
+      "regex/string parsing on predicate reason strings",
+      "unknown/missing → zero"
+    ]
+  },
+
+  "known_p1": [
+    "research_questions[*].probes are narrative-only — not validated against required_data",
+    "intraday_volume canonical enum not yet frozen",
+    "leader_divergence thresholds engineer_derived, validation_status=unvalidated"
+  ]
+}

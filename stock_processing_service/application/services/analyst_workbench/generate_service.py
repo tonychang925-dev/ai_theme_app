@@ -400,6 +400,7 @@ class AnalystWorkbenchGenerateService:
             )
 
             start = trade_date - timedelta(days=20)
+            # Path B: DB board-pool snapshots for trend charts (no live Eastmoney during page generation)
             snapshots = await MarketMetricsService(board_provider=False)._get_range_async(start, trade_date)
             return ChartReproductionEngine.build_trend(snapshots)
         except Exception:

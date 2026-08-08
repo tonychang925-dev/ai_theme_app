@@ -7563,6 +7563,7 @@ async def _build_analyst_charts_from_metrics(trade_date: str, pool: Any = None) 
         td = _date.fromisoformat(trade_date)
 
         # ── Load canonical metrics ──
+        # Path B: DB board-pool snapshots, no live Eastmoney (see MarketMetricsService source contract)
         snap = await MarketMetricsService(board_provider=False).get_async(td)
 
         # ── Load recap for thematic charts 5-7 ──
@@ -8030,6 +8031,7 @@ async def _build_market_emotion_from_metrics(trade_date: str) -> dict[str, Any]:
     )
     try:
         td = _date.fromisoformat(trade_date)
+        # Path B: DB board-pool snapshots, no live Eastmoney (see MarketMetricsService source contract)
         snap = await MarketMetricsService(board_provider=False).get_async(td)
         story = NarrativeEngine().generate(snap)
 

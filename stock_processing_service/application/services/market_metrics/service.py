@@ -56,12 +56,29 @@ def _is_limit_down(stock_id: str, pct_chg: float) -> bool:
 class MarketMetricsService:
     """Produce MarketMetricsSnapshot — the single source of truth.
 
-    Supports optional BoardPoolProvider for a-stock-data integration.
-    When available, limit_days and promotion rates come from Eastmoney
-    board pools instead of streak backtracking.
+    Source contract (two paths, one algorithm):
+
+      Path A — Research (default):
+        board_provider=omit → auto-create Eastmoney BoardPoolProvider.
+        em_zt / em_yesterday_zt populated live → _build_momentum_from_board_pools
+        uses exact per-stock limit_days from Eastmoney (confidence 0.92).
+        Falls back to DB ths_hot_reason_snapshot when Eastmoney is unavailable.
+
+      Path B — Workbench / Web (explicit):
+        board_provider=False → no live HTTP to Eastmoney during page generation.
+        _build_momentum_from_board_pools falls through to DB-backed
+        ths_hot_reason_snapshot path (confidence 0.86). The six-factor
+        scorecard algorithm is identical; only the data provenance differs.
+
+      Future canonical path (not yet implemented):
+        DB-persisted board-pool snapshot (Eastmoney data saved at collection
+        time) as the single canonical source for both Workbench web path and
+        Julia research path. Eliminates the dual-provenance gap (0.92 vs 0.86).
     """
 
     def __init__(self, board_provider=None):
+        # board_provider=False → explicit opt-out of live Eastmoney (Workbench web path)
+        # board_provider=None  → auto-create if available (Research path)
         if board_provider is not None:
             self._board_provider = board_provider
         else:
