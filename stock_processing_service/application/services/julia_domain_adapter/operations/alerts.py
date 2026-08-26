@@ -19,6 +19,7 @@ from ..contracts import (
     SourceFailure,
     SourceRecord,
 )
+from ..provenance import classify_exception, source_failure
 
 CST = timezone(timedelta(hours=8))
 _ATTENTION_RANK = {"CRITICAL": 0, "HIGH": 1, "MEDIUM": 2, "LOW": 3}
@@ -75,7 +76,18 @@ class MarketAlertsOperation:
         except json.JSONDecodeError as exc:
             return self._error(request, observed_at, trade_date, source_ref, exc, code=AdapterErrorCode.SCHEMA_MISMATCH.value)
         except Exception as exc:
-            return self._error(request, observed_at, trade_date, source_ref, exc, code=AdapterErrorCode.INTERNAL_ERROR.value)
+            status, code, retryable = classify_exception(exc)
+            if status == "unavailable":
+                return self._unavailable(
+                    request,
+                    observed_at,
+                    trade_date,
+                    source_ref,
+                    reason=f"{type(exc).__name__}: {exc}",
+                    code=code,
+                    retryable=retryable,
+                )
+            return self._error(request, observed_at, trade_date, source_ref, exc, code=code)
 
         try:
             from stock_processing_service.application.services.analyst_workbench.snapshot import ReviewSnapshot
@@ -85,12 +97,23 @@ class MarketAlertsOperation:
             snapshot = ReviewSnapshot.from_dict(snap_data)
             validation = ApprovedSnapshotValidator().validate(str(session.get("status", "")), snapshot)
         except Exception as exc:
-            return self._error(request, observed_at, trade_date, source_ref, exc, code=AdapterErrorCode.INTERNAL_ERROR.value)
+            status, code, retryable = classify_exception(exc)
+            if status == "unavailable":
+                return self._unavailable(
+                    request,
+                    observed_at,
+                    trade_date,
+                    source_ref,
+                    reason=f"{type(exc).__name__}: {exc}",
+                    code=code,
+                    retryable=retryable,
+                )
+            return self._error(request, observed_at, trade_date, source_ref, exc, code=code)
 
         if not validation.valid:
             errors = [str(getattr(item, "value", item)) for item in validation.errors]
             failure = SourceFailure(
-                code=AdapterErrorCode.SCHEMA_MISMATCH.value,
+                code=_validation_failure_code(errors),
                 message="approved workbench snapshot validation failed",
                 source_name="analyst_workbench_snapshot",
                 retryable=False,
@@ -113,7 +136,18 @@ class MarketAlertsOperation:
         try:
             envelope = AnalystIntelligenceExporter().export(snapshot).to_dict()
         except Exception as exc:
-            return self._error(request, observed_at, trade_date, source_ref, exc, code=AdapterErrorCode.INTERNAL_ERROR.value)
+            status, code, retryable = classify_exception(exc)
+            if status == "unavailable":
+                return self._unavailable(
+                    request,
+                    observed_at,
+                    trade_date,
+                    source_ref,
+                    reason=f"{type(exc).__name__}: {exc}",
+                    code=code,
+                    retryable=retryable,
+                )
+            return self._error(request, observed_at, trade_date, source_ref, exc, code=code)
 
         claims = envelope.get("claims", [])
         if not isinstance(claims, list):
@@ -141,6 +175,7 @@ class MarketAlertsOperation:
                 "exporter": "AnalystIntelligenceExporter",
                 "snapshot_version": envelope.get("approval", {}).get("snapshot_version") if isinstance(envelope.get("approval"), dict) else None,
                 "snapshot_hash": envelope.get("approval", {}).get("snapshot_hash") if isinstance(envelope.get("approval"), dict) else None,
+                "approved_at": envelope.get("approval", {}).get("approved_at") if isinstance(envelope.get("approval"), dict) else None,
             },
         )
 
@@ -162,8 +197,8 @@ class MarketAlertsOperation:
             diagnostics={"empty_reason": "no claims at or above requested attention level"} if not alerts else {},
         )
 
-    def _unavailable(self, request: AdapterRequest, observed_at: str, trade_date: str, source_ref: str, *, reason: str, code: str) -> DomainObservationEnvelope:
-        failure = SourceFailure(code=code, message=reason, source_name="analyst_workbench_snapshot", retryable=True)
+    def _unavailable(self, request: AdapterRequest, observed_at: str, trade_date: str, source_ref: str, *, reason: str, code: str, retryable: bool = True) -> DomainObservationEnvelope:
+        failure = source_failure(code=code, message=reason, source_name="analyst_workbench_snapshot", retryable=retryable)
         return DomainObservationEnvelope(
             operation=request.operation,
             status="unavailable",
@@ -178,7 +213,7 @@ class MarketAlertsOperation:
         )
 
     def _error(self, request: AdapterRequest, observed_at: str, trade_date: str, source_ref: str, exc: BaseException, *, code: str) -> DomainObservationEnvelope:
-        failure = SourceFailure(code=code, message=f"{type(exc).__name__}: {exc}", source_name="analyst_workbench_snapshot")
+        failure = source_failure(code=code, message=f"{type(exc).__name__}: {exc}", source_name="analyst_workbench_snapshot", retryable=False)
         return DomainObservationEnvelope(
             operation=request.operation,
             status="error",
@@ -216,3 +251,13 @@ def _default_workbench_base_dir() -> Path:
 
 
 __all__ = ["MarketAlertsOperation"]
+
+
+def _validation_failure_code(errors: list[str]) -> str:
+    source_unavailable_errors = {"snapshot_not_found", "session_not_approved", "not_approved"}
+    schema_errors = {"hash_mismatch", "missing_hash", "missing_approval_metadata", "invalid_approval_mode", "invalid_source_mode"}
+    if any(error in schema_errors for error in errors):
+        return AdapterErrorCode.SCHEMA_MISMATCH.value
+    if any(error in source_unavailable_errors for error in errors):
+        return AdapterErrorCode.UPSTREAM_UNAVAILABLE.value
+    return AdapterErrorCode.INTERNAL_ERROR.value
