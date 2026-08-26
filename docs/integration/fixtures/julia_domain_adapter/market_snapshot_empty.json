@@ -1,0 +1,24 @@
+{
+  "operation": "market.snapshot",
+  "status": "success",
+  "data_state": "empty",
+  "correlation_id": "corr-empty-001",
+  "provider_request_id": "ai-theme-req-empty-001",
+  "observed_at": "2026-08-26T15:30:00+08:00",
+  "payload": {"market_state": {}, "themes": [], "quality": {"coverage": 1.0, "source_quality": 1.0}},
+  "source_records": [
+    {
+      "source_type": "database",
+      "source_name": "theme_cycle_judgement_v2",
+      "source_ref": "trade_date=2026-08-26",
+      "as_of": "2026-08-26",
+      "observed_at": "2026-08-26T15:30:00+08:00",
+      "freshness": "fresh",
+      "status": "success",
+      "provenance": {"row_count": 0, "empty_is_valid": true}
+    }
+  ],
+  "failures": [],
+  "diagnostics": {"empty_reason": "no rows for requested operation"},
+  "schema_version": "1.0"
+}
