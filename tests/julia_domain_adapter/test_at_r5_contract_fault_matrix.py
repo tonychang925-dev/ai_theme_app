@@ -34,8 +34,7 @@ from stock_processing_service.ports.julia_domain_adapter_http import register_ju
 CST = timezone(timedelta(hours=8))
 SCHEMA_PATH = ROOT / "docs" / "integration" / "JULIA_ADAPTER_SCHEMA_v1.json"
 FIXTURE_DIR = ROOT / "docs" / "integration" / "fixtures" / "julia_domain_adapter"
-EXPECTED_FIXTURES = {
-    "adapter_request_market_snapshot.json",
+EXPECTED_RESPONSE_FIXTURES = {
     "market_alerts_empty.json",
     "market_alerts_success.json",
     "market_snapshot_empty.json",
@@ -45,6 +44,8 @@ EXPECTED_FIXTURES = {
     "market_snapshot_success.json",
     "market_snapshot_unavailable.json",
 }
+REQUIRED_REQUEST_EXAMPLES = {"adapter_request_market_snapshot.json"}
+ALLOWED_ADDITIVE_REQUEST_EXAMPLES = {"adapter_request_market_alerts.json"}
 EXPECTED_SCHEMA_SHA256 = "baf4d21efd2681009d3eeab899e7320624c05fe6397fa4aa4ef713f009451497"
 
 
@@ -238,7 +239,10 @@ def test_tc_at_r5_017_no_write_side_effects(tmp_path):
 
 
 def test_tc_at_r5_018_golden_fixture_compatibility_and_list():
-    assert {p.name for p in FIXTURE_DIR.glob("*.json")} == EXPECTED_FIXTURES
+    names = {p.name for p in FIXTURE_DIR.glob("*.json")}
+    assert EXPECTED_RESPONSE_FIXTURES.issubset(names)
+    assert REQUIRED_REQUEST_EXAMPLES.issubset(names)
+    assert names <= EXPECTED_RESPONSE_FIXTURES | REQUIRED_REQUEST_EXAMPLES | ALLOWED_ADDITIVE_REQUEST_EXAMPLES
     for path in sorted(FIXTURE_DIR.glob("*.json")):
         raw = json.loads(path.read_text(encoding="utf-8"))
         if path.name.startswith("adapter_request"):
