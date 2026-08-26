@@ -14,6 +14,16 @@ from typing import Any, Mapping
 
 ADAPTER_SCHEMA_VERSION = "1.0"
 SUPPORTED_OPERATIONS = frozenset({"market.snapshot", "market.alerts"})
+REQUEST_REQUIRED_FIELDS = frozenset({"operation", "arguments", "schema_version"})
+ENVELOPE_REQUIRED_FIELDS = frozenset({
+    "operation",
+    "status",
+    "data_state",
+    "payload",
+    "source_records",
+    "failures",
+    "schema_version",
+})
 
 
 class ValidationError(ValueError):
@@ -97,6 +107,12 @@ def _require_mapping(value: Any, field_name: str) -> dict[str, Any]:
     return dict(value)
 
 
+def _require_fields(data: Mapping[str, Any], required: frozenset[str], object_name: str) -> None:
+    missing = sorted(field for field in required if field not in data)
+    if missing:
+        raise ValidationError(f"{object_name} missing required fields: {', '.join(missing)}")
+
+
 @dataclass(frozen=True)
 class AdapterRequest:
     operation: str
@@ -119,15 +135,14 @@ class AdapterRequest:
     def from_dict(cls, data: Mapping[str, Any]) -> "AdapterRequest":
         if not isinstance(data, Mapping):
             raise ValidationError("AdapterRequest must be an object")
-        if "operation" not in data:
-            raise ValidationError("operation is required")
+        _require_fields(data, REQUEST_REQUIRED_FIELDS, "AdapterRequest")
         return cls(
             operation=str(data["operation"]),
-            arguments=_require_mapping(data.get("arguments", {}), "arguments"),
+            arguments=_require_mapping(data["arguments"], "arguments"),
             correlation_id=str(data.get("correlation_id", "")),
             idempotency_key=str(data.get("idempotency_key", "")),
             requested_at=str(data.get("requested_at", "")),
-            schema_version=str(data.get("schema_version", ADAPTER_SCHEMA_VERSION)),
+            schema_version=str(data["schema_version"]),
             trace_metadata=_require_mapping(data.get("trace_metadata", {}), "trace_metadata"),
         )
 
@@ -266,25 +281,30 @@ class DomainObservationEnvelope:
             raise ValidationError("status=success must not include failures; use partial/unavailable/error")
         if status == AdapterStatus.PARTIAL.value and not self.failures:
             raise ValidationError("status=partial requires at least one explicit failure")
+        if status == AdapterStatus.PARTIAL.value and data_state == DataState.EMPTY.value:
+            raise ValidationError("status=partial requires useful non-empty payload; use unavailable/error for failed empty results")
         if status in {AdapterStatus.UNAVAILABLE.value, AdapterStatus.ERROR.value} and not self.failures:
             raise ValidationError(f"status={status} requires at least one explicit failure")
+        if status in {AdapterStatus.UNAVAILABLE.value, AdapterStatus.ERROR.value} and data_state != DataState.EMPTY.value:
+            raise ValidationError(f"status={status} requires data_state=empty")
 
     @classmethod
     def from_dict(cls, data: Mapping[str, Any]) -> "DomainObservationEnvelope":
         if not isinstance(data, Mapping):
             raise ValidationError("DomainObservationEnvelope must be an object")
+        _require_fields(data, ENVELOPE_REQUIRED_FIELDS, "DomainObservationEnvelope")
         return cls(
-            operation=str(data.get("operation", "")),
-            status=str(data.get("status", "")),
-            data_state=str(data.get("data_state", "")),
+            operation=str(data["operation"]),
+            status=str(data["status"]),
+            data_state=str(data["data_state"]),
             correlation_id=str(data.get("correlation_id", "")),
             provider_request_id=str(data.get("provider_request_id", "")),
             observed_at=str(data.get("observed_at", "")),
-            payload=_require_mapping(data.get("payload", {}), "payload"),
-            source_records=[SourceRecord.from_dict(item) for item in data.get("source_records", [])],
-            failures=[SourceFailure.from_dict(item) for item in data.get("failures", [])],
+            payload=_require_mapping(data["payload"], "payload"),
+            source_records=[SourceRecord.from_dict(item) for item in data["source_records"]],
+            failures=[SourceFailure.from_dict(item) for item in data["failures"]],
             diagnostics=_require_mapping(data.get("diagnostics", {}), "diagnostics"),
-            schema_version=str(data.get("schema_version", ADAPTER_SCHEMA_VERSION)),
+            schema_version=str(data["schema_version"]),
         )
 
     def to_dict(self) -> dict[str, Any]:

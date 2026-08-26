@@ -82,8 +82,23 @@ provider/dependency exception MUST NOT become success + empty payload
 ## Data State Semantics
 
 - `normal`: useful current data.
-- `empty`: valid execution with no observations/results.
+- `empty`: valid execution with no observations/results, or failed execution with no meaningful payload.
 - `stale`: useful data exists but is older than the freshness policy.
+
+## Legal Status / Data State Matrix
+
+| status | legal data_state | failure requirement | meaning |
+|---|---|---|---|
+| `success` | `normal`, `empty`, `stale` | `failures=[]` | execution completed without dependency/source failures |
+| `partial` | `normal`, `stale` | `failures` non-empty | useful non-empty payload exists, but at least one non-critical source failed |
+| `unavailable` | `empty` | `failures` non-empty | required dependency/source unavailable; meaningful execution cannot complete |
+| `error` | `empty` | `failures` non-empty | validation/internal/provider execution error |
+
+Invalid examples:
+
+- `success` with any failure.
+- `partial` with `data_state=empty`.
+- `unavailable` or `error` with `data_state=normal` or `stale`.
 
 Valid empty example:
 
