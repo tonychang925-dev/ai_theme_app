@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ai-theme-adapter/1.0",
+  "title": "ai_theme_app Julia Domain Adapter IBR v1.0",
+  "type": "object",
+  "definitions": {
+    "AdapterRequest": {
+      "type": "object",
+      "required": ["operation", "arguments", "schema_version"],
+      "properties": {
+        "operation": {"enum": ["market.snapshot", "market.alerts"]},
+        "arguments": {"type": "object"},
+        "correlation_id": {"type": "string"},
+        "idempotency_key": {"type": "string"},
+        "requested_at": {"type": "string"},
+        "schema_version": {"const": "1.0"},
+        "trace_metadata": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "SourceFailure": {
+      "type": "object",
+      "required": ["code", "message"],
+      "properties": {
+        "code": {"enum": ["INVALID_ARGUMENT", "OPERATION_NOT_SUPPORTED", "UPSTREAM_TIMEOUT", "UPSTREAM_UNAVAILABLE", "SCHEMA_MISMATCH", "INTERNAL_ERROR"]},
+        "message": {"type": "string"},
+        "source_name": {"type": "string"},
+        "retryable": {"type": "boolean"},
+        "details": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "SourceRecord": {
+      "type": "object",
+      "required": ["source_type", "source_name", "freshness", "status"],
+      "properties": {
+        "source_type": {"type": "string"},
+        "source_name": {"type": "string"},
+        "source_ref": {"type": "string"},
+        "as_of": {"type": "string"},
+        "observed_at": {"type": "string"},
+        "freshness": {"type": "string"},
+        "status": {"type": "string"},
+        "provenance": {"type": "object"},
+        "failure": {"$ref": "#/$defs/SourceFailure"}
+      },
+      "additionalProperties": false
+    },
+    "DomainObservationEnvelope": {
+      "type": "object",
+      "required": ["operation", "status", "data_state", "payload", "source_records", "failures", "schema_version"],
+      "properties": {
+        "operation": {"enum": ["market.snapshot", "market.alerts"]},
+        "status": {"enum": ["success", "partial", "unavailable", "error"]},
+        "data_state": {"enum": ["normal", "empty", "stale"]},
+        "correlation_id": {"type": "string"},
+        "provider_request_id": {"type": "string"},
+        "observed_at": {"type": "string"},
+        "payload": {"type": "object"},
+        "source_records": {"type": "array", "items": {"$ref": "#/$defs/SourceRecord"}},
+        "failures": {"type": "array", "items": {"$ref": "#/$defs/SourceFailure"}},
+        "diagnostics": {"type": "object"},
+        "schema_version": {"const": "1.0"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "SourceFailure": {"$ref": "#/definitions/SourceFailure"},
+    "SourceRecord": {"$ref": "#/definitions/SourceRecord"}
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "adapter_identity": "ai-theme-adapter/1.0",
+  "frozen_adapter_head": "55d92281ddbf93c717f35032d359dcd4bf2f5373",
+  "frozen_schema_path": "docs/integration/JULIA_ADAPTER_SCHEMA_v1.json",
+  "frozen_schema_sha256": "baf4d21efd2681009d3eeab899e7320624c05fe6397fa4aa4ef713f009451497",
+  "response_fixtures_frozen": true,
+  "request_examples_are_additive": true,
+  "fixtures": [
+    {
+      "path": "docs/integration/fixtures/julia_domain_adapter/adapter_request_market_snapshot.json",
+      "sha256": "ac208bf336dfd7605415455f4ef961978ff0aa06fe946a4f9bd2c2c1d5e92315",
+      "kind": "request_example",
+      "frozen_semantics": true,
+      "purpose": "Example AdapterRequest for market.snapshot with opaque trace metadata."
+    },
+    {
+      "path": "docs/integration/fixtures/julia_domain_adapter/adapter_request_market_alerts.json",
+      "sha256": "bb5737d76d55d16021d608b9b5ffeea7ace79a2d4a37534c4b2078bae6efd2b8",
+      "kind": "request_example",
+      "frozen_semantics": false,
+      "additive_handoff_example": true,
+      "purpose": "Additive AT-R6 AdapterRequest example for market.alerts; no schema or response-fixture semantic change."
+    },
+    {
+      "path": "docs/integration/fixtures/julia_domain_adapter/market_alerts_empty.json",
+      "sha256": "1fa5cb20203bdb865fd89714c898a9f5e9ce496e12184c21ed7963e044220bb8",
+      "kind": "golden_response_fixture",
+      "frozen_semantics": true,
+      "purpose": "Valid approved alerts source with zero matching alerts: success + empty."
+    },
+    {
+      "path": "docs/integration/fixtures/julia_domain_adapter/market_alerts_success.json",
+      "sha256": "2c60b7c4d2b386b95499bd0439c0bed091a7d9a275a4ef19b63ae3f7e109dcd6",
+      "kind": "golden_response_fixture",
+      "frozen_semantics": true,
+      "purpose": "Valid approved alerts source with matching high-attention alert: success + normal."
+    },
+    {
+      "path": "docs/integration/fixtures/julia_domain_adapter/market_snapshot_empty.json",
+      "sha256": "2436d6905c5db66e92cd5c7e9caede23545b2b175adbab4845599a4d3680c9ce",
+      "kind": "golden_response_fixture",
+      "frozen_semantics": true,
+      "purpose": "Successful snapshot execution with legitimate zero market rows: success + empty."
+    },
+    {
+      "path": "docs/integration/fixtures/julia_domain_adapter/market_snapshot_error.json",
+      "sha256": "e7692d3d1d0dc309ef6d5889d984e88ecef364450ba9883586e0311cc06f329e",
+      "kind": "golden_response_fixture",
+      "frozen_semantics": true,
+      "purpose": "Internal/provider execution failure represented as structured error + empty."
+    },
+    {
+      "path": "docs/integration/fixtures/julia_domain_adapter/market_snapshot_partial.json",
+      "sha256": "aa1115cd6bbf9dd5dc38fb63c155234ff8d5695af0769698ce5bc4860f35cf7c",
+      "kind": "golden_response_fixture",
+      "frozen_semantics": true,
+      "purpose": "Useful snapshot payload with non-critical source failure: partial + normal."
+    },
+    {
+      "path": "docs/integration/fixtures/julia_domain_adapter/market_snapshot_stale.json",
+      "sha256": "c86b5c1475776658dddb1bf32bee1d171b4031aaaa7fac4802a74df0e97386c7",
+      "kind": "golden_response_fixture",
+      "frozen_semantics": true,
+      "purpose": "Successful snapshot with stale source material: success + stale."
+    },
+    {
+      "path": "docs/integration/fixtures/julia_domain_adapter/market_snapshot_success.json",
+      "sha256": "270384c2a95747dfac05b8c3eb4ad6a43230f75db0d1f69a9772b5a6ca8fdfdf",
+      "kind": "golden_response_fixture",
+      "frozen_semantics": true,
+      "purpose": "Normal successful market.snapshot response: success + normal."
+    },
+    {
+      "path": "docs/integration/fixtures/julia_domain_adapter/market_snapshot_unavailable.json",
+      "sha256": "dc8959dfaca54fe5dd557bcf7c35006a7b49d2dfc64b7f10aa611b04e80784f4",
+      "kind": "golden_response_fixture",
+      "frozen_semantics": true,
+      "purpose": "Required snapshot dependency unavailable: unavailable + empty with explicit failure."
+    }
+  ],
+  "change_control": {
+    "response_fixture_semantics": "Do not modify without reopening cross-repo compatibility review.",
+    "schema": "Do not modify without reopening cross-repo compatibility review.",
+    "request_examples": "Additive examples may be added if schema-compatible and marked non-semantic."
+  }
+}

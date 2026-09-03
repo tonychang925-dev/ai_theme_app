@@ -1,0 +1,53 @@
+{
+  "operation": "market.snapshot",
+  "status": "partial",
+  "data_state": "normal",
+  "correlation_id": "corr-partial-001",
+  "provider_request_id": "ai-theme-req-partial-001",
+  "observed_at": "2026-08-26T15:30:00+08:00",
+  "payload": {
+    "market_state": {"theme_count": 2, "mainline_count": 1},
+    "themes": [{"subject_key": "theme-ai", "theme_name": "AI", "stage": "active"}],
+    "quality": {"coverage": 0.66, "source_quality": 0.75}
+  },
+  "source_records": [
+    {
+      "source_type": "database",
+      "source_name": "theme_cycle_judgement_v2",
+      "source_ref": "trade_date=2026-08-26",
+      "as_of": "2026-08-26",
+      "observed_at": "2026-08-26T15:30:00+08:00",
+      "freshness": "fresh",
+      "status": "success",
+      "provenance": {"row_count": 2}
+    },
+    {
+      "source_type": "database",
+      "source_name": "money_flow_enhanced",
+      "source_ref": "trade_date=2026-08-26",
+      "as_of": "2026-08-26",
+      "observed_at": "2026-08-26T15:30:00+08:00",
+      "freshness": "fresh",
+      "status": "failed",
+      "provenance": {},
+      "failure": {
+        "code": "UPSTREAM_UNAVAILABLE",
+        "message": "source unavailable",
+        "source_name": "money_flow_enhanced",
+        "retryable": true,
+        "details": {"dependency": "postgres"}
+      }
+    }
+  ],
+  "failures": [
+    {
+      "code": "UPSTREAM_UNAVAILABLE",
+      "message": "source unavailable",
+      "source_name": "money_flow_enhanced",
+      "retryable": true,
+      "details": {"dependency": "postgres"}
+    }
+  ],
+  "diagnostics": {"missing_sources": ["money_flow_enhanced"]},
+  "schema_version": "1.0"
+}
