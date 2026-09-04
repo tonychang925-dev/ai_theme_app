@@ -10,6 +10,7 @@ from typing import Any, Mapping
 
 from .contracts import AdapterRequest, DomainObservationEnvelope, ValidationError
 from .operations.alerts import MarketAlertsOperation
+from .operations.event_read import MarketEventReadOperation
 from .operations.snapshot import MarketSnapshotOperation
 
 
@@ -20,6 +21,7 @@ class DomainIntelligenceAdapter:
         self,
         *,
         market_context_exporter: object | None = None,
+        database_gateway: object | None = None,
         workbench_base_dir: str | None = None,
         clock: object | None = None,
     ) -> None:
@@ -30,6 +32,10 @@ class DomainIntelligenceAdapter:
             ),
             "market.alerts": MarketAlertsOperation(
                 workbench_base_dir=workbench_base_dir,
+                clock=clock,
+            ),
+            "market.event.read": MarketEventReadOperation(
+                database_gateway=database_gateway,
                 clock=clock,
             ),
         }

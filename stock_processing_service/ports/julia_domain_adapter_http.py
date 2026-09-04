@@ -233,6 +233,7 @@ def _adapter_for_request(request: Request) -> DomainIntelligenceAdapter:
     exporter = MarketContextExporter(reader=DerivedContextReader(pool=pool)) if pool is not None else None
     return DomainIntelligenceAdapter(
         market_context_exporter=exporter,
+        database_gateway=gateway,
         workbench_base_dir=str(_workbench_base_dir(request)),
     )
 

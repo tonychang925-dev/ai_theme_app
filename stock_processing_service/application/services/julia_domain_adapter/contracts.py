@@ -13,7 +13,7 @@ import re
 from typing import Any, Mapping
 
 ADAPTER_SCHEMA_VERSION = "1.0"
-SUPPORTED_OPERATIONS = frozenset({"market.snapshot", "market.alerts"})
+SUPPORTED_OPERATIONS = frozenset({"market.snapshot", "market.alerts", "market.event.read"})
 REQUEST_REQUIRED_FIELDS = frozenset({"operation", "arguments", "schema_version"})
 REQUEST_ALLOWED_FIELDS = frozenset({
     "operation",
@@ -55,6 +55,7 @@ class DataState(str, Enum):
 class AdapterErrorCode(str, Enum):
     INVALID_ARGUMENT = "INVALID_ARGUMENT"
     OPERATION_NOT_SUPPORTED = "OPERATION_NOT_SUPPORTED"
+    NOT_FOUND = "NOT_FOUND"
     UPSTREAM_TIMEOUT = "UPSTREAM_TIMEOUT"
     UPSTREAM_UNAVAILABLE = "UPSTREAM_UNAVAILABLE"
     SCHEMA_MISMATCH = "SCHEMA_MISMATCH"

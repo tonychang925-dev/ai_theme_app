@@ -67,7 +67,7 @@ def test_tc_at_r1_002_rejects_unsupported_operation_and_schema_version():
             "schema_version": "2.0",
         })
 
-    assert SUPPORTED_OPERATIONS == {"market.snapshot", "market.alerts"}
+    assert SUPPORTED_OPERATIONS == {"market.snapshot", "market.alerts", "market.event.read"}
 
 
 def test_tc_at_r1_003_status_and_data_state_invariants_are_enforced():
@@ -265,6 +265,7 @@ def test_tc_at_r1_010_source_failure_round_trip_and_error_code_catalog():
     expected_codes = {
         "INVALID_ARGUMENT",
         "OPERATION_NOT_SUPPORTED",
+        "NOT_FOUND",
         "UPSTREAM_TIMEOUT",
         "UPSTREAM_UNAVAILABLE",
         "SCHEMA_MISMATCH",

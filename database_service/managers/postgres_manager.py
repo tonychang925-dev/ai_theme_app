@@ -1201,10 +1201,19 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 expr("source_category", "'news'::varchar") + ",",
                 expr("event_type", "NULL::text") + ",",
                 expr("summary", "NULL::text") + ",",
+                expr("direction", "NULL::integer") + ",",
+                expr("confidence", "NULL::double precision") + ",",
+                expr("source_trace_id", "NULL::varchar") + ",",
+                expr("event_time", "NULL::timestamptz") + ",",
+                expr("created_at", "NULL::timestamptz") + ",",
                 expr("entities", "NULL::jsonb") + ",",
                 expr("causal_claim", "NULL::text") + ",",
                 expr("evidence_set", "NULL::jsonb") + ",",
                 expr("raw_event_json", "ne.theme_directive::jsonb" if "theme_directive" in columns else "'{}'::jsonb") + ",",
+                "nr.source AS source_name,",
+                "nr.url AS source_url,",
+                "nr.publish_date,",
+                "nr.publish_time,",
             ]
         )
 
@@ -9216,7 +9225,7 @@ class PostgresDatabaseManager(BaseDatabaseManager):
         async with self.pool.acquire() as conn:
             exists = await conn.fetchval("SELECT to_regclass('public.event_subject_map')::text")
             if not exists:
-                return []
+                raise RuntimeError("event_subject_map table does not exist")
             rows = await conn.fetch(sql, ids)
         return [dict(r) for r in rows]
 

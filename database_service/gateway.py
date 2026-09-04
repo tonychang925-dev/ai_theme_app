@@ -917,7 +917,7 @@ class DatabaseGateway:
             start_time = time.time()
             fn = getattr(self._client, "get_event_subject_mappings_by_event_ids", None)
             if not callable(fn):
-                return []
+                raise TypeError("database client has no callable get_event_subject_mappings_by_event_ids")
             result = await fn(event_ids)
             self._record_request(True, start_time)
             return result
