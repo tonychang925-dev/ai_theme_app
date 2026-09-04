@@ -926,6 +926,30 @@ class DatabaseGateway:
             logger.error(f"按事件读取 event_subject_map 失败 event_ids={event_ids}: {e}")
             raise
 
+    async def resolve_market_event_candidates(
+        self,
+        *,
+        query: str,
+        normalized_theme: Optional[str] = None,
+        time_window: Optional[Dict[str, Any]] = None,
+        limit: int = 20,
+    ) -> List[Dict[str, Any]]:
+        """Market-owned canonical market.event.resolve candidate lookup。"""
+        try:
+            start_time = time.time()
+            result = await self._read_source().resolve_market_event_candidates(
+                query=query,
+                normalized_theme=normalized_theme,
+                time_window=time_window,
+                limit=limit,
+            )
+            self._record_request(True, start_time)
+            return result
+        except Exception as e:
+            self._record_request(False, start_time)
+            logger.error(f"解析 canonical market event 失败 query={query!r}: {e}")
+            raise
+
     async def get_pre_market_subject_events(
         self,
         trade_date,

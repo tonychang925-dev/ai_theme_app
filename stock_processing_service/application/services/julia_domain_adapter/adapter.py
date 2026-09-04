@@ -11,6 +11,7 @@ from typing import Any, Mapping
 from .contracts import AdapterRequest, DomainObservationEnvelope, ValidationError
 from .operations.alerts import MarketAlertsOperation
 from .operations.event_read import MarketEventReadOperation
+from .operations.event_resolve import MarketEventResolveOperation
 from .operations.snapshot import MarketSnapshotOperation
 
 
@@ -35,6 +36,10 @@ class DomainIntelligenceAdapter:
                 clock=clock,
             ),
             "market.event.read": MarketEventReadOperation(
+                database_gateway=database_gateway,
+                clock=clock,
+            ),
+            "market.event.resolve": MarketEventResolveOperation(
                 database_gateway=database_gateway,
                 clock=clock,
             ),

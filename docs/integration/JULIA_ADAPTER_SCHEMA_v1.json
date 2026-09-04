@@ -8,7 +8,7 @@
       "type": "object",
       "required": ["operation", "arguments", "schema_version"],
       "properties": {
-        "operation": {"enum": ["market.snapshot", "market.alerts", "market.event.read"]},
+        "operation": {"enum": ["market.snapshot", "market.alerts", "market.event.read", "market.event.resolve"]},
         "arguments": {"type": "object"},
         "correlation_id": {"type": "string"},
         "idempotency_key": {"type": "string"},
@@ -50,7 +50,7 @@
       "type": "object",
       "required": ["operation", "status", "data_state", "payload", "source_records", "failures", "schema_version"],
       "properties": {
-        "operation": {"enum": ["market.snapshot", "market.alerts", "market.event.read"]},
+        "operation": {"enum": ["market.snapshot", "market.alerts", "market.event.read", "market.event.resolve"]},
         "status": {"enum": ["success", "partial", "unavailable", "error"]},
         "data_state": {"enum": ["normal", "empty", "stale"]},
         "correlation_id": {"type": "string"},

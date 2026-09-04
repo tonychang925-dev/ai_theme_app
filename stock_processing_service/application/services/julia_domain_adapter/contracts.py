@@ -13,7 +13,7 @@ import re
 from typing import Any, Mapping
 
 ADAPTER_SCHEMA_VERSION = "1.0"
-SUPPORTED_OPERATIONS = frozenset({"market.snapshot", "market.alerts", "market.event.read"})
+SUPPORTED_OPERATIONS = frozenset({"market.snapshot", "market.alerts", "market.event.read", "market.event.resolve"})
 REQUEST_REQUIRED_FIELDS = frozenset({"operation", "arguments", "schema_version"})
 REQUEST_ALLOWED_FIELDS = frozenset({
     "operation",

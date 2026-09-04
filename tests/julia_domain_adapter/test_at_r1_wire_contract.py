@@ -67,7 +67,7 @@ def test_tc_at_r1_002_rejects_unsupported_operation_and_schema_version():
             "schema_version": "2.0",
         })
 
-    assert SUPPORTED_OPERATIONS == {"market.snapshot", "market.alerts", "market.event.read"}
+    assert SUPPORTED_OPERATIONS == {"market.snapshot", "market.alerts", "market.event.read", "market.event.resolve"}
 
 
 def test_tc_at_r1_003_status_and_data_state_invariants_are_enforced():

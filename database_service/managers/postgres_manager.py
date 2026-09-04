@@ -9229,6 +9229,92 @@ class PostgresDatabaseManager(BaseDatabaseManager):
             rows = await conn.fetch(sql, ids)
         return [dict(r) for r in rows]
 
+    async def resolve_market_event_candidates(
+        self,
+        *,
+        query: str,
+        normalized_theme: Optional[str] = None,
+        time_window: Optional[Dict[str, Any]] = None,
+        limit: int = 20,
+    ) -> List[Dict[str, Any]]:
+        """Market-owned canonical event candidate resolution.
+
+        The query and normalized theme are inert exact theme-name hints. Canonical
+        candidates always originate from event_subject_map → news_event.
+        """
+        theme_hint = normalized_theme or query
+        window = time_window or {}
+        sql = """
+        WITH matched_events AS (
+            SELECT DISTINCT ON (ne.id)
+                ne.id AS market_event_id,
+                ne.id,
+                COALESCE(NULLIF(nr.title, ''), NULLIF(ne.summary, ''), ne.event_type, ('事件#' || ne.id::text)) AS title,
+                COALESCE(ne.summary, nr.content, '') AS summary,
+                COALESCE(ne.event_time, ne.created_at, esm.created_at, nr.created_at) AS occurred_at,
+                esm.id AS relation_id,
+                esm.subject_key,
+                COALESCE(NULLIF(esm.subject_name, ''), esm.subject_key) AS subject_name,
+                esm.relation_type,
+                esm.confidence
+            FROM event_subject_map esm
+            JOIN news_event ne ON ne.id = esm.event_id
+            LEFT JOIN news_raw nr ON nr.id = COALESCE(esm.news_id, ne.news_id)
+            WHERE lower(btrim(esm.subject_name)) = lower(btrim($1::text))
+            ORDER BY ne.id,
+                     CASE WHEN esm.relation_type = 'primary' THEN 0 ELSE 1 END,
+                     esm.confidence DESC NULLS LAST,
+                     esm.id DESC
+        ),
+        bounded_events AS (
+            SELECT *
+            FROM matched_events
+            WHERE (
+                ($2::date IS NULL AND $3::timestamptz IS NULL)
+                OR (
+                    $2::date IS NOT NULL
+                    AND occurred_at::date = $2::date
+                )
+                OR (
+                    $3::timestamptz IS NOT NULL
+                    AND occurred_at >= $3::timestamptz
+                    AND occurred_at < $4::timestamptz
+                )
+            )
+            ORDER BY occurred_at DESC NULLS LAST,
+                     market_event_id DESC,
+                     CASE WHEN relation_type = 'primary' THEN 0 ELSE 1 END,
+                     confidence DESC NULLS LAST
+            LIMIT $5::int
+        )
+        SELECT
+            market_event_id,
+            title,
+            summary,
+            occurred_at,
+            json_build_array(
+                json_build_object(
+                    'subject_key', subject_key,
+                    'subject_name', subject_name,
+                    'relation_type', relation_type,
+                    'confidence', confidence
+                )
+            ) AS matched_subjects
+        FROM bounded_events
+        ORDER BY occurred_at DESC NULLS LAST,
+                 market_event_id DESC
+        """
+        async with self.pool.acquire() as conn:
+            rows = await conn.fetch(
+                sql,
+                theme_hint,
+                window.get("date"),
+                window.get("start_at"),
+                window.get("end_at"),
+                int(limit),
+            )
+            return [dict(row) for row in rows]
+
     async def get_pre_market_subject_events(
         self,
         trade_date: date,

@@ -31,7 +31,7 @@ from stock_processing_service.application.services.julia_domain_adapter.contract
 from stock_processing_service.ports.julia_domain_adapter_config import JuliaDomainAdapterHTTPConfig
 from stock_processing_service.ports.julia_domain_adapter_http import register_julia_domain_adapter_routes
 
-SCHEMA_SHA256 = "ff8c45f06f8f10a4deb5023e90bca5ac41d8697a3c337216d48aa30c0bbb81f4"
+SCHEMA_SHA256 = "01e376cf8e6ec6be0e472315fefd3f24829758c7adc880990e4fc2a57bfdfacb"
 FROZEN_RESPONSE_HASHES = {
     "market_alerts_empty.json": "1fa5cb20203bdb865fd89714c898a9f5e9ce496e12184c21ed7963e044220bb8",
     "market_alerts_success.json": "2c60b7c4d2b386b95499bd0439c0bed091a7d9a275a4ef19b63ae3f7e109dcd6",
