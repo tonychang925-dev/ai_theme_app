@@ -8,7 +8,7 @@
       "type": "object",
       "required": ["operation", "arguments", "schema_version"],
       "properties": {
-        "operation": {"enum": ["market.snapshot", "market.alerts"]},
+        "operation": {"enum": ["market.snapshot", "market.alerts", "market.event.read"]},
         "arguments": {"type": "object"},
         "correlation_id": {"type": "string"},
         "idempotency_key": {"type": "string"},
@@ -22,7 +22,7 @@
       "type": "object",
       "required": ["code", "message"],
       "properties": {
-        "code": {"enum": ["INVALID_ARGUMENT", "OPERATION_NOT_SUPPORTED", "UPSTREAM_TIMEOUT", "UPSTREAM_UNAVAILABLE", "SCHEMA_MISMATCH", "INTERNAL_ERROR"]},
+        "code": {"enum": ["INVALID_ARGUMENT", "OPERATION_NOT_SUPPORTED", "NOT_FOUND", "UPSTREAM_TIMEOUT", "UPSTREAM_UNAVAILABLE", "SCHEMA_MISMATCH", "INTERNAL_ERROR"]},
         "message": {"type": "string"},
         "source_name": {"type": "string"},
         "retryable": {"type": "boolean"},
@@ -50,7 +50,7 @@
       "type": "object",
       "required": ["operation", "status", "data_state", "payload", "source_records", "failures", "schema_version"],
       "properties": {
-        "operation": {"enum": ["market.snapshot", "market.alerts"]},
+        "operation": {"enum": ["market.snapshot", "market.alerts", "market.event.read"]},
         "status": {"enum": ["success", "partial", "unavailable", "error"]},
         "data_state": {"enum": ["normal", "empty", "stale"]},
         "correlation_id": {"type": "string"},

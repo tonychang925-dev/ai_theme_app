@@ -3,10 +3,12 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone, timedelta
+import json
 from pathlib import Path
 import sys
 
 import pytest
+from jsonschema import Draft202012Validator
 
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
@@ -14,6 +16,8 @@ if str(ROOT) not in sys.path:
 
 from stock_processing_service.application.services.julia_domain_adapter import DomainIntelligenceAdapter
 from stock_processing_service.application.services.julia_domain_adapter.contracts import AdapterRequest
+
+SCHEMA_PATH = ROOT / "docs" / "integration" / "JULIA_ADAPTER_SCHEMA_v1.json"
 
 CST = timezone(timedelta(hours=8))
 
@@ -89,6 +93,31 @@ def _gateway(event=None, relations=None, **kwargs):
         }] if relations is None else relations,
         **kwargs,
     )
+
+
+def test_wire_schema_accepts_market_event_read_and_not_found_envelope():
+    schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+    request = _request(501).to_dict()
+    envelope = {
+        "operation": "market.event.read",
+        "status": "error",
+        "data_state": "empty",
+        "payload": {},
+        "source_records": [],
+        "failures": [{
+            "code": "NOT_FOUND",
+            "message": "news_event not found",
+            "source_name": "news_event",
+            "retryable": False,
+            "details": {},
+        }],
+        "schema_version": "1.0",
+    }
+
+    request_schema = {"$ref": "#/definitions/AdapterRequest", **schema}
+    envelope_schema = {"$ref": "#/definitions/DomainObservationEnvelope", **schema}
+    Draft202012Validator(request_schema).validate(request)
+    Draft202012Validator(envelope_schema).validate(envelope)
 
 
 @pytest.mark.asyncio

@@ -46,7 +46,7 @@ EXPECTED_RESPONSE_FIXTURES = {
 }
 REQUIRED_REQUEST_EXAMPLES = {"adapter_request_market_snapshot.json"}
 ALLOWED_ADDITIVE_REQUEST_EXAMPLES = {"adapter_request_market_alerts.json"}
-EXPECTED_SCHEMA_SHA256 = "baf4d21efd2681009d3eeab899e7320624c05fe6397fa4aa4ef713f009451497"
+EXPECTED_SCHEMA_SHA256 = "ff8c45f06f8f10a4deb5023e90bca5ac41d8697a3c337216d48aa30c0bbb81f4"
 
 
 class FixedClock:
