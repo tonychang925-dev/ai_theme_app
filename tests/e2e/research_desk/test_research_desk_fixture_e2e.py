@@ -163,7 +163,6 @@ def test_f01_full_chain_proves_source_verified_and_complete_provenance():
     assert provider.messages[-1]["role"] == "user"
 
 
-@pytest.mark.xfail(strict=True, reason="D1-F1 WebSearch-only projection is unavailable; C1 therefore mints NOT_PROVEN rather than REPORT_ONLY")
 def test_f02_websearch_only_is_report_only_cognition():
     composition = _compose(MarketGatewayFixture(relations=[]))
     d1_result = _run_d1(composition, mode="websearch_only")

@@ -42,12 +42,12 @@ class CognitionFixture(FixtureCognitionProvider):
         ]
         if self.support_override is not None:
             support = self.support_override
-        elif not evidence or not self.enrichment.observation.available:
-            support = "MARKET_CONTEXT_ONLY"
         elif states and all(state == "SOURCE_VERIFIED" for state in states):
             support = "SOURCE_VERIFIED_SUPPORT"
         elif states and all(state == "REPORT_ONLY" for state in states):
             support = "REPORT_ONLY_LEAD"
+        elif not evidence or not self.enrichment.observation.available:
+            support = "MARKET_CONTEXT_ONLY"
         else:
             support = "NOT_PROVEN_MATERIAL"
 

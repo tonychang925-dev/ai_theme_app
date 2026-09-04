@@ -5,8 +5,8 @@
 | Repository | Role | SHA | State |
 |---|---|---|---|
 | `ai_theme_app` | Market M1A/M1B substrate | `52893734532cdcab54d382c94037263de3eeb194` | Frozen input |
-| `ai_theme_app` | Previous fixture report head | `28071343d9de565054d3745b10d59b1e9ebb86ec` | Superseded by this resume |
-| `Julia_core` | C1/C2 updated input | `63ad38de13fd2c4137992e028ef53deaa78544ee` | Local checkout |
+| `ai_theme_app` | Previous fixture harness head | `d2422e6341361c9433b576bfd51b21c43a8d3e64` | Superseded by this resume |
+| `Julia_core` | C1/C2 updated input | `28121c3343d2c8dd30a6a8558e1a960b713a62c8` | Local checkout |
 | `Claude_client` | D1-F1 | `b8ae48a9972ba5bf2f0e4b1db5a1025e38e97e82` | Frozen input |
 
 The resumed harness uses exact source modules from `Julia_core` and `Claude_client`; no production code is copied or vendored.
@@ -75,7 +75,7 @@ valid WebFetch content binding
 → C2 production path succeeds
 ```
 
-This uses updated Core SHA `63ad38de13fd2c4137992e028ef53deaa78544ee` and does not synthesize a provider claim.
+This uses updated Core SHA `28121c3343d2c8dd30a6a8558e1a960b713a62c8` and does not synthesize a provider claim.
 
 ## 5. Provenance chain
 
@@ -110,7 +110,7 @@ C1 remains the sole verification-state mint:
 - D1-F1 injects only capability/runtime provenance into the provider result;
 - C1 mints `SOURCE_VERIFIED` for the valid WebFetch binding even when semantic claims are empty;
 - missing binding, digest mismatch, missing runtime reference, or wrong request/call identity yields `NOT_PROVEN`;
-- WebSearch-only is the sole verification-state mismatch and is covered below as a blocking F2 finding;
+- WebSearch-only with an otherwise successful provider result yields `REPORT_ONLY`, including when the projected source observation is unavailable because no WebFetch occurred;
 - C2 reads C1 state and does not rewrite it.
 
 ## 7. Failure/degradation matrix
@@ -118,7 +118,7 @@ C1 remains the sole verification-state mint:
 | Case | Fixture behavior | Result |
 |---|---|---|
 | F1 valid bound observation | Market → M1B → D1 → C1 → C2 | PASS: `SOURCE_VERIFIED`, complete provenance, preliminary judgment |
-| F2 WebSearch-only | No WebFetch/content binding | BLOCKING: exact D1-F1 projects unavailable observation; exact C1 mints `NOT_PROVEN`, required `REPORT_ONLY` |
+| F2 WebSearch-only | No WebFetch/content binding, provider success | PASS: unavailable observation admitted as `REPORT_ONLY`; C2 retains `REPORT_ONLY_LEAD`; no content binding |
 | F3 missing content binding | Remove binding | PASS: `NOT_PROVEN`, C2 limitation retained |
 | F4 bad digest | Mismatch binding/source digest | PASS: `NOT_PROVEN` |
 | F5 missing runtime ref | Empty runtime reference | PASS: `NOT_PROVEN` |
@@ -200,7 +200,7 @@ JULIA_CORE_ROOT=/Users/admin/glm-workspace/Julia_core \
 CLAUDE_CLIENT_ROOT=/Users/admin/Desktop/Claude_client \
 /opt/miniconda3/bin/pytest -q tests/e2e/research_desk/test_research_desk_fixture_e2e.py
 
-17 passed, 1 xfailed
+18 passed
 ```
 
 M1B regression:
@@ -220,7 +220,7 @@ Focused Core C1/C2, capability lifecycle, and review regressions:
   tests/capability/test_m0_acceptance.py \
   tests/review/test_review_invocation.py
 
-94 passed
+99 passed
 ```
 
 D1 native projection regression:
@@ -262,35 +262,27 @@ No `ai_theme_app`, `Julia_core`, or `Claude_client` production file is modified 
 - Live WebSearch, WebFetch, Claude, Market network, or database behavior;
 - B1/B2 or Assistant product composition;
 - truth, freshness, final destination, or DNS-rebinding correctness of hostile/fixture source content;
-- F2 `REPORT_ONLY`, because exact current composition yields `NOT_PROVEN`;
 - remote auditability before the exact harness commit is pushed.
 
 ## 15. Architecture deviations
 
 No production architecture deviation is introduced.
 
-The only contract mismatch is retained explicitly as strict-expected-failure F2 rather than fixed by weakening D1-F1 or C1:
+The previous F2 mismatch was resolved by verified Core C1-F3 semantics, not by changing D1-F1 or Market code:
 
 ```text
-WebSearch-only D1-F1 result
+WebSearch-only provider success
 → zero content bindings
 → source_observation.available = false
-→ exact C1 result state = NOT_PROVEN
-≠ required REPORT_ONLY
+→ exact C1 result state = REPORT_ONLY
+→ claim_verification_states = {}
+→ C2 REPORT_ONLY_LEAD
 ```
-
-Changing this to pass would require an owner-approved D1-F1 or C1 contract decision and is outside F1’s zero-production-edit authority.
 
 ## 16. Final verdict
 
-Most PASS criteria are now proven, including the previously blocking zero-claim `SOURCE_VERIFIED` path and production C2 traversal. The complete required F1-F18 matrix cannot be declared PASS because mandatory F2 expects `REPORT_ONLY` while exact frozen semantics yield `NOT_PROVEN`.
+The complete F1-F18 matrix passes, including the previously blocking zero-claim `SOURCE_VERIFIED` path, WebSearch-only `REPORT_ONLY` path, production C2 traversal, provenance continuity, degradation handling, hostile-content isolation, and authority boundaries.
 
-**FIXTURE_E2E = BLOCKING**
+**FIXTURE_E2E = PASS**
 
-Blocking condition:
-
-```text
-F2 WebSearch-only must produce REPORT_ONLY,
-but exact D1-F1 emits an unavailable source observation
-and exact C1 therefore mints NOT_PROVEN.
-```
+No F1 blocking condition remains.
