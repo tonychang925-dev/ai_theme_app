@@ -25,6 +25,7 @@ MAX_DIAGNOSTIC_TEXT_LENGTH = 2048
 ALLOWED_ARGUMENTS = frozenset({"query", "normalized_theme", "time_window", "limit"})
 OPERATION_SYMBOL = "event_resolve.py:MarketEventResolveOperation.execute"
 FAILURE_LAYER = "MarketEventResolveOperation._resolve"
+CANDIDATE_FAILURE_LAYER = "MarketEventResolveOperation._candidate"
 
 logger = logging.getLogger("sps.julia_domain_adapter.market_event_resolve")
 
@@ -91,16 +92,40 @@ class MarketEventResolveOperation:
                 diagnostics={"reason": "invalid_resolver_payload"},
             )
 
+        bounded_candidates = raw_candidates[:limit]
+        candidates = []
         try:
-            candidates = [self._candidate(item) for item in raw_candidates[:limit]]
+            for candidate_index, item in enumerate(bounded_candidates):
+                candidates.append(self._candidate(item))
         except Exception as exc:
+            matched_subjects = (
+                item.get("matched_subjects")
+                if isinstance(item, Mapping)
+                else None
+            )
+            candidate_diagnostics = self._exception_diagnostics(
+                exc=exc,
+                request=request,
+                observed_at=observed_at,
+                query=query,
+                normalized_theme=normalized_theme,
+                time_window=time_window,
+                failure_layer=CANDIDATE_FAILURE_LAYER,
+                candidate_index=candidate_index,
+                raw_candidate_count=len(bounded_candidates),
+                matched_subjects_type=type(matched_subjects).__name__,
+            )
             return self._failure(
                 request,
                 observed_at,
                 message=f"resolver returned invalid candidate: {exc}",
                 code=AdapterErrorCode.SCHEMA_MISMATCH.value,
                 retryable=False,
-                diagnostics={"reason": "invalid_candidate", "error_type": type(exc).__name__},
+                diagnostics={
+                    "reason": "invalid_candidate",
+                    "error_type": type(exc).__name__,
+                    "pre_collapse_failure": candidate_diagnostics,
+                },
             )
 
         state = "UNRESOLVED" if not candidates else ("RESOLVED" if len(candidates) == 1 else "AMBIGUOUS")
@@ -232,15 +257,19 @@ class MarketEventResolveOperation:
         query: str,
         normalized_theme: str | None,
         time_window: dict[str, Any],
+        failure_layer: str = FAILURE_LAYER,
+        candidate_index: int | None = None,
+        raw_candidate_count: int | None = None,
+        matched_subjects_type: str | None = None,
     ) -> dict[str, Any]:
         sqlstate = getattr(exc, "sqlstate", None)
         pgcode = getattr(exc, "pgcode", None)
         errno = getattr(exc, "errno", None)
         error_code = getattr(exc, "code", None)
         trace = request.trace_metadata if isinstance(request.trace_metadata, Mapping) else {}
-        return {
+        diagnostics = {
             "operation_symbol": OPERATION_SYMBOL,
-            "failure_layer": FAILURE_LAYER,
+            "failure_layer": failure_layer,
             "exception_class": type(exc).__name__,
             "exception_message": self._bounded_text(str(exc)),
             "sqlstate": self._bounded_text(sqlstate) if sqlstate is not None else None,
@@ -270,6 +299,13 @@ class MarketEventResolveOperation:
             ),
             "capability_call_id": None,
         }
+        if candidate_index is not None or raw_candidate_count is not None or matched_subjects_type is not None:
+            diagnostics.update({
+                "candidate_index": candidate_index,
+                "raw_candidate_count": raw_candidate_count,
+                "matched_subjects_type": matched_subjects_type,
+            })
+        return diagnostics
 
     @staticmethod
     def _provider_status(exc: Exception) -> str | None:

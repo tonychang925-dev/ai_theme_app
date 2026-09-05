@@ -56,6 +56,20 @@ def _safe_json_dumps(value, default_empty=None) -> str:
     return json.dumps(value, ensure_ascii=False, default=_json_default)
 
 
+def _decode_json_array(value, *, field: str):
+    """Decode a PostgreSQL JSON array without changing global driver codecs."""
+    if value is None:
+        raise TypeError(f"{field} must be an array")
+    if isinstance(value, list):
+        return value
+    if isinstance(value, str):
+        decoded = json.loads(value)
+        if not isinstance(decoded, list):
+            raise TypeError(f"{field} JSON value must be an array")
+        return decoded
+    raise TypeError(f"{field} must be an array")
+
+
 try:
     # 尝试相对导入（正常包情况下）
     from .base_manager import BaseDatabaseManager
@@ -9313,7 +9327,15 @@ class PostgresDatabaseManager(BaseDatabaseManager):
                 window.get("end_at"),
                 int(limit),
             )
-            return [dict(row) for row in rows]
+        candidates = []
+        for row in rows:
+            candidate = dict(row)
+            candidate["matched_subjects"] = _decode_json_array(
+                candidate.get("matched_subjects"),
+                field="matched_subjects",
+            )
+            candidates.append(candidate)
+        return candidates
 
     async def get_pre_market_subject_events(
         self,
