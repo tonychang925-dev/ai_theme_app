@@ -64,7 +64,6 @@ class MarketEventResolveOperation:
                     query=query,
                     normalized_theme=normalized_theme,
                     time_window=time_window,
-                    status=status,
                 ),
             }
             logger.error(
@@ -76,7 +75,7 @@ class MarketEventResolveOperation:
             return self._failure(
                 request,
                 observed_at,
-                message=f"{type(exc).__name__}: {exc}",
+                message=self._bounded_text(f"{type(exc).__name__}: {exc}"),
                 code=code,
                 retryable=retryable,
                 diagnostics=diagnostics,
@@ -233,7 +232,6 @@ class MarketEventResolveOperation:
         query: str,
         normalized_theme: str | None,
         time_window: dict[str, Any],
-        status: str,
     ) -> dict[str, Any]:
         sqlstate = getattr(exc, "sqlstate", None)
         pgcode = getattr(exc, "pgcode", None)
@@ -249,7 +247,7 @@ class MarketEventResolveOperation:
             "pgcode": self._bounded_text(pgcode) if pgcode is not None else None,
             "errno": self._bounded_text(errno) if errno is not None else None,
             "error_code": self._bounded_text(error_code) if error_code is not None else None,
-            "precollapse_provider_status": self._bounded_text(status),
+            "precollapse_provider_status": self._provider_status(exc),
             "process_pid": os.getpid(),
             "observed_at": observed_at,
             "resolver_query": self._bounded_text(query, MAX_QUERY_LENGTH),
@@ -272,6 +270,14 @@ class MarketEventResolveOperation:
             ),
             "capability_call_id": None,
         }
+
+    @staticmethod
+    def _provider_status(exc: Exception) -> str | None:
+        for attribute in ("provider_status", "upstream_status", "status"):
+            value = getattr(exc, attribute, None)
+            if value is not None:
+                return MarketEventResolveOperation._bounded_text(value, 256)
+        return None
 
     @staticmethod
     def _bounded_text(value: Any, limit: int = MAX_DIAGNOSTIC_TEXT_LENGTH) -> str:

@@ -202,6 +202,8 @@ async def test_resolver_exception_retains_sanitized_bounded_pre_collapse_diagnos
     assert result.data_state == "empty"
     assert result.failures[0].code == "UPSTREAM_UNAVAILABLE"
     assert result.failures[0].retryable is True
+    assert result.failures[0].message.startswith("FakeDatabaseError: resolver failed password=***")
+    assert len(result.failures[0].message) <= 2048
     assert diagnostics["operation_symbol"] == "event_resolve.py:MarketEventResolveOperation.execute"
     assert diagnostics["failure_layer"] == "MarketEventResolveOperation._resolve"
     assert diagnostics["exception_class"] == "FakeDatabaseError"
@@ -211,7 +213,7 @@ async def test_resolver_exception_retains_sanitized_bounded_pre_collapse_diagnos
     assert diagnostics["pgcode"] == "08006"
     assert diagnostics["errno"] == "7"
     assert diagnostics["error_code"] == "R9_F1_FAKE_ERROR_CODE"
-    assert diagnostics["precollapse_provider_status"] == "unavailable"
+    assert diagnostics["precollapse_provider_status"] is None
     assert diagnostics["process_pid"] > 0
     assert diagnostics["observed_at"] == result.observed_at
     assert diagnostics["resolver_query"] == "q" * MAX_QUERY_LENGTH
@@ -225,6 +227,26 @@ async def test_resolver_exception_retains_sanitized_bounded_pre_collapse_diagnos
     assert diagnostics["capability_call_id"] is None
     assert "R9_F1_FAKE_SECRET_DO_NOT_MATCH" not in str(result.to_dict())
     assert "traceback" not in diagnostics
+    assert len(gateway.resolve_calls) == 1
+
+
+@pytest.mark.asyncio
+async def test_genuine_exception_provider_status_is_retained_without_synthesis():
+    class ProviderStatusConnectionError(ConnectionError):
+        provider_status = "connection_lost"
+
+    gateway = FakeGateway(resolver_error=ProviderStatusConnectionError("database disconnected"))
+
+    result = await _adapter(gateway).execute(
+        _request(query="Token出海", normalized_theme="Token出海", time_window={"date": "2026-07-19"})
+    )
+    diagnostics = result.failures[0].details["pre_collapse_failure"]
+
+    assert result.status == "unavailable"
+    assert result.failures[0].code == "UPSTREAM_UNAVAILABLE"
+    assert result.failures[0].retryable is True
+    assert diagnostics["precollapse_provider_status"] == "connection_lost"
+    assert len(gateway.resolve_calls) == 1
 
 
 @pytest.mark.asyncio
