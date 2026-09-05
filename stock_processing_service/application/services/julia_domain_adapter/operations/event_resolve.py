@@ -4,12 +4,15 @@ from __future__ import annotations
 
 import asyncio
 from datetime import date, datetime
+import logging
+import os
 from typing import Any, Mapping
 
 from ..contracts import (
     AdapterErrorCode,
     AdapterRequest,
     DomainObservationEnvelope,
+    redact_diagnostics,
 )
 from ..provenance import classify_exception, source_failure, source_record
 
@@ -18,7 +21,12 @@ DEFAULT_LIMIT = 20
 MAX_LIMIT = 100
 MAX_QUERY_LENGTH = 512
 MAX_THEME_LENGTH = 256
+MAX_DIAGNOSTIC_TEXT_LENGTH = 2048
 ALLOWED_ARGUMENTS = frozenset({"query", "normalized_theme", "time_window", "limit"})
+OPERATION_SYMBOL = "event_resolve.py:MarketEventResolveOperation.execute"
+FAILURE_LAYER = "MarketEventResolveOperation._resolve"
+
+logger = logging.getLogger("sps.julia_domain_adapter.market_event_resolve")
 
 
 class MarketEventResolveOperation:
@@ -46,13 +54,32 @@ class MarketEventResolveOperation:
             raw_candidates = await self._resolve(query, normalized_theme, time_window, limit)
         except Exception as exc:
             status, code, retryable = classify_exception(exc)
+            diagnostics = {
+                "reason": "market_event_resolution_failed",
+                "error_type": type(exc).__name__,
+                "pre_collapse_failure": self._exception_diagnostics(
+                    exc=exc,
+                    request=request,
+                    observed_at=observed_at,
+                    query=query,
+                    normalized_theme=normalized_theme,
+                    time_window=time_window,
+                    status=status,
+                ),
+            }
+            logger.error(
+                "market event resolve failed operation_symbol=%s failure_layer=%s diagnostics=%s",
+                OPERATION_SYMBOL,
+                FAILURE_LAYER,
+                diagnostics["pre_collapse_failure"],
+            )
             return self._failure(
                 request,
                 observed_at,
                 message=f"{type(exc).__name__}: {exc}",
                 code=code,
                 retryable=retryable,
-                diagnostics={"reason": "market_event_resolution_failed", "error_type": type(exc).__name__},
+                diagnostics=diagnostics,
                 status=status,
             )
         if not isinstance(raw_candidates, list):
@@ -196,6 +223,63 @@ class MarketEventResolveOperation:
             ),
             "matched_subjects": subjects,
         }
+
+    def _exception_diagnostics(
+        self,
+        *,
+        exc: Exception,
+        request: AdapterRequest,
+        observed_at: str,
+        query: str,
+        normalized_theme: str | None,
+        time_window: dict[str, Any],
+        status: str,
+    ) -> dict[str, Any]:
+        sqlstate = getattr(exc, "sqlstate", None)
+        pgcode = getattr(exc, "pgcode", None)
+        errno = getattr(exc, "errno", None)
+        error_code = getattr(exc, "code", None)
+        trace = request.trace_metadata if isinstance(request.trace_metadata, Mapping) else {}
+        return {
+            "operation_symbol": OPERATION_SYMBOL,
+            "failure_layer": FAILURE_LAYER,
+            "exception_class": type(exc).__name__,
+            "exception_message": self._bounded_text(str(exc)),
+            "sqlstate": self._bounded_text(sqlstate) if sqlstate is not None else None,
+            "pgcode": self._bounded_text(pgcode) if pgcode is not None else None,
+            "errno": self._bounded_text(errno) if errno is not None else None,
+            "error_code": self._bounded_text(error_code) if error_code is not None else None,
+            "precollapse_provider_status": self._bounded_text(status),
+            "process_pid": os.getpid(),
+            "observed_at": observed_at,
+            "resolver_query": self._bounded_text(query, MAX_QUERY_LENGTH),
+            "normalized_theme": (
+                self._bounded_text(normalized_theme, MAX_THEME_LENGTH)
+                if normalized_theme is not None
+                else None
+            ),
+            "time_window": {
+                key: self._bounded_text(time_window[key])
+                for key in ("date", "start_at", "end_at")
+                if key in time_window
+            },
+            "correlation_id": self._bounded_text(request.correlation_id),
+            "idempotency_id": self._bounded_text(request.idempotency_key),
+            "capability_request_id": (
+                self._bounded_text(trace["capability_request_id"])
+                if trace.get("capability_request_id") is not None
+                else None
+            ),
+            "capability_call_id": None,
+        }
+
+    @staticmethod
+    def _bounded_text(value: Any, limit: int = MAX_DIAGNOSTIC_TEXT_LENGTH) -> str:
+        text = str(redact_diagnostics(value))
+        normalized = " ".join(text.split())
+        if len(normalized) <= limit:
+            return normalized
+        return normalized[: max(0, limit - 3)].rstrip() + "..."
 
     @staticmethod
     def _timestamp(value: Any) -> str:

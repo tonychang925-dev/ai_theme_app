@@ -16,6 +16,10 @@ if str(ROOT) not in sys.path:
 
 from stock_processing_service.application.services.julia_domain_adapter import DomainIntelligenceAdapter
 from stock_processing_service.application.services.julia_domain_adapter.contracts import AdapterRequest
+from stock_processing_service.application.services.julia_domain_adapter.operations.event_resolve import (
+    MAX_QUERY_LENGTH,
+    MAX_THEME_LENGTH,
+)
 
 SCHEMA_PATH = ROOT / "docs" / "integration" / "JULIA_ADAPTER_SCHEMA_v1.json"
 CST = timezone(timedelta(hours=8))
@@ -158,6 +162,69 @@ async def test_database_and_relation_failures_are_not_unresolved():
     assert relation_result.status == "error"
     assert relation_result.payload == {}
     assert relation_result.failures[0].code == "INTERNAL_ERROR"
+
+
+@pytest.mark.asyncio
+async def test_resolver_exception_retains_sanitized_bounded_pre_collapse_diagnostics():
+    class FakeDatabaseError(ConnectionError):
+        sqlstate = "08006"
+        pgcode = "08006"
+        errno = 7
+        code = "R9_F1_FAKE_ERROR_CODE"
+
+    secret_message = (
+        "resolver failed password=R9_F1_FAKE_SECRET_DO_NOT_MATCH "
+        + "bounded " * 1000
+    )
+    gateway = FakeGateway(resolver_error=FakeDatabaseError(secret_message))
+    request = AdapterRequest(
+        operation="market.event.resolve",
+        arguments={
+            "query": "q" * MAX_QUERY_LENGTH,
+            "normalized_theme": "t" * MAX_THEME_LENGTH,
+            "time_window": {
+                "date": "2026-07-19",
+            },
+        },
+        correlation_id="corr-r9-f1",
+        idempotency_key="cap-req-r9-f1",
+        schema_version="1.0",
+        trace_metadata={
+            "capability_id": "market.event.resolve",
+            "capability_request_id": "cap-req-r9-f1",
+        },
+    )
+
+    result = await _adapter(gateway).execute(request)
+    diagnostics = result.failures[0].details["pre_collapse_failure"]
+
+    assert result.status == "unavailable"
+    assert result.data_state == "empty"
+    assert result.failures[0].code == "UPSTREAM_UNAVAILABLE"
+    assert result.failures[0].retryable is True
+    assert diagnostics["operation_symbol"] == "event_resolve.py:MarketEventResolveOperation.execute"
+    assert diagnostics["failure_layer"] == "MarketEventResolveOperation._resolve"
+    assert diagnostics["exception_class"] == "FakeDatabaseError"
+    assert diagnostics["exception_message"].startswith("resolver failed password=***")
+    assert len(diagnostics["exception_message"]) <= 2048
+    assert diagnostics["sqlstate"] == "08006"
+    assert diagnostics["pgcode"] == "08006"
+    assert diagnostics["errno"] == "7"
+    assert diagnostics["error_code"] == "R9_F1_FAKE_ERROR_CODE"
+    assert diagnostics["precollapse_provider_status"] == "unavailable"
+    assert diagnostics["process_pid"] > 0
+    assert diagnostics["observed_at"] == result.observed_at
+    assert diagnostics["resolver_query"] == "q" * MAX_QUERY_LENGTH
+    assert diagnostics["normalized_theme"] == "t" * MAX_THEME_LENGTH
+    assert diagnostics["time_window"] == {
+        "date": "2026-07-19",
+    }
+    assert diagnostics["correlation_id"] == "corr-r9-f1"
+    assert diagnostics["idempotency_id"] == "cap-req-r9-f1"
+    assert diagnostics["capability_request_id"] == "cap-req-r9-f1"
+    assert diagnostics["capability_call_id"] is None
+    assert "R9_F1_FAKE_SECRET_DO_NOT_MATCH" not in str(result.to_dict())
+    assert "traceback" not in diagnostics
 
 
 @pytest.mark.asyncio
