@@ -1,0 +1,24 @@
+{
+  "operation": "market.snapshot",
+  "status": "success",
+  "data_state": "stale",
+  "correlation_id": "corr-stale-001",
+  "provider_request_id": "ai-theme-req-stale-001",
+  "observed_at": "2026-08-25T15:30:00+08:00",
+  "payload": {"market_state": {"theme_count": 2}, "themes": [], "quality": {"coverage": 1.0, "source_quality": 0.8}},
+  "source_records": [
+    {
+      "source_type": "file_cache",
+      "source_name": "frontend_public_api_analyst_charts",
+      "source_ref": "frontend/public/api/analyst-charts/2026-08-25.json",
+      "as_of": "2026-08-25",
+      "observed_at": "2026-08-25T15:30:00+08:00",
+      "freshness": "stale",
+      "status": "success",
+      "provenance": {"stale_reason": "older_than_requested_trade_date"}
+    }
+  ],
+  "failures": [],
+  "diagnostics": {"requested_trade_date": "2026-08-26"},
+  "schema_version": "1.0"
+}

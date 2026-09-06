@@ -1,0 +1,28 @@
+{
+  "operation": "market.snapshot",
+  "status": "success",
+  "data_state": "normal",
+  "correlation_id": "corr-success-001",
+  "provider_request_id": "ai-theme-req-success-001",
+  "observed_at": "2026-08-26T15:30:00+08:00",
+  "payload": {
+    "market_state": {"theme_count": 3, "mainline_count": 1},
+    "themes": [{"subject_key": "theme-ai", "theme_name": "AI", "stage": "active"}],
+    "quality": {"coverage": 1.0, "source_quality": 0.95}
+  },
+  "source_records": [
+    {
+      "source_type": "database",
+      "source_name": "theme_cycle_judgement_v2",
+      "source_ref": "trade_date=2026-08-26",
+      "as_of": "2026-08-26",
+      "observed_at": "2026-08-26T15:30:00+08:00",
+      "freshness": "fresh",
+      "status": "success",
+      "provenance": {"row_count": 3}
+    }
+  ],
+  "failures": [],
+  "diagnostics": {},
+  "schema_version": "1.0"
+}

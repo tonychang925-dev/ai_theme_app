@@ -1,0 +1,9 @@
+{
+  "operation": "market.snapshot",
+  "arguments": {"trade_date": "2026-08-26"},
+  "correlation_id": "corr-request-001",
+  "idempotency_key": "idem-request-001",
+  "requested_at": "2026-08-26T10:00:00+08:00",
+  "schema_version": "1.0",
+  "trace_metadata": {"turn_id": "opaque-turn-id", "capability_call_id": "opaque-capability-call-id"}
+}

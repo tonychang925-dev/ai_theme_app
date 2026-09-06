@@ -1,0 +1,21 @@
+{
+  "operation": "market.snapshot",
+  "status": "error",
+  "data_state": "empty",
+  "correlation_id": "corr-error-001",
+  "provider_request_id": "ai-theme-req-error-001",
+  "observed_at": "2026-08-26T15:30:00+08:00",
+  "payload": {},
+  "source_records": [],
+  "failures": [
+    {
+      "code": "INTERNAL_ERROR",
+      "message": "provider execution failed",
+      "source_name": "adapter",
+      "retryable": false,
+      "details": {"error_type": "RuntimeError"}
+    }
+  ],
+  "diagnostics": {},
+  "schema_version": "1.0"
+}

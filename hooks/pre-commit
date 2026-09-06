@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+
+ROOT=$(git rev-parse --show-toplevel)
+FILES=$(git diff --cached --name-only --diff-filter=ACMR)
+if [ -z "$FILES" ]; then
+  exit 0
+fi
+
+# shellcheck disable=SC2086
+python3 "$ROOT/tools/no_critical_fallback_gate.py" \
+  --repo ai_theme_app --baseline "$ROOT/ncf-baseline.json" --files $FILES

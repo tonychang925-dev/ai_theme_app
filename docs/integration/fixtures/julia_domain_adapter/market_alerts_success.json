@@ -1,0 +1,36 @@
+{
+  "operation": "market.alerts",
+  "status": "success",
+  "data_state": "normal",
+  "correlation_id": "corr-alerts-success-001",
+  "provider_request_id": "ai-theme-req-alerts-success-001",
+  "observed_at": "2026-08-26T15:30:00+08:00",
+  "payload": {
+    "alerts": [
+      {
+        "claim_id": "claim_approved_2026-08-26_AI",
+        "claim_type": "theme_stage",
+        "subject": {"type": "theme", "name": "AI"},
+        "attention_level": "HIGH",
+        "attention_score": 3200,
+        "confidence": 0.82
+      }
+    ],
+    "min_attention_level": "HIGH"
+  },
+  "source_records": [
+    {
+      "source_type": "file_store",
+      "source_name": "analyst_workbench_snapshot",
+      "source_ref": "tmp/analyst_workbench/2026-08-26/snapshot.json",
+      "as_of": "2026-08-26",
+      "observed_at": "2026-08-26T15:30:00+08:00",
+      "freshness": "fresh",
+      "status": "success",
+      "provenance": {"validator": "ApprovedSnapshotValidator"}
+    }
+  ],
+  "failures": [],
+  "diagnostics": {},
+  "schema_version": "1.0"
+}

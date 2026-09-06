@@ -317,6 +317,13 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="stock_processing_service_read_api", version="0.1.0", lifespan=lifespan)
 
+from stock_processing_service.ports.julia_domain_adapter_http import (
+    register_julia_domain_adapter_routes,
+)
+
+
+register_julia_domain_adapter_routes(app)
+
 # P0-D: CORS for direct SSE connections from frontend dev server
 app.add_middleware(
     CORSMiddleware,
