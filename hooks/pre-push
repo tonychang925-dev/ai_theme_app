@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+ROOT=$(git rev-parse --show-toplevel)
+python3 "$ROOT/tools/no_critical_fallback_gate.py" \
+  --repo ai_theme_app --baseline "$ROOT/ncf-baseline.json"
+python3 -m unittest discover -s "$ROOT/tests/governance" -p 'test_*.py' -v

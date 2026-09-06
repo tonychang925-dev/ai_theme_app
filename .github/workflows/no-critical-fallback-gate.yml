@@ -1,0 +1,30 @@
+name: NO_CRITICAL_FALLBACK_GATE
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  NO_CRITICAL_FALLBACK_GATE:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run NCF gate
+        run: python3 tools/no_critical_fallback_gate.py --repo ai_theme_app --baseline ncf-baseline.json --json > ncf-findings.json
+      - name: Run sabotage tests
+        run: python3 -m unittest discover -s tests/governance -p 'test_*.py' -v
+      - name: Emit report
+        if: always()
+        run: cat ncf-findings.json || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ncf-findings
+          path: ncf-findings.json
