@@ -16,7 +16,7 @@
   "files": [
     {
       "path": "stock_processing_service/api_app.py",
-      "sha256": "3cb6fb83b461b0f608defde62fd1704cd68f45eeef844fdc006bd9be3bc494c6"
+      "sha256": "2e418b708706ef9a4accdff5c82fbf6f974d48ae6f9b79b209f9900231a88f68"
     },
     {
       "path": "stock_processing_service/application/services/analyst_workbench/approval_contract.py",

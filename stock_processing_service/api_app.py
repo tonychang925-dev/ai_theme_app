@@ -8068,21 +8068,14 @@ async def get_analyst_workspace(trade_date: str, request: Request) -> dict[str, 
     session = session_store.get(td)
     approval = ApprovalGate(base_dir=_wb_base).check(td)
 
-    # ── Try snapshot (approved → final analyst view) ──
-    snapshot_path = _Path(_wb_base) / trade_date / "snapshot.json"
-    if snapshot_path.exists():
-        if session.status not in ("APPROVED", "PUBLISHED"):
-            raise HTTPException(
-                status_code=409,
-                detail=f"Unapproved snapshot state {session.status} cannot be exposed",
-            )
-        if not approval.can_generate_report:
+    if session.status in ("APPROVED", "PUBLISHED"):
+        if not approval.can_generate_report or approval.snapshot is None:
             raise HTTPException(status_code=503, detail=approval.reason)
         try:
-            snap = _json.loads(snapshot_path.read_text(encoding="utf-8"))
+            snap = approval.snapshot
             themes = _workspace_themes_from_cards(
-                snap.get("cognition_cards", []),
-                snap.get("attention_state", {}),
+                snap.cognition_cards,
+                snap.attention_state,
             )
             return {
                 "trade_date": trade_date,
@@ -8090,10 +8083,20 @@ async def get_analyst_workspace(trade_date: str, request: Request) -> dict[str, 
                 "analyst_finalized": True,
                 "themes": themes,
                 "watch_groups": [],
-                "override_count": snap.get("override_summary", {}).get("total", 0),
+                "override_count": snap.override_summary.get("total", 0),
             }
         except Exception:
-            pass  # corrupt snapshot → fall through to draft
+            logger.exception(
+                "Approved Snapshot public projection failed trade_date=%s status=%s",
+                trade_date, session.status,
+            )
+            raise HTTPException(
+                status_code=500,
+                detail={
+                    "code": "approved_snapshot_projection_failed",
+                    "error": "Approved Snapshot public projection failed",
+                },
+            )
 
     # ── Try latest draft ──
     drafts_dir = _Path(_wb_base) / trade_date / "drafts"
