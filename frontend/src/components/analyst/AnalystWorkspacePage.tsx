@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { useAuth } from "../../routes/auth/AuthProvider";
 import { EmotionDashboard } from "./EmotionDashboard";
 
 // ── Types ──
@@ -389,6 +390,7 @@ function StockPoolEditor({
 // ── Main Page ──
 
 export function AnalystWorkspacePage() {
+  const { token } = useAuth();
   const [workspace, setWorkspace] = useState<Workspace | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -416,7 +418,9 @@ export function AnalystWorkspacePage() {
   const fetchWorkspace = useCallback(async (d: string) => {
     setLoading(true);
     try {
-      const resp = await fetch(`/api/v1/analyst-workspace/${d}`);
+      const resp = await fetch(`/api/v1/analyst-workspace/${d}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       if (!resp.ok) throw new Error(`${resp.status}`);
       const data = await resp.json();
       setWorkspace(data);
@@ -426,7 +430,7 @@ export function AnalystWorkspacePage() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [token]);
 
   useEffect(() => { fetchWorkspace(dateInput); fetchTomorrow(dateInput); }, [dateInput, fetchWorkspace]);
 
@@ -440,7 +444,7 @@ export function AnalystWorkspacePage() {
       // Step 1: Save workspace overrides (old save endpoint)
       const saveResp = await fetch(`/api/v1/analyst-workspace/${dateInput}/save`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify(workspace),
       });
       if (!saveResp.ok) throw new Error(`保存失败: HTTP ${saveResp.status}`);
@@ -450,7 +454,7 @@ export function AnalystWorkspacePage() {
       // Step 2: Save review → transition DRAFT_READY → IN_REVIEW
       const reviewResp = await fetch(`/api/v1/analyst-workbench/${dateInput}/save-review`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
         body: JSON.stringify({ overrides: { analyst_reviewed: true, saved_at: new Date().toISOString() } }),
       });
       if (reviewResp.ok) {
@@ -462,8 +466,8 @@ export function AnalystWorkspacePage() {
       if (reviewResp.ok) {
         const approveResp = await fetch(`/api/v1/analyst-workbench/${dateInput}/approve`, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ approved_by: "analyst" }),
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({}),
         });
         if (approveResp.ok) {
           const approveResult = await approveResp.json();

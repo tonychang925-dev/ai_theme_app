@@ -17,7 +17,7 @@ import json
 from typing import Any, Dict, List, Optional
 from zoneinfo import ZoneInfo
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pydantic import Field
@@ -8039,7 +8039,7 @@ async def get_market_emotion(trade_date: str) -> dict[str, Any]:
 # ── P2.5 Analyst Workspace ──
 
 @app.get("/api/v1/analyst-workspace/{trade_date}")
-async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
+async def get_analyst_workspace(trade_date: str, request: Request) -> dict[str, Any]:
     """Return full workspace state for a trading day.
 
     Read-only. Reads from the workbench session store only.
@@ -8054,18 +8054,30 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
     import json as _json
     import os as _os
     from pathlib import Path as _Path
+    from stock_processing_service.application.services.analyst_workbench.approval_gate import ApprovalGate
 
     try:
         td = _date.fromisoformat(trade_date)
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
 
+    _require_workbench_principal(request)
     _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
     _wb_base = _os.path.join(_project_root, "tmp", "analyst_workbench")
+    session_store, _ = _get_wb_session_store()
+    session = session_store.get(td)
+    approval = ApprovalGate(base_dir=_wb_base).check(td)
 
     # ── Try snapshot (approved → final analyst view) ──
     snapshot_path = _Path(_wb_base) / trade_date / "snapshot.json"
     if snapshot_path.exists():
+        if session.status not in ("APPROVED", "PUBLISHED"):
+            raise HTTPException(
+                status_code=409,
+                detail=f"Unapproved snapshot state {session.status} cannot be exposed",
+            )
+        if not approval.can_generate_report:
+            raise HTTPException(status_code=503, detail=approval.reason)
         try:
             snap = _json.loads(snapshot_path.read_text(encoding="utf-8"))
             themes = _workspace_themes_from_cards(
@@ -8106,7 +8118,7 @@ async def get_analyst_workspace(trade_date: str) -> dict[str, Any]:
                     "missing_fields": draft.get("missing_fields", []),
                 }
             except Exception:
-                pass  # corrupt draft → fall through to empty
+                raise HTTPException(status_code=503, detail="AI draft state is unreadable")
 
     # ── Nothing available ──
     return {
@@ -8174,16 +8186,21 @@ def _workspace_themes_from_cards(
 async def save_analyst_workspace(
     trade_date: str,
     body: dict[str, Any],
+    request: Request,
 ) -> dict[str, Any]:
     """Save workspace state and log all overrides."""
     from datetime import date as _date, datetime as _dt
     import json as _json
+    import os as _os
     from pathlib import Path as _Path
+    from stock_processing_service.application.services.analyst_workbench.approval_contract import ReviewStateStore
 
     try:
         td = _date.fromisoformat(trade_date)
     except ValueError:
         raise HTTPException(status_code=400, detail=f"Invalid date: {trade_date}")
+
+    principal = _require_workbench_principal(request)
 
     # Log overrides
     override_count = 0
@@ -8205,7 +8222,7 @@ async def save_analyst_workspace(
                         "ai_value": str(change.get("ai_value", ""))[:200],
                         "analyst_value": str(change.get("analyst_value", ""))[:200],
                         "override_reason": str(change.get("reason", ""))[:200],
-                        "analyst_id": "analyst",
+                        "analyst_id": principal.identity,
                         "created_at": _dt.now(_tz.utc).isoformat(),
                     }, ensure_ascii=False) + "\n")
                 override_count += 1
@@ -8223,7 +8240,7 @@ async def save_analyst_workspace(
                             "ai_value": "",
                             "analyst_value": _json.dumps(stock, ensure_ascii=False),
                             "override_reason": "analyst added/modified stock",
-                            "analyst_id": "analyst",
+                            "analyst_id": principal.identity,
                             "created_at": _dt.now(_tz.utc).isoformat(),
                         }, ensure_ascii=False) + "\n")
                     override_count += 1
@@ -8240,11 +8257,16 @@ async def save_analyst_workspace(
         "saved_at": _dt.now(_tz.utc).isoformat(),
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
+    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
+    state_store = ReviewStateStore(base_dir=str(_Path(_project_root) / "tmp" / "analyst_workbench"))
+    state_store.save(trade_date=td, workspace=body, principal=principal)
+
     return {
         "status": "saved",
         "trade_date": trade_date,
         "themes_saved": len(themes),
         "overrides_recorded": override_count,
+        "reviewed_by": principal.identity,
     }
 
 
@@ -8273,6 +8295,19 @@ def _get_wb_snapshot_store():
     )
     _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
     return SnapshotStore(base_dir=_os.path.join(_project_root, "tmp", "analyst_workbench")), ReviewSnapshot
+
+
+def _require_workbench_principal(request: Request):
+    from stock_processing_service.application.services.analyst_workbench.approval_contract import (
+        ApprovalAuthorizationError,
+        require_approval_principal,
+    )
+
+    try:
+        return require_approval_principal(request.headers.get("Authorization"))
+    except ApprovalAuthorizationError as exc:
+        status_code = 403 if "not authorized" in str(exc) else 401
+        raise HTTPException(status_code=status_code, detail=str(exc)) from exc
 
 
 def _load_saved_analyst_workspace(trade_date: str) -> dict[str, Any] | None:
@@ -8477,20 +8512,30 @@ async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
 
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/save-review")
-async def save_workbench_review(trade_date: str, body: dict[str, Any] = None) -> dict[str, Any]:
+async def save_workbench_review(trade_date: str, request: Request, body: dict[str, Any] = None) -> dict[str, Any]:
     """Save analyst review with overrides."""
     from datetime import date as _date, datetime as _dt
     import json as _json
     import os as _os
     from pathlib import Path as _Path
+    from stock_processing_service.application.services.analyst_workbench.approval_contract import ReviewStateStore
     session_store, WorkbenchStatus = _get_wb_session_store()
     _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
     td = _date.fromisoformat(trade_date)
+    principal = _require_workbench_principal(request)
     session = session_store.get(td)
     if session.status == WorkbenchStatus.PUBLISHED:
         return {"status": "error", "error": "Cannot review PUBLISHED session. Mark STALE first."}
     body = body or {}
     overrides = body.get("overrides", {})
+    state_store = ReviewStateStore(base_dir=str(_Path(_project_root) / "tmp" / "analyst_workbench"))
+    current_state = state_store.load(td)
+    workspace = {
+        "themes": current_state.get("themes", []) if current_state else [],
+        "watch_groups": current_state.get("watch_groups", []) if current_state else [],
+        "overrides": overrides,
+    }
+    state_store.save(trade_date=td, workspace=workspace, principal=principal)
     if overrides:
         d = _Path(_project_root) / "tmp" / "analyst_workbench" / trade_date
         d.mkdir(parents=True, exist_ok=True)
@@ -8498,39 +8543,77 @@ async def save_workbench_review(trade_date: str, body: dict[str, Any] = None) ->
             f.write(_json.dumps({"trade_date": trade_date, "timestamp": _dt.now(_tz.utc).isoformat(), "overrides": overrides}, ensure_ascii=False) + "\n")
     if session.status in (WorkbenchStatus.DRAFT_READY, WorkbenchStatus.IN_REVIEW):
         session = session_store.transition(session, WorkbenchStatus.IN_REVIEW)
-    return {"status": "saved", "session_status": session.status, "overrides_recorded": len(overrides)}
+    return {
+        "status": "saved",
+        "session_status": session.status,
+        "overrides_recorded": len(overrides),
+        "reviewed_by": principal.identity,
+    }
 
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/approve")
-async def approve_workbench(trade_date: str, body: dict[str, Any] = None) -> dict[str, Any]:
+async def approve_workbench(trade_date: str, request: Request, body: dict[str, Any] = None) -> dict[str, Any]:
     """Create approved ReviewSnapshot."""
     from datetime import date as _date
     from stock_processing_service.application.services.analyst_workbench.review_merger import (
         AnalystReviewMerger,
     )
+    from stock_processing_service.application.services.analyst_workbench.approval_contract import (
+        ReviewStateError,
+        ReviewStateStore,
+        RuntimeIntegrityVerifier,
+        project_root,
+    )
     session_store, WorkbenchStatus = _get_wb_session_store()
     draft_store = _get_wb_draft_store()
     snapshot_store, ReviewSnapshot = _get_wb_snapshot_store()
     td = _date.fromisoformat(trade_date)
+    principal = _require_workbench_principal(request)
     session = session_store.get(td)
     if not session.can_approve:
         return {"status": "error", "error": f"Cannot approve from status {session.status}"}
     draft = draft_store.load(td)
     if draft is None:
         return {"status": "error", "error": "No draft found to approve"}
-    body = body or {}
-    workspace = _load_saved_analyst_workspace(trade_date)
+    state_store = ReviewStateStore(base_dir=str(_Path(_project_root) / "tmp" / "analyst_workbench"))
+    try:
+        review_state = state_store.load(td)
+    except ReviewStateError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    if review_state is None:
+        raise HTTPException(
+            status_code=409,
+            detail="Persisted analyst review state is required before approval",
+        )
+    if review_state.get("reviewed_by") != principal.identity:
+        raise HTTPException(
+            status_code=403,
+            detail="Only the authenticated reviewer who saved the review may approve it",
+        )
+    try:
+        runtime_manifest_hash = RuntimeIntegrityVerifier.verify(project_root())
+    except ValueError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+
+    workspace = {
+        "themes": review_state.get("themes", []),
+        "watch_groups": review_state.get("watch_groups", []),
+        "overrides": review_state.get("overrides", {}),
+    }
     merged = AnalystReviewMerger().merge(
         draft=draft,
         workspace=workspace,
-        overrides=body.get("overrides", {}),
+        overrides=workspace["overrides"],
     )
     snapshot = ReviewSnapshot.from_merged(
         trade_date=td,
         draft=draft,
         merged=merged,
         snapshot_version=session.snapshot_version + 1,
-        approved_by=body.get("approved_by", "analyst"),
+        approved_by=principal.identity,
+        reviewed_by=principal.identity,
+        review_state_hash=review_state["state_hash"],
+        runtime_manifest_hash=runtime_manifest_hash,
     )
     snapshot_store.save(snapshot)
     session = session_store.transition(session, WorkbenchStatus.APPROVED, snapshot_version=snapshot.snapshot_version, approved_by=snapshot.approved_by)

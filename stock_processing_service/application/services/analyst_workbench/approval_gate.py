@@ -15,8 +15,10 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
+from .approval_contract import ReviewStateStore, RuntimeIntegrityVerifier, project_root
 from .session import SessionStore, WorkbenchStatus
 from .snapshot import SnapshotStore, ReviewSnapshot
+from .snapshot_validator import ApprovedSnapshotValidator
 
 
 @dataclass(frozen=True, slots=True)
@@ -40,6 +42,8 @@ class ApprovalGate:
     def __init__(self, base_dir: str = "tmp/analyst_workbench"):
         self.session_store = SessionStore(base_dir=base_dir)
         self.snapshot_store = SnapshotStore(base_dir=base_dir)
+        self.review_state_store = ReviewStateStore(base_dir=base_dir)
+        self.snapshot_validator = ApprovedSnapshotValidator()
 
     def check(self, trade_date: date) -> ReportApproval:
         """Determine report mode for a given trade date.
@@ -55,6 +59,28 @@ class ApprovalGate:
         session = self.session_store.get(trade_date)
         snapshot = self.snapshot_store.load(trade_date)
         status = session.status
+
+        if status in (WorkbenchStatus.APPROVED, WorkbenchStatus.PUBLISHED) and snapshot:
+            try:
+                review_state = self.review_state_store.load(trade_date)
+                runtime_manifest_hash = RuntimeIntegrityVerifier.verify(project_root())
+                if snapshot.runtime_manifest_hash != runtime_manifest_hash:
+                    return self._blocked(
+                        trade_date, status, "Approved Snapshot runtime manifest hash mismatch"
+                    )
+                validation = self.snapshot_validator.validate(
+                    session_status=status,
+                    snapshot=snapshot,
+                    review_state_hash=review_state.get("state_hash") if review_state else None,
+                    reviewed_by=review_state.get("reviewed_by") if review_state else None,
+                )
+            except (RuntimeError, ValueError) as exc:
+                return self._blocked(
+                    trade_date, status, f"Approved Snapshot integrity validation failed: {exc}"
+                )
+            if not validation.valid:
+                errors = ", ".join(error.value for error in validation.errors)
+                return self._blocked(trade_date, status, f"Approved Snapshot validation failed: {errors}")
 
         if status == WorkbenchStatus.PUBLISHED and snapshot:
             return ReportApproval(
@@ -83,18 +109,11 @@ class ApprovalGate:
             )
 
         if status in (WorkbenchStatus.APPROVED, WorkbenchStatus.PUBLISHED) and not snapshot:
-            return ReportApproval(
-                mode="blocked",
-                trade_date=trade_date,
-                session_status=status,
-                can_generate_report=False,
-                snapshot=None,
-                snapshot_version=0,
-                approved_at="",
-                approved_by="",
-                reason=f"Session is {status} but snapshot.json is missing. "
-                       f"This is an abnormal state — the snapshot file may have been "
-                       f"deleted or corrupted. Restore the snapshot or re-approve.",
+            return self._blocked(
+                trade_date,
+                status,
+                f"Session is {status} but snapshot.json is missing. "
+                "Restore the valid snapshot or re-approve; draft fallback is disabled.",
             )
 
         if status in (WorkbenchStatus.DRAFT_READY, WorkbenchStatus.IN_REVIEW):
@@ -123,6 +142,20 @@ class ApprovalGate:
             approved_by="",
             reason=f"Session is {status}. No approved snapshot exists. "
                    f"Run generate → review → approve → publish to produce a formal report.",
+        )
+
+    @staticmethod
+    def _blocked(trade_date: date, status: str, reason: str) -> ReportApproval:
+        return ReportApproval(
+            mode="blocked",
+            trade_date=trade_date,
+            session_status=status,
+            can_generate_report=False,
+            snapshot=None,
+            snapshot_version=0,
+            approved_at="",
+            approved_by="",
+            reason=reason,
         )
 
     def require_formal(self, trade_date: date) -> ReportApproval:

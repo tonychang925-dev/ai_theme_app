@@ -25,6 +25,12 @@ from stock_processing_service.application.services.analyst_workbench.snapshot im
     ReviewSnapshot,
     SnapshotStore,
 )
+from stock_processing_service.application.services.analyst_workbench.approval_contract import (
+    ApprovalPrincipal,
+    ReviewStateStore,
+    RuntimeIntegrityVerifier,
+    project_root,
+)
 
 
 @pytest.fixture
@@ -37,6 +43,25 @@ def tmp_store():
 @pytest.fixture
 def td():
     return date(2026, 7, 9)
+
+
+def persist_contract_snapshot(base_dir: str, trade_date: date, draft) -> ReviewSnapshot:
+    principal = ApprovalPrincipal("7", "analyst@example.test", "analyst")
+    state = ReviewStateStore(base_dir).save(
+        trade_date=trade_date,
+        workspace={"themes": [], "watch_groups": [], "overrides": {}},
+        principal=principal,
+    )
+    snapshot = ReviewSnapshot.from_draft(
+        draft,
+        snapshot_version=1,
+        approved_by=principal.identity,
+        reviewed_by=principal.identity,
+        review_state_hash=state["state_hash"],
+        runtime_manifest_hash=RuntimeIntegrityVerifier.verify(project_root()),
+    )
+    SnapshotStore(base_dir=base_dir).save(snapshot)
+    return snapshot
 
 
 # ── Approval Gate: NOT_STARTED ──
@@ -81,9 +106,7 @@ def test_approved_returns_formal(tmp_store, td):
     ds = DraftStore(base_dir=tmp_store)
     ds.save(draft)
 
-    snap = ReviewSnapshot.from_draft(draft, snapshot_version=1, approved_by="analyst")
-    sst = SnapshotStore(base_dir=tmp_store)
-    sst.save(snap)
+    persist_contract_snapshot(tmp_store, td, draft)
 
     session = ss.transition(session, WorkbenchStatus.APPROVED,
                             snapshot_version=1, approved_by="analyst")
@@ -94,7 +117,7 @@ def test_approved_returns_formal(tmp_store, td):
     assert approval.can_generate_report is True
     assert approval.snapshot is not None
     assert approval.snapshot_version == 1
-    assert approval.approved_by == "analyst"
+    assert approval.approved_by == "user:7:analyst@example.test"
 
 
 # ── Approval Gate: PUBLISHED → published report ──
@@ -110,9 +133,7 @@ def test_published_returns_published(tmp_store, td):
     ds = DraftStore(base_dir=tmp_store)
     ds.save(draft)
 
-    snap = ReviewSnapshot.from_draft(draft, snapshot_version=1, approved_by="analyst")
-    sst = SnapshotStore(base_dir=tmp_store)
-    sst.save(snap)
+    persist_contract_snapshot(tmp_store, td, draft)
 
     session = ss.transition(session, WorkbenchStatus.APPROVED,
                             snapshot_version=1, approved_by="analyst")
@@ -144,9 +165,7 @@ def test_require_formal_passes_when_approved(tmp_store, td):
     ds = DraftStore(base_dir=tmp_store)
     ds.save(draft)
 
-    snap = ReviewSnapshot.from_draft(draft, snapshot_version=1)
-    sst = SnapshotStore(base_dir=tmp_store)
-    sst.save(snap)
+    persist_contract_snapshot(tmp_store, td, draft)
 
     session = ss.transition(session, WorkbenchStatus.APPROVED, snapshot_version=1)
 
@@ -169,9 +188,7 @@ def test_regenerate_does_not_overwrite_approved_snapshot(tmp_store, td):
     ds = DraftStore(base_dir=tmp_store)
     ds.save(draft)
 
-    snap_v1 = ReviewSnapshot.from_draft(draft, snapshot_version=1, approved_by="analyst")
-    sst = SnapshotStore(base_dir=tmp_store)
-    sst.save(snap_v1)
+    persist_contract_snapshot(tmp_store, td, draft)
 
     session = ss.transition(session, WorkbenchStatus.APPROVED,
                             snapshot_version=1, approved_by="analyst")
@@ -184,7 +201,7 @@ def test_regenerate_does_not_overwrite_approved_snapshot(tmp_store, td):
     ss.save(session)
 
     # Snapshot should still be v1
-    loaded = sst.load(td)
+    loaded = SnapshotStore(base_dir=tmp_store).load(td)
     assert loaded is not None
     assert loaded.snapshot_version == 1
     assert loaded.attention_state == {"version": 1}

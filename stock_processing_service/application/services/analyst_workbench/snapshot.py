@@ -20,6 +20,10 @@ class ReviewSnapshot:
     approval_mode: str = "preview"
     source_mode: str = "preview"
     snapshot_hash: str = ""
+    reviewed_by: str = ""
+    review_state_hash: str = ""
+    runtime_manifest_hash: str = ""
+    runtime_integrity_status: str = "unverified"
 
     attention_state: dict[str, Any] = field(default_factory=dict)
     cognition_cards: list[dict[str, Any]] = field(default_factory=list)
@@ -42,6 +46,10 @@ class ReviewSnapshot:
             "approval_mode": self.approval_mode,
             "source_mode": self.source_mode,
             "snapshot_hash": self.snapshot_hash,
+            "reviewed_by": self.reviewed_by,
+            "review_state_hash": self.review_state_hash,
+            "runtime_manifest_hash": self.runtime_manifest_hash,
+            "runtime_integrity_status": self.runtime_integrity_status,
             "attention_state": self.attention_state,
             "cognition_cards": self.cognition_cards,
             "narrative": self.narrative,
@@ -63,6 +71,10 @@ class ReviewSnapshot:
             approval_mode=d.get("approval_mode", "analyst_approved" if d.get("approved", False) else "preview"),
             source_mode=d.get("source_mode", "formal" if d.get("approved", False) else "preview"),
             snapshot_hash=d.get("snapshot_hash", ""),
+            reviewed_by=d.get("reviewed_by", ""),
+            review_state_hash=d.get("review_state_hash", ""),
+            runtime_manifest_hash=d.get("runtime_manifest_hash", ""),
+            runtime_integrity_status=d.get("runtime_integrity_status", "unverified"),
             attention_state=d.get("attention_state", {}),
             cognition_cards=d.get("cognition_cards", []),
             narrative=d.get("narrative", {}),
@@ -84,6 +96,12 @@ class ReviewSnapshot:
             approved_by=kwargs.get("approved_by", ""),
             approval_mode=kwargs.get("approval_mode", "analyst_approved"),
             source_mode=kwargs.get("source_mode", "formal"),
+            reviewed_by=kwargs.get("reviewed_by", ""),
+            review_state_hash=kwargs.get("review_state_hash", ""),
+            runtime_manifest_hash=kwargs.get("runtime_manifest_hash", ""),
+            runtime_integrity_status=(
+                "verified" if kwargs.get("runtime_manifest_hash") else "unverified"
+            ),
             attention_state=draft.attention_state,
             cognition_cards=draft.cognition_cards,
             narrative=draft.narrative,
@@ -102,6 +120,9 @@ class ReviewSnapshot:
         merged: dict[str, Any],
         snapshot_version: int = 1,
         approved_by: str = "",
+        reviewed_by: str = "",
+        review_state_hash: str = "",
+        runtime_manifest_hash: str = "",
     ) -> "ReviewSnapshot":
         return cls(
             trade_date=trade_date,
@@ -119,6 +140,10 @@ class ReviewSnapshot:
             override_summary=merged.get("override_summary", {}),
             emotion_review=merged.get("emotion_review", {}),
             chart_reviews=merged.get("chart_reviews", []),
+            reviewed_by=reviewed_by,
+            review_state_hash=review_state_hash,
+            runtime_manifest_hash=runtime_manifest_hash,
+            runtime_integrity_status="verified" if runtime_manifest_hash else "unverified",
         )
 
     def compute_hash(self) -> str:

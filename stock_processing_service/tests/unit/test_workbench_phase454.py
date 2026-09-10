@@ -16,6 +16,9 @@ from stock_processing_service.application.services.analyst_workbench.draft impor
 from stock_processing_service.application.services.analyst_workbench.snapshot import (
     ReviewSnapshot, SnapshotStore,
 )
+from stock_processing_service.application.services.analyst_workbench.approval_contract import (
+    ApprovalPrincipal, ReviewStateStore, RuntimeIntegrityVerifier, project_root,
+)
 from stock_processing_service.application.services.analyst_workbench.chart_review_builder import (
     ChartReviewBuilder,
 )
@@ -37,6 +40,24 @@ def tmp_store():
 @pytest.fixture
 def td():
     return date(2026, 7, 9)
+
+
+def persist_contract_snapshot(base_dir: str, trade_date: date, draft) -> None:
+    principal = ApprovalPrincipal("7", "analyst@example.test", "analyst")
+    state = ReviewStateStore(base_dir).save(
+        trade_date=trade_date,
+        workspace={"themes": [], "watch_groups": [], "overrides": {}},
+        principal=principal,
+    )
+    snapshot = ReviewSnapshot.from_draft(
+        draft,
+        snapshot_version=1,
+        approved_by=principal.identity,
+        reviewed_by=principal.identity,
+        review_state_hash=state["state_hash"],
+        runtime_manifest_hash=RuntimeIntegrityVerifier.verify(project_root()),
+    )
+    SnapshotStore(base_dir=base_dir).save(snapshot)
 
 
 # ═══ T01: AIDraft contains new fields ═══
@@ -263,9 +284,7 @@ def test_composer_outputs_first_class_sections(tmp_store, td):
     ds = DraftStore(base_dir=tmp_store)
     ds.save(draft)
 
-    snap = ReviewSnapshot.from_draft(draft, snapshot_version=1, approved_by="analyst")
-    sst = SnapshotStore(base_dir=tmp_store)
-    sst.save(snap)
+    persist_contract_snapshot(tmp_store, td, draft)
 
     session = ss.transition(session, WorkbenchStatus.APPROVED,
                             snapshot_version=1, approved_by="analyst")
@@ -303,9 +322,7 @@ def test_regenerate_does_not_affect_snapshot_report(tmp_store, td):
                        emotion_review={"emotion_node": "CLIMAX"})
     ds = DraftStore(base_dir=tmp_store)
     ds.save(draft_v1)
-    snap = ReviewSnapshot.from_draft(draft_v1, snapshot_version=1)
-    sst = SnapshotStore(base_dir=tmp_store)
-    sst.save(snap)
+    persist_contract_snapshot(tmp_store, td, draft_v1)
     session = ss.transition(session, WorkbenchStatus.APPROVED, snapshot_version=1)
 
     # Simulate re-generate: write draft_v2

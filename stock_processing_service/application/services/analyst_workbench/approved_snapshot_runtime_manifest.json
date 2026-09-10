@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "scope": "approved_snapshot_public_projection",
+  "entrypoint": "stock_processing_service/api_app.py",
+  "recursive_roots": [
+    "stock_processing_service.application.services.analyst_workbench.approval_contract",
+    "stock_processing_service.application.services.analyst_workbench.approval_gate",
+    "stock_processing_service.application.services.analyst_workbench.draft",
+    "stock_processing_service.application.services.analyst_workbench.report_composer",
+    "stock_processing_service.application.services.analyst_workbench.review_merger",
+    "stock_processing_service.application.services.analyst_workbench.session",
+    "stock_processing_service.application.services.analyst_workbench.snapshot",
+    "stock_processing_service.application.services.analyst_workbench.snapshot_validator",
+    "stock_processing_service.application.services.post_market_engine_report_composer"
+  ],
+  "files": [
+    {
+      "path": "stock_processing_service/api_app.py",
+      "sha256": "3cb6fb83b461b0f608defde62fd1704cd68f45eeef844fdc006bd9be3bc494c6"
+    },
+    {
+      "path": "stock_processing_service/application/services/analyst_workbench/approval_contract.py",
+      "sha256": "60b760d0cba11b479f267c1ad17d8c5b16e3e62953233b6b805db057880df82e"
+    },
+    {
+      "path": "stock_processing_service/application/services/analyst_workbench/approval_gate.py",
+      "sha256": "794644250e0a4615fecbb519d2670cd7d48f73ad21a2ce301b168891fc558dae"
+    },
+    {
+      "path": "stock_processing_service/application/services/analyst_workbench/draft.py",
+      "sha256": "4ff656299a1e668cd6f16dac0f495cace3a6149316494a5ee03e2324318aa049"
+    },
+    {
+      "path": "stock_processing_service/application/services/analyst_workbench/report_composer.py",
+      "sha256": "a62ff79146156e9815bf575c6deb2fc37138cbd9f9cf10d25ac1e5936e532b8e"
+    },
+    {
+      "path": "stock_processing_service/application/services/analyst_workbench/review_merger.py",
+      "sha256": "c3e7f8a29ff2105ac6c17469b01a5fb28ab256ec150ed3cab633ba3144910b9b"
+    },
+    {
+      "path": "stock_processing_service/application/services/analyst_workbench/session.py",
+      "sha256": "9cd277956cd6fccaa45f45509b511d76e12965c447b33166d6b90f874e83b541"
+    },
+    {
+      "path": "stock_processing_service/application/services/analyst_workbench/snapshot.py",
+      "sha256": "0bffe9cb098829b4ffe2e8c25bf819ef2f61b3863ba191369970bb00020618a1"
+    },
+    {
+      "path": "stock_processing_service/application/services/analyst_workbench/snapshot_validator.py",
+      "sha256": "bb74f2aeb3a46532a1edcd47e204f467e9f9b3e2c534ca1b75bb34c40c6d8e06"
+    },
+    {
+      "path": "stock_processing_service/application/services/post_market_engine_report_composer.py",
+      "sha256": "33f642bd5b5624bd9b1350a3b529956c485d98eec0739f4346539fa21daf450e"
+    },
+    {
+      "path": "stock_processing_service/application/services/post_market_evidence_layer_composer.py",
+      "sha256": "9486058c27d8838fdd7153bb9bfd9b32d01237f4fdba1a034b8f10df1814c625"
+    },
+    {
+      "path": "stock_processing_service/application/services/post_market_hotspot_overview_composer.py",
+      "sha256": "d00cbfe538d4e60a64ec81a3ea40d37659462be15fd6ff6831a225c516e2ea9e"
+    },
+    {
+      "path": "stock_processing_service/application/services/post_market_narrative_composer.py",
+      "sha256": "b5dfa417715d9831bc29b2c271001bec85b65edb9a383969d992c47551c7718b"
+    },
+    {
+      "path": "web_app_service/auth/__init__.py",
+      "sha256": "82ac0f5897da69cf4533c1b9c79040b8faaad53fd9686a4f48ec49644f1f8849"
+    }
+  ],
+  "packages": [
+    {
+      "package": "PyJWT",
+      "version": "2.10.1"
+    }
+  ]
+}
