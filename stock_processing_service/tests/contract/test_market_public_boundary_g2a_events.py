@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -13,17 +14,23 @@ from stock_processing_service.application.services.market_event_public_boundary 
     MarketEventResolutionRecord,
     MarketEventPublicBoundaryService,
     event_capability_manifests,
+    event_provenance_profile,
 )
 from stock_processing_service.contracts.market_public_boundary import (
     DataState,
+    EpistemicClass,
     MarketBoundaryIdentity,
     MarketGovernanceState,
     MarketObjectRef,
+    MarketProvenance,
     MarketReleaseIdentity,
     MarketResultEnvelope,
     OperationStatus,
+    ProvenanceStatus,
+    ProvenanceValidationContext,
     serialize,
     validate_boundary_reconciliation,
+    validate_provenance_profile,
 )
 from stock_processing_service.infrastructure.gateway_adapters.market_event_public_reader import (
     MarketEventPublicReader,
@@ -114,6 +121,8 @@ class FakeEventReader:
         return MarketEventResolutionRecord(
             object_ref=object_ref,
             governance_state=self.record.governance_state,
+            source_refs=self.record.source_refs,
+            data_cutoff=self.record.data_cutoff,
         )
 
 
@@ -175,6 +184,9 @@ async def test_g2a_at01_event_read_returns_frozen_market_result_envelope() -> No
     assert result.payload.object_ref == OBJECT_REF
     assert result.payload.event_type == "announcement"
     assert result.provenance.public_object_refs == (OBJECT_REF,)
+    assert result.provenance.provenance_status is ProvenanceStatus.PROVENANCE_COMPLETE
+    assert result.provenance.source_refs == ("market-source",)
+    assert result.provenance.data_cutoff == NOW
 
 
 async def test_g2a_at02_event_resolve_accepts_legal_public_ref_only() -> None:
@@ -186,6 +198,8 @@ async def test_g2a_at02_event_resolve_accepts_legal_public_ref_only() -> None:
     assert result.operation_status is OperationStatus.SUCCESS
     assert result.payload.object_ref == OBJECT_REF
     assert result.payload.governance_state is MarketGovernanceState.PUBLISHED
+    assert result.provenance.provenance_status is ProvenanceStatus.PROVENANCE_COMPLETE
+    assert result.provenance.source_refs == ("market-source",)
     assert reader.resolve_calls == [OBJECT_REF]
 
 
@@ -274,6 +288,45 @@ async def test_g2a_at08_operation_validates_without_raw_market_db_access() -> No
     assert result.operation_status is OperationStatus.SUCCESS
     assert "database_service" not in APPLICATION_SOURCE
     assert "MarketUnavailable" in APPLICATION_SOURCE
+
+
+def test_producer_declared_complete_cannot_bypass_provenance_validator() -> None:
+    producer_declared_complete = MarketProvenance(
+        provenance_status=ProvenanceStatus.PROVENANCE_COMPLETE,
+        market_release_identity=release(),
+        produced_at=NOW,
+        source_refs=(),
+        evidence_refs=(),
+        public_object_refs=(OBJECT_REF,),
+        data_cutoff=NOW,
+    )
+    context = ProvenanceValidationContext(
+        capability_id=EVENT_READ_CAPABILITY_ID,
+        epistemic_class=EpistemicClass.REPORTED_CLAIM,
+        governance_state=MarketGovernanceState.PUBLISHED,
+    )
+
+    result = validate_provenance_profile(
+        event_provenance_profile(),
+        producer_declared_complete,
+        context,
+    )
+
+    assert not result.complete
+    assert result.failed_predicates == ("source_refs_non_empty",)
+
+
+async def test_incomplete_provenance_fails_closed_instead_of_success() -> None:
+    incomplete_record = replace(event_record(), source_refs=())
+    result = await service(FakeEventReader(incomplete_record)).read_event(
+        MarketEventReadRequest(object_ref=OBJECT_REF, correlation_id="correlation-10")
+    )
+
+    assert result.operation_status is OperationStatus.FAILURE
+    assert result.data_state is DataState.UNAVAILABLE
+    assert result.payload is None
+    assert result.provenance.provenance_status is ProvenanceStatus.PROVENANCE_INCOMPLETE
+    assert result.failures[0].failure_type == "MarketProvenanceIncomplete"
 
 
 async def test_not_found_fails_closed_without_reader_substitution() -> None:

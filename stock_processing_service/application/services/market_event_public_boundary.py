@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime, timezone
 from typing import Protocol
 from uuid import UUID
@@ -17,14 +17,23 @@ from stock_processing_service.contracts.market_public_boundary import (
     MarketGovernanceState,
     MarketObjectNotFound,
     MarketObjectRef,
+    MarketProvenanceIncomplete,
+    MarketProvenanceProfile,
     MarketProvenance,
     MarketResultEnvelope,
     MarketUnavailable,
     OperationKind,
     OperationStatus,
+    DataCutoffPredicate,
+    EpistemicClass,
+    ProvenanceIncompleteBehavior,
+    ProvenanceValidationContext,
     ProvenanceStatus,
+    ReleaseIdentityPredicate,
     SideEffectClass,
+    SourceRefsPredicate,
     validate_capability_manifest,
+    validate_provenance_profile,
 )
 
 
@@ -94,6 +103,19 @@ class MarketEventRecord:
 class MarketEventResolutionRecord:
     object_ref: MarketObjectRef
     governance_state: MarketGovernanceState
+    source_refs: tuple[str, ...] = ()
+    data_cutoff: datetime | None = None
+
+    def __post_init__(self) -> None:
+        if not isinstance(self.source_refs, tuple) or any(
+            not isinstance(value, str) or not value.strip() for value in self.source_refs
+        ):
+            raise ValueError("source_refs must contain non-empty strings")
+        if self.data_cutoff is not None and (
+            not isinstance(self.data_cutoff, datetime)
+            or self.data_cutoff.tzinfo is None
+        ):
+            raise ValueError("data_cutoff must be a timezone-aware datetime or None")
 
 
 @dataclass(frozen=True, slots=True)
@@ -180,6 +202,19 @@ def event_capability_manifests() -> tuple[MarketCapabilityManifestEntry, ...]:
             )
         )
     return tuple(entries)
+
+
+def event_provenance_profile() -> MarketProvenanceProfile:
+    return MarketProvenanceProfile(
+        profile_id="market-event:reported-claim:v1",
+        applies_to=(EVENT_READ_CAPABILITY_ID, EVENT_RESOLVE_CAPABILITY_ID),
+        predicates=(
+            SourceRefsPredicate(),
+            ReleaseIdentityPredicate(),
+            DataCutoffPredicate((EpistemicClass.REPORTED_CLAIM,)),
+        ),
+        incomplete_behavior=ProvenanceIncompleteBehavior.REQUIRE_COMPLETE,
+    )
 
 
 def validate_event_object_ref(object_ref: MarketObjectRef) -> MarketObjectRef:
@@ -291,10 +326,14 @@ class MarketEventPublicBoundaryService:
                     object_ref=record.object_ref,
                     governance_state=record.governance_state,
                 )
-                data_state = DataState.READY
-                source_refs = ()
+                data_state = (
+                    DataState.STALE
+                    if record.data_cutoff is not None and as_of is not None and as_of > record.data_cutoff
+                    else DataState.READY
+                )
+                source_refs = record.source_refs
                 evidence_refs = ()
-                data_cutoff = as_of
+                data_cutoff = record.data_cutoff
         except Exception:
             return self._failure(
                 capability_id=capability_id,
@@ -304,6 +343,37 @@ class MarketEventPublicBoundaryService:
                 failure=MarketUnavailable(f"Market event {operation} is unavailable"),
             )
 
+        try:
+            provenance = self._validated_provenance(
+                capability_id=capability_id,
+                object_ref=valid_object_ref,
+                correlation_id=correlation_id,
+                source_refs=source_refs,
+                evidence_refs=evidence_refs,
+                data_cutoff=data_cutoff,
+                governance_state=payload.governance_state,
+            )
+        except Exception:
+            return self._failure(
+                capability_id=capability_id,
+                object_ref=valid_object_ref,
+                correlation_id=correlation_id,
+                request_id=request_id,
+                failure=MarketProvenanceIncomplete(
+                    "Event provenance validation failed"
+                ),
+            )
+        if provenance is None:
+            return self._failure(
+                capability_id=capability_id,
+                object_ref=valid_object_ref,
+                correlation_id=correlation_id,
+                request_id=request_id,
+                failure=MarketProvenanceIncomplete(
+                    "Event provenance validation failed"
+                ),
+            )
+
         return MarketResultEnvelope(
             contract_version=EVENT_CAPABILITY_VERSION,
             capability_id=capability_id,
@@ -311,20 +381,49 @@ class MarketEventPublicBoundaryService:
             operation_status=OperationStatus.SUCCESS,
             data_state=data_state,
             payload=payload,
-            provenance=MarketProvenance(
-                provenance_status=ProvenanceStatus.PROVENANCE_COMPLETE,
-                market_release_identity=self._boundary_identity.release_identity,
-                produced_at=datetime.now(timezone.utc),
-                source_refs=source_refs,
-                evidence_refs=evidence_refs,
-                public_object_refs=(valid_object_ref,),
-                data_cutoff=data_cutoff,
-                capability_call_ref=capability_id,
-                correlation_id=correlation_id,
-            ),
+            provenance=provenance,
             boundary_identity_ref=self._boundary_identity,
             produced_at=datetime.now(timezone.utc),
             request_id=request_id,
+        )
+
+    def _validated_provenance(
+        self,
+        *,
+        capability_id: str,
+        object_ref: MarketObjectRef,
+        correlation_id: str,
+        source_refs: tuple[str, ...],
+        evidence_refs: tuple[str, ...],
+        data_cutoff: datetime | None,
+        governance_state: MarketGovernanceState,
+    ) -> MarketProvenance | None:
+        candidate = MarketProvenance(
+            provenance_status=ProvenanceStatus.PROVENANCE_INCOMPLETE,
+            market_release_identity=self._boundary_identity.release_identity,
+            produced_at=datetime.now(timezone.utc),
+            source_refs=source_refs,
+            evidence_refs=evidence_refs,
+            public_object_refs=(object_ref,),
+            data_cutoff=data_cutoff,
+            capability_call_ref=capability_id,
+            correlation_id=correlation_id,
+        )
+        context = ProvenanceValidationContext(
+            capability_id=capability_id,
+            epistemic_class=EpistemicClass.REPORTED_CLAIM,
+            governance_state=governance_state,
+        )
+        result = validate_provenance_profile(
+            event_provenance_profile(),
+            candidate,
+            context,
+        )
+        if not result.complete:
+            return None
+        return replace(
+            candidate,
+            provenance_status=ProvenanceStatus.PROVENANCE_COMPLETE,
         )
 
     def _not_found(

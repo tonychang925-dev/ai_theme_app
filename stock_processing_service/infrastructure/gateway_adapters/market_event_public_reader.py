@@ -90,9 +90,17 @@ class MarketEventPublicReader:
         event_row = _as_dict(await self._database_gateway.get_event(private_id))
         if not event_row:
             return None
+        source = event_row.get("source")
+        updated_at = event_row.get("updated_at")
         return MarketEventResolutionRecord(
             object_ref=object_ref,
             governance_state=self._governance_state,
+            source_refs=(source,) if isinstance(source, str) and source.strip() else (),
+            data_cutoff=(
+                _required_datetime(updated_at, private_id)
+                if isinstance(updated_at, datetime)
+                else None
+            ),
         )
 
     def _private_id(self, object_ref: MarketObjectRef) -> int | None:
