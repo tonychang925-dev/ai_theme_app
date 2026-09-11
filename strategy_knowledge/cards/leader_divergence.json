@@ -2,8 +2,10 @@
   "strategy_id": "leader_divergence",
   "name": "龙头分歧识别",
   "concept": "分歧",
-  "version": "1.0",
+  "version": "2.0",
   "created_at": "2026-08-07",
+  "updated_at": "2026-09-11",
+  "derived_from_l1": true,
 
   "market_phases": ["diffusion", "acceleration", "divergence"],
 
@@ -112,7 +114,7 @@
   "research_questions": [
     {
       "question": "龙头走弱是正常调整还是结构破坏？",
-      "probes": ["leader_5d_return", "leader_drawdown", "volume_pattern", "key_level_status"]
+      "probes": ["leader_5d_return", "leader_drawdown_from_peak", "leader_volume_pattern", "key_level_status"]
     },
     {
       "question": "是否出现新核心接替？",
@@ -142,18 +144,29 @@
     {
       "document_id": "trading_system_v1",
       "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
-      "page": 2,
-      "section": "分歧-关注",
+      "chunk_id": "trading_system_v1.c07",
+      "page": 3,
+      "section": "分歧-关注（含买/不买判定规则）",
       "provenance_kind": "source_authored",
       "text": "龙头或次龙头出现首阴分歧。密切关注第二天龙头股是否会再次反包，实现弱转强行情，下跌的当天此时尽量不要低吸操作。"
     },
     {
       "document_id": "trading_system_v1",
       "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
-      "page": 2,
+      "chunk_id": "trading_system_v1.c07",
+      "page": 3,
       "section": "分歧-关注-注意事项",
       "provenance_kind": "source_authored",
-      "text": "如果大盘环境好，指数在上涨，对应的板块也在上涨，此时龙头股出现的分歧绝不能买。如果大盘大环境不好出现的被动分歧...此时龙头股的分歧可以买。"
+      "text": "如果大盘环境好，指数在上涨，对应的板块也在上涨，此时龙头股出现的分歧绝不能买。如果大盘大环境不好出现的被动分歧…此时龙头股的分歧可以买。"
+    },
+    {
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c10",
+      "page": 3,
+      "section": "盯龙头核心(20%) — 龙头个股特征与抗下跌",
+      "provenance_kind": "source_authored",
+      "text": "抗下跌：大环境如大盘和板块走弱的情况，依然强势涨停。"
     }
   ]
 }

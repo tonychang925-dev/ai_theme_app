@@ -1,0 +1,174 @@
+{
+  "strategy_id": "leader_identification",
+  "name": "龙头识别",
+  "concept": "龙头",
+  "version": "2.0",
+  "created_at": "2026-09-11",
+  "derived_from_l1": true,
+
+  "market_phases": ["start", "diffusion", "acceleration", "divergence"],
+
+  "trigger_conditions": [
+    "完成主线判定与切入周期评估之后",
+    "需要在题材内选出龙头股与次龙头股",
+    "候选个股需要判定在板块中的地位（领涨/跟风）",
+    "出现二板晋级，需要判断是否形成龙头雏形"
+  ],
+
+  "required_data": [
+    "board_position",
+    "leader_seal_profile",
+    "theme_breadth_depth",
+    "second_board_status",
+    "peer_relative_strength"
+  ],
+
+  "possible_states": [
+    {
+      "state": "leader_confirmed",
+      "evidence_pattern": {
+        "position": "板块地位第一",
+        "identification": "最快封板 / 封单金额最大 / 资金最狠",
+        "attributes": "首板换手率>8% / 量比>2.5 / 持续放量",
+        "breadth": "题材具备深广度",
+        "resilience": "大盘或板块走弱时依然强势涨停"
+      },
+      "predicates": [
+        {"requirement_id": "board_position", "operator": "eq", "value": "leader", "role": "decisive"},
+        {"requirement_id": "theme_breadth_depth", "operator": "in", "value": ["deep_wide", "moderate"], "role": "core"},
+        {"requirement_id": "leader_seal_profile", "path": "first_board_turnover", "operator": ">=", "value": 0.08, "role": "supporting"},
+        {"requirement_id": "leader_seal_profile", "path": "volume_ratio", "operator": ">=", "value": 2.5, "role": "supporting"}
+      ],
+      "action": "trade_leader",
+      "confidence_modifier": 0.3,
+      "note": "宁愿在涨停板上追龙头，也不要在低位买跟风股；不要在龙头股上做短线"
+    },
+    {
+      "state": "sub_leader",
+      "evidence_pattern": {
+        "position": "板块地位第二/第三",
+        "role": "次龙头 / 龙二",
+        "breadth": "随龙头走强但有溢价"
+      },
+      "predicates": [
+        {"requirement_id": "board_position", "operator": "eq", "value": "sub_leader", "role": "core"},
+        {"requirement_id": "peer_relative_strength", "path": "dispersion.max_min_spread", "operator": ">=", "value": 0.10, "role": "supporting"}
+      ],
+      "action": "trade_with_light_position",
+      "confidence_modifier": 0.1,
+      "note": "买不到龙头就买龙二；但仓位要轻（防假突破）"
+    },
+    {
+      "state": "arbitrage_20cm",
+      "evidence_pattern": {
+        "anchor": "龙头隔夜大单 / 一字板定方向",
+        "trigger": "主板涨停越多越好，找 20cm 半路票"
+      },
+      "predicates": [
+        {"requirement_id": "board_position", "operator": "eq", "value": "leader", "role": "supporting"},
+        {"requirement_id": "board_position", "path": "board", "operator": "eq", "value": "gem_20cm", "role": "core"}
+      ],
+      "action": "arbitrage_only",
+      "confidence_modifier": 0.05,
+      "note": "创业板 20cm 套利，锚定龙头隔夜大单与一字板方向"
+    },
+    {
+      "state": "follower_excluded",
+      "evidence_pattern": {
+        "position": "板块后排 / 跟风 / 杂毛",
+        "identification": "非领涨、无辨识度"
+      },
+      "predicates": [
+        {"requirement_id": "board_position", "operator": "in", "value": ["follower", "outsider"], "role": "decisive"}
+      ],
+      "action": "exclude",
+      "confidence_modifier": -0.4,
+      "note": "绝不介入后排杂毛个股；跟风股分歧不能买，补涨股特别小心"
+    },
+    {
+      "state": "leader_rotation",
+      "evidence_pattern": {
+        "position": "原龙头走弱但新核心出现",
+        "identification": "新票封板更快更强",
+        "breadth": "题材整体未退潮"
+      },
+      "predicates": [
+        {"requirement_id": "board_position", "operator": "eq", "value": "leader", "role": "core"},
+        {"requirement_id": "theme_breadth_depth", "operator": "!=", "value": "narrow", "role": "supporting"}
+      ],
+      "action": "monitor_new_leader",
+      "confidence_modifier": 0.0,
+      "note": "老龙头走弱但新核心出现 — 不是退潮，是切换"
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "该股在板块中的地位是否为第一位（是否领涨）？",
+      "probes": ["board_position", "peer_relative_strength"]
+    },
+    {
+      "question": "封板时间、封单金额、首板换手率、量比是否具备龙头特征？",
+      "probes": ["leader_seal_profile"]
+    },
+    {
+      "question": "题材的深广度是否足以支撑龙头走出高度？",
+      "probes": ["theme_breadth_depth"]
+    },
+    {
+      "question": "是否已出现二板定龙头雏形（换手板 + 分歧转一致 + 板块合力）？",
+      "probes": ["second_board_status", "board_position"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "leader_confirmed", "condition": "position_degrades_and_breadth_contracts", "new_state": "leader_rotation"},
+    {"state": "leader_confirmed", "condition": "leader_loses_sector_first_position", "new_state": "sub_leader"},
+    {"state": "sub_leader", "condition": "new_first_position_emerges", "new_state": "monitor_new_leader"}
+  ],
+
+  "provenance": {
+    "thresholds": "source_authored",
+    "thresholds_note": "首板换手率>8%、量比>2.5 为原文明确数值；其余为定性描述。",
+    "evidence_patterns": "source_authored"
+  },
+
+  "source_refs": [
+    {
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c10",
+      "page": 3,
+      "section": "盯龙头核心(20%) — 核心个股 / 龙头个股特征",
+      "provenance_kind": "source_authored",
+      "text": "只考虑龙头和次龙头、套利、补涨个股，绝不介入后排杂毛个股…宁愿在涨停板上追龙头，也不要在低位买跟风股！龙头股的特征：硬逻辑…高辨识度：分析是否具备领涨特征（封板金额、封板时间及形态），最快封板，资金最狠最夸张…属性：（人气最旺、资金性质以游资为主、涨幅最高、首板换手率>8%、量比>2.5、持续放量…）抗下跌：大环境如大盘和板块走弱的情况，依然强势涨停。"
+    },
+    {
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c11",
+      "page": 4,
+      "section": "龙头操作要领五条",
+      "provenance_kind": "source_authored",
+      "text": "1、要能准确判断龙头股，选股过程中，股票的所处板块的地位是第一位的…2、克服恐惧感，第一时间亮剑买入…3、要捂得住，不要失去位置；4、不要在龙头股上做短线！5、如果买不到龙头，就买龙二。"
+    },
+    {
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c12",
+      "page": 4,
+      "section": "套利个股（创业板20cm）/ 补涨股",
+      "provenance_kind": "source_authored",
+      "text": "2）套利个股：创业板20cm核心个股。锚定龙头隔夜大单，一字板…此时可以找20cm的半路票，俗称“一字板定方向”！"
+    },
+    {
+      "document_id": "limit_up_v1",
+      "document_sha256": "2186f1bb0735fc4214f615ec80b0089e683f728a1e3312f055525b5af038918c",
+      "chunk_id": "limit_up_v1.c04",
+      "page": 2,
+      "section": "二板定龙头 — 量价特征 / 题材逻辑 / 盘口气质 / 情绪位置",
+      "provenance_kind": "source_authored",
+      "text": "真正有龙头潜质的个股，首板最好是换手板（换手率 >15%，成交额活跃）…二板放量但分歧转一致（下杀后快速拉起），说明承接力强…封单质量：龙头的封单往往稳定，资金不断加仓，不轻易被撬开…龙头往往诞生在情绪冰点后第一波反弹…如果一个题材里出现多个首板，次日看谁率先走出二板，这就是龙头雏形。"
+    }
+  ]
+}

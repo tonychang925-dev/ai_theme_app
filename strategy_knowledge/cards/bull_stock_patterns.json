@@ -1,0 +1,178 @@
+{
+  "strategy_id": "bull_stock_patterns",
+  "name": "牛股形态识别",
+  "concept": "牛股形态",
+  "version": "2.0",
+  "created_at": "2026-09-11",
+  "derived_from_l1": true,
+
+  "market_phases": ["start", "diffusion", "acceleration", "divergence"],
+
+  "trigger_conditions": [
+    "需要判断个股是否具备牛股形态（牛股三绝）",
+    "强势股观察池刷新时，需要按形态与基因筛选",
+    "需要判定买入位置（回踩 / 放量突破）"
+  ],
+
+  "required_data": [
+    "high_volume_bar_low",
+    "double_volume_base",
+    "gap_unfilled_status",
+    "ma_bull_alignment",
+    "volume_price_rhythm",
+    "chip_peak_shape",
+    "price_new_high_streak",
+    "prior_limit_up_gene"
+  ],
+
+  "possible_states": [
+    {
+      "state": "pattern_high_volume_holds",
+      "evidence_pattern": {
+        "pattern": "第1浪放量形成高量柱，调整阶段不破坏高量柱最低价"
+      },
+      "predicates": [
+        {"requirement_id": "high_volume_bar_low", "operator": "eq", "value": "holding_above", "role": "decisive"}
+      ],
+      "action": "watch_for_wave_three",
+      "confidence_modifier": 0.25,
+      "note": "高量不破，后市要火；不破坏高量柱则还会有第3浪重新上涨"
+    },
+    {
+      "state": "pattern_double_volume_unbroken",
+      "evidence_pattern": {
+        "pattern": "第一次倍量后，第二次倍量柱的底部基柱价格不低于第一次倍量柱底部"
+      },
+      "predicates": [
+        {"requirement_id": "double_volume_base", "operator": "eq", "value": "unbroken", "role": "decisive"}
+      ],
+      "action": "buy_on_5ma_pullback",
+      "confidence_modifier": 0.2,
+      "note": "倍量不穿，后市翻番；第3次出现倍量不穿时可跟进，5日均线回踩低吸"
+    },
+    {
+      "state": "pattern_gap_unfilled",
+      "evidence_pattern": {
+        "pattern": "跳空缺口不回补"
+      },
+      "predicates": [
+        {"requirement_id": "gap_unfilled_status", "operator": "in", "value": ["gap_held", "gap_touched"], "role": "core"}
+      ],
+      "action": "treat_as_mainline_fermentation",
+      "confidence_modifier": 0.2,
+      "note": "缺口不补，后市如虎；意味着大主线题材发动暴涨行情"
+    },
+    {
+      "state": "strong_stock_profile_match",
+      "evidence_pattern": {
+        "profile": "均线多头排列 / 放量涨缩量跌 / 分时拉升有量回落无量 / 低位筹码峰密集 / 题材深广度 / 不断创新高 / 连贯性长"
+      },
+      "predicates": [
+        {"requirement_id": "ma_bull_alignment", "operator": "eq", "value": "bullish", "role": "core"},
+        {"requirement_id": "volume_price_rhythm", "operator": "eq", "value": "healthy", "role": "core"},
+        {"requirement_id": "chip_peak_shape", "operator": "in", "value": ["dense_single_peak", "dense_multi_peak"], "role": "supporting"},
+        {"requirement_id": "price_new_high_streak", "operator": ">=", "value": 2, "role": "supporting"},
+        {"requirement_id": "prior_limit_up_gene", "operator": ">=", "value": 1, "role": "supporting"}
+      ],
+      "action": "enter_strong_stock_pool",
+      "confidence_modifier": 0.3,
+      "note": "强势股7大特征匹配；选股须先有涨停基因（近6天内以涨停收盘）"
+    },
+    {
+      "state": "pattern_absent",
+      "evidence_pattern": {
+        "pattern": "三绝均不成立，或形态破坏"
+      },
+      "predicates": [
+        {"requirement_id": "high_volume_bar_low", "operator": "eq", "value": "broken", "role": "core"},
+        {"requirement_id": "volume_price_rhythm", "operator": "eq", "value": "unhealthy", "role": "core"}
+      ],
+      "action": "exclude",
+      "confidence_modifier": -0.3,
+      "note": "不关注弱势股；仅在有倍量阳线时跟进"
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "高量柱最低价是否被破坏？",
+      "probes": ["high_volume_bar_low"]
+    },
+    {
+      "question": "第二次倍量柱底部是否不低于第一次倍量柱底部？",
+      "probes": ["double_volume_base"]
+    },
+    {
+      "question": "跳空缺口是否回补？",
+      "probes": ["gap_unfilled_status"]
+    },
+    {
+      "question": "是否满足强势股7大特征（均线多头、量价节奏、筹码、创新高、连贯性）？",
+      "probes": ["ma_bull_alignment", "volume_price_rhythm", "chip_peak_shape", "price_new_high_streak"]
+    },
+    {
+      "question": "近6天内是否出现过涨停（涨停基因）？",
+      "probes": ["prior_limit_up_gene"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "pattern_high_volume_holds", "condition": "high_volume_bar_low_broken", "new_state": "pattern_absent"},
+    {"state": "pattern_double_volume_unbroken", "condition": "second_double_volume_base_broken", "new_state": "pattern_absent"},
+    {"state": "strong_stock_profile_match", "condition": "ma_alignment_turns_bearish", "new_state": "pattern_absent"}
+  ],
+
+  "provenance": {
+    "thresholds": "source_authored",
+    "thresholds_note": "“近6天涨停”为原文明确窗口；筹码峰形态依赖数据源，缺失时降级为 DATA_UNAVAILABLE。三绝原含示意图，L1 标记 partial_image。",
+    "evidence_patterns": "source_authored"
+  },
+
+  "source_refs": [
+    {
+      "document_id": "find_ox_v1",
+      "document_sha256": "7eb3f43221ff3ed521c8b5c7a5fafecc50fc9a56de868ccea811888b6d389dbf",
+      "chunk_id": "find_ox_v1.c01",
+      "page": 1,
+      "section": "牛股三绝 — 1. 高量不破，后市要火",
+      "provenance_kind": "source_authored",
+      "text": "第1浪股价放量攻击形成高量柱，代表个股激活了人气，当前处于活跃状态。而调整阶段，股价不破坏高量柱重新上涨，股价还会有第3浪重新上涨。"
+    },
+    {
+      "document_id": "find_ox_v1",
+      "document_sha256": "7eb3f43221ff3ed521c8b5c7a5fafecc50fc9a56de868ccea811888b6d389dbf",
+      "chunk_id": "find_ox_v1.c02",
+      "page": 1,
+      "section": "牛股三绝 — 2. 倍量不穿，后市翻番",
+      "provenance_kind": "source_authored",
+      "text": "倍量是指比昨日翻一倍的成交量阳线（中大阳柱），倍量不穿是指第1次出现倍量后，第2次的倍量柱的股价底部基柱价格不低于第一次倍量柱的股价的底部，如果在第3次出现倍量不穿时，可以跟进择机进场，如在5日均线回踩时低吸入场。"
+    },
+    {
+      "document_id": "find_ox_v1",
+      "document_sha256": "7eb3f43221ff3ed521c8b5c7a5fafecc50fc9a56de868ccea811888b6d389dbf",
+      "chunk_id": "find_ox_v1.c03",
+      "page": 2,
+      "section": "牛股三绝 — 3. 缺口不补，后市如虎",
+      "provenance_kind": "source_authored",
+      "text": "是指跳空缺口不回补，意味着大主线题材发动暴涨行情。"
+    },
+    {
+      "document_id": "find_ox_v1",
+      "document_sha256": "7eb3f43221ff3ed521c8b5c7a5fafecc50fc9a56de868ccea811888b6d389dbf",
+      "chunk_id": "find_ox_v1.c04",
+      "page": 2,
+      "section": "强势股的7大特征",
+      "provenance_kind": "source_authored",
+      "text": "1、均线多头排列；2、放量涨，缩量跌；3、分时图，拉升有量，回落无量；4、低位筹码峰密集或者单峰形态；5、具备深广度的题材；6、股价不断创新高；7、连贯性越长越好；"
+    },
+    {
+      "document_id": "find_ox_v1",
+      "document_sha256": "7eb3f43221ff3ed521c8b5c7a5fafecc50fc9a56de868ccea811888b6d389dbf",
+      "chunk_id": "find_ox_v1.c05",
+      "page": 2,
+      "section": "选股方法",
+      "provenance_kind": "source_authored",
+      "text": "1、用通达信等软件，找N天内（6天）以涨停板收盘，这些股票具有涨停基因，不关注弱势股；2、研究买入位置，及买入逻辑。3、主要留意当天的成交量，要看到倍量阳线才跟；4、可以当天放量突破的时候进场，但是要注意风险，可以分批入场，后面在择机补仓。"
+    }
+  ]
+}

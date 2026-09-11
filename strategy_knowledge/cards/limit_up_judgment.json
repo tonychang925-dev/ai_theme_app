@@ -1,0 +1,184 @@
+{
+  "strategy_id": "limit_up_judgment",
+  "name": "涨停预判",
+  "concept": "涨停",
+  "version": "2.0",
+  "created_at": "2026-09-11",
+  "derived_from_l1": true,
+
+  "market_phases": ["start", "diffusion", "acceleration"],
+
+  "trigger_conditions": [
+    "需要预判当日个股能否涨停",
+    "涨停后需要预判能否封住",
+    "二板日需要判断是否形成龙头雏形"
+  ],
+
+  "required_data": [
+    "prior_limit_up_gene",
+    "theme_hotness",
+    "volume_vs_ma60",
+    "intraday_limit_up_shape",
+    "limit_up_seal_quality",
+    "second_board_status",
+    "price_position_in_trend",
+    "short_term_sentiment"
+  ],
+
+  "possible_states": [
+    {
+      "state": "limit_up_seal_likely",
+      "evidence_pattern": {
+        "gene": "近期频繁涨停",
+        "theme": "处于热点题材，板块涨停潮",
+        "volume": "涨停当天明显放量（超60日均线或倍量）",
+        "shape": "台阶式 / 斜推式上涨，走势充分",
+        "level": "股价处于上涨初期或中期、相对低位"
+      },
+      "predicates": [
+        {"requirement_id": "prior_limit_up_gene", "operator": ">=", "value": 1, "role": "core"},
+        {"requirement_id": "theme_hotness", "operator": "eq", "value": "limit_up_wave", "role": "core"},
+        {"requirement_id": "volume_vs_ma60", "operator": ">=", "value": 1.0, "role": "supporting"},
+        {"requirement_id": "intraday_limit_up_shape", "operator": "in", "value": ["stepped", "sloped"], "role": "supporting"},
+        {"requirement_id": "price_position_in_trend", "operator": "in", "value": ["early", "mid"], "role": "supporting"}
+      ],
+      "action": "expect_seal",
+      "confidence_modifier": 0.28,
+      "note": "封住五要点：地位+利好+量能+形态+价位；台阶式/斜推式表明主力步步为营"
+    },
+    {
+      "state": "limit_up_open_board_risk",
+      "evidence_pattern": {
+        "shape": "脉冲式封板后又出现放量下跌；或封板→炸板→封板反复",
+        "volume": "涨停前量越大越好，涨停后缩量横，量越小越好"
+      },
+      "predicates": [
+        {"requirement_id": "intraday_limit_up_shape", "operator": "eq", "value": "impulse", "role": "core"},
+        {"requirement_id": "limit_up_seal_quality", "operator": "in", "value": ["weak", "no_seal"], "role": "core"}
+      ],
+      "action": "expect_open_board",
+      "confidence_modifier": -0.25,
+      "note": "脉冲式封板+放量下跌 → 当天封板概率低；炸板后8%-10%区间震荡则为洗盘，封板概率大"
+    },
+    {
+      "state": "second_board_leader_forming",
+      "evidence_pattern": {
+        "first_board": "换手板（换手率>15%）",
+        "second_board": "放量且分歧转一致（下杀后快速拉起）或缩量直接封死",
+        "theme": "题材具备唯一性或高热度",
+        "sentiment": "二板当日市场处于扩散阶段"
+      },
+      "predicates": [
+        {"requirement_id": "second_board_status", "operator": ">=", "value": 2, "role": "decisive"},
+        {"requirement_id": "limit_up_seal_quality", "operator": "eq", "value": "decisive", "role": "core"},
+        {"requirement_id": "theme_hotness", "operator": "in", "value": ["limit_up_wave", "warming"], "role": "supporting"},
+        {"requirement_id": "short_term_sentiment", "operator": "in", "value": ["recovery", "diffusion"], "role": "supporting"}
+      ],
+      "action": "candidate_leader",
+      "confidence_modifier": 0.25,
+      "note": "二板定龙头：题材里最先走出二板、或唯一正宗龙头；龙头往往诞生在情绪冰点后第一波反弹"
+    },
+    {
+      "state": "limit_up_weak_seal",
+      "evidence_pattern": {
+        "position": "板块内非龙头 / 地位不明确",
+        "level": "股价已处于上涨后期"
+      },
+      "predicates": [
+        {"requirement_id": "price_position_in_trend", "operator": "eq", "value": "late", "role": "core"},
+        {"requirement_id": "theme_hotness", "operator": "in", "value": ["warming", "cold"], "role": "supporting"}
+      ],
+      "action": "avoid_second_board",
+      "confidence_modifier": -0.3,
+      "note": "不要追杂毛二板；关注核心票，不要贪便宜"
+    },
+    {
+      "state": "no_limit_up",
+      "evidence_pattern": {
+        "gene": "无涨停基因",
+        "theme": "题材分散、没有主线"
+      },
+      "predicates": [
+        {"requirement_id": "prior_limit_up_gene", "operator": "eq", "value": 0, "role": "core"},
+        {"requirement_id": "theme_hotness", "operator": "eq", "value": "cold", "role": "core"}
+      ],
+      "action": "no_action",
+      "confidence_modifier": -0.25,
+      "note": "题材分散、没有主线，容易走不远"
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "涨停基因是否成立（近期是否频繁涨停）？",
+      "probes": ["prior_limit_up_gene", "theme_hotness"]
+    },
+    {
+      "question": "涨停当天量能是否明显放量（超60日均线/倍量）？",
+      "probes": ["volume_vs_ma60"]
+    },
+    {
+      "question": "分时形态是脉冲式 / 台阶式 / 斜推式 / 震荡式？",
+      "probes": ["intraday_limit_up_shape"]
+    },
+    {
+      "question": "封单是否坚决，炸板后是否快速回封？",
+      "probes": ["limit_up_seal_quality"]
+    },
+    {
+      "question": "首板是否为换手板？二板是否放量分歧转一致？",
+      "probes": ["second_board_status", "limit_up_seal_quality"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "limit_up_seal_likely", "condition": "intraday_shape_turns_impulse_with_volume_drop", "new_state": "limit_up_open_board_risk"},
+    {"state": "second_board_leader_forming", "condition": "seal_quality_weakens_on_second_board", "new_state": "limit_up_weak_seal"},
+    {"state": "limit_up_seal_likely", "condition": "sentiment_shifts_to_fading", "new_state": "limit_up_open_board_risk"}
+  ],
+
+  "provenance": {
+    "thresholds": "source_authored",
+    "thresholds_note": "换手率>15%（首板）、60日均线量能、8%-10%炸板震荡区间为原文数值；volume_vs_ma60>=1.0 为工程翻译。",
+    "evidence_patterns": "source_authored"
+  },
+
+  "source_refs": [
+    {
+      "document_id": "limit_up_v1",
+      "document_sha256": "2186f1bb0735fc4214f615ec80b0089e683f728a1e3312f055525b5af038918c",
+      "chunk_id": "limit_up_v1.c01",
+      "page": 1,
+      "section": "总纲 — 两个方向 + 9 个要点",
+      "provenance_kind": "source_authored",
+      "text": "抓涨停股有两个难点：1、预判当日股价能否涨停；2、涨停的股当日能否封住；"
+    },
+    {
+      "document_id": "limit_up_v1",
+      "document_sha256": "2186f1bb0735fc4214f615ec80b0089e683f728a1e3312f055525b5af038918c",
+      "chunk_id": "limit_up_v1.c02",
+      "page": 1,
+      "section": "1. 预判涨停潜力股 — 四要点：涨停基因 / 题材 / 量能 / 形态",
+      "provenance_kind": "source_authored",
+      "text": "基因：如果一只股票近期频繁出现涨停，那么发动行情的那天涨停的机率较大。题材：如果个股处于当前热点题材，当整个板块处于涨停潮时，个股涨停的概率较大…涨停当天，量能如果有明显放量，例如超过60日均线或者出现倍量，则当天涨停概率大。形态：从分时图上看形态，分为脉冲式涨停，台阶式涨停，斜推式涨停，震荡式涨停。"
+    },
+    {
+      "document_id": "limit_up_v1",
+      "document_sha256": "2186f1bb0735fc4214f615ec80b0089e683f728a1e3312f055525b5af038918c",
+      "chunk_id": "limit_up_v1.c03",
+      "page": 2,
+      "section": "2. 预判涨停能否封住 — 五要点：地位 / 利好 / 量能 / 形态 / 价位",
+      "provenance_kind": "source_authored",
+      "text": "量能：涨停前量越大越好，涨停前放量拉，涨停后缩量横，量越小越好，当天封板的概率大。形态：盘中出现脉冲式封板，又出现放量下跌，则当天封板的概率低。盘中出现封板、炸板、封板，炸板后未大幅度下跌，在8%～10%的区间震荡，当天封板概率大…盘中出现台阶式、斜推式上涨，由于走势充分…当天封板的概率大。价位：个股在上涨的初期、中期，股价通常在相对低位。"
+    },
+    {
+      "document_id": "limit_up_v1",
+      "document_sha256": "2186f1bb0735fc4214f615ec80b0089e683f728a1e3312f055525b5af038918c",
+      "chunk_id": "limit_up_v1.c04",
+      "page": 2,
+      "section": "3. 二板定龙头 — 量价特征 / 题材逻辑 / 盘口气质 / 情绪位置 / 新手注意事项",
+      "provenance_kind": "source_authored",
+      "text": "真正有龙头潜质的个股，首板最好是换手板（换手率 >15%，成交额活跃）…二板放量但分歧转一致（下杀后快速拉起），说明承接力强…二板若缩量直接封死，往往意味着主力在强控筹码…龙头往往诞生在情绪冰点后第一波反弹…不要追杂毛二板…真正龙头往往只有一个。"
+    }
+  ]
+}

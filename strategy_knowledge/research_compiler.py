@@ -161,6 +161,541 @@ REQUIREMENT_REGISTRY: dict[str, dict] = {
         "output": {"type": "number", "unit": "ratio"},
         "missing_policy": "INSUFFICIENT_EVIDENCE",
     },
+
+    # Backfill: legacy cards referenced these but they were never registered.
+    "market_regime": {
+        "capability": "market.regime.read",
+        "arguments": {
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "market_regime"},
+        "output": {"type": "categorical", "values": ["expansion", "rotation", "contraction", "chaos"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "leader_key_level": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 10,
+        },
+        "derive": {"metric": "key_level_status"},
+        "output": {"type": "categorical", "values": ["intact", "intact_limit_up", "testing", "broken"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "theme_age_days": {
+        "capability": "market.theme.constituents",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "theme_age_days"},
+        "output": {"type": "number", "unit": "days"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "leader_board_height": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 10,
+        },
+        "derive": {"metric": "max_consecutive_limit_up"},
+        "output": {"type": "number"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "breadth_trend": {
+        "capability": "market.theme.constituents",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "breadth_trend"},
+        "output": {"type": "categorical", "values": ["expanding", "stable", "contracting"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "limit_up_count_trend": {
+        "capability": "market.limit_up_count",
+        "arguments": {
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 5,
+        },
+        "derive": {"metric": "limit_up_count_trend"},
+        "output": {"type": "categorical", "values": ["rising", "flat", "falling"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "capital_flow_trend": {
+        "capability": "market.theme.capital",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "capital_flow_trend"},
+        "output": {"type": "categorical", "values": ["increasing", "persistent", "outflow"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+
+    # mainline_identification requirements (L1: trading_system_v1 c01/c02)
+    "theme_catalyst_events": {
+        "capability": "market.intelligence.observe",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "catalyst_event_list"},
+        "output": {"type": "list[dict]"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "theme_logic_attributes": {
+        "capability": "market.intelligence.observe",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "novelty_timing_breadth"},
+        "output": {"type": "dict"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "theme_capital_acceptance": {
+        "capability": "market.theme.capital",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "sustained_inflow"},
+        "output": {"type": "categorical", "values": ["accepted", "mixed", "rejected"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "theme_mainline_environment": {
+        "capability": "market.mainline_environment",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "mainline_environment"},
+        "output": {"type": "categorical", "values": ["healthy", "neutral", "hostile"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+
+    # leader_identification requirements (L1: trading_system_v1 c10-c12)
+    "board_position": {
+        "capability": "market.theme.constituents",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "sector_position"},
+        "output": {"type": "categorical", "values": ["leader", "sub_leader", "follower", "outsider"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "leader_seal_profile": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 10,
+        },
+        "derive": {"metric": "seal_time_amount_turnover_volume_ratio"},
+        "output": {"type": "dict"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "theme_breadth_depth": {
+        "capability": "market.theme.constituents",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "breadth_depth"},
+        "output": {"type": "categorical", "values": ["deep_wide", "moderate", "narrow"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "second_board_status": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 3,
+        },
+        "derive": {"metric": "consecutive_limit_up_boards"},
+        "output": {"type": "number"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+
+    # entry_timing requirements (L1: trading_system_v1 c13-c15)
+    "intraday_ma_status": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "intraday_vs_vwap"},
+        "output": {"type": "categorical", "values": ["above", "testing", "below"]},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+    "intraday_volume_expansion": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "intraday_volume_vs_prev"},
+        "output": {"type": "categorical", "values": ["expanding", "flat", "shrinking"]},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+    "intraday_platform_break": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "platform_breakout"},
+        "output": {"type": "boolean"},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+    "macd_divergence_state": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 20,
+        },
+        "derive": {"metric": "macd_divergence"},
+        "output": {"type": "categorical", "values": ["top_divergence", "none", "bottom_divergence"]},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+    "premarket_market_checks": {
+        "capability": "market.snapshot.read",
+        "arguments": {
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "limit_up_count_sector_moves_theme_continuity"},
+        "output": {"type": "dict"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+
+    # position_sizing requirements (L1: weak_to_strong_v1 c09)
+    "support_strength": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 10,
+        },
+        "derive": {"metric": "support_strength_score"},
+        "output": {"type": "number"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "auction_confirm_level": {
+        "capability": "market.stock.auction",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "confirm_level"},
+        "output": {"type": "categorical", "values": ["A", "B", "C", "X"]},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+    "theme_fade_watch": {
+        "capability": "market.theme.constituents",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "fade_watch_flag"},
+        "output": {"type": "boolean"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+
+    # exit_rules requirements (L1: weak_to_strong_v1 c10)
+    "reverse_package_status": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 3,
+        },
+        "derive": {"metric": "reverse_package_result"},
+        "output": {"type": "categorical", "values": ["success", "failed", "pending"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "ma10_status": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 10,
+        },
+        "derive": {"metric": "price_vs_ma10"},
+        "output": {"type": "categorical", "values": ["above", "testing", "below"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "previous_low_status": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 10,
+        },
+        "derive": {"metric": "price_vs_previous_low"},
+        "output": {"type": "categorical", "values": ["above", "testing", "below"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "theme_fade_status": {
+        "capability": "market.theme.constituents",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "theme_fade_state"},
+        "output": {"type": "categorical", "values": ["healthy", "fade_watch", "fade_confirmed"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+
+    # auction_confirmation requirements (L1: auction_v1 c01-c05)
+    "auction_stability": {
+        "capability": "market.stock.auction",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "auction_path_volatility_9_20_to_9_25"},
+        "output": {"type": "categorical", "values": ["stable", "volatile", "tail_crash"]},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+    "auction_last_minute_ratio": {
+        "capability": "market.stock.auction",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "last_minute_order_growth_9_24_to_9_25"},
+        "output": {"type": "categorical", "values": ["scramble", "flat", "withdraw"]},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+    "auction_volume_ratio": {
+        "capability": "market.stock.auction",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "auction_volume_vs_prev_intraday_peak"},
+        "output": {"type": "number", "unit": "ratio"},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+    "sector_sync_strength": {
+        "capability": "market.theme.constituents",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "sector_auction_sync"},
+        "output": {"type": "categorical", "values": ["synced_strong", "mixed", "synced_weak"]},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+    "peer_premium": {
+        "capability": "market.theme.constituents",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "sub_leader_auction_premium"},
+        "output": {"type": "list[dict]"},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+
+    # bull_stock_patterns requirements (L1: find_ox_v1 c01-c05)
+    "high_volume_bar_low": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 20,
+        },
+        "derive": {"metric": "price_vs_high_volume_bar_low"},
+        "output": {"type": "categorical", "values": ["holding_above", "testing", "broken"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "double_volume_base": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 20,
+        },
+        "derive": {"metric": "double_volume_low_comparison"},
+        "output": {"type": "categorical", "values": ["unbroken", "broken"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "gap_unfilled_status": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 20,
+        },
+        "derive": {"metric": "gap_fill_status"},
+        "output": {"type": "categorical", "values": ["gap_held", "gap_touched", "gap_filled", "no_gap"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "ma_bull_alignment": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 20,
+        },
+        "derive": {"metric": "ma_alignment"},
+        "output": {"type": "categorical", "values": ["bullish", "tangled", "bearish"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "volume_price_rhythm": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 20,
+        },
+        "derive": {"metric": "rise_with_volume_fall_with_shrink"},
+        "output": {"type": "categorical", "values": ["healthy", "mixed", "unhealthy"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "chip_peak_shape": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "chip_distribution_shape"},
+        "output": {"type": "categorical", "values": ["dense_single_peak", "dense_multi_peak", "dispersed", "unavailable"]},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+    "price_new_high_streak": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 20,
+        },
+        "derive": {"metric": "new_high_frequency"},
+        "output": {"type": "number"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "prior_limit_up_gene": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 6,
+        },
+        "derive": {"metric": "prior_limit_up_count"},
+        "output": {"type": "number"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+
+    # limit_up_judgment requirements (L1: limit_up_v1 c01-c03)
+    "theme_hotness": {
+        "capability": "market.theme.constituents",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "theme_limit_up_wave_intensity"},
+        "output": {"type": "categorical", "values": ["limit_up_wave", "warming", "cold"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "volume_vs_ma60": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 60,
+        },
+        "derive": {"metric": "volume_vs_ma60"},
+        "output": {"type": "number", "unit": "ratio"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "intraday_limit_up_shape": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "intraday_limit_up_shape"},
+        "output": {"type": "categorical", "values": ["impulse", "stepped", "sloped", "oscillating"]},
+        "missing_policy": "DATA_UNAVAILABLE",
+    },
+    "price_position_in_trend": {
+        "capability": "market.stock.history",
+        "arguments": {
+            "stock_code": "$subject.leader_code",
+            "as_of": "$subject.trade_date",
+            "lookback_sessions": 20,
+        },
+        "derive": {"metric": "position_in_trend"},
+        "output": {"type": "categorical", "values": ["early", "mid", "late"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "short_term_sentiment": {
+        "capability": "market.short_term_sentiment",
+        "arguments": {
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "short_term_sentiment_regime"},
+        "output": {"type": "categorical", "values": ["ice_point", "recovery", "diffusion", "climax", "fading"]},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+
+    # theme_screening requirements (L1: theme_tracking_v1 c02-c08)
+    "theme_mainline_flag": {
+        "capability": "market.mainline_environment",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "is_mainline"},
+        "output": {"type": "boolean"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "theme_stage_flags": {
+        "capability": "market.theme.constituents",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "stage_flags"},
+        "output": {"type": "dict"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "theme_limit_up_count": {
+        "capability": "market.limit_up_count",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "theme_limit_up_count"},
+        "output": {"type": "number"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "strong_stock_tracking_fields": {
+        "capability": "market.theme.constituents",
+        "arguments": {
+            "subject_key": "$subject.subject_key",
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "tracking_row_fields"},
+        "output": {"type": "list[dict]"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
+    "market_emotion_ice_point": {
+        "capability": "market.short_term_sentiment",
+        "arguments": {
+            "as_of": "$subject.trade_date",
+        },
+        "derive": {"metric": "premarket_emotion_ice_point"},
+        "output": {"type": "boolean"},
+        "missing_policy": "INSUFFICIENT_EVIDENCE",
+    },
 }
 
 

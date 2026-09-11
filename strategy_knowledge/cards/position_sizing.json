@@ -1,0 +1,138 @@
+{
+  "strategy_id": "position_sizing",
+  "name": "仓位控制",
+  "concept": "仓位",
+  "version": "2.0",
+  "created_at": "2026-09-11",
+  "derived_from_l1": true,
+
+  "market_phases": ["diffusion", "acceleration", "divergence", "fading_momentum"],
+
+  "trigger_conditions": [
+    "弱转强信号确认后，需要决定首次建仓规模",
+    "信号进一步加强（如竞价确认 A 级）后，需要决定是否加仓",
+    "个股角色（龙头/次龙头）或题材强度发生变化时"
+  ],
+
+  "required_data": [
+    "board_position",
+    "support_strength",
+    "theme_breadth_depth",
+    "auction_confirm_level",
+    "theme_fade_watch",
+    "market_regime"
+  ],
+
+  "possible_states": [
+    {
+      "state": "position_probe_light",
+      "evidence_pattern": {
+        "stage": "首次尝试",
+        "role": "弱转强信号初现，尚未确认"
+      },
+      "predicates": [
+        {"requirement_id": "support_strength", "operator": ">=", "value": 45, "role": "core"},
+        {"requirement_id": "auction_confirm_level", "operator": "in", "value": ["B", "C"], "role": "supporting"}
+      ],
+      "action": "size_1_to_2_tenths",
+      "confidence_modifier": 0.0,
+      "note": "首次尝试轻仓切入（1-2成仓位）"
+    },
+    {
+      "state": "position_main_leader_heavy",
+      "evidence_pattern": {
+        "theme": "主线题材",
+        "role": "绝对龙头",
+        "breadth": "题材深广度足够"
+      },
+      "predicates": [
+        {"requirement_id": "board_position", "operator": "eq", "value": "leader", "role": "decisive"},
+        {"requirement_id": "theme_breadth_depth", "operator": "eq", "value": "deep_wide", "role": "core"},
+        {"requirement_id": "theme_fade_watch", "operator": "eq", "value": false, "role": "core"}
+      ],
+      "action": "size_5_to_8_tenths",
+      "confidence_modifier": 0.3,
+      "note": "主线题材 + 绝对龙头，可加大仓位（5-8成）"
+    },
+    {
+      "state": "position_sub_leader_light",
+      "evidence_pattern": {
+        "role": "龙二 / 次龙头"
+      },
+      "predicates": [
+        {"requirement_id": "board_position", "operator": "eq", "value": "sub_leader", "role": "core"}
+      ],
+      "action": "size_2_to_4_tenths",
+      "confidence_modifier": 0.1,
+      "note": "龙二/次龙头仓位要轻（2-4成），防止假突破"
+    },
+    {
+      "state": "position_after_confirmation",
+      "evidence_pattern": {
+        "stage": "信号确认后"
+      },
+      "predicates": [
+        {"requirement_id": "auction_confirm_level", "operator": "eq", "value": "A", "role": "core"}
+      ],
+      "action": "size_to_medium",
+      "confidence_modifier": 0.15,
+      "note": "信号确认后可加仓至中等仓位"
+    },
+    {
+      "state": "position_fade_watch_reduce",
+      "evidence_pattern": {
+        "theme": "题材进入 fade_watch 或市场环境转弱"
+      },
+      "predicates": [
+        {"requirement_id": "theme_fade_watch", "operator": "eq", "value": true, "role": "decisive"},
+        {"requirement_id": "market_regime", "operator": "in", "value": ["contraction", "chaos"], "role": "core"}
+      ],
+      "action": "size_down_or_skip",
+      "confidence_modifier": -0.3,
+      "note": "退潮观察期或环境恶化 → 降仓或不参与"
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "该票是主线题材的绝对龙头，还是龙二/次龙头？",
+      "probes": ["board_position", "theme_breadth_depth"]
+    },
+    {
+      "question": "支撑力度是否足够（支撑评分是否达标）？",
+      "probes": ["support_strength"]
+    },
+    {
+      "question": "竞价确认级别是 A / B / C / X？",
+      "probes": ["auction_confirm_level"]
+    },
+    {
+      "question": "题材是否进入退潮观察（fade_watch）？",
+      "probes": ["theme_fade_watch", "market_regime"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "position_main_leader_heavy", "condition": "theme_enters_fade_watch", "new_state": "position_fade_watch_reduce"},
+    {"state": "position_probe_light", "condition": "auction_confirm_level_A", "new_state": "position_after_confirmation"},
+    {"state": "position_after_confirmation", "condition": "support_broken", "new_state": "position_fade_watch_reduce"}
+  ],
+
+  "provenance": {
+    "thresholds": "source_authored",
+    "thresholds_note": "1-2成 / 5-8成 / 2-4成 为原文明确数值；support_strength>=45 为工程翻译，尚未标定。",
+    "evidence_patterns": "source_authored"
+  },
+
+  "source_refs": [
+    {
+      "document_id": "weak_to_strong_v1",
+      "document_sha256": "84f33649b1071f337e6c2f02fd2c4421fe59b772c153b0a2e12201226d6035b0",
+      "chunk_id": "weak_to_strong_v1.c09",
+      "page": 4,
+      "section": "仓位控制",
+      "provenance_kind": "source_authored",
+      "text": "首次尝试：轻仓切入（1-2成仓位）。如果是 主线题材+绝对龙头，可加大仓位（5-8成）。如果是 龙二/次龙头，仓位要轻（2-4成），防止假突破。信号确认后：可加仓至中等仓位。切忌满仓梭哈，因为弱转强有“假动作”风险。"
+    }
+  ]
+}

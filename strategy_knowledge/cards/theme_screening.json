@@ -1,0 +1,154 @@
+{
+  "strategy_id": "theme_screening",
+  "name": "题材筛选与跟踪",
+  "concept": "题材跟踪",
+  "version": "2.0",
+  "created_at": "2026-09-11",
+  "derived_from_l1": true,
+
+  "market_phases": ["all"],
+
+  "trigger_conditions": [
+    "每日盘后需要按模板逐题材判定状态（是否主线 / 启动 / 发酵 / 分歧 / 弱转强 / 高潮 / 退潮）",
+    "需要按模板逐股票刷新强势股跟踪行",
+    "盘前需要判定大盘/板块情绪是否冰点"
+  ],
+
+  "required_data": [
+    "theme_catalyst_events",
+    "theme_mainline_flag",
+    "theme_stage_flags",
+    "theme_limit_up_count",
+    "strong_stock_tracking_fields",
+    "market_emotion_ice_point"
+  ],
+
+  "possible_states": [
+    {
+      "state": "theme_trackable",
+      "evidence_pattern": {
+        "mainline": "属于主线",
+        "stage": "处于发酵阶段，板块持续发酵",
+        "limit_up": "当日有多个涨停"
+      },
+      "predicates": [
+        {"requirement_id": "theme_mainline_flag", "operator": "eq", "value": true, "role": "decisive"},
+        {"requirement_id": "theme_stage_flags", "path": "fermentation", "operator": "eq", "value": true, "role": "core"},
+        {"requirement_id": "theme_limit_up_count", "operator": ">=", "value": 2, "role": "core"}
+      ],
+      "action": "track_and_watch_strong_stocks",
+      "confidence_modifier": 0.25,
+      "note": "板块持续发酵则纳入跟踪，刷新强势股跟踪表"
+    },
+    {
+      "state": "theme_w2s_opportunity",
+      "evidence_pattern": {
+        "stage": "板块内个股出现分歧走势，但板块仍在发酵"
+      },
+      "predicates": [
+        {"requirement_id": "theme_stage_flags", "path": "divergence", "operator": "eq", "value": true, "role": "core"},
+        {"requirement_id": "theme_stage_flags", "path": "fermentation", "operator": "eq", "value": true, "role": "supporting"}
+      ],
+      "action": "seek_weak_to_strong_candidates",
+      "confidence_modifier": 0.2,
+      "note": "此时可以寻找弱转强机会（原文结论原话）"
+    },
+    {
+      "state": "theme_fading",
+      "evidence_pattern": {
+        "stage": "进入退潮阶段"
+      },
+      "predicates": [
+        {"requirement_id": "theme_stage_flags", "path": "fading", "operator": "eq", "value": true, "role": "decisive"}
+      ],
+      "action": "stop_tracking",
+      "confidence_modifier": -0.35,
+      "note": "退潮阶段停止跟踪与参与"
+    },
+    {
+      "state": "theme_ice_point_no_trade",
+      "evidence_pattern": {
+        "environment": "盘前大盘情绪出现冰点"
+      },
+      "predicates": [
+        {"requirement_id": "market_emotion_ice_point", "operator": "eq", "value": true, "role": "decisive"}
+      ],
+      "action": "no_trade",
+      "confidence_modifier": -0.5,
+      "note": "重点关注大盘以及板块情绪，如果盘前大盘情绪出现冰点，切忌操作！！"
+    },
+    {
+      "state": "theme_not_mainline_ignore",
+      "evidence_pattern": {
+        "mainline": "不属于主线"
+      },
+      "predicates": [
+        {"requirement_id": "theme_mainline_flag", "operator": "eq", "value": false, "role": "core"}
+      ],
+      "action": "exclude_from_focus",
+      "confidence_modifier": -0.15,
+      "note": "非主线题材不纳入重点关注"
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "该题材是否属于主线？当前处于哪个阶段（启动/发酵/分歧/弱转强/高潮/退潮）？",
+      "probes": ["theme_mainline_flag", "theme_stage_flags"]
+    },
+    {
+      "question": "当日该题材涨停数是多少？",
+      "probes": ["theme_limit_up_count"]
+    },
+    {
+      "question": "强势股跟踪行需要哪些字段（是否领涨/涨停类型/资金性质/流通性质/涨停封单/技术形态/当日资金/是否次新/龙头属性）？",
+      "probes": ["strong_stock_tracking_fields"]
+    },
+    {
+      "question": "盘前大盘/板块情绪是否出现冰点？",
+      "probes": ["market_emotion_ice_point"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "theme_trackable", "condition": "stage_flags_fading_becomes_true", "new_state": "theme_fading"},
+    {"state": "theme_trackable", "condition": "premarket_emotion_ice_point", "new_state": "theme_ice_point_no_trade"},
+    {"state": "theme_w2s_opportunity", "condition": "theme_leaves_fermentation", "new_state": "theme_fading"}
+  ],
+
+  "provenance": {
+    "thresholds": "source_authored",
+    "thresholds_note": "本卡源自日常跟踪模板（真实案例：商业航天）。表格字段为运营口径；L1 标记 degraded_table，字段以原文表头为准。",
+    "evidence_patterns": "source_authored"
+  },
+
+  "source_refs": [
+    {
+      "document_id": "theme_tracking_v1",
+      "document_sha256": "b647f76744e1a597b0dff95d8496ba841a8c17407e6f2c671d13e233bfa91321",
+      "chunk_id": "theme_tracking_v1.c02",
+      "page": 1,
+      "section": "市场情绪判定表 — 逐题材判定模板",
+      "provenance_kind": "source_authored",
+      "text": "表头（逐题材复用）：是否属于主线 / 启动阶段？/ 发酵阶段？/ 是否分歧阶段 / 是否弱转强阶段 / 是否高潮阶段 / 是否退潮阶段 / 当日涨停数 / 结论。示例结论：板块受消息刺激，板块持续发酵，但是板块内个股出现分歧走势。此时可以寻找弱转强机会！"
+    },
+    {
+      "document_id": "theme_tracking_v1",
+      "document_sha256": "b647f76744e1a597b0dff95d8496ba841a8c17407e6f2c671d13e233bfa91321",
+      "chunk_id": "theme_tracking_v1.c03",
+      "page": 2,
+      "section": "强势股跟踪表 — 逐股票跟踪模板",
+      "provenance_kind": "source_authored",
+      "text": "表头（逐股票复用）：序号 / 股票名称 / 股票对应的题材是否正宗 / 板块 / 是否领涨 / 涨停类型 / 资金性质 / 流通性质 / 涨停封单 / 技术形态 / 当日资金情况 / 是否次新股 / 龙头属性 / Last edited time"
+    },
+    {
+      "document_id": "theme_tracking_v1",
+      "document_sha256": "b647f76744e1a597b0dff95d8496ba841a8c17407e6f2c671d13e233bfa91321",
+      "chunk_id": "theme_tracking_v1.c08",
+      "page": 31,
+      "section": "操作纪律 — 盘前大盘情绪冰点切忌操作",
+      "provenance_kind": "source_authored",
+      "text": "重点关注大盘以及板块情绪，如果盘前大盘情绪出现冰点，切忌操作！！"
+    }
+  ]
+}

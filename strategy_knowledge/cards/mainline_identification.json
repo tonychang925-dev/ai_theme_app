@@ -1,0 +1,136 @@
+{
+  "strategy_id": "mainline_identification",
+  "name": "主线识别",
+  "concept": "主线",
+  "version": "2.0",
+  "created_at": "2026-09-11",
+  "derived_from_l1": true,
+
+  "market_phases": ["all"],
+
+  "trigger_conditions": [
+    "一个新题材出现，需要判断是否值得参与",
+    "题材异动排名靠前，需要判断它是主线还是小热点",
+    "Julia 准备对某题材相关个股给出观察结论之前",
+    "主线身份低频确认（确认后做周期跟踪，不做日重判）"
+  ],
+
+  "required_data": [
+    "theme_catalyst_events",
+    "theme_logic_attributes",
+    "theme_capital_acceptance",
+    "theme_mainline_environment"
+  ],
+
+  "possible_states": [
+    {
+      "state": "mainline_confirmed",
+      "evidence_pattern": {
+        "logic": "新颖度高 + 出现于低潮混沌期 + 影响面广",
+        "market": "持续被更多资金买入认可",
+        "environment": "非盛极而衰的大盘环境"
+      },
+      "predicates": [
+        {"requirement_id": "theme_capital_acceptance", "operator": "eq", "value": "accepted", "role": "decisive"},
+        {"requirement_id": "theme_mainline_environment", "operator": "in", "value": ["healthy", "neutral"], "role": "core"},
+        {"requirement_id": "theme_logic_attributes", "path": "novelty", "operator": "in", "value": ["high", "medium"], "role": "core"},
+        {"requirement_id": "theme_logic_attributes", "path": "timing", "operator": "eq", "value": "low_tide_chaos", "role": "core"},
+        {"requirement_id": "theme_logic_attributes", "path": "breadth", "operator": "in", "value": ["broad", "medium"], "role": "supporting"}
+      ],
+      "action": "participate_only_this_mainline",
+      "confidence_modifier": 0.25,
+      "note": "只参与主线题材相关个股；大热点大干，不热衷小热点"
+    },
+    {
+      "state": "logic_only_market_rejects",
+      "evidence_pattern": {
+        "logic": "逻辑符合三特征",
+        "market": "资金不认可 / 无持续性"
+      },
+      "predicates": [
+        {"requirement_id": "theme_capital_acceptance", "operator": "eq", "value": "rejected", "role": "decisive"}
+      ],
+      "action": "abandon",
+      "confidence_modifier": -0.3,
+      "note": "逻辑符合但市场不相信 → 果断放弃，不参与"
+    },
+    {
+      "state": "not_mainline",
+      "evidence_pattern": {
+        "logic": "新颖度/时机/影响广度至少一项不满足",
+        "market": "—"
+      },
+      "predicates": [
+        {"requirement_id": "theme_logic_attributes", "path": "novelty", "operator": "eq", "value": "low", "role": "decisive"}
+      ],
+      "action": "no_participation",
+      "confidence_modifier": -0.2,
+      "note": "不满足两个维度条件的题材都不能算主线，尽量不参与操作"
+    },
+    {
+      "state": "under_evaluation",
+      "evidence_pattern": {
+        "logic": "新题材，逻辑待定性",
+        "market": "资金态度未明"
+      },
+      "predicates": [
+        {"requirement_id": "theme_capital_acceptance", "operator": "eq", "value": "mixed", "role": "core"}
+      ],
+      "action": "observe_and_probe",
+      "confidence_modifier": 0.0,
+      "note": "新题材才触发身份增量评估；历史题材默认不重评"
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "该题材的逻辑是否满足新颖度、时机、影响广度三大特征？",
+      "probes": ["theme_logic_attributes", "theme_catalyst_events"]
+    },
+    {
+      "question": "市场资金是否持续买入并认可该题材？",
+      "probes": ["theme_capital_acceptance"]
+    },
+    {
+      "question": "题材来源属于政策 / 技术创新 / 重大事件 / 行业周期 / 资产重组中的哪一类？",
+      "probes": ["theme_catalyst_events"]
+    },
+    {
+      "question": "当前大盘环境是否允许做龙头（是否盛极而衰）？",
+      "probes": ["theme_mainline_environment"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "mainline_confirmed", "condition": "capital_acceptance_degrades_to_rejected", "new_state": "logic_only_market_rejects"},
+    {"state": "under_evaluation", "condition": "capital_acceptance_rejected", "new_state": "not_mainline"},
+    {"state": "under_evaluation", "condition": "logic_attributes_fail_novelty", "new_state": "not_mainline"}
+  ],
+
+  "provenance": {
+    "thresholds": "strategy_authored_qualitative",
+    "thresholds_note": "本文档仅给定性判定条件（新颖度/时机/影响广度），不含数值阈值；数值化需人工标定。",
+    "evidence_patterns": "source_authored"
+  },
+
+  "source_refs": [
+    {
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c01",
+      "page": 1,
+      "section": "抓市场主线(35%) — 主线的判定 / 题材的来源",
+      "provenance_kind": "source_authored",
+      "text": "题材的来源：1、政策是题材的第一沃土…2、技术创新；3、重大事件；4、行业周期；5、资产重组。真正的炒作热点是炒刚刚被挖掘的热点，最好是大家还处于怀疑和犹豫的时候介入！大热点题材出大牛股…大热点大干，小热点不干。"
+    },
+    {
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c02",
+      "page": 1,
+      "section": "主线的判定需要从两大维度考虑：逻辑与市场",
+      "provenance_kind": "source_authored",
+      "text": "1）逻辑…新颖度：题材越新颖，越有炒作机会；时机：新的题材出现时机在市场处低潮混沌期间，成为主线的可能性越大；影响广度：影响越深远，影响人群越多，越有想象空间。2）市场…持续被更多的资金买入和认可，即使题材逻辑符合了，但是市场不相信，题材也没有持续性，因此也要果断放弃。凡是不满足上述两个维度条件的题材都不能算主线，尽量不参与操作！"
+    }
+  ]
+}

@@ -2,8 +2,10 @@
   "strategy_id": "theme_lifecycle",
   "name": "题材生命周期",
   "concept": "题材周期",
-  "version": "1.0",
+  "version": "2.0",
   "created_at": "2026-08-07",
+  "updated_at": "2026-09-11",
+  "derived_from_l1": true,
 
   "market_phases": ["all"],
 
@@ -67,8 +69,16 @@
       "julia_taxonomy_analog": "NOT IN CURRENT TAXONOMY"
     },
     {
-      "state": "分歧补涨",
+      "state": "再次高潮离场",
       "order": 5,
+      "features": "龙头开始分歧，连板次数开始大面积降级，打板数量逐日下降",
+      "operation": "止盈离场",
+      "duration": "1-3 days",
+      "julia_taxonomy_analog": "acceleration (late) / peak"
+    },
+    {
+      "state": "分歧补涨",
+      "order": 6,
       "features": "高标龙头再次分歧，后排出现补涨行情",
       "operation": "观望，不参与跟风股二次分歧",
       "rules": [
@@ -80,7 +90,7 @@
     },
     {
       "state": "退潮放弃",
-      "order": 6,
+      "order": 7,
       "features": "板块大面积跌停，龙头连续下跌",
       "operation": "彻底观望，不参与任何反弹",
       "duration": "until new cycle",
@@ -95,30 +105,63 @@
     },
     {
       "question": "题材是否已经过度透支？",
-      "probes": ["volume_trend", "capital_flow_trend", "breadth_trend"]
+      "probes": ["limit_up_count_trend", "capital_flow_trend", "breadth_trend"]
+    },
+    {
+      "question": "是否已从首次高潮进入再次高潮（连板降级、打板数量逐日下降）？",
+      "probes": ["leader_board_height", "limit_up_count_trend"]
     }
   ],
 
   "invalidations": [
     {"state": "发酵进场", "condition": "no_3_board_leader_within_5_days", "new_state": "初期试错或题材失败"},
     {"state": "分歧关注", "condition": "next_day_weak_to_strong", "new_state": "弱转强切入"},
-    {"state": "分歧关注", "condition": "leader_continues_decline_no_defense", "new_state": "退潮放弃"}
+    {"state": "分歧关注", "condition": "leader_continues_decline_no_defense", "new_state": "退潮放弃"},
+    {"state": "再次高潮离场", "condition": "breadth_collapses", "new_state": "退潮放弃"}
   ],
+
+  "provenance": {
+    "thresholds": "source_authored",
+    "thresholds_note": "“连续3天超10家涨停”“换手<50%”为原文数值；其余为定性描述。",
+    "evidence_patterns": "source_authored"
+  },
 
   "source_refs": [
     {
-      "document": "如何建立正确的交易体系.pdf",
-      "version": "2026.07",
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c03",
       "page": 2,
-      "section": "看市场情绪（30%）— 找准切入周期",
-      "text": "市场的情绪轨迹包括：市场初期→市场发酵→市场加速→市场高潮→市场分歧→市场退潮→周期结束"
+      "section": "看市场情绪(30%) — 市场情绪轨迹七阶段",
+      "provenance_kind": "source_authored",
+      "text": "市场的情绪轨迹包括：市场初期（犹豫，试探性买入试错）→市场发酵（股价开始上涨，开心）→ 市场加速（股价连续上涨，兴奋）→ 市场高潮（板块集体高潮，狂热）→ 市场分歧（买盘不足较多观望，再次犹豫）→ 市场退潮（股价加速下跌，恐惧、痛苦）→周期结束（市场重新进入犹豫、观望），周而复始。"
     },
     {
-      "document": "如何建立正确的交易体系.pdf",
-      "version": "2026.07",
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c05",
       "page": 2,
-      "section": "相对确定性的行情的判断依据",
-      "text": "大环境保护：大盘如果是盛极而衰行情，坚决不能做龙头股。小环境安全：板块行情健康。个股具有高胜算：选对强股，选对位置。"
+      "section": "阶段一 初期-试错 / 阶段二 发酵-进场",
+      "provenance_kind": "source_authored",
+      "text": "初期-试错…特征：1-3只股票涨停，板块异动排名靠前，消息集中爆发。操作：关注第一个换手板龙头，轻仓试探打板或低吸前排人气股…发酵-进场（主线题材出现2次领涨）特征：板块内出现首个3连板以上龙头，资金开始抱团，主升浪开启。"
+    },
+    {
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c07",
+      "page": 3,
+      "section": "阶段四 分歧-关注（含买/不买判定规则）",
+      "provenance_kind": "source_authored",
+      "text": "特征：板块上龙头或次龙头出现首阴分歧。操作：密切关注第二天龙头股是否会再次反包，实现弱转强行情…注意：1、如果大盘环境好，指数在上涨，对应的板块也在上涨，此时龙头股出现的分歧绝不能买！2、如果大盘大环境不好出现的被动分歧，但是出现：1）盘口承接力好；2）收盘价有控制在关键点位上；3）换手率<50%,20%以内最好…此时龙头股的分歧可以买。"
+    },
+    {
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c09",
+      "page": 3,
+      "section": "阶段六 再次高潮-离场 / 阶段七 分歧-补涨 / 阶段八 退潮-放弃",
+      "provenance_kind": "source_authored",
+      "text": "再次高潮-离场：特征：板块上龙头开始分歧和连板次数开始大面积降级，打板数量逐日下降。操作：止盈离场。分歧-补涨：特征：板块上高标龙头再次出现分歧、此时后排出现补涨行情。操作：不参与跟风股的二次分歧…退潮-放弃：特征：板块开始大面积跌停，龙头也出现连续下跌。操作：观望。"
     }
   ]
 }

@@ -1,0 +1,186 @@
+{
+  "strategy_id": "entry_timing",
+  "name": "买点识别",
+  "concept": "买点",
+  "version": "2.0",
+  "created_at": "2026-09-11",
+  "derived_from_l1": true,
+
+  "market_phases": ["diffusion", "acceleration", "divergence", "fading_momentum"],
+
+  "trigger_conditions": [
+    "候选票已确认为龙头或次龙头，需要判断具体买卖时机",
+    "弱转强确认后的次日盘中",
+    "盘中出现放量拉升或突破，需要判断是真买点还是诱多"
+  ],
+
+  "required_data": [
+    "intraday_ma_status",
+    "intraday_volume_expansion",
+    "intraday_platform_break",
+    "macd_divergence_state",
+    "key_level_status",
+    "premarket_market_checks"
+  ],
+
+  "possible_states": [
+    {
+      "state": "buy_platform_breakout",
+      "evidence_pattern": {
+        "intraday": "突破长达半小时以上的分时盘整平台",
+        "volume": "放量",
+        "ma": "即时交易线在分时均线上方"
+      },
+      "predicates": [
+        {"requirement_id": "intraday_platform_break", "operator": "eq", "value": true, "role": "core"},
+        {"requirement_id": "intraday_volume_expansion", "operator": "eq", "value": "expanding", "role": "core"},
+        {"requirement_id": "intraday_ma_status", "operator": "in", "value": ["above"], "role": "supporting"},
+        {"requirement_id": "macd_divergence_state", "operator": "!=", "value": "top_divergence", "role": "supporting"}
+      ],
+      "action": "buy_on_breakout",
+      "confidence_modifier": 0.25,
+      "note": "放量突破瞬间买入；买入时机是在放量的几分钟内"
+    },
+    {
+      "state": "buy_ma_reclaim",
+      "evidence_pattern": {
+        "intraday": "跌破均价线后主力资金快速拉升回到均价线之上",
+        "volume": "放量拉升，大部分时间在分时均线上"
+      },
+      "predicates": [
+        {"requirement_id": "intraday_ma_status", "operator": "eq", "value": "above", "role": "core"},
+        {"requirement_id": "intraday_volume_expansion", "operator": "in", "value": ["expanding", "flat"], "role": "core"}
+      ],
+      "action": "buy_on_reclaim",
+      "confidence_modifier": 0.15,
+      "note": "盘中弱转强信号：从分时均线之下站上均线"
+    },
+    {
+      "state": "buy_on_pullback",
+      "evidence_pattern": {
+        "intraday": "回踩支撑（5日/10日线、均价线）",
+        "volume": "放量上攻"
+      },
+      "predicates": [
+        {"requirement_id": "key_level_status", "path": "state", "operator": "in", "value": ["intact", "testing"], "role": "core"},
+        {"requirement_id": "intraday_volume_expansion", "operator": "eq", "value": "expanding", "role": "supporting"}
+      ],
+      "action": "buy_on_pullback_confirmation",
+      "confidence_modifier": 0.1,
+      "note": "趋势转强买入：回踩支撑后放量突破"
+    },
+    {
+      "state": "reject_shrinking_rally",
+      "evidence_pattern": {
+        "intraday": "即时交易线快速远离分时均线",
+        "volume": "分时成交量缩减",
+        "macd": "顶背离 / 红柱缩头死叉"
+      },
+      "predicates": [
+        {"requirement_id": "macd_divergence_state", "operator": "eq", "value": "top_divergence", "role": "core"},
+        {"requirement_id": "intraday_volume_expansion", "operator": "eq", "value": "shrinking", "role": "core"}
+      ],
+      "action": "observe_do_not_buy",
+      "confidence_modifier": -0.3,
+      "note": "缩量拉升诱多行为，此时需观望"
+    },
+    {
+      "state": "reject_no_volume",
+      "evidence_pattern": {
+        "intraday": "价格走强但不放量"
+      },
+      "predicates": [
+        {"requirement_id": "intraday_volume_expansion", "operator": "!=", "value": "expanding", "role": "decisive"}
+      ],
+      "action": "no_buy",
+      "confidence_modifier": -0.25,
+      "note": "必须有放量才可以做买入交易，不放量不买；即时交易线跌破分时均线坚决不买"
+    },
+    {
+      "state": "abstain",
+      "evidence_pattern": {
+        "environment": "盘前市场检查不通过 / 环境不好"
+      },
+      "predicates": [
+        {"requirement_id": "key_level_status", "path": "state", "operator": "eq", "value": "broken", "role": "decisive"}
+      ],
+      "action": "abstain",
+      "confidence_modifier": -0.2,
+      "note": "凡是不符合原则的都是空仓观望，宁愿错过等待下次机会"
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "即时交易线是否在分时均线上方，且伴随放量？",
+      "probes": ["intraday_ma_status", "intraday_volume_expansion"]
+    },
+    {
+      "question": "是否突破半小时以上的分时盘整平台？",
+      "probes": ["intraday_platform_break"]
+    },
+    {
+      "question": "是否出现 MACD 顶背离或红柱缩头死叉（诱多特征）？",
+      "probes": ["macd_divergence_state"]
+    },
+    {
+      "question": "盘前涨跌停家数、板块涨幅、昨日热点延续性是否支持今日接力？",
+      "probes": ["premarket_market_checks"]
+    },
+    {
+      "question": "回踩的关键支撑（5日/10日线、前低、前板封单价）是否有效？",
+      "probes": ["key_level_status"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "buy_platform_breakout", "condition": "price_falls_back_below_platform", "new_state": "reject_shrinking_rally"},
+    {"state": "buy_ma_reclaim", "condition": "price_loses_vwap_with_shrinking_volume", "new_state": "reject_no_volume"},
+    {"state": "buy_on_pullback", "condition": "key_level_broken", "new_state": "abstain"}
+  ],
+
+  "provenance": {
+    "thresholds": "strategy_authored_qualitative",
+    "thresholds_note": "半小时分时平台、放量/缩量为定性判定；分时买点1-4 原为示意图，L1 标记为 partial_image，此处仅保留文字可考部分。",
+    "evidence_patterns": "source_authored"
+  },
+
+  "source_refs": [
+    {
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c13",
+      "page": 4,
+      "section": "找准买点(15%) — 交易前准备 / 临盘原则 / 三个买入时机",
+      "provenance_kind": "source_authored",
+      "text": "临盘交易的时候，牢记几个原则：变化修正计划，交易服从变化，交易你所见，而非你所想！…买前宜慢，千挑万选，卖时宜快，手起刀落！3个买入时机：题材发酵阶段…二次领涨龙头初期上涨靠抢！龙头分歧反包阶段；出现龙头暴量换手板时刻。"
+    },
+    {
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c14",
+      "page": 5,
+      "section": "分时盘口判定 / 分时买点1-4",
+      "provenance_kind": "source_authored",
+      "text": "即时交易线不跌破分时均线，代表当天的走势强，但是必须有放量才可以做买入交易，不放量不买！买入时机是在放量的几分钟内。反之，即时交易线跌破分时均线，代表是弱势，坚决不买股！分时买点1: 放量突破瞬间 / 分时买点2: 放量突破均价线 / 分时买点3: 分时攻击波回踩 / 分时买点4: 虎踞龙盘走势，MACD背离且过零轴时"
+    },
+    {
+      "document_id": "trading_system_v1",
+      "document_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+      "chunk_id": "trading_system_v1.c15",
+      "page": 5,
+      "section": "缩量拉升诱多识别",
+      "provenance_kind": "source_authored",
+      "text": "如果即时交易线快速的远离分时均线，如果分时成交量缩减并配合MACD出现顶背离，或MACD红柱缩头死叉，大概率价格要回落，属于缩量拉升诱多行为，此时需观望！"
+    },
+    {
+      "document_id": "weak_to_strong_v1",
+      "document_sha256": "84f33649b1071f337e6c2f02fd2c4421fe59b772c153b0a2e12201226d6035b0",
+      "chunk_id": "weak_to_strong_v1.c08",
+      "page": 4,
+      "section": "介入时机与最佳买点",
+      "provenance_kind": "source_authored",
+      "text": "在分歧次日，盘中回踩承接确认后果断打板或半路跟进。分时弱转强板买入：个股低开 → 震荡 → 突然直线拉升封板，快速上车。反包板买入：前一天收阴线或大分歧，次日强势放量突破前高。趋势转强买入：回踩支撑（5日/10日线）后放量突破。分时均线支撑点放量上攻时；反包涨停瞬间果断上车。"
+    }
+  ]
+}

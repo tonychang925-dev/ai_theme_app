@@ -1,0 +1,132 @@
+{
+  "strategy_id": "exit_rules",
+  "name": "止盈止损",
+  "concept": "卖出",
+  "version": "2.0",
+  "created_at": "2026-09-11",
+  "derived_from_l1": true,
+
+  "market_phases": ["diffusion", "acceleration", "divergence", "fading_momentum"],
+
+  "trigger_conditions": [
+    "持仓中，反包日收盘需要判定是否失败",
+    "日线跌破关键支撑（10日线 / 前低）",
+    "题材进入退潮，需要判定是否降仓/清仓"
+  ],
+
+  "required_data": [
+    "reverse_package_status",
+    "key_level_status",
+    "ma10_status",
+    "previous_low_status",
+    "theme_fade_status"
+  ],
+
+  "possible_states": [
+    {
+      "state": "hold_for_second_wave",
+      "evidence_pattern": {
+        "reverse_package": "成功反包",
+        "trend": "站上关键价位"
+      },
+      "predicates": [
+        {"requirement_id": "reverse_package_status", "operator": "eq", "value": "success", "role": "decisive"},
+        {"requirement_id": "key_level_status", "path": "state", "operator": "in", "value": ["intact", "intact_limit_up"], "role": "core"}
+      ],
+      "action": "hold_for_second_wave_or_acceleration",
+      "confidence_modifier": 0.2,
+      "note": "成功反包后可持股待涨，等待二波或高度加速"
+    },
+    {
+      "state": "reduce_on_reverse_fail",
+      "evidence_pattern": {
+        "reverse_package": "失败",
+        "price": "当天不能重新站上关键价位（前高 / 前板封单价）"
+      },
+      "predicates": [
+        {"requirement_id": "reverse_package_status", "operator": "eq", "value": "failed", "role": "decisive"},
+        {"requirement_id": "key_level_status", "path": "state", "operator": "in", "value": ["testing", "broken"], "role": "core"}
+      ],
+      "action": "reduce_or_stop_loss",
+      "confidence_modifier": -0.3,
+      "note": "一旦反包失败、当天不能重新站上关键价位，必须减仓或止损"
+    },
+    {
+      "state": "exit_on_support_break",
+      "evidence_pattern": {
+        "daily": "日线跌破支撑位（10日线 / 前低）"
+      },
+      "predicates": [
+        {"requirement_id": "ma10_status", "operator": "eq", "value": "below", "role": "core"},
+        {"requirement_id": "previous_low_status", "operator": "in", "value": ["below", "testing"], "role": "core"}
+      ],
+      "action": "reduce_immediately_or_clear",
+      "confidence_modifier": -0.35,
+      "note": "日线跌破支撑位 → 立刻减仓或清仓"
+    },
+    {
+      "state": "exit_theme_fade",
+      "evidence_pattern": {
+        "theme": "题材 fade 确认"
+      },
+      "predicates": [
+        {"requirement_id": "theme_fade_status", "operator": "eq", "value": "fade_confirmed", "role": "decisive"}
+      ],
+      "action": "clear_position",
+      "confidence_modifier": -0.4,
+      "note": "题材退潮确认 → 清仓离场"
+    },
+    {
+      "state": "hold_no_action",
+      "evidence_pattern": {
+        "trend": "未破支撑，反包未失败"
+      },
+      "predicates": [
+        {"requirement_id": "reverse_package_status", "operator": "eq", "value": "pending", "role": "core"},
+        {"requirement_id": "ma10_status", "operator": "in", "value": ["above", "testing"], "role": "supporting"}
+      ],
+      "action": "hold",
+      "confidence_modifier": 0.0,
+      "note": "支撑未破、反包未失败 → 持股观察"
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "反包结果是成功、失败，还是待定？",
+      "probes": ["reverse_package_status", "key_level_status"]
+    },
+    {
+      "question": "日线是否跌破 10 日线或前低？",
+      "probes": ["ma10_status", "previous_low_status"]
+    },
+    {
+      "question": "题材是否已进入退潮确认（fade_confirmed）？",
+      "probes": ["theme_fade_status"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "hold_for_second_wave", "condition": "later_reverse_fail", "new_state": "reduce_on_reverse_fail"},
+    {"state": "hold_no_action", "condition": "ma10_broken", "new_state": "exit_on_support_break"},
+    {"state": "reduce_on_reverse_fail", "condition": "theme_fade_confirmed", "new_state": "exit_theme_fade"}
+  ],
+
+  "provenance": {
+    "thresholds": "strategy_authored_qualitative",
+    "thresholds_note": "本文档仅给条件，无数值阈值；“关键价位”指前高 / 前板封单价。",
+    "evidence_patterns": "source_authored"
+  },
+
+  "source_refs": [
+    {
+      "document_id": "weak_to_strong_v1",
+      "document_sha256": "84f33649b1071f337e6c2f02fd2c4421fe59b772c153b0a2e12201226d6035b0",
+      "chunk_id": "weak_to_strong_v1.c10",
+      "page": 4,
+      "section": "止盈止损",
+      "provenance_kind": "source_authored",
+      "text": "一旦反包失败，当天不能重新站上关键价位（如前高/前板封单价），必须减仓或止损。成功反包后，可持股待涨，等待二波或高度加速。日线跌破支撑位（10日线/前低） → 立刻减仓或清仓。"
+    }
+  ]
+}

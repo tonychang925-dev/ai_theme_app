@@ -1,0 +1,187 @@
+{
+  "strategy_id": "auction_confirmation",
+  "name": "集合竞价确认",
+  "concept": "竞价",
+  "version": "2.0",
+  "created_at": "2026-09-11",
+  "derived_from_l1": true,
+
+  "market_phases": ["divergence", "fading_momentum", "diffusion"],
+
+  "trigger_conditions": [
+    "T+1 盘前 9:20–9:25，候选池个股进入竞价确认阶段",
+    "候选弱转强个股需要判定开盘是否符合预期",
+    "需要判断板块内龙二/龙三是否有溢价、是否出现卡位龙"
+  ],
+
+  "required_data": [
+    "auction_strength",
+    "open_gap",
+    "auction_stability",
+    "auction_last_minute_ratio",
+    "auction_volume_ratio",
+    "sector_sync_strength",
+    "peer_premium"
+  ],
+
+  "possible_states": [
+    {
+      "state": "auction_confirmed_strong",
+      "evidence_pattern": {
+        "stability": "9:20–9:25 走势稳定，无大起大落、无急跌",
+        "pattern": "符合最佳图形之一（倒L+上坡 / 红盘阶梯 / 锥形+U / 上翘一字 / 倒L+U / 一字上翘+阶梯）",
+        "gap": "高开 3%–5%",
+        "volume": "竞价量能达到前一日最大分时量的 1/2",
+        "last_minute": "9:24–9:25 竞价单明显放大（抢筹）"
+      },
+      "predicates": [
+        {"requirement_id": "auction_stability", "operator": "eq", "value": "stable", "role": "decisive"},
+        {"requirement_id": "open_gap", "operator": ">=", "value": 0.03, "role": "core"},
+        {"requirement_id": "open_gap", "operator": "<=", "value": 0.05, "role": "core"},
+        {"requirement_id": "auction_volume_ratio", "operator": ">=", "value": 0.5, "role": "core"},
+        {"requirement_id": "auction_last_minute_ratio", "operator": "eq", "value": "scramble", "role": "supporting"},
+        {"requirement_id": "sector_sync_strength", "operator": "eq", "value": "synced_strong", "role": "supporting"}
+      ],
+      "action": "confirm_entry",
+      "confidence_modifier": 0.3,
+      "note": "两个条件（量能达标 + 高开3-5%）可筛掉大部分承接力弱的股票"
+    },
+    {
+      "state": "auction_confirmed_moderate",
+      "evidence_pattern": {
+        "stability": "走势基本稳定",
+        "gap": "红盘但未达 3%–5% 区间",
+        "volume": "量能接近但未达 1/2"
+      },
+      "predicates": [
+        {"requirement_id": "auction_stability", "operator": "eq", "value": "stable", "role": "core"},
+        {"requirement_id": "open_gap", "operator": ">=", "value": 0.0, "role": "core"},
+        {"requirement_id": "auction_volume_ratio", "operator": "<", "value": 0.5, "role": "supporting"}
+      ],
+      "action": "confirm_with_light_position",
+      "confidence_modifier": 0.1,
+      "note": "确认但降级，配合 position_sizing 的轻仓档"
+    },
+    {
+      "state": "auction_reject_tail_crash",
+      "evidence_pattern": {
+        "stability": "9:24 后出现连续压单 / 价格急跌"
+      },
+      "predicates": [
+        {"requirement_id": "auction_stability", "operator": "eq", "value": "tail_crash", "role": "decisive"}
+      ],
+      "action": "block_entry",
+      "confidence_modifier": -0.4,
+      "note": "尾段急跌是硬规则 → 直接剔除"
+    },
+    {
+      "state": "auction_leader_below_expectation",
+      "evidence_pattern": {
+        "leader": "龙头不符合预期开盘",
+        "sector": "板块情绪走弱"
+      },
+      "predicates": [
+        {"requirement_id": "auction_strength", "operator": "eq", "value": "weak", "role": "decisive"},
+        {"requirement_id": "sector_sync_strength", "operator": "eq", "value": "synced_weak", "role": "core"}
+      ],
+      "action": "avoid_sector",
+      "confidence_modifier": -0.35,
+      "note": "龙头不符合预期开盘代表情绪走弱，要规避相关板块的个股"
+    },
+    {
+      "state": "auction_insufficient_data",
+      "evidence_pattern": {
+        "data": "竞价数据缺失或为代理数据"
+      },
+      "predicates": [
+        {"requirement_id": "auction_stability", "operator": "eq", "value": "unavailable", "role": "decisive"}
+      ],
+      "action": "downgrade_to_observation",
+      "confidence_modifier": -0.2,
+      "note": "数据不可用 → 降级为观察，不得伪造确认"
+    }
+  ],
+
+  "research_questions": [
+    {
+      "question": "9:20–9:25 竞价走势是否稳定，有无大起大落或急跌？",
+      "probes": ["auction_stability"]
+    },
+    {
+      "question": "9:24–9:25 最后一分钟是否出现竞价单明显放大的抢筹？",
+      "probes": ["auction_last_minute_ratio"]
+    },
+    {
+      "question": "竞价量能是否达到前一日最大分时量的 1/2？",
+      "probes": ["auction_volume_ratio"]
+    },
+    {
+      "question": "高开幅度是否落在 3%–5% 区间？",
+      "probes": ["open_gap"]
+    },
+    {
+      "question": "板块内龙二/龙三是否有溢价？是否出现卡位龙？",
+      "probes": ["peer_premium", "sector_sync_strength"]
+    }
+  ],
+
+  "invalidations": [
+    {"state": "auction_confirmed_strong", "condition": "tail_crash_detected_before_925", "new_state": "auction_reject_tail_crash"},
+    {"state": "auction_confirmed_moderate", "condition": "leader_opens_below_expectation", "new_state": "auction_leader_below_expectation"},
+    {"state": "auction_confirmed_strong", "condition": "auction_data_missing", "new_state": "auction_insufficient_data"}
+  ],
+
+  "provenance": {
+    "thresholds": "source_authored",
+    "thresholds_note": "高开3%-5%、量能1/2 为原文明确数值。六种最佳图形原为示意图，L1 标记 partial_image。",
+    "evidence_patterns": "source_authored"
+  },
+
+  "source_refs": [
+    {
+      "document_id": "auction_v1",
+      "document_sha256": "89f0658b81b554c022fb000c9444723cd02c9acb5ec22a70f483a84c77c7ee80",
+      "chunk_id": "auction_v1.c01",
+      "page": 1,
+      "section": "集合竞价分时走势 — 9:20–9:25 稳定性要求",
+      "provenance_kind": "source_authored",
+      "text": "真实集合竞价（9:20～9:25）分时走势要稳定，不要出现大起大落，或者在临近结束时才出现小幅波动，不能有急跌走势。"
+    },
+    {
+      "document_id": "auction_v1",
+      "document_sha256": "89f0658b81b554c022fb000c9444723cd02c9acb5ec22a70f483a84c77c7ee80",
+      "chunk_id": "auction_v1.c02",
+      "page": 2,
+      "section": "集合竞价的最佳走势 — 六种图形",
+      "provenance_kind": "source_authored",
+      "text": "最佳图形之一：倒L型+上坡型…最佳图形之二：红盘区阶梯型（注意：一定要是在0轴之上的红盘区，同时量能要逐步放大！）…最佳图形之三：红盘区的锥形+U形…最佳图形之四：红盘区的上翘一字型…最佳图形之五：倒L型+U形…最佳图形之六：一字上翘形+阶梯向上形"
+    },
+    {
+      "document_id": "auction_v1",
+      "document_sha256": "89f0658b81b554c022fb000c9444723cd02c9acb5ec22a70f483a84c77c7ee80",
+      "chunk_id": "auction_v1.c03",
+      "page": 5,
+      "section": "集合竞价分时明细 — 9:24–9:25 最后一分钟抢筹",
+      "provenance_kind": "source_authored",
+      "text": "重点关注最后一分钟，9:24～9:25分的盘口竞价分时明细，是否出现竞价单明显放大的抢筹情况！"
+    },
+    {
+      "document_id": "auction_v1",
+      "document_sha256": "89f0658b81b554c022fb000c9444723cd02c9acb5ec22a70f483a84c77c7ee80",
+      "chunk_id": "auction_v1.c04",
+      "page": 6,
+      "section": "集合竞价重点关注 — 弱转强的板块和个股",
+      "provenance_kind": "source_authored",
+      "text": "如果龙头正常预期开盘（一字板没有买入机会），关注板块内的龙二和龙三是否有溢价；如果龙头不符合预期开盘，代表情绪走弱，要规避相关的板块的个股；关注板块内是否出现卡位龙；关注量价抬升，资金积极抢筹的个股；横向对比，昨天栏板或者炸板的个股，是否会出现弱转强信号！"
+    },
+    {
+      "document_id": "auction_v1",
+      "document_sha256": "89f0658b81b554c022fb000c9444723cd02c9acb5ec22a70f483a84c77c7ee80",
+      "chunk_id": "auction_v1.c05",
+      "page": 6,
+      "section": "集合竞价与涨停的关系 — 承接力与量能标准",
+      "provenance_kind": "source_authored",
+      "text": "集合竞价主要看资金的承接力…观察早盘9:25的量能，与上一个交易日的盘中分时最大的量能对比…如果能够达到上一个交易日的最大量能的1/2，则代表当天的买盘力量强。同时，如果在满足成交量的条件下能够高开的股票，最好是%3～5%，当日继续涨停的概率高！通过以上两个条件，可以筛选掉大部分的承接力较弱的股票，提高选股的准确度！"
+    }
+  ]
+}
