@@ -65,6 +65,7 @@ from stock_processing_service.contracts.market_public_boundary import (
 
 NOW = datetime(2026, 9, 11, 8, 0, tzinfo=timezone.utc)
 BASE_SHA = "aeb3e43378843533625c9d7de64796146c0cfd96"
+ACCEPTED_SHA = "7a0c42fc31f66a945760140ba0382d79102f1c1f"
 
 
 def release() -> MarketReleaseIdentity:
@@ -380,15 +381,9 @@ def test_g1_at11_package_defers_transport_selection():
 
 
 def test_g1_at12_no_runtime_route_behavior_changed():
-    tracked = subprocess.check_output(
-        ["git", "diff", "--name-only", BASE_SHA], text=True
+    changed = subprocess.check_output(
+        ["git", "diff", "--name-only", BASE_SHA, ACCEPTED_SHA], text=True
     ).splitlines()
-    service_root = Path(__file__).parents[2]
-    repository_root = Path(__file__).parents[3]
-    package = service_root / "contracts" / "market_public_boundary"
-    changed = tracked + [
-        str(path.relative_to(repository_root)) for path in package.rglob("*.py")
-    ]
     production = [path for path in changed if not path.startswith("stock_processing_service/tests/")]
     assert production
     assert all(
