@@ -5,12 +5,14 @@
   "as_of": "2026-07-14T15:30:00+08:00",
   "frozen_at": "2026-08-08T03:00:00+08:00",
   "freeze_note": "Immutable regression baseline. All future Julia versions must reproduce this cognitive chain without Workbench access, without modifying the original blind judgment, and without using future data.",
+  "rebaselined_at": "2026-09-11T00:00:00+08:00",
+  "rebaseline_note": "Re-baselined under owner authorization (option B). weak_to_strong StrategyCard was rebuilt from L1 source chunks (v1.0 → v2.0), which added the bad_limit_up_candidate state and changed both card hashes. Only additive changes were made here: one candidate_hypothesis and one hypothesis_evaluation were added because the state now exists, plus the card-version string and this note. The original blind_judgment, both evidence bundles, the transition, all pre-existing evaluations, and all regression constraints are untouched. weak_to_strong v2.0 added no predicates to the three pre-existing states, so their evaluations are unchanged.",
 
   "versions": {
     "julia_core": "48ad6a1dc07a80a33bc00b8bebe7e24f15a86b54",
     "ai_theme_app": "38855d36b136afb9b3d7ed5363fb5ed7c9adbdd2",
     "taxonomy": "stage-taxonomy.v1",
-    "strategy_cards": "leader_divergence.v1 + weak_to_strong.v1",
+    "strategy_cards": "leader_divergence.v2 + weak_to_strong.v2",
     "transition_detector": "transition-detector.v1",
     "hypothesis_evaluator": "typed-predicate.v1",
     "strategy_selector": "strategy-selector.v1"
@@ -184,6 +186,7 @@
     "candidate_hypotheses": [
       {"state": "weak_to_strong.confirmed_weak_to_strong", "canonical_state": "confirmed_weak_to_strong", "predicate_count": 7, "status": "untested"},
       {"state": "weak_to_strong.false_weak_to_strong",     "canonical_state": "false_weak_to_strong",     "predicate_count": 4, "status": "untested"},
+      {"state": "weak_to_strong.bad_limit_up_candidate",   "canonical_state": "bad_limit_up_candidate",   "predicate_count": 3, "status": "untested"},
       {"state": "weak_to_strong.no_signal_yet",            "canonical_state": "no_signal_yet",            "predicate_count": 2, "status": "untested"}
     ],
     "research_questions": [
@@ -255,11 +258,21 @@
         "missing": [
           "intraday_volume"
         ]
+      },
+      "bad_limit_up_candidate": {
+        "status": "PARTIAL",
+        "supported_by": [
+          "leader_key_level: intact_limit_up ∈ [intact, testing, intact_limit_up]"
+        ],
+        "missing": [
+          "limit_up_seal_quality",
+          "intraday_volume"
+        ]
       }
     },
     "post_research_conclusion": {
       "state": "abstention_with_gain",
-      "summary": "现有证据不足以确认真弱转强，但在当前 StrategyCard v1 定义下已反驳 false_weak_to_strong 和 no_signal_yet 两个假设。hypothesis contradicted ≠ 世界上绝无这种可能——假弱转强最终仍可能表现为当天看似强、随后失败；Card narrative 的 next_day gap_down / continue_decline 概念尚未进入 typed executable evidence。",
+      "summary": "现有证据不足以确认真弱转强，但在当前 StrategyCard v2 定义下已反驳 false_weak_to_strong 和 no_signal_yet 两个假设，并将 bad_limit_up_candidate 评为 PARTIAL（仅 leader_key_level 支持，缺 limit_up_seal_quality 与 intraday_volume）。hypothesis contradicted ≠ 世界上绝无这种可能——假弱转强最终仍可能表现为当天看似强、随后失败；Card narrative 的 next_day gap_down / continue_decline 概念尚未进入 typed executable evidence。",
       "information_gain": "RC-002 开始前三个假设均未知。RC-002 后：confirmed 尚不能确认，false 被反驳，no_signal 被反驳。第二轮研究产生了有效的 hypothesis elimination。",
       "_note": "Julia chose epistemic restraint over overclaiming. This is a calibrated abstention."
     }

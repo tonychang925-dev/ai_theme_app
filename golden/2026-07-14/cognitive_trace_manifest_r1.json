@@ -3,10 +3,12 @@
   "case_id": "001-r1",
   "trade_date": "2026-07-14",
   "frozen_at": "2026-08-08T03:00:00+08:00",
+  "rebaselined_at": "2026-09-11T00:00:00+08:00",
+  "rebaseline_note": "Owner-authorized re-baseline (option B). The strategy-knowledge L2 rebuild moved weak_to_strong and leader_divergence from v1.0 to v2.0: source_refs now resolve to L1 chunk ids instead of bare page numbers, and weak_to_strong gained the weak-type taxonomy, the 烂板 five criteria, and the bad_limit_up_candidate state. Card hashes and the trace artifact hash are re-pinned accordingly, and one regression expectation is added. No pre-existing expectation was removed or altered.",
 
   "artifact": {
     "file": "cognitive_trace_r1.json",
-    "sha256": "f1d9881b25c3bb158e713cebfe949bd60c3fe09f1c9dac89930bdb4df93d012e",
+    "sha256": "e9bcec3bc5b8d10c4abcb1791cbdc09c62b25a0c5354ccf60ffcaa2d7c546fbf",
     "description": "Case001 complete cognitive chain: blind judgment → RC-001 → transition → RC-002 → calibrated abstention"
   },
 
@@ -25,13 +27,15 @@
   "strategy_cards": {
     "leader_divergence": {
       "file": "strategy_knowledge/cards/leader_divergence.json",
-      "sha256": "39515c55bed35da8c2bac3cec50f5c5547de92d9d0d8dc1b477815d0bf1437e0",
-      "version": "1.0"
+      "sha256": "aca3b520e2ba20ee69997678d359d46ecaae58b4b6cffddd52f8b8e1ca3af3d3",
+      "version": "2.0",
+      "_rebaseline_note": "was v1.0 sha 39515c55bed35da8c2bac3cec50f5c5547de92d9d0d8dc1b477815d0bf1437e0"
     },
     "weak_to_strong": {
       "file": "strategy_knowledge/cards/weak_to_strong.json",
-      "sha256": "062f337889b36526bbbd027d5096475bc6f8c7b1af8859375dcfa0527abf9aad",
-      "version": "1.0"
+      "sha256": "8d781cbbea2983fcbf3b4fafd3ff83edb4bf9cfb1184a14d7db05f3920f04455",
+      "version": "2.0",
+      "_rebaseline_note": "was v1.0 sha 062f337889b36526bbbd027d5096475bc6f8c7b1af8859375dcfa0527abf9aad; v2.0 added the bad_limit_up_candidate state, and no predicates of the three pre-existing states were changed"
     }
   },
 
@@ -49,7 +53,7 @@
     "RC-001 → leader_divergence → normal_adjustment SUPPORTED, leader_failure CONTRADICTED",
     "error_attribution → TEMPORAL_STATE_LAG (7/13 leader_weak carried to 7/14)",
     "transition → synchronized_repair (breadth 0.0→1.0, limit_up 0.0→1.0)",
-    "RC-002 → weak_to_strong → confirmed PARTIAL, false/no_signal CONTRADICTED",
+    "RC-002 → weak_to_strong → confirmed PARTIAL, false/no_signal CONTRADICTED, bad_limit_up_candidate PARTIAL",
     "calibrated_abstention → epistemic restraint, no overclaim"
   ],
 
@@ -63,6 +67,7 @@
       "RC-002 confirmed_weak_to_strong PARTIAL",
       "RC-002 false_weak_to_strong CONTRADICTED",
       "RC-002 no_signal_yet CONTRADICTED",
+      "RC-002 bad_limit_up_candidate PARTIAL",
       "RC-002 abstention_with_gain"
     ],
     "forbidden": [
