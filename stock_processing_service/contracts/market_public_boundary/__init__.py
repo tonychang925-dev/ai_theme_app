@@ -14,6 +14,7 @@ from .capabilities import (
     SideEffectClass,
 )
 from .failures import (
+    MarketBoundaryFailure,
     MarketAnalysisFailed,
     MarketAnalysisPartial,
     MarketAnalysisPending,
@@ -52,6 +53,7 @@ from .serialization import SerializationError, deserialize_json, serialize, to_m
 from .validators import (
     ManifestValidationResult,
     ReconciliationResult,
+    RuntimeObservationValidationResult,
     validate_capability_manifest,
     validate_provenance_profile,
     validate_runtime_observation,
@@ -73,6 +75,7 @@ __all__ = [
     "MarketAuthorizationDenied",
     "MarketAuthorizationRequirement",
     "MarketBoundaryCapabilityContractReference",
+    "MarketBoundaryFailure",
     "MarketBoundaryIdentity",
     "MarketCapabilityManifestEntry",
     "MarketCapabilityRuntimeObservation",
@@ -102,6 +105,7 @@ __all__ = [
     "ProvenanceValidationResult",
     "ReadinessState",
     "ReconciliationResult",
+    "RuntimeObservationValidationResult",
     "ReleaseIdentityEvidenceBasis",
     "ReleaseIdentityPredicate",
     "RequireCounterEvidencePredicate",

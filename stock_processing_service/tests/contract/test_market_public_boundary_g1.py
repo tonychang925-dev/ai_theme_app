@@ -4,6 +4,7 @@ import subprocess
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from uuid import UUID
 
 import pytest
 
@@ -20,6 +21,7 @@ from stock_processing_service.contracts.market_public_boundary import (
     MarketAnalysisStale,
     MarketAuthorizationDenied,
     MarketAuthorizationRequirement,
+    MarketBoundaryFailure,
     MarketBoundaryCapabilityContractReference,
     MarketBoundaryIdentity,
     MarketCapabilityManifestEntry,
@@ -137,6 +139,7 @@ def runtime(verified: MarketReleaseIdentity | None = None) -> MarketRuntimeObser
 def envelope(
     operation_status: OperationStatus = OperationStatus.SUCCESS,
     data_state: DataState = DataState.READY,
+    failures: tuple[MarketBoundaryFailure, ...] = (),
 ) -> MarketResultEnvelope:
     return MarketResultEnvelope(
         contract_version="1.0",
@@ -146,7 +149,7 @@ def envelope(
         data_state=data_state,
         payload={"value": 1},
         provenance=provenance(),
-        failures=(),
+        failures=failures,
         boundary_identity_ref=boundary(),
         runtime_observation=runtime(),
         produced_at=NOW,
@@ -179,6 +182,19 @@ def test_g1_at02_operation_and_data_states_are_orthogonal(operation_status, data
     assert representation["data_state"] == data_state.value
 
 
+@pytest.mark.parametrize(
+    ("operation_status", "data_state"),
+    [
+        ("FAILURE", "EMPTY"),
+        ("SUCCESS", "ARBITRARY"),
+        ("ARBITRARY", "READY"),
+    ],
+)
+def test_g1_at02_raw_state_values_cannot_bypass_enforcement(operation_status, data_state):
+    with pytest.raises(ValueError):
+        envelope(operation_status, data_state)
+
+
 def test_g1_at03_governance_state_is_independent():
     assert MarketGovernanceState.PUBLISHED is not DataState.STALE
     assert DataState.STALE.value == "STALE"
@@ -204,6 +220,29 @@ def test_g1_at04_manifest_contradictions_fail_closed(field_name):
     assert all(isinstance(failure, MarketContractMismatch) for failure in result.failures)
 
 
+@pytest.mark.parametrize(
+    ("field_name", "value"),
+    [
+        ("operation_kind", "ARBITRARY"),
+        ("side_effect_class", "ARBITRARY"),
+        ("idempotency_support", "ARBITRARY"),
+    ],
+)
+def test_g1_at04_arbitrary_manifest_vocabularies_fail_closed(field_name, value):
+    with pytest.raises(ValueError, match="unrecognized"):
+        manifest(**{field_name: value})
+
+
+@pytest.mark.parametrize(
+    "field_name",
+    ["may_refresh_external_data", "may_create_product"],
+)
+def test_g1_at04_read_only_rejects_all_declared_effects(field_name):
+    result = validate_capability_manifest(manifest(**{field_name: True}))
+    assert not result.valid
+    assert isinstance(result.failures[0], MarketContractMismatch)
+
+
 def test_g1_at05_stable_manifest_has_no_runtime_availability():
     manifest_entry = manifest()
     assert "availability_state" not in serialize(manifest_entry)
@@ -215,6 +254,8 @@ def test_g1_at06_attested_and_verified_identity_channels_are_distinct():
     observation = runtime()
     assert observation.attested_release_identity == observation.verified_release_identity
     assert validate_runtime_observation(observation).valid
+    with pytest.raises(ValueError, match="verified_release_identity"):
+        runtime(verified="not-a-release-identity")
 
 
 @pytest.mark.parametrize(
@@ -310,6 +351,8 @@ def test_g1_at09_market_authorization_does_not_waive_platform_authorization():
         market_authorization_requirement=MarketAuthorizationRequirement.DOMAIN_ROLE
     )
     assert manifest_entry.market_authorization_requirement != "C08"
+    with pytest.raises(ValueError, match="unrecognized"):
+        manifest(market_authorization_requirement="C08")
     assert "requires_authorization" not in serialize(manifest_entry)
     assert validate_capability_manifest(manifest_entry).valid
 
@@ -323,6 +366,10 @@ def test_g1_at10_object_references_are_storage_neutral():
         "object_type": "market.object",
         "revision_id": None,
     }
+    uuid_value = UUID("12345678-1234-5678-1234-567812345678")
+    uuid_ref = MarketObjectRef("market.object", uuid_value)
+    assert json.loads(serialize(uuid_ref))["object_id"] == str(uuid_value)
+    assert serialize(uuid_ref) == serialize(MarketObjectRef("market.object", str(uuid_value)))
 
 
 def test_g1_at11_package_defers_transport_selection():
@@ -405,6 +452,10 @@ def test_g1_at15_typed_failures_remain_distinguishable():
     serialized = [serialize(failure) for failure in failures]
     assert len(set(serialized)) == len(serialized)
     assert all('"__type__":"' + cls.__name__ + '"' in value for cls, value in zip(failure_classes, serialized))
+    assert issubclass(MarketBoundaryFailure, object)
+    for invalid_failure in ("failure", object()):
+        with pytest.raises(ValueError, match="non-Market"):
+            envelope(failures=(invalid_failure,))
 
 
 def test_g1_runtime_vocabulary_is_frozen():

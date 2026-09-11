@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from uuid import UUID
 
 
 def _require_non_empty(value: str, field_name: str) -> None:
@@ -41,13 +42,13 @@ class MarketReleaseIdentity:
 @dataclass(frozen=True, slots=True)
 class MarketObjectRef:
     object_type: str
-    object_id: str | int
+    object_id: str | int | UUID
     revision_id: str | None = None
 
     def __post_init__(self) -> None:
         _require_non_empty(self.object_type, "object_type")
-        if not isinstance(self.object_id, (str, int)) or isinstance(self.object_id, bool):
-            raise ValueError("object_id must be a public string or integer identifier")
+        if not isinstance(self.object_id, (str, int, UUID)) or isinstance(self.object_id, bool):
+            raise ValueError("object_id must be a public string, integer, or UUID identifier")
         if isinstance(self.object_id, str) and not self.object_id.strip():
             raise ValueError("object_id must be non-empty")
         if self.revision_id is not None:

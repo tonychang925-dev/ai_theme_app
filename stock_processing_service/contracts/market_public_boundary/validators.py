@@ -32,6 +32,12 @@ class ReconciliationResult:
     failures: tuple[MarketContractMismatch, ...]
 
 
+@dataclass(frozen=True, slots=True)
+class RuntimeObservationValidationResult:
+    valid: bool
+    failures: tuple[MarketReleaseMismatch, ...]
+
+
 def _mismatch(message: str, details: Iterable[tuple[str, object]] = ()) -> MarketContractMismatch:
     return MarketContractMismatch(message, tuple(details))
 
@@ -65,7 +71,12 @@ def validate_capability_manifest(
             )
 
     if entry.side_effect_class is SideEffectClass.READ_ONLY:
-        for field_name in ("may_mutate_market_state", "may_change_governed_authority"):
+        for field_name in (
+            "may_create_product",
+            "may_change_governed_authority",
+            "may_refresh_external_data",
+            "may_mutate_market_state",
+        ):
             if getattr(entry, field_name):
                 failures.append(
                     _mismatch(
@@ -123,7 +134,7 @@ def validate_boundary_reconciliation(
 
 def validate_runtime_observation(
     observation: MarketRuntimeObservation,
-) -> ManifestValidationResult:
+) -> RuntimeObservationValidationResult:
     failures: list[MarketContractMismatch] = []
     evidence = set(observation.release_identity_evidence_basis)
     verifying_evidence = evidence - {
@@ -137,7 +148,7 @@ def validate_runtime_observation(
                 (("runtime_instance_id", observation.runtime_instance_id),),
             )
         )
-    return ManifestValidationResult(not failures, tuple(failures))
+    return RuntimeObservationValidationResult(not failures, tuple(failures))
 
 
 def _evaluate_predicate(predicate, provenance: MarketProvenance, context: ProvenanceValidationContext) -> bool:

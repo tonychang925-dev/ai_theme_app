@@ -52,6 +52,15 @@ class MarketCapabilityManifestEntry:
     provenance_profile_ref: str
 
     def __post_init__(self) -> None:
+        enum_fields = (
+            ("operation_kind", OperationKind),
+            ("side_effect_class", SideEffectClass),
+            ("idempotency_support", IdempotencySupport),
+            ("market_authorization_requirement", MarketAuthorizationRequirement),
+        )
+        for field_name, enum_type in enum_fields:
+            if not isinstance(getattr(self, field_name), enum_type):
+                raise ValueError(f"{field_name} has an unrecognized value")
         for field_name, value in (
             ("capability_id", self.capability_id),
             ("capability_version", self.capability_version),
@@ -106,6 +115,10 @@ class MarketRuntimeObservation:
             raise ValueError("runtime_instance_id must be a non-empty string")
         if not isinstance(self.attested_release_identity, MarketReleaseIdentity):
             raise ValueError("attested_release_identity has the wrong type")
+        if self.verified_release_identity is not None and not isinstance(
+            self.verified_release_identity, MarketReleaseIdentity
+        ):
+            raise ValueError("verified_release_identity has the wrong type")
         if not self.release_identity_evidence_basis:
             raise ValueError("release_identity_evidence_basis must be non-empty")
         for evidence_basis in self.release_identity_evidence_basis:
@@ -115,3 +128,8 @@ class MarketRuntimeObservation:
             raise ValueError("readiness_state has the wrong type")
         if not isinstance(self.compatibility_state, CompatibilityState):
             raise ValueError("compatibility_state has the wrong type")
+        if not isinstance(self.observed_at, datetime):
+            raise ValueError("observed_at must be a datetime")
+        for observation in self.capability_runtime_observations:
+            if not isinstance(observation, MarketCapabilityRuntimeObservation):
+                raise ValueError("capability_runtime_observations contains an invalid entry")
