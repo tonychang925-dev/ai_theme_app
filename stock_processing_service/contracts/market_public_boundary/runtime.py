@@ -1,7 +1,10 @@
-from .capabilities import CapabilityAvailability, CompatibilityState
-from .vocabulary import MarketGovernanceState, ReleaseIdentityEvidenceBasis
-
-ReadinessState = CapabilityAvailability
+from .vocabulary import (
+    CapabilityAvailability,
+    CompatibilityState,
+    MarketGovernanceState,
+    ReadinessState,
+    ReleaseIdentityEvidenceBasis,
+)
 
 __all__ = [
     "CapabilityAvailability",

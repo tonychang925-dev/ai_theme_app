@@ -81,30 +81,6 @@ def validate_capability_manifest(
                 (("capability_id", entry.capability_id), ("operation_kind", entry.operation_kind)),
             )
         )
-    if entry.may_refresh_external_data and entry.side_effect_class not in (
-        SideEffectClass.DATA_REFRESH,
-        SideEffectClass.COMPOSITE,
-    ):
-        failures.append(_mismatch("external refresh requires refresh effect semantics"))
-
-    effect_pairs = (
-        ("may_mutate_market_state", SideEffectClass.MARKET_STATE_MUTATION),
-        ("may_create_product", SideEffectClass.PRODUCT_CREATION),
-        ("may_change_governed_authority", SideEffectClass.GOVERNED_AUTHORITY_CHANGE),
-        ("may_refresh_external_data", SideEffectClass.DATA_REFRESH),
-    )
-    for field_name, required_effect in effect_pairs:
-        if getattr(entry, field_name) and entry.side_effect_class not in (
-            required_effect,
-            SideEffectClass.COMPOSITE,
-        ):
-            failures.append(
-                _mismatch(
-                    f"{field_name} contradicts side_effect_class",
-                    (("capability_id", entry.capability_id), ("side_effect_class", entry.side_effect_class)),
-                )
-            )
-
     return ManifestValidationResult(not failures, tuple(failures))
 
 
@@ -151,8 +127,8 @@ def validate_runtime_observation(
     failures: list[MarketContractMismatch] = []
     evidence = set(observation.release_identity_evidence_basis)
     verifying_evidence = evidence - {
-        ReleaseIdentityEvidenceBasis.PROVIDER_ATTESTED.value,
-        ReleaseIdentityEvidenceBasis.UNKNOWN.value,
+        ReleaseIdentityEvidenceBasis.PROVIDER_ATTESTED,
+        ReleaseIdentityEvidenceBasis.UNKNOWN,
     }
     if observation.verified_release_identity is not None and not verifying_evidence:
         failures.append(

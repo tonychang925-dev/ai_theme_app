@@ -5,7 +5,14 @@ from datetime import datetime
 from enum import Enum
 
 from .identity import MarketReleaseIdentity
-from .vocabulary import CapabilityAvailability, OperationKind, SideEffectClass
+from .vocabulary import (
+    CapabilityAvailability,
+    CompatibilityState,
+    OperationKind,
+    ReadinessState,
+    ReleaseIdentityEvidenceBasis,
+    SideEffectClass,
+)
 
 
 class IdempotencySupport(str, Enum):
@@ -16,15 +23,10 @@ class IdempotencySupport(str, Enum):
 
 class MarketAuthorizationRequirement(str, Enum):
     NONE = "NONE"
-    CAPABILITY_SCOPED = "CAPABILITY_SCOPED"
-    PROVIDER_SCOPED = "PROVIDER_SCOPED"
-
-
-class CompatibilityState(str, Enum):
-    COMPATIBLE = "COMPATIBLE"
-    DEGRADED = "DEGRADED"
-    INCOMPATIBLE = "INCOMPATIBLE"
-    UNKNOWN = "UNKNOWN"
+    AUTHENTICATED_PRINCIPAL = "AUTHENTICATED_PRINCIPAL"
+    DOMAIN_ROLE = "DOMAIN_ROLE"
+    GOVERNANCE_PRINCIPAL = "GOVERNANCE_PRINCIPAL"
+    CUSTOM_POLICY_REF = "CUSTOM_POLICY_REF"
 
 
 @dataclass(frozen=True, slots=True)
@@ -91,8 +93,8 @@ class MarketCapabilityRuntimeObservation:
 class MarketRuntimeObservation:
     runtime_instance_id: str
     attested_release_identity: MarketReleaseIdentity
-    release_identity_evidence_basis: tuple[str, ...]
-    readiness_state: CapabilityAvailability
+    release_identity_evidence_basis: tuple[ReleaseIdentityEvidenceBasis, ...]
+    readiness_state: ReadinessState
     compatibility_state: CompatibilityState
     capability_runtime_observations: tuple[MarketCapabilityRuntimeObservation, ...]
     observed_at: datetime
@@ -104,14 +106,12 @@ class MarketRuntimeObservation:
             raise ValueError("runtime_instance_id must be a non-empty string")
         if not isinstance(self.attested_release_identity, MarketReleaseIdentity):
             raise ValueError("attested_release_identity has the wrong type")
-        if (
-            self.verified_release_identity is not None
-            and self.verified_release_identity == self.attested_release_identity
-        ):
-            raise ValueError("verified_release_identity must differ from attested_release_identity")
         if not self.release_identity_evidence_basis:
             raise ValueError("release_identity_evidence_basis must be non-empty")
-        if not isinstance(self.readiness_state, CapabilityAvailability):
+        for evidence_basis in self.release_identity_evidence_basis:
+            if not isinstance(evidence_basis, ReleaseIdentityEvidenceBasis):
+                raise ValueError("release_identity_evidence_basis contains an unrecognized value")
+        if not isinstance(self.readiness_state, ReadinessState):
             raise ValueError("readiness_state has the wrong type")
         if not isinstance(self.compatibility_state, CompatibilityState):
             raise ValueError("compatibility_state has the wrong type")

@@ -10,6 +10,9 @@ from .vocabulary import MarketGovernanceState, ProvenanceStatus
 
 class EpistemicClass(str, Enum):
     OBSERVATION = "OBSERVATION"
+    REPORTED_CLAIM = "REPORTED_CLAIM"
+    DERIVED_CLAIM = "DERIVED_CLAIM"
+    HYPOTHESIS = "HYPOTHESIS"
     JUDGMENT = "JUDGMENT"
     FORECAST = "FORECAST"
 

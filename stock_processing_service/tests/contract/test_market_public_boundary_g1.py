@@ -46,6 +46,7 @@ from stock_processing_service.contracts.market_public_boundary import (
     ProvenanceIncompleteBehavior,
     ProvenanceStatus,
     ProvenanceValidationContext,
+    ReadinessState,
     ReleaseIdentityEvidenceBasis,
     ReleaseIdentityPredicate,
     RequireCounterEvidencePredicate,
@@ -117,25 +118,14 @@ def manifest(**overrides) -> MarketCapabilityManifestEntry:
 
 
 def runtime(verified: MarketReleaseIdentity | None = None) -> MarketRuntimeObservation:
-    verified_release = (
-        MarketReleaseIdentity(
-            source_identity="source:1",
-            build_identity="build:1",
-            artifact_identity="artifact:2",
-            artifact_digest="sha256:2",
-            release_manifest_ref="manifest:2",
-        )
-        if verified is None
-        else verified
-    )
     return MarketRuntimeObservation(
         runtime_instance_id="runtime:1",
         attested_release_identity=release(),
-        verified_release_identity=verified_release,
+        verified_release_identity=release() if verified is None else verified,
         release_identity_evidence_basis=(
-            ReleaseIdentityEvidenceBasis.ARTIFACT_DIGEST_VERIFIED.value,
+            ReleaseIdentityEvidenceBasis.ARTIFACT_DIGEST_VERIFIED,
         ),
-        readiness_state=CapabilityAvailability.AVAILABLE,
+        readiness_state=ReadinessState.READY,
         compatibility_state=CompatibilityState.COMPATIBLE,
         capability_runtime_observations=(
             MarketCapabilityRuntimeObservation("capability.read", CapabilityAvailability.AVAILABLE, NOW),
@@ -221,20 +211,26 @@ def test_g1_at05_stable_manifest_has_no_runtime_availability():
     assert isinstance(manifest_entry.market_authorization_requirement, MarketAuthorizationRequirement)
 
 
-def test_g1_at06_attested_and_verified_identity_are_distinct():
-    with pytest.raises(ValueError, match="differ"):
-        runtime(verified=release())
+def test_g1_at06_attested_and_verified_identity_channels_are_distinct():
     observation = runtime()
-    assert observation.attested_release_identity != observation.verified_release_identity
+    assert observation.attested_release_identity == observation.verified_release_identity
+    assert validate_runtime_observation(observation).valid
 
 
-def test_g1_at07_provider_attestation_alone_cannot_verify_identity():
+@pytest.mark.parametrize(
+    "evidence_basis",
+    [
+        ReleaseIdentityEvidenceBasis.PROVIDER_ATTESTED,
+        ReleaseIdentityEvidenceBasis.UNKNOWN,
+    ],
+)
+def test_g1_at07_provider_attestation_alone_cannot_verify_identity(evidence_basis):
     observation = MarketRuntimeObservation(
         runtime_instance_id="runtime:2",
         attested_release_identity=release(),
         verified_release_identity=runtime().verified_release_identity,
-        release_identity_evidence_basis=(ReleaseIdentityEvidenceBasis.PROVIDER_ATTESTED.value,),
-        readiness_state=CapabilityAvailability.AVAILABLE,
+        release_identity_evidence_basis=(evidence_basis,),
+        readiness_state=ReadinessState.READY,
         compatibility_state=CompatibilityState.COMPATIBLE,
         capability_runtime_observations=(),
         observed_at=NOW,
@@ -242,6 +238,18 @@ def test_g1_at07_provider_attestation_alone_cannot_verify_identity():
     result = validate_runtime_observation(observation)
     assert not result.valid
     assert isinstance(result.failures[0], MarketReleaseMismatch)
+
+    with pytest.raises(ValueError, match="unrecognized"):
+        MarketRuntimeObservation(
+            runtime_instance_id="runtime:3",
+            attested_release_identity=release(),
+            verified_release_identity=runtime().verified_release_identity,
+            release_identity_evidence_basis=("ARBITRARY_STRING",),
+            readiness_state=ReadinessState.READY,
+            compatibility_state=CompatibilityState.COMPATIBLE,
+            capability_runtime_observations=(),
+            observed_at=NOW,
+        )
 
 
 def test_g1_at08_provenance_completeness_is_validator_derived():
@@ -284,7 +292,23 @@ def test_g1_at08_provenance_completeness_is_validator_derived():
 
 
 def test_g1_at09_market_authorization_does_not_waive_platform_authorization():
-    manifest_entry = manifest(market_authorization_requirement=MarketAuthorizationRequirement.CAPABILITY_SCOPED)
+    assert [effect.value for effect in SideEffectClass] == [
+        "READ_ONLY",
+        "REVERSIBLE_WRITE",
+        "IRREVERSIBLE_WRITE",
+        "EXTERNAL_SIDE_EFFECT",
+        "HIGH_IMPACT",
+    ]
+    assert [requirement.value for requirement in MarketAuthorizationRequirement] == [
+        "NONE",
+        "AUTHENTICATED_PRINCIPAL",
+        "DOMAIN_ROLE",
+        "GOVERNANCE_PRINCIPAL",
+        "CUSTOM_POLICY_REF",
+    ]
+    manifest_entry = manifest(
+        market_authorization_requirement=MarketAuthorizationRequirement.DOMAIN_ROLE
+    )
     assert manifest_entry.market_authorization_requirement != "C08"
     assert "requires_authorization" not in serialize(manifest_entry)
     assert validate_capability_manifest(manifest_entry).valid
@@ -334,7 +358,7 @@ def test_g1_at13_boundary_capabilities_reconcile_with_manifests():
             manifest(
                 capability_id="capability.refresh",
                 operation_kind=OperationKind.DATA_REFRESH,
-                side_effect_class=SideEffectClass.DATA_REFRESH,
+                side_effect_class=SideEffectClass.EXTERNAL_SIDE_EFFECT,
                 may_refresh_external_data=True,
             ),
         ),
@@ -381,3 +405,26 @@ def test_g1_at15_typed_failures_remain_distinguishable():
     serialized = [serialize(failure) for failure in failures]
     assert len(set(serialized)) == len(serialized)
     assert all('"__type__":"' + cls.__name__ + '"' in value for cls, value in zip(failure_classes, serialized))
+
+
+def test_g1_runtime_vocabulary_is_frozen():
+    assert [state.value for state in CapabilityAvailability] == [
+        "AVAILABLE",
+        "DEGRADED",
+        "NOT_READY",
+        "UNAVAILABLE",
+    ]
+    assert [state.value for state in ReadinessState] == [
+        "READY",
+        "DEGRADED",
+        "NOT_READY",
+        "UNAVAILABLE",
+    ]
+    assert CapabilityAvailability.AVAILABLE is not ReadinessState.READY
+    assert CapabilityAvailability.AVAILABLE != ReadinessState.READY
+    assert [state.value for state in CompatibilityState] == [
+        "COMPATIBLE",
+        "CONTRACT_MISMATCH",
+        "RELEASE_MISMATCH",
+        "UNKNOWN",
+    ]
