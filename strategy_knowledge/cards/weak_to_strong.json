@@ -182,6 +182,45 @@
     "evidence_patterns": "engineer_derived_from_strategy_principles"
   },
 
+  "figure_refs": [
+    {
+      "figure_id": "weak_to_strong_v1.fig-001",
+      "kind": "figure_interpretation",
+      "page": 1,
+      "what_it_adds": "「常见弱势三种」示意图：①放量长阴线（大阴线）②带长上影的冲高回落K线 ③炸板/栏板形态 + 分时缩略图。对应 weak_type_taxonomy。"
+    },
+    {
+      "figure_id": "weak_to_strong_v1.fig-002",
+      "kind": "figure_interpretation",
+      "page": 2,
+      "what_it_adds": "烂板量能图示：红字「封板前放量」「烂板时无量」——封板瞬间有量、烂板期间缩量。对应 bad_limit_up_criteria 中「封单变小 / 下跌过程缩量代表抛压减少」。"
+    },
+    {
+      "figure_id": "weak_to_strong_v1.fig-003",
+      "kind": "figure_interpretation",
+      "page": 3,
+      "what_it_adds": "盘前集合竞价弱转强的图示：黄框圈出开盘竞价段 + 箭头标注「集合竞价弱转强」，另附K线小图标示其在日线中的位置。"
+    },
+    {
+      "figure_id": "weak_to_strong_v1.fig-004",
+      "kind": "figure_interpretation",
+      "page": 3,
+      "what_it_adds": "早盘分时弱转强图示：先跌破均价线，随后放量拉起、白线上穿并站稳黄线之上。"
+    },
+    {
+      "figure_id": "weak_to_strong_v1.fig-005",
+      "kind": "figure_interpretation",
+      "page": 4,
+      "what_it_adds": "盘中弱转强/放量突破图示：均线附近横盘后向上突破，突破处放量。"
+    },
+    {
+      "figure_id": "weak_to_strong_v1.fig-006",
+      "kind": "figure_interpretation",
+      "page": 5,
+      "what_it_adds": "「弱转强」操作流程图（L1 文本无此流程编排）：入口判定「是否龙头或核心高标？」，否则走放弃分支；主线四步为 盘前分析 → 实时盯盘 → 买入执行 → 离场控制，并附关键位置、盘前/实时分析、买点控制、仓位控制（首次1-2成或半仓）、止盈控制（不能重新站上关键点位）、止损控制（反包失败）。"
+    }
+  ],
+
   "source_refs": [
     {
       "document_id": "weak_to_strong_v1",

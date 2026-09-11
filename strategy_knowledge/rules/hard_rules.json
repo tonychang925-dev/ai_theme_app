@@ -1,0 +1,368 @@
+{
+  "schema_version": "strategy-executable-rules.v1",
+  "layer": "L3",
+  "kind": "hard_rules",
+  "authority": "advisory_only",
+  "boundary_flags": {
+    "not_prompt_material": true,
+    "does_not_override_market_facts": true,
+    "does_not_authorize_trades": true,
+    "note": "ADR-032 §6：策略文本不得注入 LLM prompt；规则不得覆盖市场事实；本层是推理脚手架，不是交易授权。"
+  },
+  "evidence_status_vocabulary": {
+    "SUPPORTED": "本系统内已由结果数据验证通过",
+    "PARTIAL": "有部分支持证据，结果混杂",
+    "UNSUPPORTED": "已测试但未成立",
+    "INSUFFICIENT_EVIDENCE": "尚未验证"
+  },
+  "assertion_source_vocabulary": {
+    "source_authored": "策略原文明确表述",
+    "engineer_derived": "工程翻译或推断，非原文"
+  },
+  "current_validation_state": "本仓库尚未对任何 L3 规则做过 outcome 回测，因此全部规则的 evidence_status 均为 INSUFFICIENT_EVIDENCE。SUPPORTED / PARTIAL / UNSUPPORTED 须由 M3.2.8 结果登记表产出后回填。",
+  "rules": [
+    {
+      "rule_id": "HR-001",
+      "kind": "hard_rule",
+      "statement": "杂毛不配弱转强：非强势股或非龙头，不得进入弱转强候选",
+      "applies_to_cards": ["weak_to_strong"],
+      "condition": {"requirement_id": "board_position", "operator": "in", "value": ["follower", "outsider"]},
+      "effect": {"type": "block", "detail": "从弱转强候选池剔除"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：一定要是强势股或者龙头，杂毛不配弱转强！",
+      "source_refs": [{"chunk_id": "weak_to_strong_v1.c11"}]
+    },
+    {
+      "rule_id": "HR-002",
+      "kind": "hard_rule",
+      "statement": "大盘极度退潮时不做弱转强",
+      "applies_to_cards": ["weak_to_strong"],
+      "condition": {"all": [
+        {"requirement_id": "market_regime", "operator": "eq", "value": "contraction"},
+        {"requirement_id": "theme_fade_status", "operator": "eq", "value": "fade_confirmed"}
+      ]},
+      "effect": {"type": "block", "detail": "不进入弱转强候选；已有持仓按 exit_rules 处置"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：大盘极度退潮时，弱转强成功率极低；适合在“分歧—修复”阶段，而不是“全面退潮”时。",
+      "source_refs": [{"chunk_id": "weak_to_strong_v1.c11"}]
+    },
+    {
+      "rule_id": "HR-003",
+      "kind": "hard_rule",
+      "statement": "反包失败处置：当天不能重新站上关键价位（前高 / 前板封单价），必须减仓或止损",
+      "applies_to_cards": ["exit_rules"],
+      "condition": {"all": [
+        {"requirement_id": "reverse_package_status", "operator": "eq", "value": "failed"},
+        {"requirement_id": "key_level_status", "path": "state", "operator": "in", "value": ["testing", "broken"]}
+      ]},
+      "effect": {"type": "require", "detail": "减仓或止损，不得继续持有"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：一旦反包失败，当天不能重新站上关键价位，必须减仓或止损。",
+      "source_refs": [{"chunk_id": "weak_to_strong_v1.c10"}]
+    },
+    {
+      "rule_id": "HR-004",
+      "kind": "hard_rule",
+      "statement": "日线跌破支撑位（10日线 / 前低）立即减仓或清仓",
+      "applies_to_cards": ["exit_rules"],
+      "condition": {"all": [
+        {"requirement_id": "ma10_status", "operator": "eq", "value": "below"},
+        {"requirement_id": "previous_low_status", "operator": "in", "value": ["below", "testing"]}
+      ]},
+      "effect": {"type": "require", "detail": "立刻减仓或清仓"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：日线跌破支撑位（10日线/前低） → 立刻减仓或清仓。",
+      "source_refs": [{"chunk_id": "weak_to_strong_v1.c10"}]
+    },
+    {
+      "rule_id": "HR-005",
+      "kind": "hard_rule",
+      "statement": "切忌满仓梭哈（弱转强存在“假动作”风险）",
+      "applies_to_cards": ["position_sizing"],
+      "condition": {"always": true},
+      "effect": {"type": "block", "detail": "禁止满仓；总仓位上限受 position_sizing 各档约束"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：切忌满仓梭哈，因为弱转强有“假动作”风险。",
+      "source_refs": [{"chunk_id": "weak_to_strong_v1.c09"}]
+    },
+    {
+      "rule_id": "HR-006",
+      "kind": "hard_rule",
+      "statement": "烂板破板后不能大跌：均线之上震荡且回撤幅度在 3% 之内，否则视为人气消极",
+      "applies_to_cards": ["weak_to_strong"],
+      "condition": {"requirement_id": "intraday_volume", "operator": "eq", "value": "contracting"},
+      "effect": {"type": "require", "detail": "回撤 > 3% 时取消 bad_limit_up_candidate 资格"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文烂板五要素之四：破板之后不能大跌，均线之上震荡，回撤幅度在3%之内，否则市场人气会消极。",
+      "source_refs": [{"chunk_id": "weak_to_strong_v1.c04"}]
+    },
+    {
+      "rule_id": "HR-007",
+      "kind": "hard_rule",
+      "statement": "大盘盛极而衰行情，坚决不能做龙头股",
+      "applies_to_cards": ["leader_identification", "mainline_identification"],
+      "condition": {"requirement_id": "theme_mainline_environment", "operator": "eq", "value": "hostile"},
+      "effect": {"type": "block", "detail": "不做龙头股；对行情性质的判断是做龙头的前提"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：大环境保护：大盘如果是盛极而衰行情，坚决不能做龙头股。",
+      "source_refs": [{"chunk_id": "trading_system_v1.c04"}]
+    },
+    {
+      "rule_id": "HR-008",
+      "kind": "hard_rule",
+      "statement": "大盘好 + 板块也涨时，龙头出现的分歧绝不能买（主动分歧不可买）",
+      "applies_to_cards": ["leader_divergence", "theme_lifecycle"],
+      "condition": {"all": [
+        {"requirement_id": "market_regime", "operator": "in", "value": ["expansion", "rotation"]},
+        {"requirement_id": "theme_breadth_change", "path": "delta.positive_ratio", "operator": ">=", "value": 0.5}
+      ]},
+      "effect": {"type": "block", "detail": "分歧阶段禁止买入，只可观察次日弱转强信号"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：如果大盘环境好，指数在上涨，对应的板块也在上涨，此时龙头股出现的分歧绝不能买！",
+      "source_refs": [{"chunk_id": "trading_system_v1.c07"}]
+    },
+    {
+      "rule_id": "HR-009",
+      "kind": "hard_rule",
+      "statement": "不满足逻辑与市场两个维度的题材不能算主线，尽量不参与",
+      "applies_to_cards": ["mainline_identification"],
+      "condition": {"any": [
+        {"requirement_id": "theme_logic_attributes", "path": "novelty", "operator": "eq", "value": "low"},
+        {"requirement_id": "theme_capital_acceptance", "operator": "eq", "value": "rejected"}
+      ]},
+      "effect": {"type": "block", "detail": "不纳入主线参与范围"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：凡是不满足上述两个维度条件的题材都不能算主线，尽量不参与操作！",
+      "source_refs": [{"chunk_id": "trading_system_v1.c02"}]
+    },
+    {
+      "rule_id": "HR-010",
+      "kind": "hard_rule",
+      "statement": "绝不介入后排杂毛个股；跟风股分歧不能买，补涨股特别小心",
+      "applies_to_cards": ["leader_identification"],
+      "condition": {"requirement_id": "board_position", "operator": "in", "value": ["follower", "outsider"]},
+      "effect": {"type": "block", "detail": "排除出选股范围"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：绝不介入后排杂毛个股，如跟风股等其他弱势股！宁愿在涨停板上追龙头，也不要在低位买跟风股！",
+      "source_refs": [{"chunk_id": "trading_system_v1.c10"}]
+    },
+    {
+      "rule_id": "HR-011",
+      "kind": "hard_rule",
+      "statement": "即时交易线跌破分时均线，坚决不买",
+      "applies_to_cards": ["entry_timing"],
+      "condition": {"requirement_id": "intraday_ma_status", "operator": "eq", "value": "below"},
+      "effect": {"type": "block", "detail": "当日不做买入"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：即时交易线跌破分时均线，代表是弱势，坚决不买股！另见图内成文三条原则之三。",
+      "source_refs": [{"chunk_id": "trading_system_v1.c14"}],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-004"}, {"figure_id": "trading_system_v1.fig-008"}]
+    },
+    {
+      "rule_id": "HR-012",
+      "kind": "hard_rule",
+      "statement": "不放量不买：必须有放量才可以做买入交易",
+      "applies_to_cards": ["entry_timing"],
+      "condition": {"requirement_id": "intraday_volume_expansion", "operator": "!=", "value": "expanding"},
+      "effect": {"type": "block", "detail": "不满足放量条件则禁止买入"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：但是必须有放量才可以做买入交易，不放量不买！",
+      "source_refs": [{"chunk_id": "trading_system_v1.c14"}],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-003"}, {"figure_id": "trading_system_v1.fig-004"}]
+    },
+    {
+      "rule_id": "HR-013",
+      "kind": "hard_rule",
+      "statement": "真实集合竞价 9:20–9:25 不能有急跌走势",
+      "applies_to_cards": ["auction_confirmation"],
+      "condition": {"requirement_id": "auction_stability", "operator": "eq", "value": "tail_crash"},
+      "effect": {"type": "block", "detail": "直接剔除该候选"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：分时走势要稳定，不要出现大起大落…不能有急跌走势。",
+      "source_refs": [{"chunk_id": "auction_v1.c01"}],
+      "figure_refs": [{"figure_id": "auction_v1.fig-001"}, {"figure_id": "auction_v1.fig-002"}]
+    },
+    {
+      "rule_id": "HR-014",
+      "kind": "hard_rule",
+      "statement": "9:24–9:25 出现连续压单或价格急跌，直接剔除",
+      "applies_to_cards": ["auction_confirmation"],
+      "condition": {"requirement_id": "auction_last_minute_ratio", "operator": "eq", "value": "withdraw"},
+      "effect": {"type": "block", "detail": "尾段撤单/急跌，一票否决"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "engineer_derived",
+      "rationale": "由原文“不能有急跌走势”与“重点关注最后一分钟…抢筹”合并推出的硬规则；engineering 翻译，非原文单句。",
+      "source_refs": [{"chunk_id": "auction_v1.c01"}, {"chunk_id": "auction_v1.c03"}],
+      "figure_refs": [{"figure_id": "auction_v1.fig-011"}, {"figure_id": "auction_v1.fig-012"}]
+    },
+    {
+      "rule_id": "HR-015",
+      "kind": "hard_rule",
+      "statement": "龙头不符合预期开盘代表情绪走弱，要规避相关板块的个股",
+      "applies_to_cards": ["auction_confirmation"],
+      "condition": {"all": [
+        {"requirement_id": "auction_strength", "operator": "eq", "value": "weak"},
+        {"requirement_id": "sector_sync_strength", "operator": "eq", "value": "synced_weak"}
+      ]},
+      "effect": {"type": "block", "detail": "该板块当日候选全部规避"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：如果龙头不符合预期开盘，代表情绪走弱，要规避相关的板块的个股。",
+      "source_refs": [{"chunk_id": "auction_v1.c04"}]
+    },
+    {
+      "rule_id": "HR-016",
+      "kind": "hard_rule",
+      "statement": "盘前大盘情绪出现冰点，切忌操作",
+      "applies_to_cards": ["theme_screening"],
+      "condition": {"requirement_id": "market_emotion_ice_point", "operator": "eq", "value": true},
+      "effect": {"type": "block", "detail": "当日不开仓"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：重点关注大盘以及板块情绪，如果盘前大盘情绪出现冰点，切忌操作！！",
+      "source_refs": [{"chunk_id": "theme_tracking_v1.c08"}]
+    },
+    {
+      "rule_id": "HR-017",
+      "kind": "hard_rule",
+      "statement": "不参与跟风股的二次分歧",
+      "applies_to_cards": ["theme_lifecycle"],
+      "condition": {"requirement_id": "board_position", "operator": "in", "value": ["follower", "outsider"]},
+      "effect": {"type": "block", "detail": "分歧补涨阶段不参与后排"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：不参与跟风股的二次分歧，尽量少参与补涨股的行情。",
+      "source_refs": [{"chunk_id": "trading_system_v1.c09"}]
+    },
+    {
+      "rule_id": "HR-018",
+      "kind": "hard_rule",
+      "statement": "不要追杂毛二板（一堆跟风小票打二板风险极大，真正龙头往往只有一个）",
+      "applies_to_cards": ["limit_up_judgment"],
+      "condition": {"requirement_id": "board_position", "operator": "in", "value": ["follower", "outsider"]},
+      "effect": {"type": "block", "detail": "不参与该二板"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：不要追杂毛二板：一堆跟风小票打二板，风险极大，真正龙头往往只有一个。",
+      "source_refs": [{"chunk_id": "limit_up_v1.c04"}]
+    },
+    {
+      "rule_id": "HR-019",
+      "kind": "hard_rule",
+      "statement": "买前宜慢、千挑万选；卖时宜快、手起刀落",
+      "applies_to_cards": ["entry_timing", "exit_rules"],
+      "condition": {"always": true},
+      "effect": {"type": "require", "detail": "开仓前须完成检查清单；离场信号出现即执行，不拖延"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：入局要有气度，择时重于择股，出局要有速度，周期重于题材，买前宜慢，千挑万选，卖时宜快，手起刀落！",
+      "source_refs": [{"chunk_id": "trading_system_v1.c13"}]
+    },
+    {
+      "rule_id": "HR-020",
+      "kind": "hard_rule",
+      "statement": "不符合原则的情形一律空仓观望，宁愿错过等待下次机会",
+      "applies_to_cards": ["entry_timing"],
+      "condition": {"requirement_id": "key_level_status", "path": "state", "operator": "eq", "value": "broken"},
+      "effect": {"type": "require", "detail": "空仓观望，不随便买入"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：凡是不符合上述原则的，都是空仓观望，宁愿错过等待下次机会，也绝不随便买入一只股票！",
+      "source_refs": [{"chunk_id": "trading_system_v1.c16"}]
+    },
+    {
+      "rule_id": "HR-021",
+      "kind": "hard_rule",
+      "statement": "不要在龙头股上做短线",
+      "applies_to_cards": ["leader_identification", "exit_rules"],
+      "condition": {"requirement_id": "board_position", "operator": "eq", "value": "leader"},
+      "effect": {"type": "require", "detail": "龙头持仓不做短线来回；要捂得住"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文操作要领：要捂得住，不要失去位置；不要在龙头股上做短线！",
+      "source_refs": [{"chunk_id": "trading_system_v1.c11"}]
+    },
+    {
+      "rule_id": "HR-022",
+      "kind": "hard_rule",
+      "statement": "缩量拉升诱多：即时交易线快速远离分时均线且量缩、MACD 顶背离/缩头死叉时，必须观望",
+      "applies_to_cards": ["entry_timing"],
+      "condition": {"all": [
+        {"requirement_id": "macd_divergence_state", "operator": "eq", "value": "top_divergence"},
+        {"requirement_id": "intraday_volume_expansion", "operator": "eq", "value": "shrinking"}
+      ]},
+      "effect": {"type": "block", "detail": "不买入"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：大概率价格要回落，属于缩量拉升诱多行为，此时需观望！",
+      "source_refs": [{"chunk_id": "trading_system_v1.c15"}],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-007"}]
+    },
+    {
+      "rule_id": "HR-023",
+      "kind": "hard_rule",
+      "statement": "A股投资原则上只参与主线题材相关的股票",
+      "applies_to_cards": ["mainline_identification", "theme_screening"],
+      "condition": {"requirement_id": "theme_mainline_flag", "operator": "eq", "value": false},
+      "effect": {"type": "block", "detail": "非主线题材不纳入参与范围"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：原则上只参与主线题材相关连的的股票。",
+      "source_refs": [{"chunk_id": "trading_system_v1.c02"}]
+    },
+    {
+      "rule_id": "HR-024",
+      "kind": "hard_rule",
+      "statement": "竞价承接力筛选：量能未达前日最大分时量 1/2 且高开不在 3%–5% 区间的，予以筛除",
+      "applies_to_cards": ["auction_confirmation"],
+      "condition": {"any": [
+        {"requirement_id": "auction_volume_ratio", "operator": "<", "value": 0.5},
+        {"requirement_id": "open_gap", "operator": "<", "value": 0.03}
+      ]},
+      "effect": {"type": "block", "detail": "筛除承接力较弱的股票"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：如果能够达到上一个交易日的最大量能的1/2，则代表当天的买盘力量强…最好是%3～5%…通过以上两个条件，可以筛选掉大部分的承接力较弱的股票，提高选股的准确度！",
+      "source_refs": [{"chunk_id": "auction_v1.c05"}]
+    },
+    {
+      "rule_id": "HR-025",
+      "kind": "hard_rule",
+      "statement": "强势股须以题材/地位/量价/结构/连续性联合判定，禁止使用单一涨幅替代",
+      "applies_to_cards": ["bull_stock_patterns", "leader_identification"],
+      "condition": {"always": true},
+      "effect": {"type": "require", "detail": "禁止单一维度（如涨幅）单独决定入池"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文（主规范 11.3 亦重申）：题材/地位/量价/结构/连续性联合判定，不使用单一涨幅替代。",
+      "source_refs": [{"chunk_id": "find_ox_v1.c04"}],
+      "figure_refs": []
+    },
+    {
+      "rule_id": "HR-026",
+      "kind": "hard_rule",
+      "statement": "新增纪律：游资席位数据仅作参考，不得作为独立决策依据（席位经常调换被套用）",
+      "applies_to_cards": ["theme_screening", "leader_identification"],
+      "condition": {"always": true},
+      "effect": {"type": "require", "detail": "游资席位字段只能作为辅助证据，不得单独触发判断"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "图内成文（非 L1 文本）：席位经常调换被套用，仅作参考！",
+      "source_refs": [],
+      "figure_refs": [{"figure_id": "theme_tracking_v1.fig-002"}]
+    }
+  ]
+}

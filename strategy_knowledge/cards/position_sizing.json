@@ -124,6 +124,15 @@
     "evidence_patterns": "source_authored"
   },
 
+  "figure_refs": [
+    {
+      "figure_id": "weak_to_strong_v1.fig-006",
+      "kind": "figure_interpretation",
+      "page": 5,
+      "what_it_adds": "操作流程图中的「仓位控制」分支：首次 1-2 成或半仓，并强调「纪律执行」。与 L1 文本的 1-2成/5-8成/2-4成 三档互为印证，并补充了「先试仓、纪律执行」的执行语义。"
+    }
+  ],
+
   "source_refs": [
     {
       "document_id": "weak_to_strong_v1",

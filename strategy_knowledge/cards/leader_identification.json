@@ -133,6 +133,15 @@
     "evidence_patterns": "source_authored"
   },
 
+  "figure_refs": [
+    {
+      "figure_id": "trading_system_v1.fig-009",
+      "kind": "figure_interpretation",
+      "page": 8,
+      "what_it_adds": "图内「盯龙头核心(20%)」模块展开列出的龙头特征识别字段：影响力、资金性质、领涨能力、龙虎榜地位、技术形态、抗跌性、龙头地位的唯一性——比 L1 文本的龙头特征描述更成体系，可作为 leader_confirmed 判据的补充来源。"
+    }
+  ],
+
   "source_refs": [
     {
       "document_id": "trading_system_v1",

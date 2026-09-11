@@ -137,6 +137,81 @@
     "evidence_patterns": "source_authored"
   },
 
+  "figure_refs": [
+    {
+      "figure_id": "auction_v1.fig-001",
+      "kind": "figure_interpretation",
+      "page": 1,
+      "what_it_adds": "正例图：9:15–9:20 阶梯上移后走平，9:20–9:25 几乎水平无大起大落，图内标注「走势平稳」。对应 auction_stability = stable。"
+    },
+    {
+      "figure_id": "auction_v1.fig-002",
+      "kind": "figure_interpretation",
+      "page": 2,
+      "what_it_adds": "反例图：竞价后段价格快速下挫，图内标注「竞价分时走跌」，开盘后继续单边下行。对应 auction_stability = tail_crash / volatile。"
+    },
+    {
+      "figure_id": "auction_v1.fig-003",
+      "kind": "figure_interpretation",
+      "page": 2,
+      "what_it_adds": "最佳图形之一「倒L型+上坡型」：左侧贴底后骤升（倒L），随后缓升上坡。"
+    },
+    {
+      "figure_id": "auction_v1.fig-004",
+      "kind": "figure_interpretation",
+      "page": 3,
+      "what_it_adds": "红盘区阶梯型要点图：强调「量能逐步放大」，量柱逐级抬高。"
+    },
+    {
+      "figure_id": "auction_v1.fig-005",
+      "kind": "figure_interpretation",
+      "page": 3,
+      "what_it_adds": "阶梯型：价格逐级抬升 + 对应放量。"
+    },
+    {
+      "figure_id": "auction_v1.fig-006",
+      "kind": "figure_interpretation",
+      "page": 3,
+      "what_it_adds": "最佳图形之三「红盘区锥形+U形」：左端向下收敛（锥形），随后下探再拉起（U形）。"
+    },
+    {
+      "figure_id": "auction_v1.fig-007",
+      "kind": "figure_interpretation",
+      "page": 4,
+      "what_it_adds": "最佳图形之四「红盘区的上翘一字型」：先贴平运行、尾段上翘。"
+    },
+    {
+      "figure_id": "auction_v1.fig-008",
+      "kind": "figure_interpretation",
+      "page": 4,
+      "what_it_adds": "上翘一字型 + 锥形的组合示例。"
+    },
+    {
+      "figure_id": "auction_v1.fig-009",
+      "kind": "figure_interpretation",
+      "page": 4,
+      "what_it_adds": "最佳图形之五「倒L型+U形」：左端直立段后下探再拉起。"
+    },
+    {
+      "figure_id": "auction_v1.fig-010",
+      "kind": "figure_interpretation",
+      "page": 5,
+      "what_it_adds": "最佳图形之六「一字上翘形+阶梯向上形」。"
+    },
+    {
+      "figure_id": "auction_v1.fig-011",
+      "kind": "figure_interpretation",
+      "page": 5,
+      "what_it_adds": "逐笔成交明细表（时间/成交价/手数），红框圈出临近 9:25 的行，示意竞价单放大——对应 auction_last_minute_ratio 的数据形态。"
+    },
+    {
+      "figure_id": "auction_v1.fig-012",
+      "kind": "figure_interpretation",
+      "page": 6,
+      "what_it_adds": "竞价观察四条（L1 完全缺失）：1) 日点看活跃；2) 后5分钟看台阶；3) 后5分钟看成交量一片红+梯度量；4) 竞价 9:24-9:25 的大单推进。另附开盘判定：看分时正三维、白线高于黄线、黄线高于0轴、放量后缩量、回踩需缩量。"
+    }
+  ],
+
   "source_refs": [
     {
       "document_id": "auction_v1",

@@ -1,0 +1,328 @@
+{
+  "schema_version": "strategy-executable-rules.v1",
+  "layer": "L3",
+  "kind": "soft_heuristics",
+  "authority": "advisory_only",
+  "boundary_flags": {
+    "not_prompt_material": true,
+    "does_not_override_market_facts": true,
+    "does_not_authorize_trades": true,
+    "note": "hard rules 之外的倾向性经验。soft heuristic 只能调整置信度（prefer / penalize），不得单独阻断或放行。"
+  },
+  "evidence_status_vocabulary": {
+    "SUPPORTED": "本系统内已由结果数据验证通过",
+    "PARTIAL": "有部分支持证据，结果混杂",
+    "UNSUPPORTED": "已测试但未成立",
+    "INSUFFICIENT_EVIDENCE": "尚未验证"
+  },
+  "assertion_source_vocabulary": {
+    "source_authored": "策略原文明确表述",
+    "engineer_derived": "工程翻译或推断，非原文"
+  },
+  "current_validation_state": "本仓库尚未对任何 L3 规则做过 outcome 回测，因此全部 soft heuristic 的 evidence_status 均为 INSUFFICIENT_EVIDENCE。",
+  "heuristics": [
+    {
+      "rule_id": "SH-001",
+      "kind": "soft_heuristic",
+      "statement": "大热点大干，小热点不干（题材级别决定投入意愿）",
+      "applies_to_cards": ["mainline_identification"],
+      "condition": {"requirement_id": "theme_logic_attributes", "path": "breadth", "operator": "eq", "value": "broad"},
+      "effect": {"type": "prefer", "confidence_modifier": 0.15, "detail": "题材影响面越广，参与意愿越高"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：大热点题材出大牛股，不要放过大热点题材，不要热衷小热点题材，大热点大干，小热点不干。",
+      "source_refs": [{"chunk_id": "trading_system_v1.c01"}]
+    },
+    {
+      "rule_id": "SH-002",
+      "kind": "soft_heuristic",
+      "statement": "补涨股高度不太可能超过龙头，故补涨行情应降低预期",
+      "applies_to_cards": ["theme_lifecycle"],
+      "condition": {"requirement_id": "board_position", "operator": "in", "value": ["follower"]},
+      "effect": {"type": "penalize", "confidence_modifier": -0.15, "detail": "补涨票的预期高度下调"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：补涨股高度不太可能超过龙头。",
+      "source_refs": [{"chunk_id": "trading_system_v1.c09"}]
+    },
+    {
+      "rule_id": "SH-003",
+      "kind": "soft_heuristic",
+      "statement": "主线题材 + 绝对龙头，可加大仓位（5-8成）",
+      "applies_to_cards": ["position_sizing"],
+      "condition": {"all": [
+        {"requirement_id": "board_position", "operator": "eq", "value": "leader"},
+        {"requirement_id": "theme_breadth_depth", "operator": "eq", "value": "deep_wide"}
+      ]},
+      "effect": {"type": "prefer", "confidence_modifier": 0.2, "detail": "仓位档位上移至 position_main_leader_heavy"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：如果是 主线题材+绝对龙头，可加大仓位（5-8成）。",
+      "source_refs": [{"chunk_id": "weak_to_strong_v1.c09"}],
+      "figure_refs": [{"figure_id": "weak_to_strong_v1.fig-006"}]
+    },
+    {
+      "rule_id": "SH-004",
+      "kind": "soft_heuristic",
+      "statement": "早盘热点与晚盘热点相同时，要重仓买入",
+      "applies_to_cards": ["entry_timing"],
+      "condition": {"always": true},
+      "effect": {"type": "prefer", "confidence_modifier": 0.15, "detail": "早晚盘热点共振时提高仓位"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：早盘热点于晚盘热点相同时，要重仓买入！",
+      "source_refs": [{"chunk_id": "trading_system_v1.c05"}]
+    },
+    {
+      "rule_id": "SH-005",
+      "kind": "soft_heuristic",
+      "statement": "龙头封单稳定、资金不断加仓、不轻易被撬开，是龙头气质的证据",
+      "applies_to_cards": ["limit_up_judgment", "leader_identification"],
+      "condition": {"requirement_id": "limit_up_seal_quality", "operator": "eq", "value": "decisive"},
+      "effect": {"type": "prefer", "confidence_modifier": 0.15, "detail": "提高龙头/封板判定置信度"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：龙头的封单往往稳定，资金不断加仓，不轻易被撬开。",
+      "source_refs": [{"chunk_id": "limit_up_v1.c04"}]
+    },
+    {
+      "rule_id": "SH-006",
+      "kind": "soft_heuristic",
+      "statement": "二板放量但分歧转一致（下杀后快速拉起），说明承接力强、资金敢搏龙头",
+      "applies_to_cards": ["limit_up_judgment"],
+      "condition": {"requirement_id": "second_board_status", "operator": ">=", "value": 2},
+      "effect": {"type": "prefer", "confidence_modifier": 0.18, "detail": "提高 second_board_leader_forming 置信度"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：二板放量但分歧转一致（下杀后快速拉起），说明承接力强，资金敢于搏龙头。",
+      "source_refs": [{"chunk_id": "limit_up_v1.c04"}]
+    },
+    {
+      "rule_id": "SH-007",
+      "kind": "soft_heuristic",
+      "statement": "二板缩量直接封死，往往意味主力强控筹码，容易走出高度",
+      "applies_to_cards": ["limit_up_judgment"],
+      "condition": {"all": [
+        {"requirement_id": "second_board_status", "operator": ">=", "value": 2},
+        {"requirement_id": "volume_vs_ma60", "operator": "<", "value": 1.0}
+      ]},
+      "effect": {"type": "prefer", "confidence_modifier": 0.15, "detail": "缩量封死 → 高度预期上调"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：二板若缩量直接封死，往往意味着主力在强控筹码，容易走出高度。",
+      "source_refs": [{"chunk_id": "limit_up_v1.c04"}]
+    },
+    {
+      "rule_id": "SH-008",
+      "kind": "soft_heuristic",
+      "statement": "龙头往往诞生在情绪冰点后的第一波反弹",
+      "applies_to_cards": ["limit_up_judgment", "leader_identification"],
+      "condition": {"requirement_id": "short_term_sentiment", "operator": "eq", "value": "recovery"},
+      "effect": {"type": "prefer", "confidence_modifier": 0.15, "detail": "冰点后反弹期提高龙头候选置信度"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：市场情绪底部：龙头往往诞生在情绪冰点后第一波反弹。",
+      "source_refs": [{"chunk_id": "limit_up_v1.c04"}]
+    },
+    {
+      "rule_id": "SH-009",
+      "kind": "soft_heuristic",
+      "statement": "高量不破，后市要火（调整不破坏高量柱最低价 → 还会有第3浪）",
+      "applies_to_cards": ["bull_stock_patterns"],
+      "condition": {"requirement_id": "high_volume_bar_low", "operator": "eq", "value": "holding_above"},
+      "effect": {"type": "prefer", "confidence_modifier": 0.2, "detail": "看多，纳入强势股观察池"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：高量不破，后市要火。",
+      "source_refs": [{"chunk_id": "find_ox_v1.c01"}],
+      "figure_refs": [{"figure_id": "find_ox_v1.fig-001"}]
+    },
+    {
+      "rule_id": "SH-010",
+      "kind": "soft_heuristic",
+      "statement": "倍量不穿，后市翻番（第2次倍量柱底部不低于第1次，第3次出现时可跟进）",
+      "applies_to_cards": ["bull_stock_patterns"],
+      "condition": {"requirement_id": "double_volume_base", "operator": "eq", "value": "unbroken"},
+      "effect": {"type": "prefer", "confidence_modifier": 0.2, "detail": "5日均线回踩低吸"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：倍量不穿，后市翻番；第3次出现倍量不穿时，可以跟进择机进场。",
+      "source_refs": [{"chunk_id": "find_ox_v1.c02"}],
+      "figure_refs": [{"figure_id": "find_ox_v1.fig-002"}]
+    },
+    {
+      "rule_id": "SH-011",
+      "kind": "soft_heuristic",
+      "statement": "缺口不补，后市如虎（跳空缺口不回补意味着大主线题材发动暴涨行情）",
+      "applies_to_cards": ["bull_stock_patterns"],
+      "condition": {"requirement_id": "gap_unfilled_status", "operator": "in", "value": ["gap_held", "gap_touched"]},
+      "effect": {"type": "prefer", "confidence_modifier": 0.18, "detail": "按大主线题材发酵对待"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：缺口不补，后市如虎；是指跳空缺口不回补，意味着大主线题材发动暴涨行情。",
+      "source_refs": [{"chunk_id": "find_ox_v1.c03"}],
+      "figure_refs": [{"figure_id": "find_ox_v1.fig-003"}]
+    },
+    {
+      "rule_id": "SH-013",
+      "kind": "soft_heuristic",
+      "statement": "烂而不弱（破板后不深跌 + 下跌缩量）则后续大概率有更强走势",
+      "applies_to_cards": ["weak_to_strong"],
+      "condition": {"all": [
+        {"requirement_id": "intraday_volume", "operator": "eq", "value": "contracting"},
+        {"requirement_id": "leader_key_level", "path": "state", "operator": "in", "value": ["intact", "testing"]}
+      ]},
+      "effect": {"type": "prefer", "confidence_modifier": 0.15, "detail": "提高 bad_limit_up_candidate 置信度"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：烂板的封单下跌过程中呈现缩量走势，则代表抛压减少，“烂而不弱”则后续大概率能有更强的走势。",
+      "source_refs": [{"chunk_id": "weak_to_strong_v1.c04"}],
+      "figure_refs": [{"figure_id": "weak_to_strong_v1.fig-002"}]
+    },
+    {
+      "rule_id": "SH-014",
+      "kind": "soft_heuristic",
+      "statement": "底部首板烂板若不暴量，代表筹码更干净，形态更强",
+      "applies_to_cards": ["weak_to_strong"],
+      "condition": {"always": true},
+      "effect": {"type": "prefer", "confidence_modifier": 0.1, "detail": "不暴量的底部首板烂板加分"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：底部首板烂板：如果不暴量代表筹码更干净，则更强。",
+      "source_refs": [{"chunk_id": "weak_to_strong_v1.c04"}]
+    },
+    {
+      "rule_id": "SH-015",
+      "kind": "soft_heuristic",
+      "statement": "竞价量能达前日最大分时量 1/2 且高开 3%–5%，当日继续涨停概率高",
+      "applies_to_cards": ["auction_confirmation"],
+      "condition": {"all": [
+        {"requirement_id": "auction_volume_ratio", "operator": ">=", "value": 0.5},
+        {"requirement_id": "open_gap", "operator": ">=", "value": 0.03},
+        {"requirement_id": "open_gap", "operator": "<=", "value": 0.05}
+      ]},
+      "effect": {"type": "prefer", "confidence_modifier": 0.25, "detail": "提高 auction_confirmed_strong 置信度"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：同时，如果在满足成交量的条件下能够高开的股票，最好是%3～5%，当日继续涨停的概率高！",
+      "source_refs": [{"chunk_id": "auction_v1.c05"}]
+    },
+    {
+      "rule_id": "SH-016",
+      "kind": "soft_heuristic",
+      "statement": "六种竞价最佳走势（倒L+上坡 / 红盘阶梯 / 锥形+U / 上翘一字 / 倒L+U / 一字上翘+阶梯）均属看多形态",
+      "applies_to_cards": ["auction_confirmation"],
+      "condition": {"requirement_id": "auction_stability", "operator": "eq", "value": "stable"},
+      "effect": {"type": "prefer", "confidence_modifier": 0.15, "detail": "命中任一最佳图形则加分；均需 0 轴之上红盘区"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文逐一列出六种最佳走势图形并给出解释。图形本身为示意图，判定需人工或图像识别。",
+      "source_refs": [{"chunk_id": "auction_v1.c02"}],
+      "figure_refs": [
+        {"figure_id": "auction_v1.fig-003"}, {"figure_id": "auction_v1.fig-004"},
+        {"figure_id": "auction_v1.fig-005"}, {"figure_id": "auction_v1.fig-006"},
+        {"figure_id": "auction_v1.fig-007"}, {"figure_id": "auction_v1.fig-008"},
+        {"figure_id": "auction_v1.fig-009"}, {"figure_id": "auction_v1.fig-010"}
+      ]
+    },
+    {
+      "rule_id": "SH-017",
+      "kind": "soft_heuristic",
+      "statement": "高辨识度（最快封板、资金最狠最夸张）是龙头成为板块发动机与旗帜的标志",
+      "applies_to_cards": ["leader_identification"],
+      "condition": {"requirement_id": "board_position", "operator": "eq", "value": "leader"},
+      "effect": {"type": "prefer", "confidence_modifier": 0.15, "detail": "提高 leader_confirmed 置信度"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：高辨识度：分析是否具备领涨特征（封板金额、封板时间及形态），最快封板，资金最狠最夸张，是整个板块的发动机和旗帜。",
+      "source_refs": [{"chunk_id": "trading_system_v1.c10"}]
+    },
+    {
+      "rule_id": "SH-018",
+      "kind": "soft_heuristic",
+      "statement": "题材深广度越大，龙头级别与想象空间越大",
+      "applies_to_cards": ["leader_identification", "mainline_identification"],
+      "condition": {"requirement_id": "theme_breadth_depth", "operator": "eq", "value": "deep_wide"},
+      "effect": {"type": "prefer", "confidence_modifier": 0.15, "detail": "龙头高度预期上调"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：影响越深远，影响人群越多，越有想象空间，级别就越大。",
+      "source_refs": [{"chunk_id": "trading_system_v1.c02"}]
+    },
+    {
+      "rule_id": "SH-019",
+      "kind": "soft_heuristic",
+      "statement": "龙虎榜频繁 + 涨停家数连续3天超10家 + 成交量大幅上升 → 进入高潮警惕、必要时止盈",
+      "applies_to_cards": ["theme_lifecycle"],
+      "condition": {"requirement_id": "limit_up_count_trend", "operator": "eq", "value": "rising"},
+      "effect": {"type": "penalize", "confidence_modifier": -0.2, "detail": "阶段判定向高潮警惕/再次高潮离场倾斜"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：高潮-离场（警惕）特征：板块上榜龙虎榜次数多、涨停家数连续3天超10家、题材日均成交量大幅上升。",
+      "source_refs": [{"chunk_id": "trading_system_v1.c06"}]
+    },
+    {
+      "rule_id": "SH-020",
+      "kind": "soft_heuristic",
+      "statement": "分时涨停三步走过程中，每一次拉升都应伴随量能逐步放大",
+      "applies_to_cards": ["entry_timing", "limit_up_judgment"],
+      "condition": {"always": true},
+      "effect": {"type": "prefer", "confidence_modifier": 0.15, "detail": "三步走且量能递增 → 提高封板预期"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "图内成文：涨停三步走过程中：每一次的拉升，量能逐步放大。",
+      "source_refs": [],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-005"}]
+    },
+    {
+      "rule_id": "SH-021",
+      "kind": "soft_heuristic",
+      "statement": "“虎踞龙盘”分时图第一波一定是放量结构，回落时 MACD 常构成背离",
+      "applies_to_cards": ["entry_timing"],
+      "condition": {"always": true},
+      "effect": {"type": "prefer", "confidence_modifier": 0.12, "detail": "用于识别分时买点4"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "图内成文：真正“虎踞龙盘”分时图的第一波：一定是放量结构，回落时，MACD常会构成背离。",
+      "source_refs": [],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-006"}]
+    },
+    {
+      "rule_id": "SH-022",
+      "kind": "soft_heuristic",
+      "statement": "回调缩量 / 底部缩量是健康的量价形态",
+      "applies_to_cards": ["entry_timing", "bull_stock_patterns"],
+      "condition": {"requirement_id": "volume_price_rhythm", "operator": "eq", "value": "healthy"},
+      "effect": {"type": "prefer", "confidence_modifier": 0.12, "detail": "量价节奏健康则加分"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "图内成文：底部缩量 / 回调缩量是健康的。",
+      "source_refs": [],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-004"}, {"figure_id": "trading_system_v1.fig-008"}]
+    },
+    {
+      "rule_id": "SH-023",
+      "kind": "soft_heuristic",
+      "statement": "如果买不到龙头就买龙二；不怕犯错，不怕暴涨",
+      "applies_to_cards": ["leader_identification"],
+      "condition": {"requirement_id": "board_position", "operator": "eq", "value": "sub_leader"},
+      "effect": {"type": "prefer", "confidence_modifier": 0.1, "detail": "龙头不可得时的次优选择"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文操作要领5：如果买不到龙头，就买龙二，不怕犯错，不怕暴涨！",
+      "source_refs": [{"chunk_id": "trading_system_v1.c11"}]
+    },
+    {
+      "rule_id": "SH-024",
+      "kind": "soft_heuristic",
+      "statement": "好行情多参与早盘热点，并有选择地参与晚盘热点",
+      "applies_to_cards": ["entry_timing"],
+      "condition": {"requirement_id": "market_regime", "operator": "in", "value": ["expansion", "rotation"]},
+      "effect": {"type": "prefer", "confidence_modifier": 0.1, "detail": "好行情提高参与度"},
+      "evidence_status": "INSUFFICIENT_EVIDENCE",
+      "assertion_source": "source_authored",
+      "rationale": "原文：好的行情多参与早盘热点，同时积极地有选择地参与晚盘热点。",
+      "source_refs": [{"chunk_id": "trading_system_v1.c05"}]
+    }
+  ]
+}

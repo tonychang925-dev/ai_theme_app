@@ -122,6 +122,21 @@
     "evidence_patterns": "source_authored"
   },
 
+  "figure_refs": [
+    {
+      "figure_id": "theme_tracking_v1.fig-001",
+      "kind": "figure_interpretation",
+      "page": 32,
+      "what_it_adds": "「资金性质」列（机构侧）的原始数据源形态：机构当日净买入 / 3日净买入明细表，字段为 买方机构数 / 卖方机构数 / 机构买入总额 / 机构卖出 / 机构买入净额。说明 strong_stock_tracking_fields 中资金性质一列应从何处取得。"
+    },
+    {
+      "figure_id": "theme_tracking_v1.fig-002",
+      "kind": "figure_interpretation",
+      "page": 32,
+      "what_it_adds": "「资金性质」列（游资侧）的原始数据源形态：游资净买入 / 净卖出席位表（陈小群、章盟主、作手新一、方新侠、炒股养家等席位，蓝色填充格为三日榜）。并含一条重要的使用限制（原文未载于 L1 文本）：「席位经常调换被套用，仅作参考！」——使用游资席位数据时必须带上这条免责边界。"
+    }
+  ],
+
   "source_refs": [
     {
       "document_id": "theme_tracking_v1",

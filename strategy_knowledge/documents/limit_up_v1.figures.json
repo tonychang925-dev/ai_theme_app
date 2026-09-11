@@ -1,0 +1,100 @@
+{
+  "schema_version": "strategy-source-figures.v1",
+  "layer": "L1-figures",
+  "authority": "figure_observation_only",
+  "boundary_flags": {
+    "is_interpretation": true,
+    "not_source_text": true,
+    "not_l1_source_chunks": true,
+    "source_of_truth": "the PDF figure itself",
+    "note": "in_figure_text 由视觉模型读出，可能有识别误差；pattern_observation 是对图形形态的模型解读，不是原文文字。两者都不得当作 L1 源文本使用。"
+  },
+  "document_id": "limit_up_v1",
+  "title": "如何抓涨停股？",
+  "source_file_path": "docs/architecture/如何抓涨停股？.pdf",
+  "source_sha256": "2186f1bb0735fc4214f615ec80b0089e683f728a1e3312f055525b5af038918c",
+  "extraction": {
+    "tool": "pdfimages",
+    "options": "-png",
+    "granularity": "per embedded image object",
+    "determinism": "verified byte-identical across repeated extractions",
+    "llm_used_for_text": false,
+    "vision_used_for_observation": true
+  },
+  "figures": [
+    {
+      "figure_id": "limit_up_v1.fig-001",
+      "page": 1,
+      "image_index": 1,
+      "file_name": "img-001.png",
+      "width": 2182,
+      "height": 936,
+      "png_sha256_prefix": "70a7cef15ef8",
+      "related_chunk_id": "limit_up_v1.c02",
+      "caption_in_document": "基因",
+      "in_figure_text": [
+        "基因",
+        "如果一只股票近期频繁出现涨停，那么发动行情的那天涨停的概率较大。",
+        "涨停",
+        "发动行情就是涨停"
+      ],
+      "pattern_observation": "日K线图。前半段为长期横盘低波动区间，后半段出现连续放量上攻。图内用红色箭头分别指向多个涨停K线，并在右侧标注「发动行情就是涨停」。下方副图为成交量柱，后半段量柱明显抬高。",
+      "mapping_note": "对应原文“涨停基因：近期频繁出现涨停，发动行情那天涨停机率较大”。"
+    },
+    {
+      "figure_id": "limit_up_v1.fig-002",
+      "page": 1,
+      "image_index": 2,
+      "file_name": "img-002.png",
+      "width": 2080,
+      "height": 950,
+      "png_sha256_prefix": "793ed1cae6e3",
+      "related_chunk_id": "limit_up_v1.c02",
+      "caption_in_document": "题材",
+      "in_figure_text": [
+        "题材",
+        "如果个股处于近期热点题材，当整个板块出现涨停潮时，个股涨停的概率较大。",
+        "碳中和+电力",
+        "今日最强题材",
+        "发动行情就是涨停"
+      ],
+      "pattern_observation": "日K线图。图内点名「碳中和+电力 今日最强题材」，右侧为放量连续上攻段，箭头指向涨停K线并标注「发动行情就是涨停」。下方量柱持续放大。",
+      "mapping_note": "对应原文“题材：处于当前热点题材，板块处于涨停潮时个股涨停概率较大”。"
+    },
+    {
+      "figure_id": "limit_up_v1.fig-003",
+      "page": 2,
+      "image_index": 3,
+      "file_name": "img-003.png",
+      "width": 1836,
+      "height": 1040,
+      "png_sha256_prefix": "6f9083aaf916",
+      "related_chunk_id": "limit_up_v1.c03",
+      "caption_in_document": "2、预判涨停能否封住 — 量能",
+      "in_figure_text": ["放量涨停", "封板无量"],
+      "pattern_observation": "分时图。红字「放量涨停」标注在价格直线拉升至涨停的瞬间；黄色椭圆圈出该处对应的成交量剧烈放大的量柱。封板之后价格维持横线，红字「封板无量」标注封板后量能萎缩的状态。",
+      "mapping_note": "对应原文“涨停前量越大越好，涨停前放量拉，涨停后缩量横，量越小越好，当天封板概率大”。"
+    },
+    {
+      "figure_id": "limit_up_v1.fig-004",
+      "page": 2,
+      "image_index": 4,
+      "file_name": "img-004.png",
+      "width": 1772,
+      "height": 924,
+      "png_sha256_prefix": "b1b34107285f",
+      "related_chunk_id": "limit_up_v1.c03",
+      "caption_in_document": "2、预判涨停能否封住 — 价位",
+      "in_figure_text": ["大幅下跌", "放量涨停", "容易封板", "涨停"],
+      "pattern_observation": "日K线图。左侧为一段大幅下跌段，右侧在低位出现放量涨停K线，红字标注「大幅下跌 放量涨停 容易封板」，并用红圈与箭头标出该涨停K线。下方量柱在涨停处明显放大。",
+      "mapping_note": "对应原文“价位：个股在上涨的初期、中期，股价通常在相对低位”。"
+    }
+  ],
+  "coverage": {
+    "embedded_images_total": 5,
+    "figures_described": 4,
+    "excluded": [
+      {"image_index": 0, "reason": "1500x750 页眉装饰图，六份 PDF 同款，非正文图"}
+    ]
+  }
+}

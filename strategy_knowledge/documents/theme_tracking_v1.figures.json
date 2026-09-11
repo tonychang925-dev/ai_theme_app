@@ -1,0 +1,71 @@
+{
+  "schema_version": "strategy-source-figures.v1",
+  "layer": "L1-figures",
+  "authority": "figure_observation_only",
+  "boundary_flags": {
+    "is_interpretation": true,
+    "not_source_text": true,
+    "not_l1_source_chunks": true,
+    "source_of_truth": "the PDF figure itself",
+    "note": "in_figure_text 由视觉模型读出，可能有识别误差；pattern_observation 是对图形形态的模型解读，不是原文文字。两者都不得当作 L1 源文本使用。"
+  },
+  "document_id": "theme_tracking_v1",
+  "title": "A股题材&强势股跟踪",
+  "source_file_path": "docs/architecture/A股题材&强势股跟踪.pdf",
+  "source_sha256": "b647f76744e1a597b0dff95d8496ba841a8c17407e6f2c671d13e233bfa91321",
+  "extraction": {
+    "tool": "pdfimages",
+    "options": "-png",
+    "granularity": "per embedded image object",
+    "determinism": "verified byte-identical across repeated extractions",
+    "llm_used_for_text": false,
+    "vision_used_for_observation": true
+  },
+  "figures": [
+    {
+      "figure_id": "theme_tracking_v1.fig-001",
+      "page": 32,
+      "image_index": 1,
+      "file_name": "img-001.png",
+      "width": 553,
+      "height": 639,
+      "png_sha256_prefix": "3755af670aab",
+      "related_chunk_id": "theme_tracking_v1.c07",
+      "caption_in_document": "强势股跟踪 — 资金性质（机构/游资）数据源示例",
+      "in_figure_text": [
+        "12月16日机构当日净买入",
+        "序号 代码 名称 收盘价 涨跌幅 买方机构数 卖方机构数 机构买入总额(万) 机构卖出(万) 机构买入净额(万)",
+        "12月16日机构3日净买入",
+        "总计 117170 62829 54342 / 总计 63087 40179 22908"
+      ],
+      "pattern_observation": "两张资金数据表（截图）。上表为「当日净买入」按净额降序排列的前16只个股（如 中超控股 6.17 +5.65%、航天科技 25.5 +5.07%、雪人集团 19.1 -4.40% 等），下表为「3日净买入」前7只（红旗连锁、跃岭股份、三羊马、航天工程、通宇通讯、美之高、久之洋）。列结构即机构资金性质的判定字段：买方机构数、卖方机构数、买入总额、卖出总额、买入净额。",
+      "mapping_note": "这张图揭示了强势股跟踪表中「资金性质」一列的原始数据形态（机构侧）。属于数据源样例，非策略规则。"
+    },
+    {
+      "figure_id": "theme_tracking_v1.fig-002",
+      "page": 32,
+      "image_index": 2,
+      "file_name": "img-002.png",
+      "width": 865,
+      "height": 729,
+      "png_sha256_prefix": "f77e0975a7f9",
+      "related_chunk_id": "theme_tracking_v1.c07",
+      "caption_in_document": "强势股跟踪 — 游资席位数据源示例",
+      "in_figure_text": [
+        "游资净买入 / 游资净卖出",
+        "净买入1 净买入2 净买入3 / 净卖出1 净卖出2 净卖出3",
+        "陈小群 章盟主 作手新一 方新侠 炒股养家 佛山 中山东路 越王大道 湖里大道 新闸路 成都 中信浙江 中秦湖北 宁波桑田 思明南路 上塘路 量化打板",
+        "席位经常调换被套用，仅作参考！蓝色填充格为三日榜，其他为当日榜"
+      ],
+      "pattern_observation": "左右两张游资席位表。左表为净买入，右表为净卖出，均按游资席位（营业部/席别名）分行，列出该席位当日净买入或净卖出的前三个标的及金额（如 陈小群 净买入1 航天电子5.71亿、净卖出1 空白）。底部注明蓝色填充格表示三日榜。",
+      "mapping_note": "这张图揭示了强势股跟踪表中「资金性质」一列的原始数据形态（游资侧），并给出重要的使用限制说明：「席位经常调换被套用，仅作参考！」属于数据源样例，非策略规则。"
+    }
+  ],
+  "coverage": {
+    "embedded_images_total": 3,
+    "figures_described": 2,
+    "excluded": [
+      {"image_index": 0, "reason": "1500x750 页眉装饰图，六份 PDF 同款，非正文图"}
+    ]
+  }
+}

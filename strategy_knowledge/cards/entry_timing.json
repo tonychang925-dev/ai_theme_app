@@ -145,6 +145,45 @@
     "evidence_patterns": "source_authored"
   },
 
+  "figure_refs": [
+    {
+      "figure_id": "trading_system_v1.fig-003",
+      "kind": "figure_interpretation",
+      "page": 5,
+      "what_it_adds": "分时买点1（放量突破瞬间）的实际判据成文版：股价在均价线上方可以买，但必须放量才能买，不放量不买，买入时机=放量上涨的瞬间；量能形态要求「底部明显放量、量能柱慢慢向上窜」「先缩量再放量」。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-004",
+      "kind": "figure_interpretation",
+      "page": 5,
+      "what_it_adds": "【分时图买卖原则】三条成文版（L1 文本仅有零星表述）：1) 白线在黄线下方坚决不买；2) 白线在黄线上方可以买、但必须放量，买入点=放量上涨的几分钟内；3) 白线从下方上穿黄线且放量可以买，买入点=上穿+放量。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-005",
+      "kind": "figure_interpretation",
+      "page": 6,
+      "what_it_adds": "「标准的分时图涨停三步走」——第一步先拉至3%然后缩量整理，第二步再拉至6%然后缩量整理，第三步大单快速封涨停；过程中每一次拉升量能逐步放大。买入点=放量拉升的瞬间 / 拉升后的缩量整理区间。此形态 L1 文本完全未载。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-006",
+      "kind": "figure_interpretation",
+      "page": 6,
+      "what_it_adds": "分时买点4「虎踞龙盘」要点：第一波一定是放量结构，回落时 MACD 常构成背离；图示为价格/成交量/MACD 三联图。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-007",
+      "kind": "figure_interpretation",
+      "page": 7,
+      "what_it_adds": "缩量拉升诱多的图内判据：白线快速远离黄线时，如果下方成交量缩减并配合 MACD 顶背离或缩头死叉，高概率价格要回档。强化 reject_shrinking_rally 状态。"
+    },
+    {
+      "figure_id": "weak_to_strong_v1.fig-005",
+      "kind": "figure_interpretation",
+      "page": 4,
+      "what_it_adds": "平台放量突破的图示：价格在均线附近横盘后向上突破，突破处成交量放大——对应 buy_platform_breakout 状态。"
+    }
+  ],
+
   "source_refs": [
     {
       "document_id": "trading_system_v1",

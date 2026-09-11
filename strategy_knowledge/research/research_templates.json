@@ -1,0 +1,599 @@
+{
+  "schema_version": "strategy-research-templates.v1",
+  "layer": "L4",
+  "kind": "research_templates",
+  "authority": "advisory_only",
+  "boundary_flags": {
+    "not_prompt_material": true,
+    "does_not_answer_questions": true,
+    "does_not_override_market_facts": true,
+    "note": "ADR-032：研究模板只规定「该问什么问题」，不给出结论。模板本身不产生答案，答案必须来自证据。"
+  },
+  "purpose": "为每一种冲突模式规定：竞争假设是什么、按什么顺序提哪些问题、每个问题能区分开哪些假设、证据到什么程度才算够、证据不足时如何显式降级。",
+  "insufficiency_policy": {
+    "default": "INSUFFICIENT_EVIDENCE",
+    "rule": "若关键 probes 缺失或未达 sufficient_evidence_rule，不得输出结论，必须显式返回 INSUFFICIENT_EVIDENCE 并列出缺口。",
+    "forbidden": [
+      "用默认值/占位值填充缺失证据后给结论",
+      "把 UNAVAILABLE 当作 EMPTY",
+      "让策略规则覆盖市场事实"
+    ]
+  },
+  "templates": [
+    {
+      "template_id": "RT-01",
+      "conflict_pattern": "龙头走弱：正常调整 / 主动分歧 / 结构破坏 / 新老切换，四者证据重叠难以区分",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["leader_divergence"],
+      "competing_hypotheses": ["normal_adjustment", "active_divergence", "leader_failure", "leader_rotation"],
+      "questions": [
+        {
+          "question": "龙头从峰值的回撤幅度有多大？",
+          "probes": ["leader_drawdown_from_peak"],
+          "discriminates": ["normal_adjustment(<=5%)", "active_divergence(5-15%)", "leader_failure(>15%)"],
+          "priority": "primary"
+        },
+        {
+          "question": "关键支撑位是完好、正在测试，还是已被击穿？",
+          "probes": ["key_level_status"],
+          "discriminates": ["normal_adjustment(intact)", "active_divergence(testing)", "leader_failure(broken)"],
+          "priority": "primary"
+        },
+        {
+          "question": "下跌时量能是缩量（卖压不足）还是放量（真出货）？",
+          "probes": ["leader_volume_pattern"],
+          "discriminates": ["normal_adjustment(contracting)", "leader_failure(heavy_selling)"],
+          "priority": "primary"
+        },
+        {
+          "question": "题材整体宽度是在扩张还是收缩？",
+          "probes": ["theme_breadth_change", "breadth_trend"],
+          "discriminates": ["normal_adjustment(expanding)", "leader_failure(contracting)"],
+          "priority": "secondary"
+        },
+        {
+          "question": "是否出现了新的核心标的（同题材但封板更快更强）？",
+          "probes": ["new_leader_candidates", "peer_relative_strength"],
+          "discriminates": ["leader_rotation", "leader_failure"],
+          "priority": "primary"
+        },
+        {
+          "question": "大盘环境是否处于盛极而衰？",
+          "probes": ["market_regime", "theme_mainline_environment"],
+          "discriminates": ["触发 HR-007 硬约束的情形"],
+          "priority": "secondary"
+        }
+      ],
+      "sufficient_evidence_rule": "leader_drawdown_from_peak + key_level_status + leader_volume_pattern 三项齐备，方可排除 INSUFFICIENT_EVIDENCE。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：只报「龙头走弱，状态待定」，不猜具体状态。",
+      "resolution_map": [
+        {"if": "市场环境为盛极而衰(HR-007)", "then": "不参与，状态判定让位于硬约束"},
+        {"if": "new_leader_candidates>=1 且宽度未收缩", "then": "leader_rotation（切换而非退潮）"},
+        {"if": "key_level=broken 且 volume=heavy_selling 且 宽度收缩", "then": "leader_failure"},
+        {"if": "回撤5-15% 且 key_level=testing", "then": "active_divergence → 转 weak_to_strong 看次日"}
+      ],
+      "source_refs": [{"chunk_id": "trading_system_v1.c07"}, {"chunk_id": "trading_system_v1.c10"}],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-002"}]
+    },
+    {
+      "template_id": "RT-02",
+      "conflict_pattern": "弱转强真假之辨：真弱转强 / 假弱转强 / 烂板待观察 / 尚无信号",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["weak_to_strong"],
+      "competing_hypotheses": ["confirmed_weak_to_strong", "false_weak_to_strong", "bad_limit_up_candidate", "no_signal_yet"],
+      "questions": [
+        {
+          "question": "候选票是否为强势股或龙头？（这是准入前提）",
+          "probes": ["board_position"],
+          "discriminates": ["触发 HR-001 硬约束的情形"],
+          "priority": "primary"
+        },
+        {
+          "question": "次日是放量换手、封单坚决，还是缩量拉升、封单虚弱？",
+          "probes": ["intraday_volume", "limit_up_seal_quality"],
+          "discriminates": ["confirmed(放量+decdecisive)", "false(缩量+weak/no_seal)"],
+          "priority": "primary"
+        },
+        {
+          "question": "前一日分歧后收盘是否守住关键支撑（5日/10日线、前涨停价）？",
+          "probes": ["leader_key_level"],
+          "discriminates": ["confirmed(intact)", "false(broken)"],
+          "priority": "primary"
+        },
+        {
+          "question": "板块是否有联动确认（题材未全面退潮、有补涨助攻）？",
+          "probes": ["peer_follow_through"],
+          "discriminates": ["confirmed(>=0.5)", "false(<0.5)"],
+          "priority": "secondary"
+        },
+        {
+          "question": "前一日是否为烂板？烂板是否满足「烂而不弱」五要素？",
+          "probes": ["limit_up_seal_quality", "intraday_volume", "leader_key_level"],
+          "discriminates": ["bad_limit_up_candidate 的成立与否"],
+          "priority": "secondary"
+        },
+        {
+          "question": "大盘是否极度退潮？",
+          "probes": ["market_regime", "theme_fade_status"],
+          "discriminates": ["触发 HR-002 硬约束的情形"],
+          "priority": "secondary"
+        }
+      ],
+      "sufficient_evidence_rule": "intraday_volume + limit_up_seal_quality + leader_key_level 三项齐备。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：不判定真假弱转强，仅记录候选。",
+      "resolution_map": [
+        {"if": "非强势股/非龙头(HR-001)", "then": "直接剔除，不进入真假判定"},
+        {"if": "大盘极度退潮(HR-002)", "then": "不做弱转强"},
+        {"if": "放量换手 + 封单坚决 + 守住支撑 + 板块联动", "then": "confirmed_weak_to_strong → 交由 entry_timing / position_sizing"},
+        {"if": "缩量拉升 + 封单虚弱 + 跌破支撑", "then": "false_weak_to_strong → avoid_or_exit"}
+      ],
+      "source_refs": [
+        {"chunk_id": "weak_to_strong_v1.c03"},
+        {"chunk_id": "weak_to_strong_v1.c04"},
+        {"chunk_id": "weak_to_strong_v1.c11"}
+      ],
+      "figure_refs": [{"figure_id": "weak_to_strong_v1.fig-002"}, {"figure_id": "weak_to_strong_v1.fig-006"}]
+    },
+    {
+      "template_id": "RT-03",
+      "conflict_pattern": "题材处于周期哪个阶段：分歧关注 / 弱转强切入 / 再次高潮离场 / 分歧补涨 相邻阶段易混",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["theme_lifecycle"],
+      "competing_hypotheses": ["分歧关注", "弱转强切入", "再次高潮离场", "分歧补涨", "退潮放弃"],
+      "questions": [
+        {
+          "question": "龙头是否已出现首阴分歧？",
+          "probes": ["leader_board_height", "leader_volume_pattern"],
+          "discriminates": ["进入分歧关注的门槛"],
+          "priority": "primary"
+        },
+        {
+          "question": "首阴次日是否反包、放量涨停（弱转强确认）？",
+          "probes": ["reverse_package_status"],
+          "discriminates": ["弱转强切入", "分歧关注（未确认）"],
+          "priority": "primary"
+        },
+        {
+          "question": "连板高度是否大面积降级、打板数量是否逐日下降？",
+          "probes": ["leader_board_height", "limit_up_count_trend"],
+          "discriminates": ["再次高潮离场", "发酵进场/高潮警惕"],
+          "priority": "primary"
+        },
+        {
+          "question": "是否出现高标龙头再次分歧、同时后排补涨？",
+          "probes": ["breadth_trend", "peer_relative_strength"],
+          "discriminates": ["分歧补涨"],
+          "priority": "secondary"
+        },
+        {
+          "question": "板块是否大面积跌停、龙头连续下跌？",
+          "probes": ["breadth_trend", "limit_up_count_trend"],
+          "discriminates": ["退潮放弃"],
+          "priority": "primary"
+        },
+        {
+          "question": "题材已运行多少天、当前处于 0-4 哪一级行情？",
+          "probes": ["theme_age_days"],
+          "discriminates": ["阶段先后次序校验"],
+          "priority": "secondary"
+        }
+      ],
+      "sufficient_evidence_rule": "leader_board_height + limit_up_count_trend + reverse_package_status 三项齐备。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：不报阶段，只报可观测事实。",
+      "resolution_map": [
+        {"if": "首阴 + 未反包", "then": "分歧关注（当天不低吸）"},
+        {"if": "次日反包放量涨停", "then": "弱转强切入"},
+        {"if": "连板降级 + 打板数递减", "then": "再次高潮离场 → 止盈"},
+        {"if": "高标再分歧 + 后排补涨", "then": "分歧补涨 → 不参与跟风二次分歧(HR-017)"}
+      ],
+      "source_refs": [
+        {"chunk_id": "trading_system_v1.c03"},
+        {"chunk_id": "trading_system_v1.c07"},
+        {"chunk_id": "trading_system_v1.c09"}
+      ],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-001"}]
+    },
+    {
+      "template_id": "RT-04",
+      "conflict_pattern": "主线身份判定：逻辑成立但市场不认 / 不满足维度 / 评估中 / 已确认",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["mainline_identification"],
+      "competing_hypotheses": ["mainline_confirmed", "logic_only_market_rejects", "not_mainline", "under_evaluation"],
+      "questions": [
+        {
+          "question": "题材逻辑是否满足新颖度、时机（是否出现在低潮混沌期）、影响广度三特征？",
+          "probes": ["theme_logic_attributes"],
+          "discriminates": ["逻辑维度是否成立"],
+          "priority": "primary"
+        },
+        {
+          "question": "市场资金是否持续买入并认可（而非仅逻辑成立）？",
+          "probes": ["theme_capital_acceptance"],
+          "discriminates": ["mainline_confirmed", "logic_only_market_rejects"],
+          "priority": "primary"
+        },
+        {
+          "question": "该题材的催化剂事件属于政策/技术创新/重大事件/行业周期/资产重组中的哪一类？",
+          "probes": ["theme_catalyst_events"],
+          "discriminates": ["题材来源归类"],
+          "priority": "secondary"
+        },
+        {
+          "question": "大盘环境是否允许做龙头（是否盛极而衰）？",
+          "probes": ["theme_mainline_environment"],
+          "discriminates": ["触发 HR-007 的情形"],
+          "priority": "secondary"
+        }
+      ],
+      "sufficient_evidence_rule": "theme_logic_attributes + theme_capital_acceptance 两项齐备。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：按 under_evaluation 处理，只观察不下结论。",
+      "resolution_map": [
+        {"if": "逻辑三特征成立 且 资金持续认可 且 环境不敌对", "then": "mainline_confirmed"},
+        {"if": "逻辑成立但资金不认可", "then": "logic_only_market_rejects → 果断放弃"},
+        {"if": "不满足两维度之一(HR-009)", "then": "not_mainline → 不参与"}
+      ],
+      "source_refs": [{"chunk_id": "trading_system_v1.c01"}, {"chunk_id": "trading_system_v1.c02"}],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-009"}]
+    },
+    {
+      "template_id": "RT-05",
+      "conflict_pattern": "个股在板块中的角色：龙头 / 次龙头 / 套利票 / 后排杂毛 / 新老切换",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["leader_identification"],
+      "competing_hypotheses": ["leader_confirmed", "sub_leader", "arbitrage_20cm", "follower_excluded", "leader_rotation"],
+      "questions": [
+        {
+          "question": "该股在板块中的地位是否为第一（是否领涨）？",
+          "probes": ["board_position", "peer_relative_strength"],
+          "discriminates": ["leader_confirmed", "sub_leader", "follower_excluded"],
+          "priority": "primary"
+        },
+        {
+          "question": "封板时间、封单金额、首板换手率(>8%)、量比(>2.5) 是否具备龙头特征？",
+          "probes": ["leader_seal_profile"],
+          "discriminates": ["leader_confirmed 的成立与否"],
+          "priority": "primary"
+        },
+        {
+          "question": "题材深广度是否足以支撑龙头走出高度？",
+          "probes": ["theme_breadth_depth"],
+          "discriminates": ["龙头高度预期"],
+          "priority": "secondary"
+        },
+        {
+          "question": "是否已是二板、且为换手板 + 分歧转一致？",
+          "probes": ["second_board_status", "leader_seal_profile"],
+          "discriminates": ["二板定龙头雏形"],
+          "priority": "secondary"
+        },
+        {
+          "question": "原龙头走弱但新核心出现时，宽度是否仍在？",
+          "probes": ["board_position", "theme_breadth_depth"],
+          "discriminates": ["leader_rotation"],
+          "priority": "secondary"
+        }
+      ],
+      "sufficient_evidence_rule": "board_position + leader_seal_profile 两项齐备。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：不判定角色。",
+      "resolution_map": [
+        {"if": "board_position in [follower, outsider]", "then": "follower_excluded（HR-010 绝不介入）"},
+        {"if": "地位第一 + 龙头特征齐 + 深广度足", "then": "leader_confirmed"},
+        {"if": "地位第二/第三", "then": "sub_leader → 仓位走轻档(SH-003/HR-005)"}
+      ],
+      "source_refs": [
+        {"chunk_id": "trading_system_v1.c10"},
+        {"chunk_id": "trading_system_v1.c11"},
+        {"chunk_id": "limit_up_v1.c04"}
+      ],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-009"}]
+    },
+    {
+      "template_id": "RT-06",
+      "conflict_pattern": "买点判定：可买 / 缩量诱多须观望 / 不放量不买 / 空仓观望",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["entry_timing"],
+      "competing_hypotheses": ["buy_platform_breakout", "buy_ma_reclaim", "buy_on_pullback", "reject_shrinking_rally", "reject_no_volume", "abstain"],
+      "questions": [
+        {
+          "question": "即时交易线是否在分时均线上方？",
+          "probes": ["intraday_ma_status"],
+          "discriminates": ["可买区(above)", "禁止区(below, HR-011)"],
+          "priority": "primary"
+        },
+        {
+          "question": "当下是否放量？",
+          "probes": ["intraday_volume_expansion"],
+          "discriminates": ["可买(expanding)", "不放量不买(HR-012)"],
+          "priority": "primary"
+        },
+        {
+          "question": "是否突破半小时以上的分时盘整平台？",
+          "probes": ["intraday_platform_break"],
+          "discriminates": ["buy_platform_breakout"],
+          "priority": "primary"
+        },
+        {
+          "question": "是否出现 MACD 顶背离或红柱缩头死叉（诱多特征）？",
+          "probes": ["macd_divergence_state"],
+          "discriminates": ["reject_shrinking_rally（HR-022）"],
+          "priority": "primary"
+        },
+        {
+          "question": "回踩的关键支撑（5日/10日线、前低、前板封单价）是否有效？",
+          "probes": ["key_level_status"],
+          "discriminates": ["buy_on_pullback", "abstain(broken)"],
+          "priority": "secondary"
+        },
+        {
+          "question": "盘前涨跌停家数、板块涨幅、昨日热点延续性是否支持接力？",
+          "probes": ["premarket_market_checks"],
+          "discriminates": ["当日是否具备接力环境"],
+          "priority": "secondary"
+        }
+      ],
+      "sufficient_evidence_rule": "intraday_ma_status + intraday_volume_expansion 两项齐备（分钟级数据缺失时直接判 INSUFFICIENT_EVIDENCE）。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：不判定买点；分钟级数据不可用时不得用日线代替。",
+      "resolution_map": [
+        {"if": "白线在黄线下方", "then": "abstain（HR-011 坚决不买）"},
+        {"if": "未放量", "then": "reject_no_volume（HR-012）"},
+        {"if": "顶背离 + 量缩 + 白线远离黄线", "then": "reject_shrinking_rally（HR-022）"},
+        {"if": "突破平台 + 放量", "then": "buy_platform_breakout → 移交 position_sizing"}
+      ],
+      "source_refs": [
+        {"chunk_id": "trading_system_v1.c13"},
+        {"chunk_id": "trading_system_v1.c14"},
+        {"chunk_id": "trading_system_v1.c15"},
+        {"chunk_id": "weak_to_strong_v1.c08"}
+      ],
+      "figure_refs": [
+        {"figure_id": "trading_system_v1.fig-003"},
+        {"figure_id": "trading_system_v1.fig-004"},
+        {"figure_id": "trading_system_v1.fig-005"}
+      ]
+    },
+    {
+      "template_id": "RT-07",
+      "conflict_pattern": "仓位档位选择：试仓 1-2成 / 龙头 5-8成 / 次龙头 2-4成 / 降仓",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["position_sizing"],
+      "competing_hypotheses": ["position_probe_light", "position_main_leader_heavy", "position_sub_leader_light", "position_after_confirmation", "position_fade_watch_reduce"],
+      "questions": [
+        {"question": "该票是主线题材的绝对龙头，还是龙二/次龙头？", "probes": ["board_position", "theme_breadth_depth"], "discriminates": ["5-8成档", "2-4成档"], "priority": "primary"},
+        {"question": "支撑力度是否达标（支撑评分）？", "probes": ["support_strength"], "discriminates": ["是否具备建仓资格"], "priority": "primary"},
+        {"question": "竞价确认级别是 A / B / C / X？", "probes": ["auction_confirm_level"], "discriminates": ["是否可加仓至中等仓位"], "priority": "primary"},
+        {"question": "题材是否进入退潮观察（fade_watch）或环境转弱？", "probes": ["theme_fade_watch", "market_regime"], "discriminates": ["降仓/不参与"], "priority": "primary"}
+      ],
+      "sufficient_evidence_rule": "board_position + support_strength 齐备；auction_confirm_level 缺失时不得给 A 级档。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：不给仓位数字，只给区间下限（试仓）。",
+      "resolution_map": [
+        {"if": "主线+绝对龙头+深广度足+fade_watch=false", "then": "5-8成（SH-003）"},
+        {"if": "龙二/次龙头", "then": "2-4成"},
+        {"if": "首次尝试", "then": "1-2成"},
+        {"if": "始终", "then": "HR-005 禁止满仓"}
+      ],
+      "source_refs": [{"chunk_id": "weak_to_strong_v1.c09"}],
+      "figure_refs": [{"figure_id": "weak_to_strong_v1.fig-006"}]
+    },
+    {
+      "template_id": "RT-08",
+      "conflict_pattern": "持仓处置：继续持有 / 减仓 / 清仓",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["exit_rules"],
+      "competing_hypotheses": ["hold_for_second_wave", "hold_no_action", "reduce_on_reverse_fail", "reduce_on_intraday_ma_break", "exit_on_support_break", "exit_theme_fade"],
+      "questions": [
+        {"question": "反包是成功、失败还是待定？", "probes": ["reverse_package_status", "key_level_status"], "discriminates": ["hold", "reduce"], "priority": "primary"},
+        {"question": "日线是否跌破 10 日线或前低？", "probes": ["ma10_status", "previous_low_status"], "discriminates": ["exit_on_support_break"], "priority": "primary"},
+        {"question": "分时是否跌破均价线（若为直线放量跌破则更严重）？", "probes": ["intraday_ma_status"], "discriminates": ["reduce_on_intraday_ma_break"], "priority": "secondary"},
+        {"question": "题材是否已退潮确认？", "probes": ["theme_fade_status"], "discriminates": ["exit_theme_fade"], "priority": "primary"}
+      ],
+      "sufficient_evidence_rule": "reverse_package_status + ma10_status 齐备。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：维持现状不动，并提示复核支撑位。",
+      "resolution_map": [
+        {"if": "题材 fade_confirmed", "then": "清仓"},
+        {"if": "跌破10日线/前低", "then": "立刻减仓或清仓（HR-004）"},
+        {"if": "反包失败且未站回关键价位", "then": "减仓或止损（HR-003）"},
+        {"if": "反包成功且支撑完好", "then": "持股待二波（HR-021 不做短线）"}
+      ],
+      "source_refs": [
+        {"chunk_id": "weak_to_strong_v1.c10"},
+        {"chunk_id": "trading_system_v1.c16"}
+      ],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-008"}]
+    },
+    {
+      "template_id": "RT-09",
+      "conflict_pattern": "竞价确认级别：强确认 / 一般确认 / 尾段急跌剔除 / 龙头不符预期 / 数据不足",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["auction_confirmation"],
+      "competing_hypotheses": ["auction_confirmed_strong", "auction_confirmed_moderate", "auction_reject_tail_crash", "auction_leader_below_expectation", "auction_insufficient_data"],
+      "questions": [
+        {"question": "9:20–9:25 走势是否稳定（有无大起大落或急跌）？", "probes": ["auction_stability"], "discriminates": ["strong/moderate", "tail_crash(HR-013)"], "priority": "primary"},
+        {"question": "9:24–9:25 最后一分钟是否出现竞价单明显放大？", "probes": ["auction_last_minute_ratio"], "discriminates": ["scramble", "withdraw(HR-014)"], "priority": "primary"},
+        {"question": "竞价量能是否达到前一日最大分时量的 1/2？", "probes": ["auction_volume_ratio"], "discriminates": ["承接力强/弱（HR-024/SH-015）"], "priority": "primary"},
+        {"question": "高开幅度是否落在 3%–5%？", "probes": ["open_gap"], "discriminates": ["strong 档的条件之一"], "priority": "primary"},
+        {"question": "板块是否同步强势？龙二龙三是否有溢价？", "probes": ["sector_sync_strength", "peer_premium"], "discriminates": ["板块联动确认"], "priority": "secondary"},
+        {"question": "龙头是否不符合预期开盘？", "probes": ["auction_strength"], "discriminates": ["规避整个板块(HR-015)"], "priority": "primary"}
+      ],
+      "sufficient_evidence_rule": "auction_stability + auction_volume_ratio + open_gap 齐备。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：降级为观察（auction_insufficient_data），不得伪造确认。",
+      "resolution_map": [
+        {"if": "数据不可用", "then": "auction_insufficient_data"},
+        {"if": "tail_crash 或末段撤单", "then": "直接剔除（HR-013/HR-014）"},
+        {"if": "龙头弱开 + 板块同步弱", "then": "规避板块（HR-015）"},
+        {"if": "稳定 + 量能≥1/2 + 高开3-5% + 抢筹", "then": "auction_confirmed_strong"}
+      ],
+      "source_refs": [
+        {"chunk_id": "auction_v1.c01"},
+        {"chunk_id": "auction_v1.c03"},
+        {"chunk_id": "auction_v1.c04"},
+        {"chunk_id": "auction_v1.c05"}
+      ],
+      "figure_refs": [
+        {"figure_id": "auction_v1.fig-001"},
+        {"figure_id": "auction_v1.fig-002"},
+        {"figure_id": "auction_v1.fig-012"}
+      ]
+    },
+    {
+      "template_id": "RT-10",
+      "conflict_pattern": "牛股形态归属：高量不破 / 倍量不穿 / 缺口不补 / 仅符合强势股画像 / 均不成立",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["bull_stock_patterns"],
+      "competing_hypotheses": ["pattern_high_volume_holds", "pattern_double_volume_unbroken", "pattern_gap_unfilled", "strong_stock_profile_match", "pattern_absent"],
+      "questions": [
+        {"question": "近20日最高量柱的最低价是否未被破坏？", "probes": ["high_volume_bar_low"], "discriminates": ["高量不破"], "priority": "primary"},
+        {"question": "第二次倍量柱底部是否不低于第一次？", "probes": ["double_volume_base"], "discriminates": ["倍量不穿"], "priority": "primary"},
+        {"question": "跳空缺口是否回补？", "probes": ["gap_unfilled_status"], "discriminates": ["缺口不补"], "priority": "primary"},
+        {"question": "均线多头排列、量价节奏、筹码形态、创新高、连贯性是否成立？", "probes": ["ma_bull_alignment", "volume_price_rhythm", "chip_peak_shape", "price_new_high_streak"], "discriminates": ["强势股画像（HR-025 须联合判定）"], "priority": "primary"},
+        {"question": "近6天内是否有涨停基因？", "probes": ["prior_limit_up_gene"], "discriminates": ["是否关注弱势股"], "priority": "secondary"}
+      ],
+      "sufficient_evidence_rule": "三绝中至少一项可判定，或强势股画像的多维证据齐备；筹码数据缺失不影响前三绝判定。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：不入池，也不排除，标记为待观察。",
+      "resolution_map": [
+        {"if": "高量柱最低价被破坏 或 量价节奏不健康", "then": "pattern_absent → 排除"},
+        {"if": "任一绝成立", "then": "对应形态入池（SH-009/SH-010/SH-011）"},
+        {"if": "7 大特征多维匹配", "then": "strong_stock_profile_match"}
+      ],
+      "source_refs": [
+        {"chunk_id": "find_ox_v1.c01"},
+        {"chunk_id": "find_ox_v1.c02"},
+        {"chunk_id": "find_ox_v1.c03"},
+        {"chunk_id": "find_ox_v1.c04"}
+      ],
+      "figure_refs": [
+        {"figure_id": "find_ox_v1.fig-001"},
+        {"figure_id": "find_ox_v1.fig-002"},
+        {"figure_id": "find_ox_v1.fig-003"}
+      ]
+    },
+    {
+      "template_id": "RT-11",
+      "conflict_pattern": "涨停预判：大概率封住 / 易开板 / 弱封 / 无涨停 / 二板定龙头雏形",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["limit_up_judgment"],
+      "competing_hypotheses": ["limit_up_seal_likely", "limit_up_open_board_risk", "limit_up_weak_seal", "no_limit_up", "second_board_leader_forming"],
+      "questions": [
+        {"question": "是否有涨停基因（近6天涨停次数）？", "probes": ["prior_limit_up_gene"], "discriminates": ["有/无潜力"], "priority": "primary"},
+        {"question": "所处题材是否处于涨停潮？", "probes": ["theme_hotness"], "discriminates": ["板块涨停潮加分"], "priority": "primary"},
+        {"question": "量能是否明显放量（超60日均线/倍量）？", "probes": ["volume_vs_ma60"], "discriminates": ["封板概率"], "priority": "secondary"},
+        {"question": "分时形态是脉冲式 / 台阶式 / 斜推式 / 震荡式？", "probes": ["intraday_limit_up_shape"], "discriminates": ["seal_likely(台阶/斜推)", "open_board_risk(脉冲+放量下跌)"], "priority": "primary"},
+        {"question": "封单是否坚决、炸板后是否快速回封？", "probes": ["limit_up_seal_quality"], "discriminates": ["封板质量（SH-005）"], "priority": "primary"},
+        {"question": "是否已是二板、首板是否为换手板(>15%)？", "probes": ["second_board_status", "limit_up_seal_quality"], "discriminates": ["二板定龙头（SH-006/SH-007）"], "priority": "primary"},
+        {"question": "股价处于上涨初期/中期/后期？", "probes": ["price_position_in_trend"], "discriminates": ["低位易封板 / 高位弱封"], "priority": "secondary"},
+        {"question": "市场短线情绪处于哪一段？", "probes": ["short_term_sentiment"], "discriminates": ["情绪冰点后反弹易出龙头（SH-008）"], "priority": "secondary"}
+      ],
+      "sufficient_evidence_rule": "prior_limit_up_gene + intraday_limit_up_shape + limit_up_seal_quality 齐备；分钟级形态缺失时不得给封板结论。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：只报涨停基因与题材热度，不预判封板。",
+      "resolution_map": [
+        {"if": "非龙头/跟风股打二板", "then": "HR-018 不参与"},
+        {"if": "脉冲式封板 + 放量下跌", "then": "limit_up_open_board_risk"},
+        {"if": "台阶/斜推式 + 封单坚决 + 低位", "then": "limit_up_seal_likely"},
+        {"if": "二板 + 换手板 + 分歧转一致 + 板块合力", "then": "second_board_leader_forming（移交 leader_identification）"}
+      ],
+      "source_refs": [
+        {"chunk_id": "limit_up_v1.c02"},
+        {"chunk_id": "limit_up_v1.c03"},
+        {"chunk_id": "limit_up_v1.c04"}
+      ],
+      "figure_refs": [
+        {"figure_id": "limit_up_v1.fig-001"},
+        {"figure_id": "limit_up_v1.fig-002"},
+        {"figure_id": "limit_up_v1.fig-003"},
+        {"figure_id": "limit_up_v1.fig-004"}
+      ]
+    },
+    {
+      "template_id": "RT-12",
+      "conflict_pattern": "题材层处置：纳入跟踪 / 寻找弱转强机会 / 退潮停止跟踪 / 情绪冰点不操作 / 非主线忽略",
+      "conflict_type": "state_competition",
+      "applies_to_cards": ["theme_screening"],
+      "competing_hypotheses": ["theme_trackable", "theme_w2s_opportunity", "theme_fading", "theme_ice_point_no_trade", "theme_not_mainline_ignore"],
+      "questions": [
+        {"question": "盘前大盘/板块情绪是否出现冰点？", "probes": ["market_emotion_ice_point"], "discriminates": ["ice_point_no_trade（HR-016 一票否决）"], "priority": "primary"},
+        {"question": "该题材是否属于主线？", "probes": ["theme_mainline_flag"], "discriminates": ["trackable", "not_mainline_ignore（HR-023）"], "priority": "primary"},
+        {"question": "当前处于哪个阶段（启动/发酵/分歧/弱转强/高潮/退潮）？", "probes": ["theme_stage_flags"], "discriminates": ["trackable", "w2s_opportunity", "fading"], "priority": "primary"},
+        {"question": "当日该题材涨停数是多少？", "probes": ["theme_limit_up_count"], "discriminates": ["是否有板块效应"], "priority": "secondary"},
+        {"question": "强势股跟踪行需要哪些字段（是否领涨/涨停类型/资金性质/流通性质/涨停封单/技术形态/当日资金/是否次新/龙头属性）？", "probes": ["strong_stock_tracking_fields"], "discriminates": ["跟踪表完整性"], "priority": "secondary"}
+      ],
+      "sufficient_evidence_rule": "market_emotion_ice_point + theme_mainline_flag 两项为前置；缺失则不得放行。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：不处置，保持观察。",
+      "resolution_map": [
+        {"if": "冰点", "then": "当日不操作（HR-016）"},
+        {"if": "非主线", "then": "不纳入重点（HR-023）"},
+        {"if": "主线 + 发酵", "then": "纳入跟踪"},
+        {"if": "发酵中但板块内个股分歧", "then": "寻找弱转强机会"}
+      ],
+      "source_refs": [
+        {"chunk_id": "theme_tracking_v1.c02"},
+        {"chunk_id": "theme_tracking_v1.c03"},
+        {"chunk_id": "theme_tracking_v1.c08"}
+      ],
+      "figure_refs": [
+        {"figure_id": "theme_tracking_v1.fig-001"},
+        {"figure_id": "theme_tracking_v1.fig-002"}
+      ]
+    },
+    {
+      "template_id": "RT-13",
+      "conflict_pattern": "本体错配：市场状态（Julia Taxonomy）与策略解读（Trading Cognition）不是同一个东西",
+      "conflict_type": "ontology_mismatch",
+      "applies_to_cards": ["leader_divergence", "theme_lifecycle"],
+      "competing_hypotheses": ["市场状态结论", "策略状态结论"],
+      "questions": [
+        {"question": "当前结论说的是「市场处于什么状态」，还是「这个状态对应什么交易机会」？", "probes": [], "discriminates": ["避免用市场词直接下交易结论"], "priority": "primary"},
+        {"question": "若市场状态是 divergence，它应解析为 normal_adjustment / active_divergence / leader_rotation 中的哪一个？", "probes": ["leader_drawdown_from_peak", "key_level_status", "new_leader_candidates"], "discriminates": ["策略状态细分"], "priority": "primary"},
+        {"question": "若市场状态是 fading_momentum，它应解析为 normal_adjustment / leader_failure / pre_weak_to_strong 中的哪一个？", "probes": ["leader_volume_pattern", "theme_breadth_change"], "discriminates": ["策略状态细分"], "priority": "primary"},
+        {"question": "Julia Taxonomy 是否被策略状态覆盖了？（这是禁止的）", "probes": [], "discriminates": ["本体边界是否被破坏"], "priority": "primary"}
+      ],
+      "sufficient_evidence_rule": "必须同时给出「市场状态」与「策略解读」两层，且二者不得互相覆盖。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：只报市场状态，不强行给策略解读。",
+      "resolution_map": [
+        {"if": "只有市场状态、无策略细分证据", "then": "输出市场状态 + 待细分标记"},
+        {"if": "策略结论试图替换市场状态", "then": "拒绝（ADR-032：augment, not replace）"}
+      ],
+      "source_refs": [],
+      "figure_refs": []
+    },
+    {
+      "template_id": "RT-14",
+      "conflict_pattern": "规则与事实冲突：策略规则给出的判断与市场事实不一致",
+      "conflict_type": "rule_vs_fact",
+      "applies_to_cards": ["all"],
+      "competing_hypotheses": ["以市场事实为准", "以策略规则为准（禁止）"],
+      "questions": [
+        {"question": "该结论是来自市场事实，还是来自策略卡/规则？", "probes": [], "discriminates": ["来源归属"], "priority": "primary"},
+        {"question": "策略规则是否正在覆盖市场事实？（例如「策略说是 acceleration 就忽略事实」）", "probes": [], "discriminates": ["是否触发 ADR-032 §6 禁止模式"], "priority": "primary"},
+        {"question": "规则引用的 required_data 是否都是真实取得的，而非占位/默认值？", "probes": [], "discriminates": ["是否存在伪造证据"], "priority": "primary"}
+      ],
+      "sufficient_evidence_rule": "所有结论必须能回溯到具体 requirement 的实际取值。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：不下策略结论，只报事实。",
+      "resolution_map": [
+        {"if": "策略与事实冲突", "then": "市场事实优先；规则降级为待复核"},
+        {"if": "规则使用占位/默认值", "then": "判定 INSUFFICIENT_EVIDENCE，禁止出结论"}
+      ],
+      "source_refs": [],
+      "figure_refs": []
+    },
+    {
+      "template_id": "RT-15",
+      "conflict_pattern": "跨层不一致：图内规则与 L1 文本层不一致，或证据只存在于图内",
+      "conflict_type": "layer_disagreement",
+      "applies_to_cards": ["all"],
+      "competing_hypotheses": ["以 L1 文本为准", "以 L1-figures 为准（解读，需标注）", "两者互补"],
+      "questions": [
+        {"question": "该规则在 L1 文本层（source_refs）能找到出处吗？", "probes": [], "discriminates": ["是否属于图内独有信息"], "priority": "primary"},
+        {"question": "若仅存在于图内，其读取是否可能有误（in_figure_text 由视觉模型读出）？", "probes": [], "discriminates": ["是否需人工复核原图"], "priority": "primary"},
+        {"question": "图内规则与文本规则是否矛盾？", "probes": [], "discriminates": ["互补 vs 冲突"], "priority": "primary"}
+      ],
+      "sufficient_evidence_rule": "图内独有规则必须带 figure_refs 且标注 kind=figure_interpretation。",
+      "default_when_insufficient": "INSUFFICIENT_EVIDENCE：图内规则不得单独驱动硬约束，除非已人工核对原图。",
+      "resolution_map": [
+        {"if": "文本与图互补", "then": "两者并列引用，分别标注来源层"},
+        {"if": "文本与图矛盾", "then": "以 L1 文本为准，冲突登记待人工裁定"},
+        {"if": "仅图内有、且为硬约束", "then": "标记为 figure_derived，需人工核对后方可生效"}
+      ],
+      "source_refs": [],
+      "figure_refs": [{"figure_id": "trading_system_v1.fig-008"}, {"figure_id": "auction_v1.fig-012"}]
+    }
+  ]
+}

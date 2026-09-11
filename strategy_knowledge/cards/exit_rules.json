@@ -88,6 +88,19 @@
       "action": "hold",
       "confidence_modifier": 0.0,
       "note": "支撑未破、反包未失败 → 持股观察"
+    },
+    {
+      "state": "reduce_on_intraday_ma_break",
+      "evidence_pattern": {
+        "intraday": "股价从分时均价线上方跌破均价线",
+        "volume": "若为直线放量下跌形式，则更应减仓"
+      },
+      "predicates": [
+        {"requirement_id": "intraday_ma_status", "operator": "eq", "value": "below", "role": "decisive"}
+      ],
+      "action": "reduce_position",
+      "confidence_modifier": -0.25,
+      "note": "源自 figures 层（trading_system_v1.fig-008）：分时跌破均价线应减仓；直线放量跌破更要减仓。原文 L1 未载此条。"
     }
   ],
 
@@ -117,6 +130,15 @@
     "thresholds_note": "本文档仅给条件，无数值阈值；“关键价位”指前高 / 前板封单价。",
     "evidence_patterns": "source_authored"
   },
+
+  "figure_refs": [
+    {
+      "figure_id": "trading_system_v1.fig-008",
+      "kind": "figure_interpretation",
+      "page": 7,
+      "what_it_adds": "图内成文的卖出/减仓三条规则，L1 文本缺失：1) 股价缩量拉升有诱多嫌疑，无量上行走不长，此时不应买入；2) 股价从均价线上方跌破均价线应减仓，若跌破时是直线放量形式更要减仓；3) 白线在黄线下方坚决不买。已据此新增 reduce_on_intraday_ma_break 状态。"
+    }
+  ],
 
   "source_refs": [
     {

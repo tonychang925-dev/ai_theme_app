@@ -126,6 +126,21 @@
     "evidence_patterns": "source_authored"
   },
 
+  "figure_refs": [
+    {
+      "figure_id": "trading_system_v1.fig-001",
+      "kind": "figure_interpretation",
+      "page": 2,
+      "what_it_adds": "情绪周期全景泳道图，引入 L1 文本没有的「行情级别」维度：0混沌期 → 1级 → 2级 → 3级 → 4级；阶段框依次为市场初期/发酵/加速/反转高潮/分歧/翻强(弱转强)/分歧/退潮/周期结束，并给出各阶段的操作要点行。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-002",
+      "kind": "figure_interpretation",
+      "page": 2,
+      "what_it_adds": "情绪词与K线位置的对应图：起涨「开心」→「兴奋」→ 顶部「狂妄到失落」→ 下跌「恐惧」→「痛苦」→ 底部震荡「犹豫」。可作为阶段识别的视觉参照。"
+    }
+  ],
+
   "source_refs": [
     {
       "document_id": "trading_system_v1",

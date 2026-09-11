@@ -128,6 +128,27 @@
     "evidence_patterns": "source_authored"
   },
 
+  "figure_refs": [
+    {
+      "figure_id": "find_ox_v1.fig-001",
+      "kind": "figure_interpretation",
+      "page": 1,
+      "what_it_adds": "「高量不破」图示：前期放量形成高量柱，回调段最低价未跌破该高量柱最低价，随后再度上攻（图内标注「3」示意第3浪）。红圈标出回调低点位置。"
+    },
+    {
+      "figure_id": "find_ox_v1.fig-002",
+      "kind": "figure_interpretation",
+      "page": 2,
+      "what_it_adds": "「倍量不穿」图示：箭头分别指向两次倍量柱所对应的K线底部价位，用于比较底部基柱价格。此图无文字标注，形态解读置信度较低。"
+    },
+    {
+      "figure_id": "find_ox_v1.fig-003",
+      "kind": "figure_interpretation",
+      "page": 2,
+      "what_it_adds": "「缺口不补」图示：红圈标出跳空缺口K线，缺口区间标注 35.74–36.20，其后股价持续上行未回补。"
+    }
+  ],
+
   "source_refs": [
     {
       "document_id": "find_ox_v1",

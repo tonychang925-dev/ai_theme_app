@@ -140,6 +140,15 @@
     "evidence_patterns": "engineer_derived_from_strategy_principles"
   },
 
+  "figure_refs": [
+    {
+      "figure_id": "trading_system_v1.fig-002",
+      "kind": "figure_interpretation",
+      "page": 2,
+      "what_it_adds": "情绪词与K线位置对应图：顶部标注「狂妄到失落」，其后的下跌段标注「恐惧」「痛苦」，底部震荡标注「犹豫」。可用于判断龙头分歧发生时市场情绪处于哪一段（对应 active_divergence 常出现的「兴奋后转犹豫」位置）。"
+    }
+  ],
+
   "source_refs": [
     {
       "document_id": "trading_system_v1",

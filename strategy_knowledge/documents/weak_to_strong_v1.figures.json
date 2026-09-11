@@ -1,0 +1,128 @@
+{
+  "schema_version": "strategy-source-figures.v1",
+  "layer": "L1-figures",
+  "authority": "figure_observation_only",
+  "boundary_flags": {
+    "is_interpretation": true,
+    "not_source_text": true,
+    "not_l1_source_chunks": true,
+    "source_of_truth": "the PDF figure itself",
+    "note": "in_figure_text 由视觉模型读出，可能有识别误差；pattern_observation 是对图形形态的模型解读，不是原文文字。两者都不得当作 L1 源文本使用。"
+  },
+  "document_id": "weak_to_strong_v1",
+  "title": "弱转强买入法",
+  "source_file_path": "docs/architecture/弱转强买入法.pdf",
+  "source_sha256": "84f33649b1071f337e6c2f02fd2c4421fe59b772c153b0a2e12201226d6035b0",
+  "extraction": {
+    "tool": "pdfimages",
+    "options": "-png",
+    "granularity": "per embedded image object",
+    "determinism": "verified byte-identical across repeated extractions",
+    "llm_used_for_text": false,
+    "vision_used_for_observation": true
+  },
+  "figures": [
+    {
+      "figure_id": "weak_to_strong_v1.fig-001",
+      "page": 1,
+      "image_index": 1,
+      "file_name": "img-001.png",
+      "width": 941,
+      "height": 335,
+      "png_sha256_prefix": "c6855ef01fa1",
+      "related_chunk_id": "weak_to_strong_v1.c02",
+      "caption_in_document": "常见的弱势主要体现3种",
+      "in_figure_text": ["涨停", "分时图", "10%", "0%", "-10%"],
+      "pattern_observation": "并列三格示意图，每格编号①②③，各含「涨停」K线框与一根形态不同的K线：第1格为一根放量长阴线（大阴线）；第2格为一根带长上影线的K线（冲高回落上影线）；第3格为炸板/栏板形态，右侧另接一幅分时图缩略（纵轴 10%/0%/-10%），示意盘中价格反复。三格底部各有一根量柱。",
+      "mapping_note": "对应原文“连板过程中T日出现中到大阴线／冲高回落出现上引线／栏板涨停”。"
+    },
+    {
+      "figure_id": "weak_to_strong_v1.fig-002",
+      "page": 2,
+      "image_index": 2,
+      "file_name": "img-002.png",
+      "width": 1014,
+      "height": 563,
+      "png_sha256_prefix": "06c17b4e055c",
+      "related_chunk_id": "weak_to_strong_v1.c04",
+      "caption_in_document": "“弱”的典型——烂板",
+      "in_figure_text": ["封板前放量", "烂板时无量"],
+      "pattern_observation": "分时图。红字「封板前放量」标注在价格快速拉升至封板处，对应下方量柱明显放大；红字「烂板时无量」标注在封板被打开、价格回落震荡的时段，对应下方量柱显著萎缩。形态要点：封板瞬间有量，烂板期间缩量。",
+      "mapping_note": "对应烂板五要素中的“封单变小 / 下跌过程缩量代表抛压减少”。"
+    },
+    {
+      "figure_id": "weak_to_strong_v1.fig-003",
+      "page": 3,
+      "image_index": 3,
+      "file_name": "img-003.png",
+      "width": 1467,
+      "height": 697,
+      "png_sha256_prefix": "ac086fede975",
+      "related_chunk_id": "weak_to_strong_v1.c06",
+      "caption_in_document": "1、盘前集合竞价弱转强",
+      "in_figure_text": ["集合竞价弱转强", "弱转强"],
+      "pattern_observation": "分时图。左端有一黄框圈出开盘初段，并用黄色箭头指向该区域，红字标注「集合竞价弱转强」。右下角另嵌一幅日K线小图，标注「弱转强」，示意该形态在K线层面的位置。",
+      "mapping_note": "对应原文“集合竞价弱转强（高开或抢筹），早盘弱转强”。"
+    },
+    {
+      "figure_id": "weak_to_strong_v1.fig-004",
+      "page": 3,
+      "image_index": 4,
+      "file_name": "img-004.png",
+      "width": 1388,
+      "height": 814,
+      "png_sha256_prefix": "7b959b004307",
+      "related_chunk_id": "weak_to_strong_v1.c06",
+      "caption_in_document": "2、早盘分时弱转强",
+      "in_figure_text": [],
+      "pattern_observation": "分时图，无文字标注。形态：股价先跌破黄色均价线（白线在黄线下方运行一段），随后放量拉起、白线重新上穿并站到黄线之上，之后维持在均线上方。下方量柱在拉起段明显放大。",
+      "mapping_note": "对应原文“开盘后不单边下跌，而是放量拉升，大部分时间股价在分时均线上；即便跌破均价线，主力资金也能快速拉升回到均价线之上”。此图无文字标注，形态解读置信度低于有标注的图。"
+    },
+    {
+      "figure_id": "weak_to_strong_v1.fig-005",
+      "page": 4,
+      "image_index": 5,
+      "file_name": "img-005.png",
+      "width": 1600,
+      "height": 811,
+      "png_sha256_prefix": "a695b84b864c",
+      "related_chunk_id": "weak_to_strong_v1.c08",
+      "caption_in_document": "介入时机 / 盘中弱转强",
+      "in_figure_text": ["放量"],
+      "pattern_observation": "分时图。价格在均线附近横盘整理一段时间后向上突破，红字「放量」与箭头指向突破处的成交量放大。下方量柱中被黄框圈出突破段的放量区。",
+      "mapping_note": "对应原文“突破长达半小时以上的分时盘整平台”“回踩支撑后放量突破”。"
+    },
+    {
+      "figure_id": "weak_to_strong_v1.fig-006",
+      "page": 5,
+      "image_index": 6,
+      "file_name": "img-006.png",
+      "width": 1594,
+      "height": 869,
+      "png_sha256_prefix": "71d0b3f31ec9",
+      "related_chunk_id": "weak_to_strong_v1.c11",
+      "caption_in_document": "“弱转强”操作流程",
+      "in_figure_text": [
+        "是否龙头或核心高标？",
+        "盘前分析", "实时盯盘", "买入执行", "离场控制", "放弃",
+        "核心思想：该弱不弱则为强！",
+        "交易心法：分歧修复刚弱转强，避免跟风股拉高砸盘；大盘极度退潮时弱转强成功率极低；不贪图最低点，抓确认信号更安全",
+        "关键位置：前一日分时低点不破；关键均线（5日/10日均线）支撑有效",
+        "盘前分析：集合竞价弱转强；早盘分时弱转强",
+        "实时盯盘：分时弱转强",
+        "买点控制：反包弱买入；趋势转强买入；反包涨停瞬间买入；均线支撑点放量买入",
+        "仓位控制（首次1-2成或半仓）；纪律执行",
+        "止盈控制（不能重新站上关键点位）；止损控制（反包失败）"
+      ],
+      "pattern_observation": "流程图（非行情图）。判定入口为「是否龙头或核心高标？」，是则进入主线，否则走「放弃」分支。主线自上而下四步：盘前分析 → 实时盯盘 → 买入执行 → 离场控制，每步右侧附具体要点（关键位置、盘前分析、实时盯盘、买点控制、仓位控制、止盈控制、止损控制）。左上角另列核心思想与交易心法。",
+      "mapping_note": "这是弱转强整本书的结构化操作流程，信息密度高，且原书的 L1 文本里没有这张流程图所载的流程编排。是本次图形提取中价值最高的一张。"
+    }
+  ],
+  "coverage": {
+    "embedded_images_total": 7,
+    "figures_described": 6,
+    "excluded": [
+      {"image_index": 0, "reason": "1500x750 页眉装饰图，六份 PDF 同款，非正文图"}
+    ]
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "schema_version": "strategy-source-figures.v1",
+  "layer": "L1-figures",
+  "authority": "figure_observation_only",
+  "boundary_flags": {
+    "is_interpretation": true,
+    "not_source_text": true,
+    "not_l1_source_chunks": true,
+    "source_of_truth": "the PDF figure itself",
+    "note": "in_figure_text 由视觉模型读出，可能有识别误差；pattern_observation 是对图形形态的模型解读，不是原文文字。两者都不得当作 L1 源文本使用。"
+  },
+  "document_id": "trading_system_v1",
+  "title": "如何建立正确的交易体系",
+  "source_file_path": "docs/architecture/如何建立正确的交易体系.pdf",
+  "source_sha256": "05d7108a557d91a9e45a7653af92cc2cf72236796962e6965420b29a40dc8676",
+  "extraction": {
+    "tool": "pdfimages",
+    "options": "-png",
+    "granularity": "per embedded image object",
+    "determinism": "verified byte-identical across repeated extractions",
+    "llm_used_for_text": false,
+    "vision_used_for_observation": true
+  },
+  "figures": [
+    {
+      "figure_id": "trading_system_v1.fig-001",
+      "page": 2,
+      "image_index": 1,
+      "file_name": "img-001.png",
+      "width": 1899,
+      "height": 589,
+      "png_sha256_prefix": "d30568cce5c2",
+      "related_chunk_id": "trading_system_v1.c03",
+      "caption_in_document": "市场情绪轨迹 / 行情级别",
+      "in_figure_text": [
+        "行情级别 0混沌期 1级 2级 3级 4级",
+        "市场初期 市场发酵 市场加速 弱转强 市场分歧 市场退潮 周期结束",
+        "市场情绪 / 操作要点"
+      ],
+      "pattern_observation": "横向泳道图。纵轴为「行情级别」（0混沌期 → 1级 → 2级 → 3级 → 4级），横轴为情绪周期推进。彩色阶段框依次为：市场初期(0级) → 市场发酵(1级) → 市场加速(2级) → 反转/高潮(4级) → 市场分歧(3级) → 翻强(弱转强) → 市场分歧 → 市场退潮 → 周期结束。最下方「操作要点」行对应各阶段的操作建议（试错性仓、跟风股、资金认可、受利好刺激消息、打板、龙头暴量换手等）。",
+      "mapping_note": "这是原书情绪周期七阶段的完整可视化，比 L1 文本更清楚地给出了「行情级别」这一维度——L1 文本里没有「0混沌期/1-4级」的概念。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-002",
+      "page": 2,
+      "image_index": 2,
+      "file_name": "img-002.png",
+      "width": 2046,
+      "height": 1044,
+      "png_sha256_prefix": "422bbe363fdb",
+      "related_chunk_id": "trading_system_v1.c03",
+      "caption_in_document": "市场情绪轨迹（K线映射）",
+      "in_figure_text": ["开心", "兴奋", "狂妄到失落", "恐惧", "痛苦", "犹豫", "犹豫"],
+      "pattern_observation": "日K线图。用红色箭头把情绪词逐一映射到K线走势的对应位置：起涨段标「开心」→「兴奋」→ 顶部标「狂妄到失落」→ 下跌段标「恐惧」→「痛苦」→ 底部震荡标「犹豫」。把抽象情绪轨迹与价格形态一一对应。",
+      "mapping_note": "对应原文“市场初期（犹豫，试探性买入试错）→发酵（开心）→加速（兴奋）→高潮（狂热）→分歧（再次犹豫）→退潮（恐惧、痛苦）”。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-003",
+      "page": 5,
+      "image_index": 3,
+      "file_name": "img-003.png",
+      "width": 1172,
+      "height": 804,
+      "png_sha256_prefix": "abc2d4b2be0f",
+      "related_chunk_id": "trading_system_v1.c14",
+      "caption_in_document": "分时买点1: 放量突破瞬间",
+      "in_figure_text": [
+        "股价在均价线上方，可以买，但必须放量才能买，不放量不买，买入时机=放量上涨的瞬间",
+        "斜率H", "突破",
+        "健康的放量：底部明显放量，量能柱子慢慢地向上窜",
+        "先缩量再放量"
+      ],
+      "pattern_observation": "分时图。标注「斜率H」与「突破」箭头指向价格向上突破处；下方量柱区标注「先缩量再放量」「健康的放量：底部明显放量，量能柱子慢慢地向上窜」。左上角给出买入判据原文。",
+      "mapping_note": "对应原文分时买点1「放量突破瞬间」。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-004",
+      "page": 5,
+      "image_index": 4,
+      "file_name": "img-004.png",
+      "width": 1290,
+      "height": 826,
+      "png_sha256_prefix": "f2e94aceb906",
+      "related_chunk_id": "trading_system_v1.c14",
+      "caption_in_document": "分时图买卖原则（放量突破均价线）",
+      "in_figure_text": [
+        "【分时图买卖原则】",
+        "1) 股价（白色线）在均价线（黄色线）下方，坚决不买。",
+        "2) 股价在均价线上方，可以买，但必须放量才可以买，不放量不买。买入点=放量上涨的几分钟内",
+        "3) 股价从均价线下方突破均价线，放量可以买。买入点=白线上穿黄线+放量",
+        "股价向上突破均价线，放量可以买",
+        "黄色均价线下方不买股",
+        "底部持续放量", "回调缩量是健康的"
+      ],
+      "pattern_observation": "分时图。红字标注突破点与不买点，量柱区标注「底部持续放量」「回调缩量是健康的」。右上角给出三条买卖原则。",
+      "mapping_note": "对应原文分时买点2「放量突破均价线」。这三条原则在 L1 文本里只有零星表述，图内是完整成文的版本。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-005",
+      "page": 6,
+      "image_index": 5,
+      "file_name": "img-005.png",
+      "width": 1279,
+      "height": 844,
+      "png_sha256_prefix": "6c31523676d5",
+      "related_chunk_id": "trading_system_v1.c14",
+      "caption_in_document": "分时买点 / 涨停三步走",
+      "in_figure_text": [
+        "买入点：1)放量拉升的瞬间 2)拉升后的缩量整理区间",
+        "第一步", "第二步", "第三步",
+        "标准的分时图涨停三步走：第一步先拉至3%，然后缩量整理；第二步再拉至6%，然后缩量整理；第三步大单快速封涨停。",
+        "涨停三步走过程中：每一次的拉升，量能逐步放大"
+      ],
+      "pattern_observation": "分时图。价格分三步阶梯式上攻：第一步拉至约3%后缩量整理，第二步再拉至约6%后缩量整理，第三步大单快速封涨停。图中用箭头标出三个买点，底部量柱一次比一次放大。",
+      "mapping_note": "「涨停三步走」这一具体形态描述未出现在 L1 文本中，属于图形独有信息。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-006",
+      "page": 6,
+      "image_index": 6,
+      "file_name": "img-006.png",
+      "width": 1123,
+      "height": 755,
+      "png_sha256_prefix": "7e2b5b292c8e",
+      "related_chunk_id": "trading_system_v1.c14",
+      "caption_in_document": "分时买点4: 虎踞龙盘走势，MACD背离且过零轴时",
+      "in_figure_text": [
+        "真正“虎踞龙盘”分时图的第一波：一定是放量结构，回落时，MACD常会构成背离"
+      ],
+      "pattern_observation": "三联图：上为分时价格，中为成交量，下为MACD指标。第一波上攻为明显放量结构，回落阶段MACD构成底背离，随后价格再度上攻。红圈标出MACD背离位置。",
+      "mapping_note": "对应原文分时买点4「虎踞龙盘走势，MACD背离且过零轴时」。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-007",
+      "page": 7,
+      "image_index": 7,
+      "file_name": "img-007.png",
+      "width": 1128,
+      "height": 870,
+      "png_sha256_prefix": "5607cc2a534e",
+      "related_chunk_id": "trading_system_v1.c15",
+      "caption_in_document": "缩量拉升诱多识别",
+      "in_figure_text": [
+        "3. 白线快速远离黄线时，如果下方成交量缩减配合MACD顶背离，或缩头死叉，高概率价格要回档"
+      ],
+      "pattern_observation": "三联图（分时价格 / 成交量 / MACD）。价格快速上冲、白线远离黄线，但下方成交量逐步缩减，同时MACD出现顶背离并缩头死叉，随后价格回落。",
+      "mapping_note": "对应原文“即时交易线快速远离分时均线…分时成交量缩减并配合MACD顶背离，或红柱缩头死叉…属于缩量拉升诱多行为，此时需观望”。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-008",
+      "page": 7,
+      "image_index": 8,
+      "file_name": "img-008.png",
+      "width": 1166,
+      "height": 792,
+      "png_sha256_prefix": "71b3a3914c3a",
+      "related_chunk_id": "trading_system_v1.c16",
+      "caption_in_document": "卖出规则 / 无量拉升",
+      "in_figure_text": [
+        "第一卖点", "第二卖点", "无量拉升",
+        "1) 股价缩量拉升，有诱多嫌疑，无量上行走不长。此时没有买入条件，不应买入。",
+        "2) 股价从均价线上方，向下跌破均价线，此时应减仓。如果跌破均价线时，是直线放量形式，更要减仓。",
+        "3) 股价（白色线）在均价线（黄色线）下方，坚决不买。",
+        "底部缩量"
+      ],
+      "pattern_observation": "分时图。红字标出「第一卖点」「第二卖点」与「无量拉升」位置：价格先缩量上冲（无量拉升），随后跌破黄色均价线并持续走弱。底部量柱区标注「底部缩量」。",
+      "mapping_note": "这是一张卖出/减仓规则图，L1 文本中「卖出」相关内容极少，图内三条规则是原文没有的补充信息。对 exit_rules 卡片有直接价值。"
+    },
+    {
+      "figure_id": "trading_system_v1.fig-009",
+      "page": 8,
+      "image_index": 9,
+      "file_name": "img-009.png",
+      "width": 1496,
+      "height": 1013,
+      "png_sha256_prefix": "ecb17f82e7bc",
+      "related_chunk_id": "trading_system_v1.c16",
+      "caption_in_document": "短线交易系统（全篇总纲）",
+      "in_figure_text": [
+        "短线交易系统",
+        "市场处于混沌期？", "休息/调整策略",
+        "抓住市场主线（占比35%）",
+        "看市场情绪/切入周期（占比30%）",
+        "盯龙头核心（占比20%）",
+        "找准买点（占比15%）",
+        "核心公式：主线+情绪+龙头+买点 = 高胜算交易",
+        "买卖心法：精准选股+选择买点；遵守市场规律；学会预判；核心原则",
+        "主流方向识别：政策/资金/时间跨度",
+        "市场情绪阶段：拉升(犹豫)、发酵(开始上涨)、加速(连续上涨)、高潮(板块集体高潮)、退潮(买盘不足观望)、分歧(恐惧、痛苦)、退潮(股价加速下跌)",
+        "龙头特征识别：影响力、资金性质、领涨能力、龙虎榜地位、技术形态、抗跌性、龙头地位的唯一性",
+        "买点的基本逻辑：反包弱、量价确认、分时攻击形态、趋势突破",
+        "买点控制：首次仓位、加仓条件、龙头分歧低吸、MACD背离、多空反转",
+        "卖出控制：止损位、止盈位、回撤控制"
+      ],
+      "pattern_observation": "全页决策流程图。顶部判定「市场处于混沌期？」——是则「休息/调整策略」，否则自上而下依次执行四个模块：抓市场主线(35%) → 看市场情绪/切入周期(30%) → 盯龙头核心(20%) → 找准买点(15%)。每个模块右侧有展开说明框；左下为核心公式与买卖心法，底部为买点控制与卖出控制细则。",
+      "mapping_note": "这是全书的总结框架图，把 35/30/20/15 的权重结构与各模块要点集中在一页。L1 文本是按章节线性叙述的，没有这张汇总图。价值极高。"
+    }
+  ],
+  "coverage": {
+    "embedded_images_total": 10,
+    "figures_described": 9,
+    "excluded": [
+      {"image_index": 0, "reason": "1500x750 页眉装饰图，六份 PDF 同款，非正文图"}
+    ]
+  }
+}

@@ -113,6 +113,15 @@
     "evidence_patterns": "source_authored"
   },
 
+  "figure_refs": [
+    {
+      "figure_id": "trading_system_v1.fig-009",
+      "kind": "figure_interpretation",
+      "page": 8,
+      "what_it_adds": "短线交易系统全景图：顶部先判定「市场处于混沌期？」，是则休息/调整策略；否则自上而下 抓市场主线(35%) → 看市场情绪/切入周期(30%) → 盯龙头核心(20%) → 找准买点(15%)。图内另给出核心公式「主线+情绪+龙头+买点 = 高胜算交易」，以及主流方向识别（政策/资金/时间跨度）。这张图确立了主线识别在整体系统中的优先级与位置。"
+    }
+  ],
+
   "source_refs": [
     {
       "document_id": "trading_system_v1",

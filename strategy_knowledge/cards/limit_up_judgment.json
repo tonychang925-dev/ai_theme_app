@@ -143,6 +143,33 @@
     "evidence_patterns": "source_authored"
   },
 
+  "figure_refs": [
+    {
+      "figure_id": "limit_up_v1.fig-001",
+      "kind": "figure_interpretation",
+      "page": 1,
+      "what_it_adds": "「涨停基因」图示：长期横盘后连续放量上攻，红色箭头逐一指向涨停K线，标注「发动行情就是涨停」。对应 prior_limit_up_gene 的形态参照。"
+    },
+    {
+      "figure_id": "limit_up_v1.fig-002",
+      "kind": "figure_interpretation",
+      "page": 1,
+      "what_it_adds": "「题材」图示：图内点名「碳中和+电力 今日最强题材」，右侧为放量连续上攻段并标注「发动行情就是涨停」。对应 theme_hotness = limit_up_wave。"
+    },
+    {
+      "figure_id": "limit_up_v1.fig-003",
+      "kind": "figure_interpretation",
+      "page": 2,
+      "what_it_adds": "封板量能图示：红字「放量涨停」标在直线拉板瞬间（黄圈标出对应放量柱），红字「封板无量」标在封板后量能萎缩处。对应 limit_up_seal_quality 的量能判据。"
+    },
+    {
+      "figure_id": "limit_up_v1.fig-004",
+      "kind": "figure_interpretation",
+      "page": 2,
+      "what_it_adds": "价位图示：标注「大幅下跌 放量涨停 容易封板」，红圈箭头指向低位放量涨停K线。对应 price_position_in_trend = early/low position 的封板优势。"
+    }
+  ],
+
   "source_refs": [
     {
       "document_id": "limit_up_v1",

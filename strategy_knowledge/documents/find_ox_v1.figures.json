@@ -1,0 +1,75 @@
+{
+  "schema_version": "strategy-source-figures.v1",
+  "layer": "L1-figures",
+  "authority": "figure_observation_only",
+  "boundary_flags": {
+    "is_interpretation": true,
+    "not_source_text": true,
+    "not_l1_source_chunks": true,
+    "source_of_truth": "the PDF figure itself",
+    "note": "in_figure_text 由视觉模型读出，可能有识别误差；pattern_observation 是对图形形态的模型解读，不是原文文字。两者都不得当作 L1 源文本使用。"
+  },
+  "document_id": "find_ox_v1",
+  "title": "如何找出牛股",
+  "source_file_path": "docs/architecture/如何找出牛股.pdf",
+  "source_sha256": "7eb3f43221ff3ed521c8b5c7a5fafecc50fc9a56de868ccea811888b6d389dbf",
+  "extraction": {
+    "tool": "pdfimages",
+    "options": "-png",
+    "granularity": "per embedded image object",
+    "determinism": "verified byte-identical across repeated extractions",
+    "llm_used_for_text": false,
+    "vision_used_for_observation": true
+  },
+  "figures": [
+    {
+      "figure_id": "find_ox_v1.fig-001",
+      "page": 1,
+      "image_index": 1,
+      "file_name": "img-001.png",
+      "width": 932,
+      "height": 1322,
+      "png_sha256_prefix": "e57183ad46bc",
+      "related_chunk_id": "find_ox_v1.c01",
+      "caption_in_document": "1、高量不破，后市要火",
+      "in_figure_text": ["滨", "3", "T"],
+      "pattern_observation": "日K线图。红字「滨」标在回调段，「3」与箭头标在回调完成后的再次上攻段，另有一处红圈圈出回调段的低点。下方副图为成交量柱，其中若干高柱被红色描出（高量柱）。整体形态：前期放量上攻形成高量柱 → 回调段最低价未跌破该高量柱最低价 → 之后再度上攻（标注为第3浪）。",
+      "mapping_note": "对应原文“第1浪放量攻击形成高量柱…调整阶段股价不破坏高量柱重新上涨，还会有第3浪”。"
+    },
+    {
+      "figure_id": "find_ox_v1.fig-002",
+      "page": 2,
+      "image_index": 2,
+      "file_name": "img-002.png",
+      "width": 794,
+      "height": 1324,
+      "png_sha256_prefix": "f01ab85f7154",
+      "related_chunk_id": "find_ox_v1.c02",
+      "caption_in_document": "2、倍量不穿，后市翻番",
+      "in_figure_text": [],
+      "pattern_observation": "日K线图。下方成交量副图中有两支明显放大的量柱，图内用箭头指向这两个倍量柱所对应的K线底部价位，用于比较两次倍量柱的底部基柱价格。图中未见手写文字标注，判断依据是箭头指向与量柱位置。",
+      "mapping_note": "对应原文“第2次倍量柱的股价底部基柱价格不低于第一次倍量柱的底部”。此图无文字标注，形态解读置信度低于其他图。"
+    },
+    {
+      "figure_id": "find_ox_v1.fig-003",
+      "page": 2,
+      "image_index": 3,
+      "file_name": "img-003.png",
+      "width": 702,
+      "height": 690,
+      "png_sha256_prefix": "0e28db819b49",
+      "related_chunk_id": "find_ox_v1.c03",
+      "caption_in_document": "3、缺口不补，后市如虎",
+      "in_figure_text": ["35.74 - 36.20"],
+      "pattern_observation": "日K线图。红圈圈出跳空缺口所在的那根K线位置，缺口价位区间标注为 35.74 – 36.20。缺口出现后股价持续上行，未回补该缺口区间。",
+      "mapping_note": "对应原文“跳空缺口不回补，意味着大主线题材发动暴涨行情”。"
+    }
+  ],
+  "coverage": {
+    "embedded_images_total": 4,
+    "figures_described": 3,
+    "excluded": [
+      {"image_index": 0, "reason": "1500x751 页眉装饰图，六份 PDF 同款，非正文图"}
+    ]
+  }
+}
