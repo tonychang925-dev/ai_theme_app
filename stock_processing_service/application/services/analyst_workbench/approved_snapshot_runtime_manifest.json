@@ -68,7 +68,7 @@
     },
     {
       "path": "web_app_service/auth/__init__.py",
-      "sha256": "82ac0f5897da69cf4533c1b9c79040b8faaad53fd9686a4f48ec49644f1f8849"
+      "sha256": "8b1817957a73e921ac13545bfd983955c8c804c87157a0b60e20a34ff1052584"
     }
   ],
   "packages": [

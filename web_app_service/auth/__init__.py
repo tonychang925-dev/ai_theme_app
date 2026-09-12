@@ -1,31 +1,55 @@
-"""JWT 认证模块。"""
+"""JWT authentication and the frozen OP02-A service-principal authority spec."""
+
 from __future__ import annotations
 
 import os
-import sys
 from datetime import datetime, timedelta, timezone
+from types import MappingProxyType
 from typing import Any
 
 import jwt
 
-_JWT_SECRET = os.getenv("JWT_SECRET", "").strip()
-if not _JWT_SECRET:
-    # Allow weak default in dev mode only (explicit opt-in)
-    if os.getenv("JWT_DEV_MODE", "0") == "1":
-        _JWT_SECRET = "ai_theme_jwt_secret_dev_only"
-        print("[auth] WARNING: using dev-mode JWT_SECRET — not for production", file=sys.stderr)
-    else:
-        import secrets
-        _JWT_SECRET = secrets.token_hex(32)
-        print("[auth] JWT_SECRET not set — auto-generated ephemeral key for this session", file=sys.stderr)
-        print(f"[auth] Set JWT_SECRET in .env.local for persistent sessions.", file=sys.stderr)
+OP02A_SERVICE_PRINCIPAL_AUTHORITY_SPEC = MappingProxyType(
+    {
+        "version": 1,
+        "principal_count": 1,
+        "process_scope": "single_process",
+        "principal_kind": "dedicated_service",
+        "least_privilege_role": "analyst",
+        "authorization_input": "one_explicit_launch_time_bearer",
+        "credential_retention": "normalized_approval_principal_identity_only",
+        "principal_selection_override": False,
+        "validation_cadence": "fresh_every_process_start",
+        "in_process_refresh": False,
+        "fallback_authority": False,
+        "provider_lifetime_limit": "validated_token_expiry",
+        "close_scope": "provider_binding_only",
+        "revocation_mechanism": "hs256_global_key_rotation",
+        "issuer_validation": False,
+        "audience_validation": False,
+        "jti_validation": False,
+        "per_token_revocation": False,
+    }
+)
 
-JWT_SECRET: str = _JWT_SECRET
+_JWT_ENVIRONMENT = os.getenv("APP_ENV", "production").strip().lower()
+_JWT_DEV_MODE = os.getenv("JWT_DEV_MODE", "0").strip() == "1"
+_JWT_SECRET = os.getenv("JWT_SECRET", "").strip() or None
+if (
+    _JWT_SECRET is None
+    and _JWT_DEV_MODE
+    and _JWT_ENVIRONMENT in {"development", "test"}
+):
+    _JWT_SECRET = "ai_theme_jwt_secret_dev_only"
+
+JWT_SECRET: str | None = _JWT_SECRET
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRE_HOURS = 72
 
 
 def create_token(user_id: int, email: str, role: str) -> str:
+    if JWT_SECRET is None:
+        raise RuntimeError("JWT_SECRET is required but is not configured")
     payload = {
         "sub": str(user_id),
         "email": email,
@@ -37,6 +61,8 @@ def create_token(user_id: int, email: str, role: str) -> str:
 
 
 def verify_token(token: str) -> dict[str, Any] | None:
+    if JWT_SECRET is None:
+        return None
     try:
         return jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
     except jwt.ExpiredSignatureError:
