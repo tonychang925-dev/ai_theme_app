@@ -9,6 +9,7 @@ on:
         type: string
 
 permissions:
+  attestations: write
   id-token: write
   contents: write
 

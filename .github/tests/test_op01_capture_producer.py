@@ -113,3 +113,16 @@ def test_environment_authority_fails_closed() -> None:
         assert "repository" in str(error)
     else:
         raise AssertionError("untrusted repository was accepted")
+
+
+def test_workflow_permission_contract_is_exact() -> None:
+    workflow = (
+        SCRIPT_PATH.parents[1]
+        / "workflows"
+        / ("rd1-v1-op01-market-release-capture.yml")
+    )
+    text = workflow.read_text(encoding="utf-8")
+    permissions = text.split("permissions:\n", 1)[1].split("\n\njobs:", 1)[0]
+    assert permissions == (
+        "  attestations: write\n" "  id-token: write\n" "  contents: write"
+    )
