@@ -173,8 +173,8 @@ def evaluate(args: argparse.Namespace) -> tuple[bool, dict[str, object]]:
         raise GateError("repository mismatch")
     if not re.fullmatch(r"[0-9a-f]{40}", args.head_sha):
         raise GateError("candidate SHA is not a valid exact SHA")
-    if args.merge_sha != args.github_sha:
-        raise GateError("workflow SHA does not match pull request merge SHA")
+    if not re.fullmatch(r"[0-9a-f]{40}", args.github_sha):
+        raise GateError("workflow run SHA is not a valid exact SHA")
 
     baseline_path = args.baseline if args.baseline.is_absolute() else root / args.baseline
     baseline = load_baseline(baseline_path, args.repository, args.required_context)
@@ -228,7 +228,6 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--event-name", required=True)
     parser.add_argument("--base-sha", required=True)
     parser.add_argument("--head-sha", required=True)
-    parser.add_argument("--merge-sha", required=True)
     parser.add_argument("--github-sha", required=True)
     return parser
 

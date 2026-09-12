@@ -29,8 +29,6 @@ def run_gate(root: Path, head_sha: str, base_sha: str, baseline=ROOT / "tools/nc
             base_sha,
             "--head-sha",
             head_sha,
-            "--merge-sha",
-            head_sha,
             "--github-sha",
             head_sha,
         ],

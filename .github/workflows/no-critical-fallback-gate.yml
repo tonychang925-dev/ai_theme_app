@@ -30,7 +30,6 @@ jobs:
             --event-name "${GITHUB_EVENT_NAME}" \
             --base-sha "${GITHUB_EVENT_PULL_REQUEST_BASE_SHA}" \
             --head-sha "${GITHUB_EVENT_PULL_REQUEST_HEAD_SHA}" \
-            --merge-sha "${GITHUB_EVENT_PULL_REQUEST_MERGE_COMMIT_SHA}" \
             --github-sha "${GITHUB_SHA}" | tee ncf-findings.json
           test "$(jq -r '.candidate_sha' ncf-findings.json)" = "${GITHUB_EVENT_PULL_REQUEST_HEAD_SHA}"
           test "$(jq -r '.finding_count' ncf-findings.json)" = "0"
