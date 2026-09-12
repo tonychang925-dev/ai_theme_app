@@ -28,8 +28,8 @@ jobs:
           python3 tools/ncf/ncf_status_gate.py \
             --repository "${GITHUB_REPOSITORY}" \
             --event-name "${GITHUB_EVENT_NAME}" \
-            --base-sha "${GITHUB_EVENT_PULL_REQUEST_BASE_SHA}" \
-            --head-sha "${GITHUB_EVENT_PULL_REQUEST_HEAD_SHA}" \
+            --base-sha "${{ github.event.pull_request.base.sha }}" \
+            --head-sha "${{ github.event.pull_request.head.sha }}" \
             --github-sha "${GITHUB_SHA}" | tee ncf-findings.json
-          test "$(jq -r '.candidate_sha' ncf-findings.json)" = "${GITHUB_EVENT_PULL_REQUEST_HEAD_SHA}"
+          test "$(jq -r '.candidate_sha' ncf-findings.json)" = "${{ github.event.pull_request.head.sha }}"
           test "$(jq -r '.finding_count' ncf-findings.json)" = "0"
