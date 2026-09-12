@@ -103,7 +103,7 @@ def exception_success(text: str) -> bool:
 
 def scan_source(path: str, text: str) -> list[Finding]:
     findings: list[Finding] = []
-    critical = CRITICAL_PATH.search(path)
+    critical = bool(CRITICAL_PATH.search(path) or CRITICAL_PATH.search(text))
     for number, line in enumerate(text.splitlines(), 1):
         if critical and FALLBACK.search(line):
             findings.append(Finding("NCF-01-critical-fallback", path, number, line.strip()))
@@ -113,8 +113,6 @@ def scan_source(path: str, text: str) -> list[Finding]:
             )
         if critical and re.search(r"legacy.*(authority|provider)|fallback.*(authority|provider)", line, re.I):
             findings.append(Finding("NCF-03-legacy-authority-fallback", path, number, line.strip()))
-        if critical and re.search(r"alternate.*(provider|source).*except|except.*alternate.*(provider|source)", line, re.I):
-            findings.append(Finding("NCF-04-alternate-provider-masking", path, number, line.strip()))
         if re.search(r"(synthetic|placeholder).*success|success.*(synthetic|placeholder)", line, re.I):
             findings.append(Finding("NCF-05-synthetic-success", path, number, line.strip()))
         if AMBIENT_SELECTION.search(line):
@@ -123,6 +121,8 @@ def scan_source(path: str, text: str) -> list[Finding]:
             findings.append(Finding("NCF-08-production-test-mode", path, number, line.strip()))
     if critical and exception_success(text):
         findings.append(Finding("NCF-06-exception-success", path, 1, "exception handler returns success-like value"))
+        if re.search(r"alternate[\s_-]*(provider|source)|(provider|source)[\s_-]*alternate", text, re.I):
+            findings.append(Finding("NCF-04-alternate-provider-masking", path, 1, "exception success hides alternate provider selection"))
     return findings
 
 
