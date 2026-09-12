@@ -25,6 +25,8 @@ jobs:
         run: |
           set -euo pipefail
           test -x tools/ncf/ncf_status_gate.py
+          python3 --version
+          stat tools/ncf/ncf_status_gate.py tools/ncf/ncf-baseline.json
           set +e
           python3 tools/ncf/ncf_status_gate.py \
             --repository "${GITHUB_REPOSITORY}" \
@@ -34,6 +36,8 @@ jobs:
             --github-sha "${GITHUB_SHA}" > ncf-findings.json 2> ncf-gate-stderr.txt
           gate_status=$?
           set -e
+          printf 'gate_status=%s\n' "${gate_status}"
+          wc -c ncf-findings.json ncf-gate-stderr.txt
           cat ncf-gate-stderr.txt >&2
           cat ncf-findings.json
           test "${gate_status}" -eq 0
