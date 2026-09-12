@@ -3,6 +3,7 @@
 Strict state machine for analyst workbench lifecycle:
   NOT_STARTED → GENERATING → DRAFT_READY → IN_REVIEW → APPROVED → PUBLISHED
 """
+
 from __future__ import annotations
 
 import json
@@ -13,6 +14,7 @@ from typing import Any
 
 
 # ═══ Status Enum ═══
+
 
 class WorkbenchStatus:
     NOT_STARTED = "NOT_STARTED"
@@ -30,8 +32,16 @@ class WorkbenchStatus:
 ALLOWED_TRANSITIONS: dict[str, set[str]] = {
     WorkbenchStatus.NOT_STARTED: {WorkbenchStatus.GENERATING, WorkbenchStatus.FAILED},
     WorkbenchStatus.GENERATING: {WorkbenchStatus.DRAFT_READY, WorkbenchStatus.FAILED},
-    WorkbenchStatus.DRAFT_READY: {WorkbenchStatus.IN_REVIEW, WorkbenchStatus.GENERATING, WorkbenchStatus.FAILED},
-    WorkbenchStatus.IN_REVIEW: {WorkbenchStatus.DRAFT_READY, WorkbenchStatus.APPROVED, WorkbenchStatus.FAILED},
+    WorkbenchStatus.DRAFT_READY: {
+        WorkbenchStatus.IN_REVIEW,
+        WorkbenchStatus.GENERATING,
+        WorkbenchStatus.FAILED,
+    },
+    WorkbenchStatus.IN_REVIEW: {
+        WorkbenchStatus.DRAFT_READY,
+        WorkbenchStatus.APPROVED,
+        WorkbenchStatus.FAILED,
+    },
     WorkbenchStatus.APPROVED: {WorkbenchStatus.PUBLISHED, WorkbenchStatus.STALE},
     WorkbenchStatus.PUBLISHED: {WorkbenchStatus.STALE},
     WorkbenchStatus.STALE: {WorkbenchStatus.GENERATING},
@@ -40,6 +50,7 @@ ALLOWED_TRANSITIONS: dict[str, set[str]] = {
 
 
 # ═══ Session Model ═══
+
 
 @dataclass
 class WorkbenchSession:
@@ -54,11 +65,14 @@ class WorkbenchSession:
     approved_at: str = ""
     published_at: str = ""
     approved_by: str = ""
+    published_by: str = ""
+    published_snapshot_hash: str = ""
+    snapshot_hash: str = ""
     error_message: str = ""
 
     # ── Calibration metadata (Phase 4.5.1) ──
     last_calibrated_at: str = ""
-    calibration_status: str = ""      # pending / completed / failed
+    calibration_status: str = ""  # pending / completed / failed
     calibration_score: float = 0.0
     calibration_grade: str = ""
 
@@ -75,6 +89,9 @@ class WorkbenchSession:
             "approved_at": self.approved_at,
             "published_at": self.published_at,
             "approved_by": self.approved_by,
+            "published_by": self.published_by,
+            "published_snapshot_hash": self.published_snapshot_hash,
+            "snapshot_hash": self.snapshot_hash,
             "error_message": self.error_message,
             "last_calibrated_at": self.last_calibrated_at,
             "calibration_status": self.calibration_status,
@@ -96,6 +113,9 @@ class WorkbenchSession:
             approved_at=d.get("approved_at", ""),
             published_at=d.get("published_at", ""),
             approved_by=d.get("approved_by", ""),
+            published_by=d.get("published_by", ""),
+            published_snapshot_hash=d.get("published_snapshot_hash", ""),
+            snapshot_hash=d.get("snapshot_hash", ""),
             error_message=d.get("error_message", ""),
             last_calibrated_at=d.get("last_calibrated_at", ""),
             calibration_status=d.get("calibration_status", ""),
@@ -105,8 +125,12 @@ class WorkbenchSession:
 
     @property
     def can_generate(self) -> bool:
-        return self.status in (WorkbenchStatus.NOT_STARTED, WorkbenchStatus.DRAFT_READY,
-                                WorkbenchStatus.FAILED, WorkbenchStatus.STALE)
+        return self.status in (
+            WorkbenchStatus.NOT_STARTED,
+            WorkbenchStatus.DRAFT_READY,
+            WorkbenchStatus.FAILED,
+            WorkbenchStatus.STALE,
+        )
 
     @property
     def can_review(self) -> bool:
@@ -135,6 +159,7 @@ class WorkbenchSession:
 
 # ═══ Session Store ═══
 
+
 class SessionStore:
     """JSON persistence for WorkbenchSession."""
 
@@ -162,10 +187,19 @@ class SessionStore:
         if not session.created_at:
             session.created_at = now
         session.updated_at = now
-        self._session_path(session.trade_date).write_text(
-            json.dumps(session.to_dict(), ensure_ascii=False, indent=2))
+        path = self._session_path(session.trade_date)
+        temporary = path.with_name(
+            f"{path.name}.{session.trade_date.isoformat()}-{id(session)}.tmp"
+        )
+        temporary.write_text(
+            json.dumps(session.to_dict(), ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        temporary.replace(path)
 
-    def transition(self, session: WorkbenchSession, new_status: str, **kwargs) -> WorkbenchSession:
+    def transition(
+        self, session: WorkbenchSession, new_status: str, **kwargs
+    ) -> WorkbenchSession:
         """Validate and apply a state transition."""
         allowed = ALLOWED_TRANSITIONS.get(session.status, set())
         if new_status not in allowed:
@@ -173,25 +207,67 @@ class SessionStore:
                 f"Invalid transition: {session.status} → {new_status}. "
                 f"Allowed: {allowed}"
             )
+        if new_status == WorkbenchStatus.DRAFT_READY:
+            draft_version = kwargs.get("draft_version", session.draft_version + 1)
+            if draft_version <= session.draft_version:
+                raise ValueError("draft revision must be newer than session authority")
+        elif new_status == WorkbenchStatus.APPROVED:
+            snapshot_version = kwargs.get(
+                "snapshot_version", session.snapshot_version + 1
+            )
+            if snapshot_version <= session.snapshot_version:
+                raise ValueError(
+                    "snapshot revision must be newer than session authority"
+                )
+            snapshot_hash = kwargs.get("snapshot_hash", "")
+            if not snapshot_hash:
+                raise ValueError("approved transition requires a snapshot hash")
+        elif new_status == WorkbenchStatus.PUBLISHED:
+            snapshot_version = kwargs.get("snapshot_version")
+            snapshot_hash = kwargs.get("published_snapshot_hash", "")
+            published_by = kwargs.get("published_by", "")
+            if snapshot_version is None or snapshot_version <= session.snapshot_version:
+                raise ValueError(
+                    "publication requires a newer immutable snapshot revision"
+                )
+            if not snapshot_hash or not published_by:
+                raise ValueError(
+                    "publication requires a bound principal and snapshot hash"
+                )
         session.status = new_status
         now = datetime.now(timezone.utc).isoformat()
         if new_status == WorkbenchStatus.DRAFT_READY:
             session.generated_at = kwargs.get("generated_at", now)
-            session.draft_version = kwargs.get("draft_version", session.draft_version + 1)
+            session.draft_version = kwargs.get(
+                "draft_version", session.draft_version + 1
+            )
         elif new_status == WorkbenchStatus.IN_REVIEW:
             session.reviewed_at = now
         elif new_status == WorkbenchStatus.APPROVED:
             session.approved_at = now
             session.approved_by = kwargs.get("approved_by", "")
-            session.snapshot_version = kwargs.get("snapshot_version", session.snapshot_version + 1)
+            session.snapshot_version = kwargs.get(
+                "snapshot_version", session.snapshot_version + 1
+            )
+            session.snapshot_hash = kwargs.get("snapshot_hash", "")
         elif new_status == WorkbenchStatus.PUBLISHED:
             session.published_at = now
+            session.published_by = kwargs.get("published_by", "")
+            session.published_snapshot_hash = kwargs.get("published_snapshot_hash", "")
+            session.snapshot_version = kwargs.get(
+                "snapshot_version", session.snapshot_version
+            )
+            session.snapshot_hash = kwargs.get(
+                "published_snapshot_hash", session.snapshot_hash
+            )
         elif new_status == WorkbenchStatus.FAILED:
             session.error_message = kwargs.get("error_message", "")
         self.save(session)
         return session
 
-    def apply_calibration(self, trade_date: date, calibration: dict) -> WorkbenchSession:
+    def apply_calibration(
+        self, trade_date: date, calibration: dict
+    ) -> WorkbenchSession:
         """Persist calibration result to the latest draft and session metadata.
 
         The calibration dict is merged into the latest draft's calibration field
@@ -207,11 +283,8 @@ class SessionStore:
 
         now = datetime.now(timezone.utc).isoformat()
         # Full replacement — calibration is atomic per run, no merge with stale data
-        draft.calibration = {
-            **calibration,
-            "applied_at": now,
-        }
-        draft_store.save(draft)
+        draft = draft_store.create_calibrated_revision(draft, calibration)
+        session.draft_version = draft.draft_version
 
         session.last_calibrated_at = now
         session.calibration_status = "completed"

@@ -2367,17 +2367,11 @@ async def get_daily_review_v2(date_param: str = Query(..., alias="date", descrip
     # ── 响应瘦身：裁剪前端不需要的冗余数据 ──
     v2 = _trim_daily_review_v2_response(v2)
 
-    # ── Phase 4.5.3: enrich with workbench approval metadata (non-blocking) ──
-    try:
-        v2["workbench_approval"] = await _check_workbench_approval(d)
-    except Exception:
-        v2["workbench_approval"] = {"error": "approval check failed"}
+    # ── Phase 4.5.3: enrich with governed workbench approval metadata ──
+    v2["workbench_approval"] = await _check_workbench_approval(d)
 
-    # ── Phase 4.5.5: enrich with workbench section content from draft or snapshot ──
-    try:
-        v2 = _enrich_v2_with_workbench_sections(v2, d)
-    except Exception:
-        pass
+    # ── Phase 4.5.5: enrich formal sections from governed product authority ──
+    v2 = _enrich_v2_with_workbench_sections(v2, d)
 
     return v2
 
@@ -8072,10 +8066,13 @@ async def get_analyst_workspace(trade_date: str, request: Request) -> dict[str, 
         if not approval.can_generate_report or approval.snapshot is None:
             raise HTTPException(status_code=503, detail=approval.reason)
         try:
-            snap = approval.snapshot
+            product = _get_workbench_governed_read_model().read(td)
+            if product is None:
+                raise ValueError("governed product read model returned no authority")
+            content = product.judgment_content
             themes = _workspace_themes_from_cards(
-                snap.cognition_cards,
-                snap.attention_state,
+                content.get("cognition_cards", []),
+                content.get("attention_state", {}),
             )
             return {
                 "trade_date": trade_date,
@@ -8083,7 +8080,10 @@ async def get_analyst_workspace(trade_date: str, request: Request) -> dict[str, 
                 "analyst_finalized": True,
                 "themes": themes,
                 "watch_groups": [],
-                "override_count": snap.override_summary.get("total", 0),
+                "override_count": approval.snapshot.override_summary.get("total", 0)
+                if approval.snapshot
+                else 0,
+                "governed_product": product.to_dict(),
             }
         except Exception:
             logger.exception(
@@ -8098,30 +8098,30 @@ async def get_analyst_workspace(trade_date: str, request: Request) -> dict[str, 
                 },
             )
 
-    # ── Try latest draft ──
-    drafts_dir = _Path(_wb_base) / trade_date / "drafts"
-    if drafts_dir.exists():
-        draft_files = sorted(drafts_dir.glob("draft_v*.json"))
-        if draft_files:
-            try:
-                draft = _json.loads(draft_files[-1].read_text(encoding="utf-8"))
-                themes = _workspace_themes_from_cards(
-                    draft.get("cognition_cards", []),
-                    draft.get("attention_state", {}),
-                )
-                return {
-                    "trade_date": trade_date,
-                    "is_ai_draft": True,
-                    "analyst_finalized": False,
-                    "themes": themes,
-                    "watch_groups": [],
-                    "override_count": 0,
-                    "draft_version": draft.get("draft_version", 0),
-                    "source_quality": draft.get("source_quality", 0),
-                    "missing_fields": draft.get("missing_fields", []),
-                }
-            except Exception:
-                raise HTTPException(status_code=503, detail="AI draft state is unreadable")
+    # ── Preview the explicit current draft authority only ──
+    draft_store = _get_wb_draft_store()
+    try:
+        draft = draft_store.load(td)
+    except (OSError, ValueError) as exc:
+        raise HTTPException(
+            status_code=503, detail=f"AI draft authority is unreadable: {exc}"
+        ) from exc
+    if draft is not None:
+        themes = _workspace_themes_from_cards(
+            draft.cognition_cards,
+            draft.attention_state,
+        )
+        return {
+            "trade_date": trade_date,
+            "is_ai_draft": True,
+            "analyst_finalized": False,
+            "themes": themes,
+            "watch_groups": [],
+            "override_count": 0,
+            "draft_version": draft.draft_version,
+            "source_quality": draft.source_quality,
+            "missing_fields": draft.missing_fields,
+        }
 
     # ── Nothing available ──
     return {
@@ -8345,10 +8345,6 @@ async def get_workbench_session(trade_date: str) -> dict[str, Any]:
     session = session_store.get(td)
     draft_version = draft_store.latest_version(td)
     snapshot = snapshot_store.load(td)
-    if draft_version > session.draft_version:
-        session.draft_version = draft_version
-    if snapshot and snapshot.snapshot_version > session.snapshot_version:
-        session.snapshot_version = snapshot.snapshot_version
     return {
         "trade_date": trade_date,
         "status": session.status,
@@ -8430,7 +8426,7 @@ def _safe_get_chart(charts: list[dict], chart_type: str) -> dict | None:
 
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/generate")
-async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
+async def generate_workbench_draft(trade_date: str, request: Request) -> dict[str, Any]:
     """Trigger full AI analysis pipeline: chart + emotion + workbench draft.
 
     Step 1: Generate charts internally → write to disk
@@ -8440,6 +8436,7 @@ async def generate_workbench_draft(trade_date: str) -> dict[str, Any]:
     from datetime import date as _date
     import subprocess, sys, os, json as _json_mod
     td = _date.fromisoformat(trade_date)
+    _require_workbench_principal(request)
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     steps = []
 
@@ -8528,7 +8525,10 @@ async def save_workbench_review(trade_date: str, request: Request, body: dict[st
     principal = _require_workbench_principal(request)
     session = session_store.get(td)
     if session.status == WorkbenchStatus.PUBLISHED:
-        return {"status": "error", "error": "Cannot review PUBLISHED session. Mark STALE first."}
+        raise HTTPException(
+            status_code=409,
+            detail="Cannot review PUBLISHED session. Mark STALE first.",
+        )
     body = body or {}
     overrides = body.get("overrides", {})
     state_store = ReviewStateStore(base_dir=str(_Path(_project_root) / "tmp" / "analyst_workbench"))
@@ -8574,10 +8574,12 @@ async def approve_workbench(trade_date: str, request: Request, body: dict[str, A
     principal = _require_workbench_principal(request)
     session = session_store.get(td)
     if not session.can_approve:
-        return {"status": "error", "error": f"Cannot approve from status {session.status}"}
+        raise HTTPException(
+            status_code=409, detail=f"Cannot approve from status {session.status}"
+        )
     draft = draft_store.load(td)
     if draft is None:
-        return {"status": "error", "error": "No draft found to approve"}
+        raise HTTPException(status_code=409, detail="No draft found to approve")
     state_store = ReviewStateStore(base_dir=str(_Path(_project_root) / "tmp" / "analyst_workbench"))
     try:
         review_state = state_store.load(td)
@@ -8619,7 +8621,13 @@ async def approve_workbench(trade_date: str, request: Request, body: dict[str, A
         runtime_manifest_hash=runtime_manifest_hash,
     )
     snapshot_store.save(snapshot)
-    session = session_store.transition(session, WorkbenchStatus.APPROVED, snapshot_version=snapshot.snapshot_version, approved_by=snapshot.approved_by)
+    session = session_store.transition(
+        session,
+        WorkbenchStatus.APPROVED,
+        snapshot_version=snapshot.snapshot_version,
+        approved_by=snapshot.approved_by,
+        snapshot_hash=snapshot.snapshot_hash,
+    )
     return {
         "status": "approved",
         "session_status": session.status,
@@ -8631,20 +8639,34 @@ async def approve_workbench(trade_date: str, request: Request, body: dict[str, A
 
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/publish")
-async def publish_workbench(trade_date: str) -> dict[str, Any]:
+async def publish_workbench(trade_date: str, request: Request) -> dict[str, Any]:
     """Publish approved workbench."""
     from datetime import date as _date
+    from stock_processing_service.application.services.analyst_workbench.approval_gate import ApprovalGate
+
     session_store, WorkbenchStatus = _get_wb_session_store()
     snapshot_store, _ = _get_wb_snapshot_store()
     td = _date.fromisoformat(trade_date)
     session = session_store.get(td)
-    snapshot = snapshot_store.load(td)
-    if not session.can_publish:
-        return {"status": "error", "error": f"Cannot publish from status {session.status}"}
-    if snapshot is None:
-        return {"status": "error", "error": "No approved snapshot exists"}
-    session = session_store.transition(session, WorkbenchStatus.PUBLISHED)
-    return {"status": "published", "session_status": session.status, "published_at": session.published_at}
+    principal = _require_workbench_principal(request)
+    approval = ApprovalGate(base_dir=str(snapshot_store.base_dir)).check(td)
+    if not session.can_publish or not approval.can_generate_report or approval.snapshot is None:
+        raise HTTPException(status_code=409, detail=approval.reason)
+    published = snapshot_store.publish(approval.snapshot, published_by=principal.identity)
+    session = session_store.transition(
+        session,
+        WorkbenchStatus.PUBLISHED,
+        snapshot_version=published.snapshot_version,
+        published_by=published.published_by,
+        published_snapshot_hash=published.snapshot_hash,
+    )
+    return {
+        "status": "published",
+        "session_status": session.status,
+        "snapshot_version": published.snapshot_version,
+        "supersedes_snapshot_version": published.supersedes_snapshot_version,
+        "published_at": session.published_at,
+    }
 
 
 # ── Phase 4.5.2 Report Composer Approval Gate ──
@@ -8654,6 +8676,13 @@ def _get_approval_gate():
     from stock_processing_service.application.services.analyst_workbench.approval_gate import ApprovalGate
     _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
     return ApprovalGate(base_dir=_os.path.join(_project_root, "tmp", "analyst_workbench"))
+
+
+def _get_workbench_governed_read_model():
+    from stock_processing_service.application.services.analyst_workbench.approval_gate import (
+        WorkbenchGovernedProductReadModel,
+    )
+    return WorkbenchGovernedProductReadModel(_get_approval_gate())
 
 
 @app.get("/api/v1/analyst-workbench/{trade_date}/report-approval")
@@ -8703,51 +8732,12 @@ async def _check_workbench_approval(trade_date: date) -> dict[str, Any]:
 def _enrich_v2_with_workbench_sections(v2: dict[str, Any], trade_date: date) -> dict[str, Any]:
     """Inject workbench section content into the DailyReview V2 response.
 
-    Priority: approved snapshot > latest draft.
-    Only injects fields that are not already present in v2.
+    Only a validated APPROVED/PUBLISHED governed product may supply formal sections.
     """
-    import json, os as _os
-    from pathlib import Path as _Path
-
-    _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
-    _wb_base = _Path(_project_root) / "tmp" / "analyst_workbench" / trade_date.isoformat()
-
-    # ── Prefer newer source: snapshot (immutable) or draft (latest calibration) ──
-    snap_path = _wb_base / "snapshot.json"
-    drafts_dir = _wb_base / "drafts"
-    draft_path = None
-    if drafts_dir.exists():
-        draft_files = sorted(drafts_dir.glob("draft_v*.json"))
-        if draft_files:
-            draft_path = draft_files[-1]
-
-    snap_mtime = snap_path.stat().st_mtime if snap_path.exists() else 0
-    draft_mtime = draft_path.stat().st_mtime if draft_path else 0
-
-    # Use newer of snapshot vs draft
-    if draft_mtime > snap_mtime and draft_path:
-        try:
-            draft = json.loads(draft_path.read_text(encoding="utf-8"))
-            return _inject_sections(v2, draft)
-        except Exception:
-            pass
-
-    if snap_path.exists():
-        try:
-            snap = json.loads(snap_path.read_text(encoding="utf-8"))
-            return _inject_sections(v2, snap)
-        except Exception:
-            pass
-
-    # Fallback: older draft still beats nothing
-    if draft_path:
-        try:
-            draft = json.loads(draft_path.read_text(encoding="utf-8"))
-            return _inject_sections(v2, draft)
-        except Exception:
-            pass
-
-    return v2
+    product = _get_workbench_governed_read_model().read(trade_date)
+    if product is None:
+        return v2
+    return _inject_sections(v2, product.judgment_content)
 
 
 def _inject_sections(v2: dict[str, Any], source: dict[str, Any]) -> dict[str, Any]:
@@ -9085,7 +9075,7 @@ async def get_ai_analyst_comparison(trade_date: str) -> dict[str, Any]:
 # ── Phase 4.5.6 Apply Calibration Corrections ──
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/apply-calibration")
-async def apply_calibration_to_draft(trade_date: str) -> dict[str, Any]:
+async def apply_calibration_to_draft(trade_date: str, request: Request) -> dict[str, Any]:
     """Apply calibration corrections to the latest draft.
 
     Reads the analyst reference data and calibration results, then
@@ -9097,6 +9087,7 @@ async def apply_calibration_to_draft(trade_date: str) -> dict[str, Any]:
     from pathlib import Path
     _project_root = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
     td = _date.fromisoformat(trade_date)
+    _require_workbench_principal(request)
 
     # Load draft
     draft_store = _get_wb_draft_store()
@@ -9160,8 +9151,10 @@ async def apply_calibration_to_draft(trade_date: str) -> dict[str, Any]:
         emo["tomorrow_forbidden"] = list(ref_record.strategy_label.forbidden or [])
         emo["tomorrow_outlook"] = ref_record.strategy_label.summary or ""
 
-    # Save updated draft
+    previous_version = draft.draft_version
     draft.emotion_review = emo
+    draft.draft_version = previous_version + 1
+    draft.supersedes_version = previous_version
     draft_store.save(draft)
 
     # Also update static emotion JSON so EmotionDashboard reflects changes
@@ -9182,6 +9175,8 @@ async def apply_calibration_to_draft(trade_date: str) -> dict[str, Any]:
 
     return {
         "status": "applied",
+        "draft_version": draft.draft_version,
+        "supersedes_version": previous_version,
         "corrections": applied,
         "emotion_node": emo.get("emotion_node", ""),
         "strategy_bias": emo.get("strategy_bias", ""),
@@ -9192,7 +9187,9 @@ async def apply_calibration_to_draft(trade_date: str) -> dict[str, Any]:
 # ── Phase 4.5.1 Calibration Persistence ──
 
 @app.post("/api/v1/analyst-workbench/{trade_date}/calibrate")
-async def calibrate_workbench_draft(trade_date: str, body: dict[str, Any] = None) -> dict[str, Any]:
+async def calibrate_workbench_draft(
+    trade_date: str, request: Request, body: dict[str, Any] = None
+) -> dict[str, Any]:
     """Persist calibration result into the latest draft and session metadata.
 
     Body should contain the Turing Score payload from run_analyst_alignment:
@@ -9201,6 +9198,7 @@ async def calibrate_workbench_draft(trade_date: str, body: dict[str, Any] = None
     from datetime import date as _date
     session_store, _ = _get_wb_session_store()
     td = _date.fromisoformat(trade_date)
+    _require_workbench_principal(request)
     body = body or {}
 
     try:

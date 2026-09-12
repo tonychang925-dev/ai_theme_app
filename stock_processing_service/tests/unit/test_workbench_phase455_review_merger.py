@@ -2,7 +2,9 @@
 
 from datetime import date
 
-from stock_processing_service.application.services.analyst_workbench.draft import AIDraft
+from stock_processing_service.application.services.analyst_workbench.draft import (
+    AIDraft,
+)
 from stock_processing_service.application.services.analyst_workbench.review_merger import (
     AnalystReviewMerger,
 )
@@ -41,7 +43,9 @@ def test_tc_p455_02_given_analyst_override_when_merge_then_dual_track_final_valu
                 },
             }
         ],
-        "watch_groups": [{"id": "g1", "name": "承接方向", "subject_ids": ["theme:main"]}],
+        "watch_groups": [
+            {"id": "g1", "name": "承接方向", "subject_ids": ["theme:main"]}
+        ],
     }
 
     merged = AnalystReviewMerger().merge(draft=draft, workspace=workspace)
@@ -63,7 +67,9 @@ def test_tc_p455_02_given_analyst_override_when_merge_then_dual_track_final_valu
     assert summary["field_changes"][0]["final_value"] == "PCB"
 
 
-def test_tc_p455_02_given_merged_review_when_snapshot_saved_then_hash_and_metadata(tmp_path):
+def test_tc_p455_02_given_merged_review_when_snapshot_saved_then_hash_and_metadata(
+    tmp_path,
+):
     td = date(2026, 7, 10)
     draft = AIDraft(trade_date=td, draft_version=3)
     merged = {
@@ -84,6 +90,14 @@ def test_tc_p455_02_given_merged_review_when_snapshot_saved_then_hash_and_metada
         approved_by="analyst",
     )
     store = SnapshotStore(base_dir=str(tmp_path / "analyst_workbench"))
+    first = ReviewSnapshot.from_merged(
+        trade_date=td,
+        draft=draft,
+        merged=merged,
+        snapshot_version=1,
+        approved_by="analyst",
+    )
+    store.save(first)
     store.save(snapshot)
     loaded = store.load(td)
 

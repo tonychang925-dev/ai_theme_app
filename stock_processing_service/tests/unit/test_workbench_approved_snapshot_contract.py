@@ -49,6 +49,13 @@ def test_approval_principal_binds_authenticated_authorized_actor(monkeypatch):
     monkeypatch.setattr(
         auth,
         "verify_token",
+        lambda token: {"sub": "9", "email": "admin@example.test", "role": "admin"},
+    )
+    assert require_approval_principal("Bearer valid").role == "admin"
+
+    monkeypatch.setattr(
+        auth,
+        "verify_token",
         lambda token: {"sub": "8", "email": "user@example.test", "role": "user"},
     )
     with pytest.raises(ApprovalAuthorizationError, match="not authorized"):

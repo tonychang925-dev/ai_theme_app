@@ -13,26 +13,36 @@ from pathlib import Path
 import pytest
 
 from stock_processing_service.application.services.analyst_workbench.session import (
-    SessionStore, WorkbenchSession, WorkbenchStatus, ALLOWED_TRANSITIONS,
+    SessionStore,
+    WorkbenchSession,
+    WorkbenchStatus,
+    ALLOWED_TRANSITIONS,
 )
 from stock_processing_service.application.services.analyst_workbench.draft import (
-    AIDraft, DraftStore,
+    AIDraft,
+    DraftStore,
 )
 from stock_processing_service.application.services.analyst_workbench.snapshot import (
-    ReviewSnapshot, SnapshotStore,
+    ReviewSnapshot,
+    SnapshotStore,
 )
 
 
 @pytest.fixture
 def tmp_store():
     import os
+
     base = tempfile.mkdtemp(prefix="wb_test_")
-    yield SessionStore(base_dir=base), DraftStore(base_dir=base), SnapshotStore(base_dir=base)
+    yield SessionStore(base_dir=base), DraftStore(base_dir=base), SnapshotStore(
+        base_dir=base
+    )
     import shutil
+
     shutil.rmtree(base, ignore_errors=True)
 
 
 # ═══ TC-WB-01: full lifecycle ═══
+
 
 def test_full_lifecycle(tmp_store):
     ss, ds, sns = tmp_store
@@ -58,18 +68,34 @@ def test_full_lifecycle(tmp_store):
     assert session.can_approve
 
     # Approve
-    snapshot = ReviewSnapshot.from_draft(draft, approved_by="analyst")
+    snapshot = ReviewSnapshot.from_draft(
+        draft, approved_by="user:7:analyst@example.test"
+    )
     sns.save(snapshot)
-    session = ss.transition(session, WorkbenchStatus.APPROVED, snapshot_version=1)
+    session = ss.transition(
+        session,
+        WorkbenchStatus.APPROVED,
+        snapshot_version=1,
+        approved_by=snapshot.approved_by,
+        snapshot_hash=snapshot.snapshot_hash,
+    )
     assert session.status == WorkbenchStatus.APPROVED
     assert session.can_publish
 
     # Publish
-    session = ss.transition(session, WorkbenchStatus.PUBLISHED)
+    published = sns.publish(snapshot, published_by=snapshot.approved_by)
+    session = ss.transition(
+        session,
+        WorkbenchStatus.PUBLISHED,
+        snapshot_version=published.snapshot_version,
+        published_by=published.published_by,
+        published_snapshot_hash=published.snapshot_hash,
+    )
     assert session.status == WorkbenchStatus.PUBLISHED
 
 
 # ═══ TC-WB-02: invalid transition raises ═══
+
 
 def test_invalid_transition_raises(tmp_store):
     ss, _, _ = tmp_store
@@ -77,16 +103,21 @@ def test_invalid_transition_raises(tmp_store):
     session = ss.get(td)
 
     with pytest.raises(ValueError, match="Invalid transition"):
-        ss.transition(session, WorkbenchStatus.APPROVED)  # NOT_STARTED → APPROVED invalid
+        ss.transition(
+            session, WorkbenchStatus.APPROVED
+        )  # NOT_STARTED → APPROVED invalid
 
     ss.transition(session, WorkbenchStatus.GENERATING)
     session = ss.transition(session, WorkbenchStatus.DRAFT_READY, draft_version=1)
 
     with pytest.raises(ValueError, match="Invalid transition"):
-        ss.transition(session, WorkbenchStatus.PUBLISHED)  # DRAFT_READY → PUBLISHED invalid
+        ss.transition(
+            session, WorkbenchStatus.PUBLISHED
+        )  # DRAFT_READY → PUBLISHED invalid
 
 
 # ═══ TC-WB-03: approved snapshot not overwritten ═══
+
 
 def test_approved_snapshot_survives_regenerate(tmp_store):
     ss, ds, sns = tmp_store
@@ -100,11 +131,17 @@ def test_approved_snapshot_survives_regenerate(tmp_store):
     session = ss.transition(session, WorkbenchStatus.IN_REVIEW)
     snapshot = ReviewSnapshot.from_draft(draft1)
     sns.save(snapshot)
-    session = ss.transition(session, WorkbenchStatus.APPROVED, snapshot_version=1)
+    session = ss.transition(
+        session,
+        WorkbenchStatus.APPROVED,
+        snapshot_version=1,
+        approved_by=snapshot.approved_by,
+        snapshot_hash=snapshot.snapshot_hash,
+    )
 
     # Generate new draft
     assert session.status == WorkbenchStatus.APPROVED
-    draft2 = AIDraft(trade_date=td, draft_version=2)
+    draft2 = AIDraft(trade_date=td, draft_version=2, supersedes_version=1)
     ds.save(draft2)
 
     # Old snapshot should still exist and not be overwritten
@@ -115,6 +152,7 @@ def test_approved_snapshot_survives_regenerate(tmp_store):
 
 
 # ═══ TC-WB-04: publish requires approved ═══
+
 
 def test_publish_requires_approved(tmp_store):
     ss, ds, _ = tmp_store
@@ -131,6 +169,7 @@ def test_publish_requires_approved(tmp_store):
 
 # ═══ TC-WB-05: published rejects save-review ═══
 
+
 def test_published_rejects_save_review(tmp_store):
     ss, ds, sns = tmp_store
     td = date(2026, 7, 9)
@@ -140,15 +179,31 @@ def test_published_rejects_save_review(tmp_store):
     ds.save(draft)
     session = ss.transition(session, WorkbenchStatus.DRAFT_READY, draft_version=1)
     session = ss.transition(session, WorkbenchStatus.IN_REVIEW)
-    snapshot = ReviewSnapshot.from_draft(draft)
+    snapshot = ReviewSnapshot.from_draft(
+        draft, approved_by="user:7:analyst@example.test"
+    )
     sns.save(snapshot)
-    session = ss.transition(session, WorkbenchStatus.APPROVED, snapshot_version=1)
-    session = ss.transition(session, WorkbenchStatus.PUBLISHED)
+    session = ss.transition(
+        session,
+        WorkbenchStatus.APPROVED,
+        snapshot_version=1,
+        approved_by=snapshot.approved_by,
+        snapshot_hash=snapshot.snapshot_hash,
+    )
+    published = sns.publish(snapshot, published_by=snapshot.approved_by)
+    session = ss.transition(
+        session,
+        WorkbenchStatus.PUBLISHED,
+        snapshot_version=published.snapshot_version,
+        published_by=published.published_by,
+        published_snapshot_hash=published.snapshot_hash,
+    )
 
     assert session.status == WorkbenchStatus.PUBLISHED
 
 
 # ═══ TC-WB-06: session persistence ═══
+
 
 def test_session_save_and_load(tmp_store):
     ss, _, _ = tmp_store
@@ -165,6 +220,7 @@ def test_session_save_and_load(tmp_store):
 
 # ═══ TC-WB-07: draft version increments ═══
 
+
 def test_draft_version_increments(tmp_store):
     _, ds, _ = tmp_store
     td = date(2026, 7, 9)
@@ -179,6 +235,7 @@ def test_draft_version_increments(tmp_store):
 
 
 # ═══ TC-WB-08: snapshot from draft ═══
+
 
 def test_snapshot_from_draft(tmp_store):
     _, ds, sns = tmp_store

@@ -16,7 +16,7 @@
   "files": [
     {
       "path": "stock_processing_service/api_app.py",
-      "sha256": "2e418b708706ef9a4accdff5c82fbf6f974d48ae6f9b79b209f9900231a88f68"
+      "sha256": "439388ab261993f39049552981015d7a0a7f10b6f8ac406d28e96f3c6e3ce3eb"
     },
     {
       "path": "stock_processing_service/application/services/analyst_workbench/approval_contract.py",
@@ -24,11 +24,11 @@
     },
     {
       "path": "stock_processing_service/application/services/analyst_workbench/approval_gate.py",
-      "sha256": "794644250e0a4615fecbb519d2670cd7d48f73ad21a2ce301b168891fc558dae"
+      "sha256": "69672a734445a1d0136b4f2b2f4577401079b0279f6f8e2fde5fcb7d1abf9a51"
     },
     {
       "path": "stock_processing_service/application/services/analyst_workbench/draft.py",
-      "sha256": "4ff656299a1e668cd6f16dac0f495cace3a6149316494a5ee03e2324318aa049"
+      "sha256": "8ceb3b72c5fe781e2bb4fc98fe2ba383273cbc2672937055cf89783a1205c2a2"
     },
     {
       "path": "stock_processing_service/application/services/analyst_workbench/report_composer.py",
@@ -40,11 +40,11 @@
     },
     {
       "path": "stock_processing_service/application/services/analyst_workbench/session.py",
-      "sha256": "9cd277956cd6fccaa45f45509b511d76e12965c447b33166d6b90f874e83b541"
+      "sha256": "d50fc88b6d4ea1e720a0ba1ee4a3eabfa04b675c47567e6a4a260bf5f11a7d9f"
     },
     {
       "path": "stock_processing_service/application/services/analyst_workbench/snapshot.py",
-      "sha256": "0bffe9cb098829b4ffe2e8c25bf819ef2f61b3863ba191369970bb00020618a1"
+      "sha256": "9986ec24ffed90a7c1c8a1212adb1ca941124aaf8f203a588fb960f1bfc4f43b"
     },
     {
       "path": "stock_processing_service/application/services/analyst_workbench/snapshot_validator.py",

@@ -66,6 +66,7 @@ def persist_contract_snapshot(base_dir: str, trade_date: date, draft) -> ReviewS
 
 # ── Approval Gate: NOT_STARTED ──
 
+
 def test_not_started_returns_preview(tmp_store, td):
     gate = ApprovalGate(base_dir=tmp_store)
     approval = gate.check(td)
@@ -77,6 +78,7 @@ def test_not_started_returns_preview(tmp_store, td):
 
 
 # ── Approval Gate: DRAFT_READY ──
+
 
 def test_draft_ready_returns_preview(tmp_store, td):
     ss = SessionStore(base_dir=tmp_store)
@@ -93,6 +95,7 @@ def test_draft_ready_returns_preview(tmp_store, td):
 
 # ── Approval Gate: APPROVED → formal report ──
 
+
 def test_approved_returns_formal(tmp_store, td):
     ss = SessionStore(base_dir=tmp_store)
     session = ss.get(td)
@@ -101,15 +104,21 @@ def test_approved_returns_formal(tmp_store, td):
     session = ss.transition(session, WorkbenchStatus.IN_REVIEW)
 
     # Create draft and snapshot
-    draft = AIDraft(trade_date=td, draft_version=1,
-                    attention_state={"charts_available": 3})
+    draft = AIDraft(
+        trade_date=td, draft_version=1, attention_state={"charts_available": 3}
+    )
     ds = DraftStore(base_dir=tmp_store)
     ds.save(draft)
 
     persist_contract_snapshot(tmp_store, td, draft)
 
-    session = ss.transition(session, WorkbenchStatus.APPROVED,
-                            snapshot_version=1, approved_by="analyst")
+    session = ss.transition(
+        session,
+        WorkbenchStatus.APPROVED,
+        snapshot_version=1,
+        approved_by="user:7:analyst@example.test",
+        snapshot_hash=SnapshotStore(base_dir=tmp_store).load(td).snapshot_hash,
+    )
 
     gate = ApprovalGate(base_dir=tmp_store)
     approval = gate.check(td)
@@ -121,6 +130,7 @@ def test_approved_returns_formal(tmp_store, td):
 
 
 # ── Approval Gate: PUBLISHED → published report ──
+
 
 def test_published_returns_published(tmp_store, td):
     ss = SessionStore(base_dir=tmp_store)
@@ -135,9 +145,24 @@ def test_published_returns_published(tmp_store, td):
 
     persist_contract_snapshot(tmp_store, td, draft)
 
-    session = ss.transition(session, WorkbenchStatus.APPROVED,
-                            snapshot_version=1, approved_by="analyst")
-    session = ss.transition(session, WorkbenchStatus.PUBLISHED)
+    approved = SnapshotStore(base_dir=tmp_store).load(td)
+    session = ss.transition(
+        session,
+        WorkbenchStatus.APPROVED,
+        snapshot_version=1,
+        approved_by=approved.approved_by,
+        snapshot_hash=approved.snapshot_hash,
+    )
+    published = SnapshotStore(base_dir=tmp_store).publish(
+        approved, published_by=approved.approved_by
+    )
+    session = ss.transition(
+        session,
+        WorkbenchStatus.PUBLISHED,
+        snapshot_version=published.snapshot_version,
+        published_by=published.published_by,
+        published_snapshot_hash=published.snapshot_hash,
+    )
 
     gate = ApprovalGate(base_dir=tmp_store)
     approval = gate.check(td)
@@ -146,6 +171,7 @@ def test_published_returns_published(tmp_store, td):
 
 
 # ── require_formal raises when no approved snapshot ──
+
 
 def test_require_formal_raises_when_not_approved(tmp_store, td):
     gate = ApprovalGate(base_dir=tmp_store)
@@ -167,7 +193,14 @@ def test_require_formal_passes_when_approved(tmp_store, td):
 
     persist_contract_snapshot(tmp_store, td, draft)
 
-    session = ss.transition(session, WorkbenchStatus.APPROVED, snapshot_version=1)
+    approved = SnapshotStore(base_dir=tmp_store).load(td)
+    session = ss.transition(
+        session,
+        WorkbenchStatus.APPROVED,
+        snapshot_version=1,
+        approved_by=approved.approved_by,
+        snapshot_hash=approved.snapshot_hash,
+    )
 
     gate = ApprovalGate(base_dir=tmp_store)
     approval = gate.require_formal(td)
@@ -176,6 +209,7 @@ def test_require_formal_passes_when_approved(tmp_store, td):
 
 # ── Regenerate does not affect approved snapshot ──
 
+
 def test_regenerate_does_not_overwrite_approved_snapshot(tmp_store, td):
     ss = SessionStore(base_dir=tmp_store)
     session = ss.get(td)
@@ -183,19 +217,28 @@ def test_regenerate_does_not_overwrite_approved_snapshot(tmp_store, td):
     session = ss.transition(session, WorkbenchStatus.DRAFT_READY, draft_version=1)
     session = ss.transition(session, WorkbenchStatus.IN_REVIEW)
 
-    draft = AIDraft(trade_date=td, draft_version=1,
-                    attention_state={"version": 1})
+    draft = AIDraft(trade_date=td, draft_version=1, attention_state={"version": 1})
     ds = DraftStore(base_dir=tmp_store)
     ds.save(draft)
 
     persist_contract_snapshot(tmp_store, td, draft)
 
-    session = ss.transition(session, WorkbenchStatus.APPROVED,
-                            snapshot_version=1, approved_by="analyst")
+    approved = SnapshotStore(base_dir=tmp_store).load(td)
+    session = ss.transition(
+        session,
+        WorkbenchStatus.APPROVED,
+        snapshot_version=1,
+        approved_by=approved.approved_by,
+        snapshot_hash=approved.snapshot_hash,
+    )
 
     # Simulate regenerate: create draft v2, but snapshot should remain v1
-    draft_v2 = AIDraft(trade_date=td, draft_version=2, supersedes_version=1,
-                       attention_state={"version": 2})
+    draft_v2 = AIDraft(
+        trade_date=td,
+        draft_version=2,
+        supersedes_version=1,
+        attention_state={"version": 2},
+    )
     ds.save(draft_v2)
     session.draft_version = 2
     ss.save(session)
@@ -215,6 +258,7 @@ def test_regenerate_does_not_overwrite_approved_snapshot(tmp_store, td):
 
 # ── IN_REVIEW returns preview ──
 
+
 def test_in_review_returns_preview(tmp_store, td):
     ss = SessionStore(base_dir=tmp_store)
     session = ss.get(td)
@@ -230,20 +274,23 @@ def test_in_review_returns_preview(tmp_store, td):
 
 # ── Edge case: APPROVED / PUBLISHED but snapshot missing → blocked ──
 
+
 def test_approved_without_snapshot_returns_blocked(tmp_store, td):
     ss = SessionStore(base_dir=tmp_store)
     session = ss.get(td)
     session = ss.transition(session, WorkbenchStatus.GENERATING)
     session = ss.transition(session, WorkbenchStatus.DRAFT_READY, draft_version=1)
     session = ss.transition(session, WorkbenchStatus.IN_REVIEW)
-    session = ss.transition(session, WorkbenchStatus.APPROVED, snapshot_version=1, approved_by="analyst")
-    # Session is APPROVED but no snapshot.json was ever created on disk
+    session.status = WorkbenchStatus.APPROVED
+    session.snapshot_version = 1
+    session.snapshot_hash = "a" * 64
+    ss.save(session)
 
     gate = ApprovalGate(base_dir=tmp_store)
     approval = gate.check(td)
     assert approval.mode == "blocked"
     assert approval.can_generate_report is False
-    assert "snapshot.json is missing" in approval.reason
+    assert "governed snapshot authority is missing" in approval.reason
 
 
 def test_published_without_snapshot_returns_blocked(tmp_store, td):
@@ -252,11 +299,13 @@ def test_published_without_snapshot_returns_blocked(tmp_store, td):
     session = ss.transition(session, WorkbenchStatus.GENERATING)
     session = ss.transition(session, WorkbenchStatus.DRAFT_READY, draft_version=1)
     session = ss.transition(session, WorkbenchStatus.IN_REVIEW)
-    session = ss.transition(session, WorkbenchStatus.APPROVED, snapshot_version=1)
-    session = ss.transition(session, WorkbenchStatus.PUBLISHED)
-    # No snapshot file written
+    session.status = WorkbenchStatus.PUBLISHED
+    session.snapshot_version = 1
+    session.snapshot_hash = "a" * 64
+    session.published_snapshot_hash = "a" * 64
+    ss.save(session)
 
     gate = ApprovalGate(base_dir=tmp_store)
     approval = gate.check(td)
     assert approval.mode == "blocked"
-    assert "snapshot.json is missing" in approval.reason
+    assert "governed snapshot authority is missing" in approval.reason

@@ -8,16 +8,22 @@ from pathlib import Path
 import pytest
 
 from stock_processing_service.application.services.analyst_workbench.session import (
-    SessionStore, WorkbenchStatus,
+    SessionStore,
+    WorkbenchStatus,
 )
 from stock_processing_service.application.services.analyst_workbench.draft import (
-    AIDraft, DraftStore,
+    AIDraft,
+    DraftStore,
 )
 from stock_processing_service.application.services.analyst_workbench.snapshot import (
-    ReviewSnapshot, SnapshotStore,
+    ReviewSnapshot,
+    SnapshotStore,
 )
 from stock_processing_service.application.services.analyst_workbench.approval_contract import (
-    ApprovalPrincipal, ReviewStateStore, RuntimeIntegrityVerifier, project_root,
+    ApprovalPrincipal,
+    ReviewStateStore,
+    RuntimeIntegrityVerifier,
+    project_root,
 )
 from stock_processing_service.application.services.analyst_workbench.chart_review_builder import (
     ChartReviewBuilder,
@@ -62,6 +68,7 @@ def persist_contract_snapshot(base_dir: str, trade_date: date, draft) -> None:
 
 # ═══ T01: AIDraft contains new fields ═══
 
+
 def test_draft_has_emotion_and_chart_fields():
     draft = AIDraft(trade_date=date.today(), draft_version=1)
     assert draft.emotion_review == {}
@@ -69,15 +76,19 @@ def test_draft_has_emotion_and_chart_fields():
 
 
 def test_draft_new_fields_in_json():
-    draft = AIDraft(trade_date=date.today(), draft_version=1,
-                    emotion_review={"emotion_node": "CLIMAX"},
-                    chart_reviews=[{"chart_type": "market_breadth"}])
+    draft = AIDraft(
+        trade_date=date.today(),
+        draft_version=1,
+        emotion_review={"emotion_node": "CLIMAX"},
+        chart_reviews=[{"chart_type": "market_breadth"}],
+    )
     d = draft.to_dict()
     assert d["emotion_review"] == {"emotion_node": "CLIMAX"}
     assert d["chart_reviews"] == [{"chart_type": "market_breadth"}]
 
 
 # ═══ T01: backward compat — old draft without new fields still loads ═══
+
 
 def test_old_draft_without_new_fields_loads(tmp_store, td):
     old_json = {
@@ -97,11 +108,12 @@ def test_old_draft_without_new_fields_loads(tmp_store, td):
 
     loaded = ds.load(td, version=1)
     assert loaded is not None
-    assert loaded.emotion_review == {}   # default
-    assert loaded.chart_reviews == []    # default
+    assert loaded.emotion_review == {}  # default
+    assert loaded.chart_reviews == []  # default
 
 
 # ═══ T01: snapshot contains new fields ═══
+
 
 def test_snapshot_has_emotion_and_chart_fields():
     snap = ReviewSnapshot(trade_date=date.today(), snapshot_version=1)
@@ -109,9 +121,10 @@ def test_snapshot_has_emotion_and_chart_fields():
     assert snap.chart_reviews == []
 
 
-# ═══ T01: backward compat — old snapshot without new fields still loads ═══
+# ═══ T01: legacy snapshot storage is not accepted as authority ═══
 
-def test_old_snapshot_without_new_fields_loads(tmp_store, td):
+
+def test_old_snapshot_without_governed_authority_fails_closed(tmp_store, td):
     old_json = {
         "trade_date": td.isoformat(),
         "snapshot_version": 1,
@@ -129,18 +142,20 @@ def test_old_snapshot_without_new_fields_loads(tmp_store, td):
     p.mkdir(parents=True, exist_ok=True)
     (p / "snapshot.json").write_text(json.dumps(old_json))
 
-    loaded = sst.load(td)
-    assert loaded is not None
-    assert loaded.emotion_review == {}
-    assert loaded.chart_reviews == []
+    loaded = sst.load(td, version=1)
+    assert loaded is None
 
 
 # ═══ T05: from_draft copies new fields ═══
 
+
 def test_from_draft_copies_emotion_and_chart_reviews():
-    draft = AIDraft(trade_date=date.today(), draft_version=1,
-                    emotion_review={"emotion_node": "ICE_POINT"},
-                    chart_reviews=[{"chart_type": "relay_ecology"}])
+    draft = AIDraft(
+        trade_date=date.today(),
+        draft_version=1,
+        emotion_review={"emotion_node": "ICE_POINT"},
+        chart_reviews=[{"chart_type": "relay_ecology"}],
+    )
     snap = ReviewSnapshot.from_draft(draft, snapshot_version=1)
     assert snap.emotion_review == {"emotion_node": "ICE_POINT"}
     assert snap.chart_reviews == [{"chart_type": "relay_ecology"}]
@@ -149,13 +164,16 @@ def test_from_draft_copies_emotion_and_chart_reviews():
 
 # ═══ T02: ChartReviewBuilder constructs 6 review types ═══
 
+
 def test_chart_review_builder_with_sample_data():
     charts = [
         {
             "chart_type": "market_breadth",
             "data": {
-                "up_count": 2800, "down_count": 1900,
-                "limit_up_count": 87, "limit_down_count": 3,
+                "up_count": 2800,
+                "down_count": 1900,
+                "limit_up_count": 87,
+                "limit_down_count": 3,
                 "composite_score": 3.5,
             },
             "interpretation": "市场宽度改善",
@@ -163,22 +181,28 @@ def test_chart_review_builder_with_sample_data():
         {
             "chart_type": "emotion_momentum",
             "data": {
-                "emotion_momentum_score": 6.2, "label": "情绪活跃",
-                "first_board_red_ratio": 0.55, "chain_board_big_loss_ratio": 0.08,
+                "emotion_momentum_score": 6.2,
+                "label": "情绪活跃",
+                "first_board_red_ratio": 0.55,
+                "chain_board_big_loss_ratio": 0.08,
             },
         },
         {
             "chart_type": "active_capital",
             "data": {
-                "active_amount_yi": 850, "total_amount_yi": 8200,
-                "limit_up_count": 87, "label": "大幅流入",
+                "active_amount_yi": 850,
+                "total_amount_yi": 8200,
+                "limit_up_count": 87,
+                "label": "大幅流入",
             },
         },
         {
             "chart_type": "relay_ecology",
             "data": {
-                "max_board_height": 5, "promotion_1_to_2": 0.42,
-                "promotion_2_to_3": 0.35, "feedback_score": 12,
+                "max_board_height": 5,
+                "promotion_1_to_2": 0.42,
+                "promotion_2_to_3": 0.35,
+                "feedback_score": 12,
                 "feedback_label": "反馈偏暖",
             },
         },
@@ -229,6 +253,7 @@ def test_chart_review_builder_with_sample_data():
 
 # ═══ T03: EmotionReviewBuilder ═══
 
+
 def test_emotion_review_builder_with_sample_data():
     emo = {
         "emotion_node": "REBOUND",
@@ -237,11 +262,16 @@ def test_emotion_review_builder_with_sample_data():
         "confidence": 0.82,
         "strategy_bias": "可小仓参与核心修复",
         "key_evidence": ["涨停数回升", "连板晋级率改善"],
-        "breadth_score": 42, "breadth_label": "改善",
-        "momentum_score": 28, "momentum_label": "偏好",
-        "relay_score": 35, "relay_label": "改善",
-        "capital_score": 18, "capital_label": "中性",
-        "style_score": 12, "style_label": "分歧",
+        "breadth_score": 42,
+        "breadth_label": "改善",
+        "momentum_score": 28,
+        "momentum_label": "偏好",
+        "relay_score": 35,
+        "relay_label": "改善",
+        "capital_score": 18,
+        "capital_label": "中性",
+        "style_score": 12,
+        "style_label": "分歧",
     }
     review = EmotionReviewBuilder().build(emo)
 
@@ -264,6 +294,7 @@ def test_emotion_review_builder_empty_input():
 
 # ═══ T06: WorkbenchReportComposer outputs first-class sections ═══
 
+
 def test_composer_outputs_first_class_sections(tmp_store, td):
     # Setup approved snapshot with workbench data
     ss = SessionStore(base_dir=tmp_store)
@@ -273,7 +304,8 @@ def test_composer_outputs_first_class_sections(tmp_store, td):
     session = ss.transition(session, WorkbenchStatus.IN_REVIEW)
 
     draft = AIDraft(
-        trade_date=td, draft_version=1,
+        trade_date=td,
+        draft_version=1,
         emotion_review={"emotion_node": "CLIMAX", "emotion_score": 75},
         chart_reviews=[{"chart_type": "market_breadth", "status": "活跃"}],
         attention_state={"charts_available": 3},
@@ -286,8 +318,13 @@ def test_composer_outputs_first_class_sections(tmp_store, td):
 
     persist_contract_snapshot(tmp_store, td, draft)
 
-    session = ss.transition(session, WorkbenchStatus.APPROVED,
-                            snapshot_version=1, approved_by="analyst")
+    session = ss.transition(
+        session,
+        WorkbenchStatus.APPROVED,
+        snapshot_version=1,
+        approved_by="user:7:analyst@example.test",
+        snapshot_hash=SnapshotStore(base_dir=tmp_store).load(td).snapshot_hash,
+    )
 
     composer = WorkbenchReportComposer(workbench_base_dir=tmp_store)
     result = composer.compose(td, recap_doc=None)
@@ -297,7 +334,9 @@ def test_composer_outputs_first_class_sections(tmp_store, td):
 
     # First-class sections
     assert report["emotion_review"] == {"emotion_node": "CLIMAX", "emotion_score": 75}
-    assert report["market_chart_reviews"] == [{"chart_type": "market_breadth", "status": "活跃"}]
+    assert report["market_chart_reviews"] == [
+        {"chart_type": "market_breadth", "status": "活跃"}
+    ]
     assert report["attention_review"] == {"charts_available": 3}
     assert report["cognition_reviews"] == [{"subject_name": "机器人"}]
     assert report["narrative_review"] == {"main_story": "测试叙事"}
@@ -305,10 +344,14 @@ def test_composer_outputs_first_class_sections(tmp_store, td):
 
     # workbench_data backward compat
     assert "workbench_data" in report
-    assert report["workbench_data"]["emotion_review"] == {"emotion_node": "CLIMAX", "emotion_score": 75}
+    assert report["workbench_data"]["emotion_review"] == {
+        "emotion_node": "CLIMAX",
+        "emotion_score": 75,
+    }
 
 
 # ═══ Regenerate does not affect snapshot report ═══
+
 
 def test_regenerate_does_not_affect_snapshot_report(tmp_store, td):
     ss = SessionStore(base_dir=tmp_store)
@@ -318,16 +361,28 @@ def test_regenerate_does_not_affect_snapshot_report(tmp_store, td):
     session = ss.transition(session, WorkbenchStatus.IN_REVIEW)
 
     # v1 draft and snapshot
-    draft_v1 = AIDraft(trade_date=td, draft_version=1,
-                       emotion_review={"emotion_node": "CLIMAX"})
+    draft_v1 = AIDraft(
+        trade_date=td, draft_version=1, emotion_review={"emotion_node": "CLIMAX"}
+    )
     ds = DraftStore(base_dir=tmp_store)
     ds.save(draft_v1)
     persist_contract_snapshot(tmp_store, td, draft_v1)
-    session = ss.transition(session, WorkbenchStatus.APPROVED, snapshot_version=1)
+    approved = SnapshotStore(base_dir=tmp_store).load(td)
+    session = ss.transition(
+        session,
+        WorkbenchStatus.APPROVED,
+        snapshot_version=1,
+        approved_by=approved.approved_by,
+        snapshot_hash=approved.snapshot_hash,
+    )
 
     # Simulate re-generate: write draft_v2
-    draft_v2 = AIDraft(trade_date=td, draft_version=2,
-                       emotion_review={"emotion_node": "REBOUND"})
+    draft_v2 = AIDraft(
+        trade_date=td,
+        draft_version=2,
+        supersedes_version=1,
+        emotion_review={"emotion_node": "REBOUND"},
+    )
     ds.save(draft_v2)
 
     # Compose — must use snapshot_v1 data, not draft_v2

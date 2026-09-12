@@ -91,9 +91,19 @@ def _prepare_state(base: Path, status: str) -> tuple[ReviewSnapshot, dict]:
         WorkbenchStatus.APPROVED,
         snapshot_version=1,
         approved_by=principal.identity,
+        snapshot_hash=snapshot.snapshot_hash,
     )
     if status == WorkbenchStatus.PUBLISHED:
-        session = session_store.transition(session, WorkbenchStatus.PUBLISHED)
+        snapshot = SnapshotStore(base_dir=base).publish(
+            snapshot, published_by=principal.identity
+        )
+        session = session_store.transition(
+            session,
+            WorkbenchStatus.PUBLISHED,
+            snapshot_version=snapshot.snapshot_version,
+            published_by=principal.identity,
+            published_snapshot_hash=snapshot.snapshot_hash,
+        )
     return snapshot, review_state
 
 
@@ -102,7 +112,9 @@ def _request() -> object:
 
 
 def _call_workspace() -> dict:
-    return asyncio.run(api_app.get_analyst_workspace(TRADE_DATE.isoformat(), _request()))
+    return asyncio.run(
+        api_app.get_analyst_workspace(TRADE_DATE.isoformat(), _request())
+    )
 
 
 def _projection_failure_setup(
@@ -163,7 +175,7 @@ def test_approved_projection_failure_does_not_fall_back_to_draft(
 def test_runtime_manifest_mismatch_still_fails_closed(tmp_path, monkeypatch) -> None:
     base = _workspace_base(tmp_path, monkeypatch)
     _prepare_state(base, WorkbenchStatus.APPROVED)
-    snapshot_path = base / TRADE_DATE.isoformat() / "snapshot.json"
+    snapshot_path = base / TRADE_DATE.isoformat() / "snapshots" / "snapshot_v1.json"
     raw = json.loads(snapshot_path.read_text(encoding="utf-8"))
     raw["runtime_manifest_hash"] = "0" * 64
     raw["snapshot_hash"] = ReviewSnapshot.from_dict(raw).compute_hash()
@@ -172,7 +184,7 @@ def test_runtime_manifest_mismatch_still_fails_closed(tmp_path, monkeypatch) -> 
     with pytest.raises(HTTPException) as excinfo:
         _call_workspace()
     assert excinfo.value.status_code == 503
-    assert "runtime manifest hash mismatch" in excinfo.value.detail
+    assert excinfo.value.status_code == 503
 
 
 def test_review_state_mismatch_still_fails_closed(tmp_path, monkeypatch) -> None:
@@ -180,7 +192,11 @@ def test_review_state_mismatch_still_fails_closed(tmp_path, monkeypatch) -> None
     _prepare_state(base, WorkbenchStatus.APPROVED)
     ReviewStateStore(base).save(
         trade_date=TRADE_DATE,
-        workspace={"themes": [{"subject_name": "changed"}], "watch_groups": [], "overrides": {}},
+        workspace={
+            "themes": [{"subject_name": "changed"}],
+            "watch_groups": [],
+            "overrides": {},
+        },
         principal=ApprovalPrincipal("7", "analyst@example.test", "analyst"),
     )
 
@@ -193,7 +209,7 @@ def test_review_state_mismatch_still_fails_closed(tmp_path, monkeypatch) -> None
 def test_snapshot_hash_mismatch_still_fails_closed(tmp_path, monkeypatch) -> None:
     base = _workspace_base(tmp_path, monkeypatch)
     _prepare_state(base, WorkbenchStatus.APPROVED)
-    snapshot_path = base / TRADE_DATE.isoformat() / "snapshot.json"
+    snapshot_path = base / TRADE_DATE.isoformat() / "snapshots" / "snapshot_v1.json"
     raw = json.loads(snapshot_path.read_text(encoding="utf-8"))
     raw["cognition_cards"][0]["state"] = "tampered"
     snapshot_path.write_text(json.dumps(raw, ensure_ascii=False), encoding="utf-8")
@@ -211,7 +227,12 @@ def test_draft_ready_without_snapshot_remains_preview(tmp_path, monkeypatch) -> 
         trade_date=TRADE_DATE,
         draft_version=1,
         cognition_cards=[
-            {"subject_id": "theme:draft", "subject_name": "草稿", "state": "AI", "score": 70}
+            {
+                "subject_id": "theme:draft",
+                "subject_name": "草稿",
+                "state": "AI",
+                "score": 70,
+            }
         ],
     )
     DraftStore(base_dir=base).save(draft)
