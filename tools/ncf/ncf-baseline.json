@@ -1,0 +1,16 @@
+{
+  "schema_version": 2,
+  "repository": "tonychang925-dev/ai_theme_app",
+  "required_context": "NO_CRITICAL_FALLBACK_GATE",
+  "policies": [
+    "NCF-01-critical-fallback",
+    "NCF-02-test-double-production-reachability",
+    "NCF-03-legacy-authority-fallback",
+    "NCF-04-alternate-provider-masking",
+    "NCF-05-synthetic-success",
+    "NCF-06-exception-success",
+    "NCF-07-ambient-authority-selection",
+    "NCF-08-production-test-mode",
+    "NCF-09-fail-closed"
+  ]
+}
