@@ -25,11 +25,17 @@ jobs:
         run: |
           set -euo pipefail
           test -x tools/ncf/ncf_status_gate.py
+          set +e
           python3 tools/ncf/ncf_status_gate.py \
             --repository "${GITHUB_REPOSITORY}" \
             --event-name "${GITHUB_EVENT_NAME}" \
             --base-sha "${{ github.event.pull_request.base.sha }}" \
             --head-sha "${{ github.event.pull_request.head.sha }}" \
-            --github-sha "${GITHUB_SHA}" | tee ncf-findings.json
+            --github-sha "${GITHUB_SHA}" > ncf-findings.json 2> ncf-gate-stderr.txt
+          gate_status=$?
+          set -e
+          cat ncf-gate-stderr.txt >&2
+          cat ncf-findings.json
+          test "${gate_status}" -eq 0
           test "$(jq -r '.candidate_sha' ncf-findings.json)" = "${{ github.event.pull_request.head.sha }}"
           test "$(jq -r '.finding_count' ncf-findings.json)" = "0"
