@@ -1,0 +1,41 @@
+name: NO_CRITICAL_FALLBACK_GATE
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  NO_CRITICAL_FALLBACK_GATE:
+    name: NO_CRITICAL_FALLBACK_GATE
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Check out exact candidate SHA
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Run exact-SHA-bound NCF gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -x tools/ncf/ncf_status_gate.py
+          set +e
+          python3 tools/ncf/ncf_status_gate.py \
+            --repository "${GITHUB_REPOSITORY}" \
+            --event-name "${GITHUB_EVENT_NAME}" \
+            --base-sha "${{ github.event.pull_request.base.sha }}" \
+            --head-sha "${{ github.event.pull_request.head.sha }}" \
+            --github-sha "${GITHUB_SHA}" > ncf-findings.json 2> ncf-gate-stderr.txt
+          gate_status=$?
+          set -e
+          cat ncf-gate-stderr.txt >&2
+          cat ncf-findings.json
+          test "${gate_status}" -eq 0
+          test "$(jq -r '.candidate_sha' ncf-findings.json)" = "${{ github.event.pull_request.head.sha }}"
+          test "$(jq -r '.finding_count' ncf-findings.json)" = "0"
