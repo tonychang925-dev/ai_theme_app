@@ -24,7 +24,7 @@ def _context() -> producer.ProducerContext:
         runner_image_os="ubuntu24",
         workflow_path=producer.WORKFLOW_PATH,
         workflow_sha="a" * 40,
-        workflow_ref="refs/heads/rd1-v1/op01/capture-producer",
+        workflow_ref=producer.EXPECTED_WORKFLOW_REF,
         run_id="1234567890",
         run_attempt="1",
         source_commit=producer.EXPECTED_F,
@@ -32,6 +32,22 @@ def _context() -> producer.ProducerContext:
         merge_commit=producer.EXPECTED_M,
         merge_tree="c" * 40,
     )
+
+
+def _environment() -> dict[str, str]:
+    return {
+        "GITHUB_REPOSITORY": producer.REPOSITORY,
+        "GITHUB_ACTOR": producer.EXPECTED_ACTOR,
+        "GITHUB_TRIGGERING_ACTOR": producer.EXPECTED_ACTOR,
+        "GITHUB_EVENT_NAME": "workflow_dispatch",
+        "ImageOS": "ubuntu24",
+        "GITHUB_WORKFLOW_REF": producer.EXPECTED_WORKFLOW_REF,
+        "GITHUB_WORKFLOW_SHA": "a" * 40,
+        "GITHUB_RUN_ID": "1",
+        "GITHUB_RUN_ATTEMPT": "1",
+        "GITHUB_SHA": "a" * 40,
+        "GITHUB_WORKSPACE": "/tmp/workspace",
+    }
 
 
 def test_manifest_ref_uses_canonical_projection_excluding_manifest_ref() -> None:
@@ -95,24 +111,76 @@ def test_transaction_binds_four_purposes_and_manifest_projection() -> None:
 
 
 def test_environment_authority_fails_closed() -> None:
-    environment = {
-        "GITHUB_REPOSITORY": "example/untrusted",
-        "GITHUB_ACTOR": producer.EXPECTED_ACTOR,
-        "GITHUB_TRIGGERING_ACTOR": producer.EXPECTED_ACTOR,
-        "GITHUB_EVENT_NAME": "workflow_dispatch",
-        "ImageOS": "ubuntu24",
-        "GITHUB_WORKFLOW_REF": "refs/heads/rd1-v1/op01/capture-producer@" + "a" * 40,
-        "GITHUB_RUN_ID": "1",
-        "GITHUB_RUN_ATTEMPT": "1",
-        "GITHUB_SHA": "a" * 40,
-        "GITHUB_WORKSPACE": "/tmp/workspace",
-    }
+    environment = _environment()
+    environment["GITHUB_REPOSITORY"] = "example/untrusted"
     try:
         producer._require_environment(environment)
     except producer.ProducerError as error:
         assert "repository" in str(error)
     else:
         raise AssertionError("untrusted repository was accepted")
+
+
+def test_environment_accepts_real_canonical_workflow_authority() -> None:
+    context = producer._require_environment(_environment())
+
+    assert context.workflow_ref == producer.EXPECTED_WORKFLOW_REF
+    assert context.workflow_sha == "a" * 40
+
+
+def test_environment_rejects_noncanonical_workflow_ref() -> None:
+    environment = _environment()
+    environment["GITHUB_WORKFLOW_REF"] = (
+        "refs/heads/rd1-v1/op01/capture-producer@" + "a" * 40
+    )
+
+    try:
+        producer._require_environment(environment)
+    except producer.ProducerError as error:
+        assert "frozen producer branch" in str(error)
+    else:
+        raise AssertionError("synthetic workflow ref was accepted")
+
+
+def test_environment_rejects_workflow_sha_mismatch() -> None:
+    environment = _environment()
+    environment["GITHUB_WORKFLOW_SHA"] = "b" * 40
+
+    try:
+        producer._require_environment(environment)
+    except producer.ProducerError as error:
+        assert "workflow SHA" in str(error)
+    else:
+        raise AssertionError("workflow SHA mismatch was accepted")
+
+
+def test_environment_requires_workflow_sha() -> None:
+    environment = _environment()
+    del environment["GITHUB_WORKFLOW_SHA"]
+
+    try:
+        producer._require_environment(environment)
+    except producer.ProducerError as error:
+        assert "required GitHub Actions identity is missing" in str(error)
+    else:
+        raise AssertionError("missing workflow SHA was accepted")
+
+
+def test_workflow_uses_real_authority_without_synthetic_override() -> None:
+    workflow = (
+        SCRIPT_PATH.parents[1]
+        / "workflows"
+        / ("rd1-v1-op01-market-release-capture.yml")
+    )
+    text = workflow.read_text(encoding="utf-8")
+    assert f"      EXPECTED_WORKFLOW_REF: {producer.EXPECTED_WORKFLOW_REF}\n" in text
+    assert (
+        '          test "${GITHUB_WORKFLOW_REF}" = "${EXPECTED_WORKFLOW_REF}"\n' in text
+    )
+    assert '          test "${GITHUB_WORKFLOW_SHA}" = "${GITHUB_SHA}"\n' in text
+    assert "GITHUB_WORKFLOW_REF#refs/heads/" not in text
+    build_step = text[text.index("      - name: Build canonical capture inputs\n") :]
+    assert "GITHUB_WORKFLOW_REF:" not in build_step
 
 
 def test_workflow_permission_contract_is_exact() -> None:
