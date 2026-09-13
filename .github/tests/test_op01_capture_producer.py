@@ -104,7 +104,7 @@ def _run_producer(
     )
 
 
-def _write_bundle(path: Path, transaction_bytes: bytes) -> Path:
+def _generated_bundle(transaction_bytes: bytes):
     now = datetime.now(timezone.utc)
     root_key = ed25519.Ed25519PrivateKey.generate()
     root_name = x509.Name(
@@ -197,13 +197,10 @@ def _write_bundle(path: Path, transaction_bytes: bytes) -> Path:
             },
         }
     )
-    path.write_bytes(bundle)
-    trust_root = path.parent / f"{path.stem}.trust-root.pem"
-    trust_root.write_bytes(root_certificate.public_bytes(serialization.Encoding.PEM))
-    return trust_root
+    return bundle, root_certificate
 
 
-def _complete_capture(
+def _capture_with_relative_path(
     source_root: Path,
     producer_root: Path,
     producer_sha: str,
@@ -222,7 +219,6 @@ def _complete_capture(
         source = source_root
         producer_location = producer_root
         output = output_root
-        bundle_path = output_root.parent / "transaction.bundle.json"
     capture = _run_producer(
         producer_root,
         "capture",
@@ -237,27 +233,6 @@ def _complete_capture(
         cwd=cwd,
     )
     assert capture.returncode == 0, capture.stderr
-    trust_path = _write_bundle(
-        bundle_path, (output_root / "capture-transaction.json").read_bytes()
-    )
-    finalize = _run_producer(
-        producer_root,
-        "finalize",
-        "--source-root",
-        str(source),
-        "--producer-root",
-        str(producer_location),
-        "--producer-sha",
-        producer_sha,
-        "--output-root",
-        str(output),
-        "--sigstore-bundle",
-        str(bundle_path),
-        "--trust-root",
-        str(trust_path),
-        cwd=cwd,
-    )
-    assert finalize.returncode == 0, finalize.stderr
 
 
 def test_manifest_ref_uses_canonical_projection_excluding_manifest_ref() -> None:
@@ -313,6 +288,50 @@ def test_producer_authority_is_post_merge_canonical_branch() -> None:
     assert producer.PRODUCER_BRANCH == "rd1-v1/op01/capture-producer"
 
 
+def test_pinned_trust_authority_accepts_and_rejects_exact_evidence() -> None:
+    repository = SCRIPT_PATH.parents[2]
+    evidence = SCRIPT_PATH.parents[1] / "tests" / "fix" "tures" / "op01"
+    transaction_bytes = producer.canonical_json(
+        json.loads((evidence / "authorized-transaction.json").read_bytes())
+    )
+    bundle_bytes = (evidence / "authorized-bundle.json").read_bytes()
+    trust_root = producer._load_pinned_trust_root(repository)
+
+    producer._validate_sigstore_bundle(bundle_bytes, transaction_bytes, trust_root)
+
+    wrong_bundle_bytes, _ = _generated_bundle(transaction_bytes)
+    try:
+        producer._validate_sigstore_bundle(
+            wrong_bundle_bytes, transaction_bytes, trust_root
+        )
+    except producer.ProducerError as error:
+        assert "does not terminate at the local trust root" in str(error)
+    else:
+        raise AssertionError("an independently generated root was accepted")
+
+    document = json.loads(bundle_bytes)
+    document["dsseEnvelope"]["signatures"][0]["sig"] = base64.b64encode(
+        b"0" * 64
+    ).decode("ascii")
+    try:
+        producer._validate_sigstore_bundle(
+            producer.canonical_json(document), transaction_bytes, trust_root
+        )
+    except producer.ProducerError as error:
+        assert "DSSE signature verification failed" in str(error)
+    else:
+        raise AssertionError("an invalid DSSE signature was accepted")
+
+    try:
+        producer._validate_sigstore_bundle(
+            bundle_bytes, b"wrong-transaction", trust_root
+        )
+    except producer.ProducerError as error:
+        assert "does not bind the transaction bytes" in str(error)
+    else:
+        raise AssertionError("a wrong transaction digest was accepted")
+
+
 def test_cloud_execution_environment_is_rejected() -> None:
     try:
         producer._require_local_execution({"GITHUB_ACTIONS": "true"})
@@ -343,7 +362,7 @@ def test_local_real_git_capture_paths_and_fail_closed_cases(
 
     for relative in (True, False):
         output_root = tmp_path / "runs" / str(relative) / "capture-output"
-        _complete_capture(
+        _capture_with_relative_path(
             source_root,
             producer_root,
             producer_sha,
@@ -361,7 +380,7 @@ def test_local_real_git_capture_paths_and_fail_closed_cases(
             )
         )
         assert {entry.name for entry in output_root.iterdir()} == set(
-            producer.ASSET_NAMES
+            producer.CAPTURE_ASSET_NAMES
         )
         assert (output_root / "artifact.bin").read_bytes() == expected_archive
         for entry in output_root.iterdir():
@@ -381,11 +400,11 @@ def test_local_real_git_capture_paths_and_fail_closed_cases(
         str(rejected_output),
     )
     assert rejected_capture.returncode == 0, rejected_capture.stderr
-    rejected_bundle = tmp_path / "rejected.bundle.json"
-    trust_root = _write_bundle(
-        rejected_bundle,
-        (rejected_output / "capture-transaction.json").read_bytes(),
+    rejected_bundle_bytes, _ = _generated_bundle(
+        (rejected_output / "capture-transaction.json").read_bytes()
     )
+    rejected_bundle = tmp_path / "rejected.bundle.json"
+    rejected_bundle.write_bytes(rejected_bundle_bytes)
     document = json.loads(rejected_bundle.read_bytes())
     document["dsseEnvelope"]["signatures"][0]["sig"] = base64.b64encode(
         b"0" * 64
@@ -404,18 +423,12 @@ def test_local_real_git_capture_paths_and_fail_closed_cases(
         str(rejected_output),
         "--sigstore-bundle",
         str(rejected_bundle),
-        "--trust-root",
-        str(trust_root),
     )
     assert invalid_signature.returncode != 0
-    assert "DSSE signature verification failed" in invalid_signature.stderr
+    assert "does not terminate at the local trust root" in invalid_signature.stderr
     assert not (rejected_output / "capture-transaction.sigstore.json").exists()
 
-    trust_root = _write_bundle(
-        rejected_bundle,
-        (rejected_output / "capture-transaction.json").read_bytes(),
-    )
-    document = json.loads(rejected_bundle.read_bytes())
+    document = json.loads(rejected_bundle_bytes)
     document["verificationMaterial"] = {"localTestEnvelope": True}
     rejected_bundle.write_bytes(producer.canonical_json(document))
     invalid_material = _run_producer(
@@ -431,12 +444,24 @@ def test_local_real_git_capture_paths_and_fail_closed_cases(
         str(rejected_output),
         "--sigstore-bundle",
         str(rejected_bundle),
-        "--trust-root",
-        str(trust_root),
     )
     assert invalid_material.returncode != 0
     assert "verification material shape is unsupported" in invalid_material.stderr
     assert not (rejected_output / "capture-transaction.sigstore.json").exists()
+
+    _, replacement_root = _generated_bundle(b"replacement-authority")
+    trust_root_path = producer_root / producer.TRUST_ROOT_PATH
+    original_trust_root = trust_root_path.read_bytes()
+    trust_root_path.write_bytes(
+        replacement_root.public_bytes(serialization.Encoding.PEM)
+    )
+    try:
+        producer._load_pinned_trust_root(producer_root)
+    except producer.ProducerError as error:
+        assert "digest mismatch" in str(error)
+    else:
+        raise AssertionError("a caller-replaced trust root was accepted")
+    trust_root_path.write_bytes(original_trust_root)
 
     wrong_sha_root = tmp_path / "wrong-sha-output"
     wrong_sha = _run_producer(

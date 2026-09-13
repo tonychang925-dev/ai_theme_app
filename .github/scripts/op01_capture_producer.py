@@ -38,6 +38,8 @@ REPOSITORY = "tonychang925-dev/ai_theme_app"
 PRODUCER_BRANCH = "rd1-v1/op01/capture-producer"
 SOURCE_BRANCH = "rd1-v1/g2c-market-product-read-p0"
 PRODUCER_SCRIPT_PATH = Path(".github/scripts/op01_capture_producer.py")
+TRUST_ROOT_PATH = Path(".github/contracts/op01/sigstore-trust-root.pem")
+TRUST_ROOT_SHA256 = "da772e53210a878e7ff0a0a7b746d901ab00d6e837525b3f802e9f3607fe0f12"
 EXPECTED_F = "a05661db2f111052cc4d9c55e8eb60ed5b1f4e80"
 EXPECTED_M = "58bc839d6d90ce7847920dfdcf398fcdaf957855"
 EXPECTED_M_PARENTS = (
@@ -487,6 +489,17 @@ def _load_certificate(path: Path):
             ) from error
 
 
+def _load_pinned_trust_root(producer_root: Path):
+    path = producer_root / TRUST_ROOT_PATH
+    certificate = _load_certificate(path)
+    digest = hashlib.sha256(
+        certificate.public_bytes(serialization.Encoding.DER)
+    ).hexdigest()
+    if digest != TRUST_ROOT_SHA256:
+        raise ProducerError("governance-pinned trust root digest mismatch")
+    return certificate
+
+
 def _verify_certificate_signature(child, issuer) -> None:
     if child.issuer != issuer.subject:
         raise ProducerError("Sigstore certificate issuer identity does not match")
@@ -713,7 +726,6 @@ def _parse_arguments(argv: list[str]) -> argparse.Namespace:
     finalize.add_argument("--producer-sha", required=True)
     finalize.add_argument("--output-root", type=Path, required=True)
     finalize.add_argument("--sigstore-bundle", type=Path, required=True)
-    finalize.add_argument("--trust-root", type=Path, required=True)
     return parser.parse_args(argv)
 
 
@@ -749,7 +761,7 @@ def _finalize(arguments: argparse.Namespace) -> None:
     transaction_bytes = (
         arguments.output_root / "capture-transaction.json"
     ).read_bytes()
-    trust_root = _load_certificate(arguments.trust_root)
+    trust_root = _load_pinned_trust_root(arguments.producer_root)
     _validate_sigstore_bundle(bundle_bytes, transaction_bytes, trust_root)
     _write_asset(
         arguments.output_root, "capture-transaction.sigstore.json", bundle_bytes
