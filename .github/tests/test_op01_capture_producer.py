@@ -51,6 +51,28 @@ def _environment() -> dict[str, str]:
     }
 
 
+def _checkout_commits(repository: Path, destination: Path, *commits: str) -> None:
+    subprocess.run(
+        (
+            "git",
+            "clone",
+            "--shared",
+            "--no-checkout",
+            str(repository),
+            str(destination),
+        ),
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    subprocess.run(
+        ("git", "-C", str(destination), "checkout", "--detach", commits[-1]),
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+
 def test_manifest_ref_uses_canonical_projection_excluding_manifest_ref() -> None:
     context = _context()
     source, build, artifact_identity, artifact_digest = producer.build_identities(
@@ -152,6 +174,54 @@ def test_validate_clean_accepts_non_lfs_repository(tmp_path: Path) -> None:
     )
 
     producer._validate_clean(root, "source")
+
+
+def test_run_creates_intended_relative_output_root_for_exact_archive(
+    tmp_path: Path, monkeypatch
+) -> None:
+    repository = SCRIPT_PATH.parents[2]
+    workflow_sha = subprocess.check_output(
+        ("git", "-C", str(repository), "rev-parse", "HEAD"), text=True
+    ).strip()
+    source_root = tmp_path / "source"
+    workflow_root = tmp_path / "workflow"
+    run_root = tmp_path / "run"
+    output_root = run_root / "capture-output"
+    _checkout_commits(repository, source_root, producer.EXPECTED_M, producer.EXPECTED_F)
+    _checkout_commits(repository, workflow_root, workflow_sha)
+    run_root.mkdir()
+    monkeypatch.chdir(run_root)
+    environment = _environment()
+    environment["GITHUB_WORKFLOW_SHA"] = workflow_sha
+    environment["GITHUB_SHA"] = workflow_sha
+    for name, value in environment.items():
+        monkeypatch.setenv(name, value)
+
+    producer.run(
+        (
+            "--integration-commit",
+            producer.EXPECTED_F,
+            "--source-root",
+            str(source_root),
+            "--workflow-root",
+            str(workflow_root),
+            "--output-root",
+            str(output_root.relative_to(tmp_path / "run")),
+        )
+    )
+
+    expected_archive = subprocess.check_output(
+        (
+            "git",
+            "-C",
+            str(source_root),
+            "archive",
+            "--format=tar",
+            producer.EXPECTED_F,
+        )
+    )
+    assert output_root.is_dir()
+    assert (output_root / "artifact.bin").read_bytes() == expected_archive
 
 
 def test_environment_accepts_real_canonical_workflow_authority() -> None:
