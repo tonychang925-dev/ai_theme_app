@@ -14,13 +14,28 @@ import sys
 import time
 import uuid
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
+
+from cryptography.exceptions import InvalidSignature
+from cryptography.hazmat.primitives import hashes, serialization
+from cryptography.hazmat.primitives.asymmetric import ec, ed25519, padding, rsa
+from cryptography.x509 import (
+    BasicConstraints,
+    ExtendedKeyUsage,
+    Extension,
+    ExtensionNotFound,
+    KeyUsage,
+    load_der_x509_certificate,
+    load_pem_x509_certificate,
+)
+from cryptography.x509.oid import ExtendedKeyUsageOID
 
 
 AUTHORITY_ID = "RD1-V1-OP01A-MARKET-PRODUCT-READ-CAPTURE-V1"
 REPOSITORY = "tonychang925-dev/ai_theme_app"
-PRODUCER_BRANCH = "rd1-v1/op01/local-only-capture-boundary-correction"
+PRODUCER_BRANCH = "rd1-v1/op01/capture-producer"
 SOURCE_BRANCH = "rd1-v1/g2c-market-product-read-p0"
 PRODUCER_SCRIPT_PATH = Path(".github/scripts/op01_capture_producer.py")
 EXPECTED_F = "a05661db2f111052cc4d9c55e8eb60ed5b1f4e80"
@@ -457,7 +472,149 @@ def _decode_base64(value: Any, label: str) -> bytes:
         raise ProducerError(f"Sigstore bundle {label} is not valid base64") from error
 
 
-def _validate_sigstore_bundle(bundle_bytes: bytes, transaction_bytes: bytes) -> None:
+def _load_certificate(path: Path):
+    if path.is_symlink() or not path.is_file():
+        raise ProducerError("local trust root path is invalid")
+    encoded = path.read_bytes()
+    try:
+        return load_pem_x509_certificate(encoded)
+    except ValueError:
+        try:
+            return load_der_x509_certificate(encoded)
+        except ValueError as error:
+            raise ProducerError(
+                "local trust root is not a valid X.509 certificate"
+            ) from error
+
+
+def _verify_certificate_signature(child, issuer) -> None:
+    if child.issuer != issuer.subject:
+        raise ProducerError("Sigstore certificate issuer identity does not match")
+    public_key = issuer.public_key()
+    try:
+        if isinstance(public_key, ed25519.Ed25519PublicKey):
+            public_key.verify(child.signature, child.tbs_certificate_bytes)
+        elif isinstance(public_key, ec.EllipticCurvePublicKey):
+            public_key.verify(
+                child.signature,
+                child.tbs_certificate_bytes,
+                ec.ECDSA(child.signature_hash_algorithm),
+            )
+        elif isinstance(public_key, rsa.RSAPublicKey):
+            public_key.verify(
+                child.signature,
+                child.tbs_certificate_bytes,
+                padding.PKCS1v15(),
+                child.signature_hash_algorithm,
+            )
+        else:
+            raise ProducerError(
+                "Sigstore certificate public-key algorithm is unsupported"
+            )
+    except InvalidSignature as error:
+        raise ProducerError(
+            "Sigstore certificate chain signature is invalid"
+        ) from error
+
+
+def _require_certificate_time(certificate) -> None:
+    now = datetime.now(timezone.utc)
+    if certificate.not_valid_before_utc > now:
+        raise ProducerError("Sigstore certificate is not yet valid")
+    if certificate.not_valid_after_utc <= now:
+        raise ProducerError("Sigstore certificate is expired")
+
+
+def _require_extension(certificate, extension_class) -> Extension:
+    try:
+        return certificate.extensions.get_extension_for_class(extension_class)
+    except ExtensionNotFound as error:
+        raise ProducerError("Sigstore certificate extension is missing") from error
+
+
+def _verify_certificate_chain(material: dict[str, Any], trust_root):
+    if set(material) != {"x509CertificateChain"}:
+        raise ProducerError("Sigstore verification material shape is unsupported")
+    chain_container = material["x509CertificateChain"]
+    if not isinstance(chain_container, dict) or set(chain_container) != {
+        "certificates"
+    }:
+        raise ProducerError("Sigstore certificate chain shape is invalid")
+    encoded_certificates = chain_container["certificates"]
+    if not isinstance(encoded_certificates, list) or len(encoded_certificates) < 2:
+        raise ProducerError("Sigstore certificate chain is incomplete")
+    certificates = []
+    for encoded in encoded_certificates:
+        raw = _decode_base64(
+            encoded.get("rawBytes") if isinstance(encoded, dict) else None,
+            "certificate",
+        )
+        try:
+            certificate = load_der_x509_certificate(raw)
+        except ValueError as error:
+            raise ProducerError("Sigstore certificate is invalid DER") from error
+        if set(encoded) != {"rawBytes"}:
+            raise ProducerError("Sigstore certificate entry has unsupported fields")
+        certificates.append(certificate)
+    if certificates[-1].public_bytes(
+        serialization.Encoding.DER
+    ) != trust_root.public_bytes(serialization.Encoding.DER):
+        raise ProducerError("Sigstore chain does not terminate at the local trust root")
+    _verify_certificate_signature(certificates[-1], certificates[-1])
+    for child, issuer in zip(certificates[:-1], certificates[1:]):
+        constraints = _require_extension(issuer, BasicConstraints).value
+        if not constraints.ca:
+            raise ProducerError("Sigstore certificate issuer is not a CA")
+        _verify_certificate_signature(child, issuer)
+    for certificate in certificates:
+        _require_certificate_time(certificate)
+    leaf = certificates[0]
+    leaf_constraints = _require_extension(leaf, BasicConstraints).value
+    if leaf_constraints.ca:
+        raise ProducerError("Sigstore leaf certificate is a CA certificate")
+    if not _require_extension(leaf, KeyUsage).value.digital_signature:
+        raise ProducerError("Sigstore leaf cannot verify digital signatures")
+    key_purposes = _require_extension(leaf, ExtendedKeyUsage).value
+    if ExtendedKeyUsageOID.CODE_SIGNING not in key_purposes:
+        raise ProducerError("Sigstore leaf is not authorized for code signing")
+    return leaf
+
+
+def _dsse_preauthentic_encoding(payload_type: str, payload: bytes) -> bytes:
+    return (
+        b"DSSEv1 "
+        + str(len(payload_type)).encode("ascii")
+        + b" "
+        + payload_type.encode("ascii")
+        + b" "
+        + str(len(payload)).encode("ascii")
+        + b" "
+        + payload
+    )
+
+
+def _verify_leaf_signature(public_key, message: bytes, signature: bytes) -> None:
+    try:
+        if isinstance(public_key, ed25519.Ed25519PublicKey):
+            public_key.verify(signature, message)
+        elif isinstance(public_key, ec.EllipticCurvePublicKey):
+            public_key.verify(signature, message, ec.ECDSA(hashes.SHA256()))
+        elif isinstance(public_key, rsa.RSAPublicKey):
+            public_key.verify(
+                signature,
+                message,
+                padding.PKCS1v15(),
+                hashes.SHA256(),
+            )
+        else:
+            raise ProducerError("Sigstore signature algorithm is unsupported")
+    except InvalidSignature as error:
+        raise ProducerError("Sigstore DSSE signature verification failed") from error
+
+
+def _validate_sigstore_bundle(
+    bundle_bytes: bytes, transaction_bytes: bytes, trust_root
+) -> None:
     try:
         bundle = json.loads(bundle_bytes)
     except (UnicodeDecodeError, json.JSONDecodeError) as error:
@@ -466,7 +623,8 @@ def _validate_sigstore_bundle(bundle_bytes: bytes, transaction_bytes: bytes) -> 
         raise ProducerError("Sigstore bundle is not an object")
     if bundle.get("mediaType") != SIGSTORE_BUNDLE_MEDIA_TYPE:
         raise ProducerError("Sigstore bundle media type is not canonical")
-    if not isinstance(bundle.get("verificationMaterial"), dict):
+    material = bundle.get("verificationMaterial")
+    if not isinstance(material, dict):
         raise ProducerError("Sigstore bundle verification material is missing")
     envelope = bundle.get("dsseEnvelope")
     if not isinstance(envelope, dict):
@@ -491,16 +649,27 @@ def _validate_sigstore_bundle(bundle_bytes: bytes, transaction_bytes: bytes) -> 
     if payload.get("subject") != expected_subjects:
         raise ProducerError("Sigstore bundle does not bind the transaction bytes")
     signatures = envelope.get("signatures")
-    if not isinstance(signatures, list) or not signatures:
-        raise ProducerError("Sigstore bundle signatures are missing")
-    for signature in signatures:
-        if not isinstance(signature, dict):
-            raise ProducerError("Sigstore bundle signature is not an object")
-        _decode_base64(signature.get("sig"), "signature")
+    if not isinstance(signatures, list) or len(signatures) != 1:
+        raise ProducerError("Sigstore bundle must contain exactly one signature")
+    signature = signatures[0]
+    if not isinstance(signature, dict) or set(signature) not in (
+        {"sig"},
+        {"keyid", "sig"},
+    ):
+        raise ProducerError("Sigstore bundle signature entry is invalid")
+    if signature.get("keyid", "") != "":
+        raise ProducerError("Sigstore bundle key identity is not canonical")
+    signature_bytes = _decode_base64(signature.get("sig"), "signature")
+    leaf = _verify_certificate_chain(material, trust_root)
+    _verify_leaf_signature(
+        leaf.public_key(),
+        _dsse_preauthentic_encoding(IN_TOTO_PAYLOAD_TYPE, payload_bytes),
+        signature_bytes,
+    )
 
 
 def _verify_capture_bundle(
-    context: ProducerContext, source_root: Path, output_root: Path
+    context: ProducerContext, source_root: Path, output_root: Path, trust_root
 ) -> None:
     artifact_bytes = (output_root / "artifact.bin").read_bytes()
     if artifact_bytes != _exact_archive_bytes(source_root):
@@ -526,6 +695,7 @@ def _verify_capture_bundle(
     _validate_sigstore_bundle(
         (output_root / "capture-transaction.sigstore.json").read_bytes(),
         transaction_bytes,
+        trust_root,
     )
 
 
@@ -543,6 +713,7 @@ def _parse_arguments(argv: list[str]) -> argparse.Namespace:
     finalize.add_argument("--producer-sha", required=True)
     finalize.add_argument("--output-root", type=Path, required=True)
     finalize.add_argument("--sigstore-bundle", type=Path, required=True)
+    finalize.add_argument("--trust-root", type=Path, required=True)
     return parser.parse_args(argv)
 
 
@@ -578,11 +749,14 @@ def _finalize(arguments: argparse.Namespace) -> None:
     transaction_bytes = (
         arguments.output_root / "capture-transaction.json"
     ).read_bytes()
-    _validate_sigstore_bundle(bundle_bytes, transaction_bytes)
+    trust_root = _load_certificate(arguments.trust_root)
+    _validate_sigstore_bundle(bundle_bytes, transaction_bytes, trust_root)
     _write_asset(
         arguments.output_root, "capture-transaction.sigstore.json", bundle_bytes
     )
-    _verify_capture_bundle(context, arguments.source_root, arguments.output_root)
+    _verify_capture_bundle(
+        context, arguments.source_root, arguments.output_root, trust_root
+    )
     _validate_asset_layout(arguments.output_root, ASSET_NAMES)
 
 

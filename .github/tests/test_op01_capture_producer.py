@@ -7,7 +7,13 @@ import json
 import os
 import subprocess
 import sys
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
+
+from cryptography import x509
+from cryptography.hazmat.primitives import hashes, serialization
+from cryptography.hazmat.primitives.asymmetric import ed25519
+from cryptography.x509.oid import NameOID, ExtendedKeyUsageOID
 
 
 SCRIPT_PATH = Path(__file__).parents[1] / "scripts" / "op01_capture_producer.py"
@@ -98,7 +104,54 @@ def _run_producer(
     )
 
 
-def _write_bundle(path: Path, transaction_bytes: bytes) -> None:
+def _write_bundle(path: Path, transaction_bytes: bytes) -> Path:
+    now = datetime.now(timezone.utc)
+    root_key = ed25519.Ed25519PrivateKey.generate()
+    root_name = x509.Name(
+        [x509.NameAttribute(NameOID.COMMON_NAME, "OP01 Local Trust Root")]
+    )
+    root_certificate = (
+        x509.CertificateBuilder()
+        .subject_name(root_name)
+        .issuer_name(root_name)
+        .public_key(root_key.public_key())
+        .serial_number(x509.random_serial_number())
+        .not_valid_before(now)
+        .not_valid_after(now + timedelta(hours=1))
+        .add_extension(x509.BasicConstraints(ca=True, path_length=None), critical=True)
+        .sign(root_key, None)
+    )
+    leaf_key = ed25519.Ed25519PrivateKey.generate()
+    leaf_certificate = (
+        x509.CertificateBuilder()
+        .subject_name(
+            x509.Name([x509.NameAttribute(NameOID.COMMON_NAME, "OP01 Local Signer")])
+        )
+        .issuer_name(root_name)
+        .public_key(leaf_key.public_key())
+        .serial_number(x509.random_serial_number())
+        .not_valid_before(now)
+        .not_valid_after(now + timedelta(minutes=30))
+        .add_extension(x509.BasicConstraints(ca=False, path_length=None), critical=True)
+        .add_extension(
+            x509.KeyUsage(
+                digital_signature=True,
+                content_commitment=False,
+                key_encipherment=False,
+                data_encipherment=False,
+                key_agreement=False,
+                key_cert_sign=False,
+                crl_sign=False,
+                encipher_only=False,
+                decipher_only=False,
+            ),
+            critical=True,
+        )
+        .add_extension(
+            x509.ExtendedKeyUsage([ExtendedKeyUsageOID.CODE_SIGNING]), critical=False
+        )
+        .sign(root_key, None)
+    )
     payload = producer.canonical_json(
         {
             "_type": "https://in-toto.io/Statement/v1",
@@ -110,20 +163,44 @@ def _write_bundle(path: Path, transaction_bytes: bytes) -> None:
             ],
         }
     )
+    preauthentic_encoding = producer._dsse_preauthentic_encoding(
+        producer.IN_TOTO_PAYLOAD_TYPE, payload
+    )
+    signature = leaf_key.sign(preauthentic_encoding)
     bundle = producer.canonical_json(
         {
             "dsseEnvelope": {
                 "payload": base64.b64encode(payload).decode("ascii"),
                 "payloadType": producer.IN_TOTO_PAYLOAD_TYPE,
-                "signatures": [
-                    {"sig": base64.b64encode(b"local-check-binding").decode("ascii")}
-                ],
+                "signatures": [{"sig": base64.b64encode(signature).decode("ascii")}],
             },
             "mediaType": producer.SIGSTORE_BUNDLE_MEDIA_TYPE,
-            "verificationMaterial": {"localTestEnvelope": True},
+            "verificationMaterial": {
+                "x509CertificateChain": {
+                    "certificates": [
+                        {
+                            "rawBytes": base64.b64encode(
+                                leaf_certificate.public_bytes(
+                                    serialization.Encoding.DER
+                                )
+                            ).decode("ascii")
+                        },
+                        {
+                            "rawBytes": base64.b64encode(
+                                root_certificate.public_bytes(
+                                    serialization.Encoding.DER
+                                )
+                            ).decode("ascii")
+                        },
+                    ]
+                }
+            },
         }
     )
     path.write_bytes(bundle)
+    trust_root = path.parent / f"{path.stem}.trust-root.pem"
+    trust_root.write_bytes(root_certificate.public_bytes(serialization.Encoding.PEM))
+    return trust_root
 
 
 def _complete_capture(
@@ -146,7 +223,6 @@ def _complete_capture(
         producer_location = producer_root
         output = output_root
         bundle_path = output_root.parent / "transaction.bundle.json"
-
     capture = _run_producer(
         producer_root,
         "capture",
@@ -161,7 +237,9 @@ def _complete_capture(
         cwd=cwd,
     )
     assert capture.returncode == 0, capture.stderr
-    _write_bundle(bundle_path, (output_root / "capture-transaction.json").read_bytes())
+    trust_path = _write_bundle(
+        bundle_path, (output_root / "capture-transaction.json").read_bytes()
+    )
     finalize = _run_producer(
         producer_root,
         "finalize",
@@ -175,6 +253,8 @@ def _complete_capture(
         str(output),
         "--sigstore-bundle",
         str(bundle_path),
+        "--trust-root",
+        str(trust_path),
         cwd=cwd,
     )
     assert finalize.returncode == 0, finalize.stderr
@@ -227,6 +307,10 @@ def test_transaction_binds_local_authority_and_four_assets() -> None:
     assert transaction["manifest"]["reference"] == json.loads(manifest)["manifest_ref"]
     assert transaction["status"] == "CAPTURED_UNVERIFIED"
     assert transaction_bytes == producer.canonical_json(transaction)
+
+
+def test_producer_authority_is_post_merge_canonical_branch() -> None:
+    assert producer.PRODUCER_BRANCH == "rd1-v1/op01/capture-producer"
 
 
 def test_cloud_execution_environment_is_rejected() -> None:
@@ -282,6 +366,77 @@ def test_local_real_git_capture_paths_and_fail_closed_cases(
         assert (output_root / "artifact.bin").read_bytes() == expected_archive
         for entry in output_root.iterdir():
             assert entry.stat().st_mode & 0o777 == 0o644
+
+    rejected_output = tmp_path / "rejected-capture-output"
+    rejected_capture = _run_producer(
+        producer_root,
+        "capture",
+        "--source-root",
+        str(source_root),
+        "--producer-root",
+        str(producer_root),
+        "--producer-sha",
+        producer_sha,
+        "--output-root",
+        str(rejected_output),
+    )
+    assert rejected_capture.returncode == 0, rejected_capture.stderr
+    rejected_bundle = tmp_path / "rejected.bundle.json"
+    trust_root = _write_bundle(
+        rejected_bundle,
+        (rejected_output / "capture-transaction.json").read_bytes(),
+    )
+    document = json.loads(rejected_bundle.read_bytes())
+    document["dsseEnvelope"]["signatures"][0]["sig"] = base64.b64encode(
+        b"0" * 64
+    ).decode("ascii")
+    rejected_bundle.write_bytes(producer.canonical_json(document))
+    invalid_signature = _run_producer(
+        producer_root,
+        "finalize",
+        "--source-root",
+        str(source_root),
+        "--producer-root",
+        str(producer_root),
+        "--producer-sha",
+        producer_sha,
+        "--output-root",
+        str(rejected_output),
+        "--sigstore-bundle",
+        str(rejected_bundle),
+        "--trust-root",
+        str(trust_root),
+    )
+    assert invalid_signature.returncode != 0
+    assert "DSSE signature verification failed" in invalid_signature.stderr
+    assert not (rejected_output / "capture-transaction.sigstore.json").exists()
+
+    trust_root = _write_bundle(
+        rejected_bundle,
+        (rejected_output / "capture-transaction.json").read_bytes(),
+    )
+    document = json.loads(rejected_bundle.read_bytes())
+    document["verificationMaterial"] = {"localTestEnvelope": True}
+    rejected_bundle.write_bytes(producer.canonical_json(document))
+    invalid_material = _run_producer(
+        producer_root,
+        "finalize",
+        "--source-root",
+        str(source_root),
+        "--producer-root",
+        str(producer_root),
+        "--producer-sha",
+        producer_sha,
+        "--output-root",
+        str(rejected_output),
+        "--sigstore-bundle",
+        str(rejected_bundle),
+        "--trust-root",
+        str(trust_root),
+    )
+    assert invalid_material.returncode != 0
+    assert "verification material shape is unsupported" in invalid_material.stderr
+    assert not (rejected_output / "capture-transaction.sigstore.json").exists()
 
     wrong_sha_root = tmp_path / "wrong-sha-output"
     wrong_sha = _run_producer(
