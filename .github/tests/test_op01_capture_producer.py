@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import base64
 import hashlib
 import importlib.util
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -19,15 +21,9 @@ SPEC.loader.exec_module(producer)
 def _context() -> producer.ProducerContext:
     return producer.ProducerContext(
         repository=producer.REPOSITORY,
-        actor=producer.EXPECTED_ACTOR,
-        triggering_actor=producer.EXPECTED_ACTOR,
-        event_name="workflow_dispatch",
-        runner_image_os="ubuntu24",
-        workflow_path=producer.WORKFLOW_PATH,
-        workflow_sha="a" * 40,
-        workflow_ref=producer.EXPECTED_WORKFLOW_REF,
-        run_id="1234567890",
-        run_attempt="1",
+        producer_branch=producer.PRODUCER_BRANCH,
+        producer_commit="a" * 40,
+        source_branch=producer.SOURCE_BRANCH,
         source_commit=producer.EXPECTED_F,
         source_tree="b" * 40,
         merge_commit=producer.EXPECTED_M,
@@ -35,23 +31,9 @@ def _context() -> producer.ProducerContext:
     )
 
 
-def _environment() -> dict[str, str]:
-    return {
-        "GITHUB_REPOSITORY": producer.REPOSITORY,
-        "GITHUB_ACTOR": producer.EXPECTED_ACTOR,
-        "GITHUB_TRIGGERING_ACTOR": producer.EXPECTED_ACTOR,
-        "GITHUB_EVENT_NAME": "workflow_dispatch",
-        "ImageOS": "ubuntu24",
-        "GITHUB_WORKFLOW_REF": producer.EXPECTED_WORKFLOW_REF,
-        "GITHUB_WORKFLOW_SHA": "a" * 40,
-        "GITHUB_RUN_ID": "1",
-        "GITHUB_RUN_ATTEMPT": "1",
-        "GITHUB_SHA": "a" * 40,
-        "GITHUB_WORKSPACE": "/tmp/workspace",
-    }
-
-
-def _checkout_commits(repository: Path, destination: Path, *commits: str) -> None:
+def _clone_commit(
+    repository: Path, destination: Path, branch: str, commit: str
+) -> None:
     subprocess.run(
         (
             "git",
@@ -65,12 +47,137 @@ def _checkout_commits(repository: Path, destination: Path, *commits: str) -> Non
         capture_output=True,
         text=True,
     )
-    subprocess.run(
-        ("git", "-C", str(destination), "checkout", "--detach", commits[-1]),
-        check=True,
+    commands = (
+        (
+            "remote",
+            "set-url",
+            "origin",
+            "https://github.com/tonychang925-dev/ai_theme_app.git",
+        ),
+        ("checkout", "--detach", commit),
+        ("branch", "-f", branch, commit),
+        ("checkout", branch),
+    )
+    for command in commands:
+        subprocess.run(
+            ("git", "-C", str(destination), *command),
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+
+
+def _producer_environment() -> dict[str, str]:
+    environment = os.environ.copy()
+    for name in list(environment):
+        if name in producer.CLOUD_EXECUTION_VARIABLES or name.startswith("GITHUB_"):
+            environment.pop(name)
+    return environment
+
+
+def _run_producer(
+    producer_root: Path,
+    *arguments: str,
+    cwd: Path | None = None,
+    environment_updates: dict[str, str] | None = None,
+) -> subprocess.CompletedProcess[str]:
+    environment = _producer_environment()
+    if environment_updates:
+        environment.update(environment_updates)
+    return subprocess.run(
+        (
+            sys.executable,
+            str(producer_root / producer.PRODUCER_SCRIPT_PATH),
+            *arguments,
+        ),
+        cwd=cwd,
+        env=environment,
+        check=False,
         capture_output=True,
         text=True,
     )
+
+
+def _write_bundle(path: Path, transaction_bytes: bytes) -> None:
+    payload = producer.canonical_json(
+        {
+            "_type": "https://in-toto.io/Statement/v1",
+            "subject": [
+                {
+                    "name": "capture-transaction.json",
+                    "digest": {"sha256": hashlib.sha256(transaction_bytes).hexdigest()},
+                }
+            ],
+        }
+    )
+    bundle = producer.canonical_json(
+        {
+            "dsseEnvelope": {
+                "payload": base64.b64encode(payload).decode("ascii"),
+                "payloadType": producer.IN_TOTO_PAYLOAD_TYPE,
+                "signatures": [
+                    {"sig": base64.b64encode(b"local-check-binding").decode("ascii")}
+                ],
+            },
+            "mediaType": producer.SIGSTORE_BUNDLE_MEDIA_TYPE,
+            "verificationMaterial": {"localTestEnvelope": True},
+        }
+    )
+    path.write_bytes(bundle)
+
+
+def _complete_capture(
+    source_root: Path,
+    producer_root: Path,
+    producer_sha: str,
+    output_root: Path,
+    *,
+    relative: bool,
+) -> None:
+    output_root.parent.mkdir(parents=True, exist_ok=True)
+    cwd = output_root.parent
+    if relative:
+        source = Path(os.path.relpath(source_root, cwd))
+        producer_location = Path(os.path.relpath(producer_root, cwd))
+        output = Path(os.path.relpath(output_root, cwd))
+        bundle_path = cwd / "transaction.bundle.json"
+    else:
+        source = source_root
+        producer_location = producer_root
+        output = output_root
+        bundle_path = output_root.parent / "transaction.bundle.json"
+
+    capture = _run_producer(
+        producer_root,
+        "capture",
+        "--source-root",
+        str(source),
+        "--producer-root",
+        str(producer_location),
+        "--producer-sha",
+        producer_sha,
+        "--output-root",
+        str(output),
+        cwd=cwd,
+    )
+    assert capture.returncode == 0, capture.stderr
+    _write_bundle(bundle_path, (output_root / "capture-transaction.json").read_bytes())
+    finalize = _run_producer(
+        producer_root,
+        "finalize",
+        "--source-root",
+        str(source),
+        "--producer-root",
+        str(producer_location),
+        "--producer-sha",
+        producer_sha,
+        "--output-root",
+        str(output),
+        "--sigstore-bundle",
+        str(bundle_path),
+        cwd=cwd,
+    )
+    assert finalize.returncode == 0, finalize.stderr
 
 
 def test_manifest_ref_uses_canonical_projection_excluding_manifest_ref() -> None:
@@ -99,7 +206,7 @@ def test_manifest_ref_uses_canonical_projection_excluding_manifest_ref() -> None
     assert not raw.endswith(b"\n")
 
 
-def test_transaction_binds_four_purposes_and_manifest_projection() -> None:
+def test_transaction_binds_local_authority_and_four_assets() -> None:
     context = _context()
     artifact = b"exact-artifact"
     runtime = "market-product-read:runtime:v1:uuid=018f0000-0000-7000-8000-000000000001"
@@ -107,193 +214,137 @@ def test_transaction_binds_four_purposes_and_manifest_projection() -> None:
         context, artifact, runtime
     )
     transaction = json.loads(transaction_bytes)
-    purposes = [record["purpose"] for record in transaction["evidence"]]
-    bases = {record["purpose"]: record["basis"] for record in transaction["evidence"]}
-    subjects = {
-        record["purpose"]: record["subject_digest"]
-        for record in transaction["evidence"]
-    }
     assert returned_artifact == artifact
-    assert purposes == [
-        "ARTIFACT_DIGEST",
-        "ARTIFACT_IDENTITY",
-        "MANIFEST",
-        "SOURCE_BUILD_LINEAGE",
-    ]
-    assert bases == {
-        "ARTIFACT_DIGEST": "EXPLICIT_CAPTURED_ARTIFACT",
-        "ARTIFACT_IDENTITY": "EXPLICIT_CAPTURED_ARTIFACT",
-        "MANIFEST": "EXPLICIT_CAPTURED_ARTIFACT",
-        "SOURCE_BUILD_LINEAGE": "CLEAN_REPOSITORY_SNAPSHOT",
+    assert transaction["asset_names"] == list(producer.ASSET_NAMES)
+    assert transaction["producer"] == {
+        "execution_boundary": "LOCAL_ONLY",
+        "producer_branch": producer.PRODUCER_BRANCH,
+        "producer_commit": "a" * 40,
+        "repository": producer.REPOSITORY,
+        "source_branch": producer.SOURCE_BRANCH,
+        "source_commit": producer.EXPECTED_F,
     }
-    assert subjects["MANIFEST"] == producer.sha256_digest(manifest)
     assert transaction["manifest"]["reference"] == json.loads(manifest)["manifest_ref"]
-    assert transaction["producer"]["runner"] == "ubuntu-24.04"
     assert transaction["status"] == "CAPTURED_UNVERIFIED"
     assert transaction_bytes == producer.canonical_json(transaction)
 
 
-def test_environment_authority_fails_closed() -> None:
-    environment = _environment()
-    environment["GITHUB_REPOSITORY"] = "example/untrusted"
+def test_cloud_execution_environment_is_rejected() -> None:
     try:
-        producer._require_environment(environment)
+        producer._require_local_execution({"GITHUB_ACTIONS": "true"})
     except producer.ProducerError as error:
-        assert "repository" in str(error)
+        assert "local-only execution is required" in str(error)
     else:
-        raise AssertionError("untrusted repository was accepted")
+        raise AssertionError("cloud execution environment was accepted")
 
 
-def test_validate_clean_accepts_non_lfs_repository(tmp_path: Path) -> None:
-    root = tmp_path / "repository"
-    root.mkdir()
-    commands = (
-        ("init",),
-        ("config", "user.name", "Test User"),
-        ("config", "user.email", "test@example.invalid"),
+def test_workflow_dispatch_path_is_retired() -> None:
+    workflow = (
+        SCRIPT_PATH.parents[1] / "workflows" / "rd1-v1-op01-market-release-capture.yml"
     )
-    for command in commands:
-        subprocess.run(
-            ("git", "-C", str(root), *command),
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-    (root / "tracked.txt").write_text("clean\n", encoding="utf-8")
-    subprocess.run(
-        ("git", "-C", str(root), "add", "tracked.txt"),
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    subprocess.run(
-        ("git", "-C", str(root), "commit", "-m", "initial"),
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-
-    producer._validate_clean(root, "source")
+    assert not workflow.exists()
 
 
-def test_run_creates_intended_relative_output_root_for_exact_archive(
-    tmp_path: Path, monkeypatch
+def test_local_real_git_capture_paths_and_fail_closed_cases(
+    tmp_path: Path,
 ) -> None:
     repository = SCRIPT_PATH.parents[2]
-    workflow_sha = subprocess.check_output(
+    producer_sha = subprocess.check_output(
         ("git", "-C", str(repository), "rev-parse", "HEAD"), text=True
     ).strip()
     source_root = tmp_path / "source"
-    workflow_root = tmp_path / "workflow"
-    run_root = tmp_path / "run"
-    output_root = run_root / "capture-output"
-    _checkout_commits(repository, source_root, producer.EXPECTED_M, producer.EXPECTED_F)
-    _checkout_commits(repository, workflow_root, workflow_sha)
-    run_root.mkdir()
-    monkeypatch.chdir(run_root)
-    environment = _environment()
-    environment["GITHUB_WORKFLOW_SHA"] = workflow_sha
-    environment["GITHUB_SHA"] = workflow_sha
-    for name, value in environment.items():
-        monkeypatch.setenv(name, value)
+    producer_root = tmp_path / "producer"
+    _clone_commit(repository, source_root, producer.SOURCE_BRANCH, producer.EXPECTED_F)
+    _clone_commit(repository, producer_root, producer.PRODUCER_BRANCH, producer_sha)
 
-    producer.run(
-        (
-            "--integration-commit",
-            producer.EXPECTED_F,
-            "--source-root",
-            str(source_root),
-            "--workflow-root",
-            str(workflow_root),
-            "--output-root",
-            str(output_root.relative_to(tmp_path / "run")),
+    for relative in (True, False):
+        output_root = tmp_path / "runs" / str(relative) / "capture-output"
+        _complete_capture(
+            source_root,
+            producer_root,
+            producer_sha,
+            output_root,
+            relative=relative,
         )
-    )
-
-    expected_archive = subprocess.check_output(
-        (
-            "git",
-            "-C",
-            str(source_root),
-            "archive",
-            "--format=tar",
-            producer.EXPECTED_F,
+        expected_archive = subprocess.check_output(
+            (
+                "git",
+                "-C",
+                str(source_root),
+                "archive",
+                "--format=tar",
+                producer.EXPECTED_F,
+            )
         )
+        assert {entry.name for entry in output_root.iterdir()} == set(
+            producer.ASSET_NAMES
+        )
+        assert (output_root / "artifact.bin").read_bytes() == expected_archive
+        for entry in output_root.iterdir():
+            assert entry.stat().st_mode & 0o777 == 0o644
+
+    wrong_sha_root = tmp_path / "wrong-sha-output"
+    wrong_sha = _run_producer(
+        producer_root,
+        "capture",
+        "--source-root",
+        str(source_root),
+        "--producer-root",
+        str(producer_root),
+        "--producer-sha",
+        "b" * 40,
+        "--output-root",
+        str(wrong_sha_root),
     )
-    assert output_root.is_dir()
-    assert (output_root / "artifact.bin").read_bytes() == expected_archive
+    assert wrong_sha.returncode != 0
+    assert "exact producer SHA" in wrong_sha.stderr
+    assert not wrong_sha_root.exists()
 
-
-def test_environment_accepts_real_canonical_workflow_authority() -> None:
-    context = producer._require_environment(_environment())
-
-    assert context.workflow_ref == producer.EXPECTED_WORKFLOW_REF
-    assert context.workflow_sha == "a" * 40
-
-
-def test_environment_rejects_noncanonical_workflow_ref() -> None:
-    environment = _environment()
-    environment["GITHUB_WORKFLOW_REF"] = (
-        "refs/heads/rd1-v1/op01/capture-producer@" + "a" * 40
+    cloud_root = tmp_path / "cloud-output"
+    cloud = _run_producer(
+        producer_root,
+        "capture",
+        "--source-root",
+        str(source_root),
+        "--producer-root",
+        str(producer_root),
+        "--producer-sha",
+        producer_sha,
+        "--output-root",
+        str(cloud_root),
+        environment_updates={"GITHUB_ACTIONS": "true"},
     )
+    assert cloud.returncode != 0
+    assert "local-only execution is required" in cloud.stderr
+    assert not cloud_root.exists()
 
+    dirty_root = tmp_path / "dirty-output"
+    (source_root / "uncommitted.txt").write_text("dirty\n", encoding="utf-8")
+    dirty = _run_producer(
+        producer_root,
+        "capture",
+        "--source-root",
+        str(source_root),
+        "--producer-root",
+        str(producer_root),
+        "--producer-sha",
+        producer_sha,
+        "--output-root",
+        str(dirty_root),
+    )
+    assert dirty.returncode != 0
+    assert "source checkout is dirty" in dirty.stderr
+    assert not dirty_root.exists()
+
+
+def test_output_mode_validation_fails_closed(tmp_path: Path) -> None:
+    for name in producer.CAPTURE_ASSET_NAMES:
+        path = tmp_path / name
+        path.write_bytes(name.encode("utf-8"))
+        path.chmod(0o600)
     try:
-        producer._require_environment(environment)
+        producer._validate_asset_layout(tmp_path, producer.CAPTURE_ASSET_NAMES)
     except producer.ProducerError as error:
-        assert "frozen producer branch" in str(error)
+        assert "mode is not 0644" in str(error)
     else:
-        raise AssertionError("synthetic workflow ref was accepted")
-
-
-def test_environment_rejects_workflow_sha_mismatch() -> None:
-    environment = _environment()
-    environment["GITHUB_WORKFLOW_SHA"] = "b" * 40
-
-    try:
-        producer._require_environment(environment)
-    except producer.ProducerError as error:
-        assert "workflow SHA" in str(error)
-    else:
-        raise AssertionError("workflow SHA mismatch was accepted")
-
-
-def test_environment_requires_workflow_sha() -> None:
-    environment = _environment()
-    del environment["GITHUB_WORKFLOW_SHA"]
-
-    try:
-        producer._require_environment(environment)
-    except producer.ProducerError as error:
-        assert "required GitHub Actions identity is missing" in str(error)
-    else:
-        raise AssertionError("missing workflow SHA was accepted")
-
-
-def test_workflow_uses_real_authority_without_synthetic_override() -> None:
-    workflow = (
-        SCRIPT_PATH.parents[1]
-        / "workflows"
-        / ("rd1-v1-op01-market-release-capture.yml")
-    )
-    text = workflow.read_text(encoding="utf-8")
-    assert f"      EXPECTED_WORKFLOW_REF: {producer.EXPECTED_WORKFLOW_REF}\n" in text
-    assert (
-        '          test "${GITHUB_WORKFLOW_REF}" = "${EXPECTED_WORKFLOW_REF}"\n' in text
-    )
-    assert '          test "${GITHUB_WORKFLOW_SHA}" = "${GITHUB_SHA}"\n' in text
-    assert "GITHUB_WORKFLOW_REF#refs/heads/" not in text
-    build_step = text[text.index("      - name: Build canonical capture inputs\n") :]
-    assert "GITHUB_WORKFLOW_REF:" not in build_step
-
-
-def test_workflow_permission_contract_is_exact() -> None:
-    workflow = (
-        SCRIPT_PATH.parents[1]
-        / "workflows"
-        / ("rd1-v1-op01-market-release-capture.yml")
-    )
-    text = workflow.read_text(encoding="utf-8")
-    permissions = text.split("permissions:\n", 1)[1].split("\n\njobs:", 1)[0]
-    assert permissions == (
-        "  attestations: write\n" "  id-token: write\n" "  contents: write"
-    )
+        raise AssertionError("invalid output mode was accepted")
