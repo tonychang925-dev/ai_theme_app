@@ -188,7 +188,7 @@ def _validate_clean(root: Path, label: str) -> None:
     tracked = _git(root, "ls-files", "-z")
     attributes = subprocess.run(
         ("git", "-C", str(root), "check-attr", "--stdin", "-z", "filter"),
-        input=tracked,
+        input=tracked.encode("utf-8"),
         capture_output=True,
         text=False,
         check=False,
