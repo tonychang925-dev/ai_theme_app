@@ -24,6 +24,7 @@ jobs:
       EXPECTED_EVENT: workflow_dispatch
       EXPECTED_F: a05661db2f111052cc4d9c55e8eb60ed5b1f4e80
       RELEASE_TAG: rd1-v1/op01/market-product-read/v1
+      EXPECTED_WORKFLOW_REF: tonychang925-dev/ai_theme_app/.github/workflows/rd1-v1-op01-market-release-capture.yml@refs/heads/rd1-v1/op01/capture-producer
     steps:
       - name: Validate dispatch authority before checkout
         shell: bash
@@ -34,7 +35,8 @@ jobs:
           test "${GITHUB_TRIGGERING_ACTOR}" = "${EXPECTED_ACTOR}"
           test "${GITHUB_EVENT_NAME}" = "${EXPECTED_EVENT}"
           test "${ImageOS}" = "ubuntu24"
-          test "${GITHUB_WORKFLOW_REF#refs/heads/rd1-v1/op01/capture-producer@}" != "${GITHUB_WORKFLOW_REF}"
+          test "${GITHUB_WORKFLOW_REF}" = "${EXPECTED_WORKFLOW_REF}"
+          test "${GITHUB_WORKFLOW_SHA}" = "${GITHUB_SHA}"
           test "${INTEGRATION_COMMIT}" = "${EXPECTED_F}"
         env:
           INTEGRATION_COMMIT: ${{ inputs.integration_commit }}

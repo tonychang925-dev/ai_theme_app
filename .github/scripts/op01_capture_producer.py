@@ -21,6 +21,7 @@ AUTHORITY_ID = "RD1-V1-OP01A-MARKET-PRODUCT-READ-CAPTURE-V1"
 REPOSITORY = "tonychang925-dev/ai_theme_app"
 PRODUCER_BRANCH = "rd1-v1/op01/capture-producer"
 WORKFLOW_PATH = ".github/workflows/rd1-v1-op01-market-release-capture.yml"
+EXPECTED_WORKFLOW_REF = f"{REPOSITORY}/{WORKFLOW_PATH}@refs/heads/{PRODUCER_BRANCH}"
 EXPECTED_F = "a05661db2f111052cc4d9c55e8eb60ed5b1f4e80"
 EXPECTED_M = "58bc839d6d90ce7847920dfdcf398fcdaf957855"
 EXPECTED_M_PARENTS = (
@@ -119,6 +120,7 @@ def _require_environment(environment: dict[str, str]) -> ProducerContext:
         "GITHUB_EVENT_NAME",
         "ImageOS",
         "GITHUB_WORKFLOW_REF",
+        "GITHUB_WORKFLOW_SHA",
         "GITHUB_RUN_ID",
         "GITHUB_RUN_ATTEMPT",
         "GITHUB_SHA",
@@ -137,12 +139,14 @@ def _require_environment(environment: dict[str, str]) -> ProducerContext:
     if environment["ImageOS"] != "ubuntu24":
         raise ProducerError("runner image is not ubuntu-24.04")
     workflow_ref = environment["GITHUB_WORKFLOW_REF"]
-    expected_ref = f"refs/heads/{PRODUCER_BRANCH}"
-    if not workflow_ref.startswith(expected_ref):
+    if workflow_ref != EXPECTED_WORKFLOW_REF:
         raise ProducerError("workflow is not running on the frozen producer branch")
-    workflow_sha = _require_full_sha(environment["GITHUB_SHA"], "workflow SHA")
-    if not workflow_ref.startswith(f"{expected_ref}@{workflow_sha}"):
-        raise ProducerError("workflow ref and workflow SHA disagree")
+    workflow_sha = _require_full_sha(environment["GITHUB_WORKFLOW_SHA"], "workflow SHA")
+    workflow_commit_sha = _require_full_sha(
+        environment["GITHUB_SHA"], "workflow commit SHA"
+    )
+    if workflow_sha != workflow_commit_sha:
+        raise ProducerError("workflow SHA and workflow commit SHA disagree")
     return ProducerContext(
         repository=environment["GITHUB_REPOSITORY"],
         actor=environment["GITHUB_ACTOR"],
@@ -151,7 +155,7 @@ def _require_environment(environment: dict[str, str]) -> ProducerContext:
         runner_image_os=environment["ImageOS"],
         workflow_path=WORKFLOW_PATH,
         workflow_sha=workflow_sha,
-        workflow_ref=expected_ref,
+        workflow_ref=workflow_ref,
         run_id=environment["GITHUB_RUN_ID"],
         run_attempt=environment["GITHUB_RUN_ATTEMPT"],
         source_commit="",
