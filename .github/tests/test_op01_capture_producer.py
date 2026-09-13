@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import importlib.util
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -119,6 +120,38 @@ def test_environment_authority_fails_closed() -> None:
         assert "repository" in str(error)
     else:
         raise AssertionError("untrusted repository was accepted")
+
+
+def test_validate_clean_accepts_non_lfs_repository(tmp_path: Path) -> None:
+    root = tmp_path / "repository"
+    root.mkdir()
+    commands = (
+        ("init",),
+        ("config", "user.name", "Test User"),
+        ("config", "user.email", "test@example.invalid"),
+    )
+    for command in commands:
+        subprocess.run(
+            ("git", "-C", str(root), *command),
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    (root / "tracked.txt").write_text("clean\n", encoding="utf-8")
+    subprocess.run(
+        ("git", "-C", str(root), "add", "tracked.txt"),
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    subprocess.run(
+        ("git", "-C", str(root), "commit", "-m", "initial"),
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+    producer._validate_clean(root, "source")
 
 
 def test_environment_accepts_real_canonical_workflow_authority() -> None:
