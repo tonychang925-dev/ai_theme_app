@@ -423,7 +423,7 @@ def run(argv: list[str] | None = None) -> None:
     )
     output_root = arguments.output_root
     output_root.mkdir(parents=True, exist_ok=False)
-    artifact_path = output_root / "artifact.bin"
+    artifact_path = (output_root / "artifact.bin").resolve()
     archive = subprocess.run(
         (
             "git",
