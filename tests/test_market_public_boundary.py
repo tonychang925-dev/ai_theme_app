@@ -69,7 +69,7 @@ async def test_invalid_requests_do_not_fallback():
 @pytest.mark.asyncio
 async def test_event_read_missing_id_is_not_found():
     from market_public.provider import _MarketPublicProvider
-    result = await _MarketPublicProvider(TestRepo()).execute("market.event.read", EventReadRequest(999))
+    result = await _MarketPublicProvider(RepoFixture()).execute("market.event.read", EventReadRequest(999))
     assert result.status is MarketStatus.NOT_FOUND
 
 
