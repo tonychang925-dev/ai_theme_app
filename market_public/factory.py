@@ -9,10 +9,17 @@ from .provider import _MarketPublicProvider
 class MarketPublicFactory:
     @staticmethod
     def create(*, database_url: str | None = None):
-        # Only environmental configuration crosses the boundary; all Market
-        # repository composition remains private to Market.
+        # Precedence is explicit override > Market-specific compatibility alias
+        # > deployed canonical configuration.  No implicit localhost value is
+        # selected here; an absent value is passed through to the repository's
+        # existing deterministic configuration behavior.
+        configured_url = (
+            database_url
+            or os.getenv("MARKET_DATABASE_URL")
+            or os.getenv("DATABASE_URL")
+        )
         return _MarketPublicProvider(
-            _LazyPhase1Repository(database_url or os.getenv("MARKET_DATABASE_URL"))
+            _LazyPhase1Repository(configured_url)
         )
 
 

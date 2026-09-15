@@ -21,6 +21,34 @@ def test_factory_owns_private_composition():
     assert not hasattr(__import__("market_public"), "MarketPublicProvider")
 
 
+def test_database_url_only_factory_binding(monkeypatch):
+    monkeypatch.delenv("MARKET_DATABASE_URL", raising=False)
+    monkeypatch.setenv("DATABASE_URL", "postgresql://deployed/market")
+    provider = MarketPublicFactory.create()
+    assert provider._repository._database_url == "postgresql://deployed/market"
+
+
+def test_explicit_database_url_precedence(monkeypatch):
+    monkeypatch.setenv("MARKET_DATABASE_URL", "postgresql://market/override")
+    monkeypatch.setenv("DATABASE_URL", "postgresql://deployed/market")
+    provider = MarketPublicFactory.create(database_url="postgresql://explicit/market")
+    assert provider._repository._database_url == "postgresql://explicit/market"
+
+
+def test_market_database_url_precedes_database_url(monkeypatch):
+    monkeypatch.setenv("MARKET_DATABASE_URL", "postgresql://market/override")
+    monkeypatch.setenv("DATABASE_URL", "postgresql://deployed/market")
+    provider = MarketPublicFactory.create()
+    assert provider._repository._database_url == "postgresql://market/override"
+
+
+def test_no_database_env_preserves_repository_default(monkeypatch):
+    monkeypatch.delenv("MARKET_DATABASE_URL", raising=False)
+    monkeypatch.delenv("DATABASE_URL", raising=False)
+    provider = MarketPublicFactory.create()
+    assert provider._repository._database_url is None
+
+
 class RepoFixture:
     def __init__(self):
         self.calls = []
