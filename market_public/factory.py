@@ -3,15 +3,15 @@ from __future__ import annotations
 
 import os
 
-from .provider import MarketPublicProvider
+from .provider import _MarketPublicProvider
 
 
 class MarketPublicFactory:
     @staticmethod
-    def create(*, database_url: str | None = None) -> MarketPublicProvider:
+    def create(*, database_url: str | None = None):
         # Only environmental configuration crosses the boundary; all Market
         # repository composition remains private to Market.
-        return MarketPublicProvider(
+        return _MarketPublicProvider(
             _LazyPhase1Repository(database_url or os.getenv("MARKET_DATABASE_URL"))
         )
 

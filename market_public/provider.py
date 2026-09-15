@@ -1,7 +1,6 @@
 """The sole Julia-facing Market provider."""
 from __future__ import annotations
 
-from dataclasses import asdict
 from typing import Any
 
 from .contracts import (
@@ -10,7 +9,9 @@ from .contracts import (
 )
 
 
-class MarketPublicProvider:
+class _MarketPublicProvider:
+    """Private implementation; callers obtain it only from MarketPublicFactory."""
+
     def __init__(self, repository: Any):
         self._repository = repository
 

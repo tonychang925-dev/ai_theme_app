@@ -1,8 +1,11 @@
+import sys
+import types
+
 import pytest
 
 from market_public import (
     CAPABILITIES, EventReadRequest, EventResolveRequest, MarketPublicFactory,
-    MarketPublicProvider, MarketStatus, ProductReadRequest,
+    MarketStatus, ProductReadRequest,
 )
 
 
@@ -14,11 +17,11 @@ def test_exact_capability_metadata():
 
 def test_factory_owns_private_composition():
     provider = MarketPublicFactory.create(database_url="postgresql://example.invalid/market")
-    assert isinstance(provider, MarketPublicProvider)
     assert provider._repository.__class__.__name__ == "_LazyPhase1Repository"
+    assert not hasattr(__import__("market_public"), "MarketPublicProvider")
 
 
-class Repo:
+class TestRepo:
     async def fetch_intel_feed(self, **kwargs):
         if kwargs.get("item_type") == "event" and kwargs.get("limit") == 100:
             return [{"event_id": 7, "title": "real event"}]
@@ -32,8 +35,9 @@ class Repo:
 
 
 @pytest.mark.asyncio
-async def test_real_domain_execution_through_public_provider():
-    provider = MarketPublicProvider(Repo())
+async def test_provider_unit_execution_with_isolated_repository():
+    from market_public.provider import _MarketPublicProvider
+    provider = _MarketPublicProvider(TestRepo())
     assert (await provider.execute("market.event.resolve", EventResolveRequest())).status is MarketStatus.SUCCESS
     assert (await provider.execute("market.event.read", EventReadRequest(7))).data["event_id"] == 7
     assert (await provider.execute("market.product.read", ProductReadRequest("theme:1"))).data["theme_name"] == "real product"
@@ -41,16 +45,36 @@ async def test_real_domain_execution_through_public_provider():
 
 @pytest.mark.asyncio
 async def test_dependency_failure_is_typed_and_closed():
-    class Broken(Repo):
+    class Broken(TestRepo):
         async def fetch_theme_detail(self, subject_key):
             raise ConnectionError("database unavailable")
-    result = await MarketPublicProvider(Broken()).execute("market.product.read", ProductReadRequest("theme:1"))
+    from market_public.provider import _MarketPublicProvider
+    result = await _MarketPublicProvider(Broken()).execute("market.product.read", ProductReadRequest("theme:1"))
     assert result.status is MarketStatus.DEPENDENCY_UNAVAILABLE
     assert result.data is None
 
 
 @pytest.mark.asyncio
 async def test_invalid_requests_do_not_fallback():
-    result = await MarketPublicProvider(Repo()).execute("market.event.read", EventReadRequest(0))
+    from market_public.provider import _MarketPublicProvider
+    result = await _MarketPublicProvider(TestRepo()).execute("market.event.read", EventReadRequest(0))
     assert result.status is MarketStatus.INVALID_REQUEST
     assert result.data is None
+
+
+@pytest.mark.asyncio
+async def test_real_domain_binding_without_database(monkeypatch):
+    """Factory binds the current-main repository class without caller injection."""
+    monkeypatch.setitem(sys.modules, "asyncpg", types.SimpleNamespace(Pool=object))
+    provider = MarketPublicFactory.create(database_url="postgresql://example.invalid/market")
+    real_repository = provider._repository._bound()
+    assert real_repository.__class__.__name__ == "Phase1ReadRepository"
+    assert real_repository.__class__.__module__ == "theme_service.repositories.phase1_read_repository"
+
+    async def fake_detail(subject_key):
+        return {"subject_key": subject_key, "source": "current-main-domain"}
+
+    monkeypatch.setattr(real_repository, "fetch_theme_detail", fake_detail)
+    result = await provider.execute("market.product.read", ProductReadRequest("theme:1"))
+    assert result.status is MarketStatus.SUCCESS
+    assert result.data["source"] == "current-main-domain"
