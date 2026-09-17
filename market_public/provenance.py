@@ -62,9 +62,15 @@ def _predicate_holds(predicate: ProvenancePredicate, provenance: "MarketProvenan
 
 @dataclass(frozen=True)
 class MarketProvenance:
-    """Provenance whose COMPLETE state is derived, never caller asserted."""
+    """Provenance whose COMPLETE state is derived, never caller asserted.
 
-    profile: InitVar[MarketProvenanceProfile]
+    A concrete profile is optional at construction time because the frozen
+    architecture does not define one mandatory predicate set for every current
+    capability.  Without a selected profile the result remains explicitly
+    INCOMPLETE; callers cannot manufacture COMPLETE by assertion.
+    """
+
+    profile: InitVar[MarketProvenanceProfile | None]
     produced_at: str
     market_release_identity: MarketReleaseIdentity | None = None
     data_cutoff: str | None = None
@@ -76,9 +82,12 @@ class MarketProvenance:
     governance_ref: str | None = None
     provenance_status: MarketProvenanceStatus = field(init=False)
 
-    def __post_init__(self, profile: MarketProvenanceProfile) -> None:
+    def __post_init__(self, profile: MarketProvenanceProfile | None) -> None:
         if not self.produced_at:
             raise ValueError("produced_at must be non-empty")
+        if profile is None:
+            object.__setattr__(self, "provenance_status", MarketProvenanceStatus.INCOMPLETE)
+            return
         if (
             self.capability_call_ref is not None
             and "*" not in profile.applies_to
