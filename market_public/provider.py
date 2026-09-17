@@ -18,15 +18,7 @@ from .contracts import (
     MarketResultEnvelope,
     ProductReadRequest,
 )
-from .provenance import MarketProvenance, MarketProvenanceProfile, ProvenancePredicate
-
-
-_PUBLIC_BOUNDARY_PROVENANCE_PROFILE = MarketProvenanceProfile(
-    profile_id="market.public.boundary.current",
-    applies_to=("*",),
-    predicates=(ProvenancePredicate.MARKET_RELEASE_IDENTITY_PRESENT,),
-    incomplete_behavior="PRESERVE_INCOMPLETE",
-)
+from .provenance import MarketProvenance
 
 
 def _is_dependency_failure(exc: Exception) -> bool:
@@ -82,10 +74,11 @@ def _public_object_refs(data: Any) -> tuple[str, ...]:
 
 
 def _provenance(capability: str, data: Any, correlation_id: str, produced_at: str) -> MarketProvenance:
-    # Current runtime does not yet expose an independently inspectable Market
-    # release identity. Preserve that absence explicitly; do not fabricate it.
+    # No capability-specific mandatory provenance profile is frozen for these
+    # current runtime capabilities. Preserve available evidence, but keep the
+    # status explicitly INCOMPLETE until a concrete profile is selected.
     return MarketProvenance(
-        _PUBLIC_BOUNDARY_PROVENANCE_PROFILE,
+        None,
         produced_at=produced_at,
         market_release_identity=None,
         source_refs=_source_refs(data),
@@ -208,8 +201,6 @@ class _MarketPublicProvider:
                     item_type="event", limit=request.limit,
                 )
                 if request.stock_id:
-                    # The CDP event source cannot apply stock_id in the current
-                    # repository SQL and must not contaminate a stock-scoped feed.
                     data = [row for row in data if row.get("source_channel") != "jyhf_cdp"]
                 return _result(
                     capability,
@@ -284,8 +275,6 @@ class _MarketPublicProvider:
                     correlation_id=correlation_id,
                     request_id=request_id,
                 )
-            # Guarded by CAPABILITIES; retain fail-closed behavior if metadata and
-            # dispatch ever drift apart.
             return _failure(
                 capability,
                 MarketDataState.NOT_APPLICABLE,
