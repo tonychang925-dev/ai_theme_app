@@ -255,6 +255,15 @@ async def test_current_provider_does_not_fabricate_release_provenance_or_failure
     assert result.failures == ()
 
 
+def test_unselected_provenance_profile_remains_incomplete():
+    provenance = MarketProvenance(
+        None,
+        produced_at="2026-09-17T00:00:00+00:00",
+        capability_call_ref="market.product.read",
+    )
+    assert provenance.provenance_status is MarketProvenanceStatus.INCOMPLETE
+
+
 def test_provenance_complete_is_mechanically_derived_from_profile():
     profile = MarketProvenanceProfile(
         profile_id="test.release.required",
