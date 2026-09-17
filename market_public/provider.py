@@ -21,9 +21,9 @@ from .contracts import (
 from .provenance import MarketProvenance, MarketProvenanceProfile, ProvenancePredicate
 
 
-_PUBLIC_READ_PROVENANCE_PROFILE = MarketProvenanceProfile(
-    profile_id="market.public.read.current",
-    applies_to=tuple(CAPABILITIES),
+_PUBLIC_BOUNDARY_PROVENANCE_PROFILE = MarketProvenanceProfile(
+    profile_id="market.public.boundary.current",
+    applies_to=("*",),
     predicates=(ProvenancePredicate.MARKET_RELEASE_IDENTITY_PRESENT,),
     incomplete_behavior="PRESERVE_INCOMPLETE",
 )
@@ -83,9 +83,9 @@ def _public_object_refs(data: Any) -> tuple[str, ...]:
 
 def _provenance(capability: str, data: Any, correlation_id: str, produced_at: str) -> MarketProvenance:
     # Current runtime does not yet expose an independently inspectable Market
-    # release identity.  Preserve that absence explicitly; do not fabricate it.
+    # release identity. Preserve that absence explicitly; do not fabricate it.
     return MarketProvenance(
-        _PUBLIC_READ_PROVENANCE_PROFILE,
+        _PUBLIC_BOUNDARY_PROVENANCE_PROFILE,
         produced_at=produced_at,
         market_release_identity=None,
         source_refs=_source_refs(data),
