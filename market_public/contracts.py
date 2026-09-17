@@ -3,15 +3,57 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from .provenance import MarketProvenance
 
 
-class MarketStatus(str, Enum):
+# Implementation identifiers for the current public boundary.  The architecture
+# requires an inspectable contract version / boundary reference but does not
+# freeze these exact literals as semantic law.
+MARKET_PUBLIC_CONTRACT_VERSION = "0.2.1"
+MARKET_BOUNDARY_IDENTITY_REF = "market.public"
+
+
+class MarketOperationStatus(str, Enum):
     SUCCESS = "SUCCESS"
-    NOT_FOUND = "NOT_FOUND"
-    INVALID_REQUEST = "INVALID_REQUEST"
-    DEPENDENCY_UNAVAILABLE = "DEPENDENCY_UNAVAILABLE"
-    INTERNAL_FAILURE = "INTERNAL_FAILURE"
+    PARTIAL = "PARTIAL"
+    FAILURE = "FAILURE"
+
+
+class MarketDataState(str, Enum):
+    READY = "READY"
+    PENDING = "PENDING"
+    STALE = "STALE"
+    EMPTY = "EMPTY"
+    UNAVAILABLE = "UNAVAILABLE"
+    NOT_APPLICABLE = "NOT_APPLICABLE"
+
+
+class MarketFailureKind(str, Enum):
+    UNAVAILABLE = "MarketUnavailable"
+    NOT_READY = "MarketNotReady"
+    CONTRACT_MISMATCH = "MarketContractMismatch"
+    RELEASE_MISMATCH = "MarketReleaseMismatch"
+    OBJECT_NOT_FOUND = "MarketObjectNotFound"
+    EVIDENCE_UNAVAILABLE = "MarketEvidenceUnavailable"
+    PROVENANCE_INCOMPLETE = "MarketProvenanceIncomplete"
+    ANALYSIS_PENDING = "MarketAnalysisPending"
+    ANALYSIS_PARTIAL = "MarketAnalysisPartial"
+    ANALYSIS_STALE = "MarketAnalysisStale"
+    ANALYSIS_FAILED = "MarketAnalysisFailed"
+    GOVERNANCE_FAILURE = "MarketGovernanceFailure"
+    AUTHORIZATION_DENIED = "MarketAuthorizationDenied"
+    TIMEOUT = "MarketTimeout"
+    INTERNAL_FAILURE = "MarketInternalFailure"
+
+
+@dataclass(frozen=True)
+class MarketFailure:
+    kind: MarketFailureKind
+    code: str
+    message: str
 
 
 @dataclass(frozen=True)
@@ -51,13 +93,40 @@ class ProductReadRequest:
 
 
 @dataclass(frozen=True)
-class MarketResult:
-    capability: str
-    status: MarketStatus
-    data: Any = None
-    error_code: str | None = None
-    error_message: str | None = None
+class MarketResultEnvelope:
+    """Canonical Julia-facing Market result.
 
-    @classmethod
-    def failure(cls, capability: str, status: MarketStatus, code: str, message: str) -> "MarketResult":
-        return cls(capability, status, error_code=code, error_message=message)
+    Operation status and data state are deliberately independent.  Domain
+    failures remain typed Market outcomes; Core execution failures live on a
+    separate plane before a valid envelope exists.
+    """
+
+    contract_version: str
+    capability_id: str
+    request_id: str | None
+    correlation_id: str
+    operation_status: MarketOperationStatus
+    data_state: MarketDataState
+    payload: Any
+    provenance: "MarketProvenance"
+    failures: tuple[MarketFailure, ...]
+    boundary_identity_ref: str
+    runtime_observation: Any | None
+    produced_at: str
+
+    def __post_init__(self) -> None:
+        if not self.contract_version:
+            raise ValueError("contract_version must be non-empty")
+        if not self.capability_id:
+            raise ValueError("capability_id must be non-empty")
+        if not self.correlation_id:
+            raise ValueError("correlation_id must be non-empty")
+        if not self.boundary_identity_ref:
+            raise ValueError("boundary_identity_ref must be non-empty")
+        if not self.produced_at:
+            raise ValueError("produced_at must be non-empty")
+        if (
+            self.operation_status is MarketOperationStatus.FAILURE
+            and self.data_state is MarketDataState.EMPTY
+        ):
+            raise ValueError("FAILURE + EMPTY is forbidden by the Market public contract")
