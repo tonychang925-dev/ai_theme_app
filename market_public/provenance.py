@@ -79,7 +79,11 @@ class MarketProvenance:
     def __post_init__(self, profile: MarketProvenanceProfile) -> None:
         if not self.produced_at:
             raise ValueError("produced_at must be non-empty")
-        if self.capability_call_ref is not None and self.capability_call_ref not in profile.applies_to:
+        if (
+            self.capability_call_ref is not None
+            and "*" not in profile.applies_to
+            and self.capability_call_ref not in profile.applies_to
+        ):
             raise ValueError("provenance profile does not apply to capability")
         complete = all(_predicate_holds(predicate, self) for predicate in profile.predicates)
         object.__setattr__(
