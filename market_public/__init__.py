@@ -10,6 +10,8 @@ from .contracts import (
     MarketFailureKind,
     MarketOperationStatus,
     MarketResultEnvelope,
+    MarketStateReadRequest,
+    ProductLinkageReadRequest,
     ProductReadRequest,
 )
 from .factory import MarketPublicFactory
@@ -38,6 +40,8 @@ __all__ = [
     "MarketPublicFactory",
     "MarketReleaseIdentity",
     "MarketResultEnvelope",
+    "MarketStateReadRequest",
+    "ProductLinkageReadRequest",
     "ProductReadRequest",
     "ProvenancePredicate",
 ]

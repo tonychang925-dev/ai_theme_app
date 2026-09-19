@@ -1,6 +1,7 @@
 """The sole Julia-facing Market provider."""
 from __future__ import annotations
 
+from dataclasses import asdict
 from datetime import datetime, timezone
 from typing import Any
 from uuid import uuid4
@@ -16,7 +17,19 @@ from .contracts import (
     MarketFailureKind,
     MarketOperationStatus,
     MarketResultEnvelope,
+    MarketStateReadRequest,
+    ProductLinkageReadRequest,
     ProductReadRequest,
+)
+from .private.market_state import (
+    MarketStateReader,
+    MarketStateRequest,
+    MarketStateStatus,
+)
+from .private.product_linkage import (
+    MarketProductLinkageReader,
+    ProductLinkageRequest,
+    ProductLinkageStatus,
 )
 from .provenance import MarketProvenance
 
@@ -52,7 +65,13 @@ def _source_refs(data: Any) -> tuple[str, ...]:
     for row in rows:
         if not isinstance(row, dict):
             continue
-        for key in ("source_ref", "source_channel", "source_system", "source"):
+        for key in (
+            "source_ref",
+            "source_channel",
+            "source_system",
+            "source",
+            "source_type",
+        ):
             value = row.get(key)
             if isinstance(value, str) and value.strip():
                 refs.add(value.strip())
@@ -140,6 +159,8 @@ class _MarketPublicProvider:
 
     def __init__(self, repository: Any):
         self._repository = repository
+        self._product_linkage_reader = MarketProductLinkageReader(repository)
+        self._market_state_reader = MarketStateReader(repository)
 
     async def execute(
         self,
@@ -275,6 +296,18 @@ class _MarketPublicProvider:
                     correlation_id=correlation_id,
                     request_id=request_id,
                 )
+            if capability == "market.product.linkage.read":
+                return await self._execute_product_linkage(
+                    request,
+                    correlation_id=correlation_id,
+                    request_id=request_id,
+                )
+            if capability == "market.state.read":
+                return await self._execute_market_state(
+                    request,
+                    correlation_id=correlation_id,
+                    request_id=request_id,
+                )
             return _failure(
                 capability,
                 MarketDataState.NOT_APPLICABLE,
@@ -304,6 +337,149 @@ class _MarketPublicProvider:
                 correlation_id,
                 request_id,
             )
+
+    async def _execute_product_linkage(
+        self,
+        request: Any,
+        *,
+        correlation_id: str,
+        request_id: str | None,
+    ) -> MarketResultEnvelope:
+        capability = "market.product.linkage.read"
+        if not isinstance(request, ProductLinkageReadRequest):
+            return _failure(
+                capability,
+                MarketDataState.NOT_APPLICABLE,
+                MarketFailureKind.CONTRACT_MISMATCH,
+                "invalid_request",
+                "Invalid product linkage request",
+                correlation_id,
+                request_id,
+            )
+        private_result = await self._product_linkage_reader.read(
+            ProductLinkageRequest(
+                subject_key=request.subject_key,
+                mapping_scope=request.mapping_scope,
+                include_leaders=request.include_leaders,
+                limit=request.limit,
+            )
+        )
+        if private_result.status is ProductLinkageStatus.READY:
+            return _result(
+                capability,
+                operation_status=MarketOperationStatus.SUCCESS,
+                data_state=MarketDataState.READY,
+                payload=[asdict(row) for row in private_result.rows],
+                correlation_id=correlation_id,
+                request_id=request_id,
+            )
+        if private_result.status is ProductLinkageStatus.EMPTY:
+            return _result(
+                capability,
+                operation_status=MarketOperationStatus.SUCCESS,
+                data_state=MarketDataState.EMPTY,
+                payload=[],
+                correlation_id=correlation_id,
+                request_id=request_id,
+            )
+        if private_result.status is ProductLinkageStatus.INVALID_REQUEST:
+            return _failure(
+                capability,
+                MarketDataState.NOT_APPLICABLE,
+                MarketFailureKind.CONTRACT_MISMATCH,
+                private_result.failure.code,
+                private_result.failure.message,
+                correlation_id,
+                request_id,
+            )
+        if private_result.status is ProductLinkageStatus.DEPENDENCY_UNAVAILABLE:
+            return _failure(
+                capability,
+                MarketDataState.UNAVAILABLE,
+                MarketFailureKind.UNAVAILABLE,
+                private_result.failure.code,
+                private_result.failure.message,
+                correlation_id,
+                request_id,
+            )
+        return _failure(
+            capability,
+            MarketDataState.UNAVAILABLE,
+            MarketFailureKind.INTERNAL_FAILURE,
+            private_result.failure.code,
+            private_result.failure.message,
+            correlation_id,
+            request_id,
+        )
+
+    async def _execute_market_state(
+        self,
+        request: Any,
+        *,
+        correlation_id: str,
+        request_id: str | None,
+    ) -> MarketResultEnvelope:
+        capability = "market.state.read"
+        if not isinstance(request, MarketStateReadRequest):
+            return _failure(
+                capability,
+                MarketDataState.NOT_APPLICABLE,
+                MarketFailureKind.CONTRACT_MISMATCH,
+                "invalid_request",
+                "Invalid market state request",
+                correlation_id,
+                request_id,
+            )
+        private_result = await self._market_state_reader.read(
+            MarketStateRequest(trade_date=request.trade_date)
+        )
+        if private_result.status is MarketStateStatus.READY:
+            return _result(
+                capability,
+                operation_status=MarketOperationStatus.SUCCESS,
+                data_state=MarketDataState.READY,
+                payload=asdict(private_result.snapshot),
+                correlation_id=correlation_id,
+                request_id=request_id,
+            )
+        if private_result.status is MarketStateStatus.EMPTY:
+            return _result(
+                capability,
+                operation_status=MarketOperationStatus.SUCCESS,
+                data_state=MarketDataState.EMPTY,
+                payload=None,
+                correlation_id=correlation_id,
+                request_id=request_id,
+            )
+        if private_result.status is MarketStateStatus.INVALID_REQUEST:
+            return _failure(
+                capability,
+                MarketDataState.NOT_APPLICABLE,
+                MarketFailureKind.CONTRACT_MISMATCH,
+                private_result.failure.code,
+                private_result.failure.message,
+                correlation_id,
+                request_id,
+            )
+        if private_result.status is MarketStateStatus.DEPENDENCY_UNAVAILABLE:
+            return _failure(
+                capability,
+                MarketDataState.UNAVAILABLE,
+                MarketFailureKind.UNAVAILABLE,
+                private_result.failure.code,
+                private_result.failure.message,
+                correlation_id,
+                request_id,
+            )
+        return _failure(
+            capability,
+            MarketDataState.UNAVAILABLE,
+            MarketFailureKind.INTERNAL_FAILURE,
+            private_result.failure.code,
+            private_result.failure.message,
+            correlation_id,
+            request_id,
+        )
 
     async def close(self) -> None:
         await self._repository.close()

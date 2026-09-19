@@ -23,7 +23,13 @@ from market_public import (
 
 
 def test_exact_capability_metadata():
-    assert set(CAPABILITIES) == {"market.event.resolve", "market.event.read", "market.product.read"}
+    assert set(CAPABILITIES) == {
+        "market.event.resolve",
+        "market.event.read",
+        "market.product.read",
+        "market.product.linkage.read",
+        "market.state.read",
+    }
     for metadata in CAPABILITIES.values():
         assert (metadata.provider, metadata.permission_scope, metadata.side_effect, metadata.c08_required) == ("market", "market.observe", "READ_ONLY", True)
 
@@ -313,11 +319,12 @@ async def test_failure_empty_combination_is_forbidden():
 @pytest.mark.asyncio
 async def test_real_domain_binding_without_database(monkeypatch):
     """Factory binds the current-main repository class without caller injection."""
+    from theme_service.repositories.phase1_read_repository import Phase1ReadRepository
+
     monkeypatch.setitem(sys.modules, "asyncpg", types.SimpleNamespace(Pool=object))
     provider = MarketPublicFactory.create(database_url="postgresql://example.invalid/market")
     real_repository = provider._repository._bound()
-    assert real_repository.__class__.__name__ == "Phase1ReadRepository"
-    assert real_repository.__class__.__module__ == "theme_service.repositories.phase1_read_repository"
+    assert isinstance(real_repository, Phase1ReadRepository)
 
     async def fake_detail(subject_key):
         return {"subject_key": subject_key, "source": "current-main-domain"}

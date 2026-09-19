@@ -32,8 +32,12 @@ class _LazyPhase1Repository:
 
     def _bound(self):
         if self._repository is None:
-            from theme_service.repositories.phase1_read_repository import Phase1ReadRepository
-            self._repository = Phase1ReadRepository(database_url=self._database_url)
+            from .private.phase1_market_state_repository import (
+                Phase1MarketStateReadRepository,
+            )
+            self._repository = Phase1MarketStateReadRepository(
+                database_url=self._database_url
+            )
         return self._repository
 
     async def fetch_intel_feed(self, **kwargs):
@@ -41,6 +45,23 @@ class _LazyPhase1Repository:
 
     async def fetch_theme_detail(self, subject_key):
         return await self._bound().fetch_theme_detail(subject_key)
+
+    async def fetch_stocks_by_theme(
+        self,
+        subject_key,
+        mapping_scope="pool",
+        include_leaders=False,
+        limit=100,
+    ):
+        return await self._bound().fetch_stocks_by_theme(
+            subject_key=subject_key,
+            mapping_scope=mapping_scope,
+            include_leaders=include_leaders,
+            limit=limit,
+        )
+
+    async def get_existing_post_market_recap_snapshot(self, trade_date):
+        return await self._bound().get_existing_post_market_recap_snapshot(trade_date)
 
     async def close(self):
         if self._repository is not None:
