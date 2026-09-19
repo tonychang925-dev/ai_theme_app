@@ -7,6 +7,7 @@
 - **CORE_CONTEXT_SHA:** `52cacb1e7e61acc5c48335303df2c51db9f8dd5c`
 - **ASSISTANT_CONTEXT_SHA:** `1309b1d18a86346480d5196533d3245840d1ff24`
 - **RESEARCH_CANDIDATE_CONTEXT:** commit `20968507ddef842bacb7b84a1b0da2cbed1b88ec`, present on the local Core research branch; it defines bounded `research.web.query` evidence. This audit treats it as context only and does not depend on merge.
+- **Revision status:** incorporates `MIRA-REVIEW-UPDATE-1`. The first completion comment reported an abbreviated/mistyped commit identity; the exact initial branch HEAD is `6b7b42899442e4a522c0e11eb9eec2e7eaf8f6ef`, and the revised candidate SHA is recorded in the corrected completion comment.
 - **Decision rule:** recommend a public capability only when the first real composite investment E2E cannot produce a defensible Julia judgment without it. Convenience, catalog completeness, or speculative future tools are not sufficient reasons.
 
 ## CURRENT_CAPABILITY_MATRIX
@@ -40,14 +41,14 @@
 
 **Question:** “这个固态电池主题下，哪些股票是核心成分、哪些是 leader overlay，关系依据和排序是什么？”
 
-- **Julia evidence need:** expand one `subject_key` into a bounded list of stock identities with relation type, mapping scope, source, reason/confidence, ordering, and latest available display price/pct change.
+- **Julia evidence need:** expand one `subject_key` into a bounded list of stock identities with relation type, mapping scope, source, reason/confidence, ordering, and stock annotation. Relationship facts are requested; untimestamped quote facts are not.
 - **Current fit:** **NO.** `market.product.read` returns only `stock_count`; it deliberately does not expose rows.
-- **Exact missing data shape:** list of logical linkage rows containing `subject_key`, `theme_id`, `theme_name`, `stock_id`, `stock_name`, `relation_type_candidate`, `mapping_scope`, `source_type`, `reason`, `remark`, `confidence`, `top`, `sort`, `price`, `pct_chg`, and `stock_remark`. HTML detail should not be exposed.
+- **Exact missing data shape:** list of logical linkage rows containing `subject_key`, `theme_id`, `theme_name`, `stock_id`, `stock_name`, `relation_type_candidate`, `mapping_scope`, `source_type`, `reason`, `remark`, `confidence`, `top`, `sort`, and `stock_remark`. Explicitly exclude `detail_html`, `price`, and `pct_chg`: the candidate view provides no `trade_date`/`as_of`, so its display values cannot be represented as current Market facts.
 - **E2E classification:** **BLOCKING.** Julia cannot distinguish a named theme from investable constituents/leaders, so a composite investment judgment would collapse into unsupported narrative.
 - **Candidate capability:** `market.product.linkage.read`.
 - **Logical request:** `{subject_key, mapping_scope: pool|leader_overlay|all, include_leaders: boolean, limit}`.
 - **Logical result:** linkage rows in Market's canonical envelope; `READY`, `EMPTY`, object-not-found, and dependency failures must remain typed.
-- **Private implementation source:** `Phase1ReadRepository.fetch_stocks_by_theme` already implements deduplication, leader priority, source priority, ordering, and bounded output.
+- **Private implementation source:** `Phase1ReadRepository.fetch_stocks_by_theme` already implements deduplication, leader priority, source priority, ordering, and bounded output. The public adapter must project only the relationship fields above rather than forwarding the repository row verbatim.
 - **New DB/repository wiring:** no new repository or migration; add a lazy proxy/adapter in the existing Market factory boundary.
 
 ### S3 — Current market state / breadth
@@ -59,10 +60,10 @@
 - **Exact missing data shape:** `{trade_date, breadth: {up_count, down_count, up_ratio, limit_up_count, limit_down_count, turnover_yi}, source}`.
 - **E2E classification:** **BLOCKING.** An investment judgment that ignores whether the catalyst occurred in risk-on or risk-off breadth is materially incomplete and cannot be validated as a composite decision.
 - **Candidate capability:** `market.state.read`.
-- **Logical request:** `{trade_date?: YYYY-MM-DD}`; omitted date means latest available closed snapshot, never an invented live quote.
-- **Logical result:** the minimal snapshot above in the canonical envelope. If only older data exists, return `STALE` with the authoritative date rather than relabeling it current.
-- **Private implementation source:** `stock_processing_service/application/services/market_metrics/MarketMetricsService._get_async_with_conn` and its breadth builder; metric authority is documented in `market_metrics/registry.py`.
-- **New DB/repository wiring:** **YES, repository wiring only.** The service is already Market-owned, but `MarketMetricsService` hard-codes its DSN and exposes sync `asyncio.run` wrappers, so it is not safely composable by the async `MarketPublicFactory`. Add an injectable async read adapter/pool; no schema or migration is required.
+- **Logical request:** `{trade_date: YYYY-MM-DD}`. `trade_date` is **REQUIRED** in v0.1 so the E2E pins one accepted closed snapshot and no implicit latest/current interpretation is introduced.
+- **Logical result:** the minimal snapshot above in the canonical envelope. If the requested snapshot or its `payload.market_overview_review` breadth fields are absent, return the contract's typed `EMPTY`/`UNAVAILABLE` result; never substitute another date or source.
+- **Private implementation source:** a dedicated Market-owned READ adapter over `post_market_recap_snapshot.payload.market_overview_review`. Do **not** reuse the full `MarketMetricsService` path for v0.1.
+- **New DB/repository wiring:** **YES, repository wiring only.** Add an injectable async adapter/pool using the established Market database configuration precedence; no schema or migration is required.
 
 ### S4 — Historical confirmation
 
@@ -108,15 +109,15 @@ No blocking gap exists for internal event resolution, event detail, product iden
 
 | Classification | Capability | Minimum semantics | Why minimal |
 |---|---|---|---|
-| BLOCKING | `market.product.linkage.read` | Bounded theme-to-stock rows with leader/core semantics, source, reason/confidence, and ordering | Reuses existing repository logic; answers S2/S5 without widening `market.product.read`. |
-| BLOCKING | `market.state.read` | Latest-or-requested post-close whole-market breadth snapshot: up/down, ratio, limit counts, turnover, source/date | Exposes only the state facts used by S3/S5; keeps advanced metric suites private. |
+| BLOCKING | `market.product.linkage.read` | Bounded theme-to-stock relationship rows with leader/core semantics, source, reason/confidence, and ordering; no untimestamped price/pct change | Reuses existing repository logic with a narrow projection; answers S2/S5 without widening `market.product.read`. |
+| BLOCKING | `market.state.read` | Requested-date post-close whole-market breadth snapshot: up/down, ratio, limit counts, turnover, source/date; read directly from the authoritative recap payload | Exposes only the state facts used by S3/S5; keeps advanced metric suites and fallback behavior private. |
 
 **Recommended total:** two public capabilities. `market.product.history.read` is designed but deliberately not recommended for P2-I4.
 
 ## IMPLEMENTATION_ORDER
 
-1. **Market state repository adapter:** introduce Market-owned async wiring around the existing canonical metric builder, with injectable database configuration, post-close date resolution, and explicit `STALE` behavior.
-2. **Market linkage adapter:** expose bounded `fetch_stocks_by_theme` semantics through a new request/result contract and the existing lazy Phase1 adapter.
+1. **Market state repository adapter:** introduce a dedicated Market-owned async READ adapter for the required `trade_date`, selecting `post_market_recap_snapshot.payload.market_overview_review` without fallback or estimation.
+2. **Market linkage adapter:** expose bounded `fetch_stocks_by_theme` semantics through a new request/result contract and the existing lazy Phase1 adapter, projected to relationship fields only.
 3. **Public contract/tests:** add the two capabilities to Market-owned contracts, provider validation, typed empty/not-found/dependency behavior, provenance, and Core registration binding tests.
 4. **Composite E2E:** execute S5 with Market event/product/linkage/state plus Research external evidence; verify Julia—not Research—issues the revised hypothesis and final judgment.
 5. **Deferred history:** revisit `market.product.history.read` only after the first E2E proves that current-catalyst judgment needs recurrence evidence.
@@ -125,12 +126,12 @@ This order resolves the repository-boundary risk first, then maximizes reuse of 
 
 ## RISKS / DATA FRESHNESS / SOURCE AUTHORITY
 
-- **Market state freshness:** the metric registry describes breadth as T+0 but medium-confidence and recap-derived; TDX is a fallback. P2-I4 must pin an accepted closed trade date and surface `source`/`trade_date`, never present stale data as current.
-- **Linkage authority:** linkage rows come from candidate mappings with multiple source types. Preserve `source_type`, `mapping_scope`, `relation_type_candidate`, confidence, and the repository's deterministic deduplication; do not collapse them into a single editorial fact.
+- **Market state freshness and no-fallback policy:** v0.1 reads the authoritative `post_market_recap_snapshot.payload.market_overview_review` only. It must not call TDX, board pools, estimates, synthetic breadth, `MarketMetricsService._get_async_with_conn`, or construct a full `MarketMetricsSnapshot`. The E2E must pin an accepted closed `trade_date` and surface actual source/date; a missing requested snapshot remains typed rather than substituted.
+- **Linkage authority:** linkage rows come from candidate mappings with multiple source types. Preserve `source_type`, `mapping_scope`, `relation_type_candidate`, confidence, and the repository's deterministic deduplication; do not collapse them into a single editorial fact. Do not expose `detail_html`, `price`, or `pct_chg` until a time-stamped quote authority exists.
 - **Historical semantics:** mixed rank/event sources are observations, not a causal return series. This is the main reason history is optional for the first E2E.
 - **Research separation:** external findings must retain source URLs/refs and limitations. Market cannot absorb Research semantics, and Research cannot manufacture internal market facts.
 - **Failure behavior:** both blocking capabilities must fail closed with typed Market failures. Empty linkage/state is evidence, not an exception; dependency loss is `UNAVAILABLE`, not synthetic data.
-- **Configuration:** market state adapter must use `MARKET_DATABASE_URL`/`DATABASE_URL` precedence already established by `MarketPublicFactory`; the hard-coded metric DSN must not leak into public composition.
+- **Configuration:** market state adapter must use `MARKET_DATABASE_URL`/`DATABASE_URL` precedence already established by `MarketPublicFactory`; the hard-coded `MarketMetricsService` DSN must not leak into public composition.
 - **Schema:** no migration is needed. Repository wiring and public contracts are sufficient for both blocking recommendations.
 
 ## RECOMMENDATION_FOR_P2-I4
