@@ -9,7 +9,7 @@ from typing import Any
 
 
 MARKET_STATE_SOURCE_PATH = ("payload", "market_overview_review")
-MARKET_STATE_SOURCE = "recap_snapshot"
+MARKET_STATE_SOURCE = "post_market_recap_snapshot.payload.market_overview_review"
 
 
 class MarketStateStatus(str, Enum):
@@ -202,6 +202,8 @@ def _required_int(mapping: dict[str, Any], field: str) -> int:
     value = _required_value(mapping, field)
     if isinstance(value, bool) or not isinstance(value, int):
         raise _MarketStateDataIntegrityError(f"{field} must be an integer")
+    if value < 0:
+        raise _MarketStateDataIntegrityError(f"{field} must be non-negative")
     return value
 
 
@@ -212,6 +214,8 @@ def _required_number(mapping: dict[str, Any], field: str) -> float:
     number = float(value)
     if number != number or number in (float("inf"), float("-inf")):
         raise _MarketStateDataIntegrityError(f"{field} must be finite")
+    if number < 0:
+        raise _MarketStateDataIntegrityError(f"{field} must be non-negative")
     return number
 
 

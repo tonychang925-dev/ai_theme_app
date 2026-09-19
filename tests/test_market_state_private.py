@@ -65,7 +65,9 @@ async def test_valid_snapshot_projects_exact_required_breadth_facts():
     assert result.snapshot.breadth.limit_up_count == 37
     assert result.snapshot.breadth.limit_down_count == 8
     assert result.snapshot.breadth.turnover_yi == 1654321.0
-    assert result.snapshot.source == MARKET_STATE_SOURCE == "recap_snapshot"
+    assert result.snapshot.source == MARKET_STATE_SOURCE == (
+        "post_market_recap_snapshot.payload.market_overview_review"
+    )
     assert repository.calls == ["2026-09-18"]
 
 
@@ -159,6 +161,14 @@ async def test_missing_or_malformed_payload_is_data_integrity_failure(payload):
         ("limit_down_total", "8"),
         ("total_amount", None),
         ("total_amount", "16543210000"),
+        ("total_amount", float("inf")),
+        ("total_amount", float("nan")),
+        ("up_count", -1),
+        ("up_count", -1),
+        ("down_count", -5),
+        ("limit_up_total", -2),
+        ("limit_down_total", -1),
+        ("total_amount", -100),
     ],
 )
 @pytest.mark.asyncio
