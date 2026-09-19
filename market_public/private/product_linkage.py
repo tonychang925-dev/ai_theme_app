@@ -74,6 +74,35 @@ class ProductLinkageResult:
     failure: ProductLinkageFailure | None = None
 
 
+class ProductLinkageDataIntegrityError(ValueError):
+    """Raised when a repository row lacks required relationship identity."""
+
+
+def _is_dependency_failure(exc: Exception) -> bool:
+    if isinstance(exc, (ConnectionError, TimeoutError, OSError, ImportError)):
+        return True
+    try:
+        import asyncpg
+    except ImportError:
+        return exc.__class__.__name__ in {
+            "PostgresConnectionError",
+            "CannotConnectNowError",
+            "ConnectionDoesNotExistError",
+            "TooManyConnectionsError",
+        }
+    dependency_types = tuple(
+        dependency_type
+        for dependency_type in (
+            getattr(asyncpg, "PostgresConnectionError", None),
+            getattr(asyncpg, "CannotConnectNowError", None),
+            getattr(asyncpg, "ConnectionDoesNotExistError", None),
+            getattr(asyncpg, "TooManyConnectionsError", None),
+        )
+        if isinstance(dependency_type, type)
+    )
+    return bool(dependency_types) and isinstance(exc, dependency_types)
+
+
 class MarketProductLinkageReader:
     """Read repository linkage facts with a narrow private projection."""
 
@@ -97,18 +126,36 @@ class MarketProductLinkageReader:
                 limit=request.limit,
             )
         except Exception as exc:
+            failure_status = (
+                ProductLinkageStatus.DEPENDENCY_UNAVAILABLE
+                if _is_dependency_failure(exc)
+                else ProductLinkageStatus.INTERNAL_FAILURE
+            )
+            failure_code = (
+                "repository_unavailable"
+                if failure_status is ProductLinkageStatus.DEPENDENCY_UNAVAILABLE
+                else "repository_internal_failure"
+            )
             return self._failure(
-                ProductLinkageStatus.DEPENDENCY_UNAVAILABLE,
-                "repository_unavailable",
+                failure_status,
+                failure_code,
                 str(exc) or exc.__class__.__name__,
             )
 
         try:
-            rows = tuple(self._project(row) for row in repository_rows)
+            rows = tuple(
+                self._project(row, request.subject_key)
+                for row in repository_rows
+            )
         except Exception as exc:
+            code = (
+                "projection_data_integrity_failure"
+                if isinstance(exc, ProductLinkageDataIntegrityError)
+                else "projection_failed"
+            )
             return self._failure(
                 ProductLinkageStatus.INTERNAL_FAILURE,
-                "projection_failed",
+                code,
                 str(exc) or exc.__class__.__name__,
             )
 
@@ -136,9 +183,19 @@ class MarketProductLinkageReader:
         return None
 
     @staticmethod
-    def _project(row: Any) -> ProductLinkageRow:
+    def _project(row: Any, requested_subject_key: str) -> ProductLinkageRow:
         if not isinstance(row, dict):
             raise TypeError("repository linkage row must be a mapping")
+        for field_name in ("subject_key", "stock_id", "mapping_scope", "source_type"):
+            value = row.get(field_name)
+            if not isinstance(value, str) or not value.strip():
+                raise ProductLinkageDataIntegrityError(
+                    f"repository linkage row requires non-empty string {field_name}"
+                )
+        if row["subject_key"] != requested_subject_key:
+            raise ProductLinkageDataIntegrityError(
+                "repository linkage row subject_key does not match request"
+            )
         return ProductLinkageRow(
             subject_key=row.get("subject_key"),
             theme_id=row.get("theme_id"),

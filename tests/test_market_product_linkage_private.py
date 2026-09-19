@@ -95,8 +95,8 @@ async def test_include_leaders_is_forwarded_and_defaults_to_false():
     repository = RepositoryFixture([repository_row()])
     reader = MarketProductLinkageReader(repository)
 
-    await reader.read(ProductLinkageRequest("subject", include_leaders=True, limit=2))
-    await reader.read(ProductLinkageRequest("subject", limit=2))
+    await reader.read(ProductLinkageRequest("solid-state-battery", include_leaders=True, limit=2))
+    await reader.read(ProductLinkageRequest("solid-state-battery", limit=2))
 
     assert [call["include_leaders"] for call in repository.calls] == [True, False]
 
@@ -111,7 +111,7 @@ async def test_repository_order_is_preserved_without_reordering():
     repository = RepositoryFixture(rows)
 
     result = await MarketProductLinkageReader(repository).read(
-        ProductLinkageRequest("subject", limit=3)
+        ProductLinkageRequest("solid-state-battery", limit=3)
     )
 
     assert [row.stock_id for row in result.rows] == ["600003", "600001", "600002"]
@@ -126,7 +126,7 @@ async def test_repository_deduplication_is_preserved_without_second_dedup():
     repository = RepositoryFixture(rows)
 
     result = await MarketProductLinkageReader(repository).read(
-        ProductLinkageRequest("subject", mapping_scope="all", limit=2)
+        ProductLinkageRequest("solid-state-battery", mapping_scope="all", limit=2)
     )
 
     assert len(result.rows) == 2
@@ -176,12 +176,86 @@ async def test_repository_failure_remains_typed_failure():
 
 
 @pytest.mark.asyncio
+@pytest.mark.parametrize("error", [RuntimeError("query bug"), ValueError("bad row")])
+async def test_non_dependency_repository_failure_is_internal(error):
+    repository = RepositoryFixture(error=error)
+
+    result = await MarketProductLinkageReader(repository).read(
+        ProductLinkageRequest("subject")
+    )
+
+    assert result.status is ProductLinkageStatus.INTERNAL_FAILURE
+    assert result.rows == ()
+    assert result.failure.code == "repository_internal_failure"
+
+
+@pytest.mark.asyncio
+async def test_missing_stock_id_is_projection_data_integrity_failure():
+    repository = RepositoryFixture([repository_row(stock_id=None)])
+
+    result = await MarketProductLinkageReader(repository).read(
+        ProductLinkageRequest("solid-state-battery")
+    )
+
+    assert result.status is ProductLinkageStatus.INTERNAL_FAILURE
+    assert result.rows == ()
+    assert result.failure.code == "projection_data_integrity_failure"
+    assert "stock_id" in result.failure.message
+
+
+@pytest.mark.asyncio
+async def test_blank_source_type_is_projection_data_integrity_failure():
+    repository = RepositoryFixture([repository_row(source_type=" ")])
+
+    result = await MarketProductLinkageReader(repository).read(
+        ProductLinkageRequest("solid-state-battery")
+    )
+
+    assert result.status is ProductLinkageStatus.INTERNAL_FAILURE
+    assert result.rows == ()
+    assert result.failure.code == "projection_data_integrity_failure"
+    assert "source_type" in result.failure.message
+
+
+@pytest.mark.asyncio
+async def test_cross_subject_repository_row_fails_closed():
+    repository = RepositoryFixture([repository_row(subject_key="other-subject")])
+
+    result = await MarketProductLinkageReader(repository).read(
+        ProductLinkageRequest("solid-state-battery")
+    )
+
+    assert result.status is ProductLinkageStatus.INTERNAL_FAILURE
+    assert result.rows == ()
+    assert result.failure.code == "projection_data_integrity_failure"
+    assert "subject_key" in result.failure.message
+
+
+@pytest.mark.asyncio
+async def test_nullable_descriptive_repository_fields_remain_valid():
+    repository = RepositoryFixture(
+        [repository_row(reason=None, remark=None, top=None, sort=None, stock_remark=None)]
+    )
+
+    result = await MarketProductLinkageReader(repository).read(
+        ProductLinkageRequest("solid-state-battery")
+    )
+
+    assert result.status is ProductLinkageStatus.READY
+    assert result.rows[0].reason is None
+    assert result.rows[0].remark is None
+    assert result.rows[0].top is None
+    assert result.rows[0].sort is None
+    assert result.rows[0].stock_remark is None
+
+
+@pytest.mark.asyncio
 async def test_forbidden_fields_are_absent_from_every_row():
     rows = [repository_row("600001"), repository_row("600002", price=99.0, pct_chg=-1.0)]
     repository = RepositoryFixture(rows)
 
     result = await MarketProductLinkageReader(repository).read(
-        ProductLinkageRequest("subject", mapping_scope="all", limit=2)
+        ProductLinkageRequest("solid-state-battery", mapping_scope="all", limit=2)
     )
 
     assert tuple(field.name for field in fields(result.rows[0])) == PRODUCT_LINKAGE_ROW_FIELDS
@@ -198,7 +272,7 @@ async def test_forbidden_fields_are_absent_from_every_row():
 
 @pytest.mark.asyncio
 async def test_repository_failure_has_no_fallback_or_synthetic_result():
-    repository = RepositoryFixture(error=RuntimeError("one deterministic source"))
+    repository = RepositoryFixture(error=ConnectionError("one deterministic source"))
 
     result = await MarketProductLinkageReader(repository).read(
         ProductLinkageRequest("subject", limit=1)
