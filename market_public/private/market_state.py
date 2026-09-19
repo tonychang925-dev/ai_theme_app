@@ -9,13 +9,14 @@ from typing import Any
 
 
 MARKET_STATE_SOURCE_PATH = ("payload", "market_overview_review")
+MARKET_STATE_SOURCE = "recap_snapshot"
 
 
 class MarketStateStatus(str, Enum):
     READY = "READY"
     INVALID_REQUEST = "INVALID_REQUEST"
-    NOT_FOUND = "NOT_FOUND"
-    CONTRACT_MISMATCH = "CONTRACT_MISMATCH"
+    EMPTY = "EMPTY"
+    DATA_INTEGRITY_FAILURE = "DATA_INTEGRITY_FAILURE"
     DEPENDENCY_UNAVAILABLE = "DEPENDENCY_UNAVAILABLE"
     INTERNAL_FAILURE = "INTERNAL_FAILURE"
 
@@ -28,7 +29,18 @@ class MarketStateRequest:
 @dataclass(frozen=True)
 class MarketStateSnapshot:
     trade_date: str
-    market_overview_review: dict[str, Any]
+    breadth: "MarketStateBreadth"
+    source: str
+
+
+@dataclass(frozen=True)
+class MarketStateBreadth:
+    up_count: int
+    down_count: int
+    up_ratio: float
+    limit_up_count: int
+    limit_down_count: int
+    turnover_yi: float
 
 
 @dataclass(frozen=True)
@@ -65,32 +77,38 @@ class MarketStateReader:
                 request.trade_date
             )
         except Exception as exc:
+            if _is_connectivity_exception(exc):
+                return self._failure(
+                    MarketStateStatus.DEPENDENCY_UNAVAILABLE,
+                    "repository_unavailable",
+                    str(exc) or exc.__class__.__name__,
+                )
             return self._failure(
-                MarketStateStatus.DEPENDENCY_UNAVAILABLE,
-                "repository_unavailable",
+                MarketStateStatus.INTERNAL_FAILURE,
+                "repository_protocol_failed",
                 str(exc) or exc.__class__.__name__,
             )
 
         if row is None:
             return self._failure(
-                MarketStateStatus.NOT_FOUND,
+                MarketStateStatus.EMPTY,
                 "snapshot_not_found",
                 "post_market_recap_snapshot was not found for the explicit trade_date",
             )
 
         try:
             snapshot = self._project(row, request.trade_date)
+        except _MarketStateDataIntegrityError as exc:
+            return self._failure(
+                MarketStateStatus.DATA_INTEGRITY_FAILURE,
+                "market_overview_review_invalid",
+                str(exc),
+            )
         except Exception as exc:
             return self._failure(
                 MarketStateStatus.INTERNAL_FAILURE,
                 "projection_failed",
                 str(exc) or exc.__class__.__name__,
-            )
-        if snapshot is None:
-            return self._failure(
-                MarketStateStatus.CONTRACT_MISMATCH,
-                "market_overview_review_missing",
-                "snapshot payload must contain mapping market_overview_review for the exact trade_date",
             )
         return MarketStateResult(MarketStateStatus.READY, snapshot)
 
@@ -111,15 +129,20 @@ class MarketStateReader:
     @staticmethod
     def _project(row: Any, requested_date: str) -> MarketStateSnapshot | None:
         if not isinstance(row, dict):
-            return None
+            raise _MarketStateDataIntegrityError("snapshot row must be a mapping")
         payload = row.get("payload")
         if isinstance(payload, str):
-            payload = json.loads(payload)
+            try:
+                payload = json.loads(payload)
+            except json.JSONDecodeError as exc:
+                raise _MarketStateDataIntegrityError("snapshot payload must be JSON") from exc
         if not isinstance(payload, dict):
-            return None
+            raise _MarketStateDataIntegrityError("snapshot payload must be a mapping")
         overview = payload.get("market_overview_review")
         if not isinstance(overview, dict):
-            return None
+            raise _MarketStateDataIntegrityError(
+                "snapshot payload.market_overview_review must be a mapping"
+            )
         stored_date = row.get("trade_date")
         stored_date_text = (
             stored_date.isoformat()
@@ -127,10 +150,25 @@ class MarketStateReader:
             else stored_date
         )
         if stored_date_text != requested_date:
-            return None
+            raise _MarketStateDataIntegrityError(
+                "snapshot trade_date must exactly match the requested trade_date"
+            )
+        up_count = _required_int(overview, "up_count")
+        down_count = _required_int(overview, "down_count")
+        limit_up_count = _required_int(overview, "limit_up_total")
+        limit_down_count = _required_int(overview, "limit_down_total")
+        total_amount_wan = _required_number(overview, "total_amount")
         return MarketStateSnapshot(
             trade_date=requested_date,
-            market_overview_review=overview,
+            breadth=MarketStateBreadth(
+                up_count=up_count,
+                down_count=down_count,
+                up_ratio=round(up_count / max(up_count + down_count, 1), 3),
+                limit_up_count=limit_up_count,
+                limit_down_count=limit_down_count,
+                turnover_yi=round(total_amount_wan / 10_000, 2),
+            ),
+            source=MARKET_STATE_SOURCE,
         )
 
     @staticmethod
@@ -143,3 +181,41 @@ class MarketStateReader:
             status=kind,
             failure=MarketStateFailure(kind=kind, code=code, message=message),
         )
+
+
+class _MarketStateDataIntegrityError(ValueError):
+    """Private marker for malformed persisted market-overview evidence."""
+
+
+def _is_connectivity_exception(exc: Exception) -> bool:
+    if isinstance(exc, (ConnectionError, TimeoutError, OSError)):
+        return True
+    return exc.__class__.__name__ in {
+        "PostgresConnectionError",
+        "CannotConnectNowError",
+        "ConnectionDoesNotExistError",
+        "TooManyConnectionsError",
+    }
+
+
+def _required_int(mapping: dict[str, Any], field: str) -> int:
+    value = _required_value(mapping, field)
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise _MarketStateDataIntegrityError(f"{field} must be an integer")
+    return value
+
+
+def _required_number(mapping: dict[str, Any], field: str) -> float:
+    value = _required_value(mapping, field)
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        raise _MarketStateDataIntegrityError(f"{field} must be numeric")
+    number = float(value)
+    if number != number or number in (float("inf"), float("-inf")):
+        raise _MarketStateDataIntegrityError(f"{field} must be finite")
+    return number
+
+
+def _required_value(mapping: dict[str, Any], field: str) -> Any:
+    if field not in mapping or mapping[field] is None:
+        raise _MarketStateDataIntegrityError(f"{field} is required")
+    return mapping[field]
