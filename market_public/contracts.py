@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 # Implementation identifiers for the current public boundary.  The architecture
 # requires an inspectable contract version / boundary reference but does not
 # freeze these exact literals as semantic law.
-MARKET_PUBLIC_CONTRACT_VERSION = "0.3.0"
+MARKET_PUBLIC_CONTRACT_VERSION = "0.3.1"
 MARKET_BOUNDARY_IDENTITY_REF = "market.public"
 
 
@@ -86,7 +86,16 @@ class EventResolveRequest:
 
 @dataclass(frozen=True)
 class EventReadRequest:
-    event_id: int
+    """Exact event selector.
+
+    ``item_id`` is the canonical source-namespaced identity emitted by resolve.
+    ``event_id`` remains a legacy selector: Market first checks the news-event
+    namespace and then the JYHF CDP staging namespace. It does not scan a
+    transient top-N feed.
+    """
+
+    event_id: int | None = None
+    item_id: str | None = None
 
 
 @dataclass(frozen=True)

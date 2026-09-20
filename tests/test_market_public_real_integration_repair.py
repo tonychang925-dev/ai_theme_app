@@ -1,0 +1,92 @@
+from __future__ import annotations
+
+import os
+
+import pytest
+
+from market_public import (
+    EventReadRequest,
+    EventResolveRequest,
+    MarketDataState,
+    MarketOperationStatus,
+    MarketPublicFactory,
+    MarketStateReadRequest,
+)
+
+
+pytestmark = pytest.mark.skipif(
+    os.getenv("MARKET_REAL_DB", "0") != "1",
+    reason="set MARKET_REAL_DB=1 only for the configured real Market database",
+)
+
+
+@pytest.mark.asyncio
+async def test_real_state_read_binds_exact_date_and_returns_empty_without_row():
+    provider = MarketPublicFactory.create()
+    try:
+        result = await provider.execute(
+            "market.state.read",
+            MarketStateReadRequest(trade_date="2026-07-10"),
+            request_id="repair-state-empty",
+            correlation_id="repair-state-empty-correlation",
+        )
+    finally:
+        await provider.close()
+
+    assert result.operation_status is MarketOperationStatus.SUCCESS
+    assert result.data_state is MarketDataState.EMPTY
+    assert result.payload is None
+    assert result.failures == ()
+
+
+@pytest.mark.asyncio
+async def test_real_resolve_read_roundtrip_preserves_both_source_namespaces():
+    provider = MarketPublicFactory.create()
+    try:
+        jyhf_resolve = await provider.execute(
+            "market.event.resolve",
+            EventResolveRequest(feed_date="2026-05-19", limit=200),
+            request_id="repair-jyhf-resolve",
+            correlation_id="repair-jyhf-roundtrip",
+        )
+        assert jyhf_resolve.operation_status is MarketOperationStatus.SUCCESS
+        assert jyhf_resolve.data_state is MarketDataState.READY
+        jyhf_item_id = next(
+            item["item_id"]
+            for item in jyhf_resolve.payload
+            if item["item_id"].startswith("event:jyhf_cdp:")
+        )
+        jyhf_read = await provider.execute(
+            "market.event.read",
+            EventReadRequest(item_id=jyhf_item_id),
+            request_id="repair-jyhf-read",
+            correlation_id="repair-jyhf-roundtrip",
+        )
+        assert jyhf_read.operation_status is MarketOperationStatus.SUCCESS
+        assert jyhf_read.data_state is MarketDataState.READY
+        assert jyhf_read.payload["item_id"] == jyhf_item_id
+
+        news_resolve = await provider.execute(
+            "market.event.resolve",
+            EventResolveRequest(feed_date="2026-04-30", limit=200),
+            request_id="repair-news-resolve",
+            correlation_id="repair-news-roundtrip",
+        )
+        assert news_resolve.operation_status is MarketOperationStatus.SUCCESS
+        assert news_resolve.data_state is MarketDataState.READY
+        news_item_id = next(
+            item["item_id"]
+            for item in news_resolve.payload
+            if not item["item_id"].startswith("event:jyhf_cdp:")
+        )
+        news_read = await provider.execute(
+            "market.event.read",
+            EventReadRequest(item_id=news_item_id),
+            request_id="repair-news-read",
+            correlation_id="repair-news-roundtrip",
+        )
+        assert news_read.operation_status is MarketOperationStatus.SUCCESS
+        assert news_read.data_state is MarketDataState.READY
+        assert news_read.payload["item_id"] == news_item_id
+    finally:
+        await provider.close()

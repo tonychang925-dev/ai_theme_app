@@ -87,6 +87,18 @@ class RepoFixture:
             return [{"item_id": "event:7:theme:1", "title": "real event"}]
         return [{"item_id": "event:8:theme:1", "title": "real resolved event"}]
 
+    async def fetch_intel_event_by_item_id(self, item_id):
+        self.calls.append({"exact_item_id": item_id})
+        if item_id == "event:7:theme:1":
+            return {"item_id": item_id, "title": "real event"}
+        return None
+
+    async def fetch_intel_event_by_legacy_id(self, event_id):
+        self.calls.append({"exact_legacy_event_id": event_id})
+        if event_id == 7:
+            return {"item_id": "event:7:theme:1", "title": "real event"}
+        return None
+
     async def fetch_theme_detail(self, subject_key):
         return {"subject_key": subject_key, "theme_name": "real product"}
 
@@ -175,6 +187,40 @@ async def test_event_read_missing_id_is_object_not_found_not_applicable():
     assert result.operation_status is MarketOperationStatus.FAILURE
     assert result.data_state is MarketDataState.NOT_APPLICABLE
     assert result.failures[0].kind is MarketFailureKind.OBJECT_NOT_FOUND
+
+
+@pytest.mark.asyncio
+async def test_event_read_uses_exact_namespaced_identity_without_feed_scan():
+    from market_public.provider import _MarketPublicProvider
+
+    repo = RepoFixture()
+    result = await _MarketPublicProvider(repo).execute(
+        "market.event.read", EventReadRequest(item_id="event:7:theme:1")
+    )
+
+    assert result.operation_status is MarketOperationStatus.SUCCESS
+    assert result.data_state is MarketDataState.READY
+    assert result.payload["item_id"] == "event:7:theme:1"
+    assert repo.calls == [{"exact_item_id": "event:7:theme:1"}]
+
+
+@pytest.mark.asyncio
+async def test_event_read_requires_exactly_one_selector_and_rejects_malformed_identity():
+    from market_public.provider import _MarketPublicProvider
+
+    repo = RepoFixture()
+    provider = _MarketPublicProvider(repo)
+    for request in (
+        EventReadRequest(),
+        EventReadRequest(event_id=7, item_id="event:7:theme:1"),
+        EventReadRequest(item_id="event:7"),
+        EventReadRequest(item_id="raw:event:7"),
+    ):
+        result = await provider.execute("market.event.read", request)
+        assert result.operation_status is MarketOperationStatus.FAILURE
+        assert result.data_state is MarketDataState.NOT_APPLICABLE
+        assert result.failures[0].kind is MarketFailureKind.CONTRACT_MISMATCH
+    assert repo.calls == []
 
 
 @pytest.mark.asyncio

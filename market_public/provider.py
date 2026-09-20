@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from dataclasses import asdict
 from datetime import datetime, timezone
+import re
 from typing import Any
 from uuid import uuid4
 
@@ -232,18 +233,21 @@ class _MarketPublicProvider:
                     request_id=request_id,
                 )
             if capability == "market.event.read":
-                if not isinstance(request, EventReadRequest) or request.event_id < 1:
+                invalid_reason = _invalid_event_read_reason(request)
+                if invalid_reason is not None:
                     return _failure(
                         capability,
                         MarketDataState.NOT_APPLICABLE,
                         MarketFailureKind.CONTRACT_MISMATCH,
                         "invalid_request",
-                        "Invalid event read request",
+                        invalid_reason,
                         correlation_id,
                         request_id,
                     )
-                rows = await self._repository.fetch_intel_feed(item_type="event", limit=200)
-                data = next((row for row in rows if _event_id_from_item(row.get("item_id")) == request.event_id), None)
+                if request.item_id is not None:
+                    data = await self._repository.fetch_intel_event_by_item_id(request.item_id)
+                else:
+                    data = await self._repository.fetch_intel_event_by_legacy_id(request.event_id)
                 if data is None:
                     return _failure(
                         capability,
@@ -494,4 +498,24 @@ def _event_id_from_item(item_id: Any) -> int | None:
         return int(parts[1])
     if len(parts) >= 3 and parts[:2] == ["event", "jyhf_cdp"] and parts[2].isdigit():
         return int(parts[2])
+    return None
+
+
+def _invalid_event_read_reason(request: Any) -> str | None:
+    if not isinstance(request, EventReadRequest):
+        return "request must be EventReadRequest"
+    if (request.event_id is None) == (request.item_id is None):
+        return "exactly one of event_id or item_id is required"
+    if request.event_id is not None:
+        if isinstance(request.event_id, bool) or not isinstance(request.event_id, int) or request.event_id < 1:
+            return "event_id must be a positive integer"
+    else:
+        item_id = request.item_id
+        if not isinstance(item_id, str):
+            return "item_id must be a source-namespaced string"
+        valid_identity = re.fullmatch(r"event:\d+:.+", item_id) or re.fullmatch(
+            r"event:jyhf_cdp:\d+", item_id
+        )
+        if valid_identity is None:
+            return "item_id must be a canonical source-namespaced event identity"
     return None

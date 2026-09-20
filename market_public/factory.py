@@ -43,6 +43,12 @@ class _LazyPhase1Repository:
     async def fetch_intel_feed(self, **kwargs):
         return await self._bound().fetch_intel_feed(**kwargs)
 
+    async def fetch_intel_event_by_item_id(self, item_id):
+        return await self._bound().fetch_intel_event_by_item_id(item_id)
+
+    async def fetch_intel_event_by_legacy_id(self, event_id):
+        return await self._bound().fetch_intel_event_by_legacy_id(event_id)
+
     async def fetch_theme_detail(self, subject_key):
         return await self._bound().fetch_theme_detail(subject_key)
 

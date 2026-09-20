@@ -3,6 +3,7 @@ from datetime import date
 import pytest
 
 from market_public import (
+    EventReadRequest,
     MARKET_PUBLIC_CONTRACT_VERSION,
     MarketDataState,
     MarketFailureKind,
@@ -24,9 +25,18 @@ class IntegrationRepository:
         self.errors = errors or {}
         self.linkage_calls = []
         self.recap_calls = []
+        self.exact_event_calls = []
 
     async def fetch_intel_feed(self, **kwargs):
         return []
+
+    async def fetch_intel_event_by_item_id(self, item_id):
+        self.exact_event_calls.append(("item_id", item_id))
+        return {"item_id": item_id, "title": "exact event"}
+
+    async def fetch_intel_event_by_legacy_id(self, event_id):
+        self.exact_event_calls.append(("event_id", event_id))
+        return None
 
     async def fetch_theme_detail(self, subject_key):
         return None
@@ -56,6 +66,10 @@ class FakeRepositoryConnection:
         self.queries.append((sql, args))
         return self.row
 
+    async def fetch(self, sql, *args):
+        self.queries.append((sql, args))
+        return [self.row] if self.row is not None else []
+
 
 class FakeRepositoryPool:
     def __init__(self, row):
@@ -69,6 +83,12 @@ class FakeRepositoryPool:
 
     async def __aexit__(self, exc_type, exc, traceback):
         return None
+
+
+class DateSensitiveConnection(FakeRepositoryConnection):
+    async def fetchrow(self, sql, *args):
+        assert args and isinstance(args[0], date) and not isinstance(args[0], str)
+        return await super().fetchrow(sql, *args)
 
 
 def linkage_row(**overrides):
@@ -124,7 +144,7 @@ def provider(repository):
 def test_public_contract_adds_exactly_two_new_capabilities():
     from market_public import CAPABILITIES
 
-    assert MARKET_PUBLIC_CONTRACT_VERSION == "0.3.0"
+    assert MARKET_PUBLIC_CONTRACT_VERSION == "0.3.1"
     assert set(CAPABILITIES) == {
         "market.event.resolve",
         "market.event.read",
@@ -374,6 +394,25 @@ async def test_state_missing_snapshot_is_success_empty_without_failure():
 
 
 @pytest.mark.asyncio
+@pytest.mark.parametrize(
+    "item_id",
+    ["event:8410:9043089", "event:jyhf_cdp:166793"],
+)
+async def test_event_read_roundtrips_source_namespaced_identity_without_feed_scan(item_id):
+    repository = IntegrationRepository()
+
+    result = await provider(repository).execute(
+        "market.event.read",
+        EventReadRequest(item_id=item_id),
+    )
+
+    assert result.operation_status is MarketOperationStatus.SUCCESS
+    assert result.data_state is MarketDataState.READY
+    assert result.payload == {"item_id": item_id, "title": "exact event"}
+    assert repository.exact_event_calls == [("item_id", item_id)]
+
+
+@pytest.mark.asyncio
 async def test_state_invalid_date_precedes_exact_date_repository_call():
     repository = IntegrationRepository()
 
@@ -464,6 +503,8 @@ async def test_factory_lazy_repository_exposes_both_private_read_paths():
         limit=3,
     )
     await factory_repository.get_existing_post_market_recap_snapshot("2026-09-18")
+    await factory_repository.fetch_intel_event_by_item_id("event:8410:9043089")
+    await factory_repository.fetch_intel_event_by_legacy_id(8410)
 
     assert bound.linkage_calls == [
         {
@@ -474,6 +515,10 @@ async def test_factory_lazy_repository_exposes_both_private_read_paths():
         }
     ]
     assert bound.recap_calls == ["2026-09-18"]
+    assert bound.exact_event_calls == [
+        ("item_id", "event:8410:9043089"),
+        ("event_id", 8410),
+    ]
 
 
 @pytest.mark.asyncio
@@ -482,14 +527,33 @@ async def test_phase1_recap_read_is_exact_date_without_latest_fallback():
         database_url="postgresql://example.invalid/market"
     )
     pool = FakeRepositoryPool(recap_row())
+    pool.connection = DateSensitiveConnection(recap_row())
     repository._pool = pool
 
     result = await repository.get_existing_post_market_recap_snapshot("2026-09-18")
 
     assert result["trade_date"] == date(2026, 9, 18)
     sql, args = pool.connection.queries[0]
-    assert args == ("2026-09-18",)
+    assert args == (date(2026, 9, 18),)
     assert "FROM post_market_recap_snapshot" in sql
     assert "WHERE trade_date = $1::date" in sql
     assert "LIMIT 1" in sql
     assert "MAX(" not in sql
+
+
+@pytest.mark.asyncio
+async def test_phase1_exact_event_reads_are_identity_bound_not_top_n_scans():
+    repository = Phase1MarketStateReadRepository(
+        database_url="postgresql://example.invalid/market"
+    )
+    pool = FakeRepositoryPool(None)
+    repository._pool = pool
+
+    await repository.fetch_intel_event_by_item_id("event:8410:9043089")
+    await repository.fetch_intel_event_by_item_id("event:jyhf_cdp:166793")
+    await repository.fetch_intel_event_by_legacy_id(8410)
+
+    sql_values = [sql for sql, _ in pool.connection.queries]
+    assert any("ne.id = $1::bigint" in sql for sql in sql_values)
+    assert any("subject_history_staging" in sql and "id = $1::bigint" in sql for sql in sql_values)
+    assert all("LIMIT 200" not in sql for sql in sql_values)
