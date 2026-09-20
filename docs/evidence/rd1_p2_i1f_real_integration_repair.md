@@ -5,7 +5,7 @@
 - Repair base: `0e6b599614842085e3f6cb505a0695ae5a80d1c3`
 - Core context: `71919611416ad8c440f8a2d06995947181d846f4`
 - Preflight evidence base: `32eb97dad2356b1631aacd98abc9da96b50d34de`
-- Scope: Market-only repair of MKT-I1E-01 and MKT-I1E-02.
+- Scope: Market-only repair of MKT-I1E-01, MKT-I1E-02, and the narrowly authorized `2026-05-15` persisted-state projection defect.
 
 ## MKT-I1E-01
 
@@ -37,27 +37,42 @@ Real source-family roundtrips succeeded:
 
 Both reads returned `SUCCESS/READY` with the exact resolve identity preserved.
 
+## Narrow State Projection Repair
+
+The frozen `2026-05-15` row remains bound to the exact requested date and is read once from `post_market_recap_snapshot`. The reader now normalizes only within that already-selected payload:
+
+```text
+payload.market_overview_review
+payload.recap_doc.market_overview_review
+```
+
+If both review fields exist and conflict, projection fails closed. The public source reflects the physical selected path, and the row identity exposes the persisted non-empty `snapshot_version`. There is no second query, alternate table, latest-date selection, TDX read, board-pool read, `MarketMetricsService`, or synthetic reconstruction.
+
+Real execution for frozen `2026-05-15` returns:
+
+```text
+operation_status = SUCCESS
+data_state = READY
+trade_date = 2026-05-15
+source = post_market_recap_snapshot.payload.recap_doc.market_overview_review
+failures = ()
+```
+
+Real execution for no-row `2026-07-10` still returns `SUCCESS/EMPTY`.
+
 ## Exact #124 Rerun
 
-The exact #124 harness was run against the repaired Market code. Four capabilities passed:
+The exact #124 harness was run against the repaired Market code. All five capabilities passed:
 
 ```text
 market.event.resolve        SUCCESS / READY
 market.event.read           SUCCESS / READY
 market.product.read         SUCCESS / READY
 market.product.linkage.read SUCCESS / READY
+market.state.read           SUCCESS / READY
 ```
 
-Core execution and envelope semantic preservation passed for all five capabilities.
-
-`market.state.read` for the frozen #124 date `2026-05-15` no longer fails with `repository_protocol_failed`. It now reaches the persisted row and exposes a separate, pre-existing data-shape defect:
-
-```text
-MarketInternalFailure / market_overview_review_invalid
-snapshot payload.market_overview_review must be a mapping
-```
-
-The row exists, but its direct `payload` contains `version` and `recap_doc`; the expected `market_overview_review` is nested under `recap_doc`. Rewriting that projection or reading `recap_doc` was outside MKT-I1E-01/MKT-I1E-02 and would change the explicitly frozen public fact path.
+Core execution and envelope semantic preservation passed for all five capabilities. The frozen state check confirms the exact `2026-05-15` date and row source identity. The linkage projection check confirms all narrow fields, excludes `detail_html`/`price`/`pct_chg`, and preserves `source_type`.
 
 ## Supplemental Diagnostic
 
