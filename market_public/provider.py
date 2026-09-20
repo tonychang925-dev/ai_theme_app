@@ -1,7 +1,10 @@
 """The sole Julia-facing Market provider."""
+
 from __future__ import annotations
 
+from dataclasses import asdict
 from datetime import datetime, timezone
+import re
 from typing import Any
 from uuid import uuid4
 
@@ -16,7 +19,19 @@ from .contracts import (
     MarketFailureKind,
     MarketOperationStatus,
     MarketResultEnvelope,
+    MarketStateReadRequest,
+    ProductLinkageReadRequest,
     ProductReadRequest,
+)
+from .private.market_state import (
+    MarketStateReader,
+    MarketStateRequest,
+    MarketStateStatus,
+)
+from .private.product_linkage import (
+    MarketProductLinkageReader,
+    ProductLinkageRequest,
+    ProductLinkageStatus,
 )
 from .provenance import MarketProvenance
 
@@ -29,15 +44,21 @@ def _is_dependency_failure(exc: Exception) -> bool:
         import asyncpg
     except ImportError:
         return exc.__class__.__name__ in {
-            "PostgresConnectionError", "CannotConnectNowError",
-            "ConnectionDoesNotExistError", "TooManyConnectionsError",
+            "PostgresConnectionError",
+            "CannotConnectNowError",
+            "ConnectionDoesNotExistError",
+            "TooManyConnectionsError",
         }
-    types = tuple(cls for cls in (
-        getattr(asyncpg, "PostgresConnectionError", None),
-        getattr(asyncpg, "CannotConnectNowError", None),
-        getattr(asyncpg, "ConnectionDoesNotExistError", None),
-        getattr(asyncpg, "TooManyConnectionsError", None),
-    ) if isinstance(cls, type))
+    types = tuple(
+        cls
+        for cls in (
+            getattr(asyncpg, "PostgresConnectionError", None),
+            getattr(asyncpg, "CannotConnectNowError", None),
+            getattr(asyncpg, "ConnectionDoesNotExistError", None),
+            getattr(asyncpg, "TooManyConnectionsError", None),
+        )
+        if isinstance(cls, type)
+    )
     return bool(types) and isinstance(exc, types)
 
 
@@ -52,7 +73,13 @@ def _source_refs(data: Any) -> tuple[str, ...]:
     for row in rows:
         if not isinstance(row, dict):
             continue
-        for key in ("source_ref", "source_channel", "source_system", "source"):
+        for key in (
+            "source_ref",
+            "source_channel",
+            "source_system",
+            "source",
+            "source_type",
+        ):
             value = row.get(key)
             if isinstance(value, str) and value.strip():
                 refs.add(value.strip())
@@ -73,7 +100,9 @@ def _public_object_refs(data: Any) -> tuple[str, ...]:
     return tuple(sorted(refs))
 
 
-def _provenance(capability: str, data: Any, correlation_id: str, produced_at: str) -> MarketProvenance:
+def _provenance(
+    capability: str, data: Any, correlation_id: str, produced_at: str
+) -> MarketProvenance:
     # No capability-specific mandatory provenance profile is frozen for these
     # current runtime capabilities. Preserve available evidence, but keep the
     # status explicitly INCOMPLETE until a concrete profile is selected.
@@ -140,6 +169,8 @@ class _MarketPublicProvider:
 
     def __init__(self, repository: Any):
         self._repository = repository
+        self._product_linkage_reader = MarketProductLinkageReader(repository)
+        self._market_state_reader = MarketStateReader(repository)
 
     async def execute(
         self,
@@ -197,11 +228,15 @@ class _MarketPublicProvider:
                             request_id,
                         )
                 data = await self._repository.fetch_intel_feed(
-                    feed_date=request.feed_date, stock_id=request.stock_id,
-                    item_type="event", limit=request.limit,
+                    feed_date=request.feed_date,
+                    stock_id=request.stock_id,
+                    item_type="event",
+                    limit=request.limit,
                 )
                 if request.stock_id:
-                    data = [row for row in data if row.get("source_channel") != "jyhf_cdp"]
+                    data = [
+                        row for row in data if row.get("source_channel") != "jyhf_cdp"
+                    ]
                 return _result(
                     capability,
                     operation_status=MarketOperationStatus.SUCCESS,
@@ -211,18 +246,25 @@ class _MarketPublicProvider:
                     request_id=request_id,
                 )
             if capability == "market.event.read":
-                if not isinstance(request, EventReadRequest) or request.event_id < 1:
+                invalid_reason = _invalid_event_read_reason(request)
+                if invalid_reason is not None:
                     return _failure(
                         capability,
                         MarketDataState.NOT_APPLICABLE,
                         MarketFailureKind.CONTRACT_MISMATCH,
                         "invalid_request",
-                        "Invalid event read request",
+                        invalid_reason,
                         correlation_id,
                         request_id,
                     )
-                rows = await self._repository.fetch_intel_feed(item_type="event", limit=200)
-                data = next((row for row in rows if _event_id_from_item(row.get("item_id")) == request.event_id), None)
+                if request.item_id is not None:
+                    data = await self._repository.fetch_intel_event_by_item_id(
+                        request.item_id
+                    )
+                else:
+                    data = await self._repository.fetch_intel_event_by_event_id(
+                        request.event_id
+                    )
                 if data is None:
                     return _failure(
                         capability,
@@ -275,6 +317,18 @@ class _MarketPublicProvider:
                     correlation_id=correlation_id,
                     request_id=request_id,
                 )
+            if capability == "market.product.linkage.read":
+                return await self._execute_product_linkage(
+                    request,
+                    correlation_id=correlation_id,
+                    request_id=request_id,
+                )
+            if capability == "market.state.read":
+                return await self._execute_market_state(
+                    request,
+                    correlation_id=correlation_id,
+                    request_id=request_id,
+                )
             return _failure(
                 capability,
                 MarketDataState.NOT_APPLICABLE,
@@ -305,6 +359,149 @@ class _MarketPublicProvider:
                 request_id,
             )
 
+    async def _execute_product_linkage(
+        self,
+        request: Any,
+        *,
+        correlation_id: str,
+        request_id: str | None,
+    ) -> MarketResultEnvelope:
+        capability = "market.product.linkage.read"
+        if not isinstance(request, ProductLinkageReadRequest):
+            return _failure(
+                capability,
+                MarketDataState.NOT_APPLICABLE,
+                MarketFailureKind.CONTRACT_MISMATCH,
+                "invalid_request",
+                "Invalid product linkage request",
+                correlation_id,
+                request_id,
+            )
+        private_result = await self._product_linkage_reader.read(
+            ProductLinkageRequest(
+                subject_key=request.subject_key,
+                mapping_scope=request.mapping_scope,
+                include_leaders=request.include_leaders,
+                limit=request.limit,
+            )
+        )
+        if private_result.status is ProductLinkageStatus.READY:
+            return _result(
+                capability,
+                operation_status=MarketOperationStatus.SUCCESS,
+                data_state=MarketDataState.READY,
+                payload=[asdict(row) for row in private_result.rows],
+                correlation_id=correlation_id,
+                request_id=request_id,
+            )
+        if private_result.status is ProductLinkageStatus.EMPTY:
+            return _result(
+                capability,
+                operation_status=MarketOperationStatus.SUCCESS,
+                data_state=MarketDataState.EMPTY,
+                payload=[],
+                correlation_id=correlation_id,
+                request_id=request_id,
+            )
+        if private_result.status is ProductLinkageStatus.INVALID_REQUEST:
+            return _failure(
+                capability,
+                MarketDataState.NOT_APPLICABLE,
+                MarketFailureKind.CONTRACT_MISMATCH,
+                private_result.failure.code,
+                private_result.failure.message,
+                correlation_id,
+                request_id,
+            )
+        if private_result.status is ProductLinkageStatus.DEPENDENCY_UNAVAILABLE:
+            return _failure(
+                capability,
+                MarketDataState.UNAVAILABLE,
+                MarketFailureKind.UNAVAILABLE,
+                private_result.failure.code,
+                private_result.failure.message,
+                correlation_id,
+                request_id,
+            )
+        return _failure(
+            capability,
+            MarketDataState.UNAVAILABLE,
+            MarketFailureKind.INTERNAL_FAILURE,
+            private_result.failure.code,
+            private_result.failure.message,
+            correlation_id,
+            request_id,
+        )
+
+    async def _execute_market_state(
+        self,
+        request: Any,
+        *,
+        correlation_id: str,
+        request_id: str | None,
+    ) -> MarketResultEnvelope:
+        capability = "market.state.read"
+        if not isinstance(request, MarketStateReadRequest):
+            return _failure(
+                capability,
+                MarketDataState.NOT_APPLICABLE,
+                MarketFailureKind.CONTRACT_MISMATCH,
+                "invalid_request",
+                "Invalid market state request",
+                correlation_id,
+                request_id,
+            )
+        private_result = await self._market_state_reader.read(
+            MarketStateRequest(trade_date=request.trade_date)
+        )
+        if private_result.status is MarketStateStatus.READY:
+            return _result(
+                capability,
+                operation_status=MarketOperationStatus.SUCCESS,
+                data_state=MarketDataState.READY,
+                payload=asdict(private_result.snapshot),
+                correlation_id=correlation_id,
+                request_id=request_id,
+            )
+        if private_result.status is MarketStateStatus.EMPTY:
+            return _result(
+                capability,
+                operation_status=MarketOperationStatus.SUCCESS,
+                data_state=MarketDataState.EMPTY,
+                payload=None,
+                correlation_id=correlation_id,
+                request_id=request_id,
+            )
+        if private_result.status is MarketStateStatus.INVALID_REQUEST:
+            return _failure(
+                capability,
+                MarketDataState.NOT_APPLICABLE,
+                MarketFailureKind.CONTRACT_MISMATCH,
+                private_result.failure.code,
+                private_result.failure.message,
+                correlation_id,
+                request_id,
+            )
+        if private_result.status is MarketStateStatus.DEPENDENCY_UNAVAILABLE:
+            return _failure(
+                capability,
+                MarketDataState.UNAVAILABLE,
+                MarketFailureKind.UNAVAILABLE,
+                private_result.failure.code,
+                private_result.failure.message,
+                correlation_id,
+                request_id,
+            )
+        return _failure(
+            capability,
+            MarketDataState.UNAVAILABLE,
+            MarketFailureKind.INTERNAL_FAILURE,
+            private_result.failure.code,
+            private_result.failure.message,
+            correlation_id,
+            request_id,
+        )
+
     async def close(self) -> None:
         await self._repository.close()
 
@@ -318,4 +515,28 @@ def _event_id_from_item(item_id: Any) -> int | None:
         return int(parts[1])
     if len(parts) >= 3 and parts[:2] == ["event", "jyhf_cdp"] and parts[2].isdigit():
         return int(parts[2])
+    return None
+
+
+def _invalid_event_read_reason(request: Any) -> str | None:
+    if not isinstance(request, EventReadRequest):
+        return "request must be EventReadRequest"
+    if (request.event_id is None) == (request.item_id is None):
+        return "exactly one of event_id or item_id is required"
+    if request.event_id is not None:
+        if (
+            isinstance(request.event_id, bool)
+            or not isinstance(request.event_id, int)
+            or request.event_id < 1
+        ):
+            return "event_id must be a positive integer"
+    else:
+        item_id = request.item_id
+        if not isinstance(item_id, str):
+            return "item_id must be a source-namespaced string"
+        valid_identity = re.fullmatch(r"event:\d+:.+", item_id) or re.fullmatch(
+            r"event:jyhf_cdp:\d+", item_id
+        )
+        if valid_identity is None:
+            return "item_id must be a canonical source-namespaced event identity"
     return None

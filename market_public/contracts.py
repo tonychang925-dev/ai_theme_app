@@ -1,4 +1,5 @@
 """Julia-facing, transport-neutral Market contracts."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -12,7 +13,7 @@ if TYPE_CHECKING:
 # Implementation identifiers for the current public boundary.  The architecture
 # requires an inspectable contract version / boundary reference but does not
 # freeze these exact literals as semantic law.
-MARKET_PUBLIC_CONTRACT_VERSION = "0.2.1"
+MARKET_PUBLIC_CONTRACT_VERSION = "0.3.1"
 MARKET_BOUNDARY_IDENTITY_REF = "market.public"
 
 
@@ -71,6 +72,8 @@ CAPABILITIES = {
         "market.event.resolve",
         "market.event.read",
         "market.product.read",
+        "market.product.linkage.read",
+        "market.state.read",
     )
 }
 
@@ -84,12 +87,33 @@ class EventResolveRequest:
 
 @dataclass(frozen=True)
 class EventReadRequest:
-    event_id: int
+    """Exact event selector.
+
+    ``item_id`` is the canonical source-namespaced identity emitted by resolve.
+    ``event_id`` is an integer compatibility selector for the news_event
+    namespace only. Exactly one selector must be supplied.
+    """
+
+    event_id: int | None = None
+    item_id: str | None = None
 
 
 @dataclass(frozen=True)
 class ProductReadRequest:
     subject_key: str
+
+
+@dataclass(frozen=True)
+class ProductLinkageReadRequest:
+    subject_key: str
+    mapping_scope: str = "pool"
+    include_leaders: bool = False
+    limit: int = 100
+
+
+@dataclass(frozen=True)
+class MarketStateReadRequest:
+    trade_date: str
 
 
 @dataclass(frozen=True)
@@ -129,4 +153,6 @@ class MarketResultEnvelope:
             self.operation_status is MarketOperationStatus.FAILURE
             and self.data_state is MarketDataState.EMPTY
         ):
-            raise ValueError("FAILURE + EMPTY is forbidden by the Market public contract")
+            raise ValueError(
+                "FAILURE + EMPTY is forbidden by the Market public contract"
+            )
