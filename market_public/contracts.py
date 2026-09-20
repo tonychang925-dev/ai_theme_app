@@ -1,4 +1,5 @@
 """Julia-facing, transport-neutral Market contracts."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -89,9 +90,8 @@ class EventReadRequest:
     """Exact event selector.
 
     ``item_id`` is the canonical source-namespaced identity emitted by resolve.
-    ``event_id`` remains a legacy selector: Market first checks the news-event
-    namespace and then the JYHF CDP staging namespace. It does not scan a
-    transient top-N feed.
+    ``event_id`` is an integer compatibility selector for the news_event
+    namespace only. Exactly one selector must be supplied.
     """
 
     event_id: int | None = None
@@ -153,4 +153,6 @@ class MarketResultEnvelope:
             self.operation_status is MarketOperationStatus.FAILURE
             and self.data_state is MarketDataState.EMPTY
         ):
-            raise ValueError("FAILURE + EMPTY is forbidden by the Market public contract")
+            raise ValueError(
+                "FAILURE + EMPTY is forbidden by the Market public contract"
+            )

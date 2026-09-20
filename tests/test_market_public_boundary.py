@@ -31,7 +31,12 @@ def test_exact_capability_metadata():
         "market.state.read",
     }
     for metadata in CAPABILITIES.values():
-        assert (metadata.provider, metadata.permission_scope, metadata.side_effect, metadata.c08_required) == ("market", "market.observe", "READ_ONLY", True)
+        assert (
+            metadata.provider,
+            metadata.permission_scope,
+            metadata.side_effect,
+            metadata.c08_required,
+        ) == ("market", "market.observe", "READ_ONLY", True)
 
 
 def test_public_exports_use_canonical_result_truth_only():
@@ -44,7 +49,9 @@ def test_public_exports_use_canonical_result_truth_only():
 
 
 def test_factory_owns_private_composition():
-    provider = MarketPublicFactory.create(database_url="postgresql://example.invalid/market")
+    provider = MarketPublicFactory.create(
+        database_url="postgresql://example.invalid/market"
+    )
     assert provider._repository.__class__.__name__ == "_LazyPhase1Repository"
     assert not hasattr(__import__("market_public"), "MarketPublicProvider")
 
@@ -93,8 +100,8 @@ class RepoFixture:
             return {"item_id": item_id, "title": "real event"}
         return None
 
-    async def fetch_intel_event_by_legacy_id(self, event_id):
-        self.calls.append({"exact_legacy_event_id": event_id})
+    async def fetch_intel_event_by_event_id(self, event_id):
+        self.calls.append({"exact_news_event_id": event_id})
         if event_id == 7:
             return {"item_id": "event:7:theme:1", "title": "real event"}
         return None
@@ -122,7 +129,9 @@ async def test_provider_unit_execution_with_isolated_repository():
     assert event.data_state is MarketDataState.READY
     assert event.payload["item_id"] == "event:7:theme:1"
 
-    product = await provider.execute("market.product.read", ProductReadRequest("theme:1"))
+    product = await provider.execute(
+        "market.product.read", ProductReadRequest("theme:1")
+    )
     assert product.operation_status is MarketOperationStatus.SUCCESS
     assert product.data_state is MarketDataState.READY
     assert product.payload["theme_name"] == "real product"
@@ -136,7 +145,9 @@ async def test_event_resolve_valid_zero_match_is_success_empty():
 
     from market_public.provider import _MarketPublicProvider
 
-    result = await _MarketPublicProvider(Empty()).execute("market.event.resolve", EventResolveRequest())
+    result = await _MarketPublicProvider(Empty()).execute(
+        "market.event.resolve", EventResolveRequest()
+    )
     assert result.operation_status is MarketOperationStatus.SUCCESS
     assert result.data_state is MarketDataState.EMPTY
     assert result.payload == []
@@ -151,7 +162,9 @@ async def test_dependency_failure_is_typed_and_closed():
 
     from market_public.provider import _MarketPublicProvider
 
-    result = await _MarketPublicProvider(Broken()).execute("market.product.read", ProductReadRequest("theme:1"))
+    result = await _MarketPublicProvider(Broken()).execute(
+        "market.product.read", ProductReadRequest("theme:1")
+    )
     assert result.operation_status is MarketOperationStatus.FAILURE
     assert result.data_state is MarketDataState.UNAVAILABLE
     assert result.payload is None
@@ -162,7 +175,9 @@ async def test_dependency_failure_is_typed_and_closed():
 async def test_invalid_requests_are_contract_mismatch_not_applicable():
     from market_public.provider import _MarketPublicProvider
 
-    result = await _MarketPublicProvider(RepoFixture()).execute("market.event.read", EventReadRequest(0))
+    result = await _MarketPublicProvider(RepoFixture()).execute(
+        "market.event.read", EventReadRequest(0)
+    )
     assert result.operation_status is MarketOperationStatus.FAILURE
     assert result.data_state is MarketDataState.NOT_APPLICABLE
     assert result.payload is None
@@ -173,7 +188,9 @@ async def test_invalid_requests_are_contract_mismatch_not_applicable():
 async def test_unknown_capability_is_contract_mismatch_not_applicable():
     from market_public.provider import _MarketPublicProvider
 
-    result = await _MarketPublicProvider(RepoFixture()).execute("market.unknown", object())
+    result = await _MarketPublicProvider(RepoFixture()).execute(
+        "market.unknown", object()
+    )
     assert result.operation_status is MarketOperationStatus.FAILURE
     assert result.data_state is MarketDataState.NOT_APPLICABLE
     assert result.failures[0].kind is MarketFailureKind.CONTRACT_MISMATCH
@@ -183,10 +200,40 @@ async def test_unknown_capability_is_contract_mismatch_not_applicable():
 async def test_event_read_missing_id_is_object_not_found_not_applicable():
     from market_public.provider import _MarketPublicProvider
 
-    result = await _MarketPublicProvider(RepoFixture()).execute("market.event.read", EventReadRequest(999))
+    result = await _MarketPublicProvider(RepoFixture()).execute(
+        "market.event.read", EventReadRequest(999)
+    )
     assert result.operation_status is MarketOperationStatus.FAILURE
     assert result.data_state is MarketDataState.NOT_APPLICABLE
     assert result.failures[0].kind is MarketFailureKind.OBJECT_NOT_FOUND
+
+
+@pytest.mark.asyncio
+async def test_event_id_is_news_only_and_never_falls_back_to_jyhf_identity():
+    from market_public.provider import _MarketPublicProvider
+
+    class JyhfAtNewsId(RepoFixture):
+        async def fetch_intel_event_by_item_id(self, item_id):
+            self.calls.append({"exact_item_id": item_id})
+            if item_id == "event:jyhf_cdp:999":
+                return {"item_id": item_id, "title": "JYHF event"}
+            return None
+
+    repo = JyhfAtNewsId()
+    result = await _MarketPublicProvider(repo).execute(
+        "market.event.read", EventReadRequest(999)
+    )
+
+    assert result.operation_status is MarketOperationStatus.FAILURE
+    assert result.data_state is MarketDataState.NOT_APPLICABLE
+    assert result.payload is None
+    assert result.failures[0].kind is MarketFailureKind.OBJECT_NOT_FOUND
+    assert result.failures[0].code == "event_not_found"
+    assert repo.calls == [{"exact_news_event_id": 999}]
+    assert (
+        sum(call.get("exact_item_id") == "event:jyhf_cdp:999" for call in repo.calls)
+        == 0
+    )
 
 
 @pytest.mark.asyncio
@@ -255,7 +302,9 @@ async def test_real_db_connection_failure_classification():
         async def fetch_theme_detail(self, subject_key):
             raise PostgresConnectionError("connection refused")
 
-    result = await _MarketPublicProvider(Broken()).execute("market.product.read", ProductReadRequest("theme:1"))
+    result = await _MarketPublicProvider(Broken()).execute(
+        "market.product.read", ProductReadRequest("theme:1")
+    )
     assert result.operation_status is MarketOperationStatus.FAILURE
     assert result.data_state is MarketDataState.UNAVAILABLE
     assert result.failures[0].kind is MarketFailureKind.UNAVAILABLE
@@ -368,7 +417,9 @@ async def test_real_domain_binding_without_database(monkeypatch):
     from theme_service.repositories.phase1_read_repository import Phase1ReadRepository
 
     monkeypatch.setitem(sys.modules, "asyncpg", types.SimpleNamespace(Pool=object))
-    provider = MarketPublicFactory.create(database_url="postgresql://example.invalid/market")
+    provider = MarketPublicFactory.create(
+        database_url="postgresql://example.invalid/market"
+    )
     real_repository = provider._repository._bound()
     assert isinstance(real_repository, Phase1ReadRepository)
 
@@ -376,7 +427,9 @@ async def test_real_domain_binding_without_database(monkeypatch):
         return {"subject_key": subject_key, "source": "current-main-domain"}
 
     monkeypatch.setattr(real_repository, "fetch_theme_detail", fake_detail)
-    result = await provider.execute("market.product.read", ProductReadRequest("theme:1"))
+    result = await provider.execute(
+        "market.product.read", ProductReadRequest("theme:1")
+    )
     assert result.operation_status is MarketOperationStatus.SUCCESS
     assert result.data_state is MarketDataState.READY
     assert result.payload["source"] == "current-main-domain"

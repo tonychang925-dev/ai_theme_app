@@ -26,6 +26,7 @@ class IntegrationRepository:
         self.linkage_calls = []
         self.recap_calls = []
         self.exact_event_calls = []
+        self.news_event_id_exists = False
 
     async def fetch_intel_feed(self, **kwargs):
         return []
@@ -34,9 +35,11 @@ class IntegrationRepository:
         self.exact_event_calls.append(("item_id", item_id))
         return {"item_id": item_id, "title": "exact event"}
 
-    async def fetch_intel_event_by_legacy_id(self, event_id):
+    async def fetch_intel_event_by_event_id(self, event_id):
         self.exact_event_calls.append(("event_id", event_id))
-        return None
+        if not self.news_event_id_exists:
+            return None
+        return {"item_id": f"event:{event_id}:9043089", "title": "exact news event"}
 
     async def fetch_theme_detail(self, subject_key):
         return None
@@ -441,6 +444,43 @@ async def test_event_read_roundtrips_source_namespaced_identity_without_feed_sca
 
 
 @pytest.mark.asyncio
+async def test_event_id_reads_exact_news_event_only():
+    repository = IntegrationRepository()
+    repository.news_event_id_exists = True
+
+    result = await provider(repository).execute(
+        "market.event.read",
+        EventReadRequest(event_id=8410),
+    )
+
+    assert result.operation_status is MarketOperationStatus.SUCCESS
+    assert result.data_state is MarketDataState.READY
+    assert result.payload == {
+        "item_id": "event:8410:9043089",
+        "title": "exact news event",
+    }
+    assert repository.exact_event_calls == [("event_id", 8410)]
+
+
+@pytest.mark.asyncio
+async def test_event_id_news_miss_never_calls_exact_jyhf_identity():
+    repository = IntegrationRepository()
+
+    result = await provider(repository).execute(
+        "market.event.read",
+        EventReadRequest(event_id=166793),
+    )
+
+    assert result.operation_status is MarketOperationStatus.FAILURE
+    assert result.data_state is MarketDataState.NOT_APPLICABLE
+    assert result.payload is None
+    assert result.failures[0].kind is MarketFailureKind.OBJECT_NOT_FOUND
+    assert result.failures[0].code == "event_not_found"
+    assert repository.exact_event_calls == [("event_id", 166793)]
+    assert ("item_id", "event:jyhf_cdp:166793") not in repository.exact_event_calls
+
+
+@pytest.mark.asyncio
 async def test_state_invalid_date_precedes_exact_date_repository_call():
     repository = IntegrationRepository()
 
@@ -558,7 +598,7 @@ async def test_factory_lazy_repository_exposes_both_private_read_paths():
     )
     await factory_repository.get_existing_post_market_recap_snapshot("2026-09-18")
     await factory_repository.fetch_intel_event_by_item_id("event:8410:9043089")
-    await factory_repository.fetch_intel_event_by_legacy_id(8410)
+    await factory_repository.fetch_intel_event_by_event_id(8410)
 
     assert bound.linkage_calls == [
         {
@@ -605,7 +645,7 @@ async def test_phase1_exact_event_reads_are_identity_bound_not_top_n_scans():
 
     await repository.fetch_intel_event_by_item_id("event:8410:9043089")
     await repository.fetch_intel_event_by_item_id("event:jyhf_cdp:166793")
-    await repository.fetch_intel_event_by_legacy_id(8410)
+    await repository.fetch_intel_event_by_event_id(8410)
 
     sql_values = [sql for sql, _ in pool.connection.queries]
     assert any("ne.id = $1::bigint" in sql for sql in sql_values)
@@ -613,4 +653,7 @@ async def test_phase1_exact_event_reads_are_identity_bound_not_top_n_scans():
         "subject_history_staging" in sql and "id = $1::bigint" in sql
         for sql in sql_values
     )
+    event_id_sql = sql_values[-1]
+    assert "FROM news_event ne" in event_id_sql
+    assert "subject_history_staging" not in event_id_sql
     assert all("LIMIT 200" not in sql for sql in sql_values)

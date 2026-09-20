@@ -1,4 +1,5 @@
 """Market-owned exact-date post-market recap read port."""
+
 from __future__ import annotations
 
 from datetime import date
@@ -28,7 +29,9 @@ class Phase1MarketStateReadRepository(Phase1ReadRepository):
             row = await conn.fetchrow(sql, parsed_date)
             return dict(row) if row else None
 
-    async def fetch_intel_event_by_item_id(self, item_id: str) -> Optional[Dict[str, Any]]:
+    async def fetch_intel_event_by_item_id(
+        self, item_id: str
+    ) -> Optional[Dict[str, Any]]:
         await self.initialize()
         match = re.fullmatch(r"event:(\d+):(.+)", item_id)
         if match:
@@ -39,12 +42,11 @@ class Phase1MarketStateReadRepository(Phase1ReadRepository):
             return await self._fetch_exact_jyhf_cdp_event(int(match.group(1)))
         return None
 
-    async def fetch_intel_event_by_legacy_id(self, event_id: int) -> Optional[Dict[str, Any]]:
+    async def fetch_intel_event_by_event_id(
+        self, event_id: int
+    ) -> Optional[Dict[str, Any]]:
         await self.initialize()
-        event = await self._fetch_exact_news_event_by_id(event_id)
-        if event is not None:
-            return event
-        return await self._fetch_exact_jyhf_cdp_event(event_id)
+        return await self._fetch_exact_news_event_by_id(event_id)
 
     async def _fetch_exact_news_event(
         self,
@@ -56,13 +58,17 @@ class Phase1MarketStateReadRepository(Phase1ReadRepository):
             rows = await conn.fetch(sql, event_id, subject_key, 1)
         return await self._public_event_row(rows[0]) if rows else None
 
-    async def _fetch_exact_news_event_by_id(self, event_id: int) -> Optional[Dict[str, Any]]:
+    async def _fetch_exact_news_event_by_id(
+        self, event_id: int
+    ) -> Optional[Dict[str, Any]]:
         sql = self._news_event_sql("ne.id = $1::bigint", "$2::text")
         async with self._pool.acquire() as conn:
             rows = await conn.fetch(sql, event_id, None, 1)
         return await self._public_event_row(rows[0]) if rows else None
 
-    async def _fetch_exact_jyhf_cdp_event(self, staging_id: int) -> Optional[Dict[str, Any]]:
+    async def _fetch_exact_jyhf_cdp_event(
+        self, staging_id: int
+    ) -> Optional[Dict[str, Any]]:
         sql = """
         SELECT
             ('event:jyhf_cdp:' || id::text) AS item_id,

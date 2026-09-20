@@ -1,4 +1,5 @@
 """Market-owned private composition for the Julia-facing provider."""
+
 from __future__ import annotations
 
 import os
@@ -18,9 +19,7 @@ class MarketPublicFactory:
             or os.getenv("MARKET_DATABASE_URL")
             or os.getenv("DATABASE_URL")
         )
-        return _MarketPublicProvider(
-            _LazyPhase1Repository(configured_url)
-        )
+        return _MarketPublicProvider(_LazyPhase1Repository(configured_url))
 
 
 class _LazyPhase1Repository:
@@ -35,6 +34,7 @@ class _LazyPhase1Repository:
             from .private.phase1_market_state_repository import (
                 Phase1MarketStateReadRepository,
             )
+
             self._repository = Phase1MarketStateReadRepository(
                 database_url=self._database_url
             )
@@ -46,8 +46,8 @@ class _LazyPhase1Repository:
     async def fetch_intel_event_by_item_id(self, item_id):
         return await self._bound().fetch_intel_event_by_item_id(item_id)
 
-    async def fetch_intel_event_by_legacy_id(self, event_id):
-        return await self._bound().fetch_intel_event_by_legacy_id(event_id)
+    async def fetch_intel_event_by_event_id(self, event_id):
+        return await self._bound().fetch_intel_event_by_event_id(event_id)
 
     async def fetch_theme_detail(self, subject_key):
         return await self._bound().fetch_theme_detail(subject_key)

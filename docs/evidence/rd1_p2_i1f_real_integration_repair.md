@@ -26,9 +26,9 @@ This closes the original `repository_protocol_failed` defect.
 `EventReadRequest` is contract version `0.3.1` and now accepts exactly one selector:
 
 - canonical source-namespaced `item_id`; or
-- legacy positive integer `event_id`.
+- positive integer `event_id`, which is a news_event-only compatibility selector.
 
-Canonical `event:<news_event_id>:<subject_key>` performs an exact news-event/subject query. Canonical `event:jyhf_cdp:<staging_id>` performs an exact staging-identity query. Legacy IDs first check the news-event namespace, then JYHF CDP, without a top-N scan. Malformed selectors remain `CONTRACT_MISMATCH`; missing identities remain `OBJECT_NOT_FOUND`.
+Canonical `event:<news_event_id>:<subject_key>` performs an exact news-event/subject query. Canonical `event:jyhf_cdp:<staging_id>` performs an exact staging-identity query. An integer `event_id` performs one exact news_event query only and never substitutes a same-number JYHF staging identity. Malformed selectors remain `CONTRACT_MISMATCH`; missing identities remain `OBJECT_NOT_FOUND`.
 
 Real source-family roundtrips succeeded:
 

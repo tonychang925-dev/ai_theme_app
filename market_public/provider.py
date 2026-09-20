@@ -1,4 +1,5 @@
 """The sole Julia-facing Market provider."""
+
 from __future__ import annotations
 
 from dataclasses import asdict
@@ -43,15 +44,21 @@ def _is_dependency_failure(exc: Exception) -> bool:
         import asyncpg
     except ImportError:
         return exc.__class__.__name__ in {
-            "PostgresConnectionError", "CannotConnectNowError",
-            "ConnectionDoesNotExistError", "TooManyConnectionsError",
+            "PostgresConnectionError",
+            "CannotConnectNowError",
+            "ConnectionDoesNotExistError",
+            "TooManyConnectionsError",
         }
-    types = tuple(cls for cls in (
-        getattr(asyncpg, "PostgresConnectionError", None),
-        getattr(asyncpg, "CannotConnectNowError", None),
-        getattr(asyncpg, "ConnectionDoesNotExistError", None),
-        getattr(asyncpg, "TooManyConnectionsError", None),
-    ) if isinstance(cls, type))
+    types = tuple(
+        cls
+        for cls in (
+            getattr(asyncpg, "PostgresConnectionError", None),
+            getattr(asyncpg, "CannotConnectNowError", None),
+            getattr(asyncpg, "ConnectionDoesNotExistError", None),
+            getattr(asyncpg, "TooManyConnectionsError", None),
+        )
+        if isinstance(cls, type)
+    )
     return bool(types) and isinstance(exc, types)
 
 
@@ -93,7 +100,9 @@ def _public_object_refs(data: Any) -> tuple[str, ...]:
     return tuple(sorted(refs))
 
 
-def _provenance(capability: str, data: Any, correlation_id: str, produced_at: str) -> MarketProvenance:
+def _provenance(
+    capability: str, data: Any, correlation_id: str, produced_at: str
+) -> MarketProvenance:
     # No capability-specific mandatory provenance profile is frozen for these
     # current runtime capabilities. Preserve available evidence, but keep the
     # status explicitly INCOMPLETE until a concrete profile is selected.
@@ -219,11 +228,15 @@ class _MarketPublicProvider:
                             request_id,
                         )
                 data = await self._repository.fetch_intel_feed(
-                    feed_date=request.feed_date, stock_id=request.stock_id,
-                    item_type="event", limit=request.limit,
+                    feed_date=request.feed_date,
+                    stock_id=request.stock_id,
+                    item_type="event",
+                    limit=request.limit,
                 )
                 if request.stock_id:
-                    data = [row for row in data if row.get("source_channel") != "jyhf_cdp"]
+                    data = [
+                        row for row in data if row.get("source_channel") != "jyhf_cdp"
+                    ]
                 return _result(
                     capability,
                     operation_status=MarketOperationStatus.SUCCESS,
@@ -245,9 +258,13 @@ class _MarketPublicProvider:
                         request_id,
                     )
                 if request.item_id is not None:
-                    data = await self._repository.fetch_intel_event_by_item_id(request.item_id)
+                    data = await self._repository.fetch_intel_event_by_item_id(
+                        request.item_id
+                    )
                 else:
-                    data = await self._repository.fetch_intel_event_by_legacy_id(request.event_id)
+                    data = await self._repository.fetch_intel_event_by_event_id(
+                        request.event_id
+                    )
                 if data is None:
                     return _failure(
                         capability,
@@ -507,7 +524,11 @@ def _invalid_event_read_reason(request: Any) -> str | None:
     if (request.event_id is None) == (request.item_id is None):
         return "exactly one of event_id or item_id is required"
     if request.event_id is not None:
-        if isinstance(request.event_id, bool) or not isinstance(request.event_id, int) or request.event_id < 1:
+        if (
+            isinstance(request.event_id, bool)
+            or not isinstance(request.event_id, int)
+            or request.event_id < 1
+        ):
             return "event_id must be a positive integer"
     else:
         item_id = request.item_id
