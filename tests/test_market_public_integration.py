@@ -337,12 +337,38 @@ async def test_state_ready_projects_exact_facts_and_source_identity():
             "turnover_yi": 1.23,
         },
         "source": "post_market_recap_snapshot.payload.market_overview_review",
+        "snapshot_version": "post_market_recap.v2",
     }
     assert repository.recap_calls == ["2026-09-18"]
     assert result.request_id == "state-request"
     assert result.correlation_id == "state-correlation"
     assert result.provenance.source_refs == (
         "post_market_recap_snapshot.payload.market_overview_review",
+    )
+
+
+@pytest.mark.asyncio
+async def test_state_ready_supports_wrapped_persisted_recap_shape():
+    repository = IntegrationRepository(
+        recap_row=recap_row(
+            payload={"recap_doc": {"market_overview_review": overview()}}
+        )
+    )
+
+    result = await provider(repository).execute(
+        "market.state.read",
+        MarketStateReadRequest("2026-09-18"),
+    )
+
+    assert result.operation_status is MarketOperationStatus.SUCCESS
+    assert result.data_state is MarketDataState.READY
+    assert result.payload["trade_date"] == "2026-09-18"
+    assert (
+        result.payload["source"]
+        == "post_market_recap_snapshot.payload.recap_doc.market_overview_review"
+    )
+    assert result.provenance.source_refs == (
+        "post_market_recap_snapshot.payload.recap_doc.market_overview_review",
     )
 
 
@@ -398,7 +424,9 @@ async def test_state_missing_snapshot_is_success_empty_without_failure():
     "item_id",
     ["event:8410:9043089", "event:jyhf_cdp:166793"],
 )
-async def test_event_read_roundtrips_source_namespaced_identity_without_feed_scan(item_id):
+async def test_event_read_roundtrips_source_namespaced_identity_without_feed_scan(
+    item_id,
+):
     repository = IntegrationRepository()
 
     result = await provider(repository).execute(
@@ -429,11 +457,11 @@ async def test_state_invalid_date_precedes_exact_date_repository_call():
 
 @pytest.mark.asyncio
 async def test_state_malformed_negative_and_mismatched_facts_fail_closed():
-    malformed = IntegrationRepository(recap_row=recap_row(payload={}))
+    malformed = IntegrationRepository(
+        recap_row=recap_row(payload={"recap_doc": {"market_overview_review": []}})
+    )
     negative = IntegrationRepository(
-        recap_row=recap_row(
-            payload={"market_overview_review": overview(up_count=-1)}
-        )
+        recap_row=recap_row(payload={"market_overview_review": overview(up_count=-1)})
     )
     mismatched = IntegrationRepository(
         recap_row=recap_row(trade_date=date(2026, 9, 17))
@@ -449,6 +477,32 @@ async def test_state_malformed_negative_and_mismatched_facts_fail_closed():
         assert result.failures[0].kind is MarketFailureKind.INTERNAL_FAILURE
         assert result.failures[0].code == "market_overview_review_invalid"
         assert result.payload is None
+
+
+@pytest.mark.asyncio
+async def test_state_conflicting_direct_and_wrapped_reviews_fail_closed():
+    direct = overview(up_count=2400)
+    wrapped = overview(up_count=2399)
+    repository = IntegrationRepository(
+        recap_row=recap_row(
+            payload={
+                "market_overview_review": direct,
+                "recap_doc": {"market_overview_review": wrapped},
+            }
+        )
+    )
+
+    result = await provider(repository).execute(
+        "market.state.read",
+        MarketStateReadRequest("2026-09-18"),
+    )
+
+    assert result.operation_status is MarketOperationStatus.FAILURE
+    assert result.data_state is MarketDataState.UNAVAILABLE
+    assert result.failures[0].kind is MarketFailureKind.INTERNAL_FAILURE
+    assert result.failures[0].code == "market_overview_review_invalid"
+    assert "conflict" in result.failures[0].message
+    assert result.payload is None
 
 
 @pytest.mark.asyncio
@@ -555,5 +609,8 @@ async def test_phase1_exact_event_reads_are_identity_bound_not_top_n_scans():
 
     sql_values = [sql for sql, _ in pool.connection.queries]
     assert any("ne.id = $1::bigint" in sql for sql in sql_values)
-    assert any("subject_history_staging" in sql and "id = $1::bigint" in sql for sql in sql_values)
+    assert any(
+        "subject_history_staging" in sql and "id = $1::bigint" in sql
+        for sql in sql_values
+    )
     assert all("LIMIT 200" not in sql for sql in sql_values)

@@ -40,6 +40,30 @@ async def test_real_state_read_binds_exact_date_and_returns_empty_without_row():
 
 
 @pytest.mark.asyncio
+async def test_real_frozen_state_read_projects_wrapped_recap_review():
+    provider = MarketPublicFactory.create()
+    try:
+        result = await provider.execute(
+            "market.state.read",
+            MarketStateReadRequest(trade_date="2026-05-15"),
+            request_id="repair-state-frozen",
+            correlation_id="repair-state-frozen-correlation",
+        )
+    finally:
+        await provider.close()
+
+    assert result.operation_status is MarketOperationStatus.SUCCESS
+    assert result.data_state is MarketDataState.READY
+    assert result.payload["trade_date"] == "2026-05-15"
+    assert result.payload["source"] == (
+        "post_market_recap_snapshot.payload.recap_doc.market_overview_review"
+    )
+    assert isinstance(result.payload["snapshot_version"], str)
+    assert result.payload["snapshot_version"]
+    assert result.failures == ()
+
+
+@pytest.mark.asyncio
 async def test_real_resolve_read_roundtrip_preserves_both_source_namespaces():
     provider = MarketPublicFactory.create()
     try:

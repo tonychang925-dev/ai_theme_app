@@ -1,4 +1,5 @@
 """Private Market state reader for persisted post-market overview evidence."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -10,6 +11,9 @@ from typing import Any
 
 MARKET_STATE_SOURCE_PATH = ("payload", "market_overview_review")
 MARKET_STATE_SOURCE = "post_market_recap_snapshot.payload.market_overview_review"
+WRAPPED_MARKET_STATE_SOURCE = (
+    "post_market_recap_snapshot.payload.recap_doc.market_overview_review"
+)
 
 
 class MarketStateStatus(str, Enum):
@@ -31,6 +35,7 @@ class MarketStateSnapshot:
     trade_date: str
     breadth: "MarketStateBreadth"
     source: str
+    snapshot_version: str
 
 
 @dataclass(frozen=True)
@@ -135,13 +140,35 @@ class MarketStateReader:
             try:
                 payload = json.loads(payload)
             except json.JSONDecodeError as exc:
-                raise _MarketStateDataIntegrityError("snapshot payload must be JSON") from exc
+                raise _MarketStateDataIntegrityError(
+                    "snapshot payload must be JSON"
+                ) from exc
         if not isinstance(payload, dict):
             raise _MarketStateDataIntegrityError("snapshot payload must be a mapping")
-        overview = payload.get("market_overview_review")
+        recap_document = payload.get("recap_doc")
+        wrapped = isinstance(recap_document, dict) and bool(recap_document)
+        direct_overview = payload.get("market_overview_review")
+        if wrapped:
+            wrapped_overview = recap_document.get("market_overview_review")
+            if (
+                "market_overview_review" in payload
+                and direct_overview != wrapped_overview
+            ):
+                raise _MarketStateDataIntegrityError(
+                    "snapshot payload and recap_doc market_overview_review conflict"
+                )
+            if "market_overview_review" in payload:
+                overview = direct_overview
+                source = MARKET_STATE_SOURCE
+            else:
+                overview = wrapped_overview
+                source = WRAPPED_MARKET_STATE_SOURCE
+        else:
+            overview = direct_overview
+            source = MARKET_STATE_SOURCE
         if not isinstance(overview, dict):
             raise _MarketStateDataIntegrityError(
-                "snapshot payload.market_overview_review must be a mapping"
+                "snapshot market_overview_review must be a mapping"
             )
         stored_date = row.get("trade_date")
         stored_date_text = (
@@ -152,6 +179,11 @@ class MarketStateReader:
         if stored_date_text != requested_date:
             raise _MarketStateDataIntegrityError(
                 "snapshot trade_date must exactly match the requested trade_date"
+            )
+        snapshot_version = row.get("snapshot_version")
+        if not isinstance(snapshot_version, str) or not snapshot_version:
+            raise _MarketStateDataIntegrityError(
+                "snapshot_version must be a non-empty string"
             )
         up_count = _required_int(overview, "up_count")
         down_count = _required_int(overview, "down_count")
@@ -168,7 +200,8 @@ class MarketStateReader:
                 limit_down_count=limit_down_count,
                 turnover_yi=round(total_amount_wan / 10_000, 2),
             ),
-            source=MARKET_STATE_SOURCE,
+            source=source,
+            snapshot_version=snapshot_version,
         )
 
     @staticmethod
