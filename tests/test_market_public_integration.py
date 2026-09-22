@@ -147,13 +147,14 @@ def provider(repository):
 def test_public_contract_adds_exactly_two_new_capabilities():
     from market_public import CAPABILITIES
 
-    assert MARKET_PUBLIC_CONTRACT_VERSION == "0.3.1"
+    assert MARKET_PUBLIC_CONTRACT_VERSION == "0.3.2"
     assert set(CAPABILITIES) == {
         "market.event.resolve",
         "market.event.read",
         "market.product.read",
         "market.product.linkage.read",
         "market.state.read",
+        "market.stock.quote.read",
     }
 
 

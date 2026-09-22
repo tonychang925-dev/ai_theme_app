@@ -29,6 +29,47 @@ class Phase1MarketStateReadRepository(Phase1ReadRepository):
             row = await conn.fetchrow(sql, parsed_date)
             return dict(row) if row else None
 
+    async def get_stock_daily_quote(
+        self,
+        stock_id: str,
+        trade_date: str,
+    ) -> Optional[Dict[str, Any]]:
+        parsed_date = date.fromisoformat(trade_date)
+        await self.initialize()
+        sql = """
+        SELECT
+            trade_date, stock_id, stock_name,
+            open_price, high_price, low_price, close_price, pre_close, pct_chg,
+            volume, amount, source_name
+        FROM stock_daily_snapshot
+        WHERE trade_date = $1::date
+          AND stock_id = $2::text
+          AND source_name LIKE 'tushare%'
+        ORDER BY
+            CASE WHEN source_name = 'tushare' THEN 0 ELSE 1 END,
+            updated_at DESC NULLS LAST
+        LIMIT 1
+        """
+        async with self._pool.acquire() as conn:
+            row = await conn.fetchrow(sql, parsed_date, stock_id)
+            if row is None:
+                return None
+            item = dict(row)
+            item["trade_date"] = item["trade_date"].isoformat()
+            for field in (
+                "open_price",
+                "high_price",
+                "low_price",
+                "close_price",
+                "pre_close",
+                "pct_chg",
+                "volume",
+                "amount",
+            ):
+                if isinstance(item[field], Decimal):
+                    item[field] = str(item[field])
+            return item
+
     async def fetch_intel_event_by_item_id(
         self, item_id: str
     ) -> Optional[Dict[str, Any]]:
