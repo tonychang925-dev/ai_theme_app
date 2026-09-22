@@ -13,6 +13,7 @@ from .contracts import (
     MarketStateReadRequest,
     ProductLinkageReadRequest,
     ProductReadRequest,
+    StockQuoteReadRequest,
 )
 from .factory import MarketPublicFactory
 from .provenance import (
@@ -44,4 +45,5 @@ __all__ = [
     "ProductLinkageReadRequest",
     "ProductReadRequest",
     "ProvenancePredicate",
+    "StockQuoteReadRequest",
 ]

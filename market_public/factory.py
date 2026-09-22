@@ -69,6 +69,9 @@ class _LazyPhase1Repository:
     async def get_existing_post_market_recap_snapshot(self, trade_date):
         return await self._bound().get_existing_post_market_recap_snapshot(trade_date)
 
+    async def get_stock_daily_quote(self, stock_id, trade_date):
+        return await self._bound().get_stock_daily_quote(stock_id, trade_date)
+
     async def close(self):
         if self._repository is not None:
             await self._repository.close()

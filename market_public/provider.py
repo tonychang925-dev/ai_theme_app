@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
+from contextlib import suppress
 from dataclasses import asdict
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 import re
 from typing import Any
 from uuid import uuid4
@@ -22,6 +23,7 @@ from .contracts import (
     MarketStateReadRequest,
     ProductLinkageReadRequest,
     ProductReadRequest,
+    StockQuoteReadRequest,
 )
 from .private.market_state import (
     MarketStateReader,
@@ -79,6 +81,7 @@ def _source_refs(data: Any) -> tuple[str, ...]:
             "source_system",
             "source",
             "source_type",
+            "source_name",
         ):
             value = row.get(key)
             if isinstance(value, str) and value.strip():
@@ -93,7 +96,7 @@ def _public_object_refs(data: Any) -> tuple[str, ...]:
     for row in rows:
         if not isinstance(row, dict):
             continue
-        for key in ("item_id", "subject_key", "product_id"):
+        for key in ("item_id", "subject_key", "product_id", "stock_id"):
             value = row.get(key)
             if isinstance(value, (str, int)) and str(value).strip():
                 refs.add(str(value).strip())
@@ -329,6 +332,39 @@ class _MarketPublicProvider:
                     correlation_id=correlation_id,
                     request_id=request_id,
                 )
+            if capability == "market.stock.quote.read":
+                invalid_reason = _invalid_stock_quote_read_reason(request)
+                if invalid_reason is not None:
+                    return _failure(
+                        capability,
+                        MarketDataState.NOT_APPLICABLE,
+                        MarketFailureKind.CONTRACT_MISMATCH,
+                        "invalid_request",
+                        invalid_reason,
+                        correlation_id,
+                        request_id,
+                    )
+                data = await self._repository.get_stock_daily_quote(
+                    stock_id=request.stock_id,
+                    trade_date=request.trade_date,
+                )
+                if data is None:
+                    return _result(
+                        capability,
+                        operation_status=MarketOperationStatus.SUCCESS,
+                        data_state=MarketDataState.EMPTY,
+                        payload=None,
+                        correlation_id=correlation_id,
+                        request_id=request_id,
+                    )
+                return _result(
+                    capability,
+                    operation_status=MarketOperationStatus.SUCCESS,
+                    data_state=MarketDataState.READY,
+                    payload=data,
+                    correlation_id=correlation_id,
+                    request_id=request_id,
+                )
             return _failure(
                 capability,
                 MarketDataState.NOT_APPLICABLE,
@@ -539,4 +575,19 @@ def _invalid_event_read_reason(request: Any) -> str | None:
         )
         if valid_identity is None:
             return "item_id must be a canonical source-namespaced event identity"
+    return None
+
+
+def _invalid_stock_quote_read_reason(request: Any) -> str | None:
+    if not isinstance(request, StockQuoteReadRequest):
+        return "request must be StockQuoteReadRequest"
+    if not isinstance(request.stock_id, str) or not request.stock_id.strip():
+        return "stock_id must be a non-empty string"
+    if not isinstance(request.trade_date, str):
+        return "trade_date must use YYYY-MM-DD"
+    parsed_date = None
+    with suppress(TypeError, ValueError):
+        parsed_date = date.fromisoformat(request.trade_date)
+    if parsed_date is None or parsed_date.isoformat() != request.trade_date:
+        return "trade_date must use YYYY-MM-DD"
     return None

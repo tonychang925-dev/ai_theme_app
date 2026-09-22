@@ -29,6 +29,7 @@ def test_exact_capability_metadata():
         "market.product.read",
         "market.product.linkage.read",
         "market.state.read",
+        "market.stock.quote.read",
     }
     for metadata in CAPABILITIES.values():
         assert (
