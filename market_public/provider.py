@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
+from contextlib import suppress
 from dataclasses import asdict
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 import re
 from typing import Any
 from uuid import uuid4
@@ -584,24 +585,9 @@ def _invalid_stock_quote_read_reason(request: Any) -> str | None:
         return "stock_id must be a non-empty string"
     if not isinstance(request.trade_date, str):
         return "trade_date must use YYYY-MM-DD"
-    match = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", request.trade_date)
-    if match is None:
-        return "trade_date must use YYYY-MM-DD"
-    year, month, day = (int(value) for value in match.groups())
-    days_in_month = (
-        31,
-        29 if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0) else 28,
-        31,
-        30,
-        31,
-        30,
-        31,
-        31,
-        30,
-        31,
-        30,
-        31,
-    )
-    if not 1 <= month <= 12 or not 1 <= day <= days_in_month[month - 1]:
+    parsed_date = None
+    with suppress(TypeError, ValueError):
+        parsed_date = date.fromisoformat(request.trade_date)
+    if parsed_date is None or parsed_date.isoformat() != request.trade_date:
         return "trade_date must use YYYY-MM-DD"
     return None

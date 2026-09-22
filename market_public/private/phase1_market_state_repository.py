@@ -44,9 +44,9 @@ class Phase1MarketStateReadRepository(Phase1ReadRepository):
         FROM stock_daily_snapshot
         WHERE trade_date = $1::date
           AND stock_id = $2::text
-          AND source_name LIKE 'tushare%'
+          AND source_name ILIKE 'tushare%'
         ORDER BY
-            CASE WHEN source_name = 'tushare' THEN 0 ELSE 1 END,
+            CASE WHEN source_name ILIKE 'tushare' THEN 0 ELSE 1 END,
             updated_at DESC NULLS LAST
         LIMIT 1
         """

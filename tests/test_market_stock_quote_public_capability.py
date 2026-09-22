@@ -121,10 +121,14 @@ async def test_invalid_request_and_date_fail_as_contract_mismatch():
     repository = QuoteRepository(quote_row())
     requests = (
         None,
+        StockQuoteReadRequest(stock_id="600519.SH", trade_date=""),
+        StockQuoteReadRequest(stock_id="600519.SH", trade_date="not-a-date"),
+        StockQuoteReadRequest(stock_id="600519.SH", trade_date="0000-01-01"),
         StockQuoteReadRequest(stock_id="", trade_date="2026-07-31"),
         StockQuoteReadRequest(stock_id="600519.SH", trade_date="2026-7-31"),
         StockQuoteReadRequest(stock_id="600519.SH", trade_date="2026/07/31"),
         StockQuoteReadRequest(stock_id="600519.SH", trade_date="2026-02-30"),
+        StockQuoteReadRequest(stock_id="600519.SH", trade_date="２０２６-07-31"),
     )
 
     for request in requests:
@@ -189,8 +193,43 @@ async def test_repository_quote_read_is_exact_date_and_stock_without_fallback():
     assert "FROM stock_daily_snapshot" in sql
     assert "trade_date = $1::date" in sql
     assert "stock_id = $2::text" in sql
+    assert "source_name ILIKE 'tushare%'" in sql
+    assert "source_name ILIKE 'tushare'" in sql
+    assert "source_name LIKE" not in sql
     assert "LIMIT 1" in sql
     assert "MAX(" not in sql
+
+
+@pytest.mark.asyncio
+async def test_authoritative_source_case_variants_use_consistent_truth_gate():
+    for source_name in ("tushare", "Tushare", "TUSHARE", "Tushare-Daily"):
+        repository = Phase1MarketStateReadRepository(
+            database_url="postgresql://example.invalid/market"
+        )
+        pool = FakeRepositoryPool(
+            {
+                "trade_date": date(2026, 7, 31),
+                "stock_id": "600519.SH",
+                "stock_name": "",
+                "open_price": Decimal("1330.0300"),
+                "high_price": Decimal("1355.7200"),
+                "low_price": Decimal("1325.7700"),
+                "close_price": Decimal("1350.6000"),
+                "pre_close": Decimal("1361.7600"),
+                "pct_chg": Decimal("-0.8195"),
+                "volume": Decimal("55127.5200"),
+                "amount": Decimal("7373462.6050"),
+                "source_name": source_name,
+            }
+        )
+        repository._pool = pool
+
+        result = await repository.get_stock_daily_quote("600519.SH", "2026-07-31")
+
+        assert result["source_name"] == source_name
+        sql, _ = pool.connection.queries[0]
+        assert "source_name ILIKE 'tushare%'" in sql
+        assert "source_name ILIKE 'tushare'" in sql
 
 
 @pytest.mark.asyncio

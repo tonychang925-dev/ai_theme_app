@@ -58,5 +58,17 @@ Result:
   tests/test_market_public_boundary.py \
   tests/test_market_public_integration.py -q
 
-58 passed in 0.32s
+59 passed in 0.35s
 ```
+
+## PR410 Review Remediation
+
+- Review `4070836453`: date authority is `date.fromisoformat()` followed by exact
+  `date.isoformat()` round-trip equality. Malformed, noncanonical, year-zero,
+  impossible-calendar, and non-ASCII-digit dates remain typed
+  `MarketContractMismatch` outcomes with zero repository executions.
+- Review `4070836464`: quote retrieval uses `source_name ILIKE 'tushare%'`,
+  and preferred-source ordering uses `source_name ILIKE 'tushare'`, matching the
+  persisted truth gate's case-insensitive semantics without broadening authority.
+- Repeated real request `600519.SH` / `2026-07-31` returned
+  `SUCCESS / READY` from persisted `stock_daily_snapshot` with source `tushare`.
