@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 # Implementation identifiers for the current public boundary.  The architecture
 # requires an inspectable contract version / boundary reference but does not
 # freeze these exact literals as semantic law.
-MARKET_PUBLIC_CONTRACT_VERSION = "0.3.2"
+MARKET_PUBLIC_CONTRACT_VERSION = "0.4.0"
 MARKET_BOUNDARY_IDENTITY_REF = "market.public"
 
 
@@ -75,6 +75,7 @@ CAPABILITIES = {
         "market.product.linkage.read",
         "market.state.read",
         "market.stock.quote.read",
+        "market.analysis.read",
     )
 }
 
@@ -114,6 +115,11 @@ class ProductLinkageReadRequest:
 
 @dataclass(frozen=True)
 class MarketStateReadRequest:
+    trade_date: str
+
+
+@dataclass(frozen=True)
+class MarketAnalysisReadRequest:
     trade_date: str
 
 

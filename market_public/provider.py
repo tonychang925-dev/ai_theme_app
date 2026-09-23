@@ -15,6 +15,7 @@ from .contracts import (
     MARKET_PUBLIC_CONTRACT_VERSION,
     EventReadRequest,
     EventResolveRequest,
+    MarketAnalysisReadRequest,
     MarketDataState,
     MarketFailure,
     MarketFailureKind,
@@ -29,6 +30,11 @@ from .private.market_state import (
     MarketStateReader,
     MarketStateRequest,
     MarketStateStatus,
+)
+from .private.market_analysis import (
+    MarketAnalysisReader,
+    MarketAnalysisRequest,
+    MarketAnalysisStatus,
 )
 from .private.product_linkage import (
     MarketProductLinkageReader,
@@ -109,12 +115,58 @@ def _provenance(
     # No capability-specific mandatory provenance profile is frozen for these
     # current runtime capabilities. Preserve available evidence, but keep the
     # status explicitly INCOMPLETE until a concrete profile is selected.
+    source_refs = _source_refs(data)
+    evidence_refs: tuple[str, ...] = ()
+    public_object_refs = _public_object_refs(data)
+    data_cutoff = None
+    if capability == "market.analysis.read" and isinstance(data, dict):
+        source = data.get("source")
+        if isinstance(source, dict):
+            source_refs = tuple(
+                dict.fromkeys(
+                    [
+                        *source_refs,
+                        *(
+                            str(value)
+                            for value in source.get("source_refs", [])
+                            if value
+                        ),
+                    ]
+                )
+            )
+        evidence_refs = tuple(
+            dict.fromkeys(
+                str(item.get("ref", {}).get("ref_id"))
+                for item in data.get("evidence", [])
+                if isinstance(item, dict)
+                and isinstance(item.get("ref"), dict)
+                and item["ref"].get("ref_id")
+            )
+        )
+        public_object_refs = tuple(
+            dict.fromkeys(
+                [
+                    *public_object_refs,
+                    *(
+                        str(value)
+                        for value in (
+                            data.get("evidence_snapshot_id"),
+                            data.get("source_bundle_id"),
+                        )
+                        if value
+                    ),
+                ]
+            )
+        )
+        data_cutoff = data.get("as_of")
     return MarketProvenance(
         None,
         produced_at=produced_at,
         market_release_identity=None,
-        source_refs=_source_refs(data),
-        public_object_refs=_public_object_refs(data),
+        data_cutoff=data_cutoff,
+        source_refs=source_refs,
+        evidence_refs=evidence_refs,
+        public_object_refs=public_object_refs,
         capability_call_ref=capability,
         correlation_id=correlation_id,
     )
@@ -174,6 +226,7 @@ class _MarketPublicProvider:
         self._repository = repository
         self._product_linkage_reader = MarketProductLinkageReader(repository)
         self._market_state_reader = MarketStateReader(repository)
+        self._market_analysis_reader = MarketAnalysisReader(repository)
 
     async def execute(
         self,
@@ -328,6 +381,12 @@ class _MarketPublicProvider:
                 )
             if capability == "market.state.read":
                 return await self._execute_market_state(
+                    request,
+                    correlation_id=correlation_id,
+                    request_id=request_id,
+                )
+            if capability == "market.analysis.read":
+                return await self._execute_market_analysis(
                     request,
                     correlation_id=correlation_id,
                     request_id=request_id,
@@ -519,6 +578,75 @@ class _MarketPublicProvider:
                 request_id,
             )
         if private_result.status is MarketStateStatus.DEPENDENCY_UNAVAILABLE:
+            return _failure(
+                capability,
+                MarketDataState.UNAVAILABLE,
+                MarketFailureKind.UNAVAILABLE,
+                private_result.failure.code,
+                private_result.failure.message,
+                correlation_id,
+                request_id,
+            )
+        return _failure(
+            capability,
+            MarketDataState.UNAVAILABLE,
+            MarketFailureKind.INTERNAL_FAILURE,
+            private_result.failure.code,
+            private_result.failure.message,
+            correlation_id,
+            request_id,
+        )
+
+    async def _execute_market_analysis(
+        self,
+        request: Any,
+        *,
+        correlation_id: str,
+        request_id: str | None,
+    ) -> MarketResultEnvelope:
+        capability = "market.analysis.read"
+        if not isinstance(request, MarketAnalysisReadRequest):
+            return _failure(
+                capability,
+                MarketDataState.NOT_APPLICABLE,
+                MarketFailureKind.CONTRACT_MISMATCH,
+                "invalid_request",
+                "Invalid market analysis request",
+                correlation_id,
+                request_id,
+            )
+        private_result = await self._market_analysis_reader.read(
+            MarketAnalysisRequest(trade_date=request.trade_date)
+        )
+        if private_result.status is MarketAnalysisStatus.READY:
+            return _result(
+                capability,
+                operation_status=MarketOperationStatus.SUCCESS,
+                data_state=MarketDataState.READY,
+                payload=private_result.payload,
+                correlation_id=correlation_id,
+                request_id=request_id,
+            )
+        if private_result.status is MarketAnalysisStatus.EMPTY:
+            return _result(
+                capability,
+                operation_status=MarketOperationStatus.SUCCESS,
+                data_state=MarketDataState.EMPTY,
+                payload=None,
+                correlation_id=correlation_id,
+                request_id=request_id,
+            )
+        if private_result.status is MarketAnalysisStatus.INVALID_REQUEST:
+            return _failure(
+                capability,
+                MarketDataState.NOT_APPLICABLE,
+                MarketFailureKind.CONTRACT_MISMATCH,
+                private_result.failure.code,
+                private_result.failure.message,
+                correlation_id,
+                request_id,
+            )
+        if private_result.status is MarketAnalysisStatus.DEPENDENCY_UNAVAILABLE:
             return _failure(
                 capability,
                 MarketDataState.UNAVAILABLE,
