@@ -205,9 +205,7 @@ class MarketEvidenceAdapter:
 
         setup_plan = bundle.knowledge.get("post_market_setup_plan")
         setup_summary = (
-            setup_plan.get("summary")
-            if isinstance(setup_plan, dict)
-            else None
+            setup_plan.get("summary") if isinstance(setup_plan, dict) else None
         )
         if (
             isinstance(setup_summary, dict)
@@ -224,6 +222,9 @@ class MarketEvidenceAdapter:
                 )
             )
             emitted_keys.add("calendar.next_trade_date")
+
+        cls._add_watchlist_evidence(bundle, items, emitted_keys)
+        cls._add_setup_evidence(bundle, items, emitted_keys)
 
         mainlines = bundle.knowledge.get("mainline_states")
         if isinstance(mainlines, list):
@@ -278,6 +279,115 @@ class MarketEvidenceAdapter:
             content_hash=content_hash,
         )
 
+    @classmethod
+    def _add_watchlist_evidence(
+        cls,
+        bundle: MarketKnowledgeBundle,
+        items: list[EvidenceItem],
+        emitted_keys: set[str],
+    ) -> None:
+        watchlists = bundle.knowledge.get("watchlists")
+        for index, row, source_index in cls._indexed_rows(watchlists):
+            if not isinstance(row, dict):
+                continue
+            for field in (
+                "stock_name",
+                "stock_id",
+                "subject_key",
+                "summary",
+                "reason",
+                "watch_date",
+                "decision",
+                "setup_type",
+            ):
+                value = row.get(field)
+                key = f"watchlist.{index}.{field}"
+                if not _has_producer_value(value) or key in emitted_keys:
+                    continue
+                items.append(
+                    cls._item(
+                        bundle,
+                        "watchlists",
+                        f"{source_index}.{field}",
+                        key,
+                        deepcopy(value),
+                    )
+                )
+                emitted_keys.add(key)
+
+    @classmethod
+    def _add_setup_evidence(
+        cls,
+        bundle: MarketKnowledgeBundle,
+        items: list[EvidenceItem],
+        emitted_keys: set[str],
+    ) -> None:
+        setup_plan = bundle.knowledge.get("post_market_setup_plan")
+        setup_rows = setup_plan.get("items") if isinstance(setup_plan, dict) else None
+        if not isinstance(setup_rows, list):
+            return
+        for index, row in enumerate(setup_rows):
+            if not isinstance(row, dict):
+                continue
+            for field in ("summary", "focus", "reason", "rationale"):
+                value = row.get(field)
+                key = f"setup.{index}.{field}"
+                if not _has_producer_value(value) or key in emitted_keys:
+                    continue
+                items.append(
+                    cls._item(
+                        bundle,
+                        "post_market_setup_plan",
+                        f"items.{index}.{field}",
+                        key,
+                        deepcopy(value),
+                    )
+                )
+                emitted_keys.add(key)
+
+            technical_summary = row.get("technical_summary")
+            if not isinstance(technical_summary, dict):
+                continue
+            for field in ("focus", "reason", "rationale"):
+                value = technical_summary.get(field)
+                key = f"setup.{index}.technical_{field}"
+                if not _has_producer_value(value) or key in emitted_keys:
+                    continue
+                items.append(
+                    cls._item(
+                        bundle,
+                        "post_market_setup_plan",
+                        f"items.{index}.technical_summary.{field}",
+                        key,
+                        deepcopy(value),
+                    )
+                )
+                emitted_keys.add(key)
+
+    @staticmethod
+    def _indexed_rows(value: Any) -> tuple[tuple[int, Any, str], ...]:
+        if isinstance(value, list):
+            return tuple((index, row, str(index)) for index, row in enumerate(value))
+        if not isinstance(value, dict):
+            return ()
+
+        direct_items = value.get("items")
+        if isinstance(direct_items, list):
+            return tuple(
+                (index, row, f"items.{index}") for index, row in enumerate(direct_items)
+            )
+
+        indexed: list[tuple[int, Any, str]] = []
+        for container_name, container in value.items():
+            rows = container.get("items") if isinstance(container, dict) else None
+            if not isinstance(rows, list):
+                continue
+            indexed.extend(
+                (len(indexed), row, f"{container_name}.items.{index}")
+                for index, row in enumerate(rows)
+            )
+        return tuple(indexed)
+
     @staticmethod
     def _item(
         bundle: MarketKnowledgeBundle,
@@ -298,3 +408,13 @@ class MarketEvidenceAdapter:
             ref=ref,
             observed_at=bundle.as_of,
         )
+
+
+def _has_producer_value(value: Any) -> bool:
+    if value is None:
+        return False
+    if isinstance(value, str):
+        return bool(value.strip())
+    if isinstance(value, (dict, list, tuple)):
+        return bool(value)
+    return True
