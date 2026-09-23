@@ -49,7 +49,8 @@ def analytical_payload():
         ],
         "watchlists": [{"stock_name": "示例股份", "reason": "缩量回踩"}],
         "post_market_setup_plan": {
-            "summary": {"watch_date": "2026-05-16", "focus": "AI 应用承接"}
+            "summary": {"watch_date": "2026-05-16"},
+            "items": [{"focus": "AI 应用承接"}],
         },
     }
 
@@ -99,6 +100,11 @@ async def test_analysis_read_projects_reused_evidence_chain():
     assert evidence["mainline.0.name"]["value"] == "AI 应用"
     assert evidence["mainline.0.lifecycle"]["value"] == "主升"
     assert evidence["calendar.next_trade_date"]["value"] == "2026-05-16"
+    assert evidence["watchlist.0.stock_name"]["value"] == "示例股份"
+    assert evidence["watchlist.0.reason"]["value"] == "缩量回踩"
+    assert evidence["setup.0.focus"]["value"] == "AI 应用承接"
+    assert evidence["watchlist.0.reason"]["ref"]["source_path"] == "0.reason"
+    assert evidence["setup.0.focus"]["ref"]["source_path"] == "items.0.focus"
     assert all(
         item["ref"]["ref_id"]
         and item["ref"]["source_module"]

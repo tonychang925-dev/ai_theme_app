@@ -105,6 +105,41 @@ async def test_real_analysis_read_returns_existing_evidence_and_exact_empty():
 
 
 @pytest.mark.asyncio
+async def test_real_analysis_read_projects_next_day_watchlist_evidence():
+    provider = MarketPublicFactory.create()
+    try:
+        result = await provider.execute(
+            "market.analysis.read",
+            MarketAnalysisReadRequest(trade_date="2026-07-09"),
+            request_id="repair-analysis-watchlist",
+            correlation_id="repair-analysis-watchlist-correlation",
+        )
+    finally:
+        await provider.close()
+
+    assert result.operation_status is MarketOperationStatus.SUCCESS
+    assert result.data_state is MarketDataState.READY
+    evidence = {item["key"]: item for item in result.payload["evidence"]}
+    assert evidence["calendar.next_trade_date"]["value"] == "2026-07-10"
+    assert evidence["watchlist.0.stock_id"]["value"] == "600584.SH"
+    assert evidence["watchlist.0.stock_name"]["value"] == "长电科技"
+    assert evidence["watchlist.0.subject_key"]["value"] == "9015778"
+    assert evidence["watchlist.0.watch_date"]["value"] == "2026-07-10"
+    assert evidence["watchlist.0.decision"]["value"] == "observe_only"
+    assert evidence["watchlist.0.setup_type"]["value"] == "one_to_two"
+    assert evidence["watchlist.0.summary"]["ref"]["source_path"] == (
+        "one_to_two.items.0.summary"
+    )
+    assert evidence["setup.0.summary"]["ref"]["source_path"] == ("items.0.summary")
+    assert evidence["setup.0.technical_reason"]["ref"]["source_path"] == (
+        "items.0.technical_summary.reason"
+    )
+    assert "setup.0.focus" not in evidence
+    assert "setup.0.reason" not in evidence
+    assert "setup.0.rationale" not in evidence
+
+
+@pytest.mark.asyncio
 async def test_real_resolve_read_roundtrip_preserves_both_source_namespaces():
     provider = MarketPublicFactory.create()
     try:
