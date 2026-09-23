@@ -77,7 +77,7 @@ def quote_row(**overrides):
 
 
 def test_stock_quote_contract_is_exact_public_read_capability():
-    assert MARKET_PUBLIC_CONTRACT_VERSION == "0.3.2"
+    assert MARKET_PUBLIC_CONTRACT_VERSION == "0.4.0"
     assert "market.stock.quote.read" in CAPABILITIES
     assert set(StockQuoteReadRequest.__annotations__) == {"stock_id", "trade_date"}
 

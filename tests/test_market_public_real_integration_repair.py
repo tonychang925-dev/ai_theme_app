@@ -7,6 +7,7 @@ import pytest
 from market_public import (
     EventReadRequest,
     EventResolveRequest,
+    MarketAnalysisReadRequest,
     MarketDataState,
     MarketOperationStatus,
     MarketPublicFactory,
@@ -61,6 +62,46 @@ async def test_real_frozen_state_read_projects_wrapped_recap_review():
     assert isinstance(result.payload["snapshot_version"], str)
     assert result.payload["snapshot_version"]
     assert result.failures == ()
+
+
+@pytest.mark.asyncio
+async def test_real_analysis_read_returns_existing_evidence_and_exact_empty():
+    provider = MarketPublicFactory.create()
+    try:
+        ready = await provider.execute(
+            "market.analysis.read",
+            MarketAnalysisReadRequest(trade_date="2026-05-15"),
+            request_id="repair-analysis-ready",
+            correlation_id="repair-analysis-ready-correlation",
+        )
+        empty = await provider.execute(
+            "market.analysis.read",
+            MarketAnalysisReadRequest(trade_date="2026-07-10"),
+            request_id="repair-analysis-empty",
+            correlation_id="repair-analysis-empty-correlation",
+        )
+    finally:
+        await provider.close()
+
+    assert ready.operation_status is MarketOperationStatus.SUCCESS
+    assert ready.data_state is MarketDataState.READY
+    assert ready.payload["trade_date"] == "2026-05-15"
+    assert ready.payload["source"]["snapshot_ref"] == "post_market_recap_snapshot"
+    assert ready.payload["source"]["snapshot_version"]
+    assert ready.payload["source_bundle_id"]
+    assert ready.payload["evidence_snapshot_id"]
+    assert ready.payload["evidence"]
+    assert ready.payload["quality"]["status"] == "partial"
+    assert ready.payload["quality"]["missing_modules"]
+    assert ready.payload["review_maturity"]["available"] is False
+    assert ready.provenance.source_refs
+    assert ready.provenance.evidence_refs
+    assert ready.failures == ()
+
+    assert empty.operation_status is MarketOperationStatus.SUCCESS
+    assert empty.data_state is MarketDataState.EMPTY
+    assert empty.payload is None
+    assert empty.failures == ()
 
 
 @pytest.mark.asyncio
