@@ -155,4 +155,3 @@ It must reject:
 - exponent notation;
 - `NaN` or infinity;
 - non-exact basis-point conversion.
-

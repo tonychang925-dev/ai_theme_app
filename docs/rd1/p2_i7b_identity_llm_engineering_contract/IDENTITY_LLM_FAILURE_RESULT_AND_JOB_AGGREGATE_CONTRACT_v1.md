@@ -153,4 +153,3 @@ AND provider_failure_count == required_llm_review_attempt_count
 - Idempotency completion metadata must include the aggregate fields when a degraded execution is durably recorded.
 - Event payload success is false for mixed/all provider failure.
 - No automatic retry is spawned by the service or job.
-

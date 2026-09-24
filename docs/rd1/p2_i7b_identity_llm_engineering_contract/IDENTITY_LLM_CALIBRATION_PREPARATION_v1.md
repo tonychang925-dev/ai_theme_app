@@ -233,4 +233,3 @@ Calibration is blocked or stopped without source correction if:
 7. any implementation attempts to simplify the prompt, swap the model, retry, repair JSON, or substitute a provider.
 
 No raw response content or credential-bearing header may be persisted in task evidence.
-

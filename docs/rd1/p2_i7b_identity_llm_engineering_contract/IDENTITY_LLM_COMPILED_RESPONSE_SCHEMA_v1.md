@@ -110,4 +110,3 @@ The domain representation is `Decimal("0.8500")`; persistence uses `8500` basis 
 | Missing key, extra key, wrong type, bound/list-limit violation, or aggregate inconsistency | `CONTRACT_INVALID` |
 
 All are subject-level provider failures under Owner Q5. They produce `review_pending`, never `confirmed`, and never synthetic success.
-
