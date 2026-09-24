@@ -100,4 +100,3 @@ The correction explicitly forbids:
 - model substitution;
 - prompt simplification;
 - treating the old calibration observations as v2 evidence.
-

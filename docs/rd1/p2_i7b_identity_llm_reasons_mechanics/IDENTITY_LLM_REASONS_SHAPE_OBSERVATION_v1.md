@@ -121,4 +121,3 @@ Accordingly, describing this observation as `reasons_length` would be a validato
 The original #427 response content was intentionally not retained. Its exact raw reasons shape cannot be inferred from its content hash or token usage. The fresh observation also produces a new content hash and demonstrates provider shape variability.
 
 Thus the safe mechanical conclusion is not that the historical response had the same shape as this observation. The reusable correction must make array-bound instructions explicit and replace the ambiguous `reasons_length` label with exact violated-rule classification.
-
