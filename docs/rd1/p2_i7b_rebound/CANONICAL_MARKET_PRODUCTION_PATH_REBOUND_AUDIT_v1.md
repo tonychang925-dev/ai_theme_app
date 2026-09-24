@@ -112,20 +112,21 @@ Correct ownership is:
 ```text
 BuildIdentityJob
 → IdentityLLMReviewService
-→ strict provider transport
+→ strict JSON provider transport
+→ typed provider/API error classification
 ```
 
 The Job already uses Ports for DB access, but current LLM semantics do not satisfy the required gate:
 
 - missing provider configuration selects deterministic review;
-- provider/transport/JSON failures become `review_pending`;
+- provider/API/transport/JSON failures collapse into `review_pending`, which is not `confirmed` and not synthetic success;
 - request budget is fixed at `512`;
 - JSON-object response format is absent;
 - `finish_reason=length` is not classified;
 - missing content defaults to `"{}"`;
 - the request prompt is not the exact documented canonical prompt.
 
-Therefore provider/transport failure must not be represented as `review_pending`. Full details are in `CANONICAL_IDENTITY_LLM_GAP_AUDIT_v1.md`.
+Therefore the current result is classified as `FAIL-CLOSED PENDING SEMANTICS` combined with a provider contract/error-typing gap and strict JSON transport gap. Whether a typed provider/API failure may ultimately remain represented as `review_pending` requires contract/ADR authority; the audit does not presume exception-throwing control flow. Full details are in `CANONICAL_IDENTITY_LLM_GAP_AUDIT_v1.md`.
 
 ## Required-path Gateway escape finding
 

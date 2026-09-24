@@ -139,7 +139,7 @@ Lifecycle chain:
 
 Gaps:
 
-1. canonical LLM provider/configuration failure becomes deterministic or `review_pending`;
+1. canonical LLM provider/configuration failure becomes deterministic or collapses into `review_pending` without provider/API error typing;
 2. request budget is 512 and has no JSON-object response format;
 3. `finish_reason=length`, missing content, invalid JSON, and contract mismatch do not fail typed;
 4. `BuildIdentityJob` omits canonical prompt inputs;

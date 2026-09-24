@@ -4,7 +4,8 @@
 
 Every follow-up must:
 
-- verify exact canonical `origin/main` at issuance;
+- verify exact current `origin/main` at task issuance;
+- cite the accepted Issue #422 audit commit and docs as authority/evidence references without treating them as ancestry;
 - declare exact allowed and forbidden paths;
 - add focused tests;
 - preserve typed failures;
@@ -13,20 +14,57 @@ Every follow-up must:
 - stop at the first new concrete defect;
 - avoid merge without Owner authorization.
 
-## Task A — Canonical identity LLM strict transport
+## Task P/A0 — Canonical identity-prior semantics resolution
+
+### Objective
+
+Resolve whether identity-prior mutation remains a formal business invariant before any implementation is planned.
+
+### Required owner decision
+
+```text
+IF identity-prior mutation IS an invariant
+  → name the canonical owner
+  → name the Job/Port/Gateway method
+  → define typed contract and replay acceptance
+
+IF identity-prior mutation IS NOT an invariant
+  → do not migrate legacy behavior
+
+IF authority remains unclear
+  → STOP for Owner decision
+```
+
+### Forbidden implementation
+
+No SQL may be copied from `enforce_v2_identity_prior_gate.py` merely to obtain legacy equivalence.
+
+### Disposition
+
+```text
+STATUS
+= OWNER_AUTHORITY_REQUIRED
+```
+
+## Task A — Canonical identity JSON transport and error typing
 
 ### Objective
 
 Make `IdentityLLMReviewService` the sole production transport and enforce:
 
 ```text
-provider / transport failure
-!= review_pending
+provider/API failure
+→ typed classification
+→ NOT confirmed
+→ NOT synthetic success
+
+review_pending representation
+→ CONTRACT_ADR_DECISION_REQUIRED
 ```
 
 ### Base
 
-Verified canonical `origin/main` containing this audit.
+Exact current `origin/main` verified at task issuance. The accepted Issue #422 audit commit is an authority/evidence reference, not presumed ancestry, because no audit merge is authorized.
 
 ### Expected allowed paths
 
@@ -69,7 +107,8 @@ Historical `4000` remains only a hypothesis.
 - JSON-object response format;
 - envelope and HTTP validation;
 - inspect `finish_reason` before parsing;
-- typed failures for truncation, missing content, invalid JSON, and contract mismatch;
+- typed error classification for truncation, missing content, invalid JSON, HTTP/provider/transport failure, and contract mismatch;
+- preserve fail-closed pending semantics unless the contract/ADR decision requires another terminal representation;
 - no deterministic fallback, retry, JSON repair, alternate provider, or rule-only fallback;
 - no raw provider content or credentials in errors.
 
@@ -81,6 +120,8 @@ Historical `4000` remains only a hypothesis.
 - `length` fails typed;
 - missing content fails typed;
 - invalid JSON fails typed;
+- provider/API/transport failure remains non-confirmed and non-synthetic while preserving its exact class;
+- pending-state representation matches the contract/ADR decision;
 - missing keys fails typed;
 - timeout/network/HTTP failures fail typed;
 - one request only;
@@ -103,7 +144,7 @@ Close the audited required-path escapes while preserving business semantics.
 
 ### Base
 
-Verified canonical `origin/main` containing Task A.
+Exact current `origin/main` at task issuance, with Tasks P/A0 and A accepted as authority/evidence references.
 
 ### Expected allowed paths
 
@@ -167,7 +208,7 @@ Prevent P2 from re-entering the rejected legacy path.
 
 ### Base
 
-Verified canonical `origin/main` containing Tasks A and B.
+Exact current `origin/main` at task issuance, with Tasks P/A0, A, and B accepted as authority/evidence references.
 
 ### Expected allowed paths
 
@@ -227,7 +268,7 @@ Resume real generation and P2/I7B only after A-C pass.
 
 ### Base
 
-Verified canonical `origin/main` containing Tasks A-C.
+Exact current `origin/main` at task issuance, with Tasks P/A0, A, B, and C accepted as authority/evidence references.
 
 ### Source changes
 
@@ -296,9 +337,9 @@ Any required Job fails, guard fails, Market remains `EMPTY`, first composite fai
 ## Order
 
 ```text
-A → B → C → D
+P/A0 → A → B → C → D
 ```
 
-C may be prepared against the audited end state in parallel, but must not merge before B closes the required escapes.
+Task P/A0 must resolve or explicitly STOP on owner authority. C may be prepared against the audited end state in parallel, but must not merge before B closes the required escapes.
 
-No later task may start while an earlier task is blocked. Task D remains unavailable until Tasks A-C pass their acceptance gates.
+No later task may start while an earlier task is blocked. Task D remains unavailable until Tasks P/A0-A-C pass their acceptance gates.
