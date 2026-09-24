@@ -45,4 +45,3 @@ The proof process checked only presence, model identity, provider host, and endp
 ## Reentry Condition
 
 Issue #427 calibration may reenter only when its launcher applies the exact map in `IDENTITY_LLM_CANONICAL_BINDING_MAP_v1.md` before process startup. The calibration process must then recheck presence itself and fail closed if any canonical value disappears.
-

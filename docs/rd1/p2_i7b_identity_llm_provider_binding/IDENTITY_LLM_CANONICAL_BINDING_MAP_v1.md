@@ -73,4 +73,3 @@ This map authorizes only canonical namespace materialization for calibration ree
 - change provider ownership;
 - change model after calibration begins;
 - authorize a provider call in Issue #428.
-

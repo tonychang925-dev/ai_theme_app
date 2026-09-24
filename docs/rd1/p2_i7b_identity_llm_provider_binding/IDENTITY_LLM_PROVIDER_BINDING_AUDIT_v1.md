@@ -75,4 +75,3 @@ The base is a non-secret provider origin, while the key and model come from the 
 - No runtime fallback was added to `IdentityLLMReviewService`.
 - No legacy provider path became the canonical architecture.
 - No prompt, schema, timeout, or calibration protocol changed.
-
