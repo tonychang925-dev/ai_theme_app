@@ -66,4 +66,3 @@ No generic catch-all, silent fallback, retry, or synthetic result is permitted.
 ## Sanitization
 
 Error records may expose class names, safe parser class/position, HTTP status, and provider request identifiers only when they are non-secret. They must never expose API keys, authorization headers, full raw responses, credentials, or connection strings.
-

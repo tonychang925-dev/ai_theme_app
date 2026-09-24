@@ -109,4 +109,3 @@ The Owner may select an existing exact artifact only if it is already authorized
 - Simplifying evidence to reduce token pressure.
 - Deriving prompt content from provider output.
 - Calibration before this spec is frozen.
-

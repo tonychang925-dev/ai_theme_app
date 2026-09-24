@@ -101,4 +101,3 @@ Any additional fields require explicit authority. This document does not select 
 | Dimensional conjunction inconsistency, if selected schema requires it | `CONTRACT_INVALID` |
 
 These classifications are frozen. Their business terminal mapping remains in the separate error matrix and still requires Owner selection.
-
