@@ -99,4 +99,3 @@ CALIBRATION_STABLE
 ```
 
 Cohort reconstruction was not attempted after preflight failure because the task requires configuration verification before any provider call and forbids legacy-variable substitution.
-

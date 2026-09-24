@@ -43,4 +43,3 @@ attempt_kind
 ## Security
 
 No API key, authorization header, endpoint credential, raw response, or raw prompt was logged or committed.
-

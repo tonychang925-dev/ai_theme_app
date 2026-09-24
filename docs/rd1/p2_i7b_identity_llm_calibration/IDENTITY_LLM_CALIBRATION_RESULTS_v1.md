@@ -76,4 +76,3 @@ IDENTITY_LLM_MODEL
 ```
 
 The exact model identifier may then be recorded, but secrets must remain unlogged.
-
