@@ -76,3 +76,90 @@ IDENTITY_LLM_MODEL
 ```
 
 The exact model identifier may then be recorded, but secrets must remain unlogged.
+
+## Reentry Result
+
+```text
+BINDING_RECHECK
+= PASS
+
+MODEL
+= deepseek-v4-pro
+
+C1_RECONSTRUCTED
+= YES
+
+COHORT_SELECTED_COUNT
+= 1
+
+EXECUTED_TOKEN_TIERS
+= [1000, 2000]
+
+CALIBRATION_STABLE
+= NO
+
+DISPOSITION
+= CALIBRATION_PROVIDER_OR_CONTRACT_FAILURE
+
+SELECTED_MAX_TOKENS
+= BLOCKED
+
+INITIAL_PROVIDER_REQUEST_COUNT
+= 2
+
+CONFIRMATION_PROVIDER_REQUEST_COUNT
+= 0
+
+TOTAL_PROVIDER_REQUEST_COUNT
+= 2
+```
+
+## Exact Failure Sequence
+
+### Tier 1000
+
+- HTTP `200`.
+- `finish_reason=length`.
+- Content absent.
+- Typed error: `OUTPUT_TRUNCATED`.
+- Protocol action: advance to tier 2000.
+
+### Tier 2000
+
+- HTTP `200`.
+- `finish_reason=stop`.
+- Content present.
+- Content JSON valid.
+- Exact response-schema contract invalid.
+- Typed error: `CONTRACT_INVALID:reasons_length`.
+- Protocol action: stop immediately; do not advance, retry, repair, simplify, or alter the contract.
+
+No confirmation attempt occurred because tier 2000 did not pass its initial observation.
+
+## Final Governance Result
+
+```text
+RETRY_USED
+= NO
+
+FALLBACK_USED
+= NO
+
+MODEL_SWAP_USED
+= NO
+
+PROMPT_MUTATION_USED
+= NO
+
+JSON_REPAIR_USED
+= NO
+
+PRODUCTION_SOURCE_CHANGED
+= NO
+
+DB_MUTATION
+= NO
+
+P2_REAL_COMPOSITE
+= HOLD
+```
