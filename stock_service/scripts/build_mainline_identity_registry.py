@@ -1679,6 +1679,9 @@ B. 存续主线路径（用于成熟主线分歧/修复阶段）：
 """
 
 
+MAINLINE_IDENTITY_LLM_MAX_TOKENS = 4000
+
+
 async def _call_llm_review(
     *,
     prompt: str,
@@ -1699,7 +1702,7 @@ async def _call_llm_review(
             {"role": "user", "content": prompt},
         ],
         "temperature": 0.1,
-        "max_tokens": 1000,
+        "max_tokens": MAINLINE_IDENTITY_LLM_MAX_TOKENS,
         "response_format": {"type": "json_object"},
     }
     async with aiohttp.ClientSession() as session:
@@ -1708,8 +1711,22 @@ async def _call_llm_review(
                 text = await resp.text()
                 raise RuntimeError(f"llm_http_{resp.status}:{text[:300]}")
             data = await resp.json()
-    content = data["choices"][0]["message"]["content"]
-    return json.loads(content)
+    choices = data.get("choices")
+    if not isinstance(choices, list) or not choices:
+        raise RuntimeError("mainline_identity_llm_content_missing")
+    choice = choices[0]
+    if choice.get("finish_reason") == "length":
+        raise RuntimeError("mainline_identity_llm_output_truncated")
+    message = choice.get("message")
+    content = message.get("content") if isinstance(message, dict) else None
+    if not isinstance(content, str) or not content.strip():
+        raise RuntimeError("mainline_identity_llm_content_missing")
+    try:
+        return json.loads(content)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(
+            f"mainline_identity_llm_invalid_json:{exc.__class__.__name__}:{exc.msg}@{exc.pos}"
+        ) from exc
 
 
 async def _apply_llm_review(
