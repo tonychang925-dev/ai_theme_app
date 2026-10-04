@@ -8,6 +8,14 @@ import re
 from typing import Any, Dict, Optional
 
 from theme_service.repositories.phase1_read_repository import Phase1ReadRepository
+from .event_acceptance import EventAcceptancePolicy, OperationalWindow
+from ..contracts import MarketAcceptanceStatus
+
+
+class CanonicalEventFeed:
+    def __init__(self, items: list[Dict[str, Any]], acceptance_status: MarketAcceptanceStatus):
+        self.items = items
+        self.acceptance_status = acceptance_status
 
 
 class Phase1MarketStateReadRepository(Phase1ReadRepository):
@@ -188,4 +196,105 @@ class Phase1MarketStateReadRepository(Phase1ReadRepository):
             item[field] = [str(value) for value in item.get(field) or []]
         if isinstance(item.get("impact_score"), Decimal):
             item["impact_score"] = str(item["impact_score"])
+        return item
+
+    def __init__(
+        self,
+        database_url: Optional[str] = None,
+        event_operational_windows: tuple[OperationalWindow, ...] | None = None,
+    ):
+        super().__init__(database_url=database_url)
+        self._event_acceptance_policy = EventAcceptancePolicy(event_operational_windows)
+
+    async def fetch_canonical_intel_feed(
+        self,
+        feed_date: Optional[str] = None,
+        stock_id: Optional[str] = None,
+        limit: int = 100,
+    ) -> CanonicalEventFeed:
+        """Read only the subject-map authority."""
+        if stock_id:
+            # The canonical event tables do not carry a stock relation contract.
+            # Refusing the filter is safer than silently returning unscoped rows.
+            return CanonicalEventFeed([], MarketAcceptanceStatus.PRESENT_UNVERIFIED)
+        target_date = self._parse_feed_date(feed_date)
+        await self.initialize()
+        sql = """
+        WITH canonical AS (
+            SELECT
+                esm.event_id,
+                esm.subject_key,
+                COALESCE(NULLIF(esm.subject_name, ''), esm.subject_key) AS subject_name,
+                esm.confidence,
+                esm.source,
+                esm.source_channel,
+                esm.source_trace_id,
+                esm.run_id,
+                esm.evidence_json,
+                ne.event_time,
+                ne.event_type,
+                ne.summary,
+                ne.severity_score,
+                ne.source_category,
+                ne.source_trace_id AS news_source_trace_id,
+                nr.id AS news_raw_id,
+                shs.jyhf_ingest_at,
+                CASE WHEN shs.id IS NOT NULL THEN true ELSE false END AS jyhf_provenance
+            FROM event_subject_map esm
+            JOIN news_event ne ON ne.id = esm.event_id
+            LEFT JOIN news_raw nr ON nr.id = ne.news_id
+            LEFT JOIN LATERAL (
+                SELECT id, created_at AS jyhf_ingest_at
+                FROM subject_history_staging
+                WHERE subject_key = esm.subject_key
+                  AND rank_date = ne.event_time::date
+                  AND source_type = 'jyhf_cdp'
+                ORDER BY id DESC
+                LIMIT 1
+            ) shs ON true
+            WHERE ($1::date IS NULL OR ne.event_time::date = $1::date)
+            ORDER BY ne.event_time DESC NULLS LAST, esm.event_id DESC, esm.subject_key
+            LIMIT $2::bigint
+        )
+        SELECT * FROM canonical
+        """
+        async with self._pool.acquire() as conn:
+            rows = [dict(row) for row in await conn.fetch(sql, target_date, limit)]
+
+        items: list[Dict[str, Any]] = []
+        for row in rows:
+            source = str(row.get("source_category") or row.get("source") or "").strip()
+            item = {
+                "item_id": f"event:{row['event_id']}:{row['subject_key']}",
+                "item_type": "event",
+                "event_id": row["event_id"],
+                "subject_key": str(row["subject_key"]),
+                "occurred_at": row["event_time"],
+                "title": row.get("summary") or row.get("event_type") or f"事件#{row['event_id']}",
+                "summary": row.get("summary") or "",
+                "theme_subject_keys": [str(row["subject_key"])],
+                "theme_names": [str(row["subject_name"])],
+                "stock_ids": [],
+                "stock_names": [],
+                "confidence": row.get("confidence"),
+                "impact_score": row.get("severity_score"),
+                "source_type": "event_subject_map",
+                "source_category": source,
+                "source_channel": source or "event_subject_map",
+                "source_trace_id": row.get("source_trace_id") or row.get("news_source_trace_id"),
+                "run_id": row.get("run_id"),
+                "news_raw_id": row.get("news_raw_id"),
+                "jyhf_provenance": bool(row.get("jyhf_provenance")),
+                "jyhf_ingest_at": row.get("jyhf_ingest_at"),
+            }
+            items.append(self._public_event_row_sync(item))
+
+        status = self._event_acceptance_policy.classify(target_date, items)
+        return CanonicalEventFeed(items, status)
+
+    @staticmethod
+    def _public_event_row_sync(item: Dict[str, Any]) -> Dict[str, Any]:
+        occurred_at = item.get("occurred_at")
+        if hasattr(occurred_at, "isoformat"):
+            item["occurred_at"] = occurred_at.isoformat()
         return item
