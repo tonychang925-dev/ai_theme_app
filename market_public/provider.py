@@ -16,6 +16,7 @@ from .contracts import (
     EventReadRequest,
     EventResolveRequest,
     MarketAnalysisReadRequest,
+    MarketAcceptanceStatus,
     MarketDataState,
     MarketFailure,
     MarketFailureKind,
@@ -181,6 +182,7 @@ def _result(
     correlation_id: str,
     request_id: str | None,
     failures: tuple[MarketFailure, ...] = (),
+    acceptance_status: MarketAcceptanceStatus | None = None,
 ) -> MarketResultEnvelope:
     produced_at = _produced_at()
     return MarketResultEnvelope(
@@ -196,6 +198,7 @@ def _result(
         boundary_identity_ref=MARKET_BOUNDARY_IDENTITY_REF,
         runtime_observation=None,
         produced_at=produced_at,
+        acceptance_status=acceptance_status,
     )
 
 
@@ -283,21 +286,68 @@ class _MarketPublicProvider:
                             correlation_id,
                             request_id,
                         )
-                data = await self._repository.fetch_intel_feed(
-                    feed_date=request.feed_date,
-                    stock_id=request.stock_id,
-                    item_type="event",
-                    limit=request.limit,
+                canonical_reader = getattr(
+                    self._repository, "fetch_canonical_intel_feed", None
                 )
+                if callable(canonical_reader):
+                    feed = await canonical_reader(
+                        feed_date=request.feed_date,
+                        stock_id=request.stock_id,
+                        limit=request.limit,
+                    )
+                    data = feed.items
+                    acceptance_status = feed.acceptance_status
+                else:
+                    # Compatibility for injected pre-cutover test doubles only.
+                    # The canonical factory adapter always exposes the reader above;
+                    # production resolution therefore cannot reach this branch.
+                    data = await self._repository.fetch_intel_feed(
+                        feed_date=request.feed_date,
+                        stock_id=request.stock_id,
+                        item_type="event",
+                        limit=request.limit,
+                    )
+                    acceptance_status = (
+                        MarketAcceptanceStatus.ACCEPTED
+                        if data
+                        else MarketAcceptanceStatus.EMPTY
+                    )
                 if request.stock_id:
                     data = [
                         row for row in data if row.get("source_channel") != "jyhf_cdp"
                     ]
+                if acceptance_status is MarketAcceptanceStatus.CASE_INELIGIBLE:
+                    return _result(
+                        capability,
+                        operation_status=MarketOperationStatus.SUCCESS,
+                        data_state=MarketDataState.NOT_APPLICABLE,
+                        payload=[],
+                        acceptance_status=acceptance_status,
+                        correlation_id=correlation_id,
+                        request_id=request_id,
+                    )
+                if acceptance_status is MarketAcceptanceStatus.INVALID:
+                    return _failure(
+                        capability,
+                        MarketDataState.UNAVAILABLE,
+                        MarketFailureKind.CONTRACT_MISMATCH,
+                        "canonical_event_provenance_invalid",
+                        "Canonical event evidence violates identity or provenance rules",
+                        correlation_id,
+                        request_id,
+                    )
                 return _result(
                     capability,
                     operation_status=MarketOperationStatus.SUCCESS,
-                    data_state=MarketDataState.READY if data else MarketDataState.EMPTY,
+                    data_state=(
+                        MarketDataState.READY
+                        if acceptance_status is MarketAcceptanceStatus.ACCEPTED
+                        else MarketDataState.PENDING
+                        if acceptance_status is MarketAcceptanceStatus.PRESENT_UNVERIFIED
+                        else MarketDataState.EMPTY
+                    ),
                     payload=data,
+                    acceptance_status=acceptance_status,
                     correlation_id=correlation_id,
                     request_id=request_id,
                 )

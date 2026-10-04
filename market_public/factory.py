@@ -9,7 +9,7 @@ from .provider import _MarketPublicProvider
 
 class MarketPublicFactory:
     @staticmethod
-    def create(*, database_url: str | None = None):
+    def create(*, database_url: str | None = None, event_operational_windows=None):
         # Precedence is explicit override > Market-specific compatibility alias
         # > deployed canonical configuration.  No implicit localhost value is
         # selected here; an absent value is passed through to the repository's
@@ -19,14 +19,20 @@ class MarketPublicFactory:
             or os.getenv("MARKET_DATABASE_URL")
             or os.getenv("DATABASE_URL")
         )
-        return _MarketPublicProvider(_LazyPhase1Repository(configured_url))
+        return _MarketPublicProvider(
+            _LazyPhase1Repository(
+                configured_url,
+                event_operational_windows=event_operational_windows,
+            )
+        )
 
 
 class _LazyPhase1Repository:
     """Private adapter: import and construct the real repository on execution."""
 
-    def __init__(self, database_url: str | None):
+    def __init__(self, database_url: str | None, event_operational_windows=None):
         self._database_url = database_url
+        self._event_operational_windows = event_operational_windows
         self._repository = None
 
     def _bound(self):
@@ -36,12 +42,16 @@ class _LazyPhase1Repository:
             )
 
             self._repository = Phase1MarketStateReadRepository(
-                database_url=self._database_url
+                database_url=self._database_url,
+                event_operational_windows=self._event_operational_windows,
             )
         return self._repository
 
     async def fetch_intel_feed(self, **kwargs):
         return await self._bound().fetch_intel_feed(**kwargs)
+
+    async def fetch_canonical_intel_feed(self, **kwargs):
+        return await self._bound().fetch_canonical_intel_feed(**kwargs)
 
     async def fetch_intel_event_by_item_id(self, item_id):
         return await self._bound().fetch_intel_event_by_item_id(item_id)

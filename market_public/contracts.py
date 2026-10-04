@@ -32,6 +32,16 @@ class MarketDataState(str, Enum):
     NOT_APPLICABLE = "NOT_APPLICABLE"
 
 
+class MarketAcceptanceStatus(str, Enum):
+    """Source-aware acceptance state for resolved event evidence."""
+
+    ACCEPTED = "ACCEPTED"
+    PRESENT_UNVERIFIED = "PRESENT_UNVERIFIED"
+    EMPTY = "EMPTY"
+    CASE_INELIGIBLE = "CASE_INELIGIBLE"
+    INVALID = "INVALID"
+
+
 class MarketFailureKind(str, Enum):
     UNAVAILABLE = "MarketUnavailable"
     NOT_READY = "MarketNotReady"
@@ -150,6 +160,7 @@ class MarketResultEnvelope:
     boundary_identity_ref: str
     runtime_observation: Any | None
     produced_at: str
+    acceptance_status: MarketAcceptanceStatus | None = None
 
     def __post_init__(self) -> None:
         if not self.contract_version:
