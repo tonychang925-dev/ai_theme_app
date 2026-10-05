@@ -5,19 +5,23 @@ on:
     paths:
       - 'stock_processing_service/**'
       - 'scripts/check_stock_processing_guardrails.sh'
+      - 'scripts/guardrails/check_stock_processing_incremental.py'
       - '.github/workflows/stock-processing-guardrails.yml'
   push:
     branches: [ main, master ]
     paths:
       - 'stock_processing_service/**'
       - 'scripts/check_stock_processing_guardrails.sh'
+      - 'scripts/guardrails/check_stock_processing_incremental.py'
 
 jobs:
   guardrails:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install ripgrep
-        run: sudo apt-get update && sudo apt-get install -y ripgrep
+        with:
+          fetch-depth: 0
       - name: Run guardrail checks
+        env:
+          STOCK_GUARDRAIL_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: bash scripts/check_stock_processing_guardrails.sh
