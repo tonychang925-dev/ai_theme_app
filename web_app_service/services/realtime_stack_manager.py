@@ -228,6 +228,9 @@ class RealtimeStackManager:
             {
                 "PYTHONPATH": str(self._project_root),
                 "HF_HUB_OFFLINE": "1",
+                "THEME_MATCH_TEXT2VEC_MODEL": str(
+                    self._project_root / "models" / "text2vec-base-chinese"
+                ),
                 "PYTHON_CMD": python,
                 "CONDA_PYTHON_CMD": python,
                 "SPS_RUNTIME_PROFILE": env.get("SPS_RUNTIME_PROFILE", "sps-conda-ml"),

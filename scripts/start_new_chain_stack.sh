@@ -234,7 +234,7 @@ start_stock_processing_service() {
   echo "[start] stock_processing_service:8090"
   (
     cd "$ROOT_DIR"
-    nohup bash -lc "$(build_env_source_cmd) && PYTHONPATH=\"$ROOT_DIR\" HF_HUB_OFFLINE=1 PYTHON_CMD=\"$SPS_PYTHON\" CONDA_PYTHON_CMD=\"$SPS_PYTHON\" SPS_RUNTIME_PROFILE=\"$SPS_RUNTIME_PROFILE\" REALTIME_LOG_DIR=\"$ROOT_DIR/logs/realtime\" \"$SPS_PYTHON\" -m uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090" \
+    nohup bash -lc "$(build_env_source_cmd) && PYTHONPATH=\"$ROOT_DIR\" HF_HUB_OFFLINE=1 THEME_MATCH_TEXT2VEC_MODEL=\"$ROOT_DIR/models/text2vec-base-chinese\" PYTHON_CMD=\"$SPS_PYTHON\" CONDA_PYTHON_CMD=\"$SPS_PYTHON\" SPS_RUNTIME_PROFILE=\"$SPS_RUNTIME_PROFILE\" REALTIME_LOG_DIR=\"$ROOT_DIR/logs/realtime\" \"$SPS_PYTHON\" -m uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090" \
       >"$LOG_DIR/stock_processing_service_8090.log" 2>&1 &
   )
 
