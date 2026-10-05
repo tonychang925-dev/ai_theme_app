@@ -23,5 +23,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Run DB direct-access guardrail
+        env:
+          DB_GUARDRAIL_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: python3 scripts/guardrails/check_db_direct_access_guardrail.py
