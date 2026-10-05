@@ -92,6 +92,51 @@ class DeterministicRecapMaterializerTests(unittest.TestCase):
         self.assertEqual(result["status"], "skipped_idempotent")
         self.assertEqual(result["affected_rows"], 0)
 
+    def test_d1_read_error_is_fail_closed_without_snapshot_write(self):
+        job = _FakeJob()
+
+        async def failed_execute(**kwargs):
+            raise RuntimeError("DETERMINISTIC_D1_SOURCE_READ_FAILED: db unavailable")
+
+        job.execute = failed_execute
+        result = asyncio.run(
+            DeterministicRecapMaterializer(job).materialize(date(2026, 9, 23))
+        )
+        self.assertFalse(result["ok"])
+        self.assertEqual(result["status"], "failed_precondition")
+        self.assertEqual(result["affected_rows"], 0)
+        self.assertEqual(result["write_scope"], [])
+        self.assertIsNone(result["snapshot"])
+
+    def test_mainline_discovery_error_is_fail_closed(self):
+        job = _FakeJob()
+
+        async def failed_execute(**kwargs):
+            raise RuntimeError("DETERMINISTIC_MAINLINE_DISCOVERY_FAILED: source unavailable")
+
+        job.execute = failed_execute
+        result = asyncio.run(
+            DeterministicRecapMaterializer(job).materialize(date(2026, 9, 23))
+        )
+        self.assertFalse(result["ok"])
+        self.assertEqual(result["status"], "failed_precondition")
+        self.assertEqual(result["write_scope"], [])
+
+    def test_mainline_lifecycle_error_is_fail_closed(self):
+        job = _FakeJob()
+
+        async def failed_execute(**kwargs):
+            raise RuntimeError("DETERMINISTIC_MAINLINE_LIFECYCLE_FAILED: regime unavailable")
+
+        job.execute = failed_execute
+        result = asyncio.run(
+            DeterministicRecapMaterializer(job).materialize(date(2026, 9, 23))
+        )
+        self.assertFalse(result["ok"])
+        self.assertEqual(result["status"], "failed_precondition")
+        self.assertEqual(result["affected_rows"], 0)
+        self.assertEqual(result["write_scope"], [])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -20,17 +20,32 @@ class DeterministicRecapMaterializer:
     async def materialize(self, trade_date: date, *, dry_run: bool = False) -> dict[str, Any]:
         snapshot_version = f"deterministic_recap.v1.{trade_date:%Y%m%d}"
         run_id = f"deterministic-recap-{trade_date:%Y%m%d}"
-        result = await self._recap_job.execute(
-            trade_date=trade_date,
-            snapshot_version=snapshot_version,
-            batch_id=run_id,
-            trace_id=run_id,
-            lookback_days=7,
-            skip_prereqs=True,
-            skip_layer_c=True,
-            deterministic_only=True,
-            write_snapshot=not dry_run,
-        )
+        try:
+            result = await self._recap_job.execute(
+                trade_date=trade_date,
+                snapshot_version=snapshot_version,
+                batch_id=run_id,
+                trace_id=run_id,
+                lookback_days=7,
+                skip_prereqs=True,
+                skip_layer_c=True,
+                deterministic_only=True,
+                write_snapshot=not dry_run,
+            )
+        except Exception as exc:
+            return {
+                "ok": False,
+                "status": "failed_precondition",
+                "trade_date": trade_date.isoformat(),
+                "snapshot_version": snapshot_version,
+                "affected_rows": 0,
+                "metrics": {"error_type": type(exc).__name__},
+                "warnings": [str(exc)],
+                "write_scope": [],
+                "llm_call": False,
+                "derived_rebuild": False,
+                "snapshot": None,
+            }
         snapshot = self._recap_job.last_materialized_snapshot
         return {
             "ok": result.status == "ok",

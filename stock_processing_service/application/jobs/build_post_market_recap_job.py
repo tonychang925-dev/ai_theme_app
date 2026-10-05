@@ -498,7 +498,11 @@ class BuildPostMarketRecapJob:
             if callable(read_existing_w2s):
                 try:
                     existing_w2s_rows = list(await read_existing_w2s(trade_date, limit=20))
-                except Exception:
+                except Exception as exc:
+                    if deterministic_only:
+                        raise RuntimeError(
+                            f"DETERMINISTIC_D1_SOURCE_READ_FAILED: {exc}"
+                        ) from exc
                     logger.warning("D1 candidate read failed, continuing without D1 rows")
             _d1_total_in = len(existing_w2s_rows)
             _d1_pass = len(existing_w2s_rows)
@@ -1659,7 +1663,11 @@ class BuildPostMarketRecapJob:
             if allow_writes:
                 await self._persist_review_queue(trade_date, review_items)
 
-        except Exception:
+        except Exception as exc:
+            if not allow_llm:
+                raise RuntimeError(
+                    f"DETERMINISTIC_MAINLINE_DISCOVERY_FAILED: {exc}"
+                ) from exc
             logger.exception("Mainline discovery pipeline failed, continuing without it")
             recap_doc["mainline_discovery_reviews"] = []
             recap_doc["mainline_discovery_reviews_error"] = "pipeline_failed"
@@ -1733,7 +1741,11 @@ class BuildPostMarketRecapJob:
                 **regime_ctx.diagnostics,
                 "index_technical_reviews": regime_ctx.index_technical_reviews,
             }
-        except Exception:
+        except Exception as exc:
+            if not allow_writes:
+                raise RuntimeError(
+                    f"DETERMINISTIC_MAINLINE_LIFECYCLE_FAILED: {exc}"
+                ) from exc
             logger.exception("Mainline discovery pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []
             recap_doc["mainline_lifecycle_diagnostics"] = {"error": "pipeline_failed"}
