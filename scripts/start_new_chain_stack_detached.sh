@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
-ROOT_DIR="/Users/admin/Desktop/ai_theme_app"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd -P)"
+AUTHORIZED_GIT_SHA="$(git -C "$ROOT_DIR" rev-parse HEAD)"
 LOG_DIR="$ROOT_DIR/logs/realtime"
 WEB_PYTHON="${WEB_PYTHON:-$ROOT_DIR/.venv/bin/python}"
 SPS_PYTHON="${SPS_PYTHON:-/opt/miniconda3/envs/theme_matcher_env/bin/python}"
@@ -56,13 +58,14 @@ check_sps_runtime_guard() {
     echo "[fail] stock_processing_service /healthz unavailable"
     return 1
   fi
-  SPS_HEALTH_PAYLOAD="$payload" "$WEB_PYTHON" - "$ROOT_DIR" "$SPS_RUNTIME_PROFILE" <<'PY'
+  SPS_HEALTH_PAYLOAD="$payload" "$WEB_PYTHON" - "$ROOT_DIR" "$SPS_RUNTIME_PROFILE" "$AUTHORIZED_GIT_SHA" <<'PY'
 import json
 import os
 import sys
 
 root_dir = sys.argv[1]
 expected_profile = sys.argv[2]
+expected_sha = sys.argv[3]
 data = json.loads(os.environ["SPS_HEALTH_PAYLOAD"])
 errors = []
 if data.get("runtime_profile") != expected_profile:
@@ -71,6 +74,12 @@ if "theme_matcher_env" not in str(data.get("python") or ""):
     errors.append(f"python does not contain theme_matcher_env: {data.get('python')!r}")
 if data.get("cwd") != root_dir:
     errors.append(f"cwd={data.get('cwd')!r}, expected={root_dir!r}")
+if data.get("repo_root") != root_dir:
+    errors.append(f"repo_root={data.get('repo_root')!r}, expected={root_dir!r}")
+if data.get("git_sha") != expected_sha:
+    errors.append(f"git_sha={data.get('git_sha')!r}, expected={expected_sha!r}")
+if data.get("git_dirty") is not False:
+    errors.append(f"git_dirty={data.get('git_dirty')!r}, expected=False")
 if data.get("torch_available") is not True:
     errors.append(f"torch_available={data.get('torch_available')!r}")
 if errors:
@@ -80,6 +89,7 @@ print(
     "[ok] SPS runtime guard passed "
     f"profile={data.get('runtime_profile')} "
     f"python={data.get('python')} "
+    f"git_sha={data.get('git_sha')} "
     f"torch={data.get('torch_version') or 'available'}"
 )
 PY
@@ -105,8 +115,8 @@ write_pid_file() {
   return 1
 }
 
-runtime_env_prefix='
-cd /Users/admin/Desktop/ai_theme_app
+runtime_env_prefix="
+cd '$ROOT_DIR'
 if [[ -f .env.theme ]]; then set -a; source .env.theme; set +a; fi
 if [[ -f .env ]]; then set -a; source .env; set +a; fi
 export THEME_PROFILE_VERSION=v2
@@ -117,7 +127,9 @@ export PG_DATABASE=stock_data_test
 export DB_NAME=stock_data_test
 export READ_PG_DATABASE=stock_data_test
 export POSTGRES_DATABASE=stock_data_test
-'
+export AI_THEME_AUTHORIZED_REPO_ROOT='$ROOT_DIR'
+export AI_THEME_AUTHORIZED_GIT_SHA='$AUTHORIZED_GIT_SHA'
+"
 
 "$ROOT_DIR/scripts/stop_new_chain_stack.sh" --force --with-frontend >/dev/null 2>&1 || true
 stop_screen_session "$SPS_SESSION"

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import sys
+
 import asyncio
 import logging
 import os as _os
@@ -218,9 +220,48 @@ async def mobile_token_middleware(request: Request, call_next):
 
 
 # ── Health ──
+def _runtime_git_sha(root: Path) -> str | None:
+    try:
+        import subprocess
+
+        return subprocess.check_output(
+            ["git", "-C", str(root), "rev-parse", "HEAD"],
+            text=True,
+            stderr=subprocess.DEVNULL,
+            timeout=2,
+        ).strip() or None
+    except Exception:
+        return None
+
+
+def _runtime_git_dirty(root: Path) -> bool | None:
+    try:
+        import subprocess
+
+        output = subprocess.check_output(
+            ["git", "-C", str(root), "status", "--porcelain"],
+            text=True,
+            stderr=subprocess.DEVNULL,
+            timeout=2,
+        )
+        return bool(output.strip())
+    except Exception:
+        return None
+
+
 @app.get("/healthz")
-async def healthz() -> dict[str, str]:
-    return {"status": "ok", "service": "web_app_service"}
+async def healthz() -> dict[str, Any]:
+    repo_root = Path.cwd().resolve()
+    return {
+        "status": "ok",
+        "service": "web_app_service",
+        "python": sys.executable,
+        "cwd": str(repo_root),
+        "repo_root": str(repo_root),
+        "git_sha": _runtime_git_sha(repo_root),
+        "git_dirty": _runtime_git_dirty(repo_root),
+        "pythonpath": _os.getenv("PYTHONPATH", ""),
+    }
 
 
 # ── Ready (深度就绪检查) ──
@@ -262,7 +303,30 @@ async def readyz():
         async with httpx.AsyncClient(timeout=5.0, trust_env=False) as client:
             resp = await client.get(f"{_SPS_BASE_URL}/healthz")
         if resp.status_code == 200:
-            checks["sps_upstream"] = "healthy"
+            sps_health = resp.json()
+            expected_root = _os.getenv("AI_THEME_AUTHORIZED_REPO_ROOT", str(Path.cwd().resolve()))
+            expected_sha = _os.getenv("AI_THEME_AUTHORIZED_GIT_SHA", _runtime_git_sha(Path.cwd().resolve()) or "")
+            identity_errors = []
+            if sps_health.get("repo_root") != expected_root:
+                identity_errors.append(f"repo_root={sps_health.get('repo_root')!r}, expected={expected_root!r}")
+            if sps_health.get("git_sha") != expected_sha:
+                identity_errors.append(f"git_sha={sps_health.get('git_sha')!r}, expected={expected_sha!r}")
+            if sps_health.get("git_dirty") is not False:
+                identity_errors.append(f"git_dirty={sps_health.get('git_dirty')!r}, expected=False")
+            web_root = str(Path.cwd().resolve())
+            web_sha = _runtime_git_sha(Path.cwd().resolve())
+            web_dirty = _runtime_git_dirty(Path.cwd().resolve())
+            if web_root != expected_root:
+                identity_errors.append(f"web_repo_root={web_root!r}, expected={expected_root!r}")
+            if web_sha != expected_sha:
+                identity_errors.append(f"web_git_sha={web_sha!r}, expected={expected_sha!r}")
+            if web_dirty is not False:
+                identity_errors.append(f"web_git_dirty={web_dirty!r}, expected=False")
+            if identity_errors:
+                checks["sps_upstream"] = "identity_mismatch: " + "; ".join(identity_errors)
+                fatal.append("sps_upstream_identity")
+            else:
+                checks["sps_upstream"] = "healthy_same_source"
         else:
             checks["sps_upstream"] = f"unhealthy (status={resp.status_code})"
             fatal.append("sps_upstream")

@@ -11,9 +11,11 @@ Canonical base at freeze time: `e55559bc5c151cc946ebadbe408c5c463da66ea6`
 
 Eliminate runtime source ambiguity before any Workbench durable snapshot repair.
 
-The Market runtime, Web/BFF runtime, and Analyst Workbench runtime must execute from one explicitly authorized canonical worktree and one exact Git commit. No production verification may mix code loaded from historical Desktop worktrees, PRE_A3 worktrees, or a different `PYTHONPATH`.
+The Market runtime, web_app_service:8000 runtime, and Analyst Workbench runtime must execute from one explicitly authorized canonical worktree and one exact Git commit. No production verification may mix code loaded from historical Desktop worktrees, PRE_A3 worktrees, or a different `PYTHONPATH`.
 
 This card authorizes design freeze only. It does not authorize code changes, service restart, DB writes, historical backfill, E2E, or external model calls.
+
+Architecture note: `frontend_bff:8003` is the retired legacy BFF and is explicitly outside this task. The current gateway is `web_app_service:8000`, which reads SPS on `stock_processing_service:8090`.
 
 ## 2. Audited current defect
 
@@ -91,7 +93,7 @@ The implementation MUST NOT:
 
 ## 7. Required runtime identity evidence
 
-A future candidate must provide machine-readable evidence for SPS and Web/BFF containing at minimum:
+A future candidate must provide machine-readable evidence for SPS and web_app_service:8000 containing at minimum:
 
 ```text
 repo_root
@@ -119,7 +121,7 @@ SPS `/healthz` already exposes runtime-oriented diagnostics such as cwd, Python,
 
 Acceptance requires an exact-SHA proof, not only a path-name match.
 
-Web/BFF readiness must also prove that it is connected to the SPS instance launched from the same authorized root/SHA.
+web_app_service:8000 readiness must also prove that it is connected to the SPS instance launched from the same authorized root/SHA.
 
 ## 9. Workbench storage warning
 
@@ -149,13 +151,13 @@ The convergence task itself must not rebuild or overwrite the 2026-09-24 snapsho
 A candidate is acceptable only if all are true:
 
 1. Base SHA equals the exact Owner-authorized canonical main SHA.
-2. No historical Desktop/PRE_A3 worktree is used as SPS or Web/BFF source.
+2. No historical Desktop/PRE_A3 worktree is used as SPS or web_app_service:8000 source.
 3. Canonical shell startup no longer hard-codes `/Users/admin/Desktop/ai_theme_app`.
 4. SPS starts with `cwd == authorized repo root`.
 5. SPS starts with `PYTHONPATH == authorized repo root`.
 6. SPS reports the expected runtime profile and Python environment.
 7. Runtime reports the exact Git SHA and it equals the authorized SHA.
-8. Web/BFF targets the SPS instance belonging to the same root/SHA.
+8. `web_app_service:8000` targets the SPS instance belonging to the same root/SHA.
 9. Existing model-path wiring remains project-root-relative.
 10. No DB writes, historical backfill, Workbench generation, or external LLM invocation are required to prove convergence.
 11. Any mismatch is fail-closed, never warning-only or fallback-to-Desktop.

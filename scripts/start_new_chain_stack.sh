@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
-ROOT_DIR="/Users/admin/Desktop/ai_theme_app"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
+ROOT_DIR="$(cd "$SCRIPT_DIR/.." && pwd -P)"
+AUTHORIZED_GIT_SHA="$(git -C "$ROOT_DIR" rev-parse HEAD)"
 LOG_DIR="/tmp/ai_theme_realtime"
 WEB_PYTHON="${WEB_PYTHON:-$ROOT_DIR/.venv/bin/python}"
 SPS_PYTHON="${SPS_PYTHON:-/opt/miniconda3/envs/theme_matcher_env/bin/python}"
@@ -154,7 +156,7 @@ start_web_app_service() {
     echo "[start] web_app_service:8000 (attempt $attempt/$max_attempts)"
     (
       cd "$ROOT_DIR"
-      nohup bash -lc "$(build_env_source_cmd) && WEB_APP_READ_MODE=http STOCK_PROCESSING_READ_BASE_URL=http://127.0.0.1:8090 \"$WEB_PYTHON\" -m uvicorn web_app_service.main:app --host 0.0.0.0 --port 8000" \
+      nohup bash -lc "$(build_env_source_cmd) && WEB_APP_READ_MODE=http STOCK_PROCESSING_READ_BASE_URL=http://127.0.0.1:8090 AI_THEME_AUTHORIZED_REPO_ROOT=\"$ROOT_DIR\" AI_THEME_AUTHORIZED_GIT_SHA=\"$AUTHORIZED_GIT_SHA\" \"$WEB_PYTHON\" -m uvicorn web_app_service.main:app --host 0.0.0.0 --port 8000" \
         >"$LOG_DIR/web_app_service_8000.log" 2>&1 &
     )
 
@@ -186,13 +188,14 @@ check_sps_runtime_guard() {
     echo "[fail] stock_processing_service /healthz unavailable"
     return 1
   fi
-  SPS_HEALTH_PAYLOAD="$payload" "$WEB_PYTHON" - "$ROOT_DIR" "$SPS_RUNTIME_PROFILE" <<'PY'
+  SPS_HEALTH_PAYLOAD="$payload" "$WEB_PYTHON" - "$ROOT_DIR" "$SPS_RUNTIME_PROFILE" "$AUTHORIZED_GIT_SHA" <<'PY'
 import json
 import os
 import sys
 
 root_dir = sys.argv[1]
 expected_profile = sys.argv[2]
+expected_sha = sys.argv[3]
 data = json.loads(os.environ["SPS_HEALTH_PAYLOAD"])
 errors = []
 if data.get("runtime_profile") != expected_profile:
@@ -201,6 +204,12 @@ if "theme_matcher_env" not in str(data.get("python") or ""):
     errors.append(f"python does not contain theme_matcher_env: {data.get('python')!r}")
 if data.get("cwd") != root_dir:
     errors.append(f"cwd={data.get('cwd')!r}, expected={root_dir!r}")
+if data.get("repo_root") != root_dir:
+    errors.append(f"repo_root={data.get('repo_root')!r}, expected={root_dir!r}")
+if data.get("git_sha") != expected_sha:
+    errors.append(f"git_sha={data.get('git_sha')!r}, expected={expected_sha!r}")
+if data.get("git_dirty") is not False:
+    errors.append(f"git_dirty={data.get('git_dirty')!r}, expected=False")
 if data.get("torch_available") is not True:
     errors.append(f"torch_available={data.get('torch_available')!r}")
 if errors:
@@ -210,6 +219,7 @@ print(
     "[ok] SPS runtime guard passed "
     f"profile={data.get('runtime_profile')} "
     f"python={data.get('python')} "
+    f"git_sha={data.get('git_sha')} "
     f"torch={data.get('torch_version') or 'available'}"
 )
 PY
@@ -234,7 +244,7 @@ start_stock_processing_service() {
   echo "[start] stock_processing_service:8090"
   (
     cd "$ROOT_DIR"
-    nohup bash -lc "$(build_env_source_cmd) && PYTHONPATH=\"$ROOT_DIR\" HF_HUB_OFFLINE=1 THEME_MATCH_TEXT2VEC_MODEL=\"$ROOT_DIR/models/text2vec-base-chinese\" PYTHON_CMD=\"$SPS_PYTHON\" CONDA_PYTHON_CMD=\"$SPS_PYTHON\" SPS_RUNTIME_PROFILE=\"$SPS_RUNTIME_PROFILE\" REALTIME_LOG_DIR=\"$ROOT_DIR/logs/realtime\" \"$SPS_PYTHON\" -m uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090" \
+    nohup bash -lc "$(build_env_source_cmd) && PYTHONPATH=\"$ROOT_DIR\" HF_HUB_OFFLINE=1 THEME_MATCH_TEXT2VEC_MODEL=\"$ROOT_DIR/models/text2vec-base-chinese\" PYTHON_CMD=\"$SPS_PYTHON\" CONDA_PYTHON_CMD=\"$SPS_PYTHON\" SPS_RUNTIME_PROFILE=\"$SPS_RUNTIME_PROFILE\" AI_THEME_AUTHORIZED_REPO_ROOT=\"$ROOT_DIR\" AI_THEME_AUTHORIZED_GIT_SHA=\"$AUTHORIZED_GIT_SHA\" REALTIME_LOG_DIR=\"$ROOT_DIR/logs/realtime\" \"$SPS_PYTHON\" -m uvicorn stock_processing_service.api_app:app --host 127.0.0.1 --port 8090" \
       >"$LOG_DIR/stock_processing_service_8090.log" 2>&1 &
   )
 
