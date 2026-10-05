@@ -120,7 +120,7 @@ class StockProcessingReadClient:
         url = f"{self._base_url}{path}"
         clean_params = {k: v for k, v in params.items() if v is not None and v != ""}
         try:
-            async with httpx.AsyncClient(timeout=self._timeout) as client:
+            async with httpx.AsyncClient(timeout=self._timeout, trust_env=False) as client:
                 resp = await client.get(url, params=clean_params)
                 resp.raise_for_status()
                 data = resp.json()
