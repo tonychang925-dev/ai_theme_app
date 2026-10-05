@@ -12,6 +12,7 @@ SQL = re.compile(r"\bSELECT\b|\bINSERT\b|\bUPDATE\b|\bDELETE\b")
 
 
 def _tracked_files(base: Path, prefix: str):
+    # Guard only repository truth; local caches/untracked artifacts are not candidate source.
     proc = subprocess.run(
         ["git", "-C", str(base), "ls-files", "--", prefix],
         capture_output=True, text=True,
