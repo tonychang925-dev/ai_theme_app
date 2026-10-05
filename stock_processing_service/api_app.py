@@ -1404,16 +1404,50 @@ def _optional_import_status(module_name: str) -> dict[str, Any]:
     }
 
 
+def _runtime_git_sha(root: Path) -> str | None:
+    try:
+        import subprocess
+
+        return subprocess.check_output(
+            ["git", "-C", str(root), "rev-parse", "HEAD"],
+            text=True,
+            stderr=subprocess.DEVNULL,
+            timeout=2,
+        ).strip() or None
+    except Exception:
+        return None
+
+
+def _runtime_git_dirty(root: Path) -> bool | None:
+    try:
+        import subprocess
+
+        output = subprocess.check_output(
+            ["git", "-C", str(root), "status", "--porcelain"],
+            text=True,
+            stderr=subprocess.DEVNULL,
+            timeout=2,
+        )
+        return bool(output.strip())
+    except Exception:
+        return None
+
+
 @app.get("/healthz")
 async def healthz() -> dict[str, Any]:
     torch_status = _optional_import_status("torch")
     text2vec_status = _optional_import_status("text2vec")
+    repo_root = Path.cwd().resolve()
     return {
         "status": "ok",
         "db": _db_name(),
         "runtime_profile": os.getenv("SPS_RUNTIME_PROFILE", "sps-unknown"),
         "python": sys.executable,
-        "cwd": str(Path.cwd()),
+        "cwd": str(repo_root),
+        "repo_root": str(repo_root),
+        "git_sha": _runtime_git_sha(repo_root),
+        "git_dirty": _runtime_git_dirty(repo_root),
+        "pythonpath": os.getenv("PYTHONPATH", ""),
         "torch_available": bool(torch_status["available"]),
         "torch_version": torch_status["version"],
         "torch_error": torch_status["error"],
