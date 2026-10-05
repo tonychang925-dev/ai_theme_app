@@ -36,3 +36,4 @@ def test_sps_healthz_does_not_follow_checkout_drift(monkeypatch):
     assert payload["git_sha"] == "process-start-sha"
     assert payload["current_worktree_identity"]["git_sha"] == "current-worktree-sha"
     assert payload["source_drift"] is True
+    assert payload["status"] == "failed"

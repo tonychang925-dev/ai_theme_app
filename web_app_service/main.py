@@ -270,7 +270,7 @@ async def healthz() -> dict[str, Any]:
         or process_identity.get("git_sha") != current_identity.get("git_sha")
     )
     return {
-        "status": "ok",
+        "status": "failed" if source_drift else "ok",
         "service": "web_app_service",
         "python": sys.executable,
         "cwd": str(repo_root),
