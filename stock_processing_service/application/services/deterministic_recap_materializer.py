@@ -40,7 +40,7 @@ class DeterministicRecapMaterializer:
             "affected_rows": 0 if dry_run else result.affected_rows,
             "metrics": dict(result.metrics or {}),
             "warnings": list(result.warnings or []),
-            "write_scope": [] if dry_run else ["post_market_recap_snapshot"],
+            "write_scope": ["post_market_recap_snapshot"] if result.status == "ok" and not dry_run else [],
             "llm_call": False,
             "derived_rebuild": False,
             "snapshot": snapshot.recap_doc if snapshot is not None else None,

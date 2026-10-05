@@ -25,7 +25,27 @@ def test_web_healthz_reports_exact_runtime_source_identity():
     assert payload["cwd"] == str(root)
     assert payload["repo_root"] == str(root)
     assert payload["git_sha"] == sha
-    assert payload["git_dirty"] is False
+    assert payload["git_dirty"] == payload["process_start_identity"]["git_dirty"]
+    assert payload["process_start_identity"]["git_sha"] == sha
+    assert payload["source_drift"] is False
+
+
+def test_web_healthz_does_not_follow_checkout_drift(monkeypatch):
+    from pathlib import Path
+
+    root = Path.cwd().resolve()
+    monkeypatch.setattr(
+        main_mod.app.state,
+        "runtime_identity",
+        {"repo_root": str(root), "git_sha": "process-start-sha", "git_dirty": False},
+        raising=False,
+    )
+    monkeypatch.setattr(main_mod, "_runtime_git_sha", lambda _root: "current-worktree-sha")
+    payload = __import__("asyncio").run(main_mod.healthz())
+
+    assert payload["git_sha"] == "process-start-sha"
+    assert payload["current_worktree_identity"]["git_sha"] == "current-worktree-sha"
+    assert payload["source_drift"] is True
 
 
 def test_readyz_rejects_sps_source_identity_mismatch(monkeypatch):
