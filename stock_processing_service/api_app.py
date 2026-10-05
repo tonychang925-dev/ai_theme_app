@@ -3179,6 +3179,27 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
     })
 
 
+@app.post("/api/v1/post-market/recap/deterministic-materialize")
+async def deterministic_materialize_post_market_recap(
+    payload: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Materialize one recap snapshot from existing read-model facts only."""
+    p = payload or {}
+    from datetime import date as _date
+    from stock_processing_service.application.services.deterministic_recap_materializer import (
+        DeterministicRecapMaterializer,
+    )
+
+    trade_date_str = str(p.get("trade_date") or p.get("date") or "")
+    try:
+        trade_date = _date.fromisoformat(trade_date_str)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid date: {trade_date_str}") from exc
+    dry_run = bool(p.get("dry_run", False))
+    materializer = DeterministicRecapMaterializer(app.state.container.build_post_market_recap)
+    return await materializer.materialize(trade_date, dry_run=dry_run)
+
+
 async def _read_job_status(
     pool, trade_date, job_key: str, *, snapshot_version: str = ""
 ) -> dict[str, Any] | None:
