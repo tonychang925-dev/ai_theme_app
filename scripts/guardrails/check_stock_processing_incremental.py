@@ -11,6 +11,18 @@ FORBIDDEN = re.compile(r"\._client\b|\._db\b|\bexecute_query\b|\basyncpg\b")
 SQL = re.compile(r"\bSELECT\b|\bINSERT\b|\bUPDATE\b|\bDELETE\b")
 
 
+def _tracked_files(base: Path, prefix: str):
+    # Guard only repository truth; local caches/untracked artifacts are not candidate source.
+    proc = subprocess.run(
+        ["git", "-C", str(base), "ls-files", "--", prefix],
+        capture_output=True, text=True,
+    )
+    if proc.returncode == 0:
+        return [base / line.strip() for line in proc.stdout.splitlines() if line.strip()]
+    root = base / prefix
+    return [p for p in root.rglob("*") if p.is_file()] if root.exists() else []
+
+
 def _read_lines(path: Path):
     try:
         return path.read_text(encoding="utf-8", errors="ignore").splitlines()
@@ -27,7 +39,7 @@ def scan(base_dir: Path | str = Path(".")):
         p = root / layer
         if not p.exists():
             continue
-        for file in p.rglob("*"):
+        for file in _tracked_files(base, f"{ROOT}/{layer}"):
             if not file.is_file():
                 continue
             rel = file.relative_to(base).as_posix()
@@ -43,7 +55,7 @@ def scan(base_dir: Path | str = Path(".")):
                     })
 
     if root.exists():
-        for file in root.rglob("*"):
+        for file in _tracked_files(base, ROOT):
             if not file.is_file():
                 continue
             rel = file.relative_to(base).as_posix()
