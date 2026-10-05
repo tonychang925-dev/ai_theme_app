@@ -136,6 +136,11 @@ class BuildPostMarketRecapJob:
             int(os.getenv("POST_MARKET_RECAP_NARRATIVE_LLM_TIMEOUT_SEC", "25") or 25),
             10,
         )
+        self._last_materialized_snapshot: PostMarketRecapSnapshot | None = None
+
+    @property
+    def last_materialized_snapshot(self) -> PostMarketRecapSnapshot | None:
+        return self._last_materialized_snapshot
 
     async def _attach_limit_up_theme_matrix(self, recap_doc: dict[str, Any], trade_date: date) -> None:
         pool = getattr(self._read_port, "_pool", None)
@@ -386,9 +391,13 @@ class BuildPostMarketRecapJob:
         lookback_days: int = 8,
         skip_prereqs: bool = False,
         skip_layer_c: bool = False,
+        deterministic_only: bool = False,
+        write_snapshot: bool = True,
     ) -> BuildResult:
         job_key = f"build_post_market_recap:{trade_date.isoformat()}:{snapshot_version}"
-        acquired = await self._idempotency_port.acquire_job_idempotency(job_key=job_key, ttl_seconds=6 * 3600)
+        acquired = True if deterministic_only else await self._idempotency_port.acquire_job_idempotency(
+            job_key=job_key, ttl_seconds=6 * 3600
+        )
         if not acquired:
             return BuildResult(
                 name="build_post_market_recap",
@@ -402,8 +411,9 @@ class BuildPostMarketRecapJob:
             )
 
         # P1-3: mark running
-        await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
-            diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id})
+        if not deterministic_only:
+            await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id})
         try:
 
             # ── Layer A/B 前置（新链自闭环）──
@@ -443,8 +453,9 @@ class BuildPostMarketRecapJob:
                     )
 
             # heartbeat: prerequisites complete
-            await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
-                diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "prerequisites_done"})
+            if not deterministic_only:
+                await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                    diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "prerequisites_done"})
 
             # ── Build stock_abnormal_signal (required prerequisite for abnormal_reviews) ──
             if not skip_prereqs and self._abnormal_signal_job is not None:
@@ -487,7 +498,11 @@ class BuildPostMarketRecapJob:
             if callable(read_existing_w2s):
                 try:
                     existing_w2s_rows = list(await read_existing_w2s(trade_date, limit=20))
-                except Exception:
+                except Exception as exc:
+                    if deterministic_only:
+                        raise RuntimeError(
+                            f"DETERMINISTIC_D1_SOURCE_READ_FAILED: {exc}"
+                        ) from exc
                     logger.warning("D1 candidate read failed, continuing without D1 rows")
             _d1_total_in = len(existing_w2s_rows)
             _d1_pass = len(existing_w2s_rows)
@@ -729,18 +744,19 @@ class BuildPostMarketRecapJob:
             readiness = await self._check_post_market_readiness(trade_date)
             recap_doc.setdefault("diagnostics", {})["readiness"] = readiness
             if not skip_prereqs and readiness["status"] != "ready":
-                await self._mark_job_status(trade_date, "post_market_recap_generate", "failed_precondition",
-                    error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
-                    diagnostics={"readiness": readiness, "snapshot_version": snapshot_version})
-                await self._idempotency_port.mark_job_completed(
-                    job_key,
-                    {
-                        "trade_date": trade_date.isoformat(),
-                        "snapshot_version": snapshot_version,
-                        "status": "failed_precondition",
-                        "readiness": readiness,
-                    },
-                )
+                if not deterministic_only:
+                    await self._mark_job_status(trade_date, "post_market_recap_generate", "failed_precondition",
+                        error_code="POST_MARKET_DERIVED_DATA_NOT_READY",
+                        diagnostics={"readiness": readiness, "snapshot_version": snapshot_version})
+                    await self._idempotency_port.mark_job_completed(
+                        job_key,
+                        {
+                            "trade_date": trade_date.isoformat(),
+                            "snapshot_version": snapshot_version,
+                            "status": "failed_precondition",
+                            "readiness": readiness,
+                        },
+                    )
                 return BuildResult(
                     name="build_post_market_recap",
                     trade_date=trade_date.isoformat(),
@@ -764,11 +780,19 @@ class BuildPostMarketRecapJob:
                     "narrative_timeout_sec": self._narrative_llm_timeout_sec,
                 }
             )
-            recap_doc["market_summary"] = await self._build_market_summary_llm(
-                trade_date,
-                report_context,
-                llm_deadline=llm_deadline,
-            )
+            if deterministic_only:
+                recap_doc["market_summary"] = {
+                    "status": "unavailable",
+                    "source": "deterministic_recap_materializer",
+                    "llm": "disabled",
+                }
+                diag["llm"] = {"enabled": False, "reason": "deterministic_path"}
+            else:
+                recap_doc["market_summary"] = await self._build_market_summary_llm(
+                    trade_date,
+                    report_context,
+                    llm_deadline=llm_deadline,
+                )
             theme_context_map = await self._build_theme_context_map(trade_date, report_context)
             recap_doc["theme_reviews"] = self._build_theme_reviews(theme_context_map)
             recap_doc["diagnostics"]["coverage"] = self._build_theme_review_coverage(theme_context_map)
@@ -795,6 +819,9 @@ class BuildPostMarketRecapJob:
                 batch_id,
                 trace_id,
                 llm_deadline=llm_deadline,
+                allow_llm=not deterministic_only,
+                allow_writes=not deterministic_only,
+                write_snapshot=write_snapshot,
             )
 
             # ── P0: 交易体系决策输出 ──
@@ -827,8 +854,9 @@ class BuildPostMarketRecapJob:
                 recap_doc["mainline_hotspots"] = merged_hotspots
 
             # heartbeat: building one_to_two
-            await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
-                diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "building_one_to_two"})
+            if not deterministic_only:
+                await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                    diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "building_one_to_two"})
 
             # Inject abnormal_reviews for DailyReviewV2 display.
             if not recap_doc.get("abnormal_reviews"):
@@ -906,13 +934,18 @@ class BuildPostMarketRecapJob:
             )
             one_to_two_payload = one_to_two_plan.to_dict().get("watchlists", {}).get("one_to_two", {})
             setup_plan_rows, candidate_feature_rows = self._build_one_to_two_persist_rows(one_to_two_plan)
-            setup_plan_written = await self._write_port.upsert_post_market_setup_plan_rows(setup_plan_rows)
-            if setup_plan_written <= 0:
-                raise RuntimeError("failed to persist post_market_setup_plan rows")
-            if candidate_feature_rows:
-                feature_written = await self._write_port.upsert_one_to_two_candidate_feature_rows(candidate_feature_rows)
-                if feature_written <= 0:
-                    raise RuntimeError("failed to persist one_to_two_candidate_feature rows")
+            if deterministic_only:
+                setup_plan_written = 0
+                feature_written = 0
+            else:
+                setup_plan_written = await self._write_port.upsert_post_market_setup_plan_rows(setup_plan_rows)
+                if setup_plan_written <= 0:
+                    raise RuntimeError("failed to persist post_market_setup_plan rows")
+                feature_written = 0
+                if candidate_feature_rows:
+                    feature_written = await self._write_port.upsert_one_to_two_candidate_feature_rows(candidate_feature_rows)
+                    if feature_written <= 0:
+                        raise RuntimeError("failed to persist one_to_two_candidate_feature rows")
             recap_doc["post_market_setup_plan"] = one_to_two_payload
             recap_doc["watchlists"] = {"one_to_two": one_to_two_payload}
 
@@ -966,6 +999,24 @@ class BuildPostMarketRecapJob:
                 if isinstance(market_overview_review, dict):
                     recap_doc["market_overview_review"] = market_overview_review
 
+            if deterministic_only:
+                from stock_processing_service.application.services.post_market_daily_review_v2_builder import (
+                    PostMarketDailyReviewV2Builder,
+                )
+                from stock_processing_service.application.services.post_market_engine_report_composer import (
+                    PostMarketEngineReportComposer,
+                )
+                structured_v2 = PostMarketDailyReviewV2Builder().build(
+                    trade_date=trade_date,
+                    recap_doc=recap_doc,
+                    recap_snapshot_version=snapshot_version,
+                    snapshot_version=f"daily_review_v2.{trade_date:%Y%m%d}.deterministic",
+                )
+                recap_doc["daily_review_v2"] = {
+                    **structured_v2,
+                    **PostMarketEngineReportComposer().compose({**recap_doc, **structured_v2}),
+                }
+
             snapshot = PostMarketRecapSnapshot(
                 trade_date=trade_date,
                 snapshot_version=snapshot_version,
@@ -976,15 +1027,20 @@ class BuildPostMarketRecapJob:
             )
 
             # heartbeat: writing snapshot
-            await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
-                diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "writing_snapshot"})
+            if not deterministic_only:
+                await self._mark_job_status(trade_date, "post_market_recap_generate", "running",
+                    diagnostics={"snapshot_version": snapshot_version, "batch_id": batch_id, "trace_id": trace_id, "stage": "writing_snapshot"})
 
-            affected = await self._write_port.upsert_post_market_recap_snapshot(snapshot)
-            await self._mark_job_status(trade_date, "post_market_recap_generate", "success",
-                diagnostics={"affected_rows": affected, "snapshot_version": snapshot_version})
+            self._last_materialized_snapshot = snapshot
+            affected = 0
+            if write_snapshot:
+                affected = await self._write_port.upsert_post_market_recap_snapshot(snapshot)
+            if not deterministic_only:
+                await self._mark_job_status(trade_date, "post_market_recap_generate", "success",
+                    diagnostics={"affected_rows": affected, "snapshot_version": snapshot_version})
             # history already written in Step 7e above; strong_watch_history_written tracks the count
 
-            if self._cache_port is not None:
+            if self._cache_port is not None and not deterministic_only:
                 await self._cache_writer.write_value_cache(
                     f"sps:post_market_recap:{trade_date}",
                     asdict(snapshot),
@@ -1016,7 +1072,8 @@ class BuildPostMarketRecapJob:
                     snapshot_version,
                 )
 
-            await self._event_port.publish_stock_processing_event(
+            if not deterministic_only:
+                await self._event_port.publish_stock_processing_event(
                 EventEnvelope(
                     event_id=str(uuid4()),
                     event_name="snapshot_built",
@@ -1034,17 +1091,17 @@ class BuildPostMarketRecapJob:
                         success=True,
                     ),
                 )
-            )
+                )
 
-            await self._idempotency_port.mark_job_completed(
-                job_key,
-                {
-                    "trade_date": trade_date.isoformat(),
-                    "snapshot_version": snapshot_version,
-                    "candidate_count": len(candidates),
-                    "strong_watch_history_rows": history_written,
-                },
-            )
+                await self._idempotency_port.mark_job_completed(
+                    job_key,
+                    {
+                        "trade_date": trade_date.isoformat(),
+                        "snapshot_version": snapshot_version,
+                        "candidate_count": len(candidates),
+                        "strong_watch_history_rows": history_written,
+                    },
+                )
 
             return BuildResult(
                 name="build_post_market_recap",
@@ -1093,21 +1150,22 @@ class BuildPostMarketRecapJob:
                 "error_type": type(exc).__name__,
                 "error_message": str(exc),
             }
-            await self._mark_job_status(
-                trade_date,
-                "post_market_recap_generate",
-                "failed",
-                error_code=type(exc).__name__,
-                diagnostics=diagnostics,
-            )
+            if not deterministic_only:
+                await self._mark_job_status(
+                    trade_date,
+                    "post_market_recap_generate",
+                    "failed",
+                    error_code=type(exc).__name__,
+                    diagnostics=diagnostics,
+                )
             mark_failed = getattr(self._idempotency_port, "mark_job_failed", None)
-            if callable(mark_failed):
+            if callable(mark_failed) and not deterministic_only:
                 try:
                     await mark_failed(job_key, diagnostics)
                 except Exception:
                     pass
             release = getattr(self._idempotency_port, "release_job_idempotency", None)
-            if callable(release):
+            if callable(release) and not deterministic_only:
                 try:
                     await release(job_key)
                 except Exception:
@@ -1335,6 +1393,9 @@ class BuildPostMarketRecapJob:
         batch_id: str = "",
         trace_id: str = "",
         llm_deadline: float | None = None,
+        allow_llm: bool = True,
+        allow_writes: bool = True,
+        write_snapshot: bool = True,
     ) -> None:
         """PR-7: Run mainline discovery pipeline and write results to recap_doc.
 
@@ -1405,25 +1466,38 @@ class BuildPostMarketRecapJob:
                     result = major_classifier.classify(event_chain=ec, event_series=es)
                     major_by_sk[sk] = result.to_dict()
 
-            # ── run narrative judge (best-effort, LLM may fail) ──
-            def _llm_factory():
-                from model_service.llm_parser.reliable_deepseek_parser import ReliableDeepSeekParser
-                import os
-                return ReliableDeepSeekParser(
-                    model_name=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"),
-                    config={"max_retries": 1, "timeout": 25, "temperature": 0.1,
-                            "enable_cache": True, "cache_ttl": 3600})
-            narrative_builder = MainlineNarrativeJudge(
-                parser_factory=_llm_factory,
-                timeout_sec=self._narrative_llm_timeout_sec,
-            )
             narrative_by_sk: dict[str, dict] = {}
             llm_diag = recap_doc.setdefault("diagnostics", {}).setdefault("llm", {})
             llm_diag.setdefault("narrative_timeouts", 0)
             llm_diag.setdefault("narrative_errors", 0)
             llm_diag.setdefault("narrative_budget_exhausted", False)
             llm_diag.setdefault("narrative_skipped_subjects", [])
-            for sk, lev in logic_by_sk.items():
+            if not allow_llm:
+                llm_diag["enabled"] = False
+                llm_diag["reason"] = "deterministic_path"
+                for sk in logic_by_sk:
+                    narrative_by_sk[sk] = NarrativeJudgeResult(
+                        is_mainline_logic=False,
+                        narrative_score=None,
+                        narrative_level="unavailable",
+                        supporting_event_ids=[],
+                        negative_reasons=["deterministic materializer: narrative judge disabled"],
+                        confidence=0.0,
+                        diagnostics={"skip_reason": "llm_disabled"},
+                    ).to_dict()
+            else:
+                def _llm_factory():
+                    from model_service.llm_parser.reliable_deepseek_parser import ReliableDeepSeekParser
+                    import os
+                    return ReliableDeepSeekParser(
+                        model_name=os.getenv("DEEPSEEK_MODEL", "deepseek-chat"),
+                        config={"max_retries": 1, "timeout": 25, "temperature": 0.1,
+                                "enable_cache": True, "cache_ttl": 3600})
+                narrative_builder = MainlineNarrativeJudge(
+                    parser_factory=_llm_factory,
+                    timeout_sec=self._narrative_llm_timeout_sec,
+                )
+            for sk, lev in (logic_by_sk.items() if allow_llm else []):
                 if not lev.get("event_chain"):
                     narrative_by_sk[sk] = NarrativeJudgeResult().to_dict()
                     continue
@@ -1586,20 +1660,29 @@ class BuildPostMarketRecapJob:
             recap_doc["existing_mainline_updates"] = existing_updates
 
             # PR-9B: persist to mainline_review_queue (best-effort)
-            await self._persist_review_queue(trade_date, review_items)
+            if allow_writes:
+                await self._persist_review_queue(trade_date, review_items)
 
-        except Exception:
+        except Exception as exc:
+            if not allow_llm:
+                raise RuntimeError(
+                    f"DETERMINISTIC_MAINLINE_DISCOVERY_FAILED: {exc}"
+                ) from exc
             logger.exception("Mainline discovery pipeline failed, continuing without it")
             recap_doc["mainline_discovery_reviews"] = []
             recap_doc["mainline_discovery_reviews_error"] = "pipeline_failed"
             recap_doc["mainline_discovery_diagnostics"] = {"error": "pipeline_failed"}
 
         # ── PR-10: Mainline Lifecycle pipeline ──
-        await self._run_mainline_lifecycle(trade_date, recap_doc, snapshot_version, batch_id, trace_id)
+        await self._run_mainline_lifecycle(
+            trade_date, recap_doc, snapshot_version, batch_id, trace_id,
+            allow_writes=allow_writes, write_snapshot=write_snapshot,
+        )
 
     async def _run_mainline_lifecycle(
         self, trade_date: date, recap_doc: dict[str, Any], snapshot_version: str,
         batch_id: str = "", trace_id: str = "",
+        allow_writes: bool = True, write_snapshot: bool = True,
     ) -> None:
         """PR-10: Run lifecycle pipeline for confirmed mainlines."""
         def _serialize(obj):
@@ -1658,7 +1741,11 @@ class BuildPostMarketRecapJob:
                 **regime_ctx.diagnostics,
                 "index_technical_reviews": regime_ctx.index_technical_reviews,
             }
-        except Exception:
+        except Exception as exc:
+            if not allow_writes:
+                raise RuntimeError(
+                    f"DETERMINISTIC_MAINLINE_LIFECYCLE_FAILED: {exc}"
+                ) from exc
             logger.exception("Mainline discovery pipeline failed, continuing without it")
             recap_doc["mainline_lifecycle_reviews"] = []
             recap_doc["mainline_lifecycle_diagnostics"] = {"error": "pipeline_failed"}
@@ -1715,7 +1802,8 @@ class BuildPostMarketRecapJob:
         recap_doc["post_market_decision_v2"] = pdv2.to_dict()
 
         # ── PR-13A: persist mainline daily state ──
-        await self._persist_mainline_daily_state(trade_date, recap_doc, batch_id or "", trace_id or "")
+        if allow_writes:
+            await self._persist_mainline_daily_state(trade_date, recap_doc, batch_id or "", trace_id or "")
 
         # Re-write snapshot with PDV2 D1 data (written before PDV2 section at line 632)
         updated_snapshot = PostMarketRecapSnapshot(
@@ -1723,7 +1811,9 @@ class BuildPostMarketRecapJob:
             batch_id=batch_id, trace_id=trace_id, source_trace_id=trace_id,
             recap_doc=_serialize(recap_doc),
         )
-        await self._write_port.upsert_post_market_recap_snapshot(updated_snapshot)
+        if write_snapshot and allow_writes:
+            self._last_materialized_snapshot = updated_snapshot
+            await self._write_port.upsert_post_market_recap_snapshot(updated_snapshot)
 
     async def _persist_review_queue(self, trade_date: date, review_items: list) -> None:
         """PR-9B: Persist analyst_review_items to mainline_review_queue."""

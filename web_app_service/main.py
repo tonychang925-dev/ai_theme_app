@@ -103,6 +103,7 @@ async def _auto_start_jyhf_collectors(sps_base: str):
 @app.on_event("startup")
 async def _startup_cdp_manager() -> None:
     project_root = Path(__file__).resolve().parents[1]
+    app.state.runtime_identity = _capture_runtime_identity(project_root)
 
     # ── 诊断：打印实际前端目录和文件 ──
     dist_dir = _os.getenv("FRONTEND_DIST_DIR", str(project_root / "frontend" / "dist"))
@@ -249,17 +250,36 @@ def _runtime_git_dirty(root: Path) -> bool | None:
         return None
 
 
+def _capture_runtime_identity(root: Path) -> dict[str, object]:
+    """Capture the source identity actually loaded at process startup."""
+    resolved = root.resolve()
+    return {
+        "repo_root": str(resolved),
+        "git_sha": _runtime_git_sha(resolved),
+        "git_dirty": _runtime_git_dirty(resolved),
+    }
+
+
 @app.get("/healthz")
 async def healthz() -> dict[str, Any]:
     repo_root = Path.cwd().resolve()
+    process_identity = getattr(app.state, "runtime_identity", None) or _capture_runtime_identity(repo_root)
+    current_identity = _capture_runtime_identity(repo_root)
+    source_drift = (
+        process_identity.get("repo_root") != current_identity.get("repo_root")
+        or process_identity.get("git_sha") != current_identity.get("git_sha")
+    )
     return {
-        "status": "ok",
+        "status": "failed" if source_drift else "ok",
         "service": "web_app_service",
         "python": sys.executable,
         "cwd": str(repo_root),
         "repo_root": str(repo_root),
-        "git_sha": _runtime_git_sha(repo_root),
-        "git_dirty": _runtime_git_dirty(repo_root),
+        "git_sha": process_identity.get("git_sha"),
+        "git_dirty": process_identity.get("git_dirty"),
+        "process_start_identity": process_identity,
+        "current_worktree_identity": current_identity,
+        "source_drift": source_drift,
         "pythonpath": _os.getenv("PYTHONPATH", ""),
     }
 
@@ -304,24 +324,30 @@ async def readyz():
             resp = await client.get(f"{_SPS_BASE_URL}/healthz")
         if resp.status_code == 200:
             sps_health = resp.json()
-            expected_root = _os.getenv("AI_THEME_AUTHORIZED_REPO_ROOT", str(Path.cwd().resolve()))
-            expected_sha = _os.getenv("AI_THEME_AUTHORIZED_GIT_SHA", _runtime_git_sha(Path.cwd().resolve()) or "")
+            web_process_identity = getattr(app.state, "runtime_identity", None) or _capture_runtime_identity(Path.cwd())
+            expected_root = _os.getenv("AI_THEME_AUTHORIZED_REPO_ROOT", str(web_process_identity.get("repo_root") or ""))
+            expected_sha = _os.getenv("AI_THEME_AUTHORIZED_GIT_SHA", str(web_process_identity.get("git_sha") or ""))
             identity_errors = []
-            if sps_health.get("repo_root") != expected_root:
-                identity_errors.append(f"repo_root={sps_health.get('repo_root')!r}, expected={expected_root!r}")
-            if sps_health.get("git_sha") != expected_sha:
-                identity_errors.append(f"git_sha={sps_health.get('git_sha')!r}, expected={expected_sha!r}")
-            if sps_health.get("git_dirty") is not False:
-                identity_errors.append(f"git_dirty={sps_health.get('git_dirty')!r}, expected=False")
-            web_root = str(Path.cwd().resolve())
-            web_sha = _runtime_git_sha(Path.cwd().resolve())
-            web_dirty = _runtime_git_dirty(Path.cwd().resolve())
+            sps_process = sps_health.get("process_start_identity") or {}
+            if sps_process.get("repo_root", sps_health.get("repo_root")) != expected_root:
+                identity_errors.append(f"process_start_repo_root={sps_process.get('repo_root', sps_health.get('repo_root'))!r}, expected={expected_root!r}")
+            if sps_process.get("git_sha", sps_health.get("git_sha")) != expected_sha:
+                identity_errors.append(f"process_start_git_sha={sps_process.get('git_sha', sps_health.get('git_sha'))!r}, expected={expected_sha!r}")
+            if sps_process.get("git_dirty", sps_health.get("git_dirty")) is not False:
+                identity_errors.append(f"process_start_git_dirty={sps_process.get('git_dirty', sps_health.get('git_dirty'))!r}, expected=False")
+            if sps_health.get("source_drift") is True:
+                identity_errors.append("sps_source_drift=True")
+            web_root = str(web_process_identity.get("repo_root") or "")
+            web_sha = web_process_identity.get("git_sha")
+            web_dirty = web_process_identity.get("git_dirty")
             if web_root != expected_root:
-                identity_errors.append(f"web_repo_root={web_root!r}, expected={expected_root!r}")
+                identity_errors.append(f"web_process_start_repo_root={web_root!r}, expected={expected_root!r}")
             if web_sha != expected_sha:
-                identity_errors.append(f"web_git_sha={web_sha!r}, expected={expected_sha!r}")
+                identity_errors.append(f"web_process_start_git_sha={web_sha!r}, expected={expected_sha!r}")
             if web_dirty is not False:
-                identity_errors.append(f"web_git_dirty={web_dirty!r}, expected=False")
+                identity_errors.append(f"web_process_start_git_dirty={web_dirty!r}, expected=False")
+            if (getattr(app.state, "runtime_identity", {}) or {}).get("git_sha") != _runtime_git_sha(Path.cwd().resolve()):
+                identity_errors.append("web_source_drift=True")
             if identity_errors:
                 checks["sps_upstream"] = "identity_mismatch: " + "; ".join(identity_errors)
                 fatal.append("sps_upstream_identity")

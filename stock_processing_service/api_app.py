@@ -163,6 +163,7 @@ async def _init_stock_match_engine_background(app: FastAPI) -> None:
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     app.state.singleton_lock_fd = _acquire_sps_singleton_lock()
+    app.state.runtime_identity = _capture_runtime_identity(Path(__file__).resolve().parents[1])
     cfg = DatabaseConfig(db_type=DatabaseType.POSTGRESQL, postgres_database=_db_name())
     gw = await DatabaseGateway.initialize(config=cfg, auto_warm_cache=False)
 
@@ -1433,20 +1434,39 @@ def _runtime_git_dirty(root: Path) -> bool | None:
         return None
 
 
+def _capture_runtime_identity(root: Path) -> dict[str, Any]:
+    """Capture the source identity actually loaded at process startup."""
+    resolved = root.resolve()
+    return {
+        "repo_root": str(resolved),
+        "git_sha": _runtime_git_sha(resolved),
+        "git_dirty": _runtime_git_dirty(resolved),
+    }
+
+
 @app.get("/healthz")
 async def healthz() -> dict[str, Any]:
     torch_status = _optional_import_status("torch")
     text2vec_status = _optional_import_status("text2vec")
     repo_root = Path.cwd().resolve()
+    process_identity = getattr(app.state, "runtime_identity", None) or _capture_runtime_identity(repo_root)
+    current_identity = _capture_runtime_identity(repo_root)
+    source_drift = (
+        process_identity.get("repo_root") != current_identity.get("repo_root")
+        or process_identity.get("git_sha") != current_identity.get("git_sha")
+    )
     return {
-        "status": "ok",
+        "status": "failed" if source_drift else "ok",
         "db": _db_name(),
         "runtime_profile": os.getenv("SPS_RUNTIME_PROFILE", "sps-unknown"),
         "python": sys.executable,
         "cwd": str(repo_root),
         "repo_root": str(repo_root),
-        "git_sha": _runtime_git_sha(repo_root),
-        "git_dirty": _runtime_git_dirty(repo_root),
+        "git_sha": process_identity.get("git_sha"),
+        "git_dirty": process_identity.get("git_dirty"),
+        "process_start_identity": process_identity,
+        "current_worktree_identity": current_identity,
+        "source_drift": source_drift,
         "pythonpath": os.getenv("PYTHONPATH", ""),
         "torch_available": bool(torch_status["available"]),
         "torch_version": torch_status["version"],
@@ -3177,6 +3197,27 @@ async def generate_post_market_recap(payload: dict[str, Any] | None = None) -> d
         "mode": mode,
         "force": force,
     })
+
+
+@app.post("/api/v1/post-market/recap/deterministic-materialize")
+async def deterministic_materialize_post_market_recap(
+    payload: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Materialize one recap snapshot from existing read-model facts only."""
+    p = payload or {}
+    from datetime import date as _date
+    from stock_processing_service.application.services.deterministic_recap_materializer import (
+        DeterministicRecapMaterializer,
+    )
+
+    trade_date_str = str(p.get("trade_date") or p.get("date") or "")
+    try:
+        trade_date = _date.fromisoformat(trade_date_str)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"invalid date: {trade_date_str}") from exc
+    dry_run = bool(p.get("dry_run", False))
+    materializer = DeterministicRecapMaterializer(app.state.container.build_post_market_recap)
+    return await materializer.materialize(trade_date, dry_run=dry_run)
 
 
 async def _read_job_status(
