@@ -7,7 +7,7 @@ from dataclasses import asdict
 from datetime import date
 from decimal import Decimal
 from typing import Any
-from unittest.mock import AsyncMock
+from unittest.mock import AsyncMock, patch
 
 from stock_processing_service.application.jobs import BuildPostMarketRecapJob
 from stock_processing_service.application.use_cases.build_strong_stock_tracking import (
@@ -435,6 +435,7 @@ class _FakeEventPort:
 class _FakeIdempotencyPort:
     def __init__(self) -> None:
         self.once = False
+        self.completed = 0
 
     async def acquire_job_idempotency(self, job_key: str, ttl_seconds: int) -> bool:
         if self.once:
@@ -443,7 +444,146 @@ class _FakeIdempotencyPort:
         return True
 
     async def mark_job_completed(self, job_key: str, metadata: dict[str, Any] | None = None) -> None:
-        return None
+        self.completed += 1
+
+
+def _deterministic_job(read_port: _FakeReadPort, write_port: _FakeWritePort,
+                       event_port: _FakeEventPort, idempotency_port: _FakeIdempotencyPort,
+                       cache_port: _FakeCachePort) -> BuildPostMarketRecapJob:
+    return BuildPostMarketRecapJob(
+        read_port=read_port,
+        write_port=write_port,
+        event_port=event_port,
+        idempotency_port=idempotency_port,
+        cache_port=cache_port,
+    )
+
+
+def test_deterministic_job_d1_read_error_is_fail_closed_without_side_effects() -> None:
+    class _FailingD1ReadPort(_FakeReadPort):
+        async def get_w2s_candidates_by_trade_date(self, trade_date: date, limit: int = 20):
+            raise RuntimeError("D1 database unavailable")
+
+    async def _run() -> None:
+        read_port = _FailingD1ReadPort()
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+        job = _deterministic_job(read_port, write_port, event_port, idempotency_port, cache_port)
+
+        from stock_processing_service.application.services.deterministic_recap_materializer import (
+            DeterministicRecapMaterializer,
+        )
+        result = await DeterministicRecapMaterializer(job).materialize(date(2026, 9, 23))
+
+        assert result["status"] == "failed_precondition"
+        assert "DETERMINISTIC_D1_SOURCE_READ_FAILED" in result["warnings"][0]
+        assert write_port.recap_docs == []
+        assert event_port.events == []
+        assert cache_port.cache == {}
+        assert idempotency_port.completed == 0
+
+    asyncio.run(_run())
+
+
+def test_deterministic_mainline_discovery_exception_is_fail_closed() -> None:
+    async def _run() -> None:
+        job = _deterministic_job(
+            _FakeReadPort(), _FakeWritePort(), _FakeEventPort(),
+            _FakeIdempotencyPort(), _FakeCachePort(),
+        )
+        with patch(
+            "stock_processing_service.application.services.mainline_discovery_fact_context_builder.MainlineDiscoveryFactContextBuilder.build",
+            new=AsyncMock(side_effect=RuntimeError("discovery source unavailable")),
+        ):
+            try:
+                await job._run_mainline_discovery(
+                    date(2026, 9, 23), "v1", {}, {}, {}, "b", "t",
+                    allow_llm=False, allow_writes=False, write_snapshot=False,
+                )
+            except RuntimeError as exc:
+                assert "DETERMINISTIC_MAINLINE_DISCOVERY_FAILED" in str(exc)
+            else:
+                raise AssertionError("expected deterministic discovery failure")
+
+    asyncio.run(_run())
+
+
+def test_deterministic_mainline_lifecycle_exception_is_fail_closed() -> None:
+    async def _run() -> None:
+        job = _deterministic_job(
+            _FakeReadPort(), _FakeWritePort(), _FakeEventPort(),
+            _FakeIdempotencyPort(), _FakeCachePort(),
+        )
+        with patch(
+            "stock_processing_service.application.services.mainline_lifecycle.mainline_lifecycle_fact_context_builder.MainlineLifecycleFactContextBuilder.build",
+            new=AsyncMock(side_effect=RuntimeError("lifecycle source unavailable")),
+        ):
+            try:
+                await job._run_mainline_lifecycle(
+                    date(2026, 9, 23), {}, "v1", "b", "t",
+                    allow_writes=False, write_snapshot=False,
+                )
+            except RuntimeError as exc:
+                assert "DETERMINISTIC_MAINLINE_LIFECYCLE_FAILED" in str(exc)
+            else:
+                raise AssertionError("expected deterministic lifecycle failure")
+
+    asyncio.run(_run())
+
+
+def test_deterministic_job_discovery_failure_never_calls_snapshot_writer() -> None:
+    async def _run() -> None:
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+        job = _deterministic_job(
+            _FakeReadPort(), write_port, event_port, idempotency_port, cache_port,
+        )
+        job._run_mainline_discovery = AsyncMock(  # type: ignore[method-assign]
+            side_effect=RuntimeError("DETERMINISTIC_MAINLINE_DISCOVERY_FAILED: source unavailable")
+        )
+
+        from stock_processing_service.application.services.deterministic_recap_materializer import (
+            DeterministicRecapMaterializer,
+        )
+        result = await DeterministicRecapMaterializer(job).materialize(date(2026, 9, 23))
+        assert result["status"] == "failed_precondition"
+        assert write_port.recap_docs == []
+        assert event_port.events == []
+        assert cache_port.cache == {}
+        assert idempotency_port.completed == 0
+
+    asyncio.run(_run())
+
+
+def test_deterministic_job_lifecycle_failure_never_calls_snapshot_writer() -> None:
+    async def _run() -> None:
+        write_port = _FakeWritePort()
+        event_port = _FakeEventPort()
+        idempotency_port = _FakeIdempotencyPort()
+        cache_port = _FakeCachePort()
+        job = _deterministic_job(
+            _FakeReadPort(), write_port, event_port, idempotency_port, cache_port,
+        )
+        job._run_mainline_discovery = AsyncMock()  # type: ignore[method-assign]
+        job._run_mainline_lifecycle = AsyncMock(  # type: ignore[method-assign]
+            side_effect=RuntimeError("DETERMINISTIC_MAINLINE_LIFECYCLE_FAILED: regime unavailable")
+        )
+
+        from stock_processing_service.application.services.deterministic_recap_materializer import (
+            DeterministicRecapMaterializer,
+        )
+        result = await DeterministicRecapMaterializer(job).materialize(date(2026, 9, 23))
+        assert result["status"] == "failed_precondition"
+        assert write_port.recap_docs == []
+        assert event_port.events == []
+        assert cache_port.cache == {}
+        assert idempotency_port.completed == 0
+
+    asyncio.run(_run())
 
 
 class _FakeCachePort:
