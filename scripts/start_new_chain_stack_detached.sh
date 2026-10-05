@@ -128,6 +128,7 @@ echo "[start] stock_processing_service:8090 detached screen=${SPS_SESSION}"
 screen -dmS "$SPS_SESSION" bash -lc "${runtime_env_prefix}
 export PYTHONPATH='$ROOT_DIR'
 export HF_HUB_OFFLINE=1
+export THEME_MATCH_TEXT2VEC_MODEL='$ROOT_DIR/models/text2vec-base-chinese'
 export PYTHON_CMD='$SPS_PYTHON'
 export CONDA_PYTHON_CMD='$SPS_PYTHON'
 export SPS_RUNTIME_PROFILE='$SPS_RUNTIME_PROFILE'

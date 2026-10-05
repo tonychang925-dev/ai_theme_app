@@ -88,6 +88,7 @@ export async function startAll(projectRoot: string): Promise<{
     'STOCK_PROCESSING_READ_BASE_URL': `http://127.0.0.1:${ports.sps}`,
     'WEB_APP_READ_MODE': 'http',
     'HF_HUB_OFFLINE': '1',
+    'THEME_MATCH_TEXT2VEC_MODEL': path.join(projectRoot, 'models', 'text2vec-base-chinese'),
     'PYTHONPATH': projectRoot,
     'PYTHONUNBUFFERED': '1',
   };
