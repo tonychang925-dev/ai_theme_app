@@ -67,8 +67,9 @@
 | P-16 | **弱转强 D2**：`W2SConfirmService` + `W2SAuctionScorer` | `w2s_confirm_service.py`、`w2s_auction_scorer.py`；`build_pre_market_brief_job.py:42`；`api_app.py` | 竞价快照、P-15 的候选 | 确认结果与等级 | L9 | 盘前简报、API | LIVE | 是 | **是** | 新 | COMPLIANT |
 | P-17 | `AuctionConfirmationService` | `domain/services/auction_confirmation_service.py` | — | 另一套竞价打分（A / B / C） | L9 | 只有 `backtest/historical_backtest_ports.py` | DIAGNOSTIC | 否 | 否 | 新 | COMPLIANT |
 | P-18 | `KlineBreakDetector` | `domain/services/kline_break_detector.py`；`api_app.py:267`、`:6606–6616` | DSN 直连 | 破位预警 | L11（风控提示） | 实时预警 | LIVE（API 启动后循环运行） | 是 | 提示类 | 新 | **DIRECT_DB_VIOLATION（Domain 层）** |
-| P-19 | 弱转强盘中预警系列：`w2s_intraday_alert_service`（v1 / v2）、`w2s_support_alert_service`、`w2s_alert_service`、`w2s_market_context_service`、`w2s_intraday_backtest`、`intraday_minute_state_builder` | `domain/services/*` | DSN 直连 | 预警 / 回测 | L9 / L11 | 脚本（`scripts/check_w2s_intraday_alert_*.py`）；Application 层零引用 | DIAGNOSTIC | 否 | 否 | 新 | **DIRECT_DB_VIOLATION（Domain 层，7 个文件）** |
-| P-20 | `w2s_unified_alert_service` | `domain/services/w2s_unified_alert_service.py` | DSN 直连 | 统一预警 | L11 | Application 层有 1 处引用（未细查） | LIVE？（待确认） | ？ | 提示类 | 新 | **DIRECT_DB_VIOLATION（Domain 层）** |
+| P-19a | 弱转强盘中预警 v2 评分：`w2s_intraday_alert_service_v2`（`score_v2_2`） | `domain/services/w2s_intraday_alert_service_v2.py` | DSN 直连 | 盘中预警评分 | L9 / L11 | 经 P-20 在线调用（P0A2 更正清单 2） | **LIVE（经 P-20）** | 经 P-20 推送 | 提示类 | 新 | **DIRECT_DB_VIOLATION（Domain 层）** |
+| P-19b | 弱转强盘中预警其余系列：`w2s_intraday_alert_service`（v1）、`w2s_support_alert_service`、`w2s_alert_service`、`w2s_market_context_service`、`w2s_intraday_backtest`、`intraday_minute_state_builder` | `domain/services/*` | DSN 直连 | 预警 / 回测 | L9 / L11 | 脚本（`scripts/check_w2s_intraday_alert_*.py`）；Application 层零引用 | DIAGNOSTIC | 否 | 否 | 新 | **DIRECT_DB_VIOLATION（Domain 层）** |
+| P-20 | `w2s_unified_alert_service`（统一预警循环） | `domain/services/w2s_unified_alert_service.py`；`api_app.py:268–273` 启动 `_run_w2s_alert_loop` | DSN 直连；P-15 / P-16 候选 | 统一预警，推送到 Redis | L11 | 竞价与盘中每分钟循环；`SPS_ENABLE_W2S_ALERT_LOOP` 默认 `"true"` | **LIVE**（P0A2 更正清单 2）。运行决定：DISABLE_UNTIL_P0B04_VERIFIED（Owner 2026-10-09，见 AUTHORITY_INDEX §2） | 是（推送） | 提示类；两处“缺失 → 放行或陈旧兜底”（P0 缺陷，P0-B04） | 新 | **DIRECT_DB_VIOLATION（Domain 层）** |
 | P-21 | `PostMarketDailyReviewV2Builder` | 复盘任务 `:1003–1015`；`post_market_daily_review_v2_builder.py` | 复盘文档（**新旧两条链的输出都读**） | `daily_review_v2` | 投影层 | 前端 `RecapPage`（`dataMode === "daily_review_v2_first"` 时，`:1031`） | LIVE | 是 | 否（展示），但会把旧链结论原样透传 | 新 | COMPLIANT |
 | P-22 | `NewChainPostMarketReportBuilder`、叙事组合器、Notion 渲染器 | `new_chain_post_market_report_builder.py`、`post_market_narrative_composer.py`、`publishers/notion_post_market_report_renderer.py` | 复盘文档 | 报告文本 / Notion | 投影层 | Owner 阅读 | LIVE | 是 | 否 | 新 | UNKNOWN |
 | P-23 | M8 / market_cognition（`cognition.py`、`replay.py`）、`analyst_alignment/turing_score.py` | `application/services/market_cognition/*` | — | 认知 / 回放 | L12 | `api_app.py` 中只有 1 处 M8 相关引用 | **本轮未核实** | ？ | 按架构文档应为否 | 新 | UNKNOWN |
@@ -281,11 +282,12 @@ B0 / B1（让候选主线和它的周期状态能往下传）
 
 ```text
 本清单                    = 只读；没有改代码、测试、数据库、分支
-LIVE 新链生产者            = P-01, P-02, P-03, P-04, P-08, P-09, P-10, P-12, P-13, P-14, P-15, P-16, P-18, P-21, P-22
+LIVE 新链生产者            = P-01, P-02, P-03, P-04, P-08, P-09, P-10, P-12, P-13, P-14, P-15, P-16, P-18, P-19a（经 P-20）, P-20, P-21, P-22
 LEGACY_LIVE               = P-05, P-11
-DIAGNOSTIC                = P-07, P-17, P-19
+DIAGNOSTIC                = P-07, P-17, P-19b
 DEAD_CODE                 = P-06
-待确认                     = P-20, P-23
+待确认                     = P-23
+修订说明                   = 2026-10-09 按 P0A2 更正清单 2：P-20 改为 LIVE；P-19 拆为 P-19a（v2 评分，经 P-20 在线）与 P-19b（诊断）
 SHADOW                    = 无（新旧两条链是双写，不是影子）
 EARLY 阻断点               = B0, B1, B1', B2, B3
 下一步                     = 等 Owner 基于两份清单重排实施顺序；在那之前不改代码

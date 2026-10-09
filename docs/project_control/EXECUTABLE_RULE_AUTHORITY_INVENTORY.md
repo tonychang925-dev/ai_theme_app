@@ -52,6 +52,7 @@
 
 | 字段 | 内容 |
 |---|---|
+| ID | **M-01** |
 | 位置 | `application/services/market_metrics/service.py:726` |
 | 符号 | `MarketMetricsService._emotion_momentum`（`first_red = relay.continue_ratio`） |
 | 名称上的含义 | 昨日**首板**中，今日**收红**的比例（昊哥 E01） |
@@ -64,14 +65,14 @@
 
 同一函数中，紧挨着的其他问题：
 
-| 位置 | 内容 | 分类 |
-|---|---|---|
-| `service.py:728` | `chain_ratio = 今日连板数 / 今日涨停数`。昊哥 E04 的口径是“今日连板 / 昨日连板”，**同样是口径错误** | UNAUTHORIZED_INFERENCE（口径） |
-| `service.py:731` | `chain_red = (feedback_score + 100) / 200`，由反馈分反推 | UNAUTHORIZED_INFERENCE（估算） |
-| `service.py:732` | `chain_loss = 首板大面比 × 0.8` | UNAUTHORIZED_INFERENCE（估算） |
-| `service.py:733` | `yest_red = 0.5`，常数 | UNAUTHORIZED_INFERENCE（默认值） |
-| `service.py:735–742` | 无接力数据时，六项全部用涨跌家数估算（`first_red = min(0.8, r)` 等） | UNAUTHORIZED_INFERENCE（兜底） |
-| `service.py:746` | 动能 = 六项线性加权（×2、×2、×2、×2、×2、×1）。昊哥的模型是每项按阈值 ±2 投票，**不是线性加权** | UNAUTHORIZED_INFERENCE（模型错配） |
+| ID | 位置 | 内容 | 分类 |
+|---|---|---|---|
+| M-02 | `service.py:728` | `chain_ratio = 今日连板数 / 今日涨停数`。昊哥 E04 的口径是“今日连板 / 昨日连板”，**同样是口径错误** | UNAUTHORIZED_INFERENCE（口径） |
+| M-03 | `service.py:731` | `chain_red = (feedback_score + 100) / 200`，由反馈分反推 | UNAUTHORIZED_INFERENCE（估算） |
+| M-04 | `service.py:732` | `chain_loss = 首板大面比 × 0.8` | UNAUTHORIZED_INFERENCE（估算） |
+| M-05 | `service.py:733` | `yest_red = 0.5`，常数 | UNAUTHORIZED_INFERENCE（默认值） |
+| M-06 | `service.py:735–742` | 无接力数据时，六项全部用涨跌家数估算（`first_red = min(0.8, r)` 等） | UNAUTHORIZED_INFERENCE（兜底） |
+| M-07 | `service.py:746` | 动能 = 六项线性加权（×2、×2、×2、×2、×2、×1）。昊哥的模型是每项按阈值 ±2 投票，**不是线性加权** | UNAUTHORIZED_INFERENCE（模型错配） |
 
 ---
 
@@ -219,7 +220,7 @@
 
 ## 10. 汇总
 
-### 10.1 按分类（本清单共 86 条：§1 七条 + §2–§9 七十九条）
+### 10.1 按分类（本清单共 86 条：§1 七条 M-01…M-07 + §2–§9 七十九条）
 
 | 分类 | 条数 | 其中 P0 |
 |---|---|---|

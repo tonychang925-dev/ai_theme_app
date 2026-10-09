@@ -6,7 +6,7 @@
 > - 文字判断用 34 篇的全文提取。
 >
 > 前置文档：`MARKET_EMOTION_VALIDATION_HAOGE_0624_0717.md`（样本内 18 天）、`HAOGE_METRIC_REGISTRY_v0.1.md`
-> 转录数据：`haoge_data.py`（样本内）、`haoge_data_oos.py`（样本外），在会话工作目录中，可以提交到仓库作为回放用例。
+> 转录数据：`haoge_data/haoge_data.py`（样本内）、`haoge_data/haoge_data_oos.py`（样本外）；复现脚本 `haoge_data/reproduce.py`（样本内）、`haoge_data/oos.py`（V1 / V2 在样本内外的复现）。已随 D0 v2 提交到仓库（2026-10-09）。
 
 ---
 
